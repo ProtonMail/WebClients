@@ -5715,6 +5715,17 @@
         "Part del contingut del vostre calendari no és compatible i no s'importarà."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "S'han detectat claus addicionals duplicades. Carregueu-les individualment per obtenir més informació."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "La clau ${ fingerprint } ja s'ha carregat"
+      ],
+      "Selected color:": [
+        "Color seleccionat:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necessita el vostre permís per ${ enableDesktopNotifications }."
@@ -6403,9 +6414,6 @@
       ],
       "Failed to fetch logs.": [
         "No s'han pogut trobar els registres."
-      ],
-      "Fast and focused. Email and calendar, right on your desktop.": [
-        "Ràpid i concentrat. Correu electrònic i calendari, directament al teu escriptori."
       ],
       "Fill in user details": [
         "Empleneu els detalls de l'usuari"
@@ -7823,17 +7831,6 @@
         "La vostra subscripció és gestionada per Mozilla. Contacteu amb el suport de Mozilla."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "S'han detectat claus addicionals duplicades. Carregueu-les individualment per obtenir més informació."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "La clau ${ fingerprint } ja s'ha carregat"
-      ],
-      "Selected color:": [
-        "Color seleccionat:"
-      ]
-    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Si s'activa, les subcarpetes hereten el color de la carpeta principal."
@@ -8377,9 +8374,6 @@
       ],
       "Awarded": [
         "Premiat"
-      ],
-      "Beta": [
-        "Beta"
       ],
       "Billing address": [
         "Adreça de facturació"
@@ -10342,6 +10336,17 @@
         "Gestió d'equips"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "En cas contrari, es limitarà l'accés al vostre compte i, finalment, el compte es desactivarà."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Per continuar utilitzant ${ trialPlanName } amb característiques prèmium, trieu les opcions de subscripció i pagament."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "El període de prova acaba el ${ formattedPeriodEndDate }."
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } que acaba amb ${ last4 }."
@@ -10441,17 +10446,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Esteu gaudint d'un preu promocional al vostre pla actual. Si feu una baixada de categoria al vostre compte, perdreu el preu promocional i no estarà disponible si intenteu subscriure-us novament."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "En cas contrari, es limitarà l'accés al vostre compte i, finalment, el compte es desactivarà."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Per continuar utilitzant ${ trialPlanName } amb característiques prèmium, trieu les opcions de subscripció i pagament."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "El període de prova acaba el ${ formattedPeriodEndDate }."
       ]
     },
     "new_plans: Label": {
@@ -13773,15 +13767,6 @@
       "Folders and labels": [
         "Carpetes i etiquetes"
       ],
-      "For Linux": [
-        "Per a Linux"
-      ],
-      "For macOS": [
-        "Per a macOS"
-      ],
-      "For Windows": [
-        "Per a Windows"
-      ],
       "Forward and auto-reply": [
         "Reenviament i resposta automàtica"
       ],
@@ -13890,9 +13875,6 @@
       ],
       "Link confirmation": [
         "Confirmació d'enllaç"
-      ],
-      "Location": [
-        "Ubicació"
       ],
       "Login password": [
         "Contrasenya d'inici"
@@ -14719,7 +14701,7 @@
         "15 mesos"
       ],
       "18-month": [
-        "18-mesos"
+        "18 mesos"
       ],
       "2-year": [
         "2 any"
@@ -14734,7 +14716,7 @@
         "Obteniu un descompte del ${ discount } amb una subscripció de ${ billingCycle }"
       ],
       "monthly": [
-        "cada mes"
+        "mensualment"
       ]
     },
     "vpn_2step: feature": {

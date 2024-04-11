@@ -360,6 +360,12 @@
       "Manage labels": [
         "Behandle etiketter"
       ],
+      "Mark as open": [
+        "Merk som åpen"
+      ],
+      "Mark as resolved": [
+        "Merk som løst"
+      ],
       "Mark for deletion": [
         "Merk for sletting"
       ],
@@ -476,6 +482,9 @@
       ],
       "Report a problem": [
         "Rapporter et problem"
+      ],
+      "Request a call": [
+        "Be om en samtale"
       ],
       "Request a feature": [
         "Be om en funksjon"
@@ -2269,9 +2278,6 @@
       "Your account and data recovery methods are set.": [
         "Dine konto- og datagjenopprettingsmetoder er angitt."
       ],
-      "Your information was found in at least one data breach.": [
-        "Informasjonen din ble funnet i minst ett datainnbrudd."
-      ],
       "Your personal data was leaked by an online service in a data breach. View full details and get recommended actions.": [
         "Dine personlige data ble lekket av en nettjeneste i et databrudd. Se alle detaljer og få anbefalte handlinger."
       ]
@@ -3863,8 +3869,8 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Før du ber om en ny verifiseringskode, sjekk søppelpostmappen din og sjekk at ${ strong } er riktig adresse."
       ],
-      "Breach alerts": [
-        "Varsler om datainnbrudd"
+      "Breach Alert": [
+        "Varsel om datainnbrudd"
       ],
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Ved å dele alle hendelsesdetaljene i denne kalenderen, godtar du å gi ${ BRAND_NAME } tilgang til denne kalenderens krypterte informasjon."
@@ -4082,6 +4088,9 @@
       "Large imports can take several days.": [
         "Store importer kan ta flere dager."
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Lær hvordan du ${ staySaferOnlineLink }"
+      ],
       "Learn more": [
         "Lær mer"
       ],
@@ -4096,6 +4105,9 @@
       ],
       "Loading ${ appName }": [
         "Laster ${ appName }"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Laster inn kalender, vennligst vent. Du vil bli omdirigert til vår planleggingsplattform Calendly i en ny fane."
       ],
       "Loading event": [
         "Laster hendelse"
@@ -4254,6 +4266,9 @@
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Programmet trenger å dekryptere kontaktene dine lokalt før de kan bli eksportert. På slutten av prosessen vil en VCF-fil bli generert, og du vil kunne laste den ned."
       ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "Den eksponerte informasjonen ble lekket fra en tredjepartstjeneste. ${ BRAND_NAME }-kontoinformasjonen din forblir sikker og kryptert. ${ learnMoreLink }."
+      ],
       "The following participants cannot be notified about your changes:": [
         "De følgende deltakerne kan bli varslet om endringene dine:"
       ],
@@ -4331,9 +4346,6 @@
       ],
       "username": [
         "brukernavn"
-      ],
-      "View details": [
-        "Vis detaljer"
       ],
       "Warning": [
         "Advarsel"
@@ -4473,6 +4485,12 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Dataene dine er klare til import fra ${ importedEmailAddressStrong } til din ${ BRAND_NAME }-konto."
       ],
+      "Your email address and password were leaked:": [
+        "Din e-postadresse og passord ble lekket:"
+      ],
+      "Your email address was exposed:": [
+        "E-postadressen din ble eksponert:"
+      ],
       "Your email will only be used for this one-time verification.": [
         "E-posten din vil kun bli brukt til denne engangsbekreftelsen."
       ],
@@ -4482,8 +4500,14 @@
       "Your files will be encrypted and then saved": [
         "Filene dine vil bli kryptert og deretter lagret"
       ],
+      "Your information was found on ${ displayedDate }": [
+        "Informasjonen din ble funnet den ${ displayedDate }."
+      ],
       "Your login information will not be saved after the import is completed.": [
         "Påloggingsinformasjonen lagres ikke etter at importen er fullført."
+      ],
+      "Your password was leaked:": [
+        "Passordet ditt ble lekket:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Telefonnummeret ditt vil kun bli brukt til denne engangsbekreftelsen."
@@ -5045,6 +5069,9 @@
       ],
       "Request an invite": [
         "Be om en invitasjon"
+      ],
+      "stay safer online": [
+        "holder deg tryggere på nettet"
       ],
       "What’s this?": [
         "Hva er det der?"
@@ -6072,14 +6099,17 @@
       ]
     },
     "Security Center - Info": {
-      "Get notified if your password or other personal data was leaked.": [
-        "Bli varslet hvis passordet ditt eller andre personlige data ble lekket."
+      "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
+        "Bli varslet hvis passordet ditt eller andre data ble lekket fra en tredjepartstjeneste. ${ learnMoreLink }."
       ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Vår banebrytende AI-drevne sikkerhetsløsning designet for brukere som ønsker økt beskyttelse for kontoene sine. ${ learnMoreLink }."
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel er **aktiv** og beskytter kontoen din."
+      ],
+      "Your information was found in at least one data breach. Turn on Breach Alert to view details and take action. ${ learnMoreLink }": [
+        "Informasjonen din ble funnet i minst ett datainnbrudd. Slå på bruddvarsel for å vise detaljer og iverksette tiltak. ${ learnMoreLink }."
       ]
     },
     "Select files": {
@@ -6959,20 +6989,8 @@
       "Birthday": [
         "Bursdag"
       ],
-      "Breach alerts": [
-        "Varsler om datainnbrudd"
-      ],
-      "Breach Date": [
-        "Dato for datainnbrudd"
-      ],
-      "Breach detected": [
-        "Sikkerhetsbrudd oppdaget"
-      ],
-      "Breach Information": [
-        "Informasjon om datainnbrudd"
-      ],
-      "Breach Size": [
-        "Størrelse for datainnbrudd"
+      "Breach Alert": [
+        "Varsel om datainnbrudd"
       ],
       "Calendar": [
         "Kalender"
@@ -7057,6 +7075,9 @@
       "Deleting contacts": [
         "Sletter kontakter"
       ],
+      "Details": [
+        "Detaljer"
+      ],
       "Drop to upload": [
         "Slipp for å laste opp"
       ],
@@ -7102,9 +7123,6 @@
       "Exporting contacts": [
         "Eksporterer kontakter"
       ],
-      "Exposed info": [
-        "Eksponert info"
-      ],
       "Feedback": [
         "Tilbakemelding"
       ],
@@ -7141,9 +7159,6 @@
       ],
       "Link confirmation": [
         "Bekreftelse av kobling"
-      ],
-      "Location": [
-        "Plassering"
       ],
       "Merge contacts": [
         "Slå sammen kontakter"
@@ -7307,9 +7322,6 @@
       "Stay safer online": [
         "Hold deg tryggere på nettet"
       ],
-      "Type": [
-        "Type"
-      ],
       "Unlock contacts groups": [
         "Lås opp kontaktgrupper"
       ],
@@ -7349,7 +7361,7 @@
       "Your calendar link": [
         "Din kalenderkobling"
       ],
-      "Your Exposed Information": [
+      "Your exposed information": [
         "Din eksponerte informasjon"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [

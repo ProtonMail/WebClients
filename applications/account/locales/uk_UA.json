@@ -5567,6 +5567,17 @@
         "Частина вмісту вашого календаря не підтримується і не буде імпортована."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Виявлено додаткові дублікати ключів. Завантажте індивідуально для отримання додаткової інформації."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Ключ ${ fingerprint } вже вивантажено"
+      ],
+      "Selected color:": [
+        "Вибраний колір:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } потребує вашого дозволу, щоб ${ enableDesktopNotifications }."
@@ -6353,9 +6364,6 @@
       ],
       "Failed to fetch logs.": [
         "Помилка отримання журналів."
-      ],
-      "Fast and focused. Email and calendar, right on your desktop.": [
-        "Швидкість і зосередження. Електронна пошта й календар безпосередньо на вашому робочому столі."
       ],
       "Fill in user details": [
         "Заповніть дані користувача"
@@ -7446,15 +7454,6 @@
       "URL link": [
         "URL-посилання"
       ],
-      "Use ${ BRAND_NAME } Pass to generate strong passwords and avoid password re-use": [
-        "Використовуйте ${ BRAND_NAME } Pass, щоб створювати надійні паролі та уникати повторного використання паролів"
-      ],
-      "Use ${ VPN_APP_NAME } with Netshield enabled to protect you from phishing and malware": [
-        "Використовуйте ${ VPN_APP_NAME } з увімкненим Netshield, щоб захистити себе від шахрайства та зловмисних програм"
-      ],
-      "Use aliases to sign up for online services. This protects your real email address and identity, limiting the blast radius of a breach.": [
-        "Використовуйте псевдоніми для реєстрації в онлайн-сервісах. Це захищає вашу справжню електронну адресу та ідентифікаційні дані, обмежуючи радіус ураження у випадку зламу."
-      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Використовуйте найкращий сервер відповідно до поточного навантаження та розташування: ${ formattedBestServerName }"
       ],
@@ -7515,9 +7514,6 @@
       "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
         "Попередження: Видалення є незворотним. Це також вилучить доступ для всіх під'єднаних служб та видалить усі ваші контакти."
       ],
-      "Ways you can minimize your breach risks": [
-        "Способи мінімізації ризиків витоку"
-      ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Ми рекомендуємо вам використовувати офіційні програми ${ VPN_APP_NAME }, якщо це можливо."
       ],
@@ -7529,9 +7525,6 @@
       ],
       "We just sent you a new link.": [
         "Ми надіслали вам нове посилання."
-      ],
-      "We monitor your email addresses, passwords, and personal data for appearances on the dark web and notify you in case your data is compromised.": [
-        "Ми відстежуємо ваші адреси електронної пошти, паролі та особисті дані для появи в даркнеті, і повідомляємо вас у випадку, якщо дані були скомпрометовані."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Потрібно підтвердити вказаний спосіб оплати у вашому банку."
@@ -7874,17 +7867,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Ваша передплата керується Mozilla. Зв'яжіться зі службою підтримки Mozilla."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Виявлено додаткові дублікати ключів. Завантажте індивідуально для отримання додаткової інформації."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Ключ ${ fingerprint } вже вивантажено"
-      ],
-      "Selected color:": [
-        "Вибраний колір:"
       ]
     },
     "Info - folder colouring feature": {
@@ -10426,6 +10408,17 @@
         "Керування командою"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "В іншому випадку доступ до вашого облікового запису буде обмежено, а з часом деактивовано."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Щоб і надалі користуватися ${ trialPlanName } з преміальними функціями, оберіть тарифний план та спосіб оплати."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Ваш пробний період завершується ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, що закінчується на ${ last4 }"
@@ -10519,17 +10512,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Ви користуєтеся спеціальною ціною чинного тарифного плану. Якщо ви понизите свій обліковий запис, то втратите спеціальну ціну передплати й більше не зможете скористатися нею, коли вирішите знову його передплатити."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "В іншому випадку доступ до вашого облікового запису буде обмежено, а з часом деактивовано."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Щоб і надалі користуватися ${ trialPlanName } з преміальними функціями, оберіть тарифний план та спосіб оплати."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Ваш пробний період завершується ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -13718,15 +13700,6 @@
       "Folders and labels": [
         "Теки й мітки"
       ],
-      "For Linux": [
-        "Для Linux"
-      ],
-      "For macOS": [
-        "Для macOS"
-      ],
-      "For Windows": [
-        "Для Windows"
-      ],
       "Forward and auto-reply": [
         "Пересилання та автовідповідь"
       ],
@@ -13834,9 +13807,6 @@
       ],
       "Link confirmation": [
         "Підтвердження посилання"
-      ],
-      "Location": [
-        "Розташування"
       ],
       "Login password": [
         "Пароль входу"

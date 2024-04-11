@@ -104,9 +104,6 @@
       "Add notification": [
         "Legg til varsel"
       ],
-      "Add or switch account": [
-        "Legg til eller bytt konto"
-      ],
       "Add PayPal": [
         "Legg til PayPal"
       ],
@@ -614,6 +611,12 @@
       "Mark as default": [
         "Angi som standard"
       ],
+      "Mark as open": [
+        "Merk som åpen"
+      ],
+      "Mark as resolved": [
+        "Merk som løst"
+      ],
       "mark emails as": [
         "markere e-poster som"
       ],
@@ -742,6 +745,9 @@
       ],
       "Report a problem": [
         "Rapporter et problem"
+      ],
+      "Request a call": [
+        "Be om en samtale"
       ],
       "Request a feature": [
         "Be om en funksjon"
@@ -941,6 +947,9 @@
       "Start import": [
         "Start importen"
       ],
+      "Start live chat": [
+        "Start direkte chat"
+      ],
       "Stay": [
         "Bli"
       ],
@@ -982,9 +991,6 @@
       ],
       "Unlock Breach Report": [
         "Lås opp rapport om datainnbrudd"
-      ],
-      "Unlock breach reports": [
-        "Lås opp rapporter om datainnbrudd"
       ],
       "Unlock data": [
         "Lås opp data"
@@ -5852,6 +5858,17 @@
         "Deler av kalenderinnholdet ditt støttes ikke, og kan ikke importeres."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Flere dupliserte nøkler oppdaget. Vennligst last opp individuelt for mer informasjon."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Nøkkel ${ fingerprint } er allerede blitt lastet opp"
+      ],
+      "Selected color:": [
+        "Valgt farge:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } trenger din tillatelse til å ${ enableDesktopNotifications }."
@@ -5864,6 +5881,9 @@
       ],
       "${ BRAND_NAME } is privacy you can trust, ensured by strong encryption, open-source code, and Swiss privacy laws. We believe nobody should be able to exploit your data, period. Our technology and business are based upon this fundamentally stronger definition of privacy.": [
         "${ BRAND_NAME } er personvern du kan klarére, sikret av sterk kryptering, åpen kildekode og sveitsiske personvernlover. Vi mener at ingen skal kunne utnytte dataene dine, punktum. Vår teknologi og virksomhet er basert på denne fundamentalt sterkere definisjonen av personvern."
+      ],
+      "${ BRAND_NAME } never shares your information with third parties. Data comes from  ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
+        "${ BRAND_NAME } deler aldri informasjonen din med tredjeparter. Data kommer fra ${ BRAND_NAME }s egne analyser og Constella Etterretning."
       ],
       "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "${ BRAND_NAME } satte en import på pause fordi det mistet forbindelsen med din e-posttilbyder. Vennligst koble opp på nytt."
@@ -6162,6 +6182,9 @@
       "Amount due": [
         "Skyldig beløp"
       ],
+      "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
+        "Et e-postalias fungerer som en e-postadresse, men reduserer søppelpost og holder den faktiske e-postadressen og identiteten din skjult."
+      ],
       "An error occurred while communicating with the extension": [
         "Det oppstod en feil under kommunikasjon med utvidelsen"
       ],
@@ -6296,9 +6319,6 @@
       ],
       "Blocks senders from seeing if and when you opened a message.": [
         "Blokkerer sendere fra å se hvis og når du åpnet en melding."
-      ],
-      "Breach Alert is powered by ${ BRAND_NAME }'s propietary datasets, open-source datasets, and Constella Intelligence. ${ dataBreachLink }": [
-        "Varsel om datainnbrudd drives av ${ BRAND_NAME }s proprietære datasett, åpen kildekode-datasett og Constella Intelligence. ${ dataBreachLink }."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ved å nedgradere til en gratis plan, vil du permanent miste disse fordelene, selv om du oppgraderer igjen i fremtiden."
@@ -6640,6 +6660,9 @@
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "Få tilgang ved å opprette en ${ BRAND_NAME }-konto og akseptere invitasjonen."
       ],
+      "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
+        "Bli varslet hvis passordet ditt eller andre personlige data ble lekket. ${ learnMoreLinkNoBreach }."
+      ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "Gi tokenet et beskrivende navn, slik som tjenesten du planlegger å bruke det med, og velg en av dine aktive egendefinerte domeneadresser. Kun denne adressen vil være i stand til å sende e-poster med dette tokenet."
       ],
@@ -6711,6 +6734,12 @@
       ],
       "If you wish to combine this account with another one, do NOT delete it.": [
         "Hvis du ønker å kombinere denne kontoen med en annen, IKKE slett den."
+      ],
+      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
+        "Hvis du har problemer, er vi her for å hjelpe. ${ boldPhoneCall } eller ${ boldZoomMeeting } med en av våre brukerstøttespesialister, eller åpne en ${ boldLiveChat } for chat-støtte."
+      ],
+      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists.": [
+        "Hvis du har problemer, er vi her for å hjelpe. ${ boldPhoneCall } eller ${ boldZoomMeeting } med en av våre brukerstøttespesialister."
       ],
       "Image description": [
         "Bildebeskrivelse"
@@ -6810,6 +6839,9 @@
       "Just send them your personal referral link.": [
         "Bare send dem din personlige vervekobling."
       ],
+      "Keep your info more secure and private with these guides and tips.": [
+        "Hold informasjonen din sikrere og mer privat med disse veiledningene og tipsene."
+      ],
       "Key deletion is irreversible!": [
         "Nøkkelsletting er irreversibel!"
       ],
@@ -6827,6 +6859,9 @@
       ],
       "Lean more about gateways": [
         "Lær mer om mellomtjenere"
+      ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Lær hvordan du ${ staySaferOnlineLink }"
       ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Lær hvordan å logge inn på ${ VPN_APP_NAME } med tredjeparts VPN-applikasjoner."
@@ -6858,6 +6893,9 @@
       "Link type": [
         "Type kobling"
       ],
+      "Live chat": [
+        "Direkte chat"
+      ],
       "Loaded content is being protected by our proxy when tracker protection is activated.": [
         "Lastet innhold er beskyttet av vår proxy når sporingsbeskyttelse er aktivert."
       ],
@@ -6866,6 +6904,9 @@
       ],
       "Loading ${ appName }": [
         "Laster ${ appName }"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Laster inn kalender, vennligst vent. Du vil bli omdirigert til vår planleggingsplattform Calendly i en ny fane."
       ],
       "Loading preview": [
         "Laster forhåndsvisning"
@@ -6929,6 +6970,9 @@
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Gi den nye mappen et navn, og velg den overordnede mappen du vil legge den i. Hvis du ikke velger en overordnet mappe, opprettes denne nye mappen som en mappe på øverste nivå."
+      ],
+      "NetShield is an ad-blocking feature from ${ VPN_APP_NAME } that protects your device from ads, trackers, and malware.": [
+        "NetShield er en annonseblokkeringsfunksjon fra ${ VPN_APP_NAME } som beskytter enheten din mot annonser, sporere og skadelig programvare."
       ],
       "New": [
         "Ny"
@@ -7228,6 +7272,9 @@
       "Report link expired": [
         "Rapporter utløpt kobling"
       ],
+      "Request a phone call": [
+        "Be om en telefonsamtale"
+      ],
       "Resend verification email": [
         "Send verifiserings-e-post på nytt"
       ],
@@ -7412,8 +7459,14 @@
       "The calendar will be removed from your account.": [
         "Kalenderen vil bli fjernet fra kontoen din."
       ],
+      "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
+        "Det mørke nettet er en skjult del av internett hvor stjålet personlig informasjon, som identiteter, kan kjøpes og selges."
+      ],
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "E-postverifiseringskoblingen er utløpt. Vennligst logg på for å sende en verifiseringskobling på nytt."
+      ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "Den eksponerte informasjonen ble lekket fra en tredjepartstjeneste. ${ BRAND_NAME }-kontoinformasjonen din forblir sikker og kryptert. ${ learnMoreLink }."
       ],
       "The following address is available:": [
         "Den følgende adressen er tilgjengelig:"
@@ -7694,14 +7747,8 @@
       "URL link": [
         "Kobling til nettadresse"
       ],
-      "Use ${ BRAND_NAME } Pass to generate strong passwords and avoid password re-use": [
-        "Bruk ${ BRAND_NAME } Pass for å generere sterke passord og unngå gjenbruk av passord"
-      ],
-      "Use ${ VPN_APP_NAME } with Netshield enabled to protect you from phishing and malware": [
-        "Bruk ${ VPN_APP_NAME } med NetShield aktivert for å beskytte deg mot nettfisking og skadelig programvare"
-      ],
-      "Use aliases to sign up for online services. This protects your real email address and identity, limiting the blast radius of a breach.": [
-        "Bruk aliaser for å registrere deg for nettjenester. Dette beskytter din virkelige e-postadresse og identitet, og begrenser eksplosjonsradiusen til et datainnbrudd."
+      "Use a password manager to generate and securely store your passwords, ensuring strong passwords and easier sign-ins.": [
+        "Bruk en passordbehandler til å generere og lagre passordene dine på en sikker måte, noe som sikrer sterke passord og enklere pålogginger."
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Bruk den beste tjeneren i henhold til gjeldende belastning og posisjon: ${ formattedBestServerName }"
@@ -7757,14 +7804,14 @@
       "Want servers in other countries?": [
         "Vil du ha tjenere i andre land?"
       ],
+      "Want to learn more?": [
+        "Vil du lære mer?"
+      ],
       "Warning:": [
         "Advarsel:"
       ],
       "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
         "Advarsel: sletting er permanent. Dette fjerner også tilgang til alle tilkoblede tjenester og sletter alle dine kontakter."
-      ],
-      "Ways you can minimize your breach risks": [
-        "Måter du kan minimere datainnbruddrisikoen på"
       ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Vi råder deg til å bruke offisielle ${ VPN_APP_NAME }-applikasjoner når mulig."
@@ -7778,8 +7825,8 @@
       "We just sent you a new link.": [
         "Vi sendte deg nettopp en kobling."
       ],
-      "We monitor your email addresses, passwords, and personal data for appearances on the dark web and notify you in case your data is compromised.": [
-        "Vi overvåker e-postadressene, passordene og personopplysningene dine for opptredener på det mørke nettet og varsler deg i tilfelle dataene dine blir kompromittert."
+      "We monitor the dark web for instances where your personal information (such as an email address or password used on a third-party site) is leaked or compromised. ${ dataBreachLink }": [
+        "Vi overvåker det mørke nettet for tilfeller der din personlige informasjon (som en e-postadresse eller passord brukt på en tredjepartsside) lekkes eller kompromitteres. ${ dataBreachLink }."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Vi trenger å autentisere betalingsmåten med banken din."
@@ -7858,6 +7905,9 @@
       ],
       "Why?": [
         "Hvorfor?"
+      ],
+      "Will soon be available.": [
+        "Vil snart bli tilgjengelig."
       ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "Med en Business- eller Enterprise-plan kan du kjøpe ${ boldDedicatedServers } for organisasjonen din, og konfigurere ${ boldGateways } for å kontrollere hvilke brukere som har tilgang til dem."
@@ -8082,6 +8132,9 @@
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Din informasjon er trygg hos oss. Vi kontakter deg kun når det kreves for å tilby våre tjenester."
       ],
+      "Your information was found on ${ displayedDate }": [
+        "Informasjonen din ble funnet den ${ displayedDate }."
+      ],
       "Your login information will not be saved after the import is completed.": [
         "Påloggingsinformasjonen lagres ikke etter at importen er fullført."
       ],
@@ -8114,17 +8167,9 @@
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Støttesaken din er stengt. Takk for at du kontaktet kundestøtte for ${ BRAND_NAME }."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Flere dupliserte nøkler oppdaget. Vennligst last opp individuelt for mer informasjon."
       ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Nøkkel ${ fingerprint } er allerede blitt lastet opp"
-      ],
-      "Selected color:": [
-        "Valgt farge:"
+      "Zoom meeting": [
+        "Zoom-møte"
       ]
     },
     "Info - folder colouring feature": {
@@ -9711,6 +9756,9 @@
       "Sign in": [
         "Logg på"
       ],
+      "stay safer online": [
+        "holder deg tryggere på nettet"
+      ],
       "switch account": [
         "bytt konto"
       ],
@@ -10691,6 +10739,17 @@
         "Teamledelse"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Ellers blir tilgangen til kontoen din begrenset, og kontoen din vil til slutt bli deaktivert."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "For å fortsette å bruke ${ trialPlanName } med premiumfunksjoner, velg abonnements- og betalingsalternativer."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Prøveversjonen utløper ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } slutter på ${ last4 }"
@@ -10790,17 +10849,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Du får en kampanjepris på det nåværende abonnementet ditt. Hvis du nedgraderer kontoen vil du miste kampanjeprisen og den vil ikke være tilgjengelig hvis du forsøker å abonnere igjen."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Ellers blir tilgangen til kontoen din begrenset, og kontoen din vil til slutt bli deaktivert."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "For å fortsette å bruke ${ trialPlanName } med premiumfunksjoner, velg abonnements- og betalingsalternativer."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Prøveversjonen utløper ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -13985,17 +14033,11 @@
       "Billing cycle": [
         "Faktureringssyklus"
       ],
-      "Breach Alerts": [
-        "Varsler om datainnbrudd"
+      "Block trackers and malware": [
+        "Blokkér sporere og skadelig programvare"
       ],
-      "Breach Date": [
-        "Dato for datainnbrudd"
-      ],
-      "Breach Information": [
-        "Informasjon om datainnbrudd"
-      ],
-      "Breach Size": [
-        "Størrelse for datainnbrudd"
+      "Breach Alert": [
+        "Varsel om datainnbrudd"
       ],
       "Bridge for ${ platform }": [
         "Bridge for ${ platform }"
@@ -14197,6 +14239,9 @@
       "Delete version history?": [
         "Slette versjonshistorikk?"
       ],
+      "Details": [
+        "Detaljer"
+      ],
       "Disable ${ email }": [
         "Deaktiver ${ email }"
       ],
@@ -14310,9 +14355,6 @@
       ],
       "Export public key": [
         "Eksporter offentlig nøkkel"
-      ],
-      "Exposed info": [
-        "Eksponert info"
       ],
       "External PGP settings": [
         "Eksterne PGP-innstillinger"
@@ -14454,9 +14496,6 @@
       "Link confirmation": [
         "Bekreftelse av kobling"
       ],
-      "Location": [
-        "Plassering"
-      ],
       "Login password": [
         "Påloggingspassord"
       ],
@@ -14493,6 +14532,9 @@
       "No recovery method": [
         "Ingen gjenopprettingsmetode"
       ],
+      "Open": [
+        "Åpen"
+      ],
       "Open actions dropdown": [
         "Åpne rullegardinmeny for handlinger"
       ],
@@ -14522,6 +14564,9 @@
       ],
       "Password reset settings": [
         "Innstillinger for tilbakestilling av passord"
+      ],
+      "Passwords made easy": [
+        "Passord på en enkel måte"
       ],
       "Pay invoice": [
         "Betal faktura"
@@ -14600,6 +14645,9 @@
       ],
       "Reset password?": [
         "Tilbakestille passord?"
+      ],
+      "Resolved": [
+        "Løst"
       ],
       "Restore administrator privileges": [
         "Gjenopprett administratorrettigheter"
@@ -14815,6 +14863,12 @@
       "We'll send an email to your new address with instructions on completing the change.": [
         "Vi vil sende deg en e-post til din nye adresse med instruksjoner om hvordan du fullfører endringen."
       ],
+      "What is an alias?": [
+        "Hva er et alias?"
+      ],
+      "What is the dark web?": [
+        "Hva er det mørke nettet?"
+      ],
       "What would you like to import?": [
         "Hva ønsker du å importere?"
       ],
@@ -14830,7 +14884,7 @@
       "Your changes are not synced yet": [
         "Endringene dine er ikke synkronisert enda"
       ],
-      "Your Exposed Information": [
+      "Your exposed information": [
         "Din eksponerte informasjon"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [

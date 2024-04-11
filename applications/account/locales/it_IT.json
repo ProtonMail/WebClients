@@ -104,9 +104,6 @@
       "Add notification": [
         "Aggiungi notifica"
       ],
-      "Add or switch account": [
-        "Aggiungi o cambia account"
-      ],
       "Add PayPal": [
         "Aggiungi PayPal"
       ],
@@ -614,6 +611,12 @@
       "Mark as default": [
         "Segna come predefinito"
       ],
+      "Mark as open": [
+        "Segna come aperto"
+      ],
+      "Mark as resolved": [
+        "Segna come risolto"
+      ],
       "mark emails as": [
         "segna le email come"
       ],
@@ -988,9 +991,6 @@
       ],
       "Unlock Breach Report": [
         "Sblocca il rapporto sulla violazione di dati"
-      ],
-      "Unlock breach reports": [
-        "Sblocca i rapporti sulle violazioni di dati"
       ],
       "Unlock data": [
         "Sblocca dati"
@@ -5877,6 +5877,17 @@
         "Parte del contenuto del calendario non è supportata e non sarà importata."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Rilevate chiavi aggiuntive duplicate. Caricale singolarmente per maggiori informazioni."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "La chiave ${ fingerprint } è già stata caricata"
+      ],
+      "Selected color:": [
+        "Colore selezionato:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } ha bisogno della tua autorizzazione per ${ enableDesktopNotifications }."
@@ -5889,6 +5900,9 @@
       ],
       "${ BRAND_NAME } is privacy you can trust, ensured by strong encryption, open-source code, and Swiss privacy laws. We believe nobody should be able to exploit your data, period. Our technology and business are based upon this fundamentally stronger definition of privacy.": [
         "${ BRAND_NAME } è la privacy di cui ti puoi fidare, garantita da crittografia avanzata, codice open-source e leggi svizzere sulla privacy. Crediamo che nessuno dovrebbe essere in grado di sfruttare i tuoi dati. La nostra tecnologia e il nostro business si basano su questa definizione fondamentale di privacy."
+      ],
+      "${ BRAND_NAME } never shares your information with third parties. Data comes from  ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
+        "${ BRAND_NAME } non condivide mai le tue informazioni con terze parti. I dati provengono dalle analisi di ${ BRAND_NAME } e da Constella Intelligence."
       ],
       "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "${ BRAND_NAME } ha messo in pausa un'importazione perché ha perso la connessione con il tuo altro fornitore di posta elettronica. Per favore riconnettiti."
@@ -6187,6 +6201,9 @@
       "Amount due": [
         "Importo da pagare"
       ],
+      "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
+        "Un alias email funziona come un indirizzo email, ma riduce lo spam e mantiene nascosti il tuo indirizzo email e la tua reale identità."
+      ],
       "An error occurred while communicating with the extension": [
         "Si è verificato un errore durante la connessione all'estensione"
       ],
@@ -6321,9 +6338,6 @@
       ],
       "Blocks senders from seeing if and when you opened a message.": [
         "Impedisce ai mittenti di vedere se e quando hai aperto un messaggio."
-      ],
-      "Breach Alert is powered by ${ BRAND_NAME }'s propietary datasets, open-source datasets, and Constella Intelligence. ${ dataBreachLink }": [
-        "Gli avvisi sulla violazione di dati si basano sui set di dati proprietari di ${ BRAND_NAME }, sui set di dati open source e su Constella Intelligence. ${ dataBreachLink }"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Declassando ad un piano gratuito, perderai definitivamente questi benefici, anche se in futuro effettuerai un nuovo upgrade."
@@ -6665,6 +6679,9 @@
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "Ottieni l'accesso creando un account ${ BRAND_NAME } e accettando l'invito."
       ],
+      "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
+        "Ricevi una notifica se la tua password o altri dati personali vengono resi pubblici. ${ learnMoreLinkNoBreach }"
+      ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "Assegna al token un nome descrittivo, some il servizio con cui pensi di usarlo, e seleziona uno dei tuoi indirizzi di dominio personalizzati attivi. Solamente questo indirizzo potrà inviare email con questo token."
       ],
@@ -6737,11 +6754,11 @@
       "If you wish to combine this account with another one, do NOT delete it.": [
         "Se desideri combinare questo account con un altro, NON eliminarlo."
       ],
-      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } (or Zoom meet) with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
-        "Se riscontri problemi, siamo qui per aiutarti. ${ boldPhoneCall } (o meeting Zoom) con uno dei nostri specialisti dell'assistenza oppure apri una ${ boldLiveChat } per ricevere assistenza via chat."
+      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
+        "Se riscontri problemi, siamo qui per aiutarti. ${ boldPhoneCall } o ${ boldZoomMeeting } con uno dei nostri specialisti dell'assistenza oppure apri una ${ boldLiveChat } per ricevere assistenza via chat."
       ],
-      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } (or Zoom meet) with one of our support specialists.": [
-        "Se riscontri problemi, siamo qui per aiutarti. ${ boldPhoneCall } (o meeting Zoom) con uno dei nostri specialisti dell'assistenza."
+      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists.": [
+        "Se riscontri problemi, siamo qui per aiutarti. ${ boldPhoneCall } o ${ boldZoomMeeting } con uno dei nostri specialisti dell'assistenza."
       ],
       "Image description": [
         "Descrizione immagine"
@@ -6841,6 +6858,9 @@
       "Just send them your personal referral link.": [
         "Invia loro il tuo link di riferimento personale."
       ],
+      "Keep your info more secure and private with these guides and tips.": [
+        "Mantieni le tue informazioni più sicure e private con queste guide e suggerimenti."
+      ],
       "Key deletion is irreversible!": [
         "L'eliminazione della chiave è irreversibile!"
       ],
@@ -6858,6 +6878,9 @@
       ],
       "Lean more about gateways": [
         "Scopri di più sui gateway"
+      ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Scopri come ${ staySaferOnlineLink }"
       ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Scopri come accedere a ${ VPN_APP_NAME } con applicazioni VPN di terze parti."
@@ -6966,6 +6989,9 @@
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Dai un nome alla tua cartella e seleziona la cartella principale nella quale verrà contenuta. Se non selezioni una cartella principale, questa nuova cartella verrà creata come una cartella di primo livello."
+      ],
+      "NetShield is an ad-blocking feature from ${ VPN_APP_NAME } that protects your device from ads, trackers, and malware.": [
+        "NetShield è una funzionalità di blocco degli annunci di ${ VPN_APP_NAME } che protegge il tuo dispositivo da annunci, tracker e malware."
       ],
       "New": [
         "Nuovo"
@@ -7452,8 +7478,14 @@
       "The calendar will be removed from your account.": [
         "Il calendario verrà rimosso dal tuo account."
       ],
+      "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
+        "Il dark web è una parte nascosta di Internet in cui le informazioni personali rubate, come le identità, possono essere acquistate e vendute."
+      ],
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "Il link di verifica dell'email è scaduto. Effettua il login per reinviare un link di verifica."
+      ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "Le informazioni sono state rese pubbliche da un servizio di terze parti. Quelle relative al tuo account ${ BRAND_NAME } rimangono sicure e crittografate. ${ learnMoreLink }"
       ],
       "The following address is available:": [
         "Il seguente indirizzo email è disponibile:"
@@ -7734,14 +7766,8 @@
       "URL link": [
         "Link URL"
       ],
-      "Use ${ BRAND_NAME } Pass to generate strong passwords and avoid password re-use": [
-        "Utilizza ${ BRAND_NAME } Pass per generare password complesse ed evitarne il riutilizzo"
-      ],
-      "Use ${ VPN_APP_NAME } with Netshield enabled to protect you from phishing and malware": [
-        "Utilizza ${ VPN_APP_NAME } con Netshield abilitato per proteggerti da phishing e malware"
-      ],
-      "Use aliases to sign up for online services. This protects your real email address and identity, limiting the blast radius of a breach.": [
-        "Utilizza gli alias per iscriverti ai servizi online. Proteggerai il tuo vero indirizzo email e la tua identità, limitando l'impatto di una violazione di dati."
+      "Use a password manager to generate and securely store your passwords, ensuring strong passwords and easier sign-ins.": [
+        "Utilizza un gestore di password per generare e conservare in modo sicuro le tue password, assicurandoti password complesse e accessi più semplici."
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Usa il miglior server in base al carico attuale e alla posizione: ${ formattedBestServerName }"
@@ -7797,14 +7823,14 @@
       "Want servers in other countries?": [
         "Desideri server in altri paesi?"
       ],
+      "Want to learn more?": [
+        "Vuoi saperne di più?"
+      ],
       "Warning:": [
         "Attenzione:"
       ],
       "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
         "Attenzione: l'eliminazione è permanente. Questo rimuove anche l'accesso a tutti i servizi connessi ed elimina tutti i tuoi contatti."
-      ],
-      "Ways you can minimize your breach risks": [
-        "Modi per ridurre al minimo i rischi di violazione di dati"
       ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Ti consigliamo di usare le applicazioni ufficiali di ${ VPN_APP_NAME } quando possibile."
@@ -7818,8 +7844,8 @@
       "We just sent you a new link.": [
         "Ti abbiamo appena inviato un nuovo link."
       ],
-      "We monitor your email addresses, passwords, and personal data for appearances on the dark web and notify you in case your data is compromised.": [
-        "Monitoriamo i tuoi indirizzi email, le tue password e i tuoi dati personali per verificare che non compaiano sul dark web e ti informiamo nel caso in cui siano stati compromessi."
+      "We monitor the dark web for instances where your personal information (such as an email address or password used on a third-party site) is leaked or compromised. ${ dataBreachLink }": [
+        "Monitoriamo il dark web per individuare i casi in cui le tue informazioni personali (come un indirizzo email o una password utilizzati su un sito di terze parti) vengano rese pubbliche o compromesse. ${ dataBreachLink }"
       ],
       "We need to authenticate your payment method with your bank.": [
         "Abbiamo bisogno di verificare il tuo metodo di pagamento con la tua banca."
@@ -7898,6 +7924,9 @@
       ],
       "Why?": [
         "Perché?"
+      ],
+      "Will soon be available.": [
+        "Disponibile a breve."
       ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "Con un piano Business o Enterprise, puoi acquistare ${ boldDedicatedServers } per la tua organizzazione e configurare ${ boldGateways } per controllare quali utenti possono accedervi."
@@ -8122,6 +8151,9 @@
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Le tue informazioni sono al sicuro con noi. Ti contatteremo solo quando sarà necessario per fornire i nostri servizi."
       ],
+      "Your information was found on ${ displayedDate }": [
+        "Le tue informazioni sono state trovate il ${ displayedDate }"
+      ],
       "Your login information will not be saved after the import is completed.": [
         "Le informazioni di accesso non verranno salvate dopo il completamento dell'importazione."
       ],
@@ -8154,17 +8186,9 @@
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Il tuo ticket di supporto è stato chiuso. Grazie per aver contattato l'assistenza di ${ BRAND_NAME }."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Rilevate chiavi aggiuntive duplicate. Caricale singolarmente per maggiori informazioni."
       ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "La chiave ${ fingerprint } è già stata caricata"
-      ],
-      "Selected color:": [
-        "Colore selezionato:"
+      "Zoom meeting": [
+        "Meeting Zoom"
       ]
     },
     "Info - folder colouring feature": {
@@ -9706,6 +9730,9 @@
       "here": [
         "qui"
       ],
+      "How does monitoring work?": [
+        "Come funziona il monitoraggio?"
+      ],
       "How to pay with Bitcoin?": [
         "Come pagare con Bitcoin?"
       ],
@@ -9750,6 +9777,9 @@
       ],
       "Sign in": [
         "Accedi"
+      ],
+      "stay safer online": [
+        "stai più sicuro online"
       ],
       "switch account": [
         "cambia account"
@@ -9845,6 +9875,9 @@
       ],
       "Enable authentication logs": [
         "Abilita i log di autenticazione"
+      ],
+      "Enable Breach Alert": [
+        "Abilita gli avvisi sulle violazioni di dati"
       ]
     },
     "Mail import summary": {
@@ -10731,6 +10764,17 @@
         "Gestione del team"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "In caso contrario, l'accesso al tuo account sarà limitato e il tuo account verrà di seguito disabilitato."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Per continuare a utilizzare ${ trialPlanName } con le funzionalità premium, scegli l'abbonamento e le opzioni di pagamento."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "La tua prova termina ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } che termina con ${ last4 }"
@@ -10830,17 +10874,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Stai godendo di un prezzo promozionale sul tuo piano attuale. Se esegui il downgrade del tuo account, perderai la possibilità di usufruire di questa promozione e non sarà più disponibile se provi ad abbonarti di nuovo."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "In caso contrario, l'accesso al tuo account sarà limitato e il tuo account verrà di seguito disabilitato."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Per continuare a utilizzare ${ trialPlanName } con le funzionalità premium, scegli l'abbonamento e le opzioni di pagamento."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "La tua prova termina ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -12485,6 +12518,11 @@
         "Utente"
       ]
     },
+    "Security Center - Info": {
+      "Your information was found in at least one data breach. Turn on Breach Alert to view details and take action. ${ learnMoreLinkBreach }": [
+        "Le tue informazioni sono state trovate in almeno una violazione di dati. Attiva gli avvisi sulle violazioni di dati per visualizzare i dettagli e le azioni da seguire. ${ learnMoreLinkBreach }"
+      ]
+    },
     "Select file": {
       "Upload CSV file": [
         "Carica un file CSV"
@@ -14031,17 +14069,11 @@
       "Billing cycle": [
         "Ciclo di fatturazione"
       ],
-      "Breach Alerts": [
-        "Avvisi sulle violazioni di dati"
+      "Block trackers and malware": [
+        "Blocca tracker e malware"
       ],
-      "Breach Date": [
-        "Data della violazione di dati"
-      ],
-      "Breach Information": [
-        "Informazioni sulla violazione di dati"
-      ],
-      "Breach Size": [
-        "Dimensione della violazione di dati"
+      "Breach Alert": [
+        "Avviso sulle violazioni di dati"
       ],
       "Bridge for ${ platform }": [
         "Bridge per ${ platform }"
@@ -14243,6 +14275,9 @@
       "Delete version history?": [
         "Vuoi eliminare la cronologia delle versioni?"
       ],
+      "Details": [
+        "Dettagli"
+      ],
       "Disable ${ email }": [
         "Disattiva ${ email }"
       ],
@@ -14356,9 +14391,6 @@
       ],
       "Export public key": [
         "Esporta chiave pubblica"
-      ],
-      "Exposed info": [
-        "Informazioni esposte"
       ],
       "External PGP settings": [
         "Impostazioni PGP esterno"
@@ -14500,9 +14532,6 @@
       "Link confirmation": [
         "Conferma il link"
       ],
-      "Location": [
-        "Posizione"
-      ],
       "Login password": [
         "Password di accesso"
       ],
@@ -14539,6 +14568,9 @@
       "No recovery method": [
         "Nessun metodo di recupero"
       ],
+      "Open": [
+        "Aperto"
+      ],
       "Open actions dropdown": [
         "Apri menu delle azioni"
       ],
@@ -14568,6 +14600,9 @@
       ],
       "Password reset settings": [
         "Reimpostazione della password"
+      ],
+      "Passwords made easy": [
+        "Le password diventano semplici"
       ],
       "Pay invoice": [
         "Pagamento della fattura"
@@ -14646,6 +14681,9 @@
       ],
       "Reset password?": [
         "Vuoi reimpostare la password?"
+      ],
+      "Resolved": [
+        "Risolto"
       ],
       "Restore administrator privileges": [
         "Ripristina i privilegi di amministratore"
@@ -14861,6 +14899,12 @@
       "We'll send an email to your new address with instructions on completing the change.": [
         "Invieremo un'email al tuo nuovo indirizzo con le istruzioni su come completare il cambio."
       ],
+      "What is an alias?": [
+        "Cos'è un alias?"
+      ],
+      "What is the dark web?": [
+        "Cos'è il dark web?"
+      ],
       "What would you like to import?": [
         "Cosa vorresti importare?"
       ],
@@ -14876,8 +14920,8 @@
       "Your changes are not synced yet": [
         "Le tue modifiche non sono ancora sincronizzate"
       ],
-      "Your Exposed Information": [
-        "Le tue informazioni esposte"
+      "Your exposed information": [
+        "Le tue informazioni rese pubbliche"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "La tua prova gratuita di Mail Plus termina il giorno ${ textDate }"

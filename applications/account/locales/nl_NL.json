@@ -980,9 +980,6 @@
       "Unlock Breach Report": [
         "Open inbreuk rapport"
       ],
-      "Unlock breach reports": [
-        "Open inbreuk rapporten"
-      ],
       "Unlock data": [
         "Ontgrendel gegevens"
       ],
@@ -5826,6 +5823,17 @@
         "Een deel van je agenda-inhoud wordt niet ondersteund en zal niet worden geïmporteerd."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Extra dubbele sleutels gedetecteerd. Gelieve afzonderlijk te uploaden voor meer informatie."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Sleutel ${ fingerprint } is al geüpload"
+      ],
+      "Selected color:": [
+        "Geselecteerde kleur:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } heeft uw toestemming tot ${ enableDesktopNotifications } nodig."
@@ -6271,9 +6279,6 @@
       "Blocks senders from seeing if and when you opened a message.": [
         "Blokkeert dat afzenders kunnen zien of en wanneer u een bericht hebt geopend."
       ],
-      "Breach Alert is powered by ${ BRAND_NAME }'s propietary datasets, open-source datasets, and Constella Intelligence. ${ dataBreachLink }": [
-        "Melding wordt aangedreven door ${ BRAND_NAME }zijn propietaire datasets, open-source datasets en Constella Intelligence. ${ dataBreachLink }"
-      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Door het downgraden naar een gratis abonnement verliest u deze voordelen, zelfs als u in de toekomst opnieuw upgrade."
       ],
@@ -6568,9 +6573,6 @@
       ],
       "Failed to fetch logs.": [
         "Fout bij het ophalen van logs."
-      ],
-      "Fast and focused. Email and calendar, right on your desktop.": [
-        "Snel en gericht. E-mail en agenda, direct op uw bureaublad."
       ],
       "Fill in user details": [
         "Vul gebruikersgegevens in"
@@ -7659,15 +7661,6 @@
       "URL link": [
         "Website (URL)"
       ],
-      "Use ${ BRAND_NAME } Pass to generate strong passwords and avoid password re-use": [
-        "Gebruik ${ BRAND_NAME } Pass om sterke wachtwoorden te genereren en hergebruik van het wachtwoord te voorkomen"
-      ],
-      "Use ${ VPN_APP_NAME } with Netshield enabled to protect you from phishing and malware": [
-        "Gebruik ${ VPN_APP_NAME } met Netshield ingeschakeld om u te beschermen tegen phishing en malware."
-      ],
-      "Use aliases to sign up for online services. This protects your real email address and identity, limiting the blast radius of a breach.": [
-        "Gebruik aliassen om u aan te melden voor online diensten. Dit beschermt uw echte e-mailadres en identiteit, waardoor de impact van een inbreuk wordt beperkt."
-      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Gebruik de beste servers volgens de huidige belasting en positie: ${ formattedBestServerName }"
       ],
@@ -7728,9 +7721,6 @@
       "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
         "Waarschuwing: verwijdering is permanent. Dit verwijdert ook de toegang tot alle verbonden diensten en verwijdert al uw contacten."
       ],
-      "Ways you can minimize your breach risks": [
-        "Manieren om het risico op een datalek te verminderen."
-      ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "We raden u aan om officiële ${ VPN_APP_NAME }-applicaties te gebruiken waar mogelijk."
       ],
@@ -7742,9 +7732,6 @@
       ],
       "We just sent you a new link.": [
         "We hebben u een nieuwe link verzonden."
-      ],
-      "We monitor your email addresses, passwords, and personal data for appearances on the dark web and notify you in case your data is compromised.": [
-        "We houwen uw e-mailadressen, wachtwoorden en persoonlijke gegevens in de gaten op het dark web en stellen u op de hoogte als uw gegevens zijn buitgemaakt."
       ],
       "We need to authenticate your payment method with your bank.": [
         "We moeten uw betalingsmethode authenticeren met uw bank."
@@ -8079,17 +8066,6 @@
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Uw supportticket werd afgesloten. Bedankt om contact op te nemen met ${ BRAND_NAME }-ondersteuning."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Extra dubbele sleutels gedetecteerd. Gelieve afzonderlijk te uploaden voor meer informatie."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Sleutel ${ fingerprint } is al geüpload"
-      ],
-      "Selected color:": [
-        "Geselecteerde kleur:"
       ]
     },
     "Info - folder colouring feature": {
@@ -8641,9 +8617,6 @@
       ],
       "Awarded": [
         "Toegekend"
-      ],
-      "Beta": [
-        "Bèta"
       ],
       "Billing address": [
         "Facturatie adres"
@@ -10647,6 +10620,17 @@
         "Teambeheer"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Anders zal de toegang tot uw account worden beperkt en wordt uw account uiteindelijk uitgeschakeld."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Om ${ trialPlanName } te blijven gebruiken met premium functies, kiest u uw abonnement en betaalwijze."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Uw proefperiode eindigt op ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } eindigend met ${ last4 }"
@@ -10746,17 +10730,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "U profiteert van een kortingsprijs op uw huidige abonnement. Als u uw account downgradet, raakt u de korting kwijt en is dit abonnement niet meer beschikbaar wanneer u een nieuw abonnement wilt afsluiten."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Anders zal de toegang tot uw account worden beperkt en wordt uw account uiteindelijk uitgeschakeld."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Om ${ trialPlanName } te blijven gebruiken met premium functies, kiest u uw abonnement en betaalwijze."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Uw proefperiode eindigt op ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -13917,18 +13890,6 @@
       "Billing cycle": [
         "Factuurperiode"
       ],
-      "Breach Alerts": [
-        "Inbreukwaarschuwingen"
-      ],
-      "Breach Date": [
-        "Datum inbreuk"
-      ],
-      "Breach Information": [
-        "Inbreuk informatie"
-      ],
-      "Breach Size": [
-        "Grootte inbreuk"
-      ],
       "Bridge for ${ platform }": [
         "Bridge voor ${ platform }"
       ],
@@ -14243,9 +14204,6 @@
       "Export public key": [
         "Openbare sleutel exporteren"
       ],
-      "Exposed info": [
-        "Gelekte informatie"
-      ],
       "External PGP settings": [
         "Externe PGP-instellingen"
       ],
@@ -14267,15 +14225,6 @@
       ],
       "Folders and labels": [
         "Mappen en labels"
-      ],
-      "For Linux": [
-        "Voor Linux"
-      ],
-      "For macOS": [
-        "Voor macOS"
-      ],
-      "For Windows": [
-        "Voor Windows"
       ],
       "Forward and auto-reply": [
         "Doorsturen en automatisch beantwoorden"
@@ -14385,9 +14334,6 @@
       ],
       "Link confirmation": [
         "Link bevestigen"
-      ],
-      "Location": [
-        "Locatie"
       ],
       "Login password": [
         "Inlogwachtwoord"
@@ -14761,9 +14707,6 @@
       ],
       "Your changes are not synced yet": [
         "Uw wijzigingen zijn nog niet gesynchroniseerd"
-      ],
-      "Your Exposed Information": [
-        "Uw gelekte informatie"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Uw Mail Plus proefversie eindigt op ${ textDate }"
