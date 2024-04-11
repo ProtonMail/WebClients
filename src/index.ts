@@ -34,6 +34,10 @@ import {
 import { handleSquirrelEvents } from "./windows/squirrel";
 import pkg from "../package.json";
 
+// Log initialization
+Logger.initialize({ preload: true });
+Logger.info("App start is mac:", isMac, "is windows:", isWindows, "isLinux:", isLinux);
+
 // Handle squirrel events at the very top of the application
 handleSquirrelEvents();
 
@@ -46,10 +50,6 @@ saveAppID();
 if (!app.isPackaged) {
     app.commandLine.appendSwitch("ignore-certificate-errors");
 }
-
-// Log initialization
-Logger.initialize({ preload: true });
-Logger.info("App start is mac:", isMac, "is windows:", isWindows, "isLinux:", isLinux);
 
 // Move uninstaller on macOS
 moveUninstaller();
