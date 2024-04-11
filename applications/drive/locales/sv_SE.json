@@ -409,6 +409,9 @@
       "Manage link": [
         "Hantera länk"
       ],
+      "Mark as resolved": [
+        "Markera som löst"
+      ],
       "Mark for deletion": [
         "Markera för borttagning"
       ],
@@ -2043,9 +2046,6 @@
       "Your account and data recovery methods are set.": [
         "Ditt konto och dina dataåterställningsmetoder är inställda."
       ],
-      "Your information was found in at least one data breach.": [
-        "Din information hittades i minst ett dataintrång."
-      ],
       "Your personal data was leaked by an online service in a data breach. View full details and get recommended actions.": [
         "Dina personuppgifter läcktes av en onlinetjänst i ett dataintrång. Visa alla detaljer och få rekommenderade åtgärder."
       ]
@@ -3583,8 +3583,8 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Innan du begär en ny verifieringskod, kontrollera din skräppostmapp och kontrollera att ${ strong } är rätt adress."
       ],
-      "Breach alerts": [
-        "Intrångsvarningar"
+      "Breach Alert": [
+        "Intrångsvarning"
       ],
       "Calendar side panel": [
         "Kalenderns sidopanel"
@@ -3968,6 +3968,9 @@
       "Last week": [
         "Förra veckan"
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Lär dig hur man ${ staySaferOnlineLink }"
+      ],
       "Learn more": [
         "Lär dig mer"
       ],
@@ -3982,6 +3985,9 @@
       ],
       "Loading ${ appName }": [
         "Laddar ${ appName }"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Laddar kalender, vänta. Du kommer att omdirigeras till vår schemaläggningsplattform Calendly i en ny flik."
       ],
       "Loading link": [
         "Laddar länk"
@@ -4507,9 +4513,6 @@
       "Version is restored": [
         "Version är återställd"
       ],
-      "View details": [
-        "Visa detaljer"
-      ],
       "Want to sync files faster?": [
         "Vill du synkronisera filer snabbare?"
       ],
@@ -4639,6 +4642,9 @@
       ],
       "Your files will be encrypted and then saved.": [
         "Dina filer kommer krypteras och sedan sparas."
+      ],
+      "Your information was found on ${ displayedDate }": [
+        "Din information hittades den ${ displayedDate }"
       ],
       "Your login information will not be saved after the import is completed.": [
         "Dina inloggningsuppgifter kommer inte att sparas när importen är slutförd."
@@ -5284,6 +5290,9 @@
       ],
       "Shared with me": [
         "Delat med mig"
+      ],
+      "stay safer online": [
+        "var säkrare online"
       ],
       "Trash": [
         "Papperskorg"
@@ -6345,8 +6354,8 @@
       ]
     },
     "Security Center - Info": {
-      "Get notified if your password or other personal data was leaked.": [
-        "Bli aviserad om ditt lösenord eller andra personliga uppgifter har läckt."
+      "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
+        "Bli aviserad om ditt lösenord eller annan data har läckt från en tredjepartstjänst. ${ learnMoreLink }"
       ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Vår banbrytande AI-drivna säkerhetslösning designad för användare som söker utökat skydd för sina konton. ${ learnMoreLink }"
@@ -7073,20 +7082,8 @@
       "Birthday": [
         "Födelsedag"
       ],
-      "Breach alerts": [
-        "Intrångsvarningar"
-      ],
-      "Breach Date": [
-        "Intrångsdatum"
-      ],
-      "Breach detected": [
-        "Intrång upptäckt"
-      ],
-      "Breach Information": [
-        "Intrångsinformation"
-      ],
-      "Breach Size": [
-        "Storlek på intrång"
+      "Breach Alert": [
+        "Intrångsvarning"
       ],
       "Browser might run out of memory": [
         "Webbläsaren kan få slut på minne"
@@ -7174,6 +7171,9 @@
       "Deleting contacts": [
         "Tar bort kontakter"
       ],
+      "Details": [
+        "Detaljer"
+      ],
       "Discard": [
         "Förkasta"
       ],
@@ -7236,9 +7236,6 @@
       ],
       "Exporting contacts": [
         "Exporterar kontakter"
-      ],
-      "Exposed info": [
-        "Exponeringsinformation"
       ],
       "Failed": [
         "Misslyckades"
@@ -7551,8 +7548,8 @@
       "Your changes are not synced yet": [
         "Dina ändringar är inte synkroniserade än"
       ],
-      "Your Exposed Information": [
-        "Din exponeringsinformation"
+      "Your exposed information": [
+        "Din exponerade information"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Din gratis provperiod för Mail Plus slutar den ${ textDate }"
