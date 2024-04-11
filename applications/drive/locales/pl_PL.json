@@ -415,6 +415,12 @@
       "Manage link": [
         "Zarządzaj linkiem"
       ],
+      "Mark as open": [
+        "Oznacz jako nierozwiązane"
+      ],
+      "Mark as resolved": [
+        "Oznacz jako rozwiązane"
+      ],
       "Mark for deletion": [
         "Oznacz do usunięcia"
       ],
@@ -531,6 +537,9 @@
       ],
       "Report an issue": [
         "Zgłoś problem"
+      ],
+      "Request a call": [
+        "Poproś o rozmowę"
       ],
       "Request a feature": [
         "Poproś o dodatkową funkcję"
@@ -2048,9 +2057,6 @@
       ],
       "Your account and data recovery methods are set.": [
         "Metody odzyskiwania konta i danych są włączone."
-      ],
-      "Your information was found in at least one data breach.": [
-        "Twoje informacje zostały znalezione w co najmniej jednym wycieku danych."
       ],
       "Your personal data was leaked by an online service in a data breach. View full details and get recommended actions.": [
         "Twoje dane zostały ujawnione w wycieku danych. Pokaż szczegóły i zalecane kroki."
@@ -3692,8 +3698,8 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Przed poproszeniem o nowy kod weryfikacyjny, sprawdź folder Spam i poprawność adresu ${ strong }."
       ],
-      "Breach alerts": [
-        "Alerty wycieków"
+      "Breach Alert": [
+        "Alert wycieków"
       ],
       "Calendar side panel": [
         "Panel boczny kalendarza"
@@ -4082,6 +4088,9 @@
       "Last week": [
         "Ostatni tydzień"
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Dowiedz się, jak ${ staySaferOnlineLink }"
+      ],
       "Learn more": [
         "Dowiedz się więcej"
       ],
@@ -4412,6 +4421,9 @@
       "Shared link not found": [
         "Udostępniony link nie został znaleziony"
       ],
+      "Shared with me": [
+        "Udostępnione Tobie"
+      ],
       "Sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
         "Załóż konto ${ DRIVE_APP_NAME }. Chroń swoje dane za pomocą szyfrowania end-to-end i bezpiecznie udostępniaj pliki."
       ],
@@ -4459,6 +4471,9 @@
       ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
         "Zaszyfrowane dane zajmują więcej miejsca ze względu na proces szyfrowania oraz podpisy zapewniające bezpieczeństwo danych."
+      ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "Twoje informacje zostały ujawnione przez usługi stron trzecich. Informacje konta ${ BRAND_NAME } pozostają bezpieczne i zaszyfrowane. ${ learnMoreLink }"
       ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Poniższe elementy mogły zostać naruszone: ${ items }. Otwórz te elementy tylko wtedy, kiedy masz do nich zaufanie."
@@ -4628,9 +4643,6 @@
       "Version is restored": [
         "Wersja została przywrócona"
       ],
-      "View details": [
-        "Pokaż szczegóły"
-      ],
       "Want to sync files faster?": [
         "Chcesz szybciej synchronizować pliki?"
       ],
@@ -4751,6 +4763,12 @@
       "Your download is in progress": [
         "Pobieranie jest w toku"
       ],
+      "Your email address and password were leaked:": [
+        "Twój adres e-mail i hasło zostało ujawnione:"
+      ],
+      "Your email address was exposed:": [
+        "Twój adres e-mail został ujawniony:"
+      ],
       "Your email will only be used for this one-time verification.": [
         "Adres e-mail zostanie użyty tylko do jednorazowej weryfikacji."
       ],
@@ -4765,6 +4783,9 @@
       ],
       "Your login information will not be saved after the import is completed.": [
         "Twoje dane logowania, po ukończeniu importu, zostaną usunięte."
+      ],
+      "Your password was leaked:": [
+        "Twoje hasło zostało ujawnione:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Numer telefonu zostanie użyty tylko do jednorazowej weryfikacji."
@@ -5240,6 +5261,12 @@
       "Set recovery method": [
         "Ustaw metodę odzyskiwania"
       ],
+      "Shared by": [
+        "Udostępnione przez"
+      ],
+      "Shared on": [
+        "Udostępnione"
+      ],
       "Show indexing progress of Encrypted Search": [
         "Pokaż postęp indeksowania wyszukiwania zawartości"
       ],
@@ -5402,6 +5429,12 @@
       ],
       "Shared": [
         "Udostępnione"
+      ],
+      "Shared with me": [
+        "Udostępnione Tobie"
+      ],
+      "stay safer online": [
+        "zachować bezpieczeństwo online"
       ],
       "Trash": [
         "Kosz"
@@ -6083,6 +6116,9 @@
       "Encrypted search activated": [
         "Wyszukiwanie zawartości zostało włączone"
       ],
+      "Failed to accept share invitation": [
+        "Nie udało się zaakceptować zaproszenia"
+      ],
       "Failed to download files: ${ err }": [
         "Nie udało się pobrać plików: ${ err }"
       ],
@@ -6130,6 +6166,9 @@
       ],
       "Root folder failed to be loaded": [
         "Załadowanie głównego folderu nie powiodło się"
+      ],
+      "Share invitation accepted successfully": [
+        "Zaproszenie zostało zaakceptowane"
       ],
       "Subfolder failed to be loaded": [
         "Załadowanie podfolderu nie powiodło się"
@@ -6516,9 +6555,6 @@
       ]
     },
     "Security Center - Info": {
-      "Get notified if your password or other personal data was leaked.": [
-        "Otrzymaj powiadomienie o wycieku swojego hasła i innych danych osobowych."
-      ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Nasze najnowocześniejsze rozwiązanie bezpieczeństwa oparte na sztucznej inteligencji zaprojektowane dla użytkowników poszukujących zwiększonej ochrony swoich kont. ${ learnMoreLink }"
       ],
@@ -7308,20 +7344,8 @@
       "Birthday": [
         "Urodziny"
       ],
-      "Breach alerts": [
-        "Alerty wycieków"
-      ],
-      "Breach Date": [
-        "Dane wycieku"
-      ],
-      "Breach detected": [
-        "Wykryto wyciek"
-      ],
-      "Breach Information": [
-        "Informacje o wycieku"
-      ],
-      "Breach Size": [
-        "Rozmiar wycieku"
+      "Breach Alert": [
+        "Alert wycieków"
       ],
       "Browser might run out of memory": [
         "Brak pamięci przeglądarki"
@@ -7413,6 +7437,9 @@
       "Deleting contacts": [
         "Usuwanie kontaktów"
       ],
+      "Details": [
+        "Szczegóły"
+      ],
       "Discard": [
         "Odrzuć"
       ],
@@ -7472,9 +7499,6 @@
       ],
       "Exporting contacts": [
         "Eksportowanie kontaktów"
-      ],
-      "Exposed info": [
-        "Ujawnione informacje"
       ],
       "Failed": [
         "Niepowodzenie"
@@ -7680,6 +7704,9 @@
       "Shared": [
         "Udostępnione"
       ],
+      "Shared with me": [
+        "Udostępnione Tobie"
+      ],
       "Show actions": [
         "Pokaż akcje"
       ],
@@ -7788,8 +7815,8 @@
       "Your changes are not synced yet": [
         "Zmiany nie zostały zsynchronizowane"
       ],
-      "Your Exposed Information": [
-        "Twoje ujawnione informacje"
+      "Your exposed information": [
+        "Twoje ujawnione informacje:"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Darmowa wersja próbna planu Mail Plus zakończy się ${ textDate }"
