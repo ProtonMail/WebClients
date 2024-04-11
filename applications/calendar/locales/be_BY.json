@@ -366,6 +366,12 @@
       "Manage labels": [
         "Кіраванне меткамі"
       ],
+      "Mark as open": [
+        "Пазначыць як адкрытае"
+      ],
+      "Mark as resolved": [
+        "Пазначыць як вырашанае"
+      ],
       "Mark for deletion": [
         "Пазначыць для выдалення"
       ],
@@ -482,6 +488,9 @@
       ],
       "Report a problem": [
         "Паведаміць аб праблеме"
+      ],
+      "Request a call": [
+        "Запытаць званок"
       ],
       "Request a feature": [
         "Запытаць функцыю"
@@ -2303,9 +2312,6 @@
       "Your account and data recovery methods are set.": [
         "Спосабы аднаўлення вашага ўліковага запісу зададзены."
       ],
-      "Your information was found in at least one data breach.": [
-        "Вашы звесткі былі знойдзены прынамсі ў выніку адной уцечкі даных."
-      ],
       "Your personal data was leaked by an online service in a data breach. View full details and get recommended actions.": [
         "Парушэнне вашых асабістых даных адбылося праз сэрвіс у інтэрнэце ў выніку ўцечкі даных. Азнаёмцеся з падрабязнасцямі і прыміце неабходныя меры."
       ]
@@ -3993,7 +3999,7 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Перад запытам новага праверачнага кода праверце папку са спамам, а таксама ці правільна азначаны адрас ${ strong }."
       ],
-      "Breach alerts": [
+      "Breach Alert": [
         "Папярэджанні ўцечкі"
       ],
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
@@ -4218,6 +4224,9 @@
       "Large imports can take several days.": [
         "Вялікае імпартаванне можа заняць некалькі дзён."
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Даведайцеся, як ${ staySaferOnlineLink }"
+      ],
       "Learn more": [
         "Даведацца больш"
       ],
@@ -4232,6 +4241,9 @@
       ],
       "Loading ${ appName }": [
         "Загрузка ${ appName }"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Пачакайце, адбываецца загрузка календара. Вы будзеце перанакіраваны на нашу платформу планавання Calendly, якая адкрыецца ў новай укладцы."
       ],
       "Loading event": [
         "Загрузка падзеі"
@@ -4392,6 +4404,9 @@
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Перад пачаткам экспартавання праграме неабходна выканаць лакальную расшыфроўку вашых кантактаў. Пасля завяршэння працэсу будзе згенерыраваны файл VCF, які вы зможаце спампаваць."
       ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "Адбылася ўцечка скампраметаваных звестак са старонняга сэрвісу. Гэта не закранула звесткі вашага ўліковага запісу ${ BRAND_NAME }, бо яны зашыфраваны і знаходзяцца ў бяспецы. ${ learnMoreLink }"
+      ],
       "The following participants cannot be notified about your changes:": [
         "Наступныя ўдзельнікі не атрымалі апавяшчэнне аб вашых зменах:"
       ],
@@ -4469,9 +4484,6 @@
       ],
       "username": [
         "імя карыстальніка"
-      ],
-      "View details": [
-        "Паглядзець падрабязнасці"
       ],
       "Warning": [
         "Папярэджанне"
@@ -4611,6 +4623,12 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Вашы даныя гатовы да імпартавання з ${ importedEmailAddressStrong } у ваш уліковы запіс ${ BRAND_NAME }."
       ],
+      "Your email address and password were leaked:": [
+        "Адбылася ўцечка вашага адраса электроннай пошты і пароля:"
+      ],
+      "Your email address was exposed:": [
+        "Ваша адрас электроннай пошты скампраметаваны:"
+      ],
       "Your email will only be used for this one-time verification.": [
         "Ваша электронная пошта будзе выкарыстана толькі для гэтай аднаразовай праверкі."
       ],
@@ -4620,8 +4638,14 @@
       "Your files will be encrypted and then saved": [
         "Вашы файлы будуць зашыфраваны, а пасля гэтага захаваны"
       ],
+      "Your information was found on ${ displayedDate }": [
+        "Вашы звесткі былі знойдзены ${ displayedDate }"
+      ],
       "Your login information will not be saved after the import is completed.": [
         "Пасля завяршэння імпартавання вашы даныя ўваходу не будуць захаваны."
+      ],
+      "Your password was leaked:": [
+        "Адбылася ўцечка вашага пароля:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ваш нумар тэлефона будзе выкарыстаны толькі для бягучай аднаразовай праверкі."
@@ -5191,6 +5215,9 @@
       ],
       "Request an invite": [
         "Запытаць запрашэнне"
+      ],
+      "stay safer online": [
+        "застацца абароненым у інтэрнэце"
       ],
       "What’s this?": [
         "Што гэта?"
@@ -6298,14 +6325,17 @@
       ]
     },
     "Security Center - Info": {
-      "Get notified if your password or other personal data was leaked.": [
-        "Атрымаць апавяшчэнне, калі адбылася ўцечка вашага пароля або іншых асабістых даных."
+      "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
+        "Атрымаць апавяшчэнне, калі адбылася ўцечка вашага пароля або іншых даных са старонняга сэрвісу. ${ learnMoreLink }"
       ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Наша перадавое рашэнне па бяспецы на базе штучнага інтэлекту распрацавана для карыстальнікаў, якія шукаюць дадатковую абарону для сваіх уліковых запісаў. ${ learnMoreLink }"
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel цяпер **актыўны** і ахоўвае ваш уліковы запіс."
+      ],
+      "Your information was found in at least one data breach. Turn on Breach Alert to view details and take action. ${ learnMoreLink }": [
+        "Вашы звесткі былі знойдзены прынамсі ў адной уцечцы даных. Уключыце функцыю \"Папярэджанне ўцечкі\", каб паглядзець падрабязнасці і прыняць адпаведныя дзеянні. ${ learnMoreLink }"
       ]
     },
     "Select files": {
@@ -7243,20 +7273,8 @@
       "Birthday": [
         "Дзень нараджэння"
       ],
-      "Breach alerts": [
+      "Breach Alert": [
         "Папярэджанні ўцечкі"
-      ],
-      "Breach Date": [
-        "Дата ўцечкі"
-      ],
-      "Breach detected": [
-        "Выяўлена ўцечка"
-      ],
-      "Breach Information": [
-        "Звесткі аб уцечках"
-      ],
-      "Breach Size": [
-        "Памер уцечкі"
       ],
       "Calendar": [
         "Каляндар"
@@ -7345,6 +7363,9 @@
       "Deleting contacts": [
         "Выдаленне кантактаў"
       ],
+      "Details": [
+        "Падрабязнасці"
+      ],
       "Drop to upload": [
         "Перацягніце, каб запампаваць"
       ],
@@ -7390,9 +7411,6 @@
       "Exporting contacts": [
         "Экспартаванне кантактаў"
       ],
-      "Exposed info": [
-        "Звесткі кампраметацыі"
-      ],
       "Feedback": [
         "Водгук"
       ],
@@ -7431,9 +7449,6 @@
       ],
       "Link confirmation": [
         "Пацвярджэнне спасылкі"
-      ],
-      "Location": [
-        "Размяшчэнне"
       ],
       "Merge contacts": [
         "Аб'яднанне кантактаў"
@@ -7597,9 +7612,6 @@
       "Stay safer online": [
         "Заставайцеся абароненымі ў інтэрнэце"
       ],
-      "Type": [
-        "Тып"
-      ],
       "Unlock contacts groups": [
         "Разблакіраваць групы кантактаў"
       ],
@@ -7639,7 +7651,7 @@
       "Your calendar link": [
         "Ваша спасылка на каляндар"
       ],
-      "Your Exposed Information": [
+      "Your exposed information": [
         "Вашы скампраметаваныя звесткі"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
