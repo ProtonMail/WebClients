@@ -613,8 +613,14 @@
       "Manage Snooze": [
         "Atur penundaan"
       ],
+      "Mark as open": [
+        "Tandai sebagai terbuka"
+      ],
       "Mark as read": [
         "Tandai telah dibaca"
+      ],
+      "Mark as resolved": [
+        "Tandai sebagai terselesaikan"
       ],
       "Mark as unread": [
         "Tandai belum dibaca"
@@ -883,6 +889,9 @@
       "Report phishing": [
         "Laporkan upaya phishing"
       ],
+      "Request a call": [
+        "Minta telepon"
+      ],
       "Request a feature": [
         "Minta fitur"
       ],
@@ -1110,9 +1119,6 @@
       ],
       "Trust": [
         "Percayai"
-      ],
-      "Trust key": [
-        "Percayai kunci"
       ],
       "Trust public key": [
         "Percayai kunci publik"
@@ -3278,9 +3284,6 @@
       ],
       "Your account and data recovery methods are set.": [
         "Metode pemulihan akun dan data Anda telah diatur."
-      ],
-      "Your information was found in at least one data breach.": [
-        "Informasi pribadi Anda ditemukan dalam setidaknya satu insiden kebocoran data."
       ],
       "Your personal data was leaked by an online service in a data breach. View full details and get recommended actions.": [
         "Data pribadi Anda telah dibocorkan oleh layanan online tertentu dalam insiden kebocoran data. Lihat rincian insiden ini secara penuh dan dapatkan tindakan yang disarankan."
@@ -5494,8 +5497,8 @@
       "Body: ": [
         "Isi: "
       ],
-      "Breach alerts": [
-        "Peringatan kebocoran"
+      "Breach Alert": [
+        "Peringatan Kebocoran"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Dengan menurunkan ke paket Free, Anda akan kehilangan berbagai manfaat berikut secara permanen, bahkan apabila Anda kembali meningkatkan jenis akun Anda di kemudian hari."
@@ -5904,6 +5907,9 @@
       ],
       "Loading ${ appName }": [
         "Memuat ${ appName }"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Memuat kalender, mohon tunggu. Anda akan diarahkan menuju platform penjadwalan Calendly kami pada tab baru."
       ],
       "Loading message": [
         "Memuat pesan"
@@ -6616,9 +6622,6 @@
       "Version ${ appVersion }": [
         "Versi ${ appVersion }"
       ],
-      "View details": [
-        "Lihat rincian"
-      ],
       "Visa Secure logo": [
         "Logo Visa Secure"
       ],
@@ -6841,6 +6844,12 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Data Anda siap untuk diimpor dari ${ importedEmailAddressStrong } menuju akun ${ BRAND_NAME } Anda."
       ],
+      "Your email address and password were leaked:": [
+        "Alamat email dan kata sandi Anda telah bocor:"
+      ],
+      "Your email address was exposed:": [
+        "Alamat email Anda telah terpapar:"
+      ],
       "Your email will only be used for this one-time verification.": [
         "Email Anda hanya akan dipakai satu kali ini untuk keperluan verifikasi."
       ],
@@ -6861,6 +6870,9 @@
       ],
       "Your next billing date is ${ renewalTime }.": [
         "Tanggal tagihan Anda selanjutnya adalah ${ renewalTime }."
+      ],
+      "Your password was leaked:": [
+        "Kata sandi Anda telah bocor:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Nomor telepon Anda hanya akan dipakai satu kali ini untuk keperluan verifikasi."
@@ -9660,14 +9672,14 @@
       ]
     },
     "Security Center - Info": {
-      "Get notified if your password or other personal data was leaked.": [
-        "Dapatkan notifikasi ketika kata sandi atau data pribadi Anda lainnya terpapar."
-      ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Solusi keamanan mutakhir berbasis AI kami dirancang untuk para pengguna yang menginginkan perlindungan yang lebih bagi akun mereka. ${ learnMoreLink }"
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel saat ini sedang **aktif** dan melindungi akun Anda."
+      ],
+      "Your information was found in at least one data breach. Turn on Breach Alert to view details and take action. ${ learnMoreLink }": [
+        "Informasi mengenai diri Anda ditemukan pada setidaknya satu insiden kebocoran data. Aktifkan Peringatan Kebocoran untuk melihat rincian kebocoran ini dan mengambil tindakan yang sesuai. ${ learnMoreLink }"
       ]
     },
     "Select files": {
@@ -10907,20 +10919,8 @@
       "Block sender": [
         "Blokir pengirim"
       ],
-      "Breach alerts": [
-        "Peringatan kebocoran"
-      ],
-      "Breach Date": [
-        "Tanggal Kebocoran"
-      ],
-      "Breach detected": [
-        "Kebocoran terdeteksi"
-      ],
-      "Breach Information": [
-        "Informasi Kebocoran"
-      ],
-      "Breach Size": [
-        "Ukuran Kebocoran"
+      "Breach Alert": [
+        "Peringatan Kebocoran"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Batalkan langganan ${ MAIL_SHORT_APP_NAME }"
@@ -11114,9 +11114,6 @@
       "Exporting contacts": [
         "Mengekspor kontak"
       ],
-      "Exposed info": [
-        "Informasi yang terpapar"
-      ],
       "External encryption": [
         "Enkripsi eksternal"
       ],
@@ -11191,9 +11188,6 @@
       ],
       "Load remote content": [
         "Muat remote content"
-      ],
-      "Location": [
-        "Lokasi"
       ],
       "Mark as read": [
         "Tandai telah dibaca"
@@ -11507,9 +11501,6 @@
       "Trust public key?": [
         "Percaya kunci publik?"
       ],
-      "Type": [
-        "Tipe"
-      ],
       "Unlock contacts groups": [
         "Buka kunci grup kontak"
       ],
@@ -11561,8 +11552,8 @@
       "Your changes are not synced yet": [
         "Perubahan Anda belum disinkronkan"
       ],
-      "Your Exposed Information": [
-        "Informasi Anda Yang Terpapar"
+      "Your exposed information": [
+        "Informasi Anda yang terpapar"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Uji coba Mail Plus Anda akan berakhir pada ${ textDate }"

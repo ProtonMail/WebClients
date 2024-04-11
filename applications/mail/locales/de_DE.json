@@ -617,8 +617,14 @@
       "Manage Snooze": [
         "Aufschübe verwalten"
       ],
+      "Mark as open": [
+        "Als offen markieren"
+      ],
       "Mark as read": [
         "Als gelesen markieren"
+      ],
+      "Mark as resolved": [
+        "Als gelöst markieren"
       ],
       "Mark as unread": [
         "Als ungelesen markieren"
@@ -887,6 +893,9 @@
       "Report phishing": [
         "Phishing melden"
       ],
+      "Request a call": [
+        "Einen Anruf anfordern"
+      ],
       "Request a feature": [
         "Funktion vorschlagen"
       ],
@@ -1114,10 +1123,6 @@
       ],
       "Trust": [
         "Vertrauen"
-      ],
-      "Trust key": [
-        "Schlüssel vertrauen",
-        "Schlüssel vertrauen"
       ],
       "Trust public key": [
         "Öffentlichem Schlüssel vertrauen"
@@ -3844,6 +3849,9 @@
       "Require at least one condition": [
         "Erfordert mindestens eine Bedingung"
       ],
+      "Sending attachments is restricted until you meet your plan limits or upgrade.": [
+        "Der Versand von Anhängen ist eingeschränkt, bis du die Grenzen deines Tarifs erreicht oder ein Upgrade durchgeführt hast."
+      ],
       "Signature not verified": [
         "Signatur nicht bestätigt"
       ],
@@ -4699,6 +4707,9 @@
       ],
       "No credit card required.": [
         "Keine Kreditkarte erforderlich."
+      ],
+      "Start free trial": [
+        "Jetzt kostenlos ausprobieren"
       ],
       "Try the app-new desktop app": [
         "Probiere die neue Desktop-App aus"
@@ -5755,6 +5766,9 @@
       "Edit link": [
         "Link bearbeiten"
       ],
+      "email": [
+        "E-Mail"
+      ],
       "Email address": [
         "E-Mail-Adresse"
       ],
@@ -5831,6 +5845,9 @@
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Filter wirken auf alle E-Mails, sowohl auf eingehende als auch auf gesendete Nachrichten. Jeder Filter muss mindestens einen Namen, eine Bedingung und eine Aktion enthalten."
+      ],
+      "finance": [
+        "finanzen"
       ],
       "Folder": [
         "Ordner"
@@ -6194,6 +6211,9 @@
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Bitte auswählen, welche E-Mail-Adresse(n) zu ${ groupName } hinzugefügt werden sollen."
+      ],
+      "Please try again in a few moments": [
+        "Bitte versuche es in Kürze erneut."
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Bitte versuche es mit einer anderen Zahlungsmethode erneut oder kontaktiere deine Bank."
@@ -8074,14 +8094,32 @@
       ]
     },
     "locked_state_storage_banner: info": {
+      "Learn more": [
+        "Mehr erfahren"
+      ],
       "upgrade for more storage": [
         "führe ein Upgrade durch für zusätzlichen Speicherplatz."
+      ],
+      "Upgrade to restore full access": [
+        "Upgrade zur Wiederherstellung des vollen Zugriffs"
       ],
       "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
         "Dein ${ driveStorage } ist voll. Um Dateien hochzuladen oder zu synchronisieren, räume etwas Speicherplatz frei oder ${ cta }."
       ],
+      "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
+        "Dein ${ mailStorage } ist voll. Um E-Mails zu senden oder zu empfangen, gib Speicherplatz frei oder ${ cta }."
+      ],
+      "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
+        "Dein Konto ist von der Löschung bedroht. Um Datenverlust zu vermeiden, bitte deinen Administrator um ein Upgrade. ${ cta }"
+      ],
       "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
         "Dein Speicherplatz ist voll. Um E-Mails zu senden oder zu empfangen, räume etwas Speicherplatz frei oder ${ cta }."
+      ],
+      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
+        "Dein Speicherplatz ist voll. Um Dateien hochzuladen oder zu synchronisieren, gib Speicherplatz frei oder ${ cta }."
+      ],
+      "Your subscription has ended. ${ cta } and to avoid data loss.": [
+        "Dein Abonnement ist beendet. ${ cta } und um Datenverlust zu vermeiden."
       ]
     },
     "Mail import summary": {
@@ -11347,9 +11385,6 @@
       "Load remote content": [
         "Inhalte aus externen Quellen laden"
       ],
-      "Location": [
-        "Speicherort"
-      ],
       "Mark as read": [
         "Als gelesen markieren"
       ],
@@ -11656,9 +11691,6 @@
       ],
       "Trust public key?": [
         "Öffentlichem Schlüssel vertrauen?"
-      ],
-      "Type": [
-        "Typ"
       ],
       "Unlock contacts groups": [
         "Kontaktgruppen freischalten"
