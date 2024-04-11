@@ -371,6 +371,9 @@
       "Report a problem": [
         "Zgłoś problem"
       ],
+      "Request a call": [
+        "Poproś o rozmowę"
+      ],
       "Request a feature": [
         "Poproś o dodatkową funkcję"
       ],
@@ -484,6 +487,9 @@
       ],
       "Signing in": [
         "Logowanie"
+      ],
+      "Start live chat": [
+        "Rozpocznij czat"
       ],
       "Stop using single sign-on": [
         "Przestań używać logowania SSO"
@@ -1887,6 +1893,9 @@
       ]
     },
     "Delete address prompt": {
+      "Once deleted, this address can't be used again by anyone else.": [
+        "Usuniętego adresu nie będzie mógł nikt użyć."
+      ],
       "The next active address on your list will be set as the default.": [
         "Następny aktywny adres zostanie ustawiony jako domyślny."
       ],
@@ -2807,6 +2816,11 @@
         "Nazwa użytkownika"
       ]
     },
+    "Headline": {
+      "Contact us": [
+        "Skontaktuj się z nami"
+      ]
+    },
     "Hint": {
       "Add this record to your domain in the control panel of your domain name registrar": [
         "Dodaj ten rekord do swojej domeny w panelu sterowania u rejestratora domeny"
@@ -3325,6 +3339,12 @@
       "If you wish to combine this account with another one, do NOT delete it.": [
         "Jeśli chcesz połączyć to konto z innym, NIE usuwaj go."
       ],
+      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
+        "Jesteśmy tu, aby pomóc. ${ boldPhoneCall }, ${ boldZoomMeeting } z jednym z naszych specjalistów lub rozpocznij ${ boldLiveChat }."
+      ],
+      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists.": [
+        "Jesteśmy tu, aby pomóc. ${ boldPhoneCall } lub ${ boldZoomMeeting } z jednym z naszych specjalistów."
+      ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Ważne: Upewnij się, że zapisałeś kody odzyskiwania. W przeciwnym razie, w przypadku zgubienia urządzenia z przypisanym uwierzytelnianiem dwustopniowym, możesz trwale stracić dostęp do konta."
       ],
@@ -3378,6 +3398,9 @@
       ],
       "Link copied to clipboard": [
         "Link został skopiowany do schowka"
+      ],
+      "Live chat": [
+        "czat"
       ],
       "Loading": [
         "Ładowanie"
@@ -3582,6 +3605,9 @@
       ],
       "Remember to share the user's sign in details with them.": [
         "Pamiętaj, aby udostępnić użytkownikowi dane logowania."
+      ],
+      "Request a phone call": [
+        "Poproś o rozmowę"
       ],
       "Resend verification email": [
         "Wyślij ponownie wiadomość weryfikacyjną"
@@ -4161,6 +4187,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Twoja subskrypcja jest zarządzana przez Mozillę. Skontaktuj się z pomocą techniczną Mozilli."
+      ],
+      "Zoom meeting": [
+        "spotkanie na Zoom"
       ]
     },
     "Info for cash payment method": {

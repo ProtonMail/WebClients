@@ -409,6 +409,12 @@
       "Manage link": [
         "Administrer kobling"
       ],
+      "Mark as open": [
+        "Merk som åpen"
+      ],
+      "Mark as resolved": [
+        "Merk som løst"
+      ],
       "Mark for deletion": [
         "Merk for sletting"
       ],
@@ -525,6 +531,9 @@
       ],
       "Report an issue": [
         "Rapporter et problem"
+      ],
+      "Request a call": [
+        "Be om en samtale"
       ],
       "Request a feature": [
         "Be om en funksjon"
@@ -2036,9 +2045,6 @@
       ],
       "Your account and data recovery methods are set.": [
         "Dine konto- og datagjenopprettingsmetoder er angitt."
-      ],
-      "Your information was found in at least one data breach.": [
-        "Informasjonen din ble funnet i minst ett datainnbrudd."
       ],
       "Your personal data was leaked by an online service in a data breach. View full details and get recommended actions.": [
         "Dine personlige data ble lekket av en nettjeneste i et databrudd. Se alle detaljer og få anbefalte handlinger."
@@ -3568,8 +3574,8 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Før du ber om en ny verifiseringskode, sjekk søppelpostmappen din og sjekk at ${ strong } er riktig adresse."
       ],
-      "Breach alerts": [
-        "Varsler om datainnbrudd"
+      "Breach Alert": [
+        "Varsel om datainnbrudd"
       ],
       "Calendar side panel": [
         "Kalender-sidepanel"
@@ -3820,6 +3826,9 @@
       "File will not be updated": [
         "Filen blir ikke oppdatert"
       ],
+      "Files and folders that others shared with you will appear here": [
+        "Filer og mapper som andre har delt med deg, vises her."
+      ],
       "Finalizing": [
         "Fullfører"
       ],
@@ -3950,6 +3959,9 @@
       "Last week": [
         "Forrige uke"
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Lær hvordan du ${ staySaferOnlineLink }"
+      ],
       "Learn more": [
         "Lær mer"
       ],
@@ -3964,6 +3976,9 @@
       ],
       "Loading ${ appName }": [
         "Laster ${ appName }"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Laster inn kalender, vennligst vent. Du vil bli omdirigert til vår planleggingsplattform Calendly i en ny fane."
       ],
       "Loading link": [
         "Laster kobling"
@@ -4272,6 +4287,9 @@
       "Shared link not found": [
         "Delt kobling ikke funnet"
       ],
+      "Shared with me": [
+        "Delt med meg"
+      ],
       "Sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
         "Registrer for din egen ${ DRIVE_APP_NAME }-konto og beskytt dataene dine med ende-til-ende-kryptering og del dem sikkert."
       ],
@@ -4319,6 +4337,9 @@
       ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
         "De krypterte dataene er litt større på grunn av overbelastingen av kryptering og signaturer, som sikrer sikkerheten til dataene dine."
+      ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "Den eksponerte informasjonen ble lekket fra en tredjepartstjeneste. ${ BRAND_NAME }-kontoinformasjonen din forblir sikker og kryptert. ${ learnMoreLink }."
       ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Følgende kan ha blitt tuklet med: ${ items }. Bare åpne hvis du klarérer de."
@@ -4486,9 +4507,6 @@
       "Version is restored": [
         "Versjon er gjenopprettet"
       ],
-      "View details": [
-        "Vis detaljer"
-      ],
       "Want to sync files faster?": [
         "Ønsker du å synkronisere filer raskere?"
       ],
@@ -4607,6 +4625,12 @@
       "Your download is in progress": [
         "Nedlastingen pågår"
       ],
+      "Your email address and password were leaked:": [
+        "Din e-postadresse og passord ble lekket:"
+      ],
+      "Your email address was exposed:": [
+        "E-postadressen din ble eksponert:"
+      ],
       "Your email will only be used for this one-time verification.": [
         "E-posten din vil kun bli brukt til denne engangsbekreftelsen."
       ],
@@ -4619,8 +4643,14 @@
       "Your files will be encrypted and then saved.": [
         "Filene dine vil bli kryptert og deretter lagret."
       ],
+      "Your information was found on ${ displayedDate }": [
+        "Informasjonen din ble funnet den ${ displayedDate }."
+      ],
       "Your login information will not be saved after the import is completed.": [
         "Påloggingsinformasjonen lagres ikke etter at importen er fullført."
+      ],
+      "Your password was leaked:": [
+        "Passordet ditt ble lekket:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Telefonnummeret ditt vil kun bli brukt til denne engangsbekreftelsen."
@@ -5086,6 +5116,12 @@
       "Set recovery method": [
         "Angi gjenopprettingsmetode"
       ],
+      "Shared by": [
+        "Delt av"
+      ],
+      "Shared on": [
+        "Delt den"
+      ],
       "Show indexing progress of Encrypted Search": [
         "Vis indekseringsfremdrift for kryptert søk"
       ],
@@ -5248,6 +5284,12 @@
       ],
       "Shared": [
         "Delt"
+      ],
+      "Shared with me": [
+        "Delt med meg"
+      ],
+      "stay safer online": [
+        "holder deg tryggere på nettet"
       ],
       "Trash": [
         "Papirkurv"
@@ -5889,6 +5931,9 @@
       "Encrypted search activated": [
         "Kryptert søk aktivert"
       ],
+      "Failed to accept share invitation": [
+        "Kunne ikke godta delingsinvitasjonen"
+      ],
       "Failed to download files: ${ err }": [
         "Kunne ikke laste ned filer: ${ err }"
       ],
@@ -5928,6 +5973,12 @@
       ],
       "Root folder failed to be loaded": [
         "Rotmappen kunne ikke lastes inn"
+      ],
+      "Share invitation accepted successfully": [
+        "Delingsinvitasjonen ble godtatt"
+      ],
+      "Share invitation ID was not found. Please check the link": [
+        "Delingsinvitasjons-ID ble ikke funnet. Vennligst sjekk koblingen."
       ],
       "Subfolder failed to be loaded": [
         "Undermappen kunne ikke lastes inn"
@@ -6306,14 +6357,17 @@
       ]
     },
     "Security Center - Info": {
-      "Get notified if your password or other personal data was leaked.": [
-        "Bli varslet hvis passordet ditt eller andre personlige data ble lekket."
+      "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
+        "Bli varslet hvis passordet ditt eller andre data ble lekket fra en tredjepartstjeneste. ${ learnMoreLink }."
       ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Vår banebrytende AI-drevne sikkerhetsløsning designet for brukere som ønsker økt beskyttelse for kontoene sine. ${ learnMoreLink }."
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel er **aktiv** og beskytter kontoen din."
+      ],
+      "Your information was found in at least one data breach. Turn on Breach Alert to view details and take action. ${ learnMoreLink }": [
+        "Informasjonen din ble funnet i minst ett datainnbrudd. Slå på bruddvarsel for å vise detaljer og iverksette tiltak. ${ learnMoreLink }."
       ]
     },
     "Select files": {
@@ -7034,20 +7088,8 @@
       "Birthday": [
         "Bursdag"
       ],
-      "Breach alerts": [
-        "Varsler om datainnbrudd"
-      ],
-      "Breach Date": [
-        "Dato for datainnbrudd"
-      ],
-      "Breach detected": [
-        "Sikkerhetsbrudd oppdaget"
-      ],
-      "Breach Information": [
-        "Informasjon om datainnbrudd"
-      ],
-      "Breach Size": [
-        "Størrelse for datainnbrudd"
+      "Breach Alert": [
+        "Varsel om datainnbrudd"
       ],
       "Browser might run out of memory": [
         "Nettleseren kan gå tom for minne"
@@ -7135,6 +7177,9 @@
       "Deleting contacts": [
         "Sletter kontakter"
       ],
+      "Details": [
+        "Detaljer"
+      ],
       "Discard": [
         "Forkast"
       ],
@@ -7194,9 +7239,6 @@
       ],
       "Exporting contacts": [
         "Eksporterer kontakter"
-      ],
-      "Exposed info": [
-        "Eksponert info"
       ],
       "Failed": [
         "Mislyktes"
@@ -7398,6 +7440,9 @@
       "Shared": [
         "Delt"
       ],
+      "Shared with me": [
+        "Delt med meg"
+      ],
       "Show actions": [
         "Vis handlinger"
       ],
@@ -7506,7 +7551,7 @@
       "Your changes are not synced yet": [
         "Endringene dine er ikke synkronisert enda"
       ],
-      "Your Exposed Information": [
+      "Your exposed information": [
         "Din eksponerte informasjon"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [

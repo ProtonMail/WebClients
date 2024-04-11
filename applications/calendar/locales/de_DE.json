@@ -354,6 +354,12 @@
       "Manage labels": [
         "Kategorien verwalten"
       ],
+      "Mark as open": [
+        "Als offen markieren"
+      ],
+      "Mark as resolved": [
+        "Als gelöst markieren"
+      ],
       "Mark for deletion": [
         "Zum Löschen vormerken"
       ],
@@ -470,6 +476,9 @@
       ],
       "Report a problem": [
         "Ein Problem melden"
+      ],
+      "Request a call": [
+        "Einen Anruf anfordern"
       ],
       "Request a feature": [
         "Funktion vorschlagen"
@@ -3945,6 +3954,9 @@
       "Edit email address": [
         "E-Mail-Adresse bearbeiten"
       ],
+      "email": [
+        "E-Mail"
+      ],
       "Emails are automatically signed": [
         "E-Mails werden automatisch signiert."
       ],
@@ -3981,6 +3993,9 @@
       ],
       "Existent, added and removed participants will be notified.": [
         "Vorhandene, hinzugefügte und entfernte Teilnehmer werden benachrichtigt."
+      ],
+      "finance": [
+        "finanzen"
       ],
       "Frequency modifications will be lost.": [
         "Änderungen der Häufigkeit gehen verloren."
@@ -4157,6 +4172,9 @@
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Bitte auswählen, welche E-Mail-Adresse(n) zu ${ groupName } hinzugefügt werden sollen."
+      ],
+      "Please try again in a few moments": [
+        "Bitte versuche es in Kürze erneut."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Bitte warte, während nach Kontakten gesucht wird, die mit dem primären Verschlüsselungsschlüssel neu signiert werden können."
@@ -5037,14 +5055,32 @@
       ]
     },
     "locked_state_storage_banner: info": {
+      "Learn more": [
+        "Mehr erfahren"
+      ],
       "upgrade for more storage": [
         "führe ein Upgrade durch für zusätzlichen Speicherplatz."
+      ],
+      "Upgrade to restore full access": [
+        "Upgrade zur Wiederherstellung des vollen Zugriffs"
       ],
       "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
         "Dein ${ driveStorage } ist voll. Um Dateien hochzuladen oder zu synchronisieren, räume etwas Speicherplatz frei oder ${ cta }."
       ],
+      "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
+        "Dein ${ mailStorage } ist voll. Um E-Mails zu senden oder zu empfangen, gib Speicherplatz frei oder ${ cta }."
+      ],
+      "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
+        "Dein Konto ist von der Löschung bedroht. Um Datenverlust zu vermeiden, bitte deinen Administrator um ein Upgrade. ${ cta }"
+      ],
       "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
         "Dein Speicherplatz ist voll. Um E-Mails zu senden oder zu empfangen, räume etwas Speicherplatz frei oder ${ cta }."
+      ],
+      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
+        "Dein Speicherplatz ist voll. Um Dateien hochzuladen oder zu synchronisieren, gib Speicherplatz frei oder ${ cta }."
+      ],
+      "Your subscription has ended. ${ cta } and to avoid data loss.": [
+        "Dein Abonnement ist beendet. ${ cta } und um Datenverlust zu vermeiden."
       ]
     },
     "Mail import summary": {
@@ -7049,9 +7085,6 @@
       "Link confirmation": [
         "Linkbestätigung"
       ],
-      "Location": [
-        "Speicherort"
-      ],
       "Merge contacts": [
         "Kontakte zusammenführen"
       ],
@@ -7207,9 +7240,6 @@
       ],
       "Start import process": [
         "Importvorgang starten"
-      ],
-      "Type": [
-        "Typ"
       ],
       "Unlock contacts groups": [
         "Kontaktgruppen freischalten"

@@ -620,8 +620,14 @@
       "Manage Snooze": [
         "Gerenciar adiados"
       ],
+      "Mark as open": [
+        "Marcar como aberta"
+      ],
       "Mark as read": [
         "Marcar como lido"
+      ],
+      "Mark as resolved": [
+        "Marcar como resolvido"
       ],
       "Mark as unread": [
         "Marcar como não lida"
@@ -890,6 +896,9 @@
       "Report phishing": [
         "Reportar como phishing"
       ],
+      "Request a call": [
+        "Solicitar uma chamada"
+      ],
       "Request a feature": [
         "Solicitar um recurso"
       ],
@@ -1117,10 +1126,6 @@
       ],
       "Trust": [
         "Confiar"
-      ],
-      "Trust key": [
-        "Confiar na chave",
-        "Confiar nas chaves"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -3300,9 +3305,6 @@
       ],
       "Your account and data recovery methods are set.": [
         "Sua conta e métodos de recuperação de dados estão definidos."
-      ],
-      "Your information was found in at least one data breach.": [
-        "Suas informações foram encontradas em pelo menos uma violação de dados."
       ],
       "Your personal data was leaked by an online service in a data breach. View full details and get recommended actions.": [
         "Seus dados pessoais foram vazados por um serviço online em uma violação de dados. Veja detalhes completos e obtenha ações recomendadas."
@@ -5594,7 +5596,7 @@
       "Body: ": [
         "Corpo: "
       ],
-      "Breach alerts": [
+      "Breach Alert": [
         "Alerta de violação"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
@@ -6730,9 +6732,6 @@
       "Version ${ appVersion }": [
         "Versão ${ appVersion }"
       ],
-      "View details": [
-        "Ver detalhes"
-      ],
       "Visa Secure logo": [
         "Logotipo do Visa Secure"
       ],
@@ -6969,11 +6968,20 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Seus dados estão prontos para importação de ${ importedEmailAddressStrong } para sua conta da ${ BRAND_NAME }."
       ],
+      "Your email address and password were leaked:": [
+        "Seu endereço de e-mail e senha estão expostos:"
+      ],
+      "Your email address was exposed:": [
+        "Seu endereço de e-mail foi exposto:"
+      ],
       "Your email will only be used for this one-time verification.": [
         "Seu e-mail só será usado para essa verificação única."
       ],
       "Your files will be encrypted and then saved": [
         "Seus arquivos serão criptografados e depois salvos"
+      ],
+      "Your information was found on ${ displayedDate }": [
+        "Sua inconformação foi encontrada em ${ displayedDate }"
       ],
       "Your login information will not be saved after the import is completed.": [
         "Suas informações de início de sessão não serão salvas após a importação ser concluída."
@@ -6990,6 +6998,9 @@
       ],
       "Your next billing date is ${ renewalTime }.": [
         "Sua próxima data de cobrança é ${ renewalTime }."
+      ],
+      "Your password was leaked:": [
+        "Sua senha foi vazada:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Seu número de telefone somente será usado nessa verificação única."
@@ -8040,6 +8051,9 @@
       ],
       "Starred": [
         "Com estrela"
+      ],
+      "stay safer online": [
+        "fique seguro on-line"
       ],
       "Terms": [
         "Termos"
@@ -9829,9 +9843,6 @@
       ]
     },
     "Security Center - Info": {
-      "Get notified if your password or other personal data was leaked.": [
-        "Seja notificado se a sua senha ou outros dados pessoais foram vazados."
-      ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Nossa solução de segurança de última geração orientada por IA, projetada para usuários que buscam proteção reforçada para suas contas. ${ learnMoreLink }"
       ],
@@ -11140,20 +11151,8 @@
       "Block sender": [
         "Bloquear remetente"
       ],
-      "Breach alerts": [
+      "Breach Alert": [
         "Alerta de violação"
-      ],
-      "Breach Date": [
-        "Data da violação"
-      ],
-      "Breach detected": [
-        "Violação detectada"
-      ],
-      "Breach Information": [
-        "Informação de violação"
-      ],
-      "Breach Size": [
-        "Tamanho da violação"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Cancelar assinatura do ${ MAIL_SHORT_APP_NAME }"
@@ -11298,6 +11297,9 @@
       "Deleting contacts": [
         "Excluindo contatos"
       ],
+      "Details": [
+        "Detalhes"
+      ],
       "Don't give spam a chance": [
         "Não dê chance ao spam"
       ],
@@ -11351,9 +11353,6 @@
       ],
       "Exporting contacts": [
         "Exportando contatos"
-      ],
-      "Exposed info": [
-        "Informação da exposição"
       ],
       "External encryption": [
         "Criptografia externa"
@@ -11430,9 +11429,6 @@
       ],
       "Load remote content": [
         "Carregar conteúdo remoto"
-      ],
-      "Location": [
-        "Localização"
       ],
       "Mark as read": [
         "Marcar como lida"
@@ -11747,9 +11743,6 @@
       "Trust public key?": [
         "Confiar na chave pública?"
       ],
-      "Type": [
-        "Tipo"
-      ],
       "Unlock contacts groups": [
         "Desbloquear grupos de contato"
       ],
@@ -11802,7 +11795,7 @@
       "Your changes are not synced yet": [
         "Sua alteração não foram sintonizadas ainda"
       ],
-      "Your Exposed Information": [
+      "Your exposed information": [
         "Sua informação exposta"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [

@@ -371,6 +371,9 @@
       "Report a problem": [
         "Signaler un bug"
       ],
+      "Request a call": [
+        "Demander un appel"
+      ],
       "Request a feature": [
         "Demander une fonctionnalité"
       ],
@@ -484,6 +487,9 @@
       ],
       "Signing in": [
         "Connexion en cours"
+      ],
+      "Start live chat": [
+        "Démarrer le chat en direct"
       ],
       "Stop using single sign-on": [
         "Arrêter d'utiliser l'authentification unique"
@@ -1877,6 +1883,9 @@
       ]
     },
     "Delete address prompt": {
+      "Once deleted, this address can't be used again by anyone else.": [
+        "Une fois supprimée, personne ne peut réutiliser cette adresse."
+      ],
       "The next active address on your list will be set as the default.": [
         "La prochaine adresse active de votre liste sera définie comme adresse par défaut."
       ],
@@ -2779,6 +2788,11 @@
         "Nom d'utilisateur"
       ]
     },
+    "Headline": {
+      "Contact us": [
+        "Contactez-nous"
+      ]
+    },
     "Hint": {
       "Add this record to your domain in the control panel of your domain name registrar": [
         "Ajoutez cet enregistrement à votre domaine dans le panneau de contrôle gestionnaire de nom de domaine."
@@ -3269,6 +3283,12 @@
       "If you wish to combine this account with another one, do NOT delete it.": [
         "Si vous voulez associer ce compte à un autre, ne le supprimez pas."
       ],
+      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
+        "Si vous rencontrez des difficultés, nous pouvons vous aider. ${ boldPhoneCall }, ${ boldZoomMeeting } avec l'un de nos spécialistes ou utilisez notre ${ boldLiveChat } pour le support par chat."
+      ],
+      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists.": [
+        "Si vous rencontrez des difficultés, nous pouvons vous aider. ${ boldPhoneCall }ou ${ boldZoomMeeting } avec l'un de nos spécialistes."
+      ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Important : assurez-vous de sauvegarder les codes de récupération. Vous risquez sinon de perdre définitivement l'accès à votre compte si vous perdez votre dispositif d'authentification à deux facteurs."
       ],
@@ -3323,11 +3343,17 @@
       "Link copied to clipboard": [
         "Le lien est copié dans le presse-papiers."
       ],
+      "Live chat": [
+        "Chat en direct"
+      ],
       "Loading": [
         "Chargement"
       ],
       "Loading ${ appName }": [
         "Chargement de ${ appName }"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Veuillez patienter : le calendrier est en cours de chargement. Vous serez redirigé vers notre plateforme de programmation Calendly dans un nouvel onglet."
       ],
       "Loading preview": [
         "Chargement de l'aperçu"
@@ -3520,6 +3546,9 @@
       ],
       "Remember to share the user's sign in details with them.": [
         "Pensez à partager les informations de connexion avec l'utilisateur concerné."
+      ],
+      "Request a phone call": [
+        "Demander un appel téléphonique"
       ],
       "Resend verification email": [
         "Envoyer à nouveau le message de vérification"
@@ -4081,6 +4110,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Votre abonnement est géré par Mozilla. Nous vous invitons à contacter le support Mozilla."
+      ],
+      "Zoom meeting": [
+        "Réunion Zoom"
       ]
     },
     "Info for cash payment method": {

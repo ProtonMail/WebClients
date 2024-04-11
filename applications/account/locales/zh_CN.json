@@ -936,9 +936,6 @@
       "Unlock Breach Report": [
         "解锁数据泄露报告"
       ],
-      "Unlock breach reports": [
-        "解锁数据泄露报告"
-      ],
       "Unlock data": [
         "解锁数据"
       ],
@@ -5124,6 +5121,17 @@
         "您的日程中有部分内容我们不支持，这些日程将不会被导入。"
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "检测到多余的重复密钥，请单独上传以获取更多信息。"
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "密钥 ${ fingerprint } 已上传"
+      ],
+      "Selected color:": [
+        "所选颜色"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } 需要您授权${ enableDesktopNotifications }。"
@@ -5533,9 +5541,6 @@
       "Blocks senders from seeing if and when you opened a message.": [
         "阻止发件人查看您是否以及何时打开过邮件。"
       ],
-      "Breach Alert is powered by ${ BRAND_NAME }'s propietary datasets, open-source datasets, and Constella Intelligence. ${ dataBreachLink }": [
-        "泄露警报由 ${ BRAND_NAME }的专有数据集、开源数据集和Constella情报提供支持。 ${ dataBreachLink }"
-      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "一旦降级为免费用户，无论今后是否再次付费升级，您都将永远失去这些特权。"
       ],
@@ -5808,9 +5813,6 @@
       ],
       "Failed to fetch logs.": [
         "获取日志失败。"
-      ],
-      "Fast and focused. Email and calendar, right on your desktop.": [
-        "邮件和日程尽在您的桌面呈现，为您带来快捷而专注的体验。"
       ],
       "Fill in user details": [
         "填写用户详细信息"
@@ -6847,15 +6849,6 @@
       "URL link": [
         "网址"
       ],
-      "Use ${ BRAND_NAME } Pass to generate strong passwords and avoid password re-use": [
-        "使用 ${ BRAND_NAME } Pass生成强密码并避免密码重用"
-      ],
-      "Use ${ VPN_APP_NAME } with Netshield enabled to protect you from phishing and malware": [
-        "启用 ${ VPN_APP_NAME } Netshield 以保护您免受钓鱼和恶意软件的影响"
-      ],
-      "Use aliases to sign up for online services. This protects your real email address and identity, limiting the blast radius of a breach.": [
-        "使用别名注册在线服务。这将保护您的真实电子邮件地址和身份，从而减少数据泄露的可能性"
-      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "使用最优服务器（由系统负荷与当前位置得出）：${ formattedBestServerName }"
       ],
@@ -6913,9 +6906,6 @@
       "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
         "警告：账户一经删除无法恢复，您将不能再登录任何相关服务，通讯录中的所有信息也将清空。"
       ],
-      "Ways you can minimize your breach risks": [
-        "如何最大限度地降低数据泄露的风险"
-      ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "我们建议您尽可能使用官方 ${ VPN_APP_NAME } 客户端。"
       ],
@@ -6927,9 +6917,6 @@
       ],
       "We just sent you a new link.": [
         "我们刚向您发送新的链接"
-      ],
-      "We monitor your email addresses, passwords, and personal data for appearances on the dark web and notify you in case your data is compromised.": [
-        "我们将在暗网监视您可能被泄露的电子邮件地址、密码和个人数据，并在您的数据被泄露时通知您。"
       ],
       "We need to authenticate your payment method with your bank.": [
         "我们需要向您的发卡银行核实支付方式是否有效。"
@@ -7239,17 +7226,6 @@
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "您的支持工单已关闭。感谢您联系 ${ BRAND_NAME } 支持。"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "检测到多余的重复密钥，请单独上传以获取更多信息。"
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "密钥 ${ fingerprint } 已上传"
-      ],
-      "Selected color:": [
-        "所选颜色"
       ]
     },
     "Info - folder colouring feature": {
@@ -7771,9 +7747,6 @@
       ],
       "Awarded": [
         "已奖励"
-      ],
-      "Beta": [
-        "测试版"
       ],
       "Billing address": [
         "账单地址"
@@ -9563,6 +9536,17 @@
         "团队管理"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "否则，您的账户功能将受到限制，直至最后被停用。"
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "如需继续使用 ${ trialPlanName } 的高级功能，请选择您要开通的账户等级和支付方式。"
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "您的体验期将于 ${ formattedPeriodEndDate } 结束"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } 在${ last4 } 结束"
@@ -9644,17 +9628,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "您正在享受当前套餐的促销价格。 降级账号后，您将失去优惠价格，如果再次尝试订阅，优惠价格将不可用。"
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "否则，您的账户功能将受到限制，直至最后被停用。"
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "如需继续使用 ${ trialPlanName } 的高级功能，请选择您要开通的账户等级和支付方式。"
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "您的体验期将于 ${ formattedPeriodEndDate } 结束"
       ]
     },
     "new_plans: Label": {
@@ -12107,18 +12080,6 @@
       "Billing cycle": [
         "计费周期"
       ],
-      "Breach Alerts": [
-        "泄露提醒"
-      ],
-      "Breach Date": [
-        "泄露发生日期"
-      ],
-      "Breach Information": [
-        "泄露信息"
-      ],
-      "Breach Size": [
-        "泄露范围"
-      ],
       "Bridge for ${ platform }": [
         "Bridge ${ platform } 客户端"
       ],
@@ -12395,9 +12356,6 @@
       "Export public key": [
         "导出公钥"
       ],
-      "Exposed info": [
-        "遭到泄露的信息"
-      ],
       "External PGP settings": [
         "对外 PGP 设置"
       ],
@@ -12418,15 +12376,6 @@
       ],
       "Folders and labels": [
         "标签与文件夹"
-      ],
-      "For Linux": [
-        "Linux 客户端"
-      ],
-      "For macOS": [
-        "macOS 客户端"
-      ],
-      "For Windows": [
-        "Windows 客户端"
       ],
       "Forward and auto-reply": [
         "转发与自动回复"
@@ -12535,9 +12484,6 @@
       ],
       "Link confirmation": [
         "确认打开链接"
-      ],
-      "Location": [
-        "位置"
       ],
       "Login password": [
         "登录密码"
@@ -12898,9 +12844,6 @@
       ],
       "Your changes are not synced yet": [
         "您的改动尚未同步"
-      ],
-      "Your Exposed Information": [
-        "您的泄露信息"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "您的 Mail Plus 免费体验期将于 ${ textDate } 结束"

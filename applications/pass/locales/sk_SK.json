@@ -482,7 +482,7 @@
         "Nepodarilo sa vyriešiť členov zdieľania"
       ],
       "Could not validate addresses at the moment.": [
-        "Adresu v súčasnosti nie je možné overiť."
+        "Adresy v tejto chvíli nebolo možné overiť."
       ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "V súbore CSV chýbajú očakávané hlavičky: ${ missingHeaders }"
@@ -860,9 +860,6 @@
       ],
       "Copied to clipboard": [
         "Skopírované do schránky"
-      ],
-      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, vault structure...). For a complete export, we recommend using a different format.": [
-        "CSV ponúka vhodný formát na zobrazenie údajov. Avšak kvôli svojej jednoduchosti, niektoré údaje nebudú zahrnuté (vlastné polia, štruktúra trezoru...). Pre kompletný export odporúčame použiť iný formát."
       ],
       "Current version": [
         "Súčasná verzia"

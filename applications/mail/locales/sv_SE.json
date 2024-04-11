@@ -623,6 +623,9 @@
       "Mark as read": [
         "Markera som läst"
       ],
+      "Mark as resolved": [
+        "Markera som löst"
+      ],
       "Mark as unread": [
         "Markera som oläst"
       ],
@@ -890,6 +893,9 @@
       "Report phishing": [
         "Rapportera nätfiske"
       ],
+      "Request a call": [
+        "Begär ett samtal"
+      ],
       "Request a feature": [
         "Begär en funktion"
       ],
@@ -1117,10 +1123,6 @@
       ],
       "Trust": [
         "Lita på"
-      ],
-      "Trust key": [
-        "Lita på nyckel",
-        "Lita på nycklar"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -3304,9 +3306,6 @@
       ],
       "Your account and data recovery methods are set.": [
         "Ditt konto och dina dataåterställningsmetoder är inställda."
-      ],
-      "Your information was found in at least one data breach.": [
-        "Din information hittades i minst ett dataintrång."
       ],
       "Your personal data was leaked by an online service in a data breach. View full details and get recommended actions.": [
         "Dina personuppgifter läcktes av en onlinetjänst i ett dataintrång. Visa alla detaljer och få rekommenderade åtgärder."
@@ -5612,8 +5611,8 @@
       "Body: ": [
         "Innehåll: "
       ],
-      "Breach alerts": [
-        "Intrångsvarningar"
+      "Breach Alert": [
+        "Intrångsvarning"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Genom att nedgradera till ett gratiskonto kommer du permanent att förlora dessa fördelar, även om du uppgraderar igen i framtiden."
@@ -6014,6 +6013,9 @@
       "Large imports can take several days.": [
         "Stora importer kan ta flera dagar."
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Lär dig hur man ${ staySaferOnlineLink }"
+      ],
       "Learn more": [
         "Lär dig mer"
       ],
@@ -6031,6 +6033,9 @@
       ],
       "Loading ${ appName }": [
         "Laddar ${ appName }"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Laddar kalender, vänta. Du kommer att omdirigeras till vår schemaläggningsplattform Calendly i en ny flik."
       ],
       "Loading message": [
         "Laddar meddelande"
@@ -6748,9 +6753,6 @@
       "Version ${ appVersion }": [
         "Version ${ appVersion }"
       ],
-      "View details": [
-        "Visa detaljer"
-      ],
       "Visa Secure logo": [
         "Logga för Visa Secure"
       ],
@@ -6992,6 +6994,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Dina filer kommer att krypteras och sedan sparas"
+      ],
+      "Your information was found on ${ displayedDate }": [
+        "Din information hittades den ${ displayedDate }"
       ],
       "Your login information will not be saved after the import is completed.": [
         "Dina inloggningsuppgifter kommer inte att sparas när importen är slutförd."
@@ -8064,6 +8069,9 @@
       ],
       "Starred": [
         "Stjärnmärkt"
+      ],
+      "stay safer online": [
+        "var säkrare online"
       ],
       "Terms": [
         "Villkor"
@@ -9850,8 +9858,8 @@
       ]
     },
     "Security Center - Info": {
-      "Get notified if your password or other personal data was leaked.": [
-        "Bli aviserad om ditt lösenord eller andra personliga uppgifter har läckt."
+      "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
+        "Bli aviserad om ditt lösenord eller annan data har läckt från en tredjepartstjänst. ${ learnMoreLink }"
       ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Vår banbrytande AI-drivna säkerhetslösning designad för användare som söker utökat skydd för sina konton. ${ learnMoreLink }"
@@ -11161,20 +11169,8 @@
       "Block sender": [
         "Blockera avsändare"
       ],
-      "Breach alerts": [
-        "Intrångsvarningar"
-      ],
-      "Breach Date": [
-        "Intrångsdatum"
-      ],
-      "Breach detected": [
-        "Intrång upptäckt"
-      ],
-      "Breach Information": [
-        "Intrångsinformation"
-      ],
-      "Breach Size": [
-        "Storlek på intrång"
+      "Breach Alert": [
+        "Intrångsvarning"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Avsluta ${ MAIL_SHORT_APP_NAME }-prenumeration"
@@ -11319,6 +11315,9 @@
       "Deleting contacts": [
         "Tar bort kontakter"
       ],
+      "Details": [
+        "Detaljer"
+      ],
       "Don't give spam a chance": [
         "Ge inte skräppost en chans"
       ],
@@ -11372,9 +11371,6 @@
       ],
       "Exporting contacts": [
         "Exporterar kontakter"
-      ],
-      "Exposed info": [
-        "Exponeringsinformation"
       ],
       "External encryption": [
         "Extern kryptering"
@@ -11451,9 +11447,6 @@
       ],
       "Load remote content": [
         "Ladda fjärrinnehåll"
-      ],
-      "Location": [
-        "Plats"
       ],
       "Mark as read": [
         "Markera som läst"
@@ -11768,9 +11761,6 @@
       "Trust public key?": [
         "Lita på offentlig nyckel?"
       ],
-      "Type": [
-        "Typ"
-      ],
       "Unlock contacts groups": [
         "Lås upp kontaktgrupper"
       ],
@@ -11823,8 +11813,8 @@
       "Your changes are not synced yet": [
         "Dina ändringar är inte synkroniserade än"
       ],
-      "Your Exposed Information": [
-        "Din exponeringsinformation"
+      "Your exposed information": [
+        "Din exponerade information"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Din gratis provperiod för Mail Plus slutar den ${ textDate }"

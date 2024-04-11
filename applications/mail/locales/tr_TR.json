@@ -617,8 +617,14 @@
       "Manage Snooze": [
         "Ertelemeyi yönet"
       ],
+      "Mark as open": [
+        "Açık olarak işaretle"
+      ],
       "Mark as read": [
         "Okunmuş olarak işaretle"
+      ],
+      "Mark as resolved": [
+        "Çözülmüş olarak işaretle"
       ],
       "Mark as unread": [
         "Okunmamış olarak işaretle"
@@ -1114,10 +1120,6 @@
       ],
       "Trust": [
         "Güven"
-      ],
-      "Trust key": [
-        "Anahtara güven",
-        "Anahtarlara güven"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -6715,9 +6717,6 @@
       "Version ${ appVersion }": [
         "Sürüm ${ appVersion }"
       ],
-      "View details": [
-        "Ayrıntıları görüntüle"
-      ],
       "Visa Secure logo": [
         "Visa Secure logosu"
       ],
@@ -8025,6 +8024,9 @@
       ],
       "Starred": [
         "Yıldızlı"
+      ],
+      "stay safer online": [
+        "çevrimiçi ortamda daha güvende kalın"
       ],
       "Terms": [
         "Koşullar"
@@ -11116,15 +11118,6 @@
       "Block sender": [
         "Göndericiyi engelle"
       ],
-      "Breach Date": [
-        "Verilerin ele geçirilme tarihi"
-      ],
-      "Breach Information": [
-        "Verilerin ele geçirilme bilgileri"
-      ],
-      "Breach Size": [
-        "Verilerin ele geçirilme boyutu"
-      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "${ MAIL_SHORT_APP_NAME } aboneliğinizi iptal edin"
       ],
@@ -11268,6 +11261,9 @@
       "Deleting contacts": [
         "Kişileri sil"
       ],
+      "Details": [
+        "Ayrıntılar"
+      ],
       "Don't give spam a chance": [
         "İstenmeyen e-postalara şans tanımayın"
       ],
@@ -11321,9 +11317,6 @@
       ],
       "Exporting contacts": [
         "Kişileri dışa aktarma"
-      ],
-      "Exposed info": [
-        "Açığa çıkan bilgiler"
       ],
       "External encryption": [
         "Dış şifreleme"
@@ -11400,9 +11393,6 @@
       ],
       "Load remote content": [
         "Uzak içeriği yükle"
-      ],
-      "Location": [
-        "Konum"
       ],
       "Mark as read": [
         "Okunmuş olarak işaretle"
@@ -11714,9 +11704,6 @@
       "Trust public key?": [
         "Herkese açık anahtara güvenilsin mi?"
       ],
-      "Type": [
-        "Tür"
-      ],
       "Unlock contacts groups": [
         "Kişi gruplarının kilidini açın"
       ],
@@ -11768,9 +11755,6 @@
       ],
       "Your changes are not synced yet": [
         "Değişiklikleriniz henüz eşitlenmedi"
-      ],
-      "Your Exposed Information": [
-        "Açığa çıkmış bilgileriniz"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Mail Plus ücretsiz deneme süreniz ${ textDate } tarihinde sonra erecek"
