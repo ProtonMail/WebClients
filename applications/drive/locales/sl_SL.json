@@ -415,6 +415,12 @@
       "Manage link": [
         "Upravljanje povezav"
       ],
+      "Mark as open": [
+        "Označi kot odprto"
+      ],
+      "Mark as resolved": [
+        "Označi kot rešeno"
+      ],
       "Mark for deletion": [
         "Označi za izbris"
       ],
@@ -531,6 +537,9 @@
       ],
       "Report an issue": [
         "Prijava napake"
+      ],
+      "Request a call": [
+        "Zahtevajte klic"
       ],
       "Request a feature": [
         "Zahtevaj funkcijo"
@@ -1999,7 +2008,7 @@
         "2FA doda dodatno varnostno plast, ki preprečuje nepooblaščen dostop."
       ],
       "Breach alerts and reports are available with a paid plan. Upgrade for immediate access.": [
-        "Opozorila in poročila o kršitvah so na voljo s plačljivim paketom. Nadgradite za takojšen dostop."
+        "Opozorila in poročila o uhajanju podatkov so na voljo s plačljivim paketom. Nadgradite za takojšen dostop."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Dešifriranje stikov … To lahko traja nekaj minut. Po končanem postopku boste lahko prenesli datoteko z vsemi izvoženimi stiki."
@@ -2054,9 +2063,6 @@
       ],
       "Your account and data recovery methods are set.": [
         "Vaš račun in metode za obnovitev podatkov so nastavljene."
-      ],
-      "Your information was found in at least one data breach.": [
-        "Vaši podatki so bili najdeni v vsaj enem primeru uhajanja podatkov."
       ],
       "Your personal data was leaked by an online service in a data breach. View full details and get recommended actions.": [
         "Spletna storitev je razkrila vaše osebne podatke v zaradi uhajanja podatkov. Preberite vse informacije in ustrezno ukrepajte."
@@ -3089,7 +3095,7 @@
         "Omrežje"
       ],
       "Other category": [
-        "Druga kategorija"
+        "Drugo"
       ],
       "Services": [
         "Storitve"
@@ -3414,7 +3420,7 @@
         "${ activeDownloadsCount } prenesena",
         "${ activeDownloadsCount } preneseni",
         "${ activeDownloadsCount } prenesene",
-        "${ activeDownloadsCount } prenesene"
+        "${ activeDownloadsCount } prenesenih"
       ],
       "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
         "${ activeDownloadsCount } prenos (${ downloadProgress }%)",
@@ -3453,10 +3459,10 @@
         "${ calendarsToBeMergedCount } združenih koledarjev"
       ],
       "${ canceledCount } canceled": [
-        "${ canceledCount } Preklican",
-        "${ canceledCount } Preklicana",
-        "${ canceledCount } Preklicani",
-        "${ canceledCount } Preklicani"
+        "${ canceledCount } preklican",
+        "${ canceledCount } preklicana",
+        "${ canceledCount } preklicani",
+        "${ canceledCount } preklicanih"
       ],
       "${ contactCount } contact contains multiple email addresses.": [
         "${ contactCount } stik vsebuje več e-poštnih naslovov.",
@@ -3488,20 +3494,20 @@
       "${ doneCount } finished": [
         "${ doneCount } dokončana",
         "${ doneCount } dokončani",
-        "${ doneCount } dokončanih",
+        "${ doneCount } dokončane",
         "${ doneCount } dokončanih"
       ],
       "${ doneDownloadsCount } downloaded": [
         "${ doneDownloadsCount } prenesena",
         "${ doneDownloadsCount } preneseni",
         "${ doneDownloadsCount } prenesene",
-        "${ doneDownloadsCount } prenesene"
+        "${ doneDownloadsCount } prenesenih"
       ],
       "${ doneUploadsCount } uploaded": [
         "${ doneUploadsCount } prenesena",
         "${ doneUploadsCount } preneseni",
         "${ doneUploadsCount } prenesene",
-        "${ doneUploadsCount } prenesene"
+        "${ doneUploadsCount } prenesenih"
       ],
       "${ DRIVE_APP_NAME } on App Store": [
         "${ DRIVE_APP_NAME } v trgovini App Store"
@@ -3513,7 +3519,7 @@
         "${ errorCount } ni uspel",
         "${ errorCount } nista uspela",
         "${ errorCount } niso uspeli",
-        "${ errorCount } niso uspeli"
+        "${ errorCount } ni uspelo"
       ],
       "${ fileName }: full-size image": [
         "${ fileName }: slika v polni velikosti"
@@ -3543,7 +3549,7 @@
         "${ pausedCount } zaustavljen",
         "${ pausedCount } zaustavljena",
         "${ pausedCount } zaustavljeni",
-        "${ pausedCount } zaustavljeni"
+        "${ pausedCount } zaustavljenih"
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } najdena mapa",
@@ -3570,10 +3576,10 @@
         "${ selectedContactsLength }/${ contactsLength } izbranih stikov"
       ],
       "${ selectedCount } selected": [
-        "${ selectedCount } izbrana",
-        "${ selectedCount } izbrana",
+        "${ selectedCount } izbrano",
         "${ selectedCount } izbrani",
-        "${ selectedCount } izbrana"
+        "${ selectedCount } izbrane",
+        "${ selectedCount } izbranih"
       ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } izbrana mapa",
@@ -3677,9 +3683,6 @@
       "Are you sure you want to discard your import?": [
         "Ali ste prepričani, da želite zavreči uvoz?"
       ],
-      "Are you sure you want to empty trash and permanently delete all the items?": [
-        "Ste prepričani da želite isprazniti smetnjak in trajno izbrisati vse elemente?"
-      ],
       "Are you sure you want to permanently delete": [
         "Ali ste prepričani, da želite trajno izbrisati"
       ],
@@ -3698,8 +3701,8 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Preden zahtevate novo kodo za preverjanje, preverite mapo za neželeno pošto in preverite, ali je ${ strong } pravilen naslov."
       ],
-      "Breach alerts": [
-        "Opozorila o uhajanju podatkov"
+      "Breach Alert": [
+        "Opozorilo o uhajanju podatkov"
       ],
       "Calendar side panel": [
         "Stranska plošča s koledarjem"
@@ -3798,7 +3801,7 @@
         "Ustvarjanje povezave do datoteke"
       ],
       "Creating link to folder": [
-        "Ustvarjanje povezave do datoteke"
+        "Ustvarjanje povezave do mape"
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Podprte so datoteke CSV iz programov Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora in nekaterih drugih ter obliki vCard 3.1 in 4.0 (kodiranje UTF-8)."
@@ -4038,10 +4041,10 @@
         "Medtem se prijavite za svoj račun ${ DRIVE_APP_NAME } in zaščitite svoje podatke s šifriranjem od konca do konca ter jih varno delite z drugimi."
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
-        "Indeksiranje elementov ${ esProgress } od ${ totalProgressToShow }"
+        "Indeksiranje ${ esProgress } predmetov od ${ totalProgressToShow }"
       ],
       "Indexing search results…": [
-        "Indeksiranje rezultatov iskanja…"
+        "Indeksiranje rezultatov iskanja …"
       ],
       "Inherited from parent folder": [
         "Podedovano od nadrejene mape"
@@ -4202,7 +4205,7 @@
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
         "Dovoljen je samo ${ MAX_CUSTOM_PASSWORD_LENGTH } znak",
         "Dovoljena sta ${ MAX_CUSTOM_PASSWORD_LENGTH } znaka",
-        "Dovoljenih je samo ${ MAX_CUSTOM_PASSWORD_LENGTH } znakov",
+        "Dovoljeni so samo ${ MAX_CUSTOM_PASSWORD_LENGTH } znaki",
         "Dovoljenih je samo ${ MAX_CUSTOM_PASSWORD_LENGTH } znakov"
       ],
       "Only the people with the link and the password can access this file.": [
@@ -4320,7 +4323,7 @@
         "Postopek obnovitve lahko traja nekaj časa."
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Osveževanje strani ali ${ link } bo samodejno odpravilo večino težav."
+        "Osvežitev strani ali ${ link } bo samodejno odpravilo večino težav."
       ],
       "Report has been sent": [
         "Poročilo poslano"
@@ -4374,13 +4377,13 @@
         "Za začetek izberite ponudnika storitve"
       ],
       "Select all items for": [
-        "Izberite vse elemente za"
+        "Izberite vse predmete za"
       ],
       "Select an uploaded file or folder and create a link to it.": [
         "Izberite naloženo datoteko ali mapo in ustvarite povezavo do nje."
       ],
       "Select item": [
-        "Izberite element:"
+        "Izberite predmet:"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Izberite obliko sporočil, ki jo želite uporabiti kot privzeto ob pošiljanju na ta e-poštni naslov."
@@ -4461,7 +4464,7 @@
         "Aplikacija mora pred izvozom lokalno dešifrirati vaše stike. Po končanem dešifriranju se bo ustvarila datoteka VCF, ki bo na voljo za prenos."
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
-        "Število prenosov vključuje dejanske prenose in primere predogleda datotek."
+        "Število prenosov vključuje tako dejanske prenose kot tudi primere predogleda datotek."
       ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
         "Šifrirani podatki so nekoliko večji zaradi šifriranja in podpisov, ki zagotavljajo varnost vaših podatkov."
@@ -4634,9 +4637,6 @@
       "Version is restored": [
         "Različica je obnovljena"
       ],
-      "View details": [
-        "Prikaži podrobnosti"
-      ],
       "Want to sync files faster?": [
         "Želite hitreje sinhronizirati datoteke?"
       ],
@@ -4757,6 +4757,12 @@
       "Your download is in progress": [
         "Prenos je v teku"
       ],
+      "Your email address and password were leaked:": [
+        "Vaš e-poštni naslov in geslo sta bila izpostavljena :"
+      ],
+      "Your email address was exposed:": [
+        "Vaš e-poštni naslov je bil izpostavljen:"
+      ],
       "Your email will only be used for this one-time verification.": [
         "Vaš e-poštni naslov bo uporabljen le za to enkratno preverjanje."
       ],
@@ -4771,6 +4777,9 @@
       ],
       "Your login information will not be saved after the import is completed.": [
         "Po končanem uvozu vaši podatki za prijavo ne bodo shranjeni."
+      ],
+      "Your password was leaked:": [
+        "Vaše geslo je bilo izpostavljeno:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Vaša telefonska številka bo uporabljena le za to enkratno preverjanje."
@@ -4941,7 +4950,7 @@
         "Prekliči prenos"
       ],
       "Category": [
-        "Kategorija"
+        "Vrsta napake"
       ],
       "Child sexual abuse material": [
         "Gradivo o spolni zlorabi otrok"
@@ -5408,6 +5417,9 @@
       ],
       "Shared": [
         "V skupni rabi"
+      ],
+      "stay safer online": [
+        "izboljšajte svojo spletno varnost"
       ],
       "Trash": [
         "Smetnjak"
@@ -5962,27 +5974,27 @@
       ],
       "${ numberOfItems } item failed to be restored from trash": [
         "${ numberOfItems } predmeta ni bilo mogoče obnoviti iz smetnjaka",
-        "${ numberOfItems } elementov ni bilo mogoče obnoviti iz smetnjaka",
-        "${ numberOfItems } elementov ni bilo mogoče obnoviti iz smetnjaka",
-        "${ numberOfItems } elementov ni bilo mogoče obnoviti iz smetnjaka"
+        "${ numberOfItems } predmetov ni bilo mogoče obnoviti iz smetnjaka",
+        "${ numberOfItems } predmetov ni bilo mogoče obnoviti iz smetnjaka",
+        "${ numberOfItems } predmetov ni bilo mogoče obnoviti iz smetnjaka"
       ],
       "${ numberOfItems } item moved to trash": [
         "${ numberOfItems } predmet premaknjen v smetnjak",
         "${ numberOfItems } predmeta premaknjena v smetnjak",
         "${ numberOfItems } predmeti premaknjeni v smetnjak",
-        "${ numberOfItems } predmeti premaknjeni v smetnjak"
+        "${ numberOfItems } predmetov premaknjenih v smetnjak"
       ],
       "${ numberOfItems } item restored from trash": [
         "${ numberOfItems } predmet obnovljen iz smetnjaka",
         "${ numberOfItems } predmeta obnovljena iz smetnjaka",
         "${ numberOfItems } predmeti obnovljeni iz smetnjaka",
-        "${ numberOfItems } predmeti obnovljeni iz smetnjaka"
+        "${ numberOfItems } predmetov obnovljenih iz smetnjaka"
       ],
       "${ numberOfItems } item successfully moved": [
         "${ numberOfItems } predmet je bil uspešno premaknjen",
         "${ numberOfItems } predmeta sta bila uspešno premaknjena",
         "${ numberOfItems } predmeti so bili uspešno premaknjeni",
-        "${ numberOfItems } predmeti so bili uspešno premaknjeni"
+        "${ numberOfItems } predmetov je bilo uspešno premaknjenih"
       ],
       "${ numberOfItems } link to your item failed to be deleted": [
         "${ numberOfItems } povezave do vašega predmeta ni bilo mogoče izbrisati",
@@ -6003,7 +6015,7 @@
         "${ PROTON_SENTINEL_NAME } je bil omogočen."
       ],
       "All items will soon be permanently deleted from trash": [
-        "Vsi elementi bodo kmalu trajno izbrisani iz koša"
+        "Vsi predmeti bodo kmalu trajno izbrisani iz koša"
       ],
       "Cannot load link": [
         "Povezave ni bilo mogoče naložiti"
@@ -6043,9 +6055,9 @@
       ],
       "File or folder \"${ filename }\" and ${ count } other are already uploading": [
         "Datoteka ali mapa »${ filename }« in ${ count } drugo se že nalaga",
-        "Datoteki ali mapi »${ filename }« in ${ count } drugo se že nalagata",
-        "Datoteke ali mape »${ filename }« in ${ count } drugo se že nalaga",
-        "Datoteke ali mape »${ filename }« in ${ count } drugo se že nalaga"
+        "Datoteka ali mapa »${ filename }« in ${ count } drugi se že nalagata",
+        "Datoteka ali mapa »${ filename }« in ${ count } drugi se že nalagajo",
+        "Datoteka ali mapa »${ filename }« in ${ count } drugih se že nalaga"
       ],
       "File or folder \"${ filename }\" is already uploading": [
         "Datoteka ali mapa »${ filename }« se že nalaga"
@@ -6318,7 +6330,7 @@
         "Geslo"
       ],
       "Please describe the problem and include any error messages": [
-        "Opišite težavo in vključite morebitna sporočila o napakah"
+        "Opišite težavo in vključite morebitna sporočila o napakah."
       ],
       "Search for group name": [
         "Poiščite ime skupine"
@@ -6465,9 +6477,6 @@
       ]
     },
     "Security Center - Info": {
-      "Get notified if your password or other personal data was leaked.": [
-        "Prejemanje obvestil v primeru razkritja vašega gesla in drugih osebnih podatkov."
-      ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Naša vrhunska varnostna rešitev, ki temelji na umetni inteligenci, je zasnovana za uporabnike, ki iščejo večjo zaščito za svoje račune. ${ learnMoreLink }"
       ],
@@ -7204,21 +7213,21 @@
         "${ emailsCount } e-poštnih naslovov"
       ],
       "${ numberOfFailedTransfer.total } failed download": [
-        "${ numberOfFailedTransfer.total } neuspešen prenos",
-        "${ numberOfFailedTransfer.total } neuspešna prenosa",
+        "${ numberOfFailedTransfer.total } neuspel prenos",
+        "${ numberOfFailedTransfer.total } neuspela prenosa",
         "${ numberOfFailedTransfer.total } neuspeli prenosi",
-        "${ numberOfFailedTransfer.total } neuspeli prenosi"
+        "${ numberOfFailedTransfer.total } neuspelih prenosov"
       ],
       "${ numberOfFailedTransfer.total } failed transfer": [
         "${ numberOfFailedTransfer.total } neuspešen prenos",
         "${ numberOfFailedTransfer.total } neuspešna prenosa",
         "${ numberOfFailedTransfer.total } neuspešni prenosi",
-        "${ numberOfFailedTransfer.total } neuspešni prenosi"
+        "${ numberOfFailedTransfer.total } neuspešnih prenosov"
       ],
       "${ numberOfFailedTransfer.total } failed upload": [
-        "${ numberOfFailedTransfer.total } neuspešno nalaganje",
-        "${ numberOfFailedTransfer.total } neuspešno nalaganje",
-        "${ numberOfFailedTransfer.total } neuspelih nalaganj",
+        "${ numberOfFailedTransfer.total } neuspelo nalaganje",
+        "${ numberOfFailedTransfer.total } neuspeli nalaganji",
+        "${ numberOfFailedTransfer.total } neuspela nalaganja",
         "${ numberOfFailedTransfer.total } neuspelih nalaganj"
       ],
       "Account recovery": [
@@ -7257,20 +7266,8 @@
       "Birthday": [
         "Rojstni dan"
       ],
-      "Breach alerts": [
-        "Opozorila o uhajanju podatkov"
-      ],
-      "Breach Date": [
-        "Datum uhajanja podatkov"
-      ],
-      "Breach detected": [
-        "Odkrito je uhajanje podatkov"
-      ],
-      "Breach Information": [
-        "Informacije o uhajanju podatkov"
-      ],
-      "Breach Size": [
-        "Obseg uhajanja podatkov"
+      "Breach Alert": [
+        "Opozorilo o uhajanju podatkov"
       ],
       "Browser might run out of memory": [
         "Brskalniku morda manjka pomnilnika"
@@ -7362,6 +7359,9 @@
       "Deleting contacts": [
         "Brisanje stikov"
       ],
+      "Details": [
+        "Podrobnosti"
+      ],
       "Discard": [
         "Zavrzi"
       ],
@@ -7422,9 +7422,6 @@
       "Exporting contacts": [
         "Izvažanje stikov"
       ],
-      "Exposed info": [
-        "Razkrite informacije"
-      ],
       "Failed": [
         "Neuspešno"
       ],
@@ -7443,7 +7440,7 @@
       "Found ${ searchView.numberOfResults } result": [
         "Najden ${ searchView.numberOfResults } rezultat",
         "Najdena ${ searchView.numberOfResults } rezultata",
-        "Najdenih ${ searchView.numberOfResults } rezultatov",
+        "Najdeni ${ searchView.numberOfResults } rezultati",
         "Najdenih ${ searchView.numberOfResults } rezultatov"
       ],
       "Get advanced protection": [
@@ -7737,8 +7734,8 @@
       "Your changes are not synced yet": [
         "Vaše spremembe se še niso sinhronizirale"
       ],
-      "Your Exposed Information": [
-        "Vaše razkrite informacije"
+      "Your exposed information": [
+        "Vaša razkrita informacija"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Brezplačno preizkusno obdobje Mail Plus se vam zaključi ${ textDate }"
