@@ -4,6 +4,8 @@ import type {
     LlmManager,
     LlmModel,
     MonitorDownloadCallback,
+    PromiseReject,
+    PromiseResolve,
     RunningAction,
     WriteFullEmailAction,
 } from '@proton/llm/index';
@@ -26,11 +28,19 @@ export class DummyWriteFullEmailAction {
 
     private action_: WriteFullEmailAction;
 
+    private finishedPromise: Promise<void>;
+
+    private finishedPromiseSignals: { resolve: PromiseResolve; reject: PromiseReject } | undefined;
+
     constructor(action: WriteFullEmailAction, callback: GenerationCallback) {
         this.running = true;
         this.done = false;
         this.cancelled = false;
         this.action_ = action;
+        this.finishedPromise = new Promise<void>((resolve: PromiseResolve, reject: PromiseReject) => {
+            this.finishedPromiseSignals = { resolve, reject };
+        });
+
         void this.startGeneration(action, callback);
     }
 
@@ -59,18 +69,30 @@ export class DummyWriteFullEmailAction {
         return true;
     }
 
+    waitForCompletion(): Promise<void> {
+        return this.finishedPromise;
+    }
+
     private async startGeneration(action: WriteFullEmailAction, callback: GenerationCallback) {
-        this.running = true;
-        const words = this.generateRandomSentence();
-        let fulltext = '';
-        await delay(5000);
-        for (let i = 0; i < words.length && this.running; i++) {
-            await delay(150);
-            let word = words[i] + ' ';
-            fulltext += word;
-            callback(word, fulltext);
+        try {
+            this.running = true;
+            const words = this.generateRandomSentence();
+            let fulltext = '';
+            await delay(5000);
+            for (let i = 0; i < words.length && this.running; i++) {
+                await delay(150);
+                let word = words[i] + ' ';
+                fulltext += word;
+                callback(word, fulltext);
+            }
+            this.done = true;
+            this.running = false;
+        } catch (e) {
+            this.running = false;
+            this.finishedPromiseSignals?.reject();
+            return;
         }
-        this.running = false;
+        this.finishedPromiseSignals?.resolve();
     }
 
     private generateRandomSentence(): string[] {

@@ -109,7 +109,11 @@ describe('LlmModel', () => {
             },
             callback
         );
+        let resolved = false;
+        runningAction.waitForCompletion().then(() => (resolved = true));
+        expect(resolved).toEqual(false);
         await jest.runAllTimersAsync();
+        expect(resolved).toEqual(true);
         expect(callback).toHaveBeenCalled();
         expect(acc.length).toBeGreaterThanOrEqual(10);
     });

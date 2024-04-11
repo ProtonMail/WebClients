@@ -52,13 +52,14 @@ const useGenieModel = ({ message, onChangeContent }: Props) => {
             };
 
             // todo: this returns a RunningAction, we can use it to cancel the generation
-            void (await model.current.performAction(
+            const runningAction = await model.current.performAction(
                 {
                     type: 'writeFullEmail',
                     prompt: genieWish,
                 },
                 generationCallback
-            ));
+            );
+            await runningAction.waitForCompletion();
         }
     };
 
