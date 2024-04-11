@@ -18,7 +18,7 @@ import FileBrowser, {
     useSelection,
 } from '../../FileBrowser';
 import { GridViewItem } from '../FileBrowser/GridViewItemLink';
-import { CreatedCell, ExpirationCell, NameCell, SharedByCell } from '../FileBrowser/contentCells';
+import { CreatedCell, NameCell, SharedByCell } from '../FileBrowser/contentCells';
 import headerItems from '../FileBrowser/headerCells';
 import { translateSortField } from '../SortDropdown';
 import { getSelectedItems } from '../helpers';
@@ -56,7 +56,7 @@ const largeScreenCells: React.FC<{ item: SharedLinkItem }>[] = [
     CreatedCell,
     ContextMenuCell,
 ];
-const smallScreenCells = [CheckboxCell, SharedByCell, NameCell, ExpirationCell];
+const smallScreenCells = [CheckboxCell, NameCell, ContextMenuCell];
 
 const headerItemsLargeScreen: ListViewHeaderItem[] = [
     headerItems.checkbox,
@@ -66,13 +66,7 @@ const headerItemsLargeScreen: ListViewHeaderItem[] = [
     headerItems.placeholder,
 ];
 
-const headerItemsSmallScreen: ListViewHeaderItem[] = [
-    headerItems.checkbox,
-    headerItems.name,
-    headerItems.sharedBy,
-    headerItems.sharedOnDate,
-    headerItems.placeholder,
-];
+const headerItemsSmallScreen: ListViewHeaderItem[] = [headerItems.checkbox, headerItems.name, headerItems.placeholder];
 type SharedLinksSortFields = Extract<
     SortField,
     SortField.name | SortField.linkCreateTime | SortField.linkExpireTime | SortField.numAccesses
