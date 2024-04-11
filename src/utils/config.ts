@@ -8,11 +8,12 @@ interface Config {
 }
 
 export const isBetaRelease = process.env.RELEASE === "beta";
+const BASE_LOCAL_URL = process.env.BASE_LOCAL_URL || "proton.local";
 
 const localUrls = {
-    account: "https://account.proton.local",
-    mail: "https://mail.proton.local",
-    calendar: "https://calendar.proton.local",
+    account: `https://account.${BASE_LOCAL_URL}`,
+    mail: `https://mail.${BASE_LOCAL_URL}`,
+    calendar: `https://calendar.${BASE_LOCAL_URL}`,
 };
 
 const devConfig: Config = {
