@@ -31,11 +31,11 @@ import {
     updateView,
     viewCreationAppStartup,
 } from "./utils/view/viewManagement";
+import { handleSquirrelEvents } from "./windows/squirrel";
 import pkg from "../package.json";
 
-if (require("electron-squirrel-startup")) {
-    app.quit();
-}
+// Handle squirrel events at the very top of the application
+handleSquirrelEvents();
 
 // Security addition
 app.enableSandbox();
