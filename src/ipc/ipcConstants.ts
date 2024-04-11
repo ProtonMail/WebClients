@@ -2,6 +2,7 @@ import { ThemeSetting } from "../utils/themes";
 import { TrialStatus } from "../store/trialStore";
 
 export const DESKTOP_FEATURES = {
+    InAppPayments: true,
     ThemeSelection: true,
 } as const;
 
