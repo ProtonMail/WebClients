@@ -21,6 +21,7 @@ import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { logger } from '@proton/pass/utils/logger';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 import lastItem from '@proton/utils/lastItem';
+import noop from '@proton/utils/noop';
 
 type FieldsForFormResults = WeakMap<
     FieldHandle,
@@ -100,8 +101,18 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
                 })
             );
 
-            /* FIXME: Handle intercepted xmlhttprequests failures here */
-            setTimeout(() => (state.isSubmitting = false), SUBMITTING_RESET_TIMEOUT);
+            setTimeout(
+                withContext((ctx) => {
+                    state.isSubmitting = false;
+                    /** If we're confident the form was submitted: reconciliate the
+                     * autosave service after the `SUBMITTING_RESET_TIMEOUT`. This
+                     * allows handling SPAs which do not trigger a page change AND/OR
+                     * XMLHttpRequest interception without any status code errors. */
+                    if (options.submitted) ctx?.service.autosave.reconciliate().catch(noop);
+                }),
+                SUBMITTING_RESET_TIMEOUT
+            );
+
             return response.type === 'success' ? response.submission : null;
         }
 
