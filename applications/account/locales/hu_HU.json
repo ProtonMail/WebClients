@@ -4977,6 +4977,14 @@
         "A naptár tartalmának bizonyos részei nem támogatottak és nem kerülnek importálásra."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "További duplikált kulcsok is találhatók. Töltse fel egyesével a pontosabb információkért."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "A kulcs ${ fingerprint } már feltöltésre került"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "A ${ appName } alkalmazásnak szüksége van az engedélyére, hogy ${ enableDesktopNotifications }."
@@ -5592,9 +5600,6 @@
       ],
       "Failed to fetch logs.": [
         "Napló betöltése sikertelen."
-      ],
-      "Fast and focused. Email and calendar, right on your desktop.": [
-        "Gyors és koncentrált. E-mail és naptár, közvetlenül az asztalon."
       ],
       "Fill in user details": [
         "Adja meg a felhasználó adatait"
@@ -6832,14 +6837,6 @@
         "Az előfizetését a Mozilla kezeli. Kérjük, forduljon a Mozilla ügyfélszolgálatához az előfizetés lemondásához."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "További duplikált kulcsok is találhatók. Töltse fel egyesével a pontosabb információkért."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "A kulcs ${ fingerprint } már feltöltésre került"
-      ]
-    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Bekapcsolásakor az almappák a szülő mappa színét öröklik."
@@ -7358,9 +7355,6 @@
       ],
       "Awarded": [
         "Megszerezve"
-      ],
-      "Beta": [
-        "Béta"
       ],
       "Billing address": [
         "Számlázási cím"
@@ -9074,6 +9068,17 @@
         "Csoport menedzsment"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Máskülönben a fiókjához való hozzáférése korlátozott lesz, és a fiókja végül letiltásra kerül."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Ahhoz, hogy tudja folytatni a ${ trialPlanName } használatát a prémium funkciókkal, válassza ki előfizetési csomagját és a fizetés módját."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Próbaideje véget ér: ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, szám vége: ${ last4 }"
@@ -9149,17 +9154,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Önnek kedvezményes ára van a jelenlegi csomagjához, Ha kisebb csomagra vált, elveszíti a kedvezményes árat és ezt nem fogja tudni igénybe venni, ha újra előfizet."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Máskülönben a fiókjához való hozzáférése korlátozott lesz, és a fiókja végül letiltásra kerül."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Ahhoz, hogy tudja folytatni a ${ trialPlanName } használatát a prémium funkciókkal, válassza ki előfizetési csomagját és a fizetés módját."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Próbaideje véget ér: ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -11723,6 +11717,15 @@
       "Folders and labels": [
         "Mappák és címkék"
       ],
+      "For Linux": [
+        "Linux rendszerre"
+      ],
+      "For macOS": [
+        "macOS rendszerre"
+      ],
+      "For Windows": [
+        "Windows rendszerre"
+      ],
       "Forward and auto-reply": [
         "Továbbít és automatikus válasz"
       ],
@@ -11828,9 +11831,6 @@
       ],
       "Link confirmation": [
         "Hivatkozás jóváhagyása"
-      ],
-      "Location": [
-        "Hely"
       ],
       "Login password": [
         "Bejelentkezési jelszó"

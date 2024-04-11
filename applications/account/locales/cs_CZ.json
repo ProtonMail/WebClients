@@ -980,9 +980,6 @@
       "Unlock Breach Report": [
         "Odemknout přístup k hlášení úniku"
       ],
-      "Unlock breach reports": [
-        "Odemknout přístup k hlášením úniků informací"
-      ],
       "Unlock data": [
         "Odemknout údaje"
       ],
@@ -5840,6 +5837,17 @@
         "Část obsahu vašeho kalendáře není podporována a nebude importována."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Byly zjištěny další duplicitní klíče. Pro více informací je prosím nahrajte jednotlivě."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "${ fingerprint } klíče byl již nahrán"
+      ],
+      "Selected color:": [
+        "Vybraná barva:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikace ${ appName } potřebuje Váš souhlas, aby mohla ${ enableDesktopNotifications }."
@@ -6327,9 +6335,6 @@
       "Blocks senders from seeing if and when you opened a message.": [
         "Zamezuje odesílatelům zjistit, zda a kdy jste zprávu otevřeli."
       ],
-      "Breach Alert is powered by ${ BRAND_NAME }'s propietary datasets, open-source datasets, and Constella Intelligence. ${ dataBreachLink }": [
-        "Upozornění na únik dat je založeno na soukromých datových sadách ${ BRAND_NAME }, volně dostupných datových sadách a na Constella Intelligence. ${ dataBreachLink }"
-      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Pokud svůj aktuální tarif snížíte na bezplatnou verzi, navždy ztratíte současné výhody, i když v budoucnu svůj účet znovu povýšíte."
       ],
@@ -6629,9 +6634,6 @@
       ],
       "Failed to fetch logs.": [
         "Načtení záznamů selhalo."
-      ],
-      "Fast and focused. Email and calendar, right on your desktop.": [
-        "Rychlost a praktičnost. E-mail a kalendář přímo na vaší ploše."
       ],
       "Fill in user details": [
         "Vyplňte údaje uživatele"
@@ -7743,15 +7745,6 @@
       "URL link": [
         "URL odkaz"
       ],
-      "Use ${ BRAND_NAME } Pass to generate strong passwords and avoid password re-use": [
-        "Používejte ${ BRAND_NAME } Pass pro vytvoření silných hesel a zabraňte opětovného používání stejného hesla"
-      ],
-      "Use ${ VPN_APP_NAME } with Netshield enabled to protect you from phishing and malware": [
-        "Používejte ${ VPN_APP_NAME } se zapnutým Netshield abyste se chránili před phishingem a malware."
-      ],
-      "Use aliases to sign up for online services. This protects your real email address and identity, limiting the blast radius of a breach.": [
-        "Používejte aliasy při registraci do online služeb. Toto chrání vaší hlavní e-mailovou adresu a identitu, čímž je omezen dopad úniku dat."
-      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Použijte nejlepší server podle aktuálního zatížení a polohy: ${ formattedBestServerName }"
       ],
@@ -7812,9 +7805,6 @@
       "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
         "Upozornění: Odstranění nelze vrátit zpět. Tímto úkonem také odeberete přístup ke všem připojeným službám a odstraníte všechny své kontakty."
       ],
-      "Ways you can minimize your breach risks": [
-        "Způsoby, kterými můžete snížit riziko úniků vašich informací"
-      ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Doporučujeme používat jen oficiální aplikace ${ VPN_APP_NAME }, pokud je to možné."
       ],
@@ -7826,9 +7816,6 @@
       ],
       "We just sent you a new link.": [
         "Právě jsme vám poslali nový odkaz."
-      ],
-      "We monitor your email addresses, passwords, and personal data for appearances on the dark web and notify you in case your data is compromised.": [
-        "Sledujeme dark web a upozorňujeme vás při úniku vaší e-mailové adresy, hesla a osobních dat."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Potřebujeme ověřit vaši platební metodu u vaší banky."
@@ -8177,17 +8164,6 @@
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Vaše žádost na podporu byla uzavřena. Děkujeme za kontaktování podpory ${ BRAND_NAME }."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Byly zjištěny další duplicitní klíče. Pro více informací je prosím nahrajte jednotlivě."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "${ fingerprint } klíče byl již nahrán"
-      ],
-      "Selected color:": [
-        "Vybraná barva:"
       ]
     },
     "Info - folder colouring feature": {
@@ -8748,9 +8724,6 @@
       ],
       "Awarded": [
         "Uděleno"
-      ],
-      "Beta": [
-        "Beta"
       ],
       "Billing address": [
         "Fakturační adresa"
@@ -10769,6 +10742,17 @@
         "Řízení týmu"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "V opačném případě bude přístup k vašemu účtu omezen a váš účet bude nakonec deaktivován."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Pro další používání ${ trialPlanName } s prémiovými funkcemi si vyberte předplatné a platební metodu."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Zkušební verze končí ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } končící ${ last4 }"
@@ -10868,17 +10852,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Ve svém aktuálním tarifu využíváte akční cenu. Pokud přejdete na nižší verzi účtu, ztratíte možnost nadále využívat tuto cenu a při opětovném přihlášení k předplatnému již nebude dostupná."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "V opačném případě bude přístup k vašemu účtu omezen a váš účet bude nakonec deaktivován."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Pro další používání ${ trialPlanName } s prémiovými funkcemi si vyberte předplatné a platební metodu."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Zkušební verze končí ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -14063,18 +14036,6 @@
       "Billing cycle": [
         "Fakturační cyklus"
       ],
-      "Breach Alerts": [
-        "Upozornění na úniky dat"
-      ],
-      "Breach Date": [
-        "Datum úniku"
-      ],
-      "Breach Information": [
-        "Informace o úniku"
-      ],
-      "Breach Size": [
-        "Velikost úniku"
-      ],
       "Bridge for ${ platform }": [
         "Bridge pro ${ platform }"
       ],
@@ -14393,9 +14354,6 @@
       "Export public key": [
         "Exportovat veřejný klíč"
       ],
-      "Exposed info": [
-        "Uniklé informace"
-      ],
       "External PGP settings": [
         "Externí nastavení PGP"
       ],
@@ -14419,15 +14377,6 @@
       ],
       "Folders and labels": [
         "Složky a štítky"
-      ],
-      "For Linux": [
-        "Pro Linux"
-      ],
-      "For macOS": [
-        "Pro macOS"
-      ],
-      "For Windows": [
-        "Pro Windows"
       ],
       "Forward and auto-reply": [
         "Přeposlat a odpovědět"
@@ -14539,9 +14488,6 @@
       ],
       "Link confirmation": [
         "Potvrzení před otevřením odkazu"
-      ],
-      "Location": [
-        "Umístění"
       ],
       "Login password": [
         "Přihlašovací heslo"
@@ -14917,9 +14863,6 @@
       ],
       "Your changes are not synced yet": [
         "Vaše změny zatím nejsou synchronizovány"
-      ],
-      "Your Exposed Information": [
-        "Vaše uniklé informace"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Vaše bezplatná zkušební verze služby Mail Plus končí ${ textDate }"

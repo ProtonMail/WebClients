@@ -258,7 +258,7 @@
         "Ustvarite povezavo za skupno rabo s komer koli zunaj ${ BRAND_NAME }"
       ],
       "Create account": [
-        "Ustvari račun"
+        "Ustvarite račun"
       ],
       "Create calendar": [
         "Ustvari koledar"
@@ -611,6 +611,12 @@
       "Mark as default": [
         "Označi kot privzeto"
       ],
+      "Mark as open": [
+        "Označi kot odprto"
+      ],
+      "Mark as resolved": [
+        "Označi kot rešeno"
+      ],
       "mark emails as": [
         "označi e-pošto kot"
       ],
@@ -669,10 +675,10 @@
         "Plačilo"
       ],
       "Pay ${ price }": [
-        "Plačaj ${ price }"
+        "Plačajte ${ price }"
       ],
       "Pay ${ price } now": [
-        "Plačaj ${ price }"
+        "Plačajte ${ price } sedaj"
       ],
       "Preview": [
         "Predogled"
@@ -739,6 +745,9 @@
       ],
       "Report a problem": [
         "Prijavi težavo"
+      ],
+      "Request a call": [
+        "Zahtevajte klic"
       ],
       "Request a feature": [
         "Zahtevaj funkcijo"
@@ -979,9 +988,6 @@
       ],
       "Unlock Breach Report": [
         "Omogočite poročilo o uhajanju podatkov"
-      ],
-      "Unlock breach reports": [
-        "Omogočite poročila o uhajanju podatkov"
       ],
       "Unlock data": [
         "Odkleni podatke"
@@ -5360,7 +5366,7 @@
     },
     "Go to sign up": {
       "New to ${ BRAND_NAME }? ${ signUp }": [
-        "Novi pri ${ BRAND_NAME }? ${ signUp }"
+        "Novi pri ${ BRAND_NAME }u? ${ signUp }"
       ]
     },
     "Group": {
@@ -5374,7 +5380,7 @@
         "Omrežje"
       ],
       "Other category": [
-        "Druga kategorija"
+        "Drugo"
       ],
       "Services": [
         "Storitve"
@@ -5903,6 +5909,17 @@
         "Del vsebine koledarja ni podprt in ne bo uvožen."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Zaznali smo dodatne podvojene ključe. Prosimo, da jih naložite posamično za več informacij."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Ključ ${ fingerprint } je že bil naložen."
+      ],
+      "Selected color:": [
+        "Izberi barvo:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } potrebuje vaše dovoljenje za ${ enableDesktopNotifications }."
@@ -6079,7 +6096,7 @@
         "(Filtriraj, če je izpolnjen KATERIKOLI od naslednjih pogojev)"
       ],
       "* No credit card required.": [
-        "* Kreditna kartica ni potrebna."
+        "* Plačilna kartica ni potrebna."
       ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Pridobite si naslov ${ BRAND_NAME }**, ki ga uporabite za vse storitve ${ BRAND_NAME_TWO }, vključno z ${ MAIL_SHORT_APP_NAME } in ${ CALENDAR_SHORT_APP_NAME }."
@@ -6396,9 +6413,6 @@
       "Blocks senders from seeing if and when you opened a message.": [
         "Prepreči, da pošiljatelji vidijo, če in kdaj ste odprli sporočilo."
       ],
-      "Breach Alert is powered by ${ BRAND_NAME }'s propietary datasets, open-source datasets, and Constella Intelligence. ${ dataBreachLink }": [
-        "Opozorila o uhajanju podatkov temeljijo na lastniških zbirkah podatkov ${ BRAND_NAME }, javno dostopnih zbirkah podatkov in podatkih družbe Constella Intelligence. ${ dataBreachLink }"
-      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "S prehodom na brezplačni paket boste trajno izgubili te ugodnosti, tudi če v prihodnosti znova nadgradite."
       ],
@@ -6701,9 +6715,6 @@
       ],
       "Failed to fetch logs.": [
         "Pridobivanje dnevniških zapisov ni uspelo."
-      ],
-      "Fast and focused. Email and calendar, right on your desktop.": [
-        "Hitrost in osredotočenost. E-pošta in koledar na vašem namizju."
       ],
       "Fill in user details": [
         "Vnesite podatke o uporabniku"
@@ -7026,9 +7037,6 @@
       "Must be between 3 and 20 characters long.": [
         "Vaše geslo mora vsebovati 3 do 20 znakov."
       ],
-      "Must contain only letters, digits, and dashes (-).": [
-        "Must contain only letters, digits, and dashes (-)."
-      ],
       "Must not contain spaces.": [
         "Ne sme vsebovati presledkov."
       ],
@@ -7330,7 +7338,7 @@
         "Napotitvena povezava je bila kopirana v odložišče"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Osveževanje strani ali ${ link } bo samodejno odpravilo večino težav."
+        "Osvežitev strani ali ${ link } bo samodejno odpravilo večino težav."
       ],
       "Remember to share the user's sign in details with them.": [
         "Ne pozabite deliti podrobnosti za prijavo z uporabnikom."
@@ -7815,15 +7823,6 @@
       "URL link": [
         "Povezava URL"
       ],
-      "Use ${ BRAND_NAME } Pass to generate strong passwords and avoid password re-use": [
-        "Uporabite ${ BRAND_NAME } Pass za ustvarjanje močnih gesel in izogibanju ponovne uporabe istega gesla"
-      ],
-      "Use ${ VPN_APP_NAME } with Netshield enabled to protect you from phishing and malware": [
-        "Uporabite ${ VPN_APP_NAME } z vključenim NetShield za zaščito pred lažnim predstavljanjem in zlonamerno programsko opremo"
-      ],
-      "Use aliases to sign up for online services. This protects your real email address and identity, limiting the blast radius of a breach.": [
-        "Za prijavo v spletne storitve uporabljajte vzdevke. S tem zaščitite svoj pravi e-poštni naslov in identiteto ter omejite škodo v primeru uhajanja podatkov."
-      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Uporabi najboljši strežnik glede na trenutno obremenitev in položaj: ${ formattedBestServerName }."
       ],
@@ -7884,9 +7883,6 @@
       "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
         "Opozorilo: izbris je trajen. S tem se odstrani tudi dostop do vseh povezanih storitev in izbrišejo vsi vaši stiki."
       ],
-      "Ways you can minimize your breach risks": [
-        "Načini za zmanjšanje možnosti uhajanja podatkov"
-      ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Svetujemo vam, da če je le mogoče, uporabljate uradne aplikacije ${ VPN_APP_NAME }."
       ],
@@ -7899,9 +7895,6 @@
       "We just sent you a new link.": [
         "Ravnokar smo ti poslali novo povezavo."
       ],
-      "We monitor your email addresses, passwords, and personal data for appearances on the dark web and notify you in case your data is compromised.": [
-        "Spremljamo vaše e-poštne naslove, gesla in osebne podatke ter vas opozorimo, če se pojavijo v temnem spletu."
-      ],
       "We need to authenticate your payment method with your bank.": [
         "Potrebujemo overitev vašega načina plačila pri vaši banki."
       ],
@@ -7910,9 +7903,6 @@
       ],
       "We recommend having at least 2 servers in order to provide redundancy.": [
         "Priporočamo, da imate vsaj dva strežnika, da zagotovite redundantnost."
-      ],
-      "We recommend having multiple servers in different locations to provide redundancy.": [
-        "Priporočamo, da imate več strežnikov na različnih lokacijah, da odstranite odvečne stežnike"
       ],
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "Priporočamo, da obvestite člane organizacije in jih prosite, naj nastavijo dvojno preverjanje pristnosti za svoje račune, preden zahtevate uporabo tega preverjanja."
@@ -8095,10 +8085,10 @@
         "Niste nastavili načina za obnovitev, zato obnovitev računa ne bo mogoča, če pozabite geslo. Nadaljujte brez načina za obnovitev?"
       ],
       "You have ${ availableCount } dedicated server available.": [
-        "Na voljo imate ${ availableCount } namenskega strežnika.",
+        "Na voljo imate ${ availableCount } namenski strežnik.",
         "Na voljo imate ${ availableCount } namenska strežnika.",
         "Na voljo imate ${ availableCount } namenske strežnike.",
-        "Na voljo imate ${ availableCount } namenske strežnike."
+        "Na voljo imate ${ availableCount } namenskih strežnikov."
       ],
       "You have no calendars to export.": [
         "Nimate koledarjev, ki bi jih lahko izvozili."
@@ -8170,7 +8160,7 @@
         "Vaš račun ${ BRAND_NAME } je trenutno suspendiran. E-poštni predal ne prejema sporočil, vaše povezave za skupno rabo na Disku so deaktivirane in ne morete nalagati novih datotek. Za nadaljnjo uporabo storitve plačajte morebitne zapadle račune."
       ],
       "Your ${ BRAND_NAME } password": [
-        "Vaše ${ BRAND_NAME } geslo."
+        "Vaše ${ BRAND_NAME } geslo"
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "Vaša računa za ${ VPN_APP_NAME } in ${ MAIL_APP_NAME } sta povezana. Za brisanje obeh računov se prijavite na ${ loginLink } in tam izbrišite svoj račun."
@@ -8249,17 +8239,6 @@
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Vaš zahtevek za podporo je bil zaprt. Hvala, ker ste se obrnili na podporo ${ BRAND_NAME }."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Zaznali smo dodatne podvojene ključe. Prosimo, da jih naložite posamično za več informacij."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Ključ ${ fingerprint } je že bil naložen."
-      ],
-      "Selected color:": [
-        "Izberi barvo:"
       ]
     },
     "Info - folder colouring feature": {
@@ -8827,9 +8806,6 @@
       "Awarded": [
         "Podeljeno."
       ],
-      "Beta": [
-        "Beta"
-      ],
       "Billing address": [
         "Naslov za izstavitev računa"
       ],
@@ -8879,7 +8855,7 @@
         "Gotovina"
       ],
       "Category": [
-        "Kategorija"
+        "Vrsta napake"
       ],
       "Choose a name for the generated certificate file": [
         "Izberite ime za ustvarjeno datoteko potrdila."
@@ -9854,6 +9830,9 @@
       ],
       "Sign in": [
         "Prijava"
+      ],
+      "stay safer online": [
+        "izboljšajte svojo spletno varnost"
       ],
       "switch account": [
         "preklopi račun"
@@ -10895,6 +10874,17 @@
         "Upravljavci ekipe"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "V nasprotnem primeru bo dostop do vašega računa omejen, sčasoma pa bo vaš račun onemogočen."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Če želite še naprej uporabljati ${ trialPlanName } s premijskimi funkcijami, izberite naročnino in možnost plačila."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Vaš preizkus se konča ${ formattedPeriodEndDate }."
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, ki se konča z ${ last4 }"
@@ -10996,17 +10986,6 @@
         "Uživate v promocijski ceni na vašem trenutnem paketu. Če boste zmanjšali svoj paket, boste izgubili promocijsko ceno in ta ne bo na voljo, če se poskusite ponovno naročiti."
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "V nasprotnem primeru bo dostop do vašega računa omejen, sčasoma pa bo vaš račun onemogočen."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Če želite še naprej uporabljati ${ trialPlanName } s premijskimi funkcijami, izberite naročnino in možnost plačila."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Vaš preizkus se konča ${ formattedPeriodEndDate }."
-      ]
-    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } od ${ humanMaxSpace }"
@@ -11034,7 +11013,7 @@
         "Naročnina"
       ],
       "terms and conditions": [
-        "pravila in pogoji"
+        "pravili in pogoji"
       ],
       "The organization name will be visible to your users while they are signed in.": [
         "Ime organizacije bo vidno vašim uporabnikom, ko so prijavljeni."
@@ -12384,7 +12363,7 @@
         "Telefonska številka"
       ],
       "Please describe the problem and include any error messages": [
-        "Opišite težavo in vključite morebitna sporočila o napakah"
+        "Opišite težavo in vključite morebitna sporočila o napakah."
       ],
       "Please insert link first": [
         "Najprej vstavite povezavo"
@@ -14274,17 +14253,8 @@
       "Billing cycle": [
         "Cikel obračunavanja"
       ],
-      "Breach Alerts": [
-        "Opozorila o uhajanju podatkov"
-      ],
-      "Breach Date": [
-        "Datum uhajanja podatkov"
-      ],
-      "Breach Information": [
-        "Informacije o uhajanju podatkov"
-      ],
-      "Breach Size": [
-        "Obseg uhajanja podatkov"
+      "Breach Alert": [
+        "Opozorilo o uhajanju podatkov"
       ],
       "Bridge for ${ platform }": [
         "Prehod za ${ platform }"
@@ -14490,6 +14460,9 @@
       "Delete version history?": [
         "Brisanje zgodovine različic?"
       ],
+      "Details": [
+        "Podrobnosti"
+      ],
       "Disable ${ email }": [
         "Onemogoči ${ email }"
       ],
@@ -14604,9 +14577,6 @@
       "Export public key": [
         "Izvozi javni ključ"
       ],
-      "Exposed info": [
-        "Razkrite informacije"
-      ],
       "External PGP settings": [
         "Zunanje nastavitve PGP"
       ],
@@ -14716,7 +14686,7 @@
         "Uvozi sporočila"
       ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
-        "Uvozi preko ${ PRODUCT_NAMES.EASY_SWITCH }."
+        "Uvozi preko ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
       "Increase your privacy with more addresses": [
         "Povečajte svojo zasebnost z več naslovi"
@@ -14750,9 +14720,6 @@
       ],
       "Link confirmation": [
         "Potrditvena povezava"
-      ],
-      "Location": [
-        "Lokacija"
       ],
       "Login password": [
         "Geslo za prijavo"
@@ -15129,8 +15096,8 @@
       "Your changes are not synced yet": [
         "Vaše spremembe se še niso sinhronizirale"
       ],
-      "Your Exposed Information": [
-        "Vaše razkrite informacije"
+      "Your exposed information": [
+        "Vaša razkrita informacija"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Brezplačno preizkusno obdobje Mail Plus se vam zaključi ${ textDate }"

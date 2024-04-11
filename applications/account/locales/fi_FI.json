@@ -104,9 +104,6 @@
       "Add notification": [
         "Lisää ilmoitus"
       ],
-      "Add or switch account": [
-        "Lisää tai vaihda tiliä"
-      ],
       "Add PayPal": [
         "Lisää PayPal"
       ],
@@ -982,9 +979,6 @@
       ],
       "Unlock Breach Report": [
         "Avaa tietovuotoraportti"
-      ],
-      "Unlock breach reports": [
-        "Avaa tietovuotoraportit"
       ],
       "Unlock data": [
         "Avaa tiedot"
@@ -5852,6 +5846,17 @@
         "Osaa kalenterisi sisällöstä ei tueta, eikä sitä tämän vuoksi tuoda."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Havaittiin lisää avainten kaksoiskappaleita. Lataa yksitellen nähdäksesi lisätietoja."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Avain ${ fingerprint } on jo ladattu"
+      ],
+      "Selected color:": [
+        "Valittu väri:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } tarvitsee käyttöoikeuden ${ enableDesktopNotifications }."
@@ -6297,9 +6302,6 @@
       "Blocks senders from seeing if and when you opened a message.": [
         "Estää lähettäjiä näkemästä, jos ja koska avasit viestin."
       ],
-      "Breach Alert is powered by ${ BRAND_NAME }'s propietary datasets, open-source datasets, and Constella Intelligence. ${ dataBreachLink }": [
-        "Tietovuotosuojauksen perustana ovat ${ BRAND_NAME }in ja avoimen lähdekoodin tietojoukot, sekä Constella Intelligence. ${ dataBreachLink }"
-      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Alentamalla ilmaiseen palveluun, menetät nämä edut pysyvästi, vaikka päivittäisit tilauksesi tulevaisuudessa uudelleen."
       ],
@@ -6597,9 +6599,6 @@
       ],
       "Failed to fetch logs.": [
         "Lokien nouto epäonnistui."
-      ],
-      "Fast and focused. Email and calendar, right on your desktop.": [
-        "Nopea ja keskitetty. Sähköposti ja kalenteri suoraan työpöydälläsi."
       ],
       "Fill in user details": [
         "Täytä käyttäjän tiedot"
@@ -7691,15 +7690,6 @@
       "URL link": [
         "URL-linkki"
       ],
-      "Use ${ BRAND_NAME } Pass to generate strong passwords and avoid password re-use": [
-        "Luo vahvoja salasanoja ja vältä salasanojen toistuvaa käyttöä ${ BRAND_NAME } Passilla."
-      ],
-      "Use ${ VPN_APP_NAME } with Netshield enabled to protect you from phishing and malware": [
-        "Suojaudu tietojenkalastelulta ja haittalliselta sisällöltä käyttämällä ${ VPN_APP_NAME }:ää Netshieldin kanssa."
-      ],
-      "Use aliases to sign up for online services. This protects your real email address and identity, limiting the blast radius of a breach.": [
-        "Rekisteröidy verkkopalveluihin aliaksilla. Tämä suojaa todellista sähköpostiosoitettasi ja henkilöllisyyttäsi rajoittaen mahdollisten tietovuotojen seurauksia."
-      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Käytä nykyisen kuormituksen ja sijainnin perusteella parasta palvelinta: ${ formattedBestServerName }"
       ],
@@ -7760,9 +7750,6 @@
       "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
         "Varoitus: poisto on pysyvää. Tämä poistaa pääsyn myös kaikkiin yhdistettyihin palveluihin ja poistaa kaikki yhteystietosi."
       ],
-      "Ways you can minimize your breach risks": [
-        "Tapoja tietovuotoalttiutesi minimointiin"
-      ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Suosittelemme aina virallisten ${ VPN_APP_NAME } -sovellusten käyttöä, jos mahdollista."
       ],
@@ -7774,9 +7761,6 @@
       ],
       "We just sent you a new link.": [
         "Lähetimme sinulle juuri uuden linkin."
-      ],
-      "We monitor your email addresses, passwords, and personal data for appearances on the dark web and notify you in case your data is compromised.": [
-        "Valvomme sähköpostiosoitteidesi, salasanojesi ja henkilötietojesi esiintyvyyttä pimeässä verkossa ja ilmoitamme sinulle, jos tietosi ovat vaarantuneet."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Maksutapa on vahvistettava pankistasi."
@@ -8111,17 +8095,6 @@
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Tukipyyntösi on suljettu. Kiitos, että otit yhteyttä ${ BRAND_NAME } -tukeen."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Havaittiin lisää avainten kaksoiskappaleita. Lataa yksitellen nähdäksesi lisätietoja."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Avain ${ fingerprint } on jo ladattu"
-      ],
-      "Selected color:": [
-        "Valittu väri:"
       ]
     },
     "Info - folder colouring feature": {
@@ -8676,9 +8649,6 @@
       ],
       "Awarded": [
         "Palkittu"
-      ],
-      "Beta": [
-        "Beta-versio"
       ],
       "Billing address": [
         "Laskutusosoite"
@@ -10685,6 +10655,17 @@
         "Tiimin hallinta"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Muutoin pääsyä tililesi rajoitetaan ja aikanaan tilisi poistetaan käytöstä."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Jatkaaksesi ${ trialPlanName }n käyttämistä premium-ominaisuuksilla, valitse tilaus ja maksutapa."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Kokeilujaksosi päättyy ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, päättyy ${ last4 }"
@@ -10784,17 +10765,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Nykyisellä tilauksellasi nautit alennetusta etuhinnasta. Jos alennat tilisi, menetät etuhinnan, eikä se ole enää käytettävissä, jos joskus palaat tilaajaksi."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Muutoin pääsyä tililesi rajoitetaan ja aikanaan tilisi poistetaan käytöstä."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Jatkaaksesi ${ trialPlanName }n käyttämistä premium-ominaisuuksilla, valitse tilaus ja maksutapa."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Kokeilujaksosi päättyy ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -13961,18 +13931,6 @@
       "Billing cycle": [
         "Laskutusjakso"
       ],
-      "Breach Alerts": [
-        "Tietovuotohälytykset"
-      ],
-      "Breach Date": [
-        "Vuodon päiväys"
-      ],
-      "Breach Information": [
-        "Tietoja vuodosta"
-      ],
-      "Breach Size": [
-        "Vuodon koko"
-      ],
       "Bridge for ${ platform }": [
         "Bridge ${ platform }-alustalle"
       ],
@@ -14287,9 +14245,6 @@
       "Export public key": [
         "Vie julkinen avain"
       ],
-      "Exposed info": [
-        "Vuotaneet tiedot"
-      ],
       "External PGP settings": [
         "Ulkoisen PGP-järjestelmän asetukset"
       ],
@@ -14429,9 +14384,6 @@
       ],
       "Link confirmation": [
         "Linkin vahvistus"
-      ],
-      "Location": [
-        "Sijainti"
       ],
       "Login password": [
         "Kirjautumisen salasana"
@@ -14805,9 +14757,6 @@
       ],
       "Your changes are not synced yet": [
         "Muutoksiasi ei ole vielä synkronoitu"
-      ],
-      "Your Exposed Information": [
-        "Paljastuneet tietosi"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Ilmainen Mail Plus -kokeilusi päättyy ${ textDate }"
