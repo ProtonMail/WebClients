@@ -8,20 +8,22 @@ import { Spotlight, useSpotlightShow } from '@proton/components/components';
 import useBusyTimeSlotsAvailable from '@proton/components/containers/calendar/hooks/useBusyTimeSlotsAvailable';
 import { useActiveBreakpoint, useSpotlightOnFeature, useUser, useWelcomeFlags } from '@proton/components/hooks';
 import { FeatureCode } from '@proton/features';
+import { VIEWS } from '@proton/shared/lib/calendar/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import spotlightImg from '@proton/styles/assets/img/illustrations/spotlight-stars.svg';
 
 interface Props {
     children: React.ReactNode;
+    view: VIEWS;
 }
 
-const BusySlotsSpotlight = ({ children }: Props) => {
+const BusySlotsSpotlight = ({ children, view }: Props) => {
     const anchorRef = useRef<HTMLDivElement>(null);
     const [user] = useUser();
     const { viewportWidth } = useActiveBreakpoint();
     const [{ isDone }] = useWelcomeFlags();
     const userAccountHasMoreThanTwoDays = new Date() > addDays(fromUnixTime(user.CreateTime), 2);
-    const isBusyTimeSlotsAvailable = useBusyTimeSlotsAvailable();
+    const isBusyTimeSlotsAvailable = useBusyTimeSlotsAvailable(view);
 
     /**
      * Display conditions:
