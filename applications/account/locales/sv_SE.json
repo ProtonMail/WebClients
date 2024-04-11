@@ -104,9 +104,6 @@
       "Add notification": [
         "Lägg till avisering"
       ],
-      "Add or switch account": [
-        "Lägg till eller byt konto"
-      ],
       "Add PayPal": [
         "Lägg till PayPal"
       ],
@@ -614,6 +611,9 @@
       "Mark as default": [
         "Markera som standard"
       ],
+      "Mark as resolved": [
+        "Markera som löst"
+      ],
       "mark emails as": [
         "markera e-post som"
       ],
@@ -988,9 +988,6 @@
       ],
       "Unlock Breach Report": [
         "Lås upp intrångsrapport"
-      ],
-      "Unlock breach reports": [
-        "Lås upp intrångsrapporter"
       ],
       "Unlock data": [
         "Lås upp data"
@@ -1856,6 +1853,9 @@
     "Call Scheduled Confirmation": {
       "Request sent": [
         "Begäran skickad"
+      ],
+      "We'll get back to you with more information as soon as we can.": [
+        "Vi återkommer med mer information så snart vi kan."
       ],
       "You can safely close this tab.": [
         "Du kan stänga denna flik säkert."
@@ -5881,6 +5881,17 @@
         "En del av ditt kalenderinnehåll stöds inte och kommer inte att importeras."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Ytterligare dubbletter av nycklar upptäcktes. Ladda upp individuellt för mer information."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Nyckel ${ fingerprint } har redan laddats upp"
+      ],
+      "Selected color:": [
+        "Vald färg:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } behöver din tillåtelse till ${ enableDesktopNotifications }."
@@ -6190,6 +6201,9 @@
       ],
       "Amount due": [
         "Att betala"
+      ],
+      "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
+        "Ett e-postalias fungerar som en e-postadress, men minskar skräppost och håller din faktiska e-postadress och identitet dold."
       ],
       "An error occurred while communicating with the extension": [
         "Ett fel uppstod under kommunikationen med tillägget"
@@ -6625,7 +6639,7 @@
         "Misslyckades att hämta loggar."
       ],
       "Fast and focused. Email and calendar, right on your desktop.": [
-        "Snabb och fokuserad. E-post och kalender, direkt på din stationära dator"
+        "Snabb och fokuserad. E-post och kalender, direkt på din stationära dator."
       ],
       "Fill in user details": [
         "Fyll i användaruppgifter"
@@ -6836,6 +6850,9 @@
       "Just send them your personal referral link.": [
         "Skicka bara din personliga referenslänk till dem."
       ],
+      "Keep your info more secure and private with these guides and tips.": [
+        "Håll din information mer säker och privat med dessa guider och tips."
+      ],
       "Key deletion is irreversible!": [
         "Borttagning av nyckel är oåterkalleligt!"
       ],
@@ -6853,6 +6870,9 @@
       ],
       "Lean more about gateways": [
         "Lär dig mer om gateways"
+      ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Lär dig hur man ${ staySaferOnlineLink }"
       ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Lär dig hur du loggar in på ${ VPN_APP_NAME } med VPN-appar från tredje part."
@@ -6895,6 +6915,9 @@
       ],
       "Loading ${ appName }": [
         "Laddar ${ appName }"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Laddar kalender, vänta. Du kommer att omdirigeras till vår schemaläggningsplattform Calendly i en ny flik."
       ],
       "Loading preview": [
         "Laddar förhandsgranskning"
@@ -7726,14 +7749,8 @@
       "URL link": [
         "URL-länk"
       ],
-      "Use ${ BRAND_NAME } Pass to generate strong passwords and avoid password re-use": [
-        "Använd ${ BRAND_NAME } Pass för att generera starka lösenord och undvika återanvändning av lösenord"
-      ],
-      "Use ${ VPN_APP_NAME } with Netshield enabled to protect you from phishing and malware": [
-        "Använd ${ VPN_APP_NAME } med Netshield aktiverat för att skydda dig från nätfiske och skadlig kod"
-      ],
-      "Use aliases to sign up for online services. This protects your real email address and identity, limiting the blast radius of a breach.": [
-        "Använd alias för att registrera dig för tjänster online. Detta skyddar din riktiga e-postadress och identitet och minskar omfattningen av ett intrång."
+      "Use a password manager to generate and securely store your passwords, ensuring strong passwords and easier sign-ins.": [
+        "Använd en lösenordshanterare för att generera och lagra dina lösenord på ett säkert sätt, vilket säkerställer starka lösenord och enklare inloggningar."
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Använd den bästa servern enligt nuvarande belastning och position: ${ formattedBestServerName }"
@@ -7789,14 +7806,14 @@
       "Want servers in other countries?": [
         "Vill du ha servrar i andra länder?"
       ],
+      "Want to learn more?": [
+        "Vill du lära dig mer?"
+      ],
       "Warning:": [
         "Varning:"
       ],
       "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
         "Varning: borttagning är permanent. Detta tar också bort åtkomst till alla anslutna tjänster och tar bort alla dina kontakter."
-      ],
-      "Ways you can minimize your breach risks": [
-        "Sätt du kan minimera dina intrångsrisker"
       ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Vi rekommenderar att du använder officiella ${ VPN_APP_NAME }-applikationer när det är möjligt."
@@ -7809,9 +7826,6 @@
       ],
       "We just sent you a new link.": [
         "Vi har precis skickat en ny länk till dig."
-      ],
-      "We monitor your email addresses, passwords, and personal data for appearances on the dark web and notify you in case your data is compromised.": [
-        "Vi övervakar dina e-postadresser, lösenord och personuppgifter för att upptäcka om de förekommer på ”Dark web” och aviserar dig om din data är komprometterat."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Vi måste autentisera din betalningsmetod med din bank."
@@ -7890,6 +7904,9 @@
       ],
       "Why?": [
         "Varför?"
+      ],
+      "Will soon be available.": [
+        "Kommer snart vara tillgänglig."
       ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "Med ett Business- eller Enterprise-paket kan du köpa ${ boldDedicatedServers } för din organisation och ställa in ${ boldGateways } för att kontrollera vilka användare som kan komma åt dem."
@@ -8114,6 +8131,9 @@
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Din information är säker hos oss. Vi kommer endast kontakta dig när det krävs för att tillhandahålla våra tjänster."
       ],
+      "Your information was found on ${ displayedDate }": [
+        "Din information hittades den ${ displayedDate }"
+      ],
       "Your login information will not be saved after the import is completed.": [
         "Dina inloggningsuppgifter kommer inte att sparas när importen är slutförd."
       ],
@@ -8146,17 +8166,9 @@
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Ditt supportärende har stängts. Tack för att du kontaktade supporten för ${ BRAND_NAME }."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Ytterligare dubbletter av nycklar upptäcktes. Ladda upp individuellt för mer information."
       ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Nyckel ${ fingerprint } har redan laddats upp"
-      ],
-      "Selected color:": [
-        "Vald färg:"
+      "Zoom meeting": [
+        "Zoom-möte"
       ]
     },
     "Info - folder colouring feature": {
@@ -9698,6 +9710,9 @@
       "here": [
         "här"
       ],
+      "How does monitoring work?": [
+        "Hur fungerar övervakning?"
+      ],
       "How to pay with Bitcoin?": [
         "Hur betalar man med Bitcoin?"
       ],
@@ -9742,6 +9757,9 @@
       ],
       "Sign in": [
         "Logga in"
+      ],
+      "stay safer online": [
+        "var säkrare online"
       ],
       "switch account": [
         "byt konto"
@@ -9837,6 +9855,9 @@
       ],
       "Enable authentication logs": [
         "Aktivera autentiseringsloggar"
+      ],
+      "Enable Breach Alert": [
+        "Aktivera intrångsvarning"
       ]
     },
     "Mail import summary": {
@@ -10715,6 +10736,17 @@
         "Teamhantering"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Annars kommer åtkomsten till ditt konto att begränsas och ditt konto kommer så småningom att inaktiveras."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "För att fortsätta använda ${ trialPlanName } med premiumfunktioner, välj din prenumeration och betalningsalternativ."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Din provperiod slutar den ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } slutar med ${ last4 }"
@@ -10814,17 +10846,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Du har ett kampanjpris på ditt nuvarande paket. Om du nedgraderar ditt konto kommer du förlora ditt kampanjpris och det blir inte tillgängligt om du försöker prenumerera igen."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Annars kommer åtkomsten till ditt konto att begränsas och ditt konto kommer så småningom att inaktiveras."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "För att fortsätta använda ${ trialPlanName } med premiumfunktioner, välj din prenumeration och betalningsalternativ."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Din provperiod slutar den ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -14018,17 +14039,11 @@
       "Billing cycle": [
         "Faktureringscykel"
       ],
-      "Breach Alerts": [
-        "Intrångsvarningar"
+      "Block trackers and malware": [
+        "Blockera spårare och skadlig kod"
       ],
-      "Breach Date": [
-        "Intrångsdatum"
-      ],
-      "Breach Information": [
-        "Intrångsinformation"
-      ],
-      "Breach Size": [
-        "Storlek på intrång"
+      "Breach Alert": [
+        "Intrångsvarning"
       ],
       "Bridge for ${ platform }": [
         "Bridge för ${ platform }"
@@ -14230,6 +14245,9 @@
       "Delete version history?": [
         "Ta bort versionshistorik?"
       ],
+      "Details": [
+        "Detaljer"
+      ],
       "Disable ${ email }": [
         "Inaktivera ${ email }"
       ],
@@ -14343,9 +14361,6 @@
       ],
       "Export public key": [
         "Exportera offentlig nyckel"
-      ],
-      "Exposed info": [
-        "Exponeringsinformation"
       ],
       "External PGP settings": [
         "Externa PGP-inställningar"
@@ -14489,9 +14504,6 @@
       ],
       "Link confirmation": [
         "Länkbekräftelse"
-      ],
-      "Location": [
-        "Plats"
       ],
       "Login password": [
         "Inloggningslösenord"
@@ -14639,6 +14651,9 @@
       ],
       "Reset password?": [
         "Återställ lösenord?"
+      ],
+      "Resolved": [
+        "Löst"
       ],
       "Restore administrator privileges": [
         "Återställ administratörsrättigheter"
@@ -14854,6 +14869,9 @@
       "We'll send an email to your new address with instructions on completing the change.": [
         "Vi skickar ett e-postmeddelande till din nya adress med instruktioner om hur du slutför ändringen."
       ],
+      "What is an alias?": [
+        "Vad är ett alias?"
+      ],
       "What would you like to import?": [
         "Vad vill du importera?"
       ],
@@ -14872,8 +14890,8 @@
       "Your changes are not synced yet": [
         "Dina ändringar är inte synkroniserade än"
       ],
-      "Your Exposed Information": [
-        "Din exponeringsinformation"
+      "Your exposed information": [
+        "Din exponerade information"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Din gratis provperiod för Mail Plus slutar den ${ textDate }"

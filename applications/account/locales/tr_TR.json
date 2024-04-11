@@ -104,9 +104,6 @@
       "Add notification": [
         "Bildirim ekle"
       ],
-      "Add or switch account": [
-        "Hesap ekle veya değiştir"
-      ],
       "Add PayPal": [
         "PayPal ekle"
       ],
@@ -614,6 +611,12 @@
       "Mark as default": [
         "Varsayılan olarak işaretle"
       ],
+      "Mark as open": [
+        "Açık olarak işaretle"
+      ],
+      "Mark as resolved": [
+        "Çözülmüş olarak işaretle"
+      ],
       "mark emails as": [
         "e-postalar şöyle işaretlensin"
       ],
@@ -941,6 +944,9 @@
       "Start import": [
         "İçe aktarmayı başlat"
       ],
+      "Start live chat": [
+        "Canlı sohbet başlat"
+      ],
       "Stay": [
         "Kal"
       ],
@@ -982,9 +988,6 @@
       ],
       "Unlock Breach Report": [
         "Verilerin ele geçirilmesi bildirimine erişin"
-      ],
-      "Unlock breach reports": [
-        "Verilerin ele geçirilmesi bildirimlerine erişin"
       ],
       "Unlock data": [
         "Verilerin kilidini aç"
@@ -1836,6 +1839,14 @@
       ],
       "Week": [
         "Hafta"
+      ]
+    },
+    "Call Scheduled Confirmation": {
+      "Request sent": [
+        "İstek gönderildi"
+      ],
+      "You can safely close this tab.": [
+        "Bu sekmeyi güvenle kapatabilirsiniz."
       ]
     },
     "Checkout row": {
@@ -5492,6 +5503,11 @@
         "En iyi ${ MAIL_APP_NAME } uygulamasını ücretsiz deneyin"
       ]
     },
+    "Headline": {
+      "Contact us": [
+        "Bize ulaşın"
+      ]
+    },
     "Hint": {
       "Found ${ items.length } suggestion, use keyboard to navigate.": [
         "${ items.length } öneri bulundu, gezinmek için klavyeyi kullanın.",
@@ -5838,6 +5854,17 @@
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "Takvim içeriğinizin bir bölümü desteklenmiyor ve içe aktarılmayacak."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Ek çift anahtar algılandı. Ayrıntılı bilgi almak için lütfen tek tek yükleyin."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "${ fingerprint } anahtarı zaten yüklenmiş"
+      ],
+      "Selected color:": [
+        "Seçilmiş renk:"
       ]
     },
     "Info": {
@@ -6285,9 +6312,6 @@
       "Blocks senders from seeing if and when you opened a message.": [
         "Göndericilerin bir iletiyi açıp açmadığınızı ve ne zaman açtığınızı görmesini engeller."
       ],
-      "Breach Alert is powered by ${ BRAND_NAME }'s propietary datasets, open-source datasets, and Constella Intelligence. ${ dataBreachLink }": [
-        "Verilerin ele geçrilmesi uyarısı, ${ BRAND_NAME } şirketinin özel veri kümeleri, açık kaynaklı veri kümeleri ve Constella Intelligence tarafından desteklenmektedir. ${ dataBreachLink }"
-      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ücretsiz bir tarifeye geçtiğinizde, gelecekte yeniden ücretli tarifeye geçseniz bile bu ek faydaları kalıcı olarak kaybedersiniz."
       ],
@@ -6586,9 +6610,6 @@
       "Failed to fetch logs.": [
         "Günlük kayıtları alınamadı."
       ],
-      "Fast and focused. Email and calendar, right on your desktop.": [
-        "Hızlı ve odaklanmış. E-posta ve takvim, doğrudan masaüstünüzde."
-      ],
       "Fill in user details": [
         "Kullanıcı bilgilerini yazın"
       ],
@@ -6798,6 +6819,9 @@
       "Just send them your personal referral link.": [
         "Onlara kişisel öneri bağlantınızı gönderin."
       ],
+      "Keep your info more secure and private with these guides and tips.": [
+        "Bu rehberler ve ipuçları ile bilgilerinizi daha güvenli ve gizli tutun."
+      ],
       "Key deletion is irreversible!": [
         "Anahtar silme işlemi geri alınamaz!"
       ],
@@ -6845,6 +6869,9 @@
       ],
       "Link type": [
         "Bağlantı türü"
+      ],
+      "Live chat": [
+        "Canlı sohbet"
       ],
       "Loaded content is being protected by our proxy when tracker protection is activated.": [
         "İzleyici koruması açıkken yüklenen içerik vekil sunucumuz tarafından korunur."
@@ -7676,15 +7703,6 @@
       "URL link": [
         "Adres bağlantısı"
       ],
-      "Use ${ BRAND_NAME } Pass to generate strong passwords and avoid password re-use": [
-        "Güçlü parolalar oluşturmak ve parolaları yeniden kullanmaktan kaçınmak için ${ BRAND_NAME } kullanın"
-      ],
-      "Use ${ VPN_APP_NAME } with Netshield enabled to protect you from phishing and malware": [
-        "Kimlik avından ve kötü amaçlı yazılımlardan korunmak için Netshield açıkken ${ VPN_APP_NAME } kullanın"
-      ],
-      "Use aliases to sign up for online services. This protects your real email address and identity, limiting the blast radius of a breach.": [
-        "Çevrim içi hizmetlerde hesap açmak için takma adlar kullanın. Böylece gerçek e-posta adresiniz ve kimliğinizi korunur ve verilerin ele geçirilmesinin etkisi sınırlandırılır."
-      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Güncel yük ve konuma göre en iyi sunucuyu kullanın: ${ formattedBestServerName }"
       ],
@@ -7739,14 +7757,14 @@
       "Want servers in other countries?": [
         "Başka ülkelerden sunucular ister misiniz?"
       ],
+      "Want to learn more?": [
+        "Ayrıntılı bilgi almak ister misiniz?"
+      ],
       "Warning:": [
         "Uyarı:"
       ],
       "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
         "Uyarı: Silme işlemi geri alınamaz. Bu işlem, tüm ilgili hizmetlere erişiminizi keser ve tüm kişilerinizi siler."
-      ],
-      "Ways you can minimize your breach risks": [
-        "Verilerinizin ele geçirilmesi riskini en aza indirme yolları"
       ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Olabildiğince resmi ${ VPN_APP_NAME } uygulamalarını kullanmanızı öneririz."
@@ -7759,9 +7777,6 @@
       ],
       "We just sent you a new link.": [
         "Size yeni bir bağlantı gönderdik."
-      ],
-      "We monitor your email addresses, passwords, and personal data for appearances on the dark web and notify you in case your data is compromised.": [
-        "E-posta adreslerinizi, parolalarınızı ve kişisel verilerinizi karanlık ağda açığa çıkmasına karşı izliyoruz ve verilerinizin tehlikeye girmesi durumunda sizi bilgilendiriyoruz."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Ödeme yönteminizi bankanızla doğrulamamız gerekiyor."
@@ -8096,17 +8111,6 @@
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Destek kaydınız kapatıldı. ${ BRAND_NAME } destek ekibiyle görüştüğünüz için teşekkür ederiz."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Ek çift anahtar algılandı. Ayrıntılı bilgi almak için lütfen tek tek yükleyin."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "${ fingerprint } anahtarı zaten yüklenmiş"
-      ],
-      "Selected color:": [
-        "Seçilmiş renk:"
       ]
     },
     "Info - folder colouring feature": {
@@ -8658,9 +8662,6 @@
       ],
       "Awarded": [
         "Hediye edilen"
-      ],
-      "Beta": [
-        "Beta"
       ],
       "Billing address": [
         "Fatura adresi"
@@ -9684,6 +9685,9 @@
       "Sign in": [
         "Oturum aç"
       ],
+      "stay safer online": [
+        "çevrimiçi ortamda daha güvende kalın"
+      ],
       "switch account": [
         "hesabı değiştir"
       ],
@@ -10664,6 +10668,17 @@
         "Ekip yönetimi"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Yoksa hesabınıza erişim sınırlanacak ve sonunda hesabınız kullanım dışı bırakılacak."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "${ trialPlanName } uygulamasını ücretli tarife özellikleriyle kullanmayı sürdürmek istiyorsanız, abonelik ve ödeme seçeneklerinizi belirleyin."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Deneme süreniz ${ formattedPeriodEndDate } tarihinde sona eriyor"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, ${ last4 } içinde sona erecek"
@@ -10763,17 +10778,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Geçerli tarifenizde bir fırsat ücretinden yararlanıyorsunuz. Hesap tarifenizi düşürürseniz, fırsat ücretinizi kaybedersiniz ve bu tarifeye yeniden abone olamazsınız."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Yoksa hesabınıza erişim sınırlanacak ve sonunda hesabınız kullanım dışı bırakılacak."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "${ trialPlanName } uygulamasını ücretli tarife özellikleriyle kullanmayı sürdürmek istiyorsanız, abonelik ve ödeme seçeneklerinizi belirleyin."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Deneme süreniz ${ formattedPeriodEndDate } tarihinde sona eriyor"
       ]
     },
     "new_plans: Label": {
@@ -13940,17 +13944,8 @@
       "Billing cycle": [
         "Fatura dönemi"
       ],
-      "Breach Alerts": [
-        "Verilerin ele geçilrilmesi uyarıları"
-      ],
-      "Breach Date": [
-        "Verilerin ele geçirilme tarihi"
-      ],
-      "Breach Information": [
-        "Verilerin ele geçirilme bilgileri"
-      ],
-      "Breach Size": [
-        "Verilerin ele geçirilme boyutu"
+      "Block trackers and malware": [
+        "İzleyicileri ve zararlı yazılımları engelle"
       ],
       "Bridge for ${ platform }": [
         "${ platform } için Bridge"
@@ -14152,6 +14147,9 @@
       "Delete version history?": [
         "Sürüm geçmişi silinsin mi?"
       ],
+      "Details": [
+        "Ayrıntılar"
+      ],
       "Disable ${ email }": [
         "${ email } adresini kullanımdan kaldır"
       ],
@@ -14265,9 +14263,6 @@
       ],
       "Export public key": [
         "Herkese açık anahtarı dışa aktar"
-      ],
-      "Exposed info": [
-        "Açığa çıkan bilgiler"
       ],
       "External PGP settings": [
         "Dış PGP ayarları"
@@ -14408,9 +14403,6 @@
       ],
       "Link confirmation": [
         "Bağlantı onayı"
-      ],
-      "Location": [
-        "Konum"
       ],
       "Login password": [
         "Oturum açma parolası"
@@ -14555,6 +14547,9 @@
       ],
       "Reset password?": [
         "Parola sıfırlansın mı?"
+      ],
+      "Resolved": [
+        "Çözüldü"
       ],
       "Restore administrator privileges": [
         "Yönetici yetkilerini geri yükle"
@@ -14784,9 +14779,6 @@
       ],
       "Your changes are not synced yet": [
         "Değişiklikleriniz henüz eşitlenmedi"
-      ],
-      "Your Exposed Information": [
-        "Açığa çıkmış bilgileriniz"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Mail Plus ücretsiz deneme süreniz ${ textDate } tarihinde sonra erecek"

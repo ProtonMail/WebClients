@@ -104,9 +104,6 @@
       "Add notification": [
         "알림 추가"
       ],
-      "Add or switch account": [
-        "계정 추가 또는 전환"
-      ],
       "Add PayPal": [
         "PayPal 추가"
       ],
@@ -982,9 +979,6 @@
       ],
       "Unlock Breach Report": [
         "침해 보고서 잠금해제"
-      ],
-      "Unlock breach reports": [
-        "침해 보고서 해금하기"
       ],
       "Unlock data": [
         "데이터 잠금 해제"
@@ -5815,6 +5809,17 @@
         "캘린더 콘텐츠 중 일부가 지원되지 않으며, 불러와지지 않습니다."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "추가적인 복제 키가 감지되었습니다. 자세한 정보를 위해 따로 업로드해주세요."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "${ fingerprint } 키가 업로드 되었습니다"
+      ],
+      "Selected color:": [
+        "선택한 색상:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }에서 ${ enableDesktopNotifications }하려면 권한이 필요합니다."
@@ -6236,9 +6241,6 @@
       "Blocks senders from seeing if and when you opened a message.": [
         "전송자가 메시지를 열었는지 그리고 언제 열었는지 확인할 수 없도록 차단합니다."
       ],
-      "Breach Alert is powered by ${ BRAND_NAME }'s propietary datasets, open-source datasets, and Constella Intelligence. ${ dataBreachLink }": [
-        "침해 경고는 ${ BRAND_NAME }의 독자적인 데이터셋, 오픈소스 데이터셋, Constella Intelligence를 사용합니다. ${ dataBreachLink }"
-      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "무료 플랜으로 다운그레이드하면, 만약에 나중에 다시 업그레이드 한다 해도 다음 혜택을 영구적으로 잃을 것입니다."
       ],
@@ -6532,9 +6534,6 @@
       ],
       "Failed to fetch logs.": [
         "로그를 가져오지 못했습니다."
-      ],
-      "Fast and focused. Email and calendar, right on your desktop.": [
-        "신속하고 충실하도록. 당신의 데스크톱으로 찾아온 이메일과 캘린더."
       ],
       "Fill in user details": [
         "사용자 세부 정보를 입력하세요"
@@ -7619,15 +7618,6 @@
       "URL link": [
         "URL 링크"
       ],
-      "Use ${ BRAND_NAME } Pass to generate strong passwords and avoid password re-use": [
-        "${ BRAND_NAME } Pass를 사용하여 강력한 비밀번호를 생성하고 재사용을 피하십시오"
-      ],
-      "Use ${ VPN_APP_NAME } with Netshield enabled to protect you from phishing and malware": [
-        "Netshield가 활성화된 ${ VPN_APP_NAME }을 사용하여 피싱과 멀웨어로부터 보호받으십시오"
-      ],
-      "Use aliases to sign up for online services. This protects your real email address and identity, limiting the blast radius of a breach.": [
-        "온라인 서비스 가입시에는 별명을 사용하세요. 별명을 사용하면 실제 이메일 주소와 신원을 보호하여 침해의 파장을 제한할 수 있습니다."
-      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "현재 로드 및 위치에 따라 최상의 서버 사용: ${ formattedBestServerName }"
       ],
@@ -7688,9 +7678,6 @@
       "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
         "경고: 삭제는 영구적입니다. 이렇게 하면 연결된 모든 서비스에 더 이상 접근할 수 없게 되고, 저장된 모든 연락처가 삭제됩니다."
       ],
-      "Ways you can minimize your breach risks": [
-        "침해 리스크를 최소화할 수 있는 방법"
-      ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "가능하면 ${ VPN_APP_NAME } 공식 애플리케이션 사용을 권장합니다."
       ],
@@ -7702,9 +7689,6 @@
       ],
       "We just sent you a new link.": [
         "방금 새 링크를 보내드렸습니다."
-      ],
-      "We monitor your email addresses, passwords, and personal data for appearances on the dark web and notify you in case your data is compromised.": [
-        "Proton이 회원님의 이메일 주소, 비밀번호 그리고 개인정보가 다크 웹에 나타나는지를 감시하고 데이터가 노출된 경우에는 안내해드립니다."
       ],
       "We need to authenticate your payment method with your bank.": [
         "은행의 결제 수단 인증이 필요합니다."
@@ -8032,17 +8016,6 @@
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "귀하의 지원 티켓이 종료되었습니다. ${ BRAND_NAME } 지원을 이용해주셔서 감사합니다."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "추가적인 복제 키가 감지되었습니다. 자세한 정보를 위해 따로 업로드해주세요."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "${ fingerprint } 키가 업로드 되었습니다"
-      ],
-      "Selected color:": [
-        "선택한 색상:"
       ]
     },
     "Info - folder colouring feature": {
@@ -8591,9 +8564,6 @@
       ],
       "Awarded": [
         "지급 완료"
-      ],
-      "Beta": [
-        "베타"
       ],
       "Billing address": [
         "청구지 주소"
@@ -10573,6 +10543,17 @@
         "팀 관리"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "그렇지 않으면 사용자의 계정이 제한될 수 있으며, 지속적으로 방치되면 비활성화될 수 있습니다."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "${ trialPlanName }의 프리미엄 기능을 계속 사용하려면, 구독 및 결제 옵션을 선택하세요."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "무료 체험이 ${ formattedPeriodEndDate }에 종료됩니다."
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ last4 }(으)로 끝나는 ${ brand }"
@@ -10672,17 +10653,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "현재 플랜을 프로모션이 적용된 가격으로 즐기고 계십니다. 만약 계정을 다운그레이드 하신다면, 프로모션이 적용된 가격을 잃게되어 만일 다시 구독을 시도하더라도 다시 누리실 수 없습니다."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "그렇지 않으면 사용자의 계정이 제한될 수 있으며, 지속적으로 방치되면 비활성화될 수 있습니다."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "${ trialPlanName }의 프리미엄 기능을 계속 사용하려면, 구독 및 결제 옵션을 선택하세요."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "무료 체험이 ${ formattedPeriodEndDate }에 종료됩니다."
       ]
     },
     "new_plans: Label": {
@@ -13814,18 +13784,6 @@
       "Billing cycle": [
         "결제 주기"
       ],
-      "Breach Alerts": [
-        "침해 알림"
-      ],
-      "Breach Date": [
-        "침해 일자"
-      ],
-      "Breach Information": [
-        "침해 정보"
-      ],
-      "Breach Size": [
-        "침해 규모"
-      ],
       "Bridge for ${ platform }": [
         "${ platform }용 Bridge"
       ],
@@ -14138,9 +14096,6 @@
       "Export public key": [
         "공개 키 내보내기"
       ],
-      "Exposed info": [
-        "노출된 정보"
-      ],
       "External PGP settings": [
         "외부 PGP 설정"
       ],
@@ -14166,7 +14121,7 @@
         "Linux용"
       ],
       "For macOS": [
-        "macOS용"
+        "MacOS용"
       ],
       "For Windows": [
         "Windows용"
@@ -14278,9 +14233,6 @@
       ],
       "Link confirmation": [
         "링크 확인"
-      ],
-      "Location": [
-        "위치"
       ],
       "Login password": [
         "로그인 비밀번호"
@@ -14653,9 +14605,6 @@
       ],
       "Your changes are not synced yet": [
         "변경 사항이 동기화되지 않았습니다."
-      ],
-      "Your Exposed Information": [
-        "노출된 나의 정보"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Mail Plus 무료 체험판이 ${ textDate }에 종료됩니다"
