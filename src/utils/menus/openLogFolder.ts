@@ -13,7 +13,7 @@ export const openLogFolder = () => {
             Logger.info("openLogFolder Windows");
             shell.openPath(join(home, "/AppData/Roaming/Proton Mail/logs"));
         } else if (isLinux) {
-            Logger.info("openLogFolder Windows");
+            Logger.info("openLogFolder Linux");
             shell.openPath(join(home, "/.config/Proton Mail/logs"));
         }
         Logger.info("openLogFolder, not macOS or Windows");
