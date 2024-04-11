@@ -14,10 +14,12 @@ import {
     OrganizationTwoFAHeader,
     OrganizationTwoFARemindersSection,
     PrivateMainSettingsArea,
+    SsoPage,
     SubscriptionModalProvider,
     UsersAndAddressesSection,
     useOrganization,
 } from '@proton/components';
+import { PrivateMainSettingsAreaBase } from '@proton/components/containers/layout/PrivateMainSettingsArea';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
 import { APP_NAMES } from '@proton/shared/lib/constants';
 
@@ -38,7 +40,7 @@ const OrganizationSettingsRouter = ({
     const [organization] = useOrganization();
 
     const {
-        routes: { gateways, setup, domains, orgKeys, users, filter, security },
+        routes: { gateways, setup, domains, orgKeys, users, filter, security, sso },
     } = organizationAppRoutes;
 
     if (!organizationAppRoutes.available) {
@@ -111,6 +113,15 @@ const OrganizationSettingsRouter = ({
                         <OrganizationTwoFARemindersSection organization={organization} />
                         <OrganizationTwoFAEnforcementSection organization={organization} />
                     </PrivateMainSettingsArea>
+                </Route>
+            )}
+            {getIsSectionAvailable(sso) && (
+                <Route path={getSectionPath(path, sso)}>
+                    <PrivateMainSettingsAreaBase title={sso.title || sso.text} description={sso.description}>
+                        <SubscriptionModalProvider app={app}>
+                            <SsoPage />
+                        </SubscriptionModalProvider>
+                    </PrivateMainSettingsAreaBase>
                 </Route>
             )}
             {redirect}
