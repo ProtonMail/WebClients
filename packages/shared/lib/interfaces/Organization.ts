@@ -16,6 +16,7 @@ export interface Organization {
     MaxCalendars: number;
     MaxSpace: number;
     MaxMembers: number;
+    IsScimEnabled: boolean;
     MaxVPN: number;
     Features: number; // bits: 1 = catch-all addresses
     Flags: number; // bits: 1 = loyalty, 2 = covid, 4 = smtp_submission, 8 = no_cycle_scheduled, 64 = dissident, 128 = proton, 256 = has phone support
