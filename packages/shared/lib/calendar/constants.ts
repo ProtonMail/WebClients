@@ -384,3 +384,6 @@ export const CALENDAR_SETTINGS_SECTION_ID = {
     MOBILE_APP: 'mobile-app',
     DESKTOP_APP: 'desktop-app',
 };
+
+/** Visual limit of the attendees busy slots we display */
+export const BUSY_TIME_SLOTS_MAX_ATTENDEES_DISPLAYED = 10;

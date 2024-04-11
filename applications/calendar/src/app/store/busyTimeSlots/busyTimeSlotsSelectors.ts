@@ -3,6 +3,7 @@ import { createSelector } from '@reduxjs/toolkit';
 import { getBusyScheduledEvent } from '../../containers/calendar/eventHelper';
 import { CalendarViewBusyEvent } from '../../containers/calendar/interface';
 import { CalendarState } from '../store';
+import { BusyTimeSlotFetchStatus, BusyTimeSlotVisibility } from './busyTimeSlotsSlice';
 
 export const selectAttendeesBusyTimeSlots = createSelector(
     (state: CalendarState) => state.busyTimeSlots.metadata,
@@ -24,13 +25,7 @@ export const selectAttendeesBusyTimeSlots = createSelector(
                 busyTimeSlots[email].length > 0
             ) {
                 const attendeeFormattedTimeslots = busyTimeSlots[email].map((timeSlot) => {
-                    return getBusyScheduledEvent(
-                        email,
-                        timeSlot.Start,
-                        timeSlot.End,
-                        metadata.tzid,
-                        attendeesColor[email] || ''
-                    );
+                    return getBusyScheduledEvent(email, timeSlot, metadata.tzid, attendeesColor[email] || '');
                 });
 
                 acc = [...acc, ...attendeeFormattedTimeslots];
@@ -40,22 +35,31 @@ export const selectAttendeesBusyTimeSlots = createSelector(
     }
 );
 
-const selectAttendeeColor = (state: CalendarState, email: string) => state.busyTimeSlots.attendeeColor[email];
-const selectAttendeeVisibility = (state: CalendarState, email: string) => state.busyTimeSlots.attendeeVisibility[email];
-const selectAttendeeAvailability = (state: CalendarState, email: string) =>
-    state.busyTimeSlots.attendeeDataAccessible[email];
-const selectAttendeeFetchStatus = (state: CalendarState, email: string) =>
+const selectAttendeeColor = (state: CalendarState, email: string): string | undefined =>
+    state.busyTimeSlots.attendeeColor[email];
+const selectAttendeeVisibility = (state: CalendarState, email: string): BusyTimeSlotVisibility | undefined =>
+    state.busyTimeSlots.attendeeVisibility[email];
+const selectAttendeeAvailability = (state: CalendarState, email: string): boolean =>
+    !!state.busyTimeSlots.attendeeDataAccessible[email];
+const selectAttendeeFetchStatus = (state: CalendarState, email: string): BusyTimeSlotFetchStatus | undefined =>
     state.busyTimeSlots.attendeeFetchStatus[email];
 
 export const selectAttendeeBusyData = createSelector(
     [selectAttendeeColor, selectAttendeeVisibility, selectAttendeeAvailability, selectAttendeeFetchStatus],
     (color, visibility, hasAvailability, fetchStatus) => {
+        const status: 'loading' | 'available' | 'not-available' = (() => {
+            if (fetchStatus === 'loading') {
+                return 'loading';
+            }
+
+            return hasAvailability ? 'available' : 'not-available';
+        })();
+
         return {
             color,
             hasAvailability,
             isVisible: visibility === 'visible',
-            isLoading: fetchStatus === 'loading',
-            isError: fetchStatus === 'error',
+            status,
         };
     }
 );

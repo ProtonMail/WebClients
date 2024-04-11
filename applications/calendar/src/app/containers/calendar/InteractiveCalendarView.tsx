@@ -314,7 +314,7 @@ const InteractiveCalendarView = ({
     getOpenedMailEvents,
 }: Props) => {
     const api = useApi();
-    const isBusyTimeSlotsAvailable = useBusyTimeSlotsAvailable();
+    const isBusyTimeSlotsAvailable = useBusyTimeSlotsAvailable(view);
     const { call } = useEventManager();
     const dispatch = useCalendarDispatch();
     const { call: calendarCall } = useCalendarModelEventManager();
@@ -476,7 +476,12 @@ const InteractiveCalendarView = ({
 
         const newTemporaryEvent = getTemporaryEvent(temporaryEvent, model, tzid);
 
-        if (isBusyTimeSlotsAvailable) {
+        if (
+            isBusyTimeSlotsAvailable &&
+            (temporaryEvent.tmpData.attendees.length !== newTemporaryEvent.tmpData.attendees.length ||
+                (temporaryEvent.tmpData.attendees.length &&
+                    temporaryEvent.tmpData.start.date !== newTemporaryEvent.tmpData.start.date))
+        ) {
             void dispatch(
                 busyTimeSlotsActions.init({
                     attendeeEmails: newTemporaryEvent.tmpData.attendees.map((attendee) => attendee.email),
@@ -1185,6 +1190,7 @@ const InteractiveCalendarView = ({
         if (isSavingEvent.current) {
             return;
         }
+
         // Close the popover only
         setInteractiveData({ temporaryEvent });
         updateModal('createEventModal', { isOpen: true, props: { isDuplicating } });
@@ -1194,9 +1200,8 @@ const InteractiveCalendarView = ({
      * Used when switching from create/edit modal to grid popover
      * 1. Close the modal
      * 2. Open the popover
-     * 3. Fetch busy slots if needed
      */
-    const handleDisplayBusySlots = (temporaryEvent: CalendarViewEventTemporaryEvent) => {
+    const switchFromModalToPopover = (temporaryEvent: CalendarViewEventTemporaryEvent) => {
         if (isSavingEvent.current) {
             return;
         }
@@ -1213,18 +1218,6 @@ const InteractiveCalendarView = ({
                 preventPopover: isDrawerApp,
             },
         });
-
-        // Init fetch busy slots
-        void dispatch(
-            busyTimeSlotsActions.init({
-                attendeeEmails: temporaryEvent.tmpData.attendees.map((attendee) => attendee.email),
-                startDate: getUnixTime(temporaryEvent.tmpData.start.date),
-                now: getUnixTime(now),
-                tzid,
-                view,
-                viewStartDate: getUnixTime(dateRange[0]),
-            })
-        );
     };
 
     const handleCreateEvent = ({
@@ -1512,6 +1505,7 @@ const InteractiveCalendarView = ({
                 const hasChanged = +newStartDate !== +(isDuplicatingEvent ? temporaryEvent.tmpData.initialDate : date);
                 changeDate(newStartDate, hasChanged);
             }
+            dispatch(busyTimeSlotsActions.reset());
         } catch (e: any) {
             if (e instanceof EscapeTryBlockError) {
                 if (e.recursive) {
@@ -1524,7 +1518,6 @@ const InteractiveCalendarView = ({
             }
         } finally {
             isSavingEvent.current = false;
-            dispatch(busyTimeSlotsActions.reset());
         }
     };
 
@@ -1945,6 +1938,7 @@ const InteractiveCalendarView = ({
                                     }
                                 }}
                                 isDrawerApp={isDrawerApp}
+                                view={view}
                             />
                         );
                     }
@@ -1967,11 +1961,26 @@ const InteractiveCalendarView = ({
                                         .catch(noop)
                                 );
                             }}
-                            onEdit={() => {
+                            onEdit={(canDuplicateEvent) => {
                                 const newTemporaryEvent = getEditedTemporaryEvent();
 
                                 if (!newTemporaryEvent) {
                                     return;
+                                }
+
+                                if (!isSavingEvent.current && isBusyTimeSlotsAvailable && canDuplicateEvent) {
+                                    void dispatch(
+                                        busyTimeSlotsActions.init({
+                                            attendeeEmails: newTemporaryEvent.tmpData.attendees.map(
+                                                (attendee) => attendee.email
+                                            ),
+                                            startDate: getUnixTime(newTemporaryEvent.tmpData.start.date),
+                                            now: getUnixTime(now),
+                                            tzid,
+                                            view,
+                                            viewStartDate: getUnixTime(dateRange[0]),
+                                        })
+                                    );
                                 }
 
                                 return handleEditEvent(newTemporaryEvent);
@@ -2109,7 +2118,7 @@ const InteractiveCalendarView = ({
                     isOpen={createEventModal.isOpen}
                     onDisplayBusySlots={() => {
                         if (interactiveData?.temporaryEvent) {
-                            handleDisplayBusySlots(interactiveData.temporaryEvent);
+                            switchFromModalToPopover(interactiveData.temporaryEvent);
                         }
                     }}
                     onSave={async (inviteActions: InviteActions) => {
@@ -2159,6 +2168,7 @@ const InteractiveCalendarView = ({
                         }
                         closeAllPopovers();
                     }}
+                    view={view}
                 />
             )}
         </>
