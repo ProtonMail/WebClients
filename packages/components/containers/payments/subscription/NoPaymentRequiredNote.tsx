@@ -8,9 +8,16 @@ interface Props {
     creditsRemaining: number;
     checkResult: SubscriptionCheckResponse | undefined;
     subscription: SubscriptionModel | undefined;
+    hasPaymentMethod: boolean;
 }
 
-export const NoPaymentRequiredNote = ({ amountDue, checkResult, creditsRemaining, subscription }: Props) => {
+export const NoPaymentRequiredNote = ({
+    amountDue,
+    checkResult,
+    creditsRemaining,
+    subscription,
+    hasPaymentMethod,
+}: Props) => {
     const trial = isTrial(subscription);
     const planTitle = getPlanTitle(subscription);
 
@@ -26,10 +33,16 @@ export const NoPaymentRequiredNote = ({ amountDue, checkResult, creditsRemaining
                     ) : null}
                 </>
             )}
-            {trial && (
+            {trial && !hasPaymentMethod && (
                 <div className="mb-4">
                     {c('Info')
                         .t`You have a trial ${planTitle} subscription. If you would like to continue your subscription after the trial period, please add a payment method.`}
+                </div>
+            )}
+            {trial && hasPaymentMethod && (
+                <div className="mb-4">
+                    {c('Info')
+                        .t`You have a trial ${planTitle} subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.`}
                 </div>
             )}
         </div>
