@@ -18,7 +18,6 @@ import {
 } from '../constants';
 import {
     Audience,
-    BillingPlatform,
     Cycle,
     External,
     Organization,
@@ -269,10 +268,6 @@ export const isTrial = (subscription: Subscription | undefined, plan?: PLANS): b
 
     return trial && getPlanName(subscription) === plan;
 };
-
-export function isTrialChargebeeUser(subscription: Subscription | undefined): boolean {
-    return subscription?.BillingPlatform === BillingPlatform.Chargebee && isTrial(subscription);
-}
 
 export const isTrialExpired = (subscription: Subscription | undefined) => {
     const now = new Date();
