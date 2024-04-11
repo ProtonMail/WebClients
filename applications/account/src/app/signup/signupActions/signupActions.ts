@@ -37,7 +37,7 @@ import { withVerificationHeaders } from '@proton/shared/lib/fetch/headers';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { localeCode } from '@proton/shared/lib/i18n';
-import { Api, HumanVerificationMethodType, User } from '@proton/shared/lib/interfaces';
+import { Api, HumanVerificationMethodType, KeyTransparencyActivation, User } from '@proton/shared/lib/interfaces';
 import {
     generateKeySaltAndPassphrase,
     generatePasswordlessOrganizationKey,
@@ -449,6 +449,43 @@ export const handleSetupMnemonic = async ({
     };
 };
 
+const setupKeys = async ({
+    api,
+    ktActivation,
+    password,
+}: {
+    password: string;
+    api: Api;
+    ktActivation: KeyTransparencyActivation;
+}) => {
+    // NOTE: For VPN signup, the API doesn't automatically create an address, so this will simply return an empty
+    // array, and keys won't be setup.
+    const addresses = await getAllAddresses(api);
+
+    const { preAuthKTVerify, preAuthKTCommit } = createPreAuthKTVerifier(ktActivation, api);
+
+    let keySetupData = {
+        keyPassword: '',
+        clearKeyPassword: '',
+    };
+    if (addresses.length) {
+        const keyPassword = await handleSetupKeys({
+            api,
+            addresses,
+            password,
+            preAuthKTVerify,
+        });
+        keySetupData = {
+            keyPassword,
+            clearKeyPassword: password,
+        };
+    }
+
+    const user = await api<{ User: User }>(getUser()).then(({ User }) => User);
+    await preAuthKTCommit(user.ID);
+    return { keySetupData, user, addresses };
+};
+
 export const handleSetupUser = async ({
     cache,
     api,
@@ -502,37 +539,9 @@ export const handleSetupUser = async ({
         reportPaymentFailure
     );
 
-    const [{ keySetupData, user, addresses }] = await Promise.all([
-        (async () => {
-            // NOTE: For VPN signup, the API doesn't automatically create an address, so this will simply return an empty
-            // array, and keys won't be setup.
-            const addresses = await getAllAddresses(api);
+    api(updateLocale(localeCode)).catch(noop);
 
-            const { preAuthKTVerify, preAuthKTCommit } = createPreAuthKTVerifier(ktActivation, api);
-
-            let keySetupData = {
-                keyPassword: '',
-                clearKeyPassword: '',
-            };
-            if (addresses.length) {
-                const keyPassword = await handleSetupKeys({
-                    api,
-                    addresses,
-                    password,
-                    preAuthKTVerify,
-                });
-                keySetupData = {
-                    keyPassword,
-                    clearKeyPassword: password,
-                };
-            }
-
-            const user = await api<{ User: User }>(getUser()).then(({ User }) => User);
-            await preAuthKTCommit(user.ID);
-            return { keySetupData, user, addresses };
-        })(),
-        api(updateLocale(localeCode)).catch(noop),
-    ]);
+    const { keySetupData, user, addresses } = await setupKeys({ api, ktActivation, password });
 
     const trusted = false;
     const { clientKey, offlineKey } = await persistSession({
