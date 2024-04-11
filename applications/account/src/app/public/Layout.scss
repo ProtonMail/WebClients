@@ -47,7 +47,6 @@
 		&--dark {
 			@include media('>xsmall') {
 				--scrollbar-thumb-color: #413085;
-				--scrollbar-thumb-hover-color: #4a398f;
 
 				background: #1b1340;
 				color: var(--text-invert);
