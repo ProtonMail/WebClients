@@ -177,11 +177,15 @@ export const SharedByCell = ({ item }: { item: DriveItem }) => {
     const contactEmail = contactEmails?.find((contactEmail) => contactEmail.Email === email);
     const displayName = email && contactEmails && contactEmail ? contactEmail.Name : email;
     return (
-        <TableCell className="flex items-center m-0 w-1/5" data-testid="column-shared-by">
-            <Avatar color="weak" className="mr-2">
+        <TableCell className="flex flex-nowrap items-center m-0 w-1/5" data-testid="column-shared-by">
+            <Avatar
+                color="weak"
+                className="mr-2 min-w-custom max-w-custom max-h-custom"
+                style={{ '--min-w-custom': '1.75rem', '--max-w-custom': '1.75rem', '--max-h-custom': '1.75rem' }}
+            >
                 {getInitials(displayName)}
             </Avatar>
-            {displayName}
+            <span className="text-ellipsis">{displayName}</span>
         </TableCell>
     );
 };
