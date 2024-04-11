@@ -371,6 +371,9 @@
       "Report a problem": [
         "Rapporter et problem"
       ],
+      "Request a call": [
+        "Be om en samtale"
+      ],
       "Request a feature": [
         "Be om en funksjon"
       ],
@@ -484,6 +487,9 @@
       ],
       "Signing in": [
         "Logger på"
+      ],
+      "Start live chat": [
+        "Start direkte chat"
       ],
       "Stop using single sign-on": [
         "Slutt å bruke enkel pålogging"
@@ -3269,6 +3275,12 @@
       "If you wish to combine this account with another one, do NOT delete it.": [
         "Hvis du ønker å kombinere denne kontoen med en annen, IKKE slett den."
       ],
+      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
+        "Hvis du har problemer, er vi her for å hjelpe. ${ boldPhoneCall } eller ${ boldZoomMeeting } med en av våre brukerstøttespesialister, eller åpne en ${ boldLiveChat } for chat-støtte."
+      ],
+      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists.": [
+        "Hvis du har problemer, er vi her for å hjelpe. ${ boldPhoneCall } eller ${ boldZoomMeeting } med en av våre brukerstøttespesialister."
+      ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Viktig: Vennligst sørg for å lagre gjenopprettingskodene. Ellers kan du permanent miste tilgang til kontoen din hvis du mister tofaktorautentiseringsenheten."
       ],
@@ -3323,11 +3335,17 @@
       "Link copied to clipboard": [
         "Kobling kopiert til utklippstavlen"
       ],
+      "Live chat": [
+        "Direkte chat"
+      ],
       "Loading": [
         "Laster"
       ],
       "Loading ${ appName }": [
         "Laster ${ appName }"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Laster inn kalender, vennligst vent. Du vil bli omdirigert til vår planleggingsplattform Calendly i en ny fane."
       ],
       "Loading preview": [
         "Laster forhåndsvisning"
@@ -3523,6 +3541,9 @@
       ],
       "Remember to share the user's sign in details with them.": [
         "Husk å dele brukerens påloggingsinformasjon med dem."
+      ],
+      "Request a phone call": [
+        "Be om en telefonsamtale"
       ],
       "Resend verification email": [
         "Send verifiserings-e-post på nytt"
@@ -4084,6 +4105,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Abonnementet ditt administreres av Mozilla. Vennligst kontakt Mozilla-støtte."
+      ],
+      "Zoom meeting": [
+        "Zoom-møte"
       ]
     },
     "Info for cash payment method": {
