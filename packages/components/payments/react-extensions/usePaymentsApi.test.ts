@@ -1,8 +1,9 @@
 import { renderHook } from '@testing-library/react-hooks';
+import { addMonths } from 'date-fns';
 
 import { CheckSubscriptionData } from '@proton/shared/lib/api/payments';
 import { APPS, PLANS } from '@proton/shared/lib/constants';
-import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
+import { ChargebeeEnabled, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 import {
     addApiMock,
     apiMock,
@@ -138,10 +139,10 @@ describe('usePaymentsApi', () => {
             url: `payments/v5/status`,
             method: 'get',
         });
-        expect(apiMock).not.toHaveBeenCalledWith({
-            url: `payments/v4/status`,
-            method: 'get',
-        });
+        const wasV4Called = apiMock.mock.calls.some(
+            (call) => call[0].url.includes('payments/v4/status') && call[0].method === 'get'
+        );
+        expect(wasV4Called).toBe(false);
         expect(mockUseChargebeeKillSwitch).toHaveBeenCalled();
     });
 
@@ -183,6 +184,7 @@ describe('usePaymentsApi', () => {
             url: `payments/v5/subscription/check`,
             method: 'post',
             data,
+            silence: false,
         });
     });
 
@@ -197,6 +199,7 @@ describe('usePaymentsApi', () => {
             url: `payments/v5/subscription/check`,
             method: 'post',
             data,
+            silence: false,
         });
     });
 
@@ -213,6 +216,7 @@ describe('usePaymentsApi', () => {
             url: `payments/v5/subscription/check`,
             method: 'post',
             data,
+            silence: false,
         });
         expect(apiMock).toHaveBeenCalledWith({
             url: `payments/v4/subscription/check`,
@@ -237,13 +241,49 @@ describe('usePaymentsApi', () => {
             url: `payments/v5/subscription/check`,
             method: 'post',
             data,
+            silence: false,
         });
-        expect(apiMock).not.toHaveBeenCalledWith({
-            url: `payments/v4/subscription/check`,
+        const wasV4Called = apiMock.mock.calls.some(
+            (call) => call[0].url.includes('payments/v4/subscription/check') && call[0].method === 'post'
+        );
+        expect(wasV4Called).toBe(false);
+        expect(mockUseChargebeeKillSwitch).toHaveBeenCalled();
+    });
+
+    it('should return fallback value if it is available and if v5 check fails', async () => {
+        apiMock.mockRejectedValueOnce(new Error('check call failed in the unit test'));
+        mockUseChargebeeKillSwitch.mockReturnValue({ chargebeeKillSwitch: jest.fn().mockReturnValue(false) });
+
+        const fallbackValue: SubscriptionCheckResponse = {
+            Amount: 999,
+            AmountDue: 999,
+            Coupon: null,
+            Currency: 'EUR',
+            Cycle: 12,
+            PeriodEnd: +addMonths(Date.now(), 1) / 1000,
+        };
+
+        const { result } = renderHook(() => usePaymentsApi(undefined, () => fallbackValue), {
+            wrapper: getWrapper(ChargebeeEnabled.CHARGEBEE_ALLOWED),
+        });
+
+        const data = getCheckSubscriptionData();
+        const resultPromise = result.current.paymentsApi.checkWithAutomaticVersion(data);
+
+        expect(apiMock).toHaveBeenCalledWith({
+            url: `payments/v5/subscription/check`,
             method: 'post',
             data,
+            // silence is true because we are using fallback value
+            silence: true,
         });
-        expect(mockUseChargebeeKillSwitch).toHaveBeenCalled();
+
+        const wasV4Called = apiMock.mock.calls.some(
+            (call) => call[0].url.includes('payments/v4/subscription/check') && call[0].method === 'post'
+        );
+        expect(wasV4Called).toBe(false);
+
+        await expect(resultPromise).resolves.toEqual(fallbackValue);
     });
 
     it.each([PLANS.PASS_PRO, PLANS.PASS_BUSINESS])(
