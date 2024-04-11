@@ -611,6 +611,12 @@
       "Mark as default": [
         "Als Standard festlegen"
       ],
+      "Mark as open": [
+        "Als offen markieren"
+      ],
+      "Mark as resolved": [
+        "Als gelöst markieren"
+      ],
       "mark emails as": [
         "E-Mails kennzeichnen als"
       ],
@@ -739,6 +745,9 @@
       ],
       "Report a problem": [
         "Ein Problem melden"
+      ],
+      "Request a call": [
+        "Einen Anruf anfordern"
       ],
       "Request a feature": [
         "Funktion vorschlagen"
@@ -976,6 +985,9 @@
       ],
       "Unlock": [
         "Entsperren"
+      ],
+      "Unlock Breach Report": [
+        "Datenmissbrauchsreport freischalten"
       ],
       "Unlock data": [
         "Daten entsperren"
@@ -5820,6 +5832,17 @@
         "Ein Teil deines Kalenderinhalts wird nicht unterstützt und wird nicht importiert."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Doppelt vorhandene Schlüssel erkannt. Für weitere Informationen lade diese bitte einzeln hoch."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Schlüssel ${ fingerprint } wurde bereits hochgeladen"
+      ],
+      "Selected color:": [
+        "Ausgewählte Farbe:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } benötigt deine Erlaubnis, um ${ enableDesktopNotifications }."
@@ -6467,6 +6490,9 @@
       "Edit link": [
         "Link bearbeiten"
       ],
+      "email": [
+        "E-Mail"
+      ],
       "Email address": [
         "E-Mail-Adresse"
       ],
@@ -6557,14 +6583,14 @@
       "Failed to fetch logs.": [
         "Abrufen der Protokolle fehlgeschlagen."
       ],
-      "Fast and focused. Email and calendar, right on your desktop.": [
-        "Schnell und konzentriert. E-Mail und Kalender, direkt auf deinem Desktop."
-      ],
       "Fill in user details": [
         "Daten des Benutzers ausfüllen"
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Filter wirken auf alle E-Mails, sowohl auf eingehende als auch auf gesendete Nachrichten. Jeder Filter muss mindestens einen Namen, eine Bedingung und eine Aktion enthalten."
+      ],
+      "finance": [
+        "finanzen"
       ],
       "for choosing ${ product }": [
         "dass du dich für ${ product } entschieden hast."
@@ -7716,9 +7742,6 @@
       "We just sent you a new link.": [
         "Wir haben dir gerade einen neuen Link gesendet."
       ],
-      "We monitor your email addresses, passwords, and personal data for appearances on the dark web and notify you in case your data is compromised.": [
-        "Wir überwachen deine E-Mail-Adressen, Passwörter und persönlichen Daten auf das Auftauchen im Dark Web und benachrichtigen dich, falls deine Daten gefährdet sind."
-      ],
       "We need to authenticate your payment method with your bank.": [
         "Wir müssen deine Zahlungsmethode bei deiner Bank authentifizieren."
       ],
@@ -8052,17 +8075,6 @@
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Dein Support-Ticket wurde geschlossen. Vielen Dank, dass du den Support von ${ BRAND_NAME } kontaktiert hast."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Doppelt vorhandene Schlüssel erkannt. Für weitere Informationen lade diese bitte einzeln hoch."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Schlüssel ${ fingerprint } wurde bereits hochgeladen"
-      ],
-      "Selected color:": [
-        "Ausgewählte Farbe:"
       ]
     },
     "Info - folder colouring feature": {
@@ -8614,9 +8626,6 @@
       ],
       "Awarded": [
         "Gutgeschrieben"
-      ],
-      "Beta": [
-        "Beta"
       ],
       "Billing address": [
         "Rechnungsadresse"
@@ -9697,14 +9706,32 @@
       ]
     },
     "locked_state_storage_banner: info": {
+      "Learn more": [
+        "Mehr erfahren"
+      ],
       "upgrade for more storage": [
         "führe ein Upgrade durch für zusätzlichen Speicherplatz."
+      ],
+      "Upgrade to restore full access": [
+        "Upgrade zur Wiederherstellung des vollen Zugriffs"
       ],
       "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
         "Dein ${ driveStorage } ist voll. Um Dateien hochzuladen oder zu synchronisieren, räume etwas Speicherplatz frei oder ${ cta }."
       ],
+      "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
+        "Dein ${ mailStorage } ist voll. Um E-Mails zu senden oder zu empfangen, gib Speicherplatz frei oder ${ cta }."
+      ],
+      "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
+        "Dein Konto ist von der Löschung bedroht. Um Datenverlust zu vermeiden, bitte deinen Administrator um ein Upgrade. ${ cta }"
+      ],
       "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
         "Dein Speicherplatz ist voll. Um E-Mails zu senden oder zu empfangen, räume etwas Speicherplatz frei oder ${ cta }."
+      ],
+      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
+        "Dein Speicherplatz ist voll. Um Dateien hochzuladen oder zu synchronisieren, gib Speicherplatz frei oder ${ cta }."
+      ],
+      "Your subscription has ended. ${ cta } and to avoid data loss.": [
+        "Dein Abonnement ist beendet. ${ cta } und um Datenverlust zu vermeiden."
       ]
     },
     "Log preference": {
@@ -10602,6 +10629,17 @@
         "Teamverwaltung"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Andernfalls wird der Zugang zu deinem Konto eingeschränkt und letztendlich deaktiviert."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Um ${ trialPlanName } weiterhin mit Premium-Funktionen nutzen zu können, wähle deine Abonnement- und Zahlungsoptionen."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Deine Testversion endet am ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } mit den Endziffern ${ last4 }"
@@ -10701,17 +10739,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Bei deinem aktuellen Abonnement profitierst du von einem Sonderangebotspreis. Wenn du dein Konto downgradest, können wir ihn dir nicht mehr ermöglichen, wenn du ein neues Abonnement abschließt."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Andernfalls wird der Zugang zu deinem Konto eingeschränkt und letztendlich deaktiviert."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Um ${ trialPlanName } weiterhin mit Premium-Funktionen nutzen zu können, wähle deine Abonnement- und Zahlungsoptionen."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Deine Testversion endet am ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -11844,6 +11871,17 @@
       ],
       "For individuals": [
         "Für Privatpersonen"
+      ]
+    },
+    "password_reset: info": {
+      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **old password**.": [
+        "**Alle deine vorhandenen Daten** (E-Mails, Ereignisse, Kontakte, Dateien, ${ PASS_APP_NAME }-Einträge usw.) **werden gesperrt** und können nur mit deinem **alten Passwort** entsperrt werden."
+      ],
+      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **recovery phrase** or your **old password**.": [
+        "**Alle deine vorhandenen Daten** (E-Mails, Ereignisse, Kontakte, Dateien, ${ PASS_APP_NAME }-Einträge usw.) **werden gesperrt** und können nur mit deiner **Wiederherstellungsphrase** oder deinem **alten Passwort** entsperrt werden."
+      ],
+      "Any **two-factor authentication (2FA)** method on your account will be disabled.": [
+        "Jegliche **Zwei-Faktor-Authentifizierungsmethode (2FA)** für Ihr Konto wird deaktiviert."
       ]
     },
     "passwordless": {
@@ -14318,9 +14356,6 @@
       "Link confirmation": [
         "Linkbestätigung"
       ],
-      "Location": [
-        "Speicherort"
-      ],
       "Login password": [
         "Anmeldepasswort"
       ],
@@ -14350,6 +14385,9 @@
       ],
       "Night theme": [
         "Dunkles Design"
+      ],
+      "No account information was found in any data breaches": [
+        "Bei keinem Datenmissbrauch wurden Kontoinformationen gefunden"
       ],
       "No recovery method": [
         "Keine Wiederherstellungsmethode"
