@@ -360,6 +360,12 @@
       "Manage labels": [
         "Gerenciar marcadores"
       ],
+      "Mark as open": [
+        "Marcar como aberta"
+      ],
+      "Mark as resolved": [
+        "Marcar como resolvido"
+      ],
       "Mark for deletion": [
         "Marcar para exclusão"
       ],
@@ -476,6 +482,9 @@
       ],
       "Report a problem": [
         "Relatar um problema"
+      ],
+      "Request a call": [
+        "Solicitar uma chamada"
       ],
       "Request a feature": [
         "Solicitar um recurso"
@@ -2269,9 +2278,6 @@
       "Your account and data recovery methods are set.": [
         "Sua conta e métodos de recuperação de dados estão definidos."
       ],
-      "Your information was found in at least one data breach.": [
-        "Suas informações foram encontradas em pelo menos uma violação de dados."
-      ],
       "Your personal data was leaked by an online service in a data breach. View full details and get recommended actions.": [
         "Seus dados pessoais foram vazados por um serviço online em uma violação de dados. Veja detalhes completos e obtenha ações recomendadas."
       ]
@@ -3863,7 +3869,7 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Antes de pedir um novo código de verificação, verifique sua pasta de spam e verifique que ${ strong } é o endereço correto."
       ],
-      "Breach alerts": [
+      "Breach Alert": [
         "Alerta de violação"
       ],
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
@@ -4332,9 +4338,6 @@
       "username": [
         "Nome de usuário"
       ],
-      "View details": [
-        "Ver detalhes"
-      ],
       "Warning": [
         "Alerta"
       ],
@@ -4473,6 +4476,12 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Seus dados estão prontos para importação de ${ importedEmailAddressStrong } para sua conta da ${ BRAND_NAME }."
       ],
+      "Your email address and password were leaked:": [
+        "Seu endereço de e-mail e senha estão expostos:"
+      ],
+      "Your email address was exposed:": [
+        "Seu endereço de e-mail foi exposto:"
+      ],
       "Your email will only be used for this one-time verification.": [
         "Seu e-mail só será usado para essa verificação única."
       ],
@@ -4482,8 +4491,14 @@
       "Your files will be encrypted and then saved": [
         "Seus arquivos serão criptografados e depois salvos"
       ],
+      "Your information was found on ${ displayedDate }": [
+        "Sua inconformação foi encontrada em ${ displayedDate }"
+      ],
       "Your login information will not be saved after the import is completed.": [
         "Suas informações de início de sessão não serão salvas após a importação ser concluída."
+      ],
+      "Your password was leaked:": [
+        "Sua senha foi vazada:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Seu número de telefone somente será usado nessa verificação única."
@@ -5045,6 +5060,9 @@
       ],
       "Request an invite": [
         "Solicitar um convite"
+      ],
+      "stay safer online": [
+        "fique seguro on-line"
       ],
       "What’s this?": [
         "O que é isso?"
@@ -6072,9 +6090,6 @@
       ]
     },
     "Security Center - Info": {
-      "Get notified if your password or other personal data was leaked.": [
-        "Seja notificado se a sua senha ou outros dados pessoais foram vazados."
-      ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Nossa solução de segurança de última geração orientada por IA, projetada para usuários que buscam proteção reforçada para suas contas. ${ learnMoreLink }"
       ],
@@ -6959,20 +6974,8 @@
       "Birthday": [
         "Data de nascimento"
       ],
-      "Breach alerts": [
+      "Breach Alert": [
         "Alerta de violação"
-      ],
-      "Breach Date": [
-        "Data da violação"
-      ],
-      "Breach detected": [
-        "Violação detectada"
-      ],
-      "Breach Information": [
-        "Informação de violação"
-      ],
-      "Breach Size": [
-        "Tamanho da violação"
       ],
       "Calendar": [
         "Calendário"
@@ -7057,6 +7060,9 @@
       "Deleting contacts": [
         "Excluindo contatos"
       ],
+      "Details": [
+        "Detalhes"
+      ],
       "Drop to upload": [
         "Solte para enviar"
       ],
@@ -7102,9 +7108,6 @@
       "Exporting contacts": [
         "Exportando contatos"
       ],
-      "Exposed info": [
-        "Informação da exposição"
-      ],
       "Feedback": [
         "Comentários"
       ],
@@ -7141,9 +7144,6 @@
       ],
       "Link confirmation": [
         "Confirmar redirecionamento"
-      ],
-      "Location": [
-        "Localização"
       ],
       "Merge contacts": [
         "Mesclar contatos"
@@ -7307,9 +7307,6 @@
       "Stay safer online": [
         "Fique seguro on-line"
       ],
-      "Type": [
-        "Tipo"
-      ],
       "Unlock contacts groups": [
         "Desbloquear grupos de contato"
       ],
@@ -7349,7 +7346,7 @@
       "Your calendar link": [
         "Link do seu calendário"
       ],
-      "Your Exposed Information": [
+      "Your exposed information": [
         "Sua informação exposta"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [

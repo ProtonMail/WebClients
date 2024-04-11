@@ -876,6 +876,9 @@
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } va importa doar autentificări, note și carduri de plată."
       ],
+      "${ PASS_APP_NAME } will prompt you as soon as generated passwords are autofilled.": [
+        "${ PASS_APP_NAME } va solicita autosalvarea parolelor autogenerate imediat după completate."
+      ],
       "${ PASS_APP_NAME } will prompt you to save or update credentials.": [
         "${ PASS_APP_NAME } vă va solicita să salvați sau să vă actualizați acreditările."
       ],
@@ -991,9 +994,6 @@
       ],
       "Creating alias...": [
         "Se creează aliasul…"
-      ],
-      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, vault structure...). For a complete export, we recommend using a different format.": [
-        "CSV oferă un format convenabil pentru a vă vizualiza datele. Cu toate acestea, datorită simplității sale, unele date nu vor fi incluse (câmpuri personale, structura seifului...). Pentru o exportare completă, vă recomandăm să utilizați un alt format."
       ],
       "Current version": [
         "Versiune curentă"
@@ -1810,6 +1810,9 @@
       ],
       "Prompt for auto-save": [
         "Solicitare autosalvare"
+      ],
+      "Prompt for auto-save when generating passwords": [
+        "Solicitare autosalvare la generarea parolelor"
       ],
       "Rate us": [
         "Evaluați-ne"

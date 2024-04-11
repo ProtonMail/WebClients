@@ -865,6 +865,9 @@
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } vil kun importere logins, noter og betalingskort."
       ],
+      "${ PASS_APP_NAME } will prompt you as soon as generated passwords are autofilled.": [
+        "${ PASS_APP_NAME } vil fortælle dig det, så snart genererede adgangskoder udfyldes automatisk."
+      ],
       "${ PASS_APP_NAME } will prompt you to save or update credentials.": [
         "${ PASS_APP_NAME } vil bede dig om at gemme eller opdatere legitimationsoplysninger."
       ],
@@ -979,9 +982,6 @@
       ],
       "Creating alias...": [
         "Opretter alias..."
-      ],
-      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, vault structure...). For a complete export, we recommend using a different format.": [
-        "CSV er et praktisk format til visning af dine data. Men på grund af dets enkelhed vil nogle data ikke blive inkluderet. (brugerdefinerede felter, boksstruktur...). For en komplet eksport anbefaler vi, at du bruger et andet format."
       ],
       "Current version": [
         "Aktuel version"
@@ -1790,6 +1790,9 @@
       ],
       "Prompt for auto-save": [
         "Spørg om auto-gem"
+      ],
+      "Prompt for auto-save when generating passwords": [
+        "Spørg om auto-gem, når du genererer adgangskoder"
       ],
       "Rate us": [
         "Bedøm os"

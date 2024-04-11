@@ -4541,6 +4541,11 @@
         "Aḥric seg ugbur n uwitay-ik·im ur yettusefrak ara rnu ur d-yettwaktar ara."
       ]
     },
+    "info": {
+      "Key ${ fingerprint } has already been uploaded": [
+        "Tasarut ${ fingerprint } tesiliḍ-tt yakan"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } t•yesra tasiregt-ik•im ɣer ${ enableDesktopNotifications }."
@@ -5899,11 +5904,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Amulteɣ-inek·m yettwasefrek s ɣur Mozilla. Ttxil-k·m nermes tallalt n Mozilla."
-      ]
-    },
-    "info": {
-      "Key ${ fingerprint } has already been uploaded": [
-        "Tasarut ${ fingerprint } tesiliḍ-tt yakan"
       ]
     },
     "Info - folder colouring feature": {
@@ -7973,20 +7973,20 @@
         "Asefrek n terbaɛt"
       ]
     },
-    "new_plans: info": {
-      "Most popular": [
-        "Ittwassen aṭas"
-      ],
-      "Popular": [
-        "Mucaɛ"
-      ]
-    },
     "new_plans: Info": {
       "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
         "I ukemmel n useqdec n ${ trialPlanName }s tmahilin premium, fren amultaɣ-ik d textiṛiyin n uxelleṣ."
       ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "Aneεruḍ-ik·im ad yekfu deg ${ formattedPeriodEndDate }"
+      ]
+    },
+    "new_plans: info": {
+      "Most popular": [
+        "Ittwassen aṭas"
+      ],
+      "Popular": [
+        "Mucaɛ"
       ]
     },
     "new_plans: Label": {
@@ -10257,9 +10257,6 @@
       ],
       "Link confirmation": [
         "Aseɣwen n usentem"
-      ],
-      "Location": [
-        "Amḍiq"
       ],
       "Login password": [
         "Awal uffir n tuqqna"

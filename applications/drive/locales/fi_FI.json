@@ -2037,9 +2037,6 @@
       "Your account and data recovery methods are set.": [
         "Tilisi ja tietojesi palautusmenetelmät on määritetty."
       ],
-      "Your information was found in at least one data breach.": [
-        "Tietojasi havaittiin ainakin yhdessä tietovuodossa."
-      ],
       "Your personal data was leaked by an online service in a data breach. View full details and get recommended actions.": [
         "Henkilökohtaisia tietojasi on vuotanut verkkopalvelun tietovuodon seurauksena. Tarkastele vuodon tietoja ja ryhdy tarvittaviin toimenpiteisiin."
       ]
@@ -3568,9 +3565,6 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Ennen kuin pyydät uuden vahvistuskoodin, tarkista roskapostikansiosi ja varmista, että osoite ${ strong } on oikea."
       ],
-      "Breach alerts": [
-        "Tietovuotohälytykset"
-      ],
       "Calendar side panel": [
         "Calendar-sivupaneeli"
       ],
@@ -4272,6 +4266,9 @@
       "Shared link not found": [
         "Jakolinkkiä ei löytynyt"
       ],
+      "Shared with me": [
+        "Jaettu minulle"
+      ],
       "Sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
         "Luo oma ${ DRIVE_APP_NAME } -tilisi, suojaa tietosi päästä päähän -salauksella ja jaa ne turvallisesti."
       ],
@@ -4485,9 +4482,6 @@
       ],
       "Version is restored": [
         "Versio on palautettu"
-      ],
-      "View details": [
-        "Näytä tiedot"
       ],
       "Want to sync files faster?": [
         "Haluatko synkronoida tiedostot nopeammin?"
@@ -5086,6 +5080,9 @@
       "Set recovery method": [
         "Määritä palautustapa"
       ],
+      "Shared by": [
+        "Jakanut"
+      ],
       "Show indexing progress of Encrypted Search": [
         "Näytä salatun haun indeksoinnin edistyminen"
       ],
@@ -5248,6 +5245,9 @@
       ],
       "Shared": [
         "Jaetut"
+      ],
+      "Shared with me": [
+        "Jaettu minulle"
       ],
       "Trash": [
         "Roskakori"
@@ -5832,6 +5832,9 @@
       "Encrypted search activated": [
         "Salattu haku on käytössä"
       ],
+      "Failed to accept share invitation": [
+        "Jakokutsun hyväksyntä epäonnistui"
+      ],
       "Failed to download files: ${ err }": [
         "Tiedostojen lataus epäonnistui: ${ err }"
       ],
@@ -5871,6 +5874,12 @@
       ],
       "Root folder failed to be loaded": [
         "Juurikansion lataus epäonnistui"
+      ],
+      "Share invitation accepted successfully": [
+        "Jakokutsu hyväksyttiin"
+      ],
+      "Share invitation ID was not found. Please check the link": [
+        "Jakokutsun ID-tunnistetta ei löytynyt. Tarkista linkki."
       ],
       "Subfolder failed to be loaded": [
         "Alikansion lataus epäonnistui"
@@ -6249,9 +6258,6 @@
       ]
     },
     "Security Center - Info": {
-      "Get notified if your password or other personal data was leaked.": [
-        "Vastaanota ilmoituksia, jos salasanasi tai muita henkilökohtaisia tietojasi on vuotanut."
-      ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Huippumoderni tekoälypohjainen tietoturvaratkaisumme, joka on suunniteltu tileilleen tehostettua suojausta kaipaaville käyttäjille. ${ learnMoreLink }"
       ],
@@ -6977,21 +6983,6 @@
       "Birthday": [
         "Syntymäpäivä"
       ],
-      "Breach alerts": [
-        "Tietovuotohälytykset"
-      ],
-      "Breach Date": [
-        "Vuodon päiväys"
-      ],
-      "Breach detected": [
-        "Havaittiin tietovuoto"
-      ],
-      "Breach Information": [
-        "Tietoja vuodosta"
-      ],
-      "Breach Size": [
-        "Vuodon koko"
-      ],
       "Browser might run out of memory": [
         "Selaimen käytettävissä oleva keskusmuisti ei välttämättä riitä"
       ],
@@ -7137,9 +7128,6 @@
       ],
       "Exporting contacts": [
         "Yhteystietoja viedään"
-      ],
-      "Exposed info": [
-        "Vuotaneet tiedot"
       ],
       "Failed": [
         "Epäonnistuneet"
@@ -7341,6 +7329,9 @@
       "Shared": [
         "Jaettu"
       ],
+      "Shared with me": [
+        "Jaettu minulle"
+      ],
       "Show actions": [
         "Näytä toiminnot"
       ],
@@ -7448,9 +7439,6 @@
       ],
       "Your changes are not synced yet": [
         "Muutoksiasi ei ole vielä synkronoitu"
-      ],
-      "Your Exposed Information": [
-        "Paljastuneet tietosi"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Ilmainen Mail Plus -kokeilusi päättyy ${ textDate }"

@@ -1856,6 +1856,16 @@
         "/bruger pr. måned"
       ]
     },
+    "Delete address prompt": {
+      "You can only delete 1 address per year.": [
+        "Du kan kun slette 1 adresse om året."
+      ]
+    },
+    "Delete address tooltip": {
+      "You can only delete 1 address per year": [
+        "Du kan kun slette 1 adresse om året"
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Forfalden faktura"
@@ -7505,6 +7515,9 @@
       ],
       "Delete account": [
         "Slet konto"
+      ],
+      "Delete address permanently?": [
+        "Slet adresse permanent?"
       ],
       "Delete the server (you will still be able to recover it for ${ days } day)": [
         "Slet serveren (du har stadig mulighed for at gendanne den inden for ${ days } dag)",

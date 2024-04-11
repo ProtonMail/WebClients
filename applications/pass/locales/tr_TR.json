@@ -480,7 +480,7 @@
         "Paylaşım üyeleri çözümlenemedi"
       ],
       "Could not validate addresses at the moment.": [
-        "Şu anda adresler doğrulanamıyor."
+        "Adresler şu anda doğrulanamıyor."
       ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "CSV dosyasında beklenen başlık bilgileri bulunamadı: ${ missingHeaders }"
@@ -819,7 +819,7 @@
         "Hazır iki adımlı kimlik doğrulayıcı"
       ],
       "By default team members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
-        "Varsayılan olarak ekip üyeleri yalnızca sahibi oldukları kasaları dışa aktarabilir. Bu seçenek açıksa, herhangi bir veriyi dışa aktaramazlar"
+        "Varsayılan olarak ekip üyeleri yalnızca sahibi oldukları kasaları dışa aktarabilir. Bu seçenek açıksa, hiçbir veriyi dışa aktaramazlar"
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "Bu kasadaki ögeleri oluşturabilir, düzenleyebilir, silebilir ve dışa aktarabilir."
@@ -838,9 +838,6 @@
       ],
       "Copied to clipboard": [
         "Panoya kopyalandı"
-      ],
-      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, vault structure...). For a complete export, we recommend using a different format.": [
-        "CSV, verilerinizi görüntülemek için pratik bir biçim sunar. Ancak basit yapısı nedeniyle bazı veriler katılmaz (özel alanlar, kasa yapısı...). Eksiksiz bir dışa aktarım için farklı bir biçim kullanmanızı öneririz."
       ],
       "Current version": [
         "Güncel sürüm"
@@ -1023,7 +1020,7 @@
         "Çevrim dışı desteği kullanımdan kaldırıldı"
       ],
       "Organization settings successfully updated": [
-        "Kuruluş ayarları başarıyla güncellendi"
+        "Kuruluş ayarları güncellendi"
       ],
       "Owner": [
         "Sahibi"
@@ -1169,7 +1166,7 @@
         "Bu dışa aktarma şifrelenmemiş olacak ve dışarıya aktarılmış dosyanıza erişebilen herhangi biri parolalarınızı görebilecek. Güvenlik için lütfen işiniz bittikten sonra dosyayı silin."
       ],
       "This setting is disabled on the organization level": [
-        "Bu ayar kuruluş düzeyinde devre dışı bırakılmıştır"
+        "Bu ayar kuruluş düzeyinde kapatılmış"
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Kasa şu anda hiç kimseyle paylaşılmıyor. Kişişleri çağırarak başkalarıyla paylaşın."
@@ -1372,10 +1369,10 @@
         "Oluşturulma"
       ],
       "Disable data export for team members": [
-        "Ekip üyeleri için veri dışa aktarımını devre dışı bırak"
+        "Ekip üyelerinin verileri dışa aktarmasını kapat"
       ],
       "Disable sharing outside the organization": [
-        "Kuruluş dışında paylaşımı devre dışı bırak"
+        "Kuruluş dışına paylaşımı kapat"
       ],
       "Display": [
         "Görünüm"
@@ -1399,7 +1396,7 @@
         "Dışa aktar"
       ],
       "Exporting policy": [
-        "Dışa aktarma politikası"
+        "Dışa aktarma ilkesi"
       ],
       "Field name": [
         "Alan adı"
@@ -1600,7 +1597,7 @@
         "PIN kodu ayarla"
       ],
       "Sharing policy": [
-        "Paylaşım politikası"
+        "Paylaşım ilkesi"
       ],
       "Show website favicons": [
         "Site simgeleri görüntülensin"
@@ -2055,7 +2052,7 @@
         "E-posta adresleri geçersiz."
       ],
       "Inviting email addresses outside organization is not allowed.": [
-        "Kuruluş dışındaki e-posta adreslerinin davet edilmesine izin verilmez."
+        "Kuruluş dışından e-posta adreslerinin davet edilmesine izin verilmiyor."
       ],
       "item was imported without custom fields": [
         "öge özel alanlar olmadan ie aktarılmış"
