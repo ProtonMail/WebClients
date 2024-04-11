@@ -479,6 +479,9 @@
       "Could not resolve share members": [
         "Mitglieder der Freigabe können nicht festgelegt werden"
       ],
+      "Could not validate addresses at the moment.": [
+        "Die Adressen können zur Zeit nicht validiert werden."
+      ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "In der CSV-Datei fehlen erwartete Kopfzeilen: ${ missingHeaders }"
       ],
@@ -518,6 +521,9 @@
       ],
       "Failed to delete selected items": [
         "Ausgewählten Einträge konnten nicht gelöscht werden"
+      ],
+      "Failed to edit organization settings": [
+        "Bearbeitung der Organisationseinstellungen fehlgeschlagen"
       ],
       "Failed to edit user's access.": [
         "Fehler beim Bearbeiten des Benutzerzugriffs."
@@ -812,6 +818,9 @@
       "Built in 2FA authenticator": [
         "Integrierter 2FA-Authenticator"
       ],
+      "By default team members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
+        "Standardmäßig können Teammitglieder nur Tresore exportieren, deren Eigentümer sie sind. Wenn diese Option aktiviert ist, können sie keine Daten exportieren"
+      ],
       "Can create, edit, delete, and export items in this vault.": [
         "Darf Einträge in diesem Tresor erstellen, bearbeiten, löschen und exportieren."
       ],
@@ -829,9 +838,6 @@
       ],
       "Copied to clipboard": [
         "In die Zwischenablage kopiert"
-      ],
-      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, vault structure...). For a complete export, we recommend using a different format.": [
-        "CSV bietet ein praktisches Format zur Anzeige deiner Daten. Aufgrund seiner Einfachheit werden jedoch einige Daten nicht einbezogen (benutzerdefinierte Felder, Tresorstruktur...). Für einen vollständigen Export empfehlen wir die Verwendung eines anderen Formats."
       ],
       "Current version": [
         "Aktuelle Version"
@@ -1013,6 +1019,9 @@
       "Offline support successfully disabled": [
         "Offline-Unterstützung erfolgreich deaktiviert."
       ],
+      "Organization settings successfully updated": [
+        "Organisationseinstellungen erfolgreich aktualisiert"
+      ],
       "Owner": [
         "Besitzer"
       ],
@@ -1131,6 +1140,9 @@
       "Syncing your vaults…": [
         "Synchronisiere deine Tresore…"
       ],
+      "Team members can only share vaults within organization": [
+        "Teammitglieder können Tresore nur innerhalb der Organisation gemeinsam nutzen"
+      ],
       "Thank you, the problem has been reported": [
         "Vielen Dank, das Problem wurde gemeldet."
       ],
@@ -1153,6 +1165,9 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Dieser Export ist unverschlüsselt und jeder, der Zugang zu deiner exportierten Datei hat, kann deine Passwörter sehen. Bitte lösche die Datei aus Sicherheitsgründen, wenn du sie nicht mehr benötigst."
       ],
+      "This setting is disabled on the organization level": [
+        "Diese Einstellung ist auf Organisationsebene deaktiviert"
+      ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Dieser Tresor wird derzeit mit niemandem geteilt. Lade Personen ein, um ihn mit diesen zu teilen."
       ],
@@ -1173,6 +1188,9 @@
       ],
       "Unpinning item...": [
         "Eintrag wird losgelöst..."
+      ],
+      "Updating organization settings": [
+        "Aktualisierung der Organisationseinstellungen"
       ],
       "Upgrade Now to Unlock Premium Features": [
         "Upgrade jetzt zum Freischalten von Premiumfunktionen"
@@ -1350,6 +1368,12 @@
       "Created": [
         "Erstellt"
       ],
+      "Disable data export for team members": [
+        "Datenexport für Teammitglieder deaktivieren"
+      ],
+      "Disable sharing outside the organization": [
+        "Freigabe außerhalb des Unternehmens deaktivieren"
+      ],
       "Display": [
         "Darstellung"
       ],
@@ -1370,6 +1394,9 @@
       ],
       "Export": [
         "Exportieren"
+      ],
+      "Exporting policy": [
+        "Ausfuhrpolitik"
       ],
       "Field name": [
         "Feldname"
@@ -1506,6 +1533,9 @@
       "Oldest to newest": [
         "Älteste nach neueste"
       ],
+      "Organization": [
+        "Organisation"
+      ],
       "Passkey": [
         "Passkey"
       ],
@@ -1565,6 +1595,9 @@
       ],
       "Set PIN code": [
         "PIN-Code festlegen"
+      ],
+      "Sharing policy": [
+        "Richtlinie zur gemeinsamen Nutzung"
       ],
       "Show website favicons": [
         "Website-Symbole anzeigen"
@@ -2017,6 +2050,9 @@
       ],
       "Invalid email addresses.": [
         "Ungültige E-Mail-Adressen."
+      ],
+      "Inviting email addresses outside organization is not allowed.": [
+        "Das Einladen von E-Mail-Adressen außerhalb der Organisation ist nicht erlaubt."
       ],
       "item was imported without custom fields": [
         "Eintrag wurde ohne benutzerdefinierte Felder importiert"

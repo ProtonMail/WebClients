@@ -415,6 +415,12 @@
       "Manage link": [
         "Кіраванне спасылкай"
       ],
+      "Mark as open": [
+        "Пазначыць як адкрытае"
+      ],
+      "Mark as resolved": [
+        "Пазначыць як вырашанае"
+      ],
       "Mark for deletion": [
         "Пазначыць для выдалення"
       ],
@@ -531,6 +537,9 @@
       ],
       "Report an issue": [
         "Паведаміць пра праблему"
+      ],
+      "Request a call": [
+        "Запытаць званок"
       ],
       "Request a feature": [
         "Запытаць функцыю"
@@ -2054,9 +2063,6 @@
       ],
       "Your account and data recovery methods are set.": [
         "Спосабы аднаўлення вашага ўліковага запісу зададзены."
-      ],
-      "Your information was found in at least one data breach.": [
-        "Вашы звесткі былі знойдзены прынамсі ў выніку адной уцечкі даных."
       ],
       "Your personal data was leaked by an online service in a data breach. View full details and get recommended actions.": [
         "Парушэнне вашых асабістых даных адбылося праз сэрвіс у інтэрнэце ў выніку ўцечкі даных. Азнаёмцеся з падрабязнасцямі і прыміце неабходныя меры."
@@ -3698,7 +3704,7 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Перад запытам новага праверачнага кода праверце папку са спамам, а таксама ці правільна азначаны адрас ${ strong }."
       ],
-      "Breach alerts": [
+      "Breach Alert": [
         "Папярэджанні ўцечкі"
       ],
       "Calendar side panel": [
@@ -3956,6 +3962,9 @@
       "File will not be updated": [
         "Файл не будзе абноўлены"
       ],
+      "Files and folders that others shared with you will appear here": [
+        "Тут з'явяцца папкі і файлы, якія з вамі абагулілі іншыя карыстальнікі."
+      ],
       "Finalizing": [
         "Завяршэнне"
       ],
@@ -4088,6 +4097,9 @@
       "Last week": [
         "Апошні тыдзень"
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Даведайцеся, як ${ staySaferOnlineLink }"
+      ],
       "Learn more": [
         "Даведацца больш"
       ],
@@ -4102,6 +4114,9 @@
       ],
       "Loading ${ appName }": [
         "Загрузка ${ appName }"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Пачакайце, адбываецца загрузка календара. Вы будзеце перанакіраваны на нашу платформу планавання Calendly, якая адкрыецца ў новай укладцы."
       ],
       "Loading link": [
         "Загрузка спасылкі"
@@ -4418,6 +4433,9 @@
       "Shared link not found": [
         "Абагуленая спасылка не знойдзена"
       ],
+      "Shared with me": [
+        "Абагулена са мной"
+      ],
       "Sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
         "Зарэгіструйце ўласны ўліковы запіс ${ DRIVE_APP_NAME } і абараняйце свае даныя з дапамогай скразнога шыфравання, а таксама бяспечна абагульвайце іх."
       ],
@@ -4465,6 +4483,9 @@
       ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
         "Зашыфраваныя даныя крыху большыя па прычыне службовых даных шыфравання і подпісаў, якія забяспечваюць бяспеку вашых даных."
+      ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "Адбылася ўцечка скампраметаваных звестак са старонняга сэрвісу. Гэта не закранула звесткі вашага ўліковага запісу ${ BRAND_NAME }, бо яны зашыфраваны і знаходзяцца ў бяспецы. ${ learnMoreLink }"
       ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Магчыма, што гэтыя элементы былі падроблены: ${ items }. Адкрывайце толькі калі давяраеце ім."
@@ -4634,9 +4655,6 @@
       "Version is restored": [
         "Версія адноўлена"
       ],
-      "View details": [
-        "Паглядзець падрабязнасці"
-      ],
       "Want to sync files faster?": [
         "Хочаце сінхранізаваць файлы хутчэй?"
       ],
@@ -4757,6 +4775,12 @@
       "Your download is in progress": [
         "Адбываецца спампоўванне"
       ],
+      "Your email address and password were leaked:": [
+        "Адбылася ўцечка вашага адраса электроннай пошты і пароля:"
+      ],
+      "Your email address was exposed:": [
+        "Ваша адрас электроннай пошты скампраметаваны:"
+      ],
       "Your email will only be used for this one-time verification.": [
         "Ваша электронная пошта будзе выкарыстана толькі для гэтай аднаразовай праверкі."
       ],
@@ -4769,8 +4793,14 @@
       "Your files will be encrypted and then saved.": [
         "Вашы файлы будуць зашыфраваны, а пасля гэтага захаваны."
       ],
+      "Your information was found on ${ displayedDate }": [
+        "Вашы звесткі былі знойдзены ${ displayedDate }"
+      ],
       "Your login information will not be saved after the import is completed.": [
         "Пасля завяршэння імпартавання вашы даныя ўваходу не будуць захаваны."
+      ],
+      "Your password was leaked:": [
+        "Адбылася ўцечка вашага пароля:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ваш нумар тэлефона будзе выкарыстаны толькі для бягучай аднаразовай праверкі."
@@ -5246,6 +5276,12 @@
       "Set recovery method": [
         "Задаць спосаб аднаўлення"
       ],
+      "Shared by": [
+        "Абагулена"
+      ],
+      "Shared on": [
+        "Абагулена на"
+      ],
       "Show indexing progress of Encrypted Search": [
         "Паказаць ход выканання індэксацыі зашыфраванага пошуку"
       ],
@@ -5408,6 +5444,12 @@
       ],
       "Shared": [
         "Абагулены"
+      ],
+      "Shared with me": [
+        "Абагулена са мной"
+      ],
+      "stay safer online": [
+        "застацца абароненым у інтэрнэце"
       ],
       "Trash": [
         "Сметніца"
@@ -6083,6 +6125,9 @@
       "Encrypted search activated": [
         "Актываваны зашыфраваны пошук"
       ],
+      "Failed to accept share invitation": [
+        "Не ўдалося прыняць абагуленае запрашэнне"
+      ],
       "Failed to download files: ${ err }": [
         "Не ўдалося спампаваць файлы: ${ err }"
       ],
@@ -6130,6 +6175,12 @@
       ],
       "Root folder failed to be loaded": [
         "Не ўдалося загрузіць каранёвую папку"
+      ],
+      "Share invitation accepted successfully": [
+        "Абагуленае запрашэнне паспяхова прынята"
+      ],
+      "Share invitation ID was not found. Please check the link": [
+        "Ідэнтыфікатар абагуленага запрашэння не знойдзены. Праверце спасылку"
       ],
       "Subfolder failed to be loaded": [
         "Не ўдалося загрузіць падпапкі"
@@ -6516,14 +6567,17 @@
       ]
     },
     "Security Center - Info": {
-      "Get notified if your password or other personal data was leaked.": [
-        "Атрымаць апавяшчэнне, калі адбылася ўцечка вашага пароля або іншых асабістых даных."
+      "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
+        "Атрымаць апавяшчэнне, калі адбылася ўцечка вашага пароля або іншых даных са старонняга сэрвісу. ${ learnMoreLink }"
       ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Наша перадавое рашэнне па бяспецы на базе штучнага інтэлекту распрацавана для карыстальнікаў, якія шукаюць дадатковую абарону для сваіх уліковых запісаў. ${ learnMoreLink }"
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel цяпер **актыўны** і ахоўвае ваш уліковы запіс."
+      ],
+      "Your information was found in at least one data breach. Turn on Breach Alert to view details and take action. ${ learnMoreLink }": [
+        "Вашы звесткі былі знойдзены прынамсі ў адной уцечцы даных. Уключыце функцыю \"Папярэджанне ўцечкі\", каб паглядзець падрабязнасці і прыняць адпаведныя дзеянні. ${ learnMoreLink }"
       ]
     },
     "Select files": {
@@ -7308,20 +7362,8 @@
       "Birthday": [
         "Дзень нараджэння"
       ],
-      "Breach alerts": [
+      "Breach Alert": [
         "Папярэджанні ўцечкі"
-      ],
-      "Breach Date": [
-        "Дата ўцечкі"
-      ],
-      "Breach detected": [
-        "Выяўлена ўцечка"
-      ],
-      "Breach Information": [
-        "Звесткі аб уцечках"
-      ],
-      "Breach Size": [
-        "Памер уцечкі"
       ],
       "Browser might run out of memory": [
         "Браўзеру магчыма не хапае памяці"
@@ -7413,6 +7455,9 @@
       "Deleting contacts": [
         "Выдаленне кантактаў"
       ],
+      "Details": [
+        "Падрабязнасці"
+      ],
       "Discard": [
         "Адхіліць"
       ],
@@ -7472,9 +7517,6 @@
       ],
       "Exporting contacts": [
         "Экспартаванне кантактаў"
-      ],
-      "Exposed info": [
-        "Звесткі кампраметацыі"
       ],
       "Failed": [
         "Збой"
@@ -7680,6 +7722,9 @@
       "Shared": [
         "Абагулены"
       ],
+      "Shared with me": [
+        "Абагулена са мной"
+      ],
       "Show actions": [
         "Паказаць дзеянні"
       ],
@@ -7788,7 +7833,7 @@
       "Your changes are not synced yet": [
         "Пакуль вашы змены не сінхранізаваны"
       ],
-      "Your Exposed Information": [
+      "Your exposed information": [
         "Вашы скампраметаваныя звесткі"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [

@@ -409,6 +409,12 @@
       "Manage link": [
         "Gestionar enlace"
       ],
+      "Mark as open": [
+        "Marcar como pendiente"
+      ],
+      "Mark as resolved": [
+        "Marcar como resuelto"
+      ],
       "Mark for deletion": [
         "Marcar para eliminar"
       ],
@@ -2040,9 +2046,6 @@
       "Your account and data recovery methods are set.": [
         "Se establecieron los métodos de recuperación de datos y cuenta."
       ],
-      "Your information was found in at least one data breach.": [
-        "Su información fue encontrada en al menos una vulneración."
-      ],
       "Your personal data was leaked by an online service in a data breach. View full details and get recommended actions.": [
         "Sus datos personales fueron filtrados por un servicio en línea en una vulneración de datos. Vea los detalles completos y reciba las acciones recomendadas."
       ]
@@ -3571,8 +3574,8 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Antes de solicitar un código de verificación nuevo, revise su carpeta de spam y verifique que ${ strong } sea la dirección correcta."
       ],
-      "Breach alerts": [
-        "Alertas de vulneraciones"
+      "Breach Alert": [
+        "Alerta de vulneraciones"
       ],
       "Calendar side panel": [
         "Panel lateral de calendario"
@@ -3956,6 +3959,9 @@
       "Last week": [
         "La semana pasada"
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Aprenda cómo ${ staySaferOnlineLink }"
+      ],
       "Learn more": [
         "Más información"
       ],
@@ -4332,6 +4338,9 @@
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
         "Los datos cifrados son un poco más grandes debido a la sobrecarga del cifrado y las firmas que garantizan la seguridad de sus datos."
       ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "La información expuesta fue filtrada desde un servicio de terceros. La información de su cuenta de ${ BRAND_NAME } permanece segura y cifrada. ${ learnMoreLink }"
+      ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Es posible que se haya manipulado lo siguiente: ${ items }. Ábralo solo si confía en él."
       ],
@@ -4498,9 +4507,6 @@
       "Version is restored": [
         "La versión fue restaurada"
       ],
-      "View details": [
-        "Ver detalles"
-      ],
       "Want to sync files faster?": [
         "¿Desea sincronizar archivos más rápido?"
       ],
@@ -4619,6 +4625,12 @@
       "Your download is in progress": [
         "Su descarga está en progreso"
       ],
+      "Your email address and password were leaked:": [
+        "Su dirección de correo electrónico y contraseña fueron filtradas:"
+      ],
+      "Your email address was exposed:": [
+        "Su dirección de correo electrónico fue expuesta:"
+      ],
       "Your email will only be used for this one-time verification.": [
         "Su correo electrónico sólo se usará para esta verificación única."
       ],
@@ -4631,8 +4643,14 @@
       "Your files will be encrypted and then saved.": [
         "Sus archivos serán cifrados y luego guardados."
       ],
+      "Your information was found on ${ displayedDate }": [
+        "Su información fue encontrada el ${ displayedDate }"
+      ],
       "Your login information will not be saved after the import is completed.": [
         "La información de inicio de sesión no se guardará una vez finalizada la importación."
+      ],
+      "Your password was leaked:": [
+        "Su contraseña fue filtrada:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Su número de teléfono sólo se usará para esta verificación única."
@@ -5272,6 +5290,9 @@
       ],
       "Shared with me": [
         "Compartido conmigo"
+      ],
+      "stay safer online": [
+        "mantener su seguridad en línea"
       ],
       "Trash": [
         "Papelera"
@@ -5957,7 +5978,7 @@
         "Error al cargar la carpeta raíz"
       ],
       "Share invitation accepted successfully": [
-        "Invitación compartida aceptada con éxito"
+        "La invitación compartida fue aceptada."
       ],
       "Share invitation ID was not found. Please check the link": [
         "ID de invitación compartida no encontrada. Revise el enlace"
@@ -6339,14 +6360,17 @@
       ]
     },
     "Security Center - Info": {
-      "Get notified if your password or other personal data was leaked.": [
-        "Reciba notificaciones si su contraseña u otro dato personal fue filtrado."
+      "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
+        "Reciba notificaciones si su contraseña u otro dato fue filtrado desde un servicio de terceros. ${ learnMoreLink }"
       ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Nuestra solución de seguridad de vanguardia basada en IA diseñada para usuarios que buscan protección avanzada en sus cuentas. ${ learnMoreLink }"
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel está **activo** y salvaguarda su cuenta."
+      ],
+      "Your information was found in at least one data breach. Turn on Breach Alert to view details and take action. ${ learnMoreLink }": [
+        "Su información fue encontrada en al menos una vulneración de datos. Active la función Alerta de vulneraciones para ver los detalles y tomar acciones. ${ learnMoreLink }"
       ]
     },
     "Select files": {
@@ -7067,20 +7091,8 @@
       "Birthday": [
         "Cumpleaños"
       ],
-      "Breach alerts": [
-        "Alertas de vulneraciones"
-      ],
-      "Breach Date": [
-        "Fecha de la vulneración"
-      ],
-      "Breach detected": [
-        "Vulneración detectada"
-      ],
-      "Breach Information": [
-        "Información de la vulneración"
-      ],
-      "Breach Size": [
-        "Tamaño de la vulneración"
+      "Breach Alert": [
+        "Alerta de vulneraciones"
       ],
       "Browser might run out of memory": [
         "El navegador podría quedarse sin memoria"
@@ -7168,6 +7180,9 @@
       "Deleting contacts": [
         "Eliminando contactos"
       ],
+      "Details": [
+        "Detalles"
+      ],
       "Discard": [
         "Descartar"
       ],
@@ -7227,9 +7242,6 @@
       ],
       "Exporting contacts": [
         "Exportando contactos"
-      ],
-      "Exposed info": [
-        "Información expuesta"
       ],
       "Failed": [
         "Error"
@@ -7542,7 +7554,7 @@
       "Your changes are not synced yet": [
         "Sus cambios aún no se han sincronizado"
       ],
-      "Your Exposed Information": [
+      "Your exposed information": [
         "Su información expuesta"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [

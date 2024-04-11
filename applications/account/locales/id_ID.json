@@ -104,9 +104,6 @@
       "Add notification": [
         "Tambah notifikasi"
       ],
-      "Add or switch account": [
-        "Tambah atau ubah akun"
-      ],
       "Add PayPal": [
         "Tambahkan akun PayPal"
       ],
@@ -614,6 +611,12 @@
       "Mark as default": [
         "Tandai sebagai bawaan"
       ],
+      "Mark as open": [
+        "Tandai sebagai terbuka"
+      ],
+      "Mark as resolved": [
+        "Tandai sebagai terselesaikan"
+      ],
       "mark emails as": [
         "tandai email sebagai"
       ],
@@ -988,9 +991,6 @@
       ],
       "Unlock Breach Report": [
         "Dapatkan akses Laporan Kebocoran"
-      ],
-      "Unlock breach reports": [
-        "Dapatkan akses laporan kebocoran"
       ],
       "Unlock data": [
         "Buka kunci data"
@@ -5840,6 +5840,17 @@
         "Sebagian isi kalender Anda tidak didukung dan tidak akan diimpor."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Kami menemukan beberapa kunci duplikat. Mohon unggah satu per satu."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Kunci ${ fingerprint } sudah diunggah"
+      ],
+      "Selected color:": [
+        "Warna terpilih:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } memerlukan izin Anda untuk ${ enableDesktopNotifications }."
@@ -5852,6 +5863,9 @@
       ],
       "${ BRAND_NAME } is privacy you can trust, ensured by strong encryption, open-source code, and Swiss privacy laws. We believe nobody should be able to exploit your data, period. Our technology and business are based upon this fundamentally stronger definition of privacy.": [
         "${ BRAND_NAME } merupakan privasi yang dapat Anda percayai, yang terjamin oleh enkripsi yang kuat, kode open-source, dan undang-undang privasi Swiss. Kami percaya bahwa tidak ada siapa pun yang berhak untuk mengeksploitasi data Anda, titik. Teknologi dan bisnis kami dilandaskan pada definisi privasi ini yang secara prinsip lebih berdasar."
+      ],
+      "${ BRAND_NAME } never shares your information with third parties. Data comes from  ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
+        "${ BRAND_NAME } tidak pernah membagikan informasi Anda dengan pihak ketiga. Data yang tersedia bersumber dari analisis mandiri ${ BRAND_NAME } dan Constella Intelligence."
       ],
       "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "${ BRAND_NAME } menghentikan sementara proses impor karena sambungan dengan layanan email Anda terputus. Mohon sambungkan ulang."
@@ -6126,6 +6140,9 @@
       "Amount due": [
         "Jumlah tagihan"
       ],
+      "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
+        "Alias email berfungsi seperti alamat email pada umumnya, namun alias akan mengurangi spam dan menjaga agar alamat email asli dan identitas diri Anda tersembunyi."
+      ],
       "An error occurred while communicating with the extension": [
         "Terdapat kesalahan pada saat berkomunikasi dengan ekstensi"
       ],
@@ -6260,9 +6277,6 @@
       ],
       "Blocks senders from seeing if and when you opened a message.": [
         "Mencegah pengirim pesan untuk dapat mengetahui apakah Anda telah membuka pesan yang mereka kirim."
-      ],
-      "Breach Alert is powered by ${ BRAND_NAME }'s propietary datasets, open-source datasets, and Constella Intelligence. ${ dataBreachLink }": [
-        "Peringatan Kebocoran diberdayakan oleh set data milik ${ BRAND_NAME }, set data open-source, dan Constella Intelligence. ${ dataBreachLink }"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Dengan menurunkan ke paket Free, Anda akan kehilangan berbagai manfaat berikut secara permanen, bahkan apabila Anda kembali meningkatkan jenis akun Anda di kemudian hari."
@@ -6600,6 +6614,9 @@
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "Dapatkan akses dengan membuat akun ${ BRAND_NAME } dan menerima undangan ini."
       ],
+      "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
+        "Dapatkan notifikasi ketika kata sandi atau data pribadi Anda lainnya terpapar. ${ learnMoreLinkNoBreach }"
+      ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "Berikan token ini nama yang mudah dikenali, seperti nama layanan yang ingin Anda sandingkan dengannya, dan pilih salah satu alamat domain khusus aktif yang Anda miliki. Ke depannya, hanya alamat ini yang dapat mengirim email dengan token ini."
       ],
@@ -6672,11 +6689,11 @@
       "If you wish to combine this account with another one, do NOT delete it.": [
         "Apabila Anda ingin menggabungkan akun ini dengan akun lain, JANGAN hapus akun ini."
       ],
-      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } (or Zoom meet) with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
-        "Apabila Anda menemui masalah, kami siap untuk membantu. ${ boldPhoneCall } (atau mulai sesi meeting Zoom) dengan salah satu staf layanan dukungan ahli kami, atau ${ boldLiveChat } untuk memperoleh dukungan via chat."
+      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
+        "Apabila Anda menemui masalah, kami siap untuk membantu. ${ boldPhoneCall } atau ${ boldZoomMeeting } dengan salah satu staf layanan dukungan ahli kami, atau ${ boldLiveChat } untuk memperoleh dukungan via chat."
       ],
-      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } (or Zoom meet) with one of our support specialists.": [
-        "Apabila Anda menemui masalah, kami siap untuk membantu. ${ boldPhoneCall } (atau mulai sesi meeting Zoom) dengan salah satu staf layanan dukungan ahli kami."
+      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists.": [
+        "Apabila Anda menemui masalah, kami siap untuk membantu. ${ boldPhoneCall } atau ${ boldZoomMeeting } dengan salah satu staf layanan dukungan ahli kami."
       ],
       "Image description": [
         "Keterangan gambar"
@@ -6773,6 +6790,9 @@
       ],
       "Just send them your personal referral link.": [
         "Kirimkan saja tautan rujukan Anda kepada mereka."
+      ],
+      "Keep your info more secure and private with these guides and tips.": [
+        "Jadikan informasi seputar diri Anda lebih aman dan privat dengan berbagai panduan dan tips berikut."
       ],
       "Key deletion is irreversible!": [
         "Penghapusan kunci tidak dapat diurungkan!"
@@ -6899,6 +6919,9 @@
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Beri nama folder baru Anda dan pilih folder induk yang Anda ingin masukkan ke dalamnya. Jika Anda tidak memilih folder induk, folder baru ini akan dibuat sebagai folder level paling atas."
+      ],
+      "NetShield is an ad-blocking feature from ${ VPN_APP_NAME } that protects your device from ads, trackers, and malware.": [
+        "NetShield merupakan fitur pemblokir iklan milik ${ VPN_APP_NAME } yang melindungi perangkat Anda dari iklan, pelacak, dan malware."
       ],
       "New": [
         "Baru"
@@ -7191,6 +7214,9 @@
       "Report link expired": [
         "Tautan laporan kedaluwarsa"
       ],
+      "Request a phone call": [
+        "Mintalah sesi telepon"
+      ],
       "Resend verification email": [
         "Kirim ulang email verifikasi"
       ],
@@ -7373,6 +7399,9 @@
       ],
       "The calendar will be removed from your account.": [
         "Kalender ini akan dihapus dari akun Anda."
+      ],
+      "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
+        "Dark web merupakan bagian tersembunyi dari internet di mana informasi pribadi yang dicuri, seperti identitas diri, dapat diperjualbelikan."
       ],
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "Tautan verifikasi ini telah kedaluwarsa. Silakan masuk untuk mengirimkan ulang kode verifikasi."
@@ -7653,14 +7682,8 @@
       "URL link": [
         "Tautan URL"
       ],
-      "Use ${ BRAND_NAME } Pass to generate strong passwords and avoid password re-use": [
-        "Gunakan ${ BRAND_NAME } Pass untuk menghasilkan kata sandi yang kuat dan menghindari pemakaian ulang kata sandi"
-      ],
-      "Use ${ VPN_APP_NAME } with Netshield enabled to protect you from phishing and malware": [
-        "Gunakan ${ VPN_APP_NAME } dengan NetShield untuk melindungi Anda dari upaya phishing dan serangan malware"
-      ],
-      "Use aliases to sign up for online services. This protects your real email address and identity, limiting the blast radius of a breach.": [
-        "Gunakan alias untuk mendaftarkan diri Anda ke layanan online. Tindakan ini akan melindungi alamat email dan identitas asli Anda, yang membatasi dampak kebocoran data."
+      "Use a password manager to generate and securely store your passwords, ensuring strong passwords and easier sign-ins.": [
+        "Gunakan pengelola kata sandi untuk menghasilkan dan menyimpan kata sandi Anda secara aman, yang menjamin kata sandi yang kuat dan entri masuk yang lebih mudah."
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Gunakan server terbaik berdasarkan beban jaringan dan posisi Anda saat ini: ${ formattedBestServerName }"
@@ -7716,14 +7739,14 @@
       "Want servers in other countries?": [
         "Ingin server di negara lain?"
       ],
+      "Want to learn more?": [
+        "Ingin mempelajari lebih lanjut?"
+      ],
       "Warning:": [
         "Peringatan:"
       ],
       "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
         "Peringatan: penghapusan bersifat permanen. Hal ini juga menghapus akses ke semua layanan yang terhubung dan menghapus semua kontak Anda."
-      ],
-      "Ways you can minimize your breach risks": [
-        "Berbagai cara untuk meminimalkan risiko kebocoran data Anda"
       ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Kami menyarankan Anda untuk menggunakan aplikasi resmi ${ VPN_APP_NAME } apabila memungkinkan."
@@ -7736,9 +7759,6 @@
       ],
       "We just sent you a new link.": [
         "Kami telah mengirimkan Anda tautan yang baru."
-      ],
-      "We monitor your email addresses, passwords, and personal data for appearances on the dark web and notify you in case your data is compromised.": [
-        "Kami memonitor kemunculan alamat email, kata sandi, dan data pribadi Anda pada dark web dan memberitahukan Anda apabila data Anda telah bocor."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Kami perlu untuk mengautentikasi metode pembayaran Anda dengan bank Anda."
@@ -7817,6 +7837,9 @@
       ],
       "Why?": [
         "Mengapa?"
+      ],
+      "Will soon be available.": [
+        "Fitur ini akan segera tersedia."
       ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "Dengan paket Business atau Enterprise, Anda dapat membeli ${ boldDedicatedServers } untuk organisasi Anda dan mengelola siapa-siapa saja yang dapat mengakses server tertentu dengan ${ boldGateways }."
@@ -8066,17 +8089,9 @@
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Tiket layanan dukungan Anda telah ditutup. Terima kasih telah menghubungi layanan dukungan ${ BRAND_NAME }."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Kami menemukan beberapa kunci duplikat. Mohon unggah satu per satu."
       ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Kunci ${ fingerprint } sudah diunggah"
-      ],
-      "Selected color:": [
-        "Warna terpilih:"
+      "Zoom meeting": [
+        "sesi meeting Zoom"
       ]
     },
     "Info - folder colouring feature": {
@@ -9609,6 +9624,9 @@
       "here": [
         "di sini"
       ],
+      "How does monitoring work?": [
+        "Bagaimana cara pemantauan ini bekerja?"
+      ],
       "How to pay with Bitcoin?": [
         "Bagaimana cara membayar dengan Bitcoin?"
       ],
@@ -9746,6 +9764,9 @@
       ],
       "Enable authentication logs": [
         "Aktifkan log autentikasi"
+      ],
+      "Enable Breach Alert": [
+        "Aktifkan Peringatan Kebocoran"
       ]
     },
     "Mail import summary": {
@@ -10604,6 +10625,17 @@
         "Manajemen tim"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Apabila tidak, akses menuju akun Anda akan dibatasi dan akun Anda akan dinonaktifkan ke depannya."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Untuk lanjut menggunakan ${ trialPlanName } dengan berbagai fitur premium, pilih jenis langganan dan metode pembayaran yang Anda kehendaki."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Masa uji coba Anda akan berakhir pada ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } akan berakhir dalam ${ last4 }"
@@ -10703,17 +10735,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Anda sedang berlangganan ke paket Anda saat ini dengan harga diskon. Dengan menurunkan jenis akun Anda, Anda tidak akan lagi dapat membeli langganan dengan harga diskon ke depannya."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Apabila tidak, akses menuju akun Anda akan dibatasi dan akun Anda akan dinonaktifkan ke depannya."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Untuk lanjut menggunakan ${ trialPlanName } dengan berbagai fitur premium, pilih jenis langganan dan metode pembayaran yang Anda kehendaki."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Masa uji coba Anda akan berakhir pada ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -12321,6 +12342,11 @@
         "Pengguna"
       ]
     },
+    "Security Center - Info": {
+      "Your information was found in at least one data breach. Turn on Breach Alert to view details and take action. ${ learnMoreLinkBreach }": [
+        "Informasi mengenai diri Anda ditemukan pada setidaknya satu insiden kebocoran data. Aktifkan Peringatan Kebocoran untuk melihat rincian kebocoran ini dan mengambil tindakan yang sesuai. ${ learnMoreLinkBreach }"
+      ]
+    },
     "Select file": {
       "Upload CSV file": [
         "Unggah berkas CSV"
@@ -13827,17 +13853,11 @@
       "Billing cycle": [
         "Siklus tagihan"
       ],
-      "Breach Alerts": [
+      "Block trackers and malware": [
+        "Blokir pelacak dan malware"
+      ],
+      "Breach Alert": [
         "Peringatan Kebocoran"
-      ],
-      "Breach Date": [
-        "Tanggal Kebocoran"
-      ],
-      "Breach Information": [
-        "Informasi Kebocoran"
-      ],
-      "Breach Size": [
-        "Ukuran Kebocoran"
       ],
       "Bridge for ${ platform }": [
         "Bridge untuk ${ platform }"
@@ -14151,9 +14171,6 @@
       "Export public key": [
         "Ekspor kunci publik"
       ],
-      "Exposed info": [
-        "Informasi yang terpapar"
-      ],
       "External PGP settings": [
         "Pengaturan PGP eksternal"
       ],
@@ -14292,9 +14309,6 @@
       "Link confirmation": [
         "Konfirmasi tautan"
       ],
-      "Location": [
-        "Lokasi"
-      ],
       "Login password": [
         "Kata sandi masuk"
       ],
@@ -14330,6 +14344,9 @@
       ],
       "No recovery method": [
         "Tidak ada metode pemulihan"
+      ],
+      "Open": [
+        "Terbuka"
       ],
       "Open actions dropdown": [
         "Buka menu tindakan"
@@ -14438,6 +14455,9 @@
       ],
       "Reset password?": [
         "Atur ulang kata sandi?"
+      ],
+      "Resolved": [
+        "Terselesaikan"
       ],
       "Restore administrator privileges": [
         "Pulihkan hak administrator"
@@ -14652,6 +14672,12 @@
       "We'll send an email to your new address with instructions on completing the change.": [
         "Kami akan mengirimkan email ke alamat baru Anda yang berisi panduan untuk menyelesaikan proses migrasi Anda."
       ],
+      "What is an alias?": [
+        "Apa itu alias?"
+      ],
+      "What is the dark web?": [
+        "Apa itu dark web?"
+      ],
       "What would you like to import?": [
         "Hal-hal apa saja yang hendak Anda impor?"
       ],
@@ -14667,8 +14693,8 @@
       "Your changes are not synced yet": [
         "Perubahan Anda belum disinkronkan"
       ],
-      "Your Exposed Information": [
-        "Informasi Anda Yang Terpapar"
+      "Your exposed information": [
+        "Informasi Anda yang terpapar"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Uji coba Mail Plus Anda akan berakhir pada ${ textDate }"

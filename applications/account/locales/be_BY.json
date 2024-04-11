@@ -104,9 +104,6 @@
       "Add notification": [
         "Дадаць апавяшчэнне"
       ],
-      "Add or switch account": [
-        "Дадаць або пераключыць уліковы запіс"
-      ],
       "Add PayPal": [
         "Дадаць PayPal"
       ],
@@ -614,6 +611,12 @@
       "Mark as default": [
         "Пазначыць як прадвызначаны"
       ],
+      "Mark as open": [
+        "Пазначыць як адкрытае"
+      ],
+      "Mark as resolved": [
+        "Пазначыць як вырашанае"
+      ],
       "mark emails as": [
         "пазначыць лісты як"
       ],
@@ -742,6 +745,9 @@
       ],
       "Report a problem": [
         "Паведаміць аб праблеме"
+      ],
+      "Request a call": [
+        "Запытаць званок"
       ],
       "Request a feature": [
         "Запытаць функцыю"
@@ -941,6 +947,9 @@
       "Start import": [
         "Пачаць імпартаванне"
       ],
+      "Start live chat": [
+        "Пачаць інтэрактыўны чат"
+      ],
       "Stay": [
         "Застацца"
       ],
@@ -982,9 +991,6 @@
       ],
       "Unlock Breach Report": [
         "Разблакіраваць справаздачу ўцечкі"
-      ],
-      "Unlock breach reports": [
-        "Разблакіраваць справаздачы ўцечкі"
       ],
       "Unlock data": [
         "Разблакіраваць даныя"
@@ -1862,6 +1868,17 @@
       ],
       "Week": [
         "Тыдзень"
+      ]
+    },
+    "Call Scheduled Confirmation": {
+      "Request sent": [
+        "Запыт адпраўлены"
+      ],
+      "We'll get back to you with more information as soon as we can.": [
+        "Мы звяжамся з вамі ў самы бліжэйшы час, як толькі ў нас будзе больш інфармацыі па гэтым пытанні."
+      ],
+      "You can safely close this tab.": [
+        "Вы можаце бяспечна закрыць гэту ўкладку."
       ]
     },
     "Checkout row": {
@@ -3100,6 +3117,9 @@
       ]
     },
     "Delete address prompt": {
+      "Once deleted, this address can't be used again by anyone else.": [
+        "Іншы карыстальнік больш не зможа выкарыстоўваць гэта адрас паўторна, калі яго выдаліць."
+      ],
       "The next active address on your list will be set as the default.": [
         "Наступны актыўны адрас у вашым спісе будзе зададзены ў якасці прадвызначанага."
       ],
@@ -5562,6 +5582,11 @@
         "Паспрабуйце лепшы з ${ MAIL_APP_NAME } бясплатна"
       ]
     },
+    "Headline": {
+      "Contact us": [
+        "Звязацца з намі"
+      ]
+    },
     "Hint": {
       "Found ${ items.length } suggestion, use keyboard to navigate.": [
         "Знойдзена ${ items.length } прапанова, выкарыстоўвайце клавіятуру для навігацыі.",
@@ -5926,6 +5951,17 @@
         "Частка змесціва вашага календара не падтрымліваецца і не будзе імпартавана."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Выяўлены дадатковы дублікат ключоў. Запампуйце іх паасобку для атрымання больш падрабязнай інфармацыі."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Ключ ${ fingerprint } ужо быў запампаваны"
+      ],
+      "Selected color:": [
+        "Выбраны колер:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } неабходны ваш дазвол на ${ enableDesktopNotifications }."
@@ -5938,6 +5974,9 @@
       ],
       "${ BRAND_NAME } is privacy you can trust, ensured by strong encryption, open-source code, and Swiss privacy laws. We believe nobody should be able to exploit your data, period. Our technology and business are based upon this fundamentally stronger definition of privacy.": [
         "${ BRAND_NAME } - гэта прыватнасць, якой вы можаце давяраць. Дзякуючы надзейнаму шыфраванню, адкрытаму зыходнаму коду і швейцарскім законам аб прыватнасці. Мы цвёрда перакананыя, што ніхто не павінен выкарыстоўваць вашы даныя. Наша тэхналогія і бізнес заснаваны на гэтым прынцыпова жорсткім вызначэнні прыватнасці."
+      ],
+      "${ BRAND_NAME } never shares your information with third parties. Data comes from  ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
+        "${ BRAND_NAME } ніколі не абагульвае вашы звесткі са староннімі асобамі. Даныя атрыманы на падставе ўласнага аналізу ${ BRAND_NAME } і Constella Intelligence."
       ],
       "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "${ BRAND_NAME } прыпыніў імпартаванне, бо страціў падключэнне з вашым іншым пастаўшчыком паслуг электроннай пошты. Аднавіце падключэнне."
@@ -6284,6 +6323,9 @@
       "Amount due": [
         "Да аплаты"
       ],
+      "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
+        "Псеўданімы электроннай пошты працуюць аналагічна адрасам электроннай пошты, але змяншаюць колькасць спама і захоўваюць ваш фактычны адрас электроннай пошты і асабістыя даныя схаванымі."
+      ],
       "An error occurred while communicating with the extension": [
         "Падчас сувязі з пашырэннем адбылася памылка"
       ],
@@ -6418,9 +6460,6 @@
       ],
       "Blocks senders from seeing if and when you opened a message.": [
         "Не дазваляе адпраўнікам бачыць ці адкрывалі вы паведамленне."
-      ],
-      "Breach Alert is powered by ${ BRAND_NAME }'s propietary datasets, open-source datasets, and Constella Intelligence. ${ dataBreachLink }": [
-        "Папярэджанне ўцечкі працуе на платформе прапрыетарных набораў даных ${ BRAND_NAME }, набораў даных са свабоднай ліцэнзіяй і Constella Intelligence. ${ dataBreachLink }"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Пры пераходзе на бясплатны тарыфны план вы незваротна страціце гэтыя перавагі, нават калі ў будучыні вы зноў пяройдзеце на яго."
@@ -6770,6 +6809,9 @@
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "Атрымаць доступ стварыўшы ўліковы запіс ${ BRAND_NAME } і прыняць запрашэнне."
       ],
+      "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
+        "Атрымаць апавяшчэнне, калі адбылася ўцечка вашага пароля або іншых асабістых даных. ${ learnMoreLinkNoBreach }"
+      ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "Дайце токену апісальную назву. Гэта можа быць назва паслугі, з якой вы плануеце яго выкарыстоўваць, і выберыце адзін з вашых актыўных адрасоў карыстальніцкіх даменаў. Толькі гэты адрас зможа адпраўляць лісты з гэтым токенам."
       ],
@@ -6841,6 +6883,12 @@
       ],
       "If you wish to combine this account with another one, do NOT delete it.": [
         "Калі вы хочаце аб'яднаць гэты ўліковы запіс з іншым, то НЕ выдаляйце яго."
+      ],
+      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
+        "Мы заўсёды гатовыя дапамагчы ў выпадку ўзнікнення праблем. ${ boldPhoneCall } або ${ boldZoomMeeting } з адным з нашых спецыялістаў або адкрыць ${ boldLiveChat }, каб атрымаць падтрымку ў чаце."
+      ],
+      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists.": [
+        "Мы заўсёды гатовыя дапамагчы ў выпадку ўзнікнення праблем. ${ boldPhoneCall } або сустрэча ${ boldZoomMeeting } з адным з нашых спецыялістаў/"
       ],
       "Image description": [
         "Апісанне відарыса"
@@ -6944,6 +6992,9 @@
       "Just send them your personal referral link.": [
         "Проста адпраўце ім вашу рэферальную спасылку."
       ],
+      "Keep your info more secure and private with these guides and tips.": [
+        "Захоўвайце свае звесткі больш бяспечна і прыватна з дапамогай гэтых дапаможнікаў і парад."
+      ],
       "Key deletion is irreversible!": [
         "Выдаленне ключа з'яўляецца незваротным!"
       ],
@@ -6961,6 +7012,9 @@
       ],
       "Lean more about gateways": [
         "Даведацца больш пра шлюзы"
+      ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Даведайцеся, як ${ staySaferOnlineLink }"
       ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Даведайцеся, як увайсці ў ${ VPN_APP_NAME } з дапамогай старонніх праграм VPN."
@@ -6992,6 +7046,9 @@
       "Link type": [
         "Тып спасылкі"
       ],
+      "Live chat": [
+        "Інтэрактыўны чат"
+      ],
       "Loaded content is being protected by our proxy when tracker protection is activated.": [
         "Загружанае змесціва абаронена нашым проксі-серверам, калі актывавана абарона ад праграм сачэння."
       ],
@@ -7000,6 +7057,9 @@
       ],
       "Loading ${ appName }": [
         "Загрузка ${ appName }"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Пачакайце, адбываецца загрузка календара. Вы будзеце перанакіраваны на нашу платформу планавання Calendly, якая адкрыецца ў новай укладцы."
       ],
       "Loading preview": [
         "Загрузка папярэдняга прагляду"
@@ -7063,6 +7123,9 @@
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Назавіце новую папку і выберыце бацькоўскую папку, у якую вы хочаце яе ўкласці. Калі вы не выбераце бацькоўскую папку, то гэта новая папка будзе створана як папка верхняга ўзроўню."
+      ],
+      "NetShield is an ad-blocking feature from ${ VPN_APP_NAME } that protects your device from ads, trackers, and malware.": [
+        "NetShield - гэта функцыя блакіроўкі рэкламы ад ${ VPN_APP_NAME }, якая абараняе вашу прыладу ад рэкламы, праграм сачэння і шкодных праграм."
       ],
       "New": [
         "Новае"
@@ -7367,6 +7430,9 @@
       "Report link expired": [
         "Тэрмін дзеяння спасылкі на справаздачу пратэрмінаваны"
       ],
+      "Request a phone call": [
+        "Запытаць тэлефонны званок"
+      ],
       "Resend verification email": [
         "Паўторна адправіць ліст з пацвярджэннем"
       ],
@@ -7553,8 +7619,14 @@
       "The calendar will be removed from your account.": [
         "Каляндар будзе выдалены з вашага ўліковага запісу."
       ],
+      "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
+        "Цёмная сетка - гэта схаваная частка інтэрнэту, дзе знаходзяцца скрадзеныя асабістыя звесткі, якія можна купіць або прадаць."
+      ],
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "Тэрмін дзеяння спасылкі для праверкі электроннай пошты завяршыўся. Увайдзіце, каб адправіць яе яшчэ раз."
+      ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "Адбылася ўцечка скампраметаваных звестак са старонняга сэрвісу. Гэта не закранула звесткі вашага ўліковага запісу ${ BRAND_NAME }, бо яны зашыфраваны і знаходзяцца ў бяспецы. ${ learnMoreLink }"
       ],
       "The following address is available:": [
         "Даступны наступны адрас:"
@@ -7841,14 +7913,8 @@
       "URL link": [
         "URL-спасылка"
       ],
-      "Use ${ BRAND_NAME } Pass to generate strong passwords and avoid password re-use": [
-        "Выкарыстоўвайце ${ BRAND_NAME } Pass для генерацыі надзейных пароляў і пазбягайце іх паўторнага выкарыстання"
-      ],
-      "Use ${ VPN_APP_NAME } with Netshield enabled to protect you from phishing and malware": [
-        "Выкарыстоўвайце ${ VPN_APP_NAME } з уключаным Netshield, які абараняе ад фішынга і шкодных праграм"
-      ],
-      "Use aliases to sign up for online services. This protects your real email address and identity, limiting the blast radius of a breach.": [
-        "Выкарыстоўвайце псеўданімы для рэгістрацыі на сэрвісы ў інтэрнэце. Гэта абароніць ваш рэальны адрас электроннай пошты і асабістыя даныя, а таксама скараціць імавернасць уцечкі."
+      "Use a password manager to generate and securely store your passwords, ensuring strong passwords and easier sign-ins.": [
+        "Выкарыстоўвайце менеджар пароляў для генерацыі і бяспечнага захоўвання сваіх пароляў, што дае гарантыю іх надзейнасці і лёгкага ўваходу."
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Выкарыстоўвайце лепшы сервер у адпаведнасці з бягучай нагрузкай і размяшчэннем: ${ formattedBestServerName }"
@@ -7904,14 +7970,14 @@
       "Want servers in other countries?": [
         "Хочаце прапанаваць сервер у іншай краіне?"
       ],
+      "Want to learn more?": [
+        "Хочаце даведацца больш?"
+      ],
       "Warning:": [
         "Папярэджанне:"
       ],
       "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
         "Папярэджанне: выдаленне з'яўляецца незваротным. Гэта таксама скасуе доступ да ўсіх падключаных сэрвісаў і выдаліць усе вашы кантакты."
-      ],
-      "Ways you can minimize your breach risks": [
-        "Спосабы для мінімізацыі рызыкі ўцечкі"
       ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Мы рэкамендуем вам па магчымасці выкарыстоўваць афіцыйныя праграмы ${ VPN_APP_NAME }."
@@ -7925,8 +7991,8 @@
       "We just sent you a new link.": [
         "Мы адправілі вам новую спасылку."
       ],
-      "We monitor your email addresses, passwords, and personal data for appearances on the dark web and notify you in case your data is compromised.": [
-        "Мы назіраем за вашымі адрасамі электроннай пошты, паролямі і персанальнымі данымі на прадмет таго, каб яны не з'явіліся ў цёмнай павуціне і апавяшчаем вас у выпадку кампраметацыі вашых даных."
+      "We monitor the dark web for instances where your personal information (such as an email address or password used on a third-party site) is leaked or compromised. ${ dataBreachLink }": [
+        "Мы назіраем за цёмнай сеткай на прадмет уцечкі або кампраметацыі вашых асабістых звестак (напрыклад, адраса электроннай пошты або пароля, якія выкарыстоўваюцца на староннім сайце). ${ dataBreachLink }"
       ],
       "We need to authenticate your payment method with your bank.": [
         "Нам неабходна аўтэнтыфікаваць спосаб плацяжу з дапамогай вашага банка."
@@ -8005,6 +8071,9 @@
       ],
       "Why?": [
         "Чаму?"
+      ],
+      "Will soon be available.": [
+        "Неўзабаве будзе даступна."
       ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "З тарыфнымі планамі Business або Enterprise, вы можаце купіць ${ boldDedicatedServers } для вашай арганізацыі і наладзіць ${ boldGateways } правы доступу карыстальнікаў да яго."
@@ -8243,6 +8312,9 @@
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "З намі ваша інфармацыя ў бяспецы. Мы будзем звязвацца з вамі, толькі па меры неабходнасці, каб забяспечыць нашымі сэрвісамі."
       ],
+      "Your information was found on ${ displayedDate }": [
+        "Вашы звесткі былі знойдзены ${ displayedDate }"
+      ],
       "Your login information will not be saved after the import is completed.": [
         "Пасля завяршэння імпартавання вашы даныя ўваходу не будуць захаваны."
       ],
@@ -8275,17 +8347,9 @@
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Ваш запыт у службу падтрымкі быў закрыты. Дзякуй, што звярнуліся ў падтрымку ${ BRAND_NAME }."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Выяўлены дадатковы дублікат ключоў. Запампуйце іх паасобку для атрымання больш падрабязнай інфармацыі."
       ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Ключ ${ fingerprint } ужо быў запампаваны"
-      ],
-      "Selected color:": [
-        "Выбраны колер:"
+      "Zoom meeting": [
+        "сустрэчу па Zoom"
       ]
     },
     "Info - folder colouring feature": {
@@ -9836,6 +9900,9 @@
       "here": [
         "тут"
       ],
+      "How does monitoring work?": [
+        "Як працуе назіранне?"
+      ],
       "How to pay with Bitcoin?": [
         "Як заплаціць з дапамогай Bitcoin?"
       ],
@@ -9880,6 +9947,9 @@
       ],
       "Sign in": [
         "Увайсці"
+      ],
+      "stay safer online": [
+        "застацца абароненым у інтэрнэце"
       ],
       "switch account": [
         "змяніць уліковы запіс"
@@ -9979,6 +10049,9 @@
       ],
       "Enable authentication logs": [
         "Уключыць журнал аўтэнтыфікацыі"
+      ],
+      "Enable Breach Alert": [
+        "Уключыць функцыю \"Папярэджанне ўцечкі\""
       ]
     },
     "Mail import summary": {
@@ -10921,6 +10994,17 @@
         "Кіраванне камандамі"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Калі гэта не зрабіць, доступ да вашага ўліковага запісу будзе абмежаваны, а потым цалкам адключаны."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Для працягу выкарыстання ${ trialPlanName } з прэміяльнымі функцыямі, выберыце вашу падпіску і спосаб аплаты."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Ваш пробны перыяд завершыцца ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, якая заканчваецца на ${ last4 }"
@@ -11020,17 +11104,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Вы карыстаецеся бягучым тарыфным планам па акцыённым кошце. Калі вы панізіце свой уліковы запіс, то згубіце гэту перавагу і больш не зможаце скарыстацца ёй, калі вырашыце падпісацца яшчэ раз."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Калі гэта не зрабіць, доступ да вашага ўліковага запісу будзе абмежаваны, а потым цалкам адключаны."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Для працягу выкарыстання ${ trialPlanName } з прэміяльнымі функцыямі, выберыце вашу падпіску і спосаб аплаты."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Ваш пробны перыяд завершыцца ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -12677,6 +12750,11 @@
         "Карыстальнік"
       ]
     },
+    "Security Center - Info": {
+      "Your information was found in at least one data breach. Turn on Breach Alert to view details and take action. ${ learnMoreLinkBreach }": [
+        "Вашы звесткі былі знойдзены прынамсі ў адной уцечцы даных. Уключыце функцыю \"Папярэджанне ўцечкі\", каб паглядзець падрабязнасці і прыняць адпаведныя дзеянні. ${ learnMoreLinkBreach }"
+      ]
+    },
     "Select file": {
       "Upload CSV file": [
         "Запампаваць файл CSV"
@@ -14303,17 +14381,11 @@
       "Billing cycle": [
         "Перыяд аплаты"
       ],
-      "Breach Alerts": [
+      "Block trackers and malware": [
+        "Блакіроўка праграм сачэння і шкодных праграм"
+      ],
+      "Breach Alert": [
         "Папярэджанні ўцечкі"
-      ],
-      "Breach Date": [
-        "Дата ўцечкі"
-      ],
-      "Breach Information": [
-        "Звесткі аб уцечках"
-      ],
-      "Breach Size": [
-        "Памер уцечкі"
       ],
       "Bridge for ${ platform }": [
         "Bridge для ${ platform }"
@@ -14519,6 +14591,9 @@
       "Delete version history?": [
         "Выдаліць гісторыю версій?"
       ],
+      "Details": [
+        "Падрабязнасці"
+      ],
       "Disable ${ email }": [
         "Адключыць ${ email }"
       ],
@@ -14632,9 +14707,6 @@
       ],
       "Export public key": [
         "Экспартаваць публічны ключ"
-      ],
-      "Exposed info": [
-        "Звесткі кампраметацыі"
       ],
       "External PGP settings": [
         "Налады знешняга PGP"
@@ -14780,9 +14852,6 @@
       "Link confirmation": [
         "Пацвярджэнне спасылкі"
       ],
-      "Location": [
-        "Размяшчэнне"
-      ],
       "Login password": [
         "Пароль уваходу"
       ],
@@ -14819,6 +14888,9 @@
       "No recovery method": [
         "Адсутнічае спосаб аднаўлення"
       ],
+      "Open": [
+        "Адкрыць"
+      ],
       "Open actions dropdown": [
         "Адкрыць спіс даступных дзеянняў"
       ],
@@ -14848,6 +14920,9 @@
       ],
       "Password reset settings": [
         "Налады скідання пароля"
+      ],
+      "Passwords made easy": [
+        "Вашы паролі сталі прасцей"
       ],
       "Pay invoice": [
         "Аплаціць рахунак"
@@ -14926,6 +15001,9 @@
       ],
       "Reset password?": [
         "Скінуць пароль?"
+      ],
+      "Resolved": [
+        "Вырашана"
       ],
       "Restore administrator privileges": [
         "Аднавіць правы адміністратара"
@@ -15143,6 +15221,12 @@
       "We'll send an email to your new address with instructions on completing the change.": [
         "Мы адправілі ліст з інструкцыямі пра завяршэнне змены на ваш новы адрас."
       ],
+      "What is an alias?": [
+        "Што такое псеўданім?"
+      ],
+      "What is the dark web?": [
+        "Што такое цёмная сетка?"
+      ],
       "What would you like to import?": [
         "Што вы хочаце імпартаваць?"
       ],
@@ -15158,7 +15242,7 @@
       "Your changes are not synced yet": [
         "Пакуль вашы змены не сінхранізаваны"
       ],
-      "Your Exposed Information": [
+      "Your exposed information": [
         "Вашы скампраметаваныя звесткі"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [

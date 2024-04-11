@@ -855,7 +855,7 @@
         "${ PASS_APP_NAME }가 로그인 정보, 노트 및 신용카드에 한해 불러옵니다."
       ],
       "${ PASS_APP_NAME } will prompt you as soon as generated passwords are autofilled.": [
-        "${ PASS_APP_NAME }가 생성된 비밀번호를 자동입력하는대로 알려드릴 것입니다."
+        "${ PASS_APP_NAME }가 생성된 비밀번호를 자동입력하는대로 알려줍니다."
       ],
       "${ PASS_APP_NAME } will prompt you to save or update credentials.": [
         "${ PASS_APP_NAME }가 자격 증명 저장 및 업데이트를 표시합니다."
@@ -970,9 +970,6 @@
       ],
       "Creating alias...": [
         "별명 생성 중..."
-      ],
-      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, vault structure...). For a complete export, we recommend using a different format.": [
-        "CSV는 데이터를 볼 수 있는 편리한 형식을 제공합니다. 그러나 단순성으로 인해 일부 데이터는 포함되지 않게 됩니다(사용자 지정 필드, 금고 구조 등...). 완전한 내보내기를 위해, 다른 형식을 사용하는 것이 좋습니다."
       ],
       "Current version": [
         "현재 버전"
