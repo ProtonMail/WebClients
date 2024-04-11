@@ -49,3 +49,20 @@ export const removeSAMLConfig = (uid: string) => ({
     url: `core/v4/saml/configs/${uid}/delete`,
     method: 'PUT',
 });
+
+export const getSCIMInfo = () => ({
+    url: 'core/v4/organizations/scim',
+    method: 'GET',
+});
+
+export const setupSCIM = (data: { Password: string }) => ({
+    url: 'core/v4/organizations/scim',
+    method: 'POST',
+    data,
+});
+
+export const updateSCIM = (data: { State: 1; Password: string } | { State: 0 }) => ({
+    url: 'core/v4/organizations/scim',
+    method: 'PUT',
+    data,
+});
