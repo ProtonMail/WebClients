@@ -42,6 +42,10 @@ app.enableSandbox();
 // Config initialization
 saveAppID();
 
+if (!app.isPackaged) {
+    app.commandLine.appendSwitch("ignore-certificate-errors");
+}
+
 // Log initialization
 Logger.initialize({ preload: true });
 Logger.info("App start is mac:", isMac, "is windows:", isWindows, "isLinux:", isLinux);
