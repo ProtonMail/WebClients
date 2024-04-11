@@ -1,10 +1,9 @@
-import { app, Menu, type MenuItemConstructorOptions } from "electron";
+import { app, Menu, shell, type MenuItemConstructorOptions } from "electron";
 import { c } from "ttag";
 import { uninstallProton } from "../../macos/uninstall";
 import { clearStorage, isMac } from "../helpers";
 import { getMainWindow, getSpellCheckStatus, toggleSpellCheck } from "../view/viewManagement";
 import { areDevToolsAvailable } from "../view/windowHelpers";
-import { openLogFolder } from "./openLogFolder";
 
 type MenuKey = "app" | "file" | "edit" | "view" | "window";
 interface MenuProps extends MenuItemConstructorOptions {
@@ -47,7 +46,7 @@ export const setApplicationMenu = () => {
                 {
                     label: c("App menu").t`Show logs`,
                     type: "normal",
-                    click: () => openLogFolder(),
+                    click: () => shell.openPath(app.getPath("logs")),
                 },
                 {
                     role: "quit",
