@@ -76,17 +76,19 @@ const StepSuccess = () => {
             <ModalTwoContent>
                 <div className="text-center mb-8" data-testid="StepSuccess:Modal">
                     <img src={importStartedSvg} alt="" className="max-w-4/5" />
-                    <h3>{c('Info').t`Import in progress`}</h3>
-                    <div className="mb-4">{c('Info').t`Importing your data from ${fromEmail} to ${toEmail}.`}</div>
-                    <div>{c('Info').t`We'll notify you when the import is done.`}</div>
-                    <div className="mb-4">{c('Info').t`Large imports can take several days.`}</div>
+                    <h3 className="mb-4">{c('Info').t`Import in progress`}</h3>
+                    <section className="flex flex-column gap-2 items-center">
+                        <p className="m-0">{c('Info').t`Importing your data from ${fromEmail} to ${toEmail}.`}</p>
+                        <p className="py-2 px-4 my-4 rounded bg-info" style={{ width: 'fit-content' }}>
+                            <p className="m-0 mb-2">{c('Info').t`We'll email you once import is complete.`}</p>
+                            <p className="m-0">{c('Info').t`You can close the tab or browser in the meantime.`}</p>
+                        </p>
 
-                    {!isCurrentLocationImportPage && (
-                        <div className="mb-4" data-testid="StepSuccess:SettingsLink">{c('Info')
-                            .jt`You can check the progress ${importProgressLink}.`}</div>
-                    )}
-
-                    <div>{c('Info').t`Close this screen to exit.`}</div>
+                        {!isCurrentLocationImportPage && (
+                            <p className="m-0" data-testid="StepSuccess:SettingsLink">{c('Info')
+                                .jt`You can check the progress ${importProgressLink}.`}</p>
+                        )}
+                    </section>
                 </div>
             </ModalTwoContent>
             <StepSuccessFooterAction
