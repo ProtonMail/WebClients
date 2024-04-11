@@ -130,4 +130,10 @@ describe('punycodeUrl', () => {
         const encodedHUrl = punycodeUrl(hUrl);
         expect(encodedHUrl).toEqual('https://www.dude.com/r/#dude');
     });
+
+    it('should keep the trailing slash if string has no punycode', () => {
+        const url = 'https://dude.com/?test=something/';
+        const encodedUrl = punycodeUrl(url);
+        expect(encodedUrl).toEqual(url);
+    });
 });
