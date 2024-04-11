@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { PAYMENT_METHOD_TYPES, PaymentMethodType } from '@proton/components/payments/core';
 import { PaypalProcessorHook } from '@proton/components/payments/react-extensions/usePaypal';
-import { isTrialChargebeeUser } from '@proton/shared/lib/helpers/subscription';
+import { isTrial } from '@proton/shared/lib/helpers/subscription';
 import { Currency, SubscriptionCheckResponse, SubscriptionModel } from '@proton/shared/lib/interfaces';
 
 import { Price, PrimaryButton, useModalState } from '../../../components';
@@ -43,7 +43,7 @@ const SubscriptionSubmitButton = ({
     const [creditCardModalProps, setCreditCardModalOpen, renderCreditCardModal] = useModalState();
 
     if (noPaymentNeeded) {
-        if (isTrialChargebeeUser(subscription)) {
+        if (isTrial(subscription)) {
             return (
                 <>
                     <PrimaryButton
