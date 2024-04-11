@@ -1,50 +1,48 @@
 @use 'sass:math';
 
 @if $custom-scroll {
-	$scrollbar-size: rem(6) !default;
-	$scrollbar-margin: rem(2) !default;
-
 	html:not(.feature-scrollbars-off) {
 		* {
-			$real-size: $scrollbar-size + ($scrollbar-margin * 2);
-
-			// W3C, Firefox
-			scrollbar-width: thin;
-			scrollbar-color: var(--scrollbar-thumb-color) transparent;
-
-			// webkit specific
-			&::-webkit-scrollbar {
-				inline-size: $real-size;
-				block-size: $real-size;
+			@supports (scrollbar-width: auto) {
+				scrollbar-width: thin;
+				scrollbar-color: var(--scrollbar-thumb-color) transparent;
 			}
 
-			&::-webkit-scrollbar-thumb {
-				border: $scrollbar-margin solid transparent; // Margin
-				background-clip: padding-box; // Booyah!
-				border-radius: math.div($real-size, 2);
-				background-color: var(--scrollbar-thumb-color);
-			}
+			@supports selector(::-webkit-scrollbar) {
+				$real-size: rem(6) + (rem(2) * 2);
 
-			&::-webkit-scrollbar-track {
-				background-color: transparent;
-			}
-
-			&::-webkit-scrollbar-thumb:horizontal,
-			&::-webkit-scrollbar-thumb:vertical {
-				&:hover {
-					background-color: var(--scrollbar-thumb-hover-color);
+				&::-webkit-scrollbar {
+					inline-size: $real-size;
+					block-size: $real-size;
 				}
-			}
 
-			&::-webkit-scrollbar-corner {
-				visibility: hidden;
+				&::-webkit-scrollbar-thumb {
+					border: rem(2) solid transparent;
+					background-clip: padding-box;
+					border-radius: math.div($real-size, 2);
+					background-color: var(--scrollbar-thumb-color);
+				}
+
+				&::-webkit-scrollbar-track {
+					background-color: transparent;
+				}
+
+				&::-webkit-scrollbar-corner {
+					visibility: hidden;
+				}
 			}
 		}
 
 		@include media('mouse') {
-			& body *:not(:hover, :focus, :focus-within) {
-				&::-webkit-scrollbar-thumb {
-					visibility: hidden;
+			body *:not(:hover, :focus, :focus-within) {
+				@supports (scrollbar-width: auto) {
+					scrollbar-color: transparent transparent;
+				}
+
+				@supports selector(::-webkit-scrollbar) {
+					&::-webkit-scrollbar-thumb {
+						visibility: hidden;
+					}
 				}
 			}
 		}
