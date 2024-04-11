@@ -617,8 +617,14 @@
       "Manage Snooze": [
         "Behandle slumring"
       ],
+      "Mark as open": [
+        "Merk som åpen"
+      ],
       "Mark as read": [
         "Marker som lest"
+      ],
+      "Mark as resolved": [
+        "Merk som løst"
       ],
       "Mark as unread": [
         "Marker som ulest"
@@ -887,6 +893,9 @@
       "Report phishing": [
         "Rapportér nettfisking"
       ],
+      "Request a call": [
+        "Be om en samtale"
+      ],
       "Request a feature": [
         "Be om en funksjon"
       ],
@@ -1114,10 +1123,6 @@
       ],
       "Trust": [
         "Klarér"
-      ],
-      "Trust key": [
-        "Klarér nøkkel",
-        "Klarér nøkler"
       ],
       "Trust public key": [
         "Klarér offentlig nøkkel"
@@ -3297,9 +3302,6 @@
       ],
       "Your account and data recovery methods are set.": [
         "Dine konto- og datagjenopprettingsmetoder er angitt."
-      ],
-      "Your information was found in at least one data breach.": [
-        "Informasjonen din ble funnet i minst ett datainnbrudd."
       ],
       "Your personal data was leaked by an online service in a data breach. View full details and get recommended actions.": [
         "Dine personlige data ble lekket av en nettjeneste i et databrudd. Se alle detaljer og få anbefalte handlinger."
@@ -5591,8 +5593,8 @@
       "Body: ": [
         "Innhold: "
       ],
-      "Breach alerts": [
-        "Varsler om datainnbrudd"
+      "Breach Alert": [
+        "Varsel om datainnbrudd"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ved å nedgradere til en gratis plan, vil du permanent miste disse fordelene, selv om du oppgraderer igjen i fremtiden."
@@ -5993,6 +5995,9 @@
       "Large imports can take several days.": [
         "Store importer kan ta flere dager."
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Lær hvordan du ${ staySaferOnlineLink }"
+      ],
       "Learn more": [
         "Lær mer"
       ],
@@ -6010,6 +6015,9 @@
       ],
       "Loading ${ appName }": [
         "Laster ${ appName }"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Laster inn kalender, vennligst vent. Du vil bli omdirigert til vår planleggingsplattform Calendly i en ny fane."
       ],
       "Loading message": [
         "Laster melding"
@@ -6445,6 +6453,9 @@
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "Dataene du har lagt inn i utkastet, kan ikke lagres hvis du forlater siden."
       ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "Den eksponerte informasjonen ble lekket fra en tredjepartstjeneste. ${ BRAND_NAME }-kontoinformasjonen din forblir sikker og kryptert. ${ learnMoreLink }."
+      ],
       "The local database is being prepared": [
         "Den lokale databasen er under utarbeidelse"
       ],
@@ -6727,9 +6738,6 @@
       "Version ${ appVersion }": [
         "Versjon ${ appVersion }"
       ],
-      "View details": [
-        "Vis detaljer"
-      ],
       "Visa Secure logo": [
         "Visa Secure logo"
       ],
@@ -6966,11 +6974,20 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Dataene dine er klare til import fra ${ importedEmailAddressStrong } til din ${ BRAND_NAME }-konto."
       ],
+      "Your email address and password were leaked:": [
+        "Din e-postadresse og passord ble lekket:"
+      ],
+      "Your email address was exposed:": [
+        "E-postadressen din ble eksponert:"
+      ],
       "Your email will only be used for this one-time verification.": [
         "E-posten din vil kun bli brukt til denne engangsbekreftelsen."
       ],
       "Your files will be encrypted and then saved": [
         "Filene dine vil bli kryptert og deretter lagret"
+      ],
+      "Your information was found on ${ displayedDate }": [
+        "Informasjonen din ble funnet den ${ displayedDate }."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Påloggingsinformasjonen lagres ikke etter at importen er fullført."
@@ -6987,6 +7004,9 @@
       ],
       "Your next billing date is ${ renewalTime }.": [
         "Din neste faktureringsdato er ${ renewalTime }."
+      ],
+      "Your password was leaked:": [
+        "Passordet ditt ble lekket:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Telefonnummeret ditt vil kun bli brukt til denne engangsbekreftelsen."
@@ -8037,6 +8057,9 @@
       ],
       "Starred": [
         "Stjernemerket"
+      ],
+      "stay safer online": [
+        "holder deg tryggere på nettet"
       ],
       "Terms": [
         "Vilkår"
@@ -9826,14 +9849,17 @@
       ]
     },
     "Security Center - Info": {
-      "Get notified if your password or other personal data was leaked.": [
-        "Bli varslet hvis passordet ditt eller andre personlige data ble lekket."
+      "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
+        "Bli varslet hvis passordet ditt eller andre data ble lekket fra en tredjepartstjeneste. ${ learnMoreLink }."
       ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Vår banebrytende AI-drevne sikkerhetsløsning designet for brukere som ønsker økt beskyttelse for kontoene sine. ${ learnMoreLink }."
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel er **aktiv** og beskytter kontoen din."
+      ],
+      "Your information was found in at least one data breach. Turn on Breach Alert to view details and take action. ${ learnMoreLink }": [
+        "Informasjonen din ble funnet i minst ett datainnbrudd. Slå på bruddvarsel for å vise detaljer og iverksette tiltak. ${ learnMoreLink }."
       ]
     },
     "Select files": {
@@ -11137,20 +11163,8 @@
       "Block sender": [
         "Blokkér avsender"
       ],
-      "Breach alerts": [
-        "Varsler om datainnbrudd"
-      ],
-      "Breach Date": [
-        "Dato for datainnbrudd"
-      ],
-      "Breach detected": [
-        "Sikkerhetsbrudd oppdaget"
-      ],
-      "Breach Information": [
-        "Informasjon om datainnbrudd"
-      ],
-      "Breach Size": [
-        "Størrelse for datainnbrudd"
+      "Breach Alert": [
+        "Varsel om datainnbrudd"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Avbryt ${ MAIL_SHORT_APP_NAME }-abonnement"
@@ -11295,6 +11309,9 @@
       "Deleting contacts": [
         "Sletter kontakter"
       ],
+      "Details": [
+        "Detaljer"
+      ],
       "Don't give spam a chance": [
         "Ikke gi søppelpost en sjanse"
       ],
@@ -11348,9 +11365,6 @@
       ],
       "Exporting contacts": [
         "Eksporterer kontakter"
-      ],
-      "Exposed info": [
-        "Eksponert info"
       ],
       "External encryption": [
         "Ekstern kryptering"
@@ -11427,9 +11441,6 @@
       ],
       "Load remote content": [
         "Last eksternt innhold"
-      ],
-      "Location": [
-        "Plassering"
       ],
       "Mark as read": [
         "Marker som lest"
@@ -11744,9 +11755,6 @@
       "Trust public key?": [
         "Klarére offentlig nøkkel?"
       ],
-      "Type": [
-        "Type"
-      ],
       "Unlock contacts groups": [
         "Lås opp kontaktgrupper"
       ],
@@ -11799,7 +11807,7 @@
       "Your changes are not synced yet": [
         "Endringene dine er ikke synkronisert enda"
       ],
-      "Your Exposed Information": [
+      "Your exposed information": [
         "Din eksponerte informasjon"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [

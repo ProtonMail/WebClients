@@ -617,8 +617,14 @@
       "Manage Snooze": [
         "Gestisci la posticipazione"
       ],
+      "Mark as open": [
+        "Segna come aperto"
+      ],
       "Mark as read": [
         "Segna come letta"
+      ],
+      "Mark as resolved": [
+        "Segna come risolto"
       ],
       "Mark as unread": [
         "Segna come non letta"
@@ -887,6 +893,9 @@
       "Report phishing": [
         "Segnala phishing"
       ],
+      "Request a call": [
+        "Richiedi una chiamata"
+      ],
       "Request a feature": [
         "Richiedi una funzionalità"
       ],
@@ -1114,10 +1123,6 @@
       ],
       "Trust": [
         "Considera attendibile"
-      ],
-      "Trust key": [
-        "Considera attendibile la chiave",
-        "Considera attendibili le chiavi"
       ],
       "Trust public key": [
         "Chiave pubblica attendibile"
@@ -3297,9 +3302,6 @@
       ],
       "Your account and data recovery methods are set.": [
         "I tuoi metodi di recupero dell'account e dei dati sono impostati."
-      ],
-      "Your information was found in at least one data breach.": [
-        "Le tue informazioni sono state trovate in almeno una violazione di dati."
       ],
       "Your personal data was leaked by an online service in a data breach. View full details and get recommended actions.": [
         "I tuoi dati personali sono stati resi pubblici da un servizio online a seguito di una violazione di dati. Visualizza i dettagli completi e le azioni consigliate."
@@ -5591,8 +5593,8 @@
       "Body: ": [
         "Corpo: "
       ],
-      "Breach alerts": [
-        "Avvisi sulle violazioni di dati"
+      "Breach Alert": [
+        "Avviso sulle violazioni di dati"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Declassando ad un piano gratuito, perderai definitivamente questi benefici, anche se in futuro effettuerai un nuovo upgrade."
@@ -5993,6 +5995,9 @@
       "Large imports can take several days.": [
         "Importazioni di grandi dimensioni possono richiedere diversi giorni."
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Scopri come ${ staySaferOnlineLink }"
+      ],
       "Learn more": [
         "Scopri di più"
       ],
@@ -6010,6 +6015,9 @@
       ],
       "Loading ${ appName }": [
         "Caricamento di ${ appName } in corso"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Caricamento del calendario in corso. Verrai reindirizzato alla nostra piattaforma di pianificazione Calendly in una nuova scheda."
       ],
       "Loading message": [
         "Caricamento messaggio"
@@ -6445,6 +6453,9 @@
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "I dati inseriti nella bozza non possono essere salvati se si lascia la pagina."
       ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "Le informazioni sono state rese pubbliche da un servizio di terze parti. Quelle relative al tuo account ${ BRAND_NAME } rimangono sicure e crittografate. ${ learnMoreLink }"
+      ],
       "The local database is being prepared": [
         "Il database locale è in preparazione"
       ],
@@ -6727,9 +6738,6 @@
       "Version ${ appVersion }": [
         "Versione ${ appVersion }"
       ],
-      "View details": [
-        "Visualizza i dettagli"
-      ],
       "Visa Secure logo": [
         "Logo Visa Secure"
       ],
@@ -6966,11 +6974,20 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "I tuoi dati sono pronti per essere importati da ${ importedEmailAddressStrong } al tuo account ${ BRAND_NAME }."
       ],
+      "Your email address and password were leaked:": [
+        "Il tuo indirizzo email e la tua password sono stati resi pubblici:"
+      ],
+      "Your email address was exposed:": [
+        "Il tuo indirizzo email è stato reso pubblico:"
+      ],
       "Your email will only be used for this one-time verification.": [
         "La tua email sarà utilizzata solo per questa verifica una tantum."
       ],
       "Your files will be encrypted and then saved": [
         "I tuoi file verranno crittografati e poi salvati."
+      ],
+      "Your information was found on ${ displayedDate }": [
+        "Le tue informazioni sono state trovate il ${ displayedDate }"
       ],
       "Your login information will not be saved after the import is completed.": [
         "Le informazioni di accesso non verranno salvate dopo il completamento dell'importazione."
@@ -6987,6 +7004,9 @@
       ],
       "Your next billing date is ${ renewalTime }.": [
         "La tua prossima data di fatturazione è il ${ renewalTime }."
+      ],
+      "Your password was leaked:": [
+        "La tua password è stata resa pubblica:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Il tuo numero di telefono sarà utilizzato solo per questa verifica una tantum."
@@ -8040,6 +8060,9 @@
       ],
       "Starred": [
         "Importante"
+      ],
+      "stay safer online": [
+        "stai più sicuro online"
       ],
       "Terms": [
         "Termini"
@@ -9834,14 +9857,17 @@
       ]
     },
     "Security Center - Info": {
-      "Get notified if your password or other personal data was leaked.": [
-        "Ricevi una notifica se la tua password o altri dati personali vengono resi pubblici."
+      "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
+        "Ricevi una notifica se la tua password o altri dati vengono resi pubblici da un servizio di terze parti. ${ learnMoreLink }"
       ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "La nostra soluzione di sicurezza all'avanguardia basata sull'intelligenza artificiale progettata per gli utenti che cercano una maggiore protezione per i propri account. ${ learnMoreLink }"
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel è **attivo** e sta proteggendo il tuo account."
+      ],
+      "Your information was found in at least one data breach. Turn on Breach Alert to view details and take action. ${ learnMoreLink }": [
+        "Le tue informazioni sono state trovate in almeno una violazione di dati. Attiva gli avvisi sulle violazioni di dati per visualizzare i dettagli e le azioni da seguire. ${ learnMoreLink }"
       ]
     },
     "Select files": {
@@ -11145,20 +11171,8 @@
       "Block sender": [
         "Blocca mittente"
       ],
-      "Breach alerts": [
-        "Avvisi sulle violazioni di dati"
-      ],
-      "Breach Date": [
-        "Data della violazione di dati"
-      ],
-      "Breach detected": [
-        "Violazione di dati rilevata"
-      ],
-      "Breach Information": [
-        "Informazioni sulla violazione di dati"
-      ],
-      "Breach Size": [
-        "Dimensione della violazione di dati"
+      "Breach Alert": [
+        "Avviso sulle violazioni di dati"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Annulla l'abbonamento a ${ MAIL_SHORT_APP_NAME }"
@@ -11303,6 +11317,9 @@
       "Deleting contacts": [
         "Eliminazione dei contatti"
       ],
+      "Details": [
+        "Dettagli"
+      ],
       "Don't give spam a chance": [
         "Non dare una possibilità allo spam"
       ],
@@ -11356,9 +11373,6 @@
       ],
       "Exporting contacts": [
         "Esportazione contatti"
-      ],
-      "Exposed info": [
-        "Informazioni esposte"
       ],
       "External encryption": [
         "Crittografia esterna"
@@ -11435,9 +11449,6 @@
       ],
       "Load remote content": [
         "Carica i contenuti remoti"
-      ],
-      "Location": [
-        "Posizione"
       ],
       "Mark as read": [
         "Segna come letta"
@@ -11752,9 +11763,6 @@
       "Trust public key?": [
         "Fidarsi della chiave pubblica?"
       ],
-      "Type": [
-        "Tipo"
-      ],
       "Unlock contacts groups": [
         "Sblocca i gruppi di contatti"
       ],
@@ -11807,8 +11815,8 @@
       "Your changes are not synced yet": [
         "Le tue modifiche non sono ancora sincronizzate"
       ],
-      "Your Exposed Information": [
-        "Le tue informazioni esposte"
+      "Your exposed information": [
+        "Le tue informazioni rese pubbliche"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "La tua prova gratuita di Mail Plus termina il giorno ${ textDate }"
