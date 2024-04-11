@@ -17,6 +17,7 @@ import {
     NOTIFICATION_INPUT_ID,
     PARTICIPANTS_INPUT_ID,
     TITLE_INPUT_ID,
+    VIEWS,
 } from '@proton/shared/lib/calendar/constants';
 import { getIsProtonUID } from '@proton/shared/lib/calendar/helper';
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
@@ -55,6 +56,7 @@ export interface EventFormProps {
     isDrawerApp?: boolean;
     isSmallViewport: boolean;
     onDisplayBusySlots?: () => void;
+    view: VIEWS;
 }
 
 const EventForm = ({
@@ -76,6 +78,7 @@ const EventForm = ({
     isDrawerApp,
     isSmallViewport,
     onDisplayBusySlots,
+    view,
     ...props
 }: EventFormProps & HTMLAttributes<HTMLDivElement>) => {
     const isColorPerEventEnabled = useFlag('ColorPerEventWeb');
@@ -316,7 +319,7 @@ const EventForm = ({
     };
 
     const participantsRow = (
-        <BusySlotsSpotlight>
+        <BusySlotsSpotlight view={view}>
             <IconRow icon="users" title={c('Label').t`Participants`} id={PARTICIPANTS_INPUT_ID}>
                 <ParticipantsInput
                     placeholder={c('Placeholder').t`Add participants`}
@@ -329,6 +332,7 @@ const EventForm = ({
                     collapsible={!isMinimal}
                     setParticipantError={setParticipantError}
                     onDisplayBusySlots={onDisplayBusySlots}
+                    view={view}
                 />
             </IconRow>
         </BusySlotsSpotlight>

@@ -1,6 +1,5 @@
 import { c } from 'ttag';
 
-import useBusyTimeSlotsAvailable from '@proton/components/containers/calendar/hooks/useBusyTimeSlotsAvailable';
 import { OrganizerModel } from '@proton/shared/lib/interfaces/calendar';
 import clsx from '@proton/utils/clsx';
 
@@ -8,11 +7,21 @@ interface Props {
     organizer: OrganizerModel;
 }
 
-const BusySlotsOrganiserRow = ({ organizer }: Props) => {
-    const { email, cn: name } = organizer;
+const getDisplayNames = (name: string, email: string) => {
     const displayFull = name && name !== email;
 
     const nameEmail = displayFull ? `${name} <${email}>` : email;
+
+    return {
+        nameEmail,
+        displayFull,
+    };
+};
+
+const BusySlotsOrganiserRow = ({ organizer }: Props) => {
+    const { email, cn: name } = organizer;
+    const { nameEmail, displayFull } = getDisplayNames(name, email);
+
     const nameEmailDisplay = displayFull ? (
         <>
             <span className="text-semibold text-sm">{name}</span>
@@ -34,8 +43,7 @@ const BusySlotsOrganiserRow = ({ organizer }: Props) => {
 
 const RegularOrganiserRow = ({ organizer }: Props) => {
     const { email, cn: name } = organizer;
-    const displayFull = name && name !== email;
-    const nameEmail = displayFull ? `${name} <${email}>` : email;
+    const { nameEmail, displayFull } = getDisplayNames(name, email);
 
     return (
         <div key={email} className={clsx(['address-item flex mb-1 px-2'])}>
@@ -47,10 +55,8 @@ const RegularOrganiserRow = ({ organizer }: Props) => {
     );
 };
 
-const OrganizerRow = ({ organizer }: Props) => {
-    const isBusyTimeSlotAvailable = useBusyTimeSlotsAvailable();
-
-    return isBusyTimeSlotAvailable ? (
+const OrganizerRow = ({ organizer, isBusyTimeSlotsAvailable }: Props & { isBusyTimeSlotsAvailable: boolean }) => {
+    return isBusyTimeSlotsAvailable ? (
         <BusySlotsOrganiserRow organizer={organizer} />
     ) : (
         <RegularOrganiserRow organizer={organizer} />
