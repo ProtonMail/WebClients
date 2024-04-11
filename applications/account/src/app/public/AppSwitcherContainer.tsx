@@ -39,7 +39,10 @@ const AppSwitcherContainer = ({ onLogin, onSwitch, state }: Props) => {
                     User={User}
                 >
                     <DropdownMenu>
-                        <DropdownMenuButton className="flex items-center gap-2 text-left" onClick={onSwitch}>
+                        <DropdownMenuButton
+                            className="flex flex-nowrap items-center gap-2 text-left"
+                            onClick={onSwitch}
+                        >
                             <Icon name="plus" />
                             {c('Action').t`Switch or add account`}
                         </DropdownMenuButton>
