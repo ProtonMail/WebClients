@@ -48,7 +48,7 @@
         "Množično premikanje predmetov v koš"
       ],
       "Bulk restore items from trash": [
-        "Množična obnovitev elementov iz smetnjaka"
+        "Množična obnovitev predmetov iz smetnjaka"
       ],
       "Bulk select items": [
         "Množično izberite predmete"
@@ -619,10 +619,10 @@
         "Uporabnikovega dostopa ni bilo mogoče urediti."
       ],
       "Failed to load item history": [
-        "Neuspešno nalaganje zgodovine predmetov"
+        "Neuspešno nalaganje zgodovine predmeta"
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
-        "Ni bilo mogoče premakniti vseh elementov iz »${ payload.content.name }«"
+        "Ni bilo mogoče premakniti vseh predmetov iz »${ payload.content.name }«"
       ],
       "Failed to move items": [
         "Predmetov ni bilo mogoče premakniti"
@@ -679,7 +679,7 @@
         "Predmet ne obstaja"
       ],
       "LastPass will export a corrupted CSV file if any of your item fields contain unexpected commas, quotes or multiple lines": [
-        "LastPass bo izvozil poškodovano datoteko CSV, če katero od polj vašega elementa vsebuje nepričakovane vejice, narekovaje ali več vrstic"
+        "LastPass bo izvozil poškodovano datoteko CSV, če katero od polj vašega predmeta vsebuje nepričakovane vejice, narekovaje ali več vrstic"
       ],
       "Missing passkey": [
         "Manjka identifikacijski ključ"
@@ -712,7 +712,7 @@
         "Obnavljanje predmeta ni uspelo"
       ],
       "Restoring trashed items failed": [
-        "Obnovitev elementov v smetnjaku ni uspela"
+        "Obnovitev predmetov iz smetnjaka ni uspela"
       ],
       "Settings update failed": [
         "Napaka pri posodobitvi nastavitev"
@@ -739,13 +739,13 @@
         "Preveč neuspešnih poskusov. Prosimo, prijavite se znova."
       ],
       "Trashing item failed": [
-        "Premeščanje elementa v smetnjak ni uspelo"
+        "Premeščanje predmeta v smetnjak ni uspelo"
       ],
       "Unable to boot": [
         "Ni mogoče zagnati"
       ],
       "Unable to generate an OTP code for this item": [
-        "Za ta element ni mogoče ustvariti kode OTP"
+        "Za ta predmet ni mogoče ustvariti kode OTP"
       ],
       "Unable to sync": [
         "Ni mogoče sinhronizirati"
@@ -885,7 +885,10 @@
         "${ PASS_APP_NAME } bo prikazal priljubljeno ikono predmeta prek proxyja anonimizirane slike ${ BRAND_NAME }."
       ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
-        "${ PASS_APP_NAME } bo uvozil samo prijave, zapiske in kreditne kartice."
+        "${ PASS_APP_NAME } bo uvozil samo prijave, zapiske in plačilne kartice."
+      ],
+      "${ PASS_APP_NAME } will prompt you as soon as generated passwords are autofilled.": [
+        "${ PASS_APP_NAME } vas bo pozval, ko bodo ustvarjena gesla samodejno izpolnjena."
       ],
       "${ PASS_APP_NAME } will prompt you to save or update credentials.": [
         "${ PASS_APP_NAME } vas bo pozval, da shranite ali posodobite poverilnice."
@@ -972,7 +975,7 @@
         "Člani ekipe lahko privzeto izvozijo le trezorje, katerih lastniki so. Če je ta možnost vklopljena, ne bodo mogli izvoziti nobenih podatkov."
       ],
       "Can create, edit, delete, and export items in this vault.": [
-        "Lahko ustvarja, ureja, briše in izvaža elemente v tem trezorju."
+        "Lahko ustvarja, ureja, briše in izvaža predmete v tem trezorju."
       ],
       "Can grant and revoke access to this vault, and delete it.": [
         "Lahko odobri in prekliče dostop do tega trezorja ter ga izbriše."
@@ -1003,9 +1006,6 @@
       ],
       "Creating alias...": [
         "Ustvarjanje vzdevka..."
-      ],
-      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, vault structure...). For a complete export, we recommend using a different format.": [
-        "CSV ponuja priročno obliko za ogled vaših podatkov. Vendar zaradi enostavnosti nekateri podatki ne bodo vključeni (polja po meri, struktura trezorja ...). Za celoten izvoz priporočamo uporabo drugega formata."
       ],
       "Current version": [
         "Trenutna različica"
@@ -1280,6 +1280,9 @@
       "Save passkey": [
         "Shrani identifikacijski ključ"
       ],
+      "Select an existing login item to update.": [
+        "Izberite podatke za prijavo, katere želite posodobiti."
+      ],
       "Select an existing login or create a new one.": [
         "Izberite obstoječo prijavo ali ustvarite novo."
       ],
@@ -1296,7 +1299,7 @@
         "Izbrani predmeti so bili uspešno premaknjeni v semtnjak"
       ],
       "Selected items successfully restored from trash": [
-        "Izbrani elementi so bili uspešno obnovljeni iz smetnjaka"
+        "Izbrani predmeti so bili uspešno obnovljeni iz smetnjaka"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Strežniki so nedosegljivi. Poskusite znova čez nekaj minut"
@@ -1461,7 +1464,7 @@
         "Imate še ${ daysRemaining } dni, da preizkusite te in druge premium funkcije."
       ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
-        "Presegli ste število trezorjev, vključenih v vašo naročnino. Predmete je mogoče premakniti samo v vaša prva dva trezorja. Za premikanje elementov med vsemi trezorji nadgradite svojo naročnino."
+        "Presegli ste število trezorjev, vključenih v vašo naročnino. Predmete je mogoče premakniti samo v vaša prva dva trezorja. Za premikanje predmetov med vsemi trezorji nadgradite svojo naročnino."
       ],
       "You have exceeded the number of vaults included in your subscription. New items can only be created in your first two vaults. To create new items in all vaults upgrade your subscription.": [
         "Presegli ste število trezorjev, vključenih v vašo naročnino. Predmete je mogoče premakniti samo v vaša prva dva trezorja. Da ustvarite nov predmet v trezorjih nadgradite svojo naročnino."
@@ -1470,7 +1473,7 @@
         "Dosegli ste omejitev vzdevkov, ki jih lahko ustvarite. Ko nadgradite svojo naročnino, ustvarite neomejeno število vzdevkov."
       ],
       "You have reached the limit of credit cards you can create. Create an unlimited number of credit cards when you upgrade your subscription.": [
-        "Dosegli ste omejitev kreditnih kartic, ki jih lahko ustvarite. Ko nadgradite svojo naročnino, ustvarite neomejeno število kreditnih kartic."
+        "Dosegli ste omejitev plačilnih kartic, ki jih lahko ustvarite. Ko nadgradite svojo naročnino, ustvarite neomejeno število plačilnih kartic."
       ],
       "You have reached the limit of vaults you can create.": [
         "Dosegli ste omejitev trezorjev, ki jih lahko ustvarite."
@@ -1607,7 +1610,7 @@
         "Potrdite ime trezorja"
       ],
       "Create a credit card": [
-        "Ustvarite kreditno kartico"
+        "Ustvarite plačilno kartico"
       ],
       "Create a hide-my-email alias": [
         "Ustvari vzdevek Hide-my-email"
@@ -1828,6 +1831,9 @@
       "Prompt for auto-save": [
         "Poziv za samodejno shranjevanje"
       ],
+      "Prompt for auto-save when generating passwords": [
+        "Poziv za samodejno shranjevanje ustvarjenih gesel"
+      ],
       "Rate us": [
         "Ocenite nas"
       ],
@@ -1913,7 +1919,7 @@
         "Vrsta"
       ],
       "Unnamed Credit Card": [
-        "Neimenovana kreditna kartica"
+        "Neimenovana plačilna kartica"
       ],
       "Unnamed item": [
         "Neimenovan predmet"
@@ -2066,7 +2072,7 @@
         "Izberite trezor"
       ],
       "Please describe the problem and include any error messages": [
-        "Opišite težavo in vključite morebitna sporočila o napakah"
+        "Opišite težavo in vključite morebitna sporočila o napakah."
       ],
       "Retype \"${ vaultName }\" to confirm deletion": [
         "Znova vnesite \"${ vaultName }\", da potrdite izbris"
@@ -2226,7 +2232,7 @@
         "Čakanje na dostop do podatkov v skupni rabi"
       ],
       "Permanently remove all items ?": [
-        "Ali želite trajno odstraniti vse elemente ?"
+        "Ali želite trajno odstraniti vse predmete?"
       ],
       "Pin the extension": [
         "Pripnite razširitev"
@@ -2371,7 +2377,7 @@
         "Vabljenje e-poštnih naslovov izven organizacije ni dovoljeno."
       ],
       "item was imported without custom fields": [
-        "element je bil uvožen brez polj po meri"
+        "predmet je bil uvožen brez polj po meri"
       ],
       "Maximum length is ${ maxLength } character": [
         "Največ dovoljenih znakov ${ maxLength }",
@@ -2446,7 +2452,7 @@
         "Ni se mogoče prijaviti v ${ PASS_APP_NAME }. ${ additionalMessage }"
       ],
       "Vault \"${ vaultName }\" and all its items will be permanently deleted. You cannot undo this action.": [
-        "Trezor \"${ vaultName }\" in vsi njegovi elementi bodo trajno izbrisani. Tega dejanja ne morete razveljaviti."
+        "Trezor \"${ vaultName }\" in vsi njegovi predmeti bodo trajno izbrisani. Tega dejanja ne morete razveljaviti."
       ],
       "Vault name is required": [
         "Zahtevano je ime trezorja"
@@ -2491,7 +2497,7 @@
         "Vaša povezava je zaklenjena."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
-        "Vaša naročnina vam ne dovoljuje ustvarjanja več trezorjev. Vsi elementi bodo uvoženi v vaš prvi trezor. Za uvoz v več trezorjev nadgradite svojo naročnino."
+        "Vaša naročnina vam ne dovoljuje ustvarjanja več trezorjev. Vsi predmeti bodo uvoženi v vaš prvi trezor. Za uvoz v več trezorjev nadgradite svojo naročnino."
       ]
     }
   }

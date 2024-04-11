@@ -566,7 +566,7 @@
         "Paylaşım üyeleri çözümlenemedi"
       ],
       "Could not validate addresses at the moment.": [
-        "Şu anda adresler doğrulanamıyor."
+        "Adresler şu anda doğrulanamıyor."
       ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "CSV dosyasında beklenen başlık bilgileri bulunamadı: ${ missingHeaders }"
@@ -865,11 +865,14 @@
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } yalnızca oturum açma, not ve kredi kartı kayıtlarını içe aktarır."
       ],
+      "${ PASS_APP_NAME } will prompt you as soon as generated passwords are autofilled.": [
+        "${ PASS_APP_NAME }, oluşturulan parolalar otomatik olarak doldurulduğunda size bilgi verir."
+      ],
       "${ PASS_APP_NAME } will prompt you to save or update credentials.": [
         "${ PASS_APP_NAME } kimlik doğrulama bilgilerinizi kaydetmeyi ya da güncellemeyi soracak."
       ],
       "${ PASS_APP_NAME } will suggest authenticating using saved passkeys": [
-        "${ PASS_APP_NAME } kayıtlı geçiş anahtarlarını kullanarak kimlik doğrulama önerecektir"
+        "${ PASS_APP_NAME } kaydedilmiş geçiş anahtarlarını kullanarak kimlik doğrulamayı önerecek"
       ],
       "${ PASS_APP_NAME } will suggest creating an email alias on sign-up forms.": [
         "${ PASS_APP_NAME } oturum açma formlarında bir e-posta takma adı oluşturmayı önerecek."
@@ -878,7 +881,7 @@
         "${ PASS_APP_NAME } oturum açma formlarında güçlü parola oluşturmayı önerecek."
       ],
       "${ PASS_APP_NAME } will suggest saving passkeys.": [
-        "${ PASS_APP_NAME } geçiş anahtarlarını kaydetmeyi önerecektir."
+        "${ PASS_APP_NAME } geçiş anahtarlarını kaydetmeyi önerecek."
       ],
       "${ trialDaysLeft } day left": [
         "${ trialDaysLeft } gün kaldı",
@@ -945,7 +948,7 @@
         "Hazır iki adımlı kimlik doğrulayıcı"
       ],
       "By default team members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
-        "Varsayılan olarak ekip üyeleri yalnızca sahibi oldukları kasaları dışa aktarabilir. Bu seçenek açıksa, herhangi bir veriyi dışa aktaramazlar"
+        "Varsayılan olarak ekip üyeleri yalnızca sahibi oldukları kasaları dışa aktarabilir. Bu seçenek açıksa, hiçbir veriyi dışa aktaramazlar"
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "Bu kasadaki ögeleri oluşturabilir, düzenleyebilir, silebilir ve dışa aktarabilir."
@@ -979,9 +982,6 @@
       ],
       "Creating alias...": [
         "Takma ad oluşturuluyor..."
-      ],
-      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, vault structure...). For a complete export, we recommend using a different format.": [
-        "CSV, verilerinizi görüntülemek için pratik bir biçim sunar. Ancak basit yapısı nedeniyle bazı veriler katılmaz (özel alanlar, kasa yapısı...). Eksiksiz bir dışa aktarım için farklı bir biçim kullanmanızı öneririz."
       ],
       "Current version": [
         "Güncel sürüm"
@@ -1170,7 +1170,7 @@
         "Eklenti menüsünü açın"
       ],
       "Organization settings successfully updated": [
-        "Kuruluş ayarları başarıyla güncellendi"
+        "Kuruluş ayarları güncellendi"
       ],
       "Owner": [
         "Sahibi"
@@ -1249,7 +1249,7 @@
         "Geçiş anahtarını kaydet"
       ],
       "Select an existing login item to update.": [
-        "Güncellemek için mevcut bir oturum açma öğesi seçin."
+        "Güncellenecek var olan oturum açma ögesini seçin."
       ],
       "Select an existing login or create a new one.": [
         "Var olan bir oturum açma kaydı seçin ya da yeni bir tane oluşturun."
@@ -1337,7 +1337,7 @@
         "Bu dışa aktarma şifrelenmemiş olacak ve dışarıya aktarılmış dosyanıza erişebilen herhangi biri parolalarınızı görebilecek. Güvenlik için lütfen işiniz bittikten sonra dosyayı silin."
       ],
       "This setting is disabled on the organization level": [
-        "Bu ayar kuruluş düzeyinde devre dışı bırakılmıştır"
+        "Bu ayar kuruluş düzeyinde kapatılmış"
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Kasa şu anda hiç kimseyle paylaşılmıyor. Kişişleri çağırarak başkalarıyla paylaşın."
@@ -1588,10 +1588,10 @@
         "Oluşturulma"
       ],
       "Disable data export for team members": [
-        "Ekip üyeleri için veri dışa aktarımını devre dışı bırak"
+        "Ekip üyelerinin verileri dışa aktarmasını kapat"
       ],
       "Disable sharing outside the organization": [
-        "Kuruluş dışında paylaşımı devre dışı bırak"
+        "Kuruluş dışına paylaşımı kapat"
       ],
       "Display": [
         "Görünüm"
@@ -1621,7 +1621,7 @@
         "Dışa aktar"
       ],
       "Exporting policy": [
-        "Dışa aktarma politikası"
+        "Dışa aktarma ilkesi"
       ],
       "Field name": [
         "Alan adı"
@@ -1791,6 +1791,9 @@
       "Prompt for auto-save": [
         "Otomatik kaydetme uyarısı"
       ],
+      "Prompt for auto-save when generating passwords": [
+        "Parola oluştururken otomatik kaydetme sorulsun"
+      ],
       "Rate us": [
         "Bizi değerlendirin"
       ],
@@ -1837,7 +1840,7 @@
         "Ayarlar"
       ],
       "Sharing policy": [
-        "Paylaşım politikası"
+        "Paylaşım ilkesi"
       ],
       "Show website favicons": [
         "Site simgeleri görüntülensin"
@@ -2327,7 +2330,7 @@
         "E-posta adresleri geçersiz."
       ],
       "Inviting email addresses outside organization is not allowed.": [
-        "Kuruluş dışındaki e-posta adreslerinin davet edilmesine izin verilmez."
+        "Kuruluş dışından e-posta adreslerinin davet edilmesine izin verilmiyor."
       ],
       "item was imported without custom fields": [
         "öge özel alanlar olmadan ie aktarılmış"
