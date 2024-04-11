@@ -32,6 +32,7 @@ enum AccountFlag {
     ScheduleB2BSupportPhoneCalls = 'ScheduleB2BSupportPhoneCalls',
     BreachesAccountDashboard = 'BreachesAccountDashboard',
     AddressDeletion = 'AddressDeletion',
+    ScimTenantCreation = 'ScimTenantCreation',
 }
 
 enum CalendarFeatureFlag {
