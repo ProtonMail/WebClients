@@ -330,10 +330,10 @@
         "Plačilo"
       ],
       "Pay ${ price }": [
-        "Plačaj ${ price }"
+        "Plačajte ${ price }"
       ],
       "Pay ${ price } now": [
-        "Plačaj ${ price }"
+        "Plačajte ${ price } sedaj"
       ],
       "Previous": [
         "Prejšnje"
@@ -370,6 +370,9 @@
       ],
       "Report a problem": [
         "Prijavi težavo"
+      ],
+      "Request a call": [
+        "Zahtevajte klic"
       ],
       "Request a feature": [
         "Zahtevaj funkcijo"
@@ -2718,7 +2721,7 @@
     },
     "Go to sign up": {
       "New to ${ BRAND_NAME }? ${ signUp }": [
-        "Novi pri ${ BRAND_NAME }? ${ signUp }"
+        "Novi pri ${ BRAND_NAME }u? ${ signUp }"
       ]
     },
     "Group": {
@@ -2732,7 +2735,7 @@
         "Omrežje"
       ],
       "Other category": [
-        "Druga kategorija"
+        "Drugo"
       ],
       "Services": [
         "Storitve"
@@ -3398,9 +3401,6 @@
       "Must be between 3 and 20 characters long.": [
         "Vaše geslo mora vsebovati 3 do 20 znakov."
       ],
-      "Must contain only letters, digits, and dashes (-).": [
-        "Must contain only letters, digits, and dashes (-)."
-      ],
       "Must not contain spaces.": [
         "Ne sme vsebovati presledkov."
       ],
@@ -3567,7 +3567,7 @@
         "Podatki za obnovitev bodo ostali v tej napravi, razen če jih izbrišete."
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Osveževanje strani ali ${ link } bo samodejno odpravilo večino težav."
+        "Osvežitev strani ali ${ link } bo samodejno odpravilo večino težav."
       ],
       "Remember to share the user's sign in details with them.": [
         "Ne pozabite deliti podrobnosti za prijavo z uporabnikom."
@@ -3941,9 +3941,6 @@
       "We recommend having at least 2 servers in order to provide redundancy.": [
         "Priporočamo, da imate vsaj dva strežnika, da zagotovite redundantnost."
       ],
-      "We recommend having multiple servers in different locations to provide redundancy.": [
-        "Priporočamo, da imate več strežnikov na različnih lokacijah, da odstranite odvečne stežnike"
-      ],
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "Priporočamo, da obvestite člane organizacije in jih prosite, naj nastavijo dvojno preverjanje pristnosti za svoje račune, preden zahtevate uporabo tega preverjanja."
       ],
@@ -4059,10 +4056,10 @@
         "Uporabite lahko naslednje poverilnice, da se povežete v strežnik ${ VPN_APP_NAME } z uporabo zunanje odprtokodne VPN aplikacije, kot je Tunnelblick za macOS ali OpenVPN za GNU/Linux."
       ],
       "You have ${ availableCount } dedicated server available.": [
-        "Na voljo imate ${ availableCount } namenskega strežnika.",
+        "Na voljo imate ${ availableCount } namenski strežnik.",
         "Na voljo imate ${ availableCount } namenska strežnika.",
         "Na voljo imate ${ availableCount } namenske strežnike.",
-        "Na voljo imate ${ availableCount } namenske strežnike."
+        "Na voljo imate ${ availableCount } namenskih strežnikov."
       ],
       "You have no invoices.": [
         "Nimate računov."
@@ -4107,7 +4104,7 @@
         "Vaš račun ${ BRAND_NAME } je trenutno suspendiran. E-poštni predal ne prejema sporočil, vaše povezave za skupno rabo na Disku so deaktivirane in ne morete nalagati novih datotek. Za nadaljnjo uporabo storitve plačajte morebitne zapadle račune."
       ],
       "Your ${ BRAND_NAME } password": [
-        "Vaše ${ BRAND_NAME } geslo."
+        "Vaše ${ BRAND_NAME } geslo"
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "Vaša računa za ${ VPN_APP_NAME } in ${ MAIL_APP_NAME } sta povezana. Za brisanje obeh računov se prijavite na ${ loginLink } in tam izbrišite svoj račun."
@@ -4349,7 +4346,7 @@
         "Gotovina"
       ],
       "Category": [
-        "Kategorija"
+        "Vrsta napake"
       ],
       "Choose a name for the generated certificate file": [
         "Izberite ime za ustvarjeno datoteko potrdila."
@@ -5612,7 +5609,7 @@
         "S klikom na »Plačaj« se strinjate z našimi ${ termsAndConditions }."
       ],
       "terms and conditions": [
-        "pravila in pogoji"
+        "pravili in pogoji"
       ]
     },
     "new_plans: title": {
@@ -6337,7 +6334,7 @@
         "Geslo"
       ],
       "Please describe the problem and include any error messages": [
-        "Opišite težavo in vključite morebitna sporočila o napakah"
+        "Opišite težavo in vključite morebitna sporočila o napakah."
       ],
       "Please select the main reason": [
         "Prosimo, izberite glavni razlog."

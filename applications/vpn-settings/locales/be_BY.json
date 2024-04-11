@@ -371,6 +371,9 @@
       "Report a problem": [
         "Паведаміць аб праблеме"
       ],
+      "Request a call": [
+        "Запытаць званок"
+      ],
       "Request a feature": [
         "Запытаць функцыю"
       ],
@@ -484,6 +487,9 @@
       ],
       "Signing in": [
         "Адбываецца ўваход"
+      ],
+      "Start live chat": [
+        "Пачаць інтэрактыўны чат"
       ],
       "Stop using single sign-on": [
         "Спыніць выкарыстанне адзінага ўваходу"
@@ -1893,6 +1899,9 @@
       ]
     },
     "Delete address prompt": {
+      "Once deleted, this address can't be used again by anyone else.": [
+        "Іншы карыстальнік больш не зможа выкарыстоўваць гэта адрас паўторна, калі яго выдаліць."
+      ],
       "The next active address on your list will be set as the default.": [
         "Наступны актыўны адрас у вашым спісе будзе зададзены ў якасці прадвызначанага."
       ],
@@ -2813,6 +2822,11 @@
         "Імя карыстальніка"
       ]
     },
+    "Headline": {
+      "Contact us": [
+        "Звязацца з намі"
+      ]
+    },
     "Hint": {
       "Add this record to your domain in the control panel of your domain name registrar": [
         "Дадайце гэты запіс у свой дамен на кантрольнай панэлі свайго рэгістратара даменных імён"
@@ -3331,6 +3345,12 @@
       "If you wish to combine this account with another one, do NOT delete it.": [
         "Калі вы хочаце аб'яднаць гэты ўліковы запіс з іншым, то НЕ выдаляйце яго."
       ],
+      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
+        "Мы заўсёды гатовыя дапамагчы ў выпадку ўзнікнення праблем. ${ boldPhoneCall } або ${ boldZoomMeeting } з адным з нашых спецыялістаў або адкрыць ${ boldLiveChat }, каб атрымаць падтрымку ў чаце."
+      ],
+      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists.": [
+        "Мы заўсёды гатовыя дапамагчы ў выпадку ўзнікнення праблем. ${ boldPhoneCall } або сустрэча ${ boldZoomMeeting } з адным з нашых спецыялістаў/"
+      ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Важна! Пераканайцеся, што вы захавалі коды аднаўлення. У адваротным выпадку вы незваротна страціце доступ да вашага ўліковага запісу, калі згубіце вашу прыладу двухфактарнай аўтэнтыфікацыі."
       ],
@@ -3385,11 +3405,17 @@
       "Link copied to clipboard": [
         "Спасылка скапіявана ў буфер абмену"
       ],
+      "Live chat": [
+        "Інтэрактыўны чат"
+      ],
       "Loading": [
         "Загрузка"
       ],
       "Loading ${ appName }": [
         "Загрузка ${ appName }"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Пачакайце, адбываецца загрузка календара. Вы будзеце перанакіраваны на нашу платформу планавання Calendly, якая адкрыецца ў новай укладцы."
       ],
       "Loading preview": [
         "Загрузка папярэдняга прагляду"
@@ -3588,6 +3614,9 @@
       ],
       "Remember to share the user's sign in details with them.": [
         "Не забудзьце абагуліць падрабязнасці ўваходу з імі."
+      ],
+      "Request a phone call": [
+        "Запытаць тэлефонны званок"
       ],
       "Resend verification email": [
         "Паўторна адправіць ліст з пацвярджэннем"
@@ -4167,6 +4196,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Ваша падпіска кіруецца Mozilla. Звяжыцеся са службай падтрымкі Mozilla."
+      ],
+      "Zoom meeting": [
+        "сустрэчу па Zoom"
       ]
     },
     "Info for cash payment method": {
