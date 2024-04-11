@@ -14,7 +14,6 @@ import ParticipantRow from './ParticipantRow';
 interface Props {
     attendeeModel: AttendeeModel[];
     contactEmailsMap: SimpleMap<ContactEmail>;
-    displayBusySlotsDot: boolean;
     isBusyTimeSlotsAvailable: boolean;
     onDelete: (attendee: AttendeeModel) => void;
     toggleIsOptional: (attendee: AttendeeModel) => void;
@@ -22,11 +21,10 @@ interface Props {
 
 const ParticipantRows = ({
     attendeeModel,
-    onDelete,
     contactEmailsMap,
-    toggleIsOptional,
     isBusyTimeSlotsAvailable,
-    displayBusySlotsDot,
+    onDelete,
+    toggleIsOptional,
 }: Props) => {
     const dispatch = useCalendarDispatch();
     const busyAttendeeHighlighted = useRef<string | undefined>(undefined);
@@ -43,7 +41,6 @@ const ParticipantRows = ({
                         key={participant.email}
                         attendee={participant}
                         contactEmailsMap={contactEmailsMap}
-                        displayBusySlotsActions={displayBusySlotsDot}
                         onToggleOptional={toggleIsOptional}
                         onDelete={onDelete}
                         onHighlight={(email, highlighted) => {

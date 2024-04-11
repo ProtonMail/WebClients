@@ -1,35 +1,56 @@
+import { CSSProperties } from 'react';
+
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { Icon, Tooltip } from '@proton/components/components';
 import clsx from '@proton/utils/clsx';
 
-const BusyParticipantRowDot = ({
-    color,
-    hasAvailability,
-    isLoading,
-    tooltipText,
-}: {
-    isLoading: boolean;
-    color: string;
-    hasAvailability: boolean;
+interface Props {
+    display: 'loader' | 'half-circle' | 'circle' | 'bordered-circle';
+    color: string | undefined;
     tooltipText: string;
-}) => {
-    return isLoading ? (
-        <CircleLoader size="tiny" className="m-auto" style={{ color: color || 'black' }} />
-    ) : (
-        <div
-            className={clsx(['m-auto relative flex', hasAvailability && 'rounded-full'])}
-            style={{
-                width: '0.625rem',
-                height: '0.625rem',
-                backgroundColor: hasAvailability ? color : 'transparent',
-            }}
-        >
-            {!hasAvailability && (
-                <Tooltip title={tooltipText}>
-                    <Icon name="circle-half-filled" size={2.5} className="rotateZ-45 opacity-70" />
-                </Tooltip>
-            )}
-        </div>
+    onClick: () => void;
+    classname?: string;
+}
+
+const BusyParticipantRowDot = ({ color, display, tooltipText, onClick, classname }: Props) => {
+    if (display === 'loader') {
+        return <CircleLoader size="tiny" className="m-auto" style={{ color: color || 'black' }} onClick={onClick} />;
+    }
+
+    const colorStyle = ((): CSSProperties => {
+        if (display === 'half-circle') {
+            return {
+                backgroundColor: 'transparent',
+            };
+        }
+
+        if (display === 'bordered-circle') {
+            return {
+                border: `0.0625rem solid ${color}`,
+            };
+        }
+
+        return {
+            backgroundColor: color,
+        };
+    })();
+
+    return (
+        <Tooltip title={tooltipText}>
+            <div
+                className={clsx('m-auto relative flex rounded-full', classname)}
+                style={{
+                    width: '0.625rem',
+                    height: '0.625rem',
+                    ...colorStyle,
+                }}
+                onClick={onClick}
+            >
+                {display === 'half-circle' && (
+                    <Icon name={'circle-half-filled'} size={2.5} className={clsx('opacity-70 rotateZ-45')} />
+                )}
+            </div>
+        </Tooltip>
     );
 };
 

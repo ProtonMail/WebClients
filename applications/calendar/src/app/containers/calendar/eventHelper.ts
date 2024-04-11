@@ -15,6 +15,7 @@ import { EventModel, VcalVeventComponent, VisualCalendar } from '@proton/shared/
 
 import getFrequencyModelChange from '../../components/eventModal/eventForm/getFrequencyModelChange';
 import { getDateTimeState, getTimeInUtc } from '../../components/eventModal/eventForm/time';
+import { BusyTimeSlot } from '../../store/busyTimeSlots/busyTimeSlotsSlice';
 import { CalendarViewBusyEvent, CalendarViewEvent, CalendarViewEventTemporaryEvent } from './interface';
 
 export const getViewEventDateProperties = (eventComponent: VcalVeventComponent) => {
@@ -124,14 +125,13 @@ export const getTemporaryEvent = (
 
 export const getBusyScheduledEvent = (
     email: string,
-    start: number,
-    end: number,
+    timeSlot: BusyTimeSlot,
     tzid: string,
     color: string
 ): CalendarViewBusyEvent => {
-    const isAllDay = false;
-    const busySlotStart = fromUnixTime(start);
-    const busySlotEnd = fromUnixTime(end);
+    const busySlotStart = fromUnixTime(timeSlot.Start);
+    const busySlotEnd = fromUnixTime(timeSlot.End);
+    const isAllDay = timeSlot.isAllDay;
 
     const eventStart = fromUTCDateToLocalFakeUTCDate(busySlotStart, isAllDay, tzid);
     const eventEnd = fromUTCDateToLocalFakeUTCDate(busySlotEnd, isAllDay, tzid);
