@@ -294,7 +294,13 @@ const SubscriptionContainer = ({
 
         const cycle = (() => {
             if (step === SUBSCRIPTION_STEPS.PLAN_SELECTION) {
-                return app === APPS.PROTONPASS ? CYCLE.YEARLY : CYCLE.TWO_YEARS;
+                if (app === APPS.PROTONPASS) {
+                    return CYCLE.YEARLY;
+                }
+                if (maybeCycle) {
+                    return maybeCycle;
+                }
+                return CYCLE.TWO_YEARS;
             }
 
             if (maybeCycle) {
