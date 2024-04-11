@@ -360,6 +360,12 @@
       "Manage labels": [
         "Gérer les labels"
       ],
+      "Mark as open": [
+        "Marquer comme ouvert"
+      ],
+      "Mark as resolved": [
+        "Marquer comme résolu"
+      ],
       "Mark for deletion": [
         "Sélectionner pour suppression"
       ],
@@ -476,6 +482,9 @@
       ],
       "Report a problem": [
         "Signaler un bug"
+      ],
+      "Request a call": [
+        "Demander un appel"
       ],
       "Request a feature": [
         "Demander une fonctionnalité"
@@ -2269,9 +2278,6 @@
       "Your account and data recovery methods are set.": [
         "Vos méthodes de récupération de compte et de données sont définies."
       ],
-      "Your information was found in at least one data breach.": [
-        "Vos informations ont été trouvées dans au moins une fuite de données."
-      ],
       "Your personal data was leaked by an online service in a data breach. View full details and get recommended actions.": [
         "Vos données personnelles ont été divulguées par un service en ligne dans une fuite de données. Consultez l'ensemble des informations et prenez les mesures qui s'imposent."
       ]
@@ -3863,8 +3869,8 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Avant de demander un nouveau code de vérification, nous vous recommandons de vérifier votre dossier indésirables/spam et de vous assurer que l'adresse ${ strong } est correcte."
       ],
-      "Breach alerts": [
-        "Alertes de fuites de données"
+      "Breach Alert": [
+        "Alerte de fuites de données"
       ],
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "En partageant toutes les informations des événements de ce calendrier, vous acceptez d'accorder à ${ BRAND_NAME } l'accès aux informations chiffrées de ce calendrier."
@@ -4082,6 +4088,9 @@
       "Large imports can take several days.": [
         "Les importations volumineuses peuvent prendre plusieurs jours."
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Apprenez comment ${ staySaferOnlineLink }"
+      ],
       "Learn more": [
         "En savoir plus"
       ],
@@ -4096,6 +4105,9 @@
       ],
       "Loading ${ appName }": [
         "Chargement de ${ appName }"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Veuillez patienter : le calendrier est en cours de chargement. Vous serez redirigé vers notre plateforme de programmation Calendly dans un nouvel onglet."
       ],
       "Loading event": [
         "L'événement est en cours de chargement."
@@ -4254,6 +4266,9 @@
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Nous devons déchiffrer vos contacts localement avant de pouvoir les exporter. À la fin du processus, un fichier VCF sera généré et vous pourrez le télécharger."
       ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "Les informations exposées ont été divulguées par un service tiers. Les informations de votre compte ${ BRAND_NAME } restent en sécurité et chiffrées. ${ learnMoreLink }"
+      ],
       "The following participants cannot be notified about your changes:": [
         "Ces participants ne peuvent pas être informés de vos modifications :"
       ],
@@ -4331,9 +4346,6 @@
       ],
       "username": [
         "nom d'utilisateur"
-      ],
-      "View details": [
-        "Afficher les informations"
       ],
       "Warning": [
         "Avertissement"
@@ -4473,6 +4485,12 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Vos données sont prêtes à être importées depuis ${ importedEmailAddressStrong } vers votre compte ${ BRAND_NAME }."
       ],
+      "Your email address and password were leaked:": [
+        "Votre adresse e-mail et mot de passe ont été exposés :"
+      ],
+      "Your email address was exposed:": [
+        "Votre adresse e-mail a été exposée :"
+      ],
       "Your email will only be used for this one-time verification.": [
         "Votre adresse e-mail ne sera utilisée que pour cette vérification unique."
       ],
@@ -4482,8 +4500,14 @@
       "Your files will be encrypted and then saved": [
         "Vos fichiers seront chiffrés puis sauvegardés."
       ],
+      "Your information was found on ${ displayedDate }": [
+        "Vos informations ont été trouvées le ${ displayedDate }."
+      ],
       "Your login information will not be saved after the import is completed.": [
         "Vos informations de connexion ne seront pas enregistrées une fois l'importation terminée."
+      ],
+      "Your password was leaked:": [
+        "Votre mot de passe a été exposé :"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Votre numéro de téléphone ne sera utilisé que pour cette vérification."
@@ -5045,6 +5069,9 @@
       ],
       "Request an invite": [
         "Demander une invitation"
+      ],
+      "stay safer online": [
+        "améliorer votre sécurité en ligne"
       ],
       "What’s this?": [
         "Qu'est-ce que c'est ?"
@@ -6072,14 +6099,17 @@
       ]
     },
     "Security Center - Info": {
-      "Get notified if your password or other personal data was leaked.": [
-        "Soyez averti si votre mot de passe ou d'autres données personnelles ont été divulguées."
+      "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
+        "Recevez une notification lorsque votre mot de passe ou d'autres données ont été exposées par un service tiers. ${ learnMoreLink }"
       ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Notre solution de sécurité de pointe utilise l'IA et est conçue pour les utilisateurs qui ont besoin d'une protection renforcée de leurs comptes. ${ learnMoreLink }"
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel est **actif** et protège votre compte."
+      ],
+      "Your information was found in at least one data breach. Turn on Breach Alert to view details and take action. ${ learnMoreLink }": [
+        "Vos informations ont été retrouvées dans au moins une fuite de données. Activez l'option Alertes de fuites d'informations pour consulter ces informations et prendre les mesures nécessaires. ${ learnMoreLink }"
       ]
     },
     "Select files": {
@@ -6959,20 +6989,8 @@
       "Birthday": [
         "Date de naissance"
       ],
-      "Breach alerts": [
-        "Alertes de fuites de données"
-      ],
-      "Breach Date": [
-        "Date de la fuite de données"
-      ],
-      "Breach detected": [
-        "Une fuite de données a été détectée."
-      ],
-      "Breach Information": [
-        "Informations sur la fuite de données"
-      ],
-      "Breach Size": [
-        "Ampleur de la fuite de données"
+      "Breach Alert": [
+        "Alerte de fuites de données"
       ],
       "Calendar": [
         "Calendrier"
@@ -7057,6 +7075,9 @@
       "Deleting contacts": [
         "Suppression des contacts"
       ],
+      "Details": [
+        "Informations"
+      ],
       "Drop to upload": [
         "Déposer pour charger"
       ],
@@ -7102,9 +7123,6 @@
       "Exporting contacts": [
         "Exportation des contacts"
       ],
-      "Exposed info": [
-        "Informations exposées"
-      ],
       "Feedback": [
         "Votre avis"
       ],
@@ -7141,9 +7159,6 @@
       ],
       "Link confirmation": [
         "Confirmation du lien"
-      ],
-      "Location": [
-        "Emplacement"
       ],
       "Merge contacts": [
         "Fusionner les contacts"
@@ -7307,9 +7322,6 @@
       "Stay safer online": [
         "Améliorez votre sécurité en ligne"
       ],
-      "Type": [
-        "Type"
-      ],
       "Unlock contacts groups": [
         "Débloquer les groupes des contacts"
       ],
@@ -7349,7 +7361,7 @@
       "Your calendar link": [
         "Lien de votre calendrier"
       ],
-      "Your Exposed Information": [
+      "Your exposed information": [
         "Vos informations exposées"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [

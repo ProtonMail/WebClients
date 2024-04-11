@@ -366,6 +366,12 @@
       "Manage labels": [
         "Upravljanje oznak"
       ],
+      "Mark as open": [
+        "Označi kot odprto"
+      ],
+      "Mark as resolved": [
+        "Označi kot rešeno"
+      ],
       "Mark for deletion": [
         "Označi za izbris"
       ],
@@ -482,6 +488,9 @@
       ],
       "Report a problem": [
         "Prijavi težavo"
+      ],
+      "Request a call": [
+        "Zahtevajte klic"
       ],
       "Request a feature": [
         "Zahtevaj funkcijo"
@@ -2244,7 +2253,7 @@
         "Povečajte učinkovitost in spremljajte svoj čas z barvnim kodiranjem dogodkov glede na kategorijo ali raven pomembnosti. Pridobite to in še veliko več s plačljivim paketom."
       ],
       "Breach alerts and reports are available with a paid plan. Upgrade for immediate access.": [
-        "Opozorila in poročila o kršitvah so na voljo s plačljivim paketom. Nadgradite za takojšen dostop."
+        "Opozorila in poročila o uhajanju podatkov so na voljo s plačljivim paketom. Nadgradite za takojšen dostop."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Dešifriranje stikov … To lahko traja nekaj minut. Po končanem postopku boste lahko prenesli datoteko z vsemi izvoženimi stiki."
@@ -2302,9 +2311,6 @@
       ],
       "Your account and data recovery methods are set.": [
         "Vaš račun in metode za obnovitev podatkov so nastavljene."
-      ],
-      "Your information was found in at least one data breach.": [
-        "Vaši podatki so bili najdeni v vsaj enem primeru uhajanja podatkov."
       ],
       "Your personal data was leaked by an online service in a data breach. View full details and get recommended actions.": [
         "Spletna storitev je razkrila vaše osebne podatke v zaradi uhajanja podatkov. Preberite vse informacije in ustrezno ukrepajte."
@@ -3483,7 +3489,7 @@
         "Omrežje"
       ],
       "Other category": [
-        "Druga kategorija"
+        "Drugo"
       ],
       "Services": [
         "Storitve"
@@ -3993,8 +3999,8 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Preden zahtevate novo kodo za preverjanje, preverite mapo za neželeno pošto in preverite, ali je ${ strong } pravilen naslov."
       ],
-      "Breach alerts": [
-        "Opozorila o uhajanju podatkov"
+      "Breach Alert": [
+        "Opozorilo o uhajanju podatkov"
       ],
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Če delite vse podrobnosti o dogodkih v tem koledarju, se strinjate, da ${ BRAND_NAME } dovolite dostop do šifriranih informacij tega koledarja."
@@ -4354,7 +4360,7 @@
         "Podatki za obnovitev bodo ostali v tej napravi, razen če jih izbrišete."
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Osveževanje strani ali ${ link } bo samodejno odpravilo večino težav."
+        "Osvežitev strani ali ${ link } bo samodejno odpravilo večino težav."
       ],
       "Removed participants will be notified.": [
         "Odstranjeni udeleženci bodo obveščeni."
@@ -4469,9 +4475,6 @@
       ],
       "username": [
         "uporabniško ime"
-      ],
-      "View details": [
-        "Prikaži podrobnosti"
       ],
       "Warning": [
         "Opozorilo"
@@ -4611,6 +4614,12 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Vaši podatki so pripravljeni na uvoz iz računa ${ importedEmailAddressStrong } v račun ${ BRAND_NAME }."
       ],
+      "Your email address and password were leaked:": [
+        "Vaš e-poštni naslov in geslo sta bila izpostavljena :"
+      ],
+      "Your email address was exposed:": [
+        "Vaš e-poštni naslov je bil izpostavljen:"
+      ],
       "Your email will only be used for this one-time verification.": [
         "Vaš e-poštni naslov bo uporabljen le za to enkratno preverjanje."
       ],
@@ -4622,6 +4631,9 @@
       ],
       "Your login information will not be saved after the import is completed.": [
         "Po končanem uvozu vaši podatki za prijavo ne bodo shranjeni."
+      ],
+      "Your password was leaked:": [
+        "Vaše geslo je bilo izpostavljeno:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Vaša telefonska številka bo uporabljena le za to enkratno preverjanje."
@@ -4805,7 +4817,7 @@
         "Koledarje"
       ],
       "Category": [
-        "Kategorija"
+        "Vrsta napake"
       ],
       "City": [
         "Mesto"
@@ -5191,6 +5203,9 @@
       ],
       "Request an invite": [
         "Zahtevaj povabilo"
+      ],
+      "stay safer online": [
+        "izboljšajte svojo spletno varnost"
       ],
       "What’s this?": [
         "Kaj je to?"
@@ -6138,7 +6153,7 @@
         "Geslo"
       ],
       "Please describe the problem and include any error messages": [
-        "Opišite težavo in vključite morebitna sporočila o napakah"
+        "Opišite težavo in vključite morebitna sporočila o napakah."
       ],
       "Please select a country": [
         "Izberite državo"
@@ -6298,9 +6313,6 @@
       ]
     },
     "Security Center - Info": {
-      "Get notified if your password or other personal data was leaked.": [
-        "Prejemanje obvestil v primeru razkritja vašega gesla in drugih osebnih podatkov."
-      ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Naša vrhunska varnostna rešitev, ki temelji na umetni inteligenci, je zasnovana za uporabnike, ki iščejo večjo zaščito za svoje račune. ${ learnMoreLink }"
       ],
@@ -7243,20 +7255,8 @@
       "Birthday": [
         "Rojstni dan"
       ],
-      "Breach alerts": [
-        "Opozorila o uhajanju podatkov"
-      ],
-      "Breach Date": [
-        "Datum uhajanja podatkov"
-      ],
-      "Breach detected": [
-        "Odkrito je uhajanje podatkov"
-      ],
-      "Breach Information": [
-        "Informacije o uhajanju podatkov"
-      ],
-      "Breach Size": [
-        "Obseg uhajanja podatkov"
+      "Breach Alert": [
+        "Opozorilo o uhajanju podatkov"
       ],
       "Calendar": [
         "Koledar"
@@ -7345,6 +7345,9 @@
       "Deleting contacts": [
         "Brisanje stikov"
       ],
+      "Details": [
+        "Podrobnosti"
+      ],
       "Drop to upload": [
         "Spusti za nalaganje"
       ],
@@ -7390,9 +7393,6 @@
       "Exporting contacts": [
         "Izvažanje stikov"
       ],
-      "Exposed info": [
-        "Razkrite informacije"
-      ],
       "Feedback": [
         "Povratne informacije"
       ],
@@ -7431,9 +7431,6 @@
       ],
       "Link confirmation": [
         "Potrditvena povezava"
-      ],
-      "Location": [
-        "Lokacija"
       ],
       "Merge contacts": [
         "Združi stike"
@@ -7597,9 +7594,6 @@
       "Stay safer online": [
         "Izboljšajte spletno varnost"
       ],
-      "Type": [
-        "Vrsta"
-      ],
       "Unlock contacts groups": [
         "Odkleni skupine stikov."
       ],
@@ -7639,8 +7633,8 @@
       "Your calendar link": [
         "Povezava do vašega koledarja"
       ],
-      "Your Exposed Information": [
-        "Vaše razkrite informacije"
+      "Your exposed information": [
+        "Vaša razkrita informacija"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Brezplačno preizkusno obdobje Mail Plus se vam zaključi ${ textDate }"
