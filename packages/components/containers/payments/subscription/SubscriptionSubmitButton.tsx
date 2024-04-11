@@ -23,6 +23,7 @@ type Props = {
     disabled?: boolean;
     noPaymentNeeded?: boolean;
     subscription: SubscriptionModel;
+    hasPaymentMethod: boolean;
 } & Pick<ChargebeePaypalWrapperProps, 'chargebeePaypal' | 'iframeHandles'>;
 
 const SubscriptionSubmitButton = ({
@@ -38,12 +39,13 @@ const SubscriptionSubmitButton = ({
     chargebeePaypal,
     iframeHandles,
     noPaymentNeeded,
+    hasPaymentMethod,
     subscription,
 }: Props) => {
     const [creditCardModalProps, setCreditCardModalOpen, renderCreditCardModal] = useModalState();
 
     if (noPaymentNeeded) {
-        if (isTrial(subscription)) {
+        if (isTrial(subscription) && !hasPaymentMethod) {
             return (
                 <>
                     <PrimaryButton

@@ -872,6 +872,8 @@ const SubscriptionContainer = ({
     const modeType = mode ? mode : 'modal';
     const showFreePlan = modeType === 'upsell-modal' ? false : undefined;
 
+    const hasPaymentMethod = !!paymentFacade.methods.savedMethods?.length;
+
     const content = (
         <>
             {!customTopRef && <div ref={topRef} />}
@@ -1107,6 +1109,7 @@ const SubscriptionContainer = ({
                                     checkResult={checkResult}
                                     creditsRemaining={creditsRemaining}
                                     subscription={subscription}
+                                    hasPaymentMethod={hasPaymentMethod}
                                 />
                             </div>
                         </div>
@@ -1133,6 +1136,7 @@ const SubscriptionContainer = ({
                                                 iframeHandles={paymentFacade.iframeHandles}
                                                 noPaymentNeeded={model.noPaymentNeeded}
                                                 subscription={subscription}
+                                                hasPaymentMethod={hasPaymentMethod}
                                             />
                                             {paymentFacade.showInclusiveTax && (
                                                 <InclusiveVatText
@@ -1267,6 +1271,7 @@ const SubscriptionContainer = ({
                                 checkResult={checkResult}
                                 creditsRemaining={creditsRemaining}
                                 subscription={subscription}
+                                hasPaymentMethod={hasPaymentMethod}
                             />
                         </div>
                     </div>
@@ -1293,6 +1298,7 @@ const SubscriptionContainer = ({
                                             iframeHandles={paymentFacade.iframeHandles}
                                             noPaymentNeeded={model.noPaymentNeeded}
                                             subscription={subscription}
+                                            hasPaymentMethod={hasPaymentMethod}
                                         />
                                         {paymentFacade.showInclusiveTax && (
                                             <InclusiveVatText
