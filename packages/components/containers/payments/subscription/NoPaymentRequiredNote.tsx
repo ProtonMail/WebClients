@@ -1,7 +1,6 @@
 import { c } from 'ttag';
 
-import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
-import { isTrialChargebeeUser } from '@proton/shared/lib/helpers/subscription';
+import { getPlanTitle, isTrial } from '@proton/shared/lib/helpers/subscription';
 import { SubscriptionCheckResponse, SubscriptionModel } from '@proton/shared/lib/interfaces';
 
 interface Props {
@@ -12,12 +11,13 @@ interface Props {
 }
 
 export const NoPaymentRequiredNote = ({ amountDue, checkResult, creditsRemaining, subscription }: Props) => {
-    const isTrialCb = isTrialChargebeeUser(subscription);
+    const trial = isTrial(subscription);
+    const planTitle = getPlanTitle(subscription);
 
     return (
         <div className={amountDue || !checkResult ? 'hidden' : undefined}>
             <h2 className="text-2xl text-bold mb-4">{c('Label').t`Payment details`}</h2>
-            {!isTrialCb && (
+            {!trial && (
                 <>
                     <div className="mb-4">{c('Info').t`No payment is required at this time.`}</div>
                     {checkResult?.Credit && creditsRemaining ? (
@@ -26,10 +26,10 @@ export const NoPaymentRequiredNote = ({ amountDue, checkResult, creditsRemaining
                     ) : null}
                 </>
             )}
-            {isTrialCb && (
+            {trial && (
                 <div className="mb-4">
                     {c('Info')
-                        .t`You have a trial ${MAIL_APP_NAME} subscription. If you would like to continue your subscription after the trial period, please add a payment method.`}
+                        .t`You have a trial ${planTitle} subscription. If you would like to continue your subscription after the trial period, please add a payment method.`}
                 </div>
             )}
         </div>
