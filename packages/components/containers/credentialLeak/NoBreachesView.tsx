@@ -44,7 +44,7 @@ const protonTech = (): RecommendedTech[] => [
         link: c('Link').t`Get ${VPN_APP_NAME}`,
         desc: c('Info')
             .t`NetShield is an ad-blocking feature from ${VPN_APP_NAME} that protects your device from ads, trackers, and malware.`,
-        href: getStaticURL('/pass'),
+        href: getStaticURL('/vpn'),
     },
     {
         tech: 'pass',
@@ -53,7 +53,7 @@ const protonTech = (): RecommendedTech[] => [
         link: c('Link').t`Get ${BRAND_NAME} Pass`,
         desc: c('Info')
             .t`Use a password manager to generate and securely store your passwords, ensuring strong passwords and easier sign-ins.`,
-        href: getStaticURL('/vpn'),
+        href: getStaticURL('/pass'),
     },
 ];
 
