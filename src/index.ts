@@ -40,7 +40,7 @@ import pkg from "../package.json";
     Logger.info("App start is mac:", isMac, "is windows:", isWindows, "isLinux:", isLinux);
 
     // Handle squirrel events at the very top of the application
-    handleSquirrelEvents();
+    await handleSquirrelEvents();
 
     // Security addition
     app.enableSandbox();

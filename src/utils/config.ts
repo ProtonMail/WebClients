@@ -52,10 +52,14 @@ export const getName = () => {
 };
 
 export const getExtraResource = () => {
-    if (type() === "Darwin") {
-        return ["./src/macos/Proton Mail Uninstaller.app", "./src/macos/uninstall.sh"];
+    switch (type()) {
+        case "Darwin":
+            return ["./src/macos/Proton Mail Uninstaller.app", "./src/macos/uninstall.sh"];
+        case "Windows_NT":
+            return ["./src/windows/uninstall.bat"];
+        default:
+            return [];
     }
-    return [];
 };
 
 export const isProdEnv = (config: Config) => {
