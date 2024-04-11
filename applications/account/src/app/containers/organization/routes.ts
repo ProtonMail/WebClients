@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { SectionConfig } from '@proton/components';
-import { ORGANIZATION_STATE } from '@proton/shared/lib/constants';
+import { APPS, APP_NAMES, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import {
     getHasMemberCapablePlan,
@@ -13,13 +13,14 @@ import { canScheduleOrganizationPhoneCalls } from '@proton/shared/lib/helpers/su
 import { Organization, Subscription, UserModel } from '@proton/shared/lib/interfaces';
 
 interface Props {
+    app: APP_NAMES;
     user: UserModel;
     organization?: Organization;
     subscription?: Subscription;
     isScheduleCallsEnabled: boolean;
 }
 
-export const getOrganizationAppRoutes = ({ user, organization, subscription, isScheduleCallsEnabled }: Props) => {
+export const getOrganizationAppRoutes = ({ app, user, organization, subscription, isScheduleCallsEnabled }: Props) => {
     const isAdmin = user.isAdmin && !user.isSubUser;
 
     const hasOrganizationKey = hasOrganizationSetupWithKeys(organization);
@@ -163,6 +164,16 @@ export const getOrganizationAppRoutes = ({ user, organization, subscription, isS
                         id: 'two-factor-authentication-enforcement',
                     },
                 ],
+            },
+            sso: <SectionConfig>{
+                text: c('Title').t`Single sign-on`,
+                to: '/single-sign-on',
+                icon: 'key',
+                available:
+                    app === APPS.PROTONVPN_SETTINGS &&
+                    hasVpnB2BPlan &&
+                    canHaveOrganization &&
+                    (hasOrganizationKey || hasOrganization),
             },
         },
     };
