@@ -1,16 +1,13 @@
-import { useEffect, useState } from 'react';
-
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { Href } from '@proton/atoms/Href';
-import { getSAMLStaticInfo } from '@proton/shared/lib/api/samlSSO';
 import { PLANS } from '@proton/shared/lib/constants';
 import { Domain, SSO } from '@proton/shared/lib/interfaces';
 import securityUpsellSvg from '@proton/styles/assets/img/illustrations/security-upsell.svg';
 
 import { Info, InputFieldTwo, Loader, ModalStateProps, useModalState } from '../../../components';
-import { useApi, useCustomDomains, useOrganization, useSamlSSO, useUser } from '../../../hooks';
+import { useCustomDomains, useOrganization, useSamlSSO, useUser } from '../../../hooks';
 import {
     SettingsLayout,
     SettingsLayoutLeft,
@@ -28,6 +25,7 @@ import RemoveSSODomain from './RemoveSSODomain';
 import RemoveSSOSection from './RemoveSSOSection';
 import SSOInfoForm from './SSOInfoForm';
 import SetupSSODomainModal from './SetupSSODomainModal';
+import SCIMSettingsSection from './scim/SCIMSettingsSection';
 
 const getSsoConfigForDomain = (ssoConfigs: SSO[], domain: Domain) => {
     return ssoConfigs.find(({ DomainID }) => DomainID === domain.ID);
@@ -135,29 +133,15 @@ const RemoveSSOSettingsSection = ({ domain, ssoConfigs }: { domain: Domain; ssoC
 
 const SsoPage = () => {
     const [customDomains] = useCustomDomains();
-    const [ssoConfigs] = useSamlSSO();
+    const [samlSSO] = useSamlSSO();
     const [organization] = useOrganization();
     const [user] = useUser();
-    const api = useApi();
     const [openSubscriptionModal] = useSubscriptionModal();
 
     const [setupSSODomainModalProps, setSetupSSODomainModalOpen, renderSetupSSODomainModal] = useModalState();
     const [configureSamlModalProps, setConfigureSamlModalOpen, renderConfigureSamlModal] = useModalState();
-    const [samlStaticInfo, setSamlStaticInfo] = useState<IdentityProviderEndpointsContentProps>();
 
-    useEffect(() => {
-        const fetchData = async () => {
-            const response = await api<{ EntityID: string; CallbackURL: string }>(getSAMLStaticInfo());
-            setSamlStaticInfo({
-                issuerID: response.EntityID,
-                callbackURL: response.CallbackURL,
-            });
-        };
-
-        void fetchData();
-    }, []);
-
-    if (!customDomains || !ssoConfigs || !samlStaticInfo || !organization) {
+    if (!customDomains || !samlSSO || !organization) {
         return <Loader />;
     }
 
@@ -207,6 +191,9 @@ const SsoPage = () => {
         );
     }
 
+    const hasSsoDomain = customDomains.length > 0;
+    const hasSsoConfig = samlSSO.configs.length > 0;
+
     return (
         <>
             {renderSetupSSODomainModal && (
@@ -231,14 +218,17 @@ const SsoPage = () => {
                             .t`Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.`}
                     </SettingsParagraph>
 
-                    {customDomains.length > 0 ? (
+                    {hasSsoDomain ? (
                         <ConfigureSamlContent
                             domain={customDomains[0]}
-                            ssoConfigs={ssoConfigs}
+                            ssoConfigs={samlSSO.configs}
                             configureSamlModalProps={configureSamlModalProps}
                             setConfigureSamlModalOpen={setConfigureSamlModalOpen}
                             renderConfigureSamlModal={renderConfigureSamlModal}
-                            identityProviderEndpointsContentProps={samlStaticInfo}
+                            identityProviderEndpointsContentProps={{
+                                issuerID: samlSSO.staticInfo.EntityID,
+                                callbackURL: samlSSO.staticInfo.CallbackURL,
+                            }}
                         />
                     ) : (
                         <Button
@@ -253,7 +243,21 @@ const SsoPage = () => {
                 </SettingsSectionWide>
             </SubSettingsSection>
 
-            {customDomains.length > 0 && <RemoveSSOSettingsSection domain={customDomains[0]} ssoConfigs={ssoConfigs} />}
+            <SCIMSettingsSection
+                hasSsoConfig={hasSsoConfig}
+                scimInfo={samlSSO.scimInfo}
+                onConfigureSaml={() => {
+                    if (hasSsoDomain) {
+                        setConfigureSamlModalOpen(true);
+                    } else {
+                        setSetupSSODomainModalOpen(true);
+                    }
+                }}
+            />
+
+            {hasSsoDomain && hasSsoConfig && (
+                <RemoveSSOSettingsSection domain={customDomains[0]} ssoConfigs={samlSSO.configs} />
+            )}
         </>
     );
 };
