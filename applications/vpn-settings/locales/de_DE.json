@@ -371,6 +371,9 @@
       "Report a problem": [
         "Ein Problem melden"
       ],
+      "Request a call": [
+        "Einen Anruf anfordern"
+      ],
       "Request a feature": [
         "Funktion vorschlagen"
       ],
@@ -4761,14 +4764,32 @@
       ]
     },
     "locked_state_storage_banner: info": {
+      "Learn more": [
+        "Mehr erfahren"
+      ],
       "upgrade for more storage": [
         "führe ein Upgrade durch für zusätzlichen Speicherplatz."
+      ],
+      "Upgrade to restore full access": [
+        "Upgrade zur Wiederherstellung des vollen Zugriffs"
       ],
       "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
         "Dein ${ driveStorage } ist voll. Um Dateien hochzuladen oder zu synchronisieren, räume etwas Speicherplatz frei oder ${ cta }."
       ],
+      "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
+        "Dein ${ mailStorage } ist voll. Um E-Mails zu senden oder zu empfangen, gib Speicherplatz frei oder ${ cta }."
+      ],
+      "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
+        "Dein Konto ist von der Löschung bedroht. Um Datenverlust zu vermeiden, bitte deinen Administrator um ein Upgrade. ${ cta }"
+      ],
       "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
         "Dein Speicherplatz ist voll. Um E-Mails zu senden oder zu empfangen, räume etwas Speicherplatz frei oder ${ cta }."
+      ],
+      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
+        "Dein Speicherplatz ist voll. Um Dateien hochzuladen oder zu synchronisieren, gib Speicherplatz frei oder ${ cta }."
+      ],
+      "Your subscription has ended. ${ cta } and to avoid data loss.": [
+        "Dein Abonnement ist beendet. ${ cta } und um Datenverlust zu vermeiden."
       ]
     },
     "mailtrial2024: Action": {
@@ -5975,6 +5996,17 @@
     "pass_signup_2023: Title": {
       "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
         "Alle ${ BRAND_NAME } Plus-Dienste.${ br }Ein einfaches Abonnement."
+      ]
+    },
+    "password_reset: info": {
+      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **old password**.": [
+        "**Alle deine vorhandenen Daten** (E-Mails, Ereignisse, Kontakte, Dateien, ${ PASS_APP_NAME }-Einträge usw.) **werden gesperrt** und können nur mit deinem **alten Passwort** entsperrt werden."
+      ],
+      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **recovery phrase** or your **old password**.": [
+        "**Alle deine vorhandenen Daten** (E-Mails, Ereignisse, Kontakte, Dateien, ${ PASS_APP_NAME }-Einträge usw.) **werden gesperrt** und können nur mit deiner **Wiederherstellungsphrase** oder deinem **alten Passwort** entsperrt werden."
+      ],
+      "Any **two-factor authentication (2FA)** method on your account will be disabled.": [
+        "Jegliche **Zwei-Faktor-Authentifizierungsmethode (2FA)** für Ihr Konto wird deaktiviert."
       ]
     },
     "passwordless": {
