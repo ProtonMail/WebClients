@@ -134,7 +134,7 @@ const getHeaderText = ({
             return (
                 <>
                     <Icon size={6} name="checkmark-circle-filled" className="color-success" />
-                    <span className="text-bold">{c('Info').t`Download ready`}</span>
+                    <span className="text-bold">{c('Info').t`Download finished`}</span>
                 </>
             );
     }
