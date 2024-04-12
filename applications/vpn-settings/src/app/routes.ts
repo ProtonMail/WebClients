@@ -17,10 +17,9 @@ interface Arguments {
     user: UserModel;
     subscription?: Subscription;
     organization?: Organization;
-    isScheduleCallsEnabled: boolean;
 }
 
-export const getRoutes = ({ user, subscription, organization, isScheduleCallsEnabled }: Arguments) => {
+export const getRoutes = ({ user, subscription, organization }: Arguments) => {
     const hasVpnB2BPlan = getHasVpnB2BPlan(subscription);
     const hasVpnBusinessPlan = hasVpnBusiness(subscription);
     const cancellablePlan = hasCancellablePlan(subscription);
@@ -35,7 +34,7 @@ export const getRoutes = ({ user, subscription, organization, isScheduleCallsEna
     const multiUserTitle = c('Title').t`Multi-user support`;
     const isSSOUser = getIsSSOVPNOnlyAccount(user);
 
-    const canSchedulePhoneCalls = canScheduleOrganizationPhoneCalls({ organization, user, isScheduleCallsEnabled });
+    const canSchedulePhoneCalls = canScheduleOrganizationPhoneCalls({ organization, user });
 
     return {
         dashboard: <SectionConfig>{
