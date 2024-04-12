@@ -1,3 +1,4 @@
+import { getIsConnectionIssue } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { setPaymentsVersion } from '@proton/shared/lib/api/payments';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
@@ -10,7 +11,7 @@ export const useChargebeeKillSwitch = () => {
 
     const chargebeeKillSwitch: ChargebeeKillSwitch = (_data?: ChargebeeKillSwitchData) => {
         const { reason, data, error } = _data ?? {};
-        if (error?.name === 'AbortError') {
+        if (error?.name === 'AbortError' || getIsConnectionIssue(error)) {
             return false;
         }
 
