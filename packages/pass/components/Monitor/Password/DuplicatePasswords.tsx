@@ -51,52 +51,57 @@ export const DuplicatePasswords: FC = () => {
     );
 
     return (
-        <div className="min-h-custom" style={{ '--min-h-custom': '80vh' }}>
-            <SubHeader
-                title={c('Title').t`Reused passwords`}
-                description={c('Description').t`Generate unique passwords to increase your security.`}
-            />
+        <div className="flex-1 w-full">
+            <div className="h-full flex flex-column gap-4 max-w-custom pt-6 px-6" style={{ '--max-w-custom': '74em' }}>
+                <SubHeader
+                    title={c('Title').t`Reused passwords`}
+                    description={c('Description').t`Generate unique passwords to increase your security.`}
+                    className="shrink-0"
+                />
 
-            {duplicatePasswordItems.length > 0 && (
-                <div className="h-custom" style={{ '--h-custom': 'max(calc(100vh - 180px), 18.75rem)' }}>
-                    <VirtualList
-                        interpolationIndexes={interpolationIndexes}
-                        ref={listRef}
-                        rowCount={interpolation.length}
-                        rowHeight={(idx) => (interpolationIndexes.includes(idx) ? 60 : 54)}
-                        rowRenderer={({ style, index, key }) => {
-                            const row = interpolation[index];
-                            switch (row.type) {
-                                case 'item': {
-                                    const item = row.item;
-                                    const id = getItemKey(item);
-                                    return (
-                                        <div style={style} key={key}>
-                                            <ItemsListItem
-                                                id={id}
-                                                item={item}
-                                                key={id}
-                                                onClick={() => selectItem(row.item, { inTrash: isTrashed(row.item) })}
-                                            />
-                                        </div>
-                                    );
+                {duplicatePasswordItems.length > 0 && (
+                    <div className="flex-auto">
+                        <VirtualList
+                            interpolationIndexes={interpolationIndexes}
+                            ref={listRef}
+                            rowCount={interpolation.length}
+                            rowHeight={(idx) => (interpolationIndexes.includes(idx) ? 60 : 54)}
+                            rowRenderer={({ style, index, key }) => {
+                                const row = interpolation[index];
+                                switch (row.type) {
+                                    case 'item': {
+                                        const item = row.item;
+                                        const id = getItemKey(item);
+                                        return (
+                                            <div style={style} key={key}>
+                                                <ItemsListItem
+                                                    id={id}
+                                                    item={item}
+                                                    key={id}
+                                                    onClick={() =>
+                                                        selectItem(row.item, { inTrash: isTrashed(row.item) })
+                                                    }
+                                                />
+                                            </div>
+                                        );
+                                    }
+                                    case 'divider': {
+                                        return (
+                                            <div
+                                                style={style}
+                                                key={key}
+                                                className="flex color-weak text-xl pt-6 pb-3 pl-3 items-center"
+                                            >
+                                                {row.label}
+                                            </div>
+                                        );
+                                    }
                                 }
-                                case 'divider': {
-                                    return (
-                                        <div
-                                            style={style}
-                                            key={key}
-                                            className="flex color-weak text-xl pt-6 pb-3 pl-3 items-center"
-                                        >
-                                            {row.label}
-                                        </div>
-                                    );
-                                }
-                            }
-                        }}
-                    />
-                </div>
-            )}
+                            }}
+                        />
+                    </div>
+                )}
+            </div>
         </div>
     );
 };
