@@ -1,13 +1,18 @@
 import { useState } from 'react';
 
+import { addMonths } from 'date-fns';
+
 import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/components/containers/payments/TaxCountrySelector';
+import { isSubscriptionUnchanged } from '@proton/components/containers/payments/helper';
 import { CheckSubscriptionData, PaymentsVersion, getPaymentsVersion } from '@proton/shared/lib/api/payments';
 import { APPS, PLANS } from '@proton/shared/lib/constants';
+import { toMap } from '@proton/shared/lib/helpers/object';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
+import { getPlanName } from '@proton/shared/lib/helpers/subscription';
 import { Api, ChargebeeEnabled, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
 
-import { useApi, useConfig } from '../../hooks';
+import { useApi, useConfig, usePlans, useSubscription } from '../../hooks';
 import { useChargebeeContext, useChargebeeEnabledCache } from '../client-extensions/useChargebeeContext';
 import { useChargebeeKillSwitch } from '../client-extensions/useChargebeeKillSwitch';
 import {
@@ -72,7 +77,8 @@ export const useReportRoutingError = () => {
 };
 
 export const usePaymentsApi = (
-    apiOverride?: Api
+    apiOverride?: Api,
+    checkV5Fallback?: (data: CheckSubscriptionData) => SubscriptionCheckResponse | null
 ): {
     paymentsApi: PaymentsApi;
     getPaymentsApi: (api: Api, chargebeeEnabled?: ChargebeeEnabled) => PaymentsApi;
@@ -181,12 +187,20 @@ export const usePaymentsApi = (
                 data.Codes = data.CouponCode ? [data.CouponCode] : [];
             }
 
+            const fallback = checkV5Fallback?.(data);
             try {
+                const silence = !!fallback;
+
                 return await api({
                     ...checkSubscription(data, 'v5'),
                     signal,
+                    silence,
                 });
             } catch (error) {
+                if (fallback) {
+                    return fallback;
+                }
+
                 reportRoutingError(error, additionalContext);
                 throw error;
             }
@@ -243,4 +257,48 @@ export const usePaymentsApi = (
         paymentsApi: getPaymentsApi(apiHook),
         getPaymentsApi,
     };
+};
+
+/**
+ * Do not use this hook in unauth context.
+ * This hook can be useful for getting multiple subscription/check calls at once.
+ * A good example is fetching multiple prices with and without coupon to compare them.
+ * Typically there is a plan with coupon, the same plan without coupon and
+ * a monthly plan as a base for comparison. If user already has one of the plans then v5/subscription/check
+ * will throw an error for this plan. To prevent this, checkV5Fallback intercepts the error and returns
+ * an optimistic result.
+ */
+export const usePaymentsApiWithCheckFallback = () => {
+    const [plansResult] = usePlans();
+    const [subscription] = useSubscription();
+
+    const checkV5Fallback = (data: CheckSubscriptionData): SubscriptionCheckResponse | null => {
+        const { Cycle, Currency, Plans } = data;
+
+        const samePlan = isSubscriptionUnchanged(subscription, Plans, Currency, Cycle);
+        if (!samePlan) {
+            return null;
+        }
+
+        const planName = getPlanName(subscription);
+        if (!planName) {
+            return null;
+        }
+
+        const plansMap = toMap(plansResult?.plans, 'Name');
+        const plan = plansMap[planName];
+
+        const result: SubscriptionCheckResponse = {
+            Cycle,
+            Currency,
+            Amount: plan.Amount,
+            AmountDue: plan.Amount,
+            Coupon: null,
+            PeriodEnd: +addMonths(new Date(), Cycle) / 1000,
+        };
+
+        return result;
+    };
+
+    return usePaymentsApi(undefined, checkV5Fallback);
 };
