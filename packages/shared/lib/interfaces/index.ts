@@ -33,7 +33,7 @@ export * from './config';
 export * from './utils';
 export * from './Locale';
 
-export interface EncryptionConfig {
+export interface KeyGenConfig {
     type?: 'ecc' | 'rsa';
     curve?: enums.curve;
     rsaBits?: number;
