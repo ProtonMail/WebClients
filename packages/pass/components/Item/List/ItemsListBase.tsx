@@ -6,7 +6,7 @@ import { useBulkSelect } from '@proton/pass/components/Bulk/BulkSelectProvider';
 import { ItemsListItem } from '@proton/pass/components/Item/List/ItemsListItem';
 import { VirtualList } from '@proton/pass/components/Layout/List/VirtualList';
 import { itemEq } from '@proton/pass/lib/items/item.predicates';
-import { interpolateRecentItems } from '@proton/pass/lib/items/item.utils';
+import { getItemKey, interpolateRecentItems } from '@proton/pass/lib/items/item.utils';
 import type { ItemFilters, ItemRevision, ItemRevisionWithOptimistic, SelectedItem } from '@proton/pass/types';
 import clsx from '@proton/utils/clsx';
 
@@ -53,7 +53,7 @@ export const ItemsListBase: FC<Props> = ({ items, filters, selectedItem, onSelec
                         switch (row.type) {
                             case 'entry': {
                                 const item = row.entry;
-                                const id = `item-${item.shareId}-${item.itemId}`;
+                                const id = getItemKey(item);
                                 return (
                                     <div style={style} key={key}>
                                         <ItemsListItem
