@@ -124,7 +124,7 @@ export const getStoreWrapper = (preloadedState?: ExtendedRenderOptions['preloade
             organization: getModelState({} as OrganizationWithSettings),
             organizationKey: getModelState({} as CachedOrganizationKey),
             userInvitations: getModelState([]),
-            plans: getModelState({ plans: [], freePlan: FREE_PLAN }),
+            plans: { ...getModelState({ plans: [], freePlan: FREE_PLAN }), meta: { fetchedAt: Date.now() } },
             features: {},
             importerConfig: getModelState({} as ApiEnvironmentConfig),
             ...preloadedState,

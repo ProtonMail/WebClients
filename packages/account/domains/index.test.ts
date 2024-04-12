@@ -1,7 +1,7 @@
 import type { ProtonThunkArguments } from '@proton/redux-shared-store';
 import { getTestStore } from '@proton/redux-shared-store/test';
 import { EVENT_ACTIONS, PRODUCT_BIT, USER_ROLES } from '@proton/shared/lib/constants';
-import { UserModel } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces';
 
 import { serverEvent } from '../eventLoop';
 import { getModelState } from '../test';
@@ -24,10 +24,19 @@ describe('domains', () => {
         });
     };
 
+    const getState = (value: any, type: any) => {
+        return {
+            ...getModelState(value),
+            meta: {
+                type,
+            },
+        };
+    };
+
     it('should not fetch domains for a free user', async () => {
         const { store } = setup({ user: { Role: USER_ROLES.FREE_ROLE } as unknown as UserModel });
         await store.dispatch(domainsThunk());
-        expect(selectDomains(store.getState())).toEqual(getModelState([]));
+        expect(selectDomains(store.getState())).toEqual(getState([], 0));
     });
 
     it('should fetch domains for a paid user', async () => {
@@ -38,11 +47,11 @@ describe('domains', () => {
             } as unknown as UserModel,
         });
         await store.dispatch(domainsThunk());
-        expect(selectDomains(store.getState())).toEqual(getModelState([{ ID: '1' }]));
+        expect(selectDomains(store.getState())).toEqual(getState([{ ID: '1' }], 1));
         store.dispatch(
             serverEvent({ Domains: [{ ID: '2', Domain: { ID: '2' } as any, Action: EVENT_ACTIONS.CREATE }] })
         );
-        expect(selectDomains(store.getState())).toEqual(getModelState([{ ID: '1' }, { ID: '2' }]));
+        expect(selectDomains(store.getState())).toEqual(getState([{ ID: '1' }, { ID: '2' }], 1));
     });
 
     it('should clear domains for a downgraded user', async () => {
@@ -53,12 +62,12 @@ describe('domains', () => {
             } as unknown as UserModel,
         });
         await store.dispatch(domainsThunk());
-        expect(selectDomains(store.getState())).toEqual(getModelState([{ ID: '1' }]));
+        expect(selectDomains(store.getState())).toEqual(getState([{ ID: '1' }], 1));
         store.dispatch(
             serverEvent({ Domains: [{ ID: '2', Domain: { ID: '2' } as any, Action: EVENT_ACTIONS.CREATE }] })
         );
-        expect(selectDomains(store.getState())).toEqual(getModelState([{ ID: '1' }, { ID: '2' }]));
+        expect(selectDomains(store.getState())).toEqual(getState([{ ID: '1' }, { ID: '2' }], 1));
         store.dispatch(serverEvent({ User: { Subscribed: 0 } as any }));
-        expect(selectDomains(store.getState())).toEqual(getModelState([]));
+        expect(selectDomains(store.getState())).toEqual(getState([], 0));
     });
 });

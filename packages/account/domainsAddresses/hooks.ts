@@ -1,4 +1,4 @@
-import { useCallback, useEffect } from 'react';
+import { useEffect } from 'react';
 
 import { Action, ThunkDispatch, createSelector } from '@reduxjs/toolkit';
 
@@ -7,11 +7,6 @@ import { baseUseDispatch, baseUseSelector } from '@proton/redux-shared-store/sha
 import type { Domain, DomainAddress } from '@proton/shared/lib/interfaces';
 
 import { DomainAddressesState, domainAddressesThunk, selectDomainAddresses } from './index';
-
-export const useGetDomainAddresses = () => {
-    const dispatch = baseUseDispatch<ThunkDispatch<DomainAddressesState, ProtonThunkArguments, Action>>();
-    return useCallback((addressID: string) => dispatch(domainAddressesThunk({ thunkArg: addressID })), [dispatch]);
-};
 
 interface Result {
     value: {
@@ -30,14 +25,14 @@ const selector = createSelector([(state: DomainAddressesState) => selectDomainAd
 });
 
 export const useDomainsAddresses = (domains: Domain[] | undefined) => {
-    const getDomainAddresses = useGetDomainAddresses();
+    const dispatch = baseUseDispatch<ThunkDispatch<DomainAddressesState, ProtonThunkArguments, Action>>();
     const selectedValue = baseUseSelector<DomainAddressesState, Result>(selector);
     useEffect(() => {
         if (!domains) {
             return;
         }
         domains.forEach((domain) => {
-            getDomainAddresses(domain.ID);
+            dispatch(domainAddressesThunk({ domainID: domain.ID }));
         });
     }, [domains]);
     return [selectedValue.value, selectedValue.loading] as const;

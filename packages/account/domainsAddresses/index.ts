@@ -1,7 +1,8 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { type PayloadAction, type UnknownAction, createSlice, miniSerializeError } from '@reduxjs/toolkit';
+import type { ThunkAction } from 'redux-thunk';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store';
-import { createAsyncModelThunk } from '@proton/redux-utilities';
+import { createPromiseMapCache } from '@proton/redux-utilities';
 import { queryDomainAddresses } from '@proton/shared/lib/api/domains';
 import queryPages from '@proton/shared/lib/api/helpers/queryPages';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
@@ -14,7 +15,7 @@ const name = 'domainAddresses' as const;
 
 export const getAllDomainAddresses = (api: Api, domainID: string) => {
     return queryPages((page, pageSize) => {
-        return api(
+        return api<{ Addresses: DomainAddress[]; Total: number }>(
             queryDomainAddresses(domainID, {
                 Page: page,
                 PageSize: pageSize,
@@ -29,54 +30,33 @@ export interface DomainAddressesState {
     [name]: { [id: string]: (ModelState<DomainAddress[]> & { meta: { fetchedAt: number } }) | undefined };
 }
 
-type SliceState = DomainAddressesState[typeof name];
-
-export const selectDomainAddresses = (state: DomainAddressesState) => state.domainAddresses;
-
-const modelThunk = createAsyncModelThunk<DomainAddress[], DomainAddressesState, ProtonThunkArguments, string>(
-    `${name}/fetch`,
-    {
-        miss: async ({ options, extraArgument }) => {
-            const domainID = options?.thunkArg;
-            if (!domainID) {
-                return [];
-            }
-            return getAllDomainAddresses(extraArgument.api, domainID);
-        },
-        previous: ({ getState, options }) => {
-            const domainID = options?.thunkArg;
-            let old = selectDomainAddresses(getState())?.[domainID || ''];
-            if (old?.meta.fetchedAt === -1) {
-                old = undefined;
-            }
-            return {
-                value: old?.value,
-                error: old?.error,
-            };
-        },
-    }
-);
-
 const initialState: SliceState = {};
 const slice = createSlice({
     name,
     initialState,
-    reducers: {},
+    reducers: {
+        pending: (state, action: PayloadAction<{ id: string }>) => {
+            const oldValue = state[action.payload.id];
+            if (oldValue && oldValue.error) {
+                oldValue.error = undefined;
+            }
+        },
+        fulfilled: (state, action: PayloadAction<{ id: string; value: DomainAddress[] }>) => {
+            state[action.payload.id] = {
+                value: action.payload.value,
+                error: undefined,
+                meta: { fetchedAt: Date.now() },
+            };
+        },
+        rejected: (state, action: PayloadAction<{ id: string; value: any }>) => {
+            state[action.payload.id] = {
+                value: undefined,
+                error: action.payload,
+                meta: { fetchedAt: Date.now() },
+            };
+        },
+    },
     extraReducers: (builder) => {
-        builder
-            .addCase(modelThunk.pending, (state, action) => {
-                const oldValue = state[action.meta.id];
-                if (oldValue && oldValue.error) {
-                    oldValue.error = undefined;
-                }
-            })
-            .addCase(modelThunk.fulfilled, (state, action) => {
-                state[action.meta.id] = { value: action.payload, error: undefined, meta: { fetchedAt: Date.now() } };
-            })
-            .addCase(modelThunk.rejected, (state, action) => {
-                state[action.meta.id] = { value: undefined, error: action.payload, meta: { fetchedAt: Date.now() } };
-            });
-
         builder.addCase(serverEvent, (state, action) => {
             if (action.payload.Domains) {
                 for (const domainEvent of action.payload.Domains) {
@@ -95,5 +75,39 @@ const slice = createSlice({
     },
 });
 
+type SliceState = DomainAddressesState[typeof name];
+
+export const selectDomainAddresses = (state: DomainAddressesState) => state.domainAddresses;
+
+const promiseCache = createPromiseMapCache<DomainAddress[]>();
+
+export const domainAddressesThunk = ({
+    domainID,
+    forceFetch,
+}: {
+    domainID: string;
+    forceFetch?: boolean;
+}): ThunkAction<Promise<DomainAddress[]>, DomainAddressesState, ProtonThunkArguments, UnknownAction> => {
+    return (dispatch, getState, extraArgument) => {
+        const select = () => {
+            const oldValue = selectDomainAddresses(getState())?.[domainID || ''];
+            if (oldValue?.value !== undefined && oldValue.meta.fetchedAt !== -1 && !forceFetch) {
+                return Promise.resolve(oldValue.value);
+            }
+        };
+        const cb = async () => {
+            try {
+                dispatch(slice.actions.pending({ id: domainID }));
+                const value = await getAllDomainAddresses(extraArgument.api, domainID);
+                dispatch(slice.actions.fulfilled({ id: domainID, value }));
+                return value;
+            } catch (error) {
+                dispatch(slice.actions.rejected({ id: domainID, value: miniSerializeError(error) }));
+                throw error;
+            }
+        };
+        return promiseCache(domainID, select, cb);
+    };
+};
+
 export const domainsAddressesReducer = { [name]: slice.reducer };
-export const domainAddressesThunk = modelThunk.thunk;
