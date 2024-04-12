@@ -11,7 +11,6 @@ import {
     PROTON_SENTINEL_NAME,
     REFERRAL_PROGRAM_MAX_AMOUNT,
 } from '@proton/shared/lib/constants';
-import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { humanPriceWithCurrency } from '@proton/shared/lib/helpers/humanPrice';
 import { getHasVpnOrPassB2BPlan, hasCancellablePlan } from '@proton/shared/lib/helpers/subscription';
 import { Address, Organization, Renew, Subscription, UserModel, UserType } from '@proton/shared/lib/interfaces';
@@ -32,6 +31,7 @@ export const getAccountAppRoutes = ({
     organization,
     isProtonSentinelEligible,
     isBreachesAccountDashboardEnabled,
+    showThemeSelection,
 }: {
     app: APP_NAMES;
     user: UserModel;
@@ -44,6 +44,7 @@ export const getAccountAppRoutes = ({
     organization?: Organization;
     isProtonSentinelEligible: boolean;
     isBreachesAccountDashboardEnabled: boolean;
+    showThemeSelection: boolean;
 }) => {
     const { isFree, canPay, isPaid, isPrivate, isMember, isAdmin, Currency, Type } = user;
     const credits = humanPriceWithCurrency(REFERRAL_PROGRAM_MAX_AMOUNT, Currency || DEFAULT_CURRENCY);
@@ -236,7 +237,7 @@ export const getAccountAppRoutes = ({
                     {
                         text: c('Title').t`Theme`,
                         id: 'theme',
-                        available: !isElectronApp,
+                        available: showThemeSelection,
                     },
                     {
                         text: c('Title').t`Accessibility`,

@@ -1,9 +1,11 @@
 import { ReactNode, createContext, useCallback, useContext, useEffect, useLayoutEffect, useState } from 'react';
 
 import { APP_NAMES } from '@proton/shared/lib/constants';
+import { hasInboxDesktopFeature, invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
 import { clearBit, hasBit, setBit } from '@proton/shared/lib/helpers/bitset';
 import { getCookie, setCookie } from '@proton/shared/lib/helpers/cookies';
-import { isElectronOnSupportedApps } from '@proton/shared/lib/helpers/desktop';
+import { isElectronMail, isElectronOnSupportedApps } from '@proton/shared/lib/helpers/desktop';
+import { updateElectronThemeModeClassnames } from '@proton/shared/lib/helpers/initElectronClassnames';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import createListeners from '@proton/shared/lib/helpers/listeners';
 import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
@@ -198,11 +200,6 @@ const ThemeProvider = ({ children, appName }: Props) => {
     };
 
     const setTheme = (themeType: ThemeTypes, mode?: ThemeModeSetting) => {
-        // Electron app cannot change theme
-        if (appName && isElectronOnSupportedApps(appName)) {
-            return;
-        }
-
         if (mode) {
             syncThemeSettingValue({
                 ...themeSetting,
@@ -330,6 +327,18 @@ const ThemeProvider = ({ children, appName }: Props) => {
 
         syncToCookie();
     }, [themeSetting]);
+
+    useEffect(() => {
+        if (appName && isElectronOnSupportedApps(appName) && hasInboxDesktopFeature('ThemeSelection')) {
+            invokeInboxDesktopIPC({ type: 'setTheme', payload: themeSetting });
+        }
+    }, [themeSetting]);
+
+    useEffect(() => {
+        if (isElectronMail) {
+            updateElectronThemeModeClassnames(themeSetting);
+        }
+    }, [colorScheme, themeSetting]);
 
     return (
         <ThemeContext.Provider

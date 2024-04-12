@@ -101,6 +101,7 @@ export { default as useLastSubscriptionEnd } from './useLastSubscriptionEnd';
 export { default as useRelocalizeText } from './useRelocalizeText';
 export * from './useSAMLConfigs';
 export * from './useSessionRecovery';
+export { default as useShowThemeSelection } from './useShowThemeSelection';
 export { default as useToggle } from './useToggle';
 export { default as useTraceUpdate } from './useTraceUpdate';
 export { default as useUser, useGetUser } from './useUser';
