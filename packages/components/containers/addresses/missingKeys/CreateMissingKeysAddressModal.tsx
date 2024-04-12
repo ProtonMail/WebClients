@@ -7,7 +7,7 @@ import { Button } from '@proton/atoms';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS, MEMBER_PRIVATE } from '@proton/shared/lib/constants';
+import { DEFAULT_KEYGEN_TYPE, KEYGEN_CONFIGS, MEMBER_PRIVATE } from '@proton/shared/lib/constants';
 import {
     confirmPasswordValidator,
     passwordLengthValidator,
@@ -89,7 +89,7 @@ export const updateAddress = (oldAddresses: AddressState, ID: string, diff: Stat
     };
 };
 
-const encryptionConfig = ENCRYPTION_CONFIGS[DEFAULT_ENCRYPTION_CONFIG];
+const keyGenConfig = KEYGEN_CONFIGS[DEFAULT_KEYGEN_TYPE];
 
 const CreateMissingKeysAddressModal = ({ member, addressesToGenerate, ...rest }: Props) => {
     const api = useApi();
@@ -146,7 +146,7 @@ const CreateMissingKeysAddressModal = ({ member, addressesToGenerate, ...rest }:
             if (shouldSetupMemberKeys && password) {
                 await setupMemberKeys({
                     ownerAddresses: addresses,
-                    encryptionConfig,
+                    keyGenConfig,
                     organizationKey: organizationKey.privateKey,
                     member,
                     memberAddresses,
@@ -158,7 +158,7 @@ const CreateMissingKeysAddressModal = ({ member, addressesToGenerate, ...rest }:
             } else {
                 await missingKeysMemberProcess({
                     api: silentApi,
-                    encryptionConfig,
+                    keyGenConfig,
                     ownerAddresses: addresses,
                     memberAddressesToGenerate: addressesToGenerate,
                     member,
@@ -185,7 +185,7 @@ const CreateMissingKeysAddressModal = ({ member, addressesToGenerate, ...rest }:
                 addresses,
                 addressesToGenerate,
                 password: authentication.getPassword(),
-                encryptionConfig,
+                keyGenConfig,
                 onUpdate: (addressID, event) => {
                     setFormattedAddresses((oldState) => {
                         return updateAddress(oldState, addressID, {

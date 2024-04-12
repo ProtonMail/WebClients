@@ -6,13 +6,13 @@ import { getPrimaryKey } from '@proton/shared/lib/keys/getPrimaryKey';
 import { splitKeys } from '@proton/shared/lib/keys/keys';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS } from '../constants';
+import { DEFAULT_KEYGEN_TYPE, KEYGEN_CONFIGS } from '../constants';
 import {
     Address,
     AddressKey,
     DecryptedAddressKey,
     DecryptedKey,
-    EncryptionConfig,
+    KeyGenConfig,
     KeyPair,
     KeysPair,
     AddressKey as tsAddressKey,
@@ -235,18 +235,18 @@ export interface GenerateAddressKeyArguments {
     email: string;
     name?: string;
     passphrase: string;
-    encryptionConfig?: EncryptionConfig;
+    keyGenConfig?: KeyGenConfig;
 }
 
 export const generateAddressKey = async ({
     email,
     name = email,
     passphrase,
-    encryptionConfig = ENCRYPTION_CONFIGS[DEFAULT_ENCRYPTION_CONFIG],
+    keyGenConfig = KEYGEN_CONFIGS[DEFAULT_KEYGEN_TYPE],
 }: GenerateAddressKeyArguments) => {
     const privateKey = await CryptoProxy.generateKey({
         userIDs: [{ name, email }],
-        ...encryptionConfig,
+        ...keyGenConfig,
     });
 
     const privateKeyArmored = await CryptoProxy.exportPrivateKey({ privateKey: privateKey, passphrase });

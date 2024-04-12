@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { useLoading } from '@proton/hooks';
 import { setupAddress } from '@proton/shared/lib/api/addresses';
-import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS } from '@proton/shared/lib/constants';
+import { DEFAULT_KEYGEN_TYPE, KEYGEN_CONFIGS } from '@proton/shared/lib/constants';
 import { User } from '@proton/shared/lib/interfaces';
 import { missingKeysSelfProcess } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
@@ -63,7 +63,7 @@ const PmMeButton = ({ children }: { children: ReactNode }) => {
             addresses,
             addressesToGenerate: [Address],
             password: authentication.getPassword(),
-            encryptionConfig: ENCRYPTION_CONFIGS[DEFAULT_ENCRYPTION_CONFIG],
+            keyGenConfig: KEYGEN_CONFIGS[DEFAULT_KEYGEN_TYPE],
             onUpdate: noop,
             keyTransparencyVerify,
         });
