@@ -1,7 +1,7 @@
 import { uniqueId } from 'lodash';
 
 import { itemBuilder } from '@proton/pass/lib/items/item.builder';
-import type { ItemRevision} from '@proton/pass/types';
+import type { ItemRevision } from '@proton/pass/types';
 import { ContentFormatVersion, ItemState } from '@proton/pass/types';
 import { prop } from '@proton/pass/utils/fp/lens';
 
@@ -46,5 +46,18 @@ describe('getDuplicatePasswords', () => {
 
     test('should handle case when there are no logins', () => {
         expect(getDuplicatePasswords([])).toEqual([]);
+    });
+
+    test.each([100, 1000, 10_000])('Performance test for %i items', (count) => {
+        const items = Array.from({ length: count }, () => createMockItem('AAA'));
+
+        const startTime = process.hrtime();
+        const duplicates = getDuplicatePasswords(items);
+        const endTime = process.hrtime(startTime);
+        const executionTimeMs = (endTime[0] * 1e9 + endTime[1]) / 1e6;
+
+        /* We are fine as long as calculation is under 0.2s */
+        expect(executionTimeMs).toBeLessThanOrEqual(200);
+        expect(duplicates).toBeDefined();
     });
 });
