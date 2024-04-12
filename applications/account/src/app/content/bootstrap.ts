@@ -1,5 +1,6 @@
 import { initEvent, serverEvent, userSettingsThunk, userThunk, welcomeFlagsActions } from '@proton/account';
 import * as bootstrap from '@proton/account/bootstrap';
+import { getDecryptedPersistedState } from '@proton/account/persist/helper';
 import { createCalendarModelEventManager, holidaysDirectoryThunk } from '@proton/calendar';
 import { initMainHost } from '@proton/cross-storage';
 import { FeatureCode, fetchFeatures } from '@proton/features';
@@ -15,7 +16,7 @@ import { ProtonConfig } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import locales from '../locales';
-import { extendStore, setupStore } from '../store/store';
+import { AccountState, extendStore, setupStore } from '../store/store';
 
 const getAppContainer = () =>
     import(/* webpackChunkName: "MainContainer" */ './SetupMainContainer').then((result) => result.default);
@@ -42,13 +43,28 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
 
         const history = bootstrap.createHistory({ basename: session.payload.basename, path: session.payload.path });
         const unleashClient = bootstrap.createUnleash({ api: silentApi });
+        const unleashPromise = bootstrap.unleashReady({ unleashClient }).catch(noop);
 
-        const store = setupStore({ mode: 'default' });
-        const dispatch = store.dispatch;
+        const user = session.payload?.User;
         extendStore({ config, api, authentication, history, unleashClient });
 
-        if (session.payload?.User) {
-            dispatch(initEvent({ User: session.payload.User }));
+        let persistedState = await getDecryptedPersistedState<Partial<AccountState>>({
+            authentication,
+            user,
+        });
+
+        if (persistedState) {
+            await unleashPromise;
+            if (!unleashClient.isEnabled('PersistedState')) {
+                persistedState = undefined;
+            }
+        }
+
+        const store = setupStore({ preloadedState: persistedState?.state, mode: 'default' });
+        const dispatch = store.dispatch;
+
+        if (user) {
+            dispatch(initEvent({ User: user }));
         }
 
         const loadUser = async () => {
@@ -79,12 +95,11 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
 
         const userPromise = loadUser();
         const preloadPromise = loadPreload();
-        const evPromise = bootstrap.eventManager({ api: silentApi });
-        const unleashPromise = bootstrap.unleashReady({ unleashClient }).catch(noop);
+        const evPromise = bootstrap.eventManager({ api: silentApi, eventID: persistedState?.eventID });
         loadPreloadButIgnored();
 
+        // Needs unleash to be loaded. NOTE: It might have already gotten loaded previously.
         await unleashPromise;
-        // Needs unleash to be loaded.
         await bootstrap.loadCrypto({ appName, unleashClient });
         const [MainContainer, userData, eventManager] = await Promise.all([
             appContainerPromise,
@@ -103,6 +118,14 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
             dispatch(serverEvent(event));
         });
         eventManager.start();
+
+        if (persistedState?.eventID) {
+            setTimeout(() => {
+                eventManager.call();
+                // If we're resuming a session, we'd like to call the ev to get up-to-speed.
+                // This is in an arbitrary timeout since there are some consumers who subscribe through react useEffects triggered later through the app.
+            }, 550);
+        }
 
         bootstrap.onAbort(signal, () => {
             unsubscribeEventManager();

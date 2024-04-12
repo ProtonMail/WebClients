@@ -1,7 +1,7 @@
-import { PayloadAction, ThunkAction, UnknownAction, createSlice, original } from '@reduxjs/toolkit';
+import { PayloadAction, ThunkAction, UnknownAction, createSlice, miniSerializeError, original } from '@reduxjs/toolkit';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store';
-import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
+import { createPromiseCache } from '@proton/redux-utilities';
 import { getAllMemberAddresses, getAllMembers } from '@proton/shared/lib/api/members';
 import updateCollection from '@proton/shared/lib/helpers/updateCollection';
 import type { Address, Api, EnhancedMember, Member, User } from '@proton/shared/lib/interfaces';
@@ -15,8 +15,13 @@ import { UserState, userThunk } from '../user';
 
 const name = 'members' as const;
 
+enum ValueType {
+    dummy,
+    complete,
+}
+
 export interface MembersState extends UserState, AddressesState {
-    [name]: ModelState<EnhancedMember[]>;
+    [name]: ModelState<EnhancedMember[]> & { meta?: { type: ValueType } };
 }
 
 type SliceState = MembersState[typeof name];
@@ -28,36 +33,34 @@ const canFetch = (user: User) => {
     return isAdmin(user);
 };
 
-const freeMembers: EnhancedMember[] = [];
-
-const modelThunk = createAsyncModelThunk<Model, MembersState, ProtonThunkArguments>(`${name}/fetch`, {
-    miss: async ({ dispatch, extraArgument }) => {
-        const user = await dispatch(userThunk());
-        if (canFetch(user)) {
-            return getAllMembers(extraArgument.api).then((members): EnhancedMember[] => {
-                return members.map((member) => ({
-                    ...member,
-                    addressState: 'partial' as const,
-                }));
-            });
-        }
-        return freeMembers;
-    },
-    previous: previousSelector(selectMembers),
-});
-
 const getMemberFromState = (state: ModelState<EnhancedMember[]>, target: Member) => {
     return state.value?.find((member) => member.ID === target.ID);
 };
 
+const freeMembers: EnhancedMember[] = [];
+
 const initialState: SliceState = {
     value: undefined,
     error: undefined,
+    meta: { type: ValueType.complete },
 };
 const slice = createSlice({
     name,
     initialState,
     reducers: {
+        pending: (state) => {
+            state.error = undefined;
+        },
+        fulfilled: (state, action: PayloadAction<{ value: Model; type: ValueType }>) => {
+            state.value = action.payload.value;
+            state.error = undefined;
+            state.meta = { type: action.payload.type };
+        },
+        rejected: (state, action) => {
+            state.error = action.payload;
+            state.value = undefined;
+            state.meta = { type: ValueType.complete };
+        },
         memberFetchFulfilled: (state, action: PayloadAction<{ member: Member; addresses: Address[] }>) => {
             const member = getMemberFromState(state, action.payload.member);
             if (member) {
@@ -79,14 +82,13 @@ const slice = createSlice({
         },
     },
     extraReducers: (builder) => {
-        handleAsyncModel(builder, modelThunk);
-
         builder.addCase(serverEvent, (state, action) => {
             if (!state.value) {
                 return;
             }
 
-            const isFreeMembers = original(state)?.value === freeMembers;
+            const isFreeMembers = original(state)?.meta?.type === ValueType.dummy;
+
             if (action.payload.Members && !isFreeMembers) {
                 state.value = updateCollection({
                     model: state.value,
@@ -112,16 +114,63 @@ const slice = createSlice({
                 if (!isFreeMembers && action.payload.User && !canFetch(action.payload.User)) {
                     // Do not get any members update when user becomes unsubscribed.
                     state.value = freeMembers;
+                    state.error = undefined;
+                    state.meta = { type: ValueType.dummy };
                 }
 
                 if (isFreeMembers && action.payload.User && canFetch(action.payload.User)) {
-                    delete state.value;
-                    delete state.error;
+                    state.value = undefined;
+                    state.error = undefined;
+                    state.meta = { type: ValueType.complete };
                 }
             }
         });
     },
 });
+
+const promiseCache = createPromiseCache<Model>();
+
+const modelThunk = (): ThunkAction<Promise<Model>, MembersState, ProtonThunkArguments, UnknownAction> => {
+    return (dispatch, getState, extraArgument) => {
+        const select = () => {
+            const oldValue = selectMembers(getState());
+            if (oldValue?.value !== undefined) {
+                return Promise.resolve(oldValue.value);
+            }
+        };
+        const getPayload = async () => {
+            const user = await dispatch(userThunk());
+            if (!canFetch(user)) {
+                return {
+                    value: freeMembers,
+                    type: ValueType.dummy,
+                };
+            }
+            const value = await getAllMembers(extraArgument.api).then((members): EnhancedMember[] => {
+                return members.map((member) => ({
+                    ...member,
+                    addressState: 'partial' as const,
+                }));
+            });
+            return {
+                value,
+                type: ValueType.complete,
+            };
+        };
+        const cb = async () => {
+            try {
+                dispatch(slice.actions.pending());
+                const payload = await getPayload();
+                dispatch(slice.actions.fulfilled(payload));
+                return payload.value;
+            } catch (error) {
+                dispatch(slice.actions.rejected(miniSerializeError(error)));
+                throw error;
+            }
+        };
+        return promiseCache(select, cb);
+    };
+};
 
 const getTemporaryPromiseMap = (() => {
     let map: undefined | Map<string, Promise<Address[]>>;
@@ -179,4 +228,4 @@ export const getMemberAddresses = ({
 };
 
 export const membersReducer = { [name]: slice.reducer };
-export const membersThunk = modelThunk.thunk;
+export const membersThunk = modelThunk;

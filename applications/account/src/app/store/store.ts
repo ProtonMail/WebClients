@@ -1,17 +1,19 @@
 import { TypedStartListening, configureStore, createListenerMiddleware } from '@reduxjs/toolkit';
 
+import { getPersistedState } from '@proton/redux-shared-store/persist';
 import { ignoredActions, ignoredPaths } from '@proton/redux-shared-store/sharedSerializable';
 
 import { start } from './listener';
-import { rootReducer } from './rootReducer';
+import { AccountState, persistReducer, rootReducer } from './rootReducer';
 import { type AccountThunkArguments, extraThunkArguments } from './thunk';
 
-export type AccountState = ReturnType<typeof rootReducer>;
+export type { AccountState } from './rootReducer';
 
-export const setupStore = ({ mode }: { mode: 'public' | 'lite' | 'default' }) => {
+export const setupStore = ({ preloadedState, mode }: { preloadedState?: Partial<AccountState>, mode: 'public' | 'lite' | 'default' }) => {
     const listenerMiddleware = createListenerMiddleware({ extra: extraThunkArguments });
 
     const store = configureStore({
+        preloadedState,
         reducer: rootReducer,
         devTools: process.env.NODE_ENV !== 'production',
         middleware: (getDefaultMiddleware) =>
@@ -25,13 +27,14 @@ export const setupStore = ({ mode }: { mode: 'public' | 'lite' | 'default' }) =>
     });
 
     const startListening = listenerMiddleware.startListening as AppStartListening;
-    start({ startListening, mode });
+    const getAccountPersistedState = (state: AccountState) => getPersistedState(state, persistReducer);
+    start({ startListening, mode, persistTransformer: getAccountPersistedState });
 
     if (process.env.NODE_ENV !== 'production' && module.hot) {
         module.hot.accept('./rootReducer', () => store.replaceReducer(rootReducer));
         module.hot.accept('./listener', () => {
             listenerMiddleware.clearListeners();
-            start({ startListening, mode });
+            start({ startListening, mode, persistTransformer: getAccountPersistedState });
         });
     }
 
