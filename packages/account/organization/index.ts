@@ -2,11 +2,16 @@ import { createSlice, original } from '@reduxjs/toolkit';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
-import { getOrganization } from '@proton/shared/lib/api/organization';
-import { FREE_ORGANIZATION } from '@proton/shared/lib/constants';
+import { getOrganization, getOrganizationSettings } from '@proton/shared/lib/api/organization';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import updateObject from '@proton/shared/lib/helpers/updateObject';
-import { type Organization, type User, UserLockedFlags } from '@proton/shared/lib/interfaces';
+import {
+    type Organization,
+    type OrganizationSettings,
+    OrganizationWithSettings,
+    type User,
+    UserLockedFlags,
+} from '@proton/shared/lib/interfaces';
 import { isPaid } from '@proton/shared/lib/user/helpers';
 
 import { serverEvent } from '../eventLoop';
@@ -16,7 +21,7 @@ import { UserState, userThunk } from '../user';
 const name = 'organization';
 
 export interface OrganizationState extends UserState {
-    [name]: ModelState<Organization>;
+    [name]: ModelState<OrganizationWithSettings>;
 }
 
 type SliceState = OrganizationState[typeof name];
@@ -34,13 +39,29 @@ const canFetch = (user: User) => {
     return isPaid(user) || isOrgAdminUserInLockedState;
 };
 
-const freeOrganization = FREE_ORGANIZATION as unknown as Organization;
+const freeOrganization = { Settings: {} } as unknown as OrganizationWithSettings;
 
 const modelThunk = createAsyncModelThunk<Model, OrganizationState, ProtonThunkArguments>(`${name}/fetch`, {
     miss: async ({ dispatch, extraArgument }) => {
         const user = await dispatch(userThunk());
         if (canFetch(user)) {
-            return extraArgument.api(getOrganization()).then(({ Organization }) => Organization);
+            const [Organization, OrganizationSettings] = await Promise.all([
+                extraArgument
+                    .api<{
+                        Organization: Organization;
+                    }>(getOrganization())
+                    .then(({ Organization }) => Organization),
+                extraArgument
+                    .api<OrganizationSettings>(getOrganizationSettings())
+                    .then(({ ShowName, LogoID }) => ({ ShowName, LogoID }))
+                    .catch(() => {
+                        return { ShowName: false, LogoID: null };
+                    }),
+            ]);
+            return {
+                ...Organization,
+                Settings: OrganizationSettings,
+            };
         }
         return freeOrganization;
     },
@@ -62,8 +83,13 @@ const slice = createSlice({
                 return;
             }
 
-            if (action.payload.Organization) {
-                state.value = updateObject(state.value, action.payload.Organization);
+            if (action.payload.Organization || action.payload.OrganizationSettings) {
+                state.value = updateObject(state.value, {
+                    ...action.payload.Organization,
+                    ...(action.payload.OrganizationSettings
+                        ? { Settings: action.payload.OrganizationSettings }
+                        : undefined),
+                });
             } else {
                 const isFreeOrganization = original(state)?.value === freeOrganization;
 

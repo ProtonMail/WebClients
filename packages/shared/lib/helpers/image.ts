@@ -94,6 +94,10 @@ interface ResizeImageProps {
      * Does the image needs to be loaded with the crossOrigin attribute
      */
     crossOrigin?: boolean;
+    /**
+     * Is transparency allowed?
+     */
+    transparencyAllowed?: boolean;
 }
 
 /**
@@ -109,12 +113,14 @@ export const resizeImage = async ({
     encoderOptions = 1,
     bigResize = false,
     crossOrigin = true,
+    transparencyAllowed = true,
 }: ResizeImageProps) => {
     const image = await toImage(original, crossOrigin);
     // Resize the image
     let { width, height } = image;
 
     const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d') as CanvasRenderingContext2D;
     const [widthRatio, heightRatio] = [maxWidth && width / maxWidth, maxHeight && height / maxHeight].map(Number);
 
     if (widthRatio <= 1 && heightRatio <= 1) {
@@ -133,8 +139,14 @@ export const resizeImage = async ({
 
     canvas.width = width;
     canvas.height = height;
-    // eslint-disable-next-line no-unused-expressions
-    canvas.getContext('2d')?.drawImage(image, 0, 0, width, height);
+
+    if (transparencyAllowed) {
+        ctx?.drawImage(image, 0, 0, width, height);
+    } else {
+        ctx.fillStyle = '#FFFFFF';
+        ctx?.fillRect(0, 0, canvas.width, canvas.height);
+        ctx?.drawImage(image, 0, 0, width, height);
+    }
 
     return canvas.toDataURL(finalMimeType, encoderOptions);
 };
@@ -142,7 +154,7 @@ export const resizeImage = async ({
 /**
  * Extract the mime and base64 str from a base64 image.
  */
-const extractBase64Image = (str = '') => {
+export const extractBase64Image = (str = '') => {
     const [mimeInfo = '', base64 = ''] = (str || '').split(',');
     const [, mime = ''] = mimeInfo.match(/:(.*?);/) || [];
     return { mime, base64 };

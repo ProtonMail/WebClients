@@ -34,6 +34,7 @@ enum AccountFlag {
     AddressDeletion = 'AddressDeletion',
     ScimTenantCreation = 'ScimTenantCreation',
     InboxDesktopThemeSelection = 'InboxDesktopThemeSelection',
+    LightLabeling = 'LightLabeling',
 }
 
 enum CalendarFeatureFlag {

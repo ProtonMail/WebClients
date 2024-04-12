@@ -2,10 +2,7 @@ import { useCallback } from 'react';
 
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
-import {
-    baseUseDispatch as useDispatch,
-    baseUseSelector as useSelector,
-} from '@proton/redux-shared-store/sharedContext';
+import { baseUseDispatch, baseUseSelector } from '@proton/redux-shared-store/sharedContext';
 import { UserSettings } from '@proton/shared/lib/interfaces';
 
 const name = 'welcomeFlags' as const;
@@ -50,8 +47,8 @@ export const welcomeFlagsActions = slice.actions;
 export const selectWelcomeFlags = (state: { [name]: WelcomeFlagsState }) => state[name];
 
 export const useWelcomeFlags = (): [WelcomeFlagsState, () => void] => {
-    const value = useSelector(selectWelcomeFlags);
-    const dispatch = useDispatch();
+    const value = baseUseSelector(selectWelcomeFlags);
+    const dispatch = baseUseDispatch();
     const setDone = useCallback(() => {
         dispatch(slice.actions.done());
     }, []);

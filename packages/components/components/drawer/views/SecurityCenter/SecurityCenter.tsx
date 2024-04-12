@@ -1,5 +1,5 @@
 import { useFlag } from '@proton/components/containers';
-import { baseUseSelector } from '@proton/redux-shared-store';
+import { baseUseSelector } from '@proton/redux-shared-store/sharedContext';
 
 import { DrawerAppScrollContainer } from '../shared';
 import AccountSecurity from './AccountSecurity/AccountSecurity';
