@@ -87,6 +87,7 @@ const AddKeyModal = ({ existingAlgorithms, type, onAdd, ...rest }: Props) => {
                 <Button
                     color="norm"
                     loading={loading}
+                    data-testid="generate-key"
                     onClick={() => {
                         withLoading(handleProcess().catch(noop));
                     }}
