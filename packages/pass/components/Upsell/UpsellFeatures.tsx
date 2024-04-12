@@ -73,7 +73,7 @@ export const UpsellFeatures: FC<Props> = ({ upsellType }) => {
                         )}
                         key={key}
                     >
-                        <Icon color="var(--interaction-norm)" name={icon} size={4} />
+                        <Icon color="var(--interaction-norm)" name={icon} size={4} className="shrink-0" />
                         <div className="text-left flex-1 text-sm">{label}</div>
                     </div>
                 ))}
