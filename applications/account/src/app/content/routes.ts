@@ -24,6 +24,7 @@ interface Arguments {
     isNotifInboxDesktopAppOn: boolean;
     isScheduleCallsEnabled: boolean;
     isBreachesAccountDashboardEnabled: boolean;
+    showThemeSelection: boolean;
 }
 
 export const getRoutes = ({
@@ -40,6 +41,7 @@ export const getRoutes = ({
     isNotifInboxDesktopAppOn,
     isScheduleCallsEnabled,
     isBreachesAccountDashboardEnabled,
+    showThemeSelection,
 }: Arguments) => {
     return {
         account: getAccountAppRoutes({
@@ -54,6 +56,7 @@ export const getRoutes = ({
             organization,
             isProtonSentinelEligible,
             isBreachesAccountDashboardEnabled,
+            showThemeSelection,
         }),
         mail: getMailAppRoutes({
             app,

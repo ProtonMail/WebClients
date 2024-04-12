@@ -33,6 +33,7 @@ enum AccountFlag {
     BreachesAccountDashboard = 'BreachesAccountDashboard',
     AddressDeletion = 'AddressDeletion',
     ScimTenantCreation = 'ScimTenantCreation',
+    InboxDesktopThemeSelection = 'InboxDesktopThemeSelection',
 }
 
 enum CalendarFeatureFlag {

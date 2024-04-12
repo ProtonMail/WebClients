@@ -1,19 +1,21 @@
-import { canInvokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
+import { invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
 
 import createApi from '../api/createApi';
 import { getApiError } from '../api/helpers/apiErrorHelper';
 import { API_CUSTOM_ERROR_CODES } from '../errors';
 
 export const endOfTrialIPCCall = () => {
-    if (canInvokeInboxDesktopIPC) {
-        window.ipcInboxMessageBroker!.send('trialEnd', 'trialEnded');
-    }
+    invokeInboxDesktopIPC({
+        type: 'trialEnd',
+        payload: 'trialEnded',
+    });
 };
 
 export const resetEndOfTrialIPCCall = () => {
-    if (canInvokeInboxDesktopIPC) {
-        window.ipcInboxMessageBroker!.send('trialEnd', 'resetTrialEnded');
-    }
+    invokeInboxDesktopIPC({
+        type: 'trialEnd',
+        payload: 'resetTrialEnded',
+    });
 };
 
 export const listenFreeTrialSessionExpiration = (api: ReturnType<typeof createApi>) => {

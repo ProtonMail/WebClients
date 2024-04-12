@@ -3,7 +3,7 @@ import Push from 'push.js';
 import noop from '@proton/utils/noop';
 
 import { ElectronNotification } from '../desktop/desktopTypes';
-import { canInvokeInboxDesktopIPC } from '../desktop/ipcHelpers';
+import { invokeInboxDesktopIPC } from '../desktop/ipcHelpers';
 import { isElectronMail } from './desktop';
 
 Push.config({
@@ -56,10 +56,7 @@ export const create = async (title = '', params = {}, electronNotification?: Ele
         return;
     }
     if (isElectronMail && electronNotification) {
-        if (!canInvokeInboxDesktopIPC) {
-            return;
-        }
-        window.ipcInboxMessageBroker?.send('showNotification', electronNotification);
+        invokeInboxDesktopIPC({ type: 'showNotification', payload: electronNotification });
     } else {
         return Push.create(title, params);
     }
