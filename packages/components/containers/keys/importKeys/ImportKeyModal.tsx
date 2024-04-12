@@ -8,7 +8,7 @@ import { ArmoredKeyWithInfo } from '@proton/shared/lib/keys';
 import { OnKeyImportCallback } from '@proton/shared/lib/keys';
 import getRandomString from '@proton/utils/getRandomString';
 
-import { Alert, ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../components';
+import { ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../components';
 import { useModals, useNotifications } from '../../../hooks';
 import GenericError from '../../error/GenericError';
 import DecryptFileKeyModal from '../shared/DecryptFileKeyModal';
@@ -128,12 +128,12 @@ const ImportKeyModal = ({ onProcess, ...rest }: Props) => {
                     setStep(STEPS.SELECT_FILES);
                 },
                 children: (
-                    <Alert className="text-pre-wrap">
+                    <div className="text-pre-wrap">
                         {c('Import key')
                             .t`Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.
 
 Please also note that the public key corresponding to this private key will be publicly available from our key server. If the key contains personal details (such as your full name) which you do not want to publish, please edit the key before importing it.`}
-                    </Alert>
+                    </div>
                 ),
             };
         }
@@ -145,7 +145,7 @@ Please also note that the public key corresponding to this private key will be p
                 onNext: () => selectRef.current?.click(),
                 children: (
                     <>
-                        <Alert className="mb-4">{c('Label').t`Please select files to upload`}</Alert>
+                        <div>{c('Label').t`Please select files to upload`}</div>
                         <SelectKeyFiles
                             ref={selectRef}
                             onUpload={handleUploadKeys}
@@ -189,7 +189,7 @@ Please also note that the public key corresponding to this private key will be p
     })();
 
     return (
-        <ModalTwo size="large" {...rest}>
+        <ModalTwo size="medium" {...rest}>
             <ModalTwoHeader title={c('Title').t`Import key`} />
             <ModalTwoContent>{children}</ModalTwoContent>
             <ModalTwoFooter>
