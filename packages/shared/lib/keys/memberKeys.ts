@@ -17,7 +17,6 @@ import {
 import { srpVerify } from '../srp';
 import { generateAddressKey, generateAddressKeyTokens } from './addressKeys';
 import { getActiveKeyObject, getActiveKeys, getNormalizedActiveKeys, getPrimaryFlag } from './getActiveKeys';
-import { getHasMemberMigratedAddressKeys } from './keyMigration';
 import { generateKeySaltAndPassphrase } from './keys';
 import { decryptMemberToken, encryptMemberToken, generateMemberToken } from './memberToken';
 import { generateMemberAddressKey } from './organizationKeys';
@@ -41,84 +40,6 @@ interface SetupMemberKeySharedArguments {
     keyGenConfig: KeyGenConfig;
     keyTransparencyVerify: KeyTransparencyVerify;
 }
-
-export const setupMemberKeyLegacy = async ({
-    api,
-    member,
-    memberAddresses,
-    password,
-    organizationKey,
-    keyGenConfig,
-    keyTransparencyVerify,
-}: SetupMemberKeySharedArguments) => {
-    const { salt: keySalt, passphrase: memberMailboxPassword } = await generateKeySaltAndPassphrase(password);
-
-    const addressKeysWithOnSKLPublish = await Promise.all(
-        memberAddresses.map(async (address) => {
-            const { privateKey, privateKeyArmored } = await generateAddressKey({
-                email: address.Email,
-                passphrase: memberMailboxPassword,
-                keyGenConfig,
-            });
-
-            const memberKeyToken = generateMemberToken();
-            const privateKeyArmoredOrganization = await CryptoProxy.exportPrivateKey({
-                privateKey,
-                passphrase: memberKeyToken,
-            });
-            const organizationToken = await encryptMemberToken(memberKeyToken, organizationKey);
-
-            const newActiveKey = await getActiveKeyObject(privateKey, {
-                ID: 'tmp',
-                primary: 1,
-                flags: getDefaultKeyFlags(address),
-            });
-            const updatedActiveKeys = getNormalizedActiveKeys(address, [newActiveKey]);
-            const [SignedKeyList, onSKLPublishSuccess] = await getSignedKeyListWithDeferredPublish(
-                updatedActiveKeys,
-                address,
-                keyTransparencyVerify
-            );
-            return {
-                addressKey: {
-                    AddressID: address.ID,
-                    SignedKeyList,
-                    UserKey: privateKeyArmored,
-                    MemberKey: privateKeyArmoredOrganization,
-                    Token: organizationToken,
-                },
-                privateKey,
-                onSKLPublishSuccess,
-            };
-        })
-    );
-
-    const primary = addressKeysWithOnSKLPublish[0];
-    const PrimaryKey = {
-        UserKey: primary.addressKey.UserKey,
-        MemberKey: primary.addressKey.MemberKey,
-        Token: primary.addressKey.Token,
-    };
-
-    const { Member } = await srpVerify<{ Member: tsMember }>({
-        api,
-        credentials: { password },
-        config: setupMemberKeyRoute({
-            MemberID: member.ID,
-            AddressKeys: addressKeysWithOnSKLPublish.map(({ addressKey }) => addressKey),
-            PrimaryKey,
-            KeySalt: keySalt,
-        }),
-    });
-
-    await Promise.all(
-        addressKeysWithOnSKLPublish.map(({ onSKLPublishSuccess }) =>
-            onSKLPublishSuccess ? onSKLPublishSuccess() : Promise.resolve()
-        )
-    );
-
-    return { Member, userPrivateKey: primary.privateKey };
-};
 
 export const setupMemberKeyV2 = async ({
     api,
@@ -249,11 +170,7 @@ interface SetupMemberKeyArguments extends SetupMemberKeySharedArguments {
 }
 
 export const setupMemberKeys = async ({ ownerAddresses, ...rest }: SetupMemberKeyArguments) => {
-    // During member key setup, no address has keys, so we ignore checking it
-    if (getHasMemberMigratedAddressKeys([], ownerAddresses)) {
-        return setupMemberKeyV2(rest);
-    }
-    return setupMemberKeyLegacy(rest);
+    return setupMemberKeyV2(rest);
 };
 
 interface CreateMemberAddressKeysLegacyArguments {
