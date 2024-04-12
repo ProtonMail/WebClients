@@ -52,6 +52,8 @@ import {
 import { getHasNonDelinquentScope } from '@proton/shared/lib/user/helpers';
 import noop from '@proton/utils/noop';
 
+export * from './action';
+
 class InvalidSessionError extends Error {
     public localID: number | undefined;
 

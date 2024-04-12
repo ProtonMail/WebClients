@@ -1,0 +1,19 @@
+@import '~@proton/styles/scss/lib';
+
+.sidebar-custom-logo {
+	--sidebar-custom-logo-border-color: var(--logo-text-proton-color);
+	--sidebar-custom-logo-name-color: var(--logo-text-proton-color);
+
+	&-image::after {
+		content: '';
+		position: absolute;
+		inset: 0;
+		border: 1px solid var(--sidebar-custom-logo-border-color);
+		opacity: 0.1;
+		border-radius: inherit;
+	}
+
+	&-name {
+		color: var(--sidebar-custom-logo-name-color, var(--color-norm));
+	}
+}

@@ -1,6 +1,6 @@
 import { PLANS, PLAN_TYPES } from '@proton/shared/lib/constants';
 import {
-    Organization,
+    OrganizationWithSettings,
     PendingInvitation,
     Plan,
     Subscription,
@@ -624,7 +624,8 @@ export const organization = {
     MaxAddresses: 20,
     UsedMembers: 2,
     MaxMembers: 5,
-} as Organization;
+    Settings: {},
+} as OrganizationWithSettings;
 
 export const vpnServersCount = {
     free: {

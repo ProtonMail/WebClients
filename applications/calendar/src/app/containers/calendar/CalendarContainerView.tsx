@@ -18,7 +18,6 @@ import {
     InboxDesktopFreeTrialTopBanner,
     InboxDesktopOutdatedAppTopBanner,
     LocalizedMiniCalendar,
-    MainLogo,
     PrimaryButton,
     PrivateAppContainer,
     PrivateHeader,
@@ -43,7 +42,7 @@ import {
     useUser,
     useWelcomeFlags,
 } from '@proton/components';
-import { Spotlight } from '@proton/components/components';
+import { SidebarLogo, Spotlight } from '@proton/components/components';
 import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
 import DrawerVisibilityButton from '@proton/components/components/drawer/DrawerVisibilityButton';
 import {
@@ -403,7 +402,7 @@ const CalendarContainerView = ({
         </>
     );
 
-    const logo = <MainLogo to="/" />;
+    const logo = <SidebarLogo to="/" app={APPS.PROTONCALENDAR} />;
 
     const [{ isWelcomeFlow }] = useWelcomeFlags();
     const {
