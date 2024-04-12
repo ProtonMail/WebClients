@@ -61,7 +61,10 @@ export type ProduceForkData = OAuthForkData | ProtonForkData;
 
 interface Props {
     type: SSOType;
-    onActiveSessions: (data: ProduceForkData, activeSessions: GetActiveSessionsResult) => void;
+    onActiveSessions: (
+        data: ProduceForkData,
+        activeSessions: GetActiveSessionsResult
+    ) => Promise<OnLoginCallbackResult>;
     onInvalidFork: () => void;
     onProduceFork: (data: ProduceForkData, session: AuthSession) => Promise<OnLoginCallbackResult>;
     loader: ReactNode;
@@ -106,7 +109,7 @@ const SSOForkProducer = ({ loader, type, onActiveSessions, onInvalidFork, onProd
                 return;
             }
 
-            onActiveSessions({ type: SSOType.OAuth, payload: { oauthData } }, activeSessionsResult);
+            await onActiveSessions({ type: SSOType.OAuth, payload: { oauthData } }, activeSessionsResult);
             return;
         };
 
@@ -118,7 +121,7 @@ const SSOForkProducer = ({ loader, type, onActiveSessions, onInvalidFork, onProd
             }
 
             const handleActiveSessions = async (activeSessionsResult: GetActiveSessionsResult) => {
-                onActiveSessions({ type: SSOType.Proton, payload: { forkParameters } }, activeSessionsResult);
+                return onActiveSessions({ type: SSOType.Proton, payload: { forkParameters } }, activeSessionsResult);
             };
 
             const handleProduceFork = async (session: AuthSession) => {
