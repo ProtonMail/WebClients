@@ -84,9 +84,18 @@ export const CryptoWorkerPool: WorkerPoolInterface = (() => {
         worker?.[releaseProxy]();
     };
 
-    const getWorker = (): Remote<CryptoApi> => {
+    /**
+     * Get worker from the pool pool. By default, the workers are picked in a round-robin fashion, to balance the load.
+     * However, this might not be desirable for operations like e.g. argon2, which is resource intensive and caches them
+     * (wasm module & allocated memory) across calls.
+     * @param [fixed] - whether to always return the same worker
+     */
+    const getWorker = (fixed = false): Remote<CryptoApi> => {
         if (workerPool == null) {
             throw new Error('Uninitialised worker pool');
+        }
+        if (fixed) {
+            return workerPool[0];
         }
         i = (i + 1) % workerPool.length;
         return workerPool[i];
@@ -130,7 +139,7 @@ export const CryptoWorkerPool: WorkerPoolInterface = (() => {
         processMIME: (opts) => getWorker().processMIME(opts).catch(errorReporter),
         computeHash: (opts) => getWorker().computeHash(opts).catch(errorReporter),
         computeHashStream: (opts) => getWorker().computeHashStream(opts).catch(errorReporter),
-        computeArgon2: (opts) => getWorker().computeArgon2(opts).catch(errorReporter),
+        computeArgon2: (opts) => getWorker(true).computeArgon2(opts).catch(errorReporter),
 
         generateSessionKey: (opts) => getWorker().generateSessionKey(opts).catch(errorReporter),
         generateSessionKeyForAlgorithm: (opts) => getWorker().generateSessionKeyForAlgorithm(opts).catch(errorReporter),
