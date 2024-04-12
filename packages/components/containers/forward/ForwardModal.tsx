@@ -6,7 +6,7 @@ import { Button, Href } from '@proton/atoms';
 import { CryptoProxy, PrivateKeyReference, PublicKeyReference } from '@proton/crypto/lib';
 import useLoading from '@proton/hooks/useLoading';
 import { SetupForwardingParameters, setupForwarding, updateForwardingFilter } from '@proton/shared/lib/api/forwardings';
-import { ADDRESS_RECEIVE, ENCRYPTION_CONFIGS, ENCRYPTION_TYPES, RECIPIENT_TYPES } from '@proton/shared/lib/constants';
+import { ADDRESS_RECEIVE, KEYGEN_CONFIGS, KEYGEN_TYPES, RECIPIENT_TYPES } from '@proton/shared/lib/constants';
 import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Address, DecryptedKey, ForwardingType, OutgoingAddressForwarding } from '@proton/shared/lib/interfaces';
@@ -106,7 +106,7 @@ const compareContactEmailByEmail = (a: ContactEmail, b: ContactEmail) => {
     return a.Email.localeCompare(b.Email);
 };
 
-const encryptionConfig = ENCRYPTION_CONFIGS[ENCRYPTION_TYPES.CURVE25519];
+const keyGenConfig = KEYGEN_CONFIGS[KEYGEN_TYPES.CURVE25519];
 
 const ForwardModal = ({ forward, onClose, ...rest }: Props) => {
     const isEditing = !!forward;
@@ -154,7 +154,7 @@ const ForwardModal = ({ forward, onClose, ...rest }: Props) => {
         const [newKey] = await addAddressKeysProcess({
             api,
             userKeys,
-            encryptionConfig,
+            keyGenConfig,
             addresses,
             address: forwarderAddress,
             addressKeys: model.forwarderAddressKeys,

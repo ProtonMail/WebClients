@@ -1,15 +1,15 @@
 import { CryptoProxy, PrivateKeyReference, toPublicKeyReference } from '@proton/crypto';
 
-import { ENCRYPTION_CONFIGS, ENCRYPTION_TYPES } from '../../lib/constants';
+import { KEYGEN_CONFIGS, KEYGEN_TYPES } from '../../lib/constants';
 import { Key } from '../../lib/interfaces';
 import { generateAddressKey, generateAddressKeyTokens, generateUserKey } from '../../lib/keys';
 
-const encryptionConfig = ENCRYPTION_CONFIGS[ENCRYPTION_TYPES.CURVE25519];
+const keyGenConfig = KEYGEN_CONFIGS[KEYGEN_TYPES.CURVE25519];
 
 export const getUserKey = async (ID: string, keyPassword: string, version = 3) => {
     const { privateKey, privateKeyArmored } = await generateUserKey({
         passphrase: keyPassword,
-        encryptionConfig,
+        keyGenConfig,
     });
     return {
         key: {
@@ -57,7 +57,7 @@ export const getAddressKey = async (ID: string, userKey: PrivateKeyReference, em
     const key = await generateAddressKey({
         email,
         passphrase: 'tmp',
-        encryptionConfig,
+        keyGenConfig,
     });
     return getAddressKeyHelper(ID, userKey, key.privateKey, version);
 };
@@ -85,7 +85,7 @@ export const getLegacyAddressKey = async (ID: string, password: string, email: s
     const key = await generateAddressKey({
         email,
         passphrase: password,
-        encryptionConfig,
+        keyGenConfig,
     });
     return {
         key: {
