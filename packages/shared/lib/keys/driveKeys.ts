@@ -3,7 +3,7 @@ import { arrayToHexString, stringToUtf8Array } from '@proton/crypto/lib/utils';
 
 import { createSessionKey, getEncryptedSessionKey } from '../calendar/crypto/encrypt';
 import { generatePassphrase } from '../calendar/crypto/keys/calendarKeys';
-import { ENCRYPTION_CONFIGS, ENCRYPTION_TYPES } from '../constants';
+import { KEYGEN_CONFIGS, KEYGEN_TYPES } from '../constants';
 import { uint8ArrayToBase64String } from '../helpers/encoding';
 
 interface UnsignedEncryptionPayload {
@@ -85,10 +85,10 @@ export const decryptUnsigned = async ({ armoredMessage, privateKey }: UnsignedDe
 };
 
 export const generateDriveKey = async (rawPassphrase: string) => {
-    const encryptionConfigs = ENCRYPTION_CONFIGS[ENCRYPTION_TYPES.CURVE25519];
+    const keyGenConfigs = KEYGEN_CONFIGS[KEYGEN_TYPES.CURVE25519];
     const privateKey = await CryptoProxy.generateKey({
         userIDs: [{ name: 'Drive key' }],
-        ...encryptionConfigs,
+        ...keyGenConfigs,
     });
 
     const privateKeyArmored = await CryptoProxy.exportPrivateKey({

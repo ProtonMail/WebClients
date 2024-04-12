@@ -1,4 +1,4 @@
-import { Address, Api, DecryptedKey, EncryptionConfig, KeyTransparencyVerify } from '../interfaces';
+import { Address, Api, DecryptedKey, KeyGenConfig, KeyTransparencyVerify } from '../interfaces';
 import { createAddressKeyLegacy, createAddressKeyV2 } from './add';
 import { getHasMigratedAddressKeys } from './keyMigration';
 
@@ -7,7 +7,7 @@ type OnUpdateCallback = (ID: string, update: { status: 'loading' | 'error' | 'ok
 interface MissingKeysSelfProcessArguments {
     api: Api;
     userKeys: DecryptedKey[];
-    encryptionConfig: EncryptionConfig;
+    keyGenConfig: KeyGenConfig;
     addresses: Address[];
     addressesToGenerate: Address[];
     password: string;
@@ -18,7 +18,7 @@ interface MissingKeysSelfProcessArguments {
 export const missingKeysSelfProcess = ({
     api,
     userKeys,
-    encryptionConfig,
+    keyGenConfig,
     addresses,
     addressesToGenerate,
     password,
@@ -36,7 +36,7 @@ export const missingKeysSelfProcess = ({
                     await createAddressKeyV2({
                         api,
                         address,
-                        encryptionConfig,
+                        keyGenConfig,
                         userKeys,
                         activeKeys: [],
                         keyTransparencyVerify,
@@ -45,7 +45,7 @@ export const missingKeysSelfProcess = ({
                     await createAddressKeyLegacy({
                         api,
                         address,
-                        encryptionConfig,
+                        keyGenConfig,
                         passphrase: password,
                         activeKeys: [],
                         keyTransparencyVerify,

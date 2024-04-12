@@ -2,7 +2,7 @@ import { AlgorithmInfo } from '@proton/crypto';
 import capitalize from '@proton/utils/capitalize';
 import unique from '@proton/utils/unique';
 
-import { EncryptionConfig } from '../interfaces';
+import { KeyGenConfig } from '../interfaces';
 
 const ECC_ALGS: Set<AlgorithmInfo['algorithm']> = new Set(['ecdh', 'ecdsa', 'eddsa']);
 
@@ -43,16 +43,16 @@ export const getFormattedAlgorithmNames = (algorithmInfos: AlgorithmInfo[] = [])
 };
 
 /**
- * Determine whether any of the given algorithmInfo matches the encryptionConfig
+ * Determine whether any of the given algorithmInfo matches the keyGenConfig
  */
-export const getAlgorithmExists = (algorithmInfos: AlgorithmInfo[] = [], encryptionConfig: EncryptionConfig) => {
+export const getAlgorithmExists = (algorithmInfos: AlgorithmInfo[] = [], keyGenConfig: KeyGenConfig) => {
     return algorithmInfos.some(({ algorithm, curve, bits }) => {
         if (isECC(algorithm)) {
-            return curve === encryptionConfig.curve;
+            return curve === keyGenConfig.curve;
         }
 
         if (isRSA(algorithm)) {
-            return bits === encryptionConfig.rsaBits;
+            return bits === keyGenConfig.rsaBits;
         }
 
         return false;

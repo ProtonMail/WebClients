@@ -11,9 +11,9 @@ import {
 import { SIGNATURE_CONTEXT } from '@proton/shared/lib/calendar/crypto/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { ENCRYPTION_CONFIGS, ENCRYPTION_TYPES } from '../../../constants';
+import { KEYGEN_CONFIGS, KEYGEN_TYPES } from '../../../constants';
 import { uint8ArrayToBase64String } from '../../../helpers/encoding';
-import { EncryptionConfig, SimpleMap } from '../../../interfaces';
+import { KeyGenConfig, SimpleMap } from '../../../interfaces';
 import { CreateOrResetCalendarPayload, DecryptedCalendarKey, CalendarKey as tsKey } from '../../../interfaces/calendar';
 import { getEncryptedSessionKey } from '../encrypt';
 
@@ -27,14 +27,14 @@ export const generatePassphrase = () => {
  */
 export const generateCalendarKey = async ({
     passphrase,
-    encryptionConfig,
+    keyGenConfig,
 }: {
     passphrase: string;
-    encryptionConfig: EncryptionConfig;
+    keyGenConfig: KeyGenConfig;
 }) => {
     const privateKey = await CryptoProxy.generateKey({
         userIDs: [{ name: 'Calendar key' }],
-        ...encryptionConfig,
+        ...keyGenConfig,
     });
 
     const privateKeyArmored = await CryptoProxy.exportPrivateKey({ privateKey: privateKey, passphrase });
@@ -255,10 +255,10 @@ export const generateCalendarKeyPayload = async ({
     publicKey: PublicKeyReference;
 }): Promise<CreateOrResetCalendarPayload> => {
     const passphrase = generatePassphrase();
-    const encryptionConfig = ENCRYPTION_CONFIGS[ENCRYPTION_TYPES.CURVE25519];
+    const keyGenConfig = KEYGEN_CONFIGS[KEYGEN_TYPES.CURVE25519];
     const [{ privateKeyArmored: PrivateKey }, { dataPacket: DataPacket, keyPacket: KeyPacket, signature: Signature }] =
         await Promise.all([
-            generateCalendarKey({ passphrase, encryptionConfig }),
+            generateCalendarKey({ passphrase, keyGenConfig }),
             encryptPassphrase({ passphrase, privateKey, publicKey }),
         ]);
 
