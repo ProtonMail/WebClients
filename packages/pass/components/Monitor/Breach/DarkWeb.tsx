@@ -27,7 +27,7 @@ export const DarkWeb: FC<Props> = ({ breached, onUpsell }) => {
                     : c('Description').t`Get notified if your email, password or other personal data was leaked.`
             }
             subtitleClassname={breached ? 'color-danger' : 'color-norm-major'}
-            icon={() => <img src={breached ? shieldDanger : shield} alt="" />}
+            icon={() => <img src={breached ? shieldDanger : shield} alt="" className="shrink-0" />}
             actions={
                 <Button
                     type="submit"
