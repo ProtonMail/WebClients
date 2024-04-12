@@ -2,15 +2,8 @@ import { useEffect } from 'react';
 
 import { useConversationCounts } from '@proton/components/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { IPCInboxMessageBroker } from '@proton/shared/lib/desktop/desktopTypes';
 import { invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
-
-declare global {
-    interface Window {
-        ipcInboxMessageBroker?: IPCInboxMessageBroker;
-    }
-}
 
 const useInboxDesktopBadgeCount = () => {
     const [conversationCounts] = useConversationCounts();
