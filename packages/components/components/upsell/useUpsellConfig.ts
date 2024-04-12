@@ -1,12 +1,13 @@
+import { SUBSCRIPTION_STEPS, useFlag, useSubscriptionModal } from '@proton/components/containers';
+import { useConfig, useSubscription, useUser } from '@proton/components/hooks';
 import { APPS } from '@proton/shared/lib/constants';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { addUpsellPath, getUpgradePath } from '@proton/shared/lib/helpers/upsell';
 
-import { SUBSCRIPTION_STEPS, useConfig, useFlag, useSubscription, useSubscriptionModal, useUser } from '../..';
 import getUpsellSubscriptionModalConfig from './getUpsellSubscriptionModalConfig';
 
 // Return config properties to inject in the subscription modal
-const useUpsellConfig = (upsellRef: string) => {
+const useUpsellConfig = (upsellRef?: string, step?: SUBSCRIPTION_STEPS) => {
     const [user] = useUser();
     const [subscription] = useSubscription();
     const [openSubscriptionModal] = useSubscriptionModal();
@@ -16,17 +17,15 @@ const useUpsellConfig = (upsellRef: string) => {
     // Make sure the new upsell flow is never enabled for the account app in case the modal is used in multiple places
     const isAccount = APP_NAME === APPS.PROTONACCOUNT;
 
-    if (!isAccount && !isElectronMail && inboxUpsellFlowEnabled) {
+    if (!isAccount && !isElectronMail && inboxUpsellFlowEnabled && upsellRef) {
+        const modalStep =
+            step || ABTestInboxUpsellStepEnabled ? SUBSCRIPTION_STEPS.PLAN_SELECTION : SUBSCRIPTION_STEPS.CHECKOUT;
+
         // The subscription modal will open in inbox app
         return {
             upgradePath: '',
             onUpgrade() {
-                openSubscriptionModal(
-                    getUpsellSubscriptionModalConfig(
-                        upsellRef,
-                        ABTestInboxUpsellStepEnabled ? SUBSCRIPTION_STEPS.PLAN_SELECTION : undefined
-                    )
-                );
+                openSubscriptionModal(getUpsellSubscriptionModalConfig(upsellRef, modalStep));
             },
         };
     }

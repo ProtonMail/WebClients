@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { SUBSCRIPTION_STEPS } from '@proton/components/containers';
 import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 
@@ -17,7 +18,8 @@ const AutoDeleteUpsellModal = ({ modalProps }: Props) => {
         component: UPSELL_COMPONENT.MODAL,
         feature: MAIL_UPSELL_PATHS.AUTO_DELETE,
     });
-    const upsellConfig = useUpsellConfig(upsellRef);
+    const upsellConfig = useUpsellConfig(upsellRef, SUBSCRIPTION_STEPS.PLAN_SELECTION);
+
     return (
         <UpsellModal
             data-testid="auto-delete:banner:upsell-modal"
