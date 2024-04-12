@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { NotificationDot } from '@proton/atoms/NotificationDot';
 import { ThemeColor } from '@proton/colors/types';
-import { baseUseSelector } from '@proton/redux-shared-store';
+import { baseUseSelector } from '@proton/redux-shared-store/sharedContext';
 import { DRAWER_NATIVE_APPS, OpenDrawerArgs } from '@proton/shared/lib/drawer/interfaces';
 
 import useDrawer from '../../hooks/drawer/useDrawer';
