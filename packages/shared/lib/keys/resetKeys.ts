@@ -1,5 +1,5 @@
-import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS } from '../constants';
-import { Address, AddressKeyPayloadV2, EncryptionConfig, PreAuthKTVerify } from '../interfaces';
+import { DEFAULT_KEYGEN_TYPE, KEYGEN_CONFIGS } from '../constants';
+import { Address, AddressKeyPayloadV2, KeyGenConfig, PreAuthKTVerify } from '../interfaces';
 import { generateAddressKey, generateAddressKeyTokens } from './addressKeys';
 import { getActiveKeyObject, getNormalizedActiveKeys } from './getActiveKeys';
 import { getDefaultKeyFlags } from './keyFlags';
@@ -9,12 +9,12 @@ import { generateUserKey } from './userKeys';
 export const getResetAddressesKeysV2 = async ({
     addresses = [],
     passphrase = '',
-    encryptionConfig = ENCRYPTION_CONFIGS[DEFAULT_ENCRYPTION_CONFIG],
+    keyGenConfig = KEYGEN_CONFIGS[DEFAULT_KEYGEN_TYPE],
     preAuthKTVerify,
 }: {
     addresses: Address[];
     passphrase: string;
-    encryptionConfig?: EncryptionConfig;
+    keyGenConfig?: KeyGenConfig;
     preAuthKTVerify: PreAuthKTVerify;
 }): Promise<
     | { userKeyPayload: string; addressKeysPayload: AddressKeyPayloadV2[]; onSKLPublishSuccess: OnSKLPublishSuccess }
@@ -25,7 +25,7 @@ export const getResetAddressesKeysV2 = async ({
     }
     const { privateKey: userKey, privateKeyArmored: userKeyPayload } = await generateUserKey({
         passphrase,
-        encryptionConfig,
+        keyGenConfig,
     });
 
     const keyTransparencyVerify = preAuthKTVerify([
@@ -41,7 +41,7 @@ export const getResetAddressesKeysV2 = async ({
             const { privateKey, privateKeyArmored } = await generateAddressKey({
                 email: Email,
                 passphrase: token,
-                encryptionConfig,
+                keyGenConfig,
             });
 
             const newPrimaryKey = await getActiveKeyObject(privateKey, {
