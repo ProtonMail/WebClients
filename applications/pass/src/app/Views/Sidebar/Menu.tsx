@@ -20,6 +20,7 @@ import { useOnboarding } from '@proton/pass/components/Onboarding/OnboardingProv
 import { useOrganization } from '@proton/pass/components/Organization/OrganizationProvider';
 import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { UpsellRef } from '@proton/pass/constants';
+import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { useMenuItems } from '@proton/pass/hooks/useMenuItems';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
 import { clientOfflineUnlocked } from '@proton/pass/lib/client';
@@ -31,6 +32,7 @@ import {
     selectPlanDisplayName,
     selectUser,
 } from '@proton/pass/store/selectors';
+import { PassFeature } from '@proton/pass/types/api/features';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
@@ -46,6 +48,7 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
     const onboarding = useOnboarding();
     const org = useOrganization();
     const client = useClientRef();
+    const monitorEnabled = useFeatureFlag(PassFeature.PassMonitor);
 
     const menu = useMenuItems({ onAction: onToggle });
     const vaultActions = useVaultActions();
@@ -103,8 +106,7 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
                 {org && org.b2bAdmin && <AdminPanelButton {...org.organization} />}
 
                 <hr className="dropdown-item-hr my-2 mx-4" aria-hidden="true" />
-                {/* TODO add feature flag here */}
-                <MonitorButton />
+                {monitorEnabled && <MonitorButton />}
 
                 <Submenu
                     icon="bolt"
