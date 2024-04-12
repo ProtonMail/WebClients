@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { useInactiveKeys } from '@proton/account';
 import { Button } from '@proton/atoms';
 import { AlgorithmInfo } from '@proton/crypto';
-import { EncryptionConfig } from '@proton/shared/lib/interfaces';
+import { KeyGenConfig } from '@proton/shared/lib/interfaces';
 import {
     OnKeyImportCallback,
     addAddressKeysProcess,
@@ -200,14 +200,14 @@ const AddressKeysSection = () => {
         setAddKeyModalOpen(true);
     };
 
-    const onAdd = async (encryptionConfig: EncryptionConfig) => {
+    const onAdd = async (keyGenConfig: KeyGenConfig) => {
         if (!Address || !addressKeys || !userKeys || !Addresses) {
             throw new Error('Missing address or address keys');
         }
         const [newKey] = await addAddressKeysProcess({
             api,
             userKeys,
-            encryptionConfig,
+            keyGenConfig,
             addresses: Addresses,
             address: Address,
             addressKeys: addressKeys,

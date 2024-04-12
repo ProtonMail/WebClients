@@ -1,6 +1,6 @@
 import { PrivateKeyReference } from '@proton/crypto';
 import { checkMemberAddressAvailability, createMember, createMemberAddress } from '@proton/shared/lib/api/members';
-import { ENCRYPTION_CONFIGS, ENCRYPTION_TYPES, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
+import { KEYGEN_CONFIGS, KEYGEN_TYPES, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 import { getEmailParts, validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import { Address, Api, KeyTransparencyVerify } from '@proton/shared/lib/interfaces';
 import { GetAddresses } from '@proton/shared/lib/interfaces/hooks/GetAddresses';
@@ -140,7 +140,7 @@ export const createUser = async ({
             member: Member,
             memberAddresses,
             organizationKey: organizationKey,
-            encryptionConfig: ENCRYPTION_CONFIGS[ENCRYPTION_TYPES.CURVE25519],
+            keyGenConfig: KEYGEN_CONFIGS[KEYGEN_TYPES.CURVE25519],
             password,
             keyTransparencyVerify,
         });

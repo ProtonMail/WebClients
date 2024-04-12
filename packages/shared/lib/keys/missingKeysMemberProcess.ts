@@ -1,6 +1,6 @@
 import { PrivateKeyReference } from '@proton/crypto';
 
-import { Address, Api, EncryptionConfig, KeyTransparencyVerify, Member } from '../interfaces';
+import { Address, Api, KeyGenConfig, KeyTransparencyVerify, Member } from '../interfaces';
 import { getHasMemberMigratedAddressKeys } from './keyMigration';
 import { createMemberAddressKeysLegacy, createMemberAddressKeysV2, getDecryptedMemberKey } from './memberKeys';
 
@@ -8,7 +8,7 @@ type OnUpdateCallback = (ID: string, update: { status: 'loading' | 'error' | 'ok
 
 interface MissingKeysMemberProcessArguments {
     api: Api;
-    encryptionConfig: EncryptionConfig;
+    keyGenConfig: KeyGenConfig;
     onUpdate: OnUpdateCallback;
     organizationKey: PrivateKeyReference;
     ownerAddresses: Address[];
@@ -20,7 +20,7 @@ interface MissingKeysMemberProcessArguments {
 
 export const missingKeysMemberProcess = async ({
     api,
-    encryptionConfig,
+    keyGenConfig,
     onUpdate,
     ownerAddresses,
     member,
@@ -50,7 +50,7 @@ export const missingKeysMemberProcess = async ({
                         member,
                         memberAddress,
                         memberAddressKeys: [], // Assume no keys exist for this address since we are in this modal.
-                        encryptionConfig,
+                        keyGenConfig,
                         memberUserKey: primaryMemberUserKey,
                         organizationKey,
                         keyTransparencyVerify,
@@ -61,7 +61,7 @@ export const missingKeysMemberProcess = async ({
                         member,
                         memberAddress,
                         memberAddressKeys: [], // Assume no keys exist for this address since we are in this modal.
-                        encryptionConfig,
+                        keyGenConfig,
                         memberUserKey: primaryMemberUserKey,
                         organizationKey,
                         keyTransparencyVerify,

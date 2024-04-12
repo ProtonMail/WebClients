@@ -7,7 +7,7 @@ import {
     Api,
     CachedOrganizationKey,
     DecryptedKey,
-    EncryptionConfig,
+    KeyGenConfig,
     KeyTransparencyVerify,
     UserModel,
     Address as tsAddress,
@@ -38,7 +38,7 @@ interface SetupMemberKeySharedArguments {
     memberAddresses: tsAddress[];
     password: string;
     organizationKey: PrivateKeyReference;
-    encryptionConfig: EncryptionConfig;
+    keyGenConfig: KeyGenConfig;
     keyTransparencyVerify: KeyTransparencyVerify;
 }
 
@@ -48,7 +48,7 @@ export const setupMemberKeyLegacy = async ({
     memberAddresses,
     password,
     organizationKey,
-    encryptionConfig,
+    keyGenConfig,
     keyTransparencyVerify,
 }: SetupMemberKeySharedArguments) => {
     const { salt: keySalt, passphrase: memberMailboxPassword } = await generateKeySaltAndPassphrase(password);
@@ -58,7 +58,7 @@ export const setupMemberKeyLegacy = async ({
             const { privateKey, privateKeyArmored } = await generateAddressKey({
                 email: address.Email,
                 passphrase: memberMailboxPassword,
-                encryptionConfig,
+                keyGenConfig,
             });
 
             const memberKeyToken = generateMemberToken();
@@ -126,14 +126,14 @@ export const setupMemberKeyV2 = async ({
     memberAddresses,
     password,
     organizationKey,
-    encryptionConfig,
+    keyGenConfig,
     keyTransparencyVerify,
 }: SetupMemberKeySharedArguments) => {
     const { salt: keySalt, passphrase: memberKeyPassword } = await generateKeySaltAndPassphrase(password);
 
     const { privateKey: userPrivateKey, privateKeyArmored: userPrivateKeyArmored } = await generateUserKey({
         passphrase: memberKeyPassword,
-        encryptionConfig,
+        keyGenConfig,
     });
     const memberKeyToken = generateMemberToken();
     const privateKeyArmoredOrganization = await CryptoProxy.exportPrivateKey({
@@ -153,7 +153,7 @@ export const setupMemberKeyV2 = async ({
                 await generateAddressKey({
                     email: address.Email,
                     passphrase: token,
-                    encryptionConfig,
+                    keyGenConfig,
                 });
 
             const newActiveKey = await getActiveKeyObject(addressPrivateKey, {
@@ -263,7 +263,7 @@ interface CreateMemberAddressKeysLegacyArguments {
     memberAddressKeys: DecryptedKey[];
     memberUserKey: PrivateKeyReference;
     organizationKey: PrivateKeyReference;
-    encryptionConfig: EncryptionConfig;
+    keyGenConfig: KeyGenConfig;
     keyTransparencyVerify: KeyTransparencyVerify;
 }
 
@@ -274,7 +274,7 @@ export const createMemberAddressKeysLegacy = async ({
     memberAddressKeys,
     memberUserKey,
     organizationKey,
-    encryptionConfig,
+    keyGenConfig,
     keyTransparencyVerify,
 }: CreateMemberAddressKeysLegacyArguments) => {
     const { privateKey, activationToken, privateKeyArmored, privateKeyArmoredOrganization, organizationToken } =
@@ -282,7 +282,7 @@ export const createMemberAddressKeysLegacy = async ({
             email: memberAddress.Email,
             primaryKey: memberUserKey,
             organizationKey,
-            encryptionConfig,
+            keyGenConfig,
         });
 
     const activeKeys = await getActiveKeys(
@@ -332,7 +332,7 @@ interface CreateMemberAddressKeysV2Arguments {
     memberAddressKeys: DecryptedKey[];
     memberUserKey: PrivateKeyReference;
     organizationKey: PrivateKeyReference;
-    encryptionConfig: EncryptionConfig;
+    keyGenConfig: KeyGenConfig;
     keyTransparencyVerify: KeyTransparencyVerify;
 }
 
@@ -343,7 +343,7 @@ export const createMemberAddressKeysV2 = async ({
     memberAddressKeys,
     memberUserKey,
     organizationKey,
-    encryptionConfig,
+    keyGenConfig,
     keyTransparencyVerify,
 }: CreateMemberAddressKeysV2Arguments) => {
     const { token, signature, organizationSignature, encryptedToken } = await generateAddressKeyTokens(
@@ -354,7 +354,7 @@ export const createMemberAddressKeysV2 = async ({
     const { privateKey: addressPrivateKey, privateKeyArmored: addressPrivateKeyArmored } = await generateAddressKey({
         email: memberAddress.Email,
         passphrase: token,
-        encryptionConfig,
+        keyGenConfig,
     });
 
     const activeKeys = await getActiveKeys(

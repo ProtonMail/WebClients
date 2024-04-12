@@ -28,8 +28,8 @@ import {
     APPS,
     CLIENT_TYPES,
     COUPON_CODES,
-    ENCRYPTION_CONFIGS,
-    ENCRYPTION_TYPES,
+    KEYGEN_CONFIGS,
+    KEYGEN_TYPES,
     VPN_CONNECTIONS,
 } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES, HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
@@ -297,7 +297,7 @@ export const handleSetupOrg = async ({
 
     const { encryptedToken, signature, privateKeyArmored } = await generatePasswordlessOrganizationKey({
         userKey: userKey.privateKey,
-        encryptionConfig: ENCRYPTION_CONFIGS[ENCRYPTION_TYPES.CURVE25519],
+        keyGenConfig: KEYGEN_CONFIGS[KEYGEN_TYPES.CURVE25519],
     });
 
     await srpAuth({
