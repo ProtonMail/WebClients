@@ -47,12 +47,7 @@ const InfoIcon = () => {
             originalPlacement="bottom-end"
             size="large"
         >
-            <Icon
-                name="exclamation-circle"
-                size={4}
-                data-testid="scan-and-download-tooltip"
-                onClick={toggleSpotlight}
-            />
+            <Icon name="info-circle" size={4} data-testid="scan-and-download-tooltip" onClick={toggleSpotlight} />
         </Spotlight>
     );
 };
