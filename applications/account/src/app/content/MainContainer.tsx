@@ -30,7 +30,7 @@ import {
 } from '@proton/components';
 import ContactEmailsProvider from '@proton/components/containers/contacts/ContactEmailsProvider';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
-import { useIsSessionRecoveryAvailable } from '@proton/components/hooks/useSessionRecovery';
+import { useIsSessionRecoveryAvailable, useShowThemeSelection } from '@proton/components/hooks';
 import { getPublicUserProtonAddressApps, getSSOVPNOnlyAccountApps } from '@proton/shared/lib/apps/apps';
 import { getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { getToApp } from '@proton/shared/lib/authentication/apps';
@@ -128,6 +128,7 @@ const MainContainer = () => {
     ]);
 
     const isNotifInboxDesktopAppOn = getFeature(FeatureCode.NotificationInboxDesktopApp).feature?.Value === true;
+    const showThemeSelection = useShowThemeSelection();
     const isBreachesAccountDashboardEnabled = useFlag('BreachesAccountDashboard');
     const [isDataRecoveryAvailable, loadingDataRecovery] = useIsDataRecoveryAvailable();
     const [isSessionRecoveryAvailable, loadingIsSessionRecoveryAvailable] = useIsSessionRecoveryAvailable();
@@ -155,6 +156,7 @@ const MainContainer = () => {
         isNotifInboxDesktopAppOn,
         isScheduleCallsEnabled,
         isBreachesAccountDashboardEnabled,
+        showThemeSelection,
     });
 
     useEffect(() => {

@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { ModalProps, Prompt } from '@proton/components';
-import { canInvokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
+import { invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
@@ -12,11 +12,11 @@ const ClearBrowserDataModal = (rest: ModalProps) => {
     const { esDelete } = useEncryptedSearchContext();
 
     const handleClear = () => {
-        if (!isElectronMail) {
+        if (isElectronMail) {
+            invokeInboxDesktopIPC({ type: 'clearAppData' });
+        } else {
             void esDelete();
             onClose?.();
-        } else if (canInvokeInboxDesktopIPC) {
-            window.ipcInboxMessageBroker!.send('clearAppData', undefined);
         }
     };
 
