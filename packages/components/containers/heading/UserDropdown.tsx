@@ -1,7 +1,6 @@
 import { MouseEvent, useEffect, useMemo, useState } from 'react';
 import { useLocation } from 'react-router';
 
-import { useFlag } from '@unleash/proxy-client-react';
 import { addDays, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
@@ -206,8 +205,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
     const upgradeUrl = addUpsellPath(upgradePathname, upsellRef);
     const displayUpgradeButton = (user.isFree || isTrial(subscription)) && !location.pathname.endsWith(upgradePathname);
 
-    const isScheduleCallsEnabled = useFlag('ScheduleB2BSupportPhoneCalls');
-    const canSchedulePhoneCalls = canScheduleOrganizationPhoneCalls({ organization, user, isScheduleCallsEnabled });
+    const canSchedulePhoneCalls = canScheduleOrganizationPhoneCalls({ organization, user });
 
     const handleScheduleCallClick = async () => {
         close();

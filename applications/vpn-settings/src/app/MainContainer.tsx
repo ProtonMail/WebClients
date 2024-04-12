@@ -61,7 +61,6 @@ import {
     OrganizationTwoFAHeader,
     OrganizationTwoFARemindersSection,
     SsoPage,
-    useFlag,
 } from '@proton/components/containers';
 import TwoFactorSection from '@proton/components/containers/account/TwoFactorSection';
 import { PrivateMainSettingsAreaBase } from '@proton/components/containers/layout/PrivateMainSettingsArea';
@@ -94,8 +93,7 @@ const MainContainer: FunctionComponent = () => {
     const location = useLocation();
     const zendeskRef = useRef<ZendeskRef>();
     const [showChat, setShowChat] = useState({ autoToggle: false, render: false });
-    const isScheduleCallsEnabled = useFlag('ScheduleB2BSupportPhoneCalls');
-    const routes = getRoutes({ user, subscription, organization, isScheduleCallsEnabled });
+    const routes = getRoutes({ user, subscription, organization });
     const canEnableChat = useCanEnableChat(user);
     const [authenticatedBugReportMode, setAuthenticatedBugReportMode] = useState<BugModalMode>();
     const [authenticatedBugReportModal, setAuthenticatedBugReportModal, render] = useModalState();

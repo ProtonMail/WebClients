@@ -5,19 +5,10 @@ import { hasPhoneSupport } from './organization';
 export const canScheduleOrganizationPhoneCalls = ({
     organization,
     user,
-    isScheduleCallsEnabled,
 }: {
     organization: Organization | undefined;
     user: UserModel;
-    isScheduleCallsEnabled: boolean;
 }) => {
-    /**
-     * Feature flag check
-     */
-    if (!isScheduleCallsEnabled) {
-        return false;
-    }
-
     /**
      * User is admin of an org check
      */
