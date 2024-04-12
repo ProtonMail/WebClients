@@ -9,6 +9,7 @@ import {
 import { ThunkAction } from 'redux-thunk';
 
 import type { ReducerValue, ThunkOptions } from './interface';
+import { createPromiseCache } from './promiseCache';
 
 export const createAsyncModelThunk = <Returned, State, Extra, ThunkArg = void>(
     prefix: string,
@@ -30,22 +31,19 @@ export const createAsyncModelThunk = <Returned, State, Extra, ThunkArg = void>(
         }) => ReducerValue<Returned>;
     }
 ) => {
-    const pending = createAction(`${prefix}/pending`, (id: string) => ({
+    const pending = createAction(`${prefix}/pending`, () => ({
         payload: undefined,
-        meta: { id },
     }));
 
-    const fulfilled = createAction(`${prefix}/fulfilled`, (payload: Returned, id: string) => ({
+    const fulfilled = createAction(`${prefix}/fulfilled`, (payload: Returned) => ({
         payload,
-        meta: { id },
     }));
 
-    const rejected = createAction(`${prefix}/failed`, (payload: any, id: string) => ({
+    const rejected = createAction(`${prefix}/failed`, (payload: any) => ({
         payload,
-        meta: { id },
     }));
 
-    const promises: { [key: string]: Promise<Returned> | undefined } = {};
+    const promiseCache = createPromiseCache<Returned>();
 
     const thunk = (
         options?: ThunkOptions<ThunkArg>
@@ -56,31 +54,24 @@ export const createAsyncModelThunk = <Returned, State, Extra, ThunkArg = void>(
         ReturnType<typeof pending> | ReturnType<typeof fulfilled> | ReturnType<typeof rejected>
     > => {
         return (dispatch, getState, extraArgument) => {
-            const id = (options?.thunkArg || 'default') as string;
-            const previousPromise = promises[id];
-            if (previousPromise) {
-                return previousPromise;
-            }
-            const old = previous({ dispatch, getState, extraArgument, options });
-            if (old.value !== undefined && !old.error && !options?.forceFetch) {
-                return Promise.resolve(old.value);
-            }
-            const run = async () => {
-                dispatch(pending(id));
+            const select = () => {
+                const oldValue = previous({ dispatch, getState, extraArgument, options })?.value;
+                if (oldValue !== undefined && !options?.forceFetch) {
+                    return Promise.resolve(oldValue);
+                }
+            };
+            const cb = async () => {
                 try {
+                    dispatch(pending());
                     const value = await miss({ dispatch, getState, extraArgument, options });
-                    dispatch(fulfilled(value, id));
-                    delete promises[id];
+                    dispatch(fulfilled(value));
                     return value;
                 } catch (error) {
-                    dispatch(rejected(miniSerializeError(error), id));
-                    delete promises[id];
+                    dispatch(rejected(miniSerializeError(error)));
                     throw error;
                 }
             };
-            const promise = run();
-            promises[id] = promise;
-            return promise;
+            return promiseCache(select, cb);
         };
     };
 
@@ -121,3 +112,10 @@ export const previousSelector =
     }) => ReducerValue<Returned>) =>
     (extra) =>
         selector(extra.getState());
+
+export const selectPersistModel = <T>(state: ReducerValue<T>) => {
+    if (state.error || state.value === undefined) {
+        return undefined;
+    }
+    return state;
+};
