@@ -1,4 +1,4 @@
-import { ThemeSetting } from '../themes/themes';
+import type { ThemeSetting } from '../themes/themes';
 
 export type CHANGE_VIEW_TARGET = 'mail' | 'calendar' | 'account';
 export type ElectronNotification = {
