@@ -12,7 +12,7 @@ import {
     updateOrganizationKeysV2,
     updatePasswordlessOrganizationKeys as updatePasswordlessOrganizationKeysConfig,
 } from '@proton/shared/lib/api/organization';
-import { ENCRYPTION_CONFIGS, ENCRYPTION_TYPES, MEMBER_PRIVATE, MEMBER_ROLE } from '@proton/shared/lib/constants';
+import { KEYGEN_CONFIGS, KEYGEN_TYPES, MEMBER_PRIVATE, MEMBER_ROLE } from '@proton/shared/lib/constants';
 import { getIsAddressEnabled } from '@proton/shared/lib/helpers/address';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import {
@@ -51,7 +51,7 @@ import { getMemberAddresses, membersThunk } from '../members';
 import { userKeysThunk } from '../userKeys';
 import { type OrganizationKeyState, organizationKeyThunk } from './index';
 
-const encryptionConfig = ENCRYPTION_CONFIGS[ENCRYPTION_TYPES.CURVE25519];
+const keyGenConfig = KEYGEN_CONFIGS[KEYGEN_TYPES.CURVE25519];
 
 export const getPrivateAdminError = () => {
     return c('passwordless').t`Private users can be promoted to admin when they've signed in for the first time`;
@@ -583,7 +583,7 @@ export const rotateOrganizationKeys = ({
             await generateOrganizationKeys({
                 keyPassword,
                 backupPassword: newPassword,
-                encryptionConfig,
+                keyGenConfig,
             });
 
         const publicKey = await CryptoProxy.importPublicKey({ armoredKey: privateKeyArmored });
@@ -657,7 +657,7 @@ export const createPasswordlessOrganizationKeys = ({
         }
         const { encryptedToken, signature, privateKey, privateKeyArmored } = await generatePasswordlessOrganizationKey({
             userKey,
-            encryptionConfig,
+            keyGenConfig,
         });
         const { publicAdminActivations, privateAdminInvitations } = await getReEncryptedAdminTokens({
             armoredMessage: encryptedToken,
@@ -710,7 +710,7 @@ export const rotatePasswordlessOrganizationKeys = ({
         }
         const { signature, privateKey, privateKeyArmored, encryptedToken } = await generatePasswordlessOrganizationKey({
             userKey,
-            encryptionConfig,
+            keyGenConfig,
         });
         const { publicAdminActivations, privateAdminInvitations } = await getReEncryptedAdminTokens({
             armoredMessage: encryptedToken,

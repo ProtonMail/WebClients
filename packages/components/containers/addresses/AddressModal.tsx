@@ -6,12 +6,7 @@ import { Button, CircleLoader } from '@proton/atoms';
 import { useLoading } from '@proton/hooks';
 import { createAddress } from '@proton/shared/lib/api/addresses';
 import { getAllMemberAddresses } from '@proton/shared/lib/api/members';
-import {
-    ADDRESS_TYPE,
-    DEFAULT_ENCRYPTION_CONFIG,
-    ENCRYPTION_CONFIGS,
-    MEMBER_PRIVATE,
-} from '@proton/shared/lib/constants';
+import { ADDRESS_TYPE, DEFAULT_KEYGEN_TYPE, KEYGEN_CONFIGS, MEMBER_PRIVATE } from '@proton/shared/lib/constants';
 import { getAvailableAddressDomains } from '@proton/shared/lib/helpers/address';
 import { getEmailParts } from '@proton/shared/lib/helpers/email';
 import {
@@ -56,7 +51,8 @@ import {
     useUser,
 } from '../../hooks';
 import { useKTVerifier } from '../keyTransparency';
-import SelectEncryption from '../keys/addKey/SelectEncryption';
+
+const keyGenConfig = KEYGEN_CONFIGS[DEFAULT_KEYGEN_TYPE];
 
 interface Props extends ModalProps<'form'> {
     member?: Member;
@@ -76,7 +72,6 @@ const AddressModal = ({ member, members, useEmail, ...rest }: Props) => {
     const [confirmPassword, setConfirmPassword] = useState('');
     const api = useApi();
     const initialMember = member || members[0];
-    const [encryptionType, setEncryptionType] = useState(DEFAULT_ENCRYPTION_CONFIG);
     const authentication = useAuthentication();
     const [model, setModel] = useState(() => {
         return {
@@ -157,8 +152,6 @@ const AddressModal = ({ member, members, useEmail, ...rest }: Props) => {
             })
         );
 
-        const encryptionConfig = ENCRYPTION_CONFIGS[encryptionType];
-
         if (shouldGenerateKeys) {
             const userKeys = await getUserKeys();
 
@@ -169,7 +162,7 @@ const AddressModal = ({ member, members, useEmail, ...rest }: Props) => {
                     addresses,
                     addressesToGenerate: [Address],
                     password: authentication.getPassword(),
-                    encryptionConfig,
+                    keyGenConfig,
                     onUpdate: noop,
                     keyTransparencyVerify,
                 });
@@ -181,7 +174,7 @@ const AddressModal = ({ member, members, useEmail, ...rest }: Props) => {
                 if (shouldSetupMemberKeys && password) {
                     await setupMemberKeys({
                         ownerAddresses: addresses,
-                        encryptionConfig,
+                        keyGenConfig,
                         organizationKey: organizationKey.privateKey,
                         member: selectedMember,
                         memberAddresses,
@@ -192,7 +185,7 @@ const AddressModal = ({ member, members, useEmail, ...rest }: Props) => {
                 } else {
                     await missingKeysMemberProcess({
                         api,
-                        encryptionConfig,
+                        keyGenConfig,
                         ownerAddresses: addresses,
                         memberAddressesToGenerate: [Address],
                         member: selectedMember,
@@ -348,12 +341,6 @@ const AddressModal = ({ member, members, useEmail, ...rest }: Props) => {
                             autoComplete="new-password"
                         />
                     </>
-                )}
-                {!useEmail && shouldGenerateKeys && (
-                    <div className="mb-6">
-                        <div className="text-semibold mb-1">{c('Label').t`Key strength`}</div>
-                        <SelectEncryption encryptionType={encryptionType} setEncryptionType={setEncryptionType} />
-                    </div>
                 )}
             </ModalContent>
             <ModalFooter>

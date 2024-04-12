@@ -12,12 +12,7 @@ import {
     updateRole,
     updateVPN,
 } from '@proton/shared/lib/api/members';
-import {
-    DEFAULT_ENCRYPTION_CONFIG,
-    ENCRYPTION_CONFIGS,
-    MEMBER_ROLE,
-    VPN_CONNECTIONS,
-} from '@proton/shared/lib/constants';
+import { DEFAULT_KEYGEN_TYPE, KEYGEN_CONFIGS, MEMBER_ROLE, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import type {
     Address,
@@ -210,7 +205,7 @@ export const createMember = ({
                 member: Member,
                 memberAddresses,
                 organizationKey: organizationKey.privateKey,
-                encryptionConfig: ENCRYPTION_CONFIGS[DEFAULT_ENCRYPTION_CONFIG],
+                keyGenConfig: KEYGEN_CONFIGS[DEFAULT_KEYGEN_TYPE],
                 password: model.password,
                 keyTransparencyVerify,
             });
