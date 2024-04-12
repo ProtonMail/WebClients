@@ -1,7 +1,7 @@
 import { getModelState } from '@proton/account/test';
 import { CryptoProxy, PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/crypto';
 import { generatePassphrase } from '@proton/shared/lib/calendar/crypto/keys/calendarKeys';
-import { ENCRYPTION_CONFIGS, ENCRYPTION_TYPES, KEY_FLAG } from '@proton/shared/lib/constants';
+import { KEYGEN_CONFIGS, KEYGEN_TYPES, KEY_FLAG } from '@proton/shared/lib/constants';
 import { DecryptedAddressKey } from '@proton/shared/lib/interfaces';
 
 import { base64ToArray } from '../base64';
@@ -83,7 +83,7 @@ export const generateCalendarKeysAndPassphrase = async (addressKey: GeneratedKey
     const passphrase = generatePassphrase();
     const privateKey = await CryptoProxy.generateKey({
         userIDs: [{ name: 'Calendar key' }],
-        ...ENCRYPTION_CONFIGS[ENCRYPTION_TYPES.CURVE25519],
+        ...KEYGEN_CONFIGS[KEYGEN_TYPES.CURVE25519],
     });
     const privateKeyArmored = await CryptoProxy.exportPrivateKey({ privateKey: privateKey, passphrase });
     const publicKeyArmored = await CryptoProxy.exportPublicKey({ key: privateKey });

@@ -9,13 +9,13 @@ import {
 import noop from '@proton/utils/noop';
 
 import { createUserKeyRoute, replaceAddressTokens } from '../../api/keys';
-import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS } from '../../constants';
+import { DEFAULT_KEYGEN_TYPE, KEYGEN_CONFIGS } from '../../constants';
 import {
     Address,
     Api,
     CachedOrganizationKey,
     DecryptedKey,
-    EncryptionConfig,
+    KeyGenConfig,
     KeyTransparencyVerify,
     UserModel,
 } from '../../interfaces';
@@ -31,14 +31,14 @@ interface AddAddressKeysProcessArguments {
     userKeys: DecryptedKey[];
     address: Address;
     addresses: Address[];
-    encryptionConfig: EncryptionConfig;
+    keyGenConfig: KeyGenConfig;
     keyPassword: string;
     keyTransparencyVerify: KeyTransparencyVerify;
 }
 
 export const addAddressKeysProcess = async ({
     api,
-    encryptionConfig,
+    keyGenConfig,
     addresses,
     address,
     addressKeys,
@@ -54,7 +54,7 @@ export const addAddressKeysProcess = async ({
         return createAddressKeyV2({
             api,
             userKeys,
-            encryptionConfig,
+            keyGenConfig,
             activeKeys,
             address,
             keyTransparencyVerify,
@@ -64,7 +64,7 @@ export const addAddressKeysProcess = async ({
     return createAddressKeyLegacy({
         api,
         address,
-        encryptionConfig,
+        keyGenConfig,
         passphrase: keyPassword,
         activeKeys,
         keyTransparencyVerify,
@@ -73,7 +73,7 @@ export const addAddressKeysProcess = async ({
 
 interface AddUserKeysProcessArguments {
     api: Api;
-    encryptionConfig?: EncryptionConfig;
+    keyGenConfig?: KeyGenConfig;
     user: UserModel;
     userKeys: DecryptedKey[];
     addresses: Address[];
@@ -86,7 +86,7 @@ interface AddUserKeysProcessArguments {
 
 export const addUserKeysProcess = async ({
     api,
-    encryptionConfig = ENCRYPTION_CONFIGS[DEFAULT_ENCRYPTION_CONFIG],
+    keyGenConfig = KEYGEN_CONFIGS[DEFAULT_KEYGEN_TYPE],
     user,
     userKeys,
     addresses,
@@ -98,7 +98,7 @@ export const addUserKeysProcess = async ({
 }: AddUserKeysProcessArguments) => {
     const { privateKey, privateKeyArmored } = await generateUserKey({
         passphrase,
-        encryptionConfig,
+        keyGenConfig,
     });
 
     await api(

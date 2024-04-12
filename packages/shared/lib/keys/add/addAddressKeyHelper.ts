@@ -1,6 +1,6 @@
 import { createAddressKeyRoute, createAddressKeyRouteV2 } from '../../api/keys';
-import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS } from '../../constants';
-import { ActiveKey, Address, Api, EncryptionConfig, KeyPair, KeyTransparencyVerify } from '../../interfaces';
+import { DEFAULT_KEYGEN_TYPE, KEYGEN_CONFIGS } from '../../constants';
+import { ActiveKey, Address, Api, KeyGenConfig, KeyPair, KeyTransparencyVerify } from '../../interfaces';
 import { generateAddressKey, getNewAddressKeyToken } from '../addressKeys';
 import { getActiveKeyObject, getNormalizedActiveKeys } from '../getActiveKeys';
 import { getDefaultKeyFlags } from '../keyFlags';
@@ -8,7 +8,7 @@ import { getSignedKeyListWithDeferredPublish } from '../signedKeyList';
 
 interface CreateAddressKeyLegacyArguments {
     api: Api;
-    encryptionConfig?: EncryptionConfig;
+    keyGenConfig?: KeyGenConfig;
     address: Address;
     passphrase: string;
     activeKeys: ActiveKey[];
@@ -29,7 +29,7 @@ const removePrimary = (activeKey: ActiveKey): ActiveKey => {
 export const createAddressKeyLegacy = async ({
     api,
     address,
-    encryptionConfig = ENCRYPTION_CONFIGS[DEFAULT_ENCRYPTION_CONFIG],
+    keyGenConfig = KEYGEN_CONFIGS[DEFAULT_KEYGEN_TYPE],
     passphrase,
     activeKeys,
     keyTransparencyVerify,
@@ -38,7 +38,7 @@ export const createAddressKeyLegacy = async ({
     const { privateKey, privateKeyArmored } = await generateAddressKey({
         email: address.Email,
         passphrase,
-        encryptionConfig,
+        keyGenConfig,
     });
     const newActiveKey = await getActiveKeyObject(privateKey, {
         ID: 'tmp',
@@ -69,7 +69,7 @@ export const createAddressKeyLegacy = async ({
 interface CreateAddressKeyV2Arguments {
     api: Api;
     userKeys: KeyPair[];
-    encryptionConfig?: EncryptionConfig;
+    keyGenConfig?: KeyGenConfig;
     address: Address;
     activeKeys: ActiveKey[];
     keyTransparencyVerify: KeyTransparencyVerify;
@@ -78,7 +78,7 @@ interface CreateAddressKeyV2Arguments {
 export const createAddressKeyV2 = async ({
     api,
     userKeys,
-    encryptionConfig = ENCRYPTION_CONFIGS[DEFAULT_ENCRYPTION_CONFIG],
+    keyGenConfig = KEYGEN_CONFIGS[DEFAULT_KEYGEN_TYPE],
     address,
     activeKeys,
     keyTransparencyVerify,
@@ -87,7 +87,7 @@ export const createAddressKeyV2 = async ({
     const { privateKey, privateKeyArmored } = await generateAddressKey({
         email: address.Email,
         passphrase: token,
-        encryptionConfig,
+        keyGenConfig,
     });
     const newActiveKey = await getActiveKeyObject(privateKey, {
         ID: 'tmp',

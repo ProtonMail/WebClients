@@ -1,6 +1,6 @@
 import type { enums } from '@proton/crypto';
 
-import { EncryptionConfig } from './interfaces';
+import { KeyGenConfig } from './interfaces';
 
 export const DEFAULT_TIMEOUT = 30000; // default fetch timeout
 export const RETRY_DELAY_MAX = 10; // seconds
@@ -825,19 +825,17 @@ export const GIFT_CODE_LENGTH = 16;
 export const KEY_EXTENSION = 'asc';
 export const KEY_FILE_EXTENSION = `.${KEY_EXTENSION}`;
 
-export enum ENCRYPTION_TYPES {
+export enum KEYGEN_TYPES {
     CURVE25519 = 'CURVE25519',
-    RSA4096 = 'RSA4096',
 }
 
-export const DEFAULT_ENCRYPTION_CONFIG = ENCRYPTION_TYPES.CURVE25519;
+export const DEFAULT_KEYGEN_TYPE = KEYGEN_TYPES.CURVE25519;
 
-export const ENCRYPTION_CONFIGS: { [key: string]: EncryptionConfig } = {
-    [ENCRYPTION_TYPES.CURVE25519]: {
+export const KEYGEN_CONFIGS: { [key: string]: KeyGenConfig } = {
+    [KEYGEN_TYPES.CURVE25519]: {
         type: 'ecc',
         curve: 'ed25519' as enums.curve,
     }, // casting is just informational
-    [ENCRYPTION_TYPES.RSA4096]: { type: 'rsa', rsaBits: 4096 },
 };
 
 export enum KEY_FLAG {

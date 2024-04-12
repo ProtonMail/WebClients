@@ -11,7 +11,7 @@ import { UpdateOrganizationKeysPayloadLegacy, UpdateOrganizationKeysPayloadV2 } 
 import type {
     Address,
     Api,
-    EncryptionConfig,
+    KeyGenConfig,
     KeyPair,
     Member,
     OrganizationKey,
@@ -52,17 +52,17 @@ export const ORGANIZATION_USERID = 'not_for_email_use@domain.tld';
 interface GenerateOrganizationKeysArguments {
     keyPassword: string;
     backupPassword: string;
-    encryptionConfig: EncryptionConfig;
+    keyGenConfig: KeyGenConfig;
 }
 
 export const generateOrganizationKeys = async ({
     keyPassword,
     backupPassword,
-    encryptionConfig,
+    keyGenConfig,
 }: GenerateOrganizationKeysArguments) => {
     const privateKey = await CryptoProxy.generateKey({
         userIDs: [{ name: ORGANIZATION_USERID, email: ORGANIZATION_USERID }],
-        ...encryptionConfig,
+        ...keyGenConfig,
     });
     const privateKeyArmored = await CryptoProxy.exportPrivateKey({ privateKey: privateKey, passphrase: keyPassword });
     return {
@@ -84,10 +84,10 @@ export const generateOrganizationKeyToken = async (userKey: PrivateKeyReference)
 
 export const generatePasswordlessOrganizationKey = async ({
     userKey,
-    encryptionConfig,
+    keyGenConfig,
 }: {
     userKey: PrivateKeyReference;
-    encryptionConfig: EncryptionConfig;
+    keyGenConfig: KeyGenConfig;
 }) => {
     if (!userKey) {
         throw new Error('Missing primary user key');
@@ -95,7 +95,7 @@ export const generatePasswordlessOrganizationKey = async ({
     const { token, encryptedToken, signature } = await generateOrganizationKeyToken(userKey);
     const privateKey = await CryptoProxy.generateKey({
         userIDs: [{ name: ORGANIZATION_USERID, email: ORGANIZATION_USERID }],
-        ...encryptionConfig,
+        ...keyGenConfig,
     });
     const privateKeyArmored = await CryptoProxy.exportPrivateKey({ privateKey: privateKey, passphrase: token });
     return {
@@ -275,20 +275,20 @@ export const getReEncryptedPublicMemberTokensPayloadLegacy = async ({
  * @param address - The address to generate keys for.
  * @param primaryKey - The primary key of the member.
  * @param organizationKey - The organization key.
- * @param encryptionConfig - The selected encryption config.
+ * @param keyGenConfig - The selected encryption config.
  */
 interface GenerateMemberAddressKeyArguments {
     email: string;
     primaryKey: PrivateKeyReference;
     organizationKey: PrivateKeyReference;
-    encryptionConfig: EncryptionConfig;
+    keyGenConfig: KeyGenConfig;
 }
 
 export const generateMemberAddressKey = async ({
     email,
     primaryKey,
     organizationKey,
-    encryptionConfig,
+    keyGenConfig,
 }: GenerateMemberAddressKeyArguments) => {
     const memberKeyToken = generateMemberToken();
     const orgKeyToken = generateMemberToken();
@@ -296,7 +296,7 @@ export const generateMemberAddressKey = async ({
     const { privateKey, privateKeyArmored } = await generateAddressKey({
         email,
         passphrase: memberKeyToken,
-        encryptionConfig,
+        keyGenConfig,
     });
 
     const privateKeyArmoredOrganization = await CryptoProxy.exportPrivateKey({

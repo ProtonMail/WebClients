@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { AlgorithmInfo } from '@proton/crypto';
-import { EncryptionConfig } from '@proton/shared/lib/interfaces';
+import { KeyGenConfig } from '@proton/shared/lib/interfaces';
 import { addUserKeysProcess } from '@proton/shared/lib/keys';
 
 import { Loader, useModalState } from '../../components';
@@ -65,7 +65,7 @@ const UserKeysSections = () => {
         setAddKeyModalOpen(true);
     };
 
-    const onAdd = async (encryptionConfig: EncryptionConfig) => {
+    const onAdd = async (keyGenConfig: KeyGenConfig) => {
         if (!userKeys) {
             throw new Error('Missing keys');
         }
@@ -79,7 +79,7 @@ const UserKeysSections = () => {
             isDeviceRecoveryAvailable,
             isDeviceRecoveryEnabled,
             call,
-            encryptionConfig,
+            keyGenConfig,
             userKeys,
             addresses,
             passphrase: authentication.getPassword(),

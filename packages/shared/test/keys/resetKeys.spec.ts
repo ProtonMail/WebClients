@@ -1,6 +1,6 @@
 import { CryptoProxy } from '@proton/crypto';
 
-import { ENCRYPTION_CONFIGS, ENCRYPTION_TYPES } from '../../lib/constants';
+import { KEYGEN_CONFIGS, KEYGEN_TYPES } from '../../lib/constants';
 import { Address } from '../../lib/interfaces';
 import { getResetAddressesKeysV2 } from '../../lib/keys';
 
@@ -9,7 +9,7 @@ describe('reset keys v2', () => {
         const result = await getResetAddressesKeysV2({
             addresses: [],
             passphrase: '',
-            encryptionConfig: ENCRYPTION_CONFIGS[ENCRYPTION_TYPES.CURVE25519],
+            keyGenConfig: KEYGEN_CONFIGS[KEYGEN_TYPES.CURVE25519],
             preAuthKTVerify: () => async () => {},
         });
         expect(result).toEqual({
@@ -28,7 +28,7 @@ describe('reset keys v2', () => {
                 } as unknown as Address,
             ],
             passphrase: '123',
-            encryptionConfig: ENCRYPTION_CONFIGS[ENCRYPTION_TYPES.CURVE25519],
+            keyGenConfig: KEYGEN_CONFIGS[KEYGEN_TYPES.CURVE25519],
             preAuthKTVerify: () => async () => {},
         });
         if (!addressKeysPayload?.length) {
