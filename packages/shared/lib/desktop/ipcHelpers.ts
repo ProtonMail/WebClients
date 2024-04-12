@@ -1,5 +1,16 @@
 import { isElectronMail } from '../helpers/desktop';
-import { IPCInboxClientUpdateMessage, IPCInboxDesktopFeature, IPCInboxGetInfoMessage } from './desktopTypes';
+import type {
+    IPCInboxClientUpdateMessage,
+    IPCInboxDesktopFeature,
+    IPCInboxGetInfoMessage,
+    IPCInboxMessageBroker,
+} from './desktopTypes';
+
+declare global {
+    interface Window {
+        ipcInboxMessageBroker?: IPCInboxMessageBroker;
+    }
+}
 
 export function invokeInboxDesktopIPC({ type, payload }: IPCInboxClientUpdateMessage) {
     if (isElectronMail && window.ipcInboxMessageBroker?.send) {
