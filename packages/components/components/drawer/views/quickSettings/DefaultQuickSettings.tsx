@@ -2,16 +2,16 @@ import { ChangeEvent } from 'react';
 
 import { c } from 'ttag';
 
-import { Info, Toggle, Tooltip } from '@proton/components/components';
-import { ThemeCards, useTheme } from '@proton/components/containers';
-import ThemeSyncModeDropdown from '@proton/components/containers/themes/ThemeSyncModeDropdown';
-import { useEarlyAccess, useIsInboxElectronApp, useNotifications } from '@proton/components/hooks';
 import { useLoading } from '@proton/hooks';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { QuickSettingsReminders } from '@proton/shared/lib/drawer/interfaces';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { ColorScheme, PROTON_THEMES_MAP, ThemeModeSetting, getThemes } from '@proton/shared/lib/themes/themes';
 
+import { Info, Toggle, Tooltip } from '../../../../components';
+import { ThemeCards, useTheme } from '../../../../containers';
+import ThemeSyncModeDropdown from '../../../../containers/themes/ThemeSyncModeDropdown';
+import { useEarlyAccess, useNotifications, useShowThemeSelection } from '../../../../hooks';
 import DrawerAppHeadline from '../shared/DrawerAppHeadline';
 import DrawerAppSection from '../shared/DrawerAppSection';
 import QuickSettingsRemindersSection from './QuickSettingsRemindersSection';
@@ -26,7 +26,7 @@ const DefaultQuickSettings = ({ inAppReminders }: Props) => {
     const { information, settings, setTheme, setAutoTheme } = useTheme();
     const themes = getThemes();
     const { createNotification } = useNotifications();
-    const { isElectron } = useIsInboxElectronApp();
+    const showThemeSelection = useShowThemeSelection();
 
     const earlyAccess = useEarlyAccess();
 
@@ -43,8 +43,7 @@ const DefaultQuickSettings = ({ inAppReminders }: Props) => {
 
     return (
         <>
-            {/* We hide the theme section in the electron app since theme are fixed */}
-            {!isElectron && (
+            {showThemeSelection && (
                 <DrawerAppSection className="pb-4">
                     <div>
                         {settings.Mode === ThemeModeSetting.Auto ? (
