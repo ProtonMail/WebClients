@@ -111,6 +111,8 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
             store.unsubscribe();
         });
 
+        dispatch(bootstrap.bootstrapEvent({ type: 'complete' }));
+
         return {
             ...userData,
             store,

@@ -8,6 +8,7 @@ import {
     addressKeysListener,
     authenticationListener,
     organizationKeysListener,
+    organizationThemeListener,
     userInvitationsListener,
     userKeysListener,
 } from '@proton/account';
@@ -21,6 +22,7 @@ type AppStartListening = TypedStartListening<RequiredState, ProtonDispatch<any>,
 export const startSharedListening = (startListening: AppStartListening) => {
     userKeysListener(startListening);
     addressKeysListener(startListening);
+    organizationThemeListener(startListening);
     organizationKeysListener(startListening);
     userInvitationsListener(startListening);
     authenticationListener(startListening);

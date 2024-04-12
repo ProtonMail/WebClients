@@ -33,6 +33,11 @@ const marginSizes = [
         px: '0',
     },
     {
+        class: 'px',
+        rem: '0.0625rem',
+        px: '1',
+    },
+    {
         class: '0.5',
         rem: '0.125rem',
         px: '2px',

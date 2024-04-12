@@ -2,7 +2,7 @@ import { useCallback, useEffect } from 'react';
 
 import { createSelector } from '@reduxjs/toolkit';
 
-import { baseUseSelector } from '@proton/redux-shared-store';
+import { baseUseSelector } from '@proton/redux-shared-store/sharedContext';
 import { createHooks } from '@proton/redux-utilities';
 import { LABEL_TYPE } from '@proton/shared/lib/constants';
 import type { Category, Folder, Label } from '@proton/shared/lib/interfaces';

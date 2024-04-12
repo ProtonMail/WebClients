@@ -13,10 +13,37 @@ export const getOrganizationBackupKeys = () => ({
     method: 'get',
 });
 
+export const getOrganizationLogo = (id: string) => ({
+    url: `core/v4/organizations/logo/${id}`,
+    method: 'get',
+});
+
 export const updateOrganizationName = (Name: string) => ({
     url: 'core/v4/organizations/name',
     method: 'put',
     data: { Name },
+});
+
+export const updateOrganizationLogo = (Image: string) => ({
+    url: 'core/v4/organizations/settings/logo',
+    method: 'post',
+    data: { Image },
+});
+
+export const deleteOrganizationLogo = () => ({
+    url: 'core/v4/organizations/settings/logo',
+    method: 'delete',
+});
+
+export const updateOrganizationSettings = ({ ShowName }: { ShowName: boolean }) => ({
+    url: 'core/v4/organizations/settings',
+    method: 'put',
+    data: { ShowName },
+});
+
+export const getOrganizationSettings = () => ({
+    url: 'core/v4/organizations/settings',
+    method: 'get',
 });
 
 export const updateOrganizationEmail = (Email: string) => ({

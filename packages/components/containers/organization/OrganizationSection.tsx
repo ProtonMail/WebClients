@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Button, ButtonLike } from '@proton/atoms';
+import { Button, ButtonLike, InlineLinkButton } from '@proton/atoms';
 import { createPreAuthKTVerifier } from '@proton/components/containers';
 import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
 import useLoading from '@proton/hooks/useLoading';
@@ -23,7 +23,19 @@ import { Audience, Organization } from '@proton/shared/lib/interfaces';
 import { handleSetupAddressKeys } from '@proton/shared/lib/keys';
 import { Credentials } from '@proton/shared/lib/srp';
 
-import { Field, Label, Loader, PrimaryButton, Row, SettingsLink, useAppLink } from '../../components';
+import {
+    ButtonGroup,
+    Icon,
+    Info,
+    InputFieldTwo,
+    Label,
+    Loader,
+    PrimaryButton,
+    Row,
+    SettingsLink,
+    useAppLink,
+    useModalState,
+} from '../../components';
 import {
     useApi,
     useAuthentication,
@@ -34,10 +46,22 @@ import {
     useSubscription,
     useUser,
 } from '../../hooks';
-import { SettingsParagraph, SettingsSection, SettingsSectionWide, UpgradeBanner } from '../account';
+import {
+    SettingsLayout,
+    SettingsLayoutLeft,
+    SettingsLayoutRight,
+    SettingsParagraph,
+    SettingsSection,
+    SettingsSectionWide,
+    UpgradeBanner,
+} from '../account';
 import AuthModal from '../password/AuthModal';
 import OrganizationNameModal from './OrganizationNameModal';
 import SetupOrganizationModal from './SetupOrganizationModal';
+import OrganizationLogoModal from './logoUpload/OrganizationLogoModal';
+import OrganizationLogoRemovalModal from './logoUpload/OrganizationLogoRemovalModal';
+import OrganizationLogoTipsModal from './logoUpload/OrganizationLogoTipsModal';
+import { useOrganizationTheme } from './logoUpload/useOrganizationTheme';
 
 interface Props {
     app: APP_NAMES;
@@ -58,6 +82,14 @@ const OrganizationSection = ({ app, organization }: Props) => {
 
     const { createNotification } = useNotifications();
     const isPartOfFamily = hasFamily(subscription);
+
+    const [organizationLogoModal, setOrganizationLogoModal, renderOrganizationLogoModal] = useModalState();
+    const [organizationLogoTipsModal, setOrganizationLogoTipsModal, renderOrganizationLogoTipsModal] = useModalState();
+    const [organizationLogoRemovalModal, setOrganizationLogoRemovalModal, renderOrganizationLogoRemovalModal] =
+        useModalState();
+
+    const organizationTheme = useOrganizationTheme();
+    const canAccessLightLabelling = organizationTheme.access;
 
     if (!organization || !user || !subscription) {
         return <Loader />;
@@ -210,21 +242,109 @@ const OrganizationSection = ({ app, organization }: Props) => {
     return (
         <SettingsSection>
             <SettingsParagraph>
-                {c('Info').t`The name will be visible to your users while they are signed in.`}
+                {canAccessLightLabelling ? (
+                    <>
+                        <p className="m-0">{c('Info')
+                            .t`The name and icon will be visible to your users while they are signed in.`}</p>
+                        <InlineLinkButton onClick={() => setOrganizationLogoTipsModal(true)}>{c(
+                            'Organization logo upload'
+                        ).t`Tips on choosing a good icon`}</InlineLinkButton>
+                    </>
+                ) : (
+                    c('Info').t`The name will be visible to your users while they are signed in.`
+                )}
             </SettingsParagraph>
-            <Row>
-                <Label htmlFor="organization-name-edit-button">{inputLabel}</Label>
-                <Field className="pt-2 mb-2 md:mb-0">
-                    <div className="text-bold text-ellipsis">{organizationName}</div>
-                </Field>
-                <div className="ml-0 md:ml-auto shrink-0">
-                    <Button
-                        id="organization-name-edit-button"
-                        color="norm"
-                        onClick={() => createModal(<OrganizationNameModal organization={organization} />)}
-                    >{c('Action').t`Edit`}</Button>
-                </div>
-            </Row>
+            <SettingsLayout>
+                <SettingsLayoutLeft>
+                    <Label htmlFor="organization-name-edit-button" className="text-bold pt-0 mb-2 md:mb-0">
+                        {inputLabel}
+                    </Label>
+                </SettingsLayoutLeft>
+                <SettingsLayoutRight className="w-full">
+                    <div className="w-full flex flex-nowrap gap-2">
+                        <InputFieldTwo readOnly className="md:mb-0" value={organizationName} />
+                        <div className="shrink-0">
+                            <Button
+                                id="organization-name-edit-button"
+                                color="norm"
+                                onClick={() => createModal(<OrganizationNameModal organization={organization} />)}
+                            >{c('Action').t`Edit`}</Button>
+                        </div>
+                    </div>
+                </SettingsLayoutRight>
+            </SettingsLayout>
+
+            {canAccessLightLabelling && (
+                <SettingsLayout>
+                    <SettingsLayoutLeft>
+                        <Label htmlFor="organization-logo-edit-button" className="text-bold mb-2 md:mb-0">
+                            {c('Label').t`Logo`}{' '}
+                            <Info
+                                title={c('Tooltip')
+                                    .t`Users will see your logo instead of the ${BRAND_NAME} icon when signed in on our web apps.`}
+                                className="mb-1"
+                            />
+                        </Label>
+                    </SettingsLayoutLeft>
+                    <SettingsLayoutRight className="w-full">
+                        {organizationTheme.logoURL ? (
+                            <div className="flex items-center justify-start gap-2 border rounded-lg p-2 w-full">
+                                <img
+                                    src={organizationTheme.logoURL}
+                                    alt=""
+                                    className="w-custom h-custom border rounded bg-weak"
+                                    style={{ '--w-custom': '5rem', '--h-custom': '5rem' }}
+                                />
+                                <ButtonGroup shape="ghost">
+                                    <Button
+                                        id="organization-logo-edit-button"
+                                        onClick={() => setOrganizationLogoModal(true)}
+                                    >
+                                        <Icon name="pen" /> {c('Action').t`Change`}
+                                    </Button>
+
+                                    <Button
+                                        id="organization-logo-remove-button"
+                                        onClick={() => setOrganizationLogoRemovalModal(true)}
+                                    >
+                                        <Icon name="trash" /> {c('Action').t`Remove`}
+                                    </Button>
+                                </ButtonGroup>
+                            </div>
+                        ) : (
+                            <Button
+                                id="organization-logo-edit-button"
+                                color="weak"
+                                shape="outline"
+                                onClick={() => setOrganizationLogoModal(true)}
+                            >{c('Action').t`Upload`}</Button>
+                        )}
+                    </SettingsLayoutRight>
+                    {renderOrganizationLogoModal && (
+                        <OrganizationLogoModal
+                            app={app}
+                            size="large"
+                            organization={organization}
+                            {...organizationLogoModal}
+                        />
+                    )}
+                    {renderOrganizationLogoRemovalModal && (
+                        <OrganizationLogoRemovalModal
+                            app={app}
+                            size="small"
+                            organization={organization}
+                            {...organizationLogoRemovalModal}
+                        />
+                    )}
+                    {renderOrganizationLogoTipsModal && (
+                        <OrganizationLogoTipsModal
+                            size="small"
+                            onUploadClick={() => setOrganizationLogoModal(true)}
+                            {...organizationLogoTipsModal}
+                        />
+                    )}
+                </SettingsLayout>
+            )}
             {isPartOfFamily && (
                 <Row>
                     <Button onClick={() => appLink('/mail/users-addresses', APPS.PROTONACCOUNT)}>{c(

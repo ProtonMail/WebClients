@@ -7,3 +7,4 @@ export { default as OrganizationTwoFAEnforcementSection } from './OrganizationTw
 export { default as OrganizationTwoFARemindersSection } from './OrganizationTwoFARemindersSection';
 
 export * from './sso';
+export * from './logoUpload';

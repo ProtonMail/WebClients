@@ -7,10 +7,10 @@ import {
     ContactDrawerAppButton,
     DrawerApp,
     DrawerSidebar,
-    MainLogo,
     PrivateAppContainer,
     PrivateMainArea,
     QuickSettingsAppButton,
+    SidebarLogo,
     TopBanners,
     useDrawer,
     useOpenDrawerOnLoad,
@@ -62,7 +62,7 @@ const DriveWindow = ({ children }: Props) => {
         <QuickSettingsAppButton aria-expanded={isAppInView(DRAWER_NATIVE_APPS.QUICK_SETTINGS, appInView)} />
     );
 
-    const logo = <MainLogo to="/" />;
+    const logo = <SidebarLogo to="/" app={APPS.PROTONDRIVE} />;
     const header = (
         <DriveHeaderPrivate
             isHeaderExpanded={expanded}

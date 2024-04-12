@@ -41,7 +41,7 @@ const appNames: Required<LogoProps>['appName'][] = [
     APPS.PROTONPASS,
 ];
 
-const variants: Required<LogoProps>['variant'][] = ['with-wordmark', 'glyph-only'];
+const variants: Required<LogoProps>['variant'][] = ['with-wordmark', 'glyph-only', 'wordmark-only'];
 
 export const Sandbox = () => {
     const [selectedAppName, setSelectedAppName] = useState<Required<LogoProps>['appName']>(APPS.PROTONMAIL);

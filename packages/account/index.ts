@@ -12,6 +12,7 @@ export * from './paymentMethods';
 export * from './protonDomains';
 export * from './subscription';
 export * from './organization';
+export * from './organization/theme';
 export * from './organizationKey';
 export * from './organizationKey/listener';
 export * from './organizationKey/actions';

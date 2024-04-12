@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { IMPORT_STEPS, ImportContactsModel } from '@proton/shared/lib/interfaces/contacts/Import';
 
-import { ModalProps, ModalTwo } from '../../../components';
+import { ModalProps, ModalTwo } from '../../../components/modalTwo';
 import ContactImportAttaching from './steps/ContactImportAttaching';
 import ContactImportCsv from './steps/ContactImportCsv';
 import ContactImportGroups from './steps/ContactImportGroups';

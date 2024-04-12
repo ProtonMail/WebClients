@@ -1,7 +1,8 @@
 import { FC, ReactNode } from 'react';
 
-import { CreateNotificationOptions, NotificationsContext, NotificationsContextValue } from '@proton/components';
 import noop from '@proton/utils/noop';
+
+import { CreateNotificationOptions, NotificationsContext, NotificationsContextValue } from './index';
 
 interface NotificationsHijackProps {
     onCreate: ((options: CreateNotificationOptions) => void) | undefined;

@@ -1,6 +1,6 @@
-import { TypedStartListening } from '@reduxjs/toolkit';
+import type { TypedStartListening } from '@reduxjs/toolkit';
 
-import { ProtonDispatch, ProtonThunkArguments } from './interface';
+import type { ProtonDispatch, ProtonThunkArguments } from './interface';
 
 export type SharedStartListening<RequiredState> = TypedStartListening<
     RequiredState,

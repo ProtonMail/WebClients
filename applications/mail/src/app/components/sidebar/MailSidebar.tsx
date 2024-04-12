@@ -1,6 +1,6 @@
 import { memo, useCallback } from 'react';
 
-import { AppsDropdown, MainLogo, Sidebar, SidebarDrawerItems, SidebarNav } from '@proton/components';
+import { AppsDropdown, Sidebar, SidebarDrawerItems, SidebarLogo, SidebarNav } from '@proton/components';
 import SidebarStorageUpsell from '@proton/components/containers/payments/subscription/SidebarStorageUpsell';
 import useDisplayContactsWidget from '@proton/components/hooks/useDisplayContactsWidget';
 import { APPS } from '@proton/shared/lib/constants';
@@ -32,7 +32,7 @@ const MailSidebar = ({ labelID }: Props) => {
         void onCompose({ type: ComposeTypes.newMessage, action: MESSAGE_ACTIONS.NEW });
     }, [onCompose]);
 
-    const logo = <MainLogo to="/inbox" data-testid="main-logo" />;
+    const logo = <SidebarLogo to="/inbox" app={APPS.PROTONMAIL} />;
 
     const displayContactsInHeader = useDisplayContactsWidget();
 

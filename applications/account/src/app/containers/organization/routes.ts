@@ -17,9 +17,16 @@ interface Props {
     organization?: Organization;
     subscription?: Subscription;
     isScheduleCallsEnabled: boolean;
+    isOrganizationLogoUploadAvailable: boolean;
 }
 
-export const getOrganizationAppRoutes = ({ user, organization, subscription, isScheduleCallsEnabled }: Props) => {
+export const getOrganizationAppRoutes = ({
+    user,
+    organization,
+    subscription,
+    isScheduleCallsEnabled,
+    isOrganizationLogoUploadAvailable,
+}: Props) => {
     const isAdmin = user.isAdmin && !user.isSubUser;
 
     const hasOrganizationKey = hasOrganizationSetupWithKeys(organization);
@@ -47,6 +54,16 @@ export const getOrganizationAppRoutes = ({ user, organization, subscription, isS
         : c('Title').t`Multi-user support`;
 
     const subSectionTitle = isPartOfFamily ? '' : c('Title').t`Multi-user support`;
+
+    let subSectionTitleAppearance: string;
+
+    if (isPartOfFamily) {
+        subSectionTitleAppearance = '';
+    } else if (isOrganizationLogoUploadAvailable) {
+        subSectionTitleAppearance = c('Title').t`Custom branding`;
+    } else {
+        subSectionTitleAppearance = c('Title').t`Organization appearance`;
+    }
 
     return {
         available: canHaveOrganization,
@@ -95,7 +112,7 @@ export const getOrganizationAppRoutes = ({ user, organization, subscription, isS
                         available: canSchedulePhoneCalls,
                     },
                     {
-                        text: subSectionTitle,
+                        text: subSectionTitleAppearance,
                         id: 'organization',
                     },
                     {

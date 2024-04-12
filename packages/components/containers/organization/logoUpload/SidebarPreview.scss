@@ -1,0 +1,5 @@
+@import '~@proton/styles/scss/lib';
+
+.sidebar-logo-preview {
+	max-inline-size: calc(rem($width-sidebar) + rem(2));
+}

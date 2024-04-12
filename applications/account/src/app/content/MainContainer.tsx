@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import {
     AppLink,
+    CustomLogo,
     FeatureCode,
     Logo,
     PassForBusinessLogo,
@@ -22,6 +23,7 @@ import {
     useFlag,
     useIsDataRecoveryAvailable,
     useOrganization,
+    useOrganizationTheme,
     useRecoveryNotification,
     useSubscription,
     useToggle,
@@ -139,6 +141,8 @@ const MainContainer = () => {
 
     const isScheduleCallsEnabled = useFlag('ScheduleB2BSupportPhoneCalls');
 
+    const organizationTheme = useOrganizationTheme();
+
     const routes = getRoutes({
         app,
         user,
@@ -155,6 +159,8 @@ const MainContainer = () => {
         isNotifInboxDesktopAppOn,
         isScheduleCallsEnabled,
         isBreachesAccountDashboardEnabled,
+        showThemeSelection,
+        isOrganizationLogoUploadAvailable: organizationTheme.access,
     });
 
     useEffect(() => {
@@ -175,14 +181,26 @@ const MainContainer = () => {
 
     const hasPassB2bPlan = getHasPassB2BPlan(subscription);
 
+    const getLogo = () => {
+        if (organizationTheme.logoURL) {
+            return <CustomLogo url={organizationTheme.logoURL} app={app} organizationName={organizationTheme.name} />;
+        }
+
+        if (app === APPS.PROTONPASS && hasPassB2bPlan) {
+            return <PassForBusinessLogo />;
+        }
+
+        return <Logo appName={app} />;
+    };
+
     const logo = (
         <AppLink
             to={to}
             toApp={toApp}
             target="_self"
-            className="relative interactive-pseudo-protrude interactive--no-background"
+            className="relative interactive-pseudo-protrude interactive--no-background text-no-decoration rounded-lg"
         >
-            {app === APPS.PROTONPASS && hasPassB2bPlan ? <PassForBusinessLogo /> : <Logo appName={app} />}
+            {getLogo()}
         </AppLink>
     );
 
