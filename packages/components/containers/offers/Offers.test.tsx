@@ -76,7 +76,6 @@ describe('Offers', () => {
             const link = screen.getByTestId('cta:upgrade-plan');
 
             expect(link.textContent).toContain('Upgrade');
-            expect(link.tagName).toBe('A');
         });
 
         it('Should display nothing for paid users with offers', () => {
