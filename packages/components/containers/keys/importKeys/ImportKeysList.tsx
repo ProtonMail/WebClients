@@ -12,7 +12,9 @@ const ImportKeysList = ({ keys }: Props) => {
         const keyStatus = (() => {
             if (status === Status.ERROR) {
                 return (
-                    <Badge type="error" tooltip={result === 'ok' ? '' : result?.message}>{c('Title').t`Error`}</Badge>
+                    <Badge type="error" tooltip={result === 'ok' ? '' : result?.message} tooltipOpenDelay={0}>
+                        {c('Title').t`Error`}
+                    </Badge>
                 );
             }
             if (status === Status.SUCCESS) {
