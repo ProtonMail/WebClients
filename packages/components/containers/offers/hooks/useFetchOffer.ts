@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
+import { usePaymentsApiWithCheckFallback } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
 import { Currency } from '@proton/shared/lib/interfaces';
 
@@ -15,7 +15,7 @@ interface Props {
 }
 
 function useFetchOffer({ offerConfig, currency, onSuccess, onError }: Props): [Offer | undefined, boolean] {
-    const { paymentsApi } = usePaymentsApi();
+    const { paymentsApi } = usePaymentsApiWithCheckFallback();
     const [loading, withLoading] = useLoading();
     const [state, setState] = useState<Partial<{ offer: Offer; offerConfig: OfferConfig }>>();
 
