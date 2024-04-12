@@ -2,8 +2,19 @@ import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { SettingsLink, useActiveBreakpoint, useConfig, useSubscription, useUser } from '@proton/components';
+import { ButtonLike } from '@proton/atoms/Button';
+import {
+    SUBSCRIPTION_STEPS,
+    SettingsLink,
+    useActiveBreakpoint,
+    useConfig,
+    useSubscription,
+    useUpsellConfig,
+    useUser,
+} from '@proton/components';
+import { freeTrialUpgradeClick, redirectToAccountApp } from '@proton/components/containers/desktop/openExternalLink';
 import { APP_NAMES, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
+import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { isTrial } from '@proton/shared/lib/helpers/subscription';
 import { addUpsellPath, getUpgradePath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
 
@@ -30,23 +41,38 @@ const TopNavbarUpgradeButton = ({ app }: Props) => {
         component: UPSELL_COMPONENT.BUTTON,
         fromApp: app,
     });
+
     // We want to have metrics from where the user has clicked on the upgrade button
     const upgradeUrl = addUpsellPath(upgradePathname, upsellRef);
     const displayUpgradeButton = (user.isFree || isTrial(subscription)) && !location.pathname.endsWith(upgradePathname);
     const upgradeText = c('specialoffer: Link').t`Upgrade`;
     const upgradeIcon = upgradeText.length > 20 && viewportWidth['>=large'] ? undefined : 'upgrade';
 
+    const upsellConfig = useUpsellConfig(upsellRef, SUBSCRIPTION_STEPS.PLAN_SELECTION);
+    const isButton = upsellRef || isElectronApp ? upsellConfig : undefined;
+
     if (displayUpgradeButton) {
         return (
             <TopNavbarListItem noCollapse>
                 <PromotionButton
-                    as={SettingsLink}
+                    as={isButton ? ButtonLike : SettingsLink}
+                    onClick={() => {
+                        if (isElectronApp && upsellRef) {
+                            freeTrialUpgradeClick(upsellRef);
+                        } else if (isElectronApp) {
+                            redirectToAccountApp();
+                        }
+
+                        if (isButton) {
+                            isButton.onUpgrade?.();
+                        }
+                    }}
+                    path={isButton ? undefined : upgradeUrl}
                     iconName={upgradeIcon}
-                    path={upgradeUrl}
                     size={upgradeText.length > 14 ? 'small' : 'medium'}
-                    responsive
                     title={c('specialoffer: Link').t`Go to subscription plans`}
                     data-testid="cta:upgrade-plan"
+                    responsive
                 >
                     {upgradeText}
                 </PromotionButton>

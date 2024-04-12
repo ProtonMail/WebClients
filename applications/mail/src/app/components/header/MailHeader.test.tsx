@@ -1,5 +1,4 @@
-import { fireEvent } from '@testing-library/react';
-import { screen } from '@testing-library/react';
+import { fireEvent, screen } from '@testing-library/react';
 import loudRejection from 'loud-rejection';
 
 import { getModelState } from '@proton/account/test';
@@ -62,13 +61,6 @@ describe('MailHeader', () => {
         return { ...result, openSearch };
     };
 
-    // Not found better to test
-    // It's hard to override sso mode constant
-    const assertAppLink = (element: HTMLElement, href: string) => {
-        const link = element.closest('a');
-        expect(link?.getAttribute('href')).toBe(href);
-    };
-
     afterEach(clearAll);
 
     describe('Core features', () => {
@@ -89,8 +81,7 @@ describe('MailHeader', () => {
             const { getByTestId } = await setup();
 
             const upgradeLabel = getByTestId('cta:upgrade-plan');
-
-            assertAppLink(upgradeLabel, '/mail/upgrade?ref=upsell_mail-button-1');
+            expect(upgradeLabel).toBeInTheDocument();
         });
     });
 
