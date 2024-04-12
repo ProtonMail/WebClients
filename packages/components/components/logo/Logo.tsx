@@ -9,7 +9,7 @@ import MailLogo from './MailLogo';
 import PassLogo from './PassLogo';
 import VpnLogo from './VpnLogo';
 
-export type LogoVariant = 'with-wordmark' | 'glyph-only';
+export type LogoVariant = 'with-wordmark' | 'glyph-only' | 'wordmark-only';
 
 const { PROTONCALENDAR, PROTONDRIVE, PROTONMAIL, PROTONVPN_SETTINGS, PROTONPASS } = APPS;
 

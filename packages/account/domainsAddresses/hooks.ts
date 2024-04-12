@@ -2,7 +2,8 @@ import { useCallback, useEffect } from 'react';
 
 import { Action, ThunkDispatch, createSelector } from '@reduxjs/toolkit';
 
-import { type ProtonThunkArguments, baseUseDispatch, baseUseSelector } from '@proton/redux-shared-store';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store';
+import { baseUseDispatch, baseUseSelector } from '@proton/redux-shared-store/sharedContext';
 import type { Domain, DomainAddress } from '@proton/shared/lib/interfaces';
 
 import { DomainAddressesState, domainAddressesThunk, selectDomainAddresses } from './index';

@@ -1,6 +1,7 @@
 import { ORGANIZATION_STATE, ORGANIZATION_TWOFA_SETTING, PLANS } from '@proton/shared/lib/constants';
 
 export interface Organization {
+    ID: string;
     Name: string;
     DisplayName: string; // DEPRECATED
     PlanName: PLANS;
@@ -41,4 +42,13 @@ export interface Organization {
     BonusVPN: number;
     Permissions: number;
     State: ORGANIZATION_STATE;
+}
+
+export interface OrganizationSettings {
+    ShowName: boolean;
+    LogoID: string | null;
+}
+
+export interface OrganizationWithSettings extends Organization {
+    Settings: OrganizationSettings;
 }
