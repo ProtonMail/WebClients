@@ -20,7 +20,8 @@ import chunk from '@proton/utils/chunk';
 
 import { isEditItemDraft } from './item.predicates';
 
-export const getItemKey = ({ shareId, itemId, revision }: ItemRevision) => `${shareId}-${itemId}-${revision}`;
+export const getItemKeyRevision = ({ shareId, itemId, revision }: ItemRevision) => `${shareId}-${itemId}-${revision}`;
+export const getItemKey = ({ shareId, itemId }: ItemRevision) => `item-${shareId}-${itemId}`;
 
 export const getItemActionId = (
     payload:
