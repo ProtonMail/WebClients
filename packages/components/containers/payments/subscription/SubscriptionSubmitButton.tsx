@@ -2,10 +2,12 @@ import { c } from 'ttag';
 
 import { PAYMENT_METHOD_TYPES, PaymentMethodType } from '@proton/components/payments/core';
 import { PaypalProcessorHook } from '@proton/components/payments/react-extensions/usePaypal';
-import { Currency, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
+import { isTrial } from '@proton/shared/lib/helpers/subscription';
+import { Currency, SubscriptionCheckResponse, SubscriptionModel } from '@proton/shared/lib/interfaces';
 
-import { Price, PrimaryButton } from '../../../components';
+import { Price, PrimaryButton, useModalState } from '../../../components';
 import { ChargebeePaypalWrapper, ChargebeePaypalWrapperProps } from '../../../payments/chargebee/ChargebeeWrapper';
+import EditCardModal from '../EditCardModal';
 import StyledPayPalButton from '../StyledPayPalButton';
 import { SUBSCRIPTION_STEPS } from './constants';
 
@@ -20,6 +22,8 @@ type Props = {
     paypal: PaypalProcessorHook;
     disabled?: boolean;
     noPaymentNeeded?: boolean;
+    subscription: SubscriptionModel;
+    hasPaymentMethod: boolean;
 } & Pick<ChargebeePaypalWrapperProps, 'chargebeePaypal' | 'iframeHandles'>;
 
 const SubscriptionSubmitButton = ({
@@ -35,8 +39,30 @@ const SubscriptionSubmitButton = ({
     chargebeePaypal,
     iframeHandles,
     noPaymentNeeded,
+    hasPaymentMethod,
+    subscription,
 }: Props) => {
+    const [creditCardModalProps, setCreditCardModalOpen, renderCreditCardModal] = useModalState();
+
     if (noPaymentNeeded) {
+        if (isTrial(subscription) && !hasPaymentMethod) {
+            return (
+                <>
+                    <PrimaryButton
+                        className={className}
+                        disabled={disabled}
+                        loading={loading}
+                        onClick={() => setCreditCardModalOpen(true)}
+                    >
+                        {c('Action').t`Add credit / debit card`}
+                    </PrimaryButton>
+                    {renderCreditCardModal && (
+                        <EditCardModal enableRenewToggle={false} onMethodAdded={onDone} {...creditCardModalProps} />
+                    )}
+                </>
+            );
+        }
+
         return (
             <PrimaryButton className={className} disabled={disabled} loading={loading} onClick={onDone}>
                 {c('Action').t`Close`}

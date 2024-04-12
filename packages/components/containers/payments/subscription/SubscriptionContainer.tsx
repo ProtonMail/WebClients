@@ -93,6 +93,7 @@ import PaymentWrapper from '../PaymentWrapper';
 import { DEFAULT_TAX_BILLING_ADDRESS } from '../TaxCountrySelector';
 import { ValidatedBitcoinToken, isValidatedBitcoinToken } from '../useBitcoin';
 import CalendarDowngradeModal from './CalendarDowngradeModal';
+import { NoPaymentRequiredNote } from './NoPaymentRequiredNote';
 import PlanCustomization from './PlanCustomization';
 import { NewVisionaryWarningModal, NewVisionaryWarningModalOwnProps } from './PlanLossWarningModal';
 import PlanSelection from './PlanSelection';
@@ -871,6 +872,8 @@ const SubscriptionContainer = ({
     const modeType = mode ? mode : 'modal';
     const showFreePlan = modeType === 'upsell-modal' ? false : undefined;
 
+    const hasPaymentMethod = !!paymentFacade.methods.savedMethods?.length;
+
     const content = (
         <>
             {!customTopRef && <div ref={topRef} />}
@@ -1101,14 +1104,13 @@ const SubscriptionContainer = ({
                                         hasSomeVpnPlan={hasSomeVpnPlan}
                                     />
                                 </div>
-                                <div className={amountDue || !checkResult ? 'hidden' : undefined}>
-                                    <h2 className="text-2xl text-bold mb-4">{c('Label').t`Payment details`}</h2>
-                                    <div className="mb-4">{c('Info').t`No payment is required at this time.`}</div>
-                                    {checkResult?.Credit && creditsRemaining ? (
-                                        <div className="mb-4">{c('Info')
-                                            .t`Please note that upon clicking the Confirm button, your account will have ${creditsRemaining} credits remaining.`}</div>
-                                    ) : null}
-                                </div>
+                                <NoPaymentRequiredNote
+                                    amountDue={amountDue}
+                                    checkResult={checkResult}
+                                    creditsRemaining={creditsRemaining}
+                                    subscription={subscription}
+                                    hasPaymentMethod={hasPaymentMethod}
+                                />
                             </div>
                         </div>
                         <div className="subscriptionCheckout-column bg-weak rounded">
@@ -1133,6 +1135,8 @@ const SubscriptionContainer = ({
                                                 chargebeePaypal={paymentFacade.chargebeePaypal}
                                                 iframeHandles={paymentFacade.iframeHandles}
                                                 noPaymentNeeded={model.noPaymentNeeded}
+                                                subscription={subscription}
+                                                hasPaymentMethod={hasPaymentMethod}
                                             />
                                             {paymentFacade.showInclusiveTax && (
                                                 <InclusiveVatText
@@ -1262,13 +1266,13 @@ const SubscriptionContainer = ({
                                     hasSomeVpnPlan={hasSomeVpnPlan}
                                 />
                             </div>
-                            <div className={amountDue || !checkResult ? 'hidden' : undefined}>
-                                <div className="mb-4">{c('Info').t`No payment is required at this time.`}</div>
-                                {checkResult?.Credit && creditsRemaining ? (
-                                    <div className="mb-4">{c('Info')
-                                        .t`Please note that upon clicking the Confirm button, your account will have ${creditsRemaining} credits remaining.`}</div>
-                                ) : null}
-                            </div>
+                            <NoPaymentRequiredNote
+                                amountDue={amountDue}
+                                checkResult={checkResult}
+                                creditsRemaining={creditsRemaining}
+                                subscription={subscription}
+                                hasPaymentMethod={hasPaymentMethod}
+                            />
                         </div>
                     </div>
                     <div className="subscriptionCheckout-column bg-weak rounded">
@@ -1293,6 +1297,8 @@ const SubscriptionContainer = ({
                                             chargebeePaypal={paymentFacade.chargebeePaypal}
                                             iframeHandles={paymentFacade.iframeHandles}
                                             noPaymentNeeded={model.noPaymentNeeded}
+                                            subscription={subscription}
+                                            hasPaymentMethod={hasPaymentMethod}
                                         />
                                         {paymentFacade.showInclusiveTax && (
                                             <InclusiveVatText

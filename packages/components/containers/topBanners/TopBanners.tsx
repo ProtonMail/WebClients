@@ -29,7 +29,7 @@ const TopBanners = ({ children, app }: Props) => {
             <BadAppVersionBanner />
             <SubUserTopBanner />
             <DesktopNotificationTopBanner />
-            <ReferralTopBanner />
+            <ReferralTopBanner fromApp={app} />
             <PendingInvitationTopBanner />
             <SubscriptionEndsBanner />
             <SessionRecoveryBanners />
