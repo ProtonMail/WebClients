@@ -1,7 +1,7 @@
 import { type AutofillOptions } from 'proton-pass-extension/app/content/utils/autofill';
 
 import type { FieldType, FormType } from '@proton/pass/fathom';
-import type { AutosaveFormEntry, Maybe, MaybeNull } from '@proton/pass/types';
+import type { AutosaveFormEntry, FormCredentials, Maybe, MaybeNull } from '@proton/pass/types';
 
 import type { DropdownAction } from './dropdown';
 import type { FieldIconHandle } from './icon';
@@ -42,7 +42,7 @@ export interface FieldHandle {
     focus: (options?: { preventAction?: boolean }) => void;
     attachIcon: () => Maybe<FieldIconHandle>;
     detachIcon: () => void;
-    attach: (onSubmit: () => void) => void;
+    attach: (options: { onChange: () => void; onSubmit: () => void }) => void;
     detach: () => void;
 }
 
@@ -59,12 +59,28 @@ export type FormTrackerFieldConfig = {
     action?: DropdownAction;
 };
 
-export type FormTrackerState = { isSubmitting: boolean };
-export type FormTrackerSubmitOptions = { partial: boolean; submitted: boolean };
+export type FormTrackerState = {
+    detached: boolean;
+    error: boolean;
+    interactionAt?: number;
+    processing: boolean;
+    submitted: boolean;
+    submittedAt?: number;
+    timerIdle?: NodeJS.Timeout;
+    timerSubmit?: NodeJS.Timeout;
+};
+
+export type FormTrackerSyncOptions = {
+    data?: FormCredentials;
+    partial: boolean;
+    reset?: boolean;
+    submit: boolean;
+};
 
 export interface FormTracker {
     detach: () => void;
     getState: () => FormTrackerState;
     reconciliate: () => void;
-    submit: (options: FormTrackerSubmitOptions) => Promise<MaybeNull<AutosaveFormEntry>>;
+    reset: () => void;
+    sync: (options: FormTrackerSyncOptions) => Promise<MaybeNull<AutosaveFormEntry>>;
 }
