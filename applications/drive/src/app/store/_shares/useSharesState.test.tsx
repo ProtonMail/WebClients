@@ -12,7 +12,8 @@ function createTestShare(
         isVolumeSoftDeleted: false,
         type: ShareType.standard,
         state: ShareState.active,
-    }): Share {
+    }
+): Share {
     return {
         shareId,
         rootLinkId: 'linkId',
