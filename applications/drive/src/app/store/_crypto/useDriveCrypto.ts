@@ -5,7 +5,6 @@ import { c } from 'ttag';
 import { useApi, useAuthentication, useGetAddressKeys, useGetAddresses, useNotifications } from '@proton/components';
 import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
 import { Address } from '@proton/shared/lib/interfaces/Address';
-import { splitKeys } from '@proton/shared/lib/keys';
 import { sign as signMessage } from '@proton/shared/lib/keys/driveKeys';
 
 import { getPublicKeysForEmail } from '../../utils/getPublicKeysForEmail';
@@ -14,6 +13,7 @@ import {
     decryptSharePassphraseAsync,
     getOwnAddressAndPrimaryKeysAsync,
     getOwnAddressKeysAsync,
+    getOwnAddressKeysWithEmailAsync,
     getPrimaryAddressAsync,
     getPrimaryAddressKeyAsync,
 } from './driveCrypto';
@@ -38,15 +38,20 @@ function useDriveCrypto() {
         return getPrimaryAddressKeyAsync(getPrimaryAddress, getAddressKeys);
     }, [getPrimaryAddress, getAddressKeys]);
 
+    const getOwnAddressKeys = useCallback(
+        async (addressId: string) => getOwnAddressKeysAsync(addressId, getAddresses, getAddressKeys),
+        [getAddresses, getAddressKeys]
+    );
+
     // This should be used for encryption and signing of any content.
     const getOwnAddressAndPrimaryKeys = useCallback(
-        async (email: string) => getOwnAddressAndPrimaryKeysAsync(email, getAddresses, getAddressKeys),
+        async (addressId: string) => getOwnAddressAndPrimaryKeysAsync(addressId, getAddresses, getAddressKeys),
         [getAddresses, getAddressKeys]
     );
 
     const getPrivateAddressKeys = useCallback(
-        async (email: string) => {
-            const result = await getOwnAddressKeysAsync(email, getAddresses, getAddressKeys);
+        async (addressId: string) => {
+            const result = await getOwnAddressKeysAsync(addressId, getAddresses, getAddressKeys);
             return result?.privateKeys || [];
         },
         [getAddresses, getAddressKeys]
@@ -63,7 +68,7 @@ function useDriveCrypto() {
 
             // We first try to fetch logged-in user keys and fallback to external publicKeys if case we found none
             // This behavior is intended for sharing as we try to get verification key from other users
-            const result = await getOwnAddressKeysAsync(email, getAddresses, getAddressKeys);
+            const result = await getOwnAddressKeysWithEmailAsync(email, getAddresses, getAddressKeys);
             if (result?.publicKeys) {
                 return result.publicKeys;
             }
@@ -96,9 +101,8 @@ function useDriveCrypto() {
      */
     const decryptSharePassphrase = async (meta: ShareWithKey, privateKeys?: PrivateKeyReference[]) => {
         if (!privateKeys) {
-            // If logged-in we need to fetch AddressKeys (publicKeys + privateKeys) of the user,
-            // otherwise we take the creator of the share
-            let keys = splitKeys(await getAddressKeys(meta.addressId));
+            // AddressId will always be for the logged-in user
+            let keys = await getOwnAddressKeys(meta.addressId);
 
             if (!keys) {
                 throw new Error('Address key was not found');
