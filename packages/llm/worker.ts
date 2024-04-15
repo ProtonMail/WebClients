@@ -1,8 +1,8 @@
-import { ChatModule, ChatWorkerHandler } from '@mlc-ai/web-llm';
+import { Engine, EngineWorkerHandler } from '@mlc-ai/web-llm';
 
 // Hookup a chat module to a worker handler
-const chat = new ChatModule();
-const handler = new ChatWorkerHandler(chat);
+const chat = new Engine();
+const handler = new EngineWorkerHandler(chat);
 // @ts-ignore
 self.onmessage = (msg: MessageEvent) => {
     handler.onmessage(msg);
