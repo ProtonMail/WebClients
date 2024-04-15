@@ -28,7 +28,7 @@ export const createAsyncModelThunk = <Returned, State, Extra, ThunkArg = void>(
             getState: () => State;
             extraArgument: Extra;
             options?: ThunkOptions<ThunkArg>;
-        }) => ReducerValue<Returned>;
+        }) => Returned | undefined;
     }
 ) => {
     const pending = createAction(`${prefix}/pending`, () => ({
@@ -55,7 +55,7 @@ export const createAsyncModelThunk = <Returned, State, Extra, ThunkArg = void>(
     > => {
         return (dispatch, getState, extraArgument) => {
             const select = () => {
-                const oldValue = previous({ dispatch, getState, extraArgument, options })?.value;
+                const oldValue = previous({ dispatch, getState, extraArgument, options });
                 if (oldValue !== undefined && !options?.forceFetch) {
                     return Promise.resolve(oldValue);
                 }
@@ -109,9 +109,9 @@ export const previousSelector =
         getState: () => State;
         extraArgument: Extra;
         options?: ThunkOptions<ThunkArg>;
-    }) => ReducerValue<Returned>) =>
+    }) => Returned | undefined) =>
     (extra) =>
-        selector(extra.getState());
+        selector(extra.getState()).value;
 
 export const selectPersistModel = <T>(state: ReducerValue<T>) => {
     if (state.error || state.value === undefined) {

@@ -108,17 +108,20 @@ export const ModelThunkDispatcher = ({ children }: { children: ReactNode }) => {
 
 export const createHooks = <State, Extra, Returned, ThunkArg = void>(
     thunk: (arg?: ThunkArg) => ThunkAction<Promise<Returned>, State, Extra, Action>,
-    selector: (state: State) => ReducerValue<Returned>
+    selector: (state: State) => ReducerValue<Returned>,
+    options: { periodic: boolean } = { periodic: false }
 ) => {
     const useGet = (): ((arg?: ThunkArg) => Promise<Returned>) => {
         const dispatch = useDispatch<ThunkDispatch<State, Extra, Action>>();
         return useCallback((arg?: ThunkArg) => dispatch(thunk(arg)), []);
     };
 
-    let queueRef: { state: boolean; queue: Queue | null; id: null | any } = {
+    let queueRef: { state: boolean; queue: Queue | null; id: null | any; once: boolean } = {
         state: false,
         queue: null,
         id: null,
+        // Should the hook trigger the thunk periodically. For now 'periodic' means once per page load.
+        once: !options.periodic,
     };
 
     const hookSelector = createSelector(selector, (result): [Returned | undefined, boolean] => {
@@ -140,8 +143,9 @@ export const createHooks = <State, Extra, Returned, ThunkArg = void>(
             queueRef.state = false;
         }
 
-        if (value === undefined && !queueRef.state && queueRef.queue) {
+        if ((value === undefined || !queueRef.once) && !queueRef.state && queueRef.queue) {
             queueRef.state = true;
+            queueRef.once = true;
             queueRef.queue.enqueue(thunk);
         }
 
