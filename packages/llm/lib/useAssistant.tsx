@@ -1,21 +1,18 @@
 import { ReactNode, createContext, useContext, useEffect, useMemo, useRef, useState } from 'react';
 
 import { FeatureFlag, useFlag } from '@proton/components/containers';
-import { GpuLlmManager } from '@proton/llm/gpu';
-import { GenerationCallback, LlmManager, LlmModel, RunningAction } from '@proton/llm/index';
 import { domIsBusy } from '@proton/shared/lib/busy';
-import { MINUTE, SECOND } from '@proton/shared/lib/constants';
-import { isChromiumBased, isFirefox, isMobile } from '@proton/shared/lib/helpers/browser';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 
-const UNLOAD_ASSISTANT_TIMEOUT = 15 * MINUTE;
-const RETRY_GENERATE_TIMEOUT = 5 * SECOND;
+import { GenerationCallback, LlmManager, LlmModel, RunningAction } from './types';
+import { GpuLlmManager } from './gpu';
+import {UNLOAD_ASSISTANT_TIMEOUT, RETRY_GENERATE_TIMEOUT, ASSISTANT_STATUS} from './constants'
+import {getAssistantStatus, getCanRunAssistant, getHasAccessToAssistant} from './helpers'
+import {c} from "ttag";
 
-// TODO move in interface file
 export interface GenerateAssistantResult {
     inputText: string;
-    //TODO promptType: Action
     callback: GenerationCallback;
 }
 
@@ -159,15 +156,6 @@ export const useAssistant = () => {
     };
 };
 
-const enum ASSISTANT_STATUS {
-    NOT_LOADED,
-    DOWNLOADING,
-    DOWNLOADED,
-    LOADING_GPU,
-    READY,
-    GENERATING,
-}
-
 export const AssistantProvider = ({
     children,
     assistantFeature,
@@ -203,39 +191,6 @@ export const AssistantProvider = ({
 
     const assistantStatus = useRef<ASSISTANT_STATUS>(ASSISTANT_STATUS.NOT_LOADED);
 
-    // TODO move in helper
-    const getAssistantStatus = ({
-        isModelDownloading,
-        isModelDownloaded,
-        isModelLoadingOnGPU,
-        isModelLoadedOnGPU,
-        isGeneratingResult,
-    }: {
-        isModelDownloading: boolean;
-        isModelDownloaded: boolean;
-        isModelLoadingOnGPU: boolean;
-        isModelLoadedOnGPU: boolean;
-        isGeneratingResult: boolean;
-    }): ASSISTANT_STATUS => {
-        if (isModelDownloading) {
-            return ASSISTANT_STATUS.DOWNLOADING;
-        }
-        if (isModelLoadingOnGPU) {
-            return ASSISTANT_STATUS.LOADING_GPU;
-        }
-        if (isGeneratingResult) {
-            return ASSISTANT_STATUS.GENERATING;
-        }
-        if (isModelLoadedOnGPU) {
-            return ASSISTANT_STATUS.READY;
-        }
-        if (isModelDownloaded) {
-            return ASSISTANT_STATUS.DOWNLOADED;
-        }
-
-        return ASSISTANT_STATUS.NOT_LOADED;
-    };
-
     useEffect(() => {
         assistantStatus.current = getAssistantStatus({
             isModelDownloading,
@@ -245,18 +200,6 @@ export const AssistantProvider = ({
             isGeneratingResult,
         });
     }, [isModelDownloading, isModelDownloaded, isModelLoadingOnGPU, isModelLoadedOnGPU, isGeneratingResult]);
-
-    // TODO move to helper and improve by checking user browser, check webGPU? (see https://developer.mozilla.org/en-US/docs/Web/API/WebGPU_API)
-    const getCanRunAssistant = () => {
-        const isOnMobile = isMobile();
-        const isUsingCompatibleBrowser = isChromiumBased() || isFirefox();
-        return !isOnMobile && isUsingCompatibleBrowser;
-    };
-
-    // TODO move to helper and improve by checking FF, user plan
-    const getHasAccessToAssistant = (assistantFeatureAvailable?: boolean) => {
-        return !!assistantFeatureAvailable;
-    };
 
     const openAssistant = (id: string) => {
         setOpenedAssistants([...openedAssistants, id]);
@@ -299,8 +242,10 @@ export const AssistantProvider = ({
             await llmManager.current.startDownload(downloadCallback);
         } catch (e: any) {
             traceInitiativeError('assistant', e);
-            setError('Something went wrong while downloading the model');
+            const errorMessage = c('loc_nightly_assistant').t`Something went wrong while downloading the model`;
+            setError(errorMessage);
             setIsModelDownloading(false);
+            throw new Error(errorMessage);
         }
     };
 
@@ -321,9 +266,11 @@ export const AssistantProvider = ({
             setIsModelLoadedOnGPU(true);
         } catch (e: any) {
             traceInitiativeError('assistant', e);
-            setError('Something went wrong while loading the model on the GPU');
+            const errorMessage = c('loc_nightly_assistant').t`Something went wrong while loading the model on the GPU`;
+            setError(errorMessage);
             setIsModelLoadingOnGPU(false);
             setIsModelLoadedOnGPU(false);
+            throw new Error(errorMessage);
         }
     };
 
@@ -335,7 +282,7 @@ export const AssistantProvider = ({
             }
         } catch (e: any) {
             traceInitiativeError('assistant', e);
-            setError('Something went wrong while unloading the model from the GPU');
+            setError(c('loc_nightly_assistant').t`Something went wrong while unloading the model from the GPU`);
         }
     };
 
@@ -346,16 +293,19 @@ export const AssistantProvider = ({
          * 1 - We start by downloading the model if not downloaded yet and model is not downloading at the moment
          * 2 - Then we can load the model on the GPU if not loaded yet and not loading at the moment
          */
-        if (!isModelDownloaded && !isModelDownloading) {
-            console.log('downloading');
-            await downloadModel();
-            console.log('downloaded');
-        }
-        if (!isModelLoadedOnGPU && !isModelLoadingOnGPU) {
-            console.log('loading on gpu');
-            await loadModelOnGPU();
-            console.log('loaded on gpu');
-        }
+        try {
+            if (!isModelDownloaded && !isModelDownloading) {
+                console.log('downloading');
+                await downloadModel();
+                console.log('downloaded');
+            }
+            if (!isModelLoadedOnGPU && !isModelLoadingOnGPU) {
+                console.log('loading on gpu');
+                await loadModelOnGPU();
+                console.log('loaded on gpu');
+            }
+        } catch {}
+
         console.log('init end');
     };
 
@@ -400,7 +350,7 @@ export const AssistantProvider = ({
             }
         } catch (e: any) {
             traceInitiativeError('assistant', e);
-            setError('Something went wrong while generating a result');
+            setError(c('loc_nightly_assistant').t`Something went wrong while generating a result`);
             setIsGeneratingResult(false);
         }
         console.log('--- Generate res end ---');
@@ -413,7 +363,7 @@ export const AssistantProvider = ({
             runningActionRef.current = null;
         } catch (e: any) {
             traceInitiativeError('assistant', e);
-            setError('Something went wrong while cancelling the generation');
+            setError(c('loc_nightly_assistant').t`Something went wrong while cancelling the generation`);
         }
     };
 

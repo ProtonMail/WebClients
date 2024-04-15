@@ -12,7 +12,7 @@ import type {
     PromiseResolve,
     RunningAction,
     WriteFullEmailAction,
-} from '@proton/llm/index';
+} from './types';
 
 import mlcConfig from './mlc-config';
 
