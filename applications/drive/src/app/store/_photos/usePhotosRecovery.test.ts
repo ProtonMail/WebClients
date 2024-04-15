@@ -103,6 +103,7 @@ describe('usePhotosRecovery', () => {
         mockedUseShareState.mockReturnValue({
             getRestoredPhotosShares: () => [
                 {
+                    addressId: 'addressId',
                     shareId: 'shareId',
                     rootLinkId: 'rootLinkId',
                     volumeId: 'volumeId',

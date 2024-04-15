@@ -33,10 +33,10 @@ export interface Share {
 }
 
 export interface ShareWithKey extends Share {
+    addressId: string;
     key: string;
     passphrase: string;
     passphraseSignature: string;
-    addressId: string;
     rootLinkRecoveryPassphrase?: string;
 }
 

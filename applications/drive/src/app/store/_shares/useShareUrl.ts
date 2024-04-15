@@ -66,7 +66,7 @@ export default function useShareUrl() {
     const driveCrypto = useDriveCrypto();
     const events = useDriveEventManager();
     const { createShare, deleteShare } = useShareActions();
-    const { getShare, getShareSessionKey } = useShare();
+    const { getShare, getShareWithKey, getShareSessionKey } = useShare();
     const { getLink, getLinkPrivateKey } = useLink();
     const volumeState = useVolumesState();
 
@@ -74,7 +74,6 @@ export default function useShareUrl() {
         const { ShareURLs = [] } = await debouncedRequest<{
             ShareURLs: ShareURLPayload[];
         }>(querySharedLinks(shareId, { Page: 0, Recursive: 0, PageSize: 10 }), abortSignal);
-
         return ShareURLs.length ? shareUrlPayloadToShareUrl(ShareURLs[0]) : undefined;
     };
 
@@ -83,14 +82,12 @@ export default function useShareUrl() {
         return CryptoProxy.decryptSessionKey({ [messageType]: keyPacket, passwords: [password] });
     };
 
-    const decryptShareUrl = async ({
-        creatorEmail,
-        password,
-        sharePassphraseKeyPacket,
-        sharePasswordSalt,
-        ...rest
-    }: ShareURL) => {
-        const privateKeys = await driveCrypto.getPrivateAddressKeys(creatorEmail);
+    const decryptShareUrl = async (
+        abortSignal: AbortSignal,
+        { shareId, creatorEmail, password, sharePassphraseKeyPacket, sharePasswordSalt, ...rest }: ShareURL
+    ) => {
+        const share = await getShareWithKey(abortSignal, shareId);
+        const privateKeys = await driveCrypto.getPrivateAddressKeys(share.addressId);
         const decryptedPassword = await decryptUnsigned({
             armoredMessage: password,
             privateKey: privateKeys,
@@ -98,7 +95,7 @@ export default function useShareUrl() {
             Promise.reject(
                 new EnrichedError('Failed to decrypt share URL password', {
                     tags: {
-                        shareId: rest.shareId,
+                        shareId,
                     },
                     extra: {
                         e,
@@ -122,7 +119,7 @@ export default function useShareUrl() {
             Promise.reject(
                 new EnrichedError('Failed to decrypt share session key for shared URL', {
                     tags: {
-                        shareId: rest.shareId,
+                        shareId,
                     },
                     extra: { e },
                 })
@@ -132,7 +129,7 @@ export default function useShareUrl() {
         if (!shareSessionKey) {
             throw new EnrichedError('Failed to decrypt share session key for shared URL', {
                 tags: {
-                    shareId: rest.shareId,
+                    shareId,
                 },
             });
         }
@@ -140,6 +137,7 @@ export default function useShareUrl() {
         return {
             shareUrl: {
                 ...rest,
+                shareId,
                 creatorEmail,
                 password: decryptedPassword,
                 sharePassphraseKeyPacket,
@@ -163,11 +161,11 @@ export default function useShareUrl() {
         return uint8ArrayToBase64String(symmetric);
     };
 
-    const encryptShareUrlPassword = async (decryptedPassword: string, creatorEmail: string) => {
+    const encryptShareUrlPassword = async (decryptedPassword: string, addressId: string) => {
         const {
             address: { Email: email },
             publicKey,
-        } = await driveCrypto.getOwnAddressAndPrimaryKeys(creatorEmail);
+        } = await driveCrypto.getOwnAddressAndPrimaryKeys(addressId);
 
         const password = await encryptUnsigned({
             message: stringToUint8Array(encodeUtf8(decryptedPassword)),
@@ -199,7 +197,7 @@ export default function useShareUrl() {
             return { salt, keyPacket };
         };
 
-        const share = await getShare(abortSignal, shareId);
+        const share = await getShareWithKey(abortSignal, shareId);
 
         const [
             { salt: SharePasswordSalt, keyPacket: SharePassphraseKeyPacket },
@@ -219,7 +217,7 @@ export default function useShareUrl() {
                     })
                 )
             ),
-            encryptShareUrlPassword(password, share.creator).catch((e) =>
+            encryptShareUrlPassword(password, share.addressId).catch((e) =>
                 Promise.reject(
                     new EnrichedError('Failed to encrypt share URL password', {
                         tags: {
@@ -321,7 +319,7 @@ export default function useShareUrl() {
             return;
         }
 
-        return decryptShareUrl(shareUrl);
+        return decryptShareUrl(abortSignal, shareUrl);
     };
 
     const loadShareUrlLink = async (
@@ -366,7 +364,7 @@ export default function useShareUrl() {
 
     const getFieldsToUpdateForPassword = async (
         newPassword: string,
-        creatorEmail: string,
+        addressId: string,
         _flags: number,
         keyInfo: SharedURLSessionKeyPayload
     ): Promise<Partial<UpdateSharedURL>> => {
@@ -388,7 +386,7 @@ export default function useShareUrl() {
                         })
                     )
                 ),
-            encryptShareUrlPassword(newPassword, creatorEmail).catch((e) =>
+            encryptShareUrlPassword(newPassword, addressId).catch((e) =>
                 Promise.reject(
                     new EnrichedError('Failed to encrypt share URL password', {
                         extra: { e },
@@ -413,8 +411,8 @@ export default function useShareUrl() {
     };
 
     const updateShareUrl = async (
+        abortSignal: AbortSignal,
         shareUrlInfo: {
-            creatorEmail: string;
             shareId: string;
             shareUrlId: string;
             flags: number;
@@ -423,7 +421,7 @@ export default function useShareUrl() {
         newDuration?: number | null,
         newPassword?: string
     ) => {
-        const { creatorEmail, shareId, shareUrlId, flags, keyInfo } = shareUrlInfo;
+        const { shareId, shareUrlId, flags, keyInfo } = shareUrlInfo;
         let fieldsToUpdate: Partial<UpdateSharedURL> = {};
 
         if (newDuration !== undefined) {
@@ -431,9 +429,10 @@ export default function useShareUrl() {
         }
 
         if (newPassword !== undefined) {
+            const share = await getShareWithKey(abortSignal, shareId);
             const fieldsToUpdateForPassword = await getFieldsToUpdateForPassword(
                 newPassword,
-                creatorEmail,
+                share.addressId,
                 flags,
                 keyInfo
             ).catch((e) =>
@@ -594,8 +593,8 @@ export default function useShareUrl() {
         loadShareUrlNumberOfAccesses,
         getShareIdWithSessionkey,
         updateShareUrl: (
+            abortSignal: AbortSignal,
             shareUrlInfo: {
-                creatorEmail: string;
                 shareId: string;
                 shareUrlId: string;
                 flags: number;
@@ -604,7 +603,7 @@ export default function useShareUrl() {
             newDuration?: number | null,
             newPassword?: string
         ) =>
-            updateShareUrl(shareUrlInfo, newDuration, newPassword).catch((error) => {
+            updateShareUrl(abortSignal, shareUrlInfo, newDuration, newPassword).catch((error) => {
                 sendErrorReport(error);
                 throw error;
             }),

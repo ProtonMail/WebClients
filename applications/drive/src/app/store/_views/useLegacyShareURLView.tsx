@@ -136,9 +136,10 @@ export default function useLegacyShareURLView(shareId: string, linkId: string) {
         }
 
         const update = () => {
+            const abortController = new AbortController();
             return updateShareUrl(
+                abortController.signal,
                 {
-                    creatorEmail: shareUrl.creatorEmail,
                     shareId: shareUrl.shareId,
                     shareUrlId: shareUrl.shareUrlId,
                     flags: shareUrl.flags,
@@ -148,7 +149,6 @@ export default function useLegacyShareURLView(shareId: string, linkId: string) {
                 newPassword
             );
         };
-
         const updatedFields = await withSaving(update()).catch((error) => {
             createNotification({
                 type: 'error',
