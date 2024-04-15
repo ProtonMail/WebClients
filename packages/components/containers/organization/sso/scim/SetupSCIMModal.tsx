@@ -27,8 +27,8 @@ const SetupSCIMModal = ({ onClose, token, type, baseUrl, ...rest }: SetupSCIMMod
             <ModalHeader
                 title={
                     type === 'setup'
-                        ? c('scim: Info').t`Enter token into your identity provider`
-                        : c('scim: Info').t`Enter URL and token into your identity provider`
+                        ? c('scim: Info').t`Enter URL and token into your identity provider`
+                        : c('scim: Info').t`Enter token into your identity provider`
                 }
             />
             <ModalContent>
@@ -50,7 +50,7 @@ const SetupSCIMModal = ({ onClose, token, type, baseUrl, ...rest }: SetupSCIMMod
                     <p className="m-0">
                         <b>{c('scim: Info').t`Make sure you copy the above SCIM token now.`}</b>{' '}
                         {c('scim: Info')
-                            .t`For security reasons, the SCIM token wil be hidden after saving your changes and you won’t be able to see it again.`}
+                            .t`For security reasons, the SCIM token will be hidden after saving your changes and you won’t be able to see it again.`}
                     </p>
                 </div>
             </ModalContent>
