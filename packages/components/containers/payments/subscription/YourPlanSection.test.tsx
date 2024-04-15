@@ -15,7 +15,7 @@ import {
     useUser,
     useVPNServersCount,
 } from '@proton/components/hooks';
-import { APPS, PLANS } from '@proton/shared/lib/constants';
+import { APPS, ORGANIZATION_STATE, PLANS } from '@proton/shared/lib/constants';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 
 import YourPlanSection from './YourPlanSection';
@@ -181,6 +181,26 @@ describe('YourPlanSection', () => {
             // Usage Panel
             expect(usagePanel).toBeTruthy();
             within(usagePanel as HTMLElement).getByText("Your account's usage");
+        });
+
+        it('should render subscription, upsells but not usage when organisation is locked', () => {
+            mockUseOrganization.mockReturnValue([{ ...organization, State: ORGANIZATION_STATE.DELINQUENT }]);
+            mockUseSubscription.mockReturnValue([subscriptionBusiness]);
+
+            const { getByTestId } = renderWithProviders(<YourPlanSection app={APPS.PROTONMAIL} />);
+
+            const dashboardPanelsContainer = getByTestId('dashboard-panels-container');
+
+            expect(dashboardPanelsContainer.childNodes).toHaveLength(2);
+            const [subscriptionPanel, upsellPanel] = dashboardPanelsContainer.childNodes;
+
+            // Subscription Panel
+            expect(subscriptionPanel).toBeTruthy();
+            within(subscriptionPanel as HTMLElement).getByText('Proton Pro');
+
+            // Upsell Panel
+            expect(upsellPanel).toBeTruthy();
+            within(upsellPanel as HTMLElement).getByText('Business');
         });
     });
 });
