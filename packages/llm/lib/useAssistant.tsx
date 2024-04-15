@@ -1,15 +1,16 @@
 import { ReactNode, createContext, useContext, useEffect, useMemo, useRef, useState } from 'react';
 
+import { c } from 'ttag';
+
 import { FeatureFlag, useFlag } from '@proton/components/containers';
 import { domIsBusy } from '@proton/shared/lib/busy';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 
-import { GenerationCallback, LlmManager, LlmModel, RunningAction } from './types';
+import { ASSISTANT_STATUS, RETRY_GENERATE_TIMEOUT, UNLOAD_ASSISTANT_TIMEOUT } from './constants';
 import { GpuLlmManager } from './gpu';
-import {UNLOAD_ASSISTANT_TIMEOUT, RETRY_GENERATE_TIMEOUT, ASSISTANT_STATUS} from './constants'
-import {getAssistantStatus, getCanRunAssistant, getHasAccessToAssistant} from './helpers'
-import {c} from "ttag";
+import { getAssistantStatus, getCanRunAssistant, getHasAccessToAssistant } from './helpers';
+import { GenerationCallback, LlmManager, LlmModel, RunningAction } from './types';
 
 export interface GenerateAssistantResult {
     inputText: string;
@@ -225,12 +226,15 @@ export const AssistantProvider = ({
         }
     }, [canRunAssistant, hasAccessToAssistant]);
 
-    const downloadCallback = (downloadProgress: number, downloadComplete: boolean) => {
+    const downloadCallback = (downloadProgress: number) => {
         setDownloadModelProgress(downloadProgress);
-        if (downloadComplete) {
-            setIsModelDownloading(false);
-            setIsModelDownloaded(true);
-        }
+        /* TODO temporary setting the isDownloaded flag after start download
+         * because we have no way to make difference between download and load at this point
+         */
+        // if (downloadComplete) {
+        //     setIsModelDownloading(false);
+        //     setIsModelDownloaded(true);
+        // }
     };
 
     const downloadModel = async () => {
@@ -240,6 +244,8 @@ export const AssistantProvider = ({
             }
             setIsModelDownloading(true);
             await llmManager.current.startDownload(downloadCallback);
+            setIsModelDownloading(false);
+            setIsModelDownloaded(true);
         } catch (e: any) {
             traceInitiativeError('assistant', e);
             const errorMessage = c('loc_nightly_assistant').t`Something went wrong while downloading the model`;
@@ -287,7 +293,6 @@ export const AssistantProvider = ({
     };
 
     const initAssistant = async () => {
-        console.log('init start');
         /*
          * To init the assistant
          * 1 - We start by downloading the model if not downloaded yet and model is not downloading at the moment
@@ -295,36 +300,27 @@ export const AssistantProvider = ({
          */
         try {
             if (!isModelDownloaded && !isModelDownloading) {
-                console.log('downloading');
                 await downloadModel();
-                console.log('downloaded');
             }
             if (!isModelLoadedOnGPU && !isModelLoadingOnGPU) {
-                console.log('loading on gpu');
                 await loadModelOnGPU();
-                console.log('loaded on gpu');
             }
         } catch {}
-
-        console.log('init end');
     };
 
     // TODO pass promptType
     const generateResult = async ({ inputText, callback }: GenerateAssistantResult) => {
-        console.log('--- Generate res start ---', { assistantStatus });
         // If the assistant is being loaded at the moment, wait for the loading to be completed before generating
         const isAssistantInitializing =
             assistantStatus.current === ASSISTANT_STATUS.DOWNLOADING ||
             assistantStatus.current === ASSISTANT_STATUS.DOWNLOADED ||
             assistantStatus.current === ASSISTANT_STATUS.LOADING_GPU;
         if (isAssistantInitializing) {
-            console.log('--- Generate res LOADING ---');
             setTimeout(() => generateResult({ inputText, callback }), RETRY_GENERATE_TIMEOUT);
             return;
         }
         // Init the assistant in case it's not loaded (if it has been unloaded after inactivity for example)
         if (assistantStatus.current === ASSISTANT_STATUS.NOT_LOADED) {
-            console.log('--- Generate res NEED TO LOAD ---');
             await initAssistant();
         }
 
@@ -334,7 +330,6 @@ export const AssistantProvider = ({
                 assistantStatus.current === ASSISTANT_STATUS.GENERATING;
             if (assistantStatusReady && llmModel.current) {
                 setIsGeneratingResult(true);
-                console.log('start gen');
                 const runningAction = await llmModel.current.performAction(
                     {
                         type: 'writeFullEmail',
@@ -345,7 +340,6 @@ export const AssistantProvider = ({
                 runningActionRef.current = runningAction;
                 await runningAction.waitForCompletion();
                 runningActionRef.current = null;
-                console.log('end gen');
                 setIsGeneratingResult(false);
             }
         } catch (e: any) {
@@ -353,7 +347,6 @@ export const AssistantProvider = ({
             setError(c('loc_nightly_assistant').t`Something went wrong while generating a result`);
             setIsGeneratingResult(false);
         }
-        console.log('--- Generate res end ---');
     };
 
     const cancelRunningAction = () => {
