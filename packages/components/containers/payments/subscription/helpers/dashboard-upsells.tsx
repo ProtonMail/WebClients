@@ -3,7 +3,6 @@ import { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { ButtonLikeProps } from '@proton/atoms/Button';
-import { VPNIntroPricingVariant } from '@proton/components/containers';
 import { MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
 import {
     APPS,
@@ -252,11 +251,8 @@ const getDriveUpsell = ({ plansMap, openSubscriptionModal, ...rest }: GetPlanUps
     });
 };
 
-const getVPNUpsell = (
-    { plansMap, openSubscriptionModal, ...rest }: GetPlanUpsellArgs,
-    vpnIntroPricingVariant?: VPNIntroPricingVariant
-): MaybeUpsell => {
-    const plan = vpnIntroPricingVariant === VPNIntroPricingVariant.New2024 ? PLANS.VPN2024 : PLANS.VPN;
+const getVPNUpsell = ({ plansMap, openSubscriptionModal, ...rest }: GetPlanUpsellArgs): MaybeUpsell => {
+    const plan = PLANS.VPN2024;
 
     return getUpsell({
         plan,
@@ -477,7 +473,6 @@ export const resolveUpsellsToDisplay = ({
     freePlan,
     canPay,
     isFree,
-    vpnIntroPricingVariant,
     ...rest
 }: {
     app: APP_NAMES;
@@ -490,7 +485,6 @@ export const resolveUpsellsToDisplay = ({
     isFree?: boolean;
     hasPaidMail?: boolean;
     openSubscriptionModal: OpenSubscriptionModalCallback;
-    vpnIntroPricingVariant?: VPNIntroPricingVariant;
 }): Upsell[] => {
     const resolve = () => {
         if (!canPay || !subscription) {
@@ -529,7 +523,7 @@ export const resolveUpsellsToDisplay = ({
             case Boolean(hasPassFree):
                 return [getPassUpsell(upsellsPayload)];
             case Boolean(hasVPNFree):
-                return [getVPNUpsell(upsellsPayload, vpnIntroPricingVariant)];
+                return [getVPNUpsell(upsellsPayload)];
             case Boolean(isFree || hasOnePlusSubscription(subscription)):
                 return [getBundleUpsell({ ...upsellsPayload, isRecommended: true }), getFamilyUpsell(upsellsPayload)];
             case hasBundle(subscription):

@@ -49,7 +49,6 @@ import {
     useSettingsLink,
 } from '../../../components';
 import { useFlag } from '../../unleash';
-import { VPNIntroPricingVariant } from '../../unleash/vpnIntroPricing';
 import CurrencySelector from '../CurrencySelector';
 import CycleSelector from '../CycleSelector';
 import { getAllFeatures } from '../features';
@@ -59,7 +58,6 @@ import PlanCard from './PlanCard';
 import PlanCardFeatures, { PlanCardFeatureList, PlanCardFeaturesShort } from './PlanCardFeatures';
 import { CANCEL_ROUTE } from './b2cCancellationFlow/helper';
 import VpnEnterpriseAction from './helpers/VpnEnterpriseAction';
-import { getVPNPlanToUse } from './helpers/payment';
 
 import './PlanSelection.scss';
 
@@ -120,7 +118,6 @@ interface Props {
     subscription?: SubscriptionModel | FreeSubscription;
     organization?: Organization;
     filter?: Audience[];
-    vpnIntroPricingVariant: VPNIntroPricingVariant;
 }
 
 export const getPrice = (plan: Plan, cycle: Cycle, plansMap: PlansMap, priceType?: PriceType): number | null => {
@@ -209,18 +206,12 @@ const PlanSelection = ({
     selectedProductPlans,
     onChangeSelectedProductPlans,
     filter,
-    vpnIntroPricingVariant,
 }: Props) => {
     const isVpnSettingsApp = app == APPS.PROTONVPN_SETTINGS;
     const isPassSettingsApp = app == APPS.PROTONPASS;
     const currentPlan = subscription ? subscription.Plans?.find(({ Type }) => Type === PLAN_TYPES.PLAN) : null;
     const renderCycleSelector = isFreeSubscription(subscription);
-    const enabledProductB2CPlans = [
-        PLANS.MAIL,
-        getVPNPlanToUse(plansMap, planIDs, subscription?.Cycle, { vpnIntroPricingVariant }),
-        PLANS.DRIVE,
-        PLANS.PASS_PLUS,
-    ].filter(isTruthy);
+    const enabledProductB2CPlans = [PLANS.MAIL, PLANS.VPN2024, PLANS.DRIVE, PLANS.PASS_PLUS].filter(isTruthy);
     const enabledProductB2BPlans = [PLANS.MAIL_PRO /*, PLANS.DRIVE_PRO*/];
     const goToSettings = useSettingsLink();
 
