@@ -273,7 +273,7 @@ export function useLockedVolumeInner({
         const [privateKey, hashKey, { privateKey: addressKey, address }] = await Promise.all([
             getLinkPrivateKey(abortSignal, defaultShare.shareId, defaultShare.rootLinkId),
             getLinkHashKey(abortSignal, defaultShare.shareId, defaultShare.rootLinkId),
-            getOwnAddressAndPrimaryKeys(defaultShare.creator),
+            getOwnAddressAndPrimaryKeys(defaultShare.addressId),
         ]);
 
         // Backend does not support restoring of multiple volumes at one time.
