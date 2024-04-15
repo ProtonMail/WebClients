@@ -4,6 +4,7 @@ import { ThunkAction } from 'redux-thunk';
 import { getFeatures, updateFeatureValue } from '@proton/shared/lib/api/features';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { HOUR } from '@proton/shared/lib/constants';
+import { getMinuteJitter } from '@proton/shared/lib/helpers/jitter';
 import type { Api } from '@proton/shared/lib/interfaces';
 
 import type { Feature, FeatureCode } from './interface';
@@ -111,13 +112,14 @@ export const fetchFeatures = <T extends FeatureCode>(
             const promise = getSilentApi(extraArgument.api)<{
                 Features: Feature[];
             }>(getFeatures(codesToFetch)).then(({ Features }) => {
+                const fetchedAt = Date.now() + getMinuteJitter();
                 const result = Features.reduce<FeaturesState>(
                     (acc, Feature) => {
-                        acc[Feature.Code as FeatureCode] = { value: Feature, meta: { fetchedAt: Date.now() } };
+                        acc[Feature.Code as FeatureCode] = { value: Feature, meta: { fetchedAt } };
                         return acc;
                     },
                     codesToFetch.reduce<FeaturesState>((acc, code) => {
-                        acc[code] = { value: {} as Feature, meta: { fetchedAt: Date.now() } };
+                        acc[code] = { value: {} as Feature, meta: { fetchedAt } };
                         return acc;
                     }, {})
                 );
