@@ -265,25 +265,3 @@ export const insertTextBeforeBlockquotes = (
 
     return newBody;
 };
-
-// todo move in asistant helpers
-export const cleanAssistantEmailGeneration = (inputText: string) => {
-    /* Assistant often generates content with a subject and a body with the following format
-     *
-     *      Subject: email subject
-     *      Body: some text
-     *
-     *      some other text
-     *
-     * We need to clean this in order to display the correct content to the user
-     */
-    let text = inputText
-        .split('\n')
-        .filter((line) => !line.startsWith('Subject:'))
-        .join('\n')
-        .trim();
-    if (text.startsWith('Body:')) {
-        text = text.substring('Body:'.length).trim();
-    }
-    return text;
-};

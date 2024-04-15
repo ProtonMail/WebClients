@@ -13,7 +13,7 @@ import { DrawerThemeInjector } from '@proton/components/containers/themes/ThemeI
 import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/useQuickSettingsReminders';
 
 import { CheckAllRefProvider } from 'proton-mail/containers/CheckAllRefProvider';
-import { AssistantProvider } from 'proton-mail/genie/useAssistant';
+import { AssistantProvider } from '@proton/llm/lib/useAssistant';
 
 import { MAIN_ROUTE_PATH } from './constants';
 import ComposerContainer from './containers/ComposerContainer';

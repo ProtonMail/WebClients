@@ -158,7 +158,7 @@ const ComposerActions = ({
                                 >
                                     <Icon
                                         name="pen-stars"
-                                        alt={c('Action').t`Generate a message`}
+                                        alt={c('loc_nightly_assistant').t`Generate a message`}
                                         style={{ color: '#D132EA' }}
                                     />
                                 </Button>
