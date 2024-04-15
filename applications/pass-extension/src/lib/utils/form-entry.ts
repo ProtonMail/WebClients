@@ -1,6 +1,16 @@
 import type { FormType } from '@proton/pass/fathom';
-import type { AutosaveFormEntry, FormCredentials } from '@proton/pass/types';
-import { type FormEntry, FormEntryStatus } from '@proton/pass/types';
+import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
+import type { AutosaveFormEntry, FormCredentials, FormSubmitPayload } from '@proton/pass/types';
+import { type FormEntry, FormEntryStatus, WorkerMessageType } from '@proton/pass/types';
+
+export const stash = (reason: string) =>
+    sendMessage(contentScriptMessage({ type: WorkerMessageType.FORM_ENTRY_STASH, payload: { reason } }));
+
+export const stage = (payload: FormSubmitPayload) =>
+    sendMessage(contentScriptMessage({ type: WorkerMessageType.FORM_ENTRY_STAGE, payload }));
+
+export const commit = (reason: string) =>
+    sendMessage(contentScriptMessage({ type: WorkerMessageType.FORM_ENTRY_COMMIT, payload: { reason } }));
 
 export const isFormEntryCommitted = (submission: FormEntry): submission is FormEntry<FormEntryStatus.COMMITTED> =>
     submission.status === FormEntryStatus.COMMITTED;

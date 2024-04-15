@@ -70,16 +70,22 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
         },
 
         reconciliate: (formType: FormType, fields: DetectedField[]) => {
+            let didChange = formType !== formHandle.formType;
             formHandle.formType = formType;
 
+            /* Detach fields that are no longer present */
             formHandle.getFields().forEach((field) => {
                 const shouldDetach = !fields.some((incoming) => field.element === incoming.field);
-                return shouldDetach && formHandle.detachField(field.element);
+                if (shouldDetach) {
+                    didChange = true;
+                    formHandle.detachField(field.element);
+                }
             });
 
-            /* attach incoming new fields */
+            /* Attach new incoming fields, if not already tracked */
             fields.forEach(({ field, fieldType }) => {
                 if (formHandle.fields.get(field) === undefined) {
+                    didChange = true;
                     formHandle.fields.set(
                         field,
                         createFieldHandles({
@@ -92,6 +98,12 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
                     );
                 }
             });
+
+            /** Reset form tracker state if fields were added or removed. Some
+             * forms have appearing fields and may trigge mulitple  submissions.
+             * As such, reset the loading/submitted state everytime a new field
+             * appears/disappears (ie: github.com dynamic sign-up page) */
+            if (didChange) formHandle.tracker?.reset();
         },
 
         /* Form tracker is responsible for setting

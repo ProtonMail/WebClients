@@ -8,6 +8,7 @@ import { itemCreationIntent, itemCreationSuccess, itemEditIntent, itemEditSucces
 import type { FormEntry, ItemCreateIntent, ItemEditIntent } from '@proton/pass/types';
 import { AutosaveMode, FormEntryStatus, WorkerMessageType } from '@proton/pass/types';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
+import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
 import { createAutoSaveService } from './autosave';
 
@@ -21,11 +22,13 @@ describe('AutosaveService [worker]', () => {
         const submission: FormEntry<FormEntryStatus.COMMITTED> = {
             data: { username: 'test@proton.me', password: 'p4ssw0rd' },
             domain: 'domain.com',
+            formId: uniqueId(),
             status: FormEntryStatus.COMMITTED,
             subdomain: 'domain.com',
-            submitted: false,
+            submit: false,
             type: 'login',
             updatedAt: -1,
+            submittedAt: -1,
         };
 
         test('should prompt for new item if no match', () => {
