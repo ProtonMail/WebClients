@@ -1,9 +1,8 @@
 import { ReactNode } from 'react';
 
-import { c, msgid } from 'ttag';
+import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { MAX_CALENDARS_FREE, MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
 import {
     APPS,
     APP_NAMES,
@@ -14,7 +13,6 @@ import {
     MAIL_SHORT_APP_NAME,
     PLANS,
     PLAN_NAMES,
-    VPN_CONNECTIONS,
 } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import {
@@ -24,7 +22,6 @@ import {
     getIsCustomCycle,
     getIsPassB2BPlan,
     getPrimaryPlan,
-    getVPNDedicatedIPs,
     hasMaximumCycle,
     hasPassPlus,
     hasVPN,
@@ -48,7 +45,6 @@ import isTruthy from '@proton/utils/isTruthy';
 import percentage from '@proton/utils/percentage';
 
 import { Icon, IconName, Meter, Price, StripedItem, StripedList } from '../../../../components';
-import { getNCalendarsText } from '../../features/calendar';
 import { PlanCardFeatureDefinition } from '../../features/interface';
 import {
     FREE_PASS_ALIASES,
@@ -63,16 +59,11 @@ import {
     getVaultSharing,
     getVaults,
 } from '../../features/pass';
-import {
-    getB2BFreeVPNConnectionsText,
-    getB2BHighSpeedVPNConnectionsText,
-    getHighSpeedVPNConnectionsText,
-    getVPNConnectionsFeature,
-    getVPNConnectionsText,
-} from '../../features/vpn';
+import { getVPNConnectionsFeature } from '../../features/vpn';
 import { OpenSubscriptionModalCallback } from '../SubscriptionModalProvider';
 import SubscriptionPanelManageUserButton from '../SubscriptionPanelManageUserButton';
 import { SUBSCRIPTION_STEPS } from '../constants';
+import { getSubscriptionPanelText } from '../helpers/subscriptionPanelHelpers';
 import Panel from './Panel';
 
 interface Item extends Omit<PlanCardFeatureDefinition, 'status' | 'highlight' | 'included'> {
@@ -236,22 +227,14 @@ const SubscriptionPanel = ({
     const cycle = subscription?.Cycle ?? CYCLE.MONTHLY;
     const amount = (subscription?.Amount ?? 0) / cycle;
 
-    const hasAddresses = Array.isArray(addresses) && addresses.length > 0;
     const space = getSpace(user);
 
     const {
-        UsedDomains = 0,
         MaxDomains = 0,
         UsedSpace = space.usedSpace,
         MaxSpace = space.maxSpace,
-        UsedAddresses: OrganizationUsedAddresses,
-        MaxAddresses: OrganizationMaxAddresses,
-        UsedMembers = 1,
         MaxMembers = 1,
     } = organization || {};
-
-    const UsedAddresses = hasAddresses ? OrganizationUsedAddresses || 1 : 0;
-    const MaxAddresses = OrganizationMaxAddresses || 1;
 
     if (!user.canPay) {
         return null;
@@ -305,17 +288,14 @@ const SubscriptionPanel = ({
         );
     };
 
-    const getVpnPlusItems = (): Item[] => {
-        const maxVpn = 10;
+    const { addressText, domainsText, userText, calendarText, vpnText, serverText, maxVPNDevices } =
+        getSubscriptionPanelText(user, organization, addresses, subscription);
 
+    const getVpnPlusItems = (): Item[] => {
         return [
             {
                 icon: 'brand-proton-vpn',
-                text: c('Subscription attribute').ngettext(
-                    msgid`High-speed VPN on ${maxVpn} device`,
-                    `High-speed VPN on ${maxVpn} devices`,
-                    maxVpn
-                ),
+                text: maxVPNDevices,
             },
             {
                 icon: 'shield',
@@ -394,8 +374,6 @@ const SubscriptionPanel = ({
     };
 
     const getVpnB2B = () => {
-        const ipAddresses = getVPNDedicatedIPs(subscription);
-
         const getMoreButton = (
             <Button
                 color="norm"
@@ -428,21 +406,13 @@ const SubscriptionPanel = ({
         const items: Item[] = [
             {
                 icon: 'users' as IconName,
-                text: c('Subscription attribute').ngettext(
-                    msgid`${UsedMembers} of ${MaxMembers} user`,
-                    `${UsedMembers} of ${MaxMembers} users`,
-                    MaxMembers
-                ),
+                text: userText,
                 actionElement: getMoreButton,
                 dataTestId: 'users',
             },
             {
                 icon: 'servers',
-                text: c('Subscription attribute').ngettext(
-                    msgid`${ipAddresses} dedicated server`,
-                    `${ipAddresses} dedicated servers`,
-                    ipAddresses
-                ),
+                text: serverText,
                 actionElement: hasVpnBusiness(subscription) ? getMoreButton : null,
                 dataTestId: 'servers',
             },
@@ -457,63 +427,29 @@ const SubscriptionPanel = ({
 
     const getDefault = () => {
         const items: (Item | false)[] = [
-            (MaxMembers > 1 || getIsB2BAudienceFromSubscription(subscription)) && {
-                icon: 'users',
-                text: c('Subscription attribute').ngettext(
-                    msgid`${UsedMembers} of ${MaxMembers} user`,
-                    `${UsedMembers} of ${MaxMembers} users`,
-                    MaxMembers
-                ),
-            },
+            !!userText &&
+                (MaxMembers > 1 || getIsB2BAudienceFromSubscription(subscription)) && {
+                    icon: 'users',
+                    text: userText,
+                },
             {
                 icon: 'envelope',
-                text:
-                    MaxAddresses === 1 && UsedAddresses === 1
-                        ? c('Subscription attribute').t`1 email address`
-                        : c('Subscription attribute').ngettext(
-                              msgid`${UsedAddresses} of ${MaxAddresses} email address`,
-                              `${UsedAddresses} of ${MaxAddresses} email addresses`,
-                              MaxAddresses
-                          ),
+                text: addressText,
             },
             !!MaxDomains &&
+                !!domainsText &&
                 // we need to hide the custom domains section for Pass B2B plans until SSO is implemented
                 !isPassB2bPlan && {
                     icon: 'globe',
-                    text: c('Subscription attribute').ngettext(
-                        msgid`${UsedDomains} of ${MaxDomains} custom domain`,
-                        `${UsedDomains} of ${MaxDomains} custom domains`,
-                        MaxDomains
-                    ),
+                    text: domainsText,
                 },
             {
                 icon: 'calendar-checkmark',
-                text: (() => {
-                    if (MaxMembers > 1) {
-                        const n = user.hasPaidMail ? MAX_CALENDARS_PAID : MAX_CALENDARS_FREE;
-                        return c('Subscription attribute').ngettext(
-                            msgid`${n} calendar per user`,
-                            `${n} calendars per user`,
-                            n
-                        );
-                    }
-                    return getNCalendarsText(user.hasPaidMail ? MAX_CALENDARS_PAID : MAX_CALENDARS_FREE);
-                })(),
+                text: calendarText,
             },
             {
                 icon: 'brand-proton-vpn',
-                text: (() => {
-                    if (user.hasPaidVpn) {
-                        if (MaxMembers > 1) {
-                            return getB2BHighSpeedVPNConnectionsText(VPN_CONNECTIONS);
-                        }
-                        return getHighSpeedVPNConnectionsText(VPN_CONNECTIONS);
-                    }
-                    if (MaxMembers > 1) {
-                        return getB2BFreeVPNConnectionsText(1);
-                    }
-                    return getVPNConnectionsText(1);
-                })(),
+                text: vpnText,
             },
         ];
 
