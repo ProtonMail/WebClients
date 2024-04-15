@@ -8,6 +8,7 @@ import { CALENDAR_TYPE } from '@proton/shared/lib/calendar/constants';
 import type { HolidaysDirectoryCalendar } from '@proton/shared/lib/interfaces/calendar';
 
 const name = 'holidaysDirectory' as const;
+
 export interface HolidaysDirectoryState extends UserSettingsState {
     [name]: ModelState<HolidaysDirectoryCalendar[]>;
 }
@@ -20,7 +21,10 @@ export const selectHolidaysDirectory = (state: HolidaysDirectoryState) => state[
 const modelThunk = createAsyncModelThunk<Model, HolidaysDirectoryState, ProtonThunkArguments>(`${name}/fetch`, {
     miss: ({ extraArgument }) => {
         return extraArgument
-            .api<{ Calendars: HolidaysDirectoryCalendar[] }>(getDirectoryCalendars(CALENDAR_TYPE.HOLIDAYS))
+            .api<{ Calendars: HolidaysDirectoryCalendar[] }>({
+                ...getDirectoryCalendars(CALENDAR_TYPE.HOLIDAYS),
+                silence: true,
+            })
             .then(({ Calendars }) => {
                 return Calendars;
             });
