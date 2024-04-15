@@ -4,13 +4,14 @@ import * as React from 'react';
 import { ContextMenu, ContextSeparator } from '@proton/components';
 
 import useActiveShare from '../../../hooks/drive/useActiveShare';
-import { useFileUploadInput, useFolderUploadInput } from '../../../store';
+import { useDriveSharingFeatureFlag, useFileUploadInput, useFolderUploadInput } from '../../../store';
 import { ContextMenuProps } from '../../FileBrowser/interface';
 import { useCreateFileModal } from '../../modals/CreateFileModal';
 import { useCreateFolderModal } from '../../modals/CreateFolderModal';
 import { useFileSharingModal } from '../../modals/SelectLinkToShareModal/SelectLinkToShareModal';
 import { useLinkSharingModal } from '../../modals/ShareLinkModal/ShareLinkModal';
 import { ShareFileButton } from '../ContextMenu/buttons';
+import ShareFileButtonLEGACY from '../ContextMenu/buttons/_legacy/ShareFileButtonLEGACY';
 import useIsEditEnabled from '../useIsEditEnabled';
 import { CreateNewFileButton, CreateNewFolderButton, UploadFileButton, UploadFolderButton } from './ContextMenuButtons';
 
@@ -49,6 +50,9 @@ export function FolderContextMenu({
     const [createFileModal, showCreateFileModal] = useCreateFileModal();
     const [fileSharingModal, showFileSharingModal] = useFileSharingModal();
     const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
+    const driveSharing = useDriveSharingFeatureFlag();
+
+    const ShareFileButtonComponent = driveSharing ? ShareFileButton : ShareFileButtonLEGACY;
 
     // ContextMenu is removed from DOM when any action is executed but inputs
     // need to stay rendered so onChange handler can work.
@@ -75,7 +79,7 @@ export function FolderContextMenu({
                         <ContextSeparator />
                     </>
                 ) : null}
-                <ShareFileButton
+                <ShareFileButtonComponent
                     close={close}
                     shareId={shareId}
                     showFileSharingModal={showFileSharingModal}
