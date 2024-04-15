@@ -4,6 +4,7 @@ import type { ThunkAction } from 'redux-thunk';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store';
 import { createPromiseCache } from '@proton/redux-utilities';
 import { getFreePlan, queryPlans } from '@proton/shared/lib/api/payments';
+import { HOUR } from '@proton/shared/lib/constants';
 import type { FreePlanDefault, Plan } from '@proton/shared/lib/interfaces';
 
 import type { ModelState } from '../interface';
@@ -22,7 +23,7 @@ export const selectPlans = (state: PlansState) => state.plans;
 const initialState: SliceState = {
     value: undefined,
     error: undefined,
-    meta: { fetchedAt: -1 },
+    meta: { fetchedAt: 0 },
 };
 const slice = createSlice({
     name,
@@ -49,8 +50,8 @@ const promiseCache = createPromiseCache<Model>();
 const thunk = (): ThunkAction<Promise<Model>, PlansState, ProtonThunkArguments, UnknownAction> => {
     return (dispatch, getState, extraArgument) => {
         const select = () => {
-            const value = selectPlans(getState())?.value;
-            if (value) {
+            const { value, meta } = selectPlans(getState());
+            if (value !== undefined && Date.now() - meta.fetchedAt < HOUR * 6) {
                 return Promise.resolve(value);
             }
         };
