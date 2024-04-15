@@ -4540,17 +4540,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mlc-ai/web-llm@npm:0.2.26":
-  version: 0.2.26
-  resolution: "@mlc-ai/web-llm@npm:0.2.26"
-  checksum: 10c0/4a7494518bc6c971a0ed00cbd32242c3b94e226cedf8dc1a6f3b4d315778f60d049c3e2a91da331b87e61a52667e3c1a450509d706d74dd2f8f3baed41bf22dd
-  languageName: node
-  linkType: hard
-
-"@mlc-ai/web-llm@npm:^0.2.29":
-  version: 0.2.29
-  resolution: "@mlc-ai/web-llm@npm:0.2.29"
-  checksum: 10c0/228f432dd35461f80ae3e084aba9e4ce0083fb3ebc44b18a55445edfffb73ed65e8f75c956b761237e2972f880beab98b631b06a2dae6c79343485d6acf10ba1
+"@mlc-ai/web-llm@npm:0.2.31":
+  version: 0.2.31
+  resolution: "@mlc-ai/web-llm@npm:0.2.31"
+  checksum: 10c0/85544fc6bba34e52c2fea05eab603cd9a324f11edf697b68746895ffa89d7fdd62f0a011730971d4f6f1c7a46af315025257ffc940e081c427846f4d9c6fba6b
   languageName: node
   linkType: hard
 
@@ -6391,7 +6384,7 @@ __metadata:
     "@babel/core": "npm:^7.24.3"
     "@babel/preset-env": "npm:^7.24.3"
     "@jest/globals": "npm:^29.7.0"
-    "@mlc-ai/web-llm": "npm:0.2.26"
+    "@mlc-ai/web-llm": "npm:0.2.31"
     "@types/jest": "npm:^29.5.12"
     babel-jest: "npm:^29.7.0"
     jest: "npm:^29.7.0"
@@ -34549,7 +34542,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "root@workspace:."
   dependencies:
-    "@mlc-ai/web-llm": "npm:^0.2.29"
     "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
     "@proton/stylelint-config-proton": "workspace:packages/stylelint-config-proton"
     "@trivago/prettier-plugin-sort-imports": "npm:^4.3.0"
