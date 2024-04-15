@@ -108,7 +108,7 @@ export const getCheckoutRenewNoticeText = ({
         const second = c('vpn_2024: renew').jt`You'll then be billed every 12 months at ${renewPrice}.`;
         return [first, ' ', second];
     }
-    if (planIDs[PLANS.MAIL] && coupon === COUPON_CODES.TRYMAILPLUS2024) {
+    if (planIDs[PLANS.MAIL] && (coupon === COUPON_CODES.TRYMAILPLUS2024 || coupon === COUPON_CODES.MAILPLUSINTRO)) {
         const renewablePrice = (
             <Price key="renewable-price" currency={currency} suffix={c('Suffix').t`/month`} isDisplayedInSentence>
                 {499}
