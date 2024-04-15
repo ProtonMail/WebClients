@@ -40,7 +40,7 @@ import {
 } from '@proton/shared/lib/interfaces';
 import { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar';
 import { DEFAULT_MAILSETTINGS, DELAY_IN_SECONDS, PM_SIGNATURE } from '@proton/shared/lib/mail/mailSettings';
-import { registerFeatureFlagsApiMock } from '@proton/testing/lib/features';
+import { getFeatureFlagsState, registerFeatureFlagsApiMock } from '@proton/testing/lib/features';
 
 import QuickSettingsTestProvider from 'proton-mail/helpers/test/quick-settings';
 import { AttachmentsState } from 'proton-mail/store/attachments/attachmentsTypes';
@@ -62,7 +62,7 @@ import { MailboxContainerContextProvider } from '../../containers/mailbox/Mailbo
 import ChecklistsProvider from '../../containers/onboardingChecklist/provider/ChecklistsProvider';
 import { MailContentRefProvider } from '../../hooks/useClickMailContent';
 import { MailState, MailStore, extendStore, setupStore } from '../../store/store';
-import { api, getFeatureFlags, mockDomApi } from './api';
+import { api, mockDomApi } from './api';
 import { mockCache } from './cache';
 import NotificationsTestProvider from './notifications';
 
@@ -168,7 +168,7 @@ export const getStoreWrapper = (preloadedState?: ExtendedRenderOptions['preloade
             addresses: getModelState([]),
             addressKeys: {},
             userKeys: getModelState([{ publicKey: {}, privateKey: {} } as DecryptedKey]),
-            userSettings: getModelState({ Flags: {} } as UserSettings),
+            userSettings: getModelState({ Flags: {}, Email: {}, Phone: {}, '2FA': {} } as UserSettings),
             mailSettings: getModelState({
                 ...DEFAULT_MAILSETTINGS,
                 PMSignature: PM_SIGNATURE.ENABLED,
@@ -186,7 +186,7 @@ export const getStoreWrapper = (preloadedState?: ExtendedRenderOptions['preloade
             calendarUserSettings: getModelState({} as CalendarUserSettings),
             holidaysDirectory: getModelState([]),
             importerConfig: getModelState({} as ApiEnvironmentConfig),
-            features: getFeatureFlags([[FeatureCode.SLIntegration, true]]),
+            features: getFeatureFlagsState([[FeatureCode.SLIntegration, true]]),
             conversationCounts: getModelState([]),
             messageCounts: getModelState([]),
             attachments: {} as AttachmentsState,

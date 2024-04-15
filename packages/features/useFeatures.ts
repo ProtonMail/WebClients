@@ -5,7 +5,7 @@ import noop from '@proton/utils/noop';
 import unique from '@proton/utils/unique';
 
 import { Feature, FeatureCode } from './interface';
-import { fetchFeatures, selectFeatures, updateFeature } from './reducer';
+import { fetchFeatures, isValidFeature, selectFeatures, updateFeature } from './reducer';
 
 let codeQueue: FeatureCode[] = [];
 
@@ -42,17 +42,18 @@ const useFeatures = <Flags extends FeatureCode>(codes: Flags[], prefetch = true)
     }, codes);
 
     useEffect(() => {
-        if (prefetch && codes.some((code) => !state[code])) {
+        if (prefetch && codes.some((code) => !isValidFeature(state[code]))) {
             get(codes).catch(noop);
         }
     }, codes);
 
     const featuresFlags = codes.map((code): FeatureContextValue => {
+        const featureStateValue = state[code]?.value;
         return {
-            get: () => get([code]).then((result) => result[code]!),
+            get: () => get([code]).then((featuresState) => featuresState[code]),
             update: (value) => put(code, value),
-            feature: state[code],
-            loading: state[code] === undefined,
+            feature: featureStateValue,
+            loading: featureStateValue === undefined,
             code,
         };
     });
