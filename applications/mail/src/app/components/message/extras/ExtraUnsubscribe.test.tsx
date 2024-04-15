@@ -4,6 +4,7 @@ import loudRejection from 'loud-rejection';
 import { getModelState } from '@proton/account/test';
 import { FeatureCode } from '@proton/features';
 import { openNewTab } from '@proton/shared/lib/helpers/browser';
+import { getFeatureFlagsState } from '@proton/testing/lib/features';
 
 import { mergeMessages } from '../../../helpers/message/messages';
 import { getCompleteAddress, minimalCache } from '../../../helpers/test/cache';
@@ -13,7 +14,6 @@ import {
     addApiMock,
     clearAll,
     generateKeys,
-    getFeatureFlags,
     render,
     waitForEventManagerCall,
     waitForNotification,
@@ -212,7 +212,7 @@ describe('Unsubscribe banner', () => {
         await render(<ExtraUnsubscribe message={message.data} />, {
             preloadedState: {
                 addresses: getModelState([getCompleteAddress({ ID: toAddressID, Email: toAddress })]),
-                features: getFeatureFlags([[FeatureCode.SLIntegration, true]]),
+                features: getFeatureFlagsState([[FeatureCode.SLIntegration, true]]),
             },
         });
 
@@ -263,7 +263,7 @@ describe('Unsubscribe banner', () => {
         await render(<ExtraUnsubscribe message={message.data} />, {
             preloadedState: {
                 addresses: getModelState([getCompleteAddress({ ID: toAddressID, Email: toAddress })]),
-                features: getFeatureFlags([[FeatureCode.SLIntegration, true]]),
+                features: getFeatureFlagsState([[FeatureCode.SLIntegration, true]]),
             },
         });
 
@@ -315,7 +315,7 @@ describe('Unsubscribe banner', () => {
         await render(<ExtraUnsubscribe message={message.data} />, {
             preloadedState: {
                 addresses: getModelState([getCompleteAddress({ ID: toAddressID, Email: toAddress })]),
-                features: getFeatureFlags([[FeatureCode.SLIntegration, true]]),
+                features: getFeatureFlagsState([[FeatureCode.SLIntegration, true]]),
             },
         });
 

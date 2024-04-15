@@ -16,12 +16,13 @@ import { MAILBOX_LABEL_IDS, MIME_TYPES } from '@proton/shared/lib/constants';
 import { addDays, addMinutes } from '@proton/shared/lib/date-fns-utc';
 import { MailSettings, Recipient, UserModel } from '@proton/shared/lib/interfaces';
 import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
+import { getFeatureFlagsState } from '@proton/testing/lib/features';
 
 import { MessageStateWithData } from 'proton-mail/store/messages/messagesTypes';
 import { MailState } from 'proton-mail/store/store';
 
 import { getMinScheduleTime } from '../../../helpers/schedule';
-import { addApiMock, getFeatureFlags } from '../../../helpers/test/api';
+import { addApiMock } from '../../../helpers/test/api';
 import { minimalCache } from '../../../helpers/test/cache';
 import { addApiKeys, clearAll, getDropdown } from '../../../helpers/test/helper';
 import { ID, getMessage, renderComposer } from './Composer.test.helpers';
@@ -55,7 +56,7 @@ const getPreloadState = ({
     return {
         user: getModelState(getUser(hasPaidMail)),
         mailSettings: getModelState({ ViewMode: VIEW_MODE.SINGLE } as MailSettings),
-        features: getFeatureFlags([
+        features: getFeatureFlagsState([
             [FeatureCode.ScheduledSendFreemium, featureFlagActive],
             [FeatureCode.SpotlightScheduledSend, showSpotlight],
         ]),

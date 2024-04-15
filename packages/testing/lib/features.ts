@@ -14,6 +14,26 @@ export const defaultFeatureFlagValue = {
 
 export const featureFlags: { [code: string]: any } = {};
 
+export const getFeatureFlagsState = (features: [FeatureCode, boolean | object][], fetchedAt = Date.now()) => {
+    return Object.fromEntries(
+        features.map(([featureCode, value]) => {
+            return [
+                featureCode,
+                {
+                    value: {
+                        ...defaultFeatureFlagValue,
+                        Code: featureCode,
+                        Value: value,
+                    },
+                    meta: {
+                        fetchedAt,
+                    },
+                },
+            ];
+        })
+    );
+};
+
 export const getFeatureFlags = (features: [FeatureCode, boolean | object][]) => {
     return Object.fromEntries(
         features.map(([featureCode, value]) => {
