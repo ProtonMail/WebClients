@@ -20,7 +20,6 @@ const ComposerAssistantInput = ({ onGenerateResult }: Props) => {
         isModelLoadingOnGPU,
         downloadModelProgress,
         isGeneratingResult,
-        isWaitingForResult,
         generateResult,
         cancelRunningAction,
     } = useAssistant();
@@ -38,8 +37,12 @@ const ComposerAssistantInput = ({ onGenerateResult }: Props) => {
 
     // TODO replace icons
     const getLeftIcon = () => {
-        if (isModelDownloading) {
-            const progressDisplay = Math.round(downloadModelProgress * 100);
+        // We have no way to differentiate the download step from the loading GPU state at this point
+        // So if we have a progress, we're downloading so we can show the progress bar, otherwise show a spinner
+        const progress = downloadModelProgress * 100;
+        const showDownloadProgress = isModelDownloading && progress > 0 && progress < 100;
+        if (showDownloadProgress) {
+            const progressDisplay = Math.round(progress);
             return (
                 <Tooltip title={c('loc_nightly_assistant').t`Downloading model: ${progressDisplay}%`}>
                     <div>
@@ -49,7 +52,7 @@ const ComposerAssistantInput = ({ onGenerateResult }: Props) => {
                     </div>
                 </Tooltip>
             );
-        } else if (isGeneratingResult || isModelLoadingOnGPU) {
+        } else if (isGeneratingResult || isModelLoadingOnGPU || isModelDownloading) {
             return <CircleLoader />;
         }
         return <Icon name="pen" />;
@@ -64,7 +67,7 @@ const ComposerAssistantInput = ({ onGenerateResult }: Props) => {
                 </Button>
             );*/
         // } else
-        if (isWaitingForResult) {
+        if (isGeneratingResult) {
             return (
                 <Button
                     icon
@@ -104,7 +107,7 @@ const ComposerAssistantInput = ({ onGenerateResult }: Props) => {
             <Input
                 autoFocus
                 value={assistantRequest}
-                placeholder='Try "Invite Vanessa to my birthday party"'
+                placeholder={c('loc_nightly_assistant').t`Try "Invite Vanessa to my birthday party"`}
                 onChange={(e) => setAssistantRequest(e.target?.value || '')}
                 onKeyDown={handleGenieKeyDown}
                 disabled={isGeneratingResult}
