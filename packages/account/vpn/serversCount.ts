@@ -11,7 +11,7 @@ import type { ModelState } from '../interface';
 const name = 'vpnServersCount';
 
 export interface VPNServersCountState {
-    [name]: ModelState<VPNServersCountData> & { syncedAt: number };
+    [name]: ModelState<VPNServersCountData> & { meta: { fetchedAt: number } };
 }
 
 type SliceState = VPNServersCountState[typeof name];
@@ -24,18 +24,19 @@ const modelThunk = createAsyncModelThunk<Model, VPNServersCountState, ProtonThun
         return getVPNServersCountData(extraArgument.api);
     },
     previous: (extra) => {
-        const value = selectVpnServersCount(extra.getState());
-        if (value.syncedAt === -1 || Date.now() - value.syncedAt > 7 * DAY) {
-            return { value: undefined, error: undefined };
+        const state = selectVpnServersCount(extra.getState());
+        const { value, meta } = state;
+        if (value !== undefined && Date.now() - meta.fetchedAt < 1 * DAY) {
+            return value;
         }
-        return value;
+        return undefined;
     },
 });
 
 const initialState: SliceState = {
     value: defaultVPNServersCountData,
     error: undefined,
-    syncedAt: -1,
+    meta: { fetchedAt: 0 },
 };
 const slice = createSlice({
     name,
@@ -45,17 +46,16 @@ const slice = createSlice({
         return builder
             .addCase(modelThunk.pending, (state) => {
                 state.error = undefined;
-                state.syncedAt = Date.now();
             })
             .addCase(modelThunk.fulfilled, (state, action) => {
                 state.value = action.payload;
                 state.error = undefined;
-                state.syncedAt = Date.now();
+                state.meta.fetchedAt = Date.now();
             })
             .addCase(modelThunk.rejected, (state, action) => {
                 state.error = action.payload;
                 state.value = undefined;
-                state.syncedAt = Date.now();
+                state.meta.fetchedAt = Date.now();
             });
     },
 });
