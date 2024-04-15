@@ -8,11 +8,7 @@ describe('creator', () => {
         const thunkActionCreator = createAsyncModelThunk<number, { value: number; error: any }, any>('myState/fetch', {
             miss: async () => 42,
             previous: (store) => {
-                const old = store.getState();
-                return {
-                    value: old.value,
-                    error: old.error,
-                };
+                return store.getState().value;
             },
         });
 
@@ -43,11 +39,7 @@ describe('creator', () => {
         const thunkActionCreator = createAsyncModelThunk<T, StoreState<T>, undefined>('myState/fetch', {
             miss,
             previous: (store) => {
-                const old = selectState(store.getState());
-                return {
-                    value: old.value,
-                    error: old.error,
-                };
+                return selectState(store.getState()).value;
             },
         });
 
