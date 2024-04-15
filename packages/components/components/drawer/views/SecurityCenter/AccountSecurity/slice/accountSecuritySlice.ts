@@ -1,11 +1,11 @@
 import { PayloadAction, createSelector, createSlice } from '@reduxjs/toolkit';
 
 import { UserSettingsState, UserState } from '@proton/account';
-import { FeaturesState } from '@proton/features';
+import { FeaturesReducerState } from '@proton/features';
 
 const name = 'accountSecurity' as const;
 
-export interface AccountSecuritySlice extends UserState, UserSettingsState, FeaturesState {
+export interface AccountSecuritySlice extends UserState, UserSettingsState, FeaturesReducerState {
     [name]: {
         loading: boolean;
         accountRecoverySet: boolean;
@@ -44,7 +44,7 @@ const selectIsPrivateUser = (state: AccountSecuritySlice) => state.user.value?.i
 const selectAccountSecurity = (state: AccountSecuritySlice) => state.accountSecurity;
 const selectAccountSecurityLoading = (state: AccountSecuritySlice) => state.accountSecurity.loading;
 const selectTwoFactorAuthDismissed = (state: AccountSecuritySlice) =>
-    state.features.AccountSecurityDismissed2FACard?.Value === true;
+    state.features.AccountSecurityDismissed2FACard?.value.Value === true;
 
 export const selectCanDisplayAccountSecuritySection = createSelector(
     selectIsPrivateUser,
