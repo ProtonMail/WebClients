@@ -19,17 +19,27 @@ export const createAutoSaveService = () => {
         /* If credentials are not valid for the form type : exit early */
         if (!validateFormCredentials(data, { type, partial: false })) return { shouldPrompt: false };
 
-        /* If the form was of type `register` we should always
-         * ask the user to create a new item. Ideally for `NOOP`
-         * forms as well but we are still getting too many false
-         * positives on password-change form detections. */
-        if (type === 'register') return { shouldPrompt: true, data: { type: AutosaveMode.NEW } };
-
         const { username, password } = data;
-        const candidates = selectAutosaveCandidate({ domain, subdomain, username })(store.getState());
+
+        if (type === 'register') {
+            const candidates = selectAutosaveCandidate({ domain, subdomain, username: '' })(store.getState());
+            const pwMatch = candidates.filter((item) => deobfuscate(item.data.content.password) === password);
+            const fullMatch = username && pwMatch.some((item) => deobfuscate(item.data.content.username) === username);
+
+            /* The credentials may have been saved during the password-autosuggest autosave
+             * sequence - as such ensure we don't have an exact username/password match */
+            if (fullMatch) return { shouldPrompt: false };
+            if (pwMatch.length > 0) {
+                return {
+                    shouldPrompt: true,
+                    data: { type: AutosaveMode.UPDATE, candidates: pwMatch.map(intoSafeLoginItem) },
+                };
+            } else return { shouldPrompt: true, data: { type: AutosaveMode.NEW } };
+        }
 
         /* If no login items found for the current domain & the
          * current username - prompt for autosaving a new entry */
+        const candidates = selectAutosaveCandidate({ domain, subdomain, username })(store.getState());
         if (candidates.length === 0) return { shouldPrompt: true, data: { type: AutosaveMode.NEW } };
 
         /* If we cannot find an entry which also matches the current submission's
