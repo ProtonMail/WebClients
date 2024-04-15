@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { ModalStateProps, ModalTwo, useModalTwoStatic } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 
-import { DecryptedLink, useTreeForModals } from '../../../store';
+import { DecryptedLink, useDriveSharingFeatureFlag, useTreeForModals } from '../../../store';
 import ModalContentLoader from '../ModalContentLoader';
 import { useLinkSharingModal } from '../ShareLinkModal/ShareLinkModal';
 import { ModalContent } from './ModalContent';
@@ -23,6 +23,7 @@ const SelectedFileToShareModal = ({
     ...modalProps
 }: Props & ModalStateProps) => {
     const { rootItems, toggleExpand, isLoaded: isTreeLoaded } = useTreeForModals(shareId, { rootExpanded: true });
+    const driveSharing = useDriveSharingFeatureFlag();
 
     const [loading, withLoading] = useLoading();
     const [selectedFile, setSelectedFile] = useState<DecryptedLink>();
@@ -42,6 +43,8 @@ const SelectedFileToShareModal = ({
 
     const isSharingDisabled = !selectedFile || !selectedFile.parentLinkId;
 
+    const actionTextLEGACY = selectedFile?.shareUrl ? c('Action').t`Manage link` : c('Action').t`Create link`;
+    const actionText = c('Action').t`Share`;
     return (
         <ModalTwo
             onReset={onClose}
@@ -61,7 +64,7 @@ const SelectedFileToShareModal = ({
                     rootItems={rootItems}
                     selectedLinkId={selectedFile?.linkId}
                     isSharingDisabled={isSharingDisabled}
-                    actionText={selectedFile?.shareUrl ? c('Action').t`Manage link` : c('Action').t`Create link`}
+                    actionText={driveSharing ? actionText : actionTextLEGACY}
                     toggleExpand={toggleExpand}
                     onSelect={onSelect}
                 />
