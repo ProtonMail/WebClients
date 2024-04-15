@@ -5,6 +5,7 @@ import type { ProtonThunkArguments } from '@proton/redux-shared-store';
 import { createPromiseCache } from '@proton/redux-utilities';
 import { getFreePlan, queryPlans } from '@proton/shared/lib/api/payments';
 import { HOUR } from '@proton/shared/lib/constants';
+import { getMinuteJitter } from '@proton/shared/lib/helpers/jitter';
 import type { FreePlanDefault, Plan } from '@proton/shared/lib/interfaces';
 
 import type { ModelState } from '../interface';
@@ -35,12 +36,12 @@ const slice = createSlice({
         fulfilled: (state, action: PayloadAction<Model>) => {
             state.value = action.payload;
             state.error = undefined;
-            state.meta = { fetchedAt: Date.now() };
+            state.meta = { fetchedAt: Date.now() + getMinuteJitter() };
         },
         rejected: (state, action) => {
             state.error = action.payload;
             state.value = undefined;
-            state.meta = { fetchedAt: Date.now() };
+            state.meta = { fetchedAt: Date.now() + getMinuteJitter() };
         },
     },
 });
