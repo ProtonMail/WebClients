@@ -12,6 +12,7 @@ export enum TelemetryMeasurementGroups {
     mailPrivacyDropdown = 'mail.web.privacy_dropdown',
     mailSelectAll = 'mail.web.select_all',
     mailSnooze = 'mail.web.snooze',
+    mailSignup = 'mail.web.signup',
     mailSimpleLogin = 'mail.web.simplelogin_popups',
     /** Setting it to any even if mail only ATM. We will expand it to other apps soon */
     securityCenter = 'any.web.security_center',
@@ -21,6 +22,12 @@ export enum TelemetryMeasurementGroups {
 export enum TelemetrySubscriptionModalEvents {
     initialization = 'initialization',
     payment = 'payment',
+}
+
+export enum TelemetryMailTrial2024UpsellModal {
+    noThanks = 'no_thanks',
+    closeModal = 'close_modal',
+    upsell = 'upsell',
 }
 
 export enum TelemetrySimpleLoginEvents {
@@ -115,6 +122,7 @@ export enum TelemetryPaymentsEvents {
 export type TelemetryEvents =
     | TelemetrySimpleLoginEvents
     | TelemetrySubscriptionModalEvents
+    | TelemetryMailTrial2024UpsellModal
     | TelemetryCalendarEvents
     | TelemetryIcsSurgeryEvents
     | TelemetryAccountSignupBasicEvents

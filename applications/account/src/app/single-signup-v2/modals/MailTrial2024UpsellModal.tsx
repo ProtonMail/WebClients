@@ -12,6 +12,7 @@ import { PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
 import { Currency } from '@proton/shared/lib/interfaces';
 
 import SaveLabel from '../SaveLabel';
+import useMailSignupUpsellTelemetry from './useMailSignupUpsellTelemetry';
 
 interface Props extends ModalProps {
     onConfirm: () => Promise<void>;
@@ -21,6 +22,7 @@ interface Props extends ModalProps {
 
 const MailTrial2024UpsellModal = ({ onConfirm, onContinue, onClose, currency, ...rest }: Props) => {
     const [loading, withLoading] = useLoading();
+    const telemetry = useMailSignupUpsellTelemetry();
     const planName = PLAN_NAMES[PLANS.MAIL];
 
     const priceString = getSimplePriceString(currency, 100, '');
@@ -38,6 +40,7 @@ const MailTrial2024UpsellModal = ({ onConfirm, onContinue, onClose, currency, ..
                 shape="ghost"
                 data-testid="modal:close"
                 onClick={() => {
+                    void telemetry.close();
                     onContinue();
                     onClose?.();
                 }}
@@ -91,6 +94,7 @@ const MailTrial2024UpsellModal = ({ onConfirm, onContinue, onClose, currency, ..
                     size="large"
                     loading={loading}
                     onClick={async () => {
+                        void telemetry.upsell();
                         await withLoading(onConfirm().then(() => onClose?.()));
                     }}
                 >
@@ -113,6 +117,7 @@ const MailTrial2024UpsellModal = ({ onConfirm, onContinue, onClose, currency, ..
                     color="norm"
                     size="large"
                     onClick={() => {
+                        void telemetry.noThanks();
                         onContinue();
                         onClose?.();
                     }}
