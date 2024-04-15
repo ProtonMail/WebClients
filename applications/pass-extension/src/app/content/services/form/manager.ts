@@ -74,7 +74,7 @@ export const createFormManager = (options: FormManagerOptions) => {
      * is detected, it will be tracked until removed */
     const garbagecollect = (didDetach: boolean = false): boolean => {
         state.trackedForms.forEach((form) => {
-            if (form.shouldRemove()) {
+            if (form.detached) {
                 void form.tracker?.submit({ submitted: form.tracker.getState().isSubmitting, partial: true });
                 detachTrackedForm(form.element);
                 didDetach = true;

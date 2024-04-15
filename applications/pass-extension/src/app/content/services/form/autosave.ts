@@ -43,7 +43,7 @@ export const createAutosaveService = () => {
              * data for `FORM_TYPE_PRESENT` in case reconciliation happens
              * as a result of a form submission. */
             const forms = ctx?.service.formManager.getTrackedForms() ?? [];
-            const typedForms = forms.filter(({ formType, shouldRemove }) => formType === type && !shouldRemove());
+            const typedForms = forms.filter(({ formType, detached }) => formType === type && !detached);
             const submissionTypeMatch = typedForms.length > 0;
             const submitting = typedForms.some(({ tracker }) => tracker?.getState().isSubmitting);
             const valid = submission.submitted && validateFormCredentials(data, { type, partial: false });

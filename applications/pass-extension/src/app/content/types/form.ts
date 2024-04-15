@@ -9,10 +9,12 @@ import type { FieldIconHandle } from './icon';
 export type DetectedForm = { formType: FormType; form: HTMLElement; fields: DetectedField[] };
 export type DetectedField = { fieldType: FieldType; field: HTMLInputElement };
 export interface FormHandle {
-    id: string;
-    formType: FormType;
+    busy: boolean;
+    detached: boolean;
     element: HTMLElement;
     fields: Map<HTMLInputElement, FieldHandle>;
+    formType: FormType;
+    id: string;
     tracker?: FormTracker;
     attach: () => void;
     detach: () => void;
@@ -20,7 +22,6 @@ export interface FormHandle {
     getFields: (predicate?: (handle: FieldHandle) => boolean) => FieldHandle[];
     getFieldsFor: (type: FieldType, predicate?: (handle: FieldHandle) => boolean) => FieldHandle[];
     reconciliate: (type: FormType, fields: DetectedField[]) => void;
-    shouldRemove: () => boolean;
 }
 
 export interface FieldHandle {
