@@ -6,6 +6,7 @@ import { createPromiseMapCache } from '@proton/redux-utilities';
 import { queryDomainAddresses } from '@proton/shared/lib/api/domains';
 import queryPages from '@proton/shared/lib/api/helpers/queryPages';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
+import { getMinuteJitter } from '@proton/shared/lib/helpers/jitter';
 import type { Api, DomainAddress } from '@proton/shared/lib/interfaces';
 
 import { serverEvent } from '../eventLoop';
@@ -45,14 +46,14 @@ const slice = createSlice({
             state[action.payload.id] = {
                 value: action.payload.value,
                 error: undefined,
-                meta: { fetchedAt: Date.now() },
+                meta: { fetchedAt: Date.now() + getMinuteJitter() },
             };
         },
         rejected: (state, action: PayloadAction<{ id: string; value: any }>) => {
             state[action.payload.id] = {
                 value: undefined,
                 error: action.payload,
-                meta: { fetchedAt: Date.now() },
+                meta: { fetchedAt: Date.now() + getMinuteJitter() },
             };
         },
     },
