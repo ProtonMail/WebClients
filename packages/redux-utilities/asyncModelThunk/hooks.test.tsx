@@ -30,11 +30,7 @@ describe('hooks', () => {
         const thunkActionCreator = createAsyncModelThunk<T, StoreState<T>, undefined>('myState/fetch', {
             miss,
             previous: (store) => {
-                const old = selectState(store.getState());
-                return {
-                    value: old.value,
-                    error: old.error,
-                };
+                return selectState(store.getState()).value;
             },
         });
 
