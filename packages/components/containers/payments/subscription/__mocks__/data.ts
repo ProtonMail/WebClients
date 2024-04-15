@@ -1,4 +1,4 @@
-import { PLANS, PLAN_TYPES } from '@proton/shared/lib/constants';
+import { ORGANIZATION_STATE, PLANS, PLAN_TYPES } from '@proton/shared/lib/constants';
 import {
     OrganizationWithSettings,
     PendingInvitation,
@@ -625,6 +625,7 @@ export const organization = {
     UsedMembers: 2,
     MaxMembers: 5,
     Settings: {},
+    State: ORGANIZATION_STATE.ACTIVE,
 } as OrganizationWithSettings;
 
 export const vpnServersCount = {
