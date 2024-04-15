@@ -3,6 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store';
 import { createAsyncModelThunk } from '@proton/redux-utilities';
 import { DAY } from '@proton/shared/lib/constants';
+import { getMinuteJitter } from '@proton/shared/lib/helpers/jitter';
 import type { VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { defaultVPNServersCountData, getVPNServersCountData } from '@proton/shared/lib/vpn/serversCount';
 
@@ -50,12 +51,12 @@ const slice = createSlice({
             .addCase(modelThunk.fulfilled, (state, action) => {
                 state.value = action.payload;
                 state.error = undefined;
-                state.meta.fetchedAt = Date.now();
+                state.meta.fetchedAt = Date.now() + getMinuteJitter();
             })
             .addCase(modelThunk.rejected, (state, action) => {
                 state.error = action.payload;
                 state.value = undefined;
-                state.meta.fetchedAt = Date.now();
+                state.meta.fetchedAt = Date.now() + getMinuteJitter();
             });
     },
 });
