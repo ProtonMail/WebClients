@@ -14,6 +14,7 @@ import { FormType, flagAsIgnored, removeClassifierFlags } from '@proton/pass/fat
 import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
 import { WorkerMessageType } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
+import { asyncQueue } from '@proton/pass/utils/fp/promises';
 import noop from '@proton/utils/noop';
 
 type NotificationOptions = { root: ProtonPassRoot; onDestroy: () => void };
@@ -55,7 +56,7 @@ export const createNotification = ({ root, onDestroy }: NotificationOptions): In
                     }
 
                     /* handle OTP -> AutoSave sequence */
-                    return ctx?.service.autosave.reconciliate().catch(noop);
+                    return ctx?.service.autosave.reconciliate();
             }
         }),
         position: () => ({ top: 15, right: 15 }),
@@ -65,14 +66,22 @@ export const createNotification = ({ root, onDestroy }: NotificationOptions): In
         }),
     });
 
-    const open = (payload: NotificationActions) =>
-        iframe
-            .ensureReady()
-            .then(() => {
-                iframe.sendPortMessage({ type: IFrameMessageType.NOTIFICATION_ACTION, payload });
-                iframe.open(payload.action);
-            })
-            .catch(noop);
+    const open = asyncQueue(
+        withContext<(payload: NotificationActions) => Promise<void>>((ctx, payload) =>
+            iframe
+                .ensureReady()
+                .then(() => {
+                    /** if OTP autofill notification is opened - do not process
+                     * any other actions : it should take precedence */
+                    const state = ctx?.service.iframe.notification?.getState();
+                    if (state?.action === NotificationAction.OTP && state.visible) return;
+
+                    iframe.sendPortMessage({ type: IFrameMessageType.NOTIFICATION_ACTION, payload });
+                    iframe.open(payload.action);
+                })
+                .catch(noop)
+        )
+    );
 
     iframe.registerMessageHandler(
         IFrameMessageType.NOTIFICATION_AUTOFILL_OTP,
