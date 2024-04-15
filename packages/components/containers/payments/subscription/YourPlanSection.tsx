@@ -1,5 +1,5 @@
 import { getVPNIntroPricingVariant } from '@proton/components/containers';
-import { APP_NAMES } from '@proton/shared/lib/constants';
+import { APP_NAMES, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import { pick } from '@proton/shared/lib/helpers/object';
 import { getHasVpnB2BPlan } from '@proton/shared/lib/helpers/subscription';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
@@ -80,7 +80,8 @@ const YourPlanSection = ({ app }: Props) => {
      */
     const shouldRenderUpsells = !isVpnB2b;
     // VPN B2B plans must not have a usage panel
-    const shouldRenderUsagePanel = (organization?.UsedMembers || 0) > 1 && !isVpnB2b;
+    const shouldRenderUsagePanel =
+        (organization?.UsedMembers || 0) > 1 && !isVpnB2b && organization?.State === ORGANIZATION_STATE.ACTIVE;
 
     const shouldRenderPendingInvitation = Boolean(invites.length);
     const totalPanelsToDisplay = 1 + (+shouldRenderPendingInvitation || upsells.length) + +shouldRenderUsagePanel;
