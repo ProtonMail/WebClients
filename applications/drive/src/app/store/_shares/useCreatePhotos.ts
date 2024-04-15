@@ -3,17 +3,19 @@ import { CreatedDriveVolumeResult } from '@proton/shared/lib/interfaces/drive/vo
 import { generateDriveBootstrap, generateNodeHashKey } from '@proton/shared/lib/keys/driveKeys';
 
 import { useDebouncedRequest } from '../_api';
-import { useDriveCrypto } from '../_crypto';
 import useDefaultShare from './useDefaultShare';
+import useShare from './useShare';
 
+// Only used for debug purposed, see DriveSidebar.tsx
 export function useCreatePhotos() {
     const debouncedRequest = useDebouncedRequest();
-    const { getOwnAddressAndPrimaryKeys } = useDriveCrypto();
+    const { getShareCreatorKeys } = useShare();
     const { getDefaultShare } = useDefaultShare();
 
     const createPhotosShare = async () => {
+        const abortController = new AbortController();
         const defaultShare = await getDefaultShare();
-        const { address, privateKey } = await getOwnAddressAndPrimaryKeys(defaultShare.creator);
+        const { address, privateKey } = await getShareCreatorKeys(abortController.signal, defaultShare.shareId);
         const { bootstrap, folderPrivateKey } = await generateDriveBootstrap(privateKey);
         const { NodeHashKey: FolderHashKey } = await generateNodeHashKey(folderPrivateKey, folderPrivateKey);
 

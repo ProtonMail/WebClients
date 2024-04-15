@@ -30,6 +30,7 @@ export interface UserShareResult {
 }
 
 export interface ShareMetaShort {
+    AddressID: string;
     ShareID: string;
     Type: number;
     LinkID: string;
