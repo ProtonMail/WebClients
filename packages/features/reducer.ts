@@ -3,95 +3,113 @@ import { ThunkAction } from 'redux-thunk';
 
 import { getFeatures, updateFeatureValue } from '@proton/shared/lib/api/features';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
+import { HOUR } from '@proton/shared/lib/constants';
+import { getMinuteJitter } from '@proton/shared/lib/helpers/jitter';
 import type { Api } from '@proton/shared/lib/interfaces';
+import unique from '@proton/utils/unique';
 
 import type { Feature, FeatureCode } from './interface';
 
-const codePromiseCache: { [key in FeatureCode]?: Promise<Feature> } = {};
-
-const initialState = {} as { [key in FeatureCode]?: Feature };
-
-export interface FeaturesState {
-    features: typeof initialState;
+interface FeatureState {
+    value: Feature;
+    meta: { fetchedAt: number };
 }
 
-export const selectFeatures = (state: FeaturesState) => state.features;
+type FeaturesState = { [key in FeatureCode]?: FeatureState };
 
-type FeatureObject = { [key in FeatureCode]?: Feature };
+const codePromiseCache: { [key in FeatureCode]?: Promise<any> } = {};
+
+export interface FeaturesReducerState {
+    features: FeaturesState;
+}
+
+export const selectFeatures = (state: FeaturesReducerState) => state.features;
 
 export interface ThunkArguments {
     api: Api;
 }
 
+const initialState = {} as FeaturesState;
+
 export const featuresReducer = createSlice({
     name: 'features',
     initialState,
     reducers: {
-        'fetch/fulfilled': (state, action: PayloadAction<{ codes: FeatureCode[]; features: FeatureObject }>) => {
+        'fetch/fulfilled': (state, action: PayloadAction<{ codes: FeatureCode[]; features: FeaturesState }>) => {
             return {
                 ...state,
                 ...action.payload.features,
             };
         },
-        'update/pending': (state, action: PayloadAction<{ code: FeatureCode; feature: any }>) => {
+        'update/pending': (state, action: PayloadAction<{ code: FeatureCode; featureValue: any }>) => {
             const old = state[action.payload.code];
             if (old) {
                 state[action.payload.code] = {
                     ...old,
-                    Value: action.payload.feature,
+                    value: {
+                        ...old.value,
+                        Value: action.payload.featureValue,
+                    },
                 };
             }
         },
-        'update/fulfilled': (state, action: PayloadAction<{ code: FeatureCode; feature: Feature<any> }>) => {
+        'update/fulfilled': (state, action: PayloadAction<{ code: FeatureCode; feature: FeatureState }>) => {
+            const old = state[action.payload.code];
             state[action.payload.code] = {
-                ...state[action.payload.code],
-                ...action.payload.feature,
+                value: {
+                    ...old?.value,
+                    ...action.payload.feature.value,
+                },
+                meta: action.payload.feature.meta,
             };
         },
-        'update/rejected': (state, action: PayloadAction<{ code: FeatureCode; feature: Feature<any> | undefined }>) => {
+        'update/rejected': (state, action: PayloadAction<{ code: FeatureCode; feature: FeatureState | undefined }>) => {
             state[action.payload.code] = action.payload.feature;
         },
     },
 });
 
-export const fetchFeatures = (
-    codes: FeatureCode[]
+export const isValidFeature = (featureState: FeatureState | undefined): featureState is FeatureState => {
+    if (featureState?.value !== undefined && Date.now() - featureState.meta.fetchedAt < HOUR * 2) {
+        return true;
+    }
+    return false;
+};
+
+type ThunkResult<Key extends FeatureCode> = { [key in Key]: Feature };
+
+const defaultFeature = {} as Feature;
+
+export const fetchFeatures = <T extends FeatureCode>(
+    codes: T[]
 ): ThunkAction<
-    Promise<FeatureObject>,
-    FeaturesState,
+    Promise<ThunkResult<T>>,
+    FeaturesReducerState,
     ThunkArguments,
     ReturnType<(typeof featuresReducer.actions)['fetch/fulfilled']>
 > => {
     return async (dispatch, getState, extraArgument) => {
-        const state = selectFeatures(getState());
-
-        if (codes.length === 1) {
-            const code = codes[0];
-            if (state[code]) {
-                return { [code]: state[code] };
-            }
-            const promise = codePromiseCache[code];
-            if (promise) {
-                const result = await promise;
-                return { [code]: result };
-            }
-        }
+        const featuresState = selectFeatures(getState());
 
         const codesToFetch = codes.filter((code) => {
-            return !state[code] && !codePromiseCache[code];
+            if (codePromiseCache[code] !== undefined) {
+                return false;
+            }
+            return !isValidFeature(featuresState[code]);
         });
 
         if (codesToFetch.length) {
             const promise = getSilentApi(extraArgument.api)<{
                 Features: Feature[];
             }>(getFeatures(codesToFetch)).then(({ Features }) => {
-                const result = Features.reduce<FeatureObject>(
+                const fetchedAt = Date.now() + getMinuteJitter();
+                const result = Features.reduce<FeaturesState>(
                     (acc, Feature) => {
-                        acc[Feature.Code as FeatureCode] = Feature;
+                        acc[Feature.Code as FeatureCode] = { value: Feature, meta: { fetchedAt } };
                         return acc;
                     },
-                    codesToFetch.reduce<FeatureObject>((acc, code) => {
-                        acc[code] = {} as Feature;
+                    codesToFetch.reduce<FeaturesState>((acc, code) => {
+                        acc[code] = { value: defaultFeature, meta: { fetchedAt } };
                         return acc;
                     }, {})
                 );
@@ -100,23 +118,27 @@ export const fetchFeatures = (
             });
 
             codesToFetch.forEach((code) => {
-                codePromiseCache[code] = promise
-                    .then((result) => {
-                        return result[code]!;
-                    })
+                codePromiseCache[code] = promise;
+
+                promise
                     .finally(() => {
-                        codePromiseCache[code] = undefined;
-                    });
+                        delete codePromiseCache[code];
+                    })
+                    .catch(() => {});
             });
         }
 
-        return Promise.all(
-            codes.map(async (code): Promise<[FeatureCode, Promise<Feature | undefined> | Feature | undefined]> => {
-                return [code, (await codePromiseCache[code]) || state[code]];
+        const promises = unique(codes.map((code) => codePromiseCache[code]).filter(Boolean));
+        if (promises.length) {
+            await Promise.all(promises);
+        }
+
+        const latestFeaturesState = selectFeatures(getState());
+        return Object.fromEntries(
+            codes.map((code) => {
+                return [code, latestFeaturesState[code]?.value || featuresState[code]?.value || defaultFeature];
             })
-        ).then((result): FeatureObject => {
-            return Object.fromEntries(result);
-        });
+        ) as ThunkResult<T>;
     };
 };
 
@@ -125,7 +147,7 @@ export const updateFeature = (
     value: any
 ): ThunkAction<
     Promise<Feature>,
-    FeaturesState,
+    FeaturesReducerState,
     ThunkArguments,
     | ReturnType<(typeof featuresReducer.actions)['update/pending']>
     | ReturnType<(typeof featuresReducer.actions)['update/fulfilled']>
@@ -137,13 +159,18 @@ export const updateFeature = (
             dispatch(
                 featuresReducer.actions['update/pending']({
                     code,
-                    feature: value,
+                    featureValue: value,
                 })
             );
             const { Feature } = await getSilentApi(extraArgument.api)<{
                 Feature: Feature;
             }>(updateFeatureValue(code, value));
-            dispatch(featuresReducer.actions['update/fulfilled']({ code, feature: Feature }));
+            dispatch(
+                featuresReducer.actions['update/fulfilled']({
+                    code,
+                    feature: { value: Feature, meta: { fetchedAt: Date.now() } },
+                })
+            );
             return value;
         } catch (error) {
             dispatch(featuresReducer.actions['update/rejected']({ code, feature: current }));

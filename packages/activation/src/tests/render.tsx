@@ -21,7 +21,7 @@ import { ProtonStoreProvider } from '@proton/redux-shared-store';
 import createApi from '@proton/shared/lib/api/createApi';
 import { APPS } from '@proton/shared/lib/constants';
 import { MailSettings, ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
-import { getFeatureFlags } from '@proton/testing';
+import { getFeatureFlagsState } from '@proton/testing';
 
 import fakeCache from './fakeCache';
 import { setupStore } from './protonStore';
@@ -104,7 +104,7 @@ export const getStoreWrapper = (preloadedState?: any) => {
             addresses: getModelState([]),
             mailSettings: getModelState({} as MailSettings),
             categories: getModelState([]),
-            features: getFeatureFlags([[FeatureCode.EasySwitch, true]]),
+            features: getFeatureFlagsState([[FeatureCode.EasySwitch, true]]),
             calendars: getModelState([]),
             ...preloadedState,
         },

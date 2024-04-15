@@ -96,7 +96,6 @@ export enum FeatureCode {
     PrivacyDropdownOpened = 'PrivacyDropdownOpened',
     ProtonBadge = 'ProtonBadge',
     ProtonSentinel = 'ProtonSentinel',
-    ProtonSentinelAuthLogUpsell = 'ProtonSentinelAuthLogUpsell',
     ProtonSentinelUpsell = 'ProtonSentinelUpsell',
     QuickReply = 'QuickReply',
     QuickSettingsSpotlight = 'QuickSettingsSpotlight',
