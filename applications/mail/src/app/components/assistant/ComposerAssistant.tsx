@@ -7,11 +7,11 @@ import { Href } from '@proton/atoms/Href';
 import { Scroll } from '@proton/atoms/Scroll';
 import { Icon, Tooltip } from '@proton/components/components';
 import ErrorZone from '@proton/components/components/text/ErrorZone';
+import { useAssistant } from '@proton/llm/lib/useAssistant';
 import { getBlogURL } from '@proton/shared/lib/helpers/url';
 import clsx from '@proton/utils/clsx';
 
-import ComposerAssistantInput from 'proton-mail/genie/ComposerAssistantInput';
-import { useAssistant } from 'proton-mail/genie/useAssistant';
+import ComposerAssistantInput from 'proton-mail/components/assistant/ComposerAssistantInput';
 
 import './ComposerAssistant.scss';
 
@@ -32,7 +32,6 @@ const ComposerAssistant = ({ onUseGeneratedText, onUpdateShowAssistant, assistan
     const replaceMessageBody = async () => {
         onUseGeneratedText(result);
 
-        setResult(''); // might not be needed
         onUpdateShowAssistant?.(false);
         closeAssistant(assistantID);
     };
@@ -56,7 +55,7 @@ const ComposerAssistant = ({ onUseGeneratedText, onUpdateShowAssistant, assistan
             <div className="composer-assistant rounded-lg flex-nowrap flex flex-column mx-2 my-4 relative">
                 <div className="shrink-0 mt-2 pr-2 flex flex-row flex-nowrap flex-column md:flex-row items-stretch md:items-center my-0 pb-2 w-full">
                     <ComposerAssistantInput onGenerateResult={handleGenerateResult} />
-                    <Tooltip title={c('Title').t`Close AI Assistant`}>
+                    <Tooltip title={c('loc_nightly_assistant').t`Close AI Assistant`}>
                         <Button
                             className="absolute top-0 right-0 m-0.5"
                             icon
@@ -64,7 +63,7 @@ const ComposerAssistant = ({ onUseGeneratedText, onUpdateShowAssistant, assistan
                             size="small"
                             onClick={handleCloseAssistant}
                         >
-                            <Icon name="cross" alt={c('Title').t`Close AI Assistant`} />
+                            <Icon name="cross" alt={c('loc_nightly_assistant').t`Close AI Assistant`} />
                         </Button>
                     </Tooltip>
                 </div>
@@ -76,11 +75,11 @@ const ComposerAssistant = ({ onUseGeneratedText, onUpdateShowAssistant, assistan
                                 <Scroll>{result}</Scroll>
                             </div>
                             <div className="shrink-0 flex flex-nowrap flex-row w-full items-center">
-                                <div className="color-weak text-sm pr-4 flex-1">{c('Action')
+                                <div className="color-weak text-sm pr-4 flex-1">{c('loc_nightly_assistant')
                                     .jt`This is intended as a writing aid. Check suggested text for accuracy. ${learnMoreLink}`}</div>
                                 <div className="shrink-0 flex items-center">
                                     {/*TODO show this button later*/}
-                                    {/*<Tooltip title={c('Title').t`Refine result`}>*/}
+                                    {/*<Tooltip title={c('loc_nightly_assistant').t`Refine result`}>*/}
                                     {/*    <Button*/}
                                     {/*        icon*/}
                                     {/*        shape="ghost"*/}
@@ -89,7 +88,7 @@ const ComposerAssistant = ({ onUseGeneratedText, onUpdateShowAssistant, assistan
                                     {/*        onClick={() => console.log('TODO')}*/}
                                     {/*        className="mr-2"*/}
                                     {/*    >*/}
-                                    {/*        <Icon name="arrow-rotate-right" alt={c('Title').t`Refine result`} />*/}
+                                    {/*        <Icon name="arrow-rotate-right" alt={c('loc_nightly_assistant').t`Refine result`} />*/}
                                     {/*    </Button>*/}
                                     {/*</Tooltip>*/}
                                     <Button
@@ -97,7 +96,7 @@ const ComposerAssistant = ({ onUseGeneratedText, onUpdateShowAssistant, assistan
                                         className={clsx([!isWaitingForResult && 'composer-assistant-button'])}
                                         disabled={isWaitingForResult}
                                     >
-                                        {c('Action').t`Use this`}
+                                        {c('loc_nightly_assistant').t`Use this`}
                                     </Button>
                                 </div>
                             </div>

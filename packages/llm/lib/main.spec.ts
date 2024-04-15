@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import type { MonitorDownloadCallback } from '@proton/llm';
-import { DummyLlmManager, DummyLlmModel } from '@proton/llm/dummy';
+import type { MonitorDownloadCallback } from './types';
+import { DummyLlmManager, DummyLlmModel } from './dummy';
 
 describe('DummyLlmManager', () => {
     let llmManager: DummyLlmManager;

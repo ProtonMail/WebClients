@@ -19,9 +19,9 @@ import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
 import { getRecipients } from '@proton/shared/lib/mail/messages';
 import noop from '@proton/utils/noop';
 
-import ComposerAssistant from 'proton-mail/genie/ComposerAssistant';
-import { useAssistant } from 'proton-mail/genie/useAssistant';
-import { cleanAssistantEmailGeneration, insertTextBeforeBlockquotes } from 'proton-mail/helpers/message/messageContent';
+import ComposerAssistant from 'proton-mail/components/assistant/ComposerAssistant';
+import { useAssistant } from '@proton/llm/lib/useAssistant';
+import { insertTextBeforeBlockquotes } from 'proton-mail/helpers/message/messageContent';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { DRAG_ADDRESS_KEY } from '../../constants';
@@ -36,6 +36,7 @@ import ComposerMeta from './ComposerMeta';
 import ComposerActions from './actions/ComposerActions/ComposerActions';
 import { ExternalEditorActions } from './editor/EditorWrapper';
 import ComposerInnerModals from './modals/ComposerInnerModals';
+import {cleanAssistantEmailGeneration} from "@proton/llm/lib";
 
 export type MessageUpdate = PartialMessageState | ((message: MessageState) => PartialMessageState);
 

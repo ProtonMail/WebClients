@@ -8,7 +8,7 @@ import type {
     PromiseResolve,
     RunningAction,
     WriteFullEmailAction,
-} from '@proton/llm/index';
+} from './types';
 
 async function delay(time: number) {
     const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));

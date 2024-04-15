@@ -6385,9 +6385,19 @@ __metadata:
     "@babel/preset-env": "npm:^7.24.3"
     "@jest/globals": "npm:^29.7.0"
     "@mlc-ai/web-llm": "npm:0.2.31"
+    "@proton/components": "workspace:packages/components"
+    "@proton/shared": "workspace:packages/shared"
+    "@testing-library/jest-dom": "npm:^6.4.2"
+    "@testing-library/react": "npm:^14.3.0"
     "@types/jest": "npm:^29.5.12"
     babel-jest: "npm:^29.7.0"
+    eslint: "npm:^8.57.0"
     jest: "npm:^29.7.0"
+    jest-environment-jsdom: "npm:^29.7.0"
+    react: "npm:^18.2.0"
+    react-dom: "npm:^18.2.0"
+    ts-jest: "npm:^29.1.2"
+    typescript: "npm:^5.4.4"
   languageName: unknown
   linkType: soft
 

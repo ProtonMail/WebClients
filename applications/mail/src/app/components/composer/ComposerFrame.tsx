@@ -5,7 +5,7 @@ import type { Breakpoints } from '@proton/components/hooks/useActiveBreakpoint';
 import { COMPOSER_MODE } from '@proton/shared/lib/mail/mailSettings';
 import clsx from '@proton/utils/clsx';
 
-import { useAssistant } from 'proton-mail/genie/useAssistant';
+import { useAssistant } from '@proton/llm/lib/useAssistant';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { ADVANCED_SEARCH_OVERLAY_CLOSE_EVENT, DRAG_ADDRESS_KEY } from '../../constants';
