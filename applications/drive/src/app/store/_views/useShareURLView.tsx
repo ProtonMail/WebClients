@@ -166,9 +166,10 @@ export default function useShareURLView(shareId: string, linkId: string) {
         }
 
         const update = () => {
+            const abortController = new AbortController();
             return updateShareUrl(
+                abortController.signal,
                 {
-                    creatorEmail: shareUrl.creatorEmail,
                     shareId: shareUrl.shareId,
                     shareUrlId: shareUrl.shareUrlId,
                     flags: shareUrl.flags,

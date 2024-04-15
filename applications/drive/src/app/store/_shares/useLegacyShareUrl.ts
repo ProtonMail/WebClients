@@ -66,7 +66,7 @@ export default function useLegacyShareUrl() {
     const driveCrypto = useDriveCrypto();
     const events = useDriveEventManager();
     const { createShare, deleteShare } = useShareActions();
-    const { getShare, getShareSessionKey } = useShare();
+    const { getShare, getShareWithKey, getShareSessionKey } = useShare();
     const { getLink, loadFreshLink, getLinkPrivateKey } = useLink();
     const volumeState = useVolumesState();
 
@@ -83,14 +83,12 @@ export default function useLegacyShareUrl() {
         return CryptoProxy.decryptSessionKey({ [messageType]: keyPacket, passwords: [password] });
     };
 
-    const decryptShareUrl = async ({
-        creatorEmail,
-        password,
-        sharePassphraseKeyPacket,
-        sharePasswordSalt,
-        ...rest
-    }: ShareURLLEGACY) => {
-        const privateKeys = await driveCrypto.getPrivateAddressKeys(creatorEmail);
+    const decryptShareUrl = async (
+        abortSignal: AbortSignal,
+        { creatorEmail, shareId, password, sharePassphraseKeyPacket, sharePasswordSalt, ...rest }: ShareURLLEGACY
+    ) => {
+        const share = await getShareWithKey(abortSignal, shareId);
+        const privateKeys = await driveCrypto.getPrivateAddressKeys(share.addressId);
         const decryptedPassword = await decryptUnsigned({
             armoredMessage: password,
             privateKey: privateKeys,
@@ -98,7 +96,7 @@ export default function useLegacyShareUrl() {
             Promise.reject(
                 new EnrichedError('Failed to decrypt share URL password', {
                     tags: {
-                        shareId: rest.shareId,
+                        shareId,
                     },
                     extra: {
                         e,
@@ -122,7 +120,7 @@ export default function useLegacyShareUrl() {
             Promise.reject(
                 new EnrichedError('Failed to decrypt share session key for shared URL', {
                     tags: {
-                        shareId: rest.shareId,
+                        shareId,
                     },
                     extra: { e },
                 })
@@ -132,7 +130,7 @@ export default function useLegacyShareUrl() {
         if (!shareSessionKey) {
             throw new EnrichedError('Failed to decrypt share session key for shared URL', {
                 tags: {
-                    shareId: rest.shareId,
+                    shareId,
                 },
             });
         }
@@ -140,6 +138,7 @@ export default function useLegacyShareUrl() {
         return {
             shareUrl: {
                 ...rest,
+                shareId,
                 creatorEmail,
                 password: decryptedPassword,
                 sharePassphraseKeyPacket,
@@ -163,12 +162,11 @@ export default function useLegacyShareUrl() {
         return uint8ArrayToBase64String(symmetric);
     };
 
-    const encryptShareUrlPassword = async (decryptedPassword: string, creatorEmail: string) => {
+    const encryptShareUrlPassword = async (decryptedPassword: string, addressId: string) => {
         const {
             address: { Email: email },
             publicKey,
-        } = await driveCrypto.getOwnAddressAndPrimaryKeys(creatorEmail);
-
+        } = await driveCrypto.getOwnAddressAndPrimaryKeys(addressId);
         const password = await encryptUnsigned({
             message: stringToUint8Array(encodeUtf8(decryptedPassword)),
             publicKey,
@@ -199,7 +197,7 @@ export default function useLegacyShareUrl() {
             return { salt, keyPacket };
         };
 
-        const share = await getShare(abortSignal, shareId);
+        const share = await getShareWithKey(abortSignal, shareId);
 
         const [
             { salt: SharePasswordSalt, keyPacket: SharePassphraseKeyPacket },
@@ -219,7 +217,7 @@ export default function useLegacyShareUrl() {
                     })
                 )
             ),
-            encryptShareUrlPassword(password, share.creator).catch((e) =>
+            encryptShareUrlPassword(password, share.addressId).catch((e) =>
                 Promise.reject(
                     new EnrichedError('Failed to encrypt share URL password', {
                         tags: {
@@ -303,7 +301,7 @@ export default function useLegacyShareUrl() {
 
         const shareUrl = await fetchShareUrl(abortSignal, linkShareId);
         if (shareUrl) {
-            return decryptShareUrl(shareUrl);
+            return decryptShareUrl(abortSignal, shareUrl);
         }
         return createShareUrl(abortSignal, shareId, linkShareId, linkShareSessionKey).catch((err) => {
             // If share URL creation was aborted, remove its share as well
@@ -330,7 +328,7 @@ export default function useLegacyShareUrl() {
             return;
         }
 
-        const { shareUrl: decryptedShareUrl } = await decryptShareUrl(shareUrl);
+        const { shareUrl: decryptedShareUrl } = await decryptShareUrl(abortSignal, shareUrl);
         return decryptedShareUrl;
     };
 
@@ -376,7 +374,7 @@ export default function useLegacyShareUrl() {
 
     const getFieldsToUpdateForPassword = async (
         newPassword: string,
-        creatorEmail: string,
+        addressId: string,
         _flags: number,
         keyInfo: SharedURLSessionKeyPayload
     ): Promise<Partial<UpdateSharedURL>> => {
@@ -398,7 +396,7 @@ export default function useLegacyShareUrl() {
                         })
                     )
                 ),
-            encryptShareUrlPassword(newPassword, creatorEmail).catch((e) =>
+            encryptShareUrlPassword(newPassword, addressId).catch((e) =>
                 Promise.reject(
                     new EnrichedError('Failed to encrypt share URL password', {
                         extra: { e },
@@ -423,8 +421,8 @@ export default function useLegacyShareUrl() {
     };
 
     const updateShareUrl = async (
+        abortSignal: AbortSignal,
         shareUrlInfo: {
-            creatorEmail: string;
             shareId: string;
             shareUrlId: string;
             flags: number;
@@ -433,7 +431,7 @@ export default function useLegacyShareUrl() {
         newDuration?: number | null,
         newPassword?: string
     ) => {
-        const { creatorEmail, shareId, shareUrlId, flags, keyInfo } = shareUrlInfo;
+        const { shareId, shareUrlId, flags, keyInfo } = shareUrlInfo;
         let fieldsToUpdate: Partial<UpdateSharedURL> = {};
 
         if (newDuration !== undefined) {
@@ -441,9 +439,10 @@ export default function useLegacyShareUrl() {
         }
 
         if (newPassword !== undefined) {
+            const share = await getShareWithKey(abortSignal, shareId);
             const fieldsToUpdateForPassword = await getFieldsToUpdateForPassword(
                 newPassword,
-                creatorEmail,
+                share.addressId,
                 flags,
                 keyInfo
             ).catch((e) =>
@@ -593,8 +592,8 @@ export default function useLegacyShareUrl() {
         loadShareUrlLink,
         loadShareUrlNumberOfAccesses,
         updateShareUrl: (
+            abortSignal: AbortSignal,
             shareUrlInfo: {
-                creatorEmail: string;
                 shareId: string;
                 shareUrlId: string;
                 flags: number;
@@ -603,7 +602,7 @@ export default function useLegacyShareUrl() {
             newDuration?: number | null,
             newPassword?: string
         ) =>
-            updateShareUrl(shareUrlInfo, newDuration, newPassword).catch((error) => {
+            updateShareUrl(abortSignal, shareUrlInfo, newDuration, newPassword).catch((error) => {
                 sendErrorReport(error);
                 throw error;
             }),

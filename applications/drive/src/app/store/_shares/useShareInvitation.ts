@@ -27,7 +27,7 @@ import { getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase'
 import { ShareInvitation } from '.';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { shareInvitationPayloadToShareInvitation, useDebouncedRequest } from '../_api';
-import { getOwnAddressKeysAsync } from '../_crypto/driveCrypto';
+import { getOwnAddressKeysWithEmailAsync } from '../_crypto/driveCrypto';
 
 export const useShareInvitation = () => {
     const debouncedRequest = useDebouncedRequest();
@@ -129,7 +129,7 @@ export const useShareInvitation = () => {
             Share: ShareInvitationSharePayload;
             Link: ShareInvitationLinkPayload;
         }>(queryInvitationDetails(params.invitationId), abortSignal);
-        const keys = await getOwnAddressKeysAsync(
+        const keys = await getOwnAddressKeysWithEmailAsync(
             invitationDetails.Invitation.InviteeEmail,
             getAddresses,
             getAddressKeys
