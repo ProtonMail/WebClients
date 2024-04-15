@@ -1,6 +1,6 @@
 import '@mlc-ai/web-llm';
 import type { InitProgressReport } from '@mlc-ai/web-llm';
-import { ChatWorkerClient } from '@mlc-ai/web-llm';
+import { WebWorkerEngine } from '@mlc-ai/web-llm';
 
 import type {
     Action,
@@ -29,7 +29,7 @@ export class GpuWriteFullEmailRunningAction implements RunningAction {
         'The signature at the end should stop after the closing salutation.',
     ].join(' ');
 
-    private chat: ChatWorkerClient;
+    private chat: WebWorkerEngine;
 
     private action_: WriteFullEmailAction;
 
@@ -46,7 +46,7 @@ export class GpuWriteFullEmailRunningAction implements RunningAction {
     // @ts-ignore
     private generation: Promise<void>;
 
-    constructor(action: WriteFullEmailAction, chat: ChatWorkerClient, callback: GenerationCallback) {
+    constructor(action: WriteFullEmailAction, chat: WebWorkerEngine, callback: GenerationCallback) {
         const userPrompt = action.prompt
             .trim()
             .replaceAll(/(<\|[^>]*\|>)/g, '') // remove <|...|> markers
@@ -126,11 +126,11 @@ export class GpuWriteFullEmailRunningAction implements RunningAction {
 }
 
 export class GpuLlmModel implements LlmModel {
-    private chat: ChatWorkerClient;
+    private chat: WebWorkerEngine;
 
     private manager: GpuLlmManager;
 
-    constructor(chat: ChatWorkerClient, manager: GpuLlmManager) {
+    constructor(chat: WebWorkerEngine, manager: GpuLlmManager) {
         this.chat = chat;
         this.manager = manager;
     }
@@ -153,7 +153,7 @@ export class GpuLlmModel implements LlmModel {
 
 // @ts-ignore
 export class GpuLlmManager implements LlmManager {
-    private chat: ChatWorkerClient | undefined;
+    private chat: WebWorkerEngine | undefined;
 
     private status: undefined | 'downloading' | 'loading' | 'loaded' | 'unloaded' | 'error';
 
@@ -179,7 +179,7 @@ export class GpuLlmManager implements LlmManager {
     private async mlcDownloadAndLoadToGpu(callback?: (progress: number, done: boolean) => void) {
         if (!this.chat) {
             let worker = new Worker(new URL('./worker', import.meta.url), { type: 'module' });
-            this.chat = new ChatWorkerClient(worker);
+            this.chat = new WebWorkerEngine(worker);
         }
 
         // The "selfhost" variant below would download the weights from our assets dir (see public/assets/ml-models)
