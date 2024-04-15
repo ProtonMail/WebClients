@@ -48,10 +48,13 @@ export const ConfirmActionModal = ({
         e.preventDefault();
         if (onSubmit) {
             setSubmitLoading(true);
-            await onSubmit().catch(() => undefined);
-            setSubmitLoading(false);
+            await onSubmit().finally(() => {
+                setSubmitLoading(false);
+                onClose();
+            });
+        } else {
+            onClose();
         }
-        onClose();
     };
 
     return (
