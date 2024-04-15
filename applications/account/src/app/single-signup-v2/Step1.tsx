@@ -341,6 +341,7 @@ const Step1 = ({
         (!model.planParameters?.defined || hasUpsellSection) &&
         [SignupMode.Default, SignupMode.Onboarding, SignupMode.MailReferral].includes(mode) &&
         model.subscriptionData.checkResult.Coupon?.Code !== COUPON_CODES.TRYMAILPLUS2024 &&
+        model.subscriptionData.checkResult.Coupon?.Code !== COUPON_CODES.MAILPLUSINTRO &&
         // Don't want to show an incomplete plan selector when the user has access to have a nicer UI
         !model.session?.state.access;
 
@@ -401,7 +402,7 @@ const Step1 = ({
                     currency={options.currency}
                     onConfirm={async () => {
                         await handleOptimistic({
-                            coupon: COUPON_CODES.TRYMAILPLUS2024,
+                            coupon: COUPON_CODES.MAILPLUSINTRO,
                             planIDs: { [PLANS.MAIL]: 1 },
                             cycle: CYCLE.MONTHLY,
                         });

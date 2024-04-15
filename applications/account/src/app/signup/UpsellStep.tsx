@@ -206,7 +206,7 @@ const UpsellStep = ({
                             onPlan({
                                 planIDs: { [PLANS.MAIL]: 1 },
                                 cycle: CYCLE.MONTHLY,
-                                coupon: COUPON_CODES.TRYMAILPLUS2024,
+                                coupon: COUPON_CODES.MAILPLUSINTRO,
                             })
                         );
                     }}
