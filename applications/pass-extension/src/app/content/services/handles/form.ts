@@ -3,7 +3,14 @@ import { createFormTracker } from 'proton-pass-extension/app/content/services/fo
 import type { DetectedField, DetectedForm, FormHandle } from 'proton-pass-extension/app/content/types';
 import { hasUnprocessedFields } from 'proton-pass-extension/app/content/utils/nodes';
 
-import { type FormType, isVisibleForm, removeClassifierFlags, removeProcessedFlag } from '@proton/pass/fathom';
+import {
+    type FormType,
+    buttonSelector,
+    isVisibleForm,
+    removeClassifierFlags,
+    removeProcessedFlag,
+} from '@proton/pass/fathom';
+import { isElementBusy, isParentBusy } from '@proton/pass/utils/dom/form';
 import { getMaxZIndex } from '@proton/pass/utils/dom/zindex';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { logger } from '@proton/pass/utils/logger';
@@ -35,6 +42,17 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
                 }),
             ])
         ),
+
+        get busy() {
+            const btns = Array.from(form.querySelectorAll<HTMLElement>(buttonSelector));
+            const busyFields = formHandle.getFields(({ element }) => isElementBusy(element));
+            return isElementBusy(form) || btns.some(isElementBusy) || busyFields.length > 0 || isParentBusy(form);
+        },
+
+        get detached() {
+            return !document.body.contains(form) || !isVisibleForm(form);
+        },
+
         getFieldsFor: (type, predicate) => {
             const fields = Array.from(formHandle.fields.values());
             return fields.filter((field) => field.fieldType === type && (predicate?.(field) ?? true));
@@ -50,8 +68,6 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
             formHandle.fields.delete(field);
             removeProcessedFlag(field);
         },
-
-        shouldRemove: () => !document.body.contains(form) || !isVisibleForm(form),
 
         reconciliate: (formType: FormType, fields: DetectedField[]) => {
             formHandle.formType = formType;
