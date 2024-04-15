@@ -2,8 +2,9 @@ import { waitFor } from '@testing-library/react';
 
 import { FeatureCode } from '@proton/components';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { getFeatureFlagsState } from '@proton/testing/lib/features';
 
-import { addApiMock, clearAll, createDocument, getFeatureFlags, minimalCache } from '../../../helpers/test/helper';
+import { addApiMock, clearAll, createDocument, minimalCache } from '../../../helpers/test/helper';
 import { MessageState } from '../../../store/messages/messagesTypes';
 import { getIframeRootDiv, initMessage, setup as messageSetup } from './Message.test.helpers';
 
@@ -36,7 +37,7 @@ describe('Message dark styles', () => {
             {},
             {
                 preloadedState: {
-                    features: getFeatureFlags([[FeatureCode.DarkStylesInBody, true]]),
+                    features: getFeatureFlagsState([[FeatureCode.DarkStylesInBody, true]]),
                 },
             }
         );
