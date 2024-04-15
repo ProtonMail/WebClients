@@ -8,15 +8,16 @@ interface Props {
     shareId: string;
     showFileSharingModal: ReturnType<typeof useFileSharingModal>[1];
     showLinkSharingModal: ReturnType<typeof useLinkSharingModal>[1];
+    isSharedWithMe?: boolean;
     close: () => void;
 }
 
-const ShareButton = ({ shareId, showFileSharingModal, showLinkSharingModal, close }: Props) => {
+const ShareButton = ({ shareId, isSharedWithMe, showFileSharingModal, showLinkSharingModal, close }: Props) => {
     return (
         <ContextMenuButton
-            name={c('Action').t`Get link`}
-            icon="link"
-            testId="context-menu-shareViaLink"
+            name={c('Action').t`Share`}
+            icon={isSharedWithMe ? 'users' : 'user-plus'}
+            testId="context-menu-folder"
             action={() => showFileSharingModal({ shareId, showLinkSharingModal })}
             close={close}
         />
