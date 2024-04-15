@@ -7,11 +7,12 @@ import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { PM_SIGNATURE } from '@proton/shared/lib/mail/mailSettings';
+import { getFeatureFlagsState } from '@proton/testing/lib/features';
 
 import { MailStore } from 'proton-mail/store/store';
 
 import { MESSAGE_ACTIONS } from '../../../../constants';
-import { addApiMock, getFeatureFlags } from '../../../../helpers/test/api';
+import { addApiMock } from '../../../../helpers/test/api';
 import { getCompleteAddress, minimalCache } from '../../../../helpers/test/cache';
 import { addApiKeys, getAddressKeyCache } from '../../../../helpers/test/crypto';
 import { getDropdown, waitForSpyCall } from '../../../../helpers/test/helper';
@@ -71,7 +72,7 @@ export const setupQuickReplyTests = async ({
                     PMSignature: PM_SIGNATURE.ENABLED,
                     DraftMIMEType: MIME_TYPES.DEFAULT,
                 } as MailSettings),
-                features: getFeatureFlags([[FeatureCode.QuickReply, true]]),
+                features: getFeatureFlagsState([[FeatureCode.QuickReply, true]]),
             },
         }
     );
