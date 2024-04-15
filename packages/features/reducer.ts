@@ -6,6 +6,7 @@ import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { HOUR } from '@proton/shared/lib/constants';
 import { getMinuteJitter } from '@proton/shared/lib/helpers/jitter';
 import type { Api } from '@proton/shared/lib/interfaces';
+import unique from '@proton/utils/unique';
 
 import type { Feature, FeatureCode } from './interface';
 
@@ -16,7 +17,7 @@ interface FeatureState {
 
 type FeaturesState = { [key in FeatureCode]?: FeatureState };
 
-const codePromiseCache: { [key in FeatureCode]?: Promise<FeatureState> } = {};
+const codePromiseCache: { [key in FeatureCode]?: Promise<any> } = {};
 
 export interface FeaturesReducerState {
     features: FeaturesState;
@@ -77,6 +78,8 @@ export const isValidFeature = (featureState: FeatureState | undefined): featureS
 
 type ThunkResult<Key extends FeatureCode> = { [key in Key]: Feature };
 
+const defaultFeature = {} as Feature;
+
 export const fetchFeatures = <T extends FeatureCode>(
     codes: T[]
 ): ThunkAction<
@@ -88,21 +91,8 @@ export const fetchFeatures = <T extends FeatureCode>(
     return async (dispatch, getState, extraArgument) => {
         const featuresState = selectFeatures(getState());
 
-        if (codes.length === 1) {
-            const code = codes[0];
-            const promise = codePromiseCache[code];
-            if (promise) {
-                const result = await promise;
-                return { [code]: result.value } as ThunkResult<T>;
-            }
-            const featureState = featuresState[code];
-            if (isValidFeature(featureState)) {
-                return { [code]: featureState.value } as ThunkResult<T>;
-            }
-        }
-
         const codesToFetch = codes.filter((code) => {
-            if (codePromiseCache[code]) {
+            if (codePromiseCache[code] !== undefined) {
                 return false;
             }
             return !isValidFeature(featuresState[code]);
@@ -119,7 +109,7 @@ export const fetchFeatures = <T extends FeatureCode>(
                         return acc;
                     },
                     codesToFetch.reduce<FeaturesState>((acc, code) => {
-                        acc[code] = { value: {} as Feature, meta: { fetchedAt } };
+                        acc[code] = { value: defaultFeature, meta: { fetchedAt } };
                         return acc;
                     }, {})
                 );
@@ -128,22 +118,27 @@ export const fetchFeatures = <T extends FeatureCode>(
             });
 
             codesToFetch.forEach((code) => {
-                codePromiseCache[code] = promise
-                    .then((result) => {
-                        return result[code]!;
-                    })
+                codePromiseCache[code] = promise;
+
+                promise
                     .finally(() => {
-                        codePromiseCache[code] = undefined;
-                    });
+                        delete codePromiseCache[code];
+                    })
+                    .catch(() => {});
             });
         }
 
-        const features = await Promise.all(
-            codes.map(async (code): Promise<[FeatureCode, Feature]> => {
-                return [code, (((await codePromiseCache[code]) || featuresState[code])?.value || {}) as Feature];
+        const promises = unique(codes.map((code) => codePromiseCache[code]).filter(Boolean));
+        if (promises.length) {
+            await Promise.all(promises);
+        }
+
+        const latestFeaturesState = selectFeatures(getState());
+        return Object.fromEntries(
+            codes.map((code) => {
+                return [code, latestFeaturesState[code]?.value || featuresState[code]?.value || defaultFeature];
             })
-        );
-        return Object.fromEntries(features) as ThunkResult<T>;
+        ) as ThunkResult<T>;
     };
 };
 
