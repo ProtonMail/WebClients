@@ -54,6 +54,7 @@ $card-cvc-base-width: 40;
 	border-radius: var(--border-radius-md);
 	align-items: center;
 	padding-block: 0;
+	background-color: var(--field-background-color);
 
 	&:focus-within,
 	&.focus {
@@ -96,6 +97,7 @@ $card-cvc-base-width: 40;
 	padding-inline: rem(12);
 	border-start-start-radius: var(--border-radius-md);
 	border-start-end-radius: var(--border-radius-md);
+	background-color: var(--field-background-color);
 
 	&.focus {
 		border-color: var(--focus-outline);
@@ -119,6 +121,7 @@ $card-cvc-base-width: 40;
 	border-block-start: 1px solid var(--field-norm);
 	border-inline-end: 1px solid var(--field-norm);
 	border-end-start-radius: var(--border-radius-md);
+	background-color: var(--field-background-color);
 
 	&.focus {
 		border-color: var(--focus-outline);
@@ -142,6 +145,7 @@ $card-cvc-base-width: 40;
 	padding-inline: rem(12);
 	border-block-start: 1px solid var(--field-norm);
 	border-end-end-radius: var(--border-radius-md);
+	background-color: var(--field-background-color);
 
 	&.focus {
 		border-color: var(--focus-outline);
@@ -171,29 +175,6 @@ input {
 
 $input-inner-size: 34;
 $input-border-size: 1;
-
-.cb-input-element-container {
-	block-size: rem($input-inner-size + 2 * $input-border-size);
-	padding-block: 0;
-	padding-inline: rem(16);
-	border: #{$input-border-size}px solid var(--field-norm);
-	border-radius: var(--border-radius-md);
-	box-sizing: border-box;
-	padding-block-start: rem(6);
-
-	// &:has(.cb-input-element.focus) // doesn't work in Firefox, so we are using JS instead
-	&:focus-within,
-	&.focus {
-		border-color: var(--focus-outline);
-		background-color: var(--field-focus-background-color);
-		color: var(--field-focus-text-color);
-		box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
-	}
-
-	.cb-input-element {
-		inline-size: 100%;
-	}
-}
 
 .cb-assist {
 	position: absolute;
