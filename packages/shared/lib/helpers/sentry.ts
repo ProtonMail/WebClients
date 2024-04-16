@@ -137,6 +137,7 @@ const getDefaultIgnoreErrors = (): SentryIgnoreErrors => {
         'NetworkError when attempting to fetch resource.',
         'webkitExitFullScreen', // Bug in Firefox for iOS.
         'InactiveSession',
+        'InvalidStateError', // Ignore Pale Moon throwing InvalidStateError trying to use idb
         'UnhandledRejection', // Happens too often in extensions and we have lints for that, so should be safe to ignore.
         /chrome-extension/,
         /moz-extension/,
