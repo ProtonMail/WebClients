@@ -66,11 +66,14 @@ const useComposerSendActionsText = ({ opening, syncInProgress, date }: Props) =>
         </>
     ) : null;
 
+    const titleAssistantButton = c('loc_nightly_assistant').t`Generate a message`;
+
     return {
         dateMessage,
         titleAttachment,
         titleDeleteDraft,
         titleSendButton,
+        titleAssistantButton,
     };
 };
 export default useComposerSendActionsText;

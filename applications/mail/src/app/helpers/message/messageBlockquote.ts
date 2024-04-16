@@ -70,7 +70,7 @@ const searchForContent = (element: Element, text: string) => {
 
 /**
  * Try to locate the eventual blockquote present in the document no matter the expeditor of the mail
- * Return the HTML content splitted at the blockquote start
+ * Return the HTML content split at the blockquote start
  */
 export const locateBlockquote = (inputDocument: Element | undefined): [content: string, blockquote: string] => {
     if (!inputDocument) {

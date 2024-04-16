@@ -54,6 +54,7 @@ enum MailFeatureFlag {
     WebMailPageSizeSetting = 'WebMailPageSizeSetting',
     SelectAll = 'SelectAll',
     SelectAllOptimistic = 'SelectAllOptimistic',
+    ComposerAssistant = 'ComposerAssistant',
 }
 
 export type FeatureFlag =

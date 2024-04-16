@@ -148,6 +148,7 @@ const EOComposer = ({ referenceMessage, id, publicKey, outsideKey, numberOfRepli
                     outsideKey={outsideKey}
                     mailSettings={EO_DEFAULT_MAILSETTINGS}
                     editorMetadata={metadata}
+                    isOutside
                 />
             </div>
             <EOReplyFooter

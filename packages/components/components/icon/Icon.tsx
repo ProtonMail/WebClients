@@ -292,6 +292,7 @@ export type IconName =
     | 'pause'
     | 'pen'
     | 'pen-square'
+    | 'pen-stars'
     | 'pencil'
     | 'phone'
     | 'pin-angled'
