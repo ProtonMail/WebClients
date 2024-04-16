@@ -59,6 +59,9 @@
       "Cancel subscription": [
         "Aboneliği iptal et"
       ],
+      "Change": [
+        "Değiştir"
+      ],
       "Change keys": [
         "Anahtarları değiştir"
       ],
@@ -139,6 +142,9 @@
       ],
       "Delete Gateway": [
         "Ağ geçidini sil"
+      ],
+      "Delete logo": [
+        "Logoyu sil"
       ],
       "Delete user": [
         "Kullanıcıyı sil"
@@ -280,6 +286,9 @@
       ],
       "Invite user": [
         "Kullanıcı davet et"
+      ],
+      "Keep logo": [
+        "Logoyu sakla"
       ],
       "Keep my Plus subscription": [
         "Plus aboneliğimi koru"
@@ -434,6 +443,9 @@
       "Select country": [
         "Ülke seçin"
       ],
+      "select file": [
+        "dosya seç"
+      ],
       "Select file": [
         "Dosya seçin"
       ],
@@ -529,6 +541,12 @@
       ],
       "Upgrade your plan": [
         "Tarifenizi yükseltin"
+      ],
+      "Upload": [
+        "Yükle"
+      ],
+      "Upload icon": [
+        "Simge yükle"
       ],
       "Use ${ label } theme": [
         "${ label } teması kullanılsın"
@@ -685,6 +703,9 @@
       ]
     },
     "app-switcher": {
+      "Protect your passwords and identity": [
+        "Şifrelerinizi ve kimliğinizi koruyun"
+      ],
       "Safeguard your files and photos": [
         "Dosyalarınızı ve fotoğraflarınızı koruyun"
       ]
@@ -1868,6 +1889,9 @@
       ]
     },
     "Delete address prompt": {
+      "Once deleted, this address can't be used again by anyone else.": [
+        "Bu adres silindikten sonra başka hiç kimse tarafından tekrar kullanılamaz."
+      ],
       "The next active address on your list will be set as the default.": [
         "Listenizdeki bir sonraki etkin adres varsayılan olarak ayarlanacak."
       ],
@@ -2001,6 +2025,12 @@
       "Error connecting to the Bitcoin API.": [
         "Bitcoin API yazılımı ile bağlantı kurulurken sorun çıktı."
       ],
+      "Failed to process the logo": [
+        "Logo işlenemedi"
+      ],
+      "File too large. Your logo must be 30 KB or smaller.": [
+        "Dosya çok büyük. Logonuz 30 KB veya daha küçük olmalıdır."
+      ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Geçerlilik süresi dolduysa, televizyonda yenile üzerine tıklayın ve kodunuzu yeniden yazın."
       ],
@@ -2012,6 +2042,9 @@
       ],
       "Impossible to rename the gateway": [
         "Ağ geçidi yeniden adlandırılamıyor"
+      ],
+      "Incorrect file type. Upload a file in PNG or JPEG format.": [
+        "Yanlış dosya türü. PNG veya JPEG formatında bir dosya yükleyin."
       ],
       "Incorrect login credentials. Please try again.": [
         "Oturum açma bilgileri yanlış. Lütfen yeniden deneyin."
@@ -2048,6 +2081,9 @@
       ],
       "Name does not match": [
         "Ad eşleşmiyor"
+      ],
+      "No image selected": [
+        "Seçili görüntü yok"
       ],
       "Not a valid number": [
         "Numara geçerli değil"
@@ -2100,6 +2136,9 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Birden çok kullanıcıyı yönetmek için lütfen 1 taneden fazla kullanıcı içeren kurumsal bir tarifeye geçin."
       ],
+      "Please upload a square file": [
+        "Lütfen kare bir dosya yükleyin"
+      ],
       "Please upload an xml file": [
         "Lütfen bir XML dosyası yükleyin"
       ],
@@ -2126,6 +2165,12 @@
       ],
       "The email addresses do not match": [
         "E-posta adresleri eşleşmiyor"
+      ],
+      "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
+        "Dosya çok büyük, maksimum boyut ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }"
+      ],
+      "The file is too small, the minimum size is ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }": [
+        "Dosya çok küçük, minimum boyut ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }"
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Eklenebilecek en az kredi tutarı: ${ price }"
@@ -3265,6 +3310,12 @@
       "If you wish to combine this account with another one, do NOT delete it.": [
         "Bu hesabı başka bir hesapla birleştirmek isterseniz, SİLMEYİN."
       ],
+      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
+        "Sorun yaşıyorsanız, size yardımcı olmak için buradayız. Destek uzmanlarımızdan biriyle ${ boldPhoneCall } veya ${ boldZoomMeeting } görüşün ya da sohbet desteği için bir ${ boldLiveChat } açın."
+      ],
+      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists.": [
+        "Sorun yaşıyorsanız, size yardımcı olmak için buradayız. ${ boldPhoneCall } veya ${ boldZoomMeeting } destek uzmanlarımızdan biriyle görüşün."
+      ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Önemli: Lütfen kurtarma kodlarını kaydettiğinize emin olun. Bu kodlar olmadan, iki adımlı doğrulama aygıtınızı kaybederseniz hesabınıza asla erişemezsiniz."
       ],
@@ -3490,6 +3541,9 @@
       "Plus or Visionary subscription required": [
         "Plus veya Visionary aboneliği gerekli"
       ],
+      "Preview": [
+        "Ön izleme"
+      ],
       "Preview failed to be loaded": [
         "Ön izleme yüklenemedi"
       ],
@@ -3519,6 +3573,9 @@
       ],
       "Remember to share the user's sign in details with them.": [
         "Kullanıcının oturum açabilmesi için kimlik doğrulama bilgilerini paylaşmayı unutmayın."
+      ],
+      "Request a phone call": [
+        "Telefon görüşmesi talep edin"
       ],
       "Resend verification email": [
         "Doğrulama e-postasını yeniden gönder"
@@ -3658,6 +3715,9 @@
       ],
       "The format of your CSV file is incorrect.": [
         "CSV dosyanız doğru biçimde değil."
+      ],
+      "The name and icon will be visible to your users while they are signed in.": [
+        "Kullanıcılarınız oturum açtıklarında ad ve simge onlara görünür olacaktır."
       ],
       "The name will be visible to your users while they are signed in.": [
         "Oturum açtıklarında kullanıcılarınıza görüntülenecek ad."
@@ -4080,6 +4140,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Aboneliğiniz Mozilla tarafından yönetiliyor. Lütfen Mozilla destek ekibi ile görüşün."
+      ],
+      "Zoom meeting": [
+        "Zoom toplantısı"
       ]
     },
     "Info for cash payment method": {
@@ -4165,14 +4228,6 @@
       ],
       "Subscription": [
         "Abonelik"
-      ]
-    },
-    "Key type option": {
-      "${ compatibility } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
-        "${ compatibility } RSA 4096-bit (daha yavaş, ama eski yazılımlarla daha uyumlu)"
-      ],
-      "${ stateOfTheArt } ECC Curve25519 (Fastest, most modern)": [
-        "${ stateOfTheArt } ECC Curve25519 (en hızlı, en güncel)"
       ]
     },
     "Label": {
@@ -4395,11 +4450,11 @@
       "Key": [
         "Anahtar"
       ],
-      "Key strength": [
-        "Anahtar karmaşıklığı"
-      ],
       "Level for NetShield blocker filtering": [
         "NetShield engelleme süzgeci düzeyi"
+      ],
+      "Logo": [
+        "Logo"
       ],
       "Mailbox password": [
         "Posta kutusu parolası"
@@ -5911,6 +5966,40 @@
         "Tarifenizle en fazla ${ humanReadableAvailableSpace } depolama alanı daha kullanabilirsiniz."
       ]
     },
+    "Organization logo upload": {
+      "Avoid overly compressed images.": [
+        "Aşırı sıkıştırılmış görüntülerden kaçının."
+      ],
+      "Ensure your icon has padding space around it.": [
+        "Simgenizin etrafında dolgu alanı olduğundan emin olun."
+      ],
+      "Opt for a PNG image that is a 128x128 pixels for clarity.": [
+        "Netlik için 128x128 piksel olan bir PNG görüntüsü tercih edin."
+      ],
+      "Tips on choosing a good icon": [
+        "İyi bir simge seçmeye yönelik ipuçları"
+      ],
+      "Use a graphical icon or image rather than text.": [
+        "Metin yerine grafiksel bir simge veya resim kullanın."
+      ]
+    },
+    "Organization logo upload modal": {
+      "Drop image file here to upload or": [
+        "Yüklemek için resim dosyasını buraya bırakın veya"
+      ],
+      "File in PNG or JPEG format": [
+        "PNG veya JPEG formatında dosya"
+      ],
+      "File not larger than 30 KB": [
+        "Dosya 30 KB'tan büyük olmamalıdır"
+      ],
+      "Square image of at least 128 pixels": [
+        "En az 128 piksellik kare görüntü"
+      ],
+      "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
+        "Kullanıcılar web uygulamalarımızda oturum açtıklarında ${ BRAND_NAME } simgesi yerine logonuzu görecekler."
+      ]
+    },
     "Pass B2B onboarding spotlight": {
       "Go to your vault to manage your passwords, aliases, and more.": [
         "Parolalarınızı, takma adlarınızı ve diğer kayıtları yönetmek için kasanıza gidin."
@@ -6332,12 +6421,9 @@
         "Telefon numaranızı doğrulamak hesabınızın güvenliğini arttırır ve yeni bir kurtarma seçeneği ekler."
       ]
     },
-    "Remark about a key type option": {
-      "Compatibility": [
-        "Uyumluluk"
-      ],
-      "State of the art": [
-        "Son teknoloji"
+    "Remove organization logo": {
+      "Users will no longer see your custom logo or organization name.": [
+        "Kullanıcılar artık özel logonuzu veya kuruluş adınızı görmeyecek."
       ]
     },
     "Restore administrator panel": {
@@ -6367,6 +6453,14 @@
       ],
       "User": [
         "Kullanıcı"
+      ]
+    },
+    "scim: Title": {
+      "Disable SCIM integration?": [
+        "SCIM entegrasyonu kullanım dışı bırakılsın mı?"
+      ],
+      "Generate new SCIM token?": [
+        "Yeni SCIM belirteci oluşturulsun mu?"
       ]
     },
     "Select file": {
@@ -7576,6 +7670,9 @@
       "Delete address permanently?": [
         "Adres kalıcı olarak silinsin mi?"
       ],
+      "Delete organization logo?": [
+        "Kuruluş logosu silinsin mi?"
+      ],
       "Delete the server (you will still be able to recover it for ${ days } day)": [
         "Sunucuyu sil (${ days } gün içinde geri alabilirsiniz)",
         "Sunucuyu sil (${ days } gün içinde geri alabilirsiniz)"
@@ -7679,6 +7776,9 @@
       ],
       "Gift code": [
         "Hediye kodu"
+      ],
+      "How to choose a good icon": [
+        "İyi bir simge nasıl seçilir"
       ],
       "Human verification": [
         "İnsan olduğunuzu doğrulayın"
@@ -7890,6 +7990,9 @@
       ],
       "Upload CSV file to create multiple accounts": [
         "Birkaç hesap eklemek için CSV dosyası yükleyin"
+      ],
+      "Upload your organization’s logo": [
+        "Kuruluşunuzun logosunu yükleyin"
       ],
       "Users": [
         "Kullanıcılar"

@@ -59,6 +59,9 @@
       "Cancel subscription": [
         "Annulla abbonamento"
       ],
+      "Change": [
+        "Modifica"
+      ],
       "Change keys": [
         "Cambia chiavi"
       ],
@@ -139,6 +142,9 @@
       ],
       "Delete Gateway": [
         "Elimina gateway"
+      ],
+      "Delete logo": [
+        "Elimina il logo"
       ],
       "Delete user": [
         "Elimina utente"
@@ -280,6 +286,9 @@
       ],
       "Invite user": [
         "Invita utente"
+      ],
+      "Keep logo": [
+        "Mantieni il logo"
       ],
       "Keep my Plus subscription": [
         "Mantieni il mio abbonamento Plus"
@@ -437,6 +446,9 @@
       "Select country": [
         "Seleziona il paese"
       ],
+      "select file": [
+        "seleziona il file"
+      ],
       "Select file": [
         "Seleziona il file"
       ],
@@ -532,6 +544,12 @@
       ],
       "Upgrade your plan": [
         "Effettua l'upgrade del piano"
+      ],
+      "Upload": [
+        "Carica"
+      ],
+      "Upload icon": [
+        "Carica l'icona"
       ],
       "Use ${ label } theme": [
         "Usa il tema ${ label }"
@@ -973,6 +991,12 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continua a usare ${ MAIL_APP_NAME }."
+      ],
+      "Continue using ${ planTitle }": [
+        "Continua a usare ${ planTitle }"
+      ],
+      "Continue your subscription": [
+        "Continua il tuo abbonamento"
       ]
     },
     "Checkout row": {
@@ -2019,6 +2043,12 @@
       "Error connecting to the Bitcoin API.": [
         "Errore di connessione alle API di Bitcoin."
       ],
+      "Failed to process the logo": [
+        "Impossibile elaborare il logo"
+      ],
+      "File too large. Your logo must be 30 KB or smaller.": [
+        "File troppo grande. Il tuo logo deve essere di 30 KB o più piccolo."
+      ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Se il tempo sul tuo televisore è scaduto. Clicca su Aggiorna sul tuo televisore e reinserisci il tuo codice."
       ],
@@ -2030,6 +2060,9 @@
       ],
       "Impossible to rename the gateway": [
         "Impossibile rinominare il gateway"
+      ],
+      "Incorrect file type. Upload a file in PNG or JPEG format.": [
+        "Tipo di file errato. Carica un file in formato PNG o JPEG."
       ],
       "Incorrect login credentials. Please try again.": [
         "Credenziali di accesso non valide. Per favore riprova."
@@ -2066,6 +2099,9 @@
       ],
       "Name does not match": [
         "Il nome non corrisponde"
+      ],
+      "No image selected": [
+        "Nessuna immagine selezionata"
       ],
       "Not a valid number": [
         "Numero non valido"
@@ -2118,6 +2154,9 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Effettua l'upgrade a un piano aziendale con più di 1 utente per gestire più utenti."
       ],
+      "Please upload a square file": [
+        "Carica un file quadrato"
+      ],
       "Please upload an xml file": [
         "Carica un file xml"
       ],
@@ -2144,6 +2183,12 @@
       ],
       "The email addresses do not match": [
         "Gli indirizzi email non corrispondono."
+      ],
+      "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
+        "Il file è troppo grande, la dimensione massima è ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }"
+      ],
+      "The file is too small, the minimum size is ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }": [
+        "Il file è troppo piccolo, la dimensione minima è ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }"
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "L'importo minimo di credito che può essere aggiunto è di ${ price }"
@@ -3520,6 +3565,9 @@
       "Plus or Visionary subscription required": [
         "Abbonamento Plus o Visionary richiesto"
       ],
+      "Preview": [
+        "Anteprima"
+      ],
       "Preview failed to be loaded": [
         "Caricamento dell'anteprima non riuscito"
       ],
@@ -3691,6 +3739,9 @@
       ],
       "The format of your CSV file is incorrect.": [
         "Il formato del tuo file CSV non è corretto."
+      ],
+      "The name and icon will be visible to your users while they are signed in.": [
+        "Il nome e l'icona saranno visibili ai tuoi utenti mentre hanno effettuato l'accesso."
       ],
       "The name will be visible to your users while they are signed in.": [
         "Il nome sarà visibile agli utenti durante l'accesso."
@@ -4027,6 +4078,12 @@
         "Hai ${ availableCount } server dedicato disponibile.",
         "Hai ${ availableCount } server dedicati disponibili."
       ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "Hai un abbonamento di prova a ${ planTitle }. Se desideri continuare l'abbonamento dopo il periodo di prova, aggiungi un metodo di pagamento."
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "Hai un abbonamento di prova a ${ planTitle }. In questo momento non è richiesto alcun pagamento. Il tuo abbonamento verrà rinnovato automaticamente al termine del periodo di prova."
+      ],
       "You have no invoices.": [
         "Non hai fatture."
       ],
@@ -4201,14 +4258,6 @@
       ],
       "Subscription": [
         "Abbonamento"
-      ]
-    },
-    "Key type option": {
-      "${ compatibility } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
-        "${ compatibility } RSA 4096-bit (Più lento, ma compatibilità migliorata con il software obsoleto)"
-      ],
-      "${ stateOfTheArt } ECC Curve25519 (Fastest, most modern)": [
-        "${ stateOfTheArt } ECC Curve25519 (Più veloce, più moderno)"
       ]
     },
     "Label": {
@@ -4431,11 +4480,11 @@
       "Key": [
         "Chiave"
       ],
-      "Key strength": [
-        "Robustezza della chiave"
-      ],
       "Level for NetShield blocker filtering": [
         "Livello di filtro per NetShield"
+      ],
+      "Logo": [
+        "Logo"
       ],
       "Mailbox password": [
         "Password della casella di posta"
@@ -5974,6 +6023,40 @@
         "Il tuo piano include un massimo di ${ humanReadableAvailableSpace } spazio di archiviazione in più."
       ]
     },
+    "Organization logo upload": {
+      "Avoid overly compressed images.": [
+        "Evita immagini eccessivamente compresse."
+      ],
+      "Ensure your icon has padding space around it.": [
+        "Assicurati che la tua icona abbia abbastanza spazio di riempimento attorno."
+      ],
+      "Opt for a PNG image that is a 128x128 pixels for clarity.": [
+        "Scegli un'immagine PNG di 128x128 pixel per maggiore chiarezza."
+      ],
+      "Tips on choosing a good icon": [
+        "Suggerimenti per scegliere una buona icona"
+      ],
+      "Use a graphical icon or image rather than text.": [
+        "Utilizza un'icona grafica o un'immagine anziché il testo."
+      ]
+    },
+    "Organization logo upload modal": {
+      "Drop image file here to upload or": [
+        "Trascina qui il file immagine da caricare o"
+      ],
+      "File in PNG or JPEG format": [
+        "File in formato PNG o JPEG"
+      ],
+      "File not larger than 30 KB": [
+        "File non più grande di 30 KB"
+      ],
+      "Square image of at least 128 pixels": [
+        "Immagine quadrata di almeno 128 pixel"
+      ],
+      "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
+        "Gli utenti vedranno il tuo logo invece dell'icona di ${ BRAND_NAME } quando accedono alle nostre app web."
+      ]
+    },
     "Pass B2B onboarding spotlight": {
       "Go to your vault to manage your passwords, aliases, and more.": [
         "Vai alla tua cassaforte per gestire password, alias e molto altro."
@@ -6395,12 +6478,9 @@
         "Verificare il tuo numero di telefono migliora la sicurezza del tuo account e permette opzioni aggiuntive per il recupero."
       ]
     },
-    "Remark about a key type option": {
-      "Compatibility": [
-        "Compatibilità"
-      ],
-      "State of the art": [
-        "Stato dell'arte"
+    "Remove organization logo": {
+      "Users will no longer see your custom logo or organization name.": [
+        "Gli utenti non vedranno più il tuo logo personalizzato o il nome della tua organizzazione."
       ]
     },
     "Restore administrator panel": {
@@ -6430,6 +6510,97 @@
       ],
       "User": [
         "Utente"
+      ]
+    },
+    "scim: Action": {
+      "Configure SCIM": [
+        "Configura SCIM"
+      ],
+      "Disable SCIM": [
+        "Disabilita SCIM"
+      ],
+      "Disable SCIM integration": [
+        "Disabilita l'integrazione SCIM"
+      ],
+      "Generate new token": [
+        "Genera un nuovo token"
+      ],
+      "Generate token": [
+        "Genera token"
+      ]
+    },
+    "scim: Info": {
+      "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
+        "**Prerequisito:** l'autenticazione SAML deve essere configurata per abilitare il provisioning SCIM."
+      ],
+      "Enter token into your identity provider": [
+        "Inserisci il token nel tuo provider di identità"
+      ],
+      "Enter URL and token into your identity provider": [
+        "Inserisci l'URL e il token nel tuo provider di identità"
+      ],
+      "For security reasons, the SCIM token will be hidden after saving your changes and you won’t be able to see it again.": [
+        "Per motivi di sicurezza, il token SCIM verrà nascosto dopo aver salvato le modifiche e non potrai più visualizzarlo."
+      ],
+      "For security reasons, the token is hidden": [
+        "Per motivi di sicurezza, il token è nascosto"
+      ],
+      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ VPN_APP_NAME }.": [
+        "Accedi al tuo provider di identità, copia e incolla i dati seguenti e completa la configurazione di SCIM per ${ VPN_APP_NAME }."
+      ],
+      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ VPN_APP_NAME }.": [
+        "Accedi al tuo provider di identità, copia e incolla il token seguente e riattiva SCIM per ${ VPN_APP_NAME }."
+      ],
+      "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
+        "Se hai perso o dimenticato il token SCIM, puoi generarne uno nuovo, ma tieni presente che le impostazioni del tuo provider di identità dovranno essere aggiornate."
+      ],
+      "Make sure you copy the above SCIM token now.": [
+        "Assicurati di copiare ora il token SCIM qui sopra."
+      ],
+      "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
+        "Una volta disabilitato SCIM per la tua organizzazione, **tutti gli utenti SCIM forniti automaticamente dal tuo provider di identità verranno convertiti in utenti SSO** e potrai gestirli direttamente nelle impostazioni di ${ BRAND_NAME }."
+      ],
+      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ VPN_APP_NAME } organization.": [
+        "Semplifica la gestione degli utenti tra diversi servizi. Aggiungi, modifica e rimuovi utenti nel tuo provider di identità: queste modifiche verranno automaticamente applicate alla tua organizzazione ${ VPN_APP_NAME }."
+      ],
+      "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
+        "Il provisioning automatico di SCIM sarà disabilitato finché non inserirai il nuovo token SCIM nelle impostazioni del tuo provider di identità."
+      ],
+      "The SCIM base URL and token will be deleted.": [
+        "Il base URL e il token SCIM verranno eliminati."
+      ],
+      "To re-enable syncing with your identity provider, your need to complete the SCIM integration again.": [
+        "Per riattivare la sincronizzazione con il tuo provider di identità, devi completare nuovamente l'integrazione SCIM."
+      ]
+    },
+    "scim: Label": {
+      "SCIM base URL": [
+        "Base URL SCIM"
+      ],
+      "SCIM base URL (or tenant URL)": [
+        "Base URL SCIM (o URL del tenant)"
+      ],
+      "SCIM token": [
+        "Token SCIM"
+      ]
+    },
+    "scim: Title": {
+      "Disable SCIM integration?": [
+        "Vuoi disabilitare l'integrazione SCIM?"
+      ],
+      "Generate new SCIM token?": [
+        "Vuoi generare un nuovo token SCIM?"
+      ],
+      "SCIM automatic provisioning": [
+        "Provisioning automatico SCIM"
+      ]
+    },
+    "scim: Tooltip": {
+      "API key of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
+        "Chiave API del connettore SCIM a cui l'agente di provisioning IdP inoltra i dati SCIM"
+      ],
+      "URL of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
+        "URL del connettore SCIM a cui l'agente di provisioning IdP inoltra i dati SCIM"
       ]
     },
     "Select file": {
@@ -7639,6 +7810,9 @@
       "Delete address permanently?": [
         "Vuoi eliminare l'indirizzo in modo permanente?"
       ],
+      "Delete organization logo?": [
+        "Vuoi eliminare il logo dell'organizzazione?"
+      ],
       "Delete the server (you will still be able to recover it for ${ days } day)": [
         "Elimina il server (potrai comunque recuperarlo entro ${ days } giorno)",
         "Elimina il server (potrai comunque recuperarlo entro ${ days } giorni)"
@@ -7742,6 +7916,9 @@
       ],
       "Gift code": [
         "Codice regalo"
+      ],
+      "How to choose a good icon": [
+        "Come scegliere una buona icona"
       ],
       "Human verification": [
         "Verifica umana"
@@ -7954,6 +8131,9 @@
       "Upload CSV file to create multiple accounts": [
         "Carica il file CSV per creare più account"
       ],
+      "Upload your organization’s logo": [
+        "Carica il logo della tua organizzazione"
+      ],
       "Users": [
         "Utenti"
       ],
@@ -8074,6 +8254,9 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Il tema selezionato sarà attivo quando il tuo sistema è impostato su \"modalità chiara\"."
+      ],
+      "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
+        "Gli utenti vedranno il tuo logo invece dell'icona di ${ BRAND_NAME } quando accedono alle nostre app web."
       ],
       "Usually an URL that contains the identity provider's name within": [
         "Solitamente un URL che contiene in esso il nome del fornitore di identità"

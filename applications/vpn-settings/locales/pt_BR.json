@@ -59,6 +59,9 @@
       "Cancel subscription": [
         "Cancelar assinatura"
       ],
+      "Change": [
+        "Alterar"
+      ],
       "Change keys": [
         "Mudar chaves"
       ],
@@ -139,6 +142,9 @@
       ],
       "Delete Gateway": [
         "Excluir gateway"
+      ],
+      "Delete logo": [
+        "Excluir logotipo"
       ],
       "Delete user": [
         "Excluir usuário"
@@ -280,6 +286,9 @@
       ],
       "Invite user": [
         "Convidar usuário"
+      ],
+      "Keep logo": [
+        "Manter logotipo"
       ],
       "Keep my Plus subscription": [
         "Manter minha assinatura Plus"
@@ -437,6 +446,9 @@
       "Select country": [
         "Selecionar país"
       ],
+      "select file": [
+        "selecionar arquivo"
+      ],
       "Select file": [
         "Selecionar arquivo"
       ],
@@ -488,6 +500,9 @@
       "Signing in": [
         "Iniciando sessão"
       ],
+      "Start live chat": [
+        "Iniciar chat ao vivo"
+      ],
       "Stop using single sign-on": [
         "Parar de usar início de sessão único"
       ],
@@ -529,6 +544,12 @@
       ],
       "Upgrade your plan": [
         "Faça upgrade do seu plano"
+      ],
+      "Upload": [
+        "Enviar"
+      ],
+      "Upload icon": [
+        "Enviar ícone"
       ],
       "Use ${ label } theme": [
         "Usar o tema ${ label }"
@@ -964,6 +985,12 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continuar usando ${ MAIL_APP_NAME }."
+      ],
+      "Continue using ${ planTitle }": [
+        "Continuar usando ${ planTitle }"
+      ],
+      "Continue your subscription": [
+        "Continuar sua assinatura"
       ]
     },
     "Checkout row": {
@@ -2007,6 +2034,9 @@
       "Error connecting to the Bitcoin API.": [
         "Erro ao conectar com a API do Bitcoin."
       ],
+      "File too large. Your logo must be 30 KB or smaller.": [
+        "Arquivo muito grande. Seu logo deve ter 30 KB ou menos."
+      ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Se o tempo na sua TV expirou, clique em Atualizar na sua TV e digite o seu código novamente."
       ],
@@ -2018,6 +2048,9 @@
       ],
       "Impossible to rename the gateway": [
         "Impossível renomear o gateway"
+      ],
+      "Incorrect file type. Upload a file in PNG or JPEG format.": [
+        "Tipo de arquivo incorreto. Envie um arquivo em formato PNG ou JPEG."
       ],
       "Incorrect login credentials. Please try again.": [
         "As credenciais de início de sessão não são válidas. Tente novamente."
@@ -2054,6 +2087,9 @@
       ],
       "Name does not match": [
         "Nome não corresponde"
+      ],
+      "No image selected": [
+        "Nenhuma imagem selecionada"
       ],
       "Not a valid number": [
         "Não é um número válido"
@@ -2106,6 +2142,9 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Atualize para um plano de negócios com mais de 1 usuário para gerenciar vários usuários."
       ],
+      "Please upload a square file": [
+        "Favor enviar um logo quadrado"
+      ],
       "Please upload an xml file": [
         "Envie um arquivo xml"
       ],
@@ -2132,6 +2171,9 @@
       ],
       "The email addresses do not match": [
         "Os endereços de e-mail não correspondem."
+      ],
+      "The file is too small, the minimum size is ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }": [
+        "O arquivo é muito pequeno, o tamanho mínimo é ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }"
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "O valor mínimo de crédito que pode ser adicionado é ${ price }."
@@ -3334,6 +3376,9 @@
       "Loading ${ appName }": [
         "Carregando ${ appName }"
       ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Carregando o calendário, aguarde. Você será redirecionado à nossa plataforma de agendamento Calendly numa nova guia."
+      ],
       "Loading preview": [
         "Carregando visualização"
       ],
@@ -3499,6 +3544,9 @@
       "Plus or Visionary subscription required": [
         "É necessária a assinatura Plus ou Visionária"
       ],
+      "Preview": [
+        "Pré-visualização"
+      ],
       "Preview failed to be loaded": [
         "Não foi possível carregar a pré-visualização."
       ],
@@ -3528,6 +3576,9 @@
       ],
       "Remember to share the user's sign in details with them.": [
         "Lembre-se de compartilhar os detalhes de início de sessão do usuário com ele."
+      ],
+      "Request a phone call": [
+        "Solicitar uma chamada telefônica"
       ],
       "Resend verification email": [
         "Re-enviar e-mail para verificação"
@@ -4003,6 +4054,12 @@
         "Você tem ${ availableCount } servidor dedicado disponível.",
         "Você tem ${ availableCount } servidores dedicados disponíveis."
       ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "Você tem uma assinatura de avaliação ${ planTitle }. Se quer continuar a sua assinatura após o período de avaliação, adicione um método de pagamento."
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "Você tem uma assinatura de avaliação ${ planTitle }. Nenhum pagamento é necessário no momento. Sua assinatura será renovada automaticamente ao final do período de avaliação."
+      ],
       "You have no invoices.": [
         "Você não tem faturas."
       ],
@@ -4177,14 +4234,6 @@
       ],
       "Subscription": [
         "Assinatura"
-      ]
-    },
-    "Key type option": {
-      "${ compatibility } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
-        "${ compatibility } RSA 4096 bits (mais lento, porém maior compatibilidade com softwares antigos)"
-      ],
-      "${ stateOfTheArt } ECC Curve25519 (Fastest, most modern)": [
-        "${ stateOfTheArt } X25519 (mais rápido, mais moderno)"
       ]
     },
     "Label": {
@@ -4407,11 +4456,11 @@
       "Key": [
         "Chave"
       ],
-      "Key strength": [
-        "Força da chave"
-      ],
       "Level for NetShield blocker filtering": [
         "Nível de filtragem de bloqueio NetShield"
+      ],
+      "Logo": [
+        "Logotipo"
       ],
       "Mailbox password": [
         "Senha da caixa de correio"
@@ -6353,14 +6402,6 @@
         "Verificar o seu número de telefone aumenta a segurança de sua conta e permite opções adicionais de recuperação."
       ]
     },
-    "Remark about a key type option": {
-      "Compatibility": [
-        "Compatibilidade"
-      ],
-      "State of the art": [
-        "Estado da arte"
-      ]
-    },
     "Restore administrator panel": {
       "${ n } administrator in your organization need access to the organization key.": [
         "${ n } administrador em sua organização precisa de acesso à chave da organização.",
@@ -6388,6 +6429,50 @@
       ],
       "User": [
         "Usuário"
+      ]
+    },
+    "scim: Action": {
+      "Configure SCIM": [
+        "Configurar SCIM"
+      ],
+      "Disable SCIM": [
+        "Desativar SCIM"
+      ],
+      "Disable SCIM integration": [
+        "Desativar integração SCIM"
+      ],
+      "Generate new token": [
+        "Gerar novo token"
+      ],
+      "Generate token": [
+        "Gerar token"
+      ]
+    },
+    "scim: Info": {
+      "The SCIM base URL and token will be deleted.": [
+        "O URL e token base do SCIM serão excluídos."
+      ]
+    },
+    "scim: Label": {
+      "SCIM base URL": [
+        "URL base do SCIM"
+      ],
+      "SCIM base URL (or tenant URL)": [
+        "URL base de SCIM (ou URL do tenant)"
+      ],
+      "SCIM token": [
+        "Token SCIM"
+      ]
+    },
+    "scim: Title": {
+      "Disable SCIM integration?": [
+        "Desativar integração com SCIM?"
+      ],
+      "Generate new SCIM token?": [
+        "Gerar novos token SCIM?"
+      ],
+      "SCIM automatic provisioning": [
+        "Aprovisionamento automático de SCIM"
       ]
     },
     "Select file": {
@@ -7596,6 +7681,9 @@
       ],
       "Delete address permanently?": [
         "Excluir endereço permanentemente?"
+      ],
+      "Delete organization logo?": [
+        "Excluir logotipo da organização?"
       ],
       "Delete the server (you will still be able to recover it for ${ days } day)": [
         "Excluir o servidor (você ainda poderá recuperá-lo por ${ days } dia)",
