@@ -236,6 +236,9 @@
       "Move to trash": [
         "Переместить в Корзину"
       ],
+      "Multiple select": [
+        "Множественный выбор"
+      ],
       "OK": [
         "OK"
       ],
@@ -530,6 +533,9 @@
       "Moving item failed": [
         "Ошибка при перемещении элемента"
       ],
+      "Offline mode isn't currently available for your plan and not compatible with two password mode.": [
+        "Офлайновый режим в настоящее время недоступен для вашего тарифа и не совместим с режимом двух паролей."
+      ],
       "Passphrase is incorrect": [
         "Неверная парольная фраза"
       ],
@@ -602,6 +608,9 @@
       "Vault name does not match": [
         "Название хранилища не совпадает"
       ],
+      "Wrong password": [
+        "Неверный пароль"
+      ],
       "Wrong PIN code. Try again.": [
         "Неверный PIN-код. Попробуйте снова."
       ],
@@ -672,6 +681,31 @@
         "Терабайтов"
       ]
     },
+    "Font face option": {
+      "System default": [
+        "Системный по умолчанию"
+      ],
+      "Theme font": [
+        "Шрифт темы"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Большой"
+      ],
+      "Medium (recommended)": [
+        "Средний (Рекомендуется)"
+      ],
+      "Small": [
+        "Маленький"
+      ],
+      "Very large": [
+        "Очень большой"
+      ],
+      "Very small": [
+        "Очень маленький"
+      ]
+    },
     "Info": {
       " Upgrade to a paid plan to create multiple vaults.": [
         " Перейдите на платный план, чтобы создать несколько хранилищ."
@@ -705,6 +739,9 @@
       ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } будет импортировать только логины, заметки и кредитные карты."
+      ],
+      "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
+        "${ PASS_APP_NAME } потребует ваш пароль ${ BRAND_NAME } чтобы получить доступ к офлайновым данным"
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 дней, чтобы попробовать платные функции бесплатно. Только в течение первой недели использования ${ BRAND_NAME }."
@@ -898,8 +935,20 @@
       "Never": [
         "Никогда"
       ],
+      "No network connection": [
+        "Нет подключения к сети"
+      ],
       "None": [
         "Ничего"
+      ],
+      "Offline mode": [
+        "Офлайновый режим"
+      ],
+      "Offline mode could not be enabled at the moment": [
+        "Включение офлайнового режима в данный момент невозможно"
+      ],
+      "Offline support successfully disabled": [
+        "Поддержка офлайновой поддержки успешно отключена"
       ],
       "Owner": [
         "Владелец"
@@ -915,6 +964,9 @@
       ],
       "Pinning item...": [
         "Закрепление элемента..."
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
+        "Подтвердите ваш пароль ${ BRAND_NAME } чтобы включить офлайновый режим"
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Подтвердите ваш пароль ${ BRAND_NAME } для экспорта ваших данных ${ PASS_APP_NAME }"
@@ -972,6 +1024,9 @@
       ],
       "Set up a PIN code to easily lock your data": [
         "Установите PIN-код для удобной блокировки ваших данных."
+      ],
+      "Setting up offline mode...": [
+        "Настройка офлайнового режима..."
       ],
       "Settings successfully updated": [
         "Настройки успешно обновлены"
@@ -1065,6 +1120,9 @@
       ],
       "You are about to create:": [
         "Вы собираетесь создать:"
+      ],
+      "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Теперь вы можете использовать свой пароль ${ BRAND_NAME } для доступа к ${ PASS_SHORT_APP_NAME } в офлайновом режиме."
       ],
       "You cannot change the mailboxes for this alias.": [
         "Вы не можете изменить почтовые ящики для этого псевдонима."
@@ -1221,6 +1279,9 @@
       "Empty trash": [
         "Очистить корзину"
       ],
+      "Enable offline access": [
+        "Включить офлайновый доступ"
+      ],
       "Expiration date": [
         "Срок действия"
       ],
@@ -1337,6 +1398,9 @@
       ],
       "Notes": [
         "Примечания"
+      ],
+      "Offline mode": [
+        "Офлайновый режим"
       ],
       "Old-New": [
         "Старый-Новый"
@@ -1489,6 +1553,9 @@
       ],
       "Sign in to your account": [
         "Войдите в свой аккаунт"
+      ],
+      "You are currently offline. Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "Вы сейчас офлайн. Разблокируйте ${ PASS_SHORT_APP_NAME } с помощью вашего пароля ${ BRAND_NAME }"
       ]
     },
     "lobby: Title": {
@@ -1806,11 +1873,17 @@
       "Empty note": [
         "Пустая заметка"
       ],
+      "Encryption password is required": [
+        "Требуется пароль для шифрования"
+      ],
       "Expiration Date is not in the format MM/YY": [
         "Срок действия не в формате ММ/ГГ"
       ],
       "Invalid alias prefix": [
         "Недопустимый префикс псевдонима"
+      ],
+      "item was imported without custom fields": [
+        "элемент был импортирован без настраиваемых полей"
       ],
       "Maximum length is ${ maxLength } character": [
         "Максимальная длина ${ maxLength } символ",
@@ -1835,6 +1908,9 @@
       ],
       "No password manager selected": [
         "Не выбран менеджер паролей"
+      ],
+      "Offline": [
+        "Офлайн"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Только буквы, цифры, точки, дефисы и подчеркивания разрешены"

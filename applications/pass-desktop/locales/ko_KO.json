@@ -722,6 +722,31 @@
         "테라바이트"
       ]
     },
+    "Font face option": {
+      "System default": [
+        "시스템 기본값"
+      ],
+      "Theme font": [
+        "테마 폰트"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "크게"
+      ],
+      "Medium (recommended)": [
+        "중간 (권장)"
+      ],
+      "Small": [
+        "적게"
+      ],
+      "Very large": [
+        "매우 크게"
+      ],
+      "Very small": [
+        "매우 작게"
+      ]
+    },
     "Info": {
       " Upgrade to a paid plan to create multiple vaults.": [
         " 여러 개의 금고를 생성하기 위해 유료 요금제로 업그레이드 해보세요."
@@ -827,6 +852,9 @@
       ],
       "Copied to clipboard": [
         "클립보드에 복사됨"
+      ],
+      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, passkeys...). For a complete export, we recommend using a different format.": [
+        "CSV는 데이터를 볼 수 있는 편리한 형식을 제공합니다. 그러나 단순성으로 인해 일부 데이터는 포함되지 않게 됩니다(사용자 지정 필드, 금고 등...). 완전한 내보내기를 위해, 다른 형식을 사용하는 것이 좋습니다."
       ],
       "Current version": [
         "현재 버전"
