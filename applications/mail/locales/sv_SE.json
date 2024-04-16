@@ -40,6 +40,9 @@
       "Add contact": [
         "Lägg till kontakt"
       ],
+      "Add credit / debit card": [
+        "Lägg till kredit-/betalkort"
+      ],
       "Add email": [
         "Lägg till e-post"
       ],
@@ -620,6 +623,9 @@
       "Manage Snooze": [
         "Hantera snooze"
       ],
+      "Mark as open": [
+        "Markera som öppen"
+      ],
       "Mark as read": [
         "Markera som läst"
       ],
@@ -1123,6 +1129,10 @@
       ],
       "Trust": [
         "Lita på"
+      ],
+      "Trust key": [
+        "Lita på nyckel",
+        "Lita på nycklar"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -1676,6 +1686,12 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Fortsätt använda ${ MAIL_APP_NAME }."
+      ],
+      "Continue using ${ planTitle }": [
+        "Fortsätt använda ${ planTitle }"
+      ],
+      "Continue your subscription": [
+        "Fortsätt din prenumeration"
       ]
     },
     "Calendar attachment tooltip": {
@@ -6471,6 +6487,9 @@
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "De data du har angett i utkastet kanske inte sparas om du lämnar sidan."
       ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "Den exponerade informationen läckte från en tredjepartstjänst. Din ${ BRAND_NAME }-kontoinformation förblir säker och krypterad. ${ learnMoreLink }"
+      ],
       "The local database is being prepared": [
         "Den lokala databasen förbereds"
       ],
@@ -6786,6 +6805,9 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Vi kommer att omdirigera dig till PayPal i en ny webbläsarflik för att slutföra denna transaktion. Om du använder några popup-blockerare, inaktivera dem för att fortsätta."
       ],
+      "We'll email you once import is complete.": [
+        "Vi skickar e-post till dig när importen är klar."
+      ],
       "We'll notify you when the import is done.": [
         "Vi aviserar dig när importen är klar."
       ],
@@ -6845,6 +6867,9 @@
       ],
       "You can check the progress ${ importProgressLink }.": [
         "Du kan kontrollera processen ${ importProgressLink }."
+      ],
+      "You can close the tab or browser in the meantime.": [
+        "Du kan stänga fliken eller webbläsaren under tiden."
       ],
       "You can either update your search query or ${ button }": [
         "Du kan antingen uppdatera din sökfråga eller ${ button }"
@@ -6989,6 +7014,12 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Din data är redo att importeras från ${ importedEmailAddressStrong } till ditt ${ BRAND_NAME }-konto."
       ],
+      "Your email address and password were leaked:": [
+        "Din e-postadress och ditt lösenord läcktes:"
+      ],
+      "Your email address was exposed:": [
+        "Din e-postadress blev exponerad:"
+      ],
       "Your email will only be used for this one-time verification.": [
         "Din e-post kommer endast användas för denna engångsverifiering."
       ],
@@ -7013,6 +7044,9 @@
       ],
       "Your next billing date is ${ renewalTime }.": [
         "Ditt nästa faktureringsdatum är ${ renewalTime }."
+      ],
+      "Your password was leaked:": [
+        "Ditt lösenord läcktes:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ditt telefonnummer kommer endast att användas för denna engångsverifiering."
@@ -9866,6 +9900,9 @@
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel är **aktivt** och skyddar ditt konto."
+      ],
+      "Your information was found in at least one data breach. Turn on Breach Alert to view details and take action. ${ learnMoreLink }": [
+        "Din information hittades i minst ett dataintrång. Slå på intrångsvarning för att visa detaljer och vidta åtgärder. ${ learnMoreLink }"
       ]
     },
     "Select files": {
@@ -10658,6 +10695,32 @@
         "För"
       ]
     },
+    "Subscription renewal state": {
+      "Are you sure?": [
+        "Är du säker?"
+      ],
+      "Auto-pay is disabled": [
+        "Automatisk betalning är inaktiverat"
+      ],
+      "Auto-pay is enabled": [
+        "Automatisk betalning är aktiverat"
+      ],
+      "Disable": [
+        "Inaktivera"
+      ],
+      "Enable auto-pay support": [
+        "Aktivera stöd för automatisk betalning"
+      ],
+      "Keep auto-pay": [
+        "Behåll automatisk betalning"
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
+        "Vårt system kommer inte längre att debitera dig automatiskt med denna betalningsmetod, men din prenumeration kommer fortfarande förnyas i slutet av faktureringsperioden. Om du vill nedgradera eller ändra din prenumeration måste du fortfarande göra det själv innan faktureringsperiodens slut. Dessutom, om du glömmer att göra en manuell betalning och automatisk betalning är inaktiverad för alla betalningsmetoder, kan vi automatiskt nedgradera ditt konto vilket kommer att leda till förlust av många funktioner."
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
+        "Vårt system kommer inte längre att debitera dig automatiskt med denna betalningsmetod, men din prenumeration kommer fortfarande förnyas i slutet av faktureringsperioden. Om du vill nedgradera eller ändra din prenumeration måste du fortfarande göra det själv innan faktureringsperiodens slut. Vi kan inte automatiskt nedgradera dig eftersom om du överskrider den kostnadsfria lagringskvoten eller använder andra betalda funktioner. Vi kan inte automatiskt ta bort filer, e-postmeddelanden eller annan data åt dig. Om du inaktiverar automatisk betalning, kom ihåg att betala din nästa prenumerationsfaktura före förfallodagen för att förhindra kontoavstängning."
+      ]
+    },
     "Subscription saving": {
       "Save": [
         "Spara"
@@ -10908,6 +10971,12 @@
       "Password copied to clipboard": [
         "Lösenord kopierat till urklipp"
       ],
+      "Payment method added": [
+        "Betalningsmetod tillagd"
+      ],
+      "Payment method updated": [
+        "Betalningsmetod uppdaterad"
+      ],
       "Phishing reported": [
         "Nätfiske rapporterat"
       ],
@@ -11119,6 +11188,9 @@
       ],
       "Add contact group name": [
         "Lägg till kontaktgruppens namn"
+      ],
+      "Add credit/debit card": [
+        "Lägg till kredit-/betalkort"
       ],
       "Add filter": [
         "Lägg till filter"
@@ -11332,6 +11404,9 @@
       ],
       "Edit contact group": [
         "Redigera kontaktgrupp"
+      ],
+      "Edit credit/debit card": [
+        "Redigera kredit-/betalkort"
       ],
       "Edit email settings": [
         "Redigera e-postinställningar"

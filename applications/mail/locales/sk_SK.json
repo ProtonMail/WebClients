@@ -40,6 +40,9 @@
       "Add contact": [
         "Pridať kontakt"
       ],
+      "Add credit / debit card": [
+        "Pridať platobnú kartu"
+      ],
       "Add email": [
         "Pridať email"
       ],
@@ -1122,6 +1125,12 @@
       ],
       "Trust": [
         "Dôverovať"
+      ],
+      "Trust key": [
+        "Dôveryhodný kľúč",
+        "Dôveryhodný kľúč",
+        "Dôverovať kľúčom",
+        "Dôverovať novým kľúčom"
       ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
@@ -3565,7 +3574,7 @@
         "Primárny súkromný kľúč adresy nenájdený"
       ],
       "Alias is not valid": [
-        "Alias není platný"
+        "Alias nie je platný"
       ],
       "Alias is required": [
         "Alias je povinný"
@@ -3712,7 +3721,7 @@
         "Názov priečinka nesmie byť prázdny."
       ],
       "Forward address is required": [
-        "Adresa preposielania je vyžadovaná"
+        "Adresa preposielania je povinná"
       ],
       "Image upload failed": [
         "Nahrávanie obrázka zlyhalo"
@@ -4767,7 +4776,7 @@
         "Desktopová aplikácia ${ MAIL_APP_NAME } "
       ],
       "Enjoy fast, secure, and distraction-free access to your inbox and calendar.": [
-        "Užívajte si rýchly, bezpečný a bezproblémový prístup k doručenej pošte a kalendáru."
+        "Užívajte si rýchly, bezpečný a nerušený prístup k doručenej pošte a kalendáru."
       ],
       "Get unlimited access with any ${ MAIL_APP_NAME } plan.": [
         "Získajte neobmedzený prístup s akýmkoľvek plánom ${ MAIL_APP_NAME }."
@@ -5783,7 +5792,7 @@
         "Vyhľadávanie kontaktu ${ progress } o ${ max }..."
       ],
       "Clear app data": [
-        "Vymazať dáta"
+        "Vymazať dáta aplikácie"
       ],
       "Clear data": [
         "Zmazať dáta"
@@ -6770,7 +6779,7 @@
         "Tento verejný kľúč sa automaticky použije na šifrovanie emailov odoslaných na túto adresu."
       ],
       "This removes all data associated with this app, including downloaded messages. The app will restart and you will need to sign in again to use the app.": [
-        "Tým odstránite všetky dáta spojené s touto aplikáciou, vrátane stiahnutých správ. Aplikácia sa reštartuje a na jej používanie sa budete musieť znovu prihlásiť."
+        "Týmto odstránite všetky dáta spojené s touto aplikáciou, vrátane stiahnutých správ. Aplikácia sa reštartuje a na jej používanie sa budete musieť znovu prihlásiť."
       ],
       "This sender's public key has not been trusted yet.": [
         "Verejný kľúč tohto odosielateľa nebol doposiaľ overený."
@@ -8427,7 +8436,7 @@
         "10 emailových adries"
       ],
       "Auto-delete Spam and Trash": [
-        "Automatické mazanie nevyžiadanej pošty a koša"
+        "Automatické mazanie spamu a koša"
       ],
       "Custom schedule send and snooze times": [
         "Vlastné časy odoslania a odloženia"
@@ -9865,7 +9874,7 @@
         "Vyberte dôvod"
       ],
       "Select state": [
-        "Vyberte štát"
+        "Vybrať stav"
       ],
       "Start date": [
         "Dátum zahájenia"
@@ -10084,16 +10093,16 @@
         "Vytvoriť alias"
       ],
       "Create an alias": [
-        "Vytvorte alias"
+        "Vytvoriť alias"
       ],
       "Generate aliases on the fly, and easily manage your aliases and passwords.": [
-        "Generujte aliasy za pochodu a jednoducho spravujte aliasy a heslá."
+        "Vytvárajte aliasy za chodu a jednoducho spravujte aliasy a heslá."
       ],
       "Hide-my-email aliases": [
         "Hide-my-email aliasy"
       ],
       "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
-        "Aliasy Hide-my-email vám umožní zaregistrovať sa do online služieb bez toho, aby ste museli zdieľať svoju hlavnú e-mailovú adresu. ${ learnMoreLink }"
+        "Aliasy Hide-my-email vám umožnia zaregistrovať sa do online služieb bez toho, aby ste museli zdieľať svoju hlavnú emailovú adresu. ${ learnMoreLink }"
       ],
       "New alias": [
         "Nový alias"
@@ -10974,6 +10983,32 @@
         "Pre"
       ]
     },
+    "Subscription renewal state": {
+      "Are you sure?": [
+        "Naozaj?"
+      ],
+      "Auto-pay is disabled": [
+        "Automatická platba je zakázaná"
+      ],
+      "Auto-pay is enabled": [
+        "Automatická platba je povolená"
+      ],
+      "Disable": [
+        "Deaktivovať"
+      ],
+      "Enable auto-pay support": [
+        "Zapnutie podpory automatických platieb"
+      ],
+      "Keep auto-pay": [
+        "Ponechať automatické platby"
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
+        "Náš systém vám už nebude automaticky účtovať poplatky pomocou tohto spôsobu platby, ale vaše predplatné sa na konci fakturačného cyklu aj tak obnoví. Ak chcete prejsť na nižšiu verziu alebo zmeniť svoje predplatné, musíte to urobiť sami pred koncom fakturačného obdobia. Okrem toho, ak zabudnete uskutočniť manuálnu platbu a automatické platby sú deaktivované pre všetky spôsoby platby, môže vám byť automaticky ponížená verzia vášho účtu, čo povedie k strate mnohých funkcií."
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
+        "Náš systém vám už nebude automaticky účtovať poplatky pomocou tohto spôsobu platby, ale vaše predplatné sa na konci fakturačného cyklu stále obnoví. Ak chcete zmeniť svoje predplatné alebo prejsť na nižší plán, musíte to urobiť sami pred koncom fakturačného obdobia. Nemôžeme vás automaticky presunúť na nižší plán, pretože ak ste prekročili kvótu úložiska bezplatného plánu alebo používate iné platené funkcie, nemôžeme za vás automaticky vymazať súbory, emaily alebo iné údaje. Ak zakážate automatické platby, nezabudnite uhradiť ďalšiu faktúru za predplatné pred dátumom splatnosti, aby ste predišli pozastaveniu účtu."
+      ]
+    },
     "Subscription saving": {
       "Save": [
         "Ušetríte"
@@ -11276,6 +11311,12 @@
       "Password copied to clipboard": [
         "Heslo bolo skopírované do schránky"
       ],
+      "Payment method added": [
+        "Spôsob platby bol pridaný"
+      ],
+      "Payment method updated": [
+        "Spôsob platby bol aktualizovaný"
+      ],
       "Phishing reported": [
         "Phishing nahlásený"
       ],
@@ -11504,6 +11545,9 @@
       "Add contact group name": [
         "Pridať názov skupiny kontaktov"
       ],
+      "Add credit/debit card": [
+        "Pridať platobnú kartu"
+      ],
       "Add filter": [
         "Pridať filter"
       ],
@@ -11723,6 +11767,9 @@
       "Edit contact group": [
         "Upraviť skupinu kontaktov"
       ],
+      "Edit credit/debit card": [
+        "Upraviť platobnú kartu"
+      ],
       "Edit email settings": [
         "Upraviť nastavenia emailu"
       ],
@@ -11784,7 +11831,7 @@
         "Získať pokročilú ochranu"
       ],
       "Get the ${ appName[APP_NAME] } apps": [
-        "Získať ${ appName[APP_NAME] } aplikácia"
+        "Získať ${ appName[APP_NAME] } aplikácie"
       ],
       "Gift": [
         "Dar"
