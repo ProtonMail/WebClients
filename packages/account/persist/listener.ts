@@ -2,6 +2,7 @@ import type { SharedStartListening } from '@proton/redux-shared-store/listenerIn
 import { getPersistedSessions } from '@proton/shared/lib/authentication/persistedSessionStorage';
 import { SECOND } from '@proton/shared/lib/constants';
 import { EVENT_ERRORS } from '@proton/shared/lib/errors';
+import { isSubUser } from '@proton/shared/lib/user/helpers';
 import noop from '@proton/utils/noop';
 
 import { serverEvent } from '../eventLoop';
@@ -45,9 +46,10 @@ export const startPersistListener = <T extends UserState>(
 
                 const eventID = eventManager.getEventID();
                 const clientKey = authentication.getClientKey();
-                const userID = selectUser(state)?.value?.ID;
+                const user = selectUser(state)?.value;
+                const userID = user?.ID;
 
-                if (!eventID || !clientKey || !state || !userID) {
+                if (!eventID || !clientKey || !state || !userID || isSubUser(user)) {
                     return;
                 }
 
