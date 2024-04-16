@@ -190,7 +190,7 @@ describe('downgrade subscription', () => {
         } = setup({
             preloadedState: {
                 subscription: getModelState(mailSubscription),
-                user: getModelState({ ...user, hasPaidMail: true, Subscribed: PRODUCT_BIT.Mail }),
+                user: getModelState({ ...user, hasPaidMail: true, Subscribed: PRODUCT_BIT.MAIL }),
                 organization: getModelState(organization),
                 plans: {
                     ...getModelState({ plans: Object.values(PLANS_MAP), freePlan: FREE_PLAN }),
