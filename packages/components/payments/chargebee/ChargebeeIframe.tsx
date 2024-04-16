@@ -265,7 +265,7 @@ export function useChargebeeHandles(
     }, []);
 
     const getCssVariables = (): Record<ChargebeeCssVariable, string> => {
-        const style = getComputedStyle(iframeRef.current ?? document.documentElement);
+        const style = getComputedStyle(document.documentElement);
 
         return chargebeeCssVariables.reduce(
             (acc, prop) => {
@@ -588,52 +588,6 @@ function getInitialHeight(type: 'card' | 'paypal' | 'saved-card'): number {
     return initialCardHeight;
 }
 
-const useComputedStylesTracker = (
-    iframeRef: RefObject<HTMLIFrameElement>,
-    propertiesToTrack: string[],
-    callback: (styles: any) => void
-) => {
-    useEffect(() => {
-        const element = iframeRef.current ?? document.documentElement;
-
-        const getRelevantStyles = (): Record<string, string> => {
-            const computedStyle = getComputedStyle(element);
-            return propertiesToTrack.reduce(
-                (acc, prop) => ({
-                    ...acc,
-                    [prop]: computedStyle.getPropertyValue(prop),
-                }),
-                {}
-            );
-        };
-
-        let previousStyles = getRelevantStyles();
-
-        // Observer callback to check for style changes
-        const observerCallback = () => {
-            const currentStyles = getRelevantStyles();
-            if (propertiesToTrack.some((prop) => currentStyles[prop] !== previousStyles[prop])) {
-                previousStyles = currentStyles;
-                callback(currentStyles);
-            }
-        };
-
-        // Set up a MutationObserver to monitor style changes
-        const observer = new MutationObserver(observerCallback);
-        observer.observe(element, {
-            attributes: true,
-            attributeFilter: ['style', 'class'],
-        });
-
-        // Call callback initially with the initial styles
-        callback(previousStyles);
-
-        return () => {
-            observer.disconnect();
-        };
-    }, [iframeRef.current, callback, propertiesToTrack]);
-};
-
 export const ChargebeeIframe = ({
     type,
     iframeHandles,
@@ -687,16 +641,12 @@ export const ChargebeeIframe = ({
 
     const threeDs = useThreeDsChallenge(false);
 
-    const initializeCard = async () => {
-        await iframeHandles.handles.initializeCreditCard({ isNarrow: !!isNarrow });
-    };
-
     const onLoad = async () => {
         clearTimeout(loadingTimeoutRef.current);
 
         // initialization of paypal is called in the facade, and others are called here, at least for now
         if (type === 'card') {
-            await initializeCard();
+            await iframeHandles.handles.initializeCreditCard({ isNarrow: !!isNarrow });
         } else if (type === 'saved-card') {
             await iframeHandles.handles.initializeSavedCreditCard();
         } else if (type === 'paypal' && chargebeePaypal) {
@@ -713,14 +663,6 @@ export const ChargebeeIframe = ({
         onInitialized?.();
         setInitialized(true);
     };
-
-    useComputedStylesTracker(iframeRef, chargebeeCssVariables, async () => {
-        if (!initialized || type !== 'card') {
-            return;
-        }
-
-        await initializeCard();
-    });
 
     useEffect(
         () => () => {
