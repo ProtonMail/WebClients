@@ -13,7 +13,7 @@ const outpointB = '405f80381da6a3b4408c62fbe49af3d3f8db2eb828021c0d2b6de3831f2ed
 
 describe('useOnchainTransactionAdvancedOptions', () => {
     let txBuilder: WasmTxBuilder = new WasmTxBuilder();
-    const updater = vi.fn(async (update) => {
+    const updater = vi.fn(async (update: (txBuilder: WasmTxBuilder) => WasmTxBuilder | Promise<WasmTxBuilder>) => {
         txBuilder = await update(txBuilder);
         return txBuilder;
     });

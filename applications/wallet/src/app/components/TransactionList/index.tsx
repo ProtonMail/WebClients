@@ -12,61 +12,73 @@ import TableHeaderCell from '@proton/components/components/table/TableHeaderCell
 import TableRow from '@proton/components/components/table/TableRow';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import { EmptyViewContainer } from '@proton/components/containers';
+import { useUserKeys } from '@proton/components/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import noResultSearchSvg from '@proton/styles/assets/img/illustrations/empty-search.svg';
-import { useWalletSettings } from '@proton/wallet';
+import clsx from '@proton/utils/clsx';
+import { IWasmApiWalletData, useWalletSettings } from '@proton/wallet';
 
 import { BitcoinAmount, SimplePaginator } from '../../atoms';
 import { ITEMS_PER_PAGE } from '../../constants';
+import { useBitcoinBlockchainContext } from '../../contexts';
 import { useLocalPagination } from '../../hooks/useLocalPagination';
 import { useUserExchangeRate } from '../../hooks/useUserExchangeRate';
-import { WalletWithChainData } from '../../types';
+import { TransactionData, useWalletTransactions } from '../../hooks/useWalletTransactions';
 import { confirmationTimeToHumanReadable } from '../../utils';
 import { OnchainTransactionDetailsProps } from '../OnchainTransactionDetails';
 import { OnchainTransactionDetailsModal } from '../OnchainTransactionDetailsModal';
 
 interface Props {
-    wallet?: WalletWithChainData;
+    wallet?: IWasmApiWalletData;
 }
 
 export const TransactionList = ({ wallet }: Props) => {
     const [walletSettings, loadingSettings] = useWalletSettings();
     const [exchangeRate, loadingExchangeRate] = useUserExchangeRate();
+    const { walletsChainData } = useBitcoinBlockchainContext();
 
-    const [transactions, setTransactions] = useState<WasmTransactionDetails[]>();
-    const [modalData, setModalData] = useState<OnchainTransactionDetailsProps>();
-    const [isLoading, setIsLoading] = useState<boolean>(false);
+    const walletChainData = wallet?.Wallet.ID ? walletsChainData[wallet?.Wallet.ID] : undefined;
+
+    const [keys] = useUserKeys();
+
+    const [transactions, setTransactions] = useState<WasmTransactionDetails[]>([]);
+    const [modalData, setModalData] = useState<Omit<OnchainTransactionDetailsProps, 'onUpdateLabel'>>();
+    const [isLoading, withLoading] = useLoading(false);
 
     const { currentPage, handleNext, handlePrev, handleGoFirst } = useLocalPagination();
+    // page 0 should be displayed as 'Page 1'
+    const displayedPageNumber = currentPage + 1;
 
-    const handleClickRow = useCallback(async (tx: WasmTransactionDetails) => {
+    const handleClickRow = useCallback(async (tx: TransactionData) => {
         setModalData({ tx });
     }, []);
 
     useEffect(() => {
         handleGoFirst();
-    }, [wallet?.wallet, handleGoFirst]);
+    }, [walletChainData?.wallet, handleGoFirst]);
 
     useEffect(() => {
         const pagination = new WasmPagination(currentPage * ITEMS_PER_PAGE, ITEMS_PER_PAGE);
 
-        if (wallet?.wallet) {
-            setIsLoading(true);
-
-            void wallet.wallet
-                .getTransactions(pagination)
-                .then((transactions) => {
-                    setTransactions(transactions[0]);
+        if (walletChainData?.wallet) {
+            void withLoading(
+                walletChainData.wallet.getTransactions(pagination).then((transactions) => {
+                    setTransactions(transactions[0].map((t) => t.Data));
                 })
-                .finally(() => {
-                    setIsLoading(false);
-                });
+            );
         } else {
             setTransactions([]);
         }
-    }, [currentPage, wallet?.wallet]);
+    }, [currentPage, walletChainData?.wallet, withLoading]);
+
+    const { transactionDetails, loadingRecordInit, loadingApiData, updateWalletTransaction } = useWalletTransactions({
+        transactions,
+        keys,
+        wallet,
+    });
 
     const transactionsTable = useMemo(() => {
-        if (isLoading) {
+        if (isLoading || loadingRecordInit) {
             return (
                 <div className="m-auto flex flex-row items-center">
                     <CircleLoader className="color-primary mr-2" />
@@ -76,7 +88,7 @@ export const TransactionList = ({ wallet }: Props) => {
             );
         }
 
-        if (transactions?.length) {
+        if (transactionDetails?.length) {
             return (
                 <Table className="text-sm" borderWeak>
                     <TableHeader>
@@ -90,21 +102,22 @@ export const TransactionList = ({ wallet }: Props) => {
                         </TableRow>
                     </TableHeader>
                     <TableBody>
-                        {transactions.map((transaction) => {
-                            const txValue = Number(transaction.received) - Number(transaction.sent);
+                        {transactionDetails.map((tx) => {
+                            const { networkData, apiData } = tx;
+                            const txValue = networkData.received - networkData.sent;
 
                             // TXid cannot be assumed unique because of itnra-wallet self-transfers
                             return (
                                 <TableRow
-                                    key={`${transaction.txid}-${txValue}`}
-                                    className="cursor-pointer"
-                                    onClick={() => handleClickRow(transaction)}
+                                    key={`${networkData.txid}-${txValue}`}
+                                    className={clsx(!!apiData && 'cursor-pointer')}
+                                    onClick={() => handleClickRow(tx)}
                                 >
                                     <TableCell>
                                         <div className="flex flex-column">
-                                            <Tooltip title={transaction.txid}>
+                                            <Tooltip title={networkData.txid}>
                                                 <span className="inline-block max-w-full text-lg text-ellipsis">
-                                                    {transaction.txid}
+                                                    {networkData.txid}
                                                 </span>
                                             </Tooltip>
                                         </div>
@@ -112,10 +125,10 @@ export const TransactionList = ({ wallet }: Props) => {
                                     <TableCell>
                                         <div className="flex flex-column">
                                             <span className="text-lg">
-                                                {confirmationTimeToHumanReadable(transaction.time)}
+                                                {confirmationTimeToHumanReadable(networkData.time)}
                                             </span>
                                             <span className="color-hint">
-                                                {!transaction.time
+                                                {networkData.time?.confirmed
                                                     ? c('Wallet Transaction List').t`Processed`
                                                     : c('Wallet Transaction List').t`Processing`}
                                             </span>
@@ -123,7 +136,9 @@ export const TransactionList = ({ wallet }: Props) => {
                                     </TableCell>
                                     <TableCell>
                                         <div className="flex flex-column">
-                                            <span className="text-lg">TODO</span>
+                                            <span className={clsx('text-lg', loadingApiData && 'skeleton-loader')}>
+                                                {apiData?.Label ?? '-'}
+                                            </span>
                                         </div>
                                     </TableCell>
                                     <TableCell>
@@ -161,9 +176,11 @@ export const TransactionList = ({ wallet }: Props) => {
         exchangeRate,
         handleClickRow,
         isLoading,
+        loadingApiData,
         loadingExchangeRate,
+        loadingRecordInit,
         loadingSettings,
-        transactions,
+        transactionDetails,
         walletSettings?.BitcoinUnit,
     ]);
 
@@ -173,7 +190,7 @@ export const TransactionList = ({ wallet }: Props) => {
                 <div className="flex flex-column flex-nowrap mb-2 grow overflow-auto">{transactionsTable}</div>
 
                 <div className="flex flex-row mt-auto shrink-0 justify-end items-center pr-4">
-                    <span className="block mr-4">{c('Wallet Transaction List').t`Page ${currentPage}`}</span>
+                    <span className="block mr-4">{c('Wallet Transaction List').t`Page ${displayedPageNumber}`}</span>
 
                     <SimplePaginator
                         canGoPrev={!isLoading && currentPage > 0}
@@ -188,6 +205,7 @@ export const TransactionList = ({ wallet }: Props) => {
                 onClose={() => setModalData(undefined)}
                 isOpen={!!modalData}
                 data={modalData}
+                onUpdateLabel={updateWalletTransaction}
             />
         </>
     );

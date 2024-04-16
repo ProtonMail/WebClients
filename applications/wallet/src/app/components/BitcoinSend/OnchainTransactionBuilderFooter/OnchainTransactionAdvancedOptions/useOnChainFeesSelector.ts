@@ -35,7 +35,7 @@ export const useOnChainFeesSelector = (
 
     const handleFeesSelected = useCallback(
         (feeRate: number, isRecommended = false) => {
-            updateTxBuilder((txBuilder) => txBuilder.setFeeRate(feeRate));
+            updateTxBuilder((txBuilder) => txBuilder.setFeeRate(BigInt(feeRate)));
             setIsRecommended(isRecommended);
         },
         // all references are stable at mount here
@@ -52,11 +52,11 @@ export const useOnChainFeesSelector = (
     }, [feesEstimations, handleFeesSelected, txBuilder]);
 
     const blockTarget = useMemo(() => {
-        const feeRate = txBuilder.getFeeRate() ?? MIN_FEE_RATE;
+        const feeRate = Number(txBuilder.getFeeRate() ?? MIN_FEE_RATE);
         return findLowestBlockTargetByFeeRate(feeRate, feesEstimations) ?? MAX_BLOCK_TARGET;
     }, [feesEstimations, txBuilder]);
 
-    const feeRate = txBuilder.getFeeRate() ?? 1;
+    const feeRate = Number(txBuilder.getFeeRate() ?? 1);
 
     return {
         feeRate,

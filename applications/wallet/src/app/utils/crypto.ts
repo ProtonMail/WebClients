@@ -1,4 +1,5 @@
 import { CryptoProxy } from '@proton/crypto/lib';
+import { stringToUtf8Array } from '@proton/crypto/lib/utils';
 import {
     base64StringToUint8Array,
     stringToUint8Array,
@@ -12,11 +13,15 @@ const IV_LENGTH = 12;
 const KEY_LENGTH = 32;
 const ALGORITHM = 'AES-GCM';
 
-const getSymmetricKey = async (key: Uint8Array): Promise<CryptoKey> =>
-    crypto.subtle.importKey('raw', key.slice(0, KEY_LENGTH).buffer, ALGORITHM, false, ['decrypt', 'encrypt']);
+export const getSymmetricKey = async (key: Uint8Array): Promise<CryptoKey> => {
+    // https://github.com/vercel/edge-runtime/issues/813
+    const slicedKey = new Uint8Array(key.slice(0, KEY_LENGTH));
 
-//  Taken from pass
-const decryptData = async (key: CryptoKey, data: Uint8Array) => {
+    return crypto.subtle.importKey('raw', slicedKey, ALGORITHM, false, ['decrypt', 'encrypt']);
+};
+
+//  Inpired from pass
+export const decryptData = async (key: CryptoKey, data: Uint8Array) => {
     const iv = data.slice(0, IV_LENGTH);
     const cipher = data.slice(IV_LENGTH, data.length);
     const result = await crypto.subtle.decrypt({ name: ALGORITHM, iv }, key, cipher);
@@ -24,10 +29,9 @@ const decryptData = async (key: CryptoKey, data: Uint8Array) => {
     return new Uint8Array(result);
 };
 
-//  Taken from pass
 export const generateEntropy = (len: number): Uint8Array => crypto.getRandomValues(new Uint8Array(len));
 
-//  Taken from pass
+//  Inpired from pass
 const encryptData = async (key: CryptoKey, data: Uint8Array) => {
     const iv = generateEntropy(IV_LENGTH);
     const cipher = await crypto.subtle.encrypt({ name: ALGORITHM, iv }, key, data);
@@ -39,19 +43,48 @@ export type EncryptedWalletPart = Partial<
     { mnemonic: string; publicKey: undefined } | { mnemonic: undefined; publicKey: string }
 >;
 
-export const decryptWalletKey = async (walletKey: string, keys: DecryptedKey[]) => {
+export const decryptPgp = async (data: string, keys: DecryptedKey[]) => {
     const privateUserKeys = keys.map((key) => key.privateKey);
 
-    const encryptedEntropy = base64StringToUint8Array(walletKey);
+    const encryptedData = base64StringToUint8Array(data);
 
-    const { data: decryptedEntropy } = await CryptoProxy.decryptMessage({
-        binaryMessage: encryptedEntropy,
+    const { data: decryptedData } = await CryptoProxy.decryptMessage({
+        binaryMessage: encryptedData,
         decryptionKeys: privateUserKeys,
         verificationKeys: privateUserKeys,
         format: 'binary',
     });
 
+    return decryptedData;
+};
+
+export const encryptPgp = async (data: Uint8Array, key: DecryptedKey) => {
+    const { message: encryptedData } = await CryptoProxy.encryptMessage({
+        binaryData: data,
+        encryptionKeys: [key.privateKey],
+        signingKeys: [key.privateKey],
+        format: 'binary',
+    });
+
+    return encryptedData;
+};
+
+export const decryptWalletKey = async (walletKey: string, keys: DecryptedKey[]) => {
+    const decryptedEntropy = await decryptPgp(walletKey, keys);
     return getSymmetricKey(decryptedEntropy);
+};
+
+export const decryptWalletKeyForHmac = async (walletKey: string, keys: DecryptedKey[]) => {
+    const decryptedEntropy = await decryptPgp(walletKey, keys);
+
+    // https://github.com/vercel/edge-runtime/issues/813
+    const slicedKey = new Uint8Array(decryptedEntropy.slice(0, KEY_LENGTH));
+
+    return crypto.subtle.importKey('raw', slicedKey, { name: 'HMAC', hash: 'SHA-256' }, false, ['sign', 'verify']);
+};
+
+export const hmac = async (hmacKey: CryptoKey, data: string) => {
+    return crypto.subtle.sign({ name: 'HMAC', hash: { name: 'SHA-256' } }, hmacKey, stringToUtf8Array(data));
 };
 
 /**
@@ -97,12 +130,7 @@ export const encryptWalletData = async (
 
     const encryptedData = await encryptWalletDataWithWalletKey(dataToEncrypt, key);
 
-    const { message: encryptedEntropy } = await CryptoProxy.encryptMessage({
-        binaryData: entropy,
-        encryptionKeys: [userKey.privateKey],
-        signingKeys: [userKey.privateKey],
-        format: 'binary',
-    });
+    const encryptedEntropy = await encryptPgp(entropy, userKey);
 
     const encodedEncryptedEntropy = uint8ArrayToBase64String(encryptedEntropy);
 

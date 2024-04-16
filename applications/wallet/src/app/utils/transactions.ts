@@ -23,7 +23,7 @@ export const sortTransactionsByTime = (transactions: WasmTransactionDetails[]) =
     return [...transactions].sort((txA, txB) => transactionTime(txB) - transactionTime(txA));
 };
 
-export const confirmationTimeToHumanReadable = (confirmation?: WasmTransactionTime): string => {
+export const confirmationTimeToHumanReadable = (confirmation?: WasmTransactionTime | null): string => {
     if (confirmation?.confirmation_time) {
         return format(new Date(Number(confirmation.confirmation_time) * 1000), 'dd MMM yyyy, hh:mm');
     }

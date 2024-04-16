@@ -14,7 +14,9 @@ import {
 import { apiWalletsData } from '../../tests/fixtures/api';
 
 // TODO: Fix vitest vs @proton/components circular deps to be able to remove this mock
-vi.mock('@proton/components/components/confirmActionModal/ConfirmActionModal', () => ({ ConfirmActionModal: 'div' }));
+vi.mock('@proton/components/components/confirmActionModal/ConfirmActionModal', () => ({
+    ConfirmActionModal: () => {},
+}));
 
 describe('YourWalletsSection', () => {
     beforeEach(() => {

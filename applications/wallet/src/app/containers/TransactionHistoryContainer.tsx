@@ -11,7 +11,7 @@ import { useBitcoinBlockchainContext } from '../contexts';
 export const TransactionHistoryContainer = () => {
     const [params] = useSearchParams();
 
-    const { walletsChainData, decryptedApiWalletsData } = useBitcoinBlockchainContext();
+    const { decryptedApiWalletsData } = useBitcoinBlockchainContext();
 
     const [walletId, setWalletId] = useState<string>();
 
@@ -61,7 +61,7 @@ export const TransactionHistoryContainer = () => {
                     </div>
                 </div>
 
-                {wallet && <TransactionList wallet={walletsChainData[wallet.Wallet.ID]} />}
+                {wallet && <TransactionList wallet={wallet} />}
             </div>
         </>
     );

@@ -23,7 +23,6 @@ const modelThunk = createAsyncModelThunk<Model, ApiWalletsDataState, WalletThunk
     `${apiWalletsDataSliceName}/fetch`,
     {
         miss: ({ extraArgument }) => {
-            console.log('extraArgument.walletApi', extraArgument.walletApi);
             return extraArgument.walletApi
                 .wallet()
                 .getWallets()
@@ -35,7 +34,7 @@ const modelThunk = createAsyncModelThunk<Model, ApiWalletsDataState, WalletThunk
                             const accounts: WasmApiWalletAccount[] = await extraArgument.walletApi
                                 .wallet()
                                 .getWalletAccounts(Wallet.ID)
-                                .then((accounts) => accounts[0].map((accountPayload) => accountPayload.Account))
+                                .then((accounts) => accounts[0].map((accountPayload) => accountPayload.Data))
                                 .catch(() => []);
 
                             return {

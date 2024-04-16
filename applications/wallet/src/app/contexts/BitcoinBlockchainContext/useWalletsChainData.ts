@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { chain, set } from 'lodash';
 import { c } from 'ttag';
@@ -11,7 +11,12 @@ import { IWasmApiWalletData } from '@proton/wallet';
 
 import { useBlockchainClient } from '../../hooks/useBlockchainClient';
 import { useBitcoinNetwork } from '../../store/hooks';
-import { AccountChainDataByAccountId, AccountWithChainData, WalletChainDataByWalletId } from '../../types';
+import {
+    AccountChainDataByAccountId,
+    AccountIdByDerivationPathAndWalletId,
+    AccountWithChainData,
+    WalletChainDataByWalletId,
+} from '../../types';
 import { tryHandleWasmError } from '../../utils/wasm/errors';
 
 export type SyncingMetadata = { syncing: boolean; count: number; lastSyncing: number };
@@ -75,7 +80,7 @@ export const useWalletsChainData = (apiWalletsData?: IWasmApiWalletData[]) => {
 
         // TODO: improve pagination
         const pagination = new WasmPagination(0, 10);
-        const transactions = account.getTransactions(pagination)[0];
+        const transactions = account.getTransactions(pagination)[0].map(({ Data }) => Data);
 
         // TODO: add pagination on utxos
         const utxos = account.getUtxos()[0];
@@ -85,6 +90,7 @@ export const useWalletsChainData = (apiWalletsData?: IWasmApiWalletData[]) => {
             balance,
             transactions,
             utxos,
+            derivationPathStr: account.getDerivationPath(),
         };
     };
 
@@ -190,7 +196,7 @@ export const useWalletsChainData = (apiWalletsData?: IWasmApiWalletData[]) => {
                 // Get accounts created in wasm wallet
                 const wasmAccounts = WalletAccounts.reduce((acc: AccountChainDataByAccountId, account) => {
                     const wasmAccount = wasmWallet.getAccount(account.DerivationPath);
-                    return wasmAccount ? { ...acc, [account.ID]: getAccountData(wasmAccount) } : acc;
+                    return wasmAccount ? { ...acc, [account.ID]: { ...getAccountData(wasmAccount) } } : acc;
                 }, {});
 
                 return {
@@ -207,6 +213,21 @@ export const useWalletsChainData = (apiWalletsData?: IWasmApiWalletData[]) => {
         [network]
     );
 
+    // We need this reversed map to reconciliate WalletId+DerivationPath -> AccountId
+    const accountIDByDerivationPathByWalletID = useMemo(() => {
+        return Object.entries(walletsChainData).reduce(
+            (acc: AccountIdByDerivationPathAndWalletId, [walletId, walletChainData]) => ({
+                ...acc,
+                [walletId]: Object.entries(walletChainData?.accounts ?? {}).reduce(
+                    (acc, [accountId, accountData]) =>
+                        accountData ? { ...acc, [accountData.derivationPathStr]: accountId } : acc,
+                    {}
+                ),
+            }),
+            {}
+        );
+    }, [walletsChainData]);
+
     useEffect(() => {
         if (apiWalletsData?.length) {
             setWasmWallets(apiWalletsData);
@@ -216,6 +237,8 @@ export const useWalletsChainData = (apiWalletsData?: IWasmApiWalletData[]) => {
     return {
         syncingMetatadaByAccountId,
         walletsChainData,
+        accountIDByDerivationPathByWalletID,
+
         syncSingleWalletAccount,
         syncSingleWallet,
         syncManyWallets,

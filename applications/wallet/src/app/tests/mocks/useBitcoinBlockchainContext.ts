@@ -13,6 +13,7 @@ export const mockUseBitcoinBlockchainContext = (
         network: WasmNetwork.Testnet,
 
         walletsChainData: walletChainDataByWalletId,
+        accountIDByDerivationPathByWalletID: {},
         syncingMetatadaByAccountId: {},
         syncSingleWalletAccount: vi.fn(),
         syncSingleWallet: vi.fn(),
