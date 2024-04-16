@@ -66,13 +66,10 @@ it('should listen to set configuration event', () => {
             '--focus-outline': '#000000',
             '--focus-ring': '#000000',
             '--field-norm': '#000000',
-            '--field-background-color': '#000000',
             '--field-focus-background-color': '#000000',
             '--field-focus-text-color': '#000000',
             '--field-placeholder-color': '#000000',
             '--field-text-color': '#000000',
-            '--selection-text-color': '#000000',
-            '--selection-background-color': '#000000',
         },
         translations: {
             cardNumberPlaceholder: '0000 0000 0000 0000',
