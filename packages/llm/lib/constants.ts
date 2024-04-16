@@ -1,4 +1,4 @@
-import {MINUTE, SECOND} from "@proton/shared/lib/constants";
+import { MINUTE, SECOND } from '@proton/shared/lib/constants';
 
 export const UNLOAD_ASSISTANT_TIMEOUT = 15 * MINUTE;
 export const RETRY_GENERATE_TIMEOUT = 5 * SECOND;
