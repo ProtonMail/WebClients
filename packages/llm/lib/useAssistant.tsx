@@ -164,9 +164,7 @@ export const AssistantProvider = ({
     children: ReactNode;
     assistantFeature: FeatureFlag;
 }) => {
-    // TODO enable this later, tmp fix during dev to always have the feature enabled
-    const tmp = useFlag(assistantFeature);
-    const assistantFeatureEnabled = tmp || true;
+    const assistantFeatureEnabled = useFlag(assistantFeature);
 
     const llmManager = useRef<LlmManager | null>(null);
     const llmModel = useRef<LlmModel | null>(null);
