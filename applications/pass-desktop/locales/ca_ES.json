@@ -440,6 +440,9 @@
       "Could not resolve share members": [
         "No es poden definir els membres de la compartició."
       ],
+      "Could not validate addresses at the moment.": [
+        "No s'han pogut validar les adreces en aquest moment."
+      ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "Al fitxer CSV li falten les capçaleres esperades: ${ missingHeaders }"
       ],
@@ -476,6 +479,9 @@
       ],
       "Failed resending invite.": [
         "No s'ha pogut reenviar la invitació."
+      ],
+      "Failed to edit organization settings": [
+        "No s'ha pogut editar la configuració de l'organització"
       ],
       "Failed to edit user's access.": [
         "No s'ha pogut Editar l'accés de l'usuari."
@@ -533,6 +539,9 @@
       ],
       "PIN codes do not match": [
         "Els codis PIN no coincideixen"
+      ],
+      "Please upgrade to have early access to ${ PASS_APP_NAME } desktop app": [
+        "Actualitzi per tenir accés anticipat a l'aplicació d'escriptori ${ PASS_APP_NAME }"
       ],
       "Request timed out": [
         "S'ha esgotat el temps d'espera"
@@ -655,6 +664,31 @@
         "Terabytes"
       ]
     },
+    "Font face option": {
+      "System default": [
+        "Valor per defecte del sistema"
+      ],
+      "Theme font": [
+        "Família tipogràfica del tema"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Gran"
+      ],
+      "Medium (recommended)": [
+        "Mitjà (recomanat)"
+      ],
+      "Small": [
+        "Petit"
+      ],
+      "Very large": [
+        "Molt gran"
+      ],
+      "Very small": [
+        "Molt petit"
+      ]
+    },
     "Info": {
       " Upgrade to a paid plan to create multiple vaults.": [
         "Millora a un pla de pagament per crear diverses caixes fortes."
@@ -703,6 +737,9 @@
       ],
       "Auto-lock successfully disabled": [
         "El bloqueig automàtic s'ha desactivat correctament"
+      ],
+      "By default team members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
+        "Per defecte, els membres de l'equip només poden exportar les caixes fortes de la seva propietat. Si aquesta opció està activada, no podran exportar cap dada"
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "Permet crear, editar, suprimir i exportar elements en aquesta caixa forta."
@@ -853,6 +890,9 @@
       "Offline mode": [
         "Mode fora de línia"
       ],
+      "Organization settings successfully updated": [
+        "La configuració de l'organització s'ha actualitzat correctament"
+      ],
       "Owner": [
         "Propietari"
       ],
@@ -925,11 +965,17 @@
       "Syncing your vaults…": [
         "S'estan sincronitzant les vostres caixes fortes..."
       ],
+      "Team members can only share vaults within organization": [
+        "Els membres de l'equip només poden compartir caixes fortes dins de l'organització"
+      ],
       "Thank you, the problem has been reported": [
         "Gràcies, s'ha informat del problema"
       ],
       "The export will only contain vaults that you own.": [
         "L'exportació només contindrà les caixes fortes de la seva propietat."
+      ],
+      "The exported file will be encrypted using PGP and requires a strong passphrase.": [
+        "El fitxer exportat es xifrarà amb PGP i requereix una contrasenya forta."
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "No s'ha pogut importar ${ result.ignored.length } element:",
@@ -943,6 +989,9 @@
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Aquesta exportació no es xifrarà i qualsevol persona amb accés al fitxer exportat podrà veure les contrasenyes. Per seguretat, elimineu-lo un cop hàgiu acabat d'utilitzar-lo."
+      ],
+      "This setting is disabled on the organization level": [
+        "Aquesta opció està desactivada en l'àmbit d'organització"
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Aquesta caixa forta no està compartida actualment amb ningú. Inviteu persones a compartir-la amb altres."
@@ -958,6 +1007,9 @@
       ],
       "Unpinning item...": [
         "Desancorant l'element..."
+      ],
+      "Updating organization settings": [
+        "Actualització de la configuració de l'organització"
       ],
       "User's access removed": [
         "S'ha esborrat l'accés de l'usuari."
@@ -1126,6 +1178,12 @@
       "Created": [
         "Creat"
       ],
+      "Disable data export for team members": [
+        "Desactivar l'exportació de dades per als membres de l'equip"
+      ],
+      "Disable sharing outside the organization": [
+        "Desactiva la compartició fora de l'organització"
+      ],
       "Display": [
         "Visualització"
       ],
@@ -1146,6 +1204,9 @@
       ],
       "Export": [
         "Exporta"
+      ],
+      "Exporting policy": [
+        "Política d'exportació"
       ],
       "Field name": [
         "Nom del camp"
@@ -1282,6 +1343,9 @@
       "Oldest to newest": [
         "De més antic a més recent"
       ],
+      "Organization": [
+        "Organització"
+      ],
       "Passkey": [
         "Contrasenya"
       ],
@@ -1338,6 +1402,9 @@
       ],
       "Set PIN code": [
         "Establir codi PIN"
+      ],
+      "Sharing policy": [
+        "Política de compartició"
       ],
       "Show website favicons": [
         "Mostra els favicons del lloc web"
@@ -1620,7 +1687,7 @@
         "Darrer emplenament automàtic"
       ],
       "Last modified": [
-        "Darrera modificació"
+        "Última modificació"
       ],
       "Leave vault ?": [
         "Deixa la caixa forta?"
@@ -1760,6 +1827,9 @@
       ],
       "Invalid alias prefix": [
         "El prefix de l'àlies no és vàlid"
+      ],
+      "Inviting email addresses outside organization is not allowed.": [
+        "No es permet convidar adreces de correu electrònic de fora de l'organització."
       ],
       "Maximum length is ${ maxLength } character": [
         "La longitud màxima és d'${ maxLength } caràcter.",

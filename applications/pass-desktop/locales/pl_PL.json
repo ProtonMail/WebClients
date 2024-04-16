@@ -705,7 +705,7 @@
         "GB"
       ],
       "KB": [
-        "KB"
+        "kB"
       ],
       "MB": [
         "MB"
@@ -744,6 +744,31 @@
         "terabajty",
         "terabajtów",
         "terabajtów"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "Domyślny systemu"
+      ],
+      "Theme font": [
+        "Czcionka"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Duża"
+      ],
+      "Medium (recommended)": [
+        "Średnia (zalecana)"
+      ],
+      "Small": [
+        "Mała"
+      ],
+      "Very large": [
+        "Bardzo duża"
+      ],
+      "Very small": [
+        "Bardzo mała"
       ]
     },
     "Info": {
@@ -857,6 +882,9 @@
       ],
       "Copied to clipboard": [
         "Skopiowano do schowka"
+      ],
+      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, passkeys...). For a complete export, we recommend using a different format.": [
+        "Plik CSV oferuje wygodny format do przeglądania danych, ale niektóre dane (jak pola niestandardowe, klucze dostępu itp.) nie zostaną uwzględnione. Użyj innego formatu plik, aby wyeksportować wszystkie dane."
       ],
       "Current version": [
         "Obecna wersja"
