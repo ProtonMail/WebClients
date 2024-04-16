@@ -449,6 +449,12 @@
       "Moving item failed": [
         "Не вдалося перемістити елемент"
       ],
+      "Offline mode is currently not available for two password mode.": [
+        "Автономний режим не доступний для вашого тарифного плану і не сумісний з режимом двох паролів."
+      ],
+      "Offline mode isn't currently available for your plan and not compatible with two password mode.": [
+        "Автономний режим не доступний для вашого тарифного плану і не сумісний з режимом двох паролів."
+      ],
       "Passphrase is incorrect": [
         "Парольна фраза неправильна"
       ],
@@ -517,6 +523,9 @@
       ],
       "Vault name does not match": [
         "Назва сховища не збігається"
+      ],
+      "Wrong password": [
+        "Неправильний пароль"
       ],
       "Wrong PIN code. Try again.": [
         "Неправильний PIN-код. Спробуйте ще раз."
@@ -609,6 +618,9 @@
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } показуватиме піктограму елемента через анонімний проксі-сервер зображень ${ BRAND_NAME }."
+      ],
+      "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
+        "${ PASS_APP_NAME } вимагатиме вашого паролю ${ BRAND_NAME } для доступу до даних в автономному режимі."
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Доступна нова версія ${ PASS_APP_NAME }. Оновіть його, щоб отримати найновіші функції та виправлення помилок."
@@ -766,6 +778,15 @@
       "None": [
         "Немає"
       ],
+      "Offline mode": [
+        "Автономний режим"
+      ],
+      "Offline mode could not be enabled at the moment": [
+        "Наразі неможливо увімкнути автономний режим"
+      ],
+      "Offline support successfully disabled": [
+        "Підтримка автономного доступу успішно відключена"
+      ],
       "Owner": [
         "Власник"
       ],
@@ -774,6 +795,9 @@
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "PIN-код успішно зареєстровано. Використовуйте його для розблокування ${ PASS_APP_NAME }"
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
+        "Будь ласка, підтвердьте ваш пароль ${ BRAND_NAME } для того, щоб увімкнути автономний режим"
       ],
       "Please confirm your PIN code in order to unregister your current lock.\n${ PASS_APP_NAME } will then never lock.": [
         "Введіть свій PIN-код, щоб скасувати реєстрацію поточного блокування.\nПісля цього ${ PASS_APP_NAME } ніколи не блокуватиметься."
@@ -804,6 +828,9 @@
       ],
       "Set up a PIN code to easily lock your data": [
         "Налаштуйте PIN-код, щоб легко блокувати дані"
+      ],
+      "Setting up offline mode...": [
+        "Налаштування автономного режиму..."
       ],
       "Settings successfully updated": [
         "Налаштування успішно оновлені!"
@@ -858,6 +885,9 @@
       ],
       "You are about to create:": [
         "Ви збираєтеся створити:"
+      ],
+      "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Тепер ви можете використовувати пароль ${ BRAND_NAME } для доступу до ${ PASS_SHORT_APP_NAME } в автономному режимі"
       ],
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "Ви досягли обмеження кількості псевдонімів. Створюйте скільки завгодно псевдонімів, передплативши тарифний план вищого рівня."
@@ -996,6 +1026,9 @@
       "Empty trash": [
         "Очистити смітник"
       ],
+      "Enable offline access": [
+        "Увімкнути автономний доступ"
+      ],
       "Expiration date": [
         "Термін дії"
       ],
@@ -1106,6 +1139,9 @@
       ],
       "Notes": [
         "Нотатки"
+      ],
+      "Offline mode": [
+        "Автономний режим"
       ],
       "Old-New": [
         "Від найдавніших"
@@ -1252,6 +1288,9 @@
       ],
       "Sign in to your account": [
         "Увійдіть у свій обліковий запис"
+      ],
+      "You are currently offline. Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "На даний час ви в автономному режимі. Розблокуйте ${ PASS_SHORT_APP_NAME } за допомогою вашого паролю ${ BRAND_NAME }"
       ]
     },
     "lobby: Title": {
@@ -1507,6 +1546,9 @@
       "Empty note": [
         "Порожня нотатка"
       ],
+      "Encryption password is required": [
+        "Потрібен пароль шифрування"
+      ],
       "Invalid alias prefix": [
         "Недійсний префікс псевдоніма"
       ],
@@ -1527,6 +1569,9 @@
       ],
       "No password manager selected": [
         "Менеджер паролів не вибрано"
+      ],
+      "Offline": [
+        "В автономному режимі"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Дозволено лише буквено-цифрові символи, крапки, дефіси та підкреслення"
