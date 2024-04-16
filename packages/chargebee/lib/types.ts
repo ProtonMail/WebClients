@@ -33,13 +33,10 @@ export type CbCardConfig = {
         '--focus-outline': string;
         '--focus-ring': string;
         '--field-norm': string;
-        '--field-background-color': string;
         '--field-focus-background-color': string;
         '--field-focus-text-color': string;
         '--field-placeholder-color': string;
         '--field-text-color': string;
-        '--selection-text-color': string;
-        '--selection-background-color': string;
     };
     translations: {
         cardNumberPlaceholder: string;
@@ -59,13 +56,10 @@ export const chargebeeCssVariables: ChargebeeCssVariable[] = [
     '--focus-outline',
     '--focus-ring',
     '--field-norm',
-    '--field-background-color',
     '--field-focus-background-color',
     '--field-focus-text-color',
     '--field-placeholder-color',
     '--field-text-color',
-    '--selection-text-color',
-    '--selection-background-color',
 ];
 
 export type CbPaypalConfig = {
