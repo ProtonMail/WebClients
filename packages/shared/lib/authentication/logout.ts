@@ -1,4 +1,4 @@
-import createListeners from '@proton/shared/lib/helpers/listeners';
+import noop from '@proton/utils/noop';
 
 import { removeLastRefreshDate } from '../api/helpers/refreshStorage';
 import { getAppHref } from '../apps/helper';
@@ -13,8 +13,6 @@ import { AuthenticationStore } from './createAuthenticationStore';
 import { getPersistedSession, removePersistedSession } from './persistedSessionStorage';
 
 const clearRecoveryParam = 'clear-recovery';
-
-const logoutListeners = createListeners<PersistedSession[][], Promise<void>>();
 
 interface PassedSession {
     id: string;
@@ -119,10 +117,6 @@ export const parseLogoutURL = (url: URL) => {
     };
 };
 
-export const registerLogoutListener = (listener: (persistedSessions: PersistedSession[]) => Promise<void>) => {
-    logoutListeners.subscribe(listener);
-};
-
 export const handleLogout = async ({
     appName,
     authentication,
@@ -151,12 +145,8 @@ export const handleLogout = async ({
     if (localID !== undefined && mode === 'sso') {
         const persistedSession = getPersistedSession(localID);
         if (persistedSession) {
-            removePersistedSession(localID, UID);
+            await removePersistedSession(localID, UID).catch(noop);
         }
-    }
-
-    if (logoutListeners.length()) {
-        await Promise.all(logoutListeners.notify(persistedSessions));
     }
 
     authentication.logout();
