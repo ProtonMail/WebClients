@@ -59,6 +59,9 @@
       "Cancel subscription": [
         "Anulare abonament"
       ],
+      "Change": [
+        "Schimbare"
+      ],
       "Change keys": [
         "Modificare cheie"
       ],
@@ -4197,14 +4200,6 @@
         "Abonament"
       ]
     },
-    "Key type option": {
-      "${ compatibility } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
-        "${ compatibility } RSA 4096 de biți (Mai lentă, dar cu o compatibilitate sporită cu programele vechi)"
-      ],
-      "${ stateOfTheArt } ECC Curve25519 (Fastest, most modern)": [
-        "${ stateOfTheArt } ECC Curve25519 (Cea mai rapidă, cea mai modernă)"
-      ]
-    },
     "Label": {
       "${ BRAND_NAME } username": [
         "Nnume de utilizator ${ BRAND_NAME }"
@@ -4427,9 +4422,6 @@
       ],
       "Key": [
         "Cheia"
-      ],
-      "Key strength": [
-        "Putere cheie"
       ],
       "Level for NetShield blocker filtering": [
         "Nivelul pentru filtrarea blocatorului NetShield"
@@ -6411,14 +6403,6 @@
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Verificarea numărului de telefon vă mărește securitatea contului și permite opțiuni suplimentare de recuperare."
-      ]
-    },
-    "Remark about a key type option": {
-      "Compatibility": [
-        "Compatibilitate"
-      ],
-      "State of the art": [
-        "De ultimă oră"
       ]
     },
     "Restore administrator panel": {

@@ -59,6 +59,9 @@
       "Cancel subscription": [
         "გამოწერის გაუქმება"
       ],
+      "Change": [
+        "შეცვლა"
+      ],
       "Change keys": [
         "გასაღებების შეცვლა"
       ],
@@ -4151,14 +4154,6 @@
         "გამოწერა"
       ]
     },
-    "Key type option": {
-      "${ compatibility } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
-        "${ compatibility } RSA 4096-ბიტიანი (უფრო ნელია, მაგრამ, შედარებით, თავსებადია მოძველებულ პროგრამებთან)"
-      ],
-      "${ stateOfTheArt } ECC Curve25519 (Fastest, most modern)": [
-        "${ stateOfTheArt } ECC Curve25519 (სწრაფი, თანამედროვე)"
-      ]
-    },
     "Label": {
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME }-ის მომხმარებელი"
@@ -4378,9 +4373,6 @@
       ],
       "Key": [
         "გასაღები"
-      ],
-      "Key strength": [
-        "გასაღების სიძლიერე"
       ],
       "Level for NetShield blocker filtering": [
         "Netshield blocker-ის ფილტრის დონე"
@@ -6311,14 +6303,6 @@
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "ტელეფონის ნომრის შემოწმება ზრდის თქვენი ანგარიშის უსაფრთხოებას და აღდგენის დამატებით შესაძლებლობებს გაძლევთ."
-      ]
-    },
-    "Remark about a key type option": {
-      "Compatibility": [
-        "თავსებადობა"
-      ],
-      "State of the art": [
-        "ხელოვნების ნიმუში"
       ]
     },
     "Restore administrator panel": {

@@ -161,6 +161,9 @@
       "Cancel subscription": [
         "Peru tilaus"
       ],
+      "Change": [
+        "Muuta"
+      ],
       "Change keys": [
         "Muuta avaimia"
       ],
@@ -205,6 +208,9 @@
       ],
       "Color": [
         "Väri"
+      ],
+      "Configure SAML": [
+        "Määritä SAML"
       ],
       "Confirm": [
         "Vahvista"
@@ -554,6 +560,9 @@
       "Import key": [
         "Tuo avain"
       ],
+      "Import new SAML metadata": [
+        "Tuo uudet SAML-metatiedot"
+      ],
       "Increase": [
         "Lisää"
       ],
@@ -722,8 +731,14 @@
       "Remove calendar": [
         "Poista kalenteri"
       ],
+      "Remove domain": [
+        "Poista verkkotunnus"
+      ],
       "Remove gift code": [
         "Poista lahjakoodi"
+      ],
+      "Remove single sign-on": [
+        "Poista kertakirjautuminen"
       ],
       "Remove this label": [
         "Poista tunniste"
@@ -806,6 +821,9 @@
       "Save ICS file": [
         "Tallenna ICS-tiedosto"
       ],
+      "Save SAML configuration": [
+        "Tallenna SAML-määritys"
+      ],
       "Search": [
         "Hae"
       ],
@@ -814,6 +832,9 @@
       ],
       "Search settings": [
         "Etsi asetuksista"
+      ],
+      "See DNS TXT record": [
+        "Katso DNS TXT -tietue"
       ],
       "See how": [
         "Katso miten"
@@ -832,6 +853,9 @@
       ],
       "Select country": [
         "Valitse maa"
+      ],
+      "Select file": [
+        "Valitse tiedosto"
       ],
       "Select files": [
         "Valitse tiedostot"
@@ -941,6 +965,9 @@
       "Stay": [
         "Pysy"
       ],
+      "Stop using single sign-on": [
+        "Lopeta kertakirjautumisen käyttö"
+      ],
       "Strikethrough": [
         "Yliviivaus"
       ],
@@ -978,7 +1005,7 @@
         "Avaa"
       ],
       "Unlock Breach Report": [
-        "Avaa tietovuotoraportti"
+        "Avaa tietomurtoraportti"
       ],
       "Unlock data": [
         "Avaa tiedot"
@@ -4028,6 +4055,12 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Hallitaksesi useita käyttäjiä, päivitä yritystilaukseen, joka sisältää enemmän kuin yhden käyttäjän."
       ],
+      "Please upload an xml file": [
+        "Lähetä XML-tiedosto"
+      ],
+      "Please upload only 1 file": [
+        "Lähetä vain 1 tiedosto"
+      ],
       "Port is required": [
         "Portti vaaditaan"
       ],
@@ -4157,6 +4190,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "Kokeile vain kirjaimia, numeroita ja merkkejä _.-"
+      ],
+      "Unable to upload file": [
+        "Tiedostoa ei voida lähettää"
       ],
       "Unexpected error, we can't import the contacts": [
         "Odottamaton virhe, emme voi tuoda yhteystietoja"
@@ -5499,6 +5535,9 @@
       ]
     },
     "Hint": {
+      "Add this record to your domain in the control panel of your domain name registrar": [
+        "Lisää tämä tietue verkkotunnuksesi DNS-palveluun."
+      ],
       "Found ${ items.length } suggestion, use keyboard to navigate.": [
         "Löydettiin ${ items.length } ehdotus, käytä siirtymiseen näppäimistöä.",
         "Löydettiin ${ items.length } ehdotusta, käytä siirtymiseen näppäimistöä."
@@ -5864,6 +5903,9 @@
       "${ boldName } will be set as default calendar.": [
         "${ boldName } asetetaan oletuskalenteriksi."
       ],
+      "${ boldSSOUserInformation } and you will have to create them manually to add them back to your organization": [
+        "${ boldSSOUserInformation } ja sinun on luotava ne manuaalisesti palauttaaksesi ne organisaatioosi."
+      ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Menetät pääsyn kaikkiin tililläsi tällä hetkellä oleviin salattuihin tietoihin, jos jatkat."
       ],
@@ -6085,6 +6127,9 @@
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
         "Lisää tilillesi yksi suojauskerros. Sinun on tunnistauduttava kaksivaiheisella todennuksella jokaisen kirjautumisen yhteydessä."
       ],
+      "Add domain": [
+        "Lisää verkkotunnus"
+      ],
       "Add image URL": [
         "Lisää kuvan URL"
       ],
@@ -6230,6 +6275,9 @@
       "Are you sure you want to remove administrative privileges from this user?": [
         "Haluatko varmasti poistaa ylläpito-oikeudet käyttäjältä?"
       ],
+      "Are you sure you want to remove the domain ${ boldDomain }?": [
+        "Haluatko varmasti poistaa verkkotunnuksen ${ boldDomain }?"
+      ],
       "Ask your organisation admin to setup Gateways.": [
         "Pyydä organisaatiosi ylläpitoa määrittämään yhdyskäytävät."
       ],
@@ -6338,11 +6386,26 @@
       "Close this screen to exit.": [
         "Poistu sulkemalla tämä ruutu."
       ],
+      "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
+        "Määritä SAML-todennus organisaatiollesi identiteetintarjoajan (IdP) kautta. Tämä mahdollistaa SAML:n koko organisaatiolle."
+      ],
+      "Configure SAML authentication for your organization through an identity provider like Okta, Microsoft Azure, or Google Identity Platform. This will enable SAML for the whole organization.": [
+        "Määritä SAML-todennus organisaatiollesi identiteetintarjoajan, kuten Oktan, Microsoft Azuren, tai Google Identity Platformin kautta. Tämä mahdollistaa SAML:n koko organisaatiolle."
+      ],
       "Continue with ${ freeName }": [
         "Jatka ${ freeName } -tilauksella"
       ],
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "Jatkamalla ${ BRAND_NAME }-tilisi yhdistetään palveluun ${ name }."
+      ],
+      "Copied to clipboard": [
+        "Kopioitiin leikepöydälle"
+      ],
+      "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
+        "Kopioi ja liitä tämä URL identiteetinhallintasi ACS (Assertion Consumer Service) URL -kenttään."
+      ],
+      "Copy and paste this URL into the entity ID field of your identity provider": [
+        "Kopio ja liitä tämä URL identiteetinhallintasi Entiteetin ID -kenttään."
       ],
       "Copy the link to clipboard": [
         "Kopioi linkki leikepöydälle"
@@ -6449,11 +6512,23 @@
       "DMARC checks if the sender's SPF and DKIM records originate from your domain. This can prevent attackers from using another domain's SPF and DKIM to impersonate your domain. The \"p=\" (policy) in this record indicates how you want the recipient platforms to handle unauthorized emails. We recommend using the \"p=quarantine\" policy for most domains. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "DMARC tarkastaa, että lähettäjän SPF ja DKIM tietueet kuuluvat verkkotunnuksellesi. Tämä voi estää hyökkääjiä käyttämästä muiden verkkotunnusten SPF ja DKIM tietoja verkkotunnuksesi muuttamiseksi. Tietueen \"p=\" (politiikka) kertoo, miten haluat vastaanottavan järjestelmän käsittelevän luvatta lähetettyjä sähköposteja. Suosittelemme käyttämään \"p=quarantine\" -politiikkaa useimmille verkkotunnuksille. Huomaa lisätä seuraava TXT tietue DNS-hallinnassasi (löytyy alustalta, josta hankit verkkotunnuksesi)."
       ],
+      "DNS TXT record": [
+        "DNS TXT -tietue"
+      ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "ÄLÄ kadota tätä salasanaa. Mikäli kadotat sen, et voi hallita organisaatiotasi."
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "Haluatko mitätöidä kaikki istunnot nykyistä lukuun ottamatta?"
+      ],
+      "Domain ownership failed verification.": [
+        "Verkkotunnuksen omistajuuden vahvistus epäonnistui."
+      ],
+      "Domain ownership not verified.": [
+        "Verkkotunnuksen omistajuutta ei ole vahvistettu."
+      ],
+      "Domain ownership verified.": [
+        "Verkkotunnuksen omistajuus on vahvistettu."
       ],
       "domain used": [
         "verkkotunnus käytetty",
@@ -6525,6 +6600,9 @@
       "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
         "Tällä ${ nameDeleted } -tunnisteella merkittyjä sähköposteja ei poisteta, ja ne löytyvät edelleen vastaavasta kansiosta."
       ],
+      "Enable single sign-on to keep your organization safe": [
+        "Suojaaa organisaatiotasi ottamalla kertakirjautuminen käyttöön"
+      ],
       "Enable this address to join this calendar": [
         "Liity kalenteriin ottamalla tämä osoite käyttöön"
       ],
@@ -6536,6 +6614,9 @@
       ],
       "Encryption setting updated": [
         "Salausasetukset päivitetty"
+      ],
+      "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
+        "Identiteettipalveluntarjoajalta (esim. https://idp.esimerkki.fi/sso/saml) saatu päätepisteen URL-osoite."
       ],
       "Enhance your network security": [
         "Paranna verkkotietoturvaasi"
@@ -6645,6 +6726,9 @@
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Anna julkinen avaimesi ystävillesi tai julkaise se verkossa, jotta kuka tahansa voi lähettää sinulle päästä päähän -salattuja sähköposteja!"
       ],
+      "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
+        "Mene identiteetinhallintaasi noutamaan ${ appName } SAML metadata ja tuo se tähän."
+      ],
       "here": [
         "tässä"
       ],
@@ -6653,6 +6737,9 @@
       ],
       "High Priority": [
         "Korkea tärkeys"
+      ],
+      "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
+        "Identiteetinhallinnan julkinen avain, jota käytetään todentamisvaltuutusten allekirjoittamiseksi. Identiteetinhallinnassasi pitäisi olla kohta, josta voit kopioida tai ladata varmenteen tiivisteen. Liitä lataamasi tai kopioimasi varmenteen tiiviste tekstikenttään."
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Jos toinen ylläpitäjä on vaihtanut salasanan, sinun on pyydettävä heitä toimittamaan organisaation uusi salasana."
@@ -6827,6 +6914,9 @@
       "Lean more about gateways": [
         "Lue lisää yhdyskäytävistä"
       ],
+      "Lean more about single sign-on": [
+        "Lue lisää kertakirjautumisesta"
+      ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Lue miten kirjaudut ${ VPN_APP_NAME }:ään kolmannen osapuolen VPN-sovelluksilla."
       ],
@@ -6977,6 +7067,9 @@
       "No results found": [
         "Tuloksia ei löytynyt"
       ],
+      "Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization": [
+        "Kertakirjautumisen ulkopuoliset, manuaalisesti luodut käyttäjät, jotka eivät ole peräisin identiteettitoimitajasi, voivat edelleen kirjautua organisaatioosi."
+      ],
       "Not a valid URL": [
         "Virheellinen URL"
       ],
@@ -6991,6 +7084,9 @@
       ],
       "of": [
         "/"
+      ],
+      "Once single sign-on is disabled for your organization:": [
+        "Kun kertakirjautuminen on poistettu käytöstä organisaatioltasi:"
       ],
       "Once you reset your password:": [
         "Kun nollaat salasanasi:"
@@ -7009,6 +7105,9 @@
       ],
       "Optional": [
         "Valinnainen"
+      ],
+      "or ${ selectFileButton }": [
+        "tai ${ selectFileButton }"
       ],
       "Or select a particular server:": [
         "Tai valitse tietty palvelin:"
@@ -7236,6 +7335,9 @@
       "Right to Left": [
         "Oikealta vasemmalle"
       ],
+      "SAML configuration saved": [
+        "SAML-määritys on tallennettu"
+      ],
       "Save ${ percentage }": [
         "Säästä ${ percentage }"
       ],
@@ -7311,6 +7413,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Koska olet uskollinen käyttäjä, tililläsi on lisäominaisuuksia."
       ],
+      "Single sign-on removed": [
+        "Kertakirjautuminen poistettiin"
+      ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
         "SMTP:n avulla ulkoiset palvelut ja laitteet voivat lähettää sähköpostiviestejä ${ MAIL_APP_NAME }in välityksellä käyttäen omia verkkotunnuksiasi. Ominaisuus on vain omia verkkotunnuksiaan käyttävien ${ BRAND_NAME } for Business -asiakkaiden käytettävissä."
       ],
@@ -7326,8 +7431,14 @@
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "Osaa palvelimistasi voidaan hiljattaisten poistojen vuoksi käyttää vain tietyissä maissa"
       ],
+      "Specify the domain which is allowed to authenticate with SAML SSO.": [
+        "Määritä toimialue, joka saa todentaa SAML SSO:lla."
+      ],
       "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "SPF määrittää verkkotunnuksesi hyväksytyt lähettäjät. Varmista, että lisäät seuraavan TXT-tietueen DNS-hallinnassasi (löytyy alustalta, josta hankit verkkotunnuksesi)."
+      ],
+      "SSO users (provided by your Identity Provider) will be deleted": [
+        "Identiteetinhallintasi SSO-käyttäjät poistetaan"
       ],
       "Stay tuned for future promotions.": [
         "Pysy kuulolla tulevista kampanjoista."
@@ -7407,6 +7518,9 @@
       ],
       "The calendar will be removed from your account.": [
         "Kalenteri poistetaan tililtäsi."
+      ],
+      "The credentials from your Identity Provider will be deleted.": [
+        "Identiteetinhallintasi kirjautumistiedot poistetaan."
       ],
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "Sähköpostiosoitteen vahvistuslinkki on vanhentunut. Kirjaudu sisään ja lähetä uusi linkki."
@@ -7504,6 +7618,9 @@
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Tämä käyttäjä vastaa tällä hetkellä organisaatiosi maksuista. Jos alennat käyttäjän, jäävät organisaatiosi maksut sinun vastuullesi."
       ],
+      "This verification can take up to one hour. You can safely continue to the next steps.": [
+        "Tämä vahvistus voi kestää jopa tunnin. Voit jatkaa turvallisesti seuraaviin vaiheisiin."
+      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Tämä peruu nykyisen maksullisen tilauksesi ja menetät kaikki kertyneet uskollisuusetusi."
       ],
@@ -7531,6 +7648,9 @@
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Tämä poistaa tilisi ja kaikki sen tiedot pysyvästi. Et voi aktivoida tiliä uudelleen."
       ],
+      "This will remove SSO for ${ boldDomainName }.": [
+        "Tämä ottaa SSO:n pois käytöstä verkkotunnukselta ${ boldDomainName }."
+      ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Tämä korvaa väliaikaisen salasanasi ja jatkossa käytät tätä ${ BRAND_NAME }-tilillesi kirjautumiseen."
       ],
@@ -7545,6 +7665,9 @@
       ],
       "to ${ product } Business": [
         "palveluun ${ product } Business"
+      ],
+      "To allow the domain ${ boldDomainName } to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
+        "Jotta verkkotunnus ${ boldDomainName } voi käyttää SAML SSO:ta, sinun on vahvistettava sen omistajuus lisäämällä seuraava DNS TXT -tietue verkkotunnukseesi DNS-palveluntarjoajassasi."
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Välttääksesi tietojen menetyksen, poista se vain, jos tiedät mitä teet tai olet vienyt kopion."
@@ -7636,6 +7759,9 @@
       "Unfortunately there is no recovery method saved for this account.": [
         "Valitettavasti tilille ei ole määritetty palautustapoja."
       ],
+      "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
+        "Identiteettipalveluntarjoajan luoma yksilöllinen tunnistetieto, yleensä identiteettipalveluntarjoajan nimen sisältävän URL-osoitteen muodossa (esim. https://idp.esimerkki.fi/XXXXX)."
+      ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "Jollet kirjaudu tililtäsi ulos tai vaihda salasanaasi, istuntosi pysyy aktiivisena. Istunnot erääntyvät niiden oltua toimettomana 60 päivää."
       ],
@@ -7722,6 +7848,9 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Vahvistus avaa uuden välilehden, joten poista kaikki ponnahdusestot käytöstä. Sinua ei veloiteta ja kortin vahvistukseen käytetty summa palautetaan välittömästi."
+      ],
+      "Verify domain": [
+        "Vahvista verkkotunnus"
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Vahvista henkilöllisyytesi todennussovelluksen näyttämällä aikaan perustuvalla kertakäyttökoodilla"
@@ -7821,6 +7950,9 @@
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Kun ei käytössä, estää kuvatiedostoja latautumasta laitteellesi ilman tietoasi."
+      ],
+      "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
+        "${ appName } SAML-toiminnallisuuden lisäämiseksi identiteetinhallintaasi, sinun on mahdollisesti lisättävä takaisinkutsun (ACS) URL sekä myöntäjän ID. Kopioi ja liitä allaolevat tiedot identiteetinhallintasi soveltuviin tietokenttiin."
       ],
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
         "Kun ilmoitukset ovat käytössä, lähetetään palautus-/ilmoitusosoitteeseesi hälytys, jos ${ MAIL_APP_NAME } -tililläsi on uusia viestejä."
@@ -8227,26 +8359,8 @@
       ]
     },
     "Key generation": {
-      "A key with the same encryption algorithm already exists. Generating another key will cause slower account loading. Are you sure you want to continue?": [
-        "Samaa salausalgoritmia käyttävä avain on jo olemassa. Toisen avaimen luonti johtaa tilin hitaampaan lataukseen. Haluatko varmasti jatkaa?"
-      ],
-      "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
-        "Samaa salausalgoritmia käyttävä avain on jo aktivoitu tälle osoitteelle. Toisen avaimen luonti hidastaa tilin latausta ja tämän avaimen poisto voi aiheuttaa ongelmia. Jos luot uutta avainta, koska vanha avain on vaarantunut, merkitse vanha avain vaarantuneeksi. Haluatko varmasti jatkaa?"
-      ],
       "Generate key": [
         "Luo avain"
-      ],
-      "Key with fingerprint ${ fp } successfully created.": [
-        "Avain sormenjäljellä ${ fp } luotiin onnistuneesti."
-      ],
-      "The encryption keys are being generated. This may take several minutes and temporarily freeze your browser.": [
-        "Salausavaimia luodaan. Tämä saattaa kestää useita minuutteja ja tilapäisesti lukita selaimesi."
-      ],
-      "The encryption keys for your address are being generated. This may take several minutes and temporarily freeze your browser.": [
-        "Osoitteellesi luodaan salausavaimia. Tämä saattaa kestää useita minuutteja ja tilapäisesti lukita selaimesi."
-      ],
-      "You can generate a new encryption key if you think your previous key has been compromised.": [
-        "Voit luoda uuden salausavaimen, jos epäilet edellisen avaimen vaarantuneen."
       ]
     },
     "Key state badge": {
@@ -8270,14 +8384,6 @@
       ],
       "Primary": [
         "Ensisijainen"
-      ]
-    },
-    "Key type option": {
-      "${ compatibility } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
-        "${ compatibility } RSA 4096-bit (hitaampi, mutta hyvä yhteensopivuus vanhempien sovellusten kanssa)"
-      ],
-      "${ stateOfTheArt } ECC Curve25519 (Fastest, most modern)": [
-        "${ stateOfTheArt } ECC Curve25519 (nopein, nykyaikaisin)"
       ]
     },
     "Keyboard shortcut name": {
@@ -8596,6 +8702,12 @@
       "Allow recovery using a trusted device": [
         "Salli palautus luotettavalla laitteella"
       ],
+      "Allowed domain": [
+        "Sallittu verkkotunnus"
+      ],
+      "Allowed Domain": [
+        "Sallittu verkkotunnus"
+      ],
       "Amount": [
         "Summa"
       ],
@@ -8619,6 +8731,9 @@
       ],
       "Apply filter to existing emails": [
         "Sovella suodatinta nykyisille viesteille"
+      ],
+      "Assertion Consumer Service URL": [
+        "Valtuutuksen käyttäjäpalvelun (Assertion Consumer Service, ACS) URL"
       ],
       "Attach public key": [
         "Liitä julkinen avain"
@@ -8866,6 +8981,9 @@
       "Duration": [
         "Kesto"
       ],
+      "e.g. example.com": [
+        "esim. esimerkki.fi"
+      ],
       "Email": [
         "Sähköposti"
       ],
@@ -8983,6 +9101,9 @@
       "Invite via email": [
         "Kutsu sähköpostitse"
       ],
+      "Issuer ID": [
+        "Myöntäjän ID"
+      ],
       "Keep me signed in": [
         "Pysy kirjautuneena"
       ],
@@ -8991,9 +9112,6 @@
       ],
       "Key": [
         "Avain"
-      ],
-      "Key strength": [
-        "Avaimen vahvuus"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Pikanäppäin: ${ shortcut }"
@@ -9045,6 +9163,15 @@
       ],
       "Messages per page": [
         "Viestejä per sivu"
+      ],
+      "Metadata file for ${ appName }": [
+        "Metatietotiedosto sovellukselle ${ appName }"
+      ],
+      "Metadata URL for ${ appName }": [
+        "Metatietojen URL-osoite sovellukselle ${ appName }"
+      ],
+      "Method for importing metadata": [
+        "Metatietojen tuontitapa"
       ],
       "Moderate NAT": [
         "Keskitason NAT"
@@ -9199,6 +9326,9 @@
       "Protection mode": [
         "Suojaustila"
       ],
+      "Public certificate (X.509)": [
+        "Julkinen sertifikaatti (X.509)"
+      ],
       "Read": [
         "Luetuksi"
       ],
@@ -9216,6 +9346,9 @@
       ],
       "Repeat password": [
         "Toista salasana"
+      ],
+      "Reply (ACS) URL": [
+        "Vastaus URL (ACS)"
       ],
       "Require 2FA for administrators": [
         "Vaadi 2FA ylläpitäjiltä"
@@ -9261,6 +9394,12 @@
       ],
       "Signature": [
         "Allekirjoitus"
+      ],
+      "Single sign-on entity ID": [
+        "Kertakirjautumisen entiteetin ID (SSO entity ID)"
+      ],
+      "Single sign-on URL": [
+        "Kertakirjautumisen URL-osoite"
       ],
       "SMTP port": [
         "SMTP-portti"
@@ -9325,6 +9464,9 @@
       "Two-password mode": [
         "Kahden salasanan tila"
       ],
+      "Type": [
+        "Tyyppi"
+      ],
       "Undo send": [
         "Lähetyksen kumoaminen"
       ],
@@ -9348,6 +9490,9 @@
       ],
       "Username": [
         "Käyttäjätunnus"
+      ],
+      "Value": [
+        "Arvo"
       ],
       "VAT": [
         "ALV"
@@ -10403,7 +10548,7 @@
         "Tietomurtojen seuranta"
       ],
       "Data breach monitoring (coming soon)": [
-        "Tietovuotojen seuranta (tulossa pian)"
+        "Tietomurtojen seuranta (tulossa pian)"
       ],
       "Dedicated servers and IP": [
         "Kohdistetut palvelimet ja IP-osoitteet"
@@ -10655,17 +10800,6 @@
         "Tiimin hallinta"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Muutoin pääsyä tililesi rajoitetaan ja aikanaan tilisi poistetaan käytöstä."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Jatkaaksesi ${ trialPlanName }n käyttämistä premium-ominaisuuksilla, valitse tilaus ja maksutapa."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Kokeilujaksosi päättyy ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, päättyy ${ last4 }"
@@ -10765,6 +10899,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Nykyisellä tilauksellasi nautit alennetusta etuhinnasta. Jos alennat tilisi, menetät etuhinnan, eikä se ole enää käytettävissä, jos joskus palaat tilaajaksi."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Muutoin pääsyä tililesi rajoitetaan ja aikanaan tilisi poistetaan käytöstä."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Jatkaaksesi ${ trialPlanName }n käyttämistä premium-ominaisuuksilla, valitse tilaus ja maksutapa."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Kokeilujaksosi päättyy ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -12093,6 +12238,15 @@
       "domain.com": [
         "verkkotunnus.fi"
       ],
+      "e.g. https://example.com/app/protonvpn/XXXXX/sso/metadata": [
+        "esim. https://esimerkki.fi/app/protonvpn/XXXXX/sso/metadata"
+      ],
+      "e.g. https://idp.example.com/sso/saml": [
+        "esim. https://idp.esimerkki.fi/sso/saml"
+      ],
+      "e.g. https://idp.example.com/XXXXX": [
+        "esim. https://idp.esimerkki.fi/XXXXX"
+      ],
       "E.g., ": [
         "Esim. "
       ],
@@ -12316,14 +12470,6 @@
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Puhelinnumeron vahvistus parantaa tilisi suojausta ja mahdollistaa lisää palautusvaihtoehtoja."
-      ]
-    },
-    "Remark about a key type option": {
-      "Compatibility": [
-        "Yhteensopivuus"
-      ],
-      "State of the art": [
-        "Uusinta tekniikkaa"
       ]
     },
     "Remove calendar section description": {
@@ -14221,6 +14367,12 @@
       "Encryption and keys": [
         "Salaus ja avaimet"
       ],
+      "Enter endpoints into your identity provider": [
+        "Syötä päätepisteet identiteettipalveluntarjoajallesi"
+      ],
+      "Enter SAML metadata": [
+        "Syötä SAML-metatiedot"
+      ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Syötä ${ BRAND_NAME }-tilisi tiedot liittyäksesi ${ app } Beta-ohjelmaan"
       ],
@@ -14266,15 +14418,6 @@
       ],
       "Folders and labels": [
         "Kansiot ja tunnisteet"
-      ],
-      "For Linux": [
-        "Linuxille"
-      ],
-      "For macOS": [
-        "macOS:lle"
-      ],
-      "For Windows": [
-        "Windowsille"
       ],
       "Forward and auto-reply": [
         "Välitä ja automaattivastaa"
@@ -14416,7 +14559,7 @@
         "Yöteema"
       ],
       "No account information was found in any data breaches": [
-        "Tilitietoja ei löytynyt mistään tietovuodoista"
+        "Tilitietoja ei löytynyt mistään tietomurroista"
       ],
       "No recovery method": [
         "Palautustapoja ei ole"
@@ -14508,6 +14651,15 @@
       "Remove calendar": [
         "Poista kalenteri"
       ],
+      "Remove domain": [
+        "Poista verkkotunnus"
+      ],
+      "Remove single sign-on": [
+        "Poista kertakirjautuminen"
+      ],
+      "Remove single sign-on for your organization?": [
+        "Poistetaanko kertakirjautuminen organisaatioltasi?"
+      ],
       "Remove user?": [
         "Poistetaanko käyttäjä?"
       ],
@@ -14534,6 +14686,9 @@
       ],
       "Revoke certificate": [
         "Mitätöi varmenne"
+      ],
+      "SAML authentication": [
+        "SAML-todennus"
       ],
       "Save time with email filters": [
         "Säästä aikaa sähköpostisuodattimilla"
@@ -14624,6 +14779,9 @@
       ],
       "Signed in to member account": [
         "Kirjaudu jäsentilille"
+      ],
+      "Single sign-on": [
+        "Kertakirjautuminen"
       ],
       "SMTP submission": [
         "SMTP-lähetys"
@@ -14905,6 +15063,12 @@
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Vaihda valitsemasi päivä- ja yöteeman välillä automaattisesti järjestelmäsi päivä- ja yötilan vaihtuessa"
       ],
+      "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
+        "Kopioi ja liitä tämä URL identiteetinhallintasi ACS (Assertion Consumer Service) URL -kenttään."
+      ],
+      "Copy and paste this URL into the entity ID field of your identity provider": [
+        "Kopio ja liitä tämä URL identiteetinhallintasi Entiteetin ID -kenttään."
+      ],
       "Customize import to reduce the number of folders": [
         "Vähennä kansioiden määrää mukauttamalla tuontia"
       ],
@@ -14932,6 +15096,9 @@
       "Enabling advanced logs records the IP address for each event in the security log.": [
         "Laajan lokikirjauksen ollessa käytössä, kirjataan suojauslokiin jokaisen tapahtuman IP-osoite."
       ],
+      "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
+        "Identiteettipalveluntarjoajan (esim. https://idp.esimerkki.fi/sso/saml) päätepisteen URL-osoite."
+      ],
       "Feature in early access": [
         "Ominaisuus on varhaisessa käytössä"
       ],
@@ -14940,6 +15107,9 @@
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Ryhmittele samaan keskusteluun kuuluvat viestit yhteen tai näytä ne erillään."
+      ],
+      "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
+        "Identiteetinhallinnan julkinen avain, jota käytetään todentamisvaltuutusten allekirjoittamiseksi. Hae varmenteen tiiviste identiteetinhallinnastasi."
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Mikäli ostit lahjakoodin tai sait sellaisen tueltamme, voit syöttää sen tähän."
@@ -14970,6 +15140,9 @@
       ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
         "Tämän avaimen luomia allekirjoituksia käsitellään virheellisinä, eikä avainta voida käyttää salaukseen"
+      ],
+      "Specify the domain which is allowed to authenticate with SAML SSO": [
+        "Määritä verkkotunnus, joka on sallittu todentaa SAML SSO kertakirjautumisella."
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Järjestelmän alikansiot näkyvät ${ MAIL_APP_NAME }issa erillisinä kansioina"
@@ -15018,6 +15191,9 @@
       ],
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
         "Käytä selaimesi oletusarvoisia vierityspalkkeja, jotka ovat yleensä suurempia ja helpompia käyttää"
+      ],
+      "Usually an URL that contains the identity provider's name within": [
+        "Yleensä identiteettipalveluntarjoajan nimen sisältävä URL-osoite"
       ],
       "Verified email address": [
         "Vahvistettu sähköpostiosoite"

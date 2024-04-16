@@ -59,6 +59,9 @@
       "Cancel subscription": [
         "サブスクリプションをキャンセル"
       ],
+      "Change": [
+        "変更"
+      ],
       "Change keys": [
         "鍵を変更"
       ],
@@ -661,6 +664,23 @@
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
         "この認証情報を使用しているすべてのルーターやクライアントが切断されます。"
+      ]
+    },
+    "app-switcher": {
+      "Browse the web privately and block ads": [
+        "広告をブロックしプライベートにウェブを閲覧します"
+      ],
+      "Keep your schedule private": [
+        "予定をプライベートに保ちます"
+      ],
+      "Protect your passwords and identity": [
+        "パスワードや認証情報を保護します"
+      ],
+      "Safeguard your files and photos": [
+        "ファイルや写真を保護します"
+      ],
+      "Secure your communications": [
+        "コミュニケーションを保護します"
       ]
     },
     "bf2023: Action": {
@@ -3918,14 +3938,6 @@
         "サブスクリプション"
       ]
     },
-    "Key type option": {
-      "${ compatibility } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
-        "${ compatibility } RSA 4096 ビット (低速、古いソフトウェアとの互換性を維持)"
-      ],
-      "${ stateOfTheArt } ECC Curve25519 (Fastest, most modern)": [
-        "${ stateOfTheArt } ECC Curve25519 (最速かつ現代的)"
-      ]
-    },
     "Label": {
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } ユーザー名"
@@ -4133,9 +4145,6 @@
       ],
       "Key": [
         "鍵"
-      ],
-      "Key strength": [
-        "鍵の強度"
       ],
       "Level for NetShield blocker filtering": [
         "NetShield ブロッカーのフィルタリング強度"
@@ -5005,6 +5014,9 @@
       ],
       "User session management": [
         "ユーザーセッション管理"
+      ],
+      "Vault sharing (up to ${ n } person)": [
+        "保管庫の共有 (最大 ${ n } 人)"
       ]
     },
     "new_plans: feature info": {
@@ -5907,14 +5919,6 @@
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "電話番号を確認することでアカウントのセキュリティを向上させ、回復の追加設定のために利用できます。"
-      ]
-    },
-    "Remark about a key type option": {
-      "Compatibility": [
-        "互換性"
-      ],
-      "State of the art": [
-        "最新の暗号形式"
       ]
     },
     "Restore administrator panel": {
@@ -7234,6 +7238,9 @@
       ],
       "Recovery": [
         "回復"
+      ],
+      "Remove single sign-on": [
+        "シングルサインオンを削除"
       ],
       "Remove user?": [
         "ユーザーを削除しますか？"

@@ -47,6 +47,9 @@
       "Cancel": [
         "انصراف"
       ],
+      "Change": [
+        "تغییر"
+      ],
       "Change mailbox password": [
         "تغییر گذرواژه نامه‌دان"
       ],
@@ -2523,14 +2526,6 @@
         "اشتراک"
       ]
     },
-    "Key type option": {
-      "${ compatibility } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
-        "${ compatibility } RSA 4096-bit (کندتر اما سازگاری بیشتر با نرم افزارهای لگسی)"
-      ],
-      "${ stateOfTheArt } ECC Curve25519 (Fastest, most modern)": [
-        "${ stateOfTheArt } ECC Curve25519 (سریعترین، مدرن ترین)"
-      ]
-    },
     "Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } از ${ humanMaxSpace }"
@@ -2705,9 +2700,6 @@
       ],
       "Key": [
         "کلید"
-      ],
-      "Key strength": [
-        "قدرت کلید"
       ],
       "Level for NetShield blocker filtering": [
         "سطح فیلتر کردن مسدود کننده NetShield"
@@ -3732,14 +3724,6 @@
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "تایید کردن شماره تلفن شما امنیت حساب شما را افزایش داده و اجازه میدهد تا گزینه های بیشتری برای بازیابی داشته باشید."
-      ]
-    },
-    "Remark about a key type option": {
-      "Compatibility": [
-        "سازگاری"
-      ],
-      "State of the art": [
-        "پیشرفته ‌ترین"
       ]
     },
     "Restore administrator panel": {

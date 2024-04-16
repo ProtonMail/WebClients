@@ -40,6 +40,9 @@
       "Add contact": [
         "Afegeix un contacte"
       ],
+      "Add credit / debit card": [
+        "Afegir targeta de crèdit/dèbit"
+      ],
       "Add email": [
         "Afegeix correu electrònic"
       ],
@@ -1115,6 +1118,10 @@
       "Trust": [
         "De confiança"
       ],
+      "Trust key": [
+        "Clau de confiança",
+        "Claus de confiança"
+      ],
       "Trust public key": [
         "Confia en la clau pública"
       ],
@@ -1399,7 +1406,7 @@
     },
     "App logo": {
       "Download ${ MAIL_APP_NAME } desktop application": [
-        "Baixa l'aplicació d'escriptori ${ MAIL_APP_NAME }"
+        "Baixi l'aplicació d'escriptori ${ MAIL_APP_NAME }"
       ]
     },
     "Apps dropdown": {
@@ -5977,6 +5984,9 @@
       "Loading...": [
         "S'està carregant..."
       ],
+      "Low Priority": [
+        "Prioritat baixa"
+      ],
       "Manage your folders": [
         "Gestioneu les vostres carpetes"
       ],
@@ -5988,6 +5998,9 @@
       ],
       "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
         "S'ha excedit el nombre màxim d'adjunts (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT })."
+      ],
+      "Medium Priority": [
+        "Prioritat mitjana"
       ],
       "Members": [
         "Membres"
@@ -6030,6 +6043,9 @@
       ],
       "MM/YY": [
         "MM/AA"
+      ],
+      "Monitor accounts": [
+        "Supervisar els comptes"
       ],
       "Monthly ${ onDayString }": [
         "Mensual ${ onDayString }"
@@ -8054,6 +8070,27 @@
       ],
       "upgrade for more storage": [
         "milloreu per a obtenir més emmagatzematge"
+      ],
+      "Upgrade to restore full access": [
+        "Actualitzi per restaurar l'accés complet"
+      ],
+      "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
+        "El seu ${ driveStorage } està ple. Per carregar o sincronitzar fitxers, alliberi espai o ${ cta }."
+      ],
+      "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
+        "El seu ${ mailStorage } està ple. Per enviar o rebre correus electrònics, alliberi espai o ${ cta }."
+      ],
+      "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
+        "El seu compte corre el risc de ser suprimit. Per evitar la pèrdua de dades, demani al seu administrador que actualitzi. ${ cta }"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
+        "El seu emmagatzematge està ple. Per enviar o rebre correus electrònics, alliberi espai o ${ cta }."
+      ],
+      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
+        "El seu emmagatzematge està ple. Per penjar o sincronitzar fitxers, alliberi espai o ${ cta }."
+      ],
+      "Your subscription has ended. ${ cta } and to avoid data loss.": [
+        "La seva subscripció ha finalitzat. ${ cta } i per evitar la pèrdua de dades."
       ]
     },
     "Mail import summary": {
@@ -9337,6 +9374,9 @@
       "Invalid expiration date": [
         "La data de caducitat no és vàlida"
       ],
+      "Invalid security code": [
+        "El codi de seguretat no és vàlid"
+      ],
       "Something went wrong. Please try again later.": [
         "Alguna cosa ha anat malament. Torneu-ho a provar més tard."
       ],
@@ -9461,6 +9501,9 @@
       ],
       "Select a reason": [
         "Seleccioneu un motiu"
+      ],
+      "Select state": [
+        "Seleccioni l'estat"
       ],
       "Start date": [
         "Data d'inici"
@@ -10258,7 +10301,7 @@
     },
     "Spotlight": {
       "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
-        "Llança còmodament ${ MAIL_APP_NAME } des de l'escriptori."
+        "Iniciï còmodament ${ MAIL_APP_NAME } des de l'escriptori."
       ],
       "Create hide-my-email aliases and keep track of them here.": [
         "Creeu àlies de hide-my-email i feu-ne un seguiment aquí."
@@ -10472,6 +10515,32 @@
     "Subscription price": {
       "For": [
         "Per"
+      ]
+    },
+    "Subscription renewal state": {
+      "Are you sure?": [
+        "N'esteu segur?"
+      ],
+      "Auto-pay is disabled": [
+        "El pagament automàtic està desactivat."
+      ],
+      "Auto-pay is enabled": [
+        "El pagament automàtic està activat."
+      ],
+      "Disable": [
+        "Desactiva"
+      ],
+      "Enable auto-pay support": [
+        "Habilita el suport de pagament automàtic"
+      ],
+      "Keep auto-pay": [
+        "Mantén el pagament automàtic"
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
+        "El nostre sistema ja no us cobrarà automàticament amb aquest mètode de pagament, però la vostra subscripció es renovarà al final del cicle de facturació. Si voleu baixar de categoria o canviar la vostra subscripció, encara heu de fer-ho abans del final del període de facturació. A més, si oblideu fer un pagament manual i la facturació automàtica està desactivada per a tots els mètodes de pagament, es pot baixar la categoria del vostre compte automàticament, cosa que portarà a la pèrdua de moltes característiques."
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
+        "El nostre sistema ja no us cobrarà automàticament utilitzant aquest mètode de pagament, però la vostra subscripció encara es renovarà al final del cicle de facturació. Si voleu baixar de categoria o canviar la subscripció, haureu de fer-ho abans del final del període de facturació. No podem baixar-vos de categoria automàticament perquè, si esteu per sobre de la quota d'emmagatzematge del pla gratuït o utilitzant altres característiques de pagament, no podem suprimir automàticament fitxers, correus electrònics o altres dades. Si desactiveu el pagament automàtic, recordeu pagar la vostra pròxima factura de subscripció abans de la data de venciment per a evitar la suspensió del compte."
       ]
     },
     "Subscription saving": {
@@ -10724,6 +10793,12 @@
       "Password copied to clipboard": [
         "La contrasenya s'ha copiat al porta-retalls"
       ],
+      "Payment method added": [
+        "Mètode de pagament afegit"
+      ],
+      "Payment method updated": [
+        "Mètode de pagament actualitzat"
+      ],
       "Phishing reported": [
         "Phishing reportat"
       ],
@@ -10936,6 +11011,9 @@
       "Add contact group name": [
         "Afegeix el nom del grup de contactes"
       ],
+      "Add credit/debit card": [
+        "Afegir targeta de crèdit/dèbit"
+      ],
       "Add filter": [
         "Afegeix un filtre"
       ],
@@ -11143,6 +11221,9 @@
       "Edit contact group": [
         "Edita Grup de Contactes"
       ],
+      "Edit credit/debit card": [
+        "Modificar targeta de crèdit"
+      ],
       "Edit email settings": [
         "Edita les preferències del correu electrònic"
       ],
@@ -11151,6 +11232,9 @@
       ],
       "Edit image": [
         "Editar imatge"
+      ],
+      "Email address": [
+        "Adreça electrònica"
       ],
       "Email addresses": [
         "Adreces de correu electrònic"
@@ -11422,6 +11506,9 @@
       ],
       "Recommended": [
         "Recomanat"
+      ],
+      "Recommended actions": [
+        "Accions recomanades"
       ],
       "Reconnect your account": [
         "Reconnectar el teu compte"

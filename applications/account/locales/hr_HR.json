@@ -103,6 +103,9 @@
       "Cancel": [
         "Poništi"
       ],
+      "Change": [
+        "Promijeni"
+      ],
       "Change mailbox password": [
         "Promijeni lozinku sandučića e-pošte"
       ],
@@ -3775,6 +3778,9 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Pritisnite \"Zatraži novi kôd\" da biste novi potvrdni kôd poslali na ${ strong }. Ako je ovaj telefonski broj netočan, pritisnite \"Uredi\" da biste ga ispravili."
       ],
+      "Copied to clipboard": [
+        "Kopirano u međuspremnik"
+      ],
       "Copy the link to clipboard": [
         "Kopiraj poveznica u međuspremnik"
       ],
@@ -4509,23 +4515,8 @@
       ]
     },
     "Key generation": {
-      "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
-        "Ključ s istim algoritmom za šifriranje već je aktivan za ovu adresu.\nStvaranje drugog ključa uzrokovat će sporije učitavanje računa, a brisanje tog ključa može uzrokovati probleme.\nAko stvarate novi ključ jer je stari ključ ugrožen, označite taj ključ kao ugrožen.\nJeste li sigurni da želite nastaviti?"
-      ],
       "Generate key": [
         "Stvori ključ"
-      ],
-      "Key with fingerprint ${ fp } successfully created.": [
-        "Ključ s otiskom prsta ${ fp } je uspješno stvoren."
-      ],
-      "The encryption keys are being generated. This may take several minutes and temporarily freeze your browser.": [
-        "Stvaraju se ključevi za šifriranje. To može potrajati nekoliko minuta i privremeno zamrznuti preglednik."
-      ],
-      "The encryption keys for your address are being generated. This may take several minutes and temporarily freeze your browser.": [
-        "Stvaraju se ključevi za šifriranje vaše adrese e-pošte. To može potrajati nekoliko minuta i privremeno zamrznuti preglednik."
-      ],
-      "You can generate a new encryption key if you think your previous key has been compromised.": [
-        "Možete stvoriti novi ključ za šifriranje ako mislite da je vaš prethodni ključ bio ugrožen."
       ]
     },
     "Key state badge": {
@@ -5105,9 +5096,6 @@
       "Key": [
         "Ključ"
       ],
-      "Key strength": [
-        "Jačina ključa"
-      ],
       "Keyboard shortcut: ${ shortcut }": [
         "Tipkovni prečac: ${ shortcut }"
       ],
@@ -5341,6 +5329,9 @@
       ],
       "Two-password mode": [
         "Način rada s dvije lozinke"
+      ],
+      "Type": [
+        "Vrsta"
       ],
       "Undo send": [
         "Poništi slanje"
@@ -6601,14 +6592,6 @@
     "Recovery Phone": {
       "Cancel": [
         "Poništi"
-      ]
-    },
-    "Remark about a key type option": {
-      "Compatibility": [
-        "Kompatibilnost"
-      ],
-      "State of the art": [
-        "Najmodernije"
       ]
     },
     "Remove calendar section title": {

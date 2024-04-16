@@ -152,6 +152,9 @@
       "Cancel subscription": [
         "Sefsex ajerred"
       ],
+      "Change": [
+        "Beddel"
+      ],
       "Change keys": [
         "Beddel isura"
       ],
@@ -4877,6 +4880,9 @@
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "Akemmel ad iqqen amiḍan-ik ${ BRAND_NAME } ɣer ${ name }."
       ],
+      "Copied to clipboard": [
+        "Nɣel ɣer tecfawt"
+      ],
       "Country code": [
         "Tangalt n tmurt"
       ],
@@ -5315,6 +5321,9 @@
       ],
       "Optional": [
         "Afrayan"
+      ],
+      "or ${ selectFileButton }": [
+        "neɣ ${ selectFileButton }"
       ],
       "Organization size": [
         "Teɣzi n tkebbanit"
@@ -6013,23 +6022,6 @@
         "Ajerred"
       ]
     },
-    "Key generation": {
-      "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
-        "Termed yakan tsarut i tansa-a s ulguritm n uwgelhen yecban wa. Asirew n tsarut nniḍen ad yessaẓi asali n umiḍan, ma d tukksa n tsarut-a tezmer ad d-teglu s wuguren. Ma yella tessaraweḍ-d tsarut nniḍen imi tasarut-ik taqburt tettwaker, ma ulac aɣilif creḍ tasarut-nni tettwaker. Tetḥeqqqeḍ belli tebɣiḍ ad tkemmeleḍ?"
-      ],
-      "Key with fingerprint ${ fp } successfully created.": [
-        "Tasarut s udsil umḍin ${ fp } tettwarna akken iwata."
-      ],
-      "The encryption keys are being generated. This may take several minutes and temporarily freeze your browser.": [
-        "Tisura n uwgelhen i ha-tan la ttusrwent. Aya ad yeṭṭef kra n tesdidin yerna ad ssegres iminig-ik·im i kra n wakud."
-      ],
-      "The encryption keys for your address are being generated. This may take several minutes and temporarily freeze your browser.": [
-        "Tisura n uwgelhen i tansa-ik·im ha-tan la ttusrwent. Aya ad yeṭṭef kra n tesdidin yerna ad ssegres iminig-ik·im i kra n wakud."
-      ],
-      "You can generate a new encryption key if you think your previous key has been compromised.": [
-        "Tzemreḍ ad tessirweḍ tasarut n uwgelhen tamaynut ma tcukkeḍ tasarut-ik n zik tettwaker."
-      ]
-    },
     "Key state badge": {
       "Active": [
         "Urmid"
@@ -6039,14 +6031,6 @@
       ],
       "Primary": [
         "Agejdan"
-      ]
-    },
-    "Key type option": {
-      "${ compatibility } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
-        "${ compatibility } RSA 4096-bit (ẓẓay, maca yetteddu ugar d yiseɣẓanen iqdimen)"
-      ],
-      "${ stateOfTheArt } ECC Curve25519 (Fastest, most modern)": [
-        "${ stateOfTheArt } ECC Curve25519 (d arurad maḍi, d amaynut maḍi)"
       ]
     },
     "Keyboard shortcut name": {
@@ -6710,9 +6694,6 @@
       "Key": [
         "Tasarut"
       ],
-      "Key strength": [
-        "Lǧehd n tsarut"
-      ],
       "Keyboard shortcut: ${ shortcut }": [
         "Anezgum n unasiw: ${ shortcut }"
       ],
@@ -7003,6 +6984,9 @@
       ],
       "Two-password mode": [
         "Askar n sin-wawalen-uffiren"
+      ],
+      "Type": [
+        "Anaw"
       ],
       "Undo send": [
         "Sefsex tuzna"
@@ -7973,20 +7957,20 @@
         "Asefrek n terbaɛt"
       ]
     },
-    "new_plans: Info": {
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "I ukemmel n useqdec n ${ trialPlanName }s tmahilin premium, fren amultaɣ-ik d textiṛiyin n uxelleṣ."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Aneεruḍ-ik·im ad yekfu deg ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "Most popular": [
         "Ittwassen aṭas"
       ],
       "Popular": [
         "Mucaɛ"
+      ]
+    },
+    "new_plans: Info": {
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "I ukemmel n useqdec n ${ trialPlanName }s tmahilin premium, fren amultaɣ-ik d textiṛiyin n uxelleṣ."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Aneεruḍ-ik·im ad yekfu deg ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -8832,14 +8816,6 @@
       ],
       "Verify recovery phone?": [
         "Selkem uṭṭun n tiliɣri n tririt?"
-      ]
-    },
-    "Remark about a key type option": {
-      "Compatibility": [
-        "Amṣada"
-      ],
-      "State of the art": [
-        "Addad n tẓuri"
       ]
     },
     "Remove calendar section text": {

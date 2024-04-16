@@ -59,6 +59,9 @@
       "Cancel subscription": [
         "Peru tilaus"
       ],
+      "Change": [
+        "Muuta"
+      ],
       "Change keys": [
         "Muuta avaimia"
       ],
@@ -4168,14 +4171,6 @@
         "Tilaus"
       ]
     },
-    "Key type option": {
-      "${ compatibility } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
-        "${ compatibility } RSA 4096-bit (hitaampi, mutta hyvä yhteensopivuus vanhempien sovellusten kanssa)"
-      ],
-      "${ stateOfTheArt } ECC Curve25519 (Fastest, most modern)": [
-        "${ stateOfTheArt } ECC Curve25519 (nopein, nykyaikaisin)"
-      ]
-    },
     "Label": {
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME }-käyttäjätunnus"
@@ -4395,9 +4390,6 @@
       ],
       "Key": [
         "Avain"
-      ],
-      "Key strength": [
-        "Avaimen vahvuus"
       ],
       "Level for NetShield blocker filtering": [
         "NetShield-suodatuksen taso"
@@ -5139,7 +5131,7 @@
         "Tietomurtojen seuranta"
       ],
       "Data breach monitoring (coming soon)": [
-        "Tietovuotojen seuranta (tulossa pian)"
+        "Tietomurtojen seuranta (tulossa pian)"
       ],
       "Dedicated servers and IP": [
         "Kohdistetut palvelimet ja IP-osoitteet"
@@ -6331,14 +6323,6 @@
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Puhelinnumeron vahvistus parantaa tilisi suojausta ja mahdollistaa lisää palautusvaihtoehtoja."
-      ]
-    },
-    "Remark about a key type option": {
-      "Compatibility": [
-        "Yhteensopivuus"
-      ],
-      "State of the art": [
-        "Uusinta tekniikkaa"
       ]
     },
     "Restore administrator panel": {

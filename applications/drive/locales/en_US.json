@@ -43,6 +43,9 @@
       ]
     },
     "Info": {
+      "(${ serverPrice } /month)": [
+        "(${ serverPrice }/month)"
+      ],
       "Contact unassigned to group ${ contactGroupName }": [
         "Contact removed from ${ contactGroupName }"
       ],
@@ -62,6 +65,22 @@
       ],
       "Portable Network Graphics": [
         "Portable Network Graphics (PNG)"
+      ]
+    },
+    "new_plans: feature": {
+      "Tor over VPN": [
+        "TOR over VPN"
+      ]
+    },
+    "new_plans: tooltip": {
+      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
+        "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control"
+      ],
+      "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
+        "Personalize your email signature with logos, images, social media icons, links to your contact details, and more"
+      ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "Route your internet traffic through the TOR network with a single click"
       ]
     },
     "Oauth instructions video alternative": {
@@ -88,9 +107,19 @@
         "You have ${ timeRemaining.inSeconds } seconds to reset your password."
       ]
     },
+    "Subscription change warning": {
+      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
+        "Just sign in to your Apple App Store account, then select ${ subscriptions }."
+      ]
+    },
     "Tooltip": {
       "Shared end-to-end encrypted": [
         "Shared with end-to-end encryption"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more."
       ]
     }
   }

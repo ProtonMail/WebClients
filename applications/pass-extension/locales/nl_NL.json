@@ -868,11 +868,17 @@
       "${ PASS_APP_NAME } will prompt you to save or update credentials.": [
         "${ PASS_APP_NAME } zal u vragen om inloggegevens op te slaan of bij te werken."
       ],
+      "${ PASS_APP_NAME } will suggest authenticating using saved passkeys": [
+        "${ PASS_APP_NAME } stelt authenticatie met opgeslagen toegangsgegevens voor"
+      ],
       "${ PASS_APP_NAME } will suggest creating an email alias on sign-up forms.": [
         "${ PASS_APP_NAME } zal u voorstellen om een e-mailalias te maken op aanmeldingsformulieren."
       ],
       "${ PASS_APP_NAME } will suggest creating strong passwords on sign-up forms.": [
         "${ PASS_APP_NAME } zal u voorstellen om sterke wachtwoorden te maken op aanmeldingsformulieren."
+      ],
+      "${ PASS_APP_NAME } will suggest saving passkeys.": [
+        "${ PASS_APP_NAME } zal voorstellen om wachtwoorden te bewaren."
       ],
       "${ trialDaysLeft } day left": [
         "${ trialDaysLeft } dag over",
@@ -937,6 +943,9 @@
       ],
       "Built in 2FA authenticator": [
         "Ingebouwd in 2FA-authenticator"
+      ],
+      "By default team members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
+        "Standaard kunnen teamleden alleen kluizen exporteren waar ze de eigenaar zijn. Als deze optie is ingeschakeld, zullen ze geen gegevens kunnen exporteren"
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "Kan items aanmaken, bewerken, verwijderen en exporteren in deze kluis."
@@ -1236,6 +1245,9 @@
       "Save passkey": [
         "Passkey opslaan"
       ],
+      "Select an existing login item to update.": [
+        "Selecteer een bestaand login item om bij te werken."
+      ],
       "Select an existing login or create a new one.": [
         "Selecteer een bestaande login of maak een nieuwe aan."
       ],
@@ -1320,6 +1332,9 @@
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Deze export wordt niet versleuteld en iedereen met toegang tot uw geëxporteerde bestand kan uw wachtwoorden zien. Verwijder het voor de veiligheid nadat u klaar bent met het gebruik ervan."
+      ],
+      "This setting is disabled on the organization level": [
+        "Deze instelling is uitgeschakeld op organisatieniveau"
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Deze kluis wordt momenteel met niet gedeeld. Nodig mensen uit om deze met anderen te delen."
@@ -1572,6 +1587,9 @@
       "Disable data export for team members": [
         "Gegevensexport uitschakelen voor teamleden"
       ],
+      "Disable sharing outside the organization": [
+        "Delen buiten de organisatie uitschakelen"
+      ],
       "Display": [
         "Weergeven"
       ],
@@ -1598,6 +1616,9 @@
       ],
       "Export": [
         "Exporteren"
+      ],
+      "Exporting policy": [
+        "Export beleid"
       ],
       "Field name": [
         "Veldnaam"
@@ -1767,6 +1788,9 @@
       "Prompt for auto-save": [
         "Vragen om automatisch opslaan"
       ],
+      "Prompt for auto-save when generating passwords": [
+        "Vraagt om automatisch opslaan bij het genereren van wachtwoorden"
+      ],
       "Rate us": [
         "Beoordeel ons"
       ],
@@ -1811,6 +1835,9 @@
       ],
       "Settings": [
         "Instellingen"
+      ],
+      "Sharing policy": [
+        "Delen beleid"
       ],
       "Show website favicons": [
         "Websitepictogrammen weergeven"

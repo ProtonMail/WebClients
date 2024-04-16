@@ -40,6 +40,9 @@
       "Add contact": [
         "連絡先を追加"
       ],
+      "Add credit / debit card": [
+        "クレジット/デビットカードを追加"
+      ],
       "Add email": [
         "メールアドレスを追加"
       ],
@@ -1098,6 +1101,9 @@
       ],
       "Trust": [
         "信頼する"
+      ],
+      "Trust key": [
+        "鍵を信頼する"
       ],
       "Trust public key": [
         "公開鍵を信頼"
@@ -8336,6 +8342,9 @@
       ],
       "User session management": [
         "ユーザーセッション管理"
+      ],
+      "Vault sharing (up to ${ n } person)": [
+        "保管庫の共有 (最大 ${ n } 人)"
       ]
     },
     "new_plans: feature info": {
@@ -9960,6 +9969,32 @@
         "価格:"
       ]
     },
+    "Subscription renewal state": {
+      "Are you sure?": [
+        "よろしいですか?"
+      ],
+      "Auto-pay is disabled": [
+        "自動支払いが無効です"
+      ],
+      "Auto-pay is enabled": [
+        "自動支払いが有効です"
+      ],
+      "Disable": [
+        "無効化"
+      ],
+      "Enable auto-pay support": [
+        "自動支払い対応を有効にする"
+      ],
+      "Keep auto-pay": [
+        "自動支払いを続ける"
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
+        "この支払い方法による自動課金はなくなりますが、課金サイクルの終了時に購読は更新されます。サブスクリプションのダウングレードまたは変更をご希望の場合は、請求期間の終了前にご自身で行っていただく必要があります。さらに、手動によるお支払いをお忘れになり、自動支払いがすべての支払方法で無効になっている場合、当社はお客様のアカウントを自動ダウングレードすることがあり、これにより多くの機能が失われます。"
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
+        "この支払い方法による自動課金はなくなりますが、課金サイクルの終了時に購読は更新されます。サブスクリプションをダウングレードまたは変更したい場合は、請求期間の終了前にご自身で行う必要があります。無料プランのストレージ容量を超過している場合、またはその他の有料機能を使用している場合、ファイル、Eメール、その他のデータを自動削除できないため、自動ダウングレードはできません。自動支払いを無効にした場合は、アカウントの停止を防ぐために、期日までに次回の請求書を支払うことを忘れないでください。"
+      ]
+    },
     "Subscription saving": {
       "Save": [
         "割引率:"
@@ -10178,6 +10213,12 @@
       "Password copied to clipboard": [
         "パスワードがクリップボードにコピーされました"
       ],
+      "Payment method added": [
+        "支払い方法が追加されました"
+      ],
+      "Payment method updated": [
+        "支払い方法が更新されました。"
+      ],
       "Phishing reported": [
         "フィッシングが報告されました"
       ],
@@ -10382,6 +10423,9 @@
       "Add contact group name": [
         "連絡先グループの名前を追加"
       ],
+      "Add credit/debit card": [
+        "クレジット・デビットカードの追加"
+      ],
       "Add filter": [
         "フィルターを追加"
       ],
@@ -10582,6 +10626,9 @@
       ],
       "Edit contact group": [
         "連絡先グループを編集"
+      ],
+      "Edit credit/debit card": [
+        "クレジット・デビットカードの編集"
       ],
       "Edit email settings": [
         "メール設定を編集"

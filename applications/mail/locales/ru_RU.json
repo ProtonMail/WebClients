@@ -40,6 +40,9 @@
       "Add contact": [
         "Добавить контакт"
       ],
+      "Add credit / debit card": [
+        "Добавить кредитную / дебетовую карту"
+      ],
       "Add email": [
         "Добавить электронну почту"
       ],
@@ -1107,6 +1110,12 @@
       ],
       "Trust": [
         "Доверять"
+      ],
+      "Trust key": [
+        "Доверять ключу",
+        "Доверять ключам",
+        "Доверять ключам",
+        "Доверять ключам"
       ],
       "Trust public key": [
         "Доверять открытым ключам"
@@ -8957,6 +8966,9 @@
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "Массовая рекламная или программная рассылка электронной почты в настоящее время не поддерживается. Мы рекомендуем использовать специального поставщика услуг электронной почты для этого случая."
       ],
+      "Choose custom times to be reminded about an email or for your message to arrive": [
+        "Выберите время, в течение которого вам будут напоминать об электронной почте или о том, что ваше сообщение должно прийти."
+      ],
       "Control access to your shared files by adding password protection and link expiration dates": [
         "Контролируйте доступ к общим файлам, добавляя защиту паролем и даты истечения срока действия ссылок"
       ],
@@ -9714,6 +9726,11 @@
         "Попробуйте ${ PASS_APP_NAME }"
       ]
     },
+    "Security Center (link to Pass App)": {
+      "(will open ${ PASS_APP_NAME })": [
+        "(откроет ${ PASS_APP_NAME })"
+      ]
+    },
     "Security Center - Action": {
       "View logs": [
         "Просмотр журналов"
@@ -10412,6 +10429,32 @@
         "За"
       ]
     },
+    "Subscription renewal state": {
+      "Are you sure?": [
+        "Вы уверены?"
+      ],
+      "Auto-pay is disabled": [
+        "Автоматические платежи отключены"
+      ],
+      "Auto-pay is enabled": [
+        "Автоматические платежи включены"
+      ],
+      "Disable": [
+        "Отключить"
+      ],
+      "Enable auto-pay support": [
+        "Включить поддержку автоматических платежей"
+      ],
+      "Keep auto-pay": [
+        "Оставить автоплатёж"
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
+        "Наша система больше не будет автоматически списывать платежи, используя этот способ оплаты, но ваша подписка по-прежнему будет обновляться в конце платёжного цикла. Если вы хотите изменить подписку или понизить её уровень, вам по-прежнему необходимо сделать это самостоятельно до окончания платёжного периода. Кроме того, если вы забудете произвести платёж вручную, и автоматический платёж будет отключен для всех способов оплаты, мы можем перевести ваш аккаунт на более дешёвую подписку, что приведёт к потере многих функций."
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
+        "Наша система больше не будет автоматически списывать платежи, используя этот способ оплаты, но ваша подписка по-прежнему будет обновляться в конце платёжного цикла. Если вы хотите изменить подписку или понизить её уровень, вам по-прежнему необходимо сделать это самостоятельно до окончания платёжного периода. Мы не можем автоматически понизить ваш уровень подписки, так как если вы превшаете лимит бесплатного хранилища или используете платные функции, мы не можем автоматически удалить файлы, электронные письма или другие данные. Если вы отключите автоматический платёж, не забудьте оплатить следующий счёт по подписке до даты окончания, чтобы избежать блокировки аккаунта."
+      ]
+    },
     "Subscription saving": {
       "Save": [
         "Сэкономьте"
@@ -10645,6 +10688,9 @@
       "Labels applied.": [
         "Ярлыки применены."
       ],
+      "Last modified aliases stored in your oldest vault": [
+        "Последние измененные псевдонимы хранятся в вашем самом старом хранилище"
+      ],
       "Mail list unsubscribed": [
         "Вы удалились из списка рассылки"
       ],
@@ -10704,6 +10750,12 @@
       ],
       "Password copied to clipboard": [
         "Пароль скопирован в буфер обмена"
+      ],
+      "Payment method added": [
+        "Способ оплаты добавлен"
+      ],
+      "Payment method updated": [
+        "Способ оплаты обновлён"
       ],
       "Phishing reported": [
         "Отчёт о фишинге отправлен"
@@ -10927,6 +10979,9 @@
       "Add contact group name": [
         "Добавление имени для группы контактов"
       ],
+      "Add credit/debit card": [
+        "Добавить кредитную/дебетовую карту"
+      ],
       "Add filter": [
         "Добавить фильтр"
       ],
@@ -11145,6 +11200,9 @@
       ],
       "Edit contact group": [
         "Изменение группы контактов"
+      ],
+      "Edit credit/debit card": [
+        "Изменить кредитную/дебетовую карту"
       ],
       "Edit email settings": [
         "Изменить настройки электронной почты"
