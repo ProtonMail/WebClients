@@ -50,13 +50,12 @@ import type {
     PublicKey,
 } from 'pmcrypto-v6-canary';
 import { ARGON2_PARAMS } from 'pmcrypto-v6-canary/lib/constants';
-import { SubkeyOptions, UserID, config, enums } from 'pmcrypto-v6-canary/lib/openpgp';
+import { SubkeyOptions, UserID, enums } from 'pmcrypto-v6-canary/lib/openpgp';
 
 import { arrayToHexString } from '../utils';
 import {
     AlgorithmInfo,
     ComputeHashStreamOptions,
-    InitOptions,
     KeyInfo,
     KeyReference,
     MaybeArray,
@@ -497,9 +496,8 @@ export class Api extends KeyManagementApi {
     /**
      * Init pmcrypto and set the underlying global OpenPGP config.
      */
-    static init({ checkEdDSAFaultySignatures = false }: InitOptions) {
+    static init() {
         initPmcrypto();
-        config.checkEdDSAFaultySignatures = checkEdDSAFaultySignatures;
     }
 
     /**
