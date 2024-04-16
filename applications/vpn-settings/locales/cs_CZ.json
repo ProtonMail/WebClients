@@ -59,6 +59,9 @@
       "Cancel subscription": [
         "Zrušit předplatné"
       ],
+      "Change": [
+        "Změnit"
+      ],
       "Change keys": [
         "Změnit klíče"
       ],
@@ -3209,6 +3212,9 @@
       "Enter your recovery phone number and we will send you your username or email address.": [
         "Zadejte Vaše obnovovací telefonní číslo a my Vám pošleme Vaše uživatelské jméno nebo e-mailovou adresu."
       ],
+      "Enter your recovery phrase to change your password now.": [
+        "Pro změnu hesla zadejte svoji obnovovací frázi."
+      ],
       "Expired": [
         "Platnost vypršela"
       ],
@@ -4183,14 +4189,6 @@
         "Předplatné"
       ]
     },
-    "Key type option": {
-      "${ compatibility } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
-        "${ compatibility } RSA 4096-bit (pomalejší, ale zvyšuje kompatibilitu se starším softwarem)"
-      ],
-      "${ stateOfTheArt } ECC Curve25519 (Fastest, most modern)": [
-        "${ stateOfTheArt } ECC Curve25519 (Nejrychlejší, nejmodernější)"
-      ]
-    },
     "Label": {
       "${ BRAND_NAME } username": [
         "Uživatelské jméno ${ BRAND_NAME }"
@@ -4413,9 +4411,6 @@
       ],
       "Key": [
         "Klíč"
-      ],
-      "Key strength": [
-        "Síla klíče"
       ],
       "Level for NetShield blocker filtering": [
         "Úroveň filtrování NetShield"
@@ -4806,6 +4801,17 @@
       ],
       "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
         "Vaše úložiště je plné. Chcete-li odesílat nebo přijímat e-maily, uvolněte místo nebo ${ cta }."
+      ],
+      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
+        "Vaše úložiště je plné. Aby jste mohli nahrát nebo synchronizovat soubory, uvolněte místo nebo ${ cta }."
+      ]
+    },
+    "mailtrial2024: Action": {
+      "Get the deal": [
+        "Získejte nabídku"
+      ],
+      "Special Offer": [
+        "Speciální nabídka"
       ]
     },
     "mailtrial2024: Deal details": {
@@ -4815,6 +4821,12 @@
       "10 email addresses": [
         "10 e-mailových adres"
       ],
+      "Auto-delete Spam and Trash": [
+        "Automaticky smazat spam a koš"
+      ],
+      "Custom schedule send and snooze times": [
+        "Vlastní plánování odesílání a odložení"
+      ],
       "Support for 1 custom email domain": [
         "Podpora 1 vlastní e-mailové domény"
       ],
@@ -4822,9 +4834,25 @@
         "Neomezený počet složek, štítků a filtrů"
       ]
     },
+    "mailtrial2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Obnovuje se za ${ renewablePrice }, zrušit kdykoliv"
+      ]
+    },
     "mailtrial2024: Info": {
+      "for the first month": [
+        "pro první měsíc"
+      ],
+      "Limited-time offer, expires April 2 2024": [
+        "Omezená nabídka, vyprší 2. dubna 2024"
+      ],
       "Your subscription will auto-renew on ${ renewTime } at ${ renewablePrice }, cancel anytime": [
         "Vaše předplatné bude automaticky obnoveno každých ${ renewTime } za ${ renewablePrice }, zrušitelné kdykoliv"
+      ]
+    },
+    "mailtrial2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Získejte ${ planName } za pouze ${ planPrice }"
       ]
     },
     "Member action": {
@@ -6043,6 +6071,9 @@
       ]
     },
     "passwordless": {
+      "All administrators will get access to the key.": [
+        "Všichni administrátoři dostanou přístup k tomuto klíči."
+      ],
       "Are you sure you want to change your organization key?": [
         "Jste si jisti, že chcete změnit svůj klíč organizace?"
       ],
@@ -6190,6 +6221,9 @@
       ],
       "Select a reason": [
         "Vyberte důvod"
+      ],
+      "Select state": [
+        "Vybrat stav"
       ]
     },
     "plan customizer, ips": {
@@ -6291,14 +6325,6 @@
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Ověřením telefonního čísla zvyšujete bezpečnost účtu a umožňujete další možnosti obnovení."
-      ]
-    },
-    "Remark about a key type option": {
-      "Compatibility": [
-        "Kompatibilita"
-      ],
-      "State of the art": [
-        "Nejmodernější"
       ]
     },
     "Restore administrator panel": {
@@ -6946,6 +6972,12 @@
       "For all ${ BRAND_NAME } services": [
         "Pro všechny služby ${ BRAND_NAME }"
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Aby jste odeslali nebo přijímali e-maily, uvolněte místo nebo ${ upgrade }"
+      ],
+      "To upload or sync files, free up space or ${ upgrade }": [
+        "Aby jste nahráli nebo synchronizovali soubory, uvolněte místo nebo ${ upgrade }"
+      ],
       "upgrade for more storage": [
         "navýšit tarif pro více prostoru"
       ],
@@ -6964,8 +6996,20 @@
       "Your ${ appStorage } is full": [
         "Vaše ${ appStorage } je plné"
       ],
+      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
+        "Vaše ${ storage } je z ${ percentage }% plné. ${ cta }."
+      ],
+      "Your ${ storage } is full. ${ cta }.": [
+        "Vaše ${ storage } je plné. ${ cta }."
+      ],
+      "Your storage is ${ percentage }% full. ${ cta }.": [
+        "Vaše úložiště je z ${ percentage }% plné. ${ cta }."
+      ],
       "Your storage is full": [
         "Vaše úložiště je plné"
+      ],
+      "Your storage is full. ${ cta }.": [
+        "Vaše úložiště je plné. ${ cta }."
       ],
       "You’ll lose access to ${ gb } storage and priority support.": [
         "Ztratíte přístup k ${ gb } úložiště a prioritní podporu."

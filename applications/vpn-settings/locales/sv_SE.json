@@ -59,6 +59,9 @@
       "Cancel subscription": [
         "Avsluta prenumeration"
       ],
+      "Change": [
+        "Ändra"
+      ],
       "Change keys": [
         "Ändra nycklar"
       ],
@@ -139,6 +142,9 @@
       ],
       "Delete Gateway": [
         "Ta bort gateway"
+      ],
+      "Delete logo": [
+        "Ta bort logga"
       ],
       "Delete user": [
         "Ta bort användare"
@@ -280,6 +286,9 @@
       ],
       "Invite user": [
         "Bjud in användare"
+      ],
+      "Keep logo": [
+        "Behåll logga"
       ],
       "Keep my Plus subscription": [
         "Behåll min Plus-prenumeration"
@@ -437,6 +446,9 @@
       "Select country": [
         "Välj land"
       ],
+      "select file": [
+        "välj fil"
+      ],
       "Select file": [
         "Välj fil"
       ],
@@ -532,6 +544,12 @@
       ],
       "Upgrade your plan": [
         "Uppgradera ditt paket"
+      ],
+      "Upload": [
+        "Ladda upp"
+      ],
+      "Upload icon": [
+        "Ladda upp ikon"
       ],
       "Use ${ label } theme": [
         "Använd ${ label }-temat"
@@ -970,6 +988,12 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Fortsätt använda ${ MAIL_APP_NAME }."
+      ],
+      "Continue using ${ planTitle }": [
+        "Fortsätt använda ${ planTitle }"
+      ],
+      "Continue your subscription": [
+        "Fortsätt din prenumeration"
       ]
     },
     "Checkout row": {
@@ -2013,6 +2037,12 @@
       "Error connecting to the Bitcoin API.": [
         "Fel vid anslutning till Bitcoin API."
       ],
+      "Failed to process the logo": [
+        "Misslyckades att bearbeta loggan"
+      ],
+      "File too large. Your logo must be 30 KB or smaller.": [
+        "Fil för stor. Din logga måste vara 30 KB eller mindre."
+      ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Om tiden på din TV har löpt ut, klicka på ”Uppdatera” på din TV och ange din kod igen."
       ],
@@ -2024,6 +2054,9 @@
       ],
       "Impossible to rename the gateway": [
         "Omöjligt att byta namn på gateway"
+      ],
+      "Incorrect file type. Upload a file in PNG or JPEG format.": [
+        "Felaktig filtyp. Ladda upp en fil i PNG- eller JPEG-format."
       ],
       "Incorrect login credentials. Please try again.": [
         "Felaktiga inloggningsuppgifter. Försök igen."
@@ -2060,6 +2093,9 @@
       ],
       "Name does not match": [
         "Namn matchar inte"
+      ],
+      "No image selected": [
+        "Ingen bild vald"
       ],
       "Not a valid number": [
         "Inte ett giltigt nummer"
@@ -2112,6 +2148,9 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Uppgradera till ett företagspaket med mer än 1 användare för att hantera flera användare."
       ],
+      "Please upload a square file": [
+        "Ladda upp en fyrkantig bild"
+      ],
       "Please upload an xml file": [
         "Ladda upp en xml-fil"
       ],
@@ -2138,6 +2177,12 @@
       ],
       "The email addresses do not match": [
         "E-postadresserna matchar inte"
+      ],
+      "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
+        "Filen är för stor, största storlek är ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }"
+      ],
+      "The file is too small, the minimum size is ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }": [
+        "Filen är för liten, minsta storlek är ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }"
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Minsta antal krediter som kan läggas till är ${ price }"
@@ -3277,6 +3322,12 @@
       "If you wish to combine this account with another one, do NOT delete it.": [
         "Om du vill kombinera detta konto med ett annat, ta INTE bort det."
       ],
+      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
+        "Om du har problem finns vi här för att hjälpa dig. ${ boldPhoneCall } eller ${ boldZoomMeeting } med en av våra supportspecialister, eller öppna en ${ boldLiveChat } för chattsupport."
+      ],
+      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists.": [
+        "Om du har problem finns vi här för att hjälpa dig. ${ boldPhoneCall } eller ${ boldZoomMeeting } med en av våra supportspecialister."
+      ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Viktigt: Se till att du sparar återställningskoderna. Annars kan du permanent förlora åtkomst till ditt konto om du förlorar din tvåfaktorsautentiseringsenhet."
       ],
@@ -3508,6 +3559,9 @@
       "Plus or Visionary subscription required": [
         "Plus- eller Visionary-prenumeration krävs"
       ],
+      "Preview": [
+        "Förhandsgranska"
+      ],
       "Preview failed to be loaded": [
         "Förhandsgranskning misslyckades att laddas"
       ],
@@ -3679,6 +3733,9 @@
       ],
       "The format of your CSV file is incorrect.": [
         "Formatet på din CSV-fil är felaktigt."
+      ],
+      "The name and icon will be visible to your users while they are signed in.": [
+        "Namnet och ikonen kommer att vara synliga för dina användare när de är inloggade."
       ],
       "The name will be visible to your users while they are signed in.": [
         "Namnet kommer att vara synligt för dina användare när de är inloggade."
@@ -4188,14 +4245,6 @@
         "Prenumeration"
       ]
     },
-    "Key type option": {
-      "${ compatibility } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
-        "${ compatibility } RSA 4096-bitar (långsammare, men ökad kompatibilitet med äldre programvara)"
-      ],
-      "${ stateOfTheArt } ECC Curve25519 (Fastest, most modern)": [
-        "${ stateOfTheArt } ECC Curve25519 (Snabbast, modernast)"
-      ]
-    },
     "Label": {
       "${ BRAND_NAME } username": [
         "Användarnamn för ${ BRAND_NAME }"
@@ -4410,11 +4459,11 @@
       "Key": [
         "Nyckel"
       ],
-      "Key strength": [
-        "Nyckelstyrka"
-      ],
       "Level for NetShield blocker filtering": [
         "Nivå på blockeringsfiltrering för NetShield"
+      ],
+      "Logo": [
+        "Logga"
       ],
       "Mailbox password": [
         "Lösenord för brevlåda"
@@ -5944,6 +5993,34 @@
         "Ditt paket inkluderar maximalt ${ humanReadableAvailableSpace } mer lagringsutrymme."
       ]
     },
+    "Organization logo upload": {
+      "Avoid overly compressed images.": [
+        "Undvik alltför komprimerade bilder."
+      ],
+      "Tips on choosing a good icon": [
+        "Tips på att välja en bra ikon"
+      ],
+      "Use a graphical icon or image rather than text.": [
+        "Använd en grafisk ikon eller bild istället för text."
+      ]
+    },
+    "Organization logo upload modal": {
+      "Drop image file here to upload or": [
+        "Släpp bildfil här för att ladda upp eller"
+      ],
+      "File in PNG or JPEG format": [
+        "Fil i PNG- eller JPEG-format"
+      ],
+      "File not larger than 30 KB": [
+        "Fil inte större än 30 KB"
+      ],
+      "Square image of at least 128 pixels": [
+        "Fyrkantig bild på minst 128 pixlar"
+      ],
+      "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
+        "Användare kommer att se din logga istället för ${ BRAND_NAME }-ikonen när de är inloggade på våra webbappar."
+      ]
+    },
     "Pass B2B onboarding spotlight": {
       "Go to your vault to manage your passwords, aliases, and more.": [
         "Gå till ditt valv för att hantera dina lösenord, alias och mer."
@@ -6368,12 +6445,9 @@
         "Verifiering av ditt telefonnummer ökar säkerheten för ditt konto och tillåter ytterligare alternativ för återställning."
       ]
     },
-    "Remark about a key type option": {
-      "Compatibility": [
-        "Kompatibilitet"
-      ],
-      "State of the art": [
-        "Toppmodern"
+    "Remove organization logo": {
+      "Users will no longer see your custom logo or organization name.": [
+        "Användare kommer inte längre att se din anpassade logga eller organisationsnamn."
       ]
     },
     "Restore administrator panel": {
@@ -6403,6 +6477,59 @@
       ],
       "User": [
         "Användare"
+      ]
+    },
+    "scim: Action": {
+      "Configure SCIM": [
+        "Konfigurera SCIM"
+      ],
+      "Disable SCIM": [
+        "Inaktivera SCIM"
+      ],
+      "Disable SCIM integration": [
+        "Inaktivera SCIM-integration"
+      ],
+      "Generate new token": [
+        "Generera en ny token"
+      ],
+      "Generate token": [
+        "Generera token"
+      ]
+    },
+    "scim: Info": {
+      "Enter token into your identity provider": [
+        "Ange token i din identitetsleverantör"
+      ],
+      "Enter URL and token into your identity provider": [
+        "Ange URL och token i din identitetsleverantör"
+      ],
+      "For security reasons, the token is hidden": [
+        "Token är dold av säkerhetsskäl"
+      ],
+      "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
+        "Om du har förlorat eller glömt SCIM-token kan du skapa en ny, men tänk på att inställningarna för din identitetsleverantör måste uppdateras."
+      ],
+      "Make sure you copy the above SCIM token now.": [
+        "Se till att du kopierar SCIM-token ovan nu."
+      ],
+      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ VPN_APP_NAME } organization.": [
+        "Förenklar användarhantering över olika tjänster. Lägg till, redigera och ta bort användare i din identitetsleverantör, så kommer dessa ändringar automatiskt att tillämpas på din ${ VPN_APP_NAME }-organisation."
+      ]
+    },
+    "scim: Label": {
+      "SCIM token": [
+        "SCIM-token"
+      ]
+    },
+    "scim: Title": {
+      "Disable SCIM integration?": [
+        "Inaktivera SCIM-integration?"
+      ],
+      "Generate new SCIM token?": [
+        "Generera ny SCIM-token?"
+      ],
+      "SCIM automatic provisioning": [
+        "Automatisk tillhandahållande av SCIM"
       ]
     },
     "Select file": {
@@ -7612,6 +7739,9 @@
       "Delete address permanently?": [
         "Ta bort adress permanent?"
       ],
+      "Delete organization logo?": [
+        "Ta bort organisationslogga?"
+      ],
       "Delete the server (you will still be able to recover it for ${ days } day)": [
         "Ta bort servern (du kommer fortfarande att kunna återställa den i ${ days } dag)",
         "Ta bort servern (du kommer fortfarande att kunna återställa den i ${ days } dagar)"
@@ -7715,6 +7845,9 @@
       ],
       "Gift code": [
         "Presentkod"
+      ],
+      "How to choose a good icon": [
+        "Hur man väljer en bra ikon"
       ],
       "Human verification": [
         "Mänsklig verifiering"
@@ -7927,6 +8060,9 @@
       "Upload CSV file to create multiple accounts": [
         "Ladda upp CSV-fil för att skapa flera konton"
       ],
+      "Upload your organization’s logo": [
+        "Ladda upp din organisationslogga"
+      ],
       "Users": [
         "Användare"
       ],
@@ -8041,6 +8177,9 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Det valda temat kommer bli aktivt när ditt system är inställt på “ljust läge“"
+      ],
+      "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
+        "Användare kommer att se din logga istället för ${ BRAND_NAME }-ikonen när de är inloggade på våra webbappar."
       ],
       "Usually an URL that contains the identity provider's name within": [
         "Vanligtvis en URL som innehåller identitetsleverantörens namn"
