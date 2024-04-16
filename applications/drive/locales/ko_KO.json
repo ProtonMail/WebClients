@@ -31,6 +31,9 @@
       "Add contact": [
         "연락처 추가"
       ],
+      "Add credit / debit card": [
+        "신용 / 체크카드 추가"
+      ],
       "Add email": [
         "이메일 추가"
       ],
@@ -90,6 +93,9 @@
       ],
       "Cancel download": [
         "다운로드 취소"
+      ],
+      "Cancel subscription": [
+        "구독 취소"
       ],
       "Cancel upload": [
         "업로드 취소"
@@ -199,11 +205,17 @@
       "Create new text file": [
         "새 텍스트 파일 만들기"
       ],
+      "Current plan": [
+        "현재 플랜"
+      ],
       "Customize": [
         "맞춤화"
       ],
       "Customize import": [
         "사용자 지정 설정값 가져오기"
+      ],
+      "Decrease": [
+        "감소"
       ],
       "Delete": [
         "삭제"
@@ -247,6 +259,9 @@
       "Done": [
         "완료"
       ],
+      "Downgrade": [
+        "다운그레이드"
+      ],
       "Download": [
         "다운로드"
       ],
@@ -283,6 +298,9 @@
       "Edit sign-in details": [
         "로그인 정보 변경"
       ],
+      "Edit subscription": [
+        "구독 수정"
+      ],
       "Email settings": [
         "이메일 설정"
       ],
@@ -318,6 +336,9 @@
       ],
       "Get ${ DRIVE_APP_NAME }": [
         "${ DRIVE_APP_NAME } 받기"
+      ],
+      "Get in touch": [
+        "연락하기"
       ],
       "Get link": [
         "링크 생성"
@@ -385,8 +406,17 @@
       "Import from Outlook": [
         "Outlook에서 가져오기"
       ],
+      "Increase": [
+        "증가"
+      ],
+      "Keep my Plus subscription": [
+        "나의 Plus 구독 유지"
+      ],
       "Learn more": [
         "더 알아보기"
+      ],
+      "Let's talk": [
+        "상담 및 계약 필요"
       ],
       "Load": [
         "불러오기"
@@ -396,6 +426,9 @@
       ],
       "Loading link": [
         "링크를 불러오는 중"
+      ],
+      "Loading verification": [
+        "인증 정보 불러오는 중"
       ],
       "Manage folders": [
         "폴더 관리"
@@ -457,8 +490,14 @@
       "Not now": [
         "다음에"
       ],
+      "OK": [
+        "확인"
+      ],
       "Ok": [
         "확인"
+      ],
+      "Open ${ CALENDAR_APP_NAME } settings": [
+        "${ CALENDAR_APP_NAME } 설정 열기"
       ],
       "Open navigation": [
         "탐색 열기"
@@ -471,6 +510,12 @@
       ],
       "Pause upload": [
         "업로드 일시 정지"
+      ],
+      "Pay": [
+        "결제"
+      ],
+      "Pay ${ price } now": [
+        "${ price } 결제"
       ],
       "Preview": [
         "미리보기"
@@ -505,11 +550,17 @@
       "Remove": [
         "삭제"
       ],
+      "Remove bonuses": [
+        "보너스 제거"
+      ],
       "Remove device": [
         "기기 삭제"
       ],
       "Remove from this list": [
         "이 리스트에서 삭제"
+      ],
+      "Remove gift code": [
+        "기프트 코드 삭제"
       ],
       "Rename": [
         "이름 바꾸기"
@@ -601,6 +652,9 @@
       "See version history": [
         "버전 기록 보기"
       ],
+      "Select ${ planTitle }": [
+        "${ planTitle } 선택"
+      ],
       "Select all": [
         "전체 선택"
       ],
@@ -691,6 +745,9 @@
       "Trust": [
         "신뢰"
       ],
+      "Try again": [
+        "다시 시도"
+      ],
       "Try another method": [
         "다른 방법 시도"
       ],
@@ -742,6 +799,12 @@
       "Use ${ label } theme": [
         "${ label } 테마 사용"
       ],
+      "Use a different card": [
+        "다른 카드 사용"
+      ],
+      "Use a different payment method": [
+        "다른 결제 수단 사용하기"
+      ],
       "Use authentication code": [
         "인증 코드를 사용"
       ],
@@ -766,6 +829,9 @@
       "View invoice": [
         "청구서 보기"
       ],
+      "What do I get?": [
+        "무엇을 받게 되나요?"
+      ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "vCard 파일을 ${ maxAttachments }개 이상 연락처로 보낼 수 없습니다"
       ],
@@ -777,6 +843,11 @@
       ],
       "Zoom out": [
         "축소"
+      ]
+    },
+    "Action subscription": {
+      "Reactivate": [
+        "재활성화"
       ]
     },
     "Actions message": {
@@ -802,6 +873,15 @@
       ],
       "${ ips } server": [
         "${ ips }개 서버"
+      ],
+      "${ price } per dedicated server": [
+        "전용 서버당 ${ price }"
+      ],
+      "${ price } per domain": [
+        "도메인당 ${ price }"
+      ],
+      "${ price } per user": [
+        "사용자당 ${ price }"
       ],
       "${ users } user": [
         "${ users }명 사용자"
@@ -838,6 +918,23 @@
       ],
       "Unsupported event": [
         "지원되지 않는 이벤트"
+      ]
+    },
+    "bf2023: Action": {
+      "**Add our encrypted password manager** for only ${ price }": [
+        "단 ${ price }으로 **암호화된 비밀번호 관리자를 추가하세요**"
+      ],
+      "Add ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } 추가"
+      ],
+      "Get the deal": [
+        "혜택 얻기"
+      ],
+      "Remove ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } 삭제"
+      ],
+      "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
+        "오직 ${ priceNoSuffix } 당 개월만 추가하여 15개월 동안 **암호화된 비밀번호 관리자**를 구독하세요!"
       ]
     },
     "bf2023: Deal details": {
@@ -885,6 +982,20 @@
         "30일 무료체험"
       ]
     },
+    "bf2023: renew": {
+      "${ n } month": [
+        "${ n }개월"
+      ],
+      "the first month": [
+        "첫 달"
+      ],
+      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
+        "이 특별 할인가 (${ discountedPrice })는 ${ discountedMonths }개월에 한합니다. 그 이후로는 ${ nextMonths }개월 동안 ${ nextPrice }으로 갱신됩니다. 언제든지 취소 가능합니다."
+      ],
+      "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
+        "이 특별 할인가 (${ discountedPrice })는 첫 달에 한합니다. 자동으로 다음 달 부터는 ${ nextPrice }으로 갱신됩니다. 언제든지 취소 가능합니다."
+      ]
+    },
     "bf2023: Tooltip": {
       "Access blocked content and browse privately. Includes 3,000+ servers across 65+ countries, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "65개 이상의 국가의 3,000여개 서버로 차단된 콘텐츠에 접근하고 비공개적으로 브라우징 하고, 빠른 VPN 속도, 개 VPN 연결, 월드와이드 스트리밍 서비스, 멀웨어 및 광고 차단기 등을 누리십시오."
@@ -918,6 +1029,34 @@
       ],
       "Store up to 200 versions of each file for up to 10 years.": [
         "최대 10년간 각 파일의 최대 200개의 버전을 저장하세요."
+      ]
+    },
+    "Billing cycle": {
+      "${ n } month": [
+        "${ n }개월"
+      ],
+      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
+        "${ renewalLength } 이후에 ${ renewPrice }로 자동 갱신됨"
+      ]
+    },
+    "Billing cycle option": {
+      "1 month": [
+        "1개월"
+      ],
+      "12 months": [
+        "12개월"
+      ],
+      "24 months": [
+        "24개월"
+      ],
+      "Annually": [
+        "연간"
+      ],
+      "Monthly": [
+        "매월"
+      ],
+      "Two-year": [
+        "2년"
       ]
     },
     "Browser": {
@@ -1007,6 +1146,9 @@
     "Checkout row": {
       "${ users } user": [
         "${ users } 사용자"
+      ],
+      "Total for ${ n } month": [
+        "${ n }개월의 합계"
       ]
     },
     "Collapsible tooltip": {
@@ -1947,6 +2089,14 @@
         "올란드 제도"
       ]
     },
+    "Cycle": {
+      "/month": [
+        "/월"
+      ],
+      "/user per month": [
+        "/월 사용자 당"
+      ]
+    },
     "Default display name vcard": {
       "Unknown": [
         "알 수 없음"
@@ -2043,6 +2193,37 @@
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
         "업로드한 CSV 파일에서 다음 필드를 감지했습니다. 가져오고자 하는 것을 확인하세요"
+      ]
+    },
+    "Downgrade account reason": {
+      "Bugs or quality issue": [
+        "버그 또는 품질 문제"
+      ],
+      "I use a different ${ BRAND_NAME } account": [
+        "다른 ${ BRAND_NAME } 계정을 사용합니다"
+      ],
+      "Missing feature(s)": [
+        "없는 기능"
+      ],
+      "My reason isn't listed, please comment": [
+        "리스트에 저의 사유가 없습니다, 사유를 적어주세요"
+      ],
+      "Streaming service unsupported": [
+        "스트리밍 서비스 지원되지 않음"
+      ],
+      "Subscription is too expensive": [
+        "구독이 너무 비쌉니다"
+      ],
+      "Switching to a different provider": [
+        "다른 서비스 제공사로부터 변경"
+      ],
+      "Temporary need, may come back in the future": [
+        "잠깐만 필요합니다, 나중에 다시 사용할 생각입니다."
+      ]
+    },
+    "Downgrade modal exit survey title": {
+      "Help us improve!": [
+        "저희를 도와주세요!"
       ]
     },
     "Email body for description (description part)": {
@@ -2198,6 +2379,12 @@
       "Already a member of this share": [
         "이미 이 공유의 구성원입니다"
       ],
+      "Amount above the maximum.": [
+        "최대 금액보다 많습니다."
+      ],
+      "Amount below minimum.": [
+        "최소 금액보다 적습니다."
+      ],
       "An error occurred while loading alias options": [
         "별칭 옵션 로드 중 오류가 발생했습니다."
       ],
@@ -2215,6 +2402,9 @@
       ],
       "Cannot export this contact": [
         "이 연락처를 불러올 수 없음"
+      ],
+      "Checkout expired, please try again": [
+        "체크아웃 만료됨, 다시 시도하십시오"
       ],
       "Contact could not be saved": [
         "연락처를 저장할 수 없습니다"
@@ -2258,6 +2448,9 @@
       "Enter 6 digits": [
         "6자리 숫자를 입력해 주세요"
       ],
+      "Error connecting to the Bitcoin API.": [
+        "Bitcoin API와 통신하던 중 오류가 발생했습니다."
+      ],
       "Error decrypting a computer": [
         "컴퓨터 복호화 중 오류"
       ],
@@ -2297,11 +2490,26 @@
       "Incorrect username": [
         "잘못된 사용자 이름"
       ],
+      "Invalid ${ name } code": [
+        "유효하지 않은 ${ name } 코드"
+      ],
+      "Invalid card number": [
+        "유효하지 않은 카드 번호"
+      ],
+      "Invalid code": [
+        "잘못된 코드입니다."
+      ],
       "Invalid email address": [
         "유효하지 않은 이메일 주소"
       ],
+      "Invalid expiration date": [
+        "올바르지 않은 만료 기한"
+      ],
       "Invalid name": [
         "유효하지 않은 이름"
+      ],
+      "Invalid postal code": [
+        "유효하지 않은 우편번호"
       ],
       "Invalid public key file": [
         "공개 키 파일이 유효하지 않습니다"
@@ -2360,6 +2568,18 @@
       "Passwords do not match": [
         "비밀번호가 일치하지 않습니다"
       ],
+      "Payment process canceled": [
+        "결제 과정 취소됨"
+      ],
+      "Payment process consumed": [
+        "결제 과정 취소됨"
+      ],
+      "Payment process failed": [
+        "결제 과정 실패됨"
+      ],
+      "Payment process not supported": [
+        "지원하지 않는 결제수단"
+      ],
       "Photos upload is temporarily disabled. Please try again later": [
         "사진 업로드가 일시적으로 비활성화되었습니다. 나중에 다시 시도해 주십시오."
       ],
@@ -2380,6 +2600,9 @@
       ],
       "Primary address key is not decrypted.": [
         "기본 주소 키가 복호화되지 않았습니다."
+      ],
+      "Process aborted": [
+        "과정 중단됨"
       ],
       "Removed duplicate invitee: ${ joinedInvitee }": [
         "중복된 수신자 ${ joinedInvitee }명을 삭제했습니다."
@@ -2426,6 +2649,9 @@
       "status page": [
         "상태 페이지"
       ],
+      "Tab closed": [
+        "탭 닫힘"
+      ],
       "The address might be misspelled": [
         "주소가 철자가 틀렸을 수 있습니다"
       ],
@@ -2443,6 +2669,12 @@
       ],
       "The label name is too long. Please choose a different name.": [
         "라벨 이름이 너무 깁니다. 다른 이름을 사용해 주세요."
+      ],
+      "The minimum amount of credit that can be added is ${ price }": [
+        "추가할 수 있는 최소 금액은 ${ price } 입니다."
+      ],
+      "The minimum payment we accept is ${ price }": [
+        "허용되는 최소 결제 금액은 ${ price } 입니다."
       ],
       "The new revision of original file is not uploaded yet, please try again later": [
         "원본 파일의 새로운 리비전이 아직 업로드되지 않았습니다, 나중에 다시 시도해 주세요"
@@ -2494,6 +2726,9 @@
       ],
       "Unknown error": [
         "알 수 없는 오류"
+      ],
+      "Unknown payment token status": [
+        "알 수 없는 결제 토큰 상태"
       ],
       "Username must begin with a letter or digit": [
         "사용자명은 문자로 시작해야 합니다"
@@ -2829,6 +3064,14 @@
         "최대 6명의 사용자"
       ]
     },
+    "familyOffer_2023:Error": {
+      "Family group not recognized. Try again.": [
+        "가족 그룹 인증 실패. 다시 시도하십시오."
+      ],
+      "Organization not recognized. Try again.": [
+        "조직에 인정되지 않음. 다시 시도하십시오."
+      ]
+    },
     "familyOffer_2023:Family plan": {
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } 그룹"
@@ -2891,6 +3134,22 @@
         "현재 요금제는 Visionary 및 가족 요금제에 가입할 수 없습니다."
       ]
     },
+    "familyOffer_2023:Label": {
+      "Enter family group name to confirm": [
+        "계속하려면 가족 그룹 이름을 입력하세요."
+      ],
+      "Enter organization name to confirm": [
+        "계속하려면 조직 이름을 입력하세요"
+      ]
+    },
+    "familyOffer_2023:Member downgrade modal": {
+      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
+        "이는 모든 하위 사용자, 계정, 사용자의 조직과 연관된 데이터를 영구적으로 삭제합니다."
+      ],
+      "This will remove all ${ BRAND_NAME } premium features for every family member.": [
+        "모든 가족 구성원이 ${ BRAND_NAME } 프리미엄 기능들을 사용할 수 없습니다."
+      ]
+    },
     "familyOffer_2023:Onboarding Proton": {
       "Configure your family account and invite users ": [
         "가족 계정을 구성하고 사용자를 초대하세요. "
@@ -2900,6 +3159,14 @@
       ],
       "Set up your family account": [
         "가족 계정을 설정하세요"
+      ]
+    },
+    "familyOffer_2023:Title": {
+      "Delete family group?": [
+        "가족 그룹을 삭제하시겠어요?"
+      ],
+      "Delete organization?": [
+        "조직을 삭제합니까?"
       ]
     },
     "familyOffer_2023:Tooltip": {
@@ -3386,6 +3653,9 @@
       "${ pausedCount } paused": [
         "${ pausedCount }개 일시 정지됨"
       ],
+      "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
+        "${ plan.Title }이(가) 최소 1개 이상 지정 서버를 필요합니다 ${ serverPricePerMonth }"
+      ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized }개 폴더 찾음"
       ],
@@ -3413,6 +3683,9 @@
       "${ speed }/s": [
         "${ speed }/초"
       ],
+      "${ storage } storage": [
+        "저장공간 ${ storage }"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } 연락처가 성공적으로 업데이트 되었습니다."
       ],
@@ -3421,6 +3694,18 @@
       ],
       "(${ memberCount } member)": [
         "(${ memberCount } 회원)"
+      ],
+      "(${ serverPrice } /month)": [
+        "(${ serverPrice } / 개월)"
+      ],
+      "+${ bonusSpace } bonus storage": [
+        "+${ bonusSpace } 추가 저장공간"
+      ],
+      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
+        "${ VPN_APP_NAME } 을 위한 +${ organization.BonusVPN } 연결 (더 많은 기기를 VPN에 연결할 수 있습니다)"
+      ],
+      "30-day money-back guarantee.": [
+        "30일 환불 보장"
       ],
       "A number will be added to the filename": [
         "숫자가 파일 이름에 추가됩니다"
@@ -3431,8 +3716,20 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "전화번호는 오직 하나의 ${ BRAND_NAME } 계정의 인증에만 사용할 수 있습니다"
       ],
+      "A user is an account associated with a single username, mailbox, and person": [
+        "사용자는 단일 사용자 이름, 사서함 및 사람과 연결된 계정입니다."
+      ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "요금 미납으로 인해 계정 액세스가 제한되었습니다. 관리자에게 문의하세요."
+      ],
+      "Account size": [
+        "계정 크기"
+      ],
+      "Account successfully updated": [
+        "계정을 성공적으로 업그레이드 했습니다."
+      ],
+      "Additional options": [
+        "추가적인 옵션"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "이 주소에 대해 신뢰할 수 있는 키로 주소 확인을 사용할 수 있습니다. 이 주소로 보내려면 먼저 전송에 사용 할 수 있는 공개 키를 신뢰해야 합니다."
@@ -3454,6 +3751,15 @@
       ],
       "Also try looking in Trash.": [
         "또한 휴지통을 확인해 보세요."
+      ],
+      "American Express SafeKey logo": [
+        "American Express SafeKey 로고"
+      ],
+      "Amount above maximum (${ amount }).": [
+        "최대 금액 (${ amount })보다 높습니다."
+      ],
+      "Amount below minimum (${ amount }).": [
+        "최소 금액 (${ amount })보다 적습니다."
       ],
       "An active recovery file": [
         "활성 복구 파일"
@@ -3494,11 +3800,23 @@
       "Attention required": [
         "주의 필요"
       ],
+      "Awaiting transaction": [
+        "거래 대기 중"
+      ],
+      "Balance from your previous subscription": [
+        "이전 구독에서의 잔고"
+      ],
       "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access or decrypt your files for you. To unlock your drive after a password reset, you must have one of the following:": [
         "${ DRIVE_APP_NAME }가 종단간 암호화되어, 파일에 접근하거나 복호화할 수 없습니다. 비밀번호 재설정 후 드라이브 잠금을 해제하기 위해서, 다음 중 하나가 필요합니다:"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "새 인증 코드를 요청하기 전에 스팸 폴더를 확인하고 ${ strong } 이(가) 올바른 주소인지 확인하세요."
+      ],
+      "Billing cycle: ${ text }": [
+        "청구 주기: ${ text }"
+      ],
+      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
+        "무료 플랜으로 다운그레이드하면, 만약에 나중에 다시 업그레이드 한다 해도 다음 혜택을 영구적으로 잃을 것입니다."
       ],
       "Calendar side panel": [
         "캘린더 사이드 패널"
@@ -3596,14 +3914,26 @@
       "Creating link to folder": [
         "폴더 링크를 만드는 중"
       ],
+      "Credit for the unused portion of your previous plan subscription": [
+        "이전 플랜 구독으로 사용하지 않은 부분에 대한 크레딧"
+      ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora 및 일부 기타 앱과 vCard 3.1 및 4.0 형식(UTF-8 인코딩) 이(가) 지원됩니다."
+      ],
+      "Current plan": [
+        "현재 플랜"
       ],
       "Current version": [
         "현재 버전"
       ],
+      "Custom email domains": [
+        "사용자 지정 이메일 도메인"
+      ],
       "Decrypting files": [
         "파일 복호화 중"
+      ],
+      "Dedicated servers": [
+        "전용 서버"
       ],
       "Delete locked drive": [
         "잠긴 드라이브 삭제"
@@ -3613,6 +3943,18 @@
       ],
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         "디지털 서명이 인증되었습니다. 이 폴더는 ${ emailAddress }에 의해 안전하게 업로드되었습니다."
+      ],
+      "Discover ProtectBuy logo": [
+        "Discover ProtectBuy 로고"
+      ],
+      "Don’t see anything? Remember to turn off pop-up blockers.": [
+        "아무것도 보지 못하셨나요? 팝업 차단기를 비활성화 하는 것을 잊지 마세요."
+      ],
+      "Downgrade": [
+        "다운그레이드"
+      ],
+      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
+        "다운그레이드하면 유료 ${ VPN_APP_NAME } 서버에 대한 모든 연결이 종료됩니다."
       ],
       "Download": [
         "다운로드"
@@ -3641,8 +3983,8 @@
       "Download paused due to connection issue; it will resume automatically": [
         "연결 문제로 인해 다운로드가 중단되었습니다; 자동으로 재개됩니다"
       ],
-      "Download ready": [
-        "다운로드 준비됨"
+      "Download your favorite app today and take privacy with you everywhere you go.": [
+        "당신이 가장 좋아하는 앱을 다운받고 어디서나 보안을 유지하세요."
       ],
       "Downloaded": [
         "다운로드 완료"
@@ -3673,6 +4015,12 @@
       ],
       "email": [
         "이메일"
+      ],
+      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
+        "10개 사용자 지정 이메일 도메인 호스팅이 무료로 포함되어 있습니다. 추가적인 도메인이 ${ price } 으로 추가할 수 있습니다."
+      ],
+      "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
+        "이메일 호스팅은 이미 개인이 소유한 도메인만 가능합니다. 도메인 등록은 현재 ${ BRAND_NAME }에서 사용하실 수 없습니다. 도메인 호스팅 업체에 등록된 도메인에 대한 이메일을 호스트할 수 있습니다."
       ],
       "Emails are automatically signed": [
         "이메일들이 자동적으로 서명됨"
@@ -3718,6 +4066,9 @@
       ],
       "Estimating time remaining...": [
         "남은 시간 예상 중..."
+      ],
+      "Expired": [
+        "만료됨"
       ],
       "Failed": [
         "실패"
@@ -3770,6 +4121,9 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "최상의 결과를 얻으려면 스트리밍 및 메모리를 많이 사용하는 활동을 피하거나 파일을 나누어 업로드하세요."
       ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "다른 계정에서 전송되는 메일을 안전한 ${ MAIL_APP_NAME } 받은 편지함으로 전달하세요."
+      ],
       "from the version history?": [
         "을(를) 버전 기록에서 영구적으로 삭제하시겠습니까?"
       ],
@@ -3797,11 +4151,23 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "계정을 만드는 데 문제가 있는 경우 초대를 요청하면 영업일 기준 1일 이내에 응답해 드려요."
       ],
+      "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
+        "취소시, 만료일인 ${ expiryDate }에 ${ planTitle } 구독이 더 이상 갱신되지 않습니다."
+      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "받은 편지함에 이메일이 없으면 스팸 폴더를 확인하세요."
       ],
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
         "만약 이들 중 하나를 가지고 있다면, ${ BRAND_NAME } 계정 설정에서 차단 해제 절차를 계속하세요."
+      ],
+      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
+        "다운그레이드를 진행하면 ${ MAIL_APP_NAME } 과 ${ VPN_APP_NAME } 의 유료 기능을 사용할 수 없습니다."
+      ],
+      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
+        "다운그레이드를 진행하면 추가 저장공관과 필터를 포함한 ${ MAIL_APP_NAME } 의 유료 기능을 사용할 수 없습니다."
+      ],
+      "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
+        "다운그레이드를 진행하면 ${ VPN_APP_NAME } 유료 기능을 사용할 수 없습니다."
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "${ totalCalendarsCount }개 중 ${ calendarCount }개 달력 불러오기"
@@ -3815,6 +4181,9 @@
       "Import mailbox": [
         "메일함 불러오기"
       ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "이메일, 캘린더 및 연락처를 타사 서비스에서 ${ BRAND_NAME }으로 불러오세요."
+      ],
       "Important note": [
         "중요 사항"
       ],
@@ -3823,6 +4192,12 @@
       ],
       "In the meantime, sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
         "그동안 자신의 ${ DRIVE_APP_NAME } 계정에 로그인하고 종단간 암호화로 데이터를 보호하고 안전하게 공유하세요."
+      ],
+      "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
+        "다음 단계에서, Bitcoin 주소를 사용하여 보증금을 제출할 수 있습니다."
+      ],
+      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
+        "${ formattedTaxRate }% ${ taxName } 포함: ${ price }"
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "항목 인덱싱 ${ totalProgressToShow }개 중 ${ esProgress }개"
@@ -3908,6 +4283,9 @@
       "Makes your account safer": [
         "당신의 계정을 더 안전하게 만드세요"
       ],
+      "Mastercard SecureCode logo": [
+        "Mastercard SecureCode 로고"
+      ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "최대 ${ MAX_SHARED_URL_PASSWORD_LENGTH }자"
       ],
@@ -3916,6 +4294,9 @@
       ],
       "Merged": [
         "합쳤음"
+      ],
+      "MM/YY": [
+        "MM/YY"
       ],
       "Monitor accounts": [
         "계정 모니터링"
@@ -3944,6 +4325,9 @@
       "No": [
         "아니오"
       ],
+      "No changes made to the current subscription": [
+        "현재의 구독에 변경이 이루어지지 않았습니다"
+      ],
       "No contacts added yet": [
         "아직 추가된 연락처가 없습니다"
       ],
@@ -3952,6 +4336,9 @@
       ],
       "No group found": [
         "찾은 그룹 없음"
+      ],
+      "No payment is required at this time.": [
+        "현재는 결제가 필요없습니다."
       ],
       "No results found": [
         "결과를 찾을 수 없음"
@@ -3974,6 +4361,9 @@
       "Nothing here yet": [
         "아직 여기에 아무것도 없습니다"
       ],
+      "Number of dedicated servers in the organization": [
+        "조직의 전용 서버 수"
+      ],
       "of": [
         "의"
       ],
@@ -3995,11 +4385,17 @@
       "Or use the \"+ New\" button": [
         "또는 \"+ 신규\" 버튼을 사용하세요."
       ],
+      "Organization size": [
+        "조직 크기"
+      ],
       "password": [
         "비밀번호"
       ],
       "Paused": [
         "일시 정지됨"
+      ],
+      "Payments are protected with TLS encryption and Swiss privacy laws.": [
+        "결제는 TLS 암호화와 스위스의 보안 법에 의해 보호되고 있습니다."
       ],
       "Permanently delete all files in your locked drive": [
         "잠긴 드라이브의 모든 파일을 영구적으로 삭제합니다"
@@ -4013,6 +4409,12 @@
       "Photos have been successfully recovered.": [
         "사진이 성공적으로 복구되었습니다."
       ],
+      "Please authenticate your card in the verification tab.": [
+        "인증 탭에서 카드를 인증해 주세요."
+      ],
+      "Please authenticate your payment in the verification tab.": [
+        "인증 탭에서 결제 수단을 인증해 주세요."
+      ],
       "Please enter the password to decrypt and view content.": [
         "복호화하고 내용을 보려면 비밀번호를 입력하세요."
       ],
@@ -4024,6 +4426,9 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "이 과정은 주소록의 크기에 따라 시간이 좀 걸릴 수 있습니다."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
+        "확인 버튼을 누르면 계정에는 ${ creditsRemaining } 크레딧이 남습니다."
       ],
       "Please provide a name and an email address for creating a group.": [
         "그룹을 생성하기 위해서 이름과 이메일 주소를 입력해주세요."
@@ -4039,6 +4444,12 @@
       ],
       "Please try again in a few moments": [
         "잠시 후 다시 시도하십시오"
+      ],
+      "Please try again using a different payment method, or contact your bank.": [
+        "다른 결제 수단을 사용하거나, 은행에 연락하세요."
+      ],
+      "Please try again, use a different payment method, or contact PayPal for assistance.": [
+        "다시 시도하거나, 다른 결제 수단을 사용하거나 PayPal에 연락해 도움을 요청하세요."
       ],
       "Please use another browser or download the file.": [
         "파일을 다운로드 하거나 다른 브라우저를 사용하세요."
@@ -4205,6 +4616,9 @@
       "Signature issue": [
         "서명 문제 발생"
       ],
+      "Since you're a loyal user, your account has additional features enabled.": [
+        "로얄 사용자시기에, 계정에 추가적인 기능이 활성화 되었습니다."
+      ],
       "Skipped": [
         "건너뜀"
       ],
@@ -4222,6 +4636,18 @@
       ],
       "Something went wrong...": [
         "문제가 발생했습니다..."
+      ],
+      "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
+        "다음 주소를 사용하여 보증금을 제출하거나 QR 코드를 스캔하세요. 보증금은 확인 후 사용자의 계좌에 반영될 예정입니다."
+      ],
+      "Subscription auto-renews every 12 months.": [
+        "구독이 12개월 마다 갱신됩니다."
+      ],
+      "Subscription auto-renews every 24 months.": [
+        "구독이 24개월 마다 갱신됩니다."
+      ],
+      "Subscription auto-renews every month.": [
+        "구독이 매달 갱신됩니다."
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "구독 종료 예정: ${ planName }의 혜택을 유지하려면 ${ byDate }까지 재 활성화해주세요. ${ reactivateLink }"
@@ -4246,6 +4672,9 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "이 주소의 주인이 종단 간 암호화를 비활성화 시켰습니다. 따라서 이 주소로 암호화된 이메일을 보내려면, 해당 주소 주인이 종단 간 암호화 재활성화를 해야합니다."
+      ],
+      "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
+        "인증 절차가 새 탭에서 열릴 것입니다. 활성화된 팝업 차단기를 비활성화 해주세요."
       ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "아직 이동이 필요한 파일이 있습니다. 이동 관리자를 닫으면 모든 작업이 종료됩니다."
@@ -4304,6 +4733,9 @@
       "This will upload a new version of the folder": [
         "새로운 버전의 폴더로 업로드됩니다"
       ],
+      "To complete your payment, please send ${ btcAmountBold } to the address below.": [
+        "결제를 완료하기 위해서, 아래 주소로 ${ btcAmountBold } 를 송금해 주시기 바랍니다."
+      ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "비공개 검색을 활성화하려면, ${ DRIVE_APP_NAME }가 로컬에서 파일 인덱싱을 해야합니다."
       ],
@@ -4330,6 +4762,18 @@
       ],
       "Today": [
         "오늘"
+      ],
+      "Total email addresses": [
+        "총 이메일 주소"
+      ],
+      "Total storage": [
+        "총 저장공간"
+      ],
+      "Total supported domains": [
+        "총 지원 도메인"
+      ],
+      "Total VPN connections": [
+        "총 VPN 연결"
       ],
       "Transfer canceled for file \"${ name }\"": [
         "파일 \"${ name }\" 의 이동 취소됨"
@@ -4400,11 +4844,23 @@
       "username": [
         "사용자 이름"
       ],
+      "Users": [
+        "사용자"
+      ],
+      "Verification may take a few minutes.": [
+        "인증은 몇 분이 걸릴 수 있습니다."
+      ],
+      "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
+        "인증은 새 탭에서 열리기 때문에 팝업 차단기를 비활성화해주세요. 요금은 청구되지 않습니다. 카드 확인에 사용한 금액은 즉시 환불됩니다."
+      ],
       "Version is deleted": [
         "버전이 삭제되었습니다"
       ],
       "Version is restored": [
         "버전이 복구되었습니다"
+      ],
+      "Visa Secure logo": [
+        "Visa Secure 로고"
       ],
       "Want to sync files faster?": [
         "더 빠른 동기화를 원하세요?"
@@ -4418,11 +4874,26 @@
       "We are experiencing technical issues. Uploading new photos is temporarily disabled.": [
         "현재 기술적인 문제가 있습니다. 일시적으로 새로운 사진을 업로드할 수 없습니다."
       ],
+      "We couldn’t process your payment.": [
+        "결제를 처리할 수 없습니다."
+      ],
       "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "${ emailAddress }가 ${ fileName }을(를) 업로드했는지 인증할 수 없습니다."
       ],
       "We couldn’t verify who uploaded ${ fileName }.": [
         "누가 ${ fileName }을(를) 업로드했는지 인증할 수 없습니다."
+      ],
+      "We need to authenticate your payment method with your bank.": [
+        "은행의 결제 수단 인증이 필요합니다."
+      ],
+      "We need to authenticate your payment with your bank.": [
+        "은행의 결제 수단 인증이 필요합니다."
+      ],
+      "We use 3-D Secure to protect your payments": [
+        "결제 정보를 보호하기 위해 3D 보안을 이용합니다"
+      ],
+      "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "이 거래를 완료하기 위해 새 브라우저 탭의 PayPal로 보내집니다. 팝업 차단기를 사용하는 경우 계속하려면 비활성화하세요."
       ],
       "We'll notify you when the import is done.": [
         "처리가 완료되면 알려드리겠습니다."
@@ -4463,11 +4934,17 @@
       "Yesterday": [
         "어제"
       ],
+      "You already have a free account": [
+        "이미 무료 계정을 가지고 있습니다."
+      ],
       "You are about to open another browser tab and visit:": [
         "다른 브라우저 탭을 열고 다음을 방문합니다:"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "현재 ${ user.Name } (${ user.Email })로 로그인 했습니다."
+      ],
+      "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
+        "${ downgradedPlanName } 플랜에 포함된 저장 공간보다 더 많이 사용하고 계십니다. 다운그레이드를 진행하려면 일부 데이터를 지우거나 완전 삭제하세요."
       ],
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "기존 ${ BRAND_NAME } 캘린더에 불러온 캘린더를 병합할 수도 있습니다."
@@ -4477,6 +4954,12 @@
       ],
       "You can import one data type at a time.": [
         "한 번에 하나의 데이터 유형을 가져올 수 있어요."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "최대 ${ MAX_CALENDARS_FREE }개 캘린더를 보관할 수 있습니다. ${ MAIL_SHORT_APP_NAME } 구독을 취소하기 전에 공유 캘린더 링크와 캘린더를 공유한 ${ BRAND_NAME } 사용자를 제거하십시오."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
+        "최대 ${ MAX_CALENDARS_FREE }개 캘린더를 보관할 수 있습니다. 구독을 취소하기 전에 공유 캘린더 링크와 캘린더를 공유한 ${ BRAND_NAME } 사용자를 제거하십시오."
       ],
       "You can now return to the application to continue": [
         "계속하기 위해 다시 애플리케이션으로 돌아갈 수 있습니다."
@@ -4490,8 +4973,26 @@
       "You have ${ expiresInDays } day left to claim your 3 GB welcome bonus and ": [
         "웰컴 보너스로 저장공간 3 GB 확장을 받을 수 있는 시간이 ${ expiresInDays } "
       ],
+      "You may be redirected to your bank’s website.": [
+        "은행 웹사이트로 리다이렉트 됩니다."
+      ],
+      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
+        "다운그레이드하기 전에 모든 ${ MAIL_APP_NAME } 사용자와 주소, 그리고 사용자 지정 도메인을 비활성화해야 합니다."
+      ],
+      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
+        "PayPal 계정과 연결된 신용 카드 또는 은행 계좌가 있어야 합니다. PayPal 계정에 연결된 신용 카드나 은행 계좌가 없다면 아래 버튼을 클릭해 주세요."
+      ],
+      "You will lose access to Plus features on this date.": [
+        "오늘 부터 Plus 기능을 잃게 됩니다."
+      ],
+      "You will lose access to Plus servers and features on this date.": [
+        "오늘 부터 Plus 서버 및 기능들에 접근할 수 없게 됩니다."
+      ],
       "You will lose all unsaved changes.": [
         "저장되지 않은 사항을 잃게 됩니다."
+      ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "결제를 인증하기 위해 곧 PayPal로 이동됩니다."
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "이 연락처 그룹의 최대 주소 개수에 도달했습니다:"
@@ -4513,6 +5014,9 @@
       ],
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
         "회원님의 계정에 적어도 하나의 연체된 결제가 있습니다. 회원님의 계정이 제한된 상태입니다. 지속적인 미지불이 이메일과 공유 링크를 차단시킬 수 있습니다. ${ payInvoiceLink }"
+      ],
+      "Your account will be updated once the payment is cleared.": [
+        "결제가 완료되면 계정이 업데이트될 것입니다."
       ],
       "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
         "현재 브라우저는 서비스 워커를 사용할 수 없어 대용량 파일 다운로드를 지원하지 않습니다. 대용량 파일을 다운로드하면 브라우저가 멈추거나 응답하지 않을 수 있습니다. ${ recommendedBrowser }의 최신 버전으로 다시 시도해 주세요."
@@ -4538,6 +5042,9 @@
       "Your login information will not be saved after the import is completed.": [
         "로그인 정보는 가져오기 작업이 끝나면 삭제됩니다."
       ],
+      "Your next billing date is ${ renewalTime }.": [
+        "다음 결제일은 ${ renewalTime } 입니다."
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "귀하의 전화번호는 이번 인증에만 사용돼요."
       ],
@@ -4556,9 +5063,19 @@
         "선택한 색상:"
       ]
     },
+    "Info for cash payment method": {
+      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
+        "현금으로 결제하는 방법을 알고 싶으시면 ${ email }으로 연락해 주세요."
+      ]
+    },
     "Info on errors": {
       "Click for details": [
         "자세한 내용을 보려면 클릭하세요"
+      ]
+    },
+    "Info subscription": {
+      "You can prevent expiry by reactivating the subscription": [
+        "구독을 다시 활성화하여 만료를 방지할 수 있습니다."
       ]
     },
     "Info: partial": {
@@ -4567,6 +5084,11 @@
       ],
       "${ selectedFoldersCount } label selected": [
         "${ selectedFoldersCount } 개 라벨 선택함"
+      ]
+    },
+    "Info; access rights for shared calendar": {
+      "View only": [
+        "보기 전용"
       ]
     },
     "Item": {
@@ -4621,6 +5143,9 @@
       ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } 사용자 이름"
+      ],
+      "${ n } month": [
+        "${ n }개월"
       ],
       "${ nbDay } day": [
         "${ nbDay }일"
@@ -4679,11 +5204,23 @@
       "Beta Access": [
         "베타 참여"
       ],
+      "Billing address": [
+        "청구지 주소"
+      ],
+      "Billing cycle": [
+        "결제 주기"
+      ],
       "Browser": [
         "브라우저"
       ],
       "Browser version": [
         "브라우저 버전"
+      ],
+      "BTC address": [
+        "BTC 주소"
+      ],
+      "BTC amount": [
+        "BTC 금액"
       ],
       "Calendar": [
         "캘린더"
@@ -4693,6 +5230,18 @@
       ],
       "Cancel download": [
         "다운로드 취소"
+      ],
+      "Card details": [
+        "카드 상세정보"
+      ],
+      "Card holder": [
+        "카드 소유자"
+      ],
+      "Card number": [
+        "카드 번호"
+      ],
+      "Cash": [
+        "현금"
       ],
       "Category": [
         "카테고리"
@@ -4723,6 +5272,15 @@
       ],
       "Copyright infringement": [
         "저작권 침해"
+      ],
+      "Could you please let us know which provider?": [
+        "어느 제공자인지 말해주실 수 있나요?"
+      ],
+      "Could you please specify which streaming service?": [
+        "어느 스트리밍 기기인지 구체적으로 말해주실 수 있으신가요?"
+      ],
+      "Could you please specify?": [
+        "구체적으로 말씀해 주시겠어요?"
       ],
       "Country": [
         "국가"
@@ -4756,6 +5314,9 @@
       ],
       "Device name": [
         "기기 이름"
+      ],
+      "Do you have any suggestions for our team?": [
+        "저희 팀에 질문이 있으신가요?"
       ],
       "Don't ask again": [
         "다시 묻지 않기"
@@ -4807,6 +5368,9 @@
       ],
       "Erase this link and remove everyone with access": [
         "이 링크를 지우고 모두의 접근권한을 제거합니다"
+      ],
+      "Expiration (${ patternExpiration })": [
+        "만료일 (${ patternExpiration })"
       ],
       "Expired": [
         "만료됨"
@@ -4925,6 +5489,9 @@
       "New password": [
         "새 비밀번호"
       ],
+      "New plan": [
+        "새 플랜"
+      ],
       "Note": [
         "메모"
       ],
@@ -4940,11 +5507,26 @@
       "Operating system version": [
         "운영체제 버전"
       ],
+      "Optional": [
+        "선택 사항"
+      ],
+      "Organization size": [
+        "조직 크기"
+      ],
       "Other": [
         "기타"
       ],
       "Password": [
         "암호"
+      ],
+      "Payer": [
+        "결제자"
+      ],
+      "Payment details": [
+        "결제 정보"
+      ],
+      "Payment method": [
+        "결제 수단"
       ],
       "PGP scheme": [
         "PGP 방식"
@@ -4967,6 +5549,9 @@
       "Postal code": [
         "우편번호"
       ],
+      "Proration": [
+        "할당"
+      ],
       "Protect with password": [
         "비밀번호로 보호"
       ],
@@ -4985,8 +5570,14 @@
       "Reveal password": [
         "비밀번호 표시"
       ],
+      "Security code (${ codeName })": [
+        "보안 코드 (${ codeName })"
+      ],
       "Select type of abuse": [
         "악용 유형 선택"
+      ],
+      "Select your plan": [
+        "플랜을 선택하세요."
       ],
       "Set expiration date": [
         "만료 시간 설정"
@@ -5015,11 +5606,17 @@
       "Spam": [
         "스팸"
       ],
+      "Start date": [
+        "시작일"
+      ],
       "Stolen data": [
         "데이터 유실됨"
       ],
       "Street address": [
         "도로명 주소"
+      ],
+      "Subscription options": [
+        "구독 옵션"
       ],
       "Sync with system": [
         "시스템과 동기화"
@@ -5063,6 +5660,9 @@
       "Upload your first file": [
         "첫 파일을 업로드하세요"
       ],
+      "VAT": [
+        "부가세"
+      ],
       "Verification code": [
         "인증 코드"
       ],
@@ -5071,6 +5671,9 @@
       ],
       "What happened?": [
         "무슨 일인가요?"
+      ],
+      "What is the main reason you are canceling?": [
+        "구독을 취소하는 가장 주된 이유가 무엇인가요?"
       ],
       "Wonderful": [
         "최고"
@@ -5093,6 +5696,11 @@
     "Label for contact group name": {
       "Name": [
         "이름"
+      ]
+    },
+    "Label, credit card": {
+      "ZIP code": [
+        "우편번호"
       ]
     },
     "Label/folder modal": {
@@ -5139,8 +5747,17 @@
       ]
     },
     "Link": {
+      "Add a gift code": [
+        "기프트 코드 추가"
+      ],
       "clearing your browser cache": [
         "브라우저 캐시를 삭제하면"
+      ],
+      "click here": [
+        "여기를 클릭"
+      ],
+      "How to pay with Bitcoin?": [
+        "Bitcoin으로 어떻게 결제하나요?"
       ],
       "Learn more": [
         "더 알아보기"
@@ -5272,6 +5889,9 @@
       ],
       "Limited-time offer, expires April 2 2024": [
         "2024년 04월 02일에 만료되는 기간 한정 특가입니다."
+      ],
+      "Your subscription will auto-renew on ${ renewTime } at ${ renewablePrice }, cancel anytime": [
+        "구독이 ${ renewTime }에 ${ renewablePrice }으로 자동 갱신되며, 언제든지 취소할 수 있습니다."
       ]
     },
     "mailtrial2024: Title": {
@@ -5516,9 +6136,49 @@
         "라벨 이름"
       ]
     },
+    "new_plans": {
+      "Highest VPN speed": [
+        "빠른 VPN 속도"
+      ],
+      "Keep your inbox organized with folders": [
+        "폴더로 조직된 받은 편지함 정리"
+      ],
+      "Medium VPN speed": [
+        "중간 VPN 속도"
+      ]
+    },
     "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName }(으)로 다운그래이드"
+      ],
       "Upgrade now": [
         "지금 업그레이드"
+      ]
+    },
+    "new_plans: action": {
+      "Continue to review": [
+        "미리보려면 계속하기"
+      ],
+      "Delete account": [
+        "계정 삭제"
+      ],
+      "Downgrade account": [
+        "계정 다운그레이드"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "무료로 ${ BRAND_NAME } 받기"
+      ],
+      "Get ${ planName }": [
+        "${ planName } 받기"
+      ],
+      "Keep ${ plan }": [
+        "${ plan }  유지"
+      ],
+      "Keep account": [
+        "계정 유지"
+      ],
+      "Switch plan": [
+        "플랜 변경"
       ]
     },
     "new_plans: feature": {
@@ -5528,23 +6188,230 @@
       "${ n } calendar per user": [
         "사용자 당 ${ n }개 캘린더"
       ],
+      "${ n } custom email domain": [
+        "사용자 지정 이메일 도메인 ${ n }개"
+      ],
+      "${ n } email address": [
+        "이메일 주소 ${ n }개"
+      ],
+      "${ n } email address per user": [
+        "사용자 당 ${ n }개 이메일 주소"
+      ],
+      "${ n } filter": [
+        "${ n } 필터"
+      ],
+      "${ n } folder": [
+        "${ n } 폴더"
+      ],
+      "${ n } folder and label": [
+        "${ n }개 폴더와 라벨"
+      ],
+      "${ n } hide-my-email alias": [
+        "${ n }개 hide-my-email 별칭"
+      ],
+      "${ n } label": [
+        "${ n } 라벨"
+      ],
+      "${ n } message per day": [
+        "하루 당 ${ n } 메시지"
+      ],
+      "${ n } vault": [
+        "${ n }개 금고"
+      ],
+      "${ n } VPN connection": [
+        "${ n } 개 VPN 연결"
+      ],
+      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
+        "${ n }개의 hide-my-email 별칭이 포함된 ${ PASS_APP_NAME }"
+      ],
+      "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
+        "무제한 hide-my-email 별칭이 포함된 ${ PASS_APP_NAME }"
+      ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "${ PROTON_SENTINEL_NAME } 프로그램"
+      ],
+      "${ size } attachment size": [
+        "첨부 파일 크기: ${ size }"
+      ],
+      "${ size } storage": [
+        "${ size } 저장공간"
+      ],
+      "${ size } storage per user": [
+        "사용자 당 ${ size } 스토리지"
+      ],
+      "1 user": [
+        "사용자 1명"
+      ],
+      "24/7 account management support": [
+        "24/7 계정 관리 지원"
+      ],
+      "99.95% SLA": [
+        "99.95% SLA"
+      ],
+      "Ad-blocker and malware protection": [
+        "광고 차단기 및 멀웨어 보호"
+      ],
+      "Admin console": [
+        "관리자 콘솔"
+      ],
+      "Administration Panel": [
+        "관리 패널"
+      ],
+      "Advanced sharing security": [
+        "향상된 공유 보안"
+      ],
+      "Auto-delete Spam and Trash": [
+        "스팸과 휴지통을 자동으로 삭제합니다"
+      ],
       "Auto-delete spam and trashed messages": [
         "스팸 및 휴지통의 메시지를 자동 삭제"
+      ],
+      "Auto-reply": [
+        "자동 응답"
+      ],
+      "Autofill credit cards (coming soon)": [
+        "신용카드 자동 완성 (곧 찾아 옵니다)"
+      ],
+      "Automatic email forwarding": [
+        "자동 이메일 전달"
+      ],
+      "Available on all platforms": [
+        "모든 플랫폼에서 지원"
       ],
       "Calendar sharing": [
         "일정 공유"
       ],
+      "Catch-all": [
+        "Catch-all"
+      ],
+      "Centralized billing": [
+        "중앙집중화된 결제"
+      ],
+      "Contact groups": [
+        "연락처 그룹"
+      ],
+      "Contact groups management": [
+        "연락처 그룹 관리"
+      ],
+      "Custom domains for email aliases": [
+        "이메일 별명을 위한 지정 도메인"
+      ],
       "Custom email domains": [
         "사용자 지정 이메일 도메인"
+      ],
+      "Custom fields": [
+        "사용자 지정 필드"
       ],
       "Custom snooze time": [
         "사용자 지정 방해 금지 시간"
       ],
+      "Data breach monitoring": [
+        "데이터 유출 모니터링"
+      ],
+      "Data breach monitoring (coming soon)": [
+        "데이터 유출 모니터링 (출시 예정)"
+      ],
+      "Desktop app": [
+        "데스크톱 앱"
+      ],
+      "DNS leak prevention": [
+        "DNS 유출 방지"
+      ],
+      "Document editors (docs, sheets, slides)": [
+        "문서 편집기 (문서, 스프레드시트, 슬라이드 쇼)"
+      ],
+      "Double hop": [
+        "Double hop"
+      ],
+      "Easy Switch import assistant": [
+        "Easy Switch import assistant"
+      ],
+      "Email client support (via IMAP/SMTP)": [
+        "이메일 클라이언트 지원 (IMAP/SMTP)"
+      ],
+      "Enables HIPAA compliance": [
+        "HIPAA 자격 활성화"
+      ],
+      "Encrypted contact details": [
+        "암호화된 연락처 세부정보"
+      ],
+      "Encrypted VPN servers": [
+        "암호화된 VPN 서버"
+      ],
       "End-to-end encryption": [
         "종단간 암호화"
       ],
+      "Fast P2P/BitTorrent downloads": [
+        "빠른 P2P/비트 토렌트 다운로드"
+      ],
+      "Free features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and ${ DRIVE_SHORT_APP_NAME }": [
+        "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, 그리고 ${ DRIVE_SHORT_APP_NAME }의 무료 기능들"
+      ],
+      "Free VPN on a single device": [
+        "하나의 디바이스에서 무료 VPN"
+      ],
+      "Fully refundable for 30 days": [
+        "30일 이내 환불 가능"
+      ],
+      "GDPR data processing agreement": [
+        "GDPR 데이터 처리 동의서"
+      ],
+      "Group management (coming soon)": [
+        "조직 관리 (출시 예정)"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email 별칭"
+      ],
+      "High-speed streaming": [
+        "고속 스트리밍"
+      ],
+      "High-speed VPN on ${ n } device": [
+        "${ n } 기기에서 고속 VPN"
+      ],
+      "HTML signatures": [
+        "HTML 서명"
+      ],
+      "Integrated 2FA authenticator": [
+        "통합된 2FA 인증기"
+      ],
+      "Kill switch/always-on VPN": [
+        "킬 스위치/상시 VPN"
+      ],
+      "Limited support": [
+        "제한된 지원"
+      ],
+      "Multiple admin roles": [
+        "다중 관리자 역할"
+      ],
+      "Organize items with multiple vaults": [
+        "다중 금고와 항목 정리"
+      ],
+      "Password-protected Emails": [
+        "비밀번호로 보호된 이메일"
+      ],
+      "Phone support (6+ users)": [
+        "휴대 전화 지원 (6명 이상 사용자)"
+      ],
+      "Priority email support": [
+        "이메일 우선 지원"
+      ],
+      "Priority support": [
+        "우선 지원"
+      ],
+      "Priority support & live chat": [
+        "우선 지원 및 라이브 채팅"
+      ],
+      "Protect ${ n } device at a time": [
+        "동시에 최대 ${ n }개까지 장치 보호"
+      ],
+      "Require 2FA for organization": [
+        "조직에 2FA (이중 인증) 요구"
+      ],
+      "Router support": [
+        "라우터 지원"
+      ],
+      "Schedule and snooze emails for any time": [
+        "언제든지 이메일을 예약하거나 다시 알림받기"
       ],
       "Schedule messages at any time": [
         "언제든지 메시지를 예약하세요"
@@ -5552,17 +6419,98 @@
       "Search message content": [
         "메시지 내용 검색"
       ],
+      "Secure Core servers": [
+        "Secure Core 서버"
+      ],
       "Send & receive invitations": [
         "전송 및 받은 초대"
       ],
+      "Share files and folders via link": [
+        "링크를 통해 파일 및 폴더를 공유"
+      ],
+      "Sign in as user": [
+        "사용자로 로그인"
+      ],
+      "SMTP submission": [
+        "SMTP 세부 사항"
+      ],
+      "SMTP submission for select organizations": [
+        "선택한 조직의 SMTP 세부 사항"
+      ],
+      "Split tunneling (Android and Windows)": [
+        "분할 터널링 (Android 및 Windows)"
+      ],
+      "SSO integration (coming soon)": [
+        "SSO 통합 (출시 예정)"
+      ],
+      "Strict no-logs policy": [
+        "엄격한 무로그 정책"
+      ],
+      "Team management": [
+        "팀 관리"
+      ],
+      "Tor over VPN": [
+        "VPN을 통한 Tor"
+      ],
+      "Two-factor authentication": [
+        "2단계 인증"
+      ],
+      "Unlimited devices": [
+        "기기 개수 무제한"
+      ],
+      "Unlimited filters": [
+        "무제한 필터"
+      ],
+      "Unlimited folders": [
+        "무제한 폴더"
+      ],
       "Unlimited folders, labels, and filters": [
         "무제한 폴더, 라벨, 그리고 필터"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "무제한 hide-my-email 별칭"
+      ],
+      "Unlimited labels": [
+        "무제한 라벨"
+      ],
+      "Unlimited logins and notes": [
+        "무제한 로그인 및 메모"
+      ],
+      "Unlimited messages per day": [
+        "하루에 무제한 메시지"
+      ],
+      "Unlimited shared vaults with access permissions": [
+        "권한 접근이 포함된 무제한 공유 가능 금고"
+      ],
+      "Unlimited vault sharing": [
+        "무제한 금고 공유"
+      ],
+      "Unlimited vaults": [
+        "무제한 금고"
+      ],
+      "Unlimited volume/bandwidth": [
+        "무제한 볼륨/대역폭"
+      ],
+      "Up to ${ n } user": [
+        "사용자 최대 ${ n }명"
+      ],
+      "Up to ${ totalStorageSize } storage": [
+        "최대 ${ totalStorageSize } 스토리지"
       ],
       "Up to 15 email addresses": [
         "최대 15개의 이메일 주소"
       ],
       "Up to 3 TB of storage": [
         "최대 3 TB 스토리지"
+      ],
+      "User credential management": [
+        "사용자 자격 증명 관리"
+      ],
+      "User session management": [
+        "사용자 세션 관리"
+      ],
+      "Vault sharing (up to ${ n } person)": [
+        "금고 공유 (최대 ${ n }명)"
       ]
     },
     "new_plans: feature info": {
@@ -5582,6 +6530,91 @@
         "사용자 지정 이메일 도메인 주소를 사용하세요. 예시, you@yourname.com"
       ]
     },
+    "new_plans: heading": {
+      "Support": [
+        "지원"
+      ],
+      "Team management": [
+        "팀 관리"
+      ]
+    },
+    "new_plans: info": {
+      "${ brand } ending in ${ last4 }": [
+        "${ last4 }(으)로 끝나는 ${ brand }"
+      ],
+      "Advanced network security and access management with dedicated secure Gateways": [
+        "전용 보안 게이트웨이를 사용한 고급 네트워크 보안 및 접속 관리"
+      ],
+      "Advanced protection for teams that goes beyond industry standards.": [
+        "업계 표준을 뛰어넘는 팀을 위한 고급 보호."
+      ],
+      "All ${ BRAND_NAME } apps and their premium features": [
+        "모든 ${ BRAND_NAME } 앱들과 해당 앱들의 프리미엄 기능들"
+      ],
+      "Applicable credits, proration, and coupons are applied in the next step": [
+        "적용 가능한 크레딧, 비례 배분 및 쿠폰은 다음 단계에서 적용됩니다."
+      ],
+      "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
+        "모든 ${ BRAND_NAME } 서비스를 결합한 포괄적인 개인 정보 보호 및 보안."
+      ],
+      "Early access to new apps and features": [
+        "새 앱 및 기능을 위해 얼리 엑세스 시작"
+      ],
+      "Essential protection and secure collaboration for unlimited users.": [
+        "사용자 제한 없이 필수적인 보호와 안전한 협업을."
+      ],
+      "For next-level password management and identity protection.": [
+        "한 차원 높은 비밀번호 관리 및 신원 보호를 위한."
+      ],
+      "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
+        "만약 계정을 삭제한다면, ${ visionary } 플랜 혜택을 모두 잃게되며, 계정을 새로 생성하여도 사용할 수 없습니다."
+      ],
+      "If you downgrade your account, you lose all ${ visionary } plan benefits and it won’t be available if you try to subscribe again.": [
+        "만약 계정을 다운그레이드 한다면, ${ visionary } 플랜의 혜택을 모두 잃게 되며, 다시 구독하여도 사용할 수 없습니다."
+      ],
+      "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
+        "만약 다른 플랜으로 변경하면, 모든 ${ visionary } 플랜 혜택을 잃게 되며, 다시 ${ visionary } 로 변경할 수 없습니다."
+      ],
+      "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
+        "${ visionary } 플랜은 특별한 기능과 혜택이 있는 기존 ${ BRAND_NAME } 사용자를 위한 플랜입니다. 따라서, 새로운 사용자가 구독할 수 업습니다."
+      ],
+      "Popular": [
+        "인기"
+      ],
+      "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
+        "모든 ${ BRAND_NAME } 프리미엄 서비스가 포함된 비즈니스를 위한 개인정보 보호 및 보안 스위트입니다."
+      ],
+      "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
+        "${ BRAND_NAME } 서비스들로 가족의 개인정보를 보호하세요."
+      ],
+      "Safely access internet from anywhere with essential network monitoring": [
+        "어디에서나 기본 네트워크 모니터링으로 안전하게 인터넷에 접속하세요."
+      ],
+      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
+        "쉽고 안전하게 저장, 동기화 및 공유하기 위한 안전한 클라우드 스토리지."
+      ],
+      "Secure email and calendar for professionals and businesses.": [
+        "개인 및 비즈니스를 위한 보안 이메일 및 캘린더."
+      ],
+      "Secure email with advanced features for your everyday communications.": [
+        "일상적인 커뮤니케이션을 위한 고급 기능을 갖춘 안전한 이메일"
+      ],
+      "Tailor-made solutions for larger organizations with specific security needs": [
+        "특정 보안 요구 사항을 갖춘 대규모 조직을 위한 맞춤형 솔루션"
+      ],
+      "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
+        "인터넷에 안전하고 제한 없이 고속으로 접속할 수 있는 전용 VPN 솔루션입니다."
+      ],
+      "The no-cost starter account designed to empower everyone with privacy by default.": [
+        "모든 사람에게 개인 정보를 제공하도록 설계된 무료 스타터 계정."
+      ],
+      "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
+        "현재 플랜을 프로모션이 적용된 가격으로 즐기고 계십니다. 만약 계정을 삭제하신다면, 프로모션이 적용된 가격을 잃게되어 만일 새로운 계정을 추가한다고 하더라도 다시 누리실 수 없습니다."
+      ],
+      "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
+        "현재 플랜을 프로모션이 적용된 가격으로 즐기고 계십니다. 만약 계정을 다운그레이드 하신다면, 프로모션이 적용된 가격을 잃게되어 만일 다시 구독을 시도하더라도 다시 누리실 수 없습니다."
+      ]
+    },
     "new_plans: label": {
       "Tell us about your experience. (Optional)": [
         "당신의 경험에 대해 알려주세요. (선택사항)"
@@ -5592,23 +6625,274 @@
         "피드백"
       ]
     },
+    "new_plans: title": {
+      "Delete account?": [
+        "계정을 삭제할까요?"
+      ],
+      "Downgrade account?": [
+        "계정을 다운그레이드할까요?"
+      ],
+      "Review subscription and pay": [
+        "구독 및 결제 검토"
+      ],
+      "Switch plans?": [
+        "요금제를 변경할까요?"
+      ]
+    },
     "new_plans: tooltip": {
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: 커스텀 캘린더, 캘린더 공유 등의 기능을 포함하는 종단 간 암호화로 보호되는 캘린더를 사용해 보세요."
       ],
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: 버전 기록, 암호화 파일 공유 등을 포함한 암호화된 클라우드 저장공간으로 파일을 보호하세요."
+      ],
+      "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
+        "${ MAIL_APP_NAME }: 사용자 지정 이메일 도메인, 15개 이메일 주소, 무제한 hide-my-email 별칭 등 기능을 포함하는 이메일로 보호하세요."
+      ],
+      "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
+        "${ VPN_APP_NAME }: ${ serversAndCountries }, 빠른 VPN 속도, 전세계적 스트리밍 서비스 접근, 멀웨어 및 광고 제저, 빠른 BitTorrent 다운로드 등을 지원하는 VPN으로 비공개로 차단된 컨텐츠에 접근하세요."
+      ],
+      "Access ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME } from the convenience of your desktop": [
+        "데스크탑에서 편리하게 접근하는 ${ MAIL_APP_NAME }과 ${ CALENDAR_APP_NAME }"
+      ],
+      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
+        "어디서든지 스트리밍 서비스에서 콘텐츠를 접근하세요, Netflix, Disney+, Prime Video가 포함됩니다"
+      ],
+      "Addresses have full sending and receiving capability. A user can have multiple addresses assigned to them; however, a single address cannot be assigned to multiple users.": [
+        "주소가 최대 수발신 허용량을 가지고 있습니다. 사용자가 다중 주소를 할당할 수는 있지만, 단일 주소는 다중 사용자에게 할당이 불가능합니다."
+      ],
+      "Allows you to access more than one network at the same time, e.g., stream a film from another country while still getting local search results": [
+        "동시에 하나 이상의 네트워크에 접근할 수 있도록 허용합니다. 예시, 지역 검색 결과를 얻는 동안 다른 나라의 영화를 스트리밍하세요"
+      ],
+      "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
+        "수신 메시지에 대한 자동 응답을 설정할 수 있습니다."
+      ],
+      "Automatically clear out messages older than 30 days from Trash and Spam": [
+        "쓰레기통과 스팸메일함의 30일이 지난 메시지를 자동으로 비웁니다."
+      ],
+      "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
+        "${ MAIL_APP_NAME } 계정으로 전송된 이메일을 다른 이메일 주소로 자동으로 전달하세요."
+      ],
+      "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
+        "대량 홍보나 자동화된 이메일 발송은 현재 지원되지 않습니다. 해당 용도로는 전용 이메일 서비스 제공사업자를 사용하는 것을 권장합니다."
+      ],
+      "Choose custom times to be reminded about an email or for your message to arrive": [
+        "사용자 지정 시간으로 이메일이나 메시지가 도착했음을 안내받을 수 있습니다."
+      ],
+      "Control access to your shared files by adding password protection and link expiration dates": [
+        "비밀번호 보호 및 링크 만료일을 추가하여 공유 파일에 대한 접근을 제어하십시오."
+      ],
+      "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
+        "쇼핑 계정의 경우 JohnShopper@${ domain }, 뉴스 구독의 경우 JohnNews@${ domain } 와 같이 온라인 신원에 대한 다중 이메일 주소를 만들어 보세요"
+      ],
       "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
         "최대 ${ n }개 캘린더를 생성하거나 친구, 가족, 동료 및 조직에서 생성하세요."
+      ],
+      "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
+        "가족 구성원에게 할당할 수 있는 최대 ${ n }개의 이메일 주소/별명을 생성하세요. 이를 온라인 신원으로 사용하세요. 예를 들면, 쇼핑 계정에는 JohnShopper@${ domain }을 사용할 수 있습니다."
+      ],
+      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
+        "전용 IP 주소가 있는 전용 서버를 개인 게이트웨이에 추가하여 미세 조정된 접근 제어가 가능합니다"
+      ],
+      "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
+        "여러 서버를 통해 인터넷 트래픽을 전달하여 VPN 개인 정보에 대한 위협으로부터 방어합니다"
+      ],
+      "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers.": [
+        "여러 서버를 통해 인터넷 트래픽을 전달하여 VPN 개인 정보에 대한 위협으로부터 방어합니다."
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "캘린더를 가족, 친구 및 동료들에게 쉽게 공유하세요"
       ],
+      "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
+        "이메일 주소가 존재하지 않거나, 더 이상 존재하지 않거나, 오타가 있더라도 도메인으로 전송된 모든 이메일을 받을 수 있습니다."
+      ],
+      "Force sign-out of user sessions when user credentials are believed to be compromised": [
+        "계정이 노출되었다고 판단되면 사용자 세션을 강제로 로그아웃 해주세요."
+      ],
+      "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
+        "IMAP 지원은 ${ MAIL_APP_NAME } Bridge를 통한 데스크톱 앱(예: Outlook, Apple Mail, Thunderbird)의 사용에만 한합니다. 클라우드 기반의 IMAP 통합은 현재 지원되지 않습니다."
+      ],
       "Keep your plans private to you and your family with an encrypted calendar": [
         "암호화된 캘린더로 당신과 당신의 가족의 사적인 계획을 지키세요"
+      ],
+      "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server.": [
+        "VPN 서버에서 예기치 않게 연결이 끊어졌을 때 모든 네트워크 연결을 차단하여 보호합니다."
+      ],
+      "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
+        "라벨은 메시지를 찾기 쉽게하거나 필터를 적용하기 위해 추가 할 수 있는 간단한 태그입니다"
+      ],
+      "Like a folder, a vault is a convenient way to organize your items": [
+        "금고는 폴더처럼 항목들을 쉽게 분류할 수 있습니다"
+      ],
+      "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
+        "공용 인터넷에서 회사 자원을 잠그고 개인 게이트웨이를 통해서만 접근할 수 있도록 하세요."
+      ],
+      "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
+        "요금제 사용자 지정을 포함하여 구독을 관리하세요. 신용 카드, PayPal, 암호 화폐 및 송금을 지원합니다."
+      ],
+      "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
+        "영업일 기준, 요청 24시간 내에 ${ BRAND_NAME } 고객 지원팀으로부터 지원을 받습니다"
+      ],
+      "One VPN connection allows one device to connect to ${ VPN_APP_NAME } at any given time. For instance, to connect a phone and a laptop to ${ VPN_APP_NAME } at the same time, you need two VPN connections.": [
+        "하나의 VPN 연결은 한 장치가 ${ VPN_APP_NAME } VPN에 동시에 연결될 수 있도록 합니다. 예를 들어, 전화와 노트북을 동시에 ${ VPN_APP_NAME } VPN에 연결하기 위해서는 두 개의 VPN 연결이 필요합니다."
+      ],
+      "Option to view non-private user inboxes as the user would, including full message and contact details": [
+        "비공개가 아닌 사용자의 수신함을 사용자가 볼 수 있는 옵션으로, 전체 메시지와 연락처 세부사항을 포함하여 볼 수 있습니다"
+      ],
+      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
+        "관리자가 사용자를 추가 및 제거하고, 저장소를 할당하고, 도메인을 구성하고, 다른 작업을 수행할 수 있는 조직 관리 도구"
+      ],
+      "Our robust infrastructure ensures you will be able to access your account when you need it": [
+        "우리의 강력한 인프라는 당신이 필요할 때 당신의 계정에 접근할 수 있도록 보장합니다."
+      ],
+      "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
+        "자사 서버버의 하드 디스크는 여러 암호 계층으로 완전히 암호화되어 하드웨어가 손상되더라도 데이터가 보호됩니다"
+      ],
+      "Password management and identity protection": [
+        "비밀번호 관리 및 신원 보호"
+      ],
+      "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
+        "로고, 이미지, 소셜 미디어 아이콘, 연락처 링크 등으로 이메일 서명을 개인화하세요."
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
+        "전화 지원은 6명 이상의 사용자가 있는 고객을 위해 유럽 업무 시간 동안 ${ BRAND_NAME } 고객 성공 팀에서 이용할 수 있습니다."
+      ],
+      "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
+        "${ BRAND_NAME } 또는 제3자가 메시지에 접근하는 것을 방지합니다. 메시지를 읽을 수 있는 유일한 사람은 당신과 이메일을 받은 수신자 뿐이죠."
+      ],
+      "Protect every device connected to your WiFi network. It’s also useful if you have devices that do not support VPN settings directly.": [
+        "WiFi 네트워크에 연결된 모든 기기를 보호하세요. 또한 이는 VPN 설정을 직접적으로 지원하지 않는 기기에도 도움이 됩니다."
+      ],
+      "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
+        "사용자의 가족을 유해 사이트로 부터 차단하고 사용자가 선호하는 콘텐츠를 고속 VPN 서버들로 스트리밍하세요."
+      ],
+      "Provides the highest level of account security protection and specialist support": [
+        "한 차원 높은 계정 보안 보호와 전문적 지원을 제공합니다."
+      ],
+      "Quickly set up out-of-office messages": [
+        "사무실 밖에서 빠른 메시지 설정"
+      ],
+      "Quickly transfer your emails, calendars or contacts from any provider": [
+        "이메일, 캘린더 및 연락처를 모든 서비스에서 간편히 가져오세요."
+      ],
+      "Requires a code sent to a mobile phone to sign in. This ensures even if a password is compromised, the account stays secure.": [
+        "로그인 하려면 휴대 전화로 코드 전송이 필요합니다. 이는 비밀번호를 잊어버려도 계정을 안전하게 유지하는데 도움을 줍니다."
+      ],
+      "Reset user passwords and reset two-factor authentication on users": [
+        "사용자 암호 및 2단계 인증 재설정"
+      ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "한번의 클릭으로 Tor 네트워크로 인터넷 트래픽을 라우팅하세요"
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "자동 동기화, 암호화 파일 공유 등을 포함한 암호화된 클라우드 저장공간으로 파일을 보호하세요."
+      ],
+      "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
+        "전화번호, 주소, 생일과 개인 노트와 같은 연락처 상세 정보를 안전하게 저장하세요. 제로 엑세스 암호화는 ${ BRAND_NAME } 또한 접근할 수 없음을 보장합니다."
+      ],
+      "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
+        "필요한 만큼 많은 연락처 그룹을 만들어 큰 그룹에 이메일을 빠르고 쉽게 전송하세요. (그룹당 최대 100개의 연락처)"
+      ],
+      "Set up filters to automatically reply to, sort, and/or label your emails": [
+        "이메일에 자동으로 회신, 정렬 및/또는 라벨을 부착하도록 필터를 설정"
+      ],
+      "Share your files or folders with anyone by using secure, shareable links": [
+        "안전하고 공유 가능한 링크를 사용하여 파일이나 폴더를 누구와도 공유하세요"
+      ],
+      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }.": [
+        "SMTP로 서드 파티 또는 디바이스에서 ${ MAIL_APP_NAME }을 통해 이메일 전송을 할 수 있습니다."
+      ],
+      "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
+        "특별히 설계된 NetShield는 광고, 추적기 및 맬웨어를 차단하여 장치를 보호하고 브라우징 속도를 높입니다."
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } 및 ${ PASS_APP_NAME }에 스토리지 공간이 공유됩니다."
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
+        "스토리지 공간이 ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } 그리고 ${ DRIVE_APP_NAME }에 공유됩니다. 관리자는 조직의 사용자들에게 각각의 다른 스토리지 공간을 할당할 수 있습니다"
+      ],
+      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } 및 ${ PASS_APP_NAME }에 사용자 간 스토리지 공간이 공유됩니다."
+      ],
+      "Support for file-sharing protocols like BitTorrent": [
+        "BitTorrent와 같은 파일 공유 프로토콜 지원"
+      ],
+      "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
+        "온라인 신원을 보호하고 편지함에 있는 메일을 제어할 수 있는 독특한 하위 도메인 이메일 주소입니다. ${ BRAND_NAME }의 SimpleLogin에서 제공합니다."
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        "사용자 지정 이메일 도메인 주소를 사용하세요. 예시, you@yourname.com"
+      ],
+      "We keep no session usage logs of what you do online, and we do not log metadata that can compromise your privacy": [
+        "우리는 온라인 상에서 당신이 하는 것에 대한 세션 사용 로그를 보관하지 않으며, 당신의 개인정보를 침해할 수 있는 메타데이터 또한 로깅하지 않습니다."
+      ],
+      "We’re committed to helping customers subject to HIPAA/HITECH regulations safeguard protected health information (PHI). Signed BAAs are available for all ${ BRAND_NAME } for Business customers.": [
+        "HIPAA/HITECH 규정이 적용되는 고객이 보호된 건강 정보(PHI)를 보호할 수 있도록 돕기 위해 최선을 다하고 있습니다. 서명된 BAA는 비즈니스 고객을 위한 모든 ${ BRAND_NAME }에서 사용할 수 있습니다."
+      ],
+      "When connected to our VPN, your DNS queries through our encrypted VPN tunnel, adding to your online privacy and security": [
+        "VPN에 연결되면, DNS가 암호화된 VPN 터널을 통해 쿼리하여 온라인 개인 정보 보호 및 보안에 추가됩니다."
+      ],
+      "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME_TWO } users requires setting a password prior to sending.": [
+        "다른 ${ MAIL_APP_NAME } 사용자에게 이메일을 보낼 때, 암호화는 자동적으로 진행됩니다.${ MAIL_APP_NAME_TWO } 을 사용하지 않는 사용자에게 보내려면 보내기 전에 비밀번호를 설정해야 합니다."
+      ],
+      "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
+        "한 명 이상의 관리자를 생성할 수 있습니다. 모든 관리자들은 사용자들을 추가 및 관리할 수 있으나 오직 기본 관리자만이 청구를 관리할 수 있습니다."
       ]
     },
     "new_plans: Upsell attribute": {
+      "24/7 support": [
+        "연중무휴 고객지원"
+      ],
+      "Access advanced VPN features": [
+        "향상된 VPN 기능 접근"
+      ],
+      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
+        "15개의 이메일 주소로 더 많은 개인화를 추가하고 3개의 커스텀 이메일 도메인을 지원합니다"
+      ],
+      "AES 256-bit VPN encryption": [
+        "256비트 AES VPN 암호화"
+      ],
+      "Auto-connect": [
+        "자동 연결"
+      ],
+      "Boost your storage space to ${ bundleStorage } per user": [
+        "사용자 당 ${ bundleStorage }으로 저장 공간을 부스트 하세요."
+      ],
+      "Boost your storage space to ${ bundleStorage } total": [
+        "최종 ${ bundleStorage }으로 저장 공간을 부스트 하세요"
+      ],
+      "Browser extension": [
+        "브라우저 확장 프로그램"
+      ],
+      "Censorship circumvention": [
+        "검열 우회"
+      ],
+      "Central control panel": [
+        "중앙 관리 패널"
+      ],
+      "Cover more ground with support for 10 custom email domains": [
+        "지원되는 10개의 커스텀 이메일 도메인으로 더 많은 영역을 커버하세요"
+      ],
       "Create up to ${ n } calendar": [
         "최대 ${ n }개 캘린더 생성"
+      ],
+      "Dedicated Account manager": [
+        "전용 계정 관리자"
+      ],
+      "Dedicated server locations in ${ numberOfCountries }+ countries": [
+        "${ numberOfCountries }개 이상 국가에서 지원하는 전용 서버 위치"
+      ],
+      "Dedicated server locations in North America and Europe": [
+        "북미 및 유럽에서 지원하는 전용 서버 위치"
+      ],
+      "Multi-platform support": [
+        "멀티 플랫품 지원"
+      ],
+      "Private gateways": [
+        "비공개 게이트웨이"
+      ],
+      "Require 2FA": [
+        "2FA 필요"
       ]
     },
     "Notification": {
@@ -5909,9 +7193,49 @@
         "새 조직 키를 생성하기 전에 모든 계정을 민영화해야합니다"
       ]
     },
+    "Payment method option": {
+      "Credit/debit card": [
+        "신용/체크카드"
+      ],
+      "New credit/debit card": [
+        "신용/체크카드 추가"
+      ]
+    },
     "Payments": {
       "Billing Country": [
         "청구 국가 "
+      ],
+      "Card number": [
+        "카드 번호"
+      ],
+      "CVC": [
+        "CVC"
+      ],
+      "MM/YY": [
+        "MM/YY (월/년)"
+      ],
+      "Timeout exceeded": [
+        "응답 시간 초과"
+      ]
+    },
+    "Payments.Error": {
+      "Invalid card number": [
+        "유효하지 않은 카드 번호"
+      ],
+      "Invalid expiration date": [
+        "올바르지 않은 만료 기한"
+      ],
+      "Invalid security code": [
+        "유효하지 않은 보안 코드"
+      ],
+      "Something went wrong. Please try again later.": [
+        "문제가 발생했습니다. 나중에 다시 시도하세요."
+      ],
+      "We are unable to authenticate your payment method. Please choose a different payment method or try again.": [
+        "사용자의 결제 방법을 인증하지 못했습니다. 타 결제 수단을 선택하거나 다시 시도하십시오."
+      ],
+      "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
+        "사용자의 카드가 거절되었습니다. 다른 카드로 시도하거나 은행사에 문의해 주세요."
       ]
     },
     "PGP key encryption warning": {
@@ -5966,11 +7290,17 @@
       "Enter your email address": [
         "당신의 이메일 주소를 입력해주세요"
       ],
+      "Feedback": [
+        "의견"
+      ],
       "Filter groups": [
         "필터 그룹"
       ],
       "First name": [
         "이름"
+      ],
+      "Gift code": [
+        "기프트 코드"
       ],
       "Group name": [
         "그룹 이름"
@@ -6008,6 +7338,9 @@
       "Select": [
         "선택"
       ],
+      "Select a reason": [
+        "사유 선택"
+      ],
       "Select state": [
         "시・도 선택"
       ],
@@ -6021,6 +7354,33 @@
     "Placeholder for contact group name": {
       "Name": [
         "이름"
+      ]
+    },
+    "plan customizer, ips": {
+      "please ${ contactHref } our Sales team.": [
+        "이러한 경우 지원 팀에 ${ contactHref }하십시오."
+      ],
+      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
+        "플랜이 포함되는 IP 수를 선택하세요. 각 추가 IP 가격은 ${ price } 입니다."
+      ],
+      "Should you need more than ${ maxIPs } IP, ": [
+        "${ maxIPs } IP 이상이여야 합니다, "
+      ]
+    },
+    "plan customizer, users": {
+      "contact": [
+        "연락"
+      ],
+      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
+        "플랜이 포함되는 사용자의 수를 선택하세요. 각 추가 사용자의 가격은 ${ price } 입니다."
+      ],
+      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
+        "${ maxUsers } 이상의 사용자 계정이 필요하시다면, ${ contact } 저희 세일즈팀에 문의해 주세요."
+      ]
+    },
+    "Price": {
+      "Free": [
+        "무료"
       ]
     },
     "Progress bar description": {
@@ -6324,6 +7684,11 @@
         "비밀번호 재설정 없이 로그아웃 합니까?"
       ]
     },
+    "Shared calendar; Info about calendar owner": {
+      "Shared by ${ ownerName }": [
+        "${ ownerName }님이 공유함"
+      ]
+    },
     "Signing preference for emails": {
       "Don't sign": [
         "서명 안함"
@@ -6540,6 +7905,14 @@
         "이제 데이터를 안전하게 지키면서 쉽게 드라이브 파일을 검색할 수 있습니다."
       ]
     },
+    "State": {
+      "Cancelling your subscription, please wait": [
+        "구독을 취소하고 있습니다, 잠시만 기다려주세요"
+      ],
+      "Downgrading your account, please wait": [
+        "계정은 다운그레이드 하는 중이니 기다려 주세요"
+      ]
+    },
     "Storage": {
       "Get more storage": [
         "더 많은 스토리지 얻기"
@@ -6554,6 +7927,22 @@
         "내 현재 스토리지:"
       ]
     },
+    "storage_split: action": {
+      "Keep ${ currentPlanName }": [
+        "${ currentPlanName }  유지"
+      ]
+    },
+    "storage_split: feature": {
+      "Storage for data generated by ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME } 및 ${ PASS_SHORT_APP_NAME } ${ BRAND_NAME }에 의해 생성된 데이터를 위한 스토리지"
+      ],
+      "Up to ${ totalStorageSize } Drive storage": [
+        "최대 ${ totalStorageSize } 드라이브 저장 공간"
+      ],
+      "Up to ${ totalStorageSize } Mail storage": [
+        "최대 ${ totalStorageSize } 메일 저장 공간"
+      ]
+    },
     "storage_split: info": {
       "${ app } storage": [
         "${ app } 저장공간"
@@ -6561,8 +7950,14 @@
       "${ storage } ${ percentage }% full": [
         "${ storage } ${ percentage }% 사용됨"
       ],
+      "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
+        "다운그레이드시 다음 혜택을 잃게됩니다. 정말 계속하시겠습니까?"
+      ],
       "contact your administrator": [
         "관리자로 연락하기"
+      ],
+      "For all ${ BRAND_NAME } services": [
+        "모든 ${ BRAND_NAME } 서비스에서 사용"
       ],
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "파일을 업로드하고 동기화하려면 저장 공간을 비우거나 저장 공간 확보를 위해 업그레이드 하세요."
@@ -6578,6 +7973,12 @@
       ],
       "upgrade for more storage": [
         "추가 저장 공간을 위해 업그레이드 하세요."
+      ],
+      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
+        "${ BRAND_NAME } 계정에 남은 시간에 대해 크레딧을 추가해 드립니다."
+      ],
+      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
+        "**${ currentPlanName }** 플랜에서 **${ daysRemaining }**일이 남아있습니다."
       ],
       "Your ${ appStorage } is almost full": [
         "사용자의 ${ appStorage }이 거의 찼습니다."
@@ -6599,6 +8000,125 @@
       ],
       "Your storage is full. ${ cta }.": [
         "사용자의 스토리지가 가득 찼습니다. ${ cta }"
+      ],
+      "You’ll lose access to ${ gb } storage and priority support.": [
+        "우선 지원과 ${ gb } 스토리지를 잃게 됩니다."
+      ],
+      "You’ll lose access to additional storage, email addresses, aliases, calendars, as well as priority support.": [
+        "우선 지원과 추가 저장 공간, 이메일 주소, 별명, 캘린더를 잃게 됩니다."
+      ],
+      "You’ll lose access to the highest VPN speed, protection for 10 devices, high-speed streaming, ad-blocker and malware protection, as well as priority support.": [
+        "우선 지원과 고속 VPN 속도, 10개 디바이스 보호, 고속 스트리밍, 멀웨어 보호 및 광고 차단를 잃게 됩니다."
+      ],
+      "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
+        "우선 지원과 무제한 로그인 및 노트, 무제한 hide-my-email 별칭, 20개 금고를 잃게 됩니다."
+      ]
+    },
+    "Subscription": {
+      "Billed every 2 years": [
+        "2년마다 청구"
+      ],
+      "Billed for 15 months": [
+        "15개월 마다 결제됨"
+      ],
+      "Billed for 18 months": [
+        "18개월 마다 청구됨"
+      ],
+      "Billed for 3 months": [
+        "3개월 마다 청구됨"
+      ],
+      "Billed for 30 months": [
+        "30개월 마다 청구됨"
+      ],
+      "Billed monthly": [
+        "매달 청구"
+      ],
+      "Billed yearly": [
+        "매년 청구"
+      ]
+    },
+    "Subscription attribute": {
+      "${ n } free VPN connection per user": [
+        "사용자 당 ${ n }개 무료 VPN 연결"
+      ],
+      "${ n } high-speed VPN connection": [
+        " 빠른 속도의 VPN 연결 ${ n }대"
+      ],
+      "${ n } high-speed VPN connection per user": [
+        "사용자 당 ${ n }개 빠른 속도로 VPN 연결"
+      ],
+      "${ n } VPN connection": [
+        "${ n }개 VPN 연결"
+      ],
+      "${ n } VPN connection per user": [
+        "사용자 당 ${ n }개 VPN 연결"
+      ]
+    },
+    "Subscription change warning": {
+      "Got it": [
+        "확인하였습니다."
+      ],
+      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
+        "사용자의 Apple App Store 계정으로 로그인하여 ${ subscriptions }을 누르세요."
+      ],
+      "Just sign in to your Play Store account, then press ${ subscriptions }.": [
+        "사용자의 Play Store 계정에 로그인하고 ${ subscriptions }을 누르세요."
+      ],
+      "Manage your subscription on ${ subscriptionManager }": [
+        "${ subscriptionManager }에서 구독을 관리하세요"
+      ],
+      "Subscriptions": [
+        "구독"
+      ],
+      "Your plan was purchased using an Android app. So to make changes to your plan or update your payment details, you’ll need to go to the Google Play Store.": [
+        "Android 앱에서 요금제를 구매하여 사용하고 계십니다. 요금제를 변경하거나 결제 수단 세부사항을 변경하려면, Google Play Store에서 변경이 필요합니다."
+      ],
+      "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
+        "IOS 앱에서 요금제를 구매하여 사용하고 계십니다. 요금제를 변경하거나 결제 수단 세부사항을 변경하려면, Apple App Store에서 변경이 필요합니다."
+      ]
+    },
+    "Subscription price": {
+      "For": [
+        "가격:"
+      ]
+    },
+    "Subscription renewal state": {
+      "Are you sure?": [
+        "확실한가요?"
+      ],
+      "Auto-pay is disabled": [
+        "자동 결제가 비활성화됨"
+      ],
+      "Auto-pay is enabled": [
+        "자동 결제가 활성화됨"
+      ],
+      "Disable": [
+        "비활성화"
+      ],
+      "Enable auto-pay support": [
+        "자동 결제 지원 활성화"
+      ],
+      "Keep auto-pay": [
+        "자동 결제 유지"
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
+        "시스템이 더 이상 이 결제 수단으로 자동 결제할 수 없습니다, 다만 고객님의 구독이 청구 주기가 끝날 때까지 갱신될 것입니다. 구독을 다운그레이드하거나 변경하려면, 청구 기간이 끝나기 전에 수동으로 해야합니다. 또한, 수동 결제를 하는 것을 잊어버리고 모든 결제 수단에 자동 결제가 비활성화된 경우, 고객님의 계정이 자동 다운그레이드되어 많은 기능이 손실될 수 있습니다."
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
+        "당사 시스템이 더 이상 이 결제 수단을 사용하여 자동 갱신할 수 없으나, 사용자의 구독이 여전히 마지막 결제일이 갱신됩니다. 만일 요금제를 다운그레이드하고 싶으시거나 구독을 변경하려면, 여전히 결제일이 끝나기 전 직전 수행해야 합니다. 만약 사용자가 무료 요금제 공간을 초과하여 사용하시거나 다른 유료 계정을 사용시 파일, 이메일 및 기타 데이터를 자동으로 삭제할 수 없기에 자동으로 다운그레이드할 수 없습니다. 자동 결제 수단을 비활성화 하시려면, 계정 정지를 방지하기 위해 마감일 전에 다음 구독 청구서를 지불하는 것을 잊지 마세요."
+      ]
+    },
+    "Subscription saving": {
+      "Save": [
+        "절약되는 가격:"
+      ]
+    },
+    "Subscription status": {
+      "Active": [
+        "활성화"
+      ],
+      "Expiring": [
+        "만료"
       ]
     },
     "Success": {
@@ -6638,6 +8158,9 @@
       "Contacts deleted": [
         "콘텐츠 삭제됨"
       ],
+      "Copied to clipboard": [
+        "클립보드에 복사됨"
+      ],
       "Email address copied to clipboard": [
         "이메일 주소가 클립보드에 복사되었습니다"
       ],
@@ -6649,6 +8172,12 @@
       ],
       "Last modified aliases stored in your oldest vault": [
         "마지막으로 편집한 별명은 가장 오래된 금고에 저장되었습니다"
+      ],
+      "Payment method added": [
+        "결제 방법이 추가 됨"
+      ],
+      "Payment method updated": [
+        "결제 방법이 업데이트 됨"
       ],
       "Phone number copied to clipboard": [
         "휴대전화 번호가 클립보드에 복사되었습니다"
@@ -6670,6 +8199,12 @@
       ],
       "Verification successful": [
         "인증 성공"
+      ],
+      "You have successfully cancelled your subscription.": [
+        "구독을 성공적으로 취소했습니다."
+      ],
+      "You have successfully unsubscribed": [
+        "성공적으로 구독 취소했습니다."
       ]
     },
     "Success notification when user send feedback": {
@@ -6680,6 +8215,14 @@
     "Suffix": {
       "/month": [
         "/월"
+      ],
+      "/user per month": [
+        "/월 사용자 당"
+      ]
+    },
+    "Suffix for price": {
+      "per month": [
+        "매월"
       ]
     },
     "summer2023: Tooltip": {
@@ -6694,6 +8237,17 @@
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "버전 기록, 암호화 파일 공유 등을 포함한 암호화된 클라우드 저장공간으로 파일을 보호하세요."
+      ]
+    },
+    "Tab subscription modal": {
+      "For businesses": [
+        "비즈니스용"
+      ],
+      "For families": [
+        "가족용"
+      ],
+      "For individuals": [
+        "개인용"
       ]
     },
     "Table header": {
@@ -6804,6 +8358,9 @@
       "Add contact group name": [
         "연락처 그룹 이름 추가"
       ],
+      "Add credit/debit card": [
+        "신용/체크카드 추가"
+      ],
       "Add to ${ groupCount } group": [
         "${ groupCount } 그룹에 추가"
       ],
@@ -6819,8 +8376,17 @@
       "All settings": [
         "모든 설정"
       ],
+      "Amount due": [
+        "지불할 금액"
+      ],
+      "Apply gift code": [
+        "기프트 코드 적용"
+      ],
       "Are you sure you want to close the preview?": [
         "정말로 미리보기를 닫으시겠습니까?"
+      ],
+      "Billing cycle": [
+        "결제 주기"
       ],
       "Birthday": [
         "생일"
@@ -6828,11 +8394,20 @@
       "Browser might run out of memory": [
         "브라우저의 메모리가 부족할 수 있음"
       ],
+      "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
+        "${ MAIL_SHORT_APP_NAME } 구독 해지"
+      ],
+      "Cancel subscription?": [
+        "구독을 취소하시겠어요?"
+      ],
       "Cannot add more addresses": [
         "더 많이 주소를 추가할 수 없습니다."
       ],
       "Cannot load link": [
         "링크를 불러오는 중 문제 발생"
+      ],
+      "Card verification": [
+        "카드 확인"
       ],
       "Change layout": [
         "레이아웃 변경"
@@ -6848,6 +8423,12 @@
       ],
       "Computers": [
         "컴퓨터"
+      ],
+      "Confirm downgrade": [
+        "다운그레이드 확인"
+      ],
+      "Confirm loss of ${ BRAND_NAME } bonuses": [
+        "${ BRAND_NAME } 의 보너스를 잃는 것을 확인합니다"
       ],
       "Contact Details": [
         "연락처 정보"
@@ -6873,6 +8454,9 @@
       "Create new group": [
         "새 그룹 만들기"
       ],
+      "Credits": [
+        "크레딧"
+      ],
       "Currency": [
         "통화"
       ],
@@ -6884,6 +8468,9 @@
       ],
       "Customize your mail import": [
         "사용자 메일 가져오기"
+      ],
+      "Customize your plan": [
+        "플랜 개인설정"
       ],
       "Data recovery": [
         "데이터 복구"
@@ -6915,6 +8502,12 @@
       "Discard changes?": [
         "변경 사항을 취소할까요?"
       ],
+      "Downgrade account": [
+        "계정 다운그레이드"
+      ],
+      "Downgrade to ${ downgradedPlanName }?": [
+        "${ downgradedPlanName }(으)로 다운그래이드?"
+      ],
       "Download ${ date }": [
         "${ date } 다운로드"
       ],
@@ -6938,6 +8531,9 @@
       ],
       "Edit contact group": [
         "연락처 그룹 수정"
+      ],
+      "Edit credit/debit card": [
+        "신용/체크카드 편집"
       ],
       "Edit email settings": [
         "이메일 설정 편집"
@@ -6966,6 +8562,9 @@
       "Enter your password": [
         "비밀번호를 입력하세요"
       ],
+      "Error": [
+        "오류"
+      ],
       "Exporting contacts": [
         "연락처 내보내기"
       ],
@@ -6989,6 +8588,9 @@
       ],
       "Get advanced protection": [
         "향상된 보호 얻기"
+      ],
+      "Gift": [
+        "선물"
       ],
       "Groups": [
         "그룹"
@@ -7050,6 +8652,9 @@
       "Need more aliases?": [
         "별칭이 더 필요하신가요?"
       ],
+      "Network error": [
+        "네트워크 오류"
+      ],
       "Night theme": [
         "야간 테마"
       ],
@@ -7080,6 +8685,15 @@
       "Password": [
         "비밀번호"
       ],
+      "Payment failed": [
+        "결제 실패"
+      ],
+      "Payment verification": [
+        "지불 방법 확인"
+      ],
+      "PayPal verification failed": [
+        "PayPal 인증 실패"
+      ],
       "Performance might be affected": [
         "성능에 영향을 줄 수 있음"
       ],
@@ -7095,11 +8709,17 @@
       "Privacy settings": [
         "개인 정보 보호 설정"
       ],
+      "Processing...": [
+        "처리 중..."
+      ],
       "Re-sign all contacts": [
         "모든 연락처에 다시 서명"
       ],
       "Re-signing contacts": [
         "연락처 다시 서명"
+      ],
+      "Recommended": [
+        "추천됨"
       ],
       "Recommended actions": [
         "권장하는 조치"
@@ -7139,6 +8759,9 @@
       ],
       "Security center": [
         "보안 센터"
+      ],
+      "Select a plan": [
+        "플랜 선택"
       ],
       "Select action to take on contact group": [
         "연락처 그룹에 대해 수행할 작업 선택"
@@ -7203,6 +8826,9 @@
       "Stop transfers?": [
         "이동을 중단할까요?"
       ],
+      "Summary": [
+        "요약"
+      ],
       "The link either does not exist or has expired": [
         "링크가 존재하지 않거나 만료되었습니다."
       ],
@@ -7238,6 +8864,15 @@
       ],
       "Uploading a large file or folder": [
         "큰 파일 또는 폴더 업로드 중"
+      ],
+      "Verification failed": [
+        "인증 실패"
+      ],
+      "Verifying your card...": [
+        "카드 인증 중..."
+      ],
+      "Verifying your payment...": [
+        "결제 수단을 인증하는 중..."
       ],
       "Version details": [
         "버전 정보"
@@ -7285,6 +8920,17 @@
         "5GB의 저장공간을 얻으셨습니다"
       ]
     },
+    "Title subscription": {
+      "End date": [
+        "종료일"
+      ],
+      "Plan": [
+        "플랜"
+      ],
+      "Status": [
+        "상태"
+      ]
+    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "오늘"
@@ -7330,6 +8976,9 @@
       "Hide side panel": [
         "사이드 패널 숨기기"
       ],
+      "If you purchased a gift code or received one from our support team, you can enter it here.": [
+        "기프트 코드를 구매하셨거나 서포트 팀에서 받으셨다면, 여기에 입력하실 수 있습니다."
+      ],
       "Load image": [
         "이미지 불러오기"
       ],
@@ -7354,11 +9003,19 @@
       "The import will start with the most recent messages.": [
         "최근의 주된 메시지 불러오기가 곧 시작됩니다."
       ],
+      "The new subscription cycle starts on ${ formattedTime }": [
+        "새로운 구독 결제 주기가 ${ formattedTime } 부터 시작합니다"
+      ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "전송을 종단 간 암호화 이메일로 보내려면 공개 키를 업로드 하십시오"
       ],
       "You do not have any contacts to export": [
         "내보낼 연락처가 없습니다."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: 무제한 별명, 공유, 통합된 2FA 등을 포함하는 비밀번호 관리자로 모든 기기에서 로그인을 보호하세요."
       ]
     },
     "Validation": {
@@ -7383,6 +9040,47 @@
       ],
       "Replay video": [
         "영상 다시 보기"
+      ]
+    },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        "서버 ${ n }개 이상"
+      ],
+      "${ n } VPN connection": [
+        "${ n }개 VPN 연결"
+      ],
+      "${ numberOfServers } across ${ numberOfCountries } country": [
+        "${ numberOfCountries }개 국가 중 ${ numberOfServers }개 서버"
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "${ numberOfCountries }개 국가 중 ${ numberOfServers }개 서버"
+      ]
+    },
+    "vpn_2024: renew": {
+      "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
+        "구독은 1개월 단위로 자동 갱신됩니다. 다음 갱신 주기는 1개월입니다."
+      ],
+      "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
+        "구독은 3개월 단위로 자동 갱신됩니다. 다음 갱신 주기는 3개월입니다."
+      ],
+      "You'll then be billed every 12 months at ${ renewPrice }.": [
+        "12개월마다 ${ renewPrice }가 결제됩니다."
+      ],
+      "Your subscription will automatically renew in ${ cycle } month.": [
+        "사용자의 구독이 ${ cycle }개월 뒤에 자동으로 갱신됩니다."
+      ]
+    },
+    "vpn_2step: feature": {
+      "Advanced VPN customizations": [
+        "향상된 VPN 사용자화"
+      ],
+      "No ads": [
+        "광고 없음"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Secure core 서버, 빠른 P2P/BitTorrent 다운로드, VPN을 통한 Tor 등에 접근하세요."
       ]
     },
     "Warning": {
@@ -7424,6 +9122,9 @@
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "영숫자, 점, 하이픈 및 밑줄만 허용됩니다."
+      ],
+      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
+        "이 결제 방법을 선택하면 사용자의 계정을 금방 업그레이드 할 수 없다는 점을 유념하세요. 저희는 결제 수단이 초기화될 때 사용자의 계정을 1회 업데이트 할 것입니다."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "보고서는 종단간 암호화되지 않음으로 민감한 정보를 보내지 마십시오."
