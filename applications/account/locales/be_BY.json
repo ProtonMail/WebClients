@@ -161,6 +161,9 @@
       "Cancel subscription": [
         "Скасаваць падпіску"
       ],
+      "Change": [
+        "Змяніць"
+      ],
       "Change keys": [
         "Змяніць ключы"
       ],
@@ -205,6 +208,9 @@
       ],
       "Color": [
         "Колер"
+      ],
+      "Configure SAML": [
+        "Канфігурацыя SAML"
       ],
       "Confirm": [
         "Пацвердзіць"
@@ -316,6 +322,9 @@
       ],
       "Delete link": [
         "Выдаліць спасылку"
+      ],
+      "Delete logo": [
+        "Выдаліць лагатып"
       ],
       "Delete permanently": [
         "Выдаліць незваротна"
@@ -554,6 +563,9 @@
       "Import key": [
         "Імпартаваць ключ"
       ],
+      "Import new SAML metadata": [
+        "Імпартаваць новыя метаданыя SAML"
+      ],
       "Increase": [
         "Павялічыць"
       ],
@@ -577,6 +589,9 @@
       ],
       "Keep": [
         "Пакінуць"
+      ],
+      "Keep logo": [
+        "Пакінуць лагатып"
       ],
       "Keep my Plus subscription": [
         "Пакінуць падпіску Plus"
@@ -728,8 +743,14 @@
       "Remove calendar": [
         "Выдаліць каляндар"
       ],
+      "Remove domain": [
+        "Выдаліць дамен"
+      ],
       "Remove gift code": [
         "Выдаліць падарункавы код"
+      ],
+      "Remove single sign-on": [
+        "Выдаліць адзіны ўваход"
       ],
       "Remove this label": [
         "Выдаліць гэту метку"
@@ -815,6 +836,9 @@
       "Save ICS file": [
         "Захаваць файл ICS"
       ],
+      "Save SAML configuration": [
+        "Захаваць канфігурацыю SAML"
+      ],
       "Search": [
         "Пошук"
       ],
@@ -823,6 +847,9 @@
       ],
       "Search settings": [
         "Налады пошуку"
+      ],
+      "See DNS TXT record": [
+        "Паглядзець запіс DNS TXT"
       ],
       "See how": [
         "Паглядзець як"
@@ -841,6 +868,12 @@
       ],
       "Select country": [
         "Выберыце краіну"
+      ],
+      "select file": [
+        "выбраць файл"
+      ],
+      "Select file": [
+        "Выбраць файл"
       ],
       "Select files": [
         "Выбраць файлы"
@@ -953,6 +986,9 @@
       "Stay": [
         "Застацца"
       ],
+      "Stop using single sign-on": [
+        "Спыніць выкарыстанне адзінага ўваходу"
+      ],
       "Strikethrough": [
         "Закрэсліванне"
       ],
@@ -1027,6 +1063,12 @@
       ],
       "Upgrade your plan": [
         "Палепшыце свой тарыфны план"
+      ],
+      "Upload": [
+        "Запампаваць"
+      ],
+      "Upload icon": [
+        "Запампаваць значок"
       ],
       "Upload picture": [
         "Запампаваць малюнак"
@@ -1669,6 +1711,12 @@
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Працягнуць выкарыстоўваць ${ MAIL_APP_NAME }."
+      ],
+      "Continue using ${ planTitle }": [
+        "Працягнуць выкарыстоўваць ${ planTitle }"
+      ],
+      "Continue your subscription": [
+        "Працягнуць падпіску"
       ],
       "Copy": [
         "Капіяваць"
@@ -3914,6 +3962,12 @@
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Не ўдалося атрымаць актыўныя сеансы. ${ refresh } або паспрабуйце яшчэ раз пазней."
       ],
+      "Failed to process the logo": [
+        "Не ўдалося апрацаваць лагатып"
+      ],
+      "File too large. Your logo must be 30 KB or smaller.": [
+        "Занадта вялікі файл. Ваш лагатып павінен быць 30 КБ або менш."
+      ],
       "Filter with this name already exists": [
         "Фільтр з такой назвай ужо існуе"
       ],
@@ -3931,6 +3985,9 @@
       ],
       "Impossible to rename the gateway": [
         "Немагчыма перайменаваць шлюз"
+      ],
+      "Incorrect file type. Upload a file in PNG or JPEG format.": [
+        "Няправільны тып файла. Запампаваць файл у фармаце PNG або JPEG."
       ],
       "Incorrect login credentials. Please try again.": [
         "Няправільныя ўліковыя даныя для ўваходу. Паспрабуйце яшчэ раз."
@@ -4019,6 +4076,9 @@
       "No external key retrieved for user is valid for sending": [
         "Ніводны з атрыманых знешніх ключоў карыстальніка не падыходзіць для адпраўкі"
       ],
+      "No image selected": [
+        "Відарыс не выбраны"
+      ],
       "No valid address found": [
         "Не знойдзена сапраўдных адрасоў"
       ],
@@ -4087,6 +4147,15 @@
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Перайдзіце на тарыфны план для бізнесу з больш чым 1 карыстальнікам, каб атрымаць падтрымку шматкарыстальніцкага рэжыму."
+      ],
+      "Please upload a square file": [
+        "Запампуйце квадратны лагатып"
+      ],
+      "Please upload an xml file": [
+        "Запампуйце файл xml"
+      ],
+      "Please upload only 1 file": [
+        "Запампуйце толькі 1 файл"
       ],
       "Port is required": [
         "Патрабуецца ўвесці порт"
@@ -4157,6 +4226,12 @@
       "The email addresses do not match": [
         "Адрасы электроннай пошты не супадаюць"
       ],
+      "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
+        "Занадта вялікі файл. Максімальны памер: ${ MAX_FILE_DIMENSIONS }х${ MAX_FILE_DIMENSIONS }"
+      ],
+      "The file is too small, the minimum size is ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }": [
+        "Занадта маленькі файл. Мінімальны памер: ${ MIN_FILE_DIMENSIONS }х${ MIN_FILE_DIMENSIONS }"
+      ],
       "The folder name is invalid. Please choose a different name.": [
         "Памылковая назва папкі. Выберыце іншую назву."
       ],
@@ -4219,6 +4294,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "Паспрабуйце выкарыстоўваць толькі літары, лічбы і _.-"
+      ],
+      "Unable to upload file": [
+        "Немагчыма запампаваць файл"
       ],
       "Unexpected error, we can't import the contacts": [
         "Нечаканая памылка. Немагчыма імпартаваць кантакты."
@@ -5588,6 +5666,9 @@
       ]
     },
     "Hint": {
+      "Add this record to your domain in the control panel of your domain name registrar": [
+        "Дадайце гэты запіс у свой дамен на кантрольнай панэлі свайго рэгістратара даменных імён"
+      ],
       "Found ${ items.length } suggestion, use keyboard to navigate.": [
         "Знойдзена ${ items.length } прапанова, выкарыстоўвайце клавіятуру для навігацыі.",
         "Знойдзены ${ items.length } прапановы, выкарыстоўвайце клавіятуру для навігацыі.",
@@ -5969,6 +6050,9 @@
       "${ boldName } will be set as default calendar.": [
         "${ boldName } будзе зададзены ў якасці прадвызначанага календара."
       ],
+      "${ boldSSOUserInformation } and you will have to create them manually to add them back to your organization": [
+        "${ boldSSOUserInformation } і вам спатрэбіцца стварыць іх уручную, каб дадаць іх назад у вашу арганізацыю"
+      ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Вы страціце доступ да ўсіх бягучых зашыфраваных даных у вашым уліковым запісе, калі працягніце."
       ],
@@ -5976,7 +6060,7 @@
         "${ BRAND_NAME } - гэта прыватнасць, якой вы можаце давяраць. Дзякуючы надзейнаму шыфраванню, адкрытаму зыходнаму коду і швейцарскім законам аб прыватнасці. Мы цвёрда перакананыя, што ніхто не павінен выкарыстоўваць вашы даныя. Наша тэхналогія і бізнес заснаваны на гэтым прынцыпова жорсткім вызначэнні прыватнасці."
       ],
       "${ BRAND_NAME } never shares your information with third parties. Data comes from  ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
-        "${ BRAND_NAME } ніколі не абагульвае вашы звесткі са староннімі асобамі. Даныя атрыманы на падставе ўласнага аналізу ${ BRAND_NAME } і Constella Intelligence."
+        "${ BRAND_NAME } ніколі не абагульвае вашы звесткі са староннімі асобамі. Даныя атрымліваюцца на падставе ўласнага аналізу ${ BRAND_NAME } і Constella Intelligence."
       ],
       "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "${ BRAND_NAME } прыпыніў імпартаванне, бо страціў падключэнне з вашым іншым пастаўшчыком паслуг электроннай пошты. Аднавіце падключэнне."
@@ -6227,6 +6311,9 @@
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
         "Дадайце яшчэ адзін слой абароны ў ваш уліковы запіс. Вам неабходна будзе пацвярджаць сваю асобу з дапамогай 2ФА пры кожным уваходзе."
       ],
+      "Add domain": [
+        "Дадаць дамен"
+      ],
       "Add image URL": [
         "Дадаць URL-адрас відарыса"
       ],
@@ -6389,6 +6476,9 @@
       "Are you sure you want to remove administrative privileges from this user?": [
         "Вы сапраўды хочаце пазбавіць гэтага карыстальніка правоў адміністратара?"
       ],
+      "Are you sure you want to remove the domain ${ boldDomain }?": [
+        "Вы ўпэўнены, што хочаце выдаліць дамен ${ boldDomain }?"
+      ],
       "Ask your organisation admin to setup Gateways.": [
         "Папрасіце адміністратара сваёй арганізацыі наладзіць шлюзы."
       ],
@@ -6497,11 +6587,26 @@
       "Close this screen to exit.": [
         "Закрыйце гэта акно, каб выйсці."
       ],
+      "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
+        "Канфігурацыя аўтэнтыфікацыі SAML для вашай арганізацыі пры дапамозе пастаўшчыка пасведчанняў (ldP). Гэта ўключыць SAML для ўсёй арганізацыі."
+      ],
+      "Configure SAML authentication for your organization through an identity provider like Okta, Microsoft Azure, or Google Identity Platform. This will enable SAML for the whole organization.": [
+        "Канфігурацыя аўтэнтыфікацыі SAML для вашай арганізацыі пры дапамозе пастаўшчыка пасведчанняў (такіх, як Microsoft Azure або Google Identity Platform). Гэта ўключыць SAML для ўсёй арганізацыі."
+      ],
       "Continue with ${ freeName }": [
         "Працягнуць з ${ freeName }"
       ],
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "Працягнуўшы, вы падключыце ўліковы запіс ${ BRAND_NAME } да ${ name }."
+      ],
+      "Copied to clipboard": [
+        "Скапіявана ў буфер абмену"
+      ],
+      "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
+        "Скапіюйце і ўстаўце гэты URL-адрас у поле URL-адраса ACS (Assertion Consumer Service) вашага пастаўшчыка пасведчанняў."
+      ],
+      "Copy and paste this URL into the entity ID field of your identity provider": [
+        "Скапіюйце і ўстаўце гэты URL-адрас у поле Entity ID вашага пастаўшчыка пасведчанняў."
       ],
       "Copy the link to clipboard": [
         "Скапіяваць спасылку ў буфер абмену"
@@ -6614,11 +6719,23 @@
       "DMARC checks if the sender's SPF and DKIM records originate from your domain. This can prevent attackers from using another domain's SPF and DKIM to impersonate your domain. The \"p=\" (policy) in this record indicates how you want the recipient platforms to handle unauthorized emails. We recommend using the \"p=quarantine\" policy for most domains. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "DMARC правярае, ці паходзяць запісы SPF і DKIM адпраўніка ад вашага дамена. Гэта можа перашкодзіць зламыснікам выкарыстоўваць SPF і DKIM іншага дамена для выдачы яго за ваш. \"p=\" (policy) у гэтым запісе паказвае, як вы хочаце, каб платформы атрымальнікаў апрацоўвалі неаўтарызаваныя лісты. Мы рэкамендуем выкарыстоўваць для большасці даменаў палітыку \"p=quarantine\". Пераканайцеся, што вы дадалі наступны запіс TXT у кансоль DNS (які размешчаны на той платформе, дзе вы набылі карыстальніцкі дамен)."
       ],
+      "DNS TXT record": [
+        "Запіс DNS TXT"
+      ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "НЕ забывайце гэты пароль. Калі вы яго забудзеце, то не зможаце кіраваць сваёй арганізацыяй."
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "Вы сапраўды хочаце адклікаць усе іншыя сеансы, акрамя бягучага?"
+      ],
+      "Domain ownership failed verification.": [
+        "Збой праверкі ўладальніка дамена."
+      ],
+      "Domain ownership not verified.": [
+        "Уладальнік дамена не правераны."
+      ],
+      "Domain ownership verified.": [
+        "Уладальнік дамена правераны."
       ],
       "domain used": [
         "дамен выкарыстоўваецца",
@@ -6692,6 +6809,9 @@
       "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
         "Лісты, якія пазначаны меткай ${ nameDeleted }, не будуць выдалены і іх можна будзе знайсці ў адпаведнай папцы."
       ],
+      "Enable single sign-on to keep your organization safe": [
+        "Уключыць адзіны ўваход, каб абараніць вашу арганізацыю"
+      ],
       "Enable this address to join this calendar": [
         "Уключыце гэты адрас, каб далучыцца да гэтага календара"
       ],
@@ -6703,6 +6823,9 @@
       ],
       "Encryption setting updated": [
         "Налады шыфравання абноўлены"
+      ],
+      "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
+        "URL-адрас канцавога пункта атрыманы ад вашага пастаўшчыка пасведчанняў (напрыклад, https://idp.example.com/sso/saml)."
       ],
       "Enhance your network security": [
         "Паляпшэнне бяспекі вашай сеткі"
@@ -6818,6 +6941,9 @@
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Падзяліцеся сваім публічным ключом з сябрамі або апублікуйце яго ў інтэрнэце, каб кожны мог адпраўляць вам лісты са скразным шыфраваннем!"
       ],
+      "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
+        "Перайдзіце да свайго пастаўшчыка пасведчанняў, каб атрымаць метаданыя SAML для ${ appName } і імпартаваць іх сюды."
+      ],
       "here": [
         "тут"
       ],
@@ -6826,6 +6952,9 @@
       ],
       "High Priority": [
         "Высокі прыярытэт"
+      ],
+      "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
+        "Публічны ключ пастаўшчыка пасведчанняў для подпісу сцвярджэння аўтэнтыфікацыі. Павінна быць месцам для спампоўвання або капіявання хэшу сертыфіката ад пастаўшчыка пасведчанняў. Проста ўстаўце хэш сертыфіката ў тэкставае поле."
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Калі іншы адміністратар змяніў гэты пароль, вам неабходна будзе спытаць у яго новы пароль арганізацыі."
@@ -6888,7 +7017,7 @@
         "Мы заўсёды гатовыя дапамагчы ў выпадку ўзнікнення праблем. ${ boldPhoneCall } або ${ boldZoomMeeting } з адным з нашых спецыялістаў або адкрыць ${ boldLiveChat }, каб атрымаць падтрымку ў чаце."
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists.": [
-        "Мы заўсёды гатовыя дапамагчы ў выпадку ўзнікнення праблем. ${ boldPhoneCall } або сустрэча ${ boldZoomMeeting } з адным з нашых спецыялістаў/"
+        "Мы заўсёды гатовыя дапамагчы ў выпадку ўзнікнення праблем. ${ boldPhoneCall } або ${ boldZoomMeeting } з адным з нашых спецыялістаў."
       ],
       "Image description": [
         "Апісанне відарыса"
@@ -7012,6 +7141,9 @@
       ],
       "Lean more about gateways": [
         "Даведацца больш пра шлюзы"
+      ],
+      "Lean more about single sign-on": [
+        "Даведацца больш пра адзіны ўваход"
       ],
       "Learn how to ${ staySaferOnlineLink }": [
         "Даведайцеся, як ${ staySaferOnlineLink }"
@@ -7175,6 +7307,9 @@
       "No results found": [
         "Нічога не знойдзена"
       ],
+      "Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization": [
+        "Карыстальнікі, якія не належаць да SSO (створаныя ўручную, не забяспечаныя вашым пастаўшчыком ідэнтычнасці) усё яшчэ могуць уваходзіць у вашу арганізацыю"
+      ],
       "Not a valid URL": [
         "Несапраўдны URL-адрас"
       ],
@@ -7189,6 +7324,9 @@
       ],
       "of": [
         "з"
+      ],
+      "Once single sign-on is disabled for your organization:": [
+        "Пасля адключэння адзінага ўваходу (SSO) для вашай арганізацыі:"
       ],
       "Once you reset your password:": [
         "Пасля скідання вашага пароля:"
@@ -7207,6 +7345,9 @@
       ],
       "Optional": [
         "Неабавязкова"
+      ],
+      "or ${ selectFileButton }": [
+        "або ${ selectFileButton }"
       ],
       "Or select a particular server:": [
         "Або выберыце пэўны сервер:"
@@ -7352,6 +7493,9 @@
       "Plus or Visionary subscription required": [
         "Патрабуецца падпіска Plus або Visionary"
       ],
+      "Preview": [
+        "Папярэдні прагляд"
+      ],
       "Preview failed to be loaded": [
         "Не ўдалося загрузіць папярэдні прагляд"
       ],
@@ -7445,6 +7589,9 @@
       "Right to Left": [
         "Справа налева"
       ],
+      "SAML configuration saved": [
+        "Канфігурацыя SAML захавана"
+      ],
       "Save ${ percentage }": [
         "Эканомія ${ percentage }"
       ],
@@ -7520,6 +7667,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Паколькі вы з'яўляецеся пастаянным карыстальнікам, мы дадалі ў ваш уліковы запіс дадатковыя функцыі."
       ],
+      "Single sign-on removed": [
+        "Адзіны ўваход выдалены"
+      ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
         "Адпраўка па SMTP дазваляе староннім сэрвісам або прыладам адпраўляць лісты праз ${ MAIL_APP_NAME } для вашых адрасоў карыстальніцкага дамена. Функцыя даступна для карыстальнікаў ${ BRAND_NAME } for Business з карыстальніцкім даменам."
       ],
@@ -7535,8 +7685,14 @@
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "Некаторыя з вашых даступных сервераў можна выкарыстоўваць толькі ў вызначаных краінах у сувязі з нядаўнім выдаленнем"
       ],
+      "Specify the domain which is allowed to authenticate with SAML SSO.": [
+        "Пазначыць дамен, які можна выкарыстоўваць для аўтэнтыфікацыі з SAML SSO."
+      ],
       "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "SPF удакладняе, каму дазволена адпраўляць электронную пошту для вашага дамена. Пераканайцеся, што вы дадалі наступны запіс TXT у кансоль DNS (якая размешчана на той платформе, дзе вы набылі карыстальніцкі дамен)."
+      ],
+      "SSO users (provided by your Identity Provider) will be deleted": [
+        "Карыстальнікі SSO (забяспечаныя вашым пастаўшчыком ідэнтычнасці) будуць выдалены"
       ],
       "Stay tuned for future promotions.": [
         "Будзьце ў курсе будучых рэкламных акцый."
@@ -7593,7 +7749,7 @@
         "Знаходзіцца ў Швейцарыі"
       ],
       "Temporarily unavailable. Please check back later.": [
-        "Часова недаступны. Паўтарыце спробу пазней."
+        "Часова недаступны. Паспрабуйце яшчэ раз пазней."
       ],
       "Test link": [
         "Тэставая спасылка"
@@ -7618,6 +7774,9 @@
       ],
       "The calendar will be removed from your account.": [
         "Каляндар будзе выдалены з вашага ўліковага запісу."
+      ],
+      "The credentials from your Identity Provider will be deleted.": [
+        "Уліковыя даныя ад вашага пастаўшчыка ідэнтычнасці будуць выдалены."
       ],
       "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
         "Цёмная сетка - гэта схаваная частка інтэрнэту, дзе знаходзяцца скрадзеныя асабістыя звесткі, якія можна купіць або прадаць."
@@ -7657,6 +7816,9 @@
       ],
       "The link to report that that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "Тэрмін дзеяння спасылкі для справаздачы пра тое, што вы не наладзілі ўліковы запіс ${ BRAND_NAME } пратэрмінаваны. Звяжыцеся з нашай службай падтрымкі, каб вырашыць гэту праблему."
+      ],
+      "The name and icon will be visible to your users while they are signed in.": [
+        "Гэта імя і значок убачаць вашы карыстальнікі пры ўваходзе ў сістэму."
       ],
       "The name will be visible to your users while they are signed in.": [
         "Гэта імя ўбачаць вашы карыстальнікі, калі яны ўвойдуць у сістэму."
@@ -7727,6 +7889,9 @@
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Гэты карыстальнік з'яўляецца адказным за плацяжы ў вашай арганізацыі. Паніжэнне правоў гэтага ўдзельніка прывядзе да таго, што за плацяжы арганізацыі будзеце адказваць вы."
       ],
+      "This verification can take up to one hour. You can safely continue to the next steps.": [
+        "Гэта праверка можа заняць да адной гадзіны. Вы можаце бяспечна працягваць на наступных кроках."
+      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Гэта скасуе вашу бягучую платную падпіску і вы страціце ўсе перавагі пастаяннага карыстальніка, якія вы назапасілі."
       ],
@@ -7754,6 +7919,9 @@
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Гэта незваротна выдаліць ваш уліковы запіс і ўсе звязаныя з ім даныя. У вас не будзе магчымасці аднавіць яго пазней."
       ],
+      "This will remove SSO for ${ boldDomainName }.": [
+        "Гэта прывядзе да выдалення SSO для ${ boldDomainName }."
+      ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Гэта заменіць ваш часовы пароль. Вы будзеце выкарыстоўваць яго для доступу да свайго ўліковага запісу ${ BRAND_NAME } у будучыні."
       ],
@@ -7768,6 +7936,9 @@
       ],
       "to ${ product } Business": [
         "у ${ product } Business"
+      ],
+      "To allow the domain ${ boldDomainName } to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
+        "Каб дазволіць дамену ${ boldDomainName } выкарыстоўваць SAML SSO, вы павінны праверыць яго ўладальніка дадаўшы наступны запіс DNS TXT у свой дамен у вашым пастаўшчыку DNS."
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Каб не страціць даныя, выдаляйце іх толькі пасля экспартавання копіі або калі цалкам упэўнены ў сваіх дзеяннях."
@@ -7859,6 +8030,9 @@
       "Unfortunately there is no recovery method saved for this account.": [
         "На жаль, для гэтага ўліковага запісу адсутнічаюць спосабы аднаўлення."
       ],
+      "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
+        "Унікальны ідэнтыфікатар згенерыраваны вашым пастаўшчыком пасведчанняў. Звычайна ён уяўляе сабой URL-адрас, які ўключае назву вашага пастаўшчыка пасведчанняў (напрыклад, https://idp.example.com/XXXXX)."
+      ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "Пакуль вы не выйдзеце са свайго ўліковага запісу або не зменіце свой пароль, ваш сеанс будзе актыўным. Сеансы спыняюцца праз 60 дзён бяздзейнасці."
       ],
@@ -7949,6 +8123,9 @@
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Праверка адкрые новую ўкладку, адключыце блакіроўку ўсплывальных вокнаў. З вас не будуць спаганяцца грашовыя сродкі. Любая сума, якая выкарыстоўваецца для праверкі вашай карткі, будзе неадкладна вернута."
       ],
+      "Verify domain": [
+        "Праверыць дамен"
+      ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Пацвердзіце свае асабістыя даныя пры дапамозе аднаразовага пароля з абмежаваным тэрмінам дзеяння з праграмы аўтэнтыфікацыі"
       ],
@@ -7992,7 +8169,7 @@
         "Мы адправілі вам новую спасылку."
       ],
       "We monitor the dark web for instances where your personal information (such as an email address or password used on a third-party site) is leaked or compromised. ${ dataBreachLink }": [
-        "Мы назіраем за цёмнай сеткай на прадмет уцечкі або кампраметацыі вашых асабістых звестак (напрыклад, адраса электроннай пошты або пароля, якія выкарыстоўваюцца на староннім сайце). ${ dataBreachLink }"
+        "Мы назіраем за цёмнай сеткай на прадмет уцечкі або кампраметацыі вашых асабістых звестак (напрыклад, адрас электроннай пошты або пароль, які выкарыстоўваецца на староннім сайце). ${ dataBreachLink }"
       ],
       "We need to authenticate your payment method with your bank.": [
         "Нам неабходна аўтэнтыфікаваць спосаб плацяжу з дапамогай вашага банка."
@@ -8020,6 +8197,9 @@
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Для завяршэння трансакцыі мы адкрыем новую ўкладку браўзера і перанакіруем вас на сайт PayPal. Калі вы выкарыстоўваеце пашырэнні блакіроўкі ўсплывальных вокнаў, адключыце іх, каб працягнуць."
+      ],
+      "We'll email you once import is complete.": [
+        "Мы адправім вам ліст, калі імпартаванне завершыцца."
       ],
       "We'll get back to you shortly.": [
         "Мы звяжамся з вамі ў самы бліжэйшы час."
@@ -8053,6 +8233,9 @@
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Калі адключана, то гэта не дазволіць загружаць відарысы на вашу прыладу без вашай згоды.\t"
+      ],
+      "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
+        "Пры ўключэнні SAML для ${ appName } у вашым пастаўшчыку пасведчанняў, вам магчыма будзе прапанавана скарыстацца зваротным выклікам URL (ACS) і ідэнтыфікатарам эмітэнта. Проста скапіюйце даныя знізу, а потым устаўце іх у палі вашага пастаўшчыка пасведчанняў."
       ],
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
         "Калі апавяшчэнні ўключаны, то мы адпраўляем абвестку на ваш адрас аднаўлення, калі ў вашай паштовай скрыні ${ MAIL_APP_NAME } з'яўляюцца новыя паведамленні."
@@ -8129,6 +8312,9 @@
       "You can check the progress ${ importProgressLink }.": [
         "Вы можаце праверыць ход выканання ${ importProgressLink }."
       ],
+      "You can close the tab or browser in the meantime.": [
+        "Тым часам вы можаце закрыць укладку або браўзер."
+      ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Вы можаце адрэдагаваць адрас адзін раз, каб пераканацца ў правільнасці адраса электроннай пошты для праверкі."
       ],
@@ -8194,6 +8380,12 @@
         "Вам даступна ${ availableCount } вылучаныя серверы.",
         "Вам даступна ${ availableCount } вылучаных сервераў.",
         "Вам даступна ${ availableCount } вылучаных сервераў."
+      ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "У вас ёсць падпіска ${ planTitle } з пробным перыядам. Дадайце спосаб аплаты, калі вы хочаце працягнуць карыстацца ёй пасля завяршэння пробнага перыяду."
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "У вас ёсць падпіска ${ planTitle } з пробным перыядам. У дадзены момант аплата не патрабуецца. Ваша падпіска будзе аўтаматычна падоўжана ў канцы пробнага перыяду."
       ],
       "You have no calendars to export.": [
         "У вас няма календароў для экспартавання."
@@ -8486,26 +8678,29 @@
       ]
     },
     "Key generation": {
-      "A key with the same encryption algorithm already exists. Generating another key will cause slower account loading. Are you sure you want to continue?": [
-        "Ключ з такім алгарытмам шыфравання ўжо існуе. Генерацыя іншага ключа правядзе да запаволення загрузкі ўліковага запісу. Вы сапраўды хочаце працягнуць?"
-      ],
-      "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
-        "Для гэтага адраса ўжо актыўны ключ з такім алгарытмам шыфравання. Генерацыя іншага ключа правядзе да запаволення загрузкі ўліковага запісу, а выдаленне гэтага ключа можа выклікаць праблемы. Калі вы ствараеце новы ключ па прычыне кампраметацыі старога, пазначце той ключ як скампраметаваны. Вы сапраўды хочаце працягнуць?"
-      ],
       "Generate key": [
         "Згенерыраваць ключ"
       ],
-      "Key with fingerprint ${ fp } successfully created.": [
-        "Ключ з адбіткам ${ fp } паспяхова створаны."
+      "Generating key failed. Please try again later.": [
+        "Збой генерацыі ключа. Паспрабуйце яшчэ раз пазней."
       ],
-      "The encryption keys are being generated. This may take several minutes and temporarily freeze your browser.": [
-        "Адбываецца генерацыя ключоў шыфравання. Гэта зойме некалькі хвілін, а браўзер у гэты час можа не адказваць."
+      "If you're generating a new key because you believe your existing key has been compromised, please mark it as compromised after generating this key.": [
+        "Калі вы генерыруеце новы ключ па прычыне таго, што лічыце ваш існуючы ключ быў скампраметаваны, пазначце яго як скампраметаваны пасля генерацыі гэтага ключ."
       ],
-      "The encryption keys for your address are being generated. This may take several minutes and temporarily freeze your browser.": [
-        "Адбываецца генерацыя ключоў шыфравання для вашага адраса. Гэта зойме некалькі хвілін, а браўзер у гэты час можа не адказваць."
+      "Key successfully generated.": [
+        "Ключ паспяхова згенерыраваны."
       ],
-      "You can generate a new encryption key if you think your previous key has been compromised.": [
-        "Вы можаце згенерыраваць новы ключ шыфравання, калі лічыце, што ваш папярэдні ключ быў скампраметаваны."
+      "Note: you already have a key with the same algorithm for this address. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
+        "Заўвага: у вас ужо ёсць ключ з такім жа алгарытмам шыфравання для гэтага адраса. Калі гэты ключ не быў скампраметаваны, то магчыма няма неабходнасці ствараць новы ключ, які можа запаволіць ваш уліковы запіс."
+      ],
+      "Note: you already have a key with the same algorithm for this user. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
+        "Заўвага: у вас ужо ёсць ключ з такім жа алгарытмам шыфравання для гэтага карыстальніка. Калі гэты ключ не быў скампраметаваны, то магчыма няма неабходнасці ствараць новы ключ, які можа запаволіць ваш уліковы запіс."
+      ],
+      "This will generate a new key, which will be used to encrypt future contact details, email encryption keys, and other data.": [
+        "Гэта згенерыруе новы ключ, які будзе выкарыстоўвацца для шыфравання будучых кантактных звестак, ключоў шыфравання электроннай пошты і іншых даных."
+      ],
+      "This will generate a new key, which will be used to encrypt future emails, among other data.": [
+        "Гэта згенерыруе новы ключ, які акрамя іншых даных будзе выкарыстоўвацца для шыфравання будучых лістоў."
       ]
     },
     "Key state badge": {
@@ -8529,14 +8724,6 @@
       ],
       "Primary": [
         "Асноўны"
-      ]
-    },
-    "Key type option": {
-      "${ compatibility } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
-        "${ compatibility } RSA 4096-bit (больш марудны, але павялічвае сумяшчальнасць з папярэднімі версіямі праграм)"
-      ],
-      "${ stateOfTheArt } ECC Curve25519 (Fastest, most modern)": [
-        "${ stateOfTheArt } ECC Curve25519 (хутчэйшы, больш сучасны)"
       ]
     },
     "Keyboard shortcut name": {
@@ -8813,7 +9000,7 @@
         "${ UsedAddresses } з ${ MaxAddresses } адрасоў электроннай пошты"
       ],
       "(Temporarily unavailable. Please check back later.)": [
-        "(Часова недаступны. Паўтарыце спробу пазней.)"
+        "(Часова недаступны. Паспрабуйце яшчэ раз пазней.)"
       ],
       "Access to my events": [
         "Доступ да маіх падзей"
@@ -8863,6 +9050,12 @@
       "Allow recovery using a trusted device": [
         "Дазволіць аднаўленне з дапамогай даверанай прылады"
       ],
+      "Allowed domain": [
+        "Дазволены дамен"
+      ],
+      "Allowed Domain": [
+        "Дазволены дамен"
+      ],
       "Amount": [
         "Сума"
       ],
@@ -8886,6 +9079,9 @@
       ],
       "Apply filter to existing emails": [
         "Ужыць фільтр да існуючых лістоў"
+      ],
+      "Assertion Consumer Service URL": [
+        "URL-адрас службы сцверджання кліентаў (ACS)"
       ],
       "Attach public key": [
         "Далучыць публічны ключ"
@@ -9136,6 +9332,9 @@
       "Duration": [
         "Працягласць"
       ],
+      "e.g. example.com": [
+        "напрыклад, example.com"
+      ],
       "Email": [
         "Электронная пошта"
       ],
@@ -9253,6 +9452,9 @@
       "Invite via email": [
         "Запрасіць праз электронную пошту"
       ],
+      "Issuer ID": [
+        "Ідэнтыфікатар эмітэнта"
+      ],
       "Keep me signed in": [
         "Заставацца ў сістэме"
       ],
@@ -9261,9 +9463,6 @@
       ],
       "Key": [
         "Ключ"
-      ],
-      "Key strength": [
-        "Надзейнасць ключа"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Спалучэнні клавіш: ${ shortcut }"
@@ -9295,6 +9494,9 @@
       "Link label": [
         "Метка спасылкі"
       ],
+      "Logo": [
+        "Лагатып"
+      ],
       "Mail Server (IMAP)": [
         "Паштовы сервер (IMAP)"
       ],
@@ -9315,6 +9517,15 @@
       ],
       "Messages per page": [
         "Паведамленняў на старонку"
+      ],
+      "Metadata file for ${ appName }": [
+        "Метаданыя файла для ${ appName }"
+      ],
+      "Metadata URL for ${ appName }": [
+        "Метаданыя URL-адраса для ${ appName }"
+      ],
+      "Method for importing metadata": [
+        "Спосаб для імпартавання метаданых"
       ],
       "Moderate NAT": [
         "Умераны NAT"
@@ -9469,6 +9680,9 @@
       "Protection mode": [
         "Рэжым абароны"
       ],
+      "Public certificate (X.509)": [
+        "Публічны сертыфікат (X.509)"
+      ],
       "Read": [
         "Прачытана"
       ],
@@ -9486,6 +9700,9 @@
       ],
       "Repeat password": [
         "Паўтарыце пароль"
+      ],
+      "Reply (ACS) URL": [
+        "URL-адрас адказу (ACS)"
       ],
       "Require 2FA for administrators": [
         "Патрабаваць 2ФА для адміністратараў"
@@ -9531,6 +9748,12 @@
       ],
       "Signature": [
         "Подпіс"
+      ],
+      "Single sign-on entity ID": [
+        "Адзіны ўваход Entity ID"
+      ],
+      "Single sign-on URL": [
+        "Адзіны ўваход URL-адраса"
       ],
       "SMTP port": [
         "Порт SMTP"
@@ -9595,6 +9818,9 @@
       "Two-password mode": [
         "Рэжым двух пароляў"
       ],
+      "Type": [
+        "Тып"
+      ],
       "Undo send": [
         "Адрабіць адпраўку"
       ],
@@ -9618,6 +9844,9 @@
       ],
       "Username": [
         "Імя карыстальніка"
+      ],
+      "Value": [
+        "Значэнне"
       ],
       "VAT": [
         "ПДВ"
@@ -10051,7 +10280,7 @@
         "Уключыць журнал аўтэнтыфікацыі"
       ],
       "Enable Breach Alert": [
-        "Уключыць функцыю \"Папярэджанне ўцечкі\""
+        "Уключыце функцыю \"Папярэджанне ўцечкі\""
       ]
     },
     "Mail import summary": {
@@ -10994,17 +11223,6 @@
         "Кіраванне камандамі"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Калі гэта не зрабіць, доступ да вашага ўліковага запісу будзе абмежаваны, а потым цалкам адключаны."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Для працягу выкарыстання ${ trialPlanName } з прэміяльнымі функцыямі, выберыце вашу падпіску і спосаб аплаты."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Ваш пробны перыяд завершыцца ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, якая заканчваецца на ${ last4 }"
@@ -11104,6 +11322,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Вы карыстаецеся бягучым тарыфным планам па акцыённым кошце. Калі вы панізіце свой уліковы запіс, то згубіце гэту перавагу і больш не зможаце скарыстацца ёй, калі вырашыце падпісацца яшчэ раз."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Калі гэта не зрабіць, доступ да вашага ўліковага запісу будзе абмежаваны, а потым цалкам адключаны."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Для працягу выкарыстання ${ trialPlanName } з прэміяльнымі функцыямі, выберыце вашу падпіску і спосаб аплаты."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Ваш пробны перыяд завершыцца ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -11883,6 +12112,40 @@
         "Ваш тарыфны план уключае максімум ${ humanReadableAvailableSpace } сховішча."
       ]
     },
+    "Organization logo upload": {
+      "Avoid overly compressed images.": [
+        "Пазбягайце занадта сціснутых відарысаў."
+      ],
+      "Ensure your icon has padding space around it.": [
+        "Пераканайцеся, што вакол вашага значка ёсць свабодная прастора."
+      ],
+      "Opt for a PNG image that is a 128x128 pixels for clarity.": [
+        "Для нагляднасці выберыце відарыс PNG з раздзяляльнасцю 128x128 пікселяў."
+      ],
+      "Tips on choosing a good icon": [
+        "Парады па выбары добрага значка"
+      ],
+      "Use a graphical icon or image rather than text.": [
+        "Выкарыстоўваць графічны значок або малюнак замест тэксту."
+      ]
+    },
+    "Organization logo upload modal": {
+      "Drop image file here to upload or": [
+        "Перацягніце відарыс сюды, каб запампаваць або"
+      ],
+      "File in PNG or JPEG format": [
+        "Файл у фармаце PNG або JPEG"
+      ],
+      "File not larger than 30 KB": [
+        "Файл, які не больш за 30 КБ"
+      ],
+      "Square image of at least 128 pixels": [
+        "Квадратны відарыс памерам прынамсі 128 пікселяў"
+      ],
+      "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
+        "Карыстальнікі будуць бачыць ваш лагатып замест значка ${ BRAND_NAME } пры ўваходзе ў нашу вэб-праграму."
+      ]
+    },
     "OS compatibility": {
       ".deb (for Debian/Ubuntu)": [
         ".deb (для Debian/Ubuntu)"
@@ -12452,6 +12715,15 @@
       "domain.com": [
         "domain.com"
       ],
+      "e.g. https://example.com/app/protonvpn/XXXXX/sso/metadata": [
+        "напрыклад, https://example.com/app/protonvpn/XXXXX/sso/metadata"
+      ],
+      "e.g. https://idp.example.com/sso/saml": [
+        "напрыклад, https://idp.example.com/sso/saml"
+      ],
+      "e.g. https://idp.example.com/XXXXX": [
+        "напрыклад, https://idp.example.com/XXXXX"
+      ],
       "E.g., ": [
         "Напрыклад, "
       ],
@@ -12516,7 +12788,7 @@
         "Выберыце прычыну"
       ],
       "Select state": [
-        "Выбраць вобласць"
+        "Выбраць штат"
       ],
       "Text": [
         "Тэкст"
@@ -12681,14 +12953,6 @@
         "Праверка вашага нумару тэлефона павялічыць бяспеку вашага ўліковага запісу і дазволіць пашырыць параметры для аднаўлення."
       ]
     },
-    "Remark about a key type option": {
-      "Compatibility": [
-        "Сумяшчальнасць"
-      ],
-      "State of the art": [
-        "Перадавы"
-      ]
-    },
     "Remove calendar section description": {
       "By unsubscribing, you will no longer have access to this calendar. All events in this calendar will be deleted from your account, but they'll remain in the original public link.": [
         "Скасаваўшы падпіску, вы больш не зможаце атрымліваць доступ да гэтага календара. Усе падзеі ў гэтым календары будуць выдалены з вашага ўліковага запісу, але яны застануцца ў арыгінальнай публічнай спасылцы."
@@ -12717,6 +12981,11 @@
       ],
       "Unsubscribe?": [
         "Скасаваць падпіску?"
+      ]
+    },
+    "Remove organization logo": {
+      "Users will no longer see your custom logo or organization name.": [
+        "Карыстальнікі больш не будуць бачыць ваш карыстальніцкі лагатып або назву арганізацыі."
       ]
     },
     "Restore administrator panel": {
@@ -12748,6 +13017,97 @@
       ],
       "User": [
         "Карыстальнік"
+      ]
+    },
+    "scim: Action": {
+      "Configure SCIM": [
+        "Сканфігурыраваць SCIM"
+      ],
+      "Disable SCIM": [
+        "Адключыць SCIM"
+      ],
+      "Disable SCIM integration": [
+        "Адключыць інтэграцыю SCIM"
+      ],
+      "Generate new token": [
+        "Згенерыраваць новы токен"
+      ],
+      "Generate token": [
+        "Згенерыраваць токен"
+      ]
+    },
+    "scim: Info": {
+      "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
+        "**Неабходная ўмова:** аўтэнтыфікацыя SAML павінна быць сканфігурыравана для ўключэння падрыхтоўкі SCIM."
+      ],
+      "Enter token into your identity provider": [
+        "Увядзіце токен у свайго пастаўшчыка пасведчанняў"
+      ],
+      "Enter URL and token into your identity provider": [
+        "Увядзіце URL-адрас і токен у свайго пастаўшчыка пасведчанняў"
+      ],
+      "For security reasons, the SCIM token will be hidden after saving your changes and you won’t be able to see it again.": [
+        "У мэтах бяспекі токен SCIM будзе схаваны пасля таго, як змены будуць захаваны і ў вас не будзе магчымасці ўбачыць яго яшчэ раз."
+      ],
+      "For security reasons, the token is hidden": [
+        "У мэтах бяспекі токен схаваны"
+      ],
+      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ VPN_APP_NAME }.": [
+        "Перайдзіце ў свайго пастаўшчыка пасведчанняў, скапіюйце і ўстаўце даныя ніжэй і завяршыце канфігурацыю SCIM для ${ VPN_APP_NAME }."
+      ],
+      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ VPN_APP_NAME }.": [
+        "Перайдзіце ў свайго пастаўшчыка пасведчанняў, скапіюйце і ўстаўце токен ніжэй і паўторна ўключыце SCIM для ${ VPN_APP_NAME }."
+      ],
+      "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
+        "Вы можаце згенерыраваць новы токен SCIM, калі папярэдні быў страчаны або забыты. Памятайце, што ў такіх выпадках неабходна абнаўляць налады ў вашым пастаўшчыку пасведчанняў."
+      ],
+      "Make sure you copy the above SCIM token now.": [
+        "Пераканайцеся, што вы цяпер скапіявалі токен SCIM вышэй."
+      ],
+      "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
+        "Пасля адключэння SCIM для вашай арганізацыі **ўсе карыстальнікі SCIM, якія аўтаматычна забяспечаны вашым пастаўшчыком пасведчанняў, будуць пераўтвораны ў карыстальнікаў SSO** і ў вас будзе магчымасць кіраваць імі наўпрост у наладах ${ BRAND_NAME }."
+      ],
+      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ VPN_APP_NAME } organization.": [
+        "Спрашчэнне кіравання карыстальнікамі паміж рознымі сэрвісамі. Дадаванне, рэдагаванне і выдаленне карыстальнікаў у вашым пастаўшчыку пасведчанняў. Усе пералічаныя змены будуць аўтаматычна ўжывацца для вашай арганізацыі ${ VPN_APP_NAME }."
+      ],
+      "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
+        "Аўтаматычная падрыхтоўка SCIM будзе адключана да таго моманту, пакуль вамі не будзе ўведзены новы токен SCIM у налады вашага пастаўшчыка пасведчанняў."
+      ],
+      "The SCIM base URL and token will be deleted.": [
+        "SCIM на базе URL-адраса і токен будуць выдалены."
+      ],
+      "To re-enable syncing with your identity provider, your need to complete the SCIM integration again.": [
+        "Для паўторнага ўключэння сінхранізацыі з вашым пастаўшчыком пасведчанняў, вам неабходна прайсці інтэграцыю SCIM яшчэ раз."
+      ]
+    },
+    "scim: Label": {
+      "SCIM base URL": [
+        "SCIM на базе URL-адраса"
+      ],
+      "SCIM base URL (or tenant URL)": [
+        "SCIM на базе URL-адраса (або ўліковы запіс кліента URL-адраса)"
+      ],
+      "SCIM token": [
+        "Токен SCIM"
+      ]
+    },
+    "scim: Title": {
+      "Disable SCIM integration?": [
+        "Адключыць інтэграцыю SCIM?"
+      ],
+      "Generate new SCIM token?": [
+        "Стварыць новы токен SCIM?"
+      ],
+      "SCIM automatic provisioning": [
+        "Аўтаматычная падрыхтоўка SCIM"
+      ]
+    },
+    "scim: Tooltip": {
+      "API key of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
+        "Ключ API злучальніка SCIM, якому ваш агент забеспячэння IdP перасылае даныя SCIM"
+      ],
+      "URL of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
+        "URL-адрас злучальніка SCIM, якому ваш агент забеспячэння IdP перасылае даныя SCIM"
       ]
     },
     "Security Center - Info": {
@@ -14513,6 +14873,9 @@
       "Currency": [
         "Валюта"
       ],
+      "Custom branding": [
+        "Карыстальніцкі брэндзінг"
+      ],
       "Custom filters": [
         "Карыстальніцкія фільтры"
       ],
@@ -14578,6 +14941,9 @@
       ],
       "Delete logs": [
         "Выдаліць журналы"
+      ],
+      "Delete organization logo?": [
+        "Выдаліць лагатып арганізацыі?"
       ],
       "Delete the server (you will still be able to recover it for ${ days } day)": [
         "Выдаліць сервер (вы ўсё яшчэ можаце аднавіць яго на працягу ${ days } дня)",
@@ -14684,6 +15050,12 @@
       "Encryption and keys": [
         "Шыфраванне і ключы"
       ],
+      "Enter endpoints into your identity provider": [
+        "Увядзіце канцавыя пункты ў свайго пастаўшчыка пасведчанняў"
+      ],
+      "Enter SAML metadata": [
+        "Увядзіце метаданыя SAML"
+      ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Увядзіце падрабязнасці вашага ўліковага запісу ${ BRAND_NAME }, каб далучыцца да бэта-праграмы ${ app }"
       ],
@@ -14779,6 +15151,9 @@
       ],
       "How does it work?": [
         "Як гэта працуе?"
+      ],
+      "How to choose a good icon": [
+        "Як выбраць добры значок"
       ],
       "How to refer a friend and get credits": [
         "Як запрасіць сяброў і атрымаць за гэта крэдыты"
@@ -14900,6 +15275,9 @@
       "OpenVPN configuration files": [
         "Канфігурацыйныя файлы OpenVPN"
       ],
+      "Organization appearance": [
+        "Выгляд арганізацыі"
+      ],
       "Organization filters": [
         "Фільтры арганізацыі"
       ],
@@ -14922,7 +15300,7 @@
         "Налады скідання пароля"
       ],
       "Passwords made easy": [
-        "Вашы паролі сталі прасцей"
+        "Без намаганняў стварайце паролі"
       ],
       "Pay invoice": [
         "Аплаціць рахунак"
@@ -14981,6 +15359,15 @@
       "Remove calendar": [
         "Выдаліць каляндар"
       ],
+      "Remove domain": [
+        "Выдаліць дамен"
+      ],
+      "Remove single sign-on": [
+        "Выдаліць адзіны ўваход"
+      ],
+      "Remove single sign-on for your organization?": [
+        "Выдаліць адзіны ўваход для вашай арганізацыі?"
+      ],
       "Remove user?": [
         "Выдаліць карыстальніка?"
       ],
@@ -15010,6 +15397,9 @@
       ],
       "Revoke certificate": [
         "Адклікаць сертыфікат"
+      ],
+      "SAML authentication": [
+        "Аўтэнтыфікацыя SAML"
       ],
       "Save time with email filters": [
         "Эканомія часу з паштовымі фільтрамі"
@@ -15101,6 +15491,9 @@
       "Signed in to member account": [
         "Уваход ва ўліковы запіс удзельніка"
       ],
+      "Single sign-on": [
+        "Адзіны ўваход"
+      ],
       "SMTP submission": [
         "Адпраўка па SMTP"
       ],
@@ -15184,6 +15577,9 @@
       ],
       "Upload CSV file to create multiple accounts": [
         "Запампаваць файл CSV, каб стварыць некалькі ўліковых запісаў"
+      ],
+      "Upload your organization’s logo": [
+        "Запампаваць лагатып вашай арганізацыі"
       ],
       "Users": [
         "Карыстальнікі"
@@ -15392,6 +15788,12 @@
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Аўтаматычна пераключацца паміж вашымі пажаданымі тэмамі для дня і ночы згодна з начным і дзённым рэжымам вашай сістэмы."
       ],
+      "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
+        "Скапіюйце і ўстаўце гэты URL-адрас у поле ACS (Assertion Consumer Service) URL-адраса ваша пастаўшчыка пасведчанняў."
+      ],
+      "Copy and paste this URL into the entity ID field of your identity provider": [
+        "Скапіюйце і ўстаўце гэты URL-адрас у поле Entity ID вашага пастаўшчыка пасведчанняў"
+      ],
       "Customize import to reduce the number of folders": [
         "Наладзьце імпартаванне, каб паменшыць колькасць папак"
       ],
@@ -15419,6 +15821,9 @@
       "Enabling advanced logs records the IP address for each event in the security log.": [
         "Уключэнне пашыранага журнала запісвае IP-адрас кожнай падзеі ў журнале бяспекі."
       ],
+      "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
+        "URL-адрас канцавога пункта ад пастаўшчыка пасведчанняў (напрыклад, https://idp.example.com/sso/saml)"
+      ],
       "Feature in early access": [
         "Функцыю можна паспрабаваць у раннім доступе"
       ],
@@ -15427,6 +15832,9 @@
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Групуйце лісты ў адну размову ў папцы Уваходныя або адлюстроўвайце іх асобна."
+      ],
+      "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
+        "Публічны ключ пастаўшчыка пасведчанняў для подпісу сцвярджэнняў аўтэнтыфікацыі. Атрымайце хэш сертыфіката ад свайго пастаўшчыка пасведчанняў."
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Калі вы купілі падарункавы код або атрымалі яго ад нашай службы падтрымкі, то можаце ўвесці яго тут."
@@ -15457,6 +15865,9 @@
       ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
         "Подпісы, якія былі створаны дадзеным ключом лічацца памылковымі і гэты ключ не можа выкарыстоўвацца для шыфравання"
+      ],
+      "Specify the domain which is allowed to authenticate with SAML SSO": [
+        "Пазначыць дамен, які можна выкарыстоўваць для аўтэнтыфікацыі з SAML SSO"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Сістэмныя падпапкі будуць адлюстроўвацца ў якасці асобных папак у ${ MAIL_APP_NAME }"
@@ -15505,6 +15916,12 @@
       ],
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
         "Выкарыстоўвайце стандартную паласу прагорткі свайго браўзера. Звычайна яна больш і ёй прасцей карыстацца."
+      ],
+      "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
+        "Карыстальнікі будуць бачыць ваш лагатып замест значка ${ BRAND_NAME } пры ўваходзе ў нашу вэб-праграму."
+      ],
+      "Usually an URL that contains the identity provider's name within": [
+        "Звычайна гэта URL-адрас, які змяшчае назву вашага пастаўшчыка пасведчанняў."
       ],
       "Verified email address": [
         "Адрас электроннай пошты правераны"

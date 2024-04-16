@@ -161,6 +161,9 @@
       "Cancel subscription": [
         "Annulla abbonamento"
       ],
+      "Change": [
+        "Modifica"
+      ],
       "Change keys": [
         "Cambia chiavi"
       ],
@@ -205,6 +208,9 @@
       ],
       "Color": [
         "Colore"
+      ],
+      "Configure SAML": [
+        "Configura SAML"
       ],
       "Confirm": [
         "Conferma"
@@ -316,6 +322,9 @@
       ],
       "Delete link": [
         "Elimina il link"
+      ],
+      "Delete logo": [
+        "Elimina il logo"
       ],
       "Delete permanently": [
         "Elimina definitivamente"
@@ -554,6 +563,9 @@
       "Import key": [
         "Importa una chiave"
       ],
+      "Import new SAML metadata": [
+        "Importa nuovi metadati SAML"
+      ],
       "Increase": [
         "Aumenta"
       ],
@@ -577,6 +589,9 @@
       ],
       "Keep": [
         "Mantieni"
+      ],
+      "Keep logo": [
+        "Mantieni il logo"
       ],
       "Keep my Plus subscription": [
         "Mantieni il mio abbonamento Plus"
@@ -728,8 +743,14 @@
       "Remove calendar": [
         "Rimuovi il calendario"
       ],
+      "Remove domain": [
+        "Rimuovi dominio"
+      ],
       "Remove gift code": [
         "Rimuovi codice regalo"
+      ],
+      "Remove single sign-on": [
+        "Rimuovi il single sign-on"
       ],
       "Remove this label": [
         "Rimuovi questa etichetta"
@@ -815,6 +836,9 @@
       "Save ICS file": [
         "Salva il file ICS"
       ],
+      "Save SAML configuration": [
+        "Salva la configurazione SAML"
+      ],
       "Search": [
         "Cerca"
       ],
@@ -823,6 +847,9 @@
       ],
       "Search settings": [
         "Impostazioni di ricerca"
+      ],
+      "See DNS TXT record": [
+        "Visualizza il record TXT DNS"
       ],
       "See how": [
         "Scopri come"
@@ -841,6 +868,12 @@
       ],
       "Select country": [
         "Seleziona il paese"
+      ],
+      "select file": [
+        "seleziona il file"
+      ],
+      "Select file": [
+        "Seleziona il file"
       ],
       "Select files": [
         "Seleziona i file"
@@ -953,6 +986,9 @@
       "Stay": [
         "Resta"
       ],
+      "Stop using single sign-on": [
+        "Interrompi l'utilizzo di single sign-on"
+      ],
       "Strikethrough": [
         "Barrato"
       ],
@@ -1027,6 +1063,12 @@
       ],
       "Upgrade your plan": [
         "Effettua l'upgrade del piano"
+      ],
+      "Upload": [
+        "Carica"
+      ],
+      "Upload icon": [
+        "Carica l'icona"
       ],
       "Upload picture": [
         "Carica immagine"
@@ -1657,6 +1699,12 @@
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continua a usare ${ MAIL_APP_NAME }."
+      ],
+      "Continue using ${ planTitle }": [
+        "Continua a usare ${ planTitle }"
+      ],
+      "Continue your subscription": [
+        "Continua il tuo abbonamento"
       ],
       "Copy": [
         "Copia"
@@ -3884,6 +3932,12 @@
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Impossibile ottenere sessioni attive. ${ refresh } o riprova più tardi."
       ],
+      "Failed to process the logo": [
+        "Impossibile elaborare il logo"
+      ],
+      "File too large. Your logo must be 30 KB or smaller.": [
+        "File troppo grande. Il tuo logo deve essere di 30 KB o più piccolo."
+      ],
       "Filter with this name already exists": [
         "Esiste già un filtro con questo nome"
       ],
@@ -3901,6 +3955,9 @@
       ],
       "Impossible to rename the gateway": [
         "Impossibile rinominare il gateway"
+      ],
+      "Incorrect file type. Upload a file in PNG or JPEG format.": [
+        "Tipo di file errato. Carica un file in formato PNG o JPEG."
       ],
       "Incorrect login credentials. Please try again.": [
         "Credenziali di accesso non valide. Per favore riprova."
@@ -3987,6 +4044,9 @@
       "No external key retrieved for user is valid for sending": [
         "Nessuna chiave esterna caricata per l'utente è valida per l'invio"
       ],
+      "No image selected": [
+        "Nessuna immagine selezionata"
+      ],
       "No valid address found": [
         "Nessun indirizzo valido trovato"
       ],
@@ -4053,6 +4113,15 @@
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Effettua l'upgrade a un piano aziendale con più di 1 utente per gestire più utenti."
+      ],
+      "Please upload a square file": [
+        "Carica un file quadrato"
+      ],
+      "Please upload an xml file": [
+        "Carica un file xml"
+      ],
+      "Please upload only 1 file": [
+        "Carica un solo file"
       ],
       "Port is required": [
         "La porta è obbligatoria"
@@ -4121,6 +4190,12 @@
       "The email addresses do not match": [
         "Gli indirizzi email non corrispondono."
       ],
+      "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
+        "Il file è troppo grande, la dimensione massima è ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }"
+      ],
+      "The file is too small, the minimum size is ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }": [
+        "Il file è troppo piccolo, la dimensione minima è ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }"
+      ],
       "The folder name is invalid. Please choose a different name.": [
         "Il nome della cartella non è valido. Scegli un nome differente."
       ],
@@ -4183,6 +4258,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "Prova ad usare solo lettere, numeri e _.-"
+      ],
+      "Unable to upload file": [
+        "Impossibile caricare il file"
       ],
       "Unexpected error, we can't import the contacts": [
         "Errore imprevisto. Non possiamo importare i contatti."
@@ -5530,6 +5608,9 @@
       ]
     },
     "Hint": {
+      "Add this record to your domain in the control panel of your domain name registrar": [
+        "Aggiungi questo record al tuo dominio nel pannello di controllo del tuo registratore di nomi di dominio"
+      ],
       "Found ${ items.length } suggestion, use keyboard to navigate.": [
         "Trovato ${ items.length } suggerimento, usa la tastiera per navigare.",
         "Trovati ${ items.length } suggerimenti, usa la tastiera per navigare."
@@ -5895,6 +5976,9 @@
       "${ boldName } will be set as default calendar.": [
         "${ boldName } verrà impostato come calendario predefinito."
       ],
+      "${ boldSSOUserInformation } and you will have to create them manually to add them back to your organization": [
+        "${ boldSSOUserInformation } e dovrai crearli manualmente per aggiungerli nuovamente alla tua organizzazione"
+      ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Se continui, perderai l'accesso a tutti i dati crittografati correnti nel tuo account."
       ],
@@ -6119,6 +6203,9 @@
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
         "Aggiungi un altro livello di sicurezza al tuo account. Dovrai verificare la tua identità con 2FA ogni volta che accedi."
       ],
+      "Add domain": [
+        "Aggiungi dominio"
+      ],
       "Add image URL": [
         "Aggiungi URL immagine"
       ],
@@ -6267,6 +6354,9 @@
       "Are you sure you want to remove administrative privileges from this user?": [
         "Sei sicuro di voler rimuovere i privilegi amministrativi a questo utente?"
       ],
+      "Are you sure you want to remove the domain ${ boldDomain }?": [
+        "Sei sicuro di voler rimuovere il dominio ${ boldDomain }?"
+      ],
       "Ask your organisation admin to setup Gateways.": [
         "Chiedi all'amministratore della tua organizzazione di configurare i gateway."
       ],
@@ -6375,11 +6465,26 @@
       "Close this screen to exit.": [
         "Chiudi questa schermata per uscire."
       ],
+      "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
+        "Configura l'autenticazione SAML per la tua organizzazione tramite un provider di identità (IdP). Sarà possibile utilizzare SAML per l'intera organizzazione."
+      ],
+      "Configure SAML authentication for your organization through an identity provider like Okta, Microsoft Azure, or Google Identity Platform. This will enable SAML for the whole organization.": [
+        "Configura l'autenticazione SAML per la tua organizzazione tramite un provider di identità come Okta, Microsoft Azure o Google Identity Platform. Questo abiliterà SAML per l'intera organizzazione."
+      ],
       "Continue with ${ freeName }": [
         "Continua con ${ freeName }"
       ],
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "Continuando, il tuo Account ${ BRAND_NAME } verrà connesso a ${ name }."
+      ],
+      "Copied to clipboard": [
+        "Copiato negli appunti"
+      ],
+      "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
+        "Copia e incolla questo URL nel campo ACS (Assertion Consumer Service) URL del tuo fornitore di identità"
+      ],
+      "Copy and paste this URL into the entity ID field of your identity provider": [
+        "Copia e incolla questo URL nel campo Entity ID del tuo fornitore di identità"
       ],
       "Copy the link to clipboard": [
         "Copia il link negli appunti"
@@ -6486,11 +6591,23 @@
       "DMARC checks if the sender's SPF and DKIM records originate from your domain. This can prevent attackers from using another domain's SPF and DKIM to impersonate your domain. The \"p=\" (policy) in this record indicates how you want the recipient platforms to handle unauthorized emails. We recommend using the \"p=quarantine\" policy for most domains. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "DMARC controlla se i record SPF e DKIM del mittente provengono dal tuo dominio. Ciò può impedire agli aggressori di utilizzare SPF e DKIM di un altro dominio per impersonare il tuo dominio. La \"p=\" (policy) in questo record indica come desideri che le piattaforme destinatarie gestiscano le email non autorizzate. Ti consigliamo di utilizzare la policy \"p=quarantine\" per la maggior parte dei domini. Assicurati di aggiungere il seguente record TXT nella tua console DNS (situata sulla piattaforma su cui hai acquistato il dominio personalizzato)."
       ],
+      "DNS TXT record": [
+        "Record TXT DNS"
+      ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "NON dimenticare questa password. Se la dimentichi, non sarai più in grado di gestire la tua organizzazione."
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "Vuoi revocare tutte le sessioni diverse da quella attuale?"
+      ],
+      "Domain ownership failed verification.": [
+        "Verifica del possesso del dominio fallita"
+      ],
+      "Domain ownership not verified.": [
+        "Possesso del dominio non verificato"
+      ],
+      "Domain ownership verified.": [
+        "Possesso del dominio verificato"
       ],
       "domain used": [
         "dominio utilizzato",
@@ -6562,6 +6679,9 @@
       "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
         "Le email etichettate con l'etichetta ${ nameDeleted } non verranno eliminate e potranno ancora essere trovate nella loro cartella."
       ],
+      "Enable single sign-on to keep your organization safe": [
+        "Abilita il Single Sign-On per mantenere la tua organizzazione al sicuro"
+      ],
       "Enable this address to join this calendar": [
         "Abilita questo indirizzo per partecipare a questo calendario"
       ],
@@ -6573,6 +6693,9 @@
       ],
       "Encryption setting updated": [
         "Impostazione di crittografia aggiornata"
+      ],
+      "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
+        "Endpoint URL ricevuto dal tuo fornitore di identità (es. https://idp.esempio.it/sso/saml)."
       ],
       "Enhance your network security": [
         "Migliora la sicurezza della tua rete"
@@ -6688,6 +6811,9 @@
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Dai la tua chiave pubblica ai tuoi amici, o pubblicala online, in modo che tutti possano inviarti email crittografate end-to-end!"
       ],
+      "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
+        "Vai nel tuo fornitore di identità, ottieni i metadati SAML per ${ appName } e importali qui."
+      ],
       "here": [
         "qui"
       ],
@@ -6696,6 +6822,9 @@
       ],
       "High Priority": [
         "Priorità alta"
+      ],
+      "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
+        "Chiave pubblica del fornitore di identità per firmare le autenticazioni e le autorizzazioni. Dovresti riuscire a scaricare o copiare l'hash del certificato dal fornitore di identità. Incolla l'hash del certificato nel campo di testo."
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Se un altro amministratore cambia questa password, sarà necessario chiedergli una nuova password dell'organizzazione."
@@ -6879,6 +7008,9 @@
       "Lean more about gateways": [
         "Scopri di più sui gateway"
       ],
+      "Lean more about single sign-on": [
+        "Scopri di più sul Single Sign-On"
+      ],
       "Learn how to ${ staySaferOnlineLink }": [
         "Scopri come ${ staySaferOnlineLink }"
       ],
@@ -7041,6 +7173,9 @@
       "No results found": [
         "Nessun risultato trovato"
       ],
+      "Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization": [
+        "Gli utenti che non usano SSO (creati manualmente, non forniti dal tuo fornitore di identità) possono comunque accedere alla tua organizzazione"
+      ],
       "Not a valid URL": [
         "URL non valido"
       ],
@@ -7055,6 +7190,9 @@
       ],
       "of": [
         "di"
+      ],
+      "Once single sign-on is disabled for your organization:": [
+        "Quando single sign-on viene disabilitato per la tua organizzazione:"
       ],
       "Once you reset your password:": [
         "Una volta che reimposti la tua password:"
@@ -7073,6 +7211,9 @@
       ],
       "Optional": [
         "Opzionale"
+      ],
+      "or ${ selectFileButton }": [
+        "o ${ selectFileButton }"
       ],
       "Or select a particular server:": [
         "O seleziona un server specifico:"
@@ -7213,6 +7354,9 @@
       "Plus or Visionary subscription required": [
         "Abbonamento Plus o Visionary richiesto"
       ],
+      "Preview": [
+        "Anteprima"
+      ],
       "Preview failed to be loaded": [
         "Caricamento dell'anteprima non riuscito"
       ],
@@ -7306,6 +7450,9 @@
       "Right to Left": [
         "Da destra a sinistra"
       ],
+      "SAML configuration saved": [
+        "Configurazione SAML salvata"
+      ],
       "Save ${ percentage }": [
         "Risparmia il ${ percentage }"
       ],
@@ -7381,6 +7528,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Dato che sei un utente fedele, il tuo account ha funzionalità aggiuntive abilitate."
       ],
+      "Single sign-on removed": [
+        "Single sign-on rimosso"
+      ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
         "L'inoltro tramite SMTP consente a servizi o dispositivi di terze parti di inviare email dai tuoi indirizzi di dominio personalizzati tramite ${ MAIL_APP_NAME }. Questa funzionalità è disponibile solamente agli utenti ${ BRAND_NAME } for Business con domini personalizzati."
       ],
@@ -7396,8 +7546,14 @@
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "Alcuni dei tuoi server disponibili possono essere utilizzati solo in determinati paesi a causa di rimozioni recenti"
       ],
+      "Specify the domain which is allowed to authenticate with SAML SSO.": [
+        "Specifica il dominio autorizzato all'autenticazione con SAML SSO."
+      ],
       "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "SPF chiarisce chi è autorizzato a inviare email per il tuo dominio. Assicurati di aggiungere il seguente record TXT nella tua console DNS (situata sulla piattaforma su cui hai acquistato il dominio personalizzato)."
+      ],
+      "SSO users (provided by your Identity Provider) will be deleted": [
+        "Gli utenti SSO (forniti dal tuo fornitore di identità) verranno eliminati"
       ],
       "Stay tuned for future promotions.": [
         "Rimani aggiornato per le prossime promozioni."
@@ -7478,6 +7634,9 @@
       "The calendar will be removed from your account.": [
         "Il calendario verrà rimosso dal tuo account."
       ],
+      "The credentials from your Identity Provider will be deleted.": [
+        "Le credenziali del tuo fornitore di identità verranno eliminate."
+      ],
       "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
         "Il dark web è una parte nascosta di Internet in cui le informazioni personali rubate, come le identità, possono essere acquistate e vendute."
       ],
@@ -7510,6 +7669,9 @@
       ],
       "The link to report that that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "Il link per segnalare che non hai configurato un account ${ BRAND_NAME } è scaduto. Mettiti in contatto con il nostro team di supporto per risolvere questo problema."
+      ],
+      "The name and icon will be visible to your users while they are signed in.": [
+        "Il nome e l'icona saranno visibili ai tuoi utenti mentre hanno effettuato l'accesso."
       ],
       "The name will be visible to your users while they are signed in.": [
         "Il nome sarà visibile agli utenti durante l'accesso."
@@ -7580,6 +7742,9 @@
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Questo utente è attualmente responsabile dei pagamenti per l'organizzazione. Abbassando il livello di questo membro, si diventa responsabile per pagamenti dell'organizzazione."
       ],
+      "This verification can take up to one hour. You can safely continue to the next steps.": [
+        "Questa verifica può richiedere fino a un'ora. Puoi tranquillamente continuare con i passaggi successivi."
+      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Questo annullerà il tuo attuale abbonamento a pagamento e perderai i benefici di fedeltà che hai accumulato."
       ],
@@ -7607,6 +7772,9 @@
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Questo eliminerà definitivamente il tuo account e tutti i suoi dati. Non potrai riattivare questo account."
       ],
+      "This will remove SSO for ${ boldDomainName }.": [
+        "Questo rimuoverà SSO per ${ boldDomainName }."
+      ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Questo sostituirà la tua password temporanea. La userai per accedere al tuo account ${ BRAND_NAME } in futuro."
       ],
@@ -7621,6 +7789,9 @@
       ],
       "to ${ product } Business": [
         "su ${ product } Business"
+      ],
+      "To allow the domain ${ boldDomainName } to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
+        "Per consentire l'utilizzo di SAML SSO al dominio ${ boldDomainName }, devi confermarne il possesso aggiungendo il seguente record TXT DNS al tuo dominio nel tuo fornitore DNS."
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Per evitare la perdita di dati, eliminala solamente se sai cosa stai facendo o se ne hai esportato una copia."
@@ -7712,6 +7883,9 @@
       "Unfortunately there is no recovery method saved for this account.": [
         "Purtroppo non c'è nessun metodo di recupero salvato per questo account."
       ],
+      "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
+        "ID unico generato dal tuo fornitore d'identità, solitamente sotto forma di URL che contiene in esso il nome del fornitore d'identità (es. https://idp.esempio.com/XXXXX)."
+      ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "A meno che non esci dal tuo account o non cambi password, la tua sessione rimarrà attiva. Le sessioni scadono dopo 60 giorni di inattività."
       ],
@@ -7802,6 +7976,9 @@
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "La verifica aprirà una nuova scheda, disabilita qualsiasi blocco pop-up. Non ti verrà addebitato nulla. Qualsiasi importo utilizzato per verificare la tua carta sarà immediatamente rimborsato."
       ],
+      "Verify domain": [
+        "Verifica il dominio"
+      ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Verifica la tua identità con una password temporanea usa e getta da un'app di autenticazione"
       ],
@@ -7874,6 +8051,9 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Sarai reindirizzato su PayPal in una nuova scheda del browser per completare questa transazione. Se utilizzi un blocco pop-up, disattivalo per continuare."
       ],
+      "We'll email you once import is complete.": [
+        "Ti invieremo un'email una volta completata l'importazione."
+      ],
       "We'll get back to you shortly.": [
         "Ti risponderemo a breve."
       ],
@@ -7906,6 +8086,9 @@
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Se disabilitato, questo bloccherà il caricamento di file di immagini sul tuo dispositivo senza che tu ne sia informato."
+      ],
+      "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
+        "Quando abiliti SAML per ${ appName } nel tuo fornitore di identità, ti potrebbe essere chiesto di usare l'issuer ID e l'URL (ACS) di callback. Copia e incolla i dati seguenti nei campi del tuo fornitore di identità."
       ],
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
         "Se le notifiche sono abilitate, invieremo un avviso al tuo indirizzo email di recupero quando hai nuovi messaggi nel tuo account ${ MAIL_APP_NAME }."
@@ -7978,6 +8161,9 @@
       "You can check the progress ${ importProgressLink }.": [
         "Puoi controllare lo stato di avanzamento ${ importProgressLink }."
       ],
+      "You can close the tab or browser in the meantime.": [
+        "Nel frattempo puoi chiudere la scheda o il browser."
+      ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Puoi modificarlo una volta per garantire l'indirizzo email corretto per la verifica."
       ],
@@ -8035,6 +8221,12 @@
       "You have ${ availableCount } dedicated server available.": [
         "Hai ${ availableCount } server dedicato disponibile.",
         "Hai ${ availableCount } server dedicati disponibili."
+      ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "Hai un abbonamento di prova a ${ planTitle }. Se desideri continuare l'abbonamento dopo il periodo di prova, aggiungi un metodo di pagamento."
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "Hai un abbonamento di prova a ${ planTitle }. In questo momento non è richiesto alcun pagamento. Il tuo abbonamento verrà rinnovato automaticamente al termine del periodo di prova."
       ],
       "You have no calendars to export.": [
         "Non hai calendari da esportare."
@@ -8321,26 +8513,26 @@
       ]
     },
     "Key generation": {
-      "A key with the same encryption algorithm already exists. Generating another key will cause slower account loading. Are you sure you want to continue?": [
-        "Esiste già una chiave con lo stesso algoritmo di crittografia. La generazione di un'altra chiave causerà un caricamento più lento dell'account. Sei sicuro di voler continuare?"
-      ],
-      "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
-        "Una chiave con lo stesso algoritmo di crittografia è già attiva per questo indirizzo. Generare un'altra chiave causerà un caricamento più lento dell'account e l'eliminazione di essa può causare problemi. Se stai generando una nuova chiave perché la tua vecchia chiave è compromessa, segnala come tale. Sei sicuro di voler continuare?"
-      ],
       "Generate key": [
         "Genera chiave"
       ],
-      "Key with fingerprint ${ fp } successfully created.": [
-        "Chiave con l'impronta digitale ${ fp } creata."
+      "Generating key failed. Please try again later.": [
+        "La generazione della chiave non è riuscita. Riprova più tardi."
       ],
-      "The encryption keys are being generated. This may take several minutes and temporarily freeze your browser.": [
-        "Le chiavi di crittografia sono in fase di generazione. Questo può richiedere diversi minuti e bloccare temporaneamente il tuo browser."
+      "If you're generating a new key because you believe your existing key has been compromised, please mark it as compromised after generating this key.": [
+        "Se stai generando una nuova chiave perché ritieni che la tua chiave attuale sia stata compromessa, contrassegnala come compromessa dopo aver generato questa chiave."
       ],
-      "The encryption keys for your address are being generated. This may take several minutes and temporarily freeze your browser.": [
-        "Le chiavi di crittografia per il tuo indirizzo sono in fase di generazione. Questo può richiedere diversi minuti e bloccare temporaneamente il tuo browser."
+      "Key successfully generated.": [
+        "Chiave generata con successo."
       ],
-      "You can generate a new encryption key if you think your previous key has been compromised.": [
-        "Se pensi che la tua precedente chiave di crittografia sia stata compromessa, puoi generare una nuova chiave."
+      "Note: you already have a key with the same algorithm for this address. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
+        "Nota: hai già una chiave con lo stesso algoritmo per questo indirizzo. A meno che la chiave non sia stata compromessa, potrebbe non essere necessario generarne una nuova, farlo potrebbe rallentare il tuo account."
+      ],
+      "Note: you already have a key with the same algorithm for this user. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
+        "Nota: hai già una chiave con lo stesso algoritmo per questo utente. A meno che la chiave non sia stata compromessa, potrebbe non essere necessario generarne una nuova, farlo potrebbe rallentare il tuo account."
+      ],
+      "This will generate a new key, which will be used to encrypt future contact details, email encryption keys, and other data.": [
+        "Questa azione genererà una nuova chiave, che verrà utilizzata per crittografare i dettagli di contatto futuri, le chiavi di crittografia email e gli altri dati."
       ]
     },
     "Key state badge": {
@@ -8364,14 +8556,6 @@
       ],
       "Primary": [
         "Principale"
-      ]
-    },
-    "Key type option": {
-      "${ compatibility } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
-        "${ compatibility } RSA 4096-bit (Più lento, ma compatibilità migliorata con il software obsoleto)"
-      ],
-      "${ stateOfTheArt } ECC Curve25519 (Fastest, most modern)": [
-        "${ stateOfTheArt } ECC Curve25519 (Più veloce, più moderno)"
       ]
     },
     "Keyboard shortcut name": {
@@ -8690,6 +8874,12 @@
       "Allow recovery using a trusted device": [
         "Consenti il ​​recupero tramite dispositivo attendibile"
       ],
+      "Allowed domain": [
+        "Dominio autorizzato"
+      ],
+      "Allowed Domain": [
+        "Dominio autorizzato"
+      ],
       "Amount": [
         "Importo"
       ],
@@ -8713,6 +8903,9 @@
       ],
       "Apply filter to existing emails": [
         "Applicare i filtri alle email esistenti"
+      ],
+      "Assertion Consumer Service URL": [
+        "Assertion Consumer Service URL"
       ],
       "Attach public key": [
         "Allega la chiave pubblica"
@@ -8963,6 +9156,9 @@
       "Duration": [
         "Durata"
       ],
+      "e.g. example.com": [
+        "es. example.com"
+      ],
       "Email": [
         "Email"
       ],
@@ -9080,6 +9276,9 @@
       "Invite via email": [
         "Invita tramite email"
       ],
+      "Issuer ID": [
+        "ID dell'emittente"
+      ],
       "Keep me signed in": [
         "Rimani connesso"
       ],
@@ -9088,9 +9287,6 @@
       ],
       "Key": [
         "Chiave"
-      ],
-      "Key strength": [
-        "Robustezza della chiave"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Scorciatoia da tastiera: ${ shortcut }"
@@ -9122,6 +9318,9 @@
       "Link label": [
         "Etichetta del link"
       ],
+      "Logo": [
+        "Logo"
+      ],
       "Mail Server (IMAP)": [
         "Server di posta (IMAP)"
       ],
@@ -9142,6 +9341,15 @@
       ],
       "Messages per page": [
         "Messaggi per pagina"
+      ],
+      "Metadata file for ${ appName }": [
+        "File dei metadati per ${ appName }"
+      ],
+      "Metadata URL for ${ appName }": [
+        "URL dei metadati per ${ appName }"
+      ],
+      "Method for importing metadata": [
+        "Metodo di importazione dei metadati"
       ],
       "Moderate NAT": [
         "NAT moderato"
@@ -9296,6 +9504,9 @@
       "Protection mode": [
         "Modalità di protezione"
       ],
+      "Public certificate (X.509)": [
+        "Certificato pubblico (X.509)"
+      ],
       "Read": [
         "Letta"
       ],
@@ -9313,6 +9524,9 @@
       ],
       "Repeat password": [
         "Conferma la password"
+      ],
+      "Reply (ACS) URL": [
+        "URL di risposta (ACS)."
       ],
       "Require 2FA for administrators": [
         "Richiedi 2FA per gli amministratori"
@@ -9358,6 +9572,12 @@
       ],
       "Signature": [
         "Firma"
+      ],
+      "Single sign-on entity ID": [
+        "Entity ID di accesso singolo"
+      ],
+      "Single sign-on URL": [
+        "URL di accesso singolo"
       ],
       "SMTP port": [
         "Porta SMTP"
@@ -9422,6 +9642,9 @@
       "Two-password mode": [
         "Modalità a doppia password"
       ],
+      "Type": [
+        "Tipo"
+      ],
       "Undo send": [
         "Annullamento dell'invio"
       ],
@@ -9445,6 +9668,9 @@
       ],
       "Username": [
         "Nome utente"
+      ],
+      "Value": [
+        "Valore"
       ],
       "VAT": [
         "IVA"
@@ -10764,17 +10990,6 @@
         "Gestione del team"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "In caso contrario, l'accesso al tuo account sarà limitato e il tuo account verrà di seguito disabilitato."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Per continuare a utilizzare ${ trialPlanName } con le funzionalità premium, scegli l'abbonamento e le opzioni di pagamento."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "La tua prova termina ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } che termina con ${ last4 }"
@@ -10874,6 +11089,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Stai godendo di un prezzo promozionale sul tuo piano attuale. Se esegui il downgrade del tuo account, perderai la possibilità di usufruire di questa promozione e non sarà più disponibile se provi ad abbonarti di nuovo."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "In caso contrario, l'accesso al tuo account sarà limitato e il tuo account verrà di seguito disabilitato."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Per continuare a utilizzare ${ trialPlanName } con le funzionalità premium, scegli l'abbonamento e le opzioni di pagamento."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "La tua prova termina ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -11657,6 +11883,40 @@
         "Il tuo piano include un massimo di ${ humanReadableAvailableSpace } spazio di archiviazione in più."
       ]
     },
+    "Organization logo upload": {
+      "Avoid overly compressed images.": [
+        "Evita immagini eccessivamente compresse."
+      ],
+      "Ensure your icon has padding space around it.": [
+        "Assicurati che la tua icona abbia abbastanza spazio di riempimento attorno."
+      ],
+      "Opt for a PNG image that is a 128x128 pixels for clarity.": [
+        "Scegli un'immagine PNG di 128x128 pixel per maggiore chiarezza."
+      ],
+      "Tips on choosing a good icon": [
+        "Suggerimenti per scegliere una buona icona"
+      ],
+      "Use a graphical icon or image rather than text.": [
+        "Utilizza un'icona grafica o un'immagine anziché il testo."
+      ]
+    },
+    "Organization logo upload modal": {
+      "Drop image file here to upload or": [
+        "Trascina qui il file immagine da caricare o"
+      ],
+      "File in PNG or JPEG format": [
+        "File in formato PNG o JPEG"
+      ],
+      "File not larger than 30 KB": [
+        "File non più grande di 30 KB"
+      ],
+      "Square image of at least 128 pixels": [
+        "Immagine quadrata di almeno 128 pixel"
+      ],
+      "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
+        "Gli utenti vedranno il tuo logo invece dell'icona di ${ BRAND_NAME } quando accedono alle nostre app web."
+      ]
+    },
     "OS compatibility": {
       ".deb (for Debian/Ubuntu)": [
         ".deb (per Debian/Ubuntu)"
@@ -12226,6 +12486,15 @@
       "domain.com": [
         "dominio.it"
       ],
+      "e.g. https://example.com/app/protonvpn/XXXXX/sso/metadata": [
+        "es. https://example.com/app/protonvpn/XXXXX/sso/metadata"
+      ],
+      "e.g. https://idp.example.com/sso/saml": [
+        "es. https://idp.example.com/sso/saml"
+      ],
+      "e.g. https://idp.example.com/XXXXX": [
+        "es. https://idp.example.com/XXXXX"
+      ],
       "E.g., ": [
         "Ad es "
       ],
@@ -12451,14 +12720,6 @@
         "Verificare il tuo numero di telefono migliora la sicurezza del tuo account e permette opzioni aggiuntive per il recupero."
       ]
     },
-    "Remark about a key type option": {
-      "Compatibility": [
-        "Compatibilità"
-      ],
-      "State of the art": [
-        "Stato dell'arte"
-      ]
-    },
     "Remove calendar section description": {
       "By unsubscribing, you will no longer have access to this calendar. All events in this calendar will be deleted from your account, but they'll remain in the original public link.": [
         "Annullando l'iscrizione non avrai più accesso a questo calendario. Tutti gli eventi in questo calendario verranno eliminati dal tuo account, ma rimarranno accessibili dal link pubblico originale."
@@ -12489,6 +12750,11 @@
         "Vuoi disiscriverti?"
       ]
     },
+    "Remove organization logo": {
+      "Users will no longer see your custom logo or organization name.": [
+        "Gli utenti non vedranno più il tuo logo personalizzato o il nome della tua organizzazione."
+      ]
+    },
     "Restore administrator panel": {
       "${ n } administrator in your organization need access to the organization key.": [
         "${ n } amministratore della tua organizzazione ha bisogno di accedere alla chiave dell'organizzazione.",
@@ -12516,6 +12782,97 @@
       ],
       "User": [
         "Utente"
+      ]
+    },
+    "scim: Action": {
+      "Configure SCIM": [
+        "Configura SCIM"
+      ],
+      "Disable SCIM": [
+        "Disabilita SCIM"
+      ],
+      "Disable SCIM integration": [
+        "Disabilita l'integrazione SCIM"
+      ],
+      "Generate new token": [
+        "Genera un nuovo token"
+      ],
+      "Generate token": [
+        "Genera token"
+      ]
+    },
+    "scim: Info": {
+      "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
+        "**Prerequisito:** l'autenticazione SAML deve essere configurata per abilitare il provisioning SCIM."
+      ],
+      "Enter token into your identity provider": [
+        "Inserisci il token nel tuo provider di identità"
+      ],
+      "Enter URL and token into your identity provider": [
+        "Inserisci l'URL e il token nel tuo provider di identità"
+      ],
+      "For security reasons, the SCIM token will be hidden after saving your changes and you won’t be able to see it again.": [
+        "Per motivi di sicurezza, il token SCIM verrà nascosto dopo aver salvato le modifiche e non potrai più visualizzarlo."
+      ],
+      "For security reasons, the token is hidden": [
+        "Per motivi di sicurezza, il token è nascosto"
+      ],
+      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ VPN_APP_NAME }.": [
+        "Accedi al tuo provider di identità, copia e incolla i dati seguenti e completa la configurazione di SCIM per ${ VPN_APP_NAME }."
+      ],
+      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ VPN_APP_NAME }.": [
+        "Accedi al tuo provider di identità, copia e incolla il token seguente e riattiva SCIM per ${ VPN_APP_NAME }."
+      ],
+      "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
+        "Se hai perso o dimenticato il token SCIM, puoi generarne uno nuovo, ma tieni presente che le impostazioni del tuo provider di identità dovranno essere aggiornate."
+      ],
+      "Make sure you copy the above SCIM token now.": [
+        "Assicurati di copiare ora il token SCIM qui sopra."
+      ],
+      "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
+        "Una volta disabilitato SCIM per la tua organizzazione, **tutti gli utenti SCIM forniti automaticamente dal tuo provider di identità verranno convertiti in utenti SSO** e potrai gestirli direttamente nelle impostazioni di ${ BRAND_NAME }."
+      ],
+      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ VPN_APP_NAME } organization.": [
+        "Semplifica la gestione degli utenti tra diversi servizi. Aggiungi, modifica e rimuovi utenti nel tuo provider di identità: queste modifiche verranno automaticamente applicate alla tua organizzazione ${ VPN_APP_NAME }."
+      ],
+      "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
+        "Il provisioning automatico di SCIM sarà disabilitato finché non inserirai il nuovo token SCIM nelle impostazioni del tuo provider di identità."
+      ],
+      "The SCIM base URL and token will be deleted.": [
+        "Il base URL e il token SCIM verranno eliminati."
+      ],
+      "To re-enable syncing with your identity provider, your need to complete the SCIM integration again.": [
+        "Per riattivare la sincronizzazione con il tuo provider di identità, devi completare nuovamente l'integrazione SCIM."
+      ]
+    },
+    "scim: Label": {
+      "SCIM base URL": [
+        "Base URL SCIM"
+      ],
+      "SCIM base URL (or tenant URL)": [
+        "Base URL SCIM (o URL del tenant)"
+      ],
+      "SCIM token": [
+        "Token SCIM"
+      ]
+    },
+    "scim: Title": {
+      "Disable SCIM integration?": [
+        "Vuoi disabilitare l'integrazione SCIM?"
+      ],
+      "Generate new SCIM token?": [
+        "Vuoi generare un nuovo token SCIM?"
+      ],
+      "SCIM automatic provisioning": [
+        "Provisioning automatico SCIM"
+      ]
+    },
+    "scim: Tooltip": {
+      "API key of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
+        "Chiave API del connettore SCIM a cui l'agente di provisioning IdP inoltra i dati SCIM"
+      ],
+      "URL of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
+        "URL del connettore SCIM a cui l'agente di provisioning IdP inoltra i dati SCIM"
       ]
     },
     "Security Center - Info": {
@@ -14199,6 +14556,9 @@
       "Currency": [
         "Valuta"
       ],
+      "Custom branding": [
+        "Marchio personalizzato"
+      ],
       "Custom filters": [
         "Filtri personalizzati"
       ],
@@ -14264,6 +14624,9 @@
       ],
       "Delete logs": [
         "Cancella i registi"
+      ],
+      "Delete organization logo?": [
+        "Vuoi eliminare il logo dell'organizzazione?"
       ],
       "Delete the server (you will still be able to recover it for ${ days } day)": [
         "Elimina il server (potrai comunque recuperarlo entro ${ days } giorno)",
@@ -14368,6 +14731,12 @@
       "Encryption and keys": [
         "Crittografia e chiavi"
       ],
+      "Enter endpoints into your identity provider": [
+        "Inserisci gli endpoint nel tuo fornitore di identità"
+      ],
+      "Enter SAML metadata": [
+        "Inserisci i metadati SAML"
+      ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Inserisci i dettagli del tuo account ${ BRAND_NAME } per partecipare al programma beta di ${ app }"
       ],
@@ -14461,6 +14830,9 @@
       ],
       "How does it work?": [
         "Come funziona?"
+      ],
+      "How to choose a good icon": [
+        "Come scegliere una buona icona"
       ],
       "How to refer a friend and get credits": [
         "Come segnalare un amico e ottenere crediti"
@@ -14580,6 +14952,9 @@
       "OpenVPN configuration files": [
         "File di configurazione di OpenVPN"
       ],
+      "Organization appearance": [
+        "Aspetto dell'organizzazione"
+      ],
       "Organization filters": [
         "Filtri organizzazione"
       ],
@@ -14661,6 +15036,15 @@
       "Remove calendar": [
         "Rimuovi calendario"
       ],
+      "Remove domain": [
+        "Rimuovi dominio"
+      ],
+      "Remove single sign-on": [
+        "Rimuovi il single sign-on"
+      ],
+      "Remove single sign-on for your organization?": [
+        "Vuoi rimuovere il single sign-on per la tua organizzazione?"
+      ],
       "Remove user?": [
         "Vuoi rimuovere l'utente?"
       ],
@@ -14690,6 +15074,9 @@
       ],
       "Revoke certificate": [
         "Revoca certificato"
+      ],
+      "SAML authentication": [
+        "Autenticazione SAML"
       ],
       "Save time with email filters": [
         "Risparmia tempo con i filtri per email."
@@ -14781,6 +15168,9 @@
       "Signed in to member account": [
         "Accesso all'account membro"
       ],
+      "Single sign-on": [
+        "Single sign-on"
+      ],
       "SMTP submission": [
         "Inoltro tramite SMTP"
       ],
@@ -14862,6 +15252,9 @@
       ],
       "Upload CSV file to create multiple accounts": [
         "Carica il file CSV per creare più account"
+      ],
+      "Upload your organization’s logo": [
+        "Carica il logo della tua organizzazione"
       ],
       "Users": [
         "Utenti"
@@ -15070,6 +15463,12 @@
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Passa automaticamente tra i tuoi temi preferiti per il giorno e per la notte sincronizzandoli con le modalità di giorno e di notte del tuo sistema."
       ],
+      "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
+        "Copia e incolla questo URL nel campo ACS (Assertion Consumer Service) URL del tuo fornitore di identità"
+      ],
+      "Copy and paste this URL into the entity ID field of your identity provider": [
+        "Copia e incolla questo URL nel campo Entity ID del tuo fornitore di identità"
+      ],
       "Customize import to reduce the number of folders": [
         "Personalizza l'importazione per ridurre il numero di cartelle"
       ],
@@ -15097,6 +15496,9 @@
       "Enabling advanced logs records the IP address for each event in the security log.": [
         "L'abilitazione dei log avanzati registra l'indirizzo IP per ogni evento nei log di sicurezza."
       ],
+      "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
+        "Endpoint URL dal fornitore d'identità (es. https://idp.esempio.it/sso/saml)"
+      ],
       "Feature in early access": [
         "Funzionalità in accesso anticipato"
       ],
@@ -15105,6 +15507,9 @@
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Raggruppa o visualizza separatamente nella tua Posta in arrivo le email nella stessa conversazione."
+      ],
+      "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
+        "Chiave pubblica del fornitore di identità per firmare le autenticazioni e le autorizzazioni. Ottieni l'hash del certificato dal tuo fornitore di identità."
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Se hai acquistato un codice regalo o ne hai ricevuto uno dal nostro team di supporto, puoi inserirlo qui."
@@ -15135,6 +15540,9 @@
       ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
         "Le firme prodotte da questa chiave vengono considerate come non valide e questa chiave non può essere usata per la crittografia"
+      ],
+      "Specify the domain which is allowed to authenticate with SAML SSO": [
+        "Specifica il dominio autorizzato all'autenticazione con SAML SSO"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Le sottocartelle di sistema verranno visualizzate come cartelle separate in ${ MAIL_APP_NAME }"
@@ -15183,6 +15591,12 @@
       ],
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
         "Usa le barre di scorrimento predefinite del tuo browser. Queste sono solitamente più grandi e più facili da usare"
+      ],
+      "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
+        "Gli utenti vedranno il tuo logo invece dell'icona di ${ BRAND_NAME } quando accedono alle nostre app web."
+      ],
+      "Usually an URL that contains the identity provider's name within": [
+        "Solitamente un URL che contiene in esso il nome del fornitore di identità"
       ],
       "Verified email address": [
         "Indirizzo email verificato"
