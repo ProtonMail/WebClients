@@ -730,6 +730,31 @@
         "Terabytes"
       ]
     },
+    "Font face option": {
+      "System default": [
+        "Systeem standaard"
+      ],
+      "Theme font": [
+        "Thema lettertype"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Groot"
+      ],
+      "Medium (recommended)": [
+        "Gemiddeld (aanbevolen)"
+      ],
+      "Small": [
+        "Klein"
+      ],
+      "Very large": [
+        "Zeer groot"
+      ],
+      "Very small": [
+        "Zeer klein"
+      ]
+    },
     "Info": {
       " Upgrade to a paid plan to create multiple vaults.": [
         "Upgrade naar een betalend abonnement om meerdere kluizen aan te maken."
@@ -817,6 +842,9 @@
       ],
       "Built in 2FA authenticator": [
         "Ingebouwd in 2FA-authenticator"
+      ],
+      "By default team members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
+        "Standaard kunnen teamleden alleen kluizen exporteren waar ze de eigenaar zijn. Als deze optie is ingeschakeld, zullen ze geen gegevens kunnen exporteren"
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "Kan items aanmaken, bewerken, verwijderen en exporteren in deze kluis."
@@ -1162,6 +1190,9 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Deze export wordt niet versleuteld en iedereen met toegang tot uw geëxporteerde bestand kan uw wachtwoorden zien. Verwijder het voor de veiligheid nadat u klaar bent met het gebruik ervan."
       ],
+      "This setting is disabled on the organization level": [
+        "Deze instelling is uitgeschakeld op organisatieniveau"
+      ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Deze kluis wordt momenteel met niet gedeeld. Nodig mensen uit om deze met anderen te delen."
       ],
@@ -1365,6 +1396,9 @@
       "Disable data export for team members": [
         "Gegevensexport uitschakelen voor teamleden"
       ],
+      "Disable sharing outside the organization": [
+        "Delen buiten de organisatie uitschakelen"
+      ],
       "Display": [
         "Weergeven"
       ],
@@ -1385,6 +1419,9 @@
       ],
       "Export": [
         "Exporteren"
+      ],
+      "Exporting policy": [
+        "Export beleid"
       ],
       "Field name": [
         "Veldnaam"
@@ -1583,6 +1620,9 @@
       ],
       "Set PIN code": [
         "Pincode instellen"
+      ],
+      "Sharing policy": [
+        "Delen beleid"
       ],
       "Show website favicons": [
         "Websitepictogrammen weergeven"

@@ -161,6 +161,9 @@
       "Cancel subscription": [
         "Avsluta prenumeration"
       ],
+      "Change": [
+        "Ändra"
+      ],
       "Change keys": [
         "Ändra nycklar"
       ],
@@ -205,6 +208,9 @@
       ],
       "Color": [
         "Färg"
+      ],
+      "Configure SAML": [
+        "Konfigurera SAML"
       ],
       "Confirm": [
         "Bekräfta"
@@ -316,6 +322,9 @@
       ],
       "Delete link": [
         "Ta bort länk"
+      ],
+      "Delete logo": [
+        "Ta bort logga"
       ],
       "Delete permanently": [
         "Ta bort permanent"
@@ -554,6 +563,9 @@
       "Import key": [
         "Importera nyckel"
       ],
+      "Import new SAML metadata": [
+        "Importera ny SAML-metadata"
+      ],
       "Increase": [
         "Öka"
       ],
@@ -577,6 +589,9 @@
       ],
       "Keep": [
         "Behåll"
+      ],
+      "Keep logo": [
+        "Behåll logga"
       ],
       "Keep my Plus subscription": [
         "Behåll min Plus-prenumeration"
@@ -610,6 +625,9 @@
       ],
       "Mark as default": [
         "Markera som standard"
+      ],
+      "Mark as open": [
+        "Markera som öppen"
       ],
       "Mark as resolved": [
         "Markera som löst"
@@ -725,8 +743,14 @@
       "Remove calendar": [
         "Ta bort kalender"
       ],
+      "Remove domain": [
+        "Ta bort domän"
+      ],
       "Remove gift code": [
         "Ta bort presentkod"
+      ],
+      "Remove single sign-on": [
+        "Ta bort enkel inloggning"
       ],
       "Remove this label": [
         "Ta bort denna etikett"
@@ -812,6 +836,9 @@
       "Save ICS file": [
         "Spara ICS-fil"
       ],
+      "Save SAML configuration": [
+        "Spara SAML-konfiguration"
+      ],
       "Search": [
         "Sök"
       ],
@@ -820,6 +847,9 @@
       ],
       "Search settings": [
         "Sökinställningar"
+      ],
+      "See DNS TXT record": [
+        "Se DNS TXT-post"
       ],
       "See how": [
         "Se hur"
@@ -838,6 +868,12 @@
       ],
       "Select country": [
         "Välj land"
+      ],
+      "select file": [
+        "välj fil"
+      ],
+      "Select file": [
+        "Välj fil"
       ],
       "Select files": [
         "Välj filer"
@@ -950,6 +986,9 @@
       "Stay": [
         "Stanna"
       ],
+      "Stop using single sign-on": [
+        "Sluta använda enkel inloggning"
+      ],
       "Strikethrough": [
         "Genomstrykning"
       ],
@@ -1024,6 +1063,12 @@
       ],
       "Upgrade your plan": [
         "Uppgradera ditt paket"
+      ],
+      "Upload": [
+        "Ladda upp"
+      ],
+      "Upload icon": [
+        "Ladda upp ikon"
       ],
       "Upload picture": [
         "Ladda upp bild"
@@ -1651,6 +1696,12 @@
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Fortsätt använda ${ MAIL_APP_NAME }."
+      ],
+      "Continue using ${ planTitle }": [
+        "Fortsätt använda ${ planTitle }"
+      ],
+      "Continue your subscription": [
+        "Fortsätt din prenumeration"
       ],
       "Copy": [
         "Kopiera"
@@ -3874,6 +3925,12 @@
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Misslyckades att hämta aktiva sessioner. ${ refresh } eller försök igen senare."
       ],
+      "Failed to process the logo": [
+        "Misslyckades att bearbeta loggan"
+      ],
+      "File too large. Your logo must be 30 KB or smaller.": [
+        "Fil för stor. Din logga måste vara 30 KB eller mindre."
+      ],
       "Filter with this name already exists": [
         "Filter med detta namn finns redan"
       ],
@@ -3891,6 +3948,9 @@
       ],
       "Impossible to rename the gateway": [
         "Omöjligt att byta namn på gateway"
+      ],
+      "Incorrect file type. Upload a file in PNG or JPEG format.": [
+        "Felaktig filtyp. Ladda upp en fil i PNG- eller JPEG-format."
       ],
       "Incorrect login credentials. Please try again.": [
         "Felaktiga inloggningsuppgifter. Försök igen."
@@ -3977,6 +4037,9 @@
       "No external key retrieved for user is valid for sending": [
         "Ingen extern nyckel hämtad för användaren är giltig för sändning"
       ],
+      "No image selected": [
+        "Ingen bild vald"
+      ],
       "No valid address found": [
         "Ingen giltig adress hittades"
       ],
@@ -4043,6 +4106,15 @@
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Uppgradera till ett företagspaket med mer än 1 användare för att hantera flera användare."
+      ],
+      "Please upload a square file": [
+        "Ladda upp en fyrkantig bild"
+      ],
+      "Please upload an xml file": [
+        "Ladda upp en xml-fil"
+      ],
+      "Please upload only 1 file": [
+        "Ladda endast upp 1 fil"
       ],
       "Port is required": [
         "Port är obligatoriskt"
@@ -4111,6 +4183,12 @@
       "The email addresses do not match": [
         "E-postadresserna matchar inte"
       ],
+      "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
+        "Filen är för stor, största storlek är ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }"
+      ],
+      "The file is too small, the minimum size is ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }": [
+        "Filen är för liten, minsta storlek är ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }"
+      ],
       "The folder name is invalid. Please choose a different name.": [
         "Mappnamnet är ogiltigt. Välj ett annat namn."
       ],
@@ -4173,6 +4251,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "Prova använda endast bokstäver, siffror och _.-"
+      ],
+      "Unable to upload file": [
+        "Kan inte ladda upp fil"
       ],
       "Unexpected error, we can't import the contacts": [
         "Oväntat fel, vi kan inte importera kontakterna"
@@ -5899,6 +5980,9 @@
       "${ boldName } will be set as default calendar.": [
         "${ boldName } kommer att ställas in som standardkalender."
       ],
+      "${ boldSSOUserInformation } and you will have to create them manually to add them back to your organization": [
+        "${ boldSSOUserInformation } och du måste skapa dem manuellt för att lägga tillbaka dem till din organisation"
+      ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Du kommer att förlora åtkomst till alla nuvarande krypterade data på ditt konto om du fortsätter."
       ],
@@ -6120,6 +6204,9 @@
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
         "Lägg till ytterligare ett lager av säkerhet till ditt konto. Du måste verifiera dig själv med 2FA varje gång du loggar in."
       ],
+      "Add domain": [
+        "Lägg till domän"
+      ],
       "Add image URL": [
         "Lägg till bild-URL"
       ],
@@ -6268,6 +6355,9 @@
       "Are you sure you want to remove administrative privileges from this user?": [
         "Är du säker på att du vill ta bort administrativa behörigheter från denna användare?"
       ],
+      "Are you sure you want to remove the domain ${ boldDomain }?": [
+        "Är det säker på att du vill ta bort domänen ${ boldDomain }?"
+      ],
       "Ask your organisation admin to setup Gateways.": [
         "Be din organisations administratör att ställa in gateways."
       ],
@@ -6376,11 +6466,23 @@
       "Close this screen to exit.": [
         "Stäng denna skärm för att avsluta."
       ],
+      "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
+        "Konfigurera SAML-autentisering för din organisation genom en identitetsleverantör (IdP). Detta kommer att aktivera SAML för hela organisationen."
+      ],
+      "Configure SAML authentication for your organization through an identity provider like Okta, Microsoft Azure, or Google Identity Platform. This will enable SAML for the whole organization.": [
+        "Konfigurera SAML-autentisering för din organisation genom en identitetsleverantör som Okta, Microsoft Azure eller Google Identity Platform. Detta kommer att aktivera SAML för hela organisationen."
+      ],
       "Continue with ${ freeName }": [
         "Fortsätt med ${ freeName }"
       ],
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "Om du fortsätter kommer ditt ${ BRAND_NAME }-konto anslutas till ${ name }."
+      ],
+      "Copied to clipboard": [
+        "Kopierad till urklipp"
+      ],
+      "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
+        "Kopiera och klistra in denna URL i ACS (Assertion Consumer Service) URL-fältet för din identitetsleverantör"
       ],
       "Copy the link to clipboard": [
         "Kopiera länken till urklipp"
@@ -6487,11 +6589,23 @@
       "DMARC checks if the sender's SPF and DKIM records originate from your domain. This can prevent attackers from using another domain's SPF and DKIM to impersonate your domain. The \"p=\" (policy) in this record indicates how you want the recipient platforms to handle unauthorized emails. We recommend using the \"p=quarantine\" policy for most domains. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "DMARC kontrollerar om avsändarens SPF- och DKIM-poster kommer från din domän. Detta kan förhindra angripare från att använda en annan domäns SPF och DKIM för att imitera din domän. ”p=” (policy) i denna post indikerar hur du vill att mottagarplattformarna ska hantera obehöriga e-postmeddelanden. Vi rekommenderar att använda policyn ”p=quarantine” för de flesta domäner. Se till att du lägger till följande TXT-post i din DNS-konsol (finns på plattformen där du köpte den anpassade domänen)."
       ],
+      "DNS TXT record": [
+        "DNS TXT-post"
+      ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "Glöm INTE det här lösenordet. Om du glömmer det kommer du inte att kunna hantera din organisation."
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "Vill du återkalla alla andra sessioner än den nuvarande?"
+      ],
+      "Domain ownership failed verification.": [
+        "Verifiering av domänens äganderätt misslyckades."
+      ],
+      "Domain ownership not verified.": [
+        "Domänens äganderätt inte verifierad."
+      ],
+      "Domain ownership verified.": [
+        "Domänens äganderätt verifierad."
       ],
       "domain used": [
         "domän används",
@@ -6563,6 +6677,9 @@
       "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
         "E-post märkta med denna ${ nameDeleted }-etikett kommer inte att tas bort och kan fortfarande hittas i respektive mapp."
       ],
+      "Enable single sign-on to keep your organization safe": [
+        "Aktivera enkel inloggning för att hålla din organisation säker"
+      ],
       "Enable this address to join this calendar": [
         "Aktivera denna adress för att gå med i denna kalender"
       ],
@@ -6574,6 +6691,9 @@
       ],
       "Encryption setting updated": [
         "Krypteringsinställning uppdaterad"
+      ],
+      "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
+        "Ändpunkts-URL mottagen från din identitetsleverantör (t.ex. https://idp.example.com/sso/saml)."
       ],
       "Enhance your network security": [
         "Förbättra din nätverkssäkerhet"
@@ -6680,11 +6800,17 @@
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "Få åtkomst genom att skapa ett ${ BRAND_NAME }-konto och acceptera inbjudan."
       ],
+      "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
+        "Bli aviserad om ditt lösenord eller annan personlig data har läckt. ${ learnMoreLinkNoBreach }"
+      ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "Ge detta token ett beskrivande namn, t.ex. vilken tjänst du avser att använda det med och välj en av dina aktiva anpassade domänadresser. Endast denna adress kan skicka e-post med denna token."
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Ge din offentliga nyckel till dina vänner eller publicera den online så att alla kan skicka dig end-to-end-krypterad e-post!"
+      ],
+      "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
+        "Gå till din identitetsleverantör, hämta SAML-metadata för ${ appName } och importera den här."
       ],
       "here": [
         "här"
@@ -6751,6 +6877,12 @@
       ],
       "If you wish to combine this account with another one, do NOT delete it.": [
         "Om du vill kombinera detta konto med ett annat, ta INTE bort det."
+      ],
+      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
+        "Om du har problem finns vi här för att hjälpa dig. ${ boldPhoneCall } eller ${ boldZoomMeeting } med en av våra supportspecialister, eller öppna en ${ boldLiveChat } för chattsupport."
+      ],
+      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists.": [
+        "Om du har problem finns vi här för att hjälpa dig. ${ boldPhoneCall } eller ${ boldZoomMeeting } med en av våra supportspecialister."
       ],
       "Image description": [
         "Bildbeskrivning"
@@ -6871,6 +7003,9 @@
       "Lean more about gateways": [
         "Lär dig mer om gateways"
       ],
+      "Lean more about single sign-on": [
+        "Lär dig mer om enkel inloggning"
+      ],
       "Learn how to ${ staySaferOnlineLink }": [
         "Lär dig hur man ${ staySaferOnlineLink }"
       ],
@@ -6982,6 +7117,9 @@
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Namnge din nya mapp och välj den överordnade mapp du vill lägga den i. Om du inte väljer en överordnad mapp kommer denna nya mapp att skapas som en överordnad mapp."
       ],
+      "NetShield is an ad-blocking feature from ${ VPN_APP_NAME } that protects your device from ads, trackers, and malware.": [
+        "NetShield är en annonsblockerande funktion från ${ VPN_APP_NAME } som skyddar din enhet från annonser, spårare och skadlig kod."
+      ],
       "New": [
         "Ny"
       ],
@@ -7030,6 +7168,9 @@
       "No results found": [
         "Inga resultat hittades"
       ],
+      "Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization": [
+        "Icke SSO-användare (skapade manuellt, inte tillhandahållna av din identitetsleverantör) kan fortfarande logga in på din organisation"
+      ],
       "Not a valid URL": [
         "Ogiltig URL"
       ],
@@ -7044,6 +7185,9 @@
       ],
       "of": [
         "av"
+      ],
+      "Once single sign-on is disabled for your organization:": [
+        "När enkel inloggning är inaktiverad för din organisation:"
       ],
       "Once you reset your password:": [
         "När du har återställt ditt lösenord:"
@@ -7062,6 +7206,9 @@
       ],
       "Optional": [
         "Valfritt"
+      ],
+      "or ${ selectFileButton }": [
+        "eller ${ selectFileButton }"
       ],
       "Or select a particular server:": [
         "Eller välj en specifik server:"
@@ -7202,6 +7349,9 @@
       "Plus or Visionary subscription required": [
         "Plus- eller Visionary-prenumeration krävs"
       ],
+      "Preview": [
+        "Förhandsgranska"
+      ],
       "Preview failed to be loaded": [
         "Förhandsgranskning misslyckades att laddas"
       ],
@@ -7295,6 +7445,9 @@
       "Right to Left": [
         "Höger till vänster"
       ],
+      "SAML configuration saved": [
+        "SAML-konfiguration sparad"
+      ],
       "Save ${ percentage }": [
         "Spara ${ percentage }"
       ],
@@ -7370,6 +7523,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Eftersom du är en lojal användare har ditt konto ytterligare funktioner aktiverade."
       ],
+      "Single sign-on removed": [
+        "Enkel inloggning borttagen"
+      ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
         "SMTP-inlämning tillåter tredjepartstjänster eller enheter att skicka e-post via ${ MAIL_APP_NAME } för dina anpassade domänadresser. Denna funktion är endast tillgänglig för ${ BRAND_NAME } för Business-användare med anpassade domäner."
       ],
@@ -7385,8 +7541,14 @@
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "Vissa av dina tillgängliga servrar kan endast användas i specifika länder på grund av de senaste borttagningarna"
       ],
+      "Specify the domain which is allowed to authenticate with SAML SSO.": [
+        "Ange den domän som tillåts autentisera med SAML SSO."
+      ],
       "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "SPF klargör vem som får skicka e-post för din domän. Se till att du lägger till följande TXT-post i din DNS-konsol (finns på plattformen där du köpte den anpassade domänen)."
+      ],
+      "SSO users (provided by your Identity Provider) will be deleted": [
+        "SSO-användare (som tillhandahålls av din identitetsleverantör) kommer att tas bort"
       ],
       "Stay tuned for future promotions.": [
         "Håll ögonen öppna för framtida kampanjer."
@@ -7467,8 +7629,14 @@
       "The calendar will be removed from your account.": [
         "Kalendern kommer att tas bort från ditt konto."
       ],
+      "The credentials from your Identity Provider will be deleted.": [
+        "Inloggningsuppgifterna från din identitetsleverantör kommer att tas bort."
+      ],
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "Länken för e-postverifiering har löpt ut. Logga in för att skicka en verifieringslänk igen."
+      ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "Den exponerade informationen läckte från en tredjepartstjänst. Din ${ BRAND_NAME }-kontoinformation förblir säker och krypterad. ${ learnMoreLink }"
       ],
       "The following address is available:": [
         "Följande adress är tillgänglig:"
@@ -7493,6 +7661,9 @@
       ],
       "The link to report that that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "Länken att rapportera att du inte har ställt in ett ${ BRAND_NAME }-konto har löpt ut. Kontakta vårt supportteam för att lösa problemet."
+      ],
+      "The name and icon will be visible to your users while they are signed in.": [
+        "Namnet och ikonen kommer att vara synliga för dina användare när de är inloggade."
       ],
       "The name will be visible to your users while they are signed in.": [
         "Namnet kommer att vara synligt för dina användare när de är inloggade."
@@ -7563,6 +7734,9 @@
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Denna användare ansvarar för närvarande för betalningar för din organisation. Genom att degradera denna medlem, kommer du bli ansvarig för betalningar för din organisation."
       ],
+      "This verification can take up to one hour. You can safely continue to the next steps.": [
+        "Denna verifiering kan ta upp till en timme. Du kan säkert fortsätta till nästa steg."
+      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Detta kommer avbryta din nuvarande betalda prenumeration och du kommer att förlora alla lojalitetsförmåner du har samlat på dig."
       ],
@@ -7590,6 +7764,9 @@
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Detta kommer att ta bort ditt konto och all dess data permanent. Du kommer inte att kunna återaktivera detta konto."
       ],
+      "This will remove SSO for ${ boldDomainName }.": [
+        "Detta kommer ta bort SSO för ${ boldDomainName }."
+      ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Detta kommer att ersätta ditt temporära lösenord. Du kommer att använda det för att komma åt ditt ${ BRAND_NAME }-konto i framtiden."
       ],
@@ -7604,6 +7781,9 @@
       ],
       "to ${ product } Business": [
         "till ${ product } Business"
+      ],
+      "To allow the domain ${ boldDomainName } to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
+        "För att tillåta domänen ${ boldDomainName } att använda SAML SSO måste du verifiera äganderätten till den genom att lägga till följande DNS TXT-post till din domän i din DNS-leverantör."
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "För att undvika dataförlust, ta bara bort det om du vet vad du gör eller har exporterat en kopia."
@@ -7695,6 +7875,9 @@
       "Unfortunately there is no recovery method saved for this account.": [
         "Det finns ingen återställningsmetod sparad för detta konto."
       ],
+      "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
+        "Unikt ID genererat av din identitetsleverantör, vanligtvis i form av en URL som innehåller identitetsleverantörens namn (t.ex. https://idp.example.com/XXXXX)."
+      ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "Om du inte loggar ut från ditt konto eller ändrar ditt lösenord kommer din session att förbli aktiv. Sessioner löper ut efter 60 dagars inaktivitet."
       ],
@@ -7785,6 +7968,9 @@
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Verifiering kommer öppna en ny flik. Inaktivera alla popup-blockerare. Du kommer inte att debiteras. Eventuellt belopp som används för att verifiera kortet kommer att återbetalas omedelbart."
       ],
+      "Verify domain": [
+        "Verifiera domän"
+      ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Bekräfta din identitet med ett tidsbaserat engångslösenord från en autentiseringsapp"
       ],
@@ -7853,6 +8039,9 @@
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Vi kommer att omdirigera dig till PayPal i en ny webbläsarflik för att slutföra denna transaktion. Om du använder några popup-blockerare, inaktivera dem för att fortsätta."
+      ],
+      "We'll email you once import is complete.": [
+        "Vi skickar e-post till dig när importen är klar."
       ],
       "We'll get back to you shortly.": [
         "Vi återkommer snart till dig."
@@ -7957,6 +8146,9 @@
       ],
       "You can check the progress ${ importProgressLink }.": [
         "Du kan kontrollera processen ${ importProgressLink }."
+      ],
+      "You can close the tab or browser in the meantime.": [
+        "Du kan stänga fliken eller webbläsaren under tiden."
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Du kan redigera detta en gång för att säkerställa korrekt e-postadress för verifiering."
@@ -8301,26 +8493,29 @@
       ]
     },
     "Key generation": {
-      "A key with the same encryption algorithm already exists. Generating another key will cause slower account loading. Are you sure you want to continue?": [
-        "En nyckel med samma krypteringsalgoritm finns redan. Att generera en annan nyckel kommer att orsaka långsammare kontoladdning. Är du säker på att du vill fortsätta?"
-      ],
-      "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
-        "En nyckel med samma krypteringsalgoritm är redan aktiv för denna adress. Att generera en annan nyckel kommer att orsaka långsammare kontoladdning och borttagning av denna nyckel kan orsaka problem. Om du genererar en ny nyckel för att din gamla nyckel är komprometterad, markera den nyckeln som komprometterad. Är du säker på att du vill fortsätta?"
-      ],
       "Generate key": [
         "Generera nyckel"
       ],
-      "Key with fingerprint ${ fp } successfully created.": [
-        "Nyckel med fingeravtryck ${ fp } skapad."
+      "Generating key failed. Please try again later.": [
+        "Generering av nyckel misslyckades. Försök igen senare."
       ],
-      "The encryption keys are being generated. This may take several minutes and temporarily freeze your browser.": [
-        "Krypteringsnycklarna genereras. Detta kan ta flera minuter och tillfälligt frysa din webbläsare."
+      "If you're generating a new key because you believe your existing key has been compromised, please mark it as compromised after generating this key.": [
+        "Om du genererar en ny nyckel för att du tror att din befintliga nyckel har blivit komprometterad, markera den som komprometterad efter att ha genererat denna nyckel."
       ],
-      "The encryption keys for your address are being generated. This may take several minutes and temporarily freeze your browser.": [
-        "Krypteringsnycklarna för din adress genereras. Detta kan ta flera minuter och tillfälligt frysa din webbläsare."
+      "Key successfully generated.": [
+        "Nyckel genererad."
       ],
-      "You can generate a new encryption key if you think your previous key has been compromised.": [
-        "Du kan generera en ny krypteringsnyckel om du tror att din tidigare nyckel har äventyrats."
+      "Note: you already have a key with the same algorithm for this address. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
+        "Obs: du har redan en nyckel med samma algoritm för denna adress. Om inte den nyckeln har komprometterats kan det vara onödigt att generera en ny nyckel, och att göra det kan sakta ner ditt konto."
+      ],
+      "Note: you already have a key with the same algorithm for this user. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
+        "Obs: du har redan en nyckel med samma algoritm för denna användare. Om inte den nyckeln har komprometterats kan det vara onödigt att generera en ny nyckel, och att göra det kan sakta ner ditt konto."
+      ],
+      "This will generate a new key, which will be used to encrypt future contact details, email encryption keys, and other data.": [
+        "Detta kommer att generera en ny nyckel, som kommer att användas för att kryptera framtida kontaktuppgifter, e-postkrypteringsnycklar och annan data."
+      ],
+      "This will generate a new key, which will be used to encrypt future emails, among other data.": [
+        "Detta kommer att generera en ny nyckel som kommer att användas för att kryptera framtida e-post bland annat."
       ]
     },
     "Key state badge": {
@@ -8344,14 +8539,6 @@
       ],
       "Primary": [
         "Primär"
-      ]
-    },
-    "Key type option": {
-      "${ compatibility } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
-        "${ compatibility } RSA 4096-bitar (långsammare, men ökad kompatibilitet med äldre programvara)"
-      ],
-      "${ stateOfTheArt } ECC Curve25519 (Fastest, most modern)": [
-        "${ stateOfTheArt } ECC Curve25519 (Snabbast, modernast)"
       ]
     },
     "Keyboard shortcut name": {
@@ -8670,6 +8857,12 @@
       "Allow recovery using a trusted device": [
         "Tillåt återställning med en betrodd enhet"
       ],
+      "Allowed domain": [
+        "Tillåten domän"
+      ],
+      "Allowed Domain": [
+        "Tillåten domän"
+      ],
       "Amount": [
         "Belopp"
       ],
@@ -8943,6 +9136,9 @@
       "Duration": [
         "Varaktighet"
       ],
+      "e.g. example.com": [
+        "t.ex. example.com"
+      ],
       "Email": [
         "E-post"
       ],
@@ -9069,9 +9265,6 @@
       "Key": [
         "Nyckel"
       ],
-      "Key strength": [
-        "Nyckelstyrka"
-      ],
       "Keyboard shortcut: ${ shortcut }": [
         "Tangentbordsgenväg: ${ shortcut }"
       ],
@@ -9102,6 +9295,9 @@
       "Link label": [
         "Länketikett"
       ],
+      "Logo": [
+        "Logga"
+      ],
       "Mail Server (IMAP)": [
         "E-postserver (IMAP)"
       ],
@@ -9122,6 +9318,15 @@
       ],
       "Messages per page": [
         "Meddelanden per sida"
+      ],
+      "Metadata file for ${ appName }": [
+        "Metadata-fil för ${ appName }"
+      ],
+      "Metadata URL for ${ appName }": [
+        "Metadata-URL för ${ appName }"
+      ],
+      "Method for importing metadata": [
+        "Metod för att importera metadata"
       ],
       "Moderate NAT": [
         "Måttlig NAT"
@@ -9276,6 +9481,9 @@
       "Protection mode": [
         "Skyddsläge"
       ],
+      "Public certificate (X.509)": [
+        "Offentligt certifikat (X.509)"
+      ],
       "Read": [
         "Läs"
       ],
@@ -9293,6 +9501,9 @@
       ],
       "Repeat password": [
         "Upprepa lösenord"
+      ],
+      "Reply (ACS) URL": [
+        "Svar-URL (ACS)"
       ],
       "Require 2FA for administrators": [
         "Kräv 2FA för administratörer"
@@ -9338,6 +9549,9 @@
       ],
       "Signature": [
         "Signatur"
+      ],
+      "Single sign-on URL": [
+        "URL för enkel inloggning"
       ],
       "SMTP port": [
         "SMTP-port"
@@ -9402,6 +9616,9 @@
       "Two-password mode": [
         "Två-lösenordsläge"
       ],
+      "Type": [
+        "Typ"
+      ],
       "Undo send": [
         "Ångra skicka"
       ],
@@ -9425,6 +9642,9 @@
       ],
       "Username": [
         "Användarnamn"
+      ],
+      "Value": [
+        "Värde"
       ],
       "VAT": [
         "VAT"
@@ -10736,17 +10956,6 @@
         "Teamhantering"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Annars kommer åtkomsten till ditt konto att begränsas och ditt konto kommer så småningom att inaktiveras."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "För att fortsätta använda ${ trialPlanName } med premiumfunktioner, välj din prenumeration och betalningsalternativ."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Din provperiod slutar den ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } slutar med ${ last4 }"
@@ -10846,6 +11055,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Du har ett kampanjpris på ditt nuvarande paket. Om du nedgraderar ditt konto kommer du förlora ditt kampanjpris och det blir inte tillgängligt om du försöker prenumerera igen."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Annars kommer åtkomsten till ditt konto att begränsas och ditt konto kommer så småningom att inaktiveras."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "För att fortsätta använda ${ trialPlanName } med premiumfunktioner, välj din prenumeration och betalningsalternativ."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Din provperiod slutar den ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -11626,6 +11846,34 @@
         "Ditt paket inkluderar maximalt ${ humanReadableAvailableSpace } mer lagringsutrymme."
       ]
     },
+    "Organization logo upload": {
+      "Avoid overly compressed images.": [
+        "Undvik alltför komprimerade bilder."
+      ],
+      "Tips on choosing a good icon": [
+        "Tips på att välja en bra ikon"
+      ],
+      "Use a graphical icon or image rather than text.": [
+        "Använd en grafisk ikon eller bild istället för text."
+      ]
+    },
+    "Organization logo upload modal": {
+      "Drop image file here to upload or": [
+        "Släpp bildfil här för att ladda upp eller"
+      ],
+      "File in PNG or JPEG format": [
+        "Fil i PNG- eller JPEG-format"
+      ],
+      "File not larger than 30 KB": [
+        "Fil inte större än 30 KB"
+      ],
+      "Square image of at least 128 pixels": [
+        "Fyrkantig bild på minst 128 pixlar"
+      ],
+      "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
+        "Användare kommer att se din logga istället för ${ BRAND_NAME }-ikonen när de är inloggade på våra webbappar."
+      ]
+    },
     "OS compatibility": {
       ".deb (for Debian/Ubuntu)": [
         ".deb (för Debian/Ubuntu)"
@@ -12198,6 +12446,15 @@
       "domain.com": [
         "domän.com"
       ],
+      "e.g. https://example.com/app/protonvpn/XXXXX/sso/metadata": [
+        "t.ex. https://example.com/app/protonvpn/XXXXX/sso/metadata"
+      ],
+      "e.g. https://idp.example.com/sso/saml": [
+        "t.ex. https://idp.example.com/sso/saml"
+      ],
+      "e.g. https://idp.example.com/XXXXX": [
+        "t.ex. https://idp.example.com/XXXXX"
+      ],
       "E.g., ": [
         "T.ex., "
       ],
@@ -12423,14 +12680,6 @@
         "Verifiering av ditt telefonnummer ökar säkerheten för ditt konto och tillåter ytterligare alternativ för återställning."
       ]
     },
-    "Remark about a key type option": {
-      "Compatibility": [
-        "Kompatibilitet"
-      ],
-      "State of the art": [
-        "Toppmodern"
-      ]
-    },
     "Remove calendar section description": {
       "By unsubscribing, you will no longer have access to this calendar. All events in this calendar will be deleted from your account, but they'll remain in the original public link.": [
         "Genom att avsluta prenumerationen har du inte längre åtkomst till denna kalender. Alla händelser i denna kalender kommer att tas bort från ditt konto, men de kommer att finnas kvar i den ursprungliga offentliga länken."
@@ -12461,6 +12710,11 @@
         "Avsluta prenumeration?"
       ]
     },
+    "Remove organization logo": {
+      "Users will no longer see your custom logo or organization name.": [
+        "Användare kommer inte längre att se din anpassade logga eller organisationsnamn."
+      ]
+    },
     "Restore administrator panel": {
       "${ n } administrator in your organization need access to the organization key.": [
         "${ n } administratör i din organisation behöver åtkomst till organisationsnyckeln.",
@@ -12488,6 +12742,64 @@
       ],
       "User": [
         "Användare"
+      ]
+    },
+    "scim: Action": {
+      "Configure SCIM": [
+        "Konfigurera SCIM"
+      ],
+      "Disable SCIM": [
+        "Inaktivera SCIM"
+      ],
+      "Disable SCIM integration": [
+        "Inaktivera SCIM-integration"
+      ],
+      "Generate new token": [
+        "Generera en ny token"
+      ],
+      "Generate token": [
+        "Generera token"
+      ]
+    },
+    "scim: Info": {
+      "Enter token into your identity provider": [
+        "Ange token i din identitetsleverantör"
+      ],
+      "Enter URL and token into your identity provider": [
+        "Ange URL och token i din identitetsleverantör"
+      ],
+      "For security reasons, the token is hidden": [
+        "Token är dold av säkerhetsskäl"
+      ],
+      "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
+        "Om du har förlorat eller glömt SCIM-token kan du skapa en ny, men tänk på att inställningarna för din identitetsleverantör måste uppdateras."
+      ],
+      "Make sure you copy the above SCIM token now.": [
+        "Se till att du kopierar SCIM-token ovan nu."
+      ],
+      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ VPN_APP_NAME } organization.": [
+        "Förenklar användarhantering över olika tjänster. Lägg till, redigera och ta bort användare i din identitetsleverantör, så kommer dessa ändringar automatiskt att tillämpas på din ${ VPN_APP_NAME }-organisation."
+      ]
+    },
+    "scim: Label": {
+      "SCIM token": [
+        "SCIM-token"
+      ]
+    },
+    "scim: Title": {
+      "Disable SCIM integration?": [
+        "Inaktivera SCIM-integration?"
+      ],
+      "Generate new SCIM token?": [
+        "Generera ny SCIM-token?"
+      ],
+      "SCIM automatic provisioning": [
+        "Automatisk tillhandahållande av SCIM"
+      ]
+    },
+    "Security Center - Info": {
+      "Your information was found in at least one data breach. Turn on Breach Alert to view details and take action. ${ learnMoreLinkBreach }": [
+        "Din information hittades i minst ett dataintrång. Slå på intrångsvarning för att visa detaljer och vidta åtgärder. ${ learnMoreLinkBreach }"
       ]
     },
     "Select file": {
@@ -14169,6 +14481,9 @@
       "Currency": [
         "Valuta"
       ],
+      "Custom branding": [
+        "Anpassat varumärke"
+      ],
       "Custom filters": [
         "Anpassade filter"
       ],
@@ -14234,6 +14549,9 @@
       ],
       "Delete logs": [
         "Ta bort loggar"
+      ],
+      "Delete organization logo?": [
+        "Ta bort organisationslogga?"
       ],
       "Delete the server (you will still be able to recover it for ${ days } day)": [
         "Ta bort servern (du kommer fortfarande att kunna återställa den i ${ days } dag)",
@@ -14338,6 +14656,12 @@
       "Encryption and keys": [
         "Kryptering och nycklar"
       ],
+      "Enter endpoints into your identity provider": [
+        "Ange ändpunkter i din identitetsleverantör"
+      ],
+      "Enter SAML metadata": [
+        "Ange SAML-metadata"
+      ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Ange dina kontodetaljer för ${ BRAND_NAME } för att gå med il ${ app } Beta-program"
       ],
@@ -14431,6 +14755,9 @@
       ],
       "How does it work?": [
         "Hur fungerar det?"
+      ],
+      "How to choose a good icon": [
+        "Hur man väljer en bra ikon"
       ],
       "How to refer a friend and get credits": [
         "Hur man hänvisar en vän och får krediter"
@@ -14541,6 +14868,9 @@
       "No recovery method": [
         "Ingen återställningsmetod"
       ],
+      "Open": [
+        "Öppen"
+      ],
       "Open actions dropdown": [
         "Öppna rullgardinsmenyn för åtgärder"
       ],
@@ -14573,6 +14903,9 @@
       ],
       "Password reset settings": [
         "Inställning för lösenordsåterställning"
+      ],
+      "Passwords made easy": [
+        "Lösenord på ett enkelt sätt"
       ],
       "Pay invoice": [
         "Betala faktura"
@@ -14631,6 +14964,15 @@
       "Remove calendar": [
         "Ta bort kalender"
       ],
+      "Remove domain": [
+        "Ta bort domän"
+      ],
+      "Remove single sign-on": [
+        "Ta bort enkel inloggning"
+      ],
+      "Remove single sign-on for your organization?": [
+        "Ta bort enkel inloggning för din organisation?"
+      ],
       "Remove user?": [
         "Ta bort användare?"
       ],
@@ -14660,6 +15002,9 @@
       ],
       "Revoke certificate": [
         "Återkalla certifikat"
+      ],
+      "SAML authentication": [
+        "SAML-autentisering"
       ],
       "Save time with email filters": [
         "Spara tid med e-postfilter"
@@ -14751,6 +15096,9 @@
       "Signed in to member account": [
         "Loggade in på medlemskonto"
       ],
+      "Single sign-on": [
+        "Enkel inloggning"
+      ],
       "SMTP submission": [
         "SMTP-inlämning"
       ],
@@ -14832,6 +15180,9 @@
       ],
       "Upload CSV file to create multiple accounts": [
         "Ladda upp CSV-fil för att skapa flera konton"
+      ],
+      "Upload your organization’s logo": [
+        "Ladda upp din organisationslogga"
       ],
       "Users": [
         "Användare"
@@ -15040,6 +15391,9 @@
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Växla automatiskt mellan dina föredragna teman för dag och natt i synk med ditt systems dag- och nattlägen"
       ],
+      "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
+        "Kopiera och klistra in denna URL i ACS (Assertion Consumer Service) URL-fältet för din identitetsleverantör"
+      ],
       "Customize import to reduce the number of folders": [
         "Anpassa import för att minska antalet mappar"
       ],
@@ -15066,6 +15420,9 @@
       ],
       "Enabling advanced logs records the IP address for each event in the security log.": [
         "Aktivering av avancerade loggar registrerar IP-adressen för varje händelse i säkerhetsloggen."
+      ],
+      "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
+        "Ändpunkts-URL från identitetsleverantör (t.ex. https://idp.example.com/sso/saml)"
       ],
       "Feature in early access": [
         "Funktion i förhandstillgång"
@@ -15105,6 +15462,9 @@
       ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
         "Signaturer skapade med denna nyckel behandlas som ogiltiga och den här nyckeln kan inte användas för kryptering"
+      ],
+      "Specify the domain which is allowed to authenticate with SAML SSO": [
+        "Specificera domänen som tillåts autentisera med SAML SSO"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systemundermappar kommer att visas som separata mappar i ${ MAIL_APP_NAME }"
@@ -15153,6 +15513,12 @@
       ],
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
         "Använd din webbläsares standardrullningslister. Dessa är vanligtvis större och enklare att använda"
+      ],
+      "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
+        "Användare kommer att se din logga istället för ${ BRAND_NAME }-ikonen när de är inloggade på våra webbappar."
+      ],
+      "Usually an URL that contains the identity provider's name within": [
+        "Vanligtvis en URL som innehåller identitetsleverantörens namn"
       ],
       "Verified email address": [
         "Verifierad e-postadress"

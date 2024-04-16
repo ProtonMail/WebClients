@@ -40,6 +40,9 @@
       "Add contact": [
         "Додати контакт"
       ],
+      "Add credit / debit card": [
+        "Додати кредитну / платіжну картку"
+      ],
       "Add email": [
         "Додати е-пошту"
       ],
@@ -1122,6 +1125,12 @@
       ],
       "Trust": [
         "Довіряти"
+      ],
+      "Trust key": [
+        "Довіряти ключу",
+        "Довіряти ключам",
+        "Довіряти ключам",
+        "Довіряти ключам"
       ],
       "Trust public key": [
         "Довіряти відкритому ключу"
@@ -10635,6 +10644,32 @@
         "За"
       ]
     },
+    "Subscription renewal state": {
+      "Are you sure?": [
+        "Ви впевнені?"
+      ],
+      "Auto-pay is disabled": [
+        "Автоплатіж вимкнено"
+      ],
+      "Auto-pay is enabled": [
+        "Автоплатіж увімкнено"
+      ],
+      "Disable": [
+        "Вимкнути"
+      ],
+      "Enable auto-pay support": [
+        "Увімкнути підтримку автоматичного платежу"
+      ],
+      "Keep auto-pay": [
+        "Залишити автовідтворення"
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
+        "Наша система більше не стягуватиме плату з використанням цього способу оплати, але ваша передплата все одно поновиться в кінці платіжного періоду. Якщо ви хочете перейти на тарифний план нижчого рівня чи змінити передплату, вам доведеться зробити це власноруч до завершення платіжного періоду. Крім того, якщо ви забудете виконати платіж вручну, а автоматична оплата буде вимкнена для всіх способів оплати, ми можемо автоматично перевести вас на тарифний план нижчого рівня, що призведе до втрати доступу до багатьох функцій."
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
+        "Наша система більше не стягуватиме плату з використанням цього способу оплати, але вашу передплату все одно потрібно поновити в кінці платіжного періоду. Якщо ви хочете перейти на тарифний план нижчого рівня чи змінити передплату, вам доведеться зробити це власноруч до завершення платіжного періоду. Ми не можемо автоматично перевести вас на тарифний план нижчого рівня, оскільки ви перевищили обмеження безплатного сховища або використовуєте інші платні функції, і ми не можемо автоматично видаляти ваші файли, електронні листи та інші дані. Якщо ви вимкнете автоматичний платіж, обов'язково сплатіть достатню суму для продовження передплати до завершення платіжного періоду, щоб уникнути вимкнення облікового запису."
+      ]
+    },
     "Subscription saving": {
       "Save": [
         "Зберегти"
@@ -10925,6 +10960,12 @@
       "Password copied to clipboard": [
         "Пароль скопійовано до буфера обміну"
       ],
+      "Payment method added": [
+        "Спосіб оплати додано"
+      ],
+      "Payment method updated": [
+        "Спосіб сплати оновлено"
+      ],
       "Phishing reported": [
         "Звіт про шахрайство подано"
       ],
@@ -11153,6 +11194,9 @@
       "Add contact group name": [
         "Додати назву групи контактів"
       ],
+      "Add credit/debit card": [
+        "Додати кредитну/платіжну картку"
+      ],
       "Add filter": [
         "Додати фільтр"
       ],
@@ -11371,6 +11415,9 @@
       ],
       "Edit contact group": [
         "Редагувати групу контактів"
+      ],
+      "Edit credit/debit card": [
+        "Редагувати кредитну/платіжну картку"
       ],
       "Edit email settings": [
         "Змінити налаштування електронної пошти"

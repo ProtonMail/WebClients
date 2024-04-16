@@ -59,6 +59,9 @@
       "Cancel subscription": [
         "Opsig abonnement"
       ],
+      "Change": [
+        "Skift"
+      ],
       "Change keys": [
         "Skift nøgler"
       ],
@@ -4142,14 +4145,6 @@
         "Abonnement"
       ]
     },
-    "Key type option": {
-      "${ compatibility } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
-        "${ compatibility } RSA 4096-bit (Langsommere, men øget kompatibilitet med ældre software)"
-      ],
-      "${ stateOfTheArt } ECC Curve25519 (Fastest, most modern)": [
-        "${ stateOfTheArt } ECC Curve25519 (Hurtigst, mest moderne)"
-      ]
-    },
     "Label": {
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } brugernavn"
@@ -4369,9 +4364,6 @@
       ],
       "Key": [
         "Nøgle"
-      ],
-      "Key strength": [
-        "Nøglestyrke"
       ],
       "Level for NetShield blocker filtering": [
         "Niveau for NetShield-blokkerfiltrering"
@@ -6273,14 +6265,6 @@
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Ved at verificere dit telefonnummer øger du din kontos sikkerhed og giver flere muligheder for gendannelse."
-      ]
-    },
-    "Remark about a key type option": {
-      "Compatibility": [
-        "Kompatibilitet"
-      ],
-      "State of the art": [
-        "Den nyeste teknik"
       ]
     },
     "Restore administrator panel": {

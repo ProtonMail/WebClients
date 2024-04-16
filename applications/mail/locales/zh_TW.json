@@ -40,6 +40,9 @@
       "Add contact": [
         "加入聯絡人"
       ],
+      "Add credit / debit card": [
+        "加入信用卡 / 簽帳金融卡"
+      ],
       "Add email": [
         "加入電郵"
       ],
@@ -1110,6 +1113,9 @@
       ],
       "Trust": [
         "信任"
+      ],
+      "Trust key": [
+        "信任金鑰"
       ],
       "Trust public key": [
         "信任公開金鑰"
@@ -5965,6 +5971,9 @@
       "No action selected": [
         "未選取任何動作"
       ],
+      "No changes made to the current subscription": [
+        "現時訂購授權並沒有更改"
+      ],
       "No contacts added yet": [
         "仍未加入任何通訊錄"
       ],
@@ -8477,6 +8486,9 @@
       "GDPR data processing agreement": [
         "GDRP資料處理協議"
       ],
+      "Group management (coming soon)": [
+        "群組管理(即將推出)"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email 別名"
       ],
@@ -10332,6 +10344,32 @@
         "為"
       ]
     },
+    "Subscription renewal state": {
+      "Are you sure?": [
+        "您確定嗎？"
+      ],
+      "Auto-pay is disabled": [
+        "自動付款已停用"
+      ],
+      "Auto-pay is enabled": [
+        "自動付款已啟用"
+      ],
+      "Disable": [
+        "停用"
+      ],
+      "Enable auto-pay support": [
+        "啟用自動付款支援"
+      ],
+      "Keep auto-pay": [
+        "保留自動付款"
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
+        "我們的系統將不再以此付款方法自動向您收費，惟您的訂購授權仍會在繳款單週期屆滿時續約。若您想降級或更改您的訂購授權，您仍需於繳款單週期完結前自行辦妥。再者，若您忘記手動進行付款，且所有付款方法的自動付款都已停用，我們可能會降級您的帳號，將導致失去許多功能。"
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
+        "我們的系統將不再以此付款方法自動向您收費，惟您的訂購授權仍會在繳款單週期屆滿時續約。若您想降級或更改您的訂購授權，您仍需於繳款單週期完結前自行辦妥。我們無法自動為您降級，因為若您已超過免費方案的儲存空間配額，或是在使用其它付款功能，我們無法為您自動刪除檔案、電子郵件或其它資料。若您停用自動付款，請記得在到期日之前繳付您下一張訂購授權帳單，以免帳號被暫停。"
+      ]
+    },
     "Subscription saving": {
       "Save": [
         "省下"
@@ -10556,6 +10594,12 @@
       "Password copied to clipboard": [
         "密碼以複製到剪貼簿"
       ],
+      "Payment method added": [
+        "付款方式已加入"
+      ],
+      "Payment method updated": [
+        "付款方式已更新"
+      ],
       "Phishing reported": [
         "網路釣魚已報告"
       ],
@@ -10760,6 +10804,9 @@
       "Add contact group name": [
         "加入聯絡人群組名稱"
       ],
+      "Add credit/debit card": [
+        "加入信用卡/扣帳卡"
+      ],
       "Add filter": [
         "加入篩選器"
       ],
@@ -10960,6 +11007,9 @@
       ],
       "Edit contact group": [
         "編輯聯絡人群組"
+      ],
+      "Edit credit/debit card": [
+        "編輯信用卡/扣帳卡"
       ],
       "Edit email settings": [
         "編輯電子郵件設定"

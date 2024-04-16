@@ -161,6 +161,9 @@
       "Cancel subscription": [
         "გამოწერის გაუქმება"
       ],
+      "Change": [
+        "შეცვლა"
+      ],
       "Change keys": [
         "გასაღებების შეცვლა"
       ],
@@ -205,6 +208,9 @@
       ],
       "Color": [
         "ფერი"
+      ],
+      "Configure SAML": [
+        "SAML-ის მორგება"
       ],
       "Confirm": [
         "დასტური"
@@ -554,6 +560,9 @@
       "Import key": [
         "გასაღების შემოტანა"
       ],
+      "Import new SAML metadata": [
+        "ახალი SAML მეტამონაცემების შემოტანა"
+      ],
       "Increase": [
         "გაგრძელება"
       ],
@@ -722,8 +731,14 @@
       "Remove calendar": [
         "კალენდრის წაშლა"
       ],
+      "Remove domain": [
+        "დომენის წაშლა"
+      ],
       "Remove gift code": [
         "სასაჩუქრე კოდის წაშლა"
+      ],
+      "Remove single sign-on": [
+        "SSO-ის წაშლა"
       ],
       "Remove this label": [
         "ამ ჭდის წაშლა"
@@ -806,6 +821,9 @@
       "Save ICS file": [
         "ICS ფაილის შენახვა"
       ],
+      "Save SAML configuration": [
+        "SAML-ის კონფიგურაციის შენახვა"
+      ],
       "Search": [
         "ძებნა"
       ],
@@ -814,6 +832,9 @@
       ],
       "Search settings": [
         "ძებნის მორგება"
+      ],
+      "See DNS TXT record": [
+        "იხილეთ DNS TXT ჩანაწერი"
       ],
       "See how": [
         "იხილეთ, როგორ"
@@ -832,6 +853,9 @@
       ],
       "Select country": [
         "აირჩიეთ ქვეყანა"
+      ],
+      "Select file": [
+        "აირჩიეთ ფაილი"
       ],
       "Select files": [
         "ფაილების არჩევა"
@@ -940,6 +964,9 @@
       ],
       "Stay": [
         "დარჩენა"
+      ],
+      "Stop using single sign-on": [
+        "SSO-ის გამოყენების შეწყვეტა"
       ],
       "Strikethrough": [
         "ხაზგადასმული"
@@ -4005,6 +4032,12 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "ბევრი მომხმარებლის სამართავად შეიძინეთ სატარიფო გეგმა, რომელიც 1-ზე მეტ მომხმარებელს შეიცავს."
       ],
+      "Please upload an xml file": [
+        "ატვირთეთ XML ფაილი"
+      ],
+      "Please upload only 1 file": [
+        "ატვირთეთ, მხოლოდ, ერთი ფაილი"
+      ],
       "Port is required": [
         "პორტი აუცილებელია"
       ],
@@ -4134,6 +4167,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "სცადეთ გამოიყენოთ, მხოლოდ, ანბანის სიმბოლოები, ციფრები და _.-"
+      ],
+      "Unable to upload file": [
+        "ფაილის ატვრთვის შეცდომა"
       ],
       "Unexpected error, we can't import the contacts": [
         "მოულოდნელი შეცდომა. კონტაქტები ვერ შემოვიტანე"
@@ -5476,6 +5512,9 @@
       ]
     },
     "Hint": {
+      "Add this record to your domain in the control panel of your domain name registrar": [
+        "დაამატეთ ეს ჩანაწერი თქვენს დომენს თქვენი დომენური სახელის რეგისტრატორის მართვის პანელში"
+      ],
       "Found ${ items.length } suggestion, use keyboard to navigate.": [
         "ნაპოვნია ${ items.length } მინიშნება. აირჩიეთ კლავიატურით.",
         "ნაპოვნია ${ items.length } მინიშნება. აირჩიეთ კლავიატურით."
@@ -5841,6 +5880,9 @@
       "${ boldName } will be set as default calendar.": [
         "${ boldName } გამოყენებული იქნება, როგორც ნაგულისხმევი კალენდარი."
       ],
+      "${ boldSSOUserInformation } and you will have to create them manually to add them back to your organization": [
+        "${ boldSSOUserInformation } და თქვენ მოგიწევთ, ისინი ხელით დაამატოთ ორგანიაციაში"
+      ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } თუ გააგრძელებთ, თქვენს დაშიფრულ მონაცემებთან წვდომას სრულად დაკარგავთ."
       ],
@@ -6062,6 +6104,9 @@
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
         "დაამატეთ თქვენს ანგარიშს უსაფრთხოების კიდევ ერთი ფენა. დაგჭირდებათ გაიაროთ 2FA თითოეული შესვლისას."
       ],
+      "Add domain": [
+        "დომენის დამატება"
+      ],
       "Add image URL": [
         "გამოსახულების URL-ის დამატება"
       ],
@@ -6207,6 +6252,9 @@
       "Are you sure you want to remove administrative privileges from this user?": [
         "დარწმუნებული ბრძანდებით, რომ გნებავთ, ამ მომხმარებელს ადმინისტრირების პრივილეგიები წაართვათ?"
       ],
+      "Are you sure you want to remove the domain ${ boldDomain }?": [
+        "დარწმუნებული ბრძანდებით, რომ გნებავთ, წაშალოთ დომენი ${ boldDomain }?"
+      ],
       "Ask your organisation admin to setup Gateways.": [
         "სთხოვეთ ორგანიზაციის ადმინისტრატორს, რაუტერები დააყენოს."
       ],
@@ -6312,11 +6360,26 @@
       "Close this screen to exit.": [
         "გასასვლელად დახურეთ ეს ეკრანი."
       ],
+      "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
+        "მოირგეთ SAML ავთენტიკაცია თქვენი ორგანიზაციისთვის იდენტიფიკატორის მომწოდებლებისთვის (IdP). ეს ჩართავს SAML-ს მთელი ორგანიზაციისთვის."
+      ],
+      "Configure SAML authentication for your organization through an identity provider like Okta, Microsoft Azure, or Google Identity Platform. This will enable SAML for the whole organization.": [
+        "მოირგეთ SAML ავთენტიკაცია თქვენი ორგანიზაციისთვის ისეთი იდენტიფიკატორის მომწოდებლებისთვის, როგორიცაა Okta, Microsoft Azure ან Google Identity Platform. ეს ჩართავს SAML-ს მთელი ორგანიზაციისთვის."
+      ],
       "Continue with ${ freeName }": [
         "გაგრძელება ${ freeName }-ით"
       ],
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "გაგრძელების შემთხვევაში თქენი ${ BRAND_NAME } -ის ანგარში ${ name }-ს მიებმება."
+      ],
+      "Copied to clipboard": [
+        "დაკოპირდა გაცვლის ბაფერში"
+      ],
+      "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
+        "დააკოპირეთ და ჩასვით ეს URL თქვენი იდენტიფიკაციის მომწოდებლის ACS ბმულის ველში"
+      ],
+      "Copy and paste this URL into the entity ID field of your identity provider": [
+        "დააკოპირეთ და ჩასვით ეს ბმული თქვენი იდენტიფიკატორის მომწოდებლის ერთეულის ID-ის ველში"
       ],
       "Copy the link to clipboard": [
         "ბმულის ბაფერში კოპირება"
@@ -6423,11 +6486,23 @@
       "DMARC checks if the sender's SPF and DKIM records originate from your domain. This can prevent attackers from using another domain's SPF and DKIM to impersonate your domain. The \"p=\" (policy) in this record indicates how you want the recipient platforms to handle unauthorized emails. We recommend using the \"p=quarantine\" policy for most domains. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "DMARC ამოწმებს, გამომგზავნის SPF და DKIM ჩანაწერები თქვენი დომენიდან მოდის, თუ არა. ამას შეუძლია, შემტევებს ხელი შეუშალოს, სხვა დომენის SPF და DKIM ჩანაწერები გამოიყენოს, რომ თქვენი დომენი განასახიეროს. ამ ჩანაწერში \"p=\" (პოლიტიკა) ჩანაწერი მიუთითებს, როგორ გნებავთ, მიმღებმა პლატფორმებმა არაავტორიზებული ელფოსტები დაამუშაოს. გირჩევთ, პოლიტიკა \"p=quarantine\" დააყენოთ დომენების უმრავლესობისთვის. დარწმუნდით, რომ დაამატეთ შემდეგი TXT ჩანაწერი თქვენს DNS კონსოლში (იპოვით პლატფორმაზე, სადაც თქვენი დომენი შეიძინეთ)."
       ],
+      "DNS TXT record": [
+        "DNS TXT ჩანაწერი"
+      ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "არ დაივიწყოთ ეს პაროლი. თუ დაგავიწყდათ, თქვენი ორგანიზაციის მართვას ვეღარ შეძლებთ."
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "გნებავთ მიმდინარეს გარდა ყველა სესიის დასრულება?"
+      ],
+      "Domain ownership failed verification.": [
+        "დომენის მფლობელის გადამოწმება ჩავარდა."
+      ],
+      "Domain ownership not verified.": [
+        "დომენის მფლობელი გადამოწმებული არაა."
+      ],
+      "Domain ownership verified.": [
+        "დომენის მფლობელი გადამოწმებულია."
       ],
       "domain used": [
         "დომენი გამოყენებულია",
@@ -6499,6 +6574,9 @@
       "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
         "ჭდით ${ nameDeleted } მონიშნული ელფოსტები არ წაიშლება და ჯერ კიდევ შეგიძლიათ იპოვოთ შესაბამის საქაღალდეში."
       ],
+      "Enable single sign-on to keep your organization safe": [
+        "ჩართეთ SSO, რომ თქვენი ორგანიზაცია უსაფრთხოდ გყავდეთ"
+      ],
       "Enable this address to join this calendar": [
         "ჩართეთ ეს მისამართი, რომ ამ კალენდარს მიუერთდეს"
       ],
@@ -6510,6 +6588,9 @@
       ],
       "Encryption setting updated": [
         "დაშიფვრის პარამეტრები განახლდა"
+      ],
+      "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
+        "ბოლოწერტილის ბმული, რომელიც თქვენი იდენტიფიკატორის მომწოდებლისგან მივიღეთ (მაგ: https://idp.example.com/sso/saml)."
       ],
       "Enhance your network security": [
         "გააფართოვეთ თქვენი ქსელის უსაფრთხოება"
@@ -6619,6 +6700,9 @@
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "გადაეცით თქვენი საჯარო გააღები მეგობრებს, დადეთ ონლაინ და მიეცით ყველას საშუალება, გამჭოლად დაშიფრული ელფოსტა გამოგიგზავნოთ!"
       ],
+      "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
+        "გადადით თქვენს იდენტიფიკატორის მომწოდებელზე, მიიღეთ SAML მეტამონაცემები ${ appName }-სთვის და შემოიტანეთ ის აქ."
+      ],
       "here": [
         "აქ"
       ],
@@ -6627,6 +6711,9 @@
       ],
       "High Priority": [
         "მაღალი პრიორიტეტი"
+      ],
+      "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
+        "იდენტიფიკატორის მომწოდებლის საჯარო გასაღები ავთენტიკაციის მცდელობების ხელმოსაწერად. იდენტიფიკატორის მომწოდებელს უნდა ჰქონდეს ადგილი, საიდანაც სერტიფიკატის ჰეშის გადმოწერა ან კოპირება შეგიძლიათ. ეს სერტიფიკატის ჰეში, უბრალოდ, ტექსტის ველში ჩასვით."
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "თუ პაროლს სხვა ადმინისტრატორი შეცვლის, ორგანიზაციის ახალი პაროლი მას უნდა სთხოვოთ."
@@ -6801,6 +6888,9 @@
       "Lean more about gateways": [
         "შეიტყვეთ მეტი რაუტერების შესახებ"
       ],
+      "Lean more about single sign-on": [
+        "გაიგეთ მეტი SSO-ის შესახებ"
+      ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "ნახეთ, მესამე პირების მიერ შექმნილი VPN აპლიკაციებით ${ VPN_APP_NAME }-ში როგორ უნდა შეხვიდეთ."
       ],
@@ -6951,6 +7041,9 @@
       "No results found": [
         "შედეგების გარეშე"
       ],
+      "Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization": [
+        "არა-SSO მომხმარებლებს (შექმნილი ხელით, არა მოწოდებული იდენტიფიკატორის მომწოდებლის მიერ) ორგანიზაციაში შესვლა ჯერ კიდევ შეუძლიათ"
+      ],
       "Not a valid URL": [
         "არასწორი URL"
       ],
@@ -6965,6 +7058,9 @@
       ],
       "of": [
         "-დან"
+      ],
+      "Once single sign-on is disabled for your organization:": [
+        "როცა თქვენი ორგანიზაციისთვის SSO გაითიშება:"
       ],
       "Once you reset your password:": [
         "როცა პაროლს შეცვლით:"
@@ -6983,6 +7079,9 @@
       ],
       "Optional": [
         "არასავალდებულო"
+      ],
+      "or ${ selectFileButton }": [
+        "ან ${ selectFileButton }"
       ],
       "Or select a particular server:": [
         "ან აირჩიეთ სერვერი:"
@@ -7207,6 +7306,9 @@
       "Right to Left": [
         "მარჯვნიდან მარცხნივ"
       ],
+      "SAML configuration saved": [
+        "SAML-ის კონფიგურაცია შენახულია"
+      ],
       "Save ${ percentage }": [
         "დაზოგეთ ${ percentage }"
       ],
@@ -7282,6 +7384,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "რადგან თქვენ ერთგული მომხმარებელი ბრძანდებით, ანგარიშისთვის დამატებითი თვისებებია ხელმისაწვდომი."
       ],
+      "Single sign-on removed": [
+        "SSO წაიშალა"
+      ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "SMTP მესამე პირების მიერ მოწოდებულ სერვისებისა და მოწყობილობებს ${ MAIL_APP_NAME }-ის გავლით თქვენი დომენის მისამართებზე ელფოსტის გაგზავნის საშუალებას იძლევა. წვდომის მოსათხოვნად, ${ createTicket } და აღწერეთ რისთვის გჭირდებათ ის, რომელი დომენების გამოყენებას აპირებთ და მიუთითეთ მოსალოდნელი საათობრივი და დღიური ელფოსტის რაოდენობები."
       ],
@@ -7294,8 +7399,14 @@
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "ზოგიერთი თქვენი გამოყოფილი სერვერი, შეიძლება, მხოლოდ, შესაბამის ქვეყნებში იყოს ხელმისაწვდომი უახლესი წაშლების გამო"
       ],
+      "Specify the domain which is allowed to authenticate with SAML SSO.": [
+        "მიუთითეთ დომენი, რომელსაც SAML SSO-ით ავთენტიკაციის უფლება აქვს."
+      ],
       "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "SPF განსაზღვრავს, ვის აქვს უფლება, თქვენს დომენზე ელფოსტა გამოაგზავნოს. დარწმუნდით, რომ დაამატეთ შედეგი TXT ჩანაწერ თქვენს DNS კონსოლში (პლატფორმაზე, სადაც დომენი შეიძინეთ)."
+      ],
+      "SSO users (provided by your Identity Provider) will be deleted": [
+        "SSO მომხმარებლები (მოწოდებული თქვენი იდენტიფიკატორის მომწოდებლის მიერ) წაიშლება"
       ],
       "Stay tuned for future promotions.": [
         "გამოგვიწერეთ ჩვენი მომავალი სარეკლამო აქციებისთვის."
@@ -7375,6 +7486,9 @@
       ],
       "The calendar will be removed from your account.": [
         "კალენდარი წაიშლება თქვენი ანგარიშიდან."
+      ],
+      "The credentials from your Identity Provider will be deleted.": [
+        "წაიშლება ავტორიზაციის დეტალები თქვენი იდენტიფიკატორის მომწოდებლიდან."
       ],
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "ელფოსტის გადამოწმების ბმულის ვადა ამოიწურა. გადამოწმების ბმულის ხელახლაა გამოგზავნისთვის შედით სისტემაში."
@@ -7472,6 +7586,9 @@
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "ეს მომხმარებელი, ამჟამად, პასუხისმგებელია თქვენი ორგანიზაციის გადასახადების გადახდაზე. მისი ჩამოქვეითებით, ორგანიზაციის გადახდებზე პასუხისმგებელი თქვენ გახდებით."
       ],
+      "This verification can take up to one hour. You can safely continue to the next steps.": [
+        "ამ გადამოწმებას ერთ საათამდე, შეიძლება, დასჭირდეს. შეგიძლიათ, შემდეგ ნაბიჯზე უსაფრთხოდ გადახვიდეთ."
+      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "ეს გააუქმებს თქვენს მიმდინარე ფასიან გამოწერას და ყველა ერთგულების ნიშნად გადმოცემულ უპირატესობას დაკარგავთ."
       ],
@@ -7499,6 +7616,9 @@
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "თქვენი ანგარიში და მონაცემები სამუდამოდ წაიშლება. ანგარიშის რეაქტივაციას ვეღარ შეძლებთ."
       ],
+      "This will remove SSO for ${ boldDomainName }.": [
+        "ეს წაშლის SSO-ს დომენისთვის ${ boldDomainName }."
+      ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "ეს თქვენს დროებით პაროლს ჩაანაცვლებს. შეგიძლიათ გამოიყენოთ მომავალში ${ BRAND_NAME }-ზე წვდომისთვის."
       ],
@@ -7513,6 +7633,9 @@
       ],
       "to ${ product } Business": [
         "${ product } Business"
+      ],
+      "To allow the domain ${ boldDomainName } to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
+        "იმისათვის, რომ ნება დართოთ დომენს ${ boldDomainName } SAML SSO გამოიყენოს. ჯერ უნდა დაამტკიცოთ, რომ ის თქვენ გეკუთვნით, შემდეგი DNS TXT ჩანაწერის დამატებით თქვენს DNS სერვისის მომწოდებელში."
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "მონაცემების დაკარგვის თავიდან ასაცილებლად წაშალეთ, მხოლოდ, მაშინ, როცა ზუსტად იცით, რას აკეთებთ, ან გადმოწერილი გაქვთ მისი ასლი."
@@ -7604,6 +7727,9 @@
       "Unfortunately there is no recovery method saved for this account.": [
         "ამ ანგარიშისთვის აღდგენის მეთოდი დაყენებული არაა."
       ],
+      "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
+        "იდენტიფიკატორის მომწოდებლის მიერ გენერირებული უნიკალური ID, ჩვეულებრივ, ბმულის ფორმაში, რომელიც იდენტიფიკატორის მომწოდებლის სახელს შეიცავს. (მაგ: https://idp.example.com/XXXXX)."
+      ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "თუ არ გახვალთ თქვენი ანგარიშიდან ან პაროლს არ შეცვლით, თქვენი სესია აქტიური დარჩება. სესიებს ვადა 60 დღის უმოქმედობის შემდეგ გასდით."
       ],
@@ -7690,6 +7816,9 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "შემოწმებისთვის ახალი ჩანართი გაიხსნება. გთხოვთ გამორთოთ მხტუნარების მბლოკავები. თანხა, რომელიც ბარათის შესამოწმებლად ჩამოგეჭრებათ, მომენტალურად დაგიბრუნდებათ."
+      ],
+      "Verify domain": [
+        "დომენის გადამოწმება"
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "შეამოწმეთ თქვენი იდენტიფიკატორი დროზე დამოკიდებული ერთჯერადი პაროლით ავთენტიკატორი აპიდან"
@@ -7789,6 +7918,9 @@
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "თუ გამორთულია, თქვენს მოწყობილობებზე გამოსახულებები თქვენი უფლების გარეშე არ ჩაიტვირთება."
+      ],
+      "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
+        "${ appName }-სთვის თქვენს იდენტიფიკატორის მომწოდებელში SAML-ის ჩართვისას, შეიძლება გკითხონ, გნებავთ თუ არა უკუკავშირის (ACS) ბმული და გამომცემლის ID გამოიყენოთ. უბრალოდ დააკოპირეთ ქვემოთ მოყვანილი მონაცემები და ჩასვით ისინი იდენტიფიკატორის მომწოდებლის შესაბამის ველებში."
       ],
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
         "როცა ჩართულია, ${ MAIL_APP_NAME } ანგარიშში ახალი შეტყობინების მოსვლისას აღდგენის ელფოსტის მისამართზე გაფრთხილებებს მიიღებთ."
@@ -8195,26 +8327,8 @@
       ]
     },
     "Key generation": {
-      "A key with the same encryption algorithm already exists. Generating another key will cause slower account loading. Are you sure you want to continue?": [
-        "გასაღები დაშიფვრის იმავე ალგორითმით უკვე არსებობს. სხვა გასაღების გენერაცია ანგარიშის ჩატვირთვას საგრძნობლად შეანელებს. დარწმუნებული ბრძანდებით, რომ გნებავთ, გააგრძელოთ?"
-      ],
-      "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
-        "იგივე დაშიფვრის ალგორითმის გასაღები უკვე აქტიურია ამ მისამართისთვის. სხვა გასაღების გამომუშავება გამოიწვევს ანგარიშის ნელა ჩატვირთვას და ამ გასაღების წაშლამ შეიძლება, პრობლემები გამოიწვიოს. თუ თქვენ შექმნით ახალ გასაღებს, რადგან თქვენი ძველი გასაღები კომპრომეტირებულია, გთხოვთ, მონიშნოთ ეს გასაღები, როგორც კომპრომეტირებული. დარწმუნებული ხართ, რომ გსურთ გაგრძელება?"
-      ],
       "Generate key": [
         "გასაღების გენერაცია"
-      ],
-      "Key with fingerprint ${ fp } successfully created.": [
-        "გასაღები ანაბეჭდით ${ fp } წარმატებით შეიქმნა."
-      ],
-      "The encryption keys are being generated. This may take several minutes and temporarily freeze your browser.": [
-        "მიმდინარეობს დაშიფვრის გასაღებების გენერაცია. ამას რამდენიმე წუთი შეიძლება, დასჭირდეს და ბრაუზერი შეიძლება, ცოტა ხნით გაიჭედოს კიდეც."
-      ],
-      "The encryption keys for your address are being generated. This may take several minutes and temporarily freeze your browser.": [
-        "მიმდინარეობს თქვენი მისამართის დაშიფვრის გასაღებების გენერაცია. ამას რამდენიმე წუთი შეიძლება დასჭირდეს და ბრაუზერი შეიძლება, ცოტა ხნით გაიჭედოს კიდეც."
-      ],
-      "You can generate a new encryption key if you think your previous key has been compromised.": [
-        "თუ ფიქრობთ, რომ თქვენი წინა გასაღები გატეხეს, შეგიძლიათ ახალი დააგენერიროთ."
       ]
     },
     "Key state badge": {
@@ -8238,14 +8352,6 @@
       ],
       "Primary": [
         "ძირითადი"
-      ]
-    },
-    "Key type option": {
-      "${ compatibility } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
-        "${ compatibility } RSA 4096-ბიტიანი (უფრო ნელია, მაგრამ, შედარებით, თავსებადია მოძველებულ პროგრამებთან)"
-      ],
-      "${ stateOfTheArt } ECC Curve25519 (Fastest, most modern)": [
-        "${ stateOfTheArt } ECC Curve25519 (სწრაფი, თანამედროვე)"
       ]
     },
     "Keyboard shortcut name": {
@@ -8561,6 +8667,12 @@
       "Allow recovery using a trusted device": [
         "გაძლევთ აღდგენის საშუალებას სანდო მოწყობილობის გამოყენებით"
       ],
+      "Allowed domain": [
+        "დაშვებული დომენი"
+      ],
+      "Allowed Domain": [
+        "დაშვებული დომენი"
+      ],
       "Amount": [
         "რაოდენობა"
       ],
@@ -8584,6 +8696,9 @@
       ],
       "Apply filter to existing emails": [
         "ფილტრის არსებულ ელფოსტებზე გადატარება"
+      ],
+      "Assertion Consumer Service URL": [
+        "ACS სამსახურის ბმული"
       ],
       "Attach public key": [
         "საჯარო გასაღების მიმაგრება"
@@ -8831,6 +8946,9 @@
       "Duration": [
         "ხანგრძლივობა"
       ],
+      "e.g. example.com": [
+        "მაგ: example.com"
+      ],
       "Email": [
         "ელფოსტა"
       ],
@@ -8948,6 +9066,9 @@
       "Invite via email": [
         "მოიწვიეთ ელფოსტით"
       ],
+      "Issuer ID": [
+        "გამომცემლის ID"
+      ],
       "Keep me signed in": [
         "დამტოვე შესული"
       ],
@@ -8956,9 +9077,6 @@
       ],
       "Key": [
         "გასაღები"
-      ],
-      "Key strength": [
-        "გასაღების სიძლიერე"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "კლავიატურის მალსახმობი: ${ shortcut }"
@@ -9010,6 +9128,15 @@
       ],
       "Messages per page": [
         "შეტყობინება გვერდზე"
+      ],
+      "Metadata file for ${ appName }": [
+        "მეტამონაცემების ფაილი ${ appName }-სთვის"
+      ],
+      "Metadata URL for ${ appName }": [
+        "მეტამონაცემების URL ${ appName }-სთვის"
+      ],
+      "Method for importing metadata": [
+        "მეტამონაცემების შემოტანის მეთოდი"
       ],
       "Moderate NAT": [
         "საშუალო NAT-ი"
@@ -9164,6 +9291,9 @@
       "Protection mode": [
         "დაცული რეჟიმი"
       ],
+      "Public certificate (X.509)": [
+        "საჯარო სერტიფიკატი (X.509)"
+      ],
       "Read": [
         "წაკითხული"
       ],
@@ -9181,6 +9311,9 @@
       ],
       "Repeat password": [
         "გაიმეორეთ პაროლი"
+      ],
+      "Reply (ACS) URL": [
+        "პასუხის (ACS) URL"
       ],
       "Require 2FA for administrators": [
         "ადმინისტრატორებისთვის 2FA-ის მოთხოვნა"
@@ -9223,6 +9356,12 @@
       ],
       "Signature": [
         "ხელმოწერა"
+      ],
+      "Single sign-on entity ID": [
+        "SSO-ის ერთეულის ID"
+      ],
+      "Single sign-on URL": [
+        "SSO-ის ბმული"
       ],
       "SMTP port": [
         "SMTP პორტი"
@@ -9287,6 +9426,9 @@
       "Two-password mode": [
         "2-პაროლიანი რეჟიმი"
       ],
+      "Type": [
+        "ტიპი"
+      ],
       "Undo send": [
         "გაგზავნის გაუქმება"
       ],
@@ -9310,6 +9452,9 @@
       ],
       "Username": [
         "მომხმარებლის სახელი"
+      ],
+      "Value": [
+        "მნიშვნელობა"
       ],
       "VAT": [
         "დღგ"
@@ -10617,17 +10762,6 @@
         "ჯგუფის მართვა"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "სხვაგვარად თქვენს ანგარიშთან წვდომა შეზღუდული გექნებათ და ცოტა ხანში საერთოდ გაგეთიშებათ."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "${ trialPlanName }-ის ფასიანი თვისებებით გამოყენების გასაგრძელებლად აირჩიეთ თქვენი გამოწერის ტარიფი და გადახდის ვარიანტი."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "სატესტო პერიოდის დასრულების თარიღია ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } დასრულდება ${ last4 }"
@@ -10727,6 +10861,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "თქვენს მიმდინარე გეგმაში სარეკლამო ფასით სარგებლობთ. ანგარიშის ტარიფის ჩამოწევის შემთხვევაში თქვენ დაკარგავთ სარეკლამო ფასს და თუ გამოწერას კვლავ შეეცდებით, ის ხელმისაწვდომი აღარ იქნება."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "სხვაგვარად თქვენს ანგარიშთან წვდომა შეზღუდული გექნებათ და ცოტა ხანში საერთოდ გაგეთიშებათ."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "${ trialPlanName }-ის ფასიანი თვისებებით გამოყენების გასაგრძელებლად აირჩიეთ თქვენი გამოწერის ტარიფი და გადახდის ვარიანტი."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "სატესტო პერიოდის დასრულების თარიღია ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -12052,6 +12197,15 @@
       "domain.com": [
         "domain.com"
       ],
+      "e.g. https://example.com/app/protonvpn/XXXXX/sso/metadata": [
+        "მაგ: https://example.com/app/protonvpn/XXXXX/sso/metadata"
+      ],
+      "e.g. https://idp.example.com/sso/saml": [
+        "მაგ: https://idp.example.com/sso/saml"
+      ],
+      "e.g. https://idp.example.com/XXXXX": [
+        "მაგ: https://idp.example.com/XXXXX"
+      ],
       "E.g., ": [
         "მაგ. "
       ],
@@ -12275,14 +12429,6 @@
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "ტელეფონის ნომრის შემოწმება ზრდის თქვენი ანგარიშის უსაფრთხოებას და აღდგენის დამატებით შესაძლებლობებს გაძლევთ."
-      ]
-    },
-    "Remark about a key type option": {
-      "Compatibility": [
-        "თავსებადობა"
-      ],
-      "State of the art": [
-        "ხელოვნების ნიმუში"
       ]
     },
     "Remove calendar section description": {
@@ -14180,6 +14326,12 @@
       "Encryption and keys": [
         "შიფრაცია და გასაღებები"
       ],
+      "Enter endpoints into your identity provider": [
+        "შეიყვანეთ ბოლოწერტილები თქვენი იდენტიფიკატორის მომწოდებელში"
+      ],
+      "Enter SAML metadata": [
+        "შეიყვანეთ SAML-ის მეტამონაცემები"
+      ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "შეიყვანეთ თქვენი ${ BRAND_NAME }-ის ანგარიშის დეტალები რომ ${ app }-ის ბეტა პროგრამას შეუერთდეთ"
       ],
@@ -14225,15 +14377,6 @@
       ],
       "Folders and labels": [
         "საქაღალდეები და ჭდეები"
-      ],
-      "For Linux": [
-        "Linux-სთვის"
-      ],
-      "For macOS": [
-        "macOS-სთვის"
-      ],
-      "For Windows": [
-        "Windows-სთვის"
       ],
       "Forward and auto-reply": [
         "გადაგზავნა და ავტომოპასუხე"
@@ -14464,6 +14607,15 @@
       "Remove calendar": [
         "კალენდრის წაშლა"
       ],
+      "Remove domain": [
+        "დომენის წაშლა"
+      ],
+      "Remove single sign-on": [
+        "SSO-ის წაშლა"
+      ],
+      "Remove single sign-on for your organization?": [
+        "წავშალო SSO თქვენი ორგანიზაციისთვის?"
+      ],
       "Remove user?": [
         "წავშალო მომხმარებელი?"
       ],
@@ -14490,6 +14642,9 @@
       ],
       "Revoke certificate": [
         "სერტიფიკატის გაუქმება"
+      ],
+      "SAML authentication": [
+        "SAML ავთენტიკაცია"
       ],
       "Save time with email filters": [
         "დაზოგეთ დრო ელფოსტის ფილტრებით"
@@ -14580,6 +14735,9 @@
       ],
       "Signed in to member account": [
         "შეხვედით სხვის ანგარიშში"
+      ],
+      "Single sign-on": [
+        "SSO"
       ],
       "SMTP submission": [
         "SMTP-ის მორგება"
@@ -14861,6 +15019,12 @@
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "ავტომატურად გადაერთეთ რჩეულ თემებს შორის დღისა და ღამისთვის თქვენი სისტემის დღისა და ღამის რეჟიმებთან ერთად"
       ],
+      "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
+        "დააკოპირეთ და ჩასვით ეს ბმული თქვენი იდენტიფიკაციის მომწოდებლის ACS ბმულის ველში"
+      ],
+      "Copy and paste this URL into the entity ID field of your identity provider": [
+        "დააკოპირეთ და ჩასვით ეს ბმული თქვენი იდენტიფიკატორის მომწოდებლის ერთეულის ID-ის ველში"
+      ],
       "Customize import to reduce the number of folders": [
         "საქაღალდეების რაოდენობის შესამცირებლად მოირგეთ შემოტანის პარამეტრები"
       ],
@@ -14888,6 +15052,9 @@
       "Enabling advanced logs records the IP address for each event in the security log.": [
         "დამატებითი ჟურნალის ჩაწერისას IP მისამართის თითოეულ მოვლენაზე მიწერა."
       ],
+      "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
+        "ბოლოწერტილის ბმული იდენტიფიკატორის მომწოდებლისგან (მაგ: https://idp.example.com/sso/saml)"
+      ],
       "Feature in early access": [
         "თვისება ადრეულ წვდომაში"
       ],
@@ -14896,6 +15063,9 @@
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "ელფოსტების ერთ საუბრად და ცალ-ცალკე ჩვენებას შორის გადართვა."
+      ],
+      "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
+        "იდენტიფიკაციის მომწოდებლის საჯარო გასაღების ავთენტიკაციის ბილეთების ხელმოსაწერად. მიიღეთ სერტიფიკატის ჰეში თქვენი იდენტიფიკატორის მომწოდებლიდან."
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "თუ შეიძინეთ სასაჩუქრე ბარათი ან ის ჩვენი მხარდაჭერის გუნდისგან მიიღეთ, ის აქ შეგიძლიათ, შეიყვანოთ."
@@ -14926,6 +15096,9 @@
       ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
         "ამ გასაღებით დაგენერირებული ხელმოწერები აღქმულია, როგორც არასწორი და მისით მონაცემების დაშიფვრა შეუძლებელია"
+      ],
+      "Specify the domain which is allowed to authenticate with SAML SSO": [
+        "მიუთითეთ დომენი, რომელსაც SAML SSO-ით ავთენტიკაციის უფლება აქვს"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "სისტემური ქვესაქაღალდეები ${ MAIL_APP_NAME }-ში ცალკე საქაღალდეებად გამოჩნდება"
@@ -14974,6 +15147,9 @@
       ],
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
         "გამოიყენეთ თქვენი ბრაუზერის ნაგულისხმევი პანელები. ჩვეულებრივი, ისინი უფრო დიდი და ადვილად გამოსაყენებელია"
+      ],
+      "Usually an URL that contains the identity provider's name within": [
+        "ჩვეულებრივ ბმული, რომელიც იდენტიფიკატორის მომწოდებლის სახელს შეიცავს"
       ],
       "Verified email address": [
         "გადამოწმებული ელფოსტის მისამართი"

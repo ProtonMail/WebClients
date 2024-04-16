@@ -40,6 +40,9 @@
       "Add contact": [
         "Contactpersoon toevoegen"
       ],
+      "Add credit / debit card": [
+        "Krediet / debietkaart toevoegen"
+      ],
       "Add email": [
         "E-mailadres toevoegen"
       ],
@@ -1114,6 +1117,10 @@
       ],
       "Trust": [
         "Vertrouwen"
+      ],
+      "Trust key": [
+        "Sleutel vertrouwen",
+        "Vertrouwde sleutels"
       ],
       "Trust public key": [
         "Publieke sleutel vertrouwen"
@@ -9546,6 +9553,9 @@
       "Select a reason": [
         "Selecteer een reden"
       ],
+      "Select state": [
+        "Selecteer provincie"
+      ],
       "Start date": [
         "Begindatum"
       ],
@@ -10583,6 +10593,32 @@
         "Voor"
       ]
     },
+    "Subscription renewal state": {
+      "Are you sure?": [
+        "Weet u het zeker?"
+      ],
+      "Auto-pay is disabled": [
+        "Automatische betaling is uitgeschakeld"
+      ],
+      "Auto-pay is enabled": [
+        "Automatische betaling is ingeschakeld"
+      ],
+      "Disable": [
+        "Uitschakelen"
+      ],
+      "Enable auto-pay support": [
+        "Ondersteuning voor automatische betaling inschakelen"
+      ],
+      "Keep auto-pay": [
+        "Automatische betaling houden"
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
+        "Ons systeem zal u niet langer automatisch aanrekenen met deze betalingsmethode, maar uw abonnement zal nog steeds vernieuwen op het einde van de facturatieperiode. Als u wilt downgraden of uw abonnement wilt wijzigen, moet u dit nog steeds zelf doen vóór het einde van de facturatieperiode. Aanvullend, als u vergeet om een manuele betaling uit te voeren en automatisch betalen uitgeschakeld is voor alle betaalmethodes, wordt uw account mogelijk gedowngraded, wat zal leiden tot het verliezen van veel functies."
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
+        "Ons systeem zal u niet langer automatisch aanrekenen met deze betalingsmethode, maar uw abonnement zal nog steeds vernieuwen op het einde van de facturatieperiode. Als u wilt downgraden of uw abonnement wilt wijzigen, moet u dit nog steeds zelf doen vóór het einde van de facturatieperiode. We kunnen u niet downgraden, omdat we bestanden, e-mails en andere date niet automatisch kunnen verwijderen indien de gratis opslagruimte wordt overschreden of u gebruik maakt van andere betalende functies. Als u automatische betaling uitschakelt, mag u niet vergeten om uw volgende abonnementsfactuur te betalen voordat de vervaldatum wordt bereikt om te vermijden dat uw account wordt geschorst."
+      ]
+    },
     "Subscription saving": {
       "Save": [
         "Bespaar"
@@ -10833,6 +10869,12 @@
       "Password copied to clipboard": [
         "Wachtwoord gekopieerd naar klembord"
       ],
+      "Payment method added": [
+        "Betalingsmethode toegevoegd"
+      ],
+      "Payment method updated": [
+        "Betalingsmethode bijgewerkt"
+      ],
       "Phishing reported": [
         "Phishing gerapporteerd"
       ],
@@ -11045,6 +11087,9 @@
       "Add contact group name": [
         "Naam contactgroep toevoegen"
       ],
+      "Add credit/debit card": [
+        "Krediet/debietkaart toevoegen"
+      ],
       "Add filter": [
         "Filter toevoegen"
       ],
@@ -11251,6 +11296,9 @@
       ],
       "Edit contact group": [
         "Contactgroep bewerken"
+      ],
+      "Edit credit/debit card": [
+        "Krediet/debietkaart bewerken"
       ],
       "Edit email settings": [
         "Bewerk e-mailinstellingen"

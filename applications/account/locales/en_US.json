@@ -58,6 +58,9 @@
       ]
     },
     "Info": {
+      "${ boldSSOUserInformation } and you will have to create them manually to add them back to your organization": [
+        "${ boldSSOUserInformation } and you will have to create them manually to add them back to your organization."
+      ],
       "(${ serverPrice } /month)": [
         "(${ serverPrice }/month)"
       ],
@@ -91,6 +94,9 @@
       ],
       "Lean more about gateways": [
         "Learn more about Gateways"
+      ],
+      "Lean more about single sign-on": [
+        "Learn more about single sign-on"
       ],
       "Please note that if you delete this filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "Please note that if you delete the filter ${ nameDeleted } we will stop processing all the automated actions it triggers."
@@ -151,6 +157,11 @@
     "Restore administrator panel": {
       "Creating or accessing non-private users": [
         "Creating or accessing non-private user accounts"
+      ]
+    },
+    "scim: Info": {
+      "To re-enable syncing with your identity provider, your need to complete the SCIM integration again.": [
+        "To re-enable syncing with your identity provider, you need to complete the SCIM integration again."
       ]
     },
     "session_recovery:available:info": {

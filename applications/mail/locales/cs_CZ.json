@@ -40,6 +40,9 @@
       "Add contact": [
         "Přidat kontakt"
       ],
+      "Add credit / debit card": [
+        "Přidat kreditní / debetní kartu"
+      ],
       "Add email": [
         "Přidat e-mail"
       ],
@@ -1122,6 +1125,12 @@
       ],
       "Trust": [
         "Důvěřovat"
+      ],
+      "Trust key": [
+        "Důvěřovat klíči",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům"
       ],
       "Trust public key": [
         "Důvěřovat veřejnému klíči"
@@ -3232,6 +3241,9 @@
       "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
         "Automatické vymazání zpráv starších než 30 dní z koše a spamu. Užijte si tyto a další výhody při navýšení tarifu."
       ],
+      "Breach alerts and reports are available with a paid plan. Upgrade for immediate access.": [
+        "Úniky informací a hlášení jsou dostupné s placeným tarifem. Navyšte pro okamžitý přístup."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Dešifrování kontaktů… Tato akce může trvat několik minut. Jakmile bude proces ukončen, budete si moci stáhnout soubor s vašimi exportovanými kontakty."
       ],
@@ -3321,6 +3333,9 @@
       ],
       "Your account and data recovery methods are set.": [
         "Váš účet a metody obnovy dat jsou nastaveny."
+      ],
+      "Your personal data was leaked by an online service in a data breach. View full details and get recommended actions.": [
+        "Vaše osobní údaje unikly online službě při úniku informací. Zobrazte plné detaily a získejte doporučené akce."
       ]
     },
     "description": {
@@ -3387,6 +3402,32 @@
         "POPIS:\n${ eventDescription }"
       ]
     },
+    "Email body for invitation": {
+      "${ eventTitle } was canceled.": [
+        "${ eventTitle } byl zrušen."
+      ],
+      "All events in this series were updated.": [
+        "Všechny události v této sérii byly aktualizovány."
+      ],
+      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Všechny události v této sérii byly aktualizovány. Zde jsou změny:\n\n${ updateEventDetailsText }"
+      ],
+      "This event occurrence was canceled.": [
+        "Tento výskyt události byl zrušen."
+      ],
+      "This event occurrence was updated.": [
+        "Tento výskyt události byl aktualizován."
+      ],
+      "This event was updated.": [
+        "Tato událost byla aktualizována."
+      ],
+      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Tato událost byla aktualizována. Zde jsou změny:\n\n${ updateEventDetailsText }"
+      ],
+      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
+        "Byly jste pozváni do ${ eventTitle }.\n\n${ eventDetailsText }"
+      ]
+    },
     "Email body for invitation (date part)": {
       "TIME:\n${ formattedStart }": [
         "ČAS:\n${ formattedStart }"
@@ -3406,6 +3447,17 @@
     "Email body for invitation (location part)": {
       "LOCATION:\n${ eventLocation }": [
         "MÍSTO:\n${ eventLocation }"
+      ]
+    },
+    "Email body for response to invitation": {
+      "${ emailAddress } accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } přijmul/a vaši pozvánku do ${ eventTitle }"
+      ],
+      "${ emailAddress } declined your invitation to ${ eventTitle }": [
+        "${ emailAddress } odmítl/a vaši pozvánku do ${ eventTitle }"
+      ],
+      "${ emailAddress } tentatively accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } nezávazně přijal/a vaši pozvánku do ${ eventTitle }"
       ]
     },
     "Email reminder banner": {
@@ -3542,6 +3594,9 @@
       ],
       "An error occurred while loading alias options": [
         "Došlo k chybě při načítání možností aliasu"
+      ],
+      "An error occurred while saving your alias": [
+        "Při ukládání vašeho aliasu se stala chyba"
       ],
       "Attachments are limited to 25 MB": [
         "Přílohy jsou omezeny na 25 MB"
@@ -3848,6 +3903,9 @@
       ],
       "Require at least one condition": [
         "Vyžaduje alespoň jednu podmínku"
+      ],
+      "Sending attachments is restricted until you meet your plan limits or upgrade.": [
+        "Odesílání příloh je omezeno dokud dosáhnete limitu tarifu nebo navýšíte tarif."
       ],
       "Signature not verified": [
         "Podpis nebyl ověřen"
@@ -6661,6 +6719,9 @@
       "This message is signed by the key attached, that has not been trusted yet.": [
         "Tato zpráva je podepsána přiloženým klíčem, který nebyl dosud označen jako důvěryhodný."
       ],
+      "This message will be automatically deleted at ${ value }": [
+        "Tato zpráva bude automaticky smazána v ${ value }"
+      ],
       "This message will be automatically deleted on ${ value }": [
         "Tato zpráva bude automaticky smazána v(ve) ${ value }"
       ],
@@ -7116,6 +7177,9 @@
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Vaše data jsou připravena k importu z ${ importedEmailAddressStrong } do vašeho účtu ${ BRAND_NAME }."
+      ],
+      "Your email address and password were leaked:": [
+        "Vaše e-mailová adresa a heslo unikly:"
       ],
       "Your email will only be used for this one-time verification.": [
         "Váš e-mail bude použit pouze pro toto jednorázové ověření."
@@ -8288,6 +8352,9 @@
       ],
       "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
         "Vaše úložiště je plné. Chcete-li odesílat nebo přijímat e-maily, uvolněte místo nebo ${ cta }."
+      ],
+      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
+        "Vaše úložiště je plné. Aby jste mohli nahrát nebo synchronizovat soubory, uvolněte místo nebo ${ cta }."
       ]
     },
     "Mail import summary": {
@@ -8330,12 +8397,26 @@
         "Koš"
       ]
     },
+    "mailtrial2024: Action": {
+      "Get the deal": [
+        "Získejte nabídku"
+      ],
+      "Special Offer": [
+        "Speciální nabídka"
+      ]
+    },
     "mailtrial2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } desktopová aplikace"
       ],
       "10 email addresses": [
         "10 e-mailových adres"
+      ],
+      "Auto-delete Spam and Trash": [
+        "Automaticky smazat spam a koš"
+      ],
+      "Custom schedule send and snooze times": [
+        "Vlastní plánování odesílání a odložení"
       ],
       "Support for 1 custom email domain": [
         "Podpora 1 vlastní e-mailové domény"
@@ -8344,9 +8425,25 @@
         "Neomezený počet složek, štítků a filtrů"
       ]
     },
+    "mailtrial2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Obnovuje se za ${ renewablePrice }, zrušit kdykoliv"
+      ]
+    },
     "mailtrial2024: Info": {
+      "for the first month": [
+        "pro první měsíc"
+      ],
+      "Limited-time offer, expires April 2 2024": [
+        "Omezená nabídka, vyprší 2. dubna 2024"
+      ],
       "Your subscription will auto-renew on ${ renewTime } at ${ renewablePrice }, cancel anytime": [
         "Vaše předplatné bude automaticky obnoveno každých ${ renewTime } za ${ renewablePrice }, zrušitelné kdykoliv"
+      ]
+    },
+    "mailtrial2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Získejte ${ planName } za pouze ${ planPrice }"
       ]
     },
     "Message": {
@@ -9619,6 +9716,12 @@
       "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
         "${ emailAddress } označil(a) tento klíč jako zastaralý. Tento klíč lze použít pouze pro ověření podpisu."
       ],
+      "External key automatically fetched from keys.openpgp.org.": [
+        "Externí klíč automaticky stažen z keys.openpgp.org."
+      ],
+      "External key automatically fetched via WKD.": [
+        "Externí klíč byl automaticky stažen z WKD."
+      ],
       "This key is used to encrypt messages to this contact": [
         "Tento klíč se používá k šifrování zpráv tomuto kontaktu."
       ],
@@ -9718,6 +9821,9 @@
       ],
       "Select a reason": [
         "Vyberte důvod"
+      ],
+      "Select state": [
+        "Vybrat stav"
       ],
       "Start date": [
         "Datum zahájení"
@@ -9935,6 +10041,12 @@
       "Create alias": [
         "Vytvořit alias"
       ],
+      "Create an alias": [
+        "Vytvořit alias"
+      ],
+      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
+        "Vygenerujte aliasy za běhu a jednoduše spravujte svoje aliasy a hesla."
+      ],
       "Hide-my-email aliases": [
         "Aliasy Hide-my-email"
       ],
@@ -9952,11 +10064,25 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "Vyzkoušejte ${ PASS_APP_NAME }"
+      ],
+      "Used on amazon for shopping, etc.": [
+        "Použito na Amazonu pro obchodování, atd."
+      ],
+      "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
+        "Když se vás zeptají na e-mailovou adresu, dejte jim místo toho tento alias. Aliasy jsou poskytovány ${ passLink }."
       ]
     },
     "Security Center - Action": {
       "View logs": [
         "Zobrazit logy"
+      ]
+    },
+    "Security Center - Info": {
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "Naše špičkové řešení s pomocí umělé inteligence zaměřené na uživatelé, kteří chtějí zvýšenou ochranu pro svoje účty. ${ learnMoreLink }"
+      ],
+      "Sentinel is **active** and safeguarding your account.": [
+        "Sentinel je **aktivní** a chrání váš účet."
       ]
     },
     "Select files": {
@@ -10547,8 +10673,17 @@
       ]
     },
     "Spotlight": {
+      "Breach Alerts": [
+        "Hlášení o únikách informací"
+      ],
+      "Create hide-my-email aliases and keep track of them here.": [
+        "Vytvořte hide-my-email aliasy a sledujte je zde."
+      ],
       "Email tracking protection": [
         "Ochrana před sledovacími prvky v e-mailech"
+      ],
+      "Get the desktop app": [
+        "Získejte desktopovou aplikaci"
       ],
       "Get up to ${ credits } in credits.": [
         "Získejte až ${ credits } v kreditech."
@@ -10558,6 +10693,9 @@
       ],
       "Schedule send": [
         "Naplánovat odeslání"
+      ],
+      "Turn on breach alerts to monitor potential data leaks. View details and take action to protect yourself.": [
+        "Zapněte si hlášení o úniků informací aby jste monitorovali možné úniky informací. Zobrazte detaily a podnikněte kroky aby jste se ochránili."
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Nyní ve výchozím nastavení načítáme obrázky a znemožňujeme odesílatelům, aby vás sledovali. Toto můžete změnit v ${ settingsLink }."
@@ -10648,8 +10786,14 @@
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Chcete-li pokračovat v nahrávání a synchronizaci souborů, uvolněte místo nebo navyšte na tarif s větším úložištěm."
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Aby jste odeslali nebo přijímali e-maily, uvolněte místo nebo ${ upgrade }"
+      ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "Abyste mohli přijímat a odesílat e-maily, uvolněte úložný prostor a nebo navyšte na tarif s větším úložištěm."
+      ],
+      "To upload or sync files, free up space or ${ upgrade }": [
+        "Aby jste nahráli nebo synchronizovali soubory, uvolněte místo nebo ${ upgrade }"
       ],
       "upgrade for more storage": [
         "navýšit tarif pro více prostoru"
@@ -10669,8 +10813,20 @@
       "Your ${ appStorage } is full": [
         "Vaše ${ appStorage } je plné"
       ],
+      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
+        "Vaše ${ storage } je z ${ percentage }% plné. ${ cta }."
+      ],
+      "Your ${ storage } is full. ${ cta }.": [
+        "Vaše ${ storage } je plné. ${ cta }."
+      ],
+      "Your storage is ${ percentage }% full. ${ cta }.": [
+        "Vaše úložiště je z ${ percentage }% plné. ${ cta }."
+      ],
       "Your storage is full": [
         "Vaše úložiště je plné"
+      ],
+      "Your storage is full. ${ cta }.": [
+        "Vaše úložiště je plné. ${ cta }."
       ],
       "You’ll lose access to ${ gb } storage and priority support.": [
         "Ztratíte přístup k ${ gb } úložiště a prioritní podporu."
@@ -10766,6 +10922,32 @@
     "Subscription price": {
       "For": [
         "Pro"
+      ]
+    },
+    "Subscription renewal state": {
+      "Are you sure?": [
+        "Jste si jistý?"
+      ],
+      "Auto-pay is disabled": [
+        "Automatická platba je zakázána"
+      ],
+      "Auto-pay is enabled": [
+        "Automatická platba je povolena"
+      ],
+      "Disable": [
+        "Zakázat"
+      ],
+      "Enable auto-pay support": [
+        "Zapnout podporu pro automatickou platbu"
+      ],
+      "Keep auto-pay": [
+        "Nechat automatické platby"
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
+        "Náš systém vám již nebude automaticky strhávat peníze pomocí této platební metody, ale i tak bude vaše přeplatné na konci zúčtovacího období obnovováno. Pokud chcete předplatné snížit nebo změnit, musíte tak učinit sami před koncem zúčtovacího období. Pokud navíc zapomenete provést platbu ručně a automatická platba je pro všechny platební metody zakázána, můžeme váš účet automaticky snížit, což povede ke ztrátě mnoha funkcí."
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
+        "Náš systém vám již nebude automaticky strhávat peníze pomocí této platební metody, ale i tak bude vaše přeplatné na konci zúčtovacího období obnovováno. Pokud chcete předplatné snížit nebo změnit, musíte tak učinit sami před koncem zúčtovacího období. Nemůžeme vám tarif automaticky snížit, protože pokud překročíte kvótu úložiště bezplatného tarifu nebo používáte jiné placené funkce, nemůžeme za vás automaticky mazat soubory, e-maily nebo jiná data. Pokud zakážete automatickou platbu, nezapomeňte zaplatit příští fakturu za předplatné před datem splatnosti, abyste zabránili pozastavení účtu."
       ]
     },
     "Subscription saving": {
@@ -11067,6 +11249,12 @@
       "Password copied to clipboard": [
         "Heslo bylo zkopírované do schránky"
       ],
+      "Payment method added": [
+        "Platební metoda byla přidána"
+      ],
+      "Payment method updated": [
+        "Platební metoda byla aktualizována"
+      ],
       "Phishing reported": [
         "Phishing nahlášen"
       ],
@@ -11295,6 +11483,9 @@
       "Add contact group name": [
         "Přidat název skupiny kontaktů"
       ],
+      "Add credit/debit card": [
+        "Přidat kreditní/debetní kartu"
+      ],
       "Add filter": [
         "Přidat filtr"
       ],
@@ -11513,6 +11704,9 @@
       ],
       "Edit contact group": [
         "Upravit skupinu kontaktů"
+      ],
+      "Edit credit/debit card": [
+        "Editovat kreditní/debetní kartu"
       ],
       "Edit email settings": [
         "Upravit nastavení e-mailu"
@@ -11736,6 +11930,9 @@
       "No attachment found": [
         "Žádná příloha nenalezena"
       ],
+      "No breaches detected": [
+        "Žádné úniky informací nebyly zjištěny"
+      ],
       "No trackers found": [
         "Bez sledovacích prvků"
       ],
@@ -11906,6 +12103,9 @@
       ],
       "Start import process": [
         "Zahájit proces importu"
+      ],
+      "Stay safer online": [
+        "Zůstaňte v bezpečí online"
       ],
       "Storage capacity warning": [
         "Upozornění na kapacitu úložiště"

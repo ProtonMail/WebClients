@@ -59,6 +59,9 @@
       "Cancel subscription": [
         "Abonnement opzeggen"
       ],
+      "Change": [
+        "Wijzigen"
+      ],
       "Change keys": [
         "Wijzig sleutels"
       ],
@@ -4151,14 +4154,6 @@
         "Abonnement"
       ]
     },
-    "Key type option": {
-      "${ compatibility } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
-        "${ compatibility } RSA 4096-bit (langzamer, maar meer compatibiliteit met oudere software)"
-      ],
-      "${ stateOfTheArt } ECC Curve25519 (Fastest, most modern)": [
-        "${ stateOfTheArt } ECC Curve25519 (Snelste, modernste)"
-      ]
-    },
     "Label": {
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } gebruikersnaam"
@@ -4378,9 +4373,6 @@
       ],
       "Key": [
         "Sleutel"
-      ],
-      "Key strength": [
-        "Sleutelsterkte"
       ],
       "Level for NetShield blocker filtering": [
         "Niveau voor NetShield blokkeerfiltering"
@@ -6211,6 +6203,9 @@
       ],
       "Select a reason": [
         "Selecteer een reden"
+      ],
+      "Select state": [
+        "Selecteer provincie"
       ]
     },
     "plan customizer, ips": {
@@ -6308,14 +6303,6 @@
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Uw telefoonnummer verifiëren verhoogt uw accountbeveiliging en laat extra opties voor herstel toe."
-      ]
-    },
-    "Remark about a key type option": {
-      "Compatibility": [
-        "Compatibiliteit"
-      ],
-      "State of the art": [
-        "State-of-the-art"
       ]
     },
     "Restore administrator panel": {

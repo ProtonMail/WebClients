@@ -161,6 +161,9 @@
       "Cancel subscription": [
         "Abonnement kündigen"
       ],
+      "Change": [
+        "Ändern"
+      ],
       "Change keys": [
         "Schlüssel ändern"
       ],
@@ -205,6 +208,9 @@
       ],
       "Color": [
         "Farbe"
+      ],
+      "Configure SAML": [
+        "SAML konfigurieren"
       ],
       "Confirm": [
         "Bestätigen"
@@ -554,6 +560,9 @@
       "Import key": [
         "Schlüssel importieren"
       ],
+      "Import new SAML metadata": [
+        "Neue SAML-Metadaten importieren"
+      ],
       "Increase": [
         "Vergrößern"
       ],
@@ -728,8 +737,14 @@
       "Remove calendar": [
         "Kalender entfernen"
       ],
+      "Remove domain": [
+        "Domain entfernen"
+      ],
       "Remove gift code": [
         "Geschenkgutschein entfernen"
+      ],
+      "Remove single sign-on": [
+        "Single Sign-on entfernen"
       ],
       "Remove this label": [
         "Kategorie entfernen"
@@ -815,6 +830,9 @@
       "Save ICS file": [
         "ICS-Datei speichern"
       ],
+      "Save SAML configuration": [
+        "SAML-Konfiguration speichern"
+      ],
       "Search": [
         "Suchen"
       ],
@@ -823,6 +841,9 @@
       ],
       "Search settings": [
         "Sucheinstellungen"
+      ],
+      "See DNS TXT record": [
+        "Siehe DNS TXT-Eintrag"
       ],
       "See how": [
         "Siehe wie"
@@ -841,6 +862,9 @@
       ],
       "Select country": [
         "Land wählen"
+      ],
+      "Select file": [
+        "Datei auswählen"
       ],
       "Select files": [
         "Dateien auswählen"
@@ -949,6 +973,9 @@
       ],
       "Stay": [
         "Nicht schließen"
+      ],
+      "Stop using single sign-on": [
+        "Single Sign-on nicht mehr verwenden"
       ],
       "Strikethrough": [
         "Durchstreichen"
@@ -4014,6 +4041,12 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Bitte upgrade auf ein Business-Abonnement mit mehr als einem Benutzer, um mehrere Benutzer zu verwalten."
       ],
+      "Please upload an xml file": [
+        "Bitte lade eine XML-Datei hoch."
+      ],
+      "Please upload only 1 file": [
+        "Bitte lade nur eine Datei hoch."
+      ],
       "Port is required": [
         "Port ist erforderlich"
       ],
@@ -4143,6 +4176,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "Bitte nur Buchstaben, Ziffern und die Zeichen _ . - verwenden"
+      ],
+      "Unable to upload file": [
+        "Fehler beim Hochladen der Datei."
       ],
       "Unexpected error, we can't import the contacts": [
         "Unerwarteter Fehler, wir können die Kontakte nicht importieren"
@@ -5485,6 +5521,9 @@
       ]
     },
     "Hint": {
+      "Add this record to your domain in the control panel of your domain name registrar": [
+        "Füge diesen Eintrag in der Verwaltungskonsole deines Domain-Registrars hinzu."
+      ],
       "Found ${ items.length } suggestion, use keyboard to navigate.": [
         "${ items.length } Vorschlag gefunden. Verwende die Tastatur zum Navigieren.",
         "${ items.length } Vorschläge gefunden. Verwende die Tastatur zum Navigieren."
@@ -5850,6 +5889,9 @@
       "${ boldName } will be set as default calendar.": [
         "${ boldName } wird als Standardkalender festgelegt."
       ],
+      "${ boldSSOUserInformation } and you will have to create them manually to add them back to your organization": [
+        "${ boldSSOUserInformation } und du musst sie manuell erstellen, um sie wieder zu deiner Organisation hinzuzufügen"
+      ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Wenn du fortfährst, verlierst du den Zugriff auf alle derzeit verschlüsselten Daten in deinem Konto."
       ],
@@ -6071,6 +6113,9 @@
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
         "Füge deinem Konto eine weitere Sicherheitsebene hinzu. Du musst dich jedes Mal mit Zwei-Faktor-Authentifizierung verifizieren, wenn du dich anmeldest."
       ],
+      "Add domain": [
+        "Domain hinzufügen"
+      ],
       "Add image URL": [
         "Bild-URL hinzufügen"
       ],
@@ -6216,6 +6261,9 @@
       "Are you sure you want to remove administrative privileges from this user?": [
         "Möchtest du diesem Benutzer wirklich die Administratorrechte entziehen?"
       ],
+      "Are you sure you want to remove the domain ${ boldDomain }?": [
+        "Bist du sicher, dass du die Domain ${ boldDomain } entfernen möchtest?"
+      ],
       "Ask your organisation admin to setup Gateways.": [
         "Bitte den Administrator deiner Organisation, Gateways einzurichten."
       ],
@@ -6321,11 +6369,26 @@
       "Close this screen to exit.": [
         "Schließe zum Beenden das Fenster."
       ],
+      "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
+        "Konfiguriere die SAML-Authentifizierung für deine Organisation über einen Identitätsanbieter (IdP). Dadurch wird SAML für die gesamte Organisation aktiviert."
+      ],
+      "Configure SAML authentication for your organization through an identity provider like Okta, Microsoft Azure, or Google Identity Platform. This will enable SAML for the whole organization.": [
+        "Konfiguriere die SAML-Authentifizierung für dein Unternehmen über einen Identitätsanbieter wie Okta, Microsoft Azure oder Google Identity Platform. Dadurch wird SAML für die gesamte Organisation aktiviert."
+      ],
       "Continue with ${ freeName }": [
         "Mit ${ freeName } fortfahren"
       ],
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "Wenn du fortfährst, wird dein ${ BRAND_NAME }-Konto mit ${ name } verbunden."
+      ],
+      "Copied to clipboard": [
+        "In die Zwischenablage kopiert"
+      ],
+      "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
+        "Kopiere diese URL und füge sie in das ACS (Assertion Consumer Service) URL-Feld deines Identitätsanbieters ein."
+      ],
+      "Copy and paste this URL into the entity ID field of your identity provider": [
+        "Kopiere diese URL und füge sie in das Feld für die Entitäts-ID deines Identitätsanbieters ein."
       ],
       "Copy the link to clipboard": [
         "Link in die Zwischenablage kopieren"
@@ -6432,11 +6495,23 @@
       "DMARC checks if the sender's SPF and DKIM records originate from your domain. This can prevent attackers from using another domain's SPF and DKIM to impersonate your domain. The \"p=\" (policy) in this record indicates how you want the recipient platforms to handle unauthorized emails. We recommend using the \"p=quarantine\" policy for most domains. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "DMARC prüft, ob die SPF- und DKIM-Einträge des Absenders von deiner Domain stammen. Dadurch wird verhindert, dass Angreifer eine andere Domain für SPF und DKIM verwenden, um sich als deine Domain auszugeben. Das \"p=\" (Richtlinie) in diesem Eintrag gibt an, wie die Empfängerplattformen mit nicht autorisierten E-Mails umgehen sollen. Wir empfehlen die Verwendung der \"p=quarantine\"-Richtlinie für die meisten Domains. Stelle sicher, dass du den folgenden TXT-Eintrag in deiner DNS-Konsole hinzufügst (befindet sich auf der Plattform, wo du die individuelle Domain erworben hast)."
       ],
+      "DNS TXT record": [
+        "DNS TXT-Eintrag"
+      ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "Vergiss dieses Passwort NICHT. Wenn du es vergisst, kannst du deine Organisation nicht mehr verwalten."
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "Möchtest du alle anderen (außer der aktuellen) Sitzungen widerrufen?"
+      ],
+      "Domain ownership failed verification.": [
+        "Die Überprüfung der Domaininhaberschaft schlug fehl."
+      ],
+      "Domain ownership not verified.": [
+        "Inhaberschaft der Domain nicht bestätigt."
+      ],
+      "Domain ownership verified.": [
+        "Inhaberschaft der Domain bestätigt."
       ],
       "domain used": [
         "Domain verwendet",
@@ -6508,6 +6583,9 @@
       "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
         "E-Mails, die mit der Kategorie ${ nameDeleted } gekennzeichnet sind, werden nicht gelöscht und sind weiterhin im entsprechenden Ordner zu finden."
       ],
+      "Enable single sign-on to keep your organization safe": [
+        "Aktiviere Single Sign-on, um die Sicherheit deines Unternehmens zu gewährleisten."
+      ],
       "Enable this address to join this calendar": [
         "Aktiviere diese Adresse, um diesem Kalender beizutreten."
       ],
@@ -6519,6 +6597,9 @@
       ],
       "Encryption setting updated": [
         "Verschlüsselungseinstellung aktualisiert"
+      ],
+      "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
+        "Endpunkt-URL, die du von deinem Identitätsanbieter erhalten hast (z.B. https://idp.beispiel.com/sso/saml)."
       ],
       "Enhance your network security": [
         "Erhöhe die Sicherheit deines Netzwerks"
@@ -6628,6 +6709,9 @@
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Gib deinen öffentlichen Schlüssel an deine Freunde weiter oder veröffentliche ihn online, so dass dir jeder Ende-zu-Ende verschlüsselte E-Mails senden kann!"
       ],
+      "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
+        "Gehe zu deinem Identitätsanbieter, besorge die SAML-Metadaten für ${ appName } und importiere sie hier."
+      ],
       "here": [
         "hier"
       ],
@@ -6636,6 +6720,9 @@
       ],
       "High Priority": [
         "Hohe Priorität"
+      ],
+      "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
+        "Öffentlicher Schlüssel des Identitätsanbieters zur Signierung von Authentifizierungsbehauptungen. Es sollte einen Ort geben, um den Zertifikat-Hash vom Identitätsanbieter herunterzuladen oder zu kopieren. Füge einfach den Zertifikat-Hash in das Textfeld ein."
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Wenn ein anderer Administrator dieses Passwort geändert hat, musst du ihn um das neue Organisationspasswort bitten."
@@ -6810,6 +6897,9 @@
       "Lean more about gateways": [
         "Mehr über Gateways erfahren"
       ],
+      "Lean more about single sign-on": [
+        "Erfahre mehr über Single Sign-on"
+      ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Erfahre, wie du dich bei ${ VPN_APP_NAME } mit VPN-Anwendungen von Drittanbietern anmelden kannst."
       ],
@@ -6960,6 +7050,9 @@
       "No results found": [
         "Keine Ergebnisse gefunden"
       ],
+      "Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization": [
+        "Nicht-SSO-Benutzer (manuell erstellt, nicht von deinem Identitätsanbieter bereitgestellt) können sich weiterhin bei deiner Organisation anmelden."
+      ],
       "Not a valid URL": [
         "Ungültige URL"
       ],
@@ -6974,6 +7067,9 @@
       ],
       "of": [
         "von"
+      ],
+      "Once single sign-on is disabled for your organization:": [
+        "Sobald Single Sign-on für deine Organisation deaktiviert ist:"
       ],
       "Once you reset your password:": [
         "Sobald du dein Passwort zurücksetzt:"
@@ -6992,6 +7088,9 @@
       ],
       "Optional": [
         "Optional"
+      ],
+      "or ${ selectFileButton }": [
+        "oder ${ selectFileButton }"
       ],
       "Or select a particular server:": [
         "Oder wähle einen bestimmten Server aus:"
@@ -7216,6 +7315,9 @@
       "Right to Left": [
         "Von rechts nach links"
       ],
+      "SAML configuration saved": [
+        "SAML-Konfiguration gespeichert."
+      ],
       "Save ${ percentage }": [
         "Spare ${ percentage }"
       ],
@@ -7291,6 +7393,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Da du ein treuer Benutzer bist, wurden deinem Konto zusätzliche Funktionen hinzugefügt."
       ],
+      "Single sign-on removed": [
+        "Single Sign-on entfernt"
+      ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
         "Die SMTP-Übermittlung ermöglicht es Drittanbieterdiensten oder Geräten, E-Mails über ${ MAIL_APP_NAME } für deine benutzerdefinierten Domains zu senden. Diese Funktion steht nur ${ BRAND_NAME } for Business-Kunden mit benutzerdefinierten Domains zur Verfügung."
       ],
@@ -7306,8 +7411,14 @@
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "Einige deiner verfügbaren Server können aufgrund kürzlicher Entfernungen nur in bestimmten Ländern verwendet werden."
       ],
+      "Specify the domain which is allowed to authenticate with SAML SSO.": [
+        "Gib die Domain an, die sich mit SAML SSO authentifizieren darf."
+      ],
       "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "SPF klärt, wer berechtigt ist, E-Mails über deine Domain zu senden. Stelle sicher, dass du den folgenden TXT-Eintrag in deiner DNS-Konsole hinzufügst (befindet sich auf der Plattform, wo du die individuelle Domain erworben hast)."
+      ],
+      "SSO users (provided by your Identity Provider) will be deleted": [
+        "SSO-Benutzer (bereitgestellt von deinem Identitätsanbieter) werden gelöscht."
       ],
       "Stay tuned for future promotions.": [
         "Bleibe auf dem Laufenden für zukünftige Werbeaktionen."
@@ -7387,6 +7498,9 @@
       ],
       "The calendar will be removed from your account.": [
         "Der Kalender wird aus deinem Konto entfernt."
+      ],
+      "The credentials from your Identity Provider will be deleted.": [
+        "Die Zugangsdaten von deinem Identitätsanbieter werden gelöscht."
       ],
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "Der E-Mail-Verifizierungslink ist abgelaufen. Bitte melde dich an, um den Verifizierungslink erneut zu versenden."
@@ -7484,6 +7598,9 @@
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Dieser Benutzer ist zurzeit für Zahlungen für deine Organisation zuständig. Wenn du den Benutzer zurückstufst, wirst du für die Zahlungen deiner Organisation zuständig."
       ],
+      "This verification can take up to one hour. You can safely continue to the next steps.": [
+        "Diese Verifizierung kann bis zu einer Stunde dauern. Du kannst gefahrlos mit den nächsten Schritten fortfahren."
+      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Dadurch wird dein aktuelles bezahltes Abonnement gekündigt und du verlierst alle Treuevorteile, die du angesammelt hast."
       ],
@@ -7511,6 +7628,9 @@
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Dadurch wird dein Konto und alle zugehörigen Daten dauerhaft gelöscht. Dieses Konto kann dann nicht mehr reaktiviert werden."
       ],
+      "This will remove SSO for ${ boldDomainName }.": [
+        "Dadurch wird Single Sign-on für ${ boldDomainName } entfernt."
+      ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Dies ersetzt dein vorläufiges Passwort. Du benötigst es, um zukünftig auf dein ${ BRAND_NAME }-Konto zuzugreifen."
       ],
@@ -7525,6 +7645,9 @@
       ],
       "to ${ product } Business": [
         "bei ${ product } Business"
+      ],
+      "To allow the domain ${ boldDomainName } to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
+        "Um der Domain ${ boldDomainName } zu erlauben, SAML SSO zu nutzen, musst du die Inhaberschaft verifizieren, indem du den folgenden DNS TXT-Eintrag zu deiner Domain bei deinem DNS-Anbieter hinzufügst."
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Um Datenverluste zu vermeiden, lösche sie nur, wenn du dir sicher bist, was du tust oder eine Kopie exportiert hast."
@@ -7616,6 +7739,9 @@
       "Unfortunately there is no recovery method saved for this account.": [
         "Leider wurde für dieses Konto keine Wiederherstellungsmethode gespeichert."
       ],
+      "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
+        "Eindeutige ID, generiert von deinem Identitätsanbieter, normalerweise in Form einer URL, die den Namen des Identitätsanbieters enthält (z.B. https://idp.beispiel.com/XXXXX)."
+      ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "Solange du dich nicht von deinem Konto abmeldest oder dein Passwort änderst, bleibt deine Sitzung aktiv. Sitzungen laufen nach 60 Tagen Inaktivität aus."
       ],
@@ -7702,6 +7828,9 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Die Verifizierung öffnet einen neuen Tab — bitte deaktiviere daher alle Pop-up-Blocker. Dein Konto wird nicht belastet. Jeder Betrag, der zur Verifizierung der Karte verwendet wird, wird sofort zurückerstattet."
+      ],
+      "Verify domain": [
+        "Domain verifizieren"
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Bestätige deine Identität mit einem zeitbasierten Einmal-Passwort über eine Authenticator App."
@@ -7801,6 +7930,9 @@
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Wenn diese Funktion deaktiviert ist, verhindert sie, dass Bilddateien ohne dein Wissen auf dein Gerät geladen werden."
+      ],
+      "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
+        "Beim Aktivieren von SAML für ${ appName } in deinem Identitätsanbieter wirst du vielleicht aufgefordert, die Callback (ACS) URL und die Aussteller-ID zu nutzen. Kopiere einfach die Daten unten in die Felder deines Identitätsanbieters."
       ],
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
         "Wenn Benachrichtigungen aktiviert sind, senden wir eine Benachrichtigung an deine Wiederherstellungs-E-Mail-Adresse, wenn du neue Nachrichten in deinem ${ MAIL_APP_NAME } Konto hast."
@@ -8207,26 +8339,8 @@
       ]
     },
     "Key generation": {
-      "A key with the same encryption algorithm already exists. Generating another key will cause slower account loading. Are you sure you want to continue?": [
-        "Es existiert bereits ein Schlüssel mit demselben Verschlüsselungsalgorithmus. Das Erzeugen eines anderen Schlüssels führt zu einem langsameren Laden des Kontos. Möchtest du wirklich fortfahren?"
-      ],
-      "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
-        "Für diese Adresse ist bereits ein Schlüssel mit identischem Verschlüsselungsalgorithmus aktiv. Das Erzeugen eines weiteren Schlüssels führt zu einem langsameren Laden des Kontos und das Löschen dieses Schlüssels kann zu Problemen führen. Wenn du einen neuen Schlüssel erstellst, weil dein alter Schlüssel gefährdet ist, markiere diesen Schlüssel bitte als gefährdet. Möchtest du wirklich fortfahren?"
-      ],
       "Generate key": [
         "Schlüssel generieren"
-      ],
-      "Key with fingerprint ${ fp } successfully created.": [
-        "Schlüssel mit Fingerabdruck ${ fp } erfolgreich erstellt."
-      ],
-      "The encryption keys are being generated. This may take several minutes and temporarily freeze your browser.": [
-        "Die Verschlüsselungsschlüssel werden gerade erzeugt. Dies kann einige Minuten dauern und dazu führen, dass dein Browser vorübergehend einfriert."
-      ],
-      "The encryption keys for your address are being generated. This may take several minutes and temporarily freeze your browser.": [
-        "Die Verschlüsselungsschlüssel für deine Adresse werden gerade erzeugt. Dies kann einige Minuten dauern und dazu führen, dass dein Browser vorübergehend einfriert."
-      ],
-      "You can generate a new encryption key if you think your previous key has been compromised.": [
-        "Du kannst einen neuen Verschlüsselungsschlüssel erzeugen, wenn du glaubst, dass dein bisheriger Schlüssel gefährdet wurde."
       ]
     },
     "Key state badge": {
@@ -8250,14 +8364,6 @@
       ],
       "Primary": [
         "Primär"
-      ]
-    },
-    "Key type option": {
-      "${ compatibility } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
-        "${ compatibility } RSA 4096-bit (Langsamer, bietet bessere Kompatibilität mit älterer Software)"
-      ],
-      "${ stateOfTheArt } ECC Curve25519 (Fastest, most modern)": [
-        "${ stateOfTheArt } ECC Curve25519 (Schnellste und modernste Methode)"
       ]
     },
     "Keyboard shortcut name": {
@@ -8573,6 +8679,12 @@
       "Allow recovery using a trusted device": [
         "Wiederherstellung mit einem vertrauenswürdigen Gerät zulassen"
       ],
+      "Allowed domain": [
+        "Erlaubte Domain"
+      ],
+      "Allowed Domain": [
+        "Erlaubte Domain"
+      ],
       "Amount": [
         "Betrag"
       ],
@@ -8596,6 +8708,9 @@
       ],
       "Apply filter to existing emails": [
         "Filter auf vorhandene E-Mails anwenden"
+      ],
+      "Assertion Consumer Service URL": [
+        "Assertion Consumer Service URL"
       ],
       "Attach public key": [
         "Öffentlichen Schlüssel anhängen"
@@ -8843,6 +8958,9 @@
       "Duration": [
         "Dauer"
       ],
+      "e.g. example.com": [
+        "z. B. beispiel.de"
+      ],
       "Email": [
         "E-Mail-Adresse"
       ],
@@ -8960,6 +9078,9 @@
       "Invite via email": [
         "Einladen via E-Mail"
       ],
+      "Issuer ID": [
+        "Aussteller-ID"
+      ],
       "Keep me signed in": [
         "Angemeldet bleiben"
       ],
@@ -8968,9 +9089,6 @@
       ],
       "Key": [
         "Schlüssel"
-      ],
-      "Key strength": [
-        "Schlüsselstärke"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Tastaturkürzel: ${ shortcut }"
@@ -9022,6 +9140,15 @@
       ],
       "Messages per page": [
         "Nachrichten pro Seite"
+      ],
+      "Metadata file for ${ appName }": [
+        "Metadaten-Datei für ${ appName }"
+      ],
+      "Metadata URL for ${ appName }": [
+        "Metadaten-URL für ${ appName }"
+      ],
+      "Method for importing metadata": [
+        "Methode zum Importieren von Metadaten"
       ],
       "Moderate NAT": [
         "Moderates NAT"
@@ -9176,6 +9303,9 @@
       "Protection mode": [
         "Schutzmodus"
       ],
+      "Public certificate (X.509)": [
+        "Öffentliches Zertifikat (X.509)"
+      ],
       "Read": [
         "Gelesen"
       ],
@@ -9193,6 +9323,9 @@
       ],
       "Repeat password": [
         "Passwort wiederholen"
+      ],
+      "Reply (ACS) URL": [
+        "Antwort-URL (ACS)"
       ],
       "Require 2FA for administrators": [
         "2FA für Administratoren erfordern"
@@ -9235,6 +9368,12 @@
       ],
       "Signature": [
         "Signatur"
+      ],
+      "Single sign-on entity ID": [
+        "Single Sign-on-Entitäts-ID"
+      ],
+      "Single sign-on URL": [
+        "Single Sign-on-URL"
       ],
       "SMTP port": [
         "SMTP-Port"
@@ -9299,6 +9438,9 @@
       "Two-password mode": [
         "Zwei-Passwort-Modus"
       ],
+      "Type": [
+        "Typ"
+      ],
       "Undo send": [
         "Senden widerrufen"
       ],
@@ -9322,6 +9464,9 @@
       ],
       "Username": [
         "Benutzername"
+      ],
+      "Value": [
+        "Wert"
       ],
       "VAT": [
         "MwSt"
@@ -10629,17 +10774,6 @@
         "Teamverwaltung"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Andernfalls wird der Zugang zu deinem Konto eingeschränkt und letztendlich deaktiviert."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Um ${ trialPlanName } weiterhin mit Premium-Funktionen nutzen zu können, wähle deine Abonnement- und Zahlungsoptionen."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Deine Testversion endet am ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } mit den Endziffern ${ last4 }"
@@ -10739,6 +10873,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Bei deinem aktuellen Abonnement profitierst du von einem Sonderangebotspreis. Wenn du dein Konto downgradest, können wir ihn dir nicht mehr ermöglichen, wenn du ein neues Abonnement abschließt."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Andernfalls wird der Zugang zu deinem Konto eingeschränkt und letztendlich deaktiviert."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Um ${ trialPlanName } weiterhin mit Premium-Funktionen nutzen zu können, wähle deine Abonnement- und Zahlungsoptionen."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Deine Testversion endet am ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -12064,6 +12209,15 @@
       "domain.com": [
         "beispiel.de"
       ],
+      "e.g. https://example.com/app/protonvpn/XXXXX/sso/metadata": [
+        "z.B. https://beispiel.com/app/protonvpn/XXXXX/sso/metadata"
+      ],
+      "e.g. https://idp.example.com/sso/saml": [
+        "z.B. https://idp.beispiel.com/sso/saml"
+      ],
+      "e.g. https://idp.example.com/XXXXX": [
+        "z.B. https://idp.beispiel.com/XXXXX"
+      ],
       "E.g., ": [
         "Z. B. "
       ],
@@ -12287,14 +12441,6 @@
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Das Verifizieren deiner Telefonnummer erhöht die Sicherheit deines Kontos und bietet zusätzliche Möglichkeiten zur Wiederherstellung."
-      ]
-    },
-    "Remark about a key type option": {
-      "Compatibility": [
-        "Kompatibilität"
-      ],
-      "State of the art": [
-        "Stand der Technik"
       ]
     },
     "Remove calendar section description": {
@@ -14192,6 +14338,12 @@
       "Encryption and keys": [
         "Verschlüsselung und Schlüssel"
       ],
+      "Enter endpoints into your identity provider": [
+        "Trage die Endpunkte bei deinem Identitätsanbieter ein."
+      ],
+      "Enter SAML metadata": [
+        "SAML-Metadaten eingeben"
+      ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Gib deine ${ BRAND_NAME }-Kontodaten ein, um am ${ app } Beta-Programm teilzunehmen."
       ],
@@ -14237,15 +14389,6 @@
       ],
       "Folders and labels": [
         "Ordner und Kategorien"
-      ],
-      "For Linux": [
-        "Für Linux"
-      ],
-      "For macOS": [
-        "Für macOS"
-      ],
-      "For Windows": [
-        "Für Windows"
       ],
       "Forward and auto-reply": [
         "Weiterleiten und automatisch antworten"
@@ -14479,6 +14622,15 @@
       "Remove calendar": [
         "Kalender entfernen"
       ],
+      "Remove domain": [
+        "Domain entfernen"
+      ],
+      "Remove single sign-on": [
+        "Single Sign-on entfernen"
+      ],
+      "Remove single sign-on for your organization?": [
+        "Single Sign-on für deine Organisation entfernen?"
+      ],
       "Remove user?": [
         "Benutzer entfernen?"
       ],
@@ -14505,6 +14657,9 @@
       ],
       "Revoke certificate": [
         "Zertifikat widerrufen"
+      ],
+      "SAML authentication": [
+        "SAML-Authentifizierung"
       ],
       "Save time with email filters": [
         "Spare Zeit mit E-Mail-Filtern"
@@ -14595,6 +14750,9 @@
       ],
       "Signed in to member account": [
         "In Mitgliedskonto angemeldet"
+      ],
+      "Single sign-on": [
+        "Single Sign-on"
       ],
       "SMTP submission": [
         "SMTP-Übermittlung"
@@ -14876,6 +15034,12 @@
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Automatisches Umschalten zwischen deinen bevorzugten Farbschemata für Tag und Nacht, synchron mit dem Tag- und Nachtmodus deines Systems."
       ],
+      "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
+        "Kopiere diese URL und füge sie in das ACS (Assertion Consumer Service) URL-Feld deines Identitätsanbieters ein."
+      ],
+      "Copy and paste this URL into the entity ID field of your identity provider": [
+        "Kopiere diese URL und füge sie in das Feld für die Entitäts-ID deines Identitätsanbieters ein."
+      ],
       "Customize import to reduce the number of folders": [
         "Importvorgänge anpassen, um die Anzahl der Ordner zu reduzieren"
       ],
@@ -14903,6 +15067,9 @@
       "Enabling advanced logs records the IP address for each event in the security log.": [
         "Wenn du die erweiterten Protokolle aktivierst, wird die IP-Adresse für jedes Ereignis im Sicherheitsprotokoll aufgezeichnet."
       ],
+      "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
+        "Endpunkt-URL des Identitätsanbieters (z.B. https://idp.beispiel.com/sso/saml)"
+      ],
       "Feature in early access": [
         "Funktion im frühzeitigen Zugang"
       ],
@@ -14911,6 +15078,9 @@
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Gruppiere E-Mails zum gleichen Thema in deinem Posteingang oder zeige diese getrennt an."
+      ],
+      "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
+        "Öffentlicher Schlüssel des Identitätsanbieters zum Signieren von Authentifizierungs-Assertationen. Hole dir den Zertifikatshash von deinem Identitätsanbieter."
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Wenn du einen Geschenkgutschein erworben oder von unserem Support-Team erhalten hast, kannst du ihn hier eingeben."
@@ -14941,6 +15111,9 @@
       ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
         "Mit diesem Schlüssel erzeugte Signaturen werden als ungültig behandelt und können nicht zur Verschlüsselung verwendet werden."
+      ],
+      "Specify the domain which is allowed to authenticate with SAML SSO": [
+        "Gib die Domain an, die sich mit SAML SSO authentifizieren darf."
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systemunterordner werden in ${ MAIL_APP_NAME } als separate Ordner angezeigt"
@@ -14989,6 +15162,9 @@
       ],
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
         "Verwende die standardmäßigen Bildlaufleisten deines Browsers. Diese sind normalerweise größer und leichter zu bedienen."
+      ],
+      "Usually an URL that contains the identity provider's name within": [
+        "In der Regel eine URL, die den Namen des Identitätsanbieters enthält."
       ],
       "Verified email address": [
         "E-Mail-Adresse bestätigt"

@@ -146,6 +146,9 @@
       "Cancel subscription": [
         "Előfizetés lemondása"
       ],
+      "Change": [
+        "Módosítás"
+      ],
       "Change mailbox password": [
         "E-mail titkosítási jelszó módosítása"
       ],
@@ -5395,11 +5398,17 @@
       "Close this screen to exit.": [
         "A kilépéshez zárja be ezt a képernyőt."
       ],
+      "Configure SAML authentication for your organization through an identity provider like Okta, Microsoft Azure, or Google Identity Platform. This will enable SAML for the whole organization.": [
+        "Konfigurálja a SAML-hitelesítést a szervezet számára egy olyan személyazonossági szolgáltatón keresztül, mint az Okta, a Microsoft Azure vagy a Google Identity Platform. Ez lehetővé teszi a SAML-t az egész szervezet számára."
+      ],
       "Continue with ${ freeName }": [
         "Folytatás ezzel: ${ freeName }"
       ],
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "A folytatással összekapcsolja a ${ BRAND_NAME } fiókját a ${ name } szolgáltatással."
+      ],
+      "Copied to clipboard": [
+        "Vágólapra másolva"
       ],
       "Copy the link to clipboard": [
         "Hivatkozás másolása a vágólapra"
@@ -5534,6 +5543,9 @@
       ],
       "Emailing preference saved": [
         "E-mail beállítás elmentve"
+      ],
+      "Enable single sign-on to keep your organization safe": [
+        "Engedélyezze az egyszeri bejelentkezést szervezete biztonsága érdekében"
       ],
       "Enable this address to join this calendar": [
         "Engedélyezze ezt a címet a naptárhoz való csatlakozáshoz"
@@ -5792,6 +5804,9 @@
       "Large imports can take several days.": [
         "Egy nagyobb importálás akár napokig is eltarthat."
       ],
+      "Lean more about single sign-on": [
+        "További információ az egyszeri bejelentkezésről"
+      ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "További információk arról, hogyan jelentkezhet be más VPN alkalmazásokkal a ${ VPN_APP_NAME }-re."
       ],
@@ -5932,6 +5947,9 @@
       ],
       "Optional": [
         "Választható"
+      ],
+      "or ${ selectFileButton }": [
+        "vagy ${ selectFileButton }"
       ],
       "Or select a particular server:": [
         "Vagy válasszon ki egy adott szervert:"
@@ -6945,26 +6963,8 @@
       ]
     },
     "Key generation": {
-      "A key with the same encryption algorithm already exists. Generating another key will cause slower account loading. Are you sure you want to continue?": [
-        "Már létezik kulcs ugyanezzel a titkosítási algoritmussal. Újabb kulcs létrehozása lassítani fogja a fiók betöltését. Biztos benne, hogy folytatja?"
-      ],
-      "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
-        "Ehhez a címhez már vagy egy aktív kulcs ugyanilyen titkosítási algoritmussal. Újabb kulcs létrehozása le fogja lassítani a fiók betöltését és a kulcs törlése problémákat okozhat. Amennyiben azért hoz létre új kulcsot, mert a korábbi kompromittált, akkor jelölje meg azt a kulcsot kompromittáltként. Biztos, hogy folytatja?"
-      ],
       "Generate key": [
         "Kulcs generálása"
-      ],
-      "Key with fingerprint ${ fp } successfully created.": [
-        "Új kulcs sikeresen létrehozva. Ujjlenyomat: ${ fp }."
-      ],
-      "The encryption keys are being generated. This may take several minutes and temporarily freeze your browser.": [
-        "A titkosítási kulcsok létrehozása folyamatban. Ez több percig is eltarthat és átmenetileg megállíthatja a böngészőt."
-      ],
-      "The encryption keys for your address are being generated. This may take several minutes and temporarily freeze your browser.": [
-        "A címéhez tartozó titkosítási kulcsok létrehozása folyamatban. Ez több percig is eltarthat és átmenetileg megállíthatja a böngészőt."
-      ],
-      "You can generate a new encryption key if you think your previous key has been compromised.": [
-        "Új titkosítási kulcsot generálhat, ha úgy gondolja, hogy az előző kulcs kompromittálódott."
       ]
     },
     "Key state badge": {
@@ -6985,14 +6985,6 @@
       ],
       "Primary": [
         "Elsődleges"
-      ]
-    },
-    "Key type option": {
-      "${ compatibility } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
-        "${ compatibility } 4096 bites RSA (Lassabb, de nagyobb kompatibilitás régebbi programokkal)"
-      ],
-      "${ stateOfTheArt } ECC Curve25519 (Fastest, most modern)": [
-        "${ stateOfTheArt } ECC Curve25519 (Leggyorsabb, legmodernebb)"
       ]
     },
     "Keyboard shortcut name": {
@@ -7695,9 +7687,6 @@
       "Key": [
         "Kulcs"
       ],
-      "Key strength": [
-        "Kulcs erőssége"
-      ],
       "Keyboard shortcut: ${ shortcut }": [
         "Gyorsbillentyű: ${ shortcut }"
       ],
@@ -8006,6 +7995,9 @@
       ],
       "Two-password mode": [
         "Kétjelszavas mód"
+      ],
+      "Type": [
+        "Típus"
       ],
       "Undo send": [
         "Küldés visszavonása"
@@ -9068,17 +9060,6 @@
         "Csoport menedzsment"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Máskülönben a fiókjához való hozzáférése korlátozott lesz, és a fiókja végül letiltásra kerül."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Ahhoz, hogy tudja folytatni a ${ trialPlanName } használatát a prémium funkciókkal, válassza ki előfizetési csomagját és a fizetés módját."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Próbaideje véget ér: ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, szám vége: ${ last4 }"
@@ -9154,6 +9135,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Önnek kedvezményes ára van a jelenlegi csomagjához, Ha kisebb csomagra vált, elveszíti a kedvezményes árat és ezt nem fogja tudni igénybe venni, ha újra előfizet."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Máskülönben a fiókjához való hozzáférése korlátozott lesz, és a fiókja végül letiltásra kerül."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Ahhoz, hogy tudja folytatni a ${ trialPlanName } használatát a prémium funkciókkal, válassza ki előfizetési csomagját és a fizetés módját."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Próbaideje véget ér: ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -10144,14 +10136,6 @@
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "A telefonszámának megerősítése növeli a fiókja biztonságát, illetve több helyreállítási lehetőséget biztosít."
-      ]
-    },
-    "Remark about a key type option": {
-      "Compatibility": [
-        "Kompatibilitás"
-      ],
-      "State of the art": [
-        "Különösen korszerű"
       ]
     },
     "Remove calendar section description": {
@@ -11716,15 +11700,6 @@
       ],
       "Folders and labels": [
         "Mappák és címkék"
-      ],
-      "For Linux": [
-        "Linux rendszerre"
-      ],
-      "For macOS": [
-        "macOS rendszerre"
-      ],
-      "For Windows": [
-        "Windows rendszerre"
       ],
       "Forward and auto-reply": [
         "Továbbít és automatikus válasz"

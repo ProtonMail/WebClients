@@ -59,6 +59,9 @@
       "Cancel subscription": [
         "Prekliči naročnino"
       ],
+      "Change": [
+        "Spremeni"
+      ],
       "Change keys": [
         "Spremeni ključe"
       ],
@@ -2508,10 +2511,10 @@
         "Dodaj (${ numberOfAddedServers })"
       ],
       "Connection for up to ${ plusVpnConnections } device": [
-        "Povezava za do ${ plusVpnConnections } naprave.",
-        "Povezava za do ${ plusVpnConnections } naprav.",
-        "Povezava za do ${ plusVpnConnections } naprav.",
-        "Povezava za do ${ plusVpnConnections } naprav."
+        "Povezava za do ${ plusVpnConnections } naprave",
+        "Povezava za do ${ plusVpnConnections } naprav",
+        "Povezava za do ${ plusVpnConnections } naprav",
+        "Povezava za do ${ plusVpnConnections } naprav"
       ],
       "Fastest VPN servers": [
         "Najhitrejši strežniki VPN"
@@ -2944,21 +2947,21 @@
       ],
       "Add server (${ availableAddedCount } available)": [
         "Dodaj strežnik (${ availableAddedCount } na voljo)",
-        "Dodaj strežnika (${ availableAddedCount } na voljo)",
-        "Dodaj strežnike (${ availableAddedCount } na voljo)",
-        "Dodaj strežnike (${ availableAddedCount } na voljo)"
+        "Dodaj strežnik (${ availableAddedCount } na voljo)",
+        "Dodaj strežnik (${ availableAddedCount } na voljo)",
+        "Dodaj strežnik (${ availableAddedCount } na voljo)"
       ],
       "Adding ${ addedServerCount } gateway server": [
-        "Dodaj prehodni strežnik ${ addedServerCount }",
-        "Dodaj prehodna strežnika ${ addedServerCount }",
-        "Dodaj prehodne strežnike ${ addedServerCount }",
-        "Dodaj prehodne strežnike ${ addedServerCount }"
+        "Dodajam ${ addedServerCount } prehodni strežnik",
+        "Dodajam ${ addedServerCount } prehodna strežnika",
+        "Dodajam ${ addedServerCount } prehodne strežnike",
+        "Dodajam ${ addedServerCount } prehodnih strežnikov"
       ],
       "Adding gateway server: ${ serverNumber } / ${ total }": [
-        "Dodaj prehodni strežnik: ${ serverNumber } / ${ total }",
-        "Dodaj prehodna strežnika: ${ serverNumber } / ${ total }",
-        "Dodaj prehodne strežnike: ${ serverNumber } / ${ total }",
-        "Dodaj prehodne strežnike: ${ serverNumber } / ${ total }"
+        "Dodajam prehodni strežnik: ${ serverNumber } / ${ total }",
+        "Dodajam prehodna strežnika: ${ serverNumber } / ${ total }",
+        "Dodajam prehodne strežnike: ${ serverNumber } / ${ total }",
+        "Dodajam prehodne strežnike: ${ serverNumber } / ${ total }"
       ],
       "Additional options": [
         "Dodatne možnosti"
@@ -3102,10 +3105,10 @@
         "Ustvarite svoj prvi prehod"
       ],
       "Creating gateway server: ${ serverNumber } / ${ total }": [
-        "Ustvari prehodni strežnik: ${ serverNumber } / ${ total }",
-        "Ustvari prehodna strežnika: ${ serverNumber } / ${ total }",
-        "Ustvari prehodne strežnike: ${ serverNumber } / ${ total }",
-        "Ustvari prehodne strežnike: ${ serverNumber } / ${ total }"
+        "Ustvarjam prehodni strežnik: ${ serverNumber } / ${ total }",
+        "Ustvarjam prehodna strežnika: ${ serverNumber } / ${ total }",
+        "Ustvarjam prehodne strežnike: ${ serverNumber } / ${ total }",
+        "Ustvarjam prehodne strežnike: ${ serverNumber } / ${ total }"
       ],
       "Creating your account": [
         "Ustvarjanje vašega računa"
@@ -3132,10 +3135,10 @@
         "Namenske strežnike z namenskimi naslovi IP lahko dodate zasebnim prehodom, da omogočite natančno nastavljen nadzor dostopa."
       ],
       "Deleting ${ deletedServerCount } gateway server": [
-        "Izbriši prehodni strežnik ${ deletedServerCount }",
-        "Izbriši prehodna strežnika ${ deletedServerCount }",
-        "Izbriši prehodne strežnike ${ deletedServerCount }",
-        "Izbriši prehodne strežnike ${ deletedServerCount }"
+        "Brišem ${ deletedServerCount } prehodni strežnik",
+        "Brišem ${ deletedServerCount } prehodna strežnika",
+        "Brišem ${ deletedServerCount } prehodne strežnike",
+        "Brišem ${ deletedServerCount } prehodnih strežnikov"
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy logotip"
@@ -3153,7 +3156,7 @@
         "Lastništvo domene ni preverjeno."
       ],
       "Domain ownership verified.": [
-        "Lastništvo domene potrjeno."
+        "Lastništvo domene je preverjeno."
       ],
       "Done! We sent a code to ${ destination }.": [
         "Končano! Poslali smo kodo na ${ destination }."
@@ -3399,7 +3402,7 @@
         "MM/LL"
       ],
       "Must be between 3 and 20 characters long.": [
-        "Vaše geslo mora vsebovati 3 do 20 znakov."
+        "Mora vsebovati od 3 do 20 znakov."
       ],
       "Must not contain spaces.": [
         "Ne sme vsebovati presledkov."
@@ -3432,7 +3435,7 @@
         "Število namenskih strežnikov v organizaciji"
       ],
       "Number of dedicated servers you try to assign (${ addedCount }) is more than what is still available in your plan (${ remainingCount }) as you own ${ ownedCount } and you already use ${ usedCount }.": [
-        "Število namenskih strežnikov, ki jih poskušate dodati (${ addedCount }), je večje od tistega, kot so še na voljo v vašem načrtu (${ remainingCount }), saj ste lastnik ${ ownedCount } in že uporabljate ${ usedCount }."
+        "Število namenskih strežnikov, ki jih poskušate dodati (${ addedCount }), je večje od tistega, ki je še na voljo v vašem paketu (${ remainingCount }), saj ste lastnik ${ ownedCount } in že uporabljate ${ usedCount }."
       ],
       "of": [
         "od"
@@ -3615,7 +3618,7 @@
         "Strežnik trenutno ni dosegljiv"
       ],
       "Server load": [
-        "Nalaganje strežnika"
+        "Obremenitev strežnika"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Strežniki so nedosegljivi. Poskusite znova čez nekaj minut"
@@ -3756,7 +3759,7 @@
         "Ta uporabnik trenutno skrbi za plačila za vašo organizacijo. Z odstranitvijo tega člana boste vi postali odgovorni za plačila za vašo organizacijo."
       ],
       "This verification can take up to one hour. You can safely continue to the next steps.": [
-        "To preverjanje lahko traja do eno uro. Varno lahko nadaljujete z naslednjimi koraki."
+        "To preverjanje lahko traja do ene ure. Varno lahko nadaljujete z naslednjimi koraki."
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "To bo preklicalo vašo trenutno plačano naročnino in izgubili boste vse prednosti, ki ste jih pridobili."
@@ -4009,7 +4012,7 @@
       ],
       "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
         "Trenutno uporabljate ${ ipCount } od vašega ${ ipAddresses } razpoložljivega namenskega strežnika.",
-        "Trenutno uporabljate ${ ipCount } vaša ${ ipAddresses } razpoložljiva namenska strežnika.",
+        "Trenutno uporabljate ${ ipCount } od vaših ${ ipAddresses } razpoložljivih namenskih strežnikov.",
         "Trenutno uporabljate ${ ipCount } od vaših ${ ipAddresses } razpoložljivih namenskih strežnikov.",
         "Trenutno uporabljate ${ ipCount } od vaših ${ ipAddresses } razpoložljivih namenskih strežnikov."
       ],
@@ -4232,14 +4235,6 @@
       ],
       "Subscription": [
         "Naročnina"
-      ]
-    },
-    "Key type option": {
-      "${ compatibility } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
-        "${ compatibility } RSA 4096-bit (počasnejše, vendar povečana združljivost s starejšo programsko opremo)"
-      ],
-      "${ stateOfTheArt } ECC Curve25519 (Fastest, most modern)": [
-        "${ stateOfTheArt } ECC Curve25519 (najhitrejše, najbolj sodobno)"
       ]
     },
     "Label": {
@@ -4467,9 +4462,6 @@
       ],
       "Key": [
         "Ključ"
-      ],
-      "Key strength": [
-        "Moč ključa"
       ],
       "Level for NetShield blocker filtering": [
         "Raven za filtriranje NetShield."
@@ -6457,14 +6449,6 @@
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Preverjanje telefonske številke povečuje varnost računa in zagotavlja dodatne možnosti za obnovitev računa."
-      ]
-    },
-    "Remark about a key type option": {
-      "Compatibility": [
-        "Združljivost"
-      ],
-      "State of the art": [
-        "Najsodobnejše"
       ]
     },
     "Restore administrator panel": {

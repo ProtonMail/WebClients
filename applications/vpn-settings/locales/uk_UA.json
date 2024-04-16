@@ -59,6 +59,9 @@
       "Cancel subscription": [
         "Скасувати передплату"
       ],
+      "Change": [
+        "Змінити"
+      ],
       "Change keys": [
         "Змінити ключі"
       ],
@@ -1806,18 +1809,18 @@
     },
     "Delete address prompt": {
       "The next active address on your list will be set as the default.": [
-        "Наступна активна адреса у вашому списку буде встановлена за замовчуванням."
+        "Наступну активну адресу з вашого списку буде встановлено типовою."
       ],
       "You can only delete 1 address per year.": [
-        "Ви можете видалити лише 1 адресу на рік."
+        "Ви можете видаляти лише 1 адресу на рік."
       ]
     },
     "Delete address tooltip": {
       "You can only delete 1 address per year": [
-        "Ви можете видалити лише 1 адресу на рік"
+        "Ви можете видаляти лише 1 адресу на рік"
       ],
       "You've reached the limit of address deletions for this user.": [
-        "Ви досягли ліміту видалень адрес для цього користувача."
+        "Ви досягли обмеження видалення адрес для цього користувача."
       ]
     },
     "Delinquent modal title": {
@@ -2026,7 +2029,7 @@
         "Будь ласка, згенеруйте ключі перед зміною пароля"
       ],
       "Please set a recovery email first": [
-        "Спершу вкажіть е-пошту для відновлення"
+        "Спершу вкажіть резервну електронну пошту"
       ],
       "Please set a recovery phone number first": [
         "Спершу встановіть номер телефону для відновлення"
@@ -3139,10 +3142,10 @@
         "Введіть власний пароль (як адміністратор організації)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
-        "Введіть свою резервну адресу електронної пошти і ми надішлемо вам ваше ім'я користувача або адресу електронної пошти."
+        "Введіть свою адресу резервної електронної пошти і ми надішлемо ваше ім'я користувача або адресу електронної пошти."
       ],
       "Enter your recovery phone number and we will send you your username or email address.": [
-        "Введіть свій резервний номер телефону і ми надішлемо вам ваше ім'я користувача або адресу електронної пошти."
+        "Введіть свій резервний номер телефону і ми надішлемо ваше ім'я користувача або адресу електронної пошти."
       ],
       "Enter your recovery phrase to change your password now.": [
         "Введіть фразу відновлення, щоб змінити пароль."
@@ -4125,14 +4128,6 @@
         "Передплата"
       ]
     },
-    "Key type option": {
-      "${ compatibility } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
-        "${ compatibility } RSA 4096-bіt (повільніший, але сумісніший із застарілим програмним забезпеченням)"
-      ],
-      "${ stateOfTheArt } ECC Curve25519 (Fastest, most modern)": [
-        "${ stateOfTheArt } ECC Curve25519 (Найшвидший, найсучасніший)"
-      ]
-    },
     "Label": {
       "${ BRAND_NAME } username": [
         "Ім'я користувача ${ BRAND_NAME }"
@@ -4359,9 +4354,6 @@
       "Key": [
         "Ключ"
       ],
-      "Key strength": [
-        "Надійність ключа"
-      ],
       "Level for NetShield blocker filtering": [
         "Рівень фільтрації блокувальника NetShield"
       ],
@@ -4480,7 +4472,7 @@
         "Відкритий сертифікат (X.509)"
       ],
       "Recovery email address": [
-        "Електронна пошта для відновлення"
+        "Адреса резервної електронної пошти"
       ],
       "Recovery phone number": [
         "Номер телефону для відновлення"
@@ -4858,7 +4850,7 @@
         "Забули свій пароль від облікового запису ${ BRAND_NAME }? Відновіть його тут за допомогою коду відновлення, пошти або SMS і отримайте доступ до ваших ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } тощо."
       ],
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "Забули своє ім'я користувача ${ BRAND_NAME }? Знайдіть його за допомогою пошти або номера телефону для відновлення та отримайте доступ до ваших ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } та багато іншого."
+        "Забули своє ім'я користувача ${ BRAND_NAME }? Отримайте його за допомогою резервної електронної пошти або номера телефону й отримайте доступ до ваших ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } та інших даних."
       ],
       "Private and secure email, no credit card required": [
         "Приватна та захищена електронна пошта. Банківська картка не потрібна"
@@ -6074,13 +6066,13 @@
         "Тепер підтвердьте цю адресу електронної пошти для відновлення: ${ email.Value }"
       ],
       "Verify recovery email?": [
-        "Підтвердити резервну адресу електронної пошти?"
+        "Підтвердити резервну е-пошту?"
       ],
       "Verify with email": [
         "Підтвердити електронною поштою"
       ],
       "Verifying your email address increases your account security and allows additional options for recovery.": [
-        "Підтвердження вашої електронної адреси поліпшує безпеку вашого облікового запису та розширює можливості відновлення."
+        "Підтвердження адреси електронної пошти поліпшує безпеку вашого облікового запису та розширює можливості відновлення."
       ]
     },
     "Recovery method": {
@@ -6118,14 +6110,6 @@
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Підтвердження номера телефону посилює безпеку вашого облікового запису та розширює можливості відновлення."
-      ]
-    },
-    "Remark about a key type option": {
-      "Compatibility": [
-        "Сумісність"
-      ],
-      "State of the art": [
-        "Витвір мистецтва"
       ]
     },
     "Restore administrator panel": {
@@ -6900,7 +6884,7 @@
         "Подарунковий код застосовано"
       ],
       "If you entered a valid recovery email we will send you an email with your usernames in the next minute.": [
-        "Якщо ви ввели дійсну адресу резервної електронної пошти, ми надішлемо вам повідомлення з вашими користувацькими іменами впродовж хвилини."
+        "Якщо ви ввели дійсну адресу резервної електронної пошти, впродовж хвилини ми надішлемо повідомлення з вашими іменами користувача."
       ],
       "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
         "Якщо ви ввели дійсний резервний номер телефону, ми надішлемо вам повідомлення з вашими користувацькими іменами впродовж хвилини."

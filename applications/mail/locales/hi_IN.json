@@ -40,6 +40,9 @@
       "Add contact": [
         "संपर्क जोड़ें"
       ],
+      "Add credit / debit card": [
+        "क्रेडिट / डेबिट कार्ड जोड़ें"
+      ],
       "Add email": [
         "ईमेल जोड़ें"
       ],
@@ -1065,6 +1068,10 @@
       ],
       "Trust": [
         "भरोसा करें"
+      ],
+      "Trust key": [
+        "ट्रस्ट कुंजी",
+        "ट्रस्ट कुंजी"
       ],
       "Trust public key": [
         "सार्वजनिक कुंजी पर भरोसा करें"
@@ -8915,6 +8922,32 @@
         "के लिए"
       ]
     },
+    "Subscription renewal state": {
+      "Are you sure?": [
+        "पक्का?"
+      ],
+      "Auto-pay is disabled": [
+        "अपनेआप भुगतान अक्षम है"
+      ],
+      "Auto-pay is enabled": [
+        "ऑटो-भुगतान चालू"
+      ],
+      "Disable": [
+        "अक्षम करें"
+      ],
+      "Enable auto-pay support": [
+        "अपनेआप-भुगतान सक्षम करें"
+      ],
+      "Keep auto-pay": [
+        "ऑटो-भुगतान रखें"
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
+        "हमारा सिस्टम अब आपको इस भुगतान तरीकें से ऑटो-चार्ज नहीं करेगा, लेकिन आपकी सदस्यता बिल साइकिल के अंत में दुबारा शुरू कर दी जाएगी। अगर आप डाउनग्रेड करना या सदस्यता बदलना चाहते है, तो वो आपको अभी भी बिल साइकिल के अंत से पहले करना होगा। साथ-ही-साथ, अगर आप खुद भुगतान करना भूल गए और ऑटो-भुगतान सब भुगतान तरीकों के लिए बंद है, तो हमें आपका खाता ऑटो-डाउनग्रेड करना पड़ सकता है जिससे आपको कई सुविधाओं का नुकसान होगा।"
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
+        "हमारा सिस्टम अब इस भुगतान तरीकें का उपयोग करके आपको स्वत: चार्ज नहीं करेगा, लेकिन बिलिंग चक्र के अंत में आपकी सदस्यता दुबारा शुरू कर दी जाएगी। यदि आप अपनी सदस्यता को डाउनग्रेड करना या बदलना चाहते हैं, तो वो आपको अभी भी बिल साइकिल के अंत से पहले करना होगा। हम आपको ऑटो-डाउनग्रेड नहीं कर सकते क्योंकि यदि आप फ्री प्लान के स्टोरेज सीमा से ऊपर है या अन्य प्रीमियम सुविधाओं का उपयोग कर रहे हैं, तो हम आपके लिए फ़ाइलें, ईमेल या अन्य डेटा को स्वचालित रूप से हटा नहीं सकते हैं। यदि आप स्वचालित भुगतान अक्षम करते हैं, तो खाता निलंबन को रोकने के लिए नियत तारीख से पहले अपने अगले सदस्यता चालान का भुगतान करना याद रखें।"
+      ]
+    },
     "Subscription saving": {
       "Save": [
         "सेव करें"
@@ -9142,6 +9175,12 @@
       "Password copied to clipboard": [
         "पासवर्ड क्लिपबोर्ड पर कॉपी किया गया"
       ],
+      "Payment method added": [
+        "भुगतान विधि जोड़ी गई"
+      ],
+      "Payment method updated": [
+        "भुगतान विधि अपडेट की गई"
+      ],
       "Phishing reported": [
         "फ़िशिंग की सूचना दी"
       ],
@@ -9336,6 +9375,9 @@
       "Add contact group name": [
         "संपर्क समूह का नाम जोड़ें"
       ],
+      "Add credit/debit card": [
+        "क्रेडिट / डेबिट कार्ड जोड़ें"
+      ],
       "Add filter": [
         "फिल्टर जोड़ें"
       ],
@@ -9524,6 +9566,9 @@
       ],
       "Edit contact group": [
         "संपर्क समूह संपादित करें"
+      ],
+      "Edit credit/debit card": [
+        "क्रेडिट / डेबिट कार्ड संपादित करें"
       ],
       "Edit email settings": [
         "ईमेल सेटिंग बदले"
