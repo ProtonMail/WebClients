@@ -6,6 +6,8 @@ export enum TelemetryMeasurementGroups {
     calendarEncryptedSearch = 'calendar.web.encrypted_search',
     calendarIcsSurgery = 'calendar.web.ics_surgery',
     calendarTimeZoneSelector = 'calendar.web.timezone_selector',
+    /** Not only calendar scope because party crasher on mail and drawer */
+    calendarInvite = 'any.web.calendar_invite',
     changelogOpened = 'any.changelog_opened',
     keyTransparency = 'any.web.key_transparency',
     subscriptionModal = 'any.web.subscription_modal',
@@ -40,6 +42,7 @@ export enum TelemetrySimpleLoginEvents {
 export enum TelemetryCalendarEvents {
     change_temporary_time_zone = 'change_temporary_time_zone',
     enable_encrypted_search = 'enable_encrypted_search',
+    answer_invite = 'answer_invite',
 }
 
 export enum TelemetryIcsSurgeryEvents {
