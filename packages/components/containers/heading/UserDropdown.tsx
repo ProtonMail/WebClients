@@ -49,6 +49,7 @@ import {
     BRAND_NAME,
     PLANS,
     PLAN_NAMES,
+    SHARED_UPSELL_PATHS,
     SSO_PATHS,
     UPSELL_COMPONENT,
 } from '@proton/shared/lib/constants';
@@ -197,7 +198,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
 
     const upsellRef = getUpsellRefFromApp({
         app: APP_NAME,
-        feature: '1',
+        feature: SHARED_UPSELL_PATHS.USER_DROPDOWN,
         component: UPSELL_COMPONENT.BUTTON,
         fromApp: app,
     });
