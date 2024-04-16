@@ -59,6 +59,9 @@
       "Cancel subscription": [
         "Скасаваць падпіску"
       ],
+      "Change": [
+        "Змяніць"
+      ],
       "Change keys": [
         "Змяніць ключы"
       ],
@@ -139,6 +142,9 @@
       ],
       "Delete Gateway": [
         "Выдаліць шлюз"
+      ],
+      "Delete logo": [
+        "Выдаліць лагатып"
       ],
       "Delete user": [
         "Выдаліць карыстальніка"
@@ -280,6 +286,9 @@
       ],
       "Invite user": [
         "Запрасіць карыстальніка"
+      ],
+      "Keep logo": [
+        "Пакінуць лагатып"
       ],
       "Keep my Plus subscription": [
         "Пакінуць падпіску Plus"
@@ -437,6 +446,9 @@
       "Select country": [
         "Выберыце краіну"
       ],
+      "select file": [
+        "выбраць файл"
+      ],
       "Select file": [
         "Выбраць файл"
       ],
@@ -532,6 +544,12 @@
       ],
       "Upgrade your plan": [
         "Палепшыце свой тарыфны план"
+      ],
+      "Upload": [
+        "Запампаваць"
+      ],
+      "Upload icon": [
+        "Запампаваць значок"
       ],
       "Use ${ label } theme": [
         "Выкарыстоўваць тэму ${ label }"
@@ -985,6 +1003,12 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Працягнуць выкарыстоўваць ${ MAIL_APP_NAME }."
+      ],
+      "Continue using ${ planTitle }": [
+        "Працягнуць выкарыстоўваць ${ planTitle }"
+      ],
+      "Continue your subscription": [
+        "Працягнуць падпіску"
       ]
     },
     "Checkout row": {
@@ -2035,6 +2059,12 @@
       "Error connecting to the Bitcoin API.": [
         "Памылка падключэння да Bitcoin API."
       ],
+      "Failed to process the logo": [
+        "Не ўдалося апрацаваць лагатып"
+      ],
+      "File too large. Your logo must be 30 KB or smaller.": [
+        "Занадта вялікі файл. Ваш лагатып павінен быць 30 КБ або менш."
+      ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Калі час на вашым тэлевізары завяршыўся, націсніце на ім кнопку \"Абнавіць\" і ўвядзіце код паўторна."
       ],
@@ -2046,6 +2076,9 @@
       ],
       "Impossible to rename the gateway": [
         "Немагчыма перайменаваць шлюз"
+      ],
+      "Incorrect file type. Upload a file in PNG or JPEG format.": [
+        "Няправільны тып файла. Запампаваць файл у фармаце PNG або JPEG."
       ],
       "Incorrect login credentials. Please try again.": [
         "Няправільныя ўліковыя даныя для ўваходу. Паспрабуйце яшчэ раз."
@@ -2082,6 +2115,9 @@
       ],
       "Name does not match": [
         "Назва не супадае"
+      ],
+      "No image selected": [
+        "Відарыс не выбраны"
       ],
       "Not a valid number": [
         "Несапраўдны нумар"
@@ -2134,6 +2170,9 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Перайдзіце на тарыфны план для бізнесу з больш чым 1 карыстальнікам, каб атрымаць падтрымку шматкарыстальніцкага рэжыму."
       ],
+      "Please upload a square file": [
+        "Запампуйце квадратны лагатып"
+      ],
       "Please upload an xml file": [
         "Запампуйце файл xml"
       ],
@@ -2160,6 +2199,12 @@
       ],
       "The email addresses do not match": [
         "Адрасы электроннай пошты не супадаюць"
+      ],
+      "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
+        "Занадта вялікі файл. Максімальны памер: ${ MAX_FILE_DIMENSIONS }х${ MAX_FILE_DIMENSIONS }"
+      ],
+      "The file is too small, the minimum size is ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }": [
+        "Занадта маленькі файл. Мінімальны памер: ${ MIN_FILE_DIMENSIONS }х${ MIN_FILE_DIMENSIONS }"
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Мінімальная сума крэдытаў, якую можна ўнесці, складае ${ price }"
@@ -3349,7 +3394,7 @@
         "Мы заўсёды гатовыя дапамагчы ў выпадку ўзнікнення праблем. ${ boldPhoneCall } або ${ boldZoomMeeting } з адным з нашых спецыялістаў або адкрыць ${ boldLiveChat }, каб атрымаць падтрымку ў чаце."
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists.": [
-        "Мы заўсёды гатовыя дапамагчы ў выпадку ўзнікнення праблем. ${ boldPhoneCall } або сустрэча ${ boldZoomMeeting } з адным з нашых спецыялістаў/"
+        "Мы заўсёды гатовыя дапамагчы ў выпадку ўзнікнення праблем. ${ boldPhoneCall } або ${ boldZoomMeeting } з адным з нашых спецыялістаў."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Важна! Пераканайцеся, што вы захавалі коды аднаўлення. У адваротным выпадку вы незваротна страціце доступ да вашага ўліковага запісу, калі згубіце вашу прыладу двухфактарнай аўтэнтыфікацыі."
@@ -3585,6 +3630,9 @@
       "Plus or Visionary subscription required": [
         "Патрабуецца падпіска Plus або Visionary"
       ],
+      "Preview": [
+        "Папярэдні прагляд"
+      ],
       "Preview failed to be loaded": [
         "Не ўдалося загрузіць папярэдні прагляд"
       ],
@@ -3764,6 +3812,9 @@
       ],
       "The format of your CSV file is incorrect.": [
         "Няправільны фармат вашага файла CSV."
+      ],
+      "The name and icon will be visible to your users while they are signed in.": [
+        "Гэта імя і значок убачаць вашы карыстальнікі пры ўваходзе ў сістэму."
       ],
       "The name will be visible to your users while they are signed in.": [
         "Гэта імя ўбачаць вашы карыстальнікі, калі яны ўвойдуць у сістэму."
@@ -4110,6 +4161,12 @@
         "Вам даступна ${ availableCount } вылучаных сервераў.",
         "Вам даступна ${ availableCount } вылучаных сервераў."
       ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "У вас ёсць падпіска ${ planTitle } з пробным перыядам. Дадайце спосаб аплаты, калі вы хочаце працягнуць карыстацца ёй пасля завяршэння пробнага перыяду."
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "У вас ёсць падпіска ${ planTitle } з пробным перыядам. У дадзены момант аплата не патрабуецца. Ваша падпіска будзе аўтаматычна падоўжана ў канцы пробнага перыяду."
+      ],
       "You have no invoices.": [
         "У вас няма рахункаў."
       ],
@@ -4284,14 +4341,6 @@
       ],
       "Subscription": [
         "Падпіска"
-      ]
-    },
-    "Key type option": {
-      "${ compatibility } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
-        "${ compatibility } RSA 4096-bit (больш марудны, але павялічвае сумяшчальнасць з папярэднімі версіямі праграм)"
-      ],
-      "${ stateOfTheArt } ECC Curve25519 (Fastest, most modern)": [
-        "${ stateOfTheArt } ECC Curve25519 (хутчэйшы, больш сучасны)"
       ]
     },
     "Label": {
@@ -4520,11 +4569,11 @@
       "Key": [
         "Ключ"
       ],
-      "Key strength": [
-        "Надзейнасць ключа"
-      ],
       "Level for NetShield blocker filtering": [
         "Узровень фільтрацыі блакіроўшчыка NetShield"
+      ],
+      "Logo": [
+        "Лагатып"
       ],
       "Mailbox password": [
         "Пароль паштовай скрыні"
@@ -6086,6 +6135,40 @@
         "Ваш тарыфны план уключае максімум ${ humanReadableAvailableSpace } сховішча."
       ]
     },
+    "Organization logo upload": {
+      "Avoid overly compressed images.": [
+        "Пазбягайце занадта сціснутых відарысаў."
+      ],
+      "Ensure your icon has padding space around it.": [
+        "Пераканайцеся, што вакол вашага значка ёсць свабодная прастора."
+      ],
+      "Opt for a PNG image that is a 128x128 pixels for clarity.": [
+        "Для нагляднасці выберыце відарыс PNG з раздзяляльнасцю 128x128 пікселяў."
+      ],
+      "Tips on choosing a good icon": [
+        "Парады па выбары добрага значка"
+      ],
+      "Use a graphical icon or image rather than text.": [
+        "Выкарыстоўваць графічны значок або малюнак замест тэксту."
+      ]
+    },
+    "Organization logo upload modal": {
+      "Drop image file here to upload or": [
+        "Перацягніце відарыс сюды, каб запампаваць або"
+      ],
+      "File in PNG or JPEG format": [
+        "Файл у фармаце PNG або JPEG"
+      ],
+      "File not larger than 30 KB": [
+        "Файл, які не больш за 30 КБ"
+      ],
+      "Square image of at least 128 pixels": [
+        "Квадратны відарыс памерам прынамсі 128 пікселяў"
+      ],
+      "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
+        "Карыстальнікі будуць бачыць ваш лагатып замест значка ${ BRAND_NAME } пры ўваходзе ў нашу вэб-праграму."
+      ]
+    },
     "Pass B2B onboarding spotlight": {
       "Go to your vault to manage your passwords, aliases, and more.": [
         "Перайсці ў сховішча, каб кіраваць паролямі, псеўданімамі і іншымі элементамі."
@@ -6407,7 +6490,7 @@
         "Выберыце прычыну"
       ],
       "Select state": [
-        "Выбраць вобласць"
+        "Выбраць штат"
       ]
     },
     "plan customizer, ips": {
@@ -6511,12 +6594,9 @@
         "Праверка вашага нумару тэлефона павялічыць бяспеку вашага ўліковага запісу і дазволіць пашырыць параметры для аднаўлення."
       ]
     },
-    "Remark about a key type option": {
-      "Compatibility": [
-        "Сумяшчальнасць"
-      ],
-      "State of the art": [
-        "Перадавы"
+    "Remove organization logo": {
+      "Users will no longer see your custom logo or organization name.": [
+        "Карыстальнікі больш не будуць бачыць ваш карыстальніцкі лагатып або назву арганізацыі."
       ]
     },
     "Restore administrator panel": {
@@ -6548,6 +6628,97 @@
       ],
       "User": [
         "Карыстальнік"
+      ]
+    },
+    "scim: Action": {
+      "Configure SCIM": [
+        "Сканфігурыраваць SCIM"
+      ],
+      "Disable SCIM": [
+        "Адключыць SCIM"
+      ],
+      "Disable SCIM integration": [
+        "Адключыць інтэграцыю SCIM"
+      ],
+      "Generate new token": [
+        "Згенерыраваць новы токен"
+      ],
+      "Generate token": [
+        "Згенерыраваць токен"
+      ]
+    },
+    "scim: Info": {
+      "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
+        "**Неабходная ўмова:** аўтэнтыфікацыя SAML павінна быць сканфігурыравана для ўключэння падрыхтоўкі SCIM."
+      ],
+      "Enter token into your identity provider": [
+        "Увядзіце токен у свайго пастаўшчыка пасведчанняў"
+      ],
+      "Enter URL and token into your identity provider": [
+        "Увядзіце URL-адрас і токен у свайго пастаўшчыка пасведчанняў"
+      ],
+      "For security reasons, the SCIM token will be hidden after saving your changes and you won’t be able to see it again.": [
+        "У мэтах бяспекі токен SCIM будзе схаваны пасля таго, як змены будуць захаваны і ў вас не будзе магчымасці ўбачыць яго яшчэ раз."
+      ],
+      "For security reasons, the token is hidden": [
+        "У мэтах бяспекі токен схаваны"
+      ],
+      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ VPN_APP_NAME }.": [
+        "Перайдзіце ў свайго пастаўшчыка пасведчанняў, скапіюйце і ўстаўце даныя ніжэй і завяршыце канфігурацыю SCIM для ${ VPN_APP_NAME }."
+      ],
+      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ VPN_APP_NAME }.": [
+        "Перайдзіце ў свайго пастаўшчыка пасведчанняў, скапіюйце і ўстаўце токен ніжэй і паўторна ўключыце SCIM для ${ VPN_APP_NAME }."
+      ],
+      "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
+        "Вы можаце згенерыраваць новы токен SCIM, калі папярэдні быў страчаны або забыты. Памятайце, што ў такіх выпадках неабходна абнаўляць налады ў вашым пастаўшчыку пасведчанняў."
+      ],
+      "Make sure you copy the above SCIM token now.": [
+        "Пераканайцеся, што вы цяпер скапіявалі токен SCIM вышэй."
+      ],
+      "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
+        "Пасля адключэння SCIM для вашай арганізацыі **ўсе карыстальнікі SCIM, якія аўтаматычна забяспечаны вашым пастаўшчыком пасведчанняў, будуць пераўтвораны ў карыстальнікаў SSO** і ў вас будзе магчымасць кіраваць імі наўпрост у наладах ${ BRAND_NAME }."
+      ],
+      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ VPN_APP_NAME } organization.": [
+        "Спрашчэнне кіравання карыстальнікамі паміж рознымі сэрвісамі. Дадаванне, рэдагаванне і выдаленне карыстальнікаў у вашым пастаўшчыку пасведчанняў. Усе пералічаныя змены будуць аўтаматычна ўжывацца для вашай арганізацыі ${ VPN_APP_NAME }."
+      ],
+      "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
+        "Аўтаматычная падрыхтоўка SCIM будзе адключана да таго моманту, пакуль вамі не будзе ўведзены новы токен SCIM у налады вашага пастаўшчыка пасведчанняў."
+      ],
+      "The SCIM base URL and token will be deleted.": [
+        "SCIM на базе URL-адраса і токен будуць выдалены."
+      ],
+      "To re-enable syncing with your identity provider, your need to complete the SCIM integration again.": [
+        "Для паўторнага ўключэння сінхранізацыі з вашым пастаўшчыком пасведчанняў, вам неабходна прайсці інтэграцыю SCIM яшчэ раз."
+      ]
+    },
+    "scim: Label": {
+      "SCIM base URL": [
+        "SCIM на базе URL-адраса"
+      ],
+      "SCIM base URL (or tenant URL)": [
+        "SCIM на базе URL-адраса (або ўліковы запіс кліента URL-адраса)"
+      ],
+      "SCIM token": [
+        "Токен SCIM"
+      ]
+    },
+    "scim: Title": {
+      "Disable SCIM integration?": [
+        "Адключыць інтэграцыю SCIM?"
+      ],
+      "Generate new SCIM token?": [
+        "Стварыць новы токен SCIM?"
+      ],
+      "SCIM automatic provisioning": [
+        "Аўтаматычная падрыхтоўка SCIM"
+      ]
+    },
+    "scim: Tooltip": {
+      "API key of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
+        "Ключ API злучальніка SCIM, якому ваш агент забеспячэння IdP перасылае даныя SCIM"
+      ],
+      "URL of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
+        "URL-адрас злучальніка SCIM, якому ваш агент забеспячэння IdP перасылае даныя SCIM"
       ]
     },
     "Select file": {
@@ -7825,6 +7996,9 @@
       "Delete address permanently?": [
         "Выдаліць адрас незваротна?"
       ],
+      "Delete organization logo?": [
+        "Выдаліць лагатып арганізацыі?"
+      ],
       "Delete the server (you will still be able to recover it for ${ days } day)": [
         "Выдаліць сервер (вы ўсё яшчэ можаце аднавіць яго на працягу ${ days } дня)",
         "Выдаліць сервер (вы ўсё яшчэ можаце аднавіць яго на працягу ${ days } дзён)",
@@ -7932,6 +8106,9 @@
       ],
       "Gift code": [
         "Падарункавы код"
+      ],
+      "How to choose a good icon": [
+        "Як выбраць добры значок"
       ],
       "Human verification": [
         "Антыспамавая праверка"
@@ -8146,6 +8323,9 @@
       "Upload CSV file to create multiple accounts": [
         "Запампаваць файл CSV, каб стварыць некалькі ўліковых запісаў"
       ],
+      "Upload your organization’s logo": [
+        "Запампаваць лагатып вашай арганізацыі"
+      ],
       "Users": [
         "Карыстальнікі"
       ],
@@ -8266,6 +8446,9 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Выбраная тэма будзе актыўна, калі ў вашай сістэме зададзены \"светлы рэжым\""
+      ],
+      "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
+        "Карыстальнікі будуць бачыць ваш лагатып замест значка ${ BRAND_NAME } пры ўваходзе ў нашу вэб-праграму."
       ],
       "Usually an URL that contains the identity provider's name within": [
         "Звычайна гэта URL-адрас, які змяшчае назву вашага пастаўшчыка пасведчанняў."

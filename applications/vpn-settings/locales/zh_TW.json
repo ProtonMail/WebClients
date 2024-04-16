@@ -59,6 +59,9 @@
       "Cancel subscription": [
         "取消訂購授權"
       ],
+      "Change": [
+        "變更"
+      ],
       "Change keys": [
         "變更金鑰"
       ],
@@ -1845,6 +1848,16 @@
         "/ 每使用者每月"
       ]
     },
+    "Delete address prompt": {
+      "You can only delete 1 address per year.": [
+        "每年只能刪除一個地址。"
+      ]
+    },
+    "Delete address tooltip": {
+      "You can only delete 1 address per year": [
+        "每年只能刪除一個位址"
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "逾期帳單"
@@ -2684,6 +2697,9 @@
       "Name": [
         "名稱"
       ],
+      "Save big with the best deals on ${ VPN_APP_NAME }": [
+        "於${ VPN_APP_NAME }存取鉅額優惠"
+      ],
       "Select your deal": [
         "請選擇您的優惠"
       ],
@@ -3276,6 +3292,9 @@
       ],
       "No addresses exist": [
         "無任何電郵位址"
+      ],
+      "No changes made to the current subscription": [
+        "現時訂購授權並沒有更改"
       ],
       "No gateways": [
         "無閘道器"
@@ -4054,14 +4073,6 @@
         "訂購授權"
       ]
     },
-    "Key type option": {
-      "${ compatibility } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
-        "${ compatibility } 4096 位元的 RSA（稍慢，但與舊版軟體較為相容）"
-      ],
-      "${ stateOfTheArt } ECC Curve25519 (Fastest, most modern)": [
-        "${ stateOfTheArt } ECC Curve25519（最快，最新）"
-      ]
-    },
     "Label": {
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } 使用者名稱"
@@ -4278,9 +4289,6 @@
       ],
       "Key": [
         "金鑰"
-      ],
-      "Key strength": [
-        "金鑰強度"
       ],
       "Level for NetShield blocker filtering": [
         "Bridge 攔截過濾等級"
@@ -4507,6 +4515,9 @@
       ]
     },
     "Label for news": {
+      "${ app } and ${ additionalApp } product updates": [
+        "${ app } 與 ${ additionalApp } 的更新"
+      ],
       "${ app } product updates": [
         "${ app } 產品更新"
       ],
@@ -5047,6 +5058,9 @@
       ],
       "GDPR data processing agreement": [
         "GDRP資料處理協議"
+      ],
+      "Group management (coming soon)": [
+        "群組管理(即將推出)"
       ],
       "Hide-my-email aliases": [
         "Hide-my-email 別名"
@@ -6083,14 +6097,6 @@
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "驗證您的手機號碼可以提高帳戶安全性，並在救援時提供另一個可用的選項。"
-      ]
-    },
-    "Remark about a key type option": {
-      "Compatibility": [
-        "相容性"
-      ],
-      "State of the art": [
-        "最先進的"
       ]
     },
     "Restore administrator panel": {
