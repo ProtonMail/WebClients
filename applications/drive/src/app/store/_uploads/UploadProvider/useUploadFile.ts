@@ -23,6 +23,7 @@ import useQueuedFunction from '../../../hooks/util/useQueuedFunction';
 import { logError } from '../../../utils/errorHandling';
 import { EnrichedError } from '../../../utils/errorHandling/EnrichedError';
 import { ValidationError } from '../../../utils/errorHandling/ValidationError';
+import { replaceLocalURL } from '../../../utils/replaceLocalURL';
 import retryOnError from '../../../utils/retryOnError';
 import { isPhotosDisabledUploadError } from '../../../utils/transfer';
 import { useDebouncedRequest } from '../../_api';
@@ -470,17 +471,18 @@ export default function useUploadFile() {
                             ThumbnailLinks?.length || 0
                         } thumbnail blocks`
                     );
+
                     return {
                         fileLinks: UploadLinks.map((link, index) => ({
                             index: fileBlocks[index].index,
                             token: link.Token,
-                            url: link.BareURL,
+                            url: replaceLocalURL(link.BareURL),
                         })),
                         thumbnailLinks: thumbnailBlocks
                             ? ThumbnailLinks?.map((link, index) => ({
                                   index: thumbnailBlocks[index].index,
                                   token: link.Token,
-                                  url: link.BareURL,
+                                  url: replaceLocalURL(link.BareURL),
                               }))
                             : undefined,
                     };
