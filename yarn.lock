@@ -220,7 +220,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/core@npm:^7.1.0, @babel/core@npm:^7.11.1, @babel/core@npm:^7.11.6, @babel/core@npm:^7.12.10, @babel/core@npm:^7.12.3, @babel/core@npm:^7.24.4, @babel/core@npm:^7.7.5":
+"@babel/core@npm:^7.1.0, @babel/core@npm:^7.11.1, @babel/core@npm:^7.11.6, @babel/core@npm:^7.12.10, @babel/core@npm:^7.12.3, @babel/core@npm:^7.24.3, @babel/core@npm:^7.24.4, @babel/core@npm:^7.7.5":
   version: 7.24.4
   resolution: "@babel/core@npm:7.24.4"
   dependencies:
@@ -1694,7 +1694,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/preset-env@npm:^7.11.0, @babel/preset-env@npm:^7.12.1, @babel/preset-env@npm:^7.12.11, @babel/preset-env@npm:^7.24.4":
+"@babel/preset-env@npm:^7.11.0, @babel/preset-env@npm:^7.12.1, @babel/preset-env@npm:^7.12.11, @babel/preset-env@npm:^7.24.3, @babel/preset-env@npm:^7.24.4":
   version: 7.24.4
   resolution: "@babel/preset-env@npm:7.24.4"
   dependencies:
@@ -4540,6 +4540,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@mlc-ai/web-llm@npm:0.2.31":
+  version: 0.2.31
+  resolution: "@mlc-ai/web-llm@npm:0.2.31"
+  checksum: 10c0/85544fc6bba34e52c2fea05eab603cd9a324f11edf697b68746895ffa89d7fdd62f0a011730971d4f6f1c7a46af315025257ffc940e081c427846f4d9c6fba6b
+  languageName: node
+  linkType: hard
+
 "@mrmlnc/readdir-enhanced@npm:^2.2.1":
   version: 2.2.1
   resolution: "@mrmlnc/readdir-enhanced@npm:2.2.1"
@@ -6367,6 +6374,30 @@ __metadata:
     ts-loader: "npm:^9.5.1"
     typescript: "npm:^5.4.4"
     webpack: "npm:^5.91.0"
+  languageName: unknown
+  linkType: soft
+
+"@proton/llm@workspace:packages/llm":
+  version: 0.0.0-use.local
+  resolution: "@proton/llm@workspace:packages/llm"
+  dependencies:
+    "@babel/core": "npm:^7.24.3"
+    "@babel/preset-env": "npm:^7.24.3"
+    "@jest/globals": "npm:^29.7.0"
+    "@mlc-ai/web-llm": "npm:0.2.31"
+    "@proton/components": "workspace:packages/components"
+    "@proton/shared": "workspace:packages/shared"
+    "@testing-library/jest-dom": "npm:^6.4.2"
+    "@testing-library/react": "npm:^14.3.0"
+    "@types/jest": "npm:^29.5.12"
+    babel-jest: "npm:^29.7.0"
+    eslint: "npm:^8.57.0"
+    jest: "npm:^29.7.0"
+    jest-environment-jsdom: "npm:^29.7.0"
+    react: "npm:^18.2.0"
+    react-dom: "npm:^18.2.0"
+    ts-jest: "npm:^29.1.2"
+    typescript: "npm:^5.4.4"
   languageName: unknown
   linkType: soft
 
@@ -31473,6 +31504,7 @@ __metadata:
     "@proton/crypto": "workspace:packages/crypto"
     "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
     "@proton/i18n": "workspace:packages/i18n"
+    "@proton/llm": "workspace:packages/llm"
     "@proton/mail": "workspace:^"
     "@proton/pack": "workspace:packages/pack"
     "@proton/polyfill": "workspace:packages/polyfill"
