@@ -5,6 +5,8 @@ import { fromUTCDate, toUTCDate } from '@proton/shared/lib/date/timezone';
 import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 import uniqueBy from '@proton/utils/uniqueBy';
 
+import { withIncrementedSequence } from '../eventActions/sequence';
+
 /**
  * Returns a new event with an EXDATE for the cancelled occurrence. If the EXDATE was already present, returns undefined
  */
@@ -31,10 +33,10 @@ const deleteSingleRecurrence = (component: VcalVeventComponent, localStartToExcl
         return +toUTCDate(a.value) - +toUTCDate(b.value);
     });
 
-    return {
+    return withIncrementedSequence({
         ...component,
         exdate: newExdates,
-    } as VcalVeventComponent;
+    }) as VcalVeventComponent;
 };
 
 export default deleteSingleRecurrence;
