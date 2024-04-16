@@ -40,6 +40,9 @@
       "Add contact": [
         "Añadir contacto"
       ],
+      "Add credit / debit card": [
+        "Añadir tarjeta de crédito/débito"
+      ],
       "Add email": [
         "Añadir correo"
       ],
@@ -1124,6 +1127,10 @@
       "Trust": [
         "Confiar"
       ],
+      "Trust key": [
+        "Confiar clave",
+        "Confiar claves"
+      ],
       "Trust public key": [
         "Confiar clave pública"
       ],
@@ -1671,6 +1678,12 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continuar usando ${ MAIL_APP_NAME }."
+      ],
+      "Continue using ${ planTitle }": [
+        "Continuar usando ${ planTitle }"
+      ],
+      "Continue your subscription": [
+        "Continuar con su suscripción"
       ]
     },
     "Calendar attachment tooltip": {
@@ -6771,6 +6784,9 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Le redirigiremos a PayPal en una pestaña nueva del navegador para completar esta transacción. Si usa cualquier bloqueador emergente, desactívelo para continuar."
       ],
+      "We'll email you once import is complete.": [
+        "Le enviaremos un correo electrónico cuando la importación se complete."
+      ],
       "We'll notify you when the import is done.": [
         "Le avisaremos cuando la importación esté terminada."
       ],
@@ -6831,6 +6847,9 @@
       "You can check the progress ${ importProgressLink }.": [
         "Puede verificar el progreso ${ importProgressLink }."
       ],
+      "You can close the tab or browser in the meantime.": [
+        "Puede cerrar esta pestaña o navegador."
+      ],
       "You can either update your search query or ${ button }": [
         "Puede actualizar su consulta de búsqueda o ${ button }"
       ],
@@ -6881,6 +6900,12 @@
       "You have **${ count } message** tagged with this label": [
         "Seleccionó **${ count } mensaje** etiquetado con esta etiqueta",
         "Seleccionó **${ count } mensajes** etiquetados con esta etiqueta"
+      ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "Tiene una suscripción de prueba ${ planTitle }. Si desea continuar su suscripción después del periodo de prueba, añada un método de pago."
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "Tiene una suscripción de prueba ${ planTitle }. No se requiere un pago en este momento. Su suscripción será renovada automáticamente al finalizar el periodo de prueba."
       ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
         "No le ha dado un asunto a su correo electrónico. ¿Quiere enviar el mensaje de todos modos?"
@@ -10655,6 +10680,32 @@
         "Al"
       ]
     },
+    "Subscription renewal state": {
+      "Are you sure?": [
+        "¿Está seguro?"
+      ],
+      "Auto-pay is disabled": [
+        "Pago automático desactivado"
+      ],
+      "Auto-pay is enabled": [
+        "Pago automático activado"
+      ],
+      "Disable": [
+        "Desactivar"
+      ],
+      "Enable auto-pay support": [
+        "Activar soporte de pago automático"
+      ],
+      "Keep auto-pay": [
+        "Mantener pago automático"
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
+        "Nuestro sistema ya no le cobrará automáticamente con este método de pago, pero su suscripción aún se renovará al final del ciclo de facturación. Si quiere pasar a un plan inferior o cambiar su suscripción, debe hacerlo usted mismo antes del final del periodo de facturación. Además, si olvida realizar un pago manual y el pago automático está desactivado para todos los métodos de pago, es posible que pasaremos automáticamente su cuenta a un plan inferior, lo que provocará la pérdida de muchas funciones."
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
+        "Nuestro sistema ya no le cobrará automáticamente con este método de pago, pero su suscripción aún se renovará al final del ciclo de facturación. Si quiere pasar a un plan inferior o cambiar su suscripción, debe hacerlo usted mismo antes del final del periodo de facturación. No podemos pasar automáticamente su cuenta a un plan inferior porque si supera la cuota de almacenamiento del plan gratuito o si usa otras funciones de pago, no podemos eliminar automáticamente archivos, correos electrónicos u otros datos por usted. Si desactiva el pago automático, recuerde pagar su próxima factura de suscripción antes de la fecha de vencimiento para evitar la suspensión de la cuenta."
+      ]
+    },
     "Subscription saving": {
       "Save": [
         "Ahorra"
@@ -10905,6 +10956,12 @@
       "Password copied to clipboard": [
         "Contraseña copiada al portapapeles"
       ],
+      "Payment method added": [
+        "Método de pago añadido"
+      ],
+      "Payment method updated": [
+        "Método de pago actualizado"
+      ],
       "Phishing reported": [
         "Suplantación reportada"
       ],
@@ -11116,6 +11173,9 @@
       ],
       "Add contact group name": [
         "Añadir nombre al grupo de contactos"
+      ],
+      "Add credit/debit card": [
+        "Añadir tarjeta de crédito/débito"
       ],
       "Add filter": [
         "Añadir filtro"
@@ -11329,6 +11389,9 @@
       ],
       "Edit contact group": [
         "Editar grupo de contactos"
+      ],
+      "Edit credit/debit card": [
+        "Editar tarjeta de crédito/débito"
       ],
       "Edit email settings": [
         "Editar ajustes del correo"

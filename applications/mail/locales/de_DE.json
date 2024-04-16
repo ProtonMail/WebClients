@@ -40,6 +40,9 @@
       "Add contact": [
         "Kontakt hinzufügen"
       ],
+      "Add credit / debit card": [
+        "Kredit-/Debitkarte hinzufügen"
+      ],
       "Add email": [
         "E-Mail-Adresse hinzufügen"
       ],
@@ -1123,6 +1126,10 @@
       ],
       "Trust": [
         "Vertrauen"
+      ],
+      "Trust key": [
+        "Schlüssel vertrauen",
+        "Schlüssel vertrauen"
       ],
       "Trust public key": [
         "Öffentlichem Schlüssel vertrauen"
@@ -10601,6 +10608,32 @@
         "Für"
       ]
     },
+    "Subscription renewal state": {
+      "Are you sure?": [
+        "Bist du sicher?"
+      ],
+      "Auto-pay is disabled": [
+        "Automatisches Bezahlen ist deaktiviert."
+      ],
+      "Auto-pay is enabled": [
+        "Automatisches Bezahlen ist aktiviert."
+      ],
+      "Disable": [
+        "Deaktivieren"
+      ],
+      "Enable auto-pay support": [
+        "Unterstützung für automatisches Bezahlen aktivieren"
+      ],
+      "Keep auto-pay": [
+        "Automatisches Bezahlen beibehalten"
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
+        "Unser System wird dich mit dieser Zahlungsmethode nicht mehr automatisch belasten, aber dein Abonnement wird am Ende des Abrechnungszeitraums immer noch verlängert. Wenn du dein Abonnement downgraden oder ändern möchtest, musst du dies immer noch selbst vor dem Ende des Abrechnungszeitraums tun. Wenn du außerdem vergisst, eine manuelle Zahlung vorzunehmen und die automatische Zahlung für alle Zahlungsmethoden deaktiviert ist, können wir dein Konto automatisch downgraden, was zum Verlust vieler Funktionen führt."
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
+        "Unser System wird dich mit dieser Zahlungsmethode nicht mehr automatisch belasten, aber dein Abonnement wird am Ende des Abrechnungszeitraums immer noch verlängert. Wenn du dein Abonnement downgraden oder ändern möchtest, musst du dies immer noch selbst vor dem Ende des Abrechnungszeitraums tun. Wir können dich nicht automatisch downgraden, denn wenn du das Speicherkontingent des kostenlosen Plans überschreitest oder andere kostenpflichtige Funktionen nutzt, können wir Dateien, E-Mails oder andere Daten nicht automatisch für dich löschen. Wenn du die automatische Zahlung deaktivierst, denke daran, deine nächste Abonnementrechnung vor dem Fälligkeitsdatum zu bezahlen, um eine Kontosperrung zu vermeiden."
+      ]
+    },
     "Subscription saving": {
       "Save": [
         "Spare"
@@ -10851,6 +10884,12 @@
       "Password copied to clipboard": [
         "Passwort in die Zwischenablage kopiert"
       ],
+      "Payment method added": [
+        "Zahlungsmethode hinzugefügt"
+      ],
+      "Payment method updated": [
+        "Zahlungsmethode aktualisiert"
+      ],
       "Phishing reported": [
         "Phishing gemeldet"
       ],
@@ -11063,6 +11102,9 @@
       "Add contact group name": [
         "Name der Kontaktgruppe hinzufügen"
       ],
+      "Add credit/debit card": [
+        "Kredit-/Debitkarte hinzufügen"
+      ],
       "Add filter": [
         "Filter hinzufügen"
       ],
@@ -11269,6 +11311,9 @@
       ],
       "Edit contact group": [
         "Kontaktgruppe bearbeiten"
+      ],
+      "Edit credit/debit card": [
+        "Kredit-/Debitkarte bearbeiten"
       ],
       "Edit email settings": [
         "E-Mail-Einstellungen bearbeiten"

@@ -40,6 +40,9 @@
       "Add contact": [
         "Új névjegy"
       ],
+      "Add credit / debit card": [
+        "Bankkártya hozzáadása"
+      ],
       "Add email": [
         "E-mail hozzáadása"
       ],
@@ -1093,6 +1096,10 @@
       ],
       "Trust": [
         "Megbízható"
+      ],
+      "Trust key": [
+        "Megbízható kulcs",
+        "Kulcsok megjelölése megbízhatóként"
       ],
       "Trust public key": [
         "Nyilvános kulcs megjelölése megbízhatóként"
@@ -9468,6 +9475,11 @@
         "Ár:"
       ]
     },
+    "Subscription renewal state": {
+      "Disable": [
+        "Letiltás"
+      ]
+    },
     "Subscription saving": {
       "Save": [
         "Megtakarítás"
@@ -9698,6 +9710,12 @@
       "Password copied to clipboard": [
         "Jelszó a vágólapra másolva"
       ],
+      "Payment method added": [
+        "Fizetési mód hozzáadva"
+      ],
+      "Payment method updated": [
+        "Fizetési mód frissítve"
+      ],
       "Phishing reported": [
         "Adathalászat bejelentve"
       ],
@@ -9894,6 +9912,9 @@
       ],
       "Add contact group name": [
         "Adjon nevet a névjegy csoportnak"
+      ],
+      "Add credit/debit card": [
+        "Bankkártya hozzáadása"
       ],
       "Add filter": [
         "Új szűrő"
@@ -10095,6 +10116,9 @@
       ],
       "Edit contact group": [
         "Névjegy csoport szerkesztése"
+      ],
+      "Edit credit/debit card": [
+        "Bankkártya szerkesztése"
       ],
       "Edit email settings": [
         "E-mail beállítások szerkesztése"
