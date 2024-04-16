@@ -213,8 +213,8 @@ export const APPS_CONFIGURATION: { [key in APP_NAMES]: AppConfiguration } = {
 };
 
 export enum PRODUCT_BIT {
-    Mail = 1,
-    Drive = 2,
+    MAIL = 1,
+    DRIVE = 2,
     VPN = 4,
     PASS = 8,
 }
