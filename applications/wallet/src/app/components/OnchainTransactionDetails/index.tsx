@@ -2,7 +2,6 @@ import { useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { WasmTransactionDetails } from '@proton/andromeda';
 import Href from '@proton/atoms/Href/Href';
 import Pill from '@proton/atoms/Pill/Pill';
 import Copy from '@proton/components/components/button/Copy';
@@ -14,23 +13,30 @@ import { useWalletSettings } from '@proton/wallet';
 import { BitcoinAmount } from '../../atoms';
 import { BLOCKCHAIN_EXPLORER_BASE_URL } from '../../constants';
 import { useUserExchangeRate } from '../../hooks/useUserExchangeRate';
+import { TransactionData } from '../../hooks/useWalletTransactions';
 
 export interface OnchainTransactionDetailsProps {
     from?: { walletName: string; accountName: string };
-    tx: WasmTransactionDetails;
+    tx: TransactionData;
     isNotBroadcasted?: boolean;
+    onUpdateLabel?: (label: string) => void;
 }
 
-export const OnchainTransactionDetails = ({ from, tx, isNotBroadcasted }: OnchainTransactionDetailsProps) => {
+export const OnchainTransactionDetails = ({
+    from,
+    tx,
+    isNotBroadcasted,
+    onUpdateLabel,
+}: OnchainTransactionDetailsProps) => {
     const [walletSettings, loadingSettings] = useWalletSettings();
     const [exchangeRate, loadingExchangeRate] = useUserExchangeRate();
 
-    const [note, setNode] = useState('');
+    const { networkData, apiData } = tx;
 
     const recipients = useMemo(() => {
-        return tx.outputs.filter((output) => {
-            const txValue = tx.received - tx.sent;
+        const txValue = networkData.received - networkData.sent;
 
+        return networkData.outputs.filter((output) => {
             /**
              * when tx is a sending we want to display external recipient(s)
              * when tx is a receive, we want to display internal recipient(s)
@@ -38,10 +44,12 @@ export const OnchainTransactionDetails = ({ from, tx, isNotBroadcasted }: Onchai
              */
             return txValue > 0 ? output.is_mine : !output.is_mine;
         });
-    }, [tx]);
+    }, [networkData.outputs, networkData.received, networkData.sent]);
 
-    const txFees = Number(tx.fee ?? 0);
+    const txFees = Number(networkData.fee ?? 0);
     const totalAmount = recipients.reduce((acc, cur) => acc + Number(cur.value), txFees);
+
+    const [labelInput, setLabelInput] = useState(apiData?.Label ?? '');
 
     return (
         <div>
@@ -69,8 +77,7 @@ export const OnchainTransactionDetails = ({ from, tx, isNotBroadcasted }: Onchai
                     {/* Recipients */}
                     {recipients.length ? (
                         recipients.map((recipient, index) => {
-                            const address = recipient.address.toString();
-                            const amount = Number(recipient.value);
+                            const { address, value: amount } = recipient;
 
                             return (
                                 <li className="flex flex-row w-full items-center" key={`${address}_${amount}_${index}`}>
@@ -137,35 +144,39 @@ export const OnchainTransactionDetails = ({ from, tx, isNotBroadcasted }: Onchai
             <div className="my-4">
                 <span className="text-sm color-hint">{c('Wallet Transaction Details').t`Transaction Id`}</span>
                 <div className="flex flex-row flex-nowrap items-center">
-                    <Tooltip title={tx.txid}>
+                    <Tooltip title={networkData.txid}>
                         {isNotBroadcasted ? (
-                            <span>{tx.txid}</span>
+                            <span>{networkData.txid}</span>
                         ) : (
                             <Href
-                                href={`${BLOCKCHAIN_EXPLORER_BASE_URL}/${tx.txid}`}
+                                href={`${BLOCKCHAIN_EXPLORER_BASE_URL}/${networkData.txid}`}
                                 target="_blank"
                                 className="block text-ellipsis"
                             >
-                                {tx.txid}
+                                {networkData.txid}
                             </Href>
                         )}
                     </Tooltip>
-                    <Copy className="ml-2" value={tx.txid} shape="ghost" />
+                    <Copy className="ml-2" value={networkData.txid} shape="ghost" />
                 </div>
             </div>
 
-            <div className="my-4">
-                <Label className="mb-4 block">{c('Wallet Send').t`Note`}</Label>
-                <TextAreaTwo
-                    id="transaction-note"
-                    className="mb-4"
-                    value={note}
-                    onValue={(note: string) => setNode(note)}
-                    autoFocus
-                    required
-                    rows={2}
-                />
-            </div>
+            {apiData && onUpdateLabel && (
+                <div className="my-4">
+                    <Label className="mb-4 block">{c('Wallet Send').t`Note`}</Label>
+                    <TextAreaTwo
+                        id="transaction-note"
+                        className="mb-4"
+                        value={labelInput}
+                        onValue={(input: string) => setLabelInput(input)}
+                        onBlur={() => onUpdateLabel(labelInput)}
+                        autoFocus={!!apiData}
+                        disabled={!apiData}
+                        required
+                        rows={2}
+                    />
+                </div>
+            )}
         </div>
     );
 };

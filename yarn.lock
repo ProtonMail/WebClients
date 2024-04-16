@@ -21721,6 +21721,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"entities@npm:^4.5.0":
+  version: 4.5.0
+  resolution: "entities@npm:4.5.0"
+  checksum: 10c0/5b039739f7621f5d1ad996715e53d964035f75ad3b9a4d38c6b3804bb226e282ffeae2443624d8fdd9c47d8e926ae9ac009c54671243f0c3294c26af7cc85250
+  languageName: node
+  linkType: hard
+
 "env-paths@npm:3.0.0, env-paths@npm:^3.0.0":
   version: 3.0.0
   resolution: "env-paths@npm:3.0.0"
@@ -25890,6 +25897,17 @@ __metadata:
   bin:
     handlebars: bin/handlebars
   checksum: 10c0/4c0913fc0018a2a2e358ee94e4fe83f071762b8bec51a473d187e6642e94e569843adcf550ffe329554c63ad450c062f3a05447bd2e3fff5ebfe698e214225c6
+  languageName: node
+  linkType: hard
+
+"happy-dom@npm:^14.7.1":
+  version: 14.7.1
+  resolution: "happy-dom@npm:14.7.1"
+  dependencies:
+    entities: "npm:^4.5.0"
+    webidl-conversions: "npm:^7.0.0"
+    whatwg-mimetype: "npm:^3.0.0"
+  checksum: 10c0/546a16921cde2cad91a35eefc936eb26df444d95e976e01276052e5fd2db3a8dd5864182475ebbfc8443689ce306246d8e6dfec40bab5fb8bc99e2a448b795e9
   languageName: node
   linkType: hard
 
@@ -36192,6 +36210,7 @@ __metadata:
     ejs-webpack-loader: "npm:^2.2.2"
     eslint: "npm:^8.55.0"
     exifreader: "npm:^4.13.0"
+    happy-dom: "npm:^14.7.1"
     jest: "npm:^29.7.0"
     jest-environment-jsdom: "npm:^29.7.0"
     jest-junit: "npm:^16.0.0"

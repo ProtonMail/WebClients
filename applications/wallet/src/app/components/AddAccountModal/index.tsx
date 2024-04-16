@@ -89,7 +89,7 @@ export const AddAccountModal = ({ apiWalletData, isOpen, onClose }: Props) => {
             .createWalletAccount(Wallet.ID, derivationPath, encryptedLabel, selectedScriptType)
             .then(async (createdAccount) => {
                 createNotification({ text: c('Wallet Account').t`Your account was successfully created` });
-                dispatch(walletAccountCreation({ walletID: Wallet.ID, account: createdAccount.Account }));
+                dispatch(walletAccountCreation({ walletID: Wallet.ID, account: createdAccount.Data }));
                 onClose();
             })
             .catch(() => {

@@ -5,9 +5,11 @@ export type AccountWithChainData = {
     balance?: WasmBalance;
     transactions?: WasmTransactionDetails[];
     utxos?: WasmUtxo[];
+    derivationPathStr: string;
 };
 
 export type AccountChainDataByAccountId = Partial<Record<string, AccountWithChainData>>;
+export type AccountIdByDerivationPathAndWalletId = Partial<Record<string, Partial<Record<string, string>>>>;
 
 export type WalletWithChainData = {
     wallet: WasmWallet;

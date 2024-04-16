@@ -2,11 +2,12 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { WasmPartiallySignedTransaction, WasmTransactionDetails } from '@proton/andromeda';
+import { WasmPartiallySignedTransaction, createTransactionFromPsbt } from '@proton/andromeda';
 import { Button } from '@proton/atoms/Button/Button';
 import Card from '@proton/atoms/Card/Card';
 
 import { useBitcoinBlockchainContext } from '../../../contexts';
+import { TransactionData } from '../../../hooks/useWalletTransactions';
 import { AccountWithChainData } from '../../../types';
 import { OnchainTransactionDetails } from '../../OnchainTransactionDetails';
 
@@ -20,11 +21,13 @@ interface Props {
 
 export const OnchainTransactionReview = ({ from, account, psbt, onBack, onSignAndSend }: Props) => {
     const { walletsChainData } = useBitcoinBlockchainContext();
-    const [tx, setTx] = useState<WasmTransactionDetails>();
+    const [tx, setTx] = useState<TransactionData>();
 
     useEffect(() => {
         if (account) {
-            void WasmTransactionDetails.fromPsbt(psbt, account.account).then((tx) => setTx(tx));
+            void createTransactionFromPsbt(psbt, account.account).then((tx) => {
+                setTx({ networkData: tx.Data, apiData: null });
+            });
         }
     }, [psbt, account, walletsChainData]);
 

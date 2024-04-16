@@ -127,4 +127,4 @@ export const simpleTransactions = [
         received: BigInt(0),
         time: { confirmed: true, confirmation_time: BigInt(1700222245) },
     },
-] as WasmTransactionDetails[];
+] as unknown as WasmTransactionDetails[];

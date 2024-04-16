@@ -28,6 +28,7 @@ export const TransactionHistoryOverview = ({ walletId, transactions, max = 7 }: 
                     .slice(0, max)
                     .map((transaction) => {
                         const txValue = Number(transaction.received) - Number(transaction.sent);
+
                         return (
                             <li
                                 // same transaction can appear several time with different values or sign when user did a self-transfer or used several wallets/accounts to do the transaction

@@ -7,7 +7,7 @@ export default defineConfig({
     plugins: [react(), wasm()],
     test: {
         globals: true,
-        environment: 'jsdom',
+        environment: 'happy-dom',
         poolOptions: {
             threads: { singleThread: true },
         },

@@ -14,8 +14,14 @@ export const BitcoinBlockchainContextProvider = ({ children }: Props) => {
     const [network] = useBitcoinNetwork();
     const { decryptedApiWalletsData, loading: loadingApiWalletsData, setPassphrase } = useDecryptedApiWalletsData();
 
-    const { walletsChainData, syncingMetatadaByAccountId, syncManyWallets, syncSingleWallet, syncSingleWalletAccount } =
-        useWalletsChainData(decryptedApiWalletsData);
+    const {
+        walletsChainData,
+        accountIDByDerivationPathByWalletID,
+        syncingMetatadaByAccountId,
+        syncManyWallets,
+        syncSingleWallet,
+        syncSingleWalletAccount,
+    } = useWalletsChainData(decryptedApiWalletsData);
 
     const { feesEstimation, loading: loadingFeesEstimation } = useBlockchainFeesEstimation();
 
@@ -29,6 +35,7 @@ export const BitcoinBlockchainContextProvider = ({ children }: Props) => {
                 setPassphrase,
 
                 walletsChainData,
+                accountIDByDerivationPathByWalletID,
                 syncingMetatadaByAccountId,
                 syncManyWallets,
                 syncSingleWallet,
