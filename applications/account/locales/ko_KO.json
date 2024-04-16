@@ -161,6 +161,9 @@
       "Cancel subscription": [
         "구독 취소"
       ],
+      "Change": [
+        "변경"
+      ],
       "Change keys": [
         "키 변경"
       ],
@@ -205,6 +208,9 @@
       ],
       "Color": [
         "색상"
+      ],
+      "Configure SAML": [
+        "SAML 구성"
       ],
       "Confirm": [
         "확인"
@@ -554,6 +560,9 @@
       "Import key": [
         "키 가져오기"
       ],
+      "Import new SAML metadata": [
+        "새 SAML 메타 데이터 불러오기"
+      ],
       "Increase": [
         "증가"
       ],
@@ -722,8 +731,14 @@
       "Remove calendar": [
         "캘린더 삭제"
       ],
+      "Remove domain": [
+        "도메인 제거"
+      ],
       "Remove gift code": [
         "기프트 코드 삭제"
+      ],
+      "Remove single sign-on": [
+        "싱글 사인온 (SSO) 제거"
       ],
       "Remove this label": [
         "라벨 삭제"
@@ -806,6 +821,9 @@
       "Save ICS file": [
         "ICS 파일 저장"
       ],
+      "Save SAML configuration": [
+        "SAML 구성 저장"
+      ],
       "Search": [
         "검색"
       ],
@@ -814,6 +832,9 @@
       ],
       "Search settings": [
         "검색 설정"
+      ],
+      "See DNS TXT record": [
+        "DNS TXT 레코드 보기"
       ],
       "See how": [
         "방법 보기"
@@ -832,6 +853,9 @@
       ],
       "Select country": [
         "국가 선택"
+      ],
+      "Select file": [
+        "파일 선택"
       ],
       "Select files": [
         "파일 선택"
@@ -940,6 +964,9 @@
       ],
       "Stay": [
         "기다리기"
+      ],
+      "Stop using single sign-on": [
+        "싱글 사인온 (SSO) 중지"
       ],
       "Strikethrough": [
         "취소선"
@@ -4011,6 +4038,12 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "1명 보다 더 많은 다중 사용자를 관리하려면 비즈니스 플랜으로 업그레이드 하세요."
       ],
+      "Please upload an xml file": [
+        "xml 파일을 업로드하세요"
+      ],
+      "Please upload only 1 file": [
+        "하나의 파일만 업로드하세요"
+      ],
       "Port is required": [
         "포트가 필요함"
       ],
@@ -4139,6 +4172,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "문자, 숫자 및 _.- 만 사용하십시오"
+      ],
+      "Unable to upload file": [
+        "업로드 파일 불가"
       ],
       "Unexpected error, we can't import the contacts": [
         "예상치 못한 오류가 발생하여, 연락처를 가져올 수 없습니다."
@@ -5470,6 +5506,9 @@
       ]
     },
     "Hint": {
+      "Add this record to your domain in the control panel of your domain name registrar": [
+        "도메인 이름 등록 기관의 제어판에서 이 기록을 도메인에 추가하세요."
+      ],
       "Found ${ items.length } suggestion, use keyboard to navigate.": [
         "${ items.length } 개 제안 찾음. 탐색하려면 키보드를 사용하세요."
       ],
@@ -5827,6 +5866,9 @@
       "${ boldName } will be set as default calendar.": [
         "${ boldName }이(가) 기본 일정으로 설정됩니다."
       ],
+      "${ boldSSOUserInformation } and you will have to create them manually to add them back to your organization": [
+        "${ boldSSOUserInformation } 조직에 추가하려면 수동으로 생성해야 합니다."
+      ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } 이 작업을 계속하면 현재 계정에 저장된 모든 암호화된 데이터에 접근할 수 없습니다."
       ],
@@ -6031,6 +6073,9 @@
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
         "계정에 또 다른 보안 계층을 추가하세요. 로그인할 때마다 2FA로 본인 확인해야 합니다."
       ],
+      "Add domain": [
+        "도메인 추가"
+      ],
       "Add image URL": [
         "이미지 URL 추가"
       ],
@@ -6169,6 +6214,9 @@
       "Are you sure you want to remove administrative privileges from this user?": [
         "이 사용자로부터 관리 권한을 제거하시겠습니까?"
       ],
+      "Are you sure you want to remove the domain ${ boldDomain }?": [
+        "이 도메인 ${ boldDomain }을(를) 정말 제거하시겠습니까?"
+      ],
       "Ask your organisation admin to setup Gateways.": [
         "게이트웨이를 설정하도록 조직의 관리자에 연락하십시오."
       ],
@@ -6277,11 +6325,26 @@
       "Close this screen to exit.": [
         "이 스크린을 닫아 종료합니다."
       ],
+      "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
+        "인증 제공자(IdP)를 통해 조직의 SAML 인증을 구성하십시오. 이 설정값은 전체 조직의 SAML 활성화가 진행됩니다."
+      ],
+      "Configure SAML authentication for your organization through an identity provider like Okta, Microsoft Azure, or Google Identity Platform. This will enable SAML for the whole organization.": [
+        "Okta, Microsoft Azure, Google Identity Platform과 같은 ID 제공자를 통해 SAML 인증을 구성하십시오. 이것으로 조직 전체에 SAML을 활성화하게 됩니다."
+      ],
       "Continue with ${ freeName }": [
         "${ freeName }으로 계속"
       ],
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "계속하면 ${ BRAND_NAME } 계정이 ${ name } 에 연결됩니다."
+      ],
+      "Copied to clipboard": [
+        "클립보드에 복사됨"
+      ],
+      "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
+        "사용자의 인증 제공자로 URL 입력란에 ACS (Assertion Consumer Service) 값을 복사 및 붙여놓기 하십시오."
+      ],
+      "Copy and paste this URL into the entity ID field of your identity provider": [
+        "사용자의 인증 제공자의 엔티티 ID 입력란에 URL 값을 복사 후 붙여놓기 하세요."
       ],
       "Copy the link to clipboard": [
         "복사한 링크 붙이기"
@@ -6385,11 +6448,23 @@
       "DMARC checks if the sender's SPF and DKIM records originate from your domain. This can prevent attackers from using another domain's SPF and DKIM to impersonate your domain. The \"p=\" (policy) in this record indicates how you want the recipient platforms to handle unauthorized emails. We recommend using the \"p=quarantine\" policy for most domains. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "DMARC는 발신자의 SPF와 DKIM 레코드가 사용자의 도메인에서 소속되었는지 확인합니다. 이로서 공격자가 다른 도메인의 SPF와 DKIM을 사용하여 도메인을 사칭하는 것을 방지할 수 있습니다. 이 기록의 \"p=\"(정책)는 수신자 플랫폼이 승인되지 않은 이메일을 처리하는 방법을 나타냅니다. 대부분의 도메인에 대해 \"p=quarantine\" 정책을 사용하는 것이 좋습니다. 다음 TXT 레코드를 사용자의 DNS 콘솔에 입력하십시오. (커스텀 도메인을 구매한 곳에 위치해 있음.)"
       ],
+      "DNS TXT record": [
+        "DNS TXT 레코드"
+      ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "이 비밀번호를 잊지 마세요. 잊을 경우 조직을 관리할 수 없습니다."
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "현재 세션이 아닌 다른 모든 세션을 취소하시겠습니까?"
+      ],
+      "Domain ownership failed verification.": [
+        "도메인 소유권 인증을 실패했습니다."
+      ],
+      "Domain ownership not verified.": [
+        "도메인 소유권이 인증되지 않았습니다."
+      ],
+      "Domain ownership verified.": [
+        "도메인 소유권이 인증되었습니다."
       ],
       "domain used": [
         "사용된 도메인"
@@ -6460,6 +6535,9 @@
       "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
         "라벨 ${ nameDeleted }로 태그된 이메일들은 삭제되지 않으며 해당하는 폴더에서 여전히 찾을 수 있습니다."
       ],
+      "Enable single sign-on to keep your organization safe": [
+        "사용자의 조직이 안전하도록 통합 인증을 활성화하십시오"
+      ],
       "Enable this address to join this calendar": [
         "이 주소가 이 캘린더에 가입하도록 설정"
       ],
@@ -6471,6 +6549,9 @@
       ],
       "Encryption setting updated": [
         "암호화 설정 업데이트됨"
+      ],
+      "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
+        "사용자의 인증 제공자로 부터 받은 엔드포인트 URL (예: https://idp.example.com/sso/saml)"
       ],
       "Enhance your network security": [
         "네트워크 보안을 향상시키기"
@@ -6580,6 +6661,9 @@
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "퍼블릭 키를 친구나 온라인에 게시하여 모두가 사용자에게 종단간 암호화로 이메일을 보낼 수 있습니다!"
       ],
+      "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
+        "인증 제공자 페이지 이동 후, ${ appName }에 사용할 SAML 메타데이터를 받은 뒤 여기에 불러오세요."
+      ],
       "here": [
         "여기"
       ],
@@ -6588,6 +6672,9 @@
       ],
       "High Priority": [
         "중요도 높음"
+      ],
+      "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
+        "인증 주장에 서명하기 위한 신원 제공자의 공개 키입니다. 인증 제공자로부터 인증서 해시값을 다운로드하거나 복사할 수 있는 장소가 있어야 합니다. 텍스트 영역 입력란에 인증서 해시를 붙여넣기만 하면 됩니다."
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "다른 관리자가 이 비밀번호를 변경 한 경우 새 조직 비밀번호를 요청해야 합니다."
@@ -6760,6 +6847,9 @@
       "Lean more about gateways": [
         "게이트웨이에 대해 더 알아보기"
       ],
+      "Lean more about single sign-on": [
+        "통합 인증에 대해 더 알아보기"
+      ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "서드 파티 VPN 애플리케이션을 사용하여 ${ VPN_APP_NAME }에 로그인하는 방법을 알아보세요."
       ],
@@ -6910,6 +7000,9 @@
       "No results found": [
         "결과를 찾을 수 없음"
       ],
+      "Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization": [
+        "SSO를 사용하지 않는 (ID 제공자를 통하지 않은 수동 생성된) 사용자는 계속 조직에 로그인할 수 있습니다"
+      ],
       "Not a valid URL": [
         "유효하지 않은 URL"
       ],
@@ -6924,6 +7017,9 @@
       ],
       "of": [
         "의"
+      ],
+      "Once single sign-on is disabled for your organization:": [
+        "조직에서 싱글 사인온 (SSO)을 비활성화하면 다음과 같이 변경됩니다:"
       ],
       "Once you reset your password:": [
         "지금 비밀번호를 재설정하면 다음 사항이 적용됩니다:"
@@ -6942,6 +7038,9 @@
       ],
       "Optional": [
         "선택 사항"
+      ],
+      "or ${ selectFileButton }": [
+        "또는 ${ selectFileButton }"
       ],
       "Or select a particular server:": [
         "또는 특정 서버 선택:"
@@ -7168,6 +7267,9 @@
       "Right to Left": [
         "오른쪽에서 왼쪽으로"
       ],
+      "SAML configuration saved": [
+        "SAML 구성 저장됨"
+      ],
       "Save ${ percentage }": [
         "${ percentage } 할인"
       ],
@@ -7243,6 +7345,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "로얄 사용자시기에, 계정에 추가적인 기능이 활성화 되었습니다."
       ],
+      "Single sign-on removed": [
+        "싱글 사인온 (SSO) 제거됨"
+      ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
         "SMTP 권한을 허용하면 커스텀 도메인 주소를 사용하여 서드파티 서비스 또는 기기에서 ${ MAIL_APP_NAME }을 통해 이메일 전송을 할 수 있습니다. 이 기능은 커스텀 도메인이 있는 비즈니스용 ${ BRAND_NAME } 사용자만 사용할 수 있습니다."
       ],
@@ -7258,8 +7363,14 @@
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "사용 가능한 서버 중 일부는 최근 제거로 인해 특정 국가에서만 사용할 수 있습니다."
       ],
+      "Specify the domain which is allowed to authenticate with SAML SSO.": [
+        "SAML SSO로 인증할 수 있는 도메인을 지정하십시오."
+      ],
       "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "SPF는 누가 사용자의 도메인에 대한 이메일을 보낼 수 있는지 명확히 합니다. DNS 콘솔(사용자 지정 도메인을 구매한 플랫폼에 위치)에 다음 TXT 레코드를 추가해야 합니다."
+      ],
+      "SSO users (provided by your Identity Provider) will be deleted": [
+        "(ID 공급자가 제공한) SSO 사용자가 삭제될 예정입니다"
       ],
       "Stay tuned for future promotions.": [
         "향후 프로모션을 계속 지켜봐 주시기 바랍니다."
@@ -7338,6 +7449,9 @@
       ],
       "The calendar will be removed from your account.": [
         "캘린더가 사용자의 계정에서 지워집니다."
+      ],
+      "The credentials from your Identity Provider will be deleted.": [
+        "ID 제공자가 제공한 크리덴셜 정보가 삭제됩니다."
       ],
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "이메일 인증 링크가 만료되었습니다. 로그인하여 새로운 인증 링크를 재전송 하십시오."
@@ -7432,6 +7546,9 @@
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "이 사용자는 현재 조직의 지불에 대한 책임이 있습니다. 이 멤버를 강등하면 귀하가 조직에 대한 지불 책임을 지게 됩니다."
       ],
+      "This verification can take up to one hour. You can safely continue to the next steps.": [
+        "이 인증은 최대 한 시간 소요될 수 있습니다. 다음 단계를 계속 진행해도 안전합니다."
+      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "현재 유료 구독이 취소되며 누적된 로열티 혜택을 잃게 됩니다."
       ],
@@ -7459,6 +7576,9 @@
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "사용자의 계정 및 계정에 연결된 모든 정보가 영구 삭제되며, 이 계정의 복구가 불가능합니다."
       ],
+      "This will remove SSO for ${ boldDomainName }.": [
+        "이렇게 하면${ boldDomainName }의 SSO가 제거됩니다."
+      ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "임시 비밀번호를 대체하게 됩니다. 추후 ${ BRAND_NAME } 계정에 접근하는데 사용할 수 있습니다."
       ],
@@ -7473,6 +7593,9 @@
       ],
       "to ${ product } Business": [
         "${ product } 비즈니스로"
+      ],
+      "To allow the domain ${ boldDomainName } to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
+        "SAML SSO에 사용하기 위해 ${ boldDomainName } 도메인을 허용하려면, 다음 DNS TXT 레코드를 사용자의 DNS 제공자 입력란에 추가하여 소유권 인증 절차를 밟아야 합니다."
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "데이터 손실을 피할려면, 복사본을 가지고 있거나 지금 무엇을 하고 있는지 확실히 알고 지우십시오."
@@ -7564,6 +7687,9 @@
       "Unfortunately there is no recovery method saved for this account.": [
         "이 계정에는 저장된 복구 방법이 없습니다."
       ],
+      "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
+        "ID 공급자에 의해 생성된 고유 ID는 일반적으로 ID 공급자의 이름이 포함된 URL의 형태입니다. (예: e.g. https://idp.example.com/XXXXX)"
+      ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "계정에서 로그아웃하거나 비밀번호를 변경하지 않는 한, 세션은 활성 상태로 유지됩니다. 세션은 60일 동안 활동이 없으면 만료됩니다."
       ],
@@ -7650,6 +7776,9 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "인증은 새 탭에서 열리기 때문에 팝업 차단기를 비활성화해주세요. 요금은 청구되지 않습니다. 카드 확인에 사용한 금액은 즉시 환불됩니다."
+      ],
+      "Verify domain": [
+        "도메인 소유권 인증"
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "인증 앱에서 실시간 일회용 비밀번호로 신원을 확인하세요"
@@ -7749,6 +7878,9 @@
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "비활성화시, 사용자가 알아차리기 전 이미지가 다운로드 되는 것을 방지해 줍니다."
+      ],
+      "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
+        "사용자의 제공자로 부터 ${ appName }을 위한 SAML 활성화 시,  콜백 URL (callback, ACS라고 함) 및 issuer ID를 사용하라는 안내창이 표시될 수 있습니다. 아래의 데이터를 제공자 입력란에 복사 후 붙여넣기를 하면 됩니다."
       ],
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
         "알림이 활성화되면 ${ MAIL_APP_NAME } 계정에 새 메시지가 있는 경우 복구 이메일 주소로 알림을 보내드려요."
@@ -8146,26 +8278,8 @@
       ]
     },
     "Key generation": {
-      "A key with the same encryption algorithm already exists. Generating another key will cause slower account loading. Are you sure you want to continue?": [
-        "동일한 암호화 알고리즘을 가진 키가 이미 존재합니다. 다른 키를 생성하면 계정 로딩이 느려질 수 있습니다. 정말 계속하시겠습니까?"
-      ],
-      "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
-        "동일한 암호화 알고리즘을 가진 키가 이미 이 주소에 대해 활성화되어 있습니다. 다른 키를 생성하면 계정 로딩이 느려지고 이 키를 삭제하면 문제가 발생할 수 있습니다. 이전 키가 손상되었기 때문에 새 키를 생성하는 경우, 해당 키를 손상된 것으로 표시하십시오. 이를 계속하시겠습니까?"
-      ],
       "Generate key": [
         "키 생성"
-      ],
-      "Key with fingerprint ${ fp } successfully created.": [
-        "지문이 있는 열쇠 ${ fp } 가 성공적으로 생성됨."
-      ],
-      "The encryption keys are being generated. This may take several minutes and temporarily freeze your browser.": [
-        "암호화 키가 생성되고 있습니다. 이는 몇 분이 걸리고 일시적으로 브라우저를 정지시킬 수 있습니다."
-      ],
-      "The encryption keys for your address are being generated. This may take several minutes and temporarily freeze your browser.": [
-        "암호화 키가 생성되고 있습니다. 이는 몇 분이 걸리고 일시적으로 브라우저를 정지시킬 수 있습니다."
-      ],
-      "You can generate a new encryption key if you think your previous key has been compromised.": [
-        "만약 이전 키가 유출되었다고 생각된다면 새로운 암호화 키를 생성하실 수 있습니다."
       ]
     },
     "Key state badge": {
@@ -8189,14 +8303,6 @@
       ],
       "Primary": [
         "우선 순위"
-      ]
-    },
-    "Key type option": {
-      "${ compatibility } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
-        "${ compatibility } RSA 4096-bit (느리지만, 기존 소프트웨어와의 높은 호환성)"
-      ],
-      "${ stateOfTheArt } ECC Curve25519 (Fastest, most modern)": [
-        "${ stateOfTheArt } ECC Curve25519 (가장 빠르고 현대적임)"
       ]
     },
     "Keyboard shortcut name": {
@@ -8511,6 +8617,12 @@
       "Allow recovery using a trusted device": [
         "승인된 기기를 사용한 복구 허용"
       ],
+      "Allowed domain": [
+        "허용된 도메인"
+      ],
+      "Allowed Domain": [
+        "허용된 도메인"
+      ],
       "Amount": [
         "금액"
       ],
@@ -8534,6 +8646,9 @@
       ],
       "Apply filter to existing emails": [
         "병합할 이메일 필터 적용"
+      ],
+      "Assertion Consumer Service URL": [
+        "문제 알림 소비자 서비스 (ACS, 약칭;Assertion Consumer Service) URL"
       ],
       "Attach public key": [
         "공개 키 첨부"
@@ -8781,6 +8896,9 @@
       "Duration": [
         "기간"
       ],
+      "e.g. example.com": [
+        "예시: example.com"
+      ],
       "Email": [
         "이메일"
       ],
@@ -8898,6 +9016,9 @@
       "Invite via email": [
         "이메일로 초대"
       ],
+      "Issuer ID": [
+        "Issuer ID"
+      ],
       "Keep me signed in": [
         "로그인 상태 유지"
       ],
@@ -8906,9 +9027,6 @@
       ],
       "Key": [
         "키"
-      ],
-      "Key strength": [
-        "키 강도"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "키보드 단축키: ${ shortcut }"
@@ -8960,6 +9078,15 @@
       ],
       "Messages per page": [
         "페이지 당 메시지"
+      ],
+      "Metadata file for ${ appName }": [
+        "${ appName } 메타데이터 파일"
+      ],
+      "Metadata URL for ${ appName }": [
+        "${ appName } 메타데이터 URL"
+      ],
+      "Method for importing metadata": [
+        "메타데이터를 불러올 방법"
       ],
       "Moderate NAT": [
         "일반형 NAT"
@@ -9114,6 +9241,9 @@
       "Protection mode": [
         "보호 모드"
       ],
+      "Public certificate (X.509)": [
+        "공개 인증서 (X.509)"
+      ],
       "Read": [
         "읽음"
       ],
@@ -9131,6 +9261,9 @@
       ],
       "Repeat password": [
         "비밀번호 확인"
+      ],
+      "Reply (ACS) URL": [
+        "Reply (ACS) URL"
       ],
       "Require 2FA for administrators": [
         "관리자에 2FA가 필요"
@@ -9176,6 +9309,12 @@
       ],
       "Signature": [
         "서명"
+      ],
+      "Single sign-on entity ID": [
+        "싱글 사인 온 엔티티 ID"
+      ],
+      "Single sign-on URL": [
+        "싱글 사인 온 URL"
       ],
       "SMTP port": [
         "SMTP 포트"
@@ -9240,6 +9379,9 @@
       "Two-password mode": [
         "이중 비밀번호 방식"
       ],
+      "Type": [
+        "유형"
+      ],
       "Undo send": [
         "전송 취소"
       ],
@@ -9263,6 +9405,9 @@
       ],
       "Username": [
         "사용자 이름"
+      ],
+      "Value": [
+        "값"
       ],
       "VAT": [
         "부가세"
@@ -10543,17 +10688,6 @@
         "팀 관리"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "그렇지 않으면 사용자의 계정이 제한될 수 있으며, 지속적으로 방치되면 비활성화될 수 있습니다."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "${ trialPlanName }의 프리미엄 기능을 계속 사용하려면, 구독 및 결제 옵션을 선택하세요."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "무료 체험이 ${ formattedPeriodEndDate }에 종료됩니다."
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ last4 }(으)로 끝나는 ${ brand }"
@@ -10653,6 +10787,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "현재 플랜을 프로모션이 적용된 가격으로 즐기고 계십니다. 만약 계정을 다운그레이드 하신다면, 프로모션이 적용된 가격을 잃게되어 만일 다시 구독을 시도하더라도 다시 누리실 수 없습니다."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "그렇지 않으면 사용자의 계정이 제한될 수 있으며, 지속적으로 방치되면 비활성화될 수 있습니다."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "${ trialPlanName }의 프리미엄 기능을 계속 사용하려면, 구독 및 결제 옵션을 선택하세요."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "무료 체험이 ${ formattedPeriodEndDate }에 종료됩니다."
       ]
     },
     "new_plans: Label": {
@@ -11992,6 +12137,15 @@
       "domain.com": [
         "domain.com"
       ],
+      "e.g. https://example.com/app/protonvpn/XXXXX/sso/metadata": [
+        "예시: https://example.com/app/protonvpn/XXXXX/sso/metadata"
+      ],
+      "e.g. https://idp.example.com/sso/saml": [
+        "예시: https://idp.example.com/sso/saml"
+      ],
+      "e.g. https://idp.example.com/XXXXX": [
+        "예시: https://idp.example.com/XXXXX"
+      ],
       "E.g., ": [
         "예, "
       ],
@@ -12213,14 +12367,6 @@
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "휴대 전화 인증은 계정 보호성이 증가하고 추가적인 복구 옵션을 제공합니다."
-      ]
-    },
-    "Remark about a key type option": {
-      "Compatibility": [
-        "호환성"
-      ],
-      "State of the art": [
-        "최신 기술"
       ]
     },
     "Remove calendar section description": {
@@ -14072,6 +14218,12 @@
       "Encryption and keys": [
         "암호화 및 키"
       ],
+      "Enter endpoints into your identity provider": [
+        "사용자의 인증 제공자로 부터 엔드포인트를 입력하십시오."
+      ],
+      "Enter SAML metadata": [
+        "SAML 메타데이터 입력"
+      ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "${ app } 베타 프로그램에 참여하려면 ${ BRAND_NAME } 계정 상세 사항을 입력하세요."
       ],
@@ -14357,6 +14509,15 @@
       "Remove calendar": [
         "캘린더 삭제"
       ],
+      "Remove domain": [
+        "도메인 제거"
+      ],
+      "Remove single sign-on": [
+        "싱글 사인온 (SSO) 제거"
+      ],
+      "Remove single sign-on for your organization?": [
+        "조직에서 싱글 사인온 (SSO)을 제거하시겠어요?"
+      ],
       "Remove user?": [
         "사용자를 삭제할까요?"
       ],
@@ -14383,6 +14544,9 @@
       ],
       "Revoke certificate": [
         "인증서 취소"
+      ],
+      "SAML authentication": [
+        "SAML 인증"
       ],
       "Save time with email filters": [
         "이메일 필터로 시간을 절약하세요"
@@ -14473,6 +14637,9 @@
       ],
       "Signed in to member account": [
         "회원 계정으로 로그인됨"
+      ],
+      "Single sign-on": [
+        "싱글 사인온 (SSO)"
       ],
       "SMTP submission": [
         "SMTP 세부 사항"
@@ -14590,6 +14757,12 @@
       ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "주소 변경에 대한 지침과 함께 새 주소로 이메일을 보내드립니다."
+      ],
+      "What is an alias?": [
+        "별칭이란?"
+      ],
+      "What is the dark web?": [
+        "다크 웹이란?"
       ],
       "What would you like to import?": [
         "무엇을 가져오시겠어요?"
@@ -14753,6 +14926,12 @@
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "시스템의 주/야간 모드와 동기화하여 선호하는 테마를 주/야간에 맞춰 자동으로 전환합니다"
       ],
+      "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
+        "사용자의 인증 제공자로 URL 입력란에 ACS (Assertion Consumer Service) 값을 복사 및 붙여놓기 하십시오."
+      ],
+      "Copy and paste this URL into the entity ID field of your identity provider": [
+        "사용자의 인증 제공자의 엔티티 ID 입력란에 URL 값을 복사 후 붙여놓기 하세요."
+      ],
       "Customize import to reduce the number of folders": [
         "폴더 수를 줄이기 위해 가져오기를 사용자 정의하세요"
       ],
@@ -14780,6 +14959,9 @@
       "Enabling advanced logs records the IP address for each event in the security log.": [
         "고급 로그를 활성화하면 보안 로그의 각 이벤트에 IP 주소를 기록하게 됩니다."
       ],
+      "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
+        "사용자의 인증 제공자로 부터 받은 엔드포인트 URL (예: https://idp.example.com/sso/saml)"
+      ],
       "Feature in early access": [
         "얼리 엑세스 기능"
       ],
@@ -14788,6 +14970,9 @@
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "받은 편지함에 있는 동일한 메일을 함께 그룹화하거나 별도로 표시합니다."
+      ],
+      "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
+        "인증 주장에 서명하기 위한 인증 제공자의 공개 키입니다. 인증 제공자로부터 인증서 해시값을 받으세요."
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "기프트 코드를 구매하셨거나 서포트 팀에서 받으셨다면, 여기에 입력하실 수 있습니다."
@@ -14818,6 +15003,9 @@
       ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
         "이 키로 생성된 서명은 유효하지 않은 것으로 취급되며 이 키는 암호화에 사용할 수 없습니다."
+      ],
+      "Specify the domain which is allowed to authenticate with SAML SSO": [
+        "SAML SSO로 인증할 수 있는 도메인을 지정하십시오"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME }의 시스템 하위폴더가 별도로 폴더를 표시합니다"
@@ -14866,6 +15054,9 @@
       ],
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
         "브라우저 기본 스크롤바를 사용하세요. 더 크며 사용하기 쉽습니다."
+      ],
+      "Usually an URL that contains the identity provider's name within": [
+        "일반적으로 인증 제공자의 이름이 포함된 URL"
       ],
       "Verified email address": [
         "인증된 이메일 주소"

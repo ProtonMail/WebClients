@@ -161,6 +161,9 @@
       "Cancel subscription": [
         "Batalkan langganan"
       ],
+      "Change": [
+        "Ubah"
+      ],
       "Change keys": [
         "Ubah kunci"
       ],
@@ -205,6 +208,9 @@
       ],
       "Color": [
         "Warna"
+      ],
+      "Configure SAML": [
+        "Atur SAML"
       ],
       "Confirm": [
         "Konfirmasi"
@@ -316,6 +322,9 @@
       ],
       "Delete link": [
         "Hapus tautan"
+      ],
+      "Delete logo": [
+        "Hapus logo"
       ],
       "Delete permanently": [
         "Hapus secara permanen"
@@ -554,6 +563,9 @@
       "Import key": [
         "Impor kunci"
       ],
+      "Import new SAML metadata": [
+        "Impor metadata SAML baru"
+      ],
       "Increase": [
         "Tingkatkan"
       ],
@@ -577,6 +589,9 @@
       ],
       "Keep": [
         "Simpan"
+      ],
+      "Keep logo": [
+        "Pertahankan logo"
       ],
       "Keep my Plus subscription": [
         "Pertahankan langganan Plus saya"
@@ -728,8 +743,14 @@
       "Remove calendar": [
         "Hapus kalender"
       ],
+      "Remove domain": [
+        "Hapus domain"
+      ],
       "Remove gift code": [
         "Hapus kode hadiah"
+      ],
+      "Remove single sign-on": [
+        "Hapus single sign-on"
       ],
       "Remove this label": [
         "Hapus label ini"
@@ -815,6 +836,9 @@
       "Save ICS file": [
         "Simpan berkas ICS"
       ],
+      "Save SAML configuration": [
+        "Simpan konfigurasi SAML"
+      ],
       "Search": [
         "Pencarian"
       ],
@@ -823,6 +847,9 @@
       ],
       "Search settings": [
         "Cari di pengaturan"
+      ],
+      "See DNS TXT record": [
+        "Lihat rekaman TXT DNS"
       ],
       "See how": [
         "Lihat caranya"
@@ -841,6 +868,12 @@
       ],
       "Select country": [
         "Pilih negara"
+      ],
+      "select file": [
+        "pilih berkas"
+      ],
+      "Select file": [
+        "Pilih berkas"
       ],
       "Select files": [
         "Pilih berkas"
@@ -953,6 +986,9 @@
       "Stay": [
         "Tinggal"
       ],
+      "Stop using single sign-on": [
+        "Berhenti gunakan single sign-on"
+      ],
       "Strikethrough": [
         "Coret"
       ],
@@ -1027,6 +1063,12 @@
       ],
       "Upgrade your plan": [
         "Tingkatkan paket Anda"
+      ],
+      "Upload": [
+        "Unggah"
+      ],
+      "Upload icon": [
+        "Unggah ikon"
       ],
       "Upload picture": [
         "Unggah gambar"
@@ -1651,6 +1693,12 @@
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Lanjut dengan ${ MAIL_APP_NAME }."
+      ],
+      "Continue using ${ planTitle }": [
+        "Lanjut gunakan ${ planTitle }"
+      ],
+      "Continue your subscription": [
+        "Lanjutkan langganan Anda"
       ],
       "Copy": [
         "Salin"
@@ -3869,6 +3917,12 @@
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Gagal memperoleh sesi yang aktif. Silakan ${ refresh } atau coba lagi nanti."
       ],
+      "Failed to process the logo": [
+        "Logo gagal diproses"
+      ],
+      "File too large. Your logo must be 30 KB or smaller.": [
+        "Ukuran berkas terlalu besar. Logo Anda harus berukuran 30 KB atau lebih kecil."
+      ],
       "Filter with this name already exists": [
         "Filter dengan nama ini sudah ada"
       ],
@@ -3886,6 +3940,9 @@
       ],
       "Impossible to rename the gateway": [
         "Nama gateway tidak dapat diubah"
+      ],
+      "Incorrect file type. Upload a file in PNG or JPEG format.": [
+        "Jenis berkas tidak tepat. Silakan unggah berkas dengan format PNG atau JPEG."
       ],
       "Incorrect login credentials. Please try again.": [
         "Kredensial masuk salah. Silakan coba lagi."
@@ -3971,6 +4028,9 @@
       "No external key retrieved for user is valid for sending": [
         "Tidak ada kunci eksternal untuk penerima yang valid untuk pengiriman"
       ],
+      "No image selected": [
+        "Tidak ada gambar yang dipilih"
+      ],
       "No valid address found": [
         "Tidak ada alamat valid yang ditemukan"
       ],
@@ -4036,6 +4096,15 @@
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Harap tingkatkan jenis akun Anda ke paket bisnis dengan lebih dari 1 pengguna untuk dapat mengelola banyak pengguna sekaligus."
+      ],
+      "Please upload a square file": [
+        "Silakan unggah berkas yang berbentuk persegi"
+      ],
+      "Please upload an xml file": [
+        "Silakan unggah berkas xml"
+      ],
+      "Please upload only 1 file": [
+        "Mohon hanya unggah 1 berkas"
       ],
       "Port is required": [
         "Nomor port diperlukan"
@@ -4103,6 +4172,12 @@
       "The email addresses do not match": [
         "Alamat email tidak cocok"
       ],
+      "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
+        "Berkas ini terlalu besar. Ukuran maksimum berkas yang diperkenankan adalah ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }"
+      ],
+      "The file is too small, the minimum size is ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }": [
+        "Berkas ini terlalu kecil. Ukuran minimum berkas yang diperkenankan adalah ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }"
+      ],
       "The folder name is invalid. Please choose a different name.": [
         "Nama folder tidak valid. Silakan pilih nama lain."
       ],
@@ -4165,6 +4240,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "Cobalah untuk hanya menggunakan huruf, angka, dan tanda _.-"
+      ],
+      "Unable to upload file": [
+        "Berkas tidak dapat diunggah"
       ],
       "Unexpected error, we can't import the contacts": [
         "Terdapat kesalahan yang tidak diduga. Kami tidak dapat mengimpor kontak"
@@ -5501,6 +5579,9 @@
       ]
     },
     "Hint": {
+      "Add this record to your domain in the control panel of your domain name registrar": [
+        "Tambahkan rekaman ini ke domain Anda pada panel kontrol pencatat nama domain Anda"
+      ],
       "Found ${ items.length } suggestion, use keyboard to navigate.": [
         "${ items.length } saran ditemukan. Gunakan keyboard Anda untuk beralih antar pilihan yang ada."
       ],
@@ -5858,6 +5939,9 @@
       "${ boldName } will be set as default calendar.": [
         "${ boldName } akan ditetapkan sebagai kalender bawaan."
       ],
+      "${ boldSSOUserInformation } and you will have to create them manually to add them back to your organization": [
+        "${ boldSSOUserInformation } dan Anda harus membuatnya secara manual untuk menambahkan nya kembali ke organisasi Anda"
+      ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Apabila Anda melanjutkan, Anda akan kehilangan akses menuju seluruh data yang terenkripsi pada akun Anda."
       ],
@@ -6065,6 +6149,9 @@
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
         "Berikan akun Anda lapisan keamanan tambahan. Anda akan perlu untuk memverifikasi diri Anda dengan 2FA setiap kali Anda masuk."
       ],
+      "Add domain": [
+        "Tambah domain"
+      ],
       "Add image URL": [
         "Sisipkan gambar melalui URL"
       ],
@@ -6206,6 +6293,9 @@
       "Are you sure you want to remove administrative privileges from this user?": [
         "Apakah Anda yakin untuk menghapus hak administratif pengguna ini?"
       ],
+      "Are you sure you want to remove the domain ${ boldDomain }?": [
+        "Apakah Anda yakin untuk menghapus domain ${ boldDomain }?"
+      ],
       "Ask your organisation admin to setup Gateways.": [
         "Mintalah admin organisasi Anda untuk mengatur Gateway."
       ],
@@ -6314,11 +6404,26 @@
       "Close this screen to exit.": [
         "Tutup layar ini untuk keluar."
       ],
+      "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
+        "Atur autentikasi SAML untuk organisasi Anda melalui layanan penyedia identitas (IdP). Pengaturan ini akan mengaktifkan SAML untuk seluruh organisasi."
+      ],
+      "Configure SAML authentication for your organization through an identity provider like Okta, Microsoft Azure, or Google Identity Platform. This will enable SAML for the whole organization.": [
+        "Atur autentikasi SAML untuk organisasi Anda melalui penyedia identitas seperti Okta, Microsoft Azure, atau Google Identity Platform. Ini akan mengaktifkan SAML untuk seluruh organisasi."
+      ],
       "Continue with ${ freeName }": [
         "Lanjutkan dengan ${ freeName }"
       ],
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "Dengan melanjutkan, Akun ${ BRAND_NAME } Anda akan terhubung ke ${ name }."
+      ],
+      "Copied to clipboard": [
+        "Disalin ke papan klip"
+      ],
+      "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
+        "Salin dan tempel URL ini ke kolom URL ACS (Assertion Consumer Service) milik penyedia identitas Anda"
+      ],
+      "Copy and paste this URL into the entity ID field of your identity provider": [
+        "Salin dan tempel URL ini ke kolom ID entitas milik penyedia identitas Anda"
       ],
       "Copy the link to clipboard": [
         "Salin tautan ke papan klip"
@@ -6422,11 +6527,23 @@
       "DMARC checks if the sender's SPF and DKIM records originate from your domain. This can prevent attackers from using another domain's SPF and DKIM to impersonate your domain. The \"p=\" (policy) in this record indicates how you want the recipient platforms to handle unauthorized emails. We recommend using the \"p=quarantine\" policy for most domains. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "DMARC memeriksa apakah rekaman SPF dan DKIM milik pengirim benar-benar bersumber dari domain Anda. Hal ini dapat mencegah para penyusup untuk berpura-pura menjadi domain Anda dengan SPF dan DKIM milik domain lain. Parameter \"p=\" (policy/kebijakan) yang terdapat pada rekaman menerangkan bagaimana Anda ingin platform penerima menangani email yang tidak berizin. Kami menyarankan Anda untuk menggunakan pengaturan \"p=quarantine\" untuk sebagian besar domain. Pastikan Anda menambahkan rekaman TXT berikut pada konsol DNS Anda (yang terletak pada platform tempat Anda membeli domain khusus ini)."
       ],
+      "DNS TXT record": [
+        "Rekaman TXT DNS"
+      ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "JANGAN lupakan kata sandi ini. Apabila Anda lupa, Anda tidak lagi akan dapat mengelola organisasi Anda."
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "Apakah Anda ingin mencabut seluruh sesi kecuali sesi ini?"
+      ],
+      "Domain ownership failed verification.": [
+        "Kemilikan domain tidak berhasil diverifikasi."
+      ],
+      "Domain ownership not verified.": [
+        "Kemilikan domain tidak diverifikasi."
+      ],
+      "Domain ownership verified.": [
+        "Kemilikan domain diverifikasi."
       ],
       "domain used": [
         "domain dipakai"
@@ -6497,6 +6614,9 @@
       "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
         "Email yang berlabel ${ nameDeleted } tidak akan dihapus dan tetap akan dapat ditemukan pada foldernya masing-masing."
       ],
+      "Enable single sign-on to keep your organization safe": [
+        "Aktifkan single sign-on untuk menjaga organisasi Anda tetap aman"
+      ],
       "Enable this address to join this calendar": [
         "Aktifkan alamat ini untuk bergabung ke kalender ini"
       ],
@@ -6508,6 +6628,9 @@
       ],
       "Encryption setting updated": [
         "Pengaturan enkripsi diperbarui"
+      ],
+      "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
+        "URL endpoint yang diperoleh dari penyedia identitas Anda (mis. https://idp.contoh.com/sso/saml)."
       ],
       "Enhance your network security": [
         "Tingkatkan keamanan jaringan Anda"
@@ -6623,6 +6746,9 @@
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Berikan kunci publik Anda kepada teman atau sebarkan secara online, sehingga setiap orang dapat mengirim Anda email yang terenkripsi end-to-end!"
       ],
+      "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
+        "Tuju penyedia identitas Anda, dapatkan metadata SAML untuk ${ appName }, dan impor metadata tersebut di sini."
+      ],
       "here": [
         "di sini"
       ],
@@ -6631,6 +6757,9 @@
       ],
       "High Priority": [
         "Prioritas Tinggi"
+      ],
+      "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
+        "Kunci publik penyedia identitas untuk menandatangani pernyataan autentikasi. Harus ada tempat untuk mengunduh atau menyalin hash sertifikat dari penyedia identitas. Cukup tempelkan hash sertifikat di bidang area teks."
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Apabila administrator lain mengubah kata sandi ini, Anda harus menanyakan Kata Sandi Organisasi yang baru kepada mereka."
@@ -6812,6 +6941,12 @@
       "Lean more about gateways": [
         "Pelajari lebih lanjut tentang gateway"
       ],
+      "Lean more about single sign-on": [
+        "Pelajari lebih lanjut tentang sistem masuk tunggal"
+      ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Pelajari cara untuk ${ staySaferOnlineLink }"
+      ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Pelajari cara untuk dapat masuk ke ${ VPN_APP_NAME } melalui aplikasi VPN pihak ketiga."
       ],
@@ -6971,6 +7106,9 @@
       "No results found": [
         "Tidak ada hasil yang ditemukan"
       ],
+      "Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization": [
+        "Pengguna non-SSO (yang ditetapkan secara manual, bukan yang disediakan oleh Penyedia Identitas Anda) akan tetap dapat masuk ke organisasi Anda"
+      ],
       "Not a valid URL": [
         "URL tidak valid"
       ],
@@ -6985,6 +7123,9 @@
       ],
       "of": [
         "dari"
+      ],
+      "Once single sign-on is disabled for your organization:": [
+        "Ketika sistem masuk tunggal dinonaktifkan untuk organisasi Anda:"
       ],
       "Once you reset your password:": [
         "Setelah Anda mengatur ulang kata sandi Anda:"
@@ -7003,6 +7144,9 @@
       ],
       "Optional": [
         "Opsional"
+      ],
+      "or ${ selectFileButton }": [
+        "atau ${ selectFileButton }"
       ],
       "Or select a particular server:": [
         "Atau pilih salah satu server berikut:"
@@ -7136,6 +7280,9 @@
       "Plus or Visionary subscription required": [
         "Dibutuhkan langganan Plus atau Visionary"
       ],
+      "Preview": [
+        "Pratinjau"
+      ],
       "Preview failed to be loaded": [
         "Pratinjau gagal dimuat"
       ],
@@ -7229,6 +7376,9 @@
       "Right to Left": [
         "Kanan ke Kiri"
       ],
+      "SAML configuration saved": [
+        "Konfigurasi SAML disimpan"
+      ],
       "Save ${ percentage }": [
         "Hemat ${ percentage }"
       ],
@@ -7304,6 +7454,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Berhubung Anda telah menjadi pengguna yang setia, akun Anda akan memiliki berbagai fitur tambahan yang dapat Anda gunakan."
       ],
+      "Single sign-on removed": [
+        "Single sign-on dihapus"
+      ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
         "Submisi SMTP memungkinkan layanan atau perangkat milik pihak ketiga untuk mengirimkan email melalui ${ MAIL_APP_NAME } kepada alamat domain khusus milik Anda. Fitur ini hanya tersedia bagi pengguna ${ BRAND_NAME } for Business yang memiliki domain khusus."
       ],
@@ -7319,8 +7472,14 @@
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "Sebagian server milik Anda yang tersedia hanya dapat digunakan di negara tertentu karena pemutusan yang berlangsung baru-baru ini"
       ],
+      "Specify the domain which is allowed to authenticate with SAML SSO.": [
+        "Tentukan domain yang diizinkan untuk mengautentikasi dengan SSO SAML."
+      ],
       "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "SPF menentukan alamat-alamat mana saja yang dapat mengirim email kepada domain Anda. Pastikan Anda menambahkan rekaman TXT berikut pada konsol DNS Anda (yang terletak pada platform tempat Anda membeli domain khusus ini)."
+      ],
+      "SSO users (provided by your Identity Provider) will be deleted": [
+        "Pengguna SSO (sebagaimana yang disediakan oleh Penyedia Identitas Anda) akan dihapus"
       ],
       "Stay tuned for future promotions.": [
         "Jangan lewatkan promosi lainnya yang akan datang."
@@ -7400,11 +7559,17 @@
       "The calendar will be removed from your account.": [
         "Kalender ini akan dihapus dari akun Anda."
       ],
+      "The credentials from your Identity Provider will be deleted.": [
+        "Informasi kredensial dari Penyedia Identitas Anda akan dihapus."
+      ],
       "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
         "Dark web merupakan bagian tersembunyi dari internet di mana informasi pribadi yang dicuri, seperti identitas diri, dapat diperjualbelikan."
       ],
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "Tautan verifikasi ini telah kedaluwarsa. Silakan masuk untuk mengirimkan ulang kode verifikasi."
+      ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "Informasi yang terpapar ini dibocorkan oleh layanan pihak ketiga. Informasi Akun ${ BRAND_NAME } Anda tetap aman dan terenkripsi. ${ learnMoreLink }"
       ],
       "The following address is available:": [
         "Alamat berikut tersedia:"
@@ -7426,6 +7591,9 @@
       ],
       "The link to report that that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "Tautan untuk melaporkan bahwa Anda belum menyiapkan sebuah Akun ${ BRAND_NAME } telah kedaluwarsa. Silakan hubungi tim bantuan kami untuk menyelesaikan masalah ini."
+      ],
+      "The name and icon will be visible to your users while they are signed in.": [
+        "Nama dan ikon ini akan terlihat oleh para pengguna Anda ketika mereka terhubung masuk."
       ],
       "The name will be visible to your users while they are signed in.": [
         "Nama ini akan terlihat oleh para pengguna yang berada di bawah Anda ketika mereka masuk."
@@ -7496,6 +7664,9 @@
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Pengguna ini sedang bertanggung jawab atas pembayaran untuk organisasi Anda. Dengan menurunkan anggota ini, Anda akan bertanggung jawab atas pembayaran untuk organisasi Anda."
       ],
+      "This verification can take up to one hour. You can safely continue to the next steps.": [
+        "Proses verifikasi ini dapat berlangsung hingga satu jam. Anda dapat melanjutkan ke langkah selanjutnya secara aman."
+      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Tindakan ini akan membatalkan langganan berbayar Anda saat ini dan Anda akan kehilangan manfaat loyalitas yang telah Anda kumpulkan."
       ],
@@ -7523,6 +7694,9 @@
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Tindakan ini akan menghapus akun Anda beserta seluruh data yang terkandung di dalamnya secara permanen. Anda tidak akan dapat mengaktifkan kembali akun ini."
       ],
+      "This will remove SSO for ${ boldDomainName }.": [
+        "Tindakan ini akan menghapus SSO untuk ${ boldDomainName }."
+      ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Kata sandi ini akan menggantikan kata sandi sementara Anda. Ke depannya, Anda akan menggunakan kata sandi ini untuk mengakses akun ${ BRAND_NAME } Anda."
       ],
@@ -7537,6 +7711,9 @@
       ],
       "to ${ product } Business": [
         "ke ${ product } Business"
+      ],
+      "To allow the domain ${ boldDomainName } to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
+        "Untuk memberikan izin penggunaan SAML SSO kepada domain ${ boldDomainName }, Anda harus memverifikasi kepemilikan domain ini dengan menambahkan rekaman TXT DNS berikut ke dalam domain Anda pada penyedia layanan DNS Anda."
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Untuk mencegah hilangnya data, mohon hapus kunci ini hanya apabila Anda benar-benar paham akan resikonya atau apabila Anda telah mengekspor salinan kunci."
@@ -7628,6 +7805,9 @@
       "Unfortunately there is no recovery method saved for this account.": [
         "Sayangnya, tidak ada metode pemulihan yang ditetapkan untuk akun ini."
       ],
+      "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
+        "ID unik yang dihasilkan oleh penyedia identitas Anda, yang pada umumnya berupa URL dengan nama penyedia identitas di dalamnya (mis. https://idp.contoh.com/XXXXX)"
+      ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "Selama Anda tidak keluar dari akun atau mengubah kata sandi Anda, sesi Anda akan tetap aktif. Seluruh sesi akan berakhir setelah 60 hari tidak aktif."
       ],
@@ -7718,6 +7898,9 @@
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Proses verifikasi akan berlangsung pada tab baru. Mohon nonaktifkan pemblokir pop-up mana pun yang sedang aktif. Anda tidak akan dikenakan biaya sepeser pun. Seluruh dana yang digunakan untuk memverifikasi kartu akan langsung dikembalikan."
       ],
+      "Verify domain": [
+        "Verifikasi domain"
+      ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Verifikasi identitas Anda dengan kata sandi terbatas waktu yang dihasilkan oleh aplikasi autentikator"
       ],
@@ -7760,6 +7943,9 @@
       "We just sent you a new link.": [
         "Kami telah mengirimkan Anda tautan yang baru."
       ],
+      "We monitor the dark web for instances where your personal information (such as an email address or password used on a third-party site) is leaked or compromised. ${ dataBreachLink }": [
+        "Kami memantau dark web untuk melihat apakah informasi pribadi Anda (seperti alamat email atau kata sandi yang digunakan pada layanan pihak ketiga) telah bocor atau disusupi. ${ dataBreachLink }"
+      ],
       "We need to authenticate your payment method with your bank.": [
         "Kami perlu untuk mengautentikasi metode pembayaran Anda dengan bank Anda."
       ],
@@ -7786,6 +7972,9 @@
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Untuk menyelesaikan transaksi, kami akan mengarahkan Anda ke PayPal di tab baru. Nonaktifkan pemblokir pop-up terlebih dahulu sebelum melanjutkan."
+      ],
+      "We'll email you once import is complete.": [
+        "Kami akan mengirimkan email kepada Anda setelah impor ini selesai."
       ],
       "We'll get back to you shortly.": [
         "Kami akan segera menghubungi Anda kembali."
@@ -7819,6 +8008,9 @@
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Ketika dinonaktifkan, opsi ini akan mencegah gambar yang ada untuk dapat dimuat pada perangkat Anda tanpa Anda ketahui."
+      ],
+      "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
+        "Pada saat mengaktifkan SAML untuk ${ appName } di layanan penyedia identitas Anda, Anda mungkin akan diminta untuk menggunakan URL Callback (ACS) dan Issuer ID. Cukup salin dan tempel data di bawah ini ke kolom yang disediakan oleh penyedia identitas Anda."
       ],
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
         "Pada saat notifikasi diaktifkan, kami akan mengirimkan peringatan ke alamat email pemulihan Anda setiap kali terdapat pesan baru yang masuk ke akun ${ MAIL_APP_NAME } Anda."
@@ -7889,6 +8081,9 @@
       "You can check the progress ${ importProgressLink }.": [
         "Anda dapat mengecek status proses impor Anda ${ importProgressLink }."
       ],
+      "You can close the tab or browser in the meantime.": [
+        "Selagi Anda menunggu, Anda dapat menutup tab atau browser ini."
+      ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Anda dapat menyunting alamat ini satu kali untuk memastikan bahwa alamat email yang akan digunakan untuk verifikasi ini telah sesuai."
       ],
@@ -7942,6 +8137,12 @@
       ],
       "You have ${ availableCount } dedicated server available.": [
         "Anda memiliki ${ availableCount } server khusus yang tersedia."
+      ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "Anda memiliki langganan ${ planTitle } yang berada dalam masa uji coba. Apabila Anda ingin melanjutkan langganan Anda setelah masa uji coba ini berakhir, silakan tambahkan metode pembayaran."
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "Anda memiliki langganan ${ planTitle } yang berada dalam masa uji coba. Tidak ada pembayaran yang diperlukan untuk saat ini. Langganan Anda akan diperbarui secara otomatis pada akhir masa uji coba."
       ],
       "You have no calendars to export.": [
         "Anda tidak memiliki kalender untuk diekspor."
@@ -8056,6 +8257,9 @@
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Informasi Anda aman di tangan kami. Kami hanya akan menghubungi Anda ketika tindak lanjut Anda dibutuhkan untuk menghadirkan layanan kami."
+      ],
+      "Your information was found on ${ displayedDate }": [
+        "Informasi Anda ditemukan pada tanggal ${ displayedDate }"
       ],
       "Your login information will not be saved after the import is completed.": [
         "Informasi seputar akun Anda tidak akan disimpan setelah impor selesai."
@@ -8222,26 +8426,23 @@
       ]
     },
     "Key generation": {
-      "A key with the same encryption algorithm already exists. Generating another key will cause slower account loading. Are you sure you want to continue?": [
-        "Kunci dengan algoritma enkripsi yang sama sudah ada. Dengan menghasilkan kunci baru, waktu muat akun Anda akan menjadi lebih lama. Apakah Anda yakin untuk melanjutkan?"
-      ],
-      "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
-        "Kunci dengan algoritma enkripsi yang sama telah aktif untuk alamat ini. Dengan menghasilkan kunci baru, waktu muat akun Anda menjadi lebih lama dan masalah tertentu akan dapat timbul apabila kunci ini dihapus. Apabila Anda menghasilkan kunci baru karena kunci lama Anda bocor, mohon tandai kunci tersebut sebagai kunci yang bocor. Apakah Anda yakin untuk melanjutkan?"
-      ],
       "Generate key": [
         "Hasilkan kunci"
       ],
-      "Key with fingerprint ${ fp } successfully created.": [
-        "Kunci dengan kode sidik jari ${ fp } berhasil dibuat."
+      "Generating key failed. Please try again later.": [
+        "Kunci gagal dihasilkan. Silakan coba lagi nanti."
       ],
-      "The encryption keys are being generated. This may take several minutes and temporarily freeze your browser.": [
-        "Kunci enkripsi Anda sedang dihasilkan. Proses ini dapat berlangsung selama beberapa menit dan membekukan browser Anda untuk sementara waktu."
+      "If you're generating a new key because you believe your existing key has been compromised, please mark it as compromised after generating this key.": [
+        "Apabila Anda menghasilkan kunci baru karena Anda memercayai bahwa kunci Anda yang terdahulu telah bocor, silakan tandai kunci lama Anda sebagai kunci yang telah bocor setelah Anda menghasilkan kunci ini."
       ],
-      "The encryption keys for your address are being generated. This may take several minutes and temporarily freeze your browser.": [
-        "Kunci enkripsi untuk alamat Anda sedang dihasilkan. Proses ini dapat berlangsung hingga beberapa menit dan membekukan browser Anda untuk sementara waktu."
+      "Key successfully generated.": [
+        "Kunci berhasil dihasilkan."
       ],
-      "You can generate a new encryption key if you think your previous key has been compromised.": [
-        "Anda dapat membuat kunci enkripsi baru apabila Anda merasa bahwa kunci Anda sebelumnya telah bocor."
+      "This will generate a new key, which will be used to encrypt future contact details, email encryption keys, and other data.": [
+        "Tindakan ini akan menghasilkan kunci baru, yang ke depannya akan digunakan untuk mengenkripsi rincian kontak, kunci enkripsi email, dan berbagai data lainnya."
+      ],
+      "This will generate a new key, which will be used to encrypt future emails, among other data.": [
+        "Tindakan ini akan menghasilkan kunci baru, yang ke depannya akan digunakan untuk mengenkripsi email dan berbagai data lainnya."
       ]
     },
     "Key state badge": {
@@ -8265,14 +8466,6 @@
       ],
       "Primary": [
         "Utama"
-      ]
-    },
-    "Key type option": {
-      "${ compatibility } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
-        "RSA 4096-bit yang mengedepankan ${ compatibility } (Lebih lambat, namun lebih bersahabat dengan software-software yang sudah berumur)"
-      ],
-      "${ stateOfTheArt } ECC Curve25519 (Fastest, most modern)": [
-        "ECC Curve25519 yang ${ stateOfTheArt } (Cepat dan mutakhir)"
       ]
     },
     "Keyboard shortcut name": {
@@ -8587,6 +8780,12 @@
       "Allow recovery using a trusted device": [
         "Izinkan pemulihan melalui perangkat yang dipercaya"
       ],
+      "Allowed domain": [
+        "Domain yang diizinkan"
+      ],
+      "Allowed Domain": [
+        "Domain yang Diizinkan"
+      ],
       "Amount": [
         "Jumlah"
       ],
@@ -8610,6 +8809,9 @@
       ],
       "Apply filter to existing emails": [
         "Terapkan filter untuk email yang sudah ada"
+      ],
+      "Assertion Consumer Service URL": [
+        "URL Assertion Consumer Service"
       ],
       "Attach public key": [
         "Lampirkan kunci publik"
@@ -8860,6 +9062,9 @@
       "Duration": [
         "Durasi"
       ],
+      "e.g. example.com": [
+        "mis. contoh.com"
+      ],
       "Email": [
         "Email"
       ],
@@ -8977,6 +9182,9 @@
       "Invite via email": [
         "Undang via email"
       ],
+      "Issuer ID": [
+        "Issuer ID"
+      ],
       "Keep me signed in": [
         "Biarkan saya tetap masuk"
       ],
@@ -8985,9 +9193,6 @@
       ],
       "Key": [
         "Kunci"
-      ],
-      "Key strength": [
-        "Kekuatan kunci"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Pintasan keyboard: ${ shortcut }"
@@ -9019,6 +9224,9 @@
       "Link label": [
         "Label tautan"
       ],
+      "Logo": [
+        "Logo"
+      ],
       "Mail Server (IMAP)": [
         "Server Mail (IMAP)"
       ],
@@ -9039,6 +9247,15 @@
       ],
       "Messages per page": [
         "Pesan per halaman"
+      ],
+      "Metadata file for ${ appName }": [
+        "Berkas metadata untuk ${ appName }"
+      ],
+      "Metadata URL for ${ appName }": [
+        "URL metadata untuk ${ appName }"
+      ],
+      "Method for importing metadata": [
+        "Metode pengimporan metadata"
       ],
       "Moderate NAT": [
         "NAT Moderat"
@@ -9193,6 +9410,9 @@
       "Protection mode": [
         "Mode perlindungan"
       ],
+      "Public certificate (X.509)": [
+        "Sertifikat publik (X.509)"
+      ],
       "Read": [
         "Telah dibaca"
       ],
@@ -9210,6 +9430,9 @@
       ],
       "Repeat password": [
         "Ulangi kata sandi"
+      ],
+      "Reply (ACS) URL": [
+        "URL balasan (ACS)"
       ],
       "Require 2FA for administrators": [
         "Wajibkan penggunaan 2FA bagi administrator"
@@ -9255,6 +9478,12 @@
       ],
       "Signature": [
         "Tanda tangan"
+      ],
+      "Single sign-on entity ID": [
+        "ID entitas single sign-on"
+      ],
+      "Single sign-on URL": [
+        "URL single sign-on"
       ],
       "SMTP port": [
         "Port SMTP"
@@ -9319,6 +9548,9 @@
       "Two-password mode": [
         "Mode kata sandi ganda"
       ],
+      "Type": [
+        "Jenis"
+      ],
       "Undo send": [
         "Tenggat waktu pengurungan kiriman"
       ],
@@ -9342,6 +9574,9 @@
       ],
       "Username": [
         "Nama pengguna"
+      ],
+      "Value": [
+        "Nilai"
       ],
       "VAT": [
         "PPN"
@@ -9671,6 +9906,9 @@
       ],
       "Sign in": [
         "Masuk"
+      ],
+      "stay safer online": [
+        "beraktivitas online secara lebih aman"
       ],
       "switch account": [
         "ganti akun"
@@ -10625,17 +10863,6 @@
         "Manajemen tim"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Apabila tidak, akses menuju akun Anda akan dibatasi dan akun Anda akan dinonaktifkan ke depannya."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Untuk lanjut menggunakan ${ trialPlanName } dengan berbagai fitur premium, pilih jenis langganan dan metode pembayaran yang Anda kehendaki."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Masa uji coba Anda akan berakhir pada ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } akan berakhir dalam ${ last4 }"
@@ -10735,6 +10962,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Anda sedang berlangganan ke paket Anda saat ini dengan harga diskon. Dengan menurunkan jenis akun Anda, Anda tidak akan lagi dapat membeli langganan dengan harga diskon ke depannya."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Apabila tidak, akses menuju akun Anda akan dibatasi dan akun Anda akan dinonaktifkan ke depannya."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Untuk lanjut menggunakan ${ trialPlanName } dengan berbagai fitur premium, pilih jenis langganan dan metode pembayaran yang Anda kehendaki."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Masa uji coba Anda akan berakhir pada ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -11484,6 +11722,40 @@
         "Paket Anda meliputi ruang penyimpanan tambahan hingga ${ humanReadableAvailableSpace }."
       ]
     },
+    "Organization logo upload": {
+      "Avoid overly compressed images.": [
+        "Hindari gambar yang terlalu terkompres."
+      ],
+      "Ensure your icon has padding space around it.": [
+        "Pastikan ikon Anda memiliki ruang kosong di sekitarnya."
+      ],
+      "Opt for a PNG image that is a 128x128 pixels for clarity.": [
+        "Gunakan gambar PNG yang berukuran 128x128 pixel agar ikon Anda dapat terlihat dengan jelas."
+      ],
+      "Tips on choosing a good icon": [
+        "Tips untuk memilih ikon yang baik"
+      ],
+      "Use a graphical icon or image rather than text.": [
+        "Gunakan ikon atau gambar yang mengandung elemen grafis alih-alih gambar yang berisi teks."
+      ]
+    },
+    "Organization logo upload modal": {
+      "Drop image file here to upload or": [
+        "Letakkan berkas yang hendak Anda unggah di sini atau"
+      ],
+      "File in PNG or JPEG format": [
+        "Berkas dengan format PNG atau JPEG"
+      ],
+      "File not larger than 30 KB": [
+        "Berkas yang tidak lebih besar dari 30 KB"
+      ],
+      "Square image of at least 128 pixels": [
+        "Gambar berbentuk persegi yang berukuran setidaknya 128 pixel"
+      ],
+      "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
+        "Para pengguna Anda akan melihat logo ini alih-alih ikon ${ BRAND_NAME } pada saat mereka terhubung masuk ke aplikasi web kami."
+      ]
+    },
     "OS compatibility": {
       ".deb (for Debian/Ubuntu)": [
         ".deb (untuk Debian/Ubuntu)"
@@ -12053,6 +12325,15 @@
       "domain.com": [
         "domain.co.id"
       ],
+      "e.g. https://example.com/app/protonvpn/XXXXX/sso/metadata": [
+        "mis. https://contoh.com/app/protonvpn/XXXXX/sso/metadata"
+      ],
+      "e.g. https://idp.example.com/sso/saml": [
+        "mis. https://idp.contoh.com/sso/saml"
+      ],
+      "e.g. https://idp.example.com/XXXXX": [
+        "mis. https://idp.contoh.com/XXXXX"
+      ],
       "E.g., ": [
         "Misalnya "
       ],
@@ -12276,14 +12557,6 @@
         "Dengan memverifikasi nomor telepon, Anda akan meningkatkan keamanan akun serta menambah metode pemulihan bagi akun Anda."
       ]
     },
-    "Remark about a key type option": {
-      "Compatibility": [
-        "Kompatibilitas"
-      ],
-      "State of the art": [
-        "Canggih"
-      ]
-    },
     "Remove calendar section description": {
       "By unsubscribing, you will no longer have access to this calendar. All events in this calendar will be deleted from your account, but they'll remain in the original public link.": [
         "Dengan berhenti berlangganan, Anda tidak akan lagi memiliki akses ke kalender ini. Seluruh acara pada kalender ini akan dihapus dari akun Anda, namun masih akan tersedia pada tautan publik yang asli."
@@ -12314,6 +12587,11 @@
         "Berhenti berlangganan?"
       ]
     },
+    "Remove organization logo": {
+      "Users will no longer see your custom logo or organization name.": [
+        "Para pengguna Anda tidak lagi akan melihat logo atau nama organisasi khusus yang Anda tetapkan."
+      ]
+    },
     "Restore administrator panel": {
       "${ n } administrator in your organization need access to the organization key.": [
         "${ n } administrator pada organisasi Anda memerlukan akses ke kunci organisasi."
@@ -12340,6 +12618,91 @@
       ],
       "User": [
         "Pengguna"
+      ]
+    },
+    "scim: Action": {
+      "Configure SCIM": [
+        "Atur SCIM"
+      ],
+      "Disable SCIM": [
+        "Nonaktifkan SCIM"
+      ],
+      "Disable SCIM integration": [
+        "Nonaktifkan integrasi SCIM"
+      ],
+      "Generate new token": [
+        "Hasilkan token baru"
+      ],
+      "Generate token": [
+        "Hasilkan token"
+      ]
+    },
+    "scim: Info": {
+      "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
+        "**Prasyarat:** Autentikasi SAML harus terlebih dahulu diatur untuk mengaktifkan penyediaan SCIM."
+      ],
+      "Enter token into your identity provider": [
+        "Masukkan token ke penyedia identitas Anda"
+      ],
+      "Enter URL and token into your identity provider": [
+        "Masukkan URL dan token ke penyedia identitas Anda"
+      ],
+      "For security reasons, the token is hidden": [
+        "Demi alasan keamanan, token ini disembunyikan"
+      ],
+      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ VPN_APP_NAME }.": [
+        "Tuju penyedia identitas Anda, lalu salin dan tempel data di bawah ini serta selesaikan pengaturan SCIM untuk ${ VPN_APP_NAME }."
+      ],
+      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ VPN_APP_NAME }.": [
+        "Tuju penyedia identitas Anda, lalu salin dan tempel data di bawah ini serta aktifkan kembali SCIM untuk ${ VPN_APP_NAME }."
+      ],
+      "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
+        "Apabila Anda kehilangan atau tidak lagi ingat token SCIM ini, Anda dapat menghasilkan token baru, namun dalam prosesnya Anda akan perlu untuk memperbarui pengaturan penyedia identitas Anda."
+      ],
+      "Make sure you copy the above SCIM token now.": [
+        "Pastikan Anda menyalin token SCIM di atas sekarang."
+      ],
+      "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
+        "Setelah SCIM dinonaktifkan bagi organisasi Anda, **seluruh pengguna SCIM yang ditentukan secara otomatis oleh penyedia identitas Anda akan dialihkan menjadi pengguna SSO**, di mana Anda akan dapat mengelola para pengguna ini secara langsung dari dalam menu pengaturan ${ BRAND_NAME }."
+      ],
+      "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
+        "Penyediaan SCIM otomatis akan dinonaktifkan hingga Anda memasukkan token SCIM yang baru ke pengaturan penyedia identitas Anda."
+      ],
+      "The SCIM base URL and token will be deleted.": [
+        "URL dasar dan token SCIM akan dihapus."
+      ],
+      "To re-enable syncing with your identity provider, your need to complete the SCIM integration again.": [
+        "Untuk mengaktifkan kembali penyinkronan dengan penyedia idenitas yang Anda gunakan, Anda perlu untuk menyelesaikan ulang proses integrasi SCIM."
+      ]
+    },
+    "scim: Label": {
+      "SCIM base URL": [
+        "URL dasar SCIM"
+      ],
+      "SCIM base URL (or tenant URL)": [
+        "URL dasar SCIM (atau URL tenan)"
+      ],
+      "SCIM token": [
+        "Token SCIM"
+      ]
+    },
+    "scim: Title": {
+      "Disable SCIM integration?": [
+        "Nonaktifkan integrasi SCIM?"
+      ],
+      "Generate new SCIM token?": [
+        "Hasilkan token SCIM baru?"
+      ],
+      "SCIM automatic provisioning": [
+        "Penyediaan SCIM otomatis"
+      ]
+    },
+    "scim: Tooltip": {
+      "API key of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
+        "Kunci API konektor SCIM yang digunakan oleh Agen Penyedia IdP Anda untuk meneruskan data SCIM"
+      ],
+      "URL of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
+        "URL konektor SCIM yang digunakan oleh Agen Penyedia IdP Anda untuk meneruskan data SCIM"
       ]
     },
     "Security Center - Info": {
@@ -13982,6 +14345,9 @@
       "Currency": [
         "Mata uang"
       ],
+      "Custom branding": [
+        "Branding khusus"
+      ],
       "Custom filters": [
         "Filter khusus"
       ],
@@ -14048,6 +14414,9 @@
       "Delete logs": [
         "Hapus log"
       ],
+      "Delete organization logo?": [
+        "Hapus logo organisasi?"
+      ],
       "Delete the server (you will still be able to recover it for ${ days } day)": [
         "Hapus server (Anda masih akan dapat memulihkan server ini dalam ${ days } hari ke depan)"
       ],
@@ -14056,6 +14425,9 @@
       ],
       "Delete version history?": [
         "Hapus riwayat versi?"
+      ],
+      "Details": [
+        "Rincian"
       ],
       "Disable ${ email }": [
         "Nonaktifkan ${ email }"
@@ -14146,6 +14518,12 @@
       ],
       "Encryption and keys": [
         "Enkripsi dan kunci"
+      ],
+      "Enter endpoints into your identity provider": [
+        "Masukkan endpoint ke penyedia identitas Anda"
+      ],
+      "Enter SAML metadata": [
+        "Masukkan metadata SAML"
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Masukkan rincian Akun ${ BRAND_NAME } Anda untuk bergabung ke program Beta ${ app }"
@@ -14239,6 +14617,9 @@
       ],
       "How does it work?": [
         "Bagaimana caranya ini bekerja?"
+      ],
+      "How to choose a good icon": [
+        "Cara memilih ikon yang baik"
       ],
       "How to refer a friend and get credits": [
         "Cara untuk merujuk teman dan memperoleh saldo tambahan"
@@ -14357,6 +14738,9 @@
       "OpenVPN configuration files": [
         "Berkas konfigurasi OpenVPN"
       ],
+      "Organization appearance": [
+        "Tampilan organisasi"
+      ],
       "Organization filters": [
         "Filter organisasi"
       ],
@@ -14377,6 +14761,9 @@
       ],
       "Password reset settings": [
         "Opsi pengaturan ulang kata sandi"
+      ],
+      "Passwords made easy": [
+        "Kata sandi menjadi mudah"
       ],
       "Pay invoice": [
         "Bayar faktur"
@@ -14435,6 +14822,15 @@
       "Remove calendar": [
         "Hapus kalender"
       ],
+      "Remove domain": [
+        "Hapus domain"
+      ],
+      "Remove single sign-on": [
+        "Hapus single sign-on"
+      ],
+      "Remove single sign-on for your organization?": [
+        "Hapus single sign-on pada organisasi Anda?"
+      ],
       "Remove user?": [
         "Keluarkan pengguna?"
       ],
@@ -14464,6 +14860,9 @@
       ],
       "Revoke certificate": [
         "Cabut sertifikat"
+      ],
+      "SAML authentication": [
+        "Autentikasi SAML"
       ],
       "Save time with email filters": [
         "Hemat waktu dengan saringan email"
@@ -14555,6 +14954,9 @@
       "Signed in to member account": [
         "Terdaftar masuk dengan akun anggota"
       ],
+      "Single sign-on": [
+        "Single sign-on"
+      ],
       "SMTP submission": [
         "Submisi SMTP"
       ],
@@ -14635,6 +15037,9 @@
       ],
       "Upload CSV file to create multiple accounts": [
         "Unggah berkas CSV untuk membuat lebih dari satu akun"
+      ],
+      "Upload your organization’s logo": [
+        "Unggah logo organisasi Anda"
       ],
       "Users": [
         "Pengguna"
@@ -14843,6 +15248,12 @@
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Sesuaikan tema aplikasi dengan mode terang dan gelap pada sistem Anda secara otomatis"
       ],
+      "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
+        "Salin dan tempel URL ini ke kolom URL ACS (Assertion Consumer Service) milik penyedia identitas Anda"
+      ],
+      "Copy and paste this URL into the entity ID field of your identity provider": [
+        "Salin dan tempel URL ini ke kolom ID entitas milik penyedia identitas Anda"
+      ],
       "Customize import to reduce the number of folders": [
         "Sesuaikan impor untuk mengurangi jumlah folder"
       ],
@@ -14870,6 +15281,9 @@
       "Enabling advanced logs records the IP address for each event in the security log.": [
         "Log lanjutan akan merekam alamat IP untuk setiap peristiwa yang tercatat pada log keamanan."
       ],
+      "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
+        "URL endpoint dari penyedia identitas (mis. https://idp.contoh.com/sso/saml)"
+      ],
       "Feature in early access": [
         "Fitur dalam masa akses dini"
       ],
@@ -14878,6 +15292,9 @@
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Tentukan apakah email yang terhubung dalam suatu rantai percakapan akan saling dikelompokkan satu sama lain atau ditampilkan secara terpisah."
+      ],
+      "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
+        "Kunci publik milik penyedia identitas yang digunakan untuk menandatangani pernyataan autentikasi. Dapatkan hash sertifikat ini dari penyedia identitas Anda."
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Apabila Anda telah membeli kode hadiah atau telah menerima kode hadiah dari tim layanan dukungan kami, silakan masukkan kode tersebut di sini."
@@ -14908,6 +15325,9 @@
       ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
         "Tanda tangan yang dihasilkan melalui kunci ini dianggap tidak valid dan kunci ini tidak dapat digunakan untuk mengenkripsi"
+      ],
+      "Specify the domain which is allowed to authenticate with SAML SSO": [
+        "Tentukan domain yang diizinkan untuk mengautentikasi dengan SSO SAML"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Sub-folder milik sistem akan muncul sebagai folder terpisah di ${ MAIL_APP_NAME }"
@@ -14956,6 +15376,12 @@
       ],
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
         "Gunakan scrollbar bawaan milik browser Anda. Scrollbar ini pada umumnya lebih besar dan lebih mudah untuk digunakan"
+      ],
+      "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
+        "Para pengguna Anda akan melihat logo ini alih-alih ikon ${ BRAND_NAME } pada saat mereka terhubung masuk ke aplikasi web kami."
+      ],
+      "Usually an URL that contains the identity provider's name within": [
+        "Pada umumnya, URL yang mengandung nama penyedia identitas di dalamnya"
       ],
       "Verified email address": [
         "Alamat email terverifikasi"

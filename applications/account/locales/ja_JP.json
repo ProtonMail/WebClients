@@ -161,6 +161,9 @@
       "Cancel subscription": [
         "サブスクリプションをキャンセル"
       ],
+      "Change": [
+        "変更"
+      ],
       "Change keys": [
         "鍵を変更"
       ],
@@ -202,6 +205,9 @@
       ],
       "Color": [
         "色"
+      ],
+      "Configure SAML": [
+        "SAMLを設定"
       ],
       "Confirm": [
         "確認"
@@ -713,8 +719,14 @@
       "Remove calendar": [
         "カレンダーを削除する"
       ],
+      "Remove domain": [
+        "ドメインを削除"
+      ],
       "Remove gift code": [
         "ギフトコードを削除"
+      ],
+      "Remove single sign-on": [
+        "シングルサインオンを削除"
       ],
       "Remove this label": [
         "このラベルを削除"
@@ -797,6 +809,9 @@
       "Save ICS file": [
         "ICSファイルを保存する"
       ],
+      "Save SAML configuration": [
+        "SAML設定を保存"
+      ],
       "Search": [
         "検索"
       ],
@@ -805,6 +820,9 @@
       ],
       "Search settings": [
         "設定の検索"
+      ],
+      "See DNS TXT record": [
+        "DNS TXT レコードを確認"
       ],
       "See how": [
         "方法の確認"
@@ -823,6 +841,9 @@
       ],
       "Select country": [
         "国を選択"
+      ],
+      "Select file": [
+        "ファイルを選択"
       ],
       "Select files": [
         "ファイルの選択"
@@ -1052,6 +1073,9 @@
       "Void all recovery files?": [
         "すべての回復用ファイルを無効にしますか？"
       ],
+      "Welcome": [
+        "ようこそ"
+      ],
       "What do I get?": [
         "何が入手できますか？"
       ],
@@ -1235,6 +1259,23 @@
       ],
       "New email": [
         "新しいメール"
+      ]
+    },
+    "app-switcher": {
+      "Browse the web privately and block ads": [
+        "広告をブロックしプライベートにウェブを閲覧します"
+      ],
+      "Keep your schedule private": [
+        "予定をプライベートに保ちます"
+      ],
+      "Protect your passwords and identity": [
+        "パスワードや認証情報を保護します"
+      ],
+      "Safeguard your files and photos": [
+        "ファイルや写真を保護します"
+      ],
+      "Secure your communications": [
+        "コミュニケーションを保護します"
       ]
     },
     "Apps dropdown": {
@@ -5234,6 +5275,9 @@
       ]
     },
     "Hint": {
+      "Add this record to your domain in the control panel of your domain name registrar": [
+        "ドメイン名登録事業者のコントロールパネルで、ドメインにこの記録を追加します。"
+      ],
       "Found ${ items.length } suggestion, use keyboard to navigate.": [
         "${ items.length } つの提案が見つかりました。キーボードを使って操作します。"
       ],
@@ -5795,6 +5839,9 @@
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
         "アカウントに追加のセキュリティ層を追加します。サインインするたびに 2FA 検証を行う必要があります。"
       ],
+      "Add domain": [
+        "ドメインを追加"
+      ],
       "Add image URL": [
         "追加する画像のURL"
       ],
@@ -6020,6 +6067,9 @@
       "Check the status of imports and forwarding.": [
         "インポートと転送のステータスを確認します。"
       ],
+      "Choose an app to get started": [
+        "開くアプリを選択してください"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "「新しいコードをリクエスト」をクリックすると新しい認証コードが ${ strong } に送信されます。電話番号が違う場合、「編集」をクリックして修正します。"
       ],
@@ -6031,6 +6081,9 @@
       ],
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "続行すると、${ BRAND_NAME } アカウントが ${ name } に接続されます。"
+      ],
+      "Copied to clipboard": [
+        "クリップボードにコピーされました"
       ],
       "Copy the link to clipboard": [
         "リンクをコピー"
@@ -6134,11 +6187,23 @@
       "DMARC checks if the sender's SPF and DKIM records originate from your domain. This can prevent attackers from using another domain's SPF and DKIM to impersonate your domain. The \"p=\" (policy) in this record indicates how you want the recipient platforms to handle unauthorized emails. We recommend using the \"p=quarantine\" policy for most domains. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "DMARC は、送信者の SPF レコードと DKIM レコードがドメインからのものであるかどうかを確認します。 これにより、攻撃者が別のドメインの SPF および DKIM を使用してドメインになりすますのを防ぐことができます。 このレコードの「p=」(ポリシー)は、受信者プラットフォームが不正な電子メールをどのように処理するかを示します。 ほとんどのドメインでは「p=quarantine」ポリシーを使用することをお勧めします。 DNS コンソール (カスタム ドメインを購入したプラットフォームにあります) に次の TXT レコードを必ず追加してください。"
       ],
+      "DNS TXT record": [
+        "DNS TXT レコード"
+      ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "このパスワードを紛失しないように注意してください。紛失した場合、組織を管理できなくなります。"
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "現在のセッション以外のすべてのセッションを失効させますか？"
+      ],
+      "Domain ownership failed verification.": [
+        "ドメイン所有権の検証に失敗しました。"
+      ],
+      "Domain ownership not verified.": [
+        "ドメイン所有権は未検証です。"
+      ],
+      "Domain ownership verified.": [
+        "ドメイン所有権は検証済みです。"
       ],
       "domain used": [
         "ドメインが使用済み"
@@ -6673,6 +6738,9 @@
       ],
       "Optional": [
         "オプション"
+      ],
+      "or ${ selectFileButton }": [
+        "または ${ selectFileButton }"
       ],
       "Or select a particular server:": [
         "または特定のサーバーを選択:"
@@ -7361,6 +7429,9 @@
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "検証のために新しいタブを開きます、ポップアップブロッカーはオフにしてください。この検証作業では課金されません。カードの確認に使用した金額は直ちに返金されます。"
       ],
+      "Verify domain": [
+        "ドメインを検証"
+      ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "認証アプリのタイムベースドワンタイムパスワードで認証します"
       ],
@@ -7847,26 +7918,8 @@
       ]
     },
     "Key generation": {
-      "A key with the same encryption algorithm already exists. Generating another key will cause slower account loading. Are you sure you want to continue?": [
-        "既に同じ暗号化アルゴリズムのキーが存在します。ほかのキーを生成するとアカウントの読み込みが遅くなる原因になります。続行してよろしいですか?"
-      ],
-      "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
-        "同じ暗号化アルゴリズムを持つ鍵が、このアドレスに対してすでにアクティブです。別の鍵を生成すると、アカウントの読み込みが遅くなり、この鍵を削除すると問題が発生する可能性があります。古い鍵が侵害されために新しい鍵を生成している場合は、侵害された鍵をマークしてください。続行しますか?"
-      ],
       "Generate key": [
         "キーの生成"
-      ],
-      "Key with fingerprint ${ fp } successfully created.": [
-        "フィンガープリント ${ fp } の鍵が正常に作成されました。"
-      ],
-      "The encryption keys are being generated. This may take several minutes and temporarily freeze your browser.": [
-        "暗号鍵を生成しています。これには数分かかり、ブラウザが一時的にフリーズする場合があります。"
-      ],
-      "The encryption keys for your address are being generated. This may take several minutes and temporarily freeze your browser.": [
-        "アドレスの暗号鍵を生成しています。これには数分かかり、ブラウザが一時的にフリーズする場合があります。"
-      ],
-      "You can generate a new encryption key if you think your previous key has been compromised.": [
-        "現在の鍵が侵害されたと思われる場合は、新しい暗号鍵を生成できます。"
       ]
     },
     "Key state badge": {
@@ -7890,14 +7943,6 @@
       ],
       "Primary": [
         "プライマリー"
-      ]
-    },
-    "Key type option": {
-      "${ compatibility } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
-        "${ compatibility } RSA 4096 ビット (低速、古いソフトウェアとの互換性を維持)"
-      ],
-      "${ stateOfTheArt } ECC Curve25519 (Fastest, most modern)": [
-        "${ stateOfTheArt } ECC Curve25519 (最速かつ現代的)"
       ]
     },
     "Keyboard shortcut name": {
@@ -8479,6 +8524,9 @@
       "Duration": [
         "期間"
       ],
+      "e.g. example.com": [
+        "例: example.com"
+      ],
       "Email": [
         "メールアドレス"
       ],
@@ -8596,6 +8644,9 @@
       "Invite via email": [
         "メール経由で招待"
       ],
+      "Issuer ID": [
+        "発行者ID"
+      ],
       "Keep me signed in": [
         "サインインしたままにする"
       ],
@@ -8604,9 +8655,6 @@
       ],
       "Key": [
         "鍵"
-      ],
-      "Key strength": [
-        "鍵の強度"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "キーボードショートカット: ${ shortcut }"
@@ -8872,6 +8920,9 @@
       "Signature": [
         "署名"
       ],
+      "Single sign-on URL": [
+        "シングルサインオン URL"
+      ],
       "SMTP port": [
         "SMTP ポート"
       ],
@@ -8935,6 +8986,9 @@
       "Two-password mode": [
         "2 パスワードモード"
       ],
+      "Type": [
+        "種類"
+      ],
       "Undo send": [
         "送信取り消し"
       ],
@@ -8958,6 +9012,9 @@
       ],
       "Username": [
         "ユーザー名"
+      ],
+      "Value": [
+        "値"
       ],
       "VAT": [
         "付加価値税"
@@ -10140,6 +10197,9 @@
       ],
       "User session management": [
         "ユーザーセッション管理"
+      ],
+      "Vault sharing (up to ${ n } person)": [
+        "保管庫の共有 (最大 ${ n } 人)"
       ]
     },
     "new_plans: feature info": {
@@ -10165,17 +10225,6 @@
       ],
       "Team management": [
         "チームマネジメント"
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "そうでない場合は、アカウントへのアクセスが制限され、最終的にはアカウントが無効化されます。"
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "プレミアム機能の ${ trialPlanName } を使い続けるには、サブスクリプションと支払方法を選択してください。"
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "トライアルは ${ formattedPeriodEndDate } に終了します"
       ]
     },
     "new_plans: info": {
@@ -10274,6 +10323,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "現在ご契約中のプランでは、キャンペーン価格をご利用いただけます。アカウントをダウングレードすると、キャンペーン価格が適用されなくなります。"
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "そうでない場合は、アカウントへのアクセスが制限され、最終的にはアカウントが無効化されます。"
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "プレミアム機能の ${ trialPlanName } を使い続けるには、サブスクリプションと支払方法を選択してください。"
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "トライアルは ${ formattedPeriodEndDate } に終了します"
       ]
     },
     "new_plans: Label": {
@@ -11540,6 +11600,15 @@
       "domain.com": [
         "domain.com"
       ],
+      "e.g. https://example.com/app/protonvpn/XXXXX/sso/metadata": [
+        "例:https://example.com/app/protonvpn/XXXXX/sso/metadata"
+      ],
+      "e.g. https://idp.example.com/sso/saml": [
+        "例:https://idp.example.com/sso/saml"
+      ],
+      "e.g. https://idp.example.com/XXXXX": [
+        "例:https://idp.example.com/XXXXX"
+      ],
       "E.g., ": [
         "例: "
       ],
@@ -11758,14 +11827,6 @@
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "電話番号を確認することでアカウントのセキュリティを向上させ、回復の追加設定のために利用できます。"
-      ]
-    },
-    "Remark about a key type option": {
-      "Compatibility": [
-        "互換性"
-      ],
-      "State of the art": [
-        "最新の暗号形式"
       ]
     },
     "Remove calendar section description": {
@@ -13818,6 +13879,9 @@
       "Remove calendar": [
         "カレンダーを削除する"
       ],
+      "Remove single sign-on": [
+        "シングルサインオンを削除"
+      ],
       "Remove user?": [
         "ユーザーを削除しますか？"
       ],
@@ -13934,6 +13998,9 @@
       ],
       "Signed in to member account": [
         "メンバーアカウントでサインイン"
+      ],
+      "Single sign-on": [
+        "シングルサインオン"
       ],
       "SMTP submission": [
         "SMTP 送信"
@@ -14208,6 +14275,12 @@
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "システムの昼夜モードと同期して、昼と夜のお好みのテーマを自動的に切り替える"
       ],
+      "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
+        "この URL をコピーして、ACS（Assertion Consumer Service）の URL フィールドに貼り付けてください。"
+      ],
+      "Copy and paste this URL into the entity ID field of your identity provider": [
+        "このURLをコピーして、ユーザー情報ロバイダーのエンティティIDフィールドに貼り付ける。"
+      ],
       "Customize import to reduce the number of folders": [
         "フォルダー数を減らすためにインポートをカスタマイズします"
       ],
@@ -14235,6 +14308,9 @@
       "Enabling advanced logs records the IP address for each event in the security log.": [
         "詳細ログを有効にすると、セキュリティログの各イベントの IP アドレスが記録されます。"
       ],
+      "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
+        "ユーザー情報プロバイダーからのエンドポイントURL（例：https://idp.example.com/sso/saml）"
+      ],
       "Feature in early access": [
         "早期アクセスの機能"
       ],
@@ -14243,6 +14319,9 @@
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "同じ会話内のメールを受信トレイにグループ化するか、個別に表示します。"
+      ],
+      "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
+        "認証アサーションに署名するための、ユーザー情報プロバイダの公開鍵。ユーザー情報プロバイダから証明書ハッシュを取得する。"
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "ギフトコードを購入もしくはサポートチームから受け取った場合、こちらに入力してください。"
@@ -14273,6 +14352,9 @@
       ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
         "この鍵でされた署名を無効なものとして扱い、暗号化にも使用できなくします"
+      ],
+      "Specify the domain which is allowed to authenticate with SAML SSO": [
+        "SAML SSO での認証を許可するドメインを指定する。"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "システムのサブフォルダーは ${ MAIL_APP_NAME } のそれそれのフォルダーとして表示されます"
@@ -14321,6 +14403,9 @@
       ],
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
         "ブラウザのデフォルトのスクロールバーを使用します。これは通常、大きくて使いやすいです。"
+      ],
+      "Usually an URL that contains the identity provider's name within": [
+        "通常、ユーザー情報プロバイダの名前を含む URL。"
       ],
       "Verified email address": [
         "検証済みのメールアドレス"
