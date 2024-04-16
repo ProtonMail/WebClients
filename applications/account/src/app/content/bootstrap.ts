@@ -1,4 +1,11 @@
-import { initEvent, serverEvent, userSettingsThunk, userThunk, welcomeFlagsActions } from '@proton/account';
+import {
+    initEvent,
+    serverEvent,
+    startLogoutListener,
+    userSettingsThunk,
+    userThunk,
+    welcomeFlagsActions,
+} from '@proton/account';
 import * as bootstrap from '@proton/account/bootstrap';
 import { getDecryptedPersistedState } from '@proton/account/persist/helper';
 import { createCalendarModelEventManager, holidaysDirectoryThunk } from '@proton/calendar';
@@ -36,6 +43,8 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
     if (isElectronMail) {
         listenFreeTrialSessionExpiration(api);
     }
+
+    startLogoutListener();
 
     const run = async () => {
         const appContainerPromise = getAppContainer();
