@@ -59,6 +59,9 @@
       "Cancel subscription": [
         "Cancel·la la subscripció"
       ],
+      "Change": [
+        "Canvia"
+      ],
       "Change keys": [
         "Canvia les claus"
       ],
@@ -133,6 +136,9 @@
       ],
       "Delete": [
         "Elimina"
+      ],
+      "Delete address": [
+        "Eliminar l'adreça"
       ],
       "Delete Gateway": [
         "Elimina la passarel·la"
@@ -596,6 +602,9 @@
       ]
     },
     "Address action": {
+      "Delete address": [
+        "Eliminar l'adreça"
+      ],
       "Disable": [
         "Desactiva"
       ],
@@ -1826,6 +1835,22 @@
         "/usuari per mes"
       ]
     },
+    "Delete address prompt": {
+      "The next active address on your list will be set as the default.": [
+        "La següent adreça activa de la llista s'establirà com adreça per defecte."
+      ],
+      "You can only delete 1 address per year.": [
+        "Només pot eliminar una adreça per any."
+      ]
+    },
+    "Delete address tooltip": {
+      "You can only delete 1 address per year": [
+        "Només pot eliminar una adreça per any"
+      ],
+      "You've reached the limit of address deletions for this user.": [
+        "Ha assolit el límit de supressió d'adreces per a aquest usuari."
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Factura vençuda"
@@ -1907,6 +1932,9 @@
     "Error": {
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. També podeu comprovar la nostra ${ statusPageLink }"
+      ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } és el seu nom d'usuari. Per crear ${ emailAddress }, vagi a Configuració > Missatges i redacció > Domini curt (pm.me)"
       ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "S'ha assignat tot l'espai d'emmagatzematge. Reduïu l'emmagatzematge assignat a altres usuaris."
@@ -2864,6 +2892,9 @@
       ],
       "Be sure to copy your password and store it somewhere safe.": [
         "Assegureu-vos de copiar la vostra contrasenya i emmagatzemar-la en un lloc segur."
+      ],
+      "Before activating the user, you need to provide a password and create encryption keys for the addresses.": [
+        "Abans d'activar l'usuari, cal proporcionar una contrasenya i crear claus de xifratge per a les adreces."
       ],
       "Before creating this address you need to provide a password and create encryption keys for it.": [
         "Abans de crear aquesta adreça, hi heu de proporcionar una contrasenya i crear claus de xifratge."
@@ -3911,14 +3942,6 @@
         "Subscripció"
       ]
     },
-    "Key type option": {
-      "${ compatibility } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
-        "${ compatibility } RSA 4096-bits (Més lent, però amb major compatibilitat amb programari antic)"
-      ],
-      "${ stateOfTheArt } ECC Curve25519 (Fastest, most modern)": [
-        "${ stateOfTheArt } ECC Curve25519 (Més ràpid , més modern)"
-      ]
-    },
     "Label": {
       "${ BRAND_NAME } username": [
         "Nom d'usuari de ${ BRAND_NAME }"
@@ -4135,9 +4158,6 @@
       ],
       "Key": [
         "Clau"
-      ],
-      "Key strength": [
-        "Fortalesa de la clau"
       ],
       "Level for NetShield blocker filtering": [
         "Nivell de filtratge del bloquejador NetShield"
@@ -4514,6 +4534,27 @@
       ],
       "upgrade for more storage": [
         "milloreu per a obtenir més emmagatzematge"
+      ],
+      "Upgrade to restore full access": [
+        "Actualitzi per restaurar l'accés complet"
+      ],
+      "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
+        "El seu ${ driveStorage } està ple. Per carregar o sincronitzar fitxers, alliberi espai o ${ cta }."
+      ],
+      "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
+        "El seu ${ mailStorage } està ple. Per enviar o rebre correus electrònics, alliberi espai o ${ cta }."
+      ],
+      "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
+        "El seu compte corre el risc de ser suprimit. Per evitar la pèrdua de dades, demani al seu administrador que actualitzi. ${ cta }"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
+        "El seu emmagatzematge està ple. Per enviar o rebre correus electrònics, alliberi espai o ${ cta }."
+      ],
+      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
+        "El seu emmagatzematge està ple. Per penjar o sincronitzar fitxers, alliberi espai o ${ cta }."
+      ],
+      "Your subscription has ended. ${ cta } and to avoid data loss.": [
+        "La seva subscripció ha finalitzat. ${ cta } i per evitar la pèrdua de dades."
       ]
     },
     "mailtrial2024: Action": {
@@ -4567,7 +4608,7 @@
         "Activa l'usuari"
       ],
       "Add address": [
-        "Afegeix una adreça"
+        "Afegeixi una adreça"
       ],
       "Change password": [
         "Canvia la contrasenya"
@@ -5689,6 +5730,17 @@
         "Totes els serveis de ${ BRAND_NAME } Plus. ${ br } Una subscripció senzilla."
       ]
     },
+    "password_reset: info": {
+      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **old password**.": [
+        "**Totes les seves dades** (correus electrònics, esdeveniments, contactes, fitxers, entrades ${ PASS_APP_NAME }, etc.) **es bloquejaran** i només es podran desbloquejar amb la seva **contrasenya antiga**."
+      ],
+      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **recovery phrase** or your **old password**.": [
+        "**Totes les seves dades** (correus electrònics, esdeveniments, contactes, fitxers, entrades ${ PASS_APP_NAME }, etc.) **es bloquejaran** i només es podran desbloquejar amb la teva **frase de recuperació** o la seva ** contrasenya antiga**."
+      ],
+      "Any **two-factor authentication (2FA)** method on your account will be disabled.": [
+        "Es desactivarà qualsevol mètode d'**autenticació de dos factors (2FA)** del vostre compte."
+      ]
+    },
     "passwordless": {
       "All administrators will get access to the key.": [
         "Tots els administradors tindran accés a la clau."
@@ -5714,8 +5766,14 @@
       "Permission denied, administrator privileges have been restricted.": [
         "S'ha denegat el permís. S'han restringit els privilegis d'administrador."
       ],
+      "Please ensure they have an enabled address and invite them separately later.": [
+        "Asseguri's que tinguin una adreça habilitada i convidi'ls més tard per separat."
+      ],
       "Reset organization key": [
         "Restableix la clau de l'organització"
+      ],
+      "The following administrators could not be restored.": [
+        "No s'han pogut restaurar els administradors següents."
       ],
       "The following administrators will get access to the organization key.": [
         "Els administradors següents tindran accés a la clau de l'organització."
@@ -5764,6 +5822,9 @@
       ],
       "Invalid expiration date": [
         "La data de caducitat no és vàlida"
+      ],
+      "Invalid security code": [
+        "El codi de seguretat no és vàlid"
       ],
       "Something went wrong. Please try again later.": [
         "Alguna cosa ha anat malament. Torneu-ho a provar més tard."
@@ -5843,6 +5904,9 @@
       ],
       "Select a reason": [
         "Seleccioneu un motiu"
+      ],
+      "Select state": [
+        "Seleccioni l'estat"
       ]
     },
     "plan customizer, ips": {
@@ -5940,14 +6004,6 @@
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Verificar el vostre número de telèfon augmenta la seguretat del compte i permet opcions addicionals per a la recuperació."
-      ]
-    },
-    "Remark about a key type option": {
-      "Compatibility": [
-        "Compatibilitat"
-      ],
-      "State of the art": [
-        "Estat de l'art"
       ]
     },
     "Restore administrator panel": {
@@ -7139,6 +7195,9 @@
       "Delete account": [
         "Elimina el compte"
       ],
+      "Delete address permanently?": [
+        "Vol eliminar l'adreça permanentment?"
+      ],
       "Delete the server (you will still be able to recover it for ${ days } day)": [
         "Elimina el servidor (encara podreu recuperar-lo durant ${ days } dia)",
         "Elimina el servidor (encara podreu recuperar-lo durant ${ days } dies)"
@@ -7641,7 +7700,7 @@
         "18 mesos"
       ],
       "2-year": [
-        "2 any"
+        "2 anys"
       ],
       "3-month": [
         "3-mesos"

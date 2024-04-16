@@ -59,6 +59,9 @@
       "Cancel subscription": [
         "Batalkan langganan"
       ],
+      "Change": [
+        "Ubah"
+      ],
       "Change keys": [
         "Ubah kunci"
       ],
@@ -139,6 +142,9 @@
       ],
       "Delete Gateway": [
         "Hapus Gateway"
+      ],
+      "Delete logo": [
+        "Hapus logo"
       ],
       "Delete user": [
         "Hapus pengguna"
@@ -280,6 +286,9 @@
       ],
       "Invite user": [
         "Undang pengguna"
+      ],
+      "Keep logo": [
+        "Pertahankan logo"
       ],
       "Keep my Plus subscription": [
         "Pertahankan langganan Plus saya"
@@ -437,6 +446,9 @@
       "Select country": [
         "Pilih negara"
       ],
+      "select file": [
+        "pilih berkas"
+      ],
       "Select file": [
         "Pilih berkas"
       ],
@@ -532,6 +544,12 @@
       ],
       "Upgrade your plan": [
         "Tingkatkan paket Anda"
+      ],
+      "Upload": [
+        "Unggah"
+      ],
+      "Upload icon": [
+        "Unggah ikon"
       ],
       "Use ${ label } theme": [
         "Gunakan tema ${ label }"
@@ -967,6 +985,12 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Lanjut dengan ${ MAIL_APP_NAME }."
+      ],
+      "Continue using ${ planTitle }": [
+        "Lanjut gunakan ${ planTitle }"
+      ],
+      "Continue your subscription": [
+        "Lanjutkan langganan Anda"
       ]
     },
     "Checkout row": {
@@ -2011,6 +2035,12 @@
       "Error connecting to the Bitcoin API.": [
         "Terdapat kesalahan dalam menghubungkan ke API Bitcoin."
       ],
+      "Failed to process the logo": [
+        "Logo gagal diproses"
+      ],
+      "File too large. Your logo must be 30 KB or smaller.": [
+        "Ukuran berkas terlalu besar. Logo Anda harus berukuran 30 KB atau lebih kecil."
+      ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Apabila waktu yang tertera pada TV Anda telah habis, klik Muat Ulang pada TV Anda dan masukkan kode Anda kembali."
       ],
@@ -2022,6 +2052,9 @@
       ],
       "Impossible to rename the gateway": [
         "Nama gateway tidak dapat diubah"
+      ],
+      "Incorrect file type. Upload a file in PNG or JPEG format.": [
+        "Jenis berkas tidak tepat. Silakan unggah berkas dengan format PNG atau JPEG."
       ],
       "Incorrect login credentials. Please try again.": [
         "Kredensial masuk salah. Silakan coba lagi."
@@ -2058,6 +2091,9 @@
       ],
       "Name does not match": [
         "Nama tidak cocok"
+      ],
+      "No image selected": [
+        "Tidak ada gambar yang dipilih"
       ],
       "Not a valid number": [
         "Nomor telepon tidak valid"
@@ -2110,6 +2146,9 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Harap tingkatkan jenis akun Anda ke paket bisnis dengan lebih dari 1 pengguna untuk dapat mengelola banyak pengguna sekaligus."
       ],
+      "Please upload a square file": [
+        "Silakan unggah berkas yang berbentuk persegi"
+      ],
       "Please upload an xml file": [
         "Silakan unggah berkas xml"
       ],
@@ -2136,6 +2175,12 @@
       ],
       "The email addresses do not match": [
         "Alamat email tidak cocok"
+      ],
+      "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
+        "Berkas ini terlalu besar. Ukuran maksimum berkas yang diperkenankan adalah ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }"
+      ],
+      "The file is too small, the minimum size is ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }": [
+        "Berkas ini terlalu kecil. Ukuran minimum berkas yang diperkenankan adalah ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }"
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Jumlah saldo minimal yang dapat ditambahkan adalah ${ price }"
@@ -3483,6 +3528,9 @@
       "Plus or Visionary subscription required": [
         "Dibutuhkan langganan Plus atau Visionary"
       ],
+      "Preview": [
+        "Pratinjau"
+      ],
       "Preview failed to be loaded": [
         "Pratinjau gagal dimuat"
       ],
@@ -3650,6 +3698,9 @@
       ],
       "The format of your CSV file is incorrect.": [
         "Format berkas CSV Anda tidak sesuai."
+      ],
+      "The name and icon will be visible to your users while they are signed in.": [
+        "Nama dan ikon ini akan terlihat oleh para pengguna Anda ketika mereka terhubung masuk."
       ],
       "The name will be visible to your users while they are signed in.": [
         "Nama ini akan terlihat oleh para pengguna yang berada di bawah Anda ketika mereka masuk."
@@ -3981,6 +4032,12 @@
       "You have ${ availableCount } dedicated server available.": [
         "Anda memiliki ${ availableCount } server khusus yang tersedia."
       ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "Anda memiliki langganan ${ planTitle } yang berada dalam masa uji coba. Apabila Anda ingin melanjutkan langganan Anda setelah masa uji coba ini berakhir, silakan tambahkan metode pembayaran."
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "Anda memiliki langganan ${ planTitle } yang berada dalam masa uji coba. Tidak ada pembayaran yang diperlukan untuk saat ini. Langganan Anda akan diperbarui secara otomatis pada akhir masa uji coba."
+      ],
       "You have no invoices.": [
         "Anda tidak memiliki faktur apa pun."
       ],
@@ -4155,14 +4212,6 @@
       ],
       "Subscription": [
         "Langganan"
-      ]
-    },
-    "Key type option": {
-      "${ compatibility } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
-        "RSA 4096-bit yang mengedepankan ${ compatibility } (Lebih lambat, namun lebih bersahabat dengan software-software yang sudah berumur)"
-      ],
-      "${ stateOfTheArt } ECC Curve25519 (Fastest, most modern)": [
-        "ECC Curve25519 yang ${ stateOfTheArt } (Cepat dan mutakhir)"
       ]
     },
     "Label": {
@@ -4382,11 +4431,11 @@
       "Key": [
         "Kunci"
       ],
-      "Key strength": [
-        "Kekuatan kunci"
-      ],
       "Level for NetShield blocker filtering": [
         "Level pemfilteran pemblokir NetShield"
+      ],
+      "Logo": [
+        "Logo"
       ],
       "Mailbox password": [
         "Kata sandi kotak surat"
@@ -5873,6 +5922,40 @@
         "Paket Anda meliputi ruang penyimpanan tambahan hingga ${ humanReadableAvailableSpace }."
       ]
     },
+    "Organization logo upload": {
+      "Avoid overly compressed images.": [
+        "Hindari gambar yang terlalu terkompres."
+      ],
+      "Ensure your icon has padding space around it.": [
+        "Pastikan ikon Anda memiliki ruang kosong di sekitarnya."
+      ],
+      "Opt for a PNG image that is a 128x128 pixels for clarity.": [
+        "Gunakan gambar PNG yang berukuran 128x128 pixel agar ikon Anda dapat terlihat dengan jelas."
+      ],
+      "Tips on choosing a good icon": [
+        "Tips untuk memilih ikon yang baik"
+      ],
+      "Use a graphical icon or image rather than text.": [
+        "Gunakan ikon atau gambar yang mengandung elemen grafis alih-alih gambar yang berisi teks."
+      ]
+    },
+    "Organization logo upload modal": {
+      "Drop image file here to upload or": [
+        "Letakkan berkas yang hendak Anda unggah di sini atau"
+      ],
+      "File in PNG or JPEG format": [
+        "Berkas dengan format PNG atau JPEG"
+      ],
+      "File not larger than 30 KB": [
+        "Berkas yang tidak lebih besar dari 30 KB"
+      ],
+      "Square image of at least 128 pixels": [
+        "Gambar berbentuk persegi yang berukuran setidaknya 128 pixel"
+      ],
+      "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
+        "Para pengguna Anda akan melihat logo ini alih-alih ikon ${ BRAND_NAME } pada saat mereka terhubung masuk ke aplikasi web kami."
+      ]
+    },
     "Pass B2B onboarding spotlight": {
       "Go to your vault to manage your passwords, aliases, and more.": [
         "Tuju brankas Anda untuk mengelola kata sandi, alias, dan berbagai item lainnya yang Anda miliki."
@@ -6292,12 +6375,9 @@
         "Dengan memverifikasi nomor telepon, Anda akan meningkatkan keamanan akun serta menambah metode pemulihan bagi akun Anda."
       ]
     },
-    "Remark about a key type option": {
-      "Compatibility": [
-        "Kompatibilitas"
-      ],
-      "State of the art": [
-        "Canggih"
+    "Remove organization logo": {
+      "Users will no longer see your custom logo or organization name.": [
+        "Para pengguna Anda tidak lagi akan melihat logo atau nama organisasi khusus yang Anda tetapkan."
       ]
     },
     "Restore administrator panel": {
@@ -6326,6 +6406,91 @@
       ],
       "User": [
         "Pengguna"
+      ]
+    },
+    "scim: Action": {
+      "Configure SCIM": [
+        "Atur SCIM"
+      ],
+      "Disable SCIM": [
+        "Nonaktifkan SCIM"
+      ],
+      "Disable SCIM integration": [
+        "Nonaktifkan integrasi SCIM"
+      ],
+      "Generate new token": [
+        "Hasilkan token baru"
+      ],
+      "Generate token": [
+        "Hasilkan token"
+      ]
+    },
+    "scim: Info": {
+      "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
+        "**Prasyarat:** Autentikasi SAML harus terlebih dahulu diatur untuk mengaktifkan penyediaan SCIM."
+      ],
+      "Enter token into your identity provider": [
+        "Masukkan token ke penyedia identitas Anda"
+      ],
+      "Enter URL and token into your identity provider": [
+        "Masukkan URL dan token ke penyedia identitas Anda"
+      ],
+      "For security reasons, the token is hidden": [
+        "Demi alasan keamanan, token ini disembunyikan"
+      ],
+      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ VPN_APP_NAME }.": [
+        "Tuju penyedia identitas Anda, lalu salin dan tempel data di bawah ini serta selesaikan pengaturan SCIM untuk ${ VPN_APP_NAME }."
+      ],
+      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ VPN_APP_NAME }.": [
+        "Tuju penyedia identitas Anda, lalu salin dan tempel data di bawah ini serta aktifkan kembali SCIM untuk ${ VPN_APP_NAME }."
+      ],
+      "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
+        "Apabila Anda kehilangan atau tidak lagi ingat token SCIM ini, Anda dapat menghasilkan token baru, namun dalam prosesnya Anda akan perlu untuk memperbarui pengaturan penyedia identitas Anda."
+      ],
+      "Make sure you copy the above SCIM token now.": [
+        "Pastikan Anda menyalin token SCIM di atas sekarang."
+      ],
+      "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
+        "Setelah SCIM dinonaktifkan bagi organisasi Anda, **seluruh pengguna SCIM yang ditentukan secara otomatis oleh penyedia identitas Anda akan dialihkan menjadi pengguna SSO**, di mana Anda akan dapat mengelola para pengguna ini secara langsung dari dalam menu pengaturan ${ BRAND_NAME }."
+      ],
+      "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
+        "Penyediaan SCIM otomatis akan dinonaktifkan hingga Anda memasukkan token SCIM yang baru ke pengaturan penyedia identitas Anda."
+      ],
+      "The SCIM base URL and token will be deleted.": [
+        "URL dasar dan token SCIM akan dihapus."
+      ],
+      "To re-enable syncing with your identity provider, your need to complete the SCIM integration again.": [
+        "Untuk mengaktifkan kembali penyinkronan dengan penyedia idenitas yang Anda gunakan, Anda perlu untuk menyelesaikan ulang proses integrasi SCIM."
+      ]
+    },
+    "scim: Label": {
+      "SCIM base URL": [
+        "URL dasar SCIM"
+      ],
+      "SCIM base URL (or tenant URL)": [
+        "URL dasar SCIM (atau URL tenan)"
+      ],
+      "SCIM token": [
+        "Token SCIM"
+      ]
+    },
+    "scim: Title": {
+      "Disable SCIM integration?": [
+        "Nonaktifkan integrasi SCIM?"
+      ],
+      "Generate new SCIM token?": [
+        "Hasilkan token SCIM baru?"
+      ],
+      "SCIM automatic provisioning": [
+        "Penyediaan SCIM otomatis"
+      ]
+    },
+    "scim: Tooltip": {
+      "API key of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
+        "Kunci API konektor SCIM yang digunakan oleh Agen Penyedia IdP Anda untuk meneruskan data SCIM"
+      ],
+      "URL of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
+        "URL konektor SCIM yang digunakan oleh Agen Penyedia IdP Anda untuk meneruskan data SCIM"
       ]
     },
     "Select file": {
@@ -7501,6 +7666,9 @@
       "Delete address permanently?": [
         "Hapus alamat secara permanen?"
       ],
+      "Delete organization logo?": [
+        "Hapus logo organisasi?"
+      ],
       "Delete the server (you will still be able to recover it for ${ days } day)": [
         "Hapus server (Anda masih akan dapat memulihkan server ini dalam ${ days } hari ke depan)"
       ],
@@ -7602,6 +7770,9 @@
       ],
       "Gift code": [
         "Kode hadiah"
+      ],
+      "How to choose a good icon": [
+        "Cara memilih ikon yang baik"
       ],
       "Human verification": [
         "Verifikasi manusia"
@@ -7813,6 +7984,9 @@
       "Upload CSV file to create multiple accounts": [
         "Unggah berkas CSV untuk membuat lebih dari satu akun"
       ],
+      "Upload your organization’s logo": [
+        "Unggah logo organisasi Anda"
+      ],
       "Users": [
         "Pengguna"
       ],
@@ -7933,6 +8107,9 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Tema yang dipilih akan aktif pada saat sistem Anda diatur ke \"mode terang\""
+      ],
+      "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
+        "Para pengguna Anda akan melihat logo ini alih-alih ikon ${ BRAND_NAME } pada saat mereka terhubung masuk ke aplikasi web kami."
       ],
       "Usually an URL that contains the identity provider's name within": [
         "Pada umumnya, URL yang mengandung nama penyedia identitas di dalamnya"

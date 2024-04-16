@@ -589,6 +589,9 @@
       "Vault name does not match": [
         "Назва сховища не збігається"
       ],
+      "Wrong password": [
+        "Неправильний пароль"
+      ],
       "Wrong PIN code. Try again.": [
         "Неправильний PIN-код. Спробуйте ще раз."
       ]
@@ -876,6 +879,12 @@
       "None": [
         "Немає"
       ],
+      "Offline mode could not be enabled at the moment": [
+        "Наразі неможливо увімкнути автономний режим"
+      ],
+      "Offline support successfully disabled": [
+        "Підтримка автономного доступу успішно відключена"
+      ],
       "Open the Extensions menu": [
         "Відкрити меню розширень"
       ],
@@ -929,6 +938,9 @@
       ],
       "Set up a PIN code to easily lock your data": [
         "Налаштуйте PIN-код, щоб легко блокувати дані"
+      ],
+      "Setting up offline mode...": [
+        "Налаштування автономного режиму..."
       ],
       "Settings successfully updated": [
         "Налаштування успішно оновлені!"
@@ -998,6 +1010,9 @@
       ],
       "You are about to create:": [
         "Ви збираєтеся створити:"
+      ],
+      "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Тепер ви можете використовувати пароль ${ BRAND_NAME } для доступу до ${ PASS_SHORT_APP_NAME } в автономному режимі"
       ],
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "Ви досягли обмеження кількості псевдонімів. Створюйте скільки завгодно псевдонімів, передплативши тарифний план вищого рівня."
@@ -1431,6 +1446,9 @@
       ],
       "Sign in to your account": [
         "Увійдіть у свій обліковий запис"
+      ],
+      "You are currently offline. Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "На даний час ви в автономному режимі. Розблокуйте ${ PASS_SHORT_APP_NAME } за допомогою вашого паролю ${ BRAND_NAME }"
       ]
     },
     "lobby: Title": {
@@ -1726,6 +1744,9 @@
       ],
       "Empty note": [
         "Порожня нотатка"
+      ],
+      "Encryption password is required": [
+        "Потрібен пароль шифрування"
       ],
       "Invalid alias prefix": [
         "Недійсний префікс псевдоніма"

@@ -158,6 +158,9 @@
       "Cancel subscription": [
         "Cancelar subscrição"
       ],
+      "Change": [
+        "Alterar"
+      ],
       "Change keys": [
         "Alterar chaves"
       ],
@@ -814,6 +817,9 @@
       ],
       "Select country": [
         "Selecionar país"
+      ],
+      "Select file": [
+        "Selecionar um ficheiro"
       ],
       "Select files": [
         "Selecionar ficheiros"
@@ -3074,6 +3080,14 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Ajude-nos a melhorar"
+      ]
+    },
+    "Download link": {
+      ".deb for Debian / Ubuntu": [
+        ".deb para Debian/Ubuntu"
+      ],
+      ".rpm for Fedora / Red Hat": [
+        ".rpm para Fedora / Red Hat"
       ]
     },
     "drive_signup_2023: Info": {
@@ -5711,6 +5725,9 @@
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
         "Adicione outro nível de segurança à sua conta. Terá de se verificar com uma autenticação A2F cada vez que entrar na sua conta."
       ],
+      "Add domain": [
+        "Adicionar um domínio"
+      ],
       "Add image URL": [
         "Adicionar URL da imagem"
       ],
@@ -5794,6 +5811,9 @@
       ],
       "and": [
         "e"
+      ],
+      "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
+        "Quaisquer subpastas também serão excluídas. No entanto, e-mails armazenados nesta pasta ${ nameDeleted } não serão excluídos e podem ser encontrados em Todo o correio."
       ],
       "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
         "Qualquer um com esta ligação pode ver todas as informações do evento, como título, localização ou participantes."
@@ -5941,6 +5961,9 @@
       ],
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "Ao continuar, isto ligará a sua conta da ${ BRAND_NAME } a ${ name }."
+      ],
+      "Copied to clipboard": [
+        "Copiado para a área de transferência"
       ],
       "Copy the link to clipboard": [
         "Copiar a ligação para a área de transferência"
@@ -6544,6 +6567,9 @@
       ],
       "Optional": [
         "Opcional"
+      ],
+      "or ${ selectFileButton }": [
+        "ou ${ selectFileButton }"
       ],
       "Or select a particular server:": [
         "Ou selecione um servidor particular:"
@@ -7701,26 +7727,8 @@
       ]
     },
     "Key generation": {
-      "A key with the same encryption algorithm already exists. Generating another key will cause slower account loading. Are you sure you want to continue?": [
-        "Já existe uma chave com o mesmo algoritmo de encriptação. A geração de outra chave causará um carregamento mais lento da conta. Tem a certeza de que deseja continuar?"
-      ],
-      "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
-        "Já está ativa uma chave com o mesmo algoritmo de encriptação para este endereço. A geração de outra chave causará um carregamento mais lento da conta e a eliminação desta chave pode causar problemas. Se estiver a gerar uma chave porque a sua chave antiga está comprometida, marque essa chave como comprometida. Tem a certeza de que deseja continuar?"
-      ],
       "Generate key": [
         "Gerar a chave"
-      ],
-      "Key with fingerprint ${ fp } successfully created.": [
-        "A chave com impressão digital ${ fp } foi criada."
-      ],
-      "The encryption keys are being generated. This may take several minutes and temporarily freeze your browser.": [
-        "As chaves de encriptação estão a ser geradas. Isto pode levar alguns minutos e bloquear temporariamente o seu navegador."
-      ],
-      "The encryption keys for your address are being generated. This may take several minutes and temporarily freeze your browser.": [
-        "As chaves de encriptação para o seu endereço estão a ser geradas. Isto pode levar alguns minutos e bloquear temporariamente o seu navegador."
-      ],
-      "You can generate a new encryption key if you think your previous key has been compromised.": [
-        "Pode gerar uma nova chave de encriptação se pensar que a sua chave anterior foi comprometida."
       ]
     },
     "Key state badge": {
@@ -7744,14 +7752,6 @@
       ],
       "Primary": [
         "Primária"
-      ]
-    },
-    "Key type option": {
-      "${ compatibility } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
-        "${ compatibility } RSA 4096-bit (mais lenta, mas com melhor compatibilidade com programas antigos)"
-      ],
-      "${ stateOfTheArt } ECC Curve25519 (Fastest, most modern)": [
-        "${ stateOfTheArt } ECC Curve25519 (mais rápida e moderna)"
       ]
     },
     "Keyboard shortcut name": {
@@ -8460,9 +8460,6 @@
       "Key": [
         "Chave"
       ],
-      "Key strength": [
-        "Força da chave"
-      ],
       "Keyboard shortcut: ${ shortcut }": [
         "Atalhos de teclado: ${ shortcut }"
       ],
@@ -8777,6 +8774,9 @@
       ],
       "Two-password mode": [
         "Modo palavra-passe dupla"
+      ],
+      "Type": [
+        "Tipo"
       ],
       "Undo send": [
         "Anular envio"
@@ -9965,17 +9965,6 @@
         "Gestão de equipa"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Caso contrário, o acesso à sua conta será limitado e a sua conta acabará por ser desativada."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Para continuar a utilizar ${ trialPlanName } com funcionalidades premium, escolha a sua subscrição e as opções de pagamento."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "A sua avaliação termina em ${ formattedPeriodEndDate }."
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } que termina com ${ last4 }"
@@ -10066,6 +10055,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Está a beneficiar de um preço promocional no seu plano atual. Ao alterar a sua subscrição da sua conta, perderá o preço promocional e este não estará disponível se tentar subscrever novamente."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Caso contrário, o acesso à sua conta será limitado e a sua conta acabará por ser desativada."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Para continuar a utilizar ${ trialPlanName } com funcionalidades premium, escolha a sua subscrição e as opções de pagamento."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "A sua avaliação termina em ${ formattedPeriodEndDate }."
       ]
     },
     "new_plans: Label": {
@@ -11343,14 +11343,6 @@
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "A verificação do seu número de telefone aumenta a segurança da sua conta e permite opções de recuperação adicionais."
-      ]
-    },
-    "Remark about a key type option": {
-      "Compatibility": [
-        "Compatibilidade"
-      ],
-      "State of the art": [
-        "Tecnologia de ponta"
       ]
     },
     "Remove calendar section description": {

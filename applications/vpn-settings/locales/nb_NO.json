@@ -59,6 +59,9 @@
       "Cancel subscription": [
         "Avbryt abonnement"
       ],
+      "Change": [
+        "Endre"
+      ],
       "Change keys": [
         "Endre nøkler"
       ],
@@ -139,6 +142,9 @@
       ],
       "Delete Gateway": [
         "Slett mellomtjener"
+      ],
+      "Delete logo": [
+        "Slett logo"
       ],
       "Delete user": [
         "Slett bruker"
@@ -280,6 +286,9 @@
       ],
       "Invite user": [
         "Inviter bruker"
+      ],
+      "Keep logo": [
+        "Behold logo"
       ],
       "Keep my Plus subscription": [
         "Behold mitt Plus-abonnement"
@@ -437,6 +446,9 @@
       "Select country": [
         "Velg land"
       ],
+      "select file": [
+        "velg fil"
+      ],
       "Select file": [
         "Velg fil"
       ],
@@ -532,6 +544,12 @@
       ],
       "Upgrade your plan": [
         "Oppgrader planen din"
+      ],
+      "Upload": [
+        "Last opp"
+      ],
+      "Upload icon": [
+        "Last opp ikon"
       ],
       "Use ${ label } theme": [
         "Bruk ${ label }-temaet"
@@ -973,6 +991,12 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Fortsett å bruke ${ MAIL_APP_NAME }."
+      ],
+      "Continue using ${ planTitle }": [
+        "Fortsett å bruke ${ planTitle }"
+      ],
+      "Continue your subscription": [
+        "Fortsett abonnementet"
       ]
     },
     "Checkout row": {
@@ -1883,6 +1907,9 @@
       ]
     },
     "Delete address prompt": {
+      "Once deleted, this address can't be used again by anyone else.": [
+        "Når den er slettet, kan ikke denne adressen brukes igjen av noen andre."
+      ],
       "The next active address on your list will be set as the default.": [
         "Den neste aktive adressen på listen din vil bli angitt som standard."
       ],
@@ -2016,6 +2043,12 @@
       "Error connecting to the Bitcoin API.": [
         "Feil ved tilkobling til Bitcoin API."
       ],
+      "Failed to process the logo": [
+        "Kunne ikke behandle logoen"
+      ],
+      "File too large. Your logo must be 30 KB or smaller.": [
+        "Filen er for stor. Logoen må være 30 kB eller mindre."
+      ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Dersom tiden på TV-en har utløpt, trykk på 'oppdater' og tast inn koden på nytt."
       ],
@@ -2027,6 +2060,9 @@
       ],
       "Impossible to rename the gateway": [
         "Umulig å gi mellomtjeneren nytt navn"
+      ],
+      "Incorrect file type. Upload a file in PNG or JPEG format.": [
+        "Feil filtype. Last opp en fil i PNG- eller JPEG-format."
       ],
       "Incorrect login credentials. Please try again.": [
         "Feil påloggingsinformasjon. Vennligst prøv på nytt."
@@ -2063,6 +2099,9 @@
       ],
       "Name does not match": [
         "Navn samsvarer ikke"
+      ],
+      "No image selected": [
+        "Ingen bilde valgt"
       ],
       "Not a valid number": [
         "Ikke et gyldig tall"
@@ -2115,6 +2154,9 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Vennligst oppgrader til en forretningsplan med mer enn 1 bruker for å administrere flere brukere."
       ],
+      "Please upload a square file": [
+        "Vennligst last opp et firkantet bilde"
+      ],
       "Please upload an xml file": [
         "Vennligst last opp en xml-fil"
       ],
@@ -2141,6 +2183,12 @@
       ],
       "The email addresses do not match": [
         "E-postadressene samsvarer ikke"
+      ],
+      "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
+        "Filen er for stor, maksimal størrelse er ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }"
+      ],
+      "The file is too small, the minimum size is ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }": [
+        "Filen er for liten, minimumsstørrelsen er ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }"
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Minimumsbeløpet av kreditt som kan legges til er ${ price }"
@@ -2783,6 +2831,11 @@
       ],
       "Username": [
         "Brukernavn"
+      ]
+    },
+    "Headline": {
+      "Contact us": [
+        "Kontakt oss"
       ]
     },
     "Hint": {
@@ -3512,6 +3565,9 @@
       "Plus or Visionary subscription required": [
         "Plus eller Visionary-abonnement kreves"
       ],
+      "Preview": [
+        "Forhåndsvis"
+      ],
       "Preview failed to be loaded": [
         "Forhåndsvisning kunne ikke lastes"
       ],
@@ -3683,6 +3739,9 @@
       ],
       "The format of your CSV file is incorrect.": [
         "Formatet til din CSV-fil er ikke riktig."
+      ],
+      "The name and icon will be visible to your users while they are signed in.": [
+        "Navnet og ikonet vil være synlig for brukerne mens de er logget på."
       ],
       "The name will be visible to your users while they are signed in.": [
         "Navnet vil være synlig for brukerne dine mens de er innlogget."
@@ -4019,6 +4078,12 @@
         "Du har ${ availableCount } dedikert tjener tilgjengelig.",
         "Du har ${ availableCount } dedikerte tjenere tilgjengelig."
       ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "Du har et prøveabonnement på ${ planTitle }. Hvis du vil fortsette abonnementet etter prøveperioden, må du legge til en betalingsmåte."
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "Du har et prøveabonnement på ${ planTitle }. Ingen betaling kreves på dette tidspunktet. Abonnementet ditt fornyes automatisk på slutten av prøveperioden."
+      ],
       "You have no invoices.": [
         "Du har ingen fakturaer."
       ],
@@ -4193,14 +4258,6 @@
       ],
       "Subscription": [
         "Abonnement"
-      ]
-    },
-    "Key type option": {
-      "${ compatibility } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
-        "${ compatibility } RSA 4096-bit (tregere, men økt kompatibilitet med eldre programvare)."
-      ],
-      "${ stateOfTheArt } ECC Curve25519 (Fastest, most modern)": [
-        "${ stateOfTheArt } ECC Curve25519 (raskeste, mest moderne)"
       ]
     },
     "Label": {
@@ -4423,11 +4480,11 @@
       "Key": [
         "Nøkkel"
       ],
-      "Key strength": [
-        "Nøkkelstyrke"
-      ],
       "Level for NetShield blocker filtering": [
         "Nivå på blokkeringsfiltrering for NetShield"
+      ],
+      "Logo": [
+        "Logo"
       ],
       "Mailbox password": [
         "Postbokspassord"
@@ -5963,6 +6020,40 @@
         "Planen din inkluderer maksimalt ${ humanReadableAvailableSpace } mer lagringsplass."
       ]
     },
+    "Organization logo upload": {
+      "Avoid overly compressed images.": [
+        "Unngå altfor komprimerte bilder."
+      ],
+      "Ensure your icon has padding space around it.": [
+        "Sørg for at ikonet ditt har rom for utfylling rundt seg."
+      ],
+      "Opt for a PNG image that is a 128x128 pixels for clarity.": [
+        "Velg et PNG-bilde som er 128x128 piksler for klarhet."
+      ],
+      "Tips on choosing a good icon": [
+        "Tips for å velge et godt ikon"
+      ],
+      "Use a graphical icon or image rather than text.": [
+        "Bruk et grafisk ikon eller bilde i stedet for tekst."
+      ]
+    },
+    "Organization logo upload modal": {
+      "Drop image file here to upload or": [
+        "Slipp bildet her for å laste opp eller"
+      ],
+      "File in PNG or JPEG format": [
+        "Fil i PNG- eller JPEG-format"
+      ],
+      "File not larger than 30 KB": [
+        "Fil ikke større enn 30KB"
+      ],
+      "Square image of at least 128 pixels": [
+        "Kvadratisk bilde på minst 128 piksler"
+      ],
+      "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
+        "Brukere vil se logoen din i stedet for ${ BRAND_NAME }-ikonet når de er logget på nettappene våre."
+      ]
+    },
     "Pass B2B onboarding spotlight": {
       "Go to your vault to manage your passwords, aliases, and more.": [
         "Gå til hvelvet ditt for å administrere passord, aliaser og mer."
@@ -6384,12 +6475,9 @@
         "Bekreftelse av telefonnummeret ditt øker kontosikkerheten og gir flere alternativer for gjenoppretting."
       ]
     },
-    "Remark about a key type option": {
-      "Compatibility": [
-        "Kompatibilitet"
-      ],
-      "State of the art": [
-        "Topp moderne"
+    "Remove organization logo": {
+      "Users will no longer see your custom logo or organization name.": [
+        "Brukere vil ikke lenger se den tilpassede logoen eller organisasjonsnavnet."
       ]
     },
     "Restore administrator panel": {
@@ -6419,6 +6507,94 @@
       ],
       "User": [
         "Bruker"
+      ]
+    },
+    "scim: Action": {
+      "Configure SCIM": [
+        "Konfigurer SCIM"
+      ],
+      "Disable SCIM": [
+        "Deaktiver SCIM"
+      ],
+      "Disable SCIM integration": [
+        "Deaktiver SCIM-integrasjon"
+      ],
+      "Generate new token": [
+        "Generer nytt token"
+      ],
+      "Generate token": [
+        "Generer token"
+      ]
+    },
+    "scim: Info": {
+      "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
+        "**Forutsetning:** SAML-autentisering må konfigureres for å aktivere SCIM-klargjøring."
+      ],
+      "Enter token into your identity provider": [
+        "Skriv inn token i identitetsleverandøren din"
+      ],
+      "Enter URL and token into your identity provider": [
+        "Skriv inn nettadresse og token i identitetsleverandøren din"
+      ],
+      "For security reasons, the token is hidden": [
+        "Av sikkerhetsgrunner er tokenet skjult"
+      ],
+      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ VPN_APP_NAME }.": [
+        "Gå til identitetsleverandøren, kopier og lim inn dataene nedenfor og fullfør konfigureringen av SCIM for ${ VPN_APP_NAME }."
+      ],
+      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ VPN_APP_NAME }.": [
+        "Gå til identitetsleverandøren, kopier og lim inn tokenet nedenfor, og aktiver SCIM på nytt for ${ VPN_APP_NAME }."
+      ],
+      "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
+        "Hvis du har mistet eller glemt SCIM-tokenet, kan du generere et nytt, men vær oppmerksom på at innstillingene for identitetsleverandøren må oppdateres."
+      ],
+      "Make sure you copy the above SCIM token now.": [
+        "Pass på at du kopierer SCIM-tokenet ovenfor nå."
+      ],
+      "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
+        "Når SCIM er deaktivert for organisasjonen, blir **alle SCIM-brukere som leveres automatisk av identitetsleverandøren, konvertert til SSO-brukere**, og du kan administrere dem direkte i ${ BRAND_NAME }-innstillingene."
+      ],
+      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ VPN_APP_NAME } organization.": [
+        "Forenkler brukeradministrasjon på tvers av ulike tjenester. Legg til, rediger og fjern brukere i identitetsleverandøren, så brukes disse endringene automatisk på ${ VPN_APP_NAME }-organisasjonen."
+      ],
+      "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
+        "Den automatiske klargjøringen av SCIM deaktiveres til du angir det nye SCIM-tokenet i identitetsleverandørens innstillinger."
+      ],
+      "The SCIM base URL and token will be deleted.": [
+        "SCIM-grunnadressen og tokenet vil bli slettet."
+      ],
+      "To re-enable syncing with your identity provider, your need to complete the SCIM integration again.": [
+        "For å aktivere synkronisering med identitetsleverandøren på nytt, må du fullføre SCIM-integreringen på nytt."
+      ]
+    },
+    "scim: Label": {
+      "SCIM base URL": [
+        "SCIM-grunnadresse"
+      ],
+      "SCIM base URL (or tenant URL)": [
+        "SCIM-grunnadresse (eller nettadresse for leietaker)"
+      ],
+      "SCIM token": [
+        "SCIM-token"
+      ]
+    },
+    "scim: Title": {
+      "Disable SCIM integration?": [
+        "Vil du deaktivere SCIM-integrasjon?"
+      ],
+      "Generate new SCIM token?": [
+        "Generere nytt SCIM-token?"
+      ],
+      "SCIM automatic provisioning": [
+        "Automatisk SCIM klargjøring"
+      ]
+    },
+    "scim: Tooltip": {
+      "API key of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
+        "API-nøkkel til SCIM-koblingen som din IdP-klargjøringsagent videresender SCIM-data til."
+      ],
+      "URL of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
+        "Nettadresse til SCIM-koblingen som din IdP-klargjøringsagent videresender SCIM-data til."
       ]
     },
     "Select file": {
@@ -7625,6 +7801,9 @@
       "Delete address permanently?": [
         "Slette adressen permanent?"
       ],
+      "Delete organization logo?": [
+        "Slette organisasjonens logo?"
+      ],
       "Delete the server (you will still be able to recover it for ${ days } day)": [
         "Slett tjeneren (du vil fremdeles være i stand til å gjenopprette den for ${ days } dag).",
         "Slett tjeneren (du vil fremdeles være i stand til å gjenopprette den for ${ days } dager)."
@@ -7728,6 +7907,9 @@
       ],
       "Gift code": [
         "Gavekode"
+      ],
+      "How to choose a good icon": [
+        "Hvordan velge et godt ikon"
       ],
       "Human verification": [
         "Menneskelig verifisering"
@@ -7940,6 +8122,9 @@
       "Upload CSV file to create multiple accounts": [
         "Last opp CSV-fil for å opprette flere kontoer"
       ],
+      "Upload your organization’s logo": [
+        "Last opp organisasjonens logo"
+      ],
       "Users": [
         "Brukere"
       ],
@@ -8060,6 +8245,9 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Det valgte temaet vil være aktivt når systemet er satt til \"lys modus\"."
+      ],
+      "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
+        "Brukere vil se logoen din i stedet for ${ BRAND_NAME }-ikonet når de er logget på nettappene våre."
       ],
       "Usually an URL that contains the identity provider's name within": [
         "Vanligvis en nettadresse som inneholder identitetsleverandørens navn."

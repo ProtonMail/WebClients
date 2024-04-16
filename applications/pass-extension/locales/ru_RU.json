@@ -263,6 +263,9 @@
       "Move to trash": [
         "Переместить в Корзину"
       ],
+      "Multiple select": [
+        "Множественный выбор"
+      ],
       "Not now": [
         "Не сейчас"
       ],
@@ -685,6 +688,9 @@
       "Vault name does not match": [
         "Название хранилища не совпадает"
       ],
+      "Wrong password": [
+        "Неверный пароль"
+      ],
       "Wrong PIN code. Try again.": [
         "Неверный PIN-код. Попробуйте снова."
       ],
@@ -1029,6 +1035,12 @@
       "None": [
         "Ничего"
       ],
+      "Offline mode could not be enabled at the moment": [
+        "Включение офлайнового режима в данный момент невозможно"
+      ],
+      "Offline support successfully disabled": [
+        "Поддержка офлайновой поддержки успешно отключена"
+      ],
       "Open the Extensions menu": [
         "Откройте меню Расширения"
       ],
@@ -1112,6 +1124,9 @@
       ],
       "Set up a PIN code to easily lock your data": [
         "Установите PIN-код для удобной блокировки ваших данных."
+      ],
+      "Setting up offline mode...": [
+        "Настройка офлайнового режима..."
       ],
       "Settings successfully updated": [
         "Настройки успешно обновлены"
@@ -1223,6 +1238,9 @@
       ],
       "You are about to create:": [
         "Вы собираетесь создать:"
+      ],
+      "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Теперь вы можете использовать свой пароль ${ BRAND_NAME } для доступа к ${ PASS_SHORT_APP_NAME } в офлайновом режиме."
       ],
       "You can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
         "Вы можете быстро автозаполнить свои учетные данные, нажав на значок ${ PASS_APP_NAME }."
@@ -1695,6 +1713,9 @@
       ],
       "Sign in to your account": [
         "Войдите в свой аккаунт"
+      ],
+      "You are currently offline. Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "Вы сейчас офлайн. Разблокируйте ${ PASS_SHORT_APP_NAME } с помощью вашего пароля ${ BRAND_NAME }"
       ]
     },
     "lobby: Title": {
@@ -2059,11 +2080,17 @@
       "Empty note": [
         "Пустая заметка"
       ],
+      "Encryption password is required": [
+        "Требуется пароль для шифрования"
+      ],
       "Expiration Date is not in the format MM/YY": [
         "Срок действия не в формате ММ/ГГ"
       ],
       "Invalid alias prefix": [
         "Недопустимый префикс псевдонима"
+      ],
+      "item was imported without custom fields": [
+        "элемент был импортирован без настраиваемых полей"
       ],
       "Maximum length is ${ maxLength } character": [
         "Максимальная длина ${ maxLength } символ",

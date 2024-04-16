@@ -40,6 +40,9 @@
       "Add contact": [
         "Lisää yhteystieto"
       ],
+      "Add credit / debit card": [
+        "Lisää maksukortti"
+      ],
       "Add email": [
         "Lisää sähköpostiosoite"
       ],
@@ -1114,6 +1117,10 @@
       ],
       "Trust": [
         "Luota"
+      ],
+      "Trust key": [
+        "Luota avaimeen",
+        "Luota avaimiin"
       ],
       "Trust public key": [
         "Luota julkiseen avaimeen"
@@ -8610,7 +8617,7 @@
         "Tietomurtojen seuranta"
       ],
       "Data breach monitoring (coming soon)": [
-        "Tietovuotojen seuranta (tulossa pian)"
+        "Tietomurtojen seuranta (tulossa pian)"
       ],
       "Desktop app": [
         "Työpöytäsovellus"
@@ -10610,6 +10617,32 @@
         "Hintaan"
       ]
     },
+    "Subscription renewal state": {
+      "Are you sure?": [
+        "Oletko varma?"
+      ],
+      "Auto-pay is disabled": [
+        "Automaattinen maksu poistettu käytöstä."
+      ],
+      "Auto-pay is enabled": [
+        "Automaattinen maksu on käytössä."
+      ],
+      "Disable": [
+        "Poista käytöstä"
+      ],
+      "Enable auto-pay support": [
+        "Käytä automaattisiin maksuihin"
+      ],
+      "Keep auto-pay": [
+        "PIdä automaattinen maksu"
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
+        "Järjestelmämme ei enää veloita tätä maksutapaa automaattisesti, mutta tilauksesi uudistuu silti laskutusjakson lopussa. Jos haluat alentaa tai muuttaa tilaustasi, sinun on tehtävä se itse ennen laskutuskauden päättymistä. Jos unohdat suorittaa maksun itse ja automaattiveloitus on estetty kaikilta maksutavoilta, voidaan tilauksesi alentaa automaattisesti, jolloin menetät useita ominaisuuksia."
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
+        "Järjestelmämme ei enää veloita tätä maksutapaa automaattisesti, mutta tilauksesi uudistuu silti laskutusjakson lopussa. Jos haluat alentaa tai muuttaa tilaustasi, sinun on tehtävä se itse ennen laskutuskauden päättymistä. Tilaustasi ei voida alentaa automaattisesti, koska emme voi poistaa tiedostoja, viestejä tai muita tietoja puolestasi, jos olet ylittänyt ilmaistilauksen tallennustilakiintiön tai käytät muita maksullisia ominaisuuksia. Jos poistat automaattiveloituksen käytöstä, muista maksaa seuraava tilauslaskusi ennen eräpäivää estääksesi tilin jäädyttämisen."
+      ]
+    },
     "Subscription saving": {
       "Save": [
         "Säästä"
@@ -10802,7 +10835,7 @@
         "Tunnisteet määritettiin."
       ],
       "Last modified aliases stored in your oldest vault": [
-        "Viimeksi muokatut vanhimmassa holvissasi säilytettävät aliakset"
+        "Viimeksi muokatut vanhimmassa holvissasi olevat aliakset"
       ],
       "Mail list unsubscribed": [
         "Postituslistatilaus on peruttu"
@@ -10859,6 +10892,12 @@
       ],
       "Password copied to clipboard": [
         "Salasana kopioitiin leikepöydälle"
+      ],
+      "Payment method added": [
+        "Maksutapa lisättiin"
+      ],
+      "Payment method updated": [
+        "Maksutapa päivitettiin"
       ],
       "Phishing reported": [
         "Tietojenkalastelu ilmoitettiin"
@@ -11072,6 +11111,9 @@
       "Add contact group name": [
         "Lisää yhteystietoryhmän nimi"
       ],
+      "Add credit/debit card": [
+        "Lisää maksukortti"
+      ],
       "Add filter": [
         "Lisää suodatin"
       ],
@@ -11278,6 +11320,9 @@
       ],
       "Edit contact group": [
         "Muokkaa yhteystietoryhmää"
+      ],
+      "Edit credit/debit card": [
+        "Muokkaa maksukorttia"
       ],
       "Edit email settings": [
         "Muokkaa osoitteen asetuksia"

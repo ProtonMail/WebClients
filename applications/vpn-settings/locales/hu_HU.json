@@ -53,6 +53,9 @@
       "Cancel subscription": [
         "Előfizetés lemondása"
       ],
+      "Change": [
+        "Módosítás"
+      ],
       "Change mailbox password": [
         "E-mail titkosítási jelszó módosítása"
       ],
@@ -3374,14 +3377,6 @@
         "Előfizetés"
       ]
     },
-    "Key type option": {
-      "${ compatibility } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
-        "${ compatibility } 4096 bites RSA (Lassabb, de nagyobb kompatibilitás régebbi programokkal)"
-      ],
-      "${ stateOfTheArt } ECC Curve25519 (Fastest, most modern)": [
-        "${ stateOfTheArt } ECC Curve25519 (Leggyorsabb, legmodernebb)"
-      ]
-    },
     "Label": {
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } felhasználónév"
@@ -3580,9 +3575,6 @@
       ],
       "Key": [
         "Kulcs"
-      ],
-      "Key strength": [
-        "Kulcs erőssége"
       ],
       "Level for NetShield blocker filtering": [
         "NetShield blokkoló szűrési szintje"
@@ -4875,14 +4867,6 @@
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "A telefonszámának megerősítése növeli a fiókja biztonságát, illetve több helyreállítási lehetőséget biztosít."
-      ]
-    },
-    "Remark about a key type option": {
-      "Compatibility": [
-        "Kompatibilitás"
-      ],
-      "State of the art": [
-        "Különösen korszerű"
       ]
     },
     "Restore administrator panel": {

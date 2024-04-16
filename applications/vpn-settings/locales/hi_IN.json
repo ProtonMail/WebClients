@@ -50,6 +50,9 @@
       "Cancel subscription": [
         "सदस्यता रद्द करें"
       ],
+      "Change": [
+        "बदलें"
+      ],
       "Change mailbox password": [
         "मेलबॉक्स पासवर्ड बदलें"
       ],
@@ -3277,14 +3280,6 @@
         "सदस्यता"
       ]
     },
-    "Key type option": {
-      "${ compatibility } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
-        "${ compatibility } RSA 4096-बिट (लेगेसी सॉफ़्टवेयर के साथ धीमी, लेकिन बढ़ी हुई संगतता)"
-      ],
-      "${ stateOfTheArt } ECC Curve25519 (Fastest, most modern)": [
-        "${ stateOfTheArt } ECC Curve25519 (सबसे तेज़, सबसे आधुनिक)"
-      ]
-    },
     "Label": {
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } यूज़रनाम"
@@ -3468,9 +3463,6 @@
       ],
       "Key": [
         "चाबी"
-      ],
-      "Key strength": [
-        "प्रमुख ताकत"
       ],
       "Level for NetShield blocker filtering": [
         "NetShield ब्लॉकर फिल्टर की ताकत"
@@ -4717,14 +4709,6 @@
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "अपना ईमेल पता सत्यापित करने से खाते की सुरक्षा बढ़ जाती है और रिकवरी के लिए ज़्यादा विकल्प खुल जाते है।"
-      ]
-    },
-    "Remark about a key type option": {
-      "Compatibility": [
-        "संगतता"
-      ],
-      "State of the art": [
-        "अत्याधुनिक"
       ]
     },
     "Restore administrator panel": {
