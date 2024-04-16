@@ -40,6 +40,9 @@
       "Add contact": [
         "კონტაქტის დამატება"
       ],
+      "Add credit / debit card": [
+        "ახალი საკრედიტო/სადებეტო ბარათის დამატება"
+      ],
       "Add email": [
         "ელფოსტის დამატება"
       ],
@@ -1114,6 +1117,10 @@
       ],
       "Trust": [
         "ნდობა"
+      ],
+      "Trust key": [
+        "ნდობის გასაღები",
+        "ნდობის გასაღებები"
       ],
       "Trust public key": [
         "ამ საჯარო გასაღების ნდობა"
@@ -10586,6 +10593,32 @@
         "ფასი"
       ]
     },
+    "Subscription renewal state": {
+      "Are you sure?": [
+        "დარწმუნებული ბრძანდებით?"
+      ],
+      "Auto-pay is disabled": [
+        "ავტომატური გადახდა გამორთულია"
+      ],
+      "Auto-pay is enabled": [
+        "ავტომატური გადახდა ჩართულია"
+      ],
+      "Disable": [
+        "გათიშვა"
+      ],
+      "Enable auto-pay support": [
+        "ავტომატური გადახდის ჩართვა"
+      ],
+      "Keep auto-pay": [
+        "ავტომატური გადახდის შენარჩუნება"
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
+        "ჩვენი სისტემა გადახდის ამ მეთოდით ავტომატურად გადახდას აღრ სცდის, მაგრამ თქვენი გამოწერა გადახდის ციკლის გასვლის შემდეგ მაინც განახლდება. თუ გნებავთ, ჩამოსწიოთ თქვენი პაკეტი, ეს თქვენ თვითონ, გადახდის ციკლის დასასრულამდე უნდა გააკეთოთ. უფრო მეტიც, თუ დაგავიწყდათ წლიური გადასახადის გადახდა და ავტომატური გადახდა გამორთულია ყველა გადახდის მეთოდისთვის, ჩვენ შეიძლება, თქვენი პაკეტი ავტომატურად ჩამოვწიოთ, რაც საკმაო რაოდენობის ფუნქციონალს დაგაკარგვინებთ."
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
+        "ჩვენი სისტემა გადახდის ამ მეთოდით ავტომატურად გადახდას აღარ სცდის, მაგრამ თქვენი გამოწერა გადახდის ციკლის გასვლის შემდეგ მაინც განახლდება. თუ გნებავთ, ჩამოსწიოთ თქვენი პაკეტი, ეს თქვენ თვითონ, გადახდის ციკლის დასრულებამდე უნდა გააკეთოთ. ჩვენ არ შეგვიძლია თქვენი პაკეტის ავტომატურად ჩამოწევა, რადგან თქვენი მონაცემების ზომა უფასო ანგარიშის საცავის ლიმიტებს აჭარბებს ან ფასიან ფუნქციებს იყენებთ. ჩვენ არ წავშლით ავტომატურად თქვენს ფაილებს, ელფოსტებსა თუ სხვა მონაცემებს. თუ ავტომატურად გადახდას გამორთავთ, დაიმახსოვრეთ, რომ საჭიროა გადაიხადოთ ინვოისები. წინააღმდეგ შემთხვევაში, თქვენი ანგარიში შეჩერდება."
+      ]
+    },
     "Subscription saving": {
       "Save": [
         "დაზოგვა"
@@ -10836,6 +10869,12 @@
       "Password copied to clipboard": [
         "პაროლი დაკოპირდა გაცვლის ბაფერში"
       ],
+      "Payment method added": [
+        "გადახდის მეთოდი დამატებულია"
+      ],
+      "Payment method updated": [
+        "გადახდის მეთოდი განახლებულია"
+      ],
       "Phishing reported": [
         "ფიშინგის ანგარიში გაგზავნილია"
       ],
@@ -11048,6 +11087,9 @@
       "Add contact group name": [
         "დაამატეთ კონტაქტის ჯგუფის სახელი"
       ],
+      "Add credit/debit card": [
+        "ახალი საკრედიტო/სადებეტო ბარათის დამატება"
+      ],
       "Add filter": [
         "ფილტრის დამატება"
       ],
@@ -11254,6 +11296,9 @@
       ],
       "Edit contact group": [
         "კონტაქტების ჯგუფის ჩასწორება"
+      ],
+      "Edit credit/debit card": [
+        "საკრედიტო/სადებეტო ბარათის ჩასწორება"
       ],
       "Edit email settings": [
         "ელფოსტის პარამეტრების ჩასწორება"

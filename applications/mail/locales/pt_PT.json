@@ -40,6 +40,9 @@
       "Add contact": [
         "Adicionar contacto"
       ],
+      "Add credit / debit card": [
+        "Adicionar cartão de crédito/débito"
+      ],
       "Add email": [
         "Adicionar e-mail"
       ],
@@ -1111,6 +1114,10 @@
       ],
       "Trust": [
         "Confiar"
+      ],
+      "Trust key": [
+        "Confiar na chave",
+        "Confiar nas chaves"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -5282,6 +5289,9 @@
       "Any scheduled or snoozed messages will be cancelled.": [
         "Todas as mensagens agendadas ou adiadas serão canceladas."
       ],
+      "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
+        "Quaisquer subpastas também serão excluídas. No entanto, e-mails armazenados nesta pasta ${ nameDeleted } não serão excluídos e podem ser encontrados em Todo o correio."
+      ],
       "Applying actions to conversations": [
         "A aplicar as ações às conversas"
       ],
@@ -5308,6 +5318,9 @@
       ],
       "Are you sure you want to move all messages in this location to archive?": [
         "Tem a certeza que deseja mover todas as mensagens deste local para o Arquivo?"
+      ],
+      "Are you sure you want to move all messages in this location to trash?": [
+        "Tem a certeza que deseja mover todas as mensagens deste local para o Lixo?"
       ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
         "Tem a certeza de que pretende eliminar permanentemente esta ${ count } conversa?",
@@ -6305,6 +6318,9 @@
       ],
       "This sender's public key has not been trusted yet.": [
         "A chave pública deste remetente ainda não foi confiada."
+      ],
+      "to ${ destinationElement } folder.": [
+        "para a pasta ${ destinationElement }."
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Para completar o seu pagamento, envie ${ btcAmountBold } para o endereço abaixo."
@@ -9970,6 +9986,32 @@
         "Por"
       ]
     },
+    "Subscription renewal state": {
+      "Are you sure?": [
+        "Tem a certeza?"
+      ],
+      "Auto-pay is disabled": [
+        "O pagamento automático está desativado."
+      ],
+      "Auto-pay is enabled": [
+        "O pagamento automático está ativado."
+      ],
+      "Disable": [
+        "Desativar"
+      ],
+      "Enable auto-pay support": [
+        "Ativar o suporte de pagamento automático"
+      ],
+      "Keep auto-pay": [
+        "Manter o pagamento automático"
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
+        "O nosso sistema deixará de lhe cobrar automaticamente através deste método de pagamento, mas a sua subscrição continuará a ser renovada no final do ciclo de faturação. Se pretender alterar a sua subscrição, terá de o fazer antes do final do período de faturação. Além disso, no caso de que se esquece de efetuar um pagamento manual e o pagamento automático estiver desativado para todos os métodos de pagamento, poderemos alterar a sua subscrição da sua conta automaticamente, o que implicará a perda de muitas funcionalidades."
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
+        "O nosso sistema deixará de lhe cobrar automaticamente através deste método de pagamento, mas a sua subscrição continuará a ser renovada no final do ciclo de faturação. Se pretender alterar a sua subscrição, terá de o fazer antes do final do período de faturação. Não podemos alterar a sua subscrição automaticamente porque, se tiver ultrapassado a quota de armazenamento do plano gratuito ou se estiver a utilizar outras funcionalidades pagas, não podemos eliminar automaticamente ficheiros, e-mails ou outros dados por si. Se desativar o pagamento automático, lembre-se de pagar a sua próxima fatura de subscrição antes da data de vencimento para evitar a suspensão da conta."
+      ]
+    },
     "Subscription saving": {
       "Save": [
         "Poupe"
@@ -10217,6 +10259,12 @@
       "Password copied to clipboard": [
         "A palavra-passe é copiada para a área de transferência."
       ],
+      "Payment method added": [
+        "Método de pagamento adicionado"
+      ],
+      "Payment method updated": [
+        "Método de pagamento atualizado"
+      ],
       "Phishing reported": [
         "Reportado como phishing"
       ],
@@ -10422,6 +10470,9 @@
       ],
       "Add contact group name": [
         "Adicionar nome do grupo de contactos"
+      ],
+      "Add credit/debit card": [
+        "Adicionar cartão de crédito/débito"
       ],
       "Add filter": [
         "Adicionar filtro"
@@ -10629,6 +10680,9 @@
       ],
       "Edit contact group": [
         "Editar grupo de contactos"
+      ],
+      "Edit credit/debit card": [
+        "Editar cartão de crédito/débito"
       ],
       "Edit email settings": [
         "Editar definições de e-mail"

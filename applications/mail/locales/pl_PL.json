@@ -40,6 +40,9 @@
       "Add contact": [
         "Dodaj kontakt"
       ],
+      "Add credit / debit card": [
+        "Dodaj kartę płatniczą"
+      ],
       "Add email": [
         "Dodaj adres e-mail"
       ],
@@ -1132,6 +1135,12 @@
       "Trust": [
         "Zaufaj"
       ],
+      "Trust key": [
+        "Zaufaj kluczowi",
+        "Zaufaj kluczom",
+        "Zaufaj kluczom",
+        "Zaufaj kluczom"
+      ],
       "Trust public key": [
         "Zaufaj kluczowi publicznemu"
       ],
@@ -1687,6 +1696,12 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Kontynuuj używanie poczty ${ MAIL_APP_NAME }."
+      ],
+      "Continue using ${ planTitle }": [
+        "Kontynuuj z planem ${ planTitle }"
+      ],
+      "Continue your subscription": [
+        "Kontynuuj subskrypcję"
       ]
     },
     "Calendar attachment tooltip": {
@@ -4565,7 +4580,7 @@
         "GB"
       ],
       "KB": [
-        "KB"
+        "kB"
       ],
       "MB": [
         "MB"
@@ -6220,6 +6235,9 @@
       "Loading ${ appName }": [
         "Ładowanie ${ appName }"
       ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Ładowanie kalendarza. Poczekaj chwilę. W nowej karcie otworzy się usługa Calendly."
+      ],
       "Loading message": [
         "Ładowanie wiadomości"
       ],
@@ -6982,6 +7000,9 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Zostaniesz przekierowany na stronę PayPal w celu dokończenia transakcji. Jeśli używasz opcji blokowania wyskakujących okien, wyłącz ją, aby kontynuować."
       ],
+      "We'll email you once import is complete.": [
+        "Otrzymasz wiadomość po dokończeniu procesu importowania."
+      ],
       "We'll notify you when the import is done.": [
         "Powiadomimy Cię, kiedy proces importowania danych zostanie zakończony."
       ],
@@ -7041,6 +7062,9 @@
       ],
       "You can check the progress ${ importProgressLink }.": [
         "Możesz sprawdzić postęp ${ importProgressLink }."
+      ],
+      "You can close the tab or browser in the meantime.": [
+        "Możesz zamknąć kartę lub przeglądarkę."
       ],
       "You can either update your search query or ${ button }": [
         "Możesz zaktualizować zapytanie lub ${ button }"
@@ -7104,6 +7128,12 @@
         "Masz **${ count } wiadomości** oznaczone tą etykietą",
         "Masz **${ count } wiadomości** oznaczonych tą etykietą",
         "Masz **${ count } wiadomości** oznaczonych tą etykietą"
+      ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "Masz wersję próbną subskrypcji ${ planTitle }. Jeśli chcesz kontynuować subskrypcję po zakończeniu wersji próbnej, dodaj metodę płatności."
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "Masz wersję próbną subskrypcji ${ planTitle }. Płatność nie jest wymagana. Subskrypcja zostanie automatycznie odnowiona na koniec wersji próbnej."
       ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
         "Nie wpisano żadnego tematu wiadomości. Czy chcesz wysłać tę wiadomość mimo to?"
@@ -7224,6 +7254,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Twoje pliki, przed zapisaniem, zostaną zaszyfrowane"
+      ],
+      "Your information was found on ${ displayedDate }": [
+        "Twoje informacje zostały znalezione w dniu: ${ displayedDate }"
       ],
       "Your login information will not be saved after the import is completed.": [
         "Twoje dane logowania, po ukończeniu importu, zostaną usunięte."
@@ -10167,11 +10200,17 @@
       ]
     },
     "Security Center - Info": {
+      "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
+        "Otrzymaj powiadomienie o wycieku swojego hasła i innych danych przez usługi stron trzecich. ${ learnMoreLink }"
+      ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Nasze najnowocześniejsze rozwiązanie bezpieczeństwa oparte na sztucznej inteligencji zaprojektowane dla użytkowników poszukujących zwiększonej ochrony swoich kont. ${ learnMoreLink }"
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Proton Sentinel jest **włączony** i chroni Twoje konto."
+      ],
+      "Your information was found in at least one data breach. Turn on Breach Alert to view details and take action. ${ learnMoreLink }": [
+        "Twoje informacje zostały znalezione w co najmniej jednym wycieku danych. Włącz alert wycieków, aby zobaczyć szczegóły i zastosować odpowiednią akcję. ${ learnMoreLink }"
       ]
     },
     "Select files": {
@@ -11022,6 +11061,32 @@
         "za"
       ]
     },
+    "Subscription renewal state": {
+      "Are you sure?": [
+        "Czy na pewno?"
+      ],
+      "Auto-pay is disabled": [
+        "Automatyczna płatność jest wyłączona"
+      ],
+      "Auto-pay is enabled": [
+        "Automatyczna płatność jest włączona"
+      ],
+      "Disable": [
+        "Wyłącz"
+      ],
+      "Enable auto-pay support": [
+        "Włącz automatyczną płatność"
+      ],
+      "Keep auto-pay": [
+        "Zachowaj automatyczną płatność"
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
+        "Nasz system nie będzie automatycznie obciążał Cię za pomocą tej metody płatności, ale Twoja subskrypcja będzie odnawiana do końca cyklu rozliczeniowego. Jeśli chcesz obniżyć lub zmienić subskrypcję, musisz zrobić to samodzielnie przed końcem okresu rozliczeniowego. Dodatkowo, jeśli zapomnisz dokonać ręcznej płatności, a automatyczna płatność jest wyłączona dla wszystkich metod płatności, możemy automatycznie obniżyć Twój plan, co spowoduje utratę wielu funkcji."
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
+        "Nasz system nie będzie automatycznie obciążał Cię za pomocą tej metody płatności, ale Twoja subskrypcja będzie odnawiana do końca cyklu rozliczeniowego. Jeśli chcesz obniżyć lub zmienić subskrypcję, musisz zrobić to samodzielnie przed końcem okresu rozliczeniowego. Nie możemy automatycznie obniżyć Twojego planu, jeśli przekroczono darmowy limit przestrzeni dyskowej lub korzystasz z innych płatnych funkcji. Nie możemy automatycznie usunąć plików, wiadomości i innych danych. Jeśli wyłączysz automatyczną płatność, pamiętaj o opłaceniu następnej faktury przed terminem płatności, aby zapobiec zawieszeniu konta."
+      ]
+    },
     "Subscription saving": {
       "Save": [
         "Zaoszczędź"
@@ -11324,6 +11389,12 @@
       "Password copied to clipboard": [
         "Hasło zostało skopiowane do schowka"
       ],
+      "Payment method added": [
+        "Metoda płatności została dodana"
+      ],
+      "Payment method updated": [
+        "Metoda płatności została zaktualizowana"
+      ],
       "Phishing reported": [
         "Próba wyłudzenia informacji została zgłoszona"
       ],
@@ -11552,6 +11623,9 @@
       "Add contact group name": [
         "Dodaj nazwę grupy kontaktów"
       ],
+      "Add credit/debit card": [
+        "Dodaj kartę płatniczą"
+      ],
       "Add filter": [
         "Dodaj filtr"
       ],
@@ -11776,6 +11850,9 @@
       ],
       "Edit contact group": [
         "Edytuj grupę kontaktów"
+      ],
+      "Edit credit/debit card": [
+        "Edytuj kartę płatniczą"
       ],
       "Edit email settings": [
         "Edytuj ustawienia adresu e-mail"

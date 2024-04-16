@@ -40,6 +40,9 @@
       "Add contact": [
         "Дадаць кантакт"
       ],
+      "Add credit / debit card": [
+        "Дадаць крэдытную/плацежную картку"
+      ],
       "Add email": [
         "Дадаць электронную пошту"
       ],
@@ -1132,6 +1135,12 @@
       "Trust": [
         "Давяраць"
       ],
+      "Trust key": [
+        "Давяраць ключу",
+        "Давяраць ключам",
+        "Давяраць ключам",
+        "Давяраць ключам"
+      ],
       "Trust public key": [
         "Давяраць публічнаму ключу"
       ],
@@ -1693,6 +1702,12 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Працягнуць выкарыстоўваць ${ MAIL_APP_NAME }."
+      ],
+      "Continue using ${ planTitle }": [
+        "Працягнуць выкарыстоўваць ${ planTitle }"
+      ],
+      "Continue your subscription": [
+        "Працягнуць падпіску"
       ]
     },
     "Calendar attachment tooltip": {
@@ -6650,7 +6665,7 @@
         "Падпіска заканчваецца: актывуйце яе паўторна да ${ byDate }, каб пакінуць перавагі свайго тарыфнага плана ${ planName }. ${ reactivateLink }"
       ],
       "Temporarily unavailable. Please check back later.": [
-        "Часова недаступны. Паўтарыце спробу пазней."
+        "Часова недаступны. Паспрабуйце яшчэ раз пазней."
       ],
       "Test link": [
         "Тэставая спасылка"
@@ -6991,6 +7006,9 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Для завяршэння трансакцыі мы адкрыем новую ўкладку браўзера і перанакіруем вас на сайт PayPal. Калі вы выкарыстоўваеце пашырэнні блакіроўкі ўсплывальных вокнаў, адключыце іх, каб працягнуць."
       ],
+      "We'll email you once import is complete.": [
+        "Мы адправім вам ліст, калі імпартаванне завершыцца."
+      ],
       "We'll notify you when the import is done.": [
         "Мы апавясцім вас пра завяршэнне імпартавання."
       ],
@@ -7050,6 +7068,9 @@
       ],
       "You can check the progress ${ importProgressLink }.": [
         "Вы можаце праверыць ход выканання ${ importProgressLink }."
+      ],
+      "You can close the tab or browser in the meantime.": [
+        "Тым часам вы можаце закрыць укладку або браўзер."
       ],
       "You can either update your search query or ${ button }": [
         "Вы можаце змяніць ваш пошукавы запыт або ${ button }"
@@ -7113,6 +7134,12 @@
         "У вас **${ count } паведамленні** пазначаны гэтай меткай",
         "У вас **${ count } паведамленняў** пазначаны гэтай меткай",
         "У вас **${ count } паведамленні** пазначаны гэтай меткай"
+      ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "У вас ёсць падпіска з пробным перыядам тарыфнага плана ${ planTitle }. Дадайце спосаб аплаты, каб працягнуць карыстацца ёй пасля завяршэння пробнага перыяду."
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "У вас ёсць падпіска з пробным перыядам тарыфнага плана ${ planTitle }. У дадзены момант аплата не патрабуецца. Ваша падпіска будзе аўтаматычна падоўжана ў канцы пробнага перыяду."
       ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
         "Вы не пазначылі тэму ліста. Вы сапраўды хочаце ўсё роўна адправіць паведамленне?"
@@ -7226,7 +7253,7 @@
         "Адбылася ўцечка вашага адраса электроннай пошты і пароля:"
       ],
       "Your email address was exposed:": [
-        "Ваша адрас электроннай пошты скампраметаваны:"
+        "Ваш адрас электроннай пошты скампраметаваны:"
       ],
       "Your email will only be used for this one-time verification.": [
         "Ваша электронная пошта будзе выкарыстана толькі для гэтай аднаразовай праверкі."
@@ -7556,7 +7583,7 @@
         "${ n } месяцы"
       ],
       "(Temporarily unavailable. Please check back later.)": [
-        "(Часова недаступны. Паўтарыце спробу пазней.)"
+        "(Часова недаступны. Паспрабуйце яшчэ раз пазней.)"
       ],
       "Actions": [
         "Дзеянні"
@@ -9919,7 +9946,7 @@
         "Выберыце прычыну"
       ],
       "Select state": [
-        "Выбраць вобласць"
+        "Выбраць штат"
       ],
       "Start date": [
         "Дата пачатку"
@@ -11040,6 +11067,32 @@
         "За"
       ]
     },
+    "Subscription renewal state": {
+      "Are you sure?": [
+        "Вы ўпэўнены?"
+      ],
+      "Auto-pay is disabled": [
+        "Аўтаматычная аплата адключана"
+      ],
+      "Auto-pay is enabled": [
+        "Аўтаматычная аплата ўключана"
+      ],
+      "Disable": [
+        "Адключыць"
+      ],
+      "Enable auto-pay support": [
+        "Уключыць падтрымку аўтаматычнай аплаты"
+      ],
+      "Keep auto-pay": [
+        "Пакінуць аўтаматычную аплату"
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
+        "Наша сістэма больш не будзе аўтаматычна спаганяць з вас сродкі выкарыстоўваючы гэты спосаб аплаты, але ваша падпіска ўсё яшчэ будзе падаўжацца ў канцы перыяду аплаты. Вам усё роўна трэба рабіць гэта самастойна да завяршэння разліковага перыяду, калі вы захочаце панізіць або змяніць сваю падпіску. Звярніце ўвагу, што калі вы забудзеце зрабіць плацеж уручную і аўтаматычная аплата будзе адключана для ўсіх спосабаў аплаты, мы пакідаем за сабой права панізіць ваш уліковы запіс у аўтаматычным рэжыме, што прывядзе да страты многіх функцый."
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
+        "Наша сістэма больш не будзе аўтаматычна спаганяць з вас сродкі выкарыстоўваючы гэты спосаб аплаты, але ваша падпіска ўсё яшчэ будзе падаўжацца ў канцы перыяду аплаты. Вам усё роўна трэба рабіць гэта самастойна да завяршэння разліковага перыяду, калі вы захочаце панізіць або змяніць сваю падпіску. Мы не зможам аўтаматычна панізіць ваш тарыфны план, бо калі вы перавысілі бясплатную квоту яго сховішча або выкарыстоўваеце іншыя платныя функцыі, то аўтаматычна выдаліць файлы, лісты або іншыя даныя будзе немагчыма. Калі вы адключыце аўтаматычную аплату, то не забывайце аплачваць падпіску свайго рахунку да даты завяршэння плацежнага перыяду, каб прадухіліць яго прыпыненне."
+      ]
+    },
     "Subscription saving": {
       "Save": [
         "Захаваць"
@@ -11342,6 +11395,12 @@
       "Password copied to clipboard": [
         "Пароль скапіяваны ў буфер абмену"
       ],
+      "Payment method added": [
+        "Спосаб аплаты дададзены"
+      ],
+      "Payment method updated": [
+        "Спосаб аплаты абноўлены"
+      ],
       "Phishing reported": [
         "Справаздача пра фішынг адпраўлена"
       ],
@@ -11570,6 +11629,9 @@
       "Add contact group name": [
         "Дадаць назву групы кантактаў"
       ],
+      "Add credit/debit card": [
+        "Дадаць крэдытную/плацежную картку"
+      ],
       "Add filter": [
         "Дадаць фільтр"
       ],
@@ -11794,6 +11856,9 @@
       ],
       "Edit contact group": [
         "Рэдагаваць групу кантактаў"
+      ],
+      "Edit credit/debit card": [
+        "Рэдагаваць даныя банкаўскай карткі"
       ],
       "Edit email settings": [
         "Рэдагаванне налад электроннай пошты"

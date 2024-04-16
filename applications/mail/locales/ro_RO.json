@@ -40,6 +40,9 @@
       "Add contact": [
         "Adăugare contact"
       ],
+      "Add credit / debit card": [
+        "Adăugare card de credit/debit"
+      ],
       "Add email": [
         "Adăugare e-mail"
       ],
@@ -1118,6 +1121,11 @@
       ],
       "Trust": [
         "Aprobare"
+      ],
+      "Trust key": [
+        "Cheie de încredere",
+        "Chei de încredere",
+        "Chei de încredere"
       ],
       "Trust public key": [
         "Aprobare cheie publică"
@@ -10780,6 +10788,32 @@
         "Pentru"
       ]
     },
+    "Subscription renewal state": {
+      "Are you sure?": [
+        "Confirmați?"
+      ],
+      "Auto-pay is disabled": [
+        "Plata automată este dezactivată"
+      ],
+      "Auto-pay is enabled": [
+        "Plata automată este activată"
+      ],
+      "Disable": [
+        "Dezactivare"
+      ],
+      "Enable auto-pay support": [
+        "Activare suport plată automată"
+      ],
+      "Keep auto-pay": [
+        "Păstrare plată automată"
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
+        "Sistemul nu vă va mai taxa automat folosind această metodă de plată, dar abonamentul încă va fi reînnoit la sfârșitul ciclului de facturare. Dacă doriți să retrogradați contul sau să vă modificați abonamentul, va trebui să o faceți înainte de sfârșitul perioadei de facturare. În plus, dacă uitați să efectuați manual plata și plata automată este dezactivată pentru toate metodele de plată, s-ar putea să vă fie retrogradat contul ceea ce ar putea duce la pierderea multor funcții."
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
+        "Sistemul nu vă va mai taxa automat folosind această metodă de plată, dar abonamentul încă va fi reînnoit la sfârșitul ciclului de facturare. Dacă doriți să retrogradați contul sau să vă modificați abonamentul, va trebui să o faceți înainte de sfârșitul perioadei de facturare. În plus, dacă uitați să efectuați manual plata și plata automată este dezactivată pentru toate metodele de plată, s-ar putea să vă fie retrogradat contul ceea ce ar putea duce la pierderea multor funcții."
+      ]
+    },
     "Subscription saving": {
       "Save": [
         "Salvare"
@@ -11056,6 +11090,12 @@
       "Password copied to clipboard": [
         "Parola a fost copiată în memorie."
       ],
+      "Payment method added": [
+        "Metodă de plată adăugată"
+      ],
+      "Payment method updated": [
+        "Metodă de plată actualizată"
+      ],
       "Phishing reported": [
         "Înșelăciune raportată"
       ],
@@ -11276,6 +11316,9 @@
       "Add contact group name": [
         "Adăugare nume grup contacte"
       ],
+      "Add credit/debit card": [
+        "Adăugare card de credit/debit"
+      ],
       "Add filter": [
         "Adăugare filtru"
       ],
@@ -11488,6 +11531,9 @@
       ],
       "Edit contact group": [
         "Editare grup de contacte"
+      ],
+      "Edit credit/debit card": [
+        "Editare card de credit/debit"
       ],
       "Edit email settings": [
         "Editare setări e-mail"
