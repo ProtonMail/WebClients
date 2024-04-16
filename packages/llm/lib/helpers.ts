@@ -1,5 +1,5 @@
-import {isChromiumBased, isFirefox, isMobile} from "@proton/shared/lib/helpers/browser";
-import {ASSISTANT_STATUS} from "@proton/llm/lib/constants";
+import { ASSISTANT_STATUS } from '@proton/llm/lib/constants';
+import { isChromiumBased, isFirefox, isMobile } from '@proton/shared/lib/helpers/browser';
 
 export const getCanRunAssistant = () => {
     const isOnMobile = isMobile();
@@ -12,12 +12,12 @@ export const getHasAccessToAssistant = (assistantFeatureAvailable?: boolean) => 
 };
 
 export const getAssistantStatus = ({
-                                isModelDownloading,
-                                isModelDownloaded,
-                                isModelLoadingOnGPU,
-                                isModelLoadedOnGPU,
-                                isGeneratingResult,
-                            }: {
+    isModelDownloading,
+    isModelDownloaded,
+    isModelLoadingOnGPU,
+    isModelLoadedOnGPU,
+    isGeneratingResult,
+}: {
     isModelDownloading: boolean;
     isModelDownloaded: boolean;
     isModelLoadingOnGPU: boolean;

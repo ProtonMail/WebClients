@@ -2,6 +2,7 @@ import '@mlc-ai/web-llm';
 import type { InitProgressReport } from '@mlc-ai/web-llm';
 import { WebWorkerEngine } from '@mlc-ai/web-llm';
 
+import mlcConfig from './mlc-config';
 import type {
     Action,
     GenerationCallback,
@@ -13,8 +14,6 @@ import type {
     RunningAction,
     WriteFullEmailAction,
 } from './types';
-
-import mlcConfig from './mlc-config';
 
 async function delay(time: number) {
     const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));

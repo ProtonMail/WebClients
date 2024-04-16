@@ -47,7 +47,9 @@ const ComposerAssistant = ({ onUseGeneratedText, onUpdateShowAssistant, assistan
     };
 
     const learnMoreLink = (
-        <Href href={getBlogURL('/todo')} className="inline-block color-weak">{c('Link').t`Learn more`}</Href>
+        <Href href={getBlogURL('/todo')} className="inline-block color-weak" key="composer-assistant-learn-more">{c(
+            'Link'
+        ).t`Learn more`}</Href>
     );
 
     return (
