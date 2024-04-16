@@ -161,6 +161,9 @@
       "Cancel subscription": [
         "Anulare abonament"
       ],
+      "Change": [
+        "Schimbare"
+      ],
       "Change keys": [
         "Modificare cheie"
       ],
@@ -205,6 +208,9 @@
       ],
       "Color": [
         "Culoare"
+      ],
+      "Configure SAML": [
+        "Configurare SAML"
       ],
       "Confirm": [
         "Confirmare"
@@ -554,6 +560,9 @@
       "Import key": [
         "Importare cheie"
       ],
+      "Import new SAML metadata": [
+        "Importare metadate SAML noi"
+      ],
       "Increase": [
         "Mărire"
       ],
@@ -722,8 +731,14 @@
       "Remove calendar": [
         "Eliminare calendar"
       ],
+      "Remove domain": [
+        "Ștergere domeniu"
+      ],
       "Remove gift code": [
         "Eliminare cod cadou"
+      ],
+      "Remove single sign-on": [
+        "Eliminare conectare unică"
       ],
       "Remove this label": [
         "Eliminare etichetă"
@@ -806,6 +821,9 @@
       "Save ICS file": [
         "Salvare fișier ICS"
       ],
+      "Save SAML configuration": [
+        "Salvare configurare SAML"
+      ],
       "Search": [
         "Căutare"
       ],
@@ -814,6 +832,9 @@
       ],
       "Search settings": [
         "Setări căutare"
+      ],
+      "See DNS TXT record": [
+        "Afișare înregistrare TXT DNS"
       ],
       "See how": [
         "Vedeți cum"
@@ -832,6 +853,9 @@
       ],
       "Select country": [
         "Selectare țară"
+      ],
+      "Select file": [
+        "Selectare fișier"
       ],
       "Select files": [
         "Selectare fișiere"
@@ -940,6 +964,9 @@
       ],
       "Stay": [
         "Nu închide"
+      ],
+      "Stop using single sign-on": [
+        "Oprire utilizare conectare unică"
       ],
       "Strikethrough": [
         "Tăiat cu o linie"
@@ -4022,6 +4049,12 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Migrați la un plan de afaceri cu mai mult de un utilizator pentru a destiona mai mulți utilizatori."
       ],
+      "Please upload an xml file": [
+        "Încărcați un fișier xml."
+      ],
+      "Please upload only 1 file": [
+        "Încărcați numai un fișier."
+      ],
       "Port is required": [
         "Portul este obligatoriu"
       ],
@@ -4152,6 +4185,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "Folosiți doar litere, cifre și _ . -"
+      ],
+      "Unable to upload file": [
+        "Fișierul nu se poate încărca."
       ],
       "Unexpected error, we can't import the contacts": [
         "Eroare neașteptată. Nu se pot importa contactele."
@@ -5505,6 +5541,9 @@
       ]
     },
     "Hint": {
+      "Add this record to your domain in the control panel of your domain name registrar": [
+        "Adăugați această înregistrare la domeniul personal în panoul de control al registratorului de nume de domeniu."
+      ],
       "Found ${ items.length } suggestion, use keyboard to navigate.": [
         "S-a găsit o sugestie, folosiți tastatura pentru a naviga.",
         "S-au găsit ${ items.length } sugestii, folosiți tastatura pentru a naviga.",
@@ -5878,6 +5917,9 @@
       "${ boldName } will be set as default calendar.": [
         "Calendarul ${ boldName } va fi setat ca implicit."
       ],
+      "${ boldSSOUserInformation } and you will have to create them manually to add them back to your organization": [
+        "${ boldSSOUserInformation } și va trebui să-i creați manual pentru a-i adăuga înapoi la organizație."
+      ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Veți pierde accesul la toate datele actuale criptate din cont dacă continuați."
       ],
@@ -6116,6 +6158,9 @@
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
         "Aceasta adaugă un nivel suplimentar de protecție a contului. Va trebui să folosiți autentificarea cu doi factori de fiecare dată când vă conectați."
       ],
+      "Add domain": [
+        "Adăugare domeniu"
+      ],
       "Add image URL": [
         "Adăugare URL imagine"
       ],
@@ -6268,6 +6313,9 @@
       "Are you sure you want to remove administrative privileges from this user?": [
         "Sigur doriți să eliminați drepturile administrative ale acestui utilizator?"
       ],
+      "Are you sure you want to remove the domain ${ boldDomain }?": [
+        "Sigur doriți să eliminați domeniul ${ boldDomain }?"
+      ],
       "Ask your organisation admin to setup Gateways.": [
         "Solicitați administratorului organizației să seteze porți de acces."
       ],
@@ -6373,11 +6421,26 @@
       "Close this screen to exit.": [
         "Închideți această fereastră pentru a ieși."
       ],
+      "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
+        "Configurați autentificarea SAML pentru organizația proprie printr-un furnizor de identitate (IdP). Acest lucru va activa SAML pentru întreaga organizație."
+      ],
+      "Configure SAML authentication for your organization through an identity provider like Okta, Microsoft Azure, or Google Identity Platform. This will enable SAML for the whole organization.": [
+        "Configurați autentificarea SAML pentru organizația proprie printr-un furnizor de identitate precum Okta, Microsoft Azure sau Platforma de identitate Google. Acest lucru va activa SAML pentru întreaga organizație."
+      ],
       "Continue with ${ freeName }": [
         "Continuare cu ${ freeName }"
       ],
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "Continuând contul ${ BRAND_NAME } se va conecta la ${ name }."
+      ],
+      "Copied to clipboard": [
+        "Copiat în memorie"
+      ],
+      "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
+        "Copiați și inserați această adresă URL în câmpul URL ACS (Assertion Consumer Service) al furnizorului de identitate."
+      ],
+      "Copy and paste this URL into the entity ID field of your identity provider": [
+        "Copiați și lipiți această adresă URL în câmpul ID-ului entității furnizorului de identitate."
       ],
       "Copy the link to clipboard": [
         "Copiați legătura în memorie"
@@ -6487,11 +6550,23 @@
       "DMARC checks if the sender's SPF and DKIM records originate from your domain. This can prevent attackers from using another domain's SPF and DKIM to impersonate your domain. The \"p=\" (policy) in this record indicates how you want the recipient platforms to handle unauthorized emails. We recommend using the \"p=quarantine\" policy for most domains. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "DMARC verifică dacă înregistrările SPF și DKIM ale expeditorului provin din domeniul dvs. Acest lucru poate împiedica atacatorii să folosească SPF și DKIM ale altui domeniu pentru a vă compromite identitatea domeniului. „p=\" (politica) din această înregistrare indică modul în care doriți ca platformele destinatare să gestioneze e-mailurile neautorizate. Vă recomandăm să utilizați politica „p=quarantine” pentru majoritatea domeniilor. Asigurați-vă că adăugați următoarea înregistrare TXT în consola DNS (situată pe platforma de unde ați achiziționat domeniul personal)."
       ],
+      "DNS TXT record": [
+        "Înregistrare DNS TXT"
+      ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "NU uitați această parolă. În cazul în care o uitați, nu vă veți mai putea administra organizația."
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "Doriți să anulați toate celelalte sesiuni în afară de cea curentă?"
+      ],
+      "Domain ownership failed verification.": [
+        "Verificarea deținerii domeniului a eșuat."
+      ],
+      "Domain ownership not verified.": [
+        "Dovada deținerii domeniului nu este verificată."
+      ],
+      "Domain ownership verified.": [
+        "Dovada deținerii domeniului este verificată."
       ],
       "domain used": [
         "domeniu utilizat",
@@ -6564,6 +6639,9 @@
       "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
         "Mesajele primite etichetate cu eticheta ${ nameDeleted } nu vor fi șterse și pot fi găsite în continuare în folderul respectiv."
       ],
+      "Enable single sign-on to keep your organization safe": [
+        "Activați autentificarea unică pentru a vă menține organizația în siguranță."
+      ],
       "Enable this address to join this calendar": [
         "Permiteți acestei adrese să se alăture acestui calendar"
       ],
@@ -6575,6 +6653,9 @@
       ],
       "Encryption setting updated": [
         "Setările de criptare s-au actualizat."
+      ],
+      "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
+        "Adresa URL a punctului final primită de la furnizorul de identitate (ex. https://idp.exemplu.com/sso/saml)."
       ],
       "Enhance your network security": [
         "Îmbunătățiți-vă securitatea rețelei"
@@ -6684,6 +6765,9 @@
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Partajați cheia publică prietenilor sau publicați-o online, astfel încât oricine să vă poată trimite mesaje cu criptare bilaterală!"
       ],
+      "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
+        "Accesați furnizorul de identitate, obțineți metadatele SAML pentru ${ appName } și importați-le aici."
+      ],
       "here": [
         "aici"
       ],
@@ -6692,6 +6776,9 @@
       ],
       "High Priority": [
         "Prioritate înaltă"
+      ],
+      "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
+        "Cheia publică a furnizorului de identitate pentru a semna afirmațiile de autentificare. Ar trebui să existe un loc pentru a descărca sau copia hash-ul certificatului de la furnizorul de identitate. Doar lipiți hash-ul certificatului în câmpul de text."
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Dacă un alt administrator a schimbat această parolă, va trebui să-i solicitați noua parolă a organizației."
@@ -6868,6 +6955,9 @@
       "Lean more about gateways": [
         "Aflați mai multe despre porțile de acces"
       ],
+      "Lean more about single sign-on": [
+        "Aflați mai multe despre autentificarea unică"
+      ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Aflați cum să vă conectați la ${ VPN_APP_NAME } cu aplicații VPN terțe."
       ],
@@ -7018,6 +7108,9 @@
       "No results found": [
         "Nu s-au găsit rezultate"
       ],
+      "Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization": [
+        "Utilizatorii care nu folosesc SSO (creați manual, nu cei furnizați de către furnizorul de identitate) încă pot să se autentifice la organizație."
+      ],
       "Not a valid URL": [
         "URL nevalid"
       ],
@@ -7032,6 +7125,9 @@
       ],
       "of": [
         "din"
+      ],
+      "Once single sign-on is disabled for your organization:": [
+        "După ce conectarea unică (SSO) este dezactivată pentru organizație:"
       ],
       "Once you reset your password:": [
         "După ce veți reseta parola:"
@@ -7050,6 +7146,9 @@
       ],
       "Optional": [
         "Opțional"
+      ],
+      "or ${ selectFileButton }": [
+        "sau ${ selectFileButton }"
       ],
       "Or select a particular server:": [
         "Sau selectați un server anume:"
@@ -7281,6 +7380,9 @@
       "Right to Left": [
         "De la dreapta la stânga"
       ],
+      "SAML configuration saved": [
+        "Configurare SAML salvată."
+      ],
       "Save ${ percentage }": [
         "Salvați ${ percentage }"
       ],
@@ -7356,6 +7458,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Deoarece sunteți un utilizator loial, contul are funcții adiționale activate."
       ],
+      "Single sign-on removed": [
+        "Autentificarea unică a fost eliminată"
+      ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
         "Trimiterea SMTP permite serviciilor sau dispozitivelor terță parte să trimită mesaje prin ${ MAIL_APP_NAME } pentru adresele de domeniu personale. Această funcție este disponibilă numai pentru utilizatorii cu planul ${ BRAND_NAME } for Business cu domenii personale."
       ],
@@ -7371,8 +7476,14 @@
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "Unele dintre serverele dvs. disponibile pot fi utilizate numai în anumite țări din cauza eliminărilor recente."
       ],
+      "Specify the domain which is allowed to authenticate with SAML SSO.": [
+        "Specificați domeniul căruia i se permite autentificarea cu SAML SSO."
+      ],
       "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "SPF clarifică cine are permisiunea de a trimite mesaje pentru domeniul dvs. Asigurați-vă că adăugați următoarea înregistrare TXT în consola DNS (situată pe platforma de unde ați achiziționat domeniul personal)."
+      ],
+      "SSO users (provided by your Identity Provider) will be deleted": [
+        "Utilizatorii cu autentificare unică (SSO) (furnizați de către furnizorul de identitate) vor fi eliminați"
       ],
       "Stay tuned for future promotions.": [
         "Rămâneți pe fază pentru viitoarele promoții."
@@ -7453,6 +7564,9 @@
       ],
       "The calendar will be removed from your account.": [
         "Calendarul va fi eliminat din cont."
+      ],
+      "The credentials from your Identity Provider will be deleted.": [
+        "Acreditările de la furnizorul de identitate vă vor fi șterse."
       ],
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "Legătura de verificare a e-mailului a expirat. Reconectați-vă pentru a vi se retrimite legătura de verificare."
@@ -7553,6 +7667,9 @@
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Acest utilizator este în prezent responsabil pentru plăţile organizaţiei. Retrogradând acest membru, veți deveni responsabil pentru plăţile organizaţiei."
       ],
+      "This verification can take up to one hour. You can safely continue to the next steps.": [
+        "Această verificare poate dura până la o oră. Puteți continua în siguranță cu pașii următori."
+      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Aceasta va anula abonamentul cu plată actual și veți pierde orice beneficii de loialitate pe care le-ați acumulat."
       ],
@@ -7580,6 +7697,9 @@
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Această operațiune va șterge permanent contul și toate datele sale. Nu veți mai putea reactiva acest cont."
       ],
+      "This will remove SSO for ${ boldDomainName }.": [
+        "Aceasta va elimina conectarea unică (SSO) pentru ${ boldDomainName }."
+      ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Aceasta vă va înlocui parola temporară. O veți folosi pentru a vă accesa contul ${ BRAND_NAME } în viitor."
       ],
@@ -7594,6 +7714,9 @@
       ],
       "to ${ product } Business": [
         "la ${ product } Business"
+      ],
+      "To allow the domain ${ boldDomainName } to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
+        "Pentru a permite domeniului ${ boldDomainName } să utilizeze SAML SSO, trebuie să verificați calitatea de proprietar a acestuia adăugând următoarea înregistrare DNS TXT la domeniul propriu la furnizorul de DNS."
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Pentru a evita pierderea de date, ștergeți-o numai dacă știți ce faceți sau dacă ați exportat o copie."
@@ -7685,6 +7808,9 @@
       "Unfortunately there is no recovery method saved for this account.": [
         "Din păcate nu există nicio metodă de recuperare salvată pentru acest cont."
       ],
+      "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
+        "ID unic generat de furnizorul de identitate, de obicei sub forma unei adrese URL care conține numele furnizorului de identitate (ex. https://idp.exemplu.com/XXXX)."
+      ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "Dacă nu vă deconectați din cont sau nu vă schimbați parola, sesiunea curentă va rămâne activă. Sesiunea expiră după 60 de zile de inactivitate."
       ],
@@ -7771,6 +7897,9 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Verificarea va deschide o filă nouă. Dezactivați programele care blochează ferestrele flotante. Nu veți fi taxat. Orice sumă retrasă pentru verificarea cardului vă va fi rambursată imediat."
+      ],
+      "Verify domain": [
+        "Verificare domeniu"
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Vă verificați identitatea cu o parolă unică temporară, generată de o aplicație de autentificare."
@@ -7870,6 +7999,9 @@
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Când este dezactivat, acest lucru împiedică încărcarea imaginilor pe dispozitiv fără acordul dvs."
+      ],
+      "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
+        "Când activați SAML pentru ${ appName } în furnizorul de identitate, vi se poate solicita să utilizați adresa URL de apel invers (ACS) și ID-ul emitentului. Doar copiați și lipiți datele de mai jos în câmpurile furnizorului de identitate."
       ],
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
         "Când sunt activate notificările, veți primi o alertă la adresa de e-mail de recuperare dacă aveți mesaje noi în contul ${ MAIL_APP_NAME }."
@@ -8285,26 +8417,8 @@
       ]
     },
     "Key generation": {
-      "A key with the same encryption algorithm already exists. Generating another key will cause slower account loading. Are you sure you want to continue?": [
-        "Există deja o cheie cu același algoritm de criptare. Generarea unei alte chei va cauza o încărcare mai lentă a contului. Sigur doriți să continuați?"
-      ],
-      "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
-        "O cheie cu același algoritm este deja activă pentru această adresă. Generarea unei alte chei va duce la încărcarea mai lentă a contului, iar ștergerea acestei chei poate provoca probleme. Dacă generați o cheie nouă deoarece cheia veche vă este compromisă, marcați mai întâi cheia respectivă ca fiind compromisă. Sigur doriți să continuați?"
-      ],
       "Generate key": [
         "Generare cheie"
-      ],
-      "Key with fingerprint ${ fp } successfully created.": [
-        "Cheia cu amprenta ${ fp } a fost creată cu succes."
-      ],
-      "The encryption keys are being generated. This may take several minutes and temporarily freeze your browser.": [
-        "Cheile de criptare sunt în curs de generare. Acest lucru poate dura câteva minute și vă poate bloca temporar navigatorul web."
-      ],
-      "The encryption keys for your address are being generated. This may take several minutes and temporarily freeze your browser.": [
-        "Cheile de criptare pentru adresă sunt în curs de generare. Acest lucru poate dura câteva minute și vă poate bloca temporar navigatorul web."
-      ],
-      "You can generate a new encryption key if you think your previous key has been compromised.": [
-        "Puteți genera o nouă cheie de criptare dacă credeți că cea anterioară a fost compromisă."
       ]
     },
     "Key state badge": {
@@ -8328,14 +8442,6 @@
       ],
       "Primary": [
         "Primară"
-      ]
-    },
-    "Key type option": {
-      "${ compatibility } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
-        "${ compatibility } RSA 4096 de biți (Mai lentă, dar cu o compatibilitate sporită cu programele vechi)"
-      ],
-      "${ stateOfTheArt } ECC Curve25519 (Fastest, most modern)": [
-        "${ stateOfTheArt } ECC Curve25519 (Cea mai rapidă, cea mai modernă)"
       ]
     },
     "Keyboard shortcut name": {
@@ -8655,6 +8761,12 @@
       "Allow recovery using a trusted device": [
         "Permite recuperarea folosind un dispozitiv de încredere."
       ],
+      "Allowed domain": [
+        "Domeniu permis"
+      ],
+      "Allowed Domain": [
+        "Domeniu permis"
+      ],
       "Amount": [
         "Suma"
       ],
@@ -8678,6 +8790,9 @@
       ],
       "Apply filter to existing emails": [
         "Aplicare filtru la mesajele existente"
+      ],
+      "Assertion Consumer Service URL": [
+        "URL ACS (Assertion Consumer Service)"
       ],
       "Attach public key": [
         "Atașare cheie publică"
@@ -8925,6 +9040,9 @@
       "Duration": [
         "Durata"
       ],
+      "e.g. example.com": [
+        "ex. exemplu.com"
+      ],
       "Email": [
         "E-mail"
       ],
@@ -9042,6 +9160,9 @@
       "Invite via email": [
         "Invitați prin e-mail"
       ],
+      "Issuer ID": [
+        "ID emitent"
+      ],
       "Keep me signed in": [
         "Păstrați-mă conectat"
       ],
@@ -9050,9 +9171,6 @@
       ],
       "Key": [
         "Cheia"
-      ],
-      "Key strength": [
-        "Putere cheie"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Combinații taste: ${ shortcut }"
@@ -9104,6 +9222,15 @@
       ],
       "Messages per page": [
         "Mesaje per pagină"
+      ],
+      "Metadata file for ${ appName }": [
+        "Fișier metadate pentru ${ appName }"
+      ],
+      "Metadata URL for ${ appName }": [
+        "URL metadate pentru ${ appName }"
+      ],
+      "Method for importing metadata": [
+        "Metoda de importare a metadatelor"
       ],
       "Moderate NAT": [
         "NAT moderat"
@@ -9258,6 +9385,9 @@
       "Protection mode": [
         "Mod de protejare"
       ],
+      "Public certificate (X.509)": [
+        "Certificat public (X.509)"
+      ],
       "Read": [
         "Citite"
       ],
@@ -9275,6 +9405,9 @@
       ],
       "Repeat password": [
         "Repetare parolă"
+      ],
+      "Reply (ACS) URL": [
+        "URL răspuns (ACS)"
       ],
       "Require 2FA for administrators": [
         "Solicitare A2F pentru administratori"
@@ -9317,6 +9450,12 @@
       ],
       "Signature": [
         "Semnătura"
+      ],
+      "Single sign-on entity ID": [
+        "ID entitate SSO"
+      ],
+      "Single sign-on URL": [
+        "URL SSO (autentificare unică)"
       ],
       "SMTP port": [
         "Port SMTP"
@@ -9381,6 +9520,9 @@
       "Two-password mode": [
         "Mod cu două parole"
       ],
+      "Type": [
+        "Tip"
+      ],
       "Undo send": [
         "Anulare trimitere"
       ],
@@ -9404,6 +9546,9 @@
       ],
       "Username": [
         "Nume utilizator"
+      ],
+      "Value": [
+        "Valoare"
       ],
       "VAT": [
         "TVA"
@@ -10744,17 +10889,6 @@
         "Gestionare echipă"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Altfel accesul la cont va fi limitat și eventual va fi dezactivat."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Pentru a continua să utilizați ${ trialPlanName } cu funcțiile premium, alegeți tipul de abonament și opțiunea de plată."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Perioada de probare se termină ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } care se termină cu ${ last4 }"
@@ -10854,6 +10988,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Vă bucurați de un preț promoțional la planul dvs. actual. Dacă vă retrogradați contul, veți pierde prețul promoțional și nu va fi disponibil dacă încercați să vă abonați din nou."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Altfel accesul la cont va fi limitat și eventual va fi dezactivat."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Pentru a continua să utilizați ${ trialPlanName } cu funcțiile premium, alegeți tipul de abonament și opțiunea de plată."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Perioada de probare se termină ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -12210,6 +12355,15 @@
       "domain.com": [
         "domeniu.com"
       ],
+      "e.g. https://example.com/app/protonvpn/XXXXX/sso/metadata": [
+        "ex. https://exemplu.com/app/protonvpn/XXXXX/sso/metadata"
+      ],
+      "e.g. https://idp.example.com/sso/saml": [
+        "ex. https://idp.exemplu.com/sso/saml"
+      ],
+      "e.g. https://idp.example.com/XXXXX": [
+        "ex. https://idp.exemplu.com/XXXXX"
+      ],
       "E.g., ": [
         "Ex.: "
       ],
@@ -12435,14 +12589,6 @@
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Verificarea numărului de telefon vă mărește securitatea contului și permite opțiuni suplimentare de recuperare."
-      ]
-    },
-    "Remark about a key type option": {
-      "Compatibility": [
-        "Compatibilitate"
-      ],
-      "State of the art": [
-        "De ultimă oră"
       ]
     },
     "Remove calendar section description": {
@@ -14383,6 +14529,12 @@
       "Encryption and keys": [
         "Criptare și chei"
       ],
+      "Enter endpoints into your identity provider": [
+        "Introduceți puncte finale în furnizorul de identitate"
+      ],
+      "Enter SAML metadata": [
+        "Introducere metadate SAML"
+      ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Introduceți detaliile contului ${ BRAND_NAME } pentru a vă alătura la programul beta al ${ app }"
       ],
@@ -14663,6 +14815,15 @@
       "Remove calendar": [
         "Eliminare calendar"
       ],
+      "Remove domain": [
+        "Eliminare domeniu"
+      ],
+      "Remove single sign-on": [
+        "Eliminare conectare unică"
+      ],
+      "Remove single sign-on for your organization?": [
+        "Eliminați conectarea unică pentru organizație?"
+      ],
       "Remove user?": [
         "Eliminare utilizator?"
       ],
@@ -14689,6 +14850,9 @@
       ],
       "Revoke certificate": [
         "Anulare certificat"
+      ],
+      "SAML authentication": [
+        "Autentificare SAML"
       ],
       "Save time with email filters": [
         "Salvați timp cu filtrele de e-mail"
@@ -14779,6 +14943,9 @@
       ],
       "Signed in to member account": [
         "Conectat în cont de membru"
+      ],
+      "Single sign-on": [
+        "Autentificare unică"
       ],
       "SMTP submission": [
         "Trimitere SMTP"
@@ -15061,6 +15228,12 @@
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Comutare automată a temei preferate sincron cu modul luminos sau întunecat setat al sistemului."
       ],
+      "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
+        "Copiați și inserați această adresă URL în câmpul URL ACS (Assertion Consumer Service) al furnizorului de identitate."
+      ],
+      "Copy and paste this URL into the entity ID field of your identity provider": [
+        "Copiați și lipiți această adresă URL în câmpul ID-ului entității furnizorului de identitate."
+      ],
       "Customize import to reduce the number of folders": [
         "Modificați importarea pentru a reduce numărul folderelor"
       ],
@@ -15088,6 +15261,9 @@
       "Enabling advanced logs records the IP address for each event in the security log.": [
         "Activarea jurnalelor detaliate înregistrează adresa IP pentru fiecare eveniment în jurnalul de securitate."
       ],
+      "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
+        "Adresa URL a punctului final de la furnizorul de identitate (ex. https://idp.exemplu.com/sso/saml)"
+      ],
       "Feature in early access": [
         "Funcție disponibilă în acces timpuriu."
       ],
@@ -15096,6 +15272,9 @@
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Grupare mesaje din aceeași conversație sau afișare separată."
+      ],
+      "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
+        "Cheia publică a furnizorului de identitate pentru a semna declarațiile de autentificare. Obțineți hash-ul certificatului de la furnizorul propriu de identitate."
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Dacă ați cumpărat un cod cadou sau ați primit unul de la echipa de asistență, îl puteți folosi aici."
@@ -15126,6 +15305,9 @@
       ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
         "Semnăturile produse de această cheie sunt considerate nevalide, iar această cheie nu poate fi folosită pentru criptare."
+      ],
+      "Specify the domain which is allowed to authenticate with SAML SSO": [
+        "Specificați domeniul căruia i se permite autentificarea cu SAML SSO"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Subfolderele de sistem vor fi afișate ca foldere separate în ${ MAIL_APP_NAME }."
@@ -15174,6 +15356,9 @@
       ],
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
         "Folosire bare de derulare implicite din navigator. De obicei sunt mai mari și mai ușor de folosit."
+      ],
+      "Usually an URL that contains the identity provider's name within": [
+        "De obicei, o adresă URL care conține numele furnizorului de identitate."
       ],
       "Verified email address": [
         "Adresă de e-mail verificată."
