@@ -1,3 +1,5 @@
+import createListeners from '@proton/shared/lib/helpers/listeners';
+
 import { removeLastRefreshDate } from '../api/helpers/refreshStorage';
 import { getAppHref } from '../apps/helper';
 import { getSlugFromApp } from '../apps/slugHelper';
@@ -11,6 +13,8 @@ import { AuthenticationStore } from './createAuthenticationStore';
 import { getPersistedSession, removePersistedSession } from './persistedSessionStorage';
 
 const clearRecoveryParam = 'clear-recovery';
+
+const logoutListeners = createListeners<PersistedSession[][], Promise<void>>();
 
 interface PassedSession {
     id: string;
@@ -53,7 +57,7 @@ export const getLogoutURL = ({
     type,
     appName,
     mode,
-    persistedSessions,
+    persistedSessions: inputPersistedSessions,
     clearDeviceRecoveryData,
     reason,
 }: {
@@ -77,6 +81,8 @@ export const getLogoutURL = ({
                 return currentURL.toString();
             }
         }
+
+        const persistedSessions = type === 'full' ? inputPersistedSessions : [];
 
         return serializeLogoutURL({ appName, url, persistedSessions, clearDeviceRecoveryData }).toString();
     }
@@ -113,7 +119,11 @@ export const parseLogoutURL = (url: URL) => {
     };
 };
 
-export const handleLogout = ({
+export const registerLogoutListener = (listener: (persistedSessions: PersistedSession[]) => Promise<void>) => {
+    logoutListeners.subscribe(listener);
+};
+
+export const handleLogout = async ({
     appName,
     authentication,
     type,
@@ -139,15 +149,14 @@ export const handleLogout = ({
     }
 
     if (localID !== undefined && mode === 'sso') {
-        // a 'full' logout should also clear the session on the account subdomain.
-        if (type === 'full') {
-            const persistedSession = getPersistedSession(localID);
-            if (persistedSession) {
-                persistedSessions.push(persistedSession);
-            }
+        const persistedSession = getPersistedSession(localID);
+        if (persistedSession) {
+            removePersistedSession(localID, UID);
         }
+    }
 
-        removePersistedSession(localID, UID);
+    if (logoutListeners.length()) {
+        await Promise.all(logoutListeners.notify(persistedSessions));
     }
 
     authentication.logout();
