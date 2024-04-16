@@ -59,6 +59,9 @@
       "Cancel subscription": [
         "구독 취소"
       ],
+      "Change": [
+        "변경"
+      ],
       "Change keys": [
         "키 변경"
       ],
@@ -4128,14 +4131,6 @@
         "구독"
       ]
     },
-    "Key type option": {
-      "${ compatibility } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
-        "${ compatibility } RSA 4096-bit (느리지만, 기존 소프트웨어와의 높은 호환성)"
-      ],
-      "${ stateOfTheArt } ECC Curve25519 (Fastest, most modern)": [
-        "${ stateOfTheArt } ECC Curve25519 (가장 빠르고 현대적임)"
-      ]
-    },
     "Label": {
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } 사용자 이름"
@@ -4352,9 +4347,6 @@
       ],
       "Key": [
         "키"
-      ],
-      "Key strength": [
-        "키 강도"
       ],
       "Level for NetShield blocker filtering": [
         "NetShield 차단 필터링 수준"
@@ -6285,14 +6277,6 @@
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "휴대 전화 인증은 계정 보호성이 증가하고 추가적인 복구 옵션을 제공합니다."
-      ]
-    },
-    "Remark about a key type option": {
-      "Compatibility": [
-        "호환성"
-      ],
-      "State of the art": [
-        "최신 기술"
       ]
     },
     "Restore administrator panel": {

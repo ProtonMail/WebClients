@@ -93,6 +93,11 @@
         "Creating or accessing non-private user accounts"
       ]
     },
+    "scim: Info": {
+      "To re-enable syncing with your identity provider, your need to complete the SCIM integration again.": [
+        "To re-enable syncing with your identity provider, you need to complete the SCIM integration again."
+      ]
+    },
     "session_recovery:available:info": {
       "You have ${ timeRemaining.inHours } hour to reset your password.": [
         "You have ${ timeRemaining.inHours } hour to reset your password.",

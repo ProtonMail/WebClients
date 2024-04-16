@@ -56,6 +56,9 @@
       "Cancel subscription": [
         "Cancelar subscrição"
       ],
+      "Change": [
+        "Alterar"
+      ],
       "Change keys": [
         "Alterar chaves"
       ],
@@ -3797,14 +3800,6 @@
         "Subscrição"
       ]
     },
-    "Key type option": {
-      "${ compatibility } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
-        "${ compatibility } RSA 4096-bit (mais lenta, mas com melhor compatibilidade com programas antigos)"
-      ],
-      "${ stateOfTheArt } ECC Curve25519 (Fastest, most modern)": [
-        "${ stateOfTheArt } ECC Curve25519 (mais rápida e moderna)"
-      ]
-    },
     "Label": {
       "${ BRAND_NAME } username": [
         "Nome de utilizador do ${ BRAND_NAME }"
@@ -4006,9 +4001,6 @@
       ],
       "Key": [
         "Chave"
-      ],
-      "Key strength": [
-        "Força da chave"
       ],
       "Level for NetShield blocker filtering": [
         "Nível de filtragem do bloqueador NetShield"
@@ -5587,14 +5579,6 @@
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "A verificação do seu número de telefone aumenta a segurança da sua conta e permite opções de recuperação adicionais."
-      ]
-    },
-    "Remark about a key type option": {
-      "Compatibility": [
-        "Compatibilidade"
-      ],
-      "State of the art": [
-        "Tecnologia de ponta"
       ]
     },
     "Restore administrator panel": {

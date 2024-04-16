@@ -40,6 +40,9 @@
       "Add contact": [
         "Kişi ekle"
       ],
+      "Add credit / debit card": [
+        "Kredi ya da banka kartı ekle"
+      ],
       "Add email": [
         "E-posta ekle"
       ],
@@ -1120,6 +1123,10 @@
       ],
       "Trust": [
         "Güven"
+      ],
+      "Trust key": [
+        "Anahtara güven",
+        "Anahtarlara güven"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -10607,6 +10614,32 @@
         "Toplam"
       ]
     },
+    "Subscription renewal state": {
+      "Are you sure?": [
+        "Emin misiniz?"
+      ],
+      "Auto-pay is disabled": [
+        "Otomatik ödeme kapatıldı"
+      ],
+      "Auto-pay is enabled": [
+        "Otomatik ödeme açıldı"
+      ],
+      "Disable": [
+        "Kullanımdan kaldır"
+      ],
+      "Enable auto-pay support": [
+        "Otomatik ödeme desteğini aç"
+      ],
+      "Keep auto-pay": [
+        "Otomatik ödemeyi sürdür"
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
+        "Sistemimiz artık bu ödeme yöntemini kullanarak sizden otomatik olarak ücret almayacak. Ancak aboneliğiniz fatura döneminin sonunda yine de yenilenecek. Abonelik tarifenizi düşürmek ya da değiştirmek istiyorsanız, fatura dönemi sona ermeden önce bunu sizin yapmanız gerekir. Ayrıca, el ile ödeme yapmayı unutursanız ve tüm ödeme yöntemleri için otomatik ödeme kapatılmışsa, hesabınızın tarifesini otomatik olarak düşürebiliriz ve bu da birçok özelliğin kaybolmasına neden olur."
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
+        "Sistemimiz artık bu ödeme yöntemini kullanarak sizden otomatik olarak ücret almayacak. Ancak aboneliğiniz fatura döneminin sonunda yine de yenilenecek. Abonelik tarifenizi düşürmek ya da değiştirmek istiyorsanız, fatura dönemi sona ermeden önce bunu sizin yapmanız gerekir. Free tarifesinin depolama kotasını aşarsanız ya da diğer ücretli özellikleri kullanıyorsanız dosyaları, e-postaları veya diğer verileri sizin için otomatik olarak silemeyeceğimizden otomatik olarak tarifenizi düşüremeyiz. Otomatik ödemeyi kapatırsanız, hesabın askıya alınmasını önlemek için bir sonraki faturanızı son ödeme tarihinden önce el ile ödemeyi unutmayın."
+      ]
+    },
     "Subscription saving": {
       "Save": [
         "Kazancınız"
@@ -10857,6 +10890,12 @@
       "Password copied to clipboard": [
         "Parola panoya kopyalandı"
       ],
+      "Payment method added": [
+        "Ödeme yöntemi eklendi"
+      ],
+      "Payment method updated": [
+        "Ödeme yöntemi güncellendi"
+      ],
       "Phishing reported": [
         "Kimlik avı girişimi bildirildi"
       ],
@@ -11069,6 +11108,9 @@
       "Add contact group name": [
         "Kişi grubu adı ekle"
       ],
+      "Add credit/debit card": [
+        "Kredi ya da banka kartı ekle"
+      ],
       "Add filter": [
         "Süzgeç ekle"
       ],
@@ -11278,6 +11320,9 @@
       ],
       "Edit contact group": [
         "Kişi grubunu düzenle"
+      ],
+      "Edit credit/debit card": [
+        "Kredi ya da banka kartını düzenle"
       ],
       "Edit email settings": [
         "E-posta ayarlarını düzenle"

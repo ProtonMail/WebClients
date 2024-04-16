@@ -59,6 +59,9 @@
       "Cancel subscription": [
         "Отменить подписку"
       ],
+      "Change": [
+        "Изменить"
+      ],
       "Change keys": [
         "Изменить ключи"
       ],
@@ -1862,6 +1865,11 @@
       ],
       "/user per month": [
         "/за пользователя в месяц"
+      ]
+    },
+    "Delete address prompt": {
+      "You can only delete 1 address per year.": [
+        "Вы можете удалить только 1 адрес в год."
       ]
     },
     "Delete address tooltip": {
@@ -4168,14 +4176,6 @@
         "Подписка"
       ]
     },
-    "Key type option": {
-      "${ compatibility } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
-        "${ compatibility } RSA 4096-bit (Медленнее, но улучшена совместимость с устаревшим программным обеспечением)"
-      ],
-      "${ stateOfTheArt } ECC Curve25519 (Fastest, most modern)": [
-        "${ stateOfTheArt } ECC Curve25519 (Самое быстрое, самое современное)"
-      ]
-    },
     "Label": {
       "${ BRAND_NAME } username": [
         "имя пользователя ${ BRAND_NAME }"
@@ -4398,9 +4398,6 @@
       ],
       "Key": [
         "Ключ"
-      ],
-      "Key strength": [
-        "Надежность ключа"
       ],
       "Level for NetShield blocker filtering": [
         "Уровень для фильтрации блокировщика NetShield"
@@ -5548,6 +5545,9 @@
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "Массовая рекламная или программная рассылка электронной почты в настоящее время не поддерживается. Мы рекомендуем использовать специального поставщика услуг электронной почты для этого случая."
       ],
+      "Choose custom times to be reminded about an email or for your message to arrive": [
+        "Выберите время, в течение которого вам будут напоминать об электронной почте или о том, что ваше сообщение должно прийти."
+      ],
       "Control access to your shared files by adding password protection and link expiration dates": [
         "Контролируйте доступ к общим файлам, добавляя защиту паролем и даты истечения срока действия ссылок"
       ],
@@ -6287,14 +6287,6 @@
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Подтверждение номера телефона повышает безопасность вашего аккаунта и дает дополнительные возможности для восстановления."
-      ]
-    },
-    "Remark about a key type option": {
-      "Compatibility": [
-        "Совместимость"
-      ],
-      "State of the art": [
-        "Передовой"
       ]
     },
     "Restore administrator panel": {

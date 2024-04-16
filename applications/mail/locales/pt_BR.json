@@ -40,6 +40,9 @@
       "Add contact": [
         "Adicionar contato"
       ],
+      "Add credit / debit card": [
+        "Adicionar cartão de crédito/débito"
+      ],
       "Add email": [
         "Adicionar e-mail"
       ],
@@ -1127,6 +1130,10 @@
       "Trust": [
         "Confiar"
       ],
+      "Trust key": [
+        "Confiar na chave",
+        "Confiar nas chaves"
+      ],
       "Trust public key": [
         "Confiar na chave pública"
       ],
@@ -1674,6 +1681,12 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continuar usando ${ MAIL_APP_NAME }."
+      ],
+      "Continue using ${ planTitle }": [
+        "Continuar usando ${ planTitle }"
+      ],
+      "Continue your subscription": [
+        "Continuar sua assinatura"
       ]
     },
     "Calendar attachment tooltip": {
@@ -5998,6 +6011,9 @@
       "Large imports can take several days.": [
         "Grandes importações podem levar vários dias."
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Aprenda como ${ staySaferOnlineLink }"
+      ],
       "Learn more": [
         "Saiba mais"
       ],
@@ -6015,6 +6031,9 @@
       ],
       "Loading ${ appName }": [
         "Carregando ${ appName }"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Carregando o calendário, aguarde. Você será redirecionado à nossa plataforma de agendamento Calendly numa nova guia."
       ],
       "Loading message": [
         "Carregando mensagem"
@@ -6450,6 +6469,9 @@
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "Os dados inseridos no rascunho não podem ser salvos se você sair da página."
       ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "As informações expostas vazaram de um serviço de terceiros. As informações da sua Conta ${ BRAND_NAME } permanecem seguras e criptografadas. ${ learnMoreLink }"
+      ],
       "The local database is being prepared": [
         "O banco de dados local está sendo preparado"
       ],
@@ -6765,6 +6787,9 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Vamos redirecioná-lo para o PayPal em uma nova guia do navegador para concluir esta transação. Desative qualquer bloqueador de pop-ups que estiver usando."
       ],
+      "We'll email you once import is complete.": [
+        "Lhe enviaremos um e-mail assim que a importação estiver concluída."
+      ],
       "We'll notify you when the import is done.": [
         "Nós te avisaremos quando a importação estiver concluída."
       ],
@@ -6825,6 +6850,9 @@
       "You can check the progress ${ importProgressLink }.": [
         "Você pode verificar o progresso ${ importProgressLink }."
       ],
+      "You can close the tab or browser in the meantime.": [
+        "Enquanto isso, você pode fechar a aba ou o navegador."
+      ],
       "You can either update your search query or ${ button }": [
         "Você pode atualizar sua pesquisa de consulta ou ${ button }"
       ],
@@ -6875,6 +6903,12 @@
       "You have **${ count } message** tagged with this label": [
         "Você tem **${ count } mensagem** marcada com este marcador",
         "Você tem **${ count } mensagens** marcadas com este marcador"
+      ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "Você tem uma assinatura de avaliação ${ planTitle }. Se quer continuar a sua assinatura após o período de avaliação, adicione um método de pagamento."
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "Você tem uma assinatura de avaliação ${ planTitle }. Nenhum pagamento é necessário no momento. Sua assinatura será renovada automaticamente ao final do período de avaliação."
       ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
         "Você não forneceu nenhum assunto ao seu e-mail. Você deseja enviar a mensagem mesmo assim?"
@@ -9843,11 +9877,17 @@
       ]
     },
     "Security Center - Info": {
+      "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
+        "Seja notificado caso sua senha ou outros dados sejam vazados de um serviço de terceiros. ${ learnMoreLink }"
+      ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Nossa solução de segurança de última geração orientada por IA, projetada para usuários que buscam proteção reforçada para suas contas. ${ learnMoreLink }"
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel está **ativo** e protegendo sua conta."
+      ],
+      "Your information was found in at least one data breach. Turn on Breach Alert to view details and take action. ${ learnMoreLink }": [
+        "Suas informações foram encontradas em pelo menos uma violação de dados. Ligue o Alerta de Violação para ver detalhes e tomar medidas. ${ learnMoreLink }"
       ]
     },
     "Select files": {
@@ -10640,6 +10680,32 @@
         "Por"
       ]
     },
+    "Subscription renewal state": {
+      "Are you sure?": [
+        "Você tem certeza?"
+      ],
+      "Auto-pay is disabled": [
+        "O pagamento automático está desativado."
+      ],
+      "Auto-pay is enabled": [
+        "O pagamento automático está ativado."
+      ],
+      "Disable": [
+        "Desativar"
+      ],
+      "Enable auto-pay support": [
+        "Ativar suporte de pagamento automático"
+      ],
+      "Keep auto-pay": [
+        "Manter o pagamento automático"
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
+        "Nosso sistema não efetuará mais a cobrança automática usando esse método de pagamento, mas sua assinatura ainda será renovada no final do ciclo de cobrança. Se você quiser fazer downgrade ou alterar sua assinatura, ainda precisará fazer isso antes do final do período de cobrança. Além disso, se você esquecer de fazer um pagamento manual e o pagamento automático estiver desabilitado para todos os métodos de pagamento, podemos rebaixar automaticamente sua conta, o que levará à perda de muitos recursos."
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
+        "Nosso sistema não efetuará mais a cobrança automática usando esse método de pagamento, mas sua assinatura ainda será renovada no final do ciclo de cobrança. Se você quiser fazer downgrade ou alterar sua assinatura, ainda precisará fazer isso antes do final do período de cobrança. Não podemos fazer o downgrade automaticamente porque, se você ultrapassar a cota de armazenamento do plano gratuito ou usar outros recursos pagos, não poderemos excluir automaticamente arquivos, e-mails ou outros dados para você. Se você desabilitar o pagamento automático, lembre-se de pagar sua próxima fatura de assinatura antes da data de vencimento para evitar a suspensão da conta."
+      ]
+    },
     "Subscription saving": {
       "Save": [
         "Economize"
@@ -10890,6 +10956,12 @@
       "Password copied to clipboard": [
         "Senha copiada para a área de transferência"
       ],
+      "Payment method added": [
+        "Método de pagamento adicionado"
+      ],
+      "Payment method updated": [
+        "Método de pagamento atualizado"
+      ],
       "Phishing reported": [
         "Reportado como phishing"
       ],
@@ -11101,6 +11173,9 @@
       ],
       "Add contact group name": [
         "Adicionar nome do grupo de contatos"
+      ],
+      "Add credit/debit card": [
+        "Adicionar cartão de crédito/débito"
       ],
       "Add filter": [
         "Adicionar filtro"
@@ -11314,6 +11389,9 @@
       ],
       "Edit contact group": [
         "Editar grupo de contatos"
+      ],
+      "Edit credit/debit card": [
+        "Editar cartão de crédito/débito"
       ],
       "Edit email settings": [
         "Editar configurações do e-mail"

@@ -59,6 +59,9 @@
       "Cancel subscription": [
         "Ακύρωση συνδρομής"
       ],
+      "Change": [
+        "Αλλαγή"
+      ],
       "Change keys": [
         "Αλλαγή κλειδιών"
       ],
@@ -4151,14 +4154,6 @@
         "Συνδρομή"
       ]
     },
-    "Key type option": {
-      "${ compatibility } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
-        "${ compatibility } RSA 4096-bit (Αργή, αλλά αυξημένης συμβατότητας με παλαιό λογισμικό)"
-      ],
-      "${ stateOfTheArt } ECC Curve25519 (Fastest, most modern)": [
-        "${ stateOfTheArt } ECC Curve25519 (Τάχιστη, πλέον σύγχρονη)"
-      ]
-    },
     "Label": {
       "${ BRAND_NAME } username": [
         "όνομα χρήστη ${ BRAND_NAME }"
@@ -4378,9 +4373,6 @@
       ],
       "Key": [
         "Κλειδί"
-      ],
-      "Key strength": [
-        "Ισχύς Κλειδιού"
       ],
       "Level for NetShield blocker filtering": [
         "Επίπεδο φίλτρου φραγής NetShield"
@@ -6311,14 +6303,6 @@
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Η επαλήθευση του αριθμού τηλεφώνου σας αυξάνει την ασφάλεια του λογαριασμού σας και επιτρέπει πρόσθετες επιλογές ανάκτησης."
-      ]
-    },
-    "Remark about a key type option": {
-      "Compatibility": [
-        "Συμβατή"
-      ],
-      "State of the art": [
-        "Αιχμής"
       ]
     },
     "Restore administrator panel": {

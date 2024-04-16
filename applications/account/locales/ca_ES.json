@@ -161,6 +161,9 @@
       "Cancel subscription": [
         "Cancel·la la subscripció"
       ],
+      "Change": [
+        "Canvia"
+      ],
       "Change keys": [
         "Canvia les claus"
       ],
@@ -205,6 +208,9 @@
       ],
       "Color": [
         "Color"
+      ],
+      "Configure SAML": [
+        "Configura SAML"
       ],
       "Confirm": [
         "Confirma"
@@ -304,6 +310,9 @@
       ],
       "Delete": [
         "Elimina"
+      ],
+      "Delete address": [
+        "Eliminar l'adreça"
       ],
       "Delete and confirm": [
         "Elimina i confirma"
@@ -551,6 +560,9 @@
       "Import key": [
         "Importa una clau"
       ],
+      "Import new SAML metadata": [
+        "Importa les noves metadades SAML"
+      ],
       "Increase": [
         "Incrementa"
       ],
@@ -719,6 +731,9 @@
       "Remove calendar": [
         "Esborra el calendari"
       ],
+      "Remove domain": [
+        "Esborra el domini"
+      ],
       "Remove gift code": [
         "Esborra el codi de regal"
       ],
@@ -812,6 +827,9 @@
       "Search settings": [
         "Configuració de cerca"
       ],
+      "See DNS TXT record": [
+        "Mostra el registre DNS TXT"
+      ],
       "See how": [
         "Veieu com"
       ],
@@ -829,6 +847,9 @@
       ],
       "Select country": [
         "Seleccioneu el país"
+      ],
+      "Select file": [
+        "Selecciona un fitxer"
       ],
       "Select files": [
         "Selecciona els fitxers"
@@ -974,6 +995,9 @@
       "Unlock": [
         "Desbloquejar"
       ],
+      "Unlock Breach Report": [
+        "Desbloquegi l'informe d'incompliment"
+      ],
       "Unlock data": [
         "Desbloqueja les dades"
       ],
@@ -1003,6 +1027,9 @@
       ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Millora per habilitar ${ PROTON_SENTINEL_NAME }"
+      ],
+      "Upgrade to view all": [
+        "Actualitzi per veure-ho tot"
       ],
       "Upgrade your plan": [
         "Milloreu el vostre pla"
@@ -1134,6 +1161,9 @@
       ]
     },
     "Address action": {
+      "Delete address": [
+        "Eliminar l'adreça"
+      ],
       "Disable": [
         "Desactiva"
       ],
@@ -3011,6 +3041,22 @@
         "Desconegut"
       ]
     },
+    "Delete address prompt": {
+      "The next active address on your list will be set as the default.": [
+        "La següent adreça activa de la llista s'establirà com adreça per defecte."
+      ],
+      "You can only delete 1 address per year.": [
+        "Només pot eliminar una adreça per any."
+      ]
+    },
+    "Delete address tooltip": {
+      "You can only delete 1 address per year": [
+        "Només pot eliminar una adreça per any"
+      ],
+      "You've reached the limit of address deletions for this user.": [
+        "Ha assolit el límit de supressió d'adreces per a aquest usuari."
+      ]
+    },
     "Delete calendar section description": {
       "All events in this calendar will be deleted.": [
         "S'eliminaran tots els esdeveniments d'aquest calendari."
@@ -3061,6 +3107,9 @@
       "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
         "Per a esborrar el peu de pàgina de ${ MAIL_APP_NAME }, milloreu i aconseguiu encara més característiques prèmium."
       ],
+      "To view the full report including personalized recommendations, upgrade to a paid plan.": [
+        "Per veure l'informe complet amb recomanacions personalitzades, subscrigui's a un pla de pagament."
+      ],
       "Track the status and activity of your referrals.": [
         "Feu un seguiment de l'estat i l'activitat de les vostres recomanacions."
       ],
@@ -3107,7 +3156,7 @@
         "No he creat aquest compte."
       ],
       "sign in": [
-        "iniciar la sessió"
+        "inicia la sessió"
       ],
       "Thanks for letting us know": [
         "Gràcies per fer-nos-ho saber"
@@ -3659,6 +3708,9 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. També podeu comprovar la nostra ${ statusPageLink }"
       ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } és el seu nom d'usuari. Per crear ${ emailAddress }, vagi a Configuració > Missatges i redacció > Domini curt (pm.me)"
+      ],
       "A group with this name already exists": [
         "Ja existeix un grup amb aquest nom"
       ],
@@ -3909,6 +3961,9 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Milloreu a un pla per a empreses amb més d'un usuari per a gestionar múltiples usuaris."
       ],
+      "Please upload an xml file": [
+        "Carregueu un arxiu XML"
+      ],
       "Port is required": [
         "Es requereix el port"
       ],
@@ -4035,6 +4090,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "Intenteu utilitzar només lletres, numerals i _.-"
+      ],
+      "Unable to upload file": [
+        "No es pot carregar el fitxer."
       ],
       "Unexpected error, we can't import the contacts": [
         "S'ha produït un error inesperat. No es poden importar els contactes"
@@ -5950,6 +6008,9 @@
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
         "Afegiu una capa de seguretat addicional al vostre compte. Haureu de verificar-vos amb l'autenticació de dos factors (A2F) cada vegada que inicieu la sessió."
       ],
+      "Add domain": [
+        "Afegeix un domini"
+      ],
       "Add image URL": [
         "Afegeix l'URL de la imatge"
       ],
@@ -6125,6 +6186,9 @@
       "Be sure to copy your password and store it somewhere safe.": [
         "Assegureu-vos de copiar la vostra contrasenya i emmagatzemar-la en un lloc segur."
       ],
+      "Before activating the user, you need to provide a password and create encryption keys for the addresses.": [
+        "Abans d'activar l'usuari, cal proporcionar una contrasenya i crear claus de xifratge per a les adreces."
+      ],
       "Before creating this address you need to provide a password and create encryption keys for it.": [
         "Abans de crear aquesta adreça, hi heu de proporcionar una contrasenya i crear claus de xifratge."
       ],
@@ -6176,11 +6240,17 @@
       "Close this screen to exit.": [
         "Tanqueu la finestra per sortir."
       ],
+      "Configure SAML authentication for your organization through an identity provider like Okta, Microsoft Azure, or Google Identity Platform. This will enable SAML for the whole organization.": [
+        "Configuri l'autenticació SAML per a la seva organització mitjançant un proveïdor d'identitats com Okta, Microsoft Azure o Google Identity Platform. Això habilitarà SAML per a tota l'organització."
+      ],
       "Continue with ${ freeName }": [
         "Continua amb ${ freeName }"
       ],
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "Si continueu, connectareu el vostre compte de ${ BRAND_NAME } amb ${ name }."
+      ],
+      "Copied to clipboard": [
+        "Copiat al porta-retalls"
       ],
       "Copy the link to clipboard": [
         "Copia l'enllaç al porta-retalls"
@@ -6276,11 +6346,17 @@
       "DMARC checks if the sender's SPF and DKIM records originate from your domain. This can prevent attackers from using another domain's SPF and DKIM to impersonate your domain. The \"p=\" (policy) in this record indicates how you want the recipient platforms to handle unauthorized emails. We recommend using the \"p=quarantine\" policy for most domains. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "DMARC comprova si els registres SPF i DKIM del remitent procedeixen del vostre domini. Això pot evitar que els atacants utilitzin registres SPF i DKIM d'un altre domini per fer-se passar pel vostre. La \"p=\" (política) d'aquest registre indica com voleu que les plataformes destinatàries gestionin els correus electrònics no autoritzats. Recomanem usar la política \"p=quarantine\" per a la majoria dels dominis. Assegureu-vos d'afegir el següent registre TXT a la vostra consola DNS (ubicada a la plataforma on heu adquirit el domini personalitzat)."
       ],
+      "DNS TXT record": [
+        "Registre DNS TXT"
+      ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "No oblideu aquesta contrasenya. Si l'oblideu, no podreu administrar la vostra organització."
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "Voleu revocar totes les altres sessions i l’actual?"
+      ],
+      "Domain ownership verified.": [
+        "S'ha verificat la propietat del domini."
       ],
       "domain used": [
         "domini utilitzat",
@@ -6345,6 +6421,9 @@
       ],
       "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
         "Els correus electrònics amb aquesta etiqueta ${ nameDeleted } no s'eliminaran i continuaran trobant-se a la carpeta respectiva."
+      ],
+      "Enable single sign-on to keep your organization safe": [
+        "Activi l'inici de sessió únic per mantenir la seva organització segura"
       ],
       "Enable this address to join this calendar": [
         "Habiliteu aquesta adreça per a unir-vos a aquest calendari."
@@ -6636,6 +6715,9 @@
       "Lean more about gateways": [
         "Obteniu més informació sobre les passarel·les"
       ],
+      "Lean more about single sign-on": [
+        "Obtingui més informació sobre l'inici de sessió únic"
+      ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Apreneu a iniciar la sessió a ${ VPN_APP_NAME } amb aplicacions VPN de tercers."
       ],
@@ -6684,6 +6766,9 @@
       "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
         "Els registres inclouen els intents d'autentificació per a tots els serveis de ${ BRAND_NAME } que empren les vostres credencials de ${ BRAND_NAME_TWO }."
       ],
+      "Low Priority": [
+        "Prioritat baixa"
+      ],
       "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
         "Els principals serveis de correu electrònic poden rebutjar o filtrar els vostres correus electrònics al correu brossa si SPF/DKIM/DMARC no hi són o no estan configurats correctament."
       ],
@@ -6696,6 +6781,9 @@
       "Mastercard SecureCode logo": [
         "Logo de Mastercard SecureCode"
       ],
+      "Medium Priority": [
+        "Prioritat mitjana"
+      ],
       "Member": [
         "Membre"
       ],
@@ -6704,6 +6792,9 @@
       ],
       "MM/YY": [
         "MM/AA"
+      ],
+      "Monitor accounts": [
+        "Supervisar els comptes"
       ],
       "Monthly ${ onDayString }": [
         "Mensual ${ onDayString }"
@@ -6780,6 +6871,9 @@
       "of": [
         "de"
       ],
+      "Once single sign-on is disabled for your organization:": [
+        "Un cop desactivat l'inici de sessió únic per a la vostra organització:"
+      ],
       "Once you reset your password:": [
         "Un cop restabliu la contrasenya:"
       ],
@@ -6797,6 +6891,9 @@
       ],
       "Optional": [
         "Opcional"
+      ],
+      "or ${ selectFileButton }": [
+        "o ${ selectFileButton }"
       ],
       "Or select a particular server:": [
         "O seleccioneu un servidor concret:"
@@ -6918,6 +7015,9 @@
       "Please wait till your changes are synced with the server.": [
         "Espereu fins que els canvis s'hagin sincronitzat amb el servidor."
       ],
+      "Plus ${ numOfBreaches } more": [
+        "A més ${ numOfBreaches } més"
+      ],
       "Plus or Visionary subscription required": [
         "Es requereix una subscripció Plus o Visionary."
       ],
@@ -7010,6 +7110,9 @@
       ],
       "Right to Left": [
         "Dreta a Esquerra"
+      ],
+      "SAML configuration saved": [
+        "S'ha desat la configuració SAML."
       ],
       "Save ${ percentage }": [
         "Estalvieu el ${ percentage }"
@@ -7483,6 +7586,9 @@
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "La verificació obrirà una pestanya nova. Desactiveu els bloquejadors de finestres emergents. No se us farà cap càrrec. Qualsevol quantitat utilitzada per verificar la targeta serà retornada immediatament."
       ],
+      "Verify domain": [
+        "Verifica el domini"
+      ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Verifiqueu la vostra identitat amb una contrasenya d'un sol ús i de durada limitada generada per una aplicació d'autenticació."
       ],
@@ -7955,26 +8061,8 @@
       ]
     },
     "Key generation": {
-      "A key with the same encryption algorithm already exists. Generating another key will cause slower account loading. Are you sure you want to continue?": [
-        "Ja existeix una clau amb el mateix algorisme de xifratge. Generar una altra clau causarà una càrrega més lenta del compte. Esteu segur que voleu continuar?"
-      ],
-      "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
-        "Una clau amb el mateix algoritme de xifratge ja és activa per a aquesta adreça. Generar una altra clau provocarà una càrrega més lenta del compte i l'eliminació d'aquesta pot causar problemes. Si esteu generant una nova clau perquè l'antiga està compromesa, marqueu-la com a compromesa. Segur que voleu continuar?"
-      ],
       "Generate key": [
         "Genera una clau"
-      ],
-      "Key with fingerprint ${ fp } successfully created.": [
-        "S'ha creat la clau amb empremta digital ${ fp }."
-      ],
-      "The encryption keys are being generated. This may take several minutes and temporarily freeze your browser.": [
-        "Les claus de xifratge estan sent generades. Això pot trigar alguns minuts i aturar temporalment el vostre navegador."
-      ],
-      "The encryption keys for your address are being generated. This may take several minutes and temporarily freeze your browser.": [
-        "S'estan generant les claus de xifratge per a la vostra adreça. Això pot trigar alguns minuts i aturar temporalment el vostre navegador."
-      ],
-      "You can generate a new encryption key if you think your previous key has been compromised.": [
-        "Podeu generar una clau de xifrat nova si creieu que l'anterior ha estat compromesa."
       ]
     },
     "Key state badge": {
@@ -7998,14 +8086,6 @@
       ],
       "Primary": [
         "Principal"
-      ]
-    },
-    "Key type option": {
-      "${ compatibility } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
-        "${ compatibility } RSA 4096-bits (Més lent, però amb major compatibilitat amb programari antic)"
-      ],
-      "${ stateOfTheArt } ECC Curve25519 (Fastest, most modern)": [
-        "${ stateOfTheArt } ECC Curve25519 (Més ràpid , més modern)"
       ]
     },
     "Keyboard shortcut name": {
@@ -8321,6 +8401,12 @@
       "Allow recovery using a trusted device": [
         "Permet la recuperació amb un dispositiu de confiança"
       ],
+      "Allowed domain": [
+        "Domini permès"
+      ],
+      "Allowed Domain": [
+        "Domini permès"
+      ],
       "Amount": [
         "Quantitat"
       ],
@@ -8591,6 +8677,9 @@
       "Duration": [
         "Durada"
       ],
+      "e.g. example.com": [
+        "p. ex. exemple.com"
+      ],
       "Email": [
         "Correu electrònic"
       ],
@@ -8708,6 +8797,9 @@
       "Invite via email": [
         "Convida per correu electrònic"
       ],
+      "Issuer ID": [
+        "ID de l'emissor"
+      ],
       "Keep me signed in": [
         "Mantén la sessió iniciada"
       ],
@@ -8716,9 +8808,6 @@
       ],
       "Key": [
         "Clau"
-      ],
-      "Key strength": [
-        "Fortalesa de la clau"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Drecera de teclat: ${ shortcut }"
@@ -8918,6 +9007,9 @@
       "Protection mode": [
         "Mode de protecció"
       ],
+      "Public certificate (X.509)": [
+        "Certificat públic (X.509)"
+      ],
       "Read": [
         "Llegit"
       ],
@@ -8935,6 +9027,9 @@
       ],
       "Repeat password": [
         "Repetir contrasenya"
+      ],
+      "Reply (ACS) URL": [
+        "URL (ACS) de resposta"
       ],
       "Require 2FA for administrators": [
         "Requereix l'A2F per als administradors"
@@ -8977,6 +9072,12 @@
       ],
       "Signature": [
         "Signatura"
+      ],
+      "Single sign-on entity ID": [
+        "ID d'entitat d'inici de sessió únic"
+      ],
+      "Single sign-on URL": [
+        "URL d'inici de sessió únic"
       ],
       "SMTP port": [
         "Port SMTP"
@@ -9041,6 +9142,9 @@
       "Two-password mode": [
         "Mode de dues contrasenyes"
       ],
+      "Type": [
+        "Tipus"
+      ],
       "Undo send": [
         "Desfés l'enviament"
       ],
@@ -9064,6 +9168,9 @@
       ],
       "Username": [
         "Nom d'usuari"
+      ],
+      "Value": [
+        "Valor"
       ],
       "VAT": [
         "IVA"
@@ -9329,6 +9436,9 @@
       "General": [
         "General"
       ],
+      "Get ${ BRAND_NAME } Pass": [
+        "Aconsegueixi ${ BRAND_NAME } Pass"
+      ],
       "Get ${ VPN_APP_NAME }": [
         "Obtén ${ VPN_APP_NAME }"
       ],
@@ -9445,6 +9555,27 @@
       ],
       "upgrade for more storage": [
         "milloreu per a obtenir més emmagatzematge"
+      ],
+      "Upgrade to restore full access": [
+        "Actualitzi per restaurar l'accés complet"
+      ],
+      "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
+        "El seu ${ driveStorage } està ple. Per carregar o sincronitzar fitxers, alliberi espai o ${ cta }."
+      ],
+      "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
+        "El seu ${ mailStorage } està ple. Per enviar o rebre correus electrònics, alliberi espai o ${ cta }."
+      ],
+      "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
+        "El seu compte corre el risc de ser suprimit. Per evitar la pèrdua de dades, demani al seu administrador que actualitzi. ${ cta }"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
+        "El seu emmagatzematge està ple. Per enviar o rebre correus electrònics, alliberi espai o ${ cta }."
+      ],
+      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
+        "El seu emmagatzematge està ple. Per penjar o sincronitzar fitxers, alliberi espai o ${ cta }."
+      ],
+      "Your subscription has ended. ${ cta } and to avoid data loss.": [
+        "La seva subscripció ha finalitzat. ${ cta } i per evitar la pèrdua de dades."
       ]
     },
     "Log preference": {
@@ -9561,7 +9692,7 @@
         "Activa l'usuari"
       ],
       "Add address": [
-        "Afegeix una adreça"
+        "Afegeixi una adreça"
       ],
       "Change password": [
         "Canvia la contrasenya"
@@ -10336,17 +10467,6 @@
         "Gestió d'equips"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "En cas contrari, es limitarà l'accés al vostre compte i, finalment, el compte es desactivarà."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Per continuar utilitzant ${ trialPlanName } amb característiques prèmium, trieu les opcions de subscripció i pagament."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "El període de prova acaba el ${ formattedPeriodEndDate }."
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } que acaba amb ${ last4 }."
@@ -10446,6 +10566,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Esteu gaudint d'un preu promocional al vostre pla actual. Si feu una baixada de categoria al vostre compte, perdreu el preu promocional i no estarà disponible si intenteu subscriure-us novament."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "En cas contrari, es limitarà l'accés al vostre compte i, finalment, el compte es desactivarà."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Per continuar utilitzant ${ trialPlanName } amb característiques prèmium, trieu les opcions de subscripció i pagament."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "El període de prova acaba el ${ formattedPeriodEndDate }."
       ]
     },
     "new_plans: Label": {
@@ -11520,6 +11651,17 @@
         "Per a particulars"
       ]
     },
+    "password_reset: info": {
+      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **old password**.": [
+        "**Totes les seves dades** (correus electrònics, esdeveniments, contactes, fitxers, entrades ${ PASS_APP_NAME }, etc.) **es bloquejaran** i només es podran desbloquejar amb la seva **contrasenya antiga**."
+      ],
+      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **recovery phrase** or your **old password**.": [
+        "**Totes les seves dades** (correus electrònics, esdeveniments, contactes, fitxers, entrades ${ PASS_APP_NAME }, etc.) **es bloquejaran** i només es podran desbloquejar amb la teva **frase de recuperació** o la seva ** contrasenya antiga**."
+      ],
+      "Any **two-factor authentication (2FA)** method on your account will be disabled.": [
+        "Es desactivarà qualsevol mètode d'**autenticació de dos factors (2FA)** del vostre compte."
+      ]
+    },
     "passwordless": {
       "All administrators will get access to the key.": [
         "Tots els administradors tindran accés a la clau."
@@ -11545,8 +11687,14 @@
       "Permission denied, administrator privileges have been restricted.": [
         "S'ha denegat el permís. S'han restringit els privilegis d'administrador."
       ],
+      "Please ensure they have an enabled address and invite them separately later.": [
+        "Asseguri's que tinguin una adreça habilitada i convidi'ls més tard per separat."
+      ],
       "Reset organization key": [
         "Restableix la clau de l'organització"
+      ],
+      "The following administrators could not be restored.": [
+        "No s'han pogut restaurar els administradors següents."
       ],
       "The following administrators will get access to the organization key.": [
         "Els administradors següents tindran accés a la clau de l'organització."
@@ -11595,6 +11743,9 @@
       ],
       "Invalid expiration date": [
         "La data de caducitat no és vàlida"
+      ],
+      "Invalid security code": [
+        "El codi de seguretat no és vàlid"
       ],
       "Something went wrong. Please try again later.": [
         "Alguna cosa ha anat malament. Torneu-ho a provar més tard."
@@ -11720,6 +11871,9 @@
       ],
       "Select a reason": [
         "Seleccioneu un motiu"
+      ],
+      "Select state": [
+        "Seleccioni l'estat"
       ],
       "Text": [
         "Text"
@@ -11878,14 +12032,6 @@
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Verificar el vostre número de telèfon augmenta la seguretat del compte i permet opcions addicionals per a la recuperació."
-      ]
-    },
-    "Remark about a key type option": {
-      "Compatibility": [
-        "Compatibilitat"
-      ],
-      "State of the art": [
-        "Estat de l'art"
       ]
     },
     "Remove calendar section description": {
@@ -13615,6 +13761,9 @@
       "Delete account": [
         "Elimina el compte"
       ],
+      "Delete address permanently?": [
+        "Vol eliminar l'adreça permanentment?"
+      ],
       "Delete calendar": [
         "Elimina el calendari"
       ],
@@ -13709,6 +13858,9 @@
       "Email": [
         "Correu electrònic"
       ],
+      "Email address": [
+        "Adreça electrònica"
+      ],
       "Email composer": [
         "Editor de correu electrònic"
       ],
@@ -13723,6 +13875,9 @@
       ],
       "Encryption and keys": [
         "Xifratge i claus"
+      ],
+      "Enter SAML metadata": [
+        "Introduïu les metadades SAML"
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Introduïu els detalls del compte de ${ BRAND_NAME } per unir-vos al programa beta de ${ app }"
@@ -13906,6 +14061,9 @@
       "Night theme": [
         "Tema de nit"
       ],
+      "No account information was found in any data breaches": [
+        "No s'ha trobat informació del compte a cap filtració de dades"
+      ],
       "No recovery method": [
         "No hi ha mètode de recuperació"
       ],
@@ -13975,6 +14133,9 @@
       "Recommended": [
         "Recomanat"
       ],
+      "Recommended actions": [
+        "Accions recomanades"
+      ],
       "Reconnect your account": [
         "Reconnectar el teu compte"
       ],
@@ -13992,6 +14153,9 @@
       ],
       "Remove calendar": [
         "Esborra el calendari"
+      ],
+      "Remove domain": [
+        "Esborra el domini"
       ],
       "Remove user?": [
         "Voleu esborrar l'usuari?"
@@ -14019,6 +14183,9 @@
       ],
       "Revoke certificate": [
         "Revoca el certificat"
+      ],
+      "SAML authentication": [
+        "Autenticació SAML"
       ],
       "Save time with email filters": [
         "Estalvieu temps amb els filtres de correu electrònic"
@@ -14106,6 +14273,9 @@
       ],
       "Signed in to member account": [
         "S'ha iniciat la sessió al compte de membre"
+      ],
+      "Single sign-on": [
+        "Inici de sessió únic"
       ],
       "SMTP submission": [
         "Tramesa SMTP"
@@ -14704,7 +14874,7 @@
         "18 mesos"
       ],
       "2-year": [
-        "2 any"
+        "2 anys"
       ],
       "3-month": [
         "3-mesos"

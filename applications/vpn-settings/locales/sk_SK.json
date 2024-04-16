@@ -59,6 +59,9 @@
       "Cancel subscription": [
         "Zrušiť predplatné"
       ],
+      "Change": [
+        "Zmeniť"
+      ],
       "Change keys": [
         "Zmeniť kľúče"
       ],
@@ -4237,14 +4240,6 @@
         "Predplatné"
       ]
     },
-    "Key type option": {
-      "${ compatibility } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
-        "${ compatibility } RSA 4096-bit (pomalší, ale zvyšuje kompatibilitu so starším softvérom)"
-      ],
-      "${ stateOfTheArt } ECC Curve25519 (Fastest, most modern)": [
-        "${ stateOfTheArt } X25519 (najrýchlejší, najmodernejší)"
-      ]
-    },
     "Label": {
       "${ BRAND_NAME } username": [
         "Používateľské meno ${ BRAND_NAME }"
@@ -4470,9 +4465,6 @@
       ],
       "Key": [
         "Kľúč"
-      ],
-      "Key strength": [
-        "Sila kľúča"
       ],
       "Level for NetShield blocker filtering": [
         "Úroveň pre filtrovanie blokovania NetShield"
@@ -4899,7 +4891,7 @@
         "10 emailových adries"
       ],
       "Auto-delete Spam and Trash": [
-        "Automatické mazanie nevyžiadanej pošty a koša"
+        "Automatické mazanie spamu a koša"
       ],
       "Custom schedule send and snooze times": [
         "Vlastné časy odoslania a odloženia"
@@ -6355,7 +6347,7 @@
         "Vyberte dôvod"
       ],
       "Select state": [
-        "Vyberte štát"
+        "Vybrať stav"
       ]
     },
     "plan customizer, ips": {
@@ -6457,14 +6449,6 @@
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Overenie vášho telefónneho čísla zvyšuje bezpečnosť vášho účtu a umožňuje ďalšie možnosti obnovenia."
-      ]
-    },
-    "Remark about a key type option": {
-      "Compatibility": [
-        "Kompatibilita"
-      ],
-      "State of the art": [
-        "Najmodernejší"
       ]
     },
     "Restore administrator panel": {
