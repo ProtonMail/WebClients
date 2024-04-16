@@ -125,6 +125,10 @@ async function renderCreditCardForm() {
                 '::placeholder': {
                     color: getCssVariable('--field-placeholder-color'),
                 },
+                '::selection': {
+                    color: getCssVariable('--selection-text-color'),
+                    background: getCssVariable('--selection-background-color'),
+                },
                 ':focus': {
                     color: getCssVariable('--field-focus-text-color'),
                 },
