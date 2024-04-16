@@ -1,8 +1,9 @@
 import { stringToUtf8Array } from '@proton/crypto/lib/utils';
-import { OfflineKey } from '@proton/shared/lib/authentication/offlineKey';
 import isTruthy from '@proton/utils/isTruthy';
+import noop from '@proton/utils/noop';
 
 import { removeLastRefreshDate } from '../api/helpers/refreshStorage';
+import createListeners from '../helpers/listeners';
 import { getItem, removeItem, setItem } from '../helpers/storage';
 import {
     DefaultPersistedSession,
@@ -12,11 +13,18 @@ import {
     PersistedSessionWithLocalID,
 } from './SessionInterface';
 import { InvalidPersistentSessionError } from './error';
+import { OfflineKey } from './offlineKey';
 import { getDecryptedBlob, getEncryptedBlob } from './sessionBlobCryptoHelper';
 import { getValidatedLocalID } from './sessionForkValidation';
 
 const STORAGE_PREFIX = 'ps-';
 const getKey = (localID: number) => `${STORAGE_PREFIX}${localID}`;
+
+const sessionRemovalListeners = createListeners<PersistedSession[], Promise<void>>();
+
+export const registerSessionRemovalListener = (listener: (persistedSessions: PersistedSession) => Promise<void>) => {
+    sessionRemovalListeners.subscribe(listener);
+};
 
 export const getPersistedSession = (localID: number): PersistedSession | undefined => {
     const itemValue = getItem(getKey(localID));
@@ -45,13 +53,16 @@ export const getPersistedSession = (localID: number): PersistedSession | undefin
     }
 };
 
-export const removePersistedSession = (localID: number, UID: string) => {
+export const removePersistedSession = async (localID: number, UID: string) => {
     const oldSession = getPersistedSession(localID);
     if (oldSession?.UID) {
         removeLastRefreshDate(oldSession.UID);
     }
-    if (oldSession?.UID && UID !== oldSession.UID) {
+    if (!oldSession || (oldSession.UID && UID !== oldSession.UID)) {
         return;
+    }
+    if (sessionRemovalListeners.length()) {
+        await Promise.all(sessionRemovalListeners.notify(oldSession)).catch(noop);
     }
     removeItem(getKey(localID));
 };
