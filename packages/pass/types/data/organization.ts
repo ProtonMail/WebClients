@@ -1,3 +1,3 @@
-import type { OrganizationGetResponse } from '@proton/pass/types/api/pass';
+import type { OrganizationSettingsGetResponse } from '@proton/pass/types/api/pass';
 
-export type OrganizationSettings = OrganizationGetResponse['Settings'];
+export type OrganizationSettings = OrganizationSettingsGetResponse;
