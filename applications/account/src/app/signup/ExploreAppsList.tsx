@@ -22,21 +22,21 @@ export const getExploreApps = ({ subscribed, user }: { subscribed?: User['Subscr
     return [
         {
             name: APPS.PROTONMAIL,
-            bit: PRODUCT_BIT.Mail,
+            bit: PRODUCT_BIT.MAIL,
             description: () => {
                 return c('app-switcher').t`Secure your communications`;
             },
         },
         {
             name: APPS.PROTONCALENDAR,
-            bit: PRODUCT_BIT.Mail,
+            bit: PRODUCT_BIT.MAIL,
             description: () => {
                 return c('app-switcher').t`Keep your schedule private`;
             },
         },
         {
             name: APPS.PROTONDRIVE,
-            bit: PRODUCT_BIT.Drive,
+            bit: PRODUCT_BIT.DRIVE,
             description: () => {
                 return c('app-switcher').t`Safeguard your files and photos`;
             },
@@ -77,7 +77,7 @@ interface Props {
     };
 }
 
-const allBits = PRODUCT_BIT.Mail | PRODUCT_BIT.PASS | PRODUCT_BIT.Drive | PRODUCT_BIT.VPN;
+const allBits = PRODUCT_BIT.MAIL | PRODUCT_BIT.PASS | PRODUCT_BIT.DRIVE | PRODUCT_BIT.VPN;
 
 const getNameFromPlan = (plan?: PLANS) => {
     if (!plan) {
