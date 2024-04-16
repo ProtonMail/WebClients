@@ -3,7 +3,7 @@ import { createContext, useContext } from 'react';
 import { WasmNetwork } from '@proton/andromeda';
 import { IWasmApiWalletData } from '@proton/wallet';
 
-import { WalletChainDataByWalletId } from '../../types';
+import { AccountIdByDerivationPathAndWalletId, WalletChainDataByWalletId } from '../../types';
 import { SyncingMetadata } from './useWalletsChainData';
 
 export interface BitcoinBlockchainContextValue {
@@ -14,6 +14,7 @@ export interface BitcoinBlockchainContextValue {
     setPassphrase: (walletId: string, walletPassphrase: string) => void;
 
     walletsChainData: WalletChainDataByWalletId;
+    accountIDByDerivationPathByWalletID: AccountIdByDerivationPathAndWalletId;
     syncingMetatadaByAccountId: Partial<Record<string, SyncingMetadata>>;
     syncSingleWalletAccount: (walletId: string, accountId: string, shouldSync?: any) => Promise<void>;
     syncSingleWallet: (walletId: string, shouldSync?: boolean) => Promise<void>;
@@ -31,6 +32,7 @@ export const BitcoinBlockchainContext = createContext<BitcoinBlockchainContextVa
     setPassphrase: () => {},
 
     walletsChainData: {},
+    accountIDByDerivationPathByWalletID: {},
     syncingMetatadaByAccountId: {},
     syncSingleWalletAccount: async () => {},
     syncSingleWallet: async () => {},

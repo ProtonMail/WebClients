@@ -61,7 +61,7 @@ describe('useBalanceEvolution', () => {
                 sent: BigInt(0.05 * BITCOIN),
                 received: BigInt(0),
             },
-        ] as WasmTransactionDetails[];
+        ] as unknown as WasmTransactionDetails[];
     });
 
     afterEach(() => {

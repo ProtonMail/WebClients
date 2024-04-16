@@ -145,7 +145,7 @@ export const useWalletSetupModal = ({ onSetupFinish, isOpen }: Props) => {
                         Wallet,
                         WalletKey,
                         WalletSettings,
-                        WalletAccounts: account ? [account.Account] : [],
+                        WalletAccounts: account ? [account.Data] : [],
                     })
                 );
             })

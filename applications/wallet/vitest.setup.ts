@@ -10,12 +10,6 @@ afterEach(cleanup); // TODO double check if needed; see https://github.com/vites
 // console.error = () => {};
 // console.warn = () => {};
 
-// Getting ReferenceError: TextDecoder is not defined without
-// console.log(TextEncoder)
-// global.TextEncoder = TextEncoder;
-// // @ts-ignore
-// global.TextDecoder = TextDecoder;
-
 window.ResizeObserver = vi.fn().mockImplementation(() => ({
     observe: vi.fn(),
     unobserve: vi.fn(),

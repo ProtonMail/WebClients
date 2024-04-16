@@ -48,12 +48,14 @@ export const BalanceOverview = (props: Props) => {
             <div className="grid-auto-fill mt-4 gap-4" style={{ '--min-grid-template-column-size': '16rem' }}>
                 <div data-testid="balance">
                     <p className="color-weak text-sm m-0">{c('Wallet Dashboard').t`My assets`}</p>
-                    <BitcoinAmount
-                        bitcoin={totalBalance}
-                        unit={{ value: walletSettings?.BitcoinUnit, loading: loadingSettings }}
-                        exchangeRate={{ value: exchangeRate, loading: loadingExchangeRate }}
-                        firstClassName="my-0.5 text-xl"
-                    />
+                    <div>
+                        <BitcoinAmount
+                            bitcoin={totalBalance}
+                            unit={{ value: walletSettings?.BitcoinUnit, loading: loadingSettings }}
+                            exchangeRate={{ value: exchangeRate, loading: loadingExchangeRate }}
+                            firstClassName="my-0.5 text-xl"
+                        />
+                    </div>
                 </div>
 
                 {dataCount > 1 && (
@@ -64,14 +66,16 @@ export const BalanceOverview = (props: Props) => {
 
                 <div data-testid="7DaysDifference">
                     <p className="color-weak m-0 text-sm">{c('Wallet Dashboard').t`Last 7 days`}</p>
-                    <BitcoinAmount
-                        bitcoin={last7DaysBalanceDifference}
-                        unit={{ value: walletSettings?.BitcoinUnit, loading: loadingSettings }}
-                        exchangeRate={{ value: exchangeRate, loading: loadingExchangeRate }}
-                        firstClassName={clsx('my-0.5 text-xl')}
-                        showColor
-                        showExplicitSign
-                    />
+                    <div>
+                        <BitcoinAmount
+                            bitcoin={last7DaysBalanceDifference}
+                            unit={{ value: walletSettings?.BitcoinUnit, loading: loadingSettings }}
+                            exchangeRate={{ value: exchangeRate, loading: loadingExchangeRate }}
+                            firstClassName={clsx('my-0.5 text-xl')}
+                            showColor
+                            showExplicitSign
+                        />
+                    </div>
                 </div>
 
                 <div>

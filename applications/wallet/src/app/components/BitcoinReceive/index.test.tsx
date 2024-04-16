@@ -161,6 +161,7 @@ describe('BitcoinReceive', () => {
 
             render(<BitcoinReceive wallets={apiWalletsData} />);
         });
+
         it('should display QRCode containing serialized payment info', () => {
             const qrcode = screen.getByTestId('serialized-payment-info-qrcode');
             expect(qrcode.outerHTML).toBe(

@@ -27,7 +27,7 @@ describe('useOnChainFeesSelector', () => {
             renderHook(() => useOnChainFeesSelector(txBuilder, updateTxBuilder));
 
             await waitFor(() => {
-                expect(txBuilder.getFeeRate()).toBe(29);
+                expect(txBuilder.getFeeRate()).toBe(BigInt(29));
             });
         });
 
@@ -45,7 +45,7 @@ describe('useOnChainFeesSelector', () => {
                 result.current.handleFeesSelected(4);
 
                 await waitFor(() => {
-                    expect(txBuilder.getFeeRate()).toBe(4);
+                    expect(txBuilder.getFeeRate()).toBe(BigInt(4));
                 });
             });
 
@@ -60,7 +60,7 @@ describe('useOnChainFeesSelector', () => {
     describe('feeRateNote', () => {
         describe('when below 5th next block', () => {
             it('should `HIGH` note', async () => {
-                txBuilder = await txBuilder.setFeeRate(165);
+                txBuilder = await txBuilder.setFeeRate(BigInt(165));
                 const { result } = renderHook(() => useOnChainFeesSelector(txBuilder, updateTxBuilder));
                 expect(result.current.feeRateNote).toBe('HIGH');
             });
@@ -68,7 +68,7 @@ describe('useOnChainFeesSelector', () => {
 
         describe('when below 10th next block', () => {
             it('should `MODERATE` note', async () => {
-                txBuilder = await txBuilder.setFeeRate(15);
+                txBuilder = await txBuilder.setFeeRate(BigInt(15));
                 const { result } = renderHook(() => useOnChainFeesSelector(txBuilder, updateTxBuilder));
                 expect(result.current.feeRateNote).toBe('MODERATE');
             });
@@ -76,7 +76,7 @@ describe('useOnChainFeesSelector', () => {
 
         describe('when above 10th next block', () => {
             it('should `LOW` note', async () => {
-                txBuilder = await txBuilder.setFeeRate(1);
+                txBuilder = await txBuilder.setFeeRate(BigInt(1));
                 const { result } = renderHook(() => useOnChainFeesSelector(txBuilder, updateTxBuilder));
                 expect(result.current.feeRateNote).toBe('LOW');
             });
