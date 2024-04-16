@@ -17,7 +17,6 @@ interface Props {
     user: UserModel;
     organization?: Organization;
     subscription?: Subscription;
-    isScheduleCallsEnabled: boolean;
     isOrganizationLogoUploadAvailable: boolean;
 }
 
@@ -26,7 +25,6 @@ export const getOrganizationAppRoutes = ({
     user,
     organization,
     subscription,
-    isScheduleCallsEnabled,
     isOrganizationLogoUploadAvailable,
 }: Props) => {
     const isAdmin = user.isAdmin && !user.isSubUser;
@@ -38,7 +36,7 @@ export const getOrganizationAppRoutes = ({
     const hasMemberCapablePlan = getHasMemberCapablePlan(organization, subscription);
 
     const canHaveOrganization = !user.isMember && !!organization && isAdmin;
-    const canSchedulePhoneCalls = canScheduleOrganizationPhoneCalls({ organization, user, isScheduleCallsEnabled });
+    const canSchedulePhoneCalls = canScheduleOrganizationPhoneCalls({ organization, user });
 
     const hasVpnB2BPlan = getHasVpnB2BPlan(subscription);
 
