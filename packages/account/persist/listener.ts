@@ -1,7 +1,11 @@
 import type { SharedStartListening } from '@proton/redux-shared-store/listenerInterface';
-import { getPersistedSessions } from '@proton/shared/lib/authentication/persistedSessionStorage';
+import {
+    getPersistedSessions,
+    registerSessionRemovalListener,
+} from '@proton/shared/lib/authentication/persistedSessionStorage';
 import { SECOND } from '@proton/shared/lib/constants';
 import { EVENT_ERRORS } from '@proton/shared/lib/errors';
+import { isSubUser } from '@proton/shared/lib/user/helpers';
 import noop from '@proton/utils/noop';
 
 import { serverEvent } from '../eventLoop';
@@ -37,7 +41,12 @@ export const startPersistListener = <T extends UserState>(
                 const { authentication, config, eventManager, unleashClient } = listenerApi.extra;
 
                 // Event manager is slightly delayed in bootstrap due to event ID. Refactor that to allow it to get created without ID.
-                if (!eventManager || !unleashClient.isEnabled('PersistedState') || !isVisible()) {
+                if (!eventManager || !isVisible()) {
+                    return;
+                }
+
+                if (!unleashClient.isEnabled('PersistedState')) {
+                    listenerApi.unsubscribe();
                     return;
                 }
 
@@ -45,9 +54,10 @@ export const startPersistListener = <T extends UserState>(
 
                 const eventID = eventManager.getEventID();
                 const clientKey = authentication.getClientKey();
-                const userID = selectUser(state)?.value?.ID;
+                const user = selectUser(state)?.value;
+                const userID = user?.ID;
 
-                if (!eventID || !clientKey || !state || !userID) {
+                if (!eventID || !clientKey || !state || !userID || isSubUser(user)) {
                     return;
                 }
 
@@ -63,8 +73,8 @@ export const startPersistListener = <T extends UserState>(
             };
 
             setTimeout(() => {
-                listenerApi.subscribe();
                 run();
+                listenerApi.subscribe();
             }, PERSIST_THROTTLE); // Throttled
         },
     });
@@ -80,7 +90,7 @@ export const startPersistListener = <T extends UserState>(
                 return;
             }
             listenerApi.unsubscribe();
-            await deleteStore(userID);
+            await deleteStore(userID).catch(noop);
             window.location.reload();
         },
     });
@@ -102,5 +112,11 @@ export const startPersistListener = <T extends UserState>(
 
             run();
         },
+    });
+};
+
+export const startLogoutListener = () => {
+    registerSessionRemovalListener((persistedSession) => {
+        return deleteStore(persistedSession.UserID).catch(noop);
     });
 };

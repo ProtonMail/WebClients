@@ -102,7 +102,7 @@ const SwitchAccountContainer = ({
     }, []);
 
     const clearSession = (session: PersistedSessionWithLocalID, clearDeviceRecovery: boolean) => {
-        removePersistedSession(session.localID, session.UID);
+        removePersistedSession(session.localID, session.UID).catch(noop);
         if (clearDeviceRecovery) {
             removeDeviceRecovery(session.UserID);
         }

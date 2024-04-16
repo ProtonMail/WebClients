@@ -103,14 +103,13 @@ export const resumeSession = async (api: Api, localID: number): Promise<ResumedS
     } catch (e: any) {
         if (getIs401Error(e)) {
             logRemoval(e, persistedUID, 'resume 401');
-            await api(withUIDHeaders(persistedUID, revoke())).catch(noop);
-            removePersistedSession(localID, persistedUID);
+            await removePersistedSession(localID, persistedUID).catch(noop);
             throw new InvalidPersistentSessionError('Session invalid');
         }
         if (e instanceof InvalidPersistentSessionError) {
             logRemoval(e, persistedUID, 'invalid blob');
             await api(withUIDHeaders(persistedUID, revoke())).catch(noop);
-            removePersistedSession(localID, persistedUID);
+            await removePersistedSession(localID, persistedUID).catch(noop);
             throw e;
         }
         throw e;
@@ -200,7 +199,7 @@ const getNonExistingSessions = async (
             const result = await api<{ User: tsUser }>(withUIDHeaders(persistedSession.UID, getUser())).catch((e) => {
                 if (getIs401Error(e)) {
                     logRemoval(e, persistedSession.UID, 'non-existing-sessions');
-                    removePersistedSession(persistedSession.localID, persistedSession.UID);
+                    removePersistedSession(persistedSession.localID, persistedSession.UID).catch(noop);
                 }
             });
             if (!result?.User) {

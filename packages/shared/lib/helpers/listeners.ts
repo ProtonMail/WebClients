@@ -1,21 +1,22 @@
-export type Listener<A extends any[], R> = (...args: A) => R;
+export type Listener<Arguments extends any[], Return> = (...args: Arguments) => Return;
 
-export interface Listeners<A extends any[], R> {
-    notify: (...args: A) => R[];
-    subscribe: (listener: Listener<A, R>) => () => void;
+export interface Listeners<Arguments extends any[], Return> {
+    notify: (...args: Arguments) => Return[];
+    subscribe: (listener: Listener<Arguments, Return>) => () => void;
     clear: () => void;
+    length: () => number;
 }
 
-const createListeners = <A extends any[], R = void>(): Listeners<A, R> => {
-    let listeners: Listener<A, R>[] = [];
+const createListeners = <Arguments extends any[], Return = void>(): Listeners<Arguments, Return> => {
+    let listeners: Listener<Arguments, Return>[] = [];
 
-    const notify = (...args: A) => {
+    const notify = (...args: Arguments) => {
         return listeners.map((listener) => {
             return listener(...args);
         });
     };
 
-    const subscribe = (listener: Listener<A, R>) => {
+    const subscribe = (listener: Listener<Arguments, Return>) => {
         listeners.push(listener);
         return () => {
             listeners.splice(listeners.indexOf(listener), 1);
@@ -26,10 +27,13 @@ const createListeners = <A extends any[], R = void>(): Listeners<A, R> => {
         listeners = [];
     };
 
+    const length = () => listeners.length;
+
     return {
         notify,
         subscribe,
         clear,
+        length,
     };
 };
 
