@@ -1,3 +1,5 @@
+import noop from '@proton/utils/noop';
+
 import { removeLastRefreshDate } from '../api/helpers/refreshStorage';
 import { getAppHref } from '../apps/helper';
 import { getSlugFromApp } from '../apps/slugHelper';
@@ -53,7 +55,7 @@ export const getLogoutURL = ({
     type,
     appName,
     mode,
-    persistedSessions,
+    persistedSessions: inputPersistedSessions,
     clearDeviceRecoveryData,
     reason,
 }: {
@@ -77,6 +79,8 @@ export const getLogoutURL = ({
                 return currentURL.toString();
             }
         }
+
+        const persistedSessions = type === 'full' ? inputPersistedSessions : [];
 
         return serializeLogoutURL({ appName, url, persistedSessions, clearDeviceRecoveryData }).toString();
     }
@@ -113,7 +117,7 @@ export const parseLogoutURL = (url: URL) => {
     };
 };
 
-export const handleLogout = ({
+export const handleLogout = async ({
     appName,
     authentication,
     type,
@@ -139,15 +143,10 @@ export const handleLogout = ({
     }
 
     if (localID !== undefined && mode === 'sso') {
-        // a 'full' logout should also clear the session on the account subdomain.
-        if (type === 'full') {
-            const persistedSession = getPersistedSession(localID);
-            if (persistedSession) {
-                persistedSessions.push(persistedSession);
-            }
+        const persistedSession = getPersistedSession(localID);
+        if (persistedSession) {
+            await removePersistedSession(localID, UID).catch(noop);
         }
-
-        removePersistedSession(localID, UID);
     }
 
     authentication.logout();
