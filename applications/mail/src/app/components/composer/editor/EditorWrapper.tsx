@@ -42,7 +42,6 @@ interface Props {
     onFocus?: () => void;
     onAddAttachments: (files: File[]) => void;
     onRemoveAttachment: (attachment: Attachment) => Promise<void>;
-    isOutside?: boolean;
     mailSettings?: MailSettings;
     editorMetadata: EditorMetadata;
 }

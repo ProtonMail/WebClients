@@ -42,6 +42,10 @@ interface Props {
     onSend: () => Promise<void>;
     opening: boolean;
     syncInProgress: boolean;
+    showAssistantButton: boolean;
+    disableAssistant: boolean;
+    onToggleAssistant: () => void;
+    initAssistant: () => void;
 }
 
 const ComposerActions = ({
@@ -65,6 +69,10 @@ const ComposerActions = ({
     opening,
     syncInProgress,
     canScheduleSend,
+    showAssistantButton,
+    disableAssistant,
+    onToggleAssistant,
+    initAssistant,
 }: Props) => {
     const disabled = opening;
     const { feature: numAttachmentsWithoutEmbeddedFeature } = useFeature(FeatureCode.NumAttachmentsWithoutEmbedded);
@@ -77,11 +85,19 @@ const ComposerActions = ({
     const isAttachments = numAttachmentsWithoutEmbeddedFeature?.Value ? pureAttachmentsCount > 0 : attachmentsCount > 0;
     const isPassword = hasFlag(MESSAGE_FLAGS.FLAG_INTERNAL)(message.data) && !!message.data?.Password;
     const isExpiration = !!message.draftFlags?.expiresIn;
-    const { dateMessage, titleAttachment, titleDeleteDraft, titleSendButton } = useComposerSendActionsText({
-        date,
-        opening,
-        syncInProgress,
-    });
+    const { dateMessage, titleAttachment, titleDeleteDraft, titleSendButton, titleAssistantButton } =
+        useComposerSendActionsText({
+            date,
+            opening,
+            syncInProgress,
+        });
+
+    const handleToggleAssistant = () => {
+        // Start initializing the Assistant when opening it
+        void initAssistant();
+
+        onToggleAssistant();
+    };
 
     return (
         <footer
@@ -130,6 +146,24 @@ const ComposerActions = ({
 
                 <div className="flex flex-1">
                     <div className="flex">
+                        {showAssistantButton && (
+                            <Tooltip title={titleAssistantButton}>
+                                <Button
+                                    icon
+                                    disabled={disabled || disableAssistant}
+                                    onClick={handleToggleAssistant}
+                                    shape="ghost"
+                                    className="mr-2"
+                                    data-testid="composer:use-assistant-button"
+                                >
+                                    <Icon
+                                        name="pen-stars"
+                                        alt={c('loc_nightly_assistant').t`Generate a message`}
+                                        style={{ color: '#D132EA' }}
+                                    />
+                                </Button>
+                            </Tooltip>
+                        )}
                         <Tooltip title={titleDeleteDraft}>
                             <Button
                                 icon

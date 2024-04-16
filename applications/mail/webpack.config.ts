@@ -27,6 +27,7 @@ const result = (env: any): Configuration => {
 
         config.resolve.alias = {
             'proton-mail': path.resolve(__dirname, 'src/app/'),
+            perf_hooks: path.resolve(__dirname, './perf_hooks_polyfill.ts'),
         };
 
         // if (config.mode !== 'development') {

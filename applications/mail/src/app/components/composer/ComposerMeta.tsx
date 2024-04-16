@@ -69,7 +69,7 @@ const ComposerMeta = ({
                 addressesFocusRef={addressesFocusRef}
                 composerID={composerID}
             />
-            <div className="flex flex-row flex-nowrap flex-column md:flex-row items-stretch md:items-center mt-0 mb-2">
+            <div className="flex flex-row flex-nowrap flex-column md:flex-row items-stretch md:items-center mt-0">
                 <Label
                     htmlFor={`subject-${uid}`}
                     className={clsx(['composer-meta-label pt-0 text-semibold', disabled && 'placeholder'])}
