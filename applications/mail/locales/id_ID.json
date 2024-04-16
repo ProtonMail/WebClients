@@ -40,6 +40,9 @@
       "Add contact": [
         "Tambah kontak"
       ],
+      "Add credit / debit card": [
+        "Tambah kartu kredit / debit"
+      ],
       "Add email": [
         "Tambah email"
       ],
@@ -1120,6 +1123,9 @@
       "Trust": [
         "Percayai"
       ],
+      "Trust key": [
+        "Percayai kunci"
+      ],
       "Trust public key": [
         "Percayai kunci publik"
       ],
@@ -1660,6 +1666,12 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Lanjut dengan ${ MAIL_APP_NAME }."
+      ],
+      "Continue using ${ planTitle }": [
+        "Lanjut gunakan ${ planTitle }"
+      ],
+      "Continue your subscription": [
+        "Lanjutkan langganan Anda"
       ]
     },
     "Calendar attachment tooltip": {
@@ -5813,7 +5825,7 @@
         "Apabila Anda menurunkan jenis akun Anda, Anda tidak akan lagi dapat menggunakan berbagai fitur berbayar milik ${ VPN_APP_NAME }."
       ],
       "If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.": [
-        "Apabila alamat email samaran Anda dijual, dibocorkan, atau disalahgunakan, Anda hanya perlu menonaktifkannya untuk dapat berhenti menerima spam."
+        "Apabila alias Anda dijual, dibocorkan, atau disalahgunakan, Anda hanya perlu menonaktifkannya untuk dapat berhenti menerima spam."
       ],
       "Image description": [
         "Keterangan gambar"
@@ -5889,6 +5901,9 @@
       ],
       "Large imports can take several days.": [
         "Proses impor yang melibatkan data-data dalam jumlah yang besar dapat memakan waktu hingga beberapa hari."
+      ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Pelajari cara untuk ${ staySaferOnlineLink }"
       ],
       "Learn more": [
         "Pelajari lebih lanjut"
@@ -6343,6 +6358,9 @@
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "Data yang Anda masukkan ke dalam draf dapat tidak tersimpan apabila Anda meninggalkan laman."
       ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "Informasi yang terpapar ini dibocorkan oleh layanan pihak ketiga. Informasi Akun ${ BRAND_NAME } Anda tetap aman dan terenkripsi. ${ learnMoreLink }"
+      ],
       "The local database is being prepared": [
         "Database lokal sedang dipersiapkan"
       ],
@@ -6655,6 +6673,9 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Untuk menyelesaikan transaksi, kami akan mengarahkan Anda ke PayPal di tab baru. Nonaktifkan pemblokir pop-up terlebih dahulu sebelum melanjutkan."
       ],
+      "We'll email you once import is complete.": [
+        "Kami akan mengirimkan email kepada Anda setelah impor ini selesai."
+      ],
       "We'll notify you when the import is done.": [
         "Kami akan memberitahukan Anda apabila proses impor telah selesai."
       ],
@@ -6715,6 +6736,9 @@
       "You can check the progress ${ importProgressLink }.": [
         "Anda dapat mengecek status proses impor Anda ${ importProgressLink }."
       ],
+      "You can close the tab or browser in the meantime.": [
+        "Selagi Anda menunggu, Anda dapat menutup tab atau browser ini."
+      ],
       "You can either update your search query or ${ button }": [
         "Anda dapat memperbarui kueri pencarian atau ${ button }"
       ],
@@ -6759,6 +6783,12 @@
       ],
       "You have **${ count } message** tagged with this label": [
         "Anda memiliki **${ count } pesan** yang ditandai dengan label ini"
+      ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "Anda memiliki langganan ${ planTitle } yang berada dalam masa uji coba. Apabila Anda ingin melanjutkan langganan Anda setelah masa uji coba ini berakhir, silakan tambahkan metode pembayaran."
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "Anda memiliki langganan ${ planTitle } yang berada dalam masa uji coba. Tidak ada pembayaran yang diperlukan untuk saat ini. Langganan Anda akan diperbarui secara otomatis pada akhir masa uji coba."
       ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
         "Anda belum menulis subjek email. Apakah Anda yakin untuk tetap mengirim email ini?"
@@ -6855,6 +6885,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Berkas Anda akan dienkripsi dan kemudian disimpan"
+      ],
+      "Your information was found on ${ displayedDate }": [
+        "Informasi Anda ditemukan pada tanggal ${ displayedDate }"
       ],
       "Your login information will not be saved after the import is completed.": [
         "Informasi seputar akun Anda tidak akan disimpan setelah impor selesai."
@@ -7917,6 +7950,9 @@
       ],
       "Starred": [
         "Dibintangi"
+      ],
+      "stay safer online": [
+        "beraktivitas online secara lebih aman"
       ],
       "Terms": [
         "Ketentuan"
@@ -9672,6 +9708,9 @@
       ]
     },
     "Security Center - Info": {
+      "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
+        "Dapatkan notifikasi pada saat kata sandi atau data lainnya yang Anda miliki dibocorkan dari layanan pihak ketiga. ${ learnMoreLink }"
+      ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Solusi keamanan mutakhir berbasis AI kami dirancang untuk para pengguna yang menginginkan perlindungan yang lebih bagi akun mereka. ${ learnMoreLink }"
       ],
@@ -9724,7 +9763,7 @@
         "Alamat berikut tidak valid: ${ invalidAddresses }"
       ],
       "We have detected some warnings. The following email address may not receive emails:": [
-        "Kami mendeteksi beberapa ketidakwajaran pada alamat email yang hendak Anda tuju. Alamat berikut mungkin tidak akan dapat menerima pesan Anda:"
+        "Kami mendeteksi beberapa ketidakwajaran pada alamat email yang dituju. Alamat berikut mungkin tidak akan dapat menerima pesan Anda:"
       ]
     },
     "Sender verification details": {
@@ -10443,6 +10482,32 @@
         "Untuk"
       ]
     },
+    "Subscription renewal state": {
+      "Are you sure?": [
+        "Apakah Anda yakin?"
+      ],
+      "Auto-pay is disabled": [
+        "Autodebet dinonaktifkan"
+      ],
+      "Auto-pay is enabled": [
+        "Autodebet diaktifkan"
+      ],
+      "Disable": [
+        "Nonaktifkan"
+      ],
+      "Enable auto-pay support": [
+        "Aktifkan dukungan autodebet"
+      ],
+      "Keep auto-pay": [
+        "Tetap aktifkan autodebet"
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
+        "Sistem kami tidak akan lagi mendebet Anda secara otomatis melalui metode pembayaran ini, namun langganan Anda akan tetap diperbarui pada akhir siklus tagihan. Apabila Anda ingin menurunkan akun atau mengubah paket berlangganan, Anda tetap harus mengurus proses pemindahan paket secara manual sebelum tagihan Anda jatuh tempo. Di samping itu, apabila Anda menonaktifkan autodebet dan lupa membayar tagihan, kami dapat menurunkan akun Anda dan menonaktifkan berbagai fitur berbayar yang ada secara otomatis."
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
+        "Sistem kami tidak akan lagi mendebet Anda secara otomatis melalui metode pembayaran ini, namun langganan Anda akan tetap diperbarui pada akhir siklus tagihan. Apabila Anda ingin menurunkan akun atau mengubah paket berlangganan, Anda tetap harus mengurus proses pemindahan paket secara manual sebelum tagihan Anda jatuh tempo. Mohon diperhatikan bahwa kami tidak dapat menurunkan akun Anda apabila Anda melebihi batas kuota yang diizinkan atau menggunakan fitur berbayar selaku pengguna gratis, dan kami juga tidak dapat menghapus berkas, email, atau data lainnya yang Anda miliki. Apabila Anda menonaktifkan autodebet, jangan lupa untuk membayar tagihan Anda pada waktunya untuk menghindari penangguhan akun."
+      ]
+    },
     "Subscription saving": {
       "Save": [
         "Hemat"
@@ -10667,6 +10732,12 @@
       "Password copied to clipboard": [
         "Kata sandi disalin ke papan klip"
       ],
+      "Payment method added": [
+        "Metode pembayaran ditambahkan"
+      ],
+      "Payment method updated": [
+        "Metode pembayaran diperbarui"
+      ],
       "Phishing reported": [
         "Phishing berhasil dilaporkan"
       ],
@@ -10871,6 +10942,9 @@
       "Add contact group name": [
         "Tambah nama grup kontak"
       ],
+      "Add credit/debit card": [
+        "Tambah kartu kredit/debit"
+      ],
       "Add filter": [
         "Tambah filter"
       ],
@@ -11060,6 +11134,9 @@
       "Deleting contacts": [
         "Menghapus kontak"
       ],
+      "Details": [
+        "Rincian"
+      ],
       "Don't give spam a chance": [
         "Jangan berikan spam kesempatan"
       ],
@@ -11074,6 +11151,9 @@
       ],
       "Edit contact group": [
         "Sunting grup kontak"
+      ],
+      "Edit credit/debit card": [
+        "Sunting rincian kartu kredit/debit"
       ],
       "Edit email settings": [
         "Sunting pengaturan email"

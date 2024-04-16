@@ -40,6 +40,9 @@
       "Add contact": [
         "Προσθήκη επαφής"
       ],
+      "Add credit / debit card": [
+        "Προσθήκη πιστωτικής/χρεωστικής κάρτας"
+      ],
       "Add email": [
         "Προσθήκη email"
       ],
@@ -1114,6 +1117,10 @@
       ],
       "Trust": [
         "Αξιόπιστο"
+      ],
+      "Trust key": [
+        "Εμπιστοσύνη στο κλειδί",
+        "Εμπιστοσύνη στα κλειδιά"
       ],
       "Trust public key": [
         "Εμπιστοσύνη στο δημόσιο κλειδί"
@@ -10586,6 +10593,32 @@
         "Για"
       ]
     },
+    "Subscription renewal state": {
+      "Are you sure?": [
+        "Είστε σίγουρος/η;"
+      ],
+      "Auto-pay is disabled": [
+        "Η αυτόματη πληρωμή είναι απενεργοποιημένη"
+      ],
+      "Auto-pay is enabled": [
+        "Η αυτόματη πληρωμή είναι ενεργοποιημένη"
+      ],
+      "Disable": [
+        "Απενεργοποίηση"
+      ],
+      "Enable auto-pay support": [
+        "Ενεργοποίηση υποστήριξης αυτόματης πληρωμής"
+      ],
+      "Keep auto-pay": [
+        "Διατηρήστε την αυτόματη πληρωμή"
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
+        "Το σύστημά μας δεν θα σας χρεώνει πλέον αυτόματα χρησιμοποιώντας αυτόν τον τρόπο πληρωμής, αλλά η συνδρομή σας θα εξακολουθεί να ανανεώνεται στο τέλος του κύκλου χρέωσης. Εάν θέλετε να υποβαθμίσετε ή να αλλάξετε τη συνδρομή σας, πρέπει να το κάνετε μόνοι σας πριν από το τέλος της περιόδου χρέωσης. Επιπλέον, εάν ξεχάσετε να πραγματοποιήσετε μια μη αυτόματη πληρωμή και η αυτόματη πληρωμή είναι απενεργοποιημένη για όλους τους τρόπους πληρωμής, ενδέχεται να υποβαθμίσουμε αυτόματα τον λογαριασμό σας, γεγονός που θα οδηγήσει στην απώλεια πολλών λειτουργιών."
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
+        "Το σύστημά μας δεν θα σας χρεώνει πλέον αυτόματα χρησιμοποιώντας αυτόν τον τρόπο πληρωμής, αλλά η συνδρομή σας θα εξακολουθεί να ανανεώνεται στο τέλος του κύκλου χρέωσης. Εάν θέλετε να υποβαθμίσετε ή να αλλάξετε τη συνδρομή σας, πρέπει να το κάνετε μόνοι σας πριν από το τέλος της περιόδου χρέωσης. Δεν μπορούμε να σας υποβαθμίσουμε αυτόματα, επειδή εάν υπερβαίνετε το όριο χώρου αποθήκευσης δωρεάν πλάνου ή χρησιμοποιείτε άλλες λειτουργίες επί πληρωμή, δεν μπορούμε να διαγράψουμε αυτόματα αρχεία, email ή άλλα δεδομένα για εσάς. Εάν απενεργοποιήσετε την αυτόματη πληρωμή, θυμηθείτε να πληρώσετε το επόμενο τιμολόγιο συνδρομής πριν από την ημερομηνία λήξης, για να αποτρέψετε την αναστολή λογαριασμού."
+      ]
+    },
     "Subscription saving": {
       "Save": [
         "Αποθήκευση"
@@ -10836,6 +10869,12 @@
       "Password copied to clipboard": [
         "Ο κωδικός πρόσβασης αντιγράφηκε στο πρόχειρο"
       ],
+      "Payment method added": [
+        "Προστέθηκε τρόπος πληρωμής"
+      ],
+      "Payment method updated": [
+        "Η μέθοδος πληρωμής ενημερώθηκε"
+      ],
       "Phishing reported": [
         "Το ηλεκτρονικό ψάρεμα (phising) αναφέρθηκε"
       ],
@@ -11048,6 +11087,9 @@
       "Add contact group name": [
         "Προσθήκη ονόματος ομάδας επαφών"
       ],
+      "Add credit/debit card": [
+        "Προσθήκη πιστωτικής/χρεωστικής κάρτας"
+      ],
       "Add filter": [
         "Προσθήκη φίλτρου"
       ],
@@ -11254,6 +11296,9 @@
       ],
       "Edit contact group": [
         "Επεξεργασία ομάδας επαφών"
+      ],
+      "Edit credit/debit card": [
+        "Επεξεργασία πιστωτικής/χρεωστικής κάρτας"
       ],
       "Edit email settings": [
         "Επεξεργασία ρυθμίσεων email"

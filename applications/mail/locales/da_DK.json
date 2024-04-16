@@ -40,6 +40,9 @@
       "Add contact": [
         "Tilføj kontakt"
       ],
+      "Add credit / debit card": [
+        "Tilføj kredit/debetkort"
+      ],
       "Add email": [
         "Tilføj e-mail"
       ],
@@ -1114,6 +1117,10 @@
       ],
       "Trust": [
         "Hav tillid til"
+      ],
+      "Trust key": [
+        "Stol på nøgle",
+        "Stol på nøgler"
       ],
       "Trust public key": [
         "Hav tillid til offentlig nøgle"
@@ -10574,6 +10581,32 @@
         "Til"
       ]
     },
+    "Subscription renewal state": {
+      "Are you sure?": [
+        "Er du sikker?"
+      ],
+      "Auto-pay is disabled": [
+        "Automatisk betaling er deaktiveret"
+      ],
+      "Auto-pay is enabled": [
+        "Automatisk betaling er aktiveret"
+      ],
+      "Disable": [
+        "Deaktivér"
+      ],
+      "Enable auto-pay support": [
+        "Aktivér understøttelse af automatisk betaling"
+      ],
+      "Keep auto-pay": [
+        "Behold automatisk betaling"
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
+        "Vores system vil ikke længere automatisk opkræve dig ved hjælp af denne betalingsmetode, men dit abonnement vil stadig blive fornyet ved slutningen af faktureringsperioden. Hvis du ønsker at nedgradere eller ændre dit abonnement, skal du stadig selv gøre det inden udgangen af faktureringsperioden. Hvis du glemmer at foretage en manuel betaling, og automatisk betaling er deaktiveret for alle betalingsmetoder, kan vi desuden automatisk nedgradere din konto, hvilket vil føre til tabet af mange funktioner."
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
+        "Vores system vil ikke længere automatisk opkræve dig ved hjælp af denne betalingsmetode, men dit abonnement vil stadig blive fornyet ved slutningen af faktureringsperioden. Hvis du ønsker at nedgradere eller ændre dit abonnement, skal du stadig selv gøre det inden slutningen af faktureringsperioden. Vi kan ikke automatisk nedgradere dig, for hvis du har overskredet lagerpladsen for det gratis abonnement eller bruger andre betalte funktioner, kan vi ikke automatisk slette filer, e-mails eller andre data for dig. Hvis du deaktiverer automatisk betaling, skal du huske at betale din næste abonnementsfakture inden forfaldsdatoen for at forhindre suspendering af kontoen."
+      ]
+    },
     "Subscription saving": {
       "Save": [
         "Spar"
@@ -10824,6 +10857,12 @@
       "Password copied to clipboard": [
         "Adgangskode kopieret til udklipsholder"
       ],
+      "Payment method added": [
+        "Betalingsmetode tilføjet"
+      ],
+      "Payment method updated": [
+        "Betalingsmetode opdateret"
+      ],
       "Phishing reported": [
         "Phishing anmeldt"
       ],
@@ -11036,6 +11075,9 @@
       "Add contact group name": [
         "Tilføj kontaktgruppenavn"
       ],
+      "Add credit/debit card": [
+        "Tilføj kredit/debetkort"
+      ],
       "Add filter": [
         "Tilføj filter"
       ],
@@ -11242,6 +11284,9 @@
       ],
       "Edit contact group": [
         "Redigér kontaktgruppe"
+      ],
+      "Edit credit/debit card": [
+        "Redigér kredit/debetkort"
       ],
       "Edit email settings": [
         "Rediger e-mail-indstillinger"

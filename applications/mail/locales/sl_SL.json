@@ -40,6 +40,9 @@
       "Add contact": [
         "Dodaj stik"
       ],
+      "Add credit / debit card": [
+        "Dodaj kreditno/debetno kartico"
+      ],
       "Add email": [
         "Dodaj e-poštni naslov"
       ],
@@ -1131,6 +1134,12 @@
       ],
       "Trust": [
         "Zaupaj"
+      ],
+      "Trust key": [
+        "Zaupaj ključu",
+        "Zaupaj ključema",
+        "Zaupaj ključem",
+        "Zaupaj ključem"
       ],
       "Trust public key": [
         "Zaupaj javnemu ključu"
@@ -11022,6 +11031,32 @@
         "Za"
       ]
     },
+    "Subscription renewal state": {
+      "Are you sure?": [
+        "Ali ste prepričani?"
+      ],
+      "Auto-pay is disabled": [
+        "Samodejno plačilo je onemogočeno."
+      ],
+      "Auto-pay is enabled": [
+        "Samodejno plačilo je omogočeno."
+      ],
+      "Disable": [
+        "Onemogočite"
+      ],
+      "Enable auto-pay support": [
+        "Omogočite podporo za samodejno plačilo."
+      ],
+      "Keep auto-pay": [
+        "Ohrani samodejno plačevanje"
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
+        "Naš sistem vas ne bo več samodejno bremenil s to vrsto plačila, vendar se bo vaša naročnina še vedno podaljšala na koncu obračunskega cikla. Če želite zmanjšati ali spremeniti svojo naročnino, morate to še vedno storiti sami pred koncem obračunskega obdobja. Poleg tega, če pozabite izvesti ročno plačilo in je samodejno plačevanje onemogočeno, lahko samodejno zmanjšamo vaš račun, kar bo povzročilo izgubo številnih funkcij."
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
+        "Naš sistem vas ne bo več samodejno obremenjeval s tem načinom plačila, vendar se bo vaša naročnina še vedno podaljšala na koncu obračunskega cikla. Če želite zmanjšati ali spremeniti svojo naročnino, morate to še vedno storiti sami pred koncem obračunskega obdobja. Samodejno ne moremo zmanjšati vaše naročnine, ker če presežete kvoto brezplačnega shranjevanja ali uporabljate druge plačljive funkcije, ne moremo samodejno izbrisati datotek, e-pošte ali drugih podatkov za vas. Če onemogočite samodejno plačilo, ne pozabite plačati naslednjega računa za naročnino pred rokom zapadlosti, da preprečite suspenz računa."
+      ]
+    },
     "Subscription saving": {
       "Save": [
         "Shrani"
@@ -11324,6 +11359,12 @@
       "Password copied to clipboard": [
         "Geslo kopirano v odložišče"
       ],
+      "Payment method added": [
+        "Način plačila je bil dodan."
+      ],
+      "Payment method updated": [
+        "Način plačila je bil posodobljen."
+      ],
       "Phishing reported": [
         "Lažno predstavljanje je prijavljeno"
       ],
@@ -11552,6 +11593,9 @@
       "Add contact group name": [
         "Dodaj ime skupine stikov"
       ],
+      "Add credit/debit card": [
+        "Dodajte kreditno/debetno kartico"
+      ],
       "Add filter": [
         "Dodajanje filtra"
       ],
@@ -11776,6 +11820,9 @@
       ],
       "Edit contact group": [
         "Uredi skupino stikov"
+      ],
+      "Edit credit/debit card": [
+        "Urejanje kreditne/debetne kartice"
       ],
       "Edit email settings": [
         "Urejanje nastavitev e-pošte"

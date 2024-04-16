@@ -40,6 +40,9 @@
       "Add contact": [
         "연락처 추가"
       ],
+      "Add credit / debit card": [
+        "신용 / 체크카드 추가"
+      ],
       "Add email": [
         "이메일 추가"
       ],
@@ -1110,6 +1113,9 @@
       ],
       "Trust": [
         "신뢰"
+      ],
+      "Trust key": [
+        "키 신뢰하기"
       ],
       "Trust public key": [
         "공개 키 신뢰하기"
@@ -10416,6 +10422,32 @@
         "가격:"
       ]
     },
+    "Subscription renewal state": {
+      "Are you sure?": [
+        "확실한가요?"
+      ],
+      "Auto-pay is disabled": [
+        "자동 결제가 비활성화됨"
+      ],
+      "Auto-pay is enabled": [
+        "자동 결제가 활성화됨"
+      ],
+      "Disable": [
+        "비활성화"
+      ],
+      "Enable auto-pay support": [
+        "자동 결제 지원 활성화"
+      ],
+      "Keep auto-pay": [
+        "자동 결제 유지"
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
+        "시스템이 더 이상 이 결제 수단으로 자동 결제할 수 없습니다, 다만 고객님의 구독이 청구 주기가 끝날 때까지 갱신될 것입니다. 구독을 다운그레이드하거나 변경하려면, 청구 기간이 끝나기 전에 수동으로 해야합니다. 또한, 수동 결제를 하는 것을 잊어버리고 모든 결제 수단에 자동 결제가 비활성화된 경우, 고객님의 계정이 자동 다운그레이드되어 많은 기능이 손실될 수 있습니다."
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
+        "당사 시스템이 더 이상 이 결제 수단을 사용하여 자동 갱신할 수 없으나, 사용자의 구독이 여전히 마지막 결제일이 갱신됩니다. 만일 요금제를 다운그레이드하고 싶으시거나 구독을 변경하려면, 여전히 결제일이 끝나기 전 직전 수행해야 합니다. 만약 사용자가 무료 요금제 공간을 초과하여 사용하시거나 다른 유료 계정을 사용시 파일, 이메일 및 기타 데이터를 자동으로 삭제할 수 없기에 자동으로 다운그레이드할 수 없습니다. 자동 결제 수단을 비활성화 하시려면, 계정 정지를 방지하기 위해 마감일 전에 다음 구독 청구서를 지불하는 것을 잊지 마세요."
+      ]
+    },
     "Subscription saving": {
       "Save": [
         "절약되는 가격:"
@@ -10640,6 +10672,12 @@
       "Password copied to clipboard": [
         "비밀번호 복사됨"
       ],
+      "Payment method added": [
+        "결제 방법이 추가 됨"
+      ],
+      "Payment method updated": [
+        "결제 방법이 업데이트 됨"
+      ],
       "Phishing reported": [
         "피싱 신고됨"
       ],
@@ -10844,6 +10882,9 @@
       "Add contact group name": [
         "연락처 그룹 이름 추가"
       ],
+      "Add credit/debit card": [
+        "신용/체크카드 추가"
+      ],
       "Add filter": [
         "필터 추가"
       ],
@@ -11044,6 +11085,9 @@
       ],
       "Edit contact group": [
         "연락처 그룹 수정"
+      ],
+      "Edit credit/debit card": [
+        "신용/체크카드 편집"
       ],
       "Edit email settings": [
         "이메일 설정 편집"
