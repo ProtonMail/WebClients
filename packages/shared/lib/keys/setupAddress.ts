@@ -262,7 +262,7 @@ export const getRequiresMailKeySetup = (user: tsUser | undefined) => {
     return (
         user.Type === UserType.PROTON &&
         !user.Keys.length &&
-        (user.Services === 0 || hasBit(user.Services, PRODUCT_BIT.Mail))
+        (user.Services === 0 || hasBit(user.Services, PRODUCT_BIT.MAIL))
     );
 };
 
@@ -284,7 +284,7 @@ export const getIsVPNOnlyAccount = (user: tsUser | undefined) => {
         user.Type === UserType.PROTON &&
         !user.Keys.length &&
         hasBit(user.Services, PRODUCT_BIT.VPN) &&
-        !hasBit(user.Services, PRODUCT_BIT.Mail)
+        !hasBit(user.Services, PRODUCT_BIT.MAIL)
     );
 };
 

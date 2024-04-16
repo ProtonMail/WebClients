@@ -7,8 +7,8 @@ import type { User } from '../interfaces';
 
 const { ADMIN_ROLE, MEMBER_ROLE, FREE_ROLE } = USER_ROLES;
 
-export const hasPaidMail = (user: User) => hasBit(user.Subscribed, PRODUCT_BIT.Mail);
-export const hasPaidDrive = (user: User) => hasBit(user.Subscribed, PRODUCT_BIT.Drive);
+export const hasPaidMail = (user: User) => hasBit(user.Subscribed, PRODUCT_BIT.MAIL);
+export const hasPaidDrive = (user: User) => hasBit(user.Subscribed, PRODUCT_BIT.DRIVE);
 export const hasPaidVpn = (user: User) => hasBit(user.Subscribed, PRODUCT_BIT.VPN);
 export const hasPaidPass = (user: User) => hasBit(user.Subscribed, PRODUCT_BIT.PASS);
 export const isPaid = (user: User) => !!user.Subscribed;
