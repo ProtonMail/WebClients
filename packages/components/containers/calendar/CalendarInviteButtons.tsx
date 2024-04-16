@@ -2,12 +2,17 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { useLoading } from '@proton/hooks';
+import { TelemetryCalendarEvents } from '@proton/shared/lib/api/telemetry';
 import { ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
+import { PLANS } from '@proton/shared/lib/constants';
+import { getPlan } from '@proton/shared/lib/helpers/subscription';
 import { PartstatActions } from '@proton/shared/lib/interfaces/calendar';
 import move from '@proton/utils/move';
 import noop from '@proton/utils/noop';
 
+import { useApi, useSubscription } from '../..';
 import { ButtonGroup, DropdownMenu, DropdownMenuButton, SimpleDropdown } from '../../components';
+import { sendCalendarInviteReport } from './CalendarInviteTelemetry';
 
 interface Props {
     actions: PartstatActions;
@@ -21,14 +26,35 @@ const CalendarInviteButtons = ({
     disabled,
     className = '',
 }: Props) => {
+    const api = useApi();
+    const [subscription] = useSubscription();
+    const plan: PLANS = getPlan(subscription)?.Name || PLANS.FREE;
     const [loadingAccept, withLoadingAccept] = useLoading();
     const [loadingTentative, withLoadingTentative] = useLoading();
     const [loadingDecline, withLoadingDecline] = useLoading();
 
     const { accept, acceptTentatively, decline } = actions;
-    const onAccept = () => withLoadingAccept(accept());
-    const onTentative = () => withLoadingTentative(acceptTentatively());
-    const onDecline = () => withLoadingDecline(decline());
+    const onAccept = () => {
+        void sendCalendarInviteReport(api, {
+            event: TelemetryCalendarEvents.answer_invite,
+            dimensions: { answer: 'yes', plan },
+        });
+        return withLoadingAccept(accept());
+    };
+    const onTentative = () => {
+        void sendCalendarInviteReport(api, {
+            event: TelemetryCalendarEvents.answer_invite,
+            dimensions: { answer: 'maybe', plan },
+        });
+        return withLoadingTentative(acceptTentatively());
+    };
+    const onDecline = () => {
+        void sendCalendarInviteReport(api, {
+            event: TelemetryCalendarEvents.answer_invite,
+            dimensions: { answer: 'no', plan },
+        });
+        return withLoadingDecline(decline());
+    };
 
     const loadingAnswer = loadingAccept || loadingTentative || loadingDecline;
 
