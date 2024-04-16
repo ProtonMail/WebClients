@@ -123,11 +123,7 @@ const MainContainer = () => {
     const { state: expanded, toggle: onToggleExpand, set: setExpand } = useToggle();
     const { viewportWidth } = useActiveBreakpoint();
 
-    const { getFeature } = useFeatures([
-        FeatureCode.MailDisableE2EE,
-        FeatureCode.EasySwitch,
-        FeatureCode.NotificationInboxDesktopApp,
-    ]);
+    const { getFeature } = useFeatures([FeatureCode.EasySwitch, FeatureCode.NotificationInboxDesktopApp]);
 
     const isNotifInboxDesktopAppOn = getFeature(FeatureCode.NotificationInboxDesktopApp).feature?.Value === true;
     const showThemeSelection = useShowThemeSelection();

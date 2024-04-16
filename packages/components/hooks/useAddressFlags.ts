@@ -1,17 +1,9 @@
 import { c } from 'ttag';
 
-import { FeatureCode } from '@proton/components/containers/features';
 import { useKTVerifier } from '@proton/components/containers/keyTransparency';
 import { getNewKeyFlags } from '@proton/components/containers/keys/shared/flags';
 import { FlagAction } from '@proton/components/containers/keys/shared/interface';
-import {
-    useAddressesKeys,
-    useApi,
-    useEventManager,
-    useFeature,
-    useNotifications,
-    useUser,
-} from '@proton/components/hooks';
+import { useAddressesKeys, useApi, useEventManager, useNotifications, useUser } from '@proton/components/hooks';
 import { updateAddressFlags } from '@proton/shared/lib/api/members';
 import { ADDRESS_FLAGS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
@@ -33,8 +25,6 @@ const useAddressFlags: UseAddressFlags = (address) => {
     const [User] = useUser();
     const [addressesKeys] = useAddressesKeys();
     const { keyTransparencyVerify } = useKTVerifier(api, async () => User);
-    const mailDisableE2EEFeature = useFeature<boolean>(FeatureCode.MailDisableE2EE);
-    const isDisableEncryptionEnabled = mailDisableE2EEFeature.feature?.Value === true;
 
     if (!address || address.Flags === undefined) {
         return null;
@@ -77,7 +67,7 @@ const useAddressFlags: UseAddressFlags = (address) => {
         createNotification({ text: c('Success notification').t`Preference updated` });
     };
 
-    const allowDisablingEncryption = !address.ProtonMX && isDisableEncryptionEnabled;
+    const allowDisablingEncryption = !address.ProtonMX;
     const encryptionDisabled = hasBit(address.Flags, ADDRESS_FLAGS.FLAG_DISABLE_E2EE);
     const expectSignatureDisabled = hasBit(address.Flags, ADDRESS_FLAGS.FLAG_DISABLE_EXPECTED_SIGNED);
 
