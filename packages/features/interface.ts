@@ -60,7 +60,6 @@ export enum FeatureCode {
     InboxDesktopFreeTrialDates = 'InboxDesktopFreeTrialDates',
     InboxDesktopFreeTrialReminders = 'InboxDesktopFreeTrialReminders',
     MailActionsChunkSize = 'MailActionsChunkSize',
-    MailDisableE2EE = 'MailDisableE2EE',
     MailFeedbackEnabled = 'MailFeedbackEnabled',
     MailServiceWorker = 'MailServiceWorker',
     NotificationInboxDesktopApp = 'NotificationInboxDesktopApp',
