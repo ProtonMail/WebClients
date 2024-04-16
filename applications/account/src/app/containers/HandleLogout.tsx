@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 
-import { deleteStore } from '@proton/account/persist/db';
 import { parseLogoutURL } from '@proton/shared/lib/authentication/logout';
 import { getActiveSessionByUserID } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { removePersistedSession } from '@proton/shared/lib/authentication/persistedSessionStorage';
@@ -23,9 +22,8 @@ const HandleLogout = () => {
             params.sessions.forEach(({ id, s }) => {
                 const session = getActiveSessionByUserID(id, s);
                 if (session) {
-                    removePersistedSession(session.localID, session.UID);
+                    removePersistedSession(session.localID, session.UID).catch(noop);
                 }
-                deleteStore(id).catch(noop);
             });
         }
     }, []);
