@@ -58,7 +58,7 @@ describe('domains', () => {
         const { store } = setup({
             user: {
                 Role: USER_ROLES.ADMIN_ROLE,
-                Subscribed: PRODUCT_BIT.Mail,
+                Subscribed: PRODUCT_BIT.MAIL,
             } as unknown as UserModel,
         });
         await store.dispatch(domainsThunk());

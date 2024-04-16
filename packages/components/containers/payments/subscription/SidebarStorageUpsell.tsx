@@ -157,7 +157,7 @@ const SidebarStorageUpsell = ({ app }: Props) => {
     if (!data) {
         const hasDriveSpecificUpsell =
             // Drive specific upsell if subscribed to a drive plan or free plan.
-            app === APPS.PROTONDRIVE && (user.Subscribed === PRODUCT_BIT.Drive || user.Subscribed === 0);
+            app === APPS.PROTONDRIVE && (user.Subscribed === PRODUCT_BIT.DRIVE || user.Subscribed === 0);
         if (hasDriveSpecificUpsell) {
             return upsellButton;
         }
