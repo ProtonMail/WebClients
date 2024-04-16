@@ -573,10 +573,12 @@ export enum SHARED_UPSELL_PATHS {
     MULTI_USER = 'multi-user',
     CONTACT_GROUP = 'contact-groups',
     STORAGE = 'storage',
+    USER_DROPDOWN = 'user-dropdown',
     STORAGE_PERCENTAGE = 'storage-percentage',
     ORGANIZATION_CAPACITY = 'organization-capacity',
     SENTINEL = 'sentinel',
     TRIAL_WILL_END = 'trial-will-end',
+    TOP_NAVIGATION_BAR = 'top-navigation-bar',
 }
 
 export enum DASHBOARD_UPSELL_PATHS {

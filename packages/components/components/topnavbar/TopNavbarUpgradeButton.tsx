@@ -13,7 +13,7 @@ import {
     useUser,
 } from '@proton/components';
 import { freeTrialUpgradeClick, redirectToAccountApp } from '@proton/components/containers/desktop/openExternalLink';
-import { APP_NAMES, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
+import { APP_NAMES, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { isTrial } from '@proton/shared/lib/helpers/subscription';
 import { addUpsellPath, getUpgradePath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
@@ -37,7 +37,7 @@ const TopNavbarUpgradeButton = ({ app }: Props) => {
 
     const upsellRef = getUpsellRefFromApp({
         app: APP_NAME,
-        feature: '1',
+        feature: SHARED_UPSELL_PATHS.TOP_NAVIGATION_BAR,
         component: UPSELL_COMPONENT.BUTTON,
         fromApp: app,
     });
