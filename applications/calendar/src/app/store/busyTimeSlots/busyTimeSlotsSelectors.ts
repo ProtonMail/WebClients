@@ -6,14 +6,23 @@ import { CalendarState } from '../store';
 import { BusyTimeSlotFetchStatus, BusyTimeSlotVisibility } from './busyTimeSlotsSlice';
 
 export const selectAttendeesBusyTimeSlots = createSelector(
+    (state: CalendarState) => state.busyTimeSlots.displayOnGrid,
     (state: CalendarState) => state.busyTimeSlots.metadata,
     (state: CalendarState) => state.busyTimeSlots.attendees,
     (state: CalendarState) => state.busyTimeSlots.attendeeBusySlots,
     (state: CalendarState) => state.busyTimeSlots.attendeeVisibility,
     (state: CalendarState) => state.busyTimeSlots.attendeeDataAccessible,
     (state: CalendarState) => state.busyTimeSlots.attendeeColor,
-    (metadata, attendees, busyTimeSlots, availabilities, dataAccessible, attendeesColor): CalendarViewBusyEvent[] => {
-        if (!metadata || attendees.length === 0) {
+    (
+        display,
+        metadata,
+        attendees,
+        busyTimeSlots,
+        availabilities,
+        dataAccessible,
+        attendeesColor
+    ): CalendarViewBusyEvent[] => {
+        if (!display || !metadata || attendees.length === 0) {
             return [];
         }
 

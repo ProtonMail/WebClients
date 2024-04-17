@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { InputFieldTwo, Option, SelectTwo } from '@proton/components/components';
+import { InputFieldTwo, Option, SelectTwo, Toggle } from '@proton/components/components';
 import { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
 import { SettingsLayoutLeft, SettingsSectionWide, useCalendarModelEventManager } from '@proton/components/containers';
 import {
@@ -16,7 +16,7 @@ import { updateCalendarSettings } from '@proton/shared/lib/api/calendars';
 import { dedupeNotifications, sortNotificationsByAscendingTrigger } from '@proton/shared/lib/calendar/alarms';
 import { modelToNotifications } from '@proton/shared/lib/calendar/alarms/modelToNotifications';
 import { getIsHolidaysCalendar, getShowDuration } from '@proton/shared/lib/calendar/calendar';
-import { MAX_DEFAULT_NOTIFICATIONS } from '@proton/shared/lib/calendar/constants';
+import { CALENDAR_SHARE_BUSY_TIME_SLOTS, MAX_DEFAULT_NOTIFICATIONS } from '@proton/shared/lib/calendar/constants';
 import {
     CalendarBootstrap,
     NotificationModel,
@@ -26,6 +26,8 @@ import {
 
 import SettingsLayout from '../../account/SettingsLayout';
 import SettingsLayoutRight from '../../account/SettingsLayoutRight';
+import { BusyTimeSlotsLabelInfo } from '../calendarModal/BusyTimeSlotsCheckbox';
+import useBusyTimeSlotsAvailable from '../hooks/useBusyTimeSlotsAvailable';
 import Notifications from '../notifications/Notifications';
 
 interface Props {
@@ -47,6 +49,9 @@ const CalendarEventDefaultsSection = ({ calendar, bootstrap, canEdit }: Props) =
     const [hasTouchedFullDayNotifications, setHasTouchedFullDayNotifications] = useState(false);
     const [loadingSavePartDayNotifications, withLoadingSavePartDayNotifications] = useLoading();
     const [loadingSaveFullDayNotifications, withLoadingSaveFullDayNotifications] = useLoading();
+    const [loadingSaveShareBusySlots, withLoadingSaveShareBusySlots] = useLoading();
+
+    const isBusyTimeSlotsAvailable = useBusyTimeSlotsAvailable();
 
     const showDuration = getShowDuration(calendar);
     const cannotEdit = !canEdit;
@@ -97,6 +102,17 @@ const CalendarEventDefaultsSection = ({ calendar, bootstrap, canEdit }: Props) =
         );
     };
 
+    const handleSaveShareBusyTimeSlots = (value: CALENDAR_SHARE_BUSY_TIME_SLOTS) => {
+        void withLoadingSaveShareBusySlots(
+            (async () => {
+                setModel({ ...model, shareBusyTimeSlots: value });
+                await api(updateCalendarSettings(calendar.ID, { MakesUserBusy: value }));
+                await call([calendar.ID]);
+                displaySuccessNotification();
+            })()
+        );
+    };
+
     useEffect(() => {
         setModel(getCalendarEventSettingsModel(bootstrap.CalendarSettings));
         setHasTouchedPartDayNotifications(false);
@@ -107,8 +123,34 @@ const CalendarEventDefaultsSection = ({ calendar, bootstrap, canEdit }: Props) =
         <SettingsSectionWide className="container-section-sticky-section">
             <div className="h2 mb-1 text-bold">{c('Default calendar event settings section title')
                 .t`Default event settings`}</div>
+
+            {isBusyTimeSlotsAvailable && (
+                <SettingsLayout stackEarlier className={'mt-8'}>
+                    <SettingsLayoutLeft>
+                        <label htmlFor="busy-slots-sharing" className="text-semibold">
+                            <span>{c('Label').t`Show others when I'm busy`}</span>
+                            <BusyTimeSlotsLabelInfo />
+                        </label>
+                    </SettingsLayoutLeft>
+                    <SettingsLayoutRight isToggleContainer>
+                        <Toggle
+                            id="busy-slots-sharing"
+                            aria-describedby="busy-slots-sharing"
+                            checked={model.shareBusyTimeSlots === CALENDAR_SHARE_BUSY_TIME_SLOTS.YES}
+                            loading={loadingSaveShareBusySlots}
+                            onChange={() => {
+                                handleSaveShareBusyTimeSlots(
+                                    model.shareBusyTimeSlots === CALENDAR_SHARE_BUSY_TIME_SLOTS.YES
+                                        ? CALENDAR_SHARE_BUSY_TIME_SLOTS.NO
+                                        : CALENDAR_SHARE_BUSY_TIME_SLOTS.YES
+                                );
+                            }}
+                        />
+                    </SettingsLayoutRight>
+                </SettingsLayout>
+            )}
             {showDuration && (
-                <SettingsLayout stackEarlier className="mt-8">
+                <SettingsLayout stackEarlier className={isBusyTimeSlotsAvailable ? '' : 'mt-8'}>
                     <SettingsLayoutLeft>
                         <label htmlFor="event-duration" id="label-event-duration" className="text-semibold">
                             {c('Label for default event settings').t`Duration`}

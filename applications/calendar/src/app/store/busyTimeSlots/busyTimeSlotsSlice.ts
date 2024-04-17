@@ -25,6 +25,13 @@ export type BusyTimeSlot = Exclude<GetBusyTimeSlotsResponse['BusySchedule']['Bus
     isAllDay: boolean;
 };
 
+export interface BusyAttendeeFetchStatusSuccessActionPayload {
+    email: BusyTimeSlotEmail;
+    busyTimeSlots: BusyTimeSlot[];
+    isDataAccessible: boolean;
+    visibility: BusyTimeSlotVisibility;
+}
+
 /**
  * When a create or edit event modal is opened:
  * 1. We first store Metadata + initial list of attendees email
@@ -36,10 +43,10 @@ export type BusyTimeSlot = Exclude<GetBusyTimeSlotsResponse['BusySchedule']['Bus
  * 5. When the user submit or close the form, reset action is called
  */
 export interface BusyTimeSlotsState {
+    /** Display or not on calendar grid */
+    displayOnGrid: boolean;
     /** Metadata of the event */
     metadata?: {
-        /** Locale date in timestamp format: startDate of the event */
-        startDate: number;
         /** The currently selected TZ in the interface */
         tzid: string;
         /** The current view when opening event form */
@@ -51,6 +58,7 @@ export interface BusyTimeSlotsState {
          * If we're on day X view, it will be the start of the day X
          */
         viewStartDate: number;
+        viewEndDate: number;
         /** UTC unix timestamp: now date used across calendar components */
         now: number;
     };
@@ -82,6 +90,8 @@ export interface BusyTimeSlotsState {
 export const busyTimeSlotsSliceName = 'busyTimeSlots';
 
 const initialState: BusyTimeSlotsState = {
+    metadata: undefined,
+    displayOnGrid: true,
     attendees: [],
     attendeeColor: {},
     attendeeVisibility: {},
@@ -95,68 +105,20 @@ const busyTimeSlotSlice = createSlice({
     name: busyTimeSlotsSliceName,
     initialState,
     reducers: {
-        reset: () => {
-            return initialState;
+        reset: (state) => {
+            return { ...initialState, metadata: state.metadata };
         },
         /**
          * When temporary event is set or updated, we store the metadata and the attendees email list.
          * Every email is canonicalized
          */
-        init: (
-            state,
-            {
-                payload: { attendeeEmails, startDate, tzid, view, now, viewStartDate },
-            }: PayloadAction<
-                { attendeeEmails: BusyTimeSlotEmail[] } & Exclude<BusyTimeSlotsState['metadata'], undefined>
-            >
-        ) => {
-            state.metadata = {
-                now,
-                startDate,
-                tzid,
-                view,
-                viewStartDate,
-            };
+        init: (state, { payload: { attendeeEmails } }: PayloadAction<{ attendeeEmails: BusyTimeSlotEmail[] }>) => {
             if (diff(attendeeEmails, state.attendees).length > 0) {
                 state.attendees = attendeeEmails.map((email) => canonicalizeEmailByGuess(email));
             }
         },
-        initAfterDateRangeChange: (
-            state,
-            {
-                payload: { attendeeEmails, startDate, tzid, view, now, viewStartDate },
-            }: PayloadAction<
-                { attendeeEmails: BusyTimeSlotEmail[] } & Exclude<BusyTimeSlotsState['metadata'], undefined>
-            >
-        ) => {
-            state.metadata = {
-                now,
-                startDate,
-                tzid,
-                view,
-                viewStartDate,
-            };
-            state.attendees = attendeeEmails.map((email) => canonicalizeEmailByGuess(email));
-
-            // Reset all the other states except color
-            state.attendeeDataAccessible = initialState.attendeeDataAccessible;
-            state.attendeeFetchStatus = initialState.attendeeFetchStatus;
-            state.attendeeBusySlots = initialState.attendeeBusySlots;
-            state.attendeeHighlight = undefined;
-        },
-        setMetadataViewStartDate: (state, { payload }: PayloadAction<{ viewStartDate: number }>) => {
-            if (!state.metadata) {
-                return;
-            }
-
-            state.metadata!.viewStartDate = payload.viewStartDate;
-        },
-        setMetadataView: (state, { payload }: PayloadAction<{ view: VIEWS }>) => {
-            if (!state.metadata) {
-                return;
-            }
-
-            state.metadata!.view = payload.view;
+        setMetadata: (state, { payload }: PayloadAction<Required<BusyTimeSlotsState>['metadata']>) => {
+            state.metadata = payload;
         },
         removeAttendee: (state, action: PayloadAction<BusyTimeSlotEmail>) => {
             const emailCanonicalized = canonicalizeEmailByGuess(action.payload);
@@ -183,19 +145,7 @@ const busyTimeSlotSlice = createSlice({
                 state.attendeeColor[emailCanonicalized] = color;
             }
         },
-        setFetchStatusesSuccess: (
-            state,
-            {
-                payload,
-            }: PayloadAction<
-                {
-                    email: BusyTimeSlotEmail;
-                    busyTimeSlots: BusyTimeSlot[];
-                    isDataAccessible: boolean;
-                    visibility: BusyTimeSlotVisibility;
-                }[]
-            >
-        ) => {
+        setFetchStatusesSuccess: (state, { payload }: PayloadAction<BusyAttendeeFetchStatusSuccessActionPayload[]>) => {
             for (const { email, busyTimeSlots, isDataAccessible, visibility } of payload) {
                 const emailCanonicalized = canonicalizeEmailByGuess(email);
                 state.attendeeBusySlots[emailCanonicalized] = busyTimeSlots;
@@ -213,6 +163,9 @@ const busyTimeSlotSlice = createSlice({
         },
         setHighlightedAttendee: (state, action: PayloadAction<BusyTimeSlotEmail | undefined>) => {
             state.attendeeHighlight = action.payload ? canonicalizeEmailByGuess(action.payload) : undefined;
+        },
+        setDisplay: (state, action: PayloadAction<boolean>) => {
+            state.displayOnGrid = action.payload;
         },
     },
 });
