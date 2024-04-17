@@ -29,7 +29,7 @@ interface Props {
     initialExpiration: number | null;
     customPassword: string;
     isDeleting?: boolean;
-    deleteLink: () => Promise<void>;
+    deleteShare: () => Promise<void>;
     onSaveLinkClick: (
         password?: string,
         duration?: number | null
@@ -45,7 +45,7 @@ const ShareLinkSettingsModal = ({
     initialExpiration,
     onSaveLinkClick,
     isDeleting,
-    deleteLink,
+    deleteShare,
     deleteShareEnabled,
     modificationDisabled,
     confirmationMessage,
@@ -60,10 +60,10 @@ const ShareLinkSettingsModal = ({
     const { state: expirationEnabled, toggle: toggleExpiration } = useToggle(!!initialExpiration);
 
     const isFormDirty = useMemo(() => {
-        return Boolean(
-            (expiration !== initialExpiration && expirationEnabled !== !!initialExpiration) ||
-                (customPassword !== null && password !== customPassword && passwordEnabled !== !!customPassword)
-        );
+        // If initialExpiration or customPassword is empty, that means it was disabled
+        const expirationChanged = expiration !== initialExpiration || expirationEnabled !== !!initialExpiration;
+        const passwordChanged = password !== customPassword || passwordEnabled !== !!customPassword;
+        return Boolean(expirationChanged || passwordChanged);
     }, [password, customPassword, passwordEnabled, expiration, initialExpiration, expirationEnabled]);
 
     const handleClose = () => {
@@ -87,7 +87,7 @@ const ShareLinkSettingsModal = ({
             submitText: c('Action').t`Stop sharing`,
             message: confirmationMessage,
             canUndo: true,
-            onSubmit: () => deleteLink().finally(() => modalProps.onClose?.()),
+            onSubmit: () => deleteShare(),
         });
     };
 
@@ -97,18 +97,9 @@ const ShareLinkSettingsModal = ({
 
     const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
-        // The idea here is following:
-        // newCustomPassword is undefined in case we don't want to update it
-        // or newCustomPassword is an empty string when password needs to be removed
-        // or newCustomPassword is, well, a password string
-        let newCustomPassword;
 
-        if (password !== customPassword) {
-            newCustomPassword = password;
-        }
-
-        const newDuration =
-            expiration && expiration !== initialExpiration ? expiration - getUnixTime(Date.now()) : null;
+        const newCustomPassword = !passwordEnabled || !password ? '' : password;
+        const newDuration = !expirationEnabled || !expiration ? null : expiration - getUnixTime(Date.now());
 
         await withSubmitting(onSaveLinkClick(newCustomPassword, newDuration));
         modalProps.onClose?.();
@@ -208,7 +199,7 @@ const ShareLinkSettingsModal = ({
                     </div>
                     <hr className="my-5" />
                     <div className="flex flex-nowrap justify-space-between items-center">
-                        <div className={clsx('flex flex-column flex-1 p-0', !havePublicSharedLink && 'opacity-30')}>
+                        <div className={clsx('flex flex-column flex-1 p-0', !deleteShareEnabled && 'opacity-30')}>
                             <span className="text-semibold">{c('Label').t`Delete link`}</span>
                             <span className="color-weak">{c('Label')
                                 .t`Erase this link and remove everyone with access`}</span>
