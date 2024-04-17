@@ -490,9 +490,6 @@ export default function useShareUrl() {
                 sendErrorReport(error);
                 throw error;
             });
-            // Lets only collect reports when share cannot be deleted but do
-            // not bother users about it - link was deleted fine.
-            await deleteShare(shareId).catch(sendErrorReport);
         };
         await preventLeave(deletePromise());
         await events.pollEvents.driveEvents();
