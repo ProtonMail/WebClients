@@ -5,15 +5,24 @@ import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
 
 import { useDriveEventManager } from '..';
 import { useLink } from '../_links';
-import { ShareInvitation, ShareInvitee, ShareMember, useShare, useShareActions, useShareInvitation } from '../_shares';
+import {
+    ShareInvitation,
+    ShareInvitee,
+    ShareMember,
+    useShare,
+    useShareActions,
+    useShareInvitation,
+    useShareMember,
+} from '../_shares';
 
 const useShareMemberView = (rootShareId: string, linkId: string) => {
     const { inviteProtonUser, listInvitations } = useShareInvitation();
+    const { updateShareMemberPermissions, getShareMembers } = useShareMember();
     const { getLink, getLinkPrivateKey, loadFreshLink } = useLink();
     const [isLoading, withLoading] = useLoading();
     const [isAdding, withAdding] = useLoading();
     const { getShare, getShareWithKey, getShareSessionKey, getShareCreatorKeys } = useShare();
-    const [members /*,setMembers */] = useState<ShareMember[]>([]);
+    const [members, setMembers] = useState<ShareMember[]>([]);
     const [invitations, setInvitations] = useState<ShareInvitation[]>([]);
     const { createShare } = useShareActions();
     const events = useDriveEventManager();
@@ -37,22 +46,32 @@ const useShareMemberView = (rootShareId: string, linkId: string) => {
                 }
             });
 
+            await getShareMembers(abortController.signal, { shareId: share.shareId }).then((members) => {
+                if (members) {
+                    setMembers(members);
+                }
+            });
             setVolumeId(share.volumeId);
-            // TODO: Uncomment this when listing Shared by me will be available
-            // await getShareMembers(abortController.signal, {
-            //     volumeId: share.volumeId,
-            //     shareId: share.shareId,
-            // }).then((members) => {
-            //     if (members) {
-            //         setMembers(members);
-            //     }
-            // });
         });
 
         return () => {
             abortController.abort();
         };
     }, [rootShareId, linkId, volumeId]);
+
+    const updateStoredMembers = (memberId: string, member: ShareMember | undefined) => {
+        setMembers((current) =>
+            current.reduce<ShareMember[]>((acc, item) => {
+                if (item.memberId === memberId) {
+                    if (!member) {
+                        return acc;
+                    }
+                    return [...acc, member];
+                }
+                return [...acc, item];
+            }, [])
+        );
+    };
 
     const getShareIdWithSessionkey = async (abortSignal: AbortSignal, rootShareId: string, linkId: string) => {
         const [share, link] = await Promise.all([
@@ -118,6 +137,18 @@ const useShareMemberView = (rootShareId: string, linkId: string) => {
         });
     };
 
+    const updateMemberPermissions = async (member: ShareMember) => {
+        const abortSignal = new AbortController().signal;
+        const link = await getLink(abortSignal, rootShareId, linkId);
+        if (!link.sharingDetails) {
+            return;
+        }
+        const shareId = link.sharingDetails.shareId;
+
+        await updateShareMemberPermissions(abortSignal, { shareId, member });
+        updateStoredMembers(member.memberId, member);
+    };
+
     return {
         volumeId,
         members,
@@ -126,6 +157,7 @@ const useShareMemberView = (rootShareId: string, linkId: string) => {
         isAdding,
         addNewMember,
         addNewMembers,
+        updateMemberPermissions,
     };
 };
 

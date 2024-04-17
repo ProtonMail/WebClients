@@ -1,33 +1,24 @@
 import { SHARE_MEMBER_PERMISSIONS } from '../../drive/constants';
 
 //TODO: Add pagination
-export const queryShareMemberListing = (volumeId: string, shareId: string) => ({
+export const queryShareMemberListing = (shareId: string) => ({
     method: 'get',
-    url: `drive/v2/volumes/${volumeId}/shares/${shareId}/members`,
+    url: `/drive/v2/shares/${shareId}/members`,
 });
 
-//TODO: Add pagination
-export const queryShareMemberDetails = (volumeId: string, shareId: string, { MemberIDs }: { MemberIDs: string[] }) => ({
-    method: 'post',
-    url: `drive/v2/volumes/${volumeId}/shares/${shareId}/invitations`,
-    data: {
-        MemberIDs,
-    },
-});
-
-export const queryRemoveShareMember = (volumeId: string, shareId: string, { MemberId }: { MemberId: string }) => ({
+export const queryRemoveShareMember = (shareId: string, memberId: string) => ({
     method: 'delete',
-    url: `drive/v2/volumes/${volumeId}/shares/${shareId}/members/${MemberId}`,
+    url: `drive/v2/shares/${shareId}/members/${memberId}`,
 });
 
 export const queryUpdateShareMemberPermissions = (
-    volumeId: string,
     shareId: string,
-    { Members }: { Members: { MemberID: string; Permissions: SHARE_MEMBER_PERMISSIONS }[] }
+    memberId: string,
+    Permissions: SHARE_MEMBER_PERMISSIONS
 ) => ({
     method: 'put',
-    url: `drive/v2/volumes/${volumeId}/shares/${shareId}/members/permissions`,
+    url: `drive/v2/shares/${shareId}/members/${memberId}`,
     data: {
-        Members,
+        Permissions,
     },
 });

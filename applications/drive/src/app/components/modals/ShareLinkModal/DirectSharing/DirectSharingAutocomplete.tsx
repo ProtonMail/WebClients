@@ -8,21 +8,15 @@ import {
     AddressesAutocompleteTwo,
     AddressesInput,
     AddressesInputItem,
-    Dropdown,
-    DropdownButton,
-    DropdownMenu,
-    DropdownMenuButton,
-    Icon,
-    IconName,
     useContactEmails,
     useContactGroups,
-    usePopperAnchor,
 } from '@proton/components/index';
 import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
 import { MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 import clsx from '@proton/utils/clsx';
 
 import { ShareInvitee, ShareMember } from '../../../../store';
+import MemberPermissionsSelect from './MemberPermissionsSelect';
 import { getAddressInputItemAttributes } from './helpers/getAddressInputItemAttributes';
 import { getGroupsWithContactsMap } from './helpers/getGroupsWithContactsMap';
 import { inviteesToRecipients, recipientsToInvitees } from './helpers/transformers';
@@ -38,7 +32,6 @@ interface Props {
     isAdding: boolean;
 }
 const DirectSharingAutocomplete = ({ onFocus, onClose, onSubmit, hidden, members, addNewMembers, isAdding }: Props) => {
-    const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const [selectedPermissions, setPermissions] = useState<number>(MEMBER_PERMISSIONS.VIEWER);
     const addressesInputText = c('Action').t`Add people or groups to share`;
 
@@ -58,19 +51,6 @@ const DirectSharingAutocomplete = ({ onFocus, onClose, onSubmit, hidden, members
             (invitee) =>
                 invitee.isLoading || invitee.error || members.some((member) => invitee.email === member.inviterEmail)
         );
-
-    const permissionsOptions: { icon: IconName; label: string; value: number }[] = [
-        {
-            icon: 'eye',
-            label: c('Label').t`Viewer`,
-            value: MEMBER_PERMISSIONS.VIEWER,
-        },
-        {
-            icon: 'pencil',
-            label: c('Label').t`Editor`,
-            value: MEMBER_PERMISSIONS.EDITOR,
-        },
-    ];
 
     const items = invitees.map((invitee) => {
         const inputItemAttributes = getAddressInputItemAttributes(invitee);
@@ -126,36 +106,7 @@ const DirectSharingAutocomplete = ({ onFocus, onClose, onSubmit, hidden, members
                     items={!hidden ? items : null}
                     className={clsx(['multi-select-container', !!count && 'px-2 py-0.5'])}
                 >
-                    <DropdownButton
-                        className="self-center"
-                        ref={anchorRef}
-                        isOpen={isOpen}
-                        onClick={toggle}
-                        hasCaret
-                        shape="ghost"
-                        size="small"
-                    >
-                        {permissionsOptions.find((permission) => permission.value === selectedPermissions)?.label}
-                    </DropdownButton>
-                    <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close}>
-                        <DropdownMenu>
-                            {permissionsOptions.map(({ label, icon, value }) => {
-                                return (
-                                    <DropdownMenuButton
-                                        className="text-left flex justify-space-between items-center"
-                                        key={value}
-                                        onClick={() => setPermissions(value)}
-                                    >
-                                        <span className="flex items-center mr-14">
-                                            <Icon name={icon} className="mr-2" />
-                                            {label}
-                                        </span>
-                                        {value === selectedPermissions ? <Icon name="checkmark" /> : null}
-                                    </DropdownMenuButton>
-                                );
-                            })}
-                        </DropdownMenu>
-                    </Dropdown>
+                    <MemberPermissionsSelect selectedPermissions={selectedPermissions} onChange={setPermissions} />
                 </InputField>
             </div>
             {!hidden ? (
