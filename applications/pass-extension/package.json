@@ -30,7 +30,7 @@
         "@proton/pass": "workspace:packages/pass",
         "@redux-devtools/remote": "^0.9.3",
         "react-helmet": "^6.1.0",
-        "webextension-polyfill": "^0.10.0"
+        "webextension-polyfill": "^0.11.0"
     },
     "devDependencies": {
         "@proton/i18n": "workspace:packages/i18n",
@@ -42,7 +42,7 @@
         "eslint": "^8.57.0",
         "jest": "^29.7.0",
         "prettier": "^3.2.5",
-        "typescript": "^5.4.4",
+        "typescript": "^5.4.5",
         "webpack": "^5.91.0",
         "webpack-dev-server": "^5.0.4"
     },

@@ -14,12 +14,12 @@
         "react": "^18.2.0"
     },
     "devDependencies": {
-        "@babel/core": "^7.24.3",
-        "@babel/preset-env": "^7.24.3",
+        "@babel/core": "^7.24.4",
+        "@babel/preset-env": "^7.24.4",
         "@jest/globals": "^29.7.0",
-        "@mlc-ai/web-llm": "0.2.31",
+        "@mlc-ai/web-llm": "0.2.32",
         "@testing-library/jest-dom": "^6.4.2",
-        "@testing-library/react": "^14.3.0",
+        "@testing-library/react": "^14.3.1",
         "@types/jest": "^29.5.12",
         "babel-jest": "^29.7.0",
         "eslint": "^8.57.0",
@@ -28,6 +28,6 @@
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "ts-jest": "^29.1.2",
-        "typescript": "^5.4.4"
+        "typescript": "^5.4.5"
     }
 }
