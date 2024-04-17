@@ -145,6 +145,7 @@ export const handleLogout = async ({
     if (localID !== undefined && mode === 'sso') {
         const persistedSession = getPersistedSession(localID);
         if (persistedSession) {
+            persistedSessions.push(persistedSession);
             await removePersistedSession(localID, UID).catch(noop);
         }
     }
