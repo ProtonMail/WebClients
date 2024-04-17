@@ -6,6 +6,7 @@ import { createAutofill } from 'proton-pass-extension/app/content/utils/autofill
 import type { FormType } from '@proton/pass/fathom';
 import { FieldType } from '@proton/pass/fathom';
 import { findBoundingInputElement } from '@proton/pass/utils/dom/input';
+import { pipe } from '@proton/pass/utils/fp/pipe';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 
 import { createFieldIconHandle } from './icon';
@@ -24,9 +25,10 @@ type CreateFieldHandlesOptions = {
 const onFocusField = (field: FieldHandle): ((evt?: FocusEvent) => void) =>
     withContext((ctx, evt) => {
         const { action, element } = field;
-        field?.icon?.reposition();
-
         if (!action) return;
+
+        field.getBoxElement({ revalidate: true });
+        field?.icon?.reposition();
 
         requestAnimationFrame(() => {
             if (actionPrevented(element)) return;
@@ -84,21 +86,22 @@ export const createFieldHandles = ({
     getFormHandle,
 }: CreateFieldHandlesOptions): FieldHandle => {
     const listeners = createListenerStore();
-    let boxElement = findBoundingInputElement(element);
 
     const field: FieldHandle = {
         formType,
         fieldType,
         element,
-        boxElement,
+        boxElement: findBoundingInputElement(element),
         icon: null,
         action: null,
         value: element.value,
         tracked: false,
         zIndex,
         getFormHandle,
-        getBoxElement: (options) =>
-            options?.revalidate ? (boxElement = findBoundingInputElement(element)) : boxElement,
+        getBoxElement: (options) => {
+            if (options?.revalidate) field.boxElement = findBoundingInputElement(element);
+            return field.boxElement;
+        },
         setValue: (value) => (field.value = value),
         setAction: (action) => (field.action = action),
 
@@ -137,13 +140,13 @@ export const createFieldHandles = ({
             field.icon = null;
         },
 
-        attach(onSubmit) {
+        attach({ onChange, onSubmit }) {
             field.tracked = true;
             listeners.removeAll();
             listeners.addListener(field.element, 'blur', () => field.icon?.reposition());
             listeners.addListener(field.element, 'focus', onFocusField(field));
-            listeners.addListener(field.element, 'input', onInputField(field));
-            listeners.addListener(field.element, 'keydown', onKeyDownField(onSubmit));
+            listeners.addListener(field.element, 'input', pipe(onInputField(field), onChange));
+            listeners.addListener(field.element, 'keydown', pipe(onKeyDownField(onSubmit), onChange));
             listeners.addResizeObserver(field.element, () => field.icon?.reposition());
             listeners.addObserver(field.element, onFieldAttributeChange(field), {
                 attributeFilter: ['type'],

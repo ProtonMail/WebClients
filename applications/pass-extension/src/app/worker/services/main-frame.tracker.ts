@@ -19,6 +19,7 @@ type MainFrameRequestTrackerOptions = {
     onTabDelete: (tabId: TabId) => void;
     onTabError: (tabId: TabId, domain: MaybeNull<string>) => void;
     onTabLoaded: (tabId: TabId, method: string, domain: MaybeNull<string>) => void;
+    onTabUpdate: (tabId: TabId) => void;
 };
 
 const filter: WebRequest.RequestFilter = {
@@ -30,16 +31,22 @@ export const createMainFrameRequestTracker = ({
     onTabDelete,
     onTabError,
     onTabLoaded,
+    onTabUpdate,
 }: MainFrameRequestTrackerOptions) => {
     const onMainFrameCompleted = (req: WebRequest.OnCompletedDetailsType) => {
+        onTabUpdate(req.tabId);
         const domain = parseUrl(req.url).domain;
         if (isFailedRequest(req)) onTabError(req.tabId, domain);
         else onTabLoaded(req.tabId, req.method, domain);
     };
 
-    browser.tabs.onRemoved.addListener(onTabDelete);
+    const onMainFrameDeleted = (tabId: TabId) => {
+        onTabUpdate(tabId);
+        onTabDelete(tabId);
+    };
+
+    browser.tabs.onRemoved.addListener(onMainFrameDeleted);
     browser.webRequest.onCompleted.addListener(onMainFrameCompleted, filter);
-    browser.webRequest.onErrorOccurred.addListener(({ tabId, url }) => onTabError(tabId, parseUrl(url).domain), filter);
 
     return {};
 };

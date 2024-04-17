@@ -16,13 +16,48 @@ type TrackedRequestData = { tabId: TabId; domain: string; requestedAt: number };
 
 type XMLHTTPRequestTrackerOptions = {
     acceptRequest: (request: WebRequest.OnBeforeRequestDetailsType) => boolean;
-    onFailedRequest: (data: TrackedRequestData) => void;
+    onFailed: (data: TrackedRequestData) => void;
+    onIdle: (tabId: TabId) => void;
 };
 
 const MAX_REQUEST_RETENTION_TIME = UNIX_MINUTE;
+const IDLE_TIMEOUT = 500;
 
-export const createXMLHTTPRequestTracker = ({ acceptRequest, onFailedRequest }: XMLHTTPRequestTrackerOptions) => {
-    const pendingRequests: Map<string, TrackedRequestData> = new Map();
+export const createXMLHTTPRequestTracker = ({ acceptRequest, onIdle, onFailed }: XMLHTTPRequestTrackerOptions) => {
+    const requests: Map<string, TrackedRequestData> = new Map();
+    const requestCount: Map<TabId, number> = new Map();
+    const idleTimers: Map<TabId, NodeJS.Timeout> = new Map();
+
+    const reset = (tabId: TabId) => {
+        clearTimeout(idleTimers.get(tabId));
+        requestCount.delete(tabId);
+        idleTimers.delete(tabId);
+    };
+
+    const getRequestCount = (tabId: TabId) => requestCount.get(tabId) ?? 0;
+    const onRequestPending = (tabId: TabId) => requestCount.set(tabId, getRequestCount(tabId) + 1);
+
+    const onRequestResolved = (tabId: TabId) => {
+        const current = getRequestCount(tabId);
+        const next = Math.max(0, current - 1);
+        requestCount.set(tabId, next);
+
+        if (next === 0) {
+            clearTimeout(idleTimers.get(tabId));
+
+            idleTimers.set(
+                tabId,
+                setTimeout(() => {
+                    const count = getRequestCount(tabId);
+                    if (count === 0) {
+                        requestCount.delete(tabId);
+                        idleTimers.delete(tabId);
+                        onIdle(tabId);
+                    }
+                }, IDLE_TIMEOUT)
+            );
+        }
+    };
 
     const garbageCollect = (() => {
         let lastGC = getEpoch();
@@ -32,9 +67,8 @@ export const createXMLHTTPRequestTracker = ({ acceptRequest, onFailedRequest }: 
             if (now - lastGC < UNIX_MINUTE) return;
 
             const limit = epochToMs(now - MAX_REQUEST_RETENTION_TIME);
-
-            for (const [requestId, { requestedAt }] of pendingRequests.entries()) {
-                if (requestedAt < limit) pendingRequests.delete(requestId);
+            for (const [requestId, { requestedAt }] of requests.entries()) {
+                if (requestedAt < limit) requests.delete(requestId);
             }
 
             lastGC = now;
@@ -47,8 +81,9 @@ export const createXMLHTTPRequestTracker = ({ acceptRequest, onFailedRequest }: 
             try {
                 const tab = await browser.tabs.get(tabId);
                 if (tab.url !== undefined) {
+                    onRequestPending(tabId);
                     const { domain } = parseUrl(tab.url);
-                    if (domain) pendingRequests.set(requestId, { tabId, domain, requestedAt: request.timeStamp });
+                    if (domain) requests.set(requestId, { tabId, domain, requestedAt: request.timeStamp });
                 }
             } catch (_) {}
         }
@@ -59,25 +94,29 @@ export const createXMLHTTPRequestTracker = ({ acceptRequest, onFailedRequest }: 
     };
 
     const onCompleted = async (request: WebRequest.OnCompletedDetailsType) => {
-        const { requestId } = request;
-        const trackedRequest = pendingRequests.get(requestId);
+        const { requestId, tabId } = request;
+        const trackedRequest = requests.get(requestId);
 
         if (trackedRequest !== undefined) {
-            if (isFailedRequest(request)) onFailedRequest(trackedRequest);
-            pendingRequests.delete(requestId);
+            if (isFailedRequest(request)) onFailed(trackedRequest);
+            onRequestResolved(tabId);
+            requests.delete(requestId);
         }
     };
 
     const onErrorOccured = async (request: WebRequest.OnErrorOccurredDetailsType) => {
-        const { requestId } = request;
-        const trackedRequest = pendingRequests.get(requestId);
+        const { requestId, tabId } = request;
+        const trackedRequest = requests.get(requestId);
 
         if (trackedRequest !== undefined) {
-            pendingRequests.delete(requestId);
+            requests.delete(requestId);
+            onRequestResolved(tabId);
         }
     };
 
     browser.webRequest.onBeforeRequest.addListener(onBeforeRequest, filter, ['requestBody']);
     browser.webRequest.onCompleted.addListener(onCompleted, filter);
     browser.webRequest.onErrorOccurred.addListener(onErrorOccured, filter);
+
+    return { reset };
 };

@@ -74,8 +74,7 @@ export const createFormManager = (options: FormManagerOptions) => {
      * is detected, it will be tracked until removed */
     const garbagecollect = (didDetach: boolean = false): boolean => {
         state.trackedForms.forEach((form) => {
-            if (form.shouldRemove()) {
-                void form.tracker?.submit({ submitted: form.tracker.getState().isSubmitting, partial: true });
+            if (form.detached) {
                 detachTrackedForm(form.element);
                 didDetach = true;
             }
@@ -101,6 +100,7 @@ export const createFormManager = (options: FormManagerOptions) => {
         withContext<(reason: string) => Promise<boolean>>(async (ctx, reason: string) => {
             /* if there is an on-going detection, early return */
             if (state.detectionRequest !== -1) return false;
+            const gcd = garbagecollect();
 
             if (await ctx?.service.detector.shouldRunDetection()) {
                 state.detectionRequest = requestIdleCallback(async () => {
@@ -108,7 +108,6 @@ export const createFormManager = (options: FormManagerOptions) => {
                         logger.info(`[FormTracker::Detector] Running detection for "${reason}"`);
 
                         try {
-                            garbagecollect();
                             const forms = ctx?.service.detector.runDetection({ onBottleneck });
 
                             forms?.forEach((options) => {
@@ -136,7 +135,7 @@ export const createFormManager = (options: FormManagerOptions) => {
                 return true;
             }
 
-            if (garbagecollect() || state.detectionCount === 0) void ctx?.service.autosave.reconciliate();
+            if (gcd || state.detectionCount === 0) void ctx?.service.autosave.reconciliate();
             clearDetectionCache();
 
             return false;
@@ -258,7 +257,6 @@ export const createFormManager = (options: FormManagerOptions) => {
     const onTransitionEnd = debounce(
         ({ target }: Event) =>
             requestAnimationFrame(() => {
-                garbagecollect();
                 if (target !== document.body) purgeStaleSeenFields(target as HTMLElement);
                 if (hasUnprocessedForms()) void detect({ reason: 'TransitionEnd' });
             }),
