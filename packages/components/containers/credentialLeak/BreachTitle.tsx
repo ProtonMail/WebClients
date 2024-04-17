@@ -12,12 +12,13 @@ interface BreachTitleProps {
     className?: string;
     inModal?: boolean;
     severity: number;
+    resolved: boolean;
 }
 
-const BreachTitle = ({ name, createdAt, style, className, inModal = false, severity }: BreachTitleProps) => {
+const BreachTitle = ({ name, createdAt, style, className, inModal = false, severity, resolved }: BreachTitleProps) => {
     const { iconAltText } = style;
 
-    const breachIcon = getBreachIcon(severity);
+    const breachIcon = getBreachIcon(severity, { resolved });
 
     return (
         <span className={clsx('flex flex-nowrap items-start', className)}>
