@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useModalState } from '@proton/components/components';
 import { changeRenewState, deleteSubscription } from '@proton/shared/lib/api/payments';
 import { ProductParam } from '@proton/shared/lib/apps/product';
 import { getShouldCalendarPreventSubscripitionChange } from '@proton/shared/lib/calendar/plans';
@@ -37,6 +38,7 @@ import LossLoyaltyModal from '../../LossLoyaltyModal';
 import MemberDowngradeModal from '../../MemberDowngradeModal';
 import { getShortPlan } from '../../features/plan';
 import CalendarDowngradeModal from '../CalendarDowngradeModal';
+import CancelSubscriptionLoadingModal from '../CancelSubscriptionLoadingModal';
 import FeedbackDowngradeModal, {
     FeedbackDowngradeData,
     FeedbackDowngradeResult,
@@ -55,6 +57,10 @@ const SUBSCRIPTION_DOWNGRADED: CancelSubscriptionResult = {
     status: 'downgraded',
 };
 
+interface Props {
+    app: ProductParam;
+}
+
 /**
  * This hook will handle cancellation flow. It will display the cancellation modal and the feedback modal.
  * Use this hook if you need to implement cancellation flow elsewhere. It will help to be consistent in terms of UX
@@ -63,7 +69,7 @@ const SUBSCRIPTION_DOWNGRADED: CancelSubscriptionResult = {
  * cancelSubscriptionModals: the modals to display – just render them in your component by returning them
  * cancelSubscription: the function to call to cancel the subscription.
  */
-export const useCancelSubscriptionFlow = ({ app }: { app: ProductParam }) => {
+export const useCancelSubscriptionFlow = ({ app }: Props) => {
     const [user] = useUser();
     const getSubscription = useGetSubscription();
     const getUser = useGetUser();
@@ -95,6 +101,7 @@ export const useCancelSubscriptionFlow = ({ app }: { app: ProductParam }) => {
     const [lossLoyaltyModal, showLossLoyaltyModal] = useModalTwoPromise();
     const [memberDowngradeModal, showMemberDowngradeModal] = useModalTwoPromise();
     const [downgradeModal, showDowngradeModal] = useModalTwoPromise<{ hasMail: boolean; hasVpn: boolean }>();
+    const [cancellationLoadingModal, showCancellationLoadingModal, renderCancellationLoadingModal] = useModalState();
 
     const { createNotification, hideNotification } = useNotifications();
 
@@ -163,6 +170,7 @@ export const useCancelSubscriptionFlow = ({ app }: { app: ProductParam }) => {
                     />
                 );
             })}
+            {renderCancellationLoadingModal && <CancelSubscriptionLoadingModal {...cancellationLoadingModal} />}
             {subscription &&
                 cancelSubscriptionModal((props) => {
                     return <CancelSubscriptionModal subscription={subscription} {...props} />;
@@ -207,23 +215,18 @@ export const useCancelSubscriptionFlow = ({ app }: { app: ProductParam }) => {
     };
 
     const handleFinalizeUnsubscribe = async (data: FeedbackDowngradeData) => {
-        const downgradeNotificationId = createNotification({
-            type: 'info',
-            text: c('State').t`Downgrading your account, please wait`,
-            expiration: 99999,
-        });
-
         try {
+            showCancellationLoadingModal(true);
             await api(deleteSubscription(data));
             await eventManager.call();
             createNotification({ text: c('Success').t`You have successfully unsubscribed` });
             return SUBSCRIPTION_DOWNGRADED;
         } finally {
-            hideNotification(downgradeNotificationId);
+            showCancellationLoadingModal(false);
         }
     };
 
-    const handleUnsubscribe = async () => {
+    const handleUnsubscribe = async (subscriptionReminderFlow: boolean = false) => {
         const shouldCalendarPreventDowngradePromise = getShouldCalendarPreventSubscripitionChange({
             hasPaidMail: hasPaidMail(user),
             willHavePaidMail: false,
@@ -253,7 +256,7 @@ export const useCancelSubscriptionFlow = ({ app }: { app: ProductParam }) => {
             : undefined;
 
         // We only show the plan downgrade modal for plans that are defined with features
-        if (shortPlan) {
+        if (shortPlan && !subscriptionReminderFlow) {
             await showHighlightPlanDowngradeModal({
                 user,
                 plansMap,
@@ -279,7 +282,7 @@ export const useCancelSubscriptionFlow = ({ app }: { app: ProductParam }) => {
         const hasMail = hasBit(user.Subscribed, PLAN_SERVICES.MAIL);
         const hasVpn = hasBit(user.Subscribed, PLAN_SERVICES.VPN);
 
-        if (hasMail || hasVpn) {
+        if ((hasMail || hasVpn) && !subscriptionReminderFlow) {
             await showDowngradeModal({ hasMail, hasVpn });
         }
 
@@ -294,7 +297,7 @@ export const useCancelSubscriptionFlow = ({ app }: { app: ProductParam }) => {
     return {
         loadingCancelSubscription: loadingOrganization || loadingSubscription || loadingPlans,
         cancelSubscriptionModals: modals,
-        cancelSubscription: async () => {
+        cancelSubscription: async (subscriptionReminderFlow?: boolean) => {
             const [subscription, user] = await Promise.all([getSubscription(), getUser()]);
             if (user.isFree || isFreeSubscription(subscription)) {
                 createNotification({ type: 'error', text: c('Info').t`You already have a free account` });
@@ -307,7 +310,7 @@ export const useCancelSubscriptionFlow = ({ app }: { app: ProductParam }) => {
                 }
                 return cancelRenew();
             }
-            return handleUnsubscribe();
+            return handleUnsubscribe(subscriptionReminderFlow);
         },
     };
 };

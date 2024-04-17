@@ -263,7 +263,7 @@ const FeedbackDowngradeModal = ({
                 />
             </ModalContent>
             <ModalFooter>
-                <Button data-testid="cancelFeedback" onClick={handleKeepSubscription}>{c('Action').t`Cancel`}</Button>
+                <Button data-testid="cancelFeedback" onClick={handleKeepSubscription}>{c('Action').t`Skip`}</Button>
                 <Button data-testid="submitFeedback" type="submit" color="norm">
                     {c('Action').t`Submit`}
                 </Button>

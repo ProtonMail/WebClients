@@ -1,0 +1,15 @@
+@import '~@proton/styles/scss/lib';
+
+.testimonial-grid {
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+	grid-gap: 1rem;
+
+	@include media('>small') {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	@include media('>large') {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
