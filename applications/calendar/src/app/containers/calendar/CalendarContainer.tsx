@@ -63,8 +63,6 @@ import {
     saveLastTimezoneSuggestion,
 } from '../../helpers/timezoneSuggestion';
 import { OpenedMailEvent } from '../../hooks/useGetOpenedMailEvents';
-import { busyTimeSlotsActions } from '../../store/busyTimeSlots/busyTimeSlotsSlice';
-import { useCalendarDispatch } from '../../store/hooks';
 import AskUpdateTimezoneModal from '../settings/AskUpdateTimezoneModal';
 import CalendarContainerView from './CalendarContainerView';
 import InteractiveCalendarView from './InteractiveCalendarView';
@@ -154,7 +152,6 @@ const CalendarContainer = ({
 }: Props) => {
     const history = useHistory();
     const location = useLocation();
-    const dispatch = useCalendarDispatch();
     const api = useApi();
     const { createNotification } = useNotifications();
     const [disableCreate, setDisableCreate] = useState(false);
@@ -394,7 +391,6 @@ const CalendarContainer = ({
     const handleChangeView = useCallback((newView: VIEWS) => {
         setCustom({ view: newView, range: undefined });
         lastNonSearchViewRef.current = newView;
-        dispatch(busyTimeSlotsActions.setMetadataView({ view: newView }));
         scrollToNow();
     }, []);
 

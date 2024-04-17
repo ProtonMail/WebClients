@@ -5,7 +5,7 @@ import { VIEWS } from '@proton/shared/lib/calendar/constants';
 /**
  * Is busyTimeSlot feature enabled
  * Has user an eligible plan for busy time slots
- * @param view is mandatory when related to calendar view (attendees list, slots display...). Optional when related to settings
+ * @param view to add only when related to components display (attendees list for ex).
  */
 const useBusyTimeSlotsAvailable = (view?: VIEWS) => {
     const isBusyTimeSlotFlagEnabled = useFlag('CalendarBusyTimeSlots');

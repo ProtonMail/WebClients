@@ -15,9 +15,10 @@ import spotlightImg from '@proton/styles/assets/img/illustrations/spotlight-star
 interface Props {
     children: React.ReactNode;
     view: VIEWS;
+    isDisplayedInPopover: boolean;
 }
 
-const BusySlotsSpotlight = ({ children, view }: Props) => {
+const BusySlotsSpotlight = ({ children, view, isDisplayedInPopover }: Props) => {
     const anchorRef = useRef<HTMLDivElement>(null);
     const [user] = useUser();
     const { viewportWidth } = useActiveBreakpoint();
@@ -31,9 +32,14 @@ const BusySlotsSpotlight = ({ children, view }: Props) => {
      * 2. User has done the welcome flow
      * 3. User has created his account more than 2 days ago
      * 4. Feature available for sure
+     * 5. Is in the popover modal
      */
     const displaySpotlight =
-        !viewportWidth['<=small'] && isDone && userAccountHasMoreThanTwoDays && isBusyTimeSlotsAvailable;
+        !viewportWidth['<=small'] &&
+        isDone &&
+        userAccountHasMoreThanTwoDays &&
+        isBusyTimeSlotsAvailable &&
+        isDisplayedInPopover;
 
     const { show, onDisplayed, onClose } = useSpotlightOnFeature(
         FeatureCode.CalendarBusySlotsSpotlight,
