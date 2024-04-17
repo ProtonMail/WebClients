@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import {
     AppLink,
+    CancellationReminderSection,
     CustomLogo,
     FeatureCode,
     Logo,
@@ -32,6 +33,7 @@ import {
 } from '@proton/components';
 import ContactEmailsProvider from '@proton/components/containers/contacts/ContactEmailsProvider';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
+import { CANCEL_ROUTE } from '@proton/components/containers/payments/subscription/b2cCancellationFlow/helper';
 import { useIsSessionRecoveryAvailable, useShowThemeSelection } from '@proton/components/hooks';
 import { getPublicUserProtonAddressApps, getSSOVPNOnlyAccountApps } from '@proton/shared/lib/apps/apps';
 import { getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
@@ -288,6 +290,9 @@ const MainContainer = () => {
                         organizationAppRoutes={routes.organization}
                         redirect={redirect}
                     />
+                </Route>
+                <Route path={`/${appSlug}${CANCEL_ROUTE}`}>
+                    <CancellationReminderSection app={app} />
                 </Route>
                 <Route path={`/${mailSlug}`}>
                     <Suspense fallback={<PrivateMainAreaLoading />}>
