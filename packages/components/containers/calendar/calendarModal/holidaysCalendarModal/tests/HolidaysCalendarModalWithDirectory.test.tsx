@@ -30,6 +30,14 @@ jest.mock('@proton/components/hooks/useAddressesKeys', () => ({
     useAddressesKeys: jest.fn(() => []),
     useGetAddressKeys: jest.fn(() => []),
 }));
+
+jest.mock('@proton/components/hooks/useConfig', () => ({
+    __esModule: true,
+    default: () => {
+        return { APP_NAME: 'proton-calendar' };
+    },
+}));
+
 jest.mock('@proton/components/hooks/useNotifications');
 
 jest.mock('@proton/components/hooks/useCalendarUserSettings', () => ({
