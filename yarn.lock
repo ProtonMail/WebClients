@@ -29081,12 +29081,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"openpgp@npm:@protontech/openpgp@^5.11.0":
-  version: 5.11.0
-  resolution: "@protontech/openpgp@npm:5.11.0"
+"openpgp@npm:@protontech/openpgp@^5.11.1":
+  version: 5.11.1
+  resolution: "@protontech/openpgp@npm:5.11.1"
   dependencies:
     asn1.js: "npm:^5.0.0"
-  checksum: 10c0/e9bf3d146ca386d0299e48549bdd96f068c8c9cc24bf50a09d81f6ef40ae45f67f166de38e947b75ffc06e61c213259f99653559bbd990895d070592ce055c13
+  checksum: 10c0/863a1743fa1b250f4647531c4e32683f6b28259d15a94cb038d906284aa5b420c1014f1140db827e3301443ae14f55b7c192a063f4d68a25c610a3d815d4259d
   languageName: node
   linkType: hard
 
@@ -31481,7 +31481,7 @@ __metadata:
     node-fetch: "npm:^3.3.2"
     nodemailer: "npm:^6.9.13"
     nodemailer-smtp-transport: "npm:^2.7.4"
-    openpgp: "npm:@protontech/openpgp@^5.11.0"
+    openpgp: "npm:@protontech/openpgp@^5.11.1"
     pdf-parse: "npm:^1.1.1"
     prettier: "npm:^3.2.5"
     proxy-agent: "npm:^6.4.0"
