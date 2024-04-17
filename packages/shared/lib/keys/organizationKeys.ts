@@ -339,6 +339,7 @@ export const reencryptOrganizationToken = async ({
         binaryData: message.data,
         encryptionKey,
         signingKey,
+        context: { value: SIGNATURE_CONTEXT.SHARE_ORGANIZATION_KEY_TOKEN, critical: true },
     });
 };
 
