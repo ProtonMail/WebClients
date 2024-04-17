@@ -11,9 +11,3 @@ export interface ShareMemberPayload {
     KeyPacketSignature: string;
     SessionKeySignature: string;
 }
-
-export interface ShareMemberListingPayload {
-    MemberIDs: string[];
-    More: boolean;
-    LastAnchorID: string;
-}
