@@ -25,8 +25,8 @@
         "@proton/polyfill": "workspace:packages/polyfill",
         "@proton/shared": "workspace:packages/shared",
         "@proton/styles": "workspace:packages/styles",
-        "@types/react": "^18.2.75",
-        "@types/react-dom": "^18.2.24",
+        "@types/react": "^18.2.79",
+        "@types/react-dom": "^18.2.25",
         "@types/react-router-dom": "^5.3.3",
         "cross-env": "^7.0.3",
         "lodash.template": "^4.5.0",
@@ -41,6 +41,6 @@
         "@proton/i18n": "workspace:packages/i18n",
         "eslint": "^8.57.0",
         "prettier": "^3.2.5",
-        "typescript": "^5.4.4"
+        "typescript": "^5.4.5"
     }
 }

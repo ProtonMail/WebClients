@@ -36,18 +36,18 @@
         "chalk": "4.1.2",
         "commander": "^12.0.0",
         "copy-webpack-plugin": "^12.0.2",
-        "core-js": "^3.36.1",
+        "core-js": "^3.37.0",
         "cross-env": "^7.0.3",
         "css-loader": "^6.11.0",
         "css-minimizer-webpack-plugin": "^6.0.0",
-        "dedent": "^1.5.1",
+        "dedent": "^1.5.3",
         "eslint-webpack-plugin": "^4.1.0",
         "execa": "^5.1.1",
         "favicons": "^7.2.0",
         "favicons-webpack-plugin": "^6.0.1",
         "fork-ts-checker-webpack-plugin": "^9.0.2",
         "html-webpack-plugin": "^5.6.0",
-        "mini-css-extract-plugin": "^2.8.1",
+        "mini-css-extract-plugin": "^2.9.0",
         "po-gettext-loader": "^1.0.0",
         "portfinder": "^1.0.32",
         "postcss": "^8.4.38",
@@ -56,8 +56,8 @@
         "postcss-logical": "^7.0.1",
         "react-refresh": "^0.14.0",
         "resolve-url-loader": "^5.0.0",
-        "sass": "^1.74.1",
-        "sass-loader": "^14.1.1",
+        "sass": "^1.75.0",
+        "sass-loader": "^14.2.1",
         "terser-webpack-plugin": "^5.3.10",
         "ttag": "^1.8.6",
         "ttag-cli": "^1.10.11",
@@ -72,6 +72,6 @@
         "prettier": "^3.2.5"
     },
     "engines": {
-        "node": ">= 20.12.1"
+        "node": ">= 20.12.2"
     }
 }
