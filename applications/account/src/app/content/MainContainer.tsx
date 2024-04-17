@@ -152,7 +152,6 @@ const MainContainer = () => {
         isNotifInboxDesktopAppOn,
         isBreachesAccountDashboardEnabled,
         showThemeSelection,
-        isOrganizationLogoUploadAvailable: organizationTheme.access,
     });
 
     useEffect(() => {

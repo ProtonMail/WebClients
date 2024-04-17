@@ -24,7 +24,6 @@ interface Arguments {
     isNotifInboxDesktopAppOn: boolean;
     isBreachesAccountDashboardEnabled: boolean;
     showThemeSelection: boolean;
-    isOrganizationLogoUploadAvailable: boolean;
 }
 
 export const getRoutes = ({
@@ -41,7 +40,6 @@ export const getRoutes = ({
     isNotifInboxDesktopAppOn,
     isBreachesAccountDashboardEnabled,
     showThemeSelection,
-    isOrganizationLogoUploadAvailable,
 }: Arguments) => {
     return {
         account: getAccountAppRoutes({
@@ -73,7 +71,6 @@ export const getRoutes = ({
             user,
             organization,
             subscription,
-            isOrganizationLogoUploadAvailable,
         }),
         vpn: getVpnAppRoutes({ app }),
     };
