@@ -26,6 +26,7 @@ export const getCalendarEventSettingsModel = (settings: Partial<CalendarSettings
         DefaultPartDayNotifications = DEFAULT_PART_DAY_NOTIFICATIONS,
         DefaultFullDayNotifications = DEFAULT_FULL_DAY_NOTIFICATIONS,
         DefaultEventDuration = DEFAULT_EVENT_DURATION,
+        MakesUserBusy = settings.MakesUserBusy,
     } = settings;
 
     const partDayNotifications = sortNotificationsByAscendingTrigger(
@@ -39,6 +40,7 @@ export const getCalendarEventSettingsModel = (settings: Partial<CalendarSettings
         duration: DefaultEventDuration,
         partDayNotifications,
         fullDayNotifications,
+        shareBusyTimeSlots: MakesUserBusy,
     };
 };
 
@@ -62,7 +64,6 @@ export const getCalendarModel = ({
     addressID: AddressID,
     addressOptions: Addresses.map(({ ID, Email = '' }) => ({ value: ID, text: Email })),
     type: Calendar.Type,
-    shareBusyTimeSlots: CalendarSettings.MakesUserBusy,
     ...getCalendarEventSettingsModel(CalendarSettings),
 });
 

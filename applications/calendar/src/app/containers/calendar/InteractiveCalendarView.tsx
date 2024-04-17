@@ -12,7 +12,6 @@ import {
 } from 'react';
 import { Prompt } from 'react-router';
 
-import { getUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
 import {
@@ -32,7 +31,6 @@ import {
     useRelocalizeText,
     useUser,
 } from '@proton/components';
-import useBusyTimeSlotsAvailable from '@proton/components/containers/calendar/hooks/useBusyTimeSlotsAvailable';
 import { ImportModal } from '@proton/components/containers/calendar/importModal';
 import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
 import { useReadCalendarBootstrap } from '@proton/components/hooks/useGetCalendarBootstrap';
@@ -132,6 +130,7 @@ import { getCanEditSharedEventData } from '../../helpers/event';
 import { extractInviteEmails } from '../../helpers/invite';
 import { getCleanSendDataFromSendPref, getSendPrefErrorMap } from '../../helpers/sendPreferences';
 import { getIsCalendarAppInDrawer } from '../../helpers/views';
+import useBusyTimeSlots from '../../hooks/useBusyTimeSlots';
 import { OpenedMailEvent } from '../../hooks/useGetOpenedMailEvents';
 import useOpenCalendarEvents from '../../hooks/useOpenCalendarEvents';
 import { useOpenEventsFromMail } from '../../hooks/useOpenEventsFromMail';
@@ -145,8 +144,6 @@ import {
     UpdatePartstatOperation,
     UpdatePersonalPartOperation,
 } from '../../interfaces/Invite';
-import { busyTimeSlotsActions } from '../../store/busyTimeSlots/busyTimeSlotsSlice';
-import { useCalendarDispatch } from '../../store/hooks';
 import CalendarView from './CalendarView';
 import { EscapeTryBlockError } from './EscapeTryBlockError';
 import CloseConfirmationModal from './confirmationModals/CloseConfirmation';
@@ -314,9 +311,7 @@ const InteractiveCalendarView = ({
     getOpenedMailEvents,
 }: Props) => {
     const api = useApi();
-    const isBusyTimeSlotsAvailable = useBusyTimeSlotsAvailable(view);
     const { call } = useEventManager();
-    const dispatch = useCalendarDispatch();
     const { call: calendarCall } = useCalendarModelEventManager();
     const { createNotification } = useNotifications();
     const { contactEmailsMap } = useContactEmailsCache();
@@ -422,16 +417,6 @@ const InteractiveCalendarView = ({
         [eventTargetAction]
     );
 
-    // Used for busy schedules
-    // When `handleSetTemporaryEventModel` is called dateRange[0] is not up to date in the component.
-    // Set the view start date (dateRange[0]) in the slice metadata entry to keep busy slots up to date
-    useEffect(() => {
-        const viewStartDate = dateRange[0];
-        if (viewStartDate) {
-            dispatch(busyTimeSlotsActions.setMetadataViewStartDate({ viewStartDate: getUnixTime(viewStartDate) }));
-        }
-    }, [dateRange[0]]);
-
     const { temporaryEvent, targetEventData, targetMoreData, searchData } = interactiveData || {};
 
     const { tmpData, tmpDataOriginal, data } = temporaryEvent || {};
@@ -475,24 +460,6 @@ const InteractiveCalendarView = ({
         }
 
         const newTemporaryEvent = getTemporaryEvent(temporaryEvent, model, tzid);
-
-        if (
-            isBusyTimeSlotsAvailable &&
-            (temporaryEvent.tmpData.attendees.length !== newTemporaryEvent.tmpData.attendees.length ||
-                (temporaryEvent.tmpData.attendees.length &&
-                    temporaryEvent.tmpData.start.date !== newTemporaryEvent.tmpData.start.date))
-        ) {
-            void dispatch(
-                busyTimeSlotsActions.init({
-                    attendeeEmails: newTemporaryEvent.tmpData.attendees.map((attendee) => attendee.email),
-                    startDate: getUnixTime(newTemporaryEvent.tmpData.start.date),
-                    now: getUnixTime(now),
-                    tzid,
-                    view,
-                    viewStartDate: getUnixTime(dateRange[0]),
-                })
-            );
-        }
 
         // For the modal, we handle this on submit instead
         if (!createEventModal.isOpen) {
@@ -776,19 +743,6 @@ const InteractiveCalendarView = ({
                     setInteractiveData({
                         temporaryEvent: newTemporaryEvent,
                     });
-
-                    if (isBusyTimeSlotsAvailable) {
-                        dispatch(
-                            busyTimeSlotsActions.init({
-                                attendeeEmails: newTemporaryModel.attendees.map(({ email }) => email),
-                                startDate: getUnixTime(newTemporaryModel.start.date),
-                                now: getUnixTime(now),
-                                tzid,
-                                view,
-                                viewStartDate: getUnixTime(dateRange[0]),
-                            })
-                        );
-                    }
                 }
                 if (mouseUpAction.action === ACTIONS.EVENT_MOVE_UP) {
                     const { idx } = mouseUpAction.payload;
@@ -797,19 +751,6 @@ const InteractiveCalendarView = ({
                         temporaryEvent: newTemporaryEvent,
                         targetEventData: { uniqueId: 'tmp', idx, type },
                     });
-
-                    if (isBusyTimeSlotsAvailable) {
-                        dispatch(
-                            busyTimeSlotsActions.init({
-                                attendeeEmails: newTemporaryModel.attendees.map(({ email }) => email),
-                                startDate: getUnixTime(newTemporaryModel.start.date),
-                                now: getUnixTime(now),
-                                tzid,
-                                view,
-                                viewStartDate: getUnixTime(dateRange[0]),
-                            })
-                        );
-                    }
                 }
             };
         }
@@ -1171,7 +1112,6 @@ const InteractiveCalendarView = ({
                 return await new Promise<void>((resolve, reject) =>
                     handleCloseConfirmation()
                         .then(() => {
-                            dispatch(busyTimeSlotsActions.reset());
                             resolve();
                         })
                         .catch(reject)
@@ -1180,8 +1120,6 @@ const InteractiveCalendarView = ({
                 return Promise.reject(new Error('Keep event'));
             }
         }
-
-        dispatch(busyTimeSlotsActions.reset());
 
         return Promise.resolve();
     };
@@ -1505,7 +1443,6 @@ const InteractiveCalendarView = ({
                 const hasChanged = +newStartDate !== +(isDuplicatingEvent ? temporaryEvent.tmpData.initialDate : date);
                 changeDate(newStartDate, hasChanged);
             }
-            dispatch(busyTimeSlotsActions.reset());
         } catch (e: any) {
             if (e instanceof EscapeTryBlockError) {
                 if (e.recursive) {
@@ -1727,6 +1664,14 @@ const InteractiveCalendarView = ({
 
         return getTemporaryEvent(getEditTemporaryEvent(targetEvent, newTemporaryModel, tzid), newTemporaryModel, tzid);
     };
+
+    const preventFetchBusySlots = useBusyTimeSlots({
+        dateRange,
+        now,
+        temporaryEvent,
+        tzid,
+        view,
+    });
 
     return (
         <>
@@ -1968,19 +1913,9 @@ const InteractiveCalendarView = ({
                                     return;
                                 }
 
-                                if (!isSavingEvent.current && isBusyTimeSlotsAvailable && canDuplicateEvent) {
-                                    void dispatch(
-                                        busyTimeSlotsActions.init({
-                                            attendeeEmails: newTemporaryEvent.tmpData.attendees.map(
-                                                (attendee) => attendee.email
-                                            ),
-                                            startDate: getUnixTime(newTemporaryEvent.tmpData.start.date),
-                                            now: getUnixTime(now),
-                                            tzid,
-                                            view,
-                                            viewStartDate: getUnixTime(dateRange[0]),
-                                        })
-                                    );
+                                // Avoid fetching busy slots when editing invite
+                                if (!canDuplicateEvent) {
+                                    preventFetchBusySlots.current = true;
                                 }
 
                                 return handleEditEvent(newTemporaryEvent);
