@@ -8,5 +8,5 @@ export interface FieldIconHandle {
     setStatus: (status: AppStatus) => void;
     setCount: (count: number) => void;
     detach: () => void;
-    reposition: () => void;
+    reposition: (revalidate?: boolean) => void;
 }

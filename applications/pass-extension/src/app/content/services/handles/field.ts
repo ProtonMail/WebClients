@@ -25,9 +25,10 @@ type CreateFieldHandlesOptions = {
 const onFocusField = (field: FieldHandle): ((evt?: FocusEvent) => void) =>
     withContext((ctx, evt) => {
         const { action, element } = field;
-        field?.icon?.reposition();
-
         if (!action) return;
+
+        field.getBoxElement({ revalidate: true });
+        field?.icon?.reposition();
 
         requestAnimationFrame(() => {
             if (actionPrevented(element)) return;
@@ -85,21 +86,22 @@ export const createFieldHandles = ({
     getFormHandle,
 }: CreateFieldHandlesOptions): FieldHandle => {
     const listeners = createListenerStore();
-    let boxElement = findBoundingInputElement(element);
 
     const field: FieldHandle = {
         formType,
         fieldType,
         element,
-        boxElement,
+        boxElement: findBoundingInputElement(element),
         icon: null,
         action: null,
         value: element.value,
         tracked: false,
         zIndex,
         getFormHandle,
-        getBoxElement: (options) =>
-            options?.revalidate ? (boxElement = findBoundingInputElement(element)) : boxElement,
+        getBoxElement: (options) => {
+            if (options?.revalidate) field.boxElement = findBoundingInputElement(element);
+            return field.boxElement;
+        },
         setValue: (value) => (field.value = value),
         setAction: (action) => (field.action = action),
 
