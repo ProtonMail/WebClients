@@ -17,16 +17,9 @@ interface Props {
     user: UserModel;
     organization?: Organization;
     subscription?: Subscription;
-    isOrganizationLogoUploadAvailable: boolean;
 }
 
-export const getOrganizationAppRoutes = ({
-    app,
-    user,
-    organization,
-    subscription,
-    isOrganizationLogoUploadAvailable,
-}: Props) => {
+export const getOrganizationAppRoutes = ({ app, user, organization, subscription }: Props) => {
     const isAdmin = user.isAdmin && !user.isSubUser;
 
     const hasOrganizationKey = hasOrganizationSetupWithKeys(organization);
@@ -55,15 +48,7 @@ export const getOrganizationAppRoutes = ({
 
     const subSectionTitle = isPartOfFamily ? '' : c('Title').t`Multi-user support`;
 
-    let subSectionTitleAppearance: string;
-
-    if (isPartOfFamily) {
-        subSectionTitleAppearance = '';
-    } else if (isOrganizationLogoUploadAvailable) {
-        subSectionTitleAppearance = c('Title').t`Custom branding`;
-    } else {
-        subSectionTitleAppearance = c('Title').t`Organization appearance`;
-    }
+    const subSectionTitleAppearance = isPartOfFamily ? '' : c('Title').t`Customization`;
 
     return {
         available: canHaveOrganization,
