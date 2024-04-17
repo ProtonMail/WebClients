@@ -84,8 +84,12 @@ export default function initDownloadLinkFile(
     const scanHash = async (abortSignal: AbortSignal, Hash: string) => {
         const response = await callbacks.scanFilesHash?.(abortSignal, [Hash]);
         if (response?.Code === 1000) {
-            if (response?.Errors.length > 0 && callbacks?.onScanIssue) {
-                await callbacks.onScanIssue(abortSignal, new Error(response.Errors[0].Error));
+            if ((response?.Errors.length > 0 || response?.Results[0]?.Safe === false) && callbacks?.onScanIssue) {
+                await callbacks.onScanIssue(
+                    abortSignal,
+                    response.Errors[0] && new Error(response.Errors[0]?.Error),
+                    response?.Results[0]
+                );
             }
             scanResult = { ...response, Hash };
         }

@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { useNotifications, useOnline, usePreventLeave } from '@proton/components';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
+import { ScanResultItem } from '@proton/shared/lib/interfaces/drive/file';
 
 import { TransferState } from '../../../components/TransferManager/transfer';
 import { useDownloadIsTooBigModal } from '../../../components/modals/DownloadIsTooBigModal';
@@ -126,8 +127,11 @@ export default function useDownloadProvider(initDownload: InitDownloadCallback) 
                     log(nextDownload.id, `network issue: ${error}`);
                     queue.updateWithData(nextDownload.id, TransferState.NetworkError, { error });
                 },
-                onScanIssue: async (abortSignal: AbortSignal, error: Error) => {
-                    log(nextDownload.id, `scan issue: ${error}`);
+                onScanIssue: async (abortSignal: AbortSignal, error?: Error, response?: ScanResultItem) => {
+                    log(
+                        nextDownload.id,
+                        `scan issue error: ${JSON.stringify(error || '')}; response: ${JSON.stringify(response || '')}`
+                    );
                     await handleScanIssue(abortSignal, nextDownload, error);
                 },
                 onSignatureIssue: async (

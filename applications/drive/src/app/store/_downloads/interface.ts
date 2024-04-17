@@ -1,7 +1,7 @@
 import { ReadableStream } from 'web-streams-polyfill';
 
 import { PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/crypto';
-import { DriveFileBlock } from '@proton/shared/lib/interfaces/drive/file';
+import { DriveFileBlock, ScanResultItem } from '@proton/shared/lib/interfaces/drive/file';
 import { SharedFileScan } from '@proton/shared/lib/interfaces/drive/sharing';
 
 import { DecryptedLink, SignatureIssues } from '../_links';
@@ -83,7 +83,7 @@ export type OnSignatureIssueCallback = (
     link: LinkDownload,
     signatureIssues: SignatureIssues
 ) => Promise<void>;
-export type OnScanIssueCallback = (abortSignal: AbortSignal, err: any) => Promise<void>;
+export type OnScanIssueCallback = (abortSignal: AbortSignal, err: any, response?: ScanResultItem) => Promise<void>;
 export type OnErrorCallback = (err: Error) => void;
 
 export type ChildrenLinkMeta = Pick<
