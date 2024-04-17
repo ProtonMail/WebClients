@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 import { c } from 'ttag';
 
 import { Scroll } from '@proton/atoms/Scroll';
@@ -7,57 +5,63 @@ import { Scroll } from '@proton/atoms/Scroll';
 import { Tabs } from '../..';
 import BreachListItem from './BreachListItem';
 import BreachListUpgradeLink from './BreachListUpgradeLink';
-import { FetchedBreaches } from './CredentialLeakSection';
+import EmptyBreachListCard from './EmptyBreachListCard';
 import { getStyle } from './helpers';
+import { BREACH_STATE, FetchedBreaches, ListType } from './models';
 
 interface BreachesListProps {
-    breachData: FetchedBreaches[] | null;
+    data: FetchedBreaches[];
     selectedID: string | null;
-    setSelectedBreachID: (id: string) => void;
+    onSelect: (id: string) => void;
     isPaidUser: boolean;
     total: number | null;
-    setOpenModal: (bool: boolean) => void;
+    type: ListType;
+    onViewTypeChange: (type: ListType) => void;
 }
 
 const BreachesList = ({
-    breachData,
+    data,
     selectedID,
     isPaidUser,
-    setSelectedBreachID,
+    onSelect,
     total,
-    setOpenModal,
+    type: listType,
+    onViewTypeChange,
 }: BreachesListProps) => {
-    const [index, setIndex] = useState(0);
+    const openBreaches = data?.filter((b) => b.resolvedState !== BREACH_STATE.RESOLVED);
+    const resolvedBreaches = data?.filter((b) => b.resolvedState === BREACH_STATE.RESOLVED);
 
-    if (!breachData) {
-        return;
-    }
-
+    const types: ListType[] = ['open', 'resolved'];
     const tabs = [
         {
             title: c('Title').t`Open`,
             content: (
                 <Scroll className="lg:flex flex-column flex-nowrap lg:mr-2 mb-2 w-full h-full overflow-auto max-h-full">
-                    <ul className="unstyled m-0">
-                        {breachData.map((breach) => {
-                            return (
-                                <BreachListItem
-                                    name={breach.name}
-                                    key={breach.id}
-                                    createdAt={breach.createdAt}
-                                    disabled={!isPaidUser}
-                                    selected={breach.id === selectedID}
-                                    handleClick={() => {
-                                        setSelectedBreachID(breach.id);
-                                        setOpenModal(true);
-                                    }}
-                                    style={getStyle(breach.severity)}
-                                    severity={breach.severity}
-                                    exposedData={breach.exposedData}
-                                />
-                            );
-                        })}
-                    </ul>
+                    {openBreaches.length === 0 ? (
+                        <div className="flex lg:hidden">
+                            <EmptyBreachListCard listType="open" className="w-full" />
+                        </div>
+                    ) : (
+                        <ul className="unstyled m-0">
+                            {openBreaches.map((breach) => {
+                                return (
+                                    <BreachListItem
+                                        name={breach.name}
+                                        key={breach.id}
+                                        createdAt={breach.createdAt}
+                                        disabled={!isPaidUser}
+                                        selected={breach.id === selectedID}
+                                        handleClick={() => onSelect(breach.id)}
+                                        style={getStyle(breach.severity)}
+                                        severity={breach.severity}
+                                        exposedData={breach.exposedData}
+                                        unread={breach.resolvedState === BREACH_STATE.UNREAD}
+                                    />
+                                );
+                            })}
+                        </ul>
+                    )}
+
                     {!isPaidUser && total && <BreachListUpgradeLink total={total} />}
                 </Scroll>
             ),
@@ -65,9 +69,33 @@ const BreachesList = ({
         {
             title: c('Title').t`Resolved`,
             content: (
-                <>
-                    <p>{c('Info').t`Will soon be available.`}</p>
-                </>
+                <Scroll className="lg:flex flex-column flex-nowrap lg:mr-2 mb-2 w-full h-full overflow-auto max-h-full">
+                    {resolvedBreaches.length === 0 ? (
+                        <div className="flex lg:hidden">
+                            <EmptyBreachListCard listType="resolved" className="w-full" />
+                        </div>
+                    ) : (
+                        <ul className="unstyled m-0">
+                            {resolvedBreaches.map((breach) => {
+                                return (
+                                    <BreachListItem
+                                        name={breach.name}
+                                        key={breach.id}
+                                        createdAt={breach.createdAt}
+                                        disabled={!isPaidUser}
+                                        selected={breach.id === selectedID}
+                                        handleClick={() => onSelect(breach.id)}
+                                        style={getStyle(breach.severity)}
+                                        severity={breach.severity}
+                                        exposedData={breach.exposedData}
+                                        resolved
+                                    />
+                                );
+                            })}
+                        </ul>
+                    )}
+                    {!isPaidUser && total && <BreachListUpgradeLink total={total} />}
+                </Scroll>
             ),
         },
     ];
@@ -76,9 +104,9 @@ const BreachesList = ({
         <div className="w-full lg:w-1/3 lg:mr-4">
             <Tabs
                 tabs={tabs}
-                value={index}
-                onChange={setIndex}
-                contentClassName="lg:flex-1 h-full"
+                value={types.findIndex((type) => type === listType)}
+                onChange={(index) => onViewTypeChange(types[index])}
+                contentClassName="h-full"
                 className="h-full flex flex-column flex-nowrap"
             />
         </div>

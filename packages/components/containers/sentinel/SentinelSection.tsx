@@ -35,6 +35,7 @@ import { SettingsParagraph, SettingsSectionWide } from '../account';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';
+import { getDisabledString, getEnableString, getEnabledString } from '../credentialLeak/helpers';
 
 interface Props {
     app: APP_NAMES;
@@ -82,10 +83,10 @@ const SentinelSection = ({ app }: Props) => {
     const handleHighSecurity = async (newHighSecurityState: Boolean) => {
         if (newHighSecurityState) {
             await api(enableHighSecurity());
-            createNotification({ text: c('Notification').t`${PROTON_SENTINEL_NAME} has been enabled` });
+            createNotification({ text: getEnabledString(PROTON_SENTINEL_NAME) });
         } else {
             await api(disableHighSecurity());
-            createNotification({ text: c('Notification').t`${PROTON_SENTINEL_NAME} has been disabled` });
+            createNotification({ text: getDisabledString(PROTON_SENTINEL_NAME) });
         }
         await call();
     };
@@ -131,7 +132,7 @@ const SentinelSection = ({ app }: Props) => {
                     <SettingsLayout>
                         <SettingsLayoutLeft>
                             <label className="text-semibold" htmlFor="high-security-toggle">
-                                <span className="mr-2">{c('Log preference').t`Enable ${PROTON_SENTINEL_NAME}`}</span>
+                                <span className="mr-2">{getEnableString(PROTON_SENTINEL_NAME)}</span>
                             </label>
                         </SettingsLayoutLeft>
                         <SettingsLayoutRight isToggleContainer>
