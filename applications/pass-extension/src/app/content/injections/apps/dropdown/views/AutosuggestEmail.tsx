@@ -91,6 +91,7 @@ export const AutosuggestEmail: FC<Props> = ({ hostname, prefix }) => {
                             });
 
                             onTelemetry(createTelemetryEvent(TelemetryEventName.AutosuggestAliasCreated, {}, {}));
+                            close({ refocus: false });
                         } else setError(response.error);
                     })
                 );

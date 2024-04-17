@@ -8,9 +8,14 @@ import { Icon } from '@proton/components/components';
 import { PassIcon } from '@proton/pass/components/Layout/Icon/PassIcon';
 import { PassIconStatus } from '@proton/pass/types/data/pass-icon';
 
-type Props = { extra?: ReactElement; title: string; onClose?: () => void };
+type Props = {
+    discardOnClose?: boolean;
+    extra?: ReactElement;
+    title: string;
+    onClose?: () => void;
+};
 
-export const NotificationHeader: FC<Props> = ({ extra, title, onClose }) => {
+export const NotificationHeader: FC<Props> = ({ discardOnClose = true, extra, title, onClose }) => {
     const { close } = useIFrameContext();
 
     return (
@@ -32,7 +37,7 @@ export const NotificationHeader: FC<Props> = ({ extra, title, onClose }) => {
                     className="shrink-0"
                     onClick={() => {
                         onClose?.();
-                        close({ discard: true });
+                        close({ discard: discardOnClose });
                     }}
                     title={c('Action').t`Cancel`}
                 >

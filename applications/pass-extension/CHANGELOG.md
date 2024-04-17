@@ -1,3 +1,13 @@
+### Version 1.16.7
+
+-   Fix autosave regression due to early reconciliation
+-   Fix alias autofill not closing injected dropdown
+-   Fix register autosave duplicates
+
+### Version 1.16.6
+
+-   Rollback to 1.16.4
+
 ### Version 1.16.5
 
 -   Improve Proton Pass CSV export/import to support importing items in multiple vaults

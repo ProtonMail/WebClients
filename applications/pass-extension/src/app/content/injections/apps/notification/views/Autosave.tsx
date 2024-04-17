@@ -55,6 +55,10 @@ export const Autosave: FC<Props> = ({ data }) => {
     const shouldUpdate = usePrevious(data) !== data;
     const { domain } = data;
 
+    /** if the autosave prompt was shown before an actual form
+     * submission : do not discard the form data */
+    const shouldDiscard = data.submittedAt !== null;
+
     const form = useFormik<AutosaveValues>({
         initialValues: getInitialValues(data),
         validateOnChange: true,
@@ -106,6 +110,7 @@ export const Autosave: FC<Props> = ({ data }) => {
         <FormikProvider value={form}>
             <Form className="ui-violet flex flex-column flex-nowrap justify-space-between h-full anime-fadein gap-2">
                 <NotificationHeader
+                    discardOnClose={shouldDiscard}
                     title={(() => {
                         switch (form.values.type) {
                             case AutosaveMode.NEW:
@@ -191,8 +196,9 @@ export const Autosave: FC<Props> = ({ data }) => {
                 )}
 
                 <div className="flex justify-space-between shrink-0 gap-3 mt-1">
-                    <Button pill color="norm" shape="outline" onClick={() => close({ discard: true })}>{c('Action')
-                        .t`Not now`}</Button>
+                    <Button pill color="norm" shape="outline" onClick={() => close({ discard: shouldDiscard })}>{c(
+                        'Action'
+                    ).t`Not now`}</Button>
                     <Button pill color="norm" type="submit" loading={busy} disabled={busy} className="flex-auto">
                         <span className="text-ellipsis">
                             {(() => {

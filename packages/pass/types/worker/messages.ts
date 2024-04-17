@@ -28,7 +28,7 @@ import type { TelemetryEvent } from '../data/telemetry';
 import type { Maybe, MaybeNull } from '../utils';
 import type { AutofillResult } from './autofill';
 import type { AutosaveRequest } from './autosave';
-import type { AutosaveFormEntry, FormCredentials, FormSubmission } from './form';
+import type { AutosaveFormEntry, FormCredentials, FormStatusPayload, FormSubmitPayload } from './form';
 import type { OnboardingMessage } from './onboarding';
 import type { OtpCode, OtpRequest } from './otp';
 import type { TabId } from './runtime';
@@ -81,6 +81,7 @@ export enum WorkerMessageType {
     FORM_ENTRY_REQUEST = 'FORM_ENTRY_REQUEST',
     FORM_ENTRY_STAGE = 'FORM_ENTRY_STAGE',
     FORM_ENTRY_STASH = 'FORM_ENTRY_STASH',
+    FORM_STATUS = 'FORM_STATUS',
     IMPORT_DECRYPT = 'IMPORT_DECRYPT',
     LOAD_CONTENT_SCRIPT = 'LOAD_CONTENT_SCRIPT',
     LOCALE_REQUEST = 'LOCALE_REQUEST',
@@ -141,11 +142,9 @@ export type FeatureFlagsUpdateMessage = WithPayload<WorkerMessageType.FEATURE_FL
 export type FetchAbortMessage = WithPayload<WorkerMessageType.FETCH_ABORT, { requestId: string }>;
 export type FormEntryCommitMessage = WithPayload<WorkerMessageType.FORM_ENTRY_COMMIT, { reason: string }>;
 export type FormEntryRequestMessage = { type: WorkerMessageType.FORM_ENTRY_REQUEST };
-export type FormEntryStageMessage = WithPayload<
-    WorkerMessageType.FORM_ENTRY_STAGE,
-    FormSubmission & { reason: string }
->;
+export type FormEntryStageMessage = WithPayload<WorkerMessageType.FORM_ENTRY_STAGE, FormSubmitPayload>;
 export type FormEntryStashMessage = WithPayload<WorkerMessageType.FORM_ENTRY_STASH, { reason: string }>;
+export type FormStatusMessage = WithPayload<WorkerMessageType.FORM_STATUS, FormStatusPayload>;
 export type ImportDecryptMessage = WithPayload<WorkerMessageType.IMPORT_DECRYPT, ImportReaderPayload>;
 export type LoadContentScriptMessage = { type: WorkerMessageType.LOAD_CONTENT_SCRIPT };
 export type LocaleRequestMessage = { type: WorkerMessageType.LOCALE_REQUEST };
@@ -206,6 +205,7 @@ export type WorkerMessage =
     | FormEntryRequestMessage
     | FormEntryStageMessage
     | FormEntryStashMessage
+    | FormStatusMessage
     | ImportDecryptMessage
     | LoadContentScriptMessage
     | LocaleRequestMessage

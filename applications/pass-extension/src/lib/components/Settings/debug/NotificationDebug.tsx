@@ -36,6 +36,7 @@ export const NotificationDebug: FC = () => {
                     payload={{
                         action: NotificationAction.AUTOSAVE,
                         data: {
+                            submittedAt: -1,
                             domain: 'proton.me',
                             type: AutosaveMode.NEW,
                             username: 'nobody@proton.me',
@@ -52,6 +53,7 @@ export const NotificationDebug: FC = () => {
                     payload={{
                         action: NotificationAction.AUTOSAVE,
                         data: {
+                            submittedAt: -1,
                             domain: 'netflix.com',
                             type: AutosaveMode.UPDATE,
                             username: 'nobody@proton.me',
@@ -76,6 +78,7 @@ export const NotificationDebug: FC = () => {
                     payload={{
                         action: NotificationAction.AUTOSAVE,
                         data: {
+                            submittedAt: -1,
                             domain: 'netflix.com',
                             type: AutosaveMode.UPDATE,
                             candidates: [
