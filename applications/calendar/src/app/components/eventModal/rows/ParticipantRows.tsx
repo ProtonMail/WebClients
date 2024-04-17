@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 
-import { debounce } from 'lodash';
+import debounce from 'lodash/debounce';
 
 import { SimpleMap } from '@proton/shared/lib/interfaces';
 import { AttendeeModel } from '@proton/shared/lib/interfaces/calendar';
