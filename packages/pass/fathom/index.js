@@ -35,12 +35,76 @@ const OTP_PATTERNS = [
 
 const VALID_INPUT_TYPES = ['text', 'email', 'number', 'tel', 'password', 'hidden', 'search'];
 
-const sanitizeString = (str) =>
-    str
-        .toLowerCase()
-        .normalize('NFD')
-        .replace(/[\u0300-\u036f]/g, '')
-        .replace(/[^a-zA-Z0-9\d\[\]]/g, '');
+const FORM_CLUSTER_ATTR = 'data-protonpass-form';
+
+const kFieldSelector = 'input, select, textarea';
+
+const kEmailSelector = 'input[name="email"], input[id="email"]';
+
+const kPasswordSelector = 'input[type="password"], input[type="text"][id="password"]';
+
+const kCaptchaSelector = `[class*="captcha"], [id*="captcha"], [name*="captcha"]`;
+
+const kSocialSelector = `[class*=social], [aria-label*=with]`;
+
+const kEditorSelector = 'div[class*="editor" i], div[id*="editor" i], div[class*="composer" i], div[id*="composer" i]';
+
+const kDomGroupSelector = `[role="dialog"], [role="tabpanel"], [role="group"], [role="form"], [id*="modal"], [class*="modal"], header, section, nav, footer, aside`;
+
+const kUsernameSelector = [
+    'input[type="login"]',
+    'input[type="username"]',
+    'input[type="search"][name="loginName"]',
+    'input[type="password"][name="userID"]',
+    'input[type="password"][name="USERNAME"]',
+    'input[name="account"]',
+    'input[name="quickconnect-id"]',
+].join(',');
+
+const kHiddenUsernameSelector = [
+    '[name*="user" i]',
+    '[id*="user" i]',
+    '[name*="login" i]',
+    '[id*="login" i]',
+    '[name*="email" i]',
+    '[id*="email" i]',
+    '[name*="identifier" i]',
+    '[id*="identifier" i]',
+].join(',');
+
+const kHeadingSelector = [
+    ...[1, 2, 3, 4, 5].flatMap((level) => [`h${level}, [aria-level="${level}"]`]),
+    '[role="heading"]',
+    '[class*="title"]',
+    '[class*="header"]',
+    '[name="title"]',
+    'div[style*="font-size: 2"]',
+    'div[style*="font-size: 3"]',
+].join(',');
+
+const kButtonSubmitSelector = [
+    'input[type="submit"]',
+    'button[id*="password" i]',
+    'button[type="submit"]',
+    'button[type="button"]',
+    'button[name="submit"]',
+    'a[role="submit"]',
+    'div[role="button"]',
+    'div[role="submit"]',
+].join(',');
+
+const kLayoutSelector = `div, section, aside, main, nav`;
+
+const kAnchorLinkSelector = `a, span[role="button"]`;
+
+const formCandidateSelector = `form, [${FORM_CLUSTER_ATTR}]`;
+
+const inputCandidateSelector =
+    'input:not([type="hidden"]):not([type="submit"]):not([type="button"]):not([type="image"]):not([type="checkbox"])';
+
+const buttonSelector = `button:not([type]), a[role="button"], ${kButtonSubmitSelector}`;
+
+const otpSelector = '[type="tel"], [type="number"], [type="text"], input:not([type])';
 
 const LOGIN_RE =
     /(?:(?:n(?:ouvelleses|uevase|ewses)s|iniciarses|connex)io|anmeldedate|sign[io])n|in(?:iciarsessao|troduce)|a(?:uthenticate|nmeld(?:ung|en))|authentifier|s(?:econnect|identifi)er|novasessao|(?:introduci|conecta|entr[ae])r|prihlasit|connect|acceder|login/i;
@@ -233,76 +297,12 @@ const matchNewsletter = test(NEWSLETTER_RE);
 
 orRe([NEWSLETTER_RE, NEWSLETTER_ATTR_RE]);
 
-const FORM_CLUSTER_ATTR = 'data-protonpass-form';
-
-const kFieldSelector = 'input, select, textarea';
-
-const kEmailSelector = 'input[name="email"], input[id="email"]';
-
-const kPasswordSelector = 'input[type="password"], input[type="text"][id="password"]';
-
-const kCaptchaSelector = `[class*="captcha"], [id*="captcha"], [name*="captcha"]`;
-
-const kSocialSelector = `[class*=social], [aria-label*=with]`;
-
-const kEditorSelector = 'div[class*="editor" i], div[id*="editor" i], div[class*="composer" i], div[id*="composer" i]';
-
-const kDomGroupSelector = `[role="dialog"], [role="tabpanel"], [role="group"], [role="form"], [id*="modal"], [class*="modal"], header, section, nav, footer, aside`;
-
-const kUsernameSelector = [
-    'input[type="login"]',
-    'input[type="username"]',
-    'input[type="search"][name="loginName"]',
-    'input[type="password"][name="userID"]',
-    'input[type="password"][name="USERNAME"]',
-    'input[name="account"]',
-    'input[name="quickconnect-id"]',
-].join(',');
-
-const kHiddenUsernameSelector = [
-    '[name*="user" i]',
-    '[id*="user" i]',
-    '[name*="login" i]',
-    '[id*="login" i]',
-    '[name*="email" i]',
-    '[id*="email" i]',
-    '[name*="identifier" i]',
-    '[id*="identifier" i]',
-].join(',');
-
-const kHeadingSelector = [
-    ...[1, 2, 3, 4, 5].flatMap((level) => [`h${level}, [aria-level="${level}"]`]),
-    '[role="heading"]',
-    '[class*="title"]',
-    '[class*="header"]',
-    '[name="title"]',
-    'div[style*="font-size: 2"]',
-    'div[style*="font-size: 3"]',
-].join(',');
-
-const kButtonSubmitSelector = [
-    'input[type="submit"]',
-    'button[id*="password" i]',
-    'button[type="submit"]',
-    'button[type="button"]',
-    'button[name="submit"]',
-    'a[role="submit"]',
-    'div[role="button"]',
-    'div[role="submit"]',
-].join(',');
-
-const kLayoutSelector = `div, section, aside, main, nav`;
-
-const kAnchorLinkSelector = `a, span[role="button"]`;
-
-const formCandidateSelector = `form, [${FORM_CLUSTER_ATTR}]`;
-
-const inputCandidateSelector =
-    'input:not([type="hidden"]):not([type="submit"]):not([type="button"]):not([type="image"]):not([type="checkbox"])';
-
-const buttonSelector = `button:not([type]), a[role="button"], ${kButtonSubmitSelector}`;
-
-const otpSelector = '[type="tel"], [type="number"], [type="text"], input:not([type])';
+const sanitizeString = (str) =>
+    str
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .replace(/[^a-zA-Z0-9\d\[\]]/g, '');
 
 const cacheContext = {};
 
@@ -323,13 +323,17 @@ const isVisible = (fnodeOrElement, options) => {
     const seen = [element];
     const cache = getVisibilityCache(JSON.stringify(options));
     if (cache.has(element)) return cache.get(element);
+    const elementWindow = utils.windowForElement(element);
+    const viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+    const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+    const isOffScreen = ({ x, y, width, height }) =>
+        x + width < 0 || y + height < 0 || x > viewportWidth || y > viewportHeight;
     const check = () => {
-        const elementWindow = utils.windowForElement(element);
         const elementRect = element.getBoundingClientRect();
         const elementStyle = elementWindow.getComputedStyle(element);
         if (elementRect.width === 0 && elementRect.height === 0 && elementStyle.overflow !== 'hidden') return false;
         if (elementStyle.visibility === 'hidden') return false;
-        if (elementRect.x + elementRect.width < 0 || elementRect.y + elementRect.height < 0) return false;
+        if (isOffScreen(elementRect)) return false;
         for (const ancestor of utils.ancestors(element)) {
             if (ancestor === elementWindow.document.documentElement) continue;
             if (cache === null || cache === void 0 ? void 0 : cache.has(ancestor)) {
@@ -339,16 +343,17 @@ const isVisible = (fnodeOrElement, options) => {
             }
             const isElement = ancestor === element;
             if (!isElement) seen.push(ancestor);
-            const style = isElement ? elementStyle : elementWindow.getComputedStyle(ancestor);
-            if (style.opacity === '0' && options.opacity) return false;
-            if (style.display === 'contents') continue;
+            const { opacity, display, position, overflow } = isElement
+                ? elementStyle
+                : elementWindow.getComputedStyle(ancestor);
+            if (opacity === '0' && options.opacity) return false;
+            if (display === 'contents') continue;
             const rect = isElement ? elementRect : ancestor.getBoundingClientRect();
-            if ((rect.width <= 1 || rect.height <= 1) && style.overflow === 'hidden') return false;
-            if (
-                style.position === 'fixed' &&
-                (rect.x >= elementWindow.innerWidth || rect.y >= elementWindow.innerHeight)
-            )
-                return false;
+            if ((rect.width <= 1 || rect.height <= 1) && overflow === 'hidden') return false;
+            if (position === 'fixed') {
+                if (isOffScreen(rect)) return false;
+                return true;
+            }
         }
         return true;
     };
