@@ -1,4 +1,5 @@
-import { groupBy, keyBy } from 'lodash';
+import groupBy from 'lodash/groupBy';
+import keyBy from 'lodash/keyBy';
 import { c } from 'ttag';
 
 import type { ItemImportIntent, Maybe, UnsafeItemExtraField } from '@proton/pass/types';

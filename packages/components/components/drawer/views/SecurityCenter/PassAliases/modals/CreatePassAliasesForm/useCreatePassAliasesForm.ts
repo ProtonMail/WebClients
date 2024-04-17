@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { debounce } from 'lodash';
+import debounce from 'lodash/debounce';
 import { c } from 'ttag';
 
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';

@@ -1,4 +1,4 @@
-import { capitalize } from 'lodash';
+import capitalize from 'lodash/capitalize';
 import { c } from 'ttag';
 
 import type { ItemImportIntent, Maybe, UnsafeItemExtraField } from '@proton/pass/types';
