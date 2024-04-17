@@ -6,6 +6,7 @@ import { Button } from '@proton/atoms/Button';
 import { Href } from '@proton/atoms/Href';
 import { Toggle, useModalStateObject, useSettingsLink } from '@proton/components/components';
 import { useFlag } from '@proton/components/containers';
+import { getDisabledString, getEnabledString } from '@proton/components/containers/credentialLeak/helpers';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { useApi, useEventManager, useNotifications, useUserSettings } from '@proton/components/hooks';
 import { disableHighSecurity, enableHighSecurity } from '@proton/shared/lib/api/settings';
@@ -53,7 +54,7 @@ const ProtonSentinel = () => {
                         sentinel_toggle_value: 'enabled',
                     },
                 });
-                createNotification({ text: c('Notification').t`${PROTON_SENTINEL_NAME} has been enabled` });
+                createNotification({ text: getEnabledString(PROTON_SENTINEL_NAME) });
             } else {
                 await api(disableHighSecurity());
                 void sendSecurityCenterReport(api, {
@@ -62,7 +63,7 @@ const ProtonSentinel = () => {
                         sentinel_toggle_value: 'disabled',
                     },
                 });
-                createNotification({ text: c('Notification').t`${PROTON_SENTINEL_NAME} has been disabled` });
+                createNotification({ text: getDisabledString(PROTON_SENTINEL_NAME) });
             }
             await call();
         } catch (e) {
