@@ -30,8 +30,8 @@
         "@proton/styles": "workspace:packages/styles",
         "@proton/testing": "workspace:packages/testing",
         "@protontech/interval-tree": "^1.0.0",
-        "@types/react": "^18.2.75",
-        "@types/react-dom": "^18.2.24",
+        "@types/react": "^18.2.79",
+        "@types/react-dom": "^18.2.25",
         "@types/react-router-dom": "^5.3.3",
         "date-fns": "^2.30.0",
         "dompurify": "^3.1.0",
@@ -46,7 +46,7 @@
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
         "@proton/i18n": "workspace:packages/i18n",
         "@testing-library/jest-dom": "^6.4.2",
-        "@testing-library/react": "^14.3.0",
+        "@testing-library/react": "^14.3.1",
         "@testing-library/react-hooks": "^8.0.1",
         "@testing-library/user-event": "^14.5.2",
         "@types/jest": "^29.5.12",
@@ -54,11 +54,11 @@
         "babel-plugin-transform-require-context": "^0.1.1",
         "cross-env": "^7.0.3",
         "eslint": "^8.57.0",
-        "eslint-plugin-testing-library": "^6.2.0",
+        "eslint-plugin-testing-library": "^6.2.2",
         "jest": "^29.7.0",
         "jest-environment-jsdom": "^29.7.0",
         "jest-junit": "^16.0.0",
         "prettier": "^3.2.5",
-        "typescript": "^5.4.4"
+        "typescript": "^5.4.5"
     }
 }
