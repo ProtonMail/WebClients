@@ -49,9 +49,13 @@ export function ShareLinkModal({ shareId: rootShareId, linkId, onClose, ...modal
     const [settingsModal, showSettingsModal] = useLinkSharingSettingsModal();
     const [isDirectSharingWorkflow, setIsDirectSharingWorkflow] = useState(false);
 
-    const handleDeleteSharedLink = () => deleteLink().then(() => onClose());
-    // TODO: Add Share deletion
-    const handleDeleteShare = handleDeleteSharedLink;
+    const handleDeleteSharedLink = () => deleteLink();
+    const handleDeleteShare = async () => {
+        if (!!sharedLink) {
+            await handleDeleteSharedLink();
+        }
+        // Here should go share deletion when it will be available
+    };
 
     const renderModalState = () => {
         if (errorMessage) {
@@ -81,7 +85,7 @@ export function ShareLinkModal({ shareId: rootShareId, linkId, onClose, ...modal
                                         initialExpiration,
                                         onSaveLinkClick: saveSharedLink,
                                         isDeleting,
-                                        deleteLink: handleDeleteShare,
+                                        deleteShare: handleDeleteShare,
                                         deleteShareEnabled: !!sharedLink, //For now it's only based on sharedLink existance
                                         havePublicSharedLink: !!sharedLink,
                                         confirmationMessage,
