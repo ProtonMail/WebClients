@@ -162,7 +162,7 @@ export const createDropdown = ({ root, onDestroy }: DropdownOptions): InjectedDr
             fieldRef.current?.focus({ preventAction: true });
 
             form.tracker
-                ?.submit({ submitted: false, partial: true })
+                ?.sync({ submit: false, partial: true })
                 .then((res) => res && prompt && ctx.service.autosave.promptAutoSave(res))
                 .catch(noop);
         })
@@ -174,7 +174,7 @@ export const createDropdown = ({ root, onDestroy }: DropdownOptions): InjectedDr
     iframe.registerMessageHandler(IFrameMessageType.DROPDOWN_AUTOFILL_EMAIL, ({ payload }) => {
         fieldRef.current?.autofill(payload.email);
         fieldRef.current?.focus({ preventAction: true });
-        void fieldRef.current?.getFormHandle()?.tracker?.submit({ submitted: false, partial: true });
+        void fieldRef.current?.getFormHandle()?.tracker?.sync({ submit: false, partial: true });
     });
 
     const destroy = () => {
