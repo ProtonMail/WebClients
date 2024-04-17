@@ -14,13 +14,7 @@ export const getOfflineKey = (password: string, salt: Uint8Array) => {
     });
 };
 
-const disabled = true;
-
 export const generateOfflineKey = async (clearKeyPassword: string): Promise<OfflineKey | undefined> => {
-    // Temporarily disabled until CSP policy is updated to support wasm
-    if (disabled) {
-        return;
-    }
     try {
         const salt = crypto.getRandomValues(new Uint8Array(32));
         const key = await getOfflineKey(clearKeyPassword, salt);
