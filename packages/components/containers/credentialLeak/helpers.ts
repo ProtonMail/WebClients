@@ -1,4 +1,4 @@
-import { camelCase } from 'lodash';
+import camelCase from 'lodash/camelCase';
 import { c } from 'ttag';
 
 import breachIconAlertBig from '@proton/styles/assets/img/breach-alert/shield-bolt-danger-big.svg';
