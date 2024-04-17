@@ -2,10 +2,12 @@ import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 // translator: full sentence is: The exposed information was leaked from a third-party service. Your Proton account information remains secure and encrypted. <Learn more>
 const learnMoreLink = (
-    <Href key="link" href="TODO" className="color-weak inline-block">{c('Link').jt`Learn more`}</Href>
+    <Href key="link" href={getKnowledgeBaseUrl('/dark-web-monitoring')} className="color-weak inline-block">{c('Link')
+        .jt`Learn more`}</Href>
 );
 
 const BreachInfoNote = () => {
