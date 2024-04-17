@@ -251,3 +251,25 @@ export const updateCrashReports = (data: { CrashReports: number }) => ({
     method: 'put',
     data,
 });
+
+export const getBreaches = () => ({
+    url: 'account/v4/breaches',
+    method: 'get',
+});
+
+export const getRecentBreaches = () => ({
+    url: 'account/v4/breaches?Recent=true',
+    method: 'get',
+});
+
+export const enableBreachAlert = () => ({
+    url: 'core/v4/settings/breachalerts',
+    method: 'post',
+    data: {},
+});
+
+export const disableBreachAlert = () => ({
+    url: 'core/v4/settings/breachalerts',
+    method: 'delete',
+    data: {},
+});

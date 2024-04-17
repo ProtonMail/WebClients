@@ -13,18 +13,21 @@ import {
     useModalStateObject,
     useSubscriptionModal,
     useUser,
+    useUserSettings,
 } from '@proton/components';
+import { useApi, useNotifications } from '@proton/components/hooks';
 import { useLoading } from '@proton/hooks';
-import { getBreaches } from '@proton/shared/lib/api/breaches';
+import { getBreaches, updateBreachState } from '@proton/shared/lib/api/breaches';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { disableBreachAlert, enableBreachAlert } from '@proton/shared/lib/api/settings';
+import { BRAND_NAME, DARK_WEB_MONITORING_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import freeUserBreachImg from '@proton/styles/assets/img/breach-alert/img-breaches-found.svg';
 import freeUserNoBreachImg from '@proton/styles/assets/img/breach-alert/img-no-breaches-found-inactive.svg';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
-import { useActiveBreakpoint, useApi } from '../../hooks';
+import { useActiveBreakpoint } from '../../hooks';
 import {
     SettingsLayout,
     SettingsLayoutLeft,
@@ -35,59 +38,40 @@ import {
 import BreachInformationCard from './BreachInformationCard';
 import BreachModal from './BreachModal';
 import BreachesList from './BreachesList';
+import EmptyBreachListCard from './EmptyBreachListCard';
 import NoBreachesView from './NoBreachesView';
-import UnlockBreachReportCard from './UnlockBreachReportCard';
-import { BREACH_API_ERROR, toCamelCase } from './helpers';
+import { BREACH_API_ERROR, getEnableString, toCamelCase } from './helpers';
+import { BREACH_STATE, ListType } from './models';
+import { useBreaches } from './useBreaches';
 
-export interface FetchedBreaches {
-    id: string;
-    name: string;
-    email: string;
-    severity: number;
-    createdAt: string;
-    publishedAt: string;
-    size: number;
-    passwordLastChars: string | null;
-    exposedData: {
-        code: string;
-        name: string;
-    }[];
-    actions:
-        | {
-              code: string;
-              name: string;
-              desc: string;
-          }[]
-        | null;
-    source: {
-        isAggregated: boolean;
-        domain: string | null;
-        category: null | {
-            code: string;
-            name: string;
-        };
-        country: null | {
-            code: string;
-            name: string;
-            emoji: string;
-        };
-    };
-}
+const LIST_STATES_MAP: Record<ListType, BREACH_STATE[]> = {
+    open: [BREACH_STATE.UNREAD, BREACH_STATE.READ],
+    resolved: [BREACH_STATE.RESOLVED],
+};
 
 const CredentialLeakSection = () => {
     const handleError = useErrorHandler();
     const [loading, withLoading] = useLoading();
+    const [breachesLoading] = useLoading();
+    const [toggleLoading, withToggleLoading] = useLoading();
     const [openSubscriptionModal] = useSubscriptionModal();
     const api = useApi();
     const [user] = useUser();
+    const [userSettings] = useUserSettings();
+    const { createNotification } = useNotifications();
     const breachModal = useModalStateObject();
     const { viewportWidth } = useActiveBreakpoint();
-    const [fetchedBreachData, setFetchedBreachData] = useState<FetchedBreaches[] | null>(null);
+    const { breaches: breachList, actions } = useBreaches();
+
     const [selectedBreachID, setSelectedBreachID] = useState<string | null>(null);
+    const [listType, setListType] = useState<ListType>('open');
     const [total, setTotal] = useState<number | null>(null);
     const [error, setError] = useState<{ message: string } | null>(null);
     const [openModal, setOpenModal] = useState<boolean>(false);
-
+    // TODO: change nums to constants
+    const [hasAlertsEnabled, setHasAlertsEnabled] = useState<boolean>(
+        userSettings.BreachAlerts.Eligible === 1 && userSettings.BreachAlerts.Value === 1
+    );
     const isPaidUser = user.isPaid;
 
     //TODO: update source of metrics
@@ -95,27 +79,17 @@ const CredentialLeakSection = () => {
         source: 'plans',
     } as const;
 
-    const handleUpgrade = () => {
-        openSubscriptionModal({
-            step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
-            metrics,
-            mode: 'upsell-modal',
-        });
-    };
-
     useEffect(() => {
         const fetchLeakData = async () => {
             try {
                 const { Breaches, Samples, IsEligible, Count } = await api(getBreaches());
-                const fetchedData = toCamelCase(Breaches);
-                const fetchedSample = toCamelCase(Samples);
 
                 if (IsEligible) {
-                    setFetchedBreachData(fetchedData);
-                    setSelectedBreachID(fetchedData[0]?.id || null);
+                    const breaches = toCamelCase(Breaches);
+                    actions.load(breaches);
                 } else {
-                    setFetchedBreachData(fetchedSample);
-                    setSelectedBreachID(fetchedSample[0]?.id || null);
+                    const fetchedSample = toCamelCase(Samples);
+                    actions.load(fetchedSample);
                 }
                 setTotal(Count);
             } catch (e) {
@@ -129,7 +103,7 @@ const CredentialLeakSection = () => {
             }
         };
         withLoading(fetchLeakData()).catch(noop);
-    }, []);
+    }, [hasAlertsEnabled]);
 
     useEffect(() => {
         const handleBreachModal = () => {
@@ -141,18 +115,79 @@ const CredentialLeakSection = () => {
         handleBreachModal();
     }, [loading, openModal, viewportWidth]);
 
-    const getSelectedBreachData = () => {
-        if (!fetchedBreachData || !selectedBreachID) {
-            return undefined;
+    const viewingBreachList = breachList.filter((breach) => LIST_STATES_MAP[listType].includes(breach.resolvedState));
+    const viewingBreach = viewingBreachList.find((b) => b.id === selectedBreachID) ?? viewingBreachList[0];
+
+    const markAsResolvedBreach = async () => {
+        if (!viewingBreach) {
+            return;
         }
-        return fetchedBreachData.find((breach) => breach.id === selectedBreachID);
+        try {
+            actions.resolve(viewingBreach);
+            await api(
+                updateBreachState({
+                    ID: viewingBreach.id,
+                    State: BREACH_STATE.RESOLVED,
+                })
+            );
+        } catch (e) {
+            handleError(e);
+            actions.open(viewingBreach);
+        }
     };
 
-    // TODO: update to knowledge base url for data breaches
+    const markAsOpenBreach = async () => {
+        if (!viewingBreach) {
+            return;
+        }
+        try {
+            actions.open(viewingBreach);
+            await api(
+                updateBreachState({
+                    ID: viewingBreach.id,
+                    State: BREACH_STATE.READ,
+                })
+            );
+        } catch (e) {
+            handleError(e);
+            if (viewingBreach.resolvedState === BREACH_STATE.RESOLVED) {
+                actions.resolve(viewingBreach);
+            }
+        }
+    };
+
+    const handleEnableBreachAlertToggle = async (newToggleState: boolean) => {
+        try {
+            const [action, notification] = newToggleState ? [enableBreachAlert, c('Notification').t`Dark Web Monitoring has been enabled`]: [disableBreachAlert, c('Notification').t`Dark Web Monitoring has been disabled`]
+
+            await withToggleLoading(api(action()));
+            createNotification({ text: notification });
+            setHasAlertsEnabled(newToggleState);
+        } catch (e) {
+            handleError(e);
+        }
+    };
+
+    const handleUpgrade = () => {
+        openSubscriptionModal({
+            step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
+            metrics,
+            mode: 'upsell-modal',
+            onSubscribed: () => {
+                handleEnableBreachAlertToggle(true);
+                return;
+            },
+        });
+    };
+
+    if (viewingBreach && viewingBreach.resolvedState === BREACH_STATE.UNREAD) {
+        markAsOpenBreach();
+    }
+
+    const href = getKnowledgeBaseUrl('/dark-web-monitoring');
     // translator: full sentence is: We monitor the dark web for instances where your personal information (such as an email address or password used on a third-party site) is leaked or compromised. <How does monitoring work?>
     const dataBreachLink = (
-        <Href key={'breach'} className="inline-block" href={getKnowledgeBaseUrl('/TO-ADD')}>{c('Link')
-            .t`How does monitoring work?`}</Href>
+        <Href key={'breach'} className="inline-block" href={href}>{c('Link').t`How does monitoring work?`}</Href>
     );
 
     const breachAlertIntroText = (
@@ -173,14 +208,11 @@ const CredentialLeakSection = () => {
     );
 
     // translator: full sentence is: Get notified if your password or other personal data was leaked. <Learn more>
-    const learnMoreLinkNoBreach = (
-        <Href href={getKnowledgeBaseUrl('/TO-ADD')} className="inline-block">{c('Link').t`Learn more`}</Href>
-    );
+    const learnMoreLinkNoBreach = <Href href={href} className="inline-block">{c('Link').t`Learn more`}</Href>;
 
-    // translator: full sentence is: Your information was found in at least one data breach. Turn on Breach Alert to view details and take action. <Learn more>
+    // translator: full sentence is: Your information was found in at least one data breach. Turn on Dark Web Monitoring to view details and take action. <Learn more>
     const learnMoreLinkBreach = (
-        <Href href={getKnowledgeBaseUrl('/TO-ADD')} className="inline-block color-danger">{c('Link')
-            .t`Learn more`}</Href>
+        <Href href={href} className="inline-block color-danger">{c('Link').t`Learn more`}</Href>
     );
 
     return (
@@ -216,9 +248,9 @@ const CredentialLeakSection = () => {
                                                 />
                                                 <span className="flex-1">
                                                     {
-                                                        // translator: full sentence is: Your information was found in at least one data breach. Turn on Breach Alert to view details and take action. <Learn more>
+                                                        // translator: full sentence is: Your information was found in at least one data breach. Turn on Dark Web Monitoring to view details and take action. <Learn more>
                                                         c('Security Center - Info')
-                                                            .jt`Your information was found in at least one data breach. Turn on Breach Alert to view details and take action. ${learnMoreLinkBreach}`
+                                                            .jt`Your information was found in at least one data breach. Turn on ${DARK_WEB_MONITORING_NAME} to view details and take action. ${learnMoreLinkBreach}`
                                                     }
                                                 </span>
                                             </div>
@@ -228,8 +260,9 @@ const CredentialLeakSection = () => {
                                     <SettingsLayout>
                                         <SettingsLayoutLeft>
                                             <label className="text-semibold" htmlFor="data-breach-toggle">
-                                                <span className="mr-2">{c('Log preference')
-                                                    .t`Enable Breach Alert`}</span>
+                                                <span className="mr-2">
+                                                    {getEnableString(DARK_WEB_MONITORING_NAME)}
+                                                </span>
                                             </label>
                                         </SettingsLayoutLeft>
                                         <SettingsLayoutRight isToggleContainer>
@@ -239,7 +272,6 @@ const CredentialLeakSection = () => {
                                                 checked={false}
                                                 onClick={handleUpgrade}
                                             />
-                                            {/* TODO: toggle activation */}
                                         </SettingsLayoutRight>
                                     </SettingsLayout>
                                 </div>
@@ -264,53 +296,83 @@ const CredentialLeakSection = () => {
                             <SettingsLayout>
                                 <SettingsLayoutLeft>
                                     <label className="text-semibold" htmlFor="data-breach-toggle">
-                                        <span className="mr-2">{c('Log preference').t`Enable Breach Alert`}</span>
+                                        <span className="mr-2">{getEnableString(DARK_WEB_MONITORING_NAME)}</span>
                                     </label>
                                 </SettingsLayoutLeft>
                                 <SettingsLayoutRight isToggleContainer>
-                                    <Toggle id="data-breach-toggle" disabled={false} checked={true} />
-                                    {/* TODO: toggle activation */}
+                                    <Toggle
+                                        id="data-breach-toggle"
+                                        disabled={false}
+                                        checked={hasAlertsEnabled}
+                                        loading={toggleLoading}
+                                        onChange={({ target }) => {
+                                            void handleEnableBreachAlertToggle(target.checked);
+                                        }}
+                                    />
                                 </SettingsLayoutRight>
                             </SettingsLayout>
-
-                            {total === 0 ? (
-                                <NoBreachesView />
-                            ) : (
-                                <div
-                                    className="flex flex-nowrap lg:flex-row w-full max-h-custom lg:max-h-custom"
-                                    style={{ '--max-h-custom': '40vh', '--lg-max-h-custom': '90vh' }}
-                                >
-                                    <BreachesList
-                                        breachData={fetchedBreachData}
-                                        selectedID={selectedBreachID}
-                                        setSelectedBreachID={setSelectedBreachID}
-                                        isPaidUser={isPaidUser}
-                                        total={total}
-                                        setOpenModal={setOpenModal}
-                                    />
-
+                            {hasAlertsEnabled &&
+                                (total === 0 ? (
+                                    <NoBreachesView />
+                                ) : (
                                     <div
-                                        className={clsx(
-                                            'relative w-full md:w-2/3',
-                                            viewportWidth['<=medium'] && 'hidden'
-                                        )}
+                                        className="flex flex-nowrap lg:flex-row w-full max-h-custom lg:max-h-custom"
+                                        style={{ '--max-h-custom': '40vh', '--lg-max-h-custom': '90vh' }}
                                     >
-                                        {!isPaidUser && <UnlockBreachReportCard />}
-                                        {selectedBreachID && (
-                                            <BreachInformationCard
-                                                paid={isPaidUser}
-                                                breachData={getSelectedBreachData()}
-                                            />
+                                        <BreachesList
+                                            data={breachList}
+                                            selectedID={selectedBreachID}
+                                            onSelect={(id) => {
+                                                setSelectedBreachID(id);
+                                                setOpenModal(true);
+                                            }}
+                                            isPaidUser={isPaidUser}
+                                            total={total}
+                                            type={listType}
+                                            onViewTypeChange={setListType}
+                                        />
+                                        {viewingBreachList.length === 0 && (
+                                            <div
+                                                className={clsx(
+                                                    'flex relative w-full md:w-2/3',
+                                                    viewportWidth['<=medium'] && 'hidden'
+                                                )}
+                                            >
+                                                <EmptyBreachListCard listType={listType} />
+                                            </div>
+                                        )}
+                                        {viewingBreach && (
+                                            <div
+                                                className={clsx(
+                                                    'relative w-full md:w-2/3',
+                                                    viewportWidth['<=medium'] && 'hidden'
+                                                )}
+                                            >
+                                                <BreachInformationCard
+                                                    paid={isPaidUser}
+                                                    breachData={viewingBreach}
+                                                    onResolve={markAsResolvedBreach}
+                                                    onOpen={markAsOpenBreach}
+                                                    isMutating={breachesLoading}
+                                                />
+                                            </div>
                                         )}
                                     </div>
-                                </div>
-                            )}
+                                ))}
                         </>
                     );
                 })()}
             </SettingsSectionWide>
             {breachModal.render && (
-                <BreachModal modalProps={breachModal.modalProps} breachData={getSelectedBreachData()} />
+                <BreachModal
+                    modalProps={breachModal.modalProps}
+                    breachData={viewingBreach}
+                    onResolve={() => {
+                        if (viewingBreach) {
+                            actions.resolve(viewingBreach);
+                        }
+                    }}
+                />
             )}
         </>
     );

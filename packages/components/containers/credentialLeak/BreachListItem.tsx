@@ -22,14 +22,25 @@ interface Props {
               code: string;
               name: string;
           }[];
+    resolved?: boolean;
+    unread?: boolean;
 }
 
-const BreachListItem = ({ name, createdAt, handleClick, disabled, selected, style, severity, exposedData }: Props) => {
+const BreachListItem = ({
+    name,
+    createdAt,
+    handleClick,
+    disabled,
+    selected,
+    style,
+    severity,
+    exposedData,
+    resolved = false,
+    unread = false,
+}: Props) => {
     const { iconAltText } = style;
 
-    const unReadBreach = false; // TODO: API needed?
-
-    const breachIcon = getBreachIcon(severity);
+    const breachIcon = getBreachIcon(severity, { resolved });
 
     return (
         <li className="mb-1">
@@ -46,14 +57,12 @@ const BreachListItem = ({ name, createdAt, handleClick, disabled, selected, styl
                         <img src={breachIcon} className="m-auto w-full h-full" alt={iconAltText} />
                     </span>
                     <span className="flex-1 text-left pl-2 pr-1">
-                        <span className={clsx('block max-w-full text-ellipsis', unReadBreach && 'text-bold')}>
-                            {name}
-                        </span>
+                        <span className={clsx('block max-w-full text-ellipsis', unread && 'text-bold')}>{name}</span>
                         <ReadableDate
                             value={createdAt}
                             className={clsx(
                                 'block max-w-full text-ellipsis m-0 text-sm color-weak',
-                                unReadBreach && 'text-bold'
+                                unread && 'text-bold'
                             )}
                         />
                         <div className="text-ellipsis mt-1">

@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { Icon } from '../..';
 
@@ -79,7 +80,9 @@ const Action = (props: any) => {
 };
 
 // translator: full sentence is: Learn how to <stay safer online>
-const staySaferOnlineLink = <Href href="TODO">{c('Link').jt`stay safer online`}</Href>;
+const staySaferOnlineLink = (
+    <Href href={getKnowledgeBaseUrl('/dark-web-monitoring')}>{c('Link').jt`stay safer online`}</Href>
+);
 
 const BreachRecommendations = ({ actions, inModal = false }: Props) => {
     if (!actions) {

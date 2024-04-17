@@ -17,7 +17,8 @@ export const enum BREACH_API_ERROR {
     GENERIC = 2902,
 }
 
-export const getBreachIcon = (severity: number, big?: boolean, resolved?: boolean) => {
+export const getBreachIcon = (severity: number, options: { big?: boolean; resolved?: boolean } = {}) => {
+    const { resolved = false, big = false } = options;
     if (resolved) {
         if (big) {
             return breachIconResolvedBig;
@@ -127,3 +128,15 @@ export function toCamelCase(obj: any): any {
 
     return camelCaseObj;
 }
+
+export const getEnableString = (reason: string) => {
+    return c('Log preference').t`Enable ${reason}`;
+};
+
+export const getEnabledString = (reason: string) => {
+    return c('Notification').t`${reason} has been enabled`;
+};
+
+export const getDisabledString = (reason: string) => {
+    return c('Notification').t`${reason} has been disabled`;
+};

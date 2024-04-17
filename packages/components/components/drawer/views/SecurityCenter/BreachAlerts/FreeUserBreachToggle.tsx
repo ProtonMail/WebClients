@@ -1,0 +1,54 @@
+import { c } from 'ttag';
+
+import { Href } from '@proton/atoms/Href';
+import { Toggle } from '@proton/components/components';
+import { DARK_WEB_MONITORING_NAME } from '@proton/shared/lib/constants';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import ProtonSentinelPlusLogo from '@proton/styles/assets/img/illustrations/sentinel-shield-bolt-breach-alert.svg';
+
+import { DrawerAppSection } from '../../shared';
+
+interface Props {
+    onToggleBreaches: () => void;
+    hasBreach: boolean;
+}
+
+// translator: full sentence is: Get notified if your password or other data was leaked from a third-party service. <Learn more>
+const learnMoreLink = (
+    <Href href={getKnowledgeBaseUrl('/dark-web-monitoring')} className="inline-block">{c('Link').t`Learn more`}</Href>
+);
+
+const FreeUserBreachToggle = ({ onToggleBreaches, hasBreach }: Props) => {
+    return (
+        <DrawerAppSection>
+            <div className="flex flex-nowrap items-center gap-2 mt-2">
+                <div className="shrink-0 flex">
+                    <img src={ProtonSentinelPlusLogo} alt="" width={22} />
+                </div>
+                <h3 className="flex-1 text-rg">
+                    <label htmlFor="breaches-toggle">{DARK_WEB_MONITORING_NAME}</label>
+                </h3>
+                <Toggle id="breaches-toggle" onChange={onToggleBreaches} className="shrink-0" />
+            </div>
+            {hasBreach ? (
+                <p className="mt-1 mb-2 text-sm color-danger">
+                    {
+                        // translator: full sentence is: Your information was found in at least one data breach. Turn on Dark Web Monitoring to view details and take action. <Learn more>
+                        c('Security Center - Info')
+                            .jt`Your information was found in at least one data breach. Turn on ${DARK_WEB_MONITORING_NAME} to view details and take action. ${learnMoreLink}`
+                    }
+                </p>
+            ) : (
+                <p className="mt-1 mb-2 text-sm color-weak">
+                    {
+                        // translator: full sentence is: Get notified if your password or other data was leaked from a third-party service. <Learn more>
+                        c('Security Center - Info')
+                            .jt`Get notified if your password or other data was leaked from a third-party service. ${learnMoreLink}`
+                    }
+                </p>
+            )}
+        </DrawerAppSection>
+    );
+};
+
+export default FreeUserBreachToggle;

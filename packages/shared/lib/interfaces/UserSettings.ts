@@ -78,6 +78,10 @@ export interface UserSettings {
         Mail?: string[];
         Drive?: string[];
     };
+    BreachAlerts: {
+        Eligible: number; // 0 for free user, 1 for paid user
+        Value: number; // 0 for disabled, 1 for enabled
+    };
     Checklists?: ChecklistId[];
     CrashReports: 1 | 0;
     DateFormat: SETTINGS_DATE_FORMAT;

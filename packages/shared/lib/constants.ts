@@ -50,6 +50,7 @@ export const VPN_APP_NAME = `${BRAND_NAME} ${VPN_SHORT_APP_NAME}`;
 export const VERIFY_APP_NAME = 'Proton Verify';
 export const REFERRER_CODE_MAIL_TRIAL = 'MAILPLUSTRIAL';
 export const PROTON_SENTINEL_NAME = 'Proton Sentinel';
+export const DARK_WEB_MONITORING_NAME = 'Dark Web Monitoring';
 
 export const APPS = {
     PROTONACCOUNT: 'proton-account',
