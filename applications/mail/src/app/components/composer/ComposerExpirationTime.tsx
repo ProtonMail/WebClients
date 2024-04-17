@@ -24,7 +24,7 @@ const ComposerExpirationTime = ({ message, onEditExpiration }: Props) => {
     return (
         <div
             className={clsx([
-                'rounded border pr-1 pb-1 md:pl-2 md:pr-1 md:py-1 flex items-center gap-2 mb-2',
+                'rounded border pr-1 pb-1 md:pl-2 md:pr-1 md:py-1 flex items-center gap-2 my-2',
                 expirationDate ? 'bg-info border-info' : 'bg-warning border-warning',
             ])}
             data-testid="expiration-banner"
