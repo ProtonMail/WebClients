@@ -33,6 +33,7 @@ interface Props {
     isOwnedCalendar: boolean;
     addresses: Address[];
     organizer?: OrganizerModel;
+    displayBusySlots: boolean;
     id: string;
     placeholder: string;
     className?: string;
@@ -46,6 +47,7 @@ interface Props {
 const ParticipantsInput = ({
     className,
     placeholder,
+    displayBusySlots,
     organizer,
     value = [],
     isOwnedCalendar,
@@ -59,7 +61,7 @@ const ParticipantsInput = ({
 }: Props) => {
     const [mailSettings] = useMailSettings();
     const isBusyTimeSlotsAvailable = useBusyTimeSlotsAvailable(view);
-    const displayAvailabilityUnknown = useCalendarSelector(selectDisplayAvailabilityUnknown);
+    const displayAvailabilityUnknown = useCalendarSelector(selectDisplayAvailabilityUnknown) && displayBusySlots;
     const numberOfAttendees = value.length;
 
     const { contactEmails, contactGroups, contactEmailsMap, groupsWithContactsMap } = useContactEmailsCache();
@@ -132,7 +134,7 @@ const ParticipantsInput = ({
         <ParticipantRows
             attendeeModel={value}
             contactEmailsMap={contactEmailsMap}
-            isBusyTimeSlotsAvailable={isBusyTimeSlotsAvailable}
+            isBusyTimeSlotsAvailable={isBusyTimeSlotsAvailable && displayBusySlots}
             onDelete={onDelete}
             toggleIsOptional={toggleIsOptional}
         />
@@ -191,7 +193,10 @@ const ParticipantsInput = ({
                     participantRows
                 ))}
             {numberOfAttendees > 0 && organizer && (
-                <OrganizerRow organizer={organizer} isBusyTimeSlotsAvailable={isBusyTimeSlotsAvailable} />
+                <OrganizerRow
+                    organizer={organizer}
+                    isBusyTimeSlotsAvailable={isBusyTimeSlotsAvailable && displayBusySlots}
+                />
             )}
             {isBusyTimeSlotsAvailable && displayAvailabilityUnknown && (
                 <div className="flex items-center color-weak mt-2 text-sm bg-weak rounded py-1 px-2">
