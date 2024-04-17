@@ -294,6 +294,8 @@ export const getBusySlotStateChangeReason = (prevState: CalendarState, nextState
         nextState.busyTimeSlots.attendees.length > 0 &&
         nextState.busyTimeSlots.metadata?.view !== prevState.busyTimeSlots.metadata?.view;
 
+    const displayChanged = nextState.busyTimeSlots.displayOnGrid !== prevState.busyTimeSlots.displayOnGrid;
+
     if (attendeesChanged) {
         return 'attendees-changed';
     }
@@ -304,6 +306,10 @@ export const getBusySlotStateChangeReason = (prevState: CalendarState, nextState
 
     if (calendarViewChanged) {
         return 'calendar-view-changed';
+    }
+
+    if (displayChanged) {
+        return 'display-changed';
     }
 
     return null;

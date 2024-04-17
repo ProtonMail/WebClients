@@ -108,13 +108,9 @@ const busyTimeSlotSlice = createSlice({
         reset: (state) => {
             return { ...initialState, metadata: state.metadata };
         },
-        /**
-         * When temporary event is set or updated, we store the metadata and the attendees email list.
-         * Every email is canonicalized
-         */
-        init: (state, { payload: { attendeeEmails } }: PayloadAction<{ attendeeEmails: BusyTimeSlotEmail[] }>) => {
-            if (diff(attendeeEmails, state.attendees).length > 0) {
-                state.attendees = attendeeEmails.map((email) => canonicalizeEmailByGuess(email));
+        setAttendees: (state, { payload }: PayloadAction<BusyTimeSlotEmail[]>) => {
+            if (diff(payload, state.attendees).length > 0) {
+                state.attendees = payload.map((email) => canonicalizeEmailByGuess(email));
             }
         },
         setMetadata: (state, { payload }: PayloadAction<Required<BusyTimeSlotsState>['metadata']>) => {
