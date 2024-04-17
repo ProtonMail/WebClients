@@ -16,6 +16,7 @@ import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
 import {
     getIpPricePerMonth,
     getOverriddenPricePerCycle,
+    hasMail,
     hasMaximumCycle,
 } from '@proton/shared/lib/helpers/subscription';
 import {
@@ -45,7 +46,9 @@ import {
     SelectTwo,
     Tabs,
     VpnLogo,
+    useSettingsLink,
 } from '../../../components';
+import { useFlag } from '../../unleash';
 import { VPNIntroPricingVariant } from '../../unleash/vpnIntroPricing';
 import CurrencySelector from '../CurrencySelector';
 import CycleSelector from '../CycleSelector';
@@ -54,6 +57,7 @@ import { ShortPlanLike, isShortPlanLike } from '../features/interface';
 import { getShortPlan, getVPNEnterprisePlan } from '../features/plan';
 import PlanCard from './PlanCard';
 import PlanCardFeatures, { PlanCardFeatureList, PlanCardFeaturesShort } from './PlanCardFeatures';
+import { CANCEL_ROUTE } from './b2cCancellationFlow/helper';
 import VpnEnterpriseAction from './helpers/VpnEnterpriseAction';
 import { getVPNPlanToUse } from './helpers/payment';
 
@@ -218,8 +222,11 @@ const PlanSelection = ({
         PLANS.PASS_PLUS,
     ].filter(isTruthy);
     const enabledProductB2BPlans = [PLANS.MAIL_PRO /*, PLANS.DRIVE_PRO*/];
+    const goToSettings = useSettingsLink();
 
     const alreadyHasMaxCycle = hasMaximumCycle(subscription);
+
+    const isNewCancellationFlowEnabled = useFlag('NewCancellationFlow');
 
     function excludingCurrentPlanWithMaxCycle(plan: Plan | ShortPlanLike): boolean {
         if (isShortPlanLike(plan)) {
@@ -369,6 +376,12 @@ const PlanSelection = ({
                 price={price}
                 features={featuresElement}
                 onSelect={(planName) => {
+                    // Mail plus users selecting free plan are redirected to the cancellation reminder flow
+                    if (planName === PLANS.FREE && hasMail(subscription) && isNewCancellationFlowEnabled) {
+                        goToSettings(CANCEL_ROUTE);
+                        return;
+                    }
+
                     onChangePlanIDs(
                         switchPlan({
                             planIDs,

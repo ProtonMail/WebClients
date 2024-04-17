@@ -24,7 +24,7 @@ export const CancelSubscriptionSection = ({ app }: { app: APP_NAMES }) => {
                         .t`This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.`}
                 </SettingsParagraph>
                 <Button
-                    onClick={cancelSubscription}
+                    onClick={() => cancelSubscription()}
                     data-testid="CancelSubsriptionButton"
                     color="danger"
                     shape="outline"
