@@ -1,12 +1,14 @@
-import { Fragment } from 'react';
+import { c } from 'ttag';
 
 import { Avatar, CircleLoader } from '@proton/atoms';
 import { useContactEmails, useUser } from '@proton/components/hooks';
+import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 
 import { ShareInvitation, ShareMember } from '../../../../store';
 import { DirectSharingListInvitation } from './DirectSharingListInvitation';
+import MemberPermissionsSelect from './MemberPermissionsSelect';
 
 interface Props {
     volumeId?: string;
@@ -14,9 +16,10 @@ interface Props {
     members: ShareMember[];
     invitations: ShareInvitation[];
     isLoading: boolean;
+    onPermissionsChange: (member: ShareMember, permission: SHARE_MEMBER_PERMISSIONS) => void;
 }
 
-const DirectSharingListing = ({ volumeId, linkId, members, invitations, isLoading }: Props) => {
+const DirectSharingListing = ({ volumeId, linkId, members, invitations, isLoading, onPermissionsChange }: Props) => {
     const [contactEmails] = useContactEmails();
 
     const [user] = useUser();
@@ -38,47 +41,25 @@ const DirectSharingListing = ({ volumeId, linkId, members, invitations, isLoadin
     if (isLoading) {
         return <CircleLoader size="medium" className="mx-auto my-6 w-full" />;
     }
-    if ((!members.length && !invitations.length) || !volumeId) {
-        return (
-            <div className={'flex items-center my-4'}>
-                <Avatar color="weak" className="mr-2">
-                    {getInitials(user.DisplayName)}
-                </Avatar>
-                <p className="flex flex-column p-0 m-0">
-                    <span className="text-semibold">{user.DisplayName}</span>
-                    <span className="color-weak">{user.Email}</span>
-                </p>
-            </div>
-        );
-    }
     return (
         <>
-            {members.map(({ email, memberId, permissions }) => {
-                const { Name: contactName, Email: contactEmail } = contactEmails?.find(
-                    (contactEmail) => contactEmail.Email === canonicalizeInternalEmail(email)
-                ) || {
-                    Name: '',
-                    Email: email,
-                };
+            <div className="flex my-4 justify-space-between items-center">
+                <div className={'flex items-center'}>
+                    <Avatar color="weak" className="mr-2">
+                        {getInitials(user.DisplayName)}
+                    </Avatar>
+                    <p className="flex flex-column p-0 m-0">
+                        <span className="text-semibold">
+                            {user.DisplayName} ({c('Info').t`you`})
+                        </span>
+                        <span className="color-weak">{user.Email}</span>
+                    </p>
+                </div>
+                <div className="mr-8">{c('Info').t`Owner`}</div>
+            </div>
 
-                return (
-                    <Fragment key={memberId}>
-                        <div className={'flex items-center my-4'}>
-                            <Avatar color="weak" className="mr-2">
-                                {getInitials(contactName || contactEmail)}
-                            </Avatar>
-                            <p className="flex flex-column p-0 m-0">
-                                <span className="text-semibold">{contactName ? contactName : contactEmail}</span>
-                                {contactName && <span className="color-weak">{contactEmail}</span>}
-                            </p>
-                        </div>
-                        <div>Permissions: {permissions}</div>
-                    </Fragment>
-                );
-            })}
-
-            <ul className="unstyled">
-                {invitations.map((invitation) => {
+            {volumeId &&
+                invitations.map((invitation) => {
                     const { contactName, contactEmail } = getContactNameAndEmail(invitation.inviteeEmail);
                     return (
                         <DirectSharingListInvitation
@@ -91,7 +72,35 @@ const DirectSharingListing = ({ volumeId, linkId, members, invitations, isLoadin
                         />
                     );
                 })}
-            </ul>
+
+            {members.map((member) => {
+                const { email, memberId, permissions } = member;
+                const { Name: contactName, Email: contactEmail } = contactEmails?.find(
+                    (contactEmail) => contactEmail.Email === canonicalizeInternalEmail(email)
+                ) || {
+                    Name: '',
+                    Email: email,
+                };
+
+                const handlePermissionChange = (value: SHARE_MEMBER_PERMISSIONS) => {
+                    onPermissionsChange(member, value);
+                };
+
+                return (
+                    <div key={memberId} className="flex my-4 justify-space-between items-center">
+                        <div className={'flex items-center'}>
+                            <Avatar color="weak" className="mr-2">
+                                {getInitials(contactName || contactEmail)}
+                            </Avatar>
+                            <p className="flex flex-column p-0 m-0">
+                                <span className="text-semibold">{contactName ? contactName : contactEmail}</span>
+                                {contactName && <span className="color-weak">{contactEmail}</span>}
+                            </p>
+                        </div>
+                        <MemberPermissionsSelect selectedPermissions={permissions} onChange={handlePermissionChange} />
+                    </div>
+                );
+            })}
         </>
     );
 };

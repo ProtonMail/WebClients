@@ -3,8 +3,9 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import ContactEmailsProvider from '@proton/components/containers/contacts/ContactEmailsProvider';
+import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
 
-import { ShareInvitee, useShareMemberView } from '../../../../store';
+import { ShareInvitee, ShareMember, useShareMemberView } from '../../../../store';
 import DirectSharingAutocomplete from './DirectSharingAutocomplete';
 import DirectSharingListing from './DirectSharingListing';
 
@@ -17,10 +18,8 @@ interface Props {
     onFocus: () => void;
 }
 const DirectSharing = ({ rootShareId, linkId, isDirectSharingWorkflow, onSubmit, onClose, onFocus }: Props) => {
-    const { volumeId, members, invitations, isLoading, isAdding, addNewMembers } = useShareMemberView(
-        rootShareId,
-        linkId
-    );
+    const { volumeId, members, invitations, isLoading, isAdding, addNewMembers, updateMemberPermissions } =
+        useShareMemberView(rootShareId, linkId);
     const [directSharingList, setDirectSharingList] = useState<ShareInvitee[]>(
         members.map((member) => ({
             email: member.email,
@@ -31,6 +30,10 @@ const DirectSharing = ({ rootShareId, linkId, isDirectSharingWorkflow, onSubmit,
     const handleSubmit = (invitees: ShareInvitee[]) => {
         setDirectSharingList([...directSharingList, ...invitees]);
         onSubmit();
+    };
+
+    const handlePermissionsChange = (member: ShareMember, permissions: SHARE_MEMBER_PERMISSIONS) => {
+        updateMemberPermissions({ ...member, permissions });
     };
 
     return (
@@ -54,6 +57,7 @@ const DirectSharing = ({ rootShareId, linkId, isDirectSharingWorkflow, onSubmit,
                         isLoading={isLoading}
                         members={members}
                         invitations={invitations}
+                        onPermissionsChange={handlePermissionsChange}
                     />
                 </>
             )}
