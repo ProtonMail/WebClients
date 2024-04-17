@@ -2,6 +2,7 @@ import { addMonths, format } from 'date-fns';
 import { c } from 'ttag';
 
 import { VerticalStep, VerticalSteps } from '@proton/atoms/VerticalSteps';
+import { PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
 import { Icon } from '../../components';
@@ -10,6 +11,7 @@ const ReferralHowItWorks = () => {
     // NOTE API plan to return subscription start date with GET /plans route
     const startDate = addMonths(new Date(), 1);
     const startText = format(startDate, 'PP', { locale: dateLocale });
+    const planName = PLAN_NAMES[PLANS.MAIL];
 
     return (
         <VerticalSteps>
@@ -21,14 +23,14 @@ const ReferralHowItWorks = () => {
             />
             <VerticalStep
                 icon={<Icon name="lock" className="m-auto" size={4} />}
-                title={c('info').t`Try Mail Plus`}
+                title={c('info').t`Try ${planName}`}
                 description={c('info').t`Enjoy secure, easy-to-use emailing with plenty of premium features.`}
                 status="done"
             />
             <VerticalStep
                 icon={<Icon name="bell" className="m-auto" size={4} />}
                 title={c('info').t`Day 27: Trial reminder`}
-                description={c('info').t`We’ll email you before your trial ends. Cancel anytime.`}
+                description={c('info').t`We'll email you before your trial ends. Cancel anytime.`}
             />
             <VerticalStep
                 icon={<Icon name="calendar-today" className="m-auto" size={4} />}
