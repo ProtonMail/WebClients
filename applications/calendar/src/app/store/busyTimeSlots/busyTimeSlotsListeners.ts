@@ -7,24 +7,30 @@ import {
     getBusyAttendeesToFetch,
     getBusySlotStateChangeReason,
 } from './busyTimeSlotsListener.helpers';
-import { busyTimeSlotsActions, busyTimeSlotsSliceName } from './busyTimeSlotsSlice';
+import { busyTimeSlotsActions } from './busyTimeSlotsSlice';
 
-const IGNORED_ACTIONS = [busyTimeSlotsActions.reset.type, busyTimeSlotsActions.setHighlightedAttendee.type];
+const WHITELISTED_ACTIONS = [
+    busyTimeSlotsActions.setAttendees.type,
+    busyTimeSlotsActions.setMetadata.type,
+    busyTimeSlotsActions.setDisplay.type,
+];
 
 export const startListeningBusyTimeSlotsAttendees = (startListening: SharedStartListening<CalendarState>) => {
     // Listener related to the attendees list
     // Fetch busy slots for attendees when the attendees list changes
     startListening({
         predicate: (action, nextState, prevState) => {
-            if (
-                !action.type.startsWith(busyTimeSlotsSliceName) ||
-                IGNORED_ACTIONS.some((type) => type === action.type) ||
-                nextState.busyTimeSlots?.metadata?.view === VIEWS.MONTH
-            ) {
-                return false;
-            }
+            const nextCalendarView = nextState.busyTimeSlots?.metadata?.view;
+            const nextDisplayBusySlots = nextState.busyTimeSlots?.displayOnGrid;
 
-            return getBusySlotStateChangeReason(prevState, nextState) !== null;
+            if (
+                WHITELISTED_ACTIONS.some((type) => type === action.type) &&
+                nextCalendarView !== VIEWS.MONTH &&
+                nextDisplayBusySlots === true
+            ) {
+                return getBusySlotStateChangeReason(prevState, nextState) !== null;
+            }
+            return false;
         },
         effect: async (_, listenerApi) => {
             let state = listenerApi.getState();
@@ -34,17 +40,15 @@ export const startListeningBusyTimeSlotsAttendees = (startListening: SharedStart
 
             let attendeesToFetch: string[] = [];
 
-            if (updateReason === 'attendees-changed') {
-                attendeesToFetch = getBusyAttendeesToFetch(state);
-            }
-
-            if (updateReason === 'calendar-view-changed' || updateReason === 'calendar-view-date-changed') {
+            if (['calendar-view-changed', 'calendar-view-date-changed'].some((reason) => reason === updateReason)) {
                 attendeesToFetch = state.busyTimeSlots.attendees.filter((attendee) => {
                     if (state.busyTimeSlots.attendeeDataAccessible[attendee] === false) {
                         return false;
                     }
                     return true;
                 });
+            } else {
+                attendeesToFetch = getBusyAttendeesToFetch(state);
             }
 
             // If nothing new to fetch stop here
