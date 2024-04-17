@@ -47,20 +47,16 @@ const useBusyTimeSlots = ({ temporaryEvent, dateRange, now, tzid, view }: Props)
         }
 
         const attendees = temporaryEvent?.tmpData?.attendees || [];
-        if (attendees.length > 0 && view !== VIEWS.MONTH) {
+        if (attendees.length > 0) {
             if (preventFetchRef.current) {
                 preventFetchRef.current = false;
                 return;
             }
 
-            if (!store.getState().busyTimeSlots.metadata) {
+            if (!store.getState().busyTimeSlots.metadata && view !== VIEWS.MONTH) {
                 updateMetadata();
             }
-            dispatch(
-                busyTimeSlotsActions.init({
-                    attendeeEmails: attendees.map((attendee) => attendee.email),
-                })
-            );
+            dispatch(busyTimeSlotsActions.setAttendees(attendees.map((attendee) => attendee.email)));
         }
 
         if (!temporaryEvent) {

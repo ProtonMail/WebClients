@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useCallback, useRef } from 'react';
 
 import debounce from 'lodash/debounce';
 
@@ -29,9 +29,12 @@ const ParticipantRows = ({
     const dispatch = useCalendarDispatch();
     const busyAttendeeHighlighted = useRef<string | undefined>(undefined);
 
-    const onChangeHighlight = debounce(() => {
-        dispatch(busyTimeSlotsActions.setHighlightedAttendee(busyAttendeeHighlighted.current));
-    }, 150);
+    const onChangeHighlight = useCallback(
+        debounce(() => {
+            dispatch(busyTimeSlotsActions.setHighlightedAttendee(busyAttendeeHighlighted.current));
+        }, 150),
+        []
+    );
 
     return (
         <div className="pt-1 border-bottom border-weak mb-1">
