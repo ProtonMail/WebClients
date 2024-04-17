@@ -4,11 +4,11 @@ import { WorkerMessageType } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
 
 export const useExtensionActivityProbe = (messageFactory: MessageWithSenderFactory) =>
-    useActivityProbe(() =>
+    useActivityProbe(() => {
         sendMessage(
             messageFactory({
                 type: WorkerMessageType.AUTH_CHECK,
                 payload: { immediate: false },
             })
-        ).catch(noop)
-    );
+        ).catch(noop);
+    });
