@@ -12,8 +12,8 @@ import {
     useWelcomeFlags,
 } from '@proton/components/hooks';
 import { FeatureCode } from '@proton/features';
-import { PLANS } from '@proton/shared/lib/constants';
-import spotlightImg from '@proton/styles/assets/img/illustrations/spotlight-stars.svg';
+import { DARK_WEB_MONITORING_NAME, PLANS } from '@proton/shared/lib/constants';
+import spotlightImg from '@proton/styles/assets/img/illustrations/sentinel-shield-bolt-breach-alert.svg';
 
 interface Props {
     children: React.ReactNode;
@@ -62,9 +62,9 @@ const BreachAlertsSpotlight = ({ children }: Props) => {
                         <img src={spotlightImg} alt="" />
                     </div>
                     <div>
-                        <p className="m-0 text-semibold">{c('Spotlight').t`Breach Alerts`}</p>
+                        <p className="m-0 text-semibold">{DARK_WEB_MONITORING_NAME}</p>
                         <p className="m-0">{c('Spotlight')
-                            .t`Turn on breach alerts to monitor potential data leaks. View details and take action to protect yourself.`}</p>
+                            .t`Turn on ${DARK_WEB_MONITORING_NAME} to get notified if your data was leaked from a third-party service.`}</p>
                     </div>
                 </div>
             }

@@ -6,6 +6,7 @@ import {
     APPS,
     APP_NAMES,
     BRAND_NAME,
+    DARK_WEB_MONITORING_NAME,
     DEFAULT_CURRENCY,
     PRODUCT_NAMES,
     PROTON_SENTINEL_NAME,
@@ -257,7 +258,7 @@ export const getAccountAppRoutes = ({
                     },
 
                     {
-                        text: c('Title').t`Breach Alert`,
+                        text: DARK_WEB_MONITORING_NAME,
                         id: 'breaches',
                         available: isBreachesAccountDashboardEnabled && !isSSOUser,
                     },
