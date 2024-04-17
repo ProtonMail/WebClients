@@ -1,13 +1,10 @@
-import { useRef } from 'react';
-
 import { c } from 'ttag';
 
-import { Avatar, Button } from '@proton/atoms';
-import { Icon } from '@proton/components';
+import { Avatar } from '@proton/atoms';
+import { Dropdown, DropdownButton, DropdownMenu, DropdownMenuButton, Icon, usePopperAnchor } from '@proton/components';
+import { useNotifications } from '@proton/components/hooks';
+import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { getInitials } from '@proton/shared/lib/helpers/string';
-
-import { useContextMenuControls } from '../../../FileBrowser';
-import { ShareInvitationContextMenu } from '../../../sharing/ShareInvitationContextMenu';
 
 interface Props {
     invitationId: string;
@@ -17,24 +14,20 @@ interface Props {
     contactName?: string;
 }
 export const DirectSharingListInvitation = ({ invitationId, volumeId, linkId, contactEmail, contactName }: Props) => {
-    const ref = useRef<HTMLButtonElement>(null);
-    const contextMenuControls = useContextMenuControls();
+    const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
+    const { createNotification } = useNotifications();
+
+    const copyShareInviteLinkUrl = () => {
+        textToClipboard(`${window.location.origin}/${volumeId}/${linkId}?invitation=${invitationId}`);
+        createNotification({
+            text: c('Info').t`Link copied to clipboard`,
+        });
+    };
 
     return (
         <>
-            <ShareInvitationContextMenu
-                key={invitationId}
-                anchorRef={ref}
-                isOpen={contextMenuControls.isOpen}
-                position={contextMenuControls.position}
-                open={contextMenuControls.open}
-                close={contextMenuControls.close}
-                volumeId={volumeId}
-                linkId={linkId}
-                invitationId={invitationId}
-            />
-            <li className="flex items-center">
-                <div className={'flex items-center my-4'}>
+            <div className="flex my-4 justify-space-between items-center">
+                <div className={'flex items-center'}>
                     <Avatar color="weak" className="mr-2">
                         {getInitials(contactName || contactEmail)}
                     </Avatar>
@@ -43,24 +36,31 @@ export const DirectSharingListInvitation = ({ invitationId, volumeId, linkId, co
                         {contactName && <span className="color-weak">{contactEmail}</span>}
                     </p>
                 </div>
-                {/*// TODO: This component bellow is fully temporary for testing purpose*/}
 
-                <Button
-                    className="ml-auto"
-                    ref={ref}
-                    shape="ghost"
-                    size="small"
-                    icon
-                    onClick={(e) => {
-                        contextMenuControls.handleContextMenu(e);
-                    }}
-                    onTouchEnd={(e) => {
-                        contextMenuControls.handleContextMenuTouch(e);
-                    }}
-                >
-                    <Icon name="three-dots-vertical" alt={c('Action').t`More options`} />
-                </Button>
-            </li>
+                <div>
+                    <DropdownButton
+                        className="self-center"
+                        ref={anchorRef}
+                        isOpen={isOpen}
+                        onClick={toggle}
+                        hasCaret
+                        shape="ghost"
+                        size="small"
+                    >
+                        {c('Info').t`Pending`}
+                    </DropdownButton>
+                    <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close}>
+                        <DropdownMenu>
+                            <DropdownMenuButton onClick={copyShareInviteLinkUrl}>
+                                <span className="flex items-center mr-14">
+                                    <Icon name="link" className="mr-2" />
+                                    {c('Action').t`Copy invite link`}
+                                </span>
+                            </DropdownMenuButton>
+                        </DropdownMenu>
+                    </Dropdown>
+                </div>
+            </div>
         </>
     );
 };
