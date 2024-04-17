@@ -144,7 +144,12 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
     const onFormResize = debounce(
         withContext((ctx) => {
             const fields = formHandle.getFields();
-            fields.forEach((field) => field.icon?.reposition());
+            fields.forEach((field) => {
+                if (field.action) {
+                    field.getBoxElement({ revalidate: true });
+                    field.icon?.reposition();
+                }
+            });
 
             if (options.form.parentElement === null || hasUnprocessedFields(options.form.parentElement)) {
                 void ctx?.service.formManager.detect({ reason: 'NewFormFieldsOnResize' });
