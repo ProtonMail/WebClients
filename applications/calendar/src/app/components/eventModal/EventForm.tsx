@@ -319,7 +319,7 @@ const EventForm = ({
     };
 
     const participantsRow = (
-        <BusySlotsSpotlight view={view}>
+        <BusySlotsSpotlight view={view} isDisplayedInPopover={!!isMinimal}>
             <IconRow icon="users" title={c('Label').t`Participants`} id={PARTICIPANTS_INPUT_ID}>
                 <ParticipantsInput
                     placeholder={c('Placeholder').t`Add participants`}
@@ -332,6 +332,7 @@ const EventForm = ({
                     collapsible={!isMinimal}
                     setParticipantError={setParticipantError}
                     onDisplayBusySlots={onDisplayBusySlots}
+                    displayBusySlots={!!isMinimal}
                     view={view}
                 />
             </IconRow>
