@@ -3,6 +3,7 @@ import React from 'react';
 import { c } from 'ttag';
 
 import { Checkbox, Info, InputFieldTwo } from '@proton/components/components';
+import { useConfig } from '@proton/components/hooks';
 import { CALENDAR_SHARE_BUSY_TIME_SLOTS } from '@proton/shared/lib/calendar/constants';
 
 import useBusyTimeSlotsAvailable from '../hooks/useBusyTimeSlotsAvailable';
@@ -28,9 +29,10 @@ const BusyTimeSlotsLabel = () => (
 );
 
 const BusyTimeSlotsCheckbox = ({ value, onChange, disabled }: Props) => {
+    const { APP_NAME } = useConfig();
     const isBusyTimeSlotsAvailable = useBusyTimeSlotsAvailable();
 
-    if (!isBusyTimeSlotsAvailable) {
+    if (!isBusyTimeSlotsAvailable || APP_NAME !== 'proton-calendar') {
         return null;
     }
 
