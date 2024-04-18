@@ -11,6 +11,11 @@ export type PassBridgeInitOptions = {
 };
 
 export interface PassBridge {
+    /**
+     * Initialize pass bridge crypto
+     * @param options arguments needed to initialize pass bridge crypto
+     * @returns a promise returning a boolean indicating if the bridge was successfully initialized
+     */
     init: (options: PassBridgeInitOptions) => Promise<boolean>;
     user: {
         /**
@@ -21,12 +26,15 @@ export interface PassBridge {
     vault: {
         /**
          * Resolves the default - oldest, active and owned - vault.
-         * If it does not exist, will create one and return it
-         * @param hadVault callback to indicate if the user had a vault
+         * If it does not exist, it returns undefined
          * @param options
          * @param options.maxAge the time it should be cached in SECONDS
          */
-        getDefault: MaxAgeMemoizedFn<(hadVault: (hadVault: boolean) => void) => Promise<Share<ShareType.Vault>>>;
+        getDefault: MaxAgeMemoizedFn<() => Promise<Share<ShareType.Vault> | undefined>>;
+        /**
+         * Create default vault
+         */
+        createDefaultVault: () => Promise<Share<ShareType.Vault>>;
     };
     alias: {
         /** Creates an alias item. Call `PassBridge.alias.getAliasOptions` in order
