@@ -374,6 +374,9 @@
       "Report a problem": [
         "Αναφορά προβλήματος"
       ],
+      "Request a call": [
+        "Ζητήστε Τηλεφωνική Επικοινωνία"
+      ],
       "Request a feature": [
         "Ζητήστε μια δυνατότητα"
       ],
@@ -953,6 +956,12 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Συνεχίστε να χρησιμοποιείτε ${ MAIL_APP_NAME }."
+      ],
+      "Continue using ${ planTitle }": [
+        "Συνεχίστε να χρησιμοποιείτε ${ planTitle }"
+      ],
+      "Continue your subscription": [
+        "Συνέχιση της συνδρομής σας"
       ]
     },
     "Checkout row": {
@@ -3315,6 +3324,9 @@
       "Loading ${ appName }": [
         "Φόρτωση ${ appName }"
       ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Φόρτωση ημερολογίου, παρακαλούμε περιμένετε. Θα μεταφερθείτε στην πλατφόρμα προγραμματισμού Calendly σε μια νέα καρτέλα."
+      ],
       "Loading preview": [
         "Φόρτωση προεπισκόπησης"
       ],
@@ -3980,6 +3992,12 @@
       "You have ${ availableCount } dedicated server available.": [
         "Έχετε ${ availableCount } διαθέσιμο αποκλειστικό διακομιστή.",
         "Έχετε ${ availableCount } διαθέσιμους αποκλειστικούς διακομιστές."
+      ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "Έχετε μια δοκιμαστική συνδρομή ${ planTitle }. Αν θέλετε να συνεχίσετε τη συνδρομή σας μετά τη δοκιμαστική περίοδο, προσθέστε έναν τρόπο πληρωμής."
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "Έχετε μια δοκιμαστική συνδρομή ${ planTitle }. Δεν απαιτείται πληρωμή αυτήν τη στιγμή. Η συνδρομή σας θα ανανεωθεί αυτόματα στο τέλος της δοκιμαστικής περιόδου."
       ],
       "You have no invoices.": [
         "Δεν έχετε τιμολόγια."
@@ -6862,9 +6880,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "Η συνδρομή σας ακυρώνεται, παρακαλούμε περιμένετε"
-      ],
-      "Downgrading your account, please wait": [
-        "Γίνεται υποβάθμιση του λογαριασμού σας, παρακαλώ περιμένετε"
       ]
     },
     "Storage": {

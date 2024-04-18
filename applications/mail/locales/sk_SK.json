@@ -631,6 +631,9 @@
       "Mark as read": [
         "Označiť ako prečítané"
       ],
+      "Mark as resolved": [
+        "Označiť ako vyriešené"
+      ],
       "Mark as unread": [
         "Označiť ako neprečítané"
       ],
@@ -897,6 +900,9 @@
       ],
       "Report phishing": [
         "Nahlásiť phishing"
+      ],
+      "Request a call": [
+        "Požiadať o hovor"
       ],
       "Request a feature": [
         "Požiadavka na funkciu"
@@ -1189,11 +1195,11 @@
       "Upgrade": [
         "Prejsť na platený plán"
       ],
-      "Upgrade now": [
-        "Aktualizovať teraz"
-      ],
       "Upgrade Now": [
         "Inovovať teraz"
+      ],
+      "Upgrade now": [
+        "Aktualizovať teraz"
       ],
       "Upload picture": [
         "Nahrať obrázok"
@@ -1690,6 +1696,12 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Pokračovať s ${ MAIL_APP_NAME }."
+      ],
+      "Continue using ${ planTitle }": [
+        "Pokračovať s ${ planTitle }"
+      ],
+      "Continue your subscription": [
+        "Pokračovať v predplatnom"
       ]
     },
     "Calendar attachment tooltip": {
@@ -6187,6 +6199,9 @@
       "Large imports can take several days.": [
         "Import veľkého množstva údajov môže trvať niekoľko dní."
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Zistite, ako ${ staySaferOnlineLink }"
+      ],
       "Learn more": [
         "Zistiť viac"
       ],
@@ -6204,6 +6219,9 @@
       ],
       "Loading ${ appName }": [
         "Načítavanie aplikácie ${ appName }"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Načítanie kalendára, počkajte, prosím. V novej karte budete presmerovaní na našu plánovaciu platformu Calendly."
       ],
       "Loading message": [
         "Nahrávam správu"
@@ -6639,6 +6657,9 @@
       ],
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "Údaje, ktoré ste zadali do konceptu, sa nemusia uložiť, ak stránku opustíte."
+      ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "Informácie, ktoré boli zverejnené, unikli zo služby tretej strany. Vaše informácie o účte ${ BRAND_NAME } zostávajú zabezpečené a zašifrované. ${ learnMoreLink }"
       ],
       "The local database is being prepared": [
         "Lokálna databáza sa pripravuje"
@@ -7084,6 +7105,12 @@
         "Máte **${ count } správ** označených týmto štítkom",
         "Máte **${ count } správ** označených týmto štítkom"
       ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "Máte skúšobné predplatné ${ planTitle }. Ak chcete pokračovať v predplatnom aj po skončení skúšobnej lehoty, pridajte spôsob platby."
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "Máte skúšobné predplatné ${ planTitle }. V tejto chvíli sa nevyžaduje žiadna platba. Vaše predplatné sa automaticky obnoví na konci skúšobného obdobia."
+      ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
         "Nedali ste svojmu emailu žiadny predmet. Chcete správu napriek tomu odoslať?"
       ],
@@ -7192,11 +7219,20 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Vaše údaje sú pripravené na import z ${ importedEmailAddressStrong } do vášho účtu ${ BRAND_NAME }."
       ],
+      "Your email address and password were leaked:": [
+        "Unikla vaša emailová adresa a heslo:"
+      ],
+      "Your email address was exposed:": [
+        "Vaša emailová adresa bola prezradená:"
+      ],
       "Your email will only be used for this one-time verification.": [
         "Váš email bude použitý iba pre toto jednorazové overenie."
       ],
       "Your files will be encrypted and then saved": [
         "Vaše súbory budú zašifrované a potom uložené"
+      ],
+      "Your information was found on ${ displayedDate }": [
+        "Vaše informácie boli nájdené dňa ${ displayedDate }"
       ],
       "Your login information will not be saved after the import is completed.": [
         "Po dokončení importu nebudú vaše prihlasovacie údaje uložené."
@@ -7215,6 +7251,9 @@
       ],
       "Your next billing date is ${ renewalTime }.": [
         "Váš ďalší dátum fakturácie je ${ renewalTime }"
+      ],
+      "Your password was leaked:": [
+        "Vaše heslo bolo prezradené:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Vaše telefónne číslo bude použité iba pre toto jednorazové overenie."
@@ -7697,7 +7736,7 @@
         "Nabudúce nezobrazovať"
       ],
       "e.g., Amazon, eBay, Etsy": [
-        "napríklad Amazon, eBay, Etsy"
+        "napr. Amazon, eBay, Etsy"
       ],
       "Email": [
         "Email"
@@ -8277,6 +8316,9 @@
       ],
       "Starred": [
         "S hviezdičkou"
+      ],
+      "stay safer online": [
+        "zostaňte bezpečnejší online"
       ],
       "Terms": [
         "Podmienky"
@@ -9515,12 +9557,6 @@
       "${ Filter.Name } created": [
         "${ Filter.Name } bol vytvorený"
       ],
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } bol zakázaný"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } bol povolený"
-      ],
       "Block removed": [
         "Blokovať odstránené"
       ],
@@ -10134,6 +10170,9 @@
       ]
     },
     "Security Center - Info": {
+      "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
+        "Dostávajte upozornenia, keď dôjde k úniku vášho hesla alebo iných údajov zo služieb tretích strán. ${ learnMoreLink }"
+      ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Naše špičkové bezpečnostné riešenie založené na umelej inteligencii určené pre používateľov, ktorí hľadajú zvýšenú ochranu svojich účtov. ${ learnMoreLink }"
       ],
@@ -10769,9 +10808,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "Rušenie vášho predplatného, počkajte prosím"
-      ],
-      "Downgrading your account, please wait": [
-        "Prebieha prechod na nižší plán, prosím čakajte"
       ]
     },
     "Status": {
@@ -11752,6 +11788,9 @@
       "Deleting contacts": [
         "Mazanie kontaktov"
       ],
+      "Details": [
+        "Podrobnosti"
+      ],
       "Don't give spam a chance": [
         "Nedajte spamu šancu"
       ],
@@ -11991,6 +12030,9 @@
       ],
       "No attachment found": [
         "Nenájdená žiadna príloha"
+      ],
+      "No breaches detected": [
+        "Nebol zistený únik"
       ],
       "No trackers found": [
         "Neboli nájdené žiadne trackery."
@@ -12249,6 +12291,9 @@
       ],
       "Your changes are not synced yet": [
         "Vaše zmeny zatiaľ nie sú synchronizované"
+      ],
+      "Your exposed information": [
+        "Vaše odhalené informácie"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Vaša bezplatná skúšobná verzia služby Mail Plus končí ${ textDate }"

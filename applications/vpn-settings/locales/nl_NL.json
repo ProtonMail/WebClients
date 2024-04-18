@@ -374,6 +374,9 @@
       "Report a problem": [
         "Meld een probleem"
       ],
+      "Request a call": [
+        "Telefoongesprek aanvragen"
+      ],
       "Request a feature": [
         "Vraag een functie aan"
       ],
@@ -953,6 +956,12 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Blijf ${ MAIL_APP_NAME } gebruiken."
+      ],
+      "Continue using ${ planTitle }": [
+        "Blijf ${ planTitle } gebruiken"
+      ],
+      "Continue your subscription": [
+        "Uw abonnement voortzetten"
       ]
     },
     "Checkout row": {
@@ -3315,6 +3324,9 @@
       "Loading ${ appName }": [
         "${ appName } laden"
       ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Laden van kalender, gelieve te wachten. U wordt automatisch doorverwezen naar onze agendaplanner Calendly in een nieuw tabblad."
+      ],
       "Loading preview": [
         "Voorbeeld laden"
       ],
@@ -3980,6 +3992,12 @@
       "You have ${ availableCount } dedicated server available.": [
         "U heeft ${ availableCount } toegewijde server beschikbaar.",
         "U heeft ${ availableCount } toegewijde servers beschikbaar."
+      ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "Je hebt een Trial ${ planTitle } abonnement. Als je na de proefperiode door wilt gaan met je abonnement, voeg een betaalmethode toe."
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "Je hebt een trial ${ planTitle } abonnement. Er is geen betaling vereist op dit moment. Uw abonnement wordt automatisch verlengd aan het einde van de proefperiode."
       ],
       "You have no invoices.": [
         "U heeft geen facturen."
@@ -6862,9 +6880,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "Uw abonnement wordt geannuleerd, even geduld"
-      ],
-      "Downgrading your account, please wait": [
-        "Account downgraden, even geduld"
       ]
     },
     "Storage": {

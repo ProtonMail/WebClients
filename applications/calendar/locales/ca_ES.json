@@ -387,6 +387,9 @@
       "Manage labels": [
         "Gestiona les etiquetes"
       ],
+      "Mark as resolved": [
+        "Marca com a resolt"
+      ],
       "Mark for deletion": [
         "Marca per a l'eliminació"
       ],
@@ -663,10 +666,10 @@
       "Upgrade": [
         "Millora"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Millora ara"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Millora ara"
       ],
       "Upload picture": [
@@ -1088,6 +1091,9 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continua utilitzant ${ MAIL_APP_NAME }."
+      ],
+      "Continue using ${ planTitle }": [
+        "Continua utilitzant ${ planTitle }"
       ]
     },
     "Calendar access select label": {
@@ -4561,6 +4567,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Seleccioneu quina adreça o adreces de correu electrònic cal afegir a ${ groupName }."
       ],
+      "Please try again in a few moments": [
+        "Torneu-ho a intentar en uns instants."
+      ],
       "Please try again using a different payment method, or contact your bank.": [
         "Torneu-ho a provar amb un mètode de pagament diferent o poseu-vos en contacte amb el vostre banc."
       ],
@@ -6740,12 +6749,6 @@
       ]
     },
     "Notification": {
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } s'ha desactivat"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } s'ha habilitat"
-      ],
       "Contact group created": [
         "Grup de contactes creat"
       ],
@@ -7860,11 +7863,6 @@
         "Amb colors d'esdeveniments personalitzables, podeu codificar amb colors el caos i conquerir el vostre dia."
       ]
     },
-    "State": {
-      "Downgrading your account, please wait": [
-        "S'està passant a un pla inferior. Espereu un moment."
-      ]
-    },
     "Storage": {
       "Release notes": [
         "Notes de la versió"
@@ -8528,6 +8526,9 @@
       ],
       "Deleting contacts": [
         "Eliminant contactes"
+      ],
+      "Details": [
+        "Detalls"
       ],
       "Downgrade account": [
         "Passa a un pla inferior"

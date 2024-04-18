@@ -663,11 +663,11 @@
       "Upgrade": [
         "ტარიფის აწევა"
       ],
-      "Upgrade now": [
-        "ტარიფის განახლება"
-      ],
       "Upgrade Now": [
         "ახლა გაუმჯობესება"
+      ],
+      "Upgrade now": [
+        "ტარიფის განახლება"
       ],
       "Upload picture": [
         "სურათის ატვრთვა"
@@ -1097,6 +1097,9 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME }-ის მოხმარების გაგრძელება."
+      ],
+      "Continue using ${ planTitle }": [
+        "${ planTitle }-ის მოხმარების გაგრძელება"
       ]
     },
     "Calendar access select label": {
@@ -5626,6 +5629,9 @@
       "Request an invite": [
         "მოსაწვევის მოთხოვნა"
       ],
+      "stay safer online": [
+        "იყავით უსაფრთხოდ ინტერნეტში"
+      ],
       "What’s this?": [
         "რა არის ეს?"
       ]
@@ -6779,12 +6785,6 @@
       ]
     },
     "Notification": {
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } გაითიშა"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } ჩაირთო"
-      ],
       "Contact group created": [
         "კონტაქტების ჯგუფი შეიქმნა"
       ],
@@ -7911,9 +7911,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "მიმდინარეობს თქვენი გამოწერის გაუქმება. მოითმინეთ"
-      ],
-      "Downgrading your account, please wait": [
-        "მიმდინარეობს თქვენი პაკეტის დაქვეითება. გთხოვთ მოითმინოთ"
       ]
     },
     "Storage": {
@@ -8713,6 +8710,9 @@
       ],
       "Night theme": [
         "ღამის თემა"
+      ],
+      "No breaches detected": [
+        "გაჟონვები აღმოჩენილი არაა"
       ],
       "Notes": [
         "შენიშვნები"

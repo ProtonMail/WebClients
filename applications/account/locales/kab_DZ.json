@@ -1358,6 +1358,9 @@
       "Continue using ${ MAIL_APP_NAME }.": [
         "Kemmel s useqdec ${ MAIL_APP_NAME }."
       ],
+      "Continue using ${ planTitle }": [
+        "Kemmel s useqdec ${ planTitle }"
+      ],
       "Copy": [
         "Nɣel"
       ],
@@ -7324,9 +7327,6 @@
       ]
     },
     "Log preference": {
-      "Enable ${ PROTON_SENTINEL_NAME }": [
-        "Rmed ${ PROTON_SENTINEL_NAME }"
-      ],
       "Enable advanced logs": [
         "Rmed iɣmisen leqqayen"
       ],
@@ -8078,12 +8078,6 @@
     "Notification": {
       "${ Filter.Name } created": [
         "${ Filter.Name } yettusnulfa-d"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } yensa"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } yettwarmed"
       ],
       "A disabled address cannot be default": [
         "Tansa yensan ur tezmir ara ad tili d tansa tamezwert"
@@ -9205,11 +9199,6 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Nced-d imeddukkal ɣer ${ BRAND_NAME }"
-      ]
-    },
-    "State": {
-      "Downgrading your account, please wait": [
-        "Yettili-d usader n lqem n umiḍan-ik.im, ttxil rǧu"
       ]
     },
     "Step in filter modal": {

@@ -143,6 +143,9 @@
       "Delete Gateway": [
         "Odstrániť bránu"
       ],
+      "Delete logo": [
+        "Vymazať logo"
+      ],
       "Delete user": [
         "Vymazať užívateľa"
       ],
@@ -284,6 +287,9 @@
       "Invite user": [
         "Pozvite užívateľa"
       ],
+      "Keep logo": [
+        "Ponechať logo"
+      ],
       "Keep my Plus subscription": [
         "Ponechať moje predplatné Plus"
       ],
@@ -374,6 +380,9 @@
       "Report a problem": [
         "Nahlásiť problém"
       ],
+      "Request a call": [
+        "Požiadať o hovor"
+      ],
       "Request a feature": [
         "Požiadavka na funkciu"
       ],
@@ -437,6 +446,9 @@
       "Select country": [
         "Vyberte krajinu"
       ],
+      "select file": [
+        "vyberte súbor"
+      ],
       "Select file": [
         "Vyberte súbor"
       ],
@@ -488,6 +500,9 @@
       "Signing in": [
         "Prihlasuje sa"
       ],
+      "Start live chat": [
+        "Spustiť živý chat"
+      ],
       "Stop using single sign-on": [
         "Ukončiť používanie jednotného prihlásenia"
       ],
@@ -529,6 +544,12 @@
       ],
       "Upgrade your plan": [
         "Inovujte svoj plán"
+      ],
+      "Upload": [
+        "Nahrať"
+      ],
+      "Upload icon": [
+        "Nahrať ikonu"
       ],
       "Use ${ label } theme": [
         "Použiť motív ${ label }"
@@ -965,6 +986,12 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Pokračovať s ${ MAIL_APP_NAME }."
+      ],
+      "Continue using ${ planTitle }": [
+        "Pokračovať s ${ planTitle }"
+      ],
+      "Continue your subscription": [
+        "Pokračovať v predplatnom"
       ]
     },
     "Checkout row": {
@@ -2012,6 +2039,12 @@
       "Error connecting to the Bitcoin API.": [
         "Chyba pri pripojovaní k Bitcoin API."
       ],
+      "Failed to process the logo": [
+        "Spracovanie loga zlyhalo"
+      ],
+      "File too large. Your logo must be 30 KB or smaller.": [
+        "Súbor je príliš veľký. Vaše logo musí mať 30 KB alebo menej."
+      ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Ak čas v TV vypršal, kliknite na Obnoviť na vašej TV a znovu zadajte váš kód."
       ],
@@ -2023,6 +2056,9 @@
       ],
       "Impossible to rename the gateway": [
         "Nie je možné premenovať bránu"
+      ],
+      "Incorrect file type. Upload a file in PNG or JPEG format.": [
+        "Nesprávny typ súboru. Nahrajte súbor vo formáte PNG alebo JPEG."
       ],
       "Incorrect login credentials. Please try again.": [
         "Nesprávne prihlasovacie údaje. Skúste to prosím znova."
@@ -2059,6 +2095,9 @@
       ],
       "Name does not match": [
         "Meno sa nezhoduje"
+      ],
+      "No image selected": [
+        "Nebol vybraný žiaden obrázok"
       ],
       "Not a valid number": [
         "Neplatné číslo"
@@ -2111,6 +2150,9 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Ak chcete spravovať viacerých používateľov, prejdite na obchodný plán s viac ako 1 používateľom."
       ],
+      "Please upload a square file": [
+        "Nahrajte štvorcový obrázok, prosím."
+      ],
       "Please upload an xml file": [
         "Nahrajte XML súbor"
       ],
@@ -2137,6 +2179,12 @@
       ],
       "The email addresses do not match": [
         "Emailové adresy sa nezhodujú"
+      ],
+      "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
+        "Súbor je príliš veľký, maximálna veľkosť je ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }"
+      ],
+      "The file is too small, the minimum size is ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }": [
+        "Súbor je príliš malý, minimálna veľkosť je ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }"
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Minimálna výška kreditu, ktorý je možné pridať, je ${ price }"
@@ -3371,11 +3419,17 @@
       "Link copied to clipboard": [
         "Odkaz bol skopírovaný do schránky"
       ],
+      "Live chat": [
+        "Živý chat"
+      ],
       "Loading": [
         "Načítavanie"
       ],
       "Loading ${ appName }": [
         "Načítavanie aplikácie ${ appName }"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Načítanie kalendára, počkajte, prosím. V novej karte budete presmerovaní na našu plánovaciu platformu Calendly."
       ],
       "Loading preview": [
         "Načítanie náhľadu"
@@ -3545,6 +3599,9 @@
       "Plus or Visionary subscription required": [
         "Je vyžadované predplatné Plus alebo Visionary"
       ],
+      "Preview": [
+        "Ukážka"
+      ],
       "Preview failed to be loaded": [
         "Náhľad sa nepodarilo načítať"
       ],
@@ -3574,6 +3631,9 @@
       ],
       "Remember to share the user's sign in details with them.": [
         "Nezabudnite s nimi zdieľať prihlasovacie údaje používateľa."
+      ],
+      "Request a phone call": [
+        "Požiadať o telefonický hovor"
       ],
       "Resend verification email": [
         "Znovu zaslať overovací email"
@@ -4067,6 +4127,12 @@
         "Máte dostupných ${ availableCount } dedikovaných serverov.",
         "Máte dostupných ${ availableCount } dedikovaných serverov."
       ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "Máte skúšobné predplatné ${ planTitle }. Ak chcete pokračovať v predplatnom aj po skončení skúšobnej lehoty, pridajte spôsob platby."
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "Máte skúšobné predplatné ${ planTitle }. V tejto chvíli sa nevyžaduje žiadna platba. Vaše predplatné sa automaticky obnoví na konci skúšobného obdobia."
+      ],
       "You have no invoices.": [
         "Nemáte žiadne faktúry."
       ],
@@ -4153,6 +4219,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Vaše predplatné je spravované Mozillou. Kontaktujte prosím Mozilla podporu."
+      ],
+      "Zoom meeting": [
+        "Zoom míting"
       ]
     },
     "Info for cash payment method": {
@@ -4468,6 +4537,9 @@
       ],
       "Level for NetShield blocker filtering": [
         "Úroveň pre filtrovanie blokovania NetShield"
+      ],
+      "Logo": [
+        "Logo"
       ],
       "Mailbox password": [
         "Heslo k poštovej schránke"
@@ -7048,9 +7120,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "Rušenie vášho predplatného, počkajte prosím"
-      ],
-      "Downgrading your account, please wait": [
-        "Prebieha prechod na nižší plán, prosím čakajte"
       ]
     },
     "Storage": {
@@ -7757,6 +7826,9 @@
       "Delete address permanently?": [
         "Vymazať adresu natrvalo?"
       ],
+      "Delete organization logo?": [
+        "Vymazať logo organizácie?"
+      ],
       "Delete the server (you will still be able to recover it for ${ days } day)": [
         "Vymazať server (budete ho stále môcť obnoviť o ${ days } deň)",
         "Vymazať server (budete ho stále môcť obnoviť o ${ days } dni)",
@@ -7864,6 +7936,9 @@
       ],
       "Gift code": [
         "Darčekový kód"
+      ],
+      "How to choose a good icon": [
+        "Ako vybrať dobrú ikonu"
       ],
       "Human verification": [
         "Overenie, že nie ste robot"
@@ -8077,6 +8152,9 @@
       ],
       "Upload CSV file to create multiple accounts": [
         "Nahrajte CSV súbor, aby ste mohli vytvoriť viacero účtov"
+      ],
+      "Upload your organization’s logo": [
+        "Nahrajte logo vašej organizácie"
       ],
       "Users": [
         "Používatelia"

@@ -1174,11 +1174,11 @@
       "Upgrade": [
         "升級"
       ],
-      "Upgrade now": [
-        "立即升級"
-      ],
       "Upgrade Now": [
         "請升級"
+      ],
+      "Upgrade now": [
+        "立即升級"
       ],
       "Upload picture": [
         "上載圖像"
@@ -4666,6 +4666,9 @@
       ],
       "No credit card required.": [
         "毋須信用卡."
+      ],
+      "Start free trial": [
+        "開始免費試用"
       ],
       "Try the app-new desktop app": [
         "測試新的應用程式 - 新的桌面應用程式"
@@ -8999,12 +9002,6 @@
       "${ Filter.Name } created": [
         "${ Filter.Name } 已創建"
       ],
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } 已停用。"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } 已啟用。"
-      ],
       "Block removed": [
         "攔截已移除"
       ],
@@ -10157,9 +10154,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "請稍後，正在取消您的訂閱"
-      ],
-      "Downgrading your account, please wait": [
-        "正在降級您的帳號，請稍候"
       ]
     },
     "Status": {

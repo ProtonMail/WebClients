@@ -520,7 +520,7 @@
         "L'invitation n'a pas pu être renvoyée."
       ],
       "Failed to delete selected items": [
-        "Les éléments sélectionnés n'ont pas été supprimés."
+        "Les éléments sélectionnés n'ont pas pu être supprimés."
       ],
       "Failed to edit organization settings": [
         "La modification des paramètres de votre organisation n'a pas abouti."
@@ -1064,7 +1064,7 @@
         "Les mots de passe datant de plus de ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } semaines sont automatiquement supprimés de l'historique."
       ],
       "Permanently deleting selected items": [
-        "Suppression permanente des éléments sélectionnés"
+        "Suppression définitive des éléments sélectionnés"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Le code PIN a été enregistré. Utilisez-le pour débloquer ${ PASS_APP_NAME }."
@@ -2050,7 +2050,7 @@
         "Une erreur s'est produite pendant l'exportation de vos données."
       ],
       "At least one email address is required": [
-        "Indiquez au moins une adresse e-mail."
+        "Au moins une adresse e-mail est nécessaire."
       ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Il n'est pas possible de récupérer les boites aux lettres de cet alias pour l'instant."

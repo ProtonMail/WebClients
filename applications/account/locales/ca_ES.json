@@ -620,6 +620,9 @@
       "Mark as default": [
         "Marca per defecte"
       ],
+      "Mark as resolved": [
+        "Marca com a resolt"
+      ],
       "mark emails as": [
         "marcar correus electrònics com"
       ],
@@ -995,9 +998,6 @@
       "Unlock": [
         "Desbloquejar"
       ],
-      "Unlock Breach Report": [
-        "Desbloquegi l'informe d'incompliment"
-      ],
       "Unlock data": [
         "Desbloqueja les dades"
       ],
@@ -1033,6 +1033,9 @@
       ],
       "Upgrade your plan": [
         "Milloreu el vostre pla"
+      ],
+      "Upload": [
+        "Carrega"
       ],
       "Upload picture": [
         "Carrega la imatge"
@@ -1084,6 +1087,9 @@
       ],
       "Void all recovery files?": [
         "Voleu anul·lar tots els fitxers de recuperació?"
+      ],
+      "Welcome": [
+        "Us donem la benvinguda"
       ],
       "What do I get?": [
         "Què n'obtinc?"
@@ -1619,6 +1625,9 @@
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continua utilitzant ${ MAIL_APP_NAME }."
+      ],
+      "Continue using ${ planTitle }": [
+        "Continua utilitzant ${ planTitle }"
       ],
       "Copy": [
         "Copia"
@@ -3107,9 +3116,6 @@
       "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
         "Per a esborrar el peu de pàgina de ${ MAIL_APP_NAME }, milloreu i aconseguiu encara més característiques prèmium."
       ],
-      "To view the full report including personalized recommendations, upgrade to a paid plan.": [
-        "Per veure l'informe complet amb recomanacions personalitzades, subscrigui's a un pla de pagament."
-      ],
       "Track the status and activity of your referrals.": [
         "Feu un seguiment de l'estat i l'activitat de les vostres recomanacions."
       ],
@@ -3899,6 +3905,9 @@
       ],
       "No external key retrieved for user is valid for sending": [
         "No hi ha cap clau externa recuperada per l'usuari vàlida per a enviar"
+      ],
+      "No image selected": [
+        "No s'ha seleccionat cap imatge."
       ],
       "No valid address found": [
         "No s’ha trobat una adreça vàlida"
@@ -6748,6 +6757,9 @@
       "Link type": [
         "Tipus d'enllaç"
       ],
+      "Live chat": [
+        "Xat en directe"
+      ],
       "Loaded content is being protected by our proxy when tracker protection is activated.": [
         "El contingut carregat està protegit pel nostre servidor intermediari quan s'activa la protecció contra rastrejadors."
       ],
@@ -7020,6 +7032,9 @@
       ],
       "Plus or Visionary subscription required": [
         "Es requereix una subscripció Plus o Visionary."
+      ],
+      "Preview": [
+        "Vista prèvia"
       ],
       "Preview failed to be loaded": [
         "La previsualització no s'ha pogut carregar."
@@ -8461,6 +8476,9 @@
       "Awarded": [
         "Premiat"
       ],
+      "Beta": [
+        "Beta"
+      ],
       "Billing address": [
         "Adreça de facturació"
       ],
@@ -8838,6 +8856,9 @@
       ],
       "Link label": [
         "Etiqueta d'enllaç"
+      ],
+      "Logo": [
+        "Logo"
       ],
       "Mail Server (IMAP)": [
         "Servidor de correu (IMAP)"
@@ -9579,9 +9600,6 @@
       ]
     },
     "Log preference": {
-      "Enable ${ PROTON_SENTINEL_NAME }": [
-        "Habilita ${ PROTON_SENTINEL_NAME }"
-      ],
       "Enable advanced logs": [
         "Activa els registres avançats"
       ],
@@ -10901,12 +10919,6 @@
       "${ Filter.Name } created": [
         "S'ha creat ${ Filter.Name }"
       ],
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } s'ha desactivat"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } s'ha habilitat"
-      ],
       "A disabled address cannot be default": [
         "Una adreça desactivada no pot ser una adreça per defecte."
       ],
@@ -12089,6 +12101,14 @@
         "Usuari"
       ]
     },
+    "scim: Action": {
+      "Configure SCIM": [
+        "Configura SCIM"
+      ],
+      "Generate token": [
+        "Genera un token"
+      ]
+    },
     "Select file": {
       "Upload CSV file": [
         "Carrega un fitxer CSV"
@@ -12760,11 +12780,6 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Convida amistats a ${ BRAND_NAME }"
-      ]
-    },
-    "State": {
-      "Downgrading your account, please wait": [
-        "S'està passant a un pla inferior. Espereu un moment."
       ]
     },
     "Step in filter modal": {
@@ -13792,6 +13807,9 @@
       "Delete version history?": [
         "Voleu eliminar l'historial de versions?"
       ],
+      "Details": [
+        "Detalls"
+      ],
       "Disable ${ email }": [
         "Desactivar ${ email }"
       ],
@@ -13921,6 +13939,12 @@
       ],
       "Folders and labels": [
         "Carpetes i etiquetes"
+      ],
+      "For Linux": [
+        "Per a Linux"
+      ],
+      "For macOS": [
+        "Per a macOS"
       ],
       "Forward and auto-reply": [
         "Reenviament i resposta automàtica"
@@ -14067,6 +14091,9 @@
       "No recovery method": [
         "No hi ha mètode de recuperació"
       ],
+      "Open": [
+        "Obre"
+      ],
       "Open actions dropdown": [
         "Obrir el desplegable d'accions"
       ],
@@ -14177,6 +14204,9 @@
       ],
       "Reset password?": [
         "Restablir la contrasenya?"
+      ],
+      "Resolved": [
+        "Resolt"
       ],
       "Restore administrator privileges": [
         "Restaurar els privilegis d'administrador"

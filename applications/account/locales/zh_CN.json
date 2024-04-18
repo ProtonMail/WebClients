@@ -942,9 +942,6 @@
       "Unlock": [
         "解锁"
       ],
-      "Unlock Breach Report": [
-        "解锁数据泄露报告"
-      ],
       "Unlock data": [
         "解锁数据"
       ],
@@ -2973,9 +2970,6 @@
       ],
       "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
         "要删除 ${ MAIL_APP_NAME } 页脚，请升级并解锁更多高级功能。"
-      ],
-      "To view the full report including personalized recommendations, upgrade to a paid plan.": [
-        "查看全文报告，包括个性化建议。请升级为付费计划。"
       ],
       "Track the status and activity of your referrals.": [
         "实时跟踪已发出的邀请动态。"
@@ -8928,9 +8922,6 @@
       ]
     },
     "Log preference": {
-      "Enable ${ PROTON_SENTINEL_NAME }": [
-        "启用 ${ PROTON_SENTINEL_NAME }"
-      ],
       "Enable advanced logs": [
         "开启详细日志"
       ],
@@ -10091,12 +10082,6 @@
     "Notification": {
       "${ Filter.Name } created": [
         "${ Filter.Name } 规则已创建"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } 已停用"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } 已启用"
       ],
       "A disabled address cannot be default": [
         "已停用的地址不能作为首选地址"
@@ -11553,11 +11538,6 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "邀请好友注册 ${ BRAND_NAME }"
-      ]
-    },
-    "State": {
-      "Downgrading your account, please wait": [
-        "正在降级账户，请稍候"
       ]
     },
     "Step in filter modal": {

@@ -749,6 +749,9 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Folytatás ezzel: ${ MAIL_APP_NAME }."
+      ],
+      "Continue using ${ planTitle }": [
+        "Folytatás ezzel: ${ planTitle }"
       ]
     },
     "Checkout row": {
@@ -5332,11 +5335,6 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Hívjon meg barátokat a ${ BRAND_NAME }ba"
-      ]
-    },
-    "State": {
-      "Downgrading your account, please wait": [
-        "Csomag átállítás folyamatban, kérjük várjon"
       ]
     },
     "Storage": {

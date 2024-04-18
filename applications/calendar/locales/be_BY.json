@@ -396,9 +396,6 @@
       "Manage labels": [
         "Кіраванне меткамі"
       ],
-      "Mark as open": [
-        "Пазначыць як адкрытае"
-      ],
       "Mark as resolved": [
         "Пазначыць як вырашанае"
       ],
@@ -684,11 +681,11 @@
       "Upgrade": [
         "Палепшыць"
       ],
-      "Upgrade now": [
-        "Палепшыць зараз"
-      ],
       "Upgrade Now": [
         "Палепшыць"
+      ],
+      "Upgrade now": [
+        "Палепшыць зараз"
       ],
       "Upload picture": [
         "Запампаваць малюнак"
@@ -2414,9 +2411,6 @@
       "Boost efficiency and track your time by color-coding events by category or your energy levels. Get this and much more with a paid plan.": [
         "Павялічце эфектыўнасць і сачыце за сваім часам кадзіруючы колерам падзеі пры дапамозе катэгорый або сваім энергетычным узроўнем. Атрымайце гэту і многія іншыя функцыі з платным тарыфным планам."
       ],
-      "Breach alerts and reports are available with a paid plan. Upgrade for immediate access.": [
-        "Папярэджанні ўцечкі і справаздачы даступны з платным тарыфным планам. Палепшыце сваю падпіску, каб неадкладна атрымаць доступ да гэтай функцыі."
-      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Расшыфроўка кантактаў... Гэта можа заняць некалькі хвілін. Пасля завяршэння працэсу ў вас будзе магчымасць спампаваць файл з усімі экспартаванымі кантактамі."
       ],
@@ -2476,9 +2470,6 @@
       ],
       "Your account and data recovery methods are set.": [
         "Спосабы аднаўлення вашага ўліковага запісу зададзены."
-      ],
-      "Your personal data was leaked by an online service in a data breach. View full details and get recommended actions.": [
-        "Парушэнне вашых асабістых даных адбылося праз сэрвіс у інтэрнэце ў выніку ўцечкі даных. Азнаёмцеся з падрабязнасцямі і прыміце неабходныя меры."
       ]
     },
     "description": {
@@ -4332,9 +4323,6 @@
       "Billing cycle: ${ text }": [
         "Перыяд аплаты: ${ text }"
       ],
-      "Breach Alert": [
-        "Папярэджанні ўцечкі"
-      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Пры пераходзе на бясплатны тарыфны план вы незваротна страціце гэтыя перавагі, нават калі ў будучыні вы зноў пяройдзеце на яго."
       ],
@@ -5942,6 +5930,11 @@
         "Ваша падпіска завяршылася. ${ cta } і пазбегнуць страты даных."
       ]
     },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Уключыць ${ reason }"
+      ]
+    },
     "Mail import summary": {
       "Import all messages from ${ itemsToImportCount } folder and label them as": [
         "Імпартаваць усе паведамленні з ${ itemsToImportCount } папкі і пазначыць іх як",
@@ -7082,11 +7075,11 @@
       ]
     },
     "Notification": {
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } было адключана"
+      "${ reason } has been disabled": [
+        "${ reason } было адключана"
       ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } было ўключана"
+      "${ reason } has been enabled": [
+        "${ reason } было ўключана"
       ],
       "Contact group created": [
         "Група кантактаў створана"
@@ -7785,8 +7778,8 @@
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel цяпер **актыўны** і ахоўвае ваш уліковы запіс."
       ],
-      "Your information was found in at least one data breach. Turn on Breach Alert to view details and take action. ${ learnMoreLink }": [
-        "Вашы звесткі былі знойдзены прынамсі ў адной уцечцы даных. Уключыце функцыю \"Папярэджанне ўцечкі\", каб паглядзець падрабязнасці і прыняць адпаведныя дзеянні. ${ learnMoreLink }"
+      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLink }": [
+        "Вашы звесткі былі знойдзены прынамсі ў адной уцечцы даных. Уключыце ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці і прыняць адпаведныя дзеянні. ${ learnMoreLink }"
       ]
     },
     "Select files": {
@@ -8322,9 +8315,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "Скасаванне вашай падпіскі. Пачакайце..."
-      ],
-      "Downgrading your account, please wait": [
-        "Паніжэнне вашага ўліковага запісу. Пачакайце..."
       ]
     },
     "Storage": {
@@ -8943,9 +8933,6 @@
       "Birthday": [
         "Дзень нараджэння"
       ],
-      "Breach Alert": [
-        "Папярэджанні ўцечкі"
-      ],
       "Calendar": [
         "Каляндар"
       ],
@@ -9332,9 +9319,6 @@
       ],
       "Start import process": [
         "Пачаць працэс імпартавання"
-      ],
-      "Stay safer online": [
-        "Заставайцеся абароненымі ў інтэрнэце"
       ],
       "Summary": [
         "Зводка"

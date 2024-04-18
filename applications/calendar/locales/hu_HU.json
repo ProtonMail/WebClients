@@ -654,10 +654,10 @@
       "Upgrade": [
         "Csomagváltás"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Váltás nagyobb csomagra"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Váltás nagyobb csomagra"
       ],
       "Upload picture": [
@@ -1010,6 +1010,9 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Folytatás ezzel: ${ MAIL_APP_NAME }."
+      ],
+      "Continue using ${ planTitle }": [
+        "Folytatás ezzel: ${ planTitle }"
       ]
     },
     "Calendar access select label": {
@@ -6125,12 +6128,6 @@
       ]
     },
     "Notification": {
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } letiltva"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } engedélyezésre került"
-      ],
       "Contact group created": [
         "Névjegy csoport létrehozva"
       ],
@@ -7094,11 +7091,6 @@
       ],
       "Search for events": [
         "Eseményekre keresés"
-      ]
-    },
-    "State": {
-      "Downgrading your account, please wait": [
-        "Csomag átállítás folyamatban, kérjük várjon"
       ]
     },
     "Storage": {

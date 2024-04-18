@@ -247,7 +247,7 @@
         "Sunting"
       ],
       "Edit email address": [
-        "Ubah alamat email"
+        "Sunting alamat email"
       ],
       "Edit label": [
         "Sunting label"
@@ -386,9 +386,6 @@
       ],
       "Manage labels": [
         "Kelola label"
-      ],
-      "Mark as open": [
-        "Tandai sebagai terbuka"
       ],
       "Mark as resolved": [
         "Tandai sebagai terselesaikan"
@@ -675,11 +672,11 @@
       "Upgrade": [
         "Tingkatkan"
       ],
-      "Upgrade now": [
-        "Tingkatkan sekarang"
-      ],
       "Upgrade Now": [
         "Tingkatkan Sekarang"
+      ],
+      "Upgrade now": [
+        "Tingkatkan sekarang"
       ],
       "Upload picture": [
         "Unggah gambar"
@@ -2354,9 +2351,6 @@
       "Boost efficiency and track your time by color-coding events by category or your energy levels. Get this and much more with a paid plan.": [
         "Tingkatkan efisiensi dan lacak waktu Anda dengan memberi kode warna pada acara berdasarkan kategori atau tingkat energi Anda. Dapatkan ini dan banyak lagi dengan paket berbayar."
       ],
-      "Breach alerts and reports are available with a paid plan. Upgrade for immediate access.": [
-        "Peringatan dan laporan kebocoran tersedia dalam paket berbayar. Tingkatkan akun Anda untuk memperoleh akses ke kedua fitur ini dengan segera."
-      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Mendekripsi kontak… Proses ini dapat memakan waktu hingga beberapa menit. Setelah selesai, Anda akan dapat mengunduh berkas yang berisi seluruh kontak yang Anda ekspor."
       ],
@@ -2416,9 +2410,6 @@
       ],
       "Your account and data recovery methods are set.": [
         "Metode pemulihan akun dan data Anda telah diatur."
-      ],
-      "Your personal data was leaked by an online service in a data breach. View full details and get recommended actions.": [
-        "Data pribadi Anda telah dibocorkan oleh layanan online tertentu dalam insiden kebocoran data. Lihat rincian insiden ini secara penuh dan dapatkan tindakan yang disarankan."
       ]
     },
     "description": {
@@ -2992,7 +2983,7 @@
         "Alamat mungkin salah ketik"
       ],
       "The email addresses do not match": [
-        "Alamat email tidak cocok"
+        "Alamat email tidak sesuai"
       ],
       "The folder name is invalid. Please choose a different name.": [
         "Nama folder tidak valid. Silakan pilih nama lain."
@@ -4105,7 +4096,7 @@
         "Semua orang yang memiliki tautan ini akan dapat melihat apakah Anda sedang sibuk atau tidak pada kalender Anda. Meskipun demikian, mereka tidak akan dapat melihat berbagai rincian yang ada seperti judul acara, lokasi acara, atau daftar peserta."
       ],
       "Are you sure you want to discard your import?": [
-        "Apakah Anda yakin ingin mengabaikan pengimporan Anda?"
+        "Apakah Anda yakin ingin membuang impor Anda?"
       ],
       "Attention required": [
         "Diperlukan perhatian"
@@ -4124,9 +4115,6 @@
       ],
       "Billing cycle: ${ text }": [
         "Siklus tagihan: ${ text }"
-      ],
-      "Breach Alert": [
-        "Peringatan Kebocoran"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Dengan menurunkan ke paket Free, Anda akan kehilangan berbagai manfaat berikut secara permanen, bahkan apabila Anda kembali meningkatkan jenis akun Anda di kemudian hari."
@@ -4183,10 +4171,10 @@
         "Buat ${ calendarsToBeCreatedCount } kalender baru"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
-        "Buat label khusus untuk menandai pesan-pesan yang diimpor, rentang waktu impor yang bersangkutan, serta folder-folder yang hendak Anda impor."
+        "Buat label untuk menandai pesan yang diimpor, rentang waktu impor yang bersangkutan, serta folder yang ingin Anda impor."
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
-        "Buat label khusus untuk menandai pesan-pesan yang diimpor, rentang waktu impor yang bersangkutan, serta label-label yang hendak Anda impor."
+        "Buat label untuk menandai pesan yang diimpor, rentang waktu impor yang bersangkutan, serta label yang ingin Anda impor."
       ],
       "Create a new contact group": [
         "Buat grup kontak baru"
@@ -4396,7 +4384,7 @@
         "Sidik jari kunci"
       ],
       "Label all imported messages as": [
-        "Labeli semua pesan terimpor sebagai"
+        "Labeli seluruh pesan yang diimpor sebagai"
       ],
       "Labels:": [
         "Label:"
@@ -4591,7 +4579,7 @@
         "Pilih format email yang akan digunakan setiap kali Anda mengirim email ke alamat ini."
       ],
       "Select what you want to import.": [
-        "Pilih hal apa saja yang hendak Anda impor."
+        "Pilih hal-hal apa saja yang ingin Anda impor."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Pilih kalender mana saja yang akan diimpor. Untuk setiap kalender yang diimpor, sistem kami akan membuat kalender baru hingga batas jumlah kalender maksimum yang diperkenankan oleh paket Anda."
@@ -4627,7 +4615,7 @@
         "Langganan akan segera berakhir: Aktifkan kembali paket Anda sebelum tanggal ${ byDate } untuk tetap memperoleh manfaat ${ planName } Anda. ${ reactivateLink }"
       ],
       "Temporarily unavailable. Please check back later.": [
-        "Hal yang Anda tuju saat ini sedang tidak tersedia. Mohon periksa lagi nanti."
+        "Tindakan ini untuk sementara tidak tersedia. Silakan periksa kembali di kemudian waktu."
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Aplikasi perlu mendekripsi kontak Anda secara lokal sebelum dapat diekspor. Di akhir proses, berkas VCF akan dibuat dan Anda dapat mengunduhnya."
@@ -4840,7 +4828,7 @@
         "Selagi Anda menunggu, Anda dapat menutup tab atau browser ini."
       ],
       "You can import one data type at a time.": [
-        "Anda hanya dapat mengimpor satu tipe data dalam satu waktu."
+        "Anda dapat mengimpor satu jenis data dalam satu waktu."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Anda dapat menyimpan hingga ${ MAX_CALENDARS_FREE } kalender. Mohon hapus tautan kalender bersama yang ada dan seluruh pengguna ${ BRAND_NAME } yang berbagi kalender dengan Anda sebelum membatalkan langganan ${ MAIL_SHORT_APP_NAME } Anda."
@@ -6758,12 +6746,6 @@
       ]
     },
     "Notification": {
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } telah dinonaktifkan"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } telah diaktifkan"
-      ],
       "Contact group created": [
         "Grup kontak telah dibuat"
       ],
@@ -7370,9 +7352,6 @@
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel saat ini sedang **aktif** dan melindungi akun Anda."
-      ],
-      "Your information was found in at least one data breach. Turn on Breach Alert to view details and take action. ${ learnMoreLink }": [
-        "Informasi mengenai diri Anda ditemukan pada setidaknya satu insiden kebocoran data. Aktifkan Peringatan Kebocoran untuk melihat rincian kebocoran ini dan mengambil tindakan yang sesuai. ${ learnMoreLink }"
       ]
     },
     "Select files": {
@@ -7854,9 +7833,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "Membatalkan langganan Anda, silakan tunggu"
-      ],
-      "Downgrading your account, please wait": [
-        "Menurunkan akun anda, harap tunggu"
       ]
     },
     "Storage": {
@@ -8424,9 +8400,6 @@
       "Birthday": [
         "Ulang tahun"
       ],
-      "Breach Alert": [
-        "Peringatan Kebocoran"
-      ],
       "Calendar": [
         "Kalender"
       ],
@@ -8804,9 +8777,6 @@
       ],
       "Start import process": [
         "Mulai proses impor"
-      ],
-      "Stay safer online": [
-        "Tetap aman saat online"
       ],
       "Summary": [
         "Ikhtisar"

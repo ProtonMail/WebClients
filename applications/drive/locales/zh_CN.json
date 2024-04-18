@@ -6477,12 +6477,6 @@
       "${ numberOfItems } link to your item was deleted": [
         "${ numberOfItems } 个共享链接已删除"
       ],
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } 已停用"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } 已启用"
-      ],
       "All items will soon be permanently deleted from trash": [
         "所有项目将很快从回收站永久删除"
       ],
@@ -7325,11 +7319,6 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "现在，您可以保持数据安全，同时轻松搜索网盘文件。"
-      ]
-    },
-    "State": {
-      "Downgrading your account, please wait": [
-        "正在降级账户，请稍候"
       ]
     },
     "Storage": {
