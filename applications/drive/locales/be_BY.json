@@ -448,9 +448,6 @@
       "Manage link": [
         "Кіраванне спасылкай"
       ],
-      "Mark as open": [
-        "Пазначыць як адкрытае"
-      ],
       "Mark as resolved": [
         "Пазначыць як вырашанае"
       ],
@@ -2172,9 +2169,6 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2ФА дадае дадатковы слой бяспекі, каб прадухіліць неаўтарызаваны доступ."
       ],
-      "Breach alerts and reports are available with a paid plan. Upgrade for immediate access.": [
-        "Папярэджанні ўцечкі і справаздачы даступны з платным тарыфным планам. Палепшыце сваю падпіску, каб неадкладна атрымаць доступ да гэтай функцыі."
-      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Расшыфроўка кантактаў... Гэта можа заняць некалькі хвілін. Пасля завяршэння працэсу ў вас будзе магчымасць спампаваць файл з усімі экспартаванымі кантактамі."
       ],
@@ -2228,9 +2222,6 @@
       ],
       "Your account and data recovery methods are set.": [
         "Спосабы аднаўлення вашага ўліковага запісу зададзены."
-      ],
-      "Your personal data was leaked by an online service in a data breach. View full details and get recommended actions.": [
-        "Парушэнне вашых асабістых даных адбылося праз сэрвіс у інтэрнэце ў выніку ўцечкі даных. Азнаёмцеся з падрабязнасцямі і прыміце неабходныя меры."
       ]
     },
     "description": {
@@ -4037,9 +4028,6 @@
       "Billing cycle: ${ text }": [
         "Перыяд аплаты: ${ text }"
       ],
-      "Breach Alert": [
-        "Папярэджанні ўцечкі"
-      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Пры пераходзе на бясплатны тарыфны план вы незваротна страціце гэтыя перавагі, нават калі ў будучыні вы зноў пяройдзеце на яго."
       ],
@@ -4640,6 +4628,9 @@
       "Organization size": [
         "Памер арганізацыі"
       ],
+      "Owner": [
+        "Уладальнік"
+      ],
       "password": [
         "пароль"
       ],
@@ -4648,6 +4639,9 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Плацяжы абаронены шыфраваннем TLS і швейцарскімі законамі аб прыватнасці."
+      ],
+      "Pending": [
+        "У чаканні"
       ],
       "Permanently delete all files in your locked drive": [
         "Незваротна выдаліць усе файлы на вашым заблакіраваным дыску"
@@ -5203,6 +5197,9 @@
       ],
       "Yesterday": [
         "Учора"
+      ],
+      "you": [
+        "вы"
       ],
       "You already have a free account": [
         "У вас ужо ёсць бясплатны ўліковы запіс"
@@ -6167,6 +6164,11 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Ваша падпіска завяршылася. ${ cta } і пазбегнуць страты даных."
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Уключыць ${ reason }"
       ]
     },
     "Mail import summary": {
@@ -7460,11 +7462,11 @@
         "${ numberOfItems } спасылак на ваш элемент былі выдалены",
         "${ numberOfItems } спасылкі на ваш элемент былі выдалены"
       ],
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } было адключана"
+      "${ reason } has been disabled": [
+        "${ reason } было адключана"
       ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } было ўключана"
+      "${ reason } has been enabled": [
+        "${ reason } было ўключана"
       ],
       "All items will soon be permanently deleted from trash": [
         "Усе элементы неўзабаве будуць незваротна выдалены са сметніцы"
@@ -8029,8 +8031,8 @@
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel цяпер **актыўны** і ахоўвае ваш уліковы запіс."
       ],
-      "Your information was found in at least one data breach. Turn on Breach Alert to view details and take action. ${ learnMoreLink }": [
-        "Вашы звесткі былі знойдзены прынамсі ў адной уцечцы даных. Уключыце функцыю \"Папярэджанне ўцечкі\", каб паглядзець падрабязнасці і прыняць адпаведныя дзеянні. ${ learnMoreLink }"
+      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLink }": [
+        "Вашы звесткі былі знойдзены прынамсі ў адной уцечцы даных. Уключыце ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці і прыняць адпаведныя дзеянні. ${ learnMoreLink }"
       ]
     },
     "Select files": {
@@ -8493,9 +8495,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "Скасаванне вашай падпіскі. Пачакайце..."
-      ],
-      "Downgrading your account, please wait": [
-        "Паніжэнне вашага ўліковага запісу. Пачакайце..."
       ]
     },
     "Storage": {
@@ -9039,9 +9038,6 @@
       "Birthday": [
         "Дзень нараджэння"
       ],
-      "Breach Alert": [
-        "Папярэджанні ўцечкі"
-      ],
       "Browser might run out of memory": [
         "Браўзеру магчыма не хапае памяці"
       ],
@@ -9482,9 +9478,6 @@
       ],
       "Start import process": [
         "Пачаць працэс імпартавання"
-      ],
-      "Stay safer online": [
-        "Заставайцеся абароненымі ў інтэрнэце"
       ],
       "Stop sharing": [
         "Спыніць абагуленне"

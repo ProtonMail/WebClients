@@ -1145,6 +1145,9 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME }-ის მოხმარების გაგრძელება."
+      ],
+      "Continue using ${ planTitle }": [
+        "${ planTitle }-ის მოხმარების გაგრძელება"
       ]
     },
     "Checkout row": {
@@ -4451,6 +4454,9 @@
       "Organization size": [
         "ორგანიზაციის ზომა"
       ],
+      "Owner": [
+        "მფლობელი"
+      ],
       "password": [
         "პაროლი"
       ],
@@ -5849,6 +5855,9 @@
       "Shared": [
         "გაზიარებული"
       ],
+      "stay safer online": [
+        "იყავით უსაფრთხოდ ინტერნეტში"
+      ],
       "Trash": [
         "ნაგვის ყუთი"
       ],
@@ -7079,12 +7088,6 @@
         "წაიშლება ${ numberOfItems } ბმული თქვენს ელემენტებამდე",
         "წაიშლება ${ numberOfItems } ბმული თქვენს ელემენტებამდე"
       ],
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } გაითიშა"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } ჩაირთო"
-      ],
       "All items will soon be permanently deleted from trash": [
         "ნაგვის ყუთიდან ფაილები მალე სამუდამოდ წაიშლება"
       ],
@@ -8043,9 +8046,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "მიმდინარეობს თქვენი გამოწერის გაუქმება. მოითმინეთ"
-      ],
-      "Downgrading your account, please wait": [
-        "მიმდინარეობს თქვენი პაკეტის დაქვეითება. გთხოვთ მოითმინოთ"
       ]
     },
     "Storage": {
@@ -8817,6 +8817,9 @@
       ],
       "Night theme": [
         "ღამის თემა"
+      ],
+      "No breaches detected": [
+        "გაჟონვები აღმოჩენილი არაა"
       ],
       "No results found": [
         "შედეგების გარეშე"

@@ -1141,6 +1141,9 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME }을 계속 사용하세요."
+      ],
+      "Continue using ${ planTitle }": [
+        "${ planTitle }을 계속 사용하세요"
       ]
     },
     "Checkout row": {
@@ -2121,9 +2124,6 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA는 추가적인 보안 계층, 접근 불가 상황 방지에 도움을 줍니다."
       ],
-      "Breach alerts and reports are available with a paid plan. Upgrade for immediate access.": [
-        "침해 경고와 보고서는 유료 요금제에서 이용할 수 있습니다. 업그레이드하는 즉시 접근할 수 있습니다."
-      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "연락처 복호화 중... 몇 분이 걸릴 수 있습니다. 이 처리가 완료되면, 내보낼 모든 연락처 다운로드가 가능합니다."
       ],
@@ -2177,9 +2177,6 @@
       ],
       "Your account and data recovery methods are set.": [
         "사용자의 계정과 데이터 복구 방법이 설정된 상태입니다."
-      ],
-      "Your personal data was leaked by an online service in a data breach. View full details and get recommended actions.": [
-        "귀하의 개인정보가 데이터 침해사례에 속하는 온라인 서비스로부터 유출되었습니다. 전체 세부사항을 보고 권장하는 대응을 취하십시오."
       ]
     },
     "description": {
@@ -4388,6 +4385,9 @@
       "Organization size": [
         "조직 크기"
       ],
+      "Owner": [
+        "소유자"
+      ],
       "password": [
         "비밀번호"
       ],
@@ -5777,6 +5777,9 @@
       "Shared": [
         "공유"
       ],
+      "stay safer online": [
+        "온라인 상에서 안전하게"
+      ],
       "Trash": [
         "휴지통"
       ],
@@ -6971,12 +6974,6 @@
       "${ numberOfItems } link to your item was deleted": [
         "항목 ${ numberOfItems }개의 링크가 삭제되었습니다"
       ],
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME }이(가) 비활성화 되었습니다."
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME }이(가) 활성화 되었습니다."
-      ],
       "All items will soon be permanently deleted from trash": [
         "휴지통의 모든 항목이 영구적으로 삭제됩니다"
       ],
@@ -7908,9 +7905,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "구독을 취소하고 있습니다, 잠시만 기다려주세요"
-      ],
-      "Downgrading your account, please wait": [
-        "계정은 다운그레이드 하는 중이니 기다려 주세요"
       ]
     },
     "Storage": {
@@ -8813,9 +8807,6 @@
       ],
       "Start import process": [
         "불러오기 과정 시작"
-      ],
-      "Stay safer online": [
-        "온라인 상에서 안전하기"
       ],
       "Stop sharing": [
         "공유 중지"

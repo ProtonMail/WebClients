@@ -442,9 +442,6 @@
       "Manage link": [
         "Gestisci link"
       ],
-      "Mark as open": [
-        "Segna come aperto"
-      ],
       "Mark as resolved": [
         "Segna come risolto"
       ],
@@ -2148,9 +2145,6 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA aggiunge un ulteriore livello di sicurezza, impedendo l'accesso non autorizzato."
       ],
-      "Breach alerts and reports are available with a paid plan. Upgrade for immediate access.": [
-        "Gli avvisi e le segnalazioni sulle violazioni di dati sono disponibili con un piano a pagamento. Effettua l'upgrade per ottenere l'accesso immediato."
-      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Decrittografia dei contatti in corso. Questa operazione potrebbe richiedere alcuni minuti. Al termine del processo, potrai scaricare il file con tutti i tuoi contatti esportati."
       ],
@@ -2204,9 +2198,6 @@
       ],
       "Your account and data recovery methods are set.": [
         "I tuoi metodi di recupero dell'account e dei dati sono impostati."
-      ],
-      "Your personal data was leaked by an online service in a data breach. View full details and get recommended actions.": [
-        "I tuoi dati personali sono stati resi pubblici da un servizio online a seguito di una violazione di dati. Visualizza i dettagli completi e le azioni consigliate."
       ]
     },
     "description": {
@@ -3899,9 +3890,6 @@
       "Billing cycle: ${ text }": [
         "Ciclo di fatturazione: ${ text }"
       ],
-      "Breach Alert": [
-        "Avviso sulle violazioni di dati"
-      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Declassando ad un piano gratuito, perderai definitivamente questi benefici, anche se in futuro effettuerai un nuovo upgrade."
       ],
@@ -4490,6 +4478,9 @@
       "Organization size": [
         "Dimensione dell'organizzazione"
       ],
+      "Owner": [
+        "Proprietario"
+      ],
       "password": [
         "password"
       ],
@@ -4498,6 +4489,9 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "I pagamenti sono protetti dalla crittografia TLS e dalle leggi svizzere sulla privacy."
+      ],
+      "Pending": [
+        "In attesa"
       ],
       "Permanently delete all files in your locked drive": [
         "Elimina definitivamente tutti i file nello spazio bloccato"
@@ -5047,6 +5041,9 @@
       ],
       "Yesterday": [
         "Ieri"
+      ],
+      "you": [
+        "tu"
       ],
       "You already have a free account": [
         "Hai già un account gratuito"
@@ -5994,6 +5991,11 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Il tuo abbonamento è terminato. ${ cta } ed evitare la perdita di dati."
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Abilita ${ reason }"
       ]
     },
     "Mail import summary": {
@@ -7219,11 +7221,11 @@
         "${ numberOfItems } link al tuo elemento è stato eliminato",
         "${ numberOfItems } link ai tuoi elementi sono stati eliminati"
       ],
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } è stato disattivato"
+      "${ reason } has been disabled": [
+        "${ reason } è stato disabilitato"
       ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } è stato abilitato"
+      "${ reason } has been enabled": [
+        "${ reason } è stato abilitato"
       ],
       "All items will soon be permanently deleted from trash": [
         "Tutti gli elementi verranno presto eliminati definitivamente dal cestino"
@@ -7768,8 +7770,8 @@
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel è **attivo** e sta proteggendo il tuo account."
       ],
-      "Your information was found in at least one data breach. Turn on Breach Alert to view details and take action. ${ learnMoreLink }": [
-        "Le tue informazioni sono state trovate in almeno una violazione di dati. Attiva gli avvisi sulle violazioni di dati per visualizzare i dettagli e le azioni da seguire. ${ learnMoreLink }"
+      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLink }": [
+        "Le tue informazioni sono state trovate in almeno una violazione di dati. Attiva ${ DARK_WEB_MONITORING_NAME } per visualizzare i dettagli e le azioni da seguire. ${ learnMoreLink }"
       ]
     },
     "Select files": {
@@ -8198,9 +8200,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "Annullamento dell'abbonamento. Per favore attendi"
-      ],
-      "Downgrading your account, please wait": [
-        "Downgrade del tuo account in corso. Attendi"
       ]
     },
     "Storage": {
@@ -8702,9 +8701,6 @@
       "Birthday": [
         "Compleanno"
       ],
-      "Breach Alert": [
-        "Avviso sulle violazioni di dati"
-      ],
       "Browser might run out of memory": [
         "Il browser potrebbe esaurire la memoria"
       ],
@@ -9137,9 +9133,6 @@
       ],
       "Start import process": [
         "Avvia il processo d'importazione"
-      ],
-      "Stay safer online": [
-        "Stai più sicuro online"
       ],
       "Stop sharing": [
         "Interrompi condivisione"

@@ -983,6 +983,9 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Kemmel s useqdec ${ MAIL_APP_NAME }."
+      ],
+      "Continue using ${ planTitle }": [
+        "Kemmel s useqdec ${ planTitle }"
       ]
     },
     "Checkout row": {
@@ -3636,6 +3639,9 @@
       "Organization size": [
         "Teɣzi n tkebbanit"
       ],
+      "Owner": [
+        "Bab"
+      ],
       "Paused": [
         "Tarist"
       ],
@@ -5200,12 +5206,6 @@
         "${ numberOfItems } n useɣwen ɣer uferdis-inek•m yettwakkes",
         "${ numberOfItems } n useɣwen ɣer yiferdisen-inek•m yettwakkes"
       ],
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } yensa"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } yettwarmed"
-      ],
       "All items will soon be permanently deleted from trash": [
         "Akk iferdisen ad ttwakksen seg tqecwalt i lebda"
       ],
@@ -5779,11 +5779,6 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Nced-d imeddukkal ɣer ${ BRAND_NAME }"
-      ]
-    },
-    "State": {
-      "Downgrading your account, please wait": [
-        "Yettili-d usader n lqem n umiḍan-ik.im, ttxil rǧu"
       ]
     },
     "Storage": {

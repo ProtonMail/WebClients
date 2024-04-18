@@ -182,6 +182,9 @@
       "Copy email to clipboard": [
         "E-Mail in Zwischenablage kopieren"
       ],
+      "Copy invite link": [
+        "Einladungslink kopieren"
+      ],
       "Copy link": [
         "Link kopieren"
       ],
@@ -438,9 +441,6 @@
       ],
       "Manage link": [
         "Link verwalten"
-      ],
-      "Mark as open": [
-        "Als offen markieren"
       ],
       "Mark as resolved": [
         "Als gelöst markieren"
@@ -1154,6 +1154,12 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME } weiterhin verwenden."
+      ],
+      "Continue using ${ planTitle }": [
+        "${ planTitle } weiterhin verwenden"
+      ],
+      "Continue your subscription": [
+        "Abonnement fortsetzen"
       ]
     },
     "Checkout row": {
@@ -4166,6 +4172,9 @@
       "File will not be updated": [
         "Datei wird nicht aktualisiert."
       ],
+      "Files and folders that others shared with you will appear here": [
+        "Dateien und Ordner, die andere für dich freigegeben haben, werden hier angezeigt"
+      ],
       "Finalizing": [
         "Wird abgeschlossen"
       ],
@@ -4320,6 +4329,9 @@
       "Last week": [
         "Letzte Woche"
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Erfahre, wie man ${ staySaferOnlineLink }"
+      ],
       "Learn more": [
         "Mehr erfahren"
       ],
@@ -4334,6 +4346,9 @@
       ],
       "Loading ${ appName }": [
         "${ appName } wird geladen"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Kalender wird geladen, bitte warte. Du wirst in einer neuen Registerkarte zu unserer Terminplanungsplattform Calendly weitergeleitet."
       ],
       "Loading link": [
         "Link wird geladen"
@@ -4460,6 +4475,9 @@
       "Organization size": [
         "Organisationsgröße"
       ],
+      "Owner": [
+        "Besitzer"
+      ],
       "password": [
         "Passwort"
       ],
@@ -4468,6 +4486,9 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Zahlungen sind durch TLS-Verschlüsselung und Schweizer Datenschutzgesetze geschützt."
+      ],
+      "Pending": [
+        "Ausstehend"
       ],
       "Permanently delete all files in your locked drive": [
         "Alle Dateien auf dem gesperrten Laufwerk dauerhaft löschen"
@@ -4678,6 +4699,9 @@
       "Shared link not found": [
         "Geteilten Link nicht gefunden"
       ],
+      "Shared with me": [
+        "Mit mir geteilt"
+      ],
       "Sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
         "Erstelle dein eigenes ${ DRIVE_APP_NAME }-Konto, um deine Daten mit Ende-zu-Ende-Verschlüsselung zu schützen und sie sicher zu teilen."
       ],
@@ -4740,6 +4764,9 @@
       ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
         "Die verschlüsselten Daten sind aufgrund des Overheads der Verschlüsselung und der Signaturen, die die Sicherheit deiner Daten gewährleisten, etwas größer."
+      ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "Die offengelegten Informationen wurden von einem Service eines Drittanbieters preisgegeben. Deine ${ BRAND_NAME } Kontoinformationen bleiben sicher und verschlüsselt. ${ learnMoreLink }"
       ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Folgendes könnte manipuliert worden sein: ${ items }. Öffne es nur, wenn du es für vertrauenswürdig hältst."
@@ -5009,6 +5036,9 @@
       "Yesterday": [
         "Gestern"
       ],
+      "you": [
+        "Du"
+      ],
       "You already have a free account": [
         "Du verfügst bereits über ein kostenloses Konto."
       ],
@@ -5050,6 +5080,12 @@
       "You have ${ expiresInDays } day left to claim your 3 GB welcome bonus and ": [
         "Du hast noch ${ expiresInDays } Tag Zeit, um deinen 3 GB-Willkommensbonus in Anspruch zu nehmen und ",
         "Du hast noch ${ expiresInDays } Tage Zeit, um deinen 3 GB-Willkommensbonus in Anspruch zu nehmen und "
+      ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "Du hast ein Probeabonnement ${ planTitle }. Wenn du dein Abonnement nach dem Testzeitraum fortsetzen möchtest, füge bitte eine Zahlungsmethode hinzu."
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "Du hast ein Probeabonnement ${ planTitle }. Zu diesem Zeitpunkt ist keine Zahlung erforderlich. Dein Abonnement wird am Ende des Testzeitraums automatisch verlängert."
       ],
       "You may be redirected to your bank’s website.": [
         "Du wirst möglicherweise zur Website deiner Bank weitergeleitet."
@@ -5105,6 +5141,12 @@
       "Your download is in progress": [
         "Dein Download läuft gerade"
       ],
+      "Your email address and password were leaked:": [
+        "Deine E-Mail-Adresse und dein Passwort wurden offengelegt:"
+      ],
+      "Your email address was exposed:": [
+        "Ihre E-Mail-Adresse wurde offengelegt:"
+      ],
       "Your email will only be used for this one-time verification.": [
         "Deine E-Mail-Adresse wird nur für diese einmalige Überprüfung verwendet."
       ],
@@ -5117,11 +5159,17 @@
       "Your files will be encrypted and then saved.": [
         "Deine Dateien werden verschlüsselt und anschließend gespeichert."
       ],
+      "Your information was found on ${ displayedDate }": [
+        "Deine Informationen wurden gefunden am ${ displayedDate }"
+      ],
       "Your login information will not be saved after the import is completed.": [
         "Deine Anmeldeinformationen werden nach Abschluss des Importvorgangs nicht gespeichert."
       ],
       "Your next billing date is ${ renewalTime }.": [
         "Dein nächstes Abrechnungsdatum ist der ${ renewalTime }."
+      ],
+      "Your password was leaked:": [
+        "Dein Passwort wurde offengelegt"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Deine Telefonnummer wird nur für diese einmalige Überprüfung verwendet."
@@ -5672,6 +5720,12 @@
       "Set recovery method": [
         "Wiederherstellungsmethode festlegen"
       ],
+      "Shared by": [
+        "Geteilt von"
+      ],
+      "Shared on": [
+        "Geteilt am"
+      ],
       "Show indexing progress of Encrypted Search": [
         "Indizierungsfortschritt der verschlüsselten Suche anzeigen"
       ],
@@ -5860,6 +5914,12 @@
       ],
       "Shared": [
         "Geteilt"
+      ],
+      "Shared with me": [
+        "Mit mir geteilt"
+      ],
+      "stay safer online": [
+        "bleib online geschützter"
       ],
       "Trash": [
         "Papierkorb"
@@ -7148,12 +7208,6 @@
         "${ numberOfItems } Link zu deinem Element wurde gelöscht",
         "${ numberOfItems } Links zu deinen Elementen wurden gelöscht"
       ],
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } wurde deaktiviert."
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } wurde aktiviert."
-      ],
       "All items will soon be permanently deleted from trash": [
         "Alle Elemente werden demnächst dauerhaft aus dem Papierkorb gelöscht"
       ],
@@ -7183,6 +7237,9 @@
       ],
       "Encrypted search activated": [
         "Verschlüsselte Suche aktiviert"
+      ],
+      "Failed to accept share invitation": [
+        "Einladung zur gemeinsamen Nutzung fehlgeschlagen"
       ],
       "Failed to download files: ${ err }": [
         "Download der Dateien fehlgeschlagen: ${ err }"
@@ -7223,6 +7280,12 @@
       ],
       "Root folder failed to be loaded": [
         "Stammordner konnte nicht geladen werden"
+      ],
+      "Share invitation accepted successfully": [
+        "Einladung zur gemeinsamen Nutzung erfolgreich angenommen"
+      ],
+      "Share invitation ID was not found. Please check the link": [
+        "Die ID der Einladung zur gemeinsamen Nutzung wurde nicht gefunden. Bitte überprüfe den Link"
       ],
       "Subfolder failed to be loaded": [
         "Unterordner konnte nicht geladen werden"
@@ -7665,7 +7728,7 @@
         "Verwendet auf Amazon für Shopping, etc."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
-        "Wenn du nach deiner E-Mail-Adresse gefragt wird, gibst du stattdessen diesen Alias an. Aliasse werden von ${ passLink } zur Verfügung gestellt."
+        "Wenn du nach deiner E-Mail-Adresse gefragt wirst, gibst du stattdessen diesen Alias an. Aliasse werden von ${ passLink } zur Verfügung gestellt."
       ]
     },
     "Security Center (link to Pass App)": {
@@ -7679,6 +7742,9 @@
       ]
     },
     "Security Center - Info": {
+      "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
+        "Lass dich benachrichtigen, wenn dein Passwort oder andere Daten von einem Service eines Drittanbieters preisgegeben wurden. ${ learnMoreLink }"
+      ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Unsere hochmoderne, KI-gesteuerte Sicherheitslösung für Benutzer, die einen erhöhten Schutz für ihre Konten wünschen. ${ learnMoreLink }"
       ],
@@ -8112,9 +8178,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "Die Kündigung deines Abonnements wird bearbeitet. Bitte warten."
-      ],
-      "Downgrading your account, please wait": [
-        "Dein Konto wird zurückgestuft, bitte warten …"
       ]
     },
     "Storage": {
@@ -8723,6 +8786,9 @@
       "Deleting contacts": [
         "Kontakte werden gelöscht"
       ],
+      "Details": [
+        "Details"
+      ],
       "Discard": [
         "Verwerfen"
       ],
@@ -8887,6 +8953,9 @@
       "Night theme": [
         "Dunkles Design"
       ],
+      "No breaches detected": [
+        "Kein Datendiebstahl entdeckt"
+      ],
       "No results found": [
         "Keine Ergebnisse gefunden"
       ],
@@ -9016,6 +9085,9 @@
       "Shared": [
         "Geteilt"
       ],
+      "Shared with me": [
+        "Mit mir geteilt"
+      ],
       "Show actions": [
         "Aktionen anzeigen"
       ],
@@ -9132,6 +9204,9 @@
       ],
       "Your changes are not synced yet": [
         "Deine Änderungen wurden noch nicht synchronisiert"
+      ],
+      "Your exposed information": [
+        "Deine exponierten Informationen"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Deine kostenlose Testversion von Mail Plus endet am ${ textDate }."

@@ -4224,6 +4224,9 @@
       "Organization size": [
         "組織の規模"
       ],
+      "Owner": [
+        "所有者"
+      ],
       "Paused": [
         "一時停止"
       ],
@@ -6697,12 +6700,6 @@
       "${ numberOfItems } link to your item was deleted": [
         "${ numberOfItems }件のアイテムの共有リンクを削除しました"
       ],
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } が無効になりました"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } が有効になりました"
-      ],
       "All items will soon be permanently deleted from trash": [
         "すべてのアイテムはまもなくごみ箱から完全に削除されます"
       ],
@@ -7587,9 +7584,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "サブスクリプションをキャンセルします。"
-      ],
-      "Downgrading your account, please wait": [
-        "アカウントをダウングレードしています。お待ちください"
       ]
     },
     "Storage": {
