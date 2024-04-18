@@ -323,6 +323,9 @@
       "Delete link": [
         "Link löschen"
       ],
+      "Delete logo": [
+        "Logo löschen"
+      ],
       "Delete permanently": [
         "Dauerhaft löschen"
       ],
@@ -586,6 +589,9 @@
       ],
       "Keep": [
         "Behalten"
+      ],
+      "Keep logo": [
+        "Logo behalten"
       ],
       "Keep my Plus subscription": [
         "Plus-Abonnement behalten"
@@ -1013,9 +1019,6 @@
       "Unlock": [
         "Entsperren"
       ],
-      "Unlock Breach Report": [
-        "Datenmissbrauchsreport freischalten"
-      ],
       "Unlock data": [
         "Daten entsperren"
       ],
@@ -1102,6 +1105,9 @@
       ],
       "Void all recovery files?": [
         "Alle Wiederherstellungsdateien für ungültig erklären?"
+      ],
+      "Welcome": [
+        "Willkommen"
       ],
       "What do I get?": [
         "Was bekomme ich dafür?"
@@ -1658,6 +1664,12 @@
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME } weiterhin verwenden."
+      ],
+      "Continue using ${ planTitle }": [
+        "${ planTitle } weiterhin verwenden"
+      ],
+      "Continue your subscription": [
+        "Abonnement fortsetzen"
       ],
       "Copy": [
         "Kopieren"
@@ -3146,9 +3158,6 @@
       "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
         "Führe ein Upgrade durch, um die ${ MAIL_APP_NAME }-Fußzeile zu entfernen und weitere Premiumfunktionen freizuschalten."
       ],
-      "To view the full report including personalized recommendations, upgrade to a paid plan.": [
-        "Um den vollständigen Bericht mit personalisierten Empfehlungen anzuzeigen, musst du ein Upgrade auf ein kostenpflichtiges Abonnement durchführen."
-      ],
       "Track the status and activity of your referrals.": [
         "Verfolge den Status und die Aktivität deiner Empfehlungen."
       ],
@@ -3973,6 +3982,9 @@
       ],
       "No external key retrieved for user is valid for sending": [
         "Keiner der für den Benutzer abgerufenen externen Schlüssel ist für den Versand gültig."
+      ],
+      "No image selected": [
+        "Kein Bild ausgewählt"
       ],
       "No valid address found": [
         "Keine gültige E-Mail-Adresse gefunden"
@@ -6900,6 +6912,9 @@
       "Lean more about single sign-on": [
         "Erfahre mehr über Single Sign-on"
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Erfahre, wie man ${ staySaferOnlineLink }"
+      ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Erfahre, wie du dich bei ${ VPN_APP_NAME } mit VPN-Anwendungen von Drittanbietern anmelden kannst."
       ],
@@ -6938,6 +6953,9 @@
       ],
       "Loading ${ appName }": [
         "${ appName } wird geladen"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Kalender wird geladen, bitte warte. Du wirst in einer neuen Registerkarte zu unserer Terminplanungsplattform Calendly weitergeleitet."
       ],
       "Loading preview": [
         "Vorschau wird geladen"
@@ -7103,6 +7121,9 @@
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "In deiner Organisation gibt es weitere Administratoren. Du selbst bist verantwortlich dafür, ihnen das neue Passwort mitzuteilen."
+      ],
+      "Other users within your organization will see your busy slots. No event details are shared.": [
+        "Andere Benutzer innerhalb deiner Organisation sehen deine belegten Zeitfenster. Es werden keine Ereignisdetails freigegeben."
       ],
       "Outdated recovery file; update to ensure access to your data": [
         "Veraltete Wiederherstellungsdatei. Aktualisiere diese, um den Zugriff auf deine Daten zu gewährleisten."
@@ -7504,6 +7525,9 @@
       ],
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "Der E-Mail-Verifizierungslink ist abgelaufen. Bitte melde dich an, um den Verifizierungslink erneut zu versenden."
+      ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "Die offengelegten Informationen wurden von einem Service eines Drittanbieters preisgegeben. Deine ${ BRAND_NAME } Kontoinformationen bleiben sicher und verschlüsselt. ${ learnMoreLink }"
       ],
       "The following address is available:": [
         "Die folgende Adresse ist verfügbar:"
@@ -8060,6 +8084,12 @@
         "Dir steht ${ availableCount } dedizierter Server zur Verfügung.",
         "Dir stehen ${ availableCount } dedizierte Server zur Verfügung."
       ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "Du hast ein Probeabonnement ${ planTitle }. Wenn du dein Abonnement nach dem Testzeitraum fortsetzen möchtest, füge bitte eine Zahlungsmethode hinzu."
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "Du hast ein Probeabonnement ${ planTitle }. Zu diesem Zeitpunkt ist keine Zahlung erforderlich. Dein Abonnement wird am Ende des Testzeitraums automatisch verlängert."
+      ],
       "You have no calendars to export.": [
         "Du hast keine Kalender zum Exportieren."
       ],
@@ -8174,6 +8204,9 @@
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Deine Informationen sind bei uns sicher. Wir kontaktieren dich nur, wenn es für die Erbringung unserer Dienstleistungen erforderlich ist."
+      ],
+      "Your information was found on ${ displayedDate }": [
+        "Deine Informationen wurden gefunden am ${ displayedDate }"
       ],
       "Your login information will not be saved after the import is completed.": [
         "Deine Anmeldeinformationen werden nach Abschluss des Importvorgangs nicht gespeichert."
@@ -8634,6 +8667,9 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Vorübergehend nicht verfügbar. Bitte schaue später wieder vorbei.)"
       ],
+      "Access to my events": [
+        "Zugang zu meinen Ereignissen"
+      ],
       "Account storage": [
         "Kontenspeicher"
       ],
@@ -8741,6 +8777,9 @@
       ],
       "Awarded": [
         "Gutgeschrieben"
+      ],
+      "Beta": [
+        "Beta"
       ],
       "Billing address": [
         "Rechnungsadresse"
@@ -9120,6 +9159,9 @@
       "Link label": [
         "Link-Bezeichnung"
       ],
+      "Logo": [
+        "Logo"
+      ],
       "Mail Server (IMAP)": [
         "Mail-Server (IMAP)"
       ],
@@ -9350,6 +9392,9 @@
       ],
       "Send in": [
         "Senden in"
+      ],
+      "Show others when I'm busy": [
+        "Anderen zeigen, wenn ich beschäftigt bin"
       ],
       "Show secondary time zone": [
         "Sekundäre Zeitzone anzeigen"
@@ -9794,6 +9839,9 @@
       "Sign in": [
         "Anmelden"
       ],
+      "stay safer online": [
+        "bleib online geschützter"
+      ],
       "switch account": [
         "Konto wechseln"
       ],
@@ -9880,9 +9928,6 @@
       ]
     },
     "Log preference": {
-      "Enable ${ PROTON_SENTINEL_NAME }": [
-        "${ PROTON_SENTINEL_NAME } aktivieren"
-      ],
       "Enable advanced logs": [
         "Erweiterte Protokolle aktivieren"
       ],
@@ -11229,12 +11274,6 @@
       "${ Filter.Name } created": [
         "${ Filter.Name } erstellt"
       ],
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } wurde deaktiviert."
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } wurde aktiviert."
-      ],
       "A disabled address cannot be default": [
         "Eine deaktivierte Adresse kann nicht als Standardadresse verwendet werden."
       ],
@@ -11641,6 +11680,37 @@
       ],
       "Your plan includes a maximum of ${ humanReadableAvailableSpace } more storage.": [
         "Dein Abonnement beinhaltet maximal ${ humanReadableAvailableSpace } weiteren Speicherplatz."
+      ]
+    },
+    "Organization logo upload": {
+      "Avoid overly compressed images.": [
+        "Vermeide zu stark komprimierte Bilder."
+      ],
+      "Ensure your icon has padding space around it.": [
+        "Vergewissere dich, dass um dein Symbol herum Platz zum Auffüllen ist."
+      ],
+      "Opt for a PNG image that is a 128x128 pixels for clarity.": [
+        "Entscheide dich für ein PNG-Bild mit einer Größe von 128x128 Pixeln, damit es scharf genug dargestellt wird."
+      ],
+      "Tips on choosing a good icon": [
+        "Tipps zur Auswahl eines guten Symbols"
+      ],
+      "Use a graphical icon or image rather than text.": [
+        "Verwende ein grafisches Symbol oder Bild anstelle von Text."
+      ]
+    },
+    "Organization logo upload modal": {
+      "File in PNG or JPEG format": [
+        "Datei im PNG- oder JPEG-Format"
+      ],
+      "File not larger than 30 KB": [
+        "Datei darf nicht größer als 30 KB sein"
+      ],
+      "Square image of at least 128 pixels": [
+        "Quadratisches Bild mit mindestens 128 Pixeln"
+      ],
+      "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
+        "Die Benutzer sehen dein Logo anstelle des ${ BRAND_NAME }-Symbols, wenn sie sich bei unseren Webanwendungen anmelden."
       ]
     },
     "OS compatibility": {
@@ -12473,6 +12543,11 @@
         "Abbestellen?"
       ]
     },
+    "Remove organization logo": {
+      "Users will no longer see your custom logo or organization name.": [
+        "Die Benutzer sehen dein eigenes Logo oder den Namen deiner Organisation nicht mehr."
+      ]
+    },
     "Restore administrator panel": {
       "${ n } administrator in your organization need access to the organization key.": [
         "${ n } Administrator in deiner Organisation benötigt Zugriff auf den Organisationsschlüssel.",
@@ -13187,9 +13262,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "Die Kündigung deines Abonnements wird bearbeitet. Bitte warten."
-      ],
-      "Downgrading your account, please wait": [
-        "Dein Konto wird zurückgestuft, bitte warten …"
       ]
     },
     "Step in filter modal": {
@@ -14238,6 +14310,9 @@
       "Delete logs": [
         "Protokolle löschen"
       ],
+      "Delete organization logo?": [
+        "Organisationslogo löschen?"
+      ],
       "Delete the server (you will still be able to recover it for ${ days } day)": [
         "Lösche den Server (Du kannst ihn innerhalb des nächsten ${ days } Tages wiederherstellen)",
         "Lösche den Server (Du kannst ihn innerhalb der nächsten ${ days } Tage wiederherstellen)"
@@ -14247,6 +14322,9 @@
       ],
       "Delete version history?": [
         "Versionsverlauf löschen?"
+      ],
+      "Details": [
+        "Details"
       ],
       "Disable ${ email }": [
         "${ email } deaktivieren"
@@ -14390,6 +14468,15 @@
       "Folders and labels": [
         "Ordner und Kategorien"
       ],
+      "For Linux": [
+        "Für Linux"
+      ],
+      "For macOS": [
+        "Für macOS"
+      ],
+      "For Windows": [
+        "Für Windows"
+      ],
       "Forward and auto-reply": [
         "Weiterleiten und automatisch antworten"
       ],
@@ -14428,6 +14515,9 @@
       ],
       "How does it work?": [
         "Wie funktioniert das?"
+      ],
+      "How to choose a good icon": [
+        "Wie man ein gutes Bild auswählt"
       ],
       "How to refer a friend and get credits": [
         "Wie du einen Freund wirbst und Guthaben erhältst"
@@ -14534,6 +14624,9 @@
       ],
       "No recovery method": [
         "Keine Wiederherstellungsmethode"
+      ],
+      "Open": [
+        "Offen"
       ],
       "Open actions dropdown": [
         "Auswahlliste „Aktionen“ öffnen"
@@ -14651,6 +14744,9 @@
       ],
       "Reset password?": [
         "Passwort zurücksetzen?"
+      ],
+      "Resolved": [
+        "Gelöst"
       ],
       "Restore administrator privileges": [
         "Administrationsprivilegien wiederherstellen"
@@ -14836,6 +14932,9 @@
       "Upload CSV file to create multiple accounts": [
         "Lade eine CSV-Datei hoch, um mehrere Konten zu erstellen."
       ],
+      "Upload your organization’s logo": [
+        "Organisationslogo aktualisieren"
+      ],
       "Users": [
         "Benutzer"
       ],
@@ -14872,6 +14971,12 @@
       "We'll send an email to your new address with instructions on completing the change.": [
         "Wir senden eine E-Mail an deine neue Adresse mit Anweisungen zum Abschluss der Änderung."
       ],
+      "What is an alias?": [
+        "Was ist ein Alias?"
+      ],
+      "What is the dark web?": [
+        "Was ist das Dark Web?"
+      ],
       "What would you like to import?": [
         "Was möchtest du importieren?"
       ],
@@ -14886,6 +14991,9 @@
       ],
       "Your changes are not synced yet": [
         "Deine Änderungen wurden noch nicht synchronisiert"
+      ],
+      "Your exposed information": [
+        "Deine exponierten Informationen"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Deine kostenlose Testversion von Mail Plus endet am ${ textDate }."
@@ -15162,6 +15270,9 @@
       ],
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
         "Verwende die standardmäßigen Bildlaufleisten deines Browsers. Diese sind normalerweise größer und leichter zu bedienen."
+      ],
+      "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
+        "Die Benutzer sehen dein Logo anstelle des ${ BRAND_NAME }-Symbols, wenn sie sich bei unseren Webanwendungen anmelden."
       ],
       "Usually an URL that contains the identity provider's name within": [
         "In der Regel eine URL, die den Namen des Identitätsanbieters enthält."

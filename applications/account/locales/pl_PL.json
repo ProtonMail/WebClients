@@ -1025,9 +1025,6 @@
       "Unlock": [
         "Odblokuj"
       ],
-      "Unlock Breach Report": [
-        "Odblokuj raport wycieku"
-      ],
       "Unlock data": [
         "Odblokuj dane"
       ],
@@ -3226,9 +3223,6 @@
       ],
       "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
         "Aby usunąć stopkę ${ MAIL_APP_NAME }, ulepsz konto i odblokuj więcej funkcji premium."
-      ],
-      "To view the full report including personalized recommendations, upgrade to a paid plan.": [
-        "Aby zobaczyć pełny raport, w tym spersonalizowane zalecenia, ulepsz konto do płatnego planu."
       ],
       "Track the status and activity of your referrals.": [
         "Sprawdź status i aktywność linku polecającego."
@@ -8249,9 +8243,6 @@
       "Why?": [
         "Dlaczego?"
       ],
-      "Will soon be available.": [
-        "Dostępne wkrótce."
-      ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "W planach Business i Enterprise możesz kupić ${ boldDedicatedServers } dla organizacji oraz skonfigurować ${ boldGateways }, aby kontrolować dostęp użytkowników."
       ],
@@ -10264,17 +10255,11 @@
       ]
     },
     "Log preference": {
-      "Enable ${ PROTON_SENTINEL_NAME }": [
-        "Włącz ${ PROTON_SENTINEL_NAME }"
-      ],
       "Enable advanced logs": [
         "Włącz zaawansowane logi"
       ],
       "Enable authentication logs": [
         "Włącz logi uwierzytelniania"
-      ],
-      "Enable Breach Alert": [
-        "Włącz alert wycieków"
       ]
     },
     "Mail import summary": {
@@ -11676,17 +11661,17 @@
       "${ Filter.Name } created": [
         "Filtr ${ Filter.Name } został utworzony"
       ],
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } został wyłączony"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } został włączony"
-      ],
       "A disabled address cannot be default": [
         "Wyłączony adres nie może zostać domyślnym adresem"
       ],
       "An external address cannot be default": [
         "Zewnętrzny adres nie może zostać domyślnym adresem"
+      ],
+      "Dark Web Monitoring has been disabled": [
+        "Monitoring dark web został wyłączony"
+      ],
+      "Dark Web Monitoring has been enabled": [
+        "Monitoring dark web został włączony"
       ],
       "Invalid code": [
         "Kod jest nieprawidłowy"
@@ -13075,11 +13060,6 @@
         "Automatyczna konfiguracja SCIM"
       ]
     },
-    "Security Center - Info": {
-      "Your information was found in at least one data breach. Turn on Breach Alert to view details and take action. ${ learnMoreLinkBreach }": [
-        "Twoje informacje zostały znalezione w co najmniej jednym wycieku danych. Włącz alert wycieków, aby zobaczyć szczegóły i zastosować odpowiednią akcję. ${ learnMoreLinkBreach }"
-      ]
-    },
     "Select file": {
       "Upload CSV file": [
         "Prześlij plik CSV"
@@ -13805,9 +13785,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "Anulowanie subskrypcji. Poczekaj chwilę"
-      ],
-      "Downgrading your account, please wait": [
-        "Trwa obniżanie planu. Poczekaj chwilę"
       ]
     },
     "Step in filter modal": {
@@ -14096,6 +14073,77 @@
     "Subscription price": {
       "For": [
         "za"
+      ]
+    },
+    "Subscription reminder": {
+      "${ dayDiff } day left": [
+        "Pozostał ${ dayDiff } dzień",
+        "Pozostały ${ dayDiff } dni",
+        "Pozostało ${ dayDiff } dni",
+        "Pozostało ${ dayDiff } dnia"
+      ],
+      "${ MAIL_APP_NAME } desktop app": [
+        "Aplikacja desktopowa ${ MAIL_APP_NAME }"
+      ],
+      "${ planMaxSpace } total storage": [
+        "${ planMaxSpace } przestrzeni dyskowej"
+      ],
+      "10 email addresses": [
+        "10 adresów e-mail"
+      ],
+      "By canceling your Mail Plus subscription, your storage will decrease from **${ planMaxSpace }** to **1 GB** for Mail, and **1 GB** for Drive. You will also lose any storage bonuses earned previously.": [
+        "Anulowanie subskrypcji Mail Plus spowoduje zmniejszenie przestrzeni dyskowej z **${ planMaxSpace }** do **1 GB** na pocztę i **1 GB** na dysk. Stracisz również bonusową przestrzeń dyskową."
+      ],
+      "By canceling your Mail Plus subscription, your storage will decrease from **${ planMaxSpace }** to **1 GB** for Mail, and **5 GB** for Drive. You will also lose any storage bonuses earned previously.": [
+        "Anulowanie subskrypcji Mail Plus spowoduje zmniejszenie przestrzeni dyskowej z **${ planMaxSpace }** do **1 GB** na pocztę i **5 GB** na dysk. Stracisz również bonusową przestrzeń dyskową."
+      ],
+      "By canceling your Mail Plus subscription, your storage will decrease from **${ planMaxSpace }** to **500 MB** for Mail, and **1 GB** for Drive. You will also lose any storage bonuses earned previously.": [
+        "Anulowanie subskrypcji Mail Plus spowoduje zmniejszenie przestrzeni dyskowej z **${ planMaxSpace }** do **500 MB** na pocztę i **1 GB** na dysk. Stracisz również bonusową przestrzeń dyskową."
+      ],
+      "By canceling your Mail Plus subscription, your storage will decrease from **${ planMaxSpace }** to **500 MB** for Mail, and **5 GB** for Drive. You will also lose any storage bonuses earned previously.": [
+        "Anulowanie subskrypcji Mail Plus spowoduje zmniejszenie przestrzeni dyskowej z **${ planMaxSpace }** do **500 MB** na pocztę i **5 GB** na dysk. Stracisz również bonusową przestrzeń dyskową."
+      ],
+      "Calendar sharing": [
+        "Udostępnianie kalendarza"
+      ],
+      "Cancel subscription": [
+        "Anuluj subskrypcję"
+      ],
+      "Cancel subscription?": [
+        "Anulować subskrypcję?"
+      ],
+      "Close": [
+        "Zamknij"
+      ],
+      "Have a question?": [
+        "Masz pytanie?"
+      ],
+      "I still want to cancel": [
+        "Nadal chcę anulować"
+      ],
+      "Keep Mail Plus": [
+        "Zachowaj plan Mail Plus"
+      ],
+      "Priority support": [
+        "Priorytetowe wsparcie"
+      ],
+      "Resubscribe": [
+        "Subskrybuj ponownie"
+      ],
+      "Subscription canceled": [
+        "Subskrypcja została anulowana"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Nieograniczona liczba folderów, etykiet i filtrów"
+      ],
+      "You **won't be able to add any new files**": [
+        "**Nie będziesz mógł dodawać nowych plików**"
+      ],
+      "Your own custom email domain": [
+        "Własna niestandardowa domena"
+      ],
+      "Your own short @pm.me email alias": [
+        "Krótki alias @pm.me"
       ]
     },
     "Subscription renewal state": {
@@ -14709,9 +14757,6 @@
       "Block trackers and malware": [
         "Zablokuj elementy śledzące i złośliwe oprogramowanie"
       ],
-      "Breach Alert": [
-        "Alert wycieków"
-      ],
       "Bridge for ${ platform }": [
         "Aplikacja Bridge na ${ platform }"
       ],
@@ -14838,14 +14883,14 @@
       "Currency": [
         "Waluta"
       ],
-      "Custom branding": [
-        "Niestandardowy branding"
-      ],
       "Custom filters": [
         "Filtry niestandardowe"
       ],
       "Custom selection of users": [
         "Wybrani użytkownicy"
+      ],
+      "Customization": [
+        "Personalizacja"
       ],
       "Customize and confirm": [
         "Dostosuj i potwierdź"
@@ -15240,9 +15285,6 @@
       "OpenVPN configuration files": [
         "Pliki konfiguracyjne OpenVPN"
       ],
-      "Organization appearance": [
-        "Wygląd organizacji"
-      ],
       "Organization filters": [
         "Filtry organizacji"
       ],
@@ -15596,6 +15638,12 @@
       ],
       "WireGuard configuration": [
         "Konfiguracja WireGuard"
+      ],
+      "You have no open alerts": [
+        "Brak nierozwiązanych alertów"
+      ],
+      "You have no resolved alerts": [
+        "Brak rozwiązanych alertów"
       ],
       "Your calendar link": [
         "Twój link kalendarza"

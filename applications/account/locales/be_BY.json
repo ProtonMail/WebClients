@@ -1025,9 +1025,6 @@
       "Unlock": [
         "Разблакіраваць"
       ],
-      "Unlock Breach Report": [
-        "Разблакіраваць справаздачу ўцечкі"
-      ],
       "Unlock data": [
         "Разблакіраваць даныя"
       ],
@@ -3232,9 +3229,6 @@
       ],
       "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
         "Палепшыце бягучы тарыфны план і разблакіруйце магчымасць выдалення ніжняга калонтытула ${ MAIL_APP_NAME }, а таксама іншыя прэміяльныя функцыі."
-      ],
-      "To view the full report including personalized recommendations, upgrade to a paid plan.": [
-        "Набудзьце платны тарыфны план для прагляду поўнай справаздачы, якая ўключае персаналізаваныя рэкамендацыі."
       ],
       "Track the status and activity of your referrals.": [
         "Сачэнне за статусам і актыўнасцю вашых рэферальных спасылак."
@@ -7179,7 +7173,7 @@
         "Тып спасылкі"
       ],
       "Live chat": [
-        "Інтэрактыўны чат"
+        "інтэрактыўны чат"
       ],
       "Loaded content is being protected by our proxy when tracker protection is activated.": [
         "Загружанае змесціва абаронена нашым проксі-серверам, калі актывавана абарона ад праграм сачэння."
@@ -7575,7 +7569,7 @@
         "Тэрмін дзеяння спасылкі на справаздачу пратэрмінаваны"
       ],
       "Request a phone call": [
-        "Запытаць тэлефонны званок"
+        "Запытайце тэлефонны званок"
       ],
       "Resend verification email": [
         "Паўторна адправіць ліст з пацвярджэннем"
@@ -8254,9 +8248,6 @@
       ],
       "Why?": [
         "Чаму?"
-      ],
-      "Will soon be available.": [
-        "Неўзабаве будзе даступна."
       ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "З тарыфнымі планамі Business або Enterprise, вы можаце купіць ${ boldDedicatedServers } для вашай арганізацыі і наладзіць ${ boldGateways } правы доступу карыстальнікаў да яго."
@@ -9648,7 +9639,7 @@
         "Фраза складаецца з 12 унікальных слоў у вызначаным парадку"
       ],
       "Please add all 3 of the following CNAME records. Note: DNS records can take several hours to update.": [
-        "Дадайце ўсе 3 наступных запісаў CNAME. Заўвага: абнаўленне запісаў DNS можа заняць некалькі гадзін."
+        "Дадайце ўсе 3 наступныя запісы CNAME. Звярніце ўвагу, што запісы DNS могуць абнаўляцца на працягу некалькіх гадзін."
       ],
       "Please add the following two MX records. Note: DNS records can take several hours to update.": [
         "Дадайце наступныя два запісы MX. Заўвага: абнаўленне запісаў DNS можа заняць некалькі гадзін."
@@ -10270,17 +10261,14 @@
       ]
     },
     "Log preference": {
-      "Enable ${ PROTON_SENTINEL_NAME }": [
-        "Уключыць ${ PROTON_SENTINEL_NAME }"
+      "Enable ${ reason }": [
+        "Уключыць ${ reason }"
       ],
       "Enable advanced logs": [
         "Уключыць дадатковыя журналы"
       ],
       "Enable authentication logs": [
         "Уключыць журнал аўтэнтыфікацыі"
-      ],
-      "Enable Breach Alert": [
-        "Уключыце функцыю \"Папярэджанне ўцечкі\""
       ]
     },
     "Mail import summary": {
@@ -11682,17 +11670,23 @@
       "${ Filter.Name } created": [
         "${ Filter.Name } створаны"
       ],
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } было адключана"
+      "${ reason } has been disabled": [
+        "${ reason } было адключана"
       ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } было ўключана"
+      "${ reason } has been enabled": [
+        "${ reason } было ўключана"
       ],
       "A disabled address cannot be default": [
         "Адключаны адрас не можа быць прадвызначаным"
       ],
       "An external address cannot be default": [
         "Знешні адрас не можа быць прадвызначаным"
+      ],
+      "Dark Web Monitoring has been disabled": [
+        "Dark Web Monitoring быў адлючаны"
+      ],
+      "Dark Web Monitoring has been enabled": [
+        "Dark Web Monitoring быў уключаны"
       ],
       "Invalid code": [
         "Памылковы код"
@@ -13110,11 +13104,6 @@
         "URL-адрас злучальніка SCIM, якому ваш агент забеспячэння IdP перасылае даныя SCIM"
       ]
     },
-    "Security Center - Info": {
-      "Your information was found in at least one data breach. Turn on Breach Alert to view details and take action. ${ learnMoreLinkBreach }": [
-        "Вашы звесткі былі знойдзены прынамсі ў адной уцечцы даных. Уключыце функцыю \"Папярэджанне ўцечкі\", каб паглядзець падрабязнасці і прыняць адпаведныя дзеянні. ${ learnMoreLinkBreach }"
-      ]
-    },
     "Select file": {
       "Upload CSV file": [
         "Запампаваць файл CSV"
@@ -13840,9 +13829,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "Скасаванне вашай падпіскі. Пачакайце..."
-      ],
-      "Downgrading your account, please wait": [
-        "Паніжэнне вашага ўліковага запісу. Пачакайце..."
       ]
     },
     "Step in filter modal": {
@@ -14131,6 +14117,32 @@
     "Subscription price": {
       "For": [
         "За"
+      ]
+    },
+    "Subscription reminder": {
+      "${ dayDiff } day left": [
+        "Застаўся ${ dayDiff } дзень",
+        "Засталося ${ dayDiff } дні",
+        "Засталося ${ dayDiff } дзён",
+        "Засталося ${ dayDiff } дзён"
+      ],
+      "Cancel subscription": [
+        "Скасаваць падпіску"
+      ],
+      "Cancel subscription?": [
+        "Скасаваць падпіску?"
+      ],
+      "Close": [
+        "Закрыць"
+      ],
+      "Resubscribe": [
+        "Аднавіць падпіску"
+      ],
+      "Subscription canceled": [
+        "Падпіска скасавана"
+      ],
+      "When you cancel, you will lose access to": [
+        "Калі вы скасуеце, то страціце доступ да"
       ]
     },
     "Subscription renewal state": {
@@ -14744,9 +14756,6 @@
       "Block trackers and malware": [
         "Блакіроўка праграм сачэння і шкодных праграм"
       ],
-      "Breach Alert": [
-        "Папярэджанні ўцечкі"
-      ],
       "Bridge for ${ platform }": [
         "Bridge для ${ platform }"
       ],
@@ -14873,14 +14882,14 @@
       "Currency": [
         "Валюта"
       ],
-      "Custom branding": [
-        "Карыстальніцкі брэндзінг"
-      ],
       "Custom filters": [
         "Карыстальніцкія фільтры"
       ],
       "Custom selection of users": [
         "Персаналізаваны выбар карыстальнікаў"
+      ],
+      "Customization": [
+        "Персаналізацыя"
       ],
       "Customize and confirm": [
         "Наладзіць і пацвердзіць"
@@ -15275,9 +15284,6 @@
       "OpenVPN configuration files": [
         "Канфігурацыйныя файлы OpenVPN"
       ],
-      "Organization appearance": [
-        "Выгляд арганізацыі"
-      ],
       "Organization filters": [
         "Фільтры арганізацыі"
       ],
@@ -15631,6 +15637,12 @@
       ],
       "WireGuard configuration": [
         "Канфігурацыя WireGuard"
+      ],
+      "You have no open alerts": [
+        "У вас няма адкрытых папярэджанняў"
+      ],
+      "You have no resolved alerts": [
+        "У вас няма вырашаных папярэджанняў"
       ],
       "Your calendar link": [
         "Ваша спасылка на каляндар"

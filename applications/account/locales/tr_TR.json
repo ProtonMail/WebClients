@@ -767,6 +767,9 @@
       "Report a problem": [
         "Sorun bildirin"
       ],
+      "Request a call": [
+        "Arama isteği gönder"
+      ],
       "Request a feature": [
         "Bir özellik istiyorum"
       ],
@@ -1021,9 +1024,6 @@
       ],
       "Unlock": [
         "Kilidi aç"
-      ],
-      "Unlock Breach Report": [
-        "Verilerin ele geçirilmesi bildirimine erişin"
       ],
       "Unlock data": [
         "Verilerin kilidini aç"
@@ -1687,6 +1687,9 @@
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME } kullanmayı sürdürün."
+      ],
+      "Continue using ${ planTitle }": [
+        "${ planTitle } kullanmayı sürdürün"
       ],
       "Copy": [
         "Kopyala"
@@ -3185,9 +3188,6 @@
       ],
       "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
         "${ MAIL_APP_NAME } alt bilgisini kaldırmak için tarifenizi yükseltin ve diğer ücretli özelliklere de erişin."
-      ],
-      "To view the full report including personalized recommendations, upgrade to a paid plan.": [
-        "Kişiselleştirilmiş önerilerle birlikte raporun tümünü görüntülemek için ücretli bir tarifeye yükseltin."
       ],
       "Track the status and activity of your referrals.": [
         "Önerileri işlemlerinizi ve durumunu izleyin."
@@ -8006,6 +8006,9 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Bu işlemi tamamlamanız için yeni bir tarayıcı sekmesi açarak sizi PayPal sitesine yönlendireceğiz. İşlemi tamamlamak için, varsa açılır pencere engelleyicilerinizi kapatın."
       ],
+      "We'll email you once import is complete.": [
+        "İçe aktarma işlemi tamamlanınca size e-posta göndereceğiz."
+      ],
       "We'll get back to you shortly.": [
         "Size en kısa sürede geri dönüş yapacağız."
       ],
@@ -8109,6 +8112,9 @@
       ],
       "You can check the progress ${ importProgressLink }.": [
         "İlerlemeye bakabilirsiniz ${ importProgressLink }."
+      ],
+      "You can close the tab or browser in the meantime.": [
+        "Bu sırada sekmeyi veya tarayıcıyı kapatabilirsiniz."
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Bunu doğrulamada kullanılacak doğru e-posta adresini yazmak için bir kez düzenleyebilirsiniz."
@@ -10018,9 +10024,6 @@
       ]
     },
     "Log preference": {
-      "Enable ${ PROTON_SENTINEL_NAME }": [
-        "${ PROTON_SENTINEL_NAME } özelliğini aç"
-      ],
       "Enable advanced logs": [
         "Gelişmiş günlükler tutulsun"
       ],
@@ -11366,12 +11369,6 @@
     "Notification": {
       "${ Filter.Name } created": [
         "${ Filter.Name } eklendi"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } özelliği kapatıldı"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } özelliği açıldı"
       ],
       "A disabled address cannot be default": [
         "Kullanım dışı bırakılmış bir adres varsayılan olamaz"
@@ -13375,9 +13372,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "Lütfen aboneliğiniz iptal edilirken bekleyin"
-      ],
-      "Downgrading your account, please wait": [
-        "Hesabınız düşürülüyor, lütfen bekleyin"
       ]
     },
     "Step in filter modal": {
@@ -14363,9 +14357,6 @@
       "Currency": [
         "Para birimi"
       ],
-      "Custom branding": [
-        "Özel markalama"
-      ],
       "Custom filters": [
         "Özel süzgeçler"
       ],
@@ -14759,9 +14750,6 @@
       "OpenVPN configuration files": [
         "OpenVPN yapılandırma dosyaları"
       ],
-      "Organization appearance": [
-        "Kuruluş görünümü"
-      ],
       "Organization filters": [
         "Kuruluş süzgeçleri"
       ],
@@ -15119,6 +15107,9 @@
       ],
       "Your changes are not synced yet": [
         "Değişiklikleriniz henüz eşitlenmedi"
+      ],
+      "Your exposed information": [
+        "Açığa çıkmış bilgileriniz"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Mail Plus ücretsiz deneme süreniz ${ textDate } tarihinde sonra erecek"
