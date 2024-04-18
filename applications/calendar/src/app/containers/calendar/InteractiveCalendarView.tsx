@@ -1002,6 +1002,7 @@ const InteractiveCalendarView = ({
     };
 
     const handleCloseConfirmation = () => {
+        console.trace('dude');
         updateModal('confirmModal', {
             isOpen: true,
         });
@@ -1565,7 +1566,7 @@ const InteractiveCalendarView = ({
         const handler = (e: MouseEvent) => {
             // Only ask to auto close if an action wasn't clicked.
             if (
-                e.target instanceof HTMLElement &&
+                (e.target instanceof HTMLElement || e.target instanceof Element) &&
                 e.currentTarget instanceof HTMLElement &&
                 findUpwards(e.target, e.currentTarget, (el: HTMLElement) => {
                     return ['BUTTON', 'A', 'SELECT', 'INPUT'].includes(el.nodeName);
