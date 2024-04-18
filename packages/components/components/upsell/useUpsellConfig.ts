@@ -14,10 +14,10 @@ const useUpsellConfig = (upsellRef?: string, step?: SUBSCRIPTION_STEPS, onSubscr
     const inboxUpsellFlowEnabled = useFlag('InboxUpsellFlow');
     const ABTestInboxUpsellStepEnabled = useFlag('ABTestInboxUpsellStep'); // If enabled, we show the plan selection step
     const { APP_NAME } = useConfig();
-    // Make sure the new upsell flow is never enabled for the account app in case the modal is used in multiple places
-    const isAccount = APP_NAME === APPS.PROTONACCOUNT;
+    // Only the mail app offers the ability to pay within the app
+    const isMail = APP_NAME === APPS.PROTONMAIL;
 
-    if (!isAccount && !isElectronMail && inboxUpsellFlowEnabled && upsellRef) {
+    if (isMail && !isElectronMail && inboxUpsellFlowEnabled && upsellRef) {
         const modalStep =
             step || ABTestInboxUpsellStepEnabled ? SUBSCRIPTION_STEPS.PLAN_SELECTION : SUBSCRIPTION_STEPS.CHECKOUT;
         const subscriptionCallBackProps = getUpsellSubscriptionModalConfig(upsellRef, modalStep);
