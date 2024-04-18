@@ -3,21 +3,21 @@ import { createSelector } from '@reduxjs/toolkit';
 import { getBusyScheduledEvent } from '../../containers/calendar/eventHelper';
 import { CalendarViewBusyEvent } from '../../containers/calendar/interface';
 import { CalendarState } from '../store';
-import { BusyTimeSlotFetchStatus, BusyTimeSlotVisibility } from './busyTimeSlotsSlice';
+import { BusySlotFetchStatus, BusySlotsVisibility, busySlotsSliceName } from './busySlotsSlice';
 
-export const selectAttendeesBusyTimeSlots = createSelector(
-    (state: CalendarState) => state.busyTimeSlots.displayOnGrid,
-    (state: CalendarState) => state.busyTimeSlots.metadata,
-    (state: CalendarState) => state.busyTimeSlots.attendees,
-    (state: CalendarState) => state.busyTimeSlots.attendeeBusySlots,
-    (state: CalendarState) => state.busyTimeSlots.attendeeVisibility,
-    (state: CalendarState) => state.busyTimeSlots.attendeeDataAccessible,
-    (state: CalendarState) => state.busyTimeSlots.attendeeColor,
+export const selectAttendeesBusySlots = createSelector(
+    (state: CalendarState) => state[busySlotsSliceName].displayOnGrid,
+    (state: CalendarState) => state[busySlotsSliceName].metadata,
+    (state: CalendarState) => state[busySlotsSliceName].attendees,
+    (state: CalendarState) => state[busySlotsSliceName].attendeeBusySlots,
+    (state: CalendarState) => state[busySlotsSliceName].attendeeVisibility,
+    (state: CalendarState) => state[busySlotsSliceName].attendeeDataAccessible,
+    (state: CalendarState) => state[busySlotsSliceName].attendeeColor,
     (
         display,
         metadata,
         attendees,
-        busyTimeSlots,
+        busySlots,
         availabilities,
         dataAccessible,
         attendeesColor
@@ -26,15 +26,15 @@ export const selectAttendeesBusyTimeSlots = createSelector(
             return [];
         }
 
-        return Object.keys(busyTimeSlots).reduce<CalendarViewBusyEvent[]>((acc, email) => {
+        return Object.keys(busySlots).reduce<CalendarViewBusyEvent[]>((acc, email) => {
             if (
                 attendees.includes(email) &&
                 dataAccessible[email] === true &&
                 availabilities[email] === 'visible' &&
-                busyTimeSlots[email].length > 0
+                busySlots[email].length > 0
             ) {
-                const attendeeFormattedTimeslots = busyTimeSlots[email].map((timeSlot) => {
-                    return getBusyScheduledEvent(email, timeSlot, metadata.tzid, attendeesColor[email] || '');
+                const attendeeFormattedTimeslots = busySlots[email].map((busySlot) => {
+                    return getBusyScheduledEvent(email, busySlot, metadata.tzid, attendeesColor[email] || '');
                 });
 
                 acc = [...acc, ...attendeeFormattedTimeslots];
@@ -45,13 +45,13 @@ export const selectAttendeesBusyTimeSlots = createSelector(
 );
 
 const selectAttendeeColor = (state: CalendarState, email: string): string | undefined =>
-    state.busyTimeSlots.attendeeColor[email];
-const selectAttendeeVisibility = (state: CalendarState, email: string): BusyTimeSlotVisibility | undefined =>
-    state.busyTimeSlots.attendeeVisibility[email];
+    state[busySlotsSliceName].attendeeColor[email];
+const selectAttendeeVisibility = (state: CalendarState, email: string): BusySlotsVisibility | undefined =>
+    state[busySlotsSliceName].attendeeVisibility[email];
 const selectAttendeeAvailability = (state: CalendarState, email: string): boolean =>
-    !!state.busyTimeSlots.attendeeDataAccessible[email];
-const selectAttendeeFetchStatus = (state: CalendarState, email: string): BusyTimeSlotFetchStatus | undefined =>
-    state.busyTimeSlots.attendeeFetchStatus[email];
+    !!state[busySlotsSliceName].attendeeDataAccessible[email];
+const selectAttendeeFetchStatus = (state: CalendarState, email: string): BusySlotFetchStatus | undefined =>
+    state[busySlotsSliceName].attendeeFetchStatus[email];
 
 export const selectAttendeeBusyData = createSelector(
     [selectAttendeeColor, selectAttendeeVisibility, selectAttendeeAvailability, selectAttendeeFetchStatus],
@@ -79,8 +79,8 @@ export const selectAttendeeBusyData = createSelector(
  * @returns boolean
  */
 export const selectDisplayAvailabilityUnknown = (state: CalendarState) =>
-    Object.entries(state.busyTimeSlots.attendeeDataAccessible).reduce((acc, [email, attendeeDataAccessible]) => {
-        if (!attendeeDataAccessible && state.busyTimeSlots.attendees.includes(email)) {
+    Object.entries(state[busySlotsSliceName].attendeeDataAccessible).reduce((acc, [email, attendeeDataAccessible]) => {
+        if (!attendeeDataAccessible && state[busySlotsSliceName].attendees.includes(email)) {
             acc = true;
         }
         return acc;

@@ -6,7 +6,7 @@ import { SimpleMap } from '@proton/shared/lib/interfaces';
 import { AttendeeModel } from '@proton/shared/lib/interfaces/calendar';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 
-import { busyTimeSlotsActions } from '../../../store/busyTimeSlots/busyTimeSlotsSlice';
+import { busySlotsActions } from '../../../store/busySlots/busySlotsSlice';
 import { useCalendarDispatch } from '../../../store/hooks';
 import BusyParticipantRow from './BusyParticipantRow';
 import ParticipantRow from './ParticipantRow';
@@ -14,7 +14,7 @@ import ParticipantRow from './ParticipantRow';
 interface Props {
     attendeeModel: AttendeeModel[];
     contactEmailsMap: SimpleMap<ContactEmail>;
-    isBusyTimeSlotsAvailable: boolean;
+    isBusySlotsAvailable: boolean;
     onDelete: (attendee: AttendeeModel) => void;
     toggleIsOptional: (attendee: AttendeeModel) => void;
 }
@@ -22,7 +22,7 @@ interface Props {
 const ParticipantRows = ({
     attendeeModel,
     contactEmailsMap,
-    isBusyTimeSlotsAvailable,
+    isBusySlotsAvailable,
     onDelete,
     toggleIsOptional,
 }: Props) => {
@@ -31,7 +31,7 @@ const ParticipantRows = ({
 
     const onChangeHighlight = useCallback(
         debounce(() => {
-            dispatch(busyTimeSlotsActions.setHighlightedAttendee(busyAttendeeHighlighted.current));
+            dispatch(busySlotsActions.setHighlightedAttendee(busyAttendeeHighlighted.current));
         }, 150),
         []
     );
@@ -39,7 +39,7 @@ const ParticipantRows = ({
     return (
         <div className="pt-1 border-bottom border-weak mb-1">
             {attendeeModel.map((participant) => {
-                return isBusyTimeSlotsAvailable ? (
+                return isBusySlotsAvailable ? (
                     <BusyParticipantRow
                         key={participant.email}
                         attendee={participant}

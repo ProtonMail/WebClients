@@ -1,15 +1,15 @@
 import { CalendarState } from '../store';
-import { getBusyAttendeesToFetch } from './busyTimeSlotsListener.helpers';
-import type { BusyTimeSlotsState } from './busyTimeSlotsSlice';
+import { getBusyAttendeesToFetch } from './busySlotsListener.helpers';
+import type { BusySlotsState } from './busySlotsSlice';
 
 describe('getBusyAttendeesToFetch', () => {
     it('should fetch all the attendees', () => {
         const attendees = ['a', 'b', 'c'];
-        const attendeeFetchStatus: BusyTimeSlotsState['attendeeFetchStatus'] = {};
-        const attendeeVisibility: BusyTimeSlotsState['attendeeVisibility'] = {};
+        const attendeeFetchStatus: BusySlotsState['attendeeFetchStatus'] = {};
+        const attendeeVisibility: BusySlotsState['attendeeVisibility'] = {};
 
         const state = {
-            busyTimeSlots: { attendees, attendeeFetchStatus, attendeeVisibility },
+            calendarBusySlots: { attendees, attendeeFetchStatus, attendeeVisibility },
         } as CalendarState;
 
         const toFetch = getBusyAttendeesToFetch(state);
@@ -19,14 +19,14 @@ describe('getBusyAttendeesToFetch', () => {
 
     it('should fetch attendees that are not already fetched or being fetched', () => {
         const attendees = ['a', 'b', 'c'];
-        const attendeeFetchStatus: BusyTimeSlotsState['attendeeFetchStatus'] = {
+        const attendeeFetchStatus: BusySlotsState['attendeeFetchStatus'] = {
             a: 'success',
             b: 'loading',
         };
-        const attendeeVisibility: BusyTimeSlotsState['attendeeVisibility'] = {};
+        const attendeeVisibility: BusySlotsState['attendeeVisibility'] = {};
 
         const state = {
-            busyTimeSlots: { attendees, attendeeFetchStatus, attendeeVisibility },
+            calendarBusySlots: { attendees, attendeeFetchStatus, attendeeVisibility },
         } as CalendarState;
 
         const toFetch = getBusyAttendeesToFetch(state);
@@ -36,13 +36,13 @@ describe('getBusyAttendeesToFetch', () => {
 
     it('should fetch attendees that are not already fetched or being fetched', () => {
         const attendees = ['a', 'b', 'c'];
-        const attendeeFetchStatus: BusyTimeSlotsState['attendeeFetchStatus'] = {
+        const attendeeFetchStatus: BusySlotsState['attendeeFetchStatus'] = {
             a: 'success',
             b: 'loading',
         };
-        const attendeeVisibility: BusyTimeSlotsState['attendeeVisibility'] = {};
+        const attendeeVisibility: BusySlotsState['attendeeVisibility'] = {};
         const state = {
-            busyTimeSlots: { attendees, attendeeFetchStatus, attendeeVisibility },
+            calendarBusySlots: { attendees, attendeeFetchStatus, attendeeVisibility },
         } as CalendarState;
 
         const toFetch = getBusyAttendeesToFetch(state);

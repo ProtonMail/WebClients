@@ -8,7 +8,7 @@ import {
     CalendarViewEvent,
     CalendarViewEventTemporaryEvent,
 } from '../../containers/calendar/interface';
-import { isBusyTimesSlotEvent } from '../../helpers/busyTimeSlots';
+import { isBusySlotEvent } from '../../helpers/busySlots';
 import PartDayBusyEvent from './PartDayBusyEvent';
 import PartDayRegularEvent from './PartDayRegularEvent';
 
@@ -78,7 +78,7 @@ export interface PartDayEventProps {
     tzid: string;
 }
 const PartDayEvent = ({ event, ...rest }: PartDayEventProps) => {
-    return isBusyTimesSlotEvent(event) ? (
+    return isBusySlotEvent(event) ? (
         <PartDayBusyEvent event={event} {...rest} />
     ) : (
         <PartDayRegularEvent event={event} {...rest} />

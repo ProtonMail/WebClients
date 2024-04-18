@@ -27,7 +27,9 @@ const PartDayBusyEvent = ({
     eventPartDuration,
 }: PartDayBusyEventProps) => {
     const canonicalizedEmail = canonicalizeEmail(event.email);
-    const isHighlighted = useCalendarSelector((state) => state.busyTimeSlots.attendeeHighlight === canonicalizedEmail);
+    const isHighlighted = useCalendarSelector(
+        (state) => state.calendarBusySlots.attendeeHighlight === canonicalizedEmail
+    );
 
     const { contactEmailsMap } = useContactEmailsCache();
     const { Name: contactName } = contactEmailsMap[canonicalizedEmail] || {};
