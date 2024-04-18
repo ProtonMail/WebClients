@@ -1568,7 +1568,7 @@ const InteractiveCalendarView = ({
             if (
                 (e.target instanceof HTMLElement || e.target instanceof Element) &&
                 e.currentTarget instanceof HTMLElement &&
-                findUpwards(e.target, e.currentTarget, (el: HTMLElement) => {
+                findUpwards(e.target as HTMLElement, e.currentTarget, (el: HTMLElement) => {
                     return ['BUTTON', 'A', 'SELECT', 'INPUT'].includes(el.nodeName);
                 })
             ) {
