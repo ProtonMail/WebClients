@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { EditorMetadata, FeatureCode, Icon, Tooltip, useFeature } from '@proton/components';
+import useAssistantTelemetry from '@proton/llm/lib/useAssistantTelemetry';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 import { hasFlag } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
@@ -77,6 +78,7 @@ const ComposerActions = ({
     const disabled = opening;
     const { feature: numAttachmentsWithoutEmbeddedFeature } = useFeature(FeatureCode.NumAttachmentsWithoutEmbedded);
     const scheduleSendSpotlight = useScheduleSendSpotlight(!opening);
+    const { sendShowAssistantReport } = useAssistantTelemetry();
 
     const { pureAttachmentsCount, attachmentsCount } = message.data?.Attachments
         ? getAttachmentCounts(message.data?.Attachments, message.messageImages)
@@ -97,6 +99,8 @@ const ComposerActions = ({
         void initAssistant();
 
         onToggleAssistant();
+
+        sendShowAssistantReport();
     };
 
     return (

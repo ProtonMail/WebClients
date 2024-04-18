@@ -8,6 +8,7 @@ import { Scroll } from '@proton/atoms/Scroll';
 import { Icon, Tooltip } from '@proton/components/components';
 import ErrorZone from '@proton/components/components/text/ErrorZone';
 import { useAssistant } from '@proton/llm/lib/useAssistant';
+import useAssistantTelemetry from '@proton/llm/lib/useAssistantTelemetry';
 import { getBlogURL } from '@proton/shared/lib/helpers/url';
 import clsx from '@proton/utils/clsx';
 
@@ -26,6 +27,7 @@ const ComposerAssistant = ({ onUseGeneratedText, onUpdateShowAssistant, assistan
     const [result, setResult] = useState('');
 
     const { error, closeAssistant, isWaitingForResult } = useAssistant();
+    const { sendUseAnswerAssistantReport } = useAssistantTelemetry();
 
     const hasAssistantError = !!error;
 
@@ -33,6 +35,7 @@ const ComposerAssistant = ({ onUseGeneratedText, onUpdateShowAssistant, assistan
         onUseGeneratedText(result);
 
         onUpdateShowAssistant?.(false);
+        sendUseAnswerAssistantReport();
         closeAssistant(assistantID);
     };
 
