@@ -968,6 +968,9 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Nadaljuj z uporabo ${ MAIL_APP_NAME }a."
+      ],
+      "Continue using ${ planTitle }": [
+        "Nadaljuj z uporabo ${ planTitle }a"
       ]
     },
     "Checkout row": {
@@ -7048,9 +7051,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "Preklic vaše naročnine, počakajte"
-      ],
-      "Downgrading your account, please wait": [
-        "Zmanjšujem račun, prosimo počakajte."
       ]
     },
     "Storage": {

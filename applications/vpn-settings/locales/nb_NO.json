@@ -6536,6 +6536,9 @@
       "Enter URL and token into your identity provider": [
         "Skriv inn nettadresse og token i identitetsleverandøren din"
       ],
+      "For security reasons, the SCIM token will be hidden after saving your changes and you won’t be able to see it again.": [
+        "Av sikkerhetsgrunner vil SCIM-tokenet være skjult etter at du har lagret endringene, og du vil ikke kunne se det igjen."
+      ],
       "For security reasons, the token is hidden": [
         "Av sikkerhetsgrunner er tokenet skjult"
       ],
@@ -7125,9 +7128,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "Kansellerer abonnementet ditt, vennligst vent"
-      ],
-      "Downgrading your account, please wait": [
-        "Nedgraderer kontoen din, vennligst vent"
       ]
     },
     "Storage": {

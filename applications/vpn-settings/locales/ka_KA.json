@@ -953,6 +953,9 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME }-ის მოხმარების გაგრძელება."
+      ],
+      "Continue using ${ planTitle }": [
+        "${ planTitle }-ის მოხმარების გაგრძელება"
       ]
     },
     "Checkout row": {
@@ -6862,9 +6865,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "მიმდინარეობს თქვენი გამოწერის გაუქმება. მოითმინეთ"
-      ],
-      "Downgrading your account, please wait": [
-        "მიმდინარეობს თქვენი პაკეტის დაქვეითება. გთხოვთ მოითმინოთ"
       ]
     },
     "Storage": {
