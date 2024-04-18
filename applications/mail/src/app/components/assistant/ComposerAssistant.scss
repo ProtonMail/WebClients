@@ -31,6 +31,18 @@
 		z-index: 2;
 	}
 
+	&-spinner {
+		font-size: em(20);
+	}
+
+	&-input {
+		color: var(--text-hint);
+
+		&:focus {
+			color: inherit;
+		}
+	}
+
 	&-button {
 		&,
 		&:hover,
@@ -39,6 +51,7 @@
 			// will need to taxonomise these
 			background: linear-gradient(54.12deg, var(--upgrade-color-stop-1) 5.58%, var(--upgrade-color-stop-2) 92.13%);
 			color: white;
+			border: 1px solid transparent;
 		}
 	}
 }
