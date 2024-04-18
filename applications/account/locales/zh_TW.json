@@ -1004,9 +1004,6 @@
       "Unlock": [
         "解鎖"
       ],
-      "Unlock Breach Report": [
-        "解鎖外洩報告"
-      ],
       "Unlock data": [
         "解鎖資料"
       ],
@@ -9682,9 +9679,6 @@
       ]
     },
     "Log preference": {
-      "Enable ${ PROTON_SENTINEL_NAME }": [
-        "啟用${ PROTON_SENTINEL_NAME }"
-      ],
       "Enable advanced logs": [
         "啟用進階記錄"
       ],
@@ -10967,12 +10961,6 @@
     "Notification": {
       "${ Filter.Name } created": [
         "${ Filter.Name } 已創建"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } 已停用。"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } 已啟用。"
       ],
       "A disabled address cannot be default": [
         "已停用的電郵位址不能成為預設"
@@ -12800,9 +12788,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "請稍後，正在取消您的訂閱"
-      ],
-      "Downgrading your account, please wait": [
-        "正在降級您的帳號，請稍候"
       ]
     },
     "Step in filter modal": {

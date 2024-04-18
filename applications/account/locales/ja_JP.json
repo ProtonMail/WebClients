@@ -9388,9 +9388,6 @@
       ]
     },
     "Log preference": {
-      "Enable ${ PROTON_SENTINEL_NAME }": [
-        "${ PROTON_SENTINEL_NAME } を有効にする"
-      ],
       "Enable advanced logs": [
         "詳細ログを有効にする"
       ],
@@ -10664,12 +10661,6 @@
     "Notification": {
       "${ Filter.Name } created": [
         "${ Filter.Name } が作成されました"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } が無効になりました"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } が有効になりました"
       ],
       "A disabled address cannot be default": [
         "無効にされたアドレスは既定にすることができません"
@@ -12528,9 +12519,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "サブスクリプションをキャンセルします。"
-      ],
-      "Downgrading your account, please wait": [
-        "アカウントをダウングレードしています。お待ちください"
       ]
     },
     "Step in filter modal": {

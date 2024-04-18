@@ -1025,9 +1025,6 @@
       "Unlock": [
         "Sblocca"
       ],
-      "Unlock Breach Report": [
-        "Sblocca il rapporto sulla violazione di dati"
-      ],
       "Unlock data": [
         "Sblocca dati"
       ],
@@ -3206,9 +3203,6 @@
       ],
       "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
         "Per rimuovere il piè di pagina di ${ MAIL_APP_NAME }, effettua l'upgrade e sblocca ancora più funzionalità premium."
-      ],
-      "To view the full report including personalized recommendations, upgrade to a paid plan.": [
-        "Per visualizzare il rapporto completo, compresi i consigli personalizzati, passa a un piano a pagamento."
       ],
       "Track the status and activity of your referrals.": [
         "Tieni traccia dello stato e dell'attività dei tuoi referral."
@@ -8108,9 +8102,6 @@
       "Why?": [
         "Perché?"
       ],
-      "Will soon be available.": [
-        "Disponibile a breve."
-      ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "Con un piano Business o Enterprise, puoi acquistare ${ boldDedicatedServers } per la tua organizzazione e configurare ${ boldGateways } per controllare quali utenti possono accedervi."
       ],
@@ -8533,6 +8524,9 @@
       ],
       "This will generate a new key, which will be used to encrypt future contact details, email encryption keys, and other data.": [
         "Questa azione genererà una nuova chiave, che verrà utilizzata per crittografare i dettagli di contatto futuri, le chiavi di crittografia email e gli altri dati."
+      ],
+      "This will generate a new key, which will be used to encrypt future emails, among other data.": [
+        "Questa azione genererà una nuova chiave, che verrà utilizzata per crittografare le email future, oltre gli altri dati."
       ]
     },
     "Key state badge": {
@@ -10093,17 +10087,14 @@
       ]
     },
     "Log preference": {
-      "Enable ${ PROTON_SENTINEL_NAME }": [
-        "Abilita ${ PROTON_SENTINEL_NAME }"
+      "Enable ${ reason }": [
+        "Abilita ${ reason }"
       ],
       "Enable advanced logs": [
         "Abilita i log avanzati"
       ],
       "Enable authentication logs": [
         "Abilita i log di autenticazione"
-      ],
-      "Enable Breach Alert": [
-        "Abilita gli avvisi sulle violazioni di dati"
       ]
     },
     "Mail import summary": {
@@ -11448,17 +11439,23 @@
       "${ Filter.Name } created": [
         "${ Filter.Name } creato"
       ],
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } è stato disattivato"
+      "${ reason } has been disabled": [
+        "${ reason } è stato disabilitato"
       ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } è stato abilitato"
+      "${ reason } has been enabled": [
+        "${ reason } è stato abilitato"
       ],
       "A disabled address cannot be default": [
         "Un indirizzo disabilitato non può essere l'indirizzo predefinito."
       ],
       "An external address cannot be default": [
         "Un indirizzo esterno non può essere l'indirizzo predefinito."
+      ],
+      "Dark Web Monitoring has been disabled": [
+        "Il monitoraggio del Dark Web è stato disabilitato"
+      ],
+      "Dark Web Monitoring has been enabled": [
+        "Il monitoraggio del Dark Web è stato abilitato"
       ],
       "Invalid code": [
         "Codice non valido"
@@ -12876,8 +12873,8 @@
       ]
     },
     "Security Center - Info": {
-      "Your information was found in at least one data breach. Turn on Breach Alert to view details and take action. ${ learnMoreLinkBreach }": [
-        "Le tue informazioni sono state trovate in almeno una violazione di dati. Attiva gli avvisi sulle violazioni di dati per visualizzare i dettagli e le azioni da seguire. ${ learnMoreLinkBreach }"
+      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLinkBreach }": [
+        "Le tue informazioni sono state trovate in almeno una violazione di dati. Attiva ${ DARK_WEB_MONITORING_NAME } per visualizzare i dettagli e le azioni da seguire. ${ learnMoreLinkBreach }"
       ]
     },
     "Select file": {
@@ -13565,9 +13562,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "Annullamento dell'abbonamento. Per favore attendi"
-      ],
-      "Downgrading your account, please wait": [
-        "Downgrade del tuo account in corso. Attendi"
       ]
     },
     "Step in filter modal": {
@@ -13828,6 +13822,156 @@
     "Subscription price": {
       "For": [
         "Per"
+      ]
+    },
+    "Subscription reminder": {
+      "${ BRAND_NAME } was targeted by Russia in one of the most aggressive censorship campaigns in recent memory, and our team fought back.": [
+        "${ BRAND_NAME } è stato preso di mira dalla Russia in una delle campagne di censura più aggressive degli ultimi tempi e il nostro team ha reagito."
+      ],
+      "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
+        "L'unica fonte per le entrate di ${ BRAND_NAME } sono gli abbonamenti degli utenti. Il tuo sostegno ci consente di rimanere indipendenti, di portare avanti la nostra missione in cui la privacy online è lo standard e di continuare a sostenere attivisti e organizzazioni che lottano per la privacy e la libertà."
+      ],
+      "${ dayDiff } day left": [
+        "${ dayDiff } giorno rimasto",
+        "${ dayDiff } giorni rimasti"
+      ],
+      "${ MAIL_APP_NAME } desktop app": [
+        "Applicazione desktop di ${ MAIL_APP_NAME }"
+      ],
+      "${ planMaxSpace } total storage": [
+        "${ planMaxSpace } di spazio di archiviazione totale"
+      ],
+      "10 email addresses": [
+        "10 indirizzi email"
+      ],
+      "A direct contribution to our mission": [
+        "Un contributo diretto alla nostra missione"
+      ],
+      "After ${ BRAND_NAME } got blocked in Iran during protests, our customer support team worked to get our VPN app directly into people's hands.": [
+        "Dopo che ${ BRAND_NAME } è stato bloccato in Iran durante le proteste, il nostro team di assistenza clienti ha lavorato per consegnare la nostra app VPN direttamente nelle mani delle persone."
+      ],
+      "After privacy and free speech were threatened in Hong Kong, we directly supported local civil rights organizations.": [
+        "Dopo che la privacy e la libertà di parola sono state minacciate a Hong Kong, abbiamo sostenuto direttamente le organizzazioni locali per i diritti civili."
+      ],
+      "By canceling your Mail Plus subscription, your storage will decrease from **${ planMaxSpace }** to **1 GB** for Mail, and **1 GB** for Drive. You will also lose any storage bonuses earned previously.": [
+        "Annullando il tuo abbonamento a Mail Plus, il tuo spazio di archiviazione diminuirà da **${ planMaxSpace }** a **1 GB** per Mail e a **1 GB** per Drive. Perderai anche gli eventuali bonus di archiviazione guadagnati in precedenza."
+      ],
+      "By canceling your Mail Plus subscription, your storage will decrease from **${ planMaxSpace }** to **1 GB** for Mail, and **5 GB** for Drive. You will also lose any storage bonuses earned previously.": [
+        "Annullando il tuo abbonamento a Mail Plus, il tuo spazio di archiviazione diminuirà da **${ planMaxSpace }** a **1 GB** per Mail e a **5 GB** per Drive. Perderai anche gli eventuali bonus di archiviazione guadagnati in precedenza."
+      ],
+      "By canceling your Mail Plus subscription, your storage will decrease from **${ planMaxSpace }** to **500 MB** for Mail, and **1 GB** for Drive. You will also lose any storage bonuses earned previously.": [
+        "Annullando il tuo abbonamento a Mail Plus, il tuo spazio di archiviazione diminuirà da **${ planMaxSpace }** a **500 MB** per Mail e a **1 GB** per Drive. Perderai anche gli eventuali bonus di archiviazione guadagnati in precedenza."
+      ],
+      "By canceling your Mail Plus subscription, your storage will decrease from **${ planMaxSpace }** to **500 MB** for Mail, and **5 GB** for Drive. You will also lose any storage bonuses earned previously.": [
+        "Annullando il tuo abbonamento a Mail Plus, il tuo spazio di archiviazione diminuirà da **${ planMaxSpace }** a **500 MB** per Mail e a **5 GB** per Drive. Perderai anche gli eventuali bonus di archiviazione guadagnati in precedenza."
+      ],
+      "By downgrading your account, you will also lose storage space": [
+        "Effettuando il downgrade del tuo account, perderai anche spazio di archiviazione"
+      ],
+      "By downgrading your account, you will lose access to these important features": [
+        "Effettuando il downgrade del tuo account, perderai l'accesso a queste importanti funzionalità"
+      ],
+      "Calendar sharing": [
+        "Condivisione del calendario"
+      ],
+      "Cancel subscription": [
+        "Annulla abbonamento"
+      ],
+      "Cancel subscription?": [
+        "Vuoi annullare l'abbonamento?"
+      ],
+      "Close": [
+        "Chiudi"
+      ],
+      "Custom schedule send and snooze times": [
+        "Pianificazione personalizzata degli orari di invio e posticipazione"
+      ],
+      "Have a question?": [
+        "Hai qualche domanda?"
+      ],
+      "Helping activists in Hong Kong": [
+        "L'aiuto agli attivisti a Hong Kong"
+      ],
+      "I still want to cancel": [
+        "Sono sicuro di voler annullare"
+      ],
+      "If you exceed your free Drive storage quota:": [
+        "Se superi la quota di spazio di archiviazione gratuita di Drive:"
+      ],
+      "If you exceed your free Mail storage quota:": [
+        "Se superi la quota di spazio di archiviazione gratuita di Mail:"
+      ],
+      "Keep Mail Plus": [
+        "Mantieni Mail Plus"
+      ],
+      "Learn more about our impact": [
+        "Scopri di più sul nostro impatto"
+      ],
+      "Let us remind you of everything Mail Plus can do": [
+        "Ti ricordiamo tutto ciò che Mail Plus può fare"
+      ],
+      "Mail Plus doesn't just provide extra storage. It lets you manage your emails faster, customize your inbox and email addresses, and access the desktop app.": [
+        "Mail Plus non fornisce solo spazio di archiviazione aggiuntivo. Ti consente di gestire le tue email più velocemente, di personalizzare la tua casella di posta e gli indirizzi email e accedere all'app desktop."
+      ],
+      "Our fight against censorship in Russia": [
+        "La nostra lotta contro la censura in Russia"
+      ],
+      "Priority support": [
+        "Supporto prioritario"
+      ],
+      "Read the story": [
+        "Leggi la storia"
+      ],
+      "Resubscribe": [
+        "Riabbonati"
+      ],
+      "Resubscribe to restore access to Mail Plus features.": [
+        "Riabbonati per ottenere nuovamente l'accesso alle funzionalità di Mail Plus."
+      ],
+      "Subscription canceled": [
+        "Abbonamento annullato"
+      ],
+      "Unblocking internet access in Iran": [
+        "Lo sblocco dell'accesso a Internet in Iran"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Cartelle, etichette e filtri illimitati"
+      ],
+      "Watch the interview": [
+        "Guarda l'intervista"
+      ],
+      "When you cancel, you will lose access to": [
+        "Se annulli, perderai l'accesso a"
+      ],
+      "Yearly free storage bonuses": [
+        "Bonus annuali gratuiti per lo spazio di archiviazione"
+      ],
+      "You **won't be able to add any new files**": [
+        "**Non potrai aggiungere nuovi file**"
+      ],
+      "You **won't be able to backup photos** from your devices": [
+        "**Non potrai eseguire il backup delle foto** dai tuoi dispositivi"
+      ],
+      "You **won't be able to send emails** with attachments": [
+        "**Non potrai inviare email** con allegati"
+      ],
+      "You still have ${ expiryDate } on your Mail Plus plan. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling.": [
+        "Hai ancora ${ expiryDate } sul tuo piano Mail Plus. Aggiungeremo i crediti per il tempo rimanente al tuo account ${ BRAND_NAME }. Assicurati di non superare i limiti del piano gratuito prima di annullare."
+      ],
+      "Your **calendar will be frozen**": [
+        "Il tuo **calendario verrà congelato**"
+      ],
+      "Your devices will **stop syncing**": [
+        "I tuoi dispositivi **interromperanno la sincronizzazione**"
+      ],
+      "Your inbox will **stop receiving new emails**": [
+        "La tua casella di posta **non riceverà più nuove email**"
+      ],
+      "Your own custom email domain": [
+        "Il tuo dominio email personalizzato"
+      ],
+      "Your own short @pm.me email alias": [
+        "Il tuo alias email breve @pm.me"
       ]
     },
     "Subscription renewal state": {
@@ -14429,9 +14573,6 @@
       "Block trackers and malware": [
         "Blocca tracker e malware"
       ],
-      "Breach Alert": [
-        "Avviso sulle violazioni di dati"
-      ],
       "Bridge for ${ platform }": [
         "Bridge per ${ platform }"
       ],
@@ -14556,14 +14697,14 @@
       "Currency": [
         "Valuta"
       ],
-      "Custom branding": [
-        "Marchio personalizzato"
-      ],
       "Custom filters": [
         "Filtri personalizzati"
       ],
       "Custom selection of users": [
         "Selezione personalizzata degli utenti"
+      ],
+      "Customization": [
+        "Personalizzazione"
       ],
       "Customize and confirm": [
         "Personalizza e conferma"
@@ -14952,9 +15093,6 @@
       "OpenVPN configuration files": [
         "File di configurazione di OpenVPN"
       ],
-      "Organization appearance": [
-        "Aspetto dell'organizzazione"
-      ],
       "Organization filters": [
         "Filtri organizzazione"
       ],
@@ -15306,6 +15444,12 @@
       ],
       "WireGuard configuration": [
         "Configurazione di WireGuard"
+      ],
+      "You have no open alerts": [
+        "Non hai avvisi aperti"
+      ],
+      "You have no resolved alerts": [
+        "Non hai avvisi risolti"
       ],
       "Your calendar link": [
         "Link del tuo calendario"

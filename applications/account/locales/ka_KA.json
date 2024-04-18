@@ -1004,9 +1004,6 @@
       "Unlock": [
         "განბლოკვა"
       ],
-      "Unlock Breach Report": [
-        "განბლოკეთ გაჟონვის ანგარიში"
-      ],
       "Unlock data": [
         "ბლოკის მოხსნა"
       ],
@@ -1649,6 +1646,9 @@
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME }-ის მოხმარების გაგრძელება."
+      ],
+      "Continue using ${ planTitle }": [
+        "${ planTitle }-ის მოხმარების გაგრძელება"
       ],
       "Copy": [
         "კოპირება"
@@ -3136,9 +3136,6 @@
       ],
       "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
         "${ MAIL_APP_NAME }-ის ქვედა კოლონტიტულის მოსაცილებლად ასწიეთ სატარიფო გეგმა და მიიღეთ კიდევ უფრო მეტი ფასიანი ფუნქცია."
-      ],
-      "To view the full report including personalized recommendations, upgrade to a paid plan.": [
-        "სრული ანგარიშის სანახავად, პერსონალიზებული რეკომენდაციების ჩათვლით, გადადით ფასიან გეგმაზე."
       ],
       "Track the status and activity of your referrals.": [
         "თქვენი მიმართვების სტატუსისა და აქტივობების ტრეკინგი."
@@ -9782,6 +9779,9 @@
       "Sign in": [
         "შესვლა"
       ],
+      "stay safer online": [
+        "იყავით უსაფრთხოდ ინტერნეტში"
+      ],
       "switch account": [
         "ანგარიშის გადართვა"
       ],
@@ -9868,9 +9868,6 @@
       ]
     },
     "Log preference": {
-      "Enable ${ PROTON_SENTINEL_NAME }": [
-        "${ PROTON_SENTINEL_NAME }-ის ჩართვა"
-      ],
       "Enable advanced logs": [
         "დამატებითი ჟურნალის ჩართვა"
       ],
@@ -11216,12 +11213,6 @@
     "Notification": {
       "${ Filter.Name } created": [
         "${ Filter.Name } შეიქმნა"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } გაითიშა"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } ჩაირთო"
       ],
       "A disabled address cannot be default": [
         "გათიშული მისამართი ნაგულისხმები ვერ იქნება"
@@ -13175,9 +13166,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "მიმდინარეობს თქვენი გამოწერის გაუქმება. მოითმინეთ"
-      ],
-      "Downgrading your account, please wait": [
-        "მიმდინარეობს თქვენი პაკეტის დაქვეითება. გთხოვთ მოითმინოთ"
       ]
     },
     "Step in filter modal": {

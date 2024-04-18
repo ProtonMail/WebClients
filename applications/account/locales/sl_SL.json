@@ -1013,9 +1013,6 @@
       "Unlock": [
         "Odkleni"
       ],
-      "Unlock Breach Report": [
-        "Omogočite poročilo o uhajanju podatkov"
-      ],
       "Unlock data": [
         "Odkleni podatke"
       ],
@@ -1673,6 +1670,9 @@
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Nadaljuj z uporabo ${ MAIL_APP_NAME }a."
+      ],
+      "Continue using ${ planTitle }": [
+        "Nadaljuj z uporabo ${ planTitle }a"
       ],
       "Copy": [
         "Kopiraj"
@@ -3174,9 +3174,6 @@
       ],
       "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
         "Če želite odstraniti podpis ${ MAIL_APP_NAME }, nadgradite in omogočite še več premijskih funkcij."
-      ],
-      "To view the full report including personalized recommendations, upgrade to a paid plan.": [
-        "Če želite dostopati do celotnega poročila s prilagojenimi priporočili, morate nadgraditi na plačljiv paket."
       ],
       "Track the status and activity of your referrals.": [
         "Preverite stanje in dejavnost vaših priporočil."
@@ -10069,9 +10066,6 @@
       ]
     },
     "Log preference": {
-      "Enable ${ PROTON_SENTINEL_NAME }": [
-        "Omogoči ${ PROTON_SENTINEL_NAME }"
-      ],
       "Enable advanced logs": [
         "Omogoči napredne evidence"
       ],
@@ -11477,12 +11471,6 @@
     "Notification": {
       "${ Filter.Name } created": [
         "Filter ${ Filter.Name } ustvarjen"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } je bil onemogočen."
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } je bil omogočen."
       ],
       "A disabled address cannot be default": [
         "Onemogočen naslov ne more biti privzeti."
@@ -13501,9 +13489,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "Preklic vaše naročnine, počakajte"
-      ],
-      "Downgrading your account, please wait": [
-        "Zmanjšujem račun, prosimo počakajte."
       ]
     },
     "Step in filter modal": {
@@ -14399,9 +14384,6 @@
       "Billing cycle": [
         "Cikel obračunavanja"
       ],
-      "Breach Alert": [
-        "Opozorilo o uhajanju podatkov"
-      ],
       "Bridge for ${ platform }": [
         "Prehod za ${ platform }"
       ],
@@ -14753,6 +14735,9 @@
       "Folders and labels": [
         "Mape in oznake"
       ],
+      "For Linux": [
+        "Za Linux"
+      ],
       "Forward and auto-reply": [
         "Posredovanje in samodejni odgovor"
       ],
@@ -14900,6 +14885,9 @@
       "No recovery method": [
         "Ni načina obnovitve"
       ],
+      "Open": [
+        "Odpri"
+      ],
       "Open actions dropdown": [
         "Spustno okno \"Dejanja\""
       ],
@@ -15016,6 +15004,9 @@
       ],
       "Reset password?": [
         "Ponastavi geslo?"
+      ],
+      "Resolved": [
+        "Rešeno"
       ],
       "Restore administrator privileges": [
         "Obnovite skrbniške pravice"
@@ -15238,6 +15229,9 @@
       ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Na vaš novi naslov vam bomo poslali sporočilo z navodili o dokončanju sprememb."
+      ],
+      "What is an alias?": [
+        "Kaj je vzdevek?"
       ],
       "What would you like to import?": [
         "Kaj želite uvoziti?"

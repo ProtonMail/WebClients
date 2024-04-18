@@ -1561,6 +1561,9 @@
       "Continue using ${ MAIL_APP_NAME }.": [
         "Продовжити за допомогою ${ MAIL_APP_NAME }."
       ],
+      "Continue using ${ planTitle }": [
+        "Продовжити за допомогою ${ planTitle }"
+      ],
       "Copy": [
         "Копіювати"
       ],
@@ -9657,9 +9660,6 @@
       ]
     },
     "Log preference": {
-      "Enable ${ PROTON_SENTINEL_NAME }": [
-        "Увімкнути ${ PROTON_SENTINEL_NAME }"
-      ],
       "Enable advanced logs": [
         "Увімкнути розширений журнал"
       ],
@@ -10963,12 +10963,6 @@
     "Notification": {
       "${ Filter.Name } created": [
         "${ Filter.Name } створено"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } вимкнено"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } увімкнено"
       ],
       "A disabled address cannot be default": [
         "Неможливо зробити типовою вимкнену адресу"
@@ -12680,9 +12674,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "Зачекайте поки триває скасування вашої передплати..."
-      ],
-      "Downgrading your account, please wait": [
-        "Триває перехід на тарифний план нижчого рівня. Будь ласка, зачекайте"
       ]
     },
     "Step in filter modal": {

@@ -396,7 +396,7 @@
         "Modifier"
       ],
       "Edit billing cycle": [
-        "Mise à jour du cycle de facturation"
+        "Modifier le cycle de facturation"
       ],
       "Edit display name": [
         "Modifier le nom d’affichage"
@@ -1024,9 +1024,6 @@
       ],
       "Unlock": [
         "Déverrouiller"
-      ],
-      "Unlock Breach Report": [
-        "Débloquer le rapport de fuites de données"
       ],
       "Unlock data": [
         "Déverrouiller les données"
@@ -3207,9 +3204,6 @@
       "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
         "Pour retirer le pied de page ${ MAIL_APP_NAME }, changez d'abonnement. Vous disposerez aussi de bien plus de fonctionnalités premium."
       ],
-      "To view the full report including personalized recommendations, upgrade to a paid plan.": [
-        "Pour accéder au rapport complet contenant des recommandations personnalisées, vous devez passer un abonnement payant."
-      ],
       "Track the status and activity of your referrals.": [
         "Suivez vos parrainages."
       ],
@@ -3936,7 +3930,7 @@
         "Le traitement du logo n'a pas abouti."
       ],
       "File too large. Your logo must be 30 KB or smaller.": [
-        "Le fichier est trop grand. Votre logo doit être de 30 Ko ou moins."
+        "Le fichier est trop grand. Votre logo doit être inférieur ou égal 30 Ko."
       ],
       "Filter with this name already exists": [
         "Un filtre avec ce nom existe déjà."
@@ -7012,7 +7006,7 @@
         "En savoir plus sur l'authentification unique"
       ],
       "Learn how to ${ staySaferOnlineLink }": [
-        "Apprenez comment ${ staySaferOnlineLink }"
+        "Découvrez comment ${ staySaferOnlineLink }"
       ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Apprenez comment vous connecter à ${ VPN_APP_NAME } avec des applications VPN tierces."
@@ -7228,7 +7222,7 @@
         "Il y a d'autres administrateurs dans votre organisation, vous devez leur communiquer le nouveau mot de passe."
       ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
-        "Les autres utilisateurs de votre organisation verront vos créneaux horaires occupés. Aucune information sur l'événement n'est partagée."
+        "Les autres utilisateurs de votre organisation verront vos créneaux horaires occupés. Aucune information sur les événements n'est partagée."
       ],
       "Outdated recovery file; update to ensure access to your data": [
         "Le fichier de récupération est périmé : mettez-le à jour pour assurer l'accès à vos données."
@@ -8049,7 +8043,7 @@
         "Nous vous redirigerons vers PayPal dans un nouvel onglet du navigateur pour compléter cette transaction. Si vous utilisez des bloqueurs de pop-up, veuillez les désactiver pour continuer."
       ],
       "We'll email you once import is complete.": [
-        "Nous vous enverrons un e-mail à la fin de l'importation."
+        "Nous vous enverrons un e-mail une fois l'importation terminée."
       ],
       "We'll get back to you shortly.": [
         "Nous vous recontacterons prochainement."
@@ -8104,9 +8098,6 @@
       ],
       "Why?": [
         "Pourquoi ?"
-      ],
-      "Will soon be available.": [
-        "Cette fonction sera bientôt disponible."
       ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "Avec l'abonnement Business ou Enterprise, vous pouvez acheter des ${ boldDedicatedServers } pour votre organisation et configurer des ${ boldGateways } pour contrôler les utilisateurs y ayant accès."
@@ -10090,17 +10081,11 @@
       ]
     },
     "Log preference": {
-      "Enable ${ PROTON_SENTINEL_NAME }": [
-        "Activer ${ PROTON_SENTINEL_NAME }"
-      ],
       "Enable advanced logs": [
         "Activer les journaux avancés (logs)"
       ],
       "Enable authentication logs": [
         "Activer les journaux d'authentification (logs)"
-      ],
-      "Enable Breach Alert": [
-        "Activer les alertes de fuites de données"
       ]
     },
     "Mail import summary": {
@@ -11076,7 +11061,7 @@
         "Disposez de solutions sur mesure pour les grandes entreprises qui ont des besoins spécifiques en matière de sécurité."
       ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
-        "La solution VPN dédiée qui offre un accès à internet sûr, illimité et haut débit."
+        "La solution VPN dédiée qui offre un accès sécurisé, sans limitation et ultra-rapide à internet."
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "Le compte de démarrage gratuit conçu pour que tout le monde puisse bénéficier du respect de la vie privée."
@@ -11441,12 +11426,6 @@
     "Notification": {
       "${ Filter.Name } created": [
         "${ Filter.Name } a été créé."
-      ],
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } a été désactivé."
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } a été activé."
       ],
       "A disabled address cannot be default": [
         "Une adresse désactivée ne peut pas être une adresse par défaut."
@@ -12848,11 +12827,6 @@
         "URL du connecteur SCIM auquel votre agent de provisionnement du fournisseur d'identité transmet les données SCIM"
       ]
     },
-    "Security Center - Info": {
-      "Your information was found in at least one data breach. Turn on Breach Alert to view details and take action. ${ learnMoreLinkBreach }": [
-        "Vos informations ont été retrouvées dans au moins une fuite de données. Activez l'option Alertes de fuites d'informations pour consulter ces informations et prendre les mesures nécessaires. ${ learnMoreLinkBreach }"
-      ]
-    },
     "Select file": {
       "Upload CSV file": [
         "Importer un fichier CSV"
@@ -13538,9 +13512,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "L'annulation de votre abonnement est en cours, veuillez patienter."
-      ],
-      "Downgrading your account, please wait": [
-        "Votre compte est en cours de modification, veuillez patienter."
       ]
     },
     "Step in filter modal": {
@@ -14402,9 +14373,6 @@
       "Block trackers and malware": [
         "Bloquez les logiciels malveillants et traqueurs"
       ],
-      "Breach Alert": [
-        "Alerte de fuites de données"
-      ],
       "Bridge for ${ platform }": [
         "Bridge pour ${ platform }"
       ],
@@ -14528,9 +14496,6 @@
       ],
       "Currency": [
         "Devise"
-      ],
-      "Custom branding": [
-        "Marque personnalisée"
       ],
       "Custom filters": [
         "Filtres personnalisés"
@@ -14924,9 +14889,6 @@
       ],
       "OpenVPN configuration files": [
         "Fichiers de configuration OpenVPN"
-      ],
-      "Organization appearance": [
-        "Apparence de l'organisation"
       ],
       "Organization filters": [
         "Filtres de l'organisation"

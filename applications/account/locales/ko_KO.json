@@ -1004,9 +1004,6 @@
       "Unlock": [
         "잠금 해제"
       ],
-      "Unlock Breach Report": [
-        "침해 보고서 잠금해제"
-      ],
       "Unlock data": [
         "데이터 잠금 해제"
       ],
@@ -1666,6 +1663,9 @@
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME }을 계속 사용하세요."
+      ],
+      "Continue using ${ planTitle }": [
+        "${ planTitle }을 계속 사용하세요"
       ],
       "Copy": [
         "복사"
@@ -3146,9 +3146,6 @@
       ],
       "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
         "${ MAIL_APP_NAME } 바닥글을 지우기 위해 업그레이드 하고, 다른 프리미엄 기능들도 함께 잠금 해제하세요."
-      ],
-      "To view the full report including personalized recommendations, upgrade to a paid plan.": [
-        "맞춤형 권장사항을 포함하는 완전한 보고서를 확인하려면 유료 요금제로 업그레이드하십시오."
       ],
       "Track the status and activity of your referrals.": [
         "사용자의 리퍼럴 상태와 활동을 추적하세요."
@@ -6616,6 +6613,9 @@
       "Failed to fetch logs.": [
         "로그를 가져오지 못했습니다."
       ],
+      "Fast and focused. Email and calendar, right on your desktop.": [
+        "신속하고 충실하도록. 당신의 데스크톱으로 찾아온 이메일과 캘린더."
+      ],
       "Fill in user details": [
         "사용자 세부 정보를 입력하세요"
       ],
@@ -7452,6 +7452,9 @@
       ],
       "The credentials from your Identity Provider will be deleted.": [
         "ID 제공자가 제공한 크리덴셜 정보가 삭제됩니다."
+      ],
+      "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
+        "다크 웹이란 신원과 같은 도난당한 개인 정보의 매매가 이루어지기도 하는 인터넷의 숨겨진 일부입니다."
       ],
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "이메일 인증 링크가 만료되었습니다. 로그인하여 새로운 인증 링크를 재전송 하십시오."
@@ -9738,6 +9741,9 @@
       "Sign in": [
         "로그인"
       ],
+      "stay safer online": [
+        "온라인 상에서 안전하게"
+      ],
       "switch account": [
         "계정 전환"
       ],
@@ -9822,9 +9828,6 @@
       ]
     },
     "Log preference": {
-      "Enable ${ PROTON_SENTINEL_NAME }": [
-        "${ PROTON_SENTINEL_NAME } 활성화"
-      ],
       "Enable advanced logs": [
         "향상된 로그 켜기"
       ],
@@ -11140,12 +11143,6 @@
     "Notification": {
       "${ Filter.Name } created": [
         "${ Filter.Name } 생성됨"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME }이(가) 비활성화 되었습니다."
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME }이(가) 활성화 되었습니다."
       ],
       "A disabled address cannot be default": [
         "비활성된 주소를 기본으로 할 수 없음"
@@ -13092,9 +13089,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "구독을 취소하고 있습니다, 잠시만 기다려주세요"
-      ],
-      "Downgrading your account, please wait": [
-        "계정은 다운그레이드 하는 중이니 기다려 주세요"
       ]
     },
     "Step in filter modal": {
