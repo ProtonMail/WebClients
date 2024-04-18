@@ -3,6 +3,7 @@ import { Route, type RouteChildrenProps, Switch } from 'react-router-dom';
 
 import { Missing2FAs } from '@proton/pass/components/Monitor/2FA/Missing2FAs';
 import { DuplicatePasswords } from '@proton/pass/components/Monitor/Password/DuplicatePasswords';
+import { WeakPasswords } from '@proton/pass/components/Monitor/Password/WeakPasswords';
 import { Summary } from '@proton/pass/components/Monitor/Summary';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { PassFeature } from '@proton/pass/types/api/features';
@@ -17,6 +18,7 @@ export const Monitor: FC<RouteChildrenProps> = ({ match }) => {
                     <Switch>
                         <Route exact path={`${match?.path}/duplicates`} component={DuplicatePasswords} />
                         <Route exact path={`${match?.path}/missing`} component={Missing2FAs} />
+                        <Route exact path={`${match?.path}/weak`} component={WeakPasswords} />
                         <Route component={Summary} />
                     </Switch>
                 </div>
