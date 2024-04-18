@@ -1,4 +1,11 @@
-import { type ForwardRefRenderFunction, type RefObject, forwardRef, useCallback, useEffect, useState } from 'react';
+import {
+    type ForwardRefRenderFunction,
+    type RefObject,
+    forwardRef,
+    useCallback,
+    useLayoutEffect,
+    useState,
+} from 'react';
 import type { ListRowRenderer, ScrollParams } from 'react-virtualized';
 import { AutoSizer, List } from 'react-virtualized';
 
@@ -34,9 +41,11 @@ const VirtualListRender: ForwardRefRenderFunction<List, Props> = (
         [onScrollEnd]
     );
 
-    useEffect(() => {
-        (virtualListRef as RefObject<List>).current?.recomputeRowHeights();
-    }, [interpolationIndexes]);
+    useLayoutEffect(() => {
+        const ref = virtualListRef as RefObject<List>;
+        ref.current?.recomputeRowHeights();
+        ref.current?.measureAllRows();
+    }, [interpolationIndexes, rowCount]);
 
     return (
         <div className="h-full scroll-outer-vertical">
