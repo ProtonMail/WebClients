@@ -6,7 +6,7 @@ import {
     strengthClassNames,
     translateStrengths,
 } from '@proton/pass/components/Password/PasswordStrength';
-import { usePasswordStrength } from '@proton/pass/hooks/usePasswordStrength';
+import { usePasswordStrength } from '@proton/pass/hooks/monitor/usePasswordStrength';
 import clsx from '@proton/utils/clsx';
 
 import { TextField, type TextFieldProps } from './TextField';
