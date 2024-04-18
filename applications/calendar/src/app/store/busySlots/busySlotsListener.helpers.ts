@@ -264,7 +264,10 @@ export const fetchAttendeesBusySlots = async ({
             }
             const visibleAttendeesCount = currentVisibleAttendeesCount + index - nonAccessibleCounter;
 
-            const visibility = visibleAttendeesCount >= BUSY_TIME_SLOTS_MAX_ATTENDEES_DISPLAYED ? 'hidden' : 'visible';
+            const visibility =
+                visibleAttendeesCount >= BUSY_TIME_SLOTS_MAX_ATTENDEES_DISPLAYED || !isDataAccessible
+                    ? 'hidden'
+                    : 'visible';
 
             return {
                 busySlots,

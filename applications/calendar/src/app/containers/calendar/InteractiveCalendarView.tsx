@@ -1667,7 +1667,6 @@ const InteractiveCalendarView = ({
 
     const preventFetchBusySlots = useBusySlots({
         dateRange,
-        now,
         temporaryEvent,
         tzid,
         view,

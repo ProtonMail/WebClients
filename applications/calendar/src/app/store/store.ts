@@ -8,10 +8,11 @@ import { type CalendarThunkArguments, extraThunkArguments } from './thunk';
 
 export type CalendarState = ReturnType<typeof rootReducer>;
 
-export const setupStore = () => {
+export const setupStore = ({ preloadedState }: { preloadedState?: Partial<CalendarState> } = {}) => {
     const listenerMiddleware = createListenerMiddleware({ extra: extraThunkArguments });
 
     const store = configureStore({
+        preloadedState,
         reducer: rootReducer,
         devTools: process.env.NODE_ENV !== 'production',
         middleware: (getDefaultMiddleware) =>
