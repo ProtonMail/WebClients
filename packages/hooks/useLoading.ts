@@ -88,13 +88,19 @@ const SINGLE_LOADING_KEY = 'main';
 const useLoading = (initialState = false): [boolean, WithLoading, (loading: boolean) => void] => {
     const [loadingByKey, withLoadingByKey, setLoadingByKey] = useLoadingByKey({ [SINGLE_LOADING_KEY]: initialState });
 
-    const withLoading: WithLoading = (args) => {
-        return withLoadingByKey(SINGLE_LOADING_KEY, args);
-    };
+    const withLoading: WithLoading = useCallback(
+        (args) => {
+            return withLoadingByKey(SINGLE_LOADING_KEY, args);
+        },
+        [withLoadingByKey]
+    );
 
-    const setLoading = (loading: boolean) => {
-        return setLoadingByKey(SINGLE_LOADING_KEY, loading);
-    };
+    const setLoading = useCallback(
+        (loading: boolean) => {
+            return setLoadingByKey(SINGLE_LOADING_KEY, loading);
+        },
+        [setLoadingByKey]
+    );
 
     return [loadingByKey[SINGLE_LOADING_KEY] as boolean, withLoading, setLoading];
 };
