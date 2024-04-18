@@ -24,6 +24,7 @@ import { useNavigation } from '@proton/pass/components/Navigation/NavigationProv
 import { getLocalPath, getNewItemRoute } from '@proton/pass/components/Navigation/routing';
 import { UpsellingModal } from '@proton/pass/components/Upsell/UpsellingModal';
 import { UpsellRef } from '@proton/pass/constants';
+import { useMissing2FAs } from '@proton/pass/hooks/useMissing2FAs';
 import { selectMonitorSummary } from '@proton/pass/store/selectors/monitor';
 import { PASS_SHORT_APP_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
 
@@ -37,6 +38,7 @@ export const Summary: FC = () => {
     const { navigate } = useNavigation();
     const { breaches, duplicatePasswords } = useSelector(selectMonitorSummary);
     const [upsellModalOpen, setUpsellModalOpen] = useState(false);
+    const missing2FAsCount = useMissing2FAs().length;
 
     const learnMore: LearnMoreProps[] = useMemo(
         () => [
@@ -106,10 +108,12 @@ export const Summary: FC = () => {
                             type={duplicatePasswords > 0 ? 'warning' : 'success'}
                         />
                         <ActionCard
-                            onClick={() => {}}
+                            onClick={() =>
+                                missing2FAsCount > 0 ? navigate(`${getLocalPath('monitor/missing')}`) : null
+                            }
                             title={c('Title').t`Missing two-factor authentication`}
                             subtitle={c('Description').t`Increase your security`}
-                            pillLabel={3}
+                            pillLabel={missing2FAsCount > 0 ? missing2FAsCount : null}
                         />
                         <ActionCard
                             onClick={() => {}}
