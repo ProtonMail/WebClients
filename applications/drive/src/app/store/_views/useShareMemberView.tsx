@@ -1,5 +1,8 @@
 import { useEffect, useState } from 'react';
 
+import { c } from 'ttag';
+
+import { useNotifications } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
 
@@ -16,9 +19,10 @@ import {
 } from '../_shares';
 
 const useShareMemberView = (rootShareId: string, linkId: string) => {
-    const { inviteProtonUser, listInvitations } = useShareInvitation();
-    const { updateShareMemberPermissions, getShareMembers } = useShareMember();
+    const { inviteProtonUser, listInvitations, deleteInvitation } = useShareInvitation();
+    const { updateShareMemberPermissions, getShareMembers, removeShareMember } = useShareMember();
     const { getLink, getLinkPrivateKey, loadFreshLink } = useLink();
+    const { createNotification } = useNotifications();
     const [isLoading, withLoading] = useLoading();
     const [isAdding, withAdding] = useLoading();
     const { getShare, getShareWithKey, getShareSessionKey, getShareCreatorKeys } = useShare();
@@ -59,7 +63,16 @@ const useShareMemberView = (rootShareId: string, linkId: string) => {
         };
     }, [rootShareId, linkId, volumeId]);
 
-    const updateStoredMembers = (memberId: string, member: ShareMember | undefined) => {
+    const getShareId = async (abortSignal: AbortSignal): Promise<string> => {
+        const link = await getLink(abortSignal, rootShareId, linkId);
+        // This should not happen - TS gymnastics
+        if (!link.sharingDetails) {
+            throw new Error('No details for sharing link');
+        }
+        return link.sharingDetails.shareId;
+    };
+
+    const updateStoredMembers = (memberId: string, member?: ShareMember | undefined) => {
         setMembers((current) =>
             current.reduce<ShareMember[]>((acc, item) => {
                 if (item.memberId === memberId) {
@@ -139,14 +152,29 @@ const useShareMemberView = (rootShareId: string, linkId: string) => {
 
     const updateMemberPermissions = async (member: ShareMember) => {
         const abortSignal = new AbortController().signal;
-        const link = await getLink(abortSignal, rootShareId, linkId);
-        if (!link.sharingDetails) {
-            return;
-        }
-        const shareId = link.sharingDetails.shareId;
+        const shareId = await getShareId(abortSignal);
 
         await updateShareMemberPermissions(abortSignal, { shareId, member });
         updateStoredMembers(member.memberId, member);
+        createNotification({ type: 'info', text: c('Notification').t`Access updated and shared` });
+    };
+
+    const removeMember = async (member: ShareMember) => {
+        const abortSignal = new AbortController().signal;
+        const shareId = await getShareId(abortSignal);
+
+        await removeShareMember(abortSignal, { shareId, memberId: member.memberId });
+        updateStoredMembers(member.memberId);
+        createNotification({ type: 'info', text: c('Notification').t`Access for the member removed` });
+    };
+
+    const removeInvitation = async (invitationId: string) => {
+        const abortSignal = new AbortController().signal;
+        const shareId = await getShareId(abortSignal);
+
+        await deleteInvitation(abortSignal, { shareId, invitationId });
+        setInvitations((current) => current.filter((item) => item.invitationId !== invitationId));
+        createNotification({ type: 'info', text: c('Notification').t`Invitation removed from the share` });
     };
 
     return {
@@ -155,6 +183,8 @@ const useShareMemberView = (rootShareId: string, linkId: string) => {
         invitations,
         isLoading,
         isAdding,
+        removeInvitation,
+        removeMember,
         addNewMember,
         addNewMembers,
         updateMemberPermissions,
