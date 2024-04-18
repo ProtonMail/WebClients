@@ -374,6 +374,9 @@
       "Report a problem": [
         "Nahlásit problém"
       ],
+      "Request a call": [
+        "Požádat o hovor"
+      ],
       "Request a feature": [
         "Požádejte o funkci"
       ],
@@ -965,6 +968,9 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Pokračovat s ${ MAIL_APP_NAME }."
+      ],
+      "Continue using ${ planTitle }": [
+        "Pokračovat s ${ planTitle }"
       ]
     },
     "Checkout row": {
@@ -4790,6 +4796,9 @@
       ]
     },
     "locked_state_storage_banner: info": {
+      "Learn more": [
+        "Více informací"
+      ],
       "upgrade for more storage": [
         "navýšit tarif pro více prostoru"
       ],
@@ -5851,6 +5860,11 @@
       ],
       "Two-factor authentication is not required anymore": [
         "Dvoufázové ověření již není vyžadováno"
+      ]
+    },
+    "Notification for duplicate filenames in the current upload": {
+      "Some images were not uploaded due to duplicate filenames in the current selection.": [
+        "Některé obrázky nebyly nahrány kvůli duplicitním názvům souborů v aktuálním výběru."
       ]
     },
     "Onboarding": {
@@ -6924,9 +6938,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "Rušení předplatného, počkejte prosím"
-      ],
-      "Downgrading your account, please wait": [
-        "Probíhá přechod na nižší tarif, počkejte prosím"
       ]
     },
     "Storage": {
@@ -6982,7 +6993,7 @@
         "navýšit tarif pro více prostoru"
       ],
       "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
-        "Přidáme kredit za zbývající čas k vašemu ${ BRAND_NAME } účtu."
+        "Nevyužitý kredit přidáme na váš účet ${ BRAND_NAME }."
       ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "V tarifu **${ currentPlanName }** vám zbývá ještě **${ daysRemaining }** den.",

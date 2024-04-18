@@ -521,6 +521,9 @@
       "Upgrade your plan": [
         "Milloreu el vostre pla"
       ],
+      "Upload": [
+        "Carrega"
+      ],
       "Use ${ label } theme": [
         "Utilitzar el tema ${ label }"
       ],
@@ -926,6 +929,9 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continua utilitzant ${ MAIL_APP_NAME }."
+      ],
+      "Continue using ${ planTitle }": [
+        "Continua utilitzant ${ planTitle }"
       ]
     },
     "Checkout row": {
@@ -2007,6 +2013,9 @@
       ],
       "Name does not match": [
         "El nom no coincideix."
+      ],
+      "No image selected": [
+        "No s'ha seleccionat cap imatge."
       ],
       "Not a valid number": [
         "Número no vàlid"
@@ -3175,6 +3184,9 @@
       "Link copied to clipboard": [
         "S'ha copiat l'enllaç al porta-retalls."
       ],
+      "Live chat": [
+        "Xat en directe"
+      ],
       "Loading": [
         "Carregant"
       ],
@@ -3323,6 +3335,9 @@
       ],
       "Plus or Visionary subscription required": [
         "Es requereix una subscripció Plus o Visionary."
+      ],
+      "Preview": [
+        "Vista prèvia"
       ],
       "Preview failed to be loaded": [
         "La previsualització no s'ha pogut carregar."
@@ -4161,6 +4176,9 @@
       ],
       "Level for NetShield blocker filtering": [
         "Nivell de filtratge del bloquejador NetShield"
+      ],
+      "Logo": [
+        "Logo"
       ],
       "Mailbox password": [
         "Contrasenya de la bústia"
@@ -6031,6 +6049,14 @@
         "Usuari"
       ]
     },
+    "scim: Action": {
+      "Configure SCIM": [
+        "Configura SCIM"
+      ],
+      "Generate token": [
+        "Genera un token"
+      ]
+    },
     "Select file": {
       "Upload CSV file": [
         "Carrega un fitxer CSV"
@@ -6545,11 +6571,6 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Convida amistats a ${ BRAND_NAME }"
-      ]
-    },
-    "State": {
-      "Downgrading your account, please wait": [
-        "S'està passant a un pla inferior. Espereu un moment."
       ]
     },
     "Storage": {

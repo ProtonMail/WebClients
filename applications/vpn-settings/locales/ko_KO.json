@@ -964,6 +964,9 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME }을 계속 사용하세요."
+      ],
+      "Continue using ${ planTitle }": [
+        "${ planTitle }을 계속 사용하세요"
       ]
     },
     "Checkout row": {
@@ -6816,9 +6819,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "구독을 취소하고 있습니다, 잠시만 기다려주세요"
-      ],
-      "Downgrading your account, please wait": [
-        "계정은 다운그레이드 하는 중이니 기다려 주세요"
       ]
     },
     "Storage": {
