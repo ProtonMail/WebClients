@@ -2,31 +2,58 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button, CircleLoader } from '@proton/atoms';
 import { ReferralFeaturesList, useConfig } from '@proton/components';
+import {
+    DEFAULT_TAX_BILLING_ADDRESS,
+    WrappedTaxCountrySelector,
+} from '@proton/components/containers/payments/TaxCountrySelector';
+import { BillingAddress, PaymentMethodStatusExtended } from '@proton/components/payments/core';
+import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
 import metrics from '@proton/metrics';
 import { MAIL_APP_NAME, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
-import { PlanIDs } from '@proton/shared/lib/interfaces';
 
 import Content from '../public/Content';
 import Header from '../public/Header';
 import Main from '../public/Main';
 import Text from '../public/Text';
 import { getSignupApplication } from './helper';
+import { SubscriptionData } from './interfaces';
 
 type PlanType = 'free' | 'trial';
 
 interface Props {
-    onPlan: (planIDs: PlanIDs) => Promise<void>;
+    onSubscriptionData: (subscriptionData: Pick<SubscriptionData, 'planIDs' | 'billingAddress'>) => Promise<void>;
     onBack?: () => void;
 }
 
-const ReferralStep = ({ onPlan, onBack }: Props) => {
+const usePaymentsStatus = () => {
+    const paymentsApi = usePaymentsApi();
+
+    const [status, setStatus] = useState<PaymentMethodStatusExtended | undefined>();
+    const [statusLoading, withStatusLoading] = useLoading();
+
+    useEffect(() => {
+        void withStatusLoading(async () => {
+            const status = await paymentsApi.paymentsApi.statusExtendedAutomatic();
+            setStatus(status);
+        });
+    }, []);
+
+    return {
+        statusLoading,
+        status,
+    };
+};
+
+const ReferralStep = ({ onSubscriptionData, onBack }: Props) => {
     const { APP_NAME } = useConfig();
     const [type, setType] = useState<PlanType | undefined>(undefined);
     const [loading, withLoading] = useLoading();
     const mailPlus = PLAN_NAMES[PLANS.MAIL];
+    const { status, statusLoading } = usePaymentsStatus();
+    const [billingAddress, setBillingAddress] = useState<BillingAddress>(DEFAULT_TAX_BILLING_ADDRESS);
 
     useEffect(() => {
         void metrics.core_signup_pageLoad_total.increment({
@@ -44,16 +71,31 @@ const ReferralStep = ({ onPlan, onBack }: Props) => {
                         .t`${mailPlus}: the privacy-first Mail and Calendar solution for your everyday communications needs.`}
                 </Text>
                 <ReferralFeaturesList />
+                <div className="text-center mb-2">
+                    {statusLoading ? (
+                        <CircleLoader className="color-primary" size="small" />
+                    ) : (
+                        <WrappedTaxCountrySelector
+                            statusExtended={status ?? DEFAULT_TAX_BILLING_ADDRESS}
+                            onBillingAddressChange={(newBillingAddress) => setBillingAddress(newBillingAddress)}
+                        />
+                    )}
+                </div>
                 <Button
                     loading={loading && type === 'trial'}
-                    disabled={loading}
+                    disabled={loading || statusLoading}
                     color="norm"
                     shape="solid"
                     size="large"
                     className="mb-2"
                     onClick={() => {
                         setType('trial');
-                        void withLoading(onPlan({ [PLANS.MAIL]: 1 }));
+                        void withLoading(
+                            onSubscriptionData({
+                                planIDs: { [PLANS.MAIL]: 1 },
+                                billingAddress,
+                            })
+                        );
                     }}
                     fullWidth
                 >{c('Action in trial plan').t`Try free for 30 days`}</Button>
@@ -68,7 +110,12 @@ const ReferralStep = ({ onPlan, onBack }: Props) => {
                     shape="ghost"
                     onClick={() => {
                         setType('free');
-                        void withLoading(onPlan({}));
+                        void withLoading(
+                            onSubscriptionData({
+                                planIDs: {},
+                                billingAddress,
+                            })
+                        );
                     }}
                     fullWidth
                 >{c('Action in trial plan').t`No, thanks`}</Button>
