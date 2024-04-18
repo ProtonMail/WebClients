@@ -7,11 +7,11 @@ import type { State } from '@proton/pass/store/types';
 import type { SelectedItem } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 
-import { selectItems, selectItemsByType } from './items';
+import { selectItems, selectLoginItems } from './items';
 
 export const selectSentinelEnabled = ({ user }: State) => Boolean(user.userSettings?.HighSecurity.Value ?? false);
 
-export const selectDuplicatePasswords = createSelector(selectItemsByType('login'), getDuplicatePasswords);
+export const selectDuplicatePasswords = createSelector(selectLoginItems, getDuplicatePasswords);
 
 export const selectDuplicatePasswordItems = createSelector(
     [selectDuplicatePasswords, selectItems],

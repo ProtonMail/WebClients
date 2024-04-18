@@ -143,22 +143,18 @@ export const selectItemWithOptimistic = (shareId: string, itemId: string) =>
                 : undefined
     );
 
-const selectItemsByTypeSelector = createSelector([selectAllItems, (_: State, type: ItemType) => type], (items, type) =>
-    items.filter((item) => item.data.type === type)
-);
+export const selectItemsByType = <T extends ItemType>(type: T) =>
+    createSelector(selectAllItems, (items) => items.filter((item) => item.data.type === type) as ItemRevision<T>[]);
 
-export const selectItemsByType =
-    <T extends ItemType>(type: T) =>
-    (state: State) =>
-        selectItemsByTypeSelector(state, type) as ItemRevision<T>[];
+export const selectLoginItems = selectItemsByType('login');
+export const selectAliasItems = selectItemsByType('alias');
+export const selectNoteItems = selectItemsByType('note');
+export const selectCCItems = selectItemsByType('creditCard');
 
-const loginItemByUsernameSelector = createSelector(
-    [selectItemsByType('login'), (_: State, username?: MaybeNull<string>) => username],
-    (loginItems, _username) => loginItems.find((item) => deobfuscate(item.data.content.username) === _username)
-);
-
-export const selectLoginItemByUsername = (username?: MaybeNull<string>) => (state: State) =>
-    loginItemByUsernameSelector(state, username);
+export const selectLoginItemByUsername = (username?: MaybeNull<string>) =>
+    createSelector(selectLoginItems, (items) =>
+        items.find((item) => deobfuscate(item.data.content.username) === username)
+    );
 
 const itemsByDomainSelector = createSelector(
     [

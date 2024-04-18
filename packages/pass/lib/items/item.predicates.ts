@@ -1,8 +1,9 @@
 import type { Draft, EditDraft, NewDraft } from '@proton/pass/store/reducers';
 import { type Item, type ItemRevision, ItemState, type UniqueItem } from '@proton/pass/types';
 
-export const isLoginItem = (item: Item): item is Item<'login'> => item.type === 'login';
 export const isAliasItem = (item: Item): item is Item<'alias'> => item.type === 'alias';
+export const isCCItem = (item: Item): item is Item<'creditCard'> => item.type === 'creditCard';
+export const isLoginItem = (item: Item): item is Item<'login'> => item.type === 'login';
 export const isNoteItem = (item: Item): item is Item<'note'> => item.type === 'note';
 
 export const isPasskeyItem = (item: Item): item is Item<'login'> =>
