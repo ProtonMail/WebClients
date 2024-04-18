@@ -620,6 +620,12 @@
       "Mark as default": [
         "Ορισμός ως προεπιλογή"
       ],
+      "Mark as open": [
+        "Επισήμανση ως ανοιγμένο"
+      ],
+      "Mark as resolved": [
+        "Σήμανση ως επιλυμένου"
+      ],
       "mark emails as": [
         "σήμανση μηνυμάτων ως"
       ],
@@ -754,6 +760,9 @@
       ],
       "Report a problem": [
         "Αναφορά προβλήματος"
+      ],
+      "Request a call": [
+        "Ζητήστε Τηλεφωνική Επικοινωνία"
       ],
       "Request a feature": [
         "Ζητήστε μια δυνατότητα"
@@ -1004,9 +1013,6 @@
       "Unlock": [
         "Ξεκλείδωμα"
       ],
-      "Unlock Breach Report": [
-        "Ξεκλείδωμα Αναφοράς Παραβίασης"
-      ],
       "Unlock data": [
         "Ξεκλείδωμα δεδομένων"
       ],
@@ -1078,6 +1084,9 @@
       ],
       "View": [
         "Προβολή"
+      ],
+      "View all reports": [
+        "Προβολή όλων των αναφορών"
       ],
       "View invoice": [
         "Προβολή τιμολογίου"
@@ -1649,6 +1658,12 @@
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Συνεχίστε να χρησιμοποιείτε ${ MAIL_APP_NAME }."
+      ],
+      "Continue using ${ planTitle }": [
+        "Συνεχίστε να χρησιμοποιείτε ${ planTitle }"
+      ],
+      "Continue your subscription": [
+        "Συνέχιση της συνδρομής σας"
       ],
       "Copy": [
         "Αντιγραφή"
@@ -3136,9 +3151,6 @@
       ],
       "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
         "Για να καταργήσετε το υποσέλιδο ${ MAIL_APP_NAME }, αναβαθμίστε και ξεκλειδώστε ακόμη περισσότερες premium λειτουργίες."
-      ],
-      "To view the full report including personalized recommendations, upgrade to a paid plan.": [
-        "Για να δείτε την πλήρη αναφορά, συμπεριλαμβανομένων εξατομικευμένων προτάσεων, κάντε αναβάθμιση σε πρόγραμμα επί πληρωμή."
       ],
       "Track the status and activity of your referrals.": [
         "Παρακολουθήστε την κατάσταση και τη δραστηριότητα των παραπομπών σας."
@@ -6891,6 +6903,9 @@
       "Lean more about single sign-on": [
         "Μάθετε περισσότερα σχετικά με την καθολική σύνδεση"
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Μάθετε πώς μπορείτε να ${ staySaferOnlineLink }"
+      ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Μάθετε πώς μπορείτε να συνδεθείτε στο ${ VPN_APP_NAME } με VPN εφαρμογές τρίτων."
       ],
@@ -6929,6 +6944,9 @@
       ],
       "Loading ${ appName }": [
         "Φόρτωση ${ appName }"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Φόρτωση ημερολογίου, παρακαλούμε περιμένετε. Θα μεταφερθείτε στην πλατφόρμα προγραμματισμού Calendly σε μια νέα καρτέλα."
       ],
       "Loading preview": [
         "Φόρτωση προεπισκόπησης"
@@ -7094,6 +7112,9 @@
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Υπάρχουν και άλλοι διαχειριστές στον οργανισμό σας, είστε υπεύθυνοι για την ενημέρωση τους σχετικά με τον νέο κωδικό πρόσβασης."
+      ],
+      "Other users within your organization will see your busy slots. No event details are shared.": [
+        "Οι άλλοι χρήστες εντός του οργανισμού σας θα βλέπουν τις απασχολημένες υποδοχές σας. Δεν κοινοποιούνται λεπτομέρειες συμβάντος."
       ],
       "Outdated recovery file; update to ensure access to your data": [
         "Παρωχημένο αρχείο ανάκτησης. Για εξασφαλισμένη πρόσβαση στα δεδομένα σας, ενημερώστε το."
@@ -7496,6 +7517,9 @@
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "Ο σύνδεσμος επαλήθευσης ηλεκτρονικού ταχυδρομείου έχει λήξει. Συνδεθείτε για να στείλετε ξανά έναν σύνδεσμο επαλήθευσης."
       ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "Οι εκτεθειμένες πληροφορίες διέρρευσαν από μια υπηρεσία τρίτου μέρους. Οι πληροφορίες του λογαριασμού σας ${ BRAND_NAME } παραμένουν ασφαλείς και κρυπτογραφημένες. ${ learnMoreLink }"
+      ],
       "The following address is available:": [
         "Η ακόλουθη διεύθυνση είναι διαθέσιμη:"
       ],
@@ -7889,6 +7913,9 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Θα σας ανακατευθύνουμε στο PayPal, σε μια νέα καρτέλα προγράμματος περιήγησης, για να ολοκληρώσετε αυτήν τη συναλλαγή. Εάν έχετε ενεργοποιημένο τον αποκλεισμό αναδυόμενων παραθύρων, παρακαλώ απενεργοποιήστε τον για να συνεχίσετε."
       ],
+      "We'll email you once import is complete.": [
+        "Θα σας στείλουμε μήνυμα ηλεκτρονικού ταχυδρομείου μόλις ολοκληρωθεί η εισαγωγή."
+      ],
       "We'll get back to you shortly.": [
         "Θα επικοινωνήσουμε μαζί σας σύντομα."
       ],
@@ -7993,6 +8020,9 @@
       "You can check the progress ${ importProgressLink }.": [
         "Μπορείτε να δείτε την πρόοδο ${ importProgressLink }."
       ],
+      "You can close the tab or browser in the meantime.": [
+        "Στο μεταξύ, μπορείτε να κλείσετε την καρτέλα ή το πρόγραμμα περιήγησης."
+      ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Μπορείτε να το επεξεργαστείτε αυτό μία φορά για να διασφαλίσετε τη σωστή διεύθυνση ηλεκτρονικού ταχυδρομείου για επαλήθευση."
       ],
@@ -8050,6 +8080,12 @@
       "You have ${ availableCount } dedicated server available.": [
         "Έχετε ${ availableCount } διαθέσιμο αποκλειστικό διακομιστή.",
         "Έχετε ${ availableCount } διαθέσιμους αποκλειστικούς διακομιστές."
+      ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "Έχετε μια δοκιμαστική συνδρομή ${ planTitle }. Αν θέλετε να συνεχίσετε τη συνδρομή σας μετά τη δοκιμαστική περίοδο, προσθέστε έναν τρόπο πληρωμής."
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "Έχετε μια δοκιμαστική συνδρομή ${ planTitle }. Δεν απαιτείται πληρωμή αυτήν τη στιγμή. Η συνδρομή σας θα ανανεωθεί αυτόματα στο τέλος της δοκιμαστικής περιόδου."
       ],
       "You have no calendars to export.": [
         "Δεν έχετε ημερολόγια για εξαγωγή."
@@ -8165,6 +8201,9 @@
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Οι πληροφορίες σας είναι ασφαλείς μαζί μας. Θα επικοινωνήσουμε μαζί σας μόνο όταν απαιτείται για την παροχή των υπηρεσιών μας."
+      ],
+      "Your information was found on ${ displayedDate }": [
+        "Οι πληροφορίες σας βρέθηκαν στις ${ displayedDate }"
       ],
       "Your login information will not be saved after the import is completed.": [
         "Τα στοιχεία σύνδεσής σας δεν θα αποθηκευτούν μετά την ολοκλήρωση της εισαγωγής."
@@ -8624,6 +8663,9 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Προσωρινά μη διαθέσιμο. Παρακαλούμε ελέγξτε ξανά αργότερα.)"
+      ],
+      "Access to my events": [
+        "Πρόσβαση στις εκδηλώσεις μου"
       ],
       "Account storage": [
         "Χωρητικότητα λογαριασμού"
@@ -9342,6 +9384,9 @@
       "Send in": [
         "Αποστολή στα"
       ],
+      "Show others when I'm busy": [
+        "Εμφάνιση σε άλλους όταν είμαι απασχολημένος"
+      ],
       "Show secondary time zone": [
         "Εμφάνιση δευτερεύουσας ζώνης ώρας"
       ],
@@ -9785,6 +9830,9 @@
       "Sign in": [
         "Είσοδος"
       ],
+      "stay safer online": [
+        "παραμείνετε πιο ασφαλείς στο διαδίκτυο"
+      ],
       "switch account": [
         "εναλλαγή λογαριασμού"
       ],
@@ -9871,9 +9919,6 @@
       ]
     },
     "Log preference": {
-      "Enable ${ PROTON_SENTINEL_NAME }": [
-        "Ενεργοποίηση ${ PROTON_SENTINEL_NAME }"
-      ],
       "Enable advanced logs": [
         "Ενεργοποίηση προηγμένων αρχείων καταγραφής"
       ],
@@ -11219,12 +11264,6 @@
     "Notification": {
       "${ Filter.Name } created": [
         "${ Filter.Name } δημιουργήθηκε"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } έχει απενεργοποιηθεί"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } έχει ενεργοποιηθεί"
       ],
       "A disabled address cannot be default": [
         "Μια απενεργοποιημένη διεύθυνση δεν μπορεί να είναι προεπιλεγμένη"
@@ -13178,9 +13217,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "Η συνδρομή σας ακυρώνεται, παρακαλούμε περιμένετε"
-      ],
-      "Downgrading your account, please wait": [
-        "Γίνεται υποβάθμιση του λογαριασμού σας, παρακαλώ περιμένετε"
       ]
     },
     "Step in filter modal": {
@@ -14236,6 +14272,9 @@
       "Delete version history?": [
         "Διαγραφή ιστορικού εκδόσεων;"
       ],
+      "Details": [
+        "Λεπτομέρειες"
+      ],
       "Disable ${ email }": [
         "Απενεργοποίηση ${ email }"
       ],
@@ -14874,6 +14913,9 @@
       ],
       "Your changes are not synced yet": [
         "Οι αλλαγές σας δεν έχουν συγχρονιστεί ακόμα"
+      ],
+      "Your exposed information": [
+        "Οι εκτεθειμένες πληροφορίες σας"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Η δωρεάν δοκιμή του Mail Plus λήγει στις ${ textDate }"

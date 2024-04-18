@@ -402,7 +402,7 @@
         "Ubah nama tampilan"
       ],
       "Edit email address": [
-        "Ubah alamat email"
+        "Sunting alamat email"
       ],
       "Edit Gateway": [
         "Sunting Gateway"
@@ -1024,9 +1024,6 @@
       ],
       "Unlock": [
         "Membuka"
-      ],
-      "Unlock Breach Report": [
-        "Dapatkan akses Laporan Kebocoran"
       ],
       "Unlock data": [
         "Buka kunci data"
@@ -3194,9 +3191,6 @@
       "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
         "Untuk menghilangkan footer ${ MAIL_APP_NAME }, tingkatkan akun Anda dan dapatkan berbagai fitur premium lainnya."
       ],
-      "To view the full report including personalized recommendations, upgrade to a paid plan.": [
-        "Untuk melihat laporan ini secara penuh beserta dengan rekomendasi yang dikhususkan untuk Anda, tingkatkan paket Anda ke paket berbayar."
-      ],
       "Track the status and activity of your referrals.": [
         "Lacak status dan aktivitas rujukan Anda."
       ],
@@ -4170,7 +4164,7 @@
         "Alamat mungkin salah ketik"
       ],
       "The email addresses do not match": [
-        "Alamat email tidak cocok"
+        "Alamat email tidak sesuai"
       ],
       "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
         "Berkas ini terlalu besar. Ukuran maksimum berkas yang diperkenankan adalah ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }"
@@ -6282,7 +6276,7 @@
         "Apakah Anda yakin untuk membatalkan perubahan Anda?"
       ],
       "Are you sure you want to discard your import?": [
-        "Apakah Anda yakin ingin mengabaikan pengimporan Anda?"
+        "Apakah Anda yakin ingin membuang impor Anda?"
       ],
       "Are you sure you want to give administrative privileges to this user?": [
         "Apakah Anda yakin untuk memberikan hak administratif kepada pengguna ini?"
@@ -6441,10 +6435,10 @@
         "Buat ${ calendarsToBeCreatedCount } kalender baru"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
-        "Buat label khusus untuk menandai pesan-pesan yang diimpor, rentang waktu impor yang bersangkutan, serta folder-folder yang hendak Anda impor."
+        "Buat label untuk menandai pesan yang diimpor, rentang waktu impor yang bersangkutan, serta folder yang ingin Anda impor."
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
-        "Buat label khusus untuk menandai pesan-pesan yang diimpor, rentang waktu impor yang bersangkutan, serta label-label yang hendak Anda impor."
+        "Buat label untuk menandai pesan yang diimpor, rentang waktu impor yang bersangkutan, serta label yang ingin Anda impor."
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Buat dan kelola sub-akun dan tetapkan untuk mereka alamat email di domain kustom Anda."
@@ -6930,7 +6924,7 @@
         "Kunci dihasilkan"
       ],
       "Label all imported messages as": [
-        "Labeli semua pesan terimpor sebagai"
+        "Labeli seluruh pesan yang diimpor sebagai"
       ],
       "Labels:": [
         "Label:"
@@ -7407,7 +7401,7 @@
         "Pilih layanan email yang Anda gunakan untuk memulai"
       ],
       "Select what you want to import.": [
-        "Pilih hal apa saja yang hendak Anda impor."
+        "Pilih hal-hal apa saja yang ingin Anda impor."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Pilih kalender mana saja yang akan diimpor. Untuk setiap kalender yang diimpor, sistem kami akan membuat kalender baru hingga batas jumlah kalender maksimum yang diperkenankan oleh paket Anda."
@@ -7533,7 +7527,7 @@
         "Berbasis di Swiss"
       ],
       "Temporarily unavailable. Please check back later.": [
-        "Hal yang Anda tuju saat ini sedang tidak tersedia. Mohon periksa lagi nanti."
+        "Tindakan ini untuk sementara tidak tersedia. Silakan periksa kembali di kemudian waktu."
       ],
       "Test link": [
         "Uji tautan"
@@ -7620,7 +7614,7 @@
         "Akun ini telah ditangguhkan karena ditenggarai telah melanggar ketentuan penggunaan yang berlaku."
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
-        "Browser ini tidak mendukung pratinjau dokumen PDF. Mohon unduh berkas yang bersangkutan."
+        "Browser ini tidak mendukung pratinjau dokumen PDF. Silakan unduh berkas yang bersangkutan."
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "Proses ini dapat memerlukan waktu beberapa detik atau menit tergantung kemampuan perangkat Anda"
@@ -8030,9 +8024,6 @@
       "Why?": [
         "Mengapa?"
       ],
-      "Will soon be available.": [
-        "Fitur ini akan segera tersedia."
-      ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "Dengan paket Business atau Enterprise, Anda dapat membeli ${ boldDedicatedServers } untuk organisasi Anda dan mengelola siapa-siapa saja yang dapat mengakses server tertentu dengan ${ boldGateways }."
       ],
@@ -8094,7 +8085,7 @@
         "Anda dapat segera membuka kunci penyiapan di atas dengan menambahkan ${ specificCountryCount } ke jumlah alamat IP dalam paket Anda atau hubungi kami untuk solusi yang dibuat khusus untuk Anda."
       ],
       "You can import one data type at a time.": [
-        "Anda hanya dapat mengimpor satu tipe data dalam satu waktu."
+        "Anda dapat mengimpor satu jenis data dalam satu waktu."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Anda dapat menyimpan hingga ${ MAX_CALENDARS_FREE } kalender. Mohon hapus tautan kalender bersama yang ada dan seluruh pengguna ${ BRAND_NAME } yang berbagi kalender dengan Anda sebelum membatalkan langganan ${ MAIL_SHORT_APP_NAME } Anda."
@@ -8437,6 +8428,12 @@
       ],
       "Key successfully generated.": [
         "Kunci berhasil dihasilkan."
+      ],
+      "Note: you already have a key with the same algorithm for this address. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
+        "Catatan: Anda telah memiliki kunci dengan algoritma yang sama untuk alamat ini. Kecuali kunci ini telah dibocorkan, Anda mungkin tidak perlu untuk menghasilkan kunci baru, berhubung hal ini dapat memperlambat akun Anda."
+      ],
+      "Note: you already have a key with the same algorithm for this user. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
+        "Catatan: Anda telah memiliki kunci dengan algoritma yang sama untuk pengguna ini. Kecuali kunci ini telah dibocorkan, Anda mungkin tidak perlu untuk menghasilkan kunci baru, berhubung hal ini dapat memperlambat akun Anda."
       ],
       "This will generate a new key, which will be used to encrypt future contact details, email encryption keys, and other data.": [
         "Tindakan ini akan menghasilkan kunci baru, yang ke depannya akan digunakan untuk mengenkripsi rincian kontak, kunci enkripsi email, dan berbagai data lainnya."
@@ -9994,17 +9991,11 @@
       ]
     },
     "Log preference": {
-      "Enable ${ PROTON_SENTINEL_NAME }": [
-        "Aktifkan ${ PROTON_SENTINEL_NAME }"
-      ],
       "Enable advanced logs": [
         "Aktifkan log lanjutan"
       ],
       "Enable authentication logs": [
         "Aktifkan log autentikasi"
-      ],
-      "Enable Breach Alert": [
-        "Aktifkan Peringatan Kebocoran"
       ]
     },
     "Mail import summary": {
@@ -11315,12 +11306,6 @@
     "Notification": {
       "${ Filter.Name } created": [
         "${ Filter.Name } dibuat"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } telah dinonaktifkan"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } telah diaktifkan"
       ],
       "A disabled address cannot be default": [
         "Alamat yang dinonaktifkan tidak dapat dijadikan alamat default"
@@ -12647,6 +12632,9 @@
       "Enter URL and token into your identity provider": [
         "Masukkan URL dan token ke penyedia identitas Anda"
       ],
+      "For security reasons, the SCIM token will be hidden after saving your changes and you won’t be able to see it again.": [
+        "Demi alasan keamanan, token SCIM ini akan disembunyikan setelah perubahan Anda disimpan dan tidak akan lagi dapat dilihat oleh Anda."
+      ],
       "For security reasons, the token is hidden": [
         "Demi alasan keamanan, token ini disembunyikan"
       ],
@@ -12664,6 +12652,9 @@
       ],
       "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
         "Setelah SCIM dinonaktifkan bagi organisasi Anda, **seluruh pengguna SCIM yang ditentukan secara otomatis oleh penyedia identitas Anda akan dialihkan menjadi pengguna SSO**, di mana Anda akan dapat mengelola para pengguna ini secara langsung dari dalam menu pengaturan ${ BRAND_NAME }."
+      ],
+      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ VPN_APP_NAME } organization.": [
+        "Menyederhanakan pengelolaan pengguna pada berbagai layanan. Tambahkan, sunting, dan hapus pengguna pada penyedia identitas Anda, dan perubahan yang Anda buat akan langsung diterapkan pada organisasi ${ VPN_APP_NAME } milik Anda."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "Penyediaan SCIM otomatis akan dinonaktifkan hingga Anda memasukkan token SCIM yang baru ke pengaturan penyedia identitas Anda."
@@ -12703,11 +12694,6 @@
       ],
       "URL of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
         "URL konektor SCIM yang digunakan oleh Agen Penyedia IdP Anda untuk meneruskan data SCIM"
-      ]
-    },
-    "Security Center - Info": {
-      "Your information was found in at least one data breach. Turn on Breach Alert to view details and take action. ${ learnMoreLinkBreach }": [
-        "Informasi mengenai diri Anda ditemukan pada setidaknya satu insiden kebocoran data. Aktifkan Peringatan Kebocoran untuk melihat rincian kebocoran ini dan mengambil tindakan yang sesuai. ${ learnMoreLinkBreach }"
       ]
     },
     "Select file": {
@@ -13375,9 +13361,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "Membatalkan langganan Anda, silakan tunggu"
-      ],
-      "Downgrading your account, please wait": [
-        "Menurunkan akun anda, harap tunggu"
       ]
     },
     "Step in filter modal": {
@@ -14219,9 +14202,6 @@
       "Block trackers and malware": [
         "Blokir pelacak dan malware"
       ],
-      "Breach Alert": [
-        "Peringatan Kebocoran"
-      ],
       "Bridge for ${ platform }": [
         "Bridge untuk ${ platform }"
       ],
@@ -14345,14 +14325,14 @@
       "Currency": [
         "Mata uang"
       ],
-      "Custom branding": [
-        "Branding khusus"
-      ],
       "Custom filters": [
         "Filter khusus"
       ],
       "Custom selection of users": [
         "Pengguna yang dipilih secara tertentu"
+      ],
+      "Customization": [
+        "Kustomisasi"
       ],
       "Customize and confirm": [
         "Konfirmasi penyesuaian"
@@ -14737,9 +14717,6 @@
       ],
       "OpenVPN configuration files": [
         "Berkas konfigurasi OpenVPN"
-      ],
-      "Organization appearance": [
-        "Tampilan organisasi"
       ],
       "Organization filters": [
         "Filter organisasi"

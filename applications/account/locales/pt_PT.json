@@ -1486,6 +1486,9 @@
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continuar a utilizar ${ MAIL_APP_NAME }."
       ],
+      "Continue using ${ planTitle }": [
+        "Continuar a utilizar ${ planTitle }"
+      ],
       "Copy": [
         "Copiar"
       ],
@@ -5920,6 +5923,9 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Antes de começar a enviar e receber e-mails dos seus novos endereços, é necessário criar as respectivas chaves de encriptação."
       ],
+      "Beta": [
+        "Beta"
+      ],
       "Billed at ${ price }": [
         "Cobrado a ${ price }"
       ],
@@ -8118,6 +8124,9 @@
       "Awarded": [
         "Premiado"
       ],
+      "Beta": [
+        "Beta"
+      ],
       "Billing address": [
         "Endereço de faturação"
       ],
@@ -8489,6 +8498,9 @@
       ],
       "Link label": [
         "Etiqueta da hiperligação"
+      ],
+      "Logo": [
+        "Logótipo"
       ],
       "Mail Server (IMAP)": [
         "Servidor de e-mail (IMAP)"
@@ -9066,6 +9078,9 @@
       "Help translate": [
         "Ajude a traduzir"
       ],
+      "here": [
+        "aqui"
+      ],
       "How to pay with Bitcoin?": [
         "Como pagar com Bitcoin?"
       ],
@@ -9170,9 +9185,6 @@
       ]
     },
     "Log preference": {
-      "Enable ${ PROTON_SENTINEL_NAME }": [
-        "Ativar ${ PROTON_SENTINEL_NAME }"
-      ],
       "Enable advanced logs": [
         "Ativar os registos avançados"
       ],
@@ -10368,12 +10380,6 @@
     "Notification": {
       "${ Filter.Name } created": [
         "${ Filter.Name } criado"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } foi desativado"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } foi ativado"
       ],
       "A disabled address cannot be default": [
         "Um endereço desativado não pode ser um endereço predefinido."
@@ -12030,9 +12036,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "A cancelar a sua subscrição, por favor aguarde"
-      ],
-      "Downgrading your account, please wait": [
-        "Aguarde. Estamos a modificar a sua conta."
       ]
     },
     "Step in filter modal": {
@@ -13245,6 +13248,9 @@
       ],
       "No recovery method": [
         "Nenhum método de recuperação"
+      ],
+      "Open": [
+        "Abrir"
       ],
       "Open actions dropdown": [
         "Abrir lista de acções"
