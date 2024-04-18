@@ -12,22 +12,16 @@ import type {
     ProcessMIMEOptions,
     ProcessMIMEResult,
     ReformatKeyOptions,
-    SessionKey as SessionKeyWithPlaintextAlgo,
+    SessionKey,
     SignOptionsPmcrypto,
     VerifyCleartextOptionsPmcrypto,
     VerifyMessageResult,
     VerifyOptionsPmcrypto,
-} from 'pmcrypto';
-import type { PartialConfig, SubkeyOptions, enums } from 'pmcrypto/lib/openpgp';
+} from 'pmcrypto-v6-canary';
+import type { PartialConfig, SubkeyOptions, enums } from 'pmcrypto-v6-canary/lib/openpgp';
 
 export type MaybeArray<T> = T[] | T;
-export interface SessionKeyWithoutPlaintextAlgo extends SessionKeyWithPlaintextAlgo {
-    // OpenPGP.js v5 has a 'plaintext' algo value for historical reasons.
-    // This value is unused and is dropped in v6, so we exclude it here as it causes TS issues.
-    algorithm: Exclude<enums.symmetricNames, 'plaintext'>;
-}
-export type SessionKey = SessionKeyWithoutPlaintextAlgo;
-export type { enums, AlgorithmInfo, MIMEAttachment };
+export type { enums, SessionKey, AlgorithmInfo, MIMEAttachment };
 
 export interface InitOptions {
     checkEdDSAFaultySignatures?: boolean;
@@ -47,8 +41,8 @@ export interface WorkerDecryptionOptions
     binaryEncryptedSignature?: Uint8Array;
     verificationKeys?: MaybeArray<PublicKeyReference>;
     decryptionKeys?: MaybeArray<PrivateKeyReference>;
-    sessionKeys?: MaybeArray<SessionKeyWithoutPlaintextAlgo>;
-    config?: PartialConfigForV5AndV6ForDecryption;
+    sessionKeys?: MaybeArray<SessionKey>;
+    config?: PartialConfigForV5AndV6;
 }
 export interface WorkerDecryptionResult<T extends Data> extends Omit<DecryptResultPmcrypto<T>, 'signatures'> {
     signatures: Uint8Array[];
@@ -141,13 +135,19 @@ interface PartialConfigForV5AndV6
         PartialConfig,
         | 'rejectPublicKeyAlgorithms'
         | 'preferredSymmetricAlgorithm'
+        | 'preferredHashAlgorithm'
         | 'rejectHashAlgorithms'
+        | 'rejectMessageHashAlgorithms'
         | 'constantTimePKCS1DecryptionSupportedSymmetricAlgorithms'
         | 'rejectCurves'
+        | 'aeadProtect' // slightly different behaviours in v5 and v6
+        // the following ones are not present in v5
+        | 'ignoreSEIPDv2FeatureFlag'
+        | 'v6Keys'
+        | 'allowMissingKeyFlags'
+        | 'useEllipticFallback'
+        | 'revocationsExpire'
     > {}
-interface PartialConfigForV5AndV6ForDecryption extends PartialConfigForV5AndV6 {
-    constantTimePKCS1DecryptionSupportedSymmetricAlgorithms?: Set<Exclude<enums.symmetric, enums.symmetric.plaintext>>;
-}
 interface WorkerGenerateSubkeyOptions extends SubkeyOptions {
     config?: PartialConfigForV5AndV6;
 }
@@ -162,7 +162,7 @@ export interface WorkerReformatKeyOptions extends Omit<ReformatKeyOptions, 'priv
 }
 
 export interface WorkerEncryptSessionKeyOptions extends Omit<EncryptSessionKeyOptionsPmcrypto, 'encryptionKeys'> {
-    algorithm: SessionKeyWithoutPlaintextAlgo['algorithm'];
+    algorithm: SessionKey['algorithm'];
     format?: 'armored' | 'binary';
     encryptionKeys?: MaybeArray<PublicKeyReference>;
     config?: PartialConfigForV5AndV6;

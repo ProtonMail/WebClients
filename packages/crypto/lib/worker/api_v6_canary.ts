@@ -41,20 +41,12 @@ import {
     verifyCleartextMessage,
     verifyMessage,
 } from 'pmcrypto-v6-canary';
-import type {
-    AlgorithmInfo as AlgorithmInfoV6,
-    Argon2Options,
-    Data,
-    Key,
-    PrivateKey,
-    PublicKey,
-} from 'pmcrypto-v6-canary';
+import type { Argon2Options, Data, Key, PrivateKey, PublicKey } from 'pmcrypto-v6-canary';
 import { ARGON2_PARAMS } from 'pmcrypto-v6-canary/lib/constants';
-import { SubkeyOptions, UserID, enums } from 'pmcrypto-v6-canary/lib/openpgp';
+import { UserID, enums } from 'pmcrypto-v6-canary/lib/openpgp';
 
 import { arrayToHexString } from '../utils';
 import {
-    AlgorithmInfo,
     ComputeHashStreamOptions,
     KeyInfo,
     KeyReference,
@@ -118,53 +110,11 @@ const toArray = <T>(maybeArray: MaybeArray<T>) => (Array.isArray(maybeArray) ? m
 
 const getPublicKeyReference = async (key: PublicKey, keyStoreID: number): Promise<PublicKeyReference> => {
     const publicKey = key.isPrivate() ? key.toPublic() : key; // We don't throw on private key since we allow importing an (encrypted) private key using 'importPublicKey'
-    const v6Tov5AlgorithmInfo = (algorithmInfo: AlgorithmInfoV6): AlgorithmInfo => {
-        const v6ToV5Curve = (curveName: AlgorithmInfoV6['curve']): AlgorithmInfo['curve'] => {
-            switch (curveName) {
-                case 'curve25519Legacy':
-                    return 'curve25519';
-                case 'ed25519Legacy':
-                    return 'ed25519';
-                case 'nistP256':
-                    return 'p256';
-                case 'nistP384':
-                    return 'p384';
-                case 'nistP521':
-                    return 'p521';
-                default:
-                    return curveName;
-            }
-        };
-        switch (algorithmInfo.algorithm) {
-            case 'eddsaLegacy':
-                return {
-                    algorithm: 'eddsa',
-                    curve: 'ed25519',
-                };
-            case 'ecdh':
-                return {
-                    algorithm: 'ecdh',
-                    curve: v6ToV5Curve(algorithmInfo.curve),
-                };
-            case 'ed448':
-            case 'x448':
-                throw new Error('Unsupported algorithm');
-            default:
-                const result: AlgorithmInfo = { algorithm: algorithmInfo.algorithm };
-                if (algorithmInfo.curve !== undefined) {
-                    result.curve = v6ToV5Curve(algorithmInfo.curve);
-                }
-                if (algorithmInfo.bits !== undefined) {
-                    result.bits = algorithmInfo.bits;
-                }
-                return result;
-        }
-    };
 
     const fingerprint = publicKey.getFingerprint();
     const hexKeyID = publicKey.getKeyID().toHex();
     const hexKeyIDs = publicKey.getKeyIDs().map((id) => id.toHex());
-    const algorithmInfo = v6Tov5AlgorithmInfo(publicKey.getAlgorithmInfo());
+    const algorithmInfo = publicKey.getAlgorithmInfo();
     const creationTime = publicKey.getCreationTime();
     const expirationTime = await publicKey.getExpirationTime();
     const userIDs = publicKey.getUserIDs();
@@ -207,7 +157,7 @@ const getPublicKeyReference = async (key: PublicKey, keyStoreID: number): Promis
                 ? otherKey._keyContentHash[1] === keyContentHashNoCerts
                 : otherKey._keyContentHash[0] === keyContentHash,
         subkeys: publicKey.getSubkeys().map((subkey) => {
-            const subkeyAlgoInfo = v6Tov5AlgorithmInfo(subkey.getAlgorithmInfo());
+            const subkeyAlgoInfo = subkey.getAlgorithmInfo();
             const subkeyKeyID = subkey.getKeyID().toHex();
             return {
                 getAlgorithmInfo: () => subkeyAlgoInfo,
@@ -322,29 +272,8 @@ class KeyManagementApi {
      * @returns reference to the generated private key
      */
     async generateKey(options: WorkerGenerateKeyOptions) {
-        const v5Tov6CurveOption = (curve: WorkerGenerateKeyOptions['curve']) => {
-            switch (curve) {
-                case 'ed25519':
-                case 'curve25519':
-                    return 'ed25519Legacy';
-                case 'p256':
-                    return 'nistP256';
-                case 'p384':
-                    return 'nistP384';
-                case 'p521':
-                    return 'nistP521';
-                default:
-                    return curve;
-            }
-        };
-
         const { privateKey } = await generateKey({
             ...options,
-            curve: v5Tov6CurveOption(options.curve),
-            subkeys: options.subkeys?.map<SubkeyOptions>((subkeyOptions) => ({
-                ...subkeyOptions,
-                curve: v5Tov6CurveOption(subkeyOptions.curve),
-            })),
             format: 'object',
         });
         // Typescript guards against a passphrase input, but it's best to ensure the option wasn't given since for API simplicity we assume any PrivateKeyReference points to a decrypted key.
@@ -542,8 +471,6 @@ export class Api extends KeyManagementApi {
 
         const encryptionResult = await encryptMessage<DataType, FormatType, DetachedType>({
             ...options,
-            // @ts-ignore probably issue with mismatching underlying stream definitions
-            textData: options.textData,
             encryptionKeys,
             signingKeys,
             signature: inputSignature,
@@ -578,8 +505,6 @@ export class Api extends KeyManagementApi {
         );
         const signResult = await signMessage<DataType, FormatType, boolean>({
             ...options,
-            // @ts-ignore probably issue with mismatching underlying stream definitions
-            textData: options.textData,
             signingKeys,
         });
 

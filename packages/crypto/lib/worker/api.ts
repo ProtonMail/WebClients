@@ -41,12 +41,13 @@ import {
     verifyCleartextMessage,
     verifyMessage,
 } from 'pmcrypto';
-import type { Argon2Options, Data, Key, PrivateKey, PublicKey } from 'pmcrypto';
-import { UserID, config, enums } from 'pmcrypto/lib/openpgp';
+import type { AlgorithmInfo as AlgorithmInfoV5, Argon2Options, Data, Key, PrivateKey, PublicKey } from 'pmcrypto';
+import { SubkeyOptions, UserID, config, enums } from 'pmcrypto/lib/openpgp';
 
 import { ARGON2_PARAMS } from '../constants';
 import { arrayToHexString } from '../utils';
 import {
+    AlgorithmInfo,
     ComputeHashStreamOptions,
     InitOptions,
     KeyInfo,
@@ -55,7 +56,7 @@ import {
     MessageInfo,
     PrivateKeyReference,
     PublicKeyReference,
-    SessionKeyWithoutPlaintextAlgo,
+    SessionKey as SessionKeyWithoutPlaintextAlgo, // OpenPGP.js v5 has a 'plaintext' algo value for historical reasons.
     SignatureInfo,
     WorkerDecryptionOptions,
     WorkerEncryptOptions,
@@ -112,6 +113,45 @@ const toArray = <T>(maybeArray: MaybeArray<T>) => (Array.isArray(maybeArray) ? m
 
 const getPublicKeyReference = async (key: PublicKey, keyStoreID: number): Promise<PublicKeyReference> => {
     const publicKey = key.isPrivate() ? key.toPublic() : key; // We don't throw on private key since we allow importing an (encrypted) private key using 'importPublicKey'
+    const v5Tov6AlgorithmInfo = (algorithmInfo: AlgorithmInfoV5): AlgorithmInfo => {
+        const v5ToV6Curve = (curveName: AlgorithmInfoV5['curve']): AlgorithmInfo['curve'] => {
+            switch (curveName) {
+                case 'curve25519':
+                    return 'curve25519Legacy';
+                case 'ed25519':
+                    return 'ed25519Legacy';
+                case 'p256':
+                    return 'nistP256';
+                case 'p384':
+                    return 'nistP384';
+                case 'p521':
+                    return 'nistP521';
+                default:
+                    return curveName;
+            }
+        };
+        switch (algorithmInfo.algorithm) {
+            case 'eddsa':
+                return {
+                    algorithm: 'eddsaLegacy',
+                    curve: 'ed25519Legacy',
+                };
+            case 'ecdh':
+                return {
+                    algorithm: 'ecdh',
+                    curve: v5ToV6Curve(algorithmInfo.curve),
+                };
+            default:
+                const result: AlgorithmInfo = { algorithm: algorithmInfo.algorithm };
+                if (algorithmInfo.curve !== undefined) {
+                    result.curve = v5ToV6Curve(algorithmInfo.curve);
+                }
+                if (algorithmInfo.bits !== undefined) {
+                    result.bits = algorithmInfo.bits;
+                }
+                return result;
+        }
+    };
 
     const fingerprint = publicKey.getFingerprint();
     const hexKeyID = publicKey.getKeyID().toHex();
@@ -149,7 +189,7 @@ const getPublicKeyReference = async (key: PublicKey, keyStoreID: number): Promis
         getFingerprint: () => fingerprint,
         getKeyID: () => hexKeyID,
         getKeyIDs: () => hexKeyIDs,
-        getAlgorithmInfo: () => algorithmInfo,
+        getAlgorithmInfo: () => v5Tov6AlgorithmInfo(algorithmInfo),
         getCreationTime: () => creationTime,
         getExpirationTime: () => expirationTime,
         getUserIDs: () => userIDs,
@@ -159,7 +199,7 @@ const getPublicKeyReference = async (key: PublicKey, keyStoreID: number): Promis
                 ? otherKey._keyContentHash[1] === keyContentHashNoCerts
                 : otherKey._keyContentHash[0] === keyContentHash,
         subkeys: publicKey.getSubkeys().map((subkey) => {
-            const subkeyAlgoInfo = subkey.getAlgorithmInfo();
+            const subkeyAlgoInfo = v5Tov6AlgorithmInfo(subkey.getAlgorithmInfo());
             const subkeyKeyID = subkey.getKeyID().toHex();
             return {
                 getAlgorithmInfo: () => subkeyAlgoInfo,
@@ -274,7 +314,31 @@ class KeyManagementApi {
      * @returns reference to the generated private key
      */
     async generateKey(options: WorkerGenerateKeyOptions) {
-        const { privateKey } = await generateKey({ ...options, format: 'object' });
+        const v6Tov5CurveOption = (curve: WorkerGenerateKeyOptions['curve']) => {
+            switch (curve) {
+                case 'ed25519Legacy':
+                case 'curve25519Legacy':
+                    return 'ed25519';
+                case 'nistP256':
+                    return 'p256';
+                case 'nistP384':
+                    return 'p384';
+                case 'nistP521':
+                    return 'p521';
+                default:
+                    return curve;
+            }
+        };
+
+        const { privateKey } = await generateKey({
+            ...options,
+            curve: v6Tov5CurveOption(options.curve),
+            subkeys: options.subkeys?.map<SubkeyOptions>((subkeyOptions) => ({
+                ...subkeyOptions,
+                curve: v6Tov5CurveOption(subkeyOptions.curve),
+            })),
+            format: 'object',
+        });
         // Typescript guards against a passphrase input, but it's best to ensure the option wasn't given since for API simplicity we assume any PrivateKeyReference points to a decrypted key.
         if (!privateKey.isDecrypted()) {
             throw new Error(
@@ -471,6 +535,8 @@ export class Api extends KeyManagementApi {
 
         const encryptionResult = await encryptMessage<DataType, FormatType, DetachedType>({
             ...options,
+            // @ts-ignore probably issue with mismatching underlying stream definitions
+            textData: options.textData,
             encryptionKeys,
             signingKeys,
             signature: inputSignature,
@@ -505,6 +571,8 @@ export class Api extends KeyManagementApi {
         );
         const signResult = await signMessage<DataType, FormatType, boolean>({
             ...options,
+            // @ts-ignore probably issue with mismatching underlying stream definitions
+            textData: options.textData,
             signingKeys,
         });
 
