@@ -390,9 +390,6 @@
       "Manage labels": [
         "Gestionar etiquetas"
       ],
-      "Mark as open": [
-        "Marcar como pendiente"
-      ],
       "Mark as resolved": [
         "Marcar como resuelto"
       ],
@@ -678,11 +675,11 @@
       "Upgrade": [
         "Actualizar"
       ],
-      "Upgrade now": [
-        "Actualizar ahora"
-      ],
       "Upgrade Now": [
         "Mejorar ahora"
+      ],
+      "Upgrade now": [
+        "Actualizar ahora"
       ],
       "Upload picture": [
         "Cargar imagen"
@@ -2374,9 +2371,6 @@
       "Boost efficiency and track your time by color-coding events by category or your energy levels. Get this and much more with a paid plan.": [
         "Aumente la eficiencia y gestione su tiempo codificando por colores los eventos por categoría o sus prioridades. Obtenga esto y mucho más con un plan de pago."
       ],
-      "Breach alerts and reports are available with a paid plan. Upgrade for immediate access.": [
-        "Las alertas y reportes de vulneraciones están disponibles con un plan de pago. Mejore su plan para un acceso inmediato."
-      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Descifrando contactos… esto puede tardar unos minutos. Cuando el proceso se complete, podrá descargar el archivo con todos sus contactos exportados."
       ],
@@ -2436,9 +2430,6 @@
       ],
       "Your account and data recovery methods are set.": [
         "Se establecieron los métodos de recuperación de datos y cuenta."
-      ],
-      "Your personal data was leaked by an online service in a data breach. View full details and get recommended actions.": [
-        "Sus datos personales fueron filtrados por un servicio en línea en una vulneración de datos. Vea los detalles completos y reciba las acciones recomendadas."
       ]
     },
     "description": {
@@ -4194,9 +4185,6 @@
       "Billing cycle: ${ text }": [
         "Ciclo de facturación: ${ text }"
       ],
-      "Breach Alert": [
-        "Alerta de vulneraciones"
-      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Al pasar a un plan gratuito, perderá permanentemente estos beneficios, incluso si mejore de nuevo su plan en el futuro."
       ],
@@ -5783,6 +5771,11 @@
         "Su suscripción ha finalizado. ${ cta } y para evitar la pérdida de datos."
       ]
     },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Activar ${ reason }"
+      ]
+    },
     "Mail import summary": {
       "Import all messages from ${ itemsToImportCount } folder and label them as": [
         "Importar todos los mensajes de ${ itemsToImportCount } carpeta y etiquetarlos como",
@@ -6869,11 +6862,11 @@
       ]
     },
     "Notification": {
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } ha sido desactivado."
+      "${ reason } has been disabled": [
+        "${ reason } se ha desactivado"
       ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } ha sido activado."
+      "${ reason } has been enabled": [
+        "${ reason } se ha activado"
       ],
       "Contact group created": [
         "Grupo de contactos creado"
@@ -7512,8 +7505,8 @@
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel está **activo** y salvaguarda su cuenta."
       ],
-      "Your information was found in at least one data breach. Turn on Breach Alert to view details and take action. ${ learnMoreLink }": [
-        "Su información fue encontrada en al menos una vulneración de datos. Active la función Alerta de vulneraciones para ver los detalles y tomar acciones. ${ learnMoreLink }"
+      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLink }": [
+        "Su información fue encontrada en al menos una vulneración de datos. Active ${ DARK_WEB_MONITORING_NAME } para ver los detalles y tomar acciones. ${ learnMoreLink }"
       ]
     },
     "Select files": {
@@ -8013,9 +8006,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "Estamos cancelando su suscripción. Espere."
-      ],
-      "Downgrading your account, please wait": [
-        "Espere, estamos modificando su cuenta."
       ]
     },
     "Storage": {
@@ -8600,9 +8590,6 @@
       "Birthday": [
         "Cumpleaños"
       ],
-      "Breach Alert": [
-        "Alerta de vulneraciones"
-      ],
       "Calendar": [
         "Calendario"
       ],
@@ -8983,9 +8970,6 @@
       ],
       "Start import process": [
         "Iniciar proceso de importación"
-      ],
-      "Stay safer online": [
-        "Más seguridad en línea"
       ],
       "Summary": [
         "Resumen"

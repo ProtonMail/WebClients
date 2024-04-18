@@ -669,11 +669,11 @@
       "Upgrade": [
         "Покращити"
       ],
-      "Upgrade now": [
-        "Покращити"
-      ],
       "Upgrade Now": [
         "Передплатити"
+      ],
+      "Upgrade now": [
+        "Покращити"
       ],
       "Upload picture": [
         "Вивантажити зображення"
@@ -1085,6 +1085,9 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Продовжити за допомогою ${ MAIL_APP_NAME }."
+      ],
+      "Continue using ${ planTitle }": [
+        "Продовжити за допомогою ${ planTitle }"
       ]
     },
     "Calendar access select label": {
@@ -6858,12 +6861,6 @@
       ]
     },
     "Notification": {
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } вимкнено"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } увімкнено"
-      ],
       "Contact group created": [
         "Групу контактів створено"
       ],
@@ -8003,9 +8000,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "Зачекайте поки триває скасування вашої передплати..."
-      ],
-      "Downgrading your account, please wait": [
-        "Триває перехід на тарифний план нижчого рівня. Будь ласка, зачекайте"
       ]
     },
     "Storage": {

@@ -4223,12 +4223,6 @@
       ]
     },
     "Notification": {
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } je onemogućen."
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } je omogućen."
-      ],
       "Contact group created": [
         "Kontaktna grupa je stvorena"
       ],
@@ -4866,11 +4860,6 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Standardna cijena ${ amount } za 30 mjeseci"
-      ]
-    },
-    "State": {
-      "Downgrading your account, please wait": [
-        "Snižavanje statusa vašeg računa, molimo pričekajte"
       ]
     },
     "Storage": {

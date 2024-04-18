@@ -660,11 +660,11 @@
       "Upgrade": [
         "Actualizar"
       ],
-      "Upgrade now": [
-        "Actualizar agora"
-      ],
       "Upgrade Now": [
         "Atualizar agora"
+      ],
+      "Upgrade now": [
+        "Actualizar agora"
       ],
       "Upload picture": [
         "Enviar imagem"
@@ -1021,6 +1021,9 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continuar a utilizar ${ MAIL_APP_NAME }."
+      ],
+      "Continue using ${ planTitle }": [
+        "Continuar a utilizar ${ planTitle }"
       ]
     },
     "Calendar access select label": {
@@ -6428,12 +6431,6 @@
       ]
     },
     "Notification": {
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } foi desativado"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } foi ativado"
-      ],
       "Contact group created": [
         "Grupo de contactos criado"
       ],
@@ -7458,9 +7455,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "A cancelar a sua subscrição, por favor aguarde"
-      ],
-      "Downgrading your account, please wait": [
-        "Aguarde. Estamos a modificar a sua conta."
       ]
     },
     "Storage": {
