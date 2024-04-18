@@ -390,9 +390,6 @@
       "Manage labels": [
         "Gérer les labels"
       ],
-      "Mark as open": [
-        "Marquer comme ouvert"
-      ],
       "Mark as resolved": [
         "Marquer comme résolu"
       ],
@@ -678,11 +675,11 @@
       "Upgrade": [
         "Changer d'abonnement"
       ],
-      "Upgrade now": [
-        "Changer d'abonnement"
-      ],
       "Upgrade Now": [
         "Passer à l'abonnement supérieur"
+      ],
+      "Upgrade now": [
+        "Changer d'abonnement"
       ],
       "Upload picture": [
         "Importer une image"
@@ -2374,9 +2371,6 @@
       "Boost efficiency and track your time by color-coding events by category or your energy levels. Get this and much more with a paid plan.": [
         "Gagnez en efficacité et organisez votre emploi du temps en classant les événements par catégorie ou selon vos priorités. Profitez de cette fonctionnalité et de bien d'autres avec un abonnement payant."
       ],
-      "Breach alerts and reports are available with a paid plan. Upgrade for immediate access.": [
-        "Les alertes et les rapports de fuites de données sont disponibles avec un abonnement payant. Changez d'abonnement pour y accéder immédiatement."
-      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Déchiffrement des contacts en cours… Cela peut prendre quelques minutes. Une fois le processus terminé, vous pourrez télécharger le fichier avec tous vos contacts exportés."
       ],
@@ -2436,9 +2430,6 @@
       ],
       "Your account and data recovery methods are set.": [
         "Vos méthodes de récupération de compte et de données sont définies."
-      ],
-      "Your personal data was leaked by an online service in a data breach. View full details and get recommended actions.": [
-        "Vos données personnelles ont été divulguées par un service en ligne dans une fuite de données. Consultez l'ensemble des informations et prenez les mesures qui s'imposent."
       ]
     },
     "description": {
@@ -2811,7 +2802,7 @@
         "Le nom de dossier ne peut pas être vide."
       ],
       "Forward address is required": [
-        "Veuillez indiquer une adresse de transfert."
+        "L'adresse de transfert est nécessaire."
       ],
       "Image upload failed": [
         "L'image n'a pas pu être chargée."
@@ -4194,9 +4185,6 @@
       "Billing cycle: ${ text }": [
         "Cycle de facturation : ${ text }"
       ],
-      "Breach Alert": [
-        "Alerte de fuites de données"
-      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "En passant à l'abonnement Free, vous perdrez définitivement ces avantages, même si vous repassez par la suite à un abonnement supérieur."
       ],
@@ -4477,7 +4465,7 @@
         "Les importations volumineuses peuvent prendre plusieurs jours."
       ],
       "Learn how to ${ staySaferOnlineLink }": [
-        "Apprenez comment ${ staySaferOnlineLink }"
+        "Découvrez comment ${ staySaferOnlineLink }"
       ],
       "Learn more": [
         "En savoir plus"
@@ -4576,7 +4564,7 @@
         "Taille de l’organisation"
       ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
-        "Les autres utilisateurs de votre organisation verront vos créneaux horaires occupés. Aucune information sur l'événement n'est partagée."
+        "Les autres utilisateurs de votre organisation verront vos créneaux horaires occupés. Aucune information sur les événements n'est partagée."
       ],
       "password": [
         "mot de passe"
@@ -4625,7 +4613,7 @@
         "Sélectionnez l'adresse ou les adresses e-mail à ajouter à ${ groupName }."
       ],
       "Please try again in a few moments": [
-        "Veuillez réessayer dans quelques instants."
+        "Réessayez dans quelques instants."
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Nous vous invitons à réessayer en utilisant un autre moyen de paiement, ou bien à contacter votre banque."
@@ -4835,7 +4823,7 @@
         "Nous vous redirigerons vers PayPal dans un nouvel onglet du navigateur pour compléter cette transaction. Si vous utilisez des bloqueurs de pop-up, veuillez les désactiver pour continuer."
       ],
       "We'll email you once import is complete.": [
-        "Nous vous enverrons un e-mail à la fin de l'importation."
+        "Nous vous enverrons un e-mail une fois l'importation terminée."
       ],
       "We'll notify you when the import is done.": [
         "Nous vous informerons dès que l'importation sera terminée."
@@ -5017,7 +5005,7 @@
         "Vos données sont prêtes à être importées depuis ${ importedEmailAddressStrong } vers votre compte ${ BRAND_NAME }."
       ],
       "Your email address and password were leaked:": [
-        "Votre adresse e-mail et mot de passe ont été exposés :"
+        "Votre adresse e-mail et votre mot de passe ont été exposés :"
       ],
       "Your email address was exposed:": [
         "Votre adresse e-mail a été exposée :"
@@ -6571,7 +6559,7 @@
         "Disposez de solutions sur mesure pour les grandes entreprises qui ont des besoins spécifiques en matière de sécurité."
       ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
-        "La solution VPN dédiée qui offre un accès à internet sûr, illimité et haut débit."
+        "La solution VPN dédiée qui offre un accès sécurisé, sans limitation et ultra-rapide à internet."
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "Le compte de démarrage gratuit conçu pour que tout le monde puisse bénéficier du respect de la vie privée."
@@ -6866,12 +6854,6 @@
       ]
     },
     "Notification": {
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } a été désactivé."
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } a été activé."
-      ],
       "Contact group created": [
         "Le groupe de contacts a été créé."
       ],
@@ -7462,7 +7444,7 @@
         "Créer un alias"
       ],
       "Generate aliases on the fly, and easily manage your aliases and passwords.": [
-        "Créer des alias à la demande et gérer facilement vos alias et mots de passe."
+        "Créez des alias à la demande et gérez facilement vos alias et vos mots de passe."
       ],
       "Hide-my-email aliases": [
         "Alias « hide-my-email »"
@@ -7508,9 +7490,6 @@
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel est **actif** et protège votre compte."
-      ],
-      "Your information was found in at least one data breach. Turn on Breach Alert to view details and take action. ${ learnMoreLink }": [
-        "Vos informations ont été retrouvées dans au moins une fuite de données. Activez l'option Alertes de fuites d'informations pour consulter ces informations et prendre les mesures nécessaires. ${ learnMoreLink }"
       ]
     },
     "Select files": {
@@ -8010,9 +7989,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "L'annulation de votre abonnement est en cours, veuillez patienter."
-      ],
-      "Downgrading your account, please wait": [
-        "Votre compte est en cours de modification, veuillez patienter."
       ]
     },
     "Storage": {
@@ -8597,9 +8573,6 @@
       "Birthday": [
         "Date de naissance"
       ],
-      "Breach Alert": [
-        "Alerte de fuites de données"
-      ],
       "Calendar": [
         "Calendrier"
       ],
@@ -8980,9 +8953,6 @@
       ],
       "Start import process": [
         "Démarrer l'importation"
-      ],
-      "Stay safer online": [
-        "Améliorez votre sécurité en ligne"
       ],
       "Summary": [
         "Résumé"

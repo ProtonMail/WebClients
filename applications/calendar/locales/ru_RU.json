@@ -663,10 +663,10 @@
       "Upgrade": [
         "Улучшить"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Улучшить сейчас"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Улучшить сейчас"
       ],
       "Upload picture": [
@@ -1092,6 +1092,9 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Продолжить, используя ${ MAIL_APP_NAME }."
+      ],
+      "Continue using ${ planTitle }": [
+        "Продолжить, используя ${ planTitle }"
       ]
     },
     "Calendar access select label": {
@@ -1528,7 +1531,7 @@
         "Барбадос"
       ],
       "Belarus": [
-        "Белоруссия"
+        "Беларусь"
       ],
       "Belgium": [
         "Бельгия"
@@ -6777,12 +6780,6 @@
       ]
     },
     "Notification": {
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } был отключен"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } был включен"
-      ],
       "Contact group created": [
         "Группа контактов создана"
       ],
@@ -7852,9 +7849,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "Отмена подписки, подождите"
-      ],
-      "Downgrading your account, please wait": [
-        "Ваш аккаунт переходит на более дешевую версию, пожалуйста, подождите"
       ]
     },
     "Storage": {

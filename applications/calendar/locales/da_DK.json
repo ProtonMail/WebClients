@@ -663,11 +663,11 @@
       "Upgrade": [
         "Opgradér"
       ],
-      "Upgrade now": [
-        "Opgradér nu"
-      ],
       "Upgrade Now": [
         "Opgradere nu"
+      ],
+      "Upgrade now": [
+        "Opgradér nu"
       ],
       "Upload picture": [
         "Upload billede"
@@ -1097,6 +1097,9 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Fortsæt med at bruge ${ MAIL_APP_NAME }."
+      ],
+      "Continue using ${ planTitle }": [
+        "Fortsæt med at bruge ${ planTitle }"
       ]
     },
     "Calendar access select label": {
@@ -5626,6 +5629,9 @@
       "Request an invite": [
         "Anmod om invitation"
       ],
+      "stay safer online": [
+        "bliv mere sikker online"
+      ],
       "What’s this?": [
         "Hvad er dette?"
       ]
@@ -6770,12 +6776,6 @@
       ]
     },
     "Notification": {
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } er blevet deaktiveret"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } er blevet aktiveret"
-      ],
       "Contact group created": [
         "Kontaktgruppe oprettet"
       ],
@@ -7899,9 +7899,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "Annullerer dit abonnement, vent venligst"
-      ],
-      "Downgrading your account, please wait": [
-        "Nedgraderer din konto, vent venligst"
       ]
     },
     "Storage": {
@@ -8701,6 +8698,9 @@
       ],
       "Night theme": [
         "Nattetema"
+      ],
+      "No breaches detected": [
+        "Ingen brud registreret"
       ],
       "Notes": [
         "Noter"

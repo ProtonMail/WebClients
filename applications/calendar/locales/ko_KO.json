@@ -666,10 +666,10 @@
       "Upgrade": [
         "업그레이드"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "지금 업그레이드"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "지금 업그레이드"
       ],
       "Upload picture": [
@@ -1096,6 +1096,9 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME }을 계속 사용하세요."
+      ],
+      "Continue using ${ planTitle }": [
+        "${ planTitle }을 계속 사용하세요"
       ]
     },
     "Calendar access select label": {
@@ -2339,9 +2342,6 @@
       "Boost efficiency and track your time by color-coding events by category or your energy levels. Get this and much more with a paid plan.": [
         "카테고리 또는 에너지 레벨별로 이벤트를 컬러 코딩하여 효율성을 높이고 시간을 추적하세요. 유료 플랜에서 이 기능과 그 외 특전을 누리세요."
       ],
-      "Breach alerts and reports are available with a paid plan. Upgrade for immediate access.": [
-        "침해 경고와 보고서는 유료 요금제에서 이용할 수 있습니다. 업그레이드하는 즉시 접근할 수 있습니다."
-      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "연락처 복호화 중... 몇 분이 걸릴 수 있습니다. 이 처리가 완료되면, 내보낼 모든 연락처 다운로드가 가능합니다."
       ],
@@ -2398,9 +2398,6 @@
       ],
       "Your account and data recovery methods are set.": [
         "사용자의 계정과 데이터 복구 방법이 설정된 상태입니다."
-      ],
-      "Your personal data was leaked by an online service in a data breach. View full details and get recommended actions.": [
-        "귀하의 개인정보가 데이터 침해사례에 속하는 온라인 서비스로부터 유출되었습니다. 전체 세부사항을 보고 권장하는 대응을 취하십시오."
       ]
     },
     "description": {
@@ -5576,6 +5573,9 @@
       "Request an invite": [
         "가입 요청하기"
       ],
+      "stay safer online": [
+        "온라인 상에서 안전하게"
+      ],
       "What’s this?": [
         "이게 무엇인가요?"
       ]
@@ -6701,12 +6701,6 @@
       ]
     },
     "Notification": {
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME }이(가) 비활성화 되었습니다."
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME }이(가) 활성화 되었습니다."
-      ],
       "Contact group created": [
         "콘텐츠 그룹 생성됨"
       ],
@@ -7791,9 +7785,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "구독을 취소하고 있습니다, 잠시만 기다려주세요"
-      ],
-      "Downgrading your account, please wait": [
-        "계정은 다운그레이드 하는 중이니 기다려 주세요"
       ]
     },
     "Storage": {
@@ -8735,9 +8726,6 @@
       ],
       "Start import process": [
         "불러오기 과정 시작"
-      ],
-      "Stay safer online": [
-        "온라인 상에서 안전하기"
       ],
       "Summary": [
         "요약"
