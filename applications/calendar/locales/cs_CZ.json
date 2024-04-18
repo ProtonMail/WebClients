@@ -393,6 +393,9 @@
       "Manage labels": [
         "Spravovat štítky"
       ],
+      "Mark as resolved": [
+        "Označit jako vyřešené"
+      ],
       "Mark for deletion": [
         "Označit pro odstranění"
       ],
@@ -524,6 +527,9 @@
       ],
       "Report a problem": [
         "Nahlásit problém"
+      ],
+      "Request a call": [
+        "Požádat o hovor"
       ],
       "Request a feature": [
         "Požádejte o funkci"
@@ -669,10 +675,10 @@
       "Upgrade": [
         "Přejít na placený tarif"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Navýšit nyní"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Navýšit nyní"
       ],
       "Upload picture": [
@@ -1115,6 +1121,9 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Pokračovat s ${ MAIL_APP_NAME }."
+      ],
+      "Continue using ${ planTitle }": [
+        "Pokračovat s ${ planTitle }"
       ]
     },
     "Calendar access select label": {
@@ -2385,9 +2394,6 @@
       "Boost efficiency and track your time by color-coding events by category or your energy levels. Get this and much more with a paid plan.": [
         "Zvyšte efektivitu a rozvrhněte svůj čas pomocí barevného označení událostí podle kategorií nebo podle úrovně energie. Toto a mnohem více získáte s placeným tarifem."
       ],
-      "Breach alerts and reports are available with a paid plan. Upgrade for immediate access.": [
-        "Úniky informací a hlášení jsou dostupné s placeným tarifem. Navyšte pro okamžitý přístup."
-      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Dešifrování kontaktů… Tato akce může trvat několik minut. Jakmile bude proces ukončen, budete si moci stáhnout soubor s vašimi exportovanými kontakty."
       ],
@@ -2444,9 +2450,6 @@
       ],
       "Your account and data recovery methods are set.": [
         "Váš účet a metody obnovy dat jsou nastaveny."
-      ],
-      "Your personal data was leaked by an online service in a data breach. View full details and get recommended actions.": [
-        "Vaše osobní údaje unikly online službě při úniku informací. Zobrazte plné detaily a získejte doporučené akce."
       ]
     },
     "description": {
@@ -2549,19 +2552,22 @@
     },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
-        "${ eventTitle } byl zrušen."
+        "Událost ${ eventTitle } byla zrušena."
       ],
       "All events in this series were updated.": [
-        "Všechny události v této sérii byly aktualizovány."
+        "Všechny události této série byly aktualizovány."
       ],
       "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Všechny události v této sérii byly aktualizovány. Zde jsou změny:\n\n${ updateEventDetailsText }"
+        "Všechny události této série byly aktualizovány. Zde jsou změny:\n\n${ updateEventDetailsText }"
       ],
       "This event occurrence was canceled.": [
         "Tento výskyt události byl zrušen."
       ],
       "This event occurrence was updated.": [
         "Tento výskyt události byl aktualizován."
+      ],
+      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Tento výskyt události byl aktualizován. Zde jsou uvedeny změny:\n\n${ updateEventDetailsText }"
       ],
       "This event was updated.": [
         "Tato událost byla aktualizována."
@@ -2570,7 +2576,7 @@
         "Tato událost byla aktualizována. Zde jsou změny:\n\n${ updateEventDetailsText }"
       ],
       "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
-        "Byly jste pozváni do ${ eventTitle }.\n\n${ eventDetailsText }"
+        "Jste pozváni na ${ eventTitle }.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -2720,7 +2726,7 @@
         "Došlo k chybě při načítání možností aliasu"
       ],
       "An error occurred while saving your alias": [
-        "Při ukládání vašeho aliasu se stala chyba"
+        "Při ukládání vašeho aliasu došlo k chybě"
       ],
       "Answer failed to be sent": [
         "Odpověď se nepodařilo odeslat"
@@ -4927,6 +4933,9 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Pro dokončení transakce Vás přesměrujeme na váš PayPal účet v nové záložce prohlížeče. Pokud používáte blokování vyskakovacích oken, pro pokračování je prosím vypněte."
       ],
+      "We'll email you once import is complete.": [
+        "Po dokončení importu vám pošleme e-mail."
+      ],
       "We'll notify you when the import is done.": [
         "Po dokončení importu Vás budeme informovat."
       ],
@@ -4998,6 +5007,9 @@
       ],
       "You can check the progress ${ importProgressLink }.": [
         "Zde můžete zkontrolovat průběh ${ importProgressLink }."
+      ],
+      "You can close the tab or browser in the meantime.": [
+        "Mezitím můžete kartu nebo prohlížeč zavřít."
       ],
       "You can import one data type at a time.": [
         "Importovat můžete vždy jeden typ dat."
@@ -5790,6 +5802,9 @@
       "Request an invite": [
         "Požádat o pozvánku"
       ],
+      "stay safer online": [
+        "zůstaňte v bezpečí online"
+      ],
       "What’s this?": [
         "Co je to?"
       ]
@@ -5831,6 +5846,9 @@
       ]
     },
     "locked_state_storage_banner: info": {
+      "Learn more": [
+        "Více informací"
+      ],
       "upgrade for more storage": [
         "navýšit tarif pro více prostoru"
       ],
@@ -6981,12 +6999,6 @@
       ]
     },
     "Notification": {
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } byl deaktivován"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } byl povolen"
-      ],
       "Contact group created": [
         "Skupina kontaktů byla vytvořena"
       ],
@@ -6995,6 +7007,11 @@
       ],
       "Link copied to clipboard": [
         "Odkaz zkopírován do schránky"
+      ]
+    },
+    "Notification for duplicate filenames in the current upload": {
+      "Some images were not uploaded due to duplicate filenames in the current selection.": [
+        "Některé obrázky nebyly nahrány kvůli duplicitním názvům souborů v aktuálním výběru."
       ]
     },
     "Notification in holidays calendar modal": {
@@ -8154,6 +8171,9 @@
       "Color-coding is here!": [
         "Barevné označení je zde!"
       ],
+      "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
+        "Pohodlné spuštění ${ MAIL_APP_NAME } přímo z plochy."
+      ],
       "Easily find the event you're looking for with our new search feature.": [
         "Pomocí naší nové funkce vyhledávání snadno najdete událost, kterou hledáte."
       ],
@@ -8179,9 +8199,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "Rušení předplatného, počkejte prosím"
-      ],
-      "Downgrading your account, please wait": [
-        "Probíhá přechod na nižší tarif, počkejte prosím"
       ]
     },
     "Storage": {
@@ -8237,7 +8254,7 @@
         "navýšit tarif pro více prostoru"
       ],
       "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
-        "Přidáme kredit za zbývající čas k vašemu ${ BRAND_NAME } účtu."
+        "Nevyužitý kredit přidáme na váš účet ${ BRAND_NAME }."
       ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "V tarifu **${ currentPlanName }** vám zbývá ještě **${ daysRemaining }** den.",
@@ -8905,6 +8922,9 @@
       "Deleting contacts": [
         "Mazání kontaktů"
       ],
+      "Details": [
+        "Podrobnosti"
+      ],
       "Downgrade account": [
         "Snížit úroveň účtu"
       ],
@@ -9180,9 +9200,6 @@
       ],
       "Start import process": [
         "Zahájit proces importu"
-      ],
-      "Stay safer online": [
-        "Zůstaňte v bezpečí online"
       ],
       "Summary": [
         "Shrnutí"

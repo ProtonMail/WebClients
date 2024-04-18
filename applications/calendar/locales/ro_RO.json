@@ -666,10 +666,10 @@
       "Upgrade": [
         "Modificare"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Modificare"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Modificare"
       ],
       "Upload picture": [
@@ -1107,6 +1107,9 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continuare utilizare ${ MAIL_APP_NAME }."
+      ],
+      "Continue using ${ planTitle }": [
+        "Continuare utilizare ${ planTitle }"
       ]
     },
     "Calendar access select label": {
@@ -5706,6 +5709,9 @@
       "Request an invite": [
         "Solicitați o invitație"
       ],
+      "stay safer online": [
+        "rămâneți în siguranță online"
+      ],
       "What’s this?": [
         "Ce este asta?"
       ]
@@ -6887,12 +6893,6 @@
       ]
     },
     "Notification": {
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } a fost dezactivat"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } a fost activat"
-      ],
       "Contact group created": [
         "Grup de contacte creat"
       ],
@@ -8067,9 +8067,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "Vi se anulează abonamentul, așteptați."
-      ],
-      "Downgrading your account, please wait": [
-        "Se modifică contul, așteptați puțin."
       ]
     },
     "Storage": {
@@ -8889,6 +8886,9 @@
       ],
       "Night theme": [
         "Temă noapte"
+      ],
+      "No breaches detected": [
+        "Nu există divulgări"
       ],
       "Notes": [
         "Note"

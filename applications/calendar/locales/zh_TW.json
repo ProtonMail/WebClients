@@ -660,11 +660,11 @@
       "Upgrade": [
         "升級"
       ],
-      "Upgrade now": [
-        "立即升級"
-      ],
       "Upgrade Now": [
         "請升級"
+      ],
+      "Upgrade now": [
+        "立即升級"
       ],
       "Upload picture": [
         "上載圖像"
@@ -6635,12 +6635,6 @@
       ]
     },
     "Notification": {
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } 已停用。"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } 已啟用。"
-      ],
       "Contact group created": [
         "聯絡人群組已創建"
       ],
@@ -7710,9 +7704,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "請稍後，正在取消您的訂閱"
-      ],
-      "Downgrading your account, please wait": [
-        "正在降級您的帳號，請稍候"
       ]
     },
     "Storage": {

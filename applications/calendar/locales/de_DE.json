@@ -309,6 +309,9 @@
       "Hide affected calendars": [
         "Betroffene Kalender ausblenden"
       ],
+      "Hide busy times": [
+        "Belegte Zeiten ausblenden"
+      ],
       "Hide time zones": [
         "Zeitzonen ausblenden"
       ],
@@ -386,9 +389,6 @@
       ],
       "Manage labels": [
         "Kategorien verwalten"
-      ],
-      "Mark as open": [
-        "Als offen markieren"
       ],
       "Mark as resolved": [
         "Als gelöst markieren"
@@ -597,6 +597,9 @@
       "Show affected calendars": [
         "Betroffene Kalender anzeigen"
       ],
+      "Show busy times": [
+        "Belegte Zeiten anzeigen"
+      ],
       "Show less": [
         "Weniger anzeigen"
       ],
@@ -672,10 +675,10 @@
       "Upgrade": [
         "Wechseln"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Jetzt upgraden"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Jetzt upgraden"
       ],
       "Upload picture": [
@@ -1106,6 +1109,12 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME } weiterhin verwenden."
+      ],
+      "Continue using ${ planTitle }": [
+        "${ planTitle } weiterhin verwenden"
+      ],
+      "Continue your subscription": [
+        "Abonnement fortsetzen"
       ]
     },
     "Calendar access select label": {
@@ -2353,6 +2362,9 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA fügt eine zusätzliche Sicherheitsebene hinzu, die unbefugten Zugriff verhindert."
       ],
+      "Availability unknown": [
+        "Verfügbarkeit unbekannt"
+      ],
       "Boost efficiency and track your time by color-coding events by category or your energy levels. Get this and much more with a paid plan.": [
         "Steigere deine Effizienz und verfolge deine Zeit, indem du Termine nach Kategorie oder Energielevel farblich kennzeichnest. Dies und vieles mehr erhältst du mit einem kostenpflichtigen Abonnement."
       ],
@@ -2376,6 +2388,9 @@
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Die Kontaktliste, die du importieren möchtest, enthält anscheinend Gruppen. Bitte lege fest, wie diese Gruppen importiert werden sollen."
+      ],
+      "Loading availability": [
+        "Die Verfügbarkeiten werden geladen…"
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Kontakte werden zusammengeführt… Dies kann einige Minuten dauern. Wenn der Vorgang abgeschlossen ist, kannst du diese Meldung schließen."
@@ -4446,6 +4461,9 @@
       "Large imports can take several days.": [
         "Große Importmengen können mehrere Tage dauern."
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Erfahre, wie man ${ staySaferOnlineLink }"
+      ],
       "Learn more": [
         "Mehr erfahren"
       ],
@@ -4460,6 +4478,9 @@
       ],
       "Loading ${ appName }": [
         "${ appName } wird geladen"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Kalender wird geladen, bitte warte. Du wirst in einer neuen Registerkarte zu unserer Terminplanungsplattform Calendly weitergeleitet."
       ],
       "Loading event": [
         "Termin wird geladen"
@@ -4538,6 +4559,9 @@
       ],
       "Organization size": [
         "Organisationsgröße"
+      ],
+      "Other users within your organization will see your busy slots. No event details are shared.": [
+        "Andere Benutzer innerhalb deiner Organisation sehen deine belegten Zeitfenster. Es werden keine Ereignisdetails freigegeben."
       ],
       "password": [
         "Passwort"
@@ -4665,6 +4689,9 @@
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Die Anwendung muss deine Kontakte lokal entschlüsseln, bevor diese exportiert werden können. Am Ende des Prozesses wird eine VCF-Datei generiert, die du anschließend herunterladen kannst."
+      ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "Die offengelegten Informationen wurden von einem Service eines Drittanbieters preisgegeben. Deine ${ BRAND_NAME } Kontoinformationen bleiben sicher und verschlüsselt. ${ learnMoreLink }"
       ],
       "The following participants cannot be notified about your changes:": [
         "Die folgenden Teilnehmer konnten nicht über deine Änderungen informiert werden:"
@@ -4884,6 +4911,12 @@
       "You cannot undo this action.": [
         "Diese Aktion kann nicht widerrufen werden."
       ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "Du hast ein Probeabonnement ${ planTitle }. Wenn du dein Abonnement nach dem Testzeitraum fortsetzen möchtest, füge bitte eine Zahlungsmethode hinzu."
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "Du hast ein Probeabonnement ${ planTitle }. Zu diesem Zeitpunkt ist keine Zahlung erforderlich. Dein Abonnement wird am Ende des Testzeitraums automatisch verlängert."
+      ],
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
         "Du hast deinen Schlüssel reaktiviert und Termine, die mit den folgenden Kalendern verknüpft sind, können nun entschlüsselt werden."
       ],
@@ -4962,6 +4995,12 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Deine Daten sind bereit für den Import von ${ importedEmailAddressStrong } in dein ${ BRAND_NAME }-Konto."
       ],
+      "Your email address and password were leaked:": [
+        "Deine E-Mail-Adresse und dein Passwort wurden offengelegt:"
+      ],
+      "Your email address was exposed:": [
+        "Ihre E-Mail-Adresse wurde offengelegt:"
+      ],
       "Your email will only be used for this one-time verification.": [
         "Deine E-Mail-Adresse wird nur für diese einmalige Überprüfung verwendet."
       ],
@@ -4971,11 +5010,17 @@
       "Your files will be encrypted and then saved": [
         "Deine Dateien werden verschlüsselt und anschließend gespeichert"
       ],
+      "Your information was found on ${ displayedDate }": [
+        "Deine Informationen wurden gefunden am ${ displayedDate }"
+      ],
       "Your login information will not be saved after the import is completed.": [
         "Deine Anmeldeinformationen werden nach Abschluss des Importvorgangs nicht gespeichert."
       ],
       "Your next billing date is ${ renewalTime }.": [
         "Dein nächstes Abrechnungsdatum ist der ${ renewalTime }."
+      ],
+      "Your password was leaked:": [
+        "Dein Passwort wurde offengelegt"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Deine Telefonnummer wird nur für diese einmalige Überprüfung verwendet."
@@ -5114,6 +5159,9 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Vorübergehend nicht verfügbar. Bitte schaue später wieder vorbei.)"
+      ],
+      "Access to my events": [
+        "Zugang zu meinen Ereignissen"
       ],
       "Add email address": [
         "E-Mail-Adresse hinzufügen"
@@ -5476,6 +5524,9 @@
       "Select your plan": [
         "Wähle dein Abonnement"
       ],
+      "Show others when I'm busy": [
+        "Anderen zeigen, wenn ich beschäftigt bin"
+      ],
       "Show week numbers": [
         "Kalenderwochen anzeigen"
       ],
@@ -5637,6 +5688,9 @@
       ],
       "Request an invite": [
         "Einladung anfordern"
+      ],
+      "stay safer online": [
+        "bleib online geschützter"
       ],
       "What’s this?": [
         "Was ist das?"
@@ -6791,12 +6845,6 @@
       ]
     },
     "Notification": {
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } wurde deaktiviert."
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } wurde aktiviert."
-      ],
       "Contact group created": [
         "Kontaktgruppe erstellt"
       ],
@@ -7411,7 +7459,7 @@
         "Verwendet auf Amazon für Shopping, etc."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
-        "Wenn du nach deiner E-Mail-Adresse gefragt wird, gibst du stattdessen diesen Alias an. Aliasse werden von ${ passLink } zur Verfügung gestellt."
+        "Wenn du nach deiner E-Mail-Adresse gefragt wirst, gibst du stattdessen diesen Alias an. Aliasse werden von ${ passLink } zur Verfügung gestellt."
       ]
     },
     "Security Center (link to Pass App)": {
@@ -7425,6 +7473,9 @@
       ]
     },
     "Security Center - Info": {
+      "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
+        "Lass dich benachrichtigen, wenn dein Passwort oder andere Daten von einem Service eines Drittanbieters preisgegeben wurden. ${ learnMoreLink }"
+      ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Unsere hochmoderne, KI-gesteuerte Sicherheitslösung für Benutzer, die einen erhöhten Schutz für ihre Konten wünschen. ${ learnMoreLink }"
       ],
@@ -7910,6 +7961,12 @@
       "Invite friends to ${ BRAND_NAME }": [
         "Lade Freunde zu ${ BRAND_NAME } ein"
       ],
+      "No more scheduling conflicts": [
+        "Keine Terminkonflikte mehr"
+      ],
+      "Now you can see when participants are free to attend your meeting.": [
+        "Jetzt kannst du sehen, wann die Teilnehmer verfügbar sind, um an deiner Besprechung teilzunehmen."
+      ],
       "Public holidays are here!": [
         "Die Feiertage sind da!"
       ],
@@ -7923,9 +7980,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "Die Kündigung deines Abonnements wird bearbeitet. Bitte warten."
-      ],
-      "Downgrading your account, please wait": [
-        "Dein Konto wird zurückgestuft, bitte warten …"
       ]
     },
     "Storage": {
@@ -8614,6 +8668,9 @@
       "Deleting contacts": [
         "Kontakte werden gelöscht"
       ],
+      "Details": [
+        "Details"
+      ],
       "Downgrade account": [
         "Konto downgraden"
       ],
@@ -8725,6 +8782,9 @@
       ],
       "Night theme": [
         "Dunkles Design"
+      ],
+      "No breaches detected": [
+        "Kein Datendiebstahl entdeckt"
       ],
       "Notes": [
         "Notizen"
@@ -8935,6 +8995,9 @@
       ],
       "Your calendar link": [
         "Dein Kalender-Link"
+      ],
+      "Your exposed information": [
+        "Deine exponierten Informationen"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Deine kostenlose Testversion von Mail Plus endet am ${ textDate }."
