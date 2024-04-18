@@ -1,21 +1,27 @@
-import type { Rect } from '../../types/utils/dom';
+import type { Rect } from '@proton/pass/types/utils/dom';
 
-export const animatePositionChange = (position: { get: () => Partial<Rect>; set: () => void }): number => {
-    position.set();
-    let { top, left, right, bottom } = position.get();
+export const animatePositionChange = (options: {
+    get: () => Partial<Rect>;
+    set: () => void;
+    onAnimate: (request: number) => void;
+}): void => {
+    options.set();
+    let { top, left, right, bottom } = options.get();
 
-    const check = (): number =>
-        requestAnimationFrame(() => {
-            const { top: nTop, left: nLeft, right: nRight, bottom: nBottom } = position.get();
-            if (nTop !== top || nLeft !== left || nRight !== right || nBottom !== bottom) {
-                position.set();
-                top = nTop;
-                left = nLeft;
-                right = nRight;
-                bottom = nBottom;
-                check();
-            }
-        });
+    const check = () =>
+        options.onAnimate(
+            requestAnimationFrame(() => {
+                const { top: nTop, left: nLeft, right: nRight, bottom: nBottom } = options.get();
+                if (nTop !== top || nLeft !== left || nRight !== right || nBottom !== bottom) {
+                    options.set();
+                    top = nTop;
+                    left = nLeft;
+                    right = nRight;
+                    bottom = nBottom;
+                    check();
+                }
+            })
+        );
 
     return check();
 };
