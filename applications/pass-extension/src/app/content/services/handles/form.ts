@@ -11,6 +11,7 @@ import {
     removeProcessedFlag,
 } from '@proton/pass/fathom';
 import { isElementBusy, isParentBusy } from '@proton/pass/utils/dom/form';
+import { findScrollableParent } from '@proton/pass/utils/dom/scroll';
 import { getMaxZIndex } from '@proton/pass/utils/dom/zindex';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { logger } from '@proton/pass/utils/logger';
@@ -25,6 +26,7 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
     const { form, formType, fields: detectedFields } = options;
     const listeners = createListenerStore();
     const zIndex = getMaxZIndex(form) + 5;
+    const scrollRef = findScrollableParent(form);
 
     const formHandle: FormHandle = {
         id: uniqueId(),
@@ -159,6 +161,9 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
     );
 
     listeners.addResizeObserver(options.form, onFormResize);
+    listeners.addListener(scrollRef, 'scroll', () =>
+        formHandle.getFields().forEach((field) => field.icon?.reposition())
+    );
 
     return formHandle;
 };
