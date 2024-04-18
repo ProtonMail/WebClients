@@ -380,6 +380,9 @@
       "Report a problem": [
         "Sorun bildirin"
       ],
+      "Request a call": [
+        "Arama isteği gönder"
+      ],
       "Request a feature": [
         "Bir özellik istiyorum"
       ],
@@ -979,6 +982,9 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME } kullanmayı sürdürün."
+      ],
+      "Continue using ${ planTitle }": [
+        "${ planTitle } kullanmayı sürdürün"
       ]
     },
     "Checkout row": {
@@ -6991,9 +6997,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "Lütfen aboneliğiniz iptal edilirken bekleyin"
-      ],
-      "Downgrading your account, please wait": [
-        "Hesabınız düşürülüyor, lütfen bekleyin"
       ]
     },
     "Storage": {

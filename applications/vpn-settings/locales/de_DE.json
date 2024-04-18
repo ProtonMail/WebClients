@@ -143,6 +143,9 @@
       "Delete Gateway": [
         "Gateway löschen"
       ],
+      "Delete logo": [
+        "Logo löschen"
+      ],
       "Delete user": [
         "Benutzer löschen"
       ],
@@ -283,6 +286,9 @@
       ],
       "Invite user": [
         "Benutzer einladen"
+      ],
+      "Keep logo": [
+        "Logo behalten"
       ],
       "Keep my Plus subscription": [
         "Plus-Abonnement behalten"
@@ -956,6 +962,12 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME } weiterhin verwenden."
+      ],
+      "Continue using ${ planTitle }": [
+        "${ planTitle } weiterhin verwenden"
+      ],
+      "Continue your subscription": [
+        "Abonnement fortsetzen"
       ]
     },
     "Checkout row": {
@@ -2046,6 +2058,9 @@
       ],
       "Name does not match": [
         "Name stimmt nicht überein"
+      ],
+      "No image selected": [
+        "Kein Bild ausgewählt"
       ],
       "Not a valid number": [
         "Keine gültige Zahl"
@@ -3318,6 +3333,9 @@
       "Loading ${ appName }": [
         "${ appName } wird geladen"
       ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Kalender wird geladen, bitte warte. Du wirst in einer neuen Registerkarte zu unserer Terminplanungsplattform Calendly weitergeleitet."
+      ],
       "Loading preview": [
         "Vorschau wird geladen"
       ],
@@ -3984,6 +4002,12 @@
         "Dir steht ${ availableCount } dedizierter Server zur Verfügung.",
         "Dir stehen ${ availableCount } dedizierte Server zur Verfügung."
       ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "Du hast ein Probeabonnement ${ planTitle }. Wenn du dein Abonnement nach dem Testzeitraum fortsetzen möchtest, füge bitte eine Zahlungsmethode hinzu."
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "Du hast ein Probeabonnement ${ planTitle }. Zu diesem Zeitpunkt ist keine Zahlung erforderlich. Dein Abonnement wird am Ende des Testzeitraums automatisch verlängert."
+      ],
       "You have no invoices.": [
         "Keine Rechnungen vorhanden."
       ],
@@ -4379,6 +4403,9 @@
       ],
       "Level for NetShield blocker filtering": [
         "Stufe für NetShield-Blocker-Filterung"
+      ],
+      "Logo": [
+        "Logo"
       ],
       "Mailbox password": [
         "Postfach-Passwort"
@@ -5890,6 +5917,37 @@
         "Dein Abonnement beinhaltet maximal ${ humanReadableAvailableSpace } weiteren Speicherplatz."
       ]
     },
+    "Organization logo upload": {
+      "Avoid overly compressed images.": [
+        "Vermeide zu stark komprimierte Bilder."
+      ],
+      "Ensure your icon has padding space around it.": [
+        "Vergewissere dich, dass um dein Symbol herum Platz zum Auffüllen ist."
+      ],
+      "Opt for a PNG image that is a 128x128 pixels for clarity.": [
+        "Entscheide dich für ein PNG-Bild mit einer Größe von 128x128 Pixeln, damit es scharf genug dargestellt wird."
+      ],
+      "Tips on choosing a good icon": [
+        "Tipps zur Auswahl eines guten Symbols"
+      ],
+      "Use a graphical icon or image rather than text.": [
+        "Verwende ein grafisches Symbol oder Bild anstelle von Text."
+      ]
+    },
+    "Organization logo upload modal": {
+      "File in PNG or JPEG format": [
+        "Datei im PNG- oder JPEG-Format"
+      ],
+      "File not larger than 30 KB": [
+        "Datei darf nicht größer als 30 KB sein"
+      ],
+      "Square image of at least 128 pixels": [
+        "Quadratisches Bild mit mindestens 128 Pixeln"
+      ],
+      "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
+        "Die Benutzer sehen dein Logo anstelle des ${ BRAND_NAME }-Symbols, wenn sie sich bei unseren Webanwendungen anmelden."
+      ]
+    },
     "Pass B2B onboarding spotlight": {
       "Go to your vault to manage your passwords, aliases, and more.": [
         "Gehe zu deinem Tresor, um deine Passwörter, Aliasnamen und mehr zu verwalten."
@@ -6306,6 +6364,11 @@
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Das Verifizieren deiner Telefonnummer erhöht die Sicherheit deines Kontos und bietet zusätzliche Möglichkeiten zur Wiederherstellung."
+      ]
+    },
+    "Remove organization logo": {
+      "Users will no longer see your custom logo or organization name.": [
+        "Die Benutzer sehen dein eigenes Logo oder den Namen deiner Organisation nicht mehr."
       ]
     },
     "Restore administrator panel": {
@@ -6865,9 +6928,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "Die Kündigung deines Abonnements wird bearbeitet. Bitte warten."
-      ],
-      "Downgrading your account, please wait": [
-        "Dein Konto wird zurückgestuft, bitte warten …"
       ]
     },
     "Storage": {
@@ -7544,6 +7604,9 @@
       "Delete address permanently?": [
         "Adresse dauerhaft löschen?"
       ],
+      "Delete organization logo?": [
+        "Organisationslogo löschen?"
+      ],
       "Delete the server (you will still be able to recover it for ${ days } day)": [
         "Lösche den Server (Du kannst ihn innerhalb des nächsten ${ days } Tages wiederherstellen)",
         "Lösche den Server (Du kannst ihn innerhalb der nächsten ${ days } Tage wiederherstellen)"
@@ -7647,6 +7710,9 @@
       ],
       "Gift code": [
         "Gutscheincode"
+      ],
+      "How to choose a good icon": [
+        "Wie man ein gutes Bild auswählt"
       ],
       "Human verification": [
         "Captcha"
@@ -7859,6 +7925,9 @@
       "Upload CSV file to create multiple accounts": [
         "Lade eine CSV-Datei hoch, um mehrere Konten zu erstellen."
       ],
+      "Upload your organization’s logo": [
+        "Organisationslogo aktualisieren"
+      ],
       "Users": [
         "Benutzer"
       ],
@@ -7979,6 +8048,9 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Das ausgewählte Farbschema ist aktiv, wenn dein System auf \"Heller Modus\" eingestellt ist."
+      ],
+      "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
+        "Die Benutzer sehen dein Logo anstelle des ${ BRAND_NAME }-Symbols, wenn sie sich bei unseren Webanwendungen anmelden."
       ],
       "Usually an URL that contains the identity provider's name within": [
         "In der Regel eine URL, die den Namen des Identitätsanbieters enthält."

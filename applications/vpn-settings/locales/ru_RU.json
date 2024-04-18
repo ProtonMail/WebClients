@@ -954,6 +954,9 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Продолжить, используя ${ MAIL_APP_NAME }."
+      ],
+      "Continue using ${ planTitle }": [
+        "Продолжить, используя ${ planTitle }"
       ]
     },
     "Checkout row": {
@@ -1126,7 +1129,7 @@
         "Барбадос"
       ],
       "Belarus": [
-        "Белоруссия"
+        "Беларусь"
       ],
       "Belgium": [
         "Бельгия"
@@ -6806,9 +6809,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "Отмена подписки, подождите"
-      ],
-      "Downgrading your account, please wait": [
-        "Ваш аккаунт переходит на более дешевую версию, пожалуйста, подождите"
       ]
     },
     "Storage": {

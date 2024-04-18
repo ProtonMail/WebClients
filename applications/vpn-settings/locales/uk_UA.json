@@ -894,6 +894,9 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Продовжити за допомогою ${ MAIL_APP_NAME }."
+      ],
+      "Continue using ${ planTitle }": [
+        "Продовжити за допомогою ${ planTitle }"
       ]
     },
     "Checkout row": {
@@ -6611,9 +6614,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "Зачекайте поки триває скасування вашої передплати..."
-      ],
-      "Downgrading your account, please wait": [
-        "Триває перехід на тарифний план нижчого рівня. Будь ласка, зачекайте"
       ]
     },
     "Storage": {

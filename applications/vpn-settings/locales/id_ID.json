@@ -192,7 +192,7 @@
         "Ubah nama tampilan"
       ],
       "Edit email address": [
-        "Ubah alamat email"
+        "Sunting alamat email"
       ],
       "Edit Gateway": [
         "Sunting Gateway"
@@ -2174,7 +2174,7 @@
         "Tab ditutup"
       ],
       "The email addresses do not match": [
-        "Alamat email tidak cocok"
+        "Alamat email tidak sesuai"
       ],
       "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
         "Berkas ini terlalu besar. Ukuran maksimum berkas yang diperkenankan adalah ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }"
@@ -3724,7 +3724,7 @@
         "Akun ini telah ditangguhkan karena ditenggarai telah melanggar ketentuan penggunaan yang berlaku."
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
-        "Browser ini tidak mendukung pratinjau dokumen PDF. Mohon unduh berkas yang bersangkutan."
+        "Browser ini tidak mendukung pratinjau dokumen PDF. Silakan unduh berkas yang bersangkutan."
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "Proses ini dapat memerlukan waktu beberapa detik atau menit tergantung kemampuan perangkat Anda"
@@ -6435,6 +6435,9 @@
       "Enter URL and token into your identity provider": [
         "Masukkan URL dan token ke penyedia identitas Anda"
       ],
+      "For security reasons, the SCIM token will be hidden after saving your changes and you won’t be able to see it again.": [
+        "Demi alasan keamanan, token SCIM ini akan disembunyikan setelah perubahan Anda disimpan dan tidak akan lagi dapat dilihat oleh Anda."
+      ],
       "For security reasons, the token is hidden": [
         "Demi alasan keamanan, token ini disembunyikan"
       ],
@@ -6452,6 +6455,9 @@
       ],
       "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
         "Setelah SCIM dinonaktifkan bagi organisasi Anda, **seluruh pengguna SCIM yang ditentukan secara otomatis oleh penyedia identitas Anda akan dialihkan menjadi pengguna SSO**, di mana Anda akan dapat mengelola para pengguna ini secara langsung dari dalam menu pengaturan ${ BRAND_NAME }."
+      ],
+      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ VPN_APP_NAME } organization.": [
+        "Menyederhanakan pengelolaan pengguna pada berbagai layanan. Tambahkan, sunting, dan hapus pengguna pada penyedia identitas Anda, dan perubahan yang Anda buat akan langsung diterapkan pada organisasi ${ VPN_APP_NAME } milik Anda."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "Penyediaan SCIM otomatis akan dinonaktifkan hingga Anda memasukkan token SCIM yang baru ke pengaturan penyedia identitas Anda."
@@ -7002,9 +7008,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "Membatalkan langganan Anda, silakan tunggu"
-      ],
-      "Downgrading your account, please wait": [
-        "Menurunkan akun anda, harap tunggu"
       ]
     },
     "Storage": {
