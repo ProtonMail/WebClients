@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { BasicModal, Form, useMailSettings } from '@proton/components';
-import useBusyTimeSlotsAvailable from '@proton/components/containers/calendar/hooks/useBusyTimeSlotsAvailable';
+import useBusySlotsAvailable from '@proton/components/containers/calendar/hooks/useBusySlotsAvailable';
 import { ICAL_ATTENDEE_STATUS, ICAL_EVENT_STATUS, VIEWS } from '@proton/shared/lib/calendar/constants';
 import { getDisplayTitle } from '@proton/shared/lib/calendar/helper';
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
@@ -15,7 +15,7 @@ import noop from '@proton/utils/noop';
 
 import { getCanDeleteEvent, getCanEditSharedEventData, getCannotSaveEvent } from '../../helpers/event';
 import { INVITE_ACTION_TYPES, InviteActions } from '../../interfaces/Invite';
-import { busyTimeSlotsActions } from '../../store/busyTimeSlots/busyTimeSlotsSlice';
+import { busySlotsActions } from '../../store/busySlots/busySlotsSlice';
 import { useCalendarDispatch } from '../../store/hooks';
 import EventForm from './EventForm';
 import validateEventModel from './eventForm/validateEventModel';
@@ -61,7 +61,7 @@ const CreateEventModal = ({
     ...rest
 }: Props) => {
     const [mailSettings] = useMailSettings();
-    const isBusyTimeSlotsAvailable = useBusyTimeSlotsAvailable();
+    const isBusySlotsAvailable = useBusySlotsAvailable();
     const dispatch = useCalendarDispatch();
     const [participantError, setParticipantError] = useState(false);
     const errors = { ...validateEventModel(model), participantError };
@@ -157,8 +157,8 @@ const CreateEventModal = ({
     );
 
     useEffect(() => {
-        if (isBusyTimeSlotsAvailable && isOpen) {
-            dispatch(busyTimeSlotsActions.setDisplay(false));
+        if (isBusySlotsAvailable && isOpen) {
+            dispatch(busySlotsActions.setDisplay(false));
         }
     }, [isOpen]);
 

@@ -130,7 +130,7 @@ import { getCanEditSharedEventData } from '../../helpers/event';
 import { extractInviteEmails } from '../../helpers/invite';
 import { getCleanSendDataFromSendPref, getSendPrefErrorMap } from '../../helpers/sendPreferences';
 import { getIsCalendarAppInDrawer } from '../../helpers/views';
-import useBusyTimeSlots from '../../hooks/useBusyTimeSlots';
+import useBusySlots from '../../hooks/useBusySlots';
 import { OpenedMailEvent } from '../../hooks/useGetOpenedMailEvents';
 import useOpenCalendarEvents from '../../hooks/useOpenCalendarEvents';
 import { useOpenEventsFromMail } from '../../hooks/useOpenEventsFromMail';
@@ -1665,7 +1665,7 @@ const InteractiveCalendarView = ({
         return getTemporaryEvent(getEditTemporaryEvent(targetEvent, newTemporaryModel, tzid), newTemporaryModel, tzid);
     };
 
-    const preventFetchBusySlots = useBusyTimeSlots({
+    const preventFetchBusySlots = useBusySlots({
         dateRange,
         now,
         temporaryEvent,

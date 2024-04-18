@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href';
 import { Spotlight, useSpotlightShow } from '@proton/components/components';
-import useBusyTimeSlotsAvailable from '@proton/components/containers/calendar/hooks/useBusyTimeSlotsAvailable';
+import useBusySlotsAvailable from '@proton/components/containers/calendar/hooks/useBusySlotsAvailable';
 import { useActiveBreakpoint, useSpotlightOnFeature, useUser, useWelcomeFlags } from '@proton/components/hooks';
 import { FeatureCode } from '@proton/features';
 import { VIEWS } from '@proton/shared/lib/calendar/constants';
@@ -24,7 +24,7 @@ const BusySlotsSpotlight = ({ children, view, isDisplayedInPopover }: Props) => 
     const { viewportWidth } = useActiveBreakpoint();
     const [{ isDone }] = useWelcomeFlags();
     const userAccountHasMoreThanTwoDays = new Date() > addDays(fromUnixTime(user.CreateTime), 2);
-    const isBusyTimeSlotsAvailable = useBusyTimeSlotsAvailable(view);
+    const isBusySlotsAvailable = useBusySlotsAvailable(view);
 
     /**
      * Display conditions:
@@ -38,7 +38,7 @@ const BusySlotsSpotlight = ({ children, view, isDisplayedInPopover }: Props) => 
         !viewportWidth['<=small'] &&
         isDone &&
         userAccountHasMoreThanTwoDays &&
-        isBusyTimeSlotsAvailable &&
+        isBusySlotsAvailable &&
         isDisplayedInPopover;
 
     const { show, onDisplayed, onClose } = useSpotlightOnFeature(

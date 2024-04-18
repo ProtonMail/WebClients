@@ -2,11 +2,11 @@ import { useEffect, useRef } from 'react';
 
 import { getUnixTime } from 'date-fns';
 
-import useBusyTimeSlotsAvailable from '@proton/components/containers/calendar/hooks/useBusyTimeSlotsAvailable';
+import useBusySlotsAvailable from '@proton/components/containers/calendar/hooks/useBusySlotsAvailable';
 import { VIEWS } from '@proton/shared/lib/calendar/constants';
 
 import { CalendarViewEventTemporaryEvent } from '../containers/calendar/interface';
-import { busyTimeSlotsActions } from '../store/busyTimeSlots/busyTimeSlotsSlice';
+import { busySlotsActions, busySlotsSliceName } from '../store/busySlots/busySlotsSlice';
 import { useCalendarDispatch, useCalendarStore } from '../store/hooks';
 
 interface Props {
@@ -17,16 +17,16 @@ interface Props {
     now: Date;
 }
 
-const useBusyTimeSlots = ({ temporaryEvent, dateRange, now, tzid, view }: Props) => {
+const useBusySlots = ({ temporaryEvent, dateRange, now, tzid, view }: Props) => {
     const preventFetchRef = useRef(false);
-    const isBusyTimeSlotsAvailable = useBusyTimeSlotsAvailable();
+    const isBusySlotsAvailable = useBusySlotsAvailable();
     const store = useCalendarStore();
     const dispatch = useCalendarDispatch();
 
     const updateMetadata = () => {
-        if (isBusyTimeSlotsAvailable) {
+        if (isBusySlotsAvailable) {
             dispatch(
-                busyTimeSlotsActions.setMetadata({
+                busySlotsActions.setMetadata({
                     viewStartDate: getUnixTime(dateRange[0]),
                     viewEndDate: getUnixTime(dateRange[1]),
                     now: getUnixTime(now),
@@ -42,7 +42,7 @@ const useBusyTimeSlots = ({ temporaryEvent, dateRange, now, tzid, view }: Props)
     }, [view, dateRange[0], dateRange[1]]);
 
     useEffect(() => {
-        if (!isBusyTimeSlotsAvailable) {
+        if (!isBusySlotsAvailable) {
             return;
         }
 
@@ -53,14 +53,14 @@ const useBusyTimeSlots = ({ temporaryEvent, dateRange, now, tzid, view }: Props)
                 return;
             }
 
-            if (!store.getState().busyTimeSlots.metadata && view !== VIEWS.MONTH) {
+            if (!store.getState()[busySlotsSliceName].metadata && view !== VIEWS.MONTH) {
                 updateMetadata();
             }
-            dispatch(busyTimeSlotsActions.setAttendees(attendees.map((attendee) => attendee.email)));
+            dispatch(busySlotsActions.setAttendees(attendees.map((attendee) => attendee.email)));
         }
 
         if (!temporaryEvent) {
-            dispatch(busyTimeSlotsActions.reset());
+            dispatch(busySlotsActions.reset());
             preventFetchRef.current = false;
         }
     }, [temporaryEvent?.tmpData.attendees.join(',')]);
@@ -68,4 +68,4 @@ const useBusyTimeSlots = ({ temporaryEvent, dateRange, now, tzid, view }: Props)
     return preventFetchRef;
 };
 
-export default useBusyTimeSlots;
+export default useBusySlots;
