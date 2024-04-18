@@ -45,8 +45,6 @@ export interface BusySlotsState {
         viewStartDate: number;
         /** End date of the calendar view in UTC unix timestamp */
         viewEndDate: number;
-        /** Now date used across calendar components in UTC unix timestamp */
-        now: number;
     };
     /** List of event attendees */
     attendees: BusySlotsEmail[];
