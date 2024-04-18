@@ -35,7 +35,7 @@ export const createPassBridge = (api: Api): PassBridge => {
             const PassCrypto = exposePassCrypto(createPassCrypto());
 
             passBridgeInstance = {
-                init: async ({ user, addresses, authStore }) => {
+                async init({ user, addresses, authStore }) {
                     await PassCrypto.hydrate({ user, addresses, keyPassword: authStore.getPassword(), clear: false });
                     const isReady = await waitUntil(() => PassCrypto.ready, 250).then(() => true);
 
@@ -48,7 +48,7 @@ export const createPassBridge = (api: Api): PassBridge => {
                     }),
                 },
                 vault: {
-                    getDefault: maxAgeMemoize(async (hadVaultCallback) => {
+                    getDefault: maxAgeMemoize(async () => {
                         const encryptedShares = await requestShares();
                         const shares = (await Promise.all(encryptedShares.map(unary(parseShareResponse)))).filter(
                             truthy
@@ -58,24 +58,28 @@ export const createPassBridge = (api: Api): PassBridge => {
                             .sort(sortOn('createTime', 'ASC'));
 
                         const defaultVault = first(candidates);
-                        if (defaultVault) {
-                            hadVaultCallback?.(true);
-                            return defaultVault;
-                        } else {
-                            hadVaultCallback?.(false);
-                            const newVault = await createVault({
-                                content: {
-                                    name: 'Personal',
-                                    description: 'Personal vault (created from Mail)',
-                                    display: {},
-                                },
-                            });
-                            return newVault;
-                        }
+
+                        return defaultVault;
                     }),
+                    async createDefaultVault() {
+                        // In case a default vault has been created in the meantime
+                        const defaultVault = await this.getDefault({ maxAge: 0 });
+                        if (defaultVault) {
+                            return defaultVault;
+                        }
+
+                        const newVault = await createVault({
+                            content: {
+                                name: 'Personal',
+                                description: 'Personal vault (created from Mail)',
+                                display: {},
+                            },
+                        });
+                        return newVault;
+                    },
                 },
                 alias: {
-                    create: async ({ shareId, name, note, alias: { aliasEmail, mailbox, prefix, signedSuffix } }) => {
+                    async create({ shareId, name, note, alias: { aliasEmail, mailbox, prefix, signedSuffix } }) {
                         const itemUuid = uniqueId();
 
                         const encryptedItem = await createAlias({
@@ -95,7 +99,7 @@ export const createPassBridge = (api: Api): PassBridge => {
                             item: { ...item, aliasEmail },
                         };
                     },
-                    getAliasOptions: getAliasOptions,
+                    getAliasOptions,
                     getAllByShareId: maxAgeMemoize(async (shareId) => {
                         const aliases = (await Promise.all(
                             (await requestAllItemsForShareId({ shareId, OnlyAlias: true }))
