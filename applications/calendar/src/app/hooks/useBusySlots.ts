@@ -14,10 +14,9 @@ interface Props {
     dateRange: [Date, Date];
     tzid: string;
     view: VIEWS;
-    now: Date;
 }
 
-const useBusySlots = ({ temporaryEvent, dateRange, now, tzid, view }: Props) => {
+const useBusySlots = ({ temporaryEvent, dateRange, tzid, view }: Props) => {
     const preventFetchRef = useRef(false);
     const isBusySlotsAvailable = useBusySlotsAvailable();
     const store = useCalendarStore();
@@ -29,7 +28,6 @@ const useBusySlots = ({ temporaryEvent, dateRange, now, tzid, view }: Props) => 
                 busySlotsActions.setMetadata({
                     viewStartDate: getUnixTime(dateRange[0]),
                     viewEndDate: getUnixTime(dateRange[1]),
-                    now: getUnixTime(now),
                     tzid,
                     view,
                 })

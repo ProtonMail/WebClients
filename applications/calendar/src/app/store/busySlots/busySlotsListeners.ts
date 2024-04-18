@@ -22,9 +22,11 @@ export const startListeningBusySlots = (startListening: SharedStartListening<Cal
         predicate: (action, nextState, prevState) => {
             const nextCalendarView = nextState[busySlotsSliceName]?.metadata?.view;
             const nextDisplayBusySlots = nextState[busySlotsSliceName]?.displayOnGrid;
+            const nextMetadata = nextState[busySlotsSliceName]?.metadata;
 
             if (
                 WHITELISTED_ACTIONS.some((type) => type === action.type) &&
+                nextMetadata !== undefined &&
                 nextCalendarView !== VIEWS.MONTH &&
                 nextDisplayBusySlots === true
             ) {
