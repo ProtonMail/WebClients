@@ -56,6 +56,7 @@ export const getPassCoreProps = (sw: MaybeNull<ServiceWorkerContextValue>): Pass
         config: PASS_CONFIG,
         endpoint: 'web',
         i18n: i18n,
+        monitor,
 
         exportData: async (options) => {
             const state = store.getState();
@@ -104,7 +105,6 @@ export const getPassCoreProps = (sw: MaybeNull<ServiceWorkerContextValue>): Pass
 
         prepareImport: prepareImport,
         writeToClipboard: (value) => navigator.clipboard.writeText(value),
-        analyzePassword: (password) => monitor.analyzePassword(password),
     };
 };
 

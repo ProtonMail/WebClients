@@ -58,6 +58,7 @@ export const getPassCoreProps = (): PassCoreProviderProps => ({
     config: PASS_CONFIG,
     endpoint: 'desktop',
     i18n: i18n,
+    monitor,
 
     exportData: async (options) => {
         const state = store.getState();
@@ -136,7 +137,6 @@ export const getPassCoreProps = (): PassCoreProviderProps => ({
     prepareImport: prepareImport,
     getLogs: logStore.read,
     writeToClipboard: window.ctxBridge.writeToClipboard,
-    analyzePassword: (password) => monitor.analyzePassword(password),
 });
 
 export const App = () => {
