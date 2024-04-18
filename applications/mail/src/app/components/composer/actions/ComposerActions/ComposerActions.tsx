@@ -161,7 +161,7 @@ const ComposerActions = ({
                                     data-testid="composer:use-assistant-button"
                                 >
                                     <Icon
-                                        name="pen-stars"
+                                        name="sparks"
                                         alt={c('loc_nightly_assistant').t`Generate a message`}
                                         style={{ color: '#D132EA' }}
                                     />
