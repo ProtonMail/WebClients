@@ -7,6 +7,7 @@ import {
 } from '@proton/crypto/lib';
 import {
     queryAcceptShareInvite,
+    queryDeleteInvitation,
     queryInvitationDetails,
     queryInvitationList,
     queryInviteProtonUser,
@@ -115,6 +116,13 @@ export const useShareInvitation = () => {
             });
     };
 
+    const deleteInvitation = async (
+        abortSignal: AbortSignal,
+        { shareId, invitationId }: { shareId: string; invitationId: string }
+    ) => {
+        return debouncedRequest<{ Code: number }>(queryDeleteInvitation(shareId, invitationId), abortSignal);
+    };
+
     const acceptInvitation = async (
         abortSignal: AbortSignal,
         params: {
@@ -180,6 +188,7 @@ export const useShareInvitation = () => {
         getShareInvitations,
         inviteProtonUser,
         listInvitations,
+        deleteInvitation,
         acceptInvitation,
         updateShareInvitationPermissions,
     };

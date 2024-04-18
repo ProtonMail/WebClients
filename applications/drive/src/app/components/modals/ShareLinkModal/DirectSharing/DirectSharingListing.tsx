@@ -17,9 +17,66 @@ interface Props {
     invitations: ShareInvitation[];
     isLoading: boolean;
     onPermissionsChange: (member: ShareMember, permission: SHARE_MEMBER_PERMISSIONS) => void;
+    onMemberRemove: (member: ShareMember) => void;
+    onInvitationRemove: (invitationId: string) => void;
 }
 
-const DirectSharingListing = ({ volumeId, linkId, members, invitations, isLoading, onPermissionsChange }: Props) => {
+const MemberItem = ({
+    member,
+    onPermissionsChange,
+    onMemberRemove,
+}: {
+    member: ShareMember;
+    onPermissionsChange: (member: ShareMember, permission: SHARE_MEMBER_PERMISSIONS) => void;
+    onMemberRemove: (member: ShareMember) => void;
+}) => {
+    const [contactEmails] = useContactEmails();
+    const { email, memberId, permissions } = member;
+    const { Name: contactName, Email: contactEmail } = contactEmails?.find(
+        (contactEmail) => contactEmail.Email === canonicalizeInternalEmail(email)
+    ) || {
+        Name: '',
+        Email: email,
+    };
+
+    const handlePermissionChange = (value: SHARE_MEMBER_PERMISSIONS) => {
+        onPermissionsChange(member, value);
+    };
+
+    const handleMemberRemove = () => {
+        onMemberRemove(member);
+    };
+
+    return (
+        <div key={memberId} className="flex my-4 justify-space-between items-center">
+            <div className={'flex items-center'}>
+                <Avatar color="weak" className="mr-2">
+                    {getInitials(contactName || contactEmail)}
+                </Avatar>
+                <p className="flex flex-column p-0 m-0">
+                    <span className="text-semibold">{contactName ? contactName : contactEmail}</span>
+                    {contactName && <span className="color-weak">{contactEmail}</span>}
+                </p>
+            </div>
+            <MemberPermissionsSelect
+                selectedPermissions={permissions}
+                onChange={handlePermissionChange}
+                onRemove={handleMemberRemove}
+            />
+        </div>
+    );
+};
+
+const DirectSharingListing = ({
+    volumeId,
+    linkId,
+    members,
+    invitations,
+    isLoading,
+    onPermissionsChange,
+    onMemberRemove,
+    onInvitationRemove,
+}: Props) => {
     const [contactEmails] = useContactEmails();
 
     const [user] = useUser();
@@ -69,38 +126,19 @@ const DirectSharingListing = ({ volumeId, linkId, members, invitations, isLoadin
                             linkId={linkId}
                             contactName={contactName}
                             contactEmail={contactEmail}
+                            onInvitationRemove={onInvitationRemove}
                         />
                     );
                 })}
 
-            {members.map((member) => {
-                const { email, memberId, permissions } = member;
-                const { Name: contactName, Email: contactEmail } = contactEmails?.find(
-                    (contactEmail) => contactEmail.Email === canonicalizeInternalEmail(email)
-                ) || {
-                    Name: '',
-                    Email: email,
-                };
-
-                const handlePermissionChange = (value: SHARE_MEMBER_PERMISSIONS) => {
-                    onPermissionsChange(member, value);
-                };
-
-                return (
-                    <div key={memberId} className="flex my-4 justify-space-between items-center">
-                        <div className={'flex items-center'}>
-                            <Avatar color="weak" className="mr-2">
-                                {getInitials(contactName || contactEmail)}
-                            </Avatar>
-                            <p className="flex flex-column p-0 m-0">
-                                <span className="text-semibold">{contactName ? contactName : contactEmail}</span>
-                                {contactName && <span className="color-weak">{contactEmail}</span>}
-                            </p>
-                        </div>
-                        <MemberPermissionsSelect selectedPermissions={permissions} onChange={handlePermissionChange} />
-                    </div>
-                );
-            })}
+            {members.map((member) => (
+                <MemberItem
+                    key={member.memberId}
+                    member={member}
+                    onPermissionsChange={onPermissionsChange}
+                    onMemberRemove={onMemberRemove}
+                />
+            ))}
         </>
     );
 };
