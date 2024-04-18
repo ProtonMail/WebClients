@@ -2,19 +2,19 @@ import { useEffect, useState } from 'react';
 
 import type { WasmPasswordScore } from '@protontech/pass-rust-core';
 
-import type { Maybe } from '@proton/pass/types';
+import type { MaybeNull } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
 
 import { usePassCore } from '../components/Core/PassCoreProvider';
 
 export const usePasswordStrength = (password: string) => {
-    const { analyzePassword } = usePassCore();
-    const [strength, setStrength] = useState<Maybe<WasmPasswordScore>>(undefined);
+    const { monitor } = usePassCore();
+    const [strength, setStrength] = useState<MaybeNull<WasmPasswordScore>>(null);
 
     useEffect(() => {
         (async () => {
-            const result = password ? await analyzePassword(password) : undefined;
-            setStrength(result?.password_score);
+            const score = password ? (await monitor.analyzePassword(password))?.password_score ?? null : null;
+            setStrength(score);
         })().catch(noop);
     }, [password]);
 

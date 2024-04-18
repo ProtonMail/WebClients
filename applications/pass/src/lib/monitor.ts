@@ -1,15 +1,5 @@
-import { createPassCoreService } from '@proton/pass/lib/core/service';
-import { logger } from '@proton/pass/utils/logger';
+import { createMonitorService } from '@proton/pass/lib/monitor/service';
 
-const coreService = createPassCoreService();
+import { core } from './core';
 
-export const monitor = {
-    analyzePassword: (password: string) => {
-        try {
-            return coreService.bindings!.analyze_password(password);
-        } catch (err) {
-            logger.error('[Monitor] Unable to analyze password', err);
-            return null;
-        }
-    },
-};
+export const monitor = createMonitorService(core);

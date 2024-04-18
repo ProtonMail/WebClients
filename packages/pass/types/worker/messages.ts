@@ -24,7 +24,7 @@ import type { User } from '@proton/shared/lib/interfaces';
 
 import type { SessionLockStatus } from '../api';
 import type { ForkPayload } from '../api/fork';
-import type { AliasCreationDTO, AliasOptions, SelectedItem } from '../data';
+import type { AliasCreationDTO, AliasOptions, ItemRevision, SelectedItem } from '../data';
 import type { TelemetryEvent } from '../data/telemetry';
 import type { Maybe, MaybeNull } from '../utils';
 import type { AutofillResult } from './autofill';
@@ -64,7 +64,6 @@ export enum WorkerMessageType {
     ACCOUNT_PROBE = 'pass-installed',
     ALIAS_CREATE = 'ALIAS_CREATE',
     ALIAS_OPTIONS = 'ALIAS_OPTIONS',
-    ANALYZE_PASSWORD = 'ANALYZE_PASSWORD',
     AUTH_CHECK = 'AUTH_CHECK',
     AUTH_CONFIRM_PASSWORD = 'AUTH_CONFIRM_PASSWORD',
     AUTH_INIT = 'AUTH_INIT',
@@ -90,6 +89,8 @@ export enum WorkerMessageType {
     LOCALE_UPDATED = 'LOCALE_UPDATED',
     LOG_EVENT = 'LOG_EVENT',
     LOG_REQUEST = 'LOG_REQUEST',
+    MONITOR_2FAS = 'MONITOR_2FAS',
+    MONITOR_PASSWORD = 'MONITOR_PASSWORD',
     NOTIFICATION = 'NOTIFICATION',
     ONBOARDING_ACK = 'ONBOARDING_ACK',
     ONBOARDING_CHECK = 'ONBOARDING_CHECK',
@@ -128,7 +129,6 @@ export type AccountPassOnboardingMessage = { type: WorkerMessageType.ACCOUNT_ONB
 export type AccountProbeMessage = { type: WorkerMessageType.ACCOUNT_PROBE };
 export type AliasCreateMessage = WithPayload<WorkerMessageType.ALIAS_CREATE, { url: string; alias: AliasCreationDTO }>;
 export type AliasOptionsMessage = { type: WorkerMessageType.ALIAS_OPTIONS };
-export type AnalyzePasswordMessage = WithPayload<WorkerMessageType.ANALYZE_PASSWORD, { password: string }>;
 export type AuthCheckMessage = WithPayload<WorkerMessageType.AUTH_CHECK, { immediate?: boolean }>;
 export type AuthConfirmPasswordMessage = WithPayload<WorkerMessageType.AUTH_CONFIRM_PASSWORD, { password: string }>;
 export type AuthInitMessage = { type: WorkerMessageType.AUTH_INIT; options: AuthResumeOptions };
@@ -154,6 +154,8 @@ export type LocaleRequestMessage = { type: WorkerMessageType.LOCALE_REQUEST };
 export type LocaleUpdatedMessage = WithPayload<WorkerMessageType.LOCALE_UPDATED, { locale: string }>;
 export type LogEventMessage = WithPayload<WorkerMessageType.LOG_EVENT, { log: string }>;
 export type LogRequestMessage = { type: WorkerMessageType.LOG_REQUEST };
+export type Monitor2FAsMessage = WithPayload<WorkerMessageType.MONITOR_2FAS, { items: ItemRevision<'login'>[] }>;
+export type MonitorPasswordMessage = WithPayload<WorkerMessageType.MONITOR_PASSWORD, { password: string }>;
 export type NotificationMessage = WithPayload<WorkerMessageType.NOTIFICATION, { notification: Notification }>;
 export type OnboardingAckMessage = WithPayload<WorkerMessageType.ONBOARDING_ACK, { message: OnboardingMessage }>;
 export type OnboardingCheckMessage = WithPayload<WorkerMessageType.ONBOARDING_CHECK, { message: OnboardingMessage }>;
@@ -190,7 +192,6 @@ export type WorkerMessage =
     | AccountProbeMessage
     | AliasCreateMessage
     | AliasOptionsMessage
-    | AnalyzePasswordMessage
     | AuthCheckMessage
     | AuthConfirmPasswordMessage
     | AuthInitMessage
@@ -216,6 +217,8 @@ export type WorkerMessage =
     | LocaleUpdatedMessage
     | LogEventMessage
     | LogRequestMessage
+    | Monitor2FAsMessage
+    | MonitorPasswordMessage
     | NotificationMessage
     | OnboardingAckMessage
     | OnboardingCheckMessage
@@ -255,7 +258,6 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.ACCOUNT_FORK]: { payload: ExtensionForkResultPayload };
     [WorkerMessageType.ALIAS_CREATE]: Result;
     [WorkerMessageType.ALIAS_OPTIONS]: Result<{ options: AliasOptions; needsUpgrade: boolean }>;
-    [WorkerMessageType.ANALYZE_PASSWORD]: WasmPasswordScoreResult;
     [WorkerMessageType.AUTH_CHECK]: Result<{ status: SessionLockStatus }, {}>;
     [WorkerMessageType.AUTH_CONFIRM_PASSWORD]: Result;
     [WorkerMessageType.AUTH_INIT]: AppState;
@@ -271,6 +273,8 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.IMPORT_DECRYPT]: { payload: ImportReaderPayload };
     [WorkerMessageType.LOCALE_REQUEST]: { locale: string };
     [WorkerMessageType.LOG_REQUEST]: { logs: string[] };
+    [WorkerMessageType.MONITOR_PASSWORD]: { result: MaybeNull<WasmPasswordScoreResult> };
+    [WorkerMessageType.MONITOR_2FAS]: { result: ItemRevision<'login'>[] };
     [WorkerMessageType.ONBOARDING_CHECK]: { enabled: boolean };
     [WorkerMessageType.ONBOARDING_REQUEST]: { message: MaybeNull<OnboardingMessage> };
     [WorkerMessageType.OTP_CODE_GENERATE]: OtpCode;
