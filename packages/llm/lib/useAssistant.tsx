@@ -207,6 +207,17 @@ export const AssistantProvider = ({
     const { sendRequestAssistantReport, sendUnloadModelAssistantReport, sendDownloadAssistantReport } =
         useAssistantTelemetry();
 
+    const cancelRunningAction = () => {
+        try {
+            runningActionRef.current?.cancel();
+            setIsGeneratingResult(false);
+            runningActionRef.current = null;
+        } catch (e: any) {
+            traceInitiativeError('assistant', e);
+            setError(c('loc_nightly_assistant').t`Something went wrong while cancelling the generation`);
+        }
+    };
+
     const openAssistant = (id: string) => {
         setOpenedAssistants([...openedAssistants, id]);
     };
@@ -214,6 +225,8 @@ export const AssistantProvider = ({
     const closeAssistant = (id: string) => {
         const filteredAssistants = openedAssistants.filter((assistant) => assistant !== id);
         setOpenedAssistants(filteredAssistants);
+        cancelRunningAction();
+        setError('');
     };
 
     // Is the user machine/browser able to run the assistant
@@ -304,6 +317,17 @@ export const AssistantProvider = ({
     };
 
     const initAssistant = async () => {
+        // If the assistant is being loaded at the moment, wait for the loading to be completed before continuing initialization
+        // We are running in this scenario if the user starts the initialization, closes the assistant and open it again
+        const isAssistantInitializing =
+            assistantStatus.current === ASSISTANT_STATUS.DOWNLOADING ||
+            assistantStatus.current === ASSISTANT_STATUS.DOWNLOADED ||
+            assistantStatus.current === ASSISTANT_STATUS.LOADING_GPU;
+        if (isAssistantInitializing) {
+            setTimeout(() => initAssistant(), RETRY_GENERATE_TIMEOUT);
+            return;
+        }
+
         /*
          * To init the assistant
          * 1 - We start by downloading the model if not downloaded yet and model is not downloading at the moment
@@ -383,17 +407,6 @@ export const AssistantProvider = ({
             traceInitiativeError('assistant', e);
             setError(c('loc_nightly_assistant').t`Something went wrong while generating a result`);
             setIsGeneratingResult(false);
-        }
-    };
-
-    const cancelRunningAction = () => {
-        try {
-            runningActionRef.current?.cancel();
-            setIsGeneratingResult(false);
-            runningActionRef.current = null;
-        } catch (e: any) {
-            traceInitiativeError('assistant', e);
-            setError(c('loc_nightly_assistant').t`Something went wrong while cancelling the generation`);
         }
     };
 
