@@ -834,8 +834,8 @@ export const DEFAULT_KEYGEN_TYPE = KEYGEN_TYPES.CURVE25519;
 export const KEYGEN_CONFIGS: { [key: string]: KeyGenConfig } = {
     [KEYGEN_TYPES.CURVE25519]: {
         type: 'ecc',
-        curve: 'ed25519' as enums.curve,
-    }, // casting is just informational
+        curve: 'ed25519Legacy' as enums.curve,
+    },
 };
 
 export enum KEY_FLAG {
