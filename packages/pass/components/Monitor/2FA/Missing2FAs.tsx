@@ -6,7 +6,7 @@ import { c } from 'ttag';
 import { ItemsListItem } from '@proton/pass/components/Item/List/ItemsListItem';
 import { VirtualList } from '@proton/pass/components/Layout/List/VirtualList';
 import { SubHeader } from '@proton/pass/components/Layout/Section/SubHeader';
-import { useMissing2FAs } from '@proton/pass/hooks/useMissing2FAs';
+import { useMissing2FAs } from '@proton/pass/hooks/monitor/useMissing2FAs';
 import { useSelectItemAction } from '@proton/pass/hooks/useSelectItemAction';
 import { isTrashed } from '@proton/pass/lib/items/item.predicates';
 import { getItemKey } from '@proton/pass/lib/items/item.utils';
