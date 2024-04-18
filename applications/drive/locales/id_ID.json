@@ -287,7 +287,7 @@
         "Sunting"
       ],
       "Edit email address": [
-        "Ubah alamat email"
+        "Sunting alamat email"
       ],
       "Edit label": [
         "Sunting label"
@@ -438,9 +438,6 @@
       ],
       "Manage link": [
         "Kelola tautan"
-      ],
-      "Mark as open": [
-        "Tandai sebagai terbuka"
       ],
       "Mark as resolved": [
         "Tandai sebagai terselesaikan"
@@ -2136,9 +2133,6 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA memberikan lapisan keamanan tambahan, yang mencegah akses masuk yang tidak diinginkan."
       ],
-      "Breach alerts and reports are available with a paid plan. Upgrade for immediate access.": [
-        "Peringatan dan laporan kebocoran tersedia dalam paket berbayar. Tingkatkan akun Anda untuk memperoleh akses ke kedua fitur ini dengan segera."
-      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Mendekripsi kontak… Proses ini dapat memakan waktu hingga beberapa menit. Setelah selesai, Anda akan dapat mengunduh berkas yang berisi seluruh kontak yang Anda ekspor."
       ],
@@ -2192,9 +2186,6 @@
       ],
       "Your account and data recovery methods are set.": [
         "Metode pemulihan akun dan data Anda telah diatur."
-      ],
-      "Your personal data was leaked by an online service in a data breach. View full details and get recommended actions.": [
-        "Data pribadi Anda telah dibocorkan oleh layanan online tertentu dalam insiden kebocoran data. Lihat rincian insiden ini secara penuh dan dapatkan tindakan yang disarankan."
       ]
     },
     "description": {
@@ -2671,7 +2662,7 @@
         "Alamat mungkin salah ketik"
       ],
       "The email addresses do not match": [
-        "Alamat email tidak cocok"
+        "Alamat email tidak sesuai"
       ],
       "The folder name is invalid. Please choose a different name.": [
         "Nama folder tidak valid. Silakan pilih nama lain."
@@ -3798,7 +3789,7 @@
         "Apakah Anda yakin untuk membatalkan perubahan Anda?"
       ],
       "Are you sure you want to discard your import?": [
-        "Apakah Anda yakin ingin mengabaikan pengimporan Anda?"
+        "Apakah Anda yakin ingin membuang impor Anda?"
       ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Apakah Anda yakin untuk mengosongkan sampah dan menghapus seluruh berkas yang ada di dalamnya secara permanen?"
@@ -3829,9 +3820,6 @@
       ],
       "Billing cycle: ${ text }": [
         "Siklus tagihan: ${ text }"
-      ],
-      "Breach Alert": [
-        "Peringatan Kebocoran"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Dengan menurunkan ke paket Free, Anda akan kehilangan berbagai manfaat berikut secara permanen, bahkan apabila Anda kembali meningkatkan jenis akun Anda di kemudian hari."
@@ -3906,10 +3894,10 @@
         "Buat ${ calendarsToBeCreatedCount } kalender baru"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
-        "Buat label khusus untuk menandai pesan-pesan yang diimpor, rentang waktu impor yang bersangkutan, serta folder-folder yang hendak Anda impor."
+        "Buat label untuk menandai pesan yang diimpor, rentang waktu impor yang bersangkutan, serta folder yang ingin Anda impor."
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
-        "Buat label khusus untuk menandai pesan-pesan yang diimpor, rentang waktu impor yang bersangkutan, serta label-label yang hendak Anda impor."
+        "Buat label untuk menandai pesan yang diimpor, rentang waktu impor yang bersangkutan, serta label yang ingin Anda impor."
       ],
       "Create a new contact group": [
         "Buat grup kontak baru"
@@ -4260,7 +4248,7 @@
         "Sidik jari kunci"
       ],
       "Label all imported messages as": [
-        "Labeli semua pesan terimpor sebagai"
+        "Labeli seluruh pesan yang diimpor sebagai"
       ],
       "Labels:": [
         "Label:"
@@ -4414,6 +4402,9 @@
       ],
       "Organization size": [
         "Ukuran organisasi"
+      ],
+      "Owner": [
+        "Pemilik"
       ],
       "password": [
         "kata sandi"
@@ -4599,7 +4590,7 @@
         "Pilih format email yang akan digunakan setiap kali Anda mengirim email ke alamat ini."
       ],
       "Select what you want to import.": [
-        "Pilih hal apa saja yang hendak Anda impor."
+        "Pilih hal-hal apa saja yang ingin Anda impor."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Pilih kalender mana saja yang akan diimpor. Untuk setiap kalender yang diimpor, sistem kami akan membuat kalender baru hingga batas jumlah kalender maksimum yang diperkenankan oleh paket Anda."
@@ -4630,6 +4621,9 @@
       ],
       "Shared link not found": [
         "Tautan yang dibagikan tidak ditemukan"
+      ],
+      "Shared with me": [
+        "Dibagikan dengan saya"
       ],
       "Sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
         "Daftarkan diri Anda ke ${ DRIVE_APP_NAME } dan lindungi serta bagikan data Anda dengan enkripsi end-to-end yang aman."
@@ -4680,7 +4674,7 @@
         "Langganan akan segera berakhir: Aktifkan kembali paket Anda sebelum tanggal ${ byDate } untuk tetap memperoleh manfaat ${ planName } Anda. ${ reactivateLink }"
       ],
       "Temporarily unavailable. Please check back later.": [
-        "Hal yang Anda tuju saat ini sedang tidak tersedia. Mohon periksa lagi nanti."
+        "Tindakan ini untuk sementara tidak tersedia. Silakan periksa kembali di kemudian waktu."
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Akun ini mungkin memiliki kunci baru, atau berkas/folder berikut mungkin telah dimodifikasi: ${ items }. Mohon buka berkas/folder ini hanya apabila Anda memercayai sumbernya."
@@ -4713,7 +4707,7 @@
         "Alamat ini nonaktif. Agar dapat mengirim ke alamat ini, pemiliknya harus mengaktifkan dulu alamat tersebut."
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
-        "Browser ini tidak mendukung pratinjau dokumen PDF. Mohon unduh berkas yang bersangkutan."
+        "Browser ini tidak mendukung pratinjau dokumen PDF. Silakan unduh berkas yang bersangkutan."
       ],
       "This file is too large to preview": [
         "Berkas ini terlalu besar untuk dipratinjau"
@@ -4989,7 +4983,7 @@
         "Selagi Anda menunggu, Anda dapat menutup tab atau browser ini."
       ],
       "You can import one data type at a time.": [
-        "Anda hanya dapat mengimpor satu tipe data dalam satu waktu."
+        "Anda dapat mengimpor satu jenis data dalam satu waktu."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Anda dapat menyimpan hingga ${ MAX_CALENDARS_FREE } kalender. Mohon hapus tautan kalender bersama yang ada dan seluruh pengguna ${ BRAND_NAME } yang berbagi kalender dengan Anda sebelum membatalkan langganan ${ MAIL_SHORT_APP_NAME } Anda."
@@ -5642,6 +5636,12 @@
       "Set recovery method": [
         "Tentukan metode pemulihan"
       ],
+      "Shared by": [
+        "Dibagikan oleh"
+      ],
+      "Shared on": [
+        "Dibagikan pada"
+      ],
       "Show indexing progress of Encrypted Search": [
         "Tampilkan progres pengindeksan Encrypted Search"
       ],
@@ -5830,6 +5830,9 @@
       ],
       "Shared": [
         "Dibagikan"
+      ],
+      "Shared with me": [
+        "Dibagikan dengan saya"
       ],
       "stay safer online": [
         "beraktivitas online secara lebih aman"
@@ -7085,12 +7088,6 @@
       "${ numberOfItems } link to your item was deleted": [
         "${ numberOfItems } tautan ke item Anda telah dihapus"
       ],
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } telah dinonaktifkan"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } telah diaktifkan"
-      ],
       "All items will soon be permanently deleted from trash": [
         "Seluruh item akan dihapus secara permanen dari sampah"
       ],
@@ -7120,6 +7117,9 @@
       ],
       "Encrypted search activated": [
         "Pencarian terenkripsi diaktifkan"
+      ],
+      "Failed to accept share invitation": [
+        "Gagal menerima undangan pembagian"
       ],
       "Failed to download files: ${ err }": [
         "Gagal mengunduh berkas: ${ err }"
@@ -7156,6 +7156,12 @@
       ],
       "Root folder failed to be loaded": [
         "Folder akar gagal dimuat"
+      ],
+      "Share invitation accepted successfully": [
+        "Undangan pembagian berhasil diterima"
+      ],
+      "Share invitation ID was not found. Please check the link": [
+        "ID undangan pembagian tidak ditemukan. Silakan periksa tautan"
       ],
       "Subfolder failed to be loaded": [
         "Subfolder gagal dimuat"
@@ -7614,9 +7620,6 @@
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel saat ini sedang **aktif** dan melindungi akun Anda."
-      ],
-      "Your information was found in at least one data breach. Turn on Breach Alert to view details and take action. ${ learnMoreLink }": [
-        "Informasi mengenai diri Anda ditemukan pada setidaknya satu insiden kebocoran data. Aktifkan Peringatan Kebocoran untuk melihat rincian kebocoran ini dan mengambil tindakan yang sesuai. ${ learnMoreLink }"
       ]
     },
     "Select files": {
@@ -8028,9 +8031,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "Membatalkan langganan Anda, silakan tunggu"
-      ],
-      "Downgrading your account, please wait": [
-        "Menurunkan akun anda, harap tunggu"
       ]
     },
     "Storage": {
@@ -8511,9 +8511,6 @@
       "Birthday": [
         "Ulang tahun"
       ],
-      "Breach Alert": [
-        "Peringatan Kebocoran"
-      ],
       "Browser might run out of memory": [
         "Memori browser Anda mungkin tidak mencukupi"
       ],
@@ -8916,6 +8913,9 @@
       "Shared": [
         "Dibagikan"
       ],
+      "Shared with me": [
+        "Dibagikan dengan saya"
+      ],
       "Show actions": [
         "Tampilkan tindakan"
       ],
@@ -8939,9 +8939,6 @@
       ],
       "Start import process": [
         "Mulai proses impor"
-      ],
-      "Stay safer online": [
-        "Tetap aman saat online"
       ],
       "Stop sharing": [
         "Berhenti berbagi"

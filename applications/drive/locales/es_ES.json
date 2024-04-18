@@ -442,9 +442,6 @@
       "Manage link": [
         "Administrar enlace"
       ],
-      "Mark as open": [
-        "Marcar como pendiente"
-      ],
       "Mark as resolved": [
         "Marcar como resuelto"
       ],
@@ -2148,9 +2145,6 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "La autenticación de dos factores añade una capa de seguridad adicional, evitando el acceso no autorizado."
       ],
-      "Breach alerts and reports are available with a paid plan. Upgrade for immediate access.": [
-        "Las alertas y reportes de vulneraciones están disponibles con un plan de pago. Mejora tu plan para un acceso inmediato."
-      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Descifrando contactos... Esto puede tardar unos minutos. Cuando se finaliza el proceso, podrás descargar el archivo con todos tus contactos exportados."
       ],
@@ -2204,9 +2198,6 @@
       ],
       "Your account and data recovery methods are set.": [
         "Se han establecido los métodos de recuperación de cuenta y datos."
-      ],
-      "Your personal data was leaked by an online service in a data breach. View full details and get recommended actions.": [
-        "Tus datos personales han sido filtrados por un servicio en línea en una vulneración de datos. Ve los detalles completos y recibe las acciones recomendadas."
       ]
     },
     "description": {
@@ -3899,9 +3890,6 @@
       "Billing cycle: ${ text }": [
         "Ciclo de facturación: ${ text }"
       ],
-      "Breach Alert": [
-        "Alerta de vulneraciones"
-      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Al pasar a un plan gratuito, perderás permanentemente estos beneficios, incluso si mejoras de nuevo tu plan en el futuro."
       ],
@@ -4489,6 +4477,9 @@
       ],
       "Organization size": [
         "Tamaño de la organización"
+      ],
+      "Owner": [
+        "Propietario"
       ],
       "password": [
         "contraseña"
@@ -7166,12 +7157,6 @@
         "Se ha eliminado ${ numberOfItems } enlace a tu elemento.",
         "Se han eliminado ${ numberOfItems } enlaces a tus elementos."
       ],
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "Se ha desactivado ${ PROTON_SENTINEL_NAME }"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "Se ha activado ${ PROTON_SENTINEL_NAME }"
-      ],
       "All items will soon be permanently deleted from trash": [
         "Se eliminarán permanentemente todos los elementos de la papelera."
       ],
@@ -7714,9 +7699,6 @@
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel está **activo** y protegiendo tu cuenta."
-      ],
-      "Your information was found in at least one data breach. Turn on Breach Alert to view details and take action. ${ learnMoreLink }": [
-        "Tu información ha sido encontrada en al menos una vulneración de datos. Activa la función Alerta de vulneraciones para ver los detalles y tomar acciones. ${ learnMoreLink }"
       ]
     },
     "Select files": {
@@ -8145,9 +8127,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "Estamos cancelando tu suscripción. Espera."
-      ],
-      "Downgrading your account, please wait": [
-        "Espera. Estamos modificando tu cuenta."
       ]
     },
     "Storage": {
@@ -8649,9 +8628,6 @@
       "Birthday": [
         "Fecha de nacimiento"
       ],
-      "Breach Alert": [
-        "Alerta de vulneraciones"
-      ],
       "Browser might run out of memory": [
         "El navegador podría quedarse sin memoria."
       ],
@@ -9084,9 +9060,6 @@
       ],
       "Start import process": [
         "Iniciar el proceso de importación"
-      ],
-      "Stay safer online": [
-        "Más seguridad en línea"
       ],
       "Stop sharing": [
         "Dejar de compartir"
