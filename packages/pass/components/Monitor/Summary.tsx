@@ -25,6 +25,7 @@ import { getLocalPath, getNewItemRoute } from '@proton/pass/components/Navigatio
 import { UpsellingModal } from '@proton/pass/components/Upsell/UpsellingModal';
 import { UpsellRef } from '@proton/pass/constants';
 import { useMissing2FAs } from '@proton/pass/hooks/monitor/useMissing2FAs';
+import { useWeakPasswords } from '@proton/pass/hooks/monitor/useWeakPasswords';
 import { selectMonitorSummary } from '@proton/pass/store/selectors/monitor';
 import { PASS_SHORT_APP_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
 
@@ -39,6 +40,7 @@ export const Summary: FC = () => {
     const { breaches, duplicatePasswords } = useSelector(selectMonitorSummary);
     const [upsellModalOpen, setUpsellModalOpen] = useState(false);
     const missing2FAsCount = useMissing2FAs().length;
+    const weakPasswordsCount = useWeakPasswords().length;
 
     const learnMore: LearnMoreProps[] = useMemo(
         () => [
@@ -90,12 +92,14 @@ export const Summary: FC = () => {
                     <h3 className="text-lg">{c('Title').t`Password Health`}</h3>
                     <div className="pass-monitor-grid gap-4">
                         <ActionCard
-                            onClick={() => {}}
+                            onClick={() =>
+                                duplicatePasswords > 0 ? navigate(`${getLocalPath('monitor/weak')}`) : null
+                            }
                             icon="exclamation-filled"
                             title={c('Title').t`Weak passwords`}
                             subtitle={c('Description').t`Change your passwords`}
-                            pillLabel="10"
-                            type="warning"
+                            pillLabel={weakPasswordsCount > 0 ? weakPasswordsCount : null}
+                            type={weakPasswordsCount > 0 ? 'warning' : 'success'}
                         />
                         <ActionCard
                             onClick={() =>
