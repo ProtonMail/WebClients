@@ -13,6 +13,8 @@ import {
 import { c } from 'ttag';
 
 import { useAddresses, useHandler, useSubscribeEventManager, useUserSettings } from '@proton/components';
+import { cleanAssistantEmailGeneration } from '@proton/llm/lib';
+import { useAssistant } from '@proton/llm/lib/useAssistant';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { clearBit, setBit } from '@proton/shared/lib/helpers/bitset';
 import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
@@ -20,7 +22,6 @@ import { getRecipients } from '@proton/shared/lib/mail/messages';
 import noop from '@proton/utils/noop';
 
 import ComposerAssistant from 'proton-mail/components/assistant/ComposerAssistant';
-import { useAssistant } from '@proton/llm/lib/useAssistant';
 import { insertTextBeforeBlockquotes } from 'proton-mail/helpers/message/messageContent';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
@@ -36,7 +37,6 @@ import ComposerMeta from './ComposerMeta';
 import ComposerActions from './actions/ComposerActions/ComposerActions';
 import { ExternalEditorActions } from './editor/EditorWrapper';
 import ComposerInnerModals from './modals/ComposerInnerModals';
-import {cleanAssistantEmailGeneration} from "@proton/llm/lib";
 
 export type MessageUpdate = PartialMessageState | ((message: MessageState) => PartialMessageState);
 
@@ -160,6 +160,7 @@ const Composer = (
         showAssistant,
         setShowAssistant,
         toggleAssistant,
+        setHasUsedAssistantText,
     } = useComposerContent({
         type: EditorTypes.composer,
         composerID,
@@ -271,6 +272,8 @@ const Composer = (
 
         // Update the content in the composer
         handleChangeContent(newBody, true);
+
+        setHasUsedAssistantText(true);
     };
 
     return (

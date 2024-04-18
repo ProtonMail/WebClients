@@ -48,6 +48,7 @@ export interface UseSendHandlerParameters {
     setIsSending?: Dispatch<SetStateAction<boolean>>;
     isQuickReply?: boolean;
     hasNetworkError: boolean;
+    onSendAssistantReport?: () => void;
 }
 
 export const useSendHandler = ({
@@ -68,6 +69,7 @@ export const useSendHandler = ({
     setIsSending,
     isQuickReply,
     hasNetworkError,
+    onSendAssistantReport,
 }: UseSendHandlerParameters) => {
     const { createNotification, hideNotification } = useNotifications();
     const { call } = useEventManager();
@@ -228,6 +230,8 @@ export const useSendHandler = ({
         try {
             setIsSending?.(true);
             dispatch(startSending(localID));
+
+            onSendAssistantReport?.();
 
             // If the user has no internet connection, do not close the composer on send, or we will lose last updates made on the draft
             const isOnline = getOnlineStatus();
