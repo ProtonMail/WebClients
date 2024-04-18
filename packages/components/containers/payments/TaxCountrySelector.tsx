@@ -106,7 +106,7 @@ export type OnBillingAddressChange = (billingAddress: BillingAddress) => void;
 
 interface HookProps {
     onBillingAddressChange?: OnBillingAddressChange;
-    statusExtended?: PaymentMethodStatusExtended;
+    statusExtended?: Pick<PaymentMethodStatusExtended, 'CountryCode' | 'State'>;
 }
 
 interface HookResult {
@@ -278,7 +278,7 @@ export const WrappedTaxCountrySelector = ({
 }: {
     className?: string;
     onBillingAddressChange?: OnBillingAddressChange;
-    statusExtended?: PaymentMethodStatusExtended;
+    statusExtended?: Pick<PaymentMethodStatusExtended, 'CountryCode' | 'State'>;
 }) => {
     const taxCountryHook = useTaxCountry({
         onBillingAddressChange,

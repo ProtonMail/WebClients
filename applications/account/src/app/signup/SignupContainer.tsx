@@ -726,13 +726,13 @@ const SignupContainer = ({
             {step === TrialPlan && (
                 <ReferralStep
                     onBack={handleBackStep}
-                    onPlan={async (planIDs) => {
+                    onSubscriptionData={async ({ planIDs, billingAddress }) => {
                         // Referral is always free even if there's a plan, and 1-month cycle
                         const cycle = CYCLE.MONTHLY;
                         const checkResult = getFreeCheckResult(model.subscriptionData.currency, cycle);
 
                         try {
-                            await handlePlanSelectionCallback({ checkResult, planIDs, cycle });
+                            await handlePlanSelectionCallback({ checkResult, planIDs, cycle, billingAddress });
                             metrics.core_signup_referralStep_planSelection_total.increment({
                                 status: 'success',
                                 application: getSignupApplication(APP_NAME),
