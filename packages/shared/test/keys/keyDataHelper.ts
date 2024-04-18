@@ -70,7 +70,6 @@ export const getAddressKeyForE2EEForwarding = async (
 ) => {
     const forwarderKey = await CryptoProxy.generateKey({
         userIDs: { email: 'forwarder@test.com' },
-        curve: 'curve25519',
     });
     const { forwardeeKey: armoredKey } = await CryptoProxy.generateE2EEForwardingMaterial({
         forwarderKey,

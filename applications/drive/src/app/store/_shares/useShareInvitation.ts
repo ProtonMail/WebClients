@@ -1,10 +1,5 @@
 import { useGetAddressKeys, useGetAddresses } from '@proton/components';
-import {
-    CryptoProxy,
-    PrivateKeyReference,
-    PublicKeyReference,
-    SessionKeyWithoutPlaintextAlgo,
-} from '@proton/crypto/lib';
+import { CryptoProxy, PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/crypto';
 import {
     queryAcceptShareInvite,
     queryDeleteInvitation,
@@ -64,7 +59,7 @@ export const useShareInvitation = () => {
         }: {
             share: {
                 shareId: string;
-                sessionKey: SessionKeyWithoutPlaintextAlgo;
+                sessionKey: SessionKey;
             };
             invitee: { inviteeEmail: string; publicKey: PublicKeyReference };
             inviter: { inviterEmail: string; addressKey: PrivateKeyReference };

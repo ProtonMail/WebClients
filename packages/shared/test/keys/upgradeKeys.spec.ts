@@ -12,7 +12,6 @@ const DEFAULT_KEYPASSWORD = '1';
 const getKey = async (email = DEFAULT_EMAIL, keyPassword = DEFAULT_KEYPASSWORD) => {
     const privateKey = await CryptoProxy.generateKey({
         userIDs: [{ name: email, email }],
-        curve: 'ed25519',
     });
 
     return {
