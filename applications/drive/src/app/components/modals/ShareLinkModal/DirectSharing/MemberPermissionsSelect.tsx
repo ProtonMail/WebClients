@@ -16,6 +16,7 @@ import { MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 interface Props {
     selectedPermissions: number;
     onChange: (value: number) => void;
+    onRemove?: () => void;
 }
 
 interface PermissionOption {
@@ -30,7 +31,7 @@ const Option = ({
     onSelect,
 }: {
     option: PermissionOption;
-    isSelected: boolean;
+    isSelected?: boolean;
     onSelect: (value: number) => void;
 }) => {
     const handleClick = useCallback(() => {
@@ -51,7 +52,7 @@ const Option = ({
     );
 };
 
-const MemberPermissionsSelect = ({ selectedPermissions, onChange }: Props) => {
+const MemberPermissionsSelect = ({ selectedPermissions, onChange, onRemove }: Props) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const permissionsOptions: PermissionOption[] = [
         {
@@ -83,6 +84,12 @@ const MemberPermissionsSelect = ({ selectedPermissions, onChange }: Props) => {
                     {permissionsOptions.map((option) => (
                         <Option option={option} isSelected={option.value === selectedPermissions} onSelect={onChange} />
                     ))}
+                    {onRemove && (
+                        <Option
+                            option={{ icon: 'cross-big', label: c('Label').t`Remove access`, value: -1 }}
+                            onSelect={onRemove}
+                        />
+                    )}
                 </DropdownMenu>
             </Dropdown>
         </>
