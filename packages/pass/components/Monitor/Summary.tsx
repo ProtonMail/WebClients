@@ -24,7 +24,7 @@ import { useNavigation } from '@proton/pass/components/Navigation/NavigationProv
 import { getLocalPath, getNewItemRoute } from '@proton/pass/components/Navigation/routing';
 import { UpsellingModal } from '@proton/pass/components/Upsell/UpsellingModal';
 import { UpsellRef } from '@proton/pass/constants';
-import { useMissing2FAs } from '@proton/pass/hooks/useMissing2FAs';
+import { useMissing2FAs } from '@proton/pass/hooks/monitor/useMissing2FAs';
 import { selectMonitorSummary } from '@proton/pass/store/selectors/monitor';
 import { PASS_SHORT_APP_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
 

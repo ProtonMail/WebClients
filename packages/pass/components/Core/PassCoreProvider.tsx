@@ -7,7 +7,7 @@ import type { UsePeriodOtpCodeOptions } from '@proton/pass/hooks/usePeriodicOtpC
 import type { ExportOptions } from '@proton/pass/lib/export/types';
 import type { I18nService } from '@proton/pass/lib/i18n/service';
 import type { ImportReaderPayload } from '@proton/pass/lib/import/types';
-import type { MonitorService } from '@proton/pass/lib/monitor/service';
+import type { MonitorServiceBridge } from '@proton/pass/lib/monitor/service';
 import type { ApiState, ClientEndpoint, Maybe, MaybeNull, MaybePromise, OnboardingMessage } from '@proton/pass/types';
 import type { TelemetryEvent } from '@proton/pass/types/data/telemetry';
 import type { ParsedUrl } from '@proton/pass/utils/url/parser';
@@ -23,7 +23,7 @@ export type PassCoreContextValue = {
     /** current locale */
     locale: string;
     /** PassMonitor service */
-    monitor: MonitorService;
+    monitor: MonitorServiceBridge;
     /** Resolves a users */
     exportData: (options: ExportOptions) => Promise<File>;
     /** In the extension: leverage worker communication to generate

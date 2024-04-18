@@ -24,7 +24,7 @@ import type { User } from '@proton/shared/lib/interfaces';
 
 import type { SessionLockStatus } from '../api';
 import type { ForkPayload } from '../api/fork';
-import type { AliasCreationDTO, AliasOptions, ItemRevision, SelectedItem } from '../data';
+import type { AliasCreationDTO, AliasOptions, LoginItem, SelectedItem } from '../data';
 import type { TelemetryEvent } from '../data/telemetry';
 import type { Maybe, MaybeNull } from '../utils';
 import type { AutofillResult } from './autofill';
@@ -91,6 +91,7 @@ export enum WorkerMessageType {
     LOG_REQUEST = 'LOG_REQUEST',
     MONITOR_2FAS = 'MONITOR_2FAS',
     MONITOR_PASSWORD = 'MONITOR_PASSWORD',
+    MONITOR_WEAK_PASSWORDS = 'MONITOR_WEAK_PASSWORDS',
     NOTIFICATION = 'NOTIFICATION',
     ONBOARDING_ACK = 'ONBOARDING_ACK',
     ONBOARDING_CHECK = 'ONBOARDING_CHECK',
@@ -154,8 +155,9 @@ export type LocaleRequestMessage = { type: WorkerMessageType.LOCALE_REQUEST };
 export type LocaleUpdatedMessage = WithPayload<WorkerMessageType.LOCALE_UPDATED, { locale: string }>;
 export type LogEventMessage = WithPayload<WorkerMessageType.LOG_EVENT, { log: string }>;
 export type LogRequestMessage = { type: WorkerMessageType.LOG_REQUEST };
-export type Monitor2FAsMessage = WithPayload<WorkerMessageType.MONITOR_2FAS, { items: ItemRevision<'login'>[] }>;
+export type Monitor2FAsMessage = WithPayload<WorkerMessageType.MONITOR_2FAS, { items: LoginItem[] }>;
 export type MonitorPasswordMessage = WithPayload<WorkerMessageType.MONITOR_PASSWORD, { password: string }>;
+export type MonitorWeakPasswordsMessage = WithPayload<WorkerMessageType.MONITOR_WEAK_PASSWORDS, { items: LoginItem[] }>;
 export type NotificationMessage = WithPayload<WorkerMessageType.NOTIFICATION, { notification: Notification }>;
 export type OnboardingAckMessage = WithPayload<WorkerMessageType.ONBOARDING_ACK, { message: OnboardingMessage }>;
 export type OnboardingCheckMessage = WithPayload<WorkerMessageType.ONBOARDING_CHECK, { message: OnboardingMessage }>;
@@ -219,6 +221,7 @@ export type WorkerMessage =
     | LogRequestMessage
     | Monitor2FAsMessage
     | MonitorPasswordMessage
+    | MonitorWeakPasswordsMessage
     | NotificationMessage
     | OnboardingAckMessage
     | OnboardingCheckMessage
@@ -273,8 +276,9 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.IMPORT_DECRYPT]: { payload: ImportReaderPayload };
     [WorkerMessageType.LOCALE_REQUEST]: { locale: string };
     [WorkerMessageType.LOG_REQUEST]: { logs: string[] };
+    [WorkerMessageType.MONITOR_2FAS]: { result: LoginItem[] };
     [WorkerMessageType.MONITOR_PASSWORD]: { result: MaybeNull<WasmPasswordScoreResult> };
-    [WorkerMessageType.MONITOR_2FAS]: { result: ItemRevision<'login'>[] };
+    [WorkerMessageType.MONITOR_WEAK_PASSWORDS]: { result: LoginItem[] };
     [WorkerMessageType.ONBOARDING_CHECK]: { enabled: boolean };
     [WorkerMessageType.ONBOARDING_REQUEST]: { message: MaybeNull<OnboardingMessage> };
     [WorkerMessageType.OTP_CODE_GENERATE]: OtpCode;

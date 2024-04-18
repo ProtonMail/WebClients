@@ -14,9 +14,9 @@ import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButt
 import { PasswordStrength } from '@proton/pass/components/Password/PasswordStrength';
 import type { ItemContentProps } from '@proton/pass/components/Views/types';
 import { UpsellRef } from '@proton/pass/constants';
+import { usePasswordStrength } from '@proton/pass/hooks/monitor/usePasswordStrength';
 import { useDeobfuscatedItem } from '@proton/pass/hooks/useDeobfuscatedItem';
 import { getCharsGroupedByColor } from '@proton/pass/hooks/usePasswordGenerator';
-import { usePasswordStrength } from '@proton/pass/hooks/usePasswordStrength';
 import type { SanitizedPasskey } from '@proton/pass/lib/passkeys/types';
 import { selectAliasByAliasEmail, selectTOTPLimits } from '@proton/pass/store/selectors';
 import type { MaybeNull } from '@proton/pass/types';
