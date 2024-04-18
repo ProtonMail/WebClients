@@ -16,6 +16,7 @@ export enum TelemetryMeasurementGroups {
     mailSnooze = 'mail.web.snooze',
     mailSignup = 'mail.web.signup',
     mailSimpleLogin = 'mail.web.simplelogin_popups',
+    mailComposerAssistant = 'mail.web.composer_assistant',
     /** Setting it to any even if mail only ATM. We will expand it to other apps soon */
     securityCenter = 'any.web.security_center',
     paymentsFlow = 'payments.flow',
@@ -104,6 +105,19 @@ export enum TelemetryMailSelectAllEvents {
     banner_permanent_delete = 'banner_permanent_delete',
 }
 
+export enum TelemetryMailComposerAssistantEvents {
+    show_assistant = 'show_assistant',
+    download_model = 'download_model',
+    request_help = 'request_help',
+    regenerate_answer = 'regenerate_answer',
+    use_answer = 'use_answer',
+    request_assistant = 'request_assistant',
+    send_message = 'send_message',
+    cancel_download = 'cancel_download',
+    load_model = 'load_model',
+    unload_model = 'unload_model',
+}
+
 export enum TelemetryChangelog {
     opened = 'opened',
 }
@@ -133,6 +147,7 @@ export type TelemetryEvents =
     | TelemetryKeyTransparencyErrorEvents
     | TelemetryMailEvents
     | TelemetryMailSelectAllEvents
+    | TelemetryMailComposerAssistantEvents
     | TelemetryChangelog
     | TelemetrySecurityCenterEvents
     | TelemetryPaymentsEvents;

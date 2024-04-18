@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { EditorActions, EditorMetadata } from '@proton/components/components';
 import { useAddresses, useHandler, useNotifications, useUserSettings } from '@proton/components/hooks';
+import useAssistantTelemetry from '@proton/llm/lib/useAssistantTelemetry';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
 import { DIRECTION, SHORTCUTS } from '@proton/shared/lib/mail/mailSettings';
@@ -132,6 +133,8 @@ export const useComposerContent = (args: EditorArgs) => {
     const reloadSendInfo = useReloadSendInfo();
 
     const [showAssistant, setShowAssistant] = useState(false);
+    const [hasUsedAssistantText, setHasUsedAssistantText] = useState(false);
+    const { sendSendMessageAssistantReport } = useAssistantTelemetry();
 
     const toggleAssistant = () => {
         setShowAssistant(!showAssistant);
@@ -603,6 +606,12 @@ export const useComposerContent = (args: EditorArgs) => {
         handleCancelAddAttachment,
     });
 
+    const handleSendAssistantReport = () => {
+        if (hasUsedAssistantText) {
+            sendSendMessageAssistantReport();
+        }
+    };
+
     const handleSend = useSendHandler({
         getModelMessage,
         setModelMessage,
@@ -621,6 +630,7 @@ export const useComposerContent = (args: EditorArgs) => {
         handleNoAttachments: isQuickReply ? args.onNoAttachments : handleNoAttachments,
         isQuickReply,
         hasNetworkError,
+        onSendAssistantReport: handleSendAssistantReport,
     });
 
     const handleSendQuickReply = async () => {
@@ -772,5 +782,6 @@ export const useComposerContent = (args: EditorArgs) => {
         showAssistant,
         setShowAssistant,
         toggleAssistant,
+        setHasUsedAssistantText,
     };
 };
