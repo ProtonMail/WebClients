@@ -1174,10 +1174,10 @@
       "Upgrade": [
         "업그레이드"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "지금 업그레이드"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "지금 업그레이드"
       ],
       "Upload picture": [
@@ -1657,6 +1657,9 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME }을 계속 사용하세요."
+      ],
+      "Continue using ${ planTitle }": [
+        "${ planTitle }을 계속 사용하세요"
       ]
     },
     "Calendar attachment tooltip": {
@@ -3192,9 +3195,6 @@
       "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
         "휴지통과 스팸함의 30일 이상 된 메시지를 자동으로 삭제합니다. 업그레이드하여 이 기능과 다른 혜택들을 누려보세요."
       ],
-      "Breach alerts and reports are available with a paid plan. Upgrade for immediate access.": [
-        "침해 경고와 보고서는 유료 요금제에서 이용할 수 있습니다. 업그레이드하는 즉시 접근할 수 있습니다."
-      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "연락처 복호화 중... 몇 분이 걸릴 수 있습니다. 이 처리가 완료되면, 내보낼 모든 연락처 다운로드가 가능합니다."
       ],
@@ -3281,9 +3281,6 @@
       ],
       "Your account and data recovery methods are set.": [
         "사용자의 계정과 데이터 복구 방법이 설정된 상태입니다."
-      ],
-      "Your personal data was leaked by an online service in a data breach. View full details and get recommended actions.": [
-        "귀하의 개인정보가 데이터 침해사례에 속하는 온라인 서비스로부터 유출되었습니다. 전체 세부사항을 보고 권장하는 대응을 취하십시오."
       ]
     },
     "description": {
@@ -7900,6 +7897,9 @@
       "Starred": [
         "별표 표시됨"
       ],
+      "stay safer online": [
+        "온라인 상에서 안전하게"
+      ],
       "Terms": [
         "조건"
       ],
@@ -9053,12 +9053,6 @@
       "${ Filter.Name } created": [
         "${ Filter.Name } 생성됨"
       ],
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME }이(가) 비활성화 되었습니다."
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME }이(가) 활성화 되었습니다."
-      ],
       "Block removed": [
         "차단 해제"
       ],
@@ -10180,9 +10174,6 @@
       ]
     },
     "Spotlight": {
-      "Breach Alerts": [
-        "침해 경고"
-      ],
       "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
         "데스크톱에서 바로 ${ MAIL_APP_NAME }을 실행할 수 있습니다."
       ],
@@ -10210,9 +10201,6 @@
       "Schedule send": [
         "스케줄 발송"
       ],
-      "Turn on breach alerts to monitor potential data leaks. View details and take action to protect yourself.": [
-        "침해 경고를 활성화하여 혹시 모를 데이터 유출을 모니터링하십시오. 자세한 내용을 보고 조치를 취해 스스로를 보호하십시오."
-      ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "이제 일반적으로 이미지를 로드하며 전송자가 당신을 트래킹하지 못하도록 차단할 수 있습니다. ${ settingsLink }에서 언제든지 변경할 수 있습니다."
       ],
@@ -10226,9 +10214,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "구독을 취소하고 있습니다, 잠시만 기다려주세요"
-      ],
-      "Downgrading your account, please wait": [
-        "계정은 다운그레이드 하는 중이니 기다려 주세요"
       ]
     },
     "Status": {
@@ -11481,9 +11466,6 @@
       ],
       "Start import process": [
         "불러오기 과정 시작"
-      ],
-      "Stay safer online": [
-        "온라인 상에서 안전하기"
       ],
       "Storage capacity warning": [
         "저장 용량 경고"

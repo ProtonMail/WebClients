@@ -620,9 +620,6 @@
       "Manage Snooze": [
         "Ertelemeyi yönet"
       ],
-      "Mark as open": [
-        "Açık olarak işaretle"
-      ],
       "Mark as read": [
         "Okunmuş olarak işaretle"
       ],
@@ -895,6 +892,9 @@
       ],
       "Report phishing": [
         "Kimlik avı girişimi bildir"
+      ],
+      "Request a call": [
+        "Arama isteği gönder"
       ],
       "Request a feature": [
         "Bir özellik istiyorum"
@@ -1185,10 +1185,10 @@
       "Upgrade": [
         "Yükselt"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Şimdi yükselt"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Şimdi yükselt"
       ],
       "Upload picture": [
@@ -1675,6 +1675,9 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME } kullanmayı sürdürün."
+      ],
+      "Continue using ${ planTitle }": [
+        "${ planTitle } kullanmayı sürdürün"
       ]
     },
     "Calendar attachment tooltip": {
@@ -6757,6 +6760,9 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Bu işlemi tamamlamanız için yeni bir tarayıcı sekmesi açarak sizi PayPal sitesine yönlendireceğiz. İşlemi tamamlamak için, varsa açılır pencere engelleyicilerinizi kapatın."
       ],
+      "We'll email you once import is complete.": [
+        "İçe aktarma işlemi tamamlanınca size e-posta göndereceğiz."
+      ],
       "We'll notify you when the import is done.": [
         "İçe aktarım tamamlandığında sizi bilgilendireceğiz."
       ],
@@ -6816,6 +6822,9 @@
       ],
       "You can check the progress ${ importProgressLink }.": [
         "İlerlemeye bakabilirsiniz ${ importProgressLink }."
+      ],
+      "You can close the tab or browser in the meantime.": [
+        "Bu sırada sekmeyi veya tarayıcıyı kapatabilirsiniz."
       ],
       "You can either update your search query or ${ button }": [
         "Arama sorgusunu güncelle ya da ${ button }"
@@ -6960,6 +6969,12 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Verileriniz ${ importedEmailAddressStrong } üzerinden ${ BRAND_NAME } hesabınız içine aktarılmaya hazır."
       ],
+      "Your email address and password were leaked:": [
+        "E-posta adresiniz ve parolanız sızdırılmış:"
+      ],
+      "Your email address was exposed:": [
+        "E-posta adresiniz açığa çıkmış:"
+      ],
       "Your email will only be used for this one-time verification.": [
         "E-posta adresiniz yalnızca bu tek seferlik doğrulama için kullanılacak."
       ],
@@ -6981,6 +6996,9 @@
       ],
       "Your next billing date is ${ renewalTime }.": [
         "Sonraki fatura zamanınız ${ renewalTime }."
+      ],
+      "Your password was leaked:": [
+        "Parolanız sızdırılmış:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Telefon numaranız yalnızca bu tek seferlik doğrulama için kullanılacak."
@@ -9216,12 +9234,6 @@
       "${ Filter.Name } created": [
         "${ Filter.Name } eklendi"
       ],
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } özelliği kapatıldı"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } özelliği açıldı"
-      ],
       "Block removed": [
         "Engelleme kaldırıldı"
       ],
@@ -10412,9 +10424,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "Lütfen aboneliğiniz iptal edilirken bekleyin"
-      ],
-      "Downgrading your account, please wait": [
-        "Hesabınız düşürülüyor, lütfen bekleyin"
       ]
     },
     "Status": {
@@ -11544,6 +11553,9 @@
       "No attachment found": [
         "Herhangi bir ek dosya bulunamadı"
       ],
+      "No breaches detected": [
+        "Herhangi bir veri açığa çıkmamış"
+      ],
       "No trackers found": [
         "Herhangi bir izleyici bulunamadı"
       ],
@@ -11715,9 +11727,6 @@
       "Start import process": [
         "İçe aktarma işlemini başlatın"
       ],
-      "Stay safer online": [
-        "Çevrimiçi ortamda daha güvende kalın"
-      ],
       "Storage capacity warning": [
         "Depolama alanı uyarısı"
       ],
@@ -11800,6 +11809,9 @@
       ],
       "Your changes are not synced yet": [
         "Değişiklikleriniz henüz eşitlenmedi"
+      ],
+      "Your exposed information": [
+        "Açığa çıkmış bilgileriniz"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Mail Plus ücretsiz deneme süreniz ${ textDate } tarihinde sonra erecek"
