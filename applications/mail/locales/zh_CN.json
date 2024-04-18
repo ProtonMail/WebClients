@@ -1174,11 +1174,11 @@
       "Upgrade": [
         "升级账户"
       ],
-      "Upgrade now": [
-        "立即升级账户"
-      ],
       "Upgrade Now": [
         "立即升级"
+      ],
+      "Upgrade now": [
+        "立即升级账户"
       ],
       "Upload picture": [
         "上传图片"
@@ -8858,12 +8858,6 @@
       "${ Filter.Name } created": [
         "${ Filter.Name } 规则已创建"
       ],
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } 已停用"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } 已启用"
-      ],
       "Block removed": [
         "移除屏蔽"
       ],
@@ -9914,11 +9908,6 @@
       ],
       "You can now schedule your messages to be sent later": [
         "现已支持定时发送邮件"
-      ]
-    },
-    "State": {
-      "Downgrading your account, please wait": [
-        "正在降级账户，请稍候"
       ]
     },
     "Status": {

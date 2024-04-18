@@ -1484,6 +1484,9 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Kemmel s useqdec ${ MAIL_APP_NAME }."
+      ],
+      "Continue using ${ planTitle }": [
+        "Kemmel s useqdec ${ planTitle }"
       ]
     },
     "Calendar attachment tooltip": {
@@ -7327,12 +7330,6 @@
       "${ Filter.Name } created": [
         "${ Filter.Name } yettusnulfa-d"
       ],
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } yensa"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } yettwarmed"
-      ],
       "Block removed": [
         "Asewḥel yettwakkes"
       ],
@@ -8091,11 +8088,6 @@
       ],
       "You can now schedule your messages to be sent later": [
         "Tzemreḍ tura ad tedɣawseḍ iznan-ik ad ttwaznen ticki"
-      ]
-    },
-    "State": {
-      "Downgrading your account, please wait": [
-        "Yettili-d usader n lqem n umiḍan-ik.im, ttxil rǧu"
       ]
     },
     "Status": {

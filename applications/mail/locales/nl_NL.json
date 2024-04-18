@@ -623,6 +623,9 @@
       "Mark as read": [
         "Markeer als gelezen"
       ],
+      "Mark as resolved": [
+        "Markeren als opgelost"
+      ],
       "Mark as unread": [
         "Markeren als ongelezen"
       ],
@@ -889,6 +892,9 @@
       ],
       "Report phishing": [
         "Phishing rapporteren"
+      ],
+      "Request a call": [
+        "Telefoongesprek aanvragen"
       ],
       "Request a feature": [
         "Vraag een functie aan"
@@ -1179,11 +1185,11 @@
       "Upgrade": [
         "Upgraden"
       ],
-      "Upgrade now": [
-        "Nu upgraden"
-      ],
       "Upgrade Now": [
         "Upgrade Nu"
+      ],
+      "Upgrade now": [
+        "Nu upgraden"
       ],
       "Upload picture": [
         "Afbeelding uploaden"
@@ -1666,6 +1672,12 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Blijf ${ MAIL_APP_NAME } gebruiken."
+      ],
+      "Continue using ${ planTitle }": [
+        "Blijf ${ planTitle } gebruiken"
+      ],
+      "Continue your subscription": [
+        "Uw abonnement voortzetten"
       ]
     },
     "Calendar attachment tooltip": {
@@ -4706,6 +4718,9 @@
       "No credit card required.": [
         "Green kredietkaart vereist."
       ],
+      "Start free trial": [
+        "Start gratis proefperiode"
+      ],
       "Try the app-new desktop app": [
         "Probeer de app-nieuwe desktop-app"
       ],
@@ -5975,6 +5990,9 @@
       "Large imports can take several days.": [
         "Grote importen kunnen meerdere dagen duren."
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Leer ${ staySaferOnlineLink }"
+      ],
       "Learn more": [
         "Meer informatie"
       ],
@@ -5992,6 +6010,9 @@
       ],
       "Loading ${ appName }": [
         "${ appName } laden"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Laden van kalender, gelieve te wachten. U wordt automatisch doorverwezen naar onze agendaplanner Calendly in een nieuw tabblad."
       ],
       "Loading message": [
         "Bericht wordt geladen"
@@ -6424,6 +6445,9 @@
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "Het opgestelde concept gaat verloren als u de pagina verlaat."
       ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "De gelekte informatie werd gelekt door een dienst van een derde partij. Uw ${ BRAND_NAME } accountinformatie blijft veilig en versleuteld. ${ learnMoreLink }"
+      ],
       "The local database is being prepared": [
         "De lokale database wordt voorbereid"
       ],
@@ -6850,6 +6874,12 @@
         "U heeft **${ count } bericht** gemarkeerd met dit label",
         "U heeft **${ count } berichten** gemarkeerd met dit label"
       ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "Je hebt een Trial ${ planTitle } abonnement. Als je na de proefperiode door wilt gaan met je abonnement, voeg een betaalmethode toe."
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "Je hebt een trial ${ planTitle } abonnement. Er is geen betaling vereist op dit moment. Uw abonnement wordt automatisch verlengd aan het einde van de proefperiode."
+      ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
         "U hebt uw e-mail geen onderwerp gegeven. Wilt u het bericht toch versturen?"
       ],
@@ -6942,11 +6972,20 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Uw gegevens zijn klaar om te importeren van ${ importedEmailAddressStrong } naar uw ${ BRAND_NAME } account."
       ],
+      "Your email address and password were leaked:": [
+        "Uw emailadres en wachtwoorden werden gelekt:"
+      ],
+      "Your email address was exposed:": [
+        "Uw emailadres werd blootgesteld:"
+      ],
       "Your email will only be used for this one-time verification.": [
         "Uw e-mailadres wordt alleen gebruikt voor deze eenmalige verificatie."
       ],
       "Your files will be encrypted and then saved": [
         "Uw bestanden worden versleuteld en vervolgens opgeslagen"
+      ],
+      "Your information was found on ${ displayedDate }": [
+        "Uw informatie is gevonden op ${ displayedDate }"
       ],
       "Your login information will not be saved after the import is completed.": [
         "Uw inloginformatie zal niet worden opgeslagen nadat de import is voltooid."
@@ -6963,6 +7002,9 @@
       ],
       "Your next billing date is ${ renewalTime }.": [
         "Uw volgende facturatiedatum is ${ renewalTime }."
+      ],
+      "Your password was leaked:": [
+        "Uw wachtwoord werd gelekt:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Uw telefoonnummer wordt alleen gebruikt voor deze eenmalige verificatie."
@@ -8013,6 +8055,9 @@
       ],
       "Starred": [
         "Met ster"
+      ],
+      "stay safer online": [
+        "blijf veilig online"
       ],
       "Terms": [
         "Voorwaarden"
@@ -9195,12 +9240,6 @@
       "${ Filter.Name } created": [
         "${ Filter.Name } aangemaakt"
       ],
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } is uitgezet"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } is aangezet"
-      ],
       "Block removed": [
         "Blokkade verwijderd"
       ],
@@ -9802,6 +9841,9 @@
       ]
     },
     "Security Center - Info": {
+      "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
+        "Ontvang een melding als uw wachtwoord of andere gegevens zijn gelekt van een externe dienst. ${ learnMoreLink }"
+      ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Onze geavanceerde AI-gedreven beveiligingsoplossing ontworpen voor gebruikers die verhoogde bescherming zoeken voor hun accounts. ${ learnMoreLink }"
       ],
@@ -10391,9 +10433,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "Uw abonnement wordt geannuleerd, even geduld"
-      ],
-      "Downgrading your account, please wait": [
-        "Account downgraden, even geduld"
       ]
     },
     "Status": {
@@ -11282,6 +11321,9 @@
       "Deleting contacts": [
         "Contacten aan het verwijderen"
       ],
+      "Details": [
+        "Details"
+      ],
       "Don't give spam a chance": [
         "Geef spam geen kans"
       ],
@@ -11773,6 +11815,9 @@
       ],
       "Your changes are not synced yet": [
         "Uw wijzigingen zijn nog niet gesynchroniseerd"
+      ],
+      "Your exposed information": [
+        "Uw blootgestelde informatie"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Uw Mail Plus proefversie eindigt op ${ textDate }"
