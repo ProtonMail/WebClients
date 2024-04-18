@@ -67,6 +67,7 @@ export const createDropdown = ({ root, onDestroy }: DropdownOptions): InjectedDr
      * we must update its position until the position stabilizes */
     const updatePosition = () =>
         animatePositionChange({
+            onAnimate: noop,
             get: () => iframe.getPosition(),
             set: () => iframe.updatePosition(),
         });

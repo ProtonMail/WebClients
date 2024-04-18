@@ -19,13 +19,12 @@ import { animatePositionChange } from '@proton/pass/utils/dom/position';
 import { or } from '@proton/pass/utils/fp/predicates';
 import { safeCall } from '@proton/pass/utils/fp/safe-call';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
-import debounce from '@proton/utils/debounce';
 
 type CreateIconOptions = { field: FieldHandle; elements: PassElementsConfig };
 
 export const createFieldIconHandle = ({ field, elements }: CreateIconOptions): FieldIconHandle => {
     const listeners = createListenerStore();
-    let repositionRequest: number = -1; /* track repositioning requests */
+    const repositioning = { request: -1, animate: -1 };
 
     const input = field.element as HTMLInputElement;
     const { icon, control } = createIcon(field, elements.control);
@@ -50,39 +49,28 @@ export const createFieldIconHandle = ({ field, elements }: CreateIconOptions): F
         setStatus(ctx?.getState().status);
     });
 
-    const reposition = debounce(
-        (revalidate: boolean = false) => {
-            cancelIdleCallback(repositionRequest);
-            repositionRequest = requestIdleCallback(
-                () => {
-                    animatePositionChange({
-                        get: () => field.element.getBoundingClientRect(),
-                        set: () => {
-                            const inputBox = field.getBoxElement({ revalidate });
-                            cleanupInjectionStyles({ input, control });
-                            applyInjectionStyles({
-                                icon,
-                                control,
-                                input,
-                                inputBox,
-                                form: field.getFormHandle().element,
-                            });
-                        },
-                    });
-                },
-                { timeout: 150 }
-            );
-        },
-        50,
-        { leading: true, trailing: true }
-    );
-
     /* `reposition` is debounced and wrapped in a `requestAnimationFrame`
      * for performance reasons. If form is detached, we must cancel the
      * ongoing repositioning */
     const cancelReposition = () => {
-        cancelAnimationFrame(repositionRequest);
-        reposition.cancel();
+        cancelAnimationFrame(repositioning.request);
+        cancelAnimationFrame(repositioning.animate);
+    };
+
+    const reposition = (revalidate: boolean = false) => {
+        cancelReposition();
+        repositioning.request = requestAnimationFrame(() => {
+            animatePositionChange({
+                onAnimate: (request) => (repositioning.animate = request),
+                get: () => field.element.getBoundingClientRect(),
+                set: () => {
+                    const inputBox = field.getBoxElement({ revalidate });
+                    const form = field.getFormHandle().element;
+                    cleanupInjectionStyles({ input, control });
+                    applyInjectionStyles({ icon, control, input, inputBox, form });
+                },
+            });
+        });
     };
 
     const onClick: (evt: MouseEvent) => void = withContext((ctx, evt) => {
@@ -121,7 +109,6 @@ export const createFieldIconHandle = ({ field, elements }: CreateIconOptions): F
              * should revalidate the input field's bounding box as it we may
              * have resolved an element which is no longer a correct fit for
              * injection */
-            reposition.cancel();
             reposition(true);
         },
         { childList: true, subtree: true }
