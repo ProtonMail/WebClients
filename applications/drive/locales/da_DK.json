@@ -182,6 +182,9 @@
       "Copy email to clipboard": [
         "Kopiér e-mail til upklipsholder"
       ],
+      "Copy invite link": [
+        "Kopiér invitationslink"
+      ],
       "Copy link": [
         "Kopiér link"
       ],
@@ -1145,6 +1148,9 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Fortsæt med at bruge ${ MAIL_APP_NAME }."
+      ],
+      "Continue using ${ planTitle }": [
+        "Fortsæt med at bruge ${ planTitle }"
       ]
     },
     "Checkout row": {
@@ -4157,6 +4163,9 @@
       "File will not be updated": [
         "Filen vil ikke blive opdateret"
       ],
+      "Files and folders that others shared with you will appear here": [
+        "Filer og mapper, som andre har delt med dig, vises her."
+      ],
       "Finalizing": [
         "Færdiggører"
       ],
@@ -4451,6 +4460,9 @@
       "Organization size": [
         "Organisationsstørrelse"
       ],
+      "Owner": [
+        "Ejer"
+      ],
       "password": [
         "adgangskode"
       ],
@@ -4665,6 +4677,9 @@
       ],
       "Shared link not found": [
         "Delt link ikke fundet"
+      ],
+      "Shared with me": [
+        "Delt med mig"
       ],
       "Sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
         "Tilmeld dig din egen ${ DRIVE_APP_NAME } konto og beskyt dine data med end-to-end kryptering og dele det sikkert."
@@ -5660,6 +5675,12 @@
       "Set recovery method": [
         "Indstil gendannelsesmetode"
       ],
+      "Shared by": [
+        "Delt af"
+      ],
+      "Shared on": [
+        "Delt"
+      ],
       "Show indexing progress of Encrypted Search": [
         "Vis fremskridt for indeksering af krypteret søgning"
       ],
@@ -5848,6 +5869,12 @@
       ],
       "Shared": [
         "Delt"
+      ],
+      "Shared with me": [
+        "Delt med mig"
+      ],
+      "stay safer online": [
+        "bliv mere sikker online"
       ],
       "Trash": [
         "Papirkurv"
@@ -7070,12 +7097,6 @@
         "${ numberOfItems } link til dit element blev slettet",
         "${ numberOfItems } links til dine elementer blev slettet"
       ],
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } er blevet deaktiveret"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } er blevet aktiveret"
-      ],
       "All items will soon be permanently deleted from trash": [
         "Alle elementer slettes snart permanent fra papirkurven"
       ],
@@ -7105,6 +7126,9 @@
       ],
       "Encrypted search activated": [
         "Krypteret søgning aktiveret"
+      ],
+      "Failed to accept share invitation": [
+        "Kunne ikke acceptere invitation til at dele"
       ],
       "Failed to download files: ${ err }": [
         "Kunne ikke uploade filer: ${ err }"
@@ -7145,6 +7169,12 @@
       ],
       "Root folder failed to be loaded": [
         "Rodmappe kunne ikke indlæses"
+      ],
+      "Share invitation accepted successfully": [
+        "Del-invitation accepteret"
+      ],
+      "Share invitation ID was not found. Please check the link": [
+        "Delings-invitation-ID blev ikke fundet. Tjek linket"
       ],
       "Subfolder failed to be loaded": [
         "Undermappe kunne ikke indlæses"
@@ -8031,9 +8061,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "Annullerer dit abonnement, vent venligst"
-      ],
-      "Downgrading your account, please wait": [
-        "Nedgraderer din konto, vent venligst"
       ]
     },
     "Storage": {
@@ -8806,6 +8833,9 @@
       "Night theme": [
         "Nattetema"
       ],
+      "No breaches detected": [
+        "Ingen brud registreret"
+      ],
       "No results found": [
         "Ingen resultater fundet"
       ],
@@ -8934,6 +8964,9 @@
       ],
       "Shared": [
         "Delt"
+      ],
+      "Shared with me": [
+        "Delt med mig"
       ],
       "Show actions": [
         "Vis handlinger"

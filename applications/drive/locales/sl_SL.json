@@ -448,9 +448,6 @@
       "Manage link": [
         "Upravljanje povezav"
       ],
-      "Mark as open": [
-        "Označi kot odprto"
-      ],
       "Mark as resolved": [
         "Označi kot rešeno"
       ],
@@ -1180,6 +1177,9 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Nadaljuj z uporabo ${ MAIL_APP_NAME }a."
+      ],
+      "Continue using ${ planTitle }": [
+        "Nadaljuj z uporabo ${ planTitle }a"
       ]
     },
     "Checkout row": {
@@ -2166,9 +2166,6 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA doda dodatno varnostno plast, ki preprečuje nepooblaščen dostop."
       ],
-      "Breach alerts and reports are available with a paid plan. Upgrade for immediate access.": [
-        "Opozorila in poročila o uhajanju podatkov so na voljo s plačljivim paketom. Nadgradite za takojšen dostop."
-      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Dešifriranje stikov … To lahko traja nekaj minut. Po končanem postopku boste lahko prenesli datoteko z vsemi izvoženimi stiki."
       ],
@@ -2222,9 +2219,6 @@
       ],
       "Your account and data recovery methods are set.": [
         "Vaš račun in metode za obnovitev podatkov so nastavljene."
-      ],
-      "Your personal data was leaked by an online service in a data breach. View full details and get recommended actions.": [
-        "Spletna storitev je razkrila vaše osebne podatke v zaradi uhajanja podatkov. Preberite vse informacije in ustrezno ukrepajte."
       ]
     },
     "description": {
@@ -4028,9 +4022,6 @@
       "Billing cycle: ${ text }": [
         "Obračunski cikel: ${ text }."
       ],
-      "Breach Alert": [
-        "Opozorilo o uhajanju podatkov"
-      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "S prehodom na brezplačni paket boste trajno izgubili te ugodnosti, tudi če v prihodnosti znova nadgradite."
       ],
@@ -4621,6 +4612,9 @@
       ],
       "Organization size": [
         "Velikost organizacije"
+      ],
+      "Owner": [
+        "Lastnik"
       ],
       "password": [
         "geslo"
@@ -7361,12 +7355,6 @@
         "${ numberOfItems } povezave do vaših predmetov so bile izbrisane",
         "${ numberOfItems } povezave do vaših predmetov so bile izbrisane"
       ],
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } je bil onemogočen."
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } je bil omogočen."
-      ],
       "All items will soon be permanently deleted from trash": [
         "Vsi predmeti bodo kmalu trajno izbrisani iz koša"
       ],
@@ -8379,9 +8367,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "Preklic vaše naročnine, počakajte"
-      ],
-      "Downgrading your account, please wait": [
-        "Zmanjšujem račun, prosimo počakajte."
       ]
     },
     "Storage": {
@@ -8925,9 +8910,6 @@
       "Birthday": [
         "Rojstni dan"
       ],
-      "Breach Alert": [
-        "Opozorilo o uhajanju podatkov"
-      ],
       "Browser might run out of memory": [
         "Brskalniku morda manjka pomnilnika"
       ],
@@ -9365,9 +9347,6 @@
       ],
       "Start import process": [
         "Začni uvažati"
-      ],
-      "Stay safer online": [
-        "Izboljšajte spletno varnost"
       ],
       "Stop sharing": [
         "Ustavi skupno rabo"

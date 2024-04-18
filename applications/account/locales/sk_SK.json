@@ -323,6 +323,9 @@
       "Delete link": [
         "Odstrániť odkaz"
       ],
+      "Delete logo": [
+        "Vymazať logo"
+      ],
       "Delete permanently": [
         "Navždy vymazať"
       ],
@@ -587,6 +590,9 @@
       "Keep": [
         "Zachovať"
       ],
+      "Keep logo": [
+        "Ponechať logo"
+      ],
       "Keep my Plus subscription": [
         "Ponechať moje predplatné Plus"
       ],
@@ -619,6 +625,12 @@
       ],
       "Mark as default": [
         "Označiť ako predvolené"
+      ],
+      "Mark as open": [
+        "Označiť ako otvorené"
+      ],
+      "Mark as resolved": [
+        "Označiť ako vyriešené"
       ],
       "mark emails as": [
         "označiť emaily ako"
@@ -755,6 +767,9 @@
       "Report a problem": [
         "Nahlásiť problém"
       ],
+      "Request a call": [
+        "Požiadať o hovor"
+      ],
       "Request a feature": [
         "Požiadavka na funkciu"
       ],
@@ -853,6 +868,9 @@
       ],
       "Select country": [
         "Vyberte krajinu"
+      ],
+      "select file": [
+        "vyberte súbor"
       ],
       "Select file": [
         "Vyberte súbor"
@@ -962,6 +980,9 @@
       "Start import": [
         "Spustiť import"
       ],
+      "Start live chat": [
+        "Spustiť živý chat"
+      ],
       "Stay": [
         "Zostať"
       ],
@@ -1004,9 +1025,6 @@
       "Unlock": [
         "Odomknúť"
       ],
-      "Unlock Breach Report": [
-        "Odomknite správu o narušení"
-      ],
       "Unlock data": [
         "Odomknutie údajov"
       ],
@@ -1042,6 +1060,12 @@
       ],
       "Upgrade your plan": [
         "Inovujte svoj plán"
+      ],
+      "Upload": [
+        "Nahrať"
+      ],
+      "Upload icon": [
+        "Nahrať ikonu"
       ],
       "Upload picture": [
         "Nahrať obrázok"
@@ -1093,6 +1117,9 @@
       ],
       "Void all recovery files?": [
         "Zrušiť všetky súbory pre obnovenie?"
+      ],
+      "Welcome": [
+        "Vitajte"
       ],
       "What do I get?": [
         "Čo získam?"
@@ -1661,6 +1688,12 @@
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Pokračovať s ${ MAIL_APP_NAME }."
+      ],
+      "Continue using ${ planTitle }": [
+        "Pokračovať s ${ planTitle }"
+      ],
+      "Continue your subscription": [
+        "Pokračovať v predplatnom"
       ],
       "Copy": [
         "Kopírovať"
@@ -3163,9 +3196,6 @@
       "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
         "Ak chcete odstrániť pätu ${ MAIL_APP_NAME }, upgradujte a odomknite ešte viac prémiových funkcií."
       ],
-      "To view the full report including personalized recommendations, upgrade to a paid plan.": [
-        "Ak chcete zobraziť celú správu vrátane personalizovaných odporúčaní, prejdite na platený plán."
-      ],
       "Track the status and activity of your referrals.": [
         "Sledujte stav a aktivitu svojich odporúčaní."
       ],
@@ -3892,6 +3922,12 @@
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Načítanie aktívnych relácií zlyhalo. Prosím ${ refresh } alebo to skúste neskôr."
       ],
+      "Failed to process the logo": [
+        "Spracovanie loga zlyhalo"
+      ],
+      "File too large. Your logo must be 30 KB or smaller.": [
+        "Súbor je príliš veľký. Vaše logo musí mať 30 KB alebo menej."
+      ],
       "Filter with this name already exists": [
         "Filter s týmto názvom už existuje"
       ],
@@ -3909,6 +3945,9 @@
       ],
       "Impossible to rename the gateway": [
         "Nie je možné premenovať bránu"
+      ],
+      "Incorrect file type. Upload a file in PNG or JPEG format.": [
+        "Nesprávny typ súboru. Nahrajte súbor vo formáte PNG alebo JPEG."
       ],
       "Incorrect login credentials. Please try again.": [
         "Nesprávne prihlasovacie údaje. Skúste to prosím znova."
@@ -3997,6 +4036,9 @@
       "No external key retrieved for user is valid for sending": [
         "Žiadny externý kľúč získaný pre používateľa nie je platný na odoslanie"
       ],
+      "No image selected": [
+        "Nebol vybraný žiaden obrázok"
+      ],
       "No valid address found": [
         "Nebola nájdená žiadna platná adresa"
       ],
@@ -4065,6 +4107,9 @@
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Ak chcete spravovať viacerých používateľov, prejdite na obchodný plán s viac ako 1 používateľom."
+      ],
+      "Please upload a square file": [
+        "Nahrajte štvorcový obrázok, prosím."
       ],
       "Please upload an xml file": [
         "Nahrajte XML súbor"
@@ -4140,6 +4185,12 @@
       ],
       "The email addresses do not match": [
         "Emailové adresy sa nezhodujú"
+      ],
+      "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
+        "Súbor je príliš veľký, maximálna veľkosť je ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }"
+      ],
+      "The file is too small, the minimum size is ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }": [
+        "Súbor je príliš malý, minimálna veľkosť je ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }"
       ],
       "The folder name is invalid. Please choose a different name.": [
         "Názov priečinka je neplatný. Zvoľte prosím iný názov."
@@ -7025,6 +7076,9 @@
       "Lean more about single sign-on": [
         "Viac informácií o jednotnom prihlasovaní"
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Zistite, ako ${ staySaferOnlineLink }"
+      ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Zistite, ako sa prihlásiť do ${ VPN_APP_NAME } pomocou aplikácií VPN tretích strán."
       ],
@@ -7055,6 +7109,9 @@
       "Link type": [
         "Typ odkazu"
       ],
+      "Live chat": [
+        "Živý chat"
+      ],
       "Loaded content is being protected by our proxy when tracker protection is activated.": [
         "Načítaný obsah je chránený naším proxy serverom, keď je aktivovaná ochrana proti sledovaniu."
       ],
@@ -7063,6 +7120,9 @@
       ],
       "Loading ${ appName }": [
         "Načítavanie aplikácie ${ appName }"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Načítanie kalendára, počkajte, prosím. V novej karte budete presmerovaní na našu plánovaciu platformu Calendly."
       ],
       "Loading preview": [
         "Načítanie náhľadu"
@@ -7229,6 +7289,9 @@
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Vo vašej organizácii existujú ďalší správcovia, vašou povinnosťou je oznámiť im nové heslo."
       ],
+      "Other users within your organization will see your busy slots. No event details are shared.": [
+        "Ostatní používatelia vo vašej organizácii uvidia vaše obsadené sloty. Žiadne podrobnosti o udalosti sa nezdieľajú."
+      ],
       "Outdated recovery file; update to ensure access to your data": [
         "Zastaraný obnovovací súbor; aktualizujte, aby ste zaistili prístup k vašim údajom"
       ],
@@ -7358,6 +7421,9 @@
       "Plus or Visionary subscription required": [
         "Je vyžadované predplatné Plus alebo Visionary"
       ],
+      "Preview": [
+        "Ukážka"
+      ],
       "Preview failed to be loaded": [
         "Náhľad sa nepodarilo načítať"
       ],
@@ -7435,6 +7501,9 @@
       ],
       "Report link expired": [
         "Platnosť hlásenia vypršala"
+      ],
+      "Request a phone call": [
+        "Požiadať o telefonický hovor"
       ],
       "Resend verification email": [
         "Znovu zaslať overovací email"
@@ -7639,6 +7708,9 @@
       ],
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "Platnosť odkazu na overenie emailu vypršala. Ak chcete znova odoslať overovací odkaz, prihláste sa."
+      ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "Informácie, ktoré boli zverejnené, unikli zo služby tretej strany. Vaše informácie o účte ${ BRAND_NAME } zostávajú zabezpečené a zašifrované. ${ learnMoreLink }"
       ],
       "The following address is available:": [
         "K dispozícii je nasledujúca adresa:"
@@ -8213,6 +8285,12 @@
         "Máte dostupných ${ availableCount } dedikovaných serverov.",
         "Máte dostupných ${ availableCount } dedikovaných serverov."
       ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "Máte skúšobné predplatné ${ planTitle }. Ak chcete pokračovať v predplatnom aj po skončení skúšobnej lehoty, pridajte spôsob platby."
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "Máte skúšobné predplatné ${ planTitle }. V tejto chvíli sa nevyžaduje žiadna platba. Vaše predplatné sa automaticky obnoví na konci skúšobného obdobia."
+      ],
       "You have no calendars to export.": [
         "Nemáte žiadne kalendáre na export."
       ],
@@ -8330,6 +8408,9 @@
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Vaše informácie sú u nás v bezpečí. Budeme vás kontaktovať len vtedy, keď to bude potrebné na poskytovanie našich služieb."
       ],
+      "Your information was found on ${ displayedDate }": [
+        "Vaše informácie boli nájdené dňa ${ displayedDate }"
+      ],
       "Your login information will not be saved after the import is completed.": [
         "Po dokončení importu nebudú vaše prihlasovacie údaje uložené."
       ],
@@ -8362,6 +8443,9 @@
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Vaša požiadavka na podporu bola uzavretá. Ďakujeme, že ste kontaktovali ${ BRAND_NAME } podporu."
+      ],
+      "Zoom meeting": [
+        "Zoom míting"
       ]
     },
     "Info - folder colouring feature": {
@@ -8801,6 +8885,9 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Dočasne nedostupné. Skúste to neskôr.)"
       ],
+      "Access to my events": [
+        "Prístup k mojim udalostiam"
+      ],
       "Account storage": [
         "Úložisko účtu"
       ],
@@ -8908,6 +8995,9 @@
       ],
       "Awarded": [
         "Ocenený"
+      ],
+      "Beta": [
+        "Beta"
       ],
       "Billing address": [
         "Fakturačná adresa"
@@ -9287,6 +9377,9 @@
       "Link label": [
         "Štítok odkazu"
       ],
+      "Logo": [
+        "Logo"
+      ],
       "Mail Server (IMAP)": [
         "Emailový server (IMAP)"
       ],
@@ -9517,6 +9610,9 @@
       ],
       "Send in": [
         "Odoslať v"
+      ],
+      "Show others when I'm busy": [
+        "Zobraziť ostatným, kedy som zaneprázdnený"
       ],
       "Show secondary time zone": [
         "Zobraziť sekundárne časové pásmo"
@@ -9961,6 +10057,9 @@
       "Sign in": [
         "Prihlásiť sa"
       ],
+      "stay safer online": [
+        "zostaňte bezpečnejší online"
+      ],
       "switch account": [
         "prepnúť účet"
       ],
@@ -10051,9 +10150,6 @@
       ]
     },
     "Log preference": {
-      "Enable ${ PROTON_SENTINEL_NAME }": [
-        "Povoliť ${ PROTON_SENTINEL_NAME }"
-      ],
       "Enable advanced logs": [
         "Povoliť rozšírené protokoly"
       ],
@@ -11459,12 +11555,6 @@
     "Notification": {
       "${ Filter.Name } created": [
         "${ Filter.Name } bol vytvorený"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } bol zakázaný"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } bol povolený"
       ],
       "A disabled address cannot be default": [
         "Deaktivovaná adresa nemôže byť predvolená"
@@ -13480,9 +13570,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "Rušenie vášho predplatného, počkajte prosím"
-      ],
-      "Downgrading your account, please wait": [
-        "Prebieha prechod na nižší plán, prosím čakajte"
       ]
     },
     "Step in filter modal": {
@@ -14381,6 +14468,9 @@
       "Billing cycle": [
         "Fakturačné obdobie"
       ],
+      "Block trackers and malware": [
+        "Blokovať trackery a malware"
+      ],
       "Bridge for ${ platform }": [
         "Most pre ${ platform }"
       ],
@@ -14573,6 +14663,9 @@
       "Delete logs": [
         "Vymazať záznamy"
       ],
+      "Delete organization logo?": [
+        "Vymazať logo organizácie?"
+      ],
       "Delete the server (you will still be able to recover it for ${ days } day)": [
         "Vymazať server (budete ho stále môcť obnoviť o ${ days } deň)",
         "Vymazať server (budete ho stále môcť obnoviť o ${ days } dni)",
@@ -14584,6 +14677,9 @@
       ],
       "Delete version history?": [
         "Vymazať históriu verzií?"
+      ],
+      "Details": [
+        "Podrobnosti"
       ],
       "Disable ${ email }": [
         "Deaktivovať ${ email }"
@@ -14729,6 +14825,15 @@
       "Folders and labels": [
         "Priečinky a štítky"
       ],
+      "For Linux": [
+        "Pre Linux"
+      ],
+      "For macOS": [
+        "Pre macOS"
+      ],
+      "For Windows": [
+        "Pre Windows"
+      ],
       "Forward and auto-reply": [
         "Preposlať a automaticky odpovedať"
       ],
@@ -14767,6 +14872,9 @@
       ],
       "How does it work?": [
         "Ako to funguje?"
+      ],
+      "How to choose a good icon": [
+        "Ako vybrať dobrú ikonu"
       ],
       "How to refer a friend and get credits": [
         "Ako odporučiť priateľa a získať kredity"
@@ -14875,6 +14983,9 @@
       ],
       "No recovery method": [
         "Žiadna metóda pre obnovenie"
+      ],
+      "Open": [
+        "Otvoriť"
       ],
       "Open actions dropdown": [
         "Otvoriť rozbaľovaciu ponuku"
@@ -14992,6 +15103,9 @@
       ],
       "Reset password?": [
         "Resetovať heslo?"
+      ],
+      "Resolved": [
+        "Vyriešené"
       ],
       "Restore administrator privileges": [
         "Obnoviť oprávnenia správcu"
@@ -15179,6 +15293,9 @@
       "Upload CSV file to create multiple accounts": [
         "Nahrajte CSV súbor, aby ste mohli vytvoriť viacero účtov"
       ],
+      "Upload your organization’s logo": [
+        "Nahrajte logo vašej organizácie"
+      ],
       "Users": [
         "Používatelia"
       ],
@@ -15215,6 +15332,12 @@
       "We'll send an email to your new address with instructions on completing the change.": [
         "Na vašu novú adresu vám pošleme email s pokynmi na dokončenie zmeny."
       ],
+      "What is an alias?": [
+        "Čo je to alias?"
+      ],
+      "What is the dark web?": [
+        "Čo je to dark web?"
+      ],
       "What would you like to import?": [
         "Čo by ste chceli importovať?"
       ],
@@ -15229,6 +15352,9 @@
       ],
       "Your changes are not synced yet": [
         "Vaše zmeny zatiaľ nie sú synchronizované"
+      ],
+      "Your exposed information": [
+        "Vaše odhalené informácie"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Vaša bezplatná skúšobná verzia služby Mail Plus končí ${ textDate }"

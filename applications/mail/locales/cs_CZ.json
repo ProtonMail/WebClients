@@ -631,6 +631,9 @@
       "Mark as read": [
         "Označit jako přečtené"
       ],
+      "Mark as resolved": [
+        "Označit jako vyřešené"
+      ],
       "Mark as unread": [
         "Označit jako nepřečtené"
       ],
@@ -897,6 +900,9 @@
       ],
       "Report phishing": [
         "Oznámit phishing"
+      ],
+      "Request a call": [
+        "Požádat o hovor"
       ],
       "Request a feature": [
         "Požádejte o funkci"
@@ -1189,10 +1195,10 @@
       "Upgrade": [
         "Přejít na placený tarif"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Navýšit nyní"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Navýšit nyní"
       ],
       "Upload picture": [
@@ -1688,6 +1694,9 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Pokračovat s ${ MAIL_APP_NAME }."
+      ],
+      "Continue using ${ planTitle }": [
+        "Pokračovat s ${ planTitle }"
       ]
     },
     "Calendar attachment tooltip": {
@@ -3241,9 +3250,6 @@
       "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
         "Automatické vymazání zpráv starších než 30 dní z koše a spamu. Užijte si tyto a další výhody při navýšení tarifu."
       ],
-      "Breach alerts and reports are available with a paid plan. Upgrade for immediate access.": [
-        "Úniky informací a hlášení jsou dostupné s placeným tarifem. Navyšte pro okamžitý přístup."
-      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Dešifrování kontaktů… Tato akce může trvat několik minut. Jakmile bude proces ukončen, budete si moci stáhnout soubor s vašimi exportovanými kontakty."
       ],
@@ -3333,9 +3339,6 @@
       ],
       "Your account and data recovery methods are set.": [
         "Váš účet a metody obnovy dat jsou nastaveny."
-      ],
-      "Your personal data was leaked by an online service in a data breach. View full details and get recommended actions.": [
-        "Vaše osobní údaje unikly online službě při úniku informací. Zobrazte plné detaily a získejte doporučené akce."
       ]
     },
     "description": {
@@ -3404,19 +3407,22 @@
     },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
-        "${ eventTitle } byl zrušen."
+        "Událost ${ eventTitle } byla zrušena."
       ],
       "All events in this series were updated.": [
-        "Všechny události v této sérii byly aktualizovány."
+        "Všechny události této série byly aktualizovány."
       ],
       "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Všechny události v této sérii byly aktualizovány. Zde jsou změny:\n\n${ updateEventDetailsText }"
+        "Všechny události této série byly aktualizovány. Zde jsou změny:\n\n${ updateEventDetailsText }"
       ],
       "This event occurrence was canceled.": [
         "Tento výskyt události byl zrušen."
       ],
       "This event occurrence was updated.": [
         "Tento výskyt události byl aktualizován."
+      ],
+      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Tento výskyt události byl aktualizován. Zde jsou uvedeny změny:\n\n${ updateEventDetailsText }"
       ],
       "This event was updated.": [
         "Tato událost byla aktualizována."
@@ -3425,7 +3431,7 @@
         "Tato událost byla aktualizována. Zde jsou změny:\n\n${ updateEventDetailsText }"
       ],
       "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
-        "Byly jste pozváni do ${ eventTitle }.\n\n${ eventDetailsText }"
+        "Jste pozváni na ${ eventTitle }.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -3596,7 +3602,7 @@
         "Došlo k chybě při načítání možností aliasu"
       ],
       "An error occurred while saving your alias": [
-        "Při ukládání vašeho aliasu se stala chyba"
+        "Při ukládání vašeho aliasu došlo k chybě"
       ],
       "Attachments are limited to 25 MB": [
         "Přílohy jsou omezeny na 25 MB"
@@ -3905,7 +3911,7 @@
         "Vyžaduje alespoň jednu podmínku"
       ],
       "Sending attachments is restricted until you meet your plan limits or upgrade.": [
-        "Odesílání příloh je omezeno dokud dosáhnete limitu tarifu nebo navýšíte tarif."
+        "Odesílání příloh je omezeno, dokud nedosáhnete limitů tarifu nebo neprovedete navýšení."
       ],
       "Signature not verified": [
         "Podpis nebyl ověřen"
@@ -4779,8 +4785,17 @@
       "Enjoy fast, secure, and distraction-free access to your inbox and calendar.": [
         "Užívejte si rychlý, bezpečný přístup k doručené poště a kalendáři bez rozptylování."
       ],
+      "Get unlimited access with any ${ MAIL_APP_NAME } plan.": [
+        "Získejte neomezený přístup s jakýmkoliv tarifem ${ MAIL_APP_NAME }."
+      ],
       "No credit card required.": [
         "Platební karta není vyžadována."
+      ],
+      "Start free trial": [
+        "Bezplatná zkušební lekce"
+      ],
+      "Try the app-new desktop app": [
+        "Vyzkoušejte novou desktopovou aplikaci"
       ],
       "Upgrade now": [
         "Navýšit nyní"
@@ -4828,6 +4843,12 @@
       ],
       "Closing this means giving up the free storage bonus.": [
         "Zavřením se vzdáte bezplatného bonusového úložiště."
+      ],
+      "Congratulations, you completed all the steps!": [
+        "Gratulujeme, dokončili jste všechny kroky!"
+      ],
+      "Congratulations, you finished!": [
+        "Gratulujeme k dokončení!"
       ],
       "Continue setting up your email": [
         "Pokračujte v nastavení e-mailu"
@@ -5775,7 +5796,7 @@
         "Kontroluji kontakt ${ progress } z ${ max }..."
       ],
       "Clear app data": [
-        "Vymazat data"
+        "Vyčistit data aplikace"
       ],
       "Clear data": [
         "Smazat data"
@@ -6720,7 +6741,7 @@
         "Tato zpráva je podepsána přiloženým klíčem, který nebyl dosud označen jako důvěryhodný."
       ],
       "This message will be automatically deleted at ${ value }": [
-        "Tato zpráva bude automaticky smazána v ${ value }"
+        "Tato zpráva bude automaticky smazána ${ value }"
       ],
       "This message will be automatically deleted on ${ value }": [
         "Tato zpráva bude automaticky smazána v(ve) ${ value }"
@@ -6947,6 +6968,9 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Pro dokončení transakce Vás přesměrujeme na váš PayPal účet v nové záložce prohlížeče. Pokud používáte blokování vyskakovacích oken, pro pokračování je prosím vypněte."
       ],
+      "We'll email you once import is complete.": [
+        "Po dokončení importu vám pošleme e-mail."
+      ],
       "We'll notify you when the import is done.": [
         "Po dokončení importu Vás budeme informovat."
       ],
@@ -7006,6 +7030,9 @@
       ],
       "You can check the progress ${ importProgressLink }.": [
         "Zde můžete zkontrolovat průběh ${ importProgressLink }."
+      ],
+      "You can close the tab or browser in the meantime.": [
+        "Mezitím můžete kartu nebo prohlížeč zavřít."
       ],
       "You can either update your search query or ${ button }": [
         "Můžete buď aktualizovat hledaný dotaz nebo ${ button }"
@@ -8267,6 +8294,9 @@
       "Starred": [
         "S hvězdičkou"
       ],
+      "stay safer online": [
+        "zůstaňte v bezpečí online"
+      ],
       "Terms": [
         "Podmínky"
       ],
@@ -8341,6 +8371,9 @@
       ]
     },
     "locked_state_storage_banner: info": {
+      "Learn more": [
+        "Více informací"
+      ],
       "upgrade for more storage": [
         "navýšit tarif pro více prostoru"
       ],
@@ -9486,12 +9519,6 @@
       "${ Filter.Name } created": [
         "${ Filter.Name } byl vytvořen"
       ],
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } byl deaktivován"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } byl povolen"
-      ],
       "Block removed": [
         "Blokovat odstraněné"
       ],
@@ -9512,6 +9539,11 @@
       ],
       "Senders blocked": [
         "Odesílatelé zablokováni"
+      ]
+    },
+    "Notification for duplicate filenames in the current upload": {
+      "Some images were not uploaded due to duplicate filenames in the current selection.": [
+        "Některé obrázky nebyly nahrány kvůli duplicitním názvům souborů v aktuálním výběru."
       ]
     },
     "Oauth instructions": {
@@ -10673,14 +10705,17 @@
       ]
     },
     "Spotlight": {
-      "Breach Alerts": [
-        "Hlášení o únikách informací"
+      "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
+        "Pohodlné spuštění ${ MAIL_APP_NAME } přímo z plochy."
       ],
       "Create hide-my-email aliases and keep track of them here.": [
         "Vytvořte hide-my-email aliasy a sledujte je zde."
       ],
       "Email tracking protection": [
         "Ochrana před sledovacími prvky v e-mailech"
+      ],
+      "Faster email management": [
+        "Rychlejší správa e-mailů"
       ],
       "Get the desktop app": [
         "Získejte desktopovou aplikaci"
@@ -10691,11 +10726,11 @@
       "Invite friends to ${ BRAND_NAME }": [
         "Pozvěte přátele do ${ BRAND_NAME }"
       ],
+      "Now you can take action on all emails in a single folder in one go.": [
+        "Nyní můžete provést akci pro všechny e-maily v jedné složce najednou."
+      ],
       "Schedule send": [
         "Naplánovat odeslání"
-      ],
-      "Turn on breach alerts to monitor potential data leaks. View details and take action to protect yourself.": [
-        "Zapněte si hlášení o úniků informací aby jste monitorovali možné úniky informací. Zobrazte detaily a podnikněte kroky aby jste se ochránili."
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Nyní ve výchozím nastavení načítáme obrázky a znemožňujeme odesílatelům, aby vás sledovali. Toto můžete změnit v ${ settingsLink }."
@@ -10710,9 +10745,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "Rušení předplatného, počkejte prosím"
-      ],
-      "Downgrading your account, please wait": [
-        "Probíhá přechod na nižší tarif, počkejte prosím"
       ]
     },
     "Status": {
@@ -10799,7 +10831,7 @@
         "navýšit tarif pro více prostoru"
       ],
       "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
-        "Přidáme kredit za zbývající čas k vašemu ${ BRAND_NAME } účtu."
+        "Nevyužitý kredit přidáme na váš účet ${ BRAND_NAME }."
       ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "V tarifu **${ currentPlanName }** vám zbývá ještě **${ daysRemaining }** den.",
@@ -11690,6 +11722,9 @@
       "Deleting contacts": [
         "Mazání kontaktů"
       ],
+      "Details": [
+        "Podrobnosti"
+      ],
       "Don't give spam a chance": [
         "Nedávejte spamu šanci"
       ],
@@ -12103,9 +12138,6 @@
       ],
       "Start import process": [
         "Zahájit proces importu"
-      ],
-      "Stay safer online": [
-        "Zůstaňte v bezpečí online"
       ],
       "Storage capacity warning": [
         "Upozornění na kapacitu úložiště"

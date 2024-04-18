@@ -822,6 +822,9 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continuar a utilizar ${ MAIL_APP_NAME }."
+      ],
+      "Continue using ${ planTitle }": [
+        "Continuar a utilizar ${ planTitle }"
       ]
     },
     "Checkout row": {
@@ -2765,6 +2768,9 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Antes de começar a enviar e receber e-mails dos seus novos endereços, é necessário criar as respectivas chaves de encriptação."
       ],
+      "Beta": [
+        "Beta"
+      ],
       "Billed at ${ price }": [
         "Cobrado a ${ price }"
       ],
@@ -4004,6 +4010,9 @@
       ],
       "Level for NetShield blocker filtering": [
         "Nível de filtragem do bloqueador NetShield"
+      ],
+      "Logo": [
+        "Logótipo"
       ],
       "Mailbox password": [
         "Palavra-passe da caixa de correio"
@@ -6095,9 +6104,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "A cancelar a sua subscrição, por favor aguarde"
-      ],
-      "Downgrading your account, please wait": [
-        "Aguarde. Estamos a modificar a sua conta."
       ]
     },
     "Storage": {

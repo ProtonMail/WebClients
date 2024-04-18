@@ -1157,6 +1157,9 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Продолжить, используя ${ MAIL_APP_NAME }."
+      ],
+      "Continue using ${ planTitle }": [
+        "Продолжить, используя ${ planTitle }"
       ]
     },
     "Checkout row": {
@@ -1404,7 +1407,7 @@
         "Барбадос"
       ],
       "Belarus": [
-        "Белоруссия"
+        "Беларусь"
       ],
       "Belgium": [
         "Бельгия"
@@ -4465,6 +4468,9 @@
       "Organization size": [
         "Размер организации"
       ],
+      "Owner": [
+        "Владелец"
+      ],
       "password": [
         "пароль"
       ],
@@ -7076,12 +7082,6 @@
         "${ numberOfItems } ссылок на ваши элементы были удалены",
         "${ numberOfItems } ссылок на ваши элементы были удалены"
       ],
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } был отключен"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } был включен"
-      ],
       "All items will soon be permanently deleted from trash": [
         "Все элементы скоро будут окончательно удалены из корзины"
       ],
@@ -7944,9 +7944,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "Отмена подписки, подождите"
-      ],
-      "Downgrading your account, please wait": [
-        "Ваш аккаунт переходит на более дешевую версию, пожалуйста, подождите"
       ]
     },
     "Storage": {

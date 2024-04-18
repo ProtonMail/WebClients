@@ -1004,9 +1004,6 @@
       "Unlock": [
         "Deblocare"
       ],
-      "Unlock Breach Report": [
-        "Deblocare raport breșe"
-      ],
       "Unlock data": [
         "Deblocare date"
       ],
@@ -1655,6 +1652,9 @@
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continuare utilizare ${ MAIL_APP_NAME }."
+      ],
+      "Continue using ${ planTitle }": [
+        "Continuare utilizare ${ planTitle }"
       ],
       "Copy": [
         "Copiere"
@@ -3149,9 +3149,6 @@
       ],
       "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
         "Pentru a elimina subsolul mesajelor din ${ MAIL_APP_NAME }, modernizați contul și deblocați și mai multe funcții premium."
-      ],
-      "To view the full report including personalized recommendations, upgrade to a paid plan.": [
-        "Pentru a vizualiza raportul complet, inclusiv recomandări personalizate, treceți la un plan cu plată."
       ],
       "Track the status and activity of your referrals.": [
         "Urmăriți starea și activitatea celor recomandați."
@@ -9879,6 +9876,9 @@
       "Sign in": [
         "Autentificare"
       ],
+      "stay safer online": [
+        "rămâneți în siguranță online"
+      ],
       "switch account": [
         "schimbați contul"
       ],
@@ -9967,9 +9967,6 @@
       ]
     },
     "Log preference": {
-      "Enable ${ PROTON_SENTINEL_NAME }": [
-        "Activare ${ PROTON_SENTINEL_NAME }"
-      ],
       "Enable advanced logs": [
         "Activare jurnale detaliate"
       ],
@@ -11345,12 +11342,6 @@
     "Notification": {
       "${ Filter.Name } created": [
         "${ Filter.Name } a fost creat."
-      ],
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } a fost dezactivat"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } a fost activat"
       ],
       "A disabled address cannot be default": [
         "O adresă dezactivată nu poate fi implicită."
@@ -13356,9 +13347,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "Vi se anulează abonamentul, așteptați."
-      ],
-      "Downgrading your account, please wait": [
-        "Se modifică contul, așteptați puțin."
       ]
     },
     "Step in filter modal": {

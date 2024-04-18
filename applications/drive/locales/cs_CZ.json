@@ -442,6 +442,9 @@
       "Manage link": [
         "Správa odkazu"
       ],
+      "Mark as resolved": [
+        "Označit jako vyřešené"
+      ],
       "Mark for deletion": [
         "Označit pro odstranění"
       ],
@@ -576,6 +579,9 @@
       ],
       "Report an issue": [
         "Nahlásit problém"
+      ],
+      "Request a call": [
+        "Požádat o hovor"
       ],
       "Request a feature": [
         "Požádejte o funkci"
@@ -1153,6 +1159,9 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Pokračovat s ${ MAIL_APP_NAME }."
+      ],
+      "Continue using ${ planTitle }": [
+        "Pokračovat s ${ planTitle }"
       ]
     },
     "Checkout row": {
@@ -2139,9 +2148,6 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA přidává další úroveň zabezpečení a zabraňuje neoprávněnému přístupu."
       ],
-      "Breach alerts and reports are available with a paid plan. Upgrade for immediate access.": [
-        "Úniky informací a hlášení jsou dostupné s placeným tarifem. Navyšte pro okamžitý přístup."
-      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Dešifrování kontaktů… Tato akce může trvat několik minut. Jakmile bude proces ukončen, budete si moci stáhnout soubor s vašimi exportovanými kontakty."
       ],
@@ -2195,9 +2201,6 @@
       ],
       "Your account and data recovery methods are set.": [
         "Váš účet a metody obnovy dat jsou nastaveny."
-      ],
-      "Your personal data was leaked by an online service in a data breach. View full details and get recommended actions.": [
-        "Vaše osobní údaje unikly online službě při úniku informací. Zobrazte plné detaily a získejte doporučené akce."
       ]
     },
     "description": {
@@ -2251,19 +2254,22 @@
     },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
-        "${ eventTitle } byl zrušen."
+        "Událost ${ eventTitle } byla zrušena."
       ],
       "All events in this series were updated.": [
-        "Všechny události v této sérii byly aktualizovány."
+        "Všechny události této série byly aktualizovány."
       ],
       "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Všechny události v této sérii byly aktualizovány. Zde jsou změny:\n\n${ updateEventDetailsText }"
+        "Všechny události této série byly aktualizovány. Zde jsou změny:\n\n${ updateEventDetailsText }"
       ],
       "This event occurrence was canceled.": [
         "Tento výskyt události byl zrušen."
       ],
       "This event occurrence was updated.": [
         "Tento výskyt události byl aktualizován."
+      ],
+      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Tento výskyt události byl aktualizován. Zde jsou uvedeny změny:\n\n${ updateEventDetailsText }"
       ],
       "This event was updated.": [
         "Tato událost byla aktualizována."
@@ -2272,7 +2278,7 @@
         "Tato událost byla aktualizována. Zde jsou změny:\n\n${ updateEventDetailsText }"
       ],
       "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
-        "Byly jste pozváni do ${ eventTitle }.\n\n${ eventDetailsText }"
+        "Jste pozváni na ${ eventTitle }.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -2401,7 +2407,7 @@
         "Došlo k chybě při načítání možností aliasu"
       ],
       "An error occurred while saving your alias": [
-        "Při ukládání vašeho aliasu se stala chyba"
+        "Při ukládání vašeho aliasu došlo k chybě"
       ],
       "Authentication canceled.": [
         "Ověření zrušeno."
@@ -4562,6 +4568,9 @@
       "Organization size": [
         "Velikost organizace"
       ],
+      "Owner": [
+        "Vlastník"
+      ],
       "password": [
         "heslo"
       ],
@@ -5054,6 +5063,9 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Pro dokončení transakce Vás přesměrujeme na váš PayPal účet v nové záložce prohlížeče. Pokud používáte blokování vyskakovacích oken, pro pokračování je prosím vypněte."
       ],
+      "We'll email you once import is complete.": [
+        "Po dokončení importu vám pošleme e-mail."
+      ],
       "We'll notify you when the import is done.": [
         "Po dokončení importu Vás budeme informovat."
       ],
@@ -5110,6 +5122,9 @@
       ],
       "You can check the progress ${ importProgressLink }.": [
         "Zde můžete zkontrolovat průběh ${ importProgressLink }."
+      ],
+      "You can close the tab or browser in the meantime.": [
+        "Mezitím můžete kartu nebo prohlížeč zavřít."
       ],
       "You can import one data type at a time.": [
         "Importovat můžete vždy jeden typ dat."
@@ -5936,6 +5951,9 @@
       "Shared": [
         "Sdílené"
       ],
+      "stay safer online": [
+        "zůstaňte v bezpečí online"
+      ],
       "Trash": [
         "Koš"
       ],
@@ -5970,6 +5988,9 @@
       ]
     },
     "locked_state_storage_banner: info": {
+      "Learn more": [
+        "Více informací"
+      ],
       "upgrade for more storage": [
         "navýšit tarif pro více prostoru"
       ],
@@ -7199,12 +7220,6 @@
         "${ numberOfItems } odkazů na vaše položky bylo odstraněno",
         "${ numberOfItems } odkazů na vaše položky bylo odstraněno"
       ],
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } byl deaktivován"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } byl povolen"
-      ],
       "All items will soon be permanently deleted from trash": [
         "Všechny položky budou brzy nevratně smazány z koše"
       ],
@@ -7309,6 +7324,11 @@
       ],
       "Your settings have been changed successfully": [
         "Vaše nastavení bylo úspěšně změněno"
+      ]
+    },
+    "Notification for duplicate filenames in the current upload": {
+      "Some images were not uploaded due to duplicate filenames in the current selection.": [
+        "Některé obrázky nebyly nahrány kvůli duplicitním názvům souborů v aktuálním výběru."
       ]
     },
     "Oauth instructions": {
@@ -8181,9 +8201,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "Rušení předplatného, počkejte prosím"
-      ],
-      "Downgrading your account, please wait": [
-        "Probíhá přechod na nižší tarif, počkejte prosím"
       ]
     },
     "Storage": {
@@ -8248,7 +8265,7 @@
         "navýšit tarif pro více prostoru"
       ],
       "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
-        "Přidáme kredit za zbývající čas k vašemu ${ BRAND_NAME } účtu."
+        "Nevyužitý kredit přidáme na váš účet ${ BRAND_NAME }."
       ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "V tarifu **${ currentPlanName }** vám zbývá ještě **${ daysRemaining }** den.",
@@ -8835,6 +8852,9 @@
       "Deleting contacts": [
         "Mazání kontaktů"
       ],
+      "Details": [
+        "Podrobnosti"
+      ],
       "Discard": [
         "Zahodit"
       ],
@@ -9155,9 +9175,6 @@
       ],
       "Start import process": [
         "Zahájit proces importu"
-      ],
-      "Stay safer online": [
-        "Zůstaňte v bezpečí online"
       ],
       "Stop sharing": [
         "Zrušit sdílení"

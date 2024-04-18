@@ -374,7 +374,7 @@
         "Sunting draf"
       ],
       "Edit email address": [
-        "Ubah alamat email"
+        "Sunting alamat email"
       ],
       "Edit encryption": [
         "Sunting enkripsi"
@@ -615,9 +615,6 @@
       ],
       "Manage Snooze": [
         "Atur penundaan"
-      ],
-      "Mark as open": [
-        "Tandai sebagai terbuka"
       ],
       "Mark as read": [
         "Tandai telah dibaca"
@@ -1103,7 +1100,7 @@
         "Minggu ini"
       ],
       "To search your emails securely, we need to download a copy of your messages to your browser. The initial download may take a moment.": [
-        "Untuk mencari email Anda dengan aman, kami perlu mengunduh salinan pesan Anda ke peramban Anda. Unduhan awal mungkin membutuhkan beberapa waktu."
+        "Untuk mencari isi email Anda dengan aman, kami perlu untuk mengunduh salinan pesan Anda ke browser Anda. Proses unduhan kali pertama dapat memakan waktu sejenak."
       ],
       "Toggle Calendar app": [
         "Tampilkan/sembunyikan aplikasi Calendar"
@@ -1183,11 +1180,11 @@
       "Upgrade": [
         "Tingkatkan"
       ],
-      "Upgrade now": [
-        "Tingkatkan sekarang"
-      ],
       "Upgrade Now": [
         "Tingkatkan Sekarang"
+      ],
+      "Upgrade now": [
+        "Tingkatkan sekarang"
       ],
       "Upload picture": [
         "Unggah gambar"
@@ -3207,9 +3204,6 @@
       "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
         "Hapus pesan yang telah dibuang dan ditandai sebagai spam selama lebih dari 30 hari secara otomatis. Nikmati fitur ini dan berbagai kelebihan lainnya dengan meningkatkan paket langganan Anda."
       ],
-      "Breach alerts and reports are available with a paid plan. Upgrade for immediate access.": [
-        "Peringatan dan laporan kebocoran tersedia dalam paket berbayar. Tingkatkan akun Anda untuk memperoleh akses ke kedua fitur ini dengan segera."
-      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Mendekripsi kontak… Proses ini dapat memakan waktu hingga beberapa menit. Setelah selesai, Anda akan dapat mengunduh berkas yang berisi seluruh kontak yang Anda ekspor."
       ],
@@ -3280,7 +3274,7 @@
         "Seret-lepas untuk mengurutkan prioritas penggabungan kontak. Tandai kontak yang ingin digabung."
       ],
       "We didn't find any known trackers and tracking URLs in this email.": [
-        "Kami tidak menemukan pelacak dan URL pelacak apa pun yang diketahui dalam email ini."
+        "Kami tidak menemukan aplikasi dan URL pelacak apa pun yang diketahui di dalam email ini."
       ],
       "When do you want your message to be sent?": [
         "Kapan Anda ingin pesan Anda dikirim?"
@@ -3296,9 +3290,6 @@
       ],
       "Your account and data recovery methods are set.": [
         "Metode pemulihan akun dan data Anda telah diatur."
-      ],
-      "Your personal data was leaked by an online service in a data breach. View full details and get recommended actions.": [
-        "Data pribadi Anda telah dibocorkan oleh layanan online tertentu dalam insiden kebocoran data. Lihat rincian insiden ini secara penuh dan dapatkan tindakan yang disarankan."
       ]
     },
     "description": {
@@ -3892,7 +3883,7 @@
         "Lampiran tidak dapat didekripsi.\nJika Anda memiliki kunci pribadi terkait, Anda akan tetap bisa mendekripsi\nberkas dengan program seperti GnuPG."
       ],
       "The email addresses do not match": [
-        "Alamat email tidak cocok"
+        "Alamat email tidak sesuai"
       ],
       "The folder name is invalid. Please choose a different name.": [
         "Nama folder tidak valid. Silakan pilih nama lain."
@@ -5453,7 +5444,7 @@
         "Apakah Anda yakin untuk membatalkan perubahan Anda?"
       ],
       "Are you sure you want to discard your import?": [
-        "Apakah Anda yakin ingin mengabaikan pengimporan Anda?"
+        "Apakah Anda yakin ingin membuang impor Anda?"
       ],
       "Are you sure you want to move all messages in this location to archive?": [
         "Apakah Anda yakin untuk memindahkan seluruh pesan yang terdapat pada lokasi ini ke arsip?"
@@ -5508,9 +5499,6 @@
       ],
       "Body: ": [
         "Isi: "
-      ],
-      "Breach Alert": [
-        "Peringatan Kebocoran"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Dengan menurunkan ke paket Free, Anda akan kehilangan berbagai manfaat berikut secara permanen, bahkan apabila Anda kembali meningkatkan jenis akun Anda di kemudian hari."
@@ -5579,10 +5567,10 @@
         "Buat ${ calendarsToBeCreatedCount } kalender baru"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
-        "Buat label khusus untuk menandai pesan-pesan yang diimpor, rentang waktu impor yang bersangkutan, serta folder-folder yang hendak Anda impor."
+        "Buat label untuk menandai pesan yang diimpor, rentang waktu impor yang bersangkutan, serta folder yang ingin Anda impor."
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
-        "Buat label khusus untuk menandai pesan-pesan yang diimpor, rentang waktu impor yang bersangkutan, serta label-label yang hendak Anda impor."
+        "Buat label untuk menandai pesan yang diimpor, rentang waktu impor yang bersangkutan, serta label yang ingin Anda impor."
       ],
       "Create a new contact group": [
         "Buat grup kontak baru"
@@ -5627,7 +5615,7 @@
         "Server khusus"
       ],
       "Default email application": [
-        "Aplikasi email default"
+        "Aplikasi email bawaan"
       ],
       "Disable message content search": [
         "Nonaktifkan pencarian konten pesan"
@@ -5708,7 +5696,7 @@
         "Hosting email hanya tersedia untuk domain yang Anda miliki. Pendaftaran domain melalui ${ BRAND_NAME } saat ini tidak didukung. Anda dapat meng-host email untuk domain yang terdaftar pada badan registrasi domain manapun."
       ],
       "Email is forwarded to your mailbox; your email address stays hidden.": [
-        "email yang masuk akan diteruskan menuju kotak surat Anda; alamat email asli Anda akan tetap tersembunyi."
+        "Email yang masuk akan diteruskan menuju kotak surat Anda; alamat email asli Anda akan tetap tersembunyi."
       ],
       "Email tracker protection is disabled": [
         "Perlindungan pelacak email dinonakifkan"
@@ -5780,7 +5768,7 @@
         "Untuk pesan yang lebih baru daripada ${ oldestDate }"
       ],
       "For more search results, try searching for this keyword in the content of your email messages.": [
-        "Untuk lebih banyak hasil pencarian, coba mencari untuk kata kunci ini dalam konten pesan email Anda."
+        "Untuk hasil pencarian yang lebih banyak, cobalah untuk mencari kata kunci ini pada konten email Anda."
       ],
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Teruskan pesan yang datang dari akun lainnya menuju kotak masuk akun ${ MAIL_APP_NAME } aman Anda."
@@ -5894,7 +5882,7 @@
         "Sidik jari kunci"
       ],
       "Label all imported messages as": [
-        "Labeli semua pesan terimpor sebagai"
+        "Labeli seluruh pesan yang diimpor sebagai"
       ],
       "Labels:": [
         "Label:"
@@ -6035,7 +6023,7 @@
         "Tidak ada label yang dipilih"
       ],
       "No links cleaned": [
-        "Tidak ada tautan untuk dibersihkan"
+        "Tidak ada tautan yang dibersihkan"
       ],
       "No more results found": [
         "Tidak ada hasil lainnya yang ditemukan"
@@ -6080,7 +6068,7 @@
         "Sistem kami menandai pesan ini sebagai phishing. Mohon periksa keabsahan pesan."
       ],
       "Our system flagged this message as a suspicious email. Please check that it is legitimate before clicking any links or attachments.": [
-        "Sistem kami telah menandai pesan ini sebagai email mencurigakan. Silakan diperiksa jika emailnya asli sebelum mengeklik tautan atau lampiran apa pun."
+        "Sistem kami menandai pesan ini sebagai pesan yang mencurigakan. Silakan periksa keaslian pesan ini sebelum mengeklik tautan atau lampiran apa pun."
       ],
       "password": [
         "kata sandi"
@@ -6251,13 +6239,13 @@
         "Pilih format email yang akan digunakan setiap kali Anda mengirim email ke alamat ini."
       ],
       "Select what you want to import.": [
-        "Pilih hal apa saja yang hendak Anda impor."
+        "Pilih hal-hal apa saja yang ingin Anda impor."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Pilih kalender mana saja yang akan diimpor. Untuk setiap kalender yang diimpor, sistem kami akan membuat kalender baru hingga batas jumlah kalender maksimum yang diperkenankan oleh paket Anda."
       ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
-        "Kirimkan pesan yang terenkripsi dan terlindungi oleh kata sandi kepada alamat email ${ boldText }."
+        "Kirim pesan yang terenkripsi dan terlindung kata sandi kepada alamat email ${ boldText }."
       ],
       "Sender has been blocked.": [
         "Pengirim pesan telah diblokir."
@@ -6269,7 +6257,7 @@
         "Mengirim pesan..."
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
-        "Pengiriman pesan dari alamat @pm.me hanya tersedia bagi pengguna yang menggunakan layanan berbayar. Pesan Anda akan dikirim dari alamat bawaan Anda ${ email }"
+        "Pengiriman pesan dari alamat @pm.me merupakan fitur berbayar. Pesan Anda akan dikirim dari alamat bawaan Anda ${ email }"
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Dikirim melalui layanan email aman <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
@@ -6290,7 +6278,7 @@
         "Tampilkan pesan asli"
       ],
       "SimpleLogin is a ${ BRAND_NAME } service, and your ${ BRAND_NAME_TWO } Account includes hide-my-email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
-        "SimpleLogin merupakan layanan milik ${ BRAND_NAME }, dan akun ${ BRAND_NAME_TWO } Anda meliputi perlindungan Hide My Email. Untuk mulai menyamarkan alamat email Anda, buka SimpleLogin dan buat alamat email samaran Anda."
+        "SimpleLogin merupakan layanan milik ${ BRAND_NAME }, dan akun ${ BRAND_NAME_TWO } Anda meliputi alias hide-my-email di dalamnya. Untuk mulai menyamarkan alamat email Anda, buka SimpleLogin dan hasilkan alias pertama Anda."
       ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "SimpleLogin memudahkan Anda untuk dapat membuat akun pada situs pihak ketiga yang tidak terpercaya di kala Anda tidak ingin menggunakan alamat email asli Anda."
@@ -6341,7 +6329,7 @@
         "Langganan akan segera berakhir: Aktifkan kembali paket Anda sebelum tanggal ${ byDate } untuk tetap memperoleh manfaat ${ planName } Anda. ${ reactivateLink }"
       ],
       "Temporarily unavailable. Please check back later.": [
-        "Hal yang Anda tuju saat ini sedang tidak tersedia. Mohon periksa lagi nanti."
+        "Tindakan ini untuk sementara tidak tersedia. Silakan periksa kembali di kemudian waktu."
       ],
       "Test link": [
         "Uji tautan"
@@ -6398,7 +6386,7 @@
         "Alamat ini nonaktif. Agar dapat mengirim ke alamat ini, pemiliknya harus mengaktifkan dulu alamat tersebut."
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
-        "Browser ini tidak mendukung pratinjau dokumen PDF. Mohon unduh berkas yang bersangkutan."
+        "Browser ini tidak mendukung pratinjau dokumen PDF. Silakan unduh berkas yang bersangkutan."
       ],
       "This conversation contains a scheduled message. Sending of this message will be canceled.": [
         "Percakapan ini mengandung pesan yang terjadwal. Pengiriman pesan ini akan dibatalkan."
@@ -6746,7 +6734,7 @@
         "Anda dapat memperbarui kueri pencarian Anda atau menghapusnya"
       ],
       "You can import one data type at a time.": [
-        "Anda hanya dapat mengimpor satu tipe data dalam satu waktu."
+        "Anda dapat mengimpor satu jenis data dalam satu waktu."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Anda dapat menyimpan hingga ${ MAX_CALENDARS_FREE } kalender. Mohon hapus tautan kalender bersama yang ada dan seluruh pengguna ${ BRAND_NAME } yang berbagi kalender dengan Anda sebelum membatalkan langganan ${ MAIL_SHORT_APP_NAME } Anda."
@@ -6791,7 +6779,7 @@
         "Anda memiliki langganan ${ planTitle } yang berada dalam masa uji coba. Tidak ada pembayaran yang diperlukan untuk saat ini. Langganan Anda akan diperbarui secara otomatis pada akhir masa uji coba."
       ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
-        "Anda belum menulis subjek email. Apakah Anda yakin untuk tetap mengirim email ini?"
+        "Anda belum memberikan subjek apa pun pada email Anda. Apakah Anda ingin tetap mengirim email ini?"
       ],
       "You have reached 100% of your storage capacity. Consider freeing up some space or upgrading your account with additional storage space to compose new messages.": [
         "Anda telah mencapai batas kapasitas penyimpanan Anda. Silakan kosongkan ruang penyimpanan Anda atau tingkatkan akun Anda ke paket dengan kapasitas penyimpanan yang lebih besar untuk menulis pesan baru."
@@ -9107,12 +9095,6 @@
       "${ Filter.Name } created": [
         "${ Filter.Name } dibuat"
       ],
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } telah dinonaktifkan"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } telah diaktifkan"
-      ],
       "Block removed": [
         "Blokir dicabut"
       ],
@@ -9716,9 +9698,6 @@
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel saat ini sedang **aktif** dan melindungi akun Anda."
-      ],
-      "Your information was found in at least one data breach. Turn on Breach Alert to view details and take action. ${ learnMoreLink }": [
-        "Informasi mengenai diri Anda ditemukan pada setidaknya satu insiden kebocoran data. Aktifkan Peringatan Kebocoran untuk melihat rincian kebocoran ini dan mengambil tindakan yang sesuai. ${ learnMoreLink }"
       ]
     },
     "Select files": {
@@ -10240,14 +10219,11 @@
       ]
     },
     "Spotlight": {
-      "Breach Alerts": [
-        "Peringatan Kebocoran"
-      ],
       "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
         "Luncurkan ${ MAIL_APP_NAME } secara mudah langsung dari desktop Anda."
       ],
       "Create hide-my-email aliases and keep track of them here.": [
-        "Buat alias hide-my-email dan lihat semuanya di sini."
+        "Hasilkan alias hide-my-email dan lacak seluruh alias Anda di sini."
       ],
       "Email tracking protection": [
         "Perlindungan pelacak email"
@@ -10270,9 +10246,6 @@
       "Schedule send": [
         "Jadwalkan pengiriman"
       ],
-      "Turn on breach alerts to monitor potential data leaks. View details and take action to protect yourself.": [
-        "Aktifkan notifikasi kebocoran untuk memonitor potensi kebocoran data yang ada. Lihat rincian laporan kami dan ambil tindakan untuk melindungi diri Anda."
-      ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Kami kini memuat gambar secara default dan memblokir pengirim untuk dapat melacak Anda. Hal ini dapat diubah di ${ settingsLink }."
       ],
@@ -10286,9 +10259,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "Membatalkan langganan Anda, silakan tunggu"
-      ],
-      "Downgrading your account, please wait": [
-        "Menurunkan akun anda, harap tunggu"
       ]
     },
     "Status": {
@@ -10993,9 +10963,6 @@
       "Block sender": [
         "Blokir pengirim"
       ],
-      "Breach Alert": [
-        "Peringatan Kebocoran"
-      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Batalkan langganan ${ MAIL_SHORT_APP_NAME }"
       ],
@@ -11547,9 +11514,6 @@
       ],
       "Start import process": [
         "Mulai proses impor"
-      ],
-      "Stay safer online": [
-        "Tetap aman saat online"
       ],
       "Storage capacity warning": [
         "Peringatan kapasitas penyimpanan"

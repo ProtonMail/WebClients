@@ -1025,9 +1025,6 @@
       "Unlock": [
         "Desbloquear"
       ],
-      "Unlock Breach Report": [
-        "Desbloquear reporte de vulneraciones"
-      ],
       "Unlock data": [
         "Desbloquear datos"
       ],
@@ -3206,9 +3203,6 @@
       ],
       "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
         "Para borrar el pie de página de ${ MAIL_APP_NAME }, mejore y desbloquee aún más funciones premium."
-      ],
-      "To view the full report including personalized recommendations, upgrade to a paid plan.": [
-        "Para ver el reporte completo, incluida las recomendaciones, mejore a un plan de pago."
       ],
       "Track the status and activity of your referrals.": [
         "Rastree el estado y actividad de sus referencias."
@@ -8105,9 +8099,6 @@
       "Why?": [
         "¿Por qué?"
       ],
-      "Will soon be available.": [
-        "Pronto estará disponible"
-      ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "Con un plan Business o Enterprise, puede comprar ${ boldDedicatedServers } para su organización y configurar ${ boldGateways } para controlar cuáles usuarios pueden acceder a ellas."
       ],
@@ -10090,17 +10081,14 @@
       ]
     },
     "Log preference": {
-      "Enable ${ PROTON_SENTINEL_NAME }": [
-        "Activar ${ PROTON_SENTINEL_NAME }"
+      "Enable ${ reason }": [
+        "Activar ${ reason }"
       ],
       "Enable advanced logs": [
         "Activar registros avanzados"
       ],
       "Enable authentication logs": [
         "Activar registros de autenticación"
-      ],
-      "Enable Breach Alert": [
-        "Activar la alerta de vulneraciones"
       ]
     },
     "Mail import summary": {
@@ -11442,17 +11430,23 @@
       "${ Filter.Name } created": [
         "${ Filter.Name } creado"
       ],
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } ha sido desactivado."
+      "${ reason } has been disabled": [
+        "${ reason } se ha desactivado"
       ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } ha sido activado."
+      "${ reason } has been enabled": [
+        "${ reason } se ha activado"
       ],
       "A disabled address cannot be default": [
         "Una dirección desactivada no puede ser principal"
       ],
       "An external address cannot be default": [
         "Una dirección externa no puede ser principal"
+      ],
+      "Dark Web Monitoring has been disabled": [
+        "El monitoreo de Dark Web se ha desactivado"
+      ],
+      "Dark Web Monitoring has been enabled": [
+        "El monitoreo de Dark Web se ha activado"
       ],
       "Invalid code": [
         "Código inválido"
@@ -12849,8 +12843,8 @@
       ]
     },
     "Security Center - Info": {
-      "Your information was found in at least one data breach. Turn on Breach Alert to view details and take action. ${ learnMoreLinkBreach }": [
-        "Su información fue encontrada en al menos una vulneración de datos. Encienda la Alerta de vulneraciones para ver los detalles y tomar acciones. ${ learnMoreLinkBreach }"
+      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLinkBreach }": [
+        "Su información fue encontrada en al menos una vulneración. Active ${ DARK_WEB_MONITORING_NAME } para ver los detalles y tomar acciones. ${ learnMoreLinkBreach }"
       ]
     },
     "Select file": {
@@ -13538,9 +13532,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "Estamos cancelando su suscripción. Espere."
-      ],
-      "Downgrading your account, please wait": [
-        "Espere, estamos modificando su cuenta."
       ]
     },
     "Step in filter modal": {
@@ -13801,6 +13792,156 @@
     "Subscription price": {
       "For": [
         "Al"
+      ]
+    },
+    "Subscription reminder": {
+      "${ BRAND_NAME } was targeted by Russia in one of the most aggressive censorship campaigns in recent memory, and our team fought back.": [
+        "${ BRAND_NAME } fue atacado por Rusia en una de las campañas de censura más agresivas en los últimos tiempos y nuestro equipo contraatacó."
+      ],
+      "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
+        "Los ingresos de ${ BRAND_NAME } solo provienen de las suscripciones de sus usuarios. Su ayuda nos permite mantenernos independientes, avanzar en nuestra misión de hacer que la privacidad en línea sea lo primero y seguir apoyando a activistas y organizaciones que luchan por la privacidad y la libertad."
+      ],
+      "${ dayDiff } day left": [
+        "${ dayDiff } día restante",
+        "${ dayDiff } días restantes"
+      ],
+      "${ MAIL_APP_NAME } desktop app": [
+        "App de escritorio ${ MAIL_APP_NAME }"
+      ],
+      "${ planMaxSpace } total storage": [
+        "${ planMaxSpace } de almacenamiento total"
+      ],
+      "10 email addresses": [
+        "10 direcciones de correo electrónico"
+      ],
+      "A direct contribution to our mission": [
+        "Una contribución directa a nuestra misión"
+      ],
+      "After ${ BRAND_NAME } got blocked in Iran during protests, our customer support team worked to get our VPN app directly into people's hands.": [
+        "Después de que ${ BRAND_NAME } fue bloqueado en Irán durante las protestas, nuestro equipo de atención al cliente trabajó para brindar nuestra app VPN directamente a las manos de la gente."
+      ],
+      "After privacy and free speech were threatened in Hong Kong, we directly supported local civil rights organizations.": [
+        "Después de que la privacidad y la libertad de expresión sean amenazadas en Hong Kong, apoyamos directamente a organizaciones de derechos civiles locales."
+      ],
+      "By canceling your Mail Plus subscription, your storage will decrease from **${ planMaxSpace }** to **1 GB** for Mail, and **1 GB** for Drive. You will also lose any storage bonuses earned previously.": [
+        "Al cancelar su suscripción Mail Plus, su almacenamiento se reducirá de **${ planMaxSpace }** a **1 GB** para Mail, y **1 GB** para Drive. También perderá los bonos de almacenamiento obtenidos previamente."
+      ],
+      "By canceling your Mail Plus subscription, your storage will decrease from **${ planMaxSpace }** to **1 GB** for Mail, and **5 GB** for Drive. You will also lose any storage bonuses earned previously.": [
+        "Al cancelar su suscripción Mail Plus, su almacenamiento se reducirá de **${ planMaxSpace }** a **1 GB** para Mail, y **5 GB** para Drive. También perderá los bonos de almacenamiento obtenidos previamente."
+      ],
+      "By canceling your Mail Plus subscription, your storage will decrease from **${ planMaxSpace }** to **500 MB** for Mail, and **1 GB** for Drive. You will also lose any storage bonuses earned previously.": [
+        "Al cancelar su suscripción Mail Plus, su almacenamiento se reducirá de **${ planMaxSpace }** a **500 MB** para Mail, y **1 GB** para Drive. También perderá los bonos de almacenamiento obtenidos previamente."
+      ],
+      "By canceling your Mail Plus subscription, your storage will decrease from **${ planMaxSpace }** to **500 MB** for Mail, and **5 GB** for Drive. You will also lose any storage bonuses earned previously.": [
+        "Al cancelar su suscripción Mail Plus, su almacenamiento se reducirá de **${ planMaxSpace }** a **500 MB** para Mail, y **5 GB** para Drive. También perderá los bonos de almacenamiento obtenidos previamente."
+      ],
+      "By downgrading your account, you will also lose storage space": [
+        "Al degradar su cuenta, también perderá espacio de almacenamiento"
+      ],
+      "By downgrading your account, you will lose access to these important features": [
+        "Al degradar su cuenta, perderá acceso a estas importantes funciones"
+      ],
+      "Calendar sharing": [
+        "Calendarios compartidos"
+      ],
+      "Cancel subscription": [
+        "Cancelar suscripción"
+      ],
+      "Cancel subscription?": [
+        "¿Cancelar suscripción?"
+      ],
+      "Close": [
+        "Cerrar"
+      ],
+      "Custom schedule send and snooze times": [
+        "Programación de envío y tiempos de pausa personalizados"
+      ],
+      "Have a question?": [
+        "¿Tiene dudas?"
+      ],
+      "Helping activists in Hong Kong": [
+        "Ayuda a activistas en Hong Kong"
+      ],
+      "I still want to cancel": [
+        "Aún quiero cancelar"
+      ],
+      "If you exceed your free Drive storage quota:": [
+        "Si excede su cuota de almacenamiento Drive gratuito:"
+      ],
+      "If you exceed your free Mail storage quota:": [
+        "Si excede su cuota gratuita de almacenamiento de Mail:"
+      ],
+      "Keep Mail Plus": [
+        "Mantener Mail Plus"
+      ],
+      "Learn more about our impact": [
+        "Más información acerca de nuestro impacto"
+      ],
+      "Let us remind you of everything Mail Plus can do": [
+        "Permítanos recordarle todo lo que Mail Plus puede hacer"
+      ],
+      "Mail Plus doesn't just provide extra storage. It lets you manage your emails faster, customize your inbox and email addresses, and access the desktop app.": [
+        "Mail Plus no solo provee almacenamiento adicional. Le permite gestionar sus correos electrónicos más rápido, personalizar su bandeja de entrada y direcciones de correo, además, acceder a la app de escritorio."
+      ],
+      "Our fight against censorship in Russia": [
+        "Nuestra lucha contra la censura en Rusia"
+      ],
+      "Priority support": [
+        "Soporte prioritario"
+      ],
+      "Read the story": [
+        "Lea la historia"
+      ],
+      "Resubscribe": [
+        "Suscribirse otra vez"
+      ],
+      "Resubscribe to restore access to Mail Plus features.": [
+        "Suscríbase de nuevo para restaurar el acceso a las funciones de Mail Plus"
+      ],
+      "Subscription canceled": [
+        "Suscripción cancelada"
+      ],
+      "Unblocking internet access in Iran": [
+        "Desbloqueo al acceso a internet en Irán"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Carpetas, etiquetas y filtros ilimitados"
+      ],
+      "Watch the interview": [
+        "Vea la entrevista"
+      ],
+      "When you cancel, you will lose access to": [
+        "Al cancelar, perderá acceso a"
+      ],
+      "Yearly free storage bonuses": [
+        "Bono de almacenamiento gratuito al año"
+      ],
+      "You **won't be able to add any new files**": [
+        "**No podrá añadir archivos** nuevos"
+      ],
+      "You **won't be able to backup photos** from your devices": [
+        "**No podrá hacer copias de seguridad de sus fotos** desde sus dispositivos"
+      ],
+      "You **won't be able to send emails** with attachments": [
+        "**No podrá enviar correos electrónicos** con archivos adjuntos"
+      ],
+      "You still have ${ expiryDate } on your Mail Plus plan. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling.": [
+        "Aún tiene ${ expiryDate } en su plan de Mail Plus. Añadiremos los créditos por el tiempo restante a su cuenta de ${ BRAND_NAME }. Asegúrese de no exceder los límites del plan gratuito antes de cancelar."
+      ],
+      "Your **calendar will be frozen**": [
+        "Su **calendario será congelado**"
+      ],
+      "Your devices will **stop syncing**": [
+        "Sus dispositivos **dejarán de sincronizar**"
+      ],
+      "Your inbox will **stop receiving new emails**": [
+        "Su bandeja de entrada **dejará de recibir correos electrónicos** nuevos"
+      ],
+      "Your own custom email domain": [
+        "Su propio dominio de correo electrónico personalizado"
+      ],
+      "Your own short @pm.me email alias": [
+        "Su alias de correo electrónico @pm.me"
       ]
     },
     "Subscription renewal state": {
@@ -14402,9 +14543,6 @@
       "Block trackers and malware": [
         "Bloquee rastreadores y malware"
       ],
-      "Breach Alert": [
-        "Alerta de vulneraciones"
-      ],
       "Bridge for ${ platform }": [
         "Bridge para ${ platform }"
       ],
@@ -14529,14 +14667,14 @@
       "Currency": [
         "Moneda"
       ],
-      "Custom branding": [
-        "Marca personalizada"
-      ],
       "Custom filters": [
         "Filtros personalizados"
       ],
       "Custom selection of users": [
         "Selección personalizada de usuarios"
+      ],
+      "Customization": [
+        "Personalización"
       ],
       "Customize and confirm": [
         "Personalizar y confirmar"
@@ -14925,9 +15063,6 @@
       "OpenVPN configuration files": [
         "Archivos de configuración de OpenVPN"
       ],
-      "Organization appearance": [
-        "Apariencia de la organización"
-      ],
       "Organization filters": [
         "Filtros de la organización"
       ],
@@ -15279,6 +15414,12 @@
       ],
       "WireGuard configuration": [
         "Configuración de WireGuard"
+      ],
+      "You have no open alerts": [
+        "No tiene alertas pendientes"
+      ],
+      "You have no resolved alerts": [
+        "No tiene alertas resueltas"
       ],
       "Your calendar link": [
         "Enlace a su calendario"

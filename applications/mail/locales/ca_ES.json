@@ -623,6 +623,9 @@
       "Mark as read": [
         "Marca com a llegit"
       ],
+      "Mark as resolved": [
+        "Marca com a resolt"
+      ],
       "Mark as unread": [
         "Marca com a no llegit"
       ],
@@ -1179,10 +1182,10 @@
       "Upgrade": [
         "Millora"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Millora ara"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Millora ara"
       ],
       "Upload picture": [
@@ -1657,6 +1660,9 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continua utilitzant ${ MAIL_APP_NAME }."
+      ],
+      "Continue using ${ planTitle }": [
+        "Continua utilitzant ${ planTitle }"
       ]
     },
     "Calendar attachment tooltip": {
@@ -4694,6 +4700,9 @@
       "No credit card required.": [
         "No es requereix targeta de crèdit."
       ],
+      "Start free trial": [
+        "Inicieu la prova gratuïta"
+      ],
       "Try the app-new desktop app": [
         "Provi la nova aplicació d'escriptori"
       ],
@@ -6188,6 +6197,9 @@
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Seleccioneu quina adreça o adreces de correu electrònic cal afegir a ${ groupName }."
+      ],
+      "Please try again in a few moments": [
+        "Torneu-ho a intentar en uns instants."
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Torneu-ho a provar amb un mètode de pagament diferent o poseu-vos en contacte amb el vostre banc."
@@ -9153,12 +9165,6 @@
       "${ Filter.Name } created": [
         "S'ha creat ${ Filter.Name }"
       ],
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } s'ha desactivat"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } s'ha habilitat"
-      ],
       "Block removed": [
         "S'ha esborrat el bloqueig."
       ],
@@ -10337,11 +10343,6 @@
         "Ara podeu programar els vostres missatges per tal que s'enviïn més tard"
       ]
     },
-    "State": {
-      "Downgrading your account, please wait": [
-        "S'està passant a un pla inferior. Espereu un moment."
-      ]
-    },
     "Status": {
       "This message is from a mailing list.": [
         "Aquest missatge és d'una llista de correus."
@@ -11205,6 +11206,9 @@
       ],
       "Deleting contacts": [
         "Eliminant contactes"
+      ],
+      "Details": [
+        "Detalls"
       ],
       "Don't give spam a chance": [
         "No li doneu cap oportunitat al correu brossa."

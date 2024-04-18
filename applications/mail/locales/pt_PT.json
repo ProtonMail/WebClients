@@ -1176,11 +1176,11 @@
       "Upgrade": [
         "Actualizar"
       ],
-      "Upgrade now": [
-        "Actualizar agora"
-      ],
       "Upgrade Now": [
         "Atualizar agora"
+      ],
+      "Upgrade now": [
+        "Actualizar agora"
       ],
       "Upload picture": [
         "Enviar imagem"
@@ -1590,6 +1590,9 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continuar a utilizar ${ MAIL_APP_NAME }."
+      ],
+      "Continue using ${ planTitle }": [
+        "Continuar a utilizar ${ planTitle }"
       ]
     },
     "Calendar attachment tooltip": {
@@ -8783,12 +8786,6 @@
       "${ Filter.Name } created": [
         "${ Filter.Name } criado"
       ],
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } foi desativado"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } foi ativado"
-      ],
       "Block removed": [
         "Bloqueio removido"
       ],
@@ -9851,9 +9848,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "A cancelar a sua subscrição, por favor aguarde"
-      ],
-      "Downgrading your account, please wait": [
-        "Aguarde. Estamos a modificar a sua conta."
       ]
     },
     "Status": {
@@ -10467,6 +10461,12 @@
       ],
       "Account security": [
         "Segurança da conta"
+      ],
+      "Action all conversations": [
+        "Acção para todas as conversas"
+      ],
+      "Action all messages": [
+        "Acção para todas as mensagens"
       ],
       "Add contact group name": [
         "Adicionar nome do grupo de contactos"

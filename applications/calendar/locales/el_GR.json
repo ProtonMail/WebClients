@@ -309,6 +309,9 @@
       "Hide affected calendars": [
         "Απόκρυψη επηρεαζόμενων ημερολογίων"
       ],
+      "Hide busy times": [
+        "Απόκρυψη ωρών αιχμής"
+      ],
       "Hide time zones": [
         "Απόκρυψη ζωνών ώρας"
       ],
@@ -386,6 +389,9 @@
       ],
       "Manage labels": [
         "Διαχείριση ετικετών"
+      ],
+      "Mark as resolved": [
+        "Σήμανση ως επιλυμένου"
       ],
       "Mark for deletion": [
         "Σήμανση για διαγραφή"
@@ -519,6 +525,9 @@
       "Report a problem": [
         "Αναφορά προβλήματος"
       ],
+      "Request a call": [
+        "Ζητήστε Τηλεφωνική Επικοινωνία"
+      ],
       "Request a feature": [
         "Ζητήστε μια δυνατότητα"
       ],
@@ -587,6 +596,9 @@
       ],
       "Show affected calendars": [
         "Εμφάνιση επηρεαζόμενων ημερολογίων"
+      ],
+      "Show busy times": [
+        "Εμφάνιση ωρών αιχμής"
       ],
       "Show less": [
         "Εμφάνιση λιγότερων"
@@ -663,11 +675,11 @@
       "Upgrade": [
         "Αναβάθμιση"
       ],
-      "Upgrade now": [
-        "Αναβάθμιση τώρα"
-      ],
       "Upgrade Now": [
         "Αναβαθμίστε Τώρα"
+      ],
+      "Upgrade now": [
+        "Αναβάθμιση τώρα"
       ],
       "Upload picture": [
         "Ανέβασμα εικόνας"
@@ -698,6 +710,9 @@
       ],
       "View": [
         "Προβολή"
+      ],
+      "View all reports": [
+        "Προβολή όλων των αναφορών"
       ],
       "View contact details": [
         "Προβολή στοιχείων επαφής"
@@ -1097,6 +1112,12 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Συνεχίστε να χρησιμοποιείτε ${ MAIL_APP_NAME }."
+      ],
+      "Continue using ${ planTitle }": [
+        "Συνεχίστε να χρησιμοποιείτε ${ planTitle }"
+      ],
+      "Continue your subscription": [
+        "Συνέχιση της συνδρομής σας"
       ]
     },
     "Calendar access select label": {
@@ -2344,6 +2365,9 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "Το 2FA προσθέτει ένα επιπλέον επίπεδο ασφαλείας, αποτρέποντας τη μη εξουσιοδοτημένη πρόσβαση."
       ],
+      "Availability unknown": [
+        "'Αγνωστη διαθεσιμότητα"
+      ],
       "Boost efficiency and track your time by color-coding events by category or your energy levels. Get this and much more with a paid plan.": [
         "Ενισχύστε την αποδοτικότητα και παρακολουθήστε το χρόνο σας με χρωματική κωδικοποίηση εκδηλώσεων ανά κατηγορία ή ανά τα επίπεδα ενέργειάς σας. Αποκτήστε αυτό και πολλά άλλα με ένα πλάνο επί πληρωμή."
       ],
@@ -2367,6 +2391,9 @@
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Φαίνεται ότι η λίστα επαφών που εισάγετε περιέχει κάποιες ομάδες. Παρακαλούμε εξετάστε τον τρόπο εισαγωγής αυτών των ομάδων."
+      ],
+      "Loading availability": [
+        "Φόρτωση διαθεσιμότητας"
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Γίνεται συγχώνευση επαφών... Αυτή η διαδικασία ίσως πάρει μερικά λεπτά. Όταν ολοκληρωθεί, μπορείτε να κλείσετε αυτό το παράθυρο."
@@ -4437,6 +4464,9 @@
       "Large imports can take several days.": [
         "Οι μεγάλες εισαγωγές μπορεί να πάρουν αρκετές ημέρες."
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Μάθετε πώς μπορείτε να ${ staySaferOnlineLink }"
+      ],
       "Learn more": [
         "Μάθετε περισσότερα"
       ],
@@ -4451,6 +4481,9 @@
       ],
       "Loading ${ appName }": [
         "Φόρτωση ${ appName }"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Φόρτωση ημερολογίου, παρακαλούμε περιμένετε. Θα μεταφερθείτε στην πλατφόρμα προγραμματισμού Calendly σε μια νέα καρτέλα."
       ],
       "Loading event": [
         "Γίνεται φόρτωση εκδήλωσης"
@@ -4530,6 +4563,9 @@
       "Organization size": [
         "Μέγεθος οργανισμού"
       ],
+      "Other users within your organization will see your busy slots. No event details are shared.": [
+        "Οι άλλοι χρήστες εντός του οργανισμού σας θα βλέπουν τις απασχολημένες υποδοχές σας. Δεν κοινοποιούνται λεπτομέρειες συμβάντος."
+      ],
       "password": [
         "κωδικός πρόσβασης"
       ],
@@ -4575,6 +4611,9 @@
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Παρακαλούμε επιλέξτε ποια διεύθυνση ή διευθύνσεις email θα προσθέσετε στην ομάδα ${ groupName }."
+      ],
+      "Please try again in a few moments": [
+        "Παρακαλούμε δοκιμάστε ξανά σε λίγο"
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Δοκιμάστε ξανά χρησιμοποιώντας διαφορετικό τρόπο πληρωμής ή επικοινωνήστε με την τράπεζά σας."
@@ -4653,6 +4692,9 @@
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Πρέπει να αποκρυπτογραφήσουμε τοπικά τις επαφές σας προτού μπορέσετε να τις εξάγετε. Στο τέλος της διαδικασίας, θα δημιουργηθεί ένα αρχείο VCF και θα μπορείτε να το κατεβάσετε."
+      ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "Οι εκτεθειμένες πληροφορίες διέρρευσαν από μια υπηρεσία τρίτου μέρους. Οι πληροφορίες του λογαριασμού σας ${ BRAND_NAME } παραμένουν ασφαλείς και κρυπτογραφημένες. ${ learnMoreLink }"
       ],
       "The following participants cannot be notified about your changes:": [
         "Οι παρακάτω συμμετέχοντες δεν μπορούν να ειδοποιηθούν για τις αλλαγές σας:"
@@ -4780,6 +4822,9 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Θα σας ανακατευθύνουμε στο PayPal, σε μια νέα καρτέλα προγράμματος περιήγησης, για να ολοκληρώσετε αυτήν τη συναλλαγή. Εάν έχετε ενεργοποιημένο τον αποκλεισμό αναδυόμενων παραθύρων, παρακαλώ απενεργοποιήστε τον για να συνεχίσετε."
       ],
+      "We'll email you once import is complete.": [
+        "Θα σας στείλουμε μήνυμα ηλεκτρονικού ταχυδρομείου μόλις ολοκληρωθεί η εισαγωγή."
+      ],
       "We'll notify you when the import is done.": [
         "Θα σας ειδοποιήσουμε όταν ολοκληρωθεί η εισαγωγή."
       ],
@@ -4852,6 +4897,9 @@
       "You can check the progress ${ importProgressLink }.": [
         "Μπορείτε να δείτε την πρόοδο ${ importProgressLink }."
       ],
+      "You can close the tab or browser in the meantime.": [
+        "Στο μεταξύ, μπορείτε να κλείσετε την καρτέλα ή το πρόγραμμα περιήγησης."
+      ],
       "You can import one data type at a time.": [
         "Μπορεί να εισαχθεί ένας τύπος δεδομένων τη φορά."
       ],
@@ -4871,6 +4919,12 @@
       ],
       "You cannot undo this action.": [
         "Δεν μπορείτε να αναιρέσετε αυτήν την ενέργεια."
+      ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "Έχετε μια δοκιμαστική συνδρομή ${ planTitle }. Αν θέλετε να συνεχίσετε τη συνδρομή σας μετά τη δοκιμαστική περίοδο, προσθέστε έναν τρόπο πληρωμής."
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "Έχετε μια δοκιμαστική συνδρομή ${ planTitle }. Δεν απαιτείται πληρωμή αυτήν τη στιγμή. Η συνδρομή σας θα ανανεωθεί αυτόματα στο τέλος της δοκιμαστικής περιόδου."
       ],
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
         "Έχετε επανενεργοποιήσει τα κλειδιά και οι εκδηλώσεις που συνδέονται με τα ακόλουθα ημερολόγια μπορούν τώρα να αποκρυπτογραφηθούν."
@@ -4950,6 +5004,12 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Τα δεδομένα σας είναι έτοιμα για εισαγωγή από ${ importedEmailAddressStrong } στο λογαριασμό σας στο ${ BRAND_NAME }."
       ],
+      "Your email address and password were leaked:": [
+        "Η διεύθυνση ηλεκτρονικού ταχυδρομείου και ο κωδικός πρόσβασής σας διέρρευσαν:"
+      ],
+      "Your email address was exposed:": [
+        "Η διεύθυνση ηλεκτρονικού ταχυδρομείου σας διέρρευσε:"
+      ],
       "Your email will only be used for this one-time verification.": [
         "Το email σας θα χρησιμοποιηθεί μόνο για αυτή την εφάπαξ επαλήθευση."
       ],
@@ -4959,11 +5019,17 @@
       "Your files will be encrypted and then saved": [
         "Τα αρχεία σας θα κρυπτογραφηθούν και στη συνέχεια θα αποθηκευτούν"
       ],
+      "Your information was found on ${ displayedDate }": [
+        "Οι πληροφορίες σας βρέθηκαν στις ${ displayedDate }"
+      ],
       "Your login information will not be saved after the import is completed.": [
         "Τα στοιχεία σύνδεσής σας δεν θα αποθηκευτούν μετά την ολοκλήρωση της εισαγωγής."
       ],
       "Your next billing date is ${ renewalTime }.": [
         "Η επόμενη ημερομηνία χρέωσης είναι ${ renewalTime }."
+      ],
+      "Your password was leaked:": [
+        "Ο κωδικός πρόσβασής σας διέρρευσε:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ο αριθμός τηλεφώνου σας θα χρησιμοποιηθεί μόνο για αυτή την εφάπαξ επαλήθευση."
@@ -5102,6 +5168,9 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Προσωρινά μη διαθέσιμο. Παρακαλούμε ελέγξτε ξανά αργότερα.)"
+      ],
+      "Access to my events": [
+        "Πρόσβαση στις εκδηλώσεις μου"
       ],
       "Add email address": [
         "Προσθήκη διεύθυνσης E-mail"
@@ -5464,6 +5533,9 @@
       "Select your plan": [
         "Επιλέξτε το πλάνο σας"
       ],
+      "Show others when I'm busy": [
+        "Εμφάνιση σε άλλους όταν είμαι απασχολημένος"
+      ],
       "Show week numbers": [
         "Εμφάνιση αριθμών εβδομάδων"
       ],
@@ -5625,6 +5697,9 @@
       ],
       "Request an invite": [
         "Ζητήστε μια πρόσκληση"
+      ],
+      "stay safer online": [
+        "παραμείνετε πιο ασφαλείς στο διαδίκτυο"
       ],
       "What’s this?": [
         "Τι είναι αυτό;"
@@ -6779,12 +6854,6 @@
       ]
     },
     "Notification": {
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } έχει απενεργοποιηθεί"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } έχει ενεργοποιηθεί"
-      ],
       "Contact group created": [
         "Η ομάδα επαφών δημιουργήθηκε"
       ],
@@ -7413,6 +7482,9 @@
       ]
     },
     "Security Center - Info": {
+      "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
+        "Λάβετε ειδοποίηση εάν ο κωδικός πρόσβασής σας ή άλλα δεδομένα διέρρευσαν από υπηρεσία τρίτου μέρους. ${ learnMoreLink }"
+      ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Η πρωτοποριακή μας λύση ασφάλειας με γνώμονα την τεχνητή νοημοσύνη, σχεδιασμένη για χρήστες που αναζητούν αυξημένη προστασία για τους λογαριασμούς τους. ${ learnMoreLink }"
       ],
@@ -7911,9 +7983,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "Η συνδρομή σας ακυρώνεται, παρακαλούμε περιμένετε"
-      ],
-      "Downgrading your account, please wait": [
-        "Γίνεται υποβάθμιση του λογαριασμού σας, παρακαλώ περιμένετε"
       ]
     },
     "Storage": {
@@ -8602,6 +8671,9 @@
       "Deleting contacts": [
         "Διαγραφή επαφών"
       ],
+      "Details": [
+        "Λεπτομέρειες"
+      ],
       "Downgrade account": [
         "Υποβάθμιση λογαριασμού"
       ],
@@ -8713,6 +8785,9 @@
       ],
       "Night theme": [
         "Σκούρο θέμα"
+      ],
+      "No breaches detected": [
+        "Δεν εντοπίστηκαν παραβιάσεις"
       ],
       "Notes": [
         "Σημειώσεις"
@@ -8923,6 +8998,9 @@
       ],
       "Your calendar link": [
         "Ο σύνδεσμος του ημερολογίου σας"
+      ],
+      "Your exposed information": [
+        "Οι εκτεθειμένες πληροφορίες σας"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Η δωρεάν δοκιμή του Mail Plus λήγει στις ${ textDate }"

@@ -2895,6 +2895,9 @@
       "Only the people with the link and the password can access this file.": [
         "Samo osobe s poveznicom i lozinkom mogu pristupiti ovoj datoteci."
       ],
+      "Owner": [
+        "Vlasnik"
+      ],
       "Paused": [
         "Pauzirano"
       ],
@@ -3815,12 +3818,6 @@
       "\"${ name }\" moved to trash": [
         "\"${ name }\" premješten u Otpad"
       ],
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } je onemogućen."
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } je omogućen."
-      ],
       "All items will soon be permanently deleted from trash": [
         "Sve stavke će uskoro biti trajno izbrisane iz otpada"
       ],
@@ -4265,11 +4262,6 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Standardna cijena ${ amount } za 30 mjeseci"
-      ]
-    },
-    "State": {
-      "Downgrading your account, please wait": [
-        "Snižavanje statusa vašeg računa, molimo pričekajte"
       ]
     },
     "Storage": {

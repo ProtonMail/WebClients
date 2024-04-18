@@ -998,9 +998,6 @@
       "Unlock": [
         "Разблокировать"
       ],
-      "Unlock Breach Report": [
-        "Разблокировать отчет об утечке"
-      ],
       "Unlock data": [
         "Разблокировать данные"
       ],
@@ -1654,6 +1651,9 @@
       "Continue using ${ MAIL_APP_NAME }.": [
         "Продолжить, используя ${ MAIL_APP_NAME }."
       ],
+      "Continue using ${ planTitle }": [
+        "Продолжить, используя ${ planTitle }"
+      ],
       "Copy": [
         "Копировать"
       ],
@@ -2268,7 +2268,7 @@
         "Барбадос"
       ],
       "Belarus": [
-        "Белоруссия"
+        "Беларусь"
       ],
       "Belgium": [
         "Бельгия"
@@ -3151,9 +3151,6 @@
       ],
       "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
         "Для удаления нижнего колонтитула ${ MAIL_APP_NAME } обновите тариф и разблокируйте ещё больше премиум-функций."
-      ],
-      "To view the full report including personalized recommendations, upgrade to a paid plan.": [
-        "Чтобы просмотреть полный отчет, включая персональные рекомендации, улучшите до платного тарифа."
       ],
       "Track the status and activity of your referrals.": [
         "Отлеживайте состояние и активность ваших рефералов."
@@ -9846,9 +9843,6 @@
       ]
     },
     "Log preference": {
-      "Enable ${ PROTON_SENTINEL_NAME }": [
-        "Включите ${ PROTON_SENTINEL_NAME }"
-      ],
       "Enable advanced logs": [
         "Включить расширенное журналирование"
       ],
@@ -11230,12 +11224,6 @@
     "Notification": {
       "${ Filter.Name } created": [
         "Фильтр ${ Filter.Name } создан"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } был отключен"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } был включен"
       ],
       "A disabled address cannot be default": [
         "Отключённый адрес не может быть адресом по умолчанию"
@@ -13100,9 +13088,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "Отмена подписки, подождите"
-      ],
-      "Downgrading your account, please wait": [
-        "Ваш аккаунт переходит на более дешевую версию, пожалуйста, подождите"
       ]
     },
     "Step in filter modal": {

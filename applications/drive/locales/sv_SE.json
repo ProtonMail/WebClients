@@ -442,9 +442,6 @@
       "Manage link": [
         "Hantera länk"
       ],
-      "Mark as open": [
-        "Markera som öppen"
-      ],
       "Mark as resolved": [
         "Markera som löst"
       ],
@@ -2151,9 +2148,6 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA lägger till ett extra säkerhetslager som förhindrar obehörig åtkomst."
       ],
-      "Breach alerts and reports are available with a paid plan. Upgrade for immediate access.": [
-        "Intrångsvarningar och rapporter är tillgängliga med ett betalt paket. Uppgradera för omedelbar åtkomst."
-      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Dekrypterar kontakter… Detta kan ta några minuter. När processen är klar kommer du att kunna ladda ner filen med alla dina kontakter exporterade."
       ],
@@ -2207,9 +2201,6 @@
       ],
       "Your account and data recovery methods are set.": [
         "Ditt konto och dina dataåterställningsmetoder är inställda."
-      ],
-      "Your personal data was leaked by an online service in a data breach. View full details and get recommended actions.": [
-        "Dina personuppgifter läcktes av en onlinetjänst i ett dataintrång. Visa alla detaljer och få rekommenderade åtgärder."
       ]
     },
     "description": {
@@ -3911,9 +3902,6 @@
       "Billing cycle: ${ text }": [
         "Faktureringsperiod: ${ text }"
       ],
-      "Breach Alert": [
-        "Intrångsvarning"
-      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Genom att nedgradera till ett gratiskonto kommer du permanent att förlora dessa fördelar, även om du uppgraderar igen i framtiden."
       ],
@@ -4502,6 +4490,9 @@
       "Organization size": [
         "Organisationens storlek"
       ],
+      "Owner": [
+        "Ägare"
+      ],
       "password": [
         "lösenord"
       ],
@@ -4510,6 +4501,9 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Betalningar skyddas med TLS-kryptering och Schweiziska integritetslagar."
+      ],
+      "Pending": [
+        "Väntande"
       ],
       "Permanently delete all files in your locked drive": [
         "Permanent radera alla filer på din låsta lagringsenhet"
@@ -5059,6 +5053,9 @@
       ],
       "Yesterday": [
         "Igår"
+      ],
+      "you": [
+        "du"
       ],
       "You already have a free account": [
         "Du har redan ett gratis konto"
@@ -6003,6 +6000,11 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Din prenumeration har upphört. ${ cta } och för att undvika dataförlust."
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Aktivera ${ reason }"
       ]
     },
     "Mail import summary": {
@@ -7231,11 +7233,11 @@
         "${ numberOfItems } länk till ditt objekt togs bort",
         "${ numberOfItems } länkar till dina objekt togs bort"
       ],
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } har inaktiverats"
+      "${ reason } has been disabled": [
+        "${ reason } har inaktiverats"
       ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } har aktiverats"
+      "${ reason } has been enabled": [
+        "${ reason } har aktiverats"
       ],
       "All items will soon be permanently deleted from trash": [
         "Alla objekt kommer snart att tas bort permanent från papperskorgen"
@@ -7782,9 +7784,6 @@
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel är **aktivt** och skyddar ditt konto."
-      ],
-      "Your information was found in at least one data breach. Turn on Breach Alert to view details and take action. ${ learnMoreLink }": [
-        "Din information hittades i minst ett dataintrång. Slå på intrångsvarning för att visa detaljer och vidta åtgärder. ${ learnMoreLink }"
       ]
     },
     "Select files": {
@@ -8213,9 +8212,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "Avbryter din prenumeration, vänta"
-      ],
-      "Downgrading your account, please wait": [
-        "Nedgraderar ditt konto, vänta"
       ]
     },
     "Storage": {
@@ -8717,9 +8713,6 @@
       "Birthday": [
         "Födelsedag"
       ],
-      "Breach Alert": [
-        "Intrångsvarning"
-      ],
       "Browser might run out of memory": [
         "Webbläsaren kan få slut på minne"
       ],
@@ -9155,9 +9148,6 @@
       ],
       "Start import process": [
         "Starta importprocessen"
-      ],
-      "Stay safer online": [
-        "Var säkrare online"
       ],
       "Stop sharing": [
         "Sluta dela"

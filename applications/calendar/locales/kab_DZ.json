@@ -927,6 +927,9 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Kemmel s useqdec ${ MAIL_APP_NAME }."
+      ],
+      "Continue using ${ planTitle }": [
+        "Kemmel s useqdec ${ planTitle }"
       ]
     },
     "Calendar access select label": {
@@ -5287,12 +5290,6 @@
       ]
     },
     "Notification": {
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } yensa"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } yettwarmed"
-      ],
       "Contact group created": [
         "Agraw n unermes yettwarna"
       ],
@@ -6002,11 +5999,6 @@
       ],
       "Search for events": [
         "Nadi ɣef tedyanin"
-      ]
-    },
-    "State": {
-      "Downgrading your account, please wait": [
-        "Yettili-d usader n lqem n umiḍan-ik.im, ttxil rǧu"
       ]
     },
     "Storage": {
