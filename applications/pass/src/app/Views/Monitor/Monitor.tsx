@@ -1,6 +1,7 @@
 import { type FC } from 'react';
 import { Route, type RouteChildrenProps, Switch } from 'react-router-dom';
 
+import { Missing2FAs } from '@proton/pass/components/Monitor/2FA/Missing2FAs';
 import { DuplicatePasswords } from '@proton/pass/components/Monitor/Password/DuplicatePasswords';
 import { Summary } from '@proton/pass/components/Monitor/Summary';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
@@ -15,6 +16,7 @@ export const Monitor: FC<RouteChildrenProps> = ({ match }) => {
                 <div className="flex flex-1 flex-column items-start w-full h-full">
                     <Switch>
                         <Route exact path={`${match?.path}/duplicates`} component={DuplicatePasswords} />
+                        <Route exact path={`${match?.path}/missing`} component={Missing2FAs} />
                         <Route component={Summary} />
                     </Switch>
                 </div>
