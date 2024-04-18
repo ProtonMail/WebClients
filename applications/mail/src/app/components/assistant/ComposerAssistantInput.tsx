@@ -41,21 +41,22 @@ const ComposerAssistantInput = ({ onGenerateResult }: Props) => {
         // So if we have a progress, we're downloading so we can show the progress bar, otherwise show a spinner
         const progress = downloadModelProgress * 100;
         const showDownloadProgress = isModelDownloading && progress > 0 && progress < 100;
+
         if (showDownloadProgress) {
             const progressDisplay = Math.round(progress);
             return (
                 <Tooltip title={c('loc_nightly_assistant').t`Downloading model: ${progressDisplay}%`}>
                     <div>
-                        <CircularProgress size={16} progress={progressDisplay}></CircularProgress>
+                        <CircularProgress size={20} progress={progressDisplay}></CircularProgress>
                         <span className="sr-only" aria-live="assertive" aria-atomic="true">{c('loc_nightly_assistant')
                             .t`Downloading model: ${progressDisplay}%`}</span>
                     </div>
                 </Tooltip>
             );
         } else if (isGeneratingResult || isModelLoadingOnGPU || isModelDownloading) {
-            return <CircleLoader />;
+            return <CircleLoader className="composer-assistant-spinner" />;
         }
-        return <Icon name="pen" />;
+        return <Icon name="pen" size={5} />;
     };
 
     const getRightButton = () => {
@@ -113,7 +114,7 @@ const ComposerAssistantInput = ({ onGenerateResult }: Props) => {
                 disabled={isGeneratingResult}
                 data-testid="composer:genie"
                 unstyled
-                className="flex-1"
+                className="flex-1 composer-assistant-input"
                 inputClassName="pl-0"
             />
             <span className="my-auto shrink-0">{rightButton}</span>
