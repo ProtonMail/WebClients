@@ -1,4 +1,4 @@
-import { updateServerTime as internalUpdateServerTime, serverTime } from 'pmcrypto/lib/serverTime';
+import { updateServerTime as internalUpdateServerTime, serverTime } from 'pmcrypto-v6-canary/lib/serverTime';
 
 let updateCalled = false;
 /**
