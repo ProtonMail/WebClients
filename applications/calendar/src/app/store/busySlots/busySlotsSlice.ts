@@ -103,7 +103,6 @@ const busySlotsSlice = createSlice({
         removeAttendee: (state, action: PayloadAction<BusySlotsEmail>) => {
             const emailCanonicalized = canonicalizeEmailByGuess(action.payload);
             state.attendees = state.attendees.filter((email) => email !== emailCanonicalized);
-            state.attendeeVisibility[emailCanonicalized] = 'hidden';
         },
         setAttendeeVisibility: (state, action: PayloadAction<{ email: BusySlotsEmail; visible: boolean }>) => {
             const emailCanonicalized = canonicalizeEmailByGuess(action.payload.email);
