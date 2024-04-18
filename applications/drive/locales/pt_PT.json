@@ -1056,6 +1056,9 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continuar a utilizar ${ MAIL_APP_NAME }."
+      ],
+      "Continue using ${ planTitle }": [
+        "Continuar a utilizar ${ planTitle }"
       ]
     },
     "Checkout row": {
@@ -4213,6 +4216,9 @@
       "Organization size": [
         "Tamanho da organização"
       ],
+      "Owner": [
+        "Proprietário"
+      ],
       "Paused": [
         "Em pausa"
       ],
@@ -5634,6 +5640,9 @@
       "RAR archive": [
         "Arquivo RAR"
       ],
+      "Text": [
+        "Texto"
+      ],
       "Unknown file": [
         "Ficheiro desconhecido"
       ],
@@ -6439,12 +6448,6 @@
       "${ numberOfItems } link to your item was deleted": [
         "${ numberOfItems } ligação ao seu item foi eliminada.",
         "${ numberOfItems } ligações aos seus itens foram eliminadas."
-      ],
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } foi desativado"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } foi ativado"
       ],
       "All items will soon be permanently deleted from trash": [
         "Todos os itens serão permanentemente eliminados do lixo"
@@ -7298,9 +7301,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "A cancelar a sua subscrição, por favor aguarde"
-      ],
-      "Downgrading your account, please wait": [
-        "Aguarde. Estamos a modificar a sua conta."
       ]
     },
     "Storage": {

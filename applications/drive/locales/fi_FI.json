@@ -442,6 +442,9 @@
       "Manage link": [
         "Hallitse linkkiä"
       ],
+      "Mark as resolved": [
+        "Merkitse ratkaistuksi"
+      ],
       "Mark for deletion": [
         "Merkitse poistettavaksi"
       ],
@@ -576,6 +579,9 @@
       ],
       "Report an issue": [
         "Ilmoita ongelmasta"
+      ],
+      "Request a call": [
+        "Pyydä soittoa"
       ],
       "Request a feature": [
         "Pyydä ominaisuutta"
@@ -1151,6 +1157,12 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Jatka ${ MAIL_APP_NAME }in käyttämistä."
+      ],
+      "Continue using ${ planTitle }": [
+        "Jatka ${ planTitle }in käyttämistä"
+      ],
+      "Continue your subscription": [
+        "Jatka tilaustasi"
       ]
     },
     "Checkout row": {
@@ -2133,9 +2145,6 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA lisää ylimääräisen turvakerroksen, joka estää luvattoman pääsyn tilillesi."
       ],
-      "Breach alerts and reports are available with a paid plan. Upgrade for immediate access.": [
-        "Tietovuotohälytykset ja -raportit sisältyvät maksullisiin tilauksiin. Saat ne heti käyttöösi päivitämällä tilauksesi."
-      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Yhteystietojen salausta puretaan… Tämä voi kestää muutamia minuutteja ja käsittelyn valmistuttua voit ladata tiedoston, joka sisältää kaikki viedyt yhteystietosi."
       ],
@@ -2189,9 +2198,6 @@
       ],
       "Your account and data recovery methods are set.": [
         "Tilisi ja tietojesi palautusmenetelmät on määritetty."
-      ],
-      "Your personal data was leaked by an online service in a data breach. View full details and get recommended actions.": [
-        "Henkilökohtaisia tietojasi on vuotanut verkkopalvelun tietovuodon seurauksena. Tarkastele vuodon tietoja ja ryhdy tarvittaviin toimenpiteisiin."
       ]
     },
     "description": {
@@ -4169,6 +4175,9 @@
       "File will not be updated": [
         "Tiedostoa ei tallenneta"
       ],
+      "Files and folders that others shared with you will appear here": [
+        "Muiden kanssasi jakamat tiedostot ja kansiot näkyvät tässä"
+      ],
       "Finalizing": [
         "Viimeistellään"
       ],
@@ -4323,6 +4332,9 @@
       "Last week": [
         "Viime viikolla"
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Opi kuinka ${ staySaferOnlineLink }"
+      ],
       "Learn more": [
         "Lue lisää"
       ],
@@ -4337,6 +4349,9 @@
       ],
       "Loading ${ appName }": [
         "Ladataan ${ appName }"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Kalenteria ladataan, odota. Sinut ohjataan uudelle välilehdelle aikataulualustallemme Calendlyyn."
       ],
       "Loading link": [
         "Ladataan linkkiä"
@@ -4462,6 +4477,9 @@
       ],
       "Organization size": [
         "Organisaation koko"
+      ],
+      "Owner": [
+        "Omistaja"
       ],
       "password": [
         "salasana"
@@ -4747,6 +4765,9 @@
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
         "Salatut tiedot vaativat hieman enemmän tallennustilaa tietojesi suojauksen takaavan salauksen ja allekirjoitusten vuoksi."
       ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "Paljastuneet tiedot vuotivat kolmannen osapuolen palvelusta. Sinun ${ BRAND_NAME } -tilisi tiedot pysyvät suojattuina ja salattuina. ${ learnMoreLink }"
+      ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Seuraavia on saatettu muuttaa tietämättäsi: ${ items }. Avaa vain, jos luotat siihen."
       ],
@@ -4976,6 +4997,9 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Ohjaamme sinut uudessa välilehdessä PayPaliin suorittamaan maksun. Jos käytät ponnahdusikkunoiden estäjiä, poista ne käytöstä jatkaaksesi."
       ],
+      "We'll email you once import is complete.": [
+        "Lähetämme sinulle sähköpostia, kun tuonti on valmis."
+      ],
       "We'll notify you when the import is done.": [
         "Ilmoitamme sinulle kun tuonti on valmis."
       ],
@@ -5033,6 +5057,9 @@
       "You can check the progress ${ importProgressLink }.": [
         "Voit tarkastaa tilan ${ importProgressLink }."
       ],
+      "You can close the tab or browser in the meantime.": [
+        "Voit sulkea välilehden tai selaimen sillä välin."
+      ],
       "You can import one data type at a time.": [
         "Voit tuoda vain yhden tietotyypin kerrallaan."
       ],
@@ -5056,6 +5083,12 @@
       "You have ${ expiresInDays } day left to claim your 3 GB welcome bonus and ": [
         "Sinulla on ${ expiresInDays } päivä aikaa lunastaa 3 Gt tervetuliaisetusi ja ",
         "Sinulla on ${ expiresInDays } päivää aikaa lunastaa 3 Gt tervetuliaisetusi ja "
+      ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "Sinulla on ${ planTitle } -kokeilutilaus. Jos haluat jatkaa tilausta kokeilujakson jälkeen, lisää maksutapa."
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "Sinulla on ${ planTitle } -kokeilutilaus. Maksua ei vaadita tällä hetkellä. Tilauksesi uusitaan automaattisesti kokeilujakson päätyttyä."
       ],
       "You may be redirected to your bank’s website.": [
         "Sinut voidaan ohjata pankkisi verkkosivuille."
@@ -5111,6 +5144,12 @@
       "Your download is in progress": [
         "Latauksesi on käynnissä"
       ],
+      "Your email address and password were leaked:": [
+        "Sähköpostiosoitteesi ja salasanasi ovat vuotaneet:"
+      ],
+      "Your email address was exposed:": [
+        "Sähköpostiosoitteesi paljastui:"
+      ],
       "Your email will only be used for this one-time verification.": [
         "Sähköpostiosoitettasi käytetään vain tähän kertaluontoiseen vahvistukseen."
       ],
@@ -5123,11 +5162,17 @@
       "Your files will be encrypted and then saved.": [
         "Tiedostosi salataan ja tallennetaan."
       ],
+      "Your information was found on ${ displayedDate }": [
+        "Tietosi löytyivät ${ displayedDate }"
+      ],
       "Your login information will not be saved after the import is completed.": [
         "Kirjautumistietojasi ei säilytetä tuonnin päätyttyä."
       ],
       "Your next billing date is ${ renewalTime }.": [
         "Seuraava laskutuspäivä on ${ renewalTime }."
+      ],
+      "Your password was leaked:": [
+        "Salasanasi on vuotanut:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Puhelinnumeroasi käytetään vain tähän kertaluontoiseen vahvistukseen."
@@ -5681,6 +5726,9 @@
       "Shared by": [
         "Jakanut"
       ],
+      "Shared on": [
+        "Jaettu:"
+      ],
       "Show indexing progress of Encrypted Search": [
         "Näytä salatun haun indeksoinnin edistyminen"
       ],
@@ -5872,6 +5920,9 @@
       ],
       "Shared with me": [
         "Jaettu minulle"
+      ],
+      "stay safer online": [
+        "pysy turvassa verkossa"
       ],
       "Trash": [
         "Roskakori"
@@ -7103,12 +7154,6 @@
         "${ numberOfItems } kohteen linkki poistettiin",
         "${ numberOfItems } kohteen linkit poistettiin"
       ],
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } poistettiin käytöstä"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } otettiin käyttöön"
-      ],
       "All items will soon be permanently deleted from trash": [
         "Kaikki roskakorin kohteet poistetaan pian pysyvästi"
       ],
@@ -7643,6 +7688,9 @@
       ]
     },
     "Security Center - Info": {
+      "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
+        "Saat ilmoituksen, jos salasanasi tai muut tietosi ovat vuotaneet kolmannen osapuolen palvelusta. ${ learnMoreLink }"
+      ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Huippumoderni tekoälypohjainen tietoturvaratkaisumme, joka on suunniteltu tileilleen tehostettua suojausta kaipaaville käyttäjille. ${ learnMoreLink }"
       ],
@@ -8076,9 +8124,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "Tilaustasi perutaan. Odota."
-      ],
-      "Downgrading your account, please wait": [
-        "Tiliäsi alennetaan, odota"
       ]
     },
     "Storage": {
@@ -8687,6 +8732,9 @@
       "Deleting contacts": [
         "Poistetaan yhteystietoja"
       ],
+      "Details": [
+        "Lisätiedot"
+      ],
       "Discard": [
         "Hylkää"
       ],
@@ -9010,9 +9058,6 @@
       "Start import process": [
         "Aloita tuonti"
       ],
-      "Stay safer online": [
-        "Pysy turvassa verkossa"
-      ],
       "Stop sharing": [
         "Lopeta jakaminen"
       ],
@@ -9105,6 +9150,9 @@
       ],
       "Your changes are not synced yet": [
         "Muutoksiasi ei ole vielä synkronoitu"
+      ],
+      "Your exposed information": [
+        "Paljastuneet tietosi"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Ilmainen Mail Plus -kokeilusi päättyy ${ textDate }"

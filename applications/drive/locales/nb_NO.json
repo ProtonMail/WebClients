@@ -442,9 +442,6 @@
       "Manage link": [
         "Administrer kobling"
       ],
-      "Mark as open": [
-        "Merk som åpen"
-      ],
       "Mark as resolved": [
         "Merk som løst"
       ],
@@ -2148,9 +2145,6 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA legger til et ekstra sikkerhetslag, og forhindrer uautorisert tilgang."
       ],
-      "Breach alerts and reports are available with a paid plan. Upgrade for immediate access.": [
-        "Bruddvarsler og rapporter er tilgjengelige med en betalt plan. Oppgrader for umiddelbar tilgang."
-      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Dekrypterer kontakter...Dette kan ta noen få minutter. Når prosessen er fullført, vil du være i stand til å laste ned filen med alle dine kontakter eksportert."
       ],
@@ -2204,9 +2198,6 @@
       ],
       "Your account and data recovery methods are set.": [
         "Dine konto- og datagjenopprettingsmetoder er angitt."
-      ],
-      "Your personal data was leaked by an online service in a data breach. View full details and get recommended actions.": [
-        "Dine personlige data ble lekket av en nettjeneste i et databrudd. Se alle detaljer og få anbefalte handlinger."
       ]
     },
     "description": {
@@ -3899,9 +3890,6 @@
       "Billing cycle: ${ text }": [
         "Faktureringssyklus: ${ text }"
       ],
-      "Breach Alert": [
-        "Varsel om datainnbrudd"
-      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ved å nedgradere til en gratis plan, vil du permanent miste disse fordelene, selv om du oppgraderer igjen i fremtiden."
       ],
@@ -4489,6 +4477,9 @@
       ],
       "Organization size": [
         "Organisasjonsstørrelse"
+      ],
+      "Owner": [
+        "Eier"
       ],
       "password": [
         "passord"
@@ -7220,12 +7211,6 @@
         "${ numberOfItems } kobling til elementet ditt ble slettet",
         "${ numberOfItems } koblinger til elementene dine ble slettet"
       ],
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } er deaktivert"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } er aktivert"
-      ],
       "All items will soon be permanently deleted from trash": [
         "Alle elementer vil snart bli slettet permanent fra papirkurven."
       ],
@@ -7768,9 +7753,6 @@
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel er **aktiv** og beskytter kontoen din."
-      ],
-      "Your information was found in at least one data breach. Turn on Breach Alert to view details and take action. ${ learnMoreLink }": [
-        "Informasjonen din ble funnet i minst ett datainnbrudd. Slå på bruddvarsel for å vise detaljer og iverksette tiltak. ${ learnMoreLink }."
       ]
     },
     "Select files": {
@@ -8199,9 +8181,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "Kansellerer abonnementet ditt, vennligst vent"
-      ],
-      "Downgrading your account, please wait": [
-        "Nedgraderer kontoen din, vennligst vent"
       ]
     },
     "Storage": {
@@ -8703,9 +8682,6 @@
       "Birthday": [
         "Bursdag"
       ],
-      "Breach Alert": [
-        "Varsel om datainnbrudd"
-      ],
       "Browser might run out of memory": [
         "Nettleseren kan gå tom for minne"
       ],
@@ -9138,9 +9114,6 @@
       ],
       "Start import process": [
         "Start importprosessen"
-      ],
-      "Stay safer online": [
-        "Hold deg tryggere på nettet"
       ],
       "Stop sharing": [
         "Avslutt deling"

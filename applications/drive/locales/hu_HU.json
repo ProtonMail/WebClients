@@ -1034,6 +1034,9 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Folytatás ezzel: ${ MAIL_APP_NAME }."
+      ],
+      "Continue using ${ planTitle }": [
+        "Folytatás ezzel: ${ planTitle }"
       ]
     },
     "Checkout row": {
@@ -4062,6 +4065,9 @@
       "Organization size": [
         "Szervezet mérete"
       ],
+      "Owner": [
+        "Tulajdonos"
+      ],
       "Paused": [
         "Felfüggesztve"
       ],
@@ -6060,12 +6066,6 @@
         "${ numberOfItems } hivatkozás a fájlra törlésre került",
         "${ numberOfItems } hivatkozás a fájlra törlésre került"
       ],
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } letiltva"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } engedélyezésre került"
-      ],
       "All items will soon be permanently deleted from trash": [
         "Minden elem hamarosan törlésre fog kerülni a Lomtárban"
       ],
@@ -6854,11 +6854,6 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Most már könnyedén tud Drive fájljai közt keresni adatai biztonságban tartásával."
-      ]
-    },
-    "State": {
-      "Downgrading your account, please wait": [
-        "Csomag átállítás folyamatban, kérjük várjon"
       ]
     },
     "Storage": {

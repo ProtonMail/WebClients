@@ -442,9 +442,6 @@
       "Manage link": [
         "Bağlantıyı yönet"
       ],
-      "Mark as open": [
-        "Açık olarak işaretle"
-      ],
       "Mark as resolved": [
         "Çözülmüş olarak işaretle"
       ],
@@ -582,6 +579,9 @@
       ],
       "Report an issue": [
         "Bir sorun bildirin"
+      ],
+      "Request a call": [
+        "Arama isteği gönder"
       ],
       "Request a feature": [
         "Bir özellik istiyorum"
@@ -1157,6 +1157,9 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME } kullanmayı sürdürün."
+      ],
+      "Continue using ${ planTitle }": [
+        "${ planTitle } kullanmayı sürdürün"
       ]
     },
     "Checkout row": {
@@ -4463,6 +4466,9 @@
       "Organization size": [
         "Kuruluş boyutu"
       ],
+      "Owner": [
+        "Sahibi"
+      ],
       "password": [
         "parola"
       ],
@@ -4973,6 +4979,9 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Bu işlemi tamamlamanız için yeni bir tarayıcı sekmesi açarak sizi PayPal sitesine yönlendireceğiz. İşlemi tamamlamak için, varsa açılır pencere engelleyicilerinizi kapatın."
       ],
+      "We'll email you once import is complete.": [
+        "İçe aktarma işlemi tamamlanınca size e-posta göndereceğiz."
+      ],
       "We'll notify you when the import is done.": [
         "İçe aktarım tamamlandığında sizi bilgilendireceğiz."
       ],
@@ -5029,6 +5038,9 @@
       ],
       "You can check the progress ${ importProgressLink }.": [
         "İlerlemeye bakabilirsiniz ${ importProgressLink }."
+      ],
+      "You can close the tab or browser in the meantime.": [
+        "Bu sırada sekmeyi veya tarayıcıyı kapatabilirsiniz."
       ],
       "You can import one data type at a time.": [
         "Bir seferde bir veri türünü içe aktarabilirsiniz."
@@ -5108,6 +5120,12 @@
       "Your download is in progress": [
         "İndirme işleminiz sürüyor"
       ],
+      "Your email address and password were leaked:": [
+        "E-posta adresiniz ve parolanız sızdırılmış:"
+      ],
+      "Your email address was exposed:": [
+        "E-posta adresiniz açığa çıkmış:"
+      ],
       "Your email will only be used for this one-time verification.": [
         "E-posta adresiniz yalnızca bu tek seferlik doğrulama için kullanılacak."
       ],
@@ -5125,6 +5143,9 @@
       ],
       "Your next billing date is ${ renewalTime }.": [
         "Sonraki fatura zamanınız ${ renewalTime }."
+      ],
+      "Your password was leaked:": [
+        "Parolanız sızdırılmış:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Telefon numaranız yalnızca bu tek seferlik doğrulama için kullanılacak."
@@ -7097,12 +7118,6 @@
         "${ numberOfItems } bağlantı silindi",
         "${ numberOfItems } bağlantı silindi"
       ],
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } özelliği kapatıldı"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } özelliği açıldı"
-      ],
       "All items will soon be permanently deleted from trash": [
         "Tüm ögeler yakında çöp kutusundan kalıcı olarak silinecek"
       ],
@@ -8061,9 +8076,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "Lütfen aboneliğiniz iptal edilirken bekleyin"
-      ],
-      "Downgrading your account, please wait": [
-        "Hesabınız düşürülüyor, lütfen bekleyin"
       ]
     },
     "Storage": {
@@ -8839,6 +8851,9 @@
       "Night theme": [
         "Gece teması"
       ],
+      "No breaches detected": [
+        "Herhangi bir veri açığa çıkmamış"
+      ],
       "No results found": [
         "Herhangi bir sonuç bulunamadı"
       ],
@@ -8992,9 +9007,6 @@
       "Start import process": [
         "İçe aktarma işlemini başlatın"
       ],
-      "Stay safer online": [
-        "Çevrimiçi ortamda daha güvende kalın"
-      ],
       "Stop sharing": [
         "Paylaşımdan kaldır"
       ],
@@ -9087,6 +9099,9 @@
       ],
       "Your changes are not synced yet": [
         "Değişiklikleriniz henüz eşitlenmedi"
+      ],
+      "Your exposed information": [
+        "Açığa çıkmış bilgileriniz"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Mail Plus ücretsiz deneme süreniz ${ textDate } tarihinde sonra erecek"
