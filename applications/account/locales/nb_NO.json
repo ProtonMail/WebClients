@@ -1025,9 +1025,6 @@
       "Unlock": [
         "Lås opp"
       ],
-      "Unlock Breach Report": [
-        "Lås opp rapport om datainnbrudd"
-      ],
       "Unlock data": [
         "Lås opp data"
       ],
@@ -3206,9 +3203,6 @@
       ],
       "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
         "For å fjerne ${ MAIL_APP_NAME }-bunnteksten, oppgrader og lås opp enda flere premiumfunksjoner."
-      ],
-      "To view the full report including personalized recommendations, upgrade to a paid plan.": [
-        "For å se hele rapporten inkludert personlige anbefalinger, oppgrader til en betalt plan."
       ],
       "Track the status and activity of your referrals.": [
         "Spor statusen og aktiviteten til vervingene dine."
@@ -8108,9 +8102,6 @@
       "Why?": [
         "Hvorfor?"
       ],
-      "Will soon be available.": [
-        "Vil snart bli tilgjengelig."
-      ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "Med en Business- eller Enterprise-plan kan du kjøpe ${ boldDedicatedServers } for organisasjonen din, og konfigurere ${ boldGateways } for å kontrollere hvilke brukere som har tilgang til dem."
       ],
@@ -10096,17 +10087,11 @@
       ]
     },
     "Log preference": {
-      "Enable ${ PROTON_SENTINEL_NAME }": [
-        "Aktiver ${ PROTON_SENTINEL_NAME }"
-      ],
       "Enable advanced logs": [
         "Aktiver avanserte logger"
       ],
       "Enable authentication logs": [
         "Aktiver autentiseringslogger"
-      ],
-      "Enable Breach Alert": [
-        "Aktiver varsel om datainnbrudd"
       ]
     },
     "Mail import summary": {
@@ -11447,12 +11432,6 @@
     "Notification": {
       "${ Filter.Name } created": [
         "${ Filter.Name } opprettet"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } er deaktivert"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } er aktivert"
       ],
       "A disabled address cannot be default": [
         "Kan ikke angi en deaktivert adresse som standard"
@@ -12811,6 +12790,9 @@
       "Enter URL and token into your identity provider": [
         "Skriv inn nettadresse og token i identitetsleverandøren din"
       ],
+      "For security reasons, the SCIM token will be hidden after saving your changes and you won’t be able to see it again.": [
+        "Av sikkerhetsgrunner vil SCIM-tokenet være skjult etter at du har lagret endringene, og du vil ikke kunne se det igjen."
+      ],
       "For security reasons, the token is hidden": [
         "Av sikkerhetsgrunner er tokenet skjult"
       ],
@@ -12870,11 +12852,6 @@
       ],
       "URL of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
         "Nettadresse til SCIM-koblingen som din IdP-klargjøringsagent videresender SCIM-data til."
-      ]
-    },
-    "Security Center - Info": {
-      "Your information was found in at least one data breach. Turn on Breach Alert to view details and take action. ${ learnMoreLinkBreach }": [
-        "Informasjonen din ble funnet i minst ett datainnbrudd. Slå på bruddvarsel for å vise detaljer og iverksette tiltak. ${ learnMoreLinkBreach }."
       ]
     },
     "Select file": {
@@ -13562,9 +13539,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "Kansellerer abonnementet ditt, vennligst vent"
-      ],
-      "Downgrading your account, please wait": [
-        "Nedgraderer kontoen din, vennligst vent"
       ]
     },
     "Step in filter modal": {
@@ -14423,9 +14397,6 @@
       "Block trackers and malware": [
         "Blokkér sporere og skadelig programvare"
       ],
-      "Breach Alert": [
-        "Varsel om datainnbrudd"
-      ],
       "Bridge for ${ platform }": [
         "Bridge for ${ platform }"
       ],
@@ -14549,9 +14520,6 @@
       ],
       "Currency": [
         "Valuta"
-      ],
-      "Custom branding": [
-        "Tilpasset merkevarebygging"
       ],
       "Custom filters": [
         "Tilpassede filtre"
@@ -14945,9 +14913,6 @@
       ],
       "OpenVPN configuration files": [
         "OpenVPN-konfigurasjonsfiler"
-      ],
-      "Organization appearance": [
-        "Organisasjonens opptreden"
       ],
       "Organization filters": [
         "Organisasjonfiltre"

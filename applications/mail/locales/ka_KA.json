@@ -1179,11 +1179,11 @@
       "Upgrade": [
         "ტარიფის აწევა"
       ],
-      "Upgrade now": [
-        "ტარიფის განახლება"
-      ],
       "Upgrade Now": [
         "ახლა გაუმჯობესება"
+      ],
+      "Upgrade now": [
+        "ტარიფის განახლება"
       ],
       "Upload picture": [
         "სურათის ატვრთვა"
@@ -1666,6 +1666,9 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME }-ის მოხმარების გაგრძელება."
+      ],
+      "Continue using ${ planTitle }": [
+        "${ planTitle }-ის მოხმარების გაგრძელება"
       ]
     },
     "Calendar attachment tooltip": {
@@ -4705,6 +4708,9 @@
       ],
       "No credit card required.": [
         "საკრედიტო ბარათი საჭირო არაა."
+      ],
+      "Start free trial": [
+        "უფასო საცდელი ვერსიის ჩართვა"
       ],
       "Try the app-new desktop app": [
         "სცადეთ ახალი კომპიუტერის აპი"
@@ -8014,6 +8020,9 @@
       "Starred": [
         "ვარსკვლავიანები"
       ],
+      "stay safer online": [
+        "იყავით უსაფრთხოდ ინტერნეტში"
+      ],
       "Terms": [
         "წესები"
       ],
@@ -9194,12 +9203,6 @@
     "Notification": {
       "${ Filter.Name } created": [
         "${ Filter.Name } შეიქმნა"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } გაითიშა"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } ჩაირთო"
       ],
       "Block removed": [
         "განბლოკილი"
@@ -10391,9 +10394,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "მიმდინარეობს თქვენი გამოწერის გაუქმება. მოითმინეთ"
-      ],
-      "Downgrading your account, please wait": [
-        "მიმდინარეობს თქვენი პაკეტის დაქვეითება. გთხოვთ მოითმინოთ"
       ]
     },
     "Status": {
@@ -11519,6 +11519,9 @@
       ],
       "No attachment found": [
         "მიმაგრებული ფაილების გარეშე"
+      ],
+      "No breaches detected": [
+        "გაჟონვები აღმოჩენილი არაა"
       ],
       "No trackers found": [
         "ტრეკერები ვერ ვიპოვე"

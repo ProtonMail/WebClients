@@ -1155,10 +1155,10 @@
       "Upgrade": [
         "Csomagváltás"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Váltás nagyobb csomagra"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Váltás nagyobb csomagra"
       ],
       "Upload picture": [
@@ -1564,6 +1564,9 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Folytatás ezzel: ${ MAIL_APP_NAME }."
+      ],
+      "Continue using ${ planTitle }": [
+        "Folytatás ezzel: ${ planTitle }"
       ]
     },
     "Calendar attachment tooltip": {
@@ -4414,6 +4417,9 @@
       ],
       "No credit card required.": [
         "Nincs szükség bankkártya megadására."
+      ],
+      "Start free trial": [
+        "Ingyenes próba megkezdése"
       ],
       "Try the app-new desktop app": [
         "Próbálja ki az új asztali alkalmazást"
@@ -8378,12 +8384,6 @@
       "${ Filter.Name } created": [
         "${ Filter.Name } létrehozva"
       ],
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } letiltva"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } engedélyezésre került"
-      ],
       "Block removed": [
         "Tiltás megszüntetve"
       ],
@@ -9377,11 +9377,6 @@
       ],
       "You can now schedule your messages to be sent later": [
         "Most már ütemezheti is a leveleit későbbi elküldésre"
-      ]
-    },
-    "State": {
-      "Downgrading your account, please wait": [
-        "Csomag átállítás folyamatban, kérjük várjon"
       ]
     },
     "Status": {

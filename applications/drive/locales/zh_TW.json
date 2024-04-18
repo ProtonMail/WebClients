@@ -4376,6 +4376,9 @@
       "Organization size": [
         "組織規模"
       ],
+      "Owner": [
+        "擁有者"
+      ],
       "password": [
         "密碼"
       ],
@@ -6920,12 +6923,6 @@
       "${ numberOfItems } link to your item was deleted": [
         "${ numberOfItems } 個項目個連結已刪除"
       ],
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } 已停用。"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } 已啟用。"
-      ],
       "All items will soon be permanently deleted from trash": [
         "所有項目將從「垃圾桶」中永久刪除"
       ],
@@ -7848,9 +7845,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "請稍後，正在取消您的訂閱"
-      ],
-      "Downgrading your account, please wait": [
-        "正在降級您的帳號，請稍候"
       ]
     },
     "Storage": {

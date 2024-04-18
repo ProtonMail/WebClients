@@ -950,6 +950,9 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Fortsæt med at bruge ${ MAIL_APP_NAME }."
+      ],
+      "Continue using ${ planTitle }": [
+        "Fortsæt med at bruge ${ planTitle }"
       ]
     },
     "Checkout row": {
@@ -6824,9 +6827,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "Annullerer dit abonnement, vent venligst"
-      ],
-      "Downgrading your account, please wait": [
-        "Nedgraderer din konto, vent venligst"
       ]
     },
     "Storage": {

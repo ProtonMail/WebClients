@@ -442,6 +442,9 @@
       "Manage link": [
         "Beheer link"
       ],
+      "Mark as resolved": [
+        "Markeren als opgelost"
+      ],
       "Mark for deletion": [
         "Markeren voor verwijderen"
       ],
@@ -576,6 +579,9 @@
       ],
       "Report an issue": [
         "Een probleem melden"
+      ],
+      "Request a call": [
+        "Telefoongesprek aanvragen"
       ],
       "Request a feature": [
         "Vraag een functie aan"
@@ -1148,6 +1154,12 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Blijf ${ MAIL_APP_NAME } gebruiken."
+      ],
+      "Continue using ${ planTitle }": [
+        "Blijf ${ planTitle } gebruiken"
+      ],
+      "Continue your subscription": [
+        "Uw abonnement voortzetten"
       ]
     },
     "Checkout row": {
@@ -4160,6 +4172,9 @@
       "File will not be updated": [
         "Het bestand zal niet worden bijgewerkt"
       ],
+      "Files and folders that others shared with you will appear here": [
+        "Bestanden en mappen die anderen met u hebben gedeeld worden hier weergegeven"
+      ],
       "Finalizing": [
         "Afronden"
       ],
@@ -4314,6 +4329,9 @@
       "Last week": [
         "Laatste week"
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Leer ${ staySaferOnlineLink }"
+      ],
       "Learn more": [
         "Meer informatie"
       ],
@@ -4328,6 +4346,9 @@
       ],
       "Loading ${ appName }": [
         "${ appName } laden"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Laden van kalender, gelieve te wachten. U wordt automatisch doorverwezen naar onze agendaplanner Calendly in een nieuw tabblad."
       ],
       "Loading link": [
         "Koppeling laden"
@@ -4453,6 +4474,9 @@
       ],
       "Organization size": [
         "Grootte van de organisatie"
+      ],
+      "Owner": [
+        "Eigenaar"
       ],
       "password": [
         "wachtwoord"
@@ -4669,6 +4693,9 @@
       "Shared link not found": [
         "Gedeelde link niet gevonden"
       ],
+      "Shared with me": [
+        "Gedeeld met mij"
+      ],
       "Sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
         "Meld u aan voor uw eigen ${ DRIVE_APP_NAME }-account en bescherm uw gegevens met end-to-end versleuteling en deel deze veilig."
       ],
@@ -4731,6 +4758,9 @@
       ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
         "De versleutelde gegevens zijn iets groter door de extra gegevens voor de versleuteling en de handtekening, die de beveiliging van uw gegevens garanderen."
+      ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "De gelekte informatie werd gelekt door een dienst van een derde partij. Uw ${ BRAND_NAME } accountinformatie blijft veilig en versleuteld. ${ learnMoreLink }"
       ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Het volgende werd mogelijk onrechtmatig bewerkt: ${ items }. Open alleen als u het vertrouwt."
@@ -5042,6 +5072,12 @@
         "U heeft nog ${ expiresInDays } dag om uw 3 GB welkomstbonus op te eisen en ",
         "U heeft nog ${ expiresInDays } dagen om uw 3 GB welkomstbonus op te eisen en "
       ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "Je hebt een Trial ${ planTitle } abonnement. Als je na de proefperiode door wilt gaan met je abonnement, voeg een betaalmethode toe."
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "Je hebt een trial ${ planTitle } abonnement. Er is geen betaling vereist op dit moment. Uw abonnement wordt automatisch verlengd aan het einde van de proefperiode."
+      ],
       "You may be redirected to your bank’s website.": [
         "U wordt mogelijk doorverwezen naar de website van uw bank."
       ],
@@ -5096,6 +5132,12 @@
       "Your download is in progress": [
         "Uw download is bezig"
       ],
+      "Your email address and password were leaked:": [
+        "Uw emailadres en wachtwoorden werden gelekt:"
+      ],
+      "Your email address was exposed:": [
+        "Uw emailadres werd blootgesteld:"
+      ],
       "Your email will only be used for this one-time verification.": [
         "Uw e-mailadres wordt alleen gebruikt voor deze eenmalige verificatie."
       ],
@@ -5108,11 +5150,17 @@
       "Your files will be encrypted and then saved.": [
         "Uw bestanden worden versleuteld en vervolgens opgeslagen."
       ],
+      "Your information was found on ${ displayedDate }": [
+        "Uw informatie is gevonden op ${ displayedDate }"
+      ],
       "Your login information will not be saved after the import is completed.": [
         "Uw inloginformatie zal niet worden opgeslagen nadat de import is voltooid."
       ],
       "Your next billing date is ${ renewalTime }.": [
         "Uw volgende facturatiedatum is ${ renewalTime }."
+      ],
+      "Your password was leaked:": [
+        "Uw wachtwoord werd gelekt:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Uw telefoonnummer wordt alleen gebruikt voor deze eenmalige verificatie."
@@ -5663,6 +5711,12 @@
       "Set recovery method": [
         "Herstelmethode instellen"
       ],
+      "Shared by": [
+        "Gedeeld door"
+      ],
+      "Shared on": [
+        "Gedeeld op"
+      ],
       "Show indexing progress of Encrypted Search": [
         "Toon indexeringsvoortgang van Versleuteld Zoeken"
       ],
@@ -5851,6 +5905,12 @@
       ],
       "Shared": [
         "Gedeeld"
+      ],
+      "Shared with me": [
+        "Gedeeld met mij"
+      ],
+      "stay safer online": [
+        "blijf veilig online"
       ],
       "Trash": [
         "Prullenbak"
@@ -7082,12 +7142,6 @@
         "${ numberOfItems } link naar uw item werd verwijderd",
         "${ numberOfItems } links naar uw items werden verwijderd"
       ],
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } is uitgezet"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } is aangezet"
-      ],
       "All items will soon be permanently deleted from trash": [
         "Alle items zullen binnenkort permanent uit de prullenbak worden verwijderd"
       ],
@@ -7117,6 +7171,9 @@
       ],
       "Encrypted search activated": [
         "Versleuteld zoeken geactiveerd"
+      ],
+      "Failed to accept share invitation": [
+        "Accepteren van uitnodiging mislukt"
       ],
       "Failed to download files: ${ err }": [
         "Bestanden downloaden mislukt: ${ err }"
@@ -7157,6 +7214,12 @@
       ],
       "Root folder failed to be loaded": [
         "Hoofdmap kon niet geladen worden"
+      ],
+      "Share invitation accepted successfully": [
+        "Uitnodiging met succes geaccepteerd"
+      ],
+      "Share invitation ID was not found. Please check the link": [
+        "Uitnodigings-ID delen is niet gevonden. Controleer de link"
       ],
       "Subfolder failed to be loaded": [
         "Submap kon niet geladen worden"
@@ -7613,6 +7676,9 @@
       ]
     },
     "Security Center - Info": {
+      "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
+        "Ontvang een melding als uw wachtwoord of andere gegevens zijn gelekt van een externe dienst. ${ learnMoreLink }"
+      ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Onze geavanceerde AI-gedreven beveiligingsoplossing ontworpen voor gebruikers die verhoogde bescherming zoeken voor hun accounts. ${ learnMoreLink }"
       ],
@@ -8046,9 +8112,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "Uw abonnement wordt geannuleerd, even geduld"
-      ],
-      "Downgrading your account, please wait": [
-        "Account downgraden, even geduld"
       ]
     },
     "Storage": {
@@ -8657,6 +8720,9 @@
       "Deleting contacts": [
         "Contacten aan het verwijderen"
       ],
+      "Details": [
+        "Details"
+      ],
       "Discard": [
         "Weggooien"
       ],
@@ -8950,6 +9016,9 @@
       "Shared": [
         "Gedeeld"
       ],
+      "Shared with me": [
+        "Gedeeld met mij"
+      ],
       "Show actions": [
         "Actie weergeven"
       ],
@@ -9066,6 +9135,9 @@
       ],
       "Your changes are not synced yet": [
         "Uw wijzigingen zijn nog niet gesynchroniseerd"
+      ],
+      "Your exposed information": [
+        "Uw blootgestelde informatie"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Uw Mail Plus proefversie eindigt op ${ textDate }"

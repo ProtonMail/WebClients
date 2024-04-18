@@ -1025,9 +1025,6 @@
       "Unlock": [
         "Lås upp"
       ],
-      "Unlock Breach Report": [
-        "Lås upp intrångsrapport"
-      ],
       "Unlock data": [
         "Lås upp data"
       ],
@@ -3202,9 +3199,6 @@
       ],
       "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
         "För att ta bort ${ MAIL_APP_NAME } i sidfoten, uppgradera och lås upp ännu fler premiumfunktioner."
-      ],
-      "To view the full report including personalized recommendations, upgrade to a paid plan.": [
-        "För att se hela rapporten inklusive personifierade rekommendationer, uppgradera till ett betalt paket."
       ],
       "Track the status and activity of your referrals.": [
         "Spåra status och aktivitet för dina hänvisningar."
@@ -8094,9 +8088,6 @@
       "Why?": [
         "Varför?"
       ],
-      "Will soon be available.": [
-        "Kommer snart vara tillgänglig."
-      ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "Med ett Business- eller Enterprise-paket kan du köpa ${ boldDedicatedServers } för din organisation och ställa in ${ boldGateways } för att kontrollera vilka användare som kan komma åt dem."
       ],
@@ -10067,17 +10058,14 @@
       ]
     },
     "Log preference": {
-      "Enable ${ PROTON_SENTINEL_NAME }": [
-        "Aktivera ${ PROTON_SENTINEL_NAME }"
+      "Enable ${ reason }": [
+        "Aktivera ${ reason }"
       ],
       "Enable advanced logs": [
         "Aktivera avancerade loggar"
       ],
       "Enable authentication logs": [
         "Aktivera autentiseringsloggar"
-      ],
-      "Enable Breach Alert": [
-        "Aktivera intrångsvarning"
       ]
     },
     "Mail import summary": {
@@ -11411,11 +11399,11 @@
       "${ Filter.Name } created": [
         "${ Filter.Name } skapat"
       ],
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } har inaktiverats"
+      "${ reason } has been disabled": [
+        "${ reason } har inaktiverats"
       ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } har aktiverats"
+      "${ reason } has been enabled": [
+        "${ reason } har aktiverats"
       ],
       "A disabled address cannot be default": [
         "En inaktiverad adress kan inte vara standard"
@@ -12768,6 +12756,9 @@
       "Enter URL and token into your identity provider": [
         "Ange URL och token i din identitetsleverantör"
       ],
+      "For security reasons, the SCIM token will be hidden after saving your changes and you won’t be able to see it again.": [
+        "Av säkerhetsskäl kommer SCIM-token att döljas efter att du har sparat dina ändringar och du kommer inte att kunna se det igen."
+      ],
       "For security reasons, the token is hidden": [
         "Token är dold av säkerhetsskäl"
       ],
@@ -12795,11 +12786,6 @@
       ],
       "SCIM automatic provisioning": [
         "Automatisk tillhandahållande av SCIM"
-      ]
-    },
-    "Security Center - Info": {
-      "Your information was found in at least one data breach. Turn on Breach Alert to view details and take action. ${ learnMoreLinkBreach }": [
-        "Din information hittades i minst ett dataintrång. Slå på intrångsvarning för att visa detaljer och vidta åtgärder. ${ learnMoreLinkBreach }"
       ]
     },
     "Select file": {
@@ -13487,9 +13473,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "Avbryter din prenumeration, vänta"
-      ],
-      "Downgrading your account, please wait": [
-        "Nedgraderar ditt konto, vänta"
       ]
     },
     "Step in filter modal": {
@@ -13750,6 +13733,36 @@
     "Subscription price": {
       "For": [
         "För"
+      ]
+    },
+    "Subscription reminder": {
+      "${ dayDiff } day left": [
+        "${ dayDiff } dag kvar",
+        "${ dayDiff } dagar kvar"
+      ],
+      "${ planMaxSpace } total storage": [
+        "${ planMaxSpace } totalt lagringsutrymme"
+      ],
+      "10 email addresses": [
+        "10 e-postadresser"
+      ],
+      "Calendar sharing": [
+        "Kalenderdelning"
+      ],
+      "Close": [
+        "Stäng"
+      ],
+      "Have a question?": [
+        "Har du en fråga?"
+      ],
+      "Keep Mail Plus": [
+        "Behåll Mail Plus"
+      ],
+      "Priority support": [
+        "Prioriterad support"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Obegränsat antal mappar, etiketter och filter"
       ]
     },
     "Subscription renewal state": {
@@ -14354,9 +14367,6 @@
       "Block trackers and malware": [
         "Blockera spårare och skadlig kod"
       ],
-      "Breach Alert": [
-        "Intrångsvarning"
-      ],
       "Bridge for ${ platform }": [
         "Bridge för ${ platform }"
       ],
@@ -14481,14 +14491,14 @@
       "Currency": [
         "Valuta"
       ],
-      "Custom branding": [
-        "Anpassat varumärke"
-      ],
       "Custom filters": [
         "Anpassade filter"
       ],
       "Custom selection of users": [
         "Anpassat val av användare"
+      ],
+      "Customization": [
+        "Anpassning"
       ],
       "Customize and confirm": [
         "Anpassa och bekräfta"

@@ -184,6 +184,9 @@
       "Copy email to clipboard": [
         "Skopírovať email do schránky"
       ],
+      "Copy invite link": [
+        "Skopírovať pozývací odkaz"
+      ],
       "Copy link": [
         "Kopírovať odkaz"
       ],
@@ -445,6 +448,9 @@
       "Manage link": [
         "Spravovať odkaz"
       ],
+      "Mark as resolved": [
+        "Označiť ako vyriešené"
+      ],
       "Mark for deletion": [
         "Označiť na odstránenie"
       ],
@@ -579,6 +585,9 @@
       ],
       "Report an issue": [
         "Nahlásiť problém"
+      ],
+      "Request a call": [
+        "Požiadať o hovor"
       ],
       "Request a feature": [
         "Požiadavka na funkciu"
@@ -1165,6 +1174,12 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Pokračovať s ${ MAIL_APP_NAME }."
+      ],
+      "Continue using ${ planTitle }": [
+        "Pokračovať s ${ planTitle }"
+      ],
+      "Continue your subscription": [
+        "Pokračovať v predplatnom"
       ]
     },
     "Checkout row": {
@@ -2650,7 +2665,7 @@
         "Duplicitný pozývateľ odstránený: ${ joinedInvitee }",
         "Duplicitní pozývatelia odstránení: ${ joinedInvitee }",
         "Duplicitní pozývatelia odstránení: ${ joinedInvitee }",
-        "Duplicitní pozývatelia odstránení: ${ joinedInvitee }"
+        "Odstránené duplicitné pozvánky: ${ joinedInvitee }"
       ],
       "Report failed to be sent": [
         "Hlásenie sa nepodarilo odoslať"
@@ -4301,6 +4316,9 @@
       "File will not be updated": [
         "Súbor nebude aktualizovaný"
       ],
+      "Files and folders that others shared with you will appear here": [
+        "Tu sa zobrazia súbory a priečinky, ktoré s vami zdieľali iní."
+      ],
       "Finalizing": [
         "Finalizácia"
       ],
@@ -4457,6 +4475,9 @@
       "Last week": [
         "Posledný týždeň"
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Zistite, ako ${ staySaferOnlineLink }"
+      ],
       "Learn more": [
         "Zistiť viac"
       ],
@@ -4471,6 +4492,9 @@
       ],
       "Loading ${ appName }": [
         "Načítavanie aplikácie ${ appName }"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Načítanie kalendára, počkajte, prosím. V novej karte budete presmerovaní na našu plánovaciu platformu Calendly."
       ],
       "Loading link": [
         "Načítanie odkazu"
@@ -4600,6 +4624,9 @@
       ],
       "Organization size": [
         "Veľkosť organizácie"
+      ],
+      "Owner": [
+        "Vlastník"
       ],
       "password": [
         "heslo"
@@ -4820,6 +4847,9 @@
       "Shared link not found": [
         "Zdieľaný odkaz sa nenašiel"
       ],
+      "Shared with me": [
+        "Zdieľané so mnou"
+      ],
       "Sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
         "Založte si vlastný účet ${ DRIVE_APP_NAME } a chráňte svoje údaje end-to-end šifrovaním a bezpečne ich zdieľajte."
       ],
@@ -4882,6 +4912,9 @@
       ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
         "Šifrované údaje sú o trochu väčšie kvôli réžii šifrovania a podpisov, čo zaručuje bezpečnosť vašich údajov."
+      ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "Informácie, ktoré boli zverejnené, unikli zo služby tretej strany. Vaše informácie o účte ${ BRAND_NAME } zostávajú zabezpečené a zašifrované. ${ learnMoreLink }"
       ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "S nasledujúcimi údajmi sa mohlo manipulovať: ${ items }. Otvorte ich, len ak im dôverujete."
@@ -5201,6 +5234,12 @@
         "Na získanie uvítacieho bonusu 3 GB vám zostáva ${ expiresInDays } dní a ",
         "Na získanie uvítacieho bonusu 3 GB vám zostáva ${ expiresInDays } dní a "
       ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "Máte skúšobné predplatné ${ planTitle }. Ak chcete pokračovať v predplatnom aj po skončení skúšobnej lehoty, pridajte spôsob platby."
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "Máte skúšobné predplatné ${ planTitle }. V tejto chvíli sa nevyžaduje žiadna platba. Vaše predplatné sa automaticky obnoví na konci skúšobného obdobia."
+      ],
       "You may be redirected to your bank’s website.": [
         "Môžete byť presmerovaní na webovú stránku vašej banky."
       ],
@@ -5255,6 +5294,12 @@
       "Your download is in progress": [
         "Prebieha sťahovanie"
       ],
+      "Your email address and password were leaked:": [
+        "Unikla vaša emailová adresa a heslo:"
+      ],
+      "Your email address was exposed:": [
+        "Vaša emailová adresa bola prezradená:"
+      ],
       "Your email will only be used for this one-time verification.": [
         "Váš email bude použitý iba pre toto jednorazové overenie."
       ],
@@ -5267,11 +5312,17 @@
       "Your files will be encrypted and then saved.": [
         "Vaše súbory budú zašifrované a následne uložené."
       ],
+      "Your information was found on ${ displayedDate }": [
+        "Vaše informácie boli nájdené dňa ${ displayedDate }"
+      ],
       "Your login information will not be saved after the import is completed.": [
         "Po dokončení importu nebudú vaše prihlasovacie údaje uložené."
       ],
       "Your next billing date is ${ renewalTime }.": [
         "Váš ďalší dátum fakturácie je ${ renewalTime }"
+      ],
+      "Your password was leaked:": [
+        "Vaše heslo bolo prezradené:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Vaše telefónne číslo bude použité iba pre toto jednorazové overenie."
@@ -5577,7 +5628,7 @@
         "Nájdený duplikát"
       ],
       "e.g., Amazon, eBay, Etsy": [
-        "napríklad Amazon, eBay, Etsy"
+        "napr. Amazon, eBay, Etsy"
       ],
       "Editor": [
         "Editor"
@@ -5829,10 +5880,16 @@
         "Nastaviť koniec platnosti"
       ],
       "Set link password": [
-        "Nastavte si heslo odkazu"
+        "Nastaviť heslo odkazu"
       ],
       "Set recovery method": [
         "Nastaviť metódu obnovenia"
+      ],
+      "Shared by": [
+        "Zdieľané používateľom"
+      ],
+      "Shared on": [
+        "Zdieľané"
       ],
       "Show indexing progress of Encrypted Search": [
         "Zobraziť priebeh indexovania šifrovaného vyhľadávania"
@@ -6022,6 +6079,12 @@
       ],
       "Shared": [
         "Zdieľané"
+      ],
+      "Shared with me": [
+        "Zdieľané so mnou"
+      ],
+      "stay safer online": [
+        "zostaňte bezpečnejší online"
       ],
       "Trash": [
         "Kôš"
@@ -7325,12 +7388,6 @@
         "${ numberOfItems } odkazov na vaše položky bolo zmazaných",
         "${ numberOfItems } odkazy na vaše položky boli zmazané"
       ],
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } bol zakázaný"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } bol povolený"
-      ],
       "All items will soon be permanently deleted from trash": [
         "Všetky položky budú čoskoro trvalo zmazané z koša"
       ],
@@ -7360,6 +7417,9 @@
       ],
       "Encrypted search activated": [
         "Vyhľadávanie v šifrovaných dátach aktivované"
+      ],
+      "Failed to accept share invitation": [
+        "Zlyhalo prijatie pozvania na zdieľanie"
       ],
       "Failed to download files: ${ err }": [
         "Nepodarilo sa stiahnuť súbory: ${ err }"
@@ -7408,6 +7468,12 @@
       ],
       "Root folder failed to be loaded": [
         "Nepodarilo sa načítať koreňový priečinok"
+      ],
+      "Share invitation accepted successfully": [
+        "Pozvanie na zdieľanie bolo úspešne prijaté"
+      ],
+      "Share invitation ID was not found. Please check the link": [
+        "ID pozvánky na zdieľanie nebolo nájdené. Skontrolujte odkaz, prosím"
       ],
       "Subfolder failed to be loaded": [
         "Nepodarilo sa načítať podpriečinok"
@@ -7876,6 +7942,9 @@
       ]
     },
     "Security Center - Info": {
+      "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
+        "Dostávajte upozornenia, keď dôjde k úniku vášho hesla alebo iných údajov zo služieb tretích strán. ${ learnMoreLink }"
+      ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Naše špičkové bezpečnostné riešenie založené na umelej inteligencii určené pre používateľov, ktorí hľadajú zvýšenú ochranu svojich účtov. ${ learnMoreLink }"
       ],
@@ -8343,9 +8412,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "Rušenie vášho predplatného, počkajte prosím"
-      ],
-      "Downgrading your account, please wait": [
-        "Prebieha prechod na nižší plán, prosím čakajte"
       ]
     },
     "Storage": {
@@ -9000,6 +9066,9 @@
       "Deleting contacts": [
         "Mazanie kontaktov"
       ],
+      "Details": [
+        "Podrobnosti"
+      ],
       "Discard": [
         "Zahodiť"
       ],
@@ -9168,6 +9237,9 @@
       "Night theme": [
         "Nočný motív"
       ],
+      "No breaches detected": [
+        "Nebol zistený únik"
+      ],
       "No results found": [
         "Žiadne nájdené výsledky"
       ],
@@ -9297,6 +9369,9 @@
       "Shared": [
         "Zdieľané"
       ],
+      "Shared with me": [
+        "Zdieľané so mnou"
+      ],
       "Show actions": [
         "Zobraziť akcie"
       ],
@@ -9413,6 +9488,9 @@
       ],
       "Your changes are not synced yet": [
         "Vaše zmeny zatiaľ nie sú synchronizované"
+      ],
+      "Your exposed information": [
+        "Vaše odhalené informácie"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Vaša bezplatná skúšobná verzia služby Mail Plus končí ${ textDate }"

@@ -1371,6 +1371,9 @@
       "Continue using ${ MAIL_APP_NAME }.": [
         "Folytatás ezzel: ${ MAIL_APP_NAME }."
       ],
+      "Continue using ${ planTitle }": [
+        "Folytatás ezzel: ${ planTitle }"
+      ],
       "Copy": [
         "Másolás"
       ],
@@ -8362,9 +8365,6 @@
       ]
     },
     "Log preference": {
-      "Enable ${ PROTON_SENTINEL_NAME }": [
-        "${ PROTON_SENTINEL_NAME } engedélyezése"
-      ],
       "Enable advanced logs": [
         "Részletes naplózás engedélyezése"
       ],
@@ -9388,12 +9388,6 @@
     "Notification": {
       "${ Filter.Name } created": [
         "${ Filter.Name } létrehozva"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } letiltva"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } engedélyezésre került"
       ],
       "A disabled address cannot be default": [
         "Egy kikapcsolt cím nem lehet alapértelmezett"
@@ -10751,11 +10745,6 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Hívjon meg barátokat a ${ BRAND_NAME }ba"
-      ]
-    },
-    "State": {
-      "Downgrading your account, please wait": [
-        "Csomag átállítás folyamatban, kérjük várjon"
       ]
     },
     "Step in filter modal": {

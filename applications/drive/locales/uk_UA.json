@@ -1133,6 +1133,9 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Продовжити за допомогою ${ MAIL_APP_NAME }."
+      ],
+      "Continue using ${ planTitle }": [
+        "Продовжити за допомогою ${ planTitle }"
       ]
     },
     "Checkout row": {
@@ -4533,6 +4536,9 @@
       "Organization size": [
         "Розмір організації"
       ],
+      "Owner": [
+        "Власник"
+      ],
       "password": [
         "пароль"
       ],
@@ -7170,12 +7176,6 @@
         "${ numberOfItems } посилань на ваші елементи було видалено",
         "${ numberOfItems } посилання на ваші елементи було видалено"
       ],
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } вимкнено"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } увімкнено"
-      ],
       "All items will soon be permanently deleted from trash": [
         "Усі елементи невдовзі будуть остаточно видалені зі смітника"
       ],
@@ -8099,9 +8099,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "Зачекайте поки триває скасування вашої передплати..."
-      ],
-      "Downgrading your account, please wait": [
-        "Триває перехід на тарифний план нижчого рівня. Будь ласка, зачекайте"
       ]
     },
     "Storage": {

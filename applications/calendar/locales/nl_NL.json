@@ -309,6 +309,9 @@
       "Hide affected calendars": [
         "Verberg betrokken agenda's"
       ],
+      "Hide busy times": [
+        "Verberg drukke tijden"
+      ],
       "Hide time zones": [
         "Tijdzones verbergen"
       ],
@@ -386,6 +389,9 @@
       ],
       "Manage labels": [
         "Labels beheeren"
+      ],
+      "Mark as resolved": [
+        "Markeren als opgelost"
       ],
       "Mark for deletion": [
         "Markeren voor verwijderen"
@@ -519,6 +525,9 @@
       "Report a problem": [
         "Meld een probleem"
       ],
+      "Request a call": [
+        "Telefoongesprek aanvragen"
+      ],
       "Request a feature": [
         "Vraag een functie aan"
       ],
@@ -587,6 +596,9 @@
       ],
       "Show affected calendars": [
         "Toon betrokken agenda's"
+      ],
+      "Show busy times": [
+        "Toon drukke tijden"
       ],
       "Show less": [
         "Minder weergeven"
@@ -663,11 +675,11 @@
       "Upgrade": [
         "Upgraden"
       ],
-      "Upgrade now": [
-        "Nu upgraden"
-      ],
       "Upgrade Now": [
         "Upgrade Nu"
+      ],
+      "Upgrade now": [
+        "Nu upgraden"
       ],
       "Upload picture": [
         "Afbeelding uploaden"
@@ -1097,6 +1109,12 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Blijf ${ MAIL_APP_NAME } gebruiken."
+      ],
+      "Continue using ${ planTitle }": [
+        "Blijf ${ planTitle } gebruiken"
+      ],
+      "Continue your subscription": [
+        "Uw abonnement voortzetten"
       ]
     },
     "Calendar access select label": {
@@ -2344,6 +2362,9 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA voegt een extra beveiligingslaag toe, waardoor onbevoegde toegang wordt voorkomen."
       ],
+      "Availability unknown": [
+        "Beschikbaarheid onbekend"
+      ],
       "Boost efficiency and track your time by color-coding events by category or your energy levels. Get this and much more with a paid plan.": [
         "Verhoog uw effectiviteit en hou uw tijd bij door gebeurtenissen van een categorie kleur te voorzien of een kleur gebaseerd op uw energie niveau. Krijg dit en nog heel veel meer met een betaald abonnement."
       ],
@@ -2367,6 +2388,9 @@
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Het lijkt erop dat de contactenlijst die u importeert enkele groepen bevat. Bekijk hoe deze groepen moeten worden geïmporteerd."
+      ],
+      "Loading availability": [
+        "Beschikbaarheid wordt geladen"
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Contactpersonen samenvoegen... Dit kan enkele minuten duren. Wanneer het proces is voltooid, kunt u dit venster sluiten."
@@ -4437,6 +4461,9 @@
       "Large imports can take several days.": [
         "Grote importen kunnen meerdere dagen duren."
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Leer ${ staySaferOnlineLink }"
+      ],
       "Learn more": [
         "Meer informatie"
       ],
@@ -4451,6 +4478,9 @@
       ],
       "Loading ${ appName }": [
         "${ appName } laden"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Laden van kalender, gelieve te wachten. U wordt automatisch doorverwezen naar onze agendaplanner Calendly in een nieuw tabblad."
       ],
       "Loading event": [
         "Afspraak laden"
@@ -4529,6 +4559,9 @@
       ],
       "Organization size": [
         "Grootte van de organisatie"
+      ],
+      "Other users within your organization will see your busy slots. No event details are shared.": [
+        "Andere gebruikers binnen uw organisatie zien uw bezette slots. Er worden geen details over het event gedeeld."
       ],
       "password": [
         "wachtwoord"
@@ -4653,6 +4686,9 @@
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "De applicatie moet uw contacten lokaal decoderen voordat ze kunnen worden geëxporteerd. Aan het einde van het proces zal een VCF-bestand worden gegenereerd en kan u het downloaden."
+      ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "De gelekte informatie werd gelekt door een dienst van een derde partij. Uw ${ BRAND_NAME } accountinformatie blijft veilig en versleuteld. ${ learnMoreLink }"
       ],
       "The following participants cannot be notified about your changes:": [
         "Geen van de deelnemers kan op de hoogte worden gebracht van uw wijzigingen:"
@@ -4872,6 +4908,12 @@
       "You cannot undo this action.": [
         "U kunt deze actie niet ongedaan maken."
       ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "Je hebt een Trial ${ planTitle } abonnement. Als je na de proefperiode door wilt gaan met je abonnement, voeg een betaalmethode toe."
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "Je hebt een trial ${ planTitle } abonnement. Er is geen betaling vereist op dit moment. Uw abonnement wordt automatisch verlengd aan het einde van de proefperiode."
+      ],
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
         "U hebt uw sleutels opnieuw geactiveerd. Afspraken gekoppeld aan de volgende kalenders kunnen nu gedecodeerd worden."
       ],
@@ -4950,6 +4992,12 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Uw gegevens zijn klaar om te importeren van ${ importedEmailAddressStrong } naar uw ${ BRAND_NAME } account."
       ],
+      "Your email address and password were leaked:": [
+        "Uw emailadres en wachtwoorden werden gelekt:"
+      ],
+      "Your email address was exposed:": [
+        "Uw emailadres werd blootgesteld:"
+      ],
       "Your email will only be used for this one-time verification.": [
         "Uw e-mailadres wordt alleen gebruikt voor deze eenmalige verificatie."
       ],
@@ -4959,11 +5007,17 @@
       "Your files will be encrypted and then saved": [
         "Uw bestanden worden versleuteld en vervolgens opgeslagen"
       ],
+      "Your information was found on ${ displayedDate }": [
+        "Uw informatie is gevonden op ${ displayedDate }"
+      ],
       "Your login information will not be saved after the import is completed.": [
         "Uw inloginformatie zal niet worden opgeslagen nadat de import is voltooid."
       ],
       "Your next billing date is ${ renewalTime }.": [
         "Uw volgende facturatiedatum is ${ renewalTime }."
+      ],
+      "Your password was leaked:": [
+        "Uw wachtwoord werd gelekt:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Uw telefoonnummer wordt alleen gebruikt voor deze eenmalige verificatie."
@@ -5102,6 +5156,9 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Tijdelijk onbeschikbaar. Probeer later opnieuw.)"
+      ],
+      "Access to my events": [
+        "Toegang tot mijn evenementen"
       ],
       "Add email address": [
         "E-mailadres toevoegen"
@@ -5464,6 +5521,9 @@
       "Select your plan": [
         "Kies uw abonnement"
       ],
+      "Show others when I'm busy": [
+        "Laat anderen zien wanneer ik bezet ben"
+      ],
       "Show week numbers": [
         "Weeknummers weergeven"
       ],
@@ -5625,6 +5685,9 @@
       ],
       "Request an invite": [
         "Uitnodiging aanvragen"
+      ],
+      "stay safer online": [
+        "blijf veilig online"
       ],
       "What’s this?": [
         "Wat is dit?"
@@ -6779,12 +6842,6 @@
       ]
     },
     "Notification": {
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } is uitgezet"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } is aangezet"
-      ],
       "Contact group created": [
         "Contactgroep aangemaakt"
       ],
@@ -7413,6 +7470,9 @@
       ]
     },
     "Security Center - Info": {
+      "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
+        "Ontvang een melding als uw wachtwoord of andere gegevens zijn gelekt van een externe dienst. ${ learnMoreLink }"
+      ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Onze geavanceerde AI-gedreven beveiligingsoplossing ontworpen voor gebruikers die verhoogde bescherming zoeken voor hun accounts. ${ learnMoreLink }"
       ],
@@ -7898,6 +7958,12 @@
       "Invite friends to ${ BRAND_NAME }": [
         "Nodig vrienden uit voor ${ BRAND_NAME }"
       ],
+      "No more scheduling conflicts": [
+        "Geen planningconflicten meer"
+      ],
+      "Now you can see when participants are free to attend your meeting.": [
+        "U kunt nu zien wanneer deelnemers vrij zijn om ana uw vergadering deel te nemen."
+      ],
       "Public holidays are here!": [
         "Wettelijke feestdagen zijn hier!"
       ],
@@ -7911,9 +7977,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "Uw abonnement wordt geannuleerd, even geduld"
-      ],
-      "Downgrading your account, please wait": [
-        "Account downgraden, even geduld"
       ]
     },
     "Storage": {
@@ -8602,6 +8665,9 @@
       "Deleting contacts": [
         "Contacten aan het verwijderen"
       ],
+      "Details": [
+        "Details"
+      ],
       "Downgrade account": [
         "Account downgraden"
       ],
@@ -8923,6 +8989,9 @@
       ],
       "Your calendar link": [
         "Uw agendakoppeling"
+      ],
+      "Your exposed information": [
+        "Uw blootgestelde informatie"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Uw Mail Plus proefversie eindigt op ${ textDate }"

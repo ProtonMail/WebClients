@@ -374,6 +374,9 @@
       "Report a problem": [
         "Ilmoita ongelmasta"
       ],
+      "Request a call": [
+        "Pyydä soittoa"
+      ],
       "Request a feature": [
         "Pyydä ominaisuutta"
       ],
@@ -970,6 +973,12 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Jatka ${ MAIL_APP_NAME }in käyttämistä."
+      ],
+      "Continue using ${ planTitle }": [
+        "Jatka ${ planTitle }in käyttämistä"
+      ],
+      "Continue your subscription": [
+        "Jatka tilaustasi"
       ]
     },
     "Checkout row": {
@@ -3332,6 +3341,9 @@
       "Loading ${ appName }": [
         "Ladataan ${ appName }"
       ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Kalenteria ladataan, odota. Sinut ohjataan uudelle välilehdelle aikataulualustallemme Calendlyyn."
+      ],
       "Loading preview": [
         "Ladataan esikatselua"
       ],
@@ -3997,6 +4009,12 @@
       "You have ${ availableCount } dedicated server available.": [
         "Käytettävissä on ${ availableCount } kohdistettu palvelin.",
         "Käytettävissä on ${ availableCount } kohdistettua palvelinta."
+      ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "Sinulla on ${ planTitle } -kokeilutilaus. Jos haluat jatkaa tilausta kokeilujakson jälkeen, lisää maksutapa."
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "Sinulla on ${ planTitle } -kokeilutilaus. Maksua ei vaadita tällä hetkellä. Tilauksesi uusitaan automaattisesti kokeilujakson päätyttyä."
       ],
       "You have no invoices.": [
         "Sinulla ei ole laskuja."
@@ -6882,9 +6900,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "Tilaustasi perutaan. Odota."
-      ],
-      "Downgrading your account, please wait": [
-        "Tiliäsi alennetaan, odota"
       ]
     },
     "Storage": {

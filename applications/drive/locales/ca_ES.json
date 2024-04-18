@@ -182,6 +182,9 @@
       "Copy email to clipboard": [
         "Copiar correu electrònic al porta-retalls"
       ],
+      "Copy invite link": [
+        "Copia l'enllaç d'invitació"
+      ],
       "Copy link": [
         "Copia l'enllaç"
       ],
@@ -438,6 +441,9 @@
       ],
       "Manage link": [
         "Gestiona l'enllaç"
+      ],
+      "Mark as resolved": [
+        "Marca com a resolt"
       ],
       "Mark for deletion": [
         "Marca per a l'eliminació"
@@ -1136,6 +1142,9 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continua utilitzant ${ MAIL_APP_NAME }."
+      ],
+      "Continue using ${ planTitle }": [
+        "Continua utilitzant ${ planTitle }"
       ]
     },
     "Checkout row": {
@@ -4428,6 +4437,9 @@
       "Organization size": [
         "Mida de l'organització"
       ],
+      "Owner": [
+        "Propietari"
+      ],
       "password": [
         "contrasenya"
       ],
@@ -4482,6 +4494,9 @@
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Seleccioneu quina adreça o adreces de correu electrònic cal afegir a ${ groupName }."
+      ],
+      "Please try again in a few moments": [
+        "Torneu-ho a intentar en uns instants."
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Torneu-ho a provar amb un mètode de pagament diferent o poseu-vos en contacte amb el vostre banc."
@@ -5624,6 +5639,12 @@
       "Set recovery method": [
         "Estableix un mètode de recuperació"
       ],
+      "Shared by": [
+        "Compartit per"
+      ],
+      "Shared on": [
+        "Compartit el"
+      ],
       "Show indexing progress of Encrypted Search": [
         "Mostra el progrés d'indexació de la Cerca Xifrada"
       ],
@@ -5812,6 +5833,9 @@
       ],
       "Shared": [
         "Compartit"
+      ],
+      "Shared with me": [
+        "Compartit amb mi"
       ],
       "Trash": [
         "Paperera"
@@ -6048,6 +6072,9 @@
       ],
       "Opus audio": [
         "Àudio Opus"
+      ],
+      "Portable Network Graphics": [
+        "Gràfics de xarxa portàtils"
       ],
       "RAR archive": [
         "Arxiu RAR"
@@ -6967,12 +6994,6 @@
       "${ numberOfItems } link to your item was deleted": [
         "S'ha eliminat ${ numberOfItems } enllaç al vostre element",
         "S'han eliminat ${ numberOfItems } enllaços al vostre element"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } s'ha desactivat"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } s'ha habilitat"
       ],
       "All items will soon be permanently deleted from trash": [
         "Aviat se suprimiran permanentment tots els elements de la paperera"
@@ -7920,11 +7941,6 @@
         "Ara podeu cercar fàcilment fitxers de Drive mentre manteniu les dades segures."
       ]
     },
-    "State": {
-      "Downgrading your account, please wait": [
-        "S'està passant a un pla inferior. Espereu un moment."
-      ]
-    },
     "Storage": {
       "Get more storage": [
         "Aconseguiu més emmagatzematge"
@@ -8509,6 +8525,9 @@
       "Deleting contacts": [
         "Eliminant contactes"
       ],
+      "Details": [
+        "Detalls"
+      ],
       "Discard": [
         "Descarta"
       ],
@@ -8801,6 +8820,9 @@
       ],
       "Shared": [
         "Compartit"
+      ],
+      "Shared with me": [
+        "Compartit amb mi"
       ],
       "Show actions": [
         "Mostra accions"

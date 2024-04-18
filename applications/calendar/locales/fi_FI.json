@@ -390,6 +390,9 @@
       "Manage labels": [
         "Hallitse tunnisteita"
       ],
+      "Mark as resolved": [
+        "Merkitse ratkaistuksi"
+      ],
       "Mark for deletion": [
         "Merkitse poistettavaksi"
       ],
@@ -521,6 +524,9 @@
       ],
       "Report a problem": [
         "Ilmoita ongelmasta"
+      ],
+      "Request a call": [
+        "Pyydä soittoa"
       ],
       "Request a feature": [
         "Pyydä ominaisuutta"
@@ -669,10 +675,10 @@
       "Upgrade": [
         "Päivitä tilaus"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Päivitä tilaus nyt"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Päivitä tilaus nyt"
       ],
       "Upload picture": [
@@ -1106,6 +1112,12 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Jatka ${ MAIL_APP_NAME }in käyttämistä."
+      ],
+      "Continue using ${ planTitle }": [
+        "Jatka ${ planTitle }in käyttämistä"
+      ],
+      "Continue your subscription": [
+        "Jatka tilaustasi"
       ]
     },
     "Calendar access select label": {
@@ -2359,9 +2371,6 @@
       "Boost efficiency and track your time by color-coding events by category or your energy levels. Get this and much more with a paid plan.": [
         "Lisää tehokkuutta ja seuraa aikaasi värikoodaamalla tapahtumia kategorian tai energiatasosi mukaan. Hanki tämä ja paljon muuta maksullisella paketilla."
       ],
-      "Breach alerts and reports are available with a paid plan. Upgrade for immediate access.": [
-        "Tietovuotohälytykset ja -raportit sisältyvät maksullisiin tilauksiin. Saat ne heti käyttöösi päivitämällä tilauksesi."
-      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Yhteystietojen salausta puretaan… Tämä voi kestää muutamia minuutteja ja käsittelyn valmistuttua voit ladata tiedoston, joka sisältää kaikki viedyt yhteystietosi."
       ],
@@ -2418,9 +2427,6 @@
       ],
       "Your account and data recovery methods are set.": [
         "Tilisi ja tietojesi palautusmenetelmät on määritetty."
-      ],
-      "Your personal data was leaked by an online service in a data breach. View full details and get recommended actions.": [
-        "Henkilökohtaisia tietojasi on vuotanut verkkopalvelun tietovuodon seurauksena. Tarkastele vuodon tietoja ja ryhdy tarvittaviin toimenpiteisiin."
       ]
     },
     "description": {
@@ -4455,6 +4461,9 @@
       "Large imports can take several days.": [
         "Suuret tuonnit saattavat kestää useita päiviä."
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Opi kuinka ${ staySaferOnlineLink }"
+      ],
       "Learn more": [
         "Lue lisää"
       ],
@@ -4469,6 +4478,9 @@
       ],
       "Loading ${ appName }": [
         "Ladataan ${ appName }"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Kalenteria ladataan, odota. Sinut ohjataan uudelle välilehdelle aikataulualustallemme Calendlyyn."
       ],
       "Loading event": [
         "Ladataan tapahtumaa"
@@ -4678,6 +4690,9 @@
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Sovelluksen on purettava yhteystietojesi salaus paikallisesti ennen niiden vientiä. Käsittelyn lopuksi luodaan ladattava VCF-tiedosto."
       ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "Paljastuneet tiedot vuotivat kolmannen osapuolen palvelusta. Sinun ${ BRAND_NAME } -tilisi tiedot pysyvät suojattuina ja salattuina. ${ learnMoreLink }"
+      ],
       "The following participants cannot be notified about your changes:": [
         "Seuraaville osallistujille ei voida ilmoittaa muutoksistasi:"
       ],
@@ -4804,6 +4819,9 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Ohjaamme sinut uudessa välilehdessä PayPaliin suorittamaan maksun. Jos käytät ponnahdusikkunoiden estäjiä, poista ne käytöstä jatkaaksesi."
       ],
+      "We'll email you once import is complete.": [
+        "Lähetämme sinulle sähköpostia, kun tuonti on valmis."
+      ],
       "We'll notify you when the import is done.": [
         "Ilmoitamme sinulle kun tuonti on valmis."
       ],
@@ -4876,6 +4894,9 @@
       "You can check the progress ${ importProgressLink }.": [
         "Voit tarkastaa tilan ${ importProgressLink }."
       ],
+      "You can close the tab or browser in the meantime.": [
+        "Voit sulkea välilehden tai selaimen sillä välin."
+      ],
       "You can import one data type at a time.": [
         "Voit tuoda vain yhden tietotyypin kerrallaan."
       ],
@@ -4895,6 +4916,12 @@
       ],
       "You cannot undo this action.": [
         "Et voi kumota toimintoa."
+      ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "Sinulla on ${ planTitle } -kokeilutilaus. Jos haluat jatkaa tilausta kokeilujakson jälkeen, lisää maksutapa."
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "Sinulla on ${ planTitle } -kokeilutilaus. Maksua ei vaadita tällä hetkellä. Tilauksesi uusitaan automaattisesti kokeilujakson päätyttyä."
       ],
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
         "Olet aktivoinut avaimesi uudelleen ja seuraaviin kalentereihin liitettyjen tapahtumien salaukset voidaan nyt purkaa."
@@ -4974,6 +5001,12 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Tietosi lähteestä ${ importedEmailAddressStrong } ovat valmiina ${ BRAND_NAME }-tilillesi tuontia varten."
       ],
+      "Your email address and password were leaked:": [
+        "Sähköpostiosoitteesi ja salasanasi ovat vuotaneet:"
+      ],
+      "Your email address was exposed:": [
+        "Sähköpostiosoitteesi paljastui:"
+      ],
       "Your email will only be used for this one-time verification.": [
         "Sähköpostiosoitettasi käytetään vain tähän kertaluontoiseen vahvistukseen."
       ],
@@ -4983,11 +5016,17 @@
       "Your files will be encrypted and then saved": [
         "Tiedostosi salataan ja tallennetaan"
       ],
+      "Your information was found on ${ displayedDate }": [
+        "Tietosi löytyivät ${ displayedDate }"
+      ],
       "Your login information will not be saved after the import is completed.": [
         "Kirjautumistietojasi ei säilytetä tuonnin päätyttyä."
       ],
       "Your next billing date is ${ renewalTime }.": [
         "Seuraava laskutuspäivä on ${ renewalTime }."
+      ],
+      "Your password was leaked:": [
+        "Salasanasi on vuotanut:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Puhelinnumeroasi käytetään vain tähän kertaluontoiseen vahvistukseen."
@@ -5655,6 +5694,9 @@
       ],
       "Request an invite": [
         "Pyydä kutsu"
+      ],
+      "stay safer online": [
+        "pysy turvassa verkossa"
       ],
       "What’s this?": [
         "Mikä tämä on?"
@@ -6809,12 +6851,6 @@
       ]
     },
     "Notification": {
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } poistettiin käytöstä"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } otettiin käyttöön"
-      ],
       "Contact group created": [
         "Yhteystietoryhmä luotiin"
       ],
@@ -7443,6 +7479,9 @@
       ]
     },
     "Security Center - Info": {
+      "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
+        "Saat ilmoituksen, jos salasanasi tai muut tietosi ovat vuotaneet kolmannen osapuolen palvelusta. ${ learnMoreLink }"
+      ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Huippumoderni tekoälypohjainen tietoturvaratkaisumme, joka on suunniteltu tileilleen tehostettua suojausta kaipaaville käyttäjille. ${ learnMoreLink }"
       ],
@@ -7947,9 +7986,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "Tilaustasi perutaan. Odota."
-      ],
-      "Downgrading your account, please wait": [
-        "Tiliäsi alennetaan, odota"
       ]
     },
     "Storage": {
@@ -8638,6 +8674,9 @@
       "Deleting contacts": [
         "Poistetaan yhteystietoja"
       ],
+      "Details": [
+        "Lisätiedot"
+      ],
       "Downgrade account": [
         "Alenna tili"
       ],
@@ -8912,9 +8951,6 @@
       "Start import process": [
         "Aloita tuonti"
       ],
-      "Stay safer online": [
-        "Pysy turvassa verkossa"
-      ],
       "Summary": [
         "Yhteenveto"
       ],
@@ -8965,6 +9001,9 @@
       ],
       "Your calendar link": [
         "Linkki kalenteriisi"
+      ],
+      "Your exposed information": [
+        "Paljastuneet tietosi"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Ilmainen Mail Plus -kokeilusi päättyy ${ textDate }"

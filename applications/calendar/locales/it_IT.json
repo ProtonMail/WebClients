@@ -390,9 +390,6 @@
       "Manage labels": [
         "Gestisci etichette"
       ],
-      "Mark as open": [
-        "Segna come aperto"
-      ],
       "Mark as resolved": [
         "Segna come risolto"
       ],
@@ -678,10 +675,10 @@
       "Upgrade": [
         "Effettua l'upgrade"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Effettua l'upgrade ora"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Effettua l'upgrade ora"
       ],
       "Upload picture": [
@@ -2374,9 +2371,6 @@
       "Boost efficiency and track your time by color-coding events by category or your energy levels. Get this and much more with a paid plan.": [
         "Migliora l'efficienza e tieni traccia del tuo tempo classificando gli eventi per colore, in base alla categoria o alle tue energie. Ottieni questo e molto altro con un piano a pagamento."
       ],
-      "Breach alerts and reports are available with a paid plan. Upgrade for immediate access.": [
-        "Gli avvisi e le segnalazioni sulle violazioni di dati sono disponibili con un piano a pagamento. Effettua l'upgrade per ottenere l'accesso immediato."
-      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Decrittografia dei contatti in corso. Questa operazione potrebbe richiedere alcuni minuti. Al termine del processo, potrai scaricare il file con tutti i tuoi contatti esportati."
       ],
@@ -2436,9 +2430,6 @@
       ],
       "Your account and data recovery methods are set.": [
         "I tuoi metodi di recupero dell'account e dei dati sono impostati."
-      ],
-      "Your personal data was leaked by an online service in a data breach. View full details and get recommended actions.": [
-        "I tuoi dati personali sono stati resi pubblici da un servizio online a seguito di una violazione di dati. Visualizza i dettagli completi e le azioni consigliate."
       ]
     },
     "description": {
@@ -4194,9 +4185,6 @@
       "Billing cycle: ${ text }": [
         "Ciclo di fatturazione: ${ text }"
       ],
-      "Breach Alert": [
-        "Avviso sulle violazioni di dati"
-      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Declassando ad un piano gratuito, perderai definitivamente questi benefici, anche se in futuro effettuerai un nuovo upgrade."
       ],
@@ -5783,6 +5771,11 @@
         "Il tuo abbonamento è terminato. ${ cta } ed evitare la perdita di dati."
       ]
     },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Abilita ${ reason }"
+      ]
+    },
     "Mail import summary": {
       "Import all messages from ${ itemsToImportCount } folder and label them as": [
         "Importa tutti i messaggi da ${ itemsToImportCount } cartella ed etichettali come",
@@ -6874,11 +6867,11 @@
       ]
     },
     "Notification": {
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } è stato disattivato"
+      "${ reason } has been disabled": [
+        "${ reason } è stato disabilitato"
       ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } è stato abilitato"
+      "${ reason } has been enabled": [
+        "${ reason } è stato abilitato"
       ],
       "Contact group created": [
         "Gruppo di contatti creato"
@@ -7517,8 +7510,8 @@
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel è **attivo** e sta proteggendo il tuo account."
       ],
-      "Your information was found in at least one data breach. Turn on Breach Alert to view details and take action. ${ learnMoreLink }": [
-        "Le tue informazioni sono state trovate in almeno una violazione di dati. Attiva gli avvisi sulle violazioni di dati per visualizzare i dettagli e le azioni da seguire. ${ learnMoreLink }"
+      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLink }": [
+        "Le tue informazioni sono state trovate in almeno una violazione di dati. Attiva ${ DARK_WEB_MONITORING_NAME } per visualizzare i dettagli e le azioni da seguire. ${ learnMoreLink }"
       ]
     },
     "Select files": {
@@ -8018,9 +8011,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "Annullamento dell'abbonamento. Per favore attendi"
-      ],
-      "Downgrading your account, please wait": [
-        "Downgrade del tuo account in corso. Attendi"
       ]
     },
     "Storage": {
@@ -8605,9 +8595,6 @@
       "Birthday": [
         "Compleanno"
       ],
-      "Breach Alert": [
-        "Avviso sulle violazioni di dati"
-      ],
       "Calendar": [
         "Calendario"
       ],
@@ -8988,9 +8975,6 @@
       ],
       "Start import process": [
         "Avvia il processo d'importazione"
-      ],
-      "Stay safer online": [
-        "Stai più sicuro online"
       ],
       "Summary": [
         "Riepilogo"

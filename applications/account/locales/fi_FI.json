@@ -620,6 +620,12 @@
       "Mark as default": [
         "Merkitse oletukseksi"
       ],
+      "Mark as open": [
+        "Merkitse avoimeksi"
+      ],
+      "Mark as resolved": [
+        "Merkitse ratkaistuksi"
+      ],
       "mark emails as": [
         "merkitse viestit"
       ],
@@ -754,6 +760,9 @@
       ],
       "Report a problem": [
         "Ilmoita ongelmasta"
+      ],
+      "Request a call": [
+        "Pyydä soittoa"
       ],
       "Request a feature": [
         "Pyydä ominaisuutta"
@@ -1003,9 +1012,6 @@
       ],
       "Unlock": [
         "Avaa"
-      ],
-      "Unlock Breach Report": [
-        "Avaa tietomurtoraportti"
       ],
       "Unlock data": [
         "Avaa tiedot"
@@ -1672,6 +1678,12 @@
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Jatka ${ MAIL_APP_NAME }in käyttämistä."
+      ],
+      "Continue using ${ planTitle }": [
+        "Jatka ${ planTitle }in käyttämistä"
+      ],
+      "Continue your subscription": [
+        "Jatka tilaustasi"
       ],
       "Copy": [
         "Kopioi"
@@ -3159,9 +3171,6 @@
       ],
       "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
         "Poista ${ MAIL_APP_NAME }in alatunniste ja avaa myös muita premium-ominaisuuksia päivittämällä tilauksesi ."
-      ],
-      "To view the full report including personalized recommendations, upgrade to a paid plan.": [
-        "Tarkastellaksesi täyttä henkilökohtaisia suosituksia sisältävää raporttia, päivitä maksulliseen tilaukseen."
       ],
       "Track the status and activity of your referrals.": [
         "Seuraa suositustesi tilaa ja tapahtumia."
@@ -6917,6 +6926,9 @@
       "Lean more about single sign-on": [
         "Lue lisää kertakirjautumisesta"
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Opi kuinka ${ staySaferOnlineLink }"
+      ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Lue miten kirjaudut ${ VPN_APP_NAME }:ään kolmannen osapuolen VPN-sovelluksilla."
       ],
@@ -6955,6 +6967,9 @@
       ],
       "Loading ${ appName }": [
         "Ladataan ${ appName }"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Kalenteria ladataan, odota. Sinut ohjataan uudelle välilehdelle aikataulualustallemme Calendlyyn."
       ],
       "Loading preview": [
         "Ladataan esikatselua"
@@ -7525,6 +7540,9 @@
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "Sähköpostiosoitteen vahvistuslinkki on vanhentunut. Kirjaudu sisään ja lähetä uusi linkki."
       ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "Paljastuneet tiedot vuotivat kolmannen osapuolen palvelusta. Sinun ${ BRAND_NAME } -tilisi tiedot pysyvät suojattuina ja salattuina. ${ learnMoreLink }"
+      ],
       "The following address is available:": [
         "Seuraava osoite on saatavilla:"
       ],
@@ -7918,6 +7936,9 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Ohjaamme sinut uudessa välilehdessä PayPaliin suorittamaan maksun. Jos käytät ponnahdusikkunoiden estäjiä, poista ne käytöstä jatkaaksesi."
       ],
+      "We'll email you once import is complete.": [
+        "Lähetämme sinulle sähköpostia, kun tuonti on valmis."
+      ],
       "We'll get back to you shortly.": [
         "Palaamme asiaan pian."
       ],
@@ -8022,6 +8043,9 @@
       "You can check the progress ${ importProgressLink }.": [
         "Voit tarkastaa tilan ${ importProgressLink }."
       ],
+      "You can close the tab or browser in the meantime.": [
+        "Voit sulkea välilehden tai selaimen sillä välin."
+      ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Voit muokata tätä kerran varmistaaksesi, että sähköpostiosoite on oikea vahvistusta varten."
       ],
@@ -8079,6 +8103,12 @@
       "You have ${ availableCount } dedicated server available.": [
         "Käytettävissä on ${ availableCount } kohdistettu palvelin.",
         "Käytettävissä on ${ availableCount } kohdistettua palvelinta."
+      ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "Sinulla on ${ planTitle } -kokeilutilaus. Jos haluat jatkaa tilausta kokeilujakson jälkeen, lisää maksutapa."
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "Sinulla on ${ planTitle } -kokeilutilaus. Maksua ei vaadita tällä hetkellä. Tilauksesi uusitaan automaattisesti kokeilujakson päätyttyä."
       ],
       "You have no calendars to export.": [
         "Sinulla ei ole vietäviä kelentereita."
@@ -8194,6 +8224,9 @@
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Tietosi ovat turvassa meillä. Otamme sinuun yhteyttä vain, kun se on tarpeen palveluidemme tarjoamiseksi."
+      ],
+      "Your information was found on ${ displayedDate }": [
+        "Tietosi löytyivät ${ displayedDate }"
       ],
       "Your login information will not be saved after the import is completed.": [
         "Kirjautumistietojasi ei säilytetä tuonnin päätyttyä."
@@ -9820,6 +9853,9 @@
       "Sign in": [
         "Kirjaudu sisään"
       ],
+      "stay safer online": [
+        "pysy turvassa verkossa"
+      ],
       "switch account": [
         "vaihda tiliä"
       ],
@@ -9906,9 +9942,6 @@
       ]
     },
     "Log preference": {
-      "Enable ${ PROTON_SENTINEL_NAME }": [
-        "Ota ${ PROTON_SENTINEL_NAME } käyttöön"
-      ],
       "Enable advanced logs": [
         "Käytä laajaa lokikirjausta"
       ],
@@ -11254,12 +11287,6 @@
     "Notification": {
       "${ Filter.Name } created": [
         "${ Filter.Name } luotiin"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } poistettiin käytöstä"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } otettiin käyttöön"
       ],
       "A disabled address cannot be default": [
         "Käytöstä poistettu osoite ei voi olla oletusosoite"
@@ -13216,9 +13243,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "Tilaustasi perutaan. Odota."
-      ],
-      "Downgrading your account, please wait": [
-        "Tiliäsi alennetaan, odota"
       ]
     },
     "Step in filter modal": {
@@ -14277,6 +14301,9 @@
       "Delete version history?": [
         "Poistetaanko versiohistoria?"
       ],
+      "Details": [
+        "Lisätiedot"
+      ],
       "Disable ${ email }": [
         "Poista ${ email } käytöstä"
       ],
@@ -14915,6 +14942,9 @@
       ],
       "Your changes are not synced yet": [
         "Muutoksiasi ei ole vielä synkronoitu"
+      ],
+      "Your exposed information": [
+        "Paljastuneet tietosi"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Ilmainen Mail Plus -kokeilusi päättyy ${ textDate }"

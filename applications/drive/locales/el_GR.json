@@ -182,6 +182,9 @@
       "Copy email to clipboard": [
         "Αντιγραφή μηνύματος στο πρόχειρο"
       ],
+      "Copy invite link": [
+        "Αντιγραφή συνδέσμου πρόσκλησης"
+      ],
       "Copy link": [
         "Αντιγραφή συνδέσμου"
       ],
@@ -439,6 +442,9 @@
       "Manage link": [
         "Διαχείριση συνδέσμου"
       ],
+      "Mark as resolved": [
+        "Σήμανση ως επιλυμένου"
+      ],
       "Mark for deletion": [
         "Σήμανση για διαγραφή"
       ],
@@ -573,6 +579,9 @@
       ],
       "Report an issue": [
         "Αναφορά προβλήματος"
+      ],
+      "Request a call": [
+        "Ζητήστε Τηλεφωνική Επικοινωνία"
       ],
       "Request a feature": [
         "Ζητήστε μια δυνατότητα"
@@ -822,6 +831,9 @@
       ],
       "View": [
         "Προβολή"
+      ],
+      "View all reports": [
+        "Προβολή όλων των αναφορών"
       ],
       "View invoice": [
         "Προβολή τιμολογίου"
@@ -1145,6 +1157,12 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Συνεχίστε να χρησιμοποιείτε ${ MAIL_APP_NAME }."
+      ],
+      "Continue using ${ planTitle }": [
+        "Συνεχίστε να χρησιμοποιείτε ${ planTitle }"
+      ],
+      "Continue your subscription": [
+        "Συνέχιση της συνδρομής σας"
       ]
     },
     "Checkout row": {
@@ -4311,6 +4329,9 @@
       "Last week": [
         "Προηγούμενη εβδομάδα"
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Μάθετε πώς μπορείτε να ${ staySaferOnlineLink }"
+      ],
       "Learn more": [
         "Μάθετε περισσότερα"
       ],
@@ -4325,6 +4346,9 @@
       ],
       "Loading ${ appName }": [
         "Φόρτωση ${ appName }"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Φόρτωση ημερολογίου, παρακαλούμε περιμένετε. Θα μεταφερθείτε στην πλατφόρμα προγραμματισμού Calendly σε μια νέα καρτέλα."
       ],
       "Loading link": [
         "Φόρτωση συνδέσμου"
@@ -4451,6 +4475,9 @@
       "Organization size": [
         "Μέγεθος οργανισμού"
       ],
+      "Owner": [
+        "Ιδιοκτήτης"
+      ],
       "password": [
         "κωδικός πρόσβασης"
       ],
@@ -4505,6 +4532,9 @@
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Παρακαλούμε επιλέξτε ποια διεύθυνση ή διευθύνσεις email θα προσθέσετε στην ομάδα ${ groupName }."
+      ],
+      "Please try again in a few moments": [
+        "Παρακαλούμε δοκιμάστε ξανά σε λίγο"
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Δοκιμάστε ξανά χρησιμοποιώντας διαφορετικό τρόπο πληρωμής ή επικοινωνήστε με την τράπεζά σας."
@@ -4666,6 +4696,9 @@
       "Shared link not found": [
         "Ο κοινόχρηστος σύνδεσμος δε βρέθηκε"
       ],
+      "Shared with me": [
+        "Κοινοποιημένο με εμένα"
+      ],
       "Sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
         "Εγγραφείτε για τον δικό σας λογαριασμό ${ DRIVE_APP_NAME } και προστατέψτε τα δεδομένα σας με κρυπτογράφηση από άκρο σε άκρο και μοιραστείτε τα με ασφάλεια."
       ],
@@ -4728,6 +4761,9 @@
       ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
         "Τα κρυπτογραφημένα δεδομένα είναι ελαφρώς μεγαλύτερα λόγω της επιβάρυνσης της κρυπτογράφησης και των υπογραφών, που διασφαλίζουν την ασφάλεια των δεδομένων σας."
+      ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "Οι εκτεθειμένες πληροφορίες διέρρευσαν από μια υπηρεσία τρίτου μέρους. Οι πληροφορίες του λογαριασμού σας ${ BRAND_NAME } παραμένουν ασφαλείς και κρυπτογραφημένες. ${ learnMoreLink }"
       ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Τα ακόλουθα μπορεί να έχουν αλλοιωθεί: ${ items }. Ανοίξτε τα μόνο αν το εμπιστεύεστε."
@@ -4958,6 +4994,9 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Θα σας ανακατευθύνουμε στο PayPal, σε μια νέα καρτέλα προγράμματος περιήγησης, για να ολοκληρώσετε αυτήν τη συναλλαγή. Εάν έχετε ενεργοποιημένο τον αποκλεισμό αναδυόμενων παραθύρων, παρακαλώ απενεργοποιήστε τον για να συνεχίσετε."
       ],
+      "We'll email you once import is complete.": [
+        "Θα σας στείλουμε μήνυμα ηλεκτρονικού ταχυδρομείου μόλις ολοκληρωθεί η εισαγωγή."
+      ],
       "We'll notify you when the import is done.": [
         "Θα σας ειδοποιήσουμε όταν ολοκληρωθεί η εισαγωγή."
       ],
@@ -5015,6 +5054,9 @@
       "You can check the progress ${ importProgressLink }.": [
         "Μπορείτε να δείτε την πρόοδο ${ importProgressLink }."
       ],
+      "You can close the tab or browser in the meantime.": [
+        "Στο μεταξύ, μπορείτε να κλείσετε την καρτέλα ή το πρόγραμμα περιήγησης."
+      ],
       "You can import one data type at a time.": [
         "Μπορεί να εισαχθεί ένας τύπος δεδομένων τη φορά."
       ],
@@ -5038,6 +5080,12 @@
       "You have ${ expiresInDays } day left to claim your 3 GB welcome bonus and ": [
         "Σας απομένουν ${ expiresInDays } ημέρα για να διεκδικήσετε το μπόνους καλωσορίσματος 3 GB και ",
         "Σας απομένουν ${ expiresInDays } ημέρες για να διεκδικήσετε το μπόνους καλωσορίσματος 3 GB και "
+      ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "Έχετε μια δοκιμαστική συνδρομή ${ planTitle }. Αν θέλετε να συνεχίσετε τη συνδρομή σας μετά τη δοκιμαστική περίοδο, προσθέστε έναν τρόπο πληρωμής."
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "Έχετε μια δοκιμαστική συνδρομή ${ planTitle }. Δεν απαιτείται πληρωμή αυτήν τη στιγμή. Η συνδρομή σας θα ανανεωθεί αυτόματα στο τέλος της δοκιμαστικής περιόδου."
       ],
       "You may be redirected to your bank’s website.": [
         "Ενδέχεται να ανακατευθυνθείτε στον ιστότοπο της τράπεζάς σας."
@@ -5093,6 +5141,12 @@
       "Your download is in progress": [
         "Η λήψη σας βρίσκεται σε εξέλιξη"
       ],
+      "Your email address and password were leaked:": [
+        "Η διεύθυνση ηλεκτρονικού ταχυδρομείου και ο κωδικός πρόσβασής σας διέρρευσαν:"
+      ],
+      "Your email address was exposed:": [
+        "Η διεύθυνση ηλεκτρονικού ταχυδρομείου σας διέρρευσε:"
+      ],
       "Your email will only be used for this one-time verification.": [
         "Το email σας θα χρησιμοποιηθεί μόνο για αυτή την εφάπαξ επαλήθευση."
       ],
@@ -5105,11 +5159,17 @@
       "Your files will be encrypted and then saved.": [
         "Τα αρχεία σας θα κρυπτογραφηθούν και στη συνέχεια θα αποθηκευτούν."
       ],
+      "Your information was found on ${ displayedDate }": [
+        "Οι πληροφορίες σας βρέθηκαν στις ${ displayedDate }"
+      ],
       "Your login information will not be saved after the import is completed.": [
         "Τα στοιχεία σύνδεσής σας δεν θα αποθηκευτούν μετά την ολοκλήρωση της εισαγωγής."
       ],
       "Your next billing date is ${ renewalTime }.": [
         "Η επόμενη ημερομηνία χρέωσης είναι ${ renewalTime }."
+      ],
+      "Your password was leaked:": [
+        "Ο κωδικός πρόσβασής σας διέρρευσε:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ο αριθμός τηλεφώνου σας θα χρησιμοποιηθεί μόνο για αυτή την εφάπαξ επαλήθευση."
@@ -5848,6 +5908,12 @@
       ],
       "Shared": [
         "Κοινοποιημένα"
+      ],
+      "Shared with me": [
+        "Κοινοποιημένο με εμένα"
+      ],
+      "stay safer online": [
+        "παραμείνετε πιο ασφαλείς στο διαδίκτυο"
       ],
       "Trash": [
         "Διαγραμμένα"
@@ -7079,12 +7145,6 @@
         "διαγράφηκε ${ numberOfItems } σύνδεσμος προς το στοιχείο σας",
         "διαγράφηκαν ${ numberOfItems } σύνδεσμοι προς τα στοιχεία σας"
       ],
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } έχει απενεργοποιηθεί"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } έχει ενεργοποιηθεί"
-      ],
       "All items will soon be permanently deleted from trash": [
         "Όλα τα διαγραμμένα στοιχεία σύντομα θα εξαλειφθούν οριστικά"
       ],
@@ -7610,6 +7670,9 @@
       ]
     },
     "Security Center - Info": {
+      "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
+        "Λάβετε ειδοποίηση εάν ο κωδικός πρόσβασής σας ή άλλα δεδομένα διέρρευσαν από υπηρεσία τρίτου μέρους. ${ learnMoreLink }"
+      ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Η πρωτοποριακή μας λύση ασφάλειας με γνώμονα την τεχνητή νοημοσύνη, σχεδιασμένη για χρήστες που αναζητούν αυξημένη προστασία για τους λογαριασμούς τους. ${ learnMoreLink }"
       ],
@@ -8043,9 +8106,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "Η συνδρομή σας ακυρώνεται, παρακαλούμε περιμένετε"
-      ],
-      "Downgrading your account, please wait": [
-        "Γίνεται υποβάθμιση του λογαριασμού σας, παρακαλώ περιμένετε"
       ]
     },
     "Storage": {
@@ -8654,6 +8714,9 @@
       "Deleting contacts": [
         "Διαγραφή επαφών"
       ],
+      "Details": [
+        "Λεπτομέρειες"
+      ],
       "Discard": [
         "Απόρριψη"
       ],
@@ -8818,6 +8881,9 @@
       "Night theme": [
         "Σκούρο θέμα"
       ],
+      "No breaches detected": [
+        "Δεν εντοπίστηκαν παραβιάσεις"
+      ],
       "No results found": [
         "Κανένα αποτέλεσμα"
       ],
@@ -8947,6 +9013,9 @@
       "Shared": [
         "Κοινοποιημένα"
       ],
+      "Shared with me": [
+        "Κοινοποιημένο με εμένα"
+      ],
       "Show actions": [
         "Εμφάνιση ενεργειών"
       ],
@@ -9063,6 +9132,9 @@
       ],
       "Your changes are not synced yet": [
         "Οι αλλαγές σας δεν έχουν συγχρονιστεί ακόμα"
+      ],
+      "Your exposed information": [
+        "Οι εκτεθειμένες πληροφορίες σας"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Η δωρεάν δοκιμή του Mail Plus λήγει στις ${ textDate }"
