@@ -27,6 +27,15 @@ export const getBusyAttendeesToFetch = (state: CalendarState): string[] => {
     return attendeesToFetch;
 };
 
+const getInfinitelyLoopingColor = (() => {
+    let index = 0;
+    return () => {
+        const color = ACCENT_COLORS[index];
+        index = (index + 1) % ACCENT_COLORS.length;
+        return color;
+    };
+})();
+
 export const getBusyAttendeesColor = (
     nextAttendees: string[],
     actualAttendeesColors: BusySlotsState['attendeeColor'],
@@ -43,11 +52,17 @@ export const getBusyAttendeesColor = (
         const attendeeColor = (() => {
             const calendarColors = userCalendars.map((item) => item?.Members?.[0]?.Color).filter(Boolean) || [];
             const attendeeColors = [...Object.values(actualAttendeesColors), ...Object.values(result)];
-            const availableColors = ACCENT_COLORS.filter((color) => {
-                return !calendarColors.includes(color) && !attendeeColors.includes(color);
-            });
+            const availableColors = ACCENT_COLORS.filter(
+                (color) => !calendarColors.includes(color) && !attendeeColors.includes(color)
+            );
 
-            return availableColors[0] || ACCENT_COLORS[0];
+            // If filtered colors are available, return the first one
+            if (availableColors.length > 0) {
+                return availableColors[0];
+            }
+
+            // If too much attendees then loop over the entire color palette
+            return getInfinitelyLoopingColor();
         })();
 
         result[email] = attendeeColor;
