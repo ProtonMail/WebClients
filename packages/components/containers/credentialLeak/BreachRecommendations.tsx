@@ -1,18 +1,13 @@
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href';
+import { FetchedBreaches } from '@proton/components/containers';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { Icon } from '../..';
 
 interface Props {
-    actions:
-        | null
-        | {
-              code: string;
-              name: string;
-              desc: string;
-          }[];
+    actions: FetchedBreaches['actions'];
     inModal?: boolean;
 }
 
@@ -60,9 +55,12 @@ const getIcon = (code: string) => {
     }
 };
 
-const Action = (props: any) => {
-    const { code, action, link } = props;
-
+interface ActionProps {
+    code: string;
+    action: string;
+    link?: string;
+}
+const Action = ({ code, action, link }: ActionProps) => {
     const iconName = getIcon(code);
 
     return (
@@ -97,10 +95,10 @@ const BreachRecommendations = ({ actions, inModal = false }: Props) => {
                 <h3 className="text-semibold text-rg mb-2">{c('Title').t`Recommended actions`}</h3>
             )}
             <ul className="unstyled m-0">
-                {actions.map(({ code, name, urls }: any) => {
+                {actions.map(({ code, name, urls }) => {
                     return (
                         <li className="border-top border-weak text-sm relative">
-                            <Action key={`${name}`} code={code} action={name} link={urls[0]} />
+                            <Action key={`${name}`} code={code} action={name} link={urls?.[0]} />
                         </li>
                     );
                 })}
