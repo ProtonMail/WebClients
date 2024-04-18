@@ -58,7 +58,7 @@ const ComposerAssistant = ({ onUseGeneratedText, onUpdateShowAssistant, assistan
     return (
         <div className="composer-assistant-container absolute">
             <div className="composer-assistant rounded-lg flex-nowrap flex flex-column mx-2 my-4 relative">
-                <div className="shrink-0 mt-2 pr-2 flex flex-row flex-nowrap flex-column md:flex-row items-stretch md:items-center my-0 pb-2 w-full">
+                <div className="shrink-0 mt-3 pr-2 flex flex-row flex-nowrap flex-column md:flex-row items-stretch md:items-center my-0 pb-2 w-full">
                     <ComposerAssistantInput onGenerateResult={handleGenerateResult} />
                     <Tooltip title={c('loc_nightly_assistant').t`Close AI Assistant`}>
                         <Button
@@ -98,7 +98,9 @@ const ComposerAssistant = ({ onUseGeneratedText, onUpdateShowAssistant, assistan
                                     {/*</Tooltip>*/}
                                     <Button
                                         onClick={replaceMessageBody}
-                                        className={clsx([!isWaitingForResult && 'composer-assistant-button'])}
+                                        className={clsx([
+                                            isWaitingForResult ? 'visibility-hidden' : 'composer-assistant-button',
+                                        ])}
                                         disabled={isWaitingForResult}
                                     >
                                         {c('loc_nightly_assistant').t`Use this`}
