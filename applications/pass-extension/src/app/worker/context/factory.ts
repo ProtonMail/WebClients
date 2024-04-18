@@ -52,6 +52,7 @@ export const createWorkerContext = (config: ProtonConfig) => {
     const api = exposeApi(createApi({ config, threshold: API_CONCURRENCY_TRESHOLD }));
     const authStore = exposeAuthStore(createAuthStore(createStore()));
     const storage = createStorageService();
+    const core = createPassCoreService();
 
     exposePassCrypto(createPassCrypto());
 
@@ -65,14 +66,14 @@ export const createWorkerContext = (config: ProtonConfig) => {
             auth: createAuthService(api, authStore),
             autofill: createAutoFillService(),
             autosave: createAutoSaveService(),
-            core: createPassCoreService(),
+            core,
             export: createExportService(),
             formTracker: createFormTrackerService(),
             i18n: createI18nService(),
             import: createImportService(),
             injection: createInjectionService(),
             logger: createLoggerService(storage.local),
-            monitor: createMonitorService(),
+            monitor: createMonitorService(core),
             onboarding: createOnboardingService(storage.local),
             otp: createOTPService(),
             passkey: createPasskeyService(),

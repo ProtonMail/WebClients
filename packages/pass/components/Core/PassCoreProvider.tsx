@@ -1,14 +1,13 @@
 import type { FC, PropsWithChildren } from 'react';
 import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 
-import type { WasmPasswordScoreResult } from '@protontech/pass-rust-core';
-
 import { ConfigProvider } from '@proton/components/containers/config';
 import type { PassConfig } from '@proton/pass/hooks/usePassConfig';
 import type { UsePeriodOtpCodeOptions } from '@proton/pass/hooks/usePeriodicOtpCode';
 import type { ExportOptions } from '@proton/pass/lib/export/types';
 import type { I18nService } from '@proton/pass/lib/i18n/service';
 import type { ImportReaderPayload } from '@proton/pass/lib/import/types';
+import type { MonitorService } from '@proton/pass/lib/monitor/service';
 import type { ApiState, ClientEndpoint, Maybe, MaybeNull, MaybePromise, OnboardingMessage } from '@proton/pass/types';
 import type { TelemetryEvent } from '@proton/pass/types/data/telemetry';
 import type { ParsedUrl } from '@proton/pass/utils/url/parser';
@@ -23,6 +22,8 @@ export type PassCoreContextValue = {
     i18n: I18nService;
     /** current locale */
     locale: string;
+    /** PassMonitor service */
+    monitor: MonitorService;
     /** Resolves a users */
     exportData: (options: ExportOptions) => Promise<File>;
     /** In the extension: leverage worker communication to generate
@@ -63,8 +64,6 @@ export type PassCoreContextValue = {
     setCurrentTabUrl?: (url: ParsedUrl) => void;
     /** Writes text to the clipboard */
     writeToClipboard: (text: string) => Promise<void>;
-    /** Analyzes the given password */
-    analyzePassword: (password: string) => MaybePromise<MaybeNull<WasmPasswordScoreResult>>;
 };
 
 export type PassCoreProviderProps = Omit<PassCoreContextValue, 'locale'>;

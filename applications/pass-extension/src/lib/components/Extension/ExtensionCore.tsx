@@ -4,6 +4,7 @@ import { type FC, useMemo, useRef } from 'react';
 import * as config from 'proton-pass-extension/app/config';
 import locales from 'proton-pass-extension/app/locales';
 import { API_PROXY_URL } from 'proton-pass-extension/app/worker/services/api-proxy';
+import { createMonitorBridge } from 'proton-pass-extension/lib/services/monitor.bridge';
 import { promptForPermissions } from 'proton-pass-extension/lib/utils/permissions';
 
 import type { PassCoreProviderProps } from '@proton/pass/components/Core/PassCoreProvider';
@@ -32,6 +33,7 @@ const getExtensionCoreProps = (
         config,
         endpoint,
         i18n,
+        monitor: createMonitorBridge(messageFactory),
 
         exportData: (payload) =>
             sendMessage.on(messageFactory({ type: WorkerMessageType.EXPORT_REQUEST, payload }), (res) => {
@@ -123,12 +125,6 @@ const getExtensionCoreProps = (
             sendMessage(messageFactory({ type: WorkerMessageType.TELEMETRY_EVENT, payload: { event } })).catch(noop),
 
         writeToClipboard: (value) => navigator.clipboard.writeText(value),
-
-        analyzePassword: (password) =>
-            sendMessage.on(
-                messageFactory({ type: WorkerMessageType.ANALYZE_PASSWORD, payload: { password } }),
-                (res) => (res.type === 'success' ? res : null)
-            ),
     };
 };
 
