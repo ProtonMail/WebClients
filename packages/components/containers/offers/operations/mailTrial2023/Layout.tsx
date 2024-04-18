@@ -2,6 +2,7 @@ import { format, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
 import { useSubscription } from '@proton/components/hooks';
+import { PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
 import OfferFooter from '../../components/shared/OfferFooter';
@@ -17,11 +18,13 @@ const Layout = (props: OfferLayoutProps) => {
     const [subscription] = useSubscription();
     const { PeriodEnd = 0 } = subscription || {};
     const textDate = format(fromUnixTime(PeriodEnd), 'PPP', { locale: dateLocale });
+    const planName = PLAN_NAMES[PLANS.MAIL];
 
     return hasOffer(props) ? (
         <OfferLayout {...props}>
             <OfferHeader {...props}>
-                <OfferTitle>{c('Title').t`Your Mail Plus free trial ends on ${textDate}`}</OfferTitle>
+                {/* translator: the full sentence is: Your Mail Plus free trial ends on April 29th */}
+                <OfferTitle>{c('Title').t`Your ${planName} free trial ends on ${textDate}`}</OfferTitle>
                 <p className="text-center">{c('Info')
                     .t`Upgrade now to get premium features, products and storage at a special price`}</p>
             </OfferHeader>

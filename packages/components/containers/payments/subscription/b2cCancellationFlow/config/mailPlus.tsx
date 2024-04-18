@@ -2,7 +2,7 @@ import { differenceInDays, format, fromUnixTime } from 'date-fns';
 import { c, msgid } from 'ttag';
 
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import { BRAND_NAME, MAIL_APP_NAME, PLANS } from '@proton/shared/lib/constants';
+import { BRAND_NAME, MAIL_APP_NAME, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { SubscriptionModel, SubscriptionPlan } from '@proton/shared/lib/interfaces';
 import alias from '@proton/styles/assets/img/cancellation-flow/testimonial_alias.png';
@@ -23,12 +23,13 @@ export const getMailPlusConfig = (
     subscription: SubscriptionModel,
     plan: SubscriptionPlan & { Name: PLANS }
 ): PlanConfig => {
+    const planName = PLAN_NAMES[PLANS.MAIL];
     const planMaxSpace = humanSize({ bytes: plan.MaxSpace, unit: 'GB', fraction: 0 });
 
     const reminder = {
-        title: c('Subscription reminder').t`Let us remind you of everything Mail Plus can do`,
+        title: c('Subscription reminder').t`Let us remind you of everything ${planName} can do`,
         description: c('Subscription reminder')
-            .t`Mail Plus doesn't just provide extra storage. It lets you manage your emails faster, customize your inbox and email addresses, and access the desktop app.`,
+            .t`${planName} doesn't just provide extra storage. It lets you manage your emails faster, customize your inbox and email addresses, and access the desktop app.`,
     };
 
     const testimonials: PlanConfigTestimonial = {
@@ -116,20 +117,20 @@ export const getMailPlusConfig = (
         ? userRewardedDrive
             ? getBoldFormattedText(
                   c('Subscription reminder')
-                      .t`By canceling your Mail Plus subscription, your storage will decrease from **${planMaxSpace}** to **1 GB** for Mail, and **5 GB** for Drive. You will also lose any storage bonuses earned previously.`
+                      .t`By canceling your ${planName} subscription, your storage will decrease from **${planMaxSpace}** to **1 GB** for Mail, and **5 GB** for Drive. You will also lose any storage bonuses earned previously.`
               )
             : getBoldFormattedText(
                   c('Subscription reminder')
-                      .t`By canceling your Mail Plus subscription, your storage will decrease from **${planMaxSpace}** to **1 GB** for Mail, and **1 GB** for Drive. You will also lose any storage bonuses earned previously.`
+                      .t`By canceling your ${planName} subscription, your storage will decrease from **${planMaxSpace}** to **1 GB** for Mail, and **1 GB** for Drive. You will also lose any storage bonuses earned previously.`
               )
         : userRewardedDrive
           ? getBoldFormattedText(
                 c('Subscription reminder')
-                    .t`By canceling your Mail Plus subscription, your storage will decrease from **${planMaxSpace}** to **500 MB** for Mail, and **5 GB** for Drive. You will also lose any storage bonuses earned previously.`
+                    .t`By canceling your ${planName} subscription, your storage will decrease from **${planMaxSpace}** to **500 MB** for Mail, and **5 GB** for Drive. You will also lose any storage bonuses earned previously.`
             )
           : getBoldFormattedText(
                 c('Subscription reminder')
-                    .t`By canceling your Mail Plus subscription, your storage will decrease from **${planMaxSpace}** to **500 MB** for Mail, and **1 GB** for Drive. You will also lose any storage bonuses earned previously.`
+                    .t`By canceling your ${planName} subscription, your storage will decrease from **${planMaxSpace}** to **500 MB** for Mail, and **1 GB** for Drive. You will also lose any storage bonuses earned previously.`
             );
 
     const storage: PlanConfigStorage = {
@@ -194,7 +195,7 @@ export const getMailPlusConfig = (
 
     const confirmationModal: ConfirmationModal = {
         description: c('Subscription reminder')
-            .jt`You still have ${expiryDate} on your Mail Plus plan. We'll add the credits for the remaining time to your ${BRAND_NAME} Account. Make sure you do not exceed the free plan limits before canceling.`,
+            .jt`You still have ${expiryDate} on your ${planName} plan. We'll add the credits for the remaining time to your ${BRAND_NAME} Account. Make sure you do not exceed the free plan limits before canceling.`,
         learnMoreLink: '/free-plan-limits',
     };
 
@@ -205,7 +206,7 @@ export const getMailPlusConfig = (
         features,
         storage,
         confirmationModal,
-        planCta: c('Subscription reminder').t`Keep Mail Plus`,
-        redirectModal: c('Subscription reminder').t`Resubscribe to restore access to Mail Plus features.`,
+        planCta: c('Subscription reminder').t`Keep ${planName}`,
+        redirectModal: c('Subscription reminder').t`Resubscribe to restore access to ${planName} features.`,
     };
 };
