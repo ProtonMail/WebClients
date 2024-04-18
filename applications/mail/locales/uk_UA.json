@@ -1189,11 +1189,11 @@
       "Upgrade": [
         "Покращити"
       ],
-      "Upgrade now": [
-        "Покращити"
-      ],
       "Upgrade Now": [
         "Передплатити"
+      ],
+      "Upgrade now": [
+        "Покращити"
       ],
       "Upload picture": [
         "Вивантажити зображення"
@@ -1658,6 +1658,9 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Продовжити за допомогою ${ MAIL_APP_NAME }."
+      ],
+      "Continue using ${ planTitle }": [
+        "Продовжити за допомогою ${ planTitle }"
       ]
     },
     "Calendar attachment tooltip": {
@@ -4733,6 +4736,9 @@
       ],
       "No credit card required.": [
         "Банківська картка не потрібна."
+      ],
+      "Start free trial": [
+        "Почати пробний період"
       ],
       "Try the app-new desktop app": [
         "Спробуйте новий настільний застосунок"
@@ -9306,12 +9312,6 @@
       "${ Filter.Name } created": [
         "${ Filter.Name } створено"
       ],
-      "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } вимкнено"
-      ],
-      "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } увімкнено"
-      ],
       "Block removed": [
         "Блокування вилучено"
       ],
@@ -10477,9 +10477,6 @@
     "State": {
       "Cancelling your subscription, please wait": [
         "Зачекайте поки триває скасування вашої передплати..."
-      ],
-      "Downgrading your account, please wait": [
-        "Триває перехід на тарифний план нижчого рівня. Будь ласка, зачекайте"
       ]
     },
     "Status": {
