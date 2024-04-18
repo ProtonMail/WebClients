@@ -3,6 +3,7 @@ import { createSelector } from '@reduxjs/toolkit';
 import { getBusyScheduledEvent } from '../../containers/calendar/eventHelper';
 import { CalendarViewBusyEvent } from '../../containers/calendar/interface';
 import { CalendarState } from '../store';
+import { deduplicateBusySlots } from './busySlotsSelectors.helpers';
 import { BusySlotFetchStatus, BusySlotsVisibility, busySlotsSliceName } from './busySlotsSlice';
 
 export const selectAttendeesBusySlots = createSelector(
@@ -33,9 +34,10 @@ export const selectAttendeesBusySlots = createSelector(
                 availabilities[email] === 'visible' &&
                 busySlots[email].length > 0
             ) {
-                const attendeeFormattedTimeslots = busySlots[email].map((busySlot) => {
-                    return getBusyScheduledEvent(email, busySlot, metadata.tzid, attendeesColor[email] || '');
-                });
+                const deduplicatedBusySlots = deduplicateBusySlots(busySlots[email]);
+                const attendeeFormattedTimeslots = deduplicatedBusySlots.map((busySlot) =>
+                    getBusyScheduledEvent(email, busySlot, metadata.tzid, attendeesColor[email] || '')
+                );
 
                 acc = [...acc, ...attendeeFormattedTimeslots];
             }
