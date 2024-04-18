@@ -3,6 +3,7 @@ import { ReactNode, createContext, useContext, useEffect, useMemo, useRef, useSt
 import { c } from 'ttag';
 
 import { FeatureFlag, useFlag } from '@proton/components/containers';
+import useAssistantTelemetry from '@proton/llm/lib/useAssistantTelemetry';
 import { domIsBusy } from '@proton/shared/lib/busy';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
@@ -15,6 +16,7 @@ import { GenerationCallback, LlmManager, LlmModel, RunningAction } from './types
 export interface GenerateAssistantResult {
     inputText: string;
     callback: GenerationCallback;
+    ingestionStartTime?: number;
 }
 
 /**
@@ -184,6 +186,8 @@ export const AssistantProvider = ({
 
     const [error, setError] = useState('');
 
+    const generatedTokensNumber = useRef(0);
+
     const isWaitingForResult = useMemo(() => {
         return isGeneratingResult || isModelLoadingOnGPU || isModelDownloading;
     }, [isModelDownloading, isModelLoadingOnGPU, isGeneratingResult]);
@@ -199,6 +203,9 @@ export const AssistantProvider = ({
             isGeneratingResult,
         });
     }, [isModelDownloading, isModelDownloaded, isModelLoadingOnGPU, isModelLoadedOnGPU, isGeneratingResult]);
+
+    const { sendRequestAssistantReport, sendUnloadModelAssistantReport, sendDownloadAssistantReport } =
+        useAssistantTelemetry();
 
     const openAssistant = (id: string) => {
         setOpenedAssistants([...openedAssistants, id]);
@@ -240,10 +247,14 @@ export const AssistantProvider = ({
             if (!llmManager.current) {
                 return; // throw an error?
             }
+            const startDownloadingTime = performance.now();
             setIsModelDownloading(true);
             await llmManager.current.startDownload(downloadCallback);
             setIsModelDownloading(false);
             setIsModelDownloaded(true);
+            const endDownloadingTime = performance.now();
+            const downloadingTime = endDownloadingTime - startDownloadingTime;
+            sendDownloadAssistantReport(downloadingTime);
         } catch (e: any) {
             traceInitiativeError('assistant', e);
             const errorMessage = c('loc_nightly_assistant').t`Something went wrong while downloading the model`;
@@ -283,6 +294,8 @@ export const AssistantProvider = ({
             if (llmModel.current) {
                 await llmModel.current?.unload();
                 setIsModelLoadedOnGPU(false);
+
+                sendUnloadModelAssistantReport();
             }
         } catch (e: any) {
             traceInitiativeError('assistant', e);
@@ -307,36 +320,62 @@ export const AssistantProvider = ({
     };
 
     // TODO pass promptType
-    const generateResult = async ({ inputText, callback }: GenerateAssistantResult) => {
+    const generateResult = async ({ inputText, callback, ingestionStartTime }: GenerateAssistantResult) => {
+        const ingestionStart = ingestionStartTime || performance.now();
         // If the assistant is being loaded at the moment, wait for the loading to be completed before generating
         const isAssistantInitializing =
             assistantStatus.current === ASSISTANT_STATUS.DOWNLOADING ||
             assistantStatus.current === ASSISTANT_STATUS.DOWNLOADED ||
             assistantStatus.current === ASSISTANT_STATUS.LOADING_GPU;
         if (isAssistantInitializing) {
-            setTimeout(() => generateResult({ inputText, callback }), RETRY_GENERATE_TIMEOUT);
+            // If we are waiting for the initialization to be complete before generating, pass the start ingestion time here,
+            // so that we obtain the real "waiting" time
+            setTimeout(
+                () => generateResult({ inputText, callback, ingestionStartTime: ingestionStart }),
+                RETRY_GENERATE_TIMEOUT
+            );
             return;
         }
         // Init the assistant in case it's not loaded (if it has been unloaded after inactivity for example)
         if (assistantStatus.current === ASSISTANT_STATUS.NOT_LOADED) {
             await initAssistant();
         }
+        const ingestionEnd = performance.now();
+        const ingestionTime = ingestionEnd - ingestionStart;
 
         try {
             const assistantStatusReady =
                 assistantStatus.current === ASSISTANT_STATUS.READY ||
                 assistantStatus.current === ASSISTANT_STATUS.GENERATING;
             if (assistantStatusReady && llmModel.current) {
+                const generationCallback = (token: string, fulltext: string) => {
+                    generatedTokensNumber.current++;
+                    callback(token, fulltext);
+                };
+
                 setIsGeneratingResult(true);
+                const generationStart = performance.now();
                 const runningAction = await llmModel.current.performAction(
                     {
                         type: 'writeFullEmail',
                         prompt: inputText,
                     },
-                    callback
+                    generationCallback
                 );
                 runningActionRef.current = runningAction;
                 await runningAction.waitForCompletion();
+
+                // Send telemetry report
+                const generationEnd = performance.now();
+                const generationTime = generationEnd - generationStart;
+                sendRequestAssistantReport({
+                    ingestionTime,
+                    generationTime,
+                    tokensGenerated: generatedTokensNumber.current,
+                });
+                generatedTokensNumber.current = 0;
+
+                // Reset the generating state
                 runningActionRef.current = null;
                 setIsGeneratingResult(false);
             }
