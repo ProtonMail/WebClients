@@ -15,7 +15,7 @@ import { EventModel, VcalVeventComponent, VisualCalendar } from '@proton/shared/
 
 import getFrequencyModelChange from '../../components/eventModal/eventForm/getFrequencyModelChange';
 import { getDateTimeState, getTimeInUtc } from '../../components/eventModal/eventForm/time';
-import { BusyTimeSlot } from '../../store/busyTimeSlots/busyTimeSlotsSlice';
+import { BusySlot } from '../../store/busySlots/busySlotsSlice';
 import { CalendarViewBusyEvent, CalendarViewEvent, CalendarViewEventTemporaryEvent } from './interface';
 
 export const getViewEventDateProperties = (eventComponent: VcalVeventComponent) => {
@@ -125,7 +125,7 @@ export const getTemporaryEvent = (
 
 export const getBusyScheduledEvent = (
     email: string,
-    timeSlot: BusyTimeSlot,
+    timeSlot: BusySlot,
     tzid: string,
     color: string
 ): CalendarViewBusyEvent => {

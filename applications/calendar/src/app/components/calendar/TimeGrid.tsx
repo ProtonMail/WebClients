@@ -29,9 +29,9 @@ import {
     TargetEventData,
     TargetMoreData,
 } from '../../containers/calendar/interface';
-import { isBusyTimesSlotEvent } from '../../helpers/busyTimeSlots';
+import { isBusySlotEvent } from '../../helpers/busySlots';
 import { getNavigationArrowsText } from '../../helpers/i18n';
-import { selectAttendeesBusyTimeSlots } from '../../store/busyTimeSlots/busyTimeSlotsSelectors';
+import { selectAttendeesBusySlots } from '../../store/busySlots/busySlotsSelectors';
 import { useCalendarSelector } from '../../store/hooks';
 import { PartDayEventView } from '../events/PartDayEvent';
 import RowEvents from './DayGrid/RowEvents';
@@ -117,7 +117,7 @@ const TimeGrid = ({
     children,
     ...rest
 }: Props) => {
-    const attendeeBusyTimeSlots = useCalendarSelector(selectAttendeesBusyTimeSlots);
+    const attendeeBusySlots = useCalendarSelector(selectAttendeesBusySlots);
     const timeGridRef = useRef<HTMLDivElement>(null);
     const dayGridRef = useRef<HTMLUListElement>(null);
     const nowRef = useRef<HTMLDivElement>(null);
@@ -148,7 +148,7 @@ const TimeGrid = ({
     }, [secondaryTimezoneOffset, formatTime]);
 
     let [timeEvents, dayEvents] = useMemo(() => {
-        const result = [...events, ...attendeeBusyTimeSlots].reduce<
+        const result = [...events, ...attendeeBusySlots].reduce<
             [(CalendarViewEvent | CalendarViewBusyEvent)[], (CalendarViewEvent | CalendarViewBusyEvent)[]]
         >(
             (acc, event) => {
@@ -165,7 +165,7 @@ const TimeGrid = ({
 
         // We need to have chronological ordering for the layout to be calculated correctly
         return [result[0].sort((dateA, dateB) => compareAsc(dateA.start, dateB.start)), result[1]];
-    }, [events, attendeeBusyTimeSlots]);
+    }, [events, attendeeBusySlots]);
 
     const daysRows = useMemo(() => {
         if (isSmallViewport) {
@@ -239,7 +239,7 @@ const TimeGrid = ({
                 e,
                 onMouseDown,
                 rows: daysRows,
-                events: dayEvents.filter((event): event is CalendarViewEvent => !isBusyTimesSlotEvent(event)),
+                events: dayEvents.filter((event): event is CalendarViewEvent => !isBusySlotEvent(event)),
                 eventsPerRows,
                 dayGridEl: dayGridRef.current,
             });

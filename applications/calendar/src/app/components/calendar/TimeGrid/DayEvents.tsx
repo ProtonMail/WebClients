@@ -3,7 +3,7 @@ import { Ref, useMemo } from 'react';
 import { isNextDay } from '@proton/shared/lib/date-fns-utc';
 
 import { CalendarViewBusyEvent, CalendarViewEvent, TargetEventData } from '../../../containers/calendar/interface';
-import { isBusyTimesSlotEvent } from '../../../helpers/busyTimeSlots';
+import { isBusySlotEvent } from '../../../helpers/busySlots';
 import PartDayBusyEvent from '../../events/PartDayBusyEvent';
 import PartDayEvent, { EventSize } from '../../events/PartDayEvent';
 import getIsBeforeNow from '../getIsBeforeNow';
@@ -127,7 +127,7 @@ const DayEvents = ({
                           partDayEventViewStyleValues.lineHeight
                   );
 
-        return isBusyTimesSlotEvent(event) ? (
+        return isBusySlotEvent(event) ? (
             <PartDayBusyEvent
                 event={event}
                 eventPartDuration={eventPartDuration}

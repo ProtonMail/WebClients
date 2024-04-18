@@ -2,15 +2,15 @@ import { CALENDAR_SHARE_BUSY_TIME_SLOTS, CALENDAR_TYPE } from '@proton/shared/li
 import { PLANS } from '@proton/shared/lib/constants';
 import { Organization } from '@proton/shared/lib/interfaces';
 
-import { getBusyTimeSlotCalSettingValue, isUserEligibleForBusyTimeSlots } from './busyTimeSlots';
+import { getBusySlotSettingValue, isUserEligibleForBusySlots } from './busySlots';
 
-describe('isUserEligibleForBusyTimeSlots', () => {
+describe('isUserEligibleForBusySlots', () => {
     it('should return true if the user has a bundle pro organisation', () => {
         const organisation = {
             PlanName: PLANS.BUNDLE_PRO,
         } as Organization;
 
-        const result = isUserEligibleForBusyTimeSlots(organisation);
+        const result = isUserEligibleForBusySlots(organisation);
 
         expect(result).toBe(true);
     });
@@ -20,7 +20,7 @@ describe('isUserEligibleForBusyTimeSlots', () => {
             PlanName: PLANS.ENTERPRISE,
         } as Organization;
 
-        const result = isUserEligibleForBusyTimeSlots(organisation);
+        const result = isUserEligibleForBusySlots(organisation);
 
         expect(result).toBe(true);
     });
@@ -30,7 +30,7 @@ describe('isUserEligibleForBusyTimeSlots', () => {
             PlanName: PLANS.FAMILY,
         } as Organization;
 
-        const result = isUserEligibleForBusyTimeSlots(organisation);
+        const result = isUserEligibleForBusySlots(organisation);
 
         expect(result).toBe(true);
     });
@@ -40,7 +40,7 @@ describe('isUserEligibleForBusyTimeSlots', () => {
             PlanName: PLANS.NEW_VISIONARY,
         } as Organization;
 
-        const result = isUserEligibleForBusyTimeSlots(organisation);
+        const result = isUserEligibleForBusySlots(organisation);
 
         expect(result).toBe(true);
     });
@@ -50,7 +50,7 @@ describe('isUserEligibleForBusyTimeSlots', () => {
             PlanName: PLANS.FREE,
         } as Organization;
 
-        const result = isUserEligibleForBusyTimeSlots(organisation);
+        const result = isUserEligibleForBusySlots(organisation);
 
         expect(result).toBe(false);
     });
@@ -58,19 +58,19 @@ describe('isUserEligibleForBusyTimeSlots', () => {
 
 describe('getBusyTimeSlotCalSettingValue', () => {
     it('should share Personal calendar and user owns it', () => {
-        const result = getBusyTimeSlotCalSettingValue(CALENDAR_TYPE.PERSONAL);
+        const result = getBusySlotSettingValue(CALENDAR_TYPE.PERSONAL);
 
         expect(result).toBe(CALENDAR_SHARE_BUSY_TIME_SLOTS.YES);
     });
 
     it("should NOT share Subscription calendar and user don't own it", () => {
-        const result = getBusyTimeSlotCalSettingValue(CALENDAR_TYPE.SUBSCRIPTION);
+        const result = getBusySlotSettingValue(CALENDAR_TYPE.SUBSCRIPTION);
 
         expect(result).toBe(CALENDAR_SHARE_BUSY_TIME_SLOTS.NO);
     });
 
     it('should NOT share Holiday calendar and user owns it', () => {
-        const result = getBusyTimeSlotCalSettingValue(CALENDAR_TYPE.HOLIDAYS);
+        const result = getBusySlotSettingValue(CALENDAR_TYPE.HOLIDAYS);
 
         expect(result).toBe(CALENDAR_SHARE_BUSY_TIME_SLOTS.NO);
     });

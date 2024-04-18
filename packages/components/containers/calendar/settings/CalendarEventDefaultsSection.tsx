@@ -26,8 +26,8 @@ import {
 
 import SettingsLayout from '../../account/SettingsLayout';
 import SettingsLayoutRight from '../../account/SettingsLayoutRight';
-import { BusyTimeSlotsLabelInfo } from '../calendarModal/BusyTimeSlotsCheckbox';
-import useBusyTimeSlotsAvailable from '../hooks/useBusyTimeSlotsAvailable';
+import { BusySlotsLabelInfo } from '../calendarModal/BusySlotsCheckbox';
+import useBusySlotsAvailable from '../hooks/useBusySlotsAvailable';
 import Notifications from '../notifications/Notifications';
 
 interface Props {
@@ -51,7 +51,7 @@ const CalendarEventDefaultsSection = ({ calendar, bootstrap, canEdit }: Props) =
     const [loadingSaveFullDayNotifications, withLoadingSaveFullDayNotifications] = useLoading();
     const [loadingSaveShareBusySlots, withLoadingSaveShareBusySlots] = useLoading();
 
-    const isBusyTimeSlotsAvailable = useBusyTimeSlotsAvailable();
+    const isBusySlotsAvailable = useBusySlotsAvailable();
 
     const showDuration = getShowDuration(calendar);
     const cannotEdit = !canEdit;
@@ -102,10 +102,10 @@ const CalendarEventDefaultsSection = ({ calendar, bootstrap, canEdit }: Props) =
         );
     };
 
-    const handleSaveShareBusyTimeSlots = (value: CALENDAR_SHARE_BUSY_TIME_SLOTS) => {
+    const handleSaveShareBusySlots = (value: CALENDAR_SHARE_BUSY_TIME_SLOTS) => {
         void withLoadingSaveShareBusySlots(
             (async () => {
-                setModel({ ...model, shareBusyTimeSlots: value });
+                setModel({ ...model, shareBusySlots: value });
                 await api(updateCalendarSettings(calendar.ID, { MakesUserBusy: value }));
                 await call([calendar.ID]);
                 displaySuccessNotification();
@@ -124,23 +124,23 @@ const CalendarEventDefaultsSection = ({ calendar, bootstrap, canEdit }: Props) =
             <div className="h2 mb-1 text-bold">{c('Default calendar event settings section title')
                 .t`Default event settings`}</div>
 
-            {isBusyTimeSlotsAvailable && (
+            {isBusySlotsAvailable && (
                 <SettingsLayout stackEarlier className={'mt-8'}>
                     <SettingsLayoutLeft>
                         <label htmlFor="busy-slots-sharing" className="text-semibold">
                             <span>{c('Label').t`Show others when I'm busy`}</span>
-                            <BusyTimeSlotsLabelInfo />
+                            <BusySlotsLabelInfo />
                         </label>
                     </SettingsLayoutLeft>
                     <SettingsLayoutRight isToggleContainer>
                         <Toggle
                             id="busy-slots-sharing"
                             aria-describedby="busy-slots-sharing"
-                            checked={model.shareBusyTimeSlots === CALENDAR_SHARE_BUSY_TIME_SLOTS.YES}
+                            checked={model.shareBusySlots === CALENDAR_SHARE_BUSY_TIME_SLOTS.YES}
                             loading={loadingSaveShareBusySlots}
                             onChange={() => {
-                                handleSaveShareBusyTimeSlots(
-                                    model.shareBusyTimeSlots === CALENDAR_SHARE_BUSY_TIME_SLOTS.YES
+                                handleSaveShareBusySlots(
+                                    model.shareBusySlots === CALENDAR_SHARE_BUSY_TIME_SLOTS.YES
                                         ? CALENDAR_SHARE_BUSY_TIME_SLOTS.NO
                                         : CALENDAR_SHARE_BUSY_TIME_SLOTS.YES
                                 );
@@ -150,7 +150,7 @@ const CalendarEventDefaultsSection = ({ calendar, bootstrap, canEdit }: Props) =
                 </SettingsLayout>
             )}
             {showDuration && (
-                <SettingsLayout stackEarlier className={isBusyTimeSlotsAvailable ? '' : 'mt-8'}>
+                <SettingsLayout stackEarlier className={isBusySlotsAvailable ? '' : 'mt-8'}>
                     <SettingsLayoutLeft>
                         <label htmlFor="event-duration" id="label-event-duration" className="text-semibold">
                             {c('Label for default event settings').t`Duration`}

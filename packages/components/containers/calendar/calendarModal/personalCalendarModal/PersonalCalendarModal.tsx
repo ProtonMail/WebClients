@@ -33,7 +33,7 @@ import GenericError from '../../../error/GenericError';
 import useGetCalendarActions from '../../hooks/useGetCalendarActions';
 import useGetCalendarSetup from '../../hooks/useGetCalendarSetup';
 import Notifications from '../../notifications/Notifications';
-import BusyTimeSlotsCheckbox from '../BusyTimeSlotsCheckbox';
+import BusySlotsCheckbox from '../BusySlotsCheckbox';
 import { getCalendarPayload, getCalendarSettingsPayload, getDefaultModel, validate } from './calendarModalState';
 
 import './PersonalCalendarModal.scss';
@@ -307,10 +307,10 @@ export const PersonalCalendarModal = ({
         </>
     );
 
-    const busyTimeSlotsCheckbox = (
-        <BusyTimeSlotsCheckbox
-            value={model.shareBusyTimeSlots}
-            onChange={(shareBusyTimeSlots) => setModel({ ...model, shareBusyTimeSlots })}
+    const busySlotsCheckbox = (
+        <BusySlotsCheckbox
+            value={model.shareBusySlots}
+            onChange={(shareBusySlots) => setModel({ ...model, shareBusySlots })}
         />
     );
 
@@ -332,7 +332,7 @@ export const PersonalCalendarModal = ({
                     {calendarNameRow}
                     {descriptionRow}
                     {colorRow}
-                    {busyTimeSlotsCheckbox}
+                    {busySlotsCheckbox}
                 </>
             );
         }
@@ -345,7 +345,7 @@ export const PersonalCalendarModal = ({
                     {addressRow}
                     {descriptionRow}
                     {defaultNotificationsRow}
-                    {busyTimeSlotsCheckbox}
+                    {busySlotsCheckbox}
                 </>
             );
         }
@@ -359,7 +359,7 @@ export const PersonalCalendarModal = ({
                 {defaultEventDurationRow}
                 {defaultNotificationsRow}
                 {subscribeURLRow}
-                {busyTimeSlotsCheckbox}
+                {busySlotsCheckbox}
             </>
         );
     };

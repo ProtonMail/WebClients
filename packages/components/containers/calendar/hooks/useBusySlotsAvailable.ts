@@ -1,5 +1,5 @@
 import { useActiveBreakpoint, useFlag, useOrganization } from '@proton/components';
-import { isUserEligibleForBusyTimeSlots } from '@proton/components/helpers/busyTimeSlots';
+import { isUserEligibleForBusySlots } from '@proton/components/helpers/busySlots';
 import { VIEWS } from '@proton/shared/lib/calendar/constants';
 
 /**
@@ -7,8 +7,8 @@ import { VIEWS } from '@proton/shared/lib/calendar/constants';
  * Has user an eligible plan for busy time slots
  * @param view to add only when related to components display (attendees list for ex).
  */
-const useBusyTimeSlotsAvailable = (view?: VIEWS) => {
-    const isBusyTimeSlotFlagEnabled = useFlag('CalendarBusyTimeSlots');
+const useBusySlotsAvailable = (view?: VIEWS) => {
+    const isBusySlotsFlagEnabled = useFlag('CalendarBusyTimeSlots');
     const [organization] = useOrganization();
     const breakpoint = useActiveBreakpoint();
 
@@ -16,11 +16,11 @@ const useBusyTimeSlotsAvailable = (view?: VIEWS) => {
      * If the flag is not enabled or the organization is not available or the viewport is small
      * Don't display busy time slots
      */
-    if (!isBusyTimeSlotFlagEnabled || !organization || breakpoint.viewportWidth['<=small'] || view === VIEWS.MONTH) {
+    if (!isBusySlotsFlagEnabled || !organization || breakpoint.viewportWidth['<=small'] || view === VIEWS.MONTH) {
         return false;
     }
 
-    return isUserEligibleForBusyTimeSlots(organization);
+    return isUserEligibleForBusySlots(organization);
 };
 
-export default useBusyTimeSlotsAvailable;
+export default useBusySlotsAvailable;

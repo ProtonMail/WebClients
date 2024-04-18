@@ -1,7 +1,7 @@
 import { addMinutes } from '@proton/shared/lib/date-fns-utc';
 
 import { CalendarViewBusyEvent, CalendarViewEvent } from '../../../containers/calendar/interface';
-import { isBusyTimesSlotEvent } from '../../../helpers/busyTimeSlots';
+import { isBusySlotEvent } from '../../../helpers/busySlots';
 import { getDiffTime, getNewTime, getSnappedDate, getTargetMinutes } from '../mouseHelpers/dateHelpers';
 import { blockClick, createAutoScroll, createRafUpdater, findContainingParent } from '../mouseHelpers/domHelpers';
 import { getTargetIndex } from '../mouseHelpers/mathHelpers';
@@ -455,7 +455,7 @@ export default ({
     }
     const { idx } = eventsInDay[targetIndex];
     const event = events[idx];
-    if (!event || isBusyTimesSlotEvent(event)) {
+    if (!event || isBusySlotEvent(event)) {
         return;
     }
     // const eventNode = dayContainerNode.childNodes[targetIndex];

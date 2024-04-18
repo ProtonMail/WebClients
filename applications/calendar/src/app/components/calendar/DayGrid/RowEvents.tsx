@@ -8,7 +8,7 @@ import {
     TargetEventData,
     TargetMoreData,
 } from '../../../containers/calendar/interface';
-import { isBusyTimesSlotEvent } from '../../../helpers/busyTimeSlots';
+import { isBusySlotEvent } from '../../../helpers/busySlots';
 import FullDayBusyEvent from '../../events/FullDayBusyEvent';
 import FullDayEvent from '../../events/FullDayEvent';
 import MoreFullDayEvent from '../../events/MoreFullDayEvent';
@@ -84,7 +84,7 @@ const RowEvents = ({
 
         const modifiedEnd = event.isAllDay && !event.isAllPartDay ? addDays(event.end, 1) : event.end;
 
-        return isBusyTimesSlotEvent(event) ? (
+        return isBusySlotEvent(event) ? (
             <FullDayBusyEvent
                 event={event}
                 formatTime={formatTime}
