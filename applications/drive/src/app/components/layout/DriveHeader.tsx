@@ -13,6 +13,7 @@ import {
 } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
 
+import isSearchFeatureEnabled from '../../utils/isSearchFeatureEnabled';
 import { SearchField } from './search/SearchField';
 
 interface Props {
@@ -48,7 +49,7 @@ export const DriveHeader = ({
                 expanded={isHeaderExpanded}
                 onToggleExpand={toggleHeaderExpanded}
                 isSmallViewport={viewportWidth['<=small']}
-                actionArea={!(viewportWidth['<=small'] || viewportWidth.medium) && searchBox}
+                actionArea={isSearchFeatureEnabled() && searchBox}
                 settingsButton={settingsButton}
             />
 
