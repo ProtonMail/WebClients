@@ -4,8 +4,10 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { useLoading } from '@proton/hooks';
+import { isMobile } from '@proton/shared/lib/helpers/browser';
+import clsx from '@proton/utils/clsx';
 
-import { TimeIntl } from '../../';
+import { TimeIntl, useActiveBreakpoint } from '../../';
 import { FileIcon, FileNameDisplay, Icon } from '../../components';
 
 const SHARED_STATUS_TO_COLOR = {
@@ -49,6 +51,8 @@ const Header = ({
 }: Props) => {
     const [isSaving, withSaving] = useLoading();
     const [saveError, setSaveError] = useState();
+    const { viewportWidth } = useActiveBreakpoint();
+    const isMobileHeaderPreview = viewportWidth['<=small'] && isMobile();
 
     const handleSave = () => {
         if (!onSave) {
@@ -66,7 +70,12 @@ const Header = ({
     };
 
     return (
-        <div className="flex justify-space-between items-center p-7 relative">
+        <div
+            className={clsx(
+                'flex justify-space-between items-center relative',
+                isMobileHeaderPreview ? 'py-7 px-2' : 'p-7'
+            )}
+        >
             <div className="file-preview-filename flex items-center flex-nowrap" data-testid="preview:file-name">
                 {mimeType && <FileIcon mimeType={mimeType} className="mr-2" />}
                 <FileNameDisplay text={name} className="user-select" data-testid="file-preview:file-name" />
@@ -88,7 +97,7 @@ const Header = ({
                 </TimeIntl>
             )}
             {children}
-            <div className="flex items-center mt-2 ml-auto sm:m-0">
+            <div className="flex items-center">
                 {onRestore && (
                     <Button
                         title={c('Action').t`Restore`}
@@ -147,7 +156,7 @@ const Header = ({
                         <Icon name="info-circle" size={5} alt={c('Action').t`Details`} />
                     </Button>
                 )}
-                {onShare && (
+                {onShare && !isMobileHeaderPreview && (
                     <Button
                         icon
                         shape="ghost"
