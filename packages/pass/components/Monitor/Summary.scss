@@ -1,9 +1,10 @@
+@import '~@proton/styles/scss/lib';
+
 .pass-monitor-grid {
 	display: flex;
 	flex-direction: column;
 
-	// for md screens
-	@media (width >= 42.51em) {
+	@include media('>large') {
 		display: grid !important;
 		grid-template-columns: 1fr 1fr;
 	}
