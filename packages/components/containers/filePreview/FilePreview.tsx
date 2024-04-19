@@ -275,11 +275,7 @@ const FilePreview = (
                 onRestore={onRestore}
                 date={date}
             >
-                {isDirty ? (
-                    <div className="flex items-center absolute inset-center">{c('Info').t`Unsaved changes`}</div>
-                ) : (
-                    navigationControls
-                )}
+                {isDirty ? <div className="flex items-center">{c('Info').t`Unsaved changes`}</div> : navigationControls}
             </Header>
             <FilePreviewContent
                 isMetaLoading={isMetaLoading}
