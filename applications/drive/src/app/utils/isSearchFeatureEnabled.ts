@@ -1,6 +1,6 @@
 import { isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
 
-export default function useSearchEnabledFeature() {
+export default function isSearchFeatureEnabled() {
     // Safari has several issues.
     // One: it is throttling a lot. First tens of items are done fast but
     // after ~ 500 items it goes very slowly and after ~ 2500 items it
