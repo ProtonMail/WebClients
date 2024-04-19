@@ -37,6 +37,7 @@ export const getMockItem = (data: Item = itemBuilder('login').data): ItemRevisio
     modifyTime: 0,
     pinned: false,
     revision: 1,
+    flags: 0,
     revisionTime: 0,
     shareId: mockShareId,
     state: ItemState.Active,

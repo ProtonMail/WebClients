@@ -120,18 +120,19 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
             return fullMerge(state, {
                 [shareId]: {
                     [optimisticId]: {
-                        itemId: optimisticId,
-                        shareId: shareId,
-                        revision: optimisticItem !== undefined ? optimisticItem.revision + 1 : 0,
-                        data: item,
                         aliasEmail: item.type === 'alias' ? item.extraData.aliasEmail : null,
-                        state: ItemState.Active,
+                        contentFormatVersion: ContentFormatVersion.Item,
                         createTime,
+                        data: item,
+                        flags: 0,
+                        itemId: optimisticId,
+                        lastUseTime: null,
                         modifyTime: createTime,
                         pinned: false,
+                        revision: optimisticItem !== undefined ? optimisticItem.revision + 1 : 0,
                         revisionTime: createTime,
-                        lastUseTime: null,
-                        contentFormatVersion: ContentFormatVersion.Item,
+                        shareId: shareId,
+                        state: ItemState.Active,
                     },
                 },
             });

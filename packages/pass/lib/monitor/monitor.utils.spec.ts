@@ -8,18 +8,19 @@ import { prop } from '@proton/pass/utils/fp/lens';
 import { getDuplicatePasswords } from './monitor.utils';
 
 const createMockItem = (password: string): ItemRevision<'login'> => ({
-    shareId: 'shareId',
     aliasEmail: null,
     contentFormatVersion: ContentFormatVersion.Item,
     createTime: -1,
+    data: itemBuilder('login').set('content', (content) => content.set('password', password)).data,
+    flags: 0,
     itemId: uniqueId(),
     lastUseTime: null,
     modifyTime: -1,
     pinned: false,
     revision: 1,
     revisionTime: -1,
+    shareId: 'shareId',
     state: ItemState.Active,
-    data: itemBuilder('login').set('content', (content) => content.set('password', password)).data,
 });
 
 describe('getDuplicatePasswords', () => {

@@ -2,7 +2,7 @@ import type { ItemType, UnsafeItemRevision, VaultShareContent } from '@proton/pa
 
 export type ExportedItem<T extends ItemType = ItemType> = Omit<
     UnsafeItemRevision<T>,
-    'revision' | 'revisionTime' | 'lastUseTime'
+    'revision' | 'revisionTime' | 'lastUseTime' | 'flags'
 >;
 
 export type ExportedVault = VaultShareContent & { items: ExportedItem[] };
