@@ -582,7 +582,6 @@ const CalendarContainerView = ({
             calendarUserSettings={calendarUserSettings}
             logo={logo}
             expanded={expanded}
-            isSmallViewport={isSmallViewport}
             onToggleExpand={onToggleExpand}
             onCreateEvent={onCreateEvent ? () => onCreateEvent?.() : undefined}
             onCreateCalendar={onCreateCalendarFromSidebar}

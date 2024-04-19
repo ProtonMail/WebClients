@@ -17,16 +17,12 @@ import {
     SidebarPrimaryButton,
     SimpleDropdown,
     SimpleSidebarListItemHeader,
-    Spotlight,
     Tooltip,
     useApi,
     useEventManager,
     useFeature,
     useModalState,
-    useSpotlightOnFeature,
-    useSpotlightShow,
     useUser,
-    useWelcomeFlags,
 } from '@proton/components';
 import CalendarLimitReachedModal from '@proton/components/containers/calendar/CalendarLimitReachedModal';
 import HolidaysCalendarModal from '@proton/components/containers/calendar/calendarModal/holidaysCalendarModal/HolidaysCalendarModal';
@@ -52,7 +48,6 @@ export interface CalendarSidebarProps {
     calendars: VisualCalendar[];
     calendarUserSettings: CalendarUserSettings;
     expanded?: boolean;
-    isSmallViewport: boolean;
     logo?: ReactNode;
     miniCalendar: ReactNode;
     onToggleExpand: () => void;
@@ -66,7 +61,6 @@ const CalendarSidebar = ({
     calendarUserSettings,
     logo,
     expanded = false,
-    isSmallViewport,
     onToggleExpand,
     miniCalendar,
     onCreateEvent,
@@ -75,7 +69,6 @@ const CalendarSidebar = ({
     const { call } = useEventManager();
     const api = useApi();
     const [user] = useUser();
-    const [{ isWelcomeFlow }] = useWelcomeFlags();
 
     const [loadingVisibility, withLoadingVisibility] = useLoadingByKey();
     const holidaysCalendarsEnabled = !!useFeature(FeatureCode.HolidaysCalendars)?.feature?.Value;
@@ -111,22 +104,6 @@ const CalendarSidebar = ({
         calendars,
         !user.hasPaidMail
     );
-
-    const {
-        show: showHolidaysSpotlight,
-        onDisplayed: onHolidaysSpotlightDisplayed,
-        onClose: onCloseHolidaysSpotlight,
-    } = useSpotlightOnFeature(
-        FeatureCode.HolidaysCalendarsSpotlight,
-        !isWelcomeFlow && !isSmallViewport && !holidaysCalendars.length,
-        {
-            alpha: Date.UTC(2023, 4, 25, 12),
-            beta: Date.UTC(2023, 7, 7, 12),
-            default: Date.UTC(2023, 7, 10, 12),
-        }
-    );
-
-    const shouldShowHolidaysSpotlight = useSpotlightShow(showHolidaysSpotlight);
 
     const addCalendarText = c('Dropdown action icon tooltip').t`Add calendar`;
 
@@ -186,12 +163,6 @@ const CalendarSidebar = ({
             />
         </Tooltip>
     );
-    const handleClickPlusButton = () => {
-        // close spotlight if it's on display
-        if (shouldShowHolidaysSpotlight) {
-            onCloseHolidaysSpotlight();
-        }
-    };
 
     const myCalendarsList = (
         <SidebarList>
@@ -201,59 +172,39 @@ const CalendarSidebar = ({
                 right={
                     <div className="flex flex-nowrap items-center">
                         {!isOtherCalendarsLimitReached ? (
-                            <Spotlight
-                                show={shouldShowHolidaysSpotlight}
-                                onDisplayed={onHolidaysSpotlightDisplayed}
-                                type="new"
-                                content={
-                                    <>
-                                        <div className="text-lg text-bold mb-1">{
-                                            // translator: A holidays calendar includes bank holidays and observances
-                                            c('Spotlight').t`Public holidays are here!`
-                                        }</div>
-                                        <p className="m-0">{
-                                            // translator: A holidays calendar includes bank holidays and observances
-                                            c('Spotlight').t`Add your country's public holidays to your calendar.`
-                                        }</p>
-                                    </>
-                                }
-                                anchorRef={dropdownRef}
-                            >
-                                <Tooltip title={addCalendarText}>
-                                    <SimpleDropdown
-                                        as="button"
-                                        type="button"
-                                        hasCaret={false}
-                                        className="navigation-link-header-group-control flex"
-                                        content={<Icon name="plus" className="navigation-icon" alt={addCalendarText} />}
-                                        ref={dropdownRef}
-                                        onClick={handleClickPlusButton}
-                                    >
-                                        <DropdownMenu>
+                            <Tooltip title={addCalendarText}>
+                                <SimpleDropdown
+                                    as="button"
+                                    type="button"
+                                    hasCaret={false}
+                                    className="navigation-link-header-group-control flex"
+                                    content={<Icon name="plus" className="navigation-icon" alt={addCalendarText} />}
+                                    ref={dropdownRef}
+                                >
+                                    <DropdownMenu>
+                                        <DropdownMenuButton
+                                            className="text-left"
+                                            onClick={handleCreatePersonalCalendar}
+                                        >
+                                            {c('Action').t`Create calendar`}
+                                        </DropdownMenuButton>
+                                        {holidaysCalendarsEnabled && (
                                             <DropdownMenuButton
                                                 className="text-left"
-                                                onClick={handleCreatePersonalCalendar}
+                                                onClick={handleAddHolidaysCalendar}
                                             >
-                                                {c('Action').t`Create calendar`}
+                                                {c('Action').t`Add public holidays`}
                                             </DropdownMenuButton>
-                                            {holidaysCalendarsEnabled && (
-                                                <DropdownMenuButton
-                                                    className="text-left"
-                                                    onClick={handleAddHolidaysCalendar}
-                                                >
-                                                    {c('Action').t`Add public holidays`}
-                                                </DropdownMenuButton>
-                                            )}
-                                            <DropdownMenuButton
-                                                className="text-left"
-                                                onClick={handleCreateSubscribedCalendar}
-                                            >
-                                                {c('Calendar sidebar dropdown item').t`Add calendar from URL`}
-                                            </DropdownMenuButton>
-                                        </DropdownMenu>
-                                    </SimpleDropdown>
-                                </Tooltip>
-                            </Spotlight>
+                                        )}
+                                        <DropdownMenuButton
+                                            className="text-left"
+                                            onClick={handleCreateSubscribedCalendar}
+                                        >
+                                            {c('Calendar sidebar dropdown item').t`Add calendar from URL`}
+                                        </DropdownMenuButton>
+                                    </DropdownMenu>
+                                </SimpleDropdown>
+                            </Tooltip>
                         ) : (
                             <Button
                                 shape="ghost"
