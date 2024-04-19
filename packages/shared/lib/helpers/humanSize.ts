@@ -112,19 +112,18 @@ const humanSize = ({
 export default humanSize;
 
 /**
- * shortHumanSize makes the compact size version. That is, it rounds it to
- * zero or one kilobyte for size smaller than one kilobyte, and it drops
+ * shortHumanSize makes the compact size version to the bytes precision. It drops
  * the fractional part for sizes smaller than gigabyte--only for bigger files
  * it shows one fractional digit. Examples:
  *
- * 12 bytes -> 0 KB
+ * 12 bytes -> 12 bytes
  * 567 bytes -> 1 KB
  * 12.34 MB -> 12 MB
  * 12.34 GB -> 12.3 GB
  */
 export const shortHumanSize = (bytes = 0) => {
     if (bytes < sizeUnits.KB) {
-        return humanSize({ bytes, unit: 'KB', truncate: true, fraction: 0 });
+        return humanSize({ bytes, unit: 'B', truncate: true, fraction: 0 });
     }
     if (bytes < sizeUnits.GB) {
         return humanSize({ bytes, truncate: true, fraction: 0 });
