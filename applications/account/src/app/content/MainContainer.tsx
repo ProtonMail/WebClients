@@ -43,7 +43,6 @@ import { APPS, SETUP_ADDRESS_PATH } from '@proton/shared/lib/constants';
 import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string';
 import { getHasPassB2BPlan } from '@proton/shared/lib/helpers/subscription';
 import { getPathFromLocation } from '@proton/shared/lib/helpers/url';
-import { isProtonSentinelEligible } from '@proton/shared/lib/helpers/userSettings';
 import { UserModel } from '@proton/shared/lib/interfaces';
 import {
     getIsPublicUserWithoutProtonAddress,
@@ -150,7 +149,6 @@ const MainContainer = () => {
         isDataRecoveryAvailable,
         isSessionRecoveryAvailable,
         recoveryNotification: recoveryNotification?.color,
-        isProtonSentinelEligible: isProtonSentinelEligible(userSettings),
         isNotifInboxDesktopAppOn,
         isBreachesAccountDashboardEnabled,
         showThemeSelection,

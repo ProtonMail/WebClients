@@ -30,7 +30,6 @@ export const getAccountAppRoutes = ({
     isReferralProgramEnabled,
     recoveryNotification,
     organization,
-    isProtonSentinelEligible,
     isBreachesAccountDashboardEnabled,
     showThemeSelection,
 }: {
@@ -43,7 +42,6 @@ export const getAccountAppRoutes = ({
     isReferralProgramEnabled: boolean;
     recoveryNotification?: ThemeColor;
     organization?: Organization;
-    isProtonSentinelEligible: boolean;
     isBreachesAccountDashboardEnabled: boolean;
     showThemeSelection: boolean;
 }) => {
@@ -254,7 +252,7 @@ export const getAccountAppRoutes = ({
                     {
                         text: PROTON_SENTINEL_NAME,
                         id: 'sentinel',
-                        available: isProtonSentinelEligible && !isSSOUser,
+                        available: !isSSOUser,
                     },
 
                     {
