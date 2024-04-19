@@ -3,7 +3,7 @@ import { ReactNode, Ref, useCallback, useEffect, useMemo, useRef, useState } fro
 import { differenceInCalendarDays, format, isToday } from 'date-fns';
 import { c, msgid } from 'ttag';
 
-import { Button, ButtonLike, CircleLoader, Href } from '@proton/atoms';
+import { Button, ButtonLike, CircleLoader } from '@proton/atoms';
 import {
     AppLink,
     ContactDrawerAppButton,
@@ -36,13 +36,10 @@ import {
     useModalState,
     useNotifications,
     useOpenDrawerOnLoad,
-    useSpotlightOnFeature,
-    useSpotlightShow,
     useToggle,
     useUser,
-    useWelcomeFlags,
 } from '@proton/components';
-import { SidebarLogo, Spotlight } from '@proton/components/components';
+import { SidebarLogo } from '@proton/components/components';
 import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
 import DrawerVisibilityButton from '@proton/components/components/drawer/DrawerVisibilityButton';
 import {
@@ -60,7 +57,6 @@ import { isAppInView } from '@proton/shared/lib/drawer/helpers';
 import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { canonicalizeInternalEmail, validateEmailAddress } from '@proton/shared/lib/helpers/email';
-import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import { Address } from '@proton/shared/lib/interfaces';
 import { AttendeeModel, CalendarUserSettings, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
@@ -404,18 +400,6 @@ const CalendarContainerView = ({
 
     const logo = <SidebarLogo to="/" app={APPS.PROTONCALENDAR} />;
 
-    const [{ isWelcomeFlow }] = useWelcomeFlags();
-    const {
-        show: showSearchSpotlight,
-        onDisplayed: onSearchSpotlightDisplayed,
-        onClose: onCloseSearchSpotlight,
-    } = useSpotlightOnFeature(FeatureCode.CalendarEncryptedSearchSpotlight, !isSmallViewport && !isWelcomeFlow, {
-        alpha: Date.UTC(2023, 8, 13, 12),
-        beta: Date.UTC(2023, 8, 20, 12),
-        default: Date.UTC(2023, 9, 19, 12),
-    });
-    const shouldShowCalendarSearchSpotlight = useSpotlightShow(showSearchSpotlight);
-
     const createEventText = c('Action').t`Create event`;
 
     const contactCustomActions: CustomAction[] = [
@@ -456,9 +440,6 @@ const CalendarContainerView = ({
     });
 
     const handleClickSearch = () => {
-        if (shouldShowCalendarSearchSpotlight) {
-            onCloseSearchSpotlight();
-        }
         setIsSearching(true);
     };
 
@@ -494,28 +475,12 @@ const CalendarContainerView = ({
             searchButton={
                 isCalendarEncryptedSearchEnabled &&
                 !isSearching && (
-                    <Spotlight
-                        originalPlacement="bottom-start"
-                        show={shouldShowCalendarSearchSpotlight}
-                        onDisplayed={onSearchSpotlightDisplayed}
-                        type="new"
-                        anchorRef={searchSpotlightAnchorRef}
-                        content={
-                            <>
-                                <div className="text-lg text-bold mb-1">{c('Spotlight').t`Search for events`}</div>
-                                <p className="m-0">{c('Spotlight')
-                                    .t`Easily find the event you're looking for with our new search feature.`}</p>
-                                <Href href={getKnowledgeBaseUrl('/calendar-search')}>{c('Link').t`Learn more`}</Href>
-                            </>
-                        }
-                    >
-                        <ToolbarButton
-                            ref={searchSpotlightAnchorRef}
-                            icon={<Icon name="magnifier" alt={c('Action').t`Search`} />}
-                            title={c('Header').t`Search`}
-                            onClick={handleClickSearch}
-                        />
-                    </Spotlight>
+                    <ToolbarButton
+                        ref={searchSpotlightAnchorRef}
+                        icon={<Icon name="magnifier" alt={c('Action').t`Search`} />}
+                        title={c('Header').t`Search`}
+                        onClick={handleClickSearch}
+                    />
                 )
             }
             searchField={

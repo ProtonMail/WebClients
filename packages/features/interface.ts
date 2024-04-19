@@ -40,7 +40,6 @@ export enum FeatureCode {
     CalendarFeedbackEnabled = 'CalendarFeedbackEnabled',
     CalendarFetchMetadataOnly = 'CalendarFetchMetadataOnly',
     CalendarEncryptedSearch = 'CalendarEncryptedSearch',
-    CalendarEncryptedSearchSpotlight = 'CalendarEncryptedSearchSpotlight',
     CalendarEventColorSpotlight = 'CalendarEventColorSpotlight',
     CleanUTMTrackers = 'CleanUTMTrackers',
     DarkStylesInBody = 'DarkStylesInBody',
