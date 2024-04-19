@@ -73,103 +73,114 @@ export const Summary: FC = () => {
     );
 
     return (
-        <Scroll className="flex-1 w-full">
-            <div className="flex flex-column gap-8 p-6 max-w-custom" style={{ '--max-w-custom': '74em' }}>
-                <SubHeader
-                    title={c('Title').t`${PASS_SHORT_APP_NAME} monitor`}
-                    description={c('Description')
-                        .t`With ${PASS_SHORT_APP_NAME} Monitor, stay ahead of threats by getting instant alerts if your credentials are compromised. Unlock advanced security features and detailed logs to safeguard your online presence.`}
-                />
-
-                <section className="flex flex-column gap-6">
-                    <h3 className="text-lg">{c('Title').t`Dark Web Monitoring`}</h3>
-                    <div className="pass-monitor-grid gap-4">
-                        <DarkWeb breached={breaches > 0} onUpsell={() => setUpsellModalOpen(true)} />
-                    </div>
-                </section>
-
-                <section className="flex flex-column gap-6">
-                    <h3 className="text-lg">{c('Title').t`Password Health`}</h3>
-                    <div className="pass-monitor-grid gap-4">
-                        <ActionCard
-                            onClick={() =>
-                                duplicatePasswords > 0 ? navigate(`${getLocalPath('monitor/weak')}`) : null
-                            }
-                            icon="exclamation-filled"
-                            title={c('Title').t`Weak passwords`}
-                            subtitle={c('Description').t`Change your passwords`}
-                            pillLabel={weakPasswordsCount > 0 ? weakPasswordsCount : null}
-                            type={weakPasswordsCount > 0 ? 'warning' : 'success'}
+        <div className="w-full h-full">
+            <div className="flex flex-1 flex-column items-start w-full h-full">
+                <Scroll className="flex-1 w-full">
+                    <div className="flex flex-column gap-8 p-6 max-w-custom" style={{ '--max-w-custom': '74em' }}>
+                        <SubHeader
+                            title={c('Title').t`${PASS_SHORT_APP_NAME} monitor`}
+                            description={c('Description')
+                                .t`With ${PASS_SHORT_APP_NAME} Monitor, stay ahead of threats by getting instant alerts if your credentials are compromised. Unlock advanced security features and detailed logs to safeguard your online presence.`}
                         />
-                        <ActionCard
-                            onClick={() =>
-                                duplicatePasswords > 0 ? navigate(`${getLocalPath('monitor/duplicates')}`) : null
-                            }
-                            icon={duplicatePasswords > 0 ? 'exclamation-filled' : 'checkmark'}
-                            title={c('Title').t`Reused passwords`}
-                            subtitle={c('Description').t`Create unique passwords`}
-                            pillLabel={duplicatePasswords}
-                            type={duplicatePasswords > 0 ? 'warning' : 'success'}
-                        />
-                        <ActionCard
-                            onClick={() =>
-                                missing2FAsCount > 0 ? navigate(`${getLocalPath('monitor/missing')}`) : null
-                            }
-                            title={c('Title').t`Missing two-factor authentication`}
-                            subtitle={c('Description').t`Increase your security`}
-                            pillLabel={missing2FAsCount > 0 ? missing2FAsCount : null}
-                        />
-                        <ActionCard
-                            onClick={() => {}}
-                            title={c('Title').t`Excluded items`}
-                            subtitle={c('Description').t`These items remain at risk`}
-                            pillLabel={17}
-                        />
-                    </div>
-                </section>
 
-                <section className="flex flex-column gap-6">
-                    <h3 className="text-lg">{c('Title').t`Account protection`}</h3>
-                    <Sentinel onUpsell={() => setUpsellModalOpen(true)} />
-                </section>
-
-                <section className="flex flex-column gap-6">
-                    <Collapsible expandByDefault>
-                        <CollapsibleHeader
-                            suffix={
-                                <CollapsibleHeaderIconButton>
-                                    <Icon name="chevron-down" />
-                                </CollapsibleHeaderIconButton>
-                            }
-                        >
-                            <h3 className="text-lg">{c('Title').t`Want to learn more?`}</h3>
-                            <span>{c('Description')
-                                .t`Keep your info more secure and private with these guides and tips.`}</span>
-                        </CollapsibleHeader>
-                        <CollapsibleContent>
-                            <div className="flex flex-row flex-nowrap w-full gap-4 items-stretch p-6">
-                                {learnMore.map((props, idx) => (
-                                    <LearnMoreCard key={`learn-more-${idx}`} {...props} />
-                                ))}
+                        <section className="flex flex-column gap-6">
+                            <h3 className="text-lg">{c('Title').t`Dark Web Monitoring`}</h3>
+                            <div className="pass-monitor-grid gap-4">
+                                <DarkWeb breached={breaches > 0} onUpsell={() => setUpsellModalOpen(true)} />
                             </div>
-                        </CollapsibleContent>
-                    </Collapsible>
-                </section>
+                        </section>
 
-                <UpsellingModal
-                    upsellRef={UpsellRef.PASS_MONITOR}
-                    upsellType="pass-monitor"
-                    open={upsellModalOpen}
-                    onClose={() => setUpsellModalOpen(false)}
-                    features={
-                        <div className="border border-norm p-4 w-full rounded-xl">
-                            {getMonitorUpsellFeatures().map(({ label, icon }) => (
-                                <InfoCard key={label} className="p-2 text-lg color-primary" icon={icon} title={label} />
-                            ))}
-                        </div>
-                    }
-                />
+                        <section className="flex flex-column gap-6">
+                            <h3 className="text-lg">{c('Title').t`Password Health`}</h3>
+                            <div className="pass-monitor-grid gap-4">
+                                <ActionCard
+                                    onClick={() =>
+                                        duplicatePasswords > 0 ? navigate(`${getLocalPath('monitor/weak')}`) : null
+                                    }
+                                    icon="exclamation-filled"
+                                    title={c('Title').t`Weak passwords`}
+                                    subtitle={c('Description').t`Change your passwords`}
+                                    pillLabel={weakPasswordsCount > 0 ? weakPasswordsCount : null}
+                                    type={weakPasswordsCount > 0 ? 'warning' : 'success'}
+                                />
+                                <ActionCard
+                                    onClick={() =>
+                                        duplicatePasswords > 0
+                                            ? navigate(`${getLocalPath('monitor/duplicates')}`)
+                                            : null
+                                    }
+                                    icon={duplicatePasswords > 0 ? 'exclamation-filled' : 'checkmark'}
+                                    title={c('Title').t`Reused passwords`}
+                                    subtitle={c('Description').t`Create unique passwords`}
+                                    pillLabel={duplicatePasswords}
+                                    type={duplicatePasswords > 0 ? 'warning' : 'success'}
+                                />
+                                <ActionCard
+                                    onClick={() =>
+                                        missing2FAsCount > 0 ? navigate(`${getLocalPath('monitor/2fa')}`) : null
+                                    }
+                                    title={c('Title').t`Missing two-factor authentication`}
+                                    subtitle={c('Description').t`Increase your security`}
+                                    pillLabel={missing2FAsCount > 0 ? missing2FAsCount : null}
+                                />
+                                <ActionCard
+                                    onClick={() => {}}
+                                    title={c('Title').t`Excluded items`}
+                                    subtitle={c('Description').t`These items remain at risk`}
+                                    pillLabel={17}
+                                />
+                            </div>
+                        </section>
+
+                        <section className="flex flex-column gap-6">
+                            <h3 className="text-lg">{c('Title').t`Account protection`}</h3>
+                            <Sentinel onUpsell={() => setUpsellModalOpen(true)} />
+                        </section>
+
+                        <section className="flex flex-column gap-6">
+                            <Collapsible expandByDefault>
+                                <CollapsibleHeader
+                                    suffix={
+                                        <CollapsibleHeaderIconButton>
+                                            <Icon name="chevron-down" />
+                                        </CollapsibleHeaderIconButton>
+                                    }
+                                >
+                                    <h3 className="text-lg">{c('Title').t`Want to learn more?`}</h3>
+                                    <span>{c('Description')
+                                        .t`Keep your info more secure and private with these guides and tips.`}</span>
+                                </CollapsibleHeader>
+                                <CollapsibleContent>
+                                    <div className="flex flex-row flex-nowrap w-full gap-4 items-stretch p-6">
+                                        {learnMore.map((props, idx) => (
+                                            <LearnMoreCard key={`learn-more-${idx}`} {...props} />
+                                        ))}
+                                    </div>
+                                </CollapsibleContent>
+                            </Collapsible>
+                        </section>
+
+                        <UpsellingModal
+                            upsellRef={UpsellRef.PASS_MONITOR}
+                            upsellType="pass-monitor"
+                            open={upsellModalOpen}
+                            onClose={() => setUpsellModalOpen(false)}
+                            features={
+                                <div className="border border-norm p-4 w-full rounded-xl">
+                                    {getMonitorUpsellFeatures().map(({ label, icon }) => (
+                                        <InfoCard
+                                            key={label}
+                                            className="p-2 text-lg color-primary"
+                                            icon={icon}
+                                            title={label}
+                                        />
+                                    ))}
+                                </div>
+                            }
+                        />
+                    </div>
+                </Scroll>
             </div>
-        </Scroll>
+        </div>
     );
 };
