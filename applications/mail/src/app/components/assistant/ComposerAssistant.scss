@@ -12,6 +12,7 @@
 		block-size: calc(100% - 10.5em);
 		background: var(--background-norm);
 		padding-inline: 1.5em 1em;
+		z-index: 2;
 
 		// to hide properly everything, including dark modes
 	}
