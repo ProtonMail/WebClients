@@ -54,7 +54,6 @@ export enum FeatureCode {
     ElectronESInboxThreshold = 'ElectronESInboxThreshold',
     ElectronConvPreloadAmount = 'ElectronConvPreloadAmount',
     HolidaysCalendars = 'HolidaysCalendars',
-    HolidaysCalendarsSpotlight = 'HolidaysCalendarsSpotlight',
     InboxDesktopFreeTrialDates = 'InboxDesktopFreeTrialDates',
     InboxDesktopFreeTrialReminders = 'InboxDesktopFreeTrialReminders',
     MailActionsChunkSize = 'MailActionsChunkSize',
