@@ -1,9 +1,10 @@
 import { c } from 'ttag';
 
-import { useSearchEnabledFeature, useSearchLibrary } from '../_search';
+import isSearchFeatureEnabled from '../../utils/isSearchFeatureEnabled';
+import { useSearchLibrary } from '../_search';
 
 export default function useSearchControl() {
-    const searchEnabled = useSearchEnabledFeature();
+    const searchEnabled = isSearchFeatureEnabled();
     const { cacheIndexedDB, esStatus, enableEncryptedSearch, esDelete } = useSearchLibrary();
     const { dbExists, isEnablingEncryptedSearch, esSupported } = esStatus;
 
