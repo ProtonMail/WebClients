@@ -11,6 +11,7 @@ import { ItemActionsProvider } from '@proton/pass/components/Item/ItemActionsPro
 import { ItemsList } from '@proton/pass/components/Item/List/ItemsList';
 import { Content } from '@proton/pass/components/Layout/Section/Content';
 import { SubSidebar } from '@proton/pass/components/Layout/Section/SubSidebar';
+import { Autoselect } from '@proton/pass/components/Navigation/Autoselect';
 import { ItemSwitch } from '@proton/pass/components/Navigation/ItemSwitch';
 import { OrganizationProvider } from '@proton/pass/components/Organization/OrganizationProvider';
 import { PasswordProvider } from '@proton/pass/components/Password/PasswordProvider';
@@ -50,7 +51,9 @@ export const Main: FC = () => {
                                                 <ItemsList />
                                             </SubSidebar>
                                             <Content>
-                                                <Route component={ItemSwitch} />
+                                                <Route>
+                                                    {(subRoute) => <ItemSwitch fallback={Autoselect} {...subRoute} />}
+                                                </Route>
                                             </Content>
                                         </div>
                                     </main>

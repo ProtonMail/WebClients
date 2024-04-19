@@ -9,6 +9,7 @@ import { Icon } from '@proton/components/index';
 import { InfoCard } from '@proton/pass/components/Layout/Card/InfoCard';
 import { ItemHistoryPanel } from '@proton/pass/components/Layout/Panel/ItemHistoryPanel';
 import { Timeline } from '@proton/pass/components/Layout/Timeline/Timeline';
+import { useItemRoute } from '@proton/pass/components/Navigation/ItemSwitch';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
 import { epochToRelativeDate } from '@proton/pass/utils/time/format';
 
@@ -16,6 +17,7 @@ import { useItemHistory } from './ItemHistoryProvider';
 import { RevisionItem } from './RevisionItem';
 
 export const RevisionsTimeline: FC<RouteChildrenProps> = ({ location }) => {
+    const { prefix } = useItemRoute();
     const { selectItem, navigate, matchTrash } = useNavigation();
     const { item, loading, more, revisions, loadMore } = useItemHistory();
     const { shareId, itemId } = item;
@@ -33,7 +35,7 @@ export const RevisionsTimeline: FC<RouteChildrenProps> = ({ location }) => {
                         shape="solid"
                         color="weak"
                         className="shrink-0"
-                        onClick={() => selectItem(shareId, itemId, { inTrash: matchTrash })}
+                        onClick={() => selectItem(shareId, itemId, { inTrash: matchTrash, prefix })}
                         title={c('Action').t`Close`}
                     >
                         <Icon name="cross" alt={c('Action').t`Close`} />

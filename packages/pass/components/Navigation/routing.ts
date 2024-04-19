@@ -7,6 +7,7 @@ import { partialMerge } from '@proton/pass/utils/object/merge';
 import { getLocalIDPath } from '@proton/shared/lib/authentication/pathnameHelper';
 
 export type ItemNewRouteParams = { type: ItemType };
+export type ItemRouteOptions = { trashed?: boolean; prefix?: string };
 
 export const history = createBrowserHistory();
 
@@ -19,14 +20,24 @@ export const getLocalPath = (path: string = '') => {
     return localID !== undefined ? `/${getLocalIDPath(localID)}/${path}` : `/${path}`;
 };
 
-export const maybeTrash = (path: string, inTrash?: boolean) => `${inTrash ? 'trash/' : ''}${path}`;
+export const removeLocalPath = (path: string) => {
+    const re = /\/u\/\d+\/(.+)/;
+    const match = path.match(re);
+    return match?.[1] ?? path;
+};
+
+export const subPath = (path: string, sub: string) => `${path}/${sub}`;
+export const maybeTrash = (path: string, inTrash?: boolean) => (inTrash ? subPath('trash', path) : path);
 
 /** Resolves the item route given a shareId and an itemId. */
-export const getItemRoute = (shareId: string, itemId: string, trashed?: boolean) =>
-    getLocalPath(maybeTrash(`share/${shareId}/item/${itemId}`, trashed));
+export const getItemRoute = (shareId: string, itemId: string, options?: ItemRouteOptions) => {
+    const basePath = maybeTrash(`share/${shareId}/item/${itemId}`, options?.trashed);
+    const prefixed = options?.prefix ? subPath(options.prefix, basePath) : basePath;
+    return getLocalPath(prefixed);
+};
 
-export const getItemHistoryRoute = (shareId: string, itemId: string, trashed?: boolean) =>
-    `${getItemRoute(shareId, itemId, trashed)}/history`;
+export const getItemHistoryRoute = (shareId: string, itemId: string, options?: ItemRouteOptions) =>
+    `${getItemRoute(shareId, itemId, options)}/history`;
 
 /** Resolves the new item route given an item type. */
 export const getNewItemRoute = (type: ItemType) => getLocalPath(`item/new/${type}`);

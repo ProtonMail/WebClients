@@ -18,6 +18,7 @@ import { ItemsList } from '@proton/pass/components/Item/List/ItemsList';
 import { Content } from '@proton/pass/components/Layout/Section/Content';
 import { Sidebar } from '@proton/pass/components/Layout/Section/Sidebar';
 import { SubSidebar } from '@proton/pass/components/Layout/Section/SubSidebar';
+import { Autoselect } from '@proton/pass/components/Navigation/Autoselect';
 import { ItemSwitch } from '@proton/pass/components/Navigation/ItemSwitch';
 import { OnboardingProvider } from '@proton/pass/components/Onboarding/OnboardingProvider';
 import { OrganizationProvider } from '@proton/pass/components/Organization/OrganizationProvider';
@@ -91,7 +92,7 @@ const MainSwitch: FC = () => {
                                                             <ItemsList />
                                                         </SubSidebar>
                                                         <Content>
-                                                            <ItemSwitch {...subRoute} />
+                                                            <ItemSwitch fallback={Autoselect} {...subRoute} />
                                                         </Content>
                                                     </>
                                                 )}
