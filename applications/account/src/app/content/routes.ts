@@ -20,7 +20,6 @@ interface Arguments {
     isDataRecoveryAvailable: boolean;
     isSessionRecoveryAvailable: boolean;
     recoveryNotification?: ThemeColor;
-    isProtonSentinelEligible: boolean;
     isNotifInboxDesktopAppOn: boolean;
     isBreachesAccountDashboardEnabled: boolean;
     showThemeSelection: boolean;
@@ -37,7 +36,6 @@ export const getRoutes = ({
     isSessionRecoveryAvailable,
     isReferralProgramEnabled,
     recoveryNotification,
-    isProtonSentinelEligible,
     isNotifInboxDesktopAppOn,
     isBreachesAccountDashboardEnabled,
     showThemeSelection,
@@ -54,7 +52,6 @@ export const getRoutes = ({
             isReferralProgramEnabled,
             recoveryNotification,
             organization,
-            isProtonSentinelEligible,
             isBreachesAccountDashboardEnabled,
             showThemeSelection,
         }),
