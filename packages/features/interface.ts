@@ -59,7 +59,6 @@ export enum FeatureCode {
     MailActionsChunkSize = 'MailActionsChunkSize',
     MailFeedbackEnabled = 'MailFeedbackEnabled',
     MailServiceWorker = 'MailServiceWorker',
-    NotificationInboxDesktopApp = 'NotificationInboxDesktopApp',
     NumAttachmentsWithoutEmbedded = 'NumAttachmentsWithoutEmbedded',
     NumberOfPreloadedConversations = 'NumberOfPreloadedConversations',
     OfferBlackFridayMail2022 = 'OfferBlackFridayMail2022',
