@@ -80,10 +80,10 @@ describe('InvoicesSection', () => {
             Invoices: [{ ID: '123' }],
         });
 
-        expect(requestMock).toHaveBeenCalledTimes(1);
+        expect(requestMock).toHaveBeenCalledTimes(2);
     });
 
-    it('should not request invoices if the Invoices array is empty', () => {
+    it('should not request invoices additionally if the Invoices array is empty', () => {
         render(<InvoicesSectionContext />);
 
         expect(useSubscribeEventManagerMock).toHaveBeenCalledTimes(1);
@@ -93,7 +93,8 @@ describe('InvoicesSection', () => {
             Invoices: [],
         });
 
-        expect(requestMock).toHaveBeenCalledTimes(0);
+        // it's just the initial request
+        expect(requestMock).toHaveBeenCalledTimes(1);
     });
 
     it('should not request invoices if the Invoices are not there ', () => {
@@ -105,7 +106,8 @@ describe('InvoicesSection', () => {
 
         callback({});
 
-        expect(requestMock).toHaveBeenCalledTimes(0);
+        // it's just the initial request
+        expect(requestMock).toHaveBeenCalledTimes(1);
     });
 
     it('should not request invoices if the callback does not have an argument', () => {
@@ -117,6 +119,7 @@ describe('InvoicesSection', () => {
 
         callback();
 
-        expect(requestMock).toHaveBeenCalledTimes(0);
+        // it's just the initial request
+        expect(requestMock).toHaveBeenCalledTimes(1);
     });
 });
