@@ -20,7 +20,6 @@ interface Arguments {
     isDataRecoveryAvailable: boolean;
     isSessionRecoveryAvailable: boolean;
     recoveryNotification?: ThemeColor;
-    isNotifInboxDesktopAppOn: boolean;
     isBreachesAccountDashboardEnabled: boolean;
     showThemeSelection: boolean;
 }
@@ -35,7 +34,6 @@ export const getRoutes = ({
     isSessionRecoveryAvailable,
     isReferralProgramEnabled,
     recoveryNotification,
-    isNotifInboxDesktopAppOn,
     isBreachesAccountDashboardEnabled,
     showThemeSelection,
 }: Arguments) => {
@@ -58,9 +56,8 @@ export const getRoutes = ({
             user,
             addresses,
             organization,
-            isNotifInboxDesktopAppOn,
         }),
-        calendar: getCalendarAppRoutes({ app, isNotifInboxDesktopAppOn }),
+        calendar: getCalendarAppRoutes({ app }),
         drive: getDriveAppRoutes({ app }),
         pass: getPassAppRoutes({ app }),
         organization: getOrganizationAppRoutes({
