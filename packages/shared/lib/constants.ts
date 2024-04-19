@@ -321,8 +321,6 @@ export enum USER_ROLES {
     ADMIN_ROLE = 2,
 }
 
-export const ELEMENTS_PER_PAGE = 10;
-
 export enum INVOICE_OWNER {
     USER = 0,
     ORGANIZATION = 1,
