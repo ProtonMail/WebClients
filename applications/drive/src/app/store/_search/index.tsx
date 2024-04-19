@@ -2,7 +2,6 @@ import { SpotlightProvider } from '../../components/useSpotlight';
 import { SearchLibraryProvider } from './useSearchLibrary';
 import { SearchResultsProvider } from './useSearchResults';
 
-export { default as useSearchEnabledFeature } from './useSearchEnabledFeature';
 export { default as useSearchLibrary } from './useSearchLibrary';
 export { default as useSearchResults } from './useSearchResults';
 
