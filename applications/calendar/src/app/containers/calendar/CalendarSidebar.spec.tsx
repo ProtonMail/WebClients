@@ -170,7 +170,6 @@ function renderComponent(props?: Partial<CalendarSidebarProps>) {
     });
     const defaultProps: CalendarSidebarProps = {
         onToggleExpand: jest.fn(),
-        isSmallViewport: false,
         addresses: [],
         calendars: [mockCalendar],
         miniCalendar: <span>mockedMiniCalendar</span>,
