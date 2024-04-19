@@ -23,12 +23,12 @@ const OrganizationLogoTipsModal = ({ onClose, onUploadClick, ...rest }: Props) =
 
     return (
         <Modal onClose={onClose} {...rest}>
-            <ModalHeader title={c('Title').t`How to choose a good icon`} />
+            <ModalHeader title={c('Title').t`How to choose a good logo`} />
             <ModalContent>
                 <OrganizationLogoTips />
             </ModalContent>
             <ModalFooter>
-                <Button onClick={handleUploadClick}>{c('Action').t`Upload icon`}</Button>
+                <Button onClick={handleUploadClick}>{c('Action').t`Upload logo`}</Button>
                 <Button onClick={onClose} color="norm">
                     {c('Action').t`Got it`}
                 </Button>
