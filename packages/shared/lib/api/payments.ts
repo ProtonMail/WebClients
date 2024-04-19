@@ -183,6 +183,12 @@ export const subscribe = (rawData: SubscribeData, product: ProductParam, version
     return config;
 };
 
+export enum InvoiceDocument {
+    Invoice = 'invoice',
+    CreditNote = 'credit_note',
+    CurrencyConversion = 'currency_conversion',
+}
+
 export interface QueryInvoicesParams {
     /**
      * Starts with 0
@@ -192,15 +198,16 @@ export interface QueryInvoicesParams {
     Owner: INVOICE_OWNER;
     State?: INVOICE_STATE;
     Type?: INVOICE_TYPE;
+    Document?: InvoiceDocument;
 }
 
 /**
  * Query list of invoices for the current user. The response is {@link InvoiceResponse}
  */
-export const queryInvoices = ({ Page, PageSize, Owner, State, Type }: QueryInvoicesParams) => ({
+export const queryInvoices = (params: QueryInvoicesParams) => ({
     url: `payments/${paymentsVersion}/invoices`,
     method: 'get',
-    params: { Page, PageSize, Owner, State, Type },
+    params,
 });
 
 export interface QueryPlansParams {
