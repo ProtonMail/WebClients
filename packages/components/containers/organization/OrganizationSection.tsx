@@ -245,10 +245,10 @@ const OrganizationSection = ({ app, organization }: Props) => {
                 {canAccessLightLabelling ? (
                     <>
                         <p className="m-0">{c('Info')
-                            .t`The name and icon will be visible to your users while they are signed in.`}</p>
+                            .t`Add your name and logo to create a more personalized experience for your organization.`}</p>
                         <InlineLinkButton onClick={() => setOrganizationLogoTipsModal(true)}>{c(
                             'Organization logo upload'
-                        ).t`Tips on choosing a good icon`}</InlineLinkButton>
+                        ).t`Tips on choosing a good logo`}</InlineLinkButton>
                     </>
                 ) : (
                     c('Info').t`The name will be visible to your users while they are signed in.`
