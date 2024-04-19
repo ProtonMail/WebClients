@@ -12,6 +12,7 @@ import {
 import { EVENT_TYPES } from '@proton/shared/lib/drive/constants';
 import { isPaid } from '@proton/shared/lib/user/helpers';
 
+import isSearchFeatureEnabled from '../../utils/isSearchFeatureEnabled';
 import { useDriveEventManager } from '../_events';
 import { useLink } from '../_links';
 import { useDefaultShare, useShare } from '../_shares';
@@ -20,7 +21,6 @@ import useFetchShareMap from './indexing/useFetchShareMap';
 import { migrate } from './migration';
 import { ESDriveSearchParams, ESLink, EncryptedSearchFunctionsDrive } from './types';
 import { useESCallbacks } from './useESCallbacks';
-import useSearchEnabledFeature from './useSearchEnabledFeature';
 
 const SearchLibraryContext = createContext<EncryptedSearchFunctionsDrive | null>(null);
 
@@ -37,7 +37,7 @@ export const SearchLibraryProvider = ({ children }: Props) => {
     const { getLinkPrivateKey } = useLink();
     const { getSharePrivateKey } = useShare();
     const { getDefaultShare } = useDefaultShare();
-    const searchEnabled = useSearchEnabledFeature();
+    const searchEnabled = isSearchFeatureEnabled();
 
     const [isInitialized, setIsInitialize] = useState(false);
     const driveEventManager = useDriveEventManager();
