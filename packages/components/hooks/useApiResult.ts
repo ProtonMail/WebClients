@@ -1,4 +1,4 @@
-import { useCallback, useEffect } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 import useApi from './useApi';
 import useAsync from './useAsync';
@@ -15,10 +15,12 @@ interface Result<R, U extends any[]> {
 const useApiResult = <R, F extends QueryFunction = QueryFunction>(
     fn: QueryFunction,
     dependencies?: any[],
-    throwOnError = true
+    throwOnError = true,
+    lazy = false
 ): Result<R, Parameters<F>> => {
     const request = useApi();
     const { loading, result, error, run } = useAsync(true);
+    const [calledManually, setCalledManually] = useState(!lazy);
 
     // Either user specified dependencies or empty array to always cancel requests on unmount.
     const hookDependencies = dependencies || [];
@@ -27,13 +29,18 @@ const useApiResult = <R, F extends QueryFunction = QueryFunction>(
     const requestAndSetResults = useCallback(
         (...args: Parameters<F>) => {
             const promise = request<R>(fn(...args));
-            run(promise);
+            void run(promise);
+            setCalledManually(true);
             return promise;
         },
         [request, run, fn]
     );
 
     useEffect(() => {
+        if (!calledManually) {
+            return;
+        }
+
         // If user has specified any dependencies, auto request
         if (dependencies) {
             requestAndSetResults(...([] as unknown as Parameters<F>)).catch(() => {
