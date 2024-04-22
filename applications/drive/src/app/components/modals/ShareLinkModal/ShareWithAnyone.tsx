@@ -9,20 +9,11 @@ import clsx from '@proton/utils/clsx';
 
 interface Props {
     publicSharedLink: string;
-    isShareUrlLoading: boolean;
     createSharedLink: () => void;
     deleteSharedLink: () => void;
-    isDeleting: boolean;
-    isCreating: boolean;
+    isLoading: boolean;
 }
-const ShareWithAnyone = ({
-    publicSharedLink,
-    isShareUrlLoading,
-    createSharedLink,
-    deleteSharedLink,
-    isDeleting,
-    isCreating,
-}: Props) => {
+const ShareWithAnyone = ({ publicSharedLink, createSharedLink, deleteSharedLink, isLoading }: Props) => {
     const contentRef = useRef<HTMLDivElement>(null);
     const { createNotification } = useNotifications();
     const handleCopyURLClick = () => {
@@ -41,15 +32,12 @@ const ShareWithAnyone = ({
             createSharedLink();
         }
     };
+
     return (
         <div ref={contentRef}>
             <div className="flex justify-space-between items-center mb-6">
                 <h2 className="text-lg text-semibold mr">{c('Info').t`Share with anyone`}</h2>
-                <Toggle
-                    checked={!!publicSharedLink}
-                    loading={isShareUrlLoading || isDeleting || isCreating}
-                    onChange={handleToggle}
-                />
+                <Toggle checked={!!publicSharedLink} loading={isLoading} onChange={handleToggle} />
             </div>
             <div className={clsx('flex items-center mb-4', !publicSharedLink && 'opacity-30')}>
                 <Avatar color="weak" className="mr-2">
