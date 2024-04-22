@@ -170,9 +170,9 @@ export const EXTRA_EXTENSION_TYPES: { [ext: string]: string } = {
 export enum SHARE_MEMBER_PERMISSIONS {
     READ = 4,
     WRITE = 2,
-    EXEC = 1,
     ADMIN = 16,
     SUPER_ADMIN = 32,
+    OWNER = 55,
 }
 
 export enum SHARE_MEMBER_STATE {

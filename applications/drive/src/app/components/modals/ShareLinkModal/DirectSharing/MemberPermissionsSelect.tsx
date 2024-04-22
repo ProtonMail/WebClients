@@ -82,7 +82,12 @@ const MemberPermissionsSelect = ({ selectedPermissions, onChange, onRemove }: Pr
             <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close}>
                 <DropdownMenu>
                     {permissionsOptions.map((option) => (
-                        <Option option={option} isSelected={option.value === selectedPermissions} onSelect={onChange} />
+                        <Option
+                            key={option.value}
+                            option={option}
+                            isSelected={option.value === selectedPermissions}
+                            onSelect={onChange}
+                        />
                     ))}
                     {onRemove && (
                         <Option

@@ -6,6 +6,7 @@ import { c } from 'ttag';
 import { FilePreview, NavigationControl } from '@proton/components';
 import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
+import { getCanWrite } from '@proton/shared/lib/drive/permissions';
 
 import { SignatureAlertBody } from '../components/SignatureAlert';
 import SignatureIcon from '../components/SignatureIcon';
@@ -52,8 +53,19 @@ export default function PreviewContainer({ match }: RouteComponentProps<{ shareI
         !referer?.startsWith('/trash') &&
         !referer?.startsWith('/search');
 
-    const { isLinkLoading, isContentLoading, error, link, contents, contentsMimeType, downloadFile, navigation } =
-        useFileView(shareId, linkId, useNavigation);
+    const {
+        permissions,
+        isLinkLoading,
+        isContentLoading,
+        error,
+        link,
+        contents,
+        contentsMimeType,
+        downloadFile,
+        navigation,
+    } = useFileView(shareId, linkId, useNavigation);
+
+    const isEditor = useMemo(() => getCanWrite(permissions), [permissions]);
 
     // If the link is not type of file, probably user modified the URL.
     useEffect(() => {
@@ -169,7 +181,11 @@ export default function PreviewContainer({ match }: RouteComponentProps<{ shareI
                 onDownload={downloadFile}
                 onSave={isEditEnabled ? handleSaveFile : undefined}
                 onDetails={() => showDetailsModal({ shareId, linkId })}
-                onShare={isLinkLoading || !!link?.trashed ? undefined : () => showLinkSharingModal({ shareId, linkId })}
+                onShare={
+                    !isEditor || isLinkLoading || !!link?.trashed
+                        ? undefined
+                        : () => showLinkSharingModal({ shareId, linkId })
+                }
                 imgThumbnailUrl={link?.cachedThumbnailUrl}
                 ref={rootRef}
                 navigationControls={

@@ -1,4 +1,4 @@
-import { SHARE_MEMBER_PERMISSIONS } from '../../drive/constants';
+import { SHARE_MEMBER_PERMISSIONS, SHARE_MEMBER_STATE } from '../../drive/constants';
 
 export interface ShareMemberPayload {
     MemberID: string;
@@ -10,4 +10,20 @@ export interface ShareMemberPayload {
     Permissions: SHARE_MEMBER_PERMISSIONS;
     KeyPacketSignature: string;
     SessionKeySignature: string;
+}
+
+export interface ShareMembershipPayload {
+    MemberID: string;
+    ShareID: string;
+    AddressID: string;
+    AddressKeyID: string;
+    Inviter: string;
+    CreateTime: number;
+    ModifyTime: number;
+    Permissions: SHARE_MEMBER_PERMISSIONS;
+    State: SHARE_MEMBER_STATE;
+    KeyPacket: string;
+    KeyPacketSignature: string;
+    SessionKeySignature: string;
+    Unlockable: boolean;
 }

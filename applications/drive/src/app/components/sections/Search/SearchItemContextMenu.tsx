@@ -1,4 +1,5 @@
 import { ContextSeparator } from '@proton/components';
+import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
 
 import { DecryptedLink } from '../../../store';
 import { ContextMenuProps } from '../../FileBrowser/interface';
@@ -9,6 +10,7 @@ export function SearchItemContextMenu(
     props: ContextMenuProps & {
         shareId: string;
         selectedLinks: DecryptedLink[];
+        permissions: SHARE_MEMBER_PERMISSIONS;
     }
 ) {
     const { shareId, selectedLinks, close } = props;
