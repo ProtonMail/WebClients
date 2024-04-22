@@ -1,4 +1,5 @@
-import type { ItemRevision, UniqueItem } from '@proton/pass/types';
+import type { FetchedBreaches } from '@proton/components/containers';
+import type { Breach, ItemRevision, UniqueItem } from '@proton/pass/types';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 
 export const getDuplicatePasswords = (logins: ItemRevision<'login'>[]): UniqueItem[][] => {
@@ -26,3 +27,28 @@ export const getDuplicatePasswords = (logins: ItemRevision<'login'>[]): UniqueIt
 
     return Array.from(duplicatesMap.values());
 };
+
+export const intoFetchedBreach = (breach: Breach): FetchedBreaches => ({
+    id: breach.ID,
+    name: breach.Name,
+    email: breach.Email,
+    severity: breach.Severity,
+    createdAt: breach.CreatedAt,
+    publishedAt: breach.PublishedAt,
+    size: breach.Size ?? 0,
+    passwordLastChars: breach.PasswordLastChars ?? null,
+    exposedData: breach.ExposedData.map((data) => ({ code: data.Code, name: data.Name })),
+    actions: breach.Actions.map((action) => ({
+        code: action.Code,
+        name: action.Name,
+        desc: action.Desc,
+        urls: action.Urls,
+    })),
+    source: {
+        isAggregated: breach.Source.IsAggregated,
+        domain: breach.Source.Domain ?? null,
+        category: null,
+        country: null,
+    },
+    resolvedState: breach.ResolvedState,
+});

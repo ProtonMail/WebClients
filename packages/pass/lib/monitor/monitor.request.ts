@@ -14,7 +14,7 @@ import type {
 import type { SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/interfaces';
 
 /** Toggle the ProtonSentinel setting */
-export const sentinelToggle = (value: SETTINGS_PROTON_SENTINEL_STATE) =>
+export const toggleSentinel = (value: SETTINGS_PROTON_SENTINEL_STATE) =>
     api({ url: `core/v4/settings/highsecurity`, method: value ? 'post' : 'delete' });
 
 /** Update PassMonitor settings */
@@ -30,7 +30,7 @@ export const setItemMonitorFlag = async (
     (await api({ url: `pass/v1/share/${shareId}/item/${itemId}/flags`, method: 'put', data })).Item!;
 
 /* Get all the breaches for this user (Proton addresses) */
-export const getBreaches = async (): Promise<BreachesGetResponse> =>
+export const getAllBreaches = async (): Promise<BreachesGetResponse> =>
     (await api({ url: 'pass/v1/breach', method: 'get' })).Breaches!;
 
 /* Get breaches for a proton address */
