@@ -9,7 +9,7 @@ import { SharedURLSessionKeyPayload } from '@proton/shared/lib/interfaces/drive/
 
 import { sendErrorReport } from '../../utils/errorHandling';
 import { DecryptedLink, useLink } from '../_links';
-import { ShareURL, getSharedLink, splitGeneratedAndCustomPassword, useShareUrl } from '../_shares';
+import { ShareURL, getSharedLink, splitGeneratedAndCustomPassword, useShareActions, useShareUrl } from '../_shares';
 
 const getLoadingMessage = (isLinkLoading: boolean, haveShareUrl: boolean, isFile: boolean) => {
     if (isLinkLoading) {
@@ -55,12 +55,13 @@ const getPasswordProtectedSharingInfoMessage = (isFile: boolean) => {
  * useLinkView loads link if not cached yet.
  */
 export default function useShareURLView(shareId: string, linkId: string) {
-    const { getLink } = useLink();
+    const { getLink, loadFreshLink } = useLink();
     const [shareUrlInfo, setShareUrlInfo] = useState<{
         shareUrl: ShareURL;
         keyInfo: SharedURLSessionKeyPayload;
     }>();
     const { loadShareUrl, updateShareUrl, deleteShareUrl, createShareUrl, getShareIdWithSessionkey } = useShareUrl();
+    const { deleteShare } = useShareActions();
 
     const [sharedLink, setSharedLink] = useState('');
     const [password, setPassword] = useState('');
@@ -68,6 +69,7 @@ export default function useShareURLView(shareId: string, linkId: string) {
     const [error, setError] = useState('');
 
     const [link, setLink] = useState<DecryptedLink>();
+    const [isShared, setIsShared] = useState(false);
     const [isLinkLoading, withLinkLoading] = useLoading(true);
     const [isShareUrlLoading, withShareUrlLoading] = useLoading(true);
     const [isSaving, withSaving] = useLoading();
@@ -79,12 +81,22 @@ export default function useShareURLView(shareId: string, linkId: string) {
 
     const [, customPassword] = splitGeneratedAndCustomPassword(password, shareUrl);
 
+    // TODO: Remove this when events or refactor will be in place
+    const manualCacheRefresh = async (abortSignal: AbortSignal) => {
+        const link = await loadFreshLink(abortSignal, shareId, linkId);
+        setLink(link);
+        // If sharingDetails is null that mean there is no public share or direct share
+        setIsShared(!!link.sharingDetails);
+    };
+
     useEffect(() => {
         const abortController = new AbortController();
         void withLinkLoading(
             getLink(abortController.signal, shareId, linkId)
                 .then((link) => {
                     setLink(link);
+                    // If sharingDetails is null that mean there is no public share or direct share
+                    setIsShared(!!link.sharingDetails);
                 })
                 .catch((err) => {
                     setError(err);
@@ -147,6 +159,7 @@ export default function useShareURLView(shareId: string, linkId: string) {
                         }
                     }
                 })
+                .then(() => manualCacheRefresh(abortController.signal))
                 .catch((err) => {
                     setError(err);
                 });
@@ -213,8 +226,9 @@ export default function useShareURLView(shareId: string, linkId: string) {
             return;
         }
 
-        return withDeleting(
-            deleteShareUrl(shareUrl.shareId, shareUrl.shareUrlId)
+        return withDeleting(async () => {
+            const abortController = new AbortController();
+            return deleteShareUrl(shareUrl.shareId, shareUrl.shareUrlId)
                 .then(() => {
                     setShareUrlInfo(undefined);
                     setSharedLink('');
@@ -224,10 +238,33 @@ export default function useShareURLView(shareId: string, linkId: string) {
                         text: c('Notification').t`The link to your item was deleted`,
                     });
                 })
+                .then(() => manualCacheRefresh(abortController.signal))
                 .catch(() => {
                     createNotification({
                         type: 'error',
                         text: c('Notification').t`The link to your item failed to be deleted`,
+                    });
+                });
+        });
+    };
+
+    const stopSharing = async () => {
+        if (!link?.sharingDetails) {
+            return;
+        }
+        const abortController = new AbortController();
+        return withDeleting(
+            deleteShare(link.sharingDetails.shareId, { force: true })
+                .then(() => {
+                    createNotification({
+                        text: c('Notification').t`You stopped to share this item`,
+                    });
+                })
+                .then(() => manualCacheRefresh(abortController.signal))
+                .catch(() => {
+                    createNotification({
+                        type: 'error',
+                        text: c('Notification').t`Stopping to share this item has failed`,
                     });
                 })
         );
@@ -246,6 +283,7 @@ export default function useShareURLView(shareId: string, linkId: string) {
         : getSharingInfoMessage(!!link?.isFile);
 
     return {
+        isShared,
         isDeleting,
         isSaving,
         name: link?.name || '', // If the link is not loaded we will return an error message anyway
@@ -262,6 +300,7 @@ export default function useShareURLView(shareId: string, linkId: string) {
         createSharedLink,
         saveSharedLink,
         deleteLink,
+        stopSharing,
         isCreating,
     };
 }
