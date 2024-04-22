@@ -37,7 +37,7 @@ const useBusySlots = ({ temporaryEvent, dateRange, tzid, view }: Props) => {
 
     useEffect(() => {
         updateMetadata();
-    }, [view, dateRange[0], dateRange[1]]);
+    }, [view, dateRange[0], dateRange[1], tzid]);
 
     useEffect(() => {
         if (!isBusySlotsAvailable) {
