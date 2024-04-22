@@ -10,13 +10,14 @@ export type ElectronNotification = {
 };
 
 // This type must be updated in the Electron application as well
-export type IPCInboxDesktopFeature = 'ThemeSelection';
+export type IPCInboxDesktopFeature = 'ThemeSelection' | 'InAppPayments';
 export type IPCInboxGetInfoMessage = { type: 'theme'; result: ThemeSetting };
 export type IPCInboxClientUpdateMessage =
     | { type: 'updateNotification'; payload: number }
     | { type: 'userLogout'; payload?: undefined }
     | { type: 'clearAppData'; payload?: undefined }
     | { type: 'oauthPopupOpened'; payload: 'oauthPopupStarted' | 'oauthPopupFinished' }
+    | { type: 'subscriptionModalOpened'; payload: 'subscriptionModalStarted' | 'subscriptionModalFinished' }
     | { type: 'openExternal'; payload: string }
     | { type: 'changeView'; payload: CHANGE_VIEW_TARGET }
     | { type: 'trialEnd'; payload: 'trialEnded' | 'resetTrialEnded' }
