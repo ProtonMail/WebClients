@@ -20,6 +20,7 @@ const CustomLogo = ({ url, app, organizationName, className, style, ...rest }: P
         return (
             <span
                 title={organizationName}
+                data-testid="sidebar:organization-name"
                 className={clsx(
                     'text-semibold text-ellipsis w-full text-no-decoration sidebar-custom-logo-name',
                     longOrgName ? 'text-rg' : 'text-lg'
