@@ -1,7 +1,8 @@
-import { useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
 
 import { Toolbar } from '@proton/components';
 import { LinkURLType, RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
+import { getCanWrite } from '@proton/shared/lib/drive/permissions';
 
 import useActiveShare from '../../../hooks/drive/useActiveShare';
 import useNavigate from '../../../hooks/drive/useNavigate';
@@ -20,6 +21,7 @@ function DriveView() {
     const { navigateToRoot, navigateToLink } = useNavigate();
 
     const folderView = useFolderView(activeFolder);
+    const isEditor = useMemo(() => getCanWrite(folderView.permissions), [folderView.permissions]);
 
     useEffect(() => {
         if (folderView.error) {
@@ -38,6 +40,7 @@ function DriveView() {
 
     const toolbar = activeFolder ? (
         <DriveToolbar
+            permissions={folderView.permissions}
             isLinkReadOnly={folderView.isActiveLinkReadOnly}
             shareId={activeFolder.shareId}
             linkId={activeFolder.linkId}
@@ -49,15 +52,22 @@ function DriveView() {
 
     return (
         <FileBrowserStateProvider itemIds={folderView.items.map(({ linkId }) => linkId)}>
-            <UploadDragDrop
-                shareId={activeFolder.shareId}
-                linkId={activeFolder.linkId}
-                className="flex flex-column flex-nowrap flex-1"
-                disabled={folderView.isActiveLinkReadOnly}
-            >
-                <ToolbarRow titleArea={breadcrumbs} toolbar={toolbar} />
-                {activeFolder && <Drive activeFolder={activeFolder} folderView={folderView} />}
-            </UploadDragDrop>
+            {isEditor ? (
+                <UploadDragDrop
+                    shareId={activeFolder.shareId}
+                    linkId={activeFolder.linkId}
+                    className="flex flex-column flex-nowrap flex-1"
+                    disabled={folderView.isActiveLinkReadOnly}
+                >
+                    <ToolbarRow titleArea={breadcrumbs} toolbar={toolbar} />
+                    {activeFolder && <Drive activeFolder={activeFolder} folderView={folderView} />}
+                </UploadDragDrop>
+            ) : (
+                <>
+                    <ToolbarRow titleArea={breadcrumbs} toolbar={toolbar} />
+                    {activeFolder && <Drive activeFolder={activeFolder} folderView={folderView} />}
+                </>
+            )}
         </FileBrowserStateProvider>
     );
 }

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -12,6 +12,8 @@ import {
     generateUID,
     usePopperAnchor,
 } from '@proton/components';
+import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
+import { getCanAdmin, getCanWrite } from '@proton/shared/lib/drive/permissions';
 
 import { DecryptedLink, useActions } from '../../../../store';
 import { useDetailsModal } from '../../../modals/DetailsModal';
@@ -23,9 +25,10 @@ import { useLinkSharingModal } from '../../../modals/ShareLinkModal/ShareLinkMod
 interface Props {
     shareId: string;
     selectedLinks: DecryptedLink[];
+    permissions: SHARE_MEMBER_PERMISSIONS;
 }
 
-const ActionsDropdown = ({ shareId, selectedLinks }: Props) => {
+const ActionsDropdown = ({ shareId, selectedLinks, permissions }: Props) => {
     const [uid] = useState(generateUID('actions-dropdown'));
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const [filesDetailsModal, showFilesDetailsModal] = useFilesDetailsModal();
@@ -33,6 +36,8 @@ const ActionsDropdown = ({ shareId, selectedLinks }: Props) => {
     const [moveToFolderModal, showMoveToFolderModal] = useMoveToFolderModal();
     const [renameModal, showRenameModal] = useRenameModal();
     const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
+    const isEditor = useMemo(() => getCanWrite(permissions), [permissions]);
+    const isAdmin = useMemo(() => getCanAdmin(permissions), [permissions]);
 
     const { trashLinks } = useActions();
 
@@ -49,21 +54,21 @@ const ActionsDropdown = ({ shareId, selectedLinks }: Props) => {
         action: () => void;
     }[] = [
         {
-            hidden: isMultiSelect || hasFoldersSelected,
+            hidden: isMultiSelect || hasFoldersSelected || !isAdmin,
             name: hasSharedLink ? c('Action').t`Manage link` : c('Action').t`Get link`,
             icon: 'link',
             testId: 'actions-dropdown-share-link',
             action: () => showLinkSharingModal({ shareId: shareId, linkId: selectedLinkIds[0] }),
         },
         {
-            hidden: false,
+            hidden: !isEditor,
             name: c('Action').t`Move to folder`,
             icon: 'arrows-cross',
             testId: 'actions-dropdown-move',
             action: () => showMoveToFolderModal({ shareId, selectedItems: selectedLinks }),
         },
         {
-            hidden: isMultiSelect,
+            hidden: isMultiSelect || !isEditor,
             name: c('Action').t`Rename`,
             icon: 'pen-square',
             testId: 'actions-dropdown-rename',
@@ -84,14 +89,14 @@ const ActionsDropdown = ({ shareId, selectedLinks }: Props) => {
             action: () => showFilesDetailsModal({ selectedItems: selectedLinks }),
         },
         {
-            hidden: false,
+            hidden: !isEditor,
             name: c('Action').t`Move to trash`,
             icon: 'trash',
             testId: 'actions-dropdown-trash',
             action: () => trashLinks(new AbortController().signal, selectedLinks),
         },
         {
-            hidden: isMultiSelect,
+            hidden: isMultiSelect || !isEditor,
             name: hasSharedLink ? c('Action').t`Sharing options` : c('Action').t`Share via link`,
             icon: 'link',
             testId: 'actions-dropdown-share-link',

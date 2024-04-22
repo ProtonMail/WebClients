@@ -1,4 +1,8 @@
+import { useMemo } from 'react';
+
 import { ContextSeparator } from '@proton/components';
+import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
+import { getCanAdmin, getCanWrite } from '@proton/shared/lib/drive/permissions';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
 import { DecryptedLink, useDriveSharingFeatureFlag } from '../../../store';
@@ -23,6 +27,7 @@ import ShareLinkButtonLEGACY from '../ContextMenu/buttons/_legacy/ShareLinkButto
 import { MoveToFolderButton, MoveToTrashButton } from './ContextMenuButtons';
 
 export function DriveItemContextMenu({
+    permissions,
     shareId,
     selectedLinks,
     anchorRef,
@@ -33,6 +38,7 @@ export function DriveItemContextMenu({
     children,
     isActiveLinkReadOnly,
 }: ContextMenuProps & {
+    permissions: SHARE_MEMBER_PERMISSIONS;
     shareId: string;
     selectedLinks: DecryptedLink[];
     isActiveLinkReadOnly?: boolean;
@@ -40,6 +46,10 @@ export function DriveItemContextMenu({
     const selectedLink = selectedLinks[0];
     const isOnlyOneItem = selectedLinks.length === 1;
     const isOnlyOneFileItem = isOnlyOneItem && selectedLink.isFile;
+
+    const isEditor = useMemo(() => getCanWrite(permissions), [permissions]);
+    const isAdmin = useMemo(() => getCanAdmin(permissions), [permissions]);
+
     const hasPreviewAvailable =
         isOnlyOneFileItem && selectedLink.mimeType && isPreviewAvailable(selectedLink.mimeType, selectedLink.size);
     const hasLink = isOnlyOneItem && selectedLink.shareUrl && !selectedLink.shareUrl.isExpired && !selectedLink.trashed;
@@ -62,10 +72,10 @@ export function DriveItemContextMenu({
                 )}
                 {hasPreviewAvailable && <ContextSeparator />}
                 <DownloadButton selectedLinks={selectedLinks} close={close} />
-                {hasLink && (
+                {isAdmin && hasLink && (
                     <CopyLinkButton shareId={selectedLink.rootShareId} linkId={selectedLink.linkId} close={close} />
                 )}
-                {isOnlyOneItem && (
+                {isAdmin && isOnlyOneItem && (
                     <ShareLinkButtonComponent
                         shareId={shareId}
                         showLinkSharingModal={showLinkSharingModal}
@@ -74,7 +84,7 @@ export function DriveItemContextMenu({
                     />
                 )}
                 <ContextSeparator />
-                {!isActiveLinkReadOnly ? (
+                {isEditor && !isActiveLinkReadOnly ? (
                     <MoveToFolderButton
                         shareId={shareId}
                         selectedLinks={selectedLinks}
@@ -82,7 +92,7 @@ export function DriveItemContextMenu({
                         close={close}
                     />
                 ) : null}
-                {isOnlyOneItem && !isActiveLinkReadOnly && (
+                {isEditor && isOnlyOneItem && !isActiveLinkReadOnly && (
                     <RenameButton showRenameModal={showRenameModal} link={selectedLink} close={close} />
                 )}
                 <DetailsButton
@@ -91,8 +101,8 @@ export function DriveItemContextMenu({
                     showFilesDetailsModal={showFilesDetailsModal}
                     close={close}
                 />
-                <ContextSeparator />
-                {isOnlyOneFileItem && (
+                {isEditor && <ContextSeparator />}
+                {isEditor && isOnlyOneFileItem && (
                     <>
                         <RevisionsButton
                             selectedLink={selectedLink}
@@ -102,7 +112,7 @@ export function DriveItemContextMenu({
                         <ContextSeparator />
                     </>
                 )}
-                <MoveToTrashButton selectedLinks={selectedLinks} close={close} />
+                {isEditor && <MoveToTrashButton selectedLinks={selectedLinks} close={close} />}
                 {children}
             </ItemContextMenu>
             {filesDetailsModal}
