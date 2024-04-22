@@ -8,6 +8,7 @@ import { Icon, StripedItem, StripedList } from '@proton/components/components';
 import { upgradeButtonClick } from '@proton/components/containers/desktop/openExternalLink';
 import { useActiveBreakpoint } from '@proton/components/hooks';
 import { CYCLE, PLANS } from '@proton/shared/lib/constants';
+import { hasInboxDesktopFeature } from '@proton/shared/lib/desktop/ipcHelpers';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import clsx from '@proton/utils/clsx';
 
@@ -99,8 +100,8 @@ const UpsellPanel = ({ title, plan, features, children, ctas = [], isRecommended
                 {ctas.map((cta) => {
                     if (isUpsellCta(cta)) {
                         const handleOnClick = () => {
-                            // Open the link in browser on Electron to avoid 3D Secure issues
-                            if (isElectronApp) {
+                            // Open the link in browser on Electron unless it is supported
+                            if (isElectronApp && !hasInboxDesktopFeature('InAppPayments')) {
                                 upgradeButtonClick(CYCLE.YEARLY, plan);
                             } else {
                                 cta.action();

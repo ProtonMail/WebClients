@@ -14,6 +14,7 @@ import {
 } from '@proton/components';
 import { freeTrialUpgradeClick, redirectToAccountApp } from '@proton/components/containers/desktop/openExternalLink';
 import { APP_NAMES, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
+import { hasInboxDesktopFeature } from '@proton/shared/lib/desktop/ipcHelpers';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { isTrial } from '@proton/shared/lib/helpers/subscription';
 import { getUpgradePath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
@@ -55,7 +56,7 @@ const TopNavbarUpgradeButton = ({ app }: Props) => {
                 <PromotionButton
                     as={ButtonLike}
                     onClick={() => {
-                        if (isElectronApp) {
+                        if (isElectronApp && !hasInboxDesktopFeature('InAppPayments')) {
                             if (upsellRef) {
                                 freeTrialUpgradeClick(upsellRef);
                             } else {
