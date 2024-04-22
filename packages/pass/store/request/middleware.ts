@@ -1,10 +1,11 @@
 import { type Middleware, isAction } from 'redux';
 
-import { requestInvalidate } from '@proton/pass/store/actions';
-import { isActionWithRequest } from '@proton/pass/store/actions/enhancers/request';
-import { type RequestState } from '@proton/pass/store/reducers';
 import { selectRequest } from '@proton/pass/store/selectors';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
+
+import { requestInvalidate } from './actions';
+import type { RequestState } from './types';
+import { isActionWithRequest } from './utils';
 
 export const requestMiddleware: Middleware<{}, { request: RequestState }> =
     ({ getState, dispatch }) =>
@@ -14,16 +15,16 @@ export const requestMiddleware: Middleware<{}, { request: RequestState }> =
                 if (!isActionWithRequest(action)) return next(action);
 
                 const { request } = action.meta;
-                const { type, id } = request;
+                const { status, id } = request;
 
-                if ((type === 'success' && !request.maxAge) || type === 'failure') {
+                if ((status === 'success' && !request.maxAge) || status === 'failure') {
                     /** request data garbage collection : on a request success or failure,
                      * if it not persistent, dispatch an acknowledgment action in order to
                      * clear the request data for this particular request id.*/
                     setTimeout(() => dispatch(requestInvalidate(id)), 500);
                 }
 
-                if (type === 'start') {
+                if (status === 'start') {
                     if (request.revalidate) return next(action);
                     const pending = selectRequest(id)(getState());
 
