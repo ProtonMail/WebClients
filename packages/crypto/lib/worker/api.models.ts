@@ -228,6 +228,13 @@ export interface KeyReference {
      * Second entry does not include 3rd party certifications (e.g. from Proton CA).
      **/
     readonly _keyContentHash: [string, string];
+    /**
+     * Return compatibility error if the key not compatible with all Proton clients.
+     * This function is intended for logging purposes.
+     * Use `options.checkCompatibility` with `importPrivateKey` and `importPublicKeys` to avoid importing incompatible keys.
+     */
+    _getCompatibilityError(): Error | null;
+
     getFingerprint(): string;
     /**
      * Key ID of primary key in hex format.
