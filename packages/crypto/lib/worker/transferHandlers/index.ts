@@ -9,8 +9,8 @@ type ExtractFunctionReturnTypes<T> = {
     [I in keyof T]: T[I] extends (...args: any) => any
         ? ReturnType<T[I]>
         : T[I] extends (infer A)[]
-        ? ExtractFunctionReturnTypes<A>[]
-        : T[I]; // recurse on array fields
+          ? ExtractFunctionReturnTypes<A>[]
+          : T[I]; // recurse on array fields
 };
 
 // ExtractFunctionReturnTypes cannot keep track of fixed length of `_keyContentHash` so we explicitly re-declare
@@ -21,6 +21,7 @@ const KeyReferenceSerializer = {
     serialize: (keyReference: KeyReference): SerializedKeyReference => ({
         // store values directly, convert back to function when deserialising
         ...keyReference,
+        _getCompatibilityError: keyReference._getCompatibilityError(),
         isPrivate: keyReference.isPrivate(),
         getFingerprint: keyReference.getFingerprint(),
         getKeyID: keyReference.getKeyID(),
@@ -39,6 +40,7 @@ const KeyReferenceSerializer = {
 
     deserialize: (serialized: SerializedKeyReference): KeyReference => ({
         ...serialized,
+        _getCompatibilityError: () => serialized._getCompatibilityError,
         isPrivate: () => serialized.isPrivate,
         getFingerprint: () => serialized.getFingerprint,
         getKeyID: () => serialized.getKeyID,

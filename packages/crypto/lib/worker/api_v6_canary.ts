@@ -140,9 +140,16 @@ const getPublicKeyReference = async (key: PublicKey, keyStoreID: number): Promis
     } catch {
         isWeak = true;
     }
+    let compatibilityError: Error;
+    try {
+        checkKeyCompatibility(publicKey);
+    } catch (err: any) {
+        compatibilityError = err;
+    }
     return {
         _idx: keyStoreID,
         _keyContentHash: [keyContentHash, keyContentHashNoCerts],
+        _getCompatibilityError: () => compatibilityError,
         isPrivate: () => false,
         getFingerprint: () => fingerprint,
         getKeyID: () => hexKeyID,
