@@ -30,7 +30,7 @@ const DisableSCIMModal = ({ onClose, onConfirm, ...props }: Props) => {
                 </p>
                 <p>
                     {c('scim: Info')
-                        .t`To re-enable syncing with your identity provider, your need to complete the SCIM integration again.`}
+                        .t`To re-enable syncing with your identity provider, you need to complete the SCIM integration again.`}
                 </p>
             </ModalTwoContent>
             <ModalTwoFooter>
