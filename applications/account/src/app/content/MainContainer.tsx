@@ -124,9 +124,8 @@ const MainContainer = () => {
     const { state: expanded, toggle: onToggleExpand, set: setExpand } = useToggle();
     const { viewportWidth } = useActiveBreakpoint();
 
-    const { getFeature } = useFeatures([FeatureCode.EasySwitch, FeatureCode.NotificationInboxDesktopApp]);
+    useFeatures([FeatureCode.EasySwitch]);
 
-    const isNotifInboxDesktopAppOn = getFeature(FeatureCode.NotificationInboxDesktopApp).feature?.Value === true;
     const showThemeSelection = useShowThemeSelection();
     const isBreachesAccountDashboardEnabled = useFlag('BreachesAccountDashboard');
     const [isDataRecoveryAvailable, loadingDataRecovery] = useIsDataRecoveryAvailable();
@@ -149,7 +148,6 @@ const MainContainer = () => {
         isDataRecoveryAvailable,
         isSessionRecoveryAvailable,
         recoveryNotification: recoveryNotification?.color,
-        isNotifInboxDesktopAppOn,
         isBreachesAccountDashboardEnabled,
         showThemeSelection,
     });
