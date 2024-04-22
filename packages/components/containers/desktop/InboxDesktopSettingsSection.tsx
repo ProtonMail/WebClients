@@ -1,4 +1,4 @@
-import { PropsWithChildren, useEffect, useState } from 'react';
+import { PropsWithChildren, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -9,7 +9,6 @@ import { invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import { FeatureCode, useFeature } from '../..';
 import { Icon, IconName, Option, SelectTwo } from '../../components';
 import { SettingsParagraph, SettingsSectionWide } from '../account';
 import useInboxDesktopVersion, { DesktopVersion } from './useInboxDesktopVersion';
@@ -112,13 +111,6 @@ const InboxDesktopSettingsSection = () => {
     const isWindowsAppOK = windowsApp && windowsApp.File[0]?.Url && windowsApp.Version;
     const isMacosAppOK = macosApp && macosApp.File[0]?.Url && macosApp.Version;
     const isLinuxAppOK = linuxApp && linuxApp.Version && linuxApp.File.every((file) => file.Url);
-
-    const { update, feature } = useFeature(FeatureCode.NotificationInboxDesktopApp);
-    useEffect(() => {
-        if (update && feature?.Value) {
-            update(false);
-        }
-    }, []);
 
     return (
         <SettingsSectionWide>
