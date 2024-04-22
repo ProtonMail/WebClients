@@ -33,6 +33,7 @@ export function ShareLinkModal({ shareId: rootShareId, linkId, onClose, ...modal
         initialExpiration,
         name,
         deleteLink,
+        stopSharing,
         sharedLink,
         errorMessage,
         loadingMessage,
@@ -43,19 +44,16 @@ export function ShareLinkModal({ shareId: rootShareId, linkId, onClose, ...modal
         isSaving,
         isDeleting,
         isCreating,
+        isShared,
         isShareUrlLoading,
     } = useShareURLView(rootShareId, linkId);
 
     const [settingsModal, showSettingsModal] = useLinkSharingSettingsModal();
     const [isDirectSharingWorkflow, setIsDirectSharingWorkflow] = useState(false);
 
-    const handleDeleteSharedLink = () => deleteLink();
-    const handleDeleteShare = async () => {
-        if (!!sharedLink) {
-            await handleDeleteSharedLink();
-        }
-        // Here should go share deletion when it will be available
-    };
+    const isClosedButtonDisabled = isSaving || isDeleting || isCreating;
+    const isTooltipDisabled = isShareUrlLoading || isSaving || isDeleting || isCreating || !isShared;
+    const isShareWithAnyoneLoading = isShareUrlLoading || isDeleting || isCreating;
 
     const renderModalState = () => {
         if (errorMessage) {
@@ -70,12 +68,9 @@ export function ShareLinkModal({ shareId: rootShareId, linkId, onClose, ...modal
             <div className="mb-4">
                 <ModalTwoHeader
                     title={c('Title').t`Share ${name}`}
-                    closeButtonProps={{ disabled: isSaving || isDeleting || isCreating }}
+                    closeButtonProps={{ disabled: isClosedButtonDisabled }}
                     actions={[
-                        <Tooltip
-                            disabled={isShareUrlLoading || isSaving || isDeleting || isCreating}
-                            title={c('Info').t`Share via link settings`}
-                        >
+                        <Tooltip disabled={isTooltipDisabled} title={c('Info').t`Share via link settings`}>
                             <Button
                                 icon
                                 shape="ghost"
@@ -85,8 +80,10 @@ export function ShareLinkModal({ shareId: rootShareId, linkId, onClose, ...modal
                                         initialExpiration,
                                         onSaveLinkClick: saveSharedLink,
                                         isDeleting,
-                                        deleteShare: handleDeleteShare,
-                                        deleteShareEnabled: !!sharedLink, //For now it's only based on sharedLink existance
+                                        stopSharing: async () => {
+                                            await stopSharing();
+                                            onClose();
+                                        },
                                         havePublicSharedLink: !!sharedLink,
                                         confirmationMessage,
                                         modificationDisabled: !hasGeneratedPasswordIncluded,
@@ -110,11 +107,9 @@ export function ShareLinkModal({ shareId: rootShareId, linkId, onClose, ...modal
                     {!isDirectSharingWorkflow ? (
                         <ShareWithAnyone
                             createSharedLink={createSharedLink}
-                            isShareUrlLoading={isShareUrlLoading}
+                            isLoading={isShareWithAnyoneLoading}
                             publicSharedLink={sharedLink}
-                            deleteSharedLink={handleDeleteSharedLink}
-                            isDeleting={isDeleting}
-                            isCreating={isCreating}
+                            deleteSharedLink={deleteLink}
                         />
                     ) : null}
                 </ModalTwoContent>
