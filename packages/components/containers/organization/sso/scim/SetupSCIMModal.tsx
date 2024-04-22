@@ -55,7 +55,7 @@ const SetupSCIMModal = ({ onClose, token, type, baseUrl, ...rest }: SetupSCIMMod
                 </div>
             </ModalContent>
             <ModalFooter>
-                <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>
+                <Button onClick={onClose}>{c('Action').t`Close`}</Button>
                 <Button type="submit" onClick={onClose} color="norm">
                     {c('Action').t`Done`}
                 </Button>
