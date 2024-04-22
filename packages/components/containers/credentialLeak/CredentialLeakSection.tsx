@@ -182,9 +182,11 @@ const CredentialLeakSection = () => {
         });
     };
 
-    if (viewingBreach && viewingBreach.resolvedState === BREACH_STATE.UNREAD) {
-        markAsOpenBreach();
-    }
+    useEffect(() => {
+        if (viewingBreach && viewingBreach.resolvedState === BREACH_STATE.UNREAD) {
+            markAsOpenBreach();
+        }
+    }, [viewingBreach]);
 
     const href = getKnowledgeBaseUrl('/dark-web-monitoring');
     // translator: full sentence is: We monitor the dark web for instances where your personal information (such as an email address or password used on a third-party site) is leaked or compromised. <How does monitoring work?>
@@ -198,7 +200,7 @@ const CredentialLeakSection = () => {
                 // translator: full sentence is: We monitor the dark web for instances where your personal information (such as an email address or password used on a third-party site) is leaked or compromised. <How does monitoring work?>
                 c('Info')
                     .jt`We monitor the dark web for instances where your personal information (such as an email address or password used on a third-party site) is leaked or compromised.`
-            }
+            }{' '}
             {dataBreachLink}
         </SettingsParagraph>
     );
