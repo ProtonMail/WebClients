@@ -2,9 +2,8 @@ import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components/hooks';
 
-import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import useLinksState from '../_links/useLinksState';
-import { useShare, useShareMember } from '../_shares';
+import { getSharedWithMeMembership, useShare, useShareMember } from '../_shares';
 import { useErrorHandler } from '../_utils';
 
 export const useSharedWithMeActions = () => {
@@ -18,17 +17,7 @@ export const useSharedWithMeActions = () => {
         try {
             const share = await getShareWithKey(abortSignal, shareId);
 
-            // Backend already filter memberships, and we will always get one which is the one to use
-            const membership = share.memberships[0];
-
-            // This should never happen as backend always return one membership
-            if (!membership) {
-                throw new EnrichedError('Error finding an membership of the user for the share', {
-                    tags: {
-                        shareId,
-                    },
-                });
-            }
+            const membership = getSharedWithMeMembership(share.shareId, share.memberships);
 
             await removeShareMember(abortSignal, {
                 memberId: membership.memberId,

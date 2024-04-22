@@ -38,7 +38,7 @@ export interface ShareWithKey extends Share {
     passphrase: string;
     passphraseSignature: string;
     rootLinkRecoveryPassphrase?: string;
-    memberships: ShareMember[];
+    memberships: ShareMembership[];
 }
 
 export type ShareURLLEGACY = WithSRPPayload<{
@@ -134,6 +134,22 @@ export interface ShareMember {
     permissions: SHARE_MEMBER_PERMISSIONS;
     keyPacketSignature: string;
     sessionKeySignature: string;
+}
+
+export interface ShareMembership {
+    memberId: string;
+    shareId: string;
+    addressId: string;
+    addressKeyId: string;
+    inviterEmail: string;
+    createTime: number;
+    modifyTime: number;
+    permissions: SHARE_MEMBER_PERMISSIONS;
+    state: SHARE_MEMBER_STATE;
+    keyPacket: string;
+    keyPacketSignature: string;
+    sessionKeySignature: string;
+    unlockable: boolean;
 }
 
 export interface ShareInvitation {

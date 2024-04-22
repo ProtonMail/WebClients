@@ -12,6 +12,7 @@ import SignatureIcon from '../../SignatureIcon';
 import { DeviceItem } from '../Devices/Devices';
 import { DriveItem } from '../Drive/Drive';
 import { SharedLinkItem } from '../SharedLinks/SharedLinks';
+import { SharedWithMeItem } from '../SharedWithMe/SharedWithMe';
 import { TrashItem } from '../Trash/Trash';
 import CopyLinkIcon from './CopyLinkIcon';
 import { getDeviceIconText, getLinkIconText } from './utils';
@@ -170,10 +171,10 @@ export const ShareOptionsCell = ({ item }: { item: DriveItem }) => {
     );
 };
 
-export const SharedByCell = ({ item }: { item: DriveItem }) => {
+export const SharedByCell = ({ item }: { item: SharedWithMeItem }) => {
     const [contactEmails] = useContactEmails();
 
-    const email = item.signatureAddress;
+    const email = item.sharedBy;
     const contactEmail = contactEmails?.find((contactEmail) => contactEmail.Email === email);
     const displayName = email && contactEmails && contactEmail ? contactEmail.Name : email;
     return (
@@ -186,6 +187,14 @@ export const SharedByCell = ({ item }: { item: DriveItem }) => {
                 {getInitials(displayName)}
             </Avatar>
             <span className="text-ellipsis">{displayName}</span>
+        </TableCell>
+    );
+};
+
+export const SharedOnCell = ({ item }: { item: SharedWithMeItem }) => {
+    return (
+        <TableCell className="flex items-center m-0 w-1/6" data-testid="column-share-created">
+            {item.sharedOn && <TimeCell time={item.sharedOn} />}
         </TableCell>
     );
 };

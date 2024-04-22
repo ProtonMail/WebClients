@@ -84,7 +84,7 @@ function Drive({ activeFolder, folderView }: Props) {
     const selectionControls = useSelection();
     const { viewportWidth } = useActiveBreakpoint();
 
-    const { layout, folderName, items, sortParams, setSorting, isLoading } = folderView;
+    const { permissions, layout, folderName, items, sortParams, setSorting, isLoading } = folderView;
 
     const selectedItems = useMemo(
         () => getSelectedItems(items, selectionControls!.selectedItemIds),
@@ -154,7 +154,7 @@ function Drive({ activeFolder, folderView }: Props) {
             return <EmptyDeviceRoot />;
         }
 
-        return <EmptyFolder shareId={shareId} />;
+        return <EmptyFolder shareId={shareId} permissions={permissions} />;
     }
 
     const Cells = viewportWidth['>=large'] ? myFilesLargeScreenCells : myFilesSmallScreenCells;
@@ -163,6 +163,7 @@ function Drive({ activeFolder, folderView }: Props) {
     return (
         <>
             <FolderContextMenu
+                permissions={permissions}
                 isActiveLinkReadOnly={folderView.isActiveLinkReadOnly}
                 shareId={shareId}
                 anchorRef={contextMenuAnchorRef}
@@ -172,6 +173,7 @@ function Drive({ activeFolder, folderView }: Props) {
                 position={browserContextMenu.position}
             />
             <DriveItemContextMenu
+                permissions={permissions}
                 isActiveLinkReadOnly={folderView.isActiveLinkReadOnly}
                 shareId={shareId}
                 selectedLinks={selectedItems}

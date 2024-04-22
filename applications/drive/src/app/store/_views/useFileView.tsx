@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 
 import { useLoading } from '@proton/hooks';
-import { SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
+import { SHARE_MEMBER_PERMISSIONS, SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
 import { isVideo } from '@proton/shared/lib/helpers/mimetype';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
@@ -10,6 +10,7 @@ import { streamToBuffer } from '../../utils/stream';
 import { useDownload, useDownloadProvider } from '../_downloads';
 import usePublicDownload from '../_downloads/usePublicDownload';
 import { DecryptedLink, useLink } from '../_links';
+import { useDirectSharingInfo } from '../_shares/useDirectSharingInfo';
 import { useFileViewNavigation, usePublicFileViewNavigation } from './useFileNavigation';
 import { DEFAULT_SORT } from './usePublicFolderView';
 import { SortParams } from './utils/useSorting';
@@ -19,6 +20,11 @@ import { SortParams } from './utils/useSorting';
  */
 export default function useFileView(shareId: string, linkId: string, useNavigation = false, revisionId?: string) {
     const { downloadStream, getPreviewThumbnail } = useDownload();
+    const { getSharePermissions } = useDirectSharingInfo();
+    // permissions load will be during the withLoading process, but we prefer to set owner by default,
+    // so even if it's wrong permissions, BE will prevent any unauthorized actions
+    const [permissions, setPermissions] = useState<SHARE_MEMBER_PERMISSIONS>(SHARE_MEMBER_PERMISSIONS.OWNER);
+    const [isPermissionsLoading, withPermissionsLoading] = useLoading(true);
     const { isLinkLoading, isContentLoading, error, link, contents, contentsMimeType, downloadFile } = useFileViewBase(
         shareId,
         linkId,
@@ -28,7 +34,29 @@ export default function useFileView(shareId: string, linkId: string, useNavigati
     );
     const navigation = useFileViewNavigation(useNavigation, shareId, link?.parentLinkId, linkId);
 
-    return { navigation, isLinkLoading, isContentLoading, error, link, contents, contentsMimeType, downloadFile };
+    const loadPermissions = async (abortSignal: AbortSignal) => {
+        return getSharePermissions(abortSignal, shareId).then(setPermissions);
+    };
+
+    useEffect(() => {
+        const ac = new AbortController();
+        void withPermissionsLoading(loadPermissions(ac.signal));
+        return () => {
+            ac.abort();
+        };
+    }, []);
+
+    return {
+        permissions,
+        navigation,
+        isLinkLoading: isLinkLoading || isPermissionsLoading,
+        isContentLoading,
+        error,
+        link,
+        contents,
+        contentsMimeType,
+        downloadFile,
+    };
 }
 
 export function usePublicFileView(
@@ -45,7 +73,17 @@ export function usePublicFileView(
     );
     const navigation = usePublicFileViewNavigation(useNavigation, shareId, sortParams, link?.parentLinkId, linkId);
 
-    return { navigation, isLinkLoading, isContentLoading, error, link, contents, contentsMimeType, downloadFile };
+    return {
+        permissions: SHARE_MEMBER_PERMISSIONS.READ,
+        navigation,
+        isLinkLoading,
+        isContentLoading,
+        error,
+        link,
+        contents,
+        contentsMimeType,
+        downloadFile,
+    };
 }
 
 function useFileViewBase(
@@ -56,6 +94,7 @@ function useFileViewBase(
     getPreviewThumbnail?: ReturnType<typeof useDownload>['getPreviewThumbnail']
 ) {
     const { getLink } = useLink();
+
     const { download } = useDownloadProvider();
     const [isContentLoading, withContentLoading] = useLoading(true);
 
