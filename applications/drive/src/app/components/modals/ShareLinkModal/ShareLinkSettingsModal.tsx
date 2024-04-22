@@ -29,12 +29,11 @@ interface Props {
     initialExpiration: number | null;
     customPassword: string;
     isDeleting?: boolean;
-    deleteShare: () => Promise<void>;
+    stopSharing: () => Promise<void>;
     onSaveLinkClick: (
         password?: string,
         duration?: number | null
     ) => Promise<void | (unknown & { expirationTime: number | null })>;
-    deleteShareEnabled: boolean;
     modificationDisabled: boolean;
     confirmationMessage: string;
     havePublicSharedLink: boolean;
@@ -45,8 +44,7 @@ const ShareLinkSettingsModal = ({
     initialExpiration,
     onSaveLinkClick,
     isDeleting,
-    deleteShare,
-    deleteShareEnabled,
+    stopSharing,
     modificationDisabled,
     confirmationMessage,
     havePublicSharedLink,
@@ -81,13 +79,13 @@ const ShareLinkSettingsModal = ({
         });
     };
 
-    const handleDeleteLink = async () => {
+    const handleStopSharing = async () => {
         void showConfirmActionModal({
             title: c('Title').t`Stop sharing with everyone?`,
             submitText: c('Action').t`Stop sharing`,
             message: confirmationMessage,
-            canUndo: true,
-            onSubmit: () => deleteShare(),
+            canUndo: true, // Just to hide the message
+            onSubmit: stopSharing,
         });
     };
 
@@ -199,18 +197,17 @@ const ShareLinkSettingsModal = ({
                     </div>
                     <hr className="my-5" />
                     <div className="flex flex-nowrap justify-space-between items-center">
-                        <div className={clsx('flex flex-column flex-1 p-0', !deleteShareEnabled && 'opacity-30')}>
-                            <span className="text-semibold">{c('Label').t`Delete link`}</span>
+                        <div className="flex flex-column flex-1 p-0">
+                            <span className="text-semibold">{c('Label').t`Stop sharing`}</span>
                             <span className="color-weak">{c('Label')
                                 .t`Erase this link and remove everyone with access`}</span>
                         </div>
                         <Button
-                            disabled={!deleteShareEnabled}
                             className="flex items-center"
                             shape="ghost"
                             color="danger"
-                            onClick={handleDeleteLink}
-                        >{c('Action').t`Delete`}</Button>
+                            onClick={handleStopSharing}
+                        >{c('Action').t`Stop sharing`}</Button>
                     </div>
                 </ModalTwoContent>
                 <ModalTwoFooter>

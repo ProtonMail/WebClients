@@ -140,8 +140,8 @@ export default function useShareActions() {
         };
     };
 
-    const deleteShare = async (shareId: string): Promise<void> => {
-        await preventLeave(debouncedRequest(queryDeleteShare(shareId)));
+    const deleteShare = async (shareId: string, { force }: { force?: boolean } = { force: false }): Promise<void> => {
+        await preventLeave(debouncedRequest(queryDeleteShare(shareId, { Force: force ? 1 : 0 })));
     };
 
     // Migrate old user shares encrypted with AddressPrivateKey with new one encrypted with LinkPrivateKey (NodeKey)
