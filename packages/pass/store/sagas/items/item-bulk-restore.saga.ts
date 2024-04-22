@@ -8,7 +8,7 @@ import {
     itemBulkRestoreProgress,
     itemBulkRestoreSuccess,
 } from '@proton/pass/store/actions';
-import type { RequestProgress } from '@proton/pass/store/actions/enhancers/request';
+import type { RequestProgress } from '@proton/pass/store/request/types';
 import { selectItemsFromBulkSelectionDTO } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { BatchItemRevisionIDs, ItemRevision, ItemRevisionResponse } from '@proton/pass/types';

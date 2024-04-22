@@ -25,8 +25,7 @@ export const AliasContent: FC<ItemContentProps<'alias', { optimistic: boolean; a
     const aliasEmail = revision.aliasEmail!;
     const note = useDeobfuscatedValue(item.metadata.note);
 
-    const getAliasDetails = useActionRequest({
-        action: getAliasDetailsIntent,
+    const getAliasDetails = useActionRequest(getAliasDetailsIntent, {
         initialRequestId: aliasDetailsRequest(aliasEmail),
         onFailure: () => {
             dispatch(

@@ -98,8 +98,7 @@ export const useImportForm = ({
     const result = useSelector(selectLatestImport);
     const user = useSelector(selectUser);
 
-    const importItems = useActionRequest({
-        action: importItemsIntent,
+    const importItems = useActionRequest(importItemsIntent, {
         initialRequestId: itemsImportRequest(),
         onSuccess: () => {
             setBusy(false);

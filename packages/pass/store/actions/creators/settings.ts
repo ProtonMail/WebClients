@@ -3,10 +3,10 @@ import { c } from 'ttag';
 
 import { withCache } from '@proton/pass/store/actions/enhancers/cache';
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
-import { withRequest, withRequestFailure, withRequestSuccess } from '@proton/pass/store/actions/enhancers/request';
 import { withSettings } from '@proton/pass/store/actions/enhancers/settings';
 import { offlineSetupRequest, settingsEditRequest } from '@proton/pass/store/actions/requests';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
+import { withRequest, withRequestFailure, withRequestSuccess } from '@proton/pass/store/request/enhancers';
 import type { ClientEndpoint, RecursivePartial } from '@proton/pass/types';
 import { type CriteriaMasks } from '@proton/pass/types/worker/settings';
 import { pipe } from '@proton/pass/utils/fp/pipe';
@@ -16,7 +16,7 @@ import identity from '@proton/utils/identity';
 export const settingsEditIntent = createAction(
     'settings::edit::intent',
     (group: string, payload: RecursivePartial<ProxiedSettings>, silent: boolean = false) =>
-        withRequest({ type: 'start', id: settingsEditRequest(group), data: { silent } })({ payload })
+        withRequest({ status: 'start', id: settingsEditRequest(group) })({ payload, meta: { silent } })
 );
 
 export const settingsEditFailure = createAction(
@@ -52,7 +52,7 @@ export const updatePauseListItem = createAction(
 
 export const offlineSetupIntent = createAction('offline::setup::intent', (loginPassword: string) =>
     pipe(
-        withRequest({ type: 'start', id: offlineSetupRequest }),
+        withRequest({ status: 'start', id: offlineSetupRequest }),
         withNotification({
             loading: true,
             text: c('Info').t`Setting up offline mode...`,

@@ -6,7 +6,7 @@ import { getUserAccessIntent, stateHydrate, wakeupIntent, wakeupSuccess } from '
 import { passwordHistoryGarbageCollect } from '@proton/pass/store/actions/creators/password';
 import { popupTabStateGarbageCollect } from '@proton/pass/store/actions/creators/popup';
 import type { WithReceiverAction } from '@proton/pass/store/actions/enhancers/endpoint';
-import { withRevalidate } from '@proton/pass/store/actions/enhancers/request';
+import { withRevalidate } from '@proton/pass/store/request/enhancers';
 import { selectPopupStateTabIds } from '@proton/pass/store/selectors';
 import type { RootSagaOptions, State } from '@proton/pass/store/types';
 import type { TabId } from '@proton/pass/types';

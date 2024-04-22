@@ -22,7 +22,7 @@ type Props = Omit<ModalProps, 'onSubmit'> & { vault: VaultShareItem; onSuccess: 
 export const FORM_ID = 'vault-edit';
 
 export const VaultEdit: FC<Props> = ({ vault, onSuccess, ...modalProps }) => {
-    const editVault = useActionRequest({ action: vaultEditIntent, onSuccess });
+    const editVault = useActionRequest(vaultEditIntent, { onSuccess });
 
     const form = useFormik<VaultFormValues>({
         initialValues: {

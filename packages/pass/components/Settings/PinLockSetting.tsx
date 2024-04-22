@@ -21,15 +21,8 @@ export const PinLockSetting: FC = () => {
 
     const { sessionLockRegistered, sessionLockTTL } = useSelector(selectSessionLockSettings);
 
-    const enableLock = useActionRequest({
-        action: sessionLockEnableIntent,
-        initialRequestId: sessionLockEnableRequest(),
-    });
-
-    const disableLock = useActionRequest({
-        action: sessionLockDisableIntent,
-        initialRequestId: sessionLockDisableRequest(),
-    });
+    const enableLock = useActionRequest(sessionLockEnableIntent, { initialRequestId: sessionLockEnableRequest() });
+    const disableLock = useActionRequest(sessionLockDisableIntent, { initialRequestId: sessionLockDisableRequest() });
 
     const loading = enableLock.loading || disableLock.loading;
 
