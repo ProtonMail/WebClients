@@ -10,6 +10,7 @@ export enum OnboardingMessage {
     BLACK_FRIDAY_OFFER,
     B2B_ONBOARDING,
     EARLY_ACCESS,
+    PASS_MONITOR,
 }
 
 export type OnboardingAcknowledgment = {

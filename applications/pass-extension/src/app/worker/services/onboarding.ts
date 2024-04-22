@@ -1,6 +1,7 @@
 import browser from '@proton/pass/lib/globals/browser';
 import {
     createBlackFridayRule,
+    createMonitorRule,
     createPendingShareAccessRule,
     createPermissionsRule,
     createSecurityRule,
@@ -33,6 +34,7 @@ export const createOnboardingService = (storage: ExtensionStorage<OnboardingStor
             createBlackFridayRule(store),
             createSecurityRule(store),
             createUserRatingRule(store),
+            createMonitorRule(store),
         ],
     });
 
