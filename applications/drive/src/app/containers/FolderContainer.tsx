@@ -8,15 +8,19 @@ import DriveView, { DriveSectionRouteProps } from '../components/sections/Drive/
 import useActiveShare, { DriveFolder } from '../hooks/drive/useActiveShare';
 import { useFolderContainerTitle } from '../hooks/drive/useFolderContainerTitle';
 import useNavigate from '../hooks/drive/useNavigate';
-import { useDefaultShare } from '../store';
+import { useDefaultShare, useDriveEventManager } from '../store';
+import { useVolumesState } from '../store/_volumes';
 import PreviewContainer from './PreviewContainer';
 
 export default function FolderContainer({ match }: RouteComponentProps<DriveSectionRouteProps>) {
     const { navigateToRoot } = useNavigate();
     const { activeFolder, setFolder } = useActiveShare();
+    const volumesState = useVolumesState();
     const lastFolderPromise = useRef<Promise<DriveFolder | undefined>>();
     const [, setError] = useState();
     const { getDefaultShare, isShareAvailable } = useDefaultShare();
+    const driveEventManager = useDriveEventManager();
+
     useFolderContainerTitle({ params: match.params, setAppTitle: useAppTitle });
 
     const hasValidLinkType = (type: string) => {
@@ -64,6 +68,25 @@ export default function FolderContainer({ match }: RouteComponentProps<DriveSect
                 navigateToRoot();
             });
     }, [folderPromise]);
+
+    // With sharing we need to subscribe to events from different volumes.
+    // This will happen during Shared with me navigation
+    useEffect(() => {
+        const volumeId = volumesState.findVolumeId(activeFolder.shareId);
+        if (!volumeId) {
+            return;
+        }
+        getDefaultShare().then((defaultShare) => {
+            // We exclude subscribing to volumes event of main share (Already done in MainContainer)
+            if (defaultShare.volumeId !== volumeId) {
+                driveEventManager.volumes.startSubscription(volumeId);
+            }
+        });
+
+        return () => {
+            driveEventManager.volumes.pauseSubscription(volumeId);
+        };
+    }, [activeFolder.shareId]);
 
     // In case we open preview, folder doesn't need to change.
     lastFolderPromise.current = folderPromise;
