@@ -12,6 +12,7 @@ export type RequiredNonNull<T, K extends keyof T = keyof T> = Omit<T, K> & {
 };
 export type RequiredProps<T, K extends keyof T> = Omit<T, K> & { [P in K]-?: NonNullable<T[P]> };
 export type RecursivePartial<T> = { [P in keyof T]?: RecursivePartial<T[P]> };
+export type OptionalProp<T, K extends keyof T> = Omit<T, K> & Partial<Pick<T, K>>;
 
 export type DefinedPropertiesOnly<S extends {}> = Pick<S, DefinedKeys<S>>;
 export type DefinedKeys<S extends {}, K = keyof S> = Extract<
