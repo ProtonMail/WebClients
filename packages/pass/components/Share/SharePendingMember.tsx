@@ -49,8 +49,8 @@ export const SharePendingMember: FC<SharePendingMemberProps> = ({ actions, email
 );
 
 export const PendingExistingMember: FC<PendingExistingMemberProps> = ({ canManage, email, inviteId, shareId }) => {
-    const resendInvite = useActionRequest({ action: inviteResendIntent });
-    const removeInvite = useActionRequest({ action: inviteRemoveIntent });
+    const resendInvite = useActionRequest(inviteResendIntent);
+    const removeInvite = useActionRequest(inviteRemoveIntent);
 
     const handleResendInvite = () => resendInvite.dispatch({ shareId, inviteId });
     const handleRemoveInvite = () => removeInvite.dispatch({ shareId, inviteId });
@@ -87,8 +87,8 @@ export const PendingExistingMember: FC<PendingExistingMemberProps> = ({ canManag
 };
 
 export const PendingNewMember: FC<PendingNewMemberProps> = ({ canManage, email, shareId, state, newUserInviteId }) => {
-    const promoteInvite = useActionRequest({ action: newUserInvitePromoteIntent });
-    const removeInvite = useActionRequest({ action: newUserInviteRemoveIntent });
+    const promoteInvite = useActionRequest(newUserInvitePromoteIntent);
+    const removeInvite = useActionRequest(newUserInviteRemoveIntent);
 
     const handlePromoteInvite = () => promoteInvite.dispatch({ shareId, newUserInviteId });
     const handleRemoveInvite = () => removeInvite.dispatch({ shareId, newUserInviteId });

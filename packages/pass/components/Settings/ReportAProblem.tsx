@@ -33,7 +33,7 @@ export const ReportAProblem: FC = () => {
     const { config } = usePassCore();
     const user = useSelector(selectUser);
     const formRef = useRef<FormikContextType<FormValues>>();
-    const reportBug = useActionRequest({ action: reportBugIntent, onSuccess: () => formRef.current?.resetForm() });
+    const reportBug = useActionRequest(reportBugIntent, { onSuccess: () => formRef.current?.resetForm() });
 
     const form = useFormik<FormValues>({
         initialValues: INITIAL_VALUES,

@@ -4,13 +4,9 @@ import { all, put, takeEvery } from 'redux-saga/effects';
 import { parseItemRevision } from '@proton/pass/lib/items/item.parser';
 import { createAlias, createItem, createItemWithAlias } from '@proton/pass/lib/items/item.requests';
 import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
-import {
-    itemCreationFailure,
-    itemCreationIntent,
-    itemCreationSuccess,
-    requestInvalidate,
-} from '@proton/pass/store/actions';
+import { itemCreationFailure, itemCreationIntent, itemCreationSuccess } from '@proton/pass/store/actions';
 import { aliasOptionsRequest } from '@proton/pass/store/actions/requests';
+import { requestInvalidate } from '@proton/pass/store/request/actions';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { ItemRevision, ItemRevisionContentsResponse } from '@proton/pass/types';
 import { TelemetryEventName, TelemetryItemType } from '@proton/pass/types/data/telemetry';

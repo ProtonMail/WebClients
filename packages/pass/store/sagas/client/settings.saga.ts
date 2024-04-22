@@ -17,8 +17,7 @@ function* settingsEditWorker(
         if ('disallowedDomains' in payload) settings.disallowedDomains = {};
         if (payload.locale) onLocaleUpdated?.(payload.locale);
 
-        yield put(settingsEditSuccess(meta.request.id, payload, meta.request.data.silent, meta.sender?.endpoint));
-
+        yield put(settingsEditSuccess(meta.request.id, payload, meta.silent, meta.sender?.endpoint));
         if ('beta' in payload) yield onBetaUpdated?.(payload.beta ?? false);
     } catch (e) {
         yield put(settingsEditFailure(meta.request.id, e, meta.sender?.endpoint));
