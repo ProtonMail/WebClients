@@ -360,10 +360,10 @@ export const getChainedForwardingEmails = (
 ) => {
     const addressesMap = toMap(addresses);
     const forwardeeEmails = incoming.map(({ ForwardeeAddressID }) =>
-        canonicalizeEmailByGuess(addressesMap[ForwardeeAddressID]?.Email)
+        canonicalizeEmailByGuess(addressesMap[ForwardeeAddressID]?.Email || '')
     );
     const forwarderEmails = outgoing.map(({ ForwarderAddressID }) =>
-        canonicalizeEmailByGuess(addressesMap[ForwarderAddressID]?.Email)
+        canonicalizeEmailByGuess(addressesMap[ForwarderAddressID]?.Email || '')
     );
     return forwarderEmails.filter((email) => forwardeeEmails.includes(email));
 };

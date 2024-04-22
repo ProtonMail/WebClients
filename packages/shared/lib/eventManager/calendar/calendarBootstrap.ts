@@ -97,7 +97,7 @@ export const updateBootstrapMembers = (
             if (getIsCalendarMemberEventManagerDelete(event)) {
                 const { ID: memberID } = event;
                 const calendarID = findCalendarID(calendarBootstrapCache, ({ Members }) => {
-                    return Members.find(({ ID }: { ID: string }) => ID === memberID);
+                    return Array.isArray(Members) && Members.find(({ ID }: { ID: string }) => ID === memberID);
                 });
                 if (!calendarID) {
                     return;
