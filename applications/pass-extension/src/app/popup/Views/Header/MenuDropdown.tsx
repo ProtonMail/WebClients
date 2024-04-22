@@ -1,4 +1,4 @@
-import { type FC, useMemo } from 'react';
+import { type FC, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import { usePopupContext } from 'proton-pass-extension/lib/components/Context/PopupProvider';
@@ -6,7 +6,8 @@ import { useExpandPopup } from 'proton-pass-extension/lib/hooks/useExpandPopup';
 import { useOpenSettingsTab } from 'proton-pass-extension/lib/hooks/useOpenSettingsTab';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button, NotificationDot } from '@proton/atoms';
+import { ThemeColor } from '@proton/colors';
 import type { DropdownProps } from '@proton/components';
 import {
     Collapsible,
@@ -26,10 +27,11 @@ import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/Drop
 import { Submenu } from '@proton/pass/components/Menu/Submenu';
 import { VaultMenu } from '@proton/pass/components/Menu/Vault/VaultMenu';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
-import { getLocalPath } from '@proton/pass/components/Navigation/routing';
+import { getPassWebUrl } from '@proton/pass/components/Navigation/routing';
 import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
 import { AccountPath, UpsellRef } from '@proton/pass/constants';
+import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { type MenuItem, useMenuItems } from '@proton/pass/hooks/useMenuItems';
 import { useNavigateToAccount } from '@proton/pass/hooks/useNavigateToAccount';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
@@ -43,11 +45,13 @@ import {
     selectUser,
 } from '@proton/pass/store/selectors';
 import type { ShareType } from '@proton/pass/types';
+import { OnboardingMessage } from '@proton/pass/types';
+import { PassFeature } from '@proton/pass/types/api/features';
 import { VaultColor } from '@proton/pass/types/protobuf/vault-v1';
 import { withTap } from '@proton/pass/utils/fp/pipe';
-import { APPS, PASS_APP_NAME } from '@proton/shared/lib/constants';
-import { getAppUrlFromApiUrl } from '@proton/shared/lib/helpers/url';
+import { PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
+import noop from '@proton/utils/noop';
 
 const DROPDOWN_SIZE: NonNullable<DropdownProps['size']> = {
     height: DropdownSizeUnit.Dynamic,
@@ -56,7 +60,7 @@ const DROPDOWN_SIZE: NonNullable<DropdownProps['size']> = {
 };
 
 export const MenuDropdown: FC = () => {
-    const { onLink } = usePassCore();
+    const { onLink, onboardingAcknowledge, onboardingCheck } = usePassCore();
     const { lock, logout, ready, expanded } = usePopupContext();
     const { API_URL } = usePassConfig();
     const { filters, matchTrash } = useNavigation();
@@ -68,12 +72,22 @@ export const MenuDropdown: FC = () => {
     const user = useSelector(selectUser);
     const canLock = useSelector(selectHasRegisteredLock);
 
+    const monitorEnabled = useFeatureFlag(PassFeature.PassMonitor);
+    const [notifyMonitor, setNotifyMonitor] = useState(false);
+    const notify = notifyMonitor;
+
     const vaultActions = useVaultActions();
     const openSettings = useOpenSettingsTab();
     const expandPopup = useExpandPopup();
     const navigateToAccount = useNavigateToAccount(AccountPath.ACCOUNT_PASSWORD);
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const withClose = withTap(close);
+
+    useEffect(() => {
+        (async () => monitorEnabled && (await onboardingCheck?.(OnboardingMessage.PASS_MONITOR)))()
+            .then((show) => setNotifyMonitor(Boolean(show)))
+            .catch(noop);
+    }, [monitorEnabled]);
 
     const menu = useMenuItems({
         onAction: close,
@@ -110,32 +124,29 @@ export const MenuDropdown: FC = () => {
         },
     ];
 
-    const passWebAppUrl = useMemo(() => {
-        const appUrl = getAppUrlFromApiUrl(API_URL, APPS.PROTONPASS);
-        appUrl.pathname = getLocalPath();
-        return appUrl.toString();
-    }, []);
-
     return (
         <>
             <nav>
-                <Button
-                    icon
-                    shape="solid"
-                    color="weak"
-                    pill
-                    ref={anchorRef}
-                    onClick={toggle}
-                    size="small"
-                    title={isOpen ? c('Action').t`Close navigation` : c('Action').t`Open navigation`}
-                >
-                    <VaultIcon
-                        className="shrink-0"
-                        size={4}
-                        color={matchTrash ? VaultColor.COLOR_UNSPECIFIED : vault?.content.display.color}
-                        icon={matchTrash ? 'pass-trash' : vault?.content.display.icon}
-                    />
-                </Button>
+                <div className="relative">
+                    <Button
+                        icon
+                        shape="solid"
+                        color="weak"
+                        pill
+                        ref={anchorRef}
+                        onClick={toggle}
+                        size="small"
+                        title={isOpen ? c('Action').t`Close navigation` : c('Action').t`Open navigation`}
+                    >
+                        <VaultIcon
+                            className="shrink-0"
+                            size={4}
+                            color={matchTrash ? VaultColor.COLOR_UNSPECIFIED : vault?.content.display.color}
+                            icon={matchTrash ? 'pass-trash' : vault?.content.display.icon}
+                        />
+                    </Button>
+                    {notify && <NotificationDot className="absolute h-2 w-2 top-0 right-0" color={ThemeColor.Danger} />}
+                </div>
 
                 <Dropdown
                     anchorRef={anchorRef}
@@ -215,6 +226,28 @@ export const MenuDropdown: FC = () => {
 
                         <hr className="dropdown-item-hr my-2 mx-4" aria-hidden="true" />
 
+                        {monitorEnabled && (
+                            <DropdownMenuButton
+                                onClick={withClose(() => {
+                                    void onboardingAcknowledge?.(OnboardingMessage.PASS_MONITOR);
+                                    onLink(getPassWebUrl(API_URL, 'monitor'));
+                                })}
+                                label={
+                                    <>
+                                        {c('Label').t`${PASS_SHORT_APP_NAME} monitor`}
+                                        {notifyMonitor && (
+                                            <NotificationDot
+                                                className="ml-2 h-2 w-2 self-center"
+                                                color={ThemeColor.Danger}
+                                            />
+                                        )}
+                                    </>
+                                }
+                                icon={'pass-shield-warning'}
+                                className="pt-1.5 pb-1.5"
+                            />
+                        )}
+
                         <DropdownMenuButton
                             onClick={withClose(() => openSettings())}
                             label={c('Label').t`Settings`}
@@ -233,7 +266,7 @@ export const MenuDropdown: FC = () => {
                         )}
 
                         <DropdownMenuButton
-                            onClick={withClose(() => onLink(passWebAppUrl))}
+                            onClick={withClose(() => onLink(getPassWebUrl(API_URL)))}
                             label={c('Action').t`Open web app`}
                             icon="arrow-out-square"
                             className="pt-1.5 pb-1.5"

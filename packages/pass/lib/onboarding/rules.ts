@@ -113,3 +113,12 @@ export const createUserRatingRule = (store: Store<State>) =>
             return !previous && createdItemsCount >= ITEM_COUNT_RATING_PROMPT;
         },
     });
+
+export const createMonitorRule = (store: Store<State>) =>
+    createOnboardingRule({
+        message: OnboardingMessage.PASS_MONITOR,
+        when: (previous) => {
+            const state = store.getState();
+            return !previous && selectFeatureFlag(PassFeature.PassMonitor)(state);
+        },
+    });
