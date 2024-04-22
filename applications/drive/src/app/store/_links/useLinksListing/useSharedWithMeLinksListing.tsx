@@ -4,6 +4,7 @@ import { querySharedWithMeLinks } from '@proton/shared/lib/api/drive/sharing';
 import { ListDriveSharedWithMeLinksPayload } from '@proton/shared/lib/interfaces/drive/sharing';
 
 import { useDebouncedRequest } from '../../_api';
+import { useVolumesState } from '../../_volumes';
 import { DecryptedLink } from '../interface';
 import useLinksState from '../useLinksState';
 import { FetchLoadLinksMeta } from './interface';
@@ -24,6 +25,7 @@ type SharedLinksFetchState = {
 export function useSharedWithMeLinksListing() {
     const debouncedRequest = useDebouncedRequest();
     const linksState = useLinksState();
+    const volumesState = useVolumesState();
     const shareIdsState = useRef<Set<string>>();
 
     const setShareIdsState = (shareIds: string[]) => {
@@ -54,14 +56,6 @@ export function useSharedWithMeLinksListing() {
         return sharedLinksFetchState.current[volumeId];
     }, []);
 
-    const querySharedWithMeLinksPage = async (AnchorID?: string): Promise<ListDriveSharedWithMeLinksPayload> => {
-        const response = await debouncedRequest<ListDriveSharedWithMeLinksPayload>(
-            querySharedWithMeLinks({ AnchorID })
-        );
-
-        return response;
-    };
-
     const loadSharedLinksMeta = async (
         signal: AbortSignal,
         transformedResponse: {
@@ -79,8 +73,13 @@ export function useSharedWithMeLinksListing() {
         loadLinksMeta: FetchLoadLinksMeta,
         AnchorID?: string
     ): Promise<{ AnchorID: string; More: boolean }> => {
-        const response = await querySharedWithMeLinksPage(AnchorID);
-        const shareIds = response.Links.map((link) => link.ShareID);
+        const response = await debouncedRequest<ListDriveSharedWithMeLinksPayload>(
+            querySharedWithMeLinks({ AnchorID })
+        );
+        const shareIds = response.Links.map((link) => {
+            volumesState.setVolumeShareIds(link.VolumeID, [link.ShareID]);
+            return link.ShareID;
+        });
         setShareIdsState(shareIds);
 
         const transformedResponse = transformSharedLinksResponseToLinkMap(response);
