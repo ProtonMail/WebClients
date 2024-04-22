@@ -4,20 +4,20 @@ import { Provider as ReduxProvider } from 'react-redux';
 import { type UnknownAction, configureStore, createAction } from '@reduxjs/toolkit';
 import { act, renderHook } from '@testing-library/react-hooks';
 
-import { withRequest } from '@proton/pass/store/actions/enhancers/request';
-import { requestMiddleware } from '@proton/pass/store/middlewares/request-middleware';
-import request from '@proton/pass/store/reducers/request';
+import { withRequest } from '@proton/pass/store/request/enhancers';
+import { requestMiddleware } from '@proton/pass/store/request/middleware';
+import request from '@proton/pass/store/request/reducer';
 
 import { useActionRequest } from './useActionRequest';
 
 const requestId = 'test::id';
 
-const start = createAction('test::start', () => withRequest({ type: 'start', id: requestId })({ payload: {} }));
-const success = createAction('test::success', () => withRequest({ type: 'success', id: requestId })({ payload: {} }));
-const failure = createAction('test::failure', () => withRequest({ type: 'failure', id: requestId })({ payload: {} }));
+const start = createAction('test::start', () => withRequest({ status: 'start', id: requestId })({ payload: {} }));
+const success = createAction('test::success', () => withRequest({ status: 'success', id: requestId })({ payload: {} }));
+const failure = createAction('test::failure', () => withRequest({ status: 'failure', id: requestId })({ payload: {} }));
 
 const successCache = createAction('test::success::cache', () =>
-    withRequest({ type: 'success', id: requestId, maxAge: 1 })({ payload: {} })
+    withRequest({ status: 'success', id: requestId, maxAge: 1 })({ payload: {} })
 );
 
 const buildHook = (useInitialRequestId: boolean = true, initialActions: UnknownAction[] = []) => {
@@ -35,8 +35,7 @@ const buildHook = (useInitialRequestId: boolean = true, initialActions: UnknownA
         onFailure,
         hook: renderHook<PropsWithChildren, ReturnType<typeof useActionRequest>>(
             () =>
-                useActionRequest({
-                    action: start,
+                useActionRequest(start, {
                     initialRequestId: useInitialRequestId ? requestId : undefined,
                     onStart,
                     onSuccess,
