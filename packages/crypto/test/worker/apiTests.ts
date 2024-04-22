@@ -3,6 +3,7 @@ import chaiAsPromised from 'chai-as-promised';
 import { generateKey, getSHA256Fingerprints, reformatKey } from 'pmcrypto';
 import {
     CompressedDataPacket,
+    SymEncryptedIntegrityProtectedDataPacket,
     enums,
     decryptKey as openpgp_decryptKey,
     encryptKey as openpgp_encryptKey,
@@ -27,6 +28,7 @@ import {
     keyWithThirdPartyCertifications,
     rsa512BitsKey,
     v4KeyNewCurve25519Format,
+    v4KeySEIPDv2,
     v6KeyCurve25519,
 } from './keys.data';
 import {
@@ -195,6 +197,24 @@ yGZuVVMAK/ypFfebDf4D/rlEw3cysv213m8aoK8nAUO8xQX3XQq3Sg+EGm0BNV8E
         expect(compressedPacket).to.not.be.undefined;
         // @ts-ignore undeclared algorithm field
         expect(compressedPacket.algorithm).to.equal(enums.compression.zlib);
+    });
+
+    it('encryptMessage - it does not encrypt with SEIPDv2 by default', async () => {
+        const privateKey = await CryptoApiImplementation.importPrivateKey({
+            armoredKey: v4KeySEIPDv2,
+            passphrase: null,
+        });
+        const { message: armoredEncryptedWithSEIPDv1 } = await CryptoApiImplementation.encryptMessage({
+            binaryData: stringToUtf8Array('Hello world!'),
+            encryptionKeys: privateKey,
+        });
+
+        const encryptedWithSEIPDv1 = await openpgp_readMessage({ armoredMessage: armoredEncryptedWithSEIPDv1 });
+        expect(encryptedWithSEIPDv1.packets).to.have.length(2);
+        const seipdV1 = encryptedWithSEIPDv1.packets[1] as SymEncryptedIntegrityProtectedDataPacket;
+        expect(seipdV1).to.be.instanceOf(SymEncryptedIntegrityProtectedDataPacket);
+        // @ts-ignore missing `version` field declaration
+        expect(seipdV1.version).to.equal(1);
     });
 
     it('encryptMessage/decryptMessage - should encrypt and decrypt text and binary data', async () => {
