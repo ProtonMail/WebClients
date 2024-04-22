@@ -158,7 +158,9 @@ const CredentialLeakSection = () => {
 
     const handleEnableBreachAlertToggle = async (newToggleState: boolean) => {
         try {
-            const [action, notification] = newToggleState ? [enableBreachAlert, c('Notification').t`Dark Web Monitoring has been enabled`]: [disableBreachAlert, c('Notification').t`Dark Web Monitoring has been disabled`]
+            const [action, notification] = newToggleState
+                ? [enableBreachAlert, c('Notification').t`Dark Web Monitoring has been enabled`]
+                : [disableBreachAlert, c('Notification').t`Dark Web Monitoring has been disabled`];
 
             await withToggleLoading(api(action()));
             createNotification({ text: notification });
@@ -195,15 +197,21 @@ const CredentialLeakSection = () => {
             {
                 // translator: full sentence is: We monitor the dark web for instances where your personal information (such as an email address or password used on a third-party site) is leaked or compromised. <How does monitoring work?>
                 c('Info')
-                    .jt`We monitor the dark web for instances where your personal information (such as an email address or password used on a third-party site) is leaked or compromised. ${dataBreachLink}`
+                    .jt`We monitor the dark web for instances where your personal information (such as an email address or password used on a third-party site) is leaked or compromised.`
             }
+            {dataBreachLink}
         </SettingsParagraph>
     );
 
     const breachAlertInfoSharing = (
         <SettingsParagraph>
             {c('Info')
-                .t`${BRAND_NAME} never shares your information with third parties. Data comes from  ${BRAND_NAME}'s own analyses and Constella Intelligence.`}
+                .t`${BRAND_NAME} never shares your information with third parties. Data comes from ${BRAND_NAME}'s own analyses and Constella Intelligence.`}{' '}
+            {
+                // translator: full sentence is: Proton never shares your information with third parties. Data comes from Proton's own analyses and Constella Intelligence. Support for monitoring of custom domains and non-Proton email addresses is coming soon.
+                c('Info')
+                    .t`Support for monitoring of custom domains and non-${BRAND_NAME} email addresses is coming soon.`
+            }
         </SettingsParagraph>
     );
 
