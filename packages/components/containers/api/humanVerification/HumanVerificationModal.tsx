@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { useTheme } from '@proton/components/containers';
 import { useLoading } from '@proton/hooks';
+import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
@@ -67,15 +68,15 @@ const HumanVerificationModal = <T extends { humanVerificationResult?: HumanVerif
             onSuccess(result);
             onClose();
         } catch (error: any) {
-            const { data: { Code } = { Code: 0 } } = error;
+            const { code } = getApiError(error);
 
-            if (Code === API_CUSTOM_ERROR_CODES.TOKEN_INVALID) {
+            if (code === API_CUSTOM_ERROR_CODES.TOKEN_INVALID) {
                 createNotification({ text: c('Error').t`Invalid verification code`, type: 'error' });
             }
 
             // Captcha is just given one attempt, and if the resubmitted request did not give invalid token,
             // it probably means the verification succeeded, but the original request failed. So then we error out.
-            if (tokenType === 'captcha' || Code !== API_CUSTOM_ERROR_CODES.TOKEN_INVALID) {
+            if (tokenType === 'captcha' || code !== API_CUSTOM_ERROR_CODES.TOKEN_INVALID) {
                 onError(error);
                 onClose();
                 return;
