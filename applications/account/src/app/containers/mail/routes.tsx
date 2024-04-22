@@ -1,7 +1,6 @@
 import { c } from 'ttag';
 
 import Href from '@proton/atoms/Href/Href';
-import { ThemeColor } from '@proton/colors/types';
 import { SidebarConfig } from '@proton/components';
 import { ADDRESS_TYPE, APPS, APP_NAMES, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -29,13 +28,11 @@ export const getMailAppRoutes = ({
     user,
     addresses,
     organization,
-    isNotifInboxDesktopAppOn,
 }: {
     app: APP_NAMES;
     user: UserModel;
     addresses?: Address[];
     organization?: Organization;
-    isNotifInboxDesktopAppOn: boolean;
 }): SidebarConfig => {
     const hasOrganization = !!organization?.HasKeys;
     const learnMoreLink = (
@@ -49,7 +46,6 @@ export const getMailAppRoutes = ({
                 text: c('Title').t`Get the apps`,
                 to: '/get-the-apps',
                 icon: 'arrow-down-line',
-                notification: isNotifInboxDesktopAppOn ? ThemeColor.Warning : undefined,
                 subsections: [
                     { id: 'proton-mail-mobile-apps', text: c('Title').t`Download the mobile apps` },
                     { id: 'proton-mail-desktop-apps', text: c('Title').t`Download the desktop app` },
