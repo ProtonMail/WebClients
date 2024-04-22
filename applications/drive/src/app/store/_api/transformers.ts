@@ -116,6 +116,20 @@ export function linkMetaToEncryptedLink(link: LinkMetaWithShareURL, shareId: str
     };
 }
 
+export const shareMemberPayloadToShareMember = (shareMember: ShareMemberPayload): ShareMember => {
+    return {
+        memberId: shareMember.MemberID,
+        email: shareMember.Email,
+        inviterEmail: shareMember.InviterEmail,
+        addressId: shareMember.AddressID,
+        createTime: shareMember.CreateTime,
+        modifyTime: shareMember.ModifyTime,
+        permissions: shareMember.Permissions,
+        keyPacketSignature: shareMember.KeyPacketSignature,
+        sessionKeySignature: shareMember.SessionKeySignature,
+    };
+};
+
 export function shareMetaShortToShare(share: ShareMetaShort): Share {
     return {
         shareId: share.ShareID,
@@ -139,6 +153,7 @@ export function shareMetaToShareWithKey(share: ShareMeta): ShareWithKey {
         passphrase: share.Passphrase,
         passphraseSignature: share.PassphraseSignature,
         rootLinkRecoveryPassphrase: share.RootLinkRecoveryPassphrase,
+        memberships: share.Memberships.map((membership) => shareMemberPayloadToShareMember(membership)),
     };
 }
 
@@ -243,20 +258,6 @@ export const revisionPayloadToRevision = (revision: DriveFileRevisionPayload): D
         blocs: revision.Blocks,
         thumbnails: revision.Thumbnails,
         xAttr: revision.XAttr,
-    };
-};
-
-export const shareMemberPayloadToShareMember = (shareMember: ShareMemberPayload): ShareMember => {
-    return {
-        memberId: shareMember.MemberID,
-        email: shareMember.Email,
-        inviterEmail: shareMember.InviterEmail,
-        addressId: shareMember.AddressID,
-        createTime: shareMember.CreateTime,
-        modifyTime: shareMember.ModifyTime,
-        permissions: shareMember.Permissions,
-        keyPacketSignature: shareMember.KeyPacketSignature,
-        sessionKeySignature: shareMember.SessionKeySignature,
     };
 };
 
