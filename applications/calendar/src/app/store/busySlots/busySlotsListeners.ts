@@ -35,14 +35,17 @@ export const startListeningBusySlots = (startListening: SharedStartListening<Cal
             return false;
         },
         effect: async (_, listenerApi) => {
-            let state = listenerApi.getState();
-            let prevState = listenerApi.getOriginalState();
-
-            const updateReason = getBusySlotStateChangeReason(prevState, state);
-
             let attendeesToFetch: string[] = [];
+            const state = listenerApi.getState();
+            const prevState = listenerApi.getOriginalState();
+            const stateChangeReason = getBusySlotStateChangeReason(prevState, state);
 
-            if (['calendar-view-changed', 'calendar-view-date-changed'].some((reason) => reason === updateReason)) {
+            const refetchAttendeesReasons: ReturnType<typeof getBusySlotStateChangeReason>[] = [
+                'calendar-view-changed',
+                'calendar-view-date-changed',
+                'timezone-changed',
+            ];
+            if (refetchAttendeesReasons.includes(stateChangeReason)) {
                 attendeesToFetch = state[busySlotsSliceName].attendees.filter((attendee) => {
                     if (state[busySlotsSliceName].attendeeDataAccessible[attendee] === false) {
                         return false;
@@ -50,6 +53,7 @@ export const startListeningBusySlots = (startListening: SharedStartListening<Cal
                     return true;
                 });
             } else {
+                // Fetch only attendees that are not already fetched
                 attendeesToFetch = getBusyAttendeesToFetch(state);
             }
 

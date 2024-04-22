@@ -291,6 +291,10 @@ export const getBusySlotStateChangeReason = (prevState: CalendarState, nextState
         nextState[busySlotsSliceName].attendees.length > 0 &&
         nextState[busySlotsSliceName].metadata?.view !== prevState[busySlotsSliceName].metadata?.view;
 
+    const timezoneChanged =
+        nextState[busySlotsSliceName].attendees.length > 0 &&
+        nextState[busySlotsSliceName].metadata?.tzid !== prevState[busySlotsSliceName].metadata?.tzid;
+
     const displayChanged = nextState[busySlotsSliceName].displayOnGrid !== prevState[busySlotsSliceName].displayOnGrid;
 
     if (attendeesChanged) {
@@ -307,6 +311,10 @@ export const getBusySlotStateChangeReason = (prevState: CalendarState, nextState
 
     if (displayChanged) {
         return 'display-changed';
+    }
+
+    if (timezoneChanged) {
+        return 'timezone-changed';
     }
 
     return null;
