@@ -153,3 +153,8 @@ export interface DecryptedLink extends Link {
     // In this case we still want to show it to the user so he can delete it.
     corruptedLink?: boolean;
 }
+
+export interface DecryptedLinkWithShareInfo extends DecryptedLink {
+    sharedOn?: number;
+    sharedBy?: string;
+}
