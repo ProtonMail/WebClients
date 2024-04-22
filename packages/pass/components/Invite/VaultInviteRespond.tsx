@@ -24,8 +24,8 @@ export const VaultInviteRespond: FC<Invite> = (invite) => {
     const { vaultLimitReached } = useSelector(selectVaultLimits);
     const { onInviteResponse } = useInviteContext();
 
-    const acceptInvite = useActionRequest({ action: inviteAcceptIntent, onSuccess: onInviteResponse });
-    const rejectInvite = useActionRequest({ action: inviteRejectIntent, onSuccess: onInviteResponse });
+    const acceptInvite = useActionRequest(inviteAcceptIntent, { onSuccess: onInviteResponse });
+    const rejectInvite = useActionRequest(inviteRejectIntent, { onSuccess: onInviteResponse });
 
     const handleRejectInvite = () => rejectInvite.dispatch({ inviteToken: invite.token });
     const handleAcceptInvite = () => acceptInvite.dispatch({ inviteToken: token, inviterEmail, invitedAddressId });

@@ -5,8 +5,8 @@ import { ALIAS_DETAILS_MAX_AGE, ALIAS_OPTIONS_MAX_AGE } from '@proton/pass/const
 import { withCache } from '@proton/pass/store/actions/enhancers/cache';
 import { type ActionCallback, withCallback } from '@proton/pass/store/actions/enhancers/callback';
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
-import { withRequest, withRequestFailure, withRequestSuccess } from '@proton/pass/store/actions/enhancers/request';
 import { aliasDetailsRequest, aliasOptionsRequest } from '@proton/pass/store/actions/requests';
+import { withRequest, withRequestFailure, withRequestSuccess } from '@proton/pass/store/request/enhancers';
 import type { AliasMailbox, AliasOptions } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 
@@ -17,7 +17,7 @@ export const getAliasOptionsIntent = createAction(
         callback?: ActionCallback<ReturnType<typeof getAliasOptionsSuccess> | ReturnType<typeof getAliasOptionsFailure>>
     ) =>
         pipe(
-            withRequest({ type: 'start', id: aliasOptionsRequest(payload.shareId) }),
+            withRequest({ status: 'start', id: aliasOptionsRequest(payload.shareId) }),
             withCallback(callback)
         )({ payload })
 );
@@ -42,7 +42,7 @@ export const getAliasOptionsFailure = createAction(
 export const getAliasDetailsIntent = createAction(
     'alias::details::get::intent',
     (payload: { shareId: string; itemId: string; aliasEmail: string }) =>
-        withRequest({ type: 'start', id: aliasDetailsRequest(payload.aliasEmail) })({ payload })
+        withRequest({ status: 'start', id: aliasDetailsRequest(payload.aliasEmail) })({ payload })
 );
 
 export const getAliasDetailsSuccess = createAction(

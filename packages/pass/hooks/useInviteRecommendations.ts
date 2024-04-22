@@ -1,10 +1,9 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useDispatch } from 'react-redux';
 
-import type { RequestEntryFromAction } from '@proton/pass/hooks/useActionRequest';
 import { useActionRequest } from '@proton/pass/hooks/useActionRequest';
 import { useDebouncedValue } from '@proton/pass/hooks/useDebouncedValue';
-import type { inviteRecommendationsSuccess } from '@proton/pass/store/actions';
+import type { inviteRecommendationsFailure, inviteRecommendationsSuccess } from '@proton/pass/store/actions';
 import { getShareAccessOptionsIntent, inviteRecommendationsIntent } from '@proton/pass/store/actions';
 import type { MaybeNull } from '@proton/pass/types';
 import type { InviteRecommendationsSuccess } from '@proton/pass/types/data/invites.dto';
@@ -29,9 +28,12 @@ export const useInviteRecommendations = (autocomplete: string, { shareId, pageSi
         since: null,
     });
 
-    const { loading, ...recommendations } = useActionRequest({
-        action: inviteRecommendationsIntent,
-        onSuccess: ({ data }: RequestEntryFromAction<ReturnType<typeof inviteRecommendationsSuccess>>) => {
+    const { loading, ...recommendations } = useActionRequest<
+        typeof inviteRecommendationsIntent,
+        typeof inviteRecommendationsSuccess,
+        typeof inviteRecommendationsFailure
+    >(inviteRecommendationsIntent, {
+        onSuccess: ({ data }) => {
             didLoad.current = true;
             const empty = data.emails.length + (data.organization?.emails.length ?? 0) === 0;
             emptyBoundary.current = empty ? startsWith : null;

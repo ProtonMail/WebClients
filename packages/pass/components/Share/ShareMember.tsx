@@ -52,9 +52,9 @@ export const ShareMember: FC<ShareMemberProps> = ({
         return getShareRoleDefinition()[role];
     }, [owner, role]);
 
-    const removeAccess = useActionRequest({ action: shareRemoveMemberAccessIntent });
-    const editAccess = useActionRequest({ action: shareEditMemberAccessIntent });
-    const transferOwnership = useActionRequest({ action: vaultTransferOwnerIntent });
+    const removeAccess = useActionRequest(shareRemoveMemberAccessIntent);
+    const editAccess = useActionRequest(shareEditMemberAccessIntent);
+    const transferOwnership = useActionRequest(vaultTransferOwnerIntent);
 
     const handleRemoveAccess = () => removeAccess.dispatch({ shareId, userShareId });
     const handleEditRole = (shareRoleId: ShareRole) => editAccess.dispatch({ shareId, userShareId, shareRoleId });

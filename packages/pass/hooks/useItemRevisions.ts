@@ -1,8 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 
-import type { RequestEntryFromAction } from '@proton/pass/hooks/useActionRequest';
 import { useActionRequest } from '@proton/pass/hooks/useActionRequest';
-import type { itemHistorySuccess } from '@proton/pass/store/actions';
+import type { itemHistoryFailure, itemHistorySuccess } from '@proton/pass/store/actions';
 import { itemHistoryIntent } from '@proton/pass/store/actions';
 import type { ItemRevisionsIntent, ItemRevisionsSuccess } from '@proton/pass/types';
 
@@ -11,9 +10,12 @@ type Props = Omit<ItemRevisionsIntent, 'since'>;
 export const useItemRevisions = ({ shareId, itemId, pageSize }: Props) => {
     const [state, setState] = useState<ItemRevisionsSuccess>({ next: null, revisions: [], since: null, total: 0 });
 
-    const { loading, revalidate, dispatch } = useActionRequest({
-        action: itemHistoryIntent,
-        onSuccess: ({ data }: RequestEntryFromAction<ReturnType<typeof itemHistorySuccess>>) => {
+    const { loading, revalidate, dispatch } = useActionRequest<
+        typeof itemHistoryIntent,
+        typeof itemHistorySuccess,
+        typeof itemHistoryFailure
+    >(itemHistoryIntent, {
+        onSuccess: ({ data }) => {
             setState((prev) => ({
                 ...data,
                 ...(data.since ? { revisions: [...prev.revisions, ...data.revisions] } : { revisions: data.revisions }),

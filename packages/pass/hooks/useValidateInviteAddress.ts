@@ -1,11 +1,11 @@
 import { type MutableRefObject, useMemo, useRef } from 'react';
 
-import type { inviteAddressesValidateSuccess } from '@proton/pass/store/actions';
+import type { inviteAddressesValidateFailure, inviteAddressesValidateSuccess } from '@proton/pass/store/actions';
 import { inviteAddressesValidateIntent } from '@proton/pass/store/actions';
 import { type Awaiter, awaiter } from '@proton/pass/utils/fp/promises';
 
 import { uniqueId } from '../utils/string/unique-id';
-import { type RequestEntryFromAction, useActionRequest } from './useActionRequest';
+import { useActionRequest } from './useActionRequest';
 
 type InviteAddressesCache = Map<string, boolean>;
 export interface InviteAddressValidator {
@@ -20,9 +20,12 @@ export const useValidateInviteAddresses = (shareId: string): InviteAddressValida
     const cache = useRef<InviteAddressesCache>(new Map());
     const pending = useRef<Awaiter<void>>();
 
-    const validateAddresses = useActionRequest({
-        action: inviteAddressesValidateIntent,
-        onSuccess: ({ data }: RequestEntryFromAction<ReturnType<typeof inviteAddressesValidateSuccess>>) => {
+    const validateAddresses = useActionRequest<
+        typeof inviteAddressesValidateIntent,
+        typeof inviteAddressesValidateSuccess,
+        typeof inviteAddressesValidateFailure
+    >(inviteAddressesValidateIntent, {
+        onSuccess: ({ data }) => {
             Object.entries(data).forEach(([email, valid]) => cache.current.set(email, valid));
             pending.current?.resolve();
         },

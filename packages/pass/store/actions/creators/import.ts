@@ -5,19 +5,19 @@ import type { ImportPayload, ImportProvider } from '@proton/pass/lib/import/type
 import { itemsImportRequest } from '@proton/pass/store/actions//requests';
 import { withCache } from '@proton/pass/store/actions/enhancers/cache';
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
+import type { ImportEntry } from '@proton/pass/store/reducers';
 import {
     withRequest,
     withRequestFailure,
     withRequestProgress,
     withRequestSuccess,
-} from '@proton/pass/store/actions/enhancers/request';
-import type { ImportEntry } from '@proton/pass/store/reducers';
+} from '@proton/pass/store/request/enhancers';
 import type { ClientEndpoint, ItemRevision } from '@proton/pass/types';
 
 export const importItemsIntent = createAction(
     'import::items::intent',
     (payload: { data: ImportPayload; provider: ImportProvider }) =>
-        withRequest({ type: 'start', id: itemsImportRequest() })({ payload })
+        withRequest({ status: 'start', id: itemsImportRequest() })({ payload })
 );
 
 export const importItemsSuccess = createAction(

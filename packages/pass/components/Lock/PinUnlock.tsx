@@ -17,8 +17,7 @@ export const PinUnlock: FC<Props> = ({ onLoading }) => {
     /* Re-render the PIN input with correct input focus */
     const [key, rerender] = useRerender('pin-input');
 
-    const unlock = useActionRequest({
-        action: sessionUnlockIntent,
+    const unlock = useActionRequest(sessionUnlockIntent, {
         initialRequestId: sessionUnlockRequest(),
         onFailure: () => {
             setValue('');

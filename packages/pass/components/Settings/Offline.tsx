@@ -24,7 +24,7 @@ export const Offline: FC = () => {
     const supported = useSelector(selectOfflineEnabled);
     const plan = useSelector(selectPassPlan);
     const pwMode = useSelector(selectUserSettings)?.Password?.Mode;
-    const setup = useActionRequest({ action: offlineSetupIntent });
+    const setup = useActionRequest(offlineSetupIntent);
 
     const freeUser = !isPaidPlan(plan);
     const twoPasswordMode = pwMode === SETTINGS_PASSWORD_MODE.TWO_PASSWORD_MODE;

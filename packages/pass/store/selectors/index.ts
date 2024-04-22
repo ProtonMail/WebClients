@@ -1,3 +1,4 @@
+export * from '@proton/pass/store/request/selectors';
 export * from './alias';
 export * from './export';
 export * from './import';
@@ -7,7 +8,6 @@ export * from './onboarding';
 export * from './organization';
 export * from './password';
 export * from './popup';
-export * from './request';
 export * from './settings';
 export * from './shares';
 export * from './user';
