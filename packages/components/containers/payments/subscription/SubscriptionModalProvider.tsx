@@ -1,6 +1,7 @@
 import { ReactNode, createContext, useContext, useRef } from 'react';
 
 import { APP_NAMES } from '@proton/shared/lib/constants';
+import { hasInboxDesktopFeature, invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
 import { isManagedExternally } from '@proton/shared/lib/helpers/subscription';
 import { Nullable } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
@@ -85,7 +86,16 @@ const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
                 mode,
                 ...rest
             } = subscriptionProps.current;
+
+            if (hasInboxDesktopFeature('InAppPayments')) {
+                invokeInboxDesktopIPC({ type: 'subscriptionModalOpened', payload: 'subscriptionModalStarted' });
+            }
+
             const handleClose = () => {
+                if (hasInboxDesktopFeature('InAppPayments')) {
+                    invokeInboxDesktopIPC({ type: 'subscriptionModalOpened', payload: 'subscriptionModalFinished' });
+                }
+
                 onClose?.();
                 subscriptionPropsOnClose?.();
                 modalState.onClose();

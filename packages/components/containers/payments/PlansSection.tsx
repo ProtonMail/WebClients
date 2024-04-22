@@ -9,6 +9,7 @@ import { usePaymentsApi } from '@proton/components/payments/react-extensions/use
 import { useLoading } from '@proton/hooks';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS, APP_NAMES, DEFAULT_CYCLE, FREE_SUBSCRIPTION, PLANS, isStringPLAN } from '@proton/shared/lib/constants';
+import { hasInboxDesktopFeature } from '@proton/shared/lib/desktop/ipcHelpers';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
@@ -126,12 +127,12 @@ const PlansSection = ({ app }: { app: APP_NAMES }) => {
     const handlePlanChange = (newPlanIDs: PlanIDs) => {
         const newPlanName = Object.keys(newPlanIDs)[0];
         const isNewPlanCorrect = isStringPLAN(newPlanName);
-        if (isElectronApp && newPlanName && isNewPlanCorrect) {
+        if (isElectronApp && !hasInboxDesktopFeature('InAppPayments') && newPlanName && isNewPlanCorrect) {
             upgradeButtonClick(cycle, newPlanName);
             return;
         }
 
-        withLoading(handleModal(newPlanIDs));
+        void withLoading(handleModal(newPlanIDs));
     };
 
     useEffect(() => {
@@ -192,7 +193,7 @@ const PlansSection = ({ app }: { app: APP_NAMES }) => {
                 shape="ghost"
                 className="flex mx-auto items-center mb-4"
                 onClick={() => {
-                    if (isElectronApp) {
+                    if (!hasInboxDesktopFeature('InAppPayments')) {
                         openLinkInBrowser(getAppHref(`mail/upgrade`, APPS.PROTONACCOUNT));
                         return;
                     }

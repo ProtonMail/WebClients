@@ -1,7 +1,7 @@
 import { SUBSCRIPTION_STEPS, useFlag, useSubscriptionModal } from '@proton/components/containers';
 import { useConfig, useSubscription, useUser } from '@proton/components/hooks';
 import { APPS } from '@proton/shared/lib/constants';
-import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
+import { hasInboxDesktopFeature } from '@proton/shared/lib/desktop/ipcHelpers';
 import { addUpsellPath, getUpgradePath } from '@proton/shared/lib/helpers/upsell';
 
 import getUpsellSubscriptionModalConfig from './getUpsellSubscriptionModalConfig';
@@ -14,10 +14,9 @@ const useUpsellConfig = (upsellRef?: string, step?: SUBSCRIPTION_STEPS, onSubscr
     const inboxUpsellFlowEnabled = useFlag('InboxUpsellFlow');
     const ABTestInboxUpsellStepEnabled = useFlag('ABTestInboxUpsellStep'); // If enabled, we show the plan selection step
     const { APP_NAME } = useConfig();
-    // Only the mail app offers the ability to pay within the app
-    const isMail = APP_NAME === APPS.PROTONMAIL;
+    const hasInAppPayments = APP_NAME === APPS.PROTONMAIL || hasInboxDesktopFeature('InAppPayments');
 
-    if (isMail && !isElectronMail && inboxUpsellFlowEnabled && upsellRef) {
+    if (hasInAppPayments && inboxUpsellFlowEnabled && upsellRef) {
         const modalStep =
             step || ABTestInboxUpsellStepEnabled ? SUBSCRIPTION_STEPS.PLAN_SELECTION : SUBSCRIPTION_STEPS.CHECKOUT;
         const subscriptionCallBackProps = getUpsellSubscriptionModalConfig(upsellRef, modalStep);
