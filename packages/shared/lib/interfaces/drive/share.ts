@@ -1,4 +1,4 @@
-import { ShareMemberPayload } from './member';
+import { ShareMembershipPayload } from './member';
 
 export interface CreateDriveShare {
     AddressID: string;
@@ -51,7 +51,7 @@ export interface ShareMeta extends ShareMetaShort {
     PassphraseSignature: string;
     AddressID: string;
     RootLinkRecoveryPassphrase?: string;
-    Memberships: ShareMemberPayload[];
+    Memberships: ShareMembershipPayload[];
 }
 
 export enum ShareFlags {

@@ -2,6 +2,8 @@ import { useMemo } from 'react';
 
 import { Vr } from '@proton/atoms';
 import { Toolbar, useActiveBreakpoint } from '@proton/components';
+import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
+import { getCanAdmin, getCanWrite } from '@proton/shared/lib/drive/permissions';
 import { getDevice } from '@proton/shared/lib/helpers/browser';
 
 import { DecryptedLink, useDriveSharingFeatureFlag } from '../../../store';
@@ -32,16 +34,20 @@ interface Props {
     shareId: string;
     linkId: string;
     items: DecryptedLink[];
+    permissions: SHARE_MEMBER_PERMISSIONS;
     showOptionsForNoSelection?: boolean;
     isLinkReadOnly?: boolean;
 }
 
-const DriveToolbar = ({ shareId, items, showOptionsForNoSelection = true, isLinkReadOnly }: Props) => {
+const DriveToolbar = ({ shareId, items, showOptionsForNoSelection = true, isLinkReadOnly, permissions }: Props) => {
     const isDesktop = !getDevice()?.type;
     const { viewportWidth } = useActiveBreakpoint();
     const selectionControls = useSelection()!;
     const isEditEnabled = useIsEditEnabled();
     const driveSharing = useDriveSharingFeatureFlag();
+
+    const isEditor = useMemo(() => getCanWrite(permissions), [permissions]);
+    const isAdmin = useMemo(() => getCanAdmin(permissions), [permissions]);
 
     const selectedItems = useMemo(
         () => getSelectedItems(items, selectionControls!.selectedItemIds),
@@ -57,7 +63,7 @@ const DriveToolbar = ({ shareId, items, showOptionsForNoSelection = true, isLink
             }
             return (
                 <>
-                    {!isLinkReadOnly ? (
+                    {isEditor && !isLinkReadOnly ? (
                         <>
                             <CreateNewFolderButton />
                             {isEditEnabled && <CreateNewFileButton />}
@@ -68,7 +74,7 @@ const DriveToolbar = ({ shareId, items, showOptionsForNoSelection = true, isLink
                         </>
                     ) : null}
 
-                    {shouldShowShareButton && <ShareButton shareId={shareId} />}
+                    {isAdmin && shouldShowShareButton && <ShareButton shareId={shareId} />}
                 </>
             );
         }
@@ -78,24 +84,33 @@ const DriveToolbar = ({ shareId, items, showOptionsForNoSelection = true, isLink
                 <PreviewButton selectedLinks={selectedItems} />
                 <DownloadButton selectedLinks={selectedItems} />
                 {viewportWidth['<=small'] ? (
-                    <ActionsDropdown shareId={shareId} selectedLinks={selectedItems} />
+                    <ActionsDropdown shareId={shareId} selectedLinks={selectedItems} permissions={permissions} />
                 ) : (
                     <>
-                        {driveSharing ? (
-                            <ShareLinkButton selectedLinks={selectedItems} />
-                        ) : (
-                            <ShareLinkButtonLEGACY selectedLinks={selectedItems} />
+                        {isAdmin && (
+                            <>
+                                {driveSharing ? (
+                                    <ShareLinkButton selectedLinks={selectedItems} />
+                                ) : (
+                                    <ShareLinkButtonLEGACY selectedLinks={selectedItems} />
+                                )}
+                                <Vr />
+                            </>
                         )}
-                        <Vr />
-                        {!isLinkReadOnly ? (
+                        {isEditor && !isLinkReadOnly ? (
                             <>
                                 <MoveToFolderButton shareId={shareId} selectedLinks={selectedItems} />
                                 <RenameButton selectedLinks={selectedItems} />
                             </>
                         ) : null}
                         <DetailsButton selectedLinks={selectedItems} />
-                        <Vr />
-                        <MoveToTrashButton selectedLinks={selectedItems} />
+
+                        {isEditor && (
+                            <>
+                                <Vr />
+                                <MoveToTrashButton selectedLinks={selectedItems} />
+                            </>
+                        )}
                     </>
                 )}
             </>

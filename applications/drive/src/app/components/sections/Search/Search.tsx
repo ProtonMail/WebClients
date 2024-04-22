@@ -3,6 +3,7 @@ import { useCallback, useMemo, useRef } from 'react';
 import { c } from 'ttag';
 
 import { useActiveBreakpoint } from '@proton/components';
+import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
 
 import useDriveDragMove from '../../../hooks/drive/useDriveDragMove';
 import useNavigate from '../../../hooks/drive/useNavigate';
@@ -133,6 +134,7 @@ export const Search = ({ shareId, searchView }: Props) => {
     return (
         <>
             <SearchItemContextMenu
+                permissions={SHARE_MEMBER_PERMISSIONS.OWNER} // TODO: Permissions is not supported on search for now
                 shareId={shareId}
                 selectedLinks={selectedItems}
                 anchorRef={contextMenuAnchorRef}

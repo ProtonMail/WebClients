@@ -1,7 +1,9 @@
-import { useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
 import * as React from 'react';
 
 import { ContextMenu, ContextSeparator } from '@proton/components';
+import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
+import { getCanAdmin, getCanWrite } from '@proton/shared/lib/drive/permissions';
 
 import useActiveShare from '../../../hooks/drive/useActiveShare';
 import { useDriveSharingFeatureFlag, useFileUploadInput, useFolderUploadInput } from '../../../store';
@@ -22,9 +24,11 @@ export function FolderContextMenu({
     position,
     open,
     close,
+    permissions,
     isActiveLinkReadOnly,
 }: ContextMenuProps & {
     shareId: string;
+    permissions: SHARE_MEMBER_PERMISSIONS;
     isActiveLinkReadOnly?: boolean;
 }) {
     useEffect(() => {
@@ -52,7 +56,15 @@ export function FolderContextMenu({
     const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
     const driveSharing = useDriveSharingFeatureFlag();
 
+    const isEditor = useMemo(() => getCanWrite(permissions), [permissions]);
+    const isAdmin = useMemo(() => getCanAdmin(permissions), [permissions]);
+
     const ShareFileButtonComponent = driveSharing ? ShareFileButton : ShareFileButtonLEGACY;
+
+    // All actions in this context menu needs editor permissions
+    if (!isEditor) {
+        return null;
+    }
 
     // ContextMenu is removed from DOM when any action is executed but inputs
     // need to stay rendered so onChange handler can work.
@@ -76,15 +88,17 @@ export function FolderContextMenu({
                     <>
                         <UploadFileButton close={close} onClick={fileClick} />
                         <UploadFolderButton close={close} onClick={folderClick} />
-                        <ContextSeparator />
                     </>
                 ) : null}
-                <ShareFileButtonComponent
-                    close={close}
-                    shareId={shareId}
-                    showFileSharingModal={showFileSharingModal}
-                    showLinkSharingModal={showLinkSharingModal}
-                />
+                {isAdmin && !isActiveLinkReadOnly && <ContextSeparator />}
+                {isAdmin && (
+                    <ShareFileButtonComponent
+                        close={close}
+                        shareId={shareId}
+                        showFileSharingModal={showFileSharingModal}
+                        showLinkSharingModal={showLinkSharingModal}
+                    />
+                )}
             </ContextMenu>
         </>
     );

@@ -5,7 +5,7 @@ import type { DriveEventsResult } from '@proton/shared/lib/interfaces/drive/even
 import { DriveFileRevisionPayload } from '@proton/shared/lib/interfaces/drive/file';
 import { ShareInvitationPayload } from '@proton/shared/lib/interfaces/drive/invitation';
 import { LinkMeta, LinkType, SharedUrlInfo } from '@proton/shared/lib/interfaces/drive/link';
-import { ShareMemberPayload } from '@proton/shared/lib/interfaces/drive/member';
+import { ShareMemberPayload, ShareMembershipPayload } from '@proton/shared/lib/interfaces/drive/member';
 import type { Photo as PhotoPayload } from '@proton/shared/lib/interfaces/drive/photos';
 import type { ShareMeta, ShareMetaShort } from '@proton/shared/lib/interfaces/drive/share';
 import type { ShareURL as ShareURLPayload } from '@proton/shared/lib/interfaces/drive/sharing';
@@ -16,7 +16,7 @@ import type { EncryptedLink } from '../_links';
 import type { Photo } from '../_photos';
 import type { DriveFileRevision } from '../_revisions';
 import { ShareMember, ShareURLLEGACY, hasCustomPassword, hasGeneratedPasswordIncluded } from '../_shares';
-import type { Share, ShareInvitation, ShareURL, ShareWithKey } from '../_shares';
+import type { Share, ShareInvitation, ShareMembership, ShareURL, ShareWithKey } from '../_shares';
 import { ThumbnailType } from '../_uploads/media';
 
 // LinkMetaWithShareURL is used when loading shared links.
@@ -130,6 +130,24 @@ export const shareMemberPayloadToShareMember = (shareMember: ShareMemberPayload)
     };
 };
 
+export const shareMembershipPayloadToShareMembership = (shareMembership: ShareMembershipPayload): ShareMembership => {
+    return {
+        memberId: shareMembership.MemberID,
+        shareId: shareMembership.ShareID,
+        addressId: shareMembership.AddressID,
+        addressKeyId: shareMembership.AddressKeyID,
+        inviterEmail: shareMembership.Inviter,
+        createTime: shareMembership.CreateTime,
+        modifyTime: shareMembership.ModifyTime,
+        permissions: shareMembership.Permissions,
+        state: shareMembership.State,
+        keyPacket: shareMembership.KeyPacket,
+        keyPacketSignature: shareMembership.KeyPacketSignature,
+        sessionKeySignature: shareMembership.SessionKeySignature,
+        unlockable: shareMembership.Unlockable,
+    };
+};
+
 export function shareMetaShortToShare(share: ShareMetaShort): Share {
     return {
         shareId: share.ShareID,
@@ -153,7 +171,7 @@ export function shareMetaToShareWithKey(share: ShareMeta): ShareWithKey {
         passphrase: share.Passphrase,
         passphraseSignature: share.PassphraseSignature,
         rootLinkRecoveryPassphrase: share.RootLinkRecoveryPassphrase,
-        memberships: share.Memberships.map((membership) => shareMemberPayloadToShareMember(membership)),
+        memberships: share.Memberships.map((membership) => shareMembershipPayloadToShareMembership(membership)),
     };
 }
 
