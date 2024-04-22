@@ -1,7 +1,5 @@
 import { all } from 'redux-saga/effects';
 
-import inviteAddressesValidate from '@proton/pass/store/sagas/invites/invite-addresses-validate.saga';
-
 import type { RootSagaOptions } from '../types';
 import aliasDetailsRequest from './alias/alias-details-request.saga';
 import aliasOptionsRequest from './alias/alias-options-request.saga';
@@ -20,6 +18,7 @@ import wakeup from './client/wakeup.saga';
 import events from './events/events.saga';
 import itemsImport from './import/import.saga';
 import inviteAccept from './invites/invite-accept.saga';
+import inviteAddressesValidate from './invites/invite-addresses-validate.saga';
 import inviteCreate from './invites/invite-create.saga';
 import inviteRecommendations from './invites/invite-recommendations.saga';
 import inviteReject from './invites/invite-reject.saga';
@@ -41,6 +40,10 @@ import itemPin from './items/item-pin.saga';
 import itemRestore from './items/item-restore.saga';
 import itemTrash from './items/item-trash.saga';
 import itemUnpin from './items/item-unpin.saga';
+import breachesAlias from './monitor/breaches.alias.saga';
+import breachesCustom from './monitor/breaches.custom.saga';
+import breachesProton from './monitor/breaches.proton.saga';
+import breaches from './monitor/breaches.saga';
 import sentinelToggle from './monitor/sentinel-toggle.saga';
 import organizationSettingsEdit from './organization/organization-settings-edit.saga';
 import getOrganizationSettings from './organization/organization-settings.saga';
@@ -64,9 +67,14 @@ export function* workerRootSaga(options: RootSagaOptions) {
             aliasDetailsRequest,
             aliasOptionsRequest,
             boot,
+            breaches,
+            breachesAlias,
+            breachesCustom,
+            breachesProton,
             cache,
             events,
             featureFlags,
+            getOrganizationSettings,
             inviteAccept,
             inviteAddressesValidate,
             inviteCreate,
@@ -91,7 +99,6 @@ export function* workerRootSaga(options: RootSagaOptions) {
             itemUnpin,
             newUserInvitePromote,
             newUserInviteRemove,
-            getOrganizationSettings,
             notification,
             organizationSettingsEdit,
             reportProblem,

@@ -40,6 +40,10 @@ import itemPin from '@proton/pass/store/sagas/items/item-pin.saga';
 import itemRestore from '@proton/pass/store/sagas/items/item-restore.saga';
 import itemTrash from '@proton/pass/store/sagas/items/item-trash.saga';
 import itemUnpin from '@proton/pass/store/sagas/items/item-unpin.saga';
+import breachesAlias from '@proton/pass/store/sagas/monitor/breaches.alias.saga';
+import breachesCustom from '@proton/pass/store/sagas/monitor/breaches.custom.saga';
+import breachesProton from '@proton/pass/store/sagas/monitor/breaches.proton.saga';
+import breaches from '@proton/pass/store/sagas/monitor/breaches.saga';
 import sentinelToggle from '@proton/pass/store/sagas/monitor/sentinel-toggle.saga';
 import organizationSettingsEdit from '@proton/pass/store/sagas/organization/organization-settings-edit.saga';
 import organizationSettingsGet from '@proton/pass/store/sagas/organization/organization-settings.saga';
@@ -64,6 +68,10 @@ export function* rootSaga(options: RootSagaOptions) {
             aliasDetailsRequest,
             aliasOptionsRequest,
             boot,
+            breaches,
+            breachesAlias,
+            breachesCustom,
+            breachesProton,
             cache,
             events,
             featureFlags,
