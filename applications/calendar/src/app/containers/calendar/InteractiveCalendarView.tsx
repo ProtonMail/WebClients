@@ -1002,7 +1002,6 @@ const InteractiveCalendarView = ({
     };
 
     const handleCloseConfirmation = () => {
-        console.trace('dude');
         updateModal('confirmModal', {
             isOpen: true,
         });
