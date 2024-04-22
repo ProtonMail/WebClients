@@ -1,11 +1,13 @@
+import { ContextSeparator, useConfirmActionModal } from '@proton/components';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
-import { DecryptedLink, useActions } from '../../../store';
+import { DecryptedLink } from '../../../store';
 import { ContextMenuProps } from '../../FileBrowser';
 import { useDetailsModal } from '../../modals/DetailsModal';
 import { useFilesDetailsModal } from '../../modals/FilesDetailsModal';
 import { DetailsButton, DownloadButton, PreviewButton } from '../ContextMenu';
 import { ItemContextMenu } from '../ContextMenu/ItemContextMenu';
+import { RemoveMeButton } from './ContextMenuButtons';
 
 export function SharedWithMeContextMenu({
     selectedLinks,
@@ -25,10 +27,9 @@ export function SharedWithMeContextMenu({
         selectedLink.mimeType &&
         isPreviewAvailable(selectedLink.mimeType, selectedLink.size);
 
-    const { confirmModal } = useActions();
-
     const [detailsModal, showDetailsModal] = useDetailsModal();
     const [filesDetailsModal, showFilesDetailsModal] = useFilesDetailsModal();
+    const [confirmModal, showConfirmModal] = useConfirmActionModal();
 
     return (
         <>
@@ -43,6 +44,8 @@ export function SharedWithMeContextMenu({
                     showFilesDetailsModal={showFilesDetailsModal}
                     close={close}
                 />
+                <ContextSeparator />
+                <RemoveMeButton selectedLink={selectedLink} showConfirmModal={showConfirmModal} close={close} />
             </ItemContextMenu>
             {detailsModal}
             {filesDetailsModal}

@@ -137,6 +137,14 @@ export function useLinksStateProvider() {
         [state]
     );
 
+    // TODO: Remove this when events or refactor will be in place
+    const removeLinkForSharedWithMe = useCallback(
+        (shareId: string, linkId: string) => {
+            setState((state) => deleteLinks(state, shareId, [linkId]));
+        },
+        [state]
+    );
+
     return {
         setLinks,
         lockLinks,
@@ -149,6 +157,7 @@ export function useLinksStateProvider() {
         getSharedByLink,
         getSharedWithMeByLink,
         removeLinkForMigration,
+        removeLinkForSharedWithMe,
     };
 }
 

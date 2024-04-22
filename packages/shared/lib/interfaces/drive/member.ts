@@ -4,7 +4,7 @@ export interface ShareMemberPayload {
     MemberID: string;
     Email: string;
     InviterEmail: string;
-    AddressID: number;
+    AddressID: string;
     CreateTime: number;
     ModifyTime: number;
     Permissions: SHARE_MEMBER_PERMISSIONS;
