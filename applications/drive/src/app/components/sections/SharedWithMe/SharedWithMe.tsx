@@ -18,14 +18,14 @@ import FileBrowser, {
     useSelection,
 } from '../../FileBrowser';
 import { GridViewItem } from '../FileBrowser/GridViewItemLink';
-import { CreatedCell, NameCell, SharedByCell } from '../FileBrowser/contentCells';
+import { NameCell, SharedByCell, SharedOnCell } from '../FileBrowser/contentCells';
 import headerItems from '../FileBrowser/headerCells';
 import { translateSortField } from '../SortDropdown';
 import { getSelectedItems } from '../helpers';
 import EmptySharedWithMe from './EmptySharedWithMe';
 import { SharedWithMeContextMenu } from './SharedWithMeItemContextMenu';
 
-export interface SharedLinkItem extends FileBrowserBaseItem {
+export interface SharedWithMeItem extends FileBrowserBaseItem {
     activeRevision?: EncryptedLink['activeRevision'];
     cachedThumbnailUrl?: string;
     hasThumbnail: boolean;
@@ -40,6 +40,8 @@ export interface SharedLinkItem extends FileBrowserBaseItem {
     trashed: number | null;
     parentLinkId: string;
     rootShareId: string;
+    sharedOn?: number;
+    sharedBy?: string;
 }
 
 type Props = {
@@ -49,11 +51,11 @@ type Props = {
 
 const { CheckboxCell, ContextMenuCell } = Cells;
 
-const largeScreenCells: React.FC<{ item: SharedLinkItem }>[] = [
+const largeScreenCells: React.FC<{ item: SharedWithMeItem }>[] = [
     CheckboxCell,
     NameCell,
     SharedByCell,
-    CreatedCell,
+    SharedOnCell,
     ContextMenuCell,
 ];
 const smallScreenCells = [CheckboxCell, NameCell, ContextMenuCell];
@@ -94,7 +96,7 @@ const SharedWithMe = ({ shareId, sharedWithMeView }: Props) => {
         [items, selectionControls!.selectedItemIds]
     );
 
-    const browserItems: SharedLinkItem[] = items.map((item) => ({ ...item, id: item.linkId }));
+    const browserItems: SharedWithMeItem[] = items.map((item) => ({ ...item, id: item.linkId }));
 
     const handleClick = useCallback(
         (id: BrowserItemId) => {
@@ -109,7 +111,7 @@ const SharedWithMe = ({ shareId, sharedWithMeView }: Props) => {
         [navigateToLink, shareId, browserItems]
     );
 
-    const handleItemRender = (item: SharedLinkItem) => {
+    const handleItemRender = (item: SharedWithMeItem) => {
         if (item.hasThumbnail && item.activeRevision && !item.cachedThumbnailUrl) {
             thumbnails.addToDownloadQueue(item.rootShareId, item.id, item.activeRevision.id);
         }

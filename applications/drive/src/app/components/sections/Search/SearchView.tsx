@@ -3,6 +3,8 @@ import { useLocation } from 'react-router';
 
 import { c, msgid } from 'ttag';
 
+import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
+
 // TODO: handle with container
 import useActiveShare from '../../../hooks/drive/useActiveShare';
 import { useSearchView } from '../../../store';
@@ -37,6 +39,8 @@ export function SearchView() {
                 }
                 toolbar={
                     <DriveToolbar
+                        //TODO: We don't support search view and direct sharing so we assume that user is owner.
+                        permissions={SHARE_MEMBER_PERMISSIONS.OWNER}
                         shareId={activeFolder.shareId}
                         linkId={activeFolder.linkId}
                         items={searchView.items}

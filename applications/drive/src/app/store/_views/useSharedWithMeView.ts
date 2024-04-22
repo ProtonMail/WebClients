@@ -1,11 +1,12 @@
-import { useEffect } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 import { useLoading } from '@proton/hooks';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
 import { sendErrorReport } from '../../utils/errorHandling';
-import { useLinksListing } from '../_links';
+import { DecryptedLinkWithShareInfo, useLinksListing } from '../_links';
 import { useUserSettings } from '../_settings';
+import { useDirectSharingInfo } from '../_shares/useDirectSharingInfo';
 import { useAbortSignal, useMemoArrayNoMatterTheOrder, useSortingWithDefault } from './utils';
 import { SortField } from './utils/useSorting';
 
@@ -20,9 +21,12 @@ const DEFAULT_SORT = {
 export default function useSharedWithMeView(shareId: string) {
     const abortSignal = useAbortSignal([shareId]);
     const [isLoading, withLoading] = useLoading(true);
+    const [linksWithShareInfo, setLinksWithShareInfo] = useState<DecryptedLinkWithShareInfo[]>([]);
+    const { getDirectSharingInfo } = useDirectSharingInfo();
 
     const linksListing = useLinksListing();
     const { links: sharedLinks, isDecrypting } = linksListing.getCachedSharedWithMeLink(abortSignal);
+
     const cachedSharedLinks = useMemoArrayNoMatterTheOrder(sharedLinks);
 
     const { layout } = useUserSettings();
@@ -32,17 +36,37 @@ export default function useSharedWithMeView(shareId: string) {
         await linksListing.loadLinksSharedWithMeLink(signal);
     };
 
+    const loadLinksShareInfo = useCallback(
+        async (signal: AbortSignal) => {
+            await Promise.all(
+                sortedList.map(async (link) => {
+                    const directSharingInfo = await getDirectSharingInfo(signal, link.rootShareId);
+                    if (!directSharingInfo) {
+                        setLinksWithShareInfo((prevLinks) => [...prevLinks, link]);
+                        return;
+                    }
+                    setLinksWithShareInfo((prevLinks) => [...prevLinks, { ...link, ...directSharingInfo }]);
+                })
+            );
+        },
+        [sortedList]
+    );
+
     useEffect(() => {
         const ac = new AbortController();
-        void withLoading(loadSharedWithMeLinks(ac.signal).catch(sendErrorReport));
+        void withLoading(
+            loadSharedWithMeLinks(ac.signal)
+                .then(() => loadLinksShareInfo(ac.signal))
+                .catch(sendErrorReport)
+        );
         return () => {
             ac.abort();
         };
-    }, [shareId]);
+    }, [shareId, loadLinksShareInfo]);
 
     return {
         layout,
-        items: sortedList,
+        items: linksWithShareInfo,
         sortParams,
         setSorting,
         isLoading: isLoading || isDecrypting,
