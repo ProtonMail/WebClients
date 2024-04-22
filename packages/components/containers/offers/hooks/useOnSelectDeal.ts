@@ -3,6 +3,7 @@ import { useCallback } from 'react';
 import { useSettingsLink } from '@proton/components/components';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
+import { hasInboxDesktopFeature } from '@proton/shared/lib/desktop/ipcHelpers';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { Currency } from '@proton/shared/lib/interfaces';
 
@@ -19,7 +20,7 @@ const useSelectDeal = (callback?: () => void) => {
             callback?.();
 
             const url = `/dashboard?${urlSearchParams.toString()}`;
-            if (isElectronApp) {
+            if (isElectronApp && !hasInboxDesktopFeature('InAppPayments')) {
                 openLinkInBrowser(getAppHref(url, APPS.PROTONACCOUNT));
                 return;
             } else {

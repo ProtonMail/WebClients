@@ -1,6 +1,6 @@
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS, CYCLE, PLANS } from '@proton/shared/lib/constants';
-import { invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
+import { hasInboxDesktopFeature, invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { addUpsellPath, getUpgradePath } from '@proton/shared/lib/helpers/upsell';
 
@@ -23,7 +23,7 @@ export const openLinkInBrowser = (url: string) => {
 };
 
 export function redirectToAccountApp() {
-    if (isElectronApp) {
+    if (isElectronApp && !hasInboxDesktopFeature('InAppPayments')) {
         openLinkInBrowser(getAppHref('/mail/dashboard', APPS.PROTONACCOUNT));
         return true;
     }
