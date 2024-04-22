@@ -38,6 +38,7 @@ export interface ShareWithKey extends Share {
     passphrase: string;
     passphraseSignature: string;
     rootLinkRecoveryPassphrase?: string;
+    memberships: ShareMember[];
 }
 
 export type ShareURLLEGACY = WithSRPPayload<{
@@ -127,7 +128,7 @@ export interface ShareMember {
     memberId: string;
     email: string;
     inviterEmail: string;
-    addressId: number;
+    addressId: string;
     createTime: number;
     modifyTime: number;
     permissions: SHARE_MEMBER_PERMISSIONS;
