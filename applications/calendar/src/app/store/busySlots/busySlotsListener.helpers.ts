@@ -36,7 +36,7 @@ const getInfinitelyLoopingColor = (() => {
     };
 })();
 
-export const getBusyAttendeesColor = (
+const getBusyAttendeesColor = (
     nextAttendees: string[],
     actualAttendeesColors: BusySlotsState['attendeeColor'],
     userCalendars: CalendarWithOwnMembers[]
@@ -75,7 +75,7 @@ export const getBusyAttendeesColor = (
  * @param metadata
  * @returns object metatada
  */
-export const assertBusySlotsMetadata = (
+const assertBusySlotsMetadata = (
     metadata: BusySlotsState['metadata']
 ): Exclude<BusySlotsState['metadata'], undefined> => {
     if (metadata === undefined) {
@@ -88,34 +88,13 @@ export const assertBusySlotsMetadata = (
  * Get the range of dates to fetch busy slots
  * @returns Timerange to fetch busy slots in UTC timestamp based on the current view Timezone
  */
-export const getBusyDatesToFetch = (state: CalendarState): [startTimestamp: number, endTimestamp: number] => {
+const getBusyDatesToFetch = (state: CalendarState): [startTimestamp: number, endTimestamp: number] => {
     const { viewStartDate, viewEndDate, tzid } = assertBusySlotsMetadata(state[busySlotsSliceName].metadata);
 
     return [
         getUnixTime(toUTCDate(convertZonedDateTimeToUTC(fromUTCDate(fromUnixTime(viewStartDate)), tzid))),
         getUnixTime(toUTCDate(convertZonedDateTimeToUTC(fromUTCDate(fromUnixTime(viewEndDate)), tzid))),
     ];
-};
-
-/**
- * Check if busy slots date range has changed
- * @returns boolean
- */
-export const busySlotsDateRangeChanged = (prevState: CalendarState, nextState: CalendarState) => {
-    // If prev state start date was not defined it's not considered as a change but an init
-    if (prevState[busySlotsSliceName].metadata?.viewStartDate === undefined) {
-        return false;
-    }
-
-    const prevStartDate = getBusyDatesToFetch(prevState)[0];
-    const nextStartDate = getBusyDatesToFetch(nextState)[0];
-
-    // If the start date has changed and the view start date is not the same day
-    if (prevStartDate !== nextStartDate) {
-        return true;
-    }
-
-    return false;
 };
 
 const normalizeBusySlotsResponse = (
@@ -166,7 +145,7 @@ interface FetchAttendeeBusySlotsOptions {
     tzid: string;
 }
 
-export const fetchAttendeeBusySlots = async (options: FetchAttendeeBusySlotsOptions) => {
+const fetchAttendeeBusySlots = async (options: FetchAttendeeBusySlotsOptions) => {
     // Fetch with `allSettled` to get results even if some of them fail
     const results = await Promise.allSettled([
         fetchBusySlotsFactory(BUSY_TIME_SLOT_TYPE.PARTIAL_DAY_IN, options, normalizeBusySlotsResponse),
