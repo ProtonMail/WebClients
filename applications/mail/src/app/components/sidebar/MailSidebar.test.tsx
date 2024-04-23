@@ -6,7 +6,6 @@ import { Location } from 'history';
 import loudRejection from 'loud-rejection';
 
 import { getModelState } from '@proton/account/test';
-import { getAppVersion } from '@proton/components';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { conversationCountsActions } from '@proton/mail';
 import { LABEL_TYPE, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -19,7 +18,7 @@ import {
     ContextState,
     useGetStartedChecklist,
 } from '../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
-import { assertFocus, clearAll, config, getDropdown, minimalCache, render } from '../../helpers/test/helper';
+import { assertFocus, clearAll, getDropdown, minimalCache, render } from '../../helpers/test/helper';
 import { SYSTEM_FOLDER_SECTION } from '../../hooks/useMoveSystemFolders';
 import MailSidebar from './MailSidebar';
 
@@ -267,21 +266,6 @@ describe('MailSidebar', () => {
         });
 
         expect(useEventManager.call).toHaveBeenCalled();
-    });
-
-    it('should show app version and changelog', async () => {
-        setupTest();
-
-        const { getByText } = await render(<MailSidebar {...props} />);
-        const appVersion = getAppVersion(config.APP_VERSION);
-
-        const appVersionButton = getByText(appVersion);
-
-        // Check if the changelog modal opens on click
-        fireEvent.click(appVersionButton);
-
-        getByText("What's new");
-        getByText('ProtonMail Changelog');
     });
 
     it('should be updated when counters are updated', async () => {
