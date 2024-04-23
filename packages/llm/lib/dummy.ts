@@ -44,30 +44,18 @@ function generateRandomSentence(nWords?: number): string[] {
     return words;
 }
 
-export class DummyWriteFullEmailRunningAction implements RunningAction {
-    private running: boolean;
+class DummyRunningActionBase implements RunningAction {
+    protected running: boolean;
 
-    private done: boolean;
+    protected done: boolean;
 
-    private cancelled: boolean;
+    protected cancelled: boolean;
 
-    private action_: WriteFullEmailAction;
+    protected action_: Action;
 
-    private finishedPromise: Promise<void>;
+    protected finishedPromise: Promise<void>;
 
-    private finishedPromiseSignals: { resolve: PromiseResolve; reject: PromiseReject } | undefined;
-
-    constructor(action: WriteFullEmailAction, callback: GenerationCallback) {
-        this.running = true;
-        this.done = false;
-        this.cancelled = false;
-        this.action_ = action;
-        this.finishedPromise = new Promise<void>((resolve: PromiseResolve, reject: PromiseReject) => {
-            this.finishedPromiseSignals = { resolve, reject };
-        });
-
-        void this.startGeneration(action, callback);
-    }
+    protected finishedPromiseSignals: { resolve: PromiseResolve; reject: PromiseReject } | undefined;
 
     isRunning(): boolean {
         return this.running;
@@ -96,6 +84,23 @@ export class DummyWriteFullEmailRunningAction implements RunningAction {
 
     waitForCompletion(): Promise<void> {
         return this.finishedPromise;
+    }
+
+    constructor(action: Action) {
+        this.running = true;
+        this.done = false;
+        this.cancelled = false;
+        this.action_ = action;
+        this.finishedPromise = new Promise<void>((resolve: PromiseResolve, reject: PromiseReject) => {
+            this.finishedPromiseSignals = { resolve, reject };
+        });
+    }
+}
+
+export class DummyWriteFullEmailRunningAction extends DummyRunningActionBase {
+    constructor(action: WriteFullEmailAction, callback: GenerationCallback) {
+        super(action);
+        void this.startGeneration(action, callback);
     }
 
     private async startGeneration(action: WriteFullEmailAction, callback: GenerationCallback) {
@@ -121,62 +126,13 @@ export class DummyWriteFullEmailRunningAction implements RunningAction {
     }
 }
 
-// todo deduplicate common code
-export class DummyShortenRunningAction implements RunningAction {
-    private running: boolean;
-
-    private done: boolean;
-
-    private cancelled: boolean;
-
-    private action_: ShortenAction;
-
-    private finishedPromise: Promise<void>;
-
-    private finishedPromiseSignals: { resolve: PromiseResolve; reject: PromiseReject } | undefined;
-
+export class DummyShortenRunningAction extends DummyRunningActionBase {
     constructor(action: ShortenAction, callback: GenerationCallback) {
-        this.running = true;
-        this.done = false;
-        this.cancelled = false;
-        this.action_ = action;
-        this.finishedPromise = new Promise<void>((resolve: PromiseResolve, reject: PromiseReject) => {
-            this.finishedPromiseSignals = { resolve, reject };
-        });
-
+        super(action);
         void this.startGeneration(action, callback);
     }
 
-    isRunning(): boolean {
-        return this.running;
-    }
-
-    isDone(): boolean {
-        return this.done;
-    }
-
-    isCancelled(): boolean {
-        return this.cancelled;
-    }
-
-    action(): Action {
-        return this.action_;
-    }
-
-    cancel(): boolean {
-        if (!this.running) {
-            return false;
-        }
-        this.running = false;
-        this.cancelled = true;
-        return true;
-    }
-
-    waitForCompletion(): Promise<void> {
-        return this.finishedPromise;
-    }
-
-    private async startGeneration(action: ShortenAction, callback: GenerationCallback) {
+    protected async startGeneration(action: ShortenAction, callback: GenerationCallback) {
         try {
             this.running = true;
             const nWordsInput = action.partToRephase.split(/\W/).length;
@@ -219,7 +175,6 @@ export class DummyLlmModel implements LlmModel {
     }
 }
 
-// @ts-ignore
 export class DummyLlmManager implements LlmManager {
     private TOTAL_CHUNKS = 50;
 
