@@ -38,18 +38,18 @@ export default function useSharedWithMeView(shareId: string) {
 
     const loadLinksShareInfo = useCallback(
         async (signal: AbortSignal) => {
-            await Promise.all(
+            const links = await Promise.all(
                 sortedList.map(async (link) => {
                     const directSharingInfo = await getDirectSharingInfo(signal, link.rootShareId);
                     if (!directSharingInfo) {
-                        setLinksWithShareInfo((prevLinks) => [...prevLinks, link]);
-                        return;
+                        return link;
                     }
-                    setLinksWithShareInfo((prevLinks) => [...prevLinks, { ...link, ...directSharingInfo }]);
+                    return { ...link, ...directSharingInfo };
                 })
             );
+            setLinksWithShareInfo(links);
         },
-        [sortedList]
+        [sortedList, getDirectSharingInfo]
     );
 
     useEffect(() => {

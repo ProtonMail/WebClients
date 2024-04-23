@@ -8,8 +8,10 @@ export enum VALIDATION_ERROR_TYPES {
     NOT_PROTON_ACCOUNT,
     DOES_NOT_EXIST,
     EXISTING_MEMBER,
+    NOT_INTERNAL_ACCOUNT,
 }
-const { INVALID_EMAIL, NOT_PROTON_ACCOUNT, DOES_NOT_EXIST, EXISTING_MEMBER } = VALIDATION_ERROR_TYPES;
+const { INVALID_EMAIL, NOT_PROTON_ACCOUNT, DOES_NOT_EXIST, EXISTING_MEMBER, NOT_INTERNAL_ACCOUNT } =
+    VALIDATION_ERROR_TYPES;
 
 const getValidationErrorMessage = (type: VALIDATION_ERROR_TYPES) => {
     if (type === INVALID_EMAIL) {
@@ -23,6 +25,9 @@ const getValidationErrorMessage = (type: VALIDATION_ERROR_TYPES) => {
     }
     if (type === EXISTING_MEMBER) {
         return c('Error').t`Already a member of this share`;
+    }
+    if (type === NOT_INTERNAL_ACCOUNT) {
+        return c('Error').t`External accounts are not supported yet`;
     }
     return c('Error').t`Validation error`;
 };
