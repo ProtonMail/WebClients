@@ -1,8 +1,25 @@
 import type { AlgorithmInfo } from '@proton/crypto';
-import capitalize from '@proton/utils/capitalize';
 import unique from '@proton/utils/unique';
 
 import { KeyGenConfig } from '../interfaces';
+
+const formatCurveName = (curve: AlgorithmInfo['curve']) => {
+    switch (curve) {
+        case 'curve25519Legacy':
+        case 'ed25519Legacy':
+            return 'Curve25519';
+        case 'nistP256':
+        case 'nistP384':
+        case 'nistP521':
+            return curve.replace('nist', 'NIST ');
+        case 'brainpoolP256r1':
+        case 'brainpoolP384r1':
+        case 'brainpoolP512r1':
+            return curve.replace('brainpool', 'Brainpool ');
+        default:
+            return curve;
+    }
+};
 
 export const getFormattedAlgorithmName = ({ algorithm, bits, curve }: AlgorithmInfo) => {
     switch (algorithm) {
@@ -15,10 +32,9 @@ export const getFormattedAlgorithmName = ({ algorithm, bits, curve }: AlgorithmI
         case 'rsaSign':
             return `RSA (${bits})`;
         case 'eddsaLegacy':
-            return `ECC (Curve25519)`;
         case 'ecdsa':
         case 'ecdh':
-            return `ECC (${capitalize(curve === 'curve25519Legacy' ? 'curve25519' : curve)})`;
+            return `ECC (${formatCurveName(curve)})`;
         case 'ed25519':
         case 'x25519':
             return `ECC (Curve25519, new format)`;
