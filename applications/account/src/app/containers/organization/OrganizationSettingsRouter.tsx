@@ -82,11 +82,13 @@ const OrganizationSettingsRouter = ({
             )}
             {getIsSectionAvailable(orgKeys) && (
                 <Route path={getSectionPath(path, orgKeys)}>
-                    <PrivateMainSettingsArea config={orgKeys}>
-                        <OrganizationScheduleCallSection />
-                        <OrganizationSection app={app} organization={organization} />
-                        <OrganizationPasswordSection organization={organization} onceRef={onceRef} />
-                    </PrivateMainSettingsArea>
+                    <SubscriptionModalProvider app={app}>
+                        <PrivateMainSettingsArea config={orgKeys}>
+                            <OrganizationScheduleCallSection />
+                            <OrganizationSection app={app} organization={organization} />
+                            <OrganizationPasswordSection organization={organization} onceRef={onceRef} />
+                        </PrivateMainSettingsArea>
+                    </SubscriptionModalProvider>
                 </Route>
             )}
             {getIsSectionAvailable(users) && (
