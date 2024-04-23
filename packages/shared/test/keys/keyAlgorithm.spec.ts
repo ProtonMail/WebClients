@@ -12,7 +12,7 @@ describe('key algorithm', () => {
             { algorithm: 'rsaEncryptSign', bits: 4096 },
         ]);
 
-        expect(type).toEqual('RSA (2048), ECC (NistP521), ECC (NistP256), ElGamal (4096), RSA (4096)');
+        expect(type).toEqual('RSA (2048), ECC (NIST P521), ECC (NIST P256), ElGamal (4096), RSA (4096)');
     });
 
     it('should return same curve name for eddsa and edch over curve25519', async () => {
