@@ -3,7 +3,7 @@ import { SHARE_MEMBER_PERMISSIONS } from '../../drive/constants';
 //TODO: Add pagination
 export const queryShareMemberListing = (shareId: string) => ({
     method: 'get',
-    url: `/drive/v2/shares/${shareId}/members`,
+    url: `drive/v2/shares/${shareId}/members`,
 });
 
 export const queryRemoveShareMember = (shareId: string, memberId: string) => ({
