@@ -1,6 +1,6 @@
 import { createBrowserHistory } from 'history';
 import { History } from 'history';
-import { UnleashClient } from 'unleash-proxy-client';
+import { EVENTS, UnleashClient } from 'unleash-proxy-client';
 
 import { getCryptoWorkerOptions } from '@proton/components/containers/app/cryptoWorkerOptions';
 import { wrapUnloadError } from '@proton/components/containers/app/errorRefresh';
@@ -243,8 +243,18 @@ export const onAbort = (signal: AbortSignal | undefined, cb: () => void) => {
     }
 };
 
-export const unleashReady = ({ unleashClient }: { unleashClient: UnleashClient }) => {
-    return unleashClient.start();
+export const unleashReady = async ({ unleashClient }: { unleashClient: UnleashClient }) => {
+    const initPromise = new Promise<void>((resolve) => {
+        unleashClient.once(EVENTS.INIT, () => resolve());
+    });
+    const startPromise = unleashClient.start();
+    // Race between init and start in case it has missed the INIT event.
+    await Promise.race([initPromise, startPromise]).catch(noop);
+    // In case toggles exist (bootstrapped from storage), ignore waiting for them to get fetched
+    if (unleashClient.getAllToggles().length > 0) {
+        return;
+    }
+    return startPromise;
 };
 
 const defaultQuery = (eventID: string) => getEvents(eventID);
