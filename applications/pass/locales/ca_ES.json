@@ -711,7 +711,7 @@
         "Està segur que vol moure l'element a \"${ name }\"?"
       ],
       "Auto-lock successfully disabled": [
-        "El bloqueig automàtic s'ha desactivat correctament"
+        "El bloqueig automàtic s'ha desactivat."
       ],
       "By default team members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
         "Per defecte, els membres de l'equip només poden exportar les caixes fortes de la seva propietat. Si aquesta opció està activada, no podran exportar cap dada"
@@ -730,6 +730,9 @@
       ],
       "Copied to clipboard": [
         "Copiat al porta-retalls"
+      ],
+      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, passkeys...). For a complete export, we recommend using a different format.": [
+        "CSV ofereix un format còmode per visualitzar les seves dades. Tanmateix, per la seva senzillesa, algunes dades no s'inclouran (camps personalitzats, claus de pas...). Per a una exportació completa, recomanem utilitzar un format diferent."
       ],
       "Current version": [
         "Versió actual"
@@ -1803,6 +1806,9 @@
       "Invalid alias prefix": [
         "El prefix de l'àlies no és vàlid"
       ],
+      "Invalid email addresses.": [
+        "Les adreces de correu electrònic no són vàlides."
+      ],
       "Inviting email addresses outside organization is not allowed.": [
         "No es permet convidar adreces de correu electrònic de fora de l'organització."
       ],
@@ -1893,6 +1899,9 @@
       ],
       "Your session could not be resumed.": [
         "No s'ha pogut reprendre la sessió."
+      ],
+      "Your session is inactive.": [
+        "La vostra sessió està inactiva."
       ],
       "Your session was locked.": [
         "S'ha bloquejat la sessió."
