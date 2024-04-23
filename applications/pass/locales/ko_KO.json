@@ -99,7 +99,7 @@
         "공유할 새 금고 생성"
       ],
       "Create alias": [
-        "별명 생성"
+        "별칭 생성"
       ],
       "Create card": [
         "카드 생성"
@@ -126,7 +126,7 @@
         "삭제"
       ],
       "Delete alias": [
-        "별명 삭제"
+        "별칭 삭제"
       ],
       "Delete all": [
         "전체 삭제"
@@ -171,7 +171,7 @@
         "금고 항목 필터링"
       ],
       "Generate alias": [
-        "별명 생성"
+        "별칭 생성"
       ],
       "Generate password": [
         "비밀번호 생성"
@@ -805,7 +805,7 @@
         "기존의 비밀번호를 ${ BRAND_NAME }으로 가져오십시오."
       ],
       "Built in 2FA authenticator": [
-        "내장형 2FA 인증기"
+        "2단계 인증기 내장"
       ],
       "By default team members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
         "기본적으로 팀 구성원은 자신이 소유자인 금고만 내보낼 수 있습니다. 이 설정이 켜져 있으면 데이터를 내보낼 수 없습니다."
@@ -1269,10 +1269,10 @@
         "15분"
       ],
       "2FA secret key (TOTP)": [
-        "2FA 시크릿 키 (TOTP)"
+        "2단계 인증 비밀 키 (TOTP)"
       ],
       "2FA token (TOTP)": [
-        "2FA 토큰 (TOTP)"
+        "2단계 인증 토큰 (TOTP)"
       ],
       "30 minutes": [
         "30분"
@@ -1723,7 +1723,7 @@
     },
     "Placeholder": {
       "Add 2FA secret key": [
-        "2FA 시크릿 키 생성"
+        "2단계 인증 비밀 키 추가"
       ],
       "Add hidden text": [
         "숨겨진 텍스트 추가"
@@ -1995,7 +1995,7 @@
         "문제의 셜명이 필요합니다."
       ],
       "Alias \"${ name }\" is currently used in login item \"${ relatedLoginName }\". You will also stop receiving emails sent to \"${ aliasEmail }\"": [
-        "별명 \"${ name }\"이(가) 로그인 항목 \"${ relatedLoginName }\"으로 사용 중입니다. \"${ aliasEmail }\"으로 전송되는 이메일에 대한 수신을 중단할 수 있습니다."
+        "별칭 \"${ name }\"이 로그인 항목 \"${ relatedLoginName }\"에서 사용중입니다. 또한 \"${ aliasEmail }\"로 보내지는 이메일을 받을 수 없게 됩니다."
       ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "모든 휴지통에 있는 항목이 완전히 삭제됩니다. 이 동작을 취소할 수 없습니다."
@@ -2007,7 +2007,7 @@
         "적어도 하나의 이메일 주소가 필요합니다"
       ],
       "Cannot retrieve mailboxes for this alias right now": [
-        "현재 별명에서 메일함으로 가져올 수 없습니다."
+        "지금은 이 별칭에서 메일함으로 불러올 수 없습니다."
       ],
       "Could not create vault \"${ vaultName }\"": [
         "\"${ vaultName }\" 금고를 생성할 수 없음"
@@ -2079,7 +2079,7 @@
         "문제 조사를 위해 연락을 부탁드립니다."
       ],
       "Please verify your email address in order to use email aliases": [
-        "이메일 별명을 사용하려면 이메일 주소를 인증해 주세요."
+        "이메일 별칭을 사용하려면 이메일 주소를 인증해 주세요."
       ],
       "Please verify your email address in order to use vault sharing": [
         "금고 공유를 사용하려면 이메일 주소를 인증해 주세요."
@@ -2097,7 +2097,7 @@
         "금고의 소유권을 ${ email }으로 이동하시겠어요?"
       ],
       "Trash alias ?": [
-        "별명 삭제 ?"
+        "별칭을 휴지통으로 보내시겠습니까?"
       ],
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "${ PASS_APP_NAME }에 로그인할 수 없습니다. ${ additionalMessage }"
