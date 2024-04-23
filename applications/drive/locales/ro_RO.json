@@ -183,6 +183,9 @@
       "Copy email to clipboard": [
         "Copiere mesaj în memorie"
       ],
+      "Copy invite link": [
+        "Copiere legătură web invitație"
+      ],
       "Copy link": [
         "Copiere legătură"
       ],
@@ -442,6 +445,9 @@
       "Manage link": [
         "Gestionare legătură"
       ],
+      "Mark as resolved": [
+        "Marcare ca rezolvată"
+      ],
       "Mark for deletion": [
         "Marcare pentru ștergere"
       ],
@@ -553,6 +559,9 @@
       "Remove": [
         "Eliminare"
       ],
+      "Remove access": [
+        "Eliminare acces"
+      ],
       "Remove bonuses": [
         "Anulare bonusuri"
       ],
@@ -576,6 +585,9 @@
       ],
       "Report an issue": [
         "Raportare o problemă"
+      ],
+      "Request a call": [
+        "Solicitați un apel"
       ],
       "Request a feature": [
         "Solicitare funcție"
@@ -825,6 +837,9 @@
       ],
       "View": [
         "Afișare"
+      ],
+      "View all reports": [
+        "Afișare toate rapoartele"
       ],
       "View invoice": [
         "Afișare factură"
@@ -1158,6 +1173,9 @@
       ],
       "Continue using ${ planTitle }": [
         "Continuare utilizare ${ planTitle }"
+      ],
+      "Continue your subscription": [
+        "Păstrare abonament"
       ]
     },
     "Checkout row": {
@@ -4232,6 +4250,9 @@
       "File will not be updated": [
         "Fișierul nu va fi actualizat."
       ],
+      "Files and folders that others shared with you will appear here": [
+        "Fișierele și folderele pe care alții vi le-au partajat vor apărea aici."
+      ],
       "Finalizing": [
         "Finalizare"
       ],
@@ -4387,6 +4408,9 @@
       "Last week": [
         "Săptămâna trecută"
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Aflați cum să ${ staySaferOnlineLink }"
+      ],
       "Learn more": [
         "Detalii"
       ],
@@ -4401,6 +4425,9 @@
       ],
       "Loading ${ appName }": [
         "Se încarcă ${ appName }"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Calendarul se încarcă, așteptați. Pagina se va redirecționa către platforma noastră de programări Calendly într-o filă nouă."
       ],
       "Loading link": [
         "Se încarcă legătura."
@@ -4588,6 +4615,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Selectați adresa sau adresele de e-mail de adăugat la ${ groupName }."
       ],
+      "Please try again in a few moments": [
+        "Mai încercați mai târziu."
+      ],
       "Please try again using a different payment method, or contact your bank.": [
         "Reîncercați folosind o metodă de plată diferită sau contactați-vă banca."
       ],
@@ -4749,6 +4779,9 @@
       "Shared link not found": [
         "Legătură partajată negăsită"
       ],
+      "Shared with me": [
+        "Partajate cu mine"
+      ],
       "Sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
         "Creați-vă propriul cont ${ DRIVE_APP_NAME } și protejați-vă datele cu criptare bilaterală și partajați-le în siguranță."
       ],
@@ -4811,6 +4844,9 @@
       ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
         "Datele criptate ocupă puțin mai mult spațiu datorită criptării și a semnăturilor, ceea ce asigură securitatea acestora."
+      ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "Informațiile expuse au fost divulgate de la un serviciu terță parte. Informațiile contului ${ BRAND_NAME } rămân securizate și criptate. ${ learnMoreLink }"
       ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Este posibil ca următoarele articole să fi fost falsificate: ${ items }. Deschideți-l numai dacă aveți încredere în el."
@@ -5042,6 +5078,9 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Pentru finalizarea tranzacției prin PayPal se va deschide o filă nouă. Dacă folosiți programe de blocat ferestre flotante dezactivați-le înainte de a continua."
       ],
+      "We'll email you once import is complete.": [
+        "Vă vom anunța pe e-mail după finalizarea importării."
+      ],
       "We'll notify you when the import is done.": [
         "Veți primi o notificare la finalizarea importării."
       ],
@@ -5099,6 +5138,9 @@
       "You can check the progress ${ importProgressLink }.": [
         "Puteți verifica progresul ${ importProgressLink }."
       ],
+      "You can close the tab or browser in the meantime.": [
+        "Puteți închide fila sau navigatorul web între timp."
+      ],
       "You can import one data type at a time.": [
         "Puteți importa un singur tip de date la un moment dat."
       ],
@@ -5125,6 +5167,12 @@
         "Mai aveți ${ expiresInDays } zi rămasă pentru a vă revendica bonusul de 3 GiB de bun venit și să vă ",
         "Mai aveți ${ expiresInDays } zile rămase pentru a vă revendica bonusul de 3 GiB de bun venit și să vă ",
         "Mai aveți ${ expiresInDays } de zile rămase pentru a vă revendica bonusul de bun venit de 3 GiB și să vă "
+      ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "Aveți un abonament ${ planTitle } de probare. Dacă doriți să vă continuați abonamentul după perioada de probare, adăugați o metodă de plată."
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "Aveți un abonament ${ planTitle } de probare. Nu este necesară nici o plată în acest moment. Abonamentul se va reînnoi automat la sfârșitul perioadei de probare."
       ],
       "You may be redirected to your bank’s website.": [
         "Ar putea fi necesară redirecționarea spre pagina web a băncii."
@@ -5180,6 +5228,12 @@
       "Your download is in progress": [
         "Descărcarea este în desfășurare."
       ],
+      "Your email address and password were leaked:": [
+        "Adresa de e-mail și parola au fost divulgate:"
+      ],
+      "Your email address was exposed:": [
+        "Adresa de e-mail a fost divulgată:"
+      ],
       "Your email will only be used for this one-time verification.": [
         "Adresa va fi folosită doar pentru această verificare unică."
       ],
@@ -5192,11 +5246,17 @@
       "Your files will be encrypted and then saved.": [
         "Fișierele vor fi criptate și apoi salvate."
       ],
+      "Your information was found on ${ displayedDate }": [
+        "Informațiile v-au fost găsite la ${ displayedDate }"
+      ],
       "Your login information will not be saved after the import is completed.": [
         "Informațiile de conectare nu vor fi salvate după terminarea importării."
       ],
       "Your next billing date is ${ renewalTime }.": [
         "Data următoarei facturi este ${ renewalTime }."
+      ],
+      "Your password was leaked:": [
+        "Parola a fost divulgată:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Numărul de telefon va fi folosit doar pentru această verificare unică."
@@ -5464,9 +5524,6 @@
         "Ștergeți unitatea?",
         "Ștergeți unitățile?",
         "Ștergeți unitățile?"
-      ],
-      "Delete link": [
-        "Ștergere legătură web"
       ],
       "Delete recovery-related information.": [
         "Ștergere informații privind recuperarea."
@@ -5753,6 +5810,12 @@
       "Set recovery method": [
         "Setați metoda de recuperare"
       ],
+      "Shared by": [
+        "Partajat de"
+      ],
+      "Shared on": [
+        "Partajat"
+      ],
       "Show indexing progress of Encrypted Search": [
         "Afișare progres indexare pentru căutarea criptată"
       ],
@@ -5941,6 +6004,9 @@
       ],
       "Shared": [
         "Partajat"
+      ],
+      "Shared with me": [
+        "Partajate cu mine"
       ],
       "stay safer online": [
         "rămâneți în siguranță online"
@@ -7241,6 +7307,9 @@
       "Encrypted search activated": [
         "Căutarea criptată a fost activată."
       ],
+      "Failed to accept share invitation": [
+        "Eșuare acceptare invitație partajată"
+      ],
       "Failed to download files: ${ err }": [
         "Nu s-a reușit descărcarea fișierelor: ${ err }"
       ],
@@ -7284,6 +7353,12 @@
       ],
       "Root folder failed to be loaded": [
         "Folderul rădăcină nu s-a putut încărca."
+      ],
+      "Share invitation accepted successfully": [
+        "Invitația partajată a fost acceptată"
+      ],
+      "Share invitation ID was not found. Please check the link": [
+        "ID-ul invitației partajate nu a fost găsit. Verificați legătura web."
       ],
       "Subfolder failed to be loaded": [
         "Subfolderul nu s-a putut încărca."
@@ -7746,6 +7821,9 @@
       ]
     },
     "Security Center - Info": {
+      "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
+        "Primiți notificări dacă parola sau alte date v-au fost divulgate de la un serviciu terță parte. ${ learnMoreLink }"
+      ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Soluția noastră de securitate de ultimă oră, bazată pe inteligență artificială, concepută pentru utilizatorii care doresc o protecție sporită pentru conturile lor. ${ learnMoreLink }"
       ],
@@ -8827,6 +8905,9 @@
       "Deleting contacts": [
         "Ștergere contacte"
       ],
+      "Details": [
+        "Detalii"
+      ],
       "Discard": [
         "Anulare"
       ],
@@ -9125,6 +9206,9 @@
       "Shared": [
         "Partajat"
       ],
+      "Shared with me": [
+        "Partajate cu mine"
+      ],
       "Show actions": [
         "Afișare acțiuni"
       ],
@@ -9242,8 +9326,8 @@
       "Your changes are not synced yet": [
         "Modificările nu sunt încă sincronizate"
       ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "Perioada de încercare pentru Mail Plus se încheie la ${ textDate } "
+      "Your exposed information": [
+        "Informațiile expuse"
       ],
       "Your welcome actions": [
         "Acțiuni de bun venit"

@@ -556,6 +556,9 @@
       "Remove": [
         "Kaldır"
       ],
+      "Remove access": [
+        "Erişimi kaldır"
+      ],
       "Remove bonuses": [
         "Hediyeleri kaldır"
       ],
@@ -1160,6 +1163,9 @@
       ],
       "Continue using ${ planTitle }": [
         "${ planTitle } kullanmayı sürdürün"
+      ],
+      "Continue your subscription": [
+        "Aboneliğinizi kullanmayı sürdürün"
       ]
     },
     "Checkout row": {
@@ -4172,6 +4178,9 @@
       "File will not be updated": [
         "Dosya güncellenmeyecek"
       ],
+      "Files and folders that others shared with you will appear here": [
+        "Başkalarının sizinle paylaştığı dosyalar ve klasörler burada görüntülenir"
+      ],
       "Finalizing": [
         "Tamamlanıyor"
       ],
@@ -4326,6 +4335,9 @@
       "Last week": [
         "Geçen hafta"
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Nasıl ${ staySaferOnlineLink } öğrenin"
+      ],
       "Learn more": [
         "Ayrıntılı bilgi alın"
       ],
@@ -4340,6 +4352,9 @@
       ],
       "Loading ${ appName }": [
         "${ appName } yükleniyor"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Takvim yüklenirken lütfen bekleyin. Yeni bir sekmede zamanla platformumuz Calendly açılacak."
       ],
       "Loading link": [
         "Bağlantı yükleniyor"
@@ -4525,7 +4540,7 @@
         "Lütfen ${ groupName } grubuna eklenecek e-posta adresini ya da adreslerini seçin."
       ],
       "Please try again in a few moments": [
-        "Lütfen birkaç saniye içinde tekrar deneyin"
+        "Lütfen biraz sonra yeniden deneyin"
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Lütfen farklı bir ödeme yöntemi kullanarak yeniden deneyin ya da bankanızla görüşün."
@@ -4687,6 +4702,9 @@
       "Shared link not found": [
         "Paylaşılan bağlantı bulunamadı"
       ],
+      "Shared with me": [
+        "Benimle paylaşılan"
+      ],
       "Sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
         "Kendi ${ DRIVE_APP_NAME } hesabınızı açıp verilerinizi uçtan uca şifreleme ile koruyabilir ve güvenli olarak paylaşabilirsiniz."
       ],
@@ -4749,6 +4767,9 @@
       ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
         "Şifrelenmiş veriler, verilerinizin güvenliğini sağlayan şifreleme ve imzaların ek yükü nedeniyle biraz daha büyüktür."
+      ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "Bilgiler üçüncü taraf bir hizmetten açığa çıkmış. ${ BRAND_NAME } Hesap bilgileriniz güvende ve şifrelenmiş olarak kalır. ${ learnMoreLink }"
       ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Şu ögeler üzerinde oynanmış olabilir: ${ items }. Yalnızca güveniyorsanız açın."
@@ -5066,6 +5087,12 @@
         "3 GB karşılama hediyenizi ve şunu almak için ${ expiresInDays } gününüz kaldı ",
         "3 GB karşılama hediyenizi ve şunu almak için ${ expiresInDays } gününüz kaldı "
       ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "${ planTitle } deneme aboneliğiniz var. Deneme süresinden sonra aboneliğinizi sürdürmek istiyorsanız lütfen bir ödeme yöntemi ekleyin."
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "${ planTitle } deneme aboneliğiniz var. Şu anda herhangi bir ödeme yapmanıza gerek yok. Deneme süresi sonunda aboneliğiniz otomatik olarak yenilenecek."
+      ],
       "You may be redirected to your bank’s website.": [
         "Bankanızın sitesine yönlendirilebilirsiniz."
       ],
@@ -5121,7 +5148,7 @@
         "İndirme işleminiz sürüyor"
       ],
       "Your email address and password were leaked:": [
-        "E-posta adresiniz ve parolanız sızdırılmış:"
+        "E-posta adresiniz ve parolanız açığa çıkmış:"
       ],
       "Your email address was exposed:": [
         "E-posta adresiniz açığa çıkmış:"
@@ -5138,6 +5165,9 @@
       "Your files will be encrypted and then saved.": [
         "Dosyalarınız şifrelendikten sonra kaydedilecek."
       ],
+      "Your information was found on ${ displayedDate }": [
+        "Bilgileriniz ${ displayedDate } tarihinde bulundu"
+      ],
       "Your login information will not be saved after the import is completed.": [
         "İçe aktarma işleminden sonra oturum açma bilgileriniz kaydedilmez."
       ],
@@ -5145,7 +5175,7 @@
         "Sonraki fatura zamanınız ${ renewalTime }."
       ],
       "Your password was leaked:": [
-        "Parolanız sızdırılmış:"
+        "Parolanız açığa çıkmış:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Telefon numaranız yalnızca bu tek seferlik doğrulama için kullanılacak."
@@ -5407,9 +5437,6 @@
       "Delete drive?": [
         "Sürücü silinsin mi?",
         "Sürücüler silinsin mi?"
-      ],
-      "Delete link": [
-        "Bağlantıyı sil"
       ],
       "Delete recovery-related information.": [
         "Kurtarma ile ilgili bilgileri sil."
@@ -5696,6 +5723,12 @@
       "Set recovery method": [
         "Kurtarma yöntemini ayarlayın"
       ],
+      "Shared by": [
+        "Paylaşan"
+      ],
+      "Shared on": [
+        "Paylaşılma zamanı"
+      ],
       "Show indexing progress of Encrypted Search": [
         "Şifrelenmiş aramanın dizine ekleme işlemini görüntüle"
       ],
@@ -5885,8 +5918,11 @@
       "Shared": [
         "Paylaşılmış"
       ],
+      "Shared with me": [
+        "Benimle paylaşılan"
+      ],
       "stay safer online": [
-        "çevrimiçi ortamda daha güvende kalın"
+        "çevrim içi ortamda güvende kalın"
       ],
       "Trash": [
         "Çöp kutusu"
@@ -7148,6 +7184,9 @@
       "Encrypted search activated": [
         "Şifrelenmiş arama özelliği açıldı"
       ],
+      "Failed to accept share invitation": [
+        "Paylaşma daveti kabul edilemedi"
+      ],
       "Failed to download files: ${ err }": [
         "Dosyalar indirilemedi: ${ err }"
       ],
@@ -7187,6 +7226,12 @@
       ],
       "Root folder failed to be loaded": [
         "Kök klasör yüklenemedi"
+      ],
+      "Share invitation accepted successfully": [
+        "Paylaşma daveti kabul edildi"
+      ],
+      "Share invitation ID was not found. Please check the link": [
+        "Paylaşma daveti kimliği bulunamadı. Lütfen bağlantıya tıklayın"
       ],
       "Subfolder failed to be loaded": [
         "Alt klasör yüklenemedi"
@@ -7643,6 +7688,9 @@
       ]
     },
     "Security Center - Info": {
+      "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
+        "Parolanız veya diğer verileriniz üçüncü taraf bir hizmetten açığa çıkarsa bildirim alın. ${ learnMoreLink }"
+      ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Hesapları için daha yüksek düzeyde koruma isteyen kullanıcılar için tasarlanmış, yapay zeka destekli son teknoloji güvenlik çözümümüz. ${ learnMoreLink }"
       ],
@@ -8983,6 +9031,9 @@
       "Shared": [
         "Paylaşılan"
       ],
+      "Shared with me": [
+        "Benimle paylaşılan"
+      ],
       "Show actions": [
         "İşlemleri görüntüle"
       ],
@@ -9102,9 +9153,6 @@
       ],
       "Your exposed information": [
         "Açığa çıkmış bilgileriniz"
-      ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "Mail Plus ücretsiz deneme süreniz ${ textDate } tarihinde sonra erecek"
       ],
       "Your welcome actions": [
         "Karşılama işlemleriniz"

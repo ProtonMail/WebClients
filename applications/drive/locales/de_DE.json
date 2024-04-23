@@ -556,6 +556,9 @@
       "Remove": [
         "Entfernen"
       ],
+      "Remove access": [
+        "Zugriff entfernen"
+      ],
       "Remove bonuses": [
         "Prämien entfernen"
       ],
@@ -831,6 +834,9 @@
       ],
       "View": [
         "Anzeigen"
+      ],
+      "View all reports": [
+        "Alle Berichte anzeigen"
       ],
       "View invoice": [
         "Rechnung anzeigen"
@@ -4997,6 +5003,9 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Wir werden dich in einem neuen Browser-Tab zu PayPal umleiten, um diese Zahlung abzuschließen. Falls du Pop-up-Blocker verwendest, deaktiviere diese bitte, um fortzufahren."
       ],
+      "We'll email you once import is complete.": [
+        "Wir senden dir eine Nachricht, sobald der Import abgeschlossen ist."
+      ],
       "We'll notify you when the import is done.": [
         "Du wirst benachrichtigt, sobald der Datenimport abgeschlossen ist."
       ],
@@ -5056,6 +5065,9 @@
       ],
       "You can check the progress ${ importProgressLink }.": [
         "Du kannst den Fortschritt hier ${ importProgressLink } überprüfen."
+      ],
+      "You can close the tab or browser in the meantime.": [
+        "In der Zwischenzeit kannst du den Tab oder Browser schließen."
       ],
       "You can import one data type at a time.": [
         "Du kannst jeweils nur einen Datentyp importieren."
@@ -5432,9 +5444,6 @@
         "Laufwerk löschen?",
         "Laufwerke löschen?"
       ],
-      "Delete link": [
-        "Link löschen"
-      ],
       "Delete recovery-related information.": [
         "Wiederherstellungsbezogene Informationen löschen."
       ],
@@ -5799,7 +5808,7 @@
         "Lade deine erste Datei hoch"
       ],
       "VAT": [
-        "MwSt"
+        "MwSt."
       ],
       "Verification code": [
         "Verifizierungscode"
@@ -6221,10 +6230,10 @@
         "OGG"
       ],
       "OGG audio": [
-        "OGG-Audio"
+        "OGG Audio"
       ],
       "OGG video": [
-        "OGG-Video"
+        "OGG Video"
       ],
       "OpenDocument presentation document": [
         "OpenDocument-Präsentationsdokument"
@@ -9207,9 +9216,6 @@
       ],
       "Your exposed information": [
         "Deine exponierten Informationen"
-      ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "Deine kostenlose Testversion von Mail Plus endet am ${ textDate }."
       ],
       "Your welcome actions": [
         "Deine Begrüßungsaktionen"
