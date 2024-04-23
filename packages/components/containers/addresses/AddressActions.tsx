@@ -13,7 +13,6 @@ import { DropdownActions, useModalState } from '../../components';
 import EditExternalAddressModal from '../../containers/account/EditExternalAddressModal';
 import EditInternalAddressModal from '../../containers/addresses/EditInternalAddressModal';
 import { useAddressFlags, useEventManager, useNotifications, useOrganizationKey } from '../../hooks';
-import DeleteAddressModal from './DeleteAddressModal';
 import DeleteAddressPrompt from './DeleteAddressPrompt';
 import DisableAddressModal from './DisableAddressModal';
 import { AddressPermissions } from './helper';
@@ -189,10 +188,18 @@ const AddressActions = ({
                 <EditExternalAddressModal address={address} {...editExternalAddressProps} />
             )}
             {renderDeleteAddressPrompt && (
-                <DeleteAddressPrompt onDeleteAddress={handleDeleteOncePerYear} {...deleteAddressPromptProps} />
+                <DeleteAddressPrompt onDeleteAddress={handleDeleteOncePerYear} {...deleteAddressPromptProps}>
+                    <p>{c('Delete address prompt')
+                        .t`Once deleted, this address can't be used again by anyone else.`}</p>
+                    <p>{c('Delete address prompt').t`You can only delete 1 address per year.`}</p>
+                </DeleteAddressPrompt>
             )}
             {renderDeleteAddressModal && (
-                <DeleteAddressModal email={address.Email} onDeleteAddress={handleDelete} {...deleteAddressModalProps} />
+                <DeleteAddressPrompt onDeleteAddress={handleDelete} {...deleteAddressModalProps} email={address.Email}>
+                    <p>{c('Info')
+                        .t`Please note that if you delete this address, you will no longer be able to send or receive emails using this address.`}</p>
+                    <p>{c('Info').t`Are you sure you want to delete this address?`}</p>
+                </DeleteAddressPrompt>
             )}
             {renderDisableAddress && (
                 <DisableAddressModal email={address.Email} onDisable={handleDisable} {...disableAddressProps} />
