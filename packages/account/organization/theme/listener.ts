@@ -28,6 +28,7 @@ export const organizationThemeListener = (startListening: SharedStartListening<O
             return bootstrapEvent.match(action);
         },
         effect: async (_, listenerApi) => {
+            const flagEnabled = listenerApi.extra.unleashClient.isEnabled('LightLabeling');
             listenerApi.unsubscribe();
 
             const organizationThemeFromCookie = getOrganizationThemeFromCookie();
@@ -51,6 +52,7 @@ export const organizationThemeListener = (startListening: SharedStartListening<O
                         UID: authentication.UID,
                         API_URL: config.API_URL,
                     }),
+                    enabled: flagEnabled,
                 })
             );
         },
@@ -73,7 +75,7 @@ export const organizationThemeListener = (startListening: SharedStartListening<O
 
             if (!flagEnabled) {
                 syncToCookie(serializeOrgTheme(undefined, authentication.localID));
-                listenerApi.dispatch(organizationThemeSlice.actions.reset(false));
+                listenerApi.dispatch(organizationThemeSlice.actions.reset({ access: false, enabled: flagEnabled }));
                 return;
             }
 
@@ -86,7 +88,7 @@ export const organizationThemeListener = (startListening: SharedStartListening<O
                 if (!access) {
                     syncToCookie(serializeOrgTheme(undefined, authentication.localID));
                 }
-                listenerApi.dispatch(organizationThemeSlice.actions.reset(access));
+                listenerApi.dispatch(organizationThemeSlice.actions.reset({ access: access, enabled: flagEnabled }));
                 return;
             }
 
@@ -102,6 +104,7 @@ export const organizationThemeListener = (startListening: SharedStartListening<O
                         UID: authentication.UID,
                         API_URL: config.API_URL,
                     }),
+                    enabled: flagEnabled,
                 })
             );
         },
