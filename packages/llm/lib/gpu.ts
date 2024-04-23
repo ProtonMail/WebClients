@@ -2,6 +2,8 @@ import '@mlc-ai/web-llm';
 import type { InitProgressReport } from '@mlc-ai/web-llm';
 import { WebWorkerEngine } from '@mlc-ai/web-llm';
 
+import { BaseRunningAction } from '@proton/llm/lib/runningAction';
+
 import mlcConfig from './mlc-config';
 import type {
     Action,
@@ -9,8 +11,6 @@ import type {
     LlmManager,
     LlmModel,
     MonitorDownloadCallback,
-    PromiseReject,
-    PromiseResolve,
     RunningAction,
     ShortenAction,
     WriteFullEmailAction,
@@ -55,24 +55,7 @@ function formatPrompt(turns: Turn[]): string {
         .join('\n\n');
 }
 
-export class GpuWriteFullEmailRunningAction implements RunningAction {
-    private chat: WebWorkerEngine;
-
-    private action_: WriteFullEmailAction;
-
-    private running: boolean;
-
-    private done: boolean;
-
-    private cancelled: boolean;
-
-    private finishedPromise: Promise<void>;
-
-    private finishedPromiseSignals: { resolve: PromiseResolve; reject: PromiseReject } | undefined;
-
-    // @ts-ignore
-    private generation: Promise<void>;
-
+export class GpuWriteFullEmailRunningAction extends BaseRunningAction {
     constructor(action: WriteFullEmailAction, chat: WebWorkerEngine, callback: GenerationCallback) {
         const prompt = formatPrompt([
             {
@@ -87,88 +70,11 @@ export class GpuWriteFullEmailRunningAction implements RunningAction {
                 role: 'assistant',
             },
         ]);
-
-        let fulltext = '';
-        const generateProgressCallback = (_step: number, message: string) => {
-            const token = message.slice(fulltext.length);
-            fulltext = message;
-            callback(token, fulltext);
-        };
-
-        this.finishedPromise = new Promise<void>((resolve: PromiseResolve, reject: PromiseReject) => {
-            this.finishedPromiseSignals = { resolve, reject };
-        });
-
-        this.generation = chat
-            .generate(prompt, generateProgressCallback)
-            .then(() => {
-                this.finishedPromiseSignals!.resolve();
-            })
-            .catch(() => {
-                this.done = true;
-                this.finishedPromiseSignals!.reject();
-                this.done = true;
-            })
-            .finally(() => {
-                this.running = false;
-            });
-        this.chat = chat;
-        this.running = true;
-        this.done = false;
-        this.cancelled = false;
-        this.action_ = action;
-    }
-
-    isRunning(): boolean {
-        return this.running;
-    }
-
-    isDone(): boolean {
-        return this.done;
-    }
-
-    isCancelled(): boolean {
-        return this.cancelled;
-    }
-
-    action(): Action {
-        return this.action_;
-    }
-
-    cancel(): boolean {
-        if (this.running) {
-            this.chat.interruptGenerate();
-            this.running = false;
-            this.done = false;
-            this.cancelled = true;
-            return true;
-        }
-        return false;
-    }
-
-    waitForCompletion(): Promise<void> {
-        return this.finishedPromise;
+        super(prompt, callback, chat, action);
     }
 }
 
-export class GpuShortenRunningAction implements RunningAction {
-    private chat: WebWorkerEngine;
-
-    private action_: ShortenAction;
-
-    private running: boolean;
-
-    private done: boolean;
-
-    private cancelled: boolean;
-
-    private finishedPromise: Promise<void>;
-
-    private finishedPromiseSignals: { resolve: PromiseResolve; reject: PromiseReject } | undefined;
-
-    // @ts-ignore
-    private generation: Promise<void>;
-
+export class GpuShortenRunningAction extends BaseRunningAction {
     constructor(action: ShortenAction, chat: WebWorkerEngine, callback: GenerationCallback) {
         const prompt = formatPrompt([
             {
@@ -191,67 +97,7 @@ export class GpuShortenRunningAction implements RunningAction {
                 role: 'short_part',
             },
         ]);
-
-        let fulltext = '';
-        const generateProgressCallback = (_step: number, message: string) => {
-            const token = message.slice(fulltext.length);
-            fulltext = message;
-            callback(token, fulltext);
-        };
-
-        this.finishedPromise = new Promise<void>((resolve: PromiseResolve, reject: PromiseReject) => {
-            this.finishedPromiseSignals = { resolve, reject };
-        });
-
-        this.generation = chat
-            .generate(prompt, generateProgressCallback)
-            .then(() => {
-                this.finishedPromiseSignals!.resolve();
-            })
-            .catch(() => {
-                this.done = true;
-                this.finishedPromiseSignals!.reject();
-                this.done = true;
-            })
-            .finally(() => {
-                this.running = false;
-            });
-        this.chat = chat;
-        this.running = true;
-        this.done = false;
-        this.cancelled = false;
-        this.action_ = action;
-    }
-
-    isRunning(): boolean {
-        return this.running;
-    }
-
-    isDone(): boolean {
-        return this.done;
-    }
-
-    isCancelled(): boolean {
-        return this.cancelled;
-    }
-
-    action(): Action {
-        return this.action_;
-    }
-
-    cancel(): boolean {
-        if (this.running) {
-            this.chat.interruptGenerate();
-            this.running = false;
-            this.done = false;
-            this.cancelled = true;
-            return true;
-        }
-        return false;
-    }
-
-    waitForCompletion(): Promise<void> {
-        return this.finishedPromise;
+        super(prompt, callback, chat, action);
     }
 }
 
@@ -275,6 +121,8 @@ export class GpuLlmModel implements LlmModel {
         switch (action.type) {
             case 'writeFullEmail':
                 return new GpuWriteFullEmailRunningAction(action, this.chat, callback);
+            case 'shorten':
+                return new GpuShortenRunningAction(action, this.chat, callback);
             default:
                 throw Error('unimplemented');
         }
