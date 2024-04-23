@@ -61,6 +61,7 @@ import SetupOrganizationModal from './SetupOrganizationModal';
 import OrganizationLogoModal from './logoUpload/OrganizationLogoModal';
 import OrganizationLogoRemovalModal from './logoUpload/OrganizationLogoRemovalModal';
 import OrganizationLogoTipsModal from './logoUpload/OrganizationLogoTipsModal';
+import { OrganizationLogoUploadUpsellBanner } from './logoUpload/OrganizationLogoUploadUpsellBanner';
 import { useOrganizationTheme } from './logoUpload/useOrganizationTheme';
 
 interface Props {
@@ -89,6 +90,7 @@ const OrganizationSection = ({ app, organization }: Props) => {
         useModalState();
 
     const organizationTheme = useOrganizationTheme();
+    const isLightLabellingEnabled = organizationTheme.enabled;
     const canAccessLightLabelling = organizationTheme.access;
 
     if (!organization || !user || !subscription) {
@@ -273,6 +275,13 @@ const OrganizationSection = ({ app, organization }: Props) => {
                     </div>
                 </SettingsLayoutRight>
             </SettingsLayout>
+
+            <OrganizationLogoUploadUpsellBanner
+                organization={organization}
+                canAccessLightLabelling={canAccessLightLabelling}
+                isPartOfFamily={isPartOfFamily}
+                isLightLabellingEnabled={isLightLabellingEnabled}
+            />
 
             {canAccessLightLabelling && (
                 <SettingsLayout>

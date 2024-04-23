@@ -258,10 +258,12 @@ const MainContainer: FunctionComponent = () => {
                             </Route>
                             {getIsSectionAvailable(routes.setup) ? (
                                 <Route path={routes.setup.to}>
-                                    <PrivateMainSettingsArea config={routes.setup}>
-                                        <OrganizationScheduleCallSection onOpenChat={openChat} />
-                                        <OrganizationSection organization={organization} app={app} />
-                                    </PrivateMainSettingsArea>
+                                    <SubscriptionModalProvider app={app}>
+                                        <PrivateMainSettingsArea config={routes.setup}>
+                                            <OrganizationScheduleCallSection onOpenChat={openChat} />
+                                            <OrganizationSection organization={organization} app={app} />
+                                        </PrivateMainSettingsArea>
+                                    </SubscriptionModalProvider>
                                 </Route>
                             ) : (
                                 getIsSectionAvailable(routes.users) && (
