@@ -209,7 +209,7 @@ export class PaymentMethods {
             !isInvoice &&
             this.coupon !== BLACK_FRIDAY.COUPON_CODE &&
             this.amount >= MIN_BITCOIN_AMOUNT &&
-            this.chargebeeEnabled === ChargebeeEnabled.INHOUSE_FORCED
+            this.chargebeeEnabled !== ChargebeeEnabled.CHARGEBEE_FORCED
         );
     }
 
