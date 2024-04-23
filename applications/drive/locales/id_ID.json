@@ -553,6 +553,9 @@
       "Remove": [
         "Hapus"
       ],
+      "Remove access": [
+        "Hapus akses"
+      ],
       "Remove bonuses": [
         "Hapus bonus"
       ],
@@ -4415,6 +4418,9 @@
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Pembayaran dilindungi dengan enkripsi TLS dan undang-undang privasi Swiss."
       ],
+      "Pending": [
+        "Menunggu jawaban"
+      ],
       "Permanently delete all files in your locked drive": [
         "Hapus seluruh berkas yang terdapat pada drive terkunci milik Anda secara permanen"
       ],
@@ -4961,6 +4967,9 @@
       "Yesterday": [
         "Kemarin"
       ],
+      "you": [
+        "Anda"
+      ],
       "You already have a free account": [
         "Anda telah memiliki akun gratis"
       ],
@@ -5182,7 +5191,7 @@
         "Dicabut"
       ],
       "Trusted": [
-        "Tepercaya"
+        "Terpercaya"
       ]
     },
     "Label": {
@@ -5347,9 +5356,6 @@
       ],
       "Delete drive?": [
         "Hapus drive?"
-      ],
-      "Delete link": [
-        "Hapus tautan"
       ],
       "Delete recovery-related information.": [
         "Hapus informasi terkait pemulihan."
@@ -5894,6 +5900,11 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Langganan Anda telah berakhir. ${ cta } dan mencegah hilangnya data."
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Aktifkan ${ reason }"
       ]
     },
     "Mail import summary": {
@@ -7088,6 +7099,12 @@
       "${ numberOfItems } link to your item was deleted": [
         "${ numberOfItems } tautan ke item Anda telah dihapus"
       ],
+      "${ reason } has been disabled": [
+        "${ reason } telah dinonaktifkan"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } telah diaktifkan"
+      ],
       "All items will soon be permanently deleted from trash": [
         "Seluruh item akan dihapus secara permanen dari sampah"
       ],
@@ -7138,6 +7155,9 @@
       ],
       "File or folder is missing a name": [
         "Berkas atau folder belum dinamai"
+      ],
+      "Invitation removed from the share": [
+        "Undangan dihapus dari partisi"
       ],
       "Link copied to clipboard": [
         "Tautan disalin ke papan klip"
@@ -7620,6 +7640,9 @@
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel saat ini sedang **aktif** dan melindungi akun Anda."
+      ],
+      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLink }": [
+        "Informasi seputar diri Anda ditemukan pada setidaknya satu insiden kebocoran data. Aktifkan ${ DARK_WEB_MONITORING_NAME } untuk melihat rincian kebocoran ini dan mengambil tindakan yang sesuai. ${ learnMoreLink }"
       ]
     },
     "Select files": {
@@ -8396,7 +8419,7 @@
         "Status"
       ],
       "Type": [
-        "Tipe"
+        "Jenis"
       ]
     },
     "TableHeader": {
@@ -9024,6 +9047,9 @@
       "You have no folders yet": [
         "Anda belum memiliki folder"
       ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Masa uji coba gratis ${ planName } Anda akan berakhir pada ${ textDate }"
+      ],
       "Your 3 GB bonus": [
         "Bonus 3 GB Anda"
       ],
@@ -9035,9 +9061,6 @@
       ],
       "Your exposed information": [
         "Informasi Anda yang terpapar"
-      ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "Uji coba Mail Plus Anda akan berakhir pada ${ textDate }"
       ],
       "Your welcome actions": [
         "Hadiah selamat datang Anda"
@@ -9211,7 +9234,7 @@
     },
     "Warning": {
       "${ BRAND_NAME } will merge all folders with the same name. To avoid this, change the names before import.": [
-        "${ BRAND_NAME } akan menggabungkan seluruh folder yang memiliki nama yang sama. Untuk menghindari hal ini, silakan ubah nama folder sebelum Anda mengimpor."
+        "${ BRAND_NAME } akan menggabungkan seluruh folder yang memiliki nama yang sama. Untuk menghindari hal ini, ubah nama folder Anda sebelum mengimpor."
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } akan berupaya untuk mentransfer data sebanyak-banyaknya, yang dimulai dengan pesan Anda yang terbaru."

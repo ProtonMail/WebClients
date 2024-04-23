@@ -556,6 +556,9 @@
       "Remove": [
         "Borrar"
       ],
+      "Remove access": [
+        "Borrar el acceso"
+      ],
       "Remove bonuses": [
         "Borrar los beneficios"
       ],
@@ -567,6 +570,9 @@
       ],
       "Remove gift code": [
         "Borrar el código de regalo"
+      ],
+      "Remove me": [
+        "Borrarme"
       ],
       "Rename": [
         "Renombrar"
@@ -4466,6 +4472,9 @@
         "Solo ${ MAX_CUSTOM_PASSWORD_LENGTH } caracter está permitido",
         "Solo ${ MAX_CUSTOM_PASSWORD_LENGTH } caracteres están permitidos"
       ],
+      "Only the owner of the share will be able to invite you again.": [
+        "Solo quien haya creado del enlace podrá invitarle nuevamente."
+      ],
       "Only the people with the link and the password can access this file.": [
         "Solo las personas con el enlace y la contraseña pueden acceder a este archivo."
       ],
@@ -5114,6 +5123,9 @@
       "You will lose all unsaved changes.": [
         "Perderá todos los cambios sin guardar."
       ],
+      "You will not be able to join again after.": [
+        "No podrá unirse nuevamente"
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Pronto será redirigido a PayPal para verificar su pago."
       ],
@@ -5444,9 +5456,6 @@
         "¿Eliminar unidad?",
         "¿Eliminar unidades?"
       ],
-      "Delete link": [
-        "Eliminar enlace"
-      ],
       "Delete recovery-related information.": [
         "Eliminar información de recuperación relacionada."
       ],
@@ -5705,6 +5714,9 @@
       "Region": [
         "Estado"
       ],
+      "Remove access": [
+        "Borrar acceso"
+      ],
       "Replace existing file": [
         "Reemplazar archivo existente"
       ],
@@ -5761,6 +5773,9 @@
       ],
       "Stolen data": [
         "Datos robados"
+      ],
+      "Stop sharing": [
+        "Dejar de compartir"
       ],
       "Street address": [
         "Dirección de calle"
@@ -7226,10 +7241,16 @@
         "${ numberOfItems } enlaces a su elementos fueron eliminados"
       ],
       "${ reason } has been disabled": [
-        "${ reason } se ha desactivado"
+        "Se ha desactivado ${ reason }."
       ],
       "${ reason } has been enabled": [
-        "${ reason } se ha activado"
+        "Se ha activado ${ reason }."
+      ],
+      "Access for the member removed": [
+        "Acceso para el miembro borrado"
+      ],
+      "Access updated and shared": [
+        "Acceso actualizado y compartido"
       ],
       "All items will soon be permanently deleted from trash": [
         "Todos los elementos serán eliminados permanentemente de la papelera"
@@ -7270,6 +7291,9 @@
       "Failed to move, please try again": [
         "Error al mover, inténtelo de nuevo"
       ],
+      "Failed to remove the file": [
+        "Ocurrió un error al borrar el archivo"
+      ],
       "Failed to upload files: ${ err }": [
         "Error al cargar los archivos: ${ err }"
       ],
@@ -7282,6 +7306,12 @@
       ],
       "File or folder is missing a name": [
         "Falta el nombre del archivo o carpeta"
+      ],
+      "File removed": [
+        "Archivo borrado"
+      ],
+      "Invitation removed from the share": [
+        "Invitación borrada de los compartidos"
       ],
       "Link copied to clipboard": [
         "El enlace fue copiado al portapapeles"
@@ -7310,6 +7340,9 @@
       "Share invitation ID was not found. Please check the link": [
         "ID de invitación compartida no encontrada. Revise el enlace"
       ],
+      "Stopping to share this item has failed": [
+        "Ocurrió un error al dejar de compartir este elemento"
+      ],
       "Subfolder failed to be loaded": [
         "Error al cargar la subcarpeta"
       ],
@@ -7327,6 +7360,9 @@
       ],
       "Trash failed to be emptied": [
         "Error al vaciar la papelera"
+      ],
+      "You stopped to share this item": [
+        "Ha dejado de compartir este elemento"
       ],
       "Your old files will be deleted in 72 hours": [
         "Sus archivos antiguos serán eliminados en 72 horas"
@@ -8699,6 +8735,9 @@
       "Are you sure you want to close the preview?": [
         "¿Está seguro de que quiere cerrar la vista previa?"
       ],
+      "Are you sure you want to leave this share?": [
+        "¿En verdad desea abandonar este enlace compartido?"
+      ],
       "Billing cycle": [
         "Ciclo de facturación"
       ],
@@ -9222,6 +9261,9 @@
       "You have no folders yet": [
         "Aún no tiene carpetas"
       ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Su prueba gratuita de ${ planName } termina el ${ textDate }."
+      ],
       "Your 3 GB bonus": [
         "Su bono de 3 GB"
       ],
@@ -9233,9 +9275,6 @@
       ],
       "Your exposed information": [
         "Su información expuesta"
-      ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "Su prueba gratuita de Mail Plus termina en ${ textDate }"
       ],
       "Your welcome actions": [
         "Sus acciones de bienvenida"

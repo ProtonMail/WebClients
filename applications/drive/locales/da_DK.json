@@ -284,7 +284,7 @@
         "Download-logfiler"
       ],
       "Drive Locked": [
-        "Drev låst"
+        "Drive låst"
       ],
       "Edit": [
         "Redigér"
@@ -442,6 +442,9 @@
       "Manage link": [
         "Håndter link"
       ],
+      "Mark as resolved": [
+        "Markér som løst"
+      ],
       "Mark for deletion": [
         "Markér til sletning"
       ],
@@ -553,6 +556,9 @@
       "Remove": [
         "Fjern"
       ],
+      "Remove access": [
+        "Fjern adgang"
+      ],
       "Remove bonuses": [
         "Fjern bonusser"
       ],
@@ -576,6 +582,9 @@
       ],
       "Report an issue": [
         "Anmeld en fejl"
+      ],
+      "Request a call": [
+        "Anmod om opkald"
       ],
       "Request a feature": [
         "Anmod om en funktion"
@@ -825,6 +834,9 @@
       ],
       "View": [
         "Vis"
+      ],
+      "View all reports": [
+        "Se alle rapporter"
       ],
       "View invoice": [
         "Vis faktura"
@@ -1151,6 +1163,9 @@
       ],
       "Continue using ${ planTitle }": [
         "Fortsæt med at bruge ${ planTitle }"
+      ],
+      "Continue your subscription": [
+        "Fortsæt dit abonnement"
       ]
     },
     "Checkout row": {
@@ -1282,7 +1297,7 @@
         "Navn"
       ],
       "Note": [
-        "Notat"
+        "Note"
       ],
       "Organization": [
         "Organisation"
@@ -2493,7 +2508,7 @@
         "IMAP-server er påkrævet."
       ],
       "Incorrect password. Please try again.": [
-        "Forkert adgangskode, prøv venligst igen."
+        "Forkert adgangskode. Prøv venligst igen."
       ],
       "Incorrect username": [
         "Forkert brugernavn"
@@ -3771,7 +3786,7 @@
         "Et nummer vil blive tilføjet filnavnet"
       ],
       "A number will be added to the folder name": [
-        "Et nummer vil blive tilføjet mappens navn"
+        "Et nummer vil blive tilføjet mappenavnet"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Et telefonnummer kan kun bruges til at verificere én ${ BRAND_NAME } konto"
@@ -4103,7 +4118,7 @@
         "End-to-End Krypteret"
       ],
       "Enter password": [
-        "Angiv adgangskode"
+        "Indtast adgangskode"
       ],
       "Enter the code from your authenticator app": [
         "Indtast koden fra din godkendelsesapp"
@@ -4182,7 +4197,7 @@
         "Mappen mangler sin signatur. Vi kunne ikke verificere, hvem der uploadede ${ fileName }."
       ],
       "Folder will not be uploaded": [
-        "Mappen vil ikke blive uploadet"
+        "Mappe vil ikke blive uploadet"
       ],
       "Folders you sync from your computer will appear here.": [
         "De mapper, du synkroniserer fra din computer, vises her."
@@ -4209,7 +4224,7 @@
         "Gå til \"Mine filer\" og upload nogle filer først."
       ],
       "here": [
-        "hér"
+        "her"
       ],
       "High Priority": [
         "Høj prioritet"
@@ -4320,6 +4335,9 @@
       "Last week": [
         "Sidste uge"
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Lær, hvordan du ${ staySaferOnlineLink }"
+      ],
       "Learn more": [
         "Få mere at vide"
       ],
@@ -4327,13 +4345,16 @@
         "Link kopieret til udklipsholder"
       ],
       "Link owner has the password": [
-        "Link-ejeren har koden"
+        "Link-ejeren har adgangskoden"
       ],
       "Loading": [
         "Indlæser"
       ],
       "Loading ${ appName }": [
         "Indlæser ${ appName }"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Indlæser kalender, vent venligst. Du vil blive omdirigeret til vores planlægningsplatform Calendly i en ny fane."
       ],
       "Loading link": [
         "Indlæser link"
@@ -4424,7 +4445,7 @@
         "Ugyldig URL"
       ],
       "Not all files were transferred. Try uploading or downloading the files again.": [
-        "Nogle filer blev ikke overført. Prøv at overføre eller hente filerne igen."
+        "Nogle filer blev ikke overført. Prøv at uploade eller downloade filerne igen."
       ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Bemærk: Data kan stadig være tilgængelige lokalt på enheder, hvor du har installeret ${ DRIVE_APP_NAME }."
@@ -4517,6 +4538,9 @@
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Vælg hvilken eller hvilke e-mail-adresser der skal føjes til ${ groupName }."
+      ],
+      "Please try again in a few moments": [
+        "Forsøg igen om et øjeblik"
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Prøv igen med en anden betalingsmetode, eller kontakt din bank."
@@ -4743,6 +4767,9 @@
       ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
         "De krypterede data er en smule større på grund af overheadomkostningerne ved krypteringen og signaturerne, som garanterer sikkerheden for dine data."
+      ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "De eksponerede oplysninger blev lækket fra en tredjepartstjeneste. Din ${ BRAND_NAME }-kontooplysninger er stadig sikre og krypterede. ${ learnMoreLink }"
       ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Der kan være blevet manipuleret med følgende: ${ items }. Åbn kun, hvis du har tillid til den."
@@ -4973,6 +5000,9 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Du omdirigeres til PayPal i en ny browserfane for at gennemføre denne transaktion. Benytter du evt. pop-up blockere, så deaktivér venligst disse for at fortsætte."
       ],
+      "We'll email you once import is complete.": [
+        "Vi sender dig en e-mail, når importen er færdig."
+      ],
       "We'll notify you when the import is done.": [
         "Vi giver dig besked, når importen er færdig."
       ],
@@ -5030,6 +5060,9 @@
       "You can check the progress ${ importProgressLink }.": [
         "Du kan tjekke fremskridtet ${ importProgressLink }."
       ],
+      "You can close the tab or browser in the meantime.": [
+        "Du kan lukke fanen eller browseren i mellemtiden."
+      ],
       "You can import one data type at a time.": [
         "Du kan importere én datatype ad gangen."
       ],
@@ -5053,6 +5086,12 @@
       "You have ${ expiresInDays } day left to claim your 3 GB welcome bonus and ": [
         "Du har ${ expiresInDays } dag tilbage til at få dine 3 GB velkomstbonus og ",
         "Du har ${ expiresInDays } dage tilbage til at få dine 3 GB velkomstbonus og "
+      ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "Du har et ${ planTitle }-prøveabonnement. Hvis du gerne vil fortsætte dit abonnement efter prøveperioden, skal du tilføje en betalingsmetode."
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "Du har et ${ planTitle }-prøveabonnement. Der kræves ingen betaling på dette tidspunkt. Dit abonnement vil automatisk blive fornyet ved prøveperiodens udløb."
       ],
       "You may be redirected to your bank’s website.": [
         "Du vil muligvis blive omdirigeret til din banks hjemmeside."
@@ -5108,6 +5147,12 @@
       "Your download is in progress": [
         "Din download er i gang"
       ],
+      "Your email address and password were leaked:": [
+        "Din e-mailadresse og adgangskode er blevet lækket:"
+      ],
+      "Your email address was exposed:": [
+        "Din e-mailadresse blev eksponeret:"
+      ],
       "Your email will only be used for this one-time verification.": [
         "Din e-mail vil kun blive brugt til denne engangsbekræftelse."
       ],
@@ -5120,11 +5165,17 @@
       "Your files will be encrypted and then saved.": [
         "Dine filer vil blive krypteret og derefter gemt."
       ],
+      "Your information was found on ${ displayedDate }": [
+        "Dine oplysninger blev fundet ${ displayedDate }"
+      ],
       "Your login information will not be saved after the import is completed.": [
         "Dine loginoplysninger vil ikke blive gemt, når importen er gennemført."
       ],
       "Your next billing date is ${ renewalTime }.": [
         "Din næste faktureringsdato er ${ renewalTime }."
+      ],
+      "Your password was leaked:": [
+        "Din adgangskode er blevet lækket:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Dit telefonnummer vil kun blive anvendt til denne engangsbekræftelse."
@@ -5386,9 +5437,6 @@
       "Delete drive?": [
         "Slet drev?",
         "Slet drev?"
-      ],
-      "Delete link": [
-        "Slet link"
       ],
       "Delete recovery-related information.": [
         "Slet gendannelsesrelaterede oplysninger."
@@ -5853,7 +5901,7 @@
         "Hvordan betaler man med Bitcoin?"
       ],
       "Learn more": [
-        "Få yderligere information"
+        "Få mere at vide"
       ],
       "Pay invoice": [
         "Betal faktura"
@@ -6397,7 +6445,7 @@
         "Kalenderdeling"
       ],
       "Catch-all": [
-        "Fang-alle"
+        "Catch-all"
       ],
       "Centralized billing": [
         "Samlet fakturering"
@@ -7131,7 +7179,7 @@
         "Kunne ikke acceptere invitation til at dele"
       ],
       "Failed to download files: ${ err }": [
-        "Kunne ikke uploade filer: ${ err }"
+        "Kunne ikke downloade filer: ${ err }"
       ],
       "Failed to move, please try again": [
         "Flytning mislykkedes. Forsøg venligst igen"
@@ -7628,6 +7676,9 @@
       ]
     },
     "Security Center - Info": {
+      "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
+        "Få besked, hvis din adgangskode eller andre data er blevet lækket fra en tredjepartstjeneste. ${ learnMoreLink }"
+      ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Vores banebrydende AI-drevne sikkerhedsløsning designet til brugere, der søger øget beskyttelse for deres konto. ${ learnMoreLink }"
       ],
@@ -8669,6 +8720,9 @@
       "Deleting contacts": [
         "Sletter kontakter"
       ],
+      "Details": [
+        "Detaljer"
+      ],
       "Discard": [
         "Kassér"
       ],
@@ -9017,7 +9071,7 @@
         "Denne mappe har en manglende eller ugyldig signatur. Gå til Menu (⋮) → Detaljer for info."
       ],
       "This link is password protected": [
-        "Linket er adgangskodebeskyttet"
+        "Dette link er adgangskodebeskyttet"
       ],
       "Total size": [
         "Samlet størrelse"
@@ -9085,8 +9139,8 @@
       "Your changes are not synced yet": [
         "Dine ændringer er endnu ikke synkroniseret"
       ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "Din Mail Plus prøveperiode slutter ${ textDate }"
+      "Your exposed information": [
+        "Dine blotlagte oplysninger"
       ],
       "Your welcome actions": [
         "Dine velkomsthandlinger"
