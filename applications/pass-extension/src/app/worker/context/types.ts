@@ -1,6 +1,6 @@
 import type { AuthService } from '@proton/pass/lib/auth/service';
 import type { AuthStore } from '@proton/pass/lib/auth/store';
-import type { PassCoreService } from '@proton/pass/lib/core/service';
+import type { PassCoreService } from '@proton/pass/lib/core/types';
 import type { AppState, AppStatus, MaybeNull } from '@proton/pass/types';
 
 import type { ActivationService } from '../services/activation';
