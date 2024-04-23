@@ -1064,8 +1064,8 @@
       "Upload": [
         "Last opp"
       ],
-      "Upload icon": [
-        "Last opp ikon"
+      "Upload logo": [
+        "Last opp logo"
       ],
       "Upload picture": [
         "Last opp bilde"
@@ -3333,14 +3333,6 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Hjelp oss å bli bedre!"
-      ]
-    },
-    "Download link": {
-      ".deb for Debian / Ubuntu": [
-        ".deb for Debian / Ubuntu"
-      ],
-      ".rpm for Fedora / Red Hat": [
-        ".rpm for Fedora / Red Hat"
       ]
     },
     "drive_signup_2023: Info": {
@@ -5979,9 +5971,6 @@
       "${ BRAND_NAME } is privacy you can trust, ensured by strong encryption, open-source code, and Swiss privacy laws. We believe nobody should be able to exploit your data, period. Our technology and business are based upon this fundamentally stronger definition of privacy.": [
         "${ BRAND_NAME } er personvern du kan klarére, sikret av sterk kryptering, åpen kildekode og sveitsiske personvernlover. Vi mener at ingen skal kunne utnytte dataene dine, punktum. Vår teknologi og virksomhet er basert på denne fundamentalt sterkere definisjonen av personvern."
       ],
-      "${ BRAND_NAME } never shares your information with third parties. Data comes from  ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
-        "${ BRAND_NAME } deler aldri informasjonen din med tredjeparter. Data kommer fra ${ BRAND_NAME }s egne analyser og Constella Etterretning."
-      ],
       "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "${ BRAND_NAME } satte en import på pause fordi det mistet forbindelsen med din e-posttilbyder. Vennligst koble opp på nytt."
       ],
@@ -6212,6 +6201,9 @@
       "Add server (${ availableAddedCount } available)": [
         "Legg til tjener (${ availableAddedCount }) tilgjengelig",
         "Legg til tjenere (${ availableAddedCount }) tilgjengelige"
+      ],
+      "Add your name and logo to create a more personalized experience for your organization.": [
+        "Legg til navn og logo for å opprette en mer personlig opplevelse for organisasjonen."
       ],
       "Adding ${ addedServerCount } gateway server": [
         "Legger til ${ addedServerCount } mellomtjener",
@@ -6753,9 +6745,6 @@
       ],
       "Failed to fetch logs.": [
         "Kunne ikke hente logger."
-      ],
-      "Fast and focused. Email and calendar, right on your desktop.": [
-        "Rask og fokusert. E-post og kalender, rett på skrivebordet."
       ],
       "Fill in user details": [
         "Fyll ut brukerinformasjon"
@@ -7664,9 +7653,6 @@
       "The link to report that that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "Koblingen for å rapportere at du ikke konfigurerte en ${ BRAND_NAME }-konto er utløpt. Vennligst kom i kontakt med vår kundestøtte for å løse denne saken."
       ],
-      "The name and icon will be visible to your users while they are signed in.": [
-        "Navnet og ikonet vil være synlig for brukerne mens de er logget på."
-      ],
       "The name will be visible to your users while they are signed in.": [
         "Navnet vil være synlig for brukerne dine mens de er innlogget."
       ],
@@ -8014,9 +8000,6 @@
       ],
       "We just sent you a new link.": [
         "Vi sendte deg nettopp en kobling."
-      ],
-      "We monitor the dark web for instances where your personal information (such as an email address or password used on a third-party site) is leaked or compromised. ${ dataBreachLink }": [
-        "Vi overvåker det mørke nettet for tilfeller der din personlige informasjon (som en e-postadresse eller passord brukt på en tredjepartsside) lekkes eller kompromitteres. ${ dataBreachLink }."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Vi trenger å autentisere betalingsmåten med banken din."
@@ -8930,9 +8913,6 @@
       ],
       "Awarded": [
         "Belønnet"
-      ],
-      "Beta": [
-        "Testversjon"
       ],
       "Billing address": [
         "Fakturaadresse"
@@ -10087,6 +10067,9 @@
       ]
     },
     "Log preference": {
+      "Enable ${ reason }": [
+        "Aktiver ${ reason }"
+      ],
       "Enable advanced logs": [
         "Aktiver avanserte logger"
       ],
@@ -11433,11 +11416,23 @@
       "${ Filter.Name } created": [
         "${ Filter.Name } opprettet"
       ],
+      "${ reason } has been disabled": [
+        "${ reason } er deaktivert"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } er aktivert"
+      ],
       "A disabled address cannot be default": [
         "Kan ikke angi en deaktivert adresse som standard"
       ],
       "An external address cannot be default": [
         "Kan ikke angi en ekstern adresse som standard"
+      ],
+      "Dark Web Monitoring has been disabled": [
+        "Overvåking av det mørke nettet er deaktivert"
+      ],
+      "Dark Web Monitoring has been enabled": [
+        "Overvåking av det mørke nettet er aktivert"
       ],
       "Invalid code": [
         "Ugyldig kode"
@@ -11866,17 +11861,20 @@
       "Avoid overly compressed images.": [
         "Unngå altfor komprimerte bilder."
       ],
-      "Ensure your icon has padding space around it.": [
-        "Sørg for at ikonet ditt har rom for utfylling rundt seg."
+      "Ensure your logo has padding space around it.": [
+        "Sørg for at logoen har rom for utfylling rundt seg."
       ],
       "Opt for a PNG image that is a 128x128 pixels for clarity.": [
         "Velg et PNG-bilde som er 128x128 piksler for klarhet."
       ],
-      "Tips on choosing a good icon": [
-        "Tips for å velge et godt ikon"
+      "Tips on choosing a good logo": [
+        "Tips for å velge en god logo"
       ],
       "Use a graphical icon or image rather than text.": [
         "Bruk et grafisk ikon eller bilde i stedet for tekst."
+      ],
+      "Use a solid background color.": [
+        "Bruk en solid bakgrunnsfarge."
       ]
     },
     "Organization logo upload modal": {
@@ -12819,9 +12817,6 @@
       ],
       "The SCIM base URL and token will be deleted.": [
         "SCIM-grunnadressen og tokenet vil bli slettet."
-      ],
-      "To re-enable syncing with your identity provider, your need to complete the SCIM integration again.": [
-        "For å aktivere synkronisering med identitetsleverandøren på nytt, må du fullføre SCIM-integreringen på nytt."
       ]
     },
     "scim: Label": {
@@ -12854,6 +12849,11 @@
         "Nettadresse til SCIM-koblingen som din IdP-klargjøringsagent videresender SCIM-data til."
       ]
     },
+    "Security Center - Info": {
+      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLinkBreach }": [
+        "Informasjonen din ble funnet i minst ett datainnbrudd. Slå på ${ DARK_WEB_MONITORING_NAME } for å vise detaljer og iverksette tiltak. ${ learnMoreLinkBreach }."
+      ]
+    },
     "Select file": {
       "Upload CSV file": [
         "Last opp en CSV-fil"
@@ -12868,6 +12868,17 @@
       ],
       "Upload additional files": [
         "Last opp yttereligere filer"
+      ]
+    },
+    "Select invoice document": {
+      "Credit note": [
+        "Kreditnota"
+      ],
+      "Currency conversion": [
+        "Valutakonvertering"
+      ],
+      "Invoice": [
+        "Faktura"
       ]
     },
     "Select search results": {
@@ -13801,6 +13812,156 @@
         "For"
       ]
     },
+    "Subscription reminder": {
+      "${ BRAND_NAME } was targeted by Russia in one of the most aggressive censorship campaigns in recent memory, and our team fought back.": [
+        "${ BRAND_NAME } ble målrettet av Russland i en av de mest aggressive sensurkampanjene i nyere minne, og teamet vårt kjempet tilbake."
+      ],
+      "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
+        "${ BRAND_NAME }s eneste inntektskilde er brukerabonnementer. Din støtte gjør det mulig for oss å forbli uavhengige, fremme vårt oppdrag om å gjøre personvern til standard på nettet, og fortsette å støtte aktivister og organisasjoner som kjemper for personvern og frihet."
+      ],
+      "${ dayDiff } day left": [
+        "${ dayDiff } dag igjen",
+        "${ dayDiff } dager igjen"
+      ],
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME }-skrivebordsapp"
+      ],
+      "${ planMaxSpace } total storage": [
+        "${ planMaxSpace } total lagring"
+      ],
+      "${ planName } doesn't just provide extra storage. It lets you manage your emails faster, customize your inbox and email addresses, and access the desktop app.": [
+        "${ planName } gir ikke bare ekstra lagringsplass. Den lar deg administrere e-postene dine raskere, tilpasse innboksen og e-postadressene dine og få tilgang til skrivebordsappen."
+      ],
+      "10 email addresses": [
+        "10 e-postadresser"
+      ],
+      "A direct contribution to our mission": [
+        "Et direkte bidrag til vårt oppdrag"
+      ],
+      "After ${ BRAND_NAME } got blocked in Iran during protests, our customer support team worked to get our VPN app directly into people's hands.": [
+        "Etter at ${ BRAND_NAME } ble blokkert i Iran under protester, jobbet kundestøtteteamet vårt for å få VPN-appen vår direkte i folks hender."
+      ],
+      "After privacy and free speech were threatened in Hong Kong, we directly supported local civil rights organizations.": [
+        "Etter at personvern og ytringsfrihet ble truet i Hong Kong, støttet vi direkte lokale borgerrettighetsorganisasjoner."
+      ],
+      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **1 GB** for Mail, and **1 GB** for Drive. You will also lose any storage bonuses earned previously.": [
+        "Ved å kansellere ${ planName }-abonnementet vil lagringsplassen din reduseres fra **${ planMaxSpace }** til **1 GB** for e-post, og **1 GB** for Drive. Du vil også miste eventuelle lagringsbonuser opptjent tidligere."
+      ],
+      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **1 GB** for Mail, and **5 GB** for Drive. You will also lose any storage bonuses earned previously.": [
+        "Ved å kansellere ${ planName }-abonnementet vil lagringsplassen din reduseres fra **${ planMaxSpace }** til **1 GB** for e-post, og **5 GB** for Drive. Du vil også miste eventuelle lagringsbonuser opptjent tidligere."
+      ],
+      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **500 MB** for Mail, and **1 GB** for Drive. You will also lose any storage bonuses earned previously.": [
+        "Ved å kansellere ${ planName }-abonnementet vil lagringsplassen din reduseres fra **${ planMaxSpace }** til **500 MB** for e-post, og **1 GB** for Drive. Du vil også miste eventuelle lagringsbonuser opptjent tidligere."
+      ],
+      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **500 MB** for Mail, and **5 GB** for Drive. You will also lose any storage bonuses earned previously.": [
+        "Ved å kansellere ${ planName }-abonnementet vil lagringsplassen din reduseres fra **${ planMaxSpace }** til **500 MB** for e-post, og **5 GB** for Drive. Du vil også miste eventuelle lagringsbonuser opptjent tidligere."
+      ],
+      "By downgrading your account, you will also lose storage space": [
+        "Ved å nedgradere kontoen din, vil du også miste lagringsplass"
+      ],
+      "By downgrading your account, you will lose access to these important features": [
+        "Ved å nedgradere kontoen din, mister du tilgangen til disse viktige funksjonene"
+      ],
+      "Calendar sharing": [
+        "Kalenderdeling"
+      ],
+      "Cancel subscription": [
+        "Avbryt abonnement"
+      ],
+      "Cancel subscription?": [
+        "Avbryte abonnement?"
+      ],
+      "Close": [
+        "Lukk"
+      ],
+      "Custom schedule send and snooze times": [
+        "Egendefinerte tidsplaner, sende- og utsettelsestider"
+      ],
+      "Have a question?": [
+        "Har du et spørsmål?"
+      ],
+      "Helping activists in Hong Kong": [
+        "Hjelper aktivister i Hong Kong"
+      ],
+      "I still want to cancel": [
+        "Jeg ønsker fremdeles å avbryte"
+      ],
+      "If you exceed your free Drive storage quota:": [
+        "Hvis du overskrider den gratis lagringskvoten for Drive:"
+      ],
+      "If you exceed your free Mail storage quota:": [
+        "Hvis du overskrider den gratis kvoten for e-post-lagring:"
+      ],
+      "Keep ${ planName }": [
+        "Behold ${ planName }"
+      ],
+      "Learn more about our impact": [
+        "Finn ut mer om innvirkningen vår"
+      ],
+      "Let us remind you of everything ${ planName } can do": [
+        "La oss minne deg på alt ${ planName } kan gjøre"
+      ],
+      "Our fight against censorship in Russia": [
+        "Vår kamp mot sensur i Russland"
+      ],
+      "Priority support": [
+        "Prioritert brukerstøtte"
+      ],
+      "Read the story": [
+        "Les historien"
+      ],
+      "Resubscribe": [
+        "Abonner på nytt"
+      ],
+      "Resubscribe to restore access to ${ planName } features.": [
+        "Abonner på nytt for å gjenopprette tilgangen til ${ planName }-funksjoner."
+      ],
+      "Subscription canceled": [
+        "Abonnement kansellert"
+      ],
+      "Unblocking internet access in Iran": [
+        "Opphever blokkering av internettilgang i Iran"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Ubegrenset antall mapper, etiketter og filtre"
+      ],
+      "Watch the interview": [
+        "Se intervjuet"
+      ],
+      "When you cancel, you will lose access to": [
+        "Når du avbryter, mister du tilgangen til"
+      ],
+      "Yearly free storage bonuses": [
+        "Årlige gratis lagringsbonuser"
+      ],
+      "You **won't be able to add any new files**": [
+        "Du **vil ikke kunne legge til nye filer**"
+      ],
+      "You **won't be able to backup photos** from your devices": [
+        "Du **vil ikke kunne sikkerhetskopiere bilder** fra enhetene dine"
+      ],
+      "You **won't be able to send emails** with attachments": [
+        "Du **vil ikke kunne sende e-post** med vedlegg"
+      ],
+      "You still have ${ expiryDate } on your ${ planName } plan. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling.": [
+        "Du har fortsatt ${ expiryDate } på ${ planName }-planen. Vi legger kreditten for den gjenstående tiden til ${ BRAND_NAME }-kontoen din. Forsikre deg om at du ikke overskrider grensene for gratis plan før du kansellerer."
+      ],
+      "Your **calendar will be frozen**": [
+        "**kalenderen din blokkeres**"
+      ],
+      "Your devices will **stop syncing**": [
+        "Enhetene dine vil **slutte å synkronisere**"
+      ],
+      "Your inbox will **stop receiving new emails**": [
+        "Innboksen din vil **slutte å motta nye e-poster**"
+      ],
+      "Your own custom email domain": [
+        "Ditt eget tilpasset e-postdomene"
+      ],
+      "Your own short @pm.me email alias": [
+        "Ditt eget korte @pm.me e-postalias"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Er du sikker?"
@@ -14527,6 +14688,9 @@
       "Custom selection of users": [
         "Tilpasset valg av brukere"
       ],
+      "Customization": [
+        "Tilpasning"
+      ],
       "Customize and confirm": [
         "Tilpass og bekreft"
       ],
@@ -14745,15 +14909,6 @@
       "Folders and labels": [
         "Mapper og etiketter"
       ],
-      "For Linux": [
-        "For Linux"
-      ],
-      "For macOS": [
-        "For macOS"
-      ],
-      "For Windows": [
-        "For Windows"
-      ],
       "Forward and auto-reply": [
         "Videresend og autosvar"
       ],
@@ -14793,8 +14948,8 @@
       "How does it work?": [
         "Hvordan fungerer det?"
       ],
-      "How to choose a good icon": [
-        "Hvordan velge et godt ikon"
+      "How to choose a good logo": [
+        "Hvordan velge en god logo"
       ],
       "How to refer a friend and get credits": [
         "Hvordan verve en venn og få kreditter"
@@ -15266,6 +15421,15 @@
       "WireGuard configuration": [
         "WireGuard-konfigurering"
       ],
+      "You have no open alerts": [
+        "Du har ingen åpne varsler"
+      ],
+      "You have no resolved alerts": [
+        "Du har ingen løste varsler"
+      ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Din gratis prøveversjon av ${ planName } slutter den ${ textDate }."
+      ],
       "Your calendar link": [
         "Din kalenderkobling"
       ],
@@ -15274,9 +15438,6 @@
       ],
       "Your exposed information": [
         "Din eksponerte informasjon"
-      ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "Din gratis prøveversjon av Mail Plus slutter den ${ textDate }."
       ],
       "Your plan": [
         "Din plan"

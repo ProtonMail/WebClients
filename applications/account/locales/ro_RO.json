@@ -620,6 +620,12 @@
       "Mark as default": [
         "Setare ca implicită"
       ],
+      "Mark as open": [
+        "Marcare ca deschis"
+      ],
+      "Mark as resolved": [
+        "Marcare ca rezolvată"
+      ],
       "mark emails as": [
         "marcare mesaje ca"
       ],
@@ -754,6 +760,9 @@
       ],
       "Report a problem": [
         "Raportare problemă"
+      ],
+      "Request a call": [
+        "Solicitați un apel"
       ],
       "Request a feature": [
         "Solicitare funcție"
@@ -1075,6 +1084,9 @@
       ],
       "View": [
         "Afișare"
+      ],
+      "View all reports": [
+        "Afișare toate rapoartele"
       ],
       "View invoice": [
         "Afișare factură"
@@ -1655,6 +1667,9 @@
       ],
       "Continue using ${ planTitle }": [
         "Continuare utilizare ${ planTitle }"
+      ],
+      "Continue your subscription": [
+        "Păstrare abonament"
       ],
       "Copy": [
         "Copiere"
@@ -3279,14 +3294,6 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Ajutaţi-ne să ne îmbunătățim!"
-      ]
-    },
-    "Download link": {
-      ".deb for Debian / Ubuntu": [
-        ".deb pentru Debian/Ubuntu"
-      ],
-      ".rpm for Fedora / Red Hat": [
-        ".rpm pentru Fedora/Red Hat"
       ]
     },
     "drive_signup_2023: Info": {
@@ -6955,6 +6962,9 @@
       "Lean more about single sign-on": [
         "Aflați mai multe despre autentificarea unică"
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Aflați cum să ${ staySaferOnlineLink }"
+      ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Aflați cum să vă conectați la ${ VPN_APP_NAME } cu aplicații VPN terțe."
       ],
@@ -6993,6 +7003,9 @@
       ],
       "Loading ${ appName }": [
         "Se încarcă ${ appName }"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Calendarul se încarcă, așteptați. Pagina se va redirecționa către platforma noastră de programări Calendly într-o filă nouă."
       ],
       "Loading preview": [
         "Se încarcă previzualizarea"
@@ -7158,6 +7171,9 @@
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Mai există și alți administratori în cadrul organizației și va trebui să le comunicați noua parolă."
+      ],
+      "Other users within your organization will see your busy slots. No event details are shared.": [
+        "Alți utilizatori din organizație vă vor vedea perioadele când aveți activități. Detaliile despre eveniment nu sunt distribuite."
       ],
       "Outdated recovery file; update to ensure access to your data": [
         "Fișier de recuperare învechit. Actualizați-l pentru a vă asigura accesul la date."
@@ -7568,6 +7584,9 @@
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "Legătura de verificare a e-mailului a expirat. Reconectați-vă pentru a vi se retrimite legătura de verificare."
       ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "Informațiile expuse au fost divulgate de la un serviciu terță parte. Informațiile contului ${ BRAND_NAME } rămân securizate și criptate. ${ learnMoreLink }"
+      ],
       "The following address is available:": [
         "Este disponibilă următoarea adresă:"
       ],
@@ -7964,6 +7983,9 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Pentru finalizarea tranzacției prin PayPal se va deschide o filă nouă. Dacă folosiți programe de blocat ferestre flotante dezactivați-le înainte de a continua."
       ],
+      "We'll email you once import is complete.": [
+        "Vă vom anunța pe e-mail după finalizarea importării."
+      ],
       "We'll get back to you shortly.": [
         "Vom reveni în curând."
       ],
@@ -8070,6 +8092,9 @@
       "You can check the progress ${ importProgressLink }.": [
         "Puteți verifica progresul ${ importProgressLink }."
       ],
+      "You can close the tab or browser in the meantime.": [
+        "Puteți închide fila sau navigatorul web între timp."
+      ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Puteți edita aceasta o dată pentru a vă asigura că este adresa de e-mail corectă pentru verificare."
       ],
@@ -8131,6 +8156,12 @@
         "Aveți ${ availableCount } server dedicat disponibil.",
         "Aveți ${ availableCount } servere dedicate disponibile.",
         "Aveți ${ availableCount } de servere dedicate disponibile."
+      ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "Aveți un abonament ${ planTitle } de probare. Dacă doriți să vă continuați abonamentul după perioada de probare, adăugați o metodă de plată."
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "Aveți un abonament ${ planTitle } de probare. Nu este necesară nici o plată în acest moment. Abonamentul se va reînnoi automat la sfârșitul perioadei de probare."
       ],
       "You have no calendars to export.": [
         "Nu aveți calendare de exportat."
@@ -8247,6 +8278,9 @@
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Informațiile vă sunt în siguranță la noi. Vă vom contacta doar atunci când este necesar să vă furnizăm serviciile."
+      ],
+      "Your information was found on ${ displayedDate }": [
+        "Informațiile v-au fost găsite la ${ displayedDate }"
       ],
       "Your login information will not be saved after the import is completed.": [
         "Informațiile de conectare nu vor fi salvate după terminarea importării."
@@ -8712,6 +8746,9 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Temporar indisponibil. Vă rugăm să reveniți mai târziu.)"
+      ],
+      "Access to my events": [
+        "Acces la evenimentele mele"
       ],
       "Account storage": [
         "Spațiu cont"
@@ -9429,6 +9466,9 @@
       ],
       "Send in": [
         "Trimitere în"
+      ],
+      "Show others when I'm busy": [
+        "Afișare celorlalți când sunt ocupat(ă)"
       ],
       "Show secondary time zone": [
         "Afișare fus orar secundar"
@@ -12658,6 +12698,11 @@
         "Încărcare fișiere adiționale"
       ]
     },
+    "Select invoice document": {
+      "Currency conversion": [
+        "Conversie valutară"
+      ]
+    },
     "Select search results": {
       "Check your spelling or select a country from the list.": [
         "Verificați ortografia sau selectați o țară din listă."
@@ -14427,6 +14472,9 @@
       "Delete version history?": [
         "Ștergeți istoricul versiunilor?"
       ],
+      "Details": [
+        "Detalii"
+      ],
       "Disable ${ email }": [
         "Dezactivare ${ email }"
       ],
@@ -15069,8 +15117,8 @@
       "Your changes are not synced yet": [
         "Modificările nu sunt încă sincronizate"
       ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "Perioada de încercare pentru Mail Plus se încheie la ${ textDate } "
+      "Your exposed information": [
+        "Informațiile expuse"
       ],
       "Your plan": [
         "Plan actual"

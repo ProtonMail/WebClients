@@ -1085,6 +1085,9 @@
       "View": [
         "Bekijken"
       ],
+      "View all reports": [
+        "Bekijk alle rapporten"
+      ],
       "View invoice": [
         "Factuur bekijken"
       ],
@@ -3278,14 +3281,6 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Help ons verbeteren!"
-      ]
-    },
-    "Download link": {
-      ".deb for Debian / Ubuntu": [
-        ".deb voor Debian / Ubuntu"
-      ],
-      ".rpm for Fedora / Red Hat": [
-        ".rpm voor Fedora / Red Hat"
       ]
     },
     "drive_signup_2023: Info": {
@@ -7910,6 +7905,9 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "We verwijzen u naar PayPal in een nieuw browsertabblad om de transactie te voltooien. Als u een pop-up blocker gebruikt, schakel deze dan uit alvorens door te gaan."
       ],
+      "We'll email you once import is complete.": [
+        "We sturen je een e-mail zodra de import voltooid is."
+      ],
       "We'll get back to you shortly.": [
         "We nemen zo snel mogelijk contact met u op."
       ],
@@ -8014,6 +8012,9 @@
       "You can check the progress ${ importProgressLink }.": [
         "U kunt de voortgang controleren ${ importProgressLink }."
       ],
+      "You can close the tab or browser in the meantime.": [
+        "In de tussentijd kunt u de tab of browser sluiten."
+      ],
       "You can edit this once to ensure the correct email address for verification.": [
         "U kunt dit eenmaal bewerken om ervoor te zorgen dat het juiste e-mailadres voor verificatie is ingevoerd."
       ],
@@ -8073,7 +8074,7 @@
         "U heeft ${ availableCount } toegewijde servers beschikbaar."
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
-        "Je hebt een Trial ${ planTitle } abonnement. Als je na de proefperiode door wilt gaan met je abonnement, voeg een betaalmethode toe."
+        "Je hebt een trial ${ planTitle } abonnement. Als je na de proefperiode door wilt gaan met je abonnement, voeg een betaalmethode toe."
       ],
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
         "Je hebt een trial ${ planTitle } abonnement. Er is geen betaling vereist op dit moment. Uw abonnement wordt automatisch verlengd aan het einde van de proefperiode."
@@ -12539,6 +12540,17 @@
         "Extra bestanden uploaden"
       ]
     },
+    "Select invoice document": {
+      "Credit note": [
+        "Creditnota"
+      ],
+      "Currency conversion": [
+        "Valuta's omrekenen"
+      ],
+      "Invoice": [
+        "Factuur"
+      ]
+    },
     "Select search results": {
       "Check your spelling or select a country from the list.": [
         "Controleer de spelling of selecteer een land uit de lijst."
@@ -13468,6 +13480,32 @@
     "Subscription price": {
       "For": [
         "Voor"
+      ]
+    },
+    "Subscription reminder": {
+      "${ planName } doesn't just provide extra storage. It lets you manage your emails faster, customize your inbox and email addresses, and access the desktop app.": [
+        "${ planName } biedt niet alleen extra opslag. Hiermee kunt u uw e-mails sneller beheren, uw inbox en e-mailadressen personaliseren en toegang krijgen tot de desktop app."
+      ],
+      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **1 GB** for Mail, and **1 GB** for Drive. You will also lose any storage bonuses earned previously.": [
+        "Door uw ${ planName } abonnement te annuleren, zal uw opslag verminderen van **${ planMaxSpace }** naar **1 GB** voor Mail, en **1 GB** voor Drive. Je verliest ook alle eerder verdiende opslag bonussen."
+      ],
+      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **1 GB** for Mail, and **5 GB** for Drive. You will also lose any storage bonuses earned previously.": [
+        "Door uw ${ planName } abonnement te annuleren, zal uw opslag verminderen van **${ planMaxSpace }** naar **1 GB** voor Mail, en **5 GB** voor Drive. Je verliest ook alle eerder verdiende opslag bonussen."
+      ],
+      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **500 MB** for Mail, and **1 GB** for Drive. You will also lose any storage bonuses earned previously.": [
+        "Door uw ${ planName } abonnement te annuleren, zal uw opslag verminderen van **${ planMaxSpace }** naar **500 MB** voor Mail, en **1 GB** voor Drive. Je verliest ook alle eerder verdiende opslag bonussen."
+      ],
+      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **500 MB** for Mail, and **5 GB** for Drive. You will also lose any storage bonuses earned previously.": [
+        "Door uw ${ planName } abonnement te annuleren, zal uw opslag verminderen van **${ planMaxSpace }** naar **500 MB** voor Mail, en **5 GB** voor Drive. Je verliest ook alle eerder verdiende opslag bonussen."
+      ],
+      "Keep ${ planName }": [
+        "${ planName } behouden"
+      ],
+      "Let us remind you of everything ${ planName } can do": [
+        "Laat ons je herinneren aan alles wat ${ planName } kan doen"
+      ],
+      "Resubscribe to restore access to ${ planName } features.": [
+        "Schrijf je opnieuw in om terug toegang te krijgen tot de ${ planName } functionaliteiten."
       ]
     },
     "Subscription renewal state": {
@@ -14902,6 +14940,9 @@
       "WireGuard configuration": [
         "WireGuard configuratie"
       ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Uw ${ planName } gratis proefperiode eindigt op ${ textDate }"
+      ],
       "Your calendar link": [
         "Uw agendakoppeling"
       ],
@@ -14910,9 +14951,6 @@
       ],
       "Your exposed information": [
         "Uw blootgestelde informatie"
-      ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "Uw Mail Plus proefversie eindigt op ${ textDate }"
       ],
       "Your plan": [
         "Uw abonnement"
