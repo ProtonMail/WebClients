@@ -143,6 +143,9 @@
       "Delete Gateway": [
         "게이트웨이 삭제"
       ],
+      "Delete logo": [
+        "로고 삭제"
+      ],
       "Delete user": [
         "사용자 삭제"
       ],
@@ -374,6 +377,9 @@
       "Report a problem": [
         "문제 신고"
       ],
+      "Request a call": [
+        "콜 요청"
+      ],
       "Request a feature": [
         "기능 요청"
       ],
@@ -529,6 +535,9 @@
       ],
       "Upgrade your plan": [
         "요금제 업그레이드"
+      ],
+      "Upload": [
+        "업로드"
       ],
       "Use ${ label } theme": [
         "${ label } 테마 사용"
@@ -836,7 +845,7 @@
         "1개 커스텀 이메일 도메인, 10개 이메일 주소, 10개 hide-my-email 별칭, 캘린더 공유 등 지원 포함."
       ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "무제한 별칭, 공유, 통합된 2FA 등을 포함하는 비밀번호 관리자로 모든 기기에서 로그인을 보호하세요."
+        "무제한 별칭, 공유, 통합된 2단계 인증기 등을 포함하는 비밀번호 관리자로 모든 기기에서 로그인을 보호하세요."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "사용자 지정 이메일 도메인, 15개 이메일 주소, 무제한 hide-my-email 별칭 등 기능을 포함하는 이메일과 공유 캘린더를 지원하는 보안 캘린더로 보호하세요."
@@ -967,6 +976,9 @@
       ],
       "Continue using ${ planTitle }": [
         "${ planTitle }을 계속 사용하세요"
+      ],
+      "Continue your subscription": [
+        "내 구독 유지하기"
       ]
     },
     "Checkout row": {
@@ -1875,6 +1887,9 @@
       ]
     },
     "Delete address prompt": {
+      "Once deleted, this address can't be used again by anyone else.": [
+        "한 번 삭제하면 누구도 이 주소를 다시는 사용할 수 없습니다."
+      ],
       "The next active address on your list will be set as the default.": [
         "목록의 다음 활성 주소가 기본으로 설정됩니다."
       ],
@@ -2008,6 +2023,12 @@
       "Error connecting to the Bitcoin API.": [
         "Bitcoin API와 통신하던 중 오류가 발생했습니다."
       ],
+      "Failed to process the logo": [
+        "로고를 처리하지 못했습니다"
+      ],
+      "File too large. Your logo must be 30 KB or smaller.": [
+        "파일이 너무 큽니다. 로고는 30KB 이하여야 합니다."
+      ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "TV의 인증 시간이 만료된 경우 TV에서 새로 고침을 클릭하고 코드를 다시 입력하십시오."
       ],
@@ -2019,6 +2040,9 @@
       ],
       "Impossible to rename the gateway": [
         "게이트웨이의 이름을 변경할 수 없습니다."
+      ],
+      "Incorrect file type. Upload a file in PNG or JPEG format.": [
+        "잘못된 파일 유형입니다. PNG 또는 JPEG 포맷의 파일을 업로드하십시오."
       ],
       "Incorrect login credentials. Please try again.": [
         "이메일 (사용자 이름) 또는 비밀번호가 잘못되었습니다. 다시 시도하세요."
@@ -2055,6 +2079,9 @@
       ],
       "Name does not match": [
         "이름이 일치하기 않습니다"
+      ],
+      "No image selected": [
+        "선택된 이미지가 없습니다"
       ],
       "Not a valid number": [
         "유효하지 않은 번호"
@@ -2102,10 +2129,13 @@
         "복원 전화번호를 먼저 설정해주세요."
       ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
-        "1명보다 더 많은 다중 사용 지원을 사용하려면 비즈니스 플랜으로 업그레이드하세요"
+        "다중 사용자 지원을 이용하시려면 2명 이상의 사용자를 지원하는 비즈니스 플랜으로 업그레이드하세요"
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "1명 보다 더 많은 다중 사용자를 관리하려면 비즈니스 플랜으로 업그레이드 하세요."
+      ],
+      "Please upload a square file": [
+        "정사각형인 파일을 업로드하셔야 합니다"
       ],
       "Please upload an xml file": [
         "xml 파일을 업로드하세요"
@@ -2133,6 +2163,12 @@
       ],
       "The email addresses do not match": [
         "이메일 주소가 일치하지 않습니다."
+      ],
+      "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
+        "파일이 너무 큽니다. 최대 크기는 ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS } 입니다."
+      ],
+      "The file is too small, the minimum size is ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }": [
+        "파일이 너무 작습니다. 최소 크기는 ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS } 입니다"
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "추가할 수 있는 최소 금액은 ${ price } 입니다."
@@ -2523,7 +2559,7 @@
     },
     "fido2: Error": {
       "Please disable 2FA via security key before disabling TOTP": [
-        "TOTP를 비활성화 하기 전 보안 키를 통한 2FA를 비활성화 해주세요"
+        "TOTP를 비활성화 하기 전에 보안 키를 통한 2단계 인증을 먼저 비활성화 해주세요."
       ],
       "Something went wrong authenticating with your security key. Please try again.": [
         "사용자의 보안 키 인증에 문제가 발생했습니다. 나중에 다시 시도하세요."
@@ -2534,7 +2570,7 @@
     },
     "fido2: Info": {
       "2FA via security key disabled": [
-        "보안 키를 통한 2FA 비활성화됨"
+        "보안 키를 통한 2단계 인증이 비활성화됨"
       ],
       "Add a name to identify your security key with.": [
         "보안 키를 식별할 이름을 추가합니다."
@@ -2567,7 +2603,7 @@
         "이 작업은 사용자의 계정에 연결된 모든 보안 키를 삭제합니다."
       ],
       "To turn on 2FA via security key, you'll need to activate 2FA via authenticator app": [
-        "보안 키를 통해 2단계 인증을 켜려면 인증 앱을 통해 2단계 인증을 활성화해야 합니다."
+        "보안 키를 통해 2단계 인증을 켜려면 먼저 인증기 앱을 통한 2단계 인증을 활성화해야 합니다."
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "물리적 U2F 또는 FIDO2 보안 키로 신원 확인"
@@ -2589,7 +2625,7 @@
         "보안 키를 삭제하시겠습니까?"
       ],
       "Disable 2FA via security key?": [
-        "보안 키를 통한 2FA를 비활성화 하시겠습니까?"
+        "보안 키를 통한 2단계 인증을 비활성화 하시겠습니까?"
       ],
       "Name your security key": [
         "사용자의 보안 키 이름"
@@ -2768,6 +2804,11 @@
         "사용자 이름"
       ]
     },
+    "Headline": {
+      "Contact us": [
+        "문의"
+      ]
+    },
     "Hint": {
       "Add this record to your domain in the control panel of your domain name registrar": [
         "도메인 이름 등록 기관의 제어판에서 이 기록을 도메인에 추가하세요."
@@ -2882,7 +2923,7 @@
         "복구 수단 추가"
       ],
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
-        "계정에 또 다른 보안 계층을 추가하세요. 로그인할 때마다 2FA로 본인 확인해야 합니다."
+        "계정에 또 다른 보안 계층을 추가하세요. 로그인할 때마다 2단계 인증으로 본인 확인해야 합니다."
       ],
       "Add domain": [
         "도메인 추가"
@@ -3304,6 +3345,9 @@
       "Loading ${ appName }": [
         "${ appName } 로딩 중"
       ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "캘린더를 불러오는 중, 새로운 탭에서 일정 플랫폼 Calendly로 리디렉션됩니다."
+      ],
       "Loading preview": [
         "미리보기 불러오는 중"
       ],
@@ -3533,7 +3577,7 @@
         "계정을 보호하는 중"
       ],
       "Send emails to encourage your members to protect their accounts with 2FA.": [
-        "회원들이 2FA로 계정을 보호하도록 이메일을 보내세요."
+        "회원들이 2단계 인증으로 계정을 보호하도록 이메일을 보내세요."
       ],
       "Server is currently down": [
         "서버가 일시적으로 비활성화 상태에요"
@@ -3695,7 +3739,7 @@
         "이는 활성 세션에서 로그아웃하고 2단계 인증을 비활성화하게 됩니다."
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
-        "이 마법사는 ${ BRAND_NAME } 계정의 2단계 인증을 활성화 시킵니다. 2단계 인증은 ${ BRAND_NAME_TWO } 계정을 더욱 안전하게 할 수 있으므로 사용하는 것을 권장합니다."
+        "이 마법사는 ${ BRAND_NAME } 계정의 2단계 인증 (2FA)을 활성화 시킵니다. 2단계 인증은 ${ BRAND_NAME_TWO } 계정을 더욱 안전하게 할 수 있으므로 사용하는 것을 권장합니다."
       ],
       "to ${ product } Business": [
         "${ product } 비즈니스로"
@@ -3857,7 +3901,7 @@
         "중복성을 위해 다른 위치에 여러 서버를 두는 것이 좋습니다."
       ],
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
-        "2FA 사용을 시작하기 전에 조직 구성원에게 알리고 계정에 2FA를 설정하도록 요청하는 것이 좋습니다."
+        "2단계 인증 사용을 시작하기 전에 조직 구성원에게 알리고 계정에 2단계 인증을 설정하도록 요청하는 것이 좋습니다."
       ],
       "We recommend using your recovery phrase instead.": [
         "복구 방법을 사용하는 것을 권장합니다."
@@ -3960,6 +4004,12 @@
       ],
       "You have ${ availableCount } dedicated server available.": [
         "${ availableCount }개 전용 서버를 사용할 수 있습니다."
+      ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "체험판 ${ planTitle } 구독이 있습니다. 체험 기간 이후로도 계속 구독을 사용하려면, 결제 수단을 추가해 주세요."
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "${ planTitle } 체험판 구독이 있습니다. 현재는 결제 수단이 필요 없습니다. 사용자의 구독이 무료 체험 종료일에 자동 갱신됩니다."
       ],
       "You have no invoices.": [
         "청구서가 없습니다."
@@ -4481,10 +4531,10 @@
         "Reply (ACS) URL"
       ],
       "Require 2FA for administrators": [
-        "관리자에 2FA가 필요"
+        "관리자에 2단계 인증 요구"
       ],
       "Require 2FA for everyone": [
-        "전체 구성원에 2FA가 필요"
+        "전체 구성원에 2단계 인증 요구"
       ],
       "Reveal password": [
         "비밀번호 표시"
@@ -5148,7 +5198,7 @@
         "HTML 서명"
       ],
       "Integrated 2FA authenticator": [
-        "통합된 2FA 인증기"
+        "통합된 2단계 인증기"
       ],
       "Kill switch/always-on VPN": [
         "킬 스위치/상시 VPN"
@@ -5184,7 +5234,7 @@
         "동시에 최대 ${ n }개까지 장치 보호"
       ],
       "Require 2FA for organization": [
-        "조직에 2FA (이중 인증) 요구"
+        "조직에 2단계 인증 요구"
       ],
       "Router support": [
         "라우터 지원"
@@ -5715,7 +5765,7 @@
         "비공개 게이트웨이"
       ],
       "Require 2FA": [
-        "2FA 필요"
+        "2단계 인증 필요"
       ]
     },
     "Notification": {
@@ -5863,6 +5913,43 @@
         "사용자의 플랜은 최대 ${ humanReadableAvailableSpace }개 스토리지를 포함합니다."
       ]
     },
+    "Organization logo upload": {
+      "Avoid overly compressed images.": [
+        "과도하게 압축된 이미지를 피하십시오."
+      ],
+      "Ensure your logo has padding space around it.": [
+        "로고 주변에 여백 공간이 있는지 확인하십시오."
+      ],
+      "Opt for a PNG image that is a 128x128 pixels for clarity.": [
+        "선명함을 위해 128x128 픽셀인 PNG 이미지를 권장합니다."
+      ],
+      "Tips on choosing a good logo": [
+        "좋은 로고의 선택을 위한 조언"
+      ],
+      "Use a graphical icon or image rather than text.": [
+        "문자 보다는 그래픽 아이콘이나 이미지를 사용하십시오."
+      ],
+      "Use a solid background color.": [
+        "배경색은 단색이어야 합니다."
+      ]
+    },
+    "Organization logo upload modal": {
+      "Drop image file here to upload or": [
+        "업로드할 이미지 파일을 여기에 놓거나"
+      ],
+      "File in PNG or JPEG format": [
+        "PNG 또는 JPEG 형식"
+      ],
+      "File not larger than 30 KB": [
+        "30KB 미만의 파일"
+      ],
+      "Square image of at least 128 pixels": [
+        "최소 128 픽셀의 정사각형 이미지"
+      ],
+      "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
+        "다른 사용자가 웹 앱에 로그인했을 때 당신의 ${ BRAND_NAME } 아이콘 대신 로고를 보게 됩니다."
+      ]
+    },
     "Pass B2B onboarding spotlight": {
       "Go to your vault to manage your passwords, aliases, and more.": [
         "비밀번호, 별명 등을 관리하려면 금고로 이동하세요."
@@ -5971,7 +6058,7 @@
         "**기존의 모든 데이터**(이메일, 이벤트, 연락처, 파일, ${ PASS_APP_NAME } 입력사항 외 기타)가 **잠길 것이고** 내 **복구 문구** 또는 **이전 비밀번호**로만 잠금해제할 수 있습니다."
       ],
       "Any **two-factor authentication (2FA)** method on your account will be disabled.": [
-        "모든 **2단계 인증 (2FA)** 방법이 비활성화됩니다."
+        "모든 **2단계 인증 (2FA)** 수단이 비활성화됩니다."
       ]
     },
     "passwordless": {
@@ -6282,6 +6369,11 @@
         "휴대 전화 인증은 계정 보호성이 증가하고 추가적인 복구 옵션을 제공합니다."
       ]
     },
+    "Remove organization logo": {
+      "Users will no longer see your custom logo or organization name.": [
+        "다른 사용자가 당신의 맞춤형 로고 또는 조직이름을 볼 수 없게 됩니다."
+      ]
+    },
     "Restore administrator panel": {
       "${ n } administrator in your organization need access to the organization key.": [
         "조직 내의 ${ n }명 관리자가 조직 키에 접근이 필요합니다."
@@ -6313,6 +6405,14 @@
     "Select file": {
       "Upload CSV file": [
         "CSV 파일 업로드"
+      ]
+    },
+    "Select invoice document": {
+      "Currency conversion": [
+        "화폐 변환"
+      ],
+      "Invoice": [
+        "인보이스"
       ]
     },
     "Select search results": {
@@ -7212,7 +7312,7 @@
     },
     "summer2023: Tooltip": {
       "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
-        "모든 기기에서 안전한 로그인 세부사항을 생성하세요. 무제한 별칭, 20개의 금고, 통합된 2FA, 신용 카드 자동 작성 등이 포함되어 있습니다."
+        "모든 기기에서 안전한 로그인 세부사항을 생성하세요. 무제한 별칭, 20개의 금고, 통합된 2단계 인증기, 신용카드 자동 완성 등이 포함되어 있습니다."
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "65개 이상 국가의 2950개 이상의 서버, 최대 10개 기기 연결, 전세계적 스트리밍 서비스 접근, 멀웨어 및 광고 차단기 등 포함."
@@ -7477,6 +7577,9 @@
       "Delete address permanently?": [
         "주소를 영구적으로 삭제합니까?"
       ],
+      "Delete organization logo?": [
+        "조직 로고를 삭제하시겠습니까?"
+      ],
       "Delete the server (you will still be able to recover it for ${ days } day)": [
         "서버 삭제 (${ days }일 동안 복구할 수 있음.)"
       ],
@@ -7736,7 +7839,7 @@
         "조직에 로그인"
       ],
       "Sign in with 2FA": [
-        "2FA로 로그인"
+        "2단계 인증으로 로그인"
       ],
       "Sign out": [
         "로그아웃"
@@ -7789,6 +7892,9 @@
       "Upload CSV file to create multiple accounts": [
         "다중 사용자를 생성하려면 CSV 파일을 업로드해주세요."
       ],
+      "Upload your organization’s logo": [
+        "조직의 로고를 업로드하세요"
+      ],
       "Users": [
         "사용자"
       ],
@@ -7815,9 +7921,6 @@
       ],
       "Your current plan": [
         "내 현재 플랜"
-      ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "Mail Plus 무료 체험판이 ${ textDate }에 종료됩니다"
       ],
       "Your plan": [
         "내 플랜"
@@ -7896,7 +7999,7 @@
         "기프트 코드를 구매하셨거나 서포트 팀에서 받으셨다면, 여기에 입력하실 수 있습니다."
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
-        "2FA를 사용하지 않는 회원들은 가능한 한 빨리 활성화하라는 메일을 받게 됩니다."
+        "2단계 인증을 사용하지 않는 회원들은 가능한 한 빨리 활성화하라는 메일을 받게 됩니다."
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO": [
         "SAML SSO로 인증할 수 있는 도메인을 지정하십시오"
@@ -7919,7 +8022,7 @@
     },
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: 무제한 별명, 공유, 통합된 2FA 등을 포함하는 비밀번호 관리자로 모든 기기에서 로그인을 보호하세요."
+        "${ PASS_APP_NAME }: 무제한 별명, 공유, 통합된 2단계 인증기 등을 포함하는 비밀번호 관리자로 모든 기기에서 로그인을 보호하세요."
       ]
     },
     "Tooltip for news": {

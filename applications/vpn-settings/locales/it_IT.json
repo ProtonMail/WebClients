@@ -548,8 +548,8 @@
       "Upload": [
         "Carica"
       ],
-      "Upload icon": [
-        "Carica l'icona"
+      "Upload logo": [
+        "Carica logo"
       ],
       "Use ${ label } theme": [
         "Usa il tema ${ label }"
@@ -2969,6 +2969,9 @@
         "Aggiungi server (${ availableAddedCount } disponibile)",
         "Aggiungi server (${ availableAddedCount } disponibili)"
       ],
+      "Add your name and logo to create a more personalized experience for your organization.": [
+        "Aggiungi il tuo nome e logo per creare un'esperienza più personalizzata per la tua organizzazione."
+      ],
       "Adding ${ addedServerCount } gateway server": [
         "Aggiunta di ${ addedServerCount } server gateway",
         "Aggiunta di ${ addedServerCount } server gateway"
@@ -3739,9 +3742,6 @@
       ],
       "The format of your CSV file is incorrect.": [
         "Il formato del tuo file CSV non è corretto."
-      ],
-      "The name and icon will be visible to your users while they are signed in.": [
-        "Il nome e l'icona saranno visibili ai tuoi utenti mentre hanno effettuato l'accesso."
       ],
       "The name will be visible to your users while they are signed in.": [
         "Il nome sarà visibile agli utenti durante l'accesso."
@@ -6027,17 +6027,20 @@
       "Avoid overly compressed images.": [
         "Evita immagini eccessivamente compresse."
       ],
-      "Ensure your icon has padding space around it.": [
-        "Assicurati che la tua icona abbia abbastanza spazio di riempimento attorno."
+      "Ensure your logo has padding space around it.": [
+        "Assicurati che il tuo logo abbia abbastanza spazio di riempimento attorno."
       ],
       "Opt for a PNG image that is a 128x128 pixels for clarity.": [
         "Scegli un'immagine PNG di 128x128 pixel per maggiore chiarezza."
       ],
-      "Tips on choosing a good icon": [
-        "Suggerimenti per scegliere una buona icona"
+      "Tips on choosing a good logo": [
+        "Suggerimenti per scegliere un buon logo"
       ],
       "Use a graphical icon or image rather than text.": [
         "Utilizza un'icona grafica o un'immagine anziché il testo."
+      ],
+      "Use a solid background color.": [
+        "Utilizza un colore di sfondo a tinta unita."
       ]
     },
     "Organization logo upload modal": {
@@ -6569,7 +6572,7 @@
       "The SCIM base URL and token will be deleted.": [
         "Il base URL e il token SCIM verranno eliminati."
       ],
-      "To re-enable syncing with your identity provider, your need to complete the SCIM integration again.": [
+      "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
         "Per riattivare la sincronizzazione con il tuo provider di identità, devi completare nuovamente l'integrazione SCIM."
       ]
     },
@@ -6606,6 +6609,17 @@
     "Select file": {
       "Upload CSV file": [
         "Carica un file CSV"
+      ]
+    },
+    "Select invoice document": {
+      "Credit note": [
+        "Nota di credito"
+      ],
+      "Currency conversion": [
+        "Conversione della valuta"
+      ],
+      "Invoice": [
+        "Fattura"
       ]
     },
     "Select search results": {
@@ -7914,8 +7928,8 @@
       "Gift code": [
         "Codice regalo"
       ],
-      "How to choose a good icon": [
-        "Come scegliere una buona icona"
+      "How to choose a good logo": [
+        "Come scegliere un buon logo"
       ],
       "Human verification": [
         "Verifica umana"
@@ -8152,14 +8166,14 @@
       "WireGuard configuration": [
         "Configurazione di WireGuard"
       ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "La tua prova gratuita di ${ planName } termina il giorno ${ textDate }"
+      ],
       "Your changes are not synced yet": [
         "Le tue modifiche non sono ancora sincronizzate"
       ],
       "Your current plan": [
         "Il tuo piano attuale"
-      ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "La tua prova gratuita di Mail Plus termina il giorno ${ textDate }"
       ],
       "Your plan": [
         "Il tuo piano"

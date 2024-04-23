@@ -548,8 +548,8 @@
       "Upload": [
         "Ladda upp"
       ],
-      "Upload icon": [
-        "Ladda upp ikon"
+      "Upload logo": [
+        "Ladda upp logga"
       ],
       "Use ${ label } theme": [
         "Använd ${ label }-temat"
@@ -2969,6 +2969,9 @@
         "Lägg till server (${ availableAddedCount } tillgänglig)",
         "Lägg till server (${ availableAddedCount } tillgängliga)"
       ],
+      "Add your name and logo to create a more personalized experience for your organization.": [
+        "Lägg till ditt namn och din logga för att skapa en mer personifierad upplevelse för din organisation."
+      ],
       "Adding ${ addedServerCount } gateway server": [
         "Lägger till ${ addedServerCount } gatewayserver",
         "Lägger till ${ addedServerCount } gatewayservrar"
@@ -3734,9 +3737,6 @@
       "The format of your CSV file is incorrect.": [
         "Formatet på din CSV-fil är felaktigt."
       ],
-      "The name and icon will be visible to your users while they are signed in.": [
-        "Namnet och ikonen kommer att vara synliga för dina användare när de är inloggade."
-      ],
       "The name will be visible to your users while they are signed in.": [
         "Namnet kommer att vara synligt för dina användare när de är inloggade."
       ],
@@ -4068,6 +4068,12 @@
       "You have ${ availableCount } dedicated server available.": [
         "Du har ${ availableCount } dedikerad server tillgänglig.",
         "Du har ${ availableCount } dedikerade servrar tillgängliga."
+      ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "Du har en provperiod på ${ planTitle }-prenumeration. Om du vill fortsätta med din prenumeration efter provperioden, lägg till en betalningsmetod."
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "Du har en provperiod på ${ planTitle }-prenumeration. Ingen betalning krävs för närvarande. Din prenumeration kommer att förnyas automatiskt i slutet av provperioden."
       ],
       "You have no invoices.": [
         "Du har inga fakturor."
@@ -5997,11 +6003,14 @@
       "Avoid overly compressed images.": [
         "Undvik alltför komprimerade bilder."
       ],
-      "Tips on choosing a good icon": [
-        "Tips på att välja en bra ikon"
+      "Tips on choosing a good logo": [
+        "Tips på att välja en bra logga"
       ],
       "Use a graphical icon or image rather than text.": [
         "Använd en grafisk ikon eller bild istället för text."
+      ],
+      "Use a solid background color.": [
+        "Använd en solid bakgrundsfärg."
       ]
     },
     "Organization logo upload modal": {
@@ -6538,6 +6547,14 @@
     "Select file": {
       "Upload CSV file": [
         "Ladda upp CSV-fil"
+      ]
+    },
+    "Select invoice document": {
+      "Currency conversion": [
+        "Valutaomvandling"
+      ],
+      "Invoice": [
+        "Faktura"
       ]
     },
     "Select search results": {
@@ -7846,8 +7863,8 @@
       "Gift code": [
         "Presentkod"
       ],
-      "How to choose a good icon": [
-        "Hur man väljer en bra ikon"
+      "How to choose a good logo": [
+        "Hur man väljer en bra logga"
       ],
       "Human verification": [
         "Mänsklig verifiering"
@@ -8084,14 +8101,14 @@
       "WireGuard configuration": [
         "WireGuard-konfiguration"
       ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Din gratis provperiod för ${ planName } slutar den ${ textDate }"
+      ],
       "Your changes are not synced yet": [
         "Dina ändringar är inte synkroniserade än"
       ],
       "Your current plan": [
         "Ditt nuvarande paket"
-      ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "Din gratis provperiod för Mail Plus slutar den ${ textDate }"
       ],
       "Your plan": [
         "Ditt paket"

@@ -374,6 +374,9 @@
       "Report a problem": [
         "პრობლემის შესახებ შეტყობინება"
       ],
+      "Request a call": [
+        "ზარის შეკვეთა"
+      ],
       "Request a feature": [
         "თვისების მოთხოვნა"
       ],
@@ -956,6 +959,9 @@
       ],
       "Continue using ${ planTitle }": [
         "${ planTitle }-ის მოხმარების გაგრძელება"
+      ],
+      "Continue your subscription": [
+        "გააგრძელეთ თქვენი გამოწერა"
       ]
     },
     "Checkout row": {
@@ -6342,6 +6348,17 @@
         "CSV ფაილის ატვირთვა"
       ]
     },
+    "Select invoice document": {
+      "Credit note": [
+        "კრედიტის შენიშვნა"
+      ],
+      "Currency conversion": [
+        "ვალუტის გადაცვლა"
+      ],
+      "Invoice": [
+        "ინვოისი"
+      ]
+    },
     "Select search results": {
       "No results found": [
         "შედეგების გარეშე"
@@ -7882,9 +7899,6 @@
       ],
       "Your current plan": [
         "თქვენი მიმდინარე გეგმა"
-      ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "თქვენი Mail Plus-ის უფასო სატესტო პერიოდი ${ textDate }-ზე სრულდება"
       ],
       "Your plan": [
         "თქვენი გეგმა"
