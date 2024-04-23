@@ -24,6 +24,7 @@ export default function useLinkDetailsView(shareId: string, linkId: string) {
     const [permissions, setPermissions] = useState<SHARE_MEMBER_PERMISSIONS>(SHARE_MEMBER_PERMISSIONS.OWNER);
     const [link, setLink] = useState<DecryptedLink>();
     const [error, setError] = useState<any>();
+    const [isSharedWithMeLink, setIsSharedWithMeLink] = useState(false);
     const [isLinkLoading, withLoadingLink] = useLoading();
 
     const [signatureIssues, setSignatureIssues] = useState<SignatureIssues>();
@@ -49,6 +50,7 @@ export default function useLinkDetailsView(shareId: string, linkId: string) {
                         })
                 );
                 const sharedWithMe = await isSharedWithMe(abortController.signal, shareId);
+                setIsSharedWithMeLink(sharedWithMe);
                 if (link.shareId && !sharedWithMe) {
                     void withLoadingNumberOfAccesses(
                         loadShareUrlNumberOfAccesses(abortController.signal, shareId, linkId)
@@ -65,13 +67,14 @@ export default function useLinkDetailsView(shareId: string, linkId: string) {
         return () => {
             abortController.abort();
         };
-    }, [shareId, linkId]);
+    }, [shareId, linkId, isSharedWithMe]);
 
     return {
         permissions,
         isLinkLoading,
         isSignatureIssuesLoading,
         isNumberOfAccessesLoading,
+        isSharedWithMeLink,
         error,
         link,
         signatureIssues,
