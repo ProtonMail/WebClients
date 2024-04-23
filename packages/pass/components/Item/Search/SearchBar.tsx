@@ -69,9 +69,9 @@ const SearchBarRaw: FC<Props> = ({ disabled, initial, trash }) => {
         void onTelemetry(createTelemetryEvent(TelemetryEventName.SearchTriggered, {}, {}));
     };
 
-    useEffect(() => handleFocus(), []);
+    useEffect(handleFocus, []);
     useEffect(() => setFilters({ search: debouncedSearch }), [debouncedSearch]);
-    useEffect(() => setSearch(filters.search), [filters.search]);
+    useEffect(() => setSearch((value) => filters.search || value), [filters.search]);
 
     return (
         <Input
