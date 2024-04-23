@@ -556,6 +556,9 @@
       "Remove": [
         "Rimuovi"
       ],
+      "Remove access": [
+        "Rimuovi accesso"
+      ],
       "Remove bonuses": [
         "Rimuovi bonus"
       ],
@@ -567,6 +570,9 @@
       ],
       "Remove gift code": [
         "Rimuovi codice regalo"
+      ],
+      "Remove me": [
+        "Rimuovimi"
       ],
       "Rename": [
         "Rinomina"
@@ -4466,6 +4472,9 @@
         "È consentito solo ${ MAX_CUSTOM_PASSWORD_LENGTH } carattere",
         "Sono consentiti solo ${ MAX_CUSTOM_PASSWORD_LENGTH } caratteri"
       ],
+      "Only the owner of the share will be able to invite you again.": [
+        "Solo il proprietario della condivisione potrà invitarti di nuovo."
+      ],
       "Only the people with the link and the password can access this file.": [
         "Solo le persone con il link e la password possono accedere a questo file."
       ],
@@ -5114,6 +5123,9 @@
       "You will lose all unsaved changes.": [
         "Perderai tutte le modifiche non salvate."
       ],
+      "You will not be able to join again after.": [
+        "Se prosegui non potrai più partecipare nuovamente."
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Sarai presto reindirizzato a PayPal per verificare il pagamento."
       ],
@@ -5444,9 +5456,6 @@
         "Eliminare spazio?",
         "Eliminare spazi?"
       ],
-      "Delete link": [
-        "Elimina il link"
-      ],
       "Delete recovery-related information.": [
         "Elimina le informazioni di recupero."
       ],
@@ -5705,6 +5714,9 @@
       "Region": [
         "Regione"
       ],
+      "Remove access": [
+        "Rimuovi l'accesso"
+      ],
       "Replace existing file": [
         "Sostituisci il file esistente"
       ],
@@ -5761,6 +5773,9 @@
       ],
       "Stolen data": [
         "Dati rubati"
+      ],
+      "Stop sharing": [
+        "Interrompi la condivisione"
       ],
       "Street address": [
         "Indirizzo"
@@ -7227,6 +7242,12 @@
       "${ reason } has been enabled": [
         "${ reason } è stato abilitato"
       ],
+      "Access for the member removed": [
+        "Accesso per il membro rimosso"
+      ],
+      "Access updated and shared": [
+        "Accesso aggiornato e condiviso"
+      ],
       "All items will soon be permanently deleted from trash": [
         "Tutti gli elementi verranno presto eliminati definitivamente dal cestino"
       ],
@@ -7266,6 +7287,9 @@
       "Failed to move, please try again": [
         "Spostamento non riuscito. Per favore riprova"
       ],
+      "Failed to remove the file": [
+        "Impossibile rimuovere il file"
+      ],
       "Failed to upload files: ${ err }": [
         "Caricamento dei file non riuscito: ${ err }"
       ],
@@ -7278,6 +7302,12 @@
       ],
       "File or folder is missing a name": [
         "Al file o alla cartella manca un nome"
+      ],
+      "File removed": [
+        "File rimosso"
+      ],
+      "Invitation removed from the share": [
+        "Invito rimosso dalla condivisione"
       ],
       "Link copied to clipboard": [
         "Link copiato negli appunti"
@@ -7306,6 +7336,9 @@
       "Share invitation ID was not found. Please check the link": [
         "Impossibile trovare l'ID dell'invito condiviso. Controlla il link"
       ],
+      "Stopping to share this item has failed": [
+        "Impossibile interrompere la condivisione di questo elemento"
+      ],
       "Subfolder failed to be loaded": [
         "Caricamento della sottocartella non riuscito"
       ],
@@ -7323,6 +7356,9 @@
       ],
       "Trash failed to be emptied": [
         "Svuotamento del cestino non riuscito"
+      ],
+      "You stopped to share this item": [
+        "Hai interrotto la condivisione di questo elemento"
       ],
       "Your old files will be deleted in 72 hours": [
         "I tuoi vecchi file verranno eliminati entro 72 ore"
@@ -8695,6 +8731,9 @@
       "Are you sure you want to close the preview?": [
         "Sei sicuro di voler chiudere l'anteprima?"
       ],
+      "Are you sure you want to leave this share?": [
+        "Sei sicuro di voler abbandonare questa condivisione?"
+      ],
       "Billing cycle": [
         "Ciclo di fatturazione"
       ],
@@ -9218,6 +9257,9 @@
       "You have no folders yet": [
         "Non ci sono ancora cartelle"
       ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "La tua prova gratuita di ${ planName } termina il giorno ${ textDate }"
+      ],
       "Your 3 GB bonus": [
         "Il tuo bonus di 3 GB"
       ],
@@ -9229,9 +9271,6 @@
       ],
       "Your exposed information": [
         "Le tue informazioni rese pubbliche"
-      ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "La tua prova gratuita di Mail Plus termina il giorno ${ textDate }"
       ],
       "Your welcome actions": [
         "Le tue azioni di benvenuto"

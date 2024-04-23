@@ -309,6 +309,9 @@
       "Hide affected calendars": [
         "Amaga els calendaris afectats"
       ],
+      "Hide busy times": [
+        "Amagar les hores punta"
+      ],
       "Hide time zones": [
         "Amaga el fus horari"
       ],
@@ -346,7 +349,7 @@
         "Importa des d'Outlook"
       ],
       "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
-        "Actualització important disponible. Per continuar utilitzant l'aplicació, actualitzeu a la versió més recent. ${ downloadUpdate }"
+        "Hi ha disponible una actualització important. Per a continuar utilitzant l'aplicació, actualitzeu a la versió més recent. ${ downloadUpdate }"
       ],
       "Increase": [
         "Incrementa"
@@ -522,6 +525,9 @@
       "Report a problem": [
         "Notifica un problema"
       ],
+      "Request a call": [
+        "Sol·licitar una trucada"
+      ],
       "Request a feature": [
         "Demana una nova característica"
       ],
@@ -590,6 +596,9 @@
       ],
       "Show affected calendars": [
         "Mostra els calendaris afectats"
+      ],
+      "Show busy times": [
+        "Mostrar les hores punta"
       ],
       "Show less": [
         "Mostra'n menys"
@@ -702,6 +711,9 @@
       "View": [
         "Mostra"
       ],
+      "View all reports": [
+        "Mostra tots els informes"
+      ],
       "View contact details": [
         "Veure detalls del contacte"
       ],
@@ -722,10 +734,10 @@
         "No podeu enviar fitxers vCard de més de ${ maxAttachments } contactes."
       ],
       "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
-        "La prova gratuïta de l'aplicació d'escriptori finalitza en dos dies. ${ upgradeButton }"
+        "La prova gratuïta de l'aplicació d'escriptori finalitza d'aquí a 2 dies. ${ upgradeButton }"
       ],
       "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
-        "La prova gratuïta de l'aplicació d'escriptori finalitza en cinc dies. ${ upgradeButton }"
+        "La prova gratuïta de l'aplicació d'escriptori finalitza d'aquí a 5 dies. ${ upgradeButton }"
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "La prova gratuïta de l'aplicació d'escriptori finalitza el ${ formattedEndDate }. ${ upgradeButton }"
@@ -1094,6 +1106,9 @@
       ],
       "Continue using ${ planTitle }": [
         "Continua utilitzant ${ planTitle }"
+      ],
+      "Continue your subscription": [
+        "Continuï amb la seva subscripció"
       ]
     },
     "Calendar access select label": {
@@ -2341,6 +2356,9 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "El 2FA afegeix una capa de seguretat extra, impedint l'accés no autoritzat."
       ],
+      "Availability unknown": [
+        "Disponibilitat desconeguda"
+      ],
       "Boost efficiency and track your time by color-coding events by category or your energy levels. Get this and much more with a paid plan.": [
         "Augmenteu l'eficiència i feu un seguiment del vostre temps codificant amb colors els esdeveniments per categoria o segons les vostres prioritats. Obtingueu aquest servei i molt més amb un pla de pagament."
       ],
@@ -2364,6 +2382,9 @@
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Sembla que la llista de contactes que esteu important conté alguns grups. Reviseu com s'han d'importar aquests grups."
+      ],
+      "Loading availability": [
+        "Disponibilitat de càrrega"
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Combinant contactes... Pot trigar uns minuts. Quan el procés s'hagi completat, podreu tancar aquest diàleg."
@@ -2523,10 +2544,10 @@
         "S'ha actualitzat aquest esdeveniment."
       ],
       "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Aquest esdeveniment s'ha actualitzat. Això és el que s'ha canviat:\n\n${ updateEventDetailsText }"
+        "Aquest esdeveniment s'ha actualitzat. Això és el que ha canviat:\n\n${ updateEventDetailsText }"
       ],
       "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
-        "Esteu convidat a ${ eventTitle }\n\n${ eventDetailsText }"
+        "Esteu convidat a ${ eventTitle }.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -2863,7 +2884,7 @@
         "No s'han trobat correus electrònics per a importar. El compte no té una safata d'entrada"
       ],
       "No external key retrieved for user is valid for sending": [
-        "No hi ha cap clau externa recuperada per l'usuari vàlida per a enviar"
+        "Cap clau externa recuperada per a l'usuari és vàlida per a l'enviament"
       ],
       "No valid address found": [
         "No s’ha trobat una adreça vàlida"
@@ -4352,6 +4373,9 @@
       "here": [
         "aquí"
       ],
+      "High Priority": [
+        "Alta prioritat"
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Si teniu problemes per crear el vostre compte, sol·liciteu una invitació i us respondrem en un dia laborable."
       ],
@@ -4428,6 +4452,9 @@
       "Large imports can take several days.": [
         "Imports grans poden trigar diversos dies."
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Més informació sobre com ${ staySaferOnlineLink }"
+      ],
       "Learn more": [
         "Més informació"
       ],
@@ -4442,6 +4469,9 @@
       ],
       "Loading ${ appName }": [
         "Carregant ${ appName }"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "S'està carregant el calendari, si us plau, esperi's. Se'l redirigirà a la nostra plataforma de programació Calendly en una pestanya nova."
       ],
       "Loading event": [
         "Carregant esdeveniment"
@@ -4520,6 +4550,9 @@
       ],
       "Organization size": [
         "Mida de l'organització"
+      ],
+      "Other users within your organization will see your busy slots. No event details are shared.": [
+        "Altres usuaris de la seva organització veuran els seus espais ocupats. No es comparteix cap detall de l'esdeveniment."
       ],
       "password": [
         "contrasenya"
@@ -4648,6 +4681,9 @@
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "L'aplicació ha de desxifrar localment els vostres contactes abans de poder-los exportar. Al final del procés, es generarà un fitxer VCF i el podreu descarregar."
       ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "La informació exposada es va filtrar d'un servei de tercers. La informació del seu compte de ${ BRAND_NAME } continua sent segura i encriptada. ${ learnMoreLink }"
+      ],
       "The following participants cannot be notified about your changes:": [
         "Els següents participants no poden ser notificats dels canvis:"
       ],
@@ -4774,6 +4810,9 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Us redireccionarem a PayPal en una pestanya nova del navegador per completar aquesta transacció. Si utilitzeu bloquejadors emergents, inhabiliteu-los per continuar."
       ],
+      "We'll email you once import is complete.": [
+        "Us enviarem un correu electrònic un cop s'hagi completat la importació."
+      ],
       "We'll notify you when the import is done.": [
         "Us notificarem quan la importació s'hagi realitzat."
       ],
@@ -4843,6 +4882,9 @@
       "You can check the progress ${ importProgressLink }.": [
         "Podeu comprovar el progrés a ${ importProgressLink }."
       ],
+      "You can close the tab or browser in the meantime.": [
+        "Mentrestant, podeu tancar la pestanya o el navegador."
+      ],
       "You can import one data type at a time.": [
         "Podeu importar un tipus de dades alhora."
       ],
@@ -4862,6 +4904,12 @@
       ],
       "You cannot undo this action.": [
         "No pots desfer aquesta acció."
+      ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "Té una subscripció de prova de ${ planTitle }. Si vol continuar amb la seva subscripció després del període de prova, afegeixi un mètode de pagament."
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "Té una subscripció de prova de ${ planTitle }. No es requereix cap pagament en aquest moment. La seva subscripció es renovarà automàticament al final del període de prova."
       ],
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
         "Heu reactivat les vostres claus i els esdeveniments enllaçats als següents calendaris ja es poden desxifrar."
@@ -4941,6 +4989,12 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Les vostres dades estan a punt per ser importades des de ${ importedEmailAddressStrong } al vostre compte de ${ BRAND_NAME }."
       ],
+      "Your email address and password were leaked:": [
+        "La seva adreça de correu electrònic i contrasenya es van filtrar:"
+      ],
+      "Your email address was exposed:": [
+        "S'ha exposat la seva adreça de correu electrònic:"
+      ],
       "Your email will only be used for this one-time verification.": [
         "El vostre correu electrònic només s’utilitzarà per a aquesta única verificació."
       ],
@@ -4950,11 +5004,17 @@
       "Your files will be encrypted and then saved": [
         "Es xifraran els fitxers i després es desaran."
       ],
+      "Your information was found on ${ displayedDate }": [
+        "La seva informació es va trobar el ${ displayedDate }"
+      ],
       "Your login information will not be saved after the import is completed.": [
         "La vostra informació d'inici de sessió no es desarà quan s'hagi completat la importació."
       ],
       "Your next billing date is ${ renewalTime }.": [
         "La pròxima data de facturació és ${ renewalTime }."
+      ],
+      "Your password was leaked:": [
+        "S'ha filtrat la vostra contrasenya:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "El vostre número de telèfon només s’utilitzarà per a aquesta única verificació."
@@ -5093,6 +5153,9 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(No disponible temporalment. Comproveu-ho de nou més tard.)"
+      ],
+      "Access to my events": [
+        "Accés als meus esdeveniments."
       ],
       "Add email address": [
         "Afegeix una adreça de correu electrònic"
@@ -5455,6 +5518,9 @@
       "Select your plan": [
         "Seleccioneu el vostre pla"
       ],
+      "Show others when I'm busy": [
+        "Mostrar als altres quan estic ocupat"
+      ],
       "Show week numbers": [
         "Mostra el número de setmana"
       ],
@@ -5617,6 +5683,9 @@
       "Request an invite": [
         "Demana una invitació"
       ],
+      "stay safer online": [
+        "mantenir-se més segur en línia"
+      ],
       "What’s this?": [
         "Què és això?"
       ]
@@ -5678,10 +5747,15 @@
         "El seu emmagatzematge està ple. Per enviar o rebre correus electrònics, alliberi espai o ${ cta }."
       ],
       "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
-        "El seu emmagatzematge està ple. Per penjar o sincronitzar fitxers, alliberi espai o ${ cta }."
+        "El vostre emmagatzematge està ple. Per carregar o sincronitzar fitxers, allibereu espai o ${ cta }."
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "La seva subscripció ha finalitzat. ${ cta } i per evitar la pèrdua de dades."
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Activa ${ reason }"
       ]
     },
     "Mail import summary": {
@@ -5718,10 +5792,10 @@
         "10 adreces de correu electrònic"
       ],
       "Auto-delete Spam and Trash": [
-        "Suprimeix automàticament la brossa i la paperera"
+        "Elimina automàticament el correu brossa i la paperera"
       ],
       "Custom schedule send and snooze times": [
-        "Horaris personalitzats d'enviament i posposa"
+        "Personalització de l'hora d'enviament i del temps de posposició"
       ],
       "Support for 1 custom email domain": [
         "Suport per a 1 domini de correu personalitzat"
@@ -5732,7 +5806,7 @@
     },
     "mailtrial2024: Footer": {
       "Renews at ${ renewablePrice }, cancel anytime": [
-        "Renovacions a ${ renewablePrice }, cancel·leu en qualsevol moment"
+        "Es renova per ${ renewablePrice } i ho podeu cancel·lar en qualsevol moment"
       ]
     },
     "mailtrial2024: Info": {
@@ -7206,7 +7280,7 @@
         "Seleccioneu un motiu"
       ],
       "Select state": [
-        "Seleccioni l'estat"
+        "Seleccioneu l'estat"
       ],
       "Start typing an email address": [
         "Començi a escriure una adreça de correu electrònic"
@@ -7368,6 +7442,9 @@
       ]
     },
     "Security Center - Info": {
+      "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
+        "Rebi una notificació si la seva contrasenya o altres dades s'han filtrat d'un servei de tercers. ${ learnMoreLink }"
+      ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "La nostra solució de seguretat d'avantguarda, impulsada per IA, dissenyada per als usuaris que busquen una protecció més elevada per als seus comptes. ${ learnMoreLink }"
       ],
@@ -7832,17 +7909,11 @@
       ]
     },
     "Spotlight": {
-      "Add your country's public holidays to your calendar.": [
-        "Afegiu els dies festius del vostre país al calendari."
-      ],
       "Color-coding is here!": [
         "Ja ha arribat la classificació per colors!"
       ],
       "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
         "Iniciï còmodament ${ MAIL_APP_NAME } des de l'escriptori."
-      ],
-      "Easily find the event you're looking for with our new search feature.": [
-        "Trobeu fàcilment l'esdeveniment que busqueu amb la nostra nova funció de cerca."
       ],
       "Get the desktop app": [
         "Obteniu l'aplicació d'escriptori"
@@ -7853,11 +7924,11 @@
       "Invite friends to ${ BRAND_NAME }": [
         "Convida amistats a ${ BRAND_NAME }"
       ],
-      "Public holidays are here!": [
-        "Els dies festius són aquí!"
+      "No more scheduling conflicts": [
+        "No hi ha més conflictes d'horaris"
       ],
-      "Search for events": [
-        "Cerca esdeveniments"
+      "Now you can see when participants are free to attend your meeting.": [
+        "Ara pot veure quan estan lliures els participants per assistir a la seva reunió."
       ],
       "With customizable event colors, you can color-code the chaos and conquer your day.": [
         "Amb colors d'esdeveniments personalitzables, podeu codificar amb colors el caos i conquerir el vostre dia."
@@ -7904,7 +7975,7 @@
         "Per a tots els serveis de ${ BRAND_NAME }"
       ],
       "To send or receive emails, free up space or ${ upgrade }": [
-        "Per enviar o rebre correus electrònics, allibereu espai o ${ upgrade }"
+        "Per a enviar o rebre correus electrònics, allibereu espai o ${ upgrade }"
       ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "Per a carregar o sincronitzar fitxers, allibereu espai o ${ upgrade }"
@@ -7919,13 +7990,13 @@
         "El vostre ${ appStorage } és ple."
       ],
       "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
-        "L'${ storage } és ${ percentage }% ple. ${ cta }."
+        "L'${ storage } és ple al ${ percentage }%. ${ cta }."
       ],
       "Your ${ storage } is full. ${ cta }.": [
         "L'${ storage } és ple. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
-        "L'emmagatzematge és ${ percentage }% ple. ${ cta }."
+        "L'emmagatzematge és ple al ${ percentage }%. ${ cta }."
       ],
       "Your storage is full": [
         "L'emmagatzematge és ple."
@@ -8642,6 +8713,9 @@
       "Night theme": [
         "Tema de nit"
       ],
+      "No breaches detected": [
+        "No s'han detectat infraccions"
+      ],
       "Notes": [
         "Notes"
       ],
@@ -8852,8 +8926,8 @@
       "Your calendar link": [
         "Enllaç del vostre calendari"
       ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "La prova gratuïta de Mail Plus finalitza el ${ textDate }"
+      "Your exposed information": [
+        "La teva informació exposada"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

@@ -323,6 +323,9 @@
       "Delete link": [
         "Elimina l'enllaç"
       ],
+      "Delete logo": [
+        "Elimina el logo"
+      ],
       "Delete permanently": [
         "Elimina de manera permanent"
       ],
@@ -587,6 +590,9 @@
       "Keep": [
         "Mantenir"
       ],
+      "Keep logo": [
+        "Manté el logo"
+      ],
       "Keep my Plus subscription": [
         "Mantén la meva subscripció Plus"
       ],
@@ -619,6 +625,9 @@
       ],
       "Mark as default": [
         "Marca per defecte"
+      ],
+      "Mark as open": [
+        "Marca com a obert"
       ],
       "Mark as resolved": [
         "Marca com a resolt"
@@ -755,6 +764,9 @@
       "Report a problem": [
         "Notifica un problema"
       ],
+      "Request a call": [
+        "Sol·licitar una trucada"
+      ],
       "Request a feature": [
         "Demana una nova característica"
       ],
@@ -850,6 +862,9 @@
       ],
       "Select country": [
         "Seleccioneu el país"
+      ],
+      "select file": [
+        "seleccionar un fitxer"
       ],
       "Select file": [
         "Selecciona un fitxer"
@@ -1037,6 +1052,9 @@
       "Upload": [
         "Carrega"
       ],
+      "Upload logo": [
+        "Carrega el logo"
+      ],
       "Upload picture": [
         "Carrega la imatge"
       ],
@@ -1072,6 +1090,9 @@
       ],
       "View": [
         "Mostra"
+      ],
+      "View all reports": [
+        "Mostra tots els informes"
       ],
       "View invoice": [
         "Mostra la factura"
@@ -1629,6 +1650,9 @@
       "Continue using ${ planTitle }": [
         "Continua utilitzant ${ planTitle }"
       ],
+      "Continue your subscription": [
+        "Continuï amb la seva subscripció"
+      ],
       "Copy": [
         "Copia"
       ],
@@ -1825,6 +1849,11 @@
       ],
       "Week": [
         "Setmana"
+      ]
+    },
+    "Call Scheduled Confirmation": {
+      "Request sent": [
+        "S'ha enviat la sol·licitud."
       ]
     },
     "Checkout row": {
@@ -3244,14 +3273,6 @@
         "Ajudeu-nos a millorar!"
       ]
     },
-    "Download link": {
-      ".deb for Debian / Ubuntu": [
-        ".deb per a Debian / Ubuntu"
-      ],
-      ".rpm for Fedora / Red Hat": [
-        ".rpm per a Fedora / Red Hat"
-      ]
-    },
     "drive_signup_2023: Info": {
       "Advanced sharing security": [
         "Seguretat avançada per a la compartició"
@@ -3313,10 +3334,10 @@
         "S'ha actualitzat aquest esdeveniment."
       ],
       "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Aquest esdeveniment s'ha actualitzat. Això és el que s'ha canviat:\n\n${ updateEventDetailsText }"
+        "Aquest esdeveniment s'ha actualitzat. Això és el que ha canviat:\n\n${ updateEventDetailsText }"
       ],
       "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
-        "Esteu convidat a ${ eventTitle }\n\n${ eventDetailsText }"
+        "Esteu convidat a ${ eventTitle }.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -3904,7 +3925,7 @@
         "No s'han trobat correus electrònics per a importar. El compte no té una safata d'entrada"
       ],
       "No external key retrieved for user is valid for sending": [
-        "No hi ha cap clau externa recuperada per l'usuari vàlida per a enviar"
+        "Cap clau externa recuperada per a l'usuari és vàlida per a l'enviament"
       ],
       "No image selected": [
         "No s'ha seleccionat cap imatge."
@@ -5434,6 +5455,11 @@
         "Proveu el millor de ${ MAIL_APP_NAME } de manera gratuïta."
       ]
     },
+    "Headline": {
+      "Contact us": [
+        "Contacteu amb nosaltres"
+      ]
+    },
     "Hint": {
       "Found ${ items.length } suggestion, use keyboard to navigate.": [
         "S'ha trobat ${ items.length } suggerència, utilitza el teclat per navegar.",
@@ -6554,6 +6580,9 @@
       "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
         "Amaga la informació d'identificació carregant contingut remot mitjançant un servidor intermediari. Hi ha l'opció d'emmagatzemar contingut com a fitxers adjunts."
       ],
+      "High Priority": [
+        "Alta prioritat"
+      ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Si un altre administrador ha canviat aquesta contrasenya, haureu de preguntar-li quina és la nova contrasenya d'organització."
       ],
@@ -6727,6 +6756,9 @@
       "Lean more about single sign-on": [
         "Obtingui més informació sobre l'inici de sessió únic"
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Més informació sobre com ${ staySaferOnlineLink }"
+      ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Apreneu a iniciar la sessió a ${ VPN_APP_NAME } amb aplicacions VPN de tercers."
       ],
@@ -6768,6 +6800,9 @@
       ],
       "Loading ${ appName }": [
         "Carregant ${ appName }"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "S'està carregant el calendari, si us plau, esperi's. Se'l redirigirà a la nostra plataforma de programació Calendly en una pestanya nova."
       ],
       "Loading preview": [
         "S'està carregant la previsualització"
@@ -6915,6 +6950,9 @@
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Existeixen altres administradors a la teva organització, ets el responsable de comunicar'ls-hi la nova contrasenya."
+      ],
+      "Other users within your organization will see your busy slots. No event details are shared.": [
+        "Altres usuaris de la seva organització veuran els seus espais ocupats. No es comparteix cap detall de l'esdeveniment."
       ],
       "Outdated recovery file; update to ensure access to your data": [
         "El fitxer de recuperació està obsolet; actualitzeu-lo per a garantir l'accés a les vostres dades"
@@ -7298,6 +7336,9 @@
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "L'enllaç de verificació per correu electrònic ha caducat. Inicieu la sessió per a tornar a enviar un enllaç de verificació."
       ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "La informació exposada es va filtrar d'un servei de tercers. La informació del seu compte de ${ BRAND_NAME } continua sent segura i encriptada. ${ learnMoreLink }"
+      ],
       "The following address is available:": [
         "La següent adreça està disponible:"
       ],
@@ -7622,6 +7663,9 @@
       "Visa Secure logo": [
         "Logo de Visa Secure"
       ],
+      "Want to learn more?": [
+        "Voleu saber més?"
+      ],
       "Warning:": [
         "Atenció:"
       ],
@@ -7663,6 +7707,9 @@
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Us redireccionarem a PayPal en una pestanya nova del navegador per completar aquesta transacció. Si utilitzeu bloquejadors emergents, inhabiliteu-los per continuar."
+      ],
+      "We'll email you once import is complete.": [
+        "Us enviarem un correu electrònic un cop s'hagi completat la importació."
       ],
       "We'll get back to you shortly.": [
         "Ens posarem en contacte aviat."
@@ -7752,6 +7799,9 @@
       "You can check the progress ${ importProgressLink }.": [
         "Podeu comprovar el progrés a ${ importProgressLink }."
       ],
+      "You can close the tab or browser in the meantime.": [
+        "Mentrestant, podeu tancar la pestanya o el navegador."
+      ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Podeu editar-ho una vegada per a assegurar-vos que l'adreça de correu electrònic utilitzada per a la verificació és correcta."
       ],
@@ -7805,6 +7855,12 @@
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "No heu establert un mètode de recuperació i per tant la recuperació del compte serà impossible si oblideu la vostra contrasenya. Voleu procedir sense mètode de recuperació?"
+      ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "Té una subscripció de prova de ${ planTitle }. Si vol continuar amb la seva subscripció després del període de prova, afegeixi un mètode de pagament."
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "Té una subscripció de prova de ${ planTitle }. No es requereix cap pagament en aquest moment. La seva subscripció es renovarà automàticament al final del període de prova."
       ],
       "You have no calendars to export.": [
         "No teniu cap calendari per exportar."
@@ -7921,6 +7977,9 @@
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "La vostra informació està segura amb nosaltres. Només ens posarem en contacte quan sigui necessari per oferir els nostres serveis."
       ],
+      "Your information was found on ${ displayedDate }": [
+        "La seva informació es va trobar el ${ displayedDate }"
+      ],
       "Your login information will not be saved after the import is completed.": [
         "La vostra informació d'inici de sessió no es desarà quan s'hagi completat la importació."
       ],
@@ -7950,6 +8009,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "La vostra subscripció és gestionada per Mozilla. Contacteu amb el suport de Mozilla."
+      ],
+      "Zoom meeting": [
+        "reunió Zoom"
       ]
     },
     "Info - folder colouring feature": {
@@ -8371,6 +8433,9 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(No disponible temporalment. Comproveu-ho de nou més tard.)"
       ],
+      "Access to my events": [
+        "Accés als meus esdeveniments."
+      ],
       "Account storage": [
         "Emmagatzematge del compte"
       ],
@@ -8475,9 +8540,6 @@
       ],
       "Awarded": [
         "Premiat"
-      ],
-      "Beta": [
-        "Beta"
       ],
       "Billing address": [
         "Adreça de facturació"
@@ -9076,6 +9138,9 @@
       "Send in": [
         "Envia en"
       ],
+      "Show others when I'm busy": [
+        "Mostrar als altres quan estic ocupat"
+      ],
       "Show secondary time zone": [
         "Mostra el fus horari secundari"
       ],
@@ -9469,6 +9534,9 @@
       "here": [
         "aquí"
       ],
+      "How does monitoring work?": [
+        "Com funciona el monitoratge?"
+      ],
       "How to pay with Bitcoin?": [
         "Com pagar amb Bitcoin?"
       ],
@@ -9513,6 +9581,9 @@
       ],
       "Sign in": [
         "Inicia la sessió"
+      ],
+      "stay safer online": [
+        "mantenir-se més segur en línia"
       ],
       "switch account": [
         "canvieu de compte"
@@ -9593,13 +9664,16 @@
         "El seu emmagatzematge està ple. Per enviar o rebre correus electrònics, alliberi espai o ${ cta }."
       ],
       "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
-        "El seu emmagatzematge està ple. Per penjar o sincronitzar fitxers, alliberi espai o ${ cta }."
+        "El vostre emmagatzematge està ple. Per carregar o sincronitzar fitxers, allibereu espai o ${ cta }."
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "La seva subscripció ha finalitzat. ${ cta } i per evitar la pèrdua de dades."
       ]
     },
     "Log preference": {
+      "Enable ${ reason }": [
+        "Activa ${ reason }"
+      ],
       "Enable advanced logs": [
         "Activa els registres avançats"
       ],
@@ -9649,10 +9723,10 @@
         "10 adreces de correu electrònic"
       ],
       "Auto-delete Spam and Trash": [
-        "Suprimeix automàticament la brossa i la paperera"
+        "Elimina automàticament el correu brossa i la paperera"
       ],
       "Custom schedule send and snooze times": [
-        "Horaris personalitzats d'enviament i posposa"
+        "Personalització de l'hora d'enviament i del temps de posposició"
       ],
       "Support for 1 custom email domain": [
         "Suport per a 1 domini de correu personalitzat"
@@ -9663,7 +9737,7 @@
     },
     "mailtrial2024: Footer": {
       "Renews at ${ renewablePrice }, cancel anytime": [
-        "Renovacions a ${ renewablePrice }, cancel·leu en qualsevol moment"
+        "Es renova per ${ renewablePrice } i ho podeu cancel·lar en qualsevol moment"
       ]
     },
     "mailtrial2024: Info": {
@@ -11745,6 +11819,9 @@
       "MM/YY": [
         "MM/AA"
       ],
+      "Processing payment": [
+        "S'està processant el pagament."
+      ],
       "Timeout exceeded": [
         "S'ha superat el temps d'espera."
       ]
@@ -11885,7 +11962,7 @@
         "Seleccioneu un motiu"
       ],
       "Select state": [
-        "Seleccioni l'estat"
+        "Seleccioneu l'estat"
       ],
       "Text": [
         "Text"
@@ -12105,8 +12182,24 @@
       "Configure SCIM": [
         "Configura SCIM"
       ],
+      "Disable SCIM": [
+        "Desactiva SCIM"
+      ],
       "Generate token": [
         "Genera un token"
+      ]
+    },
+    "scim: Label": {
+      "SCIM base URL": [
+        "URL base de SCIM"
+      ],
+      "SCIM token": [
+        "Token SCIM"
+      ]
+    },
+    "scim: Title": {
+      "Disable SCIM integration?": [
+        "Voleu desactivar la integració SCIM?"
       ]
     },
     "Select file": {
@@ -12123,6 +12216,17 @@
       ],
       "Upload additional files": [
         "Pugeu fitxers addicionals"
+      ]
+    },
+    "Select invoice document": {
+      "Credit note": [
+        "Nota de crèdit"
+      ],
+      "Currency conversion": [
+        "Conversió de moneda"
+      ],
+      "Invoice": [
+        "Factura"
       ]
     },
     "Select search results": {
@@ -12843,7 +12947,7 @@
         "Aconseguiu més emmagatzematge"
       ],
       "To send or receive emails, free up space or ${ upgrade }": [
-        "Per enviar o rebre correus electrònics, allibereu espai o ${ upgrade }"
+        "Per a enviar o rebre correus electrònics, allibereu espai o ${ upgrade }"
       ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "Per a carregar o sincronitzar fitxers, allibereu espai o ${ upgrade }"
@@ -12867,13 +12971,13 @@
         "El vostre ${ appStorage } és ple."
       ],
       "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
-        "L'${ storage } és ${ percentage }% ple. ${ cta }."
+        "L'${ storage } és ple al ${ percentage }%. ${ cta }."
       ],
       "Your ${ storage } is full. ${ cta }.": [
         "L'${ storage } és ple. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
-        "L'emmagatzematge és ${ percentage }% ple. ${ cta }."
+        "L'emmagatzematge és ple al ${ percentage }%. ${ cta }."
       ],
       "Your storage is full": [
         "L'emmagatzematge és ple."
@@ -13015,6 +13119,39 @@
     "Subscription price": {
       "For": [
         "Per"
+      ]
+    },
+    "Subscription reminder": {
+      "${ dayDiff } day left": [
+        "Queda ${ dayDiff } dia.",
+        "Queden ${ dayDiff } dies."
+      ],
+      "10 email addresses": [
+        "10 adreces de correu electrònic"
+      ],
+      "Calendar sharing": [
+        "Compartició de calendari"
+      ],
+      "Cancel subscription": [
+        "Cancel·la la subscripció"
+      ],
+      "Cancel subscription?": [
+        "Voleu cancel·lar la subscripció?"
+      ],
+      "Close": [
+        "Tanca"
+      ],
+      "Have a question?": [
+        "Teneu una pregunta?"
+      ],
+      "Keep ${ planName }": [
+        "Segueix amb ${ planName }"
+      ],
+      "Priority support": [
+        "Suport prioritari"
+      ],
+      "Subscription canceled": [
+        "La subscripció s'ha cancel·lat."
       ]
     },
     "Subscription renewal state": {
@@ -13740,6 +13877,9 @@
       "Custom filters": [
         "Filtres personalitzats"
       ],
+      "Customization": [
+        "Personalització"
+      ],
       "Customize and confirm": [
         "Personalitzeu i confirmeu"
       ],
@@ -13796,6 +13936,9 @@
       ],
       "Delete logs": [
         "Eliminar registres"
+      ],
+      "Delete organization logo?": [
+        "Voleu eliminar el logo de l'organització?"
       ],
       "Delete the server (you will still be able to recover it for ${ days } day)": [
         "Elimina el servidor (encara podreu recuperar-lo durant ${ days } dia)",
@@ -13939,12 +14082,6 @@
       ],
       "Folders and labels": [
         "Carpetes i etiquetes"
-      ],
-      "For Linux": [
-        "Per a Linux"
-      ],
-      "For macOS": [
-        "Per a macOS"
       ],
       "Forward and auto-reply": [
         "Reenviament i resposta automàtica"
@@ -14421,6 +14558,9 @@
       "We'll send an email to your new address with instructions on completing the change.": [
         "Enviarem un correu electrònic a la vostra nova adreça amb instruccions per completar el canvi."
       ],
+      "What is an alias?": [
+        "Què és un àlies?"
+      ],
       "What would you like to import?": [
         "Què li agradaria importar?"
       ],
@@ -14436,8 +14576,8 @@
       "Your changes are not synced yet": [
         "Els vostres canvis encara no estan sincronitzats"
       ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "La prova gratuïta de Mail Plus finalitza el ${ textDate }"
+      "Your exposed information": [
+        "La teva informació exposada"
       ],
       "Your plan": [
         "El vostre pla"

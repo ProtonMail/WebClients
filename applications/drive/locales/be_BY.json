@@ -562,6 +562,9 @@
       "Remove": [
         "Выдаліць"
       ],
+      "Remove access": [
+        "Выдаліць доступ"
+      ],
       "Remove bonuses": [
         "Выдаліць бонусы"
       ],
@@ -2761,7 +2764,7 @@
         "У вашым знешнім уліковым запісе занадта шмат папак. Наладзьце імпартаванне, каб выдаліць некаторыя папкі."
       ],
       "There was an error when exporting the contacts vCards": [
-        "Падчас экспартавання кантактаў vCard адбылася памылка"
+        "Адбылася памылка падчас экспартавання кантактаў vCard"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Гэта поле перавышае максімальную колькасць сімвалаў (максімум: ${ maximumLength })."
@@ -5615,9 +5618,6 @@
         "Выдаліць дыскі?",
         "Выдаліць дыскі?"
       ],
-      "Delete link": [
-        "Выдаліць спасылку"
-      ],
       "Delete recovery-related information.": [
         "Выдаліць інфармацыю звязаную з аднаўленнем."
       ],
@@ -5875,6 +5875,9 @@
       ],
       "Region": [
         "Вобласць"
+      ],
+      "Remove access": [
+        "Выдаліць доступ"
       ],
       "Replace existing file": [
         "Замяніць бягучы файл"
@@ -7468,6 +7471,12 @@
       "${ reason } has been enabled": [
         "${ reason } было ўключана"
       ],
+      "Access for the member removed": [
+        "Доступ для ўдзельніка выдалены"
+      ],
+      "Access updated and shared": [
+        "Доступ абноўлены і абагулены"
+      ],
       "All items will soon be permanently deleted from trash": [
         "Усе элементы неўзабаве будуць незваротна выдалены са сметніцы"
       ],
@@ -7521,6 +7530,9 @@
       ],
       "File or folder is missing a name": [
         "Адсутнічае назва папкі або файла"
+      ],
+      "Invitation removed from the share": [
+        "Запрашэнне выдалена з абагульвання"
       ],
       "Link copied to clipboard": [
         "Спасылка скапіявана ў буфер абмену"
@@ -7999,7 +8011,7 @@
         "Адкрыць ${ PASS_APP_NAME }"
       ],
       "Protect your online identity": [
-        "Абараніце сваю сеткавую ідэнтычнасць"
+        "Абараняйце сваю сеткавую ідэнтычнасць"
       ],
       "Try ${ PASS_APP_NAME }": [
         "Паспрабуйце ${ PASS_APP_NAME }"
@@ -9563,6 +9575,9 @@
       "You have no folders yet": [
         "У вас пакуль няма папак"
       ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Ваш бясплатны выпрабавальны перыяд для тарыфнага плана ${ planName } завершыцца ${ textDate }"
+      ],
       "Your 3 GB bonus": [
         "Ваш бонус у 3 ГБ"
       ],
@@ -9574,9 +9589,6 @@
       ],
       "Your exposed information": [
         "Вашы скампраметаваныя звесткі"
-      ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "Ваш бясплатны выпрабавальны перыяд Mail Plus завершыцца ${ textDate }"
       ],
       "Your welcome actions": [
         "Вашы прывітальныя дзеянні"

@@ -619,6 +619,9 @@
       "Mark as read": [
         "標示為已讀取"
       ],
+      "Mark as resolved": [
+        "標記為已解決"
+      ],
       "Mark as unread": [
         "標示為未讀取"
       ],
@@ -886,6 +889,9 @@
       "Report phishing": [
         "回報網路釣魚"
       ],
+      "Request a call": [
+        "請求呼叫"
+      ],
       "Request a feature": [
         "提出新功能建議"
       ],
@@ -1114,9 +1120,6 @@
       "Trust": [
         "信任"
       ],
-      "Trust key": [
-        "信任金鑰"
-      ],
       "Trust public key": [
         "信任公開金鑰"
       ],
@@ -1212,6 +1215,9 @@
       ],
       "View": [
         "檢視"
+      ],
+      "View all reports": [
+        "瀏覽全部報告"
       ],
       "View contact details": [
         "檢視聯絡人詳細資料"
@@ -1654,6 +1660,12 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "繼續使用 ${ MAIL_APP_NAME }。"
+      ],
+      "Continue using ${ planTitle }": [
+        "繼續使用 ${ planTitle }"
+      ],
+      "Continue your subscription": [
+        "繼續您的訂閱"
       ]
     },
     "Calendar attachment tooltip": {
@@ -4658,6 +4670,9 @@
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }桌面應用程式"
       ],
+      "14-day desktop app trial.": [
+        "14 天桌面應用程式試用。"
+      ],
       "Enjoy fast, secure, and distraction-free access to your inbox and calendar.": [
         "享受快速、安全、心無旁騖存取您的收件匣和行事曆。"
       ],
@@ -5872,6 +5887,9 @@
       "Large imports can take several days.": [
         "大量匯入或需時數天完成。"
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "了解如何 ${ staySaferOnlineLink }"
+      ],
       "Learn more": [
         "瞭解詳情"
       ],
@@ -6102,6 +6120,9 @@
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "請選取一或多組電郵位址以加入至 ${ groupName }。"
+      ],
+      "Please try again in a few moments": [
+        "請稍候再試"
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "諘換另一個繳款方式再試一次，或聯絡您的銀行尋求協助。"
@@ -6631,6 +6652,9 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "我們將在瀏覽器的新索引標籤中重新導向到 PayPal 以完成此交易。若您有使用任何彈出式視窗攔截程式，請先停用，然後才繼續。"
       ],
+      "We'll email you once import is complete.": [
+        "當您匯入完成將電子郵件通知您。"
+      ],
       "We'll notify you when the import is done.": [
         "我們將會在匯入完成後通知你。"
       ],
@@ -6820,6 +6844,12 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "您的資料已經準備好從 ${ importedEmailAddressStrong } 匯入您的 ${ BRAND_NAME } 帳號。"
       ],
+      "Your email address and password were leaked:": [
+        "您的電子郵件位址與密碼皆已洩漏曝光："
+      ],
+      "Your email address was exposed:": [
+        "您的電子郵件地址外洩:"
+      ],
       "Your email will only be used for this one-time verification.": [
         "您的電郵只會用於此一次性驗證。"
       ],
@@ -6840,6 +6870,9 @@
       ],
       "Your next billing date is ${ renewalTime }.": [
         "您的下一個結算日期為${ renewalTime }。"
+      ],
+      "Your password was leaked:": [
+        "您的密碼已外洩:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "您的手機號碼只會用於此一次性驗證。"
@@ -7866,9 +7899,6 @@
       ],
       "Sent": [
         "寄件備份"
-      ],
-      "Set up email forwarding": [
-        "設定電子郵件轉發"
       ],
       "Sign up for free": [
         "免費註冊"
@@ -9588,6 +9618,9 @@
       ]
     },
     "Security Center - Info": {
+      "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
+        "取得通知當您的密碼或其他資料在第三方服務中洩漏。 ${ learnMoreLink }"
+      ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "最新的 AI 安全方案，為希望加強帳號防護的人而設計。 ${ learnMoreLink }"
       ],
@@ -10123,9 +10156,6 @@
       "Email tracking protection": [
         "電郵追蹤防護"
       ],
-      "Faster email management": [
-        "更快速的電子郵件管理"
-      ],
       "Get the desktop app": [
         "取得桌面應用程式"
       ],
@@ -10135,17 +10165,11 @@
       "Invite friends to ${ BRAND_NAME }": [
         "揪親朋好友一起用 ${ BRAND_NAME }"
       ],
-      "Now you can take action on all emails in a single folder in one go.": [
-        "現在，你可以一次對一個資料夾內的全部郵件進行動作。"
-      ],
       "Schedule send": [
         "排程傳送"
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "我們將預設載入所有圖像，並且攔截寄件者進行追蹤。此功能可在 ${ settingsLink } 進行變更。"
-      ],
-      "You can now automatically forward your emails to anyone!": [
-        "您可以自動轉寄您的電子郵件給任何人!"
       ],
       "You can now schedule your messages to be sent later": [
         "您現在可以安排稍後傳送訊息"
@@ -10987,6 +11011,9 @@
       "Deleting contacts": [
         "正在刪除聯絡人"
       ],
+      "Details": [
+        "詳細資訊"
+      ],
       "Don't give spam a chance": [
         "垃圾郵件別拜託、拜拜就好"
       ],
@@ -11223,6 +11250,9 @@
       ],
       "No attachment found": [
         "找不到附件"
+      ],
+      "No breaches detected": [
+        "無偵測到外洩"
       ],
       "No trackers found": [
         "未發現追蹤程式"
@@ -11476,8 +11506,8 @@
       "Your changes are not synced yet": [
         "您的變更尚未同步"
       ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "您的 Mail Plus 免費方案將於 ${ textDate } 結束"
+      "Your exposed information": [
+        "你的外﻿﻿﻿洩資料"
       ]
     },
     "Title subscription": {

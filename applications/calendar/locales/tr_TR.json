@@ -598,7 +598,7 @@
         "Etkilenen takvimleri görüntüle"
       ],
       "Show busy times": [
-        "Yoğun zamanları göster"
+        "Yoğun zamanları görüntüle"
       ],
       "Show less": [
         "Daha az görüntüle"
@@ -1115,6 +1115,9 @@
       ],
       "Continue using ${ planTitle }": [
         "${ planTitle } kullanmayı sürdürün"
+      ],
+      "Continue your subscription": [
+        "Aboneliğinizi kullanmayı sürdürün"
       ]
     },
     "Calendar access select label": {
@@ -2388,6 +2391,9 @@
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "İçe aktardığınız kişi listesinde bazı gruplar var gibi görünüyor. Lütfen bu grupların nasıl içe aktarılması gerektiğini gözden geçirin."
+      ],
+      "Loading availability": [
+        "Uygunluk yükleniyor"
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Kişiler birleştiriliyor... Bu işlem birkaç dakika sürebilir. İşlem tamamlandığında, bu pencereyi kapatabilirsiniz."
@@ -4458,6 +4464,9 @@
       "Large imports can take several days.": [
         "Büyük boyutlu içe aktarımların tamamlanması birkaç gün sürebilir."
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Nasıl ${ staySaferOnlineLink } öğrenin"
+      ],
       "Learn more": [
         "Ayrıntılı bilgi alın"
       ],
@@ -4472,6 +4481,9 @@
       ],
       "Loading ${ appName }": [
         "${ appName } yükleniyor"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Takvim yüklenirken lütfen bekleyin. Yeni bir sekmede zamanla platformumuz Calendly açılacak."
       ],
       "Loading event": [
         "Etkinlik yükleniyor"
@@ -4551,6 +4563,9 @@
       "Organization size": [
         "Kuruluş boyutu"
       ],
+      "Other users within your organization will see your busy slots. No event details are shared.": [
+        "Kuruluşunuzdaki diğer kullanıcılar meşgul zamanlarınızı görecek. Etkinlik bilgileri paylaşılmaz."
+      ],
       "password": [
         "parola"
       ],
@@ -4598,7 +4613,7 @@
         "Lütfen ${ groupName } grubuna eklenecek e-posta adresini ya da adreslerini seçin."
       ],
       "Please try again in a few moments": [
-        "Lütfen birkaç saniye içinde tekrar deneyin"
+        "Lütfen biraz sonra yeniden deneyin"
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Lütfen farklı bir ödeme yöntemi kullanarak yeniden deneyin ya da bankanızla görüşün."
@@ -4677,6 +4692,9 @@
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Dışa aktarmadan önce bu uygulamanın kişilerin şifresini yerel olarak çözmesi gerekiyor. İşlemin sonunda, indirebileceğiniz bir VCF dosyası oluşturulacak."
+      ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "Bilgiler üçüncü taraf bir hizmetten açığa çıkmış. ${ BRAND_NAME } Hesap bilgileriniz güvende ve şifrelenmiş olarak kalır. ${ learnMoreLink }"
       ],
       "The following participants cannot be notified about your changes:": [
         "Değişiklikleriniz şu katılımcılara bildirilemeyecek:"
@@ -4902,6 +4920,12 @@
       "You cannot undo this action.": [
         "Bu işlemi geri alamazsınız."
       ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "${ planTitle } deneme aboneliğiniz var. Deneme süresinden sonra aboneliğinizi sürdürmek istiyorsanız lütfen bir ödeme yöntemi ekleyin."
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "${ planTitle } deneme aboneliğiniz var. Şu anda herhangi bir ödeme yapmanıza gerek yok. Deneme süresi sonunda aboneliğiniz otomatik olarak yenilenecek."
+      ],
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
         "Anahtarlarınızı yeniden kullanıma aldınız ve artık şu takvimlere bağlı etkinliklerin şifresi çözülebilir."
       ],
@@ -4981,7 +5005,7 @@
         "Verileriniz ${ importedEmailAddressStrong } üzerinden ${ BRAND_NAME } hesabınız içine aktarılmaya hazır."
       ],
       "Your email address and password were leaked:": [
-        "E-posta adresiniz ve parolanız sızdırılmış:"
+        "E-posta adresiniz ve parolanız açığa çıkmış:"
       ],
       "Your email address was exposed:": [
         "E-posta adresiniz açığa çıkmış:"
@@ -4995,6 +5019,9 @@
       "Your files will be encrypted and then saved": [
         "Dosyalarınız şifrelendikten sonra kaydedilir"
       ],
+      "Your information was found on ${ displayedDate }": [
+        "Bilgileriniz ${ displayedDate } tarihinde bulundu"
+      ],
       "Your login information will not be saved after the import is completed.": [
         "İçe aktarma işleminden sonra oturum açma bilgileriniz kaydedilmez."
       ],
@@ -5002,7 +5029,7 @@
         "Sonraki fatura zamanınız ${ renewalTime }."
       ],
       "Your password was leaked:": [
-        "Parolanız sızdırılmış:"
+        "Parolanız açığa çıkmış:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Telefon numaranız yalnızca bu tek seferlik doğrulama için kullanılacak."
@@ -5141,6 +5168,9 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden bakın.)"
+      ],
+      "Access to my events": [
+        "Etkinliklerime eriş"
       ],
       "Add email address": [
         "E-posta adresi ekle"
@@ -5503,6 +5533,9 @@
       "Select your plan": [
         "Tarifenizi seçin"
       ],
+      "Show others when I'm busy": [
+        "Meşgul olduğum zamanlar başkalarına görüntülensin"
+      ],
       "Show week numbers": [
         "Hafta numaraları"
       ],
@@ -5666,7 +5699,7 @@
         "Davet iste"
       ],
       "stay safer online": [
-        "çevrimiçi ortamda daha güvende kalın"
+        "çevrim içi ortamda güvende kalın"
       ],
       "What’s this?": [
         "Bu nedir?"
@@ -7449,6 +7482,9 @@
       ]
     },
     "Security Center - Info": {
+      "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
+        "Parolanız veya diğer verileriniz üçüncü taraf bir hizmetten açığa çıkarsa bildirim alın. ${ learnMoreLink }"
+      ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Hesapları için daha yüksek düzeyde koruma isteyen kullanıcılar için tasarlanmış, yapay zeka destekli son teknoloji güvenlik çözümümüz. ${ learnMoreLink }"
       ],
@@ -7913,17 +7949,11 @@
       ]
     },
     "Spotlight": {
-      "Add your country's public holidays to your calendar.": [
-        "Ülkenizin resmi tatillerini takviminize ekleyin."
-      ],
       "Color-coding is here!": [
         "Renklendirme burada!"
       ],
       "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
         "${ MAIL_APP_NAME } uygulamasını doğrudan masaüstünüzden kolayca başlatın."
-      ],
-      "Easily find the event you're looking for with our new search feature.": [
-        "Yeni arama özelliğimizle aradığınız etkinliği kolayca bulabilirsiniz."
       ],
       "Get the desktop app": [
         "Masaüstü uygulamasını edinin"
@@ -7934,11 +7964,11 @@
       "Invite friends to ${ BRAND_NAME }": [
         "Arkadaşlarınızı ${ BRAND_NAME } kullanmaya davet edin"
       ],
-      "Public holidays are here!": [
-        "Resmi tatiller burada!"
+      "No more scheduling conflicts": [
+        "Herhangi bir zamanlama çakışması yok"
       ],
-      "Search for events": [
-        "Etkinlik ara"
+      "Now you can see when participants are free to attend your meeting.": [
+        "Artık katılımcıların toplantınıza ne zaman katılabileceklerini görebilirsiniz."
       ],
       "With customizable event colors, you can color-code the chaos and conquer your day.": [
         "Özelleştirilebilir etkinlik renklerini kullanarak karmaşayı renklendirebilir ve gününüzü yönetebilirsiniz."
@@ -8965,9 +8995,6 @@
       ],
       "Your exposed information": [
         "Açığa çıkmış bilgileriniz"
-      ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "Mail Plus ücretsiz deneme süreniz ${ textDate } tarihinde sonra erecek"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

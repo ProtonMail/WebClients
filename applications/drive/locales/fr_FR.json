@@ -556,6 +556,9 @@
       "Remove": [
         "Retirer"
       ],
+      "Remove access": [
+        "Retirer l’accès"
+      ],
       "Remove bonuses": [
         "Retirer les bonus"
       ],
@@ -4490,6 +4493,9 @@
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Les paiements sont protégés par le chiffrement TLS et par les lois suisses en matière de protection de la vie privée."
       ],
+      "Pending": [
+        "En attente"
+      ],
       "Permanently delete all files in your locked drive": [
         "Supprimez définitivement tous les fichiers de votre disque dur verrouillé."
       ],
@@ -5039,6 +5045,9 @@
       "Yesterday": [
         "Hier"
       ],
+      "you": [
+        "vous"
+      ],
       "You already have a free account": [
         "Vous avez déjà un compte gratuit."
       ],
@@ -5435,9 +5444,6 @@
         "Supprimer le disque ?",
         "Supprimer les disques ?"
       ],
-      "Delete link": [
-        "Supprimer le lien"
-      ],
       "Delete recovery-related information.": [
         "Supprimer les informations liées à la récupération."
       ],
@@ -5695,6 +5701,9 @@
       ],
       "Region": [
         "Région"
+      ],
+      "Remove access": [
+        "Retirer l’accès"
       ],
       "Replace existing file": [
         "Remplacer le fichier existant"
@@ -5982,6 +5991,11 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Votre abonnement est terminé. ${ cta } et pour éviter de perdre des données."
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Activer ${ reason }"
       ]
     },
     "Mail import summary": {
@@ -7154,6 +7168,18 @@
         "${ numberOfItems } lien vers votre élément a été supprimé.",
         "${ numberOfItems } liens vers vos éléments ont été supprimés."
       ],
+      "${ reason } has been disabled": [
+        "${ reason } a été désactivé."
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } a été activé."
+      ],
+      "Access for the member removed": [
+        "Accès pour le membre retiré"
+      ],
+      "Access updated and shared": [
+        "L'accès a été mis à jour et partagé."
+      ],
       "All items will soon be permanently deleted from trash": [
         "Tous les éléments seront bientôt supprimés définitivement du dossier Corbeille."
       ],
@@ -7205,6 +7231,9 @@
       ],
       "File or folder is missing a name": [
         "Il manque un nom au fichier ou au dossier."
+      ],
+      "Invitation removed from the share": [
+        "Invitation retirée du partage"
       ],
       "Link copied to clipboard": [
         "Le lien est copié dans le presse-papiers."
@@ -7696,6 +7725,9 @@
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel est **actif** et protège votre compte."
+      ],
+      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLink }": [
+        "Vos informations ont été retrouvées dans au moins une fuite de données. Activez l'option ${ DARK_WEB_MONITORING_NAME } pour consulter ces informations et prendre les mesures nécessaires. ${ learnMoreLink }"
       ]
     },
     "Select files": {
@@ -9142,6 +9174,9 @@
       "You have no folders yet": [
         "Vous n'avez aucun dossier pour le moment."
       ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Votre essai gratuit ${ planName } se termine le ${ textDate }."
+      ],
       "Your 3 GB bonus": [
         "Votre bonus de 3 Go"
       ],
@@ -9153,9 +9188,6 @@
       ],
       "Your exposed information": [
         "Vos informations exposées"
-      ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "Votre essai gratuit Mail Plus se termine le ${ textDate }."
       ],
       "Your welcome actions": [
         "Vos actions de bienvenue"

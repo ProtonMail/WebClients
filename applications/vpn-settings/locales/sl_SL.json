@@ -2066,6 +2066,9 @@
       "Name does not match": [
         "Ime se ne ujema."
       ],
+      "No image selected": [
+        "Izbrana ni nobena slika"
+      ],
       "Not a valid number": [
         "Ni veljavna številka"
       ],
@@ -3548,6 +3551,9 @@
       "Plus or Visionary subscription required": [
         "Zahtevana je naročnina na paket Plus ali Vizionar"
       ],
+      "Preview": [
+        "Predogled"
+      ],
       "Preview failed to be loaded": [
         "Predogleda ni bilo mogoče naložiti"
       ],
@@ -3603,10 +3609,10 @@
         "Shranjevanje vašega gesla."
       ],
       "Scan QR code instead": [
-        "Namesto tega skenirajte kodo QR"
+        "Namesto tega optično preberite kodo QR"
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Skenirajte ta kodo s svojo napravo za dvojno preverjanje pristnosti in nastavite svoj račun. ${ switchButton }."
+        "Optično preberite to kodo s svojo napravo za dvojno preverjanje pristnosti in nastavite svoj račun. ${ switchButton }."
       ],
       "Secure your ${ BRAND_NAME } Account": [
         "Zavarujte svoj račun ${ BRAND_NAME }"
@@ -3669,7 +3675,7 @@
         "Shramba, ki jo uporablja ta uporabnik."
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
-        "Predložite polog s pomočjo naslednjega naslova ali skenirajte QR kodo. Vaš polog bo prikazan na vašem računu po potrditvi."
+        "Predložite polog s pomočjo naslednjega naslova ali optično preberite QR kodo. Vaš polog bo prikazan na vašem računu po potrditvi."
       ],
       "Subscription auto-renews every 12 months.": [
         "Naročnina se samodejno podaljša vsakih 12 mesecev."
@@ -4761,7 +4767,7 @@
         "Kontaktirajte nas"
       ],
       "Create account": [
-        "Ustvari račun"
+        "Ustvarite račun"
       ],
       "Forgot username?": [
         "Pozabljeno uporabniško ime?"
@@ -6490,6 +6496,17 @@
         "Naloži CSV datoteko"
       ]
     },
+    "Select invoice document": {
+      "Credit note": [
+        "Dobropis"
+      ],
+      "Currency conversion": [
+        "Pretvorba valut"
+      ],
+      "Invoice": [
+        "Račun"
+      ]
+    },
     "Select search results": {
       "No results found": [
         "Ni najdenih rezultatov"
@@ -8101,9 +8118,6 @@
       ],
       "Your current plan": [
         "Vaš trenutni načrt"
-      ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "Brezplačno preizkusno obdobje Mail Plus se vam zaključi ${ textDate }"
       ],
       "Your plan": [
         "Vaš načrt"

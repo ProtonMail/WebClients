@@ -309,6 +309,9 @@
       "Hide affected calendars": [
         "Skjul påvirkede kalendere"
       ],
+      "Hide busy times": [
+        "Skjul travle tidspunkter"
+      ],
       "Hide time zones": [
         "Skjul tidszoner"
       ],
@@ -386,6 +389,9 @@
       ],
       "Manage labels": [
         "Administrer etiketter"
+      ],
+      "Mark as resolved": [
+        "Markér som løst"
       ],
       "Mark for deletion": [
         "Markér til sletning"
@@ -519,6 +525,9 @@
       "Report a problem": [
         "Anmeld et problem"
       ],
+      "Request a call": [
+        "Anmod om opkald"
+      ],
       "Request a feature": [
         "Anmod om en funktion"
       ],
@@ -587,6 +596,9 @@
       ],
       "Show affected calendars": [
         "Vis påvirkede kalendere"
+      ],
+      "Show busy times": [
+        "Vis travle tidspunkter"
       ],
       "Show less": [
         "Vis mindre"
@@ -698,6 +710,9 @@
       ],
       "View": [
         "Vis"
+      ],
+      "View all reports": [
+        "Se alle rapporter"
       ],
       "View contact details": [
         "Vis kontaktoplysninger"
@@ -1100,6 +1115,9 @@
       ],
       "Continue using ${ planTitle }": [
         "Fortsæt med at bruge ${ planTitle }"
+      ],
+      "Continue your subscription": [
+        "Fortsæt dit abonnement"
       ]
     },
     "Calendar access select label": {
@@ -1414,7 +1432,7 @@
         "Navn"
       ],
       "Note": [
-        "Notat"
+        "Note"
       ],
       "Organization": [
         "Organisation"
@@ -2347,6 +2365,9 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA tilføjer et ekstra sikkerheds lag, der forhindrer uautoriseret adgang."
       ],
+      "Availability unknown": [
+        "Tilgængelighed ukendt"
+      ],
       "Boost efficiency and track your time by color-coding events by category or your energy levels. Get this and much more with a paid plan.": [
         "Øg effektiviteten, og hold styr på din tid ved at farvekode begivenheder efter kategori eller dit energiniveau. Få dette og meget mere med et betalt abonnement."
       ],
@@ -2370,6 +2391,9 @@
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Det ser ud til at kontaktlisten du importerer indeholder nogle grupper. Gennemgå hvordan disse grupper skal importeres."
+      ],
+      "Loading availability": [
+        "Indlæser tilgængelighed"
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Fletter kontakter... Dette kan tage et par minutter. Når processen er afsluttet, kan du lukke dette vindue."
@@ -4356,7 +4380,7 @@
         "Hyppighedsændringer vil gå tabt."
       ],
       "here": [
-        "hér"
+        "her"
       ],
       "High Priority": [
         "Høj prioritet"
@@ -4440,6 +4464,9 @@
       "Large imports can take several days.": [
         "Store importer kan tage adskillige dage."
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Lær, hvordan du ${ staySaferOnlineLink }"
+      ],
       "Learn more": [
         "Få mere at vide"
       ],
@@ -4454,6 +4481,9 @@
       ],
       "Loading ${ appName }": [
         "Indlæser ${ appName }"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Indlæser kalender, vent venligst. Du vil blive omdirigeret til vores planlægningsplatform Calendly i en ny fane."
       ],
       "Loading event": [
         "Indlæser begivenhed"
@@ -4533,6 +4563,9 @@
       "Organization size": [
         "Organisationsstørrelse"
       ],
+      "Other users within your organization will see your busy slots. No event details are shared.": [
+        "Andre brugere i din organisation vil se dine optagede tidsrum. Ingen detaljer om begivenheden deles."
+      ],
       "password": [
         "adgangskode"
       ],
@@ -4578,6 +4611,9 @@
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Vælg hvilken eller hvilke e-mail-adresser der skal føjes til ${ groupName }."
+      ],
+      "Please try again in a few moments": [
+        "Forsøg igen om et øjeblik"
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Prøv igen med en anden betalingsmetode, eller kontakt din bank."
@@ -4656,6 +4692,9 @@
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Applikationen skal dekryptere dine kontakter lokalt, før de kan eksporteres. Ved afslutningen af processen vil en VCF-fil blive genereret, og du har mulighed for at downloade denne."
+      ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "De eksponerede oplysninger blev lækket fra en tredjepartstjeneste. Din ${ BRAND_NAME }-kontooplysninger er stadig sikre og krypterede. ${ learnMoreLink }"
       ],
       "The following participants cannot be notified about your changes:": [
         "Følgende deltagere kan ikke få besked om dine ændringer:"
@@ -4783,6 +4822,9 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Du omdirigeres til PayPal i en ny browserfane for at gennemføre denne transaktion. Benytter du evt. pop-up blockere, så deaktivér venligst disse for at fortsætte."
       ],
+      "We'll email you once import is complete.": [
+        "Vi sender dig en e-mail, når importen er færdig."
+      ],
       "We'll notify you when the import is done.": [
         "Vi giver dig besked, når importen er færdig."
       ],
@@ -4855,6 +4897,9 @@
       "You can check the progress ${ importProgressLink }.": [
         "Du kan tjekke fremskridtet ${ importProgressLink }."
       ],
+      "You can close the tab or browser in the meantime.": [
+        "Du kan lukke fanen eller browseren i mellemtiden."
+      ],
       "You can import one data type at a time.": [
         "Du kan importere én datatype ad gangen."
       ],
@@ -4874,6 +4919,12 @@
       ],
       "You cannot undo this action.": [
         "Du kan ikke fortryde denne handling."
+      ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "Du har et ${ planTitle }-prøveabonnement. Hvis du gerne vil fortsætte dit abonnement efter prøveperioden, skal du tilføje en betalingsmetode."
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "Du har et ${ planTitle }-prøveabonnement. Der kræves ingen betaling på dette tidspunkt. Dit abonnement vil automatisk blive fornyet ved prøveperiodens udløb."
       ],
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
         "Du har genaktiveret dine nøgler, og begivenheder tilknyttet flg. kalendere kan nu dekrypteres."
@@ -4953,6 +5004,12 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Dine data er klar til at blive importeret fra ${ importedEmailAddressStrong } til din ${ BRAND_NAME }-konto."
       ],
+      "Your email address and password were leaked:": [
+        "Din e-mailadresse og adgangskode er blevet lækket:"
+      ],
+      "Your email address was exposed:": [
+        "Din e-mailadresse blev eksponeret:"
+      ],
       "Your email will only be used for this one-time verification.": [
         "Din e-mail vil kun blive brugt til denne engangsbekræftelse."
       ],
@@ -4962,11 +5019,17 @@
       "Your files will be encrypted and then saved": [
         "Din filer vil blive krypteret og derefter gemt"
       ],
+      "Your information was found on ${ displayedDate }": [
+        "Dine oplysninger blev fundet ${ displayedDate }"
+      ],
       "Your login information will not be saved after the import is completed.": [
         "Dine loginoplysninger vil ikke blive gemt, når importen er gennemført."
       ],
       "Your next billing date is ${ renewalTime }.": [
         "Din næste faktureringsdato er ${ renewalTime }."
+      ],
+      "Your password was leaked:": [
+        "Din adgangskode er blevet lækket:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Dit telefonnummer vil kun blive anvendt til denne engangsbekræftelse."
@@ -5105,6 +5168,9 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Midlertidigt utilgængelig. Tjek igen senere.)"
+      ],
+      "Access to my events": [
+        "Adgang til mine begivenheder"
       ],
       "Add email address": [
         "Tilføj e-mailadresse"
@@ -5467,6 +5533,9 @@
       "Select your plan": [
         "Vælg dit abonnement"
       ],
+      "Show others when I'm busy": [
+        "Vis andre, når jeg er optaget"
+      ],
       "Show week numbers": [
         "Vis ugenumre"
       ],
@@ -5612,7 +5681,7 @@
         "Hvordan betaler man med Bitcoin?"
       ],
       "Learn more": [
-        "Få yderligere information"
+        "Få mere at vide"
       ],
       "My calendars": [
         "Mine kalendere"
@@ -6162,7 +6231,7 @@
         "Kalenderdeling"
       ],
       "Catch-all": [
-        "Fang-alle"
+        "Catch-all"
       ],
       "Centralized billing": [
         "Samlet fakturering"
@@ -7401,6 +7470,9 @@
       ]
     },
     "Security Center - Info": {
+      "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
+        "Få besked, hvis din adgangskode eller andre data er blevet lækket fra en tredjepartstjeneste. ${ learnMoreLink }"
+      ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Vores banebrydende AI-drevne sikkerhedsløsning designet til brugere, der søger øget beskyttelse for deres konto. ${ learnMoreLink }"
       ],
@@ -7865,17 +7937,11 @@
       ]
     },
     "Spotlight": {
-      "Add your country's public holidays to your calendar.": [
-        "Tilføj dit lands nationale helligdage til din kalender."
-      ],
       "Color-coding is here!": [
         "Farvekodning er her!"
       ],
       "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
         "Start nemt ${ MAIL_APP_NAME } direkte fra dit skrivebord."
-      ],
-      "Easily find the event you're looking for with our new search feature.": [
-        "Find nemt den begivenhed du leder efter, med vores nye søgefunktion."
       ],
       "Get the desktop app": [
         "Få desktop appen."
@@ -7886,11 +7952,11 @@
       "Invite friends to ${ BRAND_NAME }": [
         "Inviter venner til ${ BRAND_NAME }"
       ],
-      "Public holidays are here!": [
-        "Nationale helligdage er her!"
+      "No more scheduling conflicts": [
+        "Ikke flere planlægningskonflikter"
       ],
-      "Search for events": [
-        "Søg efter begivenheder"
+      "Now you can see when participants are free to attend your meeting.": [
+        "Nu kan du se, hvornår deltagerne er ledige og kan deltage i dit møde."
       ],
       "With customizable event colors, you can color-code the chaos and conquer your day.": [
         "Med brugerdefinerede begivenhedsfarver kan du farvekode kaosset og få styr på din dag."
@@ -8587,6 +8653,9 @@
       "Deleting contacts": [
         "Sletter kontakter"
       ],
+      "Details": [
+        "Detaljer"
+      ],
       "Downgrade account": [
         "Nedgradér konto"
       ],
@@ -8912,8 +8981,8 @@
       "Your calendar link": [
         "Dit kalenderlink"
       ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "Din Mail Plus prøveperiode slutter ${ textDate }"
+      "Your exposed information": [
+        "Dine blotlagte oplysninger"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

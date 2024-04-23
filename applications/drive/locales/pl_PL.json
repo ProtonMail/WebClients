@@ -562,6 +562,9 @@
       "Remove": [
         "Usuń"
       ],
+      "Remove access": [
+        "Usuń dostęp"
+      ],
       "Remove bonuses": [
         "Zrezygnuj z bonusów"
       ],
@@ -5307,7 +5310,7 @@
         "Pobieranie jest w toku"
       ],
       "Your email address and password were leaked:": [
-        "Twój adres e-mail i hasło zostało ujawnione:"
+        "Twój adres e-mail i hasło zostały ujawnione:"
       ],
       "Your email address was exposed:": [
         "Twój adres e-mail został ujawniony:"
@@ -5609,9 +5612,6 @@
         "Usunąć dyski?",
         "Usunąć dyski?"
       ],
-      "Delete link": [
-        "Usuń link"
-      ],
       "Delete recovery-related information.": [
         "Usuń informacje o odzyskiwaniu."
       ],
@@ -5869,6 +5869,9 @@
       ],
       "Region": [
         "Województwo"
+      ],
+      "Remove access": [
+        "Usuń dostęp"
       ],
       "Replace existing file": [
         "Zastąp obecny plik"
@@ -6158,6 +6161,11 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Subskrypcja zakończyła się. ${ cta } i uniknąć utraty danych."
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Włącz ${ reason }"
       ]
     },
     "Mail import summary": {
@@ -7457,6 +7465,12 @@
         "${ numberOfItems } linków do elementów zostały usunięte",
         "${ numberOfItems } linków do elementów zostały usunięte"
       ],
+      "Access for the member removed": [
+        "Dostęp został usunięty"
+      ],
+      "Access updated and shared": [
+        "Dostęp został zaktualizowany i przyznany"
+      ],
       "All items will soon be permanently deleted from trash": [
         "Wszystkie elementy w Koszu wkrótce zostaną trwale usunięte"
       ],
@@ -7510,6 +7524,9 @@
       ],
       "File or folder is missing a name": [
         "Plik lub folder nie posiada nazwy"
+      ],
+      "Invitation removed from the share": [
+        "Zaproszenie zostało usunięte"
       ],
       "Link copied to clipboard": [
         "Link został skopiowany do schowka"
@@ -8019,6 +8036,9 @@
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Proton Sentinel jest **włączony** i chroni Twoje konto."
+      ],
+      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLink }": [
+        "Twoje informacje zostały znalezione w co najmniej 1 wycieku danych. Włącz ${ DARK_WEB_MONITORING_NAME }, aby zobaczyć szczegóły i zastosować odpowiednią akcję. ${ learnMoreLink }"
       ]
     },
     "Select files": {
@@ -9549,6 +9569,9 @@
       "You have no folders yet": [
         "Nie masz jeszcze żadnych folderów"
       ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Darmowa wersja próbna planu ${ planName } zakończy się ${ textDate }"
+      ],
       "Your 3 GB bonus": [
         "Twój bonus 3 GB"
       ],
@@ -9560,9 +9583,6 @@
       ],
       "Your exposed information": [
         "Twoje ujawnione informacje:"
-      ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "Darmowa wersja próbna planu Mail Plus zakończy się ${ textDate }"
       ],
       "Your welcome actions": [
         "Wykonaj następujące kroki"

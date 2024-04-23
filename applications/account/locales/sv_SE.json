@@ -1064,8 +1064,8 @@
       "Upload": [
         "Ladda upp"
       ],
-      "Upload icon": [
-        "Ladda upp ikon"
+      "Upload logo": [
+        "Ladda upp logga"
       ],
       "Upload picture": [
         "Ladda upp bild"
@@ -3329,14 +3329,6 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Hjälp oss att förbättra!"
-      ]
-    },
-    "Download link": {
-      ".deb for Debian / Ubuntu": [
-        ".deb för Debian/Ubuntu"
-      ],
-      ".rpm for Fedora / Red Hat": [
-        ".rpm för Fedora/Red Hat"
       ]
     },
     "drive_signup_2023: Info": {
@@ -6214,6 +6206,9 @@
         "Lägg till server (${ availableAddedCount } tillgänglig)",
         "Lägg till server (${ availableAddedCount } tillgängliga)"
       ],
+      "Add your name and logo to create a more personalized experience for your organization.": [
+        "Lägg till ditt namn och din logga för att skapa en mer personifierad upplevelse för din organisation."
+      ],
       "Adding ${ addedServerCount } gateway server": [
         "Lägger till ${ addedServerCount } gatewayserver",
         "Lägger till ${ addedServerCount } gatewayservrar"
@@ -6751,9 +6746,6 @@
       ],
       "Failed to fetch logs.": [
         "Misslyckades att hämta loggar."
-      ],
-      "Fast and focused. Email and calendar, right on your desktop.": [
-        "Snabb och fokuserad. E-post och kalender, direkt på din stationära dator."
       ],
       "Fill in user details": [
         "Fyll i användaruppgifter"
@@ -7656,9 +7648,6 @@
       "The link to report that that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "Länken att rapportera att du inte har ställt in ett ${ BRAND_NAME }-konto har löpt ut. Kontakta vårt supportteam för att lösa problemet."
       ],
-      "The name and icon will be visible to your users while they are signed in.": [
-        "Namnet och ikonen kommer att vara synliga för dina användare när de är inloggade."
-      ],
       "The name will be visible to your users while they are signed in.": [
         "Namnet kommer att vara synligt för dina användare när de är inloggade."
       ],
@@ -8198,6 +8187,12 @@
       "You have ${ availableCount } dedicated server available.": [
         "Du har ${ availableCount } dedikerad server tillgänglig.",
         "Du har ${ availableCount } dedikerade servrar tillgängliga."
+      ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "Du har en provperiod på ${ planTitle }-prenumeration. Om du vill fortsätta med din prenumeration efter provperioden, lägg till en betalningsmetod."
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "Du har en provperiod på ${ planTitle }-prenumeration. Ingen betalning krävs för närvarande. Din prenumeration kommer att förnyas automatiskt i slutet av provperioden."
       ],
       "You have no calendars to export.": [
         "Du har inga kalendrar att exportera."
@@ -8907,9 +8902,6 @@
       ],
       "Awarded": [
         "Belönades"
-      ],
-      "Beta": [
-        "Beta"
       ],
       "Billing address": [
         "Faktureringsadress"
@@ -11838,11 +11830,14 @@
       "Avoid overly compressed images.": [
         "Undvik alltför komprimerade bilder."
       ],
-      "Tips on choosing a good icon": [
-        "Tips på att välja en bra ikon"
+      "Tips on choosing a good logo": [
+        "Tips på att välja en bra logga"
       ],
       "Use a graphical icon or image rather than text.": [
         "Använd en grafisk ikon eller bild istället för text."
+      ],
+      "Use a solid background color.": [
+        "Använd en solid bakgrundsfärg."
       ]
     },
     "Organization logo upload modal": {
@@ -12401,11 +12396,6 @@
         "Skapa en kalender för att behålla kontrollen över din planering samtidigt som du håller ditt data säkert."
       ]
     },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "E-postadress hittades inte bland användar-ID som definierats i sändningsnyckeln (${ keyUserIds })"
-      ]
-    },
     "Placeholder": {
       "A way to contact you": [
         "Ett sätt att kontakta dig"
@@ -12788,6 +12778,11 @@
         "Automatisk tillhandahållande av SCIM"
       ]
     },
+    "Security Center - Info": {
+      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLinkBreach }": [
+        "Din information hittades i minst ett dataintrång. Slå på ${ DARK_WEB_MONITORING_NAME } för att visa detaljer och vidta åtgärd. ${ learnMoreLinkBreach }"
+      ]
+    },
     "Select file": {
       "Upload CSV file": [
         "Ladda upp CSV-fil"
@@ -12802,6 +12797,14 @@
       ],
       "Upload additional files": [
         "Ladda upp ytterligare filer"
+      ]
+    },
+    "Select invoice document": {
+      "Currency conversion": [
+        "Valutaomvandling"
+      ],
+      "Invoice": [
+        "Faktura"
       ]
     },
     "Select search results": {
@@ -13736,6 +13739,9 @@
       ]
     },
     "Subscription reminder": {
+      "${ BRAND_NAME } was targeted by Russia in one of the most aggressive censorship campaigns in recent memory, and our team fought back.": [
+        "${ BRAND_NAME } var måltavla av Ryssland i en av de mest aggressiva censurkampanjerna på senare tid, och vårt team slog tillbaka."
+      ],
       "${ dayDiff } day left": [
         "${ dayDiff } dag kvar",
         "${ dayDiff } dagar kvar"
@@ -13746,8 +13752,26 @@
       "10 email addresses": [
         "10 e-postadresser"
       ],
+      "A direct contribution to our mission": [
+        "Ett direkt bidrag till vårt uppdrag"
+      ],
+      "After ${ BRAND_NAME } got blocked in Iran during protests, our customer support team worked to get our VPN app directly into people's hands.": [
+        "Efter att ${ BRAND_NAME } blockerades i Iran under protester, arbetade vårt kundsupportteam för att få vår VPN-app direkt i människors händer."
+      ],
+      "After privacy and free speech were threatened in Hong Kong, we directly supported local civil rights organizations.": [
+        "Efter att integritet och yttrandefrihet hotades i Hongkong stödde vi lokala medborgarrättsorganisationer direkt."
+      ],
+      "By downgrading your account, you will lose access to these important features": [
+        "Genom att nedgradera ditt konto kommer du att förlora åtkomst till dessa viktiga funktioner"
+      ],
       "Calendar sharing": [
         "Kalenderdelning"
+      ],
+      "Cancel subscription": [
+        "Avsluta prenumeration"
+      ],
+      "Cancel subscription?": [
+        "Avsluta prenumeration?"
       ],
       "Close": [
         "Stäng"
@@ -13755,14 +13779,56 @@
       "Have a question?": [
         "Har du en fråga?"
       ],
-      "Keep Mail Plus": [
-        "Behåll Mail Plus"
+      "Helping activists in Hong Kong": [
+        "Hjälper aktivister i Hongkong"
+      ],
+      "I still want to cancel": [
+        "Jag vill fortfarande avsluta"
+      ],
+      "Keep ${ planName }": [
+        "Behåll ${ planName }"
+      ],
+      "Learn more about our impact": [
+        "Lär dig mer om vår påverkan"
+      ],
+      "Our fight against censorship in Russia": [
+        "Vår kamp mot censur i Ryssland"
       ],
       "Priority support": [
         "Prioriterad support"
       ],
+      "Read the story": [
+        "Läs berättelsen"
+      ],
+      "Resubscribe": [
+        "Prenumerera igen"
+      ],
+      "Subscription canceled": [
+        "Prenumeration avslutad"
+      ],
+      "Unblocking internet access in Iran": [
+        "Avblockerar internetåtkomst i Iran"
+      ],
       "Unlimited folders, labels and filters": [
         "Obegränsat antal mappar, etiketter och filter"
+      ],
+      "Watch the interview": [
+        "Se intervjun"
+      ],
+      "You **won't be able to add any new files**": [
+        "Du **kommer inte att kunna lägga till några nya filer**"
+      ],
+      "You **won't be able to backup photos** from your devices": [
+        "Du **kommer inte att kunna säkerhetskopiera foton** från dina enheter"
+      ],
+      "Your **calendar will be frozen**": [
+        "Din **kalender kommer att blockeras**"
+      ],
+      "Your devices will **stop syncing**": [
+        "Dina enheter kommer att **sluta synkronisera**"
+      ],
+      "Your own custom email domain": [
+        "Din egen anpassade e-postdomän"
       ]
     },
     "Subscription renewal state": {
@@ -14718,15 +14784,6 @@
       "Folders and labels": [
         "Mappar och etiketter"
       ],
-      "For Linux": [
-        "För Linux"
-      ],
-      "For macOS": [
-        "För macOS"
-      ],
-      "For Windows": [
-        "För Windows"
-      ],
       "Forward and auto-reply": [
         "Vidarebefordran och autosvar"
       ],
@@ -14766,8 +14823,8 @@
       "How does it work?": [
         "Hur fungerar det?"
       ],
-      "How to choose a good icon": [
-        "Hur man väljer en bra ikon"
+      "How to choose a good logo": [
+        "Hur man väljer en bra logga"
       ],
       "How to refer a friend and get credits": [
         "Hur man hänvisar en vän och får krediter"
@@ -15245,6 +15302,15 @@
       "WireGuard configuration": [
         "WireGuard-konfiguration"
       ],
+      "You have no open alerts": [
+        "Du har inga öppna varningar"
+      ],
+      "You have no resolved alerts": [
+        "Du har inga lösta varningar"
+      ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Din gratis provperiod för ${ planName } slutar den ${ textDate }"
+      ],
       "Your calendar link": [
         "Din kalenderlänk"
       ],
@@ -15253,9 +15319,6 @@
       ],
       "Your exposed information": [
         "Din exponerade information"
-      ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "Din gratis provperiod för Mail Plus slutar den ${ textDate }"
       ],
       "Your plan": [
         "Ditt paket"

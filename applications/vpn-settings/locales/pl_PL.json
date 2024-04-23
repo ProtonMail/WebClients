@@ -548,7 +548,7 @@
       "Upload": [
         "Prześlij"
       ],
-      "Upload icon": [
+      "Upload logo": [
         "Prześlij logo"
       ],
       "Use ${ label } theme": [
@@ -2195,10 +2195,10 @@
         "Adresy e-mail nie pasują do siebie"
       ],
       "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
-        "Plik jest zbyt duży. Maksymalny wymiar logo to ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }"
+        "Plik jest zbyt duży. Maksymalna rozdzielczość logo to ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }"
       ],
       "The file is too small, the minimum size is ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }": [
-        "Plik jest zbyt mały. Minimalny wymiar logo to ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }"
+        "Plik jest zbyt mały. Minimalna rozdzielczość logo to ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }"
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Minimalna kwota doładowania wynosi ${ price }"
@@ -3806,9 +3806,6 @@
       ],
       "The format of your CSV file is incorrect.": [
         "Format pliku CSV jest nieprawidłowy."
-      ],
-      "The name and icon will be visible to your users while they are signed in.": [
-        "Nazwa i logo będą widoczna dla użytkowników po zalogowaniu."
       ],
       "The name will be visible to your users while they are signed in.": [
         "Nazwa będzie widoczna dla użytkowników po zalogowaniu."
@@ -6133,13 +6130,13 @@
       "Avoid overly compressed images.": [
         "Unikaj nadmiernie skompresowanych obrazów."
       ],
-      "Ensure your icon has padding space around it.": [
+      "Ensure your logo has padding space around it.": [
         "Zadbaj o margines wokół logo."
       ],
       "Opt for a PNG image that is a 128x128 pixels for clarity.": [
         "Wybierz obraz PNG o rozdzielczości 128x128 pikseli, aby zapewnić przejrzystość."
       ],
-      "Tips on choosing a good icon": [
+      "Tips on choosing a good logo": [
         "Wskazówki dotyczące wyboru dobrego logo"
       ],
       "Use a graphical icon or image rather than text.": [
@@ -6157,7 +6154,7 @@
         "Maksymalny rozmiar pliku to 30 kB"
       ],
       "Square image of at least 128 pixels": [
-        "Kwadratowy obraz o rozmiarze co najmniej 128 pikseli"
+        "Kwadratowy obraz o boku co najmniej 128 pikseli"
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "Użytkownicy zobaczą logo zamiast ikony ${ BRAND_NAME } po zalogowaniu się do aplikacji internetowej."
@@ -6643,10 +6640,10 @@
     },
     "scim: Info": {
       "Enter token into your identity provider": [
-        "Wpisz token od dostawcy tożsamości"
+        "Wpisz token do dostawcy tożsamości"
       ],
       "Enter URL and token into your identity provider": [
-        "Wpisz adres URL i token od dostawcy tożsamości"
+        "Wpisz adres URL i token do dostawcy tożsamości"
       ],
       "For security reasons, the token is hidden": [
         "Ze względów bezpieczeństwa token jest ukryty"
@@ -6661,7 +6658,7 @@
         "Upewnij się, że skopiowano token SCIM."
       ],
       "The SCIM base URL and token will be deleted.": [
-        "Podstawowy adres URL SCIM i token zostanie usunięty."
+        "Podstawowy adres URL SCIM i token zostaną usunięte."
       ]
     },
     "scim: Label": {
@@ -6689,6 +6686,17 @@
     "Select file": {
       "Upload CSV file": [
         "Prześlij plik CSV"
+      ]
+    },
+    "Select invoice document": {
+      "Credit note": [
+        "Nota uznaniowa"
+      ],
+      "Currency conversion": [
+        "Kurs waluty"
+      ],
+      "Invoice": [
+        "Faktura"
       ]
     },
     "Select search results": {
@@ -8069,7 +8077,7 @@
       "Gift code": [
         "Kod podarunkowy"
       ],
-      "How to choose a good icon": [
+      "How to choose a good logo": [
         "Jak wybrać dobre logo"
       ],
       "Human verification": [
@@ -8309,14 +8317,14 @@
       "WireGuard configuration": [
         "Konfiguracja WireGuard"
       ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Darmowa wersja próbna planu ${ planName } zakończy się ${ textDate }"
+      ],
       "Your changes are not synced yet": [
         "Zmiany nie zostały zsynchronizowane"
       ],
       "Your current plan": [
         "Obecny plan"
-      ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "Darmowa wersja próbna planu Mail Plus zakończy się ${ textDate }"
       ],
       "Your plan": [
         "Twój plan"

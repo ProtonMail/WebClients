@@ -620,6 +620,12 @@
       "Mark as default": [
         "ნაგულისხმევად მონიშვნა"
       ],
+      "Mark as open": [
+        "გახსნილად მონიშვნა"
+      ],
+      "Mark as resolved": [
+        "მონიშნე გადაწყვეტილად"
+      ],
       "mark emails as": [
         "ელფოსტების მონიშვნა, როგორც"
       ],
@@ -754,6 +760,9 @@
       ],
       "Report a problem": [
         "პრობლემის შესახებ შეტყობინება"
+      ],
+      "Request a call": [
+        "ზარის შეკვეთა"
       ],
       "Request a feature": [
         "თვისების მოთხოვნა"
@@ -1075,6 +1084,9 @@
       ],
       "View": [
         "ნახვა"
+      ],
+      "View all reports": [
+        "ყველა ანგარიშის ნახვა"
       ],
       "View invoice": [
         "ინვოისის ნახვა"
@@ -1649,6 +1661,9 @@
       ],
       "Continue using ${ planTitle }": [
         "${ planTitle }-ის მოხმარების გაგრძელება"
+      ],
+      "Continue your subscription": [
+        "გააგრძელეთ თქვენი გამოწერა"
       ],
       "Copy": [
         "კოპირება"
@@ -3266,14 +3281,6 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "დაგვეხმარეთ გავუმჯობესდეთ!"
-      ]
-    },
-    "Download link": {
-      ".deb for Debian / Ubuntu": [
-        ".deb Debian/Ubuntu-სთვის"
-      ],
-      ".rpm for Fedora / Red Hat": [
-        ".rpm Fedora / Red Hat-სთვის"
       ]
     },
     "drive_signup_2023: Info": {
@@ -6888,6 +6895,9 @@
       "Lean more about single sign-on": [
         "გაიგეთ მეტი SSO-ის შესახებ"
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "გაიგეთ, როგორ ${ staySaferOnlineLink }"
+      ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "ნახეთ, მესამე პირების მიერ შექმნილი VPN აპლიკაციებით ${ VPN_APP_NAME }-ში როგორ უნდა შეხვიდეთ."
       ],
@@ -7883,6 +7893,9 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "ამ ტრანზაქციის დასასრულებლად გადამისამართებული იქნებით PayPal-ზე ბრაუზერის ახალ ჩანართში. თუ იყენებთ მხტუნარების მბლოკავებს, გთხოვთ, გამორთოთ ისინი."
       ],
+      "We'll email you once import is complete.": [
+        "როცა შემოტანა დასრულდება, ელფოსტაზე მოგწერთ."
+      ],
       "We'll get back to you shortly.": [
         "მალე დავბრუნდები."
       ],
@@ -7986,6 +7999,9 @@
       ],
       "You can check the progress ${ importProgressLink }.": [
         "მიმდინარეობის ნახვა შეგიძლიათ აქ: ${ importProgressLink }."
+      ],
+      "You can close the tab or browser in the meantime.": [
+        "ამასობაში შეგიძლიათ, ბრაუზერის ჩანართი დახუროთ."
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "იმისათვის, რომ დარწმუნდეთ, რომ ეს გადასამოწმებლად სწორი ელფოსტის მისამართია, ის, შეგიძლიათ, ერთხელ ჩაასწოროთ."
@@ -8159,6 +8175,9 @@
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "ჩვენთან თქვენი ინფორმაცია დაცულია. ჩვენ, მხოლოდ, დაგიკავშირდებით, როცა ეს ჩვენი სერვისების მოსაწოდებლადაა საჭირო."
+      ],
+      "Your information was found on ${ displayedDate }": [
+        "თქვენი ინფორმაციის აღმოჩენის თარიღია ${ displayedDate }"
       ],
       "Your login information will not be saved after the import is completed.": [
         "შესვლისას გამოყენებული თქვენი ინფორმაცია შემოტანის დასრულების შემდეგ შენახული არ იქნება."
@@ -8618,6 +8637,9 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(დრობით მიუწვდომელია. მოგვიანებით სცადეთ)"
+      ],
+      "Access to my events": [
+        "წვდომა ჩემს მოვლენებთან"
       ],
       "Account storage": [
         "ანგარიშის საცავი"
@@ -9335,6 +9357,9 @@
       ],
       "Send in": [
         "გაგზავნა"
+      ],
+      "Show others when I'm busy": [
+        "ჩვენება სხვებისთვის, როცა დაკავებული ვარ"
       ],
       "Show secondary time zone": [
         "დამხმარე დროის სარტყლის ჩვენება"
@@ -12497,6 +12522,17 @@
         "დამატებითი ფაილების ატვირთვა"
       ]
     },
+    "Select invoice document": {
+      "Credit note": [
+        "კრედიტის შენიშვნა"
+      ],
+      "Currency conversion": [
+        "ვალუტის გადაცვლა"
+      ],
+      "Invoice": [
+        "ინვოისი"
+      ]
+    },
     "Select search results": {
       "Check your spelling or select a country from the list.": [
         "შეამოწმეთ მართლწერა ან ქვეყანა აირჩიეთ სიიდან."
@@ -14224,6 +14260,9 @@
       "Delete version history?": [
         "წავშალო ვერსიის ისტორია?"
       ],
+      "Details": [
+        "დეტალები"
+      ],
       "Disable ${ email }": [
         "${ email }-ის გამორთვა"
       ],
@@ -14860,8 +14899,8 @@
       "Your changes are not synced yet": [
         "თქვენი ცვლილებები ჯერ სინქრონიზებული არაა"
       ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "თქვენი Mail Plus-ის უფასო სატესტო პერიოდი ${ textDate }-ზე სრულდება"
+      "Your exposed information": [
+        "თქვენი გაჟონილი ინფორმაცია"
       ],
       "Your plan": [
         "თქვენი გეგმა"

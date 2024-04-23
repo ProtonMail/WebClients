@@ -323,6 +323,9 @@
       "Delete link": [
         "Poista linkki"
       ],
+      "Delete logo": [
+        "Poista logo"
+      ],
       "Delete permanently": [
         "Poista pysyvästi"
       ],
@@ -586,6 +589,9 @@
       ],
       "Keep": [
         "Säilytä"
+      ],
+      "Keep logo": [
+        "Säilytä logo"
       ],
       "Keep my Plus subscription": [
         "Säilytä Plus-tilaukseni"
@@ -863,6 +869,9 @@
       "Select country": [
         "Valitse maa"
       ],
+      "select file": [
+        "valitse tiedosto"
+      ],
       "Select file": [
         "Valitse tiedosto"
       ],
@@ -971,6 +980,9 @@
       "Start import": [
         "Aloita tuonti"
       ],
+      "Start live chat": [
+        "Aloita live-keskustelu"
+      ],
       "Stay": [
         "Pysy"
       ],
@@ -1048,6 +1060,12 @@
       ],
       "Upgrade your plan": [
         "Päivitä tilauksesi"
+      ],
+      "Upload": [
+        "Lähetä"
+      ],
+      "Upload logo": [
+        "Lähetä logo"
       ],
       "Upload picture": [
         "Lataa kuva"
@@ -1881,6 +1899,17 @@
       ],
       "Week": [
         "Viikko"
+      ]
+    },
+    "Call Scheduled Confirmation": {
+      "Request sent": [
+        "Pyyntö on lähetetty"
+      ],
+      "We'll get back to you with more information as soon as we can.": [
+        "Palaamme asiaan mahdollisimman pian lisätietojen kera."
+      ],
+      "You can safely close this tab.": [
+        "Voit sulkea välilehden turvallisesti."
       ]
     },
     "Checkout row": {
@@ -3107,6 +3136,9 @@
       ]
     },
     "Delete address prompt": {
+      "Once deleted, this address can't be used again by anyone else.": [
+        "Poiston jälkeen kukaan muu ei voi enää käyttää tätä osoitetta."
+      ],
       "The next active address on your list will be set as the default.": [
         "Seuraava listallasi oleva aktiivinen osoite asetetaan oletusosoitteeksi."
       ],
@@ -3301,14 +3333,6 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Auta meitä parantamaan!"
-      ]
-    },
-    "Download link": {
-      ".deb for Debian / Ubuntu": [
-        ".deb Debianille/Ubuntulle"
-      ],
-      ".rpm for Fedora / Red Hat": [
-        ".rpm Fedoralle/Red Hatille"
       ]
     },
     "drive_signup_2023: Info": {
@@ -3894,6 +3918,12 @@
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Aktiivisten istuntojen nouto epäonnistui. ${ refresh } tai yritä myöhemmin uudelleen."
       ],
+      "Failed to process the logo": [
+        "Logon käsittely epäonnistui"
+      ],
+      "File too large. Your logo must be 30 KB or smaller.": [
+        "Tiedosto on liian suuri. Logotiedoston koko voi olla enintään 30 kt."
+      ],
       "Filter with this name already exists": [
         "Tämän niminen suodatin on jo olemassa"
       ],
@@ -3911,6 +3941,9 @@
       ],
       "Impossible to rename the gateway": [
         "Yhdyskäytävän uudelleenimeäminen on mahdotonta"
+      ],
+      "Incorrect file type. Upload a file in PNG or JPEG format.": [
+        "Virheellinen tiedostotyyppi. Lähetettävän kuvan tulee olla PNG- tai JPEG-muotoinen."
       ],
       "Incorrect login credentials. Please try again.": [
         "Virheelliset kirjautumistiedot. Yritä uudelleen."
@@ -3997,6 +4030,9 @@
       "No external key retrieved for user is valid for sending": [
         "Mikään käyttäjälle saaduista avaimista ei kelpaa lähetykseen"
       ],
+      "No image selected": [
+        "Kuvaa ei ole valittu"
+      ],
       "No valid address found": [
         "Kelvollista osoitetta ei löytynyt"
       ],
@@ -4063,6 +4099,9 @@
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Hallitaksesi useita käyttäjiä, päivitä yritystilaukseen, joka sisältää enemmän kuin yhden käyttäjän."
+      ],
+      "Please upload a square file": [
+        "Lähetettävän kuvan tulee olla neliön muotoinen"
       ],
       "Please upload an xml file": [
         "Lähetä XML-tiedosto"
@@ -4136,6 +4175,12 @@
       ],
       "The email addresses do not match": [
         "Sähköpostiosoitteet eivät täsmää"
+      ],
+      "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
+        "Kuva on liian suuri. Enimmäiskoko on ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }."
+      ],
+      "The file is too small, the minimum size is ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }": [
+        "Kuva on liian pieni. Vähimmäiskoko on ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }."
       ],
       "The folder name is invalid. Please choose a different name.": [
         "Kansion nimi on virheellinen. Valitse eri nimi."
@@ -5543,6 +5588,11 @@
         "Kokeile ${ MAIL_APP_NAME }in parasta ilmaiseksi"
       ]
     },
+    "Headline": {
+      "Contact us": [
+        "Ota yhteyttä"
+      ]
+    },
     "Hint": {
       "Add this record to your domain in the control panel of your domain name registrar": [
         "Lisää tämä tietue verkkotunnuksesi DNS-palveluun."
@@ -6152,6 +6202,9 @@
         "Lisää palvelin (${ availableAddedCount } käytettävissä)",
         "Lisää palvelin (${ availableAddedCount } käytettävissä)"
       ],
+      "Add your name and logo to create a more personalized experience for your organization.": [
+        "Yksilöi organisaatiotasi lisäämällä nimi ja logo."
+      ],
       "Adding ${ addedServerCount } gateway server": [
         "Lisätään ${ addedServerCount } yhdyskäytäväpalvelinta",
         "Lisätään ${ addedServerCount } yhdyskäytäväpalvelinta"
@@ -6220,6 +6273,9 @@
       ],
       "Amount due": [
         "Veloitettava summa"
+      ],
+      "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
+        "Sähköpostialias toimii tavallisen sähköpostiosoitteen tapaan, mutta vähentää roskapostia ja pitää todellisen osoitteesi ja identiteettisi piilossa."
       ],
       "An error occurred while communicating with the extension": [
         "Virhe viestittäessä laajennuksen kanssa"
@@ -6729,6 +6785,9 @@
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "Saat pääsyn luomalla ${ BRAND_NAME } -tilin ja hyväksymällä kutsun."
       ],
+      "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
+        "Vastaanota ilmoituksia, jos salasanasi tai muita henkilökohtaisia tietojasi on vuotanut. ${ learnMoreLinkNoBreach }"
+      ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "Anna tunnisteelle kuvaava nimi, kuten sen kanssa käyttämäsi palvelun nimi ja valitse jokin aktiivisista omaa verkkotunnustasi käyttävistä osoitteista. Vain tästä osoitteesta voidaan lähettää viestejä tällä tunnisteella."
       ],
@@ -6806,6 +6865,12 @@
       ],
       "If you wish to combine this account with another one, do NOT delete it.": [
         "Jos haluat yhdistää tämän tilin toiseen tiliin, ÄLÄ poista sitä."
+      ],
+      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
+        "Jos kohtaat ongelmia, tarjoamme apua. ${ boldPhoneCall } tai ${ boldZoomMeeting } asiakaspalvelijamme kanssa tai aloita ${ boldLiveChat } saadaksesi tukea tekstiviestitse."
+      ],
+      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists.": [
+        "Jos kohtaat ongelmia, tarjoamme apua. ${ boldPhoneCall } tai ${ boldZoomMeeting } asiakaspalvelijamme kanssa."
       ],
       "Image description": [
         "Kuvateksti"
@@ -6905,6 +6970,9 @@
       "Just send them your personal referral link.": [
         "Lähetä heille vain henkilökohtainen suosituslinkkisi."
       ],
+      "Keep your info more secure and private with these guides and tips.": [
+        "Suojaa tietosi paremmin ja vahvista niiden yksityisyyttä näillä oppailla ja vinkeillä."
+      ],
       "Key deletion is irreversible!": [
         "Avaimen poisto on peruuttamatonta!"
       ],
@@ -6958,6 +7026,9 @@
       ],
       "Link type": [
         "Linkin tyyppi"
+      ],
+      "Live chat": [
+        "live-keskustelu"
       ],
       "Loaded content is being protected by our proxy when tracker protection is activated.": [
         "Välityspalvelimemme suojaa ladattua sisältöä seurantasuojauksen ollessa käytössä."
@@ -7033,6 +7104,9 @@
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Nimeä uusi kansio ja valitse mihin kansioon haluat sijoittaa sen. Jos et valitse yläkansiota, luodaan uusi kansio juuritason kansiona."
+      ],
+      "NetShield is an ad-blocking feature from ${ VPN_APP_NAME } that protects your device from ads, trackers, and malware.": [
+        "NetShield on ${ VPN_APP_NAME }:n mainosesto-ominaisuus, joka suojaa laitettasi mainoksilta, seurannalta ja haittaohjelmilta."
       ],
       "New": [
         "Uusi"
@@ -7224,7 +7298,7 @@
         "Huomioithan, että suodattimen ${ nameDeleted } poisto lopettaa myös kaikkien sen käynnistämien automaattisten toimintojen käsittelyn."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "Huomioithan, että painettuasi Vahvista, tilillesi jää ${ creditsRemaining } krediittiä."
+        "Huomioithan, että painettuasi \"Vahvista\", tilillesi jää ${ creditsRemaining } krediittiä."
       ],
       "Please provide an email address in case we need to contact you.": [
         "Syötä sähköpostiosoite siltä varalta, että meidän on otettava sinuun yhteyttä."
@@ -7259,6 +7333,9 @@
       ],
       "Plus or Visionary subscription required": [
         "Edellyttää Plus- tai Visionary-tilausta"
+      ],
+      "Preview": [
+        "Esikatselu"
       ],
       "Preview failed to be loaded": [
         "Esikatselun lataus epäonnistui"
@@ -7337,6 +7414,9 @@
       ],
       "Report link expired": [
         "Ilmoituslinkki on vanhentunut"
+      ],
+      "Request a phone call": [
+        "Pyydä puhelinkeskustelua"
       ],
       "Resend verification email": [
         "Lähetä vahvistussähköposti uudelleen"
@@ -7536,6 +7616,9 @@
       ],
       "The credentials from your Identity Provider will be deleted.": [
         "Identiteetinhallintasi kirjautumistiedot poistetaan."
+      ],
+      "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
+        "Pimeä verkko on Internetin piilotettu osa, jossa verkkoidentiteettien kaltaiset henkilökohtaiset tiedot ovat kauppatavaraa."
       ],
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "Sähköpostiosoitteen vahvistuslinkki on vanhentunut. Kirjaudu sisään ja lähetä uusi linkki."
@@ -7834,6 +7917,9 @@
       "URL link": [
         "URL-linkki"
       ],
+      "Use a password manager to generate and securely store your passwords, ensuring strong passwords and easier sign-ins.": [
+        "Salasanahallinnan avulla luot erilaisia salasanoja ja säilytät ne turvallisesti, jolloin käytät aina vahvoja salasanoja ja helpotat sisäänkirjautumisia."
+      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Käytä nykyisen kuormituksen ja sijainnin perusteella parasta palvelinta: ${ formattedBestServerName }"
       ],
@@ -7890,6 +7976,9 @@
       ],
       "Want servers in other countries?": [
         "Haluatko palvelimia muista maista?"
+      ],
+      "Want to learn more?": [
+        "Haluatko lukea lisää?"
       ],
       "Warning:": [
         "Varoitus:"
@@ -8260,6 +8349,9 @@
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Tukipyyntösi on suljettu. Kiitos, että otit yhteyttä ${ BRAND_NAME } -tukeen."
+      ],
+      "Zoom meeting": [
+        "Zoom-tapaamista"
       ]
     },
     "Info - folder colouring feature": {
@@ -9176,6 +9268,9 @@
       "Link label": [
         "Linkin tunniste"
       ],
+      "Logo": [
+        "Logo"
+      ],
       "Mail Server (IMAP)": [
         "Sähköpostipalvelin (IMAP)"
       ],
@@ -9808,6 +9903,9 @@
       "here": [
         "täältä"
       ],
+      "How does monitoring work?": [
+        "Miten valvonta toimii?"
+      ],
       "How to pay with Bitcoin?": [
         "Miten maksan Bitcoineilla?"
       ],
@@ -9942,6 +10040,9 @@
       ]
     },
     "Log preference": {
+      "Enable ${ reason }": [
+        "Ota ${ reason } käyttöön"
+      ],
       "Enable advanced logs": [
         "Käytä laajaa lokikirjausta"
       ],
@@ -10548,7 +10649,7 @@
         "Saatavilla kaikilla alustoilla"
       ],
       "Calendar sharing": [
-        "Kalenterien jako"
+        "Kalenterien jakaminen"
       ],
       "Catch-all": [
         "Nappaa kaikki"
@@ -10578,10 +10679,10 @@
         "Oma torkutusaika"
       ],
       "Data breach monitoring": [
-        "Tietomurtojen seuranta"
+        "Tietovuotovalvonta"
       ],
       "Data breach monitoring (coming soon)": [
-        "Tietomurtojen seuranta (tulossa pian)"
+        "Tietovuotovalvonta (tulossa pian)"
       ],
       "Dedicated servers and IP": [
         "Kohdistetut palvelimet ja IP-osoitteet"
@@ -10663,7 +10764,7 @@
         "Useita ylläpitäjien rooleja"
       ],
       "No-logs policy": [
-        "Ei lokeja -käytäntö"
+        "Lokivapaa käytäntö"
       ],
       "Organize items with multiple vaults": [
         "Järjestele kohteita useilla holveilla"
@@ -10737,7 +10838,7 @@
         "Aloita itsesi suojaaminen kahdella helpolla vaiheella"
       ],
       "Strict no-logs policy": [
-        "Tiukka lokivastainen käytäntö"
+        "Tiukka lokivapaa käytäntö"
       ],
       "Team management": [
         "Tiimin hallinta"
@@ -11288,11 +11389,23 @@
       "${ Filter.Name } created": [
         "${ Filter.Name } luotiin"
       ],
+      "${ reason } has been disabled": [
+        "${ reason } poistettiin käytöstä"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } otettiin käyttöön"
+      ],
       "A disabled address cannot be default": [
         "Käytöstä poistettu osoite ei voi olla oletusosoite"
       ],
       "An external address cannot be default": [
         "Ulkoinen osoite ei voi olla oletusosoite"
+      ],
+      "Dark Web Monitoring has been disabled": [
+        "Pimeän verkon valvonta poistettiin käytöstä"
+      ],
+      "Dark Web Monitoring has been enabled": [
+        "Pimeän verkon valvonta otettiin käyttöön"
       ],
       "Invalid code": [
         "Virheellinen koodi"
@@ -11696,6 +11809,43 @@
         "Tilauksesi sisältää enintään ${ humanReadableAvailableSpace } lisätallennustilaa."
       ]
     },
+    "Organization logo upload": {
+      "Avoid overly compressed images.": [
+        "Vältä poikkeuksellisen vahvasti pakattuja kuvia."
+      ],
+      "Ensure your logo has padding space around it.": [
+        "Varmista, että logon ympärillä on vapaata tilaa."
+      ],
+      "Opt for a PNG image that is a 128x128 pixels for clarity.": [
+        "Valitse parasta laatua varten PNG-tiedosto, joka on 128x128 kuvapistettä."
+      ],
+      "Tips on choosing a good logo": [
+        "Vinkkejä hyvän logon valintaan"
+      ],
+      "Use a graphical icon or image rather than text.": [
+        "Käytä tekstin sijaan graafista kuvaketta tai kuvaa."
+      ],
+      "Use a solid background color.": [
+        "Käytä kiinteää taustaväriä."
+      ]
+    },
+    "Organization logo upload modal": {
+      "Drop image file here to upload or": [
+        "Pudota siirrettävä kuvatiedosto tähän tai"
+      ],
+      "File in PNG or JPEG format": [
+        "Kuvatiedosto PNG- tai JPEG-muodossa"
+      ],
+      "File not larger than 30 KB": [
+        "Tiedoston koko voi olla enintään 30 kt"
+      ],
+      "Square image of at least 128 pixels": [
+        "Vähintään 128 kuvapisteen levyinen, neliön muotoinen kuva"
+      ],
+      "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
+        "Ollessaan kirjautuneina verkkosovelluksiimme, käyttäjät näkevät ${ BRAND_NAME }-kuvakkeen tilalla oman logosi."
+      ]
+    },
     "OS compatibility": {
       ".deb (for Debian/Ubuntu)": [
         ".deb (Debian/Ubuntu)"
@@ -11935,7 +12085,7 @@
         "Hanki yrityksesi tarvitsema turva ja ominaisuudet"
       ],
       "Hide-my-email aliases protect your email from data breaches": [
-        "Hide-my-email-aliakset suojaavat sähköpostiasi tietomurroilta"
+        "Hide-my-email-aliakset suojaavat sähköpostiasi tietovuodoilta"
       ],
       "I understand that if I lose my recovery details, I may permanently lose access to my account.": [
         "Ymmärrän, että kadottaessani palautustiedot, voin menettää pääsyn tililleni pysyvästi."
@@ -12529,6 +12679,11 @@
         "Peru tilaus?"
       ]
     },
+    "Remove organization logo": {
+      "Users will no longer see your custom logo or organization name.": [
+        "Käyttäjät eivät enää näe omaa logoasi tai organisaation nimeä."
+      ]
+    },
     "Restore administrator panel": {
       "${ n } administrator in your organization need access to the organization key.": [
         "${ n } organisaatiosi ylläpitäjällä on oltava organisaation avaimen käyttöoikeus.",
@@ -12558,6 +12713,63 @@
         "Käyttäjä"
       ]
     },
+    "scim: Action": {
+      "Configure SCIM": [
+        "Määritä SCIM"
+      ],
+      "Disable SCIM": [
+        "Poista SCIM käytöstä"
+      ],
+      "Disable SCIM integration": [
+        "Poista SCIM-integraatio käytöstä"
+      ],
+      "Generate new token": [
+        "Luo uusi tunniste"
+      ],
+      "Generate token": [
+        "Luo tunniste"
+      ]
+    },
+    "scim: Info": {
+      "For security reasons, the token is hidden": [
+        "Tunniste on tietoturvasyistä piilotettu"
+      ]
+    },
+    "scim: Label": {
+      "SCIM base URL": [
+        "SCIM-perus-URL"
+      ],
+      "SCIM base URL (or tenant URL)": [
+        "SCIM-perus-URL (tai palvelun URL)"
+      ],
+      "SCIM token": [
+        "SCIM-tunniste"
+      ]
+    },
+    "scim: Title": {
+      "Disable SCIM integration?": [
+        "Poistetaanko SCIM-integraatio käytöstä?"
+      ],
+      "Generate new SCIM token?": [
+        "Luodaanko uusi SCIM-tunniste?"
+      ],
+      "SCIM automatic provisioning": [
+        "Automaattinen SCIM-määritys"
+      ]
+    },
+    "scim: Tooltip": {
+      "API key of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
+        "Sen SCIM-yhdistäjän API-avain, johon IdP Provisioning -agenttisi ohjaa SCIM-tiedot"
+      ],
+      "URL of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
+        "Sen SCIM-yhdistäjän URL-osoite, johon IdP Provisioning -agenttisi ohjaa SCIM-tiedot"
+      ]
+    },
+    "Security Center - Info": {
+      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLinkBreach }": [
+        "Tietojasi löytyi ainakin yhdestä tietovuodosta. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi yksityiskohdat ja ryhtyäksesi toimenpiteisiin. ${ learnMoreLinkBreach }"
+      ]
+    },
     "Select file": {
       "Upload CSV file": [
         "Lataa CSV-tiedosto"
@@ -12572,6 +12784,17 @@
       ],
       "Upload additional files": [
         "Lataa lisää tiedostoja"
+      ]
+    },
+    "Select invoice document": {
+      "Credit note": [
+        "Hyvityslasku"
+      ],
+      "Currency conversion": [
+        "Valuuttamuunnos"
+      ],
+      "Invoice": [
+        "Lasku"
       ]
     },
     "Select search results": {
@@ -13505,6 +13728,144 @@
         "Hintaan"
       ]
     },
+    "Subscription reminder": {
+      "${ BRAND_NAME } was targeted by Russia in one of the most aggressive censorship campaigns in recent memory, and our team fought back.": [
+        "${ BRAND_NAME } joutui Venäjän kohteeksi yhdessä lähiaikojen aggressiivisimmista sensurointikampanjoista, ja tiimimme vastasi haasteeseen."
+      ],
+      "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
+        "${ BRAND_NAME }in ainoa tulonlähde ovat käyttäjien tilaukset. Tukesi avulla voimme säilyttää itsenäisyytemme, edistää tavoitettamme tehdä yksityisyydestä oletusarvoista verkossa, ja lisäksi se auttaa meitä jatkossakin tukemaan yksityisyyden ja vapauden puolesta taistelevia aktivisteja ja organisaatioita."
+      ],
+      "${ dayDiff } day left": [
+        "${ dayDiff } päivä jäljellä",
+        "${ dayDiff } päivää jäljellä"
+      ],
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } -työpöytäsovellus"
+      ],
+      "${ planMaxSpace } total storage": [
+        "Yhteensä ${ planMaxSpace } tallennustilaa"
+      ],
+      "${ planName } doesn't just provide extra storage. It lets you manage your emails faster, customize your inbox and email addresses, and access the desktop app.": [
+        "${ planName } ei tarjoa ainoastaan lisää tallennustilaa, vaan sen avulla hallitset viestejäsi nopeammin, mukautat postilaatikkoasi sekä sähköpostiosoitteitasi, ja käytät työpöytäsovellusta."
+      ],
+      "10 email addresses": [
+        "10 sähköpostiosoitetta"
+      ],
+      "A direct contribution to our mission": [
+        "Tukee tehtäväämme suoraan"
+      ],
+      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **1 GB** for Mail, and **1 GB** for Drive. You will also lose any storage bonuses earned previously.": [
+        "Kun perut ${ planName }-tilauksesi, laskee **${ planMaxSpace }** tallennustilasi Mailissa **1 gigatavuun** ja Drivessa **1 gigatavuun**. Menetät myös kaikki aiemmin ansaitsemasi tallennustilakorotukset."
+      ],
+      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **1 GB** for Mail, and **5 GB** for Drive. You will also lose any storage bonuses earned previously.": [
+        "Kun perut ${ planName }-tilauksesi, laskee **${ planMaxSpace }** tallennustilasi Mailissa **1 gigatavuun** ja Drivessa **5 gigatavuun**. Menetät myös kaikki aiemmin ansaitsemasi tallennustilakorotukset."
+      ],
+      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **500 MB** for Mail, and **1 GB** for Drive. You will also lose any storage bonuses earned previously.": [
+        "Kun perut ${ planName }-tilauksesi, laskee **${ planMaxSpace }** tallennustilasi Mailissa **500 megatavuun** ja Drivessa **1 gigatavuun**. Menetät myös kaikki aiemmin ansaitsemasi tallennustilakorotukset."
+      ],
+      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **500 MB** for Mail, and **5 GB** for Drive. You will also lose any storage bonuses earned previously.": [
+        "Kun perut ${ planName }-tilauksesi, laskee **${ planMaxSpace }** tallennustilasi Mailissa **500 megatavuun** ja Drivessa **5 gigatavuun**. Menetät myös kaikki aiemmin ansaitsemasi tallennustilakorotukset."
+      ],
+      "By downgrading your account, you will also lose storage space": [
+        "Alentaessasi tilisi menetät myös tallennustilaa"
+      ],
+      "By downgrading your account, you will lose access to these important features": [
+        "Alentaessasi tilisi menetät näiden tärkeiden ominaisuuksien käyttöoikeuden"
+      ],
+      "Calendar sharing": [
+        "Kalenterien jakaminen"
+      ],
+      "Cancel subscription": [
+        "Peru tilaus"
+      ],
+      "Cancel subscription?": [
+        "Perutaanko tilaus?"
+      ],
+      "Close": [
+        "Sulje"
+      ],
+      "Custom schedule send and snooze times": [
+        "Mukautetut lähetys- ja torkutusajat"
+      ],
+      "Have a question?": [
+        "Onko sinulla kysyttävää?"
+      ],
+      "I still want to cancel": [
+        "Haluan edelleen perua"
+      ],
+      "If you exceed your free Drive storage quota:": [
+        "Jos ylität ilmaisen Drive-tallennuskiintiösi:"
+      ],
+      "If you exceed your free Mail storage quota:": [
+        "Jos ylität ilmaisen Mail-tallennuskiintiösi:"
+      ],
+      "Keep ${ planName }": [
+        "Pidä ${ planName }"
+      ],
+      "Learn more about our impact": [
+        "Lue lisää vaikutuksestamme"
+      ],
+      "Let us remind you of everything ${ planName } can do": [
+        "Anna meidän muistuttaa sinua ${ planName }-tilauksen tarjonnasta"
+      ],
+      "Our fight against censorship in Russia": [
+        "Taistelumme Venäjän sensuuria vastaan"
+      ],
+      "Priority support": [
+        "Ensisijainen tuki"
+      ],
+      "Read the story": [
+        "Lue juttu"
+      ],
+      "Resubscribe": [
+        "Tilaa uudelleen"
+      ],
+      "Resubscribe to restore access to ${ planName } features.": [
+        "Palauta ${ planName } -ominaisuuksien käyttöoikeutesi tilaamalla uudelleen."
+      ],
+      "Subscription canceled": [
+        "Tilaus on peruttu"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Rajattomasti kansioita, tunnisteita ja suodattimia"
+      ],
+      "Watch the interview": [
+        "Katso haastattelu"
+      ],
+      "When you cancel, you will lose access to": [
+        "Kun perut tilauksesi, menetät seuraavat käyttöoikeudet"
+      ],
+      "Yearly free storage bonuses": [
+        "Vuotuiset ilmaiset tallennustilakorotukset"
+      ],
+      "You **won't be able to add any new files**": [
+        "**Et voi enää lisätä uusia tiedostoja**"
+      ],
+      "You **won't be able to backup photos** from your devices": [
+        "**Et voi varmuuskopioida laitteidesi kuvia**"
+      ],
+      "You **won't be able to send emails** with attachments": [
+        "**Et voi lähettää liitteitä sisältäviä viestejä**"
+      ],
+      "You still have ${ expiryDate } on your ${ planName } plan. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling.": [
+        "${ planName } -tilauksellasi on edelleen ${ expiryDate }. Lisäämme jäljellä olevan ajan krediitit ${ BRAND_NAME }-tilillesi. Varmista, ettet ylitä ilmaistilauksen rajoituksia ennen tilauksesi päättymistä."
+      ],
+      "Your **calendar will be frozen**": [
+        "**Kalenterisi jäädytetään**"
+      ],
+      "Your devices will **stop syncing**": [
+        "Laitteesi **lopettavat synkronoinnin**"
+      ],
+      "Your inbox will **stop receiving new emails**": [
+        "Postilaatikkosi **ei enää vastaanota uusia viestejä**"
+      ],
+      "Your own custom email domain": [
+        "Oma sähköpostiverkkotunnuksesi"
+      ],
+      "Your own short @pm.me email alias": [
+        "Oma lyhyt @pm.me-sähköpostialiaksesi"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Oletko varma?"
@@ -14101,6 +14462,9 @@
       "Billing cycle": [
         "Laskutusjakso"
       ],
+      "Block trackers and malware": [
+        "Estä seurantoja ja haittaohjelmia"
+      ],
       "Bridge for ${ platform }": [
         "Bridge ${ platform }-alustalle"
       ],
@@ -14231,6 +14595,9 @@
       "Custom selection of users": [
         "Mukautettu käyttäjävalinta"
       ],
+      "Customization": [
+        "Mukautus"
+      ],
       "Customize and confirm": [
         "Mukauta ja vahvista"
       ],
@@ -14290,6 +14657,9 @@
       ],
       "Delete logs": [
         "Poista lokitiedot"
+      ],
+      "Delete organization logo?": [
+        "Poistetaanko organisaation logo?"
       ],
       "Delete the server (you will still be able to recover it for ${ days } day)": [
         "Poista palvelin (voit vielä palauttaa sen ${ days } kuluessa)",
@@ -14485,6 +14855,9 @@
       "How does it work?": [
         "Miten se toimii?"
       ],
+      "How to choose a good logo": [
+        "Miten valita hyvä logo"
+      ],
       "How to refer a friend and get credits": [
         "Miten suositella kaverille ja ansaita krediittejä"
       ],
@@ -14590,6 +14963,9 @@
       ],
       "No recovery method": [
         "Palautustapoja ei ole"
+      ],
+      "Open": [
+        "Avoin"
       ],
       "Open actions dropdown": [
         "Avaa toimintovalikko"
@@ -14707,6 +15083,9 @@
       ],
       "Reset password?": [
         "Nollataanko salasana?"
+      ],
+      "Resolved": [
+        "Ratkaistu"
       ],
       "Restore administrator privileges": [
         "Palauta ylläpito-oikeudet"
@@ -14892,6 +15271,9 @@
       "Upload CSV file to create multiple accounts": [
         "Lisää useiden tilien luontiin käytettävä CSV-malli"
       ],
+      "Upload your organization’s logo": [
+        "Lähetä organisaatiosi logo"
+      ],
       "Users": [
         "Käyttäjät"
       ],
@@ -14928,6 +15310,12 @@
       "We'll send an email to your new address with instructions on completing the change.": [
         "Lähetämme uuteen osoitteeseesi sähköpostiviestin, jossa on ohjeet muutoksen tekemiseen."
       ],
+      "What is an alias?": [
+        "Mikä on alias?"
+      ],
+      "What is the dark web?": [
+        "Mikä on pimeä verkko?"
+      ],
       "What would you like to import?": [
         "Mitä haluat tuoda?"
       ],
@@ -14937,6 +15325,15 @@
       "WireGuard configuration": [
         "WireGuard-määritykset"
       ],
+      "You have no open alerts": [
+        "Avoimia hälytyksiä ei ole"
+      ],
+      "You have no resolved alerts": [
+        "Selvittämättömiä hälytyksiä ei ole"
+      ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "${ planName } -kokeilusi päättyy ${ textDate }"
+      ],
       "Your calendar link": [
         "Linkki kalenteriisi"
       ],
@@ -14945,9 +15342,6 @@
       ],
       "Your exposed information": [
         "Paljastuneet tietosi"
-      ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "Ilmainen Mail Plus -kokeilusi päättyy ${ textDate }"
       ],
       "Your plan": [
         "Tilauksesi"
@@ -15221,6 +15615,9 @@
       ],
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
         "Käytä selaimesi oletusarvoisia vierityspalkkeja, jotka ovat yleensä suurempia ja helpompia käyttää"
+      ],
+      "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
+        "Ollessaan kirjautuneina verkkosovelluksiimme, käyttäjät näkevät ${ BRAND_NAME }-kuvakkeen tilalla oman logosi."
       ],
       "Usually an URL that contains the identity provider's name within": [
         "Yleensä identiteettipalveluntarjoajan nimen sisältävä URL-osoite"

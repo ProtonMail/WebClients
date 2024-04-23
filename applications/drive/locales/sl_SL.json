@@ -467,7 +467,7 @@
         "Združi stike"
       ],
       "Minimize": [
-        "Minimiraj"
+        "Pomanjšaj"
       ],
       "Minimize transfers": [
         "Pomanjšaj seznam prenosov"
@@ -562,6 +562,9 @@
       "Remove": [
         "Odstrani"
       ],
+      "Remove access": [
+        "Odstrani dostop"
+      ],
       "Remove bonuses": [
         "Odstrani bonuse"
       ],
@@ -641,13 +644,13 @@
         "Shrani spremembe"
       ],
       "Scan & Download": [
-        "Skeniraj in prenesi"
+        "Optično preberi in prenesi"
       ],
       "Scan & Download (${ count })": [
-        "Skeniraj in prenesi (${ count })"
+        "Optično preberi in prenesi (${ count })"
       ],
       "Scan & Download all": [
-        "Skeniraj in prenesi vse"
+        "Optično preberi in prenesi vse"
       ],
       "Search": [
         "Iskanje"
@@ -854,7 +857,7 @@
         "Pošiljanje datotek vCard z več kot ${ maxAttachments } stiki ni mogoče."
       ],
       "Your 3 GB bonus": [
-        "Vaš 3 Gb bonus"
+        "Vaš 3 GB bonus"
       ],
       "Zoom in": [
         "Povečaj"
@@ -2530,7 +2533,7 @@
         "Zahtevan je strežnik IMAP"
       ],
       "Incorrect password. Please try again.": [
-        "Napačno geslo. Prosim poskusite ponovno."
+        "Napačno geslo. Prosimo, poskusite ponovno."
       ],
       "Incorrect username": [
         "Nepravilno uporabniško ime"
@@ -2635,7 +2638,7 @@
         "Postopek plačila ni podprt"
       ],
       "Photos upload is temporarily disabled. Please try again later": [
-        "Nalaganje fotografij je začasno onemogočeno. Prosim poskusite kasneje"
+        "Nalaganje fotografij je začasno onemogočeno. Prosimo, poskusite kasneje"
       ],
       "Please activate your search again": [
         "Prosimo, ponovno aktivirajte iskanje."
@@ -3960,7 +3963,7 @@
         "Vsi vaši stiki bodo uvoženi, do meje ${ MAX_CONTACTS_PER_USER }."
       ],
       "Also try looking in Trash.": [
-        "Poskusite pogledati tudi v koš."
+        "Poskusite pogledati tudi v Smetnjak."
       ],
       "American Express SafeKey logo": [
         "American Express SafeKey logotip"
@@ -3999,10 +4002,10 @@
         "Ali ste prepričani, da želite trajno izbrisati"
       ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
-        "Ali ste prepričani, da želite trajno izbrisati ${ itemName } iz koša?"
+        "Ali ste prepričani, da želite trajno izbrisati ${ itemName } iz smeti?"
       ],
       "Are you sure you want to permanently delete selected items from trash?": [
-        "Ali ste prepričani, da želite trajno izbrisati izbran predmet iz koša?"
+        "Ali ste prepričani, da želite trajno izbrisati izbran predmet iz smeti?"
       ],
       "Attention required": [
         "Pozornost!"
@@ -4308,7 +4311,7 @@
         "Datoteki manjka podpis. Nismo mogli preveriti, kdo je naložil datoteko ${ fileName }."
       ],
       "File scanning in Drive": [
-        "Skeniranje datotek v Drive"
+        "Optično branje datotek v Drive"
       ],
       "File will not be updated": [
         "Datoteka ne bo posodobljena"
@@ -4374,7 +4377,7 @@
         "Če sporočila ne najdete v nabiralniku, poglejte v mapo z neželeno pošto."
       ],
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
-        "Če imate enega od teh, nadaljujte z nastavitvijo računa ${ BRAND_NAME }, da začnete postopek odblokiranja."
+        "Če imate enega od teh, nadaljujte v nastavitve računa ${ BRAND_NAME }, da začnete postopek odblokiranja."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Če nadaljujete s podgradnjo, boste izgubili dostop do plačljivih funkcij ${ MAIL_APP_NAME } in ${ VPN_APP_NAME }."
@@ -4536,7 +4539,7 @@
         "Poimenujte novo mapo in izberite, v kateri mapi naj se ustvari. Če ne izberete nadrejene mape, bo ta mapa ustvarjena kot mapa najvišje ravni."
       ],
       "Need to share a file? Then get ${ DRIVE_APP_NAME },\nthe safest way to share, store, and sync your files.": [
-        "Potrebujete skupno rabo datoteke? Nato dobite ${ DRIVE_APP_NAME },\nnajvarnejši način za skupno rabo, shranjevanje in sinhronizacijo datotek."
+        "Potrebujete skupno rabo datoteke? Potem pridobite ${ DRIVE_APP_NAME },\nnajvarnejši način za skupno rabo, shranjevanje in sinhronizacijo datotek."
       ],
       "Network issue": [
         "Težava z omrežjem"
@@ -4767,7 +4770,7 @@
         "Poskusi znova zdaj"
       ],
       "Scan issue": [
-        "Napaka pri skeniranju"
+        "Težava pri optičnem branju"
       ],
       "Search cannot be enabled in this browser": [
         "Iskanja ni mogoče omogočiti v tem brskalniku"
@@ -4800,7 +4803,7 @@
         "Izberite naloženo datoteko ali mapo in ustvarite povezavo do nje."
       ],
       "Select item": [
-        "Izberite predmet:"
+        "Izberite predmet"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Izberite obliko sporočil, ki jo želite uporabiti kot privzeto ob pošiljanju na ta e-poštni naslov."
@@ -4869,10 +4872,10 @@
         "Nekaj je šlo narobe. Prosimo, poizkusite znova."
       ],
       "Something went wrong...": [
-        "Nekaj je šlo narobe..."
+        "Nekaj je šlo narobe ..."
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
-        "Predložite polog s pomočjo naslednjega naslova ali skenirajte QR kodo. Vaš polog bo prikazan na vašem računu po potrditvi."
+        "Predložite polog s pomočjo naslednjega naslova ali optično preberite QR kodo. Vaš polog bo prikazan na vašem računu po potrditvi."
       ],
       "Subscription auto-renews every 12 months.": [
         "Naročnina se samodejno podaljša vsakih 12 mesecev."
@@ -4902,7 +4905,7 @@
         "Šifrirani podatki so nekoliko večji zaradi šifriranja in podpisov, ki zagotavljajo varnost vaših podatkov."
       ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "Morda je bilo spremenjeno: ${ items }. Odprite le, če mu zaupate."
+        "Morda je bilo spremenjeno brez dovoljenja: ${ items }. Odprite le, če mu zaupate."
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Lastnik tega naslova je onemogočil šifriranje od konca do konca. Šifrirana sporočila boste na ta naslov lahko pošiljali, če bo lastnik znova omogočil šifriranje od konca do konca."
@@ -4938,7 +4941,7 @@
         "Ta povezava je lahko homografski napad. Preverite, ali je to povezava, ki jo želite obiskati, ali pa je ne odpirajte."
       ],
       "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
-        "Ta povezava je bila ustvarjena s starejšo različico Drive in je ni mogoče spremeniti. Če želite spremeniti nastavitve najprej izbrišite obstoječo povezavo in nato ustvarite novo."
+        "Ta povezava je bila ustvarjena s starejšo različico Drive in je ni mogoče spremeniti. Če želite spremeniti nastavitve, najprej izbrišite obstoječo povezavo in nato ustvarite novo."
       ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
         "Ta povezava bo trajno onemogočena. Nihče s to povezavo ne bo mogel dostopati do vaše datoteke. Za nadaljnjo skupno rabo datoteke potrebujete novo povezavo."
@@ -5058,7 +5061,7 @@
         "Nepodprta datoteka"
       ],
       "Updating drive search...": [
-        "Posodabljanje pogona za iskanje..."
+        "Posodabljanje pogona za iskanje ..."
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Nadgradite in dobite premijske funkcije, izdelke in shrambo po posebni ceni"
@@ -5076,7 +5079,7 @@
         "Nalaganje več sto datotek hkrati lahko vpliva na zmogljivost."
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
-        "S tem obrazcem nas obvestite o neprimernih, nezakonitih,\nali kako drugače zlonamerne datoteke v skupni rabi. Prijavili boste:"
+        "S tem obrazcem nas obvestite o neprimernih, nezakonitih,\nali kako drugače zlonamernih datotekah v skupni rabi. Prijavili boste:"
       ],
       "username": [
         "uporabniško ime"
@@ -5145,7 +5148,7 @@
         "Kaj želite storiti?"
       ],
       "What would you like to do?": [
-        "Kaj bi radi počeli?"
+        "Kaj želite narediti?"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Ko nastavite dvojno preverjanje pristnosti, nudimo obnovitvene kode, ki jih lahko uporabite za prijavo, če izgubite dostop do aplikacije za preverjanje pristnosti."
@@ -5265,7 +5268,7 @@
         "Vaš račun bo posodobljen, ko bo plačilo potrjeno."
       ],
       "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
-        "Vaš trenutni brskalnik ne podpira prenosa velikih datotek zaradi nedosegljivosti serverjev. Prenos velikih datotek lahko zamrzne brskalnik ali se ta ne odziva. Uporabite najnovejše različice brskalnika ${ recommendedBrowser } in poskusite znova."
+        "Vaš trenutni brskalnik ne podpira prenosa velikih datotek zaradi nedosegljivosti serverjev. Prenos velikih datotek lahko zamrzne brskalnik ali se ta ne odziva. Uporabite najnovejše različice ${ recommendedBrowser } in poskusite znova."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Vaši podatki so pripravljeni na uvoz iz računa ${ importedEmailAddressStrong } v račun ${ BRAND_NAME }."
@@ -5454,7 +5457,7 @@
         "Uporabi za vse podvojene mape"
       ],
       "Apply to all unverified items": [
-        "Uporabi za vse nepreverjene artikle"
+        "Uporabi za vse nepreverjene predmete"
       ],
       "Attach screenshot(s)": [
         "Priloži posnetke zaslona"
@@ -5572,9 +5575,6 @@
         "Izbriši pogona?",
         "Izbriši pogone?",
         "Izbriši pogone?"
-      ],
-      "Delete link": [
-        "Izbriši povezavo"
       ],
       "Delete recovery-related information.": [
         "Izbriši podatke, povezane z obnovitvijo."
@@ -5834,6 +5834,9 @@
       "Region": [
         "Regija"
       ],
+      "Remove access": [
+        "Odstrani dostop"
+      ],
       "Replace existing file": [
         "Zamenjaj obstoječo datoteko"
       ],
@@ -5860,9 +5863,6 @@
       ],
       "Set recovery method": [
         "Nastavitev načina obnovitve"
-      ],
-      "Show indexing progress of Encrypted Search": [
-        "Uporabi za vse podvojene mape"
       ],
       "Sign emails": [
         "Podpiši sporočila"
@@ -6115,6 +6115,11 @@
         "Naročnina se je končala. ${ cta } in se izognite izgubi podatkov."
       ]
     },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Omogoči ${ reason }"
+      ]
+    },
     "Mail import summary": {
       "Import all messages from ${ itemsToImportCount } folder and label them as": [
         "Uvozi vsa sporočila iz ${ itemsToImportCount } mape in jim dodaj oznako",
@@ -6273,7 +6278,7 @@
         "Vrednosti, ločene z vejico (CSV)"
       ],
       "Electronic publication (EPUB)": [
-        "Electronska publikacija (EPUB)"
+        "Elektronska publikacija (EPUB)"
       ],
       "Flash Video": [
         "Flash Video"
@@ -7672,7 +7677,7 @@
         "Npr. "
       ],
       "Enter a new file name": [
-        "Vpišite ime nove datoteke"
+        "Vpišite novo ime datoteke"
       ],
       "Enter a new folder name": [
         "Vpišite ime nove mape"
@@ -7738,7 +7743,7 @@
         "Izberite stanje"
       ],
       "Set date": [
-        "Nastavi datum"
+        "Nastavite datum"
       ],
       "Start typing an email address": [
         "Začnite pisati e-poštni naslov"
@@ -9367,10 +9372,10 @@
         "Povezava je potekla"
       ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
-        "V tej datoteki manjka ali je neveljaven podpis. Za informacije pojdite v Meni (⋮) → Podrobnosti."
+        "V tej datoteki manjka podpis ali pa je neveljaven. Za informacije pojdite v Meni (⋮) → Podrobnosti."
       ],
       "This folder has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
-        "V tej mapi manjka ali je neveljaven podpis. Pojdite na Meni (⋮) → Podrobnosti za info."
+        "V tej mapi manjka podpis ali pa je neveljaven. Za informacije pojdite v Meni (⋮) → Podrobnosti."
       ],
       "This link is password protected": [
         "Ta povezava je zaščitena z geslom"
@@ -9433,7 +9438,7 @@
         "Nimate še map"
       ],
       "Your 3 GB bonus": [
-        "Vaš 3 Gb bonus"
+        "Vaš 3 GB bonus"
       ],
       "Your account is protected": [
         "Vaš račun je zaščiten"
@@ -9444,14 +9449,11 @@
       "Your exposed information": [
         "Vaša razkrita informacija"
       ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "Brezplačno preizkusno obdobje Mail Plus se vam zaključi ${ textDate }"
-      ],
       "Your welcome actions": [
         "Sledite naslednjim korakom"
       ],
       "You’ve got 5 GB of storage": [
-        "Pridobili ste 5 Gb prostora za shranjevanje"
+        "Pridobili ste pet GB prostora za shranjevanje."
       ]
     },
     "Title subscription": {

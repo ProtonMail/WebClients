@@ -436,6 +436,9 @@
       "Manage link": [
         "管理連結"
       ],
+      "Mark as resolved": [
+        "標記為已解決"
+      ],
       "Mark for deletion": [
         "標記為刪除"
       ],
@@ -547,6 +550,9 @@
       "Remove": [
         "移除"
       ],
+      "Remove access": [
+        "移除存取權限"
+      ],
       "Remove bonuses": [
         "移除贈品"
       ],
@@ -570,6 +576,9 @@
       ],
       "Report an issue": [
         "回報問題"
+      ],
+      "Request a call": [
+        "請求呼叫"
       ],
       "Request a feature": [
         "提出新功能建議"
@@ -819,6 +828,9 @@
       ],
       "View": [
         "檢視"
+      ],
+      "View all reports": [
+        "瀏覽全部報告"
       ],
       "View invoice": [
         "查看帳單"
@@ -1135,6 +1147,12 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "繼續使用 ${ MAIL_APP_NAME }。"
+      ],
+      "Continue using ${ planTitle }": [
+        "繼續使用 ${ planTitle }"
+      ],
+      "Continue your subscription": [
+        "繼續您的訂閱"
       ]
     },
     "Checkout row": {
@@ -4238,6 +4256,9 @@
       "Last week": [
         "上週"
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "了解如何 ${ staySaferOnlineLink }"
+      ],
       "Learn more": [
         "瞭解詳情"
       ],
@@ -4432,6 +4453,9 @@
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "請選取一或多組電郵位址以加入至 ${ groupName }。"
+      ],
+      "Please try again in a few moments": [
+        "請稍候再試"
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "諘換另一個繳款方式再試一次，或聯絡您的銀行尋求協助。"
@@ -4883,6 +4907,9 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "我們將在瀏覽器的新索引標籤中重新導向到 PayPal 以完成此交易。若您有使用任何彈出式視窗攔截程式，請先停用，然後才繼續。"
       ],
+      "We'll email you once import is complete.": [
+        "當您匯入完成將電子郵件通知您。"
+      ],
       "We'll notify you when the import is done.": [
         "我們將會在匯入完成後通知你。"
       ],
@@ -5015,6 +5042,12 @@
       "Your download is in progress": [
         "正在下載"
       ],
+      "Your email address and password were leaked:": [
+        "您的電子郵件位址與密碼皆已洩漏曝光："
+      ],
+      "Your email address was exposed:": [
+        "您的電子郵件地址外洩:"
+      ],
       "Your email will only be used for this one-time verification.": [
         "您的電郵只會用於此一次性驗證。"
       ],
@@ -5032,6 +5065,9 @@
       ],
       "Your next billing date is ${ renewalTime }.": [
         "您的下一個結算日期為${ renewalTime }。"
+      ],
+      "Your password was leaked:": [
+        "您的密碼已外洩:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "您的手機號碼只會用於此一次性驗證。"
@@ -5287,9 +5323,6 @@
       ],
       "Delete drive?": [
         "刪除雲端硬碟?"
-      ],
-      "Delete link": [
-        "刪除連結"
       ],
       "Delete recovery-related information.": [
         "刪除復原相關的資料。"
@@ -7429,6 +7462,9 @@
       ]
     },
     "Security Center - Info": {
+      "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
+        "取得通知當您的密碼或其他資料在第三方服務中洩漏。 ${ learnMoreLink }"
+      ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "最新的 AI 安全方案，為希望加強帳號防護的人而設計。 ${ learnMoreLink }"
       ],
@@ -8421,6 +8457,9 @@
       "Deleting contacts": [
         "正在刪除聯絡人"
       ],
+      "Details": [
+        "詳細資訊"
+      ],
       "Discard": [
         "捨棄"
       ],
@@ -8582,6 +8621,9 @@
       ],
       "Night theme": [
         "夜間布景主題"
+      ],
+      "No breaches detected": [
+        "無偵測到外洩"
       ],
       "No results found": [
         "查無結果"
@@ -8829,8 +8871,8 @@
       "Your changes are not synced yet": [
         "您的變更尚未同步"
       ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "您的 Mail Plus 免費方案將於 ${ textDate } 結束"
+      "Your exposed information": [
+        "你的外﻿﻿﻿洩資料"
       ],
       "Your welcome actions": [
         "您的歡迎動作"

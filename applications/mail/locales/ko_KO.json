@@ -619,6 +619,9 @@
       "Mark as read": [
         "읽음으로 표시"
       ],
+      "Mark as resolved": [
+        "해결됨으로 표시"
+      ],
       "Mark as unread": [
         "읽지 않음으로 표시"
       ],
@@ -886,6 +889,9 @@
       "Report phishing": [
         "피싱 신고"
       ],
+      "Request a call": [
+        "콜 요청"
+      ],
       "Request a feature": [
         "기능 요청"
       ],
@@ -1113,9 +1119,6 @@
       ],
       "Trust": [
         "신뢰"
-      ],
-      "Trust key": [
-        "키 신뢰하기"
       ],
       "Trust public key": [
         "공개 키 신뢰하기"
@@ -1529,7 +1532,7 @@
         "1개 커스텀 이메일 도메인, 10개 이메일 주소, 10개 hide-my-email 별칭, 캘린더 공유 등 지원 포함."
       ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "무제한 별칭, 공유, 통합된 2FA 등을 포함하는 비밀번호 관리자로 모든 기기에서 로그인을 보호하세요."
+        "무제한 별칭, 공유, 통합된 2단계 인증기 등을 포함하는 비밀번호 관리자로 모든 기기에서 로그인을 보호하세요."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "사용자 지정 이메일 도메인, 15개 이메일 주소, 무제한 hide-my-email 별칭 등 기능을 포함하는 이메일과 공유 캘린더를 지원하는 보안 캘린더로 보호하세요."
@@ -1660,6 +1663,9 @@
       ],
       "Continue using ${ planTitle }": [
         "${ planTitle }을 계속 사용하세요"
+      ],
+      "Continue your subscription": [
+        "내 구독 유지하기"
       ]
     },
     "Calendar attachment tooltip": {
@@ -3190,7 +3196,7 @@
         "${ manageBlockedAddressesSettingsLink }는 설정에서 상세히 가능합니다."
       ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
-        "2FA는 추가적인 보안 계층, 접근 불가 상황 방지에 도움을 줍니다."
+        "2단계 인증은 추가적인 보안 계층, 접근 불가 상황 방지에 도움을 줍니다."
       ],
       "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
         "휴지통과 스팸함의 30일 이상 된 메시지를 자동으로 삭제합니다. 업그레이드하여 이 기능과 다른 혜택들을 누려보세요."
@@ -3277,7 +3283,7 @@
         "병합하거나 유지하고 싶지 않은 연락처를 삭제하도록 표시할 수 있습니다. 삭제는 병합 버튼을 클릭한 후에만 이루어집니다."
       ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
-        "사용자의 계정과 데이터 복구 방법이 설정되어 있으며, 2FA가 활성화 상태입니다."
+        "사용자의 계정과 데이터 복구 방법이 설정되어 있으며, 2단계 인증이 활성화 상태입니다."
       ],
       "Your account and data recovery methods are set.": [
         "사용자의 계정과 데이터 복구 방법이 설정된 상태입니다."
@@ -5881,6 +5887,9 @@
       "Large imports can take several days.": [
         "가져올 내용이 많은 경우 며칠 정도 걸릴 수 있습니다."
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "${ staySaferOnlineLink }하는 법 알아보기"
+      ],
       "Learn more": [
         "더 알아보기"
       ],
@@ -5898,6 +5907,9 @@
       ],
       "Loading ${ appName }": [
         "${ appName } 로딩 중"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "캘린더를 불러오는 중, 새로운 탭에서 일정 플랫폼 Calendly로 리디렉션됩니다."
       ],
       "Loading message": [
         "메시지를 불러오는 중"
@@ -6005,7 +6017,7 @@
         "라벨 발견되지 않음"
       ],
       "No label selected": [
-        "선택한 라벨이 없음"
+        "선택한 라벨 없음"
       ],
       "No links cleaned": [
         "정리된 링크가 없습니다"
@@ -6257,7 +6269,7 @@
         "${ MAIL_APP_NAME }을 이 브라우저의 기본 이메일 애플리케이션으로 지정하세요. ${ MAIL_APP_NAME }이 이메일 링크를 클릭할때 자동으로 열어줍니다."
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
-        "PGP를 설정하면 PGP 호환 서비스를 사용하는 비 ${ BRAND_NAME } 사용자와 종단 간 암호화된 이메일을 보낼 수 있어요."
+        "PGP를 설정하면 ${ BRAND_NAME }을 사용하지 않는 PGP 호환 서비스를 사용하는 사용자와 종단 간 암호화된 이메일을 보낼 수 있어요."
       ],
       "Show original message": [
         "처음 메시지 보기"
@@ -6330,6 +6342,9 @@
       ],
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "이 페이지를 떠난다면 받은 편지함에 있는 데이터가 저장되지 않을 수 있습니다."
+      ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "노출된 정보가 서드 파티 서비스에서 유출되었습니다. 사용자의 ${ BRAND_NAME } 계정 정보는 안전하고 암호화 상태로 유지됩니다. ${ learnMoreLink }"
       ],
       "The local database is being prepared": [
         "로컬 데이터베이스를 불러오는 중입니다"
@@ -6643,6 +6658,9 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "이 거래를 완료하기 위해 새 브라우저 탭의 PayPal로 보내집니다. 팝업 차단기를 사용하는 경우 계속하려면 비활성화하세요."
       ],
+      "We'll email you once import is complete.": [
+        "불러오기가 완료되면 이메일로 보내드리겠습니다."
+      ],
       "We'll notify you when the import is done.": [
         "처리가 완료되면 알려드리겠습니다."
       ],
@@ -6703,6 +6721,9 @@
       "You can check the progress ${ importProgressLink }.": [
         "진행 상황을 ${ importProgressLink } 에서 확인하실 수 있습니다."
       ],
+      "You can close the tab or browser in the meantime.": [
+        "도중에 탭이나 브라우저를 닫으셔도 됩니다."
+      ],
       "You can either update your search query or ${ button }": [
         "검색 쿼리 또는 ${ button } 을(를) 업데이트할 수 있습니다."
       ],
@@ -6747,6 +6768,12 @@
       ],
       "You have **${ count } message** tagged with this label": [
         "이 라벨로 태그된 **메시지 ${ count }개**가 있습니다"
+      ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "체험판 ${ planTitle } 구독이 있습니다. 체험 기간 이후로도 계속 구독을 사용하려면, 결제 수단을 추가해 주세요."
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "${ planTitle } 체험판 구독이 있습니다. 현재는 결제 수단이 필요 없습니다. 사용자의 구독이 무료 체험 종료일에 자동 갱신됩니다."
       ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
         "사용자의 이메일에 제목이 있지 않습니다. 이 메시지를 계속 보내시겠어요?"
@@ -6832,11 +6859,20 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "${ importedEmailAddressStrong } 에서 ${ BRAND_NAME } 계정으로 데이터를 불러올 준비가 되었습니다."
       ],
+      "Your email address and password were leaked:": [
+        "사용자의 이메일 주소 및 비밀번호가 유출되었습니다:"
+      ],
+      "Your email address was exposed:": [
+        "사용자의 이메일 주소가 노출되었습니다:"
+      ],
       "Your email will only be used for this one-time verification.": [
         "회원님의 이메일 주소는 이번 인증에만 사용됩니다."
       ],
       "Your files will be encrypted and then saved": [
         "파일이 암호화된 후 저장됩니다"
+      ],
+      "Your information was found on ${ displayedDate }": [
+        "${ displayedDate }에 사용자의 정보가 발견되었습니다."
       ],
       "Your login information will not be saved after the import is completed.": [
         "로그인 정보는 가져오기 작업이 끝나면 삭제됩니다."
@@ -6852,6 +6888,9 @@
       ],
       "Your next billing date is ${ renewalTime }.": [
         "다음 결제일은 ${ renewalTime } 입니다."
+      ],
+      "Your password was leaked:": [
+        "사용자의 비밀번호가 유출되었습니다:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "귀하의 전화번호는 이번 인증에만 사용돼요."
@@ -7879,9 +7918,6 @@
       "Sent": [
         "보낸 편지함"
       ],
-      "Set up email forwarding": [
-        "이메일 가져오기 설정"
-      ],
       "Sign up for free": [
         "무료 가입"
       ],
@@ -8526,7 +8562,7 @@
         "HTML 서명"
       ],
       "Integrated 2FA authenticator": [
-        "통합된 2FA 인증기"
+        "통합된 2단계 인증기"
       ],
       "Kill switch/always-on VPN": [
         "킬 스위치/상시 VPN"
@@ -8559,7 +8595,7 @@
         "동시에 최대 ${ n }개까지 장치 보호"
       ],
       "Require 2FA for organization": [
-        "조직에 2FA (이중 인증) 요구"
+        "조직에 2단계 인증 요구"
       ],
       "Router support": [
         "라우터 지원"
@@ -9046,7 +9082,7 @@
         "비공개 게이트웨이"
       ],
       "Require 2FA": [
-        "2FA 필요"
+        "2단계 인증 필요"
       ]
     },
     "Notification": {
@@ -9648,11 +9684,17 @@
       ]
     },
     "Security Center - Info": {
+      "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
+        "사용자의 비밀번호 혹은 타 데이터가 서드 파티 서비스에서 유출되었는지에 대해 알림을 받아보세요. ${ learnMoreLink }"
+      ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "계정에 대한 강화된 보호를 원하는 사용자를 위해 설계된 최첨단 AI 기반 보안 솔루션입니다. ${ learnMoreLink }"
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel이 **활성화** 상태이며 계정이 보호 중입니다."
+      ],
+      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLink }": [
+        "하나 이상의 데이터 침해사례에서 당신의 정보가 발견되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하고 조치를 취하십시오. ${ learnMoreLink }"
       ]
     },
     "Select files": {
@@ -10183,9 +10225,6 @@
       "Email tracking protection": [
         "이메일 트래킹 보호"
       ],
-      "Faster email management": [
-        "빠른 이메일 관리"
-      ],
       "Get the desktop app": [
         "데스크톱 앱 다운로드"
       ],
@@ -10195,17 +10234,14 @@
       "Invite friends to ${ BRAND_NAME }": [
         "친구를 ${ BRAND_NAME }에 초대하세요."
       ],
-      "Now you can take action on all emails in a single folder in one go.": [
-        "이제 한 번에 하나의 폴더에 있는 모든 이메일에 대한 관리가 가능합니다."
-      ],
       "Schedule send": [
         "스케줄 발송"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME } to get notified if your data was leaked from a third-party service.": [
+        "제 3자 서비스에서 당신의 데이터가 유출되었는지 알림을 받으려면 ${ DARK_WEB_MONITORING_NAME }을 활성화하십시오."
+      ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "이제 일반적으로 이미지를 로드하며 전송자가 당신을 트래킹하지 못하도록 차단할 수 있습니다. ${ settingsLink }에서 언제든지 변경할 수 있습니다."
-      ],
-      "You can now automatically forward your emails to anyone!": [
-        "이제 모든 사람으로 이메일을 자동으로 가져올 수 있습니다!"
       ],
       "You can now schedule your messages to be sent later": [
         "이제 메시지를 예약하여 나중에 전송할 수 있습니다"
@@ -10725,7 +10761,7 @@
     },
     "summer2023: Tooltip": {
       "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
-        "모든 기기에서 안전한 로그인 세부사항을 생성하세요. 무제한 별칭, 20개의 금고, 통합된 2FA, 신용 카드 자동 작성 등이 포함되어 있습니다."
+        "모든 기기에서 안전한 로그인 세부사항을 생성하세요. 무제한 별칭, 20개의 금고, 통합된 2단계 인증기, 신용카드 자동 완성 등이 포함되어 있습니다."
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "65개 이상 국가의 2950개 이상의 서버, 최대 10개 기기 연결, 전세계적 스트리밍 서비스 접근, 멀웨어 및 광고 차단기 등 포함."
@@ -11056,6 +11092,9 @@
       "Deleting contacts": [
         "연락처 삭제"
       ],
+      "Details": [
+        "세부 사항"
+      ],
       "Don't give spam a chance": [
         "스팸 메일에 기회를 주지 마세요"
       ],
@@ -11099,7 +11138,7 @@
         "이메일 설정"
       ],
       "Enable 2FA": [
-        "2FA 활성화"
+        "2단계 인증 활성화"
       ],
       "Enable message content search": [
         "메시지 컨텐츠 검색 활성화"
@@ -11444,7 +11483,7 @@
         "로그인 및 엑세스 권한 부여"
       ],
       "Sign in with 2FA": [
-        "2FA로 로그인"
+        "2단계 인증으로 로그인"
       ],
       "Sign out": [
         "로그아웃"
@@ -11548,8 +11587,8 @@
       "Your changes are not synced yet": [
         "변경 사항이 동기화되지 않았습니다."
       ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "Mail Plus 무료 체험판이 ${ textDate }에 종료됩니다"
+      "Your exposed information": [
+        "사용자의 노출된 정보"
       ]
     },
     "Title subscription": {
@@ -11653,7 +11692,7 @@
     },
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: 무제한 별명, 공유, 통합된 2FA 등을 포함하는 비밀번호 관리자로 모든 기기에서 로그인을 보호하세요."
+        "${ PASS_APP_NAME }: 무제한 별명, 공유, 통합된 2단계 인증기 등을 포함하는 비밀번호 관리자로 모든 기기에서 로그인을 보호하세요."
       ]
     },
     "Tor out of date": {

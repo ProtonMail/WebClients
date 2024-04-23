@@ -4807,7 +4807,7 @@
         "Nekaj vaših odgovorov na ponavljanja, ki jih je orgnizator predhodno posodobil, bo izgubljenih."
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
-        "Predložite polog s pomočjo naslednjega naslova ali skenirajte QR kodo. Vaš polog bo prikazan na vašem računu po potrditvi."
+        "Predložite polog s pomočjo naslednjega naslova ali optično preberite QR kodo. Vaš polog bo prikazan na vašem računu po potrditvi."
       ],
       "Subscription auto-renews every 12 months.": [
         "Naročnina se samodejno podaljša vsakih 12 mesecev."
@@ -5898,6 +5898,11 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Naročnina se je končala. ${ cta } in se izognite izgubi podatkov."
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Omogoči ${ reason }"
       ]
     },
     "Mail import summary": {
@@ -8228,17 +8233,11 @@
       ]
     },
     "Spotlight": {
-      "Add your country's public holidays to your calendar.": [
-        "Dodajte praznike v vaš koledar."
-      ],
       "Color-coding is here!": [
         "Označevanje z barvami je tu!"
       ],
       "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
         "Priročno zaženite ${ MAIL_APP_NAME } neposredno z namizja."
-      ],
-      "Easily find the event you're looking for with our new search feature.": [
-        "Preprosto poiščite dogodek, ki ga iščete, z našo novo funkcijo iskanja."
       ],
       "Get the desktop app": [
         "Prenesite program za namizja"
@@ -8254,12 +8253,6 @@
       ],
       "Now you can see when participants are free to attend your meeting.": [
         "Vidite lahko, kdaj se lahko udeleženci udeležijo sestanka."
-      ],
-      "Public holidays are here!": [
-        "Prazniki so tu!"
-      ],
-      "Search for events": [
-        "Iskanje dogodkov"
       ],
       "With customizable event colors, you can color-code the chaos and conquer your day.": [
         "Z označevanjem dogodkov z različnimi barvami si lahko uredite kaotične dnevne obveznosti in zmagate."
@@ -9326,9 +9319,6 @@
       ],
       "Your exposed information": [
         "Vaša razkrita informacija"
-      ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "Brezplačno preizkusno obdobje Mail Plus se vam zaključi ${ textDate }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

@@ -182,6 +182,9 @@
       "Edit": [
         "Redigér"
       ],
+      "Edit billing cycle": [
+        "Redigér betalingscyklus"
+      ],
       "Edit display name": [
         "Redigér vist navn"
       ],
@@ -370,6 +373,9 @@
       ],
       "Report a problem": [
         "Anmeld et problem"
+      ],
+      "Request a call": [
+        "Anmod om opkald"
       ],
       "Request a feature": [
         "Anmod om en funktion"
@@ -953,6 +959,9 @@
       ],
       "Continue using ${ planTitle }": [
         "Fortsæt med at bruge ${ planTitle }"
+      ],
+      "Continue your subscription": [
+        "Fortsæt dit abonnement"
       ]
     },
     "Checkout row": {
@@ -3205,7 +3214,7 @@
         "Gå til din identitetsudbyder, hent SAML-metadataene for ${ appName }, og importér dem her."
       ],
       "here": [
-        "hér"
+        "her"
       ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "Identitetsudbyderens offentlige nøgle til at underskrive godkendelsespåstande. Der bør være et sted, hvor man kan downloade eller kopiere certifikatets hash fra identitetsudbyderen. Du skal bare indsætte certifikatets hash i tekstområdets felt."
@@ -3308,6 +3317,9 @@
       ],
       "Loading ${ appName }": [
         "Indlæser ${ appName }"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Indlæser kalender, vent venligst. Du vil blive omdirigeret til vores planlægningsplatform Calendly i en ny fane."
       ],
       "Loading preview": [
         "Indlæser forhåndsvisning"
@@ -3974,6 +3986,12 @@
       "You have ${ availableCount } dedicated server available.": [
         "Du har ${ availableCount } dedikeret server tilgængelig.",
         "Du har ${ availableCount } dedikerede servere tilgængelig."
+      ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "Du har et ${ planTitle }-prøveabonnement. Hvis du gerne vil fortsætte dit abonnement efter prøveperioden, skal du tilføje en betalingsmetode."
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "Du har et ${ planTitle }-prøveabonnement. Der kræves ingen betaling på dette tidspunkt. Dit abonnement vil automatisk blive fornyet ved prøveperiodens udløb."
       ],
       "You have no invoices.": [
         "Du har ingen fakturaer."
@@ -4675,7 +4693,7 @@
         "Hvordan betaler man med Bitcoin?"
       ],
       "Learn more": [
-        "Få yderligere information"
+        "Få mere at vide"
       ],
       "Need help?": [
         "Brug for hjælp?"
@@ -5075,7 +5093,7 @@
         "Kalenderdeling"
       ],
       "Catch-all": [
-        "Fang-alle"
+        "Catch-all"
       ],
       "Centralized billing": [
         "Samlet fakturering"
@@ -6302,6 +6320,11 @@
     "Select file": {
       "Upload CSV file": [
         "Upload en CSV-fil"
+      ]
+    },
+    "Select invoice document": {
+      "Currency conversion": [
+        "Valutaomregning"
       ]
     },
     "Select search results": {
@@ -7844,9 +7867,6 @@
       ],
       "Your current plan": [
         "Dit nuværende abonnement"
-      ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "Din Mail Plus prøveperiode slutter ${ textDate }"
       ],
       "Your plan": [
         "Dit abonnement"

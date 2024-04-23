@@ -562,6 +562,9 @@
       "Remove": [
         "Vymazať"
       ],
+      "Remove access": [
+        "Odstrániť prístup"
+      ],
       "Remove bonuses": [
         "Odstrániť bonusy"
       ],
@@ -837,6 +840,9 @@
       ],
       "View": [
         "Zobraziť"
+      ],
+      "View all reports": [
+        "Zobraziť všetky hlásenia"
       ],
       "View invoice": [
         "Zobraziť faktúru"
@@ -4685,6 +4691,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Vyberte adresu alebo adresy, ktoré chcete pridať do skupiny ${ groupName }."
       ],
+      "Please try again in a few moments": [
+        "Skúste to znova o chvíľu, prosím"
+      ],
       "Please try again using a different payment method, or contact your bank.": [
         "Skúste to znova pomocou iného spôsobu platby, alebo kontaktujte svoju banku."
       ],
@@ -5147,6 +5156,9 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Na dokončenie tejto transakcie vás presmerujeme na PayPal v novej karte prehliadača. Ak používate blokovanie vyskakovacích okien, pred pokračovaním ho prosím vypnite."
       ],
+      "We'll email you once import is complete.": [
+        "Po dokončení importu vám pošleme email."
+      ],
       "We'll notify you when the import is done.": [
         "Po dokončení importu Vás budeme informovať."
       ],
@@ -5203,6 +5215,9 @@
       ],
       "You can check the progress ${ importProgressLink }.": [
         "Tu môžete skontrolovať priebeh ${ importProgressLink }."
+      ],
+      "You can close the tab or browser in the meantime.": [
+        "Medzitým môžete túto záložku alebo prehliadač zatvoriť."
       ],
       "You can import one data type at a time.": [
         "Importovať môžete vždy jeden typ údajov."
@@ -5596,9 +5611,6 @@
         "Vymazať disky?",
         "Vymazať disky?",
         "Vymazať disky?"
-      ],
-      "Delete link": [
-        "Vymazať odkaz"
       ],
       "Delete recovery-related information.": [
         "Odstrániť informácie súvisiace s obnovením."
@@ -7950,6 +7962,9 @@
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel je **aktívny** a chráni váš účet."
+      ],
+      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLink }": [
+        "Vaše údaje boli zistené najmenej v jednom prípade porušenia ochrany osobných údajov. Ak chcete zobraziť podrobnosti a podniknúť kroky, zapnite funkciu ${ DARK_WEB_MONITORING_NAME }. ${ learnMoreLink }"
       ]
     },
     "Select files": {
@@ -9480,6 +9495,9 @@
       "You have no folders yet": [
         "Zatiaľ nemáte žiadne priečinky"
       ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Vaša bezplatná skúšobná verzia služby ${ planName } končí ${ textDate }"
+      ],
       "Your 3 GB bonus": [
         "Váš bonus 3 GB"
       ],
@@ -9491,9 +9509,6 @@
       ],
       "Your exposed information": [
         "Vaše odhalené informácie"
-      ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "Vaša bezplatná skúšobná verzia služby Mail Plus končí ${ textDate }"
       ],
       "Your welcome actions": [
         "Vaše uvítacie akcie"
