@@ -1064,8 +1064,8 @@
       "Upload": [
         "Enviar"
       ],
-      "Upload icon": [
-        "Enviar ícone"
+      "Upload logo": [
+        "Enviar logo"
       ],
       "Upload picture": [
         "Carregar imagem"
@@ -1316,11 +1316,17 @@
       ]
     },
     "app-switcher": {
+      "Browse the web privately and block ads": [
+        "Navegue na web de maneira privada e bloqueie anúncios"
+      ],
       "Keep your schedule private": [
-        "Mantenha sua agenda privada"
+        "Mantenha privada sua agenda"
       ],
       "Protect your passwords and identity": [
-        "Proteja suas senhas e identidade"
+        "Proteja suas senhas e sua identidade"
+      ],
+      "Safeguard your files and photos": [
+        "Proteja seus arquivos e fotos"
       ],
       "Secure your communications": [
         "Proteja suas comunicações"
@@ -3323,14 +3329,6 @@
         "Ajude-nos a melhorar!"
       ]
     },
-    "Download link": {
-      ".deb for Debian / Ubuntu": [
-        ".deb para Debian / Ubuntu"
-      ],
-      ".rpm for Fedora / Red Hat": [
-        ".rpm para Fedora / Red Hat"
-      ]
-    },
     "drive_signup_2023: Info": {
       "Advanced sharing security": [
         "Segurança avançada de compartilhamento"
@@ -3914,6 +3912,9 @@
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Erro ao obter sessões ativas. ${ refresh } ou tente novamente mais tarde."
       ],
+      "Failed to process the logo": [
+        "Falha no processamento do logotipo"
+      ],
       "File too large. Your logo must be 30 KB or smaller.": [
         "Arquivo muito grande. Seu logo deve ter 30 KB ou menos."
       ],
@@ -4168,6 +4169,9 @@
       ],
       "The email addresses do not match": [
         "Os endereços de e-mail não correspondem."
+      ],
+      "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
+        "O arquivo é muito grande, o tamanho máximo é ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }"
       ],
       "The file is too small, the minimum size is ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }": [
         "O arquivo é muito pequeno, o tamanho mínimo é ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }"
@@ -6772,6 +6776,9 @@
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "Obtenha acesso criando uma conta da ${ BRAND_NAME } e aceitando o convite."
       ],
+      "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
+        "Seja notificado se a sua senha ou outros dados pessoais foram vazados. ${ learnMoreLinkNoBreach }"
+      ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "Dê um nome descritivo ao token, como o do serviço com o qual você planeja usá-lo, e selecione um dos domínios personalizados ativos. Apenas esse endereço poderá enviar e-mails com este token."
       ],
@@ -6947,6 +6954,9 @@
       ],
       "Just send them your personal referral link.": [
         "Basta enviar-lhes o seu link de referência pessoal."
+      ],
+      "Keep your info more secure and private with these guides and tips.": [
+        "Mantenha suas informações mais segura e privada com esses guias e dicas."
       ],
       "Key deletion is irreversible!": [
         "A exclusão da chave é irreversível."
@@ -7592,6 +7602,9 @@
       "The credentials from your Identity Provider will be deleted.": [
         "As credenciais do seu Provedor de Identidade serão deletadas."
       ],
+      "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
+        "A dark web é uma parte oculta da Internet onde informações pessoais roubadas, como identidades, podem ser compradas e vendidas."
+      ],
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "O link de verificação de e-mail expirou. Faça login para reenviar um link de verificação."
       ],
@@ -7945,6 +7958,9 @@
       ],
       "Want servers in other countries?": [
         "Quer servidores em outros países?"
+      ],
+      "Want to learn more?": [
+        "Deseja saber mais?"
       ],
       "Warning:": [
         "Aviso:"
@@ -8855,9 +8871,6 @@
       ],
       "Awarded": [
         "Premiado"
-      ],
-      "Beta": [
-        "Beta"
       ],
       "Billing address": [
         "Endereço de cobrança"
@@ -9872,6 +9885,9 @@
       "here": [
         "aqui"
       ],
+      "How does monitoring work?": [
+        "Como funciona o monitoramento da Dark Web?"
+      ],
       "How to pay with Bitcoin?": [
         "Como pagar com Bitcoin?"
       ],
@@ -10006,6 +10022,9 @@
       ]
     },
     "Log preference": {
+      "Enable ${ reason }": [
+        "Ativar ${ reason }"
+      ],
       "Enable advanced logs": [
         "Ativar registros avançados"
       ],
@@ -11352,11 +11371,23 @@
       "${ Filter.Name } created": [
         "${ Filter.Name } criado"
       ],
+      "${ reason } has been disabled": [
+        "${ reason } foi desativado"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } foi ativado"
+      ],
       "A disabled address cannot be default": [
         "Um endereço desativado não pode ser padrão"
       ],
       "An external address cannot be default": [
         "Um endereço externo não pode ser padrão."
+      ],
+      "Dark Web Monitoring has been disabled": [
+        "O Monitoramento da Dark Web foi desativado"
+      ],
+      "Dark Web Monitoring has been enabled": [
+        "O Monitoramento da Dark Web foi ativado"
       ],
       "Invalid code": [
         "Código inválido"
@@ -11767,6 +11798,31 @@
       ],
       "Your plan includes a maximum of ${ humanReadableAvailableSpace } more storage.": [
         "Seu plano inclui no máximo ${ humanReadableAvailableSpace } a mais de armazenamento."
+      ]
+    },
+    "Organization logo upload": {
+      "Avoid overly compressed images.": [
+        "Evite imagens muitos comprimidas."
+      ],
+      "Use a graphical icon or image rather than text.": [
+        "Use um ícone gráfico ou imagem no lugar de texto."
+      ],
+      "Use a solid background color.": [
+        "Use uma cor de fundo sólido"
+      ]
+    },
+    "Organization logo upload modal": {
+      "Drop image file here to upload or": [
+        "Solte a imagem aqui para enviar ou"
+      ],
+      "File in PNG or JPEG format": [
+        "Arquivo no formato PNG ou JPEG"
+      ],
+      "File not larger than 30 KB": [
+        "Arquivo não maior que 30 KB"
+      ],
+      "Square image of at least 128 pixels": [
+        "Imagem quadrada de pelo menos 128 pixels"
       ]
     },
     "OS compatibility": {
@@ -12602,6 +12658,11 @@
         "Cancelar inscrição?"
       ]
     },
+    "Remove organization logo": {
+      "Users will no longer see your custom logo or organization name.": [
+        "Os usuários não verão mais o seu logotipo personalizado ou nome da organização."
+      ]
+    },
     "Restore administrator panel": {
       "${ n } administrator in your organization need access to the organization key.": [
         "${ n } administrador em sua organização precisa de acesso à chave da organização.",
@@ -12675,6 +12736,11 @@
         "Aprovisionamento automático de SCIM"
       ]
     },
+    "Security Center - Info": {
+      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLinkBreach }": [
+        "Suas informações foram encontradas em pelo menos uma violação de dados. Ative o ${ DARK_WEB_MONITORING_NAME } para ver detalhes e tomar medidas. ${ learnMoreLinkBreach }"
+      ]
+    },
     "Select file": {
       "Upload CSV file": [
         "Enviar arquivo CSV"
@@ -12689,6 +12755,17 @@
       ],
       "Upload additional files": [
         "Enviar arquivos adicionais"
+      ]
+    },
+    "Select invoice document": {
+      "Credit note": [
+        "Nota de crédito"
+      ],
+      "Currency conversion": [
+        "Conversão de moeda"
+      ],
+      "Invoice": [
+        "Fatura"
       ]
     },
     "Select search results": {
@@ -13622,6 +13699,60 @@
         "Por"
       ]
     },
+    "Subscription reminder": {
+      "${ dayDiff } day left": [
+        "${ dayDiff } dia restante",
+        "${ dayDiff } dias restantes"
+      ],
+      "${ MAIL_APP_NAME } desktop app": [
+        "Aplicativo para computador do ${ MAIL_APP_NAME }"
+      ],
+      "${ planMaxSpace } total storage": [
+        "${ planMaxSpace } armazenamento total"
+      ],
+      "10 email addresses": [
+        "10 endereços de e-mail"
+      ],
+      "Calendar sharing": [
+        "Calendários compartilhados"
+      ],
+      "Cancel subscription": [
+        "Cancelar assinatura"
+      ],
+      "Cancel subscription?": [
+        "Cancelar assinatura?"
+      ],
+      "Close": [
+        "Fechar"
+      ],
+      "Custom schedule send and snooze times": [
+        "Programação personalizada de horários de envio e pausa"
+      ],
+      "Have a question?": [
+        "Tem alguma pergunta?"
+      ],
+      "I still want to cancel": [
+        "Ainda quero cancelar"
+      ],
+      "Keep ${ planName }": [
+        "Manter o ${ planName }"
+      ],
+      "Priority support": [
+        "Suporte prioritário"
+      ],
+      "Resubscribe": [
+        "Reinscrever-se"
+      ],
+      "Subscription canceled": [
+        "Assinatura cancelada"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Pastas, marcadores e filtros ilimitados"
+      ],
+      "Your own custom email domain": [
+        "Seu domínio de e-mail personalizado"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Você tem certeza?"
@@ -14348,6 +14479,9 @@
       "Custom selection of users": [
         "Seleção personalizada de usuários"
       ],
+      "Customization": [
+        "Personalização"
+      ],
       "Customize and confirm": [
         "Personalize e confirme"
       ],
@@ -14373,7 +14507,7 @@
         "Recuperação de dados"
       ],
       "Date": [
-        "Encontro"
+        "Data"
       ],
       "Day theme": [
         "Tema diurno"
@@ -14566,15 +14700,6 @@
       "Folders and labels": [
         "Pastas e marcadores"
       ],
-      "For Linux": [
-        "Para Linux"
-      ],
-      "For macOS": [
-        "Para macOS"
-      ],
-      "For Windows": [
-        "Para Windows"
-      ],
       "Forward and auto-reply": [
         "Encaminhamento e resposta automática"
       ],
@@ -14613,6 +14738,9 @@
       ],
       "How does it work?": [
         "Como isso funciona?"
+      ],
+      "How to choose a good logo": [
+        "Como escolher um bom logotipo"
       ],
       "How to refer a friend and get credits": [
         "Como indicar um amigo e ganhar créditos"
@@ -14752,6 +14880,9 @@
       ],
       "Password reset settings": [
         "Configurações de redefinição de senha"
+      ],
+      "Passwords made easy": [
+        "Senhas fáceis de usar"
       ],
       "Pay invoice": [
         "Pagar fatura"
@@ -15027,6 +15158,9 @@
       "Upload CSV file to create multiple accounts": [
         "Enviar arquivo CSV para criar várias contas"
       ],
+      "Upload your organization’s logo": [
+        "Envie o logotipo da sua organização"
+      ],
       "Users": [
         "Usuários"
       ],
@@ -15063,6 +15197,12 @@
       "We'll send an email to your new address with instructions on completing the change.": [
         "Enviamos um e-mail para o seu novo endereço com as instruções para completar a mudança."
       ],
+      "What is an alias?": [
+        "O que é um alias?"
+      ],
+      "What is the dark web?": [
+        "O que é a dark web?"
+      ],
       "What would you like to import?": [
         "O que você gostaria de importar?"
       ],
@@ -15072,6 +15212,9 @@
       "WireGuard configuration": [
         "Configuração do WireGuard"
       ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Sua avaliação gratuita do ${ planName } termina em ${ textDate }"
+      ],
       "Your calendar link": [
         "Link do seu calendário"
       ],
@@ -15080,9 +15223,6 @@
       ],
       "Your exposed information": [
         "Sua informação exposta"
-      ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "Sua avaliação gratuita do Mail Plus termina em ${ textDate }"
       ],
       "Your plan": [
         "O seu plano"

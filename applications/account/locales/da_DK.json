@@ -392,6 +392,9 @@
       "Edit": [
         "Redigér"
       ],
+      "Edit billing cycle": [
+        "Redigér betalingscyklus"
+      ],
       "Edit display name": [
         "Redigér vist navn"
       ],
@@ -617,6 +620,12 @@
       "Mark as default": [
         "Markér som standard"
       ],
+      "Mark as open": [
+        "Markér som åben"
+      ],
+      "Mark as resolved": [
+        "Markér som løst"
+      ],
       "mark emails as": [
         "markér e-mails som"
       ],
@@ -752,6 +761,9 @@
       "Report a problem": [
         "Anmeld et problem"
       ],
+      "Request a call": [
+        "Anmod om opkald"
+      ],
       "Request a feature": [
         "Anmod om en funktion"
       ],
@@ -885,7 +897,7 @@
         "Angiv som standard"
       ],
       "Set catch-all": [
-        "Indstil fang-alle"
+        "Vælg catch-all"
       ],
       "Set new password": [
         "Angiv ny adgangskode"
@@ -1072,6 +1084,9 @@
       ],
       "View": [
         "Vis"
+      ],
+      "View all reports": [
+        "Se alle rapporter"
       ],
       "View invoice": [
         "Vis faktura"
@@ -1647,6 +1662,9 @@
       "Continue using ${ planTitle }": [
         "Fortsæt med at bruge ${ planTitle }"
       ],
+      "Continue your subscription": [
+        "Fortsæt dit abonnement"
+      ],
       "Copy": [
         "Kopiér"
       ],
@@ -2143,7 +2161,7 @@
         "Navn"
       ],
       "Note": [
-        "Notat"
+        "Note"
       ],
       "Organization": [
         "Organisation"
@@ -3257,14 +3275,6 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Hjælp os med at blive bedre!"
-      ]
-    },
-    "Download link": {
-      ".deb for Debian / Ubuntu": [
-        ".deb til Debian/Ubuntu"
-      ],
-      ".rpm for Fedora / Red Hat": [
-        ".rpm for Fedora / Red Hat"
       ]
     },
     "drive_signup_2023: Info": {
@@ -4423,6 +4433,9 @@
       ],
       "Invalid URL": [
         "Ugyldig URL"
+      ],
+      "Missing parameters in the URL.": [
+        "Mangler parametre i URL'en."
       ],
       "Oops, something went wrong": [
         "Ups, noget gik galt"
@@ -6686,7 +6699,7 @@
         "Gå til din identitetsudbyder, hent SAML-metadataene for ${ appName }, og importér dem her."
       ],
       "here": [
-        "hér"
+        "her"
       ],
       "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
         "Skjuler identifikationsoplysninger ved at indlæse eksternt indhold via en proxy. Mulighed for at gemme indhold som vedhæftninger."
@@ -6722,7 +6735,7 @@
         "Hvis du ikke kan se mailen i din indbakke, bedes du tjekke din spammappe."
       ],
       "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).": [
-        "Hvis du har et brugerdomæne med ${ MAIL_APP_NAME }, kan du angive en catch-all (fang-alle) e-mailadresse, der vil modtage beskeder sendt til dit domæne med en ugyldig e-mailadresse (f.eks. pga. stavefejl)."
+        "Hvis du har et brugerdomæne med ${ MAIL_APP_NAME }, kan du angive en catch-all e-mailadresse, der vil modtage beskeder sendt til dit domæne med en ugyldig e-mailadresse (f.eks. pga. stavefejl)."
       ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Hvis du har en gavekode, skal du indtaste den nedenfor for at anvende din rabat."
@@ -6873,6 +6886,9 @@
       "Lean more about single sign-on": [
         "Lær mere om single sign-on"
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Lær, hvordan du ${ staySaferOnlineLink }"
+      ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Lær, hvordan du logger på ${ VPN_APP_NAME } med tredjeparts VPN-applikationer."
       ],
@@ -6911,6 +6927,9 @@
       ],
       "Loading ${ appName }": [
         "Indlæser ${ appName }"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Indlæser kalender, vent venligst. Du vil blive omdirigeret til vores planlægningsplatform Calendly i en ny fane."
       ],
       "Loading preview": [
         "Indlæser forhåndsvisning"
@@ -7076,6 +7095,9 @@
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Der findes andre administratorer i din organisation. Du er selv ansvarlig for at formidle den nye adgangskode til dem."
+      ],
+      "Other users within your organization will see your busy slots. No event details are shared.": [
+        "Andre brugere i din organisation vil se dine optagede tidsrum. Ingen detaljer om begivenheden deles."
       ],
       "Outdated recovery file; update to ensure access to your data": [
         "Forældet gendannelsesfil; opdater for at sikre adgang til dine data"
@@ -7478,6 +7500,9 @@
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "E-mailbekræftelseslinket er udløbet. Log ind for at sende et nyt bekræftelseslink."
       ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "De eksponerede oplysninger blev lækket fra en tredjepartstjeneste. Din ${ BRAND_NAME }-kontooplysninger er stadig sikre og krypterede. ${ learnMoreLink }"
+      ],
       "The following address is available:": [
         "Den følgende adresse er tilgængelig:"
       ],
@@ -7871,6 +7896,9 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Du omdirigeres til PayPal i en ny browserfane for at gennemføre denne transaktion. Benytter du evt. pop-up blockere, så deaktivér venligst disse for at fortsætte."
       ],
+      "We'll email you once import is complete.": [
+        "Vi sender dig en e-mail, når importen er færdig."
+      ],
       "We'll get back to you shortly.": [
         "Tak! Vi vender tilbage til dig inden længe."
       ],
@@ -7975,6 +8003,9 @@
       "You can check the progress ${ importProgressLink }.": [
         "Du kan tjekke fremskridtet ${ importProgressLink }."
       ],
+      "You can close the tab or browser in the meantime.": [
+        "Du kan lukke fanen eller browseren i mellemtiden."
+      ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Du kan redigere dette én gang for at sikre den korrekte e-mailadresse til bekræftelse."
       ],
@@ -8032,6 +8063,12 @@
       "You have ${ availableCount } dedicated server available.": [
         "Du har ${ availableCount } dedikeret server tilgængelig.",
         "Du har ${ availableCount } dedikerede servere tilgængelig."
+      ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "Du har et ${ planTitle }-prøveabonnement. Hvis du gerne vil fortsætte dit abonnement efter prøveperioden, skal du tilføje en betalingsmetode."
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "Du har et ${ planTitle }-prøveabonnement. Der kræves ingen betaling på dette tidspunkt. Dit abonnement vil automatisk blive fornyet ved prøveperiodens udløb."
       ],
       "You have no calendars to export.": [
         "Du har ingen kalendere at eksportere."
@@ -8147,6 +8184,9 @@
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Din information er sikker hos os. Vi kontakter dig kun når det er nødvendigt for at levere vores tjenester."
+      ],
+      "Your information was found on ${ displayedDate }": [
+        "Dine oplysninger blev fundet ${ displayedDate }"
       ],
       "Your login information will not be saved after the import is completed.": [
         "Dine loginoplysninger vil ikke blive gemt, når importen er gennemført."
@@ -8497,7 +8537,7 @@
         "Vis ulæste e-mails"
       ],
       "Star": [
-        "Stjerne"
+        "Stjernemarkér"
       ]
     },
     "Keyboard shortcut section name": {
@@ -8606,6 +8646,9 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Midlertidigt utilgængelig. Tjek igen senere.)"
+      ],
+      "Access to my events": [
+        "Adgang til mine begivenheder"
       ],
       "Account storage": [
         "Kontolagerplads"
@@ -9324,6 +9367,9 @@
       "Send in": [
         "Send på"
       ],
+      "Show others when I'm busy": [
+        "Vis andre, når jeg er optaget"
+      ],
       "Show secondary time zone": [
         "Vis sekundær tidszone"
       ],
@@ -9710,6 +9756,9 @@
       "General": [
         "Generelt"
       ],
+      "Get ${ BRAND_NAME } Pass": [
+        "Få ${ BRAND_NAME } Pass"
+      ],
       "Get ${ VPN_APP_NAME }": [
         "Få ${ VPN_APP_NAME }"
       ],
@@ -9729,7 +9778,7 @@
         "Import/eksport"
       ],
       "Learn more": [
-        "Få yderligere information"
+        "Få mere at vide"
       ],
       "Learn more about data recovery": [
         "Få mere at vide om datagendannelse"
@@ -10459,7 +10508,7 @@
         "Kalenderdeling"
       ],
       "Catch-all": [
-        "Fang-alle"
+        "Catch-all"
       ],
       "Centralized billing": [
         "Samlet fakturering"
@@ -12453,6 +12502,11 @@
         "Upload yderligere filer"
       ]
     },
+    "Select invoice document": {
+      "Currency conversion": [
+        "Valutaomregning"
+      ]
+    },
     "Select search results": {
       "Check your spelling or select a country from the list.": [
         "Tjek din stavning eller vælg et land fra listen."
@@ -13464,7 +13518,7 @@
         "Annullerer import"
       ],
       "Catch-all address updated": [
-        "Fang-alt-adresse opdateret"
+        "Catch-all-adresse opdateret"
       ],
       "Code sent to ${ methodTo }": [
         "Kode sendt til ${ methodTo }"
@@ -13996,10 +14050,10 @@
         "Kortbekræftelse"
       ],
       "Catch-All address": [
-        "Fang-alt adresse"
+        "Catch-All-adresse"
       ],
       "Catch-all address": [
-        "Fang-alt adresse"
+        "Catch-all-adresse"
       ],
       "Change login password": [
         "Skift login-adgangskode"
@@ -14179,6 +14233,9 @@
       ],
       "Delete version history?": [
         "Slet versionshistorik?"
+      ],
+      "Details": [
+        "Detaljer"
       ],
       "Disable ${ email }": [
         "Deaktiver ${ email }"
@@ -14460,6 +14517,9 @@
       ],
       "Night theme": [
         "Nattetema"
+      ],
+      "No account information was found in any data breaches": [
+        "Ingen kontooplysninger blev fundet i nogen databrud"
       ],
       "No recovery method": [
         "Ingen gendannelsesmetode"
@@ -14816,8 +14876,8 @@
       "Your changes are not synced yet": [
         "Dine ændringer er endnu ikke synkroniseret"
       ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "Din Mail Plus prøveperiode slutter ${ textDate }"
+      "Your exposed information": [
+        "Dine blotlagte oplysninger"
       ],
       "Your plan": [
         "Dit abonnement"
@@ -14881,7 +14941,7 @@
         "Adresse"
       ],
       "Catch-All": [
-        "Fang-alle"
+        "Catch-All"
       ],
       "Status": [
         "Status"

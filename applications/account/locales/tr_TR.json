@@ -627,7 +627,7 @@
         "Varsayılan olarak işaretle"
       ],
       "Mark as open": [
-        "Açık olarak işaretle"
+        "Açılmış olarak işaretle"
       ],
       "Mark as resolved": [
         "Çözülmüş olarak işaretle"
@@ -1063,9 +1063,6 @@
       ],
       "Upload": [
         "Yükle"
-      ],
-      "Upload icon": [
-        "Simge yükle"
       ],
       "Upload picture": [
         "Fotoğraf yükle"
@@ -1690,6 +1687,9 @@
       ],
       "Continue using ${ planTitle }": [
         "${ planTitle } kullanmayı sürdürün"
+      ],
+      "Continue your subscription": [
+        "Aboneliğinizi kullanmayı sürdürün"
       ],
       "Copy": [
         "Kopyala"
@@ -3318,14 +3318,6 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Kendimizi geliştirmemize yardımcı olun!"
-      ]
-    },
-    "Download link": {
-      ".deb for Debian / Ubuntu": [
-        "Debian / Ubuntu için .deb"
-      ],
-      ".rpm for Fedora / Red Hat": [
-        "Fedora / Red Hat için .rpm"
       ]
     },
     "drive_signup_2023: Info": {
@@ -6736,9 +6728,6 @@
       "Failed to fetch logs.": [
         "Günlük kayıtları alınamadı."
       ],
-      "Fast and focused. Email and calendar, right on your desktop.": [
-        "Hızlı ve odaklanmış. E-posta ve takvim, doğrudan masaüstünüzde."
-      ],
       "Fill in user details": [
         "Kullanıcı bilgilerini yazın"
       ],
@@ -6984,6 +6973,9 @@
       "Lean more about single sign-on": [
         "Tek oturum açma hakkında ayrıntılı bilgi alın"
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Nasıl ${ staySaferOnlineLink } öğrenin"
+      ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Üçüncü taraf VPN uygulamalarında ${ VPN_APP_NAME } oturumunu nasıl açabileceğinizi öğrenin."
       ],
@@ -7025,6 +7017,9 @@
       ],
       "Loading ${ appName }": [
         "${ appName } yükleniyor"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Takvim yüklenirken lütfen bekleyin. Yeni bir sekmede zamanla platformumuz Calendly açılacak."
       ],
       "Loading preview": [
         "Ön izleme yükleniyor"
@@ -7193,6 +7188,9 @@
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Kuruluşunuzda başka yöneticiler de var. Yeni parolayı onlara bildirmek sizin sorumluluğunuzdur."
+      ],
+      "Other users within your organization will see your busy slots. No event details are shared.": [
+        "Kuruluşunuzdaki diğer kullanıcılar meşgul zamanlarınızı görecek. Etkinlik bilgileri paylaşılmaz."
       ],
       "Outdated recovery file; update to ensure access to your data": [
         "Kurtarma dosyası eski olabilir. Verilerinize erişebileceğinizden emin olmak için güncelleyin"
@@ -7604,6 +7602,9 @@
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "E-posta doğrulama bağlantısının geçerlilik süresi dolmuş. Lütfen yeni bir doğrulama bağlantısının gönderilmesi için oturum açın."
       ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "Bilgiler üçüncü taraf bir hizmetten açığa çıkmış. ${ BRAND_NAME } Hesap bilgileriniz güvende ve şifrelenmiş olarak kalır. ${ learnMoreLink }"
+      ],
       "The following address is available:": [
         "Şu adres kullanılabilir:"
       ],
@@ -7627,9 +7628,6 @@
       ],
       "The link to report that that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "${ BRAND_NAME } hesabı oluşturmadığınızı bildiren bağlantının süresi dolmuş. Bu sorunu çözmek için lütfen destek ekibimizle görüşün."
-      ],
-      "The name and icon will be visible to your users while they are signed in.": [
-        "Kullanıcılarınız oturum açtıklarında ad ve simge onlara görünür olacaktır."
       ],
       "The name will be visible to your users while they are signed in.": [
         "Oturum açtıklarında kullanıcılarınıza görüntülenecek ad."
@@ -8174,6 +8172,12 @@
         "Size ayrılmış ve kullanabileceğiniz ${ availableCount } sunucu var.",
         "Size ayrılmış ve kullanabileceğiniz ${ availableCount } sunucu var."
       ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "${ planTitle } deneme aboneliğiniz var. Deneme süresinden sonra aboneliğinizi sürdürmek istiyorsanız lütfen bir ödeme yöntemi ekleyin."
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "${ planTitle } deneme aboneliğiniz var. Şu anda herhangi bir ödeme yapmanıza gerek yok. Deneme süresi sonunda aboneliğiniz otomatik olarak yenilenecek."
+      ],
       "You have no calendars to export.": [
         "Dışa aktarılabilecek bir takviminiz yok."
       ],
@@ -8288,6 +8292,9 @@
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Bilgileriniz bizimle güvende olur. Sizinle yalnızca hizmetlerimizi sağlamak için gerekli olduğunda iletişim kuracağız."
+      ],
+      "Your information was found on ${ displayedDate }": [
+        "Bilgileriniz ${ displayedDate } tarihinde bulundu"
       ],
       "Your login information will not be saved after the import is completed.": [
         "İçe aktarma işleminden sonra oturum açma bilgileriniz kaydedilmez."
@@ -8769,6 +8776,9 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden bakın.)"
       ],
+      "Access to my events": [
+        "Etkinliklerime eriş"
+      ],
       "Account storage": [
         "Hesap depolama alanı"
       ],
@@ -8876,9 +8886,6 @@
       ],
       "Awarded": [
         "Hediye edilen"
-      ],
-      "Beta": [
-        "Beta"
       ],
       "Billing address": [
         "Fatura adresi"
@@ -9492,6 +9499,9 @@
       "Send in": [
         "Şu zamanda gönderilsin"
       ],
+      "Show others when I'm busy": [
+        "Meşgul olduğum zamanlar başkalarına görüntülensin"
+      ],
       "Show secondary time zone": [
         "İkincil saat dilimi görüntülensin"
       ],
@@ -9936,7 +9946,7 @@
         "Oturum aç"
       ],
       "stay safer online": [
-        "çevrimiçi ortamda daha güvende kalın"
+        "çevrim içi ortamda güvende kalın"
       ],
       "switch account": [
         "hesabı değiştir"
@@ -11782,14 +11792,8 @@
       "Avoid overly compressed images.": [
         "Aşırı sıkıştırılmış görüntülerden kaçının."
       ],
-      "Ensure your icon has padding space around it.": [
-        "Simgenizin etrafında dolgu alanı olduğundan emin olun."
-      ],
       "Opt for a PNG image that is a 128x128 pixels for clarity.": [
         "Netlik için 128x128 piksel olan bir PNG görüntüsü tercih edin."
-      ],
-      "Tips on choosing a good icon": [
-        "İyi bir simge seçmeye yönelik ipuçları"
       ],
       "Use a graphical icon or image rather than text.": [
         "Metin yerine grafiksel bir simge veya resim kullanın."
@@ -12701,6 +12705,17 @@
       ],
       "Upload additional files": [
         "Ek dosyaları yükle"
+      ]
+    },
+    "Select invoice document": {
+      "Credit note": [
+        "Kredi notu"
+      ],
+      "Currency conversion": [
+        "Para birimi dönüştürme"
+      ],
+      "Invoice": [
+        "Fatura"
       ]
     },
     "Select search results": {
@@ -14581,15 +14596,6 @@
       "Folders and labels": [
         "Klasörler ve etiketler"
       ],
-      "For Linux": [
-        "Linux için"
-      ],
-      "For macOS": [
-        "macOS için"
-      ],
-      "For Windows": [
-        "Windows için"
-      ],
       "Forward and auto-reply": [
         "İletme ve otomatik yanıtlama"
       ],
@@ -14628,9 +14634,6 @@
       ],
       "How does it work?": [
         "Nasıl çalışır?"
-      ],
-      "How to choose a good icon": [
-        "İyi bir simge nasıl seçilir"
       ],
       "How to refer a friend and get credits": [
         "Kredi kazanmak için bir arkadaşınıza nasıl önerebilirsiniz"
@@ -15110,9 +15113,6 @@
       ],
       "Your exposed information": [
         "Açığa çıkmış bilgileriniz"
-      ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "Mail Plus ücretsiz deneme süreniz ${ textDate } tarihinde sonra erecek"
       ],
       "Your plan": [
         "Tarifeniz"

@@ -1064,8 +1064,8 @@
       "Upload": [
         "Carica"
       ],
-      "Upload icon": [
-        "Carica l'icona"
+      "Upload logo": [
+        "Carica logo"
       ],
       "Upload picture": [
         "Carica immagine"
@@ -5979,7 +5979,7 @@
       "${ BRAND_NAME } is privacy you can trust, ensured by strong encryption, open-source code, and Swiss privacy laws. We believe nobody should be able to exploit your data, period. Our technology and business are based upon this fundamentally stronger definition of privacy.": [
         "${ BRAND_NAME } è la privacy di cui ti puoi fidare, garantita da crittografia avanzata, codice open-source e leggi svizzere sulla privacy. Crediamo che nessuno dovrebbe essere in grado di sfruttare i tuoi dati. La nostra tecnologia e il nostro business si basano su questa definizione fondamentale di privacy."
       ],
-      "${ BRAND_NAME } never shares your information with third parties. Data comes from  ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
+      "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
         "${ BRAND_NAME } non condivide mai le tue informazioni con terze parti. I dati provengono dalle analisi di ${ BRAND_NAME } e da Constella Intelligence."
       ],
       "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
@@ -6212,6 +6212,9 @@
       "Add server (${ availableAddedCount } available)": [
         "Aggiungi server (${ availableAddedCount } disponibile)",
         "Aggiungi server (${ availableAddedCount } disponibili)"
+      ],
+      "Add your name and logo to create a more personalized experience for your organization.": [
+        "Aggiungi il tuo nome e logo per creare un'esperienza più personalizzata per la tua organizzazione."
       ],
       "Adding ${ addedServerCount } gateway server": [
         "Aggiunta di ${ addedServerCount } server gateway",
@@ -7595,6 +7598,9 @@
       "Support for 1 custom email domain": [
         "Assistenza per 1 dominio email personalizzato"
       ],
+      "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
+        "Il supporto per il monitoraggio dei domini personalizzati e degli indirizzi email diversi da ${ BRAND_NAME } sarà presto disponibile."
+      ],
       "support team": [
         "team di supporto"
       ],
@@ -7663,9 +7669,6 @@
       ],
       "The link to report that that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "Il link per segnalare che non hai configurato un account ${ BRAND_NAME } è scaduto. Mettiti in contatto con il nostro team di supporto per risolvere questo problema."
-      ],
-      "The name and icon will be visible to your users while they are signed in.": [
-        "Il nome e l'icona saranno visibili ai tuoi utenti mentre hanno effettuato l'accesso."
       ],
       "The name will be visible to your users while they are signed in.": [
         "Il nome sarà visibile agli utenti durante l'accesso."
@@ -8015,8 +8018,8 @@
       "We just sent you a new link.": [
         "Ti abbiamo appena inviato un nuovo link."
       ],
-      "We monitor the dark web for instances where your personal information (such as an email address or password used on a third-party site) is leaked or compromised. ${ dataBreachLink }": [
-        "Monitoriamo il dark web per individuare i casi in cui le tue informazioni personali (come un indirizzo email o una password utilizzati su un sito di terze parti) vengano rese pubbliche o compromesse. ${ dataBreachLink }"
+      "We monitor the dark web for instances where your personal information (such as an email address or password used on a third-party site) is leaked or compromised.": [
+        "Monitoriamo il dark web per individuare i casi in cui le tue informazioni personali (come un indirizzo email o una password utilizzati su un sito di terze parti) vengano rese pubbliche o compromesse."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Abbiamo bisogno di verificare il tuo metodo di pagamento con la tua banca."
@@ -11884,17 +11887,20 @@
       "Avoid overly compressed images.": [
         "Evita immagini eccessivamente compresse."
       ],
-      "Ensure your icon has padding space around it.": [
-        "Assicurati che la tua icona abbia abbastanza spazio di riempimento attorno."
+      "Ensure your logo has padding space around it.": [
+        "Assicurati che il tuo logo abbia abbastanza spazio di riempimento attorno."
       ],
       "Opt for a PNG image that is a 128x128 pixels for clarity.": [
         "Scegli un'immagine PNG di 128x128 pixel per maggiore chiarezza."
       ],
-      "Tips on choosing a good icon": [
-        "Suggerimenti per scegliere una buona icona"
+      "Tips on choosing a good logo": [
+        "Suggerimenti per scegliere un buon logo"
       ],
       "Use a graphical icon or image rather than text.": [
         "Utilizza un'icona grafica o un'immagine anziché il testo."
+      ],
+      "Use a solid background color.": [
+        "Utilizza un colore di sfondo a tinta unita."
       ]
     },
     "Organization logo upload modal": {
@@ -12838,7 +12844,7 @@
       "The SCIM base URL and token will be deleted.": [
         "Il base URL e il token SCIM verranno eliminati."
       ],
-      "To re-enable syncing with your identity provider, your need to complete the SCIM integration again.": [
+      "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
         "Per riattivare la sincronizzazione con il tuo provider di identità, devi completare nuovamente l'integrazione SCIM."
       ]
     },
@@ -12891,6 +12897,17 @@
       ],
       "Upload additional files": [
         "Carica file aggiuntivi"
+      ]
+    },
+    "Select invoice document": {
+      "Credit note": [
+        "Nota di credito"
+      ],
+      "Currency conversion": [
+        "Conversione della valuta"
+      ],
+      "Invoice": [
+        "Fattura"
       ]
     },
     "Select search results": {
@@ -13841,6 +13858,9 @@
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } di spazio di archiviazione totale"
       ],
+      "${ planName } doesn't just provide extra storage. It lets you manage your emails faster, customize your inbox and email addresses, and access the desktop app.": [
+        "${ planName } non fornisce solo spazio di archiviazione aggiuntivo. Ti consente di gestire le tue email più velocemente, di personalizzare la tua casella di posta e gli indirizzi email e accedere all'app desktop."
+      ],
       "10 email addresses": [
         "10 indirizzi email"
       ],
@@ -13853,17 +13873,17 @@
       "After privacy and free speech were threatened in Hong Kong, we directly supported local civil rights organizations.": [
         "Dopo che la privacy e la libertà di parola sono state minacciate a Hong Kong, abbiamo sostenuto direttamente le organizzazioni locali per i diritti civili."
       ],
-      "By canceling your Mail Plus subscription, your storage will decrease from **${ planMaxSpace }** to **1 GB** for Mail, and **1 GB** for Drive. You will also lose any storage bonuses earned previously.": [
-        "Annullando il tuo abbonamento a Mail Plus, il tuo spazio di archiviazione diminuirà da **${ planMaxSpace }** a **1 GB** per Mail e a **1 GB** per Drive. Perderai anche gli eventuali bonus di archiviazione guadagnati in precedenza."
+      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **1 GB** for Mail, and **1 GB** for Drive. You will also lose any storage bonuses earned previously.": [
+        "Annullando il tuo abbonamento a ${ planName }, il tuo spazio di archiviazione diminuirà da **${ planMaxSpace }** a **1 GB** per Mail e a **1 GB** per Drive. Perderai anche gli eventuali bonus di archiviazione guadagnati in precedenza."
       ],
-      "By canceling your Mail Plus subscription, your storage will decrease from **${ planMaxSpace }** to **1 GB** for Mail, and **5 GB** for Drive. You will also lose any storage bonuses earned previously.": [
-        "Annullando il tuo abbonamento a Mail Plus, il tuo spazio di archiviazione diminuirà da **${ planMaxSpace }** a **1 GB** per Mail e a **5 GB** per Drive. Perderai anche gli eventuali bonus di archiviazione guadagnati in precedenza."
+      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **1 GB** for Mail, and **5 GB** for Drive. You will also lose any storage bonuses earned previously.": [
+        "Annullando il tuo abbonamento a ${ planName }, il tuo spazio di archiviazione diminuirà da **${ planMaxSpace }** a **1 GB** per Mail e a **5 GB** per Drive. Perderai anche gli eventuali bonus di archiviazione guadagnati in precedenza."
       ],
-      "By canceling your Mail Plus subscription, your storage will decrease from **${ planMaxSpace }** to **500 MB** for Mail, and **1 GB** for Drive. You will also lose any storage bonuses earned previously.": [
-        "Annullando il tuo abbonamento a Mail Plus, il tuo spazio di archiviazione diminuirà da **${ planMaxSpace }** a **500 MB** per Mail e a **1 GB** per Drive. Perderai anche gli eventuali bonus di archiviazione guadagnati in precedenza."
+      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **500 MB** for Mail, and **1 GB** for Drive. You will also lose any storage bonuses earned previously.": [
+        "Annullando il tuo abbonamento a ${ planName }, il tuo spazio di archiviazione diminuirà da **${ planMaxSpace }** a **500 MB** per Mail e a **1 GB** per Drive. Perderai anche gli eventuali bonus di archiviazione guadagnati in precedenza."
       ],
-      "By canceling your Mail Plus subscription, your storage will decrease from **${ planMaxSpace }** to **500 MB** for Mail, and **5 GB** for Drive. You will also lose any storage bonuses earned previously.": [
-        "Annullando il tuo abbonamento a Mail Plus, il tuo spazio di archiviazione diminuirà da **${ planMaxSpace }** a **500 MB** per Mail e a **5 GB** per Drive. Perderai anche gli eventuali bonus di archiviazione guadagnati in precedenza."
+      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **500 MB** for Mail, and **5 GB** for Drive. You will also lose any storage bonuses earned previously.": [
+        "Annullando il tuo abbonamento a ${ planName }, il tuo spazio di archiviazione diminuirà da **${ planMaxSpace }** a **500 MB** per Mail e a **5 GB** per Drive. Perderai anche gli eventuali bonus di archiviazione guadagnati in precedenza."
       ],
       "By downgrading your account, you will also lose storage space": [
         "Effettuando il downgrade del tuo account, perderai anche spazio di archiviazione"
@@ -13901,17 +13921,14 @@
       "If you exceed your free Mail storage quota:": [
         "Se superi la quota di spazio di archiviazione gratuita di Mail:"
       ],
-      "Keep Mail Plus": [
-        "Mantieni Mail Plus"
+      "Keep ${ planName }": [
+        "Mantieni ${ planName }"
       ],
       "Learn more about our impact": [
         "Scopri di più sul nostro impatto"
       ],
-      "Let us remind you of everything Mail Plus can do": [
-        "Ti ricordiamo tutto ciò che Mail Plus può fare"
-      ],
-      "Mail Plus doesn't just provide extra storage. It lets you manage your emails faster, customize your inbox and email addresses, and access the desktop app.": [
-        "Mail Plus non fornisce solo spazio di archiviazione aggiuntivo. Ti consente di gestire le tue email più velocemente, di personalizzare la tua casella di posta e gli indirizzi email e accedere all'app desktop."
+      "Let us remind you of everything ${ planName } can do": [
+        "Ti ricordiamo tutto ciò che ${ planName } può fare"
       ],
       "Our fight against censorship in Russia": [
         "La nostra lotta contro la censura in Russia"
@@ -13925,8 +13942,8 @@
       "Resubscribe": [
         "Riabbonati"
       ],
-      "Resubscribe to restore access to Mail Plus features.": [
-        "Riabbonati per ottenere nuovamente l'accesso alle funzionalità di Mail Plus."
+      "Resubscribe to restore access to ${ planName } features.": [
+        "Riabbonati per ottenere nuovamente l'accesso alle funzionalità di ${ planName }."
       ],
       "Subscription canceled": [
         "Abbonamento annullato"
@@ -13955,11 +13972,11 @@
       "You **won't be able to send emails** with attachments": [
         "**Non potrai inviare email** con allegati"
       ],
-      "You still have ${ expiryDate } on your Mail Plus plan. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling.": [
-        "Hai ancora ${ expiryDate } sul tuo piano Mail Plus. Aggiungeremo i crediti per il tempo rimanente al tuo account ${ BRAND_NAME }. Assicurati di non superare i limiti del piano gratuito prima di annullare."
+      "You still have ${ expiryDate } on your ${ planName } plan. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling.": [
+        "Hai ancora ${ expiryDate } sul tuo piano ${ planName }. Aggiungeremo i crediti per il tempo rimanente al tuo account ${ BRAND_NAME }. Assicurati di non superare i limiti del piano gratuito prima di annullare."
       ],
       "Your **calendar will be frozen**": [
-        "Il tuo **calendario verrà congelato**"
+        "Il tuo **calendario verrà bloccato**"
       ],
       "Your devices will **stop syncing**": [
         "I tuoi dispositivi **interromperanno la sincronizzazione**"
@@ -14972,8 +14989,8 @@
       "How does it work?": [
         "Come funziona?"
       ],
-      "How to choose a good icon": [
-        "Come scegliere una buona icona"
+      "How to choose a good logo": [
+        "Come scegliere un buon logo"
       ],
       "How to refer a friend and get credits": [
         "Come segnalare un amico e ottenere crediti"
@@ -15451,6 +15468,9 @@
       "You have no resolved alerts": [
         "Non hai avvisi risolti"
       ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "La tua prova gratuita di ${ planName } termina il giorno ${ textDate }"
+      ],
       "Your calendar link": [
         "Link del tuo calendario"
       ],
@@ -15459,9 +15479,6 @@
       ],
       "Your exposed information": [
         "Le tue informazioni rese pubbliche"
-      ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "La tua prova gratuita di Mail Plus termina il giorno ${ textDate }"
       ],
       "Your plan": [
         "Il tuo piano"

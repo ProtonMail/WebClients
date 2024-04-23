@@ -620,6 +620,12 @@
       "Mark as default": [
         "標記為預設值"
       ],
+      "Mark as open": [
+        "標記為開啟"
+      ],
+      "Mark as resolved": [
+        "標記為已解決"
+      ],
       "mark emails as": [
         "將電郵標記為"
       ],
@@ -754,6 +760,9 @@
       ],
       "Report a problem": [
         "回報問題"
+      ],
+      "Request a call": [
+        "請求呼叫"
       ],
       "Request a feature": [
         "提出新功能建議"
@@ -1075,6 +1084,9 @@
       ],
       "View": [
         "檢視"
+      ],
+      "View all reports": [
+        "瀏覽全部報告"
       ],
       "View invoice": [
         "查看帳單"
@@ -1628,6 +1640,12 @@
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "繼續使用 ${ MAIL_APP_NAME }。"
+      ],
+      "Continue using ${ planTitle }": [
+        "繼續使用 ${ planTitle }"
+      ],
+      "Continue your subscription": [
+        "繼續您的訂閱"
       ],
       "Copy": [
         "複製"
@@ -3044,6 +3062,9 @@
       ]
     },
     "Delete address prompt": {
+      "The next active address on your list will be set as the default.": [
+        "你的清單裡下一個有效的位址將被設定為預設值。"
+      ],
       "You can only delete 1 address per year.": [
         "每年只能刪除一個地址。"
       ]
@@ -3232,14 +3253,6 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "協助我們改善！"
-      ]
-    },
-    "Download link": {
-      ".deb for Debian / Ubuntu": [
-        ".deb 適用於 Debian / Ubuntu"
-      ],
-      ".rpm for Fedora / Red Hat": [
-        ".rpm 給 Fedora / Red Hat"
       ]
     },
     "drive_signup_2023: Info": {
@@ -3701,6 +3714,9 @@
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }。您也可查看我們的${ statusPageLink }"
+      ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "您的帳號名稱是 ${ user.Name }。如果要建立 ${ emailAddress } 這個電子郵件地址，請到「設定」>「撰寫郵件」>「短網域名稱 (pm.me)」裡面去設定。"
       ],
       "A group with this name already exists": [
         "此名稱的群組已存在"
@@ -4364,6 +4380,9 @@
       ],
       "Invalid URL": [
         "URL 無效"
+      ],
+      "Missing parameters in the URL.": [
+        "網址部分參數已遺失"
       ],
       "Oops, something went wrong": [
         "糟糕，出了一點問題"
@@ -6232,6 +6251,9 @@
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "透過身分提供者 (IdP) 為您的組織設置 SAML 驗證。這將為整個組織啟用 SAML。"
       ],
+      "Configure SAML authentication for your organization through an identity provider like Okta, Microsoft Azure, or Google Identity Platform. This will enable SAML for the whole organization.": [
+        "使用身份識別服務（像是 Okta、Microsoft Azure、或 Google Identity Platform） 設定 SAML 驗證，即可在整個組織裡面用 SAML 來登入。"
+      ],
       "Continue with ${ freeName }": [
         "繼續使用 ${ freeName }"
       ],
@@ -6435,6 +6457,9 @@
       ],
       "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
         "帶有此標籤${ nameDeleted }的電子郵件不會被刪除，仍可在對應的資料夾中找到。"
+      ],
+      "Enable single sign-on to keep your organization safe": [
+        "開啟單一登入 (SSO) 來保障你的組織安全"
       ],
       "Enable this address to join this calendar": [
         "啟用此位址來加入這個行事曆"
@@ -6742,6 +6767,9 @@
       "Lean more about single sign-on": [
         "了解單一登入"
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "了解如何 ${ staySaferOnlineLink }"
+      ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "瞭解如何以第三方 VPN 應用程式登入 ${ VPN_APP_NAME }。"
       ],
@@ -6909,6 +6937,9 @@
       ],
       "of": [
         "/"
+      ],
+      "Once single sign-on is disabled for your organization:": [
+        "當您的組織機構停用單一登入（SSO）之後："
       ],
       "Once you reset your password:": [
         "一旦您重設您的密碼："
@@ -7723,6 +7754,9 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "我們將在瀏覽器的新索引標籤中重新導向到 PayPal 以完成此交易。若您有使用任何彈出式視窗攔截程式，請先停用，然後才繼續。"
       ],
+      "We'll email you once import is complete.": [
+        "當您匯入完成將電子郵件通知您。"
+      ],
       "We'll get back to you shortly.": [
         "我們會盡快回覆您。"
       ],
@@ -8437,6 +8471,9 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(暫時無法使用。請稍後再試。)"
+      ],
+      "Access to my events": [
+        "存取我的行程"
       ],
       "Account storage": [
         "帳號儲存空間"
@@ -11385,6 +11422,9 @@
       ]
     },
     "Pass B2B onboarding spotlight": {
+      "Go to your vault to manage your passwords, aliases, and more.": [
+        "移至你的保管庫管理密碼、別名和更多項目。"
+      ],
       "Set up your organization": [
         "設定您的組織"
       ],
@@ -12137,6 +12177,11 @@
       ],
       "Upload additional files": [
         "上傳額外的檔案"
+      ]
+    },
+    "Select invoice document": {
+      "Currency conversion": [
+        "貨幣轉換"
       ]
     },
     "Select search results": {
@@ -13812,6 +13857,9 @@
       "Delete version history?": [
         "刪除版本歷史紀錄？"
       ],
+      "Details": [
+        "詳細資訊"
+      ],
       "Disable ${ email }": [
         "停用 ${ email }"
       ],
@@ -14445,8 +14493,8 @@
       "Your changes are not synced yet": [
         "您的變更尚未同步"
       ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "您的 Mail Plus 免費方案將於 ${ textDate } 結束"
+      "Your exposed information": [
+        "你的外﻿﻿﻿洩資料"
       ],
       "Your plan": [
         "您的方案"
