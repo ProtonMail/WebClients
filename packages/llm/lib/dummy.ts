@@ -20,6 +20,30 @@ function getRandomNumber(min: number, max: number): number {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+function getRandomLetter(): string {
+    return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
+}
+
+function generateRandomWord(): string {
+    const length = getRandomNumber(3, 10);
+    return Array.from({ length }, () => getRandomLetter()).join('');
+}
+
+function generateRandomSentence(nWords?: number): string[] {
+    if (nWords === undefined) {
+        nWords = getRandomNumber(50, 200);
+    }
+
+    const words = [];
+
+    for (let i = 0; i < nWords; i++) {
+        const word = generateRandomWord();
+        words.push(word);
+    }
+
+    return words;
+}
+
 export class DummyWriteFullEmailRunningAction implements RunningAction {
     private running: boolean;
 
@@ -77,7 +101,7 @@ export class DummyWriteFullEmailRunningAction implements RunningAction {
     private async startGeneration(action: WriteFullEmailAction, callback: GenerationCallback) {
         try {
             this.running = true;
-            const words = this.generateRandomSentence();
+            const words = generateRandomSentence();
             let fulltext = '';
             await delay(5000);
             for (let i = 0; i < words.length && this.running; i++) {
@@ -94,27 +118,6 @@ export class DummyWriteFullEmailRunningAction implements RunningAction {
             return;
         }
         this.finishedPromiseSignals?.resolve();
-    }
-
-    private generateRandomSentence(): string[] {
-        const wordCount = getRandomNumber(50, 200);
-        const words = [];
-
-        for (let i = 0; i < wordCount; i++) {
-            const word = this.generateRandomWord();
-            words.push(word);
-        }
-
-        return words;
-    }
-
-    private generateRandomWord(): string {
-        const length = getRandomNumber(3, 10);
-        return Array.from({ length }, () => this.getRandomLetter()).join('');
-    }
-
-    private getRandomLetter(): string {
-        return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
     }
 }
 
@@ -178,7 +181,7 @@ export class DummyShortenRunningAction implements RunningAction {
             this.running = true;
             const nWordsInput = action.partToRephase.split(/\W/).length;
             const nWordsOutput = nWordsInput > 10 ? nWordsInput / 2 : nWordsInput;
-            const words = this.generateRandomSentence(nWordsOutput);
+            const words = generateRandomSentence(nWordsOutput);
             let fulltext = '';
             await delay(5000);
             for (let i = 0; i < words.length && this.running; i++) {
@@ -195,31 +198,6 @@ export class DummyShortenRunningAction implements RunningAction {
             return;
         }
         this.finishedPromiseSignals?.resolve();
-    }
-
-    // todo extract to standalone functions
-    private generateRandomSentence(nWords?: number): string[] {
-        if (nWords === undefined) {
-            nWords = getRandomNumber(50, 200);
-        }
-
-        const words = [];
-
-        for (let i = 0; i < nWords; i++) {
-            const word = this.generateRandomWord();
-            words.push(word);
-        }
-
-        return words;
-    }
-
-    private generateRandomWord(): string {
-        const length = getRandomNumber(3, 10);
-        return Array.from({ length }, () => this.getRandomLetter()).join('');
-    }
-
-    private getRandomLetter(): string {
-        return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
     }
 }
 
