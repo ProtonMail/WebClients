@@ -5,6 +5,8 @@ import { authStore } from '@proton/pass/lib/auth/store';
 import type { ItemFilters, ItemType, MaybeNull } from '@proton/pass/types';
 import { partialMerge } from '@proton/pass/utils/object/merge';
 import { getLocalIDPath } from '@proton/shared/lib/authentication/pathnameHelper';
+import { APPS } from '@proton/shared/lib/constants';
+import { getAppUrlFromApiUrl } from '@proton/shared/lib/helpers/url';
 
 export type ItemNewRouteParams = { type: ItemType };
 export type ItemRouteOptions = { trashed?: boolean; prefix?: string };
@@ -65,3 +67,9 @@ export const decodeFiltersFromSearch = (search: string) => {
 };
 
 export const encodeFilters = (filters: ItemFilters): string => encodeUtf8Base64(JSON.stringify(filters));
+
+export const getPassWebUrl = (apiUrl: string, subPath: string = '') => {
+    const appUrl = getAppUrlFromApiUrl(apiUrl, APPS.PROTONPASS);
+    appUrl.pathname = getLocalPath();
+    return appUrl.toString() + subPath;
+};
