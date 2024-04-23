@@ -9,16 +9,7 @@ import { canonicalizeInternalEmail, validateEmailAddress } from '@proton/shared/
 import { ShareInvitee } from '../../../../store';
 import { getPrimaryPublicKeyForEmail } from '../../../../utils/getPublicKeysForEmail';
 import { ShareInviteeValdidationError, VALIDATION_ERROR_TYPES } from './helpers/ShareInviteeValidationError';
-
-//TODO: Remove this function after we authorize invite external
-
-function endsWithProtonDomain(email: string) {
-    // Regular expression to match the end of the email with the specified domains
-    const protonDomainsRegex = /@(proton\.ch|proton\.black|proton\.pink)$/;
-
-    // Test if the email matches the regex
-    return protonDomainsRegex.test(email);
-}
+import { endsWithProtonInternalDomain } from './helpers/endsWithProtonInternalDomain';
 
 /**
  * useShareInvitees hook is used to manage a list of user that we want to add to a drive share.
@@ -72,7 +63,7 @@ export const useShareInvitees = (existingEmails: string[]) => {
                     return acc;
                 }
 
-                if (!endsWithProtonDomain(address)) {
+                if (!endsWithProtonInternalDomain(address)) {
                     acc.badInvitees.set(address, {
                         ...newRecipient,
                         error: new ShareInviteeValdidationError(VALIDATION_ERROR_TYPES.NOT_INTERNAL_ACCOUNT),
