@@ -1,6 +1,6 @@
 import { memo, useCallback } from 'react';
 
-import { AppsDropdown, Sidebar, SidebarDrawerItems, SidebarLogo, SidebarNav } from '@proton/components';
+import { AppVersion, AppsDropdown, Sidebar, SidebarDrawerItems, SidebarLogo, SidebarNav } from '@proton/components';
 import SidebarStorageUpsell from '@proton/components/containers/payments/subscription/SidebarStorageUpsell';
 import useDisplayContactsWidget from '@proton/components/hooks/useDisplayContactsWidget';
 import { APPS } from '@proton/shared/lib/constants';
@@ -17,7 +17,6 @@ import { selectLayoutIsExpanded } from '../../store/layout/layoutSliceSelectors'
 import UsersOnboardingChecklist from '../checklist/UsersOnboardingChecklist';
 import MailSidebarList from './MailSidebarList';
 import MailSidebarPrimaryButton from './MailSidebarPrimaryButton';
-import SidebarVersion from './SidebarVersion';
 
 interface Props {
     labelID: string;
@@ -46,7 +45,7 @@ const MailSidebar = ({ labelID }: Props) => {
             }}
             primary={<MailSidebarPrimaryButton handleCompose={handleCompose} />}
             logo={logo}
-            version={<SidebarVersion />}
+            version={<AppVersion />}
             preFooter={<SidebarStorageUpsell app={APPS.PROTONMAIL} />}
         >
             <SidebarNav className="flex">
