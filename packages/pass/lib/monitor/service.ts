@@ -1,64 +1,68 @@
 import type { WasmPasswordScoreResult } from '@protontech/pass-rust-core';
 import type { Store } from 'redux';
 
-import type { PassCoreService } from '@proton/pass/lib/core/service';
+import type { PassCoreService } from '@proton/pass/lib/core/types';
 import { selectLoginItems } from '@proton/pass/store/selectors';
-import type { MaybeNull, MaybePromise, UniqueItem } from '@proton/pass/types';
+import { type UniqueItem } from '@proton/pass/types';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 
 export interface MonitorService {
-    analyzePassword: (password: string) => MaybeNull<WasmPasswordScoreResult>;
-    domain2FAEligible: (domain: string) => boolean;
-    checkMissing2FAs: () => UniqueItem[];
-    checkWeakPasswords: () => UniqueItem[];
+    analyzePassword: (password: string) => Promise<WasmPasswordScoreResult>;
+    checkMissing2FAs: () => Promise<UniqueItem[]>;
+    checkWeakPasswords: () => Promise<UniqueItem[]>;
 }
 
-export type MonitorServiceBridge = {
-    [K in keyof MonitorService]: (
-        ...args: Parameters<MonitorService[K]>
-    ) => MaybePromise<ReturnType<MonitorService[K]>>;
-};
-
+/** MonitorService provides `PassMonitor` methods that rely
+ * on the `PassRustCore` module */
 export const createMonitorService = (core: PassCoreService, store: Store): MonitorService => {
     const getLoginItems = () => selectLoginItems(store.getState());
 
     const service: MonitorService = {
-        analyzePassword: (password) => core.bindings?.analyze_password(password) ?? null,
-        domain2FAEligible: (domain) => core.bindings?.twofa_domain_eligible(domain) ?? false,
+        analyzePassword: (password) => core.exec('analyze_password', password),
 
-        checkMissing2FAs: () =>
-            getLoginItems().reduce<UniqueItem[]>((acc, item) => {
+        checkMissing2FAs: async () => {
+            let items: UniqueItem[] = [];
+
+            for (const item of getLoginItems()) {
                 const { shareId, itemId } = item;
-                if (!item.data.content.urls) return acc;
+                if (!item.data.content.urls) continue;
 
                 const hasOTP =
                     item.data.content.totpUri.v ||
                     item.data.extraFields.some((field) => field.type === 'totp' && field.data.totpUri.v);
 
                 if (!hasOTP) {
-                    const item2FAEligible = item.data.content.urls.some(service.domain2FAEligible);
-                    if (item2FAEligible) acc.push({ shareId, itemId });
+                    for (const url of item.data.content.urls) {
+                        if (await core.exec('twofa_domain_eligible', url)) {
+                            items.push({ shareId, itemId });
+                            break;
+                        }
+                    }
                 }
+            }
 
-                return acc;
-            }, []),
+            return items;
+        },
 
-        checkWeakPasswords: () =>
-            getLoginItems().reduce<UniqueItem[]>((acc, item) => {
+        checkWeakPasswords: async () => {
+            let items: UniqueItem[] = [];
+
+            for (const item of getLoginItems()) {
                 if (item.data.content.password.v) {
                     const { shareId, itemId } = item;
                     const password = deobfuscate(item.data.content.password);
-                    const score = service.analyzePassword(password)?.password_score;
+                    const score = (await service.analyzePassword(password)).password_score;
 
                     switch (score) {
                         case 'Vulnerable':
                         case 'Weak':
-                            acc.push({ shareId, itemId });
+                            items.push({ shareId, itemId });
                     }
                 }
+            }
 
-                return acc;
-            }, []),
+            return items;
+        },
     };
 
     return service;

@@ -12,12 +12,10 @@ export const useInsecurePasswords = (): { data: UniqueItem[]; count: number } =>
     const [data, setData] = useState<UniqueItem[]>([]);
 
     useEffect(() => {
-        requestIdleCallback(() => {
-            (async () => {
-                const weakPasswords = await monitor.checkWeakPasswords();
-                setData(weakPasswords);
-            })().catch(noop);
-        });
+        (async () => {
+            const weakPasswords = await monitor.checkWeakPasswords();
+            setData(weakPasswords);
+        })().catch(noop);
     }, [logins]);
 
     return { data, count: data.length };
