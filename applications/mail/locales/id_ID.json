@@ -1120,9 +1120,6 @@
       "Trust": [
         "Percayai"
       ],
-      "Trust key": [
-        "Percayai kunci"
-      ],
       "Trust public key": [
         "Percayai kunci publik"
       ],
@@ -6955,7 +6952,7 @@
         "Dicabut"
       ],
       "Trusted": [
-        "Tepercaya"
+        "Terpercaya"
       ]
     },
     "Key pinning": {
@@ -7921,9 +7918,6 @@
       "Sent": [
         "Terkirim"
       ],
-      "Set up email forwarding": [
-        "Atur penerusan email"
-      ],
       "Sign up for free": [
         "Daftar gratis"
       ],
@@ -8039,6 +8033,11 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Langganan Anda telah berakhir. ${ cta } dan mencegah hilangnya data."
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Aktifkan ${ reason }"
       ]
     },
     "Mail import summary": {
@@ -9095,6 +9094,12 @@
       "${ Filter.Name } created": [
         "${ Filter.Name } dibuat"
       ],
+      "${ reason } has been disabled": [
+        "${ reason } telah dinonaktifkan"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } telah diaktifkan"
+      ],
       "Block removed": [
         "Blokir dicabut"
       ],
@@ -9698,6 +9703,9 @@
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel saat ini sedang **aktif** dan melindungi akun Anda."
+      ],
+      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLink }": [
+        "Informasi seputar diri Anda ditemukan pada setidaknya satu insiden kebocoran data. Aktifkan ${ DARK_WEB_MONITORING_NAME } untuk melihat rincian kebocoran ini dan mengambil tindakan yang sesuai. ${ learnMoreLink }"
       ]
     },
     "Select files": {
@@ -10228,9 +10236,6 @@
       "Email tracking protection": [
         "Perlindungan pelacak email"
       ],
-      "Faster email management": [
-        "Pengelolaan email yang lebih cepat"
-      ],
       "Get the desktop app": [
         "Dapatkan aplikasi desktop"
       ],
@@ -10240,17 +10245,14 @@
       "Invite friends to ${ BRAND_NAME }": [
         "Undang teman ke ${ BRAND_NAME }"
       ],
-      "Now you can take action on all emails in a single folder in one go.": [
-        "Kini Anda dapat mengambil tindakan terhadap seluruh email dalam satu folder secara langsung."
-      ],
       "Schedule send": [
         "Jadwalkan pengiriman"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME } to get notified if your data was leaked from a third-party service.": [
+        "Aktifkan ${ DARK_WEB_MONITORING_NAME } untuk menerima notifikasi apabila data Anda dibocorkan dari layanan pihak ketiga."
+      ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Kami kini memuat gambar secara default dan memblokir pengirim untuk dapat melacak Anda. Hal ini dapat diubah di ${ settingsLink }."
-      ],
-      "You can now automatically forward your emails to anyone!": [
-        "Anda kini dapat meneruskan email Anda kepada siapa saja!"
       ],
       "You can now schedule your messages to be sent later": [
         "Kini Anda dapat menjadwalkan pengiriman pesan"
@@ -10819,7 +10821,7 @@
         "Status"
       ],
       "Type": [
-        "Tipe"
+        "Jenis"
       ]
     },
     "TableHeader": {
@@ -11590,6 +11592,9 @@
       "What's new": [
         "Apa-apa saja yang baru"
       ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Masa uji coba gratis ${ planName } Anda akan berakhir pada ${ textDate }"
+      ],
       "Your account is protected": [
         "Akun Anda terlindung"
       ],
@@ -11598,9 +11603,6 @@
       ],
       "Your exposed information": [
         "Informasi Anda yang terpapar"
-      ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "Uji coba Mail Plus Anda akan berakhir pada ${ textDate }"
       ]
     },
     "Title subscription": {
@@ -11785,7 +11787,7 @@
     },
     "Warning": {
       "${ BRAND_NAME } will merge all folders with the same name. To avoid this, change the names before import.": [
-        "${ BRAND_NAME } akan menggabungkan seluruh folder yang memiliki nama yang sama. Untuk menghindari hal ini, silakan ubah nama folder sebelum Anda mengimpor."
+        "${ BRAND_NAME } akan menggabungkan seluruh folder yang memiliki nama yang sama. Untuk menghindari hal ini, ubah nama folder Anda sebelum mengimpor."
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } akan berupaya untuk mentransfer data sebanyak-banyaknya, yang dimulai dengan pesan Anda yang terbaru."
