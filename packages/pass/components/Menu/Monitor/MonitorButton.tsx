@@ -1,25 +1,24 @@
 import { type FC } from 'react';
-import { useSelector } from 'react-redux';
 import { useRouteMatch } from 'react-router-dom';
 
 import { c } from 'ttag';
 
 import { PillBadge } from '@proton/pass/components/Layout/Badge/PillBadge';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
+import { useMonitor } from '@proton/pass/components/Monitor/MonitorProvider';
 import { getMonitorIcon } from '@proton/pass/components/Monitor/utils';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
-import { selectMonitorSummary } from '@proton/pass/store/selectors/monitor';
 import clsx from '@proton/utils/clsx';
 
 export const MonitorButton: FC = () => {
     const { navigate } = useNavigation();
-    const summary = useSelector(selectMonitorSummary);
+    const monitor = useMonitor();
     const isActive = useRouteMatch(getLocalPath('monitor'));
 
     return (
         <DropdownMenuButton
-            icon={getMonitorIcon(summary)}
+            icon={getMonitorIcon(monitor)}
             className={clsx('rounded', isActive && 'color-primary bg-weak')}
             ellipsis
             label={
@@ -28,9 +27,9 @@ export const MonitorButton: FC = () => {
                 </div>
             }
             extra={
-                summary.breaches > 0 && (
+                monitor.breaches.count > 0 && (
                     <PillBadge
-                        label={summary.breaches}
+                        label={monitor.breaches.count}
                         color="var(--signal-danger-contrast)"
                         backgroundColor="var(--signal-danger)"
                     />
