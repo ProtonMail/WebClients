@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import {
+    AppVersion,
     AppsDropdown,
     DropdownMenu,
     DropdownMenuButton,
@@ -41,7 +42,6 @@ import { Address } from '@proton/shared/lib/interfaces';
 import { CalendarUserSettings, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
 import CalendarSidebarListItems from './CalendarSidebarListItems';
-import CalendarSidebarVersion from './CalendarSidebarVersion';
 
 export interface CalendarSidebarProps {
     addresses: Address[];
@@ -274,7 +274,7 @@ const CalendarSidebar = ({
             expanded={expanded}
             onToggleExpand={onToggleExpand}
             primary={primaryAction}
-            version={<CalendarSidebarVersion />}
+            version={<AppVersion />}
         >
             {renderCalendarModal && (
                 <PersonalCalendarModal
