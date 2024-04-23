@@ -7,7 +7,6 @@ import { Alert } from '@proton/components/index';
 import { useBulkSelect } from '@proton/pass/components/Bulk/BulkSelectProvider';
 import { ConfirmationModal } from '@proton/pass/components/Confirmation/ConfirmationModal';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
-import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
 import { VaultSelect, VaultSelectMode, useVaultSelectModalHandles } from '@proton/pass/components/Vault/VaultSelect';
 import { WithVault } from '@proton/pass/components/Vault/WithVault';
 import { useConfirm } from '@proton/pass/hooks/useConfirm';
@@ -40,7 +39,6 @@ type ItemActionsContextType = {
 const ItemActionsContext = createContext<MaybeNull<ItemActionsContextType>>(null);
 
 export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
-    const { selectItem } = useNavigation();
     const dispatch = useDispatch();
     const bulk = useBulkSelect();
 
@@ -48,9 +46,7 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
 
     const moveItem = useConfirm((options: { item: ItemRevision; shareId: string }) => {
         const optimisticId = uniqueId();
-        const selectedShareId = options.shareId;
         dispatch(itemMoveIntent({ ...options, optimisticId }));
-        selectItem(selectedShareId, optimisticId, { mode: 'replace', filters: { selectedShareId } });
     });
 
     const moveManyItems = useConfirm((options: { selected: BulkSelectionDTO; shareId: string }) => {
