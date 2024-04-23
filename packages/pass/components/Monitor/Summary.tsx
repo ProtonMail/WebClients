@@ -1,5 +1,4 @@
 import { type FC, useMemo, useState } from 'react';
-import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
@@ -24,12 +23,10 @@ import { useNavigation } from '@proton/pass/components/Navigation/NavigationProv
 import { getLocalPath, getNewItemRoute } from '@proton/pass/components/Navigation/routing';
 import { UpsellingModal } from '@proton/pass/components/Upsell/UpsellingModal';
 import { UpsellRef } from '@proton/pass/constants';
-import { useMissing2FAs } from '@proton/pass/hooks/monitor/useMissing2FAs';
-import { useWeakPasswords } from '@proton/pass/hooks/monitor/useWeakPasswords';
-import { selectMonitorSummary } from '@proton/pass/store/selectors/monitor';
 import { PASS_SHORT_APP_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
 
 import { InfoCard } from '../Layout/Card/InfoCard';
+import { useMonitor } from './MonitorProvider';
 import { getMonitorUpsellFeatures } from './utils';
 
 import './Summary.scss';
@@ -37,10 +34,8 @@ import './Summary.scss';
 export const Summary: FC = () => {
     const { onLink } = usePassCore();
     const { navigate } = useNavigation();
-    const { breaches, duplicatePasswords } = useSelector(selectMonitorSummary);
+    const { breaches, duplicates, insecure, missing2FAs } = useMonitor();
     const [upsellModalOpen, setUpsellModalOpen] = useState(false);
-    const missing2FAsCount = useMissing2FAs().length;
-    const weakPasswordsCount = useWeakPasswords().length;
 
     const learnMore: LearnMoreProps[] = useMemo(
         () => [
@@ -86,7 +81,7 @@ export const Summary: FC = () => {
                         <section className="flex flex-column gap-6">
                             <h3 className="text-lg">{c('Title').t`Dark Web Monitoring`}</h3>
                             <div className="pass-monitor-grid gap-4">
-                                <DarkWeb breached={breaches > 0} onUpsell={() => setUpsellModalOpen(true)} />
+                                <DarkWeb breached={breaches.count > 0} onUpsell={() => setUpsellModalOpen(true)} />
                             </div>
                         </section>
 
@@ -94,40 +89,35 @@ export const Summary: FC = () => {
                             <h3 className="text-lg">{c('Title').t`Password Health`}</h3>
                             <div className="pass-monitor-grid gap-4">
                                 <ActionCard
-                                    onClick={() =>
-                                        duplicatePasswords > 0 ? navigate(`${getLocalPath('monitor/weak')}`) : null
-                                    }
+                                    disabled={insecure.count === 0}
                                     icon="exclamation-filled"
-                                    title={c('Title').t`Weak passwords`}
+                                    onClick={() => navigate(getLocalPath('monitor/weak'))}
+                                    pillLabel={insecure.count > 0 ? insecure.count : null}
                                     subtitle={c('Description').t`Change your passwords`}
-                                    pillLabel={weakPasswordsCount > 0 ? weakPasswordsCount : null}
-                                    type={weakPasswordsCount > 0 ? 'warning' : 'success'}
+                                    title={c('Title').t`Weak passwords`}
+                                    type={insecure.count > 0 ? 'warning' : 'success'}
                                 />
                                 <ActionCard
-                                    onClick={() =>
-                                        duplicatePasswords > 0
-                                            ? navigate(`${getLocalPath('monitor/duplicates')}`)
-                                            : null
-                                    }
-                                    icon={duplicatePasswords > 0 ? 'exclamation-filled' : 'checkmark'}
-                                    title={c('Title').t`Reused passwords`}
+                                    disabled={duplicates.count === 0}
+                                    icon={duplicates.count > 0 ? 'exclamation-filled' : 'checkmark'}
+                                    onClick={() => navigate(getLocalPath('monitor/duplicates'))}
+                                    pillLabel={duplicates.count}
                                     subtitle={c('Description').t`Create unique passwords`}
-                                    pillLabel={duplicatePasswords}
-                                    type={duplicatePasswords > 0 ? 'warning' : 'success'}
+                                    title={c('Title').t`Reused passwords`}
+                                    type={duplicates.count > 0 ? 'warning' : 'success'}
                                 />
                                 <ActionCard
-                                    onClick={() =>
-                                        missing2FAsCount > 0 ? navigate(`${getLocalPath('monitor/2fa')}`) : null
-                                    }
-                                    title={c('Title').t`Missing two-factor authentication`}
+                                    disabled={missing2FAs.count === 0}
+                                    onClick={() => navigate(`${getLocalPath('monitor/2fa')}`)}
+                                    pillLabel={missing2FAs.count > 0 ? missing2FAs.count : null}
                                     subtitle={c('Description').t`Increase your security`}
-                                    pillLabel={missing2FAsCount > 0 ? missing2FAsCount : null}
+                                    title={c('Title').t`Missing two-factor authentication`}
                                 />
                                 <ActionCard
-                                    onClick={() => {}}
                                     title={c('Title').t`Excluded items`}
                                     subtitle={c('Description').t`These items remain at risk`}
                                     pillLabel={17}
+                                    disabled
                                 />
                             </div>
                         </section>

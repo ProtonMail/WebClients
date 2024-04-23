@@ -46,6 +46,7 @@ import createStore from '@proton/shared/lib/helpers/store';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
+import store from '../store';
 import { WorkerContext } from './context';
 
 export const createWorkerContext = (config: ProtonConfig) => {
@@ -73,7 +74,7 @@ export const createWorkerContext = (config: ProtonConfig) => {
             import: createImportService(),
             injection: createInjectionService(),
             logger: createLoggerService(storage.local),
-            monitor: createMonitorService(core),
+            monitor: createMonitorService(core, store),
             onboarding: createOnboardingService(storage.local),
             otp: createOTPService(),
             passkey: createPasskeyService(),

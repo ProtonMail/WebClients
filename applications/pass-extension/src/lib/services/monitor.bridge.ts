@@ -12,22 +12,14 @@ export const createMonitorBridge = (messageFactory: MessageWithSenderFactory): M
             (res) => (res.type === 'success' ? res.result : null)
         ),
 
-    checkMissing2FAs: (items) =>
-        sendMessage.on(
-            messageFactory({
-                type: WorkerMessageType.MONITOR_2FAS,
-                payload: { items },
-            }),
-            (res) => (res.type === 'success' ? res.result : [])
+    checkMissing2FAs: () =>
+        sendMessage.on(messageFactory({ type: WorkerMessageType.MONITOR_2FAS }), (res) =>
+            res.type === 'success' ? res.result : []
         ),
 
-    checkWeakPasswords: (items) =>
-        sendMessage.on(
-            messageFactory({
-                type: WorkerMessageType.MONITOR_WEAK_PASSWORDS,
-                payload: { items },
-            }),
-            (res) => (res.type === 'success' ? res.result : [])
+    checkWeakPasswords: () =>
+        sendMessage.on(messageFactory({ type: WorkerMessageType.MONITOR_WEAK_PASSWORDS }), (res) =>
+            res.type === 'success' ? res.result : []
         ),
 
     domain2FAEligible: () => {
