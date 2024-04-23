@@ -188,6 +188,7 @@ export default function DetailsModal({ shareId, linkId, onClose, ...modalProps }
         isLinkLoading,
         isSignatureIssuesLoading,
         isNumberOfAccessesLoading,
+        isSharedWithMeLink,
         error,
         link,
         signatureIssues,
@@ -224,9 +225,15 @@ export default function DetailsModal({ shareId, linkId, onClose, ...modalProps }
                 <DetailsRow label={c('Title').t`Name`}>
                     <FileNameDisplay text={link.name} />
                 </DetailsRow>
-                <DetailsRow label={c('Title').t`Uploaded by`}>
-                    <UserNameCell />
-                </DetailsRow>
+                {isSharedWithMeLink ? (
+                    <DetailsRow label={c('Title').t`Location`}>
+                        <FileNameDisplay text={`/${c('Info').t`Shared with me`}`} />
+                    </DetailsRow>
+                ) : (
+                    <DetailsRow label={c('Title').t`Uploaded by`}>
+                        <UserNameCell />
+                    </DetailsRow>
+                )}
                 {link.parentLinkId && (
                     <DetailsRow label={c('Title').t`Location`}>
                         <LocationCell shareId={shareId} parentLinkId={link.parentLinkId} />
@@ -268,9 +275,15 @@ export default function DetailsModal({ shareId, linkId, onClose, ...modalProps }
                         )}
                     </>
                 )}
-                <DetailsRow label={c('Title').t`Shared`} dataTestId={'drive:is-shared'}>
-                    {isShared}
-                </DetailsRow>
+                {isSharedWithMeLink ? (
+                    <DetailsRow label={c('Title').t`Last edited by`} dataTestId={'drive:last-edited-by'}>
+                        {link.activeRevision?.signatureAddress}
+                    </DetailsRow>
+                ) : (
+                    <DetailsRow label={c('Title').t`Shared`} dataTestId={'drive:is-shared'}>
+                        {isShared}
+                    </DetailsRow>
+                )}
                 {(numberOfAccesses !== undefined || isNumberOfAccessesLoading) && (
                     <DetailsRow
                         label={
