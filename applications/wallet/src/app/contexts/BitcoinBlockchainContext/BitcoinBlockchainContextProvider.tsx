@@ -1,9 +1,12 @@
 import { ReactNode, useContext } from 'react';
 
+import { useDecryptedApiWalletsData } from '@proton/wallet';
+
 import { BitcoinBlockchainContext } from '.';
+import { useBitcoinAddressPool } from '../../hooks/useBitcoinAddressPool';
 import { useBitcoinNetwork } from '../../store/hooks';
+import useDebounceEffect from '../../utils/hooks/useDebouncedEffect';
 import { useBlockchainFeesEstimation } from './useBlockchainFeesEstimation';
-import { useDecryptedApiWalletsData } from './useDecryptedApiWalletsData';
 import { useWalletsChainData } from './useWalletsChainData';
 
 interface Props {
@@ -24,6 +27,16 @@ export const BitcoinBlockchainContextProvider = ({ children }: Props) => {
     } = useWalletsChainData(decryptedApiWalletsData);
 
     const { feesEstimation, loading: loadingFeesEstimation } = useBlockchainFeesEstimation();
+
+    const { fillPool } = useBitcoinAddressPool({ decryptedApiWalletsData, walletsChainData });
+
+    useDebounceEffect(
+        () => {
+            void fillPool();
+        },
+        [fillPool],
+        3000
+    );
 
     return (
         <BitcoinBlockchainContext.Provider

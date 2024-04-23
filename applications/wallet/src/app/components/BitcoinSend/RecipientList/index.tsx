@@ -4,7 +4,14 @@ import { WasmRecipient } from '@proton/andromeda';
 import { Button } from '@proton/atoms/Button/Button';
 import { Input } from '@proton/atoms/Input/Input';
 import { Scroll } from '@proton/atoms/Scroll';
+import AddressesAutocompleteTwo from '@proton/components/components/v2/addressesAutocomplete/AddressesAutocomplete';
+import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
+import { useNotifications } from '@proton/components/hooks';
+import useLoading from '@proton/hooks/useLoading';
+import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
+import { Recipient } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
+import { useWalletApi } from '@proton/wallet';
 
 import { BitcoinAmountInput } from '../../../atoms/BitcoinAmountInput';
 import { RecipientUpdate } from '../../../hooks/useRecipients';
@@ -28,6 +35,38 @@ export const RecipientList = ({
     onRecipientMaxAmount,
 }: Props) => {
     const [exchangeRate] = useUserExchangeRate();
+    const { contactEmails, contactEmailsMap } = useContactEmailsCache();
+    const { createNotification } = useNotifications();
+    const [loadingBitcoinAddressLookup, withLoadingBitcoinAddressLookup] = useLoading();
+    const api = useWalletApi();
+
+    const handleAddRecipients = async (index: number, recipientOrBitcoinAddress: Recipient) => {
+        if (validateEmailAddress(recipientOrBitcoinAddress?.Address)) {
+            try {
+                const bitcoinAddress = await api
+                    .email_integration()
+                    .lookupBitcoinAddress(recipientOrBitcoinAddress.Address);
+
+                // TODO: check bitcoin BitcoinAddressSignature here!
+                if (bitcoinAddress.Data.BitcoinAddress) {
+                    await onRecipientUpdate?.(index, {
+                        address: bitcoinAddress.Data.BitcoinAddress,
+                    });
+                } else {
+                    throw new Error('no address set on this BitcoinAddress');
+                }
+            } catch {
+                createNotification({
+                    type: 'error',
+                    text: c('Send bitcoin').t`Could not find address linked to this email`,
+                });
+            }
+        } else {
+            await onRecipientUpdate?.(index, {
+                address: recipientOrBitcoinAddress.Address,
+            });
+        }
+    };
 
     return (
         <div className="flex flex-column my-4 flex-1 flex-nowrap">
@@ -42,17 +81,35 @@ export const RecipientList = ({
                                     <div className="flex flex-row">
                                         <div className="flex flex-column flex-auto">
                                             <div>
-                                                <Input
-                                                    data-testid="recipient-address-input"
-                                                    placeholder={c('Wallet Send').t`Recipient address`}
-                                                    value={recipient[1]}
-                                                    disabled={!onRecipientUpdate}
-                                                    onChange={(event) => {
-                                                        void onRecipientUpdate?.(index, {
-                                                            address: event.target.value,
-                                                        });
-                                                    }}
-                                                />
+                                                {recipient[1] ? (
+                                                    <Input
+                                                        data-testid="recipient-address-input"
+                                                        placeholder={c('Wallet Send').t`Recipient address`}
+                                                        value={recipient[1]}
+                                                        disabled={!onRecipientUpdate}
+                                                        onChange={(event) => {
+                                                            void onRecipientUpdate?.(index, {
+                                                                address: event.target.value,
+                                                            });
+                                                        }}
+                                                    />
+                                                ) : (
+                                                    <AddressesAutocompleteTwo
+                                                        id="recipient-address-input-autocomplete"
+                                                        data-testid="recipient-address-input-autocomplete"
+                                                        disabled={loadingBitcoinAddressLookup}
+                                                        hasAddOnBlur
+                                                        placeholder={'proton email or bitcoin address'}
+                                                        contactEmails={contactEmails}
+                                                        contactEmailsMap={contactEmailsMap}
+                                                        recipients={[]}
+                                                        onAddRecipients={([r]) => {
+                                                            void withLoadingBitcoinAddressLookup(
+                                                                handleAddRecipients(index, r)
+                                                            );
+                                                        }}
+                                                    />
+                                                )}
                                             </div>
 
                                             <div className="flex flex-row mt-2">

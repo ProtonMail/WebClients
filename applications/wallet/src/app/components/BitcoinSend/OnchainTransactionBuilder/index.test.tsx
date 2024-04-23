@@ -3,9 +3,16 @@ import userEvent from '@testing-library/user-event';
 import { vi } from 'vitest';
 
 import { WasmTxBuilder } from '@proton/andromeda';
+import { mockUseNotifications } from '@proton/testing/lib/vitest';
 
 import { OnchainTransactionBuilder } from '.';
-import { mockUseBitcoinBlockchainContext, mockUseUserExchangeRate, mockUseWalletSettings } from '../../../tests';
+import {
+    mockUseBitcoinBlockchainContext,
+    mockUseUseContactEmailsMap,
+    mockUseUserExchangeRate,
+    mockUseWalletApi,
+    mockUseWalletSettings,
+} from '../../../tests';
 import { apiWalletsData } from '../../../tests/fixtures/api';
 import * as useOnchainTransactionBuilderModule from './useOnchainTransactionBuilder';
 
@@ -21,6 +28,9 @@ describe('OnchainTransactionBuilder', () => {
         mockUseBitcoinBlockchainContext();
         mockUseWalletSettings();
         mockUseUserExchangeRate();
+        mockUseUseContactEmailsMap();
+        mockUseNotifications();
+        mockUseWalletApi();
 
         helper = {
             walletAndAccount: { apiWalletData: testWallet, apiAccount: testAccount },

@@ -11,7 +11,7 @@ describe('TransactionHistoryOverview', () => {
         mockUseWalletSettings();
     });
 
-    it('should display 7 last transactions by default, sorted from newest to oldest', () => {
+    it('should display 7 last transactions by default', () => {
         render(<TransactionHistoryOverview transactions={simpleTransactions} />, { wrapper: BrowserRouter });
 
         const listItems = screen.getAllByRole('listitem');

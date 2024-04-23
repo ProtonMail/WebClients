@@ -7,23 +7,23 @@ import { createAsyncModelThunk, handleAsyncModel } from '@proton/redux-utilities
 
 import { WalletThunkArguments } from '../thunk';
 
-const name = 'api_wallet_transaction_data' as const;
+export const apiWalletTransactionDataSliceName = 'api_wallet_transaction_data' as const;
 
 export interface ApiWalletTransactionDataState {
-    [name]: ModelState<WasmApiWalletTransactionData[]>;
+    [apiWalletTransactionDataSliceName]: ModelState<WasmApiWalletTransactionData[]>;
 }
 
-type SliceState = ApiWalletTransactionDataState[typeof name];
+type SliceState = ApiWalletTransactionDataState[typeof apiWalletTransactionDataSliceName];
 type Model = NonNullable<SliceState['value']>;
 
-export const selectApiWalletTransactionData = (state: ApiWalletTransactionDataState) => state[name];
+export const selectApiWalletTransactionData = (state: ApiWalletTransactionDataState) => state[apiWalletTransactionDataSliceName];
 
 const modelThunk = createAsyncModelThunk<
     Model,
     ApiWalletTransactionDataState,
     WalletThunkArguments,
     [string, string?, string[]?]
->(`${name}/fetch`, {
+>(`${apiWalletTransactionDataSliceName}/fetch`, {
     miss: async ({ extraArgument, options, getState }) => {
         if (!options?.thunkArg) {
             return Promise.resolve([]);
@@ -36,12 +36,12 @@ const modelThunk = createAsyncModelThunk<
             .getWalletTransactions(walletId, walletAccountId, hashedTxIds)
             .then((data) => data[0]);
 
-        const state = getState()[name].value;
+        const state = getState()[apiWalletTransactionDataSliceName].value;
 
         return uniqBy([...(state ?? []), ...data], ({ Data }) => Data.HashedTransactionID);
     },
     previous: (extra) => {
-        const state = extra.getState()[name].value;
+        const state = extra.getState()[apiWalletTransactionDataSliceName].value;
 
         if (!extra.options?.thunkArg) {
             return { value: undefined, error: undefined };
@@ -63,7 +63,7 @@ const initialState: SliceState = {
 };
 
 const slice = createSlice({
-    name,
+    name: apiWalletTransactionDataSliceName,
     initialState,
     reducers: {},
     extraReducers: (builder) => {
@@ -71,5 +71,5 @@ const slice = createSlice({
     },
 });
 
-export const apiWalletTransactionDataReducer = { [name]: slice.reducer };
+export const apiWalletTransactionDataReducer = { [apiWalletTransactionDataSliceName]: slice.reducer };
 export const apiWalletTransactionDataThunk = modelThunk.thunk;

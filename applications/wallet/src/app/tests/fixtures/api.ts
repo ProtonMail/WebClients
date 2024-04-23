@@ -71,7 +71,7 @@ const apiWalletThree: WasmApiWallet = {
     ID: '2',
     Name: 'Savings on Electrum',
     // TODO should be encrypted when comin from server
-    Mnemonic: 'excite escape obscure gesture perfect depth roof until virtual knee garbage moment',
+    Mnemonic: 'cheap venue peace soup arrest abuse obtain flip census smile game evidence advice ceiling capital',
     HasPassphrase: WalletPassphrase.WithoutPassphrase,
     IsImported: WalletSetupMode.Created,
     Priority: 2,
@@ -140,6 +140,7 @@ export const apiWalletAccountOneA: WasmApiWalletAccount = {
     Label: 'Account 1',
     ScriptType: WasmScriptType.NativeSegwit,
     DerivationPath: "m/84'/0'/0'",
+    Addresses: [],
 };
 
 export const apiWalletAccountOneB: WasmApiWalletAccount = {
@@ -148,6 +149,7 @@ export const apiWalletAccountOneB: WasmApiWalletAccount = {
     Label: 'Account 2',
     ScriptType: WasmScriptType.Taproot,
     DerivationPath: "m/86'/0'/0'",
+    Addresses: [],
 };
 
 export const apiWalletAccountTwoA: WasmApiWalletAccount = {
@@ -156,6 +158,7 @@ export const apiWalletAccountTwoA: WasmApiWalletAccount = {
     Label: 'Main account',
     ScriptType: WasmScriptType.NestedSegwit,
     DerivationPath: "m/49'/0'/0'",
+    Addresses: [],
 };
 
 export const apiWalletAccountTwoB: WasmApiWalletAccount = {
@@ -164,6 +167,7 @@ export const apiWalletAccountTwoB: WasmApiWalletAccount = {
     Label: 'Electrum account',
     ScriptType: WasmScriptType.NativeSegwit,
     DerivationPath: "m/84'/0'/0'",
+    Addresses: [],
 };
 
 export const apiWalletAccountThree: WasmApiWalletAccount = {
@@ -172,6 +176,7 @@ export const apiWalletAccountThree: WasmApiWalletAccount = {
     Label: 'Electrum account',
     ScriptType: WasmScriptType.NativeSegwit,
     DerivationPath: "m/84'/0'/0'",
+    Addresses: [],
 };
 
 export const apiWalletsData: IWasmApiWalletData[] = [

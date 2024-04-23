@@ -8,6 +8,7 @@ import {
     mockUseBitcoinBlockchainContext,
     mockUseDecryptedWallets,
     mockUseUserExchangeRate,
+    mockUseWalletApi,
     mockUseWalletDispatch,
     mockUseWalletSettings,
 } from '../../tests';
@@ -26,6 +27,7 @@ describe('YourWalletsSection', () => {
         mockUseWalletDispatch();
         mockUseUserExchangeRate();
         mockUseWalletSettings();
+        mockUseWalletApi();
     });
 
     it('should display wallets with their balance and their type', () => {

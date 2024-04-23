@@ -1,10 +1,19 @@
-import { WasmExchangeRateClient, WasmNetworkClient, WasmSettingsClient, WasmWalletClient } from '@proton/andromeda';
+import {
+    WasmBitcoinAddressClient,
+    WasmEmailIntegrationClient,
+    WasmExchangeRateClient,
+    WasmNetworkClient,
+    WasmSettingsClient,
+    WasmWalletClient,
+} from '@proton/andromeda';
 import * as useWalletApiModule from '@proton/wallet/contexts/ExtendedApiContext';
 
 type PartiallyMockedWalletApiClient = Partial<{
+    bitcoin_address: Partial<Omit<WasmBitcoinAddressClient, 'free'>>;
+    email_integration: Partial<Omit<WasmEmailIntegrationClient, 'free'>>;
     exchange_rate: Partial<Omit<WasmExchangeRateClient, 'free'>>;
-    settings: Partial<Omit<WasmSettingsClient, 'free'>>;
     network: Partial<Omit<WasmNetworkClient, 'free'>>;
+    settings: Partial<Omit<WasmSettingsClient, 'free'>>;
     wallet: Partial<Omit<WasmWalletClient, 'free'>>;
 }>;
 
@@ -15,6 +24,13 @@ export const mockUseWalletApi = (mockedValue?: PartiallyMockedWalletApiClient) =
         exchange_rate: vi.fn(
             (): WasmExchangeRateClient => ({
                 getExchangeRate: mockedValue?.exchange_rate?.getExchangeRate ?? vi.fn(),
+                free: vi.fn(),
+            })
+        ),
+        email_integration: vi.fn(
+            (): WasmEmailIntegrationClient => ({
+                createBitcoinAddressesRequest: mockedValue?.email_integration?.createBitcoinAddressesRequest ?? vi.fn(),
+                lookupBitcoinAddress: mockedValue?.email_integration?.lookupBitcoinAddress ?? vi.fn(),
                 free: vi.fn(),
             })
         ),
@@ -47,8 +63,17 @@ export const mockUseWalletApi = (mockedValue?: PartiallyMockedWalletApiClient) =
                 updateWalletTransactionLabel: mockedValue?.wallet?.updateWalletTransactionLabel ?? vi.fn(),
                 updateWalletTransactionHashedTxId: mockedValue?.wallet?.updateWalletTransactionHashedTxId ?? vi.fn(),
                 deleteWalletTransaction: mockedValue?.wallet?.deleteWalletTransaction ?? vi.fn(),
+                addEmailAddress: mockedValue?.wallet?.addEmailAddress ?? vi.fn(),
+                removeEmailAddress: mockedValue?.wallet?.removeEmailAddress ?? vi.fn(),
             })
         ),
+        bitcoin_address: vi.fn(() => ({
+            free: vi.fn(),
+            getBitcoinAddresses: mockedValue?.bitcoin_address?.getBitcoinAddresses ?? vi.fn(),
+            getBitcoinAddressHighestIndex: mockedValue?.bitcoin_address?.getBitcoinAddressHighestIndex ?? vi.fn(),
+            addBitcoinAddress: mockedValue?.bitcoin_address?.addBitcoinAddress ?? vi.fn(),
+            updateBitcoinAddress: mockedValue?.bitcoin_address?.updateBitcoinAddress ?? vi.fn(),
+        })),
         free: vi.fn(),
     });
 

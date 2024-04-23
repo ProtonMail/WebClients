@@ -1,11 +1,10 @@
-import { WasmAccount, WasmBalance, WasmTransactionDetails, WasmUtxo, WasmWallet } from '@proton/andromeda';
+import { WasmAccount, WasmWallet } from '@proton/andromeda';
 
 export type AccountWithChainData = {
     account: WasmAccount;
-    balance?: WasmBalance;
-    transactions?: WasmTransactionDetails[];
-    utxos?: WasmUtxo[];
-    derivationPathStr: string;
+    syncId: string;
+    scriptType: number;
+    derivationPath: string;
 };
 
 export type AccountChainDataByAccountId = Partial<Record<string, AccountWithChainData>>;

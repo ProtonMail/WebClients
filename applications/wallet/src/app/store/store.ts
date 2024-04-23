@@ -1,8 +1,5 @@
 import { TypedStartListening, configureStore, createListenerMiddleware } from '@reduxjs/toolkit';
 
-import { ignoredActions, ignoredPaths } from '@proton/redux-shared-store/sharedSerializable';
-import { apiWalletsDataSliceName } from '@proton/wallet';
-
 import { rootReducer } from './rootReducer';
 import { type WalletThunkArguments, extraThunkArguments } from './thunk';
 
@@ -15,10 +12,7 @@ export const setupStore = () => {
         reducer: rootReducer,
         middleware: (getDefaultMiddleware) =>
             getDefaultMiddleware({
-                serializableCheck: {
-                    ignoredActions: [...ignoredActions, `${apiWalletsDataSliceName}/fetch/fulfilled`],
-                    ignoredPaths: [...ignoredPaths, new RegExp(apiWalletsDataSliceName)],
-                },
+                serializableCheck: false,
                 thunk: { extraArgument: extraThunkArguments },
             }).prepend(listenerMiddleware.middleware),
     });

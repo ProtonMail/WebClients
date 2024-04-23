@@ -1,21 +1,25 @@
 import { pick } from 'lodash';
 
-import { WasmApiWalletAccount } from '@proton/andromeda';
+import { WasmApiWalletAccount, WasmPagination, WasmSortOrder } from '@proton/andromeda';
 import isTruthy from '@proton/utils/isTruthy';
 import { IWasmApiWalletData } from '@proton/wallet';
 
 import { AccountWithChainData, WalletChainDataByWalletId, WalletWithChainData } from '../types';
 
 export const getAccountBalance = (account?: AccountWithChainData) => {
-    const confirmed = Number(account?.balance?.confirmed ?? 0);
-    const trustedPending = Number(account?.balance?.trusted_pending ?? 0);
+    const balance = account?.account.getBalance();
+
+    const confirmed = Number(balance?.confirmed ?? 0);
+    const trustedPending = Number(balance?.trusted_pending ?? 0);
 
     return confirmed + trustedPending;
 };
 
 export const getAccountUntrustedBalance = (account?: AccountWithChainData) => {
-    const untrusted = Number(account?.balance?.untrusted_pending ?? 0);
-    const immature = Number(account?.balance?.immature ?? 0);
+    const balance = account?.account.getBalance();
+
+    const untrusted = Number(balance?.untrusted_pending ?? 0);
+    const immature = Number(balance?.immature ?? 0);
 
     return untrusted + immature;
 };
@@ -68,21 +72,28 @@ export const getAccountsWithChainDataFromSingleWallet = (
 };
 
 export const getWalletBalance = (walletsChainData: WalletChainDataByWalletId, walletId: string) => {
-    return getAccountsWithChainDataFromSingleWallet(walletsChainData, walletId).reduce(
-        (acc, account) => acc + getAccountBalance(account),
-        0
-    );
+    const balance = walletsChainData[walletId]?.wallet.getBalance();
+
+    const confirmed = Number(balance?.confirmed ?? 0);
+    const trustedPending = Number(balance?.trusted_pending ?? 0);
+
+    return confirmed + trustedPending;
 };
 
 export const getWalletUntrustedBalance = (walletsChainData: WalletChainDataByWalletId, walletId: string) => {
-    return getAccountsWithChainDataFromSingleWallet(walletsChainData, walletId).reduce(
-        (acc, account) => acc + getAccountUntrustedBalance(account),
-        0
-    );
+    const balance = walletsChainData[walletId]?.wallet.getBalance();
+
+    const untrusted = Number(balance?.untrusted_pending ?? 0);
+    const immature = Number(balance?.immature ?? 0);
+
+    return untrusted + immature;
 };
 
-export const getWalletTransactions = (walletsChainData: WalletChainDataByWalletId, walletId: string) => {
-    return getAccountsWithChainDataFromSingleWallet(walletsChainData, walletId)
-        .flatMap(({ transactions }) => transactions)
-        .filter(isTruthy);
+export const getWalletTransactions = (
+    walletsChainData: WalletChainDataByWalletId,
+    walletId: string,
+    pagination?: WasmPagination,
+    sort?: WasmSortOrder
+) => {
+    return walletsChainData[walletId]?.wallet.getTransactions(pagination, sort)[0].map(({ Data }) => Data) ?? [];
 };
