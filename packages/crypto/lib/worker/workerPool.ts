@@ -48,6 +48,14 @@ const errorReporter = (err: Error) => {
     throw err;
 };
 
+const reportKeyCompatibilityErrorIfPresent = (compatibilityError: Error | null) => {
+    compatibilityError &&
+        captureMessage('Key compatibility error', {
+            level: 'info',
+            extra: { message: compatibilityError.message, stack: compatibilityError.stack },
+        });
+};
+
 // Singleton worker pool.
 export const CryptoWorkerPool: WorkerPoolInterface = (() => {
     let workerPool: Remote<CryptoApi>[] | null = null;
@@ -148,12 +156,14 @@ export const CryptoWorkerPool: WorkerPoolInterface = (() => {
         importPrivateKey: async (opts) => {
             const [first, ...rest] = getAllWorkers();
             const result = await first.importPrivateKey(opts).catch(errorReporter);
+            reportKeyCompatibilityErrorIfPresent(result._getCompatibilityError());
             await Promise.all(rest.map((worker) => worker.importPrivateKey(opts, result._idx)));
             return result;
         },
         importPublicKey: async (opts) => {
             const [first, ...rest] = getAllWorkers();
             const result = await first.importPublicKey(opts).catch(errorReporter);
+            reportKeyCompatibilityErrorIfPresent(result._getCompatibilityError());
             await Promise.all(rest.map((worker) => worker.importPublicKey(opts, result._idx)));
             return result;
         },

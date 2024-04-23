@@ -1,6 +1,6 @@
 // TODO: drop pmcrypto import, see https://jira.protontech.ch/projects/CRYPTO/issues/CRYPTO-101
 // eslint-disable-next-line no-restricted-imports
-import { parseMail } from 'pmcrypto/lib/message/parseMail';
+import { parseMail } from 'pmcrypto-v6-canary/lib/message/parseMail';
 
 /**
  * Overwrites the headers in baseHeader by the headers defined in extraHeaders.
