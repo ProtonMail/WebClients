@@ -1124,10 +1124,6 @@
       "Trust": [
         "Vertrouwen"
       ],
-      "Trust key": [
-        "Sleutel vertrouwen",
-        "Vertrouwde sleutels"
-      ],
       "Trust public key": [
         "Publieke sleutel vertrouwen"
       ],
@@ -1223,6 +1219,9 @@
       ],
       "View": [
         "Bekijken"
+      ],
+      "View all reports": [
+        "Bekijk alle rapporten"
       ],
       "View contact details": [
         "Contactdetails bekijken"
@@ -4709,6 +4708,9 @@
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }-desktopapp"
       ],
+      "14-day desktop app trial.": [
+        "14-dagen destkop-app proefversie"
+      ],
       "Enjoy fast, secure, and distraction-free access to your inbox and calendar.": [
         "Geniet van snelle, veilige en afleidingsvrije toegang tot uw inbox en agenda."
       ],
@@ -6228,6 +6230,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Selecteer welk(e) e-mailadres(sen) u wilt toevoegen aan ${ groupName }."
       ],
+      "Please try again in a few moments": [
+        "Probeer het opnieuw in enkele ogenblikken"
+      ],
       "Please try again using a different payment method, or contact your bank.": [
         "Probeer opnieuw met een andere betalingsmethode, of neem contact op met uw bank."
       ],
@@ -6763,6 +6768,9 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "We verwijzen u naar PayPal in een nieuw browsertabblad om de transactie te voltooien. Als u een pop-up blocker gebruikt, schakel deze dan uit alvorens door te gaan."
       ],
+      "We'll email you once import is complete.": [
+        "We sturen je een e-mail zodra de import voltooid is."
+      ],
       "We'll notify you when the import is done.": [
         "We laten het u weten als de import klaar is."
       ],
@@ -6823,6 +6831,9 @@
       "You can check the progress ${ importProgressLink }.": [
         "U kunt de voortgang controleren ${ importProgressLink }."
       ],
+      "You can close the tab or browser in the meantime.": [
+        "In de tussentijd kunt u de tab of browser sluiten."
+      ],
       "You can either update your search query or ${ button }": [
         "U kunt uw zoekopdracht bewerken of ${ button }"
       ],
@@ -6875,7 +6886,7 @@
         "U heeft **${ count } berichten** gemarkeerd met dit label"
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
-        "Je hebt een Trial ${ planTitle } abonnement. Als je na de proefperiode door wilt gaan met je abonnement, voeg een betaalmethode toe."
+        "Je hebt een trial ${ planTitle } abonnement. Als je na de proefperiode door wilt gaan met je abonnement, voeg een betaalmethode toe."
       ],
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
         "Je hebt een trial ${ planTitle } abonnement. Er is geen betaling vereist op dit moment. Uw abonnement wordt automatisch verlengd aan het einde van de proefperiode."
@@ -8037,9 +8048,6 @@
       ],
       "Sent": [
         "Verzonden"
-      ],
-      "Set up email forwarding": [
-        "E-mail doorsturen instellen"
       ],
       "Sign up for free": [
         "Gratis inschrijven"
@@ -10402,9 +10410,6 @@
       "Email tracking protection": [
         "Bescherming tegen e-mailtracking"
       ],
-      "Faster email management": [
-        "Sneller e-mailbeheer"
-      ],
       "Get the desktop app": [
         "Download de desktop-app"
       ],
@@ -10414,17 +10419,11 @@
       "Invite friends to ${ BRAND_NAME }": [
         "Nodig vrienden uit voor ${ BRAND_NAME }"
       ],
-      "Now you can take action on all emails in a single folder in one go.": [
-        "Nu kunt u actie ondernemen op alle e-mails in één map in één keer."
-      ],
       "Schedule send": [
         "Gepland versturen"
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "We laden afbeelding nu standaard en blokkeren trackers van afzenders. Dit kan gewijzigd worden via de ${ settingsLink }."
-      ],
-      "You can now automatically forward your emails to anyone!": [
-        "U kunt nu uw e-mails automatisch doorsturen naar wie dan ook!"
       ],
       "You can now schedule your messages to be sent later": [
         "U kunt nu uw berichten plannen om ze later te versturen"
@@ -11562,6 +11561,9 @@
       "No attachment found": [
         "Geen bijlage gevonden"
       ],
+      "No breaches detected": [
+        "Geen inbreuken gevonden"
+      ],
       "No trackers found": [
         "Geen trackers gevonden"
       ],
@@ -11810,6 +11812,9 @@
       "What's new": [
         "Wat is er nieuw"
       ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Uw ${ planName } gratis proefperiode eindigt op ${ textDate }"
+      ],
       "Your account is protected": [
         "Uw account is beschermd"
       ],
@@ -11818,9 +11823,6 @@
       ],
       "Your exposed information": [
         "Uw blootgestelde informatie"
-      ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "Uw Mail Plus proefversie eindigt op ${ textDate }"
       ]
     },
     "Title subscription": {

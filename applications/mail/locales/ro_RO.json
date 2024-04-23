@@ -627,6 +627,9 @@
       "Mark as read": [
         "Marcare ca citit"
       ],
+      "Mark as resolved": [
+        "Marcare ca rezolvată"
+      ],
       "Mark as unread": [
         "Marcare ca necitit"
       ],
@@ -894,6 +897,9 @@
       "Report phishing": [
         "Raportare înșelăciune"
       ],
+      "Request a call": [
+        "Solicitați un apel"
+      ],
       "Request a feature": [
         "Solicitare funcție"
       ],
@@ -1122,11 +1128,6 @@
       "Trust": [
         "Aprobare"
       ],
-      "Trust key": [
-        "Cheie de încredere",
-        "Chei de încredere",
-        "Chei de încredere"
-      ],
       "Trust public key": [
         "Aprobare cheie publică"
       ],
@@ -1222,6 +1223,9 @@
       ],
       "View": [
         "Afișare"
+      ],
+      "View all reports": [
+        "Afișare toate rapoartele"
       ],
       "View contact details": [
         "Afișare detalii contact"
@@ -1681,6 +1685,9 @@
       ],
       "Continue using ${ planTitle }": [
         "Continuare utilizare ${ planTitle }"
+      ],
+      "Continue your subscription": [
+        "Păstrare abonament"
       ]
     },
     "Calendar attachment tooltip": {
@@ -4739,6 +4746,9 @@
       "${ MAIL_APP_NAME } desktop app": [
         "Aplicația pentru desktop ${ MAIL_APP_NAME }"
       ],
+      "14-day desktop app trial.": [
+        "14 zile de încercare aplicația desktop."
+      ],
       "Enjoy fast, secure, and distraction-free access to your inbox and calendar.": [
         "Bucurați-vă de accesul la contul de e-mail și calendar, rapid, sigur și fără distrageri."
       ],
@@ -6087,6 +6097,9 @@
       "Large imports can take several days.": [
         "Importările mari pot dura mai multe zile."
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Aflați cum să ${ staySaferOnlineLink }"
+      ],
       "Learn more": [
         "Detalii"
       ],
@@ -6104,6 +6117,9 @@
       ],
       "Loading ${ appName }": [
         "Se încarcă ${ appName }"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Calendarul se încarcă, așteptați. Pagina se va redirecționa către platforma noastră de programări Calendly într-o filă nouă."
       ],
       "Loading message": [
         "Se încarcă mesajul"
@@ -6319,6 +6335,9 @@
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Selectați adresa sau adresele de e-mail de adăugat la ${ groupName }."
+      ],
+      "Please try again in a few moments": [
+        "Mai încercați mai târziu."
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Reîncercați folosind o metodă de plată diferită sau contactați-vă banca."
@@ -6537,6 +6556,9 @@
       ],
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "Datele pe care le-ați introdus în ciornă nu pot fi salvate dacă părăsiți pagina."
+      ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "Informațiile expuse au fost divulgate de la un serviciu terță parte. Informațiile contului ${ BRAND_NAME } rămân securizate și criptate. ${ learnMoreLink }"
       ],
       "The local database is being prepared": [
         "Se pregătește baza de date locală."
@@ -6856,6 +6878,9 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Pentru finalizarea tranzacției prin PayPal se va deschide o filă nouă. Dacă folosiți programe de blocat ferestre flotante dezactivați-le înainte de a continua."
       ],
+      "We'll email you once import is complete.": [
+        "Vă vom anunța pe e-mail după finalizarea importării."
+      ],
       "We'll notify you when the import is done.": [
         "Veți primi o notificare la finalizarea importării."
       ],
@@ -6916,6 +6941,9 @@
       "You can check the progress ${ importProgressLink }.": [
         "Puteți verifica progresul ${ importProgressLink }."
       ],
+      "You can close the tab or browser in the meantime.": [
+        "Puteți închide fila sau navigatorul web între timp."
+      ],
       "You can either update your search query or ${ button }": [
         "Puteți să actualizați căutarea sau să ${ button }"
       ],
@@ -6972,6 +7000,12 @@
         "Aveți **un mesaj** marcat cu această etichetă",
         "Aveți **${ count } mesaje** marcate cu această etichetă",
         "Aveți **${ count } de mesaje** marcate cu această etichetă"
+      ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "Aveți un abonament ${ planTitle } de probare. Dacă doriți să vă continuați abonamentul după perioada de probare, adăugați o metodă de plată."
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "Aveți un abonament ${ planTitle } de probare. Nu este necesară nici o plată în acest moment. Abonamentul se va reînnoi automat la sfârșitul perioadei de probare."
       ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
         "Nu ați introdus subiectul mesajului. Doriți să trimiteți mesajul așa?"
@@ -7073,11 +7107,20 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Datele vă sunt pregătite pentru importare din ${ importedEmailAddressStrong } în contul ${ BRAND_NAME }."
       ],
+      "Your email address and password were leaked:": [
+        "Adresa de e-mail și parola au fost divulgate:"
+      ],
+      "Your email address was exposed:": [
+        "Adresa de e-mail a fost divulgată:"
+      ],
       "Your email will only be used for this one-time verification.": [
         "Adresa va fi folosită doar pentru această verificare unică."
       ],
       "Your files will be encrypted and then saved": [
         "Fișierele vor fi criptate și apoi salvate."
+      ],
+      "Your information was found on ${ displayedDate }": [
+        "Informațiile v-au fost găsite la ${ displayedDate }"
       ],
       "Your login information will not be saved after the import is completed.": [
         "Informațiile de conectare nu vor fi salvate după terminarea importării."
@@ -7095,6 +7138,9 @@
       ],
       "Your next billing date is ${ renewalTime }.": [
         "Data următoarei facturi este ${ renewalTime }."
+      ],
+      "Your password was leaked:": [
+        "Parola a fost divulgată:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Numărul de telefon va fi folosit doar pentru această verificare unică."
@@ -8133,9 +8179,6 @@
       ],
       "Sent": [
         "Trimise"
-      ],
-      "Set up email forwarding": [
-        "Setare redirecționare mesaje"
       ],
       "Sign up for free": [
         "Înscriere gratuită"
@@ -9971,6 +10014,9 @@
       ]
     },
     "Security Center - Info": {
+      "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
+        "Primiți notificări dacă parola sau alte date v-au fost divulgate de la un serviciu terță parte. ${ learnMoreLink }"
+      ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Soluția noastră de securitate de ultimă oră, bazată pe inteligență artificială, concepută pentru utilizatorii care doresc o protecție sporită pentru conturile lor. ${ learnMoreLink }"
       ],
@@ -10552,9 +10598,6 @@
       "Email tracking protection": [
         "Protejare e-mail împotriva urmăririi"
       ],
-      "Faster email management": [
-        "Gestionare mesaje mai rapidă"
-      ],
       "Get the desktop app": [
         "Luați aplicația pentru desktop"
       ],
@@ -10564,17 +10607,11 @@
       "Invite friends to ${ BRAND_NAME }": [
         "Invitați persoane la ${ BRAND_NAME }"
       ],
-      "Now you can take action on all emails in a single folder in one go.": [
-        "Acum puteți acționa asupra tuturor mesajelor dintr-un folder deodată."
-      ],
       "Schedule send": [
         "Trimitere programată"
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Imaginile sunt încărcate implicit și expeditorii sunt blocați să vă urmărească. Aceasta se poate modifica în ${ settingsLink }."
-      ],
-      "You can now automatically forward your emails to anyone!": [
-        "Acum vă puteți redirecționa automat mesajele către oricine!"
       ],
       "You can now schedule your messages to be sent later": [
         "Acum puteți să vă programați mesajele pentru a fi trimise mai târziu."
@@ -11517,6 +11554,9 @@
       "Deleting contacts": [
         "Ștergere contacte"
       ],
+      "Details": [
+        "Detalii"
+      ],
       "Don't give spam a chance": [
         "Nu oferiți șanse mesajelor nedorite"
       ],
@@ -12015,8 +12055,8 @@
       "Your changes are not synced yet": [
         "Modificările nu sunt încă sincronizate"
       ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "Perioada de încercare pentru Mail Plus se încheie la ${ textDate } "
+      "Your exposed information": [
+        "Informațiile expuse"
       ]
     },
     "Title subscription": {

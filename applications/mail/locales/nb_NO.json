@@ -1124,10 +1124,6 @@
       "Trust": [
         "Klarér"
       ],
-      "Trust key": [
-        "Klarér nøkkel",
-        "Klarér nøkler"
-      ],
       "Trust public key": [
         "Klarér offentlig nøkkel"
       ],
@@ -8053,9 +8049,6 @@
       "Sent": [
         "Sendt"
       ],
-      "Set up email forwarding": [
-        "Sett opp videresending av e-post"
-      ],
       "Sign up for free": [
         "Registrer deg gratis"
       ],
@@ -8172,6 +8165,11 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Abonnementet ditt er avsluttet. ${ cta } og unngå tap av data."
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Aktiver ${ reason }"
       ]
     },
     "Mail import summary": {
@@ -9255,6 +9253,12 @@
       "${ Filter.Name } created": [
         "${ Filter.Name } opprettet"
       ],
+      "${ reason } has been disabled": [
+        "${ reason } er deaktivert"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } er aktivert"
+      ],
       "Block removed": [
         "Blokkering fjernet"
       ],
@@ -9864,6 +9868,9 @@
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel er **aktiv** og beskytter kontoen din."
+      ],
+      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLink }": [
+        "Informasjonen din ble funnet i minst ett datainnbrudd. Slå på ${ DARK_WEB_MONITORING_NAME } for å vise detaljer og iverksette tiltak. ${ learnMoreLink }."
       ]
     },
     "Select files": {
@@ -10417,9 +10424,6 @@
       "Email tracking protection": [
         "Sporingsbeskyttelse for e-post"
       ],
-      "Faster email management": [
-        "Raskere e-postadministrasjon"
-      ],
       "Get the desktop app": [
         "Få skrivebordsappen"
       ],
@@ -10429,17 +10433,14 @@
       "Invite friends to ${ BRAND_NAME }": [
         "Inviter venner til ${ BRAND_NAME }"
       ],
-      "Now you can take action on all emails in a single folder in one go.": [
-        "Nå kan du iverksette tiltak på alle e-poster i én enkelt mappe på én gang."
-      ],
       "Schedule send": [
         "Planlegg sending"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME } to get notified if your data was leaked from a third-party service.": [
+        "Slå på ${ DARK_WEB_MONITORING_NAME } for å bli varslet hvis dataene dine ble lekket fra en tredjepartstjeneste."
+      ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Vi laster nå inn bilder som standard og blokkerer avsendere fra å spore deg. Dette kan endres i ${ settingsLink }."
-      ],
-      "You can now automatically forward your emails to anyone!": [
-        "Du kan nå automatisk videresende e-postene dine til hvem som helst"
       ],
       "You can now schedule your messages to be sent later": [
         "Du kan nå planlegge at meldingene skal sendes senere"
@@ -11828,6 +11829,9 @@
       "What's new": [
         "Hva er nytt"
       ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Din gratis prøveversjon av ${ planName } slutter den ${ textDate }."
+      ],
       "Your account is protected": [
         "Kontoen din er beskyttet"
       ],
@@ -11836,9 +11840,6 @@
       ],
       "Your exposed information": [
         "Din eksponerte informasjon"
-      ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "Din gratis prøveversjon av Mail Plus slutter den ${ textDate }."
       ]
     },
     "Title subscription": {

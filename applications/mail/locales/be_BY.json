@@ -1132,12 +1132,6 @@
       "Trust": [
         "Давяраць"
       ],
-      "Trust key": [
-        "Давяраць ключу",
-        "Давяраць ключам",
-        "Давяраць ключам",
-        "Давяраць ключам"
-      ],
       "Trust public key": [
         "Давяраць публічнаму ключу"
       ],
@@ -4006,7 +4000,7 @@
         "Узнікла праблема з пошукам змесціва. Замест гэтага быў выкарыстаны прадвызначаны пошук."
       ],
       "There was an error when exporting the contacts vCards": [
-        "Падчас экспартавання кантактаў vCard адбылася памылка"
+        "Адбылася памылка падчас экспартавання кантактаў vCard"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Гэта поле перавышае максімальную колькасць сімвалаў (максімум: ${ maximumLength })."
@@ -6488,7 +6482,7 @@
         "Друкаваць ліст"
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
-        "Абараніце сваю электронную пошту ад уцечкі ў спіс рассылкі або спамераў з дапамогай ${ maskMyEmailButton }."
+        "Абараняйце сваю электронную пошту ад уцечкі ў спіс рассылкі або спамераў з дапамогай ${ maskMyEmailButton }."
       ],
       "Recipient: ": [
         "Атрымальнік: "
@@ -6545,7 +6539,7 @@
         "Пошук займае занадта шмат часу? ${ dropdownButton } або ${ toggleOffButton } з гэтага пошукавага сеанса."
       ],
       "Secure your files with encrypted cloud storage for free, today.": [
-        "Бясплатна абараніце свае файлы з дапамогай зашыфраванага воблачнага сховішча."
+        "Бясплатна абараняйце свае файлы з дапамогай зашыфраванага воблачнага сховішча."
       ],
       "Seems like you are all caught up for now": [
         "У вас пакуль няма лістоў"
@@ -8316,9 +8310,6 @@
       ],
       "Sent": [
         "Адпраўленыя"
-      ],
-      "Set up email forwarding": [
-        "Наладзіць перасылку лістоў"
       ],
       "Sign up for free": [
         "Зарэгіструйцеся бясплатна"
@@ -10176,7 +10167,7 @@
         "Адкрыць ${ PASS_APP_NAME }"
       ],
       "Protect your online identity": [
-        "Абараніце сваю сеткавую ідэнтычнасць"
+        "Абараняйце сваю сеткавую ідэнтычнасць"
       ],
       "Try ${ PASS_APP_NAME }": [
         "Паспрабуйце ${ PASS_APP_NAME }"
@@ -10809,9 +10800,6 @@
       "Email tracking protection": [
         "Абарона ад праграм сачэння электроннай пошты"
       ],
-      "Faster email management": [
-        "Больш хуткае кіраванне лістамі"
-      ],
       "Get the desktop app": [
         "Атрымаць настольную праграму"
       ],
@@ -10821,20 +10809,14 @@
       "Invite friends to ${ BRAND_NAME }": [
         "Запрасіць сяброў у ${ BRAND_NAME }"
       ],
-      "Now you can take action on all emails in a single folder in one go.": [
-        "Цяпер вы можаце выканаць дзеянне над усімі лістамі ў адной папцы за адзін раз."
-      ],
       "Schedule send": [
         "Запланаваць адпраўку"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME } to get notified if your data was leaked from a third-party service.": [
-        "Уключыце ${ DARK_WEB_MONITORING_NAME }, каб атрымліваць апавяшчэнні, калі адбылася ўцечка са старонняга сэрвісу."
+        "Уключыце ${ DARK_WEB_MONITORING_NAME }, каб атрымліваць апавяшчэнні пры ўцечцы са старонняга сэрвісу."
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Цяпер мы прадвызначана загрузілі відарысы і заблакіравалі адпраўнікоў ад сачэння за вамі. Гэта можна змяніць у ${ settingsLink }."
-      ],
-      "You can now automatically forward your emails to anyone!": [
-        "Цяпер вы можаце аўтаматычна перасылаць свае лісты каму заўгодна!"
       ],
       "You can now schedule your messages to be sent later": [
         "Цяпер вы можаце запланаваць адпраўку паведамленняў на больш позні час"
@@ -12321,6 +12303,9 @@
       "What's new": [
         "Што новага"
       ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Ваш бясплатны выпрабавальны перыяд для тарыфнага плана ${ planName } завершыцца ${ textDate }"
+      ],
       "Your account is protected": [
         "Ваш уліковы запіс абаронены"
       ],
@@ -12329,9 +12314,6 @@
       ],
       "Your exposed information": [
         "Вашы скампраметаваныя звесткі"
-      ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "Ваш бясплатны выпрабавальны перыяд Mail Plus завершыцца ${ textDate }"
       ]
     },
     "Title subscription": {
