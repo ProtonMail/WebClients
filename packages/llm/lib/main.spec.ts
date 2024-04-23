@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { DummyLlmManager, DummyLlmModel } from './dummy';
-import type { MonitorDownloadCallback } from './types';
+import type { MonitorDownloadCallback, ShortenAction } from './types';
 
 describe('DummyLlmManager', () => {
     let llmManager: DummyLlmManager;
@@ -110,7 +110,7 @@ describe('LlmModel', () => {
             callback
         );
         let resolved = false;
-        runningAction.waitForCompletion().then(() => (resolved = true));
+        void runningAction.waitForCompletion().then(() => (resolved = true));
         expect(resolved).toEqual(false);
         await jest.runAllTimersAsync();
         expect(resolved).toEqual(true);
@@ -141,5 +141,47 @@ describe('LlmModel', () => {
 
         const cancelled2 = runningAction.cancel();
         expect(cancelled2).toBeFalsy();
+    });
+
+    it('should shorten text', async () => {
+        let acc = '';
+        const callback = jest.fn((token: string, fulltext: string) => {
+            expect(token.length).toBeGreaterThan(0);
+            acc += token;
+            expect(fulltext).toEqual(acc);
+        });
+        // @ts-ignore
+        const action: ShortenAction = {
+            type: 'shorten',
+            fullEmail:
+                'Hi Natasha,\n\n' +
+                'I hope this email finds you well. I wanted to bring up an important matter regarding your plans to ' +
+                'attend the upcoming JSConf Europe conference in Berlin. It appears that in order to participate in ' +
+                'the event, registration and acquisition of a ticket are necessary. Unfortunately, without securing ' +
+                'one, it seems that attendance will not be possible.\n\n' +
+                "If you're still interested in attending, I would recommend checking out the official website for " +
+                'more information on ticket sales and availability. Additionally, you may want to explore alternative ' +
+                'options such as speaking at the conference or volunteering, which could potentially grant access ' +
+                'without a ticket.\n\n' +
+                'I understand that this might be disappointing news, but I wanted to make sure you were aware of the ' +
+                "situation in advance. Should you have any questions or need assistance with registration, please don't " +
+                'hesitate to reach out. Let me know if there is anything else I can help you with.\n\n' +
+                'Best regards,\n' +
+                '[Your Name]',
+            partToRephase:
+                "If you're still interested in attending, I would recommend checking out the official website for " +
+                'more information on ticket sales and availability. Additionally, you may want to explore alternative ' +
+                'options such as speaking at the conference or volunteering, which could potentially grant access ' +
+                'without a ticket.',
+        };
+        const runningAction = await model.performAction(action, callback);
+        let resolved = false;
+        void runningAction.waitForCompletion().then(() => (resolved = true));
+        expect(resolved).toEqual(false);
+        await jest.runAllTimersAsync();
+        expect(resolved).toEqual(true);
+        expect(callback).toHaveBeenCalled();
+        expect(acc.length).toBeGreaterThanOrEqual(3);
+        expect(acc.length).toBeLessThanOrEqual(action.partToRephase.length);
     });
 });
