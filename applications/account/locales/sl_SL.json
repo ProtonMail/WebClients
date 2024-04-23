@@ -1103,6 +1103,9 @@
       "Void all recovery files?": [
         "Izničiti vse obnovitvene datoteke?"
       ],
+      "Welcome": [
+        "Dobrodošli"
+      ],
       "What do I get?": [
         "Kaj dobim?"
       ],
@@ -1872,6 +1875,11 @@
       ],
       "Week": [
         "Teden"
+      ]
+    },
+    "Call Scheduled Confirmation": {
+      "Request sent": [
+        "Zahteva je poslana"
       ]
     },
     "Checkout row": {
@@ -3306,14 +3314,6 @@
         "Pomagajte nam izboljšati!"
       ]
     },
-    "Download link": {
-      ".deb for Debian / Ubuntu": [
-        ".deb za Debian / Ubuntu"
-      ],
-      ".rpm for Fedora / Red Hat": [
-        ".rpm za Fedoro / Red Hat"
-      ]
-    },
     "drive_signup_2023: Info": {
       "Advanced sharing security": [
         "Napredna varnost deljenja"
@@ -4005,6 +4005,9 @@
       ],
       "No external key retrieved for user is valid for sending": [
         "Nobeden od zunanjih ključev za uporabnika ni veljaven za pošiljanje sporočil"
+      ],
+      "No image selected": [
+        "Izbrana ni nobena slika"
       ],
       "No valid address found": [
         "Nobenega veljavnega naslova ni bilo mogoče najti."
@@ -7367,6 +7370,9 @@
       "Plus or Visionary subscription required": [
         "Zahtevana je naročnina na paket Plus ali Vizionar"
       ],
+      "Preview": [
+        "Predogled"
+      ],
       "Preview failed to be loaded": [
         "Predogleda ni bilo mogoče naložiti"
       ],
@@ -8002,6 +8008,9 @@
       ],
       "Want servers in other countries?": [
         "Želite strežnike v drugih državah?"
+      ],
+      "Want to learn more?": [
+        "Si želite izvedeti več?"
       ],
       "Warning:": [
         "Opozorilo:"
@@ -9902,7 +9911,7 @@
         "ustvari prijavo napake"
       ],
       "Create account": [
-        "Ustvari račun"
+        "Ustvarite račun"
       ],
       "Create an alias": [
         "Ustvari vzdevek"
@@ -10066,6 +10075,9 @@
       ]
     },
     "Log preference": {
+      "Enable ${ reason }": [
+        "Omogoči ${ reason }"
+      ],
       "Enable advanced logs": [
         "Omogoči napredne evidence"
       ],
@@ -12780,6 +12792,17 @@
         "Prenesi dodatne datoteke"
       ]
     },
+    "Select invoice document": {
+      "Credit note": [
+        "Dobropis"
+      ],
+      "Currency conversion": [
+        "Pretvorba valut"
+      ],
+      "Invoice": [
+        "Račun"
+      ]
+    },
     "Select search results": {
       "Check your spelling or select a country from the list.": [
         "Preverite vaš vpis ali izberite državo s seznama."
@@ -13779,6 +13802,20 @@
         "Za"
       ]
     },
+    "Subscription reminder": {
+      "10 email addresses": [
+        "10 e-poštnih naslovov"
+      ],
+      "Cancel subscription?": [
+        "Prekliči naročnino?"
+      ],
+      "Close": [
+        "Zapri"
+      ],
+      "Resubscribe": [
+        "Ponovno se naročite"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Ali ste prepričani?"
@@ -14735,9 +14772,6 @@
       "Folders and labels": [
         "Mape in oznake"
       ],
-      "For Linux": [
-        "Za Linux"
-      ],
       "Forward and auto-reply": [
         "Posredovanje in samodejni odgovor"
       ],
@@ -15250,9 +15284,6 @@
       ],
       "Your exposed information": [
         "Vaša razkrita informacija"
-      ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "Brezplačno preizkusno obdobje Mail Plus se vam zaključi ${ textDate }"
       ],
       "Your plan": [
         "Vaš načrt"

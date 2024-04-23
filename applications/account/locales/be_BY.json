@@ -1064,8 +1064,8 @@
       "Upload": [
         "Запампаваць"
       ],
-      "Upload icon": [
-        "Запампаваць значок"
+      "Upload logo": [
+        "Запампаваць лагатып"
       ],
       "Upload picture": [
         "Запампаваць малюнак"
@@ -1332,10 +1332,10 @@
         "Абараняйце свае паролі і ідэнтычнасць"
       ],
       "Safeguard your files and photos": [
-        "Абараніце свае файлы і фатаграфіі"
+        "Абараняйце свае файлы і фатаграфіі"
       ],
       "Secure your communications": [
-        "Абараніце свае зносіны"
+        "Абараняйце свае зносіны"
       ]
     },
     "Apps dropdown": {
@@ -3359,14 +3359,6 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Дапамажыце нам палепшыць наш сэрвіс!"
-      ]
-    },
-    "Download link": {
-      ".deb for Debian / Ubuntu": [
-        ".deb для Debian/Ubuntu"
-      ],
-      ".rpm for Fedora / Red Hat": [
-        ".rpm для Fedora/Red Hat"
       ]
     },
     "drive_signup_2023: Info": {
@@ -6053,7 +6045,7 @@
       "${ BRAND_NAME } is privacy you can trust, ensured by strong encryption, open-source code, and Swiss privacy laws. We believe nobody should be able to exploit your data, period. Our technology and business are based upon this fundamentally stronger definition of privacy.": [
         "${ BRAND_NAME } - гэта прыватнасць, якой вы можаце давяраць. Дзякуючы надзейнаму шыфраванню, адкрытаму зыходнаму коду і швейцарскім законам аб прыватнасці. Мы цвёрда перакананыя, што ніхто не павінен выкарыстоўваць вашы даныя. Наша тэхналогія і бізнес заснаваны на гэтым прынцыпова жорсткім вызначэнні прыватнасці."
       ],
-      "${ BRAND_NAME } never shares your information with third parties. Data comes from  ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
+      "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
         "${ BRAND_NAME } ніколі не абагульвае вашы звесткі са староннімі асобамі. Даныя атрымліваюцца на падставе ўласнага аналізу ${ BRAND_NAME } і Constella Intelligence."
       ],
       "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
@@ -6322,6 +6314,9 @@
         "Дадаць сервер (${ availableAddedCount } даступна)",
         "Дадаць сервер (${ availableAddedCount } даступна)",
         "Дадаць сервер (${ availableAddedCount } даступна)"
+      ],
+      "Add your name and logo to create a more personalized experience for your organization.": [
+        "Дадайце свае назву і лагатып, каб стварыць больш персаналізаванае ўражанне для сваёй арганізацыі."
       ],
       "Adding ${ addedServerCount } gateway server": [
         "Даданне ${ addedServerCount } сервера шлюза",
@@ -6883,9 +6878,6 @@
       ],
       "Failed to fetch logs.": [
         "Не ўдалося атрымаць журналы."
-      ],
-      "Fast and focused. Email and calendar, right on your desktop.": [
-        "Хуткасць і канцэнтрацыя. Пошта і каляндар на вашым працоўным стале."
       ],
       "Fill in user details": [
         "Запоўніце даныя карыстальніка"
@@ -7811,9 +7803,6 @@
       "The link to report that that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "Тэрмін дзеяння спасылкі для справаздачы пра тое, што вы не наладзілі ўліковы запіс ${ BRAND_NAME } пратэрмінаваны. Звяжыцеся з нашай службай падтрымкі, каб вырашыць гэту праблему."
       ],
-      "The name and icon will be visible to your users while they are signed in.": [
-        "Гэта імя і значок убачаць вашы карыстальнікі пры ўваходзе ў сістэму."
-      ],
       "The name will be visible to your users while they are signed in.": [
         "Гэта імя ўбачаць вашы карыстальнікі, калі яны ўвойдуць у сістэму."
       ],
@@ -8162,8 +8151,8 @@
       "We just sent you a new link.": [
         "Мы адправілі вам новую спасылку."
       ],
-      "We monitor the dark web for instances where your personal information (such as an email address or password used on a third-party site) is leaked or compromised. ${ dataBreachLink }": [
-        "Мы назіраем за цёмнай сеткай на прадмет уцечкі або кампраметацыі вашых асабістых звестак (напрыклад, адрас электроннай пошты або пароль, які выкарыстоўваецца на староннім сайце). ${ dataBreachLink }"
+      "We monitor the dark web for instances where your personal information (such as an email address or password used on a third-party site) is leaked or compromised.": [
+        "Мы назіраем за цёмнай сеткай на прадмет уцечкі або кампраметацыі вашых асабістых звестак (напрыклад, адрас электроннай пошты або пароль, які выкарыстоўваецца на староннім сайце)."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Нам неабходна аўтэнтыфікаваць спосаб плацяжу з дапамогай вашага банка."
@@ -9103,9 +9092,6 @@
       ],
       "Awarded": [
         "Узнагароджаны"
-      ],
-      "Beta": [
-        "Бэта"
       ],
       "Billing address": [
         "Адрас для аплаты"
@@ -12110,17 +12096,20 @@
       "Avoid overly compressed images.": [
         "Пазбягайце занадта сціснутых відарысаў."
       ],
-      "Ensure your icon has padding space around it.": [
-        "Пераканайцеся, што вакол вашага значка ёсць свабодная прастора."
+      "Ensure your logo has padding space around it.": [
+        "Пераканайцеся, што вакол вашага лагатыпа ёсць свабодная прастора."
       ],
       "Opt for a PNG image that is a 128x128 pixels for clarity.": [
         "Для нагляднасці выберыце відарыс PNG з раздзяляльнасцю 128x128 пікселяў."
       ],
-      "Tips on choosing a good icon": [
-        "Парады па выбары добрага значка"
+      "Tips on choosing a good logo": [
+        "Парады па выбары добрага лагатыпа"
       ],
       "Use a graphical icon or image rather than text.": [
         "Выкарыстоўваць графічны значок або малюнак замест тэксту."
+      ],
+      "Use a solid background color.": [
+        "Выкарыстоўвайце колеры аднатоннага фону."
       ]
     },
     "Organization logo upload modal": {
@@ -13070,7 +13059,7 @@
       "The SCIM base URL and token will be deleted.": [
         "SCIM на базе URL-адраса і токен будуць выдалены."
       ],
-      "To re-enable syncing with your identity provider, your need to complete the SCIM integration again.": [
+      "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
         "Для паўторнага ўключэння сінхранізацыі з вашым пастаўшчыком пасведчанняў, вам неабходна прайсці інтэграцыю SCIM яшчэ раз."
       ]
     },
@@ -13104,6 +13093,11 @@
         "URL-адрас злучальніка SCIM, якому ваш агент забеспячэння IdP перасылае даныя SCIM"
       ]
     },
+    "Security Center - Info": {
+      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLinkBreach }": [
+        "Вашы звесткі былі знойдзены прынамсі ў выніку адной уцечкі даных. Уключыце ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці і прыняць адпаведныя дзеянні. ${ learnMoreLinkBreach }"
+      ]
+    },
     "Select file": {
       "Upload CSV file": [
         "Запампаваць файл CSV"
@@ -13118,6 +13112,17 @@
       ],
       "Upload additional files": [
         "Запампаваць дадатковыя файлы"
+      ]
+    },
+    "Select invoice document": {
+      "Credit note": [
+        "Крэдытная нататка"
+      ],
+      "Currency conversion": [
+        "Канвертацыя валюты"
+      ],
+      "Invoice": [
+        "Рахунак"
       ]
     },
     "Select search results": {
@@ -14120,11 +14125,59 @@
       ]
     },
     "Subscription reminder": {
+      "${ BRAND_NAME } was targeted by Russia in one of the most aggressive censorship campaigns in recent memory, and our team fought back.": [
+        "Для Расіі ${ BRAND_NAME } стаў мішэнню. У гэтай краіне разгарнулі адну з самых агрэсіўных кампаній цэнзуры, якія адбываліся за апошні час і наша каманда змагла выстаяць супраць яе."
+      ],
+      "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
+        "Адзіная крыніца даходу ${ BRAND_NAME } - гэта падпіскі карыстальнікаў. Ваша падтрымка дазваляе нам заставацца незалежнымі і прасоўваць нашу місію па прыватнасці ў інтэрнэце, як неад'емнае права кожнага карыстальніка. Мы працягваем падтрымліваць актывістаў і арганізацыі, якія змагаюцца за прыватнасць і свабоду."
+      ],
       "${ dayDiff } day left": [
         "Застаўся ${ dayDiff } дзень",
         "Засталося ${ dayDiff } дні",
         "Засталося ${ dayDiff } дзён",
         "Засталося ${ dayDiff } дзён"
+      ],
+      "${ MAIL_APP_NAME } desktop app": [
+        "Настольная праграма ${ MAIL_APP_NAME }"
+      ],
+      "${ planMaxSpace } total storage": [
+        "Агульны аб'ём сховішча: ${ planMaxSpace }"
+      ],
+      "${ planName } doesn't just provide extra storage. It lets you manage your emails faster, customize your inbox and email addresses, and access the desktop app.": [
+        "Тарыфны план ${ planName } дае не толькі дадатковае сховішча. Ён дазваляе кіраваць вашымі лістамі хутчэй, наладжваць вашу паштовую скрыню, адрасы электроннай пошты і атрымліваць доступ да настольных праграм."
+      ],
+      "10 email addresses": [
+        "10 адрасоў электроннай пошты"
+      ],
+      "A direct contribution to our mission": [
+        "Непасрэдны ўклад у нашу місію"
+      ],
+      "After ${ BRAND_NAME } got blocked in Iran during protests, our customer support team worked to get our VPN app directly into people's hands.": [
+        "Пасля таго, як ${ BRAND_NAME } быў заблакіраваны ў Іране падчас пратэстаў, наша служба падтрымкі кліентаў працавала над тым, каб забяспечыць непасрэдны доступ да праграмы VPN кожнаму карыстальніку."
+      ],
+      "After privacy and free speech were threatened in Hong Kong, we directly supported local civil rights organizations.": [
+        "Пасля таго, як у Ганконгу прыватнасць і свабода слова апынуліся пад пагрозай, мы наўпрост падтрымалі мясцовыя праваабарончыя арганізацыі."
+      ],
+      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **1 GB** for Mail, and **1 GB** for Drive. You will also lose any storage bonuses earned previously.": [
+        "Скасаваўшы сваю падпіску ${ planName }, ваша сховішча будзе паменшана з **${ planMaxSpace }** да **1 ГБ** для Mail і да **1 ГБ** для Drive. Вы таксама згубіце ўсе бонусы сховішча, якія зарабілі да гэтага."
+      ],
+      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **1 GB** for Mail, and **5 GB** for Drive. You will also lose any storage bonuses earned previously.": [
+        "Скасаваўшы сваю падпіску ${ planName }, ваша сховішча будзе паменшана з **${ planMaxSpace }** да **1 ГБ** для Mail і да **5 ГБ** для Drive. Вы таксама згубіце ўсе бонусы сховішча, якія зарабілі да гэтага."
+      ],
+      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **500 MB** for Mail, and **1 GB** for Drive. You will also lose any storage bonuses earned previously.": [
+        "Скасаваўшы сваю падпіску ${ planName }, ваша сховішча будзе паменшана з **${ planMaxSpace }** да **500 МБ** для Mail і да **1 ГБ** для Drive. Вы таксама згубіце ўсе бонусы сховішча, якія зарабілі да гэтага."
+      ],
+      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **500 MB** for Mail, and **5 GB** for Drive. You will also lose any storage bonuses earned previously.": [
+        "Скасаваўшы сваю падпіску ${ planName }, ваша сховішча будзе паменшана з **${ planMaxSpace }** да **500 МБ** для Mail і да **5 ГБ** для Drive. Вы таксама згубіце ўсе бонусы сховішча, якія зарабілі да гэтага."
+      ],
+      "By downgrading your account, you will also lose storage space": [
+        "Вы таксама згубіце прастору ў сховішчы, калі панізіце свой уліковы запіс"
+      ],
+      "By downgrading your account, you will lose access to these important features": [
+        "Вы згубіце доступ да гэтых важных функцый, калі панізіце свой уліковы запіс"
+      ],
+      "Calendar sharing": [
+        "Абагульванне календара"
       ],
       "Cancel subscription": [
         "Скасаваць падпіску"
@@ -14135,14 +14188,92 @@
       "Close": [
         "Закрыць"
       ],
+      "Custom schedule send and snooze times": [
+        "Карыстальніцкае планаванне адпраўкі і адкладанне"
+      ],
+      "Have a question?": [
+        "Засталіся пытанні"
+      ],
+      "Helping activists in Hong Kong": [
+        "Дапамога актывістам у Ганконгу"
+      ],
+      "I still want to cancel": [
+        "Я цвёрда вырашыў скасаваць"
+      ],
+      "If you exceed your free Drive storage quota:": [
+        "Калі вы перавысіце сваю бясплатную квоту сховішча Drive:"
+      ],
+      "If you exceed your free Mail storage quota:": [
+        "Калі вы перавысіце сваю бясплатную квоту сховішча Mail:"
+      ],
+      "Keep ${ planName }": [
+        "Пакінуць ${ planName }"
+      ],
+      "Learn more about our impact": [
+        "Даведацца больш пра наш уплыў"
+      ],
+      "Let us remind you of everything ${ planName } can do": [
+        "Нагадаем усё, што вы можаце рабіць з тарыфным планам ${ planName }"
+      ],
+      "Our fight against censorship in Russia": [
+        "Наша барацьба супраць цэнзуры ў Расіі"
+      ],
+      "Priority support": [
+        "Прыярытэтная падтрымка"
+      ],
+      "Read the story": [
+        "Прачытайце гісторыю"
+      ],
       "Resubscribe": [
         "Аднавіць падпіску"
+      ],
+      "Resubscribe to restore access to ${ planName } features.": [
+        "Паўторна падпішыцеся для аднаўлення доступу да функцый тарыфнага плана ${ planName }."
       ],
       "Subscription canceled": [
         "Падпіска скасавана"
       ],
+      "Unblocking internet access in Iran": [
+        "Разблакіроўка інтэрнэту ў Іране"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Неабмежаваная колькасць папак, метак і фільтраў"
+      ],
+      "Watch the interview": [
+        "Глядзець інтэрв'ю"
+      ],
       "When you cancel, you will lose access to": [
         "Калі вы скасуеце, то страціце доступ да"
+      ],
+      "Yearly free storage bonuses": [
+        "Штогадовы бонус бясплатнага сховішча"
+      ],
+      "You **won't be able to add any new files**": [
+        "Вы **больш не зможаце дадаць ніякія новыя файлы**"
+      ],
+      "You **won't be able to backup photos** from your devices": [
+        "Вы **больш не зможаце рэзерваваць фатаграфіі** з вашых прылад"
+      ],
+      "You **won't be able to send emails** with attachments": [
+        "Вы больш **не зможаце адпраўляць лісты** з далучэннямі"
+      ],
+      "You still have ${ expiryDate } on your ${ planName } plan. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling.": [
+        "У вас яшчэ ${ expiryDate } на вашым тарыфным плане ${ planName }. Мы дададзім крэдыты за час, які застаўся на вашым уліковым запісе ${ BRAND_NAME }. Пераканайцеся, што вы не перавысілі абмежаванні бясплатнага тарыфнага плана перад скасаваннем."
+      ],
+      "Your **calendar will be frozen**": [
+        "Ваш **каляндар будзе заблакіраваны**"
+      ],
+      "Your devices will **stop syncing**": [
+        "Вашы прылады **больш не будуць сінхранізавацца**"
+      ],
+      "Your inbox will **stop receiving new emails**": [
+        "Вы больш **не зможаце атрымліваць новыя лісты** ў сваю паштовую скрыню"
+      ],
+      "Your own custom email domain": [
+        "Ваш уласны карыстальніцкі дамен электроннай пошты"
+      ],
+      "Your own short @pm.me email alias": [
+        "Кароткі псеўданім электроннай пошты @pm.me"
       ]
     },
     "Subscription renewal state": {
@@ -15113,15 +15244,6 @@
       "Folders and labels": [
         "Папкі і меткі"
       ],
-      "For Linux": [
-        "Для Linux"
-      ],
-      "For macOS": [
-        "Для macOS"
-      ],
-      "For Windows": [
-        "Для Windows"
-      ],
       "Forward and auto-reply": [
         "Перасылка і аўтаматычны адказ"
       ],
@@ -15161,8 +15283,8 @@
       "How does it work?": [
         "Як гэта працуе?"
       ],
-      "How to choose a good icon": [
-        "Як выбраць добры значок"
+      "How to choose a good logo": [
+        "Як выбраць добры лагатып"
       ],
       "How to refer a friend and get credits": [
         "Як запрасіць сяброў і атрымаць за гэта крэдыты"
@@ -15644,6 +15766,9 @@
       "You have no resolved alerts": [
         "У вас няма вырашаных папярэджанняў"
       ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Ваш бясплатны выпрабавальны перыяд для тарыфнага плана ${ planName } завершыцца ${ textDate }"
+      ],
       "Your calendar link": [
         "Ваша спасылка на каляндар"
       ],
@@ -15652,9 +15777,6 @@
       ],
       "Your exposed information": [
         "Вашы скампраметаваныя звесткі"
-      ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "Ваш бясплатны выпрабавальны перыяд Mail Plus завершыцца ${ textDate }"
       ],
       "Your plan": [
         "Ваш тарыфны план"
