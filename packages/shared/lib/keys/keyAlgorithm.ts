@@ -1,13 +1,25 @@
-import { AlgorithmInfo } from '@proton/crypto';
-import capitalize from '@proton/utils/capitalize';
+import type { AlgorithmInfo } from '@proton/crypto';
 import unique from '@proton/utils/unique';
 
 import { KeyGenConfig } from '../interfaces';
 
-const ECC_ALGS: Set<AlgorithmInfo['algorithm']> = new Set(['ecdh', 'ecdsa', 'eddsa']);
-
-export const isRSA = (algorithmName: AlgorithmInfo['algorithm']) => algorithmName.toLowerCase().startsWith('rsa');
-export const isECC = (algorithmName: AlgorithmInfo['algorithm']) => ECC_ALGS.has(algorithmName);
+const formatCurveName = (curve: AlgorithmInfo['curve']) => {
+    switch (curve) {
+        case 'curve25519Legacy':
+        case 'ed25519Legacy':
+            return 'Curve25519';
+        case 'nistP256':
+        case 'nistP384':
+        case 'nistP521':
+            return curve.replace('nist', 'NIST ');
+        case 'brainpoolP256r1':
+        case 'brainpoolP384r1':
+        case 'brainpoolP512r1':
+            return curve.replace('brainpool', 'Brainpool ');
+        default:
+            return curve;
+    }
+};
 
 export const getFormattedAlgorithmName = ({ algorithm, bits, curve }: AlgorithmInfo) => {
     switch (algorithm) {
@@ -19,13 +31,16 @@ export const getFormattedAlgorithmName = ({ algorithm, bits, curve }: AlgorithmI
         case 'rsaEncryptSign':
         case 'rsaSign':
             return `RSA (${bits})`;
-        case 'eddsa': // soon 'eddsaLegacy'
+        case 'eddsaLegacy':
         case 'ecdsa':
         case 'ecdh':
-            return `ECC (${capitalize(curve === 'ed25519' ? 'curve25519' : curve)})`;
+            return `ECC (${formatCurveName(curve)})`;
         case 'ed25519':
         case 'x25519':
             return `ECC (Curve25519, new format)`;
+        case 'ed448':
+        case 'x448':
+            return `ECC (Curve448, new format)`;
         default:
             return algorithm.toUpperCase(); // should never get here
     }
@@ -47,14 +62,22 @@ export const getFormattedAlgorithmNames = (algorithmInfos: AlgorithmInfo[] = [])
  */
 export const getAlgorithmExists = (algorithmInfos: AlgorithmInfo[] = [], keyGenConfig: KeyGenConfig) => {
     return algorithmInfos.some(({ algorithm, curve, bits }) => {
-        if (isECC(algorithm)) {
-            return curve === keyGenConfig.curve;
+        switch (algorithm) {
+            case 'rsaEncrypt':
+            case 'rsaEncryptSign':
+            case 'rsaSign':
+                return bits === keyGenConfig.rsaBits;
+            case 'eddsaLegacy':
+            case 'ecdsa':
+            case 'ecdh':
+                return curve === keyGenConfig.curve;
+            case 'ed25519':
+            case 'x25519':
+            case 'ed448':
+            case 'x448':
+                return false; // key generation currently unsupported
+            default:
+                return false;
         }
-
-        if (isRSA(algorithm)) {
-            return bits === keyGenConfig.rsaBits;
-        }
-
-        return false;
     });
 };

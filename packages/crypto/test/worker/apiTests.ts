@@ -1,6 +1,6 @@
 import { use as chaiUse, expect } from 'chai';
 import chaiAsPromised from 'chai-as-promised';
-import { generateKey, getSHA256Fingerprints, reformatKey } from 'pmcrypto';
+import { generateKey, getSHA256Fingerprints, reformatKey } from 'pmcrypto-v6-canary';
 import {
     CompressedDataPacket,
     SymEncryptedIntegrityProtectedDataPacket,
@@ -11,7 +11,7 @@ import {
     readMessage as openpgp_readMessage,
     readPrivateKey as openpgp_readPrivateKey,
     revokeKey as openpgp_revokeKey,
-} from 'pmcrypto/lib/openpgp';
+} from 'pmcrypto-v6-canary/lib/openpgp';
 
 import { ARGON2_PARAMS, CryptoApiInterface, S2kTypeForConfig, SessionKey, VERIFICATION_STATUS } from '../../lib';
 import {
@@ -777,11 +777,11 @@ Z3SSOseslp6+4nnQ3zOqnisO
         const keyReference = await CryptoApiImplementation.importPublicKey({
             armoredKey: keyWithP256AndCurve25519Subkeys,
         });
-        expect(keyReference.getAlgorithmInfo()).to.deep.equal({ algorithm: 'ecdsa', curve: 'p256' });
-        expect(keyReference.subkeys[0].getAlgorithmInfo()).to.deep.equal({ algorithm: 'ecdh', curve: 'p256' });
+        expect(keyReference.getAlgorithmInfo()).to.deep.equal({ algorithm: 'ecdsa', curve: 'nistP256' });
+        expect(keyReference.subkeys[0].getAlgorithmInfo()).to.deep.equal({ algorithm: 'ecdh', curve: 'nistP256' });
         expect(keyReference.subkeys[1].getAlgorithmInfo()).to.deep.equal({
             algorithm: 'ecdh',
-            curve: 'curve25519',
+            curve: 'curve25519Legacy',
         });
     });
 
@@ -1415,19 +1415,23 @@ pD1DtUiJfTUyCKgA/jQvs7QVxXk4ixfK1f3EvD02I1whktPixZy1B0iGmrAG
         });
 
         it('compatibility - rejects importing a public key using the new curve25519 format', async () => {
+            const expectedError = v6Canary
+                ? /The key algorithm is currently not supported/ // TODO error message to be updated next pmcrypto release
+                : /The key algorithm ed25519 is currently not supported/;
             // import should work without compatibility checks
             const importedKeyRef = await CryptoApiImplementation.importPublicKey({
                 armoredKey: v4KeyNewCurve25519Format,
                 checkCompatibility: false,
             });
             expect(importedKeyRef.isPrivate()).to.be.false;
+            expect(importedKeyRef._getCompatibilityError()?.message).to.match(expectedError);
 
             await expect(
                 CryptoApiImplementation.importPublicKey({
                     armoredKey: v4KeyNewCurve25519Format,
                     checkCompatibility: true,
                 })
-            ).to.be.rejectedWith(/key algorithm is currently not supported./);
+            ).to.be.rejectedWith(expectedError);
         });
 
         it('compatibility - rejects importing a v6 public key', async () => {
@@ -1439,6 +1443,9 @@ pD1DtUiJfTUyCKgA/jQvs7QVxXk4ixfK1f3EvD02I1whktPixZy1B0iGmrAG
                     checkCompatibility: false,
                 });
                 expect(importedKeyRef.isPrivate()).to.be.false;
+                expect(importedKeyRef._getCompatibilityError()?.message).to.match(
+                    /Version 6 keys are currently not supported/
+                );
 
                 await expect(
                     CryptoApiImplementation.importPublicKey({ armoredKey: v6KeyCurve25519, checkCompatibility: true })
