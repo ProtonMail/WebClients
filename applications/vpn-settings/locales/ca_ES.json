@@ -143,6 +143,9 @@
       "Delete Gateway": [
         "Elimina la passarel·la"
       ],
+      "Delete logo": [
+        "Elimina el logo"
+      ],
       "Delete user": [
         "Elimina un usuari"
       ],
@@ -284,6 +287,9 @@
       "Invite user": [
         "Convida l'usuari"
       ],
+      "Keep logo": [
+        "Manté el logo"
+      ],
       "Keep my Plus subscription": [
         "Mantén la meva subscripció Plus"
       ],
@@ -371,6 +377,9 @@
       "Report a problem": [
         "Notifica un problema"
       ],
+      "Request a call": [
+        "Sol·licitar una trucada"
+      ],
       "Request a feature": [
         "Demana una nova característica"
       ],
@@ -430,6 +439,9 @@
       ],
       "Select country": [
         "Seleccioneu el país"
+      ],
+      "select file": [
+        "seleccionar un fitxer"
       ],
       "Select file": [
         "Selecciona un fitxer"
@@ -523,6 +535,9 @@
       ],
       "Upload": [
         "Carrega"
+      ],
+      "Upload logo": [
+        "Carrega el logo"
       ],
       "Use ${ label } theme": [
         "Utilitzar el tema ${ label }"
@@ -932,6 +947,9 @@
       ],
       "Continue using ${ planTitle }": [
         "Continua utilitzant ${ planTitle }"
+      ],
+      "Continue your subscription": [
+        "Continuï amb la seva subscripció"
       ]
     },
     "Checkout row": {
@@ -2723,6 +2741,11 @@
         "Nom d'usuari"
       ]
     },
+    "Headline": {
+      "Contact us": [
+        "Contacteu amb nosaltres"
+      ]
+    },
     "Human verification method": {
       "Email": [
         "Correu electrònic"
@@ -3192,6 +3215,9 @@
       ],
       "Loading ${ appName }": [
         "Carregant ${ appName }"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "S'està carregant el calendari, si us plau, esperi's. Se'l redirigirà a la nostra plataforma de programació Calendly en una pestanya nova."
       ],
       "Loading preview": [
         "S'està carregant la previsualització"
@@ -3784,6 +3810,12 @@
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Podeu utilitzar les credencials següents per connectar-vos a un servidor ${ VPN_APP_NAME } utilitzant una aplicació VPN de codi obert de tercers, com ara Tunnelblick per a macOS o OpenVPN per a GNU/Linux."
       ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "Té una subscripció de prova de ${ planTitle }. Si vol continuar amb la seva subscripció després del període de prova, afegeixi un mètode de pagament."
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "Té una subscripció de prova de ${ planTitle }. No es requereix cap pagament en aquest moment. La seva subscripció es renovarà automàticament al final del període de prova."
+      ],
       "You have no invoices.": [
         "No teniu cap factura."
       ],
@@ -3870,6 +3902,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "La vostra subscripció és gestionada per Mozilla. Contacteu amb el suport de Mozilla."
+      ],
+      "Zoom meeting": [
+        "reunió Zoom"
       ]
     },
     "Info for cash payment method": {
@@ -4569,7 +4604,7 @@
         "El seu emmagatzematge està ple. Per enviar o rebre correus electrònics, alliberi espai o ${ cta }."
       ],
       "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
-        "El seu emmagatzematge està ple. Per penjar o sincronitzar fitxers, alliberi espai o ${ cta }."
+        "El vostre emmagatzematge està ple. Per carregar o sincronitzar fitxers, allibereu espai o ${ cta }."
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "La seva subscripció ha finalitzat. ${ cta } i per evitar la pèrdua de dades."
@@ -4591,10 +4626,10 @@
         "10 adreces de correu electrònic"
       ],
       "Auto-delete Spam and Trash": [
-        "Suprimeix automàticament la brossa i la paperera"
+        "Elimina automàticament el correu brossa i la paperera"
       ],
       "Custom schedule send and snooze times": [
-        "Horaris personalitzats d'enviament i posposa"
+        "Personalització de l'hora d'enviament i del temps de posposició"
       ],
       "Support for 1 custom email domain": [
         "Suport per a 1 domini de correu personalitzat"
@@ -4605,7 +4640,7 @@
     },
     "mailtrial2024: Footer": {
       "Renews at ${ renewablePrice }, cancel anytime": [
-        "Renovacions a ${ renewablePrice }, cancel·leu en qualsevol moment"
+        "Es renova per ${ renewablePrice } i ho podeu cancel·lar en qualsevol moment"
       ]
     },
     "mailtrial2024: Info": {
@@ -5830,6 +5865,9 @@
       "MM/YY": [
         "MM/AA"
       ],
+      "Processing payment": [
+        "S'està processant el pagament."
+      ],
       "Timeout exceeded": [
         "S'ha superat el temps d'espera."
       ]
@@ -5924,7 +5962,7 @@
         "Seleccioneu un motiu"
       ],
       "Select state": [
-        "Seleccioni l'estat"
+        "Seleccioneu l'estat"
       ]
     },
     "plan customizer, ips": {
@@ -6053,13 +6091,40 @@
       "Configure SCIM": [
         "Configura SCIM"
       ],
+      "Disable SCIM": [
+        "Desactiva SCIM"
+      ],
       "Generate token": [
         "Genera un token"
+      ]
+    },
+    "scim: Label": {
+      "SCIM base URL": [
+        "URL base de SCIM"
+      ],
+      "SCIM token": [
+        "Token SCIM"
+      ]
+    },
+    "scim: Title": {
+      "Disable SCIM integration?": [
+        "Voleu desactivar la integració SCIM?"
       ]
     },
     "Select file": {
       "Upload CSV file": [
         "Carrega un fitxer CSV"
+      ]
+    },
+    "Select invoice document": {
+      "Credit note": [
+        "Nota de crèdit"
+      ],
+      "Currency conversion": [
+        "Conversió de moneda"
+      ],
+      "Invoice": [
+        "Factura"
       ]
     },
     "Select search results": {
@@ -6614,7 +6679,7 @@
         "Per a tots els serveis de ${ BRAND_NAME }"
       ],
       "To send or receive emails, free up space or ${ upgrade }": [
-        "Per enviar o rebre correus electrònics, allibereu espai o ${ upgrade }"
+        "Per a enviar o rebre correus electrònics, allibereu espai o ${ upgrade }"
       ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "Per a carregar o sincronitzar fitxers, allibereu espai o ${ upgrade }"
@@ -6629,13 +6694,13 @@
         "El vostre ${ appStorage } és ple."
       ],
       "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
-        "L'${ storage } és ${ percentage }% ple. ${ cta }."
+        "L'${ storage } és ple al ${ percentage }%. ${ cta }."
       ],
       "Your ${ storage } is full. ${ cta }.": [
         "L'${ storage } és ple. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
-        "L'emmagatzematge és ${ percentage }% ple. ${ cta }."
+        "L'emmagatzematge és ple al ${ percentage }%. ${ cta }."
       ],
       "Your storage is full": [
         "L'emmagatzematge és ple."
@@ -7219,6 +7284,9 @@
       "Delete address permanently?": [
         "Vol eliminar l'adreça permanentment?"
       ],
+      "Delete organization logo?": [
+        "Voleu eliminar el logo de l'organització?"
+      ],
       "Delete the server (you will still be able to recover it for ${ days } day)": [
         "Elimina el servidor (encara podreu recuperar-lo durant ${ days } dia)",
         "Elimina el servidor (encara podreu recuperar-lo durant ${ days } dies)"
@@ -7535,9 +7603,6 @@
       ],
       "Your current plan": [
         "El vostre pla actual"
-      ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "La prova gratuïta de Mail Plus finalitza el ${ textDate }"
       ],
       "Your plan": [
         "El vostre pla"

@@ -374,6 +374,9 @@
       "Report a problem": [
         "Raportare problemă"
       ],
+      "Request a call": [
+        "Solicitați un apel"
+      ],
       "Request a feature": [
         "Solicitare funcție"
       ],
@@ -962,6 +965,9 @@
       ],
       "Continue using ${ planTitle }": [
         "Continuare utilizare ${ planTitle }"
+      ],
+      "Continue your subscription": [
+        "Păstrare abonament"
       ]
     },
     "Checkout row": {
@@ -3349,6 +3355,9 @@
       "Loading ${ appName }": [
         "Se încarcă ${ appName }"
       ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Calendarul se încarcă, așteptați. Pagina se va redirecționa către platforma noastră de programări Calendly într-o filă nouă."
+      ],
       "Loading preview": [
         "Se încarcă previzualizarea"
       ],
@@ -4029,6 +4038,12 @@
         "Aveți ${ availableCount } server dedicat disponibil.",
         "Aveți ${ availableCount } servere dedicate disponibile.",
         "Aveți ${ availableCount } de servere dedicate disponibile."
+      ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "Aveți un abonament ${ planTitle } de probare. Dacă doriți să vă continuați abonamentul după perioada de probare, adăugați o metodă de plată."
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "Aveți un abonament ${ planTitle } de probare. Nu este necesară nici o plată în acest moment. Abonamentul se va reînnoi automat la sfârșitul perioadei de probare."
       ],
       "You have no invoices.": [
         "Nu aveți facturi."
@@ -6443,6 +6458,11 @@
         "Încărcați un fișier CSV"
       ]
     },
+    "Select invoice document": {
+      "Currency conversion": [
+        "Conversie valutară"
+      ]
+    },
     "Select search results": {
       "No results found": [
         "Nu s-au găsit rezultate"
@@ -8020,9 +8040,6 @@
       ],
       "Your current plan": [
         "Planul curent"
-      ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "Perioada de încercare pentru Mail Plus se încheie la ${ textDate } "
       ],
       "Your plan": [
         "Plan actual"

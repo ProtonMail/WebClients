@@ -548,8 +548,8 @@
       "Upload": [
         "Importer"
       ],
-      "Upload icon": [
-        "Importer une icône"
+      "Upload logo": [
+        "Importer le logo"
       ],
       "Use ${ label } theme": [
         "Utiliser le thème ${ label }"
@@ -2969,6 +2969,9 @@
         "Ajouter un serveur (${ availableAddedCount } disponible)",
         "Ajouter un serveur (${ availableAddedCount } disponibles)"
       ],
+      "Add your name and logo to create a more personalized experience for your organization.": [
+        "Ajoutez votre nom et votre logo pour créer une expérience plus personnalisée pour votre organisation."
+      ],
       "Adding ${ addedServerCount } gateway server": [
         "Ajout de ${ addedServerCount } serveur de Passerelle",
         "Ajout de ${ addedServerCount } serveurs de Passerelle"
@@ -3736,9 +3739,6 @@
       ],
       "The format of your CSV file is incorrect.": [
         "Le format de votre fichier CSV n'est pas correct."
-      ],
-      "The name and icon will be visible to your users while they are signed in.": [
-        "Vos utilisateurs pourront voir le nom et l'icône lorsqu'ils seront connectés."
       ],
       "The name will be visible to your users while they are signed in.": [
         "Le nom sera visible par vos utilisateurs quand ils seront connectés."
@@ -5997,17 +5997,20 @@
       "Avoid overly compressed images.": [
         "Évitez les images trop compressées."
       ],
-      "Ensure your icon has padding space around it.": [
-        "Assurez-vous que votre icône soit entourée d'un espace de remplissage."
+      "Ensure your logo has padding space around it.": [
+        "Assurez-vous que votre logo soit entouré d'un espace de remplissage."
       ],
       "Opt for a PNG image that is a 128x128 pixels for clarity.": [
         "Optez pour une image PNG de 128 x 128 pixels pour plus de clarté."
       ],
-      "Tips on choosing a good icon": [
-        "Conseils pour choisir une bonne icône"
+      "Tips on choosing a good logo": [
+        "Conseils pour choisir un bon logo"
       ],
       "Use a graphical icon or image rather than text.": [
         "Utilisez une image ou une icône graphique plutôt que du texte."
+      ],
+      "Use a solid background color.": [
+        "Utilisez une couleur d'arrière-plan unie."
       ]
     },
     "Organization logo upload modal": {
@@ -6538,14 +6541,11 @@
       ],
       "The SCIM base URL and token will be deleted.": [
         "Le jeton et l'URL de base du SCIM seront supprimés."
-      ],
-      "To re-enable syncing with your identity provider, your need to complete the SCIM integration again.": [
-        "Pour réactiver la synchronisation avec votre fournisseur d'identité, vous devez finaliser à nouveau l'intégration SCIM."
       ]
     },
     "scim: Label": {
       "SCIM base URL": [
-        "URL de bas SCIM"
+        "URL de base SCIM"
       ],
       "SCIM base URL (or tenant URL)": [
         "URL de base SCIM (ou URL locataire)"
@@ -6576,6 +6576,17 @@
     "Select file": {
       "Upload CSV file": [
         "Importer un fichier CSV"
+      ]
+    },
+    "Select invoice document": {
+      "Credit note": [
+        "Avoir"
+      ],
+      "Currency conversion": [
+        "Conversion de devise"
+      ],
+      "Invoice": [
+        "Facture"
       ]
     },
     "Select search results": {
@@ -7884,8 +7895,8 @@
       "Gift code": [
         "Code-cadeau"
       ],
-      "How to choose a good icon": [
-        "Comment choisir une bonne icône"
+      "How to choose a good logo": [
+        "Comment choisir un bon logo"
       ],
       "Human verification": [
         "Vérification que vous n'êtes pas un robot"
@@ -8122,14 +8133,14 @@
       "WireGuard configuration": [
         "Configuration WireGuard"
       ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Votre essai gratuit ${ planName } se termine le ${ textDate }."
+      ],
       "Your changes are not synced yet": [
         "Vos modifications ne sont pas encore synchronisées."
       ],
       "Your current plan": [
         "Votre abonnement actuel"
-      ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "Votre essai gratuit Mail Plus se termine le ${ textDate }."
       ],
       "Your plan": [
         "Votre abonnement"

@@ -143,6 +143,9 @@
       "Delete Gateway": [
         "Oletusyhdyskäytävä"
       ],
+      "Delete logo": [
+        "Poista logo"
+      ],
       "Delete user": [
         "Poista käyttäjä"
       ],
@@ -283,6 +286,9 @@
       ],
       "Invite user": [
         "Kutsu käyttäjä"
+      ],
+      "Keep logo": [
+        "Säilytä logo"
       ],
       "Keep my Plus subscription": [
         "Säilytä Plus-tilaukseni"
@@ -440,6 +446,9 @@
       "Select country": [
         "Valitse maa"
       ],
+      "select file": [
+        "valitse tiedosto"
+      ],
       "Select file": [
         "Valitse tiedosto"
       ],
@@ -491,6 +500,9 @@
       "Signing in": [
         "Kirjaudutaan"
       ],
+      "Start live chat": [
+        "Aloita live-keskustelu"
+      ],
       "Stop using single sign-on": [
         "Lopeta kertakirjautumisen käyttö"
       ],
@@ -532,6 +544,12 @@
       ],
       "Upgrade your plan": [
         "Päivitä tilauksesi"
+      ],
+      "Upload": [
+        "Lähetä"
+      ],
+      "Upload logo": [
+        "Lähetä logo"
       ],
       "Use ${ label } theme": [
         "Käytä ${ label }-teemaa"
@@ -1889,6 +1907,9 @@
       ]
     },
     "Delete address prompt": {
+      "Once deleted, this address can't be used again by anyone else.": [
+        "Poiston jälkeen kukaan muu ei voi enää käyttää tätä osoitetta."
+      ],
       "The next active address on your list will be set as the default.": [
         "Seuraava listallasi oleva aktiivinen osoite asetetaan oletusosoitteeksi."
       ],
@@ -2022,6 +2043,12 @@
       "Error connecting to the Bitcoin API.": [
         "Virhe yhdistettäessä Bitcoin API:in."
       ],
+      "Failed to process the logo": [
+        "Logon käsittely epäonnistui"
+      ],
+      "File too large. Your logo must be 30 KB or smaller.": [
+        "Tiedosto on liian suuri. Logotiedoston koko voi olla enintään 30 kt."
+      ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Jos televisiossasi näkyvä aika on umpeutunut, paina siellä olevaa päivityspainiketta ja syötä koodi uudelleen."
       ],
@@ -2033,6 +2060,9 @@
       ],
       "Impossible to rename the gateway": [
         "Yhdyskäytävän uudelleenimeäminen on mahdotonta"
+      ],
+      "Incorrect file type. Upload a file in PNG or JPEG format.": [
+        "Virheellinen tiedostotyyppi. Lähetettävän kuvan tulee olla PNG- tai JPEG-muotoinen."
       ],
       "Incorrect login credentials. Please try again.": [
         "Virheelliset kirjautumistiedot. Yritä uudelleen."
@@ -2069,6 +2099,9 @@
       ],
       "Name does not match": [
         "Nimi ei täsmää"
+      ],
+      "No image selected": [
+        "Kuvaa ei ole valittu"
       ],
       "Not a valid number": [
         "Virheellinen puhelinnumero"
@@ -2121,6 +2154,9 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Hallitaksesi useita käyttäjiä, päivitä yritystilaukseen, joka sisältää enemmän kuin yhden käyttäjän."
       ],
+      "Please upload a square file": [
+        "Lähetettävän kuvan tulee olla neliön muotoinen"
+      ],
       "Please upload an xml file": [
         "Lähetä XML-tiedosto"
       ],
@@ -2147,6 +2183,12 @@
       ],
       "The email addresses do not match": [
         "Sähköpostiosoitteet eivät täsmää"
+      ],
+      "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
+        "Kuva on liian suuri. Enimmäiskoko on ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }."
+      ],
+      "The file is too small, the minimum size is ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }": [
+        "Kuva on liian pieni. Vähimmäiskoko on ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }."
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Lisättävien krediittien vähimmäissumma on ${ price }"
@@ -2791,6 +2833,11 @@
         "Käyttäjätunnus"
       ]
     },
+    "Headline": {
+      "Contact us": [
+        "Ota yhteyttä"
+      ]
+    },
     "Hint": {
       "Add this record to your domain in the control panel of your domain name registrar": [
         "Lisää tämä tietue verkkotunnuksesi DNS-palveluun."
@@ -2921,6 +2968,9 @@
       "Add server (${ availableAddedCount } available)": [
         "Lisää palvelin (${ availableAddedCount } käytettävissä)",
         "Lisää palvelin (${ availableAddedCount } käytettävissä)"
+      ],
+      "Add your name and logo to create a more personalized experience for your organization.": [
+        "Yksilöi organisaatiotasi lisäämällä nimi ja logo."
       ],
       "Adding ${ addedServerCount } gateway server": [
         "Lisätään ${ addedServerCount } yhdyskäytäväpalvelinta",
@@ -3281,6 +3331,12 @@
       "If you wish to combine this account with another one, do NOT delete it.": [
         "Jos haluat yhdistää tämän tilin toiseen tiliin, ÄLÄ poista sitä."
       ],
+      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
+        "Jos kohtaat ongelmia, tarjoamme apua. ${ boldPhoneCall } tai ${ boldZoomMeeting } asiakaspalvelijamme kanssa tai aloita ${ boldLiveChat } saadaksesi tukea tekstiviestitse."
+      ],
+      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists.": [
+        "Jos kohtaat ongelmia, tarjoamme apua. ${ boldPhoneCall } tai ${ boldZoomMeeting } asiakaspalvelijamme kanssa."
+      ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Tärkeää: Varmista, että tallennat palautuskoodisi. Muutoin saatat menettää pääsyn tilillesi pysyvästi, jos menetät todennuslaitteesi."
       ],
@@ -3334,6 +3390,9 @@
       ],
       "Link copied to clipboard": [
         "Linkki kopioitiin leikepöydälle"
+      ],
+      "Live chat": [
+        "live-keskustelu"
       ],
       "Loading": [
         "Ladataan"
@@ -3479,7 +3538,7 @@
         "Huomioithan, ettet voi osoitteen poiston jälkeen lähettää tai vastaanottaa viestejä sitä käyttäen."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "Huomioithan, että painettuasi Vahvista, tilillesi jää ${ creditsRemaining } krediittiä."
+        "Huomioithan, että painettuasi \"Vahvista\", tilillesi jää ${ creditsRemaining } krediittiä."
       ],
       "Please provide an email address in case we need to contact you.": [
         "Syötä sähköpostiosoite siltä varalta, että meidän on otettava sinuun yhteyttä."
@@ -3505,6 +3564,9 @@
       ],
       "Plus or Visionary subscription required": [
         "Edellyttää Plus- tai Visionary-tilausta"
+      ],
+      "Preview": [
+        "Esikatselu"
       ],
       "Preview failed to be loaded": [
         "Esikatselun lataus epäonnistui"
@@ -3535,6 +3597,9 @@
       ],
       "Remember to share the user's sign in details with them.": [
         "Muista jakaa käyttäjälle hänen kirjautumistietonsa."
+      ],
+      "Request a phone call": [
+        "Pyydä puhelinkeskustelua"
       ],
       "Resend verification email": [
         "Lähetä vahvistussähköposti uudelleen"
@@ -4102,6 +4167,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Tilaustasi hallinnoi Mozilla. Ota yhteyttä Mozillan tukeen."
+      ],
+      "Zoom meeting": [
+        "Zoom-tapaamista"
       ]
     },
     "Info for cash payment method": {
@@ -4411,6 +4479,9 @@
       ],
       "Level for NetShield blocker filtering": [
         "NetShield-suodatuksen taso"
+      ],
+      "Logo": [
+        "Logo"
       ],
       "Mailbox password": [
         "Postilaatikon salasana"
@@ -5116,7 +5187,7 @@
         "Saatavilla kaikilla alustoilla"
       ],
       "Calendar sharing": [
-        "Kalenterien jako"
+        "Kalenterien jakaminen"
       ],
       "Catch-all": [
         "Nappaa kaikki"
@@ -5146,10 +5217,10 @@
         "Oma torkutusaika"
       ],
       "Data breach monitoring": [
-        "Tietomurtojen seuranta"
+        "Tietovuotovalvonta"
       ],
       "Data breach monitoring (coming soon)": [
-        "Tietomurtojen seuranta (tulossa pian)"
+        "Tietovuotovalvonta (tulossa pian)"
       ],
       "Dedicated servers and IP": [
         "Kohdistetut palvelimet ja IP-osoitteet"
@@ -5231,7 +5302,7 @@
         "Useita ylläpitäjien rooleja"
       ],
       "No-logs policy": [
-        "Ei lokeja -käytäntö"
+        "Lokivapaa käytäntö"
       ],
       "Organize items with multiple vaults": [
         "Järjestele kohteita useilla holveilla"
@@ -5305,7 +5376,7 @@
         "Aloita itsesi suojaaminen kahdella helpolla vaiheella"
       ],
       "Strict no-logs policy": [
-        "Tiukka lokivastainen käytäntö"
+        "Tiukka lokivapaa käytäntö"
       ],
       "Team management": [
         "Tiimin hallinta"
@@ -5922,6 +5993,43 @@
         "Tilauksesi sisältää enintään ${ humanReadableAvailableSpace } lisätallennustilaa."
       ]
     },
+    "Organization logo upload": {
+      "Avoid overly compressed images.": [
+        "Vältä poikkeuksellisen vahvasti pakattuja kuvia."
+      ],
+      "Ensure your logo has padding space around it.": [
+        "Varmista, että logon ympärillä on vapaata tilaa."
+      ],
+      "Opt for a PNG image that is a 128x128 pixels for clarity.": [
+        "Valitse parasta laatua varten PNG-tiedosto, joka on 128x128 kuvapistettä."
+      ],
+      "Tips on choosing a good logo": [
+        "Vinkkejä hyvän logon valintaan"
+      ],
+      "Use a graphical icon or image rather than text.": [
+        "Käytä tekstin sijaan graafista kuvaketta tai kuvaa."
+      ],
+      "Use a solid background color.": [
+        "Käytä kiinteää taustaväriä."
+      ]
+    },
+    "Organization logo upload modal": {
+      "Drop image file here to upload or": [
+        "Pudota siirrettävä kuvatiedosto tähän tai"
+      ],
+      "File in PNG or JPEG format": [
+        "Kuvatiedosto PNG- tai JPEG-muodossa"
+      ],
+      "File not larger than 30 KB": [
+        "Tiedoston koko voi olla enintään 30 kt"
+      ],
+      "Square image of at least 128 pixels": [
+        "Vähintään 128 kuvapisteen levyinen, neliön muotoinen kuva"
+      ],
+      "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
+        "Ollessaan kirjautuneina verkkosovelluksiimme, käyttäjät näkevät ${ BRAND_NAME }-kuvakkeen tilalla oman logosi."
+      ]
+    },
     "Pass B2B onboarding spotlight": {
       "Go to your vault to manage your passwords, aliases, and more.": [
         "Siirry holviin hallitaksesi salasanojasi, aliaksiasi ja muuta."
@@ -6343,6 +6451,11 @@
         "Puhelinnumeron vahvistus parantaa tilisi suojausta ja mahdollistaa lisää palautusvaihtoehtoja."
       ]
     },
+    "Remove organization logo": {
+      "Users will no longer see your custom logo or organization name.": [
+        "Käyttäjät eivät enää näe omaa logoasi tai organisaation nimeä."
+      ]
+    },
     "Restore administrator panel": {
       "${ n } administrator in your organization need access to the organization key.": [
         "${ n } organisaatiosi ylläpitäjällä on oltava organisaation avaimen käyttöoikeus.",
@@ -6372,9 +6485,72 @@
         "Käyttäjä"
       ]
     },
+    "scim: Action": {
+      "Configure SCIM": [
+        "Määritä SCIM"
+      ],
+      "Disable SCIM": [
+        "Poista SCIM käytöstä"
+      ],
+      "Disable SCIM integration": [
+        "Poista SCIM-integraatio käytöstä"
+      ],
+      "Generate new token": [
+        "Luo uusi tunniste"
+      ],
+      "Generate token": [
+        "Luo tunniste"
+      ]
+    },
+    "scim: Info": {
+      "For security reasons, the token is hidden": [
+        "Tunniste on tietoturvasyistä piilotettu"
+      ]
+    },
+    "scim: Label": {
+      "SCIM base URL": [
+        "SCIM-perus-URL"
+      ],
+      "SCIM base URL (or tenant URL)": [
+        "SCIM-perus-URL (tai palvelun URL)"
+      ],
+      "SCIM token": [
+        "SCIM-tunniste"
+      ]
+    },
+    "scim: Title": {
+      "Disable SCIM integration?": [
+        "Poistetaanko SCIM-integraatio käytöstä?"
+      ],
+      "Generate new SCIM token?": [
+        "Luodaanko uusi SCIM-tunniste?"
+      ],
+      "SCIM automatic provisioning": [
+        "Automaattinen SCIM-määritys"
+      ]
+    },
+    "scim: Tooltip": {
+      "API key of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
+        "Sen SCIM-yhdistäjän API-avain, johon IdP Provisioning -agenttisi ohjaa SCIM-tiedot"
+      ],
+      "URL of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
+        "Sen SCIM-yhdistäjän URL-osoite, johon IdP Provisioning -agenttisi ohjaa SCIM-tiedot"
+      ]
+    },
     "Select file": {
       "Upload CSV file": [
         "Lataa CSV-tiedosto"
+      ]
+    },
+    "Select invoice document": {
+      "Credit note": [
+        "Hyvityslasku"
+      ],
+      "Currency conversion": [
+        "Valuuttamuunnos"
+      ],
+      "Invoice": [
+        "Lasku"
       ]
     },
     "Select search results": {
@@ -7576,6 +7752,9 @@
       "Delete address permanently?": [
         "Poistetaanko osoite pysyvästi?"
       ],
+      "Delete organization logo?": [
+        "Poistetaanko organisaation logo?"
+      ],
       "Delete the server (you will still be able to recover it for ${ days } day)": [
         "Poista palvelin (voit vielä palauttaa sen ${ days } kuluessa)",
         "Poista palvelin (voit vielä palauttaa sen ${ days } kuluessa)"
@@ -7679,6 +7858,9 @@
       ],
       "Gift code": [
         "Lahjakoodi"
+      ],
+      "How to choose a good logo": [
+        "Miten valita hyvä logo"
       ],
       "Human verification": [
         "Ihmisvahvistus"
@@ -7891,6 +8073,9 @@
       "Upload CSV file to create multiple accounts": [
         "Lisää useiden tilien luontiin käytettävä CSV-malli"
       ],
+      "Upload your organization’s logo": [
+        "Lähetä organisaatiosi logo"
+      ],
       "Users": [
         "Käyttäjät"
       ],
@@ -7912,14 +8097,14 @@
       "WireGuard configuration": [
         "WireGuard-määritykset"
       ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "${ planName } -kokeilusi päättyy ${ textDate }"
+      ],
       "Your changes are not synced yet": [
         "Muutoksiasi ei ole vielä synkronoitu"
       ],
       "Your current plan": [
         "Nykyinen tilauksesi"
-      ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "Ilmainen Mail Plus -kokeilusi päättyy ${ textDate }"
       ],
       "Your plan": [
         "Tilauksesi"
@@ -8011,6 +8196,9 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Valittu teema aktivoidaan järjestelmän ollessa \"vaaleassa tilassa\""
+      ],
+      "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
+        "Ollessaan kirjautuneina verkkosovelluksiimme, käyttäjät näkevät ${ BRAND_NAME }-kuvakkeen tilalla oman logosi."
       ],
       "Usually an URL that contains the identity provider's name within": [
         "Yleensä identiteettipalveluntarjoajan nimen sisältävä URL-osoite"
