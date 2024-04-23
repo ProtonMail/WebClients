@@ -277,7 +277,7 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.LOCALE_REQUEST]: { locale: string };
     [WorkerMessageType.LOG_REQUEST]: { logs: string[] };
     [WorkerMessageType.MONITOR_2FAS]: { result: UniqueItem[] };
-    [WorkerMessageType.MONITOR_PASSWORD]: { result: MaybeNull<WasmPasswordScoreResult> };
+    [WorkerMessageType.MONITOR_PASSWORD]: { result: WasmPasswordScoreResult };
     [WorkerMessageType.MONITOR_WEAK_PASSWORDS]: { result: UniqueItem[] };
     [WorkerMessageType.ONBOARDING_CHECK]: { enabled: boolean };
     [WorkerMessageType.ONBOARDING_REQUEST]: { message: MaybeNull<OnboardingMessage> };

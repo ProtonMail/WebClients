@@ -34,7 +34,7 @@ import {
     clientStatusResolved,
     clientUnauthorized,
 } from '@proton/pass/lib/client';
-import { createPassCoreService } from '@proton/pass/lib/core/service';
+import { createPassCoreSyncService } from '@proton/pass/lib/core/sync.service';
 import { exposePassCrypto } from '@proton/pass/lib/crypto';
 import { createPassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
 import { backgroundMessage } from '@proton/pass/lib/extension/message';
@@ -53,7 +53,7 @@ export const createWorkerContext = (config: ProtonConfig) => {
     const api = exposeApi(createApi({ config, threshold: API_CONCURRENCY_TRESHOLD }));
     const authStore = exposeAuthStore(createAuthStore(createStore()));
     const storage = createStorageService();
-    const core = createPassCoreService();
+    const core = createPassCoreSyncService();
 
     exposePassCrypto(createPassCrypto());
 

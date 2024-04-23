@@ -12,12 +12,10 @@ export const useMissing2FAs = (): { data: UniqueItem[]; count: number } => {
     const [data, setData] = useState<UniqueItem[]>([]);
 
     useEffect(() => {
-        requestIdleCallback(() => {
-            (async () => {
-                const missing2FAs = await monitor.checkMissing2FAs();
-                setData(missing2FAs);
-            })().catch(noop);
-        });
+        (async () => {
+            const missing2FAs = await monitor.checkMissing2FAs();
+            setData(missing2FAs);
+        })().catch(noop);
     }, [logins]);
 
     return { data, count: data.length };
