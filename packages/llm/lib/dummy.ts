@@ -7,6 +7,7 @@ import type {
     PromiseReject,
     PromiseResolve,
     RunningAction,
+    ShortenAction,
     WriteFullEmailAction,
 } from './types';
 
@@ -19,7 +20,7 @@ function getRandomNumber(min: number, max: number): number {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-export class DummyWriteFullEmailAction {
+export class DummyWriteFullEmailRunningAction implements RunningAction {
     private running: boolean;
 
     private done: boolean;
@@ -117,6 +118,111 @@ export class DummyWriteFullEmailAction {
     }
 }
 
+// todo deduplicate common code
+export class DummyShortenRunningAction implements RunningAction {
+    private running: boolean;
+
+    private done: boolean;
+
+    private cancelled: boolean;
+
+    private action_: ShortenAction;
+
+    private finishedPromise: Promise<void>;
+
+    private finishedPromiseSignals: { resolve: PromiseResolve; reject: PromiseReject } | undefined;
+
+    constructor(action: ShortenAction, callback: GenerationCallback) {
+        this.running = true;
+        this.done = false;
+        this.cancelled = false;
+        this.action_ = action;
+        this.finishedPromise = new Promise<void>((resolve: PromiseResolve, reject: PromiseReject) => {
+            this.finishedPromiseSignals = { resolve, reject };
+        });
+
+        void this.startGeneration(action, callback);
+    }
+
+    isRunning(): boolean {
+        return this.running;
+    }
+
+    isDone(): boolean {
+        return this.done;
+    }
+
+    isCancelled(): boolean {
+        return this.cancelled;
+    }
+
+    action(): Action {
+        return this.action_;
+    }
+
+    cancel(): boolean {
+        if (!this.running) {
+            return false;
+        }
+        this.running = false;
+        this.cancelled = true;
+        return true;
+    }
+
+    waitForCompletion(): Promise<void> {
+        return this.finishedPromise;
+    }
+
+    private async startGeneration(action: ShortenAction, callback: GenerationCallback) {
+        try {
+            this.running = true;
+            const nWordsInput = action.partToRephase.split(/\W/).length;
+            const nWordsOutput = nWordsInput > 10 ? nWordsInput / 2 : nWordsInput;
+            const words = this.generateRandomSentence(nWordsOutput);
+            let fulltext = '';
+            await delay(5000);
+            for (let i = 0; i < words.length && this.running; i++) {
+                await delay(150);
+                let word = words[i] + ' ';
+                fulltext += word;
+                callback(word, fulltext);
+            }
+            this.done = true;
+            this.running = false;
+        } catch (e) {
+            this.running = false;
+            this.finishedPromiseSignals?.reject();
+            return;
+        }
+        this.finishedPromiseSignals?.resolve();
+    }
+
+    // todo extract to standalone functions
+    private generateRandomSentence(nWords?: number): string[] {
+        if (nWords === undefined) {
+            nWords = getRandomNumber(50, 200);
+        }
+
+        const words = [];
+
+        for (let i = 0; i < nWords; i++) {
+            const word = this.generateRandomWord();
+            words.push(word);
+        }
+
+        return words;
+    }
+
+    private generateRandomWord(): string {
+        const length = getRandomNumber(3, 10);
+        return Array.from({ length }, () => this.getRandomLetter()).join('');
+    }
+
+    private getRandomLetter(): string {
+        return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
+    }
+}
+
 export class DummyLlmModel implements LlmModel {
     async unload(): Promise<void> {
         await delay(1500);
@@ -125,8 +231,10 @@ export class DummyLlmModel implements LlmModel {
     async performAction(action: Action, callback: GenerationCallback): Promise<RunningAction> {
         switch (action.type) {
             case 'writeFullEmail':
-                const run = new DummyWriteFullEmailAction(action, callback);
-                return run;
+                return new DummyWriteFullEmailRunningAction(action, callback);
+            case 'shorten': {
+                return new DummyShortenRunningAction(action, callback);
+            }
             default:
                 throw Error('unimplemented');
         }
