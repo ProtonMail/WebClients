@@ -6,7 +6,7 @@ import { selectLoginItems } from '@proton/pass/store/selectors';
 import type { UniqueItem } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
 
-export const useMissing2FAs = (): { data: UniqueItem[]; count: number } => {
+export const useInsecurePasswords = (): { data: UniqueItem[]; count: number } => {
     const { monitor } = usePassCore();
     const logins = useSelector(selectLoginItems);
     const [data, setData] = useState<UniqueItem[]>([]);
@@ -14,8 +14,8 @@ export const useMissing2FAs = (): { data: UniqueItem[]; count: number } => {
     useEffect(() => {
         requestIdleCallback(() => {
             (async () => {
-                const missing2FAs = await monitor.checkMissing2FAs();
-                setData(missing2FAs);
+                const weakPasswords = await monitor.checkWeakPasswords();
+                setData(weakPasswords);
             })().catch(noop);
         });
     }, [logins]);

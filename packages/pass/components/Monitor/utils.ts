@@ -2,18 +2,18 @@ import { c } from 'ttag';
 
 import type { IconName } from '@proton/components/index';
 import { MAX_VAULT_MEMBERS } from '@proton/pass/constants';
-import type { MonitorSummary } from '@proton/pass/lib/monitor/types';
 import { PROTON_SENTINEL_NAME } from '@proton/shared/lib/constants';
+
+import type { MonitorContextValue } from './MonitorProvider';
 
 export const getMonitorIcon = ({
     enabled,
     breaches,
-    duplicatePasswords,
-    weakPasswords,
+    duplicates,
+    insecure,
     missing2FAs,
-}: MonitorSummary): IconName => {
-    const hasReport = breaches + duplicatePasswords + weakPasswords + missing2FAs > 0;
-
+}: MonitorContextValue): IconName => {
+    const hasReport = breaches.count + duplicates.count + insecure.count + missing2FAs.count > 0;
     if (hasReport) return enabled ? 'pass-shield-monitoring-warning' : 'pass-shield-warning';
     else return enabled ? 'pass-shield-monitoring-ok' : 'pass-shield-ok';
 };

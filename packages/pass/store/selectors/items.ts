@@ -24,6 +24,7 @@ import type {
     ItemType,
     Maybe,
     MaybeNull,
+    SelectedItem,
     UniqueItem,
 } from '@proton/pass/types';
 import { deduplicate } from '@proton/pass/utils/array/duplicate';
@@ -38,6 +39,7 @@ import { parseUrl } from '@proton/pass/utils/url/parser';
 import { unwrapOptimisticState } from '../optimistic/utils/transformers';
 import { withOptimisticItemsByShareId } from '../reducers/items';
 import type { State } from '../types';
+import { selectState } from './utils';
 
 const { asIfNotFailed, asIfNotOptimistic } = withOptimisticItemsByShareId.selectors;
 export const selectByShareId = (state: State) => state.items.byShareId;
@@ -62,6 +64,11 @@ export const selectItems = createSelector([selectByShareId], unwrapOptimisticSta
 export const selectAllItems = createSelector(selectItems, flattenItemsByShareId);
 export const selectAllTrashedItems = createSelector([selectAllItems], (items) => items.filter(isTrashed));
 export const selectPinnedItems = createSelector([selectAllItems], (items) => items.filter(isPinned));
+
+export const selectSelectedItems = (items: SelectedItem[]) =>
+    createSelector(selectState, (state: State): ItemRevision[] =>
+        items.map(({ shareId, itemId }) => state.items.byShareId[shareId][itemId])
+    );
 
 export const selectItemsByShareId = (shareId?: string) =>
     createSelector([selectItems, () => shareId], (items, shareId): ItemRevision[] =>
