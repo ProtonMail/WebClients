@@ -1982,6 +1982,9 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Můžete se také podívat na to, co říká naše ${ statusPageLink }"
       ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } je vaše uživatelské jméno. Pro vytvoření ${ emailAddress } jděte prosím do Nastavení > Zprávy a psaní > Krátká doména (pm.me)"
+      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Celé úložiště již bylo přiděleno. Zmenšete prosím přidělený prostor ostatním uživatelům."
       ],
@@ -2822,6 +2825,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikace ${ appName } potřebuje Váš souhlas, aby mohla ${ enableDesktopNotifications }."
       ],
+      "${ boldSSOUserInformation } and you will have to create them manually to add them back to your organization": [
+        "${ boldSSOUserInformation } a budete je muset ručně vytvořit, abyste je mohli přidat zpět do svojí organizace"
+      ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Pokud budete pokračovat, ztratíte přístup ke všem aktuálním zašifrovaným datům na svém účtu."
       ],
@@ -3062,11 +3068,23 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klikněte na \"Požádat o nový kód\" pro zaslání nového ověřovacího kódu na ${ strong }. Pokud je toto telefonní číslo nesprávné, klepněte na tlačítko \"Upravit\" pro jeho opravu."
       ],
+      "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
+        "Nastavte pro svoji organizaci ověřování pomocí SAML prostřednictvím poskytovatele identity (IdP). Tím se SAML aktivuje pro vaši celou organizaci."
+      ],
+      "Configure SAML authentication for your organization through an identity provider like Okta, Microsoft Azure, or Google Identity Platform. This will enable SAML for the whole organization.": [
+        "Nastavte pro svoji organizaci ověřování pomocí SAML prostřednictvím poskytovatele identity jako Okta, Microsoft Azure, nebo Google Identity Platform. Tento krok aktivuje SAML pro celou organizaci."
+      ],
       "Continue with ${ freeName }": [
         "Pokračovat jako ${ freeName }"
       ],
       "Copied to clipboard": [
         "Zkopírováno do schránky"
+      ],
+      "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
+        "Zkopírujte a vložte tuto URL do ACS (Assertion Consumer Service) pole u vašeho poskytovatele identity"
+      ],
+      "Copy and paste this URL into the entity ID field of your identity provider": [
+        "Zkopírujte a vložte tuto URL do pole ID subjektu u vašeho poskytovatele identity"
       ],
       "Copy the suggested password to clipboard": [
         "Zkopírujte navržené heslo do schránky"
@@ -3176,6 +3194,12 @@
       "Emailing preference saved": [
         "Nastavení e-mailu uloženo"
       ],
+      "Enable single sign-on to keep your organization safe": [
+        "Aktivujte jednotné přihlášení (SSO), aby byla vaše organizace v bezpečí"
+      ],
+      "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
+        "URL adresa endpointu, kterou jste dostali od vašeho poskytovatele identity (např. https://idp.example.com/sso/saml)."
+      ],
       "Enhance your network security": [
         "Zlepšení zabezpečení sítě"
       ],
@@ -3245,8 +3269,14 @@
       "Get ${ upsellPlanName }": [
         "Získat ${ upsellPlanName }"
       ],
+      "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
+        "Navštivte vašeho poskytovatele identity, stáhněte SAML metadata pro ${ appName } a importujte je sem."
+      ],
       "here": [
         "zde"
+      ],
+      "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
+        "Veřejný klíč poskytovatele identity pro podepisování ověření. Váš poskytovatel identity by měl nabízet možnost zkopírovat nebo stáhnout hash certifikátu. Vložte tento hash certifikátu do textového pole."
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Pokud některý ze správců změnil heslo, budete ho muset požádat o nové heslo organizace."
@@ -3329,6 +3359,9 @@
       "Lean more about gateways": [
         "Více informací o branách"
       ],
+      "Lean more about single sign-on": [
+        "Dozvědět se víc o jednotném přihlášení (SSO)"
+      ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Naučte se, jak se přihlásit ke službě ${ VPN_APP_NAME } pomocí VPN aplikací třetích stran."
       ],
@@ -3394,6 +3427,9 @@
       ],
       "No results found": [
         "Nebyly nalezeny žádné výsledky"
+      ],
+      "Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization": [
+        "Uživatelé, kteří nejsou součástí systému jednotného přihlášení SSO (tj. jsou vytvoření ručně a nikoliv přes poskytovatele identity) se do vaší organizace mohou nadále přihlásit."
       ],
       "Number of dedicated servers in the organization": [
         "Počet dedikovaných serverů v organizaci"
@@ -3611,6 +3647,9 @@
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Určete doménu, která se smí ověřovat pomocí SAML SSO."
       ],
+      "SSO users (provided by your Identity Provider) will be deleted": [
+        "Uživatelé SSO (vytvoření vaším poskytovatele identity) budou smazáni"
+      ],
       "Step ${ step }": [
         "Krok ${ step }",
         "Krok ${ step }",
@@ -3660,7 +3699,7 @@
         "Děkujeme za podporu našeho poslání budovat lepší internet, kde jsou soukromí a svoboda na prvním místě."
       ],
       "The credentials from your Identity Provider will be deleted.": [
-        "Přihlašovací údaje od vašeho proskytovatele identity budou smazány."
+        "Přihlašovací údaje od vašeho poskytovatele identity budou smazány."
       ],
       "The following address is invalid.": [
         "Následující adresa je neplatná.",
@@ -3755,6 +3794,9 @@
       "to ${ product } Business": [
         "do ${ product } Business"
       ],
+      "To allow the domain ${ boldDomainName } to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
+        "Aby doména ${ boldDomainName } mohla používat SAML SSO, je nutné ověřit, že jste jejím vlastníkem. Provedete to přidáním následujícího DNS TXT záznamu k vaší doméně u vašeho poskytovatele DNS."
+      ],
       "To cancel your subscription, please reach out to us.": [
         "Chcete-li zrušit předplatné, kontaktujte nás."
       ],
@@ -3814,6 +3856,9 @@
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Bohužel neexistuje žádná metoda obnovení uložená pro tento účet."
+      ],
+      "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
+        "Unikátní ID vygenerované vyším poskytovatelem identity. Obvykle má podobu URL adresy, která obsahuje jméno vašeho poskytovatele identity (např. https://idp.example.com/XXXXX)."
       ],
       "Unsaved changes": [
         "Neuložené změny"
@@ -4253,6 +4298,9 @@
       "Amount due": [
         "Částka k zaplacení"
       ],
+      "Assertion Consumer Service URL": [
+        "URL adresa služby Assertion Consumer Service"
+      ],
       "Attach screenshot(s)": [
         "Přiložit sním(ek/ky) obrazovky"
       ],
@@ -4544,6 +4592,9 @@
       "Recovery phrase": [
         "Obnovovací fráze"
       ],
+      "Reply (ACS) URL": [
+        "Odpovědní (ASC) URL adresa"
+      ],
       "Require 2FA for administrators": [
         "Vyžaduje dvoufázové oveření pro správce"
       ],
@@ -4560,7 +4611,7 @@
         "Vyberte tarif"
       ],
       "Single sign-on entity ID": [
-        "ID jednotného přihlášení"
+        "ID subjektu jednotného přihlášení"
       ],
       "Single sign-on URL": [
         "URL pro jednotné přihlášení"
@@ -6086,7 +6137,7 @@
     },
     "passwordless": {
       "All administrators will get access to the key.": [
-        "Všichni administrátoři dostanou přístup k tomuto klíči."
+        "Ke klíči získají přístup všichni správci."
       ],
       "Are you sure you want to change your organization key?": [
         "Jste si jisti, že chcete změnit svůj klíč organizace?"
@@ -6375,6 +6426,11 @@
     "Select file": {
       "Upload CSV file": [
         "Nahrát CSV soubor"
+      ]
+    },
+    "Select invoice document": {
+      "Currency conversion": [
+        "Převod měny"
       ]
     },
     "Select search results": {
@@ -7710,6 +7766,9 @@
       "Email subscriptions": [
         "Zasílání pravidelných e-mailů"
       ],
+      "Enter endpoints into your identity provider": [
+        "Zadejte endpointy do vašeho poskytovatele indetity"
+      ],
       "Enter SAML metadata": [
         "Vložte SAML metadata"
       ],
@@ -7989,9 +8048,6 @@
       "Your current plan": [
         "Váš aktuální tarif"
       ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "Vaše bezplatná zkušební verze služby Mail Plus končí ${ textDate }"
-      ],
       "Your plan": [
         "Váš tarif"
       ],
@@ -8050,8 +8106,20 @@
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Automatické přepínání mezi preferovanými denními a nočními motivy v synchronizaci s denním a nočním režimem systému."
       ],
+      "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
+        "Zkopírujte a vložte tuto URL adresu do pole ACS (Assertion Consumer Service) URL u svého poskytovatele identity."
+      ],
+      "Copy and paste this URL into the entity ID field of your identity provider": [
+        "Zkopírujte a vložte tuto URL adresu do pole ID subjektu u svého poskytovatele identity"
+      ],
+      "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
+        "URL adresa endpointu od poskytovatele identity (např. https://idp.example.com/sso/saml)"
+      ],
       "Feature in early access": [
         "Funkce v předběžném přístupu"
+      ],
+      "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
+        "Veřejný klíč poskytovatele identity pro podepisování autentizace. Získejte hash certifikátu od poskytovatele identity."
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Pokud jste zakoupil dárkový kód nebo jste je obdržel od naší podpory, můžete ho vložit sem."
@@ -8070,6 +8138,9 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Vybraný motiv bude použit, když je systém nastaven na \"světlý režim\"."
+      ],
+      "Usually an URL that contains the identity provider's name within": [
+        "Obvykle URL adresa, která obsahuje název poskytovatele identity v rámci"
       ],
       "Verified email address": [
         "Ověřená e-mailová adresa"
@@ -8204,8 +8275,14 @@
       "15-month": [
         "15 měsíčním"
       ],
+      "18-month": [
+        "18-ti měsíční"
+      ],
       "2-year": [
         "dvouletým"
+      ],
+      "3-month": [
+        "3-měsíční"
       ],
       "30-month": [
         "30 měsíčním"

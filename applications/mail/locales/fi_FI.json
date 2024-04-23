@@ -1124,10 +1124,6 @@
       "Trust": [
         "Luota"
       ],
-      "Trust key": [
-        "Luota avaimeen",
-        "Luota avaimiin"
-      ],
       "Trust public key": [
         "Luota julkiseen avaimeen"
       ],
@@ -4775,7 +4771,7 @@
         "Sulje"
       ],
       "Closing this means giving up the free storage bonus.": [
-        "Menetät ilmaisen tallennustilaetusi jos suljet tämän."
+        "Menetät ilmaisen tallennustilakorotuksesi jos suljet tämän."
       ],
       "Congratulations, you completed all the steps!": [
         "Onnittelut, olet suorittanut kaikki vaiheet!"
@@ -6216,7 +6212,7 @@
         "Huomioithan, että käsittely saattaa osoitekirjasi koosta riippuen kestää jonkin aikaa."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "Huomioithan, että painettuasi Vahvista, tilillesi jää ${ creditsRemaining } krediittiä."
+        "Huomioithan, että painettuasi \"Vahvista\", tilillesi jää ${ creditsRemaining } krediittiä."
       ],
       "Please provide a name and an email address for creating a group.": [
         "Anna nimi ja sähköpostiosoite ryhmän luomista varten."
@@ -8053,9 +8049,6 @@
       "Sent": [
         "Lähetetyt"
       ],
-      "Set up email forwarding": [
-        "Määritä sähköpostin ohjaus"
-      ],
       "Sign up for free": [
         "Rekisteröidy ilmaiseksi"
       ],
@@ -8172,6 +8165,11 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Tilauksesi on päättynyt. ${ cta } välttääksesi tietojen menetyksen."
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Ota ${ reason } käyttöön"
       ]
     },
     "Mail import summary": {
@@ -8629,7 +8627,7 @@
         "Saatavilla kaikilla alustoilla"
       ],
       "Calendar sharing": [
-        "Kalenterien jako"
+        "Kalenterien jakaminen"
       ],
       "Catch-all": [
         "Nappaa kaikki"
@@ -8656,10 +8654,10 @@
         "Oma torkutusaika"
       ],
       "Data breach monitoring": [
-        "Tietomurtojen seuranta"
+        "Tietovuotovalvonta"
       ],
       "Data breach monitoring (coming soon)": [
-        "Tietomurtojen seuranta (tulossa pian)"
+        "Tietovuotovalvonta (tulossa pian)"
       ],
       "Desktop app": [
         "Työpöytäsovellus"
@@ -8796,7 +8794,7 @@
         "SSO-integraatio (tulossa pian)"
       ],
       "Strict no-logs policy": [
-        "Tiukka lokivastainen käytäntö"
+        "Tiukka lokivapaa käytäntö"
       ],
       "Team management": [
         "Tiimin hallinta"
@@ -9254,6 +9252,12 @@
     "Notification": {
       "${ Filter.Name } created": [
         "${ Filter.Name } luotiin"
+      ],
+      "${ reason } has been disabled": [
+        "${ reason } poistettiin käytöstä"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } otettiin käyttöön"
       ],
       "Block removed": [
         "Esto poistettiin"
@@ -9864,6 +9868,9 @@
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel on **käytössä** ja suojaa tiliäsi."
+      ],
+      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLink }": [
+        "Tietojasi löytyi ainakin yhdestä tietovuodosta. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi yksityiskohdat ja ryhtyäksesi toimenpiteisiin. ${ learnMoreLink }"
       ]
     },
     "Select files": {
@@ -10417,9 +10424,6 @@
       "Email tracking protection": [
         "Sähköpostin seurantasuojaus"
       ],
-      "Faster email management": [
-        "Nopeampi viestien hallinta"
-      ],
       "Get the desktop app": [
         "Hanki työpöytäsovellus"
       ],
@@ -10429,17 +10433,14 @@
       "Invite friends to ${ BRAND_NAME }": [
         "Kutsu kavereita ${ BRAND_NAME }iin"
       ],
-      "Now you can take action on all emails in a single folder in one go.": [
-        "Nyt voit käsitellä yksittäisen kansion kaikkia viestejä yhtä aikaa."
-      ],
       "Schedule send": [
         "Ajoita lähetys"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME } to get notified if your data was leaked from a third-party service.": [
+        "Ota ${ DARK_WEB_MONITORING_NAME } käyttöön saadaksesi ilmoituksen, jos tietojasi havaitaan vuotaneen muista verkkopalveluista."
+      ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Nyt kuvat ladataan oletusarvoisesti ja lähettäjiä estetään seuraamasta sinua. Tätä voidaan muuttaa ${ settingsLink }."
-      ],
-      "You can now automatically forward your emails to anyone!": [
-        "Voit nyt välittää sähköpostisi automaattisesti kenelle tahansa!"
       ],
       "You can now schedule your messages to be sent later": [
         "Voit nyt ajoittaa viestiesi lähetyksen myöhempään ajankohtaan"
@@ -11578,7 +11579,7 @@
         "Liitettä ei löytynyt"
       ],
       "No breaches detected": [
-        "Tietovuotoja ei havaittu"
+        "Tietomurtoja ei havaittu"
       ],
       "No trackers found": [
         "Seurantoja ei löydetty"
@@ -11828,6 +11829,9 @@
       "What's new": [
         "Mitä uutta"
       ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "${ planName } -kokeilusi päättyy ${ textDate }"
+      ],
       "Your account is protected": [
         "Tilisi on suojattu"
       ],
@@ -11836,9 +11840,6 @@
       ],
       "Your exposed information": [
         "Paljastuneet tietosi"
-      ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "Ilmainen Mail Plus -kokeilusi päättyy ${ textDate }"
       ]
     },
     "Title subscription": {

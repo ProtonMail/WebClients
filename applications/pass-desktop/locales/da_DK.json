@@ -844,7 +844,7 @@
         "Indbygget 2FA-godkendelse"
       ],
       "By default team members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
-        "Som standard kan teammedlemmer kun eksportere bokse, hvor de er ejere. Hvis denne indstilling er slået til, kan de ikke eksportere nogen data."
+        "Som udgangspunkt kan teammedlemmer kun eksportere bokse, hvor de er ejere. Hvis denne indstilling er slået til, kan de ikke eksportere nogen data."
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "Kan oprette, redigere, slette og eksportere elementer i denne boks."
@@ -904,8 +904,8 @@
         "Af sikkerhedsmæssige årsager skal din adgang bekræftes."
       ],
       "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
-        "Genererede passwords gemmes i en periode på ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } uge.",
-        "Genererede passwords gemmes i en periode på ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } uger."
+        "Genererede adgangskoder gemmes i en periode på ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } uge.",
+        "Genererede adgangskoder gemmes i en periode på ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } uger."
       ],
       "Get the most out of Pass by creating a vault for each team or project.": [
         "Få mest muligt ud af Pass ved at oprette en boks til hvert team eller projekt."

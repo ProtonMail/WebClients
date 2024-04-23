@@ -539,7 +539,7 @@
         "Importa des d'Outlook"
       ],
       "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
-        "Actualització important disponible. Per continuar utilitzant l'aplicació, actualitzeu a la versió més recent. ${ downloadUpdate }"
+        "Hi ha disponible una actualització important. Per a continuar utilitzant l'aplicació, actualitzeu a la versió més recent. ${ downloadUpdate }"
       ],
       "In the morning": [
         "Al matí"
@@ -893,6 +893,9 @@
       "Report phishing": [
         "Notifica una suplantació d'identitat"
       ],
+      "Request a call": [
+        "Sol·licitar una trucada"
+      ],
       "Request a feature": [
         "Demana una nova característica"
       ],
@@ -1121,10 +1124,6 @@
       "Trust": [
         "De confiança"
       ],
-      "Trust key": [
-        "Clau de confiança",
-        "Claus de confiança"
-      ],
       "Trust public key": [
         "Confia en la clau pública"
       ],
@@ -1221,6 +1220,9 @@
       "View": [
         "Mostra"
       ],
+      "View all reports": [
+        "Mostra tots els informes"
+      ],
       "View contact details": [
         "Veure detalls del contacte"
       ],
@@ -1262,10 +1264,10 @@
         "No podeu enviar fitxers vCard de més de ${ maxAttachments } contactes."
       ],
       "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
-        "La prova gratuïta de l'aplicació d'escriptori finalitza en dos dies. ${ upgradeButton }"
+        "La prova gratuïta de l'aplicació d'escriptori finalitza d'aquí a 2 dies. ${ upgradeButton }"
       ],
       "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
-        "La prova gratuïta de l'aplicació d'escriptori finalitza en cinc dies. ${ upgradeButton }"
+        "La prova gratuïta de l'aplicació d'escriptori finalitza d'aquí a 5 dies. ${ upgradeButton }"
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "La prova gratuïta de l'aplicació d'escriptori finalitza el ${ formattedEndDate }. ${ upgradeButton }"
@@ -1663,6 +1665,9 @@
       ],
       "Continue using ${ planTitle }": [
         "Continua utilitzant ${ planTitle }"
+      ],
+      "Continue your subscription": [
+        "Continuï amb la seva subscripció"
       ]
     },
     "Calendar attachment tooltip": {
@@ -3380,10 +3385,10 @@
         "S'ha actualitzat aquest esdeveniment."
       ],
       "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Aquest esdeveniment s'ha actualitzat. Això és el que s'ha canviat:\n\n${ updateEventDetailsText }"
+        "Aquest esdeveniment s'ha actualitzat. Això és el que ha canviat:\n\n${ updateEventDetailsText }"
       ],
       "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
-        "Esteu convidat a ${ eventTitle }\n\n${ eventDetailsText }"
+        "Esteu convidat a ${ eventTitle }.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -3763,7 +3768,7 @@
         "No s'han trobat correus electrònics per a importar. El compte no té una safata d'entrada"
       ],
       "No external key retrieved for user is valid for sending": [
-        "No hi ha cap clau externa recuperada per l'usuari vàlida per a enviar"
+        "Cap clau externa recuperada per a l'usuari és vàlida per a l'enviament"
       ],
       "No valid address found": [
         "No s’ha trobat una adreça vàlida"
@@ -3843,6 +3848,9 @@
       ],
       "Require at least one condition": [
         "Requereix al menys una condició"
+      ],
+      "Sending attachments is restricted until you meet your plan limits or upgrade.": [
+        "L'enviament d'adjunts està restringit fins que compliu els límits del vostre pla o el milloreu."
       ],
       "Signature not verified": [
         "Signatura no verificada"
@@ -4690,6 +4698,9 @@
     "Free trial desktop": {
       "${ MAIL_APP_NAME } desktop app": [
         "Aplicació d'escriptori de ${ MAIL_APP_NAME }"
+      ],
+      "14-day desktop app trial.": [
+        "14 dies de prova de l'aplicació d'escriptori."
       ],
       "Enjoy fast, secure, and distraction-free access to your inbox and calendar.": [
         "Gaudiu d'un accés ràpid, segur i sense distracció a la safata d'entrada i calendari."
@@ -5866,6 +5877,9 @@
       "Hide original message": [
         "Amaga el missatge original"
       ],
+      "High Priority": [
+        "Alta prioritat"
+      ],
       "How hide-my-email aliases works": [
         "Funcionament dels àlies hide-my-email"
       ],
@@ -5966,6 +5980,9 @@
       "Large imports can take several days.": [
         "Imports grans poden trigar diversos dies."
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Més informació sobre com ${ staySaferOnlineLink }"
+      ],
       "Learn more": [
         "Més informació"
       ],
@@ -5983,6 +6000,9 @@
       ],
       "Loading ${ appName }": [
         "Carregant ${ appName }"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "S'està carregant el calendari, si us plau, esperi's. Se'l redirigirà a la nostra plataforma de programació Calendly en una pestanya nova."
       ],
       "Loading message": [
         "Carregant missatge"
@@ -6250,7 +6270,7 @@
         "Refrescar la pàgina o ${ link } resoldrà automàticament la majoria dels problemes."
       ],
       "Removes all data associated with this app, including downloaded messages": [
-        "Elimina totes les dades associades amb aquesta aplicació, incloent-hi els missatges baixats."
+        "Elimina totes les dades associades amb aquesta aplicació, incloent-hi els missatges descarregats."
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Informar un missatge com a intent de pesca us enviarà el missatge, per poder analitzar-lo i millorar-ne els filtres. Això significa que podrem veure el contingut del missatge complet."
@@ -6304,8 +6324,8 @@
         "Seleccioneu un proveïdor de serveis per començar"
       ],
       "Select all ${ elementsCount } in ${ location }": [
-        "Selecciona tot el ${ elementsCount } a ${ location }",
-        "Selecciona tots els ${ elementsCount } a ${ location }"
+        "Selecciona ${ elementsCount } element en ${ location }",
+        "Selecciona els ${ elementsCount } elements en ${ location }"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Seleccioni el format de correu electronic que vols fer us per defecte quan enviis un correu electronic a aquesta direcció."
@@ -6417,6 +6437,9 @@
       ],
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "És possible que les dades que heu introduït a l'esborrany no es desin si sortiu de la pàgina."
+      ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "La informació exposada es va filtrar d'un servei de tercers. La informació del seu compte de ${ BRAND_NAME } continua sent segura i encriptada. ${ learnMoreLink }"
       ],
       "The local database is being prepared": [
         "S'està preparant la base de dades local."
@@ -6551,7 +6574,7 @@
         "Aquesta clau pública serà utilitzada automàticament per xifrar el correu electrónic enviat a aquenta adreça."
       ],
       "This removes all data associated with this app, including downloaded messages. The app will restart and you will need to sign in again to use the app.": [
-        "Açò elimina totes les dades associades amb aquesta app, incloent-hi els missatges baixats. L'app es reiniciarà i hauràs de tornar a iniciar sessió per a fer-la servir."
+        "Això elimina totes les dades associades amb aquesta aplicació, incloent-hi els missatges descarregats. L'aplicació es reiniciarà i haureu de tornar a iniciar la sessió per a fer-la servir."
       ],
       "This sender's public key has not been trusted yet.": [
         "La clau pública del aquest remitent no ha tingut confiança encara."
@@ -6733,6 +6756,9 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Us redireccionarem a PayPal en una pestanya nova del navegador per completar aquesta transacció. Si utilitzeu bloquejadors emergents, inhabiliteu-los per continuar."
       ],
+      "We'll email you once import is complete.": [
+        "Us enviarem un correu electrònic un cop s'hagi completat la importació."
+      ],
       "We'll notify you when the import is done.": [
         "Us notificarem quan la importació s'hagi realitzat."
       ],
@@ -6790,6 +6816,9 @@
       "You can check the progress ${ importProgressLink }.": [
         "Podeu comprovar el progrés a ${ importProgressLink }."
       ],
+      "You can close the tab or browser in the meantime.": [
+        "Mentrestant, podeu tancar la pestanya o el navegador."
+      ],
       "You can either update your search query or ${ button }": [
         "Podeu actualitzar la cerca de consulta o ${ button }"
       ],
@@ -6840,6 +6869,12 @@
       "You have **${ count } message** tagged with this label": [
         "Teniu **${ count } missatge** etiquetat amb aquesta etiqueta",
         "Teniu **${ count } missatges** etiquetats amb aquesta etiqueta"
+      ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "Té una subscripció de prova de ${ planTitle }. Si vol continuar amb la seva subscripció després del període de prova, afegeixi un mètode de pagament."
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "Té una subscripció de prova de ${ planTitle }. No es requereix cap pagament en aquest moment. La seva subscripció es renovarà automàticament al final del període de prova."
       ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
         "No heu posat cap assumpte al vostre correu electrònic. Voleu enviar el missatge de totes maneres?"
@@ -6933,11 +6968,20 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Les vostres dades estan a punt per ser importades des de ${ importedEmailAddressStrong } al vostre compte de ${ BRAND_NAME }."
       ],
+      "Your email address and password were leaked:": [
+        "La seva adreça de correu electrònic i contrasenya es van filtrar:"
+      ],
+      "Your email address was exposed:": [
+        "S'ha exposat la seva adreça de correu electrònic:"
+      ],
       "Your email will only be used for this one-time verification.": [
         "El vostre correu electrònic només s’utilitzarà per a aquesta única verificació."
       ],
       "Your files will be encrypted and then saved": [
         "Es xifraran els fitxers i després es desaran."
+      ],
+      "Your information was found on ${ displayedDate }": [
+        "La seva informació es va trobar el ${ displayedDate }"
       ],
       "Your login information will not be saved after the import is completed.": [
         "La vostra informació d'inici de sessió no es desarà quan s'hagi completat la importació."
@@ -6954,6 +6998,9 @@
       ],
       "Your next billing date is ${ renewalTime }.": [
         "La pròxima data de facturació és ${ renewalTime }."
+      ],
+      "Your password was leaked:": [
+        "S'ha filtrat la vostra contrasenya:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "El vostre número de telèfon només s’utilitzarà per a aquesta única verificació."
@@ -7987,9 +8034,6 @@
       "Sent": [
         "Enviats"
       ],
-      "Set up email forwarding": [
-        "Configura el reenviament de correu electrònic"
-      ],
       "Sign up for free": [
         "Registreu-vos gratuïtament"
       ],
@@ -8004,6 +8048,9 @@
       ],
       "Starred": [
         "Destacats"
+      ],
+      "stay safer online": [
+        "mantenir-se més segur en línia"
       ],
       "Terms": [
         "Termes"
@@ -8099,10 +8146,15 @@
         "El seu emmagatzematge està ple. Per enviar o rebre correus electrònics, alliberi espai o ${ cta }."
       ],
       "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
-        "El seu emmagatzematge està ple. Per penjar o sincronitzar fitxers, alliberi espai o ${ cta }."
+        "El vostre emmagatzematge està ple. Per carregar o sincronitzar fitxers, allibereu espai o ${ cta }."
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "La seva subscripció ha finalitzat. ${ cta } i per evitar la pèrdua de dades."
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Activa ${ reason }"
       ]
     },
     "Mail import summary": {
@@ -8153,10 +8205,10 @@
         "10 adreces de correu electrònic"
       ],
       "Auto-delete Spam and Trash": [
-        "Suprimeix automàticament la brossa i la paperera"
+        "Elimina automàticament el correu brossa i la paperera"
       ],
       "Custom schedule send and snooze times": [
-        "Horaris personalitzats d'enviament i posposa"
+        "Personalització de l'hora d'enviament i del temps de posposició"
       ],
       "Support for 1 custom email domain": [
         "Suport per a 1 domini de correu personalitzat"
@@ -8167,7 +8219,7 @@
     },
     "mailtrial2024: Footer": {
       "Renews at ${ renewablePrice }, cancel anytime": [
-        "Renovacions a ${ renewablePrice }, cancel·leu en qualsevol moment"
+        "Es renova per ${ renewablePrice } i ho podeu cancel·lar en qualsevol moment"
       ]
     },
     "mailtrial2024: Info": {
@@ -9509,7 +9561,7 @@
         "Seleccioneu un motiu"
       ],
       "Select state": [
-        "Seleccioni l'estat"
+        "Seleccioneu l'estat"
       ],
       "Start date": [
         "Data d'inici"
@@ -9757,6 +9809,9 @@
       ]
     },
     "Security Center - Info": {
+      "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
+        "Rebi una notificació si la seva contrasenya o altres dades s'han filtrat d'un servei de tercers. ${ learnMoreLink }"
+      ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "La nostra solució de seguretat d'avantguarda, impulsada per IA, dissenyada per als usuaris que busquen una protecció més elevada per als seus comptes. ${ learnMoreLink }"
       ],
@@ -10315,9 +10370,6 @@
       "Email tracking protection": [
         "Protecció de seguiment de correu electrònic"
       ],
-      "Faster email management": [
-        "Gestió més ràpida del correu electrònic"
-      ],
       "Get the desktop app": [
         "Obteniu l'aplicació d'escriptori"
       ],
@@ -10327,17 +10379,11 @@
       "Invite friends to ${ BRAND_NAME }": [
         "Convida amistats a ${ BRAND_NAME }"
       ],
-      "Now you can take action on all emails in a single folder in one go.": [
-        "Ara podeu actuar en tots els correus electrònics d'una sola carpeta d'una sola vegada."
-      ],
       "Schedule send": [
         "Programa l'enviament"
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Per defecte, ara es carreguen les imatges i es bloca el seguiment per part de l'emissor. Això es pot canviar a ${ settingsLink }."
-      ],
-      "You can now automatically forward your emails to anyone!": [
-        "Ara podeu reenviar automàticament els vostres correus electrònics a qui vulgueu."
       ],
       "You can now schedule your messages to be sent later": [
         "Ara podeu programar els vostres missatges per tal que s'enviïn més tard"
@@ -10409,13 +10455,13 @@
         "Per a tots els serveis de ${ BRAND_NAME }"
       ],
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
-        "Per a continuar carregant i sincronitzant fitxers, allibereu espai o milloreu per a més emmagatzematge."
+        "Per a continuar carregant i sincronitzant fitxers, allibereu espai o milloreu per a obtenir més emmagatzematge."
       ],
       "To send or receive emails, free up space or ${ upgrade }": [
-        "Per enviar o rebre correus electrònics, allibereu espai o ${ upgrade }"
+        "Per a enviar o rebre correus electrònics, allibereu espai o ${ upgrade }"
       ],
       "To send or receive emails, free up space or upgrade for more storage.": [
-        "Per enviar o rebre correus electrònics, allibereu espai o milloreu per a més emmagatzematge."
+        "Per a enviar o rebre correus electrònics, allibereu espai o milloreu per a obtenir més emmagatzematge."
       ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "Per a carregar o sincronitzar fitxers, allibereu espai o ${ upgrade }"
@@ -10430,13 +10476,13 @@
         "El vostre ${ appStorage } és ple."
       ],
       "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
-        "L'${ storage } és ${ percentage }% ple. ${ cta }."
+        "L'${ storage } és ple al ${ percentage }%. ${ cta }."
       ],
       "Your ${ storage } is full. ${ cta }.": [
         "L'${ storage } és ple. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
-        "L'emmagatzematge és ${ percentage }% ple. ${ cta }."
+        "L'emmagatzematge és ple al ${ percentage }%. ${ cta }."
       ],
       "Your storage is full": [
         "L'emmagatzematge és ple."
@@ -11448,6 +11494,9 @@
       "No attachment found": [
         "No s'ha trobat cap adjunt"
       ],
+      "No breaches detected": [
+        "No s'han detectat infraccions"
+      ],
       "No trackers found": [
         "No s'han trobat rastrejadors"
       ],
@@ -11702,8 +11751,8 @@
       "Your changes are not synced yet": [
         "Els vostres canvis encara no estan sincronitzats"
       ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "La prova gratuïta de Mail Plus finalitza el ${ textDate }"
+      "Your exposed information": [
+        "La teva informació exposada"
       ]
     },
     "Title subscription": {

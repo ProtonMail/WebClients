@@ -882,7 +882,7 @@
         "${ n } predmeta"
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
-        "${ PASS_APP_NAME } bo prikazal priljubljeno ikono predmeta prek proxyja anonimizirane slike ${ BRAND_NAME }."
+        "${ PASS_APP_NAME } bo prikazal priljubljeno ikono predmeta prek posredniškega strežnika ${ BRAND_NAME } za anonimizirane slike."
       ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } bo uvozil samo prijave, zapiske in plačilne kartice."
@@ -1697,7 +1697,7 @@
         "Uvozi gesla"
       ],
       "Imported from : ": [
-        "Uvoćeno iz : "
+        "Uvoženo iz : "
       ],
       "Imported on : ": [
         "Uvoženo dne : "

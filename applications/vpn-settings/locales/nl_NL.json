@@ -3994,7 +3994,7 @@
         "U heeft ${ availableCount } toegewijde servers beschikbaar."
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
-        "Je hebt een Trial ${ planTitle } abonnement. Als je na de proefperiode door wilt gaan met je abonnement, voeg een betaalmethode toe."
+        "Je hebt een trial ${ planTitle } abonnement. Als je na de proefperiode door wilt gaan met je abonnement, voeg een betaalmethode toe."
       ],
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
         "Je hebt een trial ${ planTitle } abonnement. Er is geen betaling vereist op dit moment. Uw abonnement wordt automatisch verlengd aan het einde van de proefperiode."
@@ -6357,6 +6357,17 @@
         "Upload CSV-bestand"
       ]
     },
+    "Select invoice document": {
+      "Credit note": [
+        "Creditnota"
+      ],
+      "Currency conversion": [
+        "Valuta's omrekenen"
+      ],
+      "Invoice": [
+        "Factuur"
+      ]
+    },
     "Select search results": {
       "No results found": [
         "Geen resultaten gevonden"
@@ -7892,14 +7903,14 @@
       "WireGuard configuration": [
         "WireGuard configuratie"
       ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Uw ${ planName } gratis proefperiode eindigt op ${ textDate }"
+      ],
       "Your changes are not synced yet": [
         "Uw wijzigingen zijn nog niet gesynchroniseerd"
       ],
       "Your current plan": [
         "Uw huidige abonnement"
-      ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "Uw Mail Plus proefversie eindigt op ${ textDate }"
       ],
       "Your plan": [
         "Uw abonnement"

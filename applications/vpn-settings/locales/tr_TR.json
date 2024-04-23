@@ -548,9 +548,6 @@
       "Upload": [
         "Yükle"
       ],
-      "Upload icon": [
-        "Simge yükle"
-      ],
       "Use ${ label } theme": [
         "${ label } teması kullanılsın"
       ],
@@ -985,6 +982,9 @@
       ],
       "Continue using ${ planTitle }": [
         "${ planTitle } kullanmayı sürdürün"
+      ],
+      "Continue your subscription": [
+        "Aboneliğinizi kullanmayı sürdürün"
       ]
     },
     "Checkout row": {
@@ -3385,6 +3385,9 @@
       "Loading ${ appName }": [
         "${ appName } yükleniyor"
       ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Takvim yüklenirken lütfen bekleyin. Yeni bir sekmede zamanla platformumuz Calendly açılacak."
+      ],
       "Loading preview": [
         "Ön izleme yükleniyor"
       ],
@@ -3722,9 +3725,6 @@
       "The format of your CSV file is incorrect.": [
         "CSV dosyanız doğru biçimde değil."
       ],
-      "The name and icon will be visible to your users while they are signed in.": [
-        "Kullanıcılarınız oturum açtıklarında ad ve simge onlara görünür olacaktır."
-      ],
       "The name will be visible to your users while they are signed in.": [
         "Oturum açtıklarında kullanıcılarınıza görüntülenecek ad."
       ],
@@ -4059,6 +4059,12 @@
       "You have ${ availableCount } dedicated server available.": [
         "Size ayrılmış ve kullanabileceğiniz ${ availableCount } sunucu var.",
         "Size ayrılmış ve kullanabileceğiniz ${ availableCount } sunucu var."
+      ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "${ planTitle } deneme aboneliğiniz var. Deneme süresinden sonra aboneliğinizi sürdürmek istiyorsanız lütfen bir ödeme yöntemi ekleyin."
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "${ planTitle } deneme aboneliğiniz var. Şu anda herhangi bir ödeme yapmanıza gerek yok. Deneme süresi sonunda aboneliğiniz otomatik olarak yenilenecek."
       ],
       "You have no invoices.": [
         "Herhangi bir faturanız yok."
@@ -5976,14 +5982,8 @@
       "Avoid overly compressed images.": [
         "Aşırı sıkıştırılmış görüntülerden kaçının."
       ],
-      "Ensure your icon has padding space around it.": [
-        "Simgenizin etrafında dolgu alanı olduğundan emin olun."
-      ],
       "Opt for a PNG image that is a 128x128 pixels for clarity.": [
         "Netlik için 128x128 piksel olan bir PNG görüntüsü tercih edin."
-      ],
-      "Tips on choosing a good icon": [
-        "İyi bir simge seçmeye yönelik ipuçları"
       ],
       "Use a graphical icon or image rather than text.": [
         "Metin yerine grafiksel bir simge veya resim kullanın."
@@ -6472,6 +6472,17 @@
     "Select file": {
       "Upload CSV file": [
         "CSV dosyası yükle"
+      ]
+    },
+    "Select invoice document": {
+      "Credit note": [
+        "Kredi notu"
+      ],
+      "Currency conversion": [
+        "Para birimi dönüştürme"
+      ],
+      "Invoice": [
+        "Fatura"
       ]
     },
     "Select search results": {
@@ -7780,9 +7791,6 @@
       "Gift code": [
         "Hediye kodu"
       ],
-      "How to choose a good icon": [
-        "İyi bir simge nasıl seçilir"
-      ],
       "Human verification": [
         "İnsan olduğunuzu doğrulayın"
       ],
@@ -8023,9 +8031,6 @@
       ],
       "Your current plan": [
         "Geçerli tarifeniz"
-      ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "Mail Plus ücretsiz deneme süreniz ${ textDate } tarihinde sonra erecek"
       ],
       "Your plan": [
         "Tarifeniz"

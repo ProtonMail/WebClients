@@ -548,8 +548,8 @@
       "Upload": [
         "Unggah"
       ],
-      "Upload icon": [
-        "Unggah ikon"
+      "Upload logo": [
+        "Unggah logo"
       ],
       "Use ${ label } theme": [
         "Gunakan tema ${ label }"
@@ -2943,6 +2943,9 @@
       "Add server (${ availableAddedCount } available)": [
         "Tambah server (${ availableAddedCount } tersedia)"
       ],
+      "Add your name and logo to create a more personalized experience for your organization.": [
+        "Tambahkan nama dan logo Anda agar organisasi Anda dapat menyajikan pengalaman yang lebih personal."
+      ],
       "Adding ${ addedServerCount } gateway server": [
         "Menambahkan ${ addedServerCount } server gateway"
       ],
@@ -3698,9 +3701,6 @@
       ],
       "The format of your CSV file is incorrect.": [
         "Format berkas CSV Anda tidak sesuai."
-      ],
-      "The name and icon will be visible to your users while they are signed in.": [
-        "Nama dan ikon ini akan terlihat oleh para pengguna Anda ketika mereka terhubung masuk."
       ],
       "The name will be visible to your users while they are signed in.": [
         "Nama ini akan terlihat oleh para pengguna yang berada di bawah Anda ketika mereka masuk."
@@ -5926,17 +5926,20 @@
       "Avoid overly compressed images.": [
         "Hindari gambar yang terlalu terkompres."
       ],
-      "Ensure your icon has padding space around it.": [
-        "Pastikan ikon Anda memiliki ruang kosong di sekitarnya."
+      "Ensure your logo has padding space around it.": [
+        "Pastikan logo Anda memiliki ruang kosong di sekitarnya."
       ],
       "Opt for a PNG image that is a 128x128 pixels for clarity.": [
         "Gunakan gambar PNG yang berukuran 128x128 pixel agar ikon Anda dapat terlihat dengan jelas."
       ],
-      "Tips on choosing a good icon": [
-        "Tips untuk memilih ikon yang baik"
+      "Tips on choosing a good logo": [
+        "Tips untuk memilih logo yang baik"
       ],
       "Use a graphical icon or image rather than text.": [
         "Gunakan ikon atau gambar yang mengandung elemen grafis alih-alih gambar yang berisi teks."
+      ],
+      "Use a solid background color.": [
+        "Gunakan warna latar yang tegas."
       ]
     },
     "Organization logo upload modal": {
@@ -6465,8 +6468,8 @@
       "The SCIM base URL and token will be deleted.": [
         "URL dasar dan token SCIM akan dihapus."
       ],
-      "To re-enable syncing with your identity provider, your need to complete the SCIM integration again.": [
-        "Untuk mengaktifkan kembali penyinkronan dengan penyedia idenitas yang Anda gunakan, Anda perlu untuk menyelesaikan ulang proses integrasi SCIM."
+      "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
+        "Untuk mengaktifkan kembali penyinkronan dengan penyedia identitas yang Anda gunakan, Anda perlu untuk menyelesaikan ulang proses integrasi SCIM."
       ]
     },
     "scim: Label": {
@@ -6502,6 +6505,17 @@
     "Select file": {
       "Upload CSV file": [
         "Unggah berkas CSV"
+      ]
+    },
+    "Select invoice document": {
+      "Credit note": [
+        "Catatan saldo"
+      ],
+      "Currency conversion": [
+        "Konversi mata uang"
+      ],
+      "Invoice": [
+        "Faktur"
       ]
     },
     "Select search results": {
@@ -7774,8 +7788,8 @@
       "Gift code": [
         "Kode hadiah"
       ],
-      "How to choose a good icon": [
-        "Cara memilih ikon yang baik"
+      "How to choose a good logo": [
+        "Cara memilih logo yang baik"
       ],
       "Human verification": [
         "Verifikasi manusia"
@@ -8011,14 +8025,14 @@
       "WireGuard configuration": [
         "Konfigurasi WireGuard"
       ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Masa uji coba gratis ${ planName } Anda akan berakhir pada ${ textDate }"
+      ],
       "Your changes are not synced yet": [
         "Perubahan Anda belum disinkronkan"
       ],
       "Your current plan": [
         "Paket Anda saat ini"
-      ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "Uji coba Mail Plus Anda akan berakhir pada ${ textDate }"
       ],
       "Your plan": [
         "Paket Anda"

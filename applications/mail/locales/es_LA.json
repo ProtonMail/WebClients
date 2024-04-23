@@ -1124,10 +1124,6 @@
       "Trust": [
         "Confiar"
       ],
-      "Trust key": [
-        "Confiar clave",
-        "Confiar claves"
-      ],
       "Trust public key": [
         "Confiar clave pública"
       ],
@@ -8056,9 +8052,6 @@
       "Sent": [
         "Enviados"
       ],
-      "Set up email forwarding": [
-        "Configurar el reenvío de correo electrónico"
-      ],
       "Sign up for free": [
         "Regístrese gratis"
       ],
@@ -9264,10 +9257,10 @@
         "${ Filter.Name } creado"
       ],
       "${ reason } has been disabled": [
-        "${ reason } se ha desactivado"
+        "Se ha desactivado ${ reason }."
       ],
       "${ reason } has been enabled": [
-        "${ reason } se ha activado"
+        "Se ha activado ${ reason }."
       ],
       "Block removed": [
         "Bloqueo borrado"
@@ -10434,9 +10427,6 @@
       "Email tracking protection": [
         "Protección de rastreo de correo"
       ],
-      "Faster email management": [
-        "Gestión del correo electrónico más rápida"
-      ],
       "Get the desktop app": [
         "Obtenga la aplicación de escritorio"
       ],
@@ -10446,9 +10436,6 @@
       "Invite friends to ${ BRAND_NAME }": [
         "Invite amistades a ${ BRAND_NAME }"
       ],
-      "Now you can take action on all emails in a single folder in one go.": [
-        "Ahora puede tomar acción en todos los correos electrónicos de una misma carpeta en un solo paso."
-      ],
       "Schedule send": [
         "Programar envío"
       ],
@@ -10457,9 +10444,6 @@
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Ahora cargaremos las imágenes por defecto y bloquearemos los remitentes de rastrearle. Esto puede cambiarse en los ${ settingsLink }."
-      ],
-      "You can now automatically forward your emails to anyone!": [
-        "Ahora puede reenviar automáticamente sus correos a cualquiera."
       ],
       "You can now schedule your messages to be sent later": [
         "Ya puede programar sus mensajes para ser enviados posteriormente"
@@ -11848,6 +11832,9 @@
       "What's new": [
         "Novedades"
       ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Su prueba gratuita de ${ planName } termina el ${ textDate }."
+      ],
       "Your account is protected": [
         "Su cuenta está protegida"
       ],
@@ -11856,9 +11843,6 @@
       ],
       "Your exposed information": [
         "Su información expuesta"
-      ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "Su prueba gratuita de Mail Plus termina en ${ textDate }"
       ]
     },
     "Title subscription": {

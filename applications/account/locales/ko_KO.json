@@ -323,6 +323,9 @@
       "Delete link": [
         "링크 삭제"
       ],
+      "Delete logo": [
+        "로고 삭제"
+      ],
       "Delete permanently": [
         "영구적으로 삭제"
       ],
@@ -620,6 +623,12 @@
       "Mark as default": [
         "기본으로 설정"
       ],
+      "Mark as open": [
+        "열린 것으로 표시"
+      ],
+      "Mark as resolved": [
+        "해결됨으로 표시"
+      ],
       "mark emails as": [
         "이메일을 다음으로 표시"
       ],
@@ -754,6 +763,9 @@
       ],
       "Report a problem": [
         "문제 신고"
+      ],
+      "Request a call": [
+        "콜 요청"
       ],
       "Request a feature": [
         "기능 요청"
@@ -1039,6 +1051,9 @@
       ],
       "Upgrade your plan": [
         "요금제 업그레이드"
+      ],
+      "Upload": [
+        "업로드"
       ],
       "Upload picture": [
         "사진 업로드"
@@ -1522,7 +1537,7 @@
         "1개 커스텀 이메일 도메인, 10개 이메일 주소, 10개 hide-my-email 별칭, 캘린더 공유 등 지원 포함."
       ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "무제한 별칭, 공유, 통합된 2FA 등을 포함하는 비밀번호 관리자로 모든 기기에서 로그인을 보호하세요."
+        "무제한 별칭, 공유, 통합된 2단계 인증기 등을 포함하는 비밀번호 관리자로 모든 기기에서 로그인을 보호하세요."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "사용자 지정 이메일 도메인, 15개 이메일 주소, 무제한 hide-my-email 별칭 등 기능을 포함하는 이메일과 공유 캘린더를 지원하는 보안 캘린더로 보호하세요."
@@ -1666,6 +1681,9 @@
       ],
       "Continue using ${ planTitle }": [
         "${ planTitle }을 계속 사용하세요"
+      ],
+      "Continue your subscription": [
+        "내 구독 유지하기"
       ],
       "Copy": [
         "복사"
@@ -1862,6 +1880,11 @@
       ],
       "Week": [
         "주"
+      ]
+    },
+    "Call Scheduled Confirmation": {
+      "You can safely close this tab.": [
+        "이제 이 탭을 닫으셔도 됩니다."
       ]
     },
     "Checkout row": {
@@ -3082,6 +3105,9 @@
       ]
     },
     "Delete address prompt": {
+      "Once deleted, this address can't be used again by anyone else.": [
+        "한 번 삭제하면 누구도 이 주소를 다시는 사용할 수 없습니다."
+      ],
       "The next active address on your list will be set as the default.": [
         "목록의 다음 활성 주소가 기본으로 설정됩니다."
       ],
@@ -3276,14 +3302,6 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "저희를 도와주세요!"
-      ]
-    },
-    "Download link": {
-      ".deb for Debian / Ubuntu": [
-        "Debian / Ubuntu용 .deb"
-      ],
-      ".rpm for Fedora / Red Hat": [
-        "Fedora / Red Hat용 .rpm"
       ]
     },
     "drive_signup_2023: Info": {
@@ -3867,6 +3885,12 @@
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "활성 세션을 가져오는데 실패했습니다. ${ refresh } 하거나 나중에 다시 시도해보세요."
       ],
+      "Failed to process the logo": [
+        "로고를 처리하지 못했습니다"
+      ],
+      "File too large. Your logo must be 30 KB or smaller.": [
+        "파일이 너무 큽니다. 로고는 30KB 이하여야 합니다."
+      ],
       "Filter with this name already exists": [
         "이 이름의 필터가 이미 있습니다"
       ],
@@ -3884,6 +3908,9 @@
       ],
       "Impossible to rename the gateway": [
         "게이트웨이의 이름을 변경할 수 없습니다."
+      ],
+      "Incorrect file type. Upload a file in PNG or JPEG format.": [
+        "잘못된 파일 유형입니다. PNG 또는 JPEG 포맷의 파일을 업로드하십시오."
       ],
       "Incorrect login credentials. Please try again.": [
         "이메일 (사용자 이름) 또는 비밀번호가 잘못되었습니다. 다시 시도하세요."
@@ -3969,6 +3996,9 @@
       "No external key retrieved for user is valid for sending": [
         "사용자를 위해 검색된 외부 키가 전송에 유효하지 않습니다."
       ],
+      "No image selected": [
+        "선택된 이미지가 없습니다"
+      ],
       "No valid address found": [
         "유효한 주소를 찾을 수 없습니다"
       ],
@@ -4030,10 +4060,13 @@
         "복구/알림 이메일을 먼저 설정해주세요."
       ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
-        "1명보다 더 많은 다중 사용 지원을 사용하려면 비즈니스 플랜으로 업그레이드하세요"
+        "다중 사용자 지원을 이용하시려면 2명 이상의 사용자를 지원하는 비즈니스 플랜으로 업그레이드하세요"
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "1명 보다 더 많은 다중 사용자를 관리하려면 비즈니스 플랜으로 업그레이드 하세요."
+      ],
+      "Please upload a square file": [
+        "정사각형인 파일을 업로드하셔야 합니다"
       ],
       "Please upload an xml file": [
         "xml 파일을 업로드하세요"
@@ -4106,6 +4139,12 @@
       ],
       "The email addresses do not match": [
         "이메일 주소가 일치하지 않습니다."
+      ],
+      "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
+        "파일이 너무 큽니다. 최대 크기는 ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS } 입니다."
+      ],
+      "The file is too small, the minimum size is ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }": [
+        "파일이 너무 작습니다. 최소 크기는 ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS } 입니다"
       ],
       "The folder name is invalid. Please choose a different name.": [
         "폴더 이름이 유효하지 않습니다. 다른 이름을 사용해 주세요."
@@ -4939,7 +4978,7 @@
     },
     "fido2: Error": {
       "Please disable 2FA via security key before disabling TOTP": [
-        "TOTP를 비활성화 하기 전 보안 키를 통한 2FA를 비활성화 해주세요"
+        "TOTP를 비활성화 하기 전에 보안 키를 통한 2단계 인증을 먼저 비활성화 해주세요."
       ],
       "Something went wrong authenticating with your security key. Please try again.": [
         "사용자의 보안 키 인증에 문제가 발생했습니다. 나중에 다시 시도하세요."
@@ -4950,7 +4989,7 @@
     },
     "fido2: Info": {
       "2FA via security key disabled": [
-        "보안 키를 통한 2FA 비활성화됨"
+        "보안 키를 통한 2단계 인증이 비활성화됨"
       ],
       "Add a name to identify your security key with.": [
         "보안 키를 식별할 이름을 추가합니다."
@@ -4983,7 +5022,7 @@
         "이 작업은 사용자의 계정에 연결된 모든 보안 키를 삭제합니다."
       ],
       "To turn on 2FA via security key, you'll need to activate 2FA via authenticator app": [
-        "보안 키를 통해 2단계 인증을 켜려면 인증 앱을 통해 2단계 인증을 활성화해야 합니다."
+        "보안 키를 통해 2단계 인증을 켜려면 먼저 인증기 앱을 통한 2단계 인증을 활성화해야 합니다."
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "물리적 U2F 또는 FIDO2 보안 키로 신원 확인"
@@ -5005,7 +5044,7 @@
         "보안 키를 삭제하시겠습니까?"
       ],
       "Disable 2FA via security key?": [
-        "보안 키를 통한 2FA를 비활성화 하시겠습니까?"
+        "보안 키를 통한 2단계 인증을 비활성화 하시겠습니까?"
       ],
       "Name your security key": [
         "사용자의 보안 키 이름"
@@ -5500,6 +5539,11 @@
     "Heading in trial plan": {
       "Try the best of ${ MAIL_APP_NAME } for free": [
         "최고의 ${ MAIL_APP_NAME }을 무료 체험 해보세요"
+      ]
+    },
+    "Headline": {
+      "Contact us": [
+        "문의"
       ]
     },
     "Hint": {
@@ -6068,7 +6112,7 @@
         "복구 전화번호 추가"
       ],
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
-        "계정에 또 다른 보안 계층을 추가하세요. 로그인할 때마다 2FA로 본인 확인해야 합니다."
+        "계정에 또 다른 보안 계층을 추가하세요. 로그인할 때마다 2단계 인증으로 본인 확인해야 합니다."
       ],
       "Add domain": [
         "도메인 추가"
@@ -6147,6 +6191,9 @@
       ],
       "Amount due": [
         "총 금액"
+      ],
+      "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
+        "이메일 별칭은 이메일 주소와 같이 동작하지만 스팸을 줄여주고 당신의 실제 이메일 주소와 신원을 감추어 줍니다."
       ],
       "An error occurred while communicating with the extension": [
         "확장과 통신하는데 문제가 발생했습니다"
@@ -6613,9 +6660,6 @@
       "Failed to fetch logs.": [
         "로그를 가져오지 못했습니다."
       ],
-      "Fast and focused. Email and calendar, right on your desktop.": [
-        "신속하고 충실하도록. 당신의 데스크톱으로 찾아온 이메일과 캘린더."
-      ],
       "Fill in user details": [
         "사용자 세부 정보를 입력하세요"
       ],
@@ -6829,6 +6873,9 @@
       "Just send them your personal referral link.": [
         "내 추천인 링크를 보내세요."
       ],
+      "Keep your info more secure and private with these guides and tips.": [
+        "이 가이드와 팁을 통해 당신의 정보가 더욱 안전하고 사적이도록 하십시오."
+      ],
       "Key deletion is irreversible!": [
         "키 삭제는 되돌릴 수 없습니다!"
       ],
@@ -6849,6 +6896,9 @@
       ],
       "Lean more about single sign-on": [
         "통합 인증에 대해 더 알아보기"
+      ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "${ staySaferOnlineLink }하는 법 알아보기"
       ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "서드 파티 VPN 애플리케이션을 사용하여 ${ VPN_APP_NAME }에 로그인하는 방법을 알아보세요."
@@ -6888,6 +6938,9 @@
       ],
       "Loading ${ appName }": [
         "${ appName } 로딩 중"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "캘린더를 불러오는 중, 새로운 탭에서 일정 플랫폼 Calendly로 리디렉션됩니다."
       ],
       "Loading preview": [
         "미리보기 불러오는 중"
@@ -6952,6 +7005,9 @@
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "새 폴더의 이름을 지정하고 넣고 싶은 상위 폴더를 선택하세요. 상위 폴더를 선택하지 않으면, 이 새 폴더는 최상위 폴더로 생성됩니다."
       ],
+      "NetShield is an ad-blocking feature from ${ VPN_APP_NAME } that protects your device from ads, trackers, and malware.": [
+        "NetShield는 디바이스를 광고, 트래커, 멀웨어로부터 보호하는 ${ VPN_APP_NAME }의 광고 차단 기능입니다."
+      ],
       "New": [
         "신규"
       ],
@@ -6989,7 +7045,7 @@
         "불러오기 및 포워딩 기록 없음"
       ],
       "No label selected": [
-        "선택한 라벨이 없음"
+        "선택한 라벨 없음"
       ],
       "No logs yet.": [
         "아직 로그가 없습니다."
@@ -7304,7 +7360,7 @@
         "불러올 캘린더를 선택하세요. 새 캘린더가 사용자 플랜의 가능한 한도 내에서 각각 생성됩니다."
       ],
       "Send emails to encourage your members to protect their accounts with 2FA.": [
-        "회원들이 2FA로 계정을 보호하도록 이메일을 보내세요."
+        "회원들이 2단계 인증으로 계정을 보호하도록 이메일을 보내세요."
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "<a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>로 안전하게 전송되었습니다."
@@ -7459,6 +7515,9 @@
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "이메일 인증 링크가 만료되었습니다. 로그인하여 새로운 인증 링크를 재전송 하십시오."
       ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "노출된 정보가 서드 파티 서비스에서 유출되었습니다. 사용자의 ${ BRAND_NAME } 계정 정보는 안전하고 암호화 상태로 유지됩니다. ${ learnMoreLink }"
+      ],
       "The following address is available:": [
         "다음 주소를 사용할 수 있습니다:"
       ],
@@ -7592,7 +7651,7 @@
         "이는 활성 세션에서 로그아웃하고 2단계 인증을 비활성화하게 됩니다."
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
-        "이 마법사는 ${ BRAND_NAME } 계정의 2단계 인증을 활성화 시킵니다. 2단계 인증은 ${ BRAND_NAME_TWO } 계정을 더욱 안전하게 할 수 있으므로 사용하는 것을 권장합니다."
+        "이 마법사는 ${ BRAND_NAME } 계정의 2단계 인증 (2FA)을 활성화 시킵니다. 2단계 인증은 ${ BRAND_NAME_TWO } 계정을 더욱 안전하게 할 수 있으므로 사용하는 것을 권장합니다."
       ],
       "to ${ product } Business": [
         "${ product } 비즈니스로"
@@ -7747,6 +7806,9 @@
       "URL link": [
         "URL 링크"
       ],
+      "Use a password manager to generate and securely store your passwords, ensuring strong passwords and easier sign-ins.": [
+        "비밀번호 관리자를 이용하면 비밀번호를 생성하고 안전하게 보관하여 강력한 비밀번호를 보장받고 로그인이 편리해집니다."
+      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "현재 로드 및 위치에 따라 최상의 서버 사용: ${ formattedBestServerName }"
       ],
@@ -7804,6 +7866,9 @@
       "Want servers in other countries?": [
         "다른 국가의 서버를 원하시나요?"
       ],
+      "Want to learn more?": [
+        "더 알아보시겠습니까?"
+      ],
       "Warning:": [
         "주의:"
       ],
@@ -7835,7 +7900,7 @@
         "중복성을 위해 다른 위치에 여러 서버를 두는 것이 좋습니다."
       ],
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
-        "2FA 사용을 시작하기 전에 조직 구성원에게 알리고 계정에 2FA를 설정하도록 요청하는 것이 좋습니다."
+        "2단계 인증 사용을 시작하기 전에 조직 구성원에게 알리고 계정에 2단계 인증을 설정하도록 요청하는 것이 좋습니다."
       ],
       "We recommend using your recovery phrase instead.": [
         "복구 방법을 사용하는 것을 권장합니다."
@@ -7848,6 +7913,9 @@
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "이 거래를 완료하기 위해 새 브라우저 탭의 PayPal로 보내집니다. 팝업 차단기를 사용하는 경우 계속하려면 비활성화하세요."
+      ],
+      "We'll email you once import is complete.": [
+        "불러오기가 완료되면 이메일로 보내드리겠습니다."
       ],
       "We'll get back to you shortly.": [
         "곧 돌아오겠습니다."
@@ -7951,6 +8019,9 @@
       "You can check the progress ${ importProgressLink }.": [
         "진행 상황을 ${ importProgressLink } 에서 확인하실 수 있습니다."
       ],
+      "You can close the tab or browser in the meantime.": [
+        "도중에 탭이나 브라우저를 닫으셔도 됩니다."
+      ],
       "You can edit this once to ensure the correct email address for verification.": [
         "인증을 위해 올바른 이메일 주소를 사용할 수 있도록 한 번 편집할 수 있습니다."
       ],
@@ -8004,6 +8075,12 @@
       ],
       "You have ${ availableCount } dedicated server available.": [
         "${ availableCount }개 전용 서버를 사용할 수 있습니다."
+      ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "체험판 ${ planTitle } 구독이 있습니다. 체험 기간 이후로도 계속 구독을 사용하려면, 결제 수단을 추가해 주세요."
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "${ planTitle } 체험판 구독이 있습니다. 현재는 결제 수단이 필요 없습니다. 사용자의 구독이 무료 체험 종료일에 자동 갱신됩니다."
       ],
       "You have no calendars to export.": [
         "내보낼 캘린더가 없습니다."
@@ -8118,6 +8195,9 @@
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "고객님의 정보는 Proton에서 안전하게 보호되고 있습니다. 서비스 제공에 필요한 상황에만 연락해 드립니다."
+      ],
+      "Your information was found on ${ displayedDate }": [
+        "${ displayedDate }에 사용자의 정보가 발견되었습니다."
       ],
       "Your login information will not be saved after the import is completed.": [
         "로그인 정보는 가져오기 작업이 끝나면 삭제됩니다."
@@ -8283,6 +8363,27 @@
     "Key generation": {
       "Generate key": [
         "키 생성"
+      ],
+      "Generating key failed. Please try again later.": [
+        "키 생성에 실패했습니다. 나중에 다시 시도해 주십시오."
+      ],
+      "If you're generating a new key because you believe your existing key has been compromised, please mark it as compromised after generating this key.": [
+        "기존의 키가 손상된 것이라 생각하여 새로운 키를 생성하는 것이라면, 이 키를 생성한 뒤 해당 키를 손상된 것으로 표시해주십시오."
+      ],
+      "Key successfully generated.": [
+        "키 생성에 성공했습니다."
+      ],
+      "Note: you already have a key with the same algorithm for this address. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
+        "참고: 이 주소를 위한 같은 알고리즘의 키가 이미 존재합니다. 해당 키가 손상된 것이 아니라면, 새로운 키를 생성할 필요가 없으며 오히려 계정의 속도를 늦출 수도 있습니다."
+      ],
+      "Note: you already have a key with the same algorithm for this user. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
+        "참고: 이 사용자를 위한 같은 알고리즘의 키가 이미 존재합니다. 해당 키가 손상된 것이 아니라면, 새로운 키를 생성할 필요가 없으며 오히려 계정의 속도를 늦출 수도 있습니다."
+      ],
+      "This will generate a new key, which will be used to encrypt future contact details, email encryption keys, and other data.": [
+        "이로써 앞으로의 이메일과 다른 데이터의 암호화, 그리고 이메일 암호화 키에 사용될 새 키를 생성하게 됩니다."
+      ],
+      "This will generate a new key, which will be used to encrypt future emails, among other data.": [
+        "이로써 앞으로의 이메일과 다른 데이터의 암호화에 사용될 새 키를 생성하게 됩니다."
       ]
     },
     "Key state badge": {
@@ -9269,10 +9370,10 @@
         "Reply (ACS) URL"
       ],
       "Require 2FA for administrators": [
-        "관리자에 2FA가 필요"
+        "관리자에 2단계 인증 요구"
       ],
       "Require 2FA for everyone": [
-        "전체 구성원에 2FA가 필요"
+        "전체 구성원에 2단계 인증 요구"
       ],
       "Reveal password": [
         "비밀번호 표시"
@@ -10513,7 +10614,7 @@
         "HTML 서명"
       ],
       "Integrated 2FA authenticator": [
-        "통합된 2FA 인증기"
+        "통합된 2단계 인증기"
       ],
       "Kill switch/always-on VPN": [
         "킬 스위치/상시 VPN"
@@ -10549,7 +10650,7 @@
         "동시에 최대 ${ n }개까지 장치 보호"
       ],
       "Require 2FA for organization": [
-        "조직에 2FA (이중 인증) 요구"
+        "조직에 2단계 인증 요구"
       ],
       "Router support": [
         "라우터 지원"
@@ -11137,7 +11238,7 @@
         "비공개 게이트웨이"
       ],
       "Require 2FA": [
-        "2FA 필요"
+        "2단계 인증 필요"
       ]
     },
     "Notification": {
@@ -11149,6 +11250,9 @@
       ],
       "An external address cannot be default": [
         "외부 주소를 기본으로 할 수 없음"
+      ],
+      "Dark Web Monitoring has been enabled": [
+        "다크 웹 모니터링이 활성화되었습니다"
       ],
       "Invalid code": [
         "잘못된 코드입니다."
@@ -11565,6 +11669,43 @@
         "사용자의 플랜은 최대 ${ humanReadableAvailableSpace }개 스토리지를 포함합니다."
       ]
     },
+    "Organization logo upload": {
+      "Avoid overly compressed images.": [
+        "과도하게 압축된 이미지를 피하십시오."
+      ],
+      "Ensure your logo has padding space around it.": [
+        "로고 주변에 여백 공간이 있는지 확인하십시오."
+      ],
+      "Opt for a PNG image that is a 128x128 pixels for clarity.": [
+        "선명함을 위해 128x128 픽셀인 PNG 이미지를 권장합니다."
+      ],
+      "Tips on choosing a good logo": [
+        "좋은 로고의 선택을 위한 조언"
+      ],
+      "Use a graphical icon or image rather than text.": [
+        "문자 보다는 그래픽 아이콘이나 이미지를 사용하십시오."
+      ],
+      "Use a solid background color.": [
+        "배경색은 단색이어야 합니다."
+      ]
+    },
+    "Organization logo upload modal": {
+      "Drop image file here to upload or": [
+        "업로드할 이미지 파일을 여기에 놓거나"
+      ],
+      "File in PNG or JPEG format": [
+        "PNG 또는 JPEG 형식"
+      ],
+      "File not larger than 30 KB": [
+        "30KB 미만의 파일"
+      ],
+      "Square image of at least 128 pixels": [
+        "최소 128 픽셀의 정사각형 이미지"
+      ],
+      "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
+        "다른 사용자가 웹 앱에 로그인했을 때 당신의 ${ BRAND_NAME } 아이콘 대신 로고를 보게 됩니다."
+      ]
+    },
     "OS compatibility": {
       ".deb (for Debian/Ubuntu)": [
         ".deb (Debian/Ubuntu)"
@@ -11948,7 +12089,7 @@
         "**기존의 모든 데이터**(이메일, 이벤트, 연락처, 파일, ${ PASS_APP_NAME } 입력사항 외 기타)가 **잠길 것이고** 내 **복구 문구** 또는 **이전 비밀번호**로만 잠금해제할 수 있습니다."
       ],
       "Any **two-factor authentication (2FA)** method on your account will be disabled.": [
-        "모든 **2단계 인증 (2FA)** 방법이 비활성화됩니다."
+        "모든 **2단계 인증 (2FA)** 수단이 비활성화됩니다."
       ]
     },
     "passwordless": {
@@ -12396,6 +12537,11 @@
         "구독을 해지하시겠어요?"
       ]
     },
+    "Remove organization logo": {
+      "Users will no longer see your custom logo or organization name.": [
+        "다른 사용자가 당신의 맞춤형 로고 또는 조직이름을 볼 수 없게 됩니다."
+      ]
+    },
     "Restore administrator panel": {
       "${ n } administrator in your organization need access to the organization key.": [
         "조직 내의 ${ n }명 관리자가 조직 키에 접근이 필요합니다."
@@ -12424,6 +12570,11 @@
         "사용자"
       ]
     },
+    "Security Center - Info": {
+      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLinkBreach }": [
+        "하나 이상의 데이터 침해사례에서 당신의 정보가 발견되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하고 조치를 취하십시오. ${ learnMoreLinkBreach }"
+      ]
+    },
     "Select file": {
       "Upload CSV file": [
         "CSV 파일 업로드"
@@ -12438,6 +12589,14 @@
       ],
       "Upload additional files": [
         "추가적인 파일 업로드"
+      ]
+    },
+    "Select invoice document": {
+      "Currency conversion": [
+        "화폐 변환"
+      ],
+      "Invoice": [
+        "인보이스"
       ]
     },
     "Select search results": {
@@ -13337,6 +13496,89 @@
         "가격:"
       ]
     },
+    "Subscription reminder": {
+      "${ BRAND_NAME } was targeted by Russia in one of the most aggressive censorship campaigns in recent memory, and our team fought back.": [
+        "${ BRAND_NAME }은 최근에 가장 공격적이었던 검열 캠페인에서 러시아의 표적이 되었고, 저희 팀은 그에 맞서 싸웠었습니다."
+      ],
+      "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
+        "${ BRAND_NAME }의 유일한 수익원은 사용자의 구독입니다. 당신의 지지로 저희는 독립적일 수 있고, 프라이버시가 기본인 온라인을 만들어나가는 사명을 위해 나아갈 수 있으며, 프라이버시와 자유를 위해 싸우는 활동가들과 조직을 지원해나갈 수 있습니다."
+      ],
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } 데스크톱 앱"
+      ],
+      "${ planMaxSpace } total storage": [
+        "총 저장공간 ${ planMaxSpace }"
+      ],
+      "${ planName } doesn't just provide extra storage. It lets you manage your emails faster, customize your inbox and email addresses, and access the desktop app.": [
+        "${ planName }은 추가 저장공간을 제공하는 것으로 끝나지 않습니다. 더욱 빠른 이메일 관리와 받은 편지함과 이메일 주소의 맞춤화, 그리고 데스크톱 앱에 접근할 수 있게 합니다."
+      ],
+      "10 email addresses": [
+        "이메일 주소 10개"
+      ],
+      "A direct contribution to our mission": [
+        "저희의 사명에 직접적인 기여"
+      ],
+      "After ${ BRAND_NAME } got blocked in Iran during protests, our customer support team worked to get our VPN app directly into people's hands.": [
+        "항거 도중 ${ BRAND_NAME }이 이란에서 차단되자, 저희의 고객 지원 팀은 VPN 앱을 직접 전달하기 위해 움직였습니다."
+      ],
+      "After privacy and free speech were threatened in Hong Kong, we directly supported local civil rights organizations.": [
+        "홍콩에서 프라이버시와 표현의 자유가 위협받자, 저희는 현지의 시민권 단체를 직접 지원했었습니다."
+      ],
+      "By downgrading your account, you will lose access to these important features": [
+        "계정을 다운그레이드하면, 다음과 같은 중요한 기능을 이용할 수 없게 됩니다."
+      ],
+      "Cancel subscription": [
+        "구독 취소하기"
+      ],
+      "Cancel subscription?": [
+        "구독을 취소하시겠습니까?"
+      ],
+      "Close": [
+        "닫기"
+      ],
+      "Helping activists in Hong Kong": [
+        "홍콩의 활동가 지원"
+      ],
+      "I still want to cancel": [
+        "그래도 취소하겠습니다"
+      ],
+      "Keep ${ planName }": [
+        "${ planName } 유지하기"
+      ],
+      "Learn more about our impact": [
+        "저희의 영향력에 대해 더 알아보기"
+      ],
+      "Let us remind you of everything ${ planName } can do": [
+        "${ planName }이 할 수 있는 모든 것을 다시 짚어드리고자 합니다"
+      ],
+      "Our fight against censorship in Russia": [
+        "러시아의 검열에 맞선 저희의 싸움"
+      ],
+      "Priority support": [
+        "우선 지원"
+      ],
+      "Read the story": [
+        "이야기 읽어보기"
+      ],
+      "Resubscribe": [
+        "다시 구독하기"
+      ],
+      "Subscription canceled": [
+        "구독이 취소되었습니다"
+      ],
+      "Unblocking internet access in Iran": [
+        "이란의 인터넷 접속 차단 해제"
+      ],
+      "Watch the interview": [
+        "인터뷰 보기"
+      ],
+      "When you cancel, you will lose access to": [
+        "구독을 취소하시면, 다음에 접근할 수 없게 됩니다"
+      ],
+      "Yearly free storage bonuses": [
+        "연간 무료 저장공간 보너스"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "확실한가요?"
@@ -13640,7 +13882,7 @@
     },
     "summer2023: Tooltip": {
       "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
-        "모든 기기에서 안전한 로그인 세부사항을 생성하세요. 무제한 별칭, 20개의 금고, 통합된 2FA, 신용 카드 자동 작성 등이 포함되어 있습니다."
+        "모든 기기에서 안전한 로그인 세부사항을 생성하세요. 무제한 별칭, 20개의 금고, 통합된 2단계 인증기, 신용카드 자동 완성 등이 포함되어 있습니다."
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "65개 이상 국가의 2950개 이상의 서버, 최대 10개 기기 연결, 전세계적 스트리밍 서비스 접근, 멀웨어 및 광고 차단기 등 포함."
@@ -13924,6 +14166,9 @@
       "Billing cycle": [
         "결제 주기"
       ],
+      "Block trackers and malware": [
+        "트래커와 멀웨어를 차단합니다"
+      ],
       "Bridge for ${ platform }": [
         "${ platform }용 Bridge"
       ],
@@ -14113,6 +14358,9 @@
       "Delete logs": [
         "로그 삭제"
       ],
+      "Delete organization logo?": [
+        "조직 로고를 삭제하시겠습니까?"
+      ],
       "Delete the server (you will still be able to recover it for ${ days } day)": [
         "서버 삭제 (${ days }일 동안 복구할 수 있음.)"
       ],
@@ -14121,6 +14369,9 @@
       ],
       "Delete version history?": [
         "버전 기록을 삭제하시겠어요?"
+      ],
+      "Details": [
+        "세부 사항"
       ],
       "Disable ${ email }": [
         "${ email } 비활성화"
@@ -14262,15 +14513,6 @@
       ],
       "Folders and labels": [
         "폴더와 라벨"
-      ],
-      "For Linux": [
-        "Linux용"
-      ],
-      "For macOS": [
-        "MacOS용"
-      ],
-      "For Windows": [
-        "Windows용"
       ],
       "Forward and auto-reply": [
         "전달 및 자동 회신"
@@ -14446,6 +14688,9 @@
       "Password reset settings": [
         "비밀번호 재설정 설정"
       ],
+      "Passwords made easy": [
+        "간편해진 비밀번호"
+      ],
       "Pay invoice": [
         "청구서 지불"
       ],
@@ -14532,6 +14777,9 @@
       ],
       "Reset password?": [
         "비밀번호를 재설정 하시겠습니까?"
+      ],
+      "Resolved": [
+        "해결됨"
       ],
       "Restore administrator privileges": [
         "관리자 권한 복구"
@@ -14621,7 +14869,7 @@
         "조직에 로그인"
       ],
       "Sign in with 2FA": [
-        "2FA로 로그인"
+        "2단계 인증으로 로그인"
       ],
       "Sign out": [
         "로그아웃"
@@ -14716,6 +14964,9 @@
       "Upload CSV file to create multiple accounts": [
         "다중 사용자를 생성하려면 CSV 파일을 업로드해주세요."
       ],
+      "Upload your organization’s logo": [
+        "조직의 로고를 업로드하세요"
+      ],
       "Users": [
         "사용자"
       ],
@@ -14773,8 +15024,8 @@
       "Your changes are not synced yet": [
         "변경 사항이 동기화되지 않았습니다."
       ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "Mail Plus 무료 체험판이 ${ textDate }에 종료됩니다"
+      "Your exposed information": [
+        "사용자의 노출된 정보"
       ],
       "Your plan": [
         "내 플랜"
@@ -14972,7 +15223,7 @@
         "기프트 코드를 구매하셨거나 서포트 팀에서 받으셨다면, 여기에 입력하실 수 있습니다."
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
-        "2FA를 사용하지 않는 회원들은 가능한 한 빨리 활성화하라는 메일을 받게 됩니다."
+        "2단계 인증을 사용하지 않는 회원들은 가능한 한 빨리 활성화하라는 메일을 받게 됩니다."
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "전송 및 초안 폴더의 메시지가 다른 폴더로 이동하여도 표시됩니다."
@@ -15088,7 +15339,7 @@
     },
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: 무제한 별명, 공유, 통합된 2FA 등을 포함하는 비밀번호 관리자로 모든 기기에서 로그인을 보호하세요."
+        "${ PASS_APP_NAME }: 무제한 별명, 공유, 통합된 2단계 인증기 등을 포함하는 비밀번호 관리자로 모든 기기에서 로그인을 보호하세요."
       ]
     },
     "Tooltip automatically attach public key": {

@@ -516,6 +516,9 @@
       "Report a problem": [
         "反馈问题"
       ],
+      "Request a call": [
+        "请求回复"
+      ],
       "Request a feature": [
         "功能建议"
       ],
@@ -696,6 +699,9 @@
       "View": [
         "查看"
       ],
+      "View all reports": [
+        "查看所有报告"
+      ],
       "View contact details": [
         "查看联系人详情"
       ],
@@ -831,6 +837,11 @@
         "如果现在退出，该日程将不会被保存。"
       ]
     },
+    "App logo": {
+      "Download ${ MAIL_APP_NAME } desktop application": [
+        "下载 ${ MAIL_APP_NAME } 桌面应用"
+      ]
+    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "${ BRAND_NAME } 应用"
@@ -956,6 +967,9 @@
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "安全登录您的所有设备。包括无限邮箱别名、共享、集成2FA等等。"
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "采用端到端加密技术守护您的邮件安全。包含自定义域名、15 个电子邮件地址、无限量的 hide-my-email 别名、日历共享等高级功能。"
+      ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "使用加密的云存储保护您的文件。包括版本历史记录、加密文件共享等。"
       ],
@@ -964,6 +978,9 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } apps.": [
         "所有 ${ BRAND_NAME } 服务共用同一存储空间。"
+      ],
+      "Store up to 200 versions of each file for up to 10 years.": [
+        "最多可存储长达10年的200个日程记录。"
       ]
     },
     "Billing cycle": {
@@ -992,6 +1009,11 @@
       ],
       "Two-year": [
         "两年付费"
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "下载 ${ MAIL_APP_NAME } 桌面应用"
       ]
     },
     "Bug category": {
@@ -1402,6 +1424,11 @@
       ],
       "URL": [
         "网址"
+      ]
+    },
+    "Contact image": {
+      "Contact image": [
+        "联系人头像"
       ]
     },
     "Contact type label": {
@@ -2543,12 +2570,31 @@
         "更新开始于 ${ formattedStart } 的活动"
       ]
     },
+    "eof2023: Deal details": {
+      "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
+        "付费的 ${ DRIVE_SHORT_APP_NAME }、 ${ VPN_SHORT_APP_NAME } 和 ${ PASS_SHORT_APP_NAME } 功能"
+      ]
+    },
+    "eof2023: Tooltip": {
+      "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
+        "包含 ${ DRIVE_SHORT_APP_NAME }版本历史，访问数以千计的高速 ${ VPN_SHORT_APP_NAME } 服务器，保存到 ${ PASS_SHORT_APP_NAME } 以及更多。"
+      ]
+    },
     "eoy2023: Deal details": {
       "6 TB": [
         "6 TB"
       ],
       "6 users": [
         "6 位用户"
+      ],
+      "Early access to new apps and features": [
+        "抢先访问新应用和功能"
+      ],
+      "Early access to the ${ MAIL_APP_NAME } desktop app": [
+        "抢先访问 ${ MAIL_APP_NAME } 桌面应用"
+      ],
+      "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "${ MAIL_SHORT_APP_NAME } 与 ${ CALENDAR_APP_NAME } 的付费功能"
       ]
     },
     "Error": {
@@ -4437,6 +4483,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "请选择将哪些邮箱地址加入「${ groupName }」。"
       ],
+      "Please try again in a few moments": [
+        "请稍后再试"
+      ],
       "Please try again using a different payment method, or contact your bank.": [
         "请尝试用其他方式支付，或联系您的发卡银行。"
       ],
@@ -4641,6 +4690,9 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "我们将在新标签页中为您打开 PayPal 完成支付，如果您使用了弹窗屏蔽插件，请将其关闭后再继续。"
       ],
+      "We'll email you once import is complete.": [
+        "导入完成后，我们会向您发送一封电子邮件。"
+      ],
       "We'll notify you when the import is done.": [
         "当导入完成时我们将通知您"
       ],
@@ -4712,6 +4764,9 @@
       ],
       "You can check the progress ${ importProgressLink }.": [
         "您可以在${ importProgressLink } 查看导入进度"
+      ],
+      "You can close the tab or browser in the meantime.": [
+        "同时，您也可以关闭当前标签页或浏览器。"
       ],
       "You can import one data type at a time.": [
         "您一次可以导入一种数据类型。"
@@ -5517,6 +5572,30 @@
     "locked_state_storage_banner: info": {
       "Learn more": [
         "了解更多"
+      ],
+      "upgrade for more storage": [
+        "升级以获取更多存储空间"
+      ],
+      "Upgrade to restore full access": [
+        "升级以获取完整访问权限"
+      ],
+      "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
+        "您的 ${ driveStorage } 已满。要上传或同步文件，请释放空间或 ${ cta }。"
+      ],
+      "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
+        "您的 ${ mailStorage } 已满。要发送或接收电子邮件，请释放空间或 ${ cta }。"
+      ],
+      "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
+        "您的帐户有可能被删除。为了避免数据丢失，请要求您的管理员升级计划。 ${ cta }"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
+        "您的存储空间已满。要发送或接收电子邮件，请释放空间或 ${ cta }。"
+      ],
+      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
+        "您的存储空间已满。要上传或同步文件，请释放空间或 ${ cta }。"
+      ],
+      "Your subscription has ended. ${ cta } and to avoid data loss.": [
+        "您的订阅已经结束。 ${ cta } 以避免数据丢失。"
       ]
     },
     "Mail import summary": {
@@ -5542,8 +5621,17 @@
       ]
     },
     "mailtrial2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } 桌面应用"
+      ],
       "10 email addresses": [
         "10 个邮箱地址"
+      ],
+      "Auto-delete Spam and Trash": [
+        "自动清理垃圾邮件和废件箱"
+      ],
+      "Custom schedule send and snooze times": [
+        "自定义计划发送和推迟处理邮件"
       ],
       "Support for 1 custom email domain": [
         "支持1个自定义域名"
@@ -6510,6 +6598,11 @@
         "链接已复制到剪贴板"
       ]
     },
+    "Notification for duplicate filenames in the current upload": {
+      "Some images were not uploaded due to duplicate filenames in the current selection.": [
+        "由于当前选中的文件名重复，某些图像未上传。"
+      ]
+    },
     "Notification in holidays calendar modal": {
       "Adding holidays calendar failed": [
         "添加节假日日历失败"
@@ -6677,6 +6770,9 @@
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME }.": [
         "通过左上角的切换按钮可以前往所有 ${ BRAND_NAME } 服务：${ MAIL_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME } 和 ${ PASS_SHORT_APP_NAME }。"
+      ],
+      "You will be able to change your theme any time in your settings.": [
+        "您可以在设置中随时更改您的主题。"
       ]
     },
     "Option": {
@@ -6796,6 +6892,15 @@
       ],
       "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
         "此密钥已被 ${ emailAddress } 作废，只能用于验证数字签名。"
+      ],
+      "External key automatically fetched from keys.openpgp.org.": [
+        "从 keys.openpgp.org 自动获取外部密钥。"
+      ],
+      "External key automatically fetched via WKD.": [
+        "通过 WKD 自动获取外部密钥。"
+      ],
+      "This key is used to encrypt messages to this contact": [
+        "此密钥用于到此联系人的消息加密"
       ],
       "We recommend that you \"untrust\" this key.": [
         "建议您不再信任此密钥。"
@@ -7078,6 +7183,9 @@
       "${ timeRemaining.inHours } hour": [
         "${ timeRemaining.inHours } 小时"
       ],
+      "Password reset request approved (${ user.Email }).": [
+        "密码重置请求已被批准(${ user.Email })。"
+      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "请转到已登录的设备（在发起请求的会话中）更改您的密码。"
       ],
@@ -7087,8 +7195,14 @@
       "This permission expires in ${ timeRemaining.inHours } hour": [
         "此权限将在 ${ timeRemaining.inHours } 小时后过期"
       ],
+      "This permission expires soon": [
+        "此权限即将到期"
+      ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "从现在起 ${ boldDaysRemaining }内您可以自由更改 ${ boldEmail } 账户的密码。"
+      ],
+      "You can now change your password for the account ${ boldEmail }.": [
+        "您现在可以更改此账户 ${ boldEmail }的密码。"
       ],
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "您有 ${ timeRemaining.inDays } 天重置您的密码。"
@@ -7472,17 +7586,11 @@
       ]
     },
     "Spotlight": {
-      "Add your country's public holidays to your calendar.": [
-        "将您所在国家/地区的公共假期添加到您的日历中。"
-      ],
       "Color-coding is here!": [
         "颜色编码就在这里！"
       ],
       "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
         "方便地从您的桌面启动 ${ MAIL_APP_NAME }。"
-      ],
-      "Easily find the event you're looking for with our new search feature.": [
-        "使用我们新的搜索功能轻松找到您正在寻找的活动。"
       ],
       "Get the desktop app": [
         "获取桌面应用"
@@ -7492,12 +7600,6 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "邀请好友注册 ${ BRAND_NAME }"
-      ],
-      "Public holidays are here!": [
-        "公众假期来了！"
-      ],
-      "Search for events": [
-        "搜索事件"
       ],
       "With customizable event colors, you can color-code the chaos and conquer your day.": [
         "通过可定制的活动颜色，您可以对混乱进行颜色编码并控制您的一天。"
@@ -8215,6 +8317,9 @@
       "Night theme": [
         "夜间模式"
       ],
+      "No breaches detected": [
+        "未检测到数据泄露"
+      ],
       "Notes": [
         "备注"
       ],
@@ -8421,9 +8526,6 @@
       ],
       "Your calendar link": [
         "您的日历链接"
-      ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "您的 Mail Plus 免费体验期将于 ${ textDate } 结束"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

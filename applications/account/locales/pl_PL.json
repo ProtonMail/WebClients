@@ -1064,7 +1064,7 @@
       "Upload": [
         "Prześlij"
       ],
-      "Upload icon": [
+      "Upload logo": [
         "Prześlij logo"
       ],
       "Upload picture": [
@@ -3355,14 +3355,6 @@
         "Pomóż nam ulepszyć usługę!"
       ]
     },
-    "Download link": {
-      ".deb for Debian / Ubuntu": [
-        ".deb dla Debian / Ubuntu"
-      ],
-      ".rpm for Fedora / Red Hat": [
-        ".rpm dla Fedora / Red Hat"
-      ]
-    },
     "drive_signup_2023: Info": {
       "Advanced sharing security": [
         "Zaawansowane bezpieczeństwo udostępniania"
@@ -4215,10 +4207,10 @@
         "Adresy e-mail nie pasują do siebie"
       ],
       "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
-        "Plik jest zbyt duży. Maksymalny wymiar logo to ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }"
+        "Plik jest zbyt duży. Maksymalna rozdzielczość logo to ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }"
       ],
       "The file is too small, the minimum size is ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }": [
-        "Plik jest zbyt mały. Minimalny wymiar logo to ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }"
+        "Plik jest zbyt mały. Minimalna rozdzielczość logo to ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }"
       ],
       "The folder name is invalid. Please choose a different name.": [
         "Nazwa folderu jest nieprawidłowa. Wpisz inną nazwę."
@@ -6047,9 +6039,6 @@
       "${ BRAND_NAME } is privacy you can trust, ensured by strong encryption, open-source code, and Swiss privacy laws. We believe nobody should be able to exploit your data, period. Our technology and business are based upon this fundamentally stronger definition of privacy.": [
         "${ BRAND_NAME } to prywatność, której możesz zaufać, zapewniona przez silne szyfrowanie, otwarty kod źródłowy i szwajcarskie prawa ochrony danych. Wierzymy, że nikt nie powinien być w stanie wykorzystać Twoich danych i tyle. Nasza technologia i działalność opierają się na tej fundamentalnie silniejszej definicji prywatności."
       ],
-      "${ BRAND_NAME } never shares your information with third parties. Data comes from  ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
-        "${ BRAND_NAME } nigdy nie udostępnia informacji o użytkownikach stronom trzecim. Dane pochodzą z własnych źródeł ${ BRAND_NAME } i firmy Constella Intelligence."
-      ],
       "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "${ BRAND_NAME } wstrzymał proces importowania, ponieważ utracił połączenie z drugim dostawcą poczty e-mail. Połącz się ponownie."
       ],
@@ -6877,9 +6866,6 @@
       ],
       "Failed to fetch logs.": [
         "Nie udało się pobrać logów."
-      ],
-      "Fast and focused. Email and calendar, right on your desktop.": [
-        "Szybkość i skupienie. Poczta i kalendarz na pulpicie."
       ],
       "Fill in user details": [
         "Uzupełnij szczegóły użytkownika"
@@ -7805,9 +7791,6 @@
       "The link to report that that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "Link umożliwiający zgłoszenie, że to nie jest Twoje konto ${ BRAND_NAME } wygasł. Skontaktuj się z naszym zespołem pomocy technicznej, aby rozwiązać ten problem."
       ],
-      "The name and icon will be visible to your users while they are signed in.": [
-        "Nazwa i logo będą widoczna dla użytkowników po zalogowaniu."
-      ],
       "The name will be visible to your users while they are signed in.": [
         "Nazwa będzie widoczna dla użytkowników po zalogowaniu."
       ],
@@ -8155,9 +8138,6 @@
       ],
       "We just sent you a new link.": [
         "Wysłaliśmy nowy link."
-      ],
-      "We monitor the dark web for instances where your personal information (such as an email address or password used on a third-party site) is leaked or compromised. ${ dataBreachLink }": [
-        "Monitorujemy sieć dark web pod kątem wycieków danych osobowych (jak adresy e-mail, hasła). ${ dataBreachLink }"
       ],
       "We need to authenticate your payment method with your bank.": [
         "Musimy zweryfikować metodę płatności z Twoim bankiem."
@@ -8670,16 +8650,16 @@
         "Generowanie klucza nie powiodło się. Spróbuj ponownie później."
       ],
       "If you're generating a new key because you believe your existing key has been compromised, please mark it as compromised after generating this key.": [
-        "Jeśli generujesz nowy klucz, ponieważ uważasz, że obecny został naruszony, oznacz go jako naruszony po wygenerowaniu tego klucza."
+        "Po wygenerowaniu nowego klucza z powodu jego naruszenia oznacz stary klucz jako naruszony."
       ],
       "Key successfully generated.": [
         "Klucz został wygenerowany."
       ],
       "Note: you already have a key with the same algorithm for this address. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
-        "Uwaga: Masz już klucz z tym samym algorytmem szyfrowania dla tego adresu. Jeśli klucz nie został naruszony, wygenerowanie nowego nie jest konieczne. Ta czynność może spowodować spowolnienie ładowania konta."
+        "Uwaga: Masz już klucz z tym samym algorytmem szyfrowania dla tego adresu. Jeśli klucz nie został naruszony, wygenerowanie nowego nie jest konieczne. Ta czynność może spowolnić ładowania konta."
       ],
       "Note: you already have a key with the same algorithm for this user. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
-        "Uwaga: Masz już klucz z tym samym algorytmem szyfrowania dla tego użytkownika. Jeśli klucz nie został naruszony, wygenerowanie nowego nie jest konieczne. Ta czynność może spowodować spowolnienie ładowania konta."
+        "Uwaga: Masz już klucz z tym samym algorytmem szyfrowania dla tego użytkownika. Jeśli klucz nie został naruszony, wygenerowanie nowego nie jest konieczne. Ta czynność może spowolnić ładowania konta."
       ],
       "This will generate a new key, which will be used to encrypt future contact details, email encryption keys, and other data.": [
         "Spowoduje to wygenerowanie nowego klucza, który będzie używany do szyfrowania szczegółów kontaktów, kluczy adresów i innych danych."
@@ -9097,9 +9077,6 @@
       ],
       "Awarded": [
         "Przyznano"
-      ],
-      "Beta": [
-        "Beta"
       ],
       "Billing address": [
         "Adres rozliczeniowy"
@@ -10255,6 +10232,9 @@
       ]
     },
     "Log preference": {
+      "Enable ${ reason }": [
+        "Włącz ${ reason }"
+      ],
       "Enable advanced logs": [
         "Włącz zaawansowane logi"
       ],
@@ -12095,13 +12075,13 @@
       "Avoid overly compressed images.": [
         "Unikaj nadmiernie skompresowanych obrazów."
       ],
-      "Ensure your icon has padding space around it.": [
+      "Ensure your logo has padding space around it.": [
         "Zadbaj o margines wokół logo."
       ],
       "Opt for a PNG image that is a 128x128 pixels for clarity.": [
         "Wybierz obraz PNG o rozdzielczości 128x128 pikseli, aby zapewnić przejrzystość."
       ],
-      "Tips on choosing a good icon": [
+      "Tips on choosing a good logo": [
         "Wskazówki dotyczące wyboru dobrego logo"
       ],
       "Use a graphical icon or image rather than text.": [
@@ -12119,7 +12099,7 @@
         "Maksymalny rozmiar pliku to 30 kB"
       ],
       "Square image of at least 128 pixels": [
-        "Kwadratowy obraz o rozmiarze co najmniej 128 pikseli"
+        "Kwadratowy obraz o boku co najmniej 128 pikseli"
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "Użytkownicy zobaczą logo zamiast ikony ${ BRAND_NAME } po zalogowaniu się do aplikacji internetowej."
@@ -13017,10 +12997,10 @@
     },
     "scim: Info": {
       "Enter token into your identity provider": [
-        "Wpisz token od dostawcy tożsamości"
+        "Wpisz token do dostawcy tożsamości"
       ],
       "Enter URL and token into your identity provider": [
-        "Wpisz adres URL i token od dostawcy tożsamości"
+        "Wpisz adres URL i token do dostawcy tożsamości"
       ],
       "For security reasons, the token is hidden": [
         "Ze względów bezpieczeństwa token jest ukryty"
@@ -13035,7 +13015,7 @@
         "Upewnij się, że skopiowano token SCIM."
       ],
       "The SCIM base URL and token will be deleted.": [
-        "Podstawowy adres URL SCIM i token zostanie usunięty."
+        "Podstawowy adres URL SCIM i token zostaną usunięte."
       ]
     },
     "scim: Label": {
@@ -13060,6 +13040,11 @@
         "Automatyczna konfiguracja SCIM"
       ]
     },
+    "Security Center - Info": {
+      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLinkBreach }": [
+        "Twoje informacje zostały znalezione w co najmniej 1 wycieku danych. Włącz ${ DARK_WEB_MONITORING_NAME }, aby zobaczyć szczegóły i zastosować odpowiednią akcję. ${ learnMoreLinkBreach }"
+      ]
+    },
     "Select file": {
       "Upload CSV file": [
         "Prześlij plik CSV"
@@ -13074,6 +13059,17 @@
       ],
       "Upload additional files": [
         "Prześlij dodatkowe pliki"
+      ]
+    },
+    "Select invoice document": {
+      "Credit note": [
+        "Nota uznaniowa"
+      ],
+      "Currency conversion": [
+        "Kurs waluty"
+      ],
+      "Invoice": [
+        "Faktura"
       ]
     },
     "Select search results": {
@@ -14091,17 +14087,23 @@
       "10 email addresses": [
         "10 adresów e-mail"
       ],
-      "By canceling your Mail Plus subscription, your storage will decrease from **${ planMaxSpace }** to **1 GB** for Mail, and **1 GB** for Drive. You will also lose any storage bonuses earned previously.": [
-        "Anulowanie subskrypcji Mail Plus spowoduje zmniejszenie przestrzeni dyskowej z **${ planMaxSpace }** do **1 GB** na pocztę i **1 GB** na dysk. Stracisz również bonusową przestrzeń dyskową."
+      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **1 GB** for Mail, and **1 GB** for Drive. You will also lose any storage bonuses earned previously.": [
+        "Anulowanie subskrypcji ${ planName } spowoduje zmniejszenie przestrzeni dyskowej z **${ planMaxSpace }** do **1 GB** na pocztę i **1 GB** na dysk. Stracisz również bonusową przestrzeń dyskową."
       ],
-      "By canceling your Mail Plus subscription, your storage will decrease from **${ planMaxSpace }** to **1 GB** for Mail, and **5 GB** for Drive. You will also lose any storage bonuses earned previously.": [
-        "Anulowanie subskrypcji Mail Plus spowoduje zmniejszenie przestrzeni dyskowej z **${ planMaxSpace }** do **1 GB** na pocztę i **5 GB** na dysk. Stracisz również bonusową przestrzeń dyskową."
+      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **1 GB** for Mail, and **5 GB** for Drive. You will also lose any storage bonuses earned previously.": [
+        "Anulowanie subskrypcji ${ planName } spowoduje zmniejszenie przestrzeni dyskowej z **${ planMaxSpace }** do **1 GB** na pocztę i **5 GB** na dysk. Stracisz również bonusową przestrzeń dyskową."
       ],
-      "By canceling your Mail Plus subscription, your storage will decrease from **${ planMaxSpace }** to **500 MB** for Mail, and **1 GB** for Drive. You will also lose any storage bonuses earned previously.": [
-        "Anulowanie subskrypcji Mail Plus spowoduje zmniejszenie przestrzeni dyskowej z **${ planMaxSpace }** do **500 MB** na pocztę i **1 GB** na dysk. Stracisz również bonusową przestrzeń dyskową."
+      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **500 MB** for Mail, and **1 GB** for Drive. You will also lose any storage bonuses earned previously.": [
+        "Anulowanie subskrypcji ${ planName } spowoduje zmniejszenie przestrzeni dyskowej z **${ planMaxSpace }** do **500 MB** na pocztę i **1 GB** na dysk. Stracisz również bonusową przestrzeń dyskową."
       ],
-      "By canceling your Mail Plus subscription, your storage will decrease from **${ planMaxSpace }** to **500 MB** for Mail, and **5 GB** for Drive. You will also lose any storage bonuses earned previously.": [
-        "Anulowanie subskrypcji Mail Plus spowoduje zmniejszenie przestrzeni dyskowej z **${ planMaxSpace }** do **500 MB** na pocztę i **5 GB** na dysk. Stracisz również bonusową przestrzeń dyskową."
+      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **500 MB** for Mail, and **5 GB** for Drive. You will also lose any storage bonuses earned previously.": [
+        "Anulowanie subskrypcji ${ planName } spowoduje zmniejszenie przestrzeni dyskowej z **${ planMaxSpace }** do **500 MB** na pocztę i **5 GB** na dysk. Stracisz również bonusową przestrzeń dyskową."
+      ],
+      "By downgrading your account, you will also lose storage space": [
+        "Obniżając plan, utracisz przestrzeń dyskową"
+      ],
+      "By downgrading your account, you will lose access to these important features": [
+        "Obniżając plan, utracisz dostęp do ważnych funkcji"
       ],
       "Calendar sharing": [
         "Udostępnianie kalendarza"
@@ -14121,11 +14123,14 @@
       "I still want to cancel": [
         "Nadal chcę anulować"
       ],
-      "Keep Mail Plus": [
-        "Zachowaj plan Mail Plus"
+      "Keep ${ planName }": [
+        "Zachowaj plan ${ planName }"
       ],
       "Priority support": [
         "Priorytetowe wsparcie"
+      ],
+      "Read the story": [
+        "Przeczytaj historię"
       ],
       "Resubscribe": [
         "Subskrybuj ponownie"
@@ -14136,8 +14141,23 @@
       "Unlimited folders, labels and filters": [
         "Nieograniczona liczba folderów, etykiet i filtrów"
       ],
+      "Watch the interview": [
+        "Zobacz wywiad"
+      ],
       "You **won't be able to add any new files**": [
         "**Nie będziesz mógł dodawać nowych plików**"
+      ],
+      "You **won't be able to send emails** with attachments": [
+        "**Nie wyślesz wiadomości** z załącznikami"
+      ],
+      "Your **calendar will be frozen**": [
+        "**Kalendarz zostanie zablokowany**"
+      ],
+      "Your devices will **stop syncing**": [
+        "**Synchronizacja urządzenia zostanie zatrzymana**"
+      ],
+      "Your inbox will **stop receiving new emails**": [
+        "**Nie otrzymasz nowych wiadomości** w skrzynce odbiorczej"
       ],
       "Your own custom email domain": [
         "Własna niestandardowa domena"
@@ -15114,15 +15134,6 @@
       "Folders and labels": [
         "Foldery i etykiety"
       ],
-      "For Linux": [
-        "Linux"
-      ],
-      "For macOS": [
-        "macOS"
-      ],
-      "For Windows": [
-        "Windows"
-      ],
       "Forward and auto-reply": [
         "Przekierowanie i autoresponder"
       ],
@@ -15162,7 +15173,7 @@
       "How does it work?": [
         "Jak to działa?"
       ],
-      "How to choose a good icon": [
+      "How to choose a good logo": [
         "Jak wybrać dobre logo"
       ],
       "How to refer a friend and get credits": [
@@ -15274,7 +15285,7 @@
         "Brak metody odzyskiwania"
       ],
       "Open": [
-        "Otwórz"
+        "Nierozwiązane"
       ],
       "Open actions dropdown": [
         "Otwórz listę akcji"
@@ -15645,6 +15656,9 @@
       "You have no resolved alerts": [
         "Brak rozwiązanych alertów"
       ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Darmowa wersja próbna planu ${ planName } zakończy się ${ textDate }"
+      ],
       "Your calendar link": [
         "Twój link kalendarza"
       ],
@@ -15653,9 +15667,6 @@
       ],
       "Your exposed information": [
         "Twoje ujawnione informacje:"
-      ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "Darmowa wersja próbna planu Mail Plus zakończy się ${ textDate }"
       ],
       "Your plan": [
         "Twój plan"

@@ -556,6 +556,9 @@
       "Remove": [
         "Poista"
       ],
+      "Remove access": [
+        "Mitätöi käyttöoikeus"
+      ],
       "Remove bonuses": [
         "Poista edut"
       ],
@@ -4215,7 +4218,7 @@
         "Hanki työpöytäsovellus synkronoidaksesi tiedostoja tietokoneeltasi."
       ],
       "Get to know ${ DRIVE_APP_NAME } and earn your 3 GB storage bonus! Take action today.": [
-        "Tutustu ${ DRIVE_APP_NAME }en ja ansaitse 3 Gt tallennustilaetusi! Toimi tänään."
+        "Tutustu ${ DRIVE_APP_NAME }en ja ansaitse 3 Gt tallennustilakorotuksesi! Toimi tänään."
       ],
       "Go to \"My files\" and upload some files first.": [
         "Avaa \"Omat tiedostot\" ja tallenna ensin joitakin tiedostoja."
@@ -4490,6 +4493,9 @@
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Maksut on suojattu TLS-salauksella ja Sveitsin tietosuojalailla."
       ],
+      "Pending": [
+        "Odottaa"
+      ],
       "Permanently delete all files in your locked drive": [
         "Poista lukitun asemasi kaikki tiedostot"
       ],
@@ -4521,7 +4527,7 @@
         "Huomioithan, että käsittely saattaa osoitekirjasi koosta riippuen kestää jonkin aikaa."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "Huomioithan, että painettuasi Vahvista, tilillesi jää ${ creditsRemaining } krediittiä."
+        "Huomioithan, että painettuasi \"Vahvista\", tilillesi jää ${ creditsRemaining } krediittiä."
       ],
       "Please provide a name and an email address for creating a group.": [
         "Anna nimi ja sähköpostiosoite ryhmän luomista varten."
@@ -5039,6 +5045,9 @@
       "Yesterday": [
         "Eilen"
       ],
+      "you": [
+        "sinä"
+      ],
       "You already have a free account": [
         "Sinulla on jo ilmainen tili"
       ],
@@ -5435,9 +5444,6 @@
         "Poistetaanko levy?",
         "Poistetaanko levyt?"
       ],
-      "Delete link": [
-        "Poista linkki"
-      ],
       "Delete recovery-related information.": [
         "Poista palautukseen liittyvät tiedot."
       ],
@@ -5695,6 +5701,9 @@
       ],
       "Region": [
         "Alue"
+      ],
+      "Remove access": [
+        "Mitätöi käyttöoikeus"
       ],
       "Replace existing file": [
         "Korvaa olemassa oleva tiedosto"
@@ -5982,6 +5991,11 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Tilauksesi on päättynyt. ${ cta } välttääksesi tietojen menetyksen."
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Ota ${ reason } käyttöön"
       ]
     },
     "Mail import summary": {
@@ -6445,7 +6459,7 @@
         "Saatavilla kaikilla alustoilla"
       ],
       "Calendar sharing": [
-        "Kalenterien jako"
+        "Kalenterien jakaminen"
       ],
       "Catch-all": [
         "Nappaa kaikki"
@@ -6472,10 +6486,10 @@
         "Oma torkutusaika"
       ],
       "Data breach monitoring": [
-        "Tietomurtojen seuranta"
+        "Tietovuotovalvonta"
       ],
       "Data breach monitoring (coming soon)": [
-        "Tietomurtojen seuranta (tulossa pian)"
+        "Tietovuotovalvonta (tulossa pian)"
       ],
       "Desktop app": [
         "Työpöytäsovellus"
@@ -6612,7 +6626,7 @@
         "SSO-integraatio (tulossa pian)"
       ],
       "Strict no-logs policy": [
-        "Tiukka lokivastainen käytäntö"
+        "Tiukka lokivapaa käytäntö"
       ],
       "Team management": [
         "Tiimin hallinta"
@@ -7154,6 +7168,18 @@
         "${ numberOfItems } kohteen linkki poistettiin",
         "${ numberOfItems } kohteen linkit poistettiin"
       ],
+      "${ reason } has been disabled": [
+        "${ reason } poistettiin käytöstä"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } otettiin käyttöön"
+      ],
+      "Access for the member removed": [
+        "Jäsenen käyttöoikeus mitätöitiin"
+      ],
+      "Access updated and shared": [
+        "Käyttöoikeus muutettiin ja jaettiin"
+      ],
       "All items will soon be permanently deleted from trash": [
         "Kaikki roskakorin kohteet poistetaan pian pysyvästi"
       ],
@@ -7205,6 +7231,9 @@
       ],
       "File or folder is missing a name": [
         "Tiedostolta tai kansiolta puuttuu nimi"
+      ],
+      "Invitation removed from the share": [
+        "Kutsu poistettiin jaosta"
       ],
       "Link copied to clipboard": [
         "Linkki kopioitu leikepöydälle"
@@ -7696,6 +7725,9 @@
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel on **käytössä** ja suojaa tiliäsi."
+      ],
+      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLink }": [
+        "Tietojasi löytyi ainakin yhdestä tietovuodosta. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi yksityiskohdat ja ryhtyäksesi toimenpiteisiin. ${ learnMoreLink }"
       ]
     },
     "Select files": {
@@ -8900,7 +8932,7 @@
         "Yöteema"
       ],
       "No breaches detected": [
-        "Tietovuotoja ei havaittu"
+        "Tietomurtoja ei havaittu"
       ],
       "No results found": [
         "Tuloksia ei löytynyt"
@@ -9142,6 +9174,9 @@
       "You have no folders yet": [
         "Kansioita ei vielä ole"
       ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "${ planName } -kokeilusi päättyy ${ textDate }"
+      ],
       "Your 3 GB bonus": [
         "3 Gt bonuksesi"
       ],
@@ -9153,9 +9188,6 @@
       ],
       "Your exposed information": [
         "Paljastuneet tietosi"
-      ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "Ilmainen Mail Plus -kokeilusi päättyy ${ textDate }"
       ],
       "Your welcome actions": [
         "Tervetuliaistehtäväsi"

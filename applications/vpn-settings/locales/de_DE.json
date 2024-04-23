@@ -4585,7 +4585,7 @@
         "Wert"
       ],
       "VAT": [
-        "MwSt"
+        "MwSt."
       ],
       "Verification code": [
         "Verifizierungscode"
@@ -5921,14 +5921,8 @@
       "Avoid overly compressed images.": [
         "Vermeide zu stark komprimierte Bilder."
       ],
-      "Ensure your icon has padding space around it.": [
-        "Vergewissere dich, dass um dein Symbol herum Platz zum Auffüllen ist."
-      ],
       "Opt for a PNG image that is a 128x128 pixels for clarity.": [
         "Entscheide dich für ein PNG-Bild mit einer Größe von 128x128 Pixeln, damit es scharf genug dargestellt wird."
-      ],
-      "Tips on choosing a good icon": [
-        "Tipps zur Auswahl eines guten Symbols"
       ],
       "Use a graphical icon or image rather than text.": [
         "Verwende ein grafisches Symbol oder Bild anstelle von Text."
@@ -6403,6 +6397,11 @@
     "Select file": {
       "Upload CSV file": [
         "CSV-Datei hochladen"
+      ]
+    },
+    "Select invoice document": {
+      "Currency conversion": [
+        "Währungsumrechnung"
       ]
     },
     "Select search results": {
@@ -7711,9 +7710,6 @@
       "Gift code": [
         "Gutscheincode"
       ],
-      "How to choose a good icon": [
-        "Wie man ein gutes Bild auswählt"
-      ],
       "Human verification": [
         "Captcha"
       ],
@@ -7954,9 +7950,6 @@
       ],
       "Your current plan": [
         "Dein aktuelles Abonnement"
-      ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "Deine kostenlose Testversion von Mail Plus endet am ${ textDate }."
       ],
       "Your plan": [
         "Dein Abonnement"

@@ -1091,6 +1091,9 @@
       "View": [
         "Anzeigen"
       ],
+      "View all reports": [
+        "Alle Berichte anzeigen"
+      ],
       "View invoice": [
         "Rechnung anzeigen"
       ],
@@ -3287,14 +3290,6 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Hilf uns, besser zu werden!"
-      ]
-    },
-    "Download link": {
-      ".deb for Debian / Ubuntu": [
-        ".deb für Debian / Ubuntu"
-      ],
-      ".rpm for Fedora / Red Hat": [
-        ".rpm für Fedora / Red Hat"
       ]
     },
     "drive_signup_2023: Info": {
@@ -7922,6 +7917,9 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Wir werden dich in einem neuen Browser-Tab zu PayPal umleiten, um diese Zahlung abzuschließen. Falls du Pop-up-Blocker verwendest, deaktiviere diese bitte, um fortzufahren."
       ],
+      "We'll email you once import is complete.": [
+        "Wir senden dir eine Nachricht, sobald der Import abgeschlossen ist."
+      ],
       "We'll get back to you shortly.": [
         "Wir melden uns in Kürze bei dir."
       ],
@@ -8025,6 +8023,9 @@
       ],
       "You can check the progress ${ importProgressLink }.": [
         "Du kannst den Fortschritt hier ${ importProgressLink } überprüfen."
+      ],
+      "You can close the tab or browser in the meantime.": [
+        "In der Zwischenzeit kannst du den Tab oder Browser schließen."
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Du kannst dies einmal bearbeiten, um sicherzustellen, dass die richtige E-Mail-Adresse für die Verifizierung verwendet wird."
@@ -8778,9 +8779,6 @@
       "Awarded": [
         "Gutgeschrieben"
       ],
-      "Beta": [
-        "Beta"
-      ],
       "Billing address": [
         "Rechnungsadresse"
       ],
@@ -9514,7 +9512,7 @@
         "Wert"
       ],
       "VAT": [
-        "MwSt"
+        "MwSt."
       ],
       "Verification code": [
         "Verifizierungscode"
@@ -11686,14 +11684,8 @@
       "Avoid overly compressed images.": [
         "Vermeide zu stark komprimierte Bilder."
       ],
-      "Ensure your icon has padding space around it.": [
-        "Vergewissere dich, dass um dein Symbol herum Platz zum Auffüllen ist."
-      ],
       "Opt for a PNG image that is a 128x128 pixels for clarity.": [
         "Entscheide dich für ein PNG-Bild mit einer Größe von 128x128 Pixeln, damit es scharf genug dargestellt wird."
-      ],
-      "Tips on choosing a good icon": [
-        "Tipps zur Auswahl eines guten Symbols"
       ],
       "Use a graphical icon or image rather than text.": [
         "Verwende ein grafisches Symbol oder Bild anstelle von Text."
@@ -12591,6 +12583,11 @@
       ],
       "Upload additional files": [
         "Zusätzliche Dateien hochladen"
+      ]
+    },
+    "Select invoice document": {
+      "Currency conversion": [
+        "Währungsumrechnung"
       ]
     },
     "Select search results": {
@@ -14468,15 +14465,6 @@
       "Folders and labels": [
         "Ordner und Kategorien"
       ],
-      "For Linux": [
-        "Für Linux"
-      ],
-      "For macOS": [
-        "Für macOS"
-      ],
-      "For Windows": [
-        "Für Windows"
-      ],
       "Forward and auto-reply": [
         "Weiterleiten und automatisch antworten"
       ],
@@ -14515,9 +14503,6 @@
       ],
       "How does it work?": [
         "Wie funktioniert das?"
-      ],
-      "How to choose a good icon": [
-        "Wie man ein gutes Bild auswählt"
       ],
       "How to refer a friend and get credits": [
         "Wie du einen Freund wirbst und Guthaben erhältst"
@@ -14994,9 +14979,6 @@
       ],
       "Your exposed information": [
         "Deine exponierten Informationen"
-      ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "Deine kostenlose Testversion von Mail Plus endet am ${ textDate }."
       ],
       "Your plan": [
         "Dein Abonnement"

@@ -1124,10 +1124,6 @@
       "Trust": [
         "Faire confiance"
       ],
-      "Trust key": [
-        "Approuver la clé",
-        "Approuver les clés"
-      ],
       "Trust public key": [
         "Approuver la clé publique"
       ],
@@ -8053,9 +8049,6 @@
       "Sent": [
         "Envoyés"
       ],
-      "Set up email forwarding": [
-        "Configurer le transfert automatique des messages"
-      ],
       "Sign up for free": [
         "Inscrivez-vous gratuitement"
       ],
@@ -8172,6 +8165,11 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Votre abonnement est terminé. ${ cta } et pour éviter de perdre des données."
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Activer ${ reason }"
       ]
     },
     "Mail import summary": {
@@ -9255,6 +9253,12 @@
       "${ Filter.Name } created": [
         "${ Filter.Name } a été créé."
       ],
+      "${ reason } has been disabled": [
+        "${ reason } a été désactivé."
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } a été activé."
+      ],
       "Block removed": [
         "Le blocage a été retiré."
       ],
@@ -9864,6 +9868,9 @@
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel est **actif** et protège votre compte."
+      ],
+      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLink }": [
+        "Vos informations ont été retrouvées dans au moins une fuite de données. Activez l'option ${ DARK_WEB_MONITORING_NAME } pour consulter ces informations et prendre les mesures nécessaires. ${ learnMoreLink }"
       ]
     },
     "Select files": {
@@ -10417,9 +10424,6 @@
       "Email tracking protection": [
         "Protection contre le suivi des e-mails"
       ],
-      "Faster email management": [
-        "Gestion plus rapide de vos messages"
-      ],
       "Get the desktop app": [
         "Téléchargez l'application de bureau"
       ],
@@ -10429,17 +10433,14 @@
       "Invite friends to ${ BRAND_NAME }": [
         "Inviter des amis à rejoindre ${ BRAND_NAME }"
       ],
-      "Now you can take action on all emails in a single folder in one go.": [
-        "Vous pouvez désormais agir sur tous les messages d'un dossier en même temps."
-      ],
       "Schedule send": [
         "Programmer l'envoi"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME } to get notified if your data was leaked from a third-party service.": [
+        "Activez ${ DARK_WEB_MONITORING_NAME } pour recevoir des notifications si vos données ont été divulguées par un service tiers."
+      ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Nous chargeons désormais les images par défaut et empêchons les expéditeurs de vous suivre.\nVous pouvez changer cela dans les ${ settingsLink }."
-      ],
-      "You can now automatically forward your emails to anyone!": [
-        "Vous pouvez désormais transférer automatiquement vos messages à qui vous voulez."
       ],
       "You can now schedule your messages to be sent later": [
         "Vous pouvez désormais programmer vos messages pour les envoyer plus tard."
@@ -11828,6 +11829,9 @@
       "What's new": [
         "Nouveautés"
       ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Votre essai gratuit ${ planName } se termine le ${ textDate }."
+      ],
       "Your account is protected": [
         "Votre compte est protégé."
       ],
@@ -11836,9 +11840,6 @@
       ],
       "Your exposed information": [
         "Vos informations exposées"
-      ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "Votre essai gratuit Mail Plus se termine le ${ textDate }."
       ]
     },
     "Title subscription": {

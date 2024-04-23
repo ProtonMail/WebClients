@@ -556,6 +556,9 @@
       "Remove": [
         "Αφαίρεση"
       ],
+      "Remove access": [
+        "Αφαίρεση πρόσβασης"
+      ],
       "Remove bonuses": [
         "Αφαιρέστε τα μπόνους"
       ],
@@ -4175,6 +4178,9 @@
       "File will not be updated": [
         "Το αρχείο δεν θα ενημερωθεί"
       ],
+      "Files and folders that others shared with you will appear here": [
+        "Τα αρχεία και οι φάκελοι που έχουν μοιραστεί μαζί σας άλλοι χρήστες θα εμφανίζονται εδώ"
+      ],
       "Finalizing": [
         "Οριστικοποιείται"
       ],
@@ -5432,9 +5438,6 @@
         "Διαγραφή αρχειοθήκης;",
         "Διαγραφή αρχειοθηκών;"
       ],
-      "Delete link": [
-        "Διαγραφή συνδέσμου"
-      ],
       "Delete recovery-related information.": [
         "Διαγράψτε πληροφορίες που σχετίζονται με την ανάκτηση."
       ],
@@ -5719,6 +5722,12 @@
       ],
       "Set recovery method": [
         "Ορισμός μεθόδου ανάκτησης"
+      ],
+      "Shared by": [
+        "Μοιράστηκε από"
+      ],
+      "Shared on": [
+        "Κοινοποιήθηκε στις"
       ],
       "Show indexing progress of Encrypted Search": [
         "Εμφάνιση προόδου ευρετηρίου της Κρυπτογραφημένης Αναζήτησης"
@@ -7175,6 +7184,9 @@
       "Encrypted search activated": [
         "Κρυπτογραφημένη αναζήτηση ενεργή"
       ],
+      "Failed to accept share invitation": [
+        "Αποτυχία αποδοχής πρόσκλησης κοινοποίησης"
+      ],
       "Failed to download files: ${ err }": [
         "Αποτυχία λήψης αρχείων: ${ err }"
       ],
@@ -7214,6 +7226,12 @@
       ],
       "Root folder failed to be loaded": [
         "Ο πρωταρχικός φάκελος απέτυχε να φορτώσει"
+      ],
+      "Share invitation accepted successfully": [
+        "Η κοινοποίηση πρόσκλησης έγινε αποδεκτή με επιτυχία"
+      ],
+      "Share invitation ID was not found. Please check the link": [
+        "Το αναγνωριστικό πρόσκλησης κοινής χρήσης δε βρέθηκε. Παρακαλούμε ελέγξτε τον σύνδεσμο"
       ],
       "Subfolder failed to be loaded": [
         "Ο υποφάκελος απέτυχε να φορτώσει"
@@ -9135,9 +9153,6 @@
       ],
       "Your exposed information": [
         "Οι εκτεθειμένες πληροφορίες σας"
-      ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "Η δωρεάν δοκιμή του Mail Plus λήγει στις ${ textDate }"
       ],
       "Your welcome actions": [
         "Οι ευπρόσδεκτες ενέργειές σας"

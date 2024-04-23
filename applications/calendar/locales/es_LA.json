@@ -6863,10 +6863,10 @@
     },
     "Notification": {
       "${ reason } has been disabled": [
-        "${ reason } se ha desactivado"
+        "Se ha desactivado ${ reason }."
       ],
       "${ reason } has been enabled": [
-        "${ reason } se ha activado"
+        "Se ha activado ${ reason }."
       ],
       "Contact group created": [
         "Grupo de contactos creado"
@@ -7966,17 +7966,11 @@
       ]
     },
     "Spotlight": {
-      "Add your country's public holidays to your calendar.": [
-        "Añada los días festivos de su país a su calendario."
-      ],
       "Color-coding is here!": [
         "¡La codificación por colores ya está aquí!"
       ],
       "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
         "Inicie ${ MAIL_APP_NAME } con facilidad directamente desde su escritorio."
-      ],
-      "Easily find the event you're looking for with our new search feature.": [
-        "Encuentre fácilmente el evento que está buscando con nuestra función de búsqueda nueva."
       ],
       "Get the desktop app": [
         "Obtenga la aplicación de escritorio"
@@ -7992,12 +7986,6 @@
       ],
       "Now you can see when participants are free to attend your meeting.": [
         "Ahora puede ver cuando los participantes están disponibles para atender su reunión."
-      ],
-      "Public holidays are here!": [
-        "¡Los días festivos están aquí!"
-      ],
-      "Search for events": [
-        "Buscar eventos"
       ],
       "With customizable event colors, you can color-code the chaos and conquer your day.": [
         "Con los colores personalizables de eventos, puede codificar por colores el caos y conquistar su día."
@@ -9016,6 +9004,9 @@
       "You have invited participants with equivalent emails": [
         "Ha invitado a participantes con correos electrónicos iguales"
       ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Su prueba gratuita de ${ planName } termina el ${ textDate }."
+      ],
       "Your account is protected": [
         "Su cuenta está protegida"
       ],
@@ -9024,9 +9015,6 @@
       ],
       "Your exposed information": [
         "Su información expuesta"
-      ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "Su prueba gratuita de Mail Plus termina en ${ textDate }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

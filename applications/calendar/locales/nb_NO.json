@@ -5768,6 +5768,11 @@
         "Abonnementet ditt er avsluttet. ${ cta } og unngå tap av data."
       ]
     },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Aktiver ${ reason }"
+      ]
+    },
     "Mail import summary": {
       "Import all messages from ${ itemsToImportCount } folder and label them as": [
         "Importer alle meldinger fra ${ itemsToImportCount } mappe og merk dem som.",
@@ -6854,6 +6859,12 @@
       ]
     },
     "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } er deaktivert"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } er aktivert"
+      ],
       "Contact group created": [
         "Kontaktgruppe opprettet"
       ],
@@ -7490,6 +7501,9 @@
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel er **aktiv** og beskytter kontoen din."
+      ],
+      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLink }": [
+        "Informasjonen din ble funnet i minst ett datainnbrudd. Slå på ${ DARK_WEB_MONITORING_NAME } for å vise detaljer og iverksette tiltak. ${ learnMoreLink }."
       ]
     },
     "Select files": {
@@ -7949,17 +7963,11 @@
       ]
     },
     "Spotlight": {
-      "Add your country's public holidays to your calendar.": [
-        "Legg til ditt lands helligdager til kalenderen din."
-      ],
       "Color-coding is here!": [
         "Fargekoding er her"
       ],
       "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
         "Start ${ MAIL_APP_NAME } enkelt rett fra skrivebordet."
-      ],
-      "Easily find the event you're looking for with our new search feature.": [
-        "Finn enkelt hendelsen du leter etter med vår nye søkefunksjon."
       ],
       "Get the desktop app": [
         "Få skrivebordsappen"
@@ -7975,12 +7983,6 @@
       ],
       "Now you can see when participants are free to attend your meeting.": [
         "Nå kan du se når deltakerne er frie til å delta på møtet ditt."
-      ],
-      "Public holidays are here!": [
-        "Helligdager er her"
-      ],
-      "Search for events": [
-        "Søk etter hendelser"
       ],
       "With customizable event colors, you can color-code the chaos and conquer your day.": [
         "Med tilpassbare hendelsesfarger kan du fargekode kaoset og erobre dagen din."
@@ -8999,6 +9001,9 @@
       "You have invited participants with equivalent emails": [
         "Du har invitert deltakere med tilsvarende e-poster"
       ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Din gratis prøveversjon av ${ planName } slutter den ${ textDate }."
+      ],
       "Your account is protected": [
         "Kontoen din er beskyttet"
       ],
@@ -9007,9 +9012,6 @@
       ],
       "Your exposed information": [
         "Din eksponerte informasjon"
-      ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "Din gratis prøveversjon av Mail Plus slutter den ${ textDate }."
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

@@ -309,6 +309,9 @@
       "Hide affected calendars": [
         "შეცვლილი კალენდრების დამალვა"
       ],
+      "Hide busy times": [
+        "დაკავებული დროების დამალვა"
+      ],
       "Hide time zones": [
         "დროის სარტყლების დამალვა"
       ],
@@ -386,6 +389,9 @@
       ],
       "Manage labels": [
         "ჭდეების მართვა"
+      ],
+      "Mark as resolved": [
+        "მონიშნე გადაწყვეტილად"
       ],
       "Mark for deletion": [
         "მონიშნეთ წასაშლელად"
@@ -519,6 +525,9 @@
       "Report a problem": [
         "პრობლემის შესახებ შეტყობინება"
       ],
+      "Request a call": [
+        "ზარის შეკვეთა"
+      ],
       "Request a feature": [
         "თვისების მოთხოვნა"
       ],
@@ -587,6 +596,9 @@
       ],
       "Show affected calendars": [
         "შეცვლილი კალენდრების ჩვენება"
+      ],
+      "Show busy times": [
+        "დაკავებული დროების ჩვენება"
       ],
       "Show less": [
         "ნაკლების ჩვენება"
@@ -698,6 +710,9 @@
       ],
       "View": [
         "ნახვა"
+      ],
+      "View all reports": [
+        "ყველა ანგარიშის ნახვა"
       ],
       "View contact details": [
         "კონტაქტის დეტალების ნახვა"
@@ -1100,6 +1115,9 @@
       ],
       "Continue using ${ planTitle }": [
         "${ planTitle }-ის მოხმარების გაგრძელება"
+      ],
+      "Continue your subscription": [
+        "გააგრძელეთ თქვენი გამოწერა"
       ]
     },
     "Calendar access select label": {
@@ -2347,6 +2365,9 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA ამატებს უსაფრთხოების ფენას, რითიც ხელს უშლის არაავტორიზებულ წვდომას."
       ],
+      "Availability unknown": [
+        "წვდომადბა უცნობია"
+      ],
       "Boost efficiency and track your time by color-coding events by category or your energy levels. Get this and much more with a paid plan.": [
         "აიმაღლეთ ეფექტურობა და ადევნეთ თვალყური თქვენს დროს მოვლენების ფერებით მონიშვნით, კატეგორიების ან თქვენი ენერგიის დონის მიხედვით. მიიღეთ ეს და ბევრი სხვა რამ ფასიან ტარიფთან ერთად."
       ],
@@ -2370,6 +2391,9 @@
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "როგორც ჩანს კონტაქტების სია, რომლის შემოტანასაც ცდილობთ, ჯგუფებსაც შეიცავს. გადახედეთ, გნებავთ თუ არა ამ ჯგუფების შემოტანა."
+      ],
+      "Loading availability": [
+        "წვდომადობის ჩატვირთვა"
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "მიმდინარეობს კონტაქტების შერწყმა... ამას რამდენიმე წუთი შეიძლება, დასჭირდეს. როცა პროცესი დასრულდება, ეს ფანჯარა შეგეძლებათ, დახუროთ."
@@ -4440,6 +4464,9 @@
       "Large imports can take several days.": [
         "დიდი მოცულობით ინფორმაციის შემოტანას შეიძლება რამდენიმე დღე დასჭირდეს."
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "გაიგეთ, როგორ ${ staySaferOnlineLink }"
+      ],
       "Learn more": [
         "მეტის ნახვა"
       ],
@@ -4578,6 +4605,9 @@
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "აირჩიეთ, ${ groupName }-ში ელფოსტის რომელი მისამართის დამატება გნებავთ."
+      ],
+      "Please try again in a few moments": [
+        "გთხოვთ ხელახლა სცადოთ რამდენიმე წამში"
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "ან თავიდან სცადეთ, ან გადახდის სხვა საშუალება გამოიყენეთ, ან დაუკავშირდით თქვენს ბანკს."
@@ -4783,6 +4813,9 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "ამ ტრანზაქციის დასასრულებლად გადამისამართებული იქნებით PayPal-ზე ბრაუზერის ახალ ჩანართში. თუ იყენებთ მხტუნარების მბლოკავებს, გთხოვთ, გამორთოთ ისინი."
       ],
+      "We'll email you once import is complete.": [
+        "როცა შემოტანა დასრულდება, ელფოსტაზე მოგწერთ."
+      ],
       "We'll notify you when the import is done.": [
         "როდესაც შემოტანა დასრულდება, შეგატყობინებთ."
       ],
@@ -4854,6 +4887,9 @@
       ],
       "You can check the progress ${ importProgressLink }.": [
         "მიმდინარეობის ნახვა შეგიძლიათ აქ: ${ importProgressLink }."
+      ],
+      "You can close the tab or browser in the meantime.": [
+        "ამასობაში შეგიძლიათ, ბრაუზერის ჩანართი დახუროთ."
       ],
       "You can import one data type at a time.": [
         "ერთ ცდაზე მონაცემების, მხოლოდ, ერთი ტიპის შემოტანა შეგიძლიათ."
@@ -4953,6 +4989,12 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "მონაცემების შემოტანა ${ importedEmailAddressStrong }-დან ${ BRAND_NAME }-ის თქვენს ანგარიშზე მზადაა დასაწყებად."
       ],
+      "Your email address and password were leaked:": [
+        "თქვენი ელფოსტის მისამართი და პაროლი გაიჟონა:"
+      ],
+      "Your email address was exposed:": [
+        "თქვენი ელფოსტის მისამართი გაჟონილია:"
+      ],
       "Your email will only be used for this one-time verification.": [
         "თქვენი ელფოსტა, მხოლოდ, ერთხელ შესამოწმებლად იქნება გამოყენებული."
       ],
@@ -4962,11 +5004,17 @@
       "Your files will be encrypted and then saved": [
         "თქვენი ფაილები ჯერ დაიშიფრება და, მხოლოდ, შემდეგ შეინახება"
       ],
+      "Your information was found on ${ displayedDate }": [
+        "თქვენი ინფორმაციის აღმოჩენის თარიღია ${ displayedDate }"
+      ],
       "Your login information will not be saved after the import is completed.": [
         "შესვლისას გამოყენებული თქვენი ინფორმაცია შემოტანის დასრულების შემდეგ შენახული არ იქნება."
       ],
       "Your next billing date is ${ renewalTime }.": [
         "თქვენი შემდეგი გადახდის თარიღია ${ renewalTime }"
+      ],
+      "Your password was leaked:": [
+        "თქვენი პაროლი გაჟონილია:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "თქვენი ტელეფონის ნომერი, მხოლოდ, ერთხელ, შესამოწმებლად იქნება გამოყენებული."
@@ -5105,6 +5153,9 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(დრობით მიუწვდომელია. მოგვიანებით სცადეთ)"
+      ],
+      "Access to my events": [
+        "წვდომა ჩემს მოვლენებთან"
       ],
       "Add email address": [
         "ელფოსტის მისამართის დამატება"
@@ -5466,6 +5517,9 @@
       ],
       "Select your plan": [
         "აირჩიეთ ტარიფი"
+      ],
+      "Show others when I'm busy": [
+        "ჩვენება სხვებისთვის, როცა დაკავებული ვარ"
       ],
       "Show week numbers": [
         "კვირის ნომრის ჩვენება"
@@ -7877,17 +7931,11 @@
       ]
     },
     "Spotlight": {
-      "Add your country's public holidays to your calendar.": [
-        "დაამატეთ თქვენი ქვეყნის საჯარო დასვენებები თქვენს კალენდარში."
-      ],
       "Color-coding is here!": [
         "ფერების-კოდირება აქაა!"
       ],
       "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
         "მოხერხებულად გაუშვით ${ MAIL_APP_NAME } პირდაპირ სამუშაო მაგიდიდან."
-      ],
-      "Easily find the event you're looking for with our new search feature.": [
-        "იპოვეთ ადვილად მოვლენა, რომელსაც ეძებდით, ჩვენს ახალ ძებნის ფუნქციასთან ერთად."
       ],
       "Get the desktop app": [
         "მიიღეთ კომპიუტერის აპი"
@@ -7898,11 +7946,11 @@
       "Invite friends to ${ BRAND_NAME }": [
         "მოიწვიეთ მეგობრები ${ BRAND_NAME }-ში"
       ],
-      "Public holidays are here!": [
-        "დასვენებაა!"
+      "No more scheduling conflicts": [
+        "დაგეგმვის კონფლიქტების გარეშე"
       ],
-      "Search for events": [
-        "მოვლენების ძებნა"
+      "Now you can see when participants are free to attend your meeting.": [
+        "ახლა შეგიძლიათ ნახოთ, როდის არიან მონაწილეები თავისუფალი თქვენს შეხვედრაზე დასასწრებად."
       ],
       "With customizable event colors, you can color-code the chaos and conquer your day.": [
         "მორგებადი მოვლენის ფერებთან ერთად ასევე შეგიძლიათ ქაოსში ფერებით დალაგება შეიტანოთ და დღე თქვენს ნებაზე წარმართოთ."
@@ -8599,6 +8647,9 @@
       "Deleting contacts": [
         "კონტაქტების წაშლა"
       ],
+      "Details": [
+        "დეტალები"
+      ],
       "Downgrade account": [
         "ანგარიშის ტარიფის ჩამოწევა"
       ],
@@ -8924,8 +8975,8 @@
       "Your calendar link": [
         "თქვენი კალენდრის ბმული"
       ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "თქვენი Mail Plus-ის უფასო სატესტო პერიოდი ${ textDate }-ზე სრულდება"
+      "Your exposed information": [
+        "თქვენი გაჟონილი ინფორმაცია"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

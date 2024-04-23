@@ -548,8 +548,8 @@
       "Upload": [
         "Last opp"
       ],
-      "Upload icon": [
-        "Last opp ikon"
+      "Upload logo": [
+        "Last opp logo"
       ],
       "Use ${ label } theme": [
         "Bruk ${ label }-temaet"
@@ -2969,6 +2969,9 @@
         "Legg til tjener (${ availableAddedCount }) tilgjengelig",
         "Legg til tjenere (${ availableAddedCount }) tilgjengelige"
       ],
+      "Add your name and logo to create a more personalized experience for your organization.": [
+        "Legg til navn og logo for å opprette en mer personlig opplevelse for organisasjonen."
+      ],
       "Adding ${ addedServerCount } gateway server": [
         "Legger til ${ addedServerCount } mellomtjener",
         "Legger til ${ addedServerCount } mellomtjenere"
@@ -3739,9 +3742,6 @@
       ],
       "The format of your CSV file is incorrect.": [
         "Formatet til din CSV-fil er ikke riktig."
-      ],
-      "The name and icon will be visible to your users while they are signed in.": [
-        "Navnet og ikonet vil være synlig for brukerne mens de er logget på."
       ],
       "The name will be visible to your users while they are signed in.": [
         "Navnet vil være synlig for brukerne dine mens de er innlogget."
@@ -6024,17 +6024,20 @@
       "Avoid overly compressed images.": [
         "Unngå altfor komprimerte bilder."
       ],
-      "Ensure your icon has padding space around it.": [
-        "Sørg for at ikonet ditt har rom for utfylling rundt seg."
+      "Ensure your logo has padding space around it.": [
+        "Sørg for at logoen har rom for utfylling rundt seg."
       ],
       "Opt for a PNG image that is a 128x128 pixels for clarity.": [
         "Velg et PNG-bilde som er 128x128 piksler for klarhet."
       ],
-      "Tips on choosing a good icon": [
-        "Tips for å velge et godt ikon"
+      "Tips on choosing a good logo": [
+        "Tips for å velge en god logo"
       ],
       "Use a graphical icon or image rather than text.": [
         "Bruk et grafisk ikon eller bilde i stedet for tekst."
+      ],
+      "Use a solid background color.": [
+        "Bruk en solid bakgrunnsfarge."
       ]
     },
     "Organization logo upload modal": {
@@ -6565,9 +6568,6 @@
       ],
       "The SCIM base URL and token will be deleted.": [
         "SCIM-grunnadressen og tokenet vil bli slettet."
-      ],
-      "To re-enable syncing with your identity provider, your need to complete the SCIM integration again.": [
-        "For å aktivere synkronisering med identitetsleverandøren på nytt, må du fullføre SCIM-integreringen på nytt."
       ]
     },
     "scim: Label": {
@@ -6603,6 +6603,17 @@
     "Select file": {
       "Upload CSV file": [
         "Last opp en CSV-fil"
+      ]
+    },
+    "Select invoice document": {
+      "Credit note": [
+        "Kreditnota"
+      ],
+      "Currency conversion": [
+        "Valutakonvertering"
+      ],
+      "Invoice": [
+        "Faktura"
       ]
     },
     "Select search results": {
@@ -7908,8 +7919,8 @@
       "Gift code": [
         "Gavekode"
       ],
-      "How to choose a good icon": [
-        "Hvordan velge et godt ikon"
+      "How to choose a good logo": [
+        "Hvordan velge en god logo"
       ],
       "Human verification": [
         "Menneskelig verifisering"
@@ -8146,14 +8157,14 @@
       "WireGuard configuration": [
         "WireGuard-konfigurering"
       ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Din gratis prøveversjon av ${ planName } slutter den ${ textDate }."
+      ],
       "Your changes are not synced yet": [
         "Endringene dine er ikke synkronisert enda"
       ],
       "Your current plan": [
         "Din gjeldende plan"
-      ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "Din gratis prøveversjon av Mail Plus slutter den ${ textDate }."
       ],
       "Your plan": [
         "Din plan"

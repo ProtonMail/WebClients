@@ -1132,12 +1132,6 @@
       "Trust": [
         "Důvěřovat"
       ],
-      "Trust key": [
-        "Důvěřovat klíči",
-        "Důvěřovat klíčům",
-        "Důvěřovat klíčům",
-        "Důvěřovat klíčům"
-      ],
       "Trust public key": [
         "Důvěřovat veřejnému klíči"
       ],
@@ -3911,7 +3905,7 @@
         "Vyžaduje alespoň jednu podmínku"
       ],
       "Sending attachments is restricted until you meet your plan limits or upgrade.": [
-        "Odesílání příloh je omezeno, dokud nedosáhnete limitů tarifu nebo neprovedete navýšení."
+        "Odesílání příloh je omezeno, dokud se nevejdete do limitů svého tarifu nebo neprovedete navýšení."
       ],
       "Signature not verified": [
         "Podpis nebyl ověřen"
@@ -4792,7 +4786,7 @@
         "Platební karta není vyžadována."
       ],
       "Start free trial": [
-        "Bezplatná zkušební lekce"
+        "Zkuste bezplatnou verzi s omezenou dobou platnosti"
       ],
       "Try the app-new desktop app": [
         "Vyzkoušejte novou desktopovou aplikaci"
@@ -8276,9 +8270,6 @@
       "Sent": [
         "Odeslané"
       ],
-      "Set up email forwarding": [
-        "Nastavení přeposílání e-mailů"
-      ],
       "Sign up for free": [
         "Zaregistrujte se zdarma"
       ],
@@ -10714,9 +10705,6 @@
       "Email tracking protection": [
         "Ochrana před sledovacími prvky v e-mailech"
       ],
-      "Faster email management": [
-        "Rychlejší správa e-mailů"
-      ],
       "Get the desktop app": [
         "Získejte desktopovou aplikaci"
       ],
@@ -10726,17 +10714,11 @@
       "Invite friends to ${ BRAND_NAME }": [
         "Pozvěte přátele do ${ BRAND_NAME }"
       ],
-      "Now you can take action on all emails in a single folder in one go.": [
-        "Nyní můžete provést akci pro všechny e-maily v jedné složce najednou."
-      ],
       "Schedule send": [
         "Naplánovat odeslání"
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Nyní ve výchozím nastavení načítáme obrázky a znemožňujeme odesílatelům, aby vás sledovali. Toto můžete změnit v ${ settingsLink }."
-      ],
-      "You can now automatically forward your emails to anyone!": [
-        "Nyní můžete automaticky přeposílat e-maily komukoli!"
       ],
       "You can now schedule your messages to be sent later": [
         "Nyní můžete naplánovat odesílání zpráv na později"
@@ -12225,9 +12207,6 @@
       ],
       "Your changes are not synced yet": [
         "Vaše změny zatím nejsou synchronizovány"
-      ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "Vaše bezplatná zkušební verze služby Mail Plus končí ${ textDate }"
       ]
     },
     "Title subscription": {

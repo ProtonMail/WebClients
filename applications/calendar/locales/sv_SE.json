@@ -4928,6 +4928,12 @@
       "You cannot undo this action.": [
         "Du kan inte ångra denna åtgärd."
       ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "Du har en provperiod på ${ planTitle }-prenumeration. Om du vill fortsätta med din prenumeration efter provperioden, lägg till en betalningsmetod."
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "Du har en provperiod på ${ planTitle }-prenumeration. Ingen betalning krävs för närvarande. Din prenumeration kommer att förnyas automatiskt i slutet av provperioden."
+      ],
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
         "Du har återaktiverat dina nycklar och händelser länkade till följande kalendrar nu kan dekrypteras."
       ],
@@ -7248,11 +7254,6 @@
         "Vi rekommenderar att du “Sluta lita på“ denna nyckel."
       ]
     },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "E-postadress hittades inte bland användar-ID som definierats i sändningsnyckeln (${ keyUserIds })"
-      ]
-    },
     "Placeholder": {
       "A way to contact you": [
         "Ett sätt att kontakta dig"
@@ -7506,6 +7507,9 @@
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel är **aktivt** och skyddar ditt konto."
+      ],
+      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLink }": [
+        "Din information hittades i minst ett dataintrång. Slå på ${ DARK_WEB_MONITORING_NAME } för att visa detaljer och vidta åtgärder. ${ learnMoreLink }"
       ]
     },
     "Select files": {
@@ -7965,17 +7969,11 @@
       ]
     },
     "Spotlight": {
-      "Add your country's public holidays to your calendar.": [
-        "Lägg till ditt lands allmänna helgdagar till din kalender."
-      ],
       "Color-coding is here!": [
         "Färgkodning är här!"
       ],
       "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
         "Starta ${ MAIL_APP_NAME } bekvämt direkt från din stationära dator."
-      ],
-      "Easily find the event you're looking for with our new search feature.": [
-        "Hitta enkelt händelsen du letar efter med vår nya sökfunktion."
       ],
       "Get the desktop app": [
         "Skaffa appen för stationär dator"
@@ -7988,12 +7986,6 @@
       ],
       "Now you can see when participants are free to attend your meeting.": [
         "Nu kan du se när deltagarna är lediga för att delta i ditt möte."
-      ],
-      "Public holidays are here!": [
-        "Allmänna helgdagar är här!"
-      ],
-      "Search for events": [
-        "Sök efter händelser"
       ],
       "With customizable event colors, you can color-code the chaos and conquer your day.": [
         "Med anpassningsbara händelsefärger kan du färgkoda kaoset och erövra din dag."
@@ -9012,6 +9004,9 @@
       "You have invited participants with equivalent emails": [
         "Du har bjudit in deltagare med motsvarande e-post"
       ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Din gratis provperiod för ${ planName } slutar den ${ textDate }"
+      ],
       "Your account is protected": [
         "Ditt konto är skyddat"
       ],
@@ -9020,9 +9015,6 @@
       ],
       "Your exposed information": [
         "Din exponerade information"
-      ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "Din gratis provperiod för Mail Plus slutar den ${ textDate }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
