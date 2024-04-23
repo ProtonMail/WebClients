@@ -306,6 +306,9 @@
       "Hide affected calendars": [
         "隱藏受影響的行事曆"
       ],
+      "Hide busy times": [
+        "隱藏忙碌時間"
+      ],
       "Hide time zones": [
         "隱藏時區"
       ],
@@ -383,6 +386,9 @@
       ],
       "Manage labels": [
         "管理標籤"
+      ],
+      "Mark as resolved": [
+        "標記為已解決"
       ],
       "Mark for deletion": [
         "標記為刪除"
@@ -516,6 +522,9 @@
       "Report a problem": [
         "回報問題"
       ],
+      "Request a call": [
+        "請求呼叫"
+      ],
       "Request a feature": [
         "提出新功能建議"
       ],
@@ -584,6 +593,9 @@
       ],
       "Show affected calendars": [
         "顯示受影響的行事曆"
+      ],
+      "Show busy times": [
+        "顯示忙碌時間"
       ],
       "Show less": [
         "顯示更少"
@@ -695,6 +707,9 @@
       ],
       "View": [
         "檢視"
+      ],
+      "View all reports": [
+        "瀏覽全部報告"
       ],
       "View contact details": [
         "檢視聯絡人詳細資料"
@@ -1087,6 +1102,12 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "繼續使用 ${ MAIL_APP_NAME }。"
+      ],
+      "Continue using ${ planTitle }": [
+        "繼續使用 ${ planTitle }"
+      ],
+      "Continue your subscription": [
+        "繼續您的訂閱"
       ]
     },
     "Calendar access select label": {
@@ -4365,6 +4386,9 @@
       "Large imports can take several days.": [
         "大量匯入或需時數天完成。"
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "了解如何 ${ staySaferOnlineLink }"
+      ],
       "Learn more": [
         "瞭解詳情"
       ],
@@ -4502,6 +4526,9 @@
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "請選取一或多組電郵位址以加入至 ${ groupName }。"
+      ],
+      "Please try again in a few moments": [
+        "請稍候再試"
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "諘換另一個繳款方式再試一次，或聯絡您的銀行尋求協助。"
@@ -4707,6 +4734,9 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "我們將在瀏覽器的新索引標籤中重新導向到 PayPal 以完成此交易。若您有使用任何彈出式視窗攔截程式，請先停用，然後才繼續。"
       ],
+      "We'll email you once import is complete.": [
+        "當您匯入完成將電子郵件通知您。"
+      ],
       "We'll notify you when the import is done.": [
         "我們將會在匯入完成後通知你。"
       ],
@@ -4875,6 +4905,12 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "您的資料已經準備好從 ${ importedEmailAddressStrong } 匯入您的 ${ BRAND_NAME } 帳號。"
       ],
+      "Your email address and password were leaked:": [
+        "您的電子郵件位址與密碼皆已洩漏曝光："
+      ],
+      "Your email address was exposed:": [
+        "您的電子郵件地址外洩:"
+      ],
       "Your email will only be used for this one-time verification.": [
         "您的電郵只會用於此一次性驗證。"
       ],
@@ -4889,6 +4925,9 @@
       ],
       "Your next billing date is ${ renewalTime }.": [
         "您的下一個結算日期為${ renewalTime }。"
+      ],
+      "Your password was leaked:": [
+        "您的密碼已外洩:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "您的手機號碼只會用於此一次性驗證。"
@@ -5023,6 +5062,9 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(暫時無法使用。請稍後再試。)"
+      ],
+      "Access to my events": [
+        "存取我的行程"
       ],
       "Add email address": [
         "加入電郵位址"
@@ -7224,6 +7266,9 @@
       ]
     },
     "Security Center - Info": {
+      "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
+        "取得通知當您的密碼或其他資料在第三方服務中洩漏。 ${ learnMoreLink }"
+      ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "最新的 AI 安全方案，為希望加強帳號防護的人而設計。 ${ learnMoreLink }"
       ],
@@ -7670,17 +7715,11 @@
       ]
     },
     "Spotlight": {
-      "Add your country's public holidays to your calendar.": [
-        "新增您所在國家的公眾假期至您的行事曆中。"
-      ],
       "Color-coding is here!": [
         "色碼在此!"
       ],
       "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
         "方便地從桌面應用程式啟動${ MAIL_APP_NAME }"
-      ],
-      "Easily find the event you're looking for with our new search feature.": [
-        "使用我們新的搜尋功能輕鬆找到您正在尋找的行程。"
       ],
       "Get the desktop app": [
         "取得桌面應用程式"
@@ -7690,12 +7729,6 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "揪親朋好友一起用 ${ BRAND_NAME }"
-      ],
-      "Public holidays are here!": [
-        "公眾假期登場！"
-      ],
-      "Search for events": [
-        "搜尋行程"
       ],
       "With customizable event colors, you can color-code the chaos and conquer your day.": [
         "利用自訂化事件色彩，將日常瑣屑事以色彩標記，收編於統整的一天麾下。"
@@ -8364,6 +8397,9 @@
       "Deleting contacts": [
         "正在刪除聯絡人"
       ],
+      "Details": [
+        "詳細資訊"
+      ],
       "Downgrade account": [
         "降級帳號"
       ],
@@ -8474,6 +8510,9 @@
       ],
       "Night theme": [
         "夜間布景主題"
+      ],
+      "No breaches detected": [
+        "無偵測到外洩"
       ],
       "Notes": [
         "備註"
@@ -8685,8 +8724,8 @@
       "Your calendar link": [
         "您的行事曆連結"
       ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "您的 Mail Plus 免費方案將於 ${ textDate } 結束"
+      "Your exposed information": [
+        "你的外﻿﻿﻿洩資料"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

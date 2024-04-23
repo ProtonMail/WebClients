@@ -5768,6 +5768,11 @@
         "Sua assinatura terminou. ${ cta } e para evitar perda de dados."
       ]
     },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Ativar ${ reason }"
+      ]
+    },
     "Mail import summary": {
       "Import all messages from ${ itemsToImportCount } folder and label them as": [
         "Importar todas as mensagens de ${ itemsToImportCount } pasta e marcá-las como",
@@ -6854,6 +6859,12 @@
       ]
     },
     "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } foi desativado"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } foi ativado"
+      ],
       "Contact group created": [
         "Grupo de contatos criado"
       ],
@@ -7490,6 +7501,9 @@
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel está **ativo** e protegendo sua conta."
+      ],
+      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLink }": [
+        "Suas informações foram encontradas em pelo menos uma violação de dados. Ative o ${ DARK_WEB_MONITORING_NAME } para ver detalhes e tomar medidas. ${ learnMoreLink }"
       ]
     },
     "Select files": {
@@ -7949,17 +7963,11 @@
       ]
     },
     "Spotlight": {
-      "Add your country's public holidays to your calendar.": [
-        "Adicione os feriados de seu país no seu calendário."
-      ],
       "Color-coding is here!": [
         "O código de cores está aqui!"
       ],
       "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
         "Inicie ${ MAIL_APP_NAME } com facilidade diretamente do seu computador"
-      ],
-      "Easily find the event you're looking for with our new search feature.": [
-        "Encontre facilmente o evento que você procura com nosso novo recurso de pesquisa."
       ],
       "Get the desktop app": [
         "Obter o aplicativo para computador"
@@ -7975,12 +7983,6 @@
       ],
       "Now you can see when participants are free to attend your meeting.": [
         "Agora você pode ver quando os participantes estão livres para comparecer à sua reunião."
-      ],
-      "Public holidays are here!": [
-        "Feriados estão aqui!"
-      ],
-      "Search for events": [
-        "Pesquisar por eventos"
       ],
       "With customizable event colors, you can color-code the chaos and conquer your day.": [
         "Com cores de evento personalizáveis, você pode codificar o caos por cores e conquistar o seu dia."
@@ -8999,6 +9001,9 @@
       "You have invited participants with equivalent emails": [
         "Você convidou os participantes com e-mails equivalentes."
       ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Sua avaliação gratuita do ${ planName } termina em ${ textDate }"
+      ],
       "Your account is protected": [
         "Sua conta está protegida"
       ],
@@ -9007,9 +9012,6 @@
       ],
       "Your exposed information": [
         "Sua informação exposta"
-      ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "Sua avaliação gratuita do Mail Plus termina em ${ textDate }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

@@ -711,6 +711,9 @@
       "View": [
         "Bekijken"
       ],
+      "View all reports": [
+        "Bekijk alle rapporten"
+      ],
       "View contact details": [
         "Contactdetails bekijken"
       ],
@@ -4609,6 +4612,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Selecteer welk(e) e-mailadres(sen) u wilt toevoegen aan ${ groupName }."
       ],
+      "Please try again in a few moments": [
+        "Probeer het opnieuw in enkele ogenblikken"
+      ],
       "Please try again using a different payment method, or contact your bank.": [
         "Probeer opnieuw met een andere betalingsmethode, of neem contact op met uw bank."
       ],
@@ -4816,6 +4822,9 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "We verwijzen u naar PayPal in een nieuw browsertabblad om de transactie te voltooien. Als u een pop-up blocker gebruikt, schakel deze dan uit alvorens door te gaan."
       ],
+      "We'll email you once import is complete.": [
+        "We sturen je een e-mail zodra de import voltooid is."
+      ],
       "We'll notify you when the import is done.": [
         "We laten het u weten als de import klaar is."
       ],
@@ -4888,6 +4897,9 @@
       "You can check the progress ${ importProgressLink }.": [
         "U kunt de voortgang controleren ${ importProgressLink }."
       ],
+      "You can close the tab or browser in the meantime.": [
+        "In de tussentijd kunt u de tab of browser sluiten."
+      ],
       "You can import one data type at a time.": [
         "U kunt maar één type gegevens tegelijk importeren."
       ],
@@ -4909,7 +4921,7 @@
         "U kunt deze actie niet ongedaan maken."
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
-        "Je hebt een Trial ${ planTitle } abonnement. Als je na de proefperiode door wilt gaan met je abonnement, voeg een betaalmethode toe."
+        "Je hebt een trial ${ planTitle } abonnement. Als je na de proefperiode door wilt gaan met je abonnement, voeg een betaalmethode toe."
       ],
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
         "Je hebt een trial ${ planTitle } abonnement. Er is geen betaling vereist op dit moment. Uw abonnement wordt automatisch verlengd aan het einde van de proefperiode."
@@ -7937,17 +7949,11 @@
       ]
     },
     "Spotlight": {
-      "Add your country's public holidays to your calendar.": [
-        "Voeg de wettelijke feestdagen van uw land toe aan uw agenda."
-      ],
       "Color-coding is here!": [
         "Kleurcodering!"
       ],
       "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
         "Start ${ MAIL_APP_NAME } rechtstreeks vanaf uw bureaublad."
-      ],
-      "Easily find the event you're looking for with our new search feature.": [
-        "Vind eenvoudig de afspraken waar u naar zoekt met onze nieuwe zoekfunctie."
       ],
       "Get the desktop app": [
         "Download de desktop-app"
@@ -7963,12 +7969,6 @@
       ],
       "Now you can see when participants are free to attend your meeting.": [
         "U kunt nu zien wanneer deelnemers vrij zijn om ana uw vergadering deel te nemen."
-      ],
-      "Public holidays are here!": [
-        "Wettelijke feestdagen zijn hier!"
-      ],
-      "Search for events": [
-        "Zoek naar afspraken"
       ],
       "With customizable event colors, you can color-code the chaos and conquer your day.": [
         "Met aanpasbare agenda kleuren, u kunt de chaos van kleurcodering en breng orde aan in uw dag."
@@ -8780,6 +8780,9 @@
       "Night theme": [
         "Nacht thema"
       ],
+      "No breaches detected": [
+        "Geen inbreuken gevonden"
+      ],
       "Notes": [
         "Notities"
       ],
@@ -8984,6 +8987,9 @@
       "You have invited participants with equivalent emails": [
         "U heeft deelnemers met gelijkwaardige e-mails uitgenodigd"
       ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Uw ${ planName } gratis proefperiode eindigt op ${ textDate }"
+      ],
       "Your account is protected": [
         "Uw account is beschermd"
       ],
@@ -8992,9 +8998,6 @@
       ],
       "Your exposed information": [
         "Uw blootgestelde informatie"
-      ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "Uw Mail Plus proefversie eindigt op ${ textDate }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

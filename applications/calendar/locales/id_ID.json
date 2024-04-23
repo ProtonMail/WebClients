@@ -5072,7 +5072,7 @@
         "Dicabut"
       ],
       "Trusted": [
-        "Tepercaya"
+        "Terpercaya"
       ]
     },
     "Knowledge base link label": {
@@ -5685,6 +5685,11 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Langganan Anda telah berakhir. ${ cta } dan mencegah hilangnya data."
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Aktifkan ${ reason }"
       ]
     },
     "Mail import summary": {
@@ -6746,6 +6751,12 @@
       ]
     },
     "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } telah dinonaktifkan"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } telah diaktifkan"
+      ],
       "Contact group created": [
         "Grup kontak telah dibuat"
       ],
@@ -7352,6 +7363,9 @@
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel saat ini sedang **aktif** dan melindungi akun Anda."
+      ],
+      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLink }": [
+        "Informasi seputar diri Anda ditemukan pada setidaknya satu insiden kebocoran data. Aktifkan ${ DARK_WEB_MONITORING_NAME } untuk melihat rincian kebocoran ini dan mengambil tindakan yang sesuai. ${ learnMoreLink }"
       ]
     },
     "Select files": {
@@ -7793,17 +7807,11 @@
       ]
     },
     "Spotlight": {
-      "Add your country's public holidays to your calendar.": [
-        "Tambahkan hari libur nasional negara Anda pada kalender Anda."
-      ],
       "Color-coding is here!": [
         "Kode warna ada di sini!"
       ],
       "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
         "Luncurkan ${ MAIL_APP_NAME } secara mudah langsung dari desktop Anda."
-      ],
-      "Easily find the event you're looking for with our new search feature.": [
-        "Cari acara yang Anda inginkan dengan mudah dengan fitur pencarian kami yang baru."
       ],
       "Get the desktop app": [
         "Dapatkan aplikasi desktop"
@@ -7819,12 +7827,6 @@
       ],
       "Now you can see when participants are free to attend your meeting.": [
         "Kini Anda dapat melihat kapan saja para peserta dapat menghadiri meeting Anda."
-      ],
-      "Public holidays are here!": [
-        "Libur telah tiba!"
-      ],
-      "Search for events": [
-        "Cari acara"
       ],
       "With customizable event colors, you can color-code the chaos and conquer your day.": [
         "Dengan warna acara yang dapat disesuaikan, Anda dapat mengurai kekacauan yang ada dan memaksimalkan hari Anda dengen memberikan kode warna bagi acara tertentu."
@@ -8283,7 +8285,7 @@
         "Status"
       ],
       "Type": [
-        "Tipe"
+        "Jenis"
       ]
     },
     "TableHeader": {
@@ -8823,6 +8825,9 @@
       "You have invited participants with equivalent emails": [
         "Anda telah mengundang peserta dengan alamat email yang serupa"
       ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Masa uji coba gratis ${ planName } Anda akan berakhir pada ${ textDate }"
+      ],
       "Your account is protected": [
         "Akun Anda terlindung"
       ],
@@ -8831,9 +8836,6 @@
       ],
       "Your exposed information": [
         "Informasi Anda yang terpapar"
-      ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "Uji coba Mail Plus Anda akan berakhir pada ${ textDate }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -9024,7 +9026,7 @@
     },
     "Warning": {
       "${ BRAND_NAME } will merge all folders with the same name. To avoid this, change the names before import.": [
-        "${ BRAND_NAME } akan menggabungkan seluruh folder yang memiliki nama yang sama. Untuk menghindari hal ini, silakan ubah nama folder sebelum Anda mengimpor."
+        "${ BRAND_NAME } akan menggabungkan seluruh folder yang memiliki nama yang sama. Untuk menghindari hal ini, ubah nama folder Anda sebelum mengimpor."
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } akan berupaya untuk mentransfer data sebanyak-banyaknya, yang dimulai dengan pesan Anda yang terbaru."

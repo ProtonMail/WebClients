@@ -312,6 +312,9 @@
       "Hide affected calendars": [
         "Ascundere calendare afectate"
       ],
+      "Hide busy times": [
+        "Ascundere timp ocupat"
+      ],
       "Hide time zones": [
         "Ascundere fusuri orare"
       ],
@@ -389,6 +392,9 @@
       ],
       "Manage labels": [
         "Gestionare etichete"
+      ],
+      "Mark as resolved": [
+        "Marcare ca rezolvată"
       ],
       "Mark for deletion": [
         "Marcare pentru ștergere"
@@ -522,6 +528,9 @@
       "Report a problem": [
         "Raportare problemă"
       ],
+      "Request a call": [
+        "Solicitați un apel"
+      ],
       "Request a feature": [
         "Solicitare funcție"
       ],
@@ -590,6 +599,9 @@
       ],
       "Show affected calendars": [
         "Afișare calendare afectate"
+      ],
+      "Show busy times": [
+        "Afișare timp ocupat"
       ],
       "Show less": [
         "Afișare mai puțin"
@@ -701,6 +713,9 @@
       ],
       "View": [
         "Afișare"
+      ],
+      "View all reports": [
+        "Afișare toate rapoartele"
       ],
       "View contact details": [
         "Afișare detalii contact"
@@ -1110,6 +1125,9 @@
       ],
       "Continue using ${ planTitle }": [
         "Continuare utilizare ${ planTitle }"
+      ],
+      "Continue your subscription": [
+        "Păstrare abonament"
       ]
     },
     "Calendar access select label": {
@@ -2367,6 +2385,9 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "A2F adaugă un nivel de securitate suplimentar, prevenind accesul neautorizat."
       ],
+      "Availability unknown": [
+        "Disponibilitate necunoscută"
+      ],
       "Boost efficiency and track your time by color-coding events by category or your energy levels. Get this and much more with a paid plan.": [
         "Creșteți eficiența și urmăriți-vă timpul prin marcarea evenimentelor prin culori în funcție de categorie sau de nivelurile de energie personală. Obțineți asta și multe altele cu un plan cu plată."
       ],
@@ -2390,6 +2411,9 @@
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Se pare că lista de contacte pe care o importați conține unele grupuri. Examinați modul în care aceste grupuri ar trebui importate."
+      ],
+      "Loading availability": [
+        "Se încarcă disponibilitatea"
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Îmbinare contacte... Ar putea dura câteva minute. După finalizarea operației, veți putea închide această fereastră."
@@ -4512,6 +4536,9 @@
       "Large imports can take several days.": [
         "Importările mari pot dura mai multe zile."
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Aflați cum să ${ staySaferOnlineLink }"
+      ],
       "Learn more": [
         "Detalii"
       ],
@@ -4526,6 +4553,9 @@
       ],
       "Loading ${ appName }": [
         "Se încarcă ${ appName }"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Calendarul se încarcă, așteptați. Pagina se va redirecționa către platforma noastră de programări Calendly într-o filă nouă."
       ],
       "Loading event": [
         "Se încarcă evenimentul."
@@ -4605,6 +4635,9 @@
       "Organization size": [
         "Mărime organizație"
       ],
+      "Other users within your organization will see your busy slots. No event details are shared.": [
+        "Alți utilizatori din organizație vă vor vedea perioadele când aveți activități. Detaliile despre eveniment nu sunt distribuite."
+      ],
       "password": [
         "parola"
       ],
@@ -4651,6 +4684,9 @@
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Selectați adresa sau adresele de e-mail de adăugat la ${ groupName }."
+      ],
+      "Please try again in a few moments": [
+        "Mai încercați mai târziu."
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Reîncercați folosind o metodă de plată diferită sau contactați-vă banca."
@@ -4729,6 +4765,9 @@
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Aplicația trebuie să decripteze local contactele înainte de a putea fi exportate. La sfârșitul procesului, va fi generat un fișier VCF pe care îl veți putea descărca."
+      ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "Informațiile expuse au fost divulgate de la un serviciu terță parte. Informațiile contului ${ BRAND_NAME } rămân securizate și criptate. ${ learnMoreLink }"
       ],
       "The following participants cannot be notified about your changes:": [
         "Următorii participanți nu pot fi notificați privind modificările pe care le-ați efectuat:"
@@ -4856,6 +4895,9 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Pentru finalizarea tranzacției prin PayPal se va deschide o filă nouă. Dacă folosiți programe de blocat ferestre flotante dezactivați-le înainte de a continua."
       ],
+      "We'll email you once import is complete.": [
+        "Vă vom anunța pe e-mail după finalizarea importării."
+      ],
       "We'll notify you when the import is done.": [
         "Veți primi o notificare la finalizarea importării."
       ],
@@ -4928,6 +4970,9 @@
       "You can check the progress ${ importProgressLink }.": [
         "Puteți verifica progresul ${ importProgressLink }."
       ],
+      "You can close the tab or browser in the meantime.": [
+        "Puteți închide fila sau navigatorul web între timp."
+      ],
       "You can import one data type at a time.": [
         "Puteți importa un singur tip de date la un moment dat."
       ],
@@ -4949,6 +4994,12 @@
       ],
       "You cannot undo this action.": [
         "Nu puteți anula această acțiune."
+      ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "Aveți un abonament ${ planTitle } de probare. Dacă doriți să vă continuați abonamentul după perioada de probare, adăugați o metodă de plată."
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "Aveți un abonament ${ planTitle } de probare. Nu este necesară nici o plată în acest moment. Abonamentul se va reînnoi automat la sfârșitul perioadei de probare."
       ],
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
         "Ați reactivat cheile și evenimentele legate de următoarele calendare se pot decripta acum."
@@ -5028,6 +5079,12 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Datele vă sunt pregătite pentru importare din ${ importedEmailAddressStrong } în contul ${ BRAND_NAME }."
       ],
+      "Your email address and password were leaked:": [
+        "Adresa de e-mail și parola au fost divulgate:"
+      ],
+      "Your email address was exposed:": [
+        "Adresa de e-mail a fost divulgată:"
+      ],
       "Your email will only be used for this one-time verification.": [
         "Adresa va fi folosită doar pentru această verificare unică."
       ],
@@ -5037,11 +5094,17 @@
       "Your files will be encrypted and then saved": [
         "Fișierele vor fi criptate și apoi salvate."
       ],
+      "Your information was found on ${ displayedDate }": [
+        "Informațiile v-au fost găsite la ${ displayedDate }"
+      ],
       "Your login information will not be saved after the import is completed.": [
         "Informațiile de conectare nu vor fi salvate după terminarea importării."
       ],
       "Your next billing date is ${ renewalTime }.": [
         "Data următoarei facturi este ${ renewalTime }."
+      ],
+      "Your password was leaked:": [
+        "Parola a fost divulgată:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Numărul de telefon va fi folosit doar pentru această verificare unică."
@@ -5184,6 +5247,9 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Temporar indisponibil. Vă rugăm să reveniți mai târziu.)"
+      ],
+      "Access to my events": [
+        "Acces la evenimentele mele"
       ],
       "Add email address": [
         "Adăugare e-mail"
@@ -5546,6 +5612,9 @@
       ],
       "Select your plan": [
         "Selectați planul"
+      ],
+      "Show others when I'm busy": [
+        "Afișare celorlalți când sunt ocupat(ă)"
       ],
       "Show week numbers": [
         "Afișare număr săptămână"
@@ -7551,6 +7620,9 @@
       ]
     },
     "Security Center - Info": {
+      "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
+        "Primiți notificări dacă parola sau alte date v-au fost divulgate de la un serviciu terță parte. ${ learnMoreLink }"
+      ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Soluția noastră de securitate de ultimă oră, bazată pe inteligență artificială, concepută pentru utilizatorii care doresc o protecție sporită pentru conturile lor. ${ learnMoreLink }"
       ],
@@ -8033,17 +8105,11 @@
       ]
     },
     "Spotlight": {
-      "Add your country's public holidays to your calendar.": [
-        "Adăugați sărbătorile publice ale propriei țări în calendarul personal."
-      ],
       "Color-coding is here!": [
         "Marcarea prin culori este aici!"
       ],
       "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
         "Lansați convenient ${ MAIL_APP_NAME } chiar de pe desktop."
-      ],
-      "Easily find the event you're looking for with our new search feature.": [
-        "Căutați ușor evenimentul dorit cu noua funcție de căutare."
       ],
       "Get the desktop app": [
         "Luați aplicația pentru desktop"
@@ -8054,11 +8120,11 @@
       "Invite friends to ${ BRAND_NAME }": [
         "Invitați persoane la ${ BRAND_NAME }"
       ],
-      "Public holidays are here!": [
-        "Sărbătorile publice sunt aici!"
+      "No more scheduling conflicts": [
+        "Fără conflicte între programări"
       ],
-      "Search for events": [
-        "Căutare evenimente"
+      "Now you can see when participants are free to attend your meeting.": [
+        "Acum puteți vedea când participanții sunt liberi pentru a participa la întâlniri."
       ],
       "With customizable event colors, you can color-code the chaos and conquer your day.": [
         "Prin personalizarea evenimentelor prin culori, vă ajută să vă gestionați mai bine programul."
@@ -8774,6 +8840,9 @@
       "Deleting contacts": [
         "Ștergere contacte"
       ],
+      "Details": [
+        "Detalii"
+      ],
       "Downgrade account": [
         "Retrogradare cont"
       ],
@@ -9100,8 +9169,8 @@
       "Your calendar link": [
         "Legătură calendar"
       ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "Perioada de încercare pentru Mail Plus se încheie la ${ textDate } "
+      "Your exposed information": [
+        "Informațiile expuse"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
