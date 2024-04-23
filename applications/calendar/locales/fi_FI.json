@@ -2392,6 +2392,9 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Yhteystiedot, joita olet tuomassa, näyttävät sisältävän ryhmiä. Määritä miten ryhmät tuodaan."
       ],
+      "Loading availability": [
+        "Ladataan saatavuutta"
+      ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Yhteystietoja yhdistetään... Tämä voi kestää muutamia minuutteja ja käsittelyn valmistuttua voit sulkea tämän ruudun."
       ],
@@ -4591,7 +4594,7 @@
         "Huomioithan, että käsittely saattaa osoitekirjasi koosta riippuen kestää jonkin aikaa."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "Huomioithan, että painettuasi Vahvista, tilillesi jää ${ creditsRemaining } krediittiä."
+        "Huomioithan, että painettuasi \"Vahvista\", tilillesi jää ${ creditsRemaining } krediittiä."
       ],
       "Please provide a name and an email address for creating a group.": [
         "Anna nimi ja sähköpostiosoite ryhmän luomista varten."
@@ -5765,6 +5768,11 @@
         "Tilauksesi on päättynyt. ${ cta } välttääksesi tietojen menetyksen."
       ]
     },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Ota ${ reason } käyttöön"
+      ]
+    },
     "Mail import summary": {
       "Import all messages from ${ itemsToImportCount } folder and label them as": [
         "Tuo kaikki ${ itemsToImportCount } kansion viestit ja merkitse ne tunnisteella",
@@ -6228,7 +6236,7 @@
         "Saatavilla kaikilla alustoilla"
       ],
       "Calendar sharing": [
-        "Kalenterien jako"
+        "Kalenterien jakaminen"
       ],
       "Catch-all": [
         "Nappaa kaikki"
@@ -6255,10 +6263,10 @@
         "Oma torkutusaika"
       ],
       "Data breach monitoring": [
-        "Tietomurtojen seuranta"
+        "Tietovuotovalvonta"
       ],
       "Data breach monitoring (coming soon)": [
-        "Tietomurtojen seuranta (tulossa pian)"
+        "Tietovuotovalvonta (tulossa pian)"
       ],
       "Desktop app": [
         "Työpöytäsovellus"
@@ -6395,7 +6403,7 @@
         "SSO-integraatio (tulossa pian)"
       ],
       "Strict no-logs policy": [
-        "Tiukka lokivastainen käytäntö"
+        "Tiukka lokivapaa käytäntö"
       ],
       "Team management": [
         "Tiimin hallinta"
@@ -6851,6 +6859,12 @@
       ]
     },
     "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } poistettiin käytöstä"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } otettiin käyttöön"
+      ],
       "Contact group created": [
         "Yhteystietoryhmä luotiin"
       ],
@@ -7487,6 +7501,9 @@
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel on **käytössä** ja suojaa tiliäsi."
+      ],
+      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLink }": [
+        "Tietojasi löytyi ainakin yhdestä tietovuodosta. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi yksityiskohdat ja ryhtyäksesi toimenpiteisiin. ${ learnMoreLink }"
       ]
     },
     "Select files": {
@@ -7946,17 +7963,11 @@
       ]
     },
     "Spotlight": {
-      "Add your country's public holidays to your calendar.": [
-        "Lisää maasi yleiset vapaapäivät kalenteriisi."
-      ],
       "Color-coding is here!": [
         "Värikoodaus on täällä!"
       ],
       "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
         "Käynnistä ${ MAIL_APP_NAME } kätevästi suoraan työpöydältäsi."
-      ],
-      "Easily find the event you're looking for with our new search feature.": [
-        "Löydä etsimäsi tapahtuma helposti uudella hakutoiminnollamme."
       ],
       "Get the desktop app": [
         "Hanki työpöytäsovellus"
@@ -7972,12 +7983,6 @@
       ],
       "Now you can see when participants are free to attend your meeting.": [
         "Nyt voit nähdä milloin osallistujat ovat vapaita osallistumaan kokoukseesi."
-      ],
-      "Public holidays are here!": [
-        "Yleiset vapaapäivät ovat täällä!"
-      ],
-      "Search for events": [
-        "Etsi tapahtumia"
       ],
       "With customizable event colors, you can color-code the chaos and conquer your day.": [
         "Mukautettavien tapahtumavärien avulla voit värikoodata kaaoksen ja valloittaa päiväsi."
@@ -8790,7 +8795,7 @@
         "Yöteema"
       ],
       "No breaches detected": [
-        "Tietovuotoja ei havaittu"
+        "Tietomurtoja ei havaittu"
       ],
       "Notes": [
         "Muistiinpanot"
@@ -8996,6 +9001,9 @@
       "You have invited participants with equivalent emails": [
         "Olet kutsunut eri osallistujia samoilla sähköpostiosoitteilla"
       ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "${ planName } -kokeilusi päättyy ${ textDate }"
+      ],
       "Your account is protected": [
         "Tilisi on suojattu"
       ],
@@ -9004,9 +9012,6 @@
       ],
       "Your exposed information": [
         "Paljastuneet tietosi"
-      ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "Ilmainen Mail Plus -kokeilusi päättyy ${ textDate }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

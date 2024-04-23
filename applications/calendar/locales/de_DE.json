@@ -711,6 +711,9 @@
       "View": [
         "Anzeigen"
       ],
+      "View all reports": [
+        "Alle Berichte anzeigen"
+      ],
       "View contact details": [
         "Kontaktinformationen anzeigen"
       ],
@@ -4819,6 +4822,9 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Wir werden dich in einem neuen Browser-Tab zu PayPal umleiten, um diese Zahlung abzuschließen. Falls du Pop-up-Blocker verwendest, deaktiviere diese bitte, um fortzufahren."
       ],
+      "We'll email you once import is complete.": [
+        "Wir senden dir eine Nachricht, sobald der Import abgeschlossen ist."
+      ],
       "We'll notify you when the import is done.": [
         "Du wirst benachrichtigt, sobald der Datenimport abgeschlossen ist."
       ],
@@ -4890,6 +4896,9 @@
       ],
       "You can check the progress ${ importProgressLink }.": [
         "Du kannst den Fortschritt hier ${ importProgressLink } überprüfen."
+      ],
+      "You can close the tab or browser in the meantime.": [
+        "In der Zwischenzeit kannst du den Tab oder Browser schließen."
       ],
       "You can import one data type at a time.": [
         "Du kannst jeweils nur einen Datentyp importieren."
@@ -5570,7 +5579,7 @@
         "URL"
       ],
       "VAT": [
-        "MwSt"
+        "MwSt."
       ],
       "Verification code": [
         "Verifizierungscode"
@@ -7940,17 +7949,11 @@
       ]
     },
     "Spotlight": {
-      "Add your country's public holidays to your calendar.": [
-        "Füge die Feiertage deines Landes zu deinem Kalender hinzu."
-      ],
       "Color-coding is here!": [
         "Die Farbanpassung ist da!"
       ],
       "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
         "Starte ${ MAIL_APP_NAME } ganz bequem von deinem Desktop aus."
-      ],
-      "Easily find the event you're looking for with our new search feature.": [
-        "Mit unserer neuen Suchfunktion findest du ganz einfach den Termin, den du suchst."
       ],
       "Get the desktop app": [
         "Desktop-App herunterladen"
@@ -7966,12 +7969,6 @@
       ],
       "Now you can see when participants are free to attend your meeting.": [
         "Jetzt kannst du sehen, wann die Teilnehmer verfügbar sind, um an deiner Besprechung teilzunehmen."
-      ],
-      "Public holidays are here!": [
-        "Die Feiertage sind da!"
-      ],
-      "Search for events": [
-        "Nach Terminen suchen"
       ],
       "With customizable event colors, you can color-code the chaos and conquer your day.": [
         "Mit anpassbaren Terminfarben kannst du das Chaos einfärben und deinen Tag bewältigen."
@@ -8998,9 +8995,6 @@
       ],
       "Your exposed information": [
         "Deine exponierten Informationen"
-      ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "Deine kostenlose Testversion von Mail Plus endet am ${ textDate }."
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

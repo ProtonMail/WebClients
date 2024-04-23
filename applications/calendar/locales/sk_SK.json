@@ -717,6 +717,9 @@
       "View": [
         "Zobraziť"
       ],
+      "View all reports": [
+        "Zobraziť všetky hlásenia"
+      ],
       "View contact details": [
         "Zobraziť detaily kontaktu"
       ],
@@ -4755,6 +4758,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Vyberte adresu alebo adresy, ktoré chcete pridať do skupiny ${ groupName }."
       ],
+      "Please try again in a few moments": [
+        "Skúste to znova o chvíľu, prosím"
+      ],
       "Please try again using a different payment method, or contact your bank.": [
         "Skúste to znova pomocou iného spôsobu platby, alebo kontaktujte svoju banku."
       ],
@@ -4962,6 +4968,9 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Na dokončenie tejto transakcie vás presmerujeme na PayPal v novej karte prehliadača. Ak používate blokovanie vyskakovacích okien, pred pokračovaním ho prosím vypnite."
       ],
+      "We'll email you once import is complete.": [
+        "Po dokončení importu vám pošleme email."
+      ],
       "We'll notify you when the import is done.": [
         "Po dokončení importu Vás budeme informovať."
       ],
@@ -5033,6 +5042,9 @@
       ],
       "You can check the progress ${ importProgressLink }.": [
         "Tu môžete skontrolovať priebeh ${ importProgressLink }."
+      ],
+      "You can close the tab or browser in the meantime.": [
+        "Medzitým môžete túto záložku alebo prehliadač zatvoriť."
       ],
       "You can import one data type at a time.": [
         "Importovať môžete vždy jeden typ údajov."
@@ -7754,6 +7766,9 @@
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel je **aktívny** a chráni váš účet."
+      ],
+      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLink }": [
+        "Vaše údaje boli zistené najmenej v jednom prípade porušenia ochrany osobných údajov. Ak chcete zobraziť podrobnosti a podniknúť kroky, zapnite funkciu ${ DARK_WEB_MONITORING_NAME }. ${ learnMoreLink }"
       ]
     },
     "Select files": {
@@ -8249,17 +8264,11 @@
       ]
     },
     "Spotlight": {
-      "Add your country's public holidays to your calendar.": [
-        "Pridajte štátne sviatky svojej krajiny do vášho kalendára."
-      ],
       "Color-coding is here!": [
         "Farebné označovanie je tu!"
       ],
       "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
         "Pohodlne spustite ${ MAIL_APP_NAME } priamo z plochy."
-      ],
-      "Easily find the event you're looking for with our new search feature.": [
-        "Jednoducho nájdite udalosť, ktorú hľadáte s našou novou funkciou vyhľadávania."
       ],
       "Get the desktop app": [
         "Získajte desktopovú aplikáciu"
@@ -8275,12 +8284,6 @@
       ],
       "Now you can see when participants are free to attend your meeting.": [
         "Teraz môžete zistiť, kedy sa účastníci môžu zúčastniť na vašom mítingu."
-      ],
-      "Public holidays are here!": [
-        "Štátne sviatky sú tu!"
-      ],
-      "Search for events": [
-        "Vyhľadajte udalosti"
       ],
       "With customizable event colors, you can color-code the chaos and conquer your day.": [
         "Pomocou prispôsobiteľných farieb udalostí môžete farebne rozlíšiť chaos a ovládnuť svoj deň."
@@ -9339,6 +9342,9 @@
       "You have invited participants with equivalent emails": [
         "Pozvali ste účastníkov s rovnakými emailami"
       ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Vaša bezplatná skúšobná verzia služby ${ planName } končí ${ textDate }"
+      ],
       "Your account is protected": [
         "Váš účet je chránený"
       ],
@@ -9347,9 +9353,6 @@
       ],
       "Your exposed information": [
         "Vaše odhalené informácie"
-      ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "Vaša bezplatná skúšobná verzia služby Mail Plus končí ${ textDate }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
