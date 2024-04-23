@@ -182,6 +182,9 @@
       "Copy email to clipboard": [
         "ელფოსტის მისამართის ბაფერში კოპირება"
       ],
+      "Copy invite link": [
+        "მოსაწვევის ბმულის კოპირება"
+      ],
       "Copy link": [
         "ბმულის კოპირება"
       ],
@@ -439,6 +442,9 @@
       "Manage link": [
         "ბმულის მართვა"
       ],
+      "Mark as resolved": [
+        "მონიშნე გადაწყვეტილად"
+      ],
       "Mark for deletion": [
         "მონიშნეთ წასაშლელად"
       ],
@@ -550,6 +556,9 @@
       "Remove": [
         "წაშლა"
       ],
+      "Remove access": [
+        "წვდომის გაუქმება"
+      ],
       "Remove bonuses": [
         "ბონუსების წაშლა"
       ],
@@ -573,6 +582,9 @@
       ],
       "Report an issue": [
         "პრობლემის ანგარიშის გადაგზავნა"
+      ],
+      "Request a call": [
+        "ზარის შეკვეთა"
       ],
       "Request a feature": [
         "თვისების მოთხოვნა"
@@ -822,6 +834,9 @@
       ],
       "View": [
         "ნახვა"
+      ],
+      "View all reports": [
+        "ყველა ანგარიშის ნახვა"
       ],
       "View invoice": [
         "ინვოისის ნახვა"
@@ -1148,6 +1163,9 @@
       ],
       "Continue using ${ planTitle }": [
         "${ planTitle }-ის მოხმარების გაგრძელება"
+      ],
+      "Continue your subscription": [
+        "გააგრძელეთ თქვენი გამოწერა"
       ]
     },
     "Checkout row": {
@@ -4160,6 +4178,9 @@
       "File will not be updated": [
         "ფაილი არ განახლდება"
       ],
+      "Files and folders that others shared with you will appear here": [
+        "ფაილები და საქარალდეები, რომლებსაც სხვებს გაუზიარებთ, აქ გამოჩნდება"
+      ],
       "Finalizing": [
         "დასრულება"
       ],
@@ -4313,6 +4334,9 @@
       ],
       "Last week": [
         "გასულ კვირას"
+      ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "გაიგეთ, როგორ ${ staySaferOnlineLink }"
       ],
       "Learn more": [
         "მეტის ნახვა"
@@ -4512,6 +4536,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "აირჩიეთ, ${ groupName }-ში ელფოსტის რომელი მისამართის დამატება გნებავთ."
       ],
+      "Please try again in a few moments": [
+        "გთხოვთ ხელახლა სცადოთ რამდენიმე წამში"
+      ],
       "Please try again using a different payment method, or contact your bank.": [
         "ან თავიდან სცადეთ, ან გადახდის სხვა საშუალება გამოიყენეთ, ან დაუკავშირდით თქვენს ბანკს."
       ],
@@ -4671,6 +4698,9 @@
       ],
       "Shared link not found": [
         "გაზიარებული ბმული ვერ ვიპოვე"
+      ],
+      "Shared with me": [
+        "ჩემთვის გაზიარებული"
       ],
       "Sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
         "დარეგისტრირდით საკუთარი ${ DRIVE_APP_NAME }-ის ანგარიშისთვის და დაიცავით თქვენი მონაცემები გამჭოლი დაშიფვრით და გააზიარეთ ის დაცულად."
@@ -4964,6 +4994,9 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "ამ ტრანზაქციის დასასრულებლად გადამისამართებული იქნებით PayPal-ზე ბრაუზერის ახალ ჩანართში. თუ იყენებთ მხტუნარების მბლოკავებს, გთხოვთ, გამორთოთ ისინი."
       ],
+      "We'll email you once import is complete.": [
+        "როცა შემოტანა დასრულდება, ელფოსტაზე მოგწერთ."
+      ],
       "We'll notify you when the import is done.": [
         "როდესაც შემოტანა დასრულდება, შეგატყობინებთ."
       ],
@@ -5020,6 +5053,9 @@
       ],
       "You can check the progress ${ importProgressLink }.": [
         "მიმდინარეობის ნახვა შეგიძლიათ აქ: ${ importProgressLink }."
+      ],
+      "You can close the tab or browser in the meantime.": [
+        "ამასობაში შეგიძლიათ, ბრაუზერის ჩანართი დახუროთ."
       ],
       "You can import one data type at a time.": [
         "ერთ ცდაზე მონაცემების, მხოლოდ, ერთი ტიპის შემოტანა შეგიძლიათ."
@@ -5099,6 +5135,12 @@
       "Your download is in progress": [
         "მიმდინარეობს გადმოწერა"
       ],
+      "Your email address and password were leaked:": [
+        "თქვენი ელფოსტის მისამართი და პაროლი გაიჟონა:"
+      ],
+      "Your email address was exposed:": [
+        "თქვენი ელფოსტის მისამართი გაჟონილია:"
+      ],
       "Your email will only be used for this one-time verification.": [
         "თქვენი ელფოსტა, მხოლოდ, ერთხელ შესამოწმებლად იქნება გამოყენებული."
       ],
@@ -5111,11 +5153,17 @@
       "Your files will be encrypted and then saved.": [
         "თქვენი ფაილები ჯერ დაიშიფრება და, მხოლოდ, შემდეგ შეინახება."
       ],
+      "Your information was found on ${ displayedDate }": [
+        "თქვენი ინფორმაციის აღმოჩენის თარიღია ${ displayedDate }"
+      ],
       "Your login information will not be saved after the import is completed.": [
         "შესვლისას გამოყენებული თქვენი ინფორმაცია შემოტანის დასრულების შემდეგ შენახული არ იქნება."
       ],
       "Your next billing date is ${ renewalTime }.": [
         "თქვენი შემდეგი გადახდის თარიღია ${ renewalTime }"
+      ],
+      "Your password was leaked:": [
+        "თქვენი პაროლი გაჟონილია:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "თქვენი ტელეფონის ნომერი, მხოლოდ, ერთხელ, შესამოწმებლად იქნება გამოყენებული."
@@ -5377,9 +5425,6 @@
       "Delete drive?": [
         "წავშალო დისკი?",
         "წავშალო დისკები?"
-      ],
-      "Delete link": [
-        "ბმულის წაშლა"
       ],
       "Delete recovery-related information.": [
         "აღდგენის ინფორმაციის წაშლა."
@@ -5666,6 +5711,12 @@
       "Set recovery method": [
         "აღდგენის მეთოდის დაყენება"
       ],
+      "Shared by": [
+        "გამზიარებელი"
+      ],
+      "Shared on": [
+        "გაზიარებულია"
+      ],
       "Show indexing progress of Encrypted Search": [
         "დაშიფრული ძებნის ინდექსირების მიმდინარეობის ჩვენება"
       ],
@@ -5854,6 +5905,9 @@
       ],
       "Shared": [
         "გაზიარებული"
+      ],
+      "Shared with me": [
+        "ჩემთვის გაზიარებული"
       ],
       "stay safer online": [
         "იყავით უსაფრთხოდ ინტერნეტში"
@@ -7118,6 +7172,9 @@
       "Encrypted search activated": [
         "დაშიფრული ძებნა გააქტიურებულია"
       ],
+      "Failed to accept share invitation": [
+        "ზიარზე მოსაწვევზე დათანხმება ჩავარდა"
+      ],
       "Failed to download files: ${ err }": [
         "ფაილების გადმოწერის შეცდომა: ${ err }"
       ],
@@ -7157,6 +7214,12 @@
       ],
       "Root folder failed to be loaded": [
         "Root საქაღალდის ჩატვირთვის შეცდომა"
+      ],
+      "Share invitation accepted successfully": [
+        "ზიარის მოსაწვევზე დათანხმება წარმატებულია"
+      ],
+      "Share invitation ID was not found. Please check the link": [
+        "ზიარის მოსაწვევის ID ვერ ვიპოვე. გადაამოწმეთ ბმული"
       ],
       "Subfolder failed to be loaded": [
         "ქვესაქაღალდის ჩატვირთვის შეცდომა"
@@ -8654,6 +8717,9 @@
       "Deleting contacts": [
         "კონტაქტების წაშლა"
       ],
+      "Details": [
+        "დეტალები"
+      ],
       "Discard": [
         "მოცილება"
       ],
@@ -8950,6 +9016,9 @@
       "Shared": [
         "გაზიარებული"
       ],
+      "Shared with me": [
+        "ჩემთვის გაზიარებული"
+      ],
       "Show actions": [
         "მოქმედებების ჩვენება"
       ],
@@ -9067,8 +9136,8 @@
       "Your changes are not synced yet": [
         "თქვენი ცვლილებები ჯერ სინქრონიზებული არაა"
       ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "თქვენი Mail Plus-ის უფასო სატესტო პერიოდი ${ textDate }-ზე სრულდება"
+      "Your exposed information": [
+        "თქვენი გაჟონილი ინფორმაცია"
       ],
       "Your welcome actions": [
         "თქვენი პირველად შემოსვლის ქმედებები"
