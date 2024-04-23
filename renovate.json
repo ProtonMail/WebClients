@@ -11,7 +11,8 @@
         "pmcrypto",
         "pmcrypto-v6-canary",
         "@openpgp/web-stream-tools",
-        "@protontech/pass-rust-core"
+        "@protontech/pass-rust-core",
+        "@mlc-ai/web-llm"
     ],
     "ignorePaths": ["**/node_modules/**"],
     "packageRules": [
