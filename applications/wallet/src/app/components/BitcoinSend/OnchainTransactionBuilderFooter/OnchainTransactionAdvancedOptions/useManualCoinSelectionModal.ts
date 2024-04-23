@@ -23,7 +23,7 @@ export const useManualCoinSelectionModal = (
         });
     };
 
-    const utxos = useMemo(() => account?.utxos ?? [], [account]);
+    const utxos = useMemo(() => account?.account.getUtxos()[0] ?? [], [account]);
 
     const confirmCoinSelection = () => {
         onCoinSelected(

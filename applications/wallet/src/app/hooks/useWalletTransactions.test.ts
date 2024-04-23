@@ -1,3 +1,4 @@
+import { waitFor } from '@testing-library/react';
 import { renderHook } from '@testing-library/react-hooks';
 import { noop, omit } from 'lodash';
 import { Mock } from 'vitest';
@@ -239,17 +240,11 @@ describe('useWalletTransactions', () => {
             });
 
             it('should reconciliate network data with db data', async () => {
-                const { result, waitForValueToChange } = renderHook(() =>
+                const { result } = renderHook(() =>
                     useWalletTransactions({ transactions: networkTransactions, wallet, keys: userKeys })
                 );
 
-                // map init
-                await waitForValueToChange(() => result.current.transactionDetails);
-                expect(result.current.loadingRecordInit).toBeFalsy();
-
-                // map completion
-                await waitForValueToChange(() => result.current.transactionDetails);
-                expect(result.current.loadingApiData).toBeFalsy();
+                await waitFor(() => expect(result.current.loadingApiData).toBeFalsy());
 
                 expect(result.current.transactionDetails).toStrictEqual([
                     {
@@ -278,17 +273,11 @@ describe('useWalletTransactions', () => {
             });
 
             it('should not make any other call than get-transactions', async () => {
-                const { result, waitForValueToChange } = renderHook(() =>
+                const { result } = renderHook(() =>
                     useWalletTransactions({ transactions: networkTransactions, wallet, keys: userKeys })
                 );
 
-                // map init
-                await waitForValueToChange(() => result.current.transactionDetails);
-                expect(result.current.loadingRecordInit).toBeFalsy();
-
-                // map completion
-                await waitForValueToChange(() => result.current.transactionDetails);
-                expect(result.current.loadingApiData).toBeFalsy();
+                await waitFor(() => expect(result.current.loadingApiData).toBeFalsy());
 
                 expect(mockedGetWalletTransactionsToHash).toHaveBeenCalledTimes(0);
                 expect(mockedCreateWalletTransaction).toHaveBeenCalledTimes(0);
@@ -320,17 +309,11 @@ describe('useWalletTransactions', () => {
                 });
 
                 it('should fetch tx with missing hash and update them', async () => {
-                    const { result, waitForValueToChange } = renderHook(() =>
+                    const { result } = renderHook(() =>
                         useWalletTransactions({ transactions: networkTransactions, wallet, keys: userKeys })
                     );
 
-                    // map init
-                    await waitForValueToChange(() => result.current.transactionDetails);
-                    expect(result.current.loadingRecordInit).toBeFalsy();
-
-                    // map completion
-                    await waitForValueToChange(() => result.current.transactionDetails);
-                    expect(result.current.loadingApiData).toBeFalsy();
+                    await waitFor(() => expect(result.current.loadingApiData).toBeFalsy());
 
                     expect(mockedGetWalletTransactionsToHash).toHaveBeenCalledTimes(1);
                     expect(mockedGetWalletTransactionsToHash).toHaveBeenCalledWith(wallet.Wallet.ID);
@@ -359,17 +342,11 @@ describe('useWalletTransactions', () => {
                 });
 
                 it('should set updated transactions in map', async () => {
-                    const { result, waitForValueToChange } = renderHook(() =>
+                    const { result } = renderHook(() =>
                         useWalletTransactions({ transactions: networkTransactions, wallet, keys: userKeys })
                     );
 
-                    // map init
-                    await waitForValueToChange(() => result.current.transactionDetails);
-                    expect(result.current.loadingRecordInit).toBeFalsy();
-
-                    // map completion
-                    await waitForValueToChange(() => result.current.transactionDetails);
-                    expect(result.current.loadingApiData).toBeFalsy();
+                    await waitFor(() => expect(result.current.loadingApiData).toBeFalsy());
 
                     expect(result.current.transactionDetails).toStrictEqual([
                         {
@@ -394,17 +371,11 @@ describe('useWalletTransactions', () => {
                     });
 
                     it('should still set updated transactions in map', async () => {
-                        const { result, waitForValueToChange } = renderHook(() =>
+                        const { result } = renderHook(() =>
                             useWalletTransactions({ transactions: networkTransactions, wallet, keys: userKeys })
                         );
 
-                        // map init
-                        await waitForValueToChange(() => result.current.transactionDetails);
-                        expect(result.current.loadingRecordInit).toBeFalsy();
-
-                        // map completion
-                        await waitForValueToChange(() => result.current.transactionDetails);
-                        expect(result.current.loadingApiData).toBeFalsy();
+                        await waitFor(() => expect(result.current.loadingApiData).toBeFalsy());
 
                         expect(result.current.transactionDetails).toStrictEqual([
                             {
@@ -438,17 +409,11 @@ describe('useWalletTransactions', () => {
                 });
 
                 it('should fetch tx with missing hash and update them', async () => {
-                    const { result, waitForValueToChange } = renderHook(() =>
+                    const { result } = renderHook(() =>
                         useWalletTransactions({ transactions: networkTransactions, wallet, keys: userKeys })
                     );
 
-                    // map init
-                    await waitForValueToChange(() => result.current.transactionDetails);
-                    expect(result.current.loadingRecordInit).toBeFalsy();
-
-                    // map completion
-                    await waitForValueToChange(() => result.current.transactionDetails);
-                    expect(result.current.loadingApiData).toBeFalsy();
+                    await waitFor(() => expect(result.current.loadingApiData).toBeFalsy());
 
                     expect(mockedCreateWalletTransaction).toHaveBeenCalledTimes(2);
                     expect(mockedCreateWalletTransaction).toHaveBeenNthCalledWith(
@@ -484,17 +449,11 @@ describe('useWalletTransactions', () => {
                 });
 
                 it('should set updated transactions in map', async () => {
-                    const { result, waitForValueToChange } = renderHook(() =>
+                    const { result } = renderHook(() =>
                         useWalletTransactions({ transactions: networkTransactions, wallet, keys: userKeys })
                     );
 
-                    // map init
-                    await waitForValueToChange(() => result.current.transactionDetails);
-                    expect(result.current.loadingRecordInit).toBeFalsy();
-
-                    // map completion
-                    await waitForValueToChange(() => result.current.transactionDetails);
-                    expect(result.current.loadingApiData).toBeFalsy();
+                    await waitFor(() => expect(result.current.loadingApiData).toBeFalsy());
 
                     expect(result.current.transactionDetails).toStrictEqual([
                         {
@@ -519,17 +478,11 @@ describe('useWalletTransactions', () => {
                     });
 
                     it('should not set the transaction in map', async () => {
-                        const { result, waitForValueToChange } = renderHook(() =>
+                        const { result } = renderHook(() =>
                             useWalletTransactions({ transactions: networkTransactions, wallet, keys: userKeys })
                         );
 
-                        // map init
-                        await waitForValueToChange(() => result.current.transactionDetails);
-                        expect(result.current.loadingRecordInit).toBeFalsy();
-
-                        // map completion
-                        await waitForValueToChange(() => result.current.transactionDetails);
-                        expect(result.current.loadingApiData).toBeFalsy();
+                        await waitFor(() => expect(result.current.loadingApiData).toBeFalsy());
 
                         expect(result.current.transactionDetails).toStrictEqual([
                             {
@@ -564,17 +517,11 @@ describe('useWalletTransactions', () => {
             });
 
             it('should fetch tx with missing hash and update them', async () => {
-                const { result, waitForValueToChange } = renderHook(() =>
+                const { result } = renderHook(() =>
                     useWalletTransactions({ transactions: networkTransactions, wallet, keys: userKeys })
                 );
 
-                // map init
-                await waitForValueToChange(() => result.current.transactionDetails);
-                expect(result.current.loadingRecordInit).toBeFalsy();
-
-                // map completion
-                await waitForValueToChange(() => result.current.transactionDetails);
-                expect(result.current.loadingApiData).toBeFalsy();
+                await waitFor(() => expect(result.current.loadingApiData).toBeFalsy());
 
                 expect(mockedGetWalletTransactionsToHash).toHaveBeenCalledTimes(1);
                 expect(mockedGetWalletTransactionsToHash).toHaveBeenCalledWith(wallet.Wallet.ID);
@@ -593,18 +540,16 @@ describe('useWalletTransactions', () => {
             });
 
             it('should not add transaction to the map', async () => {
-                const { result, waitForValueToChange } = renderHook(() =>
+                const { result } = renderHook(() =>
                     useWalletTransactions({ transactions: networkTransactions, wallet, keys: userKeys })
                 );
 
                 // map init
-                await waitForValueToChange(() => result.current.transactionDetails);
-                expect(result.current.loadingRecordInit).toBeFalsy();
+                await waitFor(() => expect(result.current.loadingRecordInit).toBeFalsy());
                 expect(result.current.transactionDetails.length).toStrictEqual(3);
 
                 // map completion
-                await waitForValueToChange(() => result.current.transactionDetails);
-                expect(result.current.loadingApiData).toBeFalsy();
+                await waitFor(() => expect(result.current.loadingApiData).toBeFalsy());
 
                 // after updating the other tx
                 expect(mockedUpdateWalletTransactionHashedTxId).toHaveBeenCalledTimes(1);

@@ -1,8 +1,9 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { SetStateAction, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
 import { WasmApiWalletTransaction, WasmProtonWalletApiClient, WasmTransactionDetails } from '@proton/andromeda';
+import generateUID from '@proton/atoms/generateUID';
 import { useNotifications } from '@proton/components/hooks';
 import { CryptoProxy } from '@proton/crypto/lib';
 import useLoading from '@proton/hooks/useLoading';
@@ -41,13 +42,13 @@ const getWalletTransactionsToHash = async (api: WasmProtonWalletApiClient, walle
     }
 };
 
-const filterTxWithMissingApiData = (transactionDataByHashedTxId: TransactionDataByHashedTxId) => {
+const filterTxWithoutApiData = (transactionDataByHashedTxId: TransactionDataByHashedTxId) => {
     return (
         Object.entries(transactionDataByHashedTxId)
             // typeguard: since record is partial, we first need to filter out keys with no value
             .filter((entry): entry is [string, TransactionDataTuple] => isTruthy(entry[1]))
             // we only keep transactions that have no api data
-            .filter(([, [, apiData]]) => !apiData)
+            .filter(([, [networkData, apiData]]) => networkData.time.confirmed && !apiData)
     );
 };
 
@@ -110,7 +111,7 @@ const addMissingHashToWalletTransactions = async (
                 )
                 .catch(noop);
 
-            const networkTx = cloned[hashedTransactionID]?.[0];
+            const networkTx = transactionDataByHashedTxId[hashedTransactionID]?.[0];
 
             // If transaction was not in the record, we don't include it
             if (networkTx) {
@@ -130,7 +131,8 @@ const createMissingTxData = async (
     userKey: DecryptedKey,
     walletId: string,
     accountIdByDerivationPathAndWalletId: AccountIdByDerivationPathAndWalletId,
-    transactionsMissingApiData: [string, TransactionDataTuple][]
+    transactionsMissingApiData: [string, TransactionDataTuple][],
+    onCreatedTransaction: (record: TransactionDataByHashedTxId) => void
 ) => {
     const createdTransactionDataByHashedTxId: TransactionDataByHashedTxId = {};
 
@@ -162,12 +164,21 @@ const createMissingTxData = async (
             });
 
             createdTransactionDataByHashedTxId[hashedTxId] = [networkData, createdTx];
+            onCreatedTransaction({ [hashedTxId]: [networkData, createdTx] });
         } catch {}
     }
 
     return createdTransactionDataByHashedTxId;
 };
 
+/**
+ * This is hook is responsible for
+ * - fetching API part of transaction
+ * - reconciliate them through hmac hashing
+ * - update transaction to add HashedTransactionID
+ * - create missing transaction API data
+ *
+ */
 export const useWalletTransactions = ({
     transactions,
     keys,
@@ -177,7 +188,8 @@ export const useWalletTransactions = ({
     keys?: DecryptedKey[];
     wallet?: IWasmApiWalletData;
 }) => {
-    const rustApi = useWalletApi();
+    const currentProcessUid = useRef(generateUID('use-wallet-transactions'));
+    const api = useWalletApi();
 
     const getTransactionsApiData = useGetApiWalletTransactionData();
 
@@ -202,11 +214,19 @@ export const useWalletTransactions = ({
             return;
         }
 
+        const processUid = generateUID('use-wallet-transactions');
+        currentProcessUid.current = processUid;
+
+        // guard thats check that process is still current one, else do nothing
+        const guardSetTransactionData = (value: SetStateAction<Partial<Record<string, TransactionDataTuple>>>) => {
+            (currentProcessUid.current === processUid ? () => setTransactionDataByHashedTxId(value) : noop)();
+        };
+
         const initResult = (await withLoadingRecordInit(async () => {
             const hmacKey = await decryptWalletKeyForHmac(WalletKey.WalletKey, keys);
             const localTransactionDataByHashedTxId = await keyTxNetworkDataByHashedTxId(transactions, hmacKey);
 
-            setTransactionDataByHashedTxId(localTransactionDataByHashedTxId);
+            guardSetTransactionData(localTransactionDataByHashedTxId);
 
             // Return a clone of set reference, so that we can later mutate it and set it again
             return [hmacKey, { ...localTransactionDataByHashedTxId }] as const;
@@ -239,38 +259,41 @@ export const useWalletTransactions = ({
             }
         }
 
+        guardSetTransactionData(localTransactionDataByHashedTxId);
+
         // If we already fetched all api data for the page, we don't need to go further
         if (transactionsApiData.length === hashedTxids.length) {
-            return setTransactionDataByHashedTxId(localTransactionDataByHashedTxId);
+            return;
         }
 
         // Check if there are wallet transaction already created but not hashed yet
         const withMissingHashTransactions = await addMissingHashToWalletTransactions(
-            rustApi,
+            api,
             walletId,
             localTransactionDataByHashedTxId,
             keys,
             hmacKey
         );
 
-        const transactionsMissingApiData = filterTxWithMissingApiData(withMissingHashTransactions);
+        const transactionsWithoutApiData = filterTxWithoutApiData(withMissingHashTransactions);
 
         // If we already found all transactions's api data, we can just set them
-        if (!transactionsMissingApiData.length) {
-            setTransactionDataByHashedTxId(withMissingHashTransactions);
+        if (!transactionsWithoutApiData.length) {
+            guardSetTransactionData((prev) => ({ ...prev, ...withMissingHashTransactions }));
         } else {
             const [primaryUserKey] = keys;
 
+            guardSetTransactionData((prev) => ({ ...prev, ...withMissingHashTransactions }));
+
             // Else we create missing tx in api
-            const created = await createMissingTxData(
-                rustApi,
+            await createMissingTxData(
+                api,
                 primaryUserKey,
                 walletId,
                 accountIDByDerivationPathByWalletID,
-                transactionsMissingApiData
+                transactionsWithoutApiData,
+                (record) => guardSetTransactionData((prev) => ({ ...prev, ...record }))
             );
-
-            setTransactionDataByHashedTxId((prev) => ({ ...prev, ...withMissingHashTransactions, ...created }));
         }
     }, [
         wallet,
@@ -278,7 +301,7 @@ export const useWalletTransactions = ({
         transactions,
         withLoadingRecordInit,
         getTransactionsApiData,
-        rustApi,
+        api,
         accountIDByDerivationPathByWalletID,
     ]);
 
@@ -298,7 +321,7 @@ export const useWalletTransactions = ({
                     const key = await getSymmetricKey(decryptedKey);
                     const [encryptedLabel] = await encryptWalletDataWithWalletKey([labelInput], key);
 
-                    const { Data: updatedTx } = await rustApi
+                    const { Data: updatedTx } = await api
                         .wallet()
                         .updateWalletTransactionLabel(WalletID, WalletAccountID, TransactionID, encryptedLabel ?? '');
 
@@ -319,7 +342,7 @@ export const useWalletTransactions = ({
                 }
             }
         },
-        [keys, wallet?.WalletKey?.WalletKey, rustApi, createNotification]
+        [keys, wallet?.WalletKey?.WalletKey, api, createNotification]
     );
 
     useEffect(() => {

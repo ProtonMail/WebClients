@@ -56,7 +56,7 @@ export const YourWalletsSection = ({ onAddWallet }: Props) => {
     const isConfirmModalOpen = !!walletToDelete;
     const dispatch = useWalletDispatch();
 
-    const rust = useWalletApi();
+    const api = useWalletApi();
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
 
@@ -65,7 +65,7 @@ export const YourWalletsSection = ({ onAddWallet }: Props) => {
             return;
         }
 
-        await rust
+        await api
             .wallet()
             .deleteWallet(walletToDelete)
             .then(async () => {

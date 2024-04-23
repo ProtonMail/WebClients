@@ -2,8 +2,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { WasmPagination, WasmTransactionDetails } from '@proton/andromeda';
-import { CircleLoader } from '@proton/atoms/CircleLoader';
+import { WasmSortOrder, WasmTransactionDetails } from '@proton/andromeda';
 import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
 import TableCell from '@proton/components/components/table/TableCell';
@@ -13,7 +12,6 @@ import TableRow from '@proton/components/components/table/TableRow';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import { EmptyViewContainer } from '@proton/components/containers';
 import { useUserKeys } from '@proton/components/hooks';
-import useLoading from '@proton/hooks/useLoading';
 import noResultSearchSvg from '@proton/styles/assets/img/illustrations/empty-search.svg';
 import clsx from '@proton/utils/clsx';
 import { IWasmApiWalletData, useWalletSettings } from '@proton/wallet';
@@ -24,7 +22,7 @@ import { useBitcoinBlockchainContext } from '../../contexts';
 import { useLocalPagination } from '../../hooks/useLocalPagination';
 import { useUserExchangeRate } from '../../hooks/useUserExchangeRate';
 import { TransactionData, useWalletTransactions } from '../../hooks/useWalletTransactions';
-import { confirmationTimeToHumanReadable } from '../../utils';
+import { confirmationTimeToHumanReadable, getWalletTransactions } from '../../utils';
 import { OnchainTransactionDetailsProps } from '../OnchainTransactionDetails';
 import { OnchainTransactionDetailsModal } from '../OnchainTransactionDetailsModal';
 
@@ -37,13 +35,10 @@ export const TransactionList = ({ wallet }: Props) => {
     const [exchangeRate, loadingExchangeRate] = useUserExchangeRate();
     const { walletsChainData } = useBitcoinBlockchainContext();
 
-    const walletChainData = wallet?.Wallet.ID ? walletsChainData[wallet?.Wallet.ID] : undefined;
-
     const [keys] = useUserKeys();
 
     const [transactions, setTransactions] = useState<WasmTransactionDetails[]>([]);
     const [modalData, setModalData] = useState<Omit<OnchainTransactionDetailsProps, 'onUpdateLabel'>>();
-    const [isLoading, withLoading] = useLoading(false);
 
     const { currentPage, handleNext, handlePrev, handleGoFirst } = useLocalPagination();
     // page 0 should be displayed as 'Page 1'
@@ -55,21 +50,22 @@ export const TransactionList = ({ wallet }: Props) => {
 
     useEffect(() => {
         handleGoFirst();
-    }, [walletChainData?.wallet, handleGoFirst]);
+    }, [wallet?.Wallet.ID, handleGoFirst]);
 
     useEffect(() => {
-        const pagination = new WasmPagination(currentPage * ITEMS_PER_PAGE, ITEMS_PER_PAGE);
-
-        if (walletChainData?.wallet) {
-            void withLoading(
-                walletChainData.wallet.getTransactions(pagination).then((transactions) => {
-                    setTransactions(transactions[0].map((t) => t.Data));
-                })
+        if (wallet?.Wallet.ID) {
+            setTransactions(
+                getWalletTransactions(
+                    walletsChainData,
+                    wallet?.Wallet.ID,
+                    { skip: currentPage * ITEMS_PER_PAGE, take: ITEMS_PER_PAGE },
+                    WasmSortOrder.Desc
+                )
             );
         } else {
             setTransactions([]);
         }
-    }, [currentPage, walletChainData?.wallet, withLoading]);
+    }, [currentPage, wallet?.Wallet.ID, walletsChainData]);
 
     const { transactionDetails, loadingRecordInit, loadingApiData, updateWalletTransaction } = useWalletTransactions({
         transactions,
@@ -78,16 +74,6 @@ export const TransactionList = ({ wallet }: Props) => {
     });
 
     const transactionsTable = useMemo(() => {
-        if (isLoading || loadingRecordInit) {
-            return (
-                <div className="m-auto flex flex-row items-center">
-                    <CircleLoader className="color-primary mr-2" />
-                    <span className="text-sm color-hint">{c('Wallet Transaction List')
-                        .t`Syncing wallet to get latest transactions.`}</span>
-                </div>
-            );
-        }
-
         if (transactionDetails?.length) {
             return (
                 <Table className="text-sm" borderWeak>
@@ -136,8 +122,16 @@ export const TransactionList = ({ wallet }: Props) => {
                                     </TableCell>
                                     <TableCell>
                                         <div className="flex flex-column">
-                                            <span className={clsx('text-lg', loadingApiData && 'skeleton-loader')}>
-                                                {apiData?.Label ?? '-'}
+                                            <span
+                                                className={clsx(
+                                                    'text-lg',
+                                                    networkData.time.confirmed &&
+                                                        !apiData &&
+                                                        loadingApiData &&
+                                                        'skeleton-loader'
+                                                )}
+                                            >
+                                                {apiData?.Label ?? ''}
                                             </span>
                                         </div>
                                     </TableCell>
@@ -175,7 +169,6 @@ export const TransactionList = ({ wallet }: Props) => {
     }, [
         exchangeRate,
         handleClickRow,
-        isLoading,
         loadingApiData,
         loadingExchangeRate,
         loadingRecordInit,
@@ -193,9 +186,9 @@ export const TransactionList = ({ wallet }: Props) => {
                     <span className="block mr-4">{c('Wallet Transaction List').t`Page ${displayedPageNumber}`}</span>
 
                     <SimplePaginator
-                        canGoPrev={!isLoading && currentPage > 0}
+                        canGoPrev={currentPage > 0}
                         onNext={handleNext}
-                        canGoNext={!isLoading && !!transactions && transactions.length >= ITEMS_PER_PAGE}
+                        canGoNext={!!transactions && transactions.length >= ITEMS_PER_PAGE}
                         onPrev={handlePrev}
                     />
                 </div>

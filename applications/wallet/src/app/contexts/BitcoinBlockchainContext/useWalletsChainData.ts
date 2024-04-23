@@ -3,59 +3,82 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { chain, set } from 'lodash';
 import { c } from 'ttag';
 
-import { WasmAccount, WasmPagination, WasmWallet } from '@proton/andromeda';
+import { WasmWallet } from '@proton/andromeda';
+import generateUID from '@proton/atoms/generateUID';
 import { useNotifications } from '@proton/components/hooks';
 import { MINUTE } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { IWasmApiWalletData } from '@proton/wallet';
 
 import { useBlockchainClient } from '../../hooks/useBlockchainClient';
+import { useMirroredRef } from '../../hooks/useMirrorredRef';
 import { useBitcoinNetwork } from '../../store/hooks';
 import {
     AccountChainDataByAccountId,
     AccountIdByDerivationPathAndWalletId,
-    AccountWithChainData,
     WalletChainDataByWalletId,
 } from '../../types';
+import useDebounceEffect from '../../utils/hooks/useDebouncedEffect';
 import { tryHandleWasmError } from '../../utils/wasm/errors';
 
 export type SyncingMetadata = { syncing: boolean; count: number; lastSyncing: number };
 
-const useMirroredRef = <T>(state: T, init: T) => {
-    const ref = useRef<T>(init);
-    useEffect(() => {
-        ref.current = state;
-    }, [state]);
-
-    return ref;
-};
+const SYNC_UID_PREFIX = 'account-sync';
+const POLLING_UID_PREFIX = 'polling';
 
 /**
  * Returns chain data given API wallets
  */
 export const useWalletsChainData = (apiWalletsData?: IWasmApiWalletData[]) => {
     const blockchainClient = useBlockchainClient();
-
-    const syncAccount = useCallback(async (wasmAccount: WasmAccount) => {
-        const shouldSync = await blockchainClient.shouldSync(wasmAccount);
-
-        // TODO: maybe we should remove this in favor of a cooldown timer?
-        if (!shouldSync) {
-            return;
-        }
-
-        return wasmAccount.hasSyncData()
-            ? blockchainClient.partialSync(wasmAccount)
-            : blockchainClient.fullSync(wasmAccount);
-
-        // blockchainClient is stable at mount
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    const pollingIdRef = useRef<string>();
 
     const [network] = useBitcoinNetwork();
 
-    // Here undefined means there is no wallet loaded yet, it is different from {} which means that there is no wallet TO BE loaded
     const [walletsChainData, setWalletsChainData] = useState<WalletChainDataByWalletId>({});
+    // Here undefined means there is no wallet loaded yet, it is different from {} which means that there is no wallet TO BE loaded
+    useEffect(() => {
+        if (!apiWalletsData || !network) {
+            return;
+        }
+
+        const data = apiWalletsData.reduce((acc: WalletChainDataByWalletId, apiWallet) => {
+            const { Wallet, WalletAccounts, IsNotDecryptable } = apiWallet;
+
+            // TODO: support watch-only wallets
+            if (IsNotDecryptable || !Wallet.Mnemonic || (Wallet.HasPassphrase && !Wallet.Passphrase)) {
+                return acc;
+            }
+
+            const wasmWallet = new WasmWallet(network, Wallet.Mnemonic, Wallet.Passphrase ?? '');
+
+            // Get accounts created in wasm wallet
+            const wasmAccounts = WalletAccounts.reduce((acc: AccountChainDataByAccountId, account) => {
+                const wasmAccount = wasmWallet.addAccount(account.ScriptType, account.DerivationPath);
+
+                return {
+                    ...acc,
+                    [account.ID]: {
+                        account: wasmAccount,
+                        syncId: generateUID(SYNC_UID_PREFIX),
+                        scriptType: account.ScriptType,
+                        derivationPath: account.DerivationPath,
+                    },
+                };
+            }, {});
+
+            return {
+                ...acc,
+                [Wallet.ID]: {
+                    wallet: wasmWallet,
+                    accounts: wasmAccounts,
+                },
+            };
+        }, {});
+
+        setWalletsChainData(data);
+    }, [network, apiWalletsData]);
+
     const [syncingMetatadaByAccountId, setSyncingMetatadaByAccountId] = useState<
         Partial<Record<string, SyncingMetadata>>
     >({});
@@ -63,7 +86,6 @@ export const useWalletsChainData = (apiWalletsData?: IWasmApiWalletData[]) => {
     // We use refs coupled to the state to deps from the syncing loop
     const syncingMetatadaByAccountIdRef = useMirroredRef(syncingMetatadaByAccountId, {});
     const walletsChainDataRef = useMirroredRef(walletsChainData, {});
-    const apiWalletsDataRef = useMirroredRef(apiWalletsData, []);
 
     const { createNotification } = useNotifications();
 
@@ -74,25 +96,6 @@ export const useWalletsChainData = (apiWalletsData?: IWasmApiWalletData[]) => {
         },
         [createNotification]
     );
-
-    const getAccountData = (account: WasmAccount): AccountWithChainData => {
-        const balance = account.getBalance();
-
-        // TODO: improve pagination
-        const pagination = new WasmPagination(0, 10);
-        const transactions = account.getTransactions(pagination)[0].map(({ Data }) => Data);
-
-        // TODO: add pagination on utxos
-        const utxos = account.getUtxos()[0];
-
-        return {
-            account,
-            balance,
-            transactions,
-            utxos,
-            derivationPathStr: account.getDerivationPath(),
-        };
-    };
 
     const addNewSyncing = useCallback((walletAccountID: string) => {
         setSyncingMetatadaByAccountId((prev) => {
@@ -108,38 +111,42 @@ export const useWalletsChainData = (apiWalletsData?: IWasmApiWalletData[]) => {
         setSyncingMetatadaByAccountId((prev) => set({ ...prev }, [walletAccountID, 'syncing'], false));
     }, []);
 
-    const getUpdatedAccountDataWithMaybeSync = useCallback(
-        async (accountId: string, account: WasmAccount) => {
+    const syncSingleWalletAccount = useCallback(
+        async (walletId: string, accountId: string) => {
+            const account = walletsChainDataRef.current?.[walletId]?.accounts[accountId]?.account;
             const isAlreadySyncing = syncingMetatadaByAccountIdRef.current[accountId]?.syncing;
 
-            if (!isAlreadySyncing) {
+            if (account && !isAlreadySyncing) {
                 addNewSyncing(accountId);
 
                 try {
-                    await syncAccount(account);
+                    const shouldSync = await blockchainClient.shouldSync(account);
+
+                    // TODO: maybe we should remove this in favor of a cooldown timer?
+                    if (!shouldSync) {
+                        return;
+                    }
+
+                    if (await account.hasSyncData()) {
+                        await blockchainClient.partialSync(account);
+                    } else {
+                        await blockchainClient.fullSync(account);
+                    }
+
+                    setWalletsChainData((prev) =>
+                        set({ ...prev }, [walletId, 'accounts', accountId, 'syncId'], generateUID(SYNC_UID_PREFIX))
+                    );
                 } catch (error) {
                     handleError(error);
                 }
 
                 removeSyncing(accountId);
             }
-
-            return getAccountData(account);
         },
-        // The 4 dependencies are assumed stable at render, so `getUpdatedAccountDataWithMaybeSync` should also be
-        [addNewSyncing, handleError, removeSyncing, syncAccount, syncingMetatadaByAccountIdRef]
-    );
 
-    const syncSingleWalletAccount = useCallback(
-        async (walletId: string, accountId: string) => {
-            const account = walletsChainDataRef.current?.[walletId]?.accounts[accountId];
-
-            if (account) {
-                const updated = await getUpdatedAccountDataWithMaybeSync(accountId, account.account);
-                setWalletsChainData((prev) => set({ ...prev }, [walletId, 'accounts', accountId], updated));
-            }
-        },
-        [getUpdatedAccountDataWithMaybeSync, walletsChainDataRef]
+        // blockchainClient is not stable, refs are not relevant in dependencies
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        [addNewSyncing, handleError, removeSyncing]
     );
 
     const syncSingleWallet = useCallback(
@@ -150,7 +157,10 @@ export const useWalletsChainData = (apiWalletsData?: IWasmApiWalletData[]) => {
                 await syncSingleWalletAccount(walletId, accountId);
             }
         },
-        [syncSingleWalletAccount, walletsChainDataRef]
+
+        // refs are not relevant in dependencies
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        [syncSingleWalletAccount]
     );
 
     const syncManyWallets = useCallback(
@@ -162,65 +172,14 @@ export const useWalletsChainData = (apiWalletsData?: IWasmApiWalletData[]) => {
         [syncSingleWallet]
     );
 
-    const pollAccountsBlockchainData = useCallback(async () => {
-        await syncManyWallets(apiWalletsDataRef.current?.map((w) => w.Wallet.ID) ?? []);
-        await wait(10 * MINUTE);
-        void pollAccountsBlockchainData();
-    }, [apiWalletsDataRef, syncManyWallets]);
-
-    useEffect(() => {
-        void pollAccountsBlockchainData();
-    }, []);
-
-    const setWasmWallets = useCallback(
-        (apiWallets: IWasmApiWalletData[]) => {
-            if (!apiWallets || !network) {
-                return;
-            }
-
-            const wasmWallets = apiWallets.reduce((acc: WalletChainDataByWalletId, apiWallet) => {
-                const { Wallet, WalletAccounts, IsNotDecryptable } = apiWallet;
-
-                // TODO: support watch-only wallets
-                if (IsNotDecryptable || !Wallet.Mnemonic || (Wallet.HasPassphrase && !Wallet.Passphrase)) {
-                    return acc;
-                }
-
-                const accounts = apiWallet.WalletAccounts.map((account): [number, string] => [
-                    account.ScriptType,
-                    account.DerivationPath,
-                ]);
-
-                const wasmWallet = new WasmWallet(network, Wallet.Mnemonic, Wallet.Passphrase ?? '', accounts);
-
-                // Get accounts created in wasm wallet
-                const wasmAccounts = WalletAccounts.reduce((acc: AccountChainDataByAccountId, account) => {
-                    const wasmAccount = wasmWallet.getAccount(account.DerivationPath);
-                    return wasmAccount ? { ...acc, [account.ID]: { ...getAccountData(wasmAccount) } } : acc;
-                }, {});
-
-                return {
-                    ...acc,
-                    [Wallet.ID]: {
-                        wallet: wasmWallet,
-                        accounts: wasmAccounts,
-                    },
-                };
-            }, {});
-
-            setWalletsChainData(wasmWallets);
-        },
-        [network]
-    );
-
     // We need this reversed map to reconciliate WalletId+DerivationPath -> AccountId
     const accountIDByDerivationPathByWalletID = useMemo(() => {
-        return Object.entries(walletsChainData).reduce(
+        return Object.entries(walletsChainData ?? {}).reduce(
             (acc: AccountIdByDerivationPathAndWalletId, [walletId, walletChainData]) => ({
                 ...acc,
                 [walletId]: Object.entries(walletChainData?.accounts ?? {}).reduce(
                     (acc, [accountId, accountData]) =>
-                        accountData ? { ...acc, [accountData.derivationPathStr]: accountId } : acc,
+                        accountData ? { ...acc, [accountData.derivationPath]: accountId } : acc,
                     {}
                 ),
             }),
@@ -228,11 +187,30 @@ export const useWalletsChainData = (apiWalletsData?: IWasmApiWalletData[]) => {
         );
     }, [walletsChainData]);
 
-    useEffect(() => {
-        if (apiWalletsData?.length) {
-            setWasmWallets(apiWalletsData);
+    const poll = useCallback(async () => {
+        const pollingId = generateUID(POLLING_UID_PREFIX);
+        pollingIdRef.current = pollingId;
+
+        // This ensure that if another poll is start (via calling this fn), previous one will be stoped: uuid won't match anymore
+        while (pollingIdRef.current == pollingId) {
+            await syncManyWallets(Object.keys(walletsChainDataRef.current));
+            await wait(10 * MINUTE);
         }
-    }, [setWasmWallets, apiWalletsData]);
+
+        // refs are not relevant in dependencies
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [syncManyWallets]);
+
+    useDebounceEffect(
+        () => {
+            void poll();
+            return () => {
+                pollingIdRef.current = undefined;
+            };
+        },
+        [poll],
+        3000
+    );
 
     return {
         syncingMetatadaByAccountId,

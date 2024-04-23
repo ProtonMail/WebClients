@@ -69,8 +69,6 @@ function renderComponent({ members = [], invitations = [] } = {}) {
 function addRecipients(emails: string[]) {
     const emailInput = screen.getByTitle('Email address');
 
-    screen.debug(emailInput, 10000000);
-
     act(() => {
         emails.forEach(async (email) => {
             // FIXME: same issue as in MainContainer.spec.tsx, it doesn't enter recipients

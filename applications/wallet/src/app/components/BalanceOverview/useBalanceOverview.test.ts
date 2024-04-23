@@ -100,7 +100,7 @@ describe('useBalanceOverview', () => {
         it('should return the difference between 7-day-ago balance and current one', () => {
             const { result } = renderHook(() => useBalanceOverview(apiWallet));
 
-            expect(result.current.last7DaysBalanceDifference).toStrictEqual(-619482);
+            expect(result.current.last7DaysBalanceDifference).toStrictEqual(-2158170);
         });
 
         it('should return wallets balance distribution doughnut data', () => {
@@ -117,8 +117,8 @@ describe('useBalanceOverview', () => {
 
             expect(result.current.balanceEvolutionLineChartData).toStrictEqual({
                 data: [
-                    { x: '11/21/2023', y: 12503548 },
-                    { x: '11/22/2023', y: 12503548 },
+                    { x: '11/21/2023', y: 14042236 },
+                    { x: '11/22/2023', y: 13410307 },
                     { x: '11/23/2023', y: 11884066 },
                     { x: '11/24/2023', y: 11884066 },
                     { x: '11/25/2023', y: 11884066 },

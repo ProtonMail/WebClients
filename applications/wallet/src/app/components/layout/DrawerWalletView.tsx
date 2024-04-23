@@ -8,7 +8,7 @@ import { Icon } from '@proton/components/components';
 import DrawerView, { SelectedDrawerOption } from '@proton/components/components/drawer/views/DrawerView';
 
 import { useBitcoinBlockchainContext } from '../../contexts';
-import { getAccountsWithChainDataFromManyWallets, getAccountsWithChainDataFromSingleWallet } from '../../utils';
+import { getWalletTransactions } from '../../utils';
 import { TransactionHistoryOverview } from '../TransactionHistoryOverview';
 
 export const DrawerWalletView = () => {
@@ -18,13 +18,9 @@ export const DrawerWalletView = () => {
 
     const transactions = useMemo(() => {
         if (walletId) {
-            return getAccountsWithChainDataFromSingleWallet(walletsChainData, walletId).flatMap(
-                (acc) => acc.transactions ?? []
-            );
+            return getWalletTransactions(walletsChainData, walletId);
         } else {
-            return getAccountsWithChainDataFromManyWallets(walletsChainData).flatMap(
-                ({ transactions }) => transactions ?? []
-            );
+            return undefined;
         }
     }, [walletId, walletsChainData]);
 

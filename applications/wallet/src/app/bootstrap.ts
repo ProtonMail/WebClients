@@ -37,9 +37,6 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
     const authentication = bootstrap.createAuthentication();
     bootstrap.init({ config, authentication, locales });
 
-    const walletApi = new WasmProtonWalletApiClient(authentication.UID, window.location.origin);
-    extendStore({ walletApi });
-
     setupGuestCrossStorage();
     initElectronClassnames();
 
@@ -58,10 +55,12 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
                   })
                 : undefined) || (await bootstrap.loadSession({ authentication, api, pathname }));
 
+        const walletApi = new WasmProtonWalletApiClient(authentication.UID, window.location.origin);
+
         const history = bootstrap.createHistory({ basename: session.payload.basename, path: session.payload.path });
         const unleashClient = bootstrap.createUnleash({ api: silentApi });
 
-        extendStore({ config, api, authentication, unleashClient, history });
+        extendStore({ config, api, authentication, unleashClient, history, walletApi });
 
         const store = setupStore();
         const dispatch = store.dispatch;

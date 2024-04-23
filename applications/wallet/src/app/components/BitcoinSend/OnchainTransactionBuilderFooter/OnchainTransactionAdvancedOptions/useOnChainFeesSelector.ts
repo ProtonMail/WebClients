@@ -35,7 +35,7 @@ export const useOnChainFeesSelector = (
 
     const handleFeesSelected = useCallback(
         (feeRate: number, isRecommended = false) => {
-            updateTxBuilder((txBuilder) => txBuilder.setFeeRate(BigInt(feeRate)));
+            updateTxBuilder((txBuilder) => txBuilder.setFeeRate(BigInt(Math.round(feeRate))));
             setIsRecommended(isRecommended);
         },
         // all references are stable at mount here

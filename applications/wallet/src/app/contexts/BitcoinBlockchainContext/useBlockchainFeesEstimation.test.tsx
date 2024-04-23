@@ -7,7 +7,7 @@ import * as WasmBlockchainClientModule from '@proton/andromeda';
 import CacheProvider from '@proton/components/containers/cache/Provider';
 import createCache from '@proton/shared/lib/helpers/cache';
 
-import { getFeesEstimationMap } from '../../tests';
+import { getFeesEstimationMap, mockUseWalletApi } from '../../tests';
 import { useBlockchainFeesEstimation } from './useBlockchainFeesEstimation';
 
 const feesEstimationMap = getFeesEstimationMap();
@@ -15,9 +15,13 @@ const feesEstimationMap = getFeesEstimationMap();
 describe('useBlockchainFeesEstimation', () => {
     const mockGetFeesEstimation = vi.fn().mockResolvedValue(feesEstimationMap);
 
-    vi.spyOn(WasmBlockchainClientModule, 'WasmBlockchainClient').mockReturnValue({
-        getFeesEstimation: mockGetFeesEstimation,
-    } as unknown as WasmBlockchainClientModule.WasmBlockchainClient);
+    beforeEach(() => {
+        mockUseWalletApi();
+
+        vi.spyOn(WasmBlockchainClientModule, 'WasmBlockchainClient').mockReturnValue({
+            getFeesEstimation: mockGetFeesEstimation,
+        } as unknown as WasmBlockchainClientModule.WasmBlockchainClient);
+    });
 
     it('should fetch fees estimation once at mount', async () => {
         const { result } = renderHook(() => useBlockchainFeesEstimation(), {

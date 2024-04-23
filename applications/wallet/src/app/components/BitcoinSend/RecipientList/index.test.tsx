@@ -2,9 +2,15 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import { vi } from 'vitest';
 
 import { WasmRecipient } from '@proton/andromeda';
+import { mockUseNotifications } from '@proton/testing/lib/vitest';
 
 import { RecipientList } from '.';
-import { mockUseUserExchangeRate, mockUseWalletSettings } from '../../../tests';
+import {
+    mockUseUseContactEmailsMap,
+    mockUseUserExchangeRate,
+    mockUseWalletApi,
+    mockUseWalletSettings,
+} from '../../../tests';
 
 const buildWasmRecipient = (uuid: string) => {
     return [uuid, '', BigInt(0)] as unknown as WasmRecipient;
@@ -24,6 +30,10 @@ describe('RecipientList', () => {
             onRecipientRemove: vi.fn(),
             onRecipientMaxAmount: vi.fn(),
         };
+
+        mockUseUseContactEmailsMap();
+        mockUseNotifications();
+        mockUseWalletApi();
 
         mockUseWalletSettings();
         // prevents using fiat currency in amount input
@@ -72,15 +82,17 @@ describe('RecipientList', () => {
     });
 
     describe('on recipient address change', () => {
-        it('should call `onRecipientUpdate` callback with correct index and update', () => {
+        it('should call `onRecipientUpdate` callback with correct index and update', async () => {
             render(<RecipientList {...baseProps} />);
 
-            const addressInputs = screen.getAllByTestId('recipient-address-input');
+            const addressInputs = screen.getAllByTestId('recipient-address-input-autocomplete');
 
             expect(addressInputs).toHaveLength(3);
             const [, secondAddressInput] = addressInputs;
 
-            fireEvent.change(secondAddressInput, { target: { value: 'bc1...helloworld' } });
+            await fireEvent.change(secondAddressInput, { target: { value: 'bc1...helloworld' } });
+            await fireEvent.blur(secondAddressInput);
+
             expect(baseProps.onRecipientUpdate).toHaveBeenCalledTimes(1);
             expect(baseProps.onRecipientUpdate).toHaveBeenCalledWith(1, { address: 'bc1...helloworld' });
         });
