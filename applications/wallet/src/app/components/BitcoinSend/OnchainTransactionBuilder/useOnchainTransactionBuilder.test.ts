@@ -6,9 +6,14 @@ import { WasmTxBuilder } from '@proton/andromeda';
 import { mockUseNotifications } from '@proton/testing/lib/vitest';
 
 import * as useTxBuilderModule from '../../../hooks/useTxBuilder';
-import { mockUseBitcoinBlockchainContext } from '../../../tests';
+import {
+    mockUseBitcoinBlockchainContext,
+    mockUseBlockchainClient,
+    mockUseDecryptedWallets,
+    mockUseUseContactEmailsMap,
+    mockUseWalletApi,
+} from '../../../tests';
 import { apiWalletAccountTwoA, apiWalletAccountTwoB, apiWalletsData } from '../../../tests/fixtures/api';
-import { mockUseDecryptedWallets } from '../../../tests/mocks/useDecryptedWallet';
 import { useOnchainTransactionBuilder } from './useOnchainTransactionBuilder';
 
 describe('useOnchainTransactionBuilder', () => {
@@ -18,6 +23,9 @@ describe('useOnchainTransactionBuilder', () => {
         mockUseNotifications();
         mockUseDecryptedWallets();
         mockUseBitcoinBlockchainContext();
+        mockUseWalletApi();
+        mockUseBlockchainClient();
+        mockUseUseContactEmailsMap();
 
         mockSetAccount = vi.fn();
 

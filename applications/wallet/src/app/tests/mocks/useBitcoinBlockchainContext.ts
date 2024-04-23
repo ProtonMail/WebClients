@@ -1,6 +1,6 @@
 import { WasmNetwork } from '@proton/andromeda';
 
-import { getFeesEstimationMap, walletChainDataByWalletId } from '..';
+import { getFeesEstimationMap, mockedWalletChainDataByWalletId } from '..';
 import * as useBitcoinBlockchainContextModule from '../../contexts/BitcoinBlockchainContext';
 import { apiWalletsData } from '../fixtures/api';
 
@@ -12,7 +12,7 @@ export const mockUseBitcoinBlockchainContext = (
     spy.mockReturnValue({
         network: WasmNetwork.Testnet,
 
-        walletsChainData: walletChainDataByWalletId,
+        walletsChainData: mockedWalletChainDataByWalletId,
         accountIDByDerivationPathByWalletID: {},
         syncingMetatadaByAccountId: {},
         syncSingleWalletAccount: vi.fn(),

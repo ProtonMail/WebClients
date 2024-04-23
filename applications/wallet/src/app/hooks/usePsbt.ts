@@ -58,7 +58,16 @@ export const usePsbt = ({
             const signed = await finalPsbt.sign(andromedaAccount.account, network);
 
             try {
-                const txId = await blockchainClient.broadcastPsbt(signed);
+                // TODO: add email integration data here
+                // TODO: use exchange rate instead of transaction time here
+                // TODO: set label here
+                const txId = await blockchainClient.broadcastPsbt(signed, wallet.Wallet.ID, account.ID, {
+                    label: null,
+                    exchange_rate_or_transaction_time: {
+                        key: 'TransactionTime',
+                        value: Math.floor(Date.now() / SECOND).toString(),
+                    },
+                });
                 setBroadcastedTxId(txId);
 
                 setTimeout(() => {

@@ -1,4 +1,5 @@
-import * as useDecryptedApiWalletsDataModule from '../../contexts/BitcoinBlockchainContext/useDecryptedApiWalletsData';
+import * as useDecryptedApiWalletsDataModule from '@proton/wallet/hooks/useDecryptedApiWalletsData';
+
 import { apiWalletsData } from '../fixtures/api';
 
 export const mockUseDecryptedWallets = (

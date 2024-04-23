@@ -1,6 +1,7 @@
 import { Redirect, Route, Switch } from 'react-router-dom';
 
 import { ErrorBoundary, StandardErrorPage } from '@proton/components';
+import ContactEmailsProvider from '@proton/components/containers/contacts/ContactEmailsProvider';
 import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/useQuickSettingsReminders';
 
 import { withLayout } from '../components';
@@ -17,7 +18,13 @@ const MainContainer = () => {
             <QuickSettingsRemindersProvider>
                 <BitcoinBlockchainContextProvider>
                     <Switch>
-                        <Route path={'/transfer'}>{withLayout(<BitcoinTransferContainer />)}</Route>
+                        <Route path={'/transfer'}>
+                            {withLayout(
+                                <ContactEmailsProvider>
+                                    <BitcoinTransferContainer />
+                                </ContactEmailsProvider>
+                            )}
+                        </Route>
                         <Route path={'/buy'}>{withLayout(<BitcoinOnRampContainer />)}</Route>
                         <Route path={'/transactions'} exact>
                             {withLayout(<TransactionHistoryContainer />)}

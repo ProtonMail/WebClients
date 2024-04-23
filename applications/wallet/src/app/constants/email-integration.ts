@@ -1,0 +1,1 @@
+export const POOL_FILLING_THRESHOLD = 3;

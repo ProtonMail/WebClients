@@ -38,7 +38,7 @@ export const YourAccountsSection = ({ apiWalletData }: Props) => {
 
     const dispatch = useWalletDispatch();
 
-    const rust = useWalletApi();
+    const api = useWalletApi();
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
 
@@ -49,7 +49,7 @@ export const YourAccountsSection = ({ apiWalletData }: Props) => {
             return;
         }
 
-        await rust
+        await api
             .wallet()
             .deleteWalletAccount(Wallet.ID, accountToDelete)
             .then(async () => {

@@ -7,7 +7,7 @@ export const mockUseGetApiWalletTransactionData = (
 ) => {
     const spy = vi.spyOn(useApiWalletTransactionDataModule, 'useGetApiWalletTransactionData');
 
-    spy.mockReturnValue(mockedValue ?? jest.fn());
+    spy.mockReturnValue(mockedValue ?? vi.fn());
 
     return spy;
 };

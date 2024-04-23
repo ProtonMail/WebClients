@@ -66,6 +66,10 @@ export const walletAccountCreation = createAction(
     'wallet account creation',
     (payload: { walletID: string; account: WasmApiWalletAccount }) => ({ payload })
 );
+export const walletAccountUpdate = createAction(
+    'wallet account update',
+    (payload: { walletID: string; account: WasmApiWalletAccount }) => ({ payload })
+);
 export const walletAccountDeletion = createAction(
     'wallet account deletion',
     (payload: { walletID: string; walletAccountID: string }) => ({ payload })
@@ -114,6 +118,35 @@ const slice = createSlice({
                     state.value = replaceAt(state.value, walletIndex, {
                         ...walletAtIndex,
                         WalletAccounts: [...walletAtIndex.WalletAccounts, action.payload.account],
+                    });
+                }
+            })
+            .addCase(walletAccountUpdate, (state, action) => {
+                if (state.value) {
+                    const walletIndex = state.value.findIndex((data) => data.Wallet.ID === action.payload.walletID);
+                    const walletAtIndex = state.value[walletIndex];
+
+                    const walletAccountIndex = walletAtIndex.WalletAccounts.findIndex(
+                        (data) => data.ID === action.payload.account.ID
+                    );
+
+                    console.log(
+                        replaceAt(state.value, walletIndex, {
+                            ...walletAtIndex,
+                            WalletAccounts: replaceAt(
+                                walletAtIndex.WalletAccounts,
+                                walletAccountIndex,
+                                action.payload.account
+                            ),
+                        })
+                    );
+                    state.value = replaceAt(state.value, walletIndex, {
+                        ...walletAtIndex,
+                        WalletAccounts: replaceAt(
+                            walletAtIndex.WalletAccounts,
+                            walletAccountIndex,
+                            action.payload.account
+                        ),
                     });
                 }
             })
