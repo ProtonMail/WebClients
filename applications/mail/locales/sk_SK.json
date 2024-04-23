@@ -1132,12 +1132,6 @@
       "Trust": [
         "Dôverovať"
       ],
-      "Trust key": [
-        "Dôveryhodný kľúč",
-        "Dôveryhodný kľúč",
-        "Dôverovať kľúčom",
-        "Dôverovať novým kľúčom"
-      ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
       ],
@@ -1233,6 +1227,9 @@
       ],
       "View": [
         "Zobraziť"
+      ],
+      "View all reports": [
+        "Zobraziť všetky hlásenia"
       ],
       "View contact details": [
         "Zobraziť detaily kontaktu"
@@ -4787,6 +4784,9 @@
       "${ MAIL_APP_NAME } desktop app": [
         "Desktopová aplikácia ${ MAIL_APP_NAME } "
       ],
+      "14-day desktop app trial.": [
+        "14-dňová skúšobná verzia desktopovej aplikácie."
+      ],
       "Enjoy fast, secure, and distraction-free access to your inbox and calendar.": [
         "Užívajte si rýchly, bezpečný a nerušený prístup k doručenej pošte a kalendáru."
       ],
@@ -4795,6 +4795,9 @@
       ],
       "No credit card required.": [
         "Nie je potrebná platobná karta."
+      ],
+      "Start free trial": [
+        "Začať bezplatnú skúšobnú verziu"
       ],
       "Try the app-new desktop app": [
         "Vyskúšajte novú desktopovú aplikáciu"
@@ -6439,6 +6442,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Vyberte adresu alebo adresy, ktoré chcete pridať do skupiny ${ groupName }."
       ],
+      "Please try again in a few moments": [
+        "Skúste to znova o chvíľu, prosím"
+      ],
       "Please try again using a different payment method, or contact your bank.": [
         "Skúste to znova pomocou iného spôsobu platby, alebo kontaktujte svoju banku."
       ],
@@ -6982,6 +6988,9 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Na dokončenie tejto transakcie vás presmerujeme na PayPal v novej karte prehliadača. Ak používate blokovanie vyskakovacích okien, pred pokračovaním ho prosím vypnite."
       ],
+      "We'll email you once import is complete.": [
+        "Po dokončení importu vám pošleme email."
+      ],
       "We'll notify you when the import is done.": [
         "Po dokončení importu Vás budeme informovať."
       ],
@@ -7041,6 +7050,9 @@
       ],
       "You can check the progress ${ importProgressLink }.": [
         "Tu môžete skontrolovať priebeh ${ importProgressLink }."
+      ],
+      "You can close the tab or browser in the meantime.": [
+        "Medzitým môžete túto záložku alebo prehliadač zatvoriť."
       ],
       "You can either update your search query or ${ button }": [
         "Môžete aktualizovať svoj vyhľadávací dotaz alebo ${ button }"
@@ -8298,9 +8310,6 @@
       ],
       "Sent": [
         "Odoslané"
-      ],
-      "Set up email forwarding": [
-        "Nastaviť preposielanie emailov"
       ],
       "Sign up for free": [
         "Zaregistrujte sa zadarmo"
@@ -10178,6 +10187,9 @@
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel je **aktívny** a chráni váš účet."
+      ],
+      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLink }": [
+        "Vaše údaje boli zistené najmenej v jednom prípade porušenia ochrany osobných údajov. Ak chcete zobraziť podrobnosti a podniknúť kroky, zapnite funkciu ${ DARK_WEB_MONITORING_NAME }. ${ learnMoreLink }"
       ]
     },
     "Select files": {
@@ -10777,9 +10789,6 @@
       "Email tracking protection": [
         "Ochrana pred sledovacími prvkami v emailoch"
       ],
-      "Faster email management": [
-        "Rýchlejšia správa emailov"
-      ],
       "Get the desktop app": [
         "Získajte desktopovú aplikáciu"
       ],
@@ -10789,17 +10798,11 @@
       "Invite friends to ${ BRAND_NAME }": [
         "Pozvite priateľov do ${ BRAND_NAME }"
       ],
-      "Now you can take action on all emails in a single folder in one go.": [
-        "Teraz môžete jedným ťahom vykonať akciu na všetky emaily v jednom priečinku."
-      ],
       "Schedule send": [
         "Naplánovať odoslanie"
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Teraz v predvolenom nastavení načítame obrázky a znemožňujeme odosielateľom, aby vás sledovali. Toto môžete zmeniť v ${ settingsLink }."
-      ],
-      "You can now automatically forward your emails to anyone!": [
-        "Vaše emaily teraz môžete automaticky preposielať komukoľvek!"
       ],
       "You can now schedule your messages to be sent later": [
         "Teraz môžete naplánovať odosielanie správ na neskôr"
@@ -12286,6 +12289,9 @@
       "What's new": [
         "Čo je nové"
       ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Vaša bezplatná skúšobná verzia služby ${ planName } končí ${ textDate }"
+      ],
       "Your account is protected": [
         "Váš účet je chránený"
       ],
@@ -12294,9 +12300,6 @@
       ],
       "Your exposed information": [
         "Vaše odhalené informácie"
-      ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "Vaša bezplatná skúšobná verzia služby Mail Plus končí ${ textDate }"
       ]
     },
     "Title subscription": {

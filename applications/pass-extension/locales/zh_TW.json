@@ -488,6 +488,9 @@
       "Authentication error": [
         "認證錯誤"
       ],
+      "Authentication failure: ${ message }": [
+        "驗證失敗: ${ message }"
+      ],
       "Authenticator failure": [
         "驗證失敗"
       ],
@@ -563,6 +566,9 @@
       "Failed to delete selected items": [
         "無法刪除選擇的項目"
       ],
+      "Failed to edit organization settings": [
+        "編輯組織機構設定失敗"
+      ],
       "Failed to edit user's access.": [
         "失敗編輯使用者存取權。"
       ],
@@ -637,6 +643,9 @@
       ],
       "Please pin the extension or select \"Continue without pinning\".": [
         "請釘至擴充或選取「繼續不釘至」。"
+      ],
+      "Registration failure: ${ message }": [
+        "註冊失敗: ${ message }"
       ],
       "Request timed out": [
         "需求逾時"
@@ -1180,6 +1189,9 @@
       "Update login": [
         "更新登入"
       ],
+      "Updating organization settings": [
+        "更新組織設定"
+      ],
       "Upgrade ${ PASS_APP_NAME }": [
         "升級 ${ PASS_APP_NAME }"
       ],
@@ -1305,6 +1317,9 @@
       "Application logs": [
         "應用程式紀錄"
       ],
+      "Authenticate with passkeys": [
+        "透過密碼金鑰驗證"
+      ],
       "Auto-lock ${ PASS_APP_NAME }": [
         "自動鎖定${ PASS_APP_NAME }"
       ],
@@ -1391,6 +1406,9 @@
       ],
       "Export": [
         "匯出"
+      ],
+      "Exporting policy": [
+        "匯出政策"
       ],
       "Field name": [
         "欄位名稱"
@@ -1515,7 +1533,13 @@
       "Oldest to newest": [
         "從最舊到最新"
       ],
+      "Organization": [
+        "組織機構"
+      ],
       "Passkey": [
+        "密碼金鑰"
+      ],
+      "Passkeys": [
         "密碼金鑰"
       ],
       "Passphrase": [
@@ -1557,6 +1581,9 @@
       "Reveal password": [
         "顯示密碼"
       ],
+      "Save passkeys": [
+        "儲存密碼金鑰"
+      ],
       "Security": [
         "安全"
       ],
@@ -1583,6 +1610,9 @@
       ],
       "Settings": [
         "設定"
+      ],
+      "Sharing policy": [
+        "共享政策"
       ],
       "Show website favicons": [
         "顯示網站圖示"

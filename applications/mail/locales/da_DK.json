@@ -623,6 +623,9 @@
       "Mark as read": [
         "Markér som læst"
       ],
+      "Mark as resolved": [
+        "Markér som løst"
+      ],
       "Mark as unread": [
         "Markér som ulæst"
       ],
@@ -890,6 +893,9 @@
       "Report phishing": [
         "Anmeld phishing"
       ],
+      "Request a call": [
+        "Anmod om opkald"
+      ],
       "Request a feature": [
         "Anmod om en funktion"
       ],
@@ -1068,7 +1074,7 @@
         "Nogle billeder kunne ikke indlæses med sporingsbeskyttelse."
       ],
       "Star": [
-        "Markér med stjerne"
+        "Stjernemarkér"
       ],
       "Start import": [
         "Start importering"
@@ -1117,10 +1123,6 @@
       ],
       "Trust": [
         "Hav tillid til"
-      ],
-      "Trust key": [
-        "Stol på nøgle",
-        "Stol på nøgler"
       ],
       "Trust public key": [
         "Hav tillid til offentlig nøgle"
@@ -1217,6 +1219,9 @@
       ],
       "View": [
         "Vis"
+      ],
+      "View all reports": [
+        "Se alle rapporter"
       ],
       "View contact details": [
         "Vis kontaktoplysninger"
@@ -1669,6 +1674,9 @@
       ],
       "Continue using ${ planTitle }": [
         "Fortsæt med at bruge ${ planTitle }"
+      ],
+      "Continue your subscription": [
+        "Fortsæt dit abonnement"
       ]
     },
     "Calendar attachment tooltip": {
@@ -2283,7 +2291,7 @@
         "Navn"
       ],
       "Note": [
-        "Notat"
+        "Note"
       ],
       "Organization": [
         "Organisation"
@@ -4700,6 +4708,9 @@
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } desktop applikation."
       ],
+      "14-day desktop app trial.": [
+        "14-dages prøveversion af desktop-appen."
+      ],
       "Enjoy fast, secure, and distraction-free access to your inbox and calendar.": [
         "Nyd hurtig, sikker og distraktion-fri adgang til din indbakke og kalender."
       ],
@@ -5870,7 +5881,7 @@
         "Har ${ numAttachments } vedhæftede filer (${ numAttachmentsSize })"
       ],
       "here": [
-        "hér"
+        "her"
       ],
       "Hide original message": [
         "Skjul oprindelig besked"
@@ -5981,6 +5992,9 @@
       "Large imports can take several days.": [
         "Store importer kan tage adskillige dage."
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Lær, hvordan du ${ staySaferOnlineLink }"
+      ],
       "Learn more": [
         "Få mere at vide"
       ],
@@ -5998,6 +6012,9 @@
       ],
       "Loading ${ appName }": [
         "Indlæser ${ appName }"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Indlæser kalender, vent venligst. Du vil blive omdirigeret til vores planlægningsplatform Calendly i en ny fane."
       ],
       "Loading message": [
         "Indlæser besked"
@@ -6212,6 +6229,9 @@
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Vælg hvilken eller hvilke e-mail-adresser der skal føjes til ${ groupName }."
+      ],
+      "Please try again in a few moments": [
+        "Forsøg igen om et øjeblik"
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Prøv igen med en anden betalingsmetode, eller kontakt din bank."
@@ -6429,6 +6449,9 @@
       ],
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "De data, du har indtastet i kladden, kan ikke gemmes, hvis du forlader siden."
+      ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "De eksponerede oplysninger blev lækket fra en tredjepartstjeneste. Din ${ BRAND_NAME }-kontooplysninger er stadig sikre og krypterede. ${ learnMoreLink }"
       ],
       "The local database is being prepared": [
         "Den lokale database præpareres"
@@ -6745,6 +6768,9 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Du omdirigeres til PayPal i en ny browserfane for at gennemføre denne transaktion. Benytter du evt. pop-up blockere, så deaktivér venligst disse for at fortsætte."
       ],
+      "We'll email you once import is complete.": [
+        "Vi sender dig en e-mail, når importen er færdig."
+      ],
       "We'll notify you when the import is done.": [
         "Vi giver dig besked, når importen er færdig."
       ],
@@ -6805,6 +6831,9 @@
       "You can check the progress ${ importProgressLink }.": [
         "Du kan tjekke fremskridtet ${ importProgressLink }."
       ],
+      "You can close the tab or browser in the meantime.": [
+        "Du kan lukke fanen eller browseren i mellemtiden."
+      ],
       "You can either update your search query or ${ button }": [
         "Du kan enten opdatere din søgeforespørgsel eller ${ button }"
       ],
@@ -6855,6 +6884,12 @@
       "You have **${ count } message** tagged with this label": [
         "Du har **${ count } besked** mærket med denne etikette",
         "Du har **${ count } beskeder** mærket med denne etikette"
+      ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "Du har et ${ planTitle }-prøveabonnement. Hvis du gerne vil fortsætte dit abonnement efter prøveperioden, skal du tilføje en betalingsmetode."
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "Du har et ${ planTitle }-prøveabonnement. Der kræves ingen betaling på dette tidspunkt. Dit abonnement vil automatisk blive fornyet ved prøveperiodens udløb."
       ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
         "Du har ikke givet din e-mail noget emne. Vil du sende beskeden alligevel?"
@@ -6948,11 +6983,20 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Dine data er klar til at blive importeret fra ${ importedEmailAddressStrong } til din ${ BRAND_NAME }-konto."
       ],
+      "Your email address and password were leaked:": [
+        "Din e-mailadresse og adgangskode er blevet lækket:"
+      ],
+      "Your email address was exposed:": [
+        "Din e-mailadresse blev eksponeret:"
+      ],
       "Your email will only be used for this one-time verification.": [
         "Din e-mail vil kun blive brugt til denne engangsbekræftelse."
       ],
       "Your files will be encrypted and then saved": [
         "Din filer vil blive krypteret og derefter gemt"
+      ],
+      "Your information was found on ${ displayedDate }": [
+        "Dine oplysninger blev fundet ${ displayedDate }"
       ],
       "Your login information will not be saved after the import is completed.": [
         "Dine loginoplysninger vil ikke blive gemt, når importen er gennemført."
@@ -6969,6 +7013,9 @@
       ],
       "Your next billing date is ${ renewalTime }.": [
         "Din næste faktureringsdato er ${ renewalTime }."
+      ],
+      "Your password was leaked:": [
+        "Din adgangskode er blevet lækket:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Dit telefonnummer vil kun blive anvendt til denne engangsbekræftelse."
@@ -7215,7 +7262,7 @@
         "Vis ulæste e-mails"
       ],
       "Star": [
-        "Stjerne"
+        "Stjernemarkér"
       ]
     },
     "Keyboard shortcut section name": {
@@ -7952,7 +7999,7 @@
         "Etiketter"
       ],
       "Learn more": [
-        "Få yderligere information"
+        "Få mere at vide"
       ],
       "Less": [
         "Mindre"
@@ -7964,7 +8011,7 @@
         "Administrer dine mapper"
       ],
       "More": [
-        "Flere"
+        "Mere"
       ],
       "Open in ${ CALENDAR_APP_NAME }": [
         "Åbn i ${ CALENDAR_APP_NAME }"
@@ -8001,9 +8048,6 @@
       ],
       "Sent": [
         "Sendt"
-      ],
-      "Set up email forwarding": [
-        "Indstil videresendelse af e-mail"
       ],
       "Sign up for free": [
         "Tilmeld gratis"
@@ -8578,7 +8622,7 @@
         "Kalenderdeling"
       ],
       "Catch-all": [
-        "Fang-alle"
+        "Catch-all"
       ],
       "Centralized billing": [
         "Samlet fakturering"
@@ -9793,6 +9837,9 @@
       ]
     },
     "Security Center - Info": {
+      "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
+        "Få besked, hvis din adgangskode eller andre data er blevet lækket fra en tredjepartstjeneste. ${ learnMoreLink }"
+      ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Vores banebrydende AI-drevne sikkerhedsløsning designet til brugere, der søger øget beskyttelse for deres konto. ${ learnMoreLink }"
       ],
@@ -10351,9 +10398,6 @@
       "Email tracking protection": [
         "Beskyttelse mod sporing af e-mail"
       ],
-      "Faster email management": [
-        "Hurtigere håndtering af e-mails"
-      ],
       "Get the desktop app": [
         "Få desktop appen."
       ],
@@ -10363,17 +10407,11 @@
       "Invite friends to ${ BRAND_NAME }": [
         "Inviter venner til ${ BRAND_NAME }"
       ],
-      "Now you can take action on all emails in a single folder in one go.": [
-        "Nu kan du behandle alle e-mails i en enkelt mappe på én gang."
-      ],
       "Schedule send": [
         "Planlæg afsendelse"
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Vi indlæser nu billeder som standard og blokerer afsendere fra at spore dig. Dette kan ændres i ${ settingsLink }."
-      ],
-      "You can now automatically forward your emails to anyone!": [
-        "Du kan nu automatisk videresende dine e-mails til hvem som helst!"
       ],
       "You can now schedule your messages to be sent later": [
         "Du kan nu planlægge dine beskeder til senere afsendelse"
@@ -11113,7 +11151,7 @@
         "Vedhæftninger"
       ],
       "BCC": [
-        "Bcc"
+        "BCC"
       ],
       "Billing cycle": [
         "Faktureringscyklus"
@@ -11143,7 +11181,7 @@
         "Kortbekræftelse"
       ],
       "CC": [
-        "Cc"
+        "CC"
       ],
       "Change my answer": [
         "Skift mit svar"
@@ -11269,6 +11307,9 @@
       ],
       "Deleting contacts": [
         "Sletter kontakter"
+      ],
+      "Details": [
+        "Detaljer"
       ],
       "Don't give spam a chance": [
         "Lad ikke spam få en chance"
@@ -11765,8 +11806,8 @@
       "Your changes are not synced yet": [
         "Dine ændringer er endnu ikke synkroniseret"
       ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "Din Mail Plus prøveperiode slutter ${ textDate }"
+      "Your exposed information": [
+        "Dine blotlagte oplysninger"
       ]
     },
     "Title subscription": {

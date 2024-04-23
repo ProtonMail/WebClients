@@ -1127,10 +1127,6 @@
       "Trust": [
         "Lita på"
       ],
-      "Trust key": [
-        "Lita på nyckel",
-        "Lita på nycklar"
-      ],
       "Trust public key": [
         "Lita på offentlig nyckel"
       ],
@@ -6910,6 +6906,12 @@
         "Du har **${ count } meddelande** märkt med denna etikett",
         "Du har **${ count } meddelanden** märkta med denna etikett"
       ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "Du har en provperiod på ${ planTitle }-prenumeration. Om du vill fortsätta med din prenumeration efter provperioden, lägg till en betalningsmetod."
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "Du har en provperiod på ${ planTitle }-prenumeration. Ingen betalning krävs för närvarande. Din prenumeration kommer att förnyas automatiskt i slutet av provperioden."
+      ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
         "Du har inte angett något ämne för din e-post. Vill du skicka meddelandet ändå?"
       ],
@@ -8073,9 +8075,6 @@
       ],
       "Sent": [
         "Skickat"
-      ],
-      "Set up email forwarding": [
-        "Ställ in vidarebefordran av e-post"
       ],
       "Sign up for free": [
         "Registrera gratis"
@@ -9543,11 +9542,6 @@
         "Vi rekommenderar att du “Sluta lita på“ denna nyckel."
       ]
     },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "E-postadress hittades inte bland användar-ID som definierats i sändningsnyckeln (${ keyUserIds })"
-      ]
-    },
     "Placeholder": {
       "A way to contact you": [
         "Ett sätt att kontakta dig"
@@ -9893,6 +9887,9 @@
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel är **aktivt** och skyddar ditt konto."
+      ],
+      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLink }": [
+        "Din information hittades i minst ett dataintrång. Slå på ${ DARK_WEB_MONITORING_NAME } för att visa detaljer och vidta åtgärder. ${ learnMoreLink }"
       ]
     },
     "Select files": {
@@ -10446,9 +10443,6 @@
       "Email tracking protection": [
         "E-postspårningsskydd"
       ],
-      "Faster email management": [
-        "Snabbare e-posthantering"
-      ],
       "Get the desktop app": [
         "Skaffa appen för stationär dator"
       ],
@@ -10458,17 +10452,14 @@
       "Invite friends to ${ BRAND_NAME }": [
         "Bjud in vänner till ${ BRAND_NAME }"
       ],
-      "Now you can take action on all emails in a single folder in one go.": [
-        "Nu kan du vidta åtgärder på all e-post i en enda mapp på en gång."
-      ],
       "Schedule send": [
         "Schemalägg sändning"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME } to get notified if your data was leaked from a third-party service.": [
+        "Slå på ${ DARK_WEB_MONITORING_NAME } för att bli aviserad om din data har läckt från en tredjepartstjänst."
+      ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Vi laddar nu bilder som standard och blockerar avsändare från att spåra dig. Detta kan ändras i ${ settingsLink }."
-      ],
-      "You can now automatically forward your emails to anyone!": [
-        "Du kan nu automatiskt vidarebefordra din e-post till vem som helst!"
       ],
       "You can now schedule your messages to be sent later": [
         "Du kan nu schemalägga dina meddelanden för att skickas senare"
@@ -11857,6 +11848,9 @@
       "What's new": [
         "Vad som är nytt"
       ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Din gratis provperiod för ${ planName } slutar den ${ textDate }"
+      ],
       "Your account is protected": [
         "Ditt konto är skyddat"
       ],
@@ -11865,9 +11859,6 @@
       ],
       "Your exposed information": [
         "Din exponerade information"
-      ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "Din gratis provperiod för Mail Plus slutar den ${ textDate }"
       ]
     },
     "Title subscription": {

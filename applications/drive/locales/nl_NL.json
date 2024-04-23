@@ -556,6 +556,9 @@
       "Remove": [
         "Verwijderen"
       ],
+      "Remove access": [
+        "Toegang verwijderen"
+      ],
       "Remove bonuses": [
         "Verwijder bonussen"
       ],
@@ -831,6 +834,9 @@
       ],
       "View": [
         "Bekijken"
+      ],
+      "View all reports": [
+        "Bekijk alle rapporten"
       ],
       "View invoice": [
         "Factuur bekijken"
@@ -4533,6 +4539,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Selecteer welk(e) e-mailadres(sen) u wilt toevoegen aan ${ groupName }."
       ],
+      "Please try again in a few moments": [
+        "Probeer het opnieuw in enkele ogenblikken"
+      ],
       "Please try again using a different payment method, or contact your bank.": [
         "Probeer opnieuw met een andere betalingsmethode, of neem contact op met uw bank."
       ],
@@ -4991,6 +5000,9 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "We verwijzen u naar PayPal in een nieuw browsertabblad om de transactie te voltooien. Als u een pop-up blocker gebruikt, schakel deze dan uit alvorens door te gaan."
       ],
+      "We'll email you once import is complete.": [
+        "We sturen je een e-mail zodra de import voltooid is."
+      ],
       "We'll notify you when the import is done.": [
         "We laten het u weten als de import klaar is."
       ],
@@ -5048,6 +5060,9 @@
       "You can check the progress ${ importProgressLink }.": [
         "U kunt de voortgang controleren ${ importProgressLink }."
       ],
+      "You can close the tab or browser in the meantime.": [
+        "In de tussentijd kunt u de tab of browser sluiten."
+      ],
       "You can import one data type at a time.": [
         "U kunt maar één type gegevens tegelijk importeren."
       ],
@@ -5073,7 +5088,7 @@
         "U heeft nog ${ expiresInDays } dagen om uw 3 GB welkomstbonus op te eisen en "
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
-        "Je hebt een Trial ${ planTitle } abonnement. Als je na de proefperiode door wilt gaan met je abonnement, voeg een betaalmethode toe."
+        "Je hebt een trial ${ planTitle } abonnement. Als je na de proefperiode door wilt gaan met je abonnement, voeg een betaalmethode toe."
       ],
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
         "Je hebt een trial ${ planTitle } abonnement. Er is geen betaling vereist op dit moment. Uw abonnement wordt automatisch verlengd aan het einde van de proefperiode."
@@ -5422,9 +5437,6 @@
       "Delete drive?": [
         "Drive verwijderen?",
         "Drives verwijderen?"
-      ],
-      "Delete link": [
-        "Verwijder hyperlink"
       ],
       "Delete recovery-related information.": [
         "Verwijder herstel-gerelateerde informatie."
@@ -8887,6 +8899,9 @@
       "Night theme": [
         "Nacht thema"
       ],
+      "No breaches detected": [
+        "Geen inbreuken gevonden"
+      ],
       "No results found": [
         "Geen resultaten"
       ],
@@ -9127,6 +9142,9 @@
       "You have no folders yet": [
         "U hebt nog geen mappen"
       ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Uw ${ planName } gratis proefperiode eindigt op ${ textDate }"
+      ],
       "Your 3 GB bonus": [
         "Uw 3 GB bonus"
       ],
@@ -9138,9 +9156,6 @@
       ],
       "Your exposed information": [
         "Uw blootgestelde informatie"
-      ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "Uw Mail Plus proefversie eindigt op ${ textDate }"
       ],
       "Your welcome actions": [
         "Uw welkomstacties"

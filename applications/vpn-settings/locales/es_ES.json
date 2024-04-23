@@ -548,8 +548,8 @@
       "Upload": [
         "Cargar"
       ],
-      "Upload icon": [
-        "Cargar un ícono"
+      "Upload logo": [
+        "Cargar el logo"
       ],
       "Use ${ label } theme": [
         "Utilizar tema ${ label }"
@@ -2969,6 +2969,9 @@
         "Añadir servidor (${ availableAddedCount } disponible)",
         "Añadir servidor (${ availableAddedCount } disponibles)"
       ],
+      "Add your name and logo to create a more personalized experience for your organization.": [
+        "Añade tu nombre y logo para crear una experiencia más personalizada para tu organización."
+      ],
       "Adding ${ addedServerCount } gateway server": [
         "Añadiendo ${ addedServerCount } servidor de puerta de enlace",
         "Añadiendo ${ addedServerCount } servidores de puerta de enlace"
@@ -3736,9 +3739,6 @@
       ],
       "The format of your CSV file is incorrect.": [
         "El formato de tu archivo CSV es incorrecto."
-      ],
-      "The name and icon will be visible to your users while they are signed in.": [
-        "El nombre e ícono serán visibles para tus usuarios mientras inicien sesión."
       ],
       "The name will be visible to your users while they are signed in.": [
         "Tus usuarios verán el nombre mientras estén conectados."
@@ -5997,17 +5997,20 @@
       "Avoid overly compressed images.": [
         "Evita imágenes demasiado comprimidas."
       ],
-      "Ensure your icon has padding space around it.": [
-        "Asegúrate de que tu ícono tenga espacio de relleno a su alrededor."
+      "Ensure your logo has padding space around it.": [
+        "Asegúrate de que tu logo tenga espacio de relleno a su alrededor."
       ],
       "Opt for a PNG image that is a 128x128 pixels for clarity.": [
         "Opta por una imagen PNG de 128x128 pixeles para mayor claridad."
       ],
-      "Tips on choosing a good icon": [
-        "Consejos al elegir un buen ícono"
+      "Tips on choosing a good logo": [
+        "Consejos al elegir un buen logo"
       ],
       "Use a graphical icon or image rather than text.": [
         "Usa un ícono gráfico o imagen en lugar de texto."
+      ],
+      "Use a solid background color.": [
+        "Usa un color de fondo sólido."
       ]
     },
     "Organization logo upload modal": {
@@ -6538,9 +6541,6 @@
       ],
       "The SCIM base URL and token will be deleted.": [
         "La URL y token base de SCIM serán eliminados."
-      ],
-      "To re-enable syncing with your identity provider, your need to complete the SCIM integration again.": [
-        "Para reactivar la sincronización con tu proveedor de identidad, necesitas completar la integración SCIM nuevamente."
       ]
     },
     "scim: Label": {
@@ -6576,6 +6576,17 @@
     "Select file": {
       "Upload CSV file": [
         "Cargar un archivo CSV"
+      ]
+    },
+    "Select invoice document": {
+      "Credit note": [
+        "Nota de crédito"
+      ],
+      "Currency conversion": [
+        "Conversión de divisa"
+      ],
+      "Invoice": [
+        "Factura"
       ]
     },
     "Select search results": {
@@ -7884,8 +7895,8 @@
       "Gift code": [
         "Código promocional"
       ],
-      "How to choose a good icon": [
-        "Cómo elegir un buen ícono"
+      "How to choose a good logo": [
+        "Cómo elegir un buen logo"
       ],
       "Human verification": [
         "Verificación humana"
@@ -8122,14 +8133,14 @@
       "WireGuard configuration": [
         "Configuración de WireGuard"
       ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Tu prueba gratuita de ${ planName } Plus termina el ${ textDate }."
+      ],
       "Your changes are not synced yet": [
         "Tus cambios todavía no están sincronizados."
       ],
       "Your current plan": [
         "Tu plan actual"
-      ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "Tu prueba gratuita de Mail Plus termina el ${ textDate }."
       ],
       "Your plan": [
         "Tu plan"

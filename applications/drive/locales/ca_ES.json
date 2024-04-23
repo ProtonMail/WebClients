@@ -556,6 +556,9 @@
       "Remove": [
         "Esborra"
       ],
+      "Remove access": [
+        "Esborra l'accés"
+      ],
       "Remove bonuses": [
         "Esborra les bonificacions"
       ],
@@ -579,6 +582,9 @@
       ],
       "Report an issue": [
         "Informeu d'un problema"
+      ],
+      "Request a call": [
+        "Sol·licitar una trucada"
       ],
       "Request a feature": [
         "Demana una nova característica"
@@ -828,6 +834,9 @@
       ],
       "View": [
         "Mostra"
+      ],
+      "View all reports": [
+        "Mostra tots els informes"
       ],
       "View invoice": [
         "Mostra la factura"
@@ -1145,6 +1154,9 @@
       ],
       "Continue using ${ planTitle }": [
         "Continua utilitzant ${ planTitle }"
+      ],
+      "Continue your subscription": [
+        "Continuï amb la seva subscripció"
       ]
     },
     "Checkout row": {
@@ -2254,10 +2266,10 @@
         "S'ha actualitzat aquest esdeveniment."
       ],
       "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Aquest esdeveniment s'ha actualitzat. Això és el que s'ha canviat:\n\n${ updateEventDetailsText }"
+        "Aquest esdeveniment s'ha actualitzat. Això és el que ha canviat:\n\n${ updateEventDetailsText }"
       ],
       "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
-        "Esteu convidat a ${ eventTitle }\n\n${ eventDetailsText }"
+        "Esteu convidat a ${ eventTitle }.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -4153,6 +4165,9 @@
       "File will not be updated": [
         "El fitxer no s'actualitzarà"
       ],
+      "Files and folders that others shared with you will appear here": [
+        "Els fitxers i les carpetes que altres persones han compartit amb vostè apareixeran aquí"
+      ],
       "Finalizing": [
         "Finalitzant"
       ],
@@ -4197,6 +4212,9 @@
       ],
       "here": [
         "aquí"
+      ],
+      "High Priority": [
+        "Alta prioritat"
       ],
       "How does encrypted search work?": [
         "Com funciona la cerca xifrada?"
@@ -4301,6 +4319,9 @@
       "Last week": [
         "La setmana passada"
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Més informació sobre com ${ staySaferOnlineLink }"
+      ],
       "Learn more": [
         "Més informació"
       ],
@@ -4315,6 +4336,9 @@
       ],
       "Loading ${ appName }": [
         "Carregant ${ appName }"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "S'està carregant el calendari, si us plau, esperi's. Se'l redirigirà a la nostra plataforma de programació Calendly en una pestanya nova."
       ],
       "Loading link": [
         "S'està carregant l'enllaç"
@@ -4448,6 +4472,9 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Els pagaments estan protegits amb xifratge TLS i les lleis de privacitat suïsses."
+      ],
+      "Pending": [
+        "Pendent"
       ],
       "Permanently delete all files in your locked drive": [
         "Elimineu de manera permanent tots els fitxers de la vostra unitat bloquejada"
@@ -4651,6 +4678,9 @@
       "Shared link not found": [
         "No s'ha trobat l'enllaç compartit."
       ],
+      "Shared with me": [
+        "Compartit amb mi"
+      ],
       "Sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
         "Registri's per obtenir el seu propi compte ${ DRIVE_APP_NAME } i protegeixi les seves dades amb el xifratge d'extrem a extrem i comparteixi-les de manera segura."
       ],
@@ -4713,6 +4743,9 @@
       ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
         "Les dades xifrades són lleugerament més grans a causa de la sobrecàrrega del xifratge i les signatures, els quals garanteixen la seguretat de les vostres dades."
+      ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "La informació exposada es va filtrar d'un servei de tercers. La informació del seu compte de ${ BRAND_NAME } continua sent segura i encriptada. ${ learnMoreLink }"
       ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "El següent pot haver estat manipulat: ${ items }. Obriu-ho només si hi confieu."
@@ -4943,6 +4976,9 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Us redireccionarem a PayPal en una pestanya nova del navegador per completar aquesta transacció. Si utilitzeu bloquejadors emergents, inhabiliteu-los per continuar."
       ],
+      "We'll email you once import is complete.": [
+        "Us enviarem un correu electrònic un cop s'hagi completat la importació."
+      ],
       "We'll notify you when the import is done.": [
         "Us notificarem quan la importació s'hagi realitzat."
       ],
@@ -4997,6 +5033,9 @@
       "You can check the progress ${ importProgressLink }.": [
         "Podeu comprovar el progrés a ${ importProgressLink }."
       ],
+      "You can close the tab or browser in the meantime.": [
+        "Mentrestant, podeu tancar la pestanya o el navegador."
+      ],
       "You can import one data type at a time.": [
         "Podeu importar un tipus de dades alhora."
       ],
@@ -5020,6 +5059,12 @@
       "You have ${ expiresInDays } day left to claim your 3 GB welcome bonus and ": [
         "Us queda ${ expiresInDays } dia per a reclamar la vostra bonificació de benvinguda de 3 GB i ",
         "Us queden ${ expiresInDays } dies per a reclamar la vostra bonificació de benvinguda de 3 GB i "
+      ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "Té una subscripció de prova de ${ planTitle }. Si vol continuar amb la seva subscripció després del període de prova, afegeixi un mètode de pagament."
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "Té una subscripció de prova de ${ planTitle }. No es requereix cap pagament en aquest moment. La seva subscripció es renovarà automàticament al final del període de prova."
       ],
       "You may be redirected to your bank’s website.": [
         "És possible que se us redirigeixi al lloc web del vostre banc."
@@ -5075,6 +5120,12 @@
       "Your download is in progress": [
         "La descàrrega és en curs"
       ],
+      "Your email address and password were leaked:": [
+        "La seva adreça de correu electrònic i contrasenya es van filtrar:"
+      ],
+      "Your email address was exposed:": [
+        "S'ha exposat la seva adreça de correu electrònic:"
+      ],
       "Your email will only be used for this one-time verification.": [
         "El vostre correu electrònic només s’utilitzarà per a aquesta única verificació."
       ],
@@ -5087,11 +5138,17 @@
       "Your files will be encrypted and then saved.": [
         "Es xifraran els fitxers i després es desaran."
       ],
+      "Your information was found on ${ displayedDate }": [
+        "La seva informació es va trobar el ${ displayedDate }"
+      ],
       "Your login information will not be saved after the import is completed.": [
         "La vostra informació d'inici de sessió no es desarà quan s'hagi completat la importació."
       ],
       "Your next billing date is ${ renewalTime }.": [
         "La pròxima data de facturació és ${ renewalTime }."
+      ],
+      "Your password was leaked:": [
+        "S'ha filtrat la vostra contrasenya:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "El vostre número de telèfon només s’utilitzarà per a aquesta única verificació."
@@ -5354,9 +5411,6 @@
         "Eliminar unitat?",
         "Eliminar unitats?"
       ],
-      "Delete link": [
-        "Elimina l'enllaç"
-      ],
       "Delete recovery-related information.": [
         "Elimina la informació de recuperació."
       ],
@@ -5612,6 +5666,9 @@
       "Region": [
         "Regió"
       ],
+      "Remove access": [
+        "Esborra l'accés"
+      ],
       "Replace existing file": [
         "Substitueix el fitxer existent"
       ],
@@ -5643,7 +5700,7 @@
         "Compartit per"
       ],
       "Shared on": [
-        "Compartit el"
+        "Compartit a"
       ],
       "Show indexing progress of Encrypted Search": [
         "Mostra el progrés d'indexació de la Cerca Xifrada"
@@ -5837,6 +5894,9 @@
       "Shared with me": [
         "Compartit amb mi"
       ],
+      "stay safer online": [
+        "mantenir-se més segur en línia"
+      ],
       "Trash": [
         "Paperera"
       ],
@@ -5891,10 +5951,15 @@
         "El seu emmagatzematge està ple. Per enviar o rebre correus electrònics, alliberi espai o ${ cta }."
       ],
       "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
-        "El seu emmagatzematge està ple. Per penjar o sincronitzar fitxers, alliberi espai o ${ cta }."
+        "El vostre emmagatzematge està ple. Per carregar o sincronitzar fitxers, allibereu espai o ${ cta }."
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "La seva subscripció ha finalitzat. ${ cta } i per evitar la pèrdua de dades."
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Activa ${ reason }"
       ]
     },
     "Mail import summary": {
@@ -5931,10 +5996,10 @@
         "10 adreces de correu electrònic"
       ],
       "Auto-delete Spam and Trash": [
-        "Suprimeix automàticament la brossa i la paperera"
+        "Elimina automàticament el correu brossa i la paperera"
       ],
       "Custom schedule send and snooze times": [
-        "Horaris personalitzats d'enviament i posposa"
+        "Personalització de l'hora d'enviament i del temps de posposició"
       ],
       "Support for 1 custom email domain": [
         "Suport per a 1 domini de correu personalitzat"
@@ -5945,7 +6010,7 @@
     },
     "mailtrial2024: Footer": {
       "Renews at ${ renewablePrice }, cancel anytime": [
-        "Renovacions a ${ renewablePrice }, cancel·leu en qualsevol moment"
+        "Es renova per ${ renewablePrice } i ho podeu cancel·lar en qualsevol moment"
       ]
     },
     "mailtrial2024: Info": {
@@ -7025,6 +7090,9 @@
       "Encrypted search activated": [
         "S'ha activat la cerca xifrada"
       ],
+      "Failed to accept share invitation": [
+        "No s'ha pogut acceptar la invitació per compartir"
+      ],
       "Failed to download files: ${ err }": [
         "No s'han pogut descarregar els fitxers: ${ err }"
       ],
@@ -7064,6 +7132,12 @@
       ],
       "Root folder failed to be loaded": [
         "No s'ha pogut carregar la carpeta arrel"
+      ],
+      "Share invitation accepted successfully": [
+        "La invitació per compartir s'ha acceptat correctament"
+      ],
+      "Share invitation ID was not found. Please check the link": [
+        "No s'ha trobat l'identificador d'invitació per compartir. Si us plau, comprovi l'enllaç"
       ],
       "Subfolder failed to be loaded": [
         "No s'ha pogut carregar la subcarpeta."
@@ -7356,7 +7430,7 @@
         "Seleccioneu un motiu"
       ],
       "Select state": [
-        "Seleccioni l'estat"
+        "Seleccioneu l'estat"
       ],
       "Set date": [
         "Establiu una data"
@@ -7511,6 +7585,9 @@
       ]
     },
     "Security Center - Info": {
+      "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
+        "Rebi una notificació si la seva contrasenya o altres dades s'han filtrat d'un servei de tercers. ${ learnMoreLink }"
+      ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "La nostra solució de seguretat d'avantguarda, impulsada per IA, dissenyada per als usuaris que busquen una protecció més elevada per als seus comptes. ${ learnMoreLink }"
       ],
@@ -7985,13 +8062,13 @@
         "Per a tots els serveis de ${ BRAND_NAME }"
       ],
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
-        "Per a continuar carregant i sincronitzant fitxers, allibereu espai o milloreu per a més emmagatzematge."
+        "Per a continuar carregant i sincronitzant fitxers, allibereu espai o milloreu per a obtenir més emmagatzematge."
       ],
       "To send or receive emails, free up space or ${ upgrade }": [
-        "Per enviar o rebre correus electrònics, allibereu espai o ${ upgrade }"
+        "Per a enviar o rebre correus electrònics, allibereu espai o ${ upgrade }"
       ],
       "To send or receive emails, free up space or upgrade for more storage.": [
-        "Per enviar o rebre correus electrònics, allibereu espai o milloreu per a més emmagatzematge."
+        "Per a enviar o rebre correus electrònics, allibereu espai o milloreu per a obtenir més emmagatzematge."
       ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "Per a carregar o sincronitzar fitxers, allibereu espai o ${ upgrade }"
@@ -8006,13 +8083,13 @@
         "El vostre ${ appStorage } és ple."
       ],
       "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
-        "L'${ storage } és ${ percentage }% ple. ${ cta }."
+        "L'${ storage } és ple al ${ percentage }%. ${ cta }."
       ],
       "Your ${ storage } is full. ${ cta }.": [
         "L'${ storage } és ple. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
-        "L'emmagatzematge és ${ percentage }% ple. ${ cta }."
+        "L'emmagatzematge és ple al ${ percentage }%. ${ cta }."
       ],
       "Your storage is full": [
         "L'emmagatzematge és ple."
@@ -8692,6 +8769,9 @@
       "Night theme": [
         "Tema de nit"
       ],
+      "No breaches detected": [
+        "No s'han detectat infraccions"
+      ],
       "No results found": [
         "No s'ha trobat cap resultat."
       ],
@@ -8941,8 +9021,8 @@
       "Your changes are not synced yet": [
         "Els vostres canvis encara no estan sincronitzats"
       ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "La prova gratuïta de Mail Plus finalitza el ${ textDate }"
+      "Your exposed information": [
+        "La teva informació exposada"
       ],
       "Your welcome actions": [
         "Les vostres accions de benvinguda"

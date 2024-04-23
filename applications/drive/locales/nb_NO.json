@@ -556,6 +556,9 @@
       "Remove": [
         "Fjern"
       ],
+      "Remove access": [
+        "Fjern tilgang"
+      ],
       "Remove bonuses": [
         "Fjern bonuser"
       ],
@@ -4490,6 +4493,9 @@
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Betalinger er beskyttet med TLS-kryptering og sveitsiske personvernlover."
       ],
+      "Pending": [
+        "Ventende"
+      ],
       "Permanently delete all files in your locked drive": [
         "Slett alle filer permanent i den låste stasjonen"
       ],
@@ -5039,6 +5045,9 @@
       "Yesterday": [
         "I går"
       ],
+      "you": [
+        "du"
+      ],
       "You already have a free account": [
         "Du har allerede en gratis konto"
       ],
@@ -5435,9 +5444,6 @@
         "Slette stasjon?",
         "Slette stasjoner?"
       ],
-      "Delete link": [
-        "Slett kobling"
-      ],
       "Delete recovery-related information.": [
         "Slett gjenopprettingsrelatert informasjon."
       ],
@@ -5695,6 +5701,9 @@
       ],
       "Region": [
         "Region"
+      ],
+      "Remove access": [
+        "Fjern tilgang"
       ],
       "Replace existing file": [
         "Erstatt eksisterende fil"
@@ -5982,6 +5991,11 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Abonnementet ditt er avsluttet. ${ cta } og unngå tap av data."
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Aktiver ${ reason }"
       ]
     },
     "Mail import summary": {
@@ -7211,6 +7225,18 @@
         "${ numberOfItems } kobling til elementet ditt ble slettet",
         "${ numberOfItems } koblinger til elementene dine ble slettet"
       ],
+      "${ reason } has been disabled": [
+        "${ reason } er deaktivert"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } er aktivert"
+      ],
+      "Access for the member removed": [
+        "Tilgang for medlemmet fjernet"
+      ],
+      "Access updated and shared": [
+        "Tilgang oppdatert og delt"
+      ],
       "All items will soon be permanently deleted from trash": [
         "Alle elementer vil snart bli slettet permanent fra papirkurven."
       ],
@@ -7262,6 +7288,9 @@
       ],
       "File or folder is missing a name": [
         "Fil eller mappe mangler et navn"
+      ],
+      "Invitation removed from the share": [
+        "Invitasjon fjernet fra den delte ressursen"
       ],
       "Link copied to clipboard": [
         "Kobling kopiert til utklippstavlen"
@@ -7753,6 +7782,9 @@
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel er **aktiv** og beskytter kontoen din."
+      ],
+      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLink }": [
+        "Informasjonen din ble funnet i minst ett datainnbrudd. Slå på ${ DARK_WEB_MONITORING_NAME } for å vise detaljer og iverksette tiltak. ${ learnMoreLink }."
       ]
     },
     "Select files": {
@@ -9199,6 +9231,9 @@
       "You have no folders yet": [
         "Du har ingen mapper enda"
       ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Din gratis prøveversjon av ${ planName } slutter den ${ textDate }."
+      ],
       "Your 3 GB bonus": [
         "Dine bonus 3 GB"
       ],
@@ -9210,9 +9245,6 @@
       ],
       "Your exposed information": [
         "Din eksponerte informasjon"
-      ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "Din gratis prøveversjon av Mail Plus slutter den ${ textDate }."
       ],
       "Your welcome actions": [
         "Dine velkomne handlinger"

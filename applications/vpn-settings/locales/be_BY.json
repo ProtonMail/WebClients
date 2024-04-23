@@ -548,8 +548,8 @@
       "Upload": [
         "Запампаваць"
       ],
-      "Upload icon": [
-        "Запампаваць значок"
+      "Upload logo": [
+        "Запампаваць лагатып"
       ],
       "Use ${ label } theme": [
         "Выкарыстоўваць тэму ${ label }"
@@ -722,10 +722,10 @@
         "Абараняйце свае паролі і ідэнтычнасць"
       ],
       "Safeguard your files and photos": [
-        "Абараніце свае файлы і фатаграфіі"
+        "Абараняйце свае файлы і фатаграфіі"
       ],
       "Secure your communications": [
-        "Абараніце свае зносіны"
+        "Абараняйце свае зносіны"
       ]
     },
     "bf2023: Action": {
@@ -3021,6 +3021,9 @@
         "Дадаць сервер (${ availableAddedCount } даступна)",
         "Дадаць сервер (${ availableAddedCount } даступна)"
       ],
+      "Add your name and logo to create a more personalized experience for your organization.": [
+        "Дадайце свае назву і лагатып, каб стварыць больш персаналізаванае ўражанне для сваёй арганізацыі."
+      ],
       "Adding ${ addedServerCount } gateway server": [
         "Даданне ${ addedServerCount } сервера шлюза",
         "Даданне ${ addedServerCount } сервераў шлюза",
@@ -3812,9 +3815,6 @@
       ],
       "The format of your CSV file is incorrect.": [
         "Няправільны фармат вашага файла CSV."
-      ],
-      "The name and icon will be visible to your users while they are signed in.": [
-        "Гэта імя і значок убачаць вашы карыстальнікі пры ўваходзе ў сістэму."
       ],
       "The name will be visible to your users while they are signed in.": [
         "Гэта імя ўбачаць вашы карыстальнікі, калі яны ўвойдуць у сістэму."
@@ -6139,17 +6139,20 @@
       "Avoid overly compressed images.": [
         "Пазбягайце занадта сціснутых відарысаў."
       ],
-      "Ensure your icon has padding space around it.": [
-        "Пераканайцеся, што вакол вашага значка ёсць свабодная прастора."
+      "Ensure your logo has padding space around it.": [
+        "Пераканайцеся, што вакол вашага лагатыпа ёсць свабодная прастора."
       ],
       "Opt for a PNG image that is a 128x128 pixels for clarity.": [
         "Для нагляднасці выберыце відарыс PNG з раздзяляльнасцю 128x128 пікселяў."
       ],
-      "Tips on choosing a good icon": [
-        "Парады па выбары добрага значка"
+      "Tips on choosing a good logo": [
+        "Парады па выбары добрага лагатыпа"
       ],
       "Use a graphical icon or image rather than text.": [
         "Выкарыстоўваць графічны значок або малюнак замест тэксту."
+      ],
+      "Use a solid background color.": [
+        "Выкарыстоўвайце колеры аднатоннага фону."
       ]
     },
     "Organization logo upload modal": {
@@ -6687,7 +6690,7 @@
       "The SCIM base URL and token will be deleted.": [
         "SCIM на базе URL-адраса і токен будуць выдалены."
       ],
-      "To re-enable syncing with your identity provider, your need to complete the SCIM integration again.": [
+      "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
         "Для паўторнага ўключэння сінхранізацыі з вашым пастаўшчыком пасведчанняў, вам неабходна прайсці інтэграцыю SCIM яшчэ раз."
       ]
     },
@@ -6724,6 +6727,17 @@
     "Select file": {
       "Upload CSV file": [
         "Запампаваць файл CSV"
+      ]
+    },
+    "Select invoice document": {
+      "Credit note": [
+        "Крэдытная нататка"
+      ],
+      "Currency conversion": [
+        "Канвертацыя валюты"
+      ],
+      "Invoice": [
+        "Рахунак"
       ]
     },
     "Select search results": {
@@ -8104,8 +8118,8 @@
       "Gift code": [
         "Падарункавы код"
       ],
-      "How to choose a good icon": [
-        "Як выбраць добры значок"
+      "How to choose a good logo": [
+        "Як выбраць добры лагатып"
       ],
       "Human verification": [
         "Антыспамавая праверка"
@@ -8344,14 +8358,14 @@
       "WireGuard configuration": [
         "Канфігурацыя WireGuard"
       ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Ваш бясплатны выпрабавальны перыяд для тарыфнага плана ${ planName } завершыцца ${ textDate }"
+      ],
       "Your changes are not synced yet": [
         "Пакуль вашы змены не сінхранізаваны"
       ],
       "Your current plan": [
         "Ваш бягучы тарыфны план"
-      ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "Ваш бясплатны выпрабавальны перыяд Mail Plus завершыцца ${ textDate }"
       ],
       "Your plan": [
         "Ваш тарыфны план"

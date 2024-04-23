@@ -1124,10 +1124,6 @@
       "Trust": [
         "Vertrauen"
       ],
-      "Trust key": [
-        "Schlüssel vertrauen",
-        "Schlüssel vertrauen"
-      ],
       "Trust public key": [
         "Öffentlichem Schlüssel vertrauen"
       ],
@@ -1223,6 +1219,9 @@
       ],
       "View": [
         "Anzeigen"
+      ],
+      "View all reports": [
+        "Alle Berichte anzeigen"
       ],
       "View contact details": [
         "Kontaktinformationen anzeigen"
@@ -4709,6 +4708,9 @@
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }-Desktop App"
       ],
+      "14-day desktop app trial.": [
+        "Desktop-App 14 Tage ausprobieren."
+      ],
       "Enjoy fast, secure, and distraction-free access to your inbox and calendar.": [
         "Genieße schnellen, sicheren und ablenkungsfreien Zugriff auf deinen Posteingang und Kalender."
       ],
@@ -6766,6 +6768,9 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Wir werden dich in einem neuen Browser-Tab zu PayPal umleiten, um diese Zahlung abzuschließen. Falls du Pop-up-Blocker verwendest, deaktiviere diese bitte, um fortzufahren."
       ],
+      "We'll email you once import is complete.": [
+        "Wir senden dir eine Nachricht, sobald der Import abgeschlossen ist."
+      ],
       "We'll notify you when the import is done.": [
         "Du wirst benachrichtigt, sobald der Datenimport abgeschlossen ist."
       ],
@@ -6825,6 +6830,9 @@
       ],
       "You can check the progress ${ importProgressLink }.": [
         "Du kannst den Fortschritt hier ${ importProgressLink } überprüfen."
+      ],
+      "You can close the tab or browser in the meantime.": [
+        "In der Zwischenzeit kannst du den Tab oder Browser schließen."
       ],
       "You can either update your search query or ${ button }": [
         "Du kannst deine Suchanfrage entweder aktualisieren oder ${ button }"
@@ -7811,7 +7819,7 @@
         "Bild hochladen"
       ],
       "VAT": [
-        "MwSt"
+        "MwSt."
       ],
       "Verification code": [
         "Verifizierungscode"
@@ -8040,9 +8048,6 @@
       ],
       "Sent": [
         "Gesendet"
-      ],
-      "Set up email forwarding": [
-        "E-Mail-Weiterleitung einrichten"
       ],
       "Sign up for free": [
         "Kostenlos registrieren"
@@ -10405,9 +10410,6 @@
       "Email tracking protection": [
         "Schutz vor E-Mail-Trackern"
       ],
-      "Faster email management": [
-        "Schnellere E-Mail-Verwaltung"
-      ],
       "Get the desktop app": [
         "Desktop-App herunterladen"
       ],
@@ -10417,17 +10419,11 @@
       "Invite friends to ${ BRAND_NAME }": [
         "Lade Freunde zu ${ BRAND_NAME } ein"
       ],
-      "Now you can take action on all emails in a single folder in one go.": [
-        "Jetzt kannst du alle E-Mails in einem einzigen Ordner auf einen Schlag bearbeiten."
-      ],
       "Schedule send": [
         "Senden planen"
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Bilder werden jetzt standardmäßig geladen und deren Absender können dich nicht mehr zurückverfolgen.\nDies kann in den ${ settingsLink } geändert werden."
-      ],
-      "You can now automatically forward your emails to anyone!": [
-        "Du kannst deine E-Mails jetzt automatisch an jeden weiterleiten!"
       ],
       "You can now schedule your messages to be sent later": [
         "Du kannst jetzt das Versenden deiner Nachrichten zu einem späteren Zeitpunkt planen."
@@ -11824,9 +11820,6 @@
       ],
       "Your exposed information": [
         "Deine exponierten Informationen"
-      ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "Deine kostenlose Testversion von Mail Plus endet am ${ textDate }."
       ]
     },
     "Title subscription": {

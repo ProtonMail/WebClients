@@ -556,6 +556,9 @@
       "Remove": [
         "Ta bort"
       ],
+      "Remove access": [
+        "Ta bort åtkomst"
+      ],
       "Remove bonuses": [
         "Ta bort bonusar"
       ],
@@ -567,6 +570,9 @@
       ],
       "Remove gift code": [
         "Ta bort presentkod"
+      ],
+      "Remove me": [
+        "Ta bort mig"
       ],
       "Rename": [
         "Ändra namn"
@@ -5102,6 +5108,12 @@
         "Du har ${ expiresInDays } dag kvar att göra anspråk på din 3 GB välkomstbonus och ",
         "Du har ${ expiresInDays } dagar kvar att göra anspråk på din 3 GB välkomstbonus och "
       ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "Du har en provperiod på ${ planTitle }-prenumeration. Om du vill fortsätta med din prenumeration efter provperioden, lägg till en betalningsmetod."
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "Du har en provperiod på ${ planTitle }-prenumeration. Ingen betalning krävs för närvarande. Din prenumeration kommer att förnyas automatiskt i slutet av provperioden."
+      ],
       "You may be redirected to your bank’s website.": [
         "Du kan bli omdirigerad till webbplatsen för din bank."
       ],
@@ -5453,9 +5465,6 @@
         "Ta bort hårddisk?",
         "Ta bort hårddiskar?"
       ],
-      "Delete link": [
-        "Ta bort länk"
-      ],
       "Delete recovery-related information.": [
         "Ta bort återställningsrelaterad information."
       ],
@@ -5714,6 +5723,9 @@
       "Region": [
         "Region"
       ],
+      "Remove access": [
+        "Ta bort åtkomst"
+      ],
       "Replace existing file": [
         "Ersätt befintlig fil"
       ],
@@ -5770,6 +5782,9 @@
       ],
       "Stolen data": [
         "Stulen data"
+      ],
+      "Stop sharing": [
+        "Sluta dela"
       ],
       "Street address": [
         "Gatuadress"
@@ -7239,6 +7254,12 @@
       "${ reason } has been enabled": [
         "${ reason } har aktiverats"
       ],
+      "Access for the member removed": [
+        "Åtkomst för medlemmen borttaget"
+      ],
+      "Access updated and shared": [
+        "Åtkomst uppdaterad och delad"
+      ],
       "All items will soon be permanently deleted from trash": [
         "Alla objekt kommer snart att tas bort permanent från papperskorgen"
       ],
@@ -7278,6 +7299,9 @@
       "Failed to move, please try again": [
         "Misslyckades att flytta, försök igen"
       ],
+      "Failed to remove the file": [
+        "Misslyckades att ta bort filen"
+      ],
       "Failed to upload files: ${ err }": [
         "Misslyckades att ladda upp filer: ${ err }"
       ],
@@ -7290,6 +7314,12 @@
       ],
       "File or folder is missing a name": [
         "Fil eller mapp saknar ett namn"
+      ],
+      "File removed": [
+        "Fil borttagen"
+      ],
+      "Invitation removed from the share": [
+        "Inbjudan borttagen från delningen"
       ],
       "Link copied to clipboard": [
         "Länk kopierad till urklipp"
@@ -7542,11 +7572,6 @@
         "Vi rekommenderar att du “Sluta lita på“ denna nyckel."
       ]
     },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "E-postadress hittades inte bland användar-ID som definierats i sändningsnyckeln (${ keyUserIds })"
-      ]
-    },
     "Placeholder": {
       "A way to contact you": [
         "Ett sätt att kontakta dig"
@@ -7784,6 +7809,9 @@
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel är **aktivt** och skyddar ditt konto."
+      ],
+      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLink }": [
+        "Din information hittades i minst ett dataintrång. Slå på ${ DARK_WEB_MONITORING_NAME } för att visa detaljer och vidta åtgärder. ${ learnMoreLink }"
       ]
     },
     "Select files": {
@@ -9233,6 +9261,9 @@
       "You have no folders yet": [
         "Du har inga mappar ännu"
       ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Din gratis provperiod för ${ planName } slutar den ${ textDate }"
+      ],
       "Your 3 GB bonus": [
         "Dina 3 GB bonus"
       ],
@@ -9244,9 +9275,6 @@
       ],
       "Your exposed information": [
         "Din exponerade information"
-      ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "Din gratis provperiod för Mail Plus slutar den ${ textDate }"
       ],
       "Your welcome actions": [
         "Din välkomståtgärd"

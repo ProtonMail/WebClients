@@ -1064,8 +1064,8 @@
       "Upload": [
         "Importer"
       ],
-      "Upload icon": [
-        "Importer une icône"
+      "Upload logo": [
+        "Importer le logo"
       ],
       "Upload picture": [
         "Importer une image"
@@ -3333,14 +3333,6 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Aidez-nous à nous améliorer."
-      ]
-    },
-    "Download link": {
-      ".deb for Debian / Ubuntu": [
-        ".deb pour Debian / Ubuntu"
-      ],
-      ".rpm for Fedora / Red Hat": [
-        ".rpm pour Fedora / Red Hat"
       ]
     },
     "drive_signup_2023: Info": {
@@ -5979,9 +5971,6 @@
       "${ BRAND_NAME } is privacy you can trust, ensured by strong encryption, open-source code, and Swiss privacy laws. We believe nobody should be able to exploit your data, period. Our technology and business are based upon this fundamentally stronger definition of privacy.": [
         "Vous pouvez faire confiance à ${ BRAND_NAME } pour protéger votre vie privée, grâce à un chiffrement fort, un code open source et la législation suisse en matière de protection des données. Nous pensons que personne ne devrait pouvoir exploiter vos données. Notre technologie et notre activité reposent sur cette définition fondamentalement plus forte de la protection de la vie privée"
       ],
-      "${ BRAND_NAME } never shares your information with third parties. Data comes from  ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
-        "${ BRAND_NAME } ne partage jamais vos informations avec des tiers. Les données proviennent de la propre analyse de ${ BRAND_NAME } et Constella Intelligence."
-      ],
       "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "${ BRAND_NAME } a suspendu une importation parce que la connexion avec votre autre fournisseur de messagerie a été perdue. Nous vous invitons à vous reconnecter."
       ],
@@ -6212,6 +6201,9 @@
       "Add server (${ availableAddedCount } available)": [
         "Ajouter un serveur (${ availableAddedCount } disponible)",
         "Ajouter un serveur (${ availableAddedCount } disponibles)"
+      ],
+      "Add your name and logo to create a more personalized experience for your organization.": [
+        "Ajoutez votre nom et votre logo pour créer une expérience plus personnalisée pour votre organisation."
       ],
       "Adding ${ addedServerCount } gateway server": [
         "Ajout de ${ addedServerCount } serveur de Passerelle",
@@ -6753,9 +6745,6 @@
       ],
       "Failed to fetch logs.": [
         "Les journaux n'ont pas pu être récupérés."
-      ],
-      "Fast and focused. Email and calendar, right on your desktop.": [
-        "Rapide et efficace : vos e-mails et calendriers directement sur votre bureau !"
       ],
       "Fill in user details": [
         "Renseignez les informations de l'utilisateur."
@@ -7661,9 +7650,6 @@
       "The link to report that that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "Le lien permettant de signaler que vous n'avez pas créé de compte ${ BRAND_NAME } a expiré. Nous vous invitons à prendre contact avec notre équipe support pour résoudre ce problème."
       ],
-      "The name and icon will be visible to your users while they are signed in.": [
-        "Vos utilisateurs pourront voir le nom et l'icône lorsqu'ils seront connectés."
-      ],
       "The name will be visible to your users while they are signed in.": [
         "Le nom sera visible par vos utilisateurs quand ils seront connectés."
       ],
@@ -8011,9 +7997,6 @@
       ],
       "We just sent you a new link.": [
         "Nous venons de vous envoyer un nouveau lien."
-      ],
-      "We monitor the dark web for instances where your personal information (such as an email address or password used on a third-party site) is leaked or compromised. ${ dataBreachLink }": [
-        "Nous surveillons le dark web pour détecter les cas où vos informations personnelles (telles qu'une adresse e-mail ou un mot de passe utilisé sur un site tiers) sont divulguées ou compromises. ${ dataBreachLink }"
       ],
       "We need to authenticate your payment method with your bank.": [
         "Nous devons authentifier votre moyen de paiement auprès de votre banque."
@@ -8927,9 +8910,6 @@
       ],
       "Awarded": [
         "Attribué"
-      ],
-      "Beta": [
-        "Version bêta"
       ],
       "Billing address": [
         "Adresse de facturation"
@@ -10081,6 +10061,9 @@
       ]
     },
     "Log preference": {
+      "Enable ${ reason }": [
+        "Activer ${ reason }"
+      ],
       "Enable advanced logs": [
         "Activer les journaux avancés (logs)"
       ],
@@ -11427,11 +11410,23 @@
       "${ Filter.Name } created": [
         "${ Filter.Name } a été créé."
       ],
+      "${ reason } has been disabled": [
+        "${ reason } a été désactivé."
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } a été activé."
+      ],
       "A disabled address cannot be default": [
         "Une adresse désactivée ne peut pas être une adresse par défaut."
       ],
       "An external address cannot be default": [
         "Une adresse externe ne peut pas être une adresse par défaut."
+      ],
+      "Dark Web Monitoring has been disabled": [
+        "La surveillance du Dark Web a été désactivée."
+      ],
+      "Dark Web Monitoring has been enabled": [
+        "La surveillance du Dark Web a été activée."
       ],
       "Invalid code": [
         "Le code n’est pas valide."
@@ -11839,17 +11834,20 @@
       "Avoid overly compressed images.": [
         "Évitez les images trop compressées."
       ],
-      "Ensure your icon has padding space around it.": [
-        "Assurez-vous que votre icône soit entourée d'un espace de remplissage."
+      "Ensure your logo has padding space around it.": [
+        "Assurez-vous que votre logo soit entouré d'un espace de remplissage."
       ],
       "Opt for a PNG image that is a 128x128 pixels for clarity.": [
         "Optez pour une image PNG de 128 x 128 pixels pour plus de clarté."
       ],
-      "Tips on choosing a good icon": [
-        "Conseils pour choisir une bonne icône"
+      "Tips on choosing a good logo": [
+        "Conseils pour choisir un bon logo"
       ],
       "Use a graphical icon or image rather than text.": [
         "Utilisez une image ou une icône graphique plutôt que du texte."
+      ],
+      "Use a solid background color.": [
+        "Utilisez une couleur d'arrière-plan unie."
       ]
     },
     "Organization logo upload modal": {
@@ -12792,14 +12790,11 @@
       ],
       "The SCIM base URL and token will be deleted.": [
         "Le jeton et l'URL de base du SCIM seront supprimés."
-      ],
-      "To re-enable syncing with your identity provider, your need to complete the SCIM integration again.": [
-        "Pour réactiver la synchronisation avec votre fournisseur d'identité, vous devez finaliser à nouveau l'intégration SCIM."
       ]
     },
     "scim: Label": {
       "SCIM base URL": [
-        "URL de bas SCIM"
+        "URL de base SCIM"
       ],
       "SCIM base URL (or tenant URL)": [
         "URL de base SCIM (ou URL locataire)"
@@ -12827,6 +12822,11 @@
         "URL du connecteur SCIM auquel votre agent de provisionnement du fournisseur d'identité transmet les données SCIM"
       ]
     },
+    "Security Center - Info": {
+      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLinkBreach }": [
+        "Vos informations ont été retrouvées dans au moins une fuite de données. Activez l'option ${ DARK_WEB_MONITORING_NAME } pour consulter ces informations et prendre les mesures nécessaires. ${ learnMoreLinkBreach }"
+      ]
+    },
     "Select file": {
       "Upload CSV file": [
         "Importer un fichier CSV"
@@ -12841,6 +12841,17 @@
       ],
       "Upload additional files": [
         "Charger des fichiers supplémentaires"
+      ]
+    },
+    "Select invoice document": {
+      "Credit note": [
+        "Avoir"
+      ],
+      "Currency conversion": [
+        "Conversion de devise"
+      ],
+      "Invoice": [
+        "Facture"
       ]
     },
     "Select search results": {
@@ -13774,6 +13785,156 @@
         "Pour"
       ]
     },
+    "Subscription reminder": {
+      "${ BRAND_NAME } was targeted by Russia in one of the most aggressive censorship campaigns in recent memory, and our team fought back.": [
+        "La Russie a pris pour cible ${ BRAND_NAME } dans le cadre de l'une des campagnes de censure les plus agressives de l'histoire récente et notre équipe a riposté."
+      ],
+      "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
+        "Les abonnement des utilisateurs sont la seule source de revenus pour ${ BRAND_NAME }. Votre soutien nous permet de rester indépendants, de poursuivre notre mission visant à faire de la protection de la vie privée la règle absolue lorsque vous vous connectez à internet et de continuer à soutenir les activistes et les organisations qui luttent pour la protection de la vie privée et la liberté."
+      ],
+      "${ dayDiff } day left": [
+        "${ dayDiff } jour restant",
+        "${ dayDiff } jours restants"
+      ],
+      "${ MAIL_APP_NAME } desktop app": [
+        "Application de bureau ${ MAIL_APP_NAME }"
+      ],
+      "${ planMaxSpace } total storage": [
+        "${ planMaxSpace } d'espace de stockage total"
+      ],
+      "${ planName } doesn't just provide extra storage. It lets you manage your emails faster, customize your inbox and email addresses, and access the desktop app.": [
+        "${ planName } n'apporte pas uniquement plus d'espace de stockage. Il vous permet de gérer plus rapidement vos e-mails, de personnaliser votre boite de réception et adresses e-mail et d'accéder à l'application de bureau."
+      ],
+      "10 email addresses": [
+        "10 adresses e-mail"
+      ],
+      "A direct contribution to our mission": [
+        "Une contribution directe à notre mission"
+      ],
+      "After ${ BRAND_NAME } got blocked in Iran during protests, our customer support team worked to get our VPN app directly into people's hands.": [
+        "Après que ${ BRAND_NAME } a été bloqué en Iran pendant les manifestations, l'équipe de notre service client a fait en sorte que notre application VPN soit directement mise à la disposition de tous."
+      ],
+      "After privacy and free speech were threatened in Hong Kong, we directly supported local civil rights organizations.": [
+        "Lorsque la vie privée et la liberté d'expression ont été menacées à Hong Kong, nous avons soutenu directement les organisations locales de défense des droits civils."
+      ],
+      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **1 GB** for Mail, and **1 GB** for Drive. You will also lose any storage bonuses earned previously.": [
+        "En annulant votre abonnement ${ planName }, votre espace de stockage sera réduit de **${ planMaxSpace }** à **1 Go** pour Mail et à **1 Go** pour Drive. Vous ne bénéficierez également plus de l'espace de stockage supplémentaire précédemment accordé."
+      ],
+      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **1 GB** for Mail, and **5 GB** for Drive. You will also lose any storage bonuses earned previously.": [
+        "En annulant votre abonnement ${ planName }, votre espace de stockage sera réduit de **${ planMaxSpace }** à **1 Go** pour Mail et à **5 Go** pour Drive. Vous ne bénéficierez également plus de l'espace de stockage supplémentaire précédemment accordé."
+      ],
+      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **500 MB** for Mail, and **1 GB** for Drive. You will also lose any storage bonuses earned previously.": [
+        "En annulant votre abonnement ${ planName }, votre espace de stockage sera réduit de **${ planMaxSpace }** à **500 Mo** pour Mail et à **1 Go** pour Drive. Vous ne bénéficierez également plus de l'espace de stockage supplémentaire précédemment accordé."
+      ],
+      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **500 MB** for Mail, and **5 GB** for Drive. You will also lose any storage bonuses earned previously.": [
+        "En annulant votre abonnement ${ planName }, votre espace de stockage sera réduit de **${ planMaxSpace }** à **500 Mo** pour Mail et à **5 Go** pour Drive. Vous ne bénéficierez également plus de l'espace de stockage supplémentaire précédemment accordé."
+      ],
+      "By downgrading your account, you will also lose storage space": [
+        "En passant à un abonnement inférieur, vous réduisez également votre espace de stockage."
+      ],
+      "By downgrading your account, you will lose access to these important features": [
+        "En passant à un abonnement inférieur, vous n'aurez plus accès à ces fonctionnalités importantes."
+      ],
+      "Calendar sharing": [
+        "Partage de calendrier"
+      ],
+      "Cancel subscription": [
+        "Annuler l'abonnement"
+      ],
+      "Cancel subscription?": [
+        "Annuler l'abonnement ?"
+      ],
+      "Close": [
+        "Fermer"
+      ],
+      "Custom schedule send and snooze times": [
+        "Personnalisation de l'heure d'envoi et de la période de mise en attente"
+      ],
+      "Have a question?": [
+        "Vous avez des questions ?"
+      ],
+      "Helping activists in Hong Kong": [
+        "Soutien aux activistes à Hong Kong"
+      ],
+      "I still want to cancel": [
+        "Je souhaite toujours annuler"
+      ],
+      "If you exceed your free Drive storage quota:": [
+        "Si vous dépassez le quota de votre espace de stockage Drive gratuit :"
+      ],
+      "If you exceed your free Mail storage quota:": [
+        "Si vous dépassez le quota de votre espace de stockage Mail gratuit :"
+      ],
+      "Keep ${ planName }": [
+        "Conserver ${ planName }"
+      ],
+      "Learn more about our impact": [
+        "En savoir plus sur notre impact"
+      ],
+      "Let us remind you of everything ${ planName } can do": [
+        "Nous vous rappelons tous les avantages de ${ planName }"
+      ],
+      "Our fight against censorship in Russia": [
+        "Notre combat contre la censure en Russie"
+      ],
+      "Priority support": [
+        "Assistance prioritaire"
+      ],
+      "Read the story": [
+        "Découvrir l'histoire"
+      ],
+      "Resubscribe": [
+        "Se réabonner"
+      ],
+      "Resubscribe to restore access to ${ planName } features.": [
+        "Réabonnez-vous pour à nouveau avoir accès aux fonctionnalités ${ planName }."
+      ],
+      "Subscription canceled": [
+        "L'abonnement a été résilié."
+      ],
+      "Unblocking internet access in Iran": [
+        "Déblocage de l'accès à internet en Iran"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Nombre illimité de dossiers, labels et filtres"
+      ],
+      "Watch the interview": [
+        "Voir l'interview"
+      ],
+      "When you cancel, you will lose access to": [
+        "Si vous résiliez, vous n'aurez plus accès à"
+      ],
+      "Yearly free storage bonuses": [
+        "Bonus annuels gratuits pour votre espace de stockage"
+      ],
+      "You **won't be able to add any new files**": [
+        "Vous **ne pourrez plus ajouter de nouveaux fichiers**."
+      ],
+      "You **won't be able to backup photos** from your devices": [
+        "Vous **ne pourrez plus sauvegarder vos photos** depuis vos appareils."
+      ],
+      "You **won't be able to send emails** with attachments": [
+        "Vous **ne pourrez plus envoyer de messages** avec pièces jointes."
+      ],
+      "You still have ${ expiryDate } on your ${ planName } plan. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling.": [
+        "Vous disposez encore de ${ expiryDate } pour votre abonnement ${ planName }. Nous ajouterons ces crédits pour le temps restant sur votre compte ${ BRAND_NAME }. Assurez-vous de ne pas dépasser les limites du plan gratuit avant d'annuler votre abonnement."
+      ],
+      "Your **calendar will be frozen**": [
+        "Votre **calendrier sera bloqué**."
+      ],
+      "Your devices will **stop syncing**": [
+        "Vos appareils ne seront **plus synchronisés**."
+      ],
+      "Your inbox will **stop receiving new emails**": [
+        "Votre boite de réception **ne recevra plus de nouveaux messages**."
+      ],
+      "Your own custom email domain": [
+        "Votre domaine de messagerie personnalisé"
+      ],
+      "Your own short @pm.me email alias": [
+        "Votre propre alias d'adresse e-mail court @pm.me"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Confirmez-vous ?"
@@ -14503,6 +14664,9 @@
       "Custom selection of users": [
         "Sélection personnalisée des utilisateurs"
       ],
+      "Customization": [
+        "Personnalisation"
+      ],
       "Customize and confirm": [
         "Personnaliser et confirmer"
       ],
@@ -14721,15 +14885,6 @@
       "Folders and labels": [
         "Dossiers et labels"
       ],
-      "For Linux": [
-        "Pour Linux"
-      ],
-      "For macOS": [
-        "Pour macOS"
-      ],
-      "For Windows": [
-        "Pour Windows"
-      ],
       "Forward and auto-reply": [
         "Transfert et réponse automatique"
       ],
@@ -14769,8 +14924,8 @@
       "How does it work?": [
         "Comment ça marche ?"
       ],
-      "How to choose a good icon": [
-        "Comment choisir une bonne icône"
+      "How to choose a good logo": [
+        "Comment choisir un bon logo"
       ],
       "How to refer a friend and get credits": [
         "Comment parrainer un ami et gagner des crédits ?"
@@ -15242,6 +15397,15 @@
       "WireGuard configuration": [
         "Configuration WireGuard"
       ],
+      "You have no open alerts": [
+        "Vous n'avez aucune alerte en cours."
+      ],
+      "You have no resolved alerts": [
+        "Vous n'avez aucune alerte résolue."
+      ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Votre essai gratuit ${ planName } se termine le ${ textDate }."
+      ],
       "Your calendar link": [
         "Lien de votre calendrier"
       ],
@@ -15250,9 +15414,6 @@
       ],
       "Your exposed information": [
         "Vos informations exposées"
-      ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "Votre essai gratuit Mail Plus se termine le ${ textDate }."
       ],
       "Your plan": [
         "Votre abonnement"

@@ -1124,10 +1124,6 @@
       "Trust": [
         "Güven"
       ],
-      "Trust key": [
-        "Anahtara güven",
-        "Anahtarlara güven"
-      ],
       "Trust public key": [
         "Herkese açık anahtara güven"
       ],
@@ -1678,6 +1674,9 @@
       ],
       "Continue using ${ planTitle }": [
         "${ planTitle } kullanmayı sürdürün"
+      ],
+      "Continue your subscription": [
+        "Aboneliğinizi kullanmayı sürdürün"
       ]
     },
     "Calendar attachment tooltip": {
@@ -4710,7 +4709,7 @@
         "${ MAIL_APP_NAME } masaüstü uygulaması"
       ],
       "14-day desktop app trial.": [
-        "14 günlük masaüstü uygulama denemesi."
+        "14 günlük masaüstü uygulaması denemesi."
       ],
       "Enjoy fast, secure, and distraction-free access to your inbox and calendar.": [
         "Gelen kutunuza ve takviminize hızla, güvenle ve dikkatinizi dağıtmadan erişmenin tadını çıkarın."
@@ -4722,7 +4721,7 @@
         "Kredi kartı gerekmez."
       ],
       "Start free trial": [
-        "Ücretsiz denemeyi başlat"
+        "Ücretsiz deneme süresini başlatın"
       ],
       "Try the app-new desktop app": [
         "Yeni masaüstü uygulamasını deneyin"
@@ -5993,6 +5992,9 @@
       "Large imports can take several days.": [
         "Büyük boyutlu içe aktarımların tamamlanması birkaç gün sürebilir."
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Nasıl ${ staySaferOnlineLink } öğrenin"
+      ],
       "Learn more": [
         "Ayrıntılı bilgi alın"
       ],
@@ -6010,6 +6012,9 @@
       ],
       "Loading ${ appName }": [
         "${ appName } yükleniyor"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Takvim yüklenirken lütfen bekleyin. Yeni bir sekmede zamanla platformumuz Calendly açılacak."
       ],
       "Loading message": [
         "İleti yükleniyor"
@@ -6226,7 +6231,7 @@
         "Lütfen ${ groupName } grubuna eklenecek e-posta adresini ya da adreslerini seçin."
       ],
       "Please try again in a few moments": [
-        "Lütfen birkaç saniye içinde tekrar deneyin"
+        "Lütfen biraz sonra yeniden deneyin"
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Lütfen farklı bir ödeme yöntemi kullanarak yeniden deneyin ya da bankanızla görüşün."
@@ -6444,6 +6449,9 @@
       ],
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "Sayfadan ayrılırsanız taslağa yazdığınız veriler kaydedilmeyebilir."
+      ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "Bilgiler üçüncü taraf bir hizmetten açığa çıkmış. ${ BRAND_NAME } Hesap bilgileriniz güvende ve şifrelenmiş olarak kalır. ${ learnMoreLink }"
       ],
       "The local database is being prepared": [
         "Yerel veri tabanı hazırlanıyor"
@@ -6877,6 +6885,12 @@
         "Bu etiketi taşıyan **${ count } iletiniz** var",
         "Bu etiketi taşıyan **${ count } iletiniz** var"
       ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "${ planTitle } deneme aboneliğiniz var. Deneme süresinden sonra aboneliğinizi sürdürmek istiyorsanız lütfen bir ödeme yöntemi ekleyin."
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "${ planTitle } deneme aboneliğiniz var. Şu anda herhangi bir ödeme yapmanıza gerek yok. Deneme süresi sonunda aboneliğiniz otomatik olarak yenilenecek."
+      ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
         "E-postanızda herhangi bir konu belirtmediniz. Yine de iletiyi göndermek istiyor musunuz?"
       ],
@@ -6970,7 +6984,7 @@
         "Verileriniz ${ importedEmailAddressStrong } üzerinden ${ BRAND_NAME } hesabınız içine aktarılmaya hazır."
       ],
       "Your email address and password were leaked:": [
-        "E-posta adresiniz ve parolanız sızdırılmış:"
+        "E-posta adresiniz ve parolanız açığa çıkmış:"
       ],
       "Your email address was exposed:": [
         "E-posta adresiniz açığa çıkmış:"
@@ -6980,6 +6994,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Dosyalarınız şifrelendikten sonra kaydedilir"
+      ],
+      "Your information was found on ${ displayedDate }": [
+        "Bilgileriniz ${ displayedDate } tarihinde bulundu"
       ],
       "Your login information will not be saved after the import is completed.": [
         "İçe aktarma işleminden sonra oturum açma bilgileriniz kaydedilmez."
@@ -6998,7 +7015,7 @@
         "Sonraki fatura zamanınız ${ renewalTime }."
       ],
       "Your password was leaked:": [
-        "Parolanız sızdırılmış:"
+        "Parolanız açığa çıkmış:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Telefon numaranız yalnızca bu tek seferlik doğrulama için kullanılacak."
@@ -8032,9 +8049,6 @@
       "Sent": [
         "Gönderilmiş"
       ],
-      "Set up email forwarding": [
-        "E-posta iletici kurun"
-      ],
       "Sign up for free": [
         "Ücretsiz hesap açın"
       ],
@@ -8051,7 +8065,7 @@
         "Yıldızlı"
       ],
       "stay safer online": [
-        "çevrimiçi ortamda daha güvende kalın"
+        "çevrim içi ortamda güvende kalın"
       ],
       "Terms": [
         "Koşullar"
@@ -9835,6 +9849,9 @@
       ]
     },
     "Security Center - Info": {
+      "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
+        "Parolanız veya diğer verileriniz üçüncü taraf bir hizmetten açığa çıkarsa bildirim alın. ${ learnMoreLink }"
+      ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Hesapları için daha yüksek düzeyde koruma isteyen kullanıcılar için tasarlanmış, yapay zeka destekli son teknoloji güvenlik çözümümüz. ${ learnMoreLink }"
       ],
@@ -10393,9 +10410,6 @@
       "Email tracking protection": [
         "E-posta izleme koruması"
       ],
-      "Faster email management": [
-        "Daha hızlı e-posta yönetimi"
-      ],
       "Get the desktop app": [
         "Masaüstü uygulamasını edinin"
       ],
@@ -10405,17 +10419,11 @@
       "Invite friends to ${ BRAND_NAME }": [
         "Arkadaşlarınızı ${ BRAND_NAME } kullanmaya davet edin"
       ],
-      "Now you can take action on all emails in a single folder in one go.": [
-        "Artık bir klasördeki tüm e-postalar üzerinde tek seferde işlem yapabilirsiniz."
-      ],
       "Schedule send": [
         "Gönderimi zamanla"
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Artık varsayılan olarak görseller yüklenecek ve göndericilerin sizi izlemesi engellenecek. Bu davranışları daha sonra ${ settingsLink } bölümünden değiştirebilirsiniz."
-      ],
-      "You can now automatically forward your emails to anyone!": [
-        "Artık e-postalarınızı otomatik olarak herkese iletebilirsiniz!"
       ],
       "You can now schedule your messages to be sent later": [
         "Artık iletileri daha sonra gönderilmek üzere zamanlayabilirsiniz"
@@ -11812,9 +11820,6 @@
       ],
       "Your exposed information": [
         "Açığa çıkmış bilgileriniz"
-      ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "Mail Plus ücretsiz deneme süreniz ${ textDate } tarihinde sonra erecek"
       ]
     },
     "Title subscription": {

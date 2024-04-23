@@ -5149,7 +5149,7 @@
         "Dane z konta ${ importedEmailAddressStrong } są gotowe do zaimportowania do konta ${ BRAND_NAME }."
       ],
       "Your email address and password were leaked:": [
-        "Twój adres e-mail i hasło zostało ujawnione:"
+        "Twój adres e-mail i hasło zostały ujawnione:"
       ],
       "Your email address was exposed:": [
         "Twój adres e-mail został ujawniony:"
@@ -5922,6 +5922,11 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Subskrypcja zakończyła się. ${ cta } i uniknąć utraty danych."
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Włącz ${ reason }"
       ]
     },
     "Mail import summary": {
@@ -7760,6 +7765,9 @@
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Proton Sentinel jest **włączony** i chroni Twoje konto."
+      ],
+      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLink }": [
+        "Twoje informacje zostały znalezione w co najmniej 1 wycieku danych. Włącz ${ DARK_WEB_MONITORING_NAME }, aby zobaczyć szczegóły i zastosować odpowiednią akcję. ${ learnMoreLink }"
       ]
     },
     "Select files": {
@@ -8255,17 +8263,11 @@
       ]
     },
     "Spotlight": {
-      "Add your country's public holidays to your calendar.": [
-        "Dodaj święta do kalendarza."
-      ],
       "Color-coding is here!": [
         "Oznaczanie kolorami jest tutaj!"
       ],
       "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
         "Uruchamiaj ${ MAIL_APP_NAME } z pulpitu."
-      ],
-      "Easily find the event you're looking for with our new search feature.": [
-        "Znajdź łatwo wydarzenie za pomocą naszej nowej wyszukiwarki."
       ],
       "Get the desktop app": [
         "Pobierz aplikację desktopową"
@@ -8281,12 +8283,6 @@
       ],
       "Now you can see when participants are free to attend your meeting.": [
         "Możesz zobaczyć, kiedy uczestnicy mogą wziąć udział w spotkaniu."
-      ],
-      "Public holidays are here!": [
-        "Święta są tutaj"
-      ],
-      "Search for events": [
-        "Szukaj wydarzeń"
       ],
       "With customizable event colors, you can color-code the chaos and conquer your day.": [
         "Wydarzenia możesz oznaczyć kolorami, aby zapanować nad chaosem i swoim dniem."
@@ -9345,6 +9341,9 @@
       "You have invited participants with equivalent emails": [
         "Zaproszono tych samych uczestników"
       ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Darmowa wersja próbna planu ${ planName } zakończy się ${ textDate }"
+      ],
       "Your account is protected": [
         "Konto jest chronione"
       ],
@@ -9353,9 +9352,6 @@
       ],
       "Your exposed information": [
         "Twoje ujawnione informacje:"
-      ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "Darmowa wersja próbna planu Mail Plus zakończy się ${ textDate }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

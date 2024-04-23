@@ -374,6 +374,9 @@
       "Report a problem": [
         "回報問題"
       ],
+      "Request a call": [
+        "請求呼叫"
+      ],
       "Request a feature": [
         "提出新功能建議"
       ],
@@ -941,6 +944,12 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "繼續使用 ${ MAIL_APP_NAME }。"
+      ],
+      "Continue using ${ planTitle }": [
+        "繼續使用 ${ planTitle }"
+      ],
+      "Continue your subscription": [
+        "繼續您的訂閱"
       ]
     },
     "Checkout row": {
@@ -1849,6 +1858,9 @@
       ]
     },
     "Delete address prompt": {
+      "The next active address on your list will be set as the default.": [
+        "你的清單裡下一個有效的位址將被設定為預設值。"
+      ],
       "You can only delete 1 address per year.": [
         "每年只能刪除一個地址。"
       ]
@@ -1939,6 +1951,9 @@
     "Error": {
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }。您也可查看我們的${ statusPageLink }"
+      ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "您的帳號名稱是 ${ user.Name }。如果要建立 ${ emailAddress } 這個電子郵件地址，請到「設定」>「撰寫郵件」>「短網域名稱 (pm.me)」裡面去設定。"
       ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "所有儲存空間已被分配。請減少分配給其他使用者的儲存空間。"
@@ -2963,6 +2978,9 @@
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "透過身分提供者 (IdP) 為您的組織設置 SAML 驗證。這將為整個組織啟用 SAML。"
       ],
+      "Configure SAML authentication for your organization through an identity provider like Okta, Microsoft Azure, or Google Identity Platform. This will enable SAML for the whole organization.": [
+        "使用身份識別服務（像是 Okta、Microsoft Azure、或 Google Identity Platform） 設定 SAML 驗證，即可在整個組織裡面用 SAML 來登入。"
+      ],
       "Continue with ${ freeName }": [
         "繼續使用 ${ freeName }"
       ],
@@ -3076,6 +3094,9 @@
       ],
       "Emailing preference saved": [
         "電子通訊喜好設定已儲存"
+      ],
+      "Enable single sign-on to keep your organization safe": [
+        "開啟單一登入 (SSO) 來保障你的組織安全"
       ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "由您的身分提供者提供的端點 URL (範例：https://idp.example.com/sso/saml)。"
@@ -3319,6 +3340,9 @@
       ],
       "of": [
         "/"
+      ],
+      "Once single sign-on is disabled for your organization:": [
+        "當您的組織機構停用單一登入（SSO）之後："
       ],
       "Once you reset your password:": [
         "一旦您重設您的密碼："
@@ -5743,6 +5767,9 @@
       ]
     },
     "Pass B2B onboarding spotlight": {
+      "Go to your vault to manage your passwords, aliases, and more.": [
+        "移至你的保管庫管理密碼、別名和更多項目。"
+      ],
       "Set up your organization": [
         "設定您的組織"
       ],
@@ -6130,6 +6157,11 @@
     "Select file": {
       "Upload CSV file": [
         "上傳 CSV 檔案"
+      ]
+    },
+    "Select invoice document": {
+      "Currency conversion": [
+        "貨幣轉換"
       ]
     },
     "Select search results": {
@@ -7626,9 +7658,6 @@
       ],
       "Your current plan": [
         "您目前的方案"
-      ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "您的 Mail Plus 免費方案將於 ${ textDate } 結束"
       ],
       "Your plan": [
         "您的方案"

@@ -1064,9 +1064,6 @@
       "Upload": [
         "Nahrať"
       ],
-      "Upload icon": [
-        "Nahrať ikonu"
-      ],
       "Upload picture": [
         "Nahrať obrázok"
       ],
@@ -1102,6 +1099,9 @@
       ],
       "View": [
         "Zobraziť"
+      ],
+      "View all reports": [
+        "Zobraziť všetky hlásenia"
       ],
       "View invoice": [
         "Zobraziť faktúru"
@@ -3325,14 +3325,6 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Pomôžte nám zlepšiť sa!"
-      ]
-    },
-    "Download link": {
-      ".deb for Debian / Ubuntu": [
-        ".deb pre Debian / Ubuntu"
-      ],
-      ".rpm for Fedora / Red Hat": [
-        ".rpm pre Fedora / Red Hat"
       ]
     },
     "drive_signup_2023: Info": {
@@ -8111,6 +8103,9 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Na dokončenie tejto transakcie vás presmerujeme na PayPal v novej karte prehliadača. Ak používate blokovanie vyskakovacích okien, pred pokračovaním ho prosím vypnite."
       ],
+      "We'll email you once import is complete.": [
+        "Po dokončení importu vám pošleme email."
+      ],
       "We'll get back to you shortly.": [
         "O chvíľu sa vám ozveme."
       ],
@@ -8218,6 +8213,9 @@
       ],
       "You can check the progress ${ importProgressLink }.": [
         "Tu môžete skontrolovať priebeh ${ importProgressLink }."
+      ],
+      "You can close the tab or browser in the meantime.": [
+        "Medzitým môžete túto záložku alebo prehliadač zatvoriť."
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Pre zaistenie správnej emailovej adresy pre overenie môžete tento údaj jedenkrát upraviť."
@@ -8995,9 +8993,6 @@
       ],
       "Awarded": [
         "Ocenený"
-      ],
-      "Beta": [
-        "Beta"
       ],
       "Billing address": [
         "Fakturačná adresa"
@@ -12861,6 +12856,17 @@
         "Nahrať ďalšie súbory"
       ]
     },
+    "Select invoice document": {
+      "Credit note": [
+        "Dobropis"
+      ],
+      "Currency conversion": [
+        "Prepočet meny"
+      ],
+      "Invoice": [
+        "Faktúra"
+      ]
+    },
     "Select search results": {
       "Check your spelling or select a country from the list.": [
         "Skontrolujte svoj pravopis alebo vyberte krajinu zo zoznamu."
@@ -14825,15 +14831,6 @@
       "Folders and labels": [
         "Priečinky a štítky"
       ],
-      "For Linux": [
-        "Pre Linux"
-      ],
-      "For macOS": [
-        "Pre macOS"
-      ],
-      "For Windows": [
-        "Pre Windows"
-      ],
       "Forward and auto-reply": [
         "Preposlať a automaticky odpovedať"
       ],
@@ -14872,9 +14869,6 @@
       ],
       "How does it work?": [
         "Ako to funguje?"
-      ],
-      "How to choose a good icon": [
-        "Ako vybrať dobrú ikonu"
       ],
       "How to refer a friend and get credits": [
         "Ako odporučiť priateľa a získať kredity"
@@ -15347,6 +15341,9 @@
       "WireGuard configuration": [
         "Konfigurácia WireGuard"
       ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Vaša bezplatná skúšobná verzia služby ${ planName } končí ${ textDate }"
+      ],
       "Your calendar link": [
         "Váš odkaz na kalendár"
       ],
@@ -15355,9 +15352,6 @@
       ],
       "Your exposed information": [
         "Vaše odhalené informácie"
-      ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "Vaša bezplatná skúšobná verzia služby Mail Plus končí ${ textDate }"
       ],
       "Your plan": [
         "Váš plán"
