@@ -548,8 +548,8 @@
       "Upload": [
         "Cargar"
       ],
-      "Upload icon": [
-        "Cargar ícono"
+      "Upload logo": [
+        "Cargar logo"
       ],
       "Use ${ label } theme": [
         "Usar tema ${ label }"
@@ -2969,6 +2969,9 @@
         "Añadir servidor (${ availableAddedCount } disponible)",
         "Añadir servidor (${ availableAddedCount } disponibles)"
       ],
+      "Add your name and logo to create a more personalized experience for your organization.": [
+        "Añada su nombre y logo para crear una experiencia más personalizada para su organización."
+      ],
       "Adding ${ addedServerCount } gateway server": [
         "Añadiendo ${ addedServerCount } servidor de puerta de enlace",
         "Añadiendo ${ addedServerCount } servidores de puerta de enlace"
@@ -3736,9 +3739,6 @@
       ],
       "The format of your CSV file is incorrect.": [
         "El formato de su archivo CSV es incorrecto."
-      ],
-      "The name and icon will be visible to your users while they are signed in.": [
-        "El nombre e ícono serán visibles para sus usuarios mientras inicien sesión."
       ],
       "The name will be visible to your users while they are signed in.": [
         "El nombre será visible para sus usuarios mientras inicien sesión."
@@ -5997,17 +5997,20 @@
       "Avoid overly compressed images.": [
         "Evite imágenes demasiado comprimidas."
       ],
-      "Ensure your icon has padding space around it.": [
-        "Asegúrese de que su ícono tenga espacio de relleno a su alrededor."
+      "Ensure your logo has padding space around it.": [
+        "Asegúrese de que su logo tenga espacio de relleno a su alrededor."
       ],
       "Opt for a PNG image that is a 128x128 pixels for clarity.": [
         "Opte por una imagen PNG de 128x128 pixeles para mayor claridad."
       ],
-      "Tips on choosing a good icon": [
-        "Consejos al elegir un buen ícono"
+      "Tips on choosing a good logo": [
+        "Consejos al elegir un buen logo"
       ],
       "Use a graphical icon or image rather than text.": [
         "Use un ícono gráfico o imagen en lugar de texto."
+      ],
+      "Use a solid background color.": [
+        "Use un color de fondo sólido."
       ]
     },
     "Organization logo upload modal": {
@@ -6539,7 +6542,7 @@
       "The SCIM base URL and token will be deleted.": [
         "La URL y token base de SCIM serán eliminados."
       ],
-      "To re-enable syncing with your identity provider, your need to complete the SCIM integration again.": [
+      "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
         "Para reactivar la sincronización con su proveedor de identidad, necesita completar la integración SCIM nuevamente."
       ]
     },
@@ -6576,6 +6579,17 @@
     "Select file": {
       "Upload CSV file": [
         "Cargar archivo CSV"
+      ]
+    },
+    "Select invoice document": {
+      "Credit note": [
+        "Nota de crédito"
+      ],
+      "Currency conversion": [
+        "Conversión de divisa"
+      ],
+      "Invoice": [
+        "Factura"
       ]
     },
     "Select search results": {
@@ -7884,8 +7898,8 @@
       "Gift code": [
         "Código de regalo"
       ],
-      "How to choose a good icon": [
-        "Cómo elegir un buen ícono"
+      "How to choose a good logo": [
+        "Cómo elegir un buen logo"
       ],
       "Human verification": [
         "Verificación humana"
@@ -8122,14 +8136,14 @@
       "WireGuard configuration": [
         "Configuración de WireGuard"
       ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Su prueba gratuita de ${ planName } termina el ${ textDate }."
+      ],
       "Your changes are not synced yet": [
         "Sus cambios aún no se han sincronizado"
       ],
       "Your current plan": [
         "Su plan actual"
-      ],
-      "Your Mail Plus free trial ends on ${ textDate }": [
-        "Su prueba gratuita de Mail Plus termina en ${ textDate }"
       ],
       "Your plan": [
         "Su plan"
