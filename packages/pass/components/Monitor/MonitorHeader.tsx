@@ -20,7 +20,7 @@ export const MonitorHeader: FC<RouteChildrenProps> = ({ match }) => {
             <Icon name="pass-shield-monitoring-ok" className="shrink-0" />
             <Breadcrumb active={match?.isExact ?? false} label={c('Title').t`${PASS_SHORT_APP_NAME} Monitor`} />
             <Switch>
-                <Route path={subPath(match.path, '(duplicates|2fa|weak)')}>
+                <Route path={subPath(match.path, '(duplicates|2fa|weak|excluded)')}>
                     {({ match: subMatch }) => {
                         if (!subMatch) return null;
                         return (
@@ -36,6 +36,8 @@ export const MonitorHeader: FC<RouteChildrenProps> = ({ match }) => {
                                                 return c('Title').t`Insecure passwords`;
                                             case 'monitor/2fa':
                                                 return c('Title').t`Missing 2FA`;
+                                            case 'monitor/excluded':
+                                                return c('Title').t`Excluded items`;
                                         }
 
                                         return '';

@@ -8,7 +8,7 @@ import { useRequest } from '@proton/pass/hooks/useActionRequest';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { getBreaches } from '@proton/pass/store/actions';
 import { breachesRequest } from '@proton/pass/store/actions/requests';
-import { selectDuplicatePasswords } from '@proton/pass/store/selectors/monitor';
+import { selectDuplicatePasswords, selectExcludedItems } from '@proton/pass/store/selectors';
 import type { BreachesGetResponse, Maybe, MaybeNull, UniqueItem } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
 
@@ -18,6 +18,7 @@ export type MonitorContextValue = {
     insecure: { data: UniqueItem[]; count: number };
     duplicates: { data: UniqueItem[][]; count: number };
     missing2FAs: { data: UniqueItem[]; count: number };
+    excluded: { data: UniqueItem[]; count: number };
 };
 
 const MonitorContext = createContext<MaybeNull<MonitorContextValue>>(null);
@@ -27,6 +28,7 @@ export const MonitorProvider: FC<PropsWithChildren> = ({ children }) => {
     const duplicates = useSelector(selectDuplicatePasswords);
     const missing2FAs = useMissing2FAs();
     const insecure = useInsecurePasswords();
+    const excluded = useSelector(selectExcludedItems);
 
     const breaches = useRequest(getBreaches, { initialRequestId: breachesRequest() });
     useEffect(() => breaches.revalidate(), []);
@@ -41,8 +43,9 @@ export const MonitorProvider: FC<PropsWithChildren> = ({ children }) => {
                 data: duplicates,
                 count: duplicates.reduce<number>((total, { length }) => total + length, 0),
             },
+            excluded: { data: excluded, count: excluded.length },
         }),
-        [enabled, breaches, insecure, duplicates, missing2FAs]
+        [enabled, breaches, insecure, duplicates, missing2FAs, excluded]
     );
     return <MonitorContext.Provider value={context}>{children}</MonitorContext.Provider>;
 };
