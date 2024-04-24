@@ -22,6 +22,8 @@ export interface EditorActions {
     focus: () => void;
     setContent: (content: string, triggerAutoSave?: boolean) => void;
     getContent: () => string;
+    getSelectionContent: () => void;
+    setSelectionContent: (selection: string) => void;
     insertImage?: (url: string, attrs?: { [key: string]: string }) => void;
     clearUndoHistory?: () => void;
     /** Meant to be used at startup */
