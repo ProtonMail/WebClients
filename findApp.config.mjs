@@ -29,6 +29,10 @@ export default {
                 glob: 'lib/**/*.{js,jsx,ts,tsx}',
             },
             {
+                name: 'drive-store',
+                glob: '**/*.{js,jsx,ts,tsx}',
+            },
+            {
                 name: 'crypto',
                 glob: 'lib/**/*.{js,jsx,ts,tsx}',
             },

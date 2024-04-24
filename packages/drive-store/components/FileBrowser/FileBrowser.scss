@@ -1,0 +1,121 @@
+@import '~@proton/styles/scss/lib';
+
+.file-browser-header-checkbox-cell,
+.file-browser-list-checkbox-cell {
+	position: relative; // Because of .expand-click-area
+	padding-inline: 1em;
+	inline-size: calc(#{rem(16)} + 2em);
+}
+
+.file-browser-header-sort-cell {
+	margin: -0.5em;
+}
+
+.file-browser-table {
+	th {
+		block-size: rem(44); // set height for thead as well
+	}
+}
+
+.file-browser-table .filebrowser-list-header-name-cell,
+.file-browser-table .filebrowser-list-device-name-cell {
+	padding-inline-start: 1em;
+}
+
+// in this case, we can remove focus, that is visible via selected row
+.file-browser-list-item {
+	&:focus,
+	&:focus-visible {
+		outline: 0;
+	}
+}
+
+.file-browser--options-focus {
+	background-color: var(--button-hover-background-color);
+	color: var(--button-hover-text-color);
+}
+
+.file-browser-grid-item {
+	position: relative;
+	background-color: var(--background-norm);
+	overflow: hidden;
+
+	&:hover,
+	&:focus {
+		background-color: var(--background-weak);
+	}
+
+	&:focus-visible {
+		outline: 0; // not needed, provided by file-browser-grid-item--highlight
+	}
+}
+
+.file-browser-grid-item.file-browser-grid-item--highlight {
+	background-color: var(--background-strong);
+}
+
+.file-browser-grid-item--thumbnail {
+	inline-size: 100%;
+	block-size: 100%;
+	object-fit: cover;
+}
+
+.file-browser-grid-item--container {
+	position: relative;
+}
+
+.file-browser-grid-item--select {
+	position: absolute;
+	inset-block-start: 0.2em;
+	inset-inline-start: 0.2em;
+}
+
+.file-browser-grid-item--file-name {
+	position: relative;
+	inline-size: 100%;
+	block-size: rem(42);
+	line-height: rem(42);
+
+	// On the side is small options button.
+	padding-block: 0;
+	padding-inline: rem(40);
+}
+
+.file-browser-grid-view--signature-icon {
+	position: absolute;
+	inset-inline-start: rem(4);
+	block-size: 100%;
+}
+
+.file-browser-grid-view--options {
+	position: absolute;
+	inset-inline-end: rem(4);
+	inset-block-end: rem(8);
+}
+
+.file-browser-list--context-menu-column {
+	inline-size: rem(48); // To fit one small icon + spacing around.
+}
+
+.file-browser-list--icon-column {
+	&#{&} {
+		padding-block: 0;
+	}
+}
+
+.file-browser-list-item--thumbnail {
+	block-size: 1rem;
+	inline-size: 1rem;
+	border-radius: 25%;
+	object-fit: cover;
+}
+
+// Disable drag on image to properly propagate event for drag & drop of item itself.
+.file-browser-grid-item--thumbnail,
+.file-browser-list-item--thumbnail {
+	-webkit-user-drag: none;
+	-khtml-user-drag: none;
+	-moz-user-drag: none;
+	-o-user-drag: none;
+	user-drag: none; // stylelint-disable-line property-no-unknown
+}
