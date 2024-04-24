@@ -40,6 +40,7 @@ import itemPin from '@proton/pass/store/sagas/items/item-pin.saga';
 import itemRestore from '@proton/pass/store/sagas/items/item-restore.saga';
 import itemTrash from '@proton/pass/store/sagas/items/item-trash.saga';
 import itemUnpin from '@proton/pass/store/sagas/items/item-unpin.saga';
+import itemSetFlags from '@proton/pass/store/sagas/items/item.set-flags.saga';
 import breachesAlias from '@proton/pass/store/sagas/monitor/breaches.alias.saga';
 import breachesCustom from '@proton/pass/store/sagas/monitor/breaches.custom.saga';
 import breachesProton from '@proton/pass/store/sagas/monitor/breaches.proton.saga';
@@ -101,6 +102,7 @@ export function* rootSaga(options: RootSagaOptions) {
             itemMove,
             itemPin,
             itemRestore,
+            itemSetFlags,
             itemsImport,
             itemTrash,
             itemUnpin,

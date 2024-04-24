@@ -40,6 +40,7 @@ import itemPin from './items/item-pin.saga';
 import itemRestore from './items/item-restore.saga';
 import itemTrash from './items/item-trash.saga';
 import itemUnpin from './items/item-unpin.saga';
+import itemSetFlags from './items/item.set-flags.saga';
 import breachesAlias from './monitor/breaches.alias.saga';
 import breachesCustom from './monitor/breaches.custom.saga';
 import breachesProton from './monitor/breaches.proton.saga';
@@ -101,6 +102,7 @@ export function* workerRootSaga(options: RootSagaOptions) {
             itemMove,
             itemPin,
             itemRestore,
+            itemSetFlags,
             itemsImport,
             itemTrash,
             itemUnpin,

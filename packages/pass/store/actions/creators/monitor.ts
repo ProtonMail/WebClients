@@ -9,6 +9,7 @@ import {
     breachesRequest,
     customBreachRequest,
     customResolveRequest,
+    itemUpdateFlagsRequest,
     monitorCustomAddressRequest,
     protonBreachRequest,
     protonResolveRequest,
@@ -16,7 +17,7 @@ import {
     verifyCustomAddressRequest,
 } from '@proton/pass/store/actions/requests';
 import { requestActionsFactory } from '@proton/pass/store/request/flow';
-import type { SelectedItem } from '@proton/pass/types';
+import type { ItemRevision, SelectedItem } from '@proton/pass/types';
 import type { BreachCustomEmailGetResponse, BreachesGetResponse } from '@proton/pass/types/api/pass';
 import { UNIX_MINUTE } from '@proton/pass/utils/time/constants';
 import { PROTON_SENTINEL_NAME } from '@proton/shared/lib/constants';
@@ -167,5 +168,30 @@ export const resolveAliasBreach = requestActionsFactory<SelectedItem, boolean>(
                 type: 'error',
                 error,
             })({ payload: null }),
+    },
+});
+
+export const setItemFlags = requestActionsFactory<
+    SelectedItem & { SkipHealthCheck: boolean },
+    SelectedItem & { item: ItemRevision }
+>('monitor::toggle::item')({
+    requestId: ({ shareId, itemId }) => itemUpdateFlagsRequest(shareId, itemId),
+    success: {
+        prepare: ({ shareId, itemId, item }) =>
+            withNotification({
+                type: 'info',
+                text:
+                    item.flags && item.flags << 0 === 1
+                        ? c('Info').t`Item successfully included in monitoring`
+                        : c('Info').t`Item successfully excluded in monitoring`,
+            })({ payload: { shareId, itemId, item } }),
+    },
+    failure: {
+        prepare: (error) =>
+            withNotification({
+                type: 'error',
+                text: c('Error').t`Failed updating monitor flag of the item`,
+                error,
+            })({ payload: {} }),
     },
 });
