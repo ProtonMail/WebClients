@@ -5,10 +5,13 @@ import type { AddressVerify, CustomAddressID, ProtonAddressID } from '@proton/pa
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
 import {
     aliasBreachRequest,
+    aliasResolveRequest,
     breachesRequest,
     customBreachRequest,
+    customResolveRequest,
     monitorCustomAddressRequest,
     protonBreachRequest,
+    protonResolveRequest,
     sentinelToggleRequest,
     verifyCustomAddressRequest,
 } from '@proton/pass/store/actions/requests';
@@ -119,6 +122,48 @@ export const verifyCustomAddress = requestActionsFactory<AddressVerify, boolean>
         prepare: (error) =>
             withNotification({
                 text: c('Error').t`Failed to verify email address`,
+                type: 'error',
+                error,
+            })({ payload: null }),
+    },
+});
+
+export const resolveProtonBreach = requestActionsFactory<ProtonAddressID, boolean>(
+    'monitor::breaches::proton_address::resolve'
+)({
+    requestId: protonResolveRequest,
+    failure: {
+        prepare: (error) =>
+            withNotification({
+                text: c('Error').t`Failed to mark this address as resolved`,
+                type: 'error',
+                error,
+            })({ payload: null }),
+    },
+});
+
+export const resolveCustomBreach = requestActionsFactory<CustomAddressID, boolean>(
+    'monitor::breaches::custom_address::resolve'
+)({
+    requestId: customResolveRequest,
+    failure: {
+        prepare: (error) =>
+            withNotification({
+                text: c('Error').t`Failed to mark this address as resolved`,
+                type: 'error',
+                error,
+            })({ payload: null }),
+    },
+});
+
+export const resolveAliasBreach = requestActionsFactory<SelectedItem, boolean>(
+    'monitor::breaches::alias_address::resolve'
+)({
+    requestId: ({ shareId, itemId }) => aliasResolveRequest(shareId, itemId),
+    failure: {
+        prepare: (error) =>
+            withNotification({
+                text: c('Error').t`Failed to mark this address as resolved`,
                 type: 'error',
                 error,
             })({ payload: null }),

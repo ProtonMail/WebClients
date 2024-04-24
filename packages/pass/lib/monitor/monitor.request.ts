@@ -61,17 +61,17 @@ export const toggleMonitorCustomEmail = async (
     (await api({ url: `pass/v1/breach/custom_email/${emailId}/monitor`, method: 'put', data })).Email!;
 
 /** Mark a Proton address as resolved */
-export const setBreachedProtonAddressResolved = (AddressID: string) =>
-    api({ url: `pass/v1/breach/address/${AddressID}/resolved`, method: 'post' });
+export const setBreachedProtonAddressResolved = (AddressID: string): Promise<boolean> =>
+    api({ url: `pass/v1/breach/address/${AddressID}/resolved`, method: 'post' }).then(() => true);
 
 /** Mark alias breaches as resolved */
-export const setBreachedAliasResolved = (shareId: string, itemId: string) =>
-    api({ url: `pass/v1/share/${shareId}/alias/${itemId}/breaches/resolved`, method: 'post' });
+export const setBreachedAliasResolved = (shareId: string, itemId: string): Promise<boolean> =>
+    api({ url: `pass/v1/share/${shareId}/alias/${itemId}/breaches/resolved`, method: 'post' }).then(() => true);
 
 /** Mark custom email breaches as resolved */
-export const setBreachedCustomEmailResolved = (customEmailId: string) =>
-    api({ url: `pass/v1/breach/custom_email/${customEmailId}/resolved`, method: 'put' });
+export const setBreachedCustomEmailResolved = (customEmailId: string): Promise<boolean> =>
+    api({ url: `pass/v1/breach/custom_email/${customEmailId}/resolved`, method: 'put' }).then(() => true);
 
 /** Verify a custom email with the validation code */
-export const verifyCustomEmail = (emailId: string, data: BreachEmailValidateRequest) =>
-    api({ url: `pass/v1/breach/custom_email/${emailId}/verify`, method: 'put', data });
+export const verifyCustomEmail = (emailId: string, data: BreachEmailValidateRequest): Promise<boolean> =>
+    api({ url: `pass/v1/breach/custom_email/${emailId}/verify`, method: 'put', data }).then(() => true);
