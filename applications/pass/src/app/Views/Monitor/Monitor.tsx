@@ -4,6 +4,7 @@ import { Route, type RouteChildrenProps, Switch } from 'react-router-dom';
 import { Content } from '@proton/pass/components/Layout/Section/Content';
 import { SubSidebar } from '@proton/pass/components/Layout/Section/SubSidebar';
 import { Missing2FAs } from '@proton/pass/components/Monitor/2FA/Missing2FAs';
+import { ExcludedItems } from '@proton/pass/components/Monitor/Item/ExcludedItems';
 import { DuplicatePasswords } from '@proton/pass/components/Monitor/Password/DuplicatePasswords';
 import { WeakPasswords } from '@proton/pass/components/Monitor/Password/WeakPasswords';
 import { Summary } from '@proton/pass/components/Monitor/Summary';
@@ -23,11 +24,12 @@ export const Monitor: FC<RouteChildrenProps> = ({ match }) => {
                         <Route path={`${match?.path}/duplicates`} component={DuplicatePasswords} />
                         <Route path={`${match?.path}/2fa`} component={Missing2FAs} />
                         <Route path={`${match?.path}/weak`} component={WeakPasswords} />
+                        <Route path={`${match?.path}/excluded`} component={ExcludedItems} />
                         <Route component={Summary} />
                     </Switch>
                 </SubSidebar>
                 <Switch>
-                    <Route path={`${match?.path}/(duplicates|2fa|weak)`}>
+                    <Route path={`${match?.path}/(duplicates|2fa|weak|excluded)`}>
                         {(subRoute) => {
                             const { match } = subRoute;
                             if (!match) return null;
