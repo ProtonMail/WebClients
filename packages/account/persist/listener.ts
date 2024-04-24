@@ -38,15 +38,10 @@ export const startPersistListener = <T extends UserState>(
             }
 
             const run = () => {
-                const { authentication, config, eventManager, unleashClient } = listenerApi.extra;
+                const { authentication, config, eventManager } = listenerApi.extra;
 
                 // Event manager is slightly delayed in bootstrap due to event ID. Refactor that to allow it to get created without ID.
                 if (!eventManager || !isVisible()) {
-                    return;
-                }
-
-                if (!unleashClient.isEnabled('PersistedState')) {
-                    listenerApi.unsubscribe();
                     return;
                 }
 
