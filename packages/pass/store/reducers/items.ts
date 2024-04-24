@@ -40,6 +40,7 @@ import {
     itemUnpinSuccess,
     itemUsedSync,
     restoreTrashProgress,
+    setItemFlags,
     shareDeleteSync,
     shareLeaveSuccess,
     sharedVaultCreated,
@@ -316,6 +317,11 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
             );
 
             return partialMerge(state, update);
+        }
+
+        if (setItemFlags.success.match(action)) {
+            const { shareId, itemId, item } = action.payload;
+            return partialMerge(state, { [shareId]: { [itemId]: item } });
         }
 
         return state;
