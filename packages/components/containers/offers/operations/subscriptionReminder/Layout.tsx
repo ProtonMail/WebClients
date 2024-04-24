@@ -20,7 +20,7 @@ const Layout = (props: OfferLayoutProps) => {
             : MAIL_UPSELL_PATHS.SUBSCRIPTION_REMINDER_PRODUCTIVITY,
     });
 
-    const { upgradePath, onUpgrade } = useUpsellConfig(upsellRef, SUBSCRIPTION_STEPS.PLAN_SELECTION);
+    const { upgradePath, onUpgrade } = useUpsellConfig({ upsellRef, step: SUBSCRIPTION_STEPS.PLAN_SELECTION });
     const onUpgradeClick = () => {
         if (onUpgrade) {
             onCloseModal();

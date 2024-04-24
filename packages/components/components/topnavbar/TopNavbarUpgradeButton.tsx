@@ -48,7 +48,7 @@ const TopNavbarUpgradeButton = ({ app }: Props) => {
     const displayUpgradeButton = (user.isFree || isTrial(subscription)) && !location.pathname.endsWith(upgradePathname);
     const upgradeText = c('specialoffer: Link').t`Upgrade`;
     const upgradeIcon = upgradeText.length > 20 && viewportWidth['>=large'] ? undefined : 'upgrade';
-    const upsellConfig = useUpsellConfig(upsellRef, SUBSCRIPTION_STEPS.PLAN_SELECTION);
+    const upsellConfig = useUpsellConfig({ upsellRef, step: SUBSCRIPTION_STEPS.PLAN_SELECTION });
 
     if (displayUpgradeButton) {
         return (

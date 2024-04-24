@@ -4,11 +4,14 @@ import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href';
 import { GenericError } from '@proton/components';
-import { Icon, Loader, useModalStateObject, useUpsellConfig } from '@proton/components/components';
-import { Toggle } from '@proton/components/components';
+import { Icon, Loader, Toggle, useModalStateObject, useUpsellConfig } from '@proton/components/components';
 import BreachModal from '@proton/components/containers/credentialLeak/BreachModal';
-import { getEnabledString, getStyle } from '@proton/components/containers/credentialLeak/helpers';
-import { BREACH_API_ERROR, toCamelCase } from '@proton/components/containers/credentialLeak/helpers';
+import {
+    BREACH_API_ERROR,
+    getEnabledString,
+    getStyle,
+    toCamelCase,
+} from '@proton/components/containers/credentialLeak/helpers';
 import { BREACH_STATE } from '@proton/components/containers/credentialLeak/models';
 import { useBreaches } from '@proton/components/containers/credentialLeak/useBreaches';
 import { useApi, useErrorHandler, useNotifications, useUser, useUserSettings } from '@proton/components/hooks';
@@ -85,9 +88,12 @@ const BreachAlertsSecurityCenter = () => {
         component: UPSELL_COMPONENT.MODAL,
         feature: MAIL_UPSELL_PATHS.BREACH_ALERTS,
     });
-    const { onUpgrade } = useUpsellConfig(upsellRef, undefined, () => {
-        enableBreachAlerts();
-        return;
+    const { onUpgrade } = useUpsellConfig({
+        upsellRef,
+        onSubscribed: () => {
+            enableBreachAlerts();
+            return;
+        },
     });
 
     const handleToggleOpenSubscriptionModal = () => {
