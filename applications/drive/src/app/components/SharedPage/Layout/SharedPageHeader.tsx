@@ -6,7 +6,7 @@ import { Href } from '@proton/atoms';
 import { Icon, Spotlight } from '@proton/components/components';
 import { useActiveBreakpoint } from '@proton/components/hooks';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
-import { getBlogURL } from '@proton/shared/lib/helpers/url';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import clsx from '@proton/utils/clsx';
 
 import { useDownloadScanFlag } from '../../../store';
@@ -23,7 +23,7 @@ const SpotlightContent = () => (
         <div className="mb-6">
             {c('Info')
                 .t`To help protect you, ${DRIVE_APP_NAME} can scan and block malicious files. You should still only download files from people you trust.`}{' '}
-            <Href className="color-weak" href={getBlogURL('/proton-drive-malware-protection')}>
+            <Href className="color-weak" href={getKnowledgeBaseUrl('/proton-drive-malware-protection')}>
                 {c('Link').t`Learn more`}
             </Href>
         </div>
