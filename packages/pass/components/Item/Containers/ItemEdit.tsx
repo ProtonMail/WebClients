@@ -12,7 +12,7 @@ import { useNavigation } from '@proton/pass/components/Navigation/NavigationProv
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import type { ItemEditViewProps } from '@proton/pass/components/Views/types';
 import { itemEditIntent } from '@proton/pass/store/actions';
-import { selectItemByShareIdAndId, selectShare } from '@proton/pass/store/selectors';
+import { selectItem, selectShare } from '@proton/pass/store/selectors';
 import type { ItemEditIntent, ItemType, SelectedItem, ShareType } from '@proton/pass/types';
 
 const itemEditMap: { [T in ItemType]: FC<ItemEditViewProps<T>> } = {
@@ -26,24 +26,24 @@ export const ItemEdit: FC = () => {
     const { prefix } = useItemRoute();
     const { getCurrentTabUrl } = usePassCore();
     const { shareId, itemId } = useParams<SelectedItem>();
-    const { selectItem, preserveSearch } = useNavigation();
+    const router = useNavigation();
     const dispatch = useDispatch();
 
     const vault = useSelector(selectShare<ShareType.Vault>(shareId));
-    const item = useSelector(selectItemByShareIdAndId(shareId, itemId));
+    const item = useSelector(selectItem(shareId, itemId));
 
     const handleSubmit = (data: ItemEditIntent) => {
         dispatch(itemEditIntent(data));
-        selectItem(shareId, itemId, { mode: 'replace', prefix });
+        router.selectItem(shareId, itemId, { mode: 'replace', prefix });
     };
 
-    if (!(item && vault)) return <Redirect to={preserveSearch(getLocalPath())} push={false} />;
+    if (!(item && vault)) return <Redirect to={router.preserveSearch(getLocalPath())} push={false} />;
 
     const EditViewComponent = itemEditMap[item.data.type] as FC<ItemEditViewProps>;
 
     return (
         <EditViewComponent
-            onCancel={() => selectItem(shareId, itemId, { prefix })}
+            onCancel={() => router.selectItem(shareId, itemId, { prefix })}
             onSubmit={handleSubmit}
             revision={item}
             url={getCurrentTabUrl?.() ?? null}

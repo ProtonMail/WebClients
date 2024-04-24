@@ -25,9 +25,9 @@ import {
 } from '@proton/pass/store/actions';
 import selectFailedAction from '@proton/pass/store/optimistic/selectors/select-failed-action';
 import {
-    selectByShareId,
+    selectIsOptimisticId,
     selectItemWithOptimistic,
-    selectResolvedOptimisticId,
+    selectItemsState,
     selectShare,
 } from '@proton/pass/store/selectors';
 import type { ItemType, SelectedItem, ShareType } from '@proton/pass/types';
@@ -51,9 +51,9 @@ export const ItemView: FC = () => {
     const [inviteOpen, setInviteOpen] = useState(false);
 
     const optimisticItemId = getItemActionId({ itemId, shareId });
-    const optimisticResolved = useSelector(selectResolvedOptimisticId(itemId));
+    const optimisticResolved = useSelector(selectIsOptimisticId(itemId));
     const itemSelector = useMemo(() => selectItemWithOptimistic(shareId, itemId), [shareId, itemId]);
-    const failedItemActionSelector = pipe(selectByShareId, selectFailedAction(optimisticItemId));
+    const failedItemActionSelector = pipe(selectItemsState, selectFailedAction(optimisticItemId));
 
     const vault = useSelector(selectShare<ShareType.Vault>(shareId));
     const item = useSelector(itemSelector);

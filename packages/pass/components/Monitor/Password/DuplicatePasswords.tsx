@@ -7,56 +7,52 @@ import { c, msgid } from 'ttag';
 
 import { ItemsListItem } from '@proton/pass/components/Item/List/ItemsListItem';
 import { VirtualList } from '@proton/pass/components/Layout/List/VirtualList';
+import { useMonitor } from '@proton/pass/components/Monitor/MonitorProvider';
 import { getItemRoute } from '@proton/pass/components/Navigation/routing';
 import { useSelectItemAction } from '@proton/pass/hooks/useSelectItemAction';
 import { isTrashed, itemEq } from '@proton/pass/lib/items/item.predicates';
 import { getItemKey } from '@proton/pass/lib/items/item.utils';
-import { selectDuplicatePasswordItems } from '@proton/pass/store/selectors/monitor';
-import type { ItemRevision, SelectedItem } from '@proton/pass/types';
+import { selectOptimisticItemsFactory, selectSelectedItems } from '@proton/pass/store/selectors';
+import type { ItemRevisionWithOptimistic, SelectedItem, UniqueItem } from '@proton/pass/types';
 
-export type InterpolationItem = { type: 'divider'; label: string } | { type: 'item'; item: ItemRevision };
+type InterpolationItem = { type: 'divider'; label: string } | { type: 'item'; item: ItemRevisionWithOptimistic };
+type Interpolation = { interpolation: InterpolationItem[]; interpolationIndexes: number[]; sliceAt: number };
 
-const flattenWithLabelsAndIndexes = (
-    items: ItemRevision[][]
-): { interpolation: InterpolationItem[]; interpolationIndexes: number[] } => {
-    const { interpolation, interpolationIndexes } = items.reduce<{
-        interpolation: InterpolationItem[];
-        interpolationIndexes: number[];
-    }>(
+const getLabel = (count: number) => c('Title').ngettext(msgid`Reused ${count} time`, `Reused ${count} times`, count);
+const interpolateDuplicates = (groups: UniqueItem[][], items: ItemRevisionWithOptimistic[]): Interpolation =>
+    groups.reduce<Interpolation>(
         (acc, group) => {
-            const label = c('Title').ngettext(
-                msgid`Reused ${group.length} time`,
-                `Reused ${group.length} times`,
-                group.length
-            );
+            const start = acc.sliceAt;
+            const end = acc.sliceAt + group.length;
+            const slice = items.slice(start, end).map<InterpolationItem>((item) => ({ type: 'item', item }));
+
             acc.interpolationIndexes.push(acc.interpolation.length);
-            acc.interpolation.push(
-                { type: 'divider', label: label },
-                ...group.map<InterpolationItem>((item) => ({ type: 'item', item: item }))
-            );
+            acc.interpolation.push({ type: 'divider', label: getLabel(group.length) }, ...slice);
+            acc.sliceAt = end;
+
             return acc;
         },
-        { interpolation: [], interpolationIndexes: [] }
+        { interpolation: [], interpolationIndexes: [], sliceAt: 0 }
     );
 
-    return { interpolation, interpolationIndexes };
-};
-
 export const DuplicatePasswords: FC = () => {
+    const monitor = useMonitor();
     const selectItem = useSelectItemAction();
     const itemRoute = getItemRoute(':shareId', ':itemId', { prefix: 'monitor/duplicates(/trash)?' });
     const selectedItem = useRouteMatch<SelectedItem>(itemRoute)?.params;
-    const duplicatePasswordItems = useSelector(selectDuplicatePasswordItems);
+
+    const duplicates = useMemo(() => monitor.duplicates.data.flat(), [monitor.duplicates.data]);
+    const duplicatePasswordItems = useSelector(selectOptimisticItemsFactory(selectSelectedItems(duplicates)));
 
     const listRef = useRef<List>(null);
     const { interpolation, interpolationIndexes } = useMemo(
-        () => flattenWithLabelsAndIndexes(duplicatePasswordItems),
-        [duplicatePasswordItems]
+        () => interpolateDuplicates(monitor.duplicates.data, duplicatePasswordItems),
+        [duplicatePasswordItems, duplicates]
     );
 
     useEffect(() => {
         if (duplicatePasswordItems.length && !selectedItem) {
-            const item = duplicatePasswordItems[0][0];
+            const item = duplicatePasswordItems[0];
             selectItem(item, { inTrash: isTrashed(item), prefix: 'monitor/duplicates', mode: 'replace' });
         }
     }, [selectedItem, duplicatePasswordItems]);

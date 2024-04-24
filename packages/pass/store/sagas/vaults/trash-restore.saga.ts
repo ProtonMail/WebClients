@@ -7,13 +7,13 @@ import {
     restoreTrashSuccess,
 } from '@proton/pass/store/actions';
 import { type BulkRestoreChannel, bulkRestoreChannel } from '@proton/pass/store/sagas/items/item-bulk-restore.saga';
-import { selectAllTrashedItems } from '@proton/pass/store/selectors';
+import { selectTrashedItems } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { ItemRevision } from '@proton/pass/types';
 
 function* restoreTrash({ onItemsUpdated }: RootSagaOptions, { meta }: ReturnType<typeof restoreTrashIntent>) {
     const requestId = meta.request.id;
-    const trashedItems: ItemRevision[] = yield select(selectAllTrashedItems);
+    const trashedItems: ItemRevision[] = yield select(selectTrashedItems);
     const progressChannel = bulkRestoreChannel(trashedItems);
 
     while (true) {

@@ -10,7 +10,7 @@ import { getItemRoute } from '@proton/pass/components/Navigation/routing';
 import { useSelectItemAction } from '@proton/pass/hooks/useSelectItemAction';
 import { isTrashed, itemEq } from '@proton/pass/lib/items/item.predicates';
 import { getItemKey } from '@proton/pass/lib/items/item.utils';
-import { selectSelectedItems } from '@proton/pass/store/selectors';
+import { selectOptimisticItemsFactory, selectSelectedItems } from '@proton/pass/store/selectors';
 import type { SelectedItem } from '@proton/pass/types';
 
 export const Missing2FAs: FC = () => {
@@ -19,7 +19,7 @@ export const Missing2FAs: FC = () => {
     const selectedItem = useRouteMatch<SelectedItem>(itemRoute)?.params;
     const { missing2FAs } = useMonitor();
 
-    const items = useSelector(selectSelectedItems(missing2FAs.data));
+    const items = useSelector(selectOptimisticItemsFactory(selectSelectedItems(missing2FAs.data)));
     const listRef = useRef<List>(null);
 
     useEffect(() => {
@@ -42,9 +42,11 @@ export const Missing2FAs: FC = () => {
                     <div style={style} key={key}>
                         <ItemsListItem
                             active={selectedItem && itemEq(selectedItem)(item)}
+                            failed={item.failed}
                             id={id}
                             item={item}
                             key={id}
+                            optimistic={item.optimistic}
                             onClick={(e) => {
                                 e.preventDefault();
                                 selectItem(item, {

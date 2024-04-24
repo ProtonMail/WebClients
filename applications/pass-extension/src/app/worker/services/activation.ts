@@ -7,12 +7,7 @@ import type { MessageHandlerCallback } from '@proton/pass/lib/extension/message'
 import { backgroundMessage } from '@proton/pass/lib/extension/message';
 import browser from '@proton/pass/lib/globals/browser';
 import { bootIntent, wakeupIntent } from '@proton/pass/store/actions';
-import {
-    selectFeatureFlags,
-    selectItemByShareIdAndId,
-    selectPopupFilters,
-    selectPopupTabState,
-} from '@proton/pass/store/selectors';
+import { selectFeatureFlags, selectItem, selectPopupFilters, selectPopupTabState } from '@proton/pass/store/selectors';
 import type { MaybeNull, WorkerMessageWithSender, WorkerWakeUpMessage } from '@proton/pass/types';
 import { AppStatus, WorkerMessageType } from '@proton/pass/types';
 import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
@@ -248,7 +243,7 @@ export const createActivationService = () => {
         const searchForAutofill = hasAutofillCandidates && domain ? domain : '';
 
         const validItem = tabState?.selectedItem
-            ? selectItemByShareIdAndId(tabState.selectedItem.shareId, tabState.selectedItem.itemId) !== undefined
+            ? selectItem(tabState.selectedItem.shareId, tabState.selectedItem.itemId) !== undefined
             : false;
 
         return {
