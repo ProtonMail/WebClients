@@ -21,7 +21,7 @@ const LabelsUpsellModal = ({ modalProps, onCloseCustomAction, feature, isSetting
         isSettings,
     });
 
-    const upsellConfig = useUpsellConfig(upsellRef);
+    const upsellConfig = useUpsellConfig({ upsellRef });
 
     return (
         <UpsellModal
