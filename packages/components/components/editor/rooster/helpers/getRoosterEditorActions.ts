@@ -1,6 +1,6 @@
 import { RefObject } from 'react';
 
-import { IEditor } from 'roosterjs-editor-types';
+import { ChangeSource, IEditor, SelectionRangeTypes } from 'roosterjs-editor-types';
 
 import { DIRECTION } from '@proton/shared/lib/mail/mailSettings';
 
@@ -57,6 +57,44 @@ const getRoosterEditorActions = (
         setTextDirection,
         showModalLink,
         openEmojiPicker,
+        getSelectionContent() {
+            const selectionRangeEx = editorInstance.getSelectionRangeEx();
+            if (selectionRangeEx.type !== SelectionRangeTypes.Normal) {
+                return;
+            }
+
+            let content = '';
+
+            selectionRangeEx.ranges.forEach((range) => {
+                const selectionTraverser = editorInstance.getSelectionTraverser(range);
+                if (!selectionTraverser) {
+                    return;
+                }
+
+                let inlineElement = selectionTraverser.currentInlineElement;
+                let currentBlock = selectionTraverser.currentBlockElement;
+
+                while (inlineElement) {
+                    const inlineElementBlock = inlineElement.getParentBlock();
+                    const isNewLine = inlineElementBlock !== currentBlock && !!inlineElementBlock.getTextContent();
+                    if (isNewLine) {
+                        currentBlock = inlineElement.getParentBlock();
+                        content += '\n';
+                    } else {
+                        content += ' ';
+                    }
+                    content += inlineElement.getTextContent();
+                    inlineElement = selectionTraverser.getNextInlineElement();
+                }
+            });
+
+            return content;
+        },
+        setSelectionContent(content) {
+            editorInstance.addUndoSnapshot(() => {
+                editorInstance.insertContent(content.replace(/\n/g, '<br>'));
+            }, ChangeSource.SetContent);
+        },
     };
 };
 

@@ -16,6 +16,9 @@ const PlainTextEditor = ({ onFocus, onReady, onChange, children, ...rest }: Prop
     const textareaRef = useRef<HTMLTextAreaElement>(null);
     const isMountedCallback = useIsMounted();
 
+    let beforeSelection: string;
+    let afterSelection: string;
+
     useEffect(() => {
         const actions: EditorActions = {
             focus: () => {
@@ -35,6 +38,23 @@ const PlainTextEditor = ({ onFocus, onReady, onChange, children, ...rest }: Prop
             isDisposed: () => isMountedCallback() === false || !textareaRef.current,
             scroll: (scrollToOption: ScrollToOptions) => {
                 textareaRef.current?.scrollTo?.(scrollToOption);
+            },
+            getSelectionContent: () => {
+                const textarea = textareaRef.current;
+                if (!textarea) {
+                    return;
+                }
+                beforeSelection = textarea.value.slice(0, textarea.selectionStart);
+                afterSelection = textarea.value.slice(textarea.selectionEnd, textarea.value.length);
+
+                return textarea.value.slice(textarea.selectionStart, textarea.selectionEnd);
+            },
+            setSelectionContent: (content) => {
+                const textarea = textareaRef.current;
+                if (!textarea) {
+                    return;
+                }
+                textarea.value = beforeSelection + content + afterSelection;
             },
         };
         onReady(actions);
