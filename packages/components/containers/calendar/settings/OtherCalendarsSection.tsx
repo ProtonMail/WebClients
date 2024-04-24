@@ -3,7 +3,7 @@ import { ComponentPropsWithoutRef, useRef } from 'react';
 import { c } from 'ttag';
 
 import { Button, ButtonLike, Card, Href } from '@proton/atoms';
-import { FeatureCode, SharedCalendarsSection } from '@proton/components/containers';
+import { SharedCalendarsSection } from '@proton/components/containers';
 import { removeCalendar } from '@proton/shared/lib/api/calendars';
 import { getCalendarsLimitReachedText } from '@proton/shared/lib/calendar/calendarLimits';
 import { APP_UPSELL_REF_PATH, CALENDAR_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
@@ -19,7 +19,7 @@ import {
 } from '@proton/shared/lib/interfaces/calendar';
 
 import { Alert, PrimaryButton, Prompt, SettingsLink, useModalState } from '../../../components';
-import { useApi, useEventManager, useFeature, useNotifications } from '../../../hooks';
+import { useApi, useEventManager, useNotifications } from '../../../hooks';
 import { useModalsMap } from '../../../hooks/useModalsMap';
 import { SettingsParagraph } from '../../account';
 import HolidaysCalendarModal from '../calendarModal/holidaysCalendarModal/HolidaysCalendarModal';
@@ -65,7 +65,6 @@ const OtherCalendarsSection = ({
     const api = useApi();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
-    const holidaysCalendarsEnabled = !!useFeature(FeatureCode.HolidaysCalendars)?.feature?.Value;
 
     const [{ onExit: onExitCalendarModal, ...calendarModalProps }, setIsCalendarModalOpen] = useModalState();
     const [subscribedCalendarModal, setIsSubscribedCalendarModalOpen, renderSubscribedCalendarModal] = useModalState();
@@ -120,16 +119,14 @@ const OtherCalendarsSection = ({
     const addCalendarButtons = (
         <div className="mb-4">
             <>
-                {holidaysCalendarsEnabled && (
-                    <PrimaryButton
-                        data-testid="calendar-setting-page:add-holidays-calendar"
-                        disabled={!canAdd}
-                        onClick={handleCreateHolidaysCalendar}
-                        className="mr-4"
-                    >
-                        {addHolidaysCalendarText}
-                    </PrimaryButton>
-                )}
+                <PrimaryButton
+                    data-testid="calendar-setting-page:add-holidays-calendar"
+                    disabled={!canAdd}
+                    onClick={handleCreateHolidaysCalendar}
+                    className="mr-4"
+                >
+                    {addHolidaysCalendarText}
+                </PrimaryButton>
                 <PrimaryButton
                     data-test-id="calendar-setting-page:add-calendar"
                     disabled={!canAdd}
