@@ -4,8 +4,5 @@ import { createRequestSaga } from '@proton/pass/store/request/sagas';
 
 export default createRequestSaga({
     actions: verifyCustomAddress,
-    call: async ({ emailId, code: Code }) => {
-        await verifyCustomEmail(emailId, { Code });
-        return true;
-    },
+    call: ({ emailId, code: Code }) => verifyCustomEmail(emailId, { Code }),
 });

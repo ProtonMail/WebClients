@@ -62,3 +62,6 @@ export const customBreachRequest = (emailId: string) => `monitor::breaches::cust
 export const aliasBreachRequest = (shareId: string, itemId: string) => `monitor::breaches::alias::${shareId + itemId}`;
 export const monitorCustomAddressRequest = (email: string) => `monitor::add::custom::${email}`;
 export const verifyCustomAddressRequest = (emailId: string) => `monitor::verify::custom::${emailId}`;
+export const protonResolveRequest = (addressId: string) => `monitor::resolve::proton::${addressId}`;
+export const customResolveRequest = (emailId: string) => `monitor::resolve::custom::${emailId}`;
+export const aliasResolveRequest = (shareId: string, itemId: string) => `monitor::resolve::alias::${shareId + itemId}`;
