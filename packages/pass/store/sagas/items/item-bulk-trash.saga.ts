@@ -9,7 +9,7 @@ import {
     itemBulkTrashSuccess,
 } from '@proton/pass/store/actions';
 import type { RequestProgress } from '@proton/pass/store/request/types';
-import { selectItemsFromBulkSelectionDTO } from '@proton/pass/store/selectors';
+import { selectBulkSelection } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { BatchItemRevisionIDs, ItemRevision, ItemRevisionResponse } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
@@ -20,7 +20,7 @@ function* itemBulkTrashWorker(
     { onItemsUpdated }: RootSagaOptions,
     { payload: { selected }, meta }: ReturnType<typeof itemBulkTrashIntent>
 ) {
-    const items = (yield select(selectItemsFromBulkSelectionDTO(selected))) as ItemRevision[];
+    const items = (yield select(selectBulkSelection(selected))) as ItemRevision[];
 
     const progressChannel = eventChannel<BulkTrashChannel>((emitter) => {
         trashItems(items, (data, progress) => emitter({ type: 'progress', progress, data }))
