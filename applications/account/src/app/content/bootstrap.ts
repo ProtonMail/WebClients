@@ -62,13 +62,6 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
             user,
         });
 
-        if (persistedState) {
-            await unleashPromise;
-            if (!unleashClient.isEnabled('PersistedState')) {
-                persistedState = undefined;
-            }
-        }
-
         const store = setupStore({ preloadedState: persistedState?.state, mode: 'default' });
         const dispatch = store.dispatch;
 
@@ -107,7 +100,6 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
         const evPromise = bootstrap.eventManager({ api: silentApi, eventID: persistedState?.eventID });
         loadPreloadButIgnored();
 
-        // Needs unleash to be loaded. NOTE: It might have already gotten loaded previously.
         await unleashPromise;
         await bootstrap.loadCrypto({ appName, unleashClient });
         const [MainContainer, userData, eventManager] = await Promise.all([
