@@ -32,26 +32,26 @@ export const organizationThemeListener = (startListening: SharedStartListening<O
             listenerApi.unsubscribe();
 
             const organizationThemeFromCookie = getOrganizationThemeFromCookie();
-            if (!organizationThemeFromCookie) {
-                return;
-            }
-
+            let logoURL = '';
+            let orgName = '';
             const authentication = listenerApi.extra.authentication;
             const config = listenerApi.extra.config;
-            if (organizationThemeFromCookie.LocalID !== authentication.localID) {
-                return;
+
+            if (organizationThemeFromCookie && organizationThemeFromCookie.LocalID === authentication.localID) {
+                logoURL = getOrganizationLogoURL({
+                    logoID: organizationThemeFromCookie.LogoID,
+                    UID: authentication.UID,
+                    API_URL: config.API_URL,
+                });
+                orgName = organizationThemeFromCookie.Name;
             }
 
             listenerApi.dispatch(
                 organizationThemeSlice.actions.set({
                     access: true,
-                    name: organizationThemeFromCookie.Name,
+                    name: orgName,
                     showName: true,
-                    logoURL: getOrganizationLogoURL({
-                        logoID: organizationThemeFromCookie.LogoID,
-                        UID: authentication.UID,
-                        API_URL: config.API_URL,
-                    }),
+                    logoURL,
                     enabled: flagEnabled,
                 })
             );
@@ -88,7 +88,7 @@ export const organizationThemeListener = (startListening: SharedStartListening<O
                 if (!access) {
                     syncToCookie(serializeOrgTheme(undefined, authentication.localID));
                 }
-                listenerApi.dispatch(organizationThemeSlice.actions.reset({ access: access, enabled: flagEnabled }));
+                listenerApi.dispatch(organizationThemeSlice.actions.reset({ access, enabled: flagEnabled }));
                 return;
             }
 
