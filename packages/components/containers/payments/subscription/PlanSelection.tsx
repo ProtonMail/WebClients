@@ -58,6 +58,7 @@ import PlanCard from './PlanCard';
 import PlanCardFeatures, { PlanCardFeatureList, PlanCardFeaturesShort } from './PlanCardFeatures';
 import { CANCEL_ROUTE } from './b2cCancellationFlow/helper';
 import VpnEnterpriseAction from './helpers/VpnEnterpriseAction';
+import { getVPNPlanToUse } from './helpers/payment';
 
 import './PlanSelection.scss';
 
@@ -211,7 +212,12 @@ const PlanSelection = ({
     const isPassSettingsApp = app == APPS.PROTONPASS;
     const currentPlan = subscription ? subscription.Plans?.find(({ Type }) => Type === PLAN_TYPES.PLAN) : null;
     const renderCycleSelector = isFreeSubscription(subscription);
-    const enabledProductB2CPlans = [PLANS.MAIL, PLANS.VPN2024, PLANS.DRIVE, PLANS.PASS_PLUS].filter(isTruthy);
+    const enabledProductB2CPlans = [
+        PLANS.MAIL,
+        getVPNPlanToUse({ plansMap, planIDs, cycle: subscription?.Cycle }),
+        PLANS.DRIVE,
+        PLANS.PASS_PLUS,
+    ];
     const enabledProductB2BPlans = [PLANS.MAIL_PRO /*, PLANS.DRIVE_PRO*/];
     const goToSettings = useSettingsLink();
 
