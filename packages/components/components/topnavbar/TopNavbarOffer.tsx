@@ -4,22 +4,24 @@ import { useHistory, useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 
 import useOfferFlags from '@proton/components/containers/offers/hooks/useOfferFlags';
-import { CYCLE, OPEN_OFFER_MODAL_EVENT } from '@proton/shared/lib/constants';
+import { APP_NAMES, CYCLE, OPEN_OFFER_MODAL_EVENT } from '@proton/shared/lib/constants';
 
 import { OfferModal, useOfferModal } from '../../containers';
 import { OfferConfig } from '../../containers/offers/interface';
 import { subscriptionModalClassName } from '../../containers/payments/subscription/constants';
 import { useActiveBreakpoint, useSubscription, useUser, useWelcomeFlags } from '../../hooks';
 import { PromotionButton } from '../button/PromotionButton';
+import TopNabarOfferSubscriptionReminder from './TopNavBarOfferSubscriptionReminder';
 import TopNavbarListItem from './TopNavbarListItem';
 
 interface Props {
+    app: APP_NAMES;
     offerConfig: OfferConfig;
     ignoreVisited?: boolean;
     ignoreOnboarding?: boolean;
 }
 
-const TopNavbarOffer = ({ offerConfig, ignoreVisited, ignoreOnboarding }: Props) => {
+const TopNavbarOffer = ({ app, offerConfig, ignoreVisited, ignoreOnboarding }: Props) => {
     const [welcomeFlags] = useWelcomeFlags();
     const onceRef = useRef(false);
     const [user] = useUser();
@@ -93,6 +95,26 @@ const TopNavbarOffer = ({ offerConfig, ignoreVisited, ignoreOnboarding }: Props)
     const CTAText = offerConfig.topButton?.getCTAContent?.() || c('specialoffer: Action').t`Special offer`;
     const upgradeIcon =
         CTAText.length > 20 && viewportWidth['>=large'] ? undefined : offerConfig.topButton?.icon || 'bag-percent';
+
+    // The subscription reminder spotlight is displayed instead of the regular offer modal
+    if (offerConfig.ID === 'subscription-reminder') {
+        return (
+            <TopNabarOfferSubscriptionReminder
+                app={app}
+                currency={currency}
+                onChangeCurrency={onChangeCurrency}
+                offerConfig={offerConfig}
+                offer={offer}
+                modalProps={{
+                    ...offerModalProps,
+                    onClose: () => {
+                        offerModalProps.onClose?.();
+                        setFetchOffer(false);
+                    },
+                }}
+            />
+        );
+    }
 
     return (
         <>
