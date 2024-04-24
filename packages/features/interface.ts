@@ -60,6 +60,8 @@ export enum FeatureCode {
     MailServiceWorker = 'MailServiceWorker',
     NumAttachmentsWithoutEmbedded = 'NumAttachmentsWithoutEmbedded',
     NumberOfPreloadedConversations = 'NumberOfPreloadedConversations',
+    // This is a different offer than the others, it runs all the time and is used to nudge free users once their accounts is old enough
+    OfferSubscriptionReminder = 'OfferSubscriptionReminder',
     OfferBlackFridayMail2022 = 'OfferBlackFridayMail2022',
     OfferBlackFridayMailFree2022 = 'OfferBlackFridayMailFree2022',
     OfferBlackFridayMailPro2022 = 'OfferBlackFridayMailPro2022',
@@ -110,6 +112,7 @@ export enum FeatureCode {
     SpotlightScheduledSend = 'SpotlightScheduledSend',
     SpotlightSecurityCenter = 'SpotlightSecurityCenter',
     SpyTrackerProtectionIncorporator = 'SpyTrackerProtectionIncorporator',
+    SubscriptionReminderMinimalCreateTime = 'SubscriptionReminderMinimalCreateTime',
     UnreadFavicon = 'UnreadFavicon',
     UsedContactsImport = 'UsedContactsImport',
     UsedMailMobileApp = 'UsedMailMobileApp',

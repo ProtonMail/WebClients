@@ -555,6 +555,8 @@ export enum MAIL_UPSELL_PATHS {
     TRIAL_BANNER = 'trial-banner',
     TRIAL_END = 'trial-end',
     BREACH_ALERTS = 'breach-alerts',
+    SUBSCRIPTION_REMINDER_PRIVACY = 'subscription-reminder-privacy',
+    SUBSCRIPTION_REMINDER_PRODUCTIVITY = 'subscription-reminder-productivity',
 }
 
 export enum CALENDAR_UPSELL_PATHS {
