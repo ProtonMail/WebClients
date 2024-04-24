@@ -1,0 +1,173 @@
+@use "sass:map";
+@import '~@proton/styles/scss/lib';
+
+.transfers-manager {
+	position: fixed;
+	inset-inline-end: 0;
+	inset-block-end: 0;
+	z-index: map.get($z-indexes, 'transfer-manager');
+	box-shadow: var(--shadow-lifted);
+	color: var(--text-norm);
+	transition: 0.15s cubic-bezier(0.22, 1, 0.36, 1);
+	background: var(--background-norm);
+
+	@include media('height<=xsmall') {
+		max-block-size: 100%;
+	}
+
+	@include media('<=small') {
+		inset-inline-start: 0;
+		inset-block-end: 0;
+	}
+
+	@include media('>small') {
+		inline-size: 60%;
+		max-inline-size: 50em;
+		margin-inline-end: inherit;
+
+		// Make rounded border for both manager and header to not include
+		// background color of the manager in the corner.
+		&,
+		&-heading {
+			border-start-start-radius: var(--border-radius-md);
+			border-start-end-radius: 0;
+			border-end-start-radius: 0;
+			border-end-end-radius: 0;
+		}
+	}
+
+	&-heading {
+		background: var(--background-strong);
+		color: var(--text-norm);
+	}
+
+	&-heading-tooltip {
+		align-self: stretch;
+		justify-content: stretch;
+		align-items: stretch;
+
+		&--isDisabled {
+			pointer-events: none;
+		}
+	}
+
+	&-list {
+		background-color: var(--background-norm);
+		color: var(--text-norm);
+		transition: inherit;
+		block-size: 100%;
+		margin-block-start: -0.5em;
+	}
+
+	&--minimized &-list,
+	&--minimized &-list-placeholder {
+		max-block-size: 0;
+		visibility: hidden;
+	}
+
+	&--minimized {
+		@include media('height<=xsmall') {
+			max-block-size: initial;
+			block-size: initial;
+		}
+	}
+
+	&-list-item {
+		display: grid;
+		grid-template-rows: 1fr auto;
+		grid-template-areas: 'name size status controls' 'progress progress progress progress';
+		gap: 1em;
+		align-items: center;
+		block-size: 5em; // To avoid height blinking on status changing
+		@extend .border-bottom;
+
+		@include media('<=small') {
+			grid-template-columns: 4fr minmax(5em, 2fr) 2.5em minmax(4.5em, 1fr);
+		}
+
+		@include media('>small') {
+			grid-template-columns: 4fr 2.5fr minmax(6em, 2fr) minmax(4.5em, 1fr);
+		}
+
+		@include media('height>xsmall') {
+			&:last-child {
+				border-block-end: none;
+			}
+		}
+
+		@each $place in (name, size, status, controls, progress) {
+			&-#{$place} {
+				grid-area: $place;
+			}
+
+			@if $place != controls and $place != progress {
+				&--canceled &-#{$place} {
+					opacity: 0.5;
+				}
+			}
+		}
+
+		&-icon {
+			@include media('<=#{em(420, 16)}') {
+				display: none;
+			}
+		}
+
+		&-status {
+			white-space: nowrap;
+			font-variant-numeric: tabular-nums;
+
+			@include media('<=small') {
+				svg {
+					margin: 0;
+				}
+			}
+		}
+
+		&-size {
+			white-space: nowrap;
+			font-variant-numeric: tabular-nums;
+		}
+
+		&-controls-button {
+			padding: 0.375em;
+
+			& + & {
+				margin-inline-start: 0.5em;
+			}
+		}
+
+		.transfers-manager-list-item-controls-button {
+			opacity: 0;
+			will-change: opacity;
+		}
+
+		&:hover {
+			.transfers-manager-list-item-controls-button {
+				opacity: 1;
+			}
+		}
+	}
+
+	&-toolbar {
+		background-color: var(--background-weak);
+	}
+
+	&-list-placeholder {
+		background-color: var(--background-norm);
+	}
+
+	&-controls {
+		display: grid;
+		grid-template-columns: minmax(min-content, 1fr) auto;
+		grid-template-areas: 'status controls';
+		column-gap: 1em;
+		align-items: center;
+		block-size: 2em;
+	}
+
+	&-header-buttons {
+		position: absolute;
+		inset-inline-end: 0;
+	}
+}

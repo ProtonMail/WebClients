@@ -1,0 +1,40 @@
+diff --git a/packages/drive-store/store/_actions/useActions.tsx b/packages/drive-store/store/_actions/useActions.tsx
+index a16fac926e..00d8a1575d 100644
+--- a/packages/drive-store/store/_actions/useActions.tsx
++++ b/packages/drive-store/store/_actions/useActions.tsx
+@@ -11,7 +11,7 @@ import { ValidationError } from '../../utils/errorHandling/ValidationError';
+ import useDevicesActions from '../_devices/useDevicesActions';
+ import { useDownload } from '../_downloads';
+ import { useLinkActions, useLinksActions } from '../_links';
+-import { usePhotos } from '../_photos';
++// import { usePhotos } from '../_photos';
+ import { useShareUrl } from '../_shares';
+ import useUploadFile from '../_uploads/UploadProvider/useUploadFile';
+ import { TransferConflictStrategy } from '../_uploads/interface';
+@@ -42,7 +42,7 @@ export default function useActions() {
+     const links = useLinksActions();
+     const shareUrl = useShareUrl();
+     const devicesActions = useDevicesActions();
+-    const { removePhotosFromCache } = usePhotos();
++    // const { removePhotosFromCache } = usePhotos();
+ 
+     const createFolder = async (
+         abortSignal: AbortSignal,
+@@ -220,7 +220,7 @@ export default function useActions() {
+ 
+         // This is a bit ugly, but the photo linkId cache is not connected
+         // very well to the rest of our state.
+-        removePhotosFromCache(result.successes);
++        // removePhotosFromCache(result.successes);
+ 
+         const undoAction = async () => {
+             const linkIdsPerParentId = Object.entries(result.originalParentIds).reduce(
+@@ -266,7 +266,7 @@ export default function useActions() {
+ 
+         // This is a bit ugly, but the photo linkId cache is not connected
+         // very well to the rest of our state.
+-        removePhotosFromCache(result.successes);
++        // removePhotosFromCache(result.successes);
+ 
+         const undoAction = async () => {
+             const linksToUndo = result.successes
