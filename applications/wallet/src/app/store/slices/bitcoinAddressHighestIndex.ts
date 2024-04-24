@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { isBefore, sub } from 'date-fns';
+import { add, isBefore } from 'date-fns';
 
 import { ModelState } from '@proton/account';
 import { createAsyncModelThunk, handleAsyncModel } from '@proton/redux-utilities';
@@ -53,7 +53,9 @@ const modelThunk = createAsyncModelThunk<
         const [, walletAccountId] = options?.thunkArg;
 
         const highestIndexValue = state[walletAccountId];
-        if (highestIndexValue && isBefore(new Date(highestIndexValue.time), sub(new Date(), { minutes: 10 }))) {
+
+        const validUntil = highestIndexValue && add(new Date(highestIndexValue.time), { minutes: 10 });
+        if (validUntil && isBefore(new Date(), validUntil)) {
             return { value: state, error: undefined };
         }
 

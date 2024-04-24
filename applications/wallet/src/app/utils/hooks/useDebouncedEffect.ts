@@ -4,7 +4,7 @@ import generateUID from '@proton/atoms/generateUID';
 
 import useDebouncedCallback from './useDebouncedCallback';
 
-function useDebounceEffect(effect: EffectCallback, deps?: DependencyList, wait = 500) {
+export const useDebounceEffect = (effect: EffectCallback, deps?: DependencyList, wait = 500) => {
     const isMounted = useRef(false);
     const [flag, setFlag] = useState({});
 
@@ -19,12 +19,18 @@ function useDebounceEffect(effect: EffectCallback, deps?: DependencyList, wait =
 
     useEffect(() => {
         if (isMounted.current) {
-            return effect();
+            const cleanup = effect();
+
+            return () => {
+                debounced.cancel();
+                return cleanup?.();
+            };
         } else {
             isMounted.current = true;
+            return () => {
+                debounced.cancel();
+            };
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [flag]);
-}
-
-export default useDebounceEffect;
+};

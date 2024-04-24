@@ -2,7 +2,7 @@ import { WasmAccount, WasmWallet } from '@proton/andromeda';
 
 export type AccountWithChainData = {
     account: WasmAccount;
-    syncId: string;
+    syncId: string | null;
     scriptType: number;
     derivationPath: string;
 };
