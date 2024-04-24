@@ -18,7 +18,7 @@ const AutoDeleteUpsellModal = ({ modalProps }: Props) => {
         component: UPSELL_COMPONENT.MODAL,
         feature: MAIL_UPSELL_PATHS.AUTO_DELETE,
     });
-    const upsellConfig = useUpsellConfig(upsellRef, SUBSCRIPTION_STEPS.PLAN_SELECTION);
+    const upsellConfig = useUpsellConfig({ upsellRef, step: SUBSCRIPTION_STEPS.PLAN_SELECTION });
 
     return (
         <UpsellModal

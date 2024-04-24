@@ -20,7 +20,7 @@ const FiltersUpsellModal = ({ modalProps, onCloseCustomAction, isSettings = fals
         feature: MAIL_UPSELL_PATHS.UNLIMITED_FILTERS,
         isSettings,
     });
-    const upsellConfig = useUpsellConfig(upsellRef);
+    const upsellConfig = useUpsellConfig({ upsellRef });
 
     return (
         <UpsellModal
