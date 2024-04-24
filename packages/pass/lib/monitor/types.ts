@@ -6,3 +6,5 @@ export enum AddressType {
     ALIAS = 'ALIAS',
     CUSTOM = 'CUSTOM',
 }
+
+export type AddressVerify = { emailId: CustomAddressID; code: string };

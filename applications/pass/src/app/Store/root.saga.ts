@@ -44,6 +44,8 @@ import breachesAlias from '@proton/pass/store/sagas/monitor/breaches.alias.saga'
 import breachesCustom from '@proton/pass/store/sagas/monitor/breaches.custom.saga';
 import breachesProton from '@proton/pass/store/sagas/monitor/breaches.proton.saga';
 import breaches from '@proton/pass/store/sagas/monitor/breaches.saga';
+import customAddressAdd from '@proton/pass/store/sagas/monitor/custom-address.add.saga';
+import customAddressVerify from '@proton/pass/store/sagas/monitor/custom-address.verify';
 import sentinelToggle from '@proton/pass/store/sagas/monitor/sentinel-toggle.saga';
 import organizationSettingsEdit from '@proton/pass/store/sagas/organization/organization-settings-edit.saga';
 import organizationSettingsGet from '@proton/pass/store/sagas/organization/organization-settings.saga';
@@ -73,6 +75,8 @@ export function* rootSaga(options: RootSagaOptions) {
             breachesCustom,
             breachesProton,
             cache,
+            customAddressAdd,
+            customAddressVerify,
             events,
             featureFlags,
             hydrate,
