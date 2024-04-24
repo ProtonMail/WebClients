@@ -9,6 +9,7 @@ import { ItemViewPanel } from '@proton/pass/components/Layout/Panel/ItemViewPane
 import { ItemReport } from '@proton/pass/components/Monitor/Item/ItemReport';
 import type { ItemViewProps } from '@proton/pass/components/Views/types';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
+import { isHealthCheckSkipped } from '@proton/pass/lib/items/item.predicates';
 import { PassFeature } from '@proton/pass/types/api/features';
 
 export const LoginView: FC<ItemViewProps<'login'>> = (itemViewProps) => {
@@ -17,10 +18,11 @@ export const LoginView: FC<ItemViewProps<'login'>> = (itemViewProps) => {
     const modifiedCount = revisionNumber - 1;
 
     const monitorEnabled = useFeatureFlag(PassFeature.PassMonitor);
+    const showReport = !isHealthCheckSkipped(revision);
 
     return (
         <ItemViewPanel type="login" {...itemViewProps}>
-            {monitorEnabled && <ItemReport shareId={shareId} itemId={itemId} />}
+            {monitorEnabled && showReport && <ItemReport shareId={shareId} itemId={itemId} />}
             <LoginContent revision={revision} />
 
             <ItemHistoryStats

@@ -14,6 +14,7 @@ import { useNavigation } from '@proton/pass/components/Navigation/NavigationProv
 import { getItemRoute, getLocalPath, maybeTrash } from '@proton/pass/components/Navigation/routing';
 import { VaultSelectMode } from '@proton/pass/components/Vault/VaultSelect';
 import type { ItemViewProps } from '@proton/pass/components/Views/types';
+import { isHealthCheckSkipped } from '@proton/pass/lib/items/item.predicates';
 import { getItemActionId } from '@proton/pass/lib/items/item.utils';
 import {
     itemCreationDismiss,
@@ -22,6 +23,7 @@ import {
     itemEditIntent,
     itemPinIntent,
     itemUnpinIntent,
+    setItemFlags,
 } from '@proton/pass/store/actions';
 import selectFailedAction from '@proton/pass/store/optimistic/selectors/select-failed-action';
 import {
@@ -106,6 +108,11 @@ export const ItemView: FC = () => {
 
     const handlePinClick = () => dispatch((item.pinned ? itemUnpinIntent : itemPinIntent)({ shareId, itemId }));
 
+    const handleToggleFlags = () => {
+        const SkipHealthCheck = !isHealthCheckSkipped(item);
+        dispatch(setItemFlags.intent({ shareId, itemId, SkipHealthCheck }));
+    };
+
     const ItemTypeViewComponent = itemTypeViewMap[item.data.type] as FC<ItemViewProps>;
 
     return (
@@ -114,17 +121,18 @@ export const ItemView: FC = () => {
                 key={item.itemId}
                 vault={vault}
                 revision={item}
+                handleDeleteClick={handleDelete}
+                handleDismissClick={handleDismiss}
                 handleEditClick={handleEdit}
                 handleHistoryClick={handleHistory}
-                handleRetryClick={handleRetry}
-                handleMoveToTrashClick={handleTrash}
-                handleMoveToVaultClick={handleMove}
-                handleDismissClick={handleDismiss}
-                handleRestoreClick={handleRestore}
-                handleDeleteClick={handleDelete}
                 handleInviteClick={handleInviteClick}
                 handleManageClick={handleVaultManage}
+                handleMoveToTrashClick={handleTrash}
+                handleMoveToVaultClick={handleMove}
                 handlePinClick={handlePinClick}
+                handleRestoreClick={handleRestore}
+                handleRetryClick={handleRetry}
+                handleToggleFlagsClick={handleToggleFlags}
             />
 
             <VaultInviteFromItemModal
