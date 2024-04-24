@@ -14,6 +14,7 @@ export const itemsBulkMoveRequest = () => `items::bulk::move`;
 export const itemsBulkTrashRequest = () => `items::bulk::trash`;
 export const itemsBulkDeleteRequest = () => `items::bulk::delete`;
 export const itemsBulkRestoreRequest = () => `items::bulk::restore`;
+export const itemUpdateFlagsRequest = (shareId: string, itemId: string) => `item::flags::update${shareId + itemId}`;
 
 export const vaultCreateRequest = (optimisticId: string) => `vault::create::${optimisticId}`;
 export const vaultEditRequest = (shareId: string) => `vault::edit::${shareId}`;
