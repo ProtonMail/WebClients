@@ -1,13 +1,14 @@
 import { ComponentPropsWithoutRef } from 'react';
 
 import { APP_NAMES } from '@proton/shared/lib/constants';
+import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 
 import useOfferConfig from '../../containers/offers/hooks/useOfferConfig';
 import TopNavbarOffer from './TopNavbarOffer';
 import TopNavbarUpgradeButton from './TopNavbarUpgradeButton';
 
 interface Props {
-    offerProps?: Omit<ComponentPropsWithoutRef<typeof TopNavbarOffer>, 'offerConfig'>;
+    offerProps?: Omit<ComponentPropsWithoutRef<typeof TopNavbarOffer>, 'offerConfig' | 'app'>;
     app: APP_NAMES;
 }
 
@@ -19,7 +20,8 @@ const TopNavbarUpsell = ({ offerProps, app }: Props) => {
     }
 
     if (offerConfig) {
-        return <TopNavbarOffer {...offerProps} offerConfig={offerConfig} />;
+        // We need to ingore the onboarding for the desktop app since we don't mark the welcome flag as done in the app
+        return <TopNavbarOffer {...offerProps} offerConfig={offerConfig} app={app} ignoreOnboarding={isElectronApp} />;
     }
 
     return <TopNavbarUpgradeButton app={app} />;

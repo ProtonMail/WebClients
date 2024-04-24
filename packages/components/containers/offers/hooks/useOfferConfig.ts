@@ -24,8 +24,10 @@ import { blackFriday2023VPNYearlyConfig, useBlackFriday2023VPNYearly } from '../
 import { goUnlimited2022Config, useGoUnlimited2022 } from '../operations/goUnlimited2022';
 import { mailTrial2023Config, useMailTrial2023 } from '../operations/mailTrial2023';
 import { mailTrial2024Config, useMailTrial2024 } from '../operations/mailTrial2024';
+import { subscriptionReminderConfig, useSubscriptionReminder } from '../operations/subscriptionReminder';
 
 const configs: Record<OfferId, OfferConfig> = {
+    'subscription-reminder': subscriptionReminderConfig,
     'go-unlimited-2022': goUnlimited2022Config,
     'mail-trial-2023': mailTrial2023Config,
     'mail-trial-2024': mailTrial2024Config,
@@ -47,6 +49,8 @@ const useOfferConfig = (): [OfferConfig | undefined, boolean] => {
     // Preload FF to avoid single API requests
     useFeatures([FeatureCode.Offers, ...OFFERS_FEATURE_FLAGS]);
 
+    const subscriptionReminder = useSubscriptionReminder();
+
     const goUnlimited2022 = useGoUnlimited2022();
     const mailTrial2023 = useMailTrial2023();
     const mailTrial2024 = useMailTrial2024();
@@ -63,6 +67,7 @@ const useOfferConfig = (): [OfferConfig | undefined, boolean] => {
 
     // Offer order matters
     const allOffers: Operation[] = [
+        subscriptionReminder,
         blackFriday2023InboxFree,
         blackFriday2023InboxMail,
         blackFriday2023InboxUnlimited,
@@ -78,9 +83,15 @@ const useOfferConfig = (): [OfferConfig | undefined, boolean] => {
         mailTrial2024,
     ];
 
-    const validOffer: Operation | undefined = allOffers.find((offer) => !offer.isLoading && offer.isValid);
+    const validOffers: Operation[] | undefined = allOffers.filter((offer) => !offer.isLoading && offer.isValid);
     const isLoading = allOffers.some((offer) => offer.isLoading);
 
+    if (validOffers.length === 1) {
+        return [validOffers[0].config, isLoading];
+    }
+
+    // The subscription reminder offer could be valid but we want to show the next valid offer to avoid clashes
+    const validOffer: Operation | undefined = validOffers.find((offer) => offer.config.ID !== 'subscription-reminder');
     return [validOffer?.config, isLoading];
 };
 
