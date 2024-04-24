@@ -8,7 +8,6 @@ import {
     AppsDropdown,
     DropdownMenu,
     DropdownMenuButton,
-    FeatureCode,
     Icon,
     Sidebar,
     SidebarDrawerItems,
@@ -21,7 +20,6 @@ import {
     Tooltip,
     useApi,
     useEventManager,
-    useFeature,
     useModalState,
     useUser,
 } from '@proton/components';
@@ -71,7 +69,6 @@ const CalendarSidebar = ({
     const [user] = useUser();
 
     const [loadingVisibility, withLoadingVisibility] = useLoadingByKey();
-    const holidaysCalendarsEnabled = !!useFeature(FeatureCode.HolidaysCalendars)?.feature?.Value;
 
     const [calendarModal, setIsCalendarModalOpen, renderCalendarModal] = useModalState();
     const [holidaysCalendarModal, setIsHolidaysCalendarModalOpen, renderHolidaysCalendarModal] = useModalState();
@@ -188,14 +185,9 @@ const CalendarSidebar = ({
                                         >
                                             {c('Action').t`Create calendar`}
                                         </DropdownMenuButton>
-                                        {holidaysCalendarsEnabled && (
-                                            <DropdownMenuButton
-                                                className="text-left"
-                                                onClick={handleAddHolidaysCalendar}
-                                            >
-                                                {c('Action').t`Add public holidays`}
-                                            </DropdownMenuButton>
-                                        )}
+                                        <DropdownMenuButton className="text-left" onClick={handleAddHolidaysCalendar}>
+                                            {c('Action').t`Add public holidays`}
+                                        </DropdownMenuButton>
                                         <DropdownMenuButton
                                             className="text-left"
                                             onClick={handleCreateSubscribedCalendar}
