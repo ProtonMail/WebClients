@@ -23,6 +23,8 @@ const SERIALIZED_THEME_MODE = {
 } as const satisfies Record<ThemeModeSetting, string>;
 
 export type SerializedTheme = {
+    LightTheme?: ThemeTypes;
+    DarkTheme?: ThemeTypes;
     mode?: (typeof SERIALIZED_THEME_MODE)[ThemeModeSetting];
 };
 
@@ -35,18 +37,32 @@ const DEFAULT_THEME: ThemeSetting = {
 export function getTheme() {
     const settings = getSettings();
 
-    if (!settings.theme?.mode) {
+    if (!settings.theme) {
         return DEFAULT_THEME;
     }
 
+    const theme = { ...DEFAULT_THEME };
+
     switch (settings.theme.mode) {
-        case "auto":
-            return DEFAULT_THEME;
         case "dark":
-            return { ...DEFAULT_THEME, Mode: ThemeModeSetting.Dark };
+            theme.Mode = ThemeModeSetting.Dark;
+            break;
         case "light":
-            return { ...DEFAULT_THEME, Mode: ThemeModeSetting.Light };
+            theme.Mode = ThemeModeSetting.Light;
+            break;
+        default:
+            break;
     }
+
+    if (settings.theme.LightTheme && settings.theme.LightTheme in ThemeTypes) {
+        theme.LightTheme = settings.theme.LightTheme;
+    }
+
+    if (settings.theme.DarkTheme && settings.theme.DarkTheme in ThemeTypes) {
+        theme.DarkTheme = settings.theme.DarkTheme;
+    }
+
+    return theme;
 }
 
 export function setTheme(theme: ThemeSetting) {
@@ -56,8 +72,15 @@ export function setTheme(theme: ThemeSetting) {
         nativeTheme.themeSource = SERIALIZED_THEME_MODE[theme.Mode];
     }
 
+    const lightTheme = theme.LightTheme in ThemeTypes ? theme.LightTheme : DEFAULT_THEME.LightTheme;
+    const darkTheme = theme.DarkTheme in ThemeTypes ? theme.DarkTheme : DEFAULT_THEME.DarkTheme;
+
     saveSettings({
         ...getSettings(),
-        theme: { mode: SERIALIZED_THEME_MODE[theme.Mode] },
+        theme: {
+            LightTheme: lightTheme,
+            DarkTheme: darkTheme,
+            mode: SERIALIZED_THEME_MODE[theme.Mode],
+        },
     });
 }
