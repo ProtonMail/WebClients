@@ -1,4 +1,4 @@
-import { useCallback, useMemo } from 'react';
+import { useCallback } from 'react';
 
 import { createHooks } from '@proton/redux-utilities';
 
@@ -6,13 +6,16 @@ import { bitcoinAddressHighestIndexThunk, selectBitcoinAddressHighestIndex } fro
 
 const hooks = createHooks(bitcoinAddressHighestIndexThunk, selectBitcoinAddressHighestIndex);
 
-export const useBitcoinAddressHighestIndex = (walletAccountId: string) => {
-    const [value, loading] = hooks.useValue();
+// FIXME: We don't expose useValue hook on purpose because it doesn't support well maps
+//
+// export const useBitcoinAddressHighestIndex = (walletAccountId: string) => {
+//     const [value, loading] = hooks.useValue();
 
-    return useMemo(() => {
-        return [value?.[walletAccountId]?.index, loading];
-    }, [loading, value, walletAccountId]);
-};
+//     return useMemo(() => {
+//         return [value?.[walletAccountId]?.index, loading];
+//     }, [loading, value, walletAccountId]);
+// };
+
 export const useGetBitcoinAddressHighestIndex = () => {
     const get = hooks.useGet();
     return useCallback(
