@@ -7,8 +7,6 @@ import type {
     BreachUpdateMonitorAddressRequest,
     BreachesGetResponse,
     BreachesResponse,
-    ItemRevisionContentsResponse,
-    ItemUpdateFlagsRequest,
     UpdateUserMonitorStateRequest,
 } from '@proton/pass/types/api/pass';
 import type { SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/interfaces';
@@ -20,14 +18,6 @@ export const toggleSentinel = (value: SETTINGS_PROTON_SENTINEL_STATE) =>
 /** Update PassMonitor settings */
 export const setMonitorSettings = async (data: UpdateUserMonitorStateRequest): Promise<UpdateUserMonitorStateRequest> =>
     (await api({ url: 'pass/v1/user/monitor', method: 'put', data })).Monitor!;
-
-/** Update the item monitor flag */
-export const setItemMonitorFlag = async (
-    shareId: string,
-    itemId: string,
-    data: ItemUpdateFlagsRequest
-): Promise<ItemRevisionContentsResponse> =>
-    (await api({ url: `pass/v1/share/${shareId}/item/${itemId}/flags`, method: 'put', data })).Item!;
 
 /* Get all the breaches for this user (Proton addresses) */
 export const getAllBreaches = async (): Promise<BreachesGetResponse> =>

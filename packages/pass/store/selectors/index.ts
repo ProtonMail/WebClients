@@ -4,6 +4,7 @@ export * from './export';
 export * from './import';
 export * from './items';
 export * from './limits';
+export * from './monitor';
 export * from './onboarding';
 export * from './organization';
 export * from './password';

@@ -11,8 +11,7 @@ import { InfoCard } from '@proton/pass/components/Layout/Card/InfoCard';
 import { useActionRequest } from '@proton/pass/hooks/useActionRequest';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import { sentinelToggle } from '@proton/pass/store/actions';
-import { selectPassPlan } from '@proton/pass/store/selectors';
-import { selectSentinelEnabled } from '@proton/pass/store/selectors/monitor';
+import { selectPassPlan, selectSentinelEnabled } from '@proton/pass/store/selectors';
 import { PROTON_SENTINEL_NAME } from '@proton/shared/lib/constants';
 import { SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/interfaces';
 

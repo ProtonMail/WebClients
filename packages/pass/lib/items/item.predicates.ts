@@ -31,3 +31,5 @@ export const isEditItemDraft = (draft?: Draft): draft is EditDraft => draft?.mod
 export const isNewItemDraft = (draft?: Draft): draft is NewDraft => draft?.mode === 'new';
 
 export const isPinned = ({ pinned }: ItemRevision) => pinned;
+export const isHealthCheckSkipped = ({ flags }: ItemRevision) => flags << 0 === 1;
+export const isEmailBreached = ({ flags }: ItemRevision) => flags << 1 === 1;
