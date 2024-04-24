@@ -44,6 +44,7 @@ export interface SpotlightProps {
     anchorRef?: RefObject<HTMLElement>;
     style?: CSSProperties;
     className?: string;
+    innerClassName?: string;
     size?: 'large';
 }
 
@@ -59,6 +60,7 @@ const Spotlight = ({
     anchorRef: inputAnchorRef,
     style = {},
     className,
+    innerClassName,
     size,
 }: PropsWithChildren<SpotlightProps>) => {
     const [uid] = useState(generateUID('spotlight'));
@@ -140,7 +142,7 @@ const Spotlight = ({
                     onAnimationEnd={handleAnimationEnd}
                 >
                     <div
-                        className={clsx(['spotlight-inner', type && 'flex flex-nowrap items-start'])}
+                        className={clsx(['spotlight-inner', type && 'flex flex-nowrap items-start', innerClassName])}
                         data-testid="spotlight-inner"
                     >
                         {illustrationURL && <img className="shrink-0 mr-6" src={illustrationURL} alt="" />}
