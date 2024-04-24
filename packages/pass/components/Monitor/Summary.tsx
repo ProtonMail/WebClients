@@ -34,7 +34,7 @@ import './Summary.scss';
 export const Summary: FC = () => {
     const { onLink } = usePassCore();
     const { navigate } = useNavigation();
-    const { breaches, duplicates, insecure, missing2FAs } = useMonitor();
+    const { breaches, duplicates, insecure, missing2FAs, excluded } = useMonitor();
     const [upsellModalOpen, setUpsellModalOpen] = useState(false);
 
     const learnMore: LearnMoreProps[] = useMemo(
@@ -90,7 +90,7 @@ export const Summary: FC = () => {
                             <div className="pass-monitor-grid gap-4">
                                 <ActionCard
                                     disabled={insecure.count === 0}
-                                    icon="exclamation-filled"
+                                    icon={duplicates.count > 0 ? 'exclamation-filled' : 'checkmark'}
                                     onClick={() => navigate(getLocalPath('monitor/weak'))}
                                     pillLabel={insecure.count > 0 ? insecure.count : null}
                                     subtitle={c('Description').t`Change your passwords`}
@@ -101,7 +101,7 @@ export const Summary: FC = () => {
                                     disabled={duplicates.count === 0}
                                     icon={duplicates.count > 0 ? 'exclamation-filled' : 'checkmark'}
                                     onClick={() => navigate(getLocalPath('monitor/duplicates'))}
-                                    pillLabel={duplicates.count}
+                                    pillLabel={duplicates.count > 0 ? duplicates.count : null}
                                     subtitle={c('Description').t`Create unique passwords`}
                                     title={c('Title').t`Reused passwords`}
                                     type={duplicates.count > 0 ? 'warning' : 'success'}
@@ -114,10 +114,11 @@ export const Summary: FC = () => {
                                     title={c('Title').t`Missing two-factor authentication`}
                                 />
                                 <ActionCard
+                                    disabled={excluded.count === 0}
+                                    onClick={() => navigate(getLocalPath('monitor/excluded'))}
+                                    pillLabel={excluded.count > 0 ? excluded.count : null}
                                     title={c('Title').t`Excluded items`}
                                     subtitle={c('Description').t`These items remain at risk`}
-                                    pillLabel={17}
-                                    disabled
                                 />
                             </div>
                         </section>
