@@ -1,7 +1,7 @@
 import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
 import { c } from 'ttag';
 
-import { selectItemByShareIdAndId, selectPasskeys } from '@proton/pass/store/selectors';
+import { selectItem, selectPasskeys } from '@proton/pass/store/selectors';
 import { WorkerMessageType } from '@proton/pass/types';
 import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
@@ -27,7 +27,7 @@ export const createPasskeyService = () => {
             if (!selectedPasskey) throw new Error(c('Error').t`Missing passkey`);
 
             const { shareId, itemId } = selectedPasskey;
-            const item = selectItemByShareIdAndId<'login'>(shareId, itemId)(store.getState());
+            const item = selectItem<'login'>(shareId, itemId)(store.getState());
             if (!item) throw new Error(c('Error').t`Unknown item`);
 
             const { passkeys } = item.data.content;

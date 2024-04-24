@@ -12,7 +12,7 @@ import {
     inviteBatchCreateSuccess,
     sharedVaultCreated,
 } from '@proton/pass/store/actions';
-import { selectItemByShareIdAndId, selectPassPlan, selectVaultSharedWithEmails } from '@proton/pass/store/selectors';
+import { selectItem, selectPassPlan, selectVaultSharedWithEmails } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { ItemMoveDTO, ItemRevision, Maybe, Share, ShareType } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
@@ -39,7 +39,7 @@ function* createInviteWorker(
                   const share: Share<ShareType.Vault> = yield createVault({ content: vaultContent });
 
                   const itemToMove: Maybe<ItemRevision> = item
-                      ? yield select(selectItemByShareIdAndId(item.shareId, item.itemId))
+                      ? yield select(selectItem(item.shareId, item.itemId))
                       : undefined;
 
                   const move: Maybe<ItemMoveDTO> =
