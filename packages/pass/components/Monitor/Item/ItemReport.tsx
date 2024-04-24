@@ -4,13 +4,10 @@ import { useSelector } from 'react-redux';
 import { c, msgid } from 'ttag';
 
 import { ActionCard } from '@proton/pass/components/Layout/Card/ActionCard';
-import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
-import { getLocalPath } from '@proton/pass/components/Navigation/routing';
-import { selectItemReport } from '@proton/pass/store/selectors/monitor';
+import { selectItemReport } from '@proton/pass/store/selectors';
 import type { SelectedItem } from '@proton/pass/types';
 
 export const ItemReport: FC<SelectedItem> = (item) => {
-    const { navigate } = useNavigation();
     const report = useSelector(selectItemReport(item));
     const duplicatesCount = report.password.duplicates.length;
 
@@ -19,7 +16,6 @@ export const ItemReport: FC<SelectedItem> = (item) => {
             {duplicatesCount > 1 && (
                 <div className="py-4">
                     <ActionCard
-                        onClick={() => navigate(getLocalPath('monitor'))}
                         icon="exclamation-filled"
                         title={c('Title').t`Reused passwords`}
                         subtitle={

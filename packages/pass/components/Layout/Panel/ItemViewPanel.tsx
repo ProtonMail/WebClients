@@ -15,7 +15,7 @@ import { VAULT_ICON_MAP } from '@proton/pass/components/Vault/constants';
 import type { ItemViewProps } from '@proton/pass/components/Views/types';
 import { UpsellRef } from '@proton/pass/constants';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
-import { isPinned, isTrashed } from '@proton/pass/lib/items/item.predicates';
+import { isHealthCheckSkipped, isPinned, isTrashed } from '@proton/pass/lib/items/item.predicates';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import { isVaultMemberLimitReached } from '@proton/pass/lib/vaults/vault.predicates';
 import { itemPinRequest, itemUnpinRequest } from '@proton/pass/store/actions/requests';
@@ -53,6 +53,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
     handlePinClick,
     handleRestoreClick,
     handleRetryClick,
+    handleToggleFlagsClick,
 }) => {
     const { shareId, itemId, data, optimistic, failed } = revision;
     const { name } = data.metadata;
@@ -64,6 +65,8 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
     const sharingEnabled = useFeatureFlag(PassFeature.PassSharingV1);
     const pinningEnabled = useFeatureFlag(PassFeature.PassPinningV1);
     const historyEnabled = useFeatureFlag(PassFeature.PassItemHistoryV1);
+    const monitorEnabled = useFeatureFlag(PassFeature.PassMonitor);
+    const healthCheckSkipped = isHealthCheckSkipped(revision);
 
     const hasMultipleVaults = vaults.length > 1;
     const { shareRoleId, shared } = vault;
@@ -75,6 +78,23 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
     const pinInFlight = useSelector(selectRequestInFlight(itemPinRequest(shareId, itemId)));
     const unpinInFlight = useSelector(selectRequestInFlight(itemUnpinRequest(shareId, itemId)));
     const canTogglePinned = !(pinInFlight || unpinInFlight);
+
+    const monitorActions = (
+        <>
+            {monitorEnabled && (
+                <DropdownMenuButton
+                    disabled={optimistic}
+                    onClick={handleToggleFlagsClick}
+                    icon={healthCheckSkipped ? 'eye' : 'eye-slash'}
+                    label={
+                        healthCheckSkipped
+                            ? c('Action').t`Include in monitoring`
+                            : c('Action').t`Exclude from monitoring`
+                    }
+                />
+            )}
+        </>
+    );
 
     return (
         <Panel
@@ -115,6 +135,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                                         icon="arrows-rotate"
                                         disabled={sharedReadOnly}
                                     />
+                                    {monitorActions}
                                     <DropdownMenuButton
                                         onClick={handleDeleteClick}
                                         label={c('Action').t`Delete permanently`}
@@ -214,7 +235,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                                         icon={'clock-rotate-left'}
                                     />
                                 )}
-
+                                {monitorActions}
                                 <DropdownMenuButton
                                     onClick={handleMoveToTrashClick}
                                     label={c('Action').t`Move to Trash`}
