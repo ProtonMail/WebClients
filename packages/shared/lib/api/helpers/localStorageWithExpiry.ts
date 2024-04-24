@@ -28,6 +28,16 @@ const localStorageWithExpiry = {
     deleteData: (key: string): void => {
         window.localStorage.removeItem(key);
     },
+
+    deleteDataIfExpired: (key: string): void => {
+        const storedValue = window.localStorage.getItem(key);
+        if (storedValue) {
+            const { expiresAt }: StoredItem = JSON.parse(storedValue);
+            if (expiresAt < Date.now()) {
+                window.localStorage.removeItem(key);
+            }
+        }
+    },
 };
 
 export default localStorageWithExpiry;
