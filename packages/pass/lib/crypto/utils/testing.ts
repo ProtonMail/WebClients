@@ -23,7 +23,7 @@ export function releaseCryptoProxy() {
 }
 
 export function randomKey(): Promise<PrivateKeyReference> {
-    return CryptoProxy.generateKey({ userIDs: [{ name: 'TestKey', email: 'test@proton.ch' }], curve: 'ed25519' });
+    return CryptoProxy.generateKey({ userIDs: [{ name: 'TestKey', email: 'test@proton.ch' }] });
 }
 
 export const TEST_KEY_PASSWORD = 'p4ssphr4se';
