@@ -559,7 +559,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                                 labels={tableLabel}
                                 className={clsx('align-top', isInvitationPending && 'color-weak')}
                             >
-                                <TableCell style={{ verticalAlign: 'baseline' }}>
+                                <TableCell className="align-baseline">
                                     <div className="flex items-center gap-3">
                                         <Avatar className="shrink-0 text-rg" color="weak">
                                             {getInitials(memberName)}
@@ -603,9 +603,8 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                                     </div>
                                 </TableCell>
                                 <TableCell
-                                    className="text-cut"
+                                    className="text-cut align-baseline"
                                     data-testid="users-and-addresses-table:memberRole"
-                                    style={{ verticalAlign: 'baseline' }}
                                 >
                                     <div className="flex flex-column flex-nowrap">
                                         <MemberRole member={member} />
@@ -618,7 +617,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                                         )}
                                     </div>
                                 </TableCell>
-                                <TableCell style={{ verticalAlign: 'baseline' }}>
+                                <TableCell className="align-baseline">
                                     <div>
                                         {member.State && member.State === MEMBER_STATE.STATUS_INVITED ? (
                                             <p className="m-0 text-ellipsis">{member.Name}</p>
@@ -628,26 +627,30 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                                     </div>
                                 </TableCell>
                                 {showFeaturesColumn && (
-                                    <TableCell>
+                                    <TableCell className="align-baseline">
                                         <MemberFeatures member={member} organization={organization} />
                                     </TableCell>
                                 )}
-                                <TableCell style={{ verticalAlign: 'baseline' }}>
-                                    <MemberActions
-                                        user={user}
-                                        organizationKey={organizationKey}
-                                        onAddAddress={canAddAddress ? (member) => handleAddAddress(member) : undefined}
-                                        onEdit={handleEditUser}
-                                        onDelete={handleDeleteUser}
-                                        onSetup={handleSetupUser}
-                                        onRevoke={handleRevokeUserSessions}
-                                        onLogin={handleLoginUser}
-                                        onChangePassword={handleChangeMemberPassword}
-                                        member={member}
-                                        addresses={memberAddresses}
-                                        organization={organization}
-                                        disableMemberSignIn={hasVpnOrPassB2BPlan}
-                                    />
+                                <TableCell className="align-baseline">
+                                    <div>
+                                        <MemberActions
+                                            user={user}
+                                            organizationKey={organizationKey}
+                                            onAddAddress={
+                                                canAddAddress ? (member) => handleAddAddress(member) : undefined
+                                            }
+                                            onEdit={handleEditUser}
+                                            onDelete={handleDeleteUser}
+                                            onSetup={handleSetupUser}
+                                            onRevoke={handleRevokeUserSessions}
+                                            onLogin={handleLoginUser}
+                                            onChangePassword={handleChangeMemberPassword}
+                                            member={member}
+                                            addresses={memberAddresses}
+                                            organization={organization}
+                                            disableMemberSignIn={hasVpnOrPassB2BPlan}
+                                        />
+                                    </div>
                                 </TableCell>
                             </TableRow>
                         );
