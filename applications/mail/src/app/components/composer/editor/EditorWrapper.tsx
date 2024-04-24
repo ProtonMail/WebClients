@@ -22,7 +22,7 @@ import { getEmbeddedImages } from '../../../helpers/message/messageImages';
 import { MessageState } from '../../../store/messages/messagesTypes';
 import { MessageChange } from '../Composer';
 
-export interface ExternalEditorActions {
+export interface ExternalEditorActions extends Pick<EditorActions, 'getSelectionContent' | 'setSelectionContent'> {
     getContent: () => string;
     setContent: (message: MessageState) => void;
     focus: () => void;
@@ -214,6 +214,8 @@ const EditorWrapper = ({
                 isDisposed: () => editorActionsRef.current?.isDisposed(),
                 showLinkModal: () => editorActionsRef.current?.showModalLink?.(),
                 openEmojiPicker: () => editorActionsRef.current?.openEmojiPicker?.(),
+                getSelectionContent: () => editorActionsRef.current?.getSelectionContent?.(),
+                setSelectionContent: (content) => editorActionsRef.current?.setSelectionContent?.(content),
             };
             onReady(externalActions);
         }
