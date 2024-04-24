@@ -44,6 +44,8 @@ import breachesAlias from './monitor/breaches.alias.saga';
 import breachesCustom from './monitor/breaches.custom.saga';
 import breachesProton from './monitor/breaches.proton.saga';
 import breaches from './monitor/breaches.saga';
+import customAddressAdd from './monitor/custom-address.add.saga';
+import customAddressVerify from './monitor/custom-address.verify';
 import sentinelToggle from './monitor/sentinel-toggle.saga';
 import organizationSettingsEdit from './organization/organization-settings-edit.saga';
 import getOrganizationSettings from './organization/organization-settings.saga';
@@ -72,6 +74,8 @@ export function* workerRootSaga(options: RootSagaOptions) {
             breachesCustom,
             breachesProton,
             cache,
+            customAddressAdd,
+            customAddressVerify,
             events,
             featureFlags,
             getOrganizationSettings,

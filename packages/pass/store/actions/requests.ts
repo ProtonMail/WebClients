@@ -57,6 +57,8 @@ export const organizationSettingsEditRequest = () => `organization::settings::ed
 
 export const sentinelToggleRequest = () => `monitor::sentinel::toggle`;
 export const breachesRequest = () => `monitor::breaches`;
-export const protonBreachRequest = (addressId: string) => `monitor::proton::breach::${addressId}`;
-export const customBreachRequest = (emailId: string) => `monitor::custom::breach::${emailId}`;
-export const aliasBreachRequest = (shareId: string, itemId: string) => `monitor::alias::breach::${shareId}::${itemId}`;
+export const protonBreachRequest = (addressId: string) => `monitor::breaches::proton::${addressId}`;
+export const customBreachRequest = (emailId: string) => `monitor::breaches::custom::${emailId}`;
+export const aliasBreachRequest = (shareId: string, itemId: string) => `monitor::breaches::alias::${shareId + itemId}`;
+export const monitorCustomAddressRequest = (email: string) => `monitor::add::custom::${email}`;
+export const verifyCustomAddressRequest = (emailId: string) => `monitor::verify::custom::${emailId}`;
