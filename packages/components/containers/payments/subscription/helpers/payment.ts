@@ -19,6 +19,20 @@ import {
     UserModel,
 } from '@proton/shared/lib/interfaces';
 
+export const getVPNPlanToUse = ({
+    planIDs,
+}: {
+    plansMap: PlansMap;
+    planIDs: PlanIDs | undefined;
+    cycle: CYCLE | undefined;
+}) => {
+    // If the user is on the vpn2022 plan, we keep showing that
+    if (planIDs?.[PLANS.VPN]) {
+        return PLANS.VPN;
+    }
+    return PLANS.VPN2024;
+};
+
 export const getCurrency = (
     user: UserModel | undefined,
     subscription: Subscription | FreeSubscription | undefined,
@@ -44,6 +58,8 @@ export const getDefaultSelectedProductPlans = ({
     appName,
     plan,
     planIDs,
+    plansMap,
+    cycle,
 }: {
     appName: ProductParam;
     plan?: string;
@@ -53,7 +69,7 @@ export const getDefaultSelectedProductPlans = ({
 }) => {
     let defaultB2CPlan = PLANS.MAIL;
     if (appName === APPS.PROTONVPN_SETTINGS) {
-        defaultB2CPlan = PLANS.VPN2024;
+        defaultB2CPlan = getVPNPlanToUse({ plansMap, planIDs, cycle });
     } else if (appName === APPS.PROTONDRIVE) {
         defaultB2CPlan = PLANS.DRIVE;
     } else if (appName === APPS.PROTONPASS) {
