@@ -34,6 +34,7 @@ export const organizationThemeListener = (startListening: SharedStartListening<O
             const organizationThemeFromCookie = getOrganizationThemeFromCookie();
             let logoURL = '';
             let orgName = '';
+            let access = false;
             const authentication = listenerApi.extra.authentication;
             const config = listenerApi.extra.config;
 
@@ -44,11 +45,18 @@ export const organizationThemeListener = (startListening: SharedStartListening<O
                     API_URL: config.API_URL,
                 });
                 orgName = organizationThemeFromCookie.Name;
+                access = true;
+            } else {
+                const state = listenerApi.getState();
+                const organization = selectOrganization(state).value;
+                if (organization) {
+                    access = getHasAccess(organization);
+                }
             }
 
             listenerApi.dispatch(
                 organizationThemeSlice.actions.set({
-                    access: true,
+                    access,
                     name: orgName,
                     showName: true,
                     logoURL,
