@@ -447,11 +447,11 @@
       "Not now": [
         "Nicht jetzt"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME }-Einstellungen öffnen"
@@ -5768,6 +5768,11 @@
         "Dein Abonnement ist beendet. ${ cta } und um Datenverlust zu vermeiden."
       ]
     },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "${ reason } aktivieren"
+      ]
+    },
     "Mail import summary": {
       "Import all messages from ${ itemsToImportCount } folder and label them as": [
         "Alle Nachrichten aus ${ itemsToImportCount } Ordner importieren und hinzufügen zur Kategorie",
@@ -6854,6 +6859,12 @@
       ]
     },
     "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } wurde deaktiviert."
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } wurde aktiviert."
+      ],
       "Contact group created": [
         "Kontaktgruppe erstellt"
       ],
@@ -8158,6 +8169,26 @@
         "Für"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB Speicherplatz"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatische E-Mail-Weiterleitung ${ strongText }"
+      ],
+      "Desktop app": [
+        "Desktop-App"
+      ],
+      "Short @pm.me email address": [
+        "Kurze @pm.me-E-Mail-Adresse"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "We don't sell your data": [
+        "Wir verkaufen deine Daten nicht"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Bist du sicher?"
@@ -8986,6 +9017,9 @@
       ],
       "You have invited participants with equivalent emails": [
         "Du hast Teilnehmer mit entsprechenden E-Mails eingeladen"
+      ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Deine kostenlose Testversion von ${ planName } endet am ${ textDate }."
       ],
       "Your account is protected": [
         "Dein Konto ist geschützt"

@@ -447,11 +447,11 @@
       "Not now": [
         "Όχι τώρα"
       ],
-      "OK": [
-        "ΟΚ"
-      ],
       "Ok": [
         "OK"
+      ],
+      "OK": [
+        "ΟΚ"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Ανοίξτε τις ρυθμίσεις του ${ CALENDAR_APP_NAME }"
@@ -5768,6 +5768,11 @@
         "Η συνδρομή σας έχει λήξει. ${ cta } και για την αποφυγή απώλειας δεδομένων."
       ]
     },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Ενεργοποίηση ${ reason }"
+      ]
+    },
     "Mail import summary": {
       "Import all messages from ${ itemsToImportCount } folder and label them as": [
         "Εισαγάγετε όλα τα μηνύματα από ${ itemsToImportCount } φάκελο και επισημάνετέ τα ως",
@@ -6854,6 +6859,12 @@
       ]
     },
     "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } έχει απενεργοποιηθεί"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } έχει ενεργοποιηθεί"
+      ],
       "Contact group created": [
         "Η ομάδα επαφών δημιουργήθηκε"
       ],
@@ -7490,6 +7501,9 @@
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Το Sentinel είναι **ενεργό** και προστατεύει τον λογαριασμό σας."
+      ],
+      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLink }": [
+        "Οι πληροφορίες σας εντοπίστηκαν σε τουλάχιστον μία παραβίαση δεδομένων. Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να δείτε λεπτομέρειες και να προβείτε σε κάποια ενέργεια. ${ learnMoreLink }"
       ]
     },
     "Select files": {
@@ -8986,6 +9000,9 @@
       ],
       "You have invited participants with equivalent emails": [
         "Έχετε προσκαλέσει συμμετέχοντες με ισοδύναμα μηνύματα ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Η δωρεάν δοκιμή του ${ planName } λήγει στις ${ textDate }"
       ],
       "Your account is protected": [
         "Ο λογαριασμός σας προστατεύεται"
