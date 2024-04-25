@@ -2,6 +2,7 @@ import type { WasmPasswordScoreResult } from '@protontech/pass-rust-core';
 import type { Store } from 'redux';
 
 import type { PassCoreService } from '@proton/pass/lib/core/types';
+import { isHealthCheckSkipped } from '@proton/pass/lib/items/item.predicates';
 import { selectLoginItems } from '@proton/pass/store/selectors';
 import { type UniqueItem } from '@proton/pass/types';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
@@ -25,6 +26,7 @@ export const createMonitorService = (core: PassCoreService, store: Store): Monit
 
             for (const item of getLoginItems()) {
                 const { shareId, itemId } = item;
+                if (isHealthCheckSkipped(item)) continue;
                 if (!item.data.content.urls) continue;
 
                 const hasOTP =
@@ -48,6 +50,7 @@ export const createMonitorService = (core: PassCoreService, store: Store): Monit
             let items: UniqueItem[] = [];
 
             for (const item of getLoginItems()) {
+                if (isHealthCheckSkipped(item)) continue;
                 if (item.data.content.password.v) {
                     const { shareId, itemId } = item;
                     const password = deobfuscate(item.data.content.password);
