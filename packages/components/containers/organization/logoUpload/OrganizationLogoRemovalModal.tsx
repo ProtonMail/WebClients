@@ -12,6 +12,7 @@ import {
 } from '@proton/components';
 import { useApi, useEventManager } from '@proton/components/hooks';
 import { useLoading } from '@proton/hooks';
+import metrics, { observeApiError } from '@proton/metrics/index';
 import { deleteOrganizationLogo, updateOrganizationSettings } from '@proton/shared/lib/api/organization';
 import { APP_NAMES } from '@proton/shared/lib/constants';
 import { Organization } from '@proton/shared/lib/interfaces';
@@ -31,10 +32,23 @@ const OrganizationLogoRemovalModal = ({ onClose, organization, app, ...rest }: P
     const { onFormSubmit } = useFormErrors();
 
     const handleSubmit = async () => {
-        await api(deleteOrganizationLogo());
-        await api(updateOrganizationSettings({ ShowName: false }));
-        await call();
-        onClose?.();
+        try {
+            await api(deleteOrganizationLogo());
+            await api(updateOrganizationSettings({ ShowName: false }));
+            await call();
+
+            metrics.core_lightLabelling_logoRemoval_total.increment({
+                status: 'success',
+            });
+
+            onClose?.();
+        } catch (error) {
+            observeApiError(error, (status) =>
+                metrics.core_lightLabelling_logoRemoval_total.increment({
+                    status,
+                })
+            );
+        }
     };
 
     const handleClose = loading ? noop : onClose;

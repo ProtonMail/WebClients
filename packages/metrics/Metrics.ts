@@ -9,6 +9,9 @@ import Counter from './lib/Counter';
 import MetricsBase from './lib/MetricsBase';
 import IMetricsRequestService from './lib/types/IMetricsRequestService';
 import { WebCoreDeleteAccountTotal } from './types/web_core_delete_account_total_v1.schema';
+import { WebCoreLightLabellingImageProcessingTotal } from './types/web_core_lightLabelling_imageProcessing_total_v1.schema';
+import { WebCoreLightLabellingLogoRemovalTotal } from './types/web_core_lightLabelling_logoRemoval_total_v1.schema';
+import { WebCoreLightLabellingLogoUploadTotal } from './types/web_core_lightLabelling_logoUpload_total_v1.schema';
 import { WebCoreSessionRecoveryAbortTotal } from './types/web_core_session_recovery_abort_total_v1.schema';
 import { WebCoreSessionRecoveryCancellationModalLoadTotal } from './types/web_core_session_recovery_cancellation_modal_load_total_v1.schema';
 import { WebCoreSessionRecoveryConsumeTotal } from './types/web_core_session_recovery_consume_total_v1.schema';
@@ -65,6 +68,12 @@ import { WebPaymentsSubscriptionTotal } from './types/web_payments_subscription_
 
 class Metrics extends MetricsBase {
     public core_delete_account_total: Counter<WebCoreDeleteAccountTotal>;
+
+    public core_lightLabelling_imageProcessing_total: Counter<WebCoreLightLabellingImageProcessingTotal>;
+
+    public core_lightLabelling_logoRemoval_total: Counter<WebCoreLightLabellingLogoRemovalTotal>;
+
+    public core_lightLabelling_logoUpload_total: Counter<WebCoreLightLabellingLogoUploadTotal>;
 
     public core_session_recovery_abort_total: Counter<WebCoreSessionRecoveryAbortTotal>;
 
@@ -177,6 +186,21 @@ class Metrics extends MetricsBase {
 
         this.core_delete_account_total = new Counter<WebCoreDeleteAccountTotal>(
             { name: 'web_core_delete_account_total', version: 1 },
+            this.requestService
+        );
+
+        this.core_lightLabelling_imageProcessing_total = new Counter<WebCoreLightLabellingImageProcessingTotal>(
+            { name: 'web_core_lightLabelling_imageProcessing_total', version: 1 },
+            this.requestService
+        );
+
+        this.core_lightLabelling_logoRemoval_total = new Counter<WebCoreLightLabellingLogoRemovalTotal>(
+            { name: 'web_core_lightLabelling_logoRemoval_total', version: 1 },
+            this.requestService
+        );
+
+        this.core_lightLabelling_logoUpload_total = new Counter<WebCoreLightLabellingLogoUploadTotal>(
+            { name: 'web_core_lightLabelling_logoUpload_total', version: 1 },
             this.requestService
         );
 
