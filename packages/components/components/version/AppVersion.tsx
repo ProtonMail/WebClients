@@ -1,4 +1,5 @@
 import { APPS_CONFIGURATION } from '@proton/shared/lib/constants';
+import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 
 import { getAppVersion } from '../../helpers';
 import { useConfig, useEarlyAccess } from '../../hooks';
@@ -25,7 +26,7 @@ const AppVersion = ({ appVersion: maybeAppVersion, appName: maybeAppName, fullVe
     const className = 'app-infos-version text-xs m-0';
     const title = DATE_VERSION;
 
-    const currentEnvDisplay = currentEnvironment && envMap[currentEnvironment] && envMap[currentEnvironment];
+    const currentEnvDisplay = currentEnvironment && envMap[currentEnvironment] ? envMap[currentEnvironment] : '';
     const children = (
         <>
             <span className="app-infos-name mr-1">{appName}</span>
@@ -38,15 +39,17 @@ const AppVersion = ({ appVersion: maybeAppVersion, appName: maybeAppName, fullVe
     if (fullVersion) {
         return (
             <Tooltip title={`${fullVersion} ${currentEnvDisplay}`} className={className}>
-                <span title={title}>{children}</span>
+                <button onClick={() => textToClipboard(fullVersion)} title={title}>
+                    {children}
+                </button>
             </Tooltip>
         );
     }
 
     return (
-        <span title={title} className={className}>
+        <button onClick={() => textToClipboard(appVersion)} title={title} className={className}>
             {children}
-        </span>
+        </button>
     );
 };
 
