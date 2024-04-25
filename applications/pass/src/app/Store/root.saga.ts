@@ -47,6 +47,8 @@ import breachesProton from '@proton/pass/store/sagas/monitor/breaches.proton.sag
 import breaches from '@proton/pass/store/sagas/monitor/breaches.saga';
 import customAddressAdd from '@proton/pass/store/sagas/monitor/custom-address.add.saga';
 import customAddressVerify from '@proton/pass/store/sagas/monitor/custom-address.verify';
+import customAddressDelete from '@proton/pass/store/sagas/monitor/delete.custom.saga';
+import resendCustom from '@proton/pass/store/sagas/monitor/resend.custom.saga';
 import resolveAlias from '@proton/pass/store/sagas/monitor/resolve.alias.saga';
 import resolveCustom from '@proton/pass/store/sagas/monitor/resolve.custom.saga';
 import resolveProton from '@proton/pass/store/sagas/monitor/resolve.proton.saga';
@@ -80,6 +82,7 @@ export function* rootSaga(options: RootSagaOptions) {
             breachesProton,
             cache,
             customAddressAdd,
+            customAddressDelete,
             customAddressVerify,
             events,
             featureFlags,
@@ -115,6 +118,7 @@ export function* rootSaga(options: RootSagaOptions) {
             organizationSettingsEdit,
             organizationSettingsGet,
             reportProblem,
+            resendCustom,
             resolveAlias,
             resolveCustom,
             resolveProton,

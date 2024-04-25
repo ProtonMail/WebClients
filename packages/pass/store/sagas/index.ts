@@ -1,5 +1,7 @@
 import { all } from 'redux-saga/effects';
 
+import resendCustom from '@proton/pass/store/sagas/monitor/resend.custom.saga';
+
 import type { RootSagaOptions } from '../types';
 import aliasDetailsRequest from './alias/alias-details-request.saga';
 import aliasOptionsRequest from './alias/alias-options-request.saga';
@@ -47,6 +49,7 @@ import breachesProton from './monitor/breaches.proton.saga';
 import breaches from './monitor/breaches.saga';
 import customAddressAdd from './monitor/custom-address.add.saga';
 import customAddressVerify from './monitor/custom-address.verify';
+import customAddressDelete from './monitor/delete.custom.saga';
 import resolveAlias from './monitor/resolve.alias.saga';
 import resolveCustom from './monitor/resolve.custom.saga';
 import resolveProton from './monitor/resolve.proton.saga';
@@ -79,6 +82,7 @@ export function* workerRootSaga(options: RootSagaOptions) {
             breachesProton,
             cache,
             customAddressAdd,
+            customAddressDelete,
             customAddressVerify,
             events,
             featureFlags,
@@ -111,6 +115,7 @@ export function* workerRootSaga(options: RootSagaOptions) {
             notification,
             organizationSettingsEdit,
             reportProblem,
+            resendCustom,
             resolveAlias,
             resolveCustom,
             resolveProton,

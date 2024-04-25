@@ -8,6 +8,7 @@ import {
 import type { AddressType, MonitorAddress, MonitorDomain } from '@proton/pass/lib/monitor/types';
 import {
     addCustomAddress,
+    deleteCustomAddress,
     getBreaches,
     resolveCustomBreach,
     resolveProtonBreach,
@@ -64,6 +65,12 @@ const monitorReducer: Reducer<MonitorState> = (state = INITIAL_MONITOR_STATE, ac
                 if (breach.addressId !== action.payload) return breach;
                 return { ...breach, verified: true };
             }),
+        });
+    }
+
+    if (deleteCustomAddress.success.match(action)) {
+        return partialMerge(state, {
+            custom: state.custom.filter((breach) => breach.addressId !== action.payload),
         });
     }
 

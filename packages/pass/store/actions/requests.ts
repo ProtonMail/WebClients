@@ -57,12 +57,17 @@ export const organizationSettingsRequest = () => `organization::settings::get`;
 export const organizationSettingsEditRequest = () => `organization::settings::edit`;
 
 export const sentinelToggleRequest = () => `monitor::sentinel::toggle`;
+
 export const breachesRequest = () => `monitor::breaches`;
 export const protonBreachRequest = (addressId: string) => `monitor::breaches::proton::${addressId}`;
 export const customBreachRequest = (emailId: string) => `monitor::breaches::custom::${emailId}`;
 export const aliasBreachRequest = (shareId: string, itemId: string) => `monitor::breaches::alias::${shareId + itemId}`;
-export const monitorCustomAddressRequest = (email: string) => `monitor::add::custom::${email}`;
+
+export const addCustomAddressRequest = (email: string) => `monitor::add::custom::${email}`;
 export const verifyCustomAddressRequest = (emailId: string) => `monitor::verify::custom::${emailId}`;
+export const deleteCustomAddressRequest = (email: string) => `monitor::delete::custom::${email}`;
+export const resendCustomAddressCodeRequest = (emailId: string) => `monitor::verify::custom::resend::${emailId}`;
+
 export const protonResolveRequest = (addressId: string) => `monitor::resolve::proton::${addressId}`;
 export const customResolveRequest = (emailId: string) => `monitor::resolve::custom::${emailId}`;
 export const aliasResolveRequest = (shareId: string, itemId: string) => `monitor::resolve::alias::${shareId + itemId}`;
