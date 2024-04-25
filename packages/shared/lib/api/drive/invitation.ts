@@ -55,13 +55,13 @@ export const queryShareInvitationDetails = (
 });
 
 export const queryUpdateShareInvitationPermissions = (
-    volumeId: string,
     shareId: string,
-    { Invitations }: { Invitations: { InvitationID: string; Permissions: SHARE_MEMBER_PERMISSIONS }[] }
+    invitationId: string,
+    Permissions: SHARE_MEMBER_PERMISSIONS
 ) => ({
     method: 'put',
-    url: `drive/v2/volumes/${volumeId}/shares/${shareId}/invitations/permissions`,
+    url: `drive/v2/shares/${shareId}/invitations/${invitationId}`,
     data: {
-        Invitations,
+        Permissions,
     },
 });

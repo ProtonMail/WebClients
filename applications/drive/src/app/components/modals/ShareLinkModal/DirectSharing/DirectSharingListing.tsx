@@ -16,7 +16,8 @@ interface Props {
     members: ShareMember[];
     invitations: ShareInvitation[];
     isLoading: boolean;
-    onPermissionsChange: (member: ShareMember, permission: SHARE_MEMBER_PERMISSIONS) => void;
+    onPermissionsChange: (member: ShareMember, permission: SHARE_MEMBER_PERMISSIONS) => Promise<void>;
+    onInvitationPermissionsChange: (invitationId: string, permission: SHARE_MEMBER_PERMISSIONS) => Promise<void>;
     onMemberRemove: (member: ShareMember) => void;
     onInvitationRemove: (invitationId: string) => void;
 }
@@ -27,7 +28,7 @@ const MemberItem = ({
     onMemberRemove,
 }: {
     member: ShareMember;
-    onPermissionsChange: (member: ShareMember, permission: SHARE_MEMBER_PERMISSIONS) => void;
+    onPermissionsChange: (member: ShareMember, permission: SHARE_MEMBER_PERMISSIONS) => Promise<void>;
     onMemberRemove: (member: ShareMember) => void;
 }) => {
     const [contactEmails] = useContactEmails();
@@ -39,9 +40,7 @@ const MemberItem = ({
         Email: email,
     };
 
-    const handlePermissionChange = (value: SHARE_MEMBER_PERMISSIONS) => {
-        onPermissionsChange(member, value);
-    };
+    const handlePermissionChange = (value: SHARE_MEMBER_PERMISSIONS) => onPermissionsChange(member, value);
 
     const handleMemberRemove = () => {
         onMemberRemove(member);
@@ -76,6 +75,7 @@ const DirectSharingListing = ({
     onPermissionsChange,
     onMemberRemove,
     onInvitationRemove,
+    onInvitationPermissionsChange,
 }: Props) => {
     const [contactEmails] = useContactEmails();
 
@@ -126,7 +126,9 @@ const DirectSharingListing = ({
                             linkId={linkId}
                             contactName={contactName}
                             contactEmail={contactEmail}
+                            selectedPermissions={invitation.permissions}
                             onInvitationRemove={onInvitationRemove}
+                            onInvitationPermissionsChange={onInvitationPermissionsChange}
                         />
                     );
                 })}
