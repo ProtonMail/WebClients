@@ -1126,6 +1126,12 @@
       "Trust": [
         "Довіряти"
       ],
+      "Trust key": [
+        "Довіряти ключу",
+        "Довіряти ключам",
+        "Довіряти ключам",
+        "Довіряти ключам"
+      ],
       "Trust public key": [
         "Довіряти відкритому ключу"
       ],
@@ -8255,6 +8261,11 @@
         "Ваша підписка закінчилася. ${ cta } і щоб уникнути втрати даних."
       ]
     },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Увімкнути ${ reason }"
+      ]
+    },
     "Mail import summary": {
       "Import all messages from ${ itemsToImportCount } folder and label them as": [
         "Імпортувати всі повідомлення з ${ itemsToImportCount } теки та позначити їх як",
@@ -9302,6 +9313,12 @@
     "Notification": {
       "${ Filter.Name } created": [
         "${ Filter.Name } створено"
+      ],
+      "${ reason } has been disabled": [
+        "${ reason } вимкнено"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } увімкнено"
       ],
       "Block removed": [
         "Блокування вилучено"

@@ -1132,6 +1132,12 @@
       "Trust": [
         "Dôverovať"
       ],
+      "Trust key": [
+        "Dôveryhodný kľúč",
+        "Dôveryhodný kľúč",
+        "Dôverovať kľúčom",
+        "Dôverovať novým kľúčom"
+      ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
       ],
@@ -8431,6 +8437,11 @@
         "Vaše predplatné skončilo. ${ cta } a zabráňte strate údajov."
       ]
     },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Povoliť ${ reason }"
+      ]
+    },
     "Mail import summary": {
       "Import all messages from ${ itemsToImportCount } folder and label them as": [
         "Importovať všetky správy z ${ itemsToImportCount } priečinka a označiť ich štítkom",
@@ -9565,6 +9576,12 @@
     "Notification": {
       "${ Filter.Name } created": [
         "${ Filter.Name } bol vytvorený"
+      ],
+      "${ reason } has been disabled": [
+        "${ reason } bol zakázaný"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } bol povolený"
       ],
       "Block removed": [
         "Blokovať odstránené"
@@ -10800,6 +10817,9 @@
       ],
       "Schedule send": [
         "Naplánovať odoslanie"
+      ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME } to get notified if your data was leaked from a third-party service.": [
+        "Zapnite ${ DARK_WEB_MONITORING_NAME }, aby ste dostávali upozornenia, ak vaše údaje uniknú zo služieb tretích strán."
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Teraz v predvolenom nastavení načítame obrázky a znemožňujeme odosielateľom, aby vás sledovali. Toto môžete zmeniť v ${ settingsLink }."

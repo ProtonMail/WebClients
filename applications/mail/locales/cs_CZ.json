@@ -1132,6 +1132,12 @@
       "Trust": [
         "Důvěřovat"
       ],
+      "Trust key": [
+        "Důvěřovat klíči",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům"
+      ],
       "Trust public key": [
         "Důvěřovat veřejnému klíči"
       ],
@@ -3451,13 +3457,13 @@
     },
     "Email body for response to invitation": {
       "${ emailAddress } accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } přijmul/a vaši pozvánku do ${ eventTitle }"
+        "${ emailAddress } přijal(a) vaši pozvánku na ${ eventTitle }"
       ],
       "${ emailAddress } declined your invitation to ${ eventTitle }": [
-        "${ emailAddress } odmítl/a vaši pozvánku do ${ eventTitle }"
+        "${ emailAddress } odmítl(a) vaši pozvánku na ${ eventTitle }"
       ],
       "${ emailAddress } tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } nezávazně přijal/a vaši pozvánku do ${ eventTitle }"
+        "${ emailAddress } nezávazně přijal(a) vaši pozvánku na ${ eventTitle }"
       ]
     },
     "Email reminder banner": {
@@ -4786,7 +4792,7 @@
         "Platební karta není vyžadována."
       ],
       "Start free trial": [
-        "Zkuste bezplatnou verzi s omezenou dobou platnosti"
+        "Zkuste bezplatnou zkušební verzi"
       ],
       "Try the app-new desktop app": [
         "Vyzkoušejte novou desktopovou aplikaci"
@@ -5889,7 +5895,7 @@
         "Výchozí e-mailová aplikace"
       ],
       "Disable message content search": [
-        "Zakázat vyhledávání v obsahu zprávy"
+        "Zakázat vyhledávání v obsahu zpráv"
       ],
       "Discover ProtectBuy logo": [
         "Logo Discover ProtectBuy"
@@ -6526,9 +6532,9 @@
       ],
       "Select all ${ elementsCount } in ${ location }": [
         "Vybrat ${ elementsCount } v ${ location }",
-        "Vybrat ${ elementsCount } v ${ location }",
-        "Vybrat ${ elementsCount } v ${ location }",
-        "Vybrat ${ elementsCount } v ${ location }"
+        "Vybrat všechny ${ elementsCount } v ${ location }",
+        "Vybrat všech ${ elementsCount } v ${ location }",
+        "Vybrat všech ${ elementsCount } v ${ location }"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Vyberte formát e-mailu, který chcete aby byl použit jako výchozí pro zasílání e-mailu na tuto e-mailovou adresu."
@@ -8378,7 +8384,12 @@
         "Vaše úložiště je plné. Chcete-li odesílat nebo přijímat e-maily, uvolněte místo nebo ${ cta }."
       ],
       "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
-        "Vaše úložiště je plné. Aby jste mohli nahrát nebo synchronizovat soubory, uvolněte místo nebo ${ cta }."
+        "Vaše úložiště je plné. Abyste mohli nahrát nebo synchronizovat soubory, uvolněte místo nebo ${ cta }."
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Povolit ${ reason }"
       ]
     },
     "Mail import summary": {
@@ -8437,7 +8448,7 @@
         "10 e-mailových adres"
       ],
       "Auto-delete Spam and Trash": [
-        "Automaticky smazat spam a koš"
+        "Automatické smazání spamu a koše"
       ],
       "Custom schedule send and snooze times": [
         "Vlastní plánování odesílání a odložení"
@@ -8451,18 +8462,18 @@
     },
     "mailtrial2024: Footer": {
       "Renews at ${ renewablePrice }, cancel anytime": [
-        "Obnovuje se za ${ renewablePrice }, zrušit kdykoliv"
+        "Obnovuje se za ${ renewablePrice }, zrušit lze kdykoli"
       ]
     },
     "mailtrial2024: Info": {
       "for the first month": [
-        "pro první měsíc"
+        "za první měsíc"
       ],
       "Limited-time offer, expires April 2 2024": [
         "Omezená nabídka, vyprší 2. dubna 2024"
       ],
       "Your subscription will auto-renew on ${ renewTime } at ${ renewablePrice }, cancel anytime": [
-        "Vaše předplatné bude automaticky obnoveno každých ${ renewTime } za ${ renewablePrice }, zrušitelné kdykoliv"
+        "Vaše předplatné bude automaticky obnoveno ${ renewTime } za ${ renewablePrice }, zrušit lze kdykoli"
       ]
     },
     "mailtrial2024: Title": {
@@ -9276,16 +9287,16 @@
         "Umožňuje vám nastavit automatické odpovědi na příchozí zprávy"
       ],
       "Automatically clear out messages older than 30 days from Trash and Spam": [
-        "Automaticky vyčistit zprávy starší než 30 dnů z koše a spamu"
+        "Automatické odstranění zpráv starších než 30 dnů z koše a spamu"
       ],
       "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
-        "Automaticky přeposlat e-maily odeslané do vašeho ${ MAIL_APP_NAME } účtu do jakýkoliv jiné e-mailové adresy."
+        "Automatické přeposlání e-mailů přijatých vaším účtem ${ MAIL_APP_NAME } na jakoukoli jinou e-mailovou adresu."
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "Odesílání hromadných reklamních e-mailů a programovatelných e-mailů momentálně není podporováno. Pro tento případ doporučujeme využít služeb poskytovatele dedikované e-mailové služby."
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
-        "Vyberte vlastní časy aby jste byly upozorněni o e-mailu anebo kdy vám zpráva přijde"
+        "Vyberte vlastní časy, kdy chcete být upozorněni na e-mail nebo na příchod vaší zprávy"
       ],
       "Control access to your shared files by adding password protection and link expiration dates": [
         "Spravujte přístup ke svým sdíleným souborům přidáním ochrany heslem a nebo datem vypršení platnosti"
@@ -9509,6 +9520,12 @@
     "Notification": {
       "${ Filter.Name } created": [
         "${ Filter.Name } byl vytvořen"
+      ],
+      "${ reason } has been disabled": [
+        "${ reason } byl deaktivován"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } byl povolen"
       ],
       "Block removed": [
         "Blokovat odstraněné"
@@ -9846,7 +9863,7 @@
         "Vyberte důvod"
       ],
       "Select state": [
-        "Vybrat stav"
+        "Vyberte stav"
       ],
       "Start date": [
         "Datum zahájení"
@@ -10102,7 +10119,7 @@
     },
     "Security Center - Info": {
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
-        "Naše špičkové řešení s pomocí umělé inteligence zaměřené na uživatelé, kteří chtějí zvýšenou ochranu pro svoje účty. ${ learnMoreLink }"
+        "Naše špičkové řešení s pomocí umělé inteligence zaměřené na uživatele, kteří vyžadují zvýšenou ochranu svých účtů. ${ learnMoreLink }"
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel je **aktivní** a chrání váš účet."
@@ -10801,13 +10818,13 @@
         "Chcete-li pokračovat v nahrávání a synchronizaci souborů, uvolněte místo nebo navyšte na tarif s větším úložištěm."
       ],
       "To send or receive emails, free up space or ${ upgrade }": [
-        "Aby jste odeslali nebo přijímali e-maily, uvolněte místo nebo ${ upgrade }"
+        "Abyste odeslali nebo přijímali e-maily, uvolněte místo nebo ${ upgrade }"
       ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "Abyste mohli přijímat a odesílat e-maily, uvolněte úložný prostor a nebo navyšte na tarif s větším úložištěm."
       ],
       "To upload or sync files, free up space or ${ upgrade }": [
-        "Aby jste nahráli nebo synchronizovali soubory, uvolněte místo nebo ${ upgrade }"
+        "Abyste nahráli nebo synchronizovali soubory, uvolněte místo nebo ${ upgrade }"
       ],
       "upgrade for more storage": [
         "navýšit tarif pro více prostoru"
@@ -10849,7 +10866,7 @@
         "Ztratíte přístup k dalšímu úložišti, e-mailovým adresám, aliasům, kalendářům a také k prioritní podpoře."
       ],
       "You’ll lose access to the highest VPN speed, protection for 10 devices, high-speed streaming, ad-blocker and malware protection, as well as priority support.": [
-        "Ztratíte přístup k nejrychlejší rychlosti VPN, ochranu na 10 zařízeních, vysoko-rychlostní streamování, blokování reklam a ochrana proti malwaru, a k prioritní podpoře."
+        "Ztratíte přístup k nejvyšší rychlosti VPN, ochranu na 10 zařízeních, vysoko-rychlostní streamování, blokování reklam, ochranu proti malware a také prioritní podporu."
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "Ztratíte přístup k neomezeným přihlášením a poznámkám, neomezeným hide-my-email adresám, 20 trezorům a prioritní podpoře."
@@ -12382,13 +12399,13 @@
     },
     "vpn_2024: renew": {
       "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
-        "Předplatné se automaticky obnoví každý měsíc. Budete účtováni za měsíc."
+        "Předplatné se automaticky obnoví každý měsíc. Vaše další datum účtování je za 1 měsíc."
       ],
       "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
-        "Předplatné se automaticky obnoví za 3 měsíce. Budete účtováni za 3 měsíce."
+        "Předplatné se automaticky obnoví každé 3 měsíce. Další datum fakturace je za 3 měsíce."
       ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
-        "Potom budete účtováni každých 12 měsíců za ${ renewPrice }."
+        "Potom vám bude účtováno ${ renewPrice } každých 12 měsíců."
       ]
     },
     "vpn_2step: feature": {
