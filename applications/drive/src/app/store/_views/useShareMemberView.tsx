@@ -19,7 +19,8 @@ import {
 } from '../_shares';
 
 const useShareMemberView = (rootShareId: string, linkId: string) => {
-    const { inviteProtonUser, listInvitations, deleteInvitation } = useShareInvitation();
+    const { inviteProtonUser, listInvitations, deleteInvitation, updateShareInvitationPermissions } =
+        useShareInvitation();
     const { updateShareMemberPermissions, getShareMembers, removeShareMember } = useShareMember();
     const { getLink, getLinkPrivateKey, loadFreshLink } = useLink();
     const { createNotification } = useNotifications();
@@ -177,6 +178,17 @@ const useShareMemberView = (rootShareId: string, linkId: string) => {
         createNotification({ type: 'info', text: c('Notification').t`Invitation removed from the share` });
     };
 
+    const updateInvitePermissions = async (invitationId: string, permissions: SHARE_MEMBER_PERMISSIONS) => {
+        const abortSignal = new AbortController().signal;
+        const shareId = await getShareId(abortSignal);
+
+        await updateShareInvitationPermissions(abortSignal, { shareId, invitationId, permissions });
+        setInvitations((current) =>
+            current.map((item) => (item.invitationId === invitationId ? { ...item, permissions } : item))
+        );
+        createNotification({ type: 'info', text: c('Notification').t`Access updated and shared` });
+    };
+
     return {
         volumeId,
         members,
@@ -188,6 +200,7 @@ const useShareMemberView = (rootShareId: string, linkId: string) => {
         addNewMember,
         addNewMembers,
         updateMemberPermissions,
+        updateInvitePermissions,
     };
 };
 

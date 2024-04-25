@@ -20,7 +20,6 @@ import {
 } from '@proton/shared/lib/interfaces/drive/invitation';
 import { getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase';
 
-import { ShareInvitation } from '.';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { shareInvitationPayloadToShareInvitation, useDebouncedRequest } from '../_api';
 import { getOwnAddressKeysWithEmailAsync } from '../_crypto/driveCrypto';
@@ -167,17 +166,12 @@ export const useShareInvitation = () => {
 
     const updateShareInvitationPermissions = (
         abortSignal: AbortSignal,
-        { volumeId, shareId, invitations }: { volumeId: string; shareId: string; invitations: ShareInvitation[] }
-    ) =>
-        debouncedRequest(
-            queryUpdateShareInvitationPermissions(volumeId, shareId, {
-                Invitations: invitations.map(({ invitationId, permissions }) => ({
-                    InvitationID: invitationId,
-                    Permissions: permissions,
-                })),
-            }),
-            abortSignal
-        );
+        {
+            shareId,
+            invitationId,
+            permissions,
+        }: { shareId: string; invitationId: string; permissions: SHARE_MEMBER_PERMISSIONS }
+    ) => debouncedRequest(queryUpdateShareInvitationPermissions(shareId, invitationId, permissions), abortSignal);
 
     return {
         getShareInvitations,
