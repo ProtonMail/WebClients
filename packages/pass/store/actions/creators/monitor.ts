@@ -5,15 +5,17 @@ import { isMonitored } from '@proton/pass/lib/items/item.predicates';
 import type { AddressVerify, CustomAddressID, ProtonAddressID } from '@proton/pass/lib/monitor/types';
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
 import {
+    addCustomAddressRequest,
     aliasBreachRequest,
     aliasResolveRequest,
     breachesRequest,
     customBreachRequest,
     customResolveRequest,
+    deleteCustomAddressRequest,
     itemUpdateFlagsRequest,
-    monitorCustomAddressRequest,
     protonBreachRequest,
     protonResolveRequest,
+    resendCustomAddressCodeRequest,
     sentinelToggleRequest,
     verifyCustomAddressRequest,
 } from '@proton/pass/store/actions/requests';
@@ -106,11 +108,33 @@ export const getAliasBreach = requestActionsFactory<SelectedItem, FetchedBreache
 export const addCustomAddress = requestActionsFactory<string, BreachCustomEmailGetResponse>(
     'monitor::breaches::custom::add'
 )({
-    requestId: monitorCustomAddressRequest,
+    requestId: addCustomAddressRequest,
+    success: { config: { data: true } },
     failure: {
         prepare: (error) =>
             withNotification({
                 text: c('Error').t`Failed to add email address`,
+                type: 'error',
+                error,
+            })({ payload: null }),
+    },
+});
+
+export const deleteCustomAddress = requestActionsFactory<CustomAddressID, CustomAddressID>(
+    'monitor::breaches::custom::delete'
+)({
+    requestId: deleteCustomAddressRequest,
+    success: {
+        prepare: (addressId) =>
+            withNotification({
+                text: c('Info').t`Email address successfully deleted from monitoring`,
+                type: 'info',
+            })({ payload: addressId }),
+    },
+    failure: {
+        prepare: (error) =>
+            withNotification({
+                text: c('Error').t`Failed to delete email address from monitoring`,
                 type: 'error',
                 error,
             })({ payload: null }),
@@ -146,7 +170,7 @@ export const resolveProtonBreach = requestActionsFactory<ProtonAddressID, Proton
 });
 
 export const resolveCustomBreach = requestActionsFactory<CustomAddressID, CustomAddressID>(
-    'monitor::breaches::custom_address::resolve'
+    'monitor::breaches::custom::resolve'
 )({
     requestId: customResolveRequest,
     failure: {
@@ -194,5 +218,19 @@ export const setItemFlags = requestActionsFactory<
                 text: c('Error').t`Failed updating monitor flag of the item`,
                 error,
             })({ payload: {} }),
+    },
+});
+
+export const resendVerificationCode = requestActionsFactory<CustomAddressID, boolean>(
+    'monitor::breaches::custom::resend::verification'
+)({
+    requestId: resendCustomAddressCodeRequest,
+    failure: {
+        prepare: (error) =>
+            withNotification({
+                text: c('Error').t`Failed to resend verification for custom email`,
+                type: 'error',
+                error,
+            })({ payload: null }),
     },
 });
