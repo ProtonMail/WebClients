@@ -1183,6 +1183,9 @@
       ],
       "Continue using ${ planTitle }": [
         "Nadaljuj z uporabo ${ planTitle }a"
+      ],
+      "Continue your subscription": [
+        "Podaljšajte naročnino"
       ]
     },
     "Checkout row": {
@@ -4241,6 +4244,9 @@
       "Emails are automatically signed": [
         "Sporočila so samodejno podpisana"
       ],
+      "Empty folder": [
+        "Prazna mapa"
+      ],
       "Enabling drive search": [
         "Omogočanje iskanja po disku"
       ],
@@ -4472,6 +4478,9 @@
       "Last week": [
         "Prejšnji teden"
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Naučite se ${ staySaferOnlineLink }"
+      ],
       "Learn more": [
         "Več o tem"
       ],
@@ -4486,6 +4495,9 @@
       ],
       "Loading ${ appName }": [
         "${ appName } se nalaga"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Nalaganje koledarja, počakajte. Preusmerjeni boste na našo platformo za razporejanje Calendly v novem zavihku."
       ],
       "Loading link": [
         "Nalaganje povezave"
@@ -4904,6 +4916,9 @@
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
         "Šifrirani podatki so nekoliko večji zaradi šifriranja in podpisov, ki zagotavljajo varnost vaših podatkov."
       ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "Razkrite informacije so pricurljale iz storitve tretje osebe. Podatki o vašem računu ${ BRAND_NAME } ostajajo varni in šifrirani. ${ learnMoreLink }"
+      ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Morda je bilo spremenjeno brez dovoljenja: ${ items }. Odprite le, če mu zaupate."
       ],
@@ -4915,6 +4930,9 @@
       ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "Nekatere datoteke je treba še prenesti. Če zaprete upravitelja prenosov, se končajo vse operacije."
+      ],
+      "There is nothing to see here": [
+        "Tukaj ni ničesar za videti"
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Ta naslov je onemogočen. Za pošiljanje na ta naslov ga mora lastnik najprej omogočiti."
@@ -5222,6 +5240,12 @@
         "Imate še ${ expiresInDays } dni, da zahtevate svoj 3 GB bonus dobrodošlice in ",
         "Imate še ${ expiresInDays } dni, da zahtevate svoj 3 GB bonus dobrodošlice in "
       ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "Imate preizkusno naročnino ${ planTitle }. Če želite nadaljevati naročnino po preizkusnem obdobju, dodajte način plačila."
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "Imate preizkusno naročnino ${ planTitle }. Plačilo trenutno ni potrebno. Vaša naročnina bo ob koncu preizkusnega obdobja samodejno podaljšana."
+      ],
       "You may be redirected to your bank’s website.": [
         "Lahko vas preusmerijo na spletno stran vaše banke."
       ],
@@ -5293,6 +5317,9 @@
       ],
       "Your files will be encrypted and then saved.": [
         "Datoteke bodo šifrirane in nato shranjene."
+      ],
+      "Your information was found on ${ displayedDate }": [
+        "Vaše informacije so bile najdene ${ displayedDate }"
       ],
       "Your login information will not be saved after the import is completed.": [
         "Po končanem uvozu vaši podatki za prijavo ne bodo shranjeni."
@@ -7360,6 +7387,12 @@
         "${ numberOfItems } povezave do vaših predmetov so bile izbrisane",
         "${ numberOfItems } povezave do vaših predmetov so bile izbrisane"
       ],
+      "${ reason } has been disabled": [
+        "${ reason } je bil onemogočen."
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } je bil omogočen."
+      ],
       "All items will soon be permanently deleted from trash": [
         "Vsi predmeti bodo kmalu trajno izbrisani iz koša"
       ],
@@ -7905,6 +7938,9 @@
       ]
     },
     "Security Center - Info": {
+      "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
+        "Prejmite obvestilo, če so vaše geslo ali drugi podatki ušli iz storitve tretje osebe. ${ learnMoreLink }"
+      ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Naša vrhunska varnostna rešitev, ki temelji na umetni inteligenci, je zasnovana za uporabnike, ki iščejo večjo zaščito za svoje račune. ${ learnMoreLink }"
       ],

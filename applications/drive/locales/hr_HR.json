@@ -3600,6 +3600,11 @@
         "Spajanje s vašim pružateljem e-pošte"
       ]
     },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Omogući ${ reason }"
+      ]
+    },
     "mailtrial2024: Deal details": {
       "10 email addresses": [
         "10 adrese e-pošte"
@@ -3817,6 +3822,12 @@
     "Notification": {
       "\"${ name }\" moved to trash": [
         "\"${ name }\" premješten u Otpad"
+      ],
+      "${ reason } has been disabled": [
+        "${ reason } je onemogućen."
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } je omogućen."
       ],
       "All items will soon be permanently deleted from trash": [
         "Sve stavke će uskoro biti trajno izbrisane iz otpada"

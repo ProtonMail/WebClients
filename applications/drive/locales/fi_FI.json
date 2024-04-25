@@ -571,6 +571,9 @@
       "Remove gift code": [
         "Poista lahjakoodi"
       ],
+      "Remove me": [
+        "Poista minut"
+      ],
       "Rename": [
         "Nimeä uudelleen"
       ],
@@ -4105,6 +4108,9 @@
       "Emails are automatically signed": [
         "Viestit allekirjoitetaan automaattisesti"
       ],
+      "Empty folder": [
+        "Tyhjä kansio"
+      ],
       "Enabling drive search": [
         "Hakua otetaan käyttöön"
       ],
@@ -4469,6 +4475,9 @@
         "Vain ${ MAX_CUSTOM_PASSWORD_LENGTH } merkki sallitaan",
         "Vain ${ MAX_CUSTOM_PASSWORD_LENGTH } merkkiä sallitaan"
       ],
+      "Only the owner of the share will be able to invite you again.": [
+        "Vain jaon omistaja voi kutsua sinut uudelleen."
+      ],
       "Only the people with the link and the password can access this file.": [
         "Tiedostoa voivat käyttää vain ne, joilla on sen linkki ja salasana."
       ],
@@ -4785,6 +4794,9 @@
       ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "Siirrettäviä tiedostoja on vielä jäljellä. Siirtojen hallinnan sulkeminen peruu kaikki siirrot."
+      ],
+      "There is nothing to see here": [
+        "Täällä ei ole mitään nähtävää"
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Osoite on poistettu käytöstä. Jotta siihen voidaan lähettää viestejä, on sen omistajan otettava se ensin käyttöön."
@@ -5116,6 +5128,9 @@
       ],
       "You will lose all unsaved changes.": [
         "Menetät kaikki tallentamattomat muutokset."
+      ],
+      "You will not be able to join again after.": [
+        "Et voi liittyä uudelleen myöhemmin."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Sinut ohjataan pian PayPaliin maksun vahvistamiseksi."
@@ -5761,6 +5776,9 @@
       ],
       "Stolen data": [
         "Varastettua tietoa"
+      ],
+      "Stop sharing": [
+        "Lopeta jakaminen"
       ],
       "Street address": [
         "Katuosoite"
@@ -7219,6 +7237,9 @@
       "Failed to move, please try again": [
         "Siirto epäonnistui. Yritä uudelleen"
       ],
+      "Failed to remove the file": [
+        "Tiedoston poisto epäonnistui"
+      ],
       "Failed to upload files: ${ err }": [
         "Tiedostojen tallennus epäonnistui: ${ err }"
       ],
@@ -7231,6 +7252,9 @@
       ],
       "File or folder is missing a name": [
         "Tiedostolta tai kansiolta puuttuu nimi"
+      ],
+      "File removed": [
+        "Tiedosto poistettiin"
       ],
       "Invitation removed from the share": [
         "Kutsu poistettiin jaosta"
@@ -7262,6 +7286,9 @@
       "Share invitation ID was not found. Please check the link": [
         "Jakokutsun ID-tunnistetta ei löytynyt. Tarkista linkki."
       ],
+      "Stopping to share this item has failed": [
+        "Tämän kohteen jakamisen lopettaminen epäonnistui"
+      ],
       "Subfolder failed to be loaded": [
         "Alikansion lataus epäonnistui"
       ],
@@ -7279,6 +7306,9 @@
       ],
       "Trash failed to be emptied": [
         "Roskakorin tyhjennys epäonnistui"
+      ],
+      "You stopped to share this item": [
+        "Lopetit tämän kohteen jakamisen"
       ],
       "Your old files will be deleted in 72 hours": [
         "Vanhat tiedostosi poistetaan 72 tunnin kuluessa"
@@ -8650,6 +8680,9 @@
       ],
       "Are you sure you want to close the preview?": [
         "Haluatko varmasti sulkea esikatselun?"
+      ],
+      "Are you sure you want to leave this share?": [
+        "Haluiatko varmasti poistua tästä jaosta?"
       ],
       "Billing cycle": [
         "Laskutusjakso"

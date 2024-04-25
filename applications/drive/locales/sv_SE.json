@@ -2483,6 +2483,9 @@
       "Error decrypting a computer": [
         "Fel vid dekryptering av dator"
       ],
+      "External accounts are not supported yet": [
+        "Externa konton stöds inte ännu"
+      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Filen “${ item.name }“ kan inte laddas upp på grund felet “${ error }“"
       ],
@@ -4120,6 +4123,9 @@
       "Emails are automatically signed": [
         "E-post signeras automatiskt"
       ],
+      "Empty folder": [
+        "Tom mapp"
+      ],
       "Enabling drive search": [
         "Aktiverar sökning på lagringsenhet"
       ],
@@ -4484,6 +4490,9 @@
         "Endast ${ MAX_CUSTOM_PASSWORD_LENGTH } tecken är tillåtet",
         "Endast ${ MAX_CUSTOM_PASSWORD_LENGTH } tecken är tillåtna"
       ],
+      "Only the owner of the share will be able to invite you again.": [
+        "Endast ägaren av delningen kommer att kunna bjuda in dig igen."
+      ],
       "Only the people with the link and the password can access this file.": [
         "Endast personer med länken och lösenordet kan komma åt denna fil."
       ],
@@ -4800,6 +4809,9 @@
       ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "Det finns fortfarande filer som behöver överföras. Att stänga överföringshanteraren avbryter alla åtgärder."
+      ],
+      "There is nothing to see here": [
+        "Det finns inget att se här"
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Denna adress är inaktiverad. För att kunna skicka till denna adress måste ägaren först aktivera adressen."
@@ -5131,6 +5143,9 @@
       ],
       "You will lose all unsaved changes.": [
         "Du kommer att förlora alla osparade ändringar."
+      ],
+      "You will not be able to join again after.": [
+        "Du kommer inte att kunna gå med igen efter."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Du kommer snart att omdirigeras till PayPal för att verifiera din betalning."
@@ -7363,6 +7378,9 @@
       "Trash failed to be emptied": [
         "Misslyckades att tömma papperskorg"
       ],
+      "You stopped to share this item": [
+        "Du stoppade att dela detta objekt"
+      ],
       "Your old files will be deleted in 72 hours": [
         "Dina gamla filer kommer att tas bort inom 72 timmar"
       ],
@@ -8417,6 +8435,41 @@
         "För"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagringsutrymme"
+      ],
+      "and 15 more premium features": [
+        "och 15 fler premiumfunktioner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk vidarebefordran av e-post ${ strongText }"
+      ],
+      "Desktop app": [
+        "App för stationär dator"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hjälp oss att hålla Internet säkert och privat för alla. Uppgradera till ett betalt paket."
+      ],
+      "No ads or tracking": [
+        "Inga annonser eller spårning"
+      ],
+      "Support our mission": [
+        "Stöd vårt uppdrag"
+      ],
+      "Upgrade": [
+        "Uppgradera"
+      ],
+      "Upgrade your productivity": [
+        "Uppgradera din produktivitet"
+      ],
+      "We don't sell your data": [
+        "Vi säljer inte din data"
+      ],
+      "Your privacy is our mission": [
+        "Din integritet är vårt uppdrag"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Är du säker?"
@@ -8735,6 +8788,9 @@
       "Are you sure you want to close the preview?": [
         "Är du säker på att du vill stänga förhandsgranskningen?"
       ],
+      "Are you sure you want to leave this share?": [
+        "Är du säker på att du vill lämna denna delning?"
+      ],
       "Billing cycle": [
         "Faktureringscykel"
       ],
@@ -8978,6 +9034,9 @@
       ],
       "Item details": [
         "Objektdetaljer"
+      ],
+      "Last edited by": [
+        "Senast redigerad av"
       ],
       "Link confirmation": [
         "Länkbekräftelse"

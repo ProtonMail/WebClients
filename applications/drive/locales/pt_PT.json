@@ -5561,6 +5561,11 @@
         "atualize para obter mais armazenamento"
       ]
     },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Ativar ${ reason }"
+      ]
+    },
     "Mail import summary": {
       "Import all messages from ${ itemsToImportCount } folder and label them as": [
         "Importar todas as mensagens da ${ itemsToImportCount } pasta e etiquetá-las como",
@@ -6451,6 +6456,12 @@
       "${ numberOfItems } link to your item was deleted": [
         "${ numberOfItems } ligação ao seu item foi eliminada.",
         "${ numberOfItems } ligações aos seus itens foram eliminadas."
+      ],
+      "${ reason } has been disabled": [
+        "${ reason } foi desativado"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } foi ativado"
       ],
       "All items will soon be permanently deleted from trash": [
         "Todos os itens serão permanentemente eliminados do lixo"

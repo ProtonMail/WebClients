@@ -577,6 +577,9 @@
       "Remove gift code": [
         "Odstrániť darčekový kód"
       ],
+      "Remove me": [
+        "Odstrániť ma"
+      ],
       "Rename": [
         "Premenovať"
       ],
@@ -4247,6 +4250,9 @@
       "Emails are automatically signed": [
         "Emaily sú automaticky podpísané"
       ],
+      "Empty folder": [
+        "Prázdny priečinok"
+      ],
       "Enabling drive search": [
         "Zapínanie vyhľadávania na disku"
       ],
@@ -4619,6 +4625,9 @@
         "Iba ${ MAX_CUSTOM_PASSWORD_LENGTH } znakov je povolených",
         "Iba ${ MAX_CUSTOM_PASSWORD_LENGTH } znakov je povolených"
       ],
+      "Only the owner of the share will be able to invite you again.": [
+        "Opätovne vás bude môcť pozvať len vlastník zdieľaného priestoru."
+      ],
       "Only the people with the link and the password can access this file.": [
         "Iba ľudia s odkazom a heslom majú prístup k tomuto súboru."
       ],
@@ -4642,6 +4651,9 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Platby sú chránené šifrovaním TLS a švajčiarskymi zákonmi o ochrane súkromia."
+      ],
+      "Pending": [
+        "Čakajúce"
       ],
       "Permanently delete all files in your locked drive": [
         "Navždy zmazať všetky súbory na vašom zamknutom disku"
@@ -4937,6 +4949,9 @@
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "Niektoré súbory ešte potrebujú byť presunuté. Zatvorením správcu prenosu sa ukončia všetky operácie."
       ],
+      "There is nothing to see here": [
+        "Nie je tu nič k videniu"
+      ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Táto adresa nie je povolená. Ak chcete odosielať správy na túto adresu, musí ju majiteľ najskôr povoliť."
       ],
@@ -5198,6 +5213,9 @@
       "Yesterday": [
         "Včera"
       ],
+      "you": [
+        "vy"
+      ],
       "You already have a free account": [
         "Už máte bezplatný účet"
       ],
@@ -5272,6 +5290,9 @@
       ],
       "You will lose all unsaved changes.": [
         "Stratíte všetky neuložené zmeny."
+      ],
+      "You will not be able to join again after.": [
+        "Po dokončení sa už nebudete môcť pripojiť."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Za účelom overenia platby budete presmerovaný na PayPal."
@@ -5870,6 +5891,9 @@
       "Region": [
         "Kraj"
       ],
+      "Remove access": [
+        "Odobrať prístup"
+      ],
       "Replace existing file": [
         "Nahradiť existujúci súbor"
       ],
@@ -5926,6 +5950,9 @@
       ],
       "Stolen data": [
         "Ukradnuté dáta"
+      ],
+      "Stop sharing": [
+        "Ukončiť zdieľanie"
       ],
       "Street address": [
         "Ulica a č."
@@ -6158,6 +6185,11 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Vaše predplatné skončilo. ${ cta } a zabráňte strate údajov."
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Povoliť ${ reason }"
       ]
     },
     "Mail import summary": {
@@ -7400,6 +7432,18 @@
         "${ numberOfItems } odkazov na vaše položky bolo zmazaných",
         "${ numberOfItems } odkazy na vaše položky boli zmazané"
       ],
+      "${ reason } has been disabled": [
+        "${ reason } bol zakázaný"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } bol povolený"
+      ],
+      "Access for the member removed": [
+        "Prístup pre člena odstránený"
+      ],
+      "Access updated and shared": [
+        "Prístup bol aktualizovaný a zdieľaný"
+      ],
       "All items will soon be permanently deleted from trash": [
         "Všetky položky budú čoskoro trvalo zmazané z koša"
       ],
@@ -7439,6 +7483,9 @@
       "Failed to move, please try again": [
         "Presun zlyhal, skúste znovu, prosím"
       ],
+      "Failed to remove the file": [
+        "Odstránenie súboru zlyhalo"
+      ],
       "Failed to upload files: ${ err }": [
         "Nepodarilo sa nahrať súbory: ${ err }"
       ],
@@ -7453,6 +7500,12 @@
       ],
       "File or folder is missing a name": [
         "Súboru alebo priečinku chýba názov"
+      ],
+      "File removed": [
+        "Súbor bol odstránený"
+      ],
+      "Invitation removed from the share": [
+        "Pozvánka odstránená zo zdieľaného obsahu"
       ],
       "Link copied to clipboard": [
         "Odkaz bol skopírovaný do schránky"
@@ -7487,6 +7540,9 @@
       "Share invitation ID was not found. Please check the link": [
         "ID pozvánky na zdieľanie nebolo nájdené. Skontrolujte odkaz, prosím"
       ],
+      "Stopping to share this item has failed": [
+        "Ukončenie zdieľania tejto položky zlyhalo"
+      ],
       "Subfolder failed to be loaded": [
         "Nepodarilo sa načítať podpriečinok"
       ],
@@ -7504,6 +7560,9 @@
       ],
       "Trash failed to be emptied": [
         "Kôš sa nepodarilo vysypať"
+      ],
+      "You stopped to share this item": [
+        "Prestali ste zdieľať túto položku"
       ],
       "Your old files will be deleted in 72 hours": [
         "Vaše staré súbory budú zmazané do 72 hodín"
@@ -8963,6 +9022,9 @@
       ],
       "Are you sure you want to close the preview?": [
         "Naozaj chcete zatvoriť náhľad?"
+      ],
+      "Are you sure you want to leave this share?": [
+        "Ste si istý, že chcete opustiť toto zdieľanie?"
       ],
       "Billing cycle": [
         "Fakturačné obdobie"

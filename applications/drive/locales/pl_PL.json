@@ -577,6 +577,9 @@
       "Remove gift code": [
         "Usuń kod podarunkowy"
       ],
+      "Remove me": [
+        "Usuń mnie"
+      ],
       "Rename": [
         "Zmień nazwę"
       ],
@@ -2499,6 +2502,9 @@
       "Error decrypting a computer": [
         "Wystąpił błąd podczas odszyfrowywania urządzenia"
       ],
+      "External accounts are not supported yet": [
+        "Zewnętrzne konta nie są obsługiwane"
+      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Plik \"${ item.name }\" nie może zostać przesłany z powodu błędu: ${ error }"
       ],
@@ -4241,6 +4247,9 @@
       "Emails are automatically signed": [
         "Wiadomości są automatyczne podpisywane"
       ],
+      "Empty folder": [
+        "Folder jest pusty"
+      ],
       "Enabling drive search": [
         "Włączanie wyszukiwania zawartości dysku"
       ],
@@ -4613,6 +4622,9 @@
         "Przekroczono maksymalną liczbę znaków (${ MAX_CUSTOM_PASSWORD_LENGTH })",
         "Przekroczono maksymalną liczbę znaków (${ MAX_CUSTOM_PASSWORD_LENGTH })"
       ],
+      "Only the owner of the share will be able to invite you again.": [
+        "Tylko właściciel będzie mógł ponownie Cię zaprosić."
+      ],
       "Only the people with the link and the password can access this file.": [
         "Tylko posiadacz linku i hasła ma dostęp do pliku."
       ],
@@ -4933,6 +4945,9 @@
       ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "Masz pliki, które muszą zostać przesłane. Zamknięcie menedżera przesyłania spowoduje anulowanie wszystkich aktywnych operacji."
+      ],
+      "There is nothing to see here": [
+        "Niczego tutaj nie ma"
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Ten adres jest wyłączony. Aby móc wysyłać wiadomości na ten adres, musi on zostać najpierw włączony przez właściciela."
@@ -5272,6 +5287,9 @@
       ],
       "You will lose all unsaved changes.": [
         "Stracisz wszystkie niezapisane zmiany."
+      ],
+      "You will not be able to join again after.": [
+        "Ponownie dołączenie nie będzie możliwe."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "W celu zweryfikowania płatności wkrótce zostaniesz przekierowany na stronę firmy PayPal."
@@ -5929,6 +5947,9 @@
       ],
       "Stolen data": [
         "Skradzione dane"
+      ],
+      "Stop sharing": [
+        "Zatrzymaj udostępnianie"
       ],
       "Street address": [
         "Ulica"
@@ -7465,6 +7486,12 @@
         "${ numberOfItems } linków do elementów zostały usunięte",
         "${ numberOfItems } linków do elementów zostały usunięte"
       ],
+      "${ reason } has been disabled": [
+        "${ reason } został wyłączony"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } został włączony"
+      ],
       "Access for the member removed": [
         "Dostęp został usunięty"
       ],
@@ -7510,6 +7537,9 @@
       "Failed to move, please try again": [
         "Przenoszenie nie powiodło się. Spróbuj ponownie"
       ],
+      "Failed to remove the file": [
+        "Nie udało się usunąć pliku"
+      ],
       "Failed to upload files: ${ err }": [
         "Nie udało się przesłać plików: ${ err }"
       ],
@@ -7524,6 +7554,9 @@
       ],
       "File or folder is missing a name": [
         "Plik lub folder nie posiada nazwy"
+      ],
+      "File removed": [
+        "Plik został usunięty"
       ],
       "Invitation removed from the share": [
         "Zaproszenie zostało usunięte"
@@ -7561,6 +7594,9 @@
       "Share invitation ID was not found. Please check the link": [
         "Identyfikator zaproszenia nie został znaleziony. Sprawdź link"
       ],
+      "Stopping to share this item has failed": [
+        "Zatrzymanie udostępniania elementu nie powiodło się"
+      ],
       "Subfolder failed to be loaded": [
         "Załadowanie podfolderu nie powiodło się"
       ],
@@ -7578,6 +7614,9 @@
       ],
       "Trash failed to be emptied": [
         "Opróżnienie kosza nie powiodło się"
+      ],
+      "You stopped to share this item": [
+        "Zatrzymano udostępnianie elementu"
       ],
       "Your old files will be deleted in 72 hours": [
         "Stare pliki zostaną usunięte w ciągu 72 godzin"
@@ -8690,6 +8729,38 @@
         "za"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB przestrzeni dyskowej"
+      ],
+      "and 15 more premium features": [
+        "i 15 więcej funkcji premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatyczne przekierowanie ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alerty wycieków ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplikacja desktopowa"
+      ],
+      "No ads or tracking": [
+        "Brak reklam i śledzenia"
+      ],
+      "Short @pm.me email address": [
+        "Krótki adres e-mail @pm.me"
+      ],
+      "Upgrade": [
+        "Ulepsz"
+      ],
+      "Upgrade your productivity": [
+        "Zwiększ swoją produktywność"
+      ],
+      "We don't sell your data": [
+        "Nie sprzedajemy Twoich danych"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Czy na pewno?"
@@ -9038,6 +9109,9 @@
       "Are you sure you want to close the preview?": [
         "Czy na pewno chcesz zamknąć podgląd?"
       ],
+      "Are you sure you want to leave this share?": [
+        "Czy na pewno chcesz opuścić element?"
+      ],
       "Billing cycle": [
         "Cykl rozliczeniowy"
       ],
@@ -9286,6 +9360,9 @@
       ],
       "Item details": [
         "Szczegóły elementu"
+      ],
+      "Last edited by": [
+        "Zaktualizowano przez"
       ],
       "Link confirmation": [
         "Potwierdź otwieranie linków"

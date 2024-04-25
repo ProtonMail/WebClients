@@ -5601,6 +5601,11 @@
         "インポートが開始しました"
       ]
     },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "${ reason } を有効にする"
+      ]
+    },
     "Mail import summary": {
       "Import all messages from ${ itemsToImportCount } folder and label them as": [
         "${ itemsToImportCount } フォルダーからすべてのメッセージをインポートし、それらを次のようにラベル付けします"
@@ -6699,6 +6704,12 @@
       ],
       "${ numberOfItems } link to your item was deleted": [
         "${ numberOfItems }件のアイテムの共有リンクを削除しました"
+      ],
+      "${ reason } has been disabled": [
+        "${ reason } が無効になりました"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } が有効になりました"
       ],
       "All items will soon be permanently deleted from trash": [
         "すべてのアイテムはまもなくごみ箱から完全に削除されます"

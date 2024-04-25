@@ -4099,6 +4099,9 @@
       "Emails are automatically signed": [
         "Электронные письма подписываются автоматически"
       ],
+      "Empty folder": [
+        "Пустая папка"
+      ],
       "Enabling drive search": [
         "Включается поиск по хранилищу"
       ],
@@ -4761,6 +4764,9 @@
       ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "Все еще остались файлы для передачи. Закрытие менеджера передачи завершит все операции."
+      ],
+      "There is nothing to see here": [
+        "Здесь не на что смотреть"
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Этот адрес отключён. Чтобы была возможность отправки на него, владелец адреса должен его включить."
@@ -5906,6 +5912,11 @@
     "locked_state_storage_banner: info": {
       "upgrade for more storage": [
         "выберите другой тариф для увеличения хранилища"
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Включите ${ reason }"
       ]
     },
     "Mail import summary": {
@@ -7081,6 +7092,12 @@
         "${ numberOfItems } ссылки на ваши элементы были удалены",
         "${ numberOfItems } ссылок на ваши элементы были удалены",
         "${ numberOfItems } ссылок на ваши элементы были удалены"
+      ],
+      "${ reason } has been disabled": [
+        "${ reason } был отключен"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } был включен"
       ],
       "All items will soon be permanently deleted from trash": [
         "Все элементы скоро будут окончательно удалены из корзины"
