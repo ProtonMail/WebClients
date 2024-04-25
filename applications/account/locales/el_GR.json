@@ -323,6 +323,9 @@
       "Delete link": [
         "Διαγραφή συνδέσμου"
       ],
+      "Delete logo": [
+        "Διαγραφή λογότυπου"
+      ],
       "Delete permanently": [
         "Οριστική διαγραφή"
       ],
@@ -863,6 +866,9 @@
       "Select country": [
         "Επιλογή χώρας"
       ],
+      "select file": [
+        "επιλέξτε αρχείο"
+      ],
       "Select file": [
         "Επιλέξτε αρχείο"
       ],
@@ -971,6 +977,9 @@
       "Start import": [
         "Έναρξη εισαγωγής"
       ],
+      "Start live chat": [
+        "Ξεκινήστε ζωντανή συνομιλία"
+      ],
       "Stay": [
         "Παραμονή"
       ],
@@ -1049,6 +1058,12 @@
       "Upgrade your plan": [
         "Αναβαθμίστε το πρόγραμμά σας"
       ],
+      "Upload": [
+        "Ανέβασμα"
+      ],
+      "Upload logo": [
+        "Ανέβασμα λογότυπου"
+      ],
       "Upload picture": [
         "Ανέβασμα εικόνας"
       ],
@@ -1102,6 +1117,9 @@
       ],
       "Void all recovery files?": [
         "Ακύρωση όλων των αρχείων ανάκτησης;"
+      ],
+      "Welcome": [
+        "Καλώς ήρθατε"
       ],
       "What do I get?": [
         "Τι θα αποκτήσω;"
@@ -1861,6 +1879,14 @@
       ],
       "Week": [
         "Εβδομάδα"
+      ]
+    },
+    "Call Scheduled Confirmation": {
+      "Request sent": [
+        "Το Αίτημα εστάλη"
+      ],
+      "You can safely close this tab.": [
+        "Μπορείτε να κλείσετε με ασφάλεια αυτήν την καρτέλα."
       ]
     },
     "Checkout row": {
@@ -3087,8 +3113,8 @@
       ]
     },
     "Delete address prompt": {
-      "The next active address on your list will be set as the default.": [
-        "Η επόμενη ενεργή διεύθυνση στη λίστα σας θα οριστεί ως προεπιλεγμένη."
+      "Once deleted, this address can't be used again by anyone else.": [
+        "Αφού διαγραφεί, αυτή η διεύθυνση δεν μπορεί να χρησιμοποιηθεί ξανά από οποιονδήποτε άλλο."
       ],
       "You can only delete 1 address per year.": [
         "Μπορείτε να διαγράψετε μόνο 1 διεύθυνση ανά έτος."
@@ -3281,6 +3307,14 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Βοηθήστε μας να βελτιωθούμε!"
+      ]
+    },
+    "Download link": {
+      ".deb for Debian / Ubuntu": [
+        ".deb για Debian / Ubuntu"
+      ],
+      ".rpm for Fedora / Red Hat": [
+        ".rpm για Fedora / Red Hat"
       ]
     },
     "drive_signup_2023: Info": {
@@ -3968,6 +4002,9 @@
       ],
       "No external key retrieved for user is valid for sending": [
         "Κανένα εξωτερικό κλειδί που ανακτάται για το χρήστη δεν είναι έγκυρο για την αποστολή"
+      ],
+      "No image selected": [
+        "Δεν επιλέχθηκε εικόνα"
       ],
       "No valid address found": [
         "Δεν βρέθηκε έγκυρη διεύθυνση"
@@ -5515,6 +5552,11 @@
         "Δοκιμάστε τα καλύτερα του ${ MAIL_APP_NAME } δωρεάν"
       ]
     },
+    "Headline": {
+      "Contact us": [
+        "Επικοινωνήστε μαζί μας"
+      ]
+    },
     "Hint": {
       "Add this record to your domain in the control panel of your domain name registrar": [
         "Προσθέστε αυτήν την εγγραφή στον τομέα σας στον πίνακα ελέγχου του μητρώου καταχώρησης ονομάτων τομέα"
@@ -6659,6 +6701,9 @@
       "Failed to fetch logs.": [
         "Αποτυχία ανάκτησης αρχείων καταγραφής."
       ],
+      "Fast and focused. Email and calendar, right on your desktop.": [
+        "Γρήγορη και συγκεντρωμένη. Ηλεκτρονικό ταχυδρομείο και ημερολόγιο, απευθείας στην επιφάνεια εργασίας σας."
+      ],
       "Fill in user details": [
         "Συμπληρώστε τα στοιχεία χρήστη"
       ],
@@ -7228,6 +7273,9 @@
       ],
       "Plus or Visionary subscription required": [
         "Απαιτείται συνδρομή Plus ή Visionary"
+      ],
+      "Preview": [
+        "Προεπισκόπηση"
       ],
       "Preview failed to be loaded": [
         "Η φόρτωση της προεπισκόπησης απέτυχε"
@@ -7860,6 +7908,9 @@
       "Want servers in other countries?": [
         "Θέλετε διακομιστές σε άλλες χώρες;"
       ],
+      "Want to learn more?": [
+        "Θέλετε να μάθετε περισσότερα;"
+      ],
       "Warning:": [
         "Προειδοποίηση:"
       ],
@@ -8363,6 +8414,9 @@
     "Key generation": {
       "Generate key": [
         "Δημιουργία κλειδιού"
+      ],
+      "Key successfully generated.": [
+        "Το κλειδί δημιουργήθηκε με επιτυχία."
       ]
     },
     "Key state badge": {
@@ -9911,6 +9965,9 @@
       ]
     },
     "Log preference": {
+      "Enable ${ reason }": [
+        "Ενεργοποίηση ${ reason }"
+      ],
       "Enable advanced logs": [
         "Ενεργοποίηση προηγμένων αρχείων καταγραφής"
       ],
@@ -11257,6 +11314,12 @@
       "${ Filter.Name } created": [
         "${ Filter.Name } δημιουργήθηκε"
       ],
+      "${ reason } has been disabled": [
+        "${ reason } έχει απενεργοποιηθεί"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } έχει ενεργοποιηθεί"
+      ],
       "A disabled address cannot be default": [
         "Μια απενεργοποιημένη διεύθυνση δεν μπορεί να είναι προεπιλεγμένη"
       ],
@@ -12152,6 +12215,9 @@
       "MM/YY": [
         "ΜΜ/ΕΕ"
       ],
+      "Processing payment": [
+        "Επεξεργασία πληρωμής"
+      ],
       "Timeout exceeded": [
         "Υπέρβαση χρονικού ορίου"
       ]
@@ -12522,6 +12588,11 @@
       ],
       "User": [
         "Χρήστης"
+      ]
+    },
+    "scim: Action": {
+      "Generate token": [
+        "Δημιουργία διακριτικού"
       ]
     },
     "Select file": {
@@ -13482,6 +13553,48 @@
         "Για"
       ]
     },
+    "Subscription reminder": {
+      "${ dayDiff } day left": [
+        "${ dayDiff } ημέρα απομένει",
+        "${ dayDiff } ημέρες απομένουν"
+      ],
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } εφαρμογή επιφάνειας εργασίας"
+      ],
+      "${ planMaxSpace } total storage": [
+        "${ planMaxSpace } συνολικός αποθηκευτικός χώρος"
+      ],
+      "10 email addresses": [
+        "10 διευθύνσεις ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Calendar sharing": [
+        "Κοινή χρήση ημερολογίου"
+      ],
+      "Cancel subscription": [
+        "Ακύρωση συνδρομής"
+      ],
+      "Cancel subscription?": [
+        "Ακύρωση συνδρομής;"
+      ],
+      "Custom schedule send and snooze times": [
+        "Προσαρμοσμένο πρόγραμμα χρόνου αποστολής και αναβολής"
+      ],
+      "Have a question?": [
+        "Έχετε απορίες;"
+      ],
+      "Keep ${ planName }": [
+        "Διατήρηση ${ planName }"
+      ],
+      "Priority support": [
+        "Υποστήριξη με προτεραιότητα"
+      ],
+      "Read the story": [
+        "Διαβάστε την ιστορία"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Απεριόριστοι φάκελοι, ετικέτες και φίλτρα"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Είστε σίγουρος/η;"
@@ -14075,6 +14188,9 @@
       "Billing cycle": [
         "Κύκλος χρέωσης"
       ],
+      "Block trackers and malware": [
+        "Αποκλεισμός ιχνηλατών και κακόβουλου λογισμικού"
+      ],
       "Bridge for ${ platform }": [
         "Bridge για ${ platform }"
       ],
@@ -14205,6 +14321,9 @@
       "Custom selection of users": [
         "Προσαρμοσμένη επιλογή χρηστών"
       ],
+      "Customization": [
+        "Προσαρμογή"
+      ],
       "Customize and confirm": [
         "Προσαρμογή και επιβεβαίωση"
       ],
@@ -14264,6 +14383,9 @@
       ],
       "Delete logs": [
         "Διαγραφή αρχείων καταγραφής"
+      ],
+      "Delete organization logo?": [
+        "Διαγραφή λογότυπου οργανισμού;"
       ],
       "Delete the server (you will still be able to recover it for ${ days } day)": [
         "Διαγράψτε τον διακομιστή (θα εξακολουθείτε να μπορείτε να τον ανακτήσετε για ${ days } ημέρα)",
@@ -14420,6 +14542,15 @@
       "Folders and labels": [
         "Φάκελοι και ετικέτες"
       ],
+      "For Linux": [
+        "Για Linux"
+      ],
+      "For macOS": [
+        "Για macOS"
+      ],
+      "For Windows": [
+        "Για Windows"
+      ],
       "Forward and auto-reply": [
         "Προώθηση και αυτόματη απάντηση"
       ],
@@ -14565,6 +14696,9 @@
       "No recovery method": [
         "Χωρίς μέθοδο ανάκτησης"
       ],
+      "Open": [
+        "Άνοιγμα"
+      ],
       "Open actions dropdown": [
         "Άνοιγμα αναπτυσσόμενων επιλογών"
       ],
@@ -14681,6 +14815,9 @@
       ],
       "Reset password?": [
         "Επαναφορά κωδικού πρόσβασης?"
+      ],
+      "Resolved": [
+        "Επιλύθηκε"
       ],
       "Restore administrator privileges": [
         "Επαναφορά δικαιωμάτων διαχειριστή"
@@ -14910,6 +15047,9 @@
       ],
       "WireGuard configuration": [
         "Διαμόρφωση WireGuard"
+      ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Η δωρεάν δοκιμή του ${ planName } λήγει στις ${ textDate }"
       ],
       "Your calendar link": [
         "Ο σύνδεσμος του ημερολογίου σας"

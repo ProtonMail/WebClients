@@ -3159,9 +3159,6 @@
       "Once deleted, this address can't be used again by anyone else.": [
         "Usuniętego adresu nie będzie mógł nikt użyć."
       ],
-      "The next active address on your list will be set as the default.": [
-        "Następny aktywny adres zostanie ustawiony jako domyślny."
-      ],
       "You can only delete 1 address per year.": [
         "Możesz usunąć tylko 1 adres rocznie."
       ]
@@ -3353,6 +3350,14 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Pomóż nam ulepszyć usługę!"
+      ]
+    },
+    "Download link": {
+      ".deb for Debian / Ubuntu": [
+        ".deb dla Debian / Ubuntu"
+      ],
+      ".rpm for Fedora / Red Hat": [
+        ".rpm dla Fedora / Red Hat"
       ]
     },
     "drive_signup_2023: Info": {
@@ -6039,6 +6044,9 @@
       "${ BRAND_NAME } is privacy you can trust, ensured by strong encryption, open-source code, and Swiss privacy laws. We believe nobody should be able to exploit your data, period. Our technology and business are based upon this fundamentally stronger definition of privacy.": [
         "${ BRAND_NAME } to prywatność, której możesz zaufać, zapewniona przez silne szyfrowanie, otwarty kod źródłowy i szwajcarskie prawa ochrony danych. Wierzymy, że nikt nie powinien być w stanie wykorzystać Twoich danych i tyle. Nasza technologia i działalność opierają się na tej fundamentalnie silniejszej definicji prywatności."
       ],
+      "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
+        "${ BRAND_NAME } nigdy nie udostępnia informacji o użytkownikach stronom trzecim. Dane pochodzą z własnych źródeł ${ BRAND_NAME } i firmy Constella Intelligence."
+      ],
       "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "${ BRAND_NAME } wstrzymał proces importowania, ponieważ utracił połączenie z drugim dostawcą poczty e-mail. Połącz się ponownie."
       ],
@@ -6305,6 +6313,9 @@
         "Dodaj serwer (${ availableAddedCount } dostępne)",
         "Dodaj serwer (${ availableAddedCount } dostępnych)",
         "Dodaj serwer (${ availableAddedCount } dostępnych)"
+      ],
+      "Add your name and logo to create a more personalized experience for your organization.": [
+        "Dodaj nazwę i logo, aby spersonalizować organizację."
       ],
       "Adding ${ addedServerCount } gateway server": [
         "Dodawanie ${ addedServerCount } serwera bramy",
@@ -6642,6 +6653,9 @@
       "Custom": [
         "Niestandardowe"
       ],
+      "Custom branding": [
+        "Niestandardowy branding"
+      ],
       "Custom daily": [
         "Codziennie (niestandardowo)"
       ],
@@ -6866,6 +6880,9 @@
       ],
       "Failed to fetch logs.": [
         "Nie udało się pobrać logów."
+      ],
+      "Fast and focused. Email and calendar, right on your desktop.": [
+        "Szybkość i skupienie. Poczta i kalendarz na pulpicie."
       ],
       "Fill in user details": [
         "Uzupełnij szczegóły użytkownika"
@@ -7716,6 +7733,9 @@
       "Support for 1 custom email domain": [
         "Wsparcie dla 1 niestandardowej domeny"
       ],
+      "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
+        "Monitoring niestandardowych domen i adresów e-mail spoza ${ BRAND_NAME } będzie dostępne wkrótce."
+      ],
       "support team": [
         "pomocą techniczną"
       ],
@@ -8052,6 +8072,9 @@
       "Upload your completed CSV file to create accounts": [
         "Prześlij uzupełniony plik CSV, aby utworzyć użytkowników"
       ],
+      "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
+        "Prześlij logo organizacji, aby zwiększyć rozpoznawalność marki."
+      ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "Przesłany plik nie jest prawidłowym kluczem prywatnym. Zweryfikuj plik i spróbuj ponownie."
       ],
@@ -8138,6 +8161,9 @@
       ],
       "We just sent you a new link.": [
         "Wysłaliśmy nowy link."
+      ],
+      "We monitor the dark web for instances where your personal information (such as an email address or password used on a third-party site) is leaked or compromised.": [
+        "Monitorujemy sieć dark web pod kątem wycieków danych osobowych (jak adresy e-mail, hasła)."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Musimy zweryfikować metodę płatności z Twoim bankiem."
@@ -9077,6 +9103,9 @@
       ],
       "Awarded": [
         "Przyznano"
+      ],
+      "Beta": [
+        "Beta"
       ],
       "Billing address": [
         "Adres rozliczeniowy"
@@ -11641,6 +11670,12 @@
       "${ Filter.Name } created": [
         "Filtr ${ Filter.Name } został utworzony"
       ],
+      "${ reason } has been disabled": [
+        "${ reason } został wyłączony"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } został włączony"
+      ],
       "A disabled address cannot be default": [
         "Wyłączony adres nie może zostać domyślnym adresem"
       ],
@@ -12086,6 +12121,9 @@
       ],
       "Use a graphical icon or image rather than text.": [
         "Użyj ikony graficznej lub obrazu zamiast tekstu."
+      ],
+      "Use a solid background color.": [
+        "Użyj jednolitego koloru tła."
       ]
     },
     "Organization logo upload modal": {
@@ -12996,11 +13034,17 @@
       ]
     },
     "scim: Info": {
+      "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
+        "**Uwaga:** Aby włączyć konfigurację SCIM, skonfiguruj uwierzytelnianie SAML."
+      ],
       "Enter token into your identity provider": [
         "Wpisz token do dostawcy tożsamości"
       ],
       "Enter URL and token into your identity provider": [
         "Wpisz adres URL i token do dostawcy tożsamości"
+      ],
+      "For security reasons, the SCIM token will be hidden after saving your changes and you won’t be able to see it again.": [
+        "Ze względów bezpieczeństwa token po zapisaniu będzie ukryty i nie będzie można go ponownie zobaczyć."
       ],
       "For security reasons, the token is hidden": [
         "Ze względów bezpieczeństwa token jest ukryty"
@@ -13014,8 +13058,14 @@
       "Make sure you copy the above SCIM token now.": [
         "Upewnij się, że skopiowano token SCIM."
       ],
+      "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
+        "Automatyczna konfiguracja SCIM zostanie wyłączona. Wpisz nowy token SCIM do dostawcy tożsamości."
+      ],
       "The SCIM base URL and token will be deleted.": [
         "Podstawowy adres URL SCIM i token zostaną usunięte."
+      ],
+      "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
+        "Skonfiguruj integrację SCIM, aby ponownie włączyć synchronizację z dostawcą tożsamości."
       ]
     },
     "scim: Label": {
@@ -14087,6 +14137,15 @@
       "10 email addresses": [
         "10 adresów e-mail"
       ],
+      "A direct contribution to our mission": [
+        "Bezpośredni wkład w naszą misję"
+      ],
+      "After ${ BRAND_NAME } got blocked in Iran during protests, our customer support team worked to get our VPN app directly into people's hands.": [
+        "Po zablokowaniu usług ${ BRAND_NAME } w Iranie podczas protestów nasz zespół wsparcia klienta pracował nad dostarczeniem aplikacji VPN użytkowników."
+      ],
+      "After privacy and free speech were threatened in Hong Kong, we directly supported local civil rights organizations.": [
+        "Wspieraliśmy lokalne organizacje zajmujące się prawami obywatelskimi po tym, jak prywatność i wolność słowa zostały zagrożone w Hongkongu."
+      ],
       "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **1 GB** for Mail, and **1 GB** for Drive. You will also lose any storage bonuses earned previously.": [
         "Anulowanie subskrypcji ${ planName } spowoduje zmniejszenie przestrzeni dyskowej z **${ planMaxSpace }** do **1 GB** na pocztę i **1 GB** na dysk. Stracisz również bonusową przestrzeń dyskową."
       ],
@@ -14117,14 +14176,29 @@
       "Close": [
         "Zamknij"
       ],
+      "Custom schedule send and snooze times": [
+        "Niestandardowe godziny planowego wysyłania i usypiania"
+      ],
       "Have a question?": [
         "Masz pytanie?"
+      ],
+      "Helping activists in Hong Kong": [
+        "Pomoc aktywistom w Hongkongu"
       ],
       "I still want to cancel": [
         "Nadal chcę anulować"
       ],
+      "If you exceed your free Drive storage quota:": [
+        "Jeśli przekroczysz przestrzeń dyskową Proton Drive:"
+      ],
+      "If you exceed your free Mail storage quota:": [
+        "Jeśli przekroczysz przestrzeń dyskową Proton Mail:"
+      ],
       "Keep ${ planName }": [
         "Zachowaj plan ${ planName }"
+      ],
+      "Our fight against censorship in Russia": [
+        "Nasza walka z cenzurą w Rosji"
       ],
       "Priority support": [
         "Priorytetowe wsparcie"
@@ -14135,8 +14209,14 @@
       "Resubscribe": [
         "Subskrybuj ponownie"
       ],
+      "Resubscribe to restore access to ${ planName } features.": [
+        "Subskrybuj ponownie, aby przywrócić dostęp do funkcji planu ${ planName }."
+      ],
       "Subscription canceled": [
         "Subskrypcja została anulowana"
+      ],
+      "Unblocking internet access in Iran": [
+        "Odblokowanie dostępu do Internetu w Iranie"
       ],
       "Unlimited folders, labels and filters": [
         "Nieograniczona liczba folderów, etykiet i filtrów"
@@ -14144,11 +14224,23 @@
       "Watch the interview": [
         "Zobacz wywiad"
       ],
+      "When you cancel, you will lose access to": [
+        "Anulowanie planu spowoduje utratę dostęp do"
+      ],
+      "Yearly free storage bonuses": [
+        "Bonusowa przestrzeń dyskowa"
+      ],
       "You **won't be able to add any new files**": [
         "**Nie będziesz mógł dodawać nowych plików**"
       ],
+      "You **won't be able to backup photos** from your devices": [
+        "**Kopia zapasowa zdjęć nie będzie możliwa**"
+      ],
       "You **won't be able to send emails** with attachments": [
         "**Nie wyślesz wiadomości** z załącznikami"
+      ],
+      "You still have ${ expiryDate } on your ${ planName } plan. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling.": [
+        "Plan ${ planName } wygaśnie za ${ expiryDate }. Środki za pozostały czas zostaną dodane do konta ${ BRAND_NAME }. Sprawdź, czy nie przekroczysz limitów darmowego planu."
       ],
       "Your **calendar will be frozen**": [
         "**Kalendarz zostanie zablokowany**"
@@ -14164,6 +14256,38 @@
       ],
       "Your own short @pm.me email alias": [
         "Krótki alias @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB przestrzeni dyskowej"
+      ],
+      "and 15 more premium features": [
+        "i 15 więcej funkcji premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatyczne przekierowanie ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alerty wycieków ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplikacja desktopowa"
+      ],
+      "No ads or tracking": [
+        "Brak reklam i śledzenia"
+      ],
+      "Short @pm.me email address": [
+        "Krótki adres e-mail @pm.me"
+      ],
+      "Upgrade": [
+        "Ulepsz"
+      ],
+      "Upgrade your productivity": [
+        "Zwiększ swoją produktywność"
+      ],
+      "We don't sell your data": [
+        "Nie sprzedajemy Twoich danych"
       ]
     },
     "Subscription renewal state": {
@@ -15133,6 +15257,15 @@
       ],
       "Folders and labels": [
         "Foldery i etykiety"
+      ],
+      "For Linux": [
+        "Linux"
+      ],
+      "For macOS": [
+        "macOS"
+      ],
+      "For Windows": [
+        "Windows"
       ],
       "Forward and auto-reply": [
         "Przekierowanie i autoresponder"

@@ -1506,6 +1506,11 @@
         "Dduṛt"
       ]
     },
+    "Call Scheduled Confirmation": {
+      "You can safely close this tab.": [
+        "Tzemreḍ ad tmedleḍ iccer-agi s tɣellist."
+      ]
+    },
     "Checkout row": {
       "${ users } user": [
         "${ users } n useqdac",
@@ -3106,6 +3111,9 @@
       ],
       "No contacts found to import": [
         "Ulac inermisen i yettwafen i uktar"
+      ],
+      "No image selected": [
+        "Ulac tugna yettwafernen"
       ],
       "No valid address found": [
         "Ur d-nufi ara tansa yeɣtan"
@@ -5734,6 +5742,9 @@
       "Want servers in other countries?": [
         "Tesriḍ iqeddacen deg tmura niḍen?"
       ],
+      "Want to learn more?": [
+        "Tebɣiḍ ad tissineḍ ugar?"
+      ],
       "Warning:": [
         "Alɣu:"
       ],
@@ -7327,6 +7338,9 @@
       ]
     },
     "Log preference": {
+      "Enable ${ reason }": [
+        "Rmed ${ reason }"
+      ],
       "Enable advanced logs": [
         "Rmed iɣmisen leqqayen"
       ],
@@ -8078,6 +8092,12 @@
     "Notification": {
       "${ Filter.Name } created": [
         "${ Filter.Name } yettusnulfa-d"
+      ],
+      "${ reason } has been disabled": [
+        "${ reason } yensa"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } yettwarmed"
       ],
       "A disabled address cannot be default": [
         "Tansa yensan ur tezmir ara ad tili d tansa tamezwert"
@@ -9320,6 +9340,30 @@
     "Subscription price": {
       "For": [
         "I"
+      ]
+    },
+    "Subscription reminder": {
+      "${ dayDiff } day left": [
+        "Mazal ${ dayDiff } wass",
+        "Mazal ${ dayDiff } wussan"
+      ],
+      "${ planMaxSpace } total storage": [
+        "${ planMaxSpace } n uḥraz asemday"
+      ],
+      "10 email addresses": [
+        "10 n tansiwin imayl"
+      ],
+      "Calendar sharing": [
+        "Beṭṭu n uwitay"
+      ],
+      "Cancel subscription": [
+        "Sefsex ajerred"
+      ],
+      "Cancel subscription?": [
+        "Sefsex ajerred?"
+      ],
+      "Priority support": [
+        "Tallalt yezwaren"
       ]
     },
     "Subscription renewal state": {

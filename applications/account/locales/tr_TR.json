@@ -591,7 +591,7 @@
         "Tut"
       ],
       "Keep logo": [
-        "Logoyu sakla"
+        "Logoyu tut"
       ],
       "Keep my Plus subscription": [
         "Plus aboneliğimi koru"
@@ -870,7 +870,7 @@
         "Ülke seçin"
       ],
       "select file": [
-        "dosya seç"
+        "dosya seçin"
       ],
       "Select file": [
         "Dosya seçin"
@@ -1063,6 +1063,9 @@
       ],
       "Upload": [
         "Yükle"
+      ],
+      "Upload logo": [
+        "Logo yükle"
       ],
       "Upload picture": [
         "Fotoğraf yükle"
@@ -1313,11 +1316,20 @@
       ]
     },
     "app-switcher": {
+      "Browse the web privately and block ads": [
+        "İnternet üzerinde gizliliğinizi koruyarak ve reklamları engelleyerek gezinin"
+      ],
+      "Keep your schedule private": [
+        "Zaman planınızı gizli tutun"
+      ],
       "Protect your passwords and identity": [
-        "Şifrelerinizi ve kimliğinizi koruyun"
+        "Parolalarınızı ve kimliğinizi koruyun"
       ],
       "Safeguard your files and photos": [
         "Dosyalarınızı ve fotoğraflarınızı koruyun"
+      ],
+      "Secure your communications": [
+        "İletişiminizin güvenliğini sağlayın"
       ]
     },
     "Apps dropdown": {
@@ -1892,6 +1904,9 @@
     "Call Scheduled Confirmation": {
       "Request sent": [
         "İstek gönderildi"
+      ],
+      "We'll get back to you with more information as soon as we can.": [
+        "Olabilecek en kısa sürede size daha fazla bilgi vereceğiz."
       ],
       "You can safely close this tab.": [
         "Bu sekmeyi güvenle kapatabilirsiniz."
@@ -3122,10 +3137,7 @@
     },
     "Delete address prompt": {
       "Once deleted, this address can't be used again by anyone else.": [
-        "Bu adres silindikten sonra başka hiç kimse tarafından tekrar kullanılamaz."
-      ],
-      "The next active address on your list will be set as the default.": [
-        "Listenizdeki bir sonraki etkin adres varsayılan olarak ayarlanacak."
+        "Bu adres silindikten sonra başka hiç kimse tarafından yeniden kullanılamaz."
       ],
       "You can only delete 1 address per year.": [
         "Bir yıl içinde yalnızca 1 adres silebilirsiniz."
@@ -3318,6 +3330,14 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Kendimizi geliştirmemize yardımcı olun!"
+      ]
+    },
+    "Download link": {
+      ".deb for Debian / Ubuntu": [
+        "Debian / Ubuntu için .deb"
+      ],
+      ".rpm for Fedora / Red Hat": [
+        "Fedora / Red Hat için .rpm"
       ]
     },
     "drive_signup_2023: Info": {
@@ -3907,7 +3927,7 @@
         "Logo işlenemedi"
       ],
       "File too large. Your logo must be 30 KB or smaller.": [
-        "Dosya çok büyük. Logonuz 30 KB veya daha küçük olmalıdır."
+        "Dosya çok büyük. Logonuzun boyutu 30 KB ya da daha küçük olmalıdır."
       ],
       "Filter with this name already exists": [
         "Aynı adlı bir süzgeç zaten var"
@@ -3928,7 +3948,7 @@
         "Ağ geçidi yeniden adlandırılamıyor"
       ],
       "Incorrect file type. Upload a file in PNG or JPEG format.": [
-        "Yanlış dosya türü. PNG veya JPEG formatında bir dosya yükleyin."
+        "Dosya türü yanlış. PNG ya da JPEG biçiminde bir dosya yükleyin."
       ],
       "Incorrect login credentials. Please try again.": [
         "Oturum açma bilgileri yanlış. Lütfen yeniden deneyin."
@@ -4016,7 +4036,7 @@
         "Kullanıcı için alınan hiçbir dış anahtar göndermek için geçerli değil"
       ],
       "No image selected": [
-        "Seçili görüntü yok"
+        "Herhangi bir görsel seçilmemiş"
       ],
       "No valid address found": [
         "Geçerli bir adres bulunamadı"
@@ -4086,7 +4106,7 @@
         "Birden çok kullanıcıyı yönetmek için lütfen 1 taneden fazla kullanıcı içeren kurumsal bir tarifeye geçin."
       ],
       "Please upload a square file": [
-        "Lütfen kare bir dosya yükleyin"
+        "Lütfen kare biçiminde bir dosya yükleyin"
       ],
       "Please upload an xml file": [
         "Lütfen bir XML dosyası yükleyin"
@@ -4162,10 +4182,10 @@
         "E-posta adresleri eşleşmiyor"
       ],
       "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
-        "Dosya çok büyük, maksimum boyut ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }"
+        "Dosya çok büyük. En fazla boyut ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }"
       ],
       "The file is too small, the minimum size is ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }": [
-        "Dosya çok küçük, minimum boyut ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }"
+        "Dosya çok küçük. En az boyut ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }"
       ],
       "The folder name is invalid. Please choose a different name.": [
         "Klasör adı geçersiz. Lütfen farklı bir ad seçin."
@@ -5956,6 +5976,9 @@
       "${ BRAND_NAME } is privacy you can trust, ensured by strong encryption, open-source code, and Swiss privacy laws. We believe nobody should be able to exploit your data, period. Our technology and business are based upon this fundamentally stronger definition of privacy.": [
         "${ BRAND_NAME }, güçlü şifreleme, açık kaynak kodu ve İsviçre gizlilik yasaları tarafından sağlanan, güvenebileceğiniz bir gizlilik sunar. Kimsenin verilerinizden yarar sağlamaması gerektiğine inanıyoruz, nokta. Teknolojimiz ve işimiz, gizliliğin temelden daha güçlü olan bu tanımına dayanıyor."
       ],
+      "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
+        "${ BRAND_NAME } bilgilerinizi asla üçüncü taraflarla paylaşmaz. Veriler ${ BRAND_NAME } iç incelemeleri ve Constella Intelligence kuruluşundan gelmektedir."
+      ],
       "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "${ BRAND_NAME }, diğer e-posta hizmeti sağlayıcınızla bağlantıyı kaybettiğinden içe aktarma işlemini duraklattı. Lüften yeniden bağlanın."
       ],
@@ -6187,6 +6210,9 @@
         "Sunucu ekle (${ availableAddedCount } kullanılabilir)",
         "Sunucu ekle (${ availableAddedCount } kullanılabilir)"
       ],
+      "Add your name and logo to create a more personalized experience for your organization.": [
+        "Kuruluşunuz için daha kişiselleştirilmiş bir deneyim oluşturmak için adınızı ve logonuzu ekleyin."
+      ],
       "Adding ${ addedServerCount } gateway server": [
         "${ addedServerCount } ağ geçidi sunucusu ekleniyor",
         "${ addedServerCount } ağ geçidi sunucusu ekleniyor"
@@ -6257,7 +6283,7 @@
         "Ödenecek tutar"
       ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
-        "E-posta takma adı e-posta adresi gibi çalışır, ancak istenmeyen postaları azaltır ve gerçek e-posta adresinizi ve kimliğinizi gizli tutar."
+        "E-posta takma adı e-posta adresi gibi çalışır. Ancak istenmeyen e-postaları azaltır ve gerçek e-posta adresiniz ile kimliğinizi gizli tutar."
       ],
       "An error occurred while communicating with the extension": [
         "Eklenti ile iletişim kurulurken bir sorun çıktı"
@@ -6507,6 +6533,9 @@
       "Custom": [
         "Özel"
       ],
+      "Custom branding": [
+        "Özel marka"
+      ],
       "Custom daily": [
         "Günde bir, özel"
       ],
@@ -6728,6 +6757,9 @@
       "Failed to fetch logs.": [
         "Günlük kayıtları alınamadı."
       ],
+      "Fast and focused. Email and calendar, right on your desktop.": [
+        "Hızlı ve odaklanmış. E-posta ve takvim, doğrudan masaüstünüzde."
+      ],
       "Fill in user details": [
         "Kullanıcı bilgilerini yazın"
       ],
@@ -6766,6 +6798,9 @@
       ],
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "Bir ${ BRAND_NAME } hesabı açarak ve daveti kabul ederek verilere erişebilirsiniz."
+      ],
+      "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
+        "Parolanız veya diğer kişisel verileriniz ele geçirilmişse bildirim alın. ${ learnMoreLinkNoBreach }"
       ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "Kod için, kullanmayı düşündüğünüz hizmet gibi açıklayıcı bir ad yazın ve etkin özel etki alanı adreslerinizden birini seçin. Bu kod ile yalnızca bu adres e-posta gönderebilir."
@@ -6846,10 +6881,10 @@
         "Bu hesabı başka bir hesapla birleştirmek isterseniz, SİLMEYİN."
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
-        "Sorun yaşıyorsanız, size yardımcı olmak için buradayız. Destek uzmanlarımızdan biriyle ${ boldPhoneCall } veya ${ boldZoomMeeting } görüşün ya da sohbet desteği için bir ${ boldLiveChat } açın."
+        "Sorun yaşıyorsanız, size yardımcı olmak için buradayız. Destek uzmanlarımızdan biriyle ${ boldPhoneCall } yapın ya da ${ boldZoomMeeting } ile görüşün. Canlı destek almak için bir ${ boldLiveChat } açın."
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists.": [
-        "Sorun yaşıyorsanız, size yardımcı olmak için buradayız. ${ boldPhoneCall } veya ${ boldZoomMeeting } destek uzmanlarımızdan biriyle görüşün."
+        "Sorun yaşıyorsanız, size yardımcı olmak için buradayız. ${ boldPhoneCall } yapın ya da ${ boldZoomMeeting } ile destek uzmanlarımızdan biriyle görüşün."
       ],
       "Image description": [
         "Görsel açıklaması"
@@ -7085,7 +7120,7 @@
         "Yeni klasörünüzü adlandırın ve içine eklemek istediğiniz üst klasörü seçin. Herhangi bir üst klasör seçmezseniz, yeni klasör bir üst düzey klasör olur."
       ],
       "NetShield is an ad-blocking feature from ${ VPN_APP_NAME } that protects your device from ads, trackers, and malware.": [
-        "NetShield, ${ VPN_APP_NAME }'in cihazınızı reklamlardan, izleyicilerden ve kötü amaçlı yazılımlardan koruyan bir reklam engelleme özelliğidir."
+        "NetShield, ${ VPN_APP_NAME } ile aygıtınızı reklamlardan, izleyicilerden ve kötü amaçlı yazılımlardan koruyan bir reklam engelleme özelliğidir."
       ],
       "New": [
         "Yeni"
@@ -7395,7 +7430,7 @@
         "Bildirim bağlantısının süresi geçmiş"
       ],
       "Request a phone call": [
-        "Telefon görüşmesi talep edin"
+        "Telefon ile aranma isteği"
       ],
       "Resend verification email": [
         "Doğrulama e-postasını yeniden gönder"
@@ -7560,6 +7595,9 @@
       "Support for 1 custom email domain": [
         "1 özel e-posta etki alanı desteği"
       ],
+      "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
+        "Özel etki alanlarının ve ${ BRAND_NAME } olmayan e-posta adreslerinin izlenmesi desteği yakında sunulacak."
+      ],
       "support team": [
         "destek ekibi"
       ],
@@ -7597,7 +7635,7 @@
         "Kimlik hizmeti sağlayıcınızdaki kimlik bilgileri silinecek."
       ],
       "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
-        "Karanlık ağ, kimlikler gibi çalınan kişisel bilgilerin alınıp satılabildiği internetin gizli bir bölümüdür."
+        "Karanlık ağ, kimlikler gibi çalınan kişisel bilgilerin alınıp satılabildiği gizli bir İnternet bölümüdür."
       ],
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "E-posta doğrulama bağlantısının geçerlilik süresi dolmuş. Lütfen yeni bir doğrulama bağlantısının gönderilmesi için oturum açın."
@@ -7890,6 +7928,9 @@
       "Upload your completed CSV file to create accounts": [
         "Hesapları oluşturmak için hazırladığınız CSV dosyasını yükleyin"
       ],
+      "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
+        "Marka kimliğinizi güçlendirmek ve kullanıcılarınız için kişiselleştirilmiş bir deneyim oluşturmak için kuruluşunuzun logosunu yükleyin."
+      ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "Yüklenen dosya geçerli bir kişisel anahtar değil. Lütfen doğrulayıp yeniden deneyin."
       ],
@@ -7897,7 +7938,7 @@
         "Adres bağlantısı"
       ],
       "Use a password manager to generate and securely store your passwords, ensuring strong passwords and easier sign-ins.": [
-        "Parolalarınızı oluşturmak ve güvenli bir şekilde saklamak, güçlü parolalar ve daha kolay oturum açma sağlamak için bir parola yöneticisi kullanın."
+        "Parolalarınızı oluşturmak ve güvenli bir şekilde saklamak, güçlü parolalar oluşturmak ve daha kolay oturum açmak için bir parola yöneticisi kullanın."
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Güncel yük ve konuma göre en iyi sunucuyu kullanın: ${ formattedBestServerName }"
@@ -7976,6 +8017,9 @@
       ],
       "We just sent you a new link.": [
         "Size yeni bir bağlantı gönderdik."
+      ],
+      "We monitor the dark web for instances where your personal information (such as an email address or password used on a third-party site) is leaked or compromised.": [
+        "Kişisel bilgilerinizin (üçüncü taraf bir sitede kullanılan e-posta adresi ya da parola gibi) sızdırıldığı veya ele geçirildiği durumlar için karanlık ağı izliyoruz."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Ödeme yönteminizi bankanızla doğrulamamız gerekiyor."
@@ -8467,22 +8511,25 @@
         "Anahtar oluştur"
       ],
       "Generating key failed. Please try again later.": [
-        "Anahtar oluşturma başarısız oldu. Lütfen daha sonra tekrar deneyin."
+        "Anahtar oluşturulamadı. Lütfen bir süre sonra yeniden deneyin."
       ],
       "If you're generating a new key because you believe your existing key has been compromised, please mark it as compromised after generating this key.": [
-        "Mevcut anahtarınızın ele geçirildiğini düşündüğünüz için yeni bir anahtar oluşturuyorsanız, lütfen bu anahtarı oluşturduktan sonra ele geçirildi olarak işaretleyin."
+        "Var olan anahtarınızın ele geçirildiğini düşündüğünüz için yeni bir anahtar oluşturuyorsanız, lütfen yeni anahtarı oluşturduktan sonra bunu ele geçirilmiş olarak işaretleyin."
       ],
       "Key successfully generated.": [
-        "Anahtar başarıyla oluşturuldu."
+        "Anahtar oluşturuldu."
+      ],
+      "Note: you already have a key with the same algorithm for this address. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
+        "Not: Bu adres için aynı algoritmayı kullanan bir anahtarınız zaten var. Bu anahtar ele geçirilmediği sürece, yeni bir anahtar oluşturmak gereksiz olabilir ve bunu yapmak hesabınızı yavaşlatabilir."
       ],
       "Note: you already have a key with the same algorithm for this user. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
-        "Not: Bu kullanıcı için aynı algoritmaya sahip bir anahtarınız zaten var. Bu anahtar ele geçirilmediği sürece, yeni bir anahtar oluşturmak gereksiz olabilir ve bunu yapmak hesabınızı yavaşlatabilir."
+        "Not: Bu kullanıcı için aynı algoritmayı kullanan bir anahtarınız zaten var. Bu anahtar ele geçirilmediği sürece, yeni bir anahtar oluşturmak gereksiz olabilir ve bunu yapmak hesabınızı yavaşlatabilir."
       ],
       "This will generate a new key, which will be used to encrypt future contact details, email encryption keys, and other data.": [
-        "Bu, gelecekteki iletişim bilgilerini, e-posta şifreleme anahtarlarını ve diğer verileri şifrelemek için kullanılacak yeni bir anahtar oluşturacaktır."
+        "Bu işlem, gelecekteki iletişim bilgilerini, e-posta şifreleme anahtarlarını ve diğer verileri şifrelemek için kullanılacak yeni bir anahtar oluşturacak."
       ],
       "This will generate a new key, which will be used to encrypt future emails, among other data.": [
-        "Bu, diğer verilerin yanı sıra gelecekteki e-postaları şifrelemek için kullanılacak yeni bir anahtar oluşturacaktır."
+        "Bu işlem, diğer verilerin yanı sıra gelecekteki e-postaları şifrelemek için kullanılacak yeni bir anahtar oluşturacak."
       ]
     },
     "Key state badge": {
@@ -8886,6 +8933,9 @@
       ],
       "Awarded": [
         "Hediye edilen"
+      ],
+      "Beta": [
+        "Beta"
       ],
       "Billing address": [
         "Fatura adresi"
@@ -9900,6 +9950,9 @@
       "here": [
         "buradan"
       ],
+      "How does monitoring work?": [
+        "İzleme nasıl çalışır?"
+      ],
       "How to pay with Bitcoin?": [
         "Bitcoin ile nasıl ödeme yapabilirsiniz?"
       ],
@@ -10034,6 +10087,9 @@
       ]
     },
     "Log preference": {
+      "Enable ${ reason }": [
+        "${ reason } özelliğini aç"
+      ],
       "Enable advanced logs": [
         "Gelişmiş günlükler tutulsun"
       ],
@@ -11380,11 +11436,23 @@
       "${ Filter.Name } created": [
         "${ Filter.Name } eklendi"
       ],
+      "${ reason } has been disabled": [
+        "${ reason } özelliği kapatıldı"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } özelliği açıldı"
+      ],
       "A disabled address cannot be default": [
         "Kullanım dışı bırakılmış bir adres varsayılan olamaz"
       ],
       "An external address cannot be default": [
         "Bir dış adres varsayılan olamaz"
+      ],
+      "Dark Web Monitoring has been disabled": [
+        "Karanlık ağ izleme kapatıldı"
+      ],
+      "Dark Web Monitoring has been enabled": [
+        "Karanlık ağ izleme açıldı"
       ],
       "Invalid code": [
         "Kod geçersiz"
@@ -11792,28 +11860,37 @@
       "Avoid overly compressed images.": [
         "Aşırı sıkıştırılmış görüntülerden kaçının."
       ],
+      "Ensure your logo has padding space around it.": [
+        "Logonuzun çevresinde boşluk olduğundan emin olun."
+      ],
       "Opt for a PNG image that is a 128x128 pixels for clarity.": [
-        "Netlik için 128x128 piksel olan bir PNG görüntüsü tercih edin."
+        "Netlik için 128x128 piksel boyutunda bir PNG görseli kullanın."
+      ],
+      "Tips on choosing a good logo": [
+        "İyi bir logo seçmeye yönelik ipuçları"
       ],
       "Use a graphical icon or image rather than text.": [
-        "Metin yerine grafiksel bir simge veya resim kullanın."
+        "Metin yerine bir simge ya da görsel kullanın."
+      ],
+      "Use a solid background color.": [
+        "Düz bir arka plan rengi kullanın."
       ]
     },
     "Organization logo upload modal": {
       "Drop image file here to upload or": [
-        "Yüklemek için resim dosyasını buraya bırakın veya"
+        "Yüklemek için görsel dosyasını sürükleyip buraya bırakın ya da"
       ],
       "File in PNG or JPEG format": [
-        "PNG veya JPEG formatında dosya"
+        "PNG ya da JPEG biçiminde dosya"
       ],
       "File not larger than 30 KB": [
-        "Dosya 30 KB'tan büyük olmamalıdır"
+        "Dosya 30 KB boyutundan büyük olmamalıdır"
       ],
       "Square image of at least 128 pixels": [
-        "En az 128 piksellik kare görüntü"
+        "En az 128 piksel kare biçiminde görsel"
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
-        "Kullanıcılar web uygulamalarımızda oturum açtıklarında ${ BRAND_NAME } simgesi yerine logonuzu görecekler."
+        "Kullanıcılar İnternet uygulamalarımızda oturum açtıklarında ${ BRAND_NAME } simgesi yerine logonuzu görecekler."
       ]
     },
     "OS compatibility": {
@@ -12683,12 +12760,100 @@
         "Kullanıcı"
       ]
     },
+    "scim: Action": {
+      "Configure SCIM": [
+        "SCIM yapılandırması"
+      ],
+      "Disable SCIM": [
+        "SCIM kullanım dışı bırakılsın"
+      ],
+      "Disable SCIM integration": [
+        "SCIM bütünleştirmesi kullanım dışı bırakılsın mı"
+      ],
+      "Generate new token": [
+        "Yeni kod oluştur"
+      ],
+      "Generate token": [
+        "Kod oluştur"
+      ]
+    },
+    "scim: Info": {
+      "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
+        "**Ön koşul:** SCIM veri sağlamasını kullanıma almak için SAML kimlik doğrulamasının yapılandırılması gerekir."
+      ],
+      "Enter token into your identity provider": [
+        "Kodu kimlik hizmeti sağlayıcınıza yazın"
+      ],
+      "Enter URL and token into your identity provider": [
+        "Adresi ve kodu kimlik hizmeti sağlayıcınıza yazın"
+      ],
+      "For security reasons, the SCIM token will be hidden after saving your changes and you won’t be able to see it again.": [
+        "Güvenlik nedeniyle, değişikliklerinizi kaydettikten sonra SCIM kodu gizlenecek ve onu bir daha göremeyeceksiniz."
+      ],
+      "For security reasons, the token is hidden": [
+        "Güvenlik nedeniyle kod gizlenmiştir"
+      ],
+      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ VPN_APP_NAME }.": [
+        "Aşağıdaki verileri kopyalayın, kimlik hizmeti sağlayıcınıza giderek yapıştırın ve ${ VPN_APP_NAME } için SCIM yapılandırmasını tamamlayın."
+      ],
+      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ VPN_APP_NAME }.": [
+        "Aşağıdaki kodu kopyalayın, kimlik hizmeti sağlayıcınıza giderek yapıştırın ve ${ VPN_APP_NAME } için SCIM bütünleştirmesini yeniden kullanıma alın."
+      ],
+      "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
+        "SCIM kodunuzu kaybettiyseniz ya da unuttuysanız yeni bir kod oluşturabilirsiniz. Ancak kimlik hizmeti sağlayıcı ayarlarınızı güncellemeniz gerekeceğini unutmayın."
+      ],
+      "Make sure you copy the above SCIM token now.": [
+        "Yukarıdaki SCIM kodunu şimdi kopyaladığınızdan emin olun."
+      ],
+      "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
+        "Kuruluşunuzda SCIM kullanımdan kaldırıldığında, **kimlik hizmeti sağlayıcınız tarafından otomatik olarak sunulan tüm SCIM kullanıcıları tek oturum açma kullanıcılarına dönüştürülür** ve bunları doğrudan ${ BRAND_NAME } ayarlarından yönetebilirsiniz."
+      ],
+      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ VPN_APP_NAME } organization.": [
+        "Farklı hizmetler arasında kullanıcıların yönetimini kolaylaştırır. Kimlik hizmeti sağlayıcınıza kullanıcı ekleyebilir, düzenleyebilir ve kaldırabilirsiniz. Bu değişiklikler otomatik olarak ${ VPN_APP_NAME } kuruluşunuza uygulanır."
+      ],
+      "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
+        "Yeni SCIM kodunu kimlik hizmeti sağlayıcınızın ayarlarına yazıncaya kadar SCIM otomatik veri sağlama özelliği kullanım dışı kalır."
+      ],
+      "The SCIM base URL and token will be deleted.": [
+        "SCIM temel adresi ve kodu silinecek."
+      ],
+      "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
+        "Kimlik hizmeti sağlayıcınızla eşitlemeyi yeniden kullanıma almak için SCIM bütünleştirmesini yeniden tamamlamanız gerekir."
+      ]
+    },
+    "scim: Label": {
+      "SCIM base URL": [
+        "SCIM temel adresi"
+      ],
+      "SCIM base URL (or tenant URL)": [
+        "SCIM temel adresi (ya da kiracı adresi)"
+      ],
+      "SCIM token": [
+        "SCIM kodu"
+      ]
+    },
     "scim: Title": {
       "Disable SCIM integration?": [
-        "SCIM entegrasyonu kullanım dışı bırakılsın mı?"
+        "SCIM bütünleştirmesi kullanım dışı bırakılsın mı?"
       ],
       "Generate new SCIM token?": [
-        "Yeni SCIM belirteci oluşturulsun mu?"
+        "Yeni SCIM kodu oluşturulsun mu?"
+      ],
+      "SCIM automatic provisioning": [
+        "SCIM otomatik veri sağlama"
+      ]
+    },
+    "scim: Tooltip": {
+      "API key of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
+        "IdP veri sağlama aracınızın SCIM verilerini ilettiği SCIM bağlantısının API anahtarı"
+      ],
+      "URL of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
+        "IdP veri sağlama aracınızın SCIM verilerini ilettiği SCIM bağlantısının adresi"
+      ]
+    },
+    "Security Center - Info": {
+      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLinkBreach }": [
+        "Bilgileriniz en az bir verilerin ele geçirilmesi olayında görüldü. Ayrıntıları görmek ve önlem almak için ${ DARK_WEB_MONITORING_NAME } özelliğini açın. ${ learnMoreLinkBreach }"
       ]
     },
     "Select file": {
@@ -13649,6 +13814,156 @@
         "Toplam"
       ]
     },
+    "Subscription reminder": {
+      "${ BRAND_NAME } was targeted by Russia in one of the most aggressive censorship campaigns in recent memory, and our team fought back.": [
+        "${ BRAND_NAME }, yakın geçmişteki en saldırgan sansür uygulamalarından birinde Rusya tarafından hedef alındı ve ekibimiz karşılık verdi."
+      ],
+      "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
+        "${ BRAND_NAME } tek gelir kaynağını kullanıcı aboneliklerinden sağlıyor. Desteğiniz bağımsız kalmamızı, çevrim içi gizliliğe odaklanma misyonumuzu ilerletmemizi ve gizlilik ve özgürlük için mücadele eden aktivistleri ve kuruluşları desteklemeyi sürdürmemizi sağlıyor."
+      ],
+      "${ dayDiff } day left": [
+        "${ dayDiff } gün kaldı",
+        "${ dayDiff } gün kaldı"
+      ],
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } masaüstü uygulaması"
+      ],
+      "${ planMaxSpace } total storage": [
+        "${ planMaxSpace } toplam depolama alanı"
+      ],
+      "${ planName } doesn't just provide extra storage. It lets you manage your emails faster, customize your inbox and email addresses, and access the desktop app.": [
+        "${ planName } yalnızca ek depolama alanı sağlamaz. E-postalarınızı daha hızlı yönetmenizi, gelen kutunuzu ve e-posta adreslerinizi özelleştirmenizi ve masaüstü uygulamasına erişmenizi sağlar."
+      ],
+      "10 email addresses": [
+        "10 e-posta adresi"
+      ],
+      "A direct contribution to our mission": [
+        "Misyonumuza doğrudan katkıda bulunmak"
+      ],
+      "After ${ BRAND_NAME } got blocked in Iran during protests, our customer support team worked to get our VPN app directly into people's hands.": [
+        "İran'daki protestolar sırasında ${ BRAND_NAME } engellendikten sonra müşteri destek ekibimiz VPN uygulamamızı doğrudan insanların kullanımına sunmak için çalıştı."
+      ],
+      "After privacy and free speech were threatened in Hong Kong, we directly supported local civil rights organizations.": [
+        "Hong Kong'da gizlilik ve ifade özgürlüğü tehdit altına girdiğinde yerel sivil haklar örgütlerini doğrudan destekledik."
+      ],
+      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **1 GB** for Mail, and **1 GB** for Drive. You will also lose any storage bonuses earned previously.": [
+        "${ planName } aboneliğinizi iptal ettiğinizde, depolama alanınız **${ planMaxSpace }** değerinden Mail için **1 GB** ve Drive için **1 GB** değerine düşer. Ayrıca daha önce kazandığınız depolama alanı hediyelerini de kaybedersiniz."
+      ],
+      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **1 GB** for Mail, and **5 GB** for Drive. You will also lose any storage bonuses earned previously.": [
+        "${ planName } aboneliğinizi iptal ettiğinizde, depolama alanınız **${ planMaxSpace }** değerinden Mail için **1 GB** ve Drive için **5 GB** değerine düşer. Ayrıca daha önce kazandığınız depolama alanı hediyelerini de kaybedersiniz."
+      ],
+      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **500 MB** for Mail, and **1 GB** for Drive. You will also lose any storage bonuses earned previously.": [
+        "${ planName } aboneliğinizi iptal ettiğinizde, depolama alanınız **${ planMaxSpace }** değerinden Mail için **500 MB** ve Drive için **1 GB** değerine düşer. Ayrıca daha önce kazandığınız depolama alanı hediyelerini de kaybedersiniz."
+      ],
+      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **500 MB** for Mail, and **5 GB** for Drive. You will also lose any storage bonuses earned previously.": [
+        "${ planName } aboneliğinizi iptal ettiğinizde, depolama alanınız **${ planMaxSpace }** değerinden Mail için **500 MB** ve Drive için **5 GB** değerine düşer. Ayrıca daha önce kazandığınız depolama alanı hediyelerini de kaybedersiniz."
+      ],
+      "By downgrading your account, you will also lose storage space": [
+        "Tarifenizi düşürdüğünüzde depolama alanınızı da kaybedersiniz"
+      ],
+      "By downgrading your account, you will lose access to these important features": [
+        "Tarifenizi düşürdüğünüzde, şu önemli özelliklere erişiminizi kaybedeceksiniz"
+      ],
+      "Calendar sharing": [
+        "Takvim paylaşımı"
+      ],
+      "Cancel subscription": [
+        "Aboneliği iptal et"
+      ],
+      "Cancel subscription?": [
+        "Abonelik iptal edilsin mi?"
+      ],
+      "Close": [
+        "Kapat"
+      ],
+      "Custom schedule send and snooze times": [
+        "Özel zamanlanmış gönderim ve erteleme süreleri"
+      ],
+      "Have a question?": [
+        "Bir sorunuz mu var?"
+      ],
+      "Helping activists in Hong Kong": [
+        "Hong Kong aktivistlerine yardımlarımız"
+      ],
+      "I still want to cancel": [
+        "Yine de iptal etmek istiyorum"
+      ],
+      "If you exceed your free Drive storage quota:": [
+        "Ücretsiz Drive depolama alanı kotanızı aşarsanız:"
+      ],
+      "If you exceed your free Mail storage quota:": [
+        "Ücretsiz Mail depolama alanı kotanızı aşarsanız:"
+      ],
+      "Keep ${ planName }": [
+        "${ planName } tarifesinde kal"
+      ],
+      "Learn more about our impact": [
+        "Yarattığımız etki hakkında ayrıntılı bilgi alın"
+      ],
+      "Let us remind you of everything ${ planName } can do": [
+        "${ planName } tarifesi ile yapabileceklerinizi size hatırlatalım"
+      ],
+      "Our fight against censorship in Russia": [
+        "Rusya'da sansüre karşı mücadelemiz"
+      ],
+      "Priority support": [
+        "Öncelikli destek"
+      ],
+      "Read the story": [
+        "Öykümüzü okuyun"
+      ],
+      "Resubscribe": [
+        "Yeniden abone ol"
+      ],
+      "Resubscribe to restore access to ${ planName } features.": [
+        "${ planName } özelliklerine yeniden erişebilmek için yeniden abone olun."
+      ],
+      "Subscription canceled": [
+        "Abonelik iptal edildi"
+      ],
+      "Unblocking internet access in Iran": [
+        "İran İnternet erişimi engelini kaldırmak"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Sınırsız klasör, etiket ve süzgeç"
+      ],
+      "Watch the interview": [
+        "Röportajı izleyin"
+      ],
+      "When you cancel, you will lose access to": [
+        "İptal ettiğinizde, şu özelliklere erişimi kaybedeceksiniz"
+      ],
+      "Yearly free storage bonuses": [
+        "Yıllık ücretsiz depolama alanı hediyeleri"
+      ],
+      "You **won't be able to add any new files**": [
+        "**Herhangi bir yeni dosya ekleyemezsiniz**"
+      ],
+      "You **won't be able to backup photos** from your devices": [
+        "Aygıtlarınızdaki **fotoğrafları yedekleyemeyeceksiniz**"
+      ],
+      "You **won't be able to send emails** with attachments": [
+        "Ek dosyalar bulunan **e-postalar gönderemezsiniz**"
+      ],
+      "You still have ${ expiryDate } on your ${ planName } plan. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling.": [
+        "${ planName } tarifenizin ${ expiryDate } süresi daha var. Kalan süreye ait kredileri ${ BRAND_NAME } hesabınıza ekleyeceğiz. İptal etmeden önce ücretsiz tarifenin sınırlarını aşmadığınızdan emin olun."
+      ],
+      "Your **calendar will be frozen**": [
+        "**Takviminiz dondurulur**"
+      ],
+      "Your devices will **stop syncing**": [
+        "Aygıtlarınızın **eşitlemesi durdurulur**"
+      ],
+      "Your inbox will **stop receiving new emails**": [
+        "Gelen kutunuz **yeni e-posta almayı durdurur**"
+      ],
+      "Your own custom email domain": [
+        "Kendi özel e-posta etki alanınız"
+      ],
+      "Your own short @pm.me email alias": [
+        "Kendi kısa @pm.me e-posta takma adınız"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Emin misiniz?"
@@ -14378,6 +14693,9 @@
       "Custom selection of users": [
         "Özel kullanıcı seçimi"
       ],
+      "Customization": [
+        "Özelleştirme"
+      ],
       "Customize and confirm": [
         "Özelleştir ve onayla"
       ],
@@ -14596,6 +14914,15 @@
       "Folders and labels": [
         "Klasörler ve etiketler"
       ],
+      "For Linux": [
+        "Linux için"
+      ],
+      "For macOS": [
+        "macOS için"
+      ],
+      "For Windows": [
+        "Windows için"
+      ],
       "Forward and auto-reply": [
         "İletme ve otomatik yanıtlama"
       ],
@@ -14634,6 +14961,9 @@
       ],
       "How does it work?": [
         "Nasıl çalışır?"
+      ],
+      "How to choose a good logo": [
+        "İyi bir logo nasıl seçilir"
       ],
       "How to refer a friend and get credits": [
         "Kredi kazanmak için bir arkadaşınıza nasıl önerebilirsiniz"
@@ -14865,7 +15195,7 @@
         "Parola sıfırlansın mı?"
       ],
       "Resolved": [
-        "Çözüldü"
+        "Çözümlenmiş"
       ],
       "Restore administrator privileges": [
         "Yönetici yetkilerini geri yükle"
@@ -15104,6 +15434,15 @@
       ],
       "WireGuard configuration": [
         "WireGuard yapılandırması"
+      ],
+      "You have no open alerts": [
+        "Açık bir uyarınız yok"
+      ],
+      "You have no resolved alerts": [
+        "Çözümlenmiş bir uyarınız yok"
+      ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "${ planName } ücretsiz deneme süreniz ${ textDate } tarihinde sonra erecek"
       ],
       "Your calendar link": [
         "Takvim bağlantınız"
@@ -15386,6 +15725,9 @@
       ],
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
         "Açıldığında, tarayıcınızın varsayılan kaydırma çubukları kullanılır. Bunlar genellikle daha geniştir ve daha kolay kullanılır"
+      ],
+      "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
+        "Kullanıcılar İnternet uygulamalarımızda oturum açtıklarında ${ BRAND_NAME } simgesi yerine logonuzu görecekler."
       ],
       "Usually an URL that contains the identity provider's name within": [
         "Genellikle kimlik hizmeti sağlayıcının adının bulunduğu bir adres"

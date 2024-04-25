@@ -1677,6 +1677,9 @@
       "Continue using ${ planTitle }": [
         "Nadaljuj z uporabo ${ planTitle }a"
       ],
+      "Continue your subscription": [
+        "Podaljšajte naročnino"
+      ],
       "Copy": [
         "Kopiraj"
       ],
@@ -1880,6 +1883,9 @@
     "Call Scheduled Confirmation": {
       "Request sent": [
         "Zahteva je poslana"
+      ],
+      "You can safely close this tab.": [
+        "Lahko varno zaprete ta zavihek."
       ]
     },
     "Checkout row": {
@@ -3118,9 +3124,6 @@
       ]
     },
     "Delete address prompt": {
-      "The next active address on your list will be set as the default.": [
-        "Naslednji aktivni naslov na seznamu bo nastavljen kot privzeti naslov."
-      ],
       "You can only delete 1 address per year.": [
         "Na leto lahko izbrišete samo 1 naslov."
       ]
@@ -3312,6 +3315,14 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Pomagajte nam izboljšati!"
+      ]
+    },
+    "Download link": {
+      ".deb for Debian / Ubuntu": [
+        ".deb za Debian / Ubuntu"
+      ],
+      ".rpm for Fedora / Red Hat": [
+        ".rpm za Fedoro / Red Hat"
       ]
     },
     "drive_signup_2023: Info": {
@@ -6572,6 +6583,9 @@
       "Custom": [
         "Po meri"
       ],
+      "Custom branding": [
+        "Blagovna znamka po meri"
+      ],
       "Custom daily": [
         "Dnevno po meri"
       ],
@@ -6796,6 +6810,9 @@
       ],
       "Failed to fetch logs.": [
         "Pridobivanje dnevniških zapisov ni uspelo."
+      ],
+      "Fast and focused. Email and calendar, right on your desktop.": [
+        "Hitrost in osredotočenost. E-pošta in koledar na vašem namizju."
       ],
       "Fill in user details": [
         "Vnesite podatke o uporabniku"
@@ -7037,6 +7054,9 @@
       "Lean more about single sign-on": [
         "Več informacij o enotni prijavi"
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Naučite se ${ staySaferOnlineLink }"
+      ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Naučite se prijaviti v ${ VPN_APP_NAME } s pomočjo VPN aplikacij drugih ponudnikov."
       ],
@@ -7075,6 +7095,9 @@
       ],
       "Loading ${ appName }": [
         "${ appName } se nalaga"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Nalaganje koledarja, počakajte. Preusmerjeni boste na našo platformo za razporejanje Calendly v novem zavihku."
       ],
       "Loading preview": [
         "Nalaganje predogleda"
@@ -7655,6 +7678,9 @@
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "Povezava za preverjanje elektronske pošte je potekla. Prosimo, prijavite se, da pošljete novo povezavo za preverjanje."
       ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "Razkrite informacije so pricurljale iz storitve tretje osebe. Podatki o vašem računu ${ BRAND_NAME } ostajajo varni in šifrirani. ${ learnMoreLink }"
+      ],
       "The following address is available:": [
         "Naslednji naslov je na voljo:"
       ],
@@ -7946,6 +7972,9 @@
       "Upload your completed CSV file to create accounts": [
         "Naložite vašo izpolnjeno datoteko CSV, da ustvarite račune."
       ],
+      "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
+        "Naložite logotip svoje organizacije, da povečate identiteto svoje blagovne znamke in ustvarite osebno izkušnjo za svoje uporabnike."
+      ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "Prenesena datoteka ni veljaven zasebni ključ. Prosimo, preverite in poskusite znova."
       ],
@@ -8228,6 +8257,12 @@
         "Na voljo imate ${ availableCount } namenske strežnike.",
         "Na voljo imate ${ availableCount } namenskih strežnikov."
       ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "Imate preizkusno naročnino ${ planTitle }. Če želite nadaljevati naročnino po preizkusnem obdobju, dodajte način plačila."
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "Imate preizkusno naročnino ${ planTitle }. Plačilo trenutno ni potrebno. Vaša naročnina bo ob koncu preizkusnega obdobja samodejno podaljšana."
+      ],
       "You have no calendars to export.": [
         "Nimate koledarjev, ki bi jih lahko izvozili."
       ],
@@ -8344,6 +8379,9 @@
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Vaši podatki so varni pri nas. Na vas se bomo obrnili le, ko bo to potrebno za izvajanje naših storitev."
+      ],
+      "Your information was found on ${ displayedDate }": [
+        "Vaše informacije so bile najdene ${ displayedDate }"
       ],
       "Your login information will not be saved after the import is completed.": [
         "Po končanem uvozu vaši podatki za prijavo ne bodo shranjeni."
@@ -11484,6 +11522,12 @@
       "${ Filter.Name } created": [
         "Filter ${ Filter.Name } ustvarjen"
       ],
+      "${ reason } has been disabled": [
+        "${ reason } je bil onemogočen."
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } je bil omogočen."
+      ],
       "A disabled address cannot be default": [
         "Onemogočen naslov ne more biti privzeti."
       ],
@@ -13803,8 +13847,26 @@
       ]
     },
     "Subscription reminder": {
+      "${ dayDiff } day left": [
+        "Še ${ dayDiff } dan",
+        "Še ${ dayDiff } dneva",
+        "Še ${ dayDiff } dni",
+        "Še ${ dayDiff } dni"
+      ],
+      "${ MAIL_APP_NAME } desktop app": [
+        "Program ${ MAIL_APP_NAME } za namizje"
+      ],
+      "${ planMaxSpace } total storage": [
+        "${ planMaxSpace } skupnega prostora shrambe"
+      ],
       "10 email addresses": [
         "10 e-poštnih naslovov"
+      ],
+      "Calendar sharing": [
+        "Deljenje koledarja"
+      ],
+      "Cancel subscription": [
+        "Prekliči naročnino"
       ],
       "Cancel subscription?": [
         "Prekliči naročnino?"
@@ -13812,8 +13874,20 @@
       "Close": [
         "Zapri"
       ],
+      "Custom schedule send and snooze times": [
+        "Urnik po meri za pošiljanje in dremež"
+      ],
+      "Keep ${ planName }": [
+        "Ohrani ${ planName }."
+      ],
+      "Priority support": [
+        "Prednostna podpora"
+      ],
       "Resubscribe": [
         "Ponovno se naročite"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Neomejeno število map, oznak in filtrov"
       ]
     },
     "Subscription renewal state": {

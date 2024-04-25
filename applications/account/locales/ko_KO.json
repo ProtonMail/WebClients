@@ -590,6 +590,9 @@
       "Keep": [
         "보관"
       ],
+      "Keep logo": [
+        "로고 유지"
+      ],
       "Keep my Plus subscription": [
         "나의 Plus 구독 유지"
       ],
@@ -866,6 +869,9 @@
       "Select country": [
         "국가 선택"
       ],
+      "select file": [
+        "파일 선택"
+      ],
       "Select file": [
         "파일 선택"
       ],
@@ -974,6 +980,9 @@
       "Start import": [
         "가져오기 시작"
       ],
+      "Start live chat": [
+        "라이브 채팅 시작하기"
+      ],
       "Stay": [
         "기다리기"
       ],
@@ -1054,6 +1063,9 @@
       ],
       "Upload": [
         "업로드"
+      ],
+      "Upload logo": [
+        "로고 업로드"
       ],
       "Upload picture": [
         "사진 업로드"
@@ -1883,6 +1895,12 @@
       ]
     },
     "Call Scheduled Confirmation": {
+      "Request sent": [
+        "요청 전송"
+      ],
+      "We'll get back to you with more information as soon as we can.": [
+        "추가 정보를 가능한 빨리 알려드리겠습니다."
+      ],
       "You can safely close this tab.": [
         "이제 이 탭을 닫으셔도 됩니다."
       ]
@@ -3108,9 +3126,6 @@
       "Once deleted, this address can't be used again by anyone else.": [
         "한 번 삭제하면 누구도 이 주소를 다시는 사용할 수 없습니다."
       ],
-      "The next active address on your list will be set as the default.": [
-        "목록의 다음 활성 주소가 기본으로 설정됩니다."
-      ],
       "You can only delete 1 address per year.": [
         "매년 1개의 주소만 삭제할 수 있습니다."
       ]
@@ -3302,6 +3317,14 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "저희를 도와주세요!"
+      ]
+    },
+    "Download link": {
+      ".deb for Debian / Ubuntu": [
+        "Debian / Ubuntu용 .deb"
+      ],
+      ".rpm for Fedora / Red Hat": [
+        "Fedora / Red Hat용 .rpm"
       ]
     },
     "drive_signup_2023: Info": {
@@ -5916,6 +5939,9 @@
       "${ BRAND_NAME } is privacy you can trust, ensured by strong encryption, open-source code, and Swiss privacy laws. We believe nobody should be able to exploit your data, period. Our technology and business are based upon this fundamentally stronger definition of privacy.": [
         "${ BRAND_NAME }은 당신이 신뢰할 수 있는 프라이버시 보호, 강력한 암호화 보장, 오픈 소스 코드, 스위스 법률로 보호됩니다. 우리는 아무도 당신의 데이터를 악용해서는 안 된다고 믿습니다. 우리 기술과 사업은 근본적으로 더 강력한 프라이버시 보호에 기초를 두고 있죠."
       ],
+      "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
+        "${ BRAND_NAME }은 서드 파티와 절대 사용자의 정보를 공유하지 않습니다. ${ BRAND_NAME }의 자체 분석 및 Constella Intelligence사로 부터 데이터가 수집됩니다."
+      ],
       "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "${ BRAND_NAME } 다른 이메일 공급자와의 접속이 끊겨 가져오기 작업이 잠시 중지되었습니다. 다시 연결해 주세요."
       ],
@@ -6128,6 +6154,9 @@
       ],
       "Add server (${ availableAddedCount } available)": [
         "서버 추가 (${ availableAddedCount }개 가능)"
+      ],
+      "Add your name and logo to create a more personalized experience for your organization.": [
+        "더 개인화된 경험을 위해 사용자의 조직에 맞는 이름 및 로고를 추가하세요."
       ],
       "Adding ${ addedServerCount } gateway server": [
         "${ addedServerCount }개 게이트웨이 서버 생성 중"
@@ -6441,6 +6470,9 @@
       "Custom": [
         "사용자 정의"
       ],
+      "Custom branding": [
+        "커스텀 브랜딩"
+      ],
       "Custom daily": [
         "일간 사용자 지정"
       ],
@@ -6660,6 +6692,9 @@
       "Failed to fetch logs.": [
         "로그를 가져오지 못했습니다."
       ],
+      "Fast and focused. Email and calendar, right on your desktop.": [
+        "신속하고 충실하도록. 당신의 데스크톱으로 찾아온 이메일과 캘린더."
+      ],
       "Fill in user details": [
         "사용자 세부 정보를 입력하세요"
       ],
@@ -6698,6 +6733,9 @@
       ],
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "${ BRAND_NAME } 계정 생성 및 초대 수락하여 접근하세요."
+      ],
+      "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
+        "비밀번호나 다른 개인 정보가 유출되는 경우에 알림을 받으십시오. ${ learnMoreLinkNoBreach }"
       ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "토큰에 사용하려는 서비스와 같은 설명적인 이름을 지정하고 활성 사용자 지정 도메인 주소 중 하나를 선택하십시오. 이 주소만 이 토큰으로 이메일을 보낼 수 있습니다."
@@ -6776,6 +6814,12 @@
       ],
       "If you wish to combine this account with another one, do NOT delete it.": [
         "만약 이 계정을 다른 계정과 합치려는 경우, 절대로 삭제하지 마세요."
+      ],
+      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
+        "만약 문제를 가지고 계신다면, 저희가 도와드리겠습니다. 자사 지원 전문가를 ${ boldPhoneCall }하거나 ${ boldZoomMeeting }을 통해 만나실 수 있습니다. 또는 ${ boldLiveChat }으로 채팅 지원을 시작하세요."
+      ],
+      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists.": [
+        "만약 문제를 가지고 계신다면, 저희가 도와드리겠습니다. 자사 지원 전문가를 ${ boldPhoneCall }하거나 ${ boldZoomMeeting }을 통해 만나실 수 있습니다."
       ],
       "Image description": [
         "이미지 설명"
@@ -6874,7 +6918,7 @@
         "내 추천인 링크를 보내세요."
       ],
       "Keep your info more secure and private with these guides and tips.": [
-        "이 가이드와 팁을 통해 당신의 정보가 더욱 안전하고 사적이도록 하십시오."
+        "이 가이드와 팁을 통해 내 정보가 더욱 안전하고 사적이도록 하세요."
       ],
       "Key deletion is irreversible!": [
         "키 삭제는 되돌릴 수 없습니다!"
@@ -6929,6 +6973,9 @@
       ],
       "Link type": [
         "링크 형식"
+      ],
+      "Live chat": [
+        "실시간 채팅"
       ],
       "Loaded content is being protected by our proxy when tracker protection is activated.": [
         "트래커 보호가 활성화 되었을때 콘텐츠 불러오기가 자사 프록시로 보호됩니다."
@@ -7233,6 +7280,9 @@
       "Plus or Visionary subscription required": [
         "Plus 또는 Visionary 구독 필요함"
       ],
+      "Preview": [
+        "미리보기"
+      ],
       "Preview failed to be loaded": [
         "미리보기 불러오는 중 문제 발생"
       ],
@@ -7310,6 +7360,9 @@
       ],
       "Report link expired": [
         "리포트 링크 만료됨"
+      ],
+      "Request a phone call": [
+        "휴대폰 통화를 요청"
       ],
       "Resend verification email": [
         "확인 이메일 다시 보내기"
@@ -7472,6 +7525,9 @@
       ],
       "Support for 1 custom email domain": [
         "1개 지정 이메일 도메인 지원"
+      ],
+      "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
+        "커스텀 도메인 및 비 ${ BRAND_NAME } 주소에 대한 모니터링 지원도 곧 찾아옵니다."
       ],
       "support team": [
         "지원 팀"
@@ -7800,6 +7856,9 @@
       "Upload your completed CSV file to create accounts": [
         "계정을 생성하려면 완료된 CSV 파일을 업로드해주세요"
       ],
+      "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
+        "조직의 로고를 업로드하여 브랜드 아이덴티티를 높이고 사용자 개개인에 맞는 경험을 제공하세요."
+      ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "업로드된 파일이 유효하지 않은 비공개 키입니다. 인증 후 다시 시도하세요."
       ],
@@ -7867,7 +7926,7 @@
         "다른 국가의 서버를 원하시나요?"
       ],
       "Want to learn more?": [
-        "더 알아보시겠습니까?"
+        "더 알아보시겠어요?"
       ],
       "Warning:": [
         "주의:"
@@ -7886,6 +7945,9 @@
       ],
       "We just sent you a new link.": [
         "방금 새 링크를 보내드렸습니다."
+      ],
+      "We monitor the dark web for instances where your personal information (such as an email address or password used on a third-party site) is leaked or compromised.": [
+        "당신의 (이메일 주소나 제 3자 사이트에서 사용된 비밀번호 같은) 개인정보가 유출되었거나 노출되었는지 다크 웹을 모니터링합니다."
       ],
       "We need to authenticate your payment method with your bank.": [
         "은행의 결제 수단 인증이 필요합니다."
@@ -8231,6 +8293,9 @@
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "귀하의 지원 티켓이 종료되었습니다. ${ BRAND_NAME } 지원을 이용해주셔서 감사합니다."
+      ],
+      "Zoom meeting": [
+        "Zoom 미팅"
       ]
     },
     "Info - folder colouring feature": {
@@ -8784,6 +8849,9 @@
       "Awarded": [
         "지급 완료"
       ],
+      "Beta": [
+        "베타"
+      ],
       "Billing address": [
         "청구지 주소"
       ],
@@ -9161,6 +9229,9 @@
       ],
       "Link label": [
         "라벨 링크"
+      ],
+      "Logo": [
+        "로고"
       ],
       "Mail Server (IMAP)": [
         "메일 서버 (IMAP)"
@@ -9797,6 +9868,9 @@
       "here": [
         "."
       ],
+      "How does monitoring work?": [
+        "모니터링이 어떻게 작동하나요?"
+      ],
       "How to pay with Bitcoin?": [
         "Bitcoin으로 어떻게 결제하나요?"
       ],
@@ -9929,6 +10003,9 @@
       ]
     },
     "Log preference": {
+      "Enable ${ reason }": [
+        "${ reason } 활성화"
+      ],
       "Enable advanced logs": [
         "향상된 로그 켜기"
       ],
@@ -11245,11 +11322,20 @@
       "${ Filter.Name } created": [
         "${ Filter.Name } 생성됨"
       ],
+      "${ reason } has been disabled": [
+        "${ reason }이(가) 비활성화 되었습니다."
+      ],
+      "${ reason } has been enabled": [
+        "${ reason }이(가) 활성화 되었습니다."
+      ],
       "A disabled address cannot be default": [
         "비활성된 주소를 기본으로 할 수 없음"
       ],
       "An external address cannot be default": [
         "외부 주소를 기본으로 할 수 없음"
+      ],
+      "Dark Web Monitoring has been disabled": [
+        "다크 웹 모니터링이 비활성화되었습니다"
       ],
       "Dark Web Monitoring has been enabled": [
         "다크 웹 모니터링이 활성화되었습니다"
@@ -12570,6 +12656,28 @@
         "사용자"
       ]
     },
+    "scim: Info": {
+      "Enter token into your identity provider": [
+        "사용자의 신원 제공자로 이 토큰을 입력하십시오"
+      ],
+      "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
+        "SCIM이 사용자 조직에 한 번 비활성화 되면, **사용자의 신원 인증 제공자에 의한 모든 SCIM 사용자들이 SSO 사용자로 전환됩니다.** ${ BRAND_NAME } 설정 내에서 즉시 관리 또한 가능하게 됩니다."
+      ],
+      "The SCIM base URL and token will be deleted.": [
+        "SCIM 베이스 URL 및 토큰이 비활성 됩니다."
+      ]
+    },
+    "scim: Title": {
+      "Disable SCIM integration?": [
+        "SCIM 통합화를 비활성화 합니까?"
+      ],
+      "Generate new SCIM token?": [
+        "새 SCIM 토큰을 생성합니까?"
+      ],
+      "SCIM automatic provisioning": [
+        "SCIM 자동 프로비저닝"
+      ]
+    },
     "Security Center - Info": {
       "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLinkBreach }": [
         "하나 이상의 데이터 침해사례에서 당신의 정보가 발견되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하고 조치를 취하십시오. ${ learnMoreLinkBreach }"
@@ -12592,6 +12700,9 @@
       ]
     },
     "Select invoice document": {
+      "Credit note": [
+        "대변전표"
+      ],
       "Currency conversion": [
         "화폐 변환"
       ],
@@ -13503,6 +13614,9 @@
       "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
         "${ BRAND_NAME }의 유일한 수익원은 사용자의 구독입니다. 당신의 지지로 저희는 독립적일 수 있고, 프라이버시가 기본인 온라인을 만들어나가는 사명을 위해 나아갈 수 있으며, 프라이버시와 자유를 위해 싸우는 활동가들과 조직을 지원해나갈 수 있습니다."
       ],
+      "${ dayDiff } day left": [
+        "${ dayDiff }일 남음"
+      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } 데스크톱 앱"
       ],
@@ -13524,8 +13638,14 @@
       "After privacy and free speech were threatened in Hong Kong, we directly supported local civil rights organizations.": [
         "홍콩에서 프라이버시와 표현의 자유가 위협받자, 저희는 현지의 시민권 단체를 직접 지원했었습니다."
       ],
+      "By downgrading your account, you will also lose storage space": [
+        "계정을 다운그레이드하면, 스토리지 저장 공간 또한 잃게 됩니다."
+      ],
       "By downgrading your account, you will lose access to these important features": [
         "계정을 다운그레이드하면, 다음과 같은 중요한 기능을 이용할 수 없게 됩니다."
+      ],
+      "Calendar sharing": [
+        "일정 공유"
       ],
       "Cancel subscription": [
         "구독 취소하기"
@@ -13535,6 +13655,12 @@
       ],
       "Close": [
         "닫기"
+      ],
+      "Custom schedule send and snooze times": [
+        "사용자 지정 스케줄과 방해금지 시간"
+      ],
+      "Have a question?": [
+        "질문이 있나요?"
       ],
       "Helping activists in Hong Kong": [
         "홍콩의 활동가 지원"
@@ -13569,6 +13695,9 @@
       "Unblocking internet access in Iran": [
         "이란의 인터넷 접속 차단 해제"
       ],
+      "Unlimited folders, labels and filters": [
+        "무제한 폴더, 라벨, 그리고 필터"
+      ],
       "Watch the interview": [
         "인터뷰 보기"
       ],
@@ -13577,6 +13706,24 @@
       ],
       "Yearly free storage bonuses": [
         "연간 무료 저장공간 보너스"
+      ],
+      "You **won't be able to send emails** with attachments": [
+        "**이메일을 첨부 파일과 함께** 전송이 불가합니다."
+      ],
+      "Your **calendar will be frozen**": [
+        "사용자의 **캘린더가 차단됩니다.**"
+      ],
+      "Your devices will **stop syncing**": [
+        "사용자의 기기의 **동기화가 정지됩니다.**"
+      ],
+      "Your inbox will **stop receiving new emails**": [
+        "사용자의 받은 편지함이 **새 이메일을 받을 수 없습니다.**"
+      ],
+      "Your own custom email domain": [
+        "사용자의 커스텀 이메일 도메인"
+      ],
+      "Your own short @pm.me email alias": [
+        "사용자의 @pm.me 이메일 별칭"
       ]
     },
     "Subscription renewal state": {
@@ -14298,6 +14445,9 @@
       "Custom selection of users": [
         "사용자 지정 선택"
       ],
+      "Customization": [
+        "커스터마이징"
+      ],
       "Customize and confirm": [
         "사용자 정의 및 확인"
       ],
@@ -14514,6 +14664,15 @@
       "Folders and labels": [
         "폴더와 라벨"
       ],
+      "For Linux": [
+        "Linux용"
+      ],
+      "For macOS": [
+        "macOS용"
+      ],
+      "For Windows": [
+        "Windows용"
+      ],
       "Forward and auto-reply": [
         "전달 및 자동 회신"
       ],
@@ -14552,6 +14711,9 @@
       ],
       "How does it work?": [
         "어떻게 작동하나요?"
+      ],
+      "How to choose a good logo": [
+        "최고의 로고를 선택하는 방법"
       ],
       "How to refer a friend and get credits": [
         "친구를 추천하고 크레딧을 받는 방법"
@@ -14657,6 +14819,9 @@
       ],
       "No recovery method": [
         "복구 방법 없음"
+      ],
+      "Open": [
+        "열기"
       ],
       "Open actions dropdown": [
         "액션 드롭다운 열기"
@@ -15018,6 +15183,15 @@
       "WireGuard configuration": [
         "WireGuard 설정"
       ],
+      "You have no open alerts": [
+        "진행 중인 알림 없음"
+      ],
+      "You have no resolved alerts": [
+        "해결된 알림 없음"
+      ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "사용자의 ${ planName } 무료 체험이 ${ textDate }에 종료됩니다."
+      ],
       "Your calendar link": [
         "내 캘린더 링크"
       ],
@@ -15299,6 +15473,9 @@
       ],
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
         "브라우저 기본 스크롤바를 사용하세요. 더 크며 사용하기 쉽습니다."
+      ],
+      "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
+        "다른 사용자가 웹 앱에 로그인했을 때 당신의 ${ BRAND_NAME } 아이콘 대신 로고를 보게 됩니다."
       ],
       "Usually an URL that contains the identity provider's name within": [
         "일반적으로 인증 제공자의 이름이 포함된 URL"
