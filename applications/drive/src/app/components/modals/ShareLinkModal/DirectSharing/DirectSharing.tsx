@@ -28,6 +28,7 @@ const DirectSharing = ({ rootShareId, linkId, isDirectSharingWorkflow, onSubmit,
         removeMember,
         updateMemberPermissions,
         removeInvitation,
+        updateInvitePermissions,
     } = useShareMemberView(rootShareId, linkId);
     const [directSharingList, setDirectSharingList] = useState<ShareInvitee[]>(
         members.map((member) => ({
@@ -45,12 +46,16 @@ const DirectSharing = ({ rootShareId, linkId, isDirectSharingWorkflow, onSubmit,
         await updateMemberPermissions({ ...member, permissions });
     };
 
-    const handleMemberRemove = (member: ShareMember) => {
-        removeMember(member);
+    const handleInvitationPermissionsChange = async (invitationId: string, permissions: SHARE_MEMBER_PERMISSIONS) => {
+        await updateInvitePermissions(invitationId, permissions);
     };
 
-    const handleInvitationRemove = (invitationId: string) => {
-        removeInvitation(invitationId);
+    const handleMemberRemove = async (member: ShareMember) => {
+        await removeMember(member);
+    };
+
+    const handleInvitationRemove = async (invitationId: string) => {
+        await removeInvitation(invitationId);
     };
 
     return (
@@ -77,6 +82,7 @@ const DirectSharing = ({ rootShareId, linkId, isDirectSharingWorkflow, onSubmit,
                         onPermissionsChange={handlePermissionsChange}
                         onMemberRemove={handleMemberRemove}
                         onInvitationRemove={handleInvitationRemove}
+                        onInvitationPermissionsChange={handleInvitationPermissionsChange}
                     />
                 </>
             )}

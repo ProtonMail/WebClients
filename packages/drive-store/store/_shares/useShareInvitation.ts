@@ -167,15 +167,10 @@ export const useShareInvitation = () => {
 
     const updateShareInvitationPermissions = (
         abortSignal: AbortSignal,
-        { volumeId, shareId, invitations }: { volumeId: string; shareId: string; invitations: ShareInvitation[] }
+        { shareId, invitation }: { shareId: string; invitation: ShareInvitation }
     ) =>
         debouncedRequest(
-            queryUpdateShareInvitationPermissions(volumeId, shareId, {
-                Invitations: invitations.map(({ invitationId, permissions }) => ({
-                    InvitationID: invitationId,
-                    Permissions: permissions,
-                })),
-            }),
+            queryUpdateShareInvitationPermissions(shareId, invitation.invitationId, invitation.permissions),
             abortSignal
         );
 

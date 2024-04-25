@@ -1,4 +1,4 @@
-import { useCallback } from 'react';
+import { useCallback, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -15,7 +15,7 @@ import { MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 
 interface Props {
     selectedPermissions: number;
-    onChange: (value: number) => void;
+    onChange: (value: number) => Promise<void>;
     onRemove?: () => void;
 }
 
@@ -53,6 +53,7 @@ const Option = ({
 };
 
 const MemberPermissionsSelect = ({ selectedPermissions, onChange, onRemove }: Props) => {
+    const [isLoading, setIsLoading] = useState(false);
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const permissionsOptions: PermissionOption[] = [
         {
@@ -66,6 +67,13 @@ const MemberPermissionsSelect = ({ selectedPermissions, onChange, onRemove }: Pr
             value: MEMBER_PERMISSIONS.EDITOR,
         },
     ];
+
+    const handleChange = (value: number) => {
+        setIsLoading(true);
+        onChange(value).finally(() => {
+            setIsLoading(false);
+        });
+    };
     return (
         <>
             <DropdownButton
@@ -76,6 +84,7 @@ const MemberPermissionsSelect = ({ selectedPermissions, onChange, onRemove }: Pr
                 hasCaret
                 shape="ghost"
                 size="small"
+                loading={isLoading}
             >
                 {permissionsOptions.find((permission) => permission.value === selectedPermissions)?.label}
             </DropdownButton>
@@ -86,7 +95,7 @@ const MemberPermissionsSelect = ({ selectedPermissions, onChange, onRemove }: Pr
                             key={option.value}
                             option={option}
                             isSelected={option.value === selectedPermissions}
-                            onSelect={onChange}
+                            onSelect={handleChange}
                         />
                     ))}
                     {onRemove && (
