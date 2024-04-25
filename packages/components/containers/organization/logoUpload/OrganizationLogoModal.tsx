@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Button, CircleLoader } from '@proton/atoms';
 import { useLoading } from '@proton/hooks';
+import metrics, { observeApiError } from '@proton/metrics';
 import { updateOrganizationLogo, updateOrganizationSettings } from '@proton/shared/lib/api/organization';
 import { APP_NAMES, BRAND_NAME } from '@proton/shared/lib/constants';
 import { toBase64 } from '@proton/shared/lib/helpers/file';
@@ -27,6 +28,7 @@ import {
 } from '../../../components';
 import { useApi, useEventManager } from '../../../hooks';
 import SidebarPreview from './SidebarPreview';
+import useOrgLogoUploadTelemetry from './useOrgLogoUploadTelemetry';
 
 interface Props extends ModalProps {
     organization: Organization;
@@ -50,20 +52,42 @@ const OrganizationLogoModal = ({ onClose, organization, app, ...rest }: Props) =
     const [showUploadLoader, setShowUploadLoader] = useState<boolean>(false);
     const [error, setError] = useState<ReactNode>();
 
+    const { sendOrgLogoUploadStartProcessReport, sendOrgLogoUploadSuccessReport, sendOrgLogoUploadFailureReport } =
+        useOrgLogoUploadTelemetry();
+
     const handleSubmit = async () => {
         if (!uploadedLogo) {
             return;
         }
 
-        const { base64 } = extractBase64Image(uploadedLogo.image);
-        await api(updateOrganizationLogo(base64));
-        // Set ShowName to true here, this might get its own setting in the future
-        await api(updateOrganizationSettings({ ShowName: true }));
-        await call();
-        onClose?.();
+        try {
+            const { base64 } = extractBase64Image(uploadedLogo.image);
+            await api(updateOrganizationLogo(base64));
+            // Set ShowName to true here, this might get its own setting in the future
+            await api(updateOrganizationSettings({ ShowName: true }));
+            await call();
+
+            metrics.core_lightLabelling_logoUpload_total.increment({
+                status: 'success',
+            });
+
+            sendOrgLogoUploadSuccessReport();
+
+            onClose?.();
+        } catch (error) {
+            observeApiError(error, (status) =>
+                metrics.core_lightLabelling_logoUpload_total.increment({
+                    status,
+                })
+            );
+
+            sendOrgLogoUploadFailureReport();
+        }
     };
 
     useEffect(() => {
+        sendOrgLogoUploadStartProcessReport();
+
         return () => {
             if (uploadedUrl.current) {
                 URL.revokeObjectURL(uploadedUrl.current);
@@ -180,8 +204,16 @@ const OrganizationLogoModal = ({ onClose, organization, app, ...rest }: Props) =
                         setUploadedLogo(processedLogo);
                         setError(null);
                         resolve();
+
+                        metrics.core_lightLabelling_imageProcessing_total.increment({
+                            status: 'success',
+                        });
                     } catch (error) {
                         setError(c('Error').t`Failed to process the logo`);
+
+                        metrics.core_lightLabelling_imageProcessing_total.increment({
+                            status: 'failure',
+                        });
                     } finally {
                         URL.revokeObjectURL(imageUrl);
                     }
@@ -219,12 +251,19 @@ const OrganizationLogoModal = ({ onClose, organization, app, ...rest }: Props) =
                         src={logoUrl}
                         alt=""
                         className="w-custom h-custom border shrink-0 grow-0"
-                        style={{ '--w-custom': '2.25rem', '--h-custom': '2.25rem' }}
+                        style={{
+                            '--w-custom': '2.25rem',
+                            '--h-custom': '2.25rem',
+                        }}
                     />
                     <div className="flex flex-column flex-nowrap text-sm w-full">
                         {uploadedLogo && <span className="text-ellipsis">{uploadedLogo?.name}</span>}
                         <span className="color-weak text-nowrap block shrink-0">
-                            {humanSize({ bytes: uploadedLogo?.size, unit: 'KB', fraction: 1 })}
+                            {humanSize({
+                                bytes: uploadedLogo?.size,
+                                unit: 'KB',
+                                fraction: 1,
+                            })}
                         </span>
                     </div>
                     <Button onClick={removeLogo} shape="ghost" size="small" icon className="top-0 right-0 absolute">
