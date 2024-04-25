@@ -11,7 +11,7 @@ import { LoginView } from '@proton/pass/components/Item/Login/Login.view';
 import { NoteView } from '@proton/pass/components/Item/Note/Note.view';
 import { useItemRoute } from '@proton/pass/components/Navigation/ItemSwitch';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
-import { getItemRoute, getLocalPath, maybeTrash } from '@proton/pass/components/Navigation/routing';
+import { getItemRoute, getLocalPath, maybeTrash, subPath } from '@proton/pass/components/Navigation/routing';
 import { VaultSelectMode } from '@proton/pass/components/Vault/VaultSelect';
 import type { ItemViewProps } from '@proton/pass/components/Views/types';
 import { isHealthCheckSkipped } from '@proton/pass/lib/items/item.predicates';
@@ -63,7 +63,8 @@ export const ItemView: FC = () => {
 
     /* if vault or item cannot be found : redirect to base path */
     if (!(vault && item)) {
-        const to = preserveSearch(getLocalPath(maybeTrash('', inTrash)));
+        const base = maybeTrash('', inTrash);
+        const to = preserveSearch(getLocalPath(prefix ? subPath(prefix, base) : base));
         return <Redirect to={to} push={false} />;
     }
 
