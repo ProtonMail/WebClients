@@ -447,11 +447,11 @@
       "Not now": [
         "Не зараз"
       ],
-      "OK": [
-        "Застосувати"
-      ],
       "Ok": [
         "OK"
+      ],
+      "OK": [
+        "Застосувати"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Відкрити налаштування ${ CALENDAR_APP_NAME }"
@@ -5808,6 +5808,11 @@
         "Ваша підписка закінчилася. ${ cta } і щоб уникнути втрати даних."
       ]
     },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Увімкнути ${ reason }"
+      ]
+    },
     "Mail import summary": {
       "Import all messages from ${ itemsToImportCount } folder and label them as": [
         "Імпортувати всі повідомлення з ${ itemsToImportCount } теки та позначити їх як",
@@ -6861,6 +6866,12 @@
       ]
     },
     "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } вимкнено"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } увімкнено"
+      ],
       "Contact group created": [
         "Групу контактів створено"
       ],

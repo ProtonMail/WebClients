@@ -1120,6 +1120,9 @@
       "Trust": [
         "信任"
       ],
+      "Trust key": [
+        "信任金鑰"
+      ],
       "Trust public key": [
         "信任公開金鑰"
       ],
@@ -7915,6 +7918,9 @@
       "Starred": [
         "已加星號"
       ],
+      "stay safer online": [
+        "保持在線安全"
+      ],
       "Terms": [
         "條款"
       ],
@@ -8009,6 +8015,11 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "您的訂閱已到期。 ${ cta } 以避免資料遺失。"
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "啟用${ reason }"
       ]
     },
     "Mail import summary": {
@@ -9031,6 +9042,12 @@
     "Notification": {
       "${ Filter.Name } created": [
         "${ Filter.Name } 已創建"
+      ],
+      "${ reason } has been disabled": [
+        "${ reason } 已停用。"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } 已啟用。"
       ],
       "Block removed": [
         "攔截已移除"

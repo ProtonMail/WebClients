@@ -3133,9 +3133,6 @@
       ]
     },
     "Delete address prompt": {
-      "The next active address on your list will be set as the default.": [
-        "O próximo endereço ativo na sua lista será definido como padrão."
-      ],
       "You can only delete 1 address per year.": [
         "Você somente pode excluir 1 endereço por ano."
       ]
@@ -3327,6 +3324,14 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Ajude-nos a melhorar!"
+      ]
+    },
+    "Download link": {
+      ".deb for Debian / Ubuntu": [
+        ".deb para Debian / Ubuntu"
+      ],
+      ".rpm for Fedora / Red Hat": [
+        ".rpm para Fedora / Red Hat"
       ]
     },
     "drive_signup_2023: Info": {
@@ -6268,6 +6273,9 @@
       "Amount due": [
         "Valor a pagar"
       ],
+      "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
+        "Um alias de e-mail funciona como um endereço de e-mail, mas reduz o spam e mantém seu endereço de e-mail e identidade reais ocultos."
+      ],
       "An error occurred while communicating with the extension": [
         "Ocorreu um erro durante a comunicação com a extensão"
       ],
@@ -6516,6 +6524,9 @@
       "Custom": [
         "Personalizado"
       ],
+      "Custom branding": [
+        "Marca personalizada"
+      ],
       "Custom daily": [
         "Personalizar diariamente"
       ],
@@ -6736,6 +6747,9 @@
       ],
       "Failed to fetch logs.": [
         "Erro ao buscar os registros."
+      ],
+      "Fast and focused. Email and calendar, right on your desktop.": [
+        "Veloz e poderoso. E-mail e calendário, direto no seu desktop."
       ],
       "Fill in user details": [
         "Preencha os detalhes do usuário"
@@ -7089,6 +7103,9 @@
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Nomeie sua nova pasta e selecione a pasta superior onde deseja colocá-la. Se você não selecionar uma pasta superior, esta nova pasta será criada como uma pasta de nível superior."
+      ],
+      "NetShield is an ad-blocking feature from ${ VPN_APP_NAME } that protects your device from ads, trackers, and malware.": [
+        "NetShield é um recurso de bloqueio de anúncios do ${ VPN_APP_NAME } que protege seu dispositivo contra anúncios, rastreadores e malware."
       ],
       "New": [
         "Novo"
@@ -7902,6 +7919,9 @@
       "URL link": [
         "URL do link"
       ],
+      "Use a password manager to generate and securely store your passwords, ensuring strong passwords and easier sign-ins.": [
+        "Use um gerenciador de senhas para gerar e armazenar suas senhas com segurança, garantindo senhas fortes e inícios de sessão mais fáceis."
+      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Use o melhor servidor de acordo com a carga atual e a posição: ${ formattedBestServerName }"
       ],
@@ -7979,6 +7999,9 @@
       ],
       "We just sent you a new link.": [
         "Acabamos de te enviar um novo link."
+      ],
+      "We monitor the dark web for instances where your personal information (such as an email address or password used on a third-party site) is leaked or compromised.": [
+        "Monitoramos a dark web em busca de casos em que suas informações pessoais (como endereço de e-mail ou senha usada em sites de terceiros) sejam vazadas ou comprometidas."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Precisamos autenticar seu método de pagamento com seu banco."
@@ -14349,6 +14372,9 @@
       "Billing cycle": [
         "Ciclo de faturamento"
       ],
+      "Block trackers and malware": [
+        "Bloqueie rastreadores e malware"
+      ],
       "Bridge for ${ platform }": [
         "Bridge para ${ platform }"
       ],
@@ -14699,6 +14725,15 @@
       ],
       "Folders and labels": [
         "Pastas e marcadores"
+      ],
+      "For Linux": [
+        "Para Linux"
+      ],
+      "For macOS": [
+        "Para macOS"
+      ],
+      "For Windows": [
+        "Para Windows"
       ],
       "Forward and auto-reply": [
         "Encaminhamento e resposta automática"

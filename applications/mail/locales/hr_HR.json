@@ -893,6 +893,11 @@
       "Trust": [
         "Vjeruj"
       ],
+      "Trust key": [
+        "Ključ povjerenja",
+        "Ključevi povjerenja",
+        "Ključevi povjerenja"
+      ],
       "Trust public key": [
         "Vjeruj javnom ključu"
       ],
@@ -5397,6 +5402,11 @@
         "Spajanje s vašim pružateljem e-pošte"
       ]
     },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Omogući ${ reason }"
+      ]
+    },
     "Mailbox": {
       "Archive": [
         "Arhiva"
@@ -5781,6 +5791,12 @@
     "Notification": {
       "${ Filter.Name } created": [
         "${ Filter.Name } stvoren"
+      ],
+      "${ reason } has been disabled": [
+        "${ reason } je onemogućen."
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } je omogućen."
       ],
       "Contact group created": [
         "Kontaktna grupa je stvorena"

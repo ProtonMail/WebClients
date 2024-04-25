@@ -1124,6 +1124,10 @@
       "Trust": [
         "ნდობა"
       ],
+      "Trust key": [
+        "ნდობის გასაღები",
+        "ნდობის გასაღებები"
+      ],
       "Trust public key": [
         "ამ საჯარო გასაღების ნდობა"
       ],
@@ -8155,6 +8159,11 @@
         "თქვენი გამოწერა ამოიწურა. ${ cta } მონაცემების კარგვის თავიდან ასაცილებლად."
       ]
     },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "${ reason }-ის ჩართვა"
+      ]
+    },
     "Mail import summary": {
       "Import all messages from ${ itemsToImportCount } folder and label them as": [
         "შემოიტანეთ ყველა შეტყობინება ${ itemsToImportCount } საქაღალდეებიდან და მონიშნეთ ისინი როგორც",
@@ -9235,6 +9244,12 @@
     "Notification": {
       "${ Filter.Name } created": [
         "${ Filter.Name } შეიქმნა"
+      ],
+      "${ reason } has been disabled": [
+        "${ reason } გაითიშა"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } ჩაირთო"
       ],
       "Block removed": [
         "განბლოკილი"

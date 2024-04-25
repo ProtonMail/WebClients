@@ -3165,9 +3165,6 @@
       "Once deleted, this address can't be used again by anyone else.": [
         "Іншы карыстальнік больш не зможа выкарыстоўваць гэта адрас паўторна, калі яго выдаліць."
       ],
-      "The next active address on your list will be set as the default.": [
-        "Наступны актыўны адрас у вашым спісе будзе зададзены ў якасці прадвызначанага."
-      ],
       "You can only delete 1 address per year.": [
         "Вы можаце выдаліць толькі адзін адрас у год."
       ]
@@ -3359,6 +3356,14 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Дапамажыце нам палепшыць наш сэрвіс!"
+      ]
+    },
+    "Download link": {
+      ".deb for Debian / Ubuntu": [
+        ".deb для Debian/Ubuntu"
+      ],
+      ".rpm for Fedora / Red Hat": [
+        ".rpm для Fedora/Red Hat"
       ]
     },
     "drive_signup_2023: Info": {
@@ -6654,6 +6659,9 @@
       "Custom": [
         "Карыстальніцкі"
       ],
+      "Custom branding": [
+        "Карыстальніцкі брэндзінг"
+      ],
       "Custom daily": [
         "Штодзень (карыстальніцкае)"
       ],
@@ -6878,6 +6886,9 @@
       ],
       "Failed to fetch logs.": [
         "Не ўдалося атрымаць журналы."
+      ],
+      "Fast and focused. Email and calendar, right on your desktop.": [
+        "Хуткасць і канцэнтрацыя. Пошта і каляндар на вашым працоўным стале."
       ],
       "Fill in user details": [
         "Запоўніце даныя карыстальніка"
@@ -7728,6 +7739,9 @@
       "Support for 1 custom email domain": [
         "Падтрымка для 1 карыстальніцкага дамена электроннай пошты"
       ],
+      "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
+        "Неўзабаве з'явіцца падтрымка назірання карыстальніцкіх даменаў і адрасоў электроннай пошты, якія не належаць да ${ BRAND_NAME }."
+      ],
       "support team": [
         "каманда падтрымкі"
       ],
@@ -8063,6 +8077,9 @@
       ],
       "Upload your completed CSV file to create accounts": [
         "Запампуйце свой завершаны файл CSV, каб стварыць уліковыя запісы"
+      ],
+      "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
+        "Запампуйце лагатып сваёй арганізацыі, каб павысіць ідэнтычнасць вашага брэнда і стварыць персаналізаваны досвед для вашых карыстальнікаў."
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "Запампаваны файл з'яўляецца несапраўдным прыватным ключом. Праверце яго і паспрабуйце яшчэ раз."
@@ -9092,6 +9109,9 @@
       ],
       "Awarded": [
         "Узнагароджаны"
+      ],
+      "Beta": [
+        "Бэта"
       ],
       "Billing address": [
         "Адрас для аплаты"
@@ -14276,6 +14296,47 @@
         "Кароткі псеўданім электроннай пошты @pm.me"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 ГБ сховішча"
+      ],
+      "and 15 more premium features": [
+        "і яшчэ 15 прэміяльных функцый"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Аўтаматычная перысылка электроннай пошты ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Папярэджанне ўцечкі даных ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Настольная праграма"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Дапамажыце нам захаваць інтэрнэт бяспечным і прыватным для кожнага. Палепшыце да платнага тарыфнага плана."
+      ],
+      "No ads or tracking": [
+        "Без рэкламы і праграм сачэння"
+      ],
+      "Short @pm.me email address": [
+        "Кароткі адрас электроннай пошты @pm.me"
+      ],
+      "Support our mission": [
+        "Падтрымайце нашу місію"
+      ],
+      "Upgrade": [
+        "Палепшыць"
+      ],
+      "Upgrade your productivity": [
+        "Палепшыце сваю прадукцыйнасць"
+      ],
+      "We don't sell your data": [
+        "Мы не прадаём вашы даныя"
+      ],
+      "Your privacy is our mission": [
+        "Ваша прыватнасць з'яўляецца нашай місіяй"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Вы ўпэўнены?"
@@ -15243,6 +15304,15 @@
       ],
       "Folders and labels": [
         "Папкі і меткі"
+      ],
+      "For Linux": [
+        "Для Linux"
+      ],
+      "For macOS": [
+        "Для macOS"
+      ],
+      "For Windows": [
+        "Для Windows"
       ],
       "Forward and auto-reply": [
         "Перасылка і аўтаматычны адказ"

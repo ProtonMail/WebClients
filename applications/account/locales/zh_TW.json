@@ -1844,6 +1844,11 @@
         "週"
       ]
     },
+    "Call Scheduled Confirmation": {
+      "You can safely close this tab.": [
+        "現在您可以安全地關閉此分頁。"
+      ]
+    },
     "Checkout row": {
       "${ users } user": [
         "${ users } 個使用者"
@@ -3062,9 +3067,6 @@
       ]
     },
     "Delete address prompt": {
-      "The next active address on your list will be set as the default.": [
-        "你的清單裡下一個有效的位址將被設定為預設值。"
-      ],
       "You can only delete 1 address per year.": [
         "每年只能刪除一個地址。"
       ]
@@ -3253,6 +3255,14 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "協助我們改善！"
+      ]
+    },
+    "Download link": {
+      ".deb for Debian / Ubuntu": [
+        ".deb 適用於 Debian / Ubuntu"
+      ],
+      ".rpm for Fedora / Red Hat": [
+        ".rpm 給 Fedora / Red Hat"
       ]
     },
     "drive_signup_2023: Info": {
@@ -3912,6 +3922,9 @@
       ],
       "No external key retrieved for user is valid for sending": [
         "使用者沒有提取到任何用於寄送的有效外部金鑰"
+      ],
+      "No image selected": [
+        "沒有選擇圖像"
       ],
       "No valid address found": [
         "未能找到有效位址"
@@ -7709,6 +7722,9 @@
       "Want servers in other countries?": [
         "想要於不同國家的伺服器?"
       ],
+      "Want to learn more?": [
+        "點擊瞭解更多"
+      ],
       "Warning:": [
         "警告："
       ],
@@ -9635,6 +9651,9 @@
       "Sign in": [
         "登入"
       ],
+      "stay safer online": [
+        "保持在線安全"
+      ],
       "switch account": [
         "切換帳號"
       ],
@@ -9716,6 +9735,9 @@
       ]
     },
     "Log preference": {
+      "Enable ${ reason }": [
+        "啟用${ reason }"
+      ],
       "Enable advanced logs": [
         "啟用進階記錄"
       ],
@@ -10998,6 +11020,12 @@
     "Notification": {
       "${ Filter.Name } created": [
         "${ Filter.Name } 已創建"
+      ],
+      "${ reason } has been disabled": [
+        "${ reason } 已停用。"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } 已啟用。"
       ],
       "A disabled address cannot be default": [
         "已停用的電郵位址不能成為預設"
@@ -13067,6 +13095,41 @@
     "Subscription price": {
       "For": [
         "為"
+      ]
+    },
+    "Subscription reminder": {
+      "${ dayDiff } day left": [
+        "剩下${ dayDiff }天"
+      ],
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } 桌面應用程式"
+      ],
+      "${ planMaxSpace } total storage": [
+        "${ planMaxSpace } 總儲存空間"
+      ],
+      "10 email addresses": [
+        "10 個電子信箱"
+      ],
+      "Calendar sharing": [
+        "行事曆分享"
+      ],
+      "Cancel subscription": [
+        "取消訂購授權"
+      ],
+      "Cancel subscription?": [
+        "取消訂購授權?"
+      ],
+      "Custom schedule send and snooze times": [
+        "自訂寄出時間與暫緩處理郵件"
+      ],
+      "Keep ${ planName }": [
+        "保留 ${ planName }"
+      ],
+      "Priority support": [
+        "優先支援"
+      ],
+      "Unlimited folders, labels and filters": [
+        "資料夾、標籤與篩選器無上限"
       ]
     },
     "Subscription renewal state": {

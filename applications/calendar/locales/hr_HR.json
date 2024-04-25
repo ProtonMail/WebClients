@@ -354,10 +354,10 @@
       "Not now": [
         "Ne sada"
       ],
-      "OK": [
+      "Ok": [
         "U redu"
       ],
-      "Ok": [
+      "OK": [
         "U redu"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -3831,6 +3831,11 @@
         "Spajanje s vašim pružateljem e-pošte"
       ]
     },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Omogući ${ reason }"
+      ]
+    },
     "mailtrial2024: Deal details": {
       "10 email addresses": [
         "10 adrese e-pošte"
@@ -4223,6 +4228,12 @@
       ]
     },
     "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } je onemogućen."
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } je omogućen."
+      ],
       "Contact group created": [
         "Kontaktna grupa je stvorena"
       ],

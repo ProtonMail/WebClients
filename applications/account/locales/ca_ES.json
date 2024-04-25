@@ -486,7 +486,7 @@
         "Genera una frase de recuperació"
       ],
       "Generate token": [
-        "Genera un testimoni"
+        "Genera un token"
       ],
       "Get ${ vpnPlus }": [
         "Obtenir ${ vpnPlus }"
@@ -765,7 +765,7 @@
         "Notifica un problema"
       ],
       "Request a call": [
-        "Sol·licitar una trucada"
+        "Sol·licita una trucada"
       ],
       "Request a feature": [
         "Demana una nova característica"
@@ -1110,7 +1110,7 @@
         "Voleu anul·lar tots els fitxers de recuperació?"
       ],
       "Welcome": [
-        "Us donem la benvinguda"
+        "Li donem la benvinguda"
       ],
       "What do I get?": [
         "Què n'obtinc?"
@@ -1298,6 +1298,23 @@
       ],
       "New email": [
         "Correu nou"
+      ]
+    },
+    "app-switcher": {
+      "Browse the web privately and block ads": [
+        "Navegui pel web de manera privada i bloquegi els anuncis"
+      ],
+      "Keep your schedule private": [
+        "Mantingui la seva agenda privada"
+      ],
+      "Protect your passwords and identity": [
+        "Protegeixi les seves contrasenyes i identitat"
+      ],
+      "Safeguard your files and photos": [
+        "Protegeixi els seus fitxers i fotos"
+      ],
+      "Secure your communications": [
+        "Protegeixi les seves comunicacions"
       ]
     },
     "Apps dropdown": {
@@ -1651,7 +1668,7 @@
         "Continua utilitzant ${ planTitle }"
       ],
       "Continue your subscription": [
-        "Continuï amb la seva subscripció"
+        "Continueu amb la vostra subscripció"
       ],
       "Copy": [
         "Copia"
@@ -1854,6 +1871,9 @@
     "Call Scheduled Confirmation": {
       "Request sent": [
         "S'ha enviat la sol·licitud."
+      ],
+      "You can safely close this tab.": [
+        "Podeu tancar aquesta pestanya amb seguretat."
       ]
     },
     "Checkout row": {
@@ -3080,9 +3100,6 @@
       ]
     },
     "Delete address prompt": {
-      "The next active address on your list will be set as the default.": [
-        "La següent adreça activa de la llista s'establirà com adreça per defecte."
-      ],
       "You can only delete 1 address per year.": [
         "Només pot eliminar una adreça per any."
       ]
@@ -3273,6 +3290,14 @@
         "Ajudeu-nos a millorar!"
       ]
     },
+    "Download link": {
+      ".deb for Debian / Ubuntu": [
+        ".deb per a Debian / Ubuntu"
+      ],
+      ".rpm for Fedora / Red Hat": [
+        ".rpm per a Fedora / Red Hat"
+      ]
+    },
     "drive_signup_2023: Info": {
       "Advanced sharing security": [
         "Seguretat avançada per a la compartició"
@@ -3334,7 +3359,7 @@
         "S'ha actualitzat aquest esdeveniment."
       ],
       "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Aquest esdeveniment s'ha actualitzat. Això és el que ha canviat:\n\n${ updateEventDetailsText }"
+        "S'ha actualitzat aquest esdeveniment. Això és el que ha canviat:\n\n${ updateEventDetailsText }"
       ],
       "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
         "Esteu convidat a ${ eventTitle }.\n\n${ eventDetailsText }"
@@ -3511,10 +3536,10 @@
     },
     "email_forwarding_2023: Error": {
       "Condition incomplete, please add a token": [
-        "La condició està incompleta. Afegiu un testimoni."
+        "La condició està incompleta. Afegiu un token."
       ],
       "Token already exists": [
-        "El testimoni ja existeix."
+        "El token ja existeix."
       ]
     },
     "email_forwarding_2023: Error message, recovery": {
@@ -4131,7 +4156,7 @@
         "Error desconegut"
       ],
       "Unknown payment token status": [
-        "Estat del testimoni de pagament desconegut"
+        "Estat del token de pagament desconegut"
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "El fitxer carregat no és una clau privada vàlida. Verifiqueu-la i torneu-ho a provar."
@@ -4179,7 +4204,7 @@
         "Heu d'establir un nom"
       ],
       "You need to have a custom domain address in order to generate an SMTP submission token.": [
-        "Heu de tenir una adreça de domini personalitzada per a generar un testimoni de tramesa SMTP."
+        "Heu de tenir una adreça de domini personalitzada per a generar un token de tramesa SMTP."
       ],
       "You've reached the maximum character number. Please shorten your message.": [
         "Heu arribat al nombre màxim de caràcters. Reduïu el vostre missatge."
@@ -5436,7 +5461,7 @@
         "Últim ús"
       ],
       "Token name": [
-        "Nom del testimoni"
+        "Nom del token"
       ]
     },
     "Header; Table with list of calendars arranged by type": {
@@ -6269,6 +6294,9 @@
       "Check the status of imports and forwarding.": [
         "Comprova l'estat de les importacions i els enviaments."
       ],
+      "Choose an app to get started": [
+        "Triï una aplicació per començar"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Feu clic a \"Sol·licitar un nou codi\" per rebre un codi de verificació nou a ${ strong }. Si aquest número de telèfon és incorrecte, feu clic a \"Editar\" per corregir-lo."
       ],
@@ -6335,6 +6363,9 @@
       ],
       "Custom": [
         "Personalitzat"
+      ],
+      "Custom branding": [
+        "Personalització de marca"
       ],
       "Custom daily": [
         "Personalitzat diàriament"
@@ -6529,6 +6560,9 @@
       "Failed to fetch logs.": [
         "No s'han pogut trobar els registres."
       ],
+      "Fast and focused. Email and calendar, right on your desktop.": [
+        "Ràpid i concentrat. Correu electrònic i calendari, directament al teu escriptori."
+      ],
       "Fill in user details": [
         "Empleneu els detalls de l'usuari"
       ],
@@ -6569,7 +6603,7 @@
         "Accedeix creant un compte ${ BRAND_NAME } i acceptant la invitació."
       ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
-        "Doneu al testimoni un nom descriptiu, com ara el servei amb el qual voleu utilitzar-lo, i seleccioneu una de les adreces de domini personalitzades actives. Només aquesta adreça podrà enviar correus electrònics amb aquest testimoni."
+        "Doneu al token un nom descriptiu, com ara el servei amb el qual voleu utilitzar-lo, i seleccioneu una de les adreces de domini personalitzades actives. Només aquesta adreça podrà enviar correus electrònics amb aquest token."
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Proporcioneu la vostra clau pública als vostres amics o publiqueu-la en línia perquè tothom us pugui enviar un missatge de correu electrònic xifrat d'extrem a extrem."
@@ -6639,6 +6673,12 @@
       ],
       "If you wish to combine this account with another one, do NOT delete it.": [
         "Si voleu combinar aquest compte amb un altre, NO l'elimineu."
+      ],
+      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
+        "Si té problemes, estem aquí per ajudar-lo(-a). ${ boldPhoneCall } o ${ boldZoomMeeting } amb un dels nostres especialistes d'assistència, o obri un ${ boldLiveChat } per rebre assistència per xat."
+      ],
+      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists.": [
+        "Si té problemes, estem aquí per ajudar-lo(-a). ${ boldPhoneCall } o ${ boldZoomMeeting } amb un dels nostres especialistes d'assistència."
       ],
       "Image description": [
         "Descripció de la imatge"
@@ -6802,7 +6842,7 @@
         "Carregant ${ appName }"
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
-        "S'està carregant el calendari, si us plau, esperi's. Se'l redirigirà a la nostra plataforma de programació Calendly en una pestanya nova."
+        "S'està carregant el calendari, espereu. Se us redirigirà a la nostra plataforma de planificació Calendly en una pestanya nova."
       ],
       "Loading preview": [
         "S'està carregant la previsualització"
@@ -6952,7 +6992,7 @@
         "Existeixen altres administradors a la teva organització, ets el responsable de comunicar'ls-hi la nova contrasenya."
       ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
-        "Altres usuaris de la seva organització veuran els seus espais ocupats. No es comparteix cap detall de l'esdeveniment."
+        "Altres usuaris de l'organització veuran els vostres espais ocupats. No es comparteix cap detall dels esdeveniments."
       ],
       "Outdated recovery file; update to ensure access to your data": [
         "El fitxer de recuperació està obsolet; actualitzeu-lo per a garantir l'accés a les vostres dades"
@@ -7152,6 +7192,9 @@
       "Report link expired": [
         "L'enllaç de notificació ha expirat"
       ],
+      "Request a phone call": [
+        "Sol·liciteu una trucada telefònica"
+      ],
       "Resend verification email": [
         "Reenvia el correu electrònic de verificació"
       ],
@@ -7249,7 +7292,7 @@
         "L'enviament per SMTP permet als serveis o dispositius de tercers enviar correus electrònics a través de ${ MAIL_APP_NAME } per a les adreces del vostre domini personalitzat. Per a sol·licitar accés, ${ createTicket } descrivint els casos d'ús, quins dominis personalitzats voleu utilitzar i els volums de correu electrònic esperats per hora i per dia."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To use this feature, start by generating a new token.": [
-        "Una tramesa SMTP permet als serveis de tercers o dispositius enviar correus electrònics a través de ${ MAIL_APP_NAME } per a les vostres adreces de domini personalitzades. Per a utilitzar aquesta característica, comenceu generant un testimoni."
+        "Una tramesa SMTP permet als serveis de tercers o dispositius enviar correus electrònics a través de ${ MAIL_APP_NAME } per a les vostres adreces de domini personalitzades. Per a utilitzar aquesta característica, comenceu generant un token."
       ],
       "Some keys successfully reactivated": [
         "S'han reactivat correctament algunes claus"
@@ -7337,7 +7380,7 @@
         "L'enllaç de verificació per correu electrònic ha caducat. Inicieu la sessió per a tornar a enviar un enllaç de verificació."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
-        "La informació exposada es va filtrar d'un servei de tercers. La informació del seu compte de ${ BRAND_NAME } continua sent segura i encriptada. ${ learnMoreLink }"
+        "La informació exposada es va filtrar d'un servei de tercers. La informació del vostre compte de ${ BRAND_NAME } continua sent segura i xifrada. ${ learnMoreLink }"
       ],
       "The following address is available:": [
         "La següent adreça està disponible:"
@@ -7421,7 +7464,7 @@
         "L'enllaç de la promoció ha caducat."
       ],
       "This token won’t be available after you close this window, and you should not share it with anyone.": [
-        "Aquest testimoni no estarà disponible després de tancar aquesta finestra i no l'heu de compartir amb ningú."
+        "Aquest token no estarà disponible després de tancar aquesta finestra i no l'heu de compartir amb ningú."
       ],
       "This unsubscribe link has expired. Please open a more recent email from this mailing list.": [
         "Aquest enllaç d'anul·lació de la subscripció ha caducat. Obriu un correu electrònic més recent des d'aquesta llista de correu."
@@ -7619,7 +7662,7 @@
         "Utilitzeu les següents credencials quan us connecteu a servidors ${ VPN_APP_NAME } sense aplicació. Exemple d'utilització: Tunnelblick a macOS, OpenVPN a GNU/Linux."
       ],
       "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
-        "Utilitzeu l'adreça de correu electrònic seleccionada com a nom d'usuari SMTP al servei extern i el testimoni generat com a contrasenya SMTP."
+        "Utilitzeu l'adreça de correu electrònic seleccionada com a nom d'usuari SMTP al servei extern i el token generat com a contrasenya SMTP."
       ],
       "User activated": [
         "S'ha activat l'usuari."
@@ -7857,10 +7900,10 @@
         "No heu establert un mètode de recuperació i per tant la recuperació del compte serà impossible si oblideu la vostra contrasenya. Voleu procedir sense mètode de recuperació?"
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
-        "Té una subscripció de prova de ${ planTitle }. Si vol continuar amb la seva subscripció després del període de prova, afegeixi un mètode de pagament."
+        "Teniu una subscripció de prova de ${ planTitle }. Si voleu continuar amb la subscripció després del període de prova, afegiu un mètode de pagament."
       ],
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
-        "Té una subscripció de prova de ${ planTitle }. No es requereix cap pagament en aquest moment. La seva subscripció es renovarà automàticament al final del període de prova."
+        "Teniu una subscripció de prova de ${ planTitle }. No es requereix cap pagament en aquest moment. La subscripció es renovarà automàticament al final del període de prova."
       ],
       "You have no calendars to export.": [
         "No teniu cap calendari per exportar."
@@ -7978,7 +8021,7 @@
         "La vostra informació està segura amb nosaltres. Només ens posarem en contacte quan sigui necessari per oferir els nostres serveis."
       ],
       "Your information was found on ${ displayedDate }": [
-        "La seva informació es va trobar el ${ displayedDate }"
+        "La vostra informació es va trobar el ${ displayedDate }"
       ],
       "Your login information will not be saved after the import is completed.": [
         "La vostra informació d'inici de sessió no es desarà quan s'hagi completat la importació."
@@ -8540,6 +8583,9 @@
       ],
       "Awarded": [
         "Premiat"
+      ],
+      "Beta": [
+        "Versió beta"
       ],
       "Billing address": [
         "Adreça de facturació"
@@ -9139,7 +9185,7 @@
         "Envia en"
       ],
       "Show others when I'm busy": [
-        "Mostrar als altres quan estic ocupat"
+        "Mostra als altres quan estic ocupat"
       ],
       "Show secondary time zone": [
         "Mostra el fus horari secundari"
@@ -9172,7 +9218,7 @@
         "Servidor SMTP"
       ],
       "SMTP token": [
-        "Testimoni SMTP"
+        "Token SMTP"
       ],
       "SMTP username": [
         "Nom d'usuari SMTP"
@@ -9223,7 +9269,7 @@
         "Per a: ${ toEmail }"
       ],
       "Token name": [
-        "Nom del testimoni"
+        "Nom del token"
       ],
       "Two-password mode": [
         "Mode de dues contrasenyes"
@@ -9649,7 +9695,7 @@
         "milloreu per a obtenir més emmagatzematge"
       ],
       "Upgrade to restore full access": [
-        "Actualitzi per restaurar l'accés complet"
+        "Milloreu per a restaurar l'accés complet"
       ],
       "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
         "El seu ${ driveStorage } està ple. Per carregar o sincronitzar fitxers, alliberi espai o ${ cta }."
@@ -9658,21 +9704,21 @@
         "El seu ${ mailStorage } està ple. Per enviar o rebre correus electrònics, alliberi espai o ${ cta }."
       ],
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
-        "El seu compte corre el risc de ser suprimit. Per evitar la pèrdua de dades, demani al seu administrador que actualitzi. ${ cta }"
+        "El vostre compte corre el risc de ser suprimit. Per evitar la pèrdua de dades, demaneu al vostre administrador que us el millori. ${ cta }"
       ],
       "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
-        "El seu emmagatzematge està ple. Per enviar o rebre correus electrònics, alliberi espai o ${ cta }."
+        "El vostre emmagatzematge està ple. Per enviar o rebre correus electrònics, allibereu espai o ${ cta }."
       ],
       "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
         "El vostre emmagatzematge està ple. Per carregar o sincronitzar fitxers, allibereu espai o ${ cta }."
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
-        "La seva subscripció ha finalitzat. ${ cta } i per evitar la pèrdua de dades."
+        "La vostra subscripció ha finalitzat. ${ cta } i per evitar la pèrdua de dades."
       ]
     },
     "Log preference": {
       "Enable ${ reason }": [
-        "Activa ${ reason }"
+        "Habilita ${ reason }"
       ],
       "Enable advanced logs": [
         "Activa els registres avançats"
@@ -9723,7 +9769,7 @@
         "10 adreces de correu electrònic"
       ],
       "Auto-delete Spam and Trash": [
-        "Elimina automàticament el correu brossa i la paperera"
+        "Netegeu automàticament el correu brossa i la paperera"
       ],
       "Custom schedule send and snooze times": [
         "Personalització de l'hora d'enviament i del temps de posposició"
@@ -9742,7 +9788,7 @@
     },
     "mailtrial2024: Info": {
       "for the first month": [
-        "per al primer mes"
+        "el primer mes"
       ],
       "for your first month": [
         "per al primer mes"
@@ -10993,6 +11039,12 @@
       "${ Filter.Name } created": [
         "S'ha creat ${ Filter.Name }"
       ],
+      "${ reason } has been disabled": [
+        "${ reason } s'ha desactivat"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } s'ha habilitat"
+      ],
       "A disabled address cannot be default": [
         "Una adreça desactivada no pot ser una adreça per defecte."
       ],
@@ -12180,18 +12232,65 @@
     },
     "scim: Action": {
       "Configure SCIM": [
-        "Configura SCIM"
+        "Configurar SCIM"
       ],
       "Disable SCIM": [
-        "Desactiva SCIM"
+        "Desactivar SCIM"
+      ],
+      "Disable SCIM integration": [
+        "Voleu desactivar la integració SCIM"
+      ],
+      "Generate new token": [
+        "Generar un nou token"
       ],
       "Generate token": [
-        "Genera un token"
+        "Generar un token"
+      ]
+    },
+    "scim: Info": {
+      "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
+        "**Requisit previ:** L'autenticació SAML s'ha de configurar per habilitar el subministrament SCIM."
+      ],
+      "Enter token into your identity provider": [
+        "Introdueixi el token al seu proveïdor d'identitat"
+      ],
+      "Enter URL and token into your identity provider": [
+        "Introdueixi l'URL i el token al seu proveïdor d'identitat"
+      ],
+      "For security reasons, the token is hidden": [
+        "Per motius de seguretat, el token està amagat"
+      ],
+      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ VPN_APP_NAME }.": [
+        "Vagi al seu proveïdor d'identitat, copiï i enganxi les dades següents i acabi de configurar SCIM per a ${ VPN_APP_NAME }."
+      ],
+      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ VPN_APP_NAME }.": [
+        "Vagi al vostre proveïdor d'identitat, copiï i enganxi el token que apareix a continuació i torni a activar SCIM per a ${ VPN_APP_NAME }."
+      ],
+      "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
+        "Si ha perdut o oblidat el token SCIM, en pot generar un de nou, però tingui en compte que la configuració del seu proveïdor d'identitat s'haurà d'actualitzar."
+      ],
+      "Make sure you copy the above SCIM token now.": [
+        "Asseguri's de copiar ara el token SCIM anterior."
+      ],
+      "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
+        "Quan SCIM estigui desactivat per a la seva organització, **tots els usuaris SCIM proporcionats automàticament pel seu proveïdor d'identitat es convertiran en usuaris SSO** i podrà gestionar-los directament des de la configuració de ${ BRAND_NAME }."
+      ],
+      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ VPN_APP_NAME } organization.": [
+        "Simplifiqui la gestió dels usuaris en diferents serveis. Afegeixi, editi i esborri usuaris del seu proveïdor d'identitat i aquests canvis s'aplicaran automàticament a la seva organització ${ VPN_APP_NAME }."
+      ],
+      "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
+        "El subministrament automàtic de SCIM es desactivarà fins que introdueixi el nou token SCIM a la configuració del seu proveïdor d'identitat."
+      ],
+      "The SCIM base URL and token will be deleted.": [
+        "Se suprimiran l'URL base i el token SCIM."
       ]
     },
     "scim: Label": {
       "SCIM base URL": [
         "URL base de SCIM"
+      ],
+      "SCIM base URL (or tenant URL)": [
+        "URL base de SCIM (o URL de l'inquilí)"
       ],
       "SCIM token": [
         "Token SCIM"
@@ -12199,7 +12298,21 @@
     },
     "scim: Title": {
       "Disable SCIM integration?": [
-        "Voleu desactivar la integració SCIM?"
+        "Vol desactivar la integració SCIM?"
+      ],
+      "Generate new SCIM token?": [
+        "Generar un nou token SCIM?"
+      ],
+      "SCIM automatic provisioning": [
+        "Provisionament automàtic de SCIM"
+      ]
+    },
+    "scim: Tooltip": {
+      "API key of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
+        "Clau d'API del connector SCIM al qual el seu agent d'aprovisionament IdP reenvia les dades SCIM"
+      ],
+      "URL of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
+        "URL del connector SCIM al qual el seu agent d'aprovisionament IdP reenvia les dades SCIM"
       ]
     },
     "Select file": {
@@ -12863,7 +12976,7 @@
         "Accediu al contingut dels serveis de transmissió en línia, com ara Netflix, Disney+ i Prime Video, des de qualsevol lloc."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Tots els nostres serveis prèmium al seu límit màxim: 100 adreces de correu electrònic, suport per a 10 dominis personalitzats, àlies hide-my-email il·limitats, compartició de calendaris, emmagatzematge al núvol encriptat, compartició de fitxers, etc."
+        "Tots els nostres serveis prèmium al seu límit màxim: 100 adreces de correu electrònic, suport per a 10 dominis personalitzats, àlies hide-my-email il·limitats, compartició de calendaris, emmagatzematge al núvol xifrat, compartició de fitxers, etc."
       ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "Inclou suport per a 3 dominis de correu electrònic personalitzats, 15 adreces de correu electrònic, àlies il·limitats de hide-my-email, compartició de calendari i més."
@@ -12947,7 +13060,7 @@
         "Aconseguiu més emmagatzematge"
       ],
       "To send or receive emails, free up space or ${ upgrade }": [
-        "Per a enviar o rebre correus electrònics, allibereu espai o ${ upgrade }"
+        "Per enviar o rebre correus electrònics, allibereu espai o ${ upgrade }"
       ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "Per a carregar o sincronitzar fitxers, allibereu espai o ${ upgrade }"
@@ -12971,13 +13084,13 @@
         "El vostre ${ appStorage } és ple."
       ],
       "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
-        "L'${ storage } és ple al ${ percentage }%. ${ cta }."
+        "El vostre ${ storage } és ple al ${ percentage }%. ${ cta }."
       ],
       "Your ${ storage } is full. ${ cta }.": [
         "L'${ storage } és ple. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
-        "L'emmagatzematge és ple al ${ percentage }%. ${ cta }."
+        "El vostre emmagatzematge és ple al ${ percentage }%. ${ cta }."
       ],
       "Your storage is full": [
         "L'emmagatzematge és ple."
@@ -13126,8 +13239,29 @@
         "Queda ${ dayDiff } dia.",
         "Queden ${ dayDiff } dies."
       ],
+      "${ MAIL_APP_NAME } desktop app": [
+        "Aplicació d'escriptori de ${ MAIL_APP_NAME }"
+      ],
+      "${ planMaxSpace } total storage": [
+        "${ planMaxSpace } d'emmagatzematge total"
+      ],
+      "${ planName } doesn't just provide extra storage. It lets you manage your emails faster, customize your inbox and email addresses, and access the desktop app.": [
+        "${ planName } no només ofereix emmagatzematge addicional. Li permet gestionar els seus correus electrònics més ràpidament, personalitzar la seva safata d'entrada i les adreces de correu electrònic i accedir a l'aplicació d'escriptori."
+      ],
       "10 email addresses": [
         "10 adreces de correu electrònic"
+      ],
+      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **1 GB** for Mail, and **1 GB** for Drive. You will also lose any storage bonuses earned previously.": [
+        "Si cancel·la la seva subscripció a ${ planName }, el seu espai d'emmagatzematge disminuirà de **${ planMaxSpace }** a **1 GB** per a Mail i **1 GB** per a Drive. També perdrà les bonificacions d'emmagatzematge obtingudes anteriorment."
+      ],
+      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **1 GB** for Mail, and **5 GB** for Drive. You will also lose any storage bonuses earned previously.": [
+        "Si cancel·la la seva subscripció a ${ planName }, el seu espai d'emmagatzematge disminuirà de **${ planMaxSpace }** a **1 GB** per a Mail i **5 GB** per a Drive. També perdràs les bonificacions d'emmagatzematge obtingudes anteriorment."
+      ],
+      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **500 MB** for Mail, and **1 GB** for Drive. You will also lose any storage bonuses earned previously.": [
+        "Si cancel·la la seva subscripció a ${ planName }, el seu espai d'emmagatzematge disminuirà de **${ planMaxSpace }** a **500 MB** per a Mail i **1 GB** per a Drive. També perdrà les bonificacions d'emmagatzematge obtingudes anteriorment."
+      ],
+      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **500 MB** for Mail, and **5 GB** for Drive. You will also lose any storage bonuses earned previously.": [
+        "Si cancel·la la seva subscripció a ${ planName }, el seu espai d'emmagatzematge disminuirà de **${ planMaxSpace }** a **500 MB** per a Mail i **5 GB** per a Drive. També perdrà les bonificacions d'emmagatzematge obtingudes anteriorment."
       ],
       "Calendar sharing": [
         "Compartició de calendari"
@@ -13141,17 +13275,38 @@
       "Close": [
         "Tanca"
       ],
+      "Custom schedule send and snooze times": [
+        "Personalització de l'hora d'enviament i del temps de posposició"
+      ],
       "Have a question?": [
         "Teneu una pregunta?"
       ],
       "Keep ${ planName }": [
         "Segueix amb ${ planName }"
       ],
+      "Let us remind you of everything ${ planName } can do": [
+        "Permeti'ns recordar-li tot el que pot fer ${ planName }"
+      ],
       "Priority support": [
         "Suport prioritari"
       ],
+      "Read the story": [
+        "Llegiu la història"
+      ],
+      "Resubscribe": [
+        "Resubscriviu-vos"
+      ],
       "Subscription canceled": [
         "La subscripció s'ha cancel·lat."
+      ],
+      "Unlimited folders, labels and filters": [
+        "Carpetes, etiquetes i filtres il·limitats"
+      ],
+      "Watch the interview": [
+        "Mireu la entrevista"
+      ],
+      "You still have ${ expiryDate } on your ${ planName } plan. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling.": [
+        "Encara té ${ expiryDate } al seu pla ${ planName }. Afegirem els crèdits del temps restant al seu compte de ${ BRAND_NAME }. Asseguri's que no supera els límits del pla gratuït abans de cancel·lar-lo."
       ]
     },
     "Subscription renewal state": {
@@ -13345,13 +13500,13 @@
         "Sessions revocades"
       ],
       "SMTP token deleted": [
-        "S'ha eliminat el testimoni SMTP."
+        "S'ha eliminat el token SMTP."
       ],
       "SPF value copied to clipboard": [
         "Valor SPF copiat al portaretalls"
       ],
       "Token copied to clipboard": [
-        "S'ha copiat el testimoni al porta-retalls."
+        "S'ha copiat el token al porta-retalls."
       ],
       "Undo in progress": [
         "S'està desfent"
@@ -13551,7 +13706,7 @@
     },
     "TableRow": {
       "No SMTP tokens found": [
-        "No s'han trobat testimonis SMTP."
+        "No s'han trobat tokens SMTP."
       ]
     },
     "Time unit for duration; displayed in the time picker": {
@@ -13749,6 +13904,9 @@
       ],
       "Billing cycle": [
         "Cicle de facturació"
+      ],
+      "Block trackers and malware": [
+        "Bloca els rastrejadors i programaris maliciosos"
       ],
       "Bridge for ${ platform }": [
         "Bridge per a ${ platform }"
@@ -14083,6 +14241,15 @@
       "Folders and labels": [
         "Carpetes i etiquetes"
       ],
+      "For Linux": [
+        "Per a Linux"
+      ],
+      "For macOS": [
+        "Per a macOS"
+      ],
+      "For Windows": [
+        "Per a Windows"
+      ],
       "Forward and auto-reply": [
         "Reenviament i resposta automàtica"
       ],
@@ -14102,7 +14269,7 @@
         "Voleu generar una nova frase de recuperació?"
       ],
       "Generate SMTP token": [
-        "Genera un testimoni SMTP"
+        "Genera un token SMTP"
       ],
       "Get ${ vpnPlus } to access all servers": [
         "Obteniu ${ vpnPlus } per accedir a tots els servidors"
@@ -14570,6 +14737,9 @@
       "WireGuard configuration": [
         "Configuració del WireGuard"
       ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "La seva prova gratuïta de ${ planName } acaba el ${ textDate }"
+      ],
       "Your calendar link": [
         "Enllaç del vostre calendari"
       ],
@@ -14577,7 +14747,7 @@
         "Els vostres canvis encara no estan sincronitzats"
       ],
       "Your exposed information": [
-        "La teva informació exposada"
+        "La vostra informació exposada"
       ],
       "Your plan": [
         "El vostre pla"
@@ -14586,7 +14756,7 @@
         "El seu estat de recuperació"
       ],
       "Your SMTP token": [
-        "El vostre testimoni SMTP"
+        "El vostre token SMTP"
       ],
       "Your storage": [
         "El vostre emmagatzematge"
@@ -15138,7 +15308,7 @@
         "La configuració de data i hora del vostre dispositiu no estan sincronitzats. ${ learnMore }"
       ],
       "The device or service using this token will no longer be able to send email through ${ MAIL_APP_NAME }.": [
-        "El dispositiu o servei que utilitza aquest testimoni ja no podrà enviar correus electrònics a través de ${ MAIL_APP_NAME }."
+        "El dispositiu o servei que utilitza aquest token ja no podrà enviar correus electrònics a través de ${ MAIL_APP_NAME }."
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "Aquesta importació pot superar la capacitat d'emmagatzematge disponible actualment al vostre compte de ${ BRAND_NAME }. Considereu personalitzar la importació."

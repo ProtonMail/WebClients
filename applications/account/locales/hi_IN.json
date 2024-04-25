@@ -1540,6 +1540,11 @@
         "हफ्ता"
       ]
     },
+    "Call Scheduled Confirmation": {
+      "You can safely close this tab.": [
+        "आप इस टैब को सुरक्षित रूप से बंद कर सकते हैं।"
+      ]
+    },
     "Checkout row": {
       "${ users } user": [
         "${ users } यूज़र",
@@ -3261,6 +3266,9 @@
       ],
       "No emails found to import - the account does not have an inbox": [
         "आयात के लिए कोई ईमेल ना मिला - खाते में इंबॉक्स नहीं है"
+      ],
+      "No image selected": [
+        "कोई छवि चयनित नहीं है."
       ],
       "No valid address found": [
         "कोई मान्य पता नहीं मिला"
@@ -6363,6 +6371,9 @@
       ],
       "Visa Secure logo": [
         "Visa सेक्योर लोगो"
+      ],
+      "Want to learn more?": [
+        "अधिक जानना चाहते हैं?"
       ],
       "Warning:": [
         "चेतावनी:"
@@ -10411,6 +10422,30 @@
     "Subscription price": {
       "For": [
         "के लिए"
+      ]
+    },
+    "Subscription reminder": {
+      "${ dayDiff } day left": [
+        "${ dayDiff } दिन बाकी",
+        "${ dayDiff } दिन बाकी"
+      ],
+      "${ planMaxSpace } total storage": [
+        "कुल स्टोरेज ${ planMaxSpace }"
+      ],
+      "10 email addresses": [
+        "10 ईमेल पते"
+      ],
+      "Calendar sharing": [
+        "कैलेंडर शेयर"
+      ],
+      "Cancel subscription": [
+        "सदस्यता रद्द करें"
+      ],
+      "Keep ${ planName }": [
+        "${ planName } रखे"
+      ],
+      "Priority support": [
+        "प्राथमिक सहायता"
       ]
     },
     "Subscription renewal state": {

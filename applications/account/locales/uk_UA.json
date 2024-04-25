@@ -1761,6 +1761,11 @@
         "Тиждень"
       ]
     },
+    "Call Scheduled Confirmation": {
+      "You can safely close this tab.": [
+        "Тепер ви можете закрити цю вкладку."
+      ]
+    },
     "Checkout row": {
       "${ users } user": [
         "${ users } користувач",
@@ -2985,9 +2990,6 @@
       ]
     },
     "Delete address prompt": {
-      "The next active address on your list will be set as the default.": [
-        "Наступну активну адресу з вашого списку буде встановлено типовою."
-      ],
       "You can only delete 1 address per year.": [
         "Ви можете видаляти лише 1 адресу на рік."
       ]
@@ -3713,6 +3715,9 @@
       ],
       "No external key retrieved for user is valid for sending": [
         "Жоден зовнішній ключ, отриманий для користувача, не придатний для надсилання"
+      ],
+      "No image selected": [
+        "Жодного зображення не вибрано"
       ],
       "No valid address found": [
         "Не знайдено дійсної адреси"
@@ -6449,6 +6454,9 @@
       "Failed to fetch logs.": [
         "Помилка отримання журналів."
       ],
+      "Fast and focused. Email and calendar, right on your desktop.": [
+        "Швидкість і зосередження. Електронна пошта й календар безпосередньо на вашому робочому столі."
+      ],
       "Fill in user details": [
         "Заповніть дані користувача"
       ],
@@ -7639,6 +7647,9 @@
       ],
       "Want servers in other countries?": [
         "Потрібні сервери в інших країнах?"
+      ],
+      "Want to learn more?": [
+        "Хочете дізнатися більше?"
       ],
       "Warning:": [
         "Попередження:"
@@ -9660,6 +9671,9 @@
       ]
     },
     "Log preference": {
+      "Enable ${ reason }": [
+        "Увімкнути ${ reason }"
+      ],
       "Enable advanced logs": [
         "Увімкнути розширений журнал"
       ],
@@ -10963,6 +10977,12 @@
     "Notification": {
       "${ Filter.Name } created": [
         "${ Filter.Name } створено"
+      ],
+      "${ reason } has been disabled": [
+        "${ reason } вимкнено"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } увімкнено"
       ],
       "A disabled address cannot be default": [
         "Неможливо зробити типовою вимкнену адресу"
@@ -12906,6 +12926,44 @@
     "Subscription price": {
       "For": [
         "За"
+      ]
+    },
+    "Subscription reminder": {
+      "${ dayDiff } day left": [
+        "Залишився ${ dayDiff } день",
+        "Залишилось ${ dayDiff } дні",
+        "Залишилось ${ dayDiff } днів",
+        "Залишилось ${ dayDiff } дні"
+      ],
+      "${ MAIL_APP_NAME } desktop app": [
+        "Настільний застосунок ${ MAIL_APP_NAME }"
+      ],
+      "${ planMaxSpace } total storage": [
+        "Усього ${ planMaxSpace } сховища"
+      ],
+      "10 email addresses": [
+        "10 адрес електронної пошти"
+      ],
+      "Calendar sharing": [
+        "Спільний доступ до календаря"
+      ],
+      "Cancel subscription": [
+        "Скасувати передплату"
+      ],
+      "Cancel subscription?": [
+        "Скасувати передплату?"
+      ],
+      "Custom schedule send and snooze times": [
+        "Користувацький час відправки та відкладення"
+      ],
+      "Keep ${ planName }": [
+        "Залишити ${ planName }"
+      ],
+      "Priority support": [
+        "Пріоритетна підтримка"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Необмежена кількість тек, міток і фільтрів"
       ]
     },
     "Subscription renewal state": {

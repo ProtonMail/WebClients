@@ -1124,6 +1124,10 @@
       "Trust": [
         "Vertrouwen"
       ],
+      "Trust key": [
+        "Sleutel vertrouwen",
+        "Vertrouwde sleutels"
+      ],
       "Trust public key": [
         "Publieke sleutel vertrouwen"
       ],
@@ -8167,6 +8171,11 @@
         "Uw abonnement is afgelopen. ${ cta } en om het verlies van gegevens te voorkomen."
       ]
     },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "${ reason } inschakelen"
+      ]
+    },
     "Mail import summary": {
       "Import all messages from ${ itemsToImportCount } folder and label them as": [
         "Alle berichten uit ${ itemsToImportCount } map importeren en labelen als",
@@ -9248,6 +9257,12 @@
       "${ Filter.Name } created": [
         "${ Filter.Name } aangemaakt"
       ],
+      "${ reason } has been disabled": [
+        "${ reason } is uitgezet"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } is aangezet"
+      ],
       "Block removed": [
         "Blokkade verwijderd"
       ],
@@ -9857,6 +9872,9 @@
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel is **actief** en beschermt uw account."
+      ],
+      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLink }": [
+        "Je informatie is gevonden in minstens één gegevenslek. Schakel ${ DARK_WEB_MONITORING_NAME } in om de details te bekijken en actie te ondernemen. ${ learnMoreLink }"
       ]
     },
     "Select files": {
@@ -10421,6 +10439,9 @@
       ],
       "Schedule send": [
         "Gepland versturen"
+      ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME } to get notified if your data was leaked from a third-party service.": [
+        "Schakel ${ DARK_WEB_MONITORING_NAME } in om een melding te krijgen als je gegevens zijn uitgelekt door een service van derden."
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "We laden afbeelding nu standaard en blokkeren trackers van afzenders. Dit kan gewijzigd worden via de ${ settingsLink }."

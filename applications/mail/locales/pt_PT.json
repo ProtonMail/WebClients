@@ -1115,6 +1115,10 @@
       "Trust": [
         "Confiar"
       ],
+      "Trust key": [
+        "Confiar na chave",
+        "Confiar nas chaves"
+      ],
       "Trust public key": [
         "Confiar na chave pública"
       ],
@@ -7821,6 +7825,11 @@
         "atualize para obter mais armazenamento"
       ]
     },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Ativar ${ reason }"
+      ]
+    },
     "Mail import summary": {
       "Import all messages from ${ itemsToImportCount } folder and label them as": [
         "Importar todas as mensagens da ${ itemsToImportCount } pasta e etiquetá-las como",
@@ -8778,6 +8787,12 @@
     "Notification": {
       "${ Filter.Name } created": [
         "${ Filter.Name } criado"
+      ],
+      "${ reason } has been disabled": [
+        "${ reason } foi desativado"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } foi ativado"
       ],
       "Block removed": [
         "Bloqueio removido"

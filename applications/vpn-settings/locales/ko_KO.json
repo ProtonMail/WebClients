@@ -287,6 +287,9 @@
       "Invite user": [
         "사용자 초대"
       ],
+      "Keep logo": [
+        "로고 유지"
+      ],
       "Keep my Plus subscription": [
         "나의 Plus 구독 유지"
       ],
@@ -443,6 +446,9 @@
       "Select country": [
         "국가 선택"
       ],
+      "select file": [
+        "파일 선택"
+      ],
       "Select file": [
         "파일 선택"
       ],
@@ -494,6 +500,9 @@
       "Signing in": [
         "로그인 중"
       ],
+      "Start live chat": [
+        "라이브 채팅 시작하기"
+      ],
       "Stop using single sign-on": [
         "싱글 사인온 (SSO) 중지"
       ],
@@ -538,6 +547,9 @@
       ],
       "Upload": [
         "업로드"
+      ],
+      "Upload logo": [
+        "로고 업로드"
       ],
       "Use ${ label } theme": [
         "${ label } 테마 사용"
@@ -1890,9 +1902,6 @@
       "Once deleted, this address can't be used again by anyone else.": [
         "한 번 삭제하면 누구도 이 주소를 다시는 사용할 수 없습니다."
       ],
-      "The next active address on your list will be set as the default.": [
-        "목록의 다음 활성 주소가 기본으로 설정됩니다."
-      ],
       "You can only delete 1 address per year.": [
         "매년 1개의 주소만 삭제할 수 있습니다."
       ]
@@ -2931,6 +2940,9 @@
       "Add server (${ availableAddedCount } available)": [
         "서버 추가 (${ availableAddedCount }개 가능)"
       ],
+      "Add your name and logo to create a more personalized experience for your organization.": [
+        "더 개인화된 경험을 위해 사용자의 조직에 맞는 이름 및 로고를 추가하세요."
+      ],
       "Adding ${ addedServerCount } gateway server": [
         "${ addedServerCount }개 게이트웨이 서버 생성 중"
       ],
@@ -3086,6 +3098,9 @@
       ],
       "Current plan": [
         "현재 플랜"
+      ],
+      "Custom branding": [
+        "커스텀 브랜딩"
       ],
       "Custom email domains": [
         "사용자 지정 이메일 도메인"
@@ -3285,6 +3300,12 @@
       "If you wish to combine this account with another one, do NOT delete it.": [
         "만약 이 계정을 다른 계정과 합치려는 경우, 절대로 삭제하지 마세요."
       ],
+      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
+        "만약 문제를 가지고 계신다면, 저희가 도와드리겠습니다. 자사 지원 전문가를 ${ boldPhoneCall }하거나 ${ boldZoomMeeting }을 통해 만나실 수 있습니다. 또는 ${ boldLiveChat }으로 채팅 지원을 시작하세요."
+      ],
+      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists.": [
+        "만약 문제를 가지고 계신다면, 저희가 도와드리겠습니다. 자사 지원 전문가를 ${ boldPhoneCall }하거나 ${ boldZoomMeeting }을 통해 만나실 수 있습니다."
+      ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "중요: 복구 코드를 저장했는지 확인하십시오. 그렇지 않으면 2단계 인증 기기를 분실한 경우 계정에 대한 접근권한이 영구히 손실될 수 있습니다."
       ],
@@ -3338,6 +3359,9 @@
       ],
       "Link copied to clipboard": [
         "링크가 클립보드에 복사됨"
+      ],
+      "Live chat": [
+        "실시간 채팅"
       ],
       "Loading": [
         "로딩 중"
@@ -3510,6 +3534,9 @@
       "Plus or Visionary subscription required": [
         "Plus 또는 Visionary 구독 필요함"
       ],
+      "Preview": [
+        "미리보기"
+      ],
       "Preview failed to be loaded": [
         "미리보기 불러오는 중 문제 발생"
       ],
@@ -3539,6 +3566,9 @@
       ],
       "Remember to share the user's sign in details with them.": [
         "사용자의 로그인 세부 사항을 공유하는 것을 잊지 마세요."
+      ],
+      "Request a phone call": [
+        "휴대폰 통화를 요청"
       ],
       "Resend verification email": [
         "확인 이메일 다시 보내기"
@@ -3828,6 +3858,9 @@
       "Upload your completed CSV file to create accounts": [
         "계정을 생성하려면 완료된 CSV 파일을 업로드해주세요"
       ],
+      "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
+        "조직의 로고를 업로드하여 브랜드 아이덴티티를 높이고 사용자 개개인에 맞는 경험을 제공하세요."
+      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "현재 로드 및 위치에 따라 최상의 서버 사용: ${ formattedBestServerName }"
       ],
@@ -4097,6 +4130,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "유료 구독은 Mozilla에서 관리합니다. Mozilla 지원에 연락하세요."
+      ],
+      "Zoom meeting": [
+        "Zoom 미팅"
       ]
     },
     "Info for cash payment method": {
@@ -4403,6 +4439,9 @@
       ],
       "Level for NetShield blocker filtering": [
         "NetShield 차단 필터링 수준"
+      ],
+      "Logo": [
+        "로고"
       ],
       "Mailbox password": [
         "메일함 비밀번호"
@@ -6402,12 +6441,37 @@
         "사용자"
       ]
     },
+    "scim: Info": {
+      "Enter token into your identity provider": [
+        "사용자의 신원 제공자로 이 토큰을 입력하십시오"
+      ],
+      "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
+        "SCIM이 사용자 조직에 한 번 비활성화 되면, **사용자의 신원 인증 제공자에 의한 모든 SCIM 사용자들이 SSO 사용자로 전환됩니다.** ${ BRAND_NAME } 설정 내에서 즉시 관리 또한 가능하게 됩니다."
+      ],
+      "The SCIM base URL and token will be deleted.": [
+        "SCIM 베이스 URL 및 토큰이 비활성 됩니다."
+      ]
+    },
+    "scim: Title": {
+      "Disable SCIM integration?": [
+        "SCIM 통합화를 비활성화 합니까?"
+      ],
+      "Generate new SCIM token?": [
+        "새 SCIM 토큰을 생성합니까?"
+      ],
+      "SCIM automatic provisioning": [
+        "SCIM 자동 프로비저닝"
+      ]
+    },
     "Select file": {
       "Upload CSV file": [
         "CSV 파일 업로드"
       ]
     },
     "Select invoice document": {
+      "Credit note": [
+        "대변전표"
+      ],
       "Currency conversion": [
         "화폐 변환"
       ],
@@ -7682,6 +7746,9 @@
       "Gift code": [
         "기프트 코드"
       ],
+      "How to choose a good logo": [
+        "최고의 로고를 선택하는 방법"
+      ],
       "Human verification": [
         "사람임을 인증"
       ],
@@ -7916,6 +7983,9 @@
       "WireGuard configuration": [
         "WireGuard 설정"
       ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "사용자의 ${ planName } 무료 체험이 ${ textDate }에 종료됩니다."
+      ],
       "Your changes are not synced yet": [
         "변경 사항이 동기화되지 않았습니다."
       ],
@@ -8012,6 +8082,9 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "사용자의 시스템이 \"라이트 모드\"일 때 선택된 테마가 적용됩니다"
+      ],
+      "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
+        "다른 사용자가 웹 앱에 로그인했을 때 당신의 ${ BRAND_NAME } 아이콘 대신 로고를 보게 됩니다."
       ],
       "Usually an URL that contains the identity provider's name within": [
         "일반적으로 인증 제공자의 이름이 포함된 URL"

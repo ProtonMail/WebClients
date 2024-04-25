@@ -571,6 +571,9 @@
       "Remove gift code": [
         "Verwijder geschenkcode"
       ],
+      "Remove me": [
+        "Verwijder mij"
+      ],
       "Rename": [
         "Hernoem"
       ],
@@ -4105,6 +4108,9 @@
       "Emails are automatically signed": [
         "E-mails zijn automatisch ondertekend"
       ],
+      "Empty folder": [
+        "Map leegmaken"
+      ],
       "Enabling drive search": [
         "Drive doorzoeken wordt ingeschakeld"
       ],
@@ -4469,6 +4475,9 @@
         "Maximum ${ MAX_CUSTOM_PASSWORD_LENGTH } teken toegelaten",
         "Maximum ${ MAX_CUSTOM_PASSWORD_LENGTH } tekens toegelaten"
       ],
+      "Only the owner of the share will be able to invite you again.": [
+        "Alleen de eigenaar van de share kan u opnieuw uitnodigen."
+      ],
       "Only the people with the link and the password can access this file.": [
         "Alleen de mensen met de link en het wachtwoord hebben toegang tot dit bestand."
       ],
@@ -4492,6 +4501,9 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Betalingen worden beschermd met TLS-encryptie en Zwitserse privacywetten."
+      ],
+      "Pending": [
+        "In behandeling"
       ],
       "Permanently delete all files in your locked drive": [
         "Verwijder permanent alle bestanden op uw vergrendelde schijf"
@@ -4783,6 +4795,9 @@
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "Er zijn bestanden die nog overgedragen moeten worden. Het overdrachtsbeheer sluiten zal alle handelingen stopzetten."
       ],
+      "There is nothing to see here": [
+        "Er is hier niets te zien"
+      ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Dit adres is uitgeschakeld. Om berichten naar dit adres te versturen moet de eigenaar het adres eerst activeren."
       ],
@@ -5042,6 +5057,9 @@
       "Yesterday": [
         "Gisteren"
       ],
+      "you": [
+        "u"
+      ],
       "You already have a free account": [
         "U heeft al een gratis account"
       ],
@@ -5110,6 +5128,9 @@
       ],
       "You will lose all unsaved changes.": [
         "U zal alle wijzigingen kwijtraken."
+      ],
+      "You will not be able to join again after.": [
+        "Je kan daarna niet meer toetreden."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Binnenkort wordt u doorverwezen naar PayPal om uw betaling te verifiëren."
@@ -5696,6 +5717,9 @@
       "Region": [
         "Regio/Provincie"
       ],
+      "Remove access": [
+        "Toegang verwijderen"
+      ],
       "Replace existing file": [
         "Bestaand bestand vervangen"
       ],
@@ -5752,6 +5776,9 @@
       ],
       "Stolen data": [
         "Gestolen gegevens"
+      ],
+      "Stop sharing": [
+        "Delen stoppen"
       ],
       "Street address": [
         "Adres"
@@ -5982,6 +6009,11 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Uw abonnement is afgelopen. ${ cta } en om het verlies van gegevens te voorkomen."
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "${ reason } inschakelen"
       ]
     },
     "Mail import summary": {
@@ -7154,6 +7186,18 @@
         "${ numberOfItems } link naar uw item werd verwijderd",
         "${ numberOfItems } links naar uw items werden verwijderd"
       ],
+      "${ reason } has been disabled": [
+        "${ reason } is uitgezet"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } is aangezet"
+      ],
+      "Access for the member removed": [
+        "Toegang voor het lid verwijderd"
+      ],
+      "Access updated and shared": [
+        "Toegang bijgewerkt en gedeeld"
+      ],
       "All items will soon be permanently deleted from trash": [
         "Alle items zullen binnenkort permanent uit de prullenbak worden verwijderd"
       ],
@@ -7193,6 +7237,9 @@
       "Failed to move, please try again": [
         "Verplaatsen mislukt, probeer het opnieuw"
       ],
+      "Failed to remove the file": [
+        "Verwijderen van bestand is mislukt"
+      ],
       "Failed to upload files: ${ err }": [
         "Het uploaden van bestanden is mislukt: ${ err }"
       ],
@@ -7205,6 +7252,12 @@
       ],
       "File or folder is missing a name": [
         "Bestand of map heeft geen naam"
+      ],
+      "File removed": [
+        "Bestand verwijderd"
+      ],
+      "Invitation removed from the share": [
+        "Uitnodiging is verwijderd uit de share"
       ],
       "Link copied to clipboard": [
         "Link gekopieerd naar klembord"
@@ -7233,6 +7286,9 @@
       "Share invitation ID was not found. Please check the link": [
         "Uitnodigings-ID delen is niet gevonden. Controleer de link"
       ],
+      "Stopping to share this item has failed": [
+        "Stopping om dit item te delen is mislukt"
+      ],
       "Subfolder failed to be loaded": [
         "Submap kon niet geladen worden"
       ],
@@ -7250,6 +7306,9 @@
       ],
       "Trash failed to be emptied": [
         "Prullenbak legen mislukt"
+      ],
+      "You stopped to share this item": [
+        "Je bent gestopt met dit item te delen"
       ],
       "Your old files will be deleted in 72 hours": [
         "Uw oude bestanden worden binnen 72 uur verwijderd"
@@ -7696,6 +7755,9 @@
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel is **actief** en beschermt uw account."
+      ],
+      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLink }": [
+        "Je informatie is gevonden in minstens één gegevenslek. Schakel ${ DARK_WEB_MONITORING_NAME } in om de details te bekijken en actie te ondernemen. ${ learnMoreLink }"
       ]
     },
     "Select files": {
@@ -8618,6 +8680,9 @@
       ],
       "Are you sure you want to close the preview?": [
         "Weet u zeker dat u het voorbeeld wil sluiten?"
+      ],
+      "Are you sure you want to leave this share?": [
+        "Bent u zeker dat u deze share wilt verlaten?"
       ],
       "Billing cycle": [
         "Factuurperiode"

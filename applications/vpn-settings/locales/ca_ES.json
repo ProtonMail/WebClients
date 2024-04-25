@@ -378,7 +378,7 @@
         "Notifica un problema"
       ],
       "Request a call": [
-        "Sol·licitar una trucada"
+        "Sol·licita una trucada"
       ],
       "Request a feature": [
         "Demana una nova característica"
@@ -690,6 +690,23 @@
         "Això desconnectarà tots els routers i clients que utilitzin aquest certificat."
       ]
     },
+    "app-switcher": {
+      "Browse the web privately and block ads": [
+        "Navegui pel web de manera privada i bloquegi els anuncis"
+      ],
+      "Keep your schedule private": [
+        "Mantingui la seva agenda privada"
+      ],
+      "Protect your passwords and identity": [
+        "Protegeixi les seves contrasenyes i identitat"
+      ],
+      "Safeguard your files and photos": [
+        "Protegeixi els seus fitxers i fotos"
+      ],
+      "Secure your communications": [
+        "Protegeixi les seves comunicacions"
+      ]
+    },
     "bf2023: Action": {
       "**Add our encrypted password manager** for only ${ price }": [
         "**Afegeix el nostre gestor de contrasenyes xifrat** per només ${ price }"
@@ -949,7 +966,7 @@
         "Continua utilitzant ${ planTitle }"
       ],
       "Continue your subscription": [
-        "Continuï amb la seva subscripció"
+        "Continueu amb la vostra subscripció"
       ]
     },
     "Checkout row": {
@@ -1860,9 +1877,6 @@
       ]
     },
     "Delete address prompt": {
-      "The next active address on your list will be set as the default.": [
-        "La següent adreça activa de la llista s'establirà com adreça per defecte."
-      ],
       "You can only delete 1 address per year.": [
         "Només pot eliminar una adreça per any."
       ]
@@ -2132,7 +2146,7 @@
         "Error desconegut"
       ],
       "Unknown payment token status": [
-        "Estat del testimoni de pagament desconegut"
+        "Estat del token de pagament desconegut"
       ],
       "Username must begin with a letter or digit": [
         "El nom d'usuari ha de començar amb una lletra o un dígit."
@@ -2988,6 +3002,9 @@
       "Current plan": [
         "Pla actual"
       ],
+      "Custom branding": [
+        "Personalització de marca"
+      ],
       "Custom email domains": [
         "Dominis de correu personalitzats"
       ],
@@ -3156,6 +3173,12 @@
       "If you wish to combine this account with another one, do NOT delete it.": [
         "Si voleu combinar aquest compte amb un altre, NO l'elimineu."
       ],
+      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
+        "Si té problemes, estem aquí per ajudar-lo(-a). ${ boldPhoneCall } o ${ boldZoomMeeting } amb un dels nostres especialistes d'assistència, o obri un ${ boldLiveChat } per rebre assistència per xat."
+      ],
+      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists.": [
+        "Si té problemes, estem aquí per ajudar-lo(-a). ${ boldPhoneCall } o ${ boldZoomMeeting } amb un dels nostres especialistes d'assistència."
+      ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Important: assegureu-vos de desar els codis de recuperació. En cas contrari, podeu perdre l'accés al vostre compte permanentment si perdeu el dispositiu d'autenticació de dos factors."
       ],
@@ -3217,7 +3240,7 @@
         "Carregant ${ appName }"
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
-        "S'està carregant el calendari, si us plau, esperi's. Se'l redirigirà a la nostra plataforma de programació Calendly en una pestanya nova."
+        "S'està carregant el calendari, espereu. Se us redirigirà a la nostra plataforma de planificació Calendly en una pestanya nova."
       ],
       "Loading preview": [
         "S'està carregant la previsualització"
@@ -3394,6 +3417,9 @@
       ],
       "Remember to share the user's sign in details with them.": [
         "Recordeu compartir els detalls d'inici de sessió amb l'usuari."
+      ],
+      "Request a phone call": [
+        "Sol·liciteu una trucada telefònica"
       ],
       "Resend verification email": [
         "Reenvia el correu electrònic de verificació"
@@ -3811,10 +3837,10 @@
         "Podeu utilitzar les credencials següents per connectar-vos a un servidor ${ VPN_APP_NAME } utilitzant una aplicació VPN de codi obert de tercers, com ara Tunnelblick per a macOS o OpenVPN per a GNU/Linux."
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
-        "Té una subscripció de prova de ${ planTitle }. Si vol continuar amb la seva subscripció després del període de prova, afegeixi un mètode de pagament."
+        "Teniu una subscripció de prova de ${ planTitle }. Si voleu continuar amb la subscripció després del període de prova, afegiu un mètode de pagament."
       ],
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
-        "Té una subscripció de prova de ${ planTitle }. No es requereix cap pagament en aquest moment. La seva subscripció es renovarà automàticament al final del període de prova."
+        "Teniu una subscripció de prova de ${ planTitle }. No es requereix cap pagament en aquest moment. La subscripció es renovarà automàticament al final del període de prova."
       ],
       "You have no invoices.": [
         "No teniu cap factura."
@@ -4589,7 +4615,7 @@
         "milloreu per a obtenir més emmagatzematge"
       ],
       "Upgrade to restore full access": [
-        "Actualitzi per restaurar l'accés complet"
+        "Milloreu per a restaurar l'accés complet"
       ],
       "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
         "El seu ${ driveStorage } està ple. Per carregar o sincronitzar fitxers, alliberi espai o ${ cta }."
@@ -4598,16 +4624,16 @@
         "El seu ${ mailStorage } està ple. Per enviar o rebre correus electrònics, alliberi espai o ${ cta }."
       ],
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
-        "El seu compte corre el risc de ser suprimit. Per evitar la pèrdua de dades, demani al seu administrador que actualitzi. ${ cta }"
+        "El vostre compte corre el risc de ser suprimit. Per evitar la pèrdua de dades, demaneu al vostre administrador que us el millori. ${ cta }"
       ],
       "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
-        "El seu emmagatzematge està ple. Per enviar o rebre correus electrònics, alliberi espai o ${ cta }."
+        "El vostre emmagatzematge està ple. Per enviar o rebre correus electrònics, allibereu espai o ${ cta }."
       ],
       "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
         "El vostre emmagatzematge està ple. Per carregar o sincronitzar fitxers, allibereu espai o ${ cta }."
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
-        "La seva subscripció ha finalitzat. ${ cta } i per evitar la pèrdua de dades."
+        "La vostra subscripció ha finalitzat. ${ cta } i per evitar la pèrdua de dades."
       ]
     },
     "mailtrial2024: Action": {
@@ -4626,7 +4652,7 @@
         "10 adreces de correu electrònic"
       ],
       "Auto-delete Spam and Trash": [
-        "Elimina automàticament el correu brossa i la paperera"
+        "Netegeu automàticament el correu brossa i la paperera"
       ],
       "Custom schedule send and snooze times": [
         "Personalització de l'hora d'enviament i del temps de posposició"
@@ -4645,7 +4671,7 @@
     },
     "mailtrial2024: Info": {
       "for the first month": [
-        "per al primer mes"
+        "el primer mes"
       ],
       "Limited-time offer, expires April 2 2024": [
         "Oferta limitada, caduca el 2 d'abril de 2024"
@@ -6089,18 +6115,65 @@
     },
     "scim: Action": {
       "Configure SCIM": [
-        "Configura SCIM"
+        "Configurar SCIM"
       ],
       "Disable SCIM": [
-        "Desactiva SCIM"
+        "Desactivar SCIM"
+      ],
+      "Disable SCIM integration": [
+        "Voleu desactivar la integració SCIM"
+      ],
+      "Generate new token": [
+        "Generar un nou token"
       ],
       "Generate token": [
-        "Genera un token"
+        "Generar un token"
+      ]
+    },
+    "scim: Info": {
+      "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
+        "**Requisit previ:** L'autenticació SAML s'ha de configurar per habilitar el subministrament SCIM."
+      ],
+      "Enter token into your identity provider": [
+        "Introdueixi el token al seu proveïdor d'identitat"
+      ],
+      "Enter URL and token into your identity provider": [
+        "Introdueixi l'URL i el token al seu proveïdor d'identitat"
+      ],
+      "For security reasons, the token is hidden": [
+        "Per motius de seguretat, el token està amagat"
+      ],
+      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ VPN_APP_NAME }.": [
+        "Vagi al seu proveïdor d'identitat, copiï i enganxi les dades següents i acabi de configurar SCIM per a ${ VPN_APP_NAME }."
+      ],
+      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ VPN_APP_NAME }.": [
+        "Vagi al vostre proveïdor d'identitat, copiï i enganxi el token que apareix a continuació i torni a activar SCIM per a ${ VPN_APP_NAME }."
+      ],
+      "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
+        "Si ha perdut o oblidat el token SCIM, en pot generar un de nou, però tingui en compte que la configuració del seu proveïdor d'identitat s'haurà d'actualitzar."
+      ],
+      "Make sure you copy the above SCIM token now.": [
+        "Asseguri's de copiar ara el token SCIM anterior."
+      ],
+      "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
+        "Quan SCIM estigui desactivat per a la seva organització, **tots els usuaris SCIM proporcionats automàticament pel seu proveïdor d'identitat es convertiran en usuaris SSO** i podrà gestionar-los directament des de la configuració de ${ BRAND_NAME }."
+      ],
+      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ VPN_APP_NAME } organization.": [
+        "Simplifiqui la gestió dels usuaris en diferents serveis. Afegeixi, editi i esborri usuaris del seu proveïdor d'identitat i aquests canvis s'aplicaran automàticament a la seva organització ${ VPN_APP_NAME }."
+      ],
+      "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
+        "El subministrament automàtic de SCIM es desactivarà fins que introdueixi el nou token SCIM a la configuració del seu proveïdor d'identitat."
+      ],
+      "The SCIM base URL and token will be deleted.": [
+        "Se suprimiran l'URL base i el token SCIM."
       ]
     },
     "scim: Label": {
       "SCIM base URL": [
         "URL base de SCIM"
+      ],
+      "SCIM base URL (or tenant URL)": [
+        "URL base de SCIM (o URL de l'inquilí)"
       ],
       "SCIM token": [
         "Token SCIM"
@@ -6108,7 +6181,21 @@
     },
     "scim: Title": {
       "Disable SCIM integration?": [
-        "Voleu desactivar la integració SCIM?"
+        "Vol desactivar la integració SCIM?"
+      ],
+      "Generate new SCIM token?": [
+        "Generar un nou token SCIM?"
+      ],
+      "SCIM automatic provisioning": [
+        "Provisionament automàtic de SCIM"
+      ]
+    },
+    "scim: Tooltip": {
+      "API key of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
+        "Clau d'API del connector SCIM al qual el seu agent d'aprovisionament IdP reenvia les dades SCIM"
+      ],
+      "URL of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
+        "URL del connector SCIM al qual el seu agent d'aprovisionament IdP reenvia les dades SCIM"
       ]
     },
     "Select file": {
@@ -6615,7 +6702,7 @@
         "Accediu al contingut dels serveis de transmissió en línia, com ara Netflix, Disney+ i Prime Video, des de qualsevol lloc."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Tots els nostres serveis prèmium al seu límit màxim: 100 adreces de correu electrònic, suport per a 10 dominis personalitzats, àlies hide-my-email il·limitats, compartició de calendaris, emmagatzematge al núvol encriptat, compartició de fitxers, etc."
+        "Tots els nostres serveis prèmium al seu límit màxim: 100 adreces de correu electrònic, suport per a 10 dominis personalitzats, àlies hide-my-email il·limitats, compartició de calendaris, emmagatzematge al núvol xifrat, compartició de fitxers, etc."
       ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "Inclou suport per a 3 dominis de correu electrònic personalitzats, 15 adreces de correu electrònic, àlies il·limitats de hide-my-email, compartició de calendari i més."
@@ -6679,7 +6766,7 @@
         "Per a tots els serveis de ${ BRAND_NAME }"
       ],
       "To send or receive emails, free up space or ${ upgrade }": [
-        "Per a enviar o rebre correus electrònics, allibereu espai o ${ upgrade }"
+        "Per enviar o rebre correus electrònics, allibereu espai o ${ upgrade }"
       ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "Per a carregar o sincronitzar fitxers, allibereu espai o ${ upgrade }"
@@ -6694,13 +6781,13 @@
         "El vostre ${ appStorage } és ple."
       ],
       "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
-        "L'${ storage } és ple al ${ percentage }%. ${ cta }."
+        "El vostre ${ storage } és ple al ${ percentage }%. ${ cta }."
       ],
       "Your ${ storage } is full. ${ cta }.": [
         "L'${ storage } és ple. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
-        "L'emmagatzematge és ple al ${ percentage }%. ${ cta }."
+        "El vostre emmagatzematge és ple al ${ percentage }%. ${ cta }."
       ],
       "Your storage is full": [
         "L'emmagatzematge és ple."
@@ -7597,6 +7684,9 @@
       ],
       "WireGuard configuration": [
         "Configuració del WireGuard"
+      ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "La seva prova gratuïta de ${ planName } acaba el ${ textDate }"
       ],
       "Your changes are not synced yet": [
         "Els vostres canvis encara no estan sincronitzats"

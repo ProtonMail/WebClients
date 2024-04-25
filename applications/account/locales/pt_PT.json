@@ -1681,6 +1681,11 @@
         "Semana"
       ]
     },
+    "Call Scheduled Confirmation": {
+      "You can safely close this tab.": [
+        "Pode fechar este separador com segurança."
+      ]
+    },
     "Checkout row": {
       "${ users } user": [
         "${ users } utilizador",
@@ -3085,6 +3090,14 @@
         "Ajude-nos a melhorar"
       ]
     },
+    "Download link": {
+      ".deb for Debian / Ubuntu": [
+        ".deb para Debian/Ubuntu"
+      ],
+      ".rpm for Fedora / Red Hat": [
+        ".rpm para Fedora / Red Hat"
+      ]
+    },
     "drive_signup_2023: Info": {
       "Advanced sharing security": [
         "Segurança avançada de partilha"
@@ -3652,6 +3665,9 @@
       ],
       "No emails found to import - the account does not have an inbox": [
         "Não foram encontrados e-mails para importar - a conta não tem uma caixa de entrada"
+      ],
+      "No image selected": [
+        "Nenhuma imagem selecionada"
       ],
       "No valid address found": [
         "Nenhum endereço válido encontrado"
@@ -7266,6 +7282,9 @@
       "Want servers in other countries?": [
         "Pretende servidores em outros países?"
       ],
+      "Want to learn more?": [
+        "Quer saber mais?"
+      ],
       "Warning:": [
         "Aviso:"
       ],
@@ -9174,6 +9193,9 @@
       ]
     },
     "Log preference": {
+      "Enable ${ reason }": [
+        "Ativar ${ reason }"
+      ],
       "Enable advanced logs": [
         "Ativar os registos avançados"
       ],
@@ -10369,6 +10391,12 @@
     "Notification": {
       "${ Filter.Name } created": [
         "${ Filter.Name } criado"
+      ],
+      "${ reason } has been disabled": [
+        "${ reason } foi desativado"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } foi ativado"
       ],
       "A disabled address cannot be default": [
         "Um endereço desativado não pode ser um endereço predefinido."
@@ -12206,6 +12234,33 @@
     "Subscription price": {
       "For": [
         "Por"
+      ]
+    },
+    "Subscription reminder": {
+      "${ dayDiff } day left": [
+        "${ dayDiff } dia restante",
+        "${ dayDiff } dias restantes"
+      ],
+      "${ planMaxSpace } total storage": [
+        "${ planMaxSpace } de armazenamento total"
+      ],
+      "10 email addresses": [
+        "10 endereços de e-mail"
+      ],
+      "Calendar sharing": [
+        "Partilha de calendário"
+      ],
+      "Cancel subscription": [
+        "Cancelar subscrição"
+      ],
+      "Cancel subscription?": [
+        "Cancelar subscrição?"
+      ],
+      "Keep ${ planName }": [
+        "Manter ${ planName }"
+      ],
+      "Priority support": [
+        "Apoio ao cliente prioritário"
       ]
     },
     "Subscription renewal state": {

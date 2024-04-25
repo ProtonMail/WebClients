@@ -1557,6 +1557,11 @@
         "Hét"
       ]
     },
+    "Call Scheduled Confirmation": {
+      "You can safely close this tab.": [
+        "Most már nyugodtan bezárhatja ezt az ablakot."
+      ]
+    },
     "Checkout row": {
       "${ users } user": [
         "${ users } felhasználó",
@@ -2781,9 +2786,6 @@
       ]
     },
     "Delete address prompt": {
-      "The next active address on your list will be set as the default.": [
-        "A listán szereplő következő aktív cím lesz az alapértelmezett."
-      ],
       "You can only delete 1 address per year.": [
         "Évente csak egy címet törölhet."
       ]
@@ -2954,6 +2956,14 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Segítsen fejlődni!"
+      ]
+    },
+    "Download link": {
+      ".deb for Debian / Ubuntu": [
+        ".deb Debian / Ubuntu"
+      ],
+      ".rpm for Fedora / Red Hat": [
+        ".rpm Fedora / Red Hat"
       ]
     },
     "drive_signup_2023: Info": {
@@ -3360,6 +3370,9 @@
       ],
       "No emails found to import - the account does not have an inbox": [
         "Nincs importálandó e-mail - a fiókban nincsenek beérkezett levelek"
+      ],
+      "No image selected": [
+        "Nincs kép kiválasztva"
       ],
       "No valid address found": [
         "Nincs érvényes cím"
@@ -5608,6 +5621,9 @@
       "Failed to fetch logs.": [
         "Napló betöltése sikertelen."
       ],
+      "Fast and focused. Email and calendar, right on your desktop.": [
+        "Gyors és koncentrált. E-mail és naptár, közvetlenül az asztalon."
+      ],
       "Fill in user details": [
         "Adja meg a felhasználó adatait"
       ],
@@ -6559,6 +6575,9 @@
       "Visa Secure logo": [
         "Visa biztonsági logó"
       ],
+      "Want to learn more?": [
+        "Szeretne többet megtudni?"
+      ],
       "Warning:": [
         "Figyelem:"
       ],
@@ -7342,6 +7361,9 @@
       ],
       "Awarded": [
         "Megszerezve"
+      ],
+      "Beta": [
+        "Béta"
       ],
       "Billing address": [
         "Számlázási cím"
@@ -8357,6 +8379,9 @@
       ]
     },
     "Log preference": {
+      "Enable ${ reason }": [
+        "${ reason } engedélyezése"
+      ],
       "Enable advanced logs": [
         "Részletes naplózás engedélyezése"
       ],
@@ -9380,6 +9405,12 @@
     "Notification": {
       "${ Filter.Name } created": [
         "${ Filter.Name } létrehozva"
+      ],
+      "${ reason } has been disabled": [
+        "${ reason } letiltva"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } engedélyezésre került"
       ],
       "A disabled address cannot be default": [
         "Egy kikapcsolt cím nem lehet alapértelmezett"
@@ -10887,6 +10918,39 @@
         "Ár:"
       ]
     },
+    "Subscription reminder": {
+      "${ dayDiff } day left": [
+        "${ dayDiff } nap van hátra",
+        "${ dayDiff } nap van hátra"
+      ],
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } asztali alkalmazás"
+      ],
+      "${ planMaxSpace } total storage": [
+        "${ planMaxSpace } teljes tárhely"
+      ],
+      "10 email addresses": [
+        "10 e-mail cím"
+      ],
+      "Calendar sharing": [
+        "Naptár megosztás"
+      ],
+      "Cancel subscription": [
+        "Előfizetés lemondása"
+      ],
+      "Cancel subscription?": [
+        "Előfizetés lemondása?"
+      ],
+      "Keep ${ planName }": [
+        "Maradjon ${ planName }"
+      ],
+      "Priority support": [
+        "Elsőbbségi támogatás"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Korlátlan számú mappa, címke és szűrő"
+      ]
+    },
     "Subscription renewal state": {
       "Disable": [
         "Letiltás"
@@ -11681,6 +11745,15 @@
       ],
       "Folders and labels": [
         "Mappák és címkék"
+      ],
+      "For Linux": [
+        "Linux rendszerre"
+      ],
+      "For macOS": [
+        "macOS rendszerre"
+      ],
+      "For Windows": [
+        "Windows rendszerre"
       ],
       "Forward and auto-reply": [
         "Továbbít és automatikus válasz"

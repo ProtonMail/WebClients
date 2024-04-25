@@ -1292,7 +1292,7 @@
         "广告拦截与恶意软件防护"
       ],
       "Extended version history": [
-        "查看版本历史"
+        "更长的版本历史"
       ],
       "High speed streaming": [
         "高速看视频"
@@ -1395,7 +1395,7 @@
         "通过我们遍布全球的服务器网络规避运营商和政府审查。"
       ],
       "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "包括支持 ${ domains } 对自定义电子邮件域、 ${ addresses } 对电子邮件地址、 无限的 hide-my-email 别名、 日历共享以及更多功能支持。"
+        "包含 ${ domains } 个自有域名、${ addresses } 个邮箱地址、无限量 hide-my-email 邮箱别名、日历共享等功能。"
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "支持 1 个自有域名、10 个邮箱地址、10 个 Hide-my-email 邮箱别名、日程共享等功能。"
@@ -1730,6 +1730,11 @@
       ],
       "Week": [
         "周"
+      ]
+    },
+    "Call Scheduled Confirmation": {
+      "You can safely close this tab.": [
+        "您可以安全地关闭此页面了。"
       ]
     },
     "Checkout row": {
@@ -3104,6 +3109,14 @@
         "帮助我们做得更好！"
       ]
     },
+    "Download link": {
+      ".deb for Debian / Ubuntu": [
+        "Debian / Ubuntu (.deb)"
+      ],
+      ".rpm for Fedora / Red Hat": [
+        "Fedora / Red Hat (.rpm)"
+      ]
+    },
     "drive_signup_2023: Info": {
       "Advanced sharing security": [
         "保障文件分享安全"
@@ -3130,7 +3143,7 @@
     },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
-        "描述：${ eventDescription }"
+        "描述：\n${ eventDescription }"
       ]
     },
     "Email body for invitation": {
@@ -3164,13 +3177,13 @@
     },
     "Email body for invitation (date part)": {
       "TIME:\n${ formattedStart }": [
-        "时间：${ formattedStart }"
+        "时间：\n${ formattedStart }"
       ],
       "TIME:\n${ formattedStart } (all day)": [
-        "时间：${ formattedStart } (全天)"
+        "时间：\n${ formattedStart }（全天）"
       ],
       "TIME:\n${ formattedStart } - ${ formattedEnd }": [
-        "时间：${ formattedStart } - ${ formattedEnd }"
+        "时间：\n${ formattedStart } - ${ formattedEnd }"
       ]
     },
     "Email body for invitation (event details part)": {
@@ -3180,18 +3193,18 @@
     },
     "Email body for invitation (location part)": {
       "LOCATION:\n${ eventLocation }": [
-        "位置: ${ eventLocation }"
+        "位置：\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
       "${ emailAddress } accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } 以接受您对 ${ eventTitle } 的邀请"
+        "${ emailAddress } 接受了您的 ${ eventTitle } 邀请"
       ],
       "${ emailAddress } declined your invitation to ${ eventTitle }": [
-        "${ emailAddress } 以谢绝了你对 ${ eventTitle } 的邀请"
+        "${ emailAddress } 拒绝了您的 ${ eventTitle } 邀请"
       ],
       "${ emailAddress } tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } 以暂时接受了您对 ${ eventTitle } 的邀请"
+        "${ emailAddress } 暂时接受了您的 ${ eventTitle } 邀请"
       ]
     },
     "Email spam notification": {
@@ -3612,6 +3625,9 @@
       "No external key retrieved for user is valid for sending": [
         "没有为用户检索到的有效密钥用于发送"
       ],
+      "No image selected": [
+        "没有选择图像"
+      ],
       "No valid address found": [
         "未找到有效地址"
       ],
@@ -3865,7 +3881,7 @@
         "您需要设置自有域名地址才能生成 SMTP 投递专用密码。"
       ],
       "You've reached the maximum character number. Please shorten your message.": [
-        "您已达到此消息的最大字符数。请缩短您的消息。"
+        "字数超过限制，请缩短信息内容。"
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "您的账户或机构有逾期未付的账单，请前往未付。"
@@ -5524,7 +5540,7 @@
         "您的所有改动都将丢失。"
       ],
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "您所有的联系人都以被导入，已达 ${ MAX_CONTACTS_PER_USER } 的上限"
+        "您的所有联系人都将被导入，直至达到 ${ MAX_CONTACTS_PER_USER } 人的上限"
       ],
       "Allocated": [
         "分配量"
@@ -5966,6 +5982,9 @@
       ],
       "Failed to fetch logs.": [
         "获取日志失败。"
+      ],
+      "Fast and focused. Email and calendar, right on your desktop.": [
+        "邮件和日程尽在您的桌面呈现，为您带来快捷而专注的体验。"
       ],
       "Fill in user details": [
         "填写用户详细信息"
@@ -7064,6 +7083,9 @@
       ],
       "Visa Secure logo": [
         "Visa Secure 图标"
+      ],
+      "Want to learn more?": [
+        "想详细了解？"
       ],
       "Warning:": [
         "警告："
@@ -8952,7 +8974,7 @@
     },
     "locked_state_storage_banner: info": {
       "Learn more": [
-        "了解更多"
+        "了解详情"
       ],
       "upgrade for more storage": [
         "升级以获取更多存储空间"
@@ -8980,6 +9002,9 @@
       ]
     },
     "Log preference": {
+      "Enable ${ reason }": [
+        "启用 ${ reason }"
+      ],
       "Enable advanced logs": [
         "开启详细日志"
       ],
@@ -9025,7 +9050,7 @@
         "自动清理垃圾邮件和废件箱"
       ],
       "Custom schedule send and snooze times": [
-        "自定义计划发送和推迟处理邮件"
+        "自由调整定时发送和延迟通知时间"
       ],
       "Support for 1 custom email domain": [
         "支持1个自定义域名"
@@ -9036,7 +9061,7 @@
     },
     "mailtrial2024: Footer": {
       "Renews at ${ renewablePrice }, cancel anytime": [
-        "在 ${ renewablePrice }续订，随时可取消订阅"
+        "续费价为 ${ renewablePrice }，可随时退订"
       ]
     },
     "mailtrial2024: Info": {
@@ -9052,7 +9077,7 @@
     },
     "mailtrial2024: Title": {
       "Get ${ planName } for only ${ planPrice }": [
-        "只需 ${ planPrice } 即可取得 ${ planName }"
+        "开通 ${ planName } 仅需 ${ planPrice }"
       ]
     },
     "Maintenance mode": {
@@ -9519,7 +9544,7 @@
         "自定义字段"
       ],
       "Custom snooze time": [
-        "自由调整免打扰时间"
+        "自由调整通知延迟时间"
       ],
       "Data breach monitoring": [
         "数据泄露监控"
@@ -9624,7 +9649,7 @@
         "优先享受客服"
       ],
       "Priority support & live chat": [
-        "优先支持和在线真人聊天"
+        "优先与客服实时沟通"
       ],
       "Protect ${ n } device at a time": [
         "一次性保护 ${ n } 个设备"
@@ -9755,7 +9780,7 @@
         "通过 ${ BRAND_NAME } 提供的 SimpleLogin 服务使用无限量的邮箱别名"
       ],
       "Snooze messages and get reminded when you want": [
-        "设置免打扰，自由决定何时接收通知"
+        "推迟邮件提醒，自由决定何时接收通知"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } 均共用同一存储空间"
@@ -10150,6 +10175,12 @@
       "${ Filter.Name } created": [
         "${ Filter.Name } 规则已创建"
       ],
+      "${ reason } has been disabled": [
+        "${ reason } 已停用"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } 已启用"
+      ],
       "A disabled address cannot be default": [
         "已停用的地址不能作为首选地址"
       ],
@@ -10175,13 +10206,13 @@
         "提醒已发送"
       ],
       "Two-factor authentication has been enforced for administrators": [
-        "已为管理员强制执行两步验证"
+        "已要求管理员开启双重验证"
       ],
       "Two-factor authentication has been enforced for all members": [
-        "已对所有成员强制执行两步验证"
+        "已要求所有成员开启双重验证"
       ],
       "Two-factor authentication is not required anymore": [
-        "不再需要两步验证"
+        "双重验证已设为非必需"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -11664,7 +11695,7 @@
         "${ app } 存储空间"
       ],
       "${ storage } ${ percentage }% full": [
-        "${ storage } ${ percentage }%已满"
+        "${ storage }已使用 ${ percentage }%"
       ],
       "**${ humanUsedSpace }** of ${ humanMaxSpace }": [
         "**${ humanUsedSpace }** / ${ humanMaxSpace }"
@@ -11676,7 +11707,7 @@
         "请考虑升级账户，以免影响您的使用体验。"
       ],
       "contact your administrator": [
-        "请与您的管理员联系！"
+        "联系您的机构管理员"
       ],
       "For all ${ BRAND_NAME } services": [
         "用于所有 ${ BRAND_NAME } 服务"
@@ -11685,16 +11716,16 @@
         "获得更多存储空间"
       ],
       "To send or receive emails, free up space or ${ upgrade }": [
-        "要继续发送或接收电子邮件，请释放储存空间或 ${ upgrade }"
+        "如需继续收发邮件，请释放部分存储空间或${ upgrade }"
       ],
       "To upload or sync files, free up space or ${ upgrade }": [
-        "要继续上传或同步文件，请释放储存空间或 ${ upgrade }"
+        "如需继续上传或同步文件，请释放部分存储空间或${ upgrade }"
       ],
       "Try out ${ app } to its full potential": [
         "尽情发挥 ${ app } 的完整潜能"
       ],
       "upgrade for more storage": [
-        "升级以获取更多存储空间"
+        "付费扩容"
       ],
       "Upgrade your plan to continue to use your account without interruptions.": [
         "升级您的套餐以继续无中断地使用您的账户"
@@ -11712,13 +11743,13 @@
         "您的 ${ appStorage } 已满"
       ],
       "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
-        "您已使用 ${ percentage }% 的 ${ storage }。${ cta }"
+        "您的 ${ storage }已使用 ${ percentage }%。${ cta }。"
       ],
       "Your ${ storage } is full. ${ cta }.": [
         "您的 ${ storage } 已满。 ${ cta }。"
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
-        "您的存储空间已满 ${ percentage }%。 ${ cta }"
+        "您的存储空间已使用 ${ percentage }%。${ cta }。"
       ],
       "Your storage is full": [
         "你的存储空间满了"
@@ -11820,6 +11851,41 @@
     "Subscription price": {
       "For": [
         "支付"
+      ]
+    },
+    "Subscription reminder": {
+      "${ dayDiff } day left": [
+        "剩余 ${ dayDiff } 天"
+      ],
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } 桌面应用"
+      ],
+      "${ planMaxSpace } total storage": [
+        "${ planMaxSpace } 总存储空间"
+      ],
+      "10 email addresses": [
+        "10 个邮箱地址"
+      ],
+      "Calendar sharing": [
+        "日历共享"
+      ],
+      "Cancel subscription": [
+        "取消订阅"
+      ],
+      "Cancel subscription?": [
+        "取消订阅?"
+      ],
+      "Custom schedule send and snooze times": [
+        "自由调整定时发送和延迟通知时间"
+      ],
+      "Keep ${ planName }": [
+        "保持计划 ${ planName }"
+      ],
+      "Priority support": [
+        "优先支持"
+      ],
+      "Unlimited folders, labels and filters": [
+        "文件夹、标签、筛选规则不限量"
       ]
     },
     "Subscription renewal state": {
@@ -12545,13 +12611,13 @@
         "删除筛选规则？"
       ],
       "Delete folder?": [
-        "删除文件夹?"
+        "删除文件夹？"
       ],
       "Delete key permanently?": [
         "永久删除密钥？"
       ],
       "Delete label?": [
-        "删除标签?"
+        "删除标签？"
       ],
       "Delete logs": [
         "删除日志"

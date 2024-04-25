@@ -3139,9 +3139,6 @@
       "Once deleted, this address can't be used again by anyone else.": [
         "Una vez eliminada, otras personas no se pueden usar esta dirección nuevamente."
       ],
-      "The next active address on your list will be set as the default.": [
-        "La siguiente dirección activa en tu lista será establecida como la dirección por defecto."
-      ],
       "You can only delete 1 address per year.": [
         "Solo puedes eliminar 1 dirección por año."
       ]
@@ -3333,6 +3330,14 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "¡Ayúdanos a mejorar!"
+      ]
+    },
+    "Download link": {
+      ".deb for Debian / Ubuntu": [
+        ".deb para Debian / Ubuntu"
+      ],
+      ".rpm for Fedora / Red Hat": [
+        ".rpm para Fedora / Red Hat"
       ]
     },
     "drive_signup_2023: Info": {
@@ -5971,6 +5976,9 @@
       "${ BRAND_NAME } is privacy you can trust, ensured by strong encryption, open-source code, and Swiss privacy laws. We believe nobody should be able to exploit your data, period. Our technology and business are based upon this fundamentally stronger definition of privacy.": [
         "${ BRAND_NAME } es la privacidad en la que puedes confiar, garantizada por un cifrado sólido, código abierto y leyes de privacidad suizas. Nadie debería poder explotar tus datos. Nuestra tecnología y nuestro negocio se basan en esta definición de privacidad más sólida."
       ],
+      "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
+        "${ BRAND_NAME } nunca comparte tu información con terceros. Los datos provienen de los propios análisis de ${ BRAND_NAME } y de Constella Intelligence."
+      ],
       "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "${ BRAND_NAME } ha pausado una importación porque ha perdido la conexión con tu otro proveedor de correo electrónico. Vuelve a conectar."
       ],
@@ -6525,6 +6533,9 @@
       "Custom": [
         "Personalizado"
       ],
+      "Custom branding": [
+        "Marca personalizada"
+      ],
       "Custom daily": [
         "Personalización del día"
       ],
@@ -6745,6 +6756,9 @@
       ],
       "Failed to fetch logs.": [
         "Error al obtener los registros"
+      ],
+      "Fast and focused. Email and calendar, right on your desktop.": [
+        "Rápido y enfocado. Correo electrónico y calendario en tu ordenador."
       ],
       "Fill in user details": [
         "Rellena los datos del usuario."
@@ -7581,6 +7595,9 @@
       "Support for 1 custom email domain": [
         "Soporte para 1 dominio de correo electrónico personalizado"
       ],
+      "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
+        "El soporte del monitoreo para dominios personalizados y direcciones de correo externas a ${ BRAND_NAME } estará disponible próximamente."
+      ],
       "support team": [
         "equipo de soporte"
       ],
@@ -7911,6 +7928,9 @@
       "Upload your completed CSV file to create accounts": [
         "Carga tu archivo CSV completo para crear cuentas."
       ],
+      "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
+        "Carga el logotipo de tu organización para potenciar tu identidad de marca y crear una experiencia personalizada para tus usuarios."
+      ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "El archivo cargado no es una clave privada válida. Verifícalo e inténtalo de nuevo."
       ],
@@ -7997,6 +8017,9 @@
       ],
       "We just sent you a new link.": [
         "Acabamos de enviarte un nuevo enlace."
+      ],
+      "We monitor the dark web for instances where your personal information (such as an email address or password used on a third-party site) is leaked or compromised.": [
+        "Monitoreamos la dark web para casos en los cuales tu información personal (como tu dirección de correo o contraseña usada en un sitio de terceros) es filtrada o comprometida."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Necesitamos autenticar el método de pago con tu banco."
@@ -8910,6 +8933,9 @@
       ],
       "Awarded": [
         "Galardonado"
+      ],
+      "Beta": [
+        "Versión beta"
       ],
       "Billing address": [
         "Dirección de facturación"
@@ -12790,6 +12816,9 @@
       ],
       "The SCIM base URL and token will be deleted.": [
         "La URL y token base de SCIM serán eliminados."
+      ],
+      "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
+        "Para reactivar la sincronización con tu proveedor de identidad, necesitas completar la integración SCIM nuevamente."
       ]
     },
     "scim: Label": {
@@ -13935,6 +13964,23 @@
         "Tu alias de correo electrónico @pm.me"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB de espacio de almacenamiento"
+      ],
+      "Desktop app": [
+        "Aplicación de escritorio"
+      ],
+      "No ads or tracking": [
+        "Sin anuncios ni rastreadores"
+      ],
+      "Support our mission": [
+        "Apoya nuestra misión"
+      ],
+      "Upgrade": [
+        "Mejorar"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "¿Estás seguro?"
@@ -14884,6 +14930,15 @@
       ],
       "Folders and labels": [
         "Carpetas y etiquetas"
+      ],
+      "For Linux": [
+        "Para Linux"
+      ],
+      "For macOS": [
+        "Para macOS"
+      ],
+      "For Windows": [
+        "Para Windows"
       ],
       "Forward and auto-reply": [
         "Reenviar y responder automáticamente"

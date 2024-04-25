@@ -3139,9 +3139,6 @@
       "Once deleted, this address can't be used again by anyone else.": [
         "Når den er slettet, kan ikke denne adressen brukes igjen av noen andre."
       ],
-      "The next active address on your list will be set as the default.": [
-        "Den neste aktive adressen på listen din vil bli angitt som standard."
-      ],
       "You can only delete 1 address per year.": [
         "Du kan bare slette 1 adresse per år."
       ]
@@ -3333,6 +3330,14 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Hjelp oss å bli bedre!"
+      ]
+    },
+    "Download link": {
+      ".deb for Debian / Ubuntu": [
+        ".deb for Debian / Ubuntu"
+      ],
+      ".rpm for Fedora / Red Hat": [
+        ".rpm for Fedora / Red Hat"
       ]
     },
     "drive_signup_2023: Info": {
@@ -5971,6 +5976,9 @@
       "${ BRAND_NAME } is privacy you can trust, ensured by strong encryption, open-source code, and Swiss privacy laws. We believe nobody should be able to exploit your data, period. Our technology and business are based upon this fundamentally stronger definition of privacy.": [
         "${ BRAND_NAME } er personvern du kan klarére, sikret av sterk kryptering, åpen kildekode og sveitsiske personvernlover. Vi mener at ingen skal kunne utnytte dataene dine, punktum. Vår teknologi og virksomhet er basert på denne fundamentalt sterkere definisjonen av personvern."
       ],
+      "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
+        "${ BRAND_NAME } deler aldri informasjonen din med tredjeparter. Data kommer fra ${ BRAND_NAME }s egne analyser og Constella Etterretning."
+      ],
       "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "${ BRAND_NAME } satte en import på pause fordi det mistet forbindelsen med din e-posttilbyder. Vennligst koble opp på nytt."
       ],
@@ -6525,6 +6533,9 @@
       "Custom": [
         "Tilpasset"
       ],
+      "Custom branding": [
+        "Tilpasset merkevarebygging"
+      ],
       "Custom daily": [
         "Tilpasset daglig"
       ],
@@ -6745,6 +6756,9 @@
       ],
       "Failed to fetch logs.": [
         "Kunne ikke hente logger."
+      ],
+      "Fast and focused. Email and calendar, right on your desktop.": [
+        "Rask og fokusert. E-post og kalender, rett på skrivebordet."
       ],
       "Fill in user details": [
         "Fyll ut brukerinformasjon"
@@ -7584,6 +7598,9 @@
       "Support for 1 custom email domain": [
         "Støtte for 1 egendefinert e-postdomene"
       ],
+      "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
+        "Støtte for overvåking av egendefinerte domener og ikke-${ BRAND_NAME }-e-postadresser kommer snart."
+      ],
       "support team": [
         "støtteapparat"
       ],
@@ -7914,6 +7931,9 @@
       "Upload your completed CSV file to create accounts": [
         "Last opp din fullførte CSV-fil for å opprette kontoer"
       ],
+      "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
+        "Last opp organisasjonens logo for å styrke merkeidentiteten og skape en personlig opplevelse for brukerne."
+      ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "Opplastet fil er ikke en gyldig privat nøkkel. Vennligst verifiser og prøv på nytt."
       ],
@@ -8000,6 +8020,9 @@
       ],
       "We just sent you a new link.": [
         "Vi sendte deg nettopp en kobling."
+      ],
+      "We monitor the dark web for instances where your personal information (such as an email address or password used on a third-party site) is leaked or compromised.": [
+        "Vi overvåker det mørke nettet for tilfeller der din personlige informasjon (som en e-postadresse eller passord brukt på en tredjepartsside) lekkes eller kompromitteres."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Vi trenger å autentisere betalingsmåten med banken din."
@@ -8913,6 +8936,9 @@
       ],
       "Awarded": [
         "Belønnet"
+      ],
+      "Beta": [
+        "Testversjon"
       ],
       "Billing address": [
         "Fakturaadresse"
@@ -12817,6 +12843,9 @@
       ],
       "The SCIM base URL and token will be deleted.": [
         "SCIM-grunnadressen og tokenet vil bli slettet."
+      ],
+      "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
+        "For å aktivere synkronisering med identitetsleverandøren på nytt, må du fullføre SCIM-integreringen på nytt."
       ]
     },
     "scim: Label": {
@@ -13962,6 +13991,47 @@
         "Ditt eget korte @pm.me e-postalias"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagringsplass"
+      ],
+      "and 15 more premium features": [
+        "og 15 flere premiumfunksjoner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk videresending av e-post ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varsler om datainnbrudd ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Skrivebordsapp"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hjelp oss med å holde internett trygt og privat for alle. Oppgrader til en betalt plan."
+      ],
+      "No ads or tracking": [
+        "Ingen annonser eller sporing"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-postadresse"
+      ],
+      "Support our mission": [
+        "Støtt vårt oppdrag"
+      ],
+      "Upgrade": [
+        "Oppgrader"
+      ],
+      "Upgrade your productivity": [
+        "Oppgrader produktiviteten din"
+      ],
+      "We don't sell your data": [
+        "Vi selger ikke dataene dine"
+      ],
+      "Your privacy is our mission": [
+        "Personvernet ditt er vårt oppdrag"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Er du sikker?"
@@ -14908,6 +14978,15 @@
       ],
       "Folders and labels": [
         "Mapper og etiketter"
+      ],
+      "For Linux": [
+        "For Linux"
+      ],
+      "For macOS": [
+        "For macOS"
+      ],
+      "For Windows": [
+        "For Windows"
       ],
       "Forward and auto-reply": [
         "Videresend og autosvar"

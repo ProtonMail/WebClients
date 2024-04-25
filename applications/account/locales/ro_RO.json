@@ -323,6 +323,9 @@
       "Delete link": [
         "Ștergere legătură"
       ],
+      "Delete logo": [
+        "Ștergere logo"
+      ],
       "Delete permanently": [
         "Ștergere permanentă"
       ],
@@ -586,6 +589,9 @@
       ],
       "Keep": [
         "Păstrare"
+      ],
+      "Keep logo": [
+        "Păstrare logo"
       ],
       "Keep my Plus subscription": [
         "Păstrez abonamentul Plus"
@@ -863,6 +869,9 @@
       "Select country": [
         "Selectare țară"
       ],
+      "select file": [
+        "selectați fișierul"
+      ],
       "Select file": [
         "Selectare fișier"
       ],
@@ -971,6 +980,9 @@
       "Start import": [
         "Pornire importare"
       ],
+      "Start live chat": [
+        "Începere discuție live"
+      ],
       "Stay": [
         "Nu închide"
       ],
@@ -1049,6 +1061,12 @@
       "Upgrade your plan": [
         "Modificare plan"
       ],
+      "Upload": [
+        "Încărcare"
+      ],
+      "Upload logo": [
+        "Încărcare logo"
+      ],
       "Upload picture": [
         "Încărcare imagine"
       ],
@@ -1102,6 +1120,9 @@
       ],
       "Void all recovery files?": [
         "Anulați toate fișierele de recuperare?"
+      ],
+      "Welcome": [
+        "Bun venit"
       ],
       "What do I get?": [
         "Ce primesc?"
@@ -1868,6 +1889,11 @@
       ],
       "Week": [
         "săptămână"
+      ]
+    },
+    "Call Scheduled Confirmation": {
+      "You can safely close this tab.": [
+        "Puteți închide această filă în siguranță."
       ]
     },
     "Checkout row": {
@@ -3100,9 +3126,6 @@
       ]
     },
     "Delete address prompt": {
-      "The next active address on your list will be set as the default.": [
-        "Următoarea adresă activă din listă va fi setată ca implicită."
-      ],
       "You can only delete 1 address per year.": [
         "Puteți șterge o singură adresă pe an."
       ]
@@ -3294,6 +3317,14 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Ajutaţi-ne să ne îmbunătățim!"
+      ]
+    },
+    "Download link": {
+      ".deb for Debian / Ubuntu": [
+        ".deb pentru Debian/Ubuntu"
+      ],
+      ".rpm for Fedora / Red Hat": [
+        ".rpm pentru Fedora/Red Hat"
       ]
     },
     "drive_signup_2023: Info": {
@@ -3881,6 +3912,12 @@
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Nu s-a reușit obținerea unei sesiuni active. Vă rugăm să ${ refresh } sau reîncercați mai târziu."
       ],
+      "Failed to process the logo": [
+        "Procesarea fișierului pentru logo a eșuat."
+      ],
+      "File too large. Your logo must be 30 KB or smaller.": [
+        "Fișier prea mare. Fișierul trebuie să aibă maxim 30 KiB."
+      ],
       "Filter with this name already exists": [
         "Filtrul cu acest nume există deja"
       ],
@@ -3898,6 +3935,9 @@
       ],
       "Impossible to rename the gateway": [
         "Imposibil de redenumit poarta de acces."
+      ],
+      "Incorrect file type. Upload a file in PNG or JPEG format.": [
+        "Tip de fișier incorect. Încărcați un fișier în format PNG sau JPEG."
       ],
       "Incorrect login credentials. Please try again.": [
         "Date de conectare incorecte. Reîncercați."
@@ -3985,6 +4025,9 @@
       "No external key retrieved for user is valid for sending": [
         "Nicio cheie externă preluată pentru utilizator nu este validă pentru trimitere."
       ],
+      "No image selected": [
+        "Imagine neselectată"
+      ],
       "No valid address found": [
         "Nu s-a găsit o adresă de e-mail validă."
       ],
@@ -4052,6 +4095,9 @@
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Migrați la un plan de afaceri cu mai mult de un utilizator pentru a destiona mai mulți utilizatori."
+      ],
+      "Please upload a square file": [
+        "Încărcați o imagine pătrată."
       ],
       "Please upload an xml file": [
         "Încărcați un fișier xml."
@@ -4126,6 +4172,12 @@
       ],
       "The email addresses do not match": [
         "Adresele de e-mail nu se potrivesc."
+      ],
+      "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
+        "Imaginea este prea mare. Dimensiunea maximă este ${ MAX_FILE_DIMENSIONS } x ${ MAX_FILE_DIMENSIONS }."
+      ],
+      "The file is too small, the minimum size is ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }": [
+        "Imaginea este prea mică. Dimensiunea minimă este ${ MIN_FILE_DIMENSIONS } x ${ MIN_FILE_DIMENSIONS }."
       ],
       "The folder name is invalid. Please choose a different name.": [
         "Numele folderului nu este valid. Alegeți alt nume."
@@ -6724,6 +6776,9 @@
       "Failed to fetch logs.": [
         "Eșuare prelucrare jurnale."
       ],
+      "Fast and focused. Email and calendar, right on your desktop.": [
+        "Rapid și eficient. E-mail și calendar chiar de pe desktop."
+      ],
       "Fill in user details": [
         "Completați detaliile utilizatorului"
       ],
@@ -7302,6 +7357,9 @@
       ],
       "Plus or Visionary subscription required": [
         "Este necesar abonamentul „Plus” sau „Visionary”"
+      ],
+      "Preview": [
+        "Examinare"
       ],
       "Preview failed to be loaded": [
         "Examinarea nu a putut fi încărcată."
@@ -7937,6 +7995,9 @@
       ],
       "Want servers in other countries?": [
         "Doriți servere în alte țări?"
+      ],
+      "Want to learn more?": [
+        "Doriți să aflați mai multe?"
       ],
       "Warning:": [
         "Avertizare:"
@@ -10007,6 +10068,9 @@
       ]
     },
     "Log preference": {
+      "Enable ${ reason }": [
+        "Activare ${ reason }"
+      ],
       "Enable advanced logs": [
         "Activare jurnale detaliate"
       ],
@@ -11382,6 +11446,12 @@
     "Notification": {
       "${ Filter.Name } created": [
         "${ Filter.Name } a fost creat."
+      ],
+      "${ reason } has been disabled": [
+        "${ reason } a fost dezactivat"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } a fost activat"
       ],
       "A disabled address cannot be default": [
         "O adresă dezactivată nu poate fi implicită."
@@ -13668,6 +13738,43 @@
         "Pentru"
       ]
     },
+    "Subscription reminder": {
+      "${ dayDiff } day left": [
+        "A mai rămas ${ dayDiff } zi",
+        "Au mai rămas ${ dayDiff } zile",
+        "Au mai rămas ${ dayDiff } de zile"
+      ],
+      "${ MAIL_APP_NAME } desktop app": [
+        "Aplicația pentru desktop ${ MAIL_APP_NAME }"
+      ],
+      "${ planMaxSpace } total storage": [
+        "${ planMaxSpace } spațiu total"
+      ],
+      "10 email addresses": [
+        "10 adrese de e-mail"
+      ],
+      "Calendar sharing": [
+        "Partajare calendar"
+      ],
+      "Cancel subscription": [
+        "Anulare abonament"
+      ],
+      "Cancel subscription?": [
+        "Anulare abonament?"
+      ],
+      "Custom schedule send and snooze times": [
+        "Programări personale și amânări"
+      ],
+      "Keep ${ planName }": [
+        "Păstrare ${ planName }"
+      ],
+      "Priority support": [
+        "Asistență prioritară"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Foldere, etichete și filtre nelimitate"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Confirmați?"
@@ -14270,6 +14377,9 @@
       "Billing cycle": [
         "Ciclu de facturare"
       ],
+      "Block trackers and malware": [
+        "Blocați instrumentele de urmărire și programele malware"
+      ],
       "Bridge for ${ platform }": [
         "Bridge pentru ${ platform }"
       ],
@@ -14401,6 +14511,9 @@
       "Custom selection of users": [
         "Selectare utilizatori preferați"
       ],
+      "Customization": [
+        "Personalizare"
+      ],
       "Customize and confirm": [
         "Personalizare și confirmare"
       ],
@@ -14460,6 +14573,9 @@
       ],
       "Delete logs": [
         "Ştergere jurnale"
+      ],
+      "Delete organization logo?": [
+        "Ștergeți logoul organizației?"
       ],
       "Delete the server (you will still be able to recover it for ${ days } day)": [
         "Ștergere server (veți putea să-l recuperați timp de ${ days } zi).",
@@ -14618,6 +14734,15 @@
       "Folders and labels": [
         "Foldere și etichete"
       ],
+      "For Linux": [
+        "Pentru Linux"
+      ],
+      "For macOS": [
+        "Pentru macOS"
+      ],
+      "For Windows": [
+        "Pentru Windows"
+      ],
       "Forward and auto-reply": [
         "Redirecționare și răspuns automat"
       ],
@@ -14656,6 +14781,9 @@
       ],
       "How does it work?": [
         "Cum funcționează?"
+      ],
+      "How to choose a good logo": [
+        "Cum să alegeți un logo bun"
       ],
       "How to refer a friend and get credits": [
         "Cum să recomandați o persoană și să primiți credite"
@@ -14764,6 +14892,9 @@
       "No recovery method": [
         "Nu există metodă de recuperare"
       ],
+      "Open": [
+        "Active"
+      ],
       "Open actions dropdown": [
         "Deschidere meniu acțiuni"
       ],
@@ -14793,6 +14924,9 @@
       ],
       "Password reset settings": [
         "Setări resetare parolă"
+      ],
+      "Passwords made easy": [
+        "Parole ușor de creat"
       ],
       "Pay invoice": [
         "Plată factură"
@@ -14880,6 +15014,9 @@
       ],
       "Reset password?": [
         "Resetare parolă?"
+      ],
+      "Resolved": [
+        "Rezolvate"
       ],
       "Restore administrator privileges": [
         "Restaurare privilegii administrator"
@@ -15066,6 +15203,9 @@
       "Upload CSV file to create multiple accounts": [
         "Încărcare fișier CSV pentru a crea conturi multiple"
       ],
+      "Upload your organization’s logo": [
+        "Încărcați logoul organizației"
+      ],
       "Users": [
         "Utilizatori"
       ],
@@ -15102,6 +15242,12 @@
       "We'll send an email to your new address with instructions on completing the change.": [
         "Veți primi un mesaj pe e-mail la noua adresă cu instrucțiuni pentru finalizarea modificării."
       ],
+      "What is an alias?": [
+        "Ce este un alias?"
+      ],
+      "What is the dark web?": [
+        "Ce este internetul ascuns?"
+      ],
       "What would you like to import?": [
         "Ce ați dori să importați?"
       ],
@@ -15110,6 +15256,15 @@
       ],
       "WireGuard configuration": [
         "Configurare WireGuard"
+      ],
+      "You have no open alerts": [
+        "Nu aveți alerte active"
+      ],
+      "You have no resolved alerts": [
+        "Nu aveți alerte nerezolvate"
+      ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Probarea gratuită pentru ${ planName } se încheie ${ textDate }"
       ],
       "Your calendar link": [
         "Legătură calendar"

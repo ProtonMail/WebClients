@@ -565,6 +565,9 @@
       "Remove gift code": [
         "移除禮品代碼"
       ],
+      "Remove me": [
+        "移除我"
+      ],
       "Rename": [
         "重新命名"
       ],
@@ -4031,6 +4034,9 @@
       "Emails are automatically signed": [
         "電子郵件已自動簽章"
       ],
+      "Empty folder": [
+        "空的文件夾"
+      ],
       "Enabling drive search": [
         "正在啟用硬碟搜尋"
       ],
@@ -4949,6 +4955,9 @@
       "Yesterday": [
         "昨天"
       ],
+      "you": [
+        "您"
+      ],
       "You already have a free account": [
         "您已有一個免費帳號"
       ],
@@ -5609,6 +5618,9 @@
       "Set recovery method": [
         "設定備援方法"
       ],
+      "Shared by": [
+        "分享自"
+      ],
       "Show indexing progress of Encrypted Search": [
         "顯示加密搜尋的索引進度"
       ],
@@ -5798,6 +5810,9 @@
       "Shared": [
         "已分享"
       ],
+      "stay safer online": [
+        "保持在線安全"
+      ],
       "Trash": [
         "垃圾桶"
       ],
@@ -5852,6 +5867,11 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "您的訂閱已到期。 ${ cta } 以避免資料遺失。"
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "啟用${ reason }"
       ]
     },
     "Mail import summary": {
@@ -6955,6 +6975,12 @@
       ],
       "${ numberOfItems } link to your item was deleted": [
         "${ numberOfItems } 個項目個連結已刪除"
+      ],
+      "${ reason } has been disabled": [
+        "${ reason } 已停用。"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } 已啟用。"
       ],
       "All items will soon be permanently deleted from trash": [
         "所有項目將從「垃圾桶」中永久刪除"
@@ -8753,6 +8779,9 @@
       ],
       "Shared": [
         "已分享"
+      ],
+      "Shared with me": [
+        "與我共享"
       ],
       "Show actions": [
         "顯示操作"

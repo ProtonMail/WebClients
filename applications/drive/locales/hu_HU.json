@@ -5308,6 +5308,11 @@
         "Az importálás indul"
       ]
     },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "${ reason } engedélyezése"
+      ]
+    },
     "Mail import summary": {
       "Import all messages from ${ itemsToImportCount } folder and label them as": [
         "Minden üzenet importálása ${ itemsToImportCount } mappából és megjelölés mint",
@@ -6068,6 +6073,12 @@
       "${ numberOfItems } link to your item was deleted": [
         "${ numberOfItems } hivatkozás a fájlra törlésre került",
         "${ numberOfItems } hivatkozás a fájlra törlésre került"
+      ],
+      "${ reason } has been disabled": [
+        "${ reason } letiltva"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } engedélyezésre került"
       ],
       "All items will soon be permanently deleted from trash": [
         "Minden elem hamarosan törlésre fog kerülni a Lomtárban"
