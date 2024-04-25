@@ -4,6 +4,7 @@ import { IntegerInput, Option, SelectTwo } from '@proton/components';
 import { FREQUENCY, FREQUENCY_INTERVALS_MAX } from '@proton/shared/lib/calendar/constants';
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { DateTimeModel, EventModelErrors, FrequencyModel } from '@proton/shared/lib/interfaces/calendar';
+import clsx from '@proton/utils/clsx';
 
 import SelectMonthlyType from '../inputs/SelectMonthlyType';
 import RepeatOnRow from './RepeatOnRow';
@@ -15,13 +16,22 @@ interface Props {
     onChange: (value: FrequencyModel) => void;
     errors: EventModelErrors;
     isSubmitted: boolean;
+    displayStacked?: boolean;
 }
 
 const getMaxFrequencyInterval = (frequency: FREQUENCY) => {
     return FREQUENCY_INTERVALS_MAX[frequency];
 };
 
-const RepeatEveryRow = ({ frequencyModel, start, weekStartsOn, onChange, errors, isSubmitted }: Props) => {
+const RepeatEveryRow = ({
+    frequencyModel,
+    start,
+    weekStartsOn,
+    onChange,
+    errors,
+    isSubmitted,
+    displayStacked = false,
+}: Props) => {
     const isMonthly = frequencyModel.frequency === FREQUENCY.MONTHLY;
     const isWeekly = frequencyModel.frequency === FREQUENCY.WEEKLY;
     const safeIntervalPlural = frequencyModel.interval || 1; // Can get undefined through the input
@@ -45,10 +55,13 @@ const RepeatEveryRow = ({ frequencyModel, start, weekStartsOn, onChange, errors,
     };
 
     return (
-        <div className="flex flex-column md:flex-row">
+        <div className={clsx('flex flex-column', displayStacked ? '*:min-size-auto gap-4' : 'md:flex-row')}>
             <div className="md:flex-1">
-                <label htmlFor="event-custom-frequency-number" id="label-event-custom-frequency">{c('Label')
-                    .t`Repeat every`}</label>
+                <label
+                    className={clsx(displayStacked && 'text-semibold')}
+                    htmlFor="event-custom-frequency-number"
+                    id="label-event-custom-frequency"
+                >{c('Label').t`Repeat every`}</label>
                 <div className="flex flex-column md:flex-row my-2">
                     <div className="flex flex-nowrap md:flex-1">
                         <span className="w-custom" style={{ '--w-custom': '6em' }}>
@@ -103,6 +116,7 @@ const RepeatEveryRow = ({ frequencyModel, start, weekStartsOn, onChange, errors,
                     start={start}
                     weekStartsOn={weekStartsOn}
                     onChange={onChange}
+                    displayStacked={displayStacked}
                 />
             )}
         </div>
