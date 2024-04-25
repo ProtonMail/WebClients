@@ -3,6 +3,7 @@ import { SimpleMap } from '@proton/shared/lib/interfaces';
 export enum TelemetryMeasurementGroups {
     accountSignup = 'account.any.signup',
     accountSignupBasic = 'account.any.signup_basic',
+    accountOrgLogoUpload = 'account.web.org_logo_upload',
     calendarEncryptedSearch = 'calendar.web.encrypted_search',
     calendarIcsSurgery = 'calendar.web.ics_surgery',
     calendarTimeZoneSelector = 'calendar.web.timezone_selector',
@@ -84,6 +85,12 @@ export enum TelemetryAccountSignupEvents {
     signupFinish = 'fe.signup_finish',
 }
 
+export enum TelemetryAccountOrganizationLogoUploadEvents {
+    processStart = 'process_start',
+    processSuccess = 'process_success',
+    processFailure = 'process_failure',
+}
+
 export enum TelemetryKeyTransparencyErrorEvents {
     self_audit_error = 'self_audit_error',
     key_verification_failure = 'key_verification_failure',
@@ -150,7 +157,8 @@ export type TelemetryEvents =
     | TelemetryMailComposerAssistantEvents
     | TelemetryChangelog
     | TelemetrySecurityCenterEvents
-    | TelemetryPaymentsEvents;
+    | TelemetryPaymentsEvents
+    | TelemetryAccountOrganizationLogoUploadEvents;
 
 export interface TelemetryReport {
     measurementGroup: TelemetryMeasurementGroups;
