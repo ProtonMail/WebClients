@@ -1910,9 +1910,6 @@
       "Once deleted, this address can't be used again by anyone else.": [
         "Når den er slettet, kan ikke denne adressen brukes igjen av noen andre."
       ],
-      "The next active address on your list will be set as the default.": [
-        "Den neste aktive adressen på listen din vil bli angitt som standard."
-      ],
       "You can only delete 1 address per year.": [
         "Du kan bare slette 1 adresse per år."
       ]
@@ -3132,6 +3129,9 @@
       "Current plan": [
         "Gjeldende plan"
       ],
+      "Custom branding": [
+        "Tilpasset merkevarebygging"
+      ],
       "Custom email domains": [
         "Egendefinerte e-postdomener"
       ],
@@ -3895,6 +3895,9 @@
       ],
       "Upload your completed CSV file to create accounts": [
         "Last opp din fullførte CSV-fil for å opprette kontoer"
+      ],
+      "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
+        "Last opp organisasjonens logo for å styrke merkeidentiteten og skape en personlig opplevelse for brukerne."
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Bruk den beste tjeneren i henhold til gjeldende belastning og posisjon: ${ formattedBestServerName }"
@@ -6568,6 +6571,9 @@
       ],
       "The SCIM base URL and token will be deleted.": [
         "SCIM-grunnadressen og tokenet vil bli slettet."
+      ],
+      "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
+        "For å aktivere synkronisering med identitetsleverandøren på nytt, må du fullføre SCIM-integreringen på nytt."
       ]
     },
     "scim: Label": {
@@ -7349,6 +7355,47 @@
     "Subscription price": {
       "For": [
         "For"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagringsplass"
+      ],
+      "and 15 more premium features": [
+        "og 15 flere premiumfunksjoner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk videresending av e-post ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varsler om datainnbrudd ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Skrivebordsapp"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hjelp oss med å holde internett trygt og privat for alle. Oppgrader til en betalt plan."
+      ],
+      "No ads or tracking": [
+        "Ingen annonser eller sporing"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-postadresse"
+      ],
+      "Support our mission": [
+        "Støtt vårt oppdrag"
+      ],
+      "Upgrade": [
+        "Oppgrader"
+      ],
+      "Upgrade your productivity": [
+        "Oppgrader produktiviteten din"
+      ],
+      "We don't sell your data": [
+        "Vi selger ikke dataene dine"
+      ],
+      "Your privacy is our mission": [
+        "Personvernet ditt er vårt oppdrag"
       ]
     },
     "Subscription renewal state": {

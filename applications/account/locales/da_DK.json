@@ -1863,6 +1863,11 @@
         "Uge"
       ]
     },
+    "Call Scheduled Confirmation": {
+      "You can safely close this tab.": [
+        "Du kan godt lukke denne fane."
+      ]
+    },
     "Checkout row": {
       "${ users } user": [
         "${ users } bruger",
@@ -3277,6 +3282,14 @@
         "Hjælp os med at blive bedre!"
       ]
     },
+    "Download link": {
+      ".deb for Debian / Ubuntu": [
+        ".deb til Debian/Ubuntu"
+      ],
+      ".rpm for Fedora / Red Hat": [
+        ".rpm for Fedora / Red Hat"
+      ]
+    },
     "drive_signup_2023: Info": {
       "Advanced sharing security": [
         "Avanceret delingssikkerhed"
@@ -3962,6 +3975,9 @@
       ],
       "No external key retrieved for user is valid for sending": [
         "Ingen ekstern nøgle hentet for brugeren er gyldig til afsendelse"
+      ],
+      "No image selected": [
+        "Intet billede valgt"
       ],
       "No valid address found": [
         "Ingen gyldig adresse fundet"
@@ -6184,6 +6200,9 @@
       "Amount due": [
         "Forfaldent beløb"
       ],
+      "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
+        "Et e-mailalias fungerer som en e-mailadresse, men reducerer spam og holder din faktiske e-mailadresse og identitet skjult."
+      ],
       "An error occurred while communicating with the extension": [
         "En fejl opstod under kommunikationen med udvidelsen"
       ],
@@ -6650,6 +6669,9 @@
       "Failed to fetch logs.": [
         "Kunne ikke hente logger."
       ],
+      "Fast and focused. Email and calendar, right on your desktop.": [
+        "Hurtigt og fokuseret. E-mail og kalender, lige på skrivebordet."
+      ],
       "Fill in user details": [
         "Udfyld brugeroplysninger"
       ],
@@ -6865,6 +6887,9 @@
       "Just send them your personal referral link.": [
         "Du skal blot sende dem dit personlige henvisningslink."
       ],
+      "Keep your info more secure and private with these guides and tips.": [
+        "Hold dine oplysninger mere sikre og private med disse vejledninger og tips."
+      ],
       "Key deletion is irreversible!": [
         "Sletning af nøgle er uigenkaldelig!"
       ],
@@ -6993,6 +7018,9 @@
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Navngiv din nye mappe og vælg den overordnede mappe, du vil placere den i. Hvis du ikke vælger en overordnet mappe, vil denne nye mappe blive oprettet som en topniveaumappe."
+      ],
+      "NetShield is an ad-blocking feature from ${ VPN_APP_NAME } that protects your device from ads, trackers, and malware.": [
+        "NetShield er en reklameblokeringsfunktion fra ${ VPN_APP_NAME } der beskytter din enhed mod reklamer, trackere og malware."
       ],
       "New": [
         "Ny"
@@ -7497,6 +7525,9 @@
       "The credentials from your Identity Provider will be deleted.": [
         "Legitimationsoplysningerne fra din identitetsudbyder vil blive slettet."
       ],
+      "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
+        "Det mørke net (engelsk: dark web) er en skjult del af internettet, hvor stjålne personlige oplysninger, f.eks. identiteter, kan købes og sælges."
+      ],
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "E-mailbekræftelseslinket er udløbet. Log ind for at sende et nyt bekræftelseslink."
       ],
@@ -7794,6 +7825,9 @@
       "URL link": [
         "URL-link"
       ],
+      "Use a password manager to generate and securely store your passwords, ensuring strong passwords and easier sign-ins.": [
+        "Brug en adgangskodeadministrator til at generere og gemme dine adgangskoder sikkert, så du får stærke adgangskoder og nemmere logins."
+      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Brug den bedste server i henhold til den aktuelle belastning og placering: ${ formattedBestServerName }"
       ],
@@ -7816,7 +7850,7 @@
         "Brugere"
       ],
       "Verification can take a few minutes.": [
-        "Bekærftelsen kan tage et par minutter."
+        "Bekræftelse kan tage et par minutter."
       ],
       "Verification link expired": [
         "Bekræftelseslink er udløbet"
@@ -7851,6 +7885,9 @@
       "Want servers in other countries?": [
         "Vil du have servere i andre lande?"
       ],
+      "Want to learn more?": [
+        "Vil du vide mere?"
+      ],
       "Warning:": [
         "Advarsel:"
       ],
@@ -7868,6 +7905,9 @@
       ],
       "We just sent you a new link.": [
         "Vi har lige sendt dig et nyt link."
+      ],
+      "We monitor the dark web for instances where your personal information (such as an email address or password used on a third-party site) is leaked or compromised.": [
+        "Vi overvåger det mørke net for at finde tilfælde, hvor dine personlige oplysninger (f.eks. en e-mailadresse eller adgangskode, der bruges på et tredjepartswebsted) er lækket eller kompromitteret."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Vi skal have bekræftet din betalingsmetode hos din bank."
@@ -9768,6 +9808,9 @@
       "here": [
         "her"
       ],
+      "How does monitoring work?": [
+        "Hvordan fungerer monitoreringen?"
+      ],
       "How to pay with Bitcoin?": [
         "Hvordan betaler man med Bitcoin?"
       ],
@@ -9902,6 +9945,9 @@
       ]
     },
     "Log preference": {
+      "Enable ${ reason }": [
+        "Aktivér ${ reason }"
+      ],
       "Enable advanced logs": [
         "Aktiver avancerede logs"
       ],
@@ -11239,11 +11285,23 @@
       "${ Filter.Name } created": [
         "${ Filter.Name } oprettet"
       ],
+      "${ reason } has been disabled": [
+        "${ reason } er blevet deaktiveret"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } er blevet aktiveret"
+      ],
       "A disabled address cannot be default": [
         "En deaktiveret adresse kan ikke være standard"
       ],
       "An external address cannot be default": [
         "En ekstern adresse kan ikke være standard"
+      ],
+      "Dark Web Monitoring has been disabled": [
+        "Monitorering af det mørke net er blevet deaktiveret"
+      ],
+      "Dark Web Monitoring has been enabled": [
+        "Monitorering af det mørke net er blevet aktiveret"
       ],
       "Invalid code": [
         "Ugyldig kode"
@@ -12053,6 +12111,9 @@
       "Permission denied, administrator privileges have been restricted.": [
         "Tilladelse nægtet, administratorrettigheder er blevet begrænset."
       ],
+      "Please ensure they have an enabled address and invite them separately later.": [
+        "Sørg for, at de har en aktiveret adresse, og inviter dem separat senere."
+      ],
       "Private users can be promoted to admin when they've signed in for the first time": [
         "Private brugere kan blive forfremmet til administrator, når de har logget ind for første gang"
       ],
@@ -12127,6 +12188,9 @@
       ],
       "Invalid expiration date": [
         "Ugyldig udløbsdato"
+      ],
+      "Invalid security code": [
+        "Ugyldig sikkerhedskode"
       ],
       "Something went wrong. Please try again later.": [
         "Noget gik galt. Prøv igen senere."
@@ -12486,6 +12550,16 @@
         "Bruger"
       ]
     },
+    "scim: Info": {
+      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ VPN_APP_NAME }.": [
+        "Gå til din identitetsudbyder, kopier og indsæt tokenet nedenfor, og genaktiver SCIM for ${ VPN_APP_NAME }."
+      ]
+    },
+    "Security Center - Info": {
+      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLinkBreach }": [
+        "Dine oplysninger blev fundet i mindst ét databrud. Slå ${ DARK_WEB_MONITORING_NAME } til for at se detaljer og tage affære. ${ learnMoreLinkBreach }"
+      ]
+    },
     "Select file": {
       "Upload CSV file": [
         "Upload en CSV-fil"
@@ -12503,8 +12577,14 @@
       ]
     },
     "Select invoice document": {
+      "Credit note": [
+        "Kreditnota"
+      ],
       "Currency conversion": [
         "Valutaomregning"
+      ],
+      "Invoice": [
+        "Faktura"
       ]
     },
     "Select search results": {
@@ -13438,6 +13518,50 @@
         "Til"
       ]
     },
+    "Subscription reminder": {
+      "${ dayDiff } day left": [
+        "${ dayDiff } dag tilbage",
+        "${ dayDiff } dage tilbage"
+      ],
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } desktop applikation."
+      ],
+      "${ planMaxSpace } total storage": [
+        "${ planMaxSpace } lagerplads i alt"
+      ],
+      "10 email addresses": [
+        "10 e-mailadresse"
+      ],
+      "Calendar sharing": [
+        "Kalenderdeling"
+      ],
+      "Cancel subscription": [
+        "Opsig abonnement"
+      ],
+      "Cancel subscription?": [
+        "Opsig abonnement?"
+      ],
+      "Custom schedule send and snooze times": [
+        "Brugerdefineret tidsplan for afsendelse og udsættelse"
+      ],
+      "Keep ${ planName }": [
+        "Behold ${ planName }"
+      ],
+      "Priority support": [
+        "Prioriteret support"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Ubegrænsede mapper, etiketter og filtre"
+      ]
+    },
+    "subscription reminder": {
+      "and 15 more premium features": [
+        "og 15 andre premium-funktioner"
+      ],
+      "We don't sell your data": [
+        "Vi sælger ikke dine data"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Er du sikker?"
@@ -14034,6 +14158,9 @@
       "Billing cycle": [
         "Faktureringscyklus"
       ],
+      "Block trackers and malware": [
+        "Blokér trackere og malware"
+      ],
       "Bridge for ${ platform }": [
         "Bridge til ${ platform }"
       ],
@@ -14404,7 +14531,7 @@
         "Få ${ vpnPlus } for at få adgang til alle servere"
       ],
       "Get the apps": [
-        "Få appsene"
+        "Hent appsene"
       ],
       "Gift": [
         "Gave"
@@ -14553,6 +14680,9 @@
       ],
       "Password reset settings": [
         "Indstillinger for nulstilling af adgangskode"
+      ],
+      "Passwords made easy": [
+        "Adgangskoder på den nemme måde"
       ],
       "Pay invoice": [
         "Betal faktura"
@@ -14861,6 +14991,12 @@
       "We'll send an email to your new address with instructions on completing the change.": [
         "Vi sender en e-mail til din nye adresse med instruktioner om, hvordan du gennemfører ændringen."
       ],
+      "What is an alias?": [
+        "Hvad er et alias?"
+      ],
+      "What is the dark web?": [
+        "Hvad er det mørke net?"
+      ],
       "What would you like to import?": [
         "Hvad ønsker du at importere?"
       ],
@@ -14869,6 +15005,9 @@
       ],
       "WireGuard configuration": [
         "WireGuard konfiguration"
+      ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Din gratis prøveperiode på ${ planName } slutter ${ textDate }"
       ],
       "Your calendar link": [
         "Dit kalenderlink"

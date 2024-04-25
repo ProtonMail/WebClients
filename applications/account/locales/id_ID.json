@@ -3126,9 +3126,6 @@
       "Once deleted, this address can't be used again by anyone else.": [
         "Setelah dihapus, alamat ini tidak akan lagi dapat digunakan oleh siapa pun juga."
       ],
-      "The next active address on your list will be set as the default.": [
-        "Alamat aktif berikutnya yang terdapat pada daftar Anda akan diatur sebagai alamat bawaan."
-      ],
       "You can only delete 1 address per year.": [
         "Anda hanya dapat menghapus 1 alamat per tahun."
       ]
@@ -6159,7 +6156,7 @@
         "Tambah server (${ availableAddedCount } tersedia)"
       ],
       "Add your name and logo to create a more personalized experience for your organization.": [
-        "Tambahkan nama dan logo Anda agar organisasi Anda dapat menyajikan pengalaman yang lebih personal."
+        "Tambahkan nama dan logo Anda untuk menghasilkan pengalaman yang lebih personal bagi organisasi Anda."
       ],
       "Adding ${ addedServerCount } gateway server": [
         "Menambahkan ${ addedServerCount } server gateway"
@@ -6472,6 +6469,9 @@
       ],
       "Custom": [
         "Sesuaikan"
+      ],
+      "Custom branding": [
+        "Branding khusus"
       ],
       "Custom daily": [
         "Sesuaikan harian"
@@ -7590,7 +7590,7 @@
         "Format berkas CSV Anda tidak sesuai."
       ],
       "The link to report that that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
-        "Tautan untuk melaporkan bahwa Anda belum menyiapkan sebuah Akun ${ BRAND_NAME } telah kedaluwarsa. Silakan hubungi tim bantuan kami untuk menyelesaikan masalah ini."
+        "Tautan untuk melaporkan bahwa Anda belum menyiapkan Akun ${ BRAND_NAME } telah kedaluwarsa. Silakan hubungi tim layanan dukungan kami untuk menyelesaikan masalah ini."
       ],
       "The name will be visible to your users while they are signed in.": [
         "Nama ini akan terlihat oleh para pengguna yang berada di bawah Anda ketika mereka masuk."
@@ -7852,6 +7852,9 @@
       ],
       "Upload your completed CSV file to create accounts": [
         "Unggah berkas CSV yang telah Anda lengkapi untuk membuat pengguna"
+      ],
+      "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
+        "Unggah logo organisasi Anda untuk mengangkat identitas merek Anda dan menciptakan pengalaman yang personal bagi para pengguna Anda."
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "Berkas terunggah bukan kunci privat yang valid. Mohon periksa dan coba lagi."
@@ -13746,6 +13749,9 @@
       "Resubscribe": [
         "Langgan ulang"
       ],
+      "Resubscribe to restore access to ${ planName } features.": [
+        "Langgan ulang untuk memulihkan akses ke berbagai fitur ${ planName }."
+      ],
       "Subscription canceled": [
         "Langganan dibatalkan"
       ],
@@ -13787,6 +13793,23 @@
       ],
       "Your own short @pm.me email alias": [
         "Alias email pendek @pm.me milik Anda"
+      ]
+    },
+    "subscription reminder": {
+      "and 15 more premium features": [
+        "dan 15 fitur premium lainnya"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Penerusan email otomatis ${ strongText }"
+      ],
+      "Upgrade": [
+        "Tingkatkan"
+      ],
+      "Upgrade your productivity": [
+        "Tingkatkan produktivitas Anda"
+      ],
+      "Your privacy is our mission": [
+        "Privasi Anda adalah misi kami"
       ]
     },
     "Subscription renewal state": {

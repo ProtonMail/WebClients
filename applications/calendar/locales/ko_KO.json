@@ -444,10 +444,10 @@
       "Not now": [
         "다음에"
       ],
-      "OK": [
+      "Ok": [
         "확인"
       ],
-      "Ok": [
+      "OK": [
         "확인"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -5687,6 +5687,11 @@
         "구독이 종료되었습니다. 데이터 접근 권한 상실 방지를 위해 ${ cta }."
       ]
     },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "${ reason } 활성화"
+      ]
+    },
     "Mail import summary": {
       "Import all messages from ${ itemsToImportCount } folder and label them as": [
         "${ itemsToImportCount } 개 폴더에서 메시지를 불러오고 메시지들을 이로 라벨"
@@ -6746,6 +6751,12 @@
       ]
     },
     "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason }이(가) 비활성화 되었습니다."
+      ],
+      "${ reason } has been enabled": [
+        "${ reason }이(가) 활성화 되었습니다."
+      ],
       "Contact group created": [
         "콘텐츠 그룹 생성됨"
       ],
@@ -8813,6 +8824,9 @@
       ],
       "You have invited participants with equivalent emails": [
         "같은 이메일로 참가자들을 초대했습니다"
+      ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "사용자의 ${ planName } 무료 체험이 ${ textDate }에 종료됩니다."
       ],
       "Your account is protected": [
         "계정이 보호됩니다."

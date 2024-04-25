@@ -577,6 +577,9 @@
       "Remove gift code": [
         "Выдаліць падарункавы код"
       ],
+      "Remove me": [
+        "Выдаліць мяне"
+      ],
       "Rename": [
         "Перайменаваць"
       ],
@@ -2505,6 +2508,9 @@
       "Error decrypting a computer": [
         "Памылка пры расшыфроўцы прылады"
       ],
+      "External accounts are not supported yet": [
+        "Знешнія ўліковыя запісы пакуль не падтрымліваюцца"
+      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Файл \"${ item.name }\" немагчыма запампаваць па прычыне памылкі \"${ error }\""
       ],
@@ -4247,6 +4253,9 @@
       "Emails are automatically signed": [
         "Лісты падпісваюцца аўтаматычна"
       ],
+      "Empty folder": [
+        "Пустая папка"
+      ],
       "Enabling drive search": [
         "Уключэнне пошуку на дыску"
       ],
@@ -4619,6 +4628,9 @@
         "Дазволены толькі ${ MAX_CUSTOM_PASSWORD_LENGTH } сімвалаў",
         "Дазволены толькі ${ MAX_CUSTOM_PASSWORD_LENGTH } сімвалы"
       ],
+      "Only the owner of the share will be able to invite you again.": [
+        "Толькі ўладальнік абагуленага файла можа запрасіць вас яшчэ раз."
+      ],
       "Only the people with the link and the password can access this file.": [
         "Толькі людзі ў якіх будзе спасылка і пароль змогуць атрымаць доступ да файла."
       ],
@@ -4939,6 +4951,9 @@
       ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "Яшчэ ёсць файлы, якія неабходна перадаць. Закрыццё менеджара перадачы завершыць усе аперацыі."
+      ],
+      "There is nothing to see here": [
+        "Няма даных для адлюстравання"
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Гэты адрас адключаны. Каб мець магчымасць адпраўляць лісты на гэты адрас, спачатку ён павінен быць уключаны ўладальнікам."
@@ -5278,6 +5293,9 @@
       ],
       "You will lose all unsaved changes.": [
         "Вы страціце ўсе незахаваныя змены."
+      ],
+      "You will not be able to join again after.": [
+        "У вас не будзе магчымасці далучыцца яшчэ раз пасля гэтага."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Неўзабаве вы будзеце перанакіраваны на сайт PayPal для праверкі плацяжу."
@@ -5935,6 +5953,9 @@
       ],
       "Stolen data": [
         "Скрадзеныя даныя"
+      ],
+      "Stop sharing": [
+        "Спыніць абагуленне"
       ],
       "Street address": [
         "Вуліца"
@@ -7516,6 +7537,9 @@
       "Failed to move, please try again": [
         "Не ўдалося перамясціць. Паспрабуйце яшчэ раз"
       ],
+      "Failed to remove the file": [
+        "Не ўдалося выдаліць файл"
+      ],
       "Failed to upload files: ${ err }": [
         "Не ўдалося запампаваць файлы: ${ err }"
       ],
@@ -7530,6 +7554,9 @@
       ],
       "File or folder is missing a name": [
         "Адсутнічае назва папкі або файла"
+      ],
+      "File removed": [
+        "Файл выдалены"
       ],
       "Invitation removed from the share": [
         "Запрашэнне выдалена з абагульвання"
@@ -7567,6 +7594,9 @@
       "Share invitation ID was not found. Please check the link": [
         "Ідэнтыфікатар абагуленага запрашэння не знойдзены. Праверце спасылку"
       ],
+      "Stopping to share this item has failed": [
+        "Збой спынення абагулення гэтага элемента"
+      ],
       "Subfolder failed to be loaded": [
         "Не ўдалося загрузіць падпапкі"
       ],
@@ -7584,6 +7614,9 @@
       ],
       "Trash failed to be emptied": [
         "Не ўдалося ачысціць сметніцу"
+      ],
+      "You stopped to share this item": [
+        "Вы спынілі абагуленне гэтага элемента"
       ],
       "Your old files will be deleted in 72 hours": [
         "Вашы старыя файлы будуць выдалены на працягу 72 гадзін"
@@ -8696,6 +8729,47 @@
         "За"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 ГБ сховішча"
+      ],
+      "and 15 more premium features": [
+        "і яшчэ 15 прэміяльных функцый"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Аўтаматычная перысылка электроннай пошты ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Папярэджанне ўцечкі даных ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Настольная праграма"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Дапамажыце нам захаваць інтэрнэт бяспечным і прыватным для кожнага. Палепшыце да платнага тарыфнага плана."
+      ],
+      "No ads or tracking": [
+        "Без рэкламы і праграм сачэння"
+      ],
+      "Short @pm.me email address": [
+        "Кароткі адрас электроннай пошты @pm.me"
+      ],
+      "Support our mission": [
+        "Падтрымайце нашу місію"
+      ],
+      "Upgrade": [
+        "Палепшыць"
+      ],
+      "Upgrade your productivity": [
+        "Палепшыце сваю прадукцыйнасць"
+      ],
+      "We don't sell your data": [
+        "Мы не прадаём вашы даныя"
+      ],
+      "Your privacy is our mission": [
+        "Ваша прыватнасць з'яўляецца нашай місіяй"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Вы ўпэўнены?"
@@ -9044,6 +9118,9 @@
       "Are you sure you want to close the preview?": [
         "Вы сапраўды хочаце закрыць папярэдні прагляд?"
       ],
+      "Are you sure you want to leave this share?": [
+        "Вы сапраўды хочаце пакінуць гэта абагуленне?"
+      ],
       "Billing cycle": [
         "Перыяд аплаты"
       ],
@@ -9292,6 +9369,9 @@
       ],
       "Item details": [
         "Падрабязнасці элемента"
+      ],
+      "Last edited by": [
+        "Апошняе рэдагаванне"
       ],
       "Link confirmation": [
         "Пацвярджэнне спасылкі"

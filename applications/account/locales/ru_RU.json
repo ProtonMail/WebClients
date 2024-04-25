@@ -1854,6 +1854,11 @@
         "Неделя"
       ]
     },
+    "Call Scheduled Confirmation": {
+      "You can safely close this tab.": [
+        "Вы можете безопасно закрыть эту вкладку."
+      ]
+    },
     "Checkout row": {
       "${ users } user": [
         "${ users } пользователь",
@@ -3283,6 +3288,14 @@
         "Помогите нам совершенствоваться!"
       ]
     },
+    "Download link": {
+      ".deb for Debian / Ubuntu": [
+        ".deb для Debian / Ubuntu."
+      ],
+      ".rpm for Fedora / Red Hat": [
+        ".rpm для Fedora / Red Hat"
+      ]
+    },
     "drive_signup_2023: Info": {
       "Advanced sharing security": [
         "Дополнительная безопасность совместного доступа"
@@ -3902,6 +3915,9 @@
       ],
       "No emails found to import - the account does not have an inbox": [
         "Не найдено писем для импорта, у аккаунта нет папки Входящие"
+      ],
+      "No image selected": [
+        "Изображение не выбрано"
       ],
       "No valid address found": [
         "Не найдено действительных адресов"
@@ -6649,6 +6665,9 @@
       "Failed to fetch logs.": [
         "Не удалось загрузить журналы."
       ],
+      "Fast and focused. Email and calendar, right on your desktop.": [
+        "Быстро и целенаправленно. Электронная почта и календарь прямо на вашем рабочем столе."
+      ],
       "Fill in user details": [
         "Заполните данные пользователя"
       ],
@@ -7839,6 +7858,9 @@
       ],
       "Want servers in other countries?": [
         "Хотите серверы в других странах?"
+      ],
+      "Want to learn more?": [
+        "Хотите узнать больше?"
       ],
       "Warning:": [
         "Предупреждение:"
@@ -9835,6 +9857,9 @@
       ]
     },
     "Log preference": {
+      "Enable ${ reason }": [
+        "Включите ${ reason }"
+      ],
       "Enable advanced logs": [
         "Включить расширенное журналирование"
       ],
@@ -11216,6 +11241,12 @@
     "Notification": {
       "${ Filter.Name } created": [
         "Фильтр ${ Filter.Name } создан"
+      ],
+      "${ reason } has been disabled": [
+        "${ reason } был отключен"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } был включен"
       ],
       "A disabled address cannot be default": [
         "Отключённый адрес не может быть адресом по умолчанию"
@@ -13335,6 +13366,44 @@
     "Subscription price": {
       "For": [
         "За"
+      ]
+    },
+    "Subscription reminder": {
+      "${ dayDiff } day left": [
+        "Остался ${ dayDiff } день",
+        "Осталось ${ dayDiff } дня",
+        "Осталось ${ dayDiff } дней",
+        "Осталось ${ dayDiff } дней"
+      ],
+      "${ MAIL_APP_NAME } desktop app": [
+        "Приложение ${ MAIL_APP_NAME } для ПК"
+      ],
+      "${ planMaxSpace } total storage": [
+        "Хранилище объемом ${ planMaxSpace }"
+      ],
+      "10 email addresses": [
+        "10 адресов электронной почты"
+      ],
+      "Calendar sharing": [
+        "Совместное использование календаря"
+      ],
+      "Cancel subscription": [
+        "Отменить подписку"
+      ],
+      "Cancel subscription?": [
+        "Отменить подписку?"
+      ],
+      "Custom schedule send and snooze times": [
+        "Пользовательское планирование и откладывание писем на любое время"
+      ],
+      "Keep ${ planName }": [
+        "Сохранить ${ planName }"
+      ],
+      "Priority support": [
+        "Приоритетная поддержка"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Неограниченное количество папок, ярлыков и фильтров"
       ]
     },
     "Subscription renewal state": {

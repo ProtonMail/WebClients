@@ -453,10 +453,10 @@
       "Not now": [
         "Ne zdaj"
       ],
-      "OK": [
+      "Ok": [
         "V redu"
       ],
-      "Ok": [
+      "OK": [
         "V redu"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -1135,6 +1135,9 @@
       ],
       "Continue using ${ planTitle }": [
         "Nadaljuj z uporabo ${ planTitle }a"
+      ],
+      "Continue your subscription": [
+        "Podaljšajte naročnino"
       ]
     },
     "Calendar access select label": {
@@ -2428,6 +2431,9 @@
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Zdi se, da seznam stikov, ki ga uvažate, vsebuje nekaj skupin. Preverite, kako naj se te skupine uvozijo."
+      ],
+      "Loading availability": [
+        "Nalaganje razpoložljivosti"
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Združevanje stikov … To lahko traja nekaj minut. Ko se postopek konča, lahko zaprete to okno."
@@ -4602,6 +4608,9 @@
       "Large imports can take several days.": [
         "Uvažanje večjega števila sporočil lahko traja tudi več dni."
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Naučite se ${ staySaferOnlineLink }"
+      ],
       "Learn more": [
         "Več o tem"
       ],
@@ -4616,6 +4625,9 @@
       ],
       "Loading ${ appName }": [
         "${ appName } se nalaga"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Nalaganje koledarja, počakajte. Preusmerjeni boste na našo platformo za razporejanje Calendly v novem zavihku."
       ],
       "Loading event": [
         "Nalaganje dogodka"
@@ -4826,6 +4838,9 @@
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Aplikacija mora pred izvozom lokalno dešifrirati vaše stike. Po končanem dešifriranju se bo ustvarila datoteka VCF, ki bo na voljo za prenos."
+      ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "Razkrite informacije so pricurljale iz storitve tretje osebe. Podatki o vašem računu ${ BRAND_NAME } ostajajo varni in šifrirani. ${ learnMoreLink }"
       ],
       "The following participants cannot be notified about your changes:": [
         "O vaših spremembah ni mogoče obvestiti naslednjih udeležencev:"
@@ -5049,6 +5064,12 @@
       "You cannot undo this action.": [
         "Tega dejanja ne morete razveljaviti."
       ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "Imate preizkusno naročnino ${ planTitle }. Če želite nadaljevati naročnino po preizkusnem obdobju, dodajte način plačila."
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "Imate preizkusno naročnino ${ planTitle }. Plačilo trenutno ni potrebno. Vaša naročnina bo ob koncu preizkusnega obdobja samodejno podaljšana."
+      ],
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
         "Ponovno ste aktivirali ključe in dogodke, povezane z naslednjimi koledarji, je zdaj mogoče dešifrirati."
       ],
@@ -5141,6 +5162,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Vaše datoteke bodo šifrirane in nato shranjene."
+      ],
+      "Your information was found on ${ displayedDate }": [
+        "Vaše informacije so bile najdene ${ displayedDate }"
       ],
       "Your login information will not be saved after the import is completed.": [
         "Po končanem uvozu vaši podatki za prijavo ne bodo shranjeni."
@@ -7045,6 +7069,12 @@
       ]
     },
     "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } je bil onemogočen."
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } je bil omogočen."
+      ],
       "Contact group created": [
         "Skupina stikov ustvarjena"
       ],
@@ -7733,6 +7763,9 @@
       ]
     },
     "Security Center - Info": {
+      "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
+        "Prejmite obvestilo, če so vaše geslo ali drugi podatki ušli iz storitve tretje osebe. ${ learnMoreLink }"
+      ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Naša vrhunska varnostna rešitev, ki temelji na umetni inteligenci, je zasnovana za uporabnike, ki iščejo večjo zaščito za svoje račune. ${ learnMoreLink }"
       ],

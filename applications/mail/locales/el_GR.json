@@ -1124,6 +1124,10 @@
       "Trust": [
         "Αξιόπιστο"
       ],
+      "Trust key": [
+        "Εμπιστοσύνη στο κλειδί",
+        "Εμπιστοσύνη στα κλειδιά"
+      ],
       "Trust public key": [
         "Εμπιστοσύνη στο δημόσιο κλειδί"
       ],
@@ -8167,6 +8171,11 @@
         "Η συνδρομή σας έχει λήξει. ${ cta } και για την αποφυγή απώλειας δεδομένων."
       ]
     },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Ενεργοποίηση ${ reason }"
+      ]
+    },
     "Mail import summary": {
       "Import all messages from ${ itemsToImportCount } folder and label them as": [
         "Εισαγάγετε όλα τα μηνύματα από ${ itemsToImportCount } φάκελο και επισημάνετέ τα ως",
@@ -9248,6 +9257,12 @@
       "${ Filter.Name } created": [
         "${ Filter.Name } δημιουργήθηκε"
       ],
+      "${ reason } has been disabled": [
+        "${ reason } έχει απενεργοποιηθεί"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } έχει ενεργοποιηθεί"
+      ],
       "Block removed": [
         "Η φραγή αφαιρέθηκε"
       ],
@@ -9857,6 +9872,9 @@
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Το Sentinel είναι **ενεργό** και προστατεύει τον λογαριασμό σας."
+      ],
+      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLink }": [
+        "Οι πληροφορίες σας εντοπίστηκαν σε τουλάχιστον μία παραβίαση δεδομένων. Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να δείτε λεπτομέρειες και να προβείτε σε κάποια ενέργεια. ${ learnMoreLink }"
       ]
     },
     "Select files": {
@@ -10421,6 +10439,9 @@
       ],
       "Schedule send": [
         "Προγραμματισμός αποστολής"
+      ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME } to get notified if your data was leaked from a third-party service.": [
+        "Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να λαμβάνετε ειδοποιήσεις εάν τα δεδομένα σας διέρρευσαν από υπηρεσία τρίτου μέρους."
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Τώρα φορτώνουμε εικόνες από προεπιλογή και αποκλείουμε τους αποστολείς από την παρακολούθησή σας. Αυτό μπορεί να αλλάξει στις ${ settingsLink }."
@@ -11811,6 +11832,9 @@
       ],
       "What's new": [
         "Τι νέο υπάρχει"
+      ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Η δωρεάν δοκιμή του ${ planName } λήγει στις ${ textDate }"
       ],
       "Your account is protected": [
         "Ο λογαριασμός σας προστατεύεται"

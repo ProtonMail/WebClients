@@ -1124,6 +1124,10 @@
       "Trust": [
         "Hav tillid til"
       ],
+      "Trust key": [
+        "Stol på nøgle",
+        "Stol på nøgler"
+      ],
       "Trust public key": [
         "Hav tillid til offentlig nøgle"
       ],
@@ -8167,6 +8171,11 @@
         "Dit abonnement er ophørt. ${ cta } og for at undgå datatab."
       ]
     },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Aktivér ${ reason }"
+      ]
+    },
     "Mail import summary": {
       "Import all messages from ${ itemsToImportCount } folder and label them as": [
         "Importer alle beskeder fra ${ itemsToImportCount } mappe og giv dem etiketten",
@@ -9239,6 +9248,12 @@
       "${ Filter.Name } created": [
         "${ Filter.Name } oprettet"
       ],
+      "${ reason } has been disabled": [
+        "${ reason } er blevet deaktiveret"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } er blevet aktiveret"
+      ],
       "Block removed": [
         "Blokering fjernet"
       ],
@@ -9459,6 +9474,9 @@
       ],
       "Invalid expiration date": [
         "Ugyldig udløbsdato"
+      ],
+      "Invalid security code": [
+        "Ugyldig sikkerhedskode"
       ],
       "Something went wrong. Please try again later.": [
         "Noget gik galt. Prøv igen senere."
@@ -9845,6 +9863,9 @@
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel er **aktiv** og beskytter din konto."
+      ],
+      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLink }": [
+        "Dine oplysninger blev fundet i mindst ét databrud. Slå ${ DARK_WEB_MONITORING_NAME } til for at se detaljer og tage affære. ${ learnMoreLink }"
       ]
     },
     "Select files": {
@@ -10399,7 +10420,7 @@
         "Beskyttelse mod sporing af e-mail"
       ],
       "Get the desktop app": [
-        "Få desktop appen."
+        "Få desktop-appen."
       ],
       "Get up to ${ credits } in credits.": [
         "Få op til ${ credits } i kreditter."
@@ -10409,6 +10430,9 @@
       ],
       "Schedule send": [
         "Planlæg afsendelse"
+      ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME } to get notified if your data was leaked from a third-party service.": [
+        "Slå ${ DARK_WEB_MONITORING_NAME } til for at få besked, hvis dine data er blevet lækket fra en tredjepartstjeneste."
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Vi indlæser nu billeder som standard og blokerer afsendere fra at spore dig. Dette kan ændres i ${ settingsLink }."
@@ -10617,6 +10641,14 @@
     "Subscription price": {
       "For": [
         "Til"
+      ]
+    },
+    "subscription reminder": {
+      "and 15 more premium features": [
+        "og 15 andre premium-funktioner"
+      ],
+      "We don't sell your data": [
+        "Vi sælger ikke dine data"
       ]
     },
     "Subscription renewal state": {
@@ -11799,6 +11831,9 @@
       ],
       "What's new": [
         "Nyheder"
+      ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Din gratis prøveperiode på ${ planName } slutter ${ textDate }"
       ],
       "Your account is protected": [
         "Din konto er beskyttet"

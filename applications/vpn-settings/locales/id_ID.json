@@ -1902,9 +1902,6 @@
       "Once deleted, this address can't be used again by anyone else.": [
         "Setelah dihapus, alamat ini tidak akan lagi dapat digunakan oleh siapa pun juga."
       ],
-      "The next active address on your list will be set as the default.": [
-        "Alamat aktif berikutnya yang terdapat pada daftar Anda akan diatur sebagai alamat bawaan."
-      ],
       "You can only delete 1 address per year.": [
         "Anda hanya dapat menghapus 1 alamat per tahun."
       ]
@@ -2944,7 +2941,7 @@
         "Tambah server (${ availableAddedCount } tersedia)"
       ],
       "Add your name and logo to create a more personalized experience for your organization.": [
-        "Tambahkan nama dan logo Anda agar organisasi Anda dapat menyajikan pengalaman yang lebih personal."
+        "Tambahkan nama dan logo Anda untuk menghasilkan pengalaman yang lebih personal bagi organisasi Anda."
       ],
       "Adding ${ addedServerCount } gateway server": [
         "Menambahkan ${ addedServerCount } server gateway"
@@ -3101,6 +3098,9 @@
       ],
       "Current plan": [
         "Paket saat ini"
+      ],
+      "Custom branding": [
+        "Branding khusus"
       ],
       "Custom email domains": [
         "Domain email khusus"
@@ -3854,6 +3854,9 @@
       ],
       "Upload your completed CSV file to create accounts": [
         "Unggah berkas CSV yang telah Anda lengkapi untuk membuat pengguna"
+      ],
+      "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
+        "Unggah logo organisasi Anda untuk mengangkat identitas merek Anda dan menciptakan pengalaman yang personal bagi para pengguna Anda."
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Gunakan server terbaik berdasarkan beban jaringan dan posisi Anda saat ini: ${ formattedBestServerName }"
@@ -7218,6 +7221,23 @@
     "Subscription price": {
       "For": [
         "Untuk"
+      ]
+    },
+    "subscription reminder": {
+      "and 15 more premium features": [
+        "dan 15 fitur premium lainnya"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Penerusan email otomatis ${ strongText }"
+      ],
+      "Upgrade": [
+        "Tingkatkan"
+      ],
+      "Upgrade your productivity": [
+        "Tingkatkan produktivitas Anda"
+      ],
+      "Your privacy is our mission": [
+        "Privasi Anda adalah misi kami"
       ]
     },
     "Subscription renewal state": {

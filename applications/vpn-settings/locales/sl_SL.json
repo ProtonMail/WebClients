@@ -971,6 +971,9 @@
       ],
       "Continue using ${ planTitle }": [
         "Nadaljuj z uporabo ${ planTitle }a"
+      ],
+      "Continue your subscription": [
+        "Podaljšajte naročnino"
       ]
     },
     "Checkout row": {
@@ -1885,9 +1888,6 @@
       ]
     },
     "Delete address prompt": {
-      "The next active address on your list will be set as the default.": [
-        "Naslednji aktivni naslov na seznamu bo nastavljen kot privzeti naslov."
-      ],
       "You can only delete 1 address per year.": [
         "Na leto lahko izbrišete samo 1 naslov."
       ]
@@ -3125,6 +3125,9 @@
       "Current plan": [
         "Trenutni paket"
       ],
+      "Custom branding": [
+        "Blagovna znamka po meri"
+      ],
       "Custom email domains": [
         "E-poštne domene po meri"
       ],
@@ -3385,6 +3388,9 @@
       ],
       "Loading ${ appName }": [
         "${ appName } se nalaga"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Nalaganje koledarja, počakajte. Preusmerjeni boste na našo platformo za razporejanje Calendly v novem zavihku."
       ],
       "Loading preview": [
         "Nalaganje predogleda"
@@ -3884,6 +3890,9 @@
       "Upload your completed CSV file to create accounts": [
         "Naložite vašo izpolnjeno datoteko CSV, da ustvarite račune."
       ],
+      "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
+        "Naložite logotip svoje organizacije, da povečate identiteto svoje blagovne znamke in ustvarite osebno izkušnjo za svoje uporabnike."
+      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Uporabi najboljši strežnik glede na trenutno obremenitev in položaj: ${ formattedBestServerName }."
       ],
@@ -4072,6 +4081,12 @@
         "Na voljo imate ${ availableCount } namenska strežnika.",
         "Na voljo imate ${ availableCount } namenske strežnike.",
         "Na voljo imate ${ availableCount } namenskih strežnikov."
+      ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "Imate preizkusno naročnino ${ planTitle }. Če želite nadaljevati naročnino po preizkusnem obdobju, dodajte način plačila."
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "Imate preizkusno naročnino ${ planTitle }. Plačilo trenutno ni potrebno. Vaša naročnina bo ob koncu preizkusnega obdobja samodejno podaljšana."
       ],
       "You have no invoices.": [
         "Nimate računov."

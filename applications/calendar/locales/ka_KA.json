@@ -447,10 +447,10 @@
       "Not now": [
         "არა ახლა"
       ],
-      "OK": [
+      "Ok": [
         "დიახ"
       ],
-      "Ok": [
+      "OK": [
         "დიახ"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -5753,6 +5753,11 @@
         "თქვენი გამოწერა ამოიწურა. ${ cta } მონაცემების კარგვის თავიდან ასაცილებლად."
       ]
     },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "${ reason }-ის ჩართვა"
+      ]
+    },
     "Mail import summary": {
       "Import all messages from ${ itemsToImportCount } folder and label them as": [
         "შემოიტანეთ ყველა შეტყობინება ${ itemsToImportCount } საქაღალდეებიდან და მონიშნეთ ისინი როგორც",
@@ -6839,6 +6844,12 @@
       ]
     },
     "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } გაითიშა"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } ჩაირთო"
+      ],
       "Contact group created": [
         "კონტაქტების ჯგუფი შეიქმნა"
       ],
