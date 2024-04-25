@@ -102,7 +102,7 @@ const PasskeyGetView: FC<Props> = ({ domain, request, token }) => {
             ))}
         </Scroll>
     ) : (
-        <Card className="flex flex-auto">
+        <Card className="flex flex-auto text-sm" type="primary">
             <div className="flex flex-column justify-center items-center gap-2 mb-2">
                 <Icon name="pass-passkey" size={6} />
                 <span className="text-center block max-w-2/3">{c('Warning')
@@ -136,7 +136,7 @@ export const PasskeyGet: FC<Props> = (props) => {
                 <WithPinUnlock>
                     {(locked, input) =>
                         locked ? (
-                            <Card className="flex flex-auto">
+                            <Card className="flex flex-auto text-sm" type="primary">
                                 <div className="flex flex-column justify-center items-center gap-2 mb-2">
                                     <Icon name="lock-filled" size={6} />
                                     <span className="text-center block">

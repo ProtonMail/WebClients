@@ -165,7 +165,11 @@ export const VaultAccessManager: FC<Props> = ({ shareId }) => {
                                 canTransfer={vault.owner && hasMultipleOwnedWritableVaults}
                             />
                         ))}
-                        {warning && <Card>{warning}</Card>}
+                        {warning && (
+                            <Card type="primary" className="text-sm">
+                                {warning}
+                            </Card>
+                        )}
                     </div>
                 ) : (
                     <div className="absolute inset-center flex flex-column gap-y-3 text-center color-weak text-sm">

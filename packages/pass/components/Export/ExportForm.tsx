@@ -70,7 +70,7 @@ export const ExportForm: FC<ExporterProps> = ({ form, loading = false }) => {
                 </div>
 
                 {warnings.length > 0 && (
-                    <Card className="mb-4 p-1 flex flex-column flex-nowrap gap-2">
+                    <Card className="mb-4 p-1 flex flex-column flex-nowrap gap-2 text-sm" type="primary">
                         {warnings.map((text, idx) => (
                             <div key={`warning-${idx}`} className={'flex items-start flex-nowrap w-full gap-2'}>
                                 <Icon name="info-circle-filled" size={3} className="shrink-0 mt-0.5" />
@@ -102,7 +102,7 @@ export const ExportForm: FC<ExporterProps> = ({ form, loading = false }) => {
                 )}
 
                 {orgExportDisabled && (
-                    <Card className="mb-4 p-1">
+                    <Card className="mb-4 p-1 text-sm" type="primary">
                         <div>{c('Info').t`This setting is disabled on the organization level`}</div>
                     </Card>
                 )}

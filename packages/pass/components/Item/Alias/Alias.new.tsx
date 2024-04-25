@@ -150,14 +150,14 @@ export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit
             {({ didEnter }) => (
                 <>
                     {needsUpgrade && (
-                        <Card className="mb-2">
+                        <Card className="mb-2 text-sm" type="primary">
                             {c('Info')
                                 .t`You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.`}
                         </Card>
                     )}
 
                     {!userVerified && (
-                        <Card className="mb-2">
+                        <Card className="mb-2 text-sm" type="primary">
                             {c('Warning').t`Please verify your email address in order to use email aliases`}
                         </Card>
                     )}

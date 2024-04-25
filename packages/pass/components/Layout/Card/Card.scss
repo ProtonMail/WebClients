@@ -1,3 +1,18 @@
 .pass-card {
-	background: var(--interaction-weak);
+	--pass-card-background: var(--interaction-weak);
+	--pass-card-color: var(--text-norm);
+
+	&#{'\\:warning'},
+	&#{'\\:danger'},
+	&#{'\\:success'} {
+		--pass-card-color: var(--interaction-norm-major-2);
+	}
+
+	background: var(--pass-card-background);
+	color: var(--pass-card-color);
+
+	.pass-card--icon {
+		color: var(--text-invert);
+		background-color: var(--pass-card-color);
+	}
 }
