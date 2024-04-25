@@ -32,7 +32,7 @@ interface Props {
     isAdding: boolean;
 }
 const DirectSharingAutocomplete = ({ onFocus, onClose, onSubmit, hidden, members, addNewMembers, isAdding }: Props) => {
-    const [selectedPermissions, setPermissions] = useState<number>(MEMBER_PERMISSIONS.VIEWER);
+    const [selectedPermissions, setPermissions] = useState<SHARE_MEMBER_PERMISSIONS>(MEMBER_PERMISSIONS.VIEWER);
     const addressesInputText = c('Action').t`Add people or groups to share`;
 
     const [contactEmails] = useContactEmails();
@@ -72,6 +72,9 @@ const DirectSharingAutocomplete = ({ onFocus, onClose, onSubmit, hidden, members
     });
     const recipients = useMemo(() => inviteesToRecipients(invitees), [invitees]);
 
+    // This is needed because in other places where we use MemberPermissionsSelect we need to pass handler with return type Promise, to handle loading state
+    const handleSetPermissions = async (value: SHARE_MEMBER_PERMISSIONS) => setPermissions(value);
+
     return (
         <>
             <div className="flex justify-space-between items-center mb-1">
@@ -106,7 +109,10 @@ const DirectSharingAutocomplete = ({ onFocus, onClose, onSubmit, hidden, members
                     items={!hidden ? items : null}
                     className={clsx(['multi-select-container', !!count && 'px-2 py-0.5'])}
                 >
-                    <MemberPermissionsSelect selectedPermissions={selectedPermissions} onChange={setPermissions} />
+                    <MemberPermissionsSelect
+                        selectedPermissions={selectedPermissions}
+                        onChange={handleSetPermissions}
+                    />
                 </InputField>
             </div>
             {!hidden ? (
