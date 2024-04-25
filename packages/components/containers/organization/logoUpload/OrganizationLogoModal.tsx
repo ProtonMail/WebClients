@@ -249,6 +249,7 @@ const OrganizationLogoModal = ({ onClose, organization, app, ...rest }: Props) =
                 <div className="flex flex-column items-center w-full gap-2 mt-2">
                     <img
                         src={logoUrl}
+                        data-testid="llb:image"
                         alt=""
                         className="w-custom h-custom border shrink-0 grow-0"
                         style={{
@@ -256,16 +257,20 @@ const OrganizationLogoModal = ({ onClose, organization, app, ...rest }: Props) =
                             '--h-custom': '2.25rem',
                         }}
                     />
-                    <div className="flex flex-column flex-nowrap text-sm w-full">
-                        {uploadedLogo && <span className="text-ellipsis">{uploadedLogo?.name}</span>}
-                        <span className="color-weak text-nowrap block shrink-0">
-                            {humanSize({
-                                bytes: uploadedLogo?.size,
-                                unit: 'KB',
-                                fraction: 1,
-                            })}
-                        </span>
-                    </div>
+                    {uploadedLogo && (
+                        <div className="flex flex-column flex-nowrap text-sm w-full">
+                            <span className="text-ellipsis" data-testid="llb:fileName">
+                                {uploadedLogo.name}
+                            </span>
+                            <span className="color-weak text-nowrap block shrink-0">
+                                {humanSize({
+                                    bytes: uploadedLogo.size,
+                                    unit: 'KB',
+                                    fraction: 1,
+                                })}
+                            </span>
+                        </div>
+                    )}
                     <Button onClick={removeLogo} shape="ghost" size="small" icon className="top-0 right-0 absolute">
                         <Icon name="cross" />
                     </Button>
@@ -382,13 +387,15 @@ const OrganizationLogoModal = ({ onClose, organization, app, ...rest }: Props) =
                                 app={app}
                                 imageUrl={logoUrl}
                                 organizationName={organization.Name}
-                                variant={'dark'}
+                                variant="dark"
+                                organizationNameDataTestId="llb:organization-name-1"
                             />
                             <SidebarPreview
                                 app={app}
                                 imageUrl={logoUrl}
                                 organizationName={organization.Name}
-                                variant={'light'}
+                                variant="light"
+                                organizationNameDataTestId="llb:organization-name-2"
                             />
                         </div>
                     </div>

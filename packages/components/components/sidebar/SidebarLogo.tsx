@@ -18,7 +18,12 @@ const SidebarLogo = ({ app, ...rest }: Props) => {
                 className="relative interactive-pseudo-protrude interactive--no-background text-no-decoration rounded-lg"
                 {...rest}
             >
-                <CustomLogo url={organizationTheme.logoURL} app={app} organizationName={organizationTheme.name} />
+                <CustomLogo
+                    url={organizationTheme.logoURL}
+                    app={app}
+                    organizationName={organizationTheme.name}
+                    organizationNameDataTestId="sidebar:organization-name"
+                />
             </AppLink>
         );
     }
