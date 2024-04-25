@@ -447,11 +447,11 @@
       "Not now": [
         "Niet nu"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Open ${ CALENDAR_APP_NAME }-instellingen"
@@ -5768,6 +5768,11 @@
         "Uw abonnement is afgelopen. ${ cta } en om het verlies van gegevens te voorkomen."
       ]
     },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "${ reason } inschakelen"
+      ]
+    },
     "Mail import summary": {
       "Import all messages from ${ itemsToImportCount } folder and label them as": [
         "Alle berichten uit ${ itemsToImportCount } map importeren en labelen als",
@@ -6854,6 +6859,12 @@
       ]
     },
     "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } is uitgezet"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } is aangezet"
+      ],
       "Contact group created": [
         "Contactgroep aangemaakt"
       ],
@@ -7490,6 +7501,9 @@
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel is **actief** en beschermt uw account."
+      ],
+      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLink }": [
+        "Je informatie is gevonden in minstens één gegevenslek. Schakel ${ DARK_WEB_MONITORING_NAME } in om de details te bekijken en actie te ondernemen. ${ learnMoreLink }"
       ]
     },
     "Select files": {

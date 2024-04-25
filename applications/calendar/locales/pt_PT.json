@@ -438,11 +438,11 @@
       "Not now": [
         "Agora não"
       ],
-      "OK": [
-        "Aceitar"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "Aceitar"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Abrir definições do ${ CALENDAR_APP_NAME }"
@@ -5468,6 +5468,11 @@
         "atualize para obter mais armazenamento"
       ]
     },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Ativar ${ reason }"
+      ]
+    },
     "Mail import summary": {
       "Import all messages from ${ itemsToImportCount } folder and label them as": [
         "Importar todas as mensagens da ${ itemsToImportCount } pasta e etiquetá-las como",
@@ -6431,6 +6436,12 @@
       ]
     },
     "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } foi desativado"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } foi ativado"
+      ],
       "Contact group created": [
         "Grupo de contactos criado"
       ],

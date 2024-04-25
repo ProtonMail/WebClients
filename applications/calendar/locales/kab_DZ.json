@@ -4673,6 +4673,11 @@
         "Aktar-ik yebda"
       ]
     },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Rmed ${ reason }"
+      ]
+    },
     "Mail import summary": {
       "Import all messages from ${ itemsToImportCount } folder and label them as": [
         "Kter meṛṛa iznan seg ${ itemsToImportCount } ukaram, syen snes tabzimt",
@@ -5290,6 +5295,12 @@
       ]
     },
     "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } yensa"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } yettwarmed"
+      ],
       "Contact group created": [
         "Agraw n unermes yettwarna"
       ],

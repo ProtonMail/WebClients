@@ -310,7 +310,7 @@
         "Amaga els calendaris afectats"
       ],
       "Hide busy times": [
-        "Amagar les hores punta"
+        "Amaga les hores ocupades"
       ],
       "Hide time zones": [
         "Amaga el fus horari"
@@ -447,10 +447,10 @@
       "Not now": [
         "Ara no"
       ],
-      "OK": [
+      "Ok": [
         "D'acord"
       ],
-      "Ok": [
+      "OK": [
         "D'acord"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -526,7 +526,7 @@
         "Notifica un problema"
       ],
       "Request a call": [
-        "Sol·licitar una trucada"
+        "Sol·licita una trucada"
       ],
       "Request a feature": [
         "Demana una nova característica"
@@ -598,7 +598,7 @@
         "Mostra els calendaris afectats"
       ],
       "Show busy times": [
-        "Mostrar les hores punta"
+        "Mostra les hores ocupades"
       ],
       "Show less": [
         "Mostra'n menys"
@@ -855,7 +855,7 @@
     },
     "App logo": {
       "Download ${ MAIL_APP_NAME } desktop application": [
-        "Baixi l'aplicació d'escriptori ${ MAIL_APP_NAME }"
+        "Descarregueu l'aplicació d'escriptori ${ MAIL_APP_NAME }"
       ]
     },
     "Apps dropdown": {
@@ -1108,7 +1108,7 @@
         "Continua utilitzant ${ planTitle }"
       ],
       "Continue your subscription": [
-        "Continuï amb la seva subscripció"
+        "Continueu amb la vostra subscripció"
       ]
     },
     "Calendar access select label": {
@@ -2357,7 +2357,7 @@
         "El 2FA afegeix una capa de seguretat extra, impedint l'accés no autoritzat."
       ],
       "Availability unknown": [
-        "Disponibilitat desconeguda"
+        "Es desconeix la disponibilitat"
       ],
       "Boost efficiency and track your time by color-coding events by category or your energy levels. Get this and much more with a paid plan.": [
         "Augmenteu l'eficiència i feu un seguiment del vostre temps codificant amb colors els esdeveniments per categoria o segons les vostres prioritats. Obtingueu aquest servei i molt més amb un pla de pagament."
@@ -2384,7 +2384,7 @@
         "Sembla que la llista de contactes que esteu important conté alguns grups. Reviseu com s'han d'importar aquests grups."
       ],
       "Loading availability": [
-        "Disponibilitat de càrrega"
+        "S'està carregant la disponibilitat"
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Combinant contactes... Pot trigar uns minuts. Quan el procés s'hagi completat, podreu tancar aquest diàleg."
@@ -2544,7 +2544,7 @@
         "S'ha actualitzat aquest esdeveniment."
       ],
       "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Aquest esdeveniment s'ha actualitzat. Això és el que ha canviat:\n\n${ updateEventDetailsText }"
+        "S'ha actualitzat aquest esdeveniment. Això és el que ha canviat:\n\n${ updateEventDetailsText }"
       ],
       "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
         "Esteu convidat a ${ eventTitle }.\n\n${ eventDetailsText }"
@@ -3065,7 +3065,7 @@
         "Error desconegut"
       ],
       "Unknown payment token status": [
-        "Estat del testimoni de pagament desconegut"
+        "Estat del token de pagament desconegut"
       ],
       "Username must begin with a letter or digit": [
         "El nom d'usuari ha de començar amb una lletra o un dígit."
@@ -4471,7 +4471,7 @@
         "Carregant ${ appName }"
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
-        "S'està carregant el calendari, si us plau, esperi's. Se'l redirigirà a la nostra plataforma de programació Calendly en una pestanya nova."
+        "S'està carregant el calendari, espereu. Se us redirigirà a la nostra plataforma de planificació Calendly en una pestanya nova."
       ],
       "Loading event": [
         "Carregant esdeveniment"
@@ -4552,7 +4552,7 @@
         "Mida de l'organització"
       ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
-        "Altres usuaris de la seva organització veuran els seus espais ocupats. No es comparteix cap detall de l'esdeveniment."
+        "Altres usuaris de l'organització veuran els vostres espais ocupats. No es comparteix cap detall dels esdeveniments."
       ],
       "password": [
         "contrasenya"
@@ -4682,7 +4682,7 @@
         "L'aplicació ha de desxifrar localment els vostres contactes abans de poder-los exportar. Al final del procés, es generarà un fitxer VCF i el podreu descarregar."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
-        "La informació exposada es va filtrar d'un servei de tercers. La informació del seu compte de ${ BRAND_NAME } continua sent segura i encriptada. ${ learnMoreLink }"
+        "La informació exposada es va filtrar d'un servei de tercers. La informació del vostre compte de ${ BRAND_NAME } continua sent segura i xifrada. ${ learnMoreLink }"
       ],
       "The following participants cannot be notified about your changes:": [
         "Els següents participants no poden ser notificats dels canvis:"
@@ -4906,10 +4906,10 @@
         "No pots desfer aquesta acció."
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
-        "Té una subscripció de prova de ${ planTitle }. Si vol continuar amb la seva subscripció després del període de prova, afegeixi un mètode de pagament."
+        "Teniu una subscripció de prova de ${ planTitle }. Si voleu continuar amb la subscripció després del període de prova, afegiu un mètode de pagament."
       ],
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
-        "Té una subscripció de prova de ${ planTitle }. No es requereix cap pagament en aquest moment. La seva subscripció es renovarà automàticament al final del període de prova."
+        "Teniu una subscripció de prova de ${ planTitle }. No es requereix cap pagament en aquest moment. La subscripció es renovarà automàticament al final del període de prova."
       ],
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
         "Heu reactivat les vostres claus i els esdeveniments enllaçats als següents calendaris ja es poden desxifrar."
@@ -4993,7 +4993,7 @@
         "La seva adreça de correu electrònic i contrasenya es van filtrar:"
       ],
       "Your email address was exposed:": [
-        "S'ha exposat la seva adreça de correu electrònic:"
+        "S'ha exposat la vostra adreça de correu electrònic:"
       ],
       "Your email will only be used for this one-time verification.": [
         "El vostre correu electrònic només s’utilitzarà per a aquesta única verificació."
@@ -5005,7 +5005,7 @@
         "Es xifraran els fitxers i després es desaran."
       ],
       "Your information was found on ${ displayedDate }": [
-        "La seva informació es va trobar el ${ displayedDate }"
+        "La vostra informació es va trobar el ${ displayedDate }"
       ],
       "Your login information will not be saved after the import is completed.": [
         "La vostra informació d'inici de sessió no es desarà quan s'hagi completat la importació."
@@ -5519,7 +5519,7 @@
         "Seleccioneu el vostre pla"
       ],
       "Show others when I'm busy": [
-        "Mostrar als altres quan estic ocupat"
+        "Mostra als altres quan estic ocupat"
       ],
       "Show week numbers": [
         "Mostra el número de setmana"
@@ -5732,7 +5732,7 @@
         "milloreu per a obtenir més emmagatzematge"
       ],
       "Upgrade to restore full access": [
-        "Actualitzi per restaurar l'accés complet"
+        "Milloreu per a restaurar l'accés complet"
       ],
       "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
         "El seu ${ driveStorage } està ple. Per carregar o sincronitzar fitxers, alliberi espai o ${ cta }."
@@ -5741,21 +5741,21 @@
         "El seu ${ mailStorage } està ple. Per enviar o rebre correus electrònics, alliberi espai o ${ cta }."
       ],
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
-        "El seu compte corre el risc de ser suprimit. Per evitar la pèrdua de dades, demani al seu administrador que actualitzi. ${ cta }"
+        "El vostre compte corre el risc de ser suprimit. Per evitar la pèrdua de dades, demaneu al vostre administrador que us el millori. ${ cta }"
       ],
       "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
-        "El seu emmagatzematge està ple. Per enviar o rebre correus electrònics, alliberi espai o ${ cta }."
+        "El vostre emmagatzematge està ple. Per enviar o rebre correus electrònics, allibereu espai o ${ cta }."
       ],
       "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
         "El vostre emmagatzematge està ple. Per carregar o sincronitzar fitxers, allibereu espai o ${ cta }."
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
-        "La seva subscripció ha finalitzat. ${ cta } i per evitar la pèrdua de dades."
+        "La vostra subscripció ha finalitzat. ${ cta } i per evitar la pèrdua de dades."
       ]
     },
     "Log preference": {
       "Enable ${ reason }": [
-        "Activa ${ reason }"
+        "Habilita ${ reason }"
       ]
     },
     "Mail import summary": {
@@ -5792,7 +5792,7 @@
         "10 adreces de correu electrònic"
       ],
       "Auto-delete Spam and Trash": [
-        "Elimina automàticament el correu brossa i la paperera"
+        "Netegeu automàticament el correu brossa i la paperera"
       ],
       "Custom schedule send and snooze times": [
         "Personalització de l'hora d'enviament i del temps de posposició"
@@ -5811,7 +5811,7 @@
     },
     "mailtrial2024: Info": {
       "for the first month": [
-        "per al primer mes"
+        "el primer mes"
       ],
       "Limited-time offer, expires April 2 2024": [
         "Oferta limitada, caduca el 2 d'abril de 2024"
@@ -6823,6 +6823,12 @@
       ]
     },
     "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } s'ha desactivat"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } s'ha habilitat"
+      ],
       "Contact group created": [
         "Grup de contactes creat"
       ],
@@ -7404,7 +7410,7 @@
         "Crea un àlies"
       ],
       "Generate aliases on the fly, and easily manage your aliases and passwords.": [
-        "Genera àlies sobre la marxa i gestiona fàcilment els àlies i contrasenyes."
+        "Genereu àlies sobre la marxa i gestioneu fàcilment els àlies i contrasenyes."
       ],
       "Hide-my-email aliases": [
         "Àlies hide-my-email"
@@ -7425,7 +7431,7 @@
         "Proveu ${ PASS_APP_NAME }"
       ],
       "Used on amazon for shopping, etc.": [
-        "S'utilitza a l'Amazon per anar a comprar, etc."
+        "S'utilitza a l'Amazon per a fer compres, etc."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Quan se us demani l'adreça de correu electrònic, doneu aquest àlies en el seu lloc. ${ passLink } proporciona els àlies."
@@ -7443,7 +7449,7 @@
     },
     "Security Center - Info": {
       "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
-        "Rebi una notificació si la seva contrasenya o altres dades s'han filtrat d'un servei de tercers. ${ learnMoreLink }"
+        "Rebeu una notificació si la vostra contrasenya o altres dades s'han filtrat d'un servei de tercers. ${ learnMoreLink }"
       ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "La nostra solució de seguretat d'avantguarda, impulsada per IA, dissenyada per als usuaris que busquen una protecció més elevada per als seus comptes. ${ learnMoreLink }"
@@ -7893,7 +7899,7 @@
         "Accediu al contingut dels serveis de transmissió en línia, com ara Netflix, Disney+ i Prime Video, des de qualsevol lloc."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Tots els nostres serveis prèmium al seu límit màxim: 100 adreces de correu electrònic, suport per a 10 dominis personalitzats, àlies hide-my-email il·limitats, compartició de calendaris, emmagatzematge al núvol encriptat, compartició de fitxers, etc."
+        "Tots els nostres serveis prèmium al seu límit màxim: 100 adreces de correu electrònic, suport per a 10 dominis personalitzats, àlies hide-my-email il·limitats, compartició de calendaris, emmagatzematge al núvol xifrat, compartició de fitxers, etc."
       ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "Inclou suport per a 3 dominis de correu electrònic personalitzats, 15 adreces de correu electrònic, àlies il·limitats de hide-my-email, compartició de calendari i més."
@@ -7913,7 +7919,7 @@
         "Ja ha arribat la classificació per colors!"
       ],
       "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
-        "Iniciï còmodament ${ MAIL_APP_NAME } des de l'escriptori."
+        "Inicieu còmodament ${ MAIL_APP_NAME } des de l'escriptori."
       ],
       "Get the desktop app": [
         "Obteniu l'aplicació d'escriptori"
@@ -7928,7 +7934,7 @@
         "No hi ha més conflictes d'horaris"
       ],
       "Now you can see when participants are free to attend your meeting.": [
-        "Ara pot veure quan estan lliures els participants per assistir a la seva reunió."
+        "Ara podeu veure quan estan lliures els participants per assistir a la vostra reunió."
       ],
       "With customizable event colors, you can color-code the chaos and conquer your day.": [
         "Amb colors d'esdeveniments personalitzables, podeu codificar amb colors el caos i conquerir el vostre dia."
@@ -7975,7 +7981,7 @@
         "Per a tots els serveis de ${ BRAND_NAME }"
       ],
       "To send or receive emails, free up space or ${ upgrade }": [
-        "Per a enviar o rebre correus electrònics, allibereu espai o ${ upgrade }"
+        "Per enviar o rebre correus electrònics, allibereu espai o ${ upgrade }"
       ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "Per a carregar o sincronitzar fitxers, allibereu espai o ${ upgrade }"
@@ -7990,13 +7996,13 @@
         "El vostre ${ appStorage } és ple."
       ],
       "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
-        "L'${ storage } és ple al ${ percentage }%. ${ cta }."
+        "El vostre ${ storage } és ple al ${ percentage }%. ${ cta }."
       ],
       "Your ${ storage } is full. ${ cta }.": [
         "L'${ storage } és ple. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
-        "L'emmagatzematge és ple al ${ percentage }%. ${ cta }."
+        "El vostre emmagatzematge és ple al ${ percentage }%. ${ cta }."
       ],
       "Your storage is full": [
         "L'emmagatzematge és ple."
@@ -8255,7 +8261,7 @@
         "Invitació enviada i participants afegits a tots els esdeveniments"
       ],
       "Last modified aliases stored in your oldest vault": [
-        "Els darrers àlies modificats s'emmagatzemen a la vostra caixa forta més antiga"
+        "Últims àlies modificats emmagatzemats a la vostra caixa forta més antiga"
       ],
       "Participants notified and all events updated": [
         "S'ha notificat als participants i s'han actualitzat tots els esdeveniments"
@@ -8920,6 +8926,9 @@
       "You have invited participants with equivalent emails": [
         "Heu convidat participants amb correus electrònics idèntics"
       ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "La seva prova gratuïta de ${ planName } acaba el ${ textDate }"
+      ],
       "Your account is protected": [
         "El compte està protegit"
       ],
@@ -8927,7 +8936,7 @@
         "Enllaç del vostre calendari"
       ],
       "Your exposed information": [
-        "La teva informació exposada"
+        "La vostra informació exposada"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -8969,7 +8978,7 @@
         "Canvia automàticament entre els temes preferits per a dia i nit en sincronització amb els modes de dia i nit del sistema"
       ],
       "Change start date to unselect": [
-        "Canviï la data d'inici per anul·lar la selecció"
+        "Canvieu la data d'inici per a anul·lar la selecció"
       ],
       "Customize import to reduce the number of folders": [
         "Personalitza la importació per reduir el nombre de carpetes"
