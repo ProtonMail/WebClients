@@ -23,15 +23,6 @@
 	}
 }
 
-.address-item {
-	background: var(--background-weak);
-	border-radius: 5px;
-
-	button {
-		display: block;
-	}
-}
-
 @include media('<=small') {
 	// we show abbreviated version only on week/month view
 	.is-week-view,
