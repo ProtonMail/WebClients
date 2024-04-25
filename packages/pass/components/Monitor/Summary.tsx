@@ -14,7 +14,9 @@ import imgAlias from '@proton/pass/assets/monitor/img-alias.svg';
 import imgDarkWeb from '@proton/pass/assets/monitor/img-dark-web.svg';
 import imgNetShield from '@proton/pass/assets/monitor/img-net-shield.svg';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { ActionCard } from '@proton/pass/components/Layout/Card/ActionCard';
+import { PillBadge } from '@proton/pass/components/Layout/Badge/PillBadge';
+import { ButtonCard } from '@proton/pass/components/Layout/Card/ButtonCard';
+import { CardContent } from '@proton/pass/components/Layout/Card/CardContent';
 import { LearnMoreCard, type LearnMoreProps } from '@proton/pass/components/Layout/Card/LearnMoreCard';
 import { SubHeader } from '@proton/pass/components/Layout/Section/SubHeader';
 import { DarkWeb } from '@proton/pass/components/Monitor/Breach/DarkWeb';
@@ -25,7 +27,6 @@ import { UpsellingModal } from '@proton/pass/components/Upsell/UpsellingModal';
 import { UpsellRef } from '@proton/pass/constants';
 import { PASS_SHORT_APP_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
 
-import { InfoCard } from '../Layout/Card/InfoCard';
 import { useMonitor } from './MonitorProvider';
 import { getMonitorUpsellFeatures } from './utils';
 
@@ -88,37 +89,37 @@ export const Summary: FC = () => {
                         <section className="flex flex-column gap-6">
                             <h3 className="text-lg">{c('Title').t`Password Health`}</h3>
                             <div className="pass-monitor-grid gap-4">
-                                <ActionCard
+                                <ButtonCard
+                                    actions={insecure.count > 0 && <PillBadge label={insecure.count} />}
                                     disabled={insecure.count === 0}
                                     icon={duplicates.count > 0 ? 'exclamation-filled' : 'checkmark'}
                                     onClick={() => navigate(getLocalPath('monitor/weak'))}
-                                    pillLabel={insecure.count > 0 ? insecure.count : null}
                                     subtitle={c('Description').t`Change your passwords`}
                                     title={c('Title').t`Weak passwords`}
                                     type={insecure.count > 0 ? 'warning' : 'success'}
                                 />
-                                <ActionCard
+                                <ButtonCard
+                                    actions={duplicates.count > 0 && <PillBadge label={duplicates.count} />}
                                     disabled={duplicates.count === 0}
                                     icon={duplicates.count > 0 ? 'exclamation-filled' : 'checkmark'}
                                     onClick={() => navigate(getLocalPath('monitor/duplicates'))}
-                                    pillLabel={duplicates.count > 0 ? duplicates.count : null}
                                     subtitle={c('Description').t`Create unique passwords`}
                                     title={c('Title').t`Reused passwords`}
                                     type={duplicates.count > 0 ? 'warning' : 'success'}
                                 />
-                                <ActionCard
+                                <ButtonCard
+                                    actions={missing2FAs.count > 0 && <PillBadge label={missing2FAs.count} />}
                                     disabled={missing2FAs.count === 0}
                                     onClick={() => navigate(`${getLocalPath('monitor/2fa')}`)}
-                                    pillLabel={missing2FAs.count > 0 ? missing2FAs.count : null}
                                     subtitle={c('Description').t`Increase your security`}
                                     title={c('Title').t`Missing two-factor authentication`}
                                 />
-                                <ActionCard
+                                <ButtonCard
+                                    actions={excluded.count > 0 && <PillBadge label={excluded.count} />}
                                     disabled={excluded.count === 0}
                                     onClick={() => navigate(getLocalPath('monitor/excluded'))}
-                                    pillLabel={excluded.count > 0 ? excluded.count : null}
-                                    title={c('Title').t`Excluded items`}
                                     subtitle={c('Description').t`These items remain at risk`}
+                                    title={c('Title').t`Excluded items`}
                                 />
                             </div>
                         </section>
@@ -159,11 +160,12 @@ export const Summary: FC = () => {
                             features={
                                 <div className="border border-norm p-4 w-full rounded-xl">
                                     {getMonitorUpsellFeatures().map(({ label, icon }) => (
-                                        <InfoCard
+                                        <CardContent
                                             key={label}
                                             className="p-2 text-lg color-primary"
                                             icon={icon}
                                             title={label}
+                                            ellipsis
                                         />
                                     ))}
                                 </div>

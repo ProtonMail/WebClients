@@ -7,7 +7,7 @@ import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
 import { Toggle } from '@proton/components/index';
 import sentinel from '@proton/pass/assets/monitor/sentinel.svg';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { InfoCard } from '@proton/pass/components/Layout/Card/InfoCard';
+import { CardContent } from '@proton/pass/components/Layout/Card/CardContent';
 import { useActionRequest } from '@proton/pass/hooks/useActionRequest';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import { sentinelToggle } from '@proton/pass/store/actions';
@@ -37,7 +37,7 @@ export const Sentinel: FC<Props> = ({ onUpsell }) => {
     );
 
     return (
-        <InfoCard
+        <CardContent
             className="p-6 bg-weak rounded-xl border border-norm"
             title={PROTON_SENTINEL_NAME}
             titleClassname="text-lg text-bold mb-1"

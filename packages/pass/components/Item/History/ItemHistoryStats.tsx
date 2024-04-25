@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { InfoCard } from '@proton/pass/components/Layout/Card/InfoCard';
+import { CardContent } from '@proton/pass/components/Layout/Card/CardContent';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import { selectPassPlan } from '@proton/pass/store/selectors';
@@ -26,8 +26,9 @@ export const ItemHistoryStats: FC<Props> = ({ createTime, modifyTime, lastUseTim
     return (
         <div className="flex flex-column border rounded-xl px-4 py-3 gap-3">
             {lastUseTime !== undefined && (
-                <InfoCard
+                <CardContent
                     icon="magic-wand"
+                    ellipsis
                     title={c('Title').t`Last autofill`}
                     subtitle={
                         // translator: when this login was last used
@@ -36,8 +37,19 @@ export const ItemHistoryStats: FC<Props> = ({ createTime, modifyTime, lastUseTim
                 />
             )}
 
-            <InfoCard icon="pencil" title={c('Title').t`Last modified`} subtitle={epochToRelativeDate(modifyTime)} />
-            <InfoCard icon="bolt" title={c('Title').t`Created`} subtitle={epochToRelativeDate(createTime)} />
+            <CardContent
+                icon="pencil"
+                title={c('Title').t`Last modified`}
+                subtitle={epochToRelativeDate(modifyTime)}
+                ellipsis
+            />
+
+            <CardContent
+                icon="bolt"
+                title={c('Title').t`Created`}
+                subtitle={epochToRelativeDate(createTime)}
+                ellipsis
+            />
 
             {historyEnabled && isPaidPlan(passPlan) && (
                 <Button onClick={handleHistoryClick} className="mt-1" color="weak" shape="solid" fullWidth pill>

@@ -2,12 +2,12 @@ import type { FC } from 'react';
 
 import { Button } from '@proton/atoms/Button';
 import { Icon } from '@proton/components/index';
-import { InfoCard, type InfoCardProps } from '@proton/pass/components/Layout/Card/InfoCard';
+import { CardContent, type CardContentProps } from '@proton/pass/components/Layout/Card/CardContent';
 import clsx from '@proton/utils/clsx';
 
-type Props = InfoCardProps & { onClick?: () => void };
+type Props = CardContentProps & { onClick?: () => void };
 
-export const RevisionItem: FC<Props> = ({ onClick, ...infoCardProps }) => {
+export const RevisionItem: FC<Props> = ({ onClick, ...cardProps }) => {
     return (
         <Button
             shape="ghost"
@@ -19,7 +19,7 @@ export const RevisionItem: FC<Props> = ({ onClick, ...infoCardProps }) => {
             )}
             onClick={onClick}
         >
-            <InfoCard {...infoCardProps} className="py-1" />
+            <CardContent {...cardProps} className="py-1" />
             {onClick && <Icon name="chevron-right" size={5} className="color-weak" />}
         </Button>
     );
