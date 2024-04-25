@@ -1124,6 +1124,10 @@
       "Trust": [
         "Güven"
       ],
+      "Trust key": [
+        "Anahtara güven",
+        "Anahtarlara güven"
+      ],
       "Trust public key": [
         "Herkese açık anahtara güven"
       ],
@@ -8167,6 +8171,11 @@
         "Aboneliğinizin süresi dolmuş. Verilerinizin kaybolmasını önlemek için ${ cta }."
       ]
     },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "${ reason } özelliğini aç"
+      ]
+    },
     "Mail import summary": {
       "Import all messages from ${ itemsToImportCount } folder and label them as": [
         "${ itemsToImportCount } klasördeki tüm iletileri içe aktar ve şöyle etiketle",
@@ -9248,6 +9257,12 @@
       "${ Filter.Name } created": [
         "${ Filter.Name } eklendi"
       ],
+      "${ reason } has been disabled": [
+        "${ reason } özelliği kapatıldı"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } özelliği açıldı"
+      ],
       "Block removed": [
         "Engelleme kaldırıldı"
       ],
@@ -9857,6 +9872,9 @@
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel **kullanımda** ve hesabınızı koruyor."
+      ],
+      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLink }": [
+        "Bilgileriniz en az bir verilerin ele geçirilmesi olayında görüldü. Ayrıntıları görmek ve önlem almak için ${ DARK_WEB_MONITORING_NAME } özelliğini açın. ${ learnMoreLink }"
       ]
     },
     "Select files": {
@@ -10421,6 +10439,9 @@
       ],
       "Schedule send": [
         "Gönderimi zamanla"
+      ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME } to get notified if your data was leaked from a third-party service.": [
+        "Verileriniz bir üçüncü taraf hizmet üzerinden ele geçirilirse bilgilendirilmek için ${ DARK_WEB_MONITORING_NAME } özelliğini açın."
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Artık varsayılan olarak görseller yüklenecek ve göndericilerin sizi izlemesi engellenecek. Bu davranışları daha sonra ${ settingsLink } bölümünden değiştirebilirsiniz."
@@ -11811,6 +11832,9 @@
       ],
       "What's new": [
         "Yenilikler"
+      ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "${ planName } ücretsiz deneme süreniz ${ textDate } tarihinde sonra erecek"
       ],
       "Your account is protected": [
         "Hesabınız korunuyor"

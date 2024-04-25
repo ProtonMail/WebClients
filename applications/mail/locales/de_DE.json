@@ -1124,6 +1124,10 @@
       "Trust": [
         "Vertrauen"
       ],
+      "Trust key": [
+        "Schlüssel vertrauen",
+        "Schlüssel vertrauen"
+      ],
       "Trust public key": [
         "Öffentlichem Schlüssel vertrauen"
       ],
@@ -8167,6 +8171,11 @@
         "Dein Abonnement ist beendet. ${ cta } und um Datenverlust zu vermeiden."
       ]
     },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "${ reason } aktivieren"
+      ]
+    },
     "Mail import summary": {
       "Import all messages from ${ itemsToImportCount } folder and label them as": [
         "Alle Nachrichten aus ${ itemsToImportCount } Ordner importieren und hinzufügen zur Kategorie",
@@ -9247,6 +9256,12 @@
     "Notification": {
       "${ Filter.Name } created": [
         "${ Filter.Name } erstellt"
+      ],
+      "${ reason } has been disabled": [
+        "${ reason } wurde deaktiviert."
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } wurde aktiviert."
       ],
       "Block removed": [
         "Sperre entfernt"
@@ -10631,6 +10646,26 @@
         "Für"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB Speicherplatz"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatische E-Mail-Weiterleitung ${ strongText }"
+      ],
+      "Desktop app": [
+        "Desktop-App"
+      ],
+      "Short @pm.me email address": [
+        "Kurze @pm.me-E-Mail-Adresse"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "We don't sell your data": [
+        "Wir verkaufen deine Daten nicht"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Bist du sicher?"
@@ -11811,6 +11846,9 @@
       ],
       "What's new": [
         "Neuigkeiten"
+      ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Deine kostenlose Testversion von ${ planName } endet am ${ textDate }."
       ],
       "Your account is protected": [
         "Dein Konto ist geschützt"

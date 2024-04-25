@@ -1128,6 +1128,11 @@
       "Trust": [
         "Aprobare"
       ],
+      "Trust key": [
+        "Cheie de încredere",
+        "Chei de încredere",
+        "Chei de încredere"
+      ],
       "Trust public key": [
         "Aprobare cheie publică"
       ],
@@ -8299,6 +8304,11 @@
         "Abonamentul s-a încheiat. ${ cta } și pentru a evita pierderea datelor."
       ]
     },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Activare ${ reason }"
+      ]
+    },
     "Mail import summary": {
       "Import all messages from ${ itemsToImportCount } folder and label them as": [
         "Importare toate mesajele dintr-un folder și etichetare cu",
@@ -9407,6 +9417,12 @@
       "${ Filter.Name } created": [
         "${ Filter.Name } a fost creat."
       ],
+      "${ reason } has been disabled": [
+        "${ reason } a fost dezactivat"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } a fost activat"
+      ],
       "Block removed": [
         "Blocare eliminată."
       ],
@@ -10022,6 +10038,9 @@
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel este **activ** și vă protejează contul."
+      ],
+      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLink }": [
+        "Informațiile v-au fost găsite în cel puțin o compromitere a datelor. Activați opțiunea ${ DARK_WEB_MONITORING_NAME } pentru a vedea detalii și a acționa. ${ learnMoreLink }"
       ]
     },
     "Select files": {
@@ -10609,6 +10628,9 @@
       ],
       "Schedule send": [
         "Trimitere programată"
+      ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME } to get notified if your data was leaked from a third-party service.": [
+        "Activați opțiunea ${ DARK_WEB_MONITORING_NAME } pentru a primi notificări dacă datele v-au fost compromise la un serviciu terță parte."
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Imaginile sunt încărcate implicit și expeditorii sunt blocați să vă urmărească. Aceasta se poate modifica în ${ settingsLink }."
@@ -12048,6 +12070,9 @@
       ],
       "What's new": [
         "Ce este nou"
+      ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Probarea gratuită pentru ${ planName } se încheie ${ textDate }"
       ],
       "Your account is protected": [
         "Contul este protejat"

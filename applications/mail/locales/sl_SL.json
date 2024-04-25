@@ -1132,6 +1132,12 @@
       "Trust": [
         "Zaupaj"
       ],
+      "Trust key": [
+        "Zaupaj ključu",
+        "Zaupaj ključema",
+        "Zaupaj ključem",
+        "Zaupaj ključem"
+      ],
       "Trust public key": [
         "Zaupaj javnemu ključu"
       ],
@@ -1696,6 +1702,9 @@
       ],
       "Continue using ${ planTitle }": [
         "Nadaljuj z uporabo ${ planTitle }a"
+      ],
+      "Continue your subscription": [
+        "Podaljšajte naročnino"
       ]
     },
     "Calendar attachment tooltip": {
@@ -6199,6 +6208,9 @@
       "Large imports can take several days.": [
         "Uvažanje večjega števila sporočil lahko traja tudi več dni."
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Naučite se ${ staySaferOnlineLink }"
+      ],
       "Learn more": [
         "Več o tem"
       ],
@@ -6216,6 +6228,9 @@
       ],
       "Loading ${ appName }": [
         "${ appName } se nalaga"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Nalaganje koledarja, počakajte. Preusmerjeni boste na našo platformo za razporejanje Calendly v novem zavihku."
       ],
       "Loading message": [
         "Nalaganje sporočila"
@@ -6654,6 +6669,9 @@
       ],
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "Če zapustite stran, se podatki, ki ste jih vnesli v osnutek, morda ne bodo shranili."
+      ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "Razkrite informacije so pricurljale iz storitve tretje osebe. Podatki o vašem računu ${ BRAND_NAME } ostajajo varni in šifrirani. ${ learnMoreLink }"
       ],
       "The local database is being prepared": [
         "Lokalna podatkovna baza se pripravlja."
@@ -7099,6 +7117,12 @@
         "Imate **${ count } sporočila** s to oznako",
         "Imate **${ count } sporočil** s to oznako"
       ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "Imate preizkusno naročnino ${ planTitle }. Če želite nadaljevati naročnino po preizkusnem obdobju, dodajte način plačila."
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "Imate preizkusno naročnino ${ planTitle }. Plačilo trenutno ni potrebno. Vaša naročnina bo ob koncu preizkusnega obdobja samodejno podaljšana."
+      ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
         "Sporočilu niste dodali zadeve. Ali ga vseeno želite poslati?"
       ],
@@ -7218,6 +7242,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Vaše datoteke bodo šifrirane in nato shranjene."
+      ],
+      "Your information was found on ${ displayedDate }": [
+        "Vaše informacije so bile najdene ${ displayedDate }"
       ],
       "Your login information will not be saved after the import is completed.": [
         "Po končanem uvozu vaši podatki za prijavo ne bodo shranjeni."
@@ -9544,6 +9571,12 @@
       "${ Filter.Name } created": [
         "Filter ${ Filter.Name } ustvarjen"
       ],
+      "${ reason } has been disabled": [
+        "${ reason } je bil onemogočen."
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } je bil omogočen."
+      ],
       "Block removed": [
         "Odblokirano"
       ],
@@ -10157,6 +10190,9 @@
       ]
     },
     "Security Center - Info": {
+      "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
+        "Prejmite obvestilo, če so vaše geslo ali drugi podatki ušli iz storitve tretje osebe. ${ learnMoreLink }"
+      ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Naša vrhunska varnostna rešitev, ki temelji na umetni inteligenci, je zasnovana za uporabnike, ki iščejo večjo zaščito za svoje račune. ${ learnMoreLink }"
       ],
