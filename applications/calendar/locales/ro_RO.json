@@ -450,10 +450,10 @@
       "Not now": [
         "Nu acum"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -5849,6 +5849,11 @@
         "Abonamentul s-a încheiat. ${ cta } și pentru a evita pierderea datelor."
       ]
     },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Activare ${ reason }"
+      ]
+    },
     "Mail import summary": {
       "Import all messages from ${ itemsToImportCount } folder and label them as": [
         "Importare toate mesajele dintr-un folder și etichetare cu",
@@ -6962,6 +6967,12 @@
       ]
     },
     "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } a fost dezactivat"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } a fost activat"
+      ],
       "Contact group created": [
         "Grup de contacte creat"
       ],
@@ -7628,6 +7639,9 @@
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel este **activ** și vă protejează contul."
+      ],
+      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLink }": [
+        "Informațiile v-au fost găsite în cel puțin o compromitere a datelor. Activați opțiunea ${ DARK_WEB_MONITORING_NAME } pentru a vedea detalii și a acționa. ${ learnMoreLink }"
       ]
     },
     "Select files": {
@@ -9162,6 +9176,9 @@
       ],
       "You have invited participants with equivalent emails": [
         "Ați invitat participanți cu adrese de e-mail asemănătoare"
+      ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Probarea gratuită pentru ${ planName } se încheie ${ textDate }"
       ],
       "Your account is protected": [
         "Contul este protejat"

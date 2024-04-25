@@ -444,11 +444,11 @@
       "Not now": [
         "現在不要"
       ],
-      "OK": [
-        "好"
-      ],
       "Ok": [
         "確定"
+      ],
+      "OK": [
+        "好"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "開啟 ${ CALENDAR_APP_NAME } 設定"
@@ -5588,6 +5588,9 @@
       "Request an invite": [
         "需求邀請"
       ],
+      "stay safer online": [
+        "保持在線安全"
+      ],
       "What’s this?": [
         "這是什麼？"
       ]
@@ -5649,6 +5652,11 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "您的訂閱已到期。 ${ cta } 以避免資料遺失。"
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "啟用${ reason }"
       ]
     },
     "Mail import summary": {
@@ -6677,6 +6685,12 @@
       ]
     },
     "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } 已停用。"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } 已啟用。"
+      ],
       "Contact group created": [
         "聯絡人群組已創建"
       ],

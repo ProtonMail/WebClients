@@ -2480,6 +2480,9 @@
       "Error decrypting a computer": [
         "Error al descifrar la computadora"
       ],
+      "External accounts are not supported yet": [
+        "Las cuentas externas aún no son admitidas."
+      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "El archivo \"${ item.name }\" no puede cargarse debido a un error de \"${ error }\""
       ],
@@ -4108,6 +4111,9 @@
       "Emails are automatically signed": [
         "Los correos son firmados automáticamente"
       ],
+      "Empty folder": [
+        "La carpeta está vacía."
+      ],
       "Enabling drive search": [
         "Activando búsqueda en Drive"
       ],
@@ -4473,7 +4479,7 @@
         "Solo ${ MAX_CUSTOM_PASSWORD_LENGTH } caracteres están permitidos"
       ],
       "Only the owner of the share will be able to invite you again.": [
-        "Solo quien haya creado del enlace podrá invitarle nuevamente."
+        "Solo el propietario del enlace compartido podrá invitarle de nuevo."
       ],
       "Only the people with the link and the password can access this file.": [
         "Solo las personas con el enlace y la contraseña pueden acceder a este archivo."
@@ -4791,6 +4797,9 @@
       ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "Hay archivos que aún deben ser transferidos. Al cerrar el gestor de transferencias se terminarán todas las operaciones."
+      ],
+      "There is nothing to see here": [
+        "No hay datos que ver aquí."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Esta dirección está desactivada. Para poder enviar a esta dirección, el dueño debe primero activar la dirección."
@@ -7292,7 +7301,7 @@
         "Error al mover, inténtelo de nuevo"
       ],
       "Failed to remove the file": [
-        "Ocurrió un error al borrar el archivo"
+        "Error al borrar el archivo"
       ],
       "Failed to upload files: ${ err }": [
         "Error al cargar los archivos: ${ err }"
@@ -7341,7 +7350,7 @@
         "ID de invitación compartida no encontrada. Revise el enlace"
       ],
       "Stopping to share this item has failed": [
-        "Ocurrió un error al dejar de compartir este elemento"
+        "Error al dejar de compartir este elemento"
       ],
       "Subfolder failed to be loaded": [
         "Error al cargar la subcarpeta"
@@ -8417,6 +8426,47 @@
         "Al"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB de espacio de almacenamiento"
+      ],
+      "and 15 more premium features": [
+        "y más de 15 funciones premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Reenvío de correo automático ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertas de vulneraciones de datos ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "App de escritorio"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ayúdenos a mantener internet seguro y privado para todos. Mejore a un plan de pago."
+      ],
+      "No ads or tracking": [
+        "Sin anuncios ni rastreadores"
+      ],
+      "Short @pm.me email address": [
+        "Dirección de correo corta @pm.me"
+      ],
+      "Support our mission": [
+        "Apoya nuestra misión"
+      ],
+      "Upgrade": [
+        "Mejorar"
+      ],
+      "Upgrade your productivity": [
+        "Mejore su productividad"
+      ],
+      "We don't sell your data": [
+        "No vendemos sus datos"
+      ],
+      "Your privacy is our mission": [
+        "Su privacidad es nuestra misión"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "¿Está seguro?"
@@ -8736,7 +8786,7 @@
         "¿Está seguro de que quiere cerrar la vista previa?"
       ],
       "Are you sure you want to leave this share?": [
-        "¿En verdad desea abandonar este enlace compartido?"
+        "¿En verdad abandonar este enlace compartido?"
       ],
       "Billing cycle": [
         "Ciclo de facturación"
@@ -8978,6 +9028,9 @@
       ],
       "Item details": [
         "Detalles del elemento"
+      ],
+      "Last edited by": [
+        "Última edición por"
       ],
       "Link confirmation": [
         "Confirmación de enlace"

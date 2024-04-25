@@ -574,6 +574,9 @@
       "Remove gift code": [
         "Eliminare cod cadou"
       ],
+      "Remove me": [
+        "Elimină-mă"
+      ],
       "Rename": [
         "Redenumire"
       ],
@@ -4176,6 +4179,9 @@
       "Emails are automatically signed": [
         "Mesajele sunt semnate automat"
       ],
+      "Empty folder": [
+        "Folder gol"
+      ],
       "Enabling drive search": [
         "Se activează căutarea în unitate."
       ],
@@ -4544,6 +4550,9 @@
         "Sunt permise doar ${ MAX_CUSTOM_PASSWORD_LENGTH } caractere.",
         "Sunt permise doar ${ MAX_CUSTOM_PASSWORD_LENGTH } de caractere."
       ],
+      "Only the owner of the share will be able to invite you again.": [
+        "Doar proprietarul partajării va putea să vă reinvite."
+      ],
       "Only the people with the link and the password can access this file.": [
         "Numai persoanele care au legătura și parola pot accesa acest fișier."
       ],
@@ -4567,6 +4576,9 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Plățile sunt protejate de criptarea TLS și de legile de confidențialitate elvețiene."
+      ],
+      "Pending": [
+        "În așteptare"
       ],
       "Permanently delete all files in your locked drive": [
         "Ștergere permanentă a tuturor fișierelor din unitatea blocată."
@@ -4860,6 +4872,9 @@
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "Încă mai sunt fișiere ce trebuie transferate. Închizând managerul de transfer va încheia toate operațiile."
       ],
+      "There is nothing to see here": [
+        "Nu e nimic de văzut aici"
+      ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Această adresă este dezactivată. Pentru a putea trimite la această adresă, proprietarul trebuie s-o activeze mai întâi."
       ],
@@ -5120,6 +5135,9 @@
       "Yesterday": [
         "Ieri"
       ],
+      "you": [
+        "dvs."
+      ],
       "You already have a free account": [
         "Deja aveți un cont gratuit"
       ],
@@ -5191,6 +5209,9 @@
       ],
       "You will lose all unsaved changes.": [
         "Veți pierde toate modificările nesalvate."
+      ],
+      "You will not be able to join again after.": [
+        "Nu vă veți mai putea alătura din nou."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Pentru verificarea plății se va deschide o filă către PayPal."
@@ -5783,6 +5804,9 @@
       "Region": [
         "Județ"
       ],
+      "Remove access": [
+        "Eliminare acces"
+      ],
       "Replace existing file": [
         "Înlocuire fișier existent"
       ],
@@ -5839,6 +5863,9 @@
       ],
       "Stolen data": [
         "Date furate"
+      ],
+      "Stop sharing": [
+        "Oprire partajare"
       ],
       "Street address": [
         "Strada"
@@ -6070,6 +6097,11 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Abonamentul s-a încheiat. ${ cta } și pentru a evita pierderea datelor."
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Activare ${ reason }"
       ]
     },
     "Mail import summary": {
@@ -7277,6 +7309,18 @@
         "S-au șters ${ numberOfItems } legături către element.",
         "S-au șters ${ numberOfItems } de legături către element."
       ],
+      "${ reason } has been disabled": [
+        "${ reason } a fost dezactivat"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } a fost activat"
+      ],
+      "Access for the member removed": [
+        "Accesul pentru membru s-a anulat."
+      ],
+      "Access updated and shared": [
+        "Acces actualizat și partajat"
+      ],
       "All items will soon be permanently deleted from trash": [
         "Toate articolele vor fi eliminate permanent din «Gunoi»."
       ],
@@ -7316,6 +7360,9 @@
       "Failed to move, please try again": [
         "Mutarea a eșuat, mai reîncercați."
       ],
+      "Failed to remove the file": [
+        "Eliminarea fișierului a eșuat."
+      ],
       "Failed to upload files: ${ err }": [
         "Nu s-a reușit încărcarea fișierelor: ${ err }"
       ],
@@ -7329,6 +7376,12 @@
       ],
       "File or folder is missing a name": [
         "Fișier sau folder fără nume."
+      ],
+      "File removed": [
+        "Fișierul a fost eliminat."
+      ],
+      "Invitation removed from the share": [
+        "Invitația a fost eliminată din partajare."
       ],
       "Link copied to clipboard": [
         "Legătura a fost copiată în memorie."
@@ -7360,6 +7413,9 @@
       "Share invitation ID was not found. Please check the link": [
         "ID-ul invitației partajate nu a fost găsit. Verificați legătura web."
       ],
+      "Stopping to share this item has failed": [
+        "Oprirea partajării acestui articol a eșuat."
+      ],
       "Subfolder failed to be loaded": [
         "Subfolderul nu s-a putut încărca."
       ],
@@ -7377,6 +7433,9 @@
       ],
       "Trash failed to be emptied": [
         "Coșul de gunoi nu s-a putut goli"
+      ],
+      "You stopped to share this item": [
+        "Ați oprit partajarea acestui articol."
       ],
       "Your old files will be deleted in 72 hours": [
         "Fișierele vechi vor fi șterse în 72 de ore."
@@ -7829,6 +7888,9 @@
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel este **activ** și vă protejează contul."
+      ],
+      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLink }": [
+        "Informațiile v-au fost găsite în cel puțin o compromitere a datelor. Activați opțiunea ${ DARK_WEB_MONITORING_NAME } pentru a vedea detalii și a acționa. ${ learnMoreLink }"
       ]
     },
     "Select files": {
@@ -8790,6 +8852,9 @@
       "Are you sure you want to close the preview?": [
         "Sigur doriți să închideți examinarea?"
       ],
+      "Are you sure you want to leave this share?": [
+        "Ești sigur că vrei să părăsiți aceasta partajare?"
+      ],
       "Billing cycle": [
         "Ciclu de facturare"
       ],
@@ -9316,6 +9381,9 @@
       ],
       "You have no folders yet": [
         "Încă nu aveți foldere"
+      ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Probarea gratuită pentru ${ planName } se încheie ${ textDate }"
       ],
       "Your 3 GB bonus": [
         "Bonusul de 3 GiB"

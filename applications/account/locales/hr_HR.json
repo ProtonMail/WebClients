@@ -2541,6 +2541,9 @@
       "No active sessions": [
         "Nema aktivnih sesija"
       ],
+      "No image selected": [
+        "Nije odabrana nijedna slika"
+      ],
       "Not a valid number": [
         "Broj telefona nije važeći"
       ],
@@ -4304,6 +4307,9 @@
       "View, download, and manage your invoices.": [
         "Pregledajte, preuzmite i upravljajte fakturama."
       ],
+      "Want to learn more?": [
+        "Želite li saznati više?"
+      ],
       "Warning:": [
         "Upozorenje:"
       ],
@@ -5582,6 +5588,9 @@
       ]
     },
     "Log preference": {
+      "Enable ${ reason }": [
+        "Omogući ${ reason }"
+      ],
       "Enable advanced logs": [
         "Omogući napredne zapise"
       ],
@@ -6051,6 +6060,12 @@
     "Notification": {
       "${ Filter.Name } created": [
         "${ Filter.Name } stvoren"
+      ],
+      "${ reason } has been disabled": [
+        "${ reason } je onemogućen."
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } je omogućen."
       ],
       "Invalid code": [
         "Nevažeći kôd"
@@ -7032,6 +7047,14 @@
     "Subscription price": {
       "For": [
         "Za"
+      ]
+    },
+    "Subscription reminder": {
+      "10 email addresses": [
+        "10 adrese e-pošte"
+      ],
+      "Priority support": [
+        "Prioritetna podrška"
       ]
     },
     "Subscription renewal state": {

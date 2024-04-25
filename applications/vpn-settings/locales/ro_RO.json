@@ -143,6 +143,9 @@
       "Delete Gateway": [
         "Ștergere poartă de acces"
       ],
+      "Delete logo": [
+        "Ștergere logo"
+      ],
       "Delete user": [
         "Ștergere utilizator"
       ],
@@ -283,6 +286,9 @@
       ],
       "Invite user": [
         "Invitare utilizator"
+      ],
+      "Keep logo": [
+        "Păstrare logo"
       ],
       "Keep my Plus subscription": [
         "Păstrez abonamentul Plus"
@@ -440,6 +446,9 @@
       "Select country": [
         "Selectare țară"
       ],
+      "select file": [
+        "selectați fișierul"
+      ],
       "Select file": [
         "Selectare fișier"
       ],
@@ -491,6 +500,9 @@
       "Signing in": [
         "Conectare"
       ],
+      "Start live chat": [
+        "Începere discuție live"
+      ],
       "Stop using single sign-on": [
         "Oprire utilizare conectare unică"
       ],
@@ -532,6 +544,12 @@
       ],
       "Upgrade your plan": [
         "Modificare plan"
+      ],
+      "Upload": [
+        "Încărcare"
+      ],
+      "Upload logo": [
+        "Încărcare logo"
       ],
       "Use ${ label } theme": [
         "Folosire tema ${ label }"
@@ -1880,9 +1898,6 @@
       ]
     },
     "Delete address prompt": {
-      "The next active address on your list will be set as the default.": [
-        "Următoarea adresă activă din listă va fi setată ca implicită."
-      ],
       "You can only delete 1 address per year.": [
         "Puteți șterge o singură adresă pe an."
       ]
@@ -2013,6 +2028,12 @@
       "Error connecting to the Bitcoin API.": [
         "Eroare de conectare la Bitcoin API."
       ],
+      "Failed to process the logo": [
+        "Procesarea fișierului pentru logo a eșuat."
+      ],
+      "File too large. Your logo must be 30 KB or smaller.": [
+        "Fișier prea mare. Fișierul trebuie să aibă maxim 30 KiB."
+      ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Dacă timpul de pe TV a expirat, apăsaţi pe «Împrospătare» pe TV şi introduceţi din nou codul."
       ],
@@ -2024,6 +2045,9 @@
       ],
       "Impossible to rename the gateway": [
         "Imposibil de redenumit poarta de acces."
+      ],
+      "Incorrect file type. Upload a file in PNG or JPEG format.": [
+        "Tip de fișier incorect. Încărcați un fișier în format PNG sau JPEG."
       ],
       "Incorrect login credentials. Please try again.": [
         "Date de conectare incorecte. Reîncercați."
@@ -2060,6 +2084,9 @@
       ],
       "Name does not match": [
         "Numele nu se potrivește."
+      ],
+      "No image selected": [
+        "Imagine neselectată"
       ],
       "Not a valid number": [
         "Nu este un număr valid"
@@ -2112,6 +2139,9 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Migrați la un plan de afaceri cu mai mult de un utilizator pentru a destiona mai mulți utilizatori."
       ],
+      "Please upload a square file": [
+        "Încărcați o imagine pătrată."
+      ],
       "Please upload an xml file": [
         "Încărcați un fișier xml."
       ],
@@ -2138,6 +2168,12 @@
       ],
       "The email addresses do not match": [
         "Adresele de e-mail nu se potrivesc."
+      ],
+      "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
+        "Imaginea este prea mare. Dimensiunea maximă este ${ MAX_FILE_DIMENSIONS } x ${ MAX_FILE_DIMENSIONS }."
+      ],
+      "The file is too small, the minimum size is ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }": [
+        "Imaginea este prea mică. Dimensiunea minimă este ${ MIN_FILE_DIMENSIONS } x ${ MIN_FILE_DIMENSIONS }."
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Creditul minim care poate fi adăugat este de ${ price }."
@@ -3525,6 +3561,9 @@
       ],
       "Plus or Visionary subscription required": [
         "Este necesar abonamentul „Plus” sau „Visionary”"
+      ],
+      "Preview": [
+        "Examinare"
       ],
       "Preview failed to be loaded": [
         "Examinarea nu a putut fi încărcată."
@@ -7696,6 +7735,9 @@
       "Delete address permanently?": [
         "Ștergeți permanent adresa?"
       ],
+      "Delete organization logo?": [
+        "Ștergeți logoul organizației?"
+      ],
       "Delete the server (you will still be able to recover it for ${ days } day)": [
         "Ștergere server (veți putea să-l recuperați timp de ${ days } zi).",
         "Ștergere server (veți putea să-l recuperați timp de ${ days } zile).",
@@ -7801,6 +7843,9 @@
       ],
       "Gift code": [
         "Cod cadou"
+      ],
+      "How to choose a good logo": [
+        "Cum să alegeți un logo bun"
       ],
       "Human verification": [
         "Verificare persoană"
@@ -8014,6 +8059,9 @@
       "Upload CSV file to create multiple accounts": [
         "Încărcare fișier CSV pentru a crea conturi multiple"
       ],
+      "Upload your organization’s logo": [
+        "Încărcați logoul organizației"
+      ],
       "Users": [
         "Utilizatori"
       ],
@@ -8034,6 +8082,9 @@
       ],
       "WireGuard configuration": [
         "Configurare WireGuard"
+      ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Probarea gratuită pentru ${ planName } se încheie ${ textDate }"
       ],
       "Your changes are not synced yet": [
         "Modificările nu sunt încă sincronizate"

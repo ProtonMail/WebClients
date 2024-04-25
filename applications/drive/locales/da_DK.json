@@ -571,6 +571,9 @@
       "Remove gift code": [
         "Fjern gavekode"
       ],
+      "Remove me": [
+        "Fjern mig"
+      ],
       "Rename": [
         "Omdøb"
       ],
@@ -4105,6 +4108,9 @@
       "Emails are automatically signed": [
         "E-mails er automatisk signeret"
       ],
+      "Empty folder": [
+        "Tom mappe"
+      ],
       "Enabling drive search": [
         "Aktiverer søgning på drev"
       ],
@@ -4469,6 +4475,9 @@
         "Kun ${ MAX_CUSTOM_PASSWORD_LENGTH } tegn er tilladt",
         "Kun ${ MAX_CUSTOM_PASSWORD_LENGTH } tegn er tilladt"
       ],
+      "Only the owner of the share will be able to invite you again.": [
+        "Det er kun ejeren af delingen, der kan invitere dig igen."
+      ],
       "Only the people with the link and the password can access this file.": [
         "Kun personer med linket og adgangskoden kan få adgang til denne fil."
       ],
@@ -4492,6 +4501,9 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Betalinger er beskyttet af TLS-kryptering og schweizisk lovgivning om beskyttelse af privatlivets fred."
+      ],
+      "Pending": [
+        "Afventer"
       ],
       "Permanently delete all files in your locked drive": [
         "Slet alle filer på dit låste drev permanent"
@@ -4783,6 +4795,9 @@
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "Der er stadig filer, der skal overføres. Ved at lukke overførselsadministratoren afsluttes alle operationer."
       ],
+      "There is nothing to see here": [
+        "Der er ikke noget at se her"
+      ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Denne adresse er deaktiveret. Vil du kunne sende til denne adreses, skal ejeren først aktivere den."
       ],
@@ -5042,6 +5057,9 @@
       "Yesterday": [
         "I går"
       ],
+      "you": [
+        "dig"
+      ],
       "You already have a free account": [
         "Du har allerede en gratis konto"
       ],
@@ -5110,6 +5128,9 @@
       ],
       "You will lose all unsaved changes.": [
         "Du vil miste alle ikke-gemte ændringer."
+      ],
+      "You will not be able to join again after.": [
+        "Du vil ikke kunne deltage igen derefter."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Du omdirigeres snart til PayPal for at bekræfte din betaling."
@@ -5696,6 +5717,9 @@
       "Region": [
         "Område"
       ],
+      "Remove access": [
+        "Fjern adgang"
+      ],
       "Replace existing file": [
         "Erstat eksisterende fil"
       ],
@@ -5752,6 +5776,9 @@
       ],
       "Stolen data": [
         "Stjålne data"
+      ],
+      "Stop sharing": [
+        "Stop deling"
       ],
       "Street address": [
         "Adresse"
@@ -5982,6 +6009,11 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Dit abonnement er ophørt. ${ cta } og for at undgå datatab."
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Aktivér ${ reason }"
       ]
     },
     "Mail import summary": {
@@ -7145,6 +7177,15 @@
         "${ numberOfItems } link til dit element blev slettet",
         "${ numberOfItems } links til dine elementer blev slettet"
       ],
+      "${ reason } has been disabled": [
+        "${ reason } er blevet deaktiveret"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } er blevet aktiveret"
+      ],
+      "Access updated and shared": [
+        "Adgang opdateret og delt"
+      ],
       "All items will soon be permanently deleted from trash": [
         "Alle elementer slettes snart permanent fra papirkurven"
       ],
@@ -7406,6 +7447,9 @@
       ],
       "Invalid expiration date": [
         "Ugyldig udløbsdato"
+      ],
+      "Invalid security code": [
+        "Ugyldig sikkerhedskode"
       ],
       "Something went wrong. Please try again later.": [
         "Noget gik galt. Prøv igen senere."
@@ -7684,6 +7728,9 @@
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel er **aktiv** og beskytter din konto."
+      ],
+      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLink }": [
+        "Dine oplysninger blev fundet i mindst ét databrud. Slå ${ DARK_WEB_MONITORING_NAME } til for at se detaljer og tage affære. ${ learnMoreLink }"
       ]
     },
     "Select files": {
@@ -8289,6 +8336,14 @@
         "Til"
       ]
     },
+    "subscription reminder": {
+      "and 15 more premium features": [
+        "og 15 andre premium-funktioner"
+      ],
+      "We don't sell your data": [
+        "Vi sælger ikke dine data"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Er du sikker?"
@@ -8606,6 +8661,9 @@
       ],
       "Are you sure you want to close the preview?": [
         "Er du sikker på, at du vil lukke forhåndsvisningen?"
+      ],
+      "Are you sure you want to leave this share?": [
+        "Er du sikker på, at du vil forlade denne deling?"
       ],
       "Billing cycle": [
         "Faktureringscyklus"
@@ -9129,6 +9187,9 @@
       ],
       "You have no folders yet": [
         "Du har ingen mapper endnu"
+      ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Din gratis prøveperiode på ${ planName } slutter ${ textDate }"
       ],
       "Your 3 GB bonus": [
         "Din 3 GB bonus"

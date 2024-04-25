@@ -3139,9 +3139,6 @@
       "Once deleted, this address can't be used again by anyone else.": [
         "Poiston jälkeen kukaan muu ei voi enää käyttää tätä osoitetta."
       ],
-      "The next active address on your list will be set as the default.": [
-        "Seuraava listallasi oleva aktiivinen osoite asetetaan oletusosoitteeksi."
-      ],
       "You can only delete 1 address per year.": [
         "Voit poistaa vain yhden osoitteen vuodessa."
       ]
@@ -3333,6 +3330,14 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Auta meitä parantamaan!"
+      ]
+    },
+    "Download link": {
+      ".deb for Debian / Ubuntu": [
+        ".deb Debianille/Ubuntulle"
+      ],
+      ".rpm for Fedora / Red Hat": [
+        ".rpm Fedoralle/Red Hatille"
       ]
     },
     "drive_signup_2023: Info": {
@@ -5971,6 +5976,9 @@
       "${ BRAND_NAME } is privacy you can trust, ensured by strong encryption, open-source code, and Swiss privacy laws. We believe nobody should be able to exploit your data, period. Our technology and business are based upon this fundamentally stronger definition of privacy.": [
         "${ BRAND_NAME } on yksityisyyttä, johon voit luottaa. Sen takaavat vahva salaus, avoin lähdekoodi ja Sveitsin tietosuojalainsäädäntö. Uskomme, että keneenkään ei tulisi pystyä hyväksikäyttämään tietojasi, piste. Teknologiamme ja liiketoimintamme pohjautuvat tälle pohjimmiltaan vahvemmalle yksityisyyden määritelmälle."
       ],
+      "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
+        "${ BRAND_NAME } ei koskaan jaa tietojasi ulkopuolisille tahoille. Tiedot ovat peräisin ${ BRAND_NAME }in omista analyyseistä ja Constella Intelligenceltä."
+      ],
       "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "${ BRAND_NAME } keskeytti tuonnin, koska yhteys toiseen sähköpostipalveluun katkesi. Muodosta yhteys uudelleen."
       ],
@@ -6525,6 +6533,9 @@
       "Custom": [
         "Mukautettu"
       ],
+      "Custom branding": [
+        "Oma brändäys"
+      ],
       "Custom daily": [
         "Oma päivittäinen"
       ],
@@ -6745,6 +6756,9 @@
       ],
       "Failed to fetch logs.": [
         "Lokien nouto epäonnistui."
+      ],
+      "Fast and focused. Email and calendar, right on your desktop.": [
+        "Nopea ja kohdistettu. Sähköposti ja kalenteri suoraan työpöydälläsi."
       ],
       "Fill in user details": [
         "Täytä käyttäjän tiedot"
@@ -7581,6 +7595,9 @@
       "Support for 1 custom email domain": [
         "Tuki yhdelle omalle sähköpostiverkkotunnukselle"
       ],
+      "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
+        "Tuki omien verkkotunnusten ja muiden kuin ${ BRAND_NAME }-sähköpostiosoitteiden valvonnalle on tulossa pian."
+      ],
       "support team": [
         "tukeemme"
       ],
@@ -7911,6 +7928,9 @@
       "Upload your completed CSV file to create accounts": [
         "Luo tilejä tuomalla täydellinen CSV-tiedosto"
       ],
+      "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
+        "Lisää organisaatiosi logo, jotta voit vahvistaa brändisi identiteettiä ja tarjota käyttäjillesi mukautetun käyttökokemuksen."
+      ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "Ladattu tiedosto ei ole kelvollinen yksityinen avain. Tarkista ja yritä uudelleen."
       ],
@@ -7997,6 +8017,9 @@
       ],
       "We just sent you a new link.": [
         "Lähetimme sinulle juuri uuden linkin."
+      ],
+      "We monitor the dark web for instances where your personal information (such as an email address or password used on a third-party site) is leaked or compromised.": [
+        "Valvomme pimeää verkkoa sellaisten tapahtumien varalta, joissa henkilökohtaisia tietojasi, kuten sähköpostiosoitteita tai muiden verkkopalveluiden salasanoja, on vuotanut tai vaarantunut."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Maksutapa on vahvistettava pankistasi."
@@ -8486,6 +8509,18 @@
     "Key generation": {
       "Generate key": [
         "Luo avain"
+      ],
+      "Generating key failed. Please try again later.": [
+        "Avaimen luonti epäonnistui. Yritä myöhemmin uudelleen."
+      ],
+      "If you're generating a new key because you believe your existing key has been compromised, please mark it as compromised after generating this key.": [
+        "Jos luot uuden avaimen, koska uskot, että nykyinen avaimesi on vaarantunut, merkitse nykyinen avaimesi vaarantuneeksi uuden avaimen luomisen jälkeen."
+      ],
+      "Key successfully generated.": [
+        "Avain luotu onnistuneesti."
+      ],
+      "This will generate a new key, which will be used to encrypt future emails, among other data.": [
+        "Tämä luo uuden avaimen, jota käytetään muun muassa tulevien sähköpostien salaamiseen."
       ]
     },
     "Key state badge": {
@@ -8889,6 +8924,9 @@
       ],
       "Awarded": [
         "Palkittu"
+      ],
+      "Beta": [
+        "Beta"
       ],
       "Billing address": [
         "Laskutusosoite"
@@ -12731,6 +12769,9 @@
       ]
     },
     "scim: Info": {
+      "Enter token into your identity provider": [
+        "Syötä tunniste identiteettipalveluntarjoajallesi"
+      ],
       "For security reasons, the token is hidden": [
         "Tunniste on tietoturvasyistä piilotettu"
       ]
@@ -14815,6 +14856,15 @@
       ],
       "Folders and labels": [
         "Kansiot ja tunnisteet"
+      ],
+      "For Linux": [
+        "Linuxille"
+      ],
+      "For macOS": [
+        "MacOS:lle"
+      ],
+      "For Windows": [
+        "Windowsille"
       ],
       "Forward and auto-reply": [
         "Välitä ja automaattivastaa"

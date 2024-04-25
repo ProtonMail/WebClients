@@ -1060,6 +1060,10 @@
       "Trust": [
         "Amen"
       ],
+      "Trust key": [
+        "Tasarut yettwamanen",
+        "Tisura yettwamanen"
+      ],
       "Trust public key": [
         "Tasarut tazayezt yettwamanen"
       ],
@@ -6709,6 +6713,11 @@
         "Aktar-ik yebda"
       ]
     },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Rmed ${ reason }"
+      ]
+    },
     "Mail import summary": {
       "Import all messages from ${ itemsToImportCount } folder and label them as": [
         "Kter meṛṛa iznan seg ${ itemsToImportCount } ukaram, syen snes tabzimt",
@@ -7325,6 +7334,12 @@
     "Notification": {
       "${ Filter.Name } created": [
         "${ Filter.Name } yettusnulfa-d"
+      ],
+      "${ reason } has been disabled": [
+        "${ reason } yensa"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } yettwarmed"
       ],
       "Block removed": [
         "Asewḥel yettwakkes"

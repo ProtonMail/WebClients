@@ -191,7 +191,7 @@
         "清除搜索条件"
       ],
       "Clear selection": [
-        "清空选项"
+        "取消选择"
       ],
       "Click here.": [
         "点击此处。"
@@ -614,7 +614,7 @@
         "管理标签"
       ],
       "Manage Snooze": [
-        "管理免打扰"
+        "管理延迟通知"
       ],
       "Mark as read": [
         "标为已读"
@@ -1061,7 +1061,7 @@
         "跳过验证"
       ],
       "Snooze": [
-        "免打扰"
+        "延迟通知"
       ],
       "Some images could not be loaded with tracker protection.": [
         "部分图片在跟踪防护模式下无法加载。"
@@ -1117,6 +1117,9 @@
       "Trust": [
         "信任"
       ],
+      "Trust key": [
+        "信任此密钥"
+      ],
       "Trust public key": [
         "信任公钥"
       ],
@@ -1148,7 +1151,7 @@
         "无标号列表"
       ],
       "Unsnooze": [
-        "取消免打扰"
+        "取消延迟通知"
       ],
       "Unstar": [
         "取消星标"
@@ -1175,7 +1178,7 @@
         "升级账户"
       ],
       "Upgrade Now": [
-        "立即升级"
+        "立即升级账户"
       ],
       "Upgrade now": [
         "立即升级账户"
@@ -1476,7 +1479,7 @@
         "广告拦截与恶意软件防护"
       ],
       "Extended version history": [
-        "查看版本历史"
+        "更长的版本历史"
       ],
       "High speed streaming": [
         "高速看视频"
@@ -1523,7 +1526,7 @@
         "通过我们遍布全球的服务器网络规避运营商和政府审查。"
       ],
       "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "包括支持 ${ domains } 对自定义电子邮件域、 ${ addresses } 对电子邮件地址、 无限的 hide-my-email 别名、 日历共享以及更多功能支持。"
+        "包含 ${ domains } 个自有域名、${ addresses } 个邮箱地址、无限量 hide-my-email 邮箱别名、日历共享等功能。"
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "支持 1 个自有域名、10 个邮箱地址、10 个 Hide-my-email 邮箱别名、日程共享等功能。"
@@ -3202,7 +3205,7 @@
         "如需导入 CSV 或 VCF 文件，请确保文件大小不超过 ${ MAX_IMPORT_FILE_SIZE_STRING } 且联系人数量不超过 ${ MAX_IMPORT_CONTACTS_STRING } 个。若您的文件超出限制，请先拆分成较小的文件。${ learnMoreLink }。"
       ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
-        "注册 ${ PLAN_NAMES[PLANS.BUNDLE] } 获得无限别名和500 GB 存储空间。"
+        "开通 ${ PLAN_NAMES[PLANS.BUNDLE] } 即可获得无限量邮箱别名和 500 GB 存储空间。"
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "您正在导入的联系人列表似乎包含一些群组，请查看并选择应如何导入这些群组。"
@@ -3241,7 +3244,7 @@
         "升级账户即可自由选择发送时间，还有各种高级功能。"
       ],
       "Unlock custom snooze times when you upgrade your plan.": [
-        "升级您的计划时解锁自定义推迟时间。"
+        "升级账户即可自由调整延迟通知时间。"
       ],
       "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
         "升级账户即可使用无限量的筛选规则为您自动整理邮箱，还有更多功能等您体验。"
@@ -3268,7 +3271,7 @@
         "您可以选择稍后删除既不想合并也不想保留的联系人，点击合并按钮后他们就会被删除"
       ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
-        "您的帐户和数据恢复方法已设置并且启用了两步验证。"
+        "您已设置账户和数据恢复方式并开启双重验证。"
       ],
       "Your account and data recovery methods are set.": [
         "您的账户恢复方式已设置。"
@@ -3335,7 +3338,7 @@
     },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
-        "描述：${ eventDescription }"
+        "描述：\n${ eventDescription }"
       ]
     },
     "Email body for invitation": {
@@ -3369,13 +3372,13 @@
     },
     "Email body for invitation (date part)": {
       "TIME:\n${ formattedStart }": [
-        "时间：${ formattedStart }"
+        "时间：\n${ formattedStart }"
       ],
       "TIME:\n${ formattedStart } (all day)": [
-        "时间：${ formattedStart } (全天)"
+        "时间：\n${ formattedStart }（全天）"
       ],
       "TIME:\n${ formattedStart } - ${ formattedEnd }": [
-        "时间：${ formattedStart } - ${ formattedEnd }"
+        "时间：\n${ formattedStart } - ${ formattedEnd }"
       ]
     },
     "Email body for invitation (event details part)": {
@@ -3385,18 +3388,18 @@
     },
     "Email body for invitation (location part)": {
       "LOCATION:\n${ eventLocation }": [
-        "位置: ${ eventLocation }"
+        "位置：\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
       "${ emailAddress } accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } 以接受您对 ${ eventTitle } 的邀请"
+        "${ emailAddress } 接受了您的 ${ eventTitle } 邀请"
       ],
       "${ emailAddress } declined your invitation to ${ eventTitle }": [
-        "${ emailAddress } 以谢绝了你对 ${ eventTitle } 的邀请"
+        "${ emailAddress } 拒绝了您的 ${ eventTitle } 邀请"
       ],
       "${ emailAddress } tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } 以暂时接受了您对 ${ eventTitle } 的邀请"
+        "${ emailAddress } 暂时接受了您的 ${ eventTitle } 邀请"
       ]
     },
     "Email reminder banner": {
@@ -3641,7 +3644,7 @@
         "文件夹名称不能为空。"
       ],
       "Forward address is required": [
-        "必须填写邮箱地址"
+        "转发邮箱为必填项"
       ],
       "Image upload failed": [
         "图像上传失败"
@@ -3692,7 +3695,7 @@
         "姓氏太长。"
       ],
       "Maximum expiration time reached.": [
-        "已达到最大有效日期。"
+        "有效期过长。"
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "最多只能有 ${ attachmentsCountLimit } 个附件"
@@ -3809,7 +3812,7 @@
         "至少应有一个条件"
       ],
       "Sending attachments is restricted until you meet your plan limits or upgrade.": [
-        "发送附件已被限制直到你打到计划限制或升级"
+        "您的附件超出了账户等级限制，需要予以删减或升级账户才能发送。"
       ],
       "Signature not verified": [
         "签名未验证"
@@ -3947,7 +3950,7 @@
         "邮箱密码错误"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
-        "您不能将邮件发送到超过 ${ maxContacts } 的收件人"
+        "邮件收件人不能超过 ${ maxContacts } 位"
       ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time": [
         "您不能同时打开超过 ${ maxActiveComposer } 个编辑窗口"
@@ -3965,7 +3968,7 @@
         "请输入名称（必填）"
       ],
       "You've reached the maximum character number. Please shorten your message.": [
-        "您已达到此消息的最大字符数。请缩短您的消息。"
+        "字数超过限制，请缩短信息内容。"
       ],
       "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
         "您近期重置过密码，因此无法解密以前的邮件。如果您回忆起曾经使用的密码，${ reActivateKeyLink }即可阅读以前的邮件。${ learnMoreLink }"
@@ -4642,7 +4645,7 @@
         "享受快速、安全、心无旁骛的访问您的收件箱和日历。"
       ],
       "Get unlimited access with any ${ MAIL_APP_NAME } plan.": [
-        "使用 ${ MAIL_APP_NAME } 计划获得无限制存储。"
+        "开通任一等级的 ${ MAIL_APP_NAME } 付费账户即可长期使用。"
       ],
       "No credit card required.": [
         "无需信用卡."
@@ -4654,7 +4657,7 @@
         "尝试新的桌面应用"
       ],
       "Upgrade now": [
-        "立即升级"
+        "立即升级账户"
       ]
     },
     "Get started checklist instructions": {
@@ -5169,10 +5172,10 @@
         "${ contactsLength } 位联系人"
       ],
       "${ currentProgress } out of ${ totalProgress }": [
-        "${ currentProgress } 中的 ${ totalProgress }"
+        "${ currentProgress } / ${ totalProgress }"
       ],
       "${ elementsCount } conversation will be labelled as:": [
-        "${ elementsCount } 对话内容将被标记为："
+        "${ elementsCount } 项会话将添加下列标签："
       ],
       "${ elementsCount } conversation will be marked as read.": [
         "${ elementsCount } 条会话将被标记为已读。"
@@ -5181,13 +5184,13 @@
         "${ elementsCount } 条会话将被标记为未读。"
       ],
       "${ elementsCount } conversation will be moved": [
-        "${ elementsCount } 对话内容将被移动："
+        "${ elementsCount } 项会话将被移动"
       ],
       "${ elementsCount } conversation will be unlabelled from:": [
-        "${ elementsCount } 对话内容将被取消标记："
+        "${ elementsCount } 项会话将移除下列标签："
       ],
       "${ elementsCount } message will be labelled as:": [
-        "${ elementsCount } 消息将被标记为："
+        "${ elementsCount } 封邮件将添加下列标签："
       ],
       "${ elementsCount } message will be marked as read.": [
         "${ elementsCount } 封邮件将被标记为已读。"
@@ -5196,10 +5199,10 @@
         "${ elementsCount } 封邮件将被标记为未读。"
       ],
       "${ elementsCount } message will be moved": [
-        "${ elementsCount } 条消息将被移动"
+        "${ elementsCount } 封邮件将被移动"
       ],
       "${ elementsCount } message will be unlabelled from:": [
-        "${ elementsCount } 消息将被取消标记为："
+        "${ elementsCount } 封邮件将移除下列标签："
       ],
       "${ embeddedAttachmentsCount } embedded image": [
         "${ embeddedAttachmentsCount } 张图片已嵌入。"
@@ -5361,7 +5364,7 @@
         "您的所有改动都将丢失。"
       ],
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "您所有的联系人都以被导入，已达 ${ MAX_CONTACTS_PER_USER } 的上限"
+        "您的所有联系人都将被导入，直至达到 ${ MAX_CONTACTS_PER_USER } 人的上限"
       ],
       "American Express SafeKey logo": [
         "American Express SafeKey 图标"
@@ -5379,16 +5382,16 @@
         "并"
       ],
       "Any scheduled or snoozed messages will be cancelled.": [
-        "任何预定或推迟的消息将被取消。"
+        "所有的定时发送和延迟通知都将取消。"
       ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "任何子文件夹也将被删除。然而，存储在此文件夹 ${ nameDeleted } 中的电子邮件将不会被删除，并且可以在所有邮件文件夹中找到。"
       ],
       "Applying actions to conversations": [
-        "将操作应用到对话"
+        "正在对所有会话执行操作"
       ],
       "Applying actions to messages": [
-        "将操作应用于消息"
+        "正在对所有邮件执行操作"
       ],
       "Are you sure you want to delete all messages in this folder?": [
         "确定要删除此文件夹内的所有邮件吗？"
@@ -5409,10 +5412,10 @@
         "确定要放弃导入吗？"
       ],
       "Are you sure you want to move all messages in this location to archive?": [
-        "确定要将此处所有消息存档吗？"
+        "确定要将此处所有邮件存档吗？"
       ],
       "Are you sure you want to move all messages in this location to trash?": [
-        "确定要将此处所有消息移至回收站吗？"
+        "确定要将此处所有邮件移至废件箱吗？"
       ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
         "确定要永久删除 ${ count } 条会话吗？"
@@ -5811,7 +5814,7 @@
         "在下一步中，您将能够使用比特币地址提交存款。"
       ],
       "Include Spam/Trash.": [
-        "包含垃圾邮件/垃圾桶。"
+        "包含垃圾邮件和废件箱中的搜索结果。"
       ],
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
         "包含 ${ formattedTaxRate }% ${ taxName }: ${ price }"
@@ -6069,7 +6072,7 @@
         "请注意，点击确认按钮后，您的账户余额将剩余 ${ creditsRemaining }。"
       ],
       "Please provide a name and an email address for creating a group.": [
-        "请提供一个名称和一个电子邮件地址来创建群组。"
+        "请填写名称和邮箱地址以创建群组。"
       ],
       "Please select the folders you would like to import:": [
         "请选择要导入的文件夹："
@@ -6153,7 +6156,7 @@
         "右击查看选项"
       ],
       "Sat, ${ formatTime }": [
-        "周六， ${ formatTime }"
+        "周六 ${ formatTime }"
       ],
       "Saved at ${ dateString }": [
         "保存于 ${ dateString }"
@@ -6189,7 +6192,7 @@
         "请选择一个服务提供商并开始导入"
       ],
       "Select all ${ elementsCount } in ${ location }": [
-        "在 ${ location } 中选择全部 ${ elementsCount }"
+        "选择 ${ location } 中全部 ${ elementsCount } 项"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "选择向该地址发送邮件的首选格式。"
@@ -6243,16 +6246,16 @@
         "作为 Proton 忠实用户，您拥有以下特权。"
       ],
       "Snoozed until  ${ dateString } at ${ formattedTime }": [
-        "已推迟到  ${ dateString } 于 ${ formattedTime }"
+        "通知已推迟至 ${ dateString } ${ formattedTime }"
       ],
       "Snoozed until today, ${ formattedTime }": [
-        "已推迟到今天， ${ formattedTime }"
+        "通知已推迟至今天 ${ formattedTime }"
       ],
       "Snoozed until tomorrow, ${ formattedTime }": [
-        "已推迟到明天， ${ formattedTime }"
+        "通知已推迟至明天 ${ formattedTime }"
       ],
       "Snoozing this conversation will be cancelled.": [
-        "此推迟对话将被取消。"
+        "此会话将取消延迟通知。"
       ],
       "Sorry, this message does not exist or has already expired.": [
         "对不起，此消息不存在或已过期。"
@@ -6465,7 +6468,7 @@
         "开启地址密钥验证前，您需要先信任其若干个公钥，包括您要用于发送邮件的密钥。这样可以防止其密钥被伪造。"
       ],
       "Tomorrow, ${ formattedTime }": [
-        "明天，${ formattedTime }"
+        "明天 ${ formattedTime }"
       ],
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "待发送的邮件过多，请静待另一封邮件发送后陆续发送此邮件。"
@@ -6756,16 +6759,16 @@
         "您选择了带有此标签的 **${ count } 封邮件**"
       ],
       "You selected **${ elementsCount } conversation** in ${ location }": [
-        "您在 ${ location } 的对话内容中选择 **${ elementsCount } **。"
+        "您在 ${ location } 中选择了 **${ elementsCount } 项会话**"
       ],
       "You selected **${ elementsCount } conversation**.": [
-        "您选择 **${ elementsCount } 个对话内容**。"
+        "您选择了 **${ elementsCount } 项会话**。"
       ],
       "You selected **${ elementsCount } message** in ${ location }": [
-        "您在 ${ location } 这条消息中选择 **${ elementsCount } **。"
+        "您在 ${ location } 中选择了 **${ elementsCount } 封邮件**"
       ],
       "You selected **${ elementsCount } message**.": [
-        "您选择 **${ elementsCount } 条消息**。"
+        "您选择了 **${ elementsCount } 封邮件**。"
       ],
       "You will lose access to Plus features on this date.": [
         "您将在此日期失去访问 Plus 功能的权限。"
@@ -7347,7 +7350,7 @@
         "重复频率"
       ],
       "From": [
-        "发件人："
+        "发件人"
       ],
       "From:": [
         "发件人："
@@ -7857,10 +7860,10 @@
         "免费注册"
       ],
       "Snooze": [
-        "免打扰"
+        "延迟通知"
       ],
       "Snoozed": [
-        "已免打扰"
+        "延迟通知"
       ],
       "Spam": [
         "垃圾邮件"
@@ -7940,7 +7943,7 @@
     },
     "locked_state_storage_banner: info": {
       "Learn more": [
-        "了解更多"
+        "了解详情"
       ],
       "upgrade for more storage": [
         "升级以获取更多存储空间"
@@ -7965,6 +7968,11 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "您的订阅已经结束。 ${ cta } 以避免数据丢失。"
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "启用 ${ reason }"
       ]
     },
     "Mail import summary": {
@@ -8014,7 +8022,7 @@
         "自动清理垃圾邮件和废件箱"
       ],
       "Custom schedule send and snooze times": [
-        "自定义计划发送和推迟处理邮件"
+        "自由调整定时发送和延迟通知时间"
       ],
       "Support for 1 custom email domain": [
         "支持1个自定义域名"
@@ -8025,7 +8033,7 @@
     },
     "mailtrial2024: Footer": {
       "Renews at ${ renewablePrice }, cancel anytime": [
-        "在 ${ renewablePrice }续订，随时可取消订阅"
+        "续费价为 ${ renewablePrice }，可随时退订"
       ]
     },
     "mailtrial2024: Info": {
@@ -8038,7 +8046,7 @@
     },
     "mailtrial2024: Title": {
       "Get ${ planName } for only ${ planPrice }": [
-        "只需 ${ planPrice } 即可取得 ${ planName }"
+        "开通 ${ planName } 仅需 ${ planPrice }"
       ]
     },
     "Message": {
@@ -8422,7 +8430,7 @@
         "自定义字段"
       ],
       "Custom snooze time": [
-        "自由调整免打扰时间"
+        "自由调整通知延迟时间"
       ],
       "Data breach monitoring": [
         "数据泄露监控"
@@ -8518,7 +8526,7 @@
         "优先享受客服"
       ],
       "Priority support & live chat": [
-        "优先支持和在线真人聊天"
+        "优先与客服实时沟通"
       ],
       "Protect ${ n } device at a time": [
         "一次性保护 ${ n } 个设备"
@@ -8640,7 +8648,7 @@
         "通过 ${ BRAND_NAME } 提供的 SimpleLogin 服务使用无限量的邮箱别名"
       ],
       "Snooze messages and get reminded when you want": [
-        "设置免打扰，自由决定何时接收通知"
+        "推迟邮件提醒，自由决定何时接收通知"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } 均共用同一存储空间"
@@ -8951,6 +8959,12 @@
     "Notification": {
       "${ Filter.Name } created": [
         "${ Filter.Name } 规则已创建"
+      ],
+      "${ reason } has been disabled": [
+        "${ reason } 已停用"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } 已启用"
       ],
       "Block removed": [
         "移除屏蔽"
@@ -9438,6 +9452,9 @@
       "No results found": [
         "搜索无结果"
       ],
+      "No snoozed messages": [
+        "没有延迟通知的邮件"
+      ],
       "No unread messages found": [
         "没有未读邮件"
       ]
@@ -9790,6 +9807,14 @@
         "数字签名"
       ]
     },
+    "Snooze message": {
+      "Snooze Message": [
+        "推迟邮件通知"
+      ],
+      "When should the message reappear in your inbox?": [
+        "您希望此邮件何时重新出现在您的收件箱中？"
+      ]
+    },
     "Sort option": {
       "Largest first": [
         "从大到小"
@@ -10081,13 +10106,13 @@
         "${ app } 存储空间"
       ],
       "${ storage } ${ percentage }% full": [
-        "${ storage } ${ percentage }%已满"
+        "${ storage }已使用 ${ percentage }%"
       ],
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
         "账户降级后您将失去下列权益。确定要继续吗？"
       ],
       "contact your administrator": [
-        "请与您的管理员联系！"
+        "联系您的机构管理员"
       ],
       "For all ${ BRAND_NAME } services": [
         "用于所有 ${ BRAND_NAME } 服务"
@@ -10096,16 +10121,16 @@
         "要继续上传和同步文件，请释放存储空间或升级以获取更多存储空间。"
       ],
       "To send or receive emails, free up space or ${ upgrade }": [
-        "要继续发送或接收电子邮件，请释放储存空间或 ${ upgrade }"
+        "如需继续收发邮件，请释放部分存储空间或${ upgrade }"
       ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "若要发送或接收电子邮件，请释放存储空间或升级以获取更多存储空间。"
       ],
       "To upload or sync files, free up space or ${ upgrade }": [
-        "要继续上传或同步文件，请释放储存空间或 ${ upgrade }"
+        "如需继续上传或同步文件，请释放部分存储空间或${ upgrade }"
       ],
       "upgrade for more storage": [
-        "升级以获取更多存储空间"
+        "付费扩容"
       ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "您的 **${ currentPlanName }** 账户等级还有 **${ daysRemaining }** 天的有效期。"
@@ -10117,13 +10142,13 @@
         "您的 ${ appStorage } 已满"
       ],
       "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
-        "您已使用 ${ percentage }% 的 ${ storage }。${ cta }"
+        "您的 ${ storage }已使用 ${ percentage }%。${ cta }。"
       ],
       "Your ${ storage } is full. ${ cta }.": [
         "您的 ${ storage } 已满。 ${ cta }。"
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
-        "您的存储空间已满 ${ percentage }%。 ${ cta }"
+        "您的存储空间已使用 ${ percentage }%。${ cta }。"
       ],
       "Your storage is full": [
         "你的存储空间满了"
@@ -10232,10 +10257,10 @@
         "${ elementsCount } 条会话已移除 ${ labelName } 标签。"
       ],
       "${ elementsCount } conversation snoozed": [
-        "${ elementsCount } 条会话已推迟"
+        "${ elementsCount } 项会话已延迟通知"
       ],
       "${ elementsCount } conversation unsnoozed": [
-        "${ elementsCount } 条会话已取消推迟"
+        "${ elementsCount } 项会话已取消延迟通知"
       ],
       "${ elementsCount } message added to ${ labelName }.": [
         "${ elementsCount } 封邮件已添加 ${ labelName } 标签。"
@@ -10790,10 +10815,10 @@
         "删除草稿"
       ],
       "Delete folder?": [
-        "删除文件夹?"
+        "删除文件夹？"
       ],
       "Delete label?": [
-        "删除标签?"
+        "删除标签？"
       ],
       "Delete message": [
         "删除邮件"
@@ -10940,19 +10965,19 @@
         "标为未读"
       ],
       "Mark conversations as read": [
-        "标记对话为已读"
+        "将会话标为已读"
       ],
       "Mark conversations as unread": [
-        "标记对话为未读"
+        "将会话标为未读"
       ],
       "Mark email as legitimate": [
         "标为非垃圾邮件"
       ],
       "Mark messages as read": [
-        "将消息标记为已读"
+        "将邮件标为已读"
       ],
       "Mark messages as unread": [
-        "标记消息为未读"
+        "将邮件标为未读"
       ],
       "Merge contacts": [
         "合并联系人"
@@ -10985,7 +11010,7 @@
         "更多选择"
       ],
       "Move all conversations": [
-        "移动全部往来对话"
+        "移动所有会话"
       ],
       "Move all messages": [
         "移动所有邮件"
@@ -10994,7 +11019,7 @@
         "将所有邮件存档"
       ],
       "Move all messages to trash": [
-        "将所有邮件放入回收站"
+        "将所有邮件移至废件箱"
       ],
       "Move to": [
         "移动到"
@@ -11015,7 +11040,7 @@
         "正在移动定时发送邮件"
       ],
       "Moving a snoozed message": [
-        "移动待办信息"
+        "移动延迟通知的邮件"
       ],
       "Need more aliases?": [
         "需要更多别名？"
@@ -11195,10 +11220,10 @@
         "退出"
       ],
       "Snooze": [
-        "免打扰"
+        "延迟通知"
       ],
       "Snooze message": [
-        "邮件免打扰"
+        "延迟通知"
       ],
       "Sort conversations": [
         "会话排序"
@@ -11264,7 +11289,7 @@
         "正在确认支付..."
       ],
       "Want to snooze any time?": [
-        "想在其他时间免打扰？"
+        "想将通知推迟至任意时间？"
       ],
       "Warning": [
         "警告"
@@ -11537,6 +11562,17 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "您的免费体验期将于 ${ textDate } 结束。${ action }"
+      ]
+    },
+    "WeekDay": {
+      "Mon, ${ formatTime }": [
+        "周一 ${ formatTime }"
+      ],
+      "Sat, ${ formatTime }": [
+        "周六 ${ formatTime }"
+      ],
+      "Sun, ${ formatTime }": [
+        "周日 ${ formatTime }"
       ]
     },
     "Weekly recurring event, frequency": {

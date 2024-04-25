@@ -476,7 +476,7 @@
         "Zaškrtnuté políčko znamená, že je funkce zakázána."
       ],
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
-        "Seznam domén, na kterých by neměly být spuštěny automatické funkce ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave).${ infoText }"
+        "Seznam domén, na kterých by neměly být spuštěny automatické funkce ${ PASS_SHORT_APP_NAME } (automatické vyplňování, automatické doporučení, automatické uložení).${ infoText }"
       ]
     },
     "Error": {
@@ -505,13 +505,13 @@
         "Nelze vytvořit alias (${ error })."
       ],
       "Cannot send invitation at the moment": [
-        "Pozvánku nyní nelze odeslat.",
-        "Pozvánky nyní nelze odeslat.",
-        "Pozvánky nyní nelze odeslat.",
-        "Pozvánky nyní nelze odeslat."
+        "Pozvánku nyní nelze odeslat",
+        "Pozvánky nyní nelze odeslat",
+        "Pozvánky nyní nelze odeslat",
+        "Pozvánky nyní nelze odeslat"
       ],
       "Cannot send invitations at the moment": [
-        "Pozvánky nyní nelze odeslat."
+        "Pozvánky nyní nelze odeslat"
       ],
       "Could not confirm this invite at the moment": [
         "Nepodařilo se potvrdit tuto pozvánku v tuto chvíli"
@@ -520,7 +520,7 @@
         "Nepodařilo se opustit trezor."
       ],
       "Could not load recommendations at the moment.": [
-        "Doporučení se v tuto chvíli nedaří načíst."
+        "V tuto chvíli se nepodařilo načíst doporučení."
       ],
       "Could not open created vault": [
         "Nelze otevřít vytvořený trezor"
@@ -535,7 +535,7 @@
         "Nepodařilo se vyřešit členy sdílení"
       ],
       "Could not validate addresses at the moment.": [
-        "Ověření adres se nezdařilo."
+        "V daném okamžiku se nepodařilo ověřit adresy."
       ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "V souboru CSV chybí očekávané hlavičky: ${ missingHeaders }"
@@ -577,10 +577,10 @@
         "Opětovné zaslání pozvánky selhalo."
       ],
       "Failed to delete selected items": [
-        "Odstranění vybraných položek selhalo."
+        "Smazání vybraných položek selhalo."
       ],
       "Failed to edit organization settings": [
-        "Úprava nastavení organizase se nezdařila."
+        "Selhala úprava nastavení organizace"
       ],
       "Failed to edit user's access.": [
         "Úprava uživatelského přístupu selhala."
@@ -604,7 +604,7 @@
         "Odstranění uživatelského přístupu selhalo."
       ],
       "Failed to restore items from trash": [
-        "Obnovení položek z Koše selhalo."
+        "Selhalo obnovení položek z koše"
       ],
       "Failed to transfer this vault's ownership.": [
         "Nepodařilo se přenést vlastnictví tohoto trezoru."
@@ -649,7 +649,7 @@
         "Aplikace LastPass vyexportuje poškozený soubor CSV, pokud některé z polí položek obsahuje neočekávané čárky, uvozovky nebo více řádků"
       ],
       "Missing passkey": [
-        "Chybějící přístupový klíč."
+        "Chybějící přístupový klíč"
       ],
       "Moving item failed": [
         "Přesouvání položky selhalo"
@@ -828,7 +828,7 @@
         "Aktualizace \"${ payload.item.data.metadata.name }\" byla odmítnuta"
       ],
       "${ count } invites successfully sent": [
-        "${ count } pozvánek odesláno."
+        "${ count } pozvánek úspěšně odesláno"
       ],
       "${ memberCount } member": [
         "${ memberCount } člen",
@@ -937,6 +937,9 @@
       ],
       "Creating alias...": [
         "Vytváření aliasu..."
+      ],
+      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, passkeys...). For a complete export, we recommend using a different format.": [
+        "CSV je na prohlížení dat praktický formát. Některá data (vlastní pole, přístupové klíče) v něm kvůli jeho jednoduchosti však zahrnuta nejsou. Pokud chcete úplný export, doporučujeme využít jiný formát."
       ],
       "Current version": [
         "Současná verze"
@@ -1140,7 +1143,7 @@
         "Čekání na přístup ke sdíleným datům"
       ],
       "Permanently deleting selected items": [
-        "Trvalé odstranění vybraných položek"
+        "Trvalé mazání vybraných položek"
       ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
         "Připněte ${ PASS_APP_NAME } na panel nástrojů"
@@ -1197,13 +1200,13 @@
         "Vyberte, kam chcete importované trezory uložit."
       ],
       "Selected items permanently deleted": [
-        "Vybrané položky byly trvale odstraněny"
+        "Vybrané položky byly trvale smazány"
       ],
       "Selected items successfully moved to trash": [
-        "Vybrané položky byly úspěšně přesunutz do koše"
+        "Vybrané položky byly úspěšně přesunuty do koše"
       ],
       "Selected items successfully restored from trash": [
-        "Vybrané položky byly z koše úspěšně obnoveny"
+        "Vybrané položky byly úspěšně obnoveny z koše"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servery jsou nedostupné. Zkuste to prosím znovu za několik minut"
@@ -1296,7 +1299,7 @@
         "Aktualizovat přihlášení"
       ],
       "Updating organization settings": [
-        "Aktualizuje se nastavení organizace"
+        "Aktualizace nastavení organizace"
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Navýšit ${ PASS_APP_NAME }"
@@ -1619,13 +1622,13 @@
         "Přihlášení"
       ],
       "Make all admins": [
-        "Učinit ze všech správce"
+        "Udělat ze všech správce"
       ],
       "Make all editors": [
-        "Oprávnit všechny k úpravám"
+        "Udělat ze všech editory"
       ],
       "Make all viewers": [
-        "Oprávnit všechny ke čtení"
+        "Udělat ze všech prohlížející"
       ],
       "Members": [
         "Členové"
@@ -2206,7 +2209,7 @@
         "Nelze vytvořit trezor \"${ vaultName }\""
       ],
       "Could not send invitations to the following addresses :": [
-        "Odeslání pozvánek pro následující adresy selhalo:"
+        "Nepodařilo se odeslat pozvánky těmto adresám:"
       ],
       "Duplicate email addresses.": [
         "Duplicitní e-mailové adresy."
@@ -2269,7 +2272,7 @@
         "Exportní soubor zašifrovaný pomocí PGP vyžaduje heslo"
       ],
       "Please contact us for investigating the issue": [
-        "Kontaktujte nás, prosím, abychom problém mohli prošetřit."
+        "Kontaktujte nás prosím pro vyšetření problému"
       ],
       "Please verify your email address in order to use email aliases": [
         "Ověřte prosím svou e-mailovou adresu, abyste mohli používat e-mailové aliasy"

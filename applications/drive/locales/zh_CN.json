@@ -122,7 +122,7 @@
         "清除查询"
       ],
       "Clear selection": [
-        "清空选项"
+        "取消选择"
       ],
       "Click here.": [
         "点击此处。"
@@ -936,7 +936,7 @@
         "广告拦截与恶意软件防护"
       ],
       "Extended version history": [
-        "查看版本历史"
+        "更长的版本历史"
       ],
       "High speed streaming": [
         "高速看视频"
@@ -983,7 +983,7 @@
         "通过我们遍布全球的服务器网络规避运营商和政府审查。"
       ],
       "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "包括支持 ${ domains } 对自定义电子邮件域、 ${ addresses } 对电子邮件地址、 无限的 hide-my-email 别名、 日历共享以及更多功能支持。"
+        "包含 ${ domains } 个自有域名、${ addresses } 个邮箱地址、无限量 hide-my-email 邮箱别名、日历共享等功能。"
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "支持 1 个自有域名、10 个邮箱地址、10 个 Hide-my-email 邮箱别名、日程共享等功能。"
@@ -2113,7 +2113,7 @@
         "如需导入 CSV 或 VCF 文件，请确保文件大小不超过 ${ MAX_IMPORT_FILE_SIZE_STRING } 且联系人数量不超过 ${ MAX_IMPORT_CONTACTS_STRING } 个。若您的文件超出限制，请先拆分成较小的文件。${ learnMoreLink }。"
       ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
-        "注册 ${ PLAN_NAMES[PLANS.BUNDLE] } 获得无限别名和500 GB 存储空间。"
+        "开通 ${ PLAN_NAMES[PLANS.BUNDLE] } 即可获得无限量邮箱别名和 500 GB 存储空间。"
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "您正在导入的联系人列表似乎包含一些群组，请查看并选择应如何导入这些群组。"
@@ -2146,7 +2146,7 @@
         "您可以选择稍后删除既不想合并也不想保留的联系人，点击合并按钮后他们就会被删除"
       ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
-        "您的帐户和数据恢复方法已设置并且启用了两步验证。"
+        "您已设置账户和数据恢复方式并开启双重验证。"
       ],
       "Your account and data recovery methods are set.": [
         "您的账户恢复方式已设置。"
@@ -2198,7 +2198,7 @@
     },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
-        "描述：${ eventDescription }"
+        "描述：\n${ eventDescription }"
       ]
     },
     "Email body for invitation": {
@@ -2232,13 +2232,13 @@
     },
     "Email body for invitation (date part)": {
       "TIME:\n${ formattedStart }": [
-        "时间：${ formattedStart }"
+        "时间：\n${ formattedStart }"
       ],
       "TIME:\n${ formattedStart } (all day)": [
-        "时间：${ formattedStart } (全天)"
+        "时间：\n${ formattedStart }（全天）"
       ],
       "TIME:\n${ formattedStart } - ${ formattedEnd }": [
-        "时间：${ formattedStart } - ${ formattedEnd }"
+        "时间：\n${ formattedStart } - ${ formattedEnd }"
       ]
     },
     "Email body for invitation (event details part)": {
@@ -2248,18 +2248,18 @@
     },
     "Email body for invitation (location part)": {
       "LOCATION:\n${ eventLocation }": [
-        "位置: ${ eventLocation }"
+        "位置：\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
       "${ emailAddress } accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } 以接受您对 ${ eventTitle } 的邀请"
+        "${ emailAddress } 接受了您的 ${ eventTitle } 邀请"
       ],
       "${ emailAddress } declined your invitation to ${ eventTitle }": [
-        "${ emailAddress } 以谢绝了你对 ${ eventTitle } 的邀请"
+        "${ emailAddress } 拒绝了您的 ${ eventTitle } 邀请"
       ],
       "${ emailAddress } tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } 以暂时接受了您对 ${ eventTitle } 的邀请"
+        "${ emailAddress } 暂时接受了您的 ${ eventTitle } 邀请"
       ]
     },
     "Email subject": {
@@ -2440,7 +2440,7 @@
         "文件夹名称不能为空。"
       ],
       "Forward address is required": [
-        "必须填写邮箱地址"
+        "转发邮箱为必填项"
       ],
       "Image upload failed": [
         "图像上传失败"
@@ -2701,7 +2701,7 @@
         "验证失败"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
-        "您不能将邮件发送到超过 ${ maxContacts } 的收件人"
+        "邮件收件人不能超过 ${ maxContacts } 位"
       ],
       "You have reached the contacts limit for your account": [
         "您的账户联系人数量已达上限"
@@ -3684,7 +3684,7 @@
         "您的所有改动都将丢失。"
       ],
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "您所有的联系人都以被导入，已达 ${ MAX_CONTACTS_PER_USER } 的上限"
+        "您的所有联系人都将被导入，直至达到 ${ MAX_CONTACTS_PER_USER } 人的上限"
       ],
       "Also try looking in Trash.": [
         "或者查看回收站中是否有您需要的文件。"
@@ -4347,7 +4347,7 @@
         "请注意，点击确认按钮后，您的账户余额将剩余 ${ creditsRemaining }。"
       ],
       "Please provide a name and an email address for creating a group.": [
-        "请提供一个名称和一个电子邮件地址来创建群组。"
+        "请填写名称和邮箱地址以创建群组。"
       ],
       "Please select the folders you would like to import:": [
         "请选择要导入的文件夹："
@@ -5650,7 +5650,7 @@
     },
     "locked_state_storage_banner: info": {
       "Learn more": [
-        "了解更多"
+        "了解详情"
       ],
       "upgrade for more storage": [
         "升级以获取更多存储空间"
@@ -5675,6 +5675,11 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "您的订阅已经结束。 ${ cta } 以避免数据丢失。"
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "启用 ${ reason }"
       ]
     },
     "Mail import summary": {
@@ -5710,7 +5715,7 @@
         "自动清理垃圾邮件和废件箱"
       ],
       "Custom schedule send and snooze times": [
-        "自定义计划发送和推迟处理邮件"
+        "自由调整定时发送和延迟通知时间"
       ],
       "Support for 1 custom email domain": [
         "支持1个自定义域名"
@@ -5721,7 +5726,7 @@
     },
     "mailtrial2024: Footer": {
       "Renews at ${ renewablePrice }, cancel anytime": [
-        "在 ${ renewablePrice }续订，随时可取消订阅"
+        "续费价为 ${ renewablePrice }，可随时退订"
       ]
     },
     "mailtrial2024: Info": {
@@ -5734,7 +5739,7 @@
     },
     "mailtrial2024: Title": {
       "Get ${ planName } for only ${ planPrice }": [
-        "只需 ${ planPrice } 即可取得 ${ planName }"
+        "开通 ${ planName } 仅需 ${ planPrice }"
       ]
     },
     "Message": {
@@ -5958,7 +5963,7 @@
         "自定义字段"
       ],
       "Custom snooze time": [
-        "自由调整免打扰时间"
+        "自由调整通知延迟时间"
       ],
       "Data breach monitoring": [
         "数据泄露监控"
@@ -6054,7 +6059,7 @@
         "优先享受客服"
       ],
       "Priority support & live chat": [
-        "优先支持和在线真人聊天"
+        "优先与客服实时沟通"
       ],
       "Protect ${ n } device at a time": [
         "一次性保护 ${ n } 个设备"
@@ -6176,7 +6181,7 @@
         "通过 ${ BRAND_NAME } 提供的 SimpleLogin 服务使用无限量的邮箱别名"
       ],
       "Snooze messages and get reminded when you want": [
-        "设置免打扰，自由决定何时接收通知"
+        "推迟邮件提醒，自由决定何时接收通知"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } 均共用同一存储空间"
@@ -6559,6 +6564,12 @@
       ],
       "${ numberOfItems } link to your item was deleted": [
         "${ numberOfItems } 个共享链接已删除"
+      ],
+      "${ reason } has been disabled": [
+        "${ reason } 已停用"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } 已启用"
       ],
       "All items will soon be permanently deleted from trash": [
         "所有项目将很快从回收站永久删除"
@@ -7462,13 +7473,13 @@
         "${ app } 存储空间"
       ],
       "${ storage } ${ percentage }% full": [
-        "${ storage } ${ percentage }%已满"
+        "${ storage }已使用 ${ percentage }%"
       ],
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
         "账户降级后您将失去下列权益。确定要继续吗？"
       ],
       "contact your administrator": [
-        "请与您的管理员联系！"
+        "联系您的机构管理员"
       ],
       "For all ${ BRAND_NAME } services": [
         "用于所有 ${ BRAND_NAME } 服务"
@@ -7477,16 +7488,16 @@
         "要继续上传和同步文件，请释放存储空间或升级以获取更多存储空间。"
       ],
       "To send or receive emails, free up space or ${ upgrade }": [
-        "要继续发送或接收电子邮件，请释放储存空间或 ${ upgrade }"
+        "如需继续收发邮件，请释放部分存储空间或${ upgrade }"
       ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "若要发送或接收电子邮件，请释放存储空间或升级以获取更多存储空间。"
       ],
       "To upload or sync files, free up space or ${ upgrade }": [
-        "要继续上传或同步文件，请释放储存空间或 ${ upgrade }"
+        "如需继续上传或同步文件，请释放部分存储空间或${ upgrade }"
       ],
       "upgrade for more storage": [
-        "升级以获取更多存储空间"
+        "付费扩容"
       ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "您的 **${ currentPlanName }** 账户等级还有 **${ daysRemaining }** 天的有效期。"
@@ -7498,13 +7509,13 @@
         "您的 ${ appStorage } 已满"
       ],
       "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
-        "您已使用 ${ percentage }% 的 ${ storage }。${ cta }"
+        "您的 ${ storage }已使用 ${ percentage }%。${ cta }。"
       ],
       "Your ${ storage } is full. ${ cta }.": [
         "您的 ${ storage } 已满。 ${ cta }。"
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
-        "您的存储空间已满 ${ percentage }%。 ${ cta }"
+        "您的存储空间已使用 ${ percentage }%。${ cta }。"
       ],
       "Your storage is full": [
         "你的存储空间满了"
