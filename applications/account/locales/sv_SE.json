@@ -3135,9 +3135,6 @@
       "Once deleted, this address can't be used again by anyone else.": [
         "När den har tagits bort kan denna adress inte användas igen av någon annan."
       ],
-      "The next active address on your list will be set as the default.": [
-        "Nästa aktiva adress på din lista kommer att ställas in som standard."
-      ],
       "You can only delete 1 address per year.": [
         "Du kan bara ta bort 1 adress per år."
       ]
@@ -3329,6 +3326,14 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Hjälp oss att förbättra!"
+      ]
+    },
+    "Download link": {
+      ".deb for Debian / Ubuntu": [
+        ".deb för Debian/Ubuntu"
+      ],
+      ".rpm for Fedora / Red Hat": [
+        ".rpm för Fedora/Red Hat"
       ]
     },
     "drive_signup_2023: Info": {
@@ -6526,6 +6531,9 @@
       "Custom": [
         "Anpassad"
       ],
+      "Custom branding": [
+        "Anpassat varumärke"
+      ],
       "Custom daily": [
         "Anpassad daglig"
       ],
@@ -6746,6 +6754,9 @@
       ],
       "Failed to fetch logs.": [
         "Misslyckades att hämta loggar."
+      ],
+      "Fast and focused. Email and calendar, right on your desktop.": [
+        "Snabb och fokuserad. E-post och kalender, direkt på din stationära dator."
       ],
       "Fill in user details": [
         "Fyll i användaruppgifter"
@@ -7909,6 +7920,9 @@
       "Upload your completed CSV file to create accounts": [
         "Ladda upp din färdiga CSV-fil för att skapa konton"
       ],
+      "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
+        "Ladda upp din organisations logga för att stärka din varumärkesidentitet och skapa en personifierad upplevelse för dina användare."
+      ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "Uppladdad fil är inte en giltig privat nyckel. Verifiera och försök igen."
       ],
@@ -8902,6 +8916,9 @@
       ],
       "Awarded": [
         "Belönades"
+      ],
+      "Beta": [
+        "Beta"
       ],
       "Billing address": [
         "Faktureringsadress"
@@ -13746,6 +13763,9 @@
         "${ dayDiff } dag kvar",
         "${ dayDiff } dagar kvar"
       ],
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME }-app för stationär dator"
+      ],
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } totalt lagringsutrymme"
       ],
@@ -13760,6 +13780,9 @@
       ],
       "After privacy and free speech were threatened in Hong Kong, we directly supported local civil rights organizations.": [
         "Efter att integritet och yttrandefrihet hotades i Hongkong stödde vi lokala medborgarrättsorganisationer direkt."
+      ],
+      "By downgrading your account, you will also lose storage space": [
+        "Genom att nedgradera ditt konto förlorar du också lagringsutrymme"
       ],
       "By downgrading your account, you will lose access to these important features": [
         "Genom att nedgradera ditt konto kommer du att förlora åtkomst till dessa viktiga funktioner"
@@ -13791,6 +13814,9 @@
       "Learn more about our impact": [
         "Lär dig mer om vår påverkan"
       ],
+      "Let us remind you of everything ${ planName } can do": [
+        "Låt oss påminna dig om allt ${ planName } kan göra"
+      ],
       "Our fight against censorship in Russia": [
         "Vår kamp mot censur i Ryssland"
       ],
@@ -13815,6 +13841,9 @@
       "Watch the interview": [
         "Se intervjun"
       ],
+      "When you cancel, you will lose access to": [
+        "När du avbryter förlorar du åtkomst till"
+      ],
       "You **won't be able to add any new files**": [
         "Du **kommer inte att kunna lägga till några nya filer**"
       ],
@@ -13829,6 +13858,41 @@
       ],
       "Your own custom email domain": [
         "Din egen anpassade e-postdomän"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagringsutrymme"
+      ],
+      "and 15 more premium features": [
+        "och 15 fler premiumfunktioner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk vidarebefordran av e-post ${ strongText }"
+      ],
+      "Desktop app": [
+        "App för stationär dator"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hjälp oss att hålla Internet säkert och privat för alla. Uppgradera till ett betalt paket."
+      ],
+      "No ads or tracking": [
+        "Inga annonser eller spårning"
+      ],
+      "Support our mission": [
+        "Stöd vårt uppdrag"
+      ],
+      "Upgrade": [
+        "Uppgradera"
+      ],
+      "Upgrade your productivity": [
+        "Uppgradera din produktivitet"
+      ],
+      "We don't sell your data": [
+        "Vi säljer inte din data"
+      ],
+      "Your privacy is our mission": [
+        "Din integritet är vårt uppdrag"
       ]
     },
     "Subscription renewal state": {
@@ -14783,6 +14847,15 @@
       ],
       "Folders and labels": [
         "Mappar och etiketter"
+      ],
+      "For Linux": [
+        "För Linux"
+      ],
+      "For macOS": [
+        "För macOS"
+      ],
+      "For Windows": [
+        "För Windows"
       ],
       "Forward and auto-reply": [
         "Vidarebefordran och autosvar"

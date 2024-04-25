@@ -1874,6 +1874,11 @@
         "Týden"
       ]
     },
+    "Call Scheduled Confirmation": {
+      "You can safely close this tab.": [
+        "Tuto kartu můžete bezpečně zavřít."
+      ]
+    },
     "Checkout row": {
       "${ users } user": [
         "${ users } uživatel",
@@ -3110,9 +3115,6 @@
       ]
     },
     "Delete address prompt": {
-      "The next active address on your list will be set as the default.": [
-        "Další aktivní adresa ve vašem seznamu bude nastavena jako výchozí."
-      ],
       "You can only delete 1 address per year.": [
         "Můžete smazat pouze 1 adresu ročně."
       ]
@@ -3306,6 +3308,14 @@
         "Pomozte nám se zlepšit!"
       ]
     },
+    "Download link": {
+      ".deb for Debian / Ubuntu": [
+        ".deb pro Debian / Ubuntu"
+      ],
+      ".rpm for Fedora / Red Hat": [
+        ".rpm pro Fedora / Red Hat"
+      ]
+    },
     "drive_signup_2023: Info": {
       "Advanced sharing security": [
         "Pokročilé zabezpečení sdílení"
@@ -3399,13 +3409,13 @@
     },
     "Email body for response to invitation": {
       "${ emailAddress } accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } přijmul/a vaši pozvánku do ${ eventTitle }"
+        "${ emailAddress } přijal(a) vaši pozvánku na ${ eventTitle }"
       ],
       "${ emailAddress } declined your invitation to ${ eventTitle }": [
-        "${ emailAddress } odmítl/a vaši pozvánku do ${ eventTitle }"
+        "${ emailAddress } odmítl(a) vaši pozvánku na ${ eventTitle }"
       ],
       "${ emailAddress } tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } nezávazně přijal/a vaši pozvánku do ${ eventTitle }"
+        "${ emailAddress } nezávazně přijal(a) vaši pozvánku na ${ eventTitle }"
       ]
     },
     "Email spam notification": {
@@ -3997,6 +4007,9 @@
       ],
       "No external key retrieved for user is valid for sending": [
         "Žádný externí klíč získaný pro uživatele není platný pro odeslání"
+      ],
+      "No image selected": [
+        "Není vybrán žádný obrázek"
       ],
       "No valid address found": [
         "Nebyla nalezena žádná platná adresa"
@@ -6437,7 +6450,7 @@
         "Možnost zrušit kdykoli"
       ],
       "Can’t access your recovery email?": [
-        "Nemáte přístup k emailu pro obnovení?"
+        "Nemáte přístup k e-mailu pro obnovení?"
       ],
       "Can’t access your recovery phone?": [
         "Nemáte přístup k telefonu pro obnovení?"
@@ -6759,6 +6772,9 @@
       ],
       "Failed to fetch logs.": [
         "Načtení záznamů selhalo."
+      ],
+      "Fast and focused. Email and calendar, right on your desktop.": [
+        "Rychlost a praktičnost. E-mail a kalendář přímo na vaší ploše."
       ],
       "Fill in user details": [
         "Vyplňte údaje uživatele"
@@ -7505,7 +7521,7 @@
         "Vzhledem k tomu, že jste věrný uživatel, má Váš účet povolené další funkce."
       ],
       "Single sign-on removed": [
-        "Jednotné přihlášení odebráno"
+        "Jednotné přihlášení zrušeno"
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
         "SMTP odesílání umožňuje službám nebo zařízením třetích stran odesílat e-maily prostřednictvím ${ MAIL_APP_NAME } pro vaše vlastní doménové adresy. Tato funkce je k dispozici pouze uživatelům ${ BRAND_NAME } for Business s vlastními doménami."
@@ -7972,6 +7988,9 @@
       "Want servers in other countries?": [
         "Chcete servery v dalších zemích?"
       ],
+      "Want to learn more?": [
+        "Chcete se dozvědět více?"
+      ],
       "Warning:": [
         "Upozornění:"
       ],
@@ -8042,7 +8061,7 @@
         "Vítejte"
       ],
       "We’ll send a reset code to ${ boldValue }.": [
-        "Odešleme ověřovací kód na ${ boldValue }."
+        "Odešleme kód pro resetování na ${ boldValue }."
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Na zadanou e-mailovou adresu Vám zašleme kód pro obnovení účtu."
@@ -9227,7 +9246,7 @@
         "Pozvat e-mailem"
       ],
       "Issuer ID": [
-        "ID vystavitele"
+        "ID vydavatele"
       ],
       "Keep me signed in": [
         "Neodhlašovat"
@@ -10022,10 +10041,13 @@
         "Vaše úložiště je plné. Chcete-li odesílat nebo přijímat e-maily, uvolněte místo nebo ${ cta }."
       ],
       "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
-        "Vaše úložiště je plné. Aby jste mohli nahrát nebo synchronizovat soubory, uvolněte místo nebo ${ cta }."
+        "Vaše úložiště je plné. Abyste mohli nahrát nebo synchronizovat soubory, uvolněte místo nebo ${ cta }."
       ]
     },
     "Log preference": {
+      "Enable ${ reason }": [
+        "Povolit ${ reason }"
+      ],
       "Enable advanced logs": [
         "Povolit pokročilé protokoly"
       ],
@@ -10086,7 +10108,7 @@
         "10 e-mailových adres"
       ],
       "Auto-delete Spam and Trash": [
-        "Automaticky smazat spam a koš"
+        "Automatické smazání spamu a koše"
       ],
       "Custom schedule send and snooze times": [
         "Vlastní plánování odesílání a odložení"
@@ -10100,15 +10122,15 @@
     },
     "mailtrial2024: Footer": {
       "Renews at ${ renewablePrice }, cancel anytime": [
-        "Obnovuje se za ${ renewablePrice }, zrušit kdykoliv"
+        "Obnovuje se za ${ renewablePrice }, zrušit lze kdykoli"
       ]
     },
     "mailtrial2024: Info": {
       "for the first month": [
-        "pro první měsíc"
+        "za první měsíc"
       ],
       "for your first month": [
-        "pro první měsíc"
+        "za váš první měsíc"
       ],
       "Get ${ planName } for ${ price }": [
         "Získat ${ planName } za ${ price }"
@@ -10117,7 +10139,7 @@
         "Omezená nabídka, vyprší 2. dubna 2024"
       ],
       "Your subscription will auto-renew on ${ renewTime } at ${ renewablePrice }, cancel anytime": [
-        "Vaše předplatné bude automaticky obnoveno každých ${ renewTime } za ${ renewablePrice }, zrušitelné kdykoliv"
+        "Vaše předplatné bude automaticky obnoveno ${ renewTime } za ${ renewablePrice }, zrušit lze kdykoli"
       ]
     },
     "mailtrial2024: Title": {
@@ -11181,16 +11203,16 @@
         "Umožňuje vám nastavit automatické odpovědi na příchozí zprávy"
       ],
       "Automatically clear out messages older than 30 days from Trash and Spam": [
-        "Automaticky vyčistit zprávy starší než 30 dnů z koše a spamu"
+        "Automatické odstranění zpráv starších než 30 dnů z koše a spamu"
       ],
       "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
-        "Automaticky přeposlat e-maily odeslané do vašeho ${ MAIL_APP_NAME } účtu do jakýkoliv jiné e-mailové adresy."
+        "Automatické přeposlání e-mailů přijatých vaším účtem ${ MAIL_APP_NAME } na jakoukoli jinou e-mailovou adresu."
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "Odesílání hromadných reklamních e-mailů a programovatelných e-mailů momentálně není podporováno. Pro tento případ doporučujeme využít služeb poskytovatele dedikované e-mailové služby."
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
-        "Vyberte vlastní časy aby jste byly upozorněni o e-mailu anebo kdy vám zpráva přijde"
+        "Vyberte vlastní časy, kdy chcete být upozorněni na e-mail nebo na příchod vaší zprávy"
       ],
       "Control access to your shared files by adding password protection and link expiration dates": [
         "Spravujte přístup ke svým sdíleným souborům přidáním ochrany heslem a nebo datem vypršení platnosti"
@@ -11425,6 +11447,12 @@
     "Notification": {
       "${ Filter.Name } created": [
         "${ Filter.Name } byl vytvořen"
+      ],
+      "${ reason } has been disabled": [
+        "${ reason } byl deaktivován"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } byl povolen"
       ],
       "A disabled address cannot be default": [
         "Deaktivovaná adresa nemůže být výchozí"
@@ -12439,7 +12467,7 @@
         "Vyberte důvod"
       ],
       "Select state": [
-        "Vybrat stav"
+        "Vyberte stav"
       ],
       "Text": [
         "Text"
@@ -12682,8 +12710,14 @@
       ]
     },
     "Select invoice document": {
+      "Credit note": [
+        "Dobropis"
+      ],
       "Currency conversion": [
         "Převod měny"
+      ],
+      "Invoice": [
+        "Faktura"
       ]
     },
     "Select search results": {
@@ -13464,10 +13498,10 @@
         "Získat více úložného prostoru"
       ],
       "To send or receive emails, free up space or ${ upgrade }": [
-        "Aby jste odeslali nebo přijímali e-maily, uvolněte místo nebo ${ upgrade }"
+        "Abyste odeslali nebo přijímali e-maily, uvolněte místo nebo ${ upgrade }"
       ],
       "To upload or sync files, free up space or ${ upgrade }": [
-        "Aby jste nahráli nebo synchronizovali soubory, uvolněte místo nebo ${ upgrade }"
+        "Abyste nahráli nebo synchronizovali soubory, uvolněte místo nebo ${ upgrade }"
       ],
       "Try out ${ app } to its full potential": [
         "Vyzkoušejte plný potenciál ${ app }"
@@ -13479,7 +13513,7 @@
         "Navyšte svůj tarif a pokračujte v používání účtu bez přerušení."
       ],
       "Upgrade your plan to increase your storage.": [
-        "Navyšte svůj tarif, abyste získali více úložiště."
+        "Navyšte svůj tarif, abyste získali více úložného prostoru."
       ],
       "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
         "Nevyužitý kredit přidáme na váš účet ${ BRAND_NAME }."
@@ -13518,7 +13552,7 @@
         "Ztratíte přístup k dalšímu úložišti, e-mailovým adresám, aliasům, kalendářům a také k prioritní podpoře."
       ],
       "You’ll lose access to the highest VPN speed, protection for 10 devices, high-speed streaming, ad-blocker and malware protection, as well as priority support.": [
-        "Ztratíte přístup k nejrychlejší rychlosti VPN, ochranu na 10 zařízeních, vysoko-rychlostní streamování, blokování reklam a ochrana proti malwaru, a k prioritní podpoře."
+        "Ztratíte přístup k nejvyšší rychlosti VPN, ochranu na 10 zařízeních, vysoko-rychlostní streamování, blokování reklam, ochranu proti malware a také prioritní podporu."
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "Ztratíte přístup k neomezeným přihlášením a poznámkám, neomezeným hide-my-email adresám, 20 trezorům a prioritní podpoře."
@@ -13683,6 +13717,44 @@
     "Subscription price": {
       "For": [
         "Pro"
+      ]
+    },
+    "Subscription reminder": {
+      "${ dayDiff } day left": [
+        "Zbývá ${ dayDiff } den",
+        "Zbývají ${ dayDiff } dny",
+        "Zbývá ${ dayDiff } dnů",
+        "Zbývá ${ dayDiff } dnů"
+      ],
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } desktopová aplikace"
+      ],
+      "${ planMaxSpace } total storage": [
+        "${ planMaxSpace } úložného prostoru"
+      ],
+      "10 email addresses": [
+        "10 e-mailových adres"
+      ],
+      "Calendar sharing": [
+        "Sdílení kalendáře"
+      ],
+      "Cancel subscription": [
+        "Zrušit předplatné"
+      ],
+      "Cancel subscription?": [
+        "Zrušit předplatné?"
+      ],
+      "Custom schedule send and snooze times": [
+        "Vlastní harmonogram odesílání a odložení"
+      ],
+      "Keep ${ planName }": [
+        "Ponechat ${ planName }"
+      ],
+      "Priority support": [
+        "Prioritní podpora"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Neomezený počet složek, štítků a filtrů"
       ]
     },
     "Subscription renewal state": {
@@ -15636,13 +15708,13 @@
     },
     "vpn_2024: renew": {
       "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
-        "Předplatné se automaticky obnoví každý měsíc. Budete účtováni za měsíc."
+        "Předplatné se automaticky obnoví každý měsíc. Vaše další datum účtování je za 1 měsíc."
       ],
       "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
-        "Předplatné se automaticky obnoví za 3 měsíce. Budete účtováni za 3 měsíce."
+        "Předplatné se automaticky obnoví každé 3 měsíce. Další datum fakturace je za 3 měsíce."
       ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
-        "Potom budete účtováni každých 12 měsíců za ${ renewPrice }."
+        "Potom vám bude účtováno ${ renewPrice } každých 12 měsíců."
       ]
     },
     "vpn_2step: billing": {
