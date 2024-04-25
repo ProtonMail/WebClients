@@ -41,7 +41,11 @@ export const ConfirmPasswordModal: FC<Props> = ({ disabled, message, open, onClo
         >
             <ModalTwoHeader title={c('Title').t`Enter your password`} closeButtonProps={{ pill: true, disabled }} />
             <ModalTwoContent>
-                {message && <Card className="mb-4">{message}</Card>}
+                {message && (
+                    <Card className="mb-4 text-sm" type="primary">
+                        {message}
+                    </Card>
+                )}
                 <InputFieldTwo
                     as={PasswordInputTwo}
                     autoComplete="current-password"
