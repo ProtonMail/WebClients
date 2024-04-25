@@ -36,15 +36,15 @@ const interpolateDuplicates = (groups: UniqueItem[][], items: ItemRevisionWithOp
     );
 
 export const DuplicatePasswords: FC = () => {
-    const monitor = useMonitor();
+    const listRef = useRef<List>(null);
     const selectItem = useSelectItemAction();
+
+    const monitor = useMonitor();
+    const duplicates = useMemo(() => monitor.duplicates.data.flat(), [monitor.duplicates.data]);
+    const duplicatePasswordItems = useSelector(selectOptimisticItemsFactory(selectSelectedItems(duplicates)));
     const itemRoute = getItemRoute(':shareId', ':itemId', { prefix: 'monitor/duplicates(/trash)?' });
     const selectedItem = useRouteMatch<SelectedItem>(itemRoute)?.params;
 
-    const duplicates = useMemo(() => monitor.duplicates.data.flat(), [monitor.duplicates.data]);
-    const duplicatePasswordItems = useSelector(selectOptimisticItemsFactory(selectSelectedItems(duplicates)));
-
-    const listRef = useRef<List>(null);
     const { interpolation, interpolationIndexes } = useMemo(
         () => interpolateDuplicates(monitor.duplicates.data, duplicatePasswordItems),
         [duplicatePasswordItems, duplicates]
@@ -97,5 +97,9 @@ export const DuplicatePasswords: FC = () => {
                 }
             }}
         />
-    ) : null;
+    ) : (
+        <div className="flex items-center justify-center color-weak text-sm text-center text-break h-full">
+            <strong>{c('Title').t`No reused passwords`}</strong>
+        </div>
+    );
 };
