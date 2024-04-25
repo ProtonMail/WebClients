@@ -3,6 +3,8 @@ import { useSelector } from 'react-redux';
 import { useRouteMatch } from 'react-router-dom';
 import type { List } from 'react-virtualized';
 
+import { c } from 'ttag';
+
 import { ItemsListItem } from '@proton/pass/components/Item/List/ItemsListItem';
 import { VirtualList } from '@proton/pass/components/Layout/List/VirtualList';
 import { useMonitor } from '@proton/pass/components/Monitor/MonitorProvider';
@@ -14,13 +16,13 @@ import { selectOptimisticItemsFactory, selectSelectedItems } from '@proton/pass/
 import type { SelectedItem } from '@proton/pass/types';
 
 export const Missing2FAs: FC = () => {
+    const listRef = useRef<List>(null);
     const selectItem = useSelectItemAction();
+
+    const { missing2FAs } = useMonitor();
+    const items = useSelector(selectOptimisticItemsFactory(selectSelectedItems(missing2FAs.data)));
     const itemRoute = getItemRoute(':shareId', ':itemId', { prefix: 'monitor/2fa(/trash)?' });
     const selectedItem = useRouteMatch<SelectedItem>(itemRoute)?.params;
-    const { missing2FAs } = useMonitor();
-
-    const items = useSelector(selectOptimisticItemsFactory(selectSelectedItems(missing2FAs.data)));
-    const listRef = useRef<List>(null);
 
     useEffect(() => {
         if (items.length && !selectedItem) {
@@ -59,5 +61,9 @@ export const Missing2FAs: FC = () => {
                 );
             }}
         />
-    ) : null;
+    ) : (
+        <div className="flex items-center justify-center color-weak text-sm text-center text-break h-full">
+            <strong>{c('Title').t`No missing 2FAs`}</strong>
+        </div>
+    );
 };
