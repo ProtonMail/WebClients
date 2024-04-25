@@ -90,7 +90,7 @@ export const Summary: FC = () => {
                             <h3 className="text-lg">{c('Title').t`Password Health`}</h3>
                             <div className="pass-monitor-grid gap-4">
                                 <ButtonCard
-                                    actions={insecure.count > 0 && <PillBadge label={insecure.count} />}
+                                    actions={<PillBadge label={insecure.count} />}
                                     disabled={insecure.count === 0}
                                     icon={duplicates.count > 0 ? 'exclamation-filled' : 'checkmark'}
                                     onClick={() => navigate(getLocalPath('monitor/weak'))}
@@ -99,7 +99,7 @@ export const Summary: FC = () => {
                                     type={insecure.count > 0 ? 'warning' : 'success'}
                                 />
                                 <ButtonCard
-                                    actions={duplicates.count > 0 && <PillBadge label={duplicates.count} />}
+                                    actions={<PillBadge label={duplicates.count} />}
                                     disabled={duplicates.count === 0}
                                     icon={duplicates.count > 0 ? 'exclamation-filled' : 'checkmark'}
                                     onClick={() => navigate(getLocalPath('monitor/duplicates'))}
@@ -108,14 +108,14 @@ export const Summary: FC = () => {
                                     type={duplicates.count > 0 ? 'warning' : 'success'}
                                 />
                                 <ButtonCard
-                                    actions={missing2FAs.count > 0 && <PillBadge label={missing2FAs.count} />}
+                                    actions={<PillBadge label={missing2FAs.count} />}
                                     disabled={missing2FAs.count === 0}
                                     onClick={() => navigate(`${getLocalPath('monitor/2fa')}`)}
                                     subtitle={c('Description').t`Increase your security`}
                                     title={c('Title').t`Missing two-factor authentication`}
                                 />
                                 <ButtonCard
-                                    actions={excluded.count > 0 && <PillBadge label={excluded.count} />}
+                                    actions={<PillBadge label={excluded.count} />}
                                     disabled={excluded.count === 0}
                                     onClick={() => navigate(getLocalPath('monitor/excluded'))}
                                     subtitle={c('Description').t`These items remain at risk`}
