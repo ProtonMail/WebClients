@@ -172,7 +172,14 @@ const MainContainer = () => {
 
     const getLogo = () => {
         if (organizationTheme.logoURL) {
-            return <CustomLogo url={organizationTheme.logoURL} app={app} organizationName={organizationTheme.name} />;
+            return (
+                <CustomLogo
+                    url={organizationTheme.logoURL}
+                    app={app}
+                    organizationName={organizationTheme.name}
+                    organizationNameDataTestId="sidebar:organization-name"
+                />
+            );
         }
 
         if (app === APPS.PROTONPASS && hasPassB2bPlan) {
