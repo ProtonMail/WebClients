@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import '@mlc-ai/web-llm';
 import type { InitProgressReport } from '@mlc-ai/web-llm';
 import { WebWorkerEngine } from '@mlc-ai/web-llm';
@@ -153,7 +154,67 @@ export class GpuLlmManager implements LlmManager {
         await this.mlcDownloadAndLoadToGpu(callback);
     }
 
+    private async downloadModel() {
+        interface FileDownload {
+            url: string;
+            progress: number; // Progress as a percentage
+        }
+
+        const files: FileDownload[] = [
+            { url: '/ml-models/v0_2_30/Mistral-7B-Instruct-v0.2-q4f16_1-sw4k_cs1k-webgpu.wasm', progress: 0 },
+            // Add more files as needed
+        ];
+
+        const updateProgress = (index: number, progress: number) => {
+            files[index].progress = progress;
+            console.log(`Downloading ${files[index].url}: ${progress.toFixed(2)}%`);
+        };
+
+        const downloadFile = async (file: FileDownload, index: number, cache: Cache) => {
+            const response = await fetch(file.url);
+            const reader = response.body?.getReader();
+            const contentLength = +response.headers.get('Content-Length')!;
+            let receivedLength = 0; // received that many bytes at the moment
+            let chunks = []; // array of received binary chunks (comprises the body)
+            while (true) {
+                const { done, value } = await reader!.read();
+                if (done) {
+                    console.log(`${file.url}: done`);
+                    break;
+                }
+                console.log(`${file.url}: got chunk of ${value.length} bytes`);
+                chunks.push(value);
+                receivedLength += value.length;
+                // Update progress
+                updateProgress(index, (receivedLength / contentLength) * 100);
+            }
+
+            console.log(`${file.url}: creating blob`);
+            const blob = new Blob(chunks);
+            // Use the cache API to store the response
+            console.log(`${file.url}: storing blob in cache`);
+            await cache.put(file.url, new Response(blob));
+            console.log(`${file.url}: stored!`);
+        };
+
+        const downloadFilesSequentially = async () => {
+            // Ensure we have a cache available named 'file-cache'
+            console.log('Opening cache...');
+            const cache = await caches.open('file-cache');
+            console.log('Cache open');
+            for (let i = 0; i < files.length; i++) {
+                console.log(`Starting download for file ${i + 1}/${files.length}: ${files[i].url}`);
+                await downloadFile(files[i], i, cache);
+            }
+        };
+
+        // Start downloading files
+        await downloadFilesSequentially();
+    }
+
     private async mlcDownloadAndLoadToGpu(callback?: (progress: number, done: boolean) => void) {
+        await this.downloadModel();
+
         if (!this.chat) {
             let worker = new Worker(new URL('./worker', import.meta.url), { type: 'module' });
             this.chat = new WebWorkerEngine(worker);
