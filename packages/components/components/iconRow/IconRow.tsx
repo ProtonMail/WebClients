@@ -1,6 +1,7 @@
 import { ReactElement, ReactNode } from 'react';
 
 import { Icon, IconName, Label } from '@proton/components';
+import clsx from '@proton/utils/clsx';
 
 import { Tooltip } from '../tooltip';
 
@@ -9,6 +10,7 @@ export interface IconRowProps {
     children: ReactNode;
     icon?: ReactElement | IconName;
     iconColor?: string;
+    containerClassName?: string;
     iconClassName?: string;
     labelClassName?: string;
     title?: string;
@@ -20,6 +22,7 @@ const IconRow = ({
     iconColor,
     className,
     title,
+    containerClassName,
     iconClassName,
     labelClassName = 'pb-2',
     id,
@@ -47,7 +50,7 @@ const IconRow = ({
     const iconResult = getIcon();
 
     return (
-        <div className="flex flex-nowrap items-start mb-4 form--icon-labels">
+        <div className={clsx('flex flex-nowrap items-start mb-4 form--icon-labels', containerClassName)}>
             {!!iconResult && (
                 <Label className={labelClassName} htmlFor={id}>
                     <Tooltip title={title}>{iconResult}</Tooltip>

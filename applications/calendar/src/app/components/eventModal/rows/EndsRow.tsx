@@ -5,6 +5,7 @@ import { DateInput, IntegerInput, Option, SelectTwo } from '@proton/components';
 import { END_TYPE, FREQUENCY_COUNT_MAX, MAXIMUM_DATE } from '@proton/shared/lib/calendar/constants';
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { DateTimeModel, EventModelErrors, FrequencyModel } from '@proton/shared/lib/interfaces/calendar';
+import clsx from '@proton/utils/clsx';
 
 const { NEVER, UNTIL, AFTER_N_TIMES } = END_TYPE;
 
@@ -19,8 +20,18 @@ interface Props {
     errors: EventModelErrors;
     isSubmitted: boolean;
     onChange: (value: FrequencyModel) => void;
+    displayStacked?: boolean;
 }
-const EndsRow = ({ frequencyModel, start, displayWeekNumbers, weekStartsOn, errors, isSubmitted, onChange }: Props) => {
+const EndsRow = ({
+    frequencyModel,
+    start,
+    displayWeekNumbers,
+    weekStartsOn,
+    errors,
+    isSubmitted,
+    onChange,
+    displayStacked = false,
+}: Props) => {
     const handleChangeEndType = (type: END_TYPE) => {
         onChange({ ...frequencyModel, ends: { ...frequencyModel.ends, type } });
     };
@@ -55,8 +66,12 @@ const EndsRow = ({ frequencyModel, start, displayWeekNumbers, weekStartsOn, erro
     ];
 
     return (
-        <div className="flex-1">
-            <label htmlFor="event-ends-radio" id="label-event-ends">{c('Label').t`Ends`}</label>
+        <div className={clsx('flex-1', displayStacked && 'mt-4')}>
+            <label
+                className={clsx(displayStacked && 'text-semibold')}
+                htmlFor="event-ends-radio"
+                id="label-event-ends"
+            >{c('Label').t`Ends`}</label>
 
             <div className="flex flex-nowrap flex-1 flex-column sm:flex-row">
                 <div className="sm:flex-1 mt-2">
