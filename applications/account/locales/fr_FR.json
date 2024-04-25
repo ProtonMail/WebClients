@@ -3137,10 +3137,7 @@
     },
     "Delete address prompt": {
       "Once deleted, this address can't be used again by anyone else.": [
-        "Une fois supprimée, personne ne peut réutiliser cette adresse."
-      ],
-      "The next active address on your list will be set as the default.": [
-        "La prochaine adresse active de votre liste sera définie comme adresse par défaut."
+        "Une fois cette adresse supprimée, personne ne peut plus l'utiliser."
       ],
       "You can only delete 1 address per year.": [
         "Vous pouvez supprimer uniquement 1 adresse par an."
@@ -3333,6 +3330,14 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Aidez-nous à nous améliorer."
+      ]
+    },
+    "Download link": {
+      ".deb for Debian / Ubuntu": [
+        ".deb pour Debian / Ubuntu"
+      ],
+      ".rpm for Fedora / Red Hat": [
+        ".rpm pour Fedora / Red Hat"
       ]
     },
     "drive_signup_2023: Info": {
@@ -5494,7 +5499,7 @@
         "Protection"
       ],
       "Save big with the best deals on ${ VPN_APP_NAME }": [
-        "Faites d'importantes économies avec les meilleures offres pour ${ VPN_APP_NAME }"
+        "Faites de belles économies avec les meilleures offres pour ${ VPN_APP_NAME }"
       ],
       "Select your deal": [
         "Choisissez votre offre"
@@ -5971,6 +5976,9 @@
       "${ BRAND_NAME } is privacy you can trust, ensured by strong encryption, open-source code, and Swiss privacy laws. We believe nobody should be able to exploit your data, period. Our technology and business are based upon this fundamentally stronger definition of privacy.": [
         "Vous pouvez faire confiance à ${ BRAND_NAME } pour protéger votre vie privée, grâce à un chiffrement fort, un code open source et la législation suisse en matière de protection des données. Nous pensons que personne ne devrait pouvoir exploiter vos données. Notre technologie et notre activité reposent sur cette définition fondamentalement plus forte de la protection de la vie privée"
       ],
+      "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
+        "${ BRAND_NAME } ne partage jamais vos informations avec des tiers. Les données proviennent de la propre analyse de ${ BRAND_NAME } et de Constella Intelligence."
+      ],
       "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "${ BRAND_NAME } a suspendu une importation parce que la connexion avec votre autre fournisseur de messagerie a été perdue. Nous vous invitons à vous reconnecter."
       ],
@@ -6275,7 +6283,7 @@
         "Montant à payer"
       ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
-        "Un alias d'adresse e-mail fonctionne comme une adresse e-mail. Il réduit toutefois le nombre de spams et permet de ne pas divulguer votre adresse e-mail et identité."
+        "Un alias d'adresse e-mail fonctionne comme une adresse e-mail. Il réduit toutefois le nombre de spams et permet de ne pas divulguer votre véritable adresse e-mail et identité."
       ],
       "An error occurred while communicating with the extension": [
         "Une erreur s'est produite lors de la communication avec l'extension."
@@ -6398,7 +6406,7 @@
         "Avant de demander un nouveau code de vérification, nous vous recommandons de vérifier votre dossier indésirables/spam et de vous assurer que l'adresse ${ strong } est correcte."
       ],
       "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following two MX records in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
-        "Avant de recevoir des messages sur les adresses de votre domaine personnalisé sur ${ MAIL_APP_NAME }, vous devez ajouter les deux enregistrements MX suivants dans votre console DNS qui se trouve sur la plateforme du fournisseur chez lequel vous avez acheté le domaine personnalisé). Le lien suivant vous fournira un exemple et quelques astuces utiles ${ kbLink }."
+        "Avant de recevoir des messages sur les adresses de votre domaine personnalisé sur ${ MAIL_APP_NAME }, vous devez ajouter les deux enregistrements MX suivants dans votre console DNS (qui se trouve sur la plateforme du fournisseur chez lequel vous avez acheté le domaine personnalisé). Le lien suivant vous fournira un exemple et quelques astuces utiles ${ kbLink }."
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Avant de pouvoir envoyer et recevoir des messages avec vos nouvelles adresses, vous devez leur créer des clés de chiffrement."
@@ -6443,7 +6451,7 @@
         "Vérifier le statut des importations et des transferts."
       ],
       "Choose an app to get started": [
-        "Choisissez une application afin de commencer"
+        "Choisissez une application pour commencer"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Cliquez sur Demander un nouveau code pour envoyer un nouveau code de vérification à ${ strong }. Si ce numéro de téléphone n'est pas correct, cliquez sur Modifier pour le corriger."
@@ -6524,6 +6532,9 @@
       ],
       "Custom": [
         "Personnalisé"
+      ],
+      "Custom branding": [
+        "Marque personnalisée"
       ],
       "Custom daily": [
         "Chaque jour (personnalisé)"
@@ -6636,7 +6647,7 @@
         "Chaque code ne peut être utilisé qu'une seule fois."
       ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
-        "Un domaine ne peut avoir qu'un seul enregistrement SPF (TXT). Si vous souhaitez conserver l'enregistrement SPF (TXT) existant, vous pouvez ajouter ${ spf } à votre enregistrement actuel (ajoutez-le après ${ spfValue })."
+        "Chaque domaine ne peut avoir qu'un seul enregistrement SPF (TXT). Si vous souhaitez conserver l'enregistrement SPF (TXT) existant, vous pouvez ajouter ${ spf } à votre enregistrement actuel (ajoutez-le après ${ spfValue })."
       ],
       "Edit email address": [
         "Modifier l'adresse e-mail"
@@ -6746,6 +6757,9 @@
       "Failed to fetch logs.": [
         "Les journaux n'ont pas pu être récupérés."
       ],
+      "Fast and focused. Email and calendar, right on your desktop.": [
+        "Rapide et efficace : vos e-mails et calendriers directement sur votre bureau !"
+      ],
       "Fill in user details": [
         "Renseignez les informations de l'utilisateur."
       ],
@@ -6804,7 +6818,7 @@
         "Masque les informations d'identification en chargeant le contenu distant à travers un proxy. Possibilité de conserver le contenu sous forme de pièces jointes."
       ],
       "High Priority": [
-        "Prioritée élevée"
+        "Priorité élevée"
       ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "Il s'agit de la clé publique de votre fournisseur d'identité pour signer les déclarations d'authentification. Téléchargez ou copiez le hash du certificat de votre fournisseur d'identité. Il vous suffit ensuite de coller ce dernier dans le champ texte correspondant."
@@ -6867,10 +6881,10 @@
         "Si vous voulez associer ce compte à un autre, ne le supprimez pas."
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
-        "Si vous rencontrez des difficultés, nous pouvons vous aider. ${ boldPhoneCall }, ${ boldZoomMeeting } avec l'un de nos spécialistes ou utilisez notre ${ boldLiveChat } pour le support par chat."
+        "Si vous rencontrez des difficultés, nous pouvons vous aider. ${ boldPhoneCall }, une ${ boldZoomMeeting } avec l'un de nos spécialistes ou utilisez notre ${ boldLiveChat } pour le support par chat."
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists.": [
-        "Si vous rencontrez des difficultés, nous pouvons vous aider. ${ boldPhoneCall }ou ${ boldZoomMeeting } avec l'un de nos spécialistes."
+        "Si vous rencontrez des difficultés, nous pouvons vous aider. ${ boldPhoneCall } ou une ${ boldZoomMeeting } avec l'un de nos spécialistes."
       ],
       "Image description": [
         "Description de l'image"
@@ -7106,7 +7120,7 @@
         "Nommez votre nouveau dossier et sélectionnez éventuellement un dossier dans lequel vous voulez en faire un sous-dossier. Si vous ne sélectionnez aucun dossier, votre nouveau dossier sera créé comme un dossier de premier niveau."
       ],
       "NetShield is an ad-blocking feature from ${ VPN_APP_NAME } that protects your device from ads, trackers, and malware.": [
-        "NetShield est une fonctionnalité de ${ VPN_APP_NAME } permettant de bloquer les publicités qui protège votre appareil contre les publicités, traqueurs et logiciels malveillants."
+        "NetShield est une fonctionnalité de ${ VPN_APP_NAME } qui bloque les publicités, les traqueurs et les logiciels malveillants."
       ],
       "New": [
         "Nouveau"
@@ -7245,7 +7259,7 @@
         "par mois"
       ],
       "per month, billed at ${ price }": [
-        "par mois, facturé à ${ price }"
+        "par mois, facturé ${ price }"
       ],
       "per month, billed every 12 months": [
         "par mois (facturation tous les 12 mois)"
@@ -7416,7 +7430,7 @@
         "Le lien a expiré"
       ],
       "Request a phone call": [
-        "Demander un appel téléphonique"
+        "Demandez un appel téléphonique"
       ],
       "Resend verification email": [
         "Envoyer à nouveau le message de vérification"
@@ -7580,6 +7594,9 @@
       ],
       "Support for 1 custom email domain": [
         "Prise en charge d'un nom de domaine personnalisé"
+      ],
+      "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
+        "La surveillance des adresses e-mail autres que ${ BRAND_NAME } et provenant de domaines personnalisés sera bientôt disponible."
       ],
       "support team": [
         "équipe support"
@@ -7810,7 +7827,7 @@
         "Pour continuer, sélectionnez une méthode de récupération de compte et nous pourrons vérifier la demande."
       ],
       "To proceed, we must verify the request.": [
-        "Pour continuer, nous devons d'abord vérifier la requête."
+        "Pour continuer, nous devons vérifier la demande."
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Pour sécuriser votre connexion internet, téléchargez et installez l'application ${ VPN_APP_NAME } pour votre appareil et connectez-vous à un serveur."
@@ -7911,6 +7928,9 @@
       "Upload your completed CSV file to create accounts": [
         "Importez votre fichier CSV pour créer des comptes."
       ],
+      "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
+        "Importez le logo de votre organisation pour renforcer l'identité de votre marque et créer une expérience personnalisée pour vos utilisateurs."
+      ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "Le fichier chargé n'est pas une clé privée valide. Nous vous invitons à vérifier et à réessayer."
       ],
@@ -7918,7 +7938,7 @@
         "Lien URL"
       ],
       "Use a password manager to generate and securely store your passwords, ensuring strong passwords and easier sign-ins.": [
-        "Utilisez un gestionnaire de mots de passe pour générer et stocker vos mots de passe en toute sécurité, ce qui vous garantit des mots de passe forts une et une connexion plus simple."
+        "Utilisez un gestionnaire de mots de passe pour générer et stocker vos mots de passe en toute sécurité, ce qui vous garantit des mots de passe forts et des connexions faciles."
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Utilisez le meilleur serveur en fonction de la charge actuelle et de la position : ${ formattedBestServerName }"
@@ -7997,6 +8017,9 @@
       ],
       "We just sent you a new link.": [
         "Nous venons de vous envoyer un nouveau lien."
+      ],
+      "We monitor the dark web for instances where your personal information (such as an email address or password used on a third-party site) is leaked or compromised.": [
+        "Nous surveillons le dark web pour détecter les cas où vos informations personnelles (comme une adresse e-mail ou un mot de passe utilisés sur un site tiers) sont divulguées ou compromises."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Nous devons authentifier votre moyen de paiement auprès de votre banque."
@@ -8910,6 +8933,9 @@
       ],
       "Awarded": [
         "Attribué"
+      ],
+      "Beta": [
+        "Version bêta"
       ],
       "Billing address": [
         "Adresse de facturation"
@@ -10996,7 +11022,7 @@
         "Accès en avant-première aux nouvelles fonctionnalités et applications"
       ],
       "Essential protection and secure collaboration for unlimited users.": [
-        "Protection indispensable et collaboration sécurisée pour un nombre illimité d'utilisateurs."
+        "L'essentiel pour la protection et la collaboration sécurisée avec un nombre illimité d'utilisateurs."
       ],
       "For next-level password management and identity protection.": [
         "Passez au niveau supérieur pour gérer vos mots de passe et protéger votre identité."
@@ -11423,10 +11449,10 @@
         "Une adresse externe ne peut pas être une adresse par défaut."
       ],
       "Dark Web Monitoring has been disabled": [
-        "La surveillance du Dark Web a été désactivée."
+        "La surveillance du dark web a été désactivée."
       ],
       "Dark Web Monitoring has been enabled": [
-        "La surveillance du Dark Web a été activée."
+        "La surveillance du dark web a été activée."
       ],
       "Invalid code": [
         "Le code n’est pas valide."
@@ -11835,7 +11861,7 @@
         "Évitez les images trop compressées."
       ],
       "Ensure your logo has padding space around it.": [
-        "Assurez-vous que votre logo soit entouré d'un espace de remplissage."
+        "Assurez-vous que votre logo soit entouré d'un espace de dégagement."
       ],
       "Opt for a PNG image that is a 128x128 pixels for clarity.": [
         "Optez pour une image PNG de 128 x 128 pixels pour plus de clarté."
@@ -11861,10 +11887,10 @@
         "Le fichier ne doit pas dépasser les 30 Ko."
       ],
       "Square image of at least 128 pixels": [
-        "Image carrée avec au moins 128 pixels"
+        "Image carrée d'au moins 128 pixels"
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
-        "Les utilisateurs verront votre logo au lieu de l'icône ${ BRAND_NAME } lorsqu'ils se connecteront à vos applications web."
+        "Les utilisateurs verront votre logo au lieu de l'icône ${ BRAND_NAME } lorsqu'ils se connecteront à nos applications web."
       ]
     },
     "OS compatibility": {
@@ -12073,10 +12099,10 @@
         "Entrez un nom d'affichage pour **${ username }**. C'est ce que vos utilisateurs verront lorsque vous modifierez leurs permissions ou partagerez des données avec eux."
       ],
       "Essential protection and secure collaboration for unlimited users": [
-        "Protection indispensable et collaboration sécurisée pour un nombre illimité d'utilisateurs"
+        "L'essentiel pour la protection et la collaboration sécurisée avec un nombre illimité d'utilisateurs"
       ],
       "Everything from ${ planTitle }, plus...": [
-        "Tout ce qui est inclus dans l${ planTitle } et plus encore..."
+        "Tout ce qui est inclus dans ${ planTitle } et plus encore..."
       ],
       "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
         "Accédez au gestionnaire de mot de passe premium de ${ BRAND_NAME } pour seulement **${ relativePrice } de plus par mois** !"
@@ -12244,10 +12270,10 @@
     },
     "password_reset: info": {
       "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **old password**.": [
-        "**Toutes vos informations existantes** (emails, événements, contacts, fichiers, ${ PASS_APP_NAME } saisi de données, etc.) **seront verrouillées** et ne peuvent seulement être déverrouillées avec votre **ancien mot de passe**."
+        "**Toutes vos informations existantes** (e-mails, événements, contacts, fichiers, entrées ${ PASS_APP_NAME }…) **seront verrouillées** et peuvent uniquement être déverrouillées avec votre **ancien mot de passe**."
       ],
       "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **recovery phrase** or your **old password**.": [
-        "**Toutes vos informations existantes** (emails, événements, contacts, fichiers, ${ PASS_APP_NAME } saisi de données, etc.) **seront verrouillées** et ne peuvent seulement être déverrouillées avec votre **phrase de récupération** ou votre **ancien mot de passe**."
+        "**Toutes vos informations existantes** (e-mails, événements, contacts, fichiers, entrées ${ PASS_APP_NAME }…) **seront verrouillées** et peuvent uniquement être déverrouillées avec votre **phrase de récupération** ou votre **ancien mot de passe**."
       ],
       "Any **two-factor authentication (2FA)** method on your account will be disabled.": [
         "Toutes vos méthodes **d'authentification à deux facteurs (A2F)** sur votre compte seront désactivées."
@@ -12255,10 +12281,10 @@
     },
     "passwordless": {
       "All administrators will get access to the key.": [
-        "Tous les administrateurs auront accés à la clé."
+        "Tous les administrateurs auront accès à la clé."
       ],
       "Are you sure you want to change your organization key?": [
-        "Êtes-vous sûr de vouloir modifier la clé de l'organisation ?"
+        "Voulez-vous vraiment modifier la clé de l'organisation ?"
       ],
       "Change organization key": [
         "Changer la clé de l’organisation"
@@ -12303,7 +12329,7 @@
         "La clé de l'organisation doit d'abord être activée."
       ],
       "This will send the latest organization key to the administrators that currently don't have access to it.": [
-        "Cela enverra la dernière clé de l’organisation aux administrateurs qui n'ont actuellement pas accès à celle-ci."
+        "Cela enverra la dernière clé de l'organisation aux administrateurs qui n'y ont pas encore accès."
       ],
       "To create non-private user accounts and access their accounts, you'll need to activate your organization key.": [
         "Pour créer des comptes utilisateur non privés et accéder à leurs comptes, vous devez activer votre clé de l’organisation."
@@ -12790,6 +12816,9 @@
       ],
       "The SCIM base URL and token will be deleted.": [
         "Le jeton et l'URL de base du SCIM seront supprimés."
+      ],
+      "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
+        "Pour réactiver la synchronisation avec votre fournisseur d'identité, vous devez finaliser à nouveau l'intégration SCIM."
       ]
     },
     "scim: Label": {
@@ -13790,7 +13819,7 @@
         "La Russie a pris pour cible ${ BRAND_NAME } dans le cadre de l'une des campagnes de censure les plus agressives de l'histoire récente et notre équipe a riposté."
       ],
       "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
-        "Les abonnement des utilisateurs sont la seule source de revenus pour ${ BRAND_NAME }. Votre soutien nous permet de rester indépendants, de poursuivre notre mission visant à faire de la protection de la vie privée la règle absolue lorsque vous vous connectez à internet et de continuer à soutenir les activistes et les organisations qui luttent pour la protection de la vie privée et la liberté."
+        "La seule source de revenus de ${ BRAND_NAME } provient des abonnements des utilisateurs. Votre soutien nous permet de rester indépendants, de poursuivre notre mission visant à faire de la protection de la vie privée la règle absolue en ligne et de continuer à soutenir les militants et les organisations qui luttent pour la protection de la vie privée et la liberté."
       ],
       "${ dayDiff } day left": [
         "${ dayDiff } jour restant",
@@ -13803,7 +13832,7 @@
         "${ planMaxSpace } d'espace de stockage total"
       ],
       "${ planName } doesn't just provide extra storage. It lets you manage your emails faster, customize your inbox and email addresses, and access the desktop app.": [
-        "${ planName } n'apporte pas uniquement plus d'espace de stockage. Il vous permet de gérer plus rapidement vos e-mails, de personnaliser votre boite de réception et adresses e-mail et d'accéder à l'application de bureau."
+        "${ planName } n'apporte pas uniquement plus d'espace de stockage. Il vous permet de gérer plus rapidement vos e-mails, de personnaliser votre boite de réception et vos adresses e-mail et d'accéder à l'application de bureau."
       ],
       "10 email addresses": [
         "10 adresses e-mail"
@@ -13851,10 +13880,10 @@
         "Personnalisation de l'heure d'envoi et de la période de mise en attente"
       ],
       "Have a question?": [
-        "Vous avez des questions ?"
+        "Vous avez une question ?"
       ],
       "Helping activists in Hong Kong": [
-        "Soutien aux activistes à Hong Kong"
+        "Aider les militants à Hong Kong"
       ],
       "I still want to cancel": [
         "Je souhaite toujours annuler"
@@ -13890,7 +13919,7 @@
         "Réabonnez-vous pour à nouveau avoir accès aux fonctionnalités ${ planName }."
       ],
       "Subscription canceled": [
-        "L'abonnement a été résilié."
+        "L'abonnement a été annulé."
       ],
       "Unblocking internet access in Iran": [
         "Déblocage de l'accès à internet en Iran"
@@ -13902,7 +13931,7 @@
         "Voir l'interview"
       ],
       "When you cancel, you will lose access to": [
-        "Si vous résiliez, vous n'aurez plus accès à"
+        "Si vous annulez, vous n'aurez plus accès à"
       ],
       "Yearly free storage bonuses": [
         "Bonus annuels gratuits pour votre espace de stockage"
@@ -13914,16 +13943,16 @@
         "Vous **ne pourrez plus sauvegarder vos photos** depuis vos appareils."
       ],
       "You **won't be able to send emails** with attachments": [
-        "Vous **ne pourrez plus envoyer de messages** avec pièces jointes."
+        "Vous **ne pourrez plus envoyer de messages** avec des pièces jointes."
       ],
       "You still have ${ expiryDate } on your ${ planName } plan. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling.": [
-        "Vous disposez encore de ${ expiryDate } pour votre abonnement ${ planName }. Nous ajouterons ces crédits pour le temps restant sur votre compte ${ BRAND_NAME }. Assurez-vous de ne pas dépasser les limites du plan gratuit avant d'annuler votre abonnement."
+        "Vous disposez encore de ${ expiryDate } pour votre abonnement ${ planName }. Nous ajouterons ces crédits pour le temps restant sur votre compte ${ BRAND_NAME }. Assurez-vous de ne pas dépasser les limites de l'abonnement gratuit avant d'annuler votre abonnement."
       ],
       "Your **calendar will be frozen**": [
         "Votre **calendrier sera bloqué**."
       ],
       "Your devices will **stop syncing**": [
-        "Vos appareils ne seront **plus synchronisés**."
+        "Vos appareils **ne seront plus synchronisés**."
       ],
       "Your inbox will **stop receiving new emails**": [
         "Votre boite de réception **ne recevra plus de nouveaux messages**."
@@ -13933,6 +13962,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Votre propre alias d'adresse e-mail court @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 Go d'espace de stockage"
+      ],
+      "and 15 more premium features": [
+        "et 15 fonctionnalités premium en plus"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Transfert automatique des messages ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertes de fuites de données ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Application de bureau"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Contribuez à préserver la sécurité et la confidentialité d'internet pour tous. Passez à un abonnement payant."
+      ],
+      "No ads or tracking": [
+        "Aucune publicité, aucun suivi"
+      ],
+      "Short @pm.me email address": [
+        "Adresses e-mail @pm.me courtes"
+      ],
+      "Support our mission": [
+        "Soutenez notre mission"
+      ],
+      "Upgrade": [
+        "Changer d'abonnement"
+      ],
+      "Upgrade your productivity": [
+        "Améliorez votre productivité"
+      ],
+      "We don't sell your data": [
+        "Nous ne vendons pas vos données."
+      ],
+      "Your privacy is our mission": [
+        "Le respect de votre vie privée est notre priorité."
       ]
     },
     "Subscription renewal state": {
@@ -14884,6 +14954,15 @@
       ],
       "Folders and labels": [
         "Dossiers et labels"
+      ],
+      "For Linux": [
+        "Pour Linux"
+      ],
+      "For macOS": [
+        "Pour macOS"
+      ],
+      "For Windows": [
+        "Pour Windows"
       ],
       "Forward and auto-reply": [
         "Transfert et réponse automatique"

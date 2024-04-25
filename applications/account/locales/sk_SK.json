@@ -870,7 +870,7 @@
         "Vyberte krajinu"
       ],
       "select file": [
-        "vyberte súbor"
+        "vybrať súbor"
       ],
       "Select file": [
         "Vyberte súbor"
@@ -1063,6 +1063,9 @@
       ],
       "Upload": [
         "Nahrať"
+      ],
+      "Upload logo": [
+        "Nahrať logo"
       ],
       "Upload picture": [
         "Nahrať obrázok"
@@ -1316,6 +1319,23 @@
       ],
       "New email": [
         "Nový email"
+      ]
+    },
+    "app-switcher": {
+      "Browse the web privately and block ads": [
+        "Prezerajte web v súkromí a blokujte reklamy"
+      ],
+      "Keep your schedule private": [
+        "Uchovajte si svoj program v súkromí"
+      ],
+      "Protect your passwords and identity": [
+        "Chráňte svoje heslá a identitu"
+      ],
+      "Safeguard your files and photos": [
+        "Chráňte svoje súbory a fotografie"
+      ],
+      "Secure your communications": [
+        "Zabezpečte si vašu komunikáciu"
       ]
     },
     "Apps dropdown": {
@@ -1893,6 +1913,17 @@
       ],
       "Week": [
         "Týždeň"
+      ]
+    },
+    "Call Scheduled Confirmation": {
+      "Request sent": [
+        "Požiadavka odoslaná"
+      ],
+      "We'll get back to you with more information as soon as we can.": [
+        "Ďalšie informácie vám poskytneme hneď, ako to bude možné."
+      ],
+      "You can safely close this tab.": [
+        "Túto kartu môžete bezpečne zavrieť."
       ]
     },
     "Checkout row": {
@@ -3131,8 +3162,8 @@
       ]
     },
     "Delete address prompt": {
-      "The next active address on your list will be set as the default.": [
-        "Ďalšia aktívna adresa v zozname sa nastaví ako predvolená."
+      "Once deleted, this address can't be used again by anyone else.": [
+        "Po vymazaní túto adresu už nikto iný nemôže použiť."
       ],
       "You can only delete 1 address per year.": [
         "Môžete vymazať iba 1 adresu za rok."
@@ -3325,6 +3356,14 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Pomôžte nám zlepšiť sa!"
+      ]
+    },
+    "Download link": {
+      ".deb for Debian / Ubuntu": [
+        ".deb pre Debian / Ubuntu"
+      ],
+      ".rpm for Fedora / Red Hat": [
+        ".rpm pre Fedora / Red Hat"
       ]
     },
     "drive_signup_2023: Info": {
@@ -5612,6 +5651,11 @@
         "Vyskúšajte najlepšie z ${ MAIL_APP_NAME } zadarmo"
       ]
     },
+    "Headline": {
+      "Contact us": [
+        "Kontaktujte nás"
+      ]
+    },
     "Hint": {
       "Add this record to your domain in the control panel of your domain name registrar": [
         "Pridajte tento záznam do svojej domény v ovládacom paneli registrátora názvu domény"
@@ -6006,6 +6050,9 @@
       "${ BRAND_NAME } is privacy you can trust, ensured by strong encryption, open-source code, and Swiss privacy laws. We believe nobody should be able to exploit your data, period. Our technology and business are based upon this fundamentally stronger definition of privacy.": [
         "${ BRAND_NAME } je súkromie, ktorému môžete dôverovať, zabezpečené silným šifrovaním, open-source kódom a švajčiarskymi zákonmi o súkromí. Veríme, že by nikto nemal byť schopný zneužiť vaše údaje, bodka. Naša technológia a obchodné aktivity sú založené na tejto zásadne silnejšej definícií súkromia."
       ],
+      "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
+        "${ BRAND_NAME } nikdy nezdieľa vaše informácie s tretími stranami. Údaje pochádzajú z vlastných analýz spoločnosti ${ BRAND_NAME } a spoločnosti Constella Intelligence."
+      ],
       "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "${ BRAND_NAME } pozastavil import, pretože stratil spojenie s vaším druhým poskytovateľom emailu. Pripojte sa znova."
       ],
@@ -6273,6 +6320,9 @@
         "Pridať server (${ availableAddedCount } dostupných)",
         "Pridať server (${ availableAddedCount } dostupných)"
       ],
+      "Add your name and logo to create a more personalized experience for your organization.": [
+        "Pridajte vlastný názov a logo, aby ste vytvorili osobnejší zážitok pre vašu organizáciu."
+      ],
       "Adding ${ addedServerCount } gateway server": [
         "Pridávanie ${ addedServerCount } servera brány",
         "Pridávanie ${ addedServerCount } serverov brány",
@@ -6353,6 +6403,9 @@
       ],
       "Amount due": [
         "Čiastka k zaplateniu"
+      ],
+      "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
+        "Emailový alias funguje ako emailová adresa, ale znižuje množstvo spamu a udržuje vašu skutočnú emailovú adresu a identitu skrytú."
       ],
       "An error occurred while communicating with the extension": [
         "Vyskytla sa chyba pri komunikácii s rozšírením"
@@ -6519,6 +6572,9 @@
       "Check the status of imports and forwarding.": [
         "Skontrolujte stav importov a preposielania."
       ],
+      "Choose an app to get started": [
+        "Vyberte si aplikáciu a začnite"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Kliknite na \"Požiadať o nový kód\" pre zaslanie nového overovacieho kódu na ${ strong }. Ak je toto telefónne číslo nesprávne, kliknite na tlačidlo \"Upraviť\" pre jeho opravu."
       ],
@@ -6602,6 +6658,9 @@
       ],
       "Custom": [
         "Vlastné"
+      ],
+      "Custom branding": [
+        "Vlastná značka"
       ],
       "Custom daily": [
         "Denné nastavenie"
@@ -6828,6 +6887,9 @@
       "Failed to fetch logs.": [
         "Načítanie záznamov zlyhalo."
       ],
+      "Fast and focused. Email and calendar, right on your desktop.": [
+        "Rýchle a cielené. Email a kalendár, priamo na vašej pracovnej ploche."
+      ],
       "Fill in user details": [
         "Vyplňte podrobnosti o používateľovi"
       ],
@@ -6866,6 +6928,9 @@
       ],
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "Získajte prístup vytvorením ${ BRAND_NAME } účtu a prijatím pozvánky."
+      ],
+      "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
+        "Nechajte sa upozorniť, ak dôjde k úniku vášho hesla alebo iných osobných údajov. ${ learnMoreLinkNoBreach }"
       ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "Dajte tokenu popisný názov, napríklad službu, s ktorou ho plánujete používať a vyberte jednu z vašich aktívnych adries vlastnej domény. Iba táto adresa bude môcť odosielať emaily s týmto tokenom."
@@ -6944,6 +7009,12 @@
       ],
       "If you wish to combine this account with another one, do NOT delete it.": [
         "Ak si želáte skombinovať tento účet s iným, nemažte ho."
+      ],
+      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
+        "Ak máte problémy, sme tu, aby sme vám pomohli. ${ boldPhoneCall } alebo začnite ${ boldZoomMeeting } s jedným z našich špecialistov podpory, alebo otvorte ${ boldLiveChat } pre chatovú podporu."
+      ],
+      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists.": [
+        "Ak máte problémy, sme tu, aby sme vám pomohli. ${ boldPhoneCall } alebo začnite ${ boldZoomMeeting } s jedným z našich špecialistov podpory."
       ],
       "Image description": [
         "Popis obrázku"
@@ -7046,6 +7117,9 @@
       ],
       "Just send them your personal referral link.": [
         "Stačí im poslať váš osobný odkaz na odporúčanie."
+      ],
+      "Keep your info more secure and private with these guides and tips.": [
+        "Udržujte svoje informácie v bezpečí a súkromí pomocou týchto návodov a tipov."
       ],
       "Key deletion is irreversible!": [
         "Vymazanie kľúča je nezvratné!"
@@ -7178,6 +7252,9 @@
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Pomenujte svoj nový priečinok a vyberte nadradený priečinok, do ktorého ho chcete vložiť. Pokiaľ nadradený priečinok nevyberiete, bude nový priečinok vytvorený v hlavnom priečinku."
+      ],
+      "NetShield is an ad-blocking feature from ${ VPN_APP_NAME } that protects your device from ads, trackers, and malware.": [
+        "NetShield je funkcia blokovania reklám od ${ VPN_APP_NAME }, ktorá chráni vaše zariadenie pred reklamami, sledovačmi a škodlivým softvérom."
       ],
       "New": [
         "Nový"
@@ -7662,6 +7739,9 @@
       "Support for 1 custom email domain": [
         "Podpora pre 1 vlastnú emailovú doménu"
       ],
+      "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
+        "Podpora monitorovania vlastných domén a emailových adries iných ako ${ BRAND_NAME } sa objaví čoskoro."
+      ],
       "support team": [
         "tím podpory"
       ],
@@ -7697,6 +7777,9 @@
       ],
       "The credentials from your Identity Provider will be deleted.": [
         "Poverenia od poskytovateľa identít budú vymazané."
+      ],
+      "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
+        "Dark web je skrytá časť internetu, kde sa dajú kúpiť a predať ukradnuté osobné údaje, ako napríklad identita."
       ],
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "Platnosť odkazu na overenie emailu vypršala. Ak chcete znova odoslať overovací odkaz, prihláste sa."
@@ -7995,11 +8078,17 @@
       "Upload your completed CSV file to create accounts": [
         "Nahrajte vyplnený súbor CSV a vytvorte účty"
       ],
+      "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
+        "Nahrajte logo vašej organizácie, aby ste posilnili identitu značky a vytvorili personalizované prostredie pre používateľov."
+      ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "Nahratý kľúč nie je platný súkromný kľúč. Skontrolujte a skúste to znovu."
       ],
       "URL link": [
         "URL odkaz"
+      ],
+      "Use a password manager to generate and securely store your passwords, ensuring strong passwords and easier sign-ins.": [
+        "Na generovanie a bezpečné ukladanie hesiel používajte správcu hesiel, ktorý zabezpečí silné heslá a jednoduchšie prihlasovanie."
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Použite najlepší server podľa aktuálneho zaťaženia a umiestnenia: ${ formattedBestServerName }"
@@ -8058,6 +8147,9 @@
       "Want servers in other countries?": [
         "Chcete servery v iných krajinách?"
       ],
+      "Want to learn more?": [
+        "Chcete sa dozvedieť viac?"
+      ],
       "Warning:": [
         "Upozornenie:"
       ],
@@ -8075,6 +8167,9 @@
       ],
       "We just sent you a new link.": [
         "Práve sme vám zaslali nový odkaz."
+      ],
+      "We monitor the dark web for instances where your personal information (such as an email address or password used on a third-party site) is leaked or compromised.": [
+        "Monitorujeme dark web, či nedošlo k úniku alebo ohrozeniu vašich osobných údajov (napríklad emailovej adresy alebo hesla používaného na stránkach tretích strán)."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Potrebujeme overiť spôsob platby vo vašej banke."
@@ -8582,6 +8677,27 @@
     "Key generation": {
       "Generate key": [
         "Vygenerovať kľúč"
+      ],
+      "Generating key failed. Please try again later.": [
+        "Generovanie kľúča zlyhalo. Skúste to neskôr, prosím."
+      ],
+      "If you're generating a new key because you believe your existing key has been compromised, please mark it as compromised after generating this key.": [
+        "Ak generujete nový kľúč, pretože sa domnievate, že váš existujúci kľúč bol kompromitovaný, označte ho po vygenerovaní tohto kľúča ako kompromitovaný."
+      ],
+      "Key successfully generated.": [
+        "Kľúč bol úspešne vygenerovaný"
+      ],
+      "Note: you already have a key with the same algorithm for this address. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
+        "Poznámka: pre túto adresu už máte kľúč s rovnakým algoritmom. Ak tento kľúč nebol kompromitovaný, môže byť zbytočné generovať nový kľúč a môže to spomaliť váš účet."
+      ],
+      "Note: you already have a key with the same algorithm for this user. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
+        "Poznámka: pre tohto používateľa už máte kľúč s rovnakým algoritmom. Ak tento kľúč nebol kompromitovaný, môže byť zbytočné generovať nový kľúč a môže to spomaliť váš účet."
+      ],
+      "This will generate a new key, which will be used to encrypt future contact details, email encryption keys, and other data.": [
+        "Týmto sa vygeneruje nový kľúč, ktorý sa bude používať na šifrovanie budúcich kontaktných údajov, šifrovacích kľúčov emailov a ďalších údajov."
+      ],
+      "This will generate a new key, which will be used to encrypt future emails, among other data.": [
+        "Týmto sa vygeneruje nový kľúč, ktorý sa bude používať na šifrovanie budúcich emailov a ďalších údajov."
       ]
     },
     "Key state badge": {
@@ -8993,6 +9109,9 @@
       ],
       "Awarded": [
         "Ocenený"
+      ],
+      "Beta": [
+        "Beta"
       ],
       "Billing address": [
         "Fakturačná adresa"
@@ -10007,6 +10126,9 @@
       "here": [
         "tu"
       ],
+      "How does monitoring work?": [
+        "Ako monitorovanie funguje?"
+      ],
       "How to pay with Bitcoin?": [
         "Ako platiť Bitcoinom?"
       ],
@@ -10145,6 +10267,9 @@
       ]
     },
     "Log preference": {
+      "Enable ${ reason }": [
+        "Povoliť ${ reason }"
+      ],
       "Enable advanced logs": [
         "Povoliť rozšírené protokoly"
       ],
@@ -11551,11 +11676,23 @@
       "${ Filter.Name } created": [
         "${ Filter.Name } bol vytvorený"
       ],
+      "${ reason } has been disabled": [
+        "${ reason } bol zakázaný"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } bol povolený"
+      ],
       "A disabled address cannot be default": [
         "Deaktivovaná adresa nemôže byť predvolená"
       ],
       "An external address cannot be default": [
         "Externá adresa nemôže byť predvolená"
+      ],
+      "Dark Web Monitoring has been disabled": [
+        "Monitorovanie Dark Webu bolo vypnuté"
+      ],
+      "Dark Web Monitoring has been enabled": [
+        "Monitorovanie Dark Webu bolo zapnuté"
       ],
       "Invalid code": [
         "Neplatný kód"
@@ -11973,6 +12110,43 @@
       ],
       "Your plan includes a maximum of ${ humanReadableAvailableSpace } more storage.": [
         "Váš plán zahŕňa maximálne ${ humanReadableAvailableSpace } ďalšieho úložného priestoru."
+      ]
+    },
+    "Organization logo upload": {
+      "Avoid overly compressed images.": [
+        "Vyhnite sa príliš komprimovaným obrázkom."
+      ],
+      "Ensure your logo has padding space around it.": [
+        "Uistite sa, že vaše logo má dostatok priestoru na okrajoch."
+      ],
+      "Opt for a PNG image that is a 128x128 pixels for clarity.": [
+        "Kvôli prehľadnosti si vyberte obrázok PNG s veľkosťou 128x128 pixelov."
+      ],
+      "Tips on choosing a good logo": [
+        "Tipy na výber dobrého loga"
+      ],
+      "Use a graphical icon or image rather than text.": [
+        "Radšej použite grafickú ikonu alebo obrázok namiesto textu."
+      ],
+      "Use a solid background color.": [
+        "Použite jednofarebné pozadie."
+      ]
+    },
+    "Organization logo upload modal": {
+      "Drop image file here to upload or": [
+        "Pretiahnutím sem, nahrajte súbor s obrázkom"
+      ],
+      "File in PNG or JPEG format": [
+        "Súbor vo formáte PNG alebo JPEG"
+      ],
+      "File not larger than 30 KB": [
+        "Súbor menší než 30 KB"
+      ],
+      "Square image of at least 128 pixels": [
+        "Štvorcový obrázok s veľkosťou najmenej 128 pixelov"
+      ],
+      "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
+        "Používatelia uvidia vaše logo namiesto ikony ${ BRAND_NAME }, keď sa prihlásia do našich webových aplikácií."
       ]
     },
     "OS compatibility": {
@@ -12462,6 +12636,9 @@
       "MM/YY": [
         "MM/RR"
       ],
+      "Processing payment": [
+        "Spracováva sa platba"
+      ],
       "Timeout exceeded": [
         "Prekročený časový limit"
       ]
@@ -12809,6 +12986,11 @@
         "Zrušiť odber?"
       ]
     },
+    "Remove organization logo": {
+      "Users will no longer see your custom logo or organization name.": [
+        "Používatelia už neuvidia vaše vlastné logo ani názov organizácie."
+      ]
+    },
     "Restore administrator panel": {
       "${ n } administrator in your organization need access to the organization key.": [
         "${ n } správca vo vašej organizácii potrebuje prístup ku kľúču organizácie.",
@@ -12838,6 +13020,102 @@
       ],
       "User": [
         "Používateľ"
+      ]
+    },
+    "scim: Action": {
+      "Configure SCIM": [
+        "Konfigurovať SCIM"
+      ],
+      "Disable SCIM": [
+        "Vypnúť SCIM"
+      ],
+      "Disable SCIM integration": [
+        "Vypnúť integráciu SCIM"
+      ],
+      "Generate new token": [
+        "Generovať nový token"
+      ],
+      "Generate token": [
+        "Vygenerovať token"
+      ]
+    },
+    "scim: Info": {
+      "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
+        "**Predpoklad:** Na umožnenie poskytovania SCIM musí byť nakonfigurované overovanie SAML."
+      ],
+      "Enter token into your identity provider": [
+        "Zadajte token do vášho poskytovateľa identity"
+      ],
+      "Enter URL and token into your identity provider": [
+        "Zadajte URL a token do vášho poskytovateľa identity"
+      ],
+      "For security reasons, the SCIM token will be hidden after saving your changes and you won’t be able to see it again.": [
+        "Z bezpečnostných dôvodov bude SCIM token po uložení zmien skrytý a už ho nebudete môcť vidieť."
+      ],
+      "For security reasons, the token is hidden": [
+        "Z bezpečnostných dôvodov je token skrytý"
+      ],
+      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ VPN_APP_NAME }.": [
+        "Prejdite k poskytovateľovi identity, skopírujte a vložte nižšie uvedené údaje a dokončite konfiguráciu SCIM pre ${ VPN_APP_NAME }."
+      ],
+      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ VPN_APP_NAME }.": [
+        "Prejdite k poskytovateľovi identity, skopírujte a vložte nižšie uvedený token a znovu povoľte SCIM pre ${ VPN_APP_NAME }."
+      ],
+      "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
+        "Ak ste SCIM token stratili alebo zabudli, môžete si vygenerovať nový, ale upozorňujeme, že bude potrebné aktualizovať nastavenia poskytovateľa identity."
+      ],
+      "Make sure you copy the above SCIM token now.": [
+        "Uistite sa, že ste skopírovali vyššie uvedený SCIM token."
+      ],
+      "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
+        "Po vypnutí SCIM pre vašu organizáciu sa **všetci používatelia SCIM, ktorých automaticky poskytuje poskytovateľ identity, zmenia na používateľov SSO** a budete ich môcť spravovať priamo v rámci nastavení ${ BRAND_NAME }."
+      ],
+      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ VPN_APP_NAME } organization.": [
+        "Zjednodušuje správu používateľov v rôznych službách. Pridávajte, upravujte a odstraňujte používateľov vo svojom poskytovateľovi identity a tieto zmeny sa automaticky aplikujú na vašu organizáciu ${ VPN_APP_NAME }."
+      ],
+      "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
+        "Automatické poskytovanie SCIM bude vypnuté, až kým nezadáte nový SCIM token do nastavení poskytovateľa identity."
+      ],
+      "The SCIM base URL and token will be deleted.": [
+        "Základná URL adresa SCIM a token budú vymazané."
+      ],
+      "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
+        "Ak chcete znovu povoliť synchronizáciu s poskytovateľom identity, musíte znovu dokončiť integráciu SCIM."
+      ]
+    },
+    "scim: Label": {
+      "SCIM base URL": [
+        "Základná URL adresa SCIM"
+      ],
+      "SCIM base URL (or tenant URL)": [
+        "Základná URL adresa SCIM (alebo URL adresa prevádzkovateľa)"
+      ],
+      "SCIM token": [
+        "SCIM token"
+      ]
+    },
+    "scim: Title": {
+      "Disable SCIM integration?": [
+        "Vypnúť integráciu SCIM?"
+      ],
+      "Generate new SCIM token?": [
+        "Vygenerovať nový SCIM token?"
+      ],
+      "SCIM automatic provisioning": [
+        "Automatické poskytovanie SCIM"
+      ]
+    },
+    "scim: Tooltip": {
+      "API key of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
+        "API kľúč konektora SCIM, ktorému váš IdP Provisioning Agent odovzdáva údaje SCIM"
+      ],
+      "URL of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
+        "URL konektora SCIM, ktorému váš IdP Provisioning Agent odovzdáva údaje SCIM"
+      ]
+    },
+    "Security Center - Info": {
+      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLinkBreach }": [
+        "Vaše údaje boli zistené najmenej v jednom prípade porušenia ochrany osobných údajov. Ak chcete zobraziť podrobnosti a podniknúť kroky, zapnite funkciu ${ DARK_WEB_MONITORING_NAME }. ${ learnMoreLinkBreach }"
       ]
     },
     "Select file": {
@@ -13866,6 +14144,158 @@
         "Pre"
       ]
     },
+    "Subscription reminder": {
+      "${ BRAND_NAME } was targeted by Russia in one of the most aggressive censorship campaigns in recent memory, and our team fought back.": [
+        "${ BRAND_NAME } sa stalo terčom jednej z najagresívnejších cenzúrnych kampaní v poslednom čase a náš tím sa bránil."
+      ],
+      "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
+        "Jediným zdrojom príjmov spoločnosti ${ BRAND_NAME } je predplatné používateľov. Vaša podpora nám umožňuje zostať nezávislými, rozvíjať naše poslanie, aby sa súkromie stalo štandardom na internete, a naďalej podporovať aktivistov a organizácie bojujúce za súkromie a slobodu."
+      ],
+      "${ dayDiff } day left": [
+        "Zostáva ${ dayDiff } deň",
+        "Zostávajú ${ dayDiff } dni",
+        "Zostáva ${ dayDiff } dní",
+        "Zostáva ${ dayDiff } dní"
+      ],
+      "${ MAIL_APP_NAME } desktop app": [
+        "Desktopová aplikácia ${ MAIL_APP_NAME } "
+      ],
+      "${ planMaxSpace } total storage": [
+        "${ planMaxSpace } celkové úložisko"
+      ],
+      "${ planName } doesn't just provide extra storage. It lets you manage your emails faster, customize your inbox and email addresses, and access the desktop app.": [
+        "${ planName } neposkytuje len dodatočné úložisko. Umožňuje vám rýchlejšie spravovať emaily, prispôsobiť si doručenú poštu a emailové adresy a získať prístup k aplikácii pre počítače."
+      ],
+      "10 email addresses": [
+        "10 emailových adries"
+      ],
+      "A direct contribution to our mission": [
+        "Priamy príspevok k nášmu poslaniu"
+      ],
+      "After ${ BRAND_NAME } got blocked in Iran during protests, our customer support team worked to get our VPN app directly into people's hands.": [
+        "Po tom, čo počas protestov v Iráne zablokovali ${ BRAND_NAME }, náš tím zákazníckej podpory pracoval na tom, aby sa naša aplikácia VPN dostala priamo do rúk ľudí."
+      ],
+      "After privacy and free speech were threatened in Hong Kong, we directly supported local civil rights organizations.": [
+        "Po ohrození súkromia a slobody prejavu v Hongkongu sme priamo podporili miestne organizácie na ochranu občianskych práv."
+      ],
+      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **1 GB** for Mail, and **1 GB** for Drive. You will also lose any storage bonuses earned previously.": [
+        "Zrušením predplatného ${ planName } sa vaše úložisko zníži z **${ planMaxSpace }** na **1 GB** pre Mail a **1 GB** pre Drive. Stratíte aj všetky predtým získané bonusy za úložisko."
+      ],
+      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **1 GB** for Mail, and **5 GB** for Drive. You will also lose any storage bonuses earned previously.": [
+        "Zrušením predplatného ${ planName } sa vaše úložisko zníži z **${ planMaxSpace }** na **1 GB** pre Mail a **5 GB** pre Drive. Stratíte aj všetky predtým získané bonusy za úložisko."
+      ],
+      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **500 MB** for Mail, and **1 GB** for Drive. You will also lose any storage bonuses earned previously.": [
+        "Zrušením predplatného ${ planName } sa vaše úložisko zníži z **${ planMaxSpace }** na **500 MB** pre Mail a **1 GB** pre Drive. Stratíte aj všetky predtým získané bonusy za úložisko."
+      ],
+      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **500 MB** for Mail, and **5 GB** for Drive. You will also lose any storage bonuses earned previously.": [
+        "Zrušením predplatného ${ planName } sa vaše úložisko zníži z **${ planMaxSpace }** na **500 MB** pre Mail a **5 GB** pre Drive. Stratíte aj všetky predtým získané bonusy za úložisko."
+      ],
+      "By downgrading your account, you will also lose storage space": [
+        "Znížením úrovne svojho používateľského účtu stratíte aj úložný priestor."
+      ],
+      "By downgrading your account, you will lose access to these important features": [
+        "Znížením úrovne svojho konta stratíte prístup k týmto dôležitým funkciám"
+      ],
+      "Calendar sharing": [
+        "Zdieľanie kalendára"
+      ],
+      "Cancel subscription": [
+        "Zrušiť predplatné"
+      ],
+      "Cancel subscription?": [
+        "Zrušiť predplatné?"
+      ],
+      "Close": [
+        "Zavrieť"
+      ],
+      "Custom schedule send and snooze times": [
+        "Vlastné časy odoslania a odloženia"
+      ],
+      "Have a question?": [
+        "Máte otázku"
+      ],
+      "Helping activists in Hong Kong": [
+        "Pomáhame aktivistom v Hongkongu"
+      ],
+      "I still want to cancel": [
+        "Stále chcem službu zrušiť"
+      ],
+      "If you exceed your free Drive storage quota:": [
+        "Ak ste prekročili kvótu voľného úložiska služby Drive:"
+      ],
+      "If you exceed your free Mail storage quota:": [
+        "Ak ste prekročili kvótu voľného úložiska služby Mail:"
+      ],
+      "Keep ${ planName }": [
+        "Ponechať ${ planName }"
+      ],
+      "Learn more about our impact": [
+        "Zistite viac o našom vplyve"
+      ],
+      "Let us remind you of everything ${ planName } can do": [
+        "Dovoľte nám pripomenúť, čo všetko ${ planName } dokáže"
+      ],
+      "Our fight against censorship in Russia": [
+        "Náš boj proti cenzúre v Rusku"
+      ],
+      "Priority support": [
+        "Prioritná podpora"
+      ],
+      "Read the story": [
+        "Prečítať príbeh"
+      ],
+      "Resubscribe": [
+        "Obnoviť predplatné"
+      ],
+      "Resubscribe to restore access to ${ planName } features.": [
+        "Opätovným predplatením obnovíte prístup k funkciám ${ planName }."
+      ],
+      "Subscription canceled": [
+        "Predplatné bolo zrušené"
+      ],
+      "Unblocking internet access in Iran": [
+        "Odblokovanie prístupu na internet v Iráne"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Neobmedzený počet priečinkov, štítkov a filtrov"
+      ],
+      "Watch the interview": [
+        "Pozrite si rozhovor"
+      ],
+      "When you cancel, you will lose access to": [
+        "Keď zrušíte službu, stratíte prístup k"
+      ],
+      "Yearly free storage bonuses": [
+        "Každoročné bonusy na kapacitu úložiska"
+      ],
+      "You **won't be able to add any new files**": [
+        "**Nebudete môcť pridávať žiadne nové súbory**"
+      ],
+      "You **won't be able to backup photos** from your devices": [
+        "**Nebudete môcť zálohovať fotografie** zo svojich zariadení"
+      ],
+      "You **won't be able to send emails** with attachments": [
+        "**Nebudete môcť odosielať emaily** s prílohami"
+      ],
+      "You still have ${ expiryDate } on your ${ planName } plan. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling.": [
+        "Stále máte ${ expiryDate } vo svojom ${ planName } predplatnom. Pripočítame vám kredity za zostávajúci čas k vášmu ${ BRAND_NAME } predplatnému. Pred zrušením sa uistite, že ste neprekročili limity bezplatného balíka."
+      ],
+      "Your **calendar will be frozen**": [
+        "Váš **kalendár bude zmrazený**"
+      ],
+      "Your devices will **stop syncing**": [
+        "Vaše zariadenia sa **prestanú synchronizovať**"
+      ],
+      "Your inbox will **stop receiving new emails**": [
+        "Vaša schránka **prestane prijímať nové emaily**"
+      ],
+      "Your own custom email domain": [
+        "Vaša vlastná emailová doména"
+      ],
+      "Your own short @pm.me email alias": [
+        "Váš vlastný skrátený emailový alias @pm.me"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Naozaj?"
@@ -14609,6 +15039,9 @@
       "Custom selection of users": [
         "Vlastný výber používateľov"
       ],
+      "Customization": [
+        "Prispôsobenia"
+      ],
       "Customize and confirm": [
         "Prispôsobiť a potvrdiť"
       ],
@@ -14831,6 +15264,15 @@
       "Folders and labels": [
         "Priečinky a štítky"
       ],
+      "For Linux": [
+        "Pre Linux"
+      ],
+      "For macOS": [
+        "Pre macOS"
+      ],
+      "For Windows": [
+        "Pre Windows"
+      ],
       "Forward and auto-reply": [
         "Preposlať a automaticky odpovedať"
       ],
@@ -14869,6 +15311,9 @@
       ],
       "How does it work?": [
         "Ako to funguje?"
+      ],
+      "How to choose a good logo": [
+        "Ako vybrať dobré logo"
       ],
       "How to refer a friend and get credits": [
         "Ako odporučiť priateľa a získať kredity"
@@ -15010,6 +15455,9 @@
       ],
       "Password reset settings": [
         "Nastavenia obnovenia hesla"
+      ],
+      "Passwords made easy": [
+        "Vytvárajte heslá s ľahkosťou"
       ],
       "Pay invoice": [
         "Zaplatiť faktúru"
@@ -15341,6 +15789,12 @@
       "WireGuard configuration": [
         "Konfigurácia WireGuard"
       ],
+      "You have no open alerts": [
+        "Nemáte žiadne aktívne upozornenia"
+      ],
+      "You have no resolved alerts": [
+        "Nemáte žiadne nevyriešené upozornenia"
+      ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Vaša bezplatná skúšobná verzia služby ${ planName } končí ${ textDate }"
       ],
@@ -15625,6 +16079,9 @@
       ],
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
         "Použije predvolené posuvníky prehliadača. Tieto sú zvyčajne väčšie a ľahšie sa používajú"
+      ],
+      "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
+        "Používatelia uvidia vaše logo namiesto ikony ${ BRAND_NAME }, keď sa prihlásia do našich webových aplikácií."
       ],
       "Usually an URL that contains the identity provider's name within": [
         "Zvyčajne ide o adresu URL, ktorá obsahuje názov poskytovateľa identity."

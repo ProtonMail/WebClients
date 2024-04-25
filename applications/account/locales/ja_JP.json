@@ -1805,6 +1805,11 @@
         "週"
       ]
     },
+    "Call Scheduled Confirmation": {
+      "You can safely close this tab.": [
+        "安心してこのタブを閉じてください。"
+      ]
+    },
     "Checkout row": {
       "${ users } user": [
         "${ users } 人のユーザー"
@@ -3785,6 +3790,9 @@
       ],
       "No emails found to import - the account does not have an inbox": [
         "インポートするメールがありません - アカウントに受信箱がありません"
+      ],
+      "No image selected": [
+        "画像が選択されていません"
       ],
       "No valid address found": [
         "有効なアドレスが見つかりません"
@@ -7453,6 +7461,9 @@
       "Want servers in other countries?": [
         "他の国のサーバーが必要ですか？"
       ],
+      "Want to learn more?": [
+        "もっと詳しく知りたいですか?"
+      ],
       "Warning:": [
         "警告:"
       ],
@@ -9388,6 +9399,9 @@
       ]
     },
     "Log preference": {
+      "Enable ${ reason }": [
+        "${ reason } を有効にする"
+      ],
       "Enable advanced logs": [
         "詳細ログを有効にする"
       ],
@@ -10661,6 +10675,12 @@
     "Notification": {
       "${ Filter.Name } created": [
         "${ Filter.Name } が作成されました"
+      ],
+      "${ reason } has been disabled": [
+        "${ reason } が無効になりました"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } が有効になりました"
       ],
       "A disabled address cannot be default": [
         "無効にされたアドレスは既定にすることができません"
@@ -12737,6 +12757,38 @@
     "Subscription price": {
       "For": [
         "価格:"
+      ]
+    },
+    "Subscription reminder": {
+      "${ dayDiff } day left": [
+        "残り ${ dayDiff } 日"
+      ],
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } デスクトップアプリ"
+      ],
+      "${ planMaxSpace } total storage": [
+        "合計 ${ planMaxSpace } のストレージ"
+      ],
+      "10 email addresses": [
+        "10個のメールアドレス"
+      ],
+      "Calendar sharing": [
+        "カレンダーの共有"
+      ],
+      "Cancel subscription": [
+        "サブスクリプションをキャンセル"
+      ],
+      "Cancel subscription?": [
+        "サブスクリプションをキャンセルしますか?"
+      ],
+      "Keep ${ planName }": [
+        "${ planName } を使い続ける"
+      ],
+      "Priority support": [
+        "優先サポート"
+      ],
+      "Unlimited folders, labels and filters": [
+        "制限なしのフォルダー、ラベル、フィルター"
       ]
     },
     "Subscription renewal state": {

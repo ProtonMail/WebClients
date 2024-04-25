@@ -869,6 +869,9 @@
       "Select country": [
         "Land wählen"
       ],
+      "select file": [
+        "Datei auswählen"
+      ],
       "Select file": [
         "Datei auswählen"
       ],
@@ -977,6 +980,9 @@
       "Start import": [
         "Importvorgang starten"
       ],
+      "Start live chat": [
+        "Live Chat starten"
+      ],
       "Stay": [
         "Nicht schließen"
       ],
@@ -1054,6 +1060,12 @@
       ],
       "Upgrade your plan": [
         "Dein Abonnement upgraden"
+      ],
+      "Upload": [
+        "Hochladen"
+      ],
+      "Upload logo": [
+        "Logo hochladen"
       ],
       "Upload picture": [
         "Bild hochladen"
@@ -1301,6 +1313,11 @@
       ],
       "New email": [
         "Neue E-Mail"
+      ]
+    },
+    "app-switcher": {
+      "Protect your passwords and identity": [
+        "Schütze deine Passwörter und Identität"
       ]
     },
     "Apps dropdown": {
@@ -1870,6 +1887,17 @@
       ],
       "Week": [
         "Woche"
+      ]
+    },
+    "Call Scheduled Confirmation": {
+      "Request sent": [
+        "Anfrage gesendet"
+      ],
+      "We'll get back to you with more information as soon as we can.": [
+        "Wir werden dir so bald wie möglich weitere Informationen zukommen lassen."
+      ],
+      "You can safely close this tab.": [
+        "Du kannst diesen Tab bedenkenlos schließen."
       ]
     },
     "Checkout row": {
@@ -3096,9 +3124,6 @@
       ]
     },
     "Delete address prompt": {
-      "The next active address on your list will be set as the default.": [
-        "Die nächste aktive Adresse auf deiner Liste wird als Standardadresse festgelegt."
-      ],
       "You can only delete 1 address per year.": [
         "Du kannst jährlich nur eine Adresse löschen."
       ]
@@ -3290,6 +3315,14 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Hilf uns, besser zu werden!"
+      ]
+    },
+    "Download link": {
+      ".deb for Debian / Ubuntu": [
+        ".deb für Debian / Ubuntu"
+      ],
+      ".rpm for Fedora / Red Hat": [
+        ".rpm für Fedora / Red Hat"
       ]
     },
     "drive_signup_2023: Info": {
@@ -3875,6 +3908,12 @@
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Aktive Sitzungen konnten nicht erhalten werden. Bitte ${ refresh } oder später erneut versuchen."
       ],
+      "Failed to process the logo": [
+        "Fehler beim Verarbeiten des Logos"
+      ],
+      "File too large. Your logo must be 30 KB or smaller.": [
+        "Datei zu groß. Die Logo-Datei muss 30 KB oder kleiner sein."
+      ],
       "Filter with this name already exists": [
         "Filter mit diesem Namen bereits vorhanden"
       ],
@@ -3892,6 +3931,9 @@
       ],
       "Impossible to rename the gateway": [
         "Gateway kann nicht umbenannt werden"
+      ],
+      "Incorrect file type. Upload a file in PNG or JPEG format.": [
+        "Ungültiges Dateiformat. Lade eine Datei im PNG- oder JPEG-Format hoch."
       ],
       "Incorrect login credentials. Please try again.": [
         "Ungültige Anmeldedaten. Bitte versuche es erneut."
@@ -4048,6 +4090,9 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Bitte upgrade auf ein Business-Abonnement mit mehr als einem Benutzer, um mehrere Benutzer zu verwalten."
       ],
+      "Please upload a square file": [
+        "Bitte lade eine quadratische Datei hoch."
+      ],
       "Please upload an xml file": [
         "Bitte lade eine XML-Datei hoch."
       ],
@@ -4120,6 +4165,12 @@
       ],
       "The email addresses do not match": [
         "Die E-Mail-Adressen stimmen nicht überein"
+      ],
+      "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
+        "Die Datei ist zu groß, die maximale Größe beträgt ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }"
+      ],
+      "The file is too small, the minimum size is ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }": [
+        "Die Datei ist zu klein, die minimale Größe beträgt ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }"
       ],
       "The folder name is invalid. Please choose a different name.": [
         "Der Name des Ordners ist ungültig. Bitte wähle einen anderen Namen."
@@ -5527,6 +5578,11 @@
         "Teste die besten Funktionen von ${ MAIL_APP_NAME } kostenlos"
       ]
     },
+    "Headline": {
+      "Contact us": [
+        "Kontaktiere uns"
+      ]
+    },
     "Hint": {
       "Add this record to your domain in the control panel of your domain name registrar": [
         "Füge diesen Eintrag in der Verwaltungskonsole deines Domain-Registrars hinzu."
@@ -6370,6 +6426,9 @@
       "Check the status of imports and forwarding.": [
         "Sieh dir den Status deiner Imports und Weiterleitungen an."
       ],
+      "Choose an app to get started": [
+        "Wähle eine App aus, um loszulegen"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klicke auf „Neuen Code anfordern“, um einen neuen Verifizierungscode an ${ strong } senden zu lassen. Wenn diese Telefonnummer nicht stimmt, klicke auf „Bearbeiten“, um sie zu korrigieren."
       ],
@@ -6449,6 +6508,9 @@
       ],
       "Custom": [
         "Benutzerdefiniert"
+      ],
+      "Custom branding": [
+        "Benutzerdefiniertes Branding"
       ],
       "Custom daily": [
         "Benutzerdefiniert täglich"
@@ -6670,6 +6732,9 @@
       ],
       "Failed to fetch logs.": [
         "Abrufen der Protokolle fehlgeschlagen."
+      ],
+      "Fast and focused. Email and calendar, right on your desktop.": [
+        "Schnell und konzentriert. E-Mail und Kalender, direkt auf deinem Desktop."
       ],
       "Fill in user details": [
         "Daten des Benutzers ausfüllen"
@@ -6939,6 +7004,9 @@
       ],
       "Link type": [
         "Linktyp"
+      ],
+      "Live chat": [
+        "Live Chat"
       ],
       "Loaded content is being protected by our proxy when tracker protection is activated.": [
         "Geladene Inhalte werden durch unseren Proxy geschützt, wenn der Tracker-Schutz aktiviert ist."
@@ -7241,6 +7309,9 @@
       "Plus or Visionary subscription required": [
         "Plus‐ oder Visionary‐Abonnement benötigt"
       ],
+      "Preview": [
+        "Vorschau"
+      ],
       "Preview failed to be loaded": [
         "Vorschau konnte nicht geladen werden"
       ],
@@ -7318,6 +7389,9 @@
       ],
       "Report link expired": [
         "Meldelink abgelaufen"
+      ],
+      "Request a phone call": [
+        "Einen Anruf anfordern"
       ],
       "Resend verification email": [
         "Verifizierungs-E-Mail erneut senden"
@@ -7809,6 +7883,9 @@
       "Upload your completed CSV file to create accounts": [
         "Lade deine ausgefüllte CSV-Datei hoch, um Konten zu erstellen"
       ],
+      "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
+        "Lade das Logo deiner Organisation hoch, um deine Markenidentität zu stärken und ein personalisiertes Erlebnis für deine Nutzer zu schaffen."
+      ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "Die hochgeladene Datei ist kein gültiger privater Schlüssel. Bitte überprüfe die Datei und versuche es erneut."
       ],
@@ -7871,6 +7948,9 @@
       ],
       "Want servers in other countries?": [
         "Du brauchst Server in anderen Ländern?"
+      ],
+      "Want to learn more?": [
+        "Möchtest du mehr erfahren?"
       ],
       "Warning:": [
         "Warnung:"
@@ -8241,6 +8321,9 @@
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Dein Support-Ticket wurde geschlossen. Vielen Dank, dass du den Support von ${ BRAND_NAME } kontaktiert hast."
+      ],
+      "Zoom meeting": [
+        "Zoom-Meeting"
       ]
     },
     "Info - folder colouring feature": {
@@ -8375,6 +8458,27 @@
     "Key generation": {
       "Generate key": [
         "Schlüssel generieren"
+      ],
+      "Generating key failed. Please try again later.": [
+        "Fehler beim Generieren des Schlüssels. Bitte versuche es später erneut."
+      ],
+      "If you're generating a new key because you believe your existing key has been compromised, please mark it as compromised after generating this key.": [
+        "Wenn du einen neuen Schlüssel generierst, weil du glaubst, dass dein bestehender Schlüssel kompromittiert wurde, markiere ihn bitte als kompromittiert, nachdem du diesen Schlüssel generierst haben."
+      ],
+      "Key successfully generated.": [
+        "Schlüssel erfolgreich generiert."
+      ],
+      "Note: you already have a key with the same algorithm for this address. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
+        "Hinweis: Du hast bereits einen Schlüssel mit demselben Algorithmus für diese Adresse. Sofern dieser Schlüssel nicht kompromittiert wurde, ist es möglicherweise unnötig, einen neuen Schlüssel zu generieren, was dein Konto verlangsamen kann."
+      ],
+      "Note: you already have a key with the same algorithm for this user. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
+        "Hinweis: Du hast bereits einen Schlüssel mit demselben Algorithmus für diesen Benutzer. Sofern dieser Schlüssel nicht kompromittiert wurde, ist es möglicherweise unnötig, einen neuen Schlüssel zu generieren, was dein Konto verlangsamen kann."
+      ],
+      "This will generate a new key, which will be used to encrypt future contact details, email encryption keys, and other data.": [
+        "Dadurch wird ein neuer Schlüssel generiert, der für die Verschlüsselung zukünftiger Kontaktinformationen, E-Mail-Verschlüsselungsschlüssel und anderer Daten verwendet wird."
+      ],
+      "This will generate a new key, which will be used to encrypt future emails, among other data.": [
+        "Dadurch wird ein neuer Schlüssel generiert, der unter anderem zur Verschlüsselung künftiger E-Mails verwendet wird."
       ]
     },
     "Key state badge": {
@@ -8778,6 +8882,9 @@
       ],
       "Awarded": [
         "Gutgeschrieben"
+      ],
+      "Beta": [
+        "Beta"
       ],
       "Billing address": [
         "Rechnungsadresse"
@@ -9792,6 +9899,9 @@
       "here": [
         "hier"
       ],
+      "How does monitoring work?": [
+        "Wie funktioniert die Überwachung?"
+      ],
       "How to pay with Bitcoin?": [
         "Wie bezahlt man mit Bitcoin?"
       ],
@@ -9926,6 +10036,9 @@
       ]
     },
     "Log preference": {
+      "Enable ${ reason }": [
+        "${ reason } aktivieren"
+      ],
       "Enable advanced logs": [
         "Erweiterte Protokolle aktivieren"
       ],
@@ -11272,11 +11385,23 @@
       "${ Filter.Name } created": [
         "${ Filter.Name } erstellt"
       ],
+      "${ reason } has been disabled": [
+        "${ reason } wurde deaktiviert."
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } wurde aktiviert."
+      ],
       "A disabled address cannot be default": [
         "Eine deaktivierte Adresse kann nicht als Standardadresse verwendet werden."
       ],
       "An external address cannot be default": [
         "Eine externe Adresse kann nicht als Standardadresse verwendet werden."
+      ],
+      "Dark Web Monitoring has been disabled": [
+        "Dark Web-Überwachung wurde deaktiviert"
+      ],
+      "Dark Web Monitoring has been enabled": [
+        "Dark Web-Überwachung wurde aktiviert"
       ],
       "Invalid code": [
         "Ungültiger Code"
@@ -11684,11 +11809,20 @@
       "Avoid overly compressed images.": [
         "Vermeide zu stark komprimierte Bilder."
       ],
+      "Ensure your logo has padding space around it.": [
+        "Vergewissere dich, dass um dein Logo herum Platz zum Auffüllen ist."
+      ],
       "Opt for a PNG image that is a 128x128 pixels for clarity.": [
         "Entscheide dich für ein PNG-Bild mit einer Größe von 128x128 Pixeln, damit es scharf genug dargestellt wird."
       ],
+      "Tips on choosing a good logo": [
+        "Tipps zur Auswahl eines guten Logos"
+      ],
       "Use a graphical icon or image rather than text.": [
         "Verwende ein grafisches Symbol oder Bild anstelle von Text."
+      ],
+      "Use a solid background color.": [
+        "Verwende eine einfarbige Hintergrundfarbe."
       ]
     },
     "Organization logo upload modal": {
@@ -12192,6 +12326,9 @@
       "MM/YY": [
         "MM/JJ"
       ],
+      "Processing payment": [
+        "Zahlungsabwicklung"
+      ],
       "Timeout exceeded": [
         "Zeitlimit überschritten"
       ]
@@ -12569,6 +12706,97 @@
         "Benutzer"
       ]
     },
+    "scim: Action": {
+      "Configure SCIM": [
+        "SCIM konfigurieren"
+      ],
+      "Disable SCIM": [
+        "SCIM deaktivieren"
+      ],
+      "Disable SCIM integration": [
+        "SCIM-Integration deaktivieren"
+      ],
+      "Generate new token": [
+        "Neuen Token generieren"
+      ],
+      "Generate token": [
+        "Token generieren"
+      ]
+    },
+    "scim: Info": {
+      "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
+        "**Voraussetzung:** Die SAML-Authentifizierung muss konfiguriert sein, um das SCIM-Provisioning zu ermöglichen."
+      ],
+      "Enter token into your identity provider": [
+        "Gib den Token bei deinem Identitätsanbieter ein"
+      ],
+      "Enter URL and token into your identity provider": [
+        "Gib die URL und den Token bei deinem Identitätsanbieter ein"
+      ],
+      "For security reasons, the SCIM token will be hidden after saving your changes and you won’t be able to see it again.": [
+        "Aus Sicherheitsgründen wird der SCIM-Token nach dem Speichern deiner Änderungen ausgeblendet und du kannst ihn nicht mehr sehen."
+      ],
+      "For security reasons, the token is hidden": [
+        "Der Token ist aus Sicherheitsgründen ausgeblendet."
+      ],
+      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ VPN_APP_NAME }.": [
+        "Gehe zu deinem Identitätsanbieter, kopiere die unten stehenden Daten und füge sie ein, um die Konfiguration von SCIM für ${ VPN_APP_NAME } abzuschließen."
+      ],
+      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ VPN_APP_NAME }.": [
+        "Gehe zu deinem Identitätsanbieter, kopiere den unten stehenden Token und füge ihn ein, um SCIM für ${ VPN_APP_NAME } wieder zu aktivieren."
+      ],
+      "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
+        "Wenn du den SCIM-Token verloren oder vergessen hast, kannst du einen neuen generieren. Beachte aber, dass die Einstellungen deines Identitätsanbieters aktualisiert werden müssen."
+      ],
+      "Make sure you copy the above SCIM token now.": [
+        "Stelle sicher, dass du den obigen SCIM-Token jetzt kopierst."
+      ],
+      "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
+        "Sobald SCIM für deine Organisation deaktiviert ist, werden **alle SCIM-Benutzer, die automatisch von deinem Identitätsanbieter bereitgestellt werden, in SSO-Benutzer** umgewandelt und du kannst sie direkt in den Einstellungen von ${ BRAND_NAME } verwalten."
+      ],
+      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ VPN_APP_NAME } organization.": [
+        "Vereinfacht die Benutzerverwaltung über verschiedene Dienste hinweg. Füge Benutzer in deinem Identitätsanbieter hinzu, bearbeite und entferne sie, und diese Änderungen werden automatisch auf deine ${ VPN_APP_NAME }-Organisation übertragen."
+      ],
+      "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
+        "Das automatische SCIM-Provisioning wird deaktiviert, bis du den neuen SCIM-Token in die Einstellungen deines Identitätsanbieters eingibst."
+      ],
+      "The SCIM base URL and token will be deleted.": [
+        "SCIM-Basis-URL und -Token werden gelöscht."
+      ],
+      "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
+        "Um die Synchronisierung mit deinem Identitätsanbieter wieder zu aktivieren, musst du die SCIM-Integration erneut abschließen."
+      ]
+    },
+    "scim: Label": {
+      "SCIM base URL": [
+        "SCIM-Basis-URL"
+      ],
+      "SCIM base URL (or tenant URL)": [
+        "SCIM-Basis-URL (oder Tenant-URL)"
+      ],
+      "SCIM token": [
+        "SCIM-Token"
+      ]
+    },
+    "scim: Title": {
+      "Disable SCIM integration?": [
+        "SCIM-Integration deaktivieren?"
+      ],
+      "Generate new SCIM token?": [
+        "Neuen SCIM-Token generieren?"
+      ],
+      "SCIM automatic provisioning": [
+        "Automatisches SCIM-Provisioning"
+      ]
+    },
+    "scim: Tooltip": {
+      "API key of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
+        "API-Schlüssel des SCIM-Connectors, an den dein IdP Provisioning Agent SCIM-Daten weiterleitet"
+      ],
+      "URL of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
+        "URL des SCIM-Connectors, an den dein IdP Provisioning Agent SCIM-Daten weiterleitet"
+      ]
+    },
     "Select file": {
       "Upload CSV file": [
         "CSV-Datei hochladen"
@@ -12588,6 +12816,9 @@
     "Select invoice document": {
       "Currency conversion": [
         "Währungsumrechnung"
+      ],
+      "Invoice": [
+        "Rechnung"
       ]
     },
     "Select search results": {
@@ -13521,6 +13752,149 @@
         "Für"
       ]
     },
+    "Subscription reminder": {
+      "${ BRAND_NAME } was targeted by Russia in one of the most aggressive censorship campaigns in recent memory, and our team fought back.": [
+        "${ BRAND_NAME } wurde von Russland in einer der aggressivsten Zensurkampagnen der letzten Zeit ins Visier genommen, und unser Team hat sich gewehrt."
+      ],
+      "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
+        "Die einzige Einnahmequelle von ${ BRAND_NAME } sind Nutzerabonnements. Deine Unterstützung ermöglicht es uns, unabhängig zu bleiben, unsere Mission voranzutreiben, den Datenschutz im Internet zum Standard zu machen, und weiterhin Aktivisten und Organisationen zu unterstützen, die für Datenschutz und Freiheit kämpfen."
+      ],
+      "${ dayDiff } day left": [
+        "${ dayDiff } verbleibender Tag",
+        "${ dayDiff } verbleibende Tage"
+      ],
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME }-Desktop App"
+      ],
+      "${ planMaxSpace } total storage": [
+        "${ planMaxSpace } Speicherplatz insgesamt"
+      ],
+      "${ planName } doesn't just provide extra storage. It lets you manage your emails faster, customize your inbox and email addresses, and access the desktop app.": [
+        "${ planName } bietet nicht nur zusätzlichen Speicherplatz. Damit kannst du deine E-Mails schneller verwalten, deinen Posteingang und deine E-Mail-Adressen anpassen und auf die Desktop-App zugreifen."
+      ],
+      "10 email addresses": [
+        "10 E-Mail-Adressen"
+      ],
+      "A direct contribution to our mission": [
+        "Ein direkter Beitrag zu unserer Mission"
+      ],
+      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **1 GB** for Mail, and **1 GB** for Drive. You will also lose any storage bonuses earned previously.": [
+        "Wenn du dein Abonnement für ${ planName } kündigst, verringert sich dein Speicherplatz von **${ planMaxSpace }** auf **1 GB** für Mail und **1 GB** für Drive. Außerdem verlierst du alle zuvor erhaltenen Speicherplatzboni."
+      ],
+      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **1 GB** for Mail, and **5 GB** for Drive. You will also lose any storage bonuses earned previously.": [
+        "Wenn du dein Abonnement für ${ planName } kündigst, verringert sich dein Speicherplatz von **${ planMaxSpace }** auf **1 GB** für Mail und **5 GB** für Drive. Außerdem verlierst du alle zuvor erhaltenen Speicherplatzboni."
+      ],
+      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **500 MB** for Mail, and **1 GB** for Drive. You will also lose any storage bonuses earned previously.": [
+        "Wenn du dein Abonnement für ${ planName } kündigst, verringert sich dein Speicherplatz von **${ planMaxSpace }** auf **500 MB** für Mail und **1 GB** für Drive. Außerdem verlierst du alle zuvor erhaltenen Speicherplatzboni."
+      ],
+      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **500 MB** for Mail, and **5 GB** for Drive. You will also lose any storage bonuses earned previously.": [
+        "Wenn du dein Abonnement für ${ planName } kündigst, verringert sich dein Speicherplatz von **${ planMaxSpace }** auf **500 MB** für Mail und **5 GB** für Drive. Außerdem verlierst du alle zuvor erhaltenen Speicherplatzboni."
+      ],
+      "By downgrading your account, you will also lose storage space": [
+        "Wenn du dein Konto herabstufst, verlierst du auch Speicherplatz."
+      ],
+      "Calendar sharing": [
+        "Kalenderfreigabe"
+      ],
+      "Cancel subscription": [
+        "Abonnement kündigen"
+      ],
+      "Cancel subscription?": [
+        "Abonnement kündigen?"
+      ],
+      "Close": [
+        "Schließen"
+      ],
+      "Custom schedule send and snooze times": [
+        "Benutzerdefinierter Plan für Sende- und Zurückstellungszeiten"
+      ],
+      "Have a question?": [
+        "Du hast eine Frage?"
+      ],
+      "I still want to cancel": [
+        "Ich möchte trotzdem kündigen"
+      ],
+      "If you exceed your free Drive storage quota:": [
+        "Wenn du dein Kontingent an freiem Drive-Speicher überschreitest:"
+      ],
+      "If you exceed your free Mail storage quota:": [
+        "Wenn du dein Kontingent an freiem Mail-Speicher überschreitest:"
+      ],
+      "Keep ${ planName }": [
+        "${ planName } behalten"
+      ],
+      "Our fight against censorship in Russia": [
+        "Unser Kampf gegen die Zensur in Russland"
+      ],
+      "Priority support": [
+        "Priorisierter Support"
+      ],
+      "Read the story": [
+        "Artikel lesen"
+      ],
+      "Resubscribe": [
+        "Erneut abonnieren"
+      ],
+      "Resubscribe to restore access to ${ planName } features.": [
+        "Neu anmelden, um den Zugang zu den Funktionen von ${ planName } wiederherzustellen."
+      ],
+      "Subscription canceled": [
+        "Abonnement gekündigt"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Unbegrenzte Anzahl von Ordnern, Kategorien und Filtern"
+      ],
+      "When you cancel, you will lose access to": [
+        "Wenn du kündigst, verlierst du den Zugang zu"
+      ],
+      "You **won't be able to add any new files**": [
+        "Du **kannst keine neuen Dateien hinzufügen**."
+      ],
+      "You **won't be able to backup photos** from your devices": [
+        "Du **kannst keine Fotos** von deinen Geräten sichern"
+      ],
+      "You **won't be able to send emails** with attachments": [
+        "Du **kannst keine E-Mails** mit Anhängen versenden"
+      ],
+      "You still have ${ expiryDate } on your ${ planName } plan. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling.": [
+        "Du hast noch ${ expiryDate } in deinem ${ planName }-Abonnement verbleibend. Wir fügen das Guthaben für die verbleibende Zeit deinem ${ BRAND_NAME }-Konto hinzu. Vergewissere dich, dass du die Grenzen des kostenlosen Abonnements nicht überschreitest, bevor du kündigst."
+      ],
+      "Your **calendar will be frozen**": [
+        "Dein **Kalender wird blockiert**"
+      ],
+      "Your devices will **stop syncing**": [
+        "Deine Geräte werden **nicht mehr synchronisiert**."
+      ],
+      "Your inbox will **stop receiving new emails**": [
+        "Dein Posteingang wird **keine neuen E-Mails mehr erhalten**"
+      ],
+      "Your own custom email domain": [
+        "Deine eigene E-Mail-Domain"
+      ],
+      "Your own short @pm.me email alias": [
+        "Dein eigener kurzer @pm.me-E-Mail-Alias"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB Speicherplatz"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatische E-Mail-Weiterleitung ${ strongText }"
+      ],
+      "Desktop app": [
+        "Desktop-App"
+      ],
+      "Short @pm.me email address": [
+        "Kurze @pm.me-E-Mail-Adresse"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "We don't sell your data": [
+        "Wir verkaufen deine Daten nicht"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Bist du sicher?"
@@ -14247,6 +14621,9 @@
       "Custom selection of users": [
         "Individuelle Auswahl von Nutzern"
       ],
+      "Customization": [
+        "Anpassung"
+      ],
       "Customize and confirm": [
         "Anpassen und bestätigen"
       ],
@@ -14465,6 +14842,15 @@
       "Folders and labels": [
         "Ordner und Kategorien"
       ],
+      "For Linux": [
+        "Für Linux"
+      ],
+      "For macOS": [
+        "Für macOS"
+      ],
+      "For Windows": [
+        "Für Windows"
+      ],
       "Forward and auto-reply": [
         "Weiterleiten und automatisch antworten"
       ],
@@ -14503,6 +14889,9 @@
       ],
       "How does it work?": [
         "Wie funktioniert das?"
+      ],
+      "How to choose a good logo": [
+        "Wie man ein gutes Logo auswählt"
       ],
       "How to refer a friend and get credits": [
         "Wie du einen Freund wirbst und Guthaben erhältst"
@@ -14970,6 +15359,9 @@
       ],
       "WireGuard configuration": [
         "WireGuard-Konfiguration"
+      ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Deine kostenlose Testversion von ${ planName } endet am ${ textDate }."
       ],
       "Your calendar link": [
         "Dein Kalender-Link"
