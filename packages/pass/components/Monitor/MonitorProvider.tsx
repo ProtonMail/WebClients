@@ -39,10 +39,7 @@ export const MonitorProvider: FC<PropsWithChildren> = ({ children }) => {
             breaches: { ...breaches, count: breaches.data?.EmailsCount ?? 0 },
             insecure,
             missing2FAs,
-            duplicates: {
-                data: duplicates,
-                count: duplicates.reduce<number>((total, { length }) => total + length, 0),
-            },
+            duplicates: { data: duplicates, count: duplicates.length },
             excluded: { data: excluded, count: excluded.length },
         }),
         [enabled, breaches, insecure, duplicates, missing2FAs, excluded]
