@@ -568,6 +568,9 @@
       "Remove gift code": [
         "기프트 코드 삭제"
       ],
+      "Remove me": [
+        "나 제거하기"
+      ],
       "Rename": [
         "이름 바꾸기"
       ],
@@ -4034,6 +4037,9 @@
       "Emails are automatically signed": [
         "이메일들이 자동적으로 서명됨"
       ],
+      "Empty folder": [
+        "비어 있는 폴더"
+      ],
       "Enabling drive search": [
         "드라이브 검색을 활성화하는 중"
       ],
@@ -4394,6 +4400,9 @@
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
         "${ MAX_CUSTOM_PASSWORD_LENGTH }글자까지만 허용됩니다"
       ],
+      "Only the owner of the share will be able to invite you again.": [
+        "이 공유의 소유자만이 회원님을 다시 초대할 수 있습니다."
+      ],
       "Only the people with the link and the password can access this file.": [
         "링크와 비밀번호를 가지고 있는 사람만 이 파일에 접근할 수 있습니다."
       ],
@@ -4417,6 +4426,9 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "결제는 TLS 암호화와 스위스의 보안 법에 의해 보호되고 있습니다."
+      ],
+      "Pending": [
+        "대기 중"
       ],
       "Permanently delete all files in your locked drive": [
         "잠긴 드라이브의 모든 파일을 영구적으로 삭제합니다"
@@ -4706,6 +4718,9 @@
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "아직 이동이 필요한 파일이 있습니다. 이동 관리자를 닫으면 모든 작업이 종료됩니다."
       ],
+      "There is nothing to see here": [
+        "이곳엔 아무것도 없습니다."
+      ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "이 주소는 사용할 수 없습니다. 이 주소로 보내려면 소유자가 먼저 주소를 사용 가능으로 설정해야 합니다."
       ],
@@ -4964,6 +4979,9 @@
       "Yesterday": [
         "어제"
       ],
+      "you": [
+        "나"
+      ],
       "You already have a free account": [
         "이미 무료 계정을 가지고 있습니다."
       ],
@@ -5029,6 +5047,9 @@
       ],
       "You will lose all unsaved changes.": [
         "저장되지 않은 사항을 잃게 됩니다."
+      ],
+      "You will not be able to join again after.": [
+        "추후 다시 참가가 불가능 합니다."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "결제를 인증하기 위해 곧 PayPal로 이동됩니다."
@@ -5609,6 +5630,9 @@
       "Region": [
         "시/도"
       ],
+      "Remove access": [
+        "접근 제거"
+      ],
       "Replace existing file": [
         "기존 파일 대체"
       ],
@@ -5665,6 +5689,9 @@
       ],
       "Stolen data": [
         "데이터 유실됨"
+      ],
+      "Stop sharing": [
+        "공유 중지"
       ],
       "Street address": [
         "도로명 주소"
@@ -5894,6 +5921,11 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "구독이 종료되었습니다. 데이터 접근 권한 상실 방지를 위해 ${ cta }."
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "${ reason } 활성화"
       ]
     },
     "Mail import summary": {
@@ -7031,6 +7063,18 @@
       "${ numberOfItems } link to your item was deleted": [
         "항목 ${ numberOfItems }개의 링크가 삭제되었습니다"
       ],
+      "${ reason } has been disabled": [
+        "${ reason }이(가) 비활성화 되었습니다."
+      ],
+      "${ reason } has been enabled": [
+        "${ reason }이(가) 활성화 되었습니다."
+      ],
+      "Access for the member removed": [
+        "이 구성원의 접근이 삭제되었습니다."
+      ],
+      "Access updated and shared": [
+        "접근을 업데이트 및 공유했습니다."
+      ],
       "All items will soon be permanently deleted from trash": [
         "휴지통의 모든 항목이 영구적으로 삭제됩니다"
       ],
@@ -7070,6 +7114,9 @@
       "Failed to move, please try again": [
         "이동을 실패했습니다, 나중에 다시 시도해주세요."
       ],
+      "Failed to remove the file": [
+        "이 파일을 지우는데 실패했습니다."
+      ],
       "Failed to upload files: ${ err }": [
         "파일 업로드 실패: ${ err }"
       ],
@@ -7081,6 +7128,12 @@
       ],
       "File or folder is missing a name": [
         "파일 또는 폴더에 이름이 없습니다"
+      ],
+      "File removed": [
+        "파일 삭제됨"
+      ],
+      "Invitation removed from the share": [
+        "이 공유에서 초대 삭제됨"
       ],
       "Link copied to clipboard": [
         "링크가 클립보드에 복사됨"
@@ -7106,6 +7159,9 @@
       "Share invitation ID was not found. Please check the link": [
         "초대장 공유 ID를 찾을 수 없음. 링크를 확인하십시오."
       ],
+      "Stopping to share this item has failed": [
+        "이 항목의 공유 정지가 실패했습니다."
+      ],
       "Subfolder failed to be loaded": [
         "하위 폴더를 불러오는 중 문제 발생"
       ],
@@ -7123,6 +7179,9 @@
       ],
       "Trash failed to be emptied": [
         "휴지통 비우기 실패"
+      ],
+      "You stopped to share this item": [
+        "이 항목에 대한 공유를 중단했습니다."
       ],
       "Your old files will be deleted in 72 hours": [
         "사용자의 오래된 파일이 72시간 내에 삭제됩니다"
@@ -8451,6 +8510,9 @@
       "Are you sure you want to close the preview?": [
         "정말로 미리보기를 닫으시겠습니까?"
       ],
+      "Are you sure you want to leave this share?": [
+        "정말 이 공유를 나가시겠습니까?"
+      ],
       "Billing cycle": [
         "결제 주기"
       ],
@@ -8969,6 +9031,9 @@
       ],
       "You have no folders yet": [
         "아직 폴더가 없습니다"
+      ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "사용자의 ${ planName } 무료 체험이 ${ textDate }에 종료됩니다."
       ],
       "Your 3 GB bonus": [
         "나의 3 GB 보너스"

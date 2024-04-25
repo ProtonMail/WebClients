@@ -6011,6 +6011,11 @@
         "Ваша підписка закінчилася. ${ cta } і щоб уникнути втрати даних."
       ]
     },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Увімкнути ${ reason }"
+      ]
+    },
     "Mail import summary": {
       "Import all messages from ${ itemsToImportCount } folder and label them as": [
         "Імпортувати всі повідомлення з ${ itemsToImportCount } теки та позначити їх як",
@@ -7175,6 +7180,12 @@
         "${ numberOfItems } посилання на ваші елементи було видалено",
         "${ numberOfItems } посилань на ваші елементи було видалено",
         "${ numberOfItems } посилання на ваші елементи було видалено"
+      ],
+      "${ reason } has been disabled": [
+        "${ reason } вимкнено"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } увімкнено"
       ],
       "All items will soon be permanently deleted from trash": [
         "Усі елементи невдовзі будуть остаточно видалені зі смітника"

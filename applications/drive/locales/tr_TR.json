@@ -571,6 +571,9 @@
       "Remove gift code": [
         "Hediye kodunu kaldır"
       ],
+      "Remove me": [
+        "Beni çıkar"
+      ],
       "Rename": [
         "Yeniden adlandır"
       ],
@@ -4105,6 +4108,9 @@
       "Emails are automatically signed": [
         "E-postalar otomatik olarak imzalanıyor"
       ],
+      "Empty folder": [
+        "Boş klasör"
+      ],
       "Enabling drive search": [
         "Drive arama özelliği açılıyor"
       ],
@@ -4469,6 +4475,9 @@
         "En fazla ${ MAX_CUSTOM_PASSWORD_LENGTH } karakter yazılabilir",
         "En fazla ${ MAX_CUSTOM_PASSWORD_LENGTH } karakter yazılabilir"
       ],
+      "Only the owner of the share will be able to invite you again.": [
+        "Yalnızca paylaşımın sahibi sizi yeniden davet edebilir."
+      ],
       "Only the people with the link and the password can access this file.": [
         "Bu dosyaya yalnızca bağlantıya ve parolaya sahip olan kişiler erişebilir."
       ],
@@ -4492,6 +4501,9 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Ödemeler TLS şifrelemesi ve İsviçre gizlilik yasaları ile korunmaktadır."
+      ],
+      "Pending": [
+        "Bekliyor"
       ],
       "Permanently delete all files in your locked drive": [
         "Kilitlenmiş sürücüdeki tüm dosyaları kalıcı olarak sil"
@@ -4783,6 +4795,9 @@
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "Hâlâ aktarılması gereken dosyalar var. Aktarma yöneticisinin kapatılması tüm işlemleri sonlandıracaktır."
       ],
+      "There is nothing to see here": [
+        "Burada görecek bir şey yok"
+      ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Bu adres kullanım dışı bırakılmış. Bu adrese e-posta gönderebilmek için önce sahibi adresi kullanıma almalıdır."
       ],
@@ -5042,6 +5057,9 @@
       "Yesterday": [
         "Dün"
       ],
+      "you": [
+        "siz"
+      ],
       "You already have a free account": [
         "Zaten ücretsiz bir hesabınız var"
       ],
@@ -5110,6 +5128,9 @@
       ],
       "You will lose all unsaved changes.": [
         "Kaydedilmemiş tüm değişiklikleri kaybedeceksiniz."
+      ],
+      "You will not be able to join again after.": [
+        "Daha sonra yeniden katılamayacaksınız."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Birazdan ödemenizi doğrulamak için PayPal sitesine yönlendirileceksiniz."
@@ -5696,6 +5717,9 @@
       "Region": [
         "Bölge"
       ],
+      "Remove access": [
+        "Erişimi kaldır"
+      ],
       "Replace existing file": [
         "Var olan dosya değiştirilsin"
       ],
@@ -5752,6 +5776,9 @@
       ],
       "Stolen data": [
         "Çalınmış veri"
+      ],
+      "Stop sharing": [
+        "Paylaşmayı durdur"
       ],
       "Street address": [
         "Sokak adresi"
@@ -5982,6 +6009,11 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Aboneliğinizin süresi dolmuş. Verilerinizin kaybolmasını önlemek için ${ cta }."
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "${ reason } özelliğini aç"
       ]
     },
     "Mail import summary": {
@@ -7154,6 +7186,18 @@
         "${ numberOfItems } bağlantı silindi",
         "${ numberOfItems } bağlantı silindi"
       ],
+      "${ reason } has been disabled": [
+        "${ reason } özelliği kapatıldı"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } özelliği açıldı"
+      ],
+      "Access for the member removed": [
+        "Üyenin erişimi kaldırıldı"
+      ],
+      "Access updated and shared": [
+        "Erişim güncellendi ve paylaşıldı"
+      ],
       "All items will soon be permanently deleted from trash": [
         "Tüm ögeler yakında çöp kutusundan kalıcı olarak silinecek"
       ],
@@ -7193,6 +7237,9 @@
       "Failed to move, please try again": [
         "Taşınamadı. Lütfen yeniden deneyin"
       ],
+      "Failed to remove the file": [
+        "Dosya kaldırılamadı"
+      ],
       "Failed to upload files: ${ err }": [
         "Dosyalar yüklenemedi: ${ err }"
       ],
@@ -7205,6 +7252,12 @@
       ],
       "File or folder is missing a name": [
         "Dosya ya da klasörün adı eksik"
+      ],
+      "File removed": [
+        "Dosya kaldırıldı"
+      ],
+      "Invitation removed from the share": [
+        "Davet paylaşımdan kaldırıldı"
       ],
       "Link copied to clipboard": [
         "Bağlantı panoya kopyalandı"
@@ -7233,6 +7286,9 @@
       "Share invitation ID was not found. Please check the link": [
         "Paylaşma daveti kimliği bulunamadı. Lütfen bağlantıya tıklayın"
       ],
+      "Stopping to share this item has failed": [
+        "Bu ögenin paylaşması durdurulamadı"
+      ],
       "Subfolder failed to be loaded": [
         "Alt klasör yüklenemedi"
       ],
@@ -7250,6 +7306,9 @@
       ],
       "Trash failed to be emptied": [
         "Çöp kutusu boşaltılamadı"
+      ],
+      "You stopped to share this item": [
+        "Bu ögeyi paylaşmayı durdurdunuz"
       ],
       "Your old files will be deleted in 72 hours": [
         "Eski dosyalarınız 72 saat içinde silinecek"
@@ -7696,6 +7755,9 @@
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel **kullanımda** ve hesabınızı koruyor."
+      ],
+      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLink }": [
+        "Bilgileriniz en az bir verilerin ele geçirilmesi olayında görüldü. Ayrıntıları görmek ve önlem almak için ${ DARK_WEB_MONITORING_NAME } özelliğini açın. ${ learnMoreLink }"
       ]
     },
     "Select files": {
@@ -8619,6 +8681,9 @@
       "Are you sure you want to close the preview?": [
         "Ön izlemeyi kapatmak istediğinize emin misiniz?"
       ],
+      "Are you sure you want to leave this share?": [
+        "Bu paylaşımdan ayrılmak istediğinize emin misiniz?"
+      ],
       "Billing cycle": [
         "Fatura dönemi"
       ],
@@ -9141,6 +9206,9 @@
       ],
       "You have no folders yet": [
         "Henüz bir klasörünüz yok"
+      ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "${ planName } ücretsiz deneme süreniz ${ textDate } tarihinde sonra erecek"
       ],
       "Your 3 GB bonus": [
         "3 GB hediyeniz"

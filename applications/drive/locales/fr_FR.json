@@ -50,7 +50,7 @@
         "Ajouter une note"
       ],
       "Add people or groups to share": [
-        "Ajouter des personnes ou des groupes à partager"
+        "Ajouter des personnes ou des groupes pour partager"
       ],
       "Add phone number": [
         "Ajouter un numéro de téléphone"
@@ -570,6 +570,9 @@
       ],
       "Remove gift code": [
         "Retirer le code-cadeau"
+      ],
+      "Remove me": [
+        "Me retirer"
       ],
       "Rename": [
         "Renommer"
@@ -2477,6 +2480,9 @@
       "Error decrypting a computer": [
         "Une erreur s'est produite lors du déchiffrement d'un ordinateur."
       ],
+      "External accounts are not supported yet": [
+        "Les comptes externes ne sont pas encore pris en charge."
+      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Le fichier « ${ item.name } » ne peut pas être chargé en raison de l'erreur « ${ error } »."
       ],
@@ -2632,8 +2638,8 @@
         "Le processus a été abandonné."
       ],
       "Removed duplicate invitee: ${ joinedInvitee }": [
-        "Invité en double retiré :${ joinedInvitee }",
-        "Invités en double retirés :${ joinedInvitee }"
+        "Invité en double retiré : ${ joinedInvitee }",
+        "Invités en double retirés : ${ joinedInvitee }"
       ],
       "Report failed to be sent": [
         "Le rapport n'a pas pu être envoyé."
@@ -4105,6 +4111,9 @@
       "Emails are automatically signed": [
         "Les messages sont automatiquement signés."
       ],
+      "Empty folder": [
+        "Le dossier est vide."
+      ],
       "Enabling drive search": [
         "Activation de la recherche dans Drive"
       ],
@@ -4218,7 +4227,7 @@
         "Utilisez l'application de bureau pour synchroniser les fichiers de votre ordinateur."
       ],
       "Get to know ${ DRIVE_APP_NAME } and earn your 3 GB storage bonus! Take action today.": [
-        "Faite connaissance avec ${ DRIVE_APP_NAME } et gagnez votre bonus de 3 Go d'espace de stockage !"
+        "Découvrez ${ DRIVE_APP_NAME } et gagnez votre bonus de 3 Go d'espace de stockage !"
       ],
       "Go to \"My files\" and upload some files first.": [
         "Allez dans Mes fichiers et commencez à charger des fichiers."
@@ -4227,7 +4236,7 @@
         "ici"
       ],
       "High Priority": [
-        "Prioritée élevée"
+        "Priorité élevée"
       ],
       "How does encrypted search work?": [
         "Comment fonctionne la recherche chiffrée ?"
@@ -4276,7 +4285,7 @@
         "Vos données sont en cours d'importation depuis ${ fromEmail } vers ${ toEmail }."
       ],
       "In the meantime, sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
-        "En attendant, inscrivez-vous à votre propre compte ${ DRIVE_APP_NAME } et protégez vos données avec un cryptage de bout en bout et partagez-les en toute sécurité."
+        "En attendant, créez votre propre compte ${ DRIVE_APP_NAME } : protégez vos données avec le chiffrement de bout en bout et partagez-les en toute sécurité."
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "À l'étape suivante, vous pourrez effectuer un versement à l'aide d'une adresse Bitcoin."
@@ -4469,6 +4478,9 @@
         "Seul ${ MAX_CUSTOM_PASSWORD_LENGTH } caractère est autorisé.",
         "Seuls ${ MAX_CUSTOM_PASSWORD_LENGTH } caractères sont autorisés."
       ],
+      "Only the owner of the share will be able to invite you again.": [
+        "Seul le propriétaire de ce partage peut vous inviter à nouveau."
+      ],
       "Only the people with the link and the password can access this file.": [
         "Seules les personnes ayant le lien et le mot de passe peuvent accéder à ce fichier."
       ],
@@ -4646,7 +4658,7 @@
       ],
       "Securely downloaded ${ nbFile } file": [
         "${ nbFile } fichier a été téléchargé de manière sécurisée",
-        "${ nbFile } fichiers ont été téléchargés en toute sécurité"
+        "${ nbFile } fichiers ont été téléchargés de manière sécurisée"
       ],
       "Securely downloaded all encrypted files": [
         "Tous les fichiers chiffrés ont été téléchargés de manière sécurisée."
@@ -4709,7 +4721,7 @@
         "Partagé avec moi"
       ],
       "Sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
-        "Inscrivez-vous à votre compte ${ DRIVE_APP_NAME } et protégez vos données avec un cryptage de bout en bout et partagez-les en toute sécurité."
+        "Créez votre propre compte ${ DRIVE_APP_NAME } : protégez vos données avec le chiffrement de bout en bout et partagez-les en toute sécurité."
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "La signature ne peut pas être certifiée en raison d'une erreur de réseau, nous vous invitons à réessayer plus tard."
@@ -4785,6 +4797,9 @@
       ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "Certains fichiers doivent encore être transférés. Si vous fermez le gestionnaire de transfert, toutes les opérations seront arrêtées."
+      ],
+      "There is nothing to see here": [
+        "Il n'y a aucune donnée à afficher."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Cette adresse est désactivée. Pour pouvoir envoyer des messages à cette adresse, son propriétaire doit d’abord l’activer."
@@ -5117,6 +5132,9 @@
       "You will lose all unsaved changes.": [
         "Vous perdrez toutes les modifications non enregistrées."
       ],
+      "You will not be able to join again after.": [
+        "Vous ne pourrez plus vous y joindre par la suite."
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Vous serez bientôt redirigé vers PayPal pour vérifier votre paiement."
       ],
@@ -5312,10 +5330,10 @@
         "Ajouter au groupe"
       ],
       "Anyone on the Internet with the link can view": [
-        "Toute personne avec un accès à internet et à ce lien peut consulter"
+        "Toute personne ayant accès à internet et à ce lien peut consulter."
       ],
       "Anyone with the link": [
-        "Tous ceux qui ont le lien"
+        "Toute personne ayant le lien"
       ],
       "App password": [
         "Mot de passe de l'application"
@@ -5762,6 +5780,9 @@
       "Stolen data": [
         "Données volées"
       ],
+      "Stop sharing": [
+        "Arrêter le partage"
+      ],
       "Street address": [
         "Adresse postale"
       ],
@@ -5778,7 +5799,7 @@
         "Thème"
       ],
       "This file is potentially infected": [
-        "Ce fichier est potentiellement infecté"
+        "Ce fichier est potentiellement infecté."
       ],
       "This will permanently delete all files in your locked drive.": [
         "Cela supprimera définitivement tous les fichiers dans votre disque verrouillé."
@@ -6745,7 +6766,7 @@
         "Accès en avant-première aux nouvelles fonctionnalités et applications"
       ],
       "Essential protection and secure collaboration for unlimited users.": [
-        "Protection indispensable et collaboration sécurisée pour un nombre illimité d'utilisateurs."
+        "L'essentiel pour la protection et la collaboration sécurisée avec un nombre illimité d'utilisateurs."
       ],
       "For next-level password management and identity protection.": [
         "Passez au niveau supérieur pour gérer vos mots de passe et protéger votre identité."
@@ -7219,6 +7240,9 @@
       "Failed to move, please try again": [
         "Le déplacement n'a pas abouti, réessayez."
       ],
+      "Failed to remove the file": [
+        "Le fichier n'a pu être retiré."
+      ],
       "Failed to upload files: ${ err }": [
         "Les fichiers n'ont pas pu être chargés : ${ err }"
       ],
@@ -7231,6 +7255,9 @@
       ],
       "File or folder is missing a name": [
         "Il manque un nom au fichier ou au dossier."
+      ],
+      "File removed": [
+        "Le fichier a été retiré."
       ],
       "Invitation removed from the share": [
         "Invitation retirée du partage"
@@ -7262,6 +7289,9 @@
       "Share invitation ID was not found. Please check the link": [
         "L'ID de l'invitation partagée n'a pas été trouvé. Veuillez vérifier le lien."
       ],
+      "Stopping to share this item has failed": [
+        "L'arrêt du partage de cet élément n'a pas abouti."
+      ],
       "Subfolder failed to be loaded": [
         "Le sous-dossier n'a pas pu être chargé."
       ],
@@ -7279,6 +7309,9 @@
       ],
       "Trash failed to be emptied": [
         "Le dossier Corbeille n'a pas pu être vidé."
+      ],
+      "You stopped to share this item": [
+        "Vous avez interrompu le partage de cet élément."
       ],
       "Your old files will be deleted in 72 hours": [
         "Vos anciens fichiers seront supprimés dans 72 heures."
@@ -8333,6 +8366,47 @@
         "Pour"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 Go d'espace de stockage"
+      ],
+      "and 15 more premium features": [
+        "et 15 fonctionnalités premium en plus"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Transfert automatique des messages ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertes de fuites de données ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Application de bureau"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Contribuez à préserver la sécurité et la confidentialité d'internet pour tous. Passez à un abonnement payant."
+      ],
+      "No ads or tracking": [
+        "Aucune publicité, aucun suivi"
+      ],
+      "Short @pm.me email address": [
+        "Adresses e-mail @pm.me courtes"
+      ],
+      "Support our mission": [
+        "Soutenez notre mission"
+      ],
+      "Upgrade": [
+        "Changer d'abonnement"
+      ],
+      "Upgrade your productivity": [
+        "Améliorez votre productivité"
+      ],
+      "We don't sell your data": [
+        "Nous ne vendons pas vos données."
+      ],
+      "Your privacy is our mission": [
+        "Le respect de votre vie privée est notre priorité."
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Confirmez-vous ?"
@@ -8651,6 +8725,9 @@
       "Are you sure you want to close the preview?": [
         "Voulez-vous vraiment fermer la fenêtre d'aperçu ?"
       ],
+      "Are you sure you want to leave this share?": [
+        "Voulez-vous vraiment quitter ce partage ?"
+      ],
       "Billing cycle": [
         "Cycle de facturation"
       ],
@@ -8891,6 +8968,9 @@
       ],
       "Item details": [
         "Informations sur l'élément"
+      ],
+      "Last edited by": [
+        "Dernière modification par"
       ],
       "Link confirmation": [
         "Confirmation du lien"

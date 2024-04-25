@@ -571,6 +571,9 @@
       "Remove gift code": [
         "Αφαιρέστε τον κωδικό δώρου"
       ],
+      "Remove me": [
+        "Αφαιρέστε με"
+      ],
       "Rename": [
         "Μετονομασία"
       ],
@@ -4105,6 +4108,9 @@
       "Emails are automatically signed": [
         "Τα μηνύματα υπογράφονται αυτόματα"
       ],
+      "Empty folder": [
+        "Άδειος φάκελος"
+      ],
       "Enabling drive search": [
         "Ενεργοποίηση τοπικής αναζήτησης"
       ],
@@ -4469,6 +4475,9 @@
         "Επιτρέπεται μόνο ${ MAX_CUSTOM_PASSWORD_LENGTH } χαρακτήρας",
         "Επιτρέπονται μόνο ${ MAX_CUSTOM_PASSWORD_LENGTH } χαρακτήρες"
       ],
+      "Only the owner of the share will be able to invite you again.": [
+        "Μόνο ο κάτοχος της κοινοποίησης θα μπορεί να σας προσκαλέσει ξανά."
+      ],
       "Only the people with the link and the password can access this file.": [
         "Μόνο τα άτομα που έχουν τον σύνδεσμο και τον κωδικό πρόσβασης μπορούν να προσπελάσουν αυτό το αρχείο."
       ],
@@ -4492,6 +4501,9 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Οι πληρωμές προστατεύονται με κρυπτογράφηση TLS και με Ελβετικούς νόμους περί ιδιωτικότητας."
+      ],
+      "Pending": [
+        "Σε εκκρεμότητα"
       ],
       "Permanently delete all files in your locked drive": [
         "Οριστική διαγραφή όλων των αρχείων στην κλειδωμένη αρχειοθήκη σας"
@@ -4783,6 +4795,9 @@
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "Υπάρχουν ακόμη αρχεία που χρειάζονται μεταφορά. Το κλείσιμο του διαχειριστή μεταφορών θα τερματίσει όλες τις εργασίες."
       ],
+      "There is nothing to see here": [
+        "Δεν υπάρχει τίποτα να δείτε εδώ"
+      ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Αυτή η διεύθυνση είναι απενεργοποιημένη. Για να είναι δυνατή η αποστολή σε αυτήν τη διεύθυνση, ο κάτοχος πρέπει πρώτα να ενεργοποιήσει τη διεύθυνση."
       ],
@@ -5042,6 +5057,9 @@
       "Yesterday": [
         "Χθες"
       ],
+      "you": [
+        "εσείς"
+      ],
       "You already have a free account": [
         "Έχετε ήδη έναν δωρεάν λογαριασμό"
       ],
@@ -5110,6 +5128,9 @@
       ],
       "You will lose all unsaved changes.": [
         "Θα χάσετε όλες τις αλλαγές που δεν έχετε αποθηκεύσει."
+      ],
+      "You will not be able to join again after.": [
+        "Δεν θα μπορείτε να συμμετάσχετε ξανά μετά."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Θα ανακατευθυνθείτε σύντομα στο Paypal, για να επαληθεύσετε την πληρωμή σας."
@@ -5696,6 +5717,9 @@
       "Region": [
         "Περιοχή"
       ],
+      "Remove access": [
+        "Αφαίρεση πρόσβασης"
+      ],
       "Replace existing file": [
         "Αντικατάσταση υπάρχοντος αρχείου"
       ],
@@ -5752,6 +5776,9 @@
       ],
       "Stolen data": [
         "Κλεμμένα δεδομένα"
+      ],
+      "Stop sharing": [
+        "Διακοπή κοινής χρήσης"
       ],
       "Street address": [
         "Οδός"
@@ -5982,6 +6009,11 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Η συνδρομή σας έχει λήξει. ${ cta } και για την αποφυγή απώλειας δεδομένων."
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Ενεργοποίηση ${ reason }"
       ]
     },
     "Mail import summary": {
@@ -7154,6 +7186,18 @@
         "διαγράφηκε ${ numberOfItems } σύνδεσμος προς το στοιχείο σας",
         "διαγράφηκαν ${ numberOfItems } σύνδεσμοι προς τα στοιχεία σας"
       ],
+      "${ reason } has been disabled": [
+        "${ reason } έχει απενεργοποιηθεί"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } έχει ενεργοποιηθεί"
+      ],
+      "Access for the member removed": [
+        "Η πρόσβαση για το μέλος καταργήθηκε"
+      ],
+      "Access updated and shared": [
+        "Η πρόσβαση ενημερώθηκε και κοινοποιήθηκε"
+      ],
       "All items will soon be permanently deleted from trash": [
         "Όλα τα διαγραμμένα στοιχεία σύντομα θα εξαλειφθούν οριστικά"
       ],
@@ -7193,6 +7237,9 @@
       "Failed to move, please try again": [
         "Αποτυχία μετακίνησης, παρακαλούμε δοκιμάστε ξανά"
       ],
+      "Failed to remove the file": [
+        "Αποτυχία κατάργησης του αρχείου"
+      ],
       "Failed to upload files: ${ err }": [
         "Αποτυχία ανεβάσματος αρχείων: ${ err }"
       ],
@@ -7205,6 +7252,12 @@
       ],
       "File or folder is missing a name": [
         "Το αρχείο ή ο φάκελος στερείται ονόματος"
+      ],
+      "File removed": [
+        "Το αρχείο αφαιρέθηκε"
+      ],
+      "Invitation removed from the share": [
+        "Η πρόσκληση καταργήθηκε από το κοινόχρηστο στοιχείο"
       ],
       "Link copied to clipboard": [
         "Ο σύνδεσμος αντιγράφηκε στο πρόχειρο"
@@ -7233,6 +7286,9 @@
       "Share invitation ID was not found. Please check the link": [
         "Το αναγνωριστικό πρόσκλησης κοινής χρήσης δε βρέθηκε. Παρακαλούμε ελέγξτε τον σύνδεσμο"
       ],
+      "Stopping to share this item has failed": [
+        "Η διακοπή της κοινής χρήσης αυτού του στοιχείου απέτυχε"
+      ],
       "Subfolder failed to be loaded": [
         "Ο υποφάκελος απέτυχε να φορτώσει"
       ],
@@ -7250,6 +7306,9 @@
       ],
       "Trash failed to be emptied": [
         "Αποτυχία εκκαθάρισης Διαγραμμένων"
+      ],
+      "You stopped to share this item": [
+        "Σταματήσατε την κοινοποίηση αυτού του στοιχείου"
       ],
       "Your old files will be deleted in 72 hours": [
         "Τα παλιά αρχεία σας θα διαγραφούν εντός 72 ωρών"
@@ -7696,6 +7755,9 @@
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Το Sentinel είναι **ενεργό** και προστατεύει τον λογαριασμό σας."
+      ],
+      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLink }": [
+        "Οι πληροφορίες σας εντοπίστηκαν σε τουλάχιστον μία παραβίαση δεδομένων. Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να δείτε λεπτομέρειες και να προβείτε σε κάποια ενέργεια. ${ learnMoreLink }"
       ]
     },
     "Select files": {
@@ -8619,6 +8681,9 @@
       "Are you sure you want to close the preview?": [
         "Είστε βέβαιοι ότι θέλετε να κλείσετε την προεπισκόπηση;"
       ],
+      "Are you sure you want to leave this share?": [
+        "Είστε βέβαιοι ότι θέλετε να αφήσετε αυτή την κοινοποίηση;"
+      ],
       "Billing cycle": [
         "Κύκλος χρέωσης"
       ],
@@ -9141,6 +9206,9 @@
       ],
       "You have no folders yet": [
         "Δεν έχετε ακόμη φακέλους"
+      ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Η δωρεάν δοκιμή του ${ planName } λήγει στις ${ textDate }"
       ],
       "Your 3 GB bonus": [
         "Το 3 GB μπόνους σας"
