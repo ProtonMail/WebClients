@@ -428,13 +428,13 @@
         "Automatické zamykání nelze deaktivovat"
       ],
       "Cannot send invitation at the moment": [
-        "Pozvánku nyní nelze odeslat.",
-        "Pozvánky nyní nelze odeslat.",
-        "Pozvánky nyní nelze odeslat.",
-        "Pozvánky nyní nelze odeslat."
+        "Pozvánku nyní nelze odeslat",
+        "Pozvánky nyní nelze odeslat",
+        "Pozvánky nyní nelze odeslat",
+        "Pozvánky nyní nelze odeslat"
       ],
       "Cannot send invitations at the moment": [
-        "Pozvánky nyní nelze odeslat."
+        "Pozvánky nyní nelze odeslat"
       ],
       "Could not confirm this invite at the moment": [
         "Nepodařilo se potvrdit tuto pozvánku v tuto chvíli"
@@ -443,7 +443,7 @@
         "Nepodařilo se opustit trezor."
       ],
       "Could not load recommendations at the moment.": [
-        "Doporučení se v tuto chvíli nedaří načíst."
+        "V tuto chvíli se nepodařilo načíst doporučení."
       ],
       "Could not open created vault": [
         "Nelze otevřít vytvořený trezor"
@@ -458,7 +458,7 @@
         "Nepodařilo se vyřešit členy sdílení"
       ],
       "Could not validate addresses at the moment.": [
-        "Ověření adres se nezdařilo."
+        "V daném okamžiku se nepodařilo ověřit adresy."
       ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "V souboru CSV chybí očekávané hlavičky: ${ missingHeaders }"
@@ -500,10 +500,10 @@
         "Opětovné zaslání pozvánky selhalo."
       ],
       "Failed to delete selected items": [
-        "Odstranění vybraných položek selhalo."
+        "Smazání vybraných položek selhalo."
       ],
       "Failed to edit organization settings": [
-        "Úprava nastavení organizase se nezdařila."
+        "Selhala úprava nastavení organizace"
       ],
       "Failed to edit user's access.": [
         "Úprava uživatelského přístupu selhala."
@@ -527,7 +527,7 @@
         "Odstranění uživatelského přístupu selhalo."
       ],
       "Failed to restore items from trash": [
-        "Obnovení položek z Koše selhalo."
+        "Selhalo obnovení položek z koše"
       ],
       "Failed to transfer this vault's ownership.": [
         "Nepodařilo se přenést vlastnictví tohoto trezoru."
@@ -569,10 +569,10 @@
         "Přesouvání položky selhalo"
       ],
       "Offline mode is currently not available for two password mode.": [
-        "Pro režim dvou hesel není v tuto chvíli offline režim k dispozici."
+        "Offline režim není v současnosti k dispozici pro režim dvou hesel."
       ],
       "Offline mode isn't currently available for your plan and not compatible with two password mode.": [
-        "Offline režim pro váš tarif aktuálně není k dispozici a není ani kompatibilní s režimem dvou hesel."
+        "Offline režim není momentálně k dispozici u vašeho tarifu a není kompatibilní s režimem dvou hesel."
       ],
       "Passphrase is incorrect": [
         "Heslo je nesprávné"
@@ -733,7 +733,7 @@
         "Aktualizace \"${ payload.item.data.metadata.name }\" byla odmítnuta"
       ],
       "${ count } invites successfully sent": [
-        "${ count } pozvánek odesláno."
+        "${ count } pozvánek úspěšně odesláno"
       ],
       "${ memberCount } member": [
         "${ memberCount } člen",
@@ -821,6 +821,9 @@
       ],
       "Copied to clipboard": [
         "Zkopírováno do schránky"
+      ],
+      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, passkeys...). For a complete export, we recommend using a different format.": [
+        "CSV je na prohlížení dat praktický formát. Některá data (vlastní pole, přístupové klíče) v něm kvůli jeho jednoduchosti však zahrnuta nejsou. Pokud chcete úplný export, doporučujeme využít jiný formát."
       ],
       "Current version": [
         "Současná verze"
@@ -1012,7 +1015,7 @@
         "Hesla starší než ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } týdnů budou z historie automaticky smazána."
       ],
       "Permanently deleting selected items": [
-        "Trvalé odstranění vybraných položek"
+        "Trvalé mazání vybraných položek"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "PIN kód byl úspěšně zaregistrován. Použijte jej k odemknutí ${ PASS_APP_NAME }"
@@ -1066,19 +1069,19 @@
         "Vyberte cílový trezor"
       ],
       "Select vault to share": [
-        "Vyberte trezor, který chcete sdílet."
+        "Vyberte trezor, který chcete sdílet"
       ],
       "Select where you want your imported vault(s) to be saved.": [
         "Vyberte, kam chcete importované trezory uložit."
       ],
       "Selected items permanently deleted": [
-        "Vybrané položky byly trvale odstraněny"
+        "Vybrané položky byly trvale smazány"
       ],
       "Selected items successfully moved to trash": [
-        "Vybrané položky byly úspěšně přesunutz do koše"
+        "Vybrané položky byly úspěšně přesunuty do koše"
       ],
       "Selected items successfully restored from trash": [
-        "Vybrané položky byly z koše úspěšně obnoveny"
+        "Vybrané položky byly úspěšně obnoveny z koše"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servery jsou nedostupné. Zkuste to prosím znovu za několik minut"
@@ -1159,7 +1162,7 @@
         "Odepínání položky..."
       ],
       "Updating organization settings": [
-        "Aktualizuje se nastavení organizace"
+        "Aktualizace nastavení organizace"
       ],
       "Upgrade Now to Unlock Premium Features": [
         "Přejděte nyní na vyšší tarif pro odemčení prémiových funkcí"
@@ -1443,13 +1446,13 @@
         "Přihlášení"
       ],
       "Make all admins": [
-        "Učinit ze všech správce"
+        "Udělat ze všech správce"
       ],
       "Make all editors": [
-        "Oprávnit všechny k úpravám"
+        "Udělat ze všech editory"
       ],
       "Make all viewers": [
-        "Oprávnit všechny ke čtení"
+        "Udělat ze všech prohlížející"
       ],
       "Members": [
         "Členové"
@@ -1989,7 +1992,7 @@
         "Nelze vytvořit trezor \"${ vaultName }\""
       ],
       "Could not send invitations to the following addresses :": [
-        "Odeslání pozvánek pro následující adresy selhalo:"
+        "Nepodařilo se odeslat pozvánky těmto adresám:"
       ],
       "Duplicate email addresses.": [
         "Duplicitní e-mailové adresy."
@@ -2055,7 +2058,7 @@
         "Exportní soubor zašifrovaný pomocí PGP vyžaduje heslo"
       ],
       "Please contact us for investigating the issue": [
-        "Kontaktujte nás, prosím, abychom problém mohli prošetřit."
+        "Kontaktujte nás prosím pro vyšetření problému"
       ],
       "Please verify your email address in order to use email aliases": [
         "Ověřte prosím svou e-mailovou adresu, abyste mohli používat e-mailové aliasy"
