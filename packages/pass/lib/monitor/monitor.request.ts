@@ -43,6 +43,10 @@ export const setMonitorForProtonAddress = (AddressID: string, monitor: BreachUpd
 export const monitorCustomEmail = async (data: BreachEmailCreateRequest): Promise<BreachCustomEmailGetResponse> =>
     (await api({ url: `pass/v1/breach/custom_email`, method: 'post', data })).Email!;
 
+/** Remove a custom email from breaches monitoring */
+export const deleteCustomEmail = async (emailId: string): Promise<boolean> =>
+    api({ url: `pass/v1/breach/custom_email//${emailId}`, method: 'delete' }).then(() => true);
+
 /** Update the monitor status for a custom email */
 export const toggleMonitorCustomEmail = async (
     emailId: string,
@@ -65,3 +69,7 @@ export const setBreachedCustomEmailResolved = (customEmailId: string): Promise<b
 /** Verify a custom email with the validation code */
 export const verifyCustomEmail = (emailId: string, data: BreachEmailValidateRequest): Promise<boolean> =>
     api({ url: `pass/v1/breach/custom_email/${emailId}/verify`, method: 'put', data }).then(() => true);
+
+/** Re-send the verification email for custom address */
+export const resendVerificationCustomEmail = (emailId: string): Promise<boolean> =>
+    api({ url: `pass/v1/breach/custom_email/${emailId}/resend_verification`, method: 'post' }).then(() => true);
