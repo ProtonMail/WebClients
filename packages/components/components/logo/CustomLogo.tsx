@@ -11,16 +11,17 @@ type Props = {
     url: string;
     className?: string;
     style?: React.CSSProperties;
+    organizationNameDataTestId?: string;
 };
 
-const CustomLogo = ({ url, app, organizationName, className, style, ...rest }: Props) => {
+const CustomLogo = ({ url, app, organizationName, className, style, organizationNameDataTestId, ...rest }: Props) => {
     const longOrgName = organizationName.length >= 9;
 
     const ProcessedOrgName = () => {
         return (
             <span
                 title={organizationName}
-                data-testid="sidebar:organization-name"
+                data-testid={organizationNameDataTestId}
                 className={clsx(
                     'text-semibold text-ellipsis w-full text-no-decoration sidebar-custom-logo-name',
                     longOrgName ? 'text-rg' : 'text-lg'
