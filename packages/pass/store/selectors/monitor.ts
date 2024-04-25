@@ -3,10 +3,13 @@ import { createSelector } from '@reduxjs/toolkit';
 import { isHealthCheckSkipped, itemEq } from '@proton/pass/lib/items/item.predicates';
 import { getDuplicatePasswords } from '@proton/pass/lib/monitor/monitor.utils';
 import type { SelectedItem, UniqueItem } from '@proton/pass/types';
+import { invert } from '@proton/pass/utils/fp/predicates';
 
 import { selectLoginItems } from './items';
 
-export const selectDuplicatePasswords = createSelector(selectLoginItems, getDuplicatePasswords);
+export const selectDuplicatePasswords = createSelector(selectLoginItems, (items) =>
+    getDuplicatePasswords(items.filter(invert(isHealthCheckSkipped)))
+);
 
 export const selectExcludedItems = createSelector(selectLoginItems, (items): UniqueItem[] =>
     items.filter(isHealthCheckSkipped).map(({ shareId, itemId }) => ({ shareId, itemId }))
