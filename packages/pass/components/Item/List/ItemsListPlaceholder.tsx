@@ -98,7 +98,7 @@ export const ItemsListPlaceholder: FC<Props> = ({ noActions }) => {
                 style={{ '--max-w-custom': '20rem' }}
             >
                 <span className="text-semibold inline-block">{c('Title').t`Your vault is empty`}</span>
-                <Card>
+                <Card type="primary" className="text-sm">
                     {c('Info')
                         .t`You have exceeded the number of vaults included in your subscription. New items can only be created in your first two vaults. To create new items in all vaults upgrade your subscription.`}
                 </Card>
