@@ -7,6 +7,7 @@ import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { getFormattedWeekdays } from '@proton/shared/lib/date/date';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import { DateTimeModel, FrequencyModel } from '@proton/shared/lib/interfaces/calendar';
+import clsx from '@proton/utils/clsx';
 
 import DayCheckbox from '../inputs/DayCheckbox';
 
@@ -17,8 +18,9 @@ interface Props {
     start: DateTimeModel;
     weekStartsOn: WeekStartsOn;
     onChange: (value: FrequencyModel) => void;
+    displayStacked?: boolean;
 }
-const RepeatOnRow = ({ frequencyModel, start, weekStartsOn, onChange }: Props) => {
+const RepeatOnRow = ({ frequencyModel, start, weekStartsOn, onChange, displayStacked = false }: Props) => {
     const [weekdaysLong, weekdaysAbbreviations] = useMemo(() => {
         return ['cccc', 'cccccc'].map((format) => getFormattedWeekdays(format, { locale: dateLocale }));
     }, [dateLocale]);
@@ -38,8 +40,9 @@ const RepeatOnRow = ({ frequencyModel, start, weekStartsOn, onChange }: Props) =
     };
 
     return (
-        <div className="mb-2 ml-0 md:ml-2">
-            <label id="label-event-weekly-repeat">{c('Label').t`Repeat on`}</label>
+        <div className={clsx('mb-2 ml-0', !displayStacked && 'md:ml-2')}>
+            <label className={clsx(displayStacked && 'text-semibold')} id="label-event-weekly-repeat">{c('Label')
+                .t`Repeat on`}</label>
             <div className="flex gap-2">
                 {DAYS.map((dayIndex) => {
                     const day = (dayIndex + weekStartsOn) % 7;

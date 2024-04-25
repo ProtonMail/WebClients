@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 import { c } from 'ttag';
 
 import { DateInput, MemoizedIconRow as IconRow, TimeInput } from '@proton/components';
@@ -15,9 +17,10 @@ interface Props {
     displayWeekNumbers: boolean;
     weekStartsOn: WeekStartsOn;
     endError?: string;
+    children?: ReactNode;
 }
 
-const MiniDateTimeRows = ({ model, setModel, displayWeekNumbers, weekStartsOn, endError }: Props) => {
+const MiniDateTimeRows = ({ model, setModel, displayWeekNumbers, weekStartsOn, endError, children }: Props) => {
     const {
         handleChangeStartDate,
         handleChangeStartTime,
@@ -34,7 +37,7 @@ const MiniDateTimeRows = ({ model, setModel, displayWeekNumbers, weekStartsOn, e
                 <div className="flex flex-nowrap mb-2">
                     <div
                         className="flex *:min-size-auto flex-1 flex-column grow-custom"
-                        style={{ '--grow-custom': '1.25' }}
+                        style={{ '--grow-custom': '2' }}
                     >
                         <DateInput
                             id={DATE_INPUT_ID}
@@ -62,7 +65,7 @@ const MiniDateTimeRows = ({ model, setModel, displayWeekNumbers, weekStartsOn, e
                 <div className="flex flex-nowrap mb-1">
                     <div
                         className="flex *:min-size-auto flex-1 flex-column grow-custom"
-                        style={{ '--grow-custom': '1.25' }}
+                        style={{ '--grow-custom': '2' }}
                     >
                         <DateInput
                             id="event-endDate"
@@ -93,16 +96,21 @@ const MiniDateTimeRows = ({ model, setModel, displayWeekNumbers, weekStartsOn, e
                 </div>
             </div>
 
-            <div>
-                <AllDayCheckbox
-                    title={
-                        model.isAllDay
-                            ? c('Title').t`Event is happening on defined time slot`
-                            : c('Title').t`Event is happening all day`
-                    }
-                    checked={model.isAllDay}
-                    onChange={(isAllDay) => setModel({ ...model, ...getAllDayCheck({ oldModel: model, isAllDay }) })}
-                />
+            <div className="mt-2 flex flex-nowrap w-full flex-row">
+                <span className="flex-1">
+                    <AllDayCheckbox
+                        title={
+                            model.isAllDay
+                                ? c('Title').t`Event is happening on defined time slot`
+                                : c('Title').t`Event is happening all day`
+                        }
+                        checked={model.isAllDay}
+                        onChange={(isAllDay) =>
+                            setModel({ ...model, ...getAllDayCheck({ oldModel: model, isAllDay }) })
+                        }
+                    />
+                </span>
+                <span className="ml-auto">{children}</span>
             </div>
         </IconRow>
     );

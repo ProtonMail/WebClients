@@ -21,7 +21,7 @@ const CalendarSelect = ({ calendarID, options, onChange, displayColor = true, fr
         const { name, color } = options[0];
 
         return (
-            <div className="field border-none flex flex-nowrap items-center pl-0 w-full">
+            <div className="field border-none flex flex-nowrap items-center pl-0 w-full field--frozen">
                 {displayColor && <CalendarSelectIcon color={color} className="shrink-0 mr-3" />}
                 <span className="text-ellipsis">{name}</span>
             </div>

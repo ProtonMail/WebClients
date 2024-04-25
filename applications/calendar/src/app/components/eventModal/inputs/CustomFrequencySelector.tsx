@@ -12,6 +12,7 @@ interface Props {
     errors: object;
     isSubmitted: boolean;
     onChange: (value: FrequencyModel) => void;
+    displayStacked?: boolean;
 }
 const CustomFrequencySelector = ({
     frequencyModel,
@@ -21,6 +22,7 @@ const CustomFrequencySelector = ({
     errors,
     onChange,
     isSubmitted,
+    displayStacked = false,
 }: Props) => {
     return (
         <>
@@ -31,6 +33,7 @@ const CustomFrequencySelector = ({
                 onChange={onChange}
                 errors={errors}
                 isSubmitted={isSubmitted}
+                displayStacked={displayStacked}
             />
             <EndsRow
                 frequencyModel={frequencyModel}
@@ -40,6 +43,7 @@ const CustomFrequencySelector = ({
                 errors={errors}
                 isSubmitted={isSubmitted}
                 onChange={onChange}
+                displayStacked={displayStacked}
             />
         </>
     );
