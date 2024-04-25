@@ -453,11 +453,11 @@
       "Not now": [
         "Teraz nie"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Otvoriť nastavenia ${ CALENDAR_APP_NAME }"
@@ -5930,6 +5930,11 @@
         "Vaše predplatné skončilo. ${ cta } a zabráňte strate údajov."
       ]
     },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Povoliť ${ reason }"
+      ]
+    },
     "Mail import summary": {
       "Import all messages from ${ itemsToImportCount } folder and label them as": [
         "Importovať všetky správy z ${ itemsToImportCount } priečinka a označiť ich štítkom",
@@ -7070,6 +7075,12 @@
       ]
     },
     "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } bol zakázaný"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } bol povolený"
+      ],
       "Contact group created": [
         "Skupina kontaktov bola vytvorená"
       ],

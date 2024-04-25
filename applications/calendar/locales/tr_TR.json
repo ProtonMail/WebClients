@@ -447,10 +447,10 @@
       "Not now": [
         "Şimdi değil"
       ],
-      "OK": [
+      "Ok": [
         "Tamam"
       ],
-      "Ok": [
+      "OK": [
         "Tamam"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -5768,6 +5768,11 @@
         "Aboneliğinizin süresi dolmuş. Verilerinizin kaybolmasını önlemek için ${ cta }."
       ]
     },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "${ reason } özelliğini aç"
+      ]
+    },
     "Mail import summary": {
       "Import all messages from ${ itemsToImportCount } folder and label them as": [
         "${ itemsToImportCount } klasördeki tüm iletileri içe aktar ve şöyle etiketle",
@@ -6854,6 +6859,12 @@
       ]
     },
     "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } özelliği kapatıldı"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } özelliği açıldı"
+      ],
       "Contact group created": [
         "Kişi grubu eklendi"
       ],
@@ -7490,6 +7501,9 @@
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel **kullanımda** ve hesabınızı koruyor."
+      ],
+      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLink }": [
+        "Bilgileriniz en az bir verilerin ele geçirilmesi olayında görüldü. Ayrıntıları görmek ve önlem almak için ${ DARK_WEB_MONITORING_NAME } özelliğini açın. ${ learnMoreLink }"
       ]
     },
     "Select files": {
@@ -8986,6 +9000,9 @@
       ],
       "You have invited participants with equivalent emails": [
         "Katılımcıları eşdeğer e-postalarla davet ettiniz"
+      ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "${ planName } ücretsiz deneme süreniz ${ textDate } tarihinde sonra erecek"
       ],
       "Your account is protected": [
         "Hesabınız korunuyor"

@@ -435,11 +435,11 @@
       "Not now": [
         "後で"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME } の設定を開く"
@@ -5428,6 +5428,11 @@
         "インポートが開始しました"
       ]
     },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "${ reason } を有効にする"
+      ]
+    },
     "Mail import summary": {
       "Import all messages from ${ itemsToImportCount } folder and label them as": [
         "${ itemsToImportCount } フォルダーからすべてのメッセージをインポートし、それらを次のようにラベル付けします"
@@ -6451,6 +6456,12 @@
       ]
     },
     "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } が無効になりました"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } が有効になりました"
+      ],
       "Contact group created": [
         "連絡先グループが作成されました"
       ],
