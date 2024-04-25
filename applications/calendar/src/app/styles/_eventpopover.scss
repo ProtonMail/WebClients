@@ -1,4 +1,4 @@
-@use "sass:map";
+@use 'sass:map';
 @import '~@proton/styles/scss/lib';
 
 .eventpopover {
@@ -20,9 +20,9 @@
 
 	@include media('>small') {
 		inline-size: rem(500);
-		max-inline-size: rem(392);
+		max-inline-size: rem(368);
 		max-block-size: 100%;
-		border-radius: var(--border-radius-md);
+		border-radius: var(--border-radius-lg);
 		box-shadow: var(--shadow-lifted);
 	}
 
@@ -31,7 +31,7 @@
 	}
 
 	@include media('print') {
-		inline-size: rem(392);
+		inline-size: rem(368);
 		block-size: fit-content;
 		border: 1px solid var(--border-norm);
 	}
@@ -45,11 +45,13 @@
 	// transition: all .25s ease; should be applied only when opened and end of animation <-- this is solved by react-transition-group
 	&-header {
 		&--draggable {
-			padding-block: rem(24) 0;
-			padding-inline: rem(24);
-			margin-block: rem(-24) 0;
+			padding-block: rem(5);
+			padding-inline: rem(8);
+			margin-block: rem(-24) rem(24);
 			margin-inline: rem(-24);
 			cursor: grab;
+			background-color: var(--background-weak);
+			border-block-end: 1px solid var(--background-weak);
 
 			&:active {
 				cursor: grabbing;
@@ -108,6 +110,19 @@
 
 	.tabs {
 		min-block-size: 12em;
+	}
+
+	// special fix when no select for calendar ------------------
+	&-calendar-select:has(.field--frozen) {
+		.label {
+			padding-block: 0;
+		}
+
+		.field--frozen {
+			// let it go
+			block-size: auto;
+			padding-block: 0;
+		}
 	}
 
 	// special fixes for recurring frequency ------------------
