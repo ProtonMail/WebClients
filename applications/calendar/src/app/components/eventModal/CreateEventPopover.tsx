@@ -181,6 +181,7 @@ const CreateEventPopover = ({
                     className={isDraggingDisabled ? '' : 'eventpopover-header--draggable'}
                     onMouseDown={handleMouseDown}
                     onClose={onClose}
+                    isDraggable={!isDraggingDisabled}
                 />
                 <EventForm
                     displayWeekNumbers={displayWeekNumbers}
