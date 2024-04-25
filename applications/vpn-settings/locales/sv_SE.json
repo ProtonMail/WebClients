@@ -1907,9 +1907,6 @@
       "Once deleted, this address can't be used again by anyone else.": [
         "När den har tagits bort kan denna adress inte användas igen av någon annan."
       ],
-      "The next active address on your list will be set as the default.": [
-        "Nästa aktiva adress på din lista kommer att ställas in som standard."
-      ],
       "You can only delete 1 address per year.": [
         "Du kan bara ta bort 1 adress per år."
       ]
@@ -3129,6 +3126,9 @@
       "Current plan": [
         "Nuvarande paket"
       ],
+      "Custom branding": [
+        "Anpassat varumärke"
+      ],
       "Custom email domains": [
         "Anpassade e-domäner"
       ],
@@ -3889,6 +3889,9 @@
       ],
       "Upload your completed CSV file to create accounts": [
         "Ladda upp din färdiga CSV-fil för att skapa konton"
+      ],
+      "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
+        "Ladda upp din organisations logga för att stärka din varumärkesidentitet och skapa en personifierad upplevelse för dina användare."
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Använd den bästa servern enligt nuvarande belastning och position: ${ formattedBestServerName }"
@@ -7290,6 +7293,41 @@
     "Subscription price": {
       "For": [
         "För"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagringsutrymme"
+      ],
+      "and 15 more premium features": [
+        "och 15 fler premiumfunktioner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk vidarebefordran av e-post ${ strongText }"
+      ],
+      "Desktop app": [
+        "App för stationär dator"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hjälp oss att hålla Internet säkert och privat för alla. Uppgradera till ett betalt paket."
+      ],
+      "No ads or tracking": [
+        "Inga annonser eller spårning"
+      ],
+      "Support our mission": [
+        "Stöd vårt uppdrag"
+      ],
+      "Upgrade": [
+        "Uppgradera"
+      ],
+      "Upgrade your productivity": [
+        "Uppgradera din produktivitet"
+      ],
+      "We don't sell your data": [
+        "Vi säljer inte din data"
+      ],
+      "Your privacy is our mission": [
+        "Din integritet är vårt uppdrag"
       ]
     },
     "Subscription renewal state": {

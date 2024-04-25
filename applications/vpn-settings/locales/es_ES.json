@@ -1910,9 +1910,6 @@
       "Once deleted, this address can't be used again by anyone else.": [
         "Una vez eliminada, otras personas no se pueden usar esta dirección nuevamente."
       ],
-      "The next active address on your list will be set as the default.": [
-        "La siguiente dirección activa en tu lista será establecida como la dirección por defecto."
-      ],
       "You can only delete 1 address per year.": [
         "Solo puedes eliminar 1 dirección por año."
       ]
@@ -3132,6 +3129,9 @@
       "Current plan": [
         "Plan actual"
       ],
+      "Custom branding": [
+        "Marca personalizada"
+      ],
       "Custom email domains": [
         "Dominios de correo personalizados"
       ],
@@ -3892,6 +3892,9 @@
       ],
       "Upload your completed CSV file to create accounts": [
         "Carga tu archivo CSV completo para crear cuentas."
+      ],
+      "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
+        "Carga el logotipo de tu organización para potenciar tu identidad de marca y crear una experiencia personalizada para tus usuarios."
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Utiliza el mejor servidor según la carga actual y la posición: ${ formattedBestServerName }"
@@ -6541,6 +6544,9 @@
       ],
       "The SCIM base URL and token will be deleted.": [
         "La URL y token base de SCIM serán eliminados."
+      ],
+      "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
+        "Para reactivar la sincronización con tu proveedor de identidad, necesitas completar la integración SCIM nuevamente."
       ]
     },
     "scim: Label": {
@@ -7322,6 +7328,23 @@
     "Subscription price": {
       "For": [
         "Por"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB de espacio de almacenamiento"
+      ],
+      "Desktop app": [
+        "Aplicación de escritorio"
+      ],
+      "No ads or tracking": [
+        "Sin anuncios ni rastreadores"
+      ],
+      "Support our mission": [
+        "Apoya nuestra misión"
+      ],
+      "Upgrade": [
+        "Mejorar"
       ]
     },
     "Subscription renewal state": {

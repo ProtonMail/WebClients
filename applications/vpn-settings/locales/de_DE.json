@@ -446,6 +446,9 @@
       "Select country": [
         "Land wählen"
       ],
+      "select file": [
+        "Datei auswählen"
+      ],
       "Select file": [
         "Datei auswählen"
       ],
@@ -497,6 +500,9 @@
       "Signing in": [
         "Anmeldung erfolgt"
       ],
+      "Start live chat": [
+        "Live Chat starten"
+      ],
       "Stop using single sign-on": [
         "Single Sign-on nicht mehr verwenden"
       ],
@@ -538,6 +544,12 @@
       ],
       "Upgrade your plan": [
         "Dein Abonnement upgraden"
+      ],
+      "Upload": [
+        "Hochladen"
+      ],
+      "Upload logo": [
+        "Logo hochladen"
       ],
       "Use ${ label } theme": [
         "Farbschema „${ label }“ verwenden"
@@ -691,6 +703,11 @@
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
         "Dadurch werden alle Router und Clients, die dieses Zertifikat verwenden, getrennt."
+      ]
+    },
+    "app-switcher": {
+      "Protect your passwords and identity": [
+        "Schütze deine Passwörter und Identität"
       ]
     },
     "bf2023: Action": {
@@ -1878,9 +1895,6 @@
       ]
     },
     "Delete address prompt": {
-      "The next active address on your list will be set as the default.": [
-        "Die nächste aktive Adresse auf deiner Liste wird als Standardadresse festgelegt."
-      ],
       "You can only delete 1 address per year.": [
         "Du kannst jährlich nur eine Adresse löschen."
       ]
@@ -2011,6 +2025,12 @@
       "Error connecting to the Bitcoin API.": [
         "Fehler beim Verbinden mit der Bitcoin-API."
       ],
+      "Failed to process the logo": [
+        "Fehler beim Verarbeiten des Logos"
+      ],
+      "File too large. Your logo must be 30 KB or smaller.": [
+        "Datei zu groß. Die Logo-Datei muss 30 KB oder kleiner sein."
+      ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Kam es auf deinem Fernseher zu einer Zeitüberschreitung, klicke auf „Aktualisieren” auf deinem Fernseher und gib deinen Code erneut ein."
       ],
@@ -2022,6 +2042,9 @@
       ],
       "Impossible to rename the gateway": [
         "Gateway kann nicht umbenannt werden"
+      ],
+      "Incorrect file type. Upload a file in PNG or JPEG format.": [
+        "Ungültiges Dateiformat. Lade eine Datei im PNG- oder JPEG-Format hoch."
       ],
       "Incorrect login credentials. Please try again.": [
         "Ungültige Anmeldedaten. Bitte versuche es erneut."
@@ -2113,6 +2136,9 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Bitte upgrade auf ein Business-Abonnement mit mehr als einem Benutzer, um mehrere Benutzer zu verwalten."
       ],
+      "Please upload a square file": [
+        "Bitte lade eine quadratische Datei hoch."
+      ],
       "Please upload an xml file": [
         "Bitte lade eine XML-Datei hoch."
       ],
@@ -2139,6 +2165,12 @@
       ],
       "The email addresses do not match": [
         "Die E-Mail-Adressen stimmen nicht überein"
+      ],
+      "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
+        "Die Datei ist zu groß, die maximale Größe beträgt ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }"
+      ],
+      "The file is too small, the minimum size is ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }": [
+        "Die Datei ist zu klein, die minimale Größe beträgt ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }"
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Der Mindestbetrag, der hinzugefügt werden kann, beträgt ${ price }"
@@ -2783,6 +2815,11 @@
         "Benutzername"
       ]
     },
+    "Headline": {
+      "Contact us": [
+        "Kontaktiere uns"
+      ]
+    },
     "Hint": {
       "Add this record to your domain in the control panel of your domain name registrar": [
         "Füge diesen Eintrag in der Verwaltungskonsole deines Domain-Registrars hinzu."
@@ -3074,6 +3111,9 @@
       "Current plan": [
         "Aktuelles Abonnement"
       ],
+      "Custom branding": [
+        "Benutzerdefiniertes Branding"
+      ],
       "Custom email domains": [
         "Eigene E-Mail-Domains"
       ],
@@ -3327,6 +3367,9 @@
       "Link copied to clipboard": [
         "Link in die Zwischenablage kopiert"
       ],
+      "Live chat": [
+        "Live Chat"
+      ],
       "Loading": [
         "Wird geladen"
       ],
@@ -3498,6 +3541,9 @@
       "Plus or Visionary subscription required": [
         "Plus‐ oder Visionary‐Abonnement benötigt"
       ],
+      "Preview": [
+        "Vorschau"
+      ],
       "Preview failed to be loaded": [
         "Vorschau konnte nicht geladen werden"
       ],
@@ -3527,6 +3573,9 @@
       ],
       "Remember to share the user's sign in details with them.": [
         "Denke daran, dem Benutzer seine Anmeldedaten mitzuteilen."
+      ],
+      "Request a phone call": [
+        "Einen Anruf anfordern"
       ],
       "Resend verification email": [
         "Verifizierungs-E-Mail erneut senden"
@@ -3820,6 +3869,9 @@
       "Upload your completed CSV file to create accounts": [
         "Lade deine ausgefüllte CSV-Datei hoch, um Konten zu erstellen"
       ],
+      "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
+        "Lade das Logo deiner Organisation hoch, um deine Markenidentität zu stärken und ein personalisiertes Erlebnis für deine Nutzer zu schaffen."
+      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Verwende den besten Server je nach aktueller Auslastung und Standort: ${ formattedBestServerName }"
       ],
@@ -4094,6 +4146,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Dein Abonnement wird von Mozilla verwaltet. Bitte kontaktiere den Mozilla-Support."
+      ],
+      "Zoom meeting": [
+        "Zoom-Meeting"
       ]
     },
     "Info for cash payment method": {
@@ -5921,11 +5976,20 @@
       "Avoid overly compressed images.": [
         "Vermeide zu stark komprimierte Bilder."
       ],
+      "Ensure your logo has padding space around it.": [
+        "Vergewissere dich, dass um dein Logo herum Platz zum Auffüllen ist."
+      ],
       "Opt for a PNG image that is a 128x128 pixels for clarity.": [
         "Entscheide dich für ein PNG-Bild mit einer Größe von 128x128 Pixeln, damit es scharf genug dargestellt wird."
       ],
+      "Tips on choosing a good logo": [
+        "Tipps zur Auswahl eines guten Logos"
+      ],
       "Use a graphical icon or image rather than text.": [
         "Verwende ein grafisches Symbol oder Bild anstelle von Text."
+      ],
+      "Use a solid background color.": [
+        "Verwende eine einfarbige Hintergrundfarbe."
       ]
     },
     "Organization logo upload modal": {
@@ -6153,6 +6217,9 @@
       ],
       "MM/YY": [
         "MM/JJ"
+      ],
+      "Processing payment": [
+        "Zahlungsabwicklung"
       ],
       "Timeout exceeded": [
         "Zeitlimit überschritten"
@@ -6394,6 +6461,97 @@
         "Benutzer"
       ]
     },
+    "scim: Action": {
+      "Configure SCIM": [
+        "SCIM konfigurieren"
+      ],
+      "Disable SCIM": [
+        "SCIM deaktivieren"
+      ],
+      "Disable SCIM integration": [
+        "SCIM-Integration deaktivieren"
+      ],
+      "Generate new token": [
+        "Neuen Token generieren"
+      ],
+      "Generate token": [
+        "Token generieren"
+      ]
+    },
+    "scim: Info": {
+      "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
+        "**Voraussetzung:** Die SAML-Authentifizierung muss konfiguriert sein, um das SCIM-Provisioning zu ermöglichen."
+      ],
+      "Enter token into your identity provider": [
+        "Gib den Token bei deinem Identitätsanbieter ein"
+      ],
+      "Enter URL and token into your identity provider": [
+        "Gib die URL und den Token bei deinem Identitätsanbieter ein"
+      ],
+      "For security reasons, the SCIM token will be hidden after saving your changes and you won’t be able to see it again.": [
+        "Aus Sicherheitsgründen wird der SCIM-Token nach dem Speichern deiner Änderungen ausgeblendet und du kannst ihn nicht mehr sehen."
+      ],
+      "For security reasons, the token is hidden": [
+        "Der Token ist aus Sicherheitsgründen ausgeblendet."
+      ],
+      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ VPN_APP_NAME }.": [
+        "Gehe zu deinem Identitätsanbieter, kopiere die unten stehenden Daten und füge sie ein, um die Konfiguration von SCIM für ${ VPN_APP_NAME } abzuschließen."
+      ],
+      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ VPN_APP_NAME }.": [
+        "Gehe zu deinem Identitätsanbieter, kopiere den unten stehenden Token und füge ihn ein, um SCIM für ${ VPN_APP_NAME } wieder zu aktivieren."
+      ],
+      "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
+        "Wenn du den SCIM-Token verloren oder vergessen hast, kannst du einen neuen generieren. Beachte aber, dass die Einstellungen deines Identitätsanbieters aktualisiert werden müssen."
+      ],
+      "Make sure you copy the above SCIM token now.": [
+        "Stelle sicher, dass du den obigen SCIM-Token jetzt kopierst."
+      ],
+      "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
+        "Sobald SCIM für deine Organisation deaktiviert ist, werden **alle SCIM-Benutzer, die automatisch von deinem Identitätsanbieter bereitgestellt werden, in SSO-Benutzer** umgewandelt und du kannst sie direkt in den Einstellungen von ${ BRAND_NAME } verwalten."
+      ],
+      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ VPN_APP_NAME } organization.": [
+        "Vereinfacht die Benutzerverwaltung über verschiedene Dienste hinweg. Füge Benutzer in deinem Identitätsanbieter hinzu, bearbeite und entferne sie, und diese Änderungen werden automatisch auf deine ${ VPN_APP_NAME }-Organisation übertragen."
+      ],
+      "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
+        "Das automatische SCIM-Provisioning wird deaktiviert, bis du den neuen SCIM-Token in die Einstellungen deines Identitätsanbieters eingibst."
+      ],
+      "The SCIM base URL and token will be deleted.": [
+        "SCIM-Basis-URL und -Token werden gelöscht."
+      ],
+      "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
+        "Um die Synchronisierung mit deinem Identitätsanbieter wieder zu aktivieren, musst du die SCIM-Integration erneut abschließen."
+      ]
+    },
+    "scim: Label": {
+      "SCIM base URL": [
+        "SCIM-Basis-URL"
+      ],
+      "SCIM base URL (or tenant URL)": [
+        "SCIM-Basis-URL (oder Tenant-URL)"
+      ],
+      "SCIM token": [
+        "SCIM-Token"
+      ]
+    },
+    "scim: Title": {
+      "Disable SCIM integration?": [
+        "SCIM-Integration deaktivieren?"
+      ],
+      "Generate new SCIM token?": [
+        "Neuen SCIM-Token generieren?"
+      ],
+      "SCIM automatic provisioning": [
+        "Automatisches SCIM-Provisioning"
+      ]
+    },
+    "scim: Tooltip": {
+      "API key of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
+        "API-Schlüssel des SCIM-Connectors, an den dein IdP Provisioning Agent SCIM-Daten weiterleitet"
+      ],
+      "URL of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
+        "URL des SCIM-Connectors, an den dein IdP Provisioning Agent SCIM-Daten weiterleitet"
+      ]
+    },
     "Select file": {
       "Upload CSV file": [
         "CSV-Datei hochladen"
@@ -6402,6 +6560,9 @@
     "Select invoice document": {
       "Currency conversion": [
         "Währungsumrechnung"
+      ],
+      "Invoice": [
+        "Rechnung"
       ]
     },
     "Select search results": {
@@ -7139,6 +7300,26 @@
         "Für"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB Speicherplatz"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatische E-Mail-Weiterleitung ${ strongText }"
+      ],
+      "Desktop app": [
+        "Desktop-App"
+      ],
+      "Short @pm.me email address": [
+        "Kurze @pm.me-E-Mail-Adresse"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "We don't sell your data": [
+        "Wir verkaufen deine Daten nicht"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Bist du sicher?"
@@ -7710,6 +7891,9 @@
       "Gift code": [
         "Gutscheincode"
       ],
+      "How to choose a good logo": [
+        "Wie man ein gutes Logo auswählt"
+      ],
       "Human verification": [
         "Captcha"
       ],
@@ -7944,6 +8128,9 @@
       ],
       "WireGuard configuration": [
         "WireGuard-Konfiguration"
+      ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Deine kostenlose Testversion von ${ planName } endet am ${ textDate }."
       ],
       "Your changes are not synced yet": [
         "Deine Änderungen wurden noch nicht synchronisiert"

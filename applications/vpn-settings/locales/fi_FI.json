@@ -1910,9 +1910,6 @@
       "Once deleted, this address can't be used again by anyone else.": [
         "Poiston jälkeen kukaan muu ei voi enää käyttää tätä osoitetta."
       ],
-      "The next active address on your list will be set as the default.": [
-        "Seuraava listallasi oleva aktiivinen osoite asetetaan oletusosoitteeksi."
-      ],
       "You can only delete 1 address per year.": [
         "Voit poistaa vain yhden osoitteen vuodessa."
       ]
@@ -3132,6 +3129,9 @@
       "Current plan": [
         "Nykyinen tilaus"
       ],
+      "Custom branding": [
+        "Oma brändäys"
+      ],
       "Custom email domains": [
         "Omat sähköpostiverkkotunnukset"
       ],
@@ -3892,6 +3892,9 @@
       ],
       "Upload your completed CSV file to create accounts": [
         "Luo tilejä tuomalla täydellinen CSV-tiedosto"
+      ],
+      "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
+        "Lisää organisaatiosi logo, jotta voit vahvistaa brändisi identiteettiä ja tarjota käyttäjillesi mukautetun käyttökokemuksen."
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Käytä nykyisen kuormituksen ja sijainnin perusteella parasta palvelinta: ${ formattedBestServerName }"
@@ -6503,6 +6506,9 @@
       ]
     },
     "scim: Info": {
+      "Enter token into your identity provider": [
+        "Syötä tunniste identiteettipalveluntarjoajallesi"
+      ],
       "For security reasons, the token is hidden": [
         "Tunniste on tietoturvasyistä piilotettu"
       ]

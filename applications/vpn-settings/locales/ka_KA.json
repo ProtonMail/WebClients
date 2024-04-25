@@ -143,6 +143,9 @@
       "Delete Gateway": [
         "რაუტერის წაშლა"
       ],
+      "Delete logo": [
+        "ლოგოს წაშლა"
+      ],
       "Delete user": [
         "მომხმარებლის წაშლა"
       ],
@@ -283,6 +286,9 @@
       ],
       "Invite user": [
         "მომხმარებლის მოწვევა"
+      ],
+      "Keep logo": [
+        "ლოგოს შენარჩუნება"
       ],
       "Keep my Plus subscription": [
         "ჩემი Plus გამოწერის შენარჩუნება"
@@ -440,6 +446,9 @@
       "Select country": [
         "აირჩიეთ ქვეყანა"
       ],
+      "select file": [
+        "აირჩიეთ ფაილი"
+      ],
       "Select file": [
         "აირჩიეთ ფაილი"
       ],
@@ -491,6 +500,9 @@
       "Signing in": [
         "შესვლა"
       ],
+      "Start live chat": [
+        "ცოცხალი ჩატის გაშვება"
+      ],
       "Stop using single sign-on": [
         "SSO-ის გამოყენების შეწყვეტა"
       ],
@@ -532,6 +544,12 @@
       ],
       "Upgrade your plan": [
         "გააუმჯობესეთ თქვენი ტარიფი"
+      ],
+      "Upload": [
+        "ატვირთვა"
+      ],
+      "Upload logo": [
+        "ლოგოს ატვირთვა"
       ],
       "Use ${ label } theme": [
         "${ label }-ის გამოყენება"
@@ -1872,9 +1890,6 @@
       ]
     },
     "Delete address prompt": {
-      "The next active address on your list will be set as the default.": [
-        "თქვენი სიის შემდეგი აქტიური მისამართი ნაგულისხმევად მოინიშნება."
-      ],
       "You can only delete 1 address per year.": [
         "თქვენ წელიწადში, მხოლოდ, 1 მისამართის წაშლა შეგიძლიათ."
       ]
@@ -2052,6 +2067,9 @@
       ],
       "Name does not match": [
         "სახელი არ ემთხვევა"
+      ],
+      "No image selected": [
+        "გამოსახულება არჩეული არაა"
       ],
       "Not a valid number": [
         "არასწორი ნომერი"
@@ -2774,6 +2792,11 @@
         "მომხმარებლის სახელი"
       ]
     },
+    "Headline": {
+      "Contact us": [
+        "დაგვიკავშირდით"
+      ]
+    },
     "Hint": {
       "Add this record to your domain in the control panel of your domain name registrar": [
         "დაამატეთ ეს ჩანაწერი თქვენს დომენს თქვენი დომენური სახელის რეგისტრატორის მართვის პანელში"
@@ -3065,6 +3088,9 @@
       "Current plan": [
         "მიმდინარე ტარიფი"
       ],
+      "Custom branding": [
+        "მომხმარებლის ბრენდინგი"
+      ],
       "Custom email domains": [
         "ელფოსტის თქვენი დომენები"
       ],
@@ -3318,6 +3344,9 @@
       "Link copied to clipboard": [
         "ბმული დაკოპირდა გაცვლის ბაფერში"
       ],
+      "Live chat": [
+        "ცოცხალი ჩატი"
+      ],
       "Loading": [
         "იტვირთება"
       ],
@@ -3486,6 +3515,9 @@
       "Plus or Visionary subscription required": [
         "საჭიროა Plus ან Visionary გამოწერა"
       ],
+      "Preview": [
+        "გადახედვა"
+      ],
       "Preview failed to be loaded": [
         "მინიატურის ჩატვირთვის შეცდომა"
       ],
@@ -3515,6 +3547,9 @@
       ],
       "Remember to share the user's sign in details with them.": [
         "გახსოვდეთ, რომ აუცილებელია, მომხმარებლებს მათი შესვლის დეტალები გაუზიაროთ."
+      ],
+      "Request a phone call": [
+        "ზარის შეკვეთა"
       ],
       "Resend verification email": [
         "გადამოწმების ელფოსტის თავიდან გაგზავნა"
@@ -4076,6 +4111,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "თქვენი გამოწერა Mozilla-ს მიერ იმართება. დაუკავშირდით მათ მხარდაჭერის გუნდს."
+      ],
+      "Zoom meeting": [
+        "Zoom-ის შეხვედრა"
       ]
     },
     "Info for cash payment method": {
@@ -4385,6 +4423,9 @@
       ],
       "Level for NetShield blocker filtering": [
         "Netshield blocker-ის ფილტრის დონე"
+      ],
+      "Logo": [
+        "ლოგო"
       ],
       "Mailbox password": [
         "საფოსტო ყუთის პაროლი"
@@ -6108,6 +6149,9 @@
       "MM/YY": [
         "თთ/წწ"
       ],
+      "Processing payment": [
+        "გადახდის დამუშავება"
+      ],
       "Timeout exceeded": [
         "მოლოდინის ვადა ამოიწურა"
       ]
@@ -6341,6 +6385,36 @@
       ],
       "User": [
         "მომხმარებელი"
+      ]
+    },
+    "scim: Action": {
+      "Configure SCIM": [
+        "SCIM-ის მორგება"
+      ],
+      "Disable SCIM": [
+        "SCIM-ის გათიშვა"
+      ],
+      "Disable SCIM integration": [
+        "SCIM ჩაშენების გათიშვა"
+      ],
+      "Generate new token": [
+        "ახალი კოდის გენერაცია"
+      ],
+      "Generate token": [
+        "კოდის გენერაცია"
+      ]
+    },
+    "scim: Label": {
+      "SCIM base URL": [
+        "SCIM-ის საბაზისო URL"
+      ],
+      "SCIM token": [
+        "SCIM კოდი"
+      ]
+    },
+    "scim: Title": {
+      "Generate new SCIM token?": [
+        "დავაგენერირო ახალი SCIM კოდი?"
       ]
     },
     "Select file": {

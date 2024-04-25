@@ -1910,9 +1910,6 @@
       "Once deleted, this address can't be used again by anyone else.": [
         "Una vez eliminada, esta dirección no puede ser usada nuevamente por otra persona."
       ],
-      "The next active address on your list will be set as the default.": [
-        "La siguiente dirección activa en su lista será establecida como la dirección por defecto."
-      ],
       "You can only delete 1 address per year.": [
         "Solo puede eliminar 1 dirección por año."
       ]
@@ -3132,6 +3129,9 @@
       "Current plan": [
         "Plan actual"
       ],
+      "Custom branding": [
+        "Marca personalizada"
+      ],
       "Custom email domains": [
         "Dominios de correo personalizados"
       ],
@@ -3892,6 +3892,9 @@
       ],
       "Upload your completed CSV file to create accounts": [
         "Cargue su archivo CSV completo para crear cuentas"
+      ],
+      "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
+        "Cargue el logotipo de su organización para potenciar su identidad de marca y crear una experiencia personalizada para sus usuarios."
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Use el mejor servidor según la carga actual y la ubicación: ${ formattedBestServerName }"
@@ -7325,6 +7328,47 @@
     "Subscription price": {
       "For": [
         "Al"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB de espacio de almacenamiento"
+      ],
+      "and 15 more premium features": [
+        "y más de 15 funciones premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Reenvío de correo automático ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertas de vulneraciones de datos ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "App de escritorio"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ayúdenos a mantener internet seguro y privado para todos. Mejore a un plan de pago."
+      ],
+      "No ads or tracking": [
+        "Sin anuncios ni rastreadores"
+      ],
+      "Short @pm.me email address": [
+        "Dirección de correo corta @pm.me"
+      ],
+      "Support our mission": [
+        "Apoya nuestra misión"
+      ],
+      "Upgrade": [
+        "Mejorar"
+      ],
+      "Upgrade your productivity": [
+        "Mejore su productividad"
+      ],
+      "We don't sell your data": [
+        "No vendemos sus datos"
+      ],
+      "Your privacy is our mission": [
+        "Su privacidad es nuestra misión"
       ]
     },
     "Subscription renewal state": {
