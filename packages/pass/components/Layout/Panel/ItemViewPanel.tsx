@@ -135,13 +135,15 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                                         icon="arrows-rotate"
                                         disabled={sharedReadOnly}
                                     />
-                                    {monitorActions}
+
                                     <DropdownMenuButton
                                         onClick={handleDeleteClick}
                                         label={c('Action').t`Delete permanently`}
                                         icon="trash-cross"
                                         disabled={sharedReadOnly}
                                     />
+
+                                    {monitorActions}
                                 </QuickActionsDropdown>,
                             ];
                         }
@@ -235,13 +237,15 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                                         icon={'clock-rotate-left'}
                                     />
                                 )}
-                                {monitorActions}
+
                                 <DropdownMenuButton
                                     onClick={handleMoveToTrashClick}
                                     label={c('Action').t`Move to Trash`}
                                     icon="trash"
                                     disabled={sharedReadOnly}
                                 />
+
+                                {monitorActions}
                             </QuickActionsDropdown>,
                         ];
                     })()}

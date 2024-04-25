@@ -18,11 +18,11 @@ export const LoginView: FC<ItemViewProps<'login'>> = (itemViewProps) => {
     const modifiedCount = revisionNumber - 1;
 
     const monitorEnabled = useFeatureFlag(PassFeature.PassMonitor);
-    const showReport = !isHealthCheckSkipped(revision);
 
     return (
         <ItemViewPanel type="login" {...itemViewProps}>
-            {monitorEnabled && showReport && <ItemReport shareId={shareId} itemId={itemId} />}
+            {monitorEnabled && !isHealthCheckSkipped(revision) && <ItemReport shareId={shareId} itemId={itemId} />}
+
             <LoginContent revision={revision} />
 
             <ItemHistoryStats
