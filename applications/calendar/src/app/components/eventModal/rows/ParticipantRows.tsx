@@ -34,7 +34,7 @@ const ParticipantRows = ({
     }, 150);
 
     return (
-        <div className="pt-1">
+        <div className="pt-1 border-bottom border-weak mb-1">
             {attendeeModel.map((participant) => {
                 return isBusyTimeSlotsAvailable ? (
                     <BusyParticipantRow
