@@ -116,6 +116,7 @@ export enum SupportedMimeTypes {
     heifs = 'image/heif-sequence',
     ico = 'image/x-icon',
     jpg = 'image/jpeg',
+    jxl = 'image/jxl',
     keynote = 'application/vnd.apple.keynote',
     m4a = 'audio/x-m4a',
     m4v = 'video/x-m4v',
@@ -165,6 +166,7 @@ export enum SupportedMimeTypes {
 export const EXTRA_EXTENSION_TYPES: { [ext: string]: string } = {
     py: 'text/x-python',
     ts: 'application/typescript',
+    jxl: 'image/jxl',
 };
 
 export enum SHARE_MEMBER_PERMISSIONS {
