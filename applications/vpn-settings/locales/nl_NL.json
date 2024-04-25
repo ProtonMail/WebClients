@@ -143,6 +143,9 @@
       "Delete Gateway": [
         "Gateway verwijderen"
       ],
+      "Delete logo": [
+        "Logo verwijderen"
+      ],
       "Delete user": [
         "Gebruiker verwijderen"
       ],
@@ -283,6 +286,9 @@
       ],
       "Invite user": [
         "Gebruiker uitnodigen"
+      ],
+      "Keep logo": [
+        "Logo behouden"
       ],
       "Keep my Plus subscription": [
         "Behoud mijn Plus-abonnement"
@@ -440,6 +446,9 @@
       "Select country": [
         "Selecteer land"
       ],
+      "select file": [
+        "selecteer bestand"
+      ],
       "Select file": [
         "Selecteer bestand"
       ],
@@ -491,6 +500,9 @@
       "Signing in": [
         "Aanmelden"
       ],
+      "Start live chat": [
+        "Start Live Chat"
+      ],
       "Stop using single sign-on": [
         "Stop met single sign-on"
       ],
@@ -532,6 +544,12 @@
       ],
       "Upgrade your plan": [
         "Upgrade uw abonnement"
+      ],
+      "Upload": [
+        "Uploaden"
+      ],
+      "Upload logo": [
+        "Logo uploaden"
       ],
       "Use ${ label } theme": [
         "Gebruik ${ label } thema"
@@ -1872,8 +1890,8 @@
       ]
     },
     "Delete address prompt": {
-      "The next active address on your list will be set as the default.": [
-        "Het volgende actieve adres op uw lijst zal als standaard worden ingesteld."
+      "Once deleted, this address can't be used again by anyone else.": [
+        "Eens verwijderd, kan dit adres niet meer door iemand anders gebruikt worden."
       ],
       "You can only delete 1 address per year.": [
         "U kunt slechts 1 adres per jaar verwijderen."
@@ -2005,6 +2023,12 @@
       "Error connecting to the Bitcoin API.": [
         "Fout bij het verbinden met de Bitcoin API."
       ],
+      "Failed to process the logo": [
+        "Het logo kon niet worden verwerkt"
+      ],
+      "File too large. Your logo must be 30 KB or smaller.": [
+        "Bestand is te groot. Uw logo moet 30 KB of kleiner zijn."
+      ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Als de tijd op uw TV is verlopen, klik op vernieuwen op uw TV en voer uw code opnieuw in."
       ],
@@ -2016,6 +2040,9 @@
       ],
       "Impossible to rename the gateway": [
         "De gateway hernoemen is niet mogelijk"
+      ],
+      "Incorrect file type. Upload a file in PNG or JPEG format.": [
+        "Onjuist bestandstype. Upload een bestand in PNG- of JPEG-formaat."
       ],
       "Incorrect login credentials. Please try again.": [
         "Onjuiste inloggegevens. Gelieve opnieuw te proberen."
@@ -2052,6 +2079,9 @@
       ],
       "Name does not match": [
         "Naam komt niet overeen"
+      ],
+      "No image selected": [
+        "Geen afbeelding geselecteerd"
       ],
       "Not a valid number": [
         "Geen geldig getal"
@@ -2104,6 +2134,9 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Upgrade naar een zakelijk abonnement met meer dan 1 gebruiker om meerdere gebruikers te beheren."
       ],
+      "Please upload a square file": [
+        "Upload een vierkant bestand a.u.b."
+      ],
       "Please upload an xml file": [
         "Upload een xml-bestand"
       ],
@@ -2130,6 +2163,12 @@
       ],
       "The email addresses do not match": [
         "De e-mailadressen komen niet overeen"
+      ],
+      "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
+        "Het bestand is te groot, de maximale grootte is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }"
+      ],
+      "The file is too small, the minimum size is ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }": [
+        "Het bestand is te klein, de minimale grootte is ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }"
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Het minimumbedrag dat kan worden toegevoegd is: ${ price }"
@@ -2774,6 +2813,11 @@
         "Gebruikersnaam"
       ]
     },
+    "Headline": {
+      "Contact us": [
+        "Contacteer ons"
+      ]
+    },
     "Hint": {
       "Add this record to your domain in the control panel of your domain name registrar": [
         "Voeg deze record toe aan uw domein in het beheerpaneel van uw domeinnaam register"
@@ -2904,6 +2948,9 @@
       "Add server (${ availableAddedCount } available)": [
         "Server toevoegen (${ availableAddedCount } beschikbaar)",
         "Server toevoegen (${ availableAddedCount } beschikbaar)"
+      ],
+      "Add your name and logo to create a more personalized experience for your organization.": [
+        "Voeg uw naam en logo toe om een gepersonaliseerde ervaring voor uw organisatie te maken."
       ],
       "Adding ${ addedServerCount } gateway server": [
         "${ addedServerCount } gatewayserver wordt toegevoegd",
@@ -3064,6 +3111,9 @@
       ],
       "Current plan": [
         "Huidig abonnement"
+      ],
+      "Custom branding": [
+        "Eigen branding"
       ],
       "Custom email domains": [
         "Aangepaste e-maildomeinen"
@@ -3264,6 +3314,12 @@
       "If you wish to combine this account with another one, do NOT delete it.": [
         "Als u dit account met een ander account wilt combineren, verwijder deze dan NIET."
       ],
+      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
+        "Als je problemen hebt, zijn we hier om te helpen. ${ boldPhoneCall } of ${ boldZoomMeeting } met een van onze support specialisten, of open een ${ boldLiveChat } voor chatondersteuning."
+      ],
+      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists.": [
+        "Indien u problemen heeft, zijn we hier om te helpen. ${ boldPhoneCall } of ${ boldZoomMeeting } met een van onze ondersteuningsspecialisten."
+      ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Belangrijk: Zorg ervoor dat u de herstelcodes opslaat. Anders kunt u permanent toegang tot uw account verliezen als u uw tweestapsverificatieapparaat kwijtraakt."
       ],
@@ -3317,6 +3373,9 @@
       ],
       "Link copied to clipboard": [
         "Link gekopieerd naar klembord"
+      ],
+      "Live chat": [
+        "Live chat"
       ],
       "Loading": [
         "Laden"
@@ -3489,6 +3548,9 @@
       "Plus or Visionary subscription required": [
         "Plus- of Visionary-abonnement vereist"
       ],
+      "Preview": [
+        "Voorbeeld"
+      ],
       "Preview failed to be loaded": [
         "Voorvertoning kon niet worden geladen"
       ],
@@ -3518,6 +3580,9 @@
       ],
       "Remember to share the user's sign in details with them.": [
         "Vergeet niet om de inloggegevens van de gebruiker met hen te delen."
+      ],
+      "Request a phone call": [
+        "Telefoongesprek aanvragen"
       ],
       "Resend verification email": [
         "Verificatie e-mail opnieuw versturen"
@@ -3811,6 +3876,9 @@
       "Upload your completed CSV file to create accounts": [
         "Upload uw voltooide CSV-bestand om accounts aan te maken"
       ],
+      "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
+        "Upload het logo van uw organisatie om uw merkidentiteit te versterken en een gepersonaliseerde ervaring voor uw gebruikers te creëren."
+      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Gebruik de beste servers volgens de huidige belasting en positie: ${ formattedBestServerName }"
       ],
@@ -4085,6 +4153,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Uw abonnement wordt beheerd door Mozilla. Neem contact op met Mozilla support."
+      ],
+      "Zoom meeting": [
+        "Zoom meeting"
       ]
     },
     "Info for cash payment method": {
@@ -4394,6 +4465,9 @@
       ],
       "Level for NetShield blocker filtering": [
         "Niveau voor NetShield blokkeerfiltering"
+      ],
+      "Logo": [
+        "Logo"
       ],
       "Mailbox password": [
         "Mailboxwachtwoord"
@@ -5905,6 +5979,43 @@
         "Uw abonnement bevat een maximum van ${ humanReadableAvailableSpace } extra opslag."
       ]
     },
+    "Organization logo upload": {
+      "Avoid overly compressed images.": [
+        "Vermijd overmatig gecomprimeerde afbeeldingen."
+      ],
+      "Ensure your logo has padding space around it.": [
+        "Zorg ervoor dat uw logo ruimte eromheen bevat."
+      ],
+      "Opt for a PNG image that is a 128x128 pixels for clarity.": [
+        "Kies voor een PNG-afbeelding die 128 x 128 pixels is voor duidelijkheid."
+      ],
+      "Tips on choosing a good logo": [
+        "Tips voor het kiezen van een goed logo"
+      ],
+      "Use a graphical icon or image rather than text.": [
+        "Gebruik een grafische pictogram of afbeelding in plaats van tekst."
+      ],
+      "Use a solid background color.": [
+        "Gebruik een solide achtergrondkleur."
+      ]
+    },
+    "Organization logo upload modal": {
+      "Drop image file here to upload or": [
+        "Sleep de foto hierheen om te uploaden of"
+      ],
+      "File in PNG or JPEG format": [
+        "Bestand in PNG- of JPEG-formaat"
+      ],
+      "File not larger than 30 KB": [
+        "Bestand niet groter dan 30 KB"
+      ],
+      "Square image of at least 128 pixels": [
+        "Vierkante afbeelding van minstens 128 pixels"
+      ],
+      "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
+        "Gebruikers zullen uw logo zien in plaats van het ${ BRAND_NAME } pictogram wanneer ze inlogt zijn op onze webapps."
+      ]
+    },
     "Pass B2B onboarding spotlight": {
       "Go to your vault to manage your passwords, aliases, and more.": [
         "Ga naar uw kluis om wachtwoorden, aliassen en meer te beheren."
@@ -6323,6 +6434,11 @@
         "Uw telefoonnummer verifiëren verhoogt uw accountbeveiliging en laat extra opties voor herstel toe."
       ]
     },
+    "Remove organization logo": {
+      "Users will no longer see your custom logo or organization name.": [
+        "Gebruikers zullen uw eigen logo of organisatienaam niet meer zien."
+      ]
+    },
     "Restore administrator panel": {
       "${ n } administrator in your organization need access to the organization key.": [
         "${ n } beheerder in uw organisatie heeft toegang nodig tot de organisatiesleutel.",
@@ -6350,6 +6466,56 @@
       ],
       "User": [
         "Gebruiker"
+      ]
+    },
+    "scim: Action": {
+      "Configure SCIM": [
+        "SCIM configureren"
+      ],
+      "Disable SCIM": [
+        "SCIM uitschakelen"
+      ],
+      "Disable SCIM integration": [
+        "SCIM integratie uitschakelen"
+      ],
+      "Generate new token": [
+        "Nieuwe token genereren"
+      ],
+      "Generate token": [
+        "Token genereren"
+      ]
+    },
+    "scim: Info": {
+      "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
+        "Zodra SCIM is uitgeschakeld voor uw organisatie, **zullen alle SCIM gebruikers die automatisch door uw identiteitsprovider worden aangeboden worden omgezet naar SSO gebruikers** en u kunt ze direct beheren binnen de ${ BRAND_NAME } instellingen."
+      ],
+      "The SCIM base URL and token will be deleted.": [
+        "De SCIM basis URL en token zullen worden verwijderd."
+      ],
+      "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
+        "Om het synchroniseren met je identiteitsprovider opnieuw aan te zetten, moet je de SCIM integratie opnieuw voltooien."
+      ]
+    },
+    "scim: Label": {
+      "SCIM base URL": [
+        "SCIM basis URL"
+      ],
+      "SCIM base URL (or tenant URL)": [
+        "SCIM basis URL (of tenant URL)"
+      ],
+      "SCIM token": [
+        "SCIM token"
+      ]
+    },
+    "scim: Title": {
+      "Disable SCIM integration?": [
+        "SCIM integratie uitschakelen?"
+      ],
+      "Generate new SCIM token?": [
+        "Nieuwe SCIM token genereren?"
+      ],
+      "SCIM automatic provisioning": [
+        "SCIM automatisch instellen"
       ]
     },
     "Select file": {
@@ -7567,6 +7733,9 @@
       "Delete address permanently?": [
         "Adres definitief verwijderen?"
       ],
+      "Delete organization logo?": [
+        "Logo van organisatie verwijderen?"
+      ],
       "Delete the server (you will still be able to recover it for ${ days } day)": [
         "Verwijder de server (u kan deze nog steeds herstellen na ${ days } dag)",
         "Verwijder de server (u kan deze nog steeds herstellen na ${ days } dagen)"
@@ -7670,6 +7839,9 @@
       ],
       "Gift code": [
         "Geschenkcode"
+      ],
+      "How to choose a good logo": [
+        "Hoe kies je een goed logo"
       ],
       "Human verification": [
         "Persoonsverificatie"
@@ -7882,6 +8054,9 @@
       "Upload CSV file to create multiple accounts": [
         "Upload CSV-bestand om meerdere gebruikers aan te maken"
       ],
+      "Upload your organization’s logo": [
+        "Upload het logo van uw organisatie"
+      ],
       "Users": [
         "Gebruikers"
       ],
@@ -8002,6 +8177,9 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Het geselecteerde thema is actief wanneer uw systeem is ingesteld op \"lichte modus\""
+      ],
+      "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
+        "Gebruikers zullen uw logo zien in plaats van het ${ BRAND_NAME } pictogram wanneer ze inlogt zijn op onze webapps."
       ],
       "Usually an URL that contains the identity provider's name within": [
         "Normaal gesproken een URL die de naam van de identiteitsprovider bevat binnen"

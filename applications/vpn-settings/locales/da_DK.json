@@ -2047,6 +2047,9 @@
       "Name does not match": [
         "Navn matcher ikke"
       ],
+      "No image selected": [
+        "Intet billede valgt"
+      ],
       "Not a valid number": [
         "Ikke et gyldigt nummer"
       ],
@@ -3821,7 +3824,7 @@
         "Brugere"
       ],
       "Verification can take a few minutes.": [
-        "Bekærftelsen kan tage et par minutter."
+        "Bekræftelse kan tage et par minutter."
       ],
       "Verification may take a few minutes.": [
         "Bekræftelsen kan tage et par minutter."
@@ -6021,6 +6024,9 @@
       "Permission denied, administrator privileges have been restricted.": [
         "Tilladelse nægtet, administratorrettigheder er blevet begrænset."
       ],
+      "Please ensure they have an enabled address and invite them separately later.": [
+        "Sørg for, at de har en aktiveret adresse, og inviter dem separat senere."
+      ],
       "Private users can be promoted to admin when they've signed in for the first time": [
         "Private brugere kan blive forfremmet til administrator, når de har logget ind for første gang"
       ],
@@ -6095,6 +6101,9 @@
       ],
       "Invalid expiration date": [
         "Ugyldig udløbsdato"
+      ],
+      "Invalid security code": [
+        "Ugyldig sikkerhedskode"
       ],
       "Something went wrong. Please try again later.": [
         "Noget gik galt. Prøv igen senere."
@@ -6317,14 +6326,25 @@
         "Bruger"
       ]
     },
+    "scim: Info": {
+      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ VPN_APP_NAME }.": [
+        "Gå til din identitetsudbyder, kopier og indsæt tokenet nedenfor, og genaktiver SCIM for ${ VPN_APP_NAME }."
+      ]
+    },
     "Select file": {
       "Upload CSV file": [
         "Upload en CSV-fil"
       ]
     },
     "Select invoice document": {
+      "Credit note": [
+        "Kreditnota"
+      ],
       "Currency conversion": [
         "Valutaomregning"
+      ],
+      "Invoice": [
+        "Faktura"
       ]
     },
     "Select search results": {
@@ -7060,6 +7080,14 @@
     "Subscription price": {
       "For": [
         "Til"
+      ]
+    },
+    "subscription reminder": {
+      "and 15 more premium features": [
+        "og 15 andre premium-funktioner"
+      ],
+      "We don't sell your data": [
+        "Vi sælger ikke dine data"
       ]
     },
     "Subscription renewal state": {
@@ -7861,6 +7889,9 @@
       ],
       "WireGuard configuration": [
         "WireGuard konfiguration"
+      ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Din gratis prøveperiode på ${ planName } slutter ${ textDate }"
       ],
       "Your changes are not synced yet": [
         "Dine ændringer er endnu ikke synkroniseret"

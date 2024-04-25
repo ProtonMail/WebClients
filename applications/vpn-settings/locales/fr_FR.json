@@ -1908,10 +1908,7 @@
     },
     "Delete address prompt": {
       "Once deleted, this address can't be used again by anyone else.": [
-        "Une fois supprimée, personne ne peut réutiliser cette adresse."
-      ],
-      "The next active address on your list will be set as the default.": [
-        "La prochaine adresse active de votre liste sera définie comme adresse par défaut."
+        "Une fois cette adresse supprimée, personne ne peut plus l'utiliser."
       ],
       "You can only delete 1 address per year.": [
         "Vous pouvez supprimer uniquement 1 adresse par an."
@@ -2798,7 +2795,7 @@
         "Nom"
       ],
       "Save big with the best deals on ${ VPN_APP_NAME }": [
-        "Faites d'importantes économies avec les meilleures offres pour ${ VPN_APP_NAME }"
+        "Faites de belles économies avec les meilleures offres pour ${ VPN_APP_NAME }"
       ],
       "Select your deal": [
         "Choisissez votre offre"
@@ -3132,6 +3129,9 @@
       "Current plan": [
         "Abonnement actuel"
       ],
+      "Custom branding": [
+        "Marque personnalisée"
+      ],
       "Custom email domains": [
         "Domaines de messagerie personnalisés"
       ],
@@ -3332,10 +3332,10 @@
         "Si vous voulez associer ce compte à un autre, ne le supprimez pas."
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
-        "Si vous rencontrez des difficultés, nous pouvons vous aider. ${ boldPhoneCall }, ${ boldZoomMeeting } avec l'un de nos spécialistes ou utilisez notre ${ boldLiveChat } pour le support par chat."
+        "Si vous rencontrez des difficultés, nous pouvons vous aider. ${ boldPhoneCall }, une ${ boldZoomMeeting } avec l'un de nos spécialistes ou utilisez notre ${ boldLiveChat } pour le support par chat."
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists.": [
-        "Si vous rencontrez des difficultés, nous pouvons vous aider. ${ boldPhoneCall }ou ${ boldZoomMeeting } avec l'un de nos spécialistes."
+        "Si vous rencontrez des difficultés, nous pouvons vous aider. ${ boldPhoneCall } ou une ${ boldZoomMeeting } avec l'un de nos spécialistes."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Important : assurez-vous de sauvegarder les codes de récupération. Vous risquez sinon de perdre définitivement l'accès à votre compte si vous perdez votre dispositif d'authentification à deux facteurs."
@@ -3503,7 +3503,7 @@
         "par mois"
       ],
       "per month, billed at ${ price }": [
-        "par mois, facturé à ${ price }"
+        "par mois, facturé ${ price }"
       ],
       "per month, billed every 12 months": [
         "par mois (facturation tous les 12 mois)"
@@ -3599,7 +3599,7 @@
         "Pensez à partager les informations de connexion avec l'utilisateur concerné."
       ],
       "Request a phone call": [
-        "Demander un appel téléphonique"
+        "Demandez un appel téléphonique"
       ],
       "Resend verification email": [
         "Envoyer à nouveau le message de vérification"
@@ -3834,7 +3834,7 @@
         "Pour continuer, sélectionnez une méthode de récupération de compte et nous pourrons vérifier la demande."
       ],
       "To proceed, we must verify the request.": [
-        "Pour continuer, nous devons d'abord vérifier la requête."
+        "Pour continuer, nous devons vérifier la demande."
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Pour sécuriser votre connexion internet, téléchargez et installez l'application ${ VPN_APP_NAME } pour votre appareil et connectez-vous à un serveur."
@@ -3892,6 +3892,9 @@
       ],
       "Upload your completed CSV file to create accounts": [
         "Importez votre fichier CSV pour créer des comptes."
+      ],
+      "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
+        "Importez le logo de votre organisation pour renforcer l'identité de votre marque et créer une expérience personnalisée pour vos utilisateurs."
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Utilisez le meilleur serveur en fonction de la charge actuelle et de la position : ${ formattedBestServerName }"
@@ -5498,7 +5501,7 @@
         "Accès en avant-première aux nouvelles fonctionnalités et applications"
       ],
       "Essential protection and secure collaboration for unlimited users.": [
-        "Protection indispensable et collaboration sécurisée pour un nombre illimité d'utilisateurs."
+        "L'essentiel pour la protection et la collaboration sécurisée avec un nombre illimité d'utilisateurs."
       ],
       "For next-level password management and identity protection.": [
         "Passez au niveau supérieur pour gérer vos mots de passe et protéger votre identité."
@@ -5998,7 +6001,7 @@
         "Évitez les images trop compressées."
       ],
       "Ensure your logo has padding space around it.": [
-        "Assurez-vous que votre logo soit entouré d'un espace de remplissage."
+        "Assurez-vous que votre logo soit entouré d'un espace de dégagement."
       ],
       "Opt for a PNG image that is a 128x128 pixels for clarity.": [
         "Optez pour une image PNG de 128 x 128 pixels pour plus de clarté."
@@ -6024,10 +6027,10 @@
         "Le fichier ne doit pas dépasser les 30 Ko."
       ],
       "Square image of at least 128 pixels": [
-        "Image carrée avec au moins 128 pixels"
+        "Image carrée d'au moins 128 pixels"
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
-        "Les utilisateurs verront votre logo au lieu de l'icône ${ BRAND_NAME } lorsqu'ils se connecteront à vos applications web."
+        "Les utilisateurs verront votre logo au lieu de l'icône ${ BRAND_NAME } lorsqu'ils se connecteront à nos applications web."
       ]
     },
     "Pass B2B onboarding spotlight": {
@@ -6132,10 +6135,10 @@
     },
     "password_reset: info": {
       "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **old password**.": [
-        "**Toutes vos informations existantes** (emails, événements, contacts, fichiers, ${ PASS_APP_NAME } saisi de données, etc.) **seront verrouillées** et ne peuvent seulement être déverrouillées avec votre **ancien mot de passe**."
+        "**Toutes vos informations existantes** (e-mails, événements, contacts, fichiers, entrées ${ PASS_APP_NAME }…) **seront verrouillées** et peuvent uniquement être déverrouillées avec votre **ancien mot de passe**."
       ],
       "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **recovery phrase** or your **old password**.": [
-        "**Toutes vos informations existantes** (emails, événements, contacts, fichiers, ${ PASS_APP_NAME } saisi de données, etc.) **seront verrouillées** et ne peuvent seulement être déverrouillées avec votre **phrase de récupération** ou votre **ancien mot de passe**."
+        "**Toutes vos informations existantes** (e-mails, événements, contacts, fichiers, entrées ${ PASS_APP_NAME }…) **seront verrouillées** et peuvent uniquement être déverrouillées avec votre **phrase de récupération** ou votre **ancien mot de passe**."
       ],
       "Any **two-factor authentication (2FA)** method on your account will be disabled.": [
         "Toutes vos méthodes **d'authentification à deux facteurs (A2F)** sur votre compte seront désactivées."
@@ -6143,10 +6146,10 @@
     },
     "passwordless": {
       "All administrators will get access to the key.": [
-        "Tous les administrateurs auront accés à la clé."
+        "Tous les administrateurs auront accès à la clé."
       ],
       "Are you sure you want to change your organization key?": [
-        "Êtes-vous sûr de vouloir modifier la clé de l'organisation ?"
+        "Voulez-vous vraiment modifier la clé de l'organisation ?"
       ],
       "Change organization key": [
         "Changer la clé de l’organisation"
@@ -6191,7 +6194,7 @@
         "La clé de l'organisation doit d'abord être activée."
       ],
       "This will send the latest organization key to the administrators that currently don't have access to it.": [
-        "Cela enverra la dernière clé de l’organisation aux administrateurs qui n'ont actuellement pas accès à celle-ci."
+        "Cela enverra la dernière clé de l'organisation aux administrateurs qui n'y ont pas encore accès."
       ],
       "To create non-private user accounts and access their accounts, you'll need to activate your organization key.": [
         "Pour créer des comptes utilisateur non privés et accéder à leurs comptes, vous devez activer votre clé de l’organisation."
@@ -6541,6 +6544,9 @@
       ],
       "The SCIM base URL and token will be deleted.": [
         "Le jeton et l'URL de base du SCIM seront supprimés."
+      ],
+      "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
+        "Pour réactiver la synchronisation avec votre fournisseur d'identité, vous devez finaliser à nouveau l'intégration SCIM."
       ]
     },
     "scim: Label": {
@@ -7322,6 +7328,47 @@
     "Subscription price": {
       "For": [
         "Pour"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 Go d'espace de stockage"
+      ],
+      "and 15 more premium features": [
+        "et 15 fonctionnalités premium en plus"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Transfert automatique des messages ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertes de fuites de données ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Application de bureau"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Contribuez à préserver la sécurité et la confidentialité d'internet pour tous. Passez à un abonnement payant."
+      ],
+      "No ads or tracking": [
+        "Aucune publicité, aucun suivi"
+      ],
+      "Short @pm.me email address": [
+        "Adresses e-mail @pm.me courtes"
+      ],
+      "Support our mission": [
+        "Soutenez notre mission"
+      ],
+      "Upgrade": [
+        "Changer d'abonnement"
+      ],
+      "Upgrade your productivity": [
+        "Améliorez votre productivité"
+      ],
+      "We don't sell your data": [
+        "Nous ne vendons pas vos données."
+      ],
+      "Your privacy is our mission": [
+        "Le respect de votre vie privée est notre priorité."
       ]
     },
     "Subscription renewal state": {

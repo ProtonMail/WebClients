@@ -288,7 +288,7 @@
         "Kullanıcı davet et"
       ],
       "Keep logo": [
-        "Logoyu sakla"
+        "Logoyu tut"
       ],
       "Keep my Plus subscription": [
         "Plus aboneliğimi koru"
@@ -447,7 +447,7 @@
         "Ülke seçin"
       ],
       "select file": [
-        "dosya seç"
+        "dosya seçin"
       ],
       "Select file": [
         "Dosya seçin"
@@ -547,6 +547,9 @@
       ],
       "Upload": [
         "Yükle"
+      ],
+      "Upload logo": [
+        "Logo yükle"
       ],
       "Use ${ label } theme": [
         "${ label } teması kullanılsın"
@@ -703,11 +706,20 @@
       ]
     },
     "app-switcher": {
+      "Browse the web privately and block ads": [
+        "İnternet üzerinde gizliliğinizi koruyarak ve reklamları engelleyerek gezinin"
+      ],
+      "Keep your schedule private": [
+        "Zaman planınızı gizli tutun"
+      ],
       "Protect your passwords and identity": [
-        "Şifrelerinizi ve kimliğinizi koruyun"
+        "Parolalarınızı ve kimliğinizi koruyun"
       ],
       "Safeguard your files and photos": [
         "Dosyalarınızı ve fotoğraflarınızı koruyun"
+      ],
+      "Secure your communications": [
+        "İletişiminizin güvenliğini sağlayın"
       ]
     },
     "bf2023: Action": {
@@ -1896,10 +1908,7 @@
     },
     "Delete address prompt": {
       "Once deleted, this address can't be used again by anyone else.": [
-        "Bu adres silindikten sonra başka hiç kimse tarafından tekrar kullanılamaz."
-      ],
-      "The next active address on your list will be set as the default.": [
-        "Listenizdeki bir sonraki etkin adres varsayılan olarak ayarlanacak."
+        "Bu adres silindikten sonra başka hiç kimse tarafından yeniden kullanılamaz."
       ],
       "You can only delete 1 address per year.": [
         "Bir yıl içinde yalnızca 1 adres silebilirsiniz."
@@ -2035,7 +2044,7 @@
         "Logo işlenemedi"
       ],
       "File too large. Your logo must be 30 KB or smaller.": [
-        "Dosya çok büyük. Logonuz 30 KB veya daha küçük olmalıdır."
+        "Dosya çok büyük. Logonuzun boyutu 30 KB ya da daha küçük olmalıdır."
       ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Geçerlilik süresi dolduysa, televizyonda yenile üzerine tıklayın ve kodunuzu yeniden yazın."
@@ -2050,7 +2059,7 @@
         "Ağ geçidi yeniden adlandırılamıyor"
       ],
       "Incorrect file type. Upload a file in PNG or JPEG format.": [
-        "Yanlış dosya türü. PNG veya JPEG formatında bir dosya yükleyin."
+        "Dosya türü yanlış. PNG ya da JPEG biçiminde bir dosya yükleyin."
       ],
       "Incorrect login credentials. Please try again.": [
         "Oturum açma bilgileri yanlış. Lütfen yeniden deneyin."
@@ -2089,7 +2098,7 @@
         "Ad eşleşmiyor"
       ],
       "No image selected": [
-        "Seçili görüntü yok"
+        "Herhangi bir görsel seçilmemiş"
       ],
       "Not a valid number": [
         "Numara geçerli değil"
@@ -2143,7 +2152,7 @@
         "Birden çok kullanıcıyı yönetmek için lütfen 1 taneden fazla kullanıcı içeren kurumsal bir tarifeye geçin."
       ],
       "Please upload a square file": [
-        "Lütfen kare bir dosya yükleyin"
+        "Lütfen kare biçiminde bir dosya yükleyin"
       ],
       "Please upload an xml file": [
         "Lütfen bir XML dosyası yükleyin"
@@ -2173,10 +2182,10 @@
         "E-posta adresleri eşleşmiyor"
       ],
       "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
-        "Dosya çok büyük, maksimum boyut ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }"
+        "Dosya çok büyük. En fazla boyut ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }"
       ],
       "The file is too small, the minimum size is ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }": [
-        "Dosya çok küçük, minimum boyut ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }"
+        "Dosya çok küçük. En az boyut ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }"
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Eklenebilecek en az kredi tutarı: ${ price }"
@@ -2957,6 +2966,9 @@
         "Sunucu ekle (${ availableAddedCount } kullanılabilir)",
         "Sunucu ekle (${ availableAddedCount } kullanılabilir)"
       ],
+      "Add your name and logo to create a more personalized experience for your organization.": [
+        "Kuruluşunuz için daha kişiselleştirilmiş bir deneyim oluşturmak için adınızı ve logonuzu ekleyin."
+      ],
       "Adding ${ addedServerCount } gateway server": [
         "${ addedServerCount } ağ geçidi sunucusu ekleniyor",
         "${ addedServerCount } ağ geçidi sunucusu ekleniyor"
@@ -3116,6 +3128,9 @@
       ],
       "Current plan": [
         "Geçerli tarife"
+      ],
+      "Custom branding": [
+        "Özel marka"
       ],
       "Custom email domains": [
         "Özel e-posta etki alanları"
@@ -3317,10 +3332,10 @@
         "Bu hesabı başka bir hesapla birleştirmek isterseniz, SİLMEYİN."
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
-        "Sorun yaşıyorsanız, size yardımcı olmak için buradayız. Destek uzmanlarımızdan biriyle ${ boldPhoneCall } veya ${ boldZoomMeeting } görüşün ya da sohbet desteği için bir ${ boldLiveChat } açın."
+        "Sorun yaşıyorsanız, size yardımcı olmak için buradayız. Destek uzmanlarımızdan biriyle ${ boldPhoneCall } yapın ya da ${ boldZoomMeeting } ile görüşün. Canlı destek almak için bir ${ boldLiveChat } açın."
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists.": [
-        "Sorun yaşıyorsanız, size yardımcı olmak için buradayız. ${ boldPhoneCall } veya ${ boldZoomMeeting } destek uzmanlarımızdan biriyle görüşün."
+        "Sorun yaşıyorsanız, size yardımcı olmak için buradayız. ${ boldPhoneCall } yapın ya da ${ boldZoomMeeting } ile destek uzmanlarımızdan biriyle görüşün."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Önemli: Lütfen kurtarma kodlarını kaydettiğinize emin olun. Bu kodlar olmadan, iki adımlı doğrulama aygıtınızı kaybederseniz hesabınıza asla erişemezsiniz."
@@ -3584,7 +3599,7 @@
         "Kullanıcının oturum açabilmesi için kimlik doğrulama bilgilerini paylaşmayı unutmayın."
       ],
       "Request a phone call": [
-        "Telefon görüşmesi talep edin"
+        "Telefon ile aranma isteği"
       ],
       "Resend verification email": [
         "Doğrulama e-postasını yeniden gönder"
@@ -3877,6 +3892,9 @@
       ],
       "Upload your completed CSV file to create accounts": [
         "Hesapları oluşturmak için hazırladığınız CSV dosyasını yükleyin"
+      ],
+      "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
+        "Marka kimliğinizi güçlendirmek ve kullanıcılarınız için kişiselleştirilmiş bir deneyim oluşturmak için kuruluşunuzun logosunu yükleyin."
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Güncel yük ve konuma göre en iyi sunucuyu kullanın: ${ formattedBestServerName }"
@@ -5982,28 +6000,37 @@
       "Avoid overly compressed images.": [
         "Aşırı sıkıştırılmış görüntülerden kaçının."
       ],
+      "Ensure your logo has padding space around it.": [
+        "Logonuzun çevresinde boşluk olduğundan emin olun."
+      ],
       "Opt for a PNG image that is a 128x128 pixels for clarity.": [
-        "Netlik için 128x128 piksel olan bir PNG görüntüsü tercih edin."
+        "Netlik için 128x128 piksel boyutunda bir PNG görseli kullanın."
+      ],
+      "Tips on choosing a good logo": [
+        "İyi bir logo seçmeye yönelik ipuçları"
       ],
       "Use a graphical icon or image rather than text.": [
-        "Metin yerine grafiksel bir simge veya resim kullanın."
+        "Metin yerine bir simge ya da görsel kullanın."
+      ],
+      "Use a solid background color.": [
+        "Düz bir arka plan rengi kullanın."
       ]
     },
     "Organization logo upload modal": {
       "Drop image file here to upload or": [
-        "Yüklemek için resim dosyasını buraya bırakın veya"
+        "Yüklemek için görsel dosyasını sürükleyip buraya bırakın ya da"
       ],
       "File in PNG or JPEG format": [
-        "PNG veya JPEG formatında dosya"
+        "PNG ya da JPEG biçiminde dosya"
       ],
       "File not larger than 30 KB": [
-        "Dosya 30 KB'tan büyük olmamalıdır"
+        "Dosya 30 KB boyutundan büyük olmamalıdır"
       ],
       "Square image of at least 128 pixels": [
-        "En az 128 piksellik kare görüntü"
+        "En az 128 piksel kare biçiminde görsel"
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
-        "Kullanıcılar web uygulamalarımızda oturum açtıklarında ${ BRAND_NAME } simgesi yerine logonuzu görecekler."
+        "Kullanıcılar İnternet uygulamalarımızda oturum açtıklarında ${ BRAND_NAME } simgesi yerine logonuzu görecekler."
       ]
     },
     "Pass B2B onboarding spotlight": {
@@ -6461,12 +6488,95 @@
         "Kullanıcı"
       ]
     },
+    "scim: Action": {
+      "Configure SCIM": [
+        "SCIM yapılandırması"
+      ],
+      "Disable SCIM": [
+        "SCIM kullanım dışı bırakılsın"
+      ],
+      "Disable SCIM integration": [
+        "SCIM bütünleştirmesi kullanım dışı bırakılsın mı"
+      ],
+      "Generate new token": [
+        "Yeni kod oluştur"
+      ],
+      "Generate token": [
+        "Kod oluştur"
+      ]
+    },
+    "scim: Info": {
+      "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
+        "**Ön koşul:** SCIM veri sağlamasını kullanıma almak için SAML kimlik doğrulamasının yapılandırılması gerekir."
+      ],
+      "Enter token into your identity provider": [
+        "Kodu kimlik hizmeti sağlayıcınıza yazın"
+      ],
+      "Enter URL and token into your identity provider": [
+        "Adresi ve kodu kimlik hizmeti sağlayıcınıza yazın"
+      ],
+      "For security reasons, the SCIM token will be hidden after saving your changes and you won’t be able to see it again.": [
+        "Güvenlik nedeniyle, değişikliklerinizi kaydettikten sonra SCIM kodu gizlenecek ve onu bir daha göremeyeceksiniz."
+      ],
+      "For security reasons, the token is hidden": [
+        "Güvenlik nedeniyle kod gizlenmiştir"
+      ],
+      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ VPN_APP_NAME }.": [
+        "Aşağıdaki verileri kopyalayın, kimlik hizmeti sağlayıcınıza giderek yapıştırın ve ${ VPN_APP_NAME } için SCIM yapılandırmasını tamamlayın."
+      ],
+      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ VPN_APP_NAME }.": [
+        "Aşağıdaki kodu kopyalayın, kimlik hizmeti sağlayıcınıza giderek yapıştırın ve ${ VPN_APP_NAME } için SCIM bütünleştirmesini yeniden kullanıma alın."
+      ],
+      "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
+        "SCIM kodunuzu kaybettiyseniz ya da unuttuysanız yeni bir kod oluşturabilirsiniz. Ancak kimlik hizmeti sağlayıcı ayarlarınızı güncellemeniz gerekeceğini unutmayın."
+      ],
+      "Make sure you copy the above SCIM token now.": [
+        "Yukarıdaki SCIM kodunu şimdi kopyaladığınızdan emin olun."
+      ],
+      "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
+        "Kuruluşunuzda SCIM kullanımdan kaldırıldığında, **kimlik hizmeti sağlayıcınız tarafından otomatik olarak sunulan tüm SCIM kullanıcıları tek oturum açma kullanıcılarına dönüştürülür** ve bunları doğrudan ${ BRAND_NAME } ayarlarından yönetebilirsiniz."
+      ],
+      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ VPN_APP_NAME } organization.": [
+        "Farklı hizmetler arasında kullanıcıların yönetimini kolaylaştırır. Kimlik hizmeti sağlayıcınıza kullanıcı ekleyebilir, düzenleyebilir ve kaldırabilirsiniz. Bu değişiklikler otomatik olarak ${ VPN_APP_NAME } kuruluşunuza uygulanır."
+      ],
+      "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
+        "Yeni SCIM kodunu kimlik hizmeti sağlayıcınızın ayarlarına yazıncaya kadar SCIM otomatik veri sağlama özelliği kullanım dışı kalır."
+      ],
+      "The SCIM base URL and token will be deleted.": [
+        "SCIM temel adresi ve kodu silinecek."
+      ],
+      "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
+        "Kimlik hizmeti sağlayıcınızla eşitlemeyi yeniden kullanıma almak için SCIM bütünleştirmesini yeniden tamamlamanız gerekir."
+      ]
+    },
+    "scim: Label": {
+      "SCIM base URL": [
+        "SCIM temel adresi"
+      ],
+      "SCIM base URL (or tenant URL)": [
+        "SCIM temel adresi (ya da kiracı adresi)"
+      ],
+      "SCIM token": [
+        "SCIM kodu"
+      ]
+    },
     "scim: Title": {
       "Disable SCIM integration?": [
-        "SCIM entegrasyonu kullanım dışı bırakılsın mı?"
+        "SCIM bütünleştirmesi kullanım dışı bırakılsın mı?"
       ],
       "Generate new SCIM token?": [
-        "Yeni SCIM belirteci oluşturulsun mu?"
+        "Yeni SCIM kodu oluşturulsun mu?"
+      ],
+      "SCIM automatic provisioning": [
+        "SCIM otomatik veri sağlama"
+      ]
+    },
+    "scim: Tooltip": {
+      "API key of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
+        "IdP veri sağlama aracınızın SCIM verilerini ilettiği SCIM bağlantısının API anahtarı"
+      ],
+      "URL of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
+        "IdP veri sağlama aracınızın SCIM verilerini ilettiği SCIM bağlantısının adresi"
       ]
     },
     "Select file": {
@@ -7791,6 +7901,9 @@
       "Gift code": [
         "Hediye kodu"
       ],
+      "How to choose a good logo": [
+        "İyi bir logo nasıl seçilir"
+      ],
       "Human verification": [
         "İnsan olduğunuzu doğrulayın"
       ],
@@ -8026,6 +8139,9 @@
       "WireGuard configuration": [
         "WireGuard yapılandırması"
       ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "${ planName } ücretsiz deneme süreniz ${ textDate } tarihinde sonra erecek"
+      ],
       "Your changes are not synced yet": [
         "Değişiklikleriniz henüz eşitlenmedi"
       ],
@@ -8122,6 +8238,9 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Sisteminiz \"açık temaya\" geçtiğinde seçilmiş tema kullanılacak"
+      ],
+      "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
+        "Kullanıcılar İnternet uygulamalarımızda oturum açtıklarında ${ BRAND_NAME } simgesi yerine logonuzu görecekler."
       ],
       "Usually an URL that contains the identity provider's name within": [
         "Genellikle kimlik hizmeti sağlayıcının adının bulunduğu bir adres"
