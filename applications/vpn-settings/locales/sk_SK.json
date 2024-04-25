@@ -447,7 +447,7 @@
         "Vyberte krajinu"
       ],
       "select file": [
-        "vyberte súbor"
+        "vybrať súbor"
       ],
       "Select file": [
         "Vyberte súbor"
@@ -547,6 +547,9 @@
       ],
       "Upload": [
         "Nahrať"
+      ],
+      "Upload logo": [
+        "Nahrať logo"
       ],
       "Use ${ label } theme": [
         "Použiť motív ${ label }"
@@ -706,6 +709,23 @@
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
         "Týmto sa odpoja všetky smerovače a klienti používajúci tento certifikát."
+      ]
+    },
+    "app-switcher": {
+      "Browse the web privately and block ads": [
+        "Prezerajte web v súkromí a blokujte reklamy"
+      ],
+      "Keep your schedule private": [
+        "Uchovajte si svoj program v súkromí"
+      ],
+      "Protect your passwords and identity": [
+        "Chráňte svoje heslá a identitu"
+      ],
+      "Safeguard your files and photos": [
+        "Chráňte svoje súbory a fotografie"
+      ],
+      "Secure your communications": [
+        "Zabezpečte si vašu komunikáciu"
       ]
     },
     "bf2023: Action": {
@@ -1903,8 +1923,8 @@
       ]
     },
     "Delete address prompt": {
-      "The next active address on your list will be set as the default.": [
-        "Ďalšia aktívna adresa v zozname sa nastaví ako predvolená."
+      "Once deleted, this address can't be used again by anyone else.": [
+        "Po vymazaní túto adresu už nikto iný nemôže použiť."
       ],
       "You can only delete 1 address per year.": [
         "Môžete vymazať iba 1 adresu za rok."
@@ -2844,6 +2864,11 @@
         "Používateľské meno"
       ]
     },
+    "Headline": {
+      "Contact us": [
+        "Kontaktujte nás"
+      ]
+    },
     "Hint": {
       "Add this record to your domain in the control panel of your domain name registrar": [
         "Pridajte tento záznam do svojej domény v ovládacom paneli registrátora názvu domény"
@@ -2992,6 +3017,9 @@
         "Pridať server (${ availableAddedCount } dostupné)",
         "Pridať server (${ availableAddedCount } dostupných)",
         "Pridať server (${ availableAddedCount } dostupných)"
+      ],
+      "Add your name and logo to create a more personalized experience for your organization.": [
+        "Pridajte vlastný názov a logo, aby ste vytvorili osobnejší zážitok pre vašu organizáciu."
       ],
       "Adding ${ addedServerCount } gateway server": [
         "Pridávanie ${ addedServerCount } servera brány",
@@ -3160,6 +3188,9 @@
       ],
       "Current plan": [
         "Aktuálny plán"
+      ],
+      "Custom branding": [
+        "Vlastná značka"
       ],
       "Custom email domains": [
         "Vlastné emailové domény"
@@ -3361,6 +3392,12 @@
       ],
       "If you wish to combine this account with another one, do NOT delete it.": [
         "Ak si želáte skombinovať tento účet s iným, nemažte ho."
+      ],
+      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
+        "Ak máte problémy, sme tu, aby sme vám pomohli. ${ boldPhoneCall } alebo začnite ${ boldZoomMeeting } s jedným z našich špecialistov podpory, alebo otvorte ${ boldLiveChat } pre chatovú podporu."
+      ],
+      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists.": [
+        "Ak máte problémy, sme tu, aby sme vám pomohli. ${ boldPhoneCall } alebo začnite ${ boldZoomMeeting } s jedným z našich špecialistov podpory."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Dôležité: Uistite sa, že máte uložené kódy pre obnovenie. V opačnom prípade sa už nikdy nebudete môcť prihlásiť, ak stratíte zariadenie určené pre 2FA."
@@ -3931,6 +3968,9 @@
       ],
       "Upload your completed CSV file to create accounts": [
         "Nahrajte vyplnený súbor CSV a vytvorte účty"
+      ],
+      "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
+        "Nahrajte logo vašej organizácie, aby ste posilnili identitu značky a vytvorili personalizované prostredie pre používateľov."
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Použite najlepší server podľa aktuálneho zaťaženia a umiestnenia: ${ formattedBestServerName }"
@@ -6098,6 +6138,43 @@
         "Váš plán zahŕňa maximálne ${ humanReadableAvailableSpace } ďalšieho úložného priestoru."
       ]
     },
+    "Organization logo upload": {
+      "Avoid overly compressed images.": [
+        "Vyhnite sa príliš komprimovaným obrázkom."
+      ],
+      "Ensure your logo has padding space around it.": [
+        "Uistite sa, že vaše logo má dostatok priestoru na okrajoch."
+      ],
+      "Opt for a PNG image that is a 128x128 pixels for clarity.": [
+        "Kvôli prehľadnosti si vyberte obrázok PNG s veľkosťou 128x128 pixelov."
+      ],
+      "Tips on choosing a good logo": [
+        "Tipy na výber dobrého loga"
+      ],
+      "Use a graphical icon or image rather than text.": [
+        "Radšej použite grafickú ikonu alebo obrázok namiesto textu."
+      ],
+      "Use a solid background color.": [
+        "Použite jednofarebné pozadie."
+      ]
+    },
+    "Organization logo upload modal": {
+      "Drop image file here to upload or": [
+        "Pretiahnutím sem, nahrajte súbor s obrázkom"
+      ],
+      "File in PNG or JPEG format": [
+        "Súbor vo formáte PNG alebo JPEG"
+      ],
+      "File not larger than 30 KB": [
+        "Súbor menší než 30 KB"
+      ],
+      "Square image of at least 128 pixels": [
+        "Štvorcový obrázok s veľkosťou najmenej 128 pixelov"
+      ],
+      "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
+        "Používatelia uvidia vaše logo namiesto ikony ${ BRAND_NAME }, keď sa prihlásia do našich webových aplikácií."
+      ]
+    },
     "Pass B2B onboarding spotlight": {
       "Go to your vault to manage your passwords, aliases, and more.": [
         "Prejdite do trezora a spravujte svoje heslá, aliasy a ďalšie."
@@ -6310,6 +6387,9 @@
       "MM/YY": [
         "MM/RR"
       ],
+      "Processing payment": [
+        "Spracováva sa platba"
+      ],
       "Timeout exceeded": [
         "Prekročený časový limit"
       ]
@@ -6520,6 +6600,11 @@
         "Overenie vášho telefónneho čísla zvyšuje bezpečnosť vášho účtu a umožňuje ďalšie možnosti obnovenia."
       ]
     },
+    "Remove organization logo": {
+      "Users will no longer see your custom logo or organization name.": [
+        "Používatelia už neuvidia vaše vlastné logo ani názov organizácie."
+      ]
+    },
     "Restore administrator panel": {
       "${ n } administrator in your organization need access to the organization key.": [
         "${ n } správca vo vašej organizácii potrebuje prístup ku kľúču organizácie.",
@@ -6549,6 +6634,97 @@
       ],
       "User": [
         "Používateľ"
+      ]
+    },
+    "scim: Action": {
+      "Configure SCIM": [
+        "Konfigurovať SCIM"
+      ],
+      "Disable SCIM": [
+        "Vypnúť SCIM"
+      ],
+      "Disable SCIM integration": [
+        "Vypnúť integráciu SCIM"
+      ],
+      "Generate new token": [
+        "Generovať nový token"
+      ],
+      "Generate token": [
+        "Vygenerovať token"
+      ]
+    },
+    "scim: Info": {
+      "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
+        "**Predpoklad:** Na umožnenie poskytovania SCIM musí byť nakonfigurované overovanie SAML."
+      ],
+      "Enter token into your identity provider": [
+        "Zadajte token do vášho poskytovateľa identity"
+      ],
+      "Enter URL and token into your identity provider": [
+        "Zadajte URL a token do vášho poskytovateľa identity"
+      ],
+      "For security reasons, the SCIM token will be hidden after saving your changes and you won’t be able to see it again.": [
+        "Z bezpečnostných dôvodov bude SCIM token po uložení zmien skrytý a už ho nebudete môcť vidieť."
+      ],
+      "For security reasons, the token is hidden": [
+        "Z bezpečnostných dôvodov je token skrytý"
+      ],
+      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ VPN_APP_NAME }.": [
+        "Prejdite k poskytovateľovi identity, skopírujte a vložte nižšie uvedené údaje a dokončite konfiguráciu SCIM pre ${ VPN_APP_NAME }."
+      ],
+      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ VPN_APP_NAME }.": [
+        "Prejdite k poskytovateľovi identity, skopírujte a vložte nižšie uvedený token a znovu povoľte SCIM pre ${ VPN_APP_NAME }."
+      ],
+      "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
+        "Ak ste SCIM token stratili alebo zabudli, môžete si vygenerovať nový, ale upozorňujeme, že bude potrebné aktualizovať nastavenia poskytovateľa identity."
+      ],
+      "Make sure you copy the above SCIM token now.": [
+        "Uistite sa, že ste skopírovali vyššie uvedený SCIM token."
+      ],
+      "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
+        "Po vypnutí SCIM pre vašu organizáciu sa **všetci používatelia SCIM, ktorých automaticky poskytuje poskytovateľ identity, zmenia na používateľov SSO** a budete ich môcť spravovať priamo v rámci nastavení ${ BRAND_NAME }."
+      ],
+      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ VPN_APP_NAME } organization.": [
+        "Zjednodušuje správu používateľov v rôznych službách. Pridávajte, upravujte a odstraňujte používateľov vo svojom poskytovateľovi identity a tieto zmeny sa automaticky aplikujú na vašu organizáciu ${ VPN_APP_NAME }."
+      ],
+      "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
+        "Automatické poskytovanie SCIM bude vypnuté, až kým nezadáte nový SCIM token do nastavení poskytovateľa identity."
+      ],
+      "The SCIM base URL and token will be deleted.": [
+        "Základná URL adresa SCIM a token budú vymazané."
+      ],
+      "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
+        "Ak chcete znovu povoliť synchronizáciu s poskytovateľom identity, musíte znovu dokončiť integráciu SCIM."
+      ]
+    },
+    "scim: Label": {
+      "SCIM base URL": [
+        "Základná URL adresa SCIM"
+      ],
+      "SCIM base URL (or tenant URL)": [
+        "Základná URL adresa SCIM (alebo URL adresa prevádzkovateľa)"
+      ],
+      "SCIM token": [
+        "SCIM token"
+      ]
+    },
+    "scim: Title": {
+      "Disable SCIM integration?": [
+        "Vypnúť integráciu SCIM?"
+      ],
+      "Generate new SCIM token?": [
+        "Vygenerovať nový SCIM token?"
+      ],
+      "SCIM automatic provisioning": [
+        "Automatické poskytovanie SCIM"
+      ]
+    },
+    "scim: Tooltip": {
+      "API key of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
+        "API kľúč konektora SCIM, ktorému váš IdP Provisioning Agent odovzdáva údaje SCIM"
+      ],
+      "URL of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
+        "URL konektora SCIM, ktorému váš IdP Provisioning Agent odovzdáva údaje SCIM"
       ]
     },
     "Select file": {
@@ -7945,6 +8121,9 @@
       "Gift code": [
         "Darčekový kód"
       ],
+      "How to choose a good logo": [
+        "Ako vybrať dobré logo"
+      ],
       "Human verification": [
         "Overenie, že nie ste robot"
       ],
@@ -8281,6 +8460,9 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Vybraný motív bude aktívny, kým je systém nastavený na „svetlý režim“"
+      ],
+      "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
+        "Používatelia uvidia vaše logo namiesto ikony ${ BRAND_NAME }, keď sa prihlásia do našich webových aplikácií."
       ],
       "Usually an URL that contains the identity provider's name within": [
         "Zvyčajne ide o adresu URL, ktorá obsahuje názov poskytovateľa identity."

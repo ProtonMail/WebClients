@@ -1920,9 +1920,6 @@
       "Once deleted, this address can't be used again by anyone else.": [
         "Usuniętego adresu nie będzie mógł nikt użyć."
       ],
-      "The next active address on your list will be set as the default.": [
-        "Następny aktywny adres zostanie ustawiony jako domyślny."
-      ],
       "You can only delete 1 address per year.": [
         "Możesz usunąć tylko 1 adres rocznie."
       ]
@@ -3015,6 +3012,9 @@
         "Dodaj serwer (${ availableAddedCount } dostępnych)",
         "Dodaj serwer (${ availableAddedCount } dostępnych)"
       ],
+      "Add your name and logo to create a more personalized experience for your organization.": [
+        "Dodaj nazwę i logo, aby spersonalizować organizację."
+      ],
       "Adding ${ addedServerCount } gateway server": [
         "Dodawanie ${ addedServerCount } serwera bramy",
         "Dodawanie ${ addedServerCount } serwerów bramy",
@@ -3182,6 +3182,9 @@
       ],
       "Current plan": [
         "Obecny plan"
+      ],
+      "Custom branding": [
+        "Niestandardowy branding"
       ],
       "Custom email domains": [
         "Niestandardowe domeny"
@@ -3959,6 +3962,9 @@
       ],
       "Upload your completed CSV file to create accounts": [
         "Prześlij uzupełniony plik CSV, aby utworzyć użytkowników"
+      ],
+      "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
+        "Prześlij logo organizacji, aby zwiększyć rozpoznawalność marki."
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Użyj najlepszego serwera w zależności od obciążenia i lokalizacji: ${ formattedBestServerName }"
@@ -6141,6 +6147,9 @@
       ],
       "Use a graphical icon or image rather than text.": [
         "Użyj ikony graficznej lub obrazu zamiast tekstu."
+      ],
+      "Use a solid background color.": [
+        "Użyj jednolitego koloru tła."
       ]
     },
     "Organization logo upload modal": {
@@ -6639,11 +6648,17 @@
       ]
     },
     "scim: Info": {
+      "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
+        "**Uwaga:** Aby włączyć konfigurację SCIM, skonfiguruj uwierzytelnianie SAML."
+      ],
       "Enter token into your identity provider": [
         "Wpisz token do dostawcy tożsamości"
       ],
       "Enter URL and token into your identity provider": [
         "Wpisz adres URL i token do dostawcy tożsamości"
+      ],
+      "For security reasons, the SCIM token will be hidden after saving your changes and you won’t be able to see it again.": [
+        "Ze względów bezpieczeństwa token po zapisaniu będzie ukryty i nie będzie można go ponownie zobaczyć."
       ],
       "For security reasons, the token is hidden": [
         "Ze względów bezpieczeństwa token jest ukryty"
@@ -6657,8 +6672,14 @@
       "Make sure you copy the above SCIM token now.": [
         "Upewnij się, że skopiowano token SCIM."
       ],
+      "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
+        "Automatyczna konfiguracja SCIM zostanie wyłączona. Wpisz nowy token SCIM do dostawcy tożsamości."
+      ],
       "The SCIM base URL and token will be deleted.": [
         "Podstawowy adres URL SCIM i token zostaną usunięte."
+      ],
+      "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
+        "Skonfiguruj integrację SCIM, aby ponownie włączyć synchronizację z dostawcą tożsamości."
       ]
     },
     "scim: Label": {
@@ -7498,6 +7519,38 @@
     "Subscription price": {
       "For": [
         "za"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB przestrzeni dyskowej"
+      ],
+      "and 15 more premium features": [
+        "i 15 więcej funkcji premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatyczne przekierowanie ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alerty wycieków ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplikacja desktopowa"
+      ],
+      "No ads or tracking": [
+        "Brak reklam i śledzenia"
+      ],
+      "Short @pm.me email address": [
+        "Krótki adres e-mail @pm.me"
+      ],
+      "Upgrade": [
+        "Ulepsz"
+      ],
+      "Upgrade your productivity": [
+        "Zwiększ swoją produktywność"
+      ],
+      "We don't sell your data": [
+        "Nie sprzedajemy Twoich danych"
       ]
     },
     "Subscription renewal state": {
