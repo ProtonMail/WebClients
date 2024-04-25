@@ -1097,6 +1097,10 @@
       "Trust": [
         "Megbízható"
       ],
+      "Trust key": [
+        "Megbízható kulcs",
+        "Kulcsok megjelölése megbízhatóként"
+      ],
       "Trust public key": [
         "Nyilvános kulcs megjelölése megbízhatóként"
       ],
@@ -7522,6 +7526,11 @@
         "Az importálás indul"
       ]
     },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "${ reason } engedélyezése"
+      ]
+    },
     "Mail import summary": {
       "Import all messages from ${ itemsToImportCount } folder and label them as": [
         "Minden üzenet importálása ${ itemsToImportCount } mappából és megjelölés mint",
@@ -8376,6 +8385,12 @@
     "Notification": {
       "${ Filter.Name } created": [
         "${ Filter.Name } létrehozva"
+      ],
+      "${ reason } has been disabled": [
+        "${ reason } letiltva"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } engedélyezésre került"
       ],
       "Block removed": [
         "Tiltás megszüntetve"

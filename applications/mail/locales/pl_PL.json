@@ -1132,6 +1132,12 @@
       "Trust": [
         "Zaufaj"
       ],
+      "Trust key": [
+        "Zaufaj kluczowi",
+        "Zaufaj kluczom",
+        "Zaufaj kluczom",
+        "Zaufaj kluczom"
+      ],
       "Trust public key": [
         "Zaufaj kluczowi publicznemu"
       ],
@@ -9565,6 +9571,12 @@
       "${ Filter.Name } created": [
         "Filtr ${ Filter.Name } został utworzony"
       ],
+      "${ reason } has been disabled": [
+        "${ reason } został wyłączony"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } został włączony"
+      ],
       "Block removed": [
         "Blokada została usunięta"
       ],
@@ -11022,6 +11034,38 @@
     "Subscription price": {
       "For": [
         "za"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB przestrzeni dyskowej"
+      ],
+      "and 15 more premium features": [
+        "i 15 więcej funkcji premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatyczne przekierowanie ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alerty wycieków ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplikacja desktopowa"
+      ],
+      "No ads or tracking": [
+        "Brak reklam i śledzenia"
+      ],
+      "Short @pm.me email address": [
+        "Krótki adres e-mail @pm.me"
+      ],
+      "Upgrade": [
+        "Ulepsz"
+      ],
+      "Upgrade your productivity": [
+        "Zwiększ swoją produktywność"
+      ],
+      "We don't sell your data": [
+        "Nie sprzedajemy Twoich danych"
       ]
     },
     "Subscription renewal state": {
