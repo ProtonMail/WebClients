@@ -7,10 +7,11 @@ type Props = {
     imageUrl?: string;
     organizationName?: string;
     variant?: 'dark' | 'light';
+    organizationNameDataTestId?: string;
     app: APP_NAMES;
 };
 
-const SidebarPreview = ({ imageUrl, organizationName, variant = 'light', app }: Props) => {
+const SidebarPreview = ({ imageUrl, organizationName, organizationNameDataTestId, variant = 'light', app }: Props) => {
     const colors = {
         dark: {
             background: '#1B1340',
@@ -38,6 +39,7 @@ const SidebarPreview = ({ imageUrl, organizationName, variant = 'light', app }: 
                     url={imageUrl}
                     app={app}
                     organizationName={organizationName}
+                    organizationNameDataTestId={organizationNameDataTestId}
                     className="pointer-events-none"
                     style={{
                         '--sidebar-custom-logo-border-color': colors[variant].iconBorder,
