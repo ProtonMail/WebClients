@@ -8,8 +8,6 @@ import { Href } from '@proton/atoms/Href';
 import { Input } from '@proton/atoms/Input';
 import {
     Form,
-    Icon,
-    IconName,
     InputFieldTwo,
     ModalProps,
     ModalTwo,
@@ -20,6 +18,8 @@ import {
     SelectTwo,
     TextAreaTwo,
 } from '@proton/components/components';
+import { InputFieldStacked } from '@proton/components/components/inputFieldStacked';
+import InputFieldStackedGroup from '@proton/components/components/inputFieldStacked/InputFieldStackedGroup';
 import { useNotifications } from '@proton/components/hooks';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import { deriveAliasPrefix } from '@proton/pass/lib/validation/alias';
@@ -27,46 +27,10 @@ import type { AliasMailbox, AliasOptions } from '@proton/pass/types';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 import passAliasesLogo from '@proton/styles/assets/img/illustrations/pass-aliases-logo.svg';
-import clsx from '@proton/utils/clsx';
 
 import { usePassAliasesContext } from '../../PassAliasesProvider';
 import { CreateModalFormState } from '../../interface';
 import useCreateModalForm from './useCreatePassAliasesForm';
-
-import './CreatePassAliasesForm.scss';
-
-const FormGroupFieldWrapper = ({ children, classname }: { children: React.ReactNode; classname?: string }) => (
-    <div className={clsx('stacked-field-group', classname)}>{children}</div>
-);
-
-const FormFieldWrapper = ({
-    children,
-    icon,
-    hasError,
-    isBigger,
-    isGroupElement,
-    classname,
-}: {
-    children: React.ReactNode;
-    icon?: IconName;
-    hasError?: boolean;
-    isBigger?: boolean;
-    isGroupElement?: boolean;
-    classname?: string;
-}) => (
-    <div
-        className={clsx(
-            'relative stacked-field border-weak px-4 py-3 flex items-center gap-x-4',
-            hasError && 'stacked-field--errors',
-            isBigger && 'stacked-field--bigger-field',
-            isGroupElement ? 'border-top border-left border-right' : 'border rounded-lg',
-            classname
-        )}
-    >
-        {icon && <Icon name={icon} className="shrink-0" />}
-        <div className="flex-1">{children}</div>
-    </div>
-);
 
 interface Props {
     onSubmit: () => void;
@@ -178,7 +142,7 @@ const CreatePassAliasesForm = ({ modalProps, onSubmit, passAliasesURL }: Props) 
                             }
                         }}
                     >
-                        <FormFieldWrapper hasError={!!errors?.note} isBigger classname="mb-2">
+                        <InputFieldStacked hasError={!!errors?.note} isBigger classname="mb-2">
                             <InputFieldTwo<typeof Input>
                                 type="text"
                                 label={c('Label').t`Title`}
@@ -199,10 +163,10 @@ const CreatePassAliasesForm = ({ modalProps, onSubmit, passAliasesURL }: Props) 
                                 }}
                                 error={getFieldError('name')}
                             />
-                        </FormFieldWrapper>
+                        </InputFieldStacked>
 
-                        <FormGroupFieldWrapper classname="mb-4">
-                            <FormFieldWrapper isGroupElement icon="alias" hasError={!!errors?.alias}>
+                        <InputFieldStackedGroup classname="mb-4">
+                            <InputFieldStacked isGroupElement icon="alias" hasError={!!errors?.alias}>
                                 <InputFieldTwo<typeof Input>
                                     label={c('Label').t`Your alias`}
                                     type="text"
@@ -215,8 +179,12 @@ const CreatePassAliasesForm = ({ modalProps, onSubmit, passAliasesURL }: Props) 
                                     }}
                                     value={formValues.alias}
                                 />
-                            </FormFieldWrapper>
-                            <FormFieldWrapper isGroupElement icon="arrow-up-and-right-big" hasError={!!errors?.mailbox}>
+                            </InputFieldStacked>
+                            <InputFieldStacked
+                                isGroupElement
+                                icon="arrow-up-and-right-big"
+                                hasError={!!errors?.mailbox}
+                            >
                                 <InputFieldTwo<typeof SelectTwo<AliasOptions['mailboxes'][number]>>
                                     label={c('Label').t`Forwards to`}
                                     as={SelectTwo}
@@ -236,8 +204,8 @@ const CreatePassAliasesForm = ({ modalProps, onSubmit, passAliasesURL }: Props) 
                                         <Option key={aliasMailbox.id} title={aliasMailbox.email} value={aliasMailbox} />
                                     ))}
                                 </InputFieldTwo>
-                            </FormFieldWrapper>
-                            <FormFieldWrapper isGroupElement icon="note" hasError={!!errors?.note}>
+                            </InputFieldStacked>
+                            <InputFieldStacked isGroupElement icon="note" hasError={!!errors?.note}>
                                 <InputFieldTwo<typeof TextAreaTwo>
                                     label={c('Label').t`Note`}
                                     as={TextAreaTwo}
@@ -250,8 +218,8 @@ const CreatePassAliasesForm = ({ modalProps, onSubmit, passAliasesURL }: Props) 
                                         setFormValues({ ...formValues, note });
                                     }}
                                 />
-                            </FormFieldWrapper>
-                        </FormGroupFieldWrapper>
+                            </InputFieldStacked>
+                        </InputFieldStackedGroup>
                     </Form>
                 )}
             </ModalTwoContent>

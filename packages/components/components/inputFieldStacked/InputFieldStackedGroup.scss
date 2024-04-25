@@ -1,0 +1,29 @@
+@import '~@proton/styles/scss/lib';
+
+/*
+  groups of inputs	
+*/
+.stacked-field-group {
+	> :first-child {
+		border-start-start-radius: var(--border-radius-lg);
+		border-start-end-radius: var(--border-radius-lg);
+	}
+
+	> :last-child {
+		border-block-end: 1px solid var(--border-weak);
+		border-end-start-radius: var(--border-radius-lg);
+		border-end-end-radius: var(--border-radius-lg);
+	}
+
+	.stacked-field:focus-within {
+		// small trick to avoid missing border when getting focus
+		&:not(:last-child)::after {
+			content: '';
+			position: absolute;
+			inset-inline: 0;
+			inset-block-end: 0;
+			block-size: 0;
+			border-block-end: 1px solid var(--focus-outline);
+		}
+	}
+}
