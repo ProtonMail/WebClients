@@ -192,12 +192,7 @@ const ParticipantsInput = ({
                 ) : (
                     participantRows
                 ))}
-            {numberOfAttendees > 0 && organizer && (
-                <OrganizerRow
-                    organizer={organizer}
-                    isBusyTimeSlotsAvailable={isBusyTimeSlotsAvailable && displayBusySlots}
-                />
-            )}
+            {numberOfAttendees > 0 && organizer && <OrganizerRow organizer={organizer} />}
             {isBusyTimeSlotsAvailable && displayAvailabilityUnknown && (
                 <div className="flex items-center color-weak mt-2 text-sm bg-weak rounded py-1 px-2">
                     <Icon name="circle-half-filled" size={2.5} className="rotateZ-45 opacity-70 mr-2" />{' '}

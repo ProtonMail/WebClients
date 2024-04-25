@@ -29,10 +29,19 @@ const ParticipantRow = ({ attendee, contactEmailsMap, onToggleOptional, onDelete
         : c('Action').t`Make this participant optional`;
 
     return (
-        <div key={email} className="address-item flex mb-1 pl-2">
-            <div className="flex flex-1 p-1" title={nameEmail}>
-                <div className={clsx(['text-ellipsis', displayOnlyEmail && 'max-w-full'])}>{nameEmail}</div>
-                {isOptional ? <span className="color-weak w-full">{c('Label').t`Optional`}</span> : null}
+        <div key={email} className="address-item flex items-start mb-1 group-hover-opacity-container">
+            <div className="flex flex-1 py-1 pr-1" title={nameEmail}>
+                <div className={clsx(['text-ellipsis', displayOnlyEmail && 'max-w-full'])}>
+                    {contactName ? (
+                        <>
+                            <span className="text-semibold text-sm">{contactName}</span>
+                            <span className="color-weak ml-1 text-sm">{email}</span>
+                        </>
+                    ) : (
+                        <span className="text-semibold text-sm">{email}</span>
+                    )}
+                </div>
+                {isOptional ? <span className="color-weak text-sm w-full">{c('Label').t`Optional`}</span> : null}
             </div>
             <Tooltip title={optionalText}>
                 <Button
@@ -40,15 +49,21 @@ const ParticipantRow = ({ attendee, contactEmailsMap, onToggleOptional, onDelete
                     shape="ghost"
                     type="button"
                     size="small"
-                    className="flex shrink-0"
+                    className="flex shrink-0 group-hover:opacity-100 group-hover:opacity-100-no-width"
                     onClick={() => onToggleOptional(attendee)}
                 >
                     <Icon name={isOptional ? 'user' : 'user-filled'} alt={c('Action').t`Remove this participant`} />
                 </Button>
             </Tooltip>
             <Tooltip title={c('Action').t`Remove this participant`}>
-                <Button icon shape="ghost" size="small" className="flex shrink-0" onClick={() => onDelete(attendee)}>
-                    <Icon name="trash" alt={c('Action').t`Remove this participant`} />
+                <Button
+                    icon
+                    shape="ghost"
+                    size="small"
+                    className="flex shrink-0 group-hover:opacity-100 group-hover:opacity-100-no-width"
+                    onClick={() => onDelete(attendee)}
+                >
+                    <Icon name="cross" alt={c('Action').t`Remove this participant`} />
                 </Button>
             </Tooltip>
         </div>
