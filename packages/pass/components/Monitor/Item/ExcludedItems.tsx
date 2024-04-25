@@ -3,6 +3,8 @@ import { useSelector } from 'react-redux';
 import { useRouteMatch } from 'react-router-dom';
 import type { List } from 'react-virtualized';
 
+import { c } from 'ttag';
+
 import { ItemsListItem } from '@proton/pass/components/Item/List/ItemsListItem';
 import { VirtualList } from '@proton/pass/components/Layout/List/VirtualList';
 import { useMonitor } from '@proton/pass/components/Monitor/MonitorProvider';
@@ -14,13 +16,13 @@ import { selectOptimisticItemsFactory, selectSelectedItems } from '@proton/pass/
 import type { SelectedItem } from '@proton/pass/types';
 
 export const ExcludedItems: FC = () => {
+    const listRef = useRef<List>(null);
     const selectItem = useSelectItemAction();
+
+    const { excluded } = useMonitor();
+    const items = useSelector(selectOptimisticItemsFactory(selectSelectedItems(excluded.data)));
     const itemRoute = getItemRoute(':shareId', ':itemId', { prefix: 'monitor/excluded(/trash)?' });
     const selectedItem = useRouteMatch<SelectedItem>(itemRoute)?.params;
-    const { excluded } = useMonitor();
-    const listRef = useRef<List>(null);
-
-    const items = useSelector(selectOptimisticItemsFactory(selectSelectedItems(excluded.data)));
 
     useEffect(() => {
         if (items.length && !selectedItem) {
@@ -29,7 +31,7 @@ export const ExcludedItems: FC = () => {
         }
     }, [selectedItem, items]);
 
-    return items.length ? (
+    return items.length > 0 ? (
         <VirtualList
             ref={listRef}
             rowCount={items.length}
@@ -59,5 +61,9 @@ export const ExcludedItems: FC = () => {
                 );
             }}
         />
-    ) : null;
+    ) : (
+        <div className="flex items-center justify-center color-weak text-sm text-center text-break h-full">
+            <strong>{c('Title').t`No excluded items`}</strong>
+        </div>
+    );
 };

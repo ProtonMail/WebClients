@@ -3,6 +3,8 @@ import { useSelector } from 'react-redux';
 import { useRouteMatch } from 'react-router-dom';
 import type { List } from 'react-virtualized';
 
+import { c } from 'ttag';
+
 import { ItemsListItem } from '@proton/pass/components/Item/List/ItemsListItem';
 import { VirtualList } from '@proton/pass/components/Layout/List/VirtualList';
 import { useMonitor } from '@proton/pass/components/Monitor/MonitorProvider';
@@ -14,22 +16,22 @@ import { selectOptimisticItemsFactory, selectSelectedItems } from '@proton/pass/
 import type { SelectedItem } from '@proton/pass/types';
 
 export const WeakPasswords: FC = () => {
+    const listRef = useRef<List>(null);
     const selectItem = useSelectItemAction();
+
+    const { insecure } = useMonitor();
+    const items = useSelector(selectOptimisticItemsFactory(selectSelectedItems(insecure.data)));
     const itemRoute = getItemRoute(':shareId', ':itemId', { prefix: 'monitor/weak(/trash)?' });
     const selectedItem = useRouteMatch<SelectedItem>(itemRoute)?.params;
-    const { insecure } = useMonitor();
-    const listRef = useRef<List>(null);
-
-    const items = useSelector(selectOptimisticItemsFactory(selectSelectedItems(insecure.data)));
 
     useEffect(() => {
-        if (items.length && !selectedItem) {
+        if (items.length > 0 && !selectedItem) {
             const item = items[0];
             selectItem(item, { inTrash: isTrashed(item), prefix: 'monitor/weak', mode: 'replace' });
         }
     }, [selectedItem, items]);
 
-    return items.length ? (
+    return items.length > 0 ? (
         <VirtualList
             ref={listRef}
             rowCount={items.length}
@@ -59,5 +61,9 @@ export const WeakPasswords: FC = () => {
                 );
             }}
         />
-    ) : null;
+    ) : (
+        <div className="flex items-center justify-center color-weak text-sm text-center text-break h-full">
+            <strong>{c('Title').t`No insecure passwords`}</strong>
+        </div>
+    );
 };

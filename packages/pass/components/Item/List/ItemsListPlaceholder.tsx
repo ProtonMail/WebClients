@@ -142,7 +142,7 @@ export const ItemsListPlaceholder: FC<Props> = ({ noActions }) => {
     }
 
     return (
-        <span className="block text-break color-weak text-sm p-2 text-center text-break">
+        <span className="block color-weak text-sm p-2 text-center text-break">
             {(() => {
                 if (matchTrash) {
                     return empty || !hasSearch ? (
