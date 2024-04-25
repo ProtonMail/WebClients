@@ -6,7 +6,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { Icon } from '@proton/components/index';
-import { InfoCard } from '@proton/pass/components/Layout/Card/InfoCard';
+import { CardContent } from '@proton/pass/components/Layout/Card/CardContent';
 import { ItemHistoryPanel } from '@proton/pass/components/Layout/Panel/ItemHistoryPanel';
 import { Timeline } from '@proton/pass/components/Layout/Timeline/Timeline';
 import { useItemRoute } from '@proton/pass/components/Navigation/ItemSwitch';
@@ -60,10 +60,11 @@ export const RevisionsTimeline: FC<RouteChildrenProps> = ({ location }) => {
                 return (
                     <>
                         {current.data.type === 'login' && (
-                            <InfoCard
+                            <CardContent
                                 icon="magic-wand"
                                 className="mb-3"
                                 title={c('Title').t`Last autofill`}
+                                ellipsis
                                 subtitle={
                                     // translator: when this login was last used
                                     current.lastUseTime ? epochToRelativeDate(current.lastUseTime) : c('Info').t`Never`
@@ -76,6 +77,7 @@ export const RevisionsTimeline: FC<RouteChildrenProps> = ({ location }) => {
                                 icon="clock"
                                 title={c('Title').t`Current version`}
                                 subtitle={epochToRelativeDate(current.revisionTime)}
+                                ellipsis
                             />
 
                             {history.map((item) => (
@@ -85,6 +87,7 @@ export const RevisionsTimeline: FC<RouteChildrenProps> = ({ location }) => {
                                     icon={item.revision === 1 ? 'bolt' : 'pencil'}
                                     title={item.revision === 1 ? c('Title').t`Created` : c('Title').t`Modified`}
                                     subtitle={epochToRelativeDate(item.revisionTime)}
+                                    ellipsis
                                 />
                             ))}
                         </Timeline>

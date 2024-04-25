@@ -1,0 +1,9 @@
+.pass-card-content {
+	&--title {
+		color: var(--pass-card-content-title, var(--pass-card-color, var(--text-norm)));
+	}
+
+	&--subtitle {
+		color: var(--pass-card-content-subtitle, var(--pass-card-color, var(--text-weak)));
+	}
+}
