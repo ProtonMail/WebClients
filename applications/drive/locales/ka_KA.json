@@ -571,6 +571,9 @@
       "Remove gift code": [
         "სასაჩუქრე კოდის წაშლა"
       ],
+      "Remove me": [
+        "წამშალე"
+      ],
       "Rename": [
         "სახელის გადარქმევა"
       ],
@@ -4105,6 +4108,9 @@
       "Emails are automatically signed": [
         "ელფოსტების ხელმოწერა ავტომატურია"
       ],
+      "Empty folder": [
+        "ცარიელი საქაღალდე"
+      ],
       "Enabling drive search": [
         "Drive-ზე ძებნის ჩართვა"
       ],
@@ -4489,6 +4495,9 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "გადახდები TLS-ით და შვეიცარიული კანონებითაა დაცული."
+      ],
+      "Pending": [
+        "რიგში"
       ],
       "Permanently delete all files in your locked drive": [
         "თქვენს დაბლოკილ დისკზე ყველა ფაილის სამუდამოდ წაშლა"
@@ -5035,6 +5044,9 @@
       ],
       "Yesterday": [
         "გუშინ"
+      ],
+      "you": [
+        "თქვენ"
       ],
       "You already have a free account": [
         "თქვენ უკვე გაქვთ უფასო ანგარიში"
@@ -5684,6 +5696,9 @@
       "Region": [
         "რაიონი"
       ],
+      "Remove access": [
+        "წვდომის გაუქმება"
+      ],
       "Replace existing file": [
         "არსებული ფაილის ჩანაცვლება"
       ],
@@ -5740,6 +5755,9 @@
       ],
       "Stolen data": [
         "მოპარული მონაცემები"
+      ],
+      "Stop sharing": [
+        "გაზიარების შეწყვეტა"
       ],
       "Street address": [
         "ქუჩის მისამართი"
@@ -5970,6 +5988,11 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "თქვენი გამოწერა ამოიწურა. ${ cta } მონაცემების კარგვის თავიდან ასაცილებლად."
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "${ reason }-ის ჩართვა"
       ]
     },
     "Mail import summary": {
@@ -7142,6 +7165,12 @@
         "წაიშლება ${ numberOfItems } ბმული თქვენს ელემენტებამდე",
         "წაიშლება ${ numberOfItems } ბმული თქვენს ელემენტებამდე"
       ],
+      "${ reason } has been disabled": [
+        "${ reason } გაითიშა"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } ჩაირთო"
+      ],
       "All items will soon be permanently deleted from trash": [
         "ნაგვის ყუთიდან ფაილები მალე სამუდამოდ წაიშლება"
       ],
@@ -7193,6 +7222,9 @@
       ],
       "File or folder is missing a name": [
         "ფაილს ან საქაღალდეს არ აქვს სახელი"
+      ],
+      "File removed": [
+        "ფაილი წაიშალა"
       ],
       "Link copied to clipboard": [
         "ბმული კოპირებულია ბუფერში"

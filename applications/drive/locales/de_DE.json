@@ -571,6 +571,9 @@
       "Remove gift code": [
         "Geschenkgutschein entfernen"
       ],
+      "Remove me": [
+        "Mich entfernen"
+      ],
       "Rename": [
         "Umbenennen"
       ],
@@ -2477,6 +2480,9 @@
       "Error decrypting a computer": [
         "Fehler beim Entschlüsseln eines Computers"
       ],
+      "External accounts are not supported yet": [
+        "Externe Konten werden noch nicht unterstützt"
+      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Datei „${ item.name }“ kann aufgrund des Fehlers „${ error }“ nicht hochgeladen werden."
       ],
@@ -4105,6 +4111,9 @@
       "Emails are automatically signed": [
         "E-Mails werden automatisch signiert."
       ],
+      "Empty folder": [
+        "Leerer Ordner"
+      ],
       "Enabling drive search": [
         "Suche in Drive wird aktiviert"
       ],
@@ -4786,6 +4795,9 @@
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "Es gibt noch Dateien, die übertragen werden müssen. Wenn du den Übertragungsmanager schließt, werden alle Vorgänge beendet."
       ],
+      "There is nothing to see here": [
+        "Hier gibt es nichts zu sehen"
+      ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Diese Adresse ist deaktiviert. Um an diese Adresse senden zu können, muss der Besitzer die Adresse zuerst aktivieren."
       ],
@@ -5116,6 +5128,9 @@
       ],
       "You will lose all unsaved changes.": [
         "Alle nicht gespeicherten Änderungen gehen verloren."
+      ],
+      "You will not be able to join again after.": [
+        "Du kannst danach nicht mehr beitreten."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Du wirst in Kürze zu PayPal weitergeleitet, um deine Zahlung zu bestätigen."
@@ -5702,6 +5717,9 @@
       "Region": [
         "Region"
       ],
+      "Remove access": [
+        "Zugriff entfernen"
+      ],
       "Replace existing file": [
         "Vorhandene Datei ersetzen"
       ],
@@ -5758,6 +5776,9 @@
       ],
       "Stolen data": [
         "Gestohlene Daten"
+      ],
+      "Stop sharing": [
+        "Freigabe beenden"
       ],
       "Street address": [
         "Straße und Hausnummer"
@@ -5988,6 +6009,11 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Dein Abonnement ist beendet. ${ cta } und um Datenverlust zu vermeiden."
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "${ reason } aktivieren"
       ]
     },
     "Mail import summary": {
@@ -7217,6 +7243,12 @@
         "${ numberOfItems } Link zu deinem Element wurde gelöscht",
         "${ numberOfItems } Links zu deinen Elementen wurden gelöscht"
       ],
+      "${ reason } has been disabled": [
+        "${ reason } wurde deaktiviert."
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } wurde aktiviert."
+      ],
       "All items will soon be permanently deleted from trash": [
         "Alle Elemente werden demnächst dauerhaft aus dem Papierkorb gelöscht"
       ],
@@ -7256,6 +7288,9 @@
       "Failed to move, please try again": [
         "Verschieben fehlgeschlagen, bitte versuche es erneut"
       ],
+      "Failed to remove the file": [
+        "Fehler beim Entfernen der Datei"
+      ],
       "Failed to upload files: ${ err }": [
         "Upload der Dateien fehlgeschlagen: ${ err }"
       ],
@@ -7268,6 +7303,9 @@
       ],
       "File or folder is missing a name": [
         "Der Datei oder dem Ordner fehlt ein Name"
+      ],
+      "File removed": [
+        "Datei entfernt"
       ],
       "Link copied to clipboard": [
         "Link in die Zwischenablage kopiert"
@@ -8364,6 +8402,26 @@
         "Für"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB Speicherplatz"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatische E-Mail-Weiterleitung ${ strongText }"
+      ],
+      "Desktop app": [
+        "Desktop-App"
+      ],
+      "Short @pm.me email address": [
+        "Kurze @pm.me-E-Mail-Adresse"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "We don't sell your data": [
+        "Wir verkaufen deine Daten nicht"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Bist du sicher?"
@@ -8682,6 +8740,9 @@
       "Are you sure you want to close the preview?": [
         "Möchtest du die Vorschau wirklich schließen?"
       ],
+      "Are you sure you want to leave this share?": [
+        "Bist du sicher, dass du diese Freigabe verlassen möchtest?"
+      ],
       "Billing cycle": [
         "Abrechnungszeitraum"
       ],
@@ -8922,6 +8983,9 @@
       ],
       "Item details": [
         "Elementdetails"
+      ],
+      "Last edited by": [
+        "Zuletzt bearbeitet von"
       ],
       "Link confirmation": [
         "Linkbestätigung"
@@ -9204,6 +9268,9 @@
       ],
       "You have no folders yet": [
         "Du hast noch keine Ordner"
+      ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Deine kostenlose Testversion von ${ planName } endet am ${ textDate }."
       ],
       "Your 3 GB bonus": [
         "Dein 3 GB-Bonus"

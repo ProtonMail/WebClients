@@ -571,6 +571,9 @@
       "Remove gift code": [
         "Fjern gavekode"
       ],
+      "Remove me": [
+        "Fjern meg"
+      ],
       "Rename": [
         "Gi nytt navn"
       ],
@@ -2477,6 +2480,9 @@
       "Error decrypting a computer": [
         "Feil ved dekryptering av datamaskin"
       ],
+      "External accounts are not supported yet": [
+        "Eksterne kontoer støttes ikke enda."
+      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Fil \"${ item.name }\" kunne ikke lastes opp på grunn av \"${ error }\" feilmelding"
       ],
@@ -4105,6 +4111,9 @@
       "Emails are automatically signed": [
         "E-post signeres automatisk"
       ],
+      "Empty folder": [
+        "Tøm mappe"
+      ],
       "Enabling drive search": [
         "Aktiverer søk i Drive"
       ],
@@ -4469,6 +4478,9 @@
         "Kun ${ MAX_CUSTOM_PASSWORD_LENGTH } tegn er tillatt",
         "Kun ${ MAX_CUSTOM_PASSWORD_LENGTH } tegn er tillatt"
       ],
+      "Only the owner of the share will be able to invite you again.": [
+        "Bare eieren av delingen kan invitere deg igjen."
+      ],
       "Only the people with the link and the password can access this file.": [
         "Kun personer med koblingen og passordet har tilgang til denne filen."
       ],
@@ -4785,6 +4797,9 @@
       ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "Det er filer som fortsatt må overføres. Å stenge overføringsbehandleren vil avslutte alle operasjoner."
+      ],
+      "There is nothing to see here": [
+        "Det er ingenting å se her"
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Denne adressen er deaktivert. For å kunne sende til denne adressen, må eieren først aktivere adressen."
@@ -5116,6 +5131,9 @@
       ],
       "You will lose all unsaved changes.": [
         "Du vil miste alle endringer som ikke er lagret."
+      ],
+      "You will not be able to join again after.": [
+        "Du vil ikke kunne bli med igjen etter."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Du vil snart bli omdirigert til PayPal for å bekrefte betalingen."
@@ -5761,6 +5779,9 @@
       ],
       "Stolen data": [
         "Stjålne data"
+      ],
+      "Stop sharing": [
+        "Avslutt deling"
       ],
       "Street address": [
         "Gateadresse"
@@ -7276,6 +7297,9 @@
       "Failed to move, please try again": [
         "Kunne ikke flytte, vennligst prøv igjen."
       ],
+      "Failed to remove the file": [
+        "Fjerning av filen mislyktes"
+      ],
       "Failed to upload files: ${ err }": [
         "Kunne ikke laste opp filer: ${ err }"
       ],
@@ -7288,6 +7312,9 @@
       ],
       "File or folder is missing a name": [
         "Fil eller mappe mangler et navn"
+      ],
+      "File removed": [
+        "Fil fjernet"
       ],
       "Invitation removed from the share": [
         "Invitasjon fjernet fra den delte ressursen"
@@ -7319,6 +7346,9 @@
       "Share invitation ID was not found. Please check the link": [
         "Delingsinvitasjons-ID ble ikke funnet. Vennligst sjekk koblingen."
       ],
+      "Stopping to share this item has failed": [
+        "Å stoppe delingen av dette elementet mislyktes"
+      ],
       "Subfolder failed to be loaded": [
         "Undermappen kunne ikke lastes inn"
       ],
@@ -7336,6 +7366,9 @@
       ],
       "Trash failed to be emptied": [
         "Papirkurven kunne ikke tømmes"
+      ],
+      "You stopped to share this item": [
+        "Du stoppet å dele dette elementet"
       ],
       "Your old files will be deleted in 72 hours": [
         "Dine gamle filer blir slettet om 72 timer"
@@ -8390,6 +8423,47 @@
         "For"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagringsplass"
+      ],
+      "and 15 more premium features": [
+        "og 15 flere premiumfunksjoner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk videresending av e-post ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varsler om datainnbrudd ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Skrivebordsapp"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hjelp oss med å holde internett trygt og privat for alle. Oppgrader til en betalt plan."
+      ],
+      "No ads or tracking": [
+        "Ingen annonser eller sporing"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-postadresse"
+      ],
+      "Support our mission": [
+        "Støtt vårt oppdrag"
+      ],
+      "Upgrade": [
+        "Oppgrader"
+      ],
+      "Upgrade your productivity": [
+        "Oppgrader produktiviteten din"
+      ],
+      "We don't sell your data": [
+        "Vi selger ikke dataene dine"
+      ],
+      "Your privacy is our mission": [
+        "Personvernet ditt er vårt oppdrag"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Er du sikker?"
@@ -8708,6 +8782,9 @@
       "Are you sure you want to close the preview?": [
         "Er du sikker på at du vil lukke forhåndsvisningen?"
       ],
+      "Are you sure you want to leave this share?": [
+        "Er du sikker på at du vil forlate denne delte ressursen?"
+      ],
       "Billing cycle": [
         "Faktureringssyklus"
       ],
@@ -8948,6 +9025,9 @@
       ],
       "Item details": [
         "Elementdetaljer"
+      ],
+      "Last edited by": [
+        "Sist redigert av"
       ],
       "Link confirmation": [
         "Bekreftelse av kobling"

@@ -571,6 +571,9 @@
       "Remove gift code": [
         "Eliminar código de regalo"
       ],
+      "Remove me": [
+        "Borrarme"
+      ],
       "Rename": [
         "Renombrar"
       ],
@@ -2477,6 +2480,9 @@
       "Error decrypting a computer": [
         "Error al descifrar el ordenador"
       ],
+      "External accounts are not supported yet": [
+        "Las cuentas externas aún no son admitidas."
+      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "El archivo \"${ item.name }\" no se puede cargar debido al error \"${ error }\"."
       ],
@@ -4105,6 +4111,9 @@
       "Emails are automatically signed": [
         "Los correos electrónicos son firmados automáticamente."
       ],
+      "Empty folder": [
+        "La carpeta está vacía."
+      ],
       "Enabling drive search": [
         "Activación de la búsqueda en tu unidad"
       ],
@@ -4469,6 +4478,9 @@
         "Solo ${ MAX_CUSTOM_PASSWORD_LENGTH } carácter está permitido",
         "Solo ${ MAX_CUSTOM_PASSWORD_LENGTH } caracteres están permitidos"
       ],
+      "Only the owner of the share will be able to invite you again.": [
+        "Solo el propietario del enlace compartido podrá invitarte de nuevo."
+      ],
       "Only the people with the link and the password can access this file.": [
         "Solo las personas con el enlace y la contraseña pueden acceder a este archivo."
       ],
@@ -4785,6 +4797,9 @@
       ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "Hay archivos que aún se deben transferir. Al cerrar el administrador de transferencias se terminan todas las operaciones."
+      ],
+      "There is nothing to see here": [
+        "No hay datos que ver aquí."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Esta dirección está desactivada. Para enviar correos esta dirección, el propietario debe en primer lugar activar la dirección."
@@ -5116,6 +5131,9 @@
       ],
       "You will lose all unsaved changes.": [
         "Perderás todos los cambios no guardados."
+      ],
+      "You will not be able to join again after.": [
+        "No podrás unirte nuevamente."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Pronto serás redirigido a PayPal para verificar tu pago."
@@ -5764,6 +5782,9 @@
       ],
       "Stolen data": [
         "Datos robados"
+      ],
+      "Stop sharing": [
+        "Dejar de compartir"
       ],
       "Street address": [
         "Nombre de la calle"
@@ -7222,6 +7243,9 @@
       "Failed to move, please try again": [
         "Error al mover. Inténtalo de nuevo."
       ],
+      "Failed to remove the file": [
+        "Error al borrar el archivo"
+      ],
       "Failed to upload files: ${ err }": [
         "Error al cargar los archivos: ${ err }"
       ],
@@ -7234,6 +7258,9 @@
       ],
       "File or folder is missing a name": [
         "Falta el nombre del archivo o carpeta"
+      ],
+      "File removed": [
+        "El archivo ha sido borrado."
       ],
       "Invitation removed from the share": [
         "Invitación borrada de los compartidos"
@@ -7265,6 +7292,9 @@
       "Share invitation ID was not found. Please check the link": [
         "No se ha encontrado el ID de invitación compartida. Revisa el enlace."
       ],
+      "Stopping to share this item has failed": [
+        "Error al dejar de compartir este elemento"
+      ],
       "Subfolder failed to be loaded": [
         "Error al cargar la carpeta secundaria"
       ],
@@ -7282,6 +7312,9 @@
       ],
       "Trash failed to be emptied": [
         "Error al vaciar la papelera"
+      ],
+      "You stopped to share this item": [
+        "Has dejado de compartir este elemento."
       ],
       "Your old files will be deleted in 72 hours": [
         "Se eliminarán tus archivos antiguos en 72 horas."
@@ -8336,6 +8369,23 @@
         "Por"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB de espacio de almacenamiento"
+      ],
+      "Desktop app": [
+        "Aplicación de escritorio"
+      ],
+      "No ads or tracking": [
+        "Sin anuncios ni rastreadores"
+      ],
+      "Support our mission": [
+        "Apoya nuestra misión"
+      ],
+      "Upgrade": [
+        "Mejorar"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "¿Estás seguro?"
@@ -8654,6 +8704,9 @@
       "Are you sure you want to close the preview?": [
         "¿Estás seguro de que quieres cerrar la previsualización?"
       ],
+      "Are you sure you want to leave this share?": [
+        "¿Estás seguro de que quieres abandonar este enlace compartido?"
+      ],
       "Billing cycle": [
         "Ciclo de facturación"
       ],
@@ -8894,6 +8947,9 @@
       ],
       "Item details": [
         "Detalles del elemento"
+      ],
+      "Last edited by": [
+        "Última edición por"
       ],
       "Link confirmation": [
         "Confirmación de enlace"

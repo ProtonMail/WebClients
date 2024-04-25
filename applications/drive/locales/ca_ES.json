@@ -571,6 +571,9 @@
       "Remove gift code": [
         "Esborra el codi de regal"
       ],
+      "Remove me": [
+        "Esborra-me"
+      ],
       "Rename": [
         "Canvia el nom"
       ],
@@ -584,7 +587,7 @@
         "Informeu d'un problema"
       ],
       "Request a call": [
-        "Sol·licitar una trucada"
+        "Sol·licita una trucada"
       ],
       "Request a feature": [
         "Demana una nova característica"
@@ -1156,7 +1159,7 @@
         "Continua utilitzant ${ planTitle }"
       ],
       "Continue your subscription": [
-        "Continuï amb la seva subscripció"
+        "Continueu amb la vostra subscripció"
       ]
     },
     "Checkout row": {
@@ -2266,7 +2269,7 @@
         "S'ha actualitzat aquest esdeveniment."
       ],
       "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Aquest esdeveniment s'ha actualitzat. Això és el que ha canviat:\n\n${ updateEventDetailsText }"
+        "S'ha actualitzat aquest esdeveniment. Això és el que ha canviat:\n\n${ updateEventDetailsText }"
       ],
       "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
         "Esteu convidat a ${ eventTitle }.\n\n${ eventDetailsText }"
@@ -2743,7 +2746,7 @@
         "Error desconegut"
       ],
       "Unknown payment token status": [
-        "Estat del testimoni de pagament desconegut"
+        "Estat del token de pagament desconegut"
       ],
       "Username must begin with a letter or digit": [
         "El nom d'usuari ha de començar amb una lletra o un dígit."
@@ -4092,6 +4095,9 @@
       "Emails are automatically signed": [
         "Els correus se signen automàticament"
       ],
+      "Empty folder": [
+        "La carpeta està buida."
+      ],
       "Enabling drive search": [
         "S'està activant la cerca de la unitat"
       ],
@@ -4338,7 +4344,7 @@
         "Carregant ${ appName }"
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
-        "S'està carregant el calendari, si us plau, esperi's. Se'l redirigirà a la nostra plataforma de programació Calendly en una pestanya nova."
+        "S'està carregant el calendari, espereu. Se us redirigirà a la nostra plataforma de planificació Calendly en una pestanya nova."
       ],
       "Loading link": [
         "S'està carregant l'enllaç"
@@ -4745,7 +4751,7 @@
         "Les dades xifrades són lleugerament més grans a causa de la sobrecàrrega del xifratge i les signatures, els quals garanteixen la seguretat de les vostres dades."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
-        "La informació exposada es va filtrar d'un servei de tercers. La informació del seu compte de ${ BRAND_NAME } continua sent segura i encriptada. ${ learnMoreLink }"
+        "La informació exposada es va filtrar d'un servei de tercers. La informació del vostre compte de ${ BRAND_NAME } continua sent segura i xifrada. ${ learnMoreLink }"
       ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "El següent pot haver estat manipulat: ${ items }. Obriu-ho només si hi confieu."
@@ -4758,6 +4764,9 @@
       ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "Encara cal transferir alguns fitxers. Si es tanca el gestor de transferències, es finalitzaran totes les operacions."
+      ],
+      "There is nothing to see here": [
+        "No hi ha dades per veure aquí."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Aquesta adreça està inhabilitada. Per tal de poder enviar-hi, el propietari l'ha d'habilitar en primer lloc."
@@ -5018,6 +5027,9 @@
       "Yesterday": [
         "Ahir"
       ],
+      "you": [
+        "vostè"
+      ],
       "You already have a free account": [
         "Ja teniu un compte gratuït"
       ],
@@ -5061,10 +5073,10 @@
         "Us queden ${ expiresInDays } dies per a reclamar la vostra bonificació de benvinguda de 3 GB i "
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
-        "Té una subscripció de prova de ${ planTitle }. Si vol continuar amb la seva subscripció després del període de prova, afegeixi un mètode de pagament."
+        "Teniu una subscripció de prova de ${ planTitle }. Si voleu continuar amb la subscripció després del període de prova, afegiu un mètode de pagament."
       ],
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
-        "Té una subscripció de prova de ${ planTitle }. No es requereix cap pagament en aquest moment. La seva subscripció es renovarà automàticament al final del període de prova."
+        "Teniu una subscripció de prova de ${ planTitle }. No es requereix cap pagament en aquest moment. La subscripció es renovarà automàticament al final del període de prova."
       ],
       "You may be redirected to your bank’s website.": [
         "És possible que se us redirigeixi al lloc web del vostre banc."
@@ -5124,7 +5136,7 @@
         "La seva adreça de correu electrònic i contrasenya es van filtrar:"
       ],
       "Your email address was exposed:": [
-        "S'ha exposat la seva adreça de correu electrònic:"
+        "S'ha exposat la vostra adreça de correu electrònic:"
       ],
       "Your email will only be used for this one-time verification.": [
         "El vostre correu electrònic només s’utilitzarà per a aquesta única verificació."
@@ -5139,7 +5151,7 @@
         "Es xifraran els fitxers i després es desaran."
       ],
       "Your information was found on ${ displayedDate }": [
-        "La seva informació es va trobar el ${ displayedDate }"
+        "La vostra informació es va trobar el ${ displayedDate }"
       ],
       "Your login information will not be saved after the import is completed.": [
         "La vostra informació d'inici de sessió no es desarà quan s'hagi completat la importació."
@@ -5726,6 +5738,9 @@
       "Stolen data": [
         "Dades robades"
       ],
+      "Stop sharing": [
+        "Deixa de compartir"
+      ],
       "Street address": [
         "Adreça de carrer"
       ],
@@ -5936,7 +5951,7 @@
         "milloreu per a obtenir més emmagatzematge"
       ],
       "Upgrade to restore full access": [
-        "Actualitzi per restaurar l'accés complet"
+        "Milloreu per a restaurar l'accés complet"
       ],
       "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
         "El seu ${ driveStorage } està ple. Per carregar o sincronitzar fitxers, alliberi espai o ${ cta }."
@@ -5945,21 +5960,21 @@
         "El seu ${ mailStorage } està ple. Per enviar o rebre correus electrònics, alliberi espai o ${ cta }."
       ],
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
-        "El seu compte corre el risc de ser suprimit. Per evitar la pèrdua de dades, demani al seu administrador que actualitzi. ${ cta }"
+        "El vostre compte corre el risc de ser suprimit. Per evitar la pèrdua de dades, demaneu al vostre administrador que us el millori. ${ cta }"
       ],
       "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
-        "El seu emmagatzematge està ple. Per enviar o rebre correus electrònics, alliberi espai o ${ cta }."
+        "El vostre emmagatzematge està ple. Per enviar o rebre correus electrònics, allibereu espai o ${ cta }."
       ],
       "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
         "El vostre emmagatzematge està ple. Per carregar o sincronitzar fitxers, allibereu espai o ${ cta }."
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
-        "La seva subscripció ha finalitzat. ${ cta } i per evitar la pèrdua de dades."
+        "La vostra subscripció ha finalitzat. ${ cta } i per evitar la pèrdua de dades."
       ]
     },
     "Log preference": {
       "Enable ${ reason }": [
-        "Activa ${ reason }"
+        "Habilita ${ reason }"
       ]
     },
     "Mail import summary": {
@@ -5996,7 +6011,7 @@
         "10 adreces de correu electrònic"
       ],
       "Auto-delete Spam and Trash": [
-        "Elimina automàticament el correu brossa i la paperera"
+        "Netegeu automàticament el correu brossa i la paperera"
       ],
       "Custom schedule send and snooze times": [
         "Personalització de l'hora d'enviament i del temps de posposició"
@@ -6015,7 +6030,7 @@
     },
     "mailtrial2024: Info": {
       "for the first month": [
-        "per al primer mes"
+        "el primer mes"
       ],
       "Limited-time offer, expires April 2 2024": [
         "Oferta limitada, caduca el 2 d'abril de 2024"
@@ -7060,6 +7075,12 @@
         "S'ha eliminat ${ numberOfItems } enllaç al vostre element",
         "S'han eliminat ${ numberOfItems } enllaços al vostre element"
       ],
+      "${ reason } has been disabled": [
+        "${ reason } s'ha desactivat"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } s'ha habilitat"
+      ],
       "All items will soon be permanently deleted from trash": [
         "Aviat se suprimiran permanentment tots els elements de la paperera"
       ],
@@ -7111,6 +7132,9 @@
       ],
       "File or folder is missing a name": [
         "Falta un nom pel fitxer o carpeta"
+      ],
+      "File removed": [
+        "S'ha esborrat el fitxer."
       ],
       "Link copied to clipboard": [
         "S'ha copiat l'enllaç al porta-retalls."
@@ -7547,7 +7571,7 @@
         "Crea un àlies"
       ],
       "Generate aliases on the fly, and easily manage your aliases and passwords.": [
-        "Genera àlies sobre la marxa i gestiona fàcilment els àlies i contrasenyes."
+        "Genereu àlies sobre la marxa i gestioneu fàcilment els àlies i contrasenyes."
       ],
       "Hide-my-email aliases": [
         "Àlies hide-my-email"
@@ -7568,7 +7592,7 @@
         "Proveu ${ PASS_APP_NAME }"
       ],
       "Used on amazon for shopping, etc.": [
-        "S'utilitza a l'Amazon per anar a comprar, etc."
+        "S'utilitza a l'Amazon per a fer compres, etc."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Quan se us demani l'adreça de correu electrònic, doneu aquest àlies en el seu lloc. ${ passLink } proporciona els àlies."
@@ -7586,7 +7610,7 @@
     },
     "Security Center - Info": {
       "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
-        "Rebi una notificació si la seva contrasenya o altres dades s'han filtrat d'un servei de tercers. ${ learnMoreLink }"
+        "Rebeu una notificació si la vostra contrasenya o altres dades s'han filtrat d'un servei de tercers. ${ learnMoreLink }"
       ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "La nostra solució de seguretat d'avantguarda, impulsada per IA, dissenyada per als usuaris que busquen una protecció més elevada per als seus comptes. ${ learnMoreLink }"
@@ -7989,7 +8013,7 @@
         "Accediu al contingut dels serveis de transmissió en línia, com ara Netflix, Disney+ i Prime Video, des de qualsevol lloc."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Tots els nostres serveis prèmium al seu límit màxim: 100 adreces de correu electrònic, suport per a 10 dominis personalitzats, àlies hide-my-email il·limitats, compartició de calendaris, emmagatzematge al núvol encriptat, compartició de fitxers, etc."
+        "Tots els nostres serveis prèmium al seu límit màxim: 100 adreces de correu electrònic, suport per a 10 dominis personalitzats, àlies hide-my-email il·limitats, compartició de calendaris, emmagatzematge al núvol xifrat, compartició de fitxers, etc."
       ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "Inclou suport per a 3 dominis de correu electrònic personalitzats, 15 adreces de correu electrònic, àlies il·limitats de hide-my-email, compartició de calendari i més."
@@ -8065,7 +8089,7 @@
         "Per a continuar carregant i sincronitzant fitxers, allibereu espai o milloreu per a obtenir més emmagatzematge."
       ],
       "To send or receive emails, free up space or ${ upgrade }": [
-        "Per a enviar o rebre correus electrònics, allibereu espai o ${ upgrade }"
+        "Per enviar o rebre correus electrònics, allibereu espai o ${ upgrade }"
       ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "Per a enviar o rebre correus electrònics, allibereu espai o milloreu per a obtenir més emmagatzematge."
@@ -8083,13 +8107,13 @@
         "El vostre ${ appStorage } és ple."
       ],
       "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
-        "L'${ storage } és ple al ${ percentage }%. ${ cta }."
+        "El vostre ${ storage } és ple al ${ percentage }%. ${ cta }."
       ],
       "Your ${ storage } is full. ${ cta }.": [
         "L'${ storage } és ple. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
-        "L'emmagatzematge és ple al ${ percentage }%. ${ cta }."
+        "El vostre emmagatzematge és ple al ${ percentage }%. ${ cta }."
       ],
       "Your storage is full": [
         "L'emmagatzematge és ple."
@@ -8264,7 +8288,7 @@
         "S'ha suprimit el registre d'importació"
       ],
       "Last modified aliases stored in your oldest vault": [
-        "Els darrers àlies modificats s'emmagatzemen a la vostra caixa forta més antiga"
+        "Últims àlies modificats emmagatzemats a la vostra caixa forta més antiga"
       ],
       "Payment method added": [
         "Mètode de pagament afegit"
@@ -9012,6 +9036,9 @@
       "You have no folders yet": [
         "Encara no tens cap carpeta"
       ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "La seva prova gratuïta de ${ planName } acaba el ${ textDate }"
+      ],
       "Your 3 GB bonus": [
         "La vostra bonificació de 3 GB"
       ],
@@ -9022,7 +9049,7 @@
         "Els vostres canvis encara no estan sincronitzats"
       ],
       "Your exposed information": [
-        "La teva informació exposada"
+        "La vostra informació exposada"
       ],
       "Your welcome actions": [
         "Les vostres accions de benvinguda"
