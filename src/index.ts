@@ -31,6 +31,7 @@ import {
     updateView,
     viewCreationAppStartup,
 } from "./utils/view/viewManagement";
+import pkg from "../package.json";
 
 if (require("electron-squirrel-startup")) {
     app.quit();
@@ -66,7 +67,7 @@ if (app.isDefaultProtocolClient("mailto")) {
     Logger.info("App is not default mailto client");
 }
 
-app.setAppUserModelId("com.squirrel.proton_mail.ProtonMail");
+app.setAppUserModelId(pkg.config.appUserModelId);
 
 const gotTheLock = app.requestSingleInstanceLock();
 if (!gotTheLock) {

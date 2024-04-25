@@ -4,6 +4,19 @@
     "version": "1.0.2",
     "icon": "assets/icons/icon.png",
     "description": "Proton official desktop application for Proton Mail and Proton Calendar",
+    "license": "GPL-3.0",
+    "author": {
+        "name": "Proton",
+        "url": "https://proton.me",
+        "email": "contact@protonmail.com"
+    },
+    "config": {
+        "appBundleId": "ch.protonmail.desktop",
+        "appUserModelId": "com.squirrel.proton_mail.ProtonMail",
+        "copyright": "Copyright (c) 2024, Proton AG <contact@protonmail.com>",
+        "githubUser": "ProtonMail",
+        "githubRepo": "inbox-desktop"
+    },
     "main": ".webpack/main",
     "scripts": {
         "start": "electron-forge start",
@@ -19,11 +32,6 @@
         "negativity": "electronegativity -i ./src",
         "create-uninstaller": "appify ./src/macos/uninstall.sh './src/macos/Proton Mail Uninstaller.app' ./assets/icons/uninstaller.png"
     },
-    "keywords": [],
-    "author": {
-        "name": "Proton"
-    },
-    "license": "MIT",
     "devDependencies": {
         "@doyensec/electronegativity": "^1.10.3",
         "@electron-forge/cli": "^7.3.0",
