@@ -257,7 +257,7 @@ export default function useShareURLView(shareId: string, linkId: string) {
             deleteShare(link.sharingDetails.shareId, { force: true })
                 .then(() => {
                     createNotification({
-                        text: c('Notification').t`You stopped to share this item`,
+                        text: c('Notification').t`You stopped sharing this item`,
                     });
                 })
                 .then(() => manualCacheRefresh(abortController.signal))
