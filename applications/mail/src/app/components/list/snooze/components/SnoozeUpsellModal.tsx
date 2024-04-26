@@ -10,7 +10,7 @@ const SnoozeDurationSelection = (props: ModalStateProps) => {
         component: UPSELL_COMPONENT.MODAL,
         feature: MAIL_UPSELL_PATHS.SNOOZE_MESSAGE,
     });
-    const upsellConfig = useUpsellConfig(upsellRef);
+    const upsellConfig = useUpsellConfig({ upsellRef });
 
     return (
         <div onClick={(e) => e.stopPropagation()}>
