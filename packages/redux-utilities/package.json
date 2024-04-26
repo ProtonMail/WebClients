@@ -10,7 +10,7 @@
     "dependencies": {
         "@proton/redux-shared-store": "workspace:^",
         "@reduxjs/toolkit": "^2.2.3",
-        "react": "^18.2.0",
+        "react": "^18.3.0",
         "react-redux": "^9.1.1"
     },
     "devDependencies": {
@@ -19,8 +19,8 @@
         "eslint": "^8.57.0",
         "jest": "^29.7.0",
         "jest-environment-jsdom": "^29.7.0",
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0",
+        "react": "^18.3.0",
+        "react-dom": "^18.3.0",
         "ts-jest": "^29.1.2",
         "typescript": "^5.4.5"
     }
