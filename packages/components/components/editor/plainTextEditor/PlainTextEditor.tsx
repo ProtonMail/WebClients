@@ -6,13 +6,15 @@ import { EditorActions } from '../interface';
 
 interface Props {
     onChange: (value: string) => void;
+    onMouseUp?: () => void;
+    onKeyUp?: () => void;
     onReady: (editorActions: EditorActions) => void;
     onFocus: () => void;
     // Needed for dropzone
     children?: ReactNode;
 }
 
-const PlainTextEditor = ({ onFocus, onReady, onChange, children, ...rest }: Props) => {
+const PlainTextEditor = ({ onFocus, onReady, onChange, onMouseUp, onKeyUp, children, ...rest }: Props) => {
     const textareaRef = useRef<HTMLTextAreaElement>(null);
     const isMountedCallback = useIsMounted();
 
@@ -69,6 +71,8 @@ const PlainTextEditor = ({ onFocus, onReady, onChange, children, ...rest }: Prop
                 onChange={(event: ChangeEvent<HTMLTextAreaElement>) => {
                     onChange(event.target.value);
                 }}
+                onMouseUp={onMouseUp}
+                onKeyUp={onKeyUp}
                 data-testid="editor-textarea"
             />
             {children}

@@ -22,6 +22,8 @@ interface Props {
     editorClassname?: string;
     metadata?: Partial<EditorMetadata>;
     onChange: (value: string) => void;
+    onMouseUp?: () => void;
+    onKeyUp?: () => void;
     showBlockquoteToggle?: boolean;
     onBlockquoteToggleClick?: () => void;
     disabled?: boolean;
@@ -63,6 +65,8 @@ const Editor = ({
     editorToolbarClassname,
     metadata: metadataProp,
     onChange = noop,
+    onMouseUp = noop,
+    onKeyUp = noop,
     simple,
     onFocus = noop,
     disabled = false,
@@ -97,7 +101,15 @@ const Editor = ({
         [onAddAttachments, metadata.supportImages]
     );
 
-    const plaintextEditor = <PlainTextEditor onChange={onChange} onReady={onReady} onFocus={onFocus} />;
+    const plaintextEditor = (
+        <PlainTextEditor
+            onChange={onChange}
+            onReady={onReady}
+            onFocus={onFocus}
+            onMouseUp={onMouseUp}
+            onKeyUp={onKeyUp}
+        />
+    );
 
     return (
         <>
@@ -137,6 +149,8 @@ const Editor = ({
                             openEmojiPicker={() => openEmojiPickerRef.current?.()}
                             dropzone={hasDropzone ? DROPZONE_COMPOSER_SETTINGS : undefined}
                             onAddAttachments={onAddAttachments}
+                            onMouseUp={onMouseUp}
+                            onKeyUp={onKeyUp}
                         />
                     )}
                 </div>
