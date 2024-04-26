@@ -20,6 +20,7 @@ interface Props {
     onInvitationPermissionsChange: (invitationId: string, permission: SHARE_MEMBER_PERMISSIONS) => Promise<void>;
     onMemberRemove: (member: ShareMember) => void;
     onInvitationRemove: (invitationId: string) => void;
+    onResendInvitationEmail: (invitationId: string) => Promise<void>;
 }
 
 const MemberItem = ({
@@ -76,6 +77,7 @@ export const DirectSharingListing = ({
     onMemberRemove,
     onInvitationRemove,
     onInvitationPermissionsChange,
+    onResendInvitationEmail,
 }: Props) => {
     const [contactEmails] = useContactEmails();
 
@@ -129,6 +131,7 @@ export const DirectSharingListing = ({
                             selectedPermissions={invitation.permissions}
                             onInvitationRemove={onInvitationRemove}
                             onInvitationPermissionsChange={onInvitationPermissionsChange}
+                            onResendInvitationEmail={onResendInvitationEmail}
                         />
                     );
                 })}
