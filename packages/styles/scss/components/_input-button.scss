@@ -11,6 +11,11 @@
 
 	inline-size: em(36);
 	padding: em(7); // Same as inputs
+
+	// quickfix for DayCheckbox
+	&.px-0 {
+		padding-inline: 0;
+	}
 }
 
 .input-button-input {
