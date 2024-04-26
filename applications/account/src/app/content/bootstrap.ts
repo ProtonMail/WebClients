@@ -8,13 +8,11 @@ import {
 } from '@proton/account';
 import * as bootstrap from '@proton/account/bootstrap';
 import { getDecryptedPersistedState } from '@proton/account/persist/helper';
-import { createCalendarModelEventManager, holidaysDirectoryThunk } from '@proton/calendar';
+import { createCalendarModelEventManager } from '@proton/calendar';
 import { initMainHost } from '@proton/cross-storage';
 import { FeatureCode, fetchFeatures } from '@proton/features';
-import { mailSettingsThunk } from '@proton/mail';
 import createApi from '@proton/shared/lib/api/createApi';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import { loadAllowedTimeZones } from '@proton/shared/lib/date/timezone';
 import { listenFreeTrialSessionExpiration } from '@proton/shared/lib/desktop/endOfTrialHelpers';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { initElectronClassnames } from '@proton/shared/lib/helpers/initElectronClassnames';
@@ -86,19 +84,8 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
             return { user, userSettings, earlyAccessScope: features[FeatureCode.EarlyAccessScope], scopes };
         };
 
-        const loadPreload = () => {
-            return Promise.all([dispatch(mailSettingsThunk())]);
-        };
-
-        const loadPreloadButIgnored = () => {
-            loadAllowedTimeZones(silentApi).catch(noop);
-            dispatch(holidaysDirectoryThunk()).catch(noop);
-        };
-
         const userPromise = loadUser();
-        const preloadPromise = loadPreload();
         const evPromise = bootstrap.eventManager({ api: silentApi, eventID: persistedState?.eventID });
-        loadPreloadButIgnored();
 
         await unleashPromise;
         await bootstrap.loadCrypto({ appName, unleashClient });
@@ -109,8 +96,6 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
         ]);
         // Needs everything to be loaded.
         await bootstrap.postLoad({ appName, authentication, ...userData, history });
-        // Preloaded models are not needed until the app starts, and also important do it postLoad as these requests might fail due to missing scopes.
-        await preloadPromise;
 
         const calendarModelEventManager = createCalendarModelEventManager({ api: silentApi });
 

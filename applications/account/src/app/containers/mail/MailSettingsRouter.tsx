@@ -1,6 +1,7 @@
 import { ReactNode, useRef } from 'react';
 import { Redirect, Route, Switch, useRouteMatch } from 'react-router-dom';
 
+import { useLoadAllowedTimeZones } from '@proton/calendar/timezones';
 import {
     AddressKeysSection,
     AddressVerificationSection,
@@ -32,6 +33,7 @@ import {
     UserKeysSection,
     useAddresses,
     useIsInboxElectronApp,
+    useMailSettings,
 } from '@proton/components';
 import ForwardSection from '@proton/components/containers/forward/ForwardSection';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
@@ -47,9 +49,11 @@ const MailSettingsRouter = ({
     redirect: ReactNode;
 }) => {
     const { path } = useRouteMatch();
+    useMailSettings(); // Preload mail settings
     const [addresses, loadingAddresses] = useAddresses();
     const onceRef = useRef<boolean>(false);
     const { isElectronEnabled } = useIsInboxElectronApp();
+    useLoadAllowedTimeZones();
 
     const {
         routes: { general, identity, folder, filter, autoReply, domainNames, keys, imap, desktop, backup, privacy },
