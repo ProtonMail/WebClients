@@ -55,7 +55,7 @@ const CustomFrequencyModal = ({
                 />
             </ModalTwoContent>
             <ModalTwoFooter>
-                <Button onClick={modalProps.onClose}>{c('Action').t`Close`}</Button>
+                <Button onClick={modalProps.onClose}>{c('Action').t`Cancel`}</Button>
                 <PrimaryButton
                     onClick={() => {
                         onChange(values);

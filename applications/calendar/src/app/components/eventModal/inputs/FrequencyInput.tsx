@@ -27,7 +27,7 @@ const FrequencyInput = ({ value, frequencyInputType = 'select', onChange, ...res
         { text: c('Option').t`Every week`, value: WEEKLY },
         { text: c('Option').t`Every month`, value: MONTHLY },
         { text: c('Option').t`Every year`, value: YEARLY },
-        { text: c('Option').t`Custom…`, value: CUSTOM },
+        { text: c('Option').t`Custom`, value: CUSTOM },
     ];
 
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
