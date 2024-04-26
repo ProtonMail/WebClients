@@ -165,7 +165,7 @@ const ScheduleSendActionsWrapper = forwardRef<HTMLElement, Props>(
             feature: MAIL_UPSELL_PATHS.SCHEDULE_SEND,
         });
 
-        const upsellConfig = useUpsellConfig(upsellRef);
+        const upsellConfig = useUpsellConfig({ upsellRef });
 
         return (
             <>

@@ -16,7 +16,7 @@ const ContactUpgradeModal = (modalProps: ModalStateProps) => {
             component: UPSELL_COMPONENT.MODAL,
         }) || '';
 
-    const upsellConfig = useUpsellConfig(upsellRef);
+    const upsellConfig = useUpsellConfig({ upsellRef });
     return (
         <UpsellModal
             modalProps={modalProps}
