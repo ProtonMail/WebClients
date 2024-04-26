@@ -67,7 +67,7 @@ export default function useLinkDetailsView(shareId: string, linkId: string) {
         return () => {
             abortController.abort();
         };
-    }, [shareId, linkId, isSharedWithMe]);
+    }, [shareId, linkId]);
 
     return {
         permissions,
