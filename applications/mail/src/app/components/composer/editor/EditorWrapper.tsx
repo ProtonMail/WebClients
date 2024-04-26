@@ -38,6 +38,8 @@ interface Props {
     disabled: boolean;
     onReady: (editorActions: ExternalEditorActions) => void;
     onChange: MessageChange;
+    onMouseUp?: () => void;
+    onKeyUp?: () => void;
     onChangeContent: (content: string, refreshEditor?: boolean, silent?: boolean) => void;
     onFocus?: () => void;
     onAddAttachments: (files: File[]) => void;
@@ -51,6 +53,8 @@ const EditorWrapper = ({
     disabled,
     onReady,
     onChange,
+    onMouseUp,
+    onKeyUp,
     onChangeContent,
     onAddAttachments,
     onRemoveAttachment,
@@ -283,6 +287,8 @@ const EditorWrapper = ({
             disabled={disabled}
             onChange={onChangeContentCallback}
             onFocus={onFocus}
+            onMouseUp={onMouseUp}
+            onKeyUp={onKeyUp}
             showBlockquoteToggle={!editorMetadata.blockquoteExpanded}
             onBlockquoteToggleClick={handleBlockquoteToggleClick}
             onReady={handleEditorReady}

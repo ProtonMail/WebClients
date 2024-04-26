@@ -17,6 +17,8 @@ interface Props {
     disabled: boolean;
     onEditorReady: (editorActions: ExternalEditorActions) => void;
     onChange: MessageChange;
+    onMouseUp?: () => void;
+    onKeyUp?: () => void;
     onChangeContent: (content: string) => void;
     onFocus?: () => void;
     onAddAttachments: (files: File[]) => void;
@@ -34,6 +36,8 @@ const ComposerContent = ({
     disabled,
     onEditorReady,
     onChange,
+    onMouseUp,
+    onKeyUp,
     onChangeContent,
     onFocus,
     onAddAttachments,
@@ -77,6 +81,8 @@ const ComposerContent = ({
                     disabled={disabled}
                     onReady={onEditorReady}
                     onChange={onChange}
+                    onMouseUp={onMouseUp}
+                    onKeyUp={onKeyUp}
                     onChangeContent={onChangeContent}
                     onFocus={onFocus}
                     onAddAttachments={onAddAttachments}

@@ -22,9 +22,11 @@ const TOOLBAR_EDITOR_EVENTS = [
 interface Props {
     setToolbarConfig: SetEditorToolbarConfig;
     onChange: ((value: string) => void) | undefined;
+    onMouseUp: (() => void) | undefined;
+    onKeyUp: (() => void) | undefined;
 }
 
-const useOnEditorChange = ({ setToolbarConfig, onChange }: Props) => {
+const useOnEditorChange = ({ setToolbarConfig, onChange, onMouseUp, onKeyUp }: Props) => {
     const isMountedCallback = useIsMounted();
 
     const debouncedSetToolbarConfig = useCallback(
@@ -48,6 +50,14 @@ const useOnEditorChange = ({ setToolbarConfig, onChange }: Props) => {
             if (EVENTS_TO_TRIGGER_ONCHANGE.includes(editorEvent.eventType as any)) {
                 const content = editor.getContent();
                 onChange?.(content);
+            }
+
+            if (eventType === PluginEventType.MouseUp) {
+                onMouseUp?.();
+            }
+
+            if (eventType === PluginEventType.KeyUp) {
+                onKeyUp?.();
             }
         },
         [onChange]
