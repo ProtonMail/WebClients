@@ -10,6 +10,7 @@ import alias from './alias';
 import importReducer from './import';
 import invites from './invites';
 import items from './items';
+import monitor from './monitor';
 import organization from './organization';
 import popup from './popup';
 import pwHistory from './pw-history';
@@ -21,6 +22,7 @@ export * from './alias';
 export * from './import';
 export * from './invites';
 export * from './items';
+export * from './monitor';
 export * from './popup';
 export * from './pw-history';
 export * from './shares';
@@ -31,6 +33,7 @@ export const reducerMap = {
     import: importReducer,
     invites,
     items,
+    monitor,
     organization,
     popup,
     pwHistory,

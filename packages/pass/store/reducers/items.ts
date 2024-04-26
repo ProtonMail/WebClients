@@ -39,6 +39,7 @@ import {
     itemTrashSuccess,
     itemUnpinSuccess,
     itemUsedSync,
+    resolveAliasBreach,
     restoreTrashProgress,
     setItemFlags,
     shareDeleteSync,
@@ -125,7 +126,7 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
                         contentFormatVersion: ContentFormatVersion.Item,
                         createTime,
                         data: item,
-                        flags: 0,
+                        flags: 1 /** default to unmonitored */,
                         itemId: optimisticId,
                         lastUseTime: null,
                         modifyTime: createTime,
@@ -322,6 +323,11 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
         if (setItemFlags.success.match(action)) {
             const { shareId, itemId, item } = action.payload;
             return partialMerge(state, { [shareId]: { [itemId]: item } });
+        }
+
+        if (resolveAliasBreach.success.match(action)) {
+            const { shareId, itemId } = action.payload;
+            return partialMerge(state, { [shareId]: { [itemId]: { flags: 0 } } });
         }
 
         return state;

@@ -14,7 +14,7 @@ import { useNavigation } from '@proton/pass/components/Navigation/NavigationProv
 import { getItemRoute, getLocalPath, maybeTrash, subPath } from '@proton/pass/components/Navigation/routing';
 import { VaultSelectMode } from '@proton/pass/components/Vault/VaultSelect';
 import type { ItemViewProps } from '@proton/pass/components/Views/types';
-import { isHealthCheckSkipped } from '@proton/pass/lib/items/item.predicates';
+import { isMonitored } from '@proton/pass/lib/items/item.predicates';
 import { getItemActionId } from '@proton/pass/lib/items/item.utils';
 import {
     itemCreationDismiss,
@@ -110,7 +110,7 @@ export const ItemView: FC = () => {
     const handlePinClick = () => dispatch((item.pinned ? itemUnpinIntent : itemPinIntent)({ shareId, itemId }));
 
     const handleToggleFlags = () => {
-        const SkipHealthCheck = !isHealthCheckSkipped(item);
+        const SkipHealthCheck = isMonitored(item);
         dispatch(setItemFlags.intent({ shareId, itemId, SkipHealthCheck }));
     };
 

@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import type { FetchedBreaches } from '@proton/components/containers';
+import { isMonitored } from '@proton/pass/lib/items/item.predicates';
 import type { AddressVerify, CustomAddressID, ProtonAddressID } from '@proton/pass/lib/monitor/types';
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
 import {
@@ -48,7 +49,7 @@ export const sentinelToggle = requestActionsFactory<SentinelState, SentinelState
 
 export const getBreaches = requestActionsFactory<void, BreachesGetResponse>('monitor::breaches::get')({
     requestId: breachesRequest,
-    success: { config: { maxAge: 5 * UNIX_MINUTE, data: true } },
+    success: { config: { maxAge: 5 * UNIX_MINUTE } },
     failure: {
         prepare: (error) =>
             withNotification({
@@ -102,11 +103,10 @@ export const getAliasBreach = requestActionsFactory<SelectedItem, FetchedBreache
     },
 });
 
-export const monitorCustomAddress = requestActionsFactory<string, BreachCustomEmailGetResponse>(
+export const addCustomAddress = requestActionsFactory<string, BreachCustomEmailGetResponse>(
     'monitor::breaches::custom::add'
 )({
     requestId: monitorCustomAddressRequest,
-    success: { config: { data: true } },
     failure: {
         prepare: (error) =>
             withNotification({
@@ -117,8 +117,10 @@ export const monitorCustomAddress = requestActionsFactory<string, BreachCustomEm
     },
 });
 
-export const verifyCustomAddress = requestActionsFactory<AddressVerify, boolean>('monitor::breaches::custom::verify')({
-    requestId: ({ emailId }) => verifyCustomAddressRequest(emailId),
+export const verifyCustomAddress = requestActionsFactory<AddressVerify, CustomAddressID>(
+    'monitor::breaches::custom::verify'
+)({
+    requestId: ({ addressId }) => verifyCustomAddressRequest(addressId),
     failure: {
         prepare: (error) =>
             withNotification({
@@ -129,7 +131,7 @@ export const verifyCustomAddress = requestActionsFactory<AddressVerify, boolean>
     },
 });
 
-export const resolveProtonBreach = requestActionsFactory<ProtonAddressID, boolean>(
+export const resolveProtonBreach = requestActionsFactory<ProtonAddressID, ProtonAddressID>(
     'monitor::breaches::proton_address::resolve'
 )({
     requestId: protonResolveRequest,
@@ -143,7 +145,7 @@ export const resolveProtonBreach = requestActionsFactory<ProtonAddressID, boolea
     },
 });
 
-export const resolveCustomBreach = requestActionsFactory<CustomAddressID, boolean>(
+export const resolveCustomBreach = requestActionsFactory<CustomAddressID, CustomAddressID>(
     'monitor::breaches::custom_address::resolve'
 )({
     requestId: customResolveRequest,
@@ -157,7 +159,7 @@ export const resolveCustomBreach = requestActionsFactory<CustomAddressID, boolea
     },
 });
 
-export const resolveAliasBreach = requestActionsFactory<SelectedItem, boolean>(
+export const resolveAliasBreach = requestActionsFactory<SelectedItem, SelectedItem>(
     'monitor::breaches::alias_address::resolve'
 )({
     requestId: ({ shareId, itemId }) => aliasResolveRequest(shareId, itemId),
@@ -180,10 +182,9 @@ export const setItemFlags = requestActionsFactory<
         prepare: ({ shareId, itemId, item }) =>
             withNotification({
                 type: 'info',
-                text:
-                    item.flags && item.flags << 0 === 1
-                        ? c('Info').t`Item successfully included in monitoring`
-                        : c('Info').t`Item successfully excluded in monitoring`,
+                text: isMonitored(item)
+                    ? c('Info').t`Item successfully included in monitoring`
+                    : c('Info').t`Item successfully excluded from monitoring`,
             })({ payload: { shareId, itemId, item } }),
     },
     failure: {

@@ -31,8 +31,8 @@ export const isEditItemDraft = (draft?: Draft): draft is EditDraft => draft?.mod
 export const isNewItemDraft = (draft?: Draft): draft is NewDraft => draft?.mode === 'new';
 
 export const isPinned = ({ pinned }: ItemRevision) => pinned;
-export const isHealthCheckSkipped = ({ flags }: ItemRevision) => flags << 0 === 1;
-export const isEmailBreached = ({ flags }: ItemRevision) => flags << 1 === 1;
+export const isMonitored = ({ flags }: ItemRevision) => flags << 0 === 0;
+export const isBreached = ({ flags }: ItemRevision) => flags << 1 === 1;
 
 export const hasDomain = (item: LoginItem) => item.data.content.urls.length > 0;
 export const hasOTP = ({ data: { content, extraFields } }: LoginItem) =>
