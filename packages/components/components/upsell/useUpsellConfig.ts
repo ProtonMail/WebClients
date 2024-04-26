@@ -1,4 +1,4 @@
-import { SUBSCRIPTION_STEPS, useFlag, useSubscriptionModal } from '@proton/components/containers';
+import { OpenCallbackProps, SUBSCRIPTION_STEPS, useFlag, useSubscriptionModal } from '@proton/components/containers';
 import { useConfig, useSubscription, useUser } from '@proton/components/hooks';
 import { APPS } from '@proton/shared/lib/constants';
 import { hasInboxDesktopFeature } from '@proton/shared/lib/desktop/ipcHelpers';
@@ -6,8 +6,15 @@ import { addUpsellPath, getUpgradePath } from '@proton/shared/lib/helpers/upsell
 
 import getUpsellSubscriptionModalConfig from './getUpsellSubscriptionModalConfig';
 
+interface Props {
+    upsellRef?: string;
+    step?: SUBSCRIPTION_STEPS;
+    onSubscribed?: () => void;
+    customSubModalConfig?: OpenCallbackProps;
+}
+
 // Return config properties to inject in the subscription modal
-const useUpsellConfig = (upsellRef?: string, step?: SUBSCRIPTION_STEPS, onSubscribed?: () => void) => {
+const useUpsellConfig = ({ upsellRef, step, onSubscribed, customSubModalConfig }: Props) => {
     const [user] = useUser();
     const [subscription] = useSubscription();
     const [openSubscriptionModal] = useSubscriptionModal();
@@ -19,7 +26,8 @@ const useUpsellConfig = (upsellRef?: string, step?: SUBSCRIPTION_STEPS, onSubscr
     if (hasInAppPayments && inboxUpsellFlowEnabled && upsellRef) {
         const modalStep =
             step || ABTestInboxUpsellStepEnabled ? SUBSCRIPTION_STEPS.PLAN_SELECTION : SUBSCRIPTION_STEPS.CHECKOUT;
-        const subscriptionCallBackProps = getUpsellSubscriptionModalConfig(upsellRef, modalStep);
+        const subscriptionCallBackProps =
+            customSubModalConfig || getUpsellSubscriptionModalConfig(upsellRef, modalStep);
 
         // The subscription modal will open in inbox app
         return {
