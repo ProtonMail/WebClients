@@ -105,7 +105,7 @@ export default function ConflictModal({
                         name="strategy"
                         className="inline-flex flex-nowrap"
                     >
-                        <div data-testid="replace-exiting">
+                        <div data-testid="replace-existing">
                             <strong>
                                 {originalIsFolder
                                     ? c('Label').t`Replace existing folder`
