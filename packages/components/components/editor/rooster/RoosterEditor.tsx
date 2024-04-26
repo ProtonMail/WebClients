@@ -20,6 +20,8 @@ import './RoosterEditor.scss';
 
 interface Props {
     onChange?: (value: string) => void;
+    onMouseUp?: () => void;
+    onKeyUp?: () => void;
     showBlockquoteToggle?: boolean;
     onBlockquoteToggleClick?: () => void;
     onReady: (editorActions: EditorActions) => void;
@@ -36,6 +38,8 @@ interface Props {
 
 const RoosterEditor = ({
     onChange,
+    onMouseUp,
+    onKeyUp,
     onReady,
     showBlockquoteToggle,
     onBlockquoteToggleClick,
@@ -54,6 +58,8 @@ const RoosterEditor = ({
     const onEditorChangeCallback = useOnEditorChange({
         setToolbarConfig,
         onChange,
+        onMouseUp,
+        onKeyUp,
     });
 
     useInitRooster({
