@@ -1,6 +1,8 @@
-import { ReactNode, useMemo } from 'react';
+import { ReactNode, useEffect, useMemo } from 'react';
 import { Route, Switch, useRouteMatch } from 'react-router-dom';
 
+import { useGetHolidaysDirectory } from '@proton/calendar/holidaysDirectory/hooks';
+import { useLoadAllowedTimeZones } from '@proton/calendar/timezones';
 import {
     CalendarExportSection,
     CalendarImportSection,
@@ -32,6 +34,7 @@ import {
 } from '@proton/shared/lib/calendar/calendar';
 import { locales } from '@proton/shared/lib/i18n/locales';
 import { Subscription, UserModel } from '@proton/shared/lib/interfaces';
+import noop from '@proton/utils/noop';
 
 import type { getCalendarAppRoutes } from './routes';
 
@@ -44,11 +47,17 @@ interface Props {
 
 const CalendarSettingsRouter = ({ user, subscription, calendarAppRoutes, redirect }: Props) => {
     const { path } = useRouteMatch();
+    useLoadAllowedTimeZones();
 
     const [addresses, loadingAddresses] = useAddresses();
     const memoizedAddresses = useMemo(() => addresses || [], [addresses]);
 
     const [calendars, loadingCalendars] = useCalendars();
+    const getHolidaysDirectory = useGetHolidaysDirectory();
+
+    useEffect(() => {
+        getHolidaysDirectory().catch(noop);
+    }, []);
 
     const { isElectronEnabled } = useIsInboxElectronApp();
 

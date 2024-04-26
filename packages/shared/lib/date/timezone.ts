@@ -54,10 +54,15 @@ export const fromUTCDate = (date: Date) => {
 // The list of all IANA time zones that we support is fetched from the BE at app load
 export let ALLOWED_TIMEZONES_LIST: string[] = [...FALLBACK_ALLOWED_SUPPORTED_TIMEZONES_LIST];
 
+let timezonesLoaded = false;
 /**
  * Load from API list of time zones that the BE allows
  * */
 export const loadAllowedTimeZones = async (api: Api) => {
+    if (timezonesLoaded) {
+        return;
+    }
+    timezonesLoaded = true;
     const { Timezones } = await api<{ Code: number; Timezones: string[] }>(getAllowedTimeZones());
 
     /*
@@ -145,6 +150,7 @@ interface FormatterProps {
     utcOffset: string;
     name: string;
 }
+
 type GetTimeZoneOptions = (
     date?: Date,
     options?: { formatter?: (a1: FormatterProps) => string }
@@ -301,6 +307,7 @@ interface ConvertZonedDateTimeOptions {
     moveAmbiguousForward?: boolean;
     moveInvalidForward?: boolean;
 }
+
 export const convertZonedDateTimeToUTC = (dateTime: DateTime, tzid: string, options?: ConvertZonedDateTimeOptions) => {
     const timezone = findTimeZone(tzid);
     const unixTime = Date.UTC(
