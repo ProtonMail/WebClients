@@ -3,6 +3,7 @@ import { useConfig, useSubscription, useUser } from '@proton/components/hooks';
 import { APPS } from '@proton/shared/lib/constants';
 import { hasInboxDesktopFeature } from '@proton/shared/lib/desktop/ipcHelpers';
 import { addUpsellPath, getUpgradePath } from '@proton/shared/lib/helpers/upsell';
+import noop from '@proton/utils/noop';
 
 import getUpsellSubscriptionModalConfig from './getUpsellSubscriptionModalConfig';
 
@@ -17,12 +18,13 @@ const useUpsellConfig = ({ upsellRef, step, onSubscribed }: Props) => {
     const [user] = useUser();
     const [subscription] = useSubscription();
     const [openSubscriptionModal] = useSubscriptionModal();
+    const hasSubscriptionModal = openSubscriptionModal !== noop;
     const inboxUpsellFlowEnabled = useFlag('InboxUpsellFlow');
     const ABTestInboxUpsellStepEnabled = useFlag('ABTestInboxUpsellStep'); // If enabled, we show the plan selection step
     const { APP_NAME } = useConfig();
     const hasInAppPayments = APP_NAME === APPS.PROTONMAIL || hasInboxDesktopFeature('InAppPayments');
 
-    if (hasInAppPayments && inboxUpsellFlowEnabled && upsellRef) {
+    if (hasSubscriptionModal && hasInAppPayments && inboxUpsellFlowEnabled && upsellRef) {
         const modalStep =
             step || ABTestInboxUpsellStepEnabled ? SUBSCRIPTION_STEPS.PLAN_SELECTION : SUBSCRIPTION_STEPS.CHECKOUT;
         const subscriptionCallBackProps = getUpsellSubscriptionModalConfig(upsellRef, modalStep);
