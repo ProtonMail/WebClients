@@ -9,6 +9,7 @@ import type {
     ItemType,
     MaybeNull,
     SafeLoginItem,
+    SelectedItem,
     UniqueItem,
 } from '@proton/pass/types';
 import { groupByKey } from '@proton/pass/utils/array/group-by-key';
@@ -22,6 +23,7 @@ import { isEditItemDraft } from './item.predicates';
 
 export const getItemKeyRevision = ({ shareId, itemId, revision }: ItemRevision) => `${shareId}-${itemId}-${revision}`;
 export const getItemKey = ({ shareId, itemId }: ItemRevision) => `item-${shareId}-${itemId}`;
+export const intoSelectedItem = ({ shareId, itemId }: ItemRevision): SelectedItem => ({ shareId, itemId });
 
 export const getItemActionId = (
     payload:

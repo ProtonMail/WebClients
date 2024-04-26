@@ -1,5 +1,5 @@
 import type { Draft, EditDraft, NewDraft } from '@proton/pass/store/reducers';
-import type { Item, ItemRevision, ItemType, UniqueItem } from '@proton/pass/types';
+import type { Item, ItemRevision, ItemType, LoginItem, UniqueItem } from '@proton/pass/types';
 import { ItemState } from '@proton/pass/types';
 
 export const isAliasItem = (item: Item): item is Item<'alias'> => item.type === 'alias';
@@ -33,3 +33,7 @@ export const isNewItemDraft = (draft?: Draft): draft is NewDraft => draft?.mode 
 export const isPinned = ({ pinned }: ItemRevision) => pinned;
 export const isHealthCheckSkipped = ({ flags }: ItemRevision) => flags << 0 === 1;
 export const isEmailBreached = ({ flags }: ItemRevision) => flags << 1 === 1;
+
+export const hasDomain = (item: LoginItem) => item.data.content.urls.length > 0;
+export const hasOTP = ({ data: { content, extraFields } }: LoginItem) =>
+    Boolean(content.totpUri.v || extraFields.some((field) => field.type === 'totp' && field.data.totpUri.v));
