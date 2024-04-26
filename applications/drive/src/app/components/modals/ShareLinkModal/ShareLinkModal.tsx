@@ -64,6 +64,7 @@ export function SharingModal({ shareId: rootShareId, linkId, onClose, ...modalPr
         removeMember,
         updateMemberPermissions,
         removeInvitation,
+        resendInvitation,
         updateInvitePermissions,
     } = useShareMemberView(rootShareId, linkId);
 
@@ -100,6 +101,10 @@ export function SharingModal({ shareId: rootShareId, linkId, onClose, ...modalPr
 
     const handleInvitationRemove = async (invitationId: string) => {
         await removeInvitation(invitationId);
+    };
+
+    const handleResendInvitationEmail = async (invitationId: string) => {
+        await resendInvitation(invitationId);
     };
 
     const renderModalState = () => {
@@ -173,6 +178,7 @@ export function SharingModal({ shareId: rootShareId, linkId, onClose, ...modalPr
                                     onMemberRemove={handleMemberRemove}
                                     onInvitationRemove={handleInvitationRemove}
                                     onInvitationPermissionsChange={handleInvitationPermissionsChange}
+                                    onResendInvitationEmail={handleResendInvitationEmail}
                                 />
                             </>
                         )}

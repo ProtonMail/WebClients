@@ -9,6 +9,11 @@ export const queryInviteProtonUser = (shareID: string, invitation: InviteProtonU
     },
 });
 
+export const queryResendInvitation = (shareID: string, invitationID: string) => ({
+    method: 'post',
+    url: `drive/v2/shares/${shareID}/invitations/${invitationID}/sendemail`,
+});
+
 export const queryInvitationList = (shareID: string) => ({
     method: 'get',
     url: `drive/v2/shares/${shareID}/invitations`,
