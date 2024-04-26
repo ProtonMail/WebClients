@@ -20,7 +20,14 @@ import { useLoading } from '@proton/hooks';
 import { getBreaches, updateBreachState } from '@proton/shared/lib/api/breaches';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { disableBreachAlert, enableBreachAlert } from '@proton/shared/lib/api/settings';
-import { BRAND_NAME, DARK_WEB_MONITORING_NAME } from '@proton/shared/lib/constants';
+import {
+    APP_UPSELL_REF_PATH,
+    BRAND_NAME,
+    DARK_WEB_MONITORING_NAME,
+    MAIL_UPSELL_PATHS,
+    UPSELL_COMPONENT,
+} from '@proton/shared/lib/constants';
+import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import freeUserBreachImg from '@proton/styles/assets/img/breach-alert/img-breaches-found.svg';
 import freeUserNoBreachImg from '@proton/styles/assets/img/breach-alert/img-no-breaches-found-inactive.svg';
@@ -74,9 +81,8 @@ const CredentialLeakSection = () => {
     );
     const isPaidUser = user.isPaid;
 
-    //TODO: update source of metrics
     const metrics = {
-        source: 'plans',
+        source: 'upsells',
     } as const;
 
     useEffect(() => {
@@ -170,11 +176,19 @@ const CredentialLeakSection = () => {
         }
     };
 
+    // need upsellRef to differentiate between breach alert upsells in account and inbox
+    const upsellRef = getUpsellRef({
+        app: APP_UPSELL_REF_PATH.ACCOUNT_UPSELL_REF_PATH,
+        component: UPSELL_COMPONENT.TOGGLE,
+        feature: MAIL_UPSELL_PATHS.BREACH_ALERTS,
+    });
+
     const handleUpgrade = () => {
         openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
             metrics,
             mode: 'upsell-modal',
+            upsellRef,
             onSubscribed: () => {
                 handleEnableBreachAlertToggle(true);
                 return;
