@@ -1,6 +1,16 @@
 import type { FetchedBreaches } from '@proton/components/containers';
-import type { Breach, ItemRevision, UniqueItem } from '@proton/pass/types';
+import type {
+    Breach,
+    BreachAddressGetResponse,
+    BreachCustomEmailGetResponse,
+    BreachDomainPeekResponse,
+    ItemRevision,
+    UniqueItem,
+} from '@proton/pass/types';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
+
+import { isBreached, isMonitored } from '../items/item.predicates';
+import { AddressType, type MonitorAddress, type MonitorDomain } from './types';
 
 export const getDuplicatePasswords = (logins: ItemRevision<'login'>[]): UniqueItem[][] => {
     const duplicatesMap = new Map<string, UniqueItem[]>();
@@ -27,6 +37,52 @@ export const getDuplicatePasswords = (logins: ItemRevision<'login'>[]): UniqueIt
 
     return Array.from(duplicatesMap.values());
 };
+
+export const getAddressId = (address: MonitorAddress): string => {
+    switch (address.type) {
+        case AddressType.CUSTOM:
+        case AddressType.PROTON:
+            return address.addressId;
+        case AddressType.ALIAS:
+            return `${address.shareId}:${address.itemId}`;
+    }
+};
+
+export const intoCustomMonitorAddress = (breach: BreachCustomEmailGetResponse): MonitorAddress<AddressType.CUSTOM> => ({
+    addressId: breach.CustomEmailID,
+    breachCount: breach.BreachCounter,
+    breached: breach.BreachCounter > 0,
+    email: breach.Email,
+    monitored: breach.Flags << 0 === 0,
+    type: AddressType.CUSTOM,
+    verified: breach.Verified,
+});
+
+export const intoProtonMonitorAddress = (breach: BreachAddressGetResponse): MonitorAddress<AddressType.PROTON> => ({
+    addressId: breach.AddressID,
+    breachCount: breach.BreachCounter,
+    breached: breach.BreachCounter > 0,
+    breachedAt: breach.LastBreachTime,
+    email: breach.Email,
+    monitored: breach.Flags << 0 === 0,
+    type: AddressType.PROTON,
+    verified: true,
+});
+
+export const intoAliasMonitorAddress = (item: ItemRevision<'alias'>): MonitorAddress<AddressType.ALIAS> => ({
+    itemId: item.itemId,
+    shareId: item.shareId,
+    breached: isBreached(item),
+    email: item.aliasEmail!,
+    monitored: isMonitored(item),
+    type: AddressType.ALIAS,
+    verified: true,
+});
+
+export const intoMonitorDomain = ({ Domain, BreachTime }: BreachDomainPeekResponse): MonitorDomain => ({
+    domain: Domain,
+    breachedAt: BreachTime,
+});
 
 export const intoFetchedBreach = (breach: Breach): FetchedBreaches => ({
     id: breach.ID,

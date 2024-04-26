@@ -2,9 +2,9 @@ import type { WasmPasswordScoreResult } from '@protontech/pass-rust-core';
 import type { Store } from 'redux';
 
 import type { PassCoreService } from '@proton/pass/lib/core/types';
-import { hasDomain, hasOTP, isHealthCheckSkipped } from '@proton/pass/lib/items/item.predicates';
+import { hasDomain, hasOTP } from '@proton/pass/lib/items/item.predicates';
 import { intoSelectedItem } from '@proton/pass/lib/items/item.utils';
-import { selectLoginItems } from '@proton/pass/store/selectors';
+import { selectMonitoredLogins } from '@proton/pass/store/selectors';
 import { type UniqueItem } from '@proton/pass/types';
 import { and, invert } from '@proton/pass/utils/fp/predicates';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
@@ -18,7 +18,7 @@ export interface MonitorService {
 /** MonitorService provides `PassMonitor` methods that rely
  * on the `PassRustCore` module */
 export const createMonitorService = (core: PassCoreService, store: Store): MonitorService => {
-    const getLoginItems = () => selectLoginItems(store.getState()).filter(invert(isHealthCheckSkipped));
+    const getLoginItems = () => selectMonitoredLogins(store.getState());
 
     const service: MonitorService = {
         analyzePassword: (password) => core.exec('analyze_password', password),

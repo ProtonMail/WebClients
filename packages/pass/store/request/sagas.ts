@@ -4,7 +4,7 @@ import type { RequestFlow, RequestIntent, RequestSuccess } from './flow';
 
 type RequestFlowSaga<T extends RequestFlow<any, any, void>> = {
     actions: T;
-    call: (payload: RequestIntent<T>) => Promise<RequestSuccess<T>>;
+    call: (payload: RequestIntent<T>) => Promise<RequestSuccess<T>> | Generator<any, RequestSuccess<T>, any>;
 };
 /** The generated saga does not directly affect the application state. Instead,
  * it embraces the event sourcing pattern of Redux to handle API requests
