@@ -522,12 +522,14 @@ export enum APP_UPSELL_REF_PATH {
     PASS_UPSELL_REF_PATH = 'upsell_pass-',
     VPN_UPSELL_REF_PATH = 'upsell_vpn-',
     INBOX_DESKTOP_REF_PATH = 'upsell_inbox_desktop-',
+    ACCOUNT_UPSELL_REF_PATH = 'upsell_account-',
 }
 
 export enum UPSELL_COMPONENT {
     BANNER = 'banner-',
     MODAL = 'modal-',
     BUTTON = 'button-',
+    TOGGLE = 'toggle-',
 }
 
 export enum MAIL_UPSELL_PATHS {
