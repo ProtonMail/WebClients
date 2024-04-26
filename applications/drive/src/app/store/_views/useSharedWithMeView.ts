@@ -19,12 +19,17 @@ const DEFAULT_SORT = {
  * useSharedWithMeView provides data for shared with me links view (file browser of shared links).
  */
 export default function useSharedWithMeView(shareId: string) {
-    const abortSignal = useAbortSignal([shareId]);
     const [isLoading, withLoading] = useLoading(true);
-    const [linksWithShareInfo, setLinksWithShareInfo] = useState<DecryptedLinkWithShareInfo[]>([]);
+    const [isShareInfoLoading, withShareInfoLoading] = useLoading(true);
+    const [linksWithShareInfo, setLinksWithShareInfo] = useState<Map<string, DecryptedLinkWithShareInfo>>(new Map());
     const { getDirectSharingInfo } = useDirectSharingInfo();
-
     const linksListing = useLinksListing();
+
+    const loadSharedWithMeLinks = useCallback(async (signal: AbortSignal) => {
+        await linksListing.loadLinksSharedWithMeLink(signal);
+    }, []); //TODO: No deps params as too much work needed in linksListing
+
+    const abortSignal = useAbortSignal([shareId, withLoading, loadSharedWithMeLinks]);
     const { links: sharedLinks, isDecrypting } = linksListing.getCachedSharedWithMeLink(abortSignal);
 
     const cachedSharedLinks = useMemoArrayNoMatterTheOrder(sharedLinks);
@@ -32,43 +37,39 @@ export default function useSharedWithMeView(shareId: string) {
     const { layout } = useUserSettings();
     const { sortedList, sortParams, setSorting } = useSortingWithDefault(cachedSharedLinks, DEFAULT_SORT);
 
-    const loadSharedWithMeLinks = async (signal: AbortSignal) => {
-        await linksListing.loadLinksSharedWithMeLink(signal);
-    };
-
     const loadLinksShareInfo = useCallback(
         async (signal: AbortSignal) => {
-            const links = await Promise.all(
+            return Promise.all(
                 sortedList.map(async (link) => {
                     const directSharingInfo = await getDirectSharingInfo(signal, link.rootShareId);
                     if (!directSharingInfo) {
-                        return link;
+                        setLinksWithShareInfo((prevMap) => {
+                            return new Map(prevMap).set(link.linkId, link);
+                        });
+                    } else {
+                        setLinksWithShareInfo((prevMap) => {
+                            return new Map(prevMap).set(link.linkId, { ...link, ...directSharingInfo });
+                        });
                     }
-                    return { ...link, ...directSharingInfo };
                 })
             );
-            setLinksWithShareInfo(links);
         },
-        [sortedList, getDirectSharingInfo]
+        [sortedList]
     );
 
     useEffect(() => {
-        const ac = new AbortController();
-        void withLoading(
-            loadSharedWithMeLinks(ac.signal)
-                .then(() => loadLinksShareInfo(ac.signal))
-                .catch(sendErrorReport)
-        );
-        return () => {
-            ac.abort();
-        };
-    }, [shareId, loadLinksShareInfo]);
+        void withShareInfoLoading(loadLinksShareInfo(abortSignal).catch(sendErrorReport));
+    }, [isLoading, withShareInfoLoading, loadLinksShareInfo, abortSignal]);
+
+    useEffect(() => {
+        void withLoading(loadSharedWithMeLinks(abortSignal).catch(sendErrorReport));
+    }, [shareId, withLoading, loadSharedWithMeLinks, abortSignal]);
 
     return {
         layout,
-        items: linksWithShareInfo,
+        items: [...linksWithShareInfo.values()],
         sortParams,
         setSorting,
-        isLoading: isLoading || isDecrypting,
+        isLoading: isLoading || isDecrypting || isShareInfoLoading,
     };
 }
