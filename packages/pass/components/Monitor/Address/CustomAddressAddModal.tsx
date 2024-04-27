@@ -4,7 +4,7 @@ import { Form, type FormikErrors, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { Icon, type ModalProps } from '@proton/components/index';
+import { Icon } from '@proton/components/index';
 import { Field } from '@proton/pass/components/Form/Field/Field';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { TextField } from '@proton/pass/components/Form/Field/TextField';
@@ -15,16 +15,18 @@ import { useMonitor } from '@proton/pass/components/Monitor/MonitorProvider';
 import { useRequest } from '@proton/pass/hooks/useActionRequest';
 import { intoCustomMonitorAddress } from '@proton/pass/lib/monitor/monitor.utils';
 import { addCustomAddress } from '@proton/pass/store/actions';
+import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 
 export const FORM_ID = 'custom-address-add';
+type Props = { onClose: () => void };
 type FormValues = { email: string };
 
-export const CustomAddressAddModal: FC<ModalProps> = ({ onClose, ...props }) => {
+export const CustomAddressAddModal: FC<Props> = ({ onClose }) => {
     const monitor = useMonitor();
 
     const { loading, dispatch } = useRequest(addCustomAddress, {
-        onSuccess: ({ data }) => monitor.verifyAddress(intoCustomMonitorAddress(data)),
+        onSuccess: ({ data }) => monitor.verifyAddress(intoCustomMonitorAddress(data), getEpoch()),
     });
 
     const form = useFormik<FormValues>({
@@ -41,7 +43,7 @@ export const CustomAddressAddModal: FC<ModalProps> = ({ onClose, ...props }) => 
     });
 
     return (
-        <SidebarModal onClose={onClose} open {...props}>
+        <SidebarModal onClose={onClose} open>
             {(didEnter) => (
                 <Panel
                     loading={loading}
