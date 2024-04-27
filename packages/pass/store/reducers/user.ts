@@ -1,7 +1,19 @@
 import type { Reducer } from 'redux';
 
-import { getUserAccessSuccess, getUserFeaturesSuccess, sentinelToggle, userEvent } from '@proton/pass/store/actions';
-import type { BitField, MaybeNull, PassPlanResponse, RequiredNonNull } from '@proton/pass/types';
+import {
+    getUserAccessSuccess,
+    getUserFeaturesSuccess,
+    monitorToggle,
+    sentinelToggle,
+    userEvent,
+} from '@proton/pass/store/actions';
+import type {
+    BitField,
+    MaybeNull,
+    PassPlanResponse,
+    RequiredNonNull,
+    UserMonitorStatusResponse,
+} from '@proton/pass/types';
 import { EventActions } from '@proton/pass/types';
 import type { PassFeature } from '@proton/pass/types/api/features';
 import { objectDelete } from '@proton/pass/utils/object/delete';
@@ -26,6 +38,7 @@ export type UserSettingsState = {
 export type UserAccessState = {
     plan: MaybeNull<PassPlanResponse>;
     waitingNewUserInvites: number;
+    monitor: MaybeNull<UserMonitorStatusResponse>;
 };
 
 export type UserState = {
@@ -47,6 +60,7 @@ const initialState: UserState = {
     user: null,
     userSettings: null,
     waitingNewUserInvites: 0,
+    monitor: { ProtonAddress: true, Aliases: true },
 };
 
 export const INITIAL_HIGHSECURITY_SETTINGS = {
@@ -101,6 +115,11 @@ const reducer: Reducer<UserState> = (state = initialState, action) => {
 
     if (sentinelToggle.success.match(action)) {
         return partialMerge(state, { userSettings: { HighSecurity: { Value: action.payload.value } } });
+    }
+
+    if (monitorToggle.success.match(action)) {
+        const { ProtonAddress, Aliases } = action.payload;
+        return partialMerge(state, { monitor: { ProtonAddress: ProtonAddress ?? false, Aliases: Aliases ?? false } });
     }
 
     return state;

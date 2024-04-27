@@ -2,20 +2,21 @@ import { isB2BAdmin } from '@proton/pass/lib/organization/helpers';
 import { type MaybeNull } from '@proton/pass/types';
 import type { Organization } from '@proton/shared/lib/interfaces';
 
+import { UserPassPlan } from '../types/api/plan';
 import { INITIAL_ORGANIZATION_SETTINGS } from './reducers/organization';
 import { INITIAL_HIGHSECURITY_SETTINGS } from './reducers/user';
 import { selectPassPlan, selectUser } from './selectors';
 import type { State } from './types';
 
 export const migrate = (state: State) => {
+    const user = selectUser(state);
+    const plan = selectPassPlan(state);
+
     if ('organization' in state.user) {
         const organization = state.user.organization as MaybeNull<Organization>;
         delete state.user.organization;
 
         if (!state.organization) {
-            const user = selectUser(state);
-            const plan = selectPassPlan(state);
-
             state.organization = organization
                 ? {
                       organization,
@@ -27,6 +28,11 @@ export const migrate = (state: State) => {
     }
     if (state.user.userSettings && !state.user.userSettings.HighSecurity) {
         state.user.userSettings.HighSecurity = INITIAL_HIGHSECURITY_SETTINGS;
+    }
+
+    if (!state.user.monitor) {
+        const shouldMonitor = plan !== UserPassPlan.FREE;
+        state.user.monitor = { ProtonAddress: shouldMonitor, Aliases: shouldMonitor };
     }
 
     return state;

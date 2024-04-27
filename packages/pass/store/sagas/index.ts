@@ -50,6 +50,7 @@ import breaches from './monitor/breaches.saga';
 import customAddressAdd from './monitor/custom-address.add.saga';
 import customAddressVerify from './monitor/custom-address.verify';
 import customAddressDelete from './monitor/delete.custom.saga';
+import monitorToggle from './monitor/monitor-toggle.saga';
 import resolveAlias from './monitor/resolve.alias.saga';
 import resolveCustom from './monitor/resolve.custom.saga';
 import resolveProton from './monitor/resolve.proton.saga';
@@ -120,6 +121,7 @@ export function* workerRootSaga(options: RootSagaOptions) {
             resolveCustom,
             resolveProton,
             sentinelToggle,
+            monitorToggle,
             sessionLockDisable,
             sessionLockEnable,
             sessionLockImmediate,

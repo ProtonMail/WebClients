@@ -13,6 +13,7 @@ import {
     customResolveRequest,
     deleteCustomAddressRequest,
     itemUpdateFlagsRequest,
+    monitorToggleRequest,
     protonBreachRequest,
     protonResolveRequest,
     resendCustomAddressCodeRequest,
@@ -21,7 +22,11 @@ import {
 } from '@proton/pass/store/actions/requests';
 import { requestActionsFactory } from '@proton/pass/store/request/flow';
 import type { ItemRevision, SelectedItem } from '@proton/pass/types';
-import type { BreachCustomEmailGetResponse, BreachesGetResponse } from '@proton/pass/types/api/pass';
+import type {
+    BreachCustomEmailGetResponse,
+    BreachesGetResponse,
+    UpdateUserMonitorStateRequest,
+} from '@proton/pass/types/api/pass';
 import { UNIX_MINUTE } from '@proton/pass/utils/time/constants';
 import { PROTON_SENTINEL_NAME } from '@proton/shared/lib/constants';
 import type { SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/interfaces';
@@ -44,6 +49,27 @@ export const sentinelToggle = requestActionsFactory<SentinelState, SentinelState
             withNotification({
                 type: 'error',
                 text: c('Error').t`Failed updating ${PROTON_SENTINEL_NAME} setting`,
+                error,
+            })({ payload: {} }),
+    },
+});
+
+export const monitorToggle = requestActionsFactory<UpdateUserMonitorStateRequest, UpdateUserMonitorStateRequest>(
+    'monitor::all:addresses:toggle'
+)({
+    requestId: monitorToggleRequest,
+    success: {
+        prepare: ({ ProtonAddress, Aliases }) =>
+            withNotification({
+                type: 'info',
+                text: c('Info').t`Monitoring settings successfully updated`,
+            })({ payload: { ProtonAddress, Aliases } }),
+    },
+    failure: {
+        prepare: (error) =>
+            withNotification({
+                type: 'error',
+                text: c('Error').t`Failed to update monitoring settings`,
                 error,
             })({ payload: {} }),
     },

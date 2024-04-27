@@ -48,6 +48,7 @@ import breaches from '@proton/pass/store/sagas/monitor/breaches.saga';
 import customAddressAdd from '@proton/pass/store/sagas/monitor/custom-address.add.saga';
 import customAddressVerify from '@proton/pass/store/sagas/monitor/custom-address.verify';
 import customAddressDelete from '@proton/pass/store/sagas/monitor/delete.custom.saga';
+import monitorToggle from '@proton/pass/store/sagas/monitor/monitor-toggle.saga';
 import resendCustom from '@proton/pass/store/sagas/monitor/resend.custom.saga';
 import resolveAlias from '@proton/pass/store/sagas/monitor/resolve.alias.saga';
 import resolveCustom from '@proton/pass/store/sagas/monitor/resolve.custom.saga';
@@ -123,6 +124,7 @@ export function* rootSaga(options: RootSagaOptions) {
             resolveCustom,
             resolveProton,
             sentinelToggle,
+            monitorToggle,
             sessionLockDisable,
             sessionLockEnable,
             sessionLockImmediate,
