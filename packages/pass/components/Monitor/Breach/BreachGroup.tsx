@@ -26,8 +26,8 @@ export const BreachGroup: FC<Props> = ({ match }) => {
 
     return (
         <>
-            <SubHeader title={title} className="shrink-0" />
-            <BreachGroupList className="my-6" data={data} loading={loading} />
+            <SubHeader title={title} className="shrink-0 mb-3" />
+            <BreachGroupList data={data} loading={loading} />
         </>
     );
 };

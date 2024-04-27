@@ -10,35 +10,39 @@ import { TableRowLoading } from '@proton/pass/components/Layout/Table/TableRowLo
 import { BreachListRow } from './BreachListRow';
 
 type Props = {
-    className?: string;
     data: FetchedBreaches[];
     loading: boolean;
     title: string;
 };
 
-export const BreachList: FC<Props> = ({ className, data, loading, title }) => {
+export const BreachList: FC<Props> = ({ data, loading, title }) => {
+    const empty = !loading && data.length === 0;
+
     return (
-        <section className={className}>
+        <section className="w-full">
             <header className="mb-2 flex justify-space-between">
                 <span className="text-bold">{title}</span>
             </header>
             <Card rounded>
-                <Table hasActions responsive="stacked">
-                    <TableHeader>
-                        <TableRow>
-                            <TableHeaderCell>{c('Label').t`Name`}</TableHeaderCell>
-                            <TableHeaderCell>{c('Label').t`Date`}</TableHeaderCell>
-                            <TableHeaderCell className="w-custom" style={{ '--w-custom': '4rem' }} />
-                        </TableRow>
-                    </TableHeader>
-                    <TableBody>
-                        {loading ? (
-                            <TableRowLoading rows={3} cells={3} />
-                        ) : (
-                            data.map((breach) => <BreachListRow key={breach.id} breach={breach} />)
-                        )}
-                    </TableBody>
-                </Table>
+                {empty ? (
+                    <div className="color-weak">{c('Label').t`None`}</div>
+                ) : (
+                    <Table hasActions className="mb-2">
+                        <TableHeader>
+                            <TableRow>
+                                <TableHeaderCell>{c('Label').t`Name`}</TableHeaderCell>
+                                <TableHeaderCell>{c('Label').t`Date`}</TableHeaderCell>
+                                <TableHeaderCell className="w-custom" style={{ '--w-custom': '4rem' }} />
+                            </TableRow>
+                        </TableHeader>
+                        <TableBody>
+                            {(() => {
+                                if (loading) return <TableRowLoading rows={3} cells={3} />;
+                                return data.map((breach) => <BreachListRow key={breach.id} breach={breach} />);
+                            })()}
+                        </TableBody>
+                    </Table>
+                )}
             </Card>
         </section>
     );

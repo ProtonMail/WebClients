@@ -79,15 +79,15 @@ export const Summary: FC = () => {
         <div className="w-full h-full">
             <div className="flex flex-1 flex-column items-start w-full h-full">
                 <Scroll className="flex-1 w-full">
-                    <div className="flex flex-column gap-8 p-6 max-w-custom" style={{ '--max-w-custom': '60em' }}>
+                    <div className="flex flex-column gap-8 p-6 max-w-custom" style={{ '--max-w-custom': '80em' }}>
                         <SubHeader
                             title={c('Title').t`${PASS_SHORT_APP_NAME} Monitor`}
                             description={c('Description')
                                 .t`With ${PASS_SHORT_APP_NAME} Monitor, stay ahead of threats by getting instant alerts if your credentials are compromised. Unlock advanced security features and detailed logs to safeguard your online presence.`}
                         />
 
-                        <section className="flex flex-column gap-6">
-                            <h3 className="text-lg">{c('Title').t`Dark Web Monitoring`}</h3>
+                        <section className="flex flex-column gap-4">
+                            <h3 className="text-lg text-semibold">{c('Title').t`Dark Web Monitoring`}</h3>
                             <div className="pass-monitor-grid gap-4">
                                 {!paid && <BreachUpsellCard className="xl:self-start" onUpsell={onUpsell} />}
 
@@ -101,8 +101,8 @@ export const Summary: FC = () => {
                             </div>
                         </section>
 
-                        <section className="flex flex-column gap-6">
-                            <h3 className="text-lg">{c('Title').t`Password Health`}</h3>
+                        <section className="flex flex-column gap-4">
+                            <h3 className="text-lg text-semibold">{c('Title').t`Password Health`}</h3>
                             <div className="pass-monitor-grid gap-4">
                                 <ButtonCard
                                     actions={<PillBadge label={insecure.count} />}
@@ -139,8 +139,8 @@ export const Summary: FC = () => {
                             </div>
                         </section>
 
-                        <section className="flex flex-column gap-6">
-                            <h3 className="text-lg">{c('Title').t`Account protection`}</h3>
+                        <section className="flex flex-column gap-4">
+                            <h3 className="text-lg text-semibold">{c('Title').t`Account protection`}</h3>
                             <Sentinel onUpsell={() => setUpsellModalOpen(true)} />
                         </section>
 
@@ -153,12 +153,12 @@ export const Summary: FC = () => {
                                         </CollapsibleHeaderIconButton>
                                     }
                                 >
-                                    <h3 className="text-lg">{c('Title').t`Want to learn more?`}</h3>
+                                    <h3 className="text-xl text-semibold">{c('Title').t`Want to learn more?`}</h3>
                                     <span>{c('Description')
                                         .t`Keep your info more secure and private with these guides and tips.`}</span>
                                 </CollapsibleHeader>
                                 <CollapsibleContent>
-                                    <div className="flex flex-row flex-nowrap w-full gap-4 items-stretch p-6">
+                                    <div className="flex md:flex-nowrap w-full gap-4 items-stretch mt-6">
                                         {learnMore.map((props, idx) => (
                                             <LearnMoreCard key={`learn-more-${idx}`} {...props} />
                                         ))}

@@ -35,7 +35,6 @@ import type {
     BreachesGetResponse,
     UpdateUserMonitorStateRequest,
 } from '@proton/pass/types/api/pass';
-import { UNIX_MINUTE } from '@proton/pass/utils/time/constants';
 import { PROTON_SENTINEL_NAME } from '@proton/shared/lib/constants';
 import type { SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/interfaces';
 
@@ -85,7 +84,6 @@ export const monitorToggle = requestActionsFactory<UpdateUserMonitorStateRequest
 
 export const getBreaches = requestActionsFactory<void, BreachesGetResponse>('monitor::breaches::get')({
     requestId: breachesRequest,
-    success: { config: { maxAge: 5 * UNIX_MINUTE } },
     failure: {
         prepare: (error) =>
             withNotification({
