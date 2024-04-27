@@ -3,6 +3,7 @@ import { Route, type RouteChildrenProps, Switch } from 'react-router-dom';
 
 import { Scroll } from '@proton/atoms/Scroll';
 
+import { Breach } from './Breach';
 import { BreachGroup } from './BreachGroup';
 import { Breaches } from './Breaches';
 
@@ -15,6 +16,7 @@ export const DarkWebMonitoring: FC<RouteChildrenProps> = ({ match }) => {
                 <Switch>
                     <Route exact path={match.path} component={Breaches} />
                     <Route exact path={`${match.path}/:type`} component={BreachGroup} />
+                    <Route exact path={`${match.path}/:type/:addressId/:breachId?`} component={Breach} />
                 </Switch>
             </div>
         </Scroll>
