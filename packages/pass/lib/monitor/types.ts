@@ -9,7 +9,8 @@ export enum AddressType {
     CUSTOM = 'custom',
 }
 
-export type AddressVerify = { addressId: CustomAddressID; code: string };
+export type MonitorVerifyDTO = { addressId: CustomAddressID; code: string };
+export type MonitorToggleDTO = { addressId: CustomAddressID; monitor: boolean };
 
 export type AddressBreachDTO<T extends AddressType = AddressType> = {
     [AddressType.ALIAS]: { type: AddressType.ALIAS } & SelectedItem;

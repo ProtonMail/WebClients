@@ -44,15 +44,15 @@ export const monitorCustomEmail = async (data: BreachEmailCreateRequest): Promis
     (await api({ url: `pass/v1/breach/custom_email`, method: 'post', data })).Email!;
 
 /** Remove a custom email from breaches monitoring */
-export const deleteCustomEmail = async (emailId: string): Promise<boolean> =>
-    api({ url: `pass/v1/breach/custom_email//${emailId}`, method: 'delete' }).then(() => true);
+export const deleteCustomEmail = async (addressId: string): Promise<boolean> =>
+    api({ url: `pass/v1/breach/custom_email//${addressId}`, method: 'delete' }).then(() => true);
 
 /** Update the monitor status for a custom email */
 export const toggleMonitorCustomEmail = async (
-    emailId: string,
+    addressId: string,
     data: BreachUpdateCustomEmailRequest
 ): Promise<BreachCustomEmailGetResponse> =>
-    (await api({ url: `pass/v1/breach/custom_email/${emailId}/monitor`, method: 'put', data })).Email!;
+    (await api({ url: `pass/v1/breach/custom_email/${addressId}/monitor`, method: 'put', data })).Email!;
 
 /** Mark a Proton address as resolved */
 export const setBreachedProtonAddressResolved = (AddressID: string): Promise<boolean> =>
@@ -67,9 +67,9 @@ export const setBreachedCustomEmailResolved = (customEmailId: string): Promise<b
     api({ url: `pass/v1/breach/custom_email/${customEmailId}/resolved`, method: 'put' }).then(() => true);
 
 /** Verify a custom email with the validation code */
-export const verifyCustomEmail = (emailId: string, data: BreachEmailValidateRequest): Promise<boolean> =>
-    api({ url: `pass/v1/breach/custom_email/${emailId}/verify`, method: 'put', data }).then(() => true);
+export const verifyCustomEmail = (addressId: string, data: BreachEmailValidateRequest): Promise<boolean> =>
+    api({ url: `pass/v1/breach/custom_email/${addressId}/verify`, method: 'put', data }).then(() => true);
 
 /** Re-send the verification email for custom address */
-export const resendVerificationCustomEmail = (emailId: string): Promise<boolean> =>
-    api({ url: `pass/v1/breach/custom_email/${emailId}/resend_verification`, method: 'post' }).then(() => true);
+export const resendVerificationCustomEmail = (addressId: string): Promise<boolean> =>
+    api({ url: `pass/v1/breach/custom_email/${addressId}/resend_verification`, method: 'post' }).then(() => true);

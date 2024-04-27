@@ -12,6 +12,7 @@ import {
     getBreaches,
     resolveCustomBreach,
     resolveProtonBreach,
+    toggleCustomAddress,
     verifyCustomAddress,
 } from '@proton/pass/store/actions';
 import type { MaybeNull } from '@proton/pass/types';
@@ -71,6 +72,15 @@ const monitorReducer: Reducer<MonitorState> = (state = null, action) => {
         if (deleteCustomAddress.success.match(action)) {
             return partialMerge(state, {
                 custom: state.custom.filter((breach) => breach.addressId !== action.payload),
+            });
+        }
+
+        if (toggleCustomAddress.success.match(action)) {
+            return partialMerge(state, {
+                custom: state.custom.map((breach) => {
+                    if (breach.addressId !== action.payload.addressId) return breach;
+                    return action.payload;
+                }),
             });
         }
     }
