@@ -41,8 +41,8 @@ const getEmailUsages = (items: ItemRevision[]) => (email: string) =>
 const getCustomSuggestions = (
     data: MonitorAddress<AddressType.CUSTOM>[],
     items: ItemRevision[]
-): MonitorAddress<AddressType.CUSTOM>[] =>
-    Object.values(
+): MonitorAddress<AddressType.CUSTOM>[] => {
+    return Object.values(
         items.reduce<Record<string, MonitorAddress<AddressType.CUSTOM>>>((acc, item) => {
             if (item.data.type !== 'login' || !item.data.content.username.v) return acc;
             const username = deobfuscate(item.data.content.username);
@@ -61,14 +61,14 @@ const getCustomSuggestions = (
             return acc;
         }, {})
     );
+};
 
 const mapToTableData = <T extends AddressType>(
     data: MonitorAddress<T>[],
-    items: ItemRevision[],
-    suggestions: MonitorAddress<T>[] = []
+    items: ItemRevision[]
 ): MonitorTableRow<T>[] => {
     const used = getEmailUsages(items);
-    return data.concat(suggestions).map((entry) => ({ ...entry, usedIn: used(entry.email) }));
+    return data.map((entry) => ({ ...entry, usedIn: used(entry.email) }));
 };
 
 export const useBreachesTable = (type: AddressType) => {
@@ -81,7 +81,7 @@ export const useBreachesTable = (type: AddressType) => {
                 return {
                     title: c('Title').t`Hide-my-email aliases`,
                     data: mapToTableData<AddressType.ALIAS>(breaches.data.alias, items),
-                    loading: !didLoad,
+                    loading: false,
                 };
 
             case AddressType.PROTON:
@@ -92,10 +92,14 @@ export const useBreachesTable = (type: AddressType) => {
                 };
 
             case AddressType.CUSTOM:
-                const suggestions = getCustomSuggestions(breaches.data.custom, items);
+                const candidates = getCustomSuggestions(breaches.data.custom, items);
+                const suggestions = mapToTableData(candidates, items)
+                    .sort((a, b) => b.usedIn.logins - a.usedIn.logins)
+                    .slice(0, 5);
+
                 return {
                     title: c('Title').t`Custom emails`,
-                    data: mapToTableData<AddressType.CUSTOM>(breaches.data.custom, items, suggestions),
+                    data: mapToTableData<AddressType.CUSTOM>(breaches.data.custom, items).concat(suggestions),
                     loading: !didLoad && breaches.loading,
                 };
         }

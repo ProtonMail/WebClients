@@ -15,7 +15,7 @@ export const BreachModal = ({ breach, onClose }: Props) => {
     const isResolved = false;
 
     return (
-        <ModalTwo fullscreenOnMobile open onClose={onClose} size="large">
+        <ModalTwo fullscreenOnMobile open onClose={onClose} size="medium">
             <ModalTwoHeader
                 title={
                     <BreachTitle

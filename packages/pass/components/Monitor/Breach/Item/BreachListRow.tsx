@@ -6,21 +6,28 @@ import { Icon } from '@proton/components/components/icon';
 import { TableCell, TableRow } from '@proton/components/components/table';
 import type { FetchedBreaches } from '@proton/components/containers';
 import ReadableDate from '@proton/components/containers/credentialLeak/ReadableDate';
+import { getBreachIcon } from '@proton/components/containers/credentialLeak/helpers';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
 
 type Props = { breach: FetchedBreaches };
 
-export const BreachListRow: FC<Props> = ({ breach: { id, name, publishedAt } }) => {
+export const BreachListRow: FC<Props> = ({ breach: { id, name, publishedAt, severity, resolvedState } }) => {
     const { getCurrentLocation } = useNavigation();
+    const breachIcon = getBreachIcon(severity, { resolved: resolvedState > 2 });
 
     return (
         <TableRow>
-            <TableCell>{name}</TableCell>
             <TableCell>
-                <ReadableDate value={publishedAt} />
+                <div className="flex  flex-nowrap gap-2">
+                    <img src={breachIcon} alt="" className="shrink-0 w-custom" style={{ '--w-custom': '1.5em' }} />
+                    <span className="text-ellipsis">{name}</span>
+                </div>
             </TableCell>
             <TableCell>
-                <div className="m-0 flex justify-end">
+                <ReadableDate value={publishedAt} className="text-ellipsis" />
+            </TableCell>
+            <TableCell>
+                <div className="flex justify-end">
                     <Link to={`${getCurrentLocation()}/${id}`}>
                         <Button pill size="small" shape="ghost" type="button">
                             <Icon name="chevron-right" />
