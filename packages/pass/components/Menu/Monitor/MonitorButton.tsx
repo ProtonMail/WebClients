@@ -21,11 +21,7 @@ export const MonitorButton: FC = () => {
             icon={getMonitorIcon(monitor)}
             className={clsx('rounded', isActive && 'color-primary bg-weak')}
             ellipsis
-            label={
-                <div className="flex flex-column flex-nowrap">
-                    <span className="text-ellipsis">{c('Action').t`Pass monitor`}</span>
-                </div>
-            }
+            label={c('Action').t`Pass Monitor`}
             extra={
                 monitor.breaches.count > 0 && (
                     <PillBadge
