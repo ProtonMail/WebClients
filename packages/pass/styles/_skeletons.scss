@@ -21,7 +21,8 @@
 			}
 		}
 
-		&--item-subheading {
+		&--item-subheading,
+		&--table-cell {
 			&::before {
 				inline-size: 65%;
 			}
