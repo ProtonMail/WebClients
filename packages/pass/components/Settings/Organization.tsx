@@ -19,7 +19,7 @@ export const Organization: FC = () => {
 
     const { settings } = useOrganization()!;
     const { ShareMode, ExportMode } = settings;
-    const loading = useSelector(selectRequestInFlight(organizationSettingsEditRequest())) !== null;
+    const loading = useSelector(selectRequestInFlight(organizationSettingsEditRequest()));
 
     return (
         <>
