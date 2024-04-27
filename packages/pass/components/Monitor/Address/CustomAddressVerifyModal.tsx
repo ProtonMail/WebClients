@@ -1,10 +1,10 @@
-import type { FC, ReactNode } from 'react';
+import { type FC, type ReactNode } from 'react';
 
 import { Form, type FormikErrors, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { Icon, type ModalProps } from '@proton/components/index';
+import { Icon, useNotifications } from '@proton/components/index';
 import { Field } from '@proton/pass/components/Form/Field/Field';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { TextField } from '@proton/pass/components/Form/Field/TextField';
@@ -12,17 +12,38 @@ import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal'
 import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
 import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
 import { useRequest } from '@proton/pass/hooks/useActionRequest';
+import { useCountdown } from '@proton/pass/hooks/useCountdown';
 import type { AddressType, MonitorAddress } from '@proton/pass/lib/monitor/types';
-import { verifyCustomAddress } from '@proton/pass/store/actions';
+import { resendVerificationCode, verifyCustomAddress } from '@proton/pass/store/actions';
+import type { Maybe } from '@proton/pass/types';
+import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { isNumber } from '@proton/shared/lib/helpers/validators';
 
 export const FORM_ID = 'custom-address-verify';
 
-type Props = ModalProps & MonitorAddress<AddressType.CUSTOM>;
+type Props = { onClose: () => void; sentAt?: number } & MonitorAddress<AddressType.CUSTOM>;
 type FormValues = { code: string };
 
-export const CustomAddressVerifyModal: FC<Props> = ({ onClose, email, addressId, ...props }) => {
-    const { loading, dispatch } = useRequest(verifyCustomAddress, { onSuccess: onClose });
+const SECONDS_BEFORE_RESEND = 60;
+
+const getInitialCountdown = (sentAt?: number): Maybe<number> => {
+    const now = getEpoch();
+    if (!sentAt || now - sentAt >= SECONDS_BEFORE_RESEND) return;
+    return Math.max(0, SECONDS_BEFORE_RESEND - (now - sentAt));
+};
+
+export const CustomAddressVerifyModal: FC<Props> = ({ onClose, email, addressId, sentAt, ...props }) => {
+    const [remaining, countdown] = useCountdown(getInitialCountdown(sentAt));
+    const { createNotification } = useNotifications();
+
+    const verify = useRequest(verifyCustomAddress, { onSuccess: onClose });
+    const resend = useRequest(resendVerificationCode, {
+        onSuccess: () => {
+            createNotification({ text: c('Info').t`Verification code sent.`, type: 'success' });
+            countdown.start(SECONDS_BEFORE_RESEND);
+        },
+        onFailure: () => countdown.cancel(),
+    });
 
     const form = useFormik<FormValues>({
         initialValues: { code: '' },
@@ -34,14 +55,14 @@ export const CustomAddressVerifyModal: FC<Props> = ({ onClose, email, addressId,
             if (!isNumber(code)) errors.code = c('Warning').t`Invalid code`;
             return errors;
         },
-        onSubmit: ({ code }) => dispatch({ addressId, code }),
+        onSubmit: ({ code }) => verify.dispatch({ addressId, code }),
     });
 
     return (
         <SidebarModal onClose={onClose} open {...props}>
             {(didEnter): ReactNode => (
                 <Panel
-                    loading={loading}
+                    loading={verify.loading}
                     className="pass-panel--full"
                     header={
                         <PanelHeader
@@ -59,10 +80,10 @@ export const CustomAddressVerifyModal: FC<Props> = ({ onClose, email, addressId,
                                 </Button>,
                                 <Button
                                     color="norm"
-                                    disabled={loading || !form.isValid}
+                                    disabled={verify.loading || !form.isValid}
                                     form={FORM_ID}
                                     key="modal-submit-button"
-                                    loading={loading}
+                                    loading={verify.loading}
                                     pill
                                     type="submit"
                                 >
@@ -84,11 +105,27 @@ export const CustomAddressVerifyModal: FC<Props> = ({ onClose, email, addressId,
                                     type="number"
                                     placeholder="123456"
                                     autoFocus={didEnter}
+                                    dense
                                     key={`custom-address-verify-${didEnter}`}
                                 />
                             </FieldsetCluster>
                         </Form>
                     </FormikProvider>
+
+                    <div className="mt-2">
+                        <Button
+                            color="norm"
+                            disabled={resend.loading || remaining > 0}
+                            loading={resend.loading}
+                            onClick={() => resend.dispatch(addressId)}
+                            shape="underline"
+                        >
+                            {remaining > 0
+                                ? // translator: example usage: Resend code (in 30s)
+                                  c('Action').t`Resend code (in ${remaining}s)`
+                                : c('Action').t`Resend code`}
+                        </Button>
+                    </div>
                 </Panel>
             )}
         </SidebarModal>

@@ -24,7 +24,9 @@ import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { CustomAddressAddModal } from './Address/CustomAddressAddModal';
 import { CustomAddressVerifyModal } from './Address/CustomAddressVerifyModal';
 
-type MonitorAction = { type: 'add' } | { type: 'verify'; data: MonitorAddress<AddressType.CUSTOM> };
+type MonitorAction =
+    | { type: 'add' }
+    | { type: 'verify'; data: MonitorAddress<AddressType.CUSTOM> & { sentAt?: number } };
 
 export interface MonitorContextValue {
     enabled: boolean;
@@ -43,7 +45,7 @@ export interface MonitorContextValue {
     missing2FAs: { data: UniqueItem[]; count: number };
     excluded: { data: UniqueItem[]; count: number };
     addAddress: (email?: string) => void;
-    verifyAddress: (address: MonitorAddress<AddressType.CUSTOM>) => void;
+    verifyAddress: (address: MonitorAddress<AddressType.CUSTOM>, sentAt?: number) => void;
     deleteAddress: (addressId: CustomAddressID) => void;
 }
 
@@ -84,7 +86,7 @@ export const MonitorProvider: FC<PropsWithChildren> = ({ children }) => {
             duplicates: { data: duplicates, count: duplicates.length },
             excluded: { data: excluded, count: excluded.length },
             addAddress: (email) => (email ? dispatch(addCustomAddress.intent(email)) : setAction({ type: 'add' })),
-            verifyAddress: (data) => setAction({ type: 'verify', data }),
+            verifyAddress: (data, sentAt) => setAction({ type: 'verify', data: { ...data, sentAt } }),
             deleteAddress: (addressId) => dispatch(deleteCustomAddress.intent(addressId)),
         }),
         [enabled, breaches, insecure, duplicates, missing2FAs, excluded, refreshedAt]
@@ -93,8 +95,8 @@ export const MonitorProvider: FC<PropsWithChildren> = ({ children }) => {
         <MonitorContext.Provider value={context}>
             {children}
 
-            {action?.type === 'add' && <CustomAddressAddModal open onClose={onClose} />}
-            {action?.type === 'verify' && <CustomAddressVerifyModal {...action.data} open onClose={onClose} />}
+            {action?.type === 'add' && <CustomAddressAddModal onClose={onClose} />}
+            {action?.type === 'verify' && <CustomAddressVerifyModal {...action.data} onClose={onClose} />}
         </MonitorContext.Provider>
     );
 };
