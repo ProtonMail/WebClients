@@ -57,6 +57,7 @@ export const organizationSettingsRequest = () => `organization::settings::get`;
 export const organizationSettingsEditRequest = () => `organization::settings::edit`;
 
 export const sentinelToggleRequest = () => `monitor::sentinel::toggle`;
+export const monitorToggleRequest = () => `monitor::global::toggle`;
 
 export const breachesRequest = () => `monitor::breaches`;
 export const protonBreachRequest = (addressId: string) => `monitor::breaches::proton::${addressId}`;
