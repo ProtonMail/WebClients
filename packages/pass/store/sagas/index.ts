@@ -48,6 +48,7 @@ import breachesCustom from './monitor/breaches.custom.saga';
 import breachesProton from './monitor/breaches.proton.saga';
 import breaches from './monitor/breaches.saga';
 import customAddressAdd from './monitor/custom-address.add.saga';
+import customAddressToggle from './monitor/custom-address.toggle.saga';
 import customAddressVerify from './monitor/custom-address.verify';
 import customAddressDelete from './monitor/delete.custom.saga';
 import monitorToggle from './monitor/monitor-toggle.saga';
@@ -84,6 +85,7 @@ export function* workerRootSaga(options: RootSagaOptions) {
             cache,
             customAddressAdd,
             customAddressDelete,
+            customAddressToggle,
             customAddressVerify,
             events,
             featureFlags,

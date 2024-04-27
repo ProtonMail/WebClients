@@ -2,7 +2,14 @@ import { c } from 'ttag';
 
 import type { FetchedBreaches } from '@proton/components/containers';
 import { isMonitored } from '@proton/pass/lib/items/item.predicates';
-import type { AddressVerify, CustomAddressID, ProtonAddressID } from '@proton/pass/lib/monitor/types';
+import type {
+    AddressType,
+    CustomAddressID,
+    MonitorAddress,
+    MonitorToggleDTO,
+    MonitorVerifyDTO,
+    ProtonAddressID,
+} from '@proton/pass/lib/monitor/types';
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
 import {
     addCustomAddressRequest,
@@ -18,6 +25,7 @@ import {
     protonResolveRequest,
     resendCustomAddressCodeRequest,
     sentinelToggleRequest,
+    toggleCustomAddressRequest,
     verifyCustomAddressRequest,
 } from '@proton/pass/store/actions/requests';
 import { requestActionsFactory } from '@proton/pass/store/request/flow';
@@ -167,7 +175,7 @@ export const deleteCustomAddress = requestActionsFactory<CustomAddressID, Custom
     },
 });
 
-export const verifyCustomAddress = requestActionsFactory<AddressVerify, CustomAddressID>(
+export const verifyCustomAddress = requestActionsFactory<MonitorVerifyDTO, CustomAddressID>(
     'monitor::breaches::custom::verify'
 )({
     requestId: ({ addressId }) => verifyCustomAddressRequest(addressId),
@@ -178,6 +186,29 @@ export const verifyCustomAddress = requestActionsFactory<AddressVerify, CustomAd
                 type: 'error',
                 error,
             })({ payload: null }),
+    },
+});
+
+export const toggleCustomAddress = requestActionsFactory<MonitorToggleDTO, MonitorAddress<AddressType.CUSTOM>>(
+    'monitor::breaches::custom::toggle'
+)({
+    requestId: ({ addressId }) => toggleCustomAddressRequest(addressId),
+    success: {
+        prepare: (payload) =>
+            withNotification({
+                type: 'info',
+                text: payload.monitored
+                    ? c('Info').t`Email address successfully included in monitoring`
+                    : c('Info').t`Email address successfully excluded from monitoring`,
+            })({ payload }),
+    },
+    failure: {
+        prepare: (error) =>
+            withNotification({
+                type: 'error',
+                text: c('Error').t`Failed updating monitoring status for this email address`,
+                error,
+            })({ payload: {} }),
     },
 });
 
