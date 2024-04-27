@@ -1,9 +1,12 @@
-import { useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
 
+import type { FetchedBreaches } from '@proton/components/containers';
 import { useRequest } from '@proton/pass/hooks/useActionRequest';
 import { type AddressBreachDTO, AddressType } from '@proton/pass/lib/monitor/types';
 import { getAliasBreach, getCustomBreach, getProtonBreach } from '@proton/pass/store/actions';
 import { aliasBreachRequest, customBreachRequest, protonBreachRequest } from '@proton/pass/store/actions/requests';
+import type { LoginItem } from '@proton/pass/types';
+import { partition } from '@proton/pass/utils/array/partition';
 
 const getRequest = (dto: AddressBreachDTO) => {
     switch (dto.type) {
@@ -14,6 +17,13 @@ const getRequest = (dto: AddressBreachDTO) => {
         case AddressType.CUSTOM:
             return [getCustomBreach, customBreachRequest(dto.addressId)] as const;
     }
+};
+
+export type BreachDetails = {
+    loading: boolean;
+    resolved: FetchedBreaches[];
+    active: FetchedBreaches[];
+    usedIn: LoginItem[];
 };
 
 export const useAddressBreaches = <T extends AddressType>(dto: AddressBreachDTO<T>) => {
@@ -31,5 +41,8 @@ export const useAddressBreaches = <T extends AddressType>(dto: AddressBreachDTO<
         }
     }, []);
 
-    return req;
+    return useMemo<BreachDetails>(() => {
+        const [active, resolved] = partition(req.data ?? [], ({ resolvedState }) => resolvedState < 3);
+        return { loading: req.loading, active, resolved, usedIn: [] };
+    }, [req]);
 };
