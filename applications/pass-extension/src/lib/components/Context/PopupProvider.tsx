@@ -60,7 +60,7 @@ const PopupContextProvider: FC<PropsWithChildren> = ({ children }) => {
     const [initial, setInitial] = useState<MaybeNull<PopupInitialState>>(null);
     const expanded = useExpanded();
 
-    const sync = useSelector(selectRequestInFlight(syncRequest())) !== null;
+    const sync = useSelector(selectRequestInFlight(syncRequest()));
     const syncing = sync || extensionContext.state.status === AppStatus.BOOTING;
 
     useEffect(() => {

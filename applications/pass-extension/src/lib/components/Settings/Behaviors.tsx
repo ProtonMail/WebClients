@@ -155,7 +155,7 @@ const getSettings =
 export const Behaviors: FC = () => {
     const dispatch = useDispatch();
     const settings = useSelector(selectProxiedSettings);
-    const loading = Boolean(useSelector(selectRequestInFlight(settingsEditRequest('behaviors'))));
+    const loading = useSelector(selectRequestInFlight(settingsEditRequest('behaviors')));
 
     return (
         <>
