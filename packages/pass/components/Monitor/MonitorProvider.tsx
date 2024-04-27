@@ -30,6 +30,7 @@ type MonitorAction =
 
 export interface MonitorContextValue {
     enabled: boolean;
+    didLoad: boolean;
     refreshedAt: MaybeNull<number>;
     breaches: {
         data: {
@@ -79,6 +80,7 @@ export const MonitorProvider: FC<PropsWithChildren> = ({ children }) => {
     const context = useMemo<MonitorContextValue>(
         () => ({
             enabled,
+            didLoad: refreshedAt !== null,
             refreshedAt,
             breaches: { data: { alias, proton, custom }, loading: breaches.loading, count },
             insecure,
@@ -89,7 +91,7 @@ export const MonitorProvider: FC<PropsWithChildren> = ({ children }) => {
             verifyAddress: (data, sentAt) => setAction({ type: 'verify', data: { ...data, sentAt } }),
             deleteAddress: (addressId) => dispatch(deleteCustomAddress.intent(addressId)),
         }),
-        [enabled, breaches, insecure, duplicates, missing2FAs, excluded, refreshedAt]
+        [enabled, breaches, insecure, duplicates, missing2FAs, excluded, alias, proton, custom, refreshedAt]
     );
     return (
         <MonitorContext.Provider value={context}>

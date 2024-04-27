@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
+import { useMonitor } from '@proton/pass/components/Monitor/MonitorProvider';
 import { AddressType, type MonitorAddress } from '@proton/pass/lib/monitor/types';
 import { selectAllItems } from '@proton/pass/store/selectors';
 import type { ItemRevision } from '@proton/pass/types';
@@ -10,13 +11,13 @@ import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 
-import { useMonitor } from '../../components/Monitor/MonitorProvider';
+export type BreachedUsages = { aliases: number; logins: number };
 
-type BreachedUsages = { aliases: number; logins: number };
-export type MonitorTableItem<T extends AddressType = AddressType> = MonitorAddress<T> & { usedIn: BreachedUsages };
+export type MonitorTableRow<T extends AddressType = AddressType> = MonitorAddress<T> & { usedIn: BreachedUsages };
+
 export type MonitorTable<T extends AddressType = AddressType> = {
     title: string;
-    data: MonitorTableItem<T>[];
+    data: MonitorTableRow<T>[];
     loading: boolean;
 };
 
@@ -65,13 +66,13 @@ const mapToTableData = <T extends AddressType>(
     data: MonitorAddress<T>[],
     items: ItemRevision[],
     suggestions: MonitorAddress<T>[] = []
-): MonitorTableItem<T>[] => {
+): MonitorTableRow<T>[] => {
     const used = getEmailUsages(items);
     return data.concat(suggestions).map((entry) => ({ ...entry, usedIn: used(entry.email) }));
 };
 
 export const useBreachesTable = (type: AddressType) => {
-    const { breaches } = useMonitor();
+    const { breaches, didLoad } = useMonitor();
     const items = useSelector(selectAllItems);
 
     return useMemo<MonitorTable>(() => {
@@ -80,14 +81,14 @@ export const useBreachesTable = (type: AddressType) => {
                 return {
                     title: c('Title').t`Hide-my-email aliases`,
                     data: mapToTableData<AddressType.ALIAS>(breaches.data.alias, items),
-                    loading: false,
+                    loading: !didLoad,
                 };
 
             case AddressType.PROTON:
                 return {
                     title: c('Title').t`${BRAND_NAME} addresses`,
                     data: mapToTableData<AddressType.PROTON>(breaches.data.proton, items),
-                    loading: breaches.loading,
+                    loading: !didLoad && breaches.loading,
                 };
 
             case AddressType.CUSTOM:
@@ -95,8 +96,8 @@ export const useBreachesTable = (type: AddressType) => {
                 return {
                     title: c('Title').t`Custom emails`,
                     data: mapToTableData<AddressType.CUSTOM>(breaches.data.custom, items, suggestions),
-                    loading: breaches.loading,
+                    loading: !didLoad && breaches.loading,
                 };
         }
-    }, [breaches, items]);
+    }, [breaches, items, didLoad]);
 };
