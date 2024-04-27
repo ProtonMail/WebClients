@@ -1,6 +1,7 @@
 import { type FC } from 'react';
 
-import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
+import { Button } from '@proton/atoms/Button';
+import { Card } from '@proton/atoms/Card';
 
 export type LearnMoreProps = {
     image: string;
@@ -11,12 +12,18 @@ export type LearnMoreProps = {
 };
 
 export const LearnMoreCard: FC<LearnMoreProps> = ({ image, title, description, ctaLabel, ctaAction }) => (
-    <div className="bg-weak rounded-xl text-lg border border-norm overflow-hidden p-6 flex gap-6 space-between">
-        <img src={image} alt="" className="w-full" />
-        <div className="flex flex-column space-between w-full gap-5">
+    <Card rounded className="text-lg overflow-hidden flex gap-4 md:gap-6 flex-nowrap md:flex-wrap items-center">
+        <div className="w-1/3 md:w-full shrink-0">
+            <div className="ratio-2/1 relative">
+                <img src={image} alt="" className="absolute w-full h-full object-contain" />
+            </div>
+        </div>
+        <div className="flex flex-column w-full gap-4">
             <span className="text-left text-rg color-strong text-bold">{title}</span>
             <span className="text-left text-sm color-weak">{description}</span>
-            <InlineLinkButton onClick={ctaAction}>{ctaLabel}</InlineLinkButton>
+            <Button shape="underline" color="norm" size="small" className="text-left text-sm" onClick={ctaAction}>
+                {ctaLabel}
+            </Button>
         </div>
-    </div>
+    </Card>
 );

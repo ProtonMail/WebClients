@@ -32,7 +32,7 @@ const getInitialCountdown = (sentAt?: number): Maybe<number> => {
     return Math.max(0, SECONDS_BEFORE_RESEND - (now - sentAt));
 };
 
-export const CustomAddressVerifyModal: FC<Props> = ({ onClose, email, addressId, sentAt, ...props }) => {
+export const CustomAddressVerifyModal: FC<Props> = ({ onClose, email, addressId, sentAt }) => {
     const [remaining, countdown] = useCountdown(getInitialCountdown(sentAt));
     const { createNotification } = useNotifications();
 
@@ -59,7 +59,7 @@ export const CustomAddressVerifyModal: FC<Props> = ({ onClose, email, addressId,
     });
 
     return (
-        <SidebarModal onClose={onClose} open {...props}>
+        <SidebarModal onClose={onClose} open>
             {(didEnter): ReactNode => (
                 <Panel
                     loading={verify.loading}

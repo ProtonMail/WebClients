@@ -49,9 +49,9 @@ export const BreachGroupRow: FC<MonitorTableRow> = (row) => {
 
     return (
         <TableRow className={clsx(monitored && verified && breached && 'color-danger')}>
-            <TableCell>{email}</TableCell>
-            <TableCell className={statusClassName}>{status}</TableCell>
-            <TableCell>{usages}</TableCell>
+            <TableCell className="text-ellipsis">{email}</TableCell>
+            <TableCell className={clsx('text-ellipsis', statusClassName)}>{status}</TableCell>
+            <TableCell className="text-ellipsis">{usages}</TableCell>
             <TableCell>
                 <div className="m-0 flex justify-end">
                     <BreachGroupRowActions {...row} />
