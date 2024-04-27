@@ -13,10 +13,7 @@ export const selectRequestStatus = (namespaceOrId: string) =>
     createSelector(selectRequest(namespaceOrId), (request) => request?.status);
 
 export const selectRequestInFlight = (namespaceOrId: string) =>
-    createSelector(selectRequest(namespaceOrId), (request): MaybeNull<RequestEntry<'start'>> => {
-        if (request?.status === 'start') return request;
-        return null;
-    });
+    createSelector(selectRequest(namespaceOrId), (request): boolean => Boolean(request?.status === 'start'));
 
 export const selectRequestInFlightData = <D>(namespaceOrId: string) =>
-    createSelector(selectRequestInFlight(namespaceOrId), (request): MaybeNull<D> => request?.data ?? null);
+    createSelector(selectRequest(namespaceOrId), (request): MaybeNull<D> => request?.data ?? null);

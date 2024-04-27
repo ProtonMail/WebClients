@@ -14,7 +14,7 @@ import { SettingsPanel } from './SettingsPanel';
 export const Display: FC = () => {
     const dispatch = useDispatch();
     const canLoadDomainImages = useSelector(selectCanLoadDomainImages);
-    const loading = useSelector(selectRequestInFlight(settingsEditRequest('behaviors'))) !== null;
+    const loading = useSelector(selectRequestInFlight(settingsEditRequest('behaviors')));
 
     return (
         <SettingsPanel title={c('Label').t`Display`}>

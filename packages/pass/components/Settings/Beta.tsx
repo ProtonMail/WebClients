@@ -14,7 +14,7 @@ import { SettingsPanel } from './SettingsPanel';
 export const Beta: FC = () => {
     const dispatch = useDispatch();
     const betaEnabled = useSelector(selectBetaEnabled);
-    const loading = useSelector(selectRequestInFlight(settingsEditRequest('behaviors'))) !== null;
+    const loading = useSelector(selectRequestInFlight(settingsEditRequest('behaviors')));
 
     return (
         <SettingsPanel title={c('Label').t`Beta Access`}>
