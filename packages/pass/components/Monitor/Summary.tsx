@@ -1,4 +1,5 @@
 import { type FC, useMemo, useState } from 'react';
+import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
@@ -19,12 +20,15 @@ import { ButtonCard } from '@proton/pass/components/Layout/Card/ButtonCard';
 import { CardContent } from '@proton/pass/components/Layout/Card/CardContent';
 import { LearnMoreCard, type LearnMoreProps } from '@proton/pass/components/Layout/Card/LearnMoreCard';
 import { SubHeader } from '@proton/pass/components/Layout/Section/SubHeader';
-import { DarkWeb } from '@proton/pass/components/Monitor/Breach/DarkWeb';
+import { BreachSummaryCard } from '@proton/pass/components/Monitor/Breach/BreachSummaryCard';
+import { BreachUpsellCard } from '@proton/pass/components/Monitor/Breach/BreachUpsellCard';
 import { Sentinel } from '@proton/pass/components/Monitor/Sentinel/Sentinel';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
 import { getLocalPath, getNewItemRoute } from '@proton/pass/components/Navigation/routing';
 import { UpsellingModal } from '@proton/pass/components/Upsell/UpsellingModal';
 import { UpsellRef } from '@proton/pass/constants';
+import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
+import { selectPassPlan } from '@proton/pass/store/selectors';
 import { PASS_SHORT_APP_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useMonitor } from './MonitorProvider';
@@ -36,7 +40,10 @@ export const Summary: FC = () => {
     const { onLink } = usePassCore();
     const { navigate } = useNavigation();
     const { breaches, duplicates, insecure, missing2FAs, excluded } = useMonitor();
+
+    const paid = isPaidPlan(useSelector(selectPassPlan));
     const [upsellModalOpen, setUpsellModalOpen] = useState(false);
+    const onUpsell = () => setUpsellModalOpen(true);
 
     const learnMore: LearnMoreProps[] = useMemo(
         () => [
@@ -72,9 +79,9 @@ export const Summary: FC = () => {
         <div className="w-full h-full">
             <div className="flex flex-1 flex-column items-start w-full h-full">
                 <Scroll className="flex-1 w-full">
-                    <div className="flex flex-column gap-8 p-6 max-w-custom" style={{ '--max-w-custom': '74em' }}>
+                    <div className="flex flex-column gap-8 p-6 max-w-custom" style={{ '--max-w-custom': '60em' }}>
                         <SubHeader
-                            title={c('Title').t`${PASS_SHORT_APP_NAME} monitor`}
+                            title={c('Title').t`${PASS_SHORT_APP_NAME} Monitor`}
                             description={c('Description')
                                 .t`With ${PASS_SHORT_APP_NAME} Monitor, stay ahead of threats by getting instant alerts if your credentials are compromised. Unlock advanced security features and detailed logs to safeguard your online presence.`}
                         />
@@ -82,7 +89,15 @@ export const Summary: FC = () => {
                         <section className="flex flex-column gap-6">
                             <h3 className="text-lg">{c('Title').t`Dark Web Monitoring`}</h3>
                             <div className="pass-monitor-grid gap-4">
-                                <DarkWeb breached={breaches.count > 0} onUpsell={() => setUpsellModalOpen(true)} />
+                                {!paid && <BreachUpsellCard className="xl:self-start" onUpsell={onUpsell} />}
+
+                                {(paid || breaches.count > 0) && (
+                                    <BreachSummaryCard
+                                        className="xl:self-start"
+                                        breached={breaches.count > 0}
+                                        onClick={paid ? () => navigate(getLocalPath('monitor/dark-web')) : onUpsell}
+                                    />
+                                )}
                             </div>
                         </section>
 
