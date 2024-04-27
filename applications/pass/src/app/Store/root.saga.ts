@@ -46,6 +46,7 @@ import breachesCustom from '@proton/pass/store/sagas/monitor/breaches.custom.sag
 import breachesProton from '@proton/pass/store/sagas/monitor/breaches.proton.saga';
 import breaches from '@proton/pass/store/sagas/monitor/breaches.saga';
 import customAddressAdd from '@proton/pass/store/sagas/monitor/custom-address.add.saga';
+import customAddressToggle from '@proton/pass/store/sagas/monitor/custom-address.toggle.saga';
 import customAddressVerify from '@proton/pass/store/sagas/monitor/custom-address.verify';
 import customAddressDelete from '@proton/pass/store/sagas/monitor/delete.custom.saga';
 import monitorToggle from '@proton/pass/store/sagas/monitor/monitor-toggle.saga';
@@ -85,6 +86,7 @@ export function* rootSaga(options: RootSagaOptions) {
             customAddressAdd,
             customAddressDelete,
             customAddressVerify,
+            customAddressToggle,
             events,
             featureFlags,
             hydrate,

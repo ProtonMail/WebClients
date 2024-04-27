@@ -61,14 +61,15 @@ export const monitorToggleRequest = () => `monitor::global::toggle`;
 
 export const breachesRequest = () => `monitor::breaches`;
 export const protonBreachRequest = (addressId: string) => `monitor::breaches::proton::${addressId}`;
-export const customBreachRequest = (emailId: string) => `monitor::breaches::custom::${emailId}`;
+export const customBreachRequest = (addressId: string) => `monitor::breaches::custom::${addressId}`;
 export const aliasBreachRequest = (shareId: string, itemId: string) => `monitor::breaches::alias::${shareId + itemId}`;
 
 export const addCustomAddressRequest = (email: string) => `monitor::add::custom::${email}`;
-export const verifyCustomAddressRequest = (emailId: string) => `monitor::verify::custom::${emailId}`;
+export const verifyCustomAddressRequest = (addressId: string) => `monitor::verify::custom::${addressId}`;
 export const deleteCustomAddressRequest = (email: string) => `monitor::delete::custom::${email}`;
-export const resendCustomAddressCodeRequest = (emailId: string) => `monitor::verify::custom::resend::${emailId}`;
+export const resendCustomAddressCodeRequest = (addressId: string) => `monitor::verify::custom::resend::${addressId}`;
+export const toggleCustomAddressRequest = (addressId: string) => `monitor::toggle::custom::${addressId}`;
 
 export const protonResolveRequest = (addressId: string) => `monitor::resolve::proton::${addressId}`;
-export const customResolveRequest = (emailId: string) => `monitor::resolve::custom::${emailId}`;
+export const customResolveRequest = (addressId: string) => `monitor::resolve::custom::${addressId}`;
 export const aliasResolveRequest = (shareId: string, itemId: string) => `monitor::resolve::alias::${shareId + itemId}`;
