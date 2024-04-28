@@ -12,11 +12,12 @@ import clsx from '@proton/utils/clsx';
 import { BreachList } from './BreachList';
 import { BreachModal } from './BreachModal';
 import { BreachResolveButton } from './BreachResolveButton';
+import { BreachUsageList } from './BreachUsageList';
 
 export const BreachDetails: FC<MonitorAddress> = (address) => {
     const history = useHistory();
     const breachId = useParams<{ breachId?: string }>().breachId;
-    const { active, resolved, loading } = useAddressBreaches(address);
+    const { active, resolved, usages, loading } = useAddressBreaches(address, address.email);
     const activeBreaches = active.length > 0;
 
     const selectedBreach = useMemo<Maybe<FetchedBreaches>>(
@@ -50,6 +51,7 @@ export const BreachDetails: FC<MonitorAddress> = (address) => {
             <div className="flex flex-columns gap-6">
                 <BreachList data={active} title={c('Title').t`Breaches`} loading={loading} />
                 <BreachList data={resolved} title={c('Title').t`Resolved breaches`} loading={loading} />
+                <BreachUsageList data={usages} />
             </div>
 
             {selectedBreach && <BreachModal breach={selectedBreach} onClose={history.goBack} key="breach-modal" />}

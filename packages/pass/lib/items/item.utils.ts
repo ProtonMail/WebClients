@@ -7,6 +7,7 @@ import type {
     ItemRevisionID,
     ItemSortFilter,
     ItemType,
+    LoginItem,
     MaybeNull,
     SafeLoginItem,
     SelectedItem,
@@ -19,7 +20,7 @@ import { UNIX_DAY, UNIX_MONTH, UNIX_WEEK } from '@proton/pass/utils/time/constan
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import chunk from '@proton/utils/chunk';
 
-import { isEditItemDraft } from './item.predicates';
+import { hasUsername, isEditItemDraft } from './item.predicates';
 
 export const getItemKeyRevision = ({ shareId, itemId, revision }: ItemRevision) => `${shareId}-${itemId}-${revision}`;
 export const getItemKey = ({ shareId, itemId }: ItemRevision) => `item-${shareId}-${itemId}`;
@@ -89,6 +90,12 @@ export const filterItemsByType =
         if (!itemType) return items;
         return items.filter((item) => !itemType || itemType === item.data.type);
     };
+
+export const filterItemsByUsername = (username: string) => (items: LoginItem[]) =>
+    items.reduce<LoginItem[]>((acc, item) => {
+        if (hasUsername(username)(item)) acc.push(item);
+        return acc;
+    }, []);
 
 export const sortItems =
     (sort?: MaybeNull<ItemSortFilter>) =>

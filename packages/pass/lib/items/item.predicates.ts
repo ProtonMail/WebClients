@@ -1,6 +1,7 @@
 import type { Draft, EditDraft, NewDraft } from '@proton/pass/store/reducers';
 import type { Item, ItemRevision, ItemType, LoginItem, UniqueItem } from '@proton/pass/types';
 import { ItemState } from '@proton/pass/types';
+import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 
 export const isAliasItem = (item: Item): item is Item<'alias'> => item.type === 'alias';
 export const isCCItem = (item: Item): item is Item<'creditCard'> => item.type === 'creditCard';
@@ -34,6 +35,10 @@ export const isPinned = ({ pinned }: ItemRevision) => pinned;
 export const isMonitored = ({ flags }: ItemRevision) => flags << 0 === 0;
 export const isBreached = ({ flags }: ItemRevision) => flags << 1 === 1;
 
+export const hasUsername = (username: string) => (item: LoginItem) =>
+    Boolean(item.data.content.username.v && deobfuscate(item.data.content.username) === username);
+
 export const hasDomain = (item: LoginItem) => item.data.content.urls.length > 0;
+
 export const hasOTP = ({ data: { content, extraFields } }: LoginItem) =>
     Boolean(content.totpUri.v || extraFields.some((field) => field.type === 'totp' && field.data.totpUri.v));
