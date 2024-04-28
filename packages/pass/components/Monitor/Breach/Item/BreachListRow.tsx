@@ -18,7 +18,7 @@ export const BreachListRow: FC<Props> = ({ breach: { id, name, publishedAt, seve
     return (
         <TableRow>
             <TableCell>
-                <div className="flex  flex-nowrap gap-2">
+                <div className="flex flex-nowrap gap-2">
                     <img src={breachIcon} alt="" className="shrink-0 w-custom" style={{ '--w-custom': '1.5em' }} />
                     <span className="text-ellipsis">{name}</span>
                 </div>

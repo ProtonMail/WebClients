@@ -1,9 +1,17 @@
 import { createSelector } from '@reduxjs/toolkit';
 
-import { isItemType, isPasskeyItem, isPinned, isTrashed, itemEq } from '@proton/pass/lib/items/item.predicates';
+import {
+    hasUsername,
+    isItemType,
+    isPasskeyItem,
+    isPinned,
+    isTrashed,
+    itemEq,
+} from '@proton/pass/lib/items/item.predicates';
 import {
     filterItemsByShareId,
     filterItemsByType,
+    filterItemsByUsername,
     flattenItemsByShareId,
     sortItems,
 } from '@proton/pass/lib/items/item.utils';
@@ -62,6 +70,12 @@ export const selectLoginItems = selectItemsByType('login');
 export const selectAliasItems = selectItemsByType('alias');
 export const selectNoteItems = selectItemsByType('note');
 export const selectCCItems = selectItemsByType('creditCard');
+
+/** Filters out all login items which were created from an alias item */
+export const selectNonAliasedLoginItems = createSelector([selectLoginItems, selectAliasItems], (logins, aliases) => {
+    const aliasEmails = new Set<string>(aliases.map(prop('aliasEmail')).filter(isTruthy));
+    return logins.filter(({ data }) => !aliasEmails.has(deobfuscate(data.content.username)));
+});
 
 export const selectBulkSelection = (dto: BulkSelectionDTO) =>
     createSelector(selectItemsState, (items) =>
@@ -143,10 +157,14 @@ export const selectItemWithOptimistic = (shareId: string, itemId: string) =>
                 : undefined
     );
 
+export const selectLoginsByUsername = (username: string) =>
+    createSelector(selectLoginItems, filterItemsByUsername(username));
+
 export const selectLoginItemByUsername = (username?: MaybeNull<string>) =>
-    createSelector(selectLoginItems, (items) =>
-        items.find((item) => deobfuscate(item.data.content.username) === username)
-    );
+    createSelector(selectLoginItems, (items) => {
+        if (!username) return;
+        return items.find(hasUsername(username));
+    });
 
 export const selectItemsByDomain = (domain: MaybeNull<string>, options: SelectItemsByDomainOptions) =>
     typeof domain !== 'string' || isEmptyString(domain)
