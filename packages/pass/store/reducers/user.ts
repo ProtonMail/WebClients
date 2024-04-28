@@ -101,10 +101,15 @@ const reducer: Reducer<UserState> = (state = initialState, action) => {
         };
     }
 
-    /* triggered on each popup wakeup: avoid unnecessary re-renders */
     if (getUserAccessSuccess.match(action)) {
-        const { plan, waitingNewUserInvites } = action.payload;
-        const didChange = waitingNewUserInvites !== state.waitingNewUserInvites || !isDeepEqual(plan, state.plan);
+        /* triggered on each popup wakeup: avoid unnecessary re-renders */
+        const { plan, waitingNewUserInvites, monitor } = action.payload;
+
+        const didChange =
+            waitingNewUserInvites !== state.waitingNewUserInvites ||
+            !isDeepEqual(plan, state.plan) ||
+            !isDeepEqual(monitor, state.monitor);
+
         return didChange ? partialMerge(state, { plan, waitingNewUserInvites }) : state;
     }
 

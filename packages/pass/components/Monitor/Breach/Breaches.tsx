@@ -2,9 +2,8 @@ import { type FC } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
-import { Icon } from '@proton/components/index';
 import { SubHeader } from '@proton/pass/components/Layout/Section/SubHeader';
+import { CustomAddressAddButton } from '@proton/pass/components/Monitor/Address/CustomAddressAddButton';
 import { useMonitor } from '@proton/pass/components/Monitor/MonitorProvider';
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import { useBreachesTable } from '@proton/pass/hooks/monitor/useBreachesTable';
@@ -64,11 +63,7 @@ export const Breaches: FC = () => {
                     title={`${custom.title} (${custom.data.length})`}
                     loading={custom.loading}
                     seeAllHref={getLocalPath(`monitor/dark-web/${AddressType.CUSTOM}`)}
-                    actions={
-                        <Button icon pill size="small" shape="solid" color="weak" onClick={() => monitor.addAddress()}>
-                            <Icon name="plus" />
-                        </Button>
-                    }
+                    actions={<CustomAddressAddButton />}
                 />
 
                 {refreshedAt && <span className="text-sm color-weak">{c('Info').t`Last checked: ${refreshedAt}`}</span>}
