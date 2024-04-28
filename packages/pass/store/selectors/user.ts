@@ -70,3 +70,5 @@ export const selectFeatureFlag =
     (feature: PassFeature) =>
     ({ user: { features } }: State): boolean =>
         features?.[feature] ?? false;
+
+export const selectMonitorSettings = ({ user }: State) => user.monitor;
