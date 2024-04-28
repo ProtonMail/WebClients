@@ -87,7 +87,7 @@ export const ItemIcon: FC<BaseItemIconProps> = ({
 };
 
 type ItemIconProps = {
-    className: string;
+    className?: string;
     iconClassName?: string;
     item: ItemRevision;
     pill?: boolean;

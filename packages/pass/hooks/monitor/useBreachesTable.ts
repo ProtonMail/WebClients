@@ -4,16 +4,19 @@ import { useSelector } from 'react-redux';
 import { c } from 'ttag';
 
 import { useMonitor } from '@proton/pass/components/Monitor/MonitorProvider';
+import { filterItemsByUsername } from '@proton/pass/lib/items/item.utils';
 import { AddressType, type MonitorAddress } from '@proton/pass/lib/monitor/types';
-import { selectAllItems } from '@proton/pass/store/selectors';
-import type { ItemRevision } from '@proton/pass/types';
+import { selectNonAliasedLoginItems } from '@proton/pass/store/selectors';
+import type { LoginItem } from '@proton/pass/types';
+import { prop } from '@proton/pass/utils/fp/lens';
+import { sortOn } from '@proton/pass/utils/fp/sort';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 
 export type BreachedUsages = { aliases: number; logins: number };
 
-export type MonitorTableRow<T extends AddressType = AddressType> = MonitorAddress<T> & { usedIn: BreachedUsages };
+export type MonitorTableRow<T extends AddressType = AddressType> = MonitorAddress<T> & { usageCount: number };
 
 export type MonitorTable<T extends AddressType = AddressType> = {
     title: string;
@@ -21,85 +24,69 @@ export type MonitorTable<T extends AddressType = AddressType> = {
     loading: boolean;
 };
 
-const getEmailUsages = (items: ItemRevision[]) => (email: string) =>
-    items.reduce<BreachedUsages>(
-        (acc, item) => {
-            switch (item.data.type) {
-                case 'alias':
-                    /* FIXME: we should check the alias options for the presence
-                     * of the email in the target mailboxes */
-                    break;
-                case 'login':
-                    if (deobfuscate(item.data.content.username) === email) acc.logins++;
-                    break;
-            }
-            return acc;
-        },
-        { aliases: 0, logins: 0 }
-    );
+/** Given a list of login items candidates and already monitored
+ * emails - returns a suggestion list of the top 5 most used logins */
+const getCustomSuggestions = (data: MonitorAddress[], items: LoginItem[]): MonitorTableRow<AddressType.CUSTOM>[] => {
+    const monitored = new Set<string>(data.map(prop('email')));
 
-const getCustomSuggestions = (
-    data: MonitorAddress<AddressType.CUSTOM>[],
-    items: ItemRevision[]
-): MonitorAddress<AddressType.CUSTOM>[] => {
-    return Object.values(
-        items.reduce<Record<string, MonitorAddress<AddressType.CUSTOM>>>((acc, item) => {
-            if (item.data.type !== 'login' || !item.data.content.username.v) return acc;
-            const username = deobfuscate(item.data.content.username);
-            if (!validateEmailAddress(username)) return acc;
-            if (data.find(({ email }) => email === username)) return acc;
+    const suggestions = items.reduce<Map<string, number>>((acc, item) => {
+        if (!item.data.content.username.v) return acc;
+        const username = deobfuscate(item.data.content.username);
+        if (monitored.has(username)) return acc;
+        if (validateEmailAddress(username)) acc.set(username, (acc.get(username) ?? 0) + 1);
 
-            acc[username] = {
-                addressId: '',
-                breachCount: 0,
-                breached: false,
-                email: username,
-                type: AddressType.CUSTOM,
-                monitored: false,
-                verified: false,
-            };
-            return acc;
-        }, {})
-    );
+        return acc;
+    }, new Map());
+
+    return Array.from(suggestions.entries())
+        .map<MonitorTableRow<AddressType.CUSTOM>>(([email, usageCount]) => ({
+            addressId: '',
+            breachCount: 0,
+            breached: false,
+            email,
+            type: AddressType.CUSTOM,
+            monitored: false,
+            verified: false,
+            usageCount,
+        }))
+        .sort(sortOn('usageCount', 'DESC'))
+        .slice(0, 5);
 };
 
-const mapToTableData = <T extends AddressType>(
-    data: MonitorAddress<T>[],
-    items: ItemRevision[]
-): MonitorTableRow<T>[] => {
-    const used = getEmailUsages(items);
-    return data.map((entry) => ({ ...entry, usedIn: used(entry.email) }));
-};
+const mapToRow = <T extends AddressType>(data: MonitorAddress<T>[], items: LoginItem[]): MonitorTableRow<T>[] =>
+    data.map((entry) => ({
+        ...entry,
+        usageCount: filterItemsByUsername(entry.email)(items).length,
+    }));
 
 export const useBreachesTable = (type: AddressType) => {
     const { breaches, didLoad } = useMonitor();
-    const items = useSelector(selectAllItems);
+    const { alias, custom, proton } = breaches.data;
+    const items = useSelector(selectNonAliasedLoginItems);
 
     return useMemo<MonitorTable>(() => {
         switch (type) {
             case AddressType.ALIAS:
                 return {
                     title: c('Title').t`Hide-my-email aliases`,
-                    data: mapToTableData<AddressType.ALIAS>(breaches.data.alias, items),
+                    data: mapToRow<AddressType.ALIAS>(alias, items),
                     loading: false,
                 };
 
             case AddressType.PROTON:
                 return {
                     title: c('Title').t`${BRAND_NAME} addresses`,
-                    data: mapToTableData<AddressType.PROTON>(breaches.data.proton, items),
+                    data: mapToRow<AddressType.PROTON>(proton, items),
                     loading: !didLoad && breaches.loading,
                 };
 
             case AddressType.CUSTOM:
-                const candidates = getCustomSuggestions(breaches.data.custom, items);
-                const suggestions = mapToTableData(candidates, items)
-                    .sort((a, b) => b.usedIn.logins - a.usedIn.logins)
-                    .slice(0, 5);
+                const monitored = [alias, custom, proton].flat();
+                const suggestions = getCustomSuggestions(monitored, items);
 
                 return {
                     title: c('Title').t`Custom emails`,
-                    data: mapToTableData<AddressType.CUSTOM>(breaches.data.custom, items).concat(suggestions),
+                    data: mapToRow<AddressType.CUSTOM>(breaches.data.custom, items).concat(suggestions),
                     loading: !didLoad && breaches.loading,
                 };
         }

@@ -7,7 +7,6 @@ import type { MonitorTableRow } from '@proton/pass/hooks/monitor/useBreachesTabl
 import { AddressType } from '@proton/pass/lib/monitor/types';
 import { formatEpoch } from '@proton/pass/utils/time/format';
 import clsx from '@proton/utils/clsx';
-import isTruthy from '@proton/utils/isTruthy';
 
 import { BreachGroupRowActions } from './BreachGroupRowActions';
 
@@ -34,24 +33,18 @@ const getStatusLabel = ({ type, monitored, verified, breached, breachedAt, breac
     return c('Info').t`Breaches detected`;
 };
 
-const getUsedInLabel = ({ usedIn }: MonitorTableRow) => {
-    const { aliases, logins } = usedIn;
-    const loginLabel = c('Label').ngettext(msgid`${logins} login`, `${logins} logins`, logins);
-    const aliasLabel = aliases && c('Label').ngettext(msgid`${aliases} alias`, `${aliases} aliases`, aliases);
-    return [loginLabel, aliasLabel].filter(isTruthy).join(', ');
-};
-
 export const BreachGroupRow: FC<MonitorTableRow> = (row) => {
-    const { breached, email, monitored, verified } = row;
+    const { breached, email, monitored, verified, usageCount } = row;
     const statusClassName = getStatusClassname(row);
     const status = getStatusLabel(row);
-    const usages = getUsedInLabel(row);
 
     return (
         <TableRow className={clsx(monitored && verified && breached && 'color-danger')}>
             <TableCell className="text-ellipsis">{email}</TableCell>
             <TableCell className={clsx('text-ellipsis', statusClassName)}>{status}</TableCell>
-            <TableCell className="text-ellipsis">{usages}</TableCell>
+            <TableCell className="text-ellipsis">
+                {c('Label').ngettext(msgid`${usageCount} login`, `${usageCount} logins`, usageCount)}
+            </TableCell>
             <TableCell>
                 <div className="m-0 flex justify-end">
                     <BreachGroupRowActions {...row} />
