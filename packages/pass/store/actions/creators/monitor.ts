@@ -10,6 +10,7 @@ import type {
     MonitorVerifyDTO,
     ProtonAddressID,
 } from '@proton/pass/lib/monitor/types';
+import { withCache } from '@proton/pass/store/actions/enhancers/cache';
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
 import {
     addCustomAddressRequest,
@@ -35,6 +36,7 @@ import type {
     BreachesGetResponse,
     UpdateUserMonitorStateRequest,
 } from '@proton/pass/types/api/pass';
+import { pipe } from '@proton/pass/utils/fp/pipe';
 import { PROTON_SENTINEL_NAME } from '@proton/shared/lib/constants';
 import type { SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/interfaces';
 
@@ -67,10 +69,13 @@ export const monitorToggle = requestActionsFactory<UpdateUserMonitorStateRequest
     requestId: monitorToggleRequest,
     success: {
         prepare: ({ ProtonAddress, Aliases }) =>
-            withNotification({
-                type: 'info',
-                text: c('Info').t`Monitoring settings successfully updated`,
-            })({ payload: { ProtonAddress, Aliases } }),
+            pipe(
+                withCache,
+                withNotification({
+                    type: 'info',
+                    text: c('Info').t`Monitoring settings successfully updated`,
+                })
+            )({ payload: { ProtonAddress, Aliases } }),
     },
     failure: {
         prepare: (error) =>

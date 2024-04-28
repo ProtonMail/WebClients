@@ -25,12 +25,12 @@ export const BreachGroupList: FC<Props> = ({ actions, data, displayLimit, title,
     return (
         <section className="w-full">
             {title && (
-                <header className="mb-2 flex justify-space-between">
+                <header className="mb-2 flex justify-space-between items-center">
                     <div className="flex gap-2 items-center">
                         <span className="text-bold">{title}</span>
                         {actions}
                     </div>
-                    {displayLimit && data.length > displayLimit && seeAllHref && <Link to={seeAllHref}>See all</Link>}
+                    {displayLimit && seeAllHref && <Link to={seeAllHref}>See all</Link>}
                 </header>
             )}
             <Card rounded>
