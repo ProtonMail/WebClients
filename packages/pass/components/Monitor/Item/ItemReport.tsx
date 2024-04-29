@@ -76,7 +76,7 @@ const WeakPasswordReport: FC = () => (
             icon={() => <CardIcon icon="exclamation-filled" className="self-start mt-1" />}
             titleClassname="color-interaction-norm-major-2 text-lg text-semibold"
             subtitleClassname="color-interaction-norm-major-2"
-            title={c('Title').t`Insecure password`}
+            title={c('Title').t`Weak password`}
             subtitle={c('Description').t`This account is vulnerable, visit the service and change your password.`}
         />
     </Card>
