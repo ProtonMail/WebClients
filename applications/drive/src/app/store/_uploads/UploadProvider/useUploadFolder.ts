@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { TransferCancel } from '../../../components/TransferManager/transfer';
 import useQueuedFunction from '../../../hooks/util/useQueuedFunction';
 import { isErrorDueToNameConflict } from '../../../utils/isErrorDueToNameConflict';
+import { Features, measureExperimentalPerformance } from '../../../utils/telemetry';
 import { useLinkActions, useLinksActions } from '../../_links';
 import { TransferConflictStrategy, UploadFolderControls } from '../interface';
 import { useDriveOptimisticUploadFeatureFlag } from '../useOptimisticUpload';
@@ -230,25 +231,30 @@ export default function useUploadFolder() {
         return {
             start: () => {
                 // TODO [DRVWEB-3951]: Remove original function after complete rollout of 'DriveWebOptimisticUploadEnabled' feature flag
-                return isOptimisticUploadEnabled
-                    ? prepareFolderOptimistically(
-                          abortController.signal,
-                          shareId,
-                          parentId,
-                          folderName,
-                          modificationTime,
-                          getFolderConflictStrategy,
-                          log
-                      )
-                    : prepareFolder(
-                          abortController.signal,
-                          shareId,
-                          parentId,
-                          folderName,
-                          modificationTime,
-                          getFolderConflictStrategy,
-                          log
-                      );
+                return measureExperimentalPerformance(
+                    Features.optimisticFolderUploads,
+                    isOptimisticUploadEnabled,
+                    () =>
+                        prepareFolder(
+                            abortController.signal,
+                            shareId,
+                            parentId,
+                            folderName,
+                            modificationTime,
+                            getFolderConflictStrategy,
+                            log
+                        ),
+                    () =>
+                        prepareFolderOptimistically(
+                            abortController.signal,
+                            shareId,
+                            parentId,
+                            folderName,
+                            modificationTime,
+                            getFolderConflictStrategy,
+                            log
+                        )
+                );
             },
             cancel: () => {
                 abortController.abort();
