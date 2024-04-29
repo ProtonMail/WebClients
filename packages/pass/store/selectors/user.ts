@@ -1,6 +1,7 @@
 import { createSelector } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
+import type { State } from '@proton/pass/store/types';
 import type { Maybe, MaybeNull } from '@proton/pass/types';
 import { PlanType } from '@proton/pass/types';
 import type { PassFeature } from '@proton/pass/types/api/features';
@@ -8,8 +9,6 @@ import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { UNIX_DAY } from '@proton/pass/utils/time/constants';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { type Address, SETTINGS_STATUS, UserType } from '@proton/shared/lib/interfaces';
-
-import type { State } from '../types';
 
 export const selectUserState = ({ user }: State) => user;
 export const selectUser = ({ user: { user } }: State) => user;
@@ -70,5 +69,3 @@ export const selectFeatureFlag =
     (feature: PassFeature) =>
     ({ user: { features } }: State): boolean =>
         features?.[feature] ?? false;
-
-export const selectMonitorSettings = ({ user }: State) => user.monitor;
