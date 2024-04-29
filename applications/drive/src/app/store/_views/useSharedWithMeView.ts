@@ -35,12 +35,15 @@ export default function useSharedWithMeView(shareId: string) {
     const cachedSharedLinks = useMemoArrayNoMatterTheOrder(sharedLinks);
 
     const { layout } = useUserSettings();
-    const { sortedList, sortParams, setSorting } = useSortingWithDefault(cachedSharedLinks, DEFAULT_SORT);
+    const { sortedList, sortParams, setSorting } = useSortingWithDefault(
+        [...linksWithShareInfo.values()],
+        DEFAULT_SORT
+    );
 
     const loadLinksShareInfo = useCallback(
         async (signal: AbortSignal) => {
             return Promise.all(
-                sortedList.map(async (link) => {
+                cachedSharedLinks.map(async (link) => {
                     const directSharingInfo = await getDirectSharingInfo(signal, link.rootShareId);
                     if (!directSharingInfo) {
                         setLinksWithShareInfo((prevMap) => {
@@ -54,7 +57,7 @@ export default function useSharedWithMeView(shareId: string) {
                 })
             );
         },
-        [sortedList]
+        [cachedSharedLinks]
     );
 
     useEffect(() => {
@@ -67,7 +70,7 @@ export default function useSharedWithMeView(shareId: string) {
 
     return {
         layout,
-        items: [...linksWithShareInfo.values()],
+        items: sortedList,
         sortParams,
         setSorting,
         isLoading: isLoading || isDecrypting || isShareInfoLoading,
