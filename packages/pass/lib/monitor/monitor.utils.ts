@@ -56,6 +56,7 @@ export const intoCustomMonitorAddress = (breach: BreachCustomEmailGetResponse): 
     monitored: breach.Flags << 0 === 0,
     type: AddressType.CUSTOM,
     verified: breach.Verified,
+    suggestion: false,
 });
 
 export const intoProtonMonitorAddress = (breach: BreachAddressGetResponse): MonitorAddress<AddressType.PROTON> => ({
@@ -66,7 +67,6 @@ export const intoProtonMonitorAddress = (breach: BreachAddressGetResponse): Moni
     email: breach.Email,
     monitored: breach.Flags << 0 === 0,
     type: AddressType.PROTON,
-    verified: true,
 });
 
 export const intoAliasMonitorAddress = (item: ItemRevision<'alias'>): MonitorAddress<AddressType.ALIAS> => ({
@@ -76,7 +76,6 @@ export const intoAliasMonitorAddress = (item: ItemRevision<'alias'>): MonitorAdd
     email: item.aliasEmail!,
     monitored: isMonitored(item),
     type: AddressType.ALIAS,
-    verified: true,
 });
 
 export const intoMonitorDomain = ({ Domain, BreachTime }: BreachDomainPeekResponse): MonitorDomain => ({

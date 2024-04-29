@@ -26,12 +26,16 @@ export type MonitorAddressBase = {
     breached: boolean;
     email: string;
     monitored: boolean;
-    verified: boolean;
 };
 
 export type MonitorAddress<T extends AddressType = AddressType> = MonitorAddressBase &
     {
         [AddressType.ALIAS]: { type: AddressType.ALIAS } & SelectedItem;
-        [AddressType.CUSTOM]: { type: AddressType.CUSTOM; addressId: CustomAddressID };
+        [AddressType.CUSTOM]: {
+            type: AddressType.CUSTOM;
+            addressId: CustomAddressID;
+            verified: boolean;
+            suggestion: boolean;
+        };
         [AddressType.PROTON]: { type: AddressType.PROTON; addressId: CustomAddressID };
     }[T];

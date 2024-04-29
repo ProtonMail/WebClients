@@ -13,40 +13,49 @@ import clsx from '@proton/utils/clsx';
 
 import { BreachGroupRowActions } from './BreachGroupRowActions';
 
-const getStatusClassname = ({ monitored, verified, breached }: MonitorTableRow) => {
-    if (monitored && verified && !breached) return 'color-success';
-    if (!verified && monitored) return 'color-weak';
+const getStatusClassname = (row: MonitorTableRow) => {
+    const verified = row.type !== AddressType.CUSTOM || row.verified;
+    if (verified && row.monitored && !row.breached) return 'color-success';
+    if (!verified && row.monitored) return 'color-weak';
 };
 
-const getStatusLabel = ({ type, monitored, verified, breached, breachedAt, breachCount }: MonitorTableRow) => {
-    if (type === AddressType.CUSTOM) {
-        if (!monitored) return c('Info').t`Suggested`;
-        if (!verified) return c('Info').t`Unverified`;
+const getStatusLabel = (row: MonitorTableRow) => {
+    if (row.type === AddressType.CUSTOM) {
+        if (row.suggestion) return c('Info').t`Suggested`;
+        if (!row.verified) return c('Info').t`Unverified`;
     }
 
-    if (!breached) return c('Info').t`No breaches detected`;
+    if (!row.breached) return c('Info').t`No breaches detected`;
 
-    if (breachedAt) {
-        const formattedDate = formatEpoch('MMM d, yyyy')(breachedAt);
+    if (row.breachedAt) {
+        const formattedDate = formatEpoch('MMM d, yyyy')(row.breachedAt);
         return c('Info').t`Latest breach on ${formattedDate}`;
     }
 
-    if (breachCount) return c('Info').t`${breachCount} breaches detected`;
+    if (row.breachCount) return c('Info').t`${row.breachCount} breaches detected`;
 
     return c('Info').t`Breaches detected`;
 };
 
 export const BreachGroupRow: FC<MonitorTableRow> = (row) => {
-    const { breached, email, monitored, verified, usageCount } = row;
+    const { breached, email, monitored, type, usageCount } = row;
     const statusClassName = getStatusClassname(row);
     const status = getStatusLabel(row);
+    const clickable = (type !== AddressType.CUSTOM || row.verified) && monitored;
 
     return (
-        <TableRow className={clsx(monitored && verified && breached && 'color-danger')}>
+        <TableRow className={clsx(monitored && breached && 'color-danger')}>
             <TableCell className="text-ellipsis">
-                <Link to={getLocalPath(`monitor/dark-web/${row.type}/${getAddressId(row)}`)}>
-                    <button className="color-norm">{email}</button>
-                </Link>
+                {clickable ? (
+                    <Link
+                        to={getLocalPath(`monitor/dark-web/${row.type}/${getAddressId(row)}`)}
+                        className="block overflow-hidden"
+                    >
+                        <button className="max-w-full color-norm text-ellipsis">{email}</button>
+                    </Link>
+                ) : (
+                    email
+                )}
             </TableCell>
             <TableCell className={clsx('text-ellipsis', statusClassName)}>{status}</TableCell>
             <TableCell className="text-ellipsis">
