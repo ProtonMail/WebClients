@@ -69,11 +69,12 @@ export function* hydrate(config: HydrateCacheOptions, { getCache, getAuthStore, 
         const settings: Partial<ProxiedSettings> = (yield getSettings()) ?? {};
         settings.locale = cache?.state.settings.locale ?? userState.userSettings?.Locale;
 
+        const incoming = { user: userState, settings, organization };
         const currentState: State = yield select();
 
-        const state: State = cache?.state
-            ? config.merge(currentState, partialMerge(cache?.state, { settings })) /* merge cached state */
-            : partialMerge(currentState, { user: userState, settings, organization }); /* hydrate current state */
+        const state: State = cachedState
+            ? config.merge(currentState, partialMerge(cachedState, incoming))
+            : partialMerge(currentState, incoming);
 
         /** If `keyPassword` is not defined then we may be dealing with an offline
          * state hydration in which case hydrating PassCrypto would throw. In such
