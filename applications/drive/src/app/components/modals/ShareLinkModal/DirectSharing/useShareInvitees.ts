@@ -104,6 +104,8 @@ export const useShareInvitees = (existingEmails: string[]) => {
                     const copy = new Map(map);
                     copy.set(email, {
                         ...filteredInvitee,
+                        // TODO: Remove this when non-proton accounts are supported
+                        error: new ShareInviteeValdidationError(VALIDATION_ERROR_TYPES.NOT_PROTON_ACCOUNT),
                         isExternal: true,
                         isLoading: false,
                     });
