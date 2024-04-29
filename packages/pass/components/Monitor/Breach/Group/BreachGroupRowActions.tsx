@@ -19,7 +19,7 @@ import { addCustomAddressRequest, deleteCustomAddressRequest } from '@proton/pas
 import { selectRequestInFlight } from '@proton/pass/store/selectors';
 
 export const BreachGroupRowActions: FC<MonitorTableRow> = (row) => {
-    const { type, email, monitored, verified } = row;
+    const { type, email, monitored } = row;
     const monitor = useMonitor();
 
     const add = useRequest(addCustomAddress, {
@@ -47,7 +47,7 @@ export const BreachGroupRowActions: FC<MonitorTableRow> = (row) => {
             );
         }
 
-        if (!verified) {
+        if (!row.verified) {
             return (
                 <QuickActionsDropdown
                     icon="three-dots-vertical"
