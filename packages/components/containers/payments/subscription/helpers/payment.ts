@@ -55,7 +55,9 @@ export const getVPNPlanToUse = (
 export const getIsVpn2024Deal = (planName: PLANS, coupon: string | undefined) => {
     return (
         planName === PLANS.VPN2024 &&
-        [COUPON_CODES.MARCHSAVINGS24, COUPON_CODES.HONEYPROTONSAVINGS].includes(coupon as COUPON_CODES)
+        [COUPON_CODES.MARCHSAVINGS24, COUPON_CODES.HONEYPROTONSAVINGS, COUPON_CODES.PREMIUM_DEAL].includes(
+            coupon as COUPON_CODES
+        )
     );
 };
 
