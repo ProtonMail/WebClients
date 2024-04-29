@@ -45,7 +45,7 @@ export const ButtonCard: FC<Props> = ({ actions, disabled, title, subtitle, icon
                 actions={
                     <div className="flex shrink-0 gap-1">
                         {actions}
-                        {onClick && (
+                        {onClick && !disabled && (
                             <Icon name="chevron-right" size={5} className={type ? 'color-strong' : 'color-weak'} />
                         )}
                     </div>
