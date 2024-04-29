@@ -4,6 +4,7 @@ import { ThunkAction } from 'redux-thunk';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store';
 import { createPromiseCache } from '@proton/redux-utilities';
 import { getOrganization, getOrganizationSettings } from '@proton/shared/lib/api/organization';
+import { APPS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import updateObject from '@proton/shared/lib/helpers/updateObject';
 import {
@@ -120,18 +121,25 @@ const modelThunk = (options?: {
                 return { value: freeOrganization, type: ValueType.dummy };
             }
 
+            const defaultSettings = {
+                ShowName: false,
+                LogoID: null,
+            };
+
             const [Organization, OrganizationSettings] = await Promise.all([
                 extraArgument
                     .api<{
                         Organization: Organization;
                     }>(getOrganization())
                     .then(({ Organization }) => Organization),
-                extraArgument
-                    .api<OrganizationSettings>(getOrganizationSettings())
-                    .then(({ ShowName, LogoID }) => ({ ShowName, LogoID }))
-                    .catch(() => {
-                        return { ShowName: false, LogoID: null };
-                    }),
+                extraArgument.config.APP_NAME === APPS.PROTONACCOUNTLITE
+                    ? defaultSettings
+                    : extraArgument
+                          .api<OrganizationSettings>(getOrganizationSettings())
+                          .then(({ ShowName, LogoID }) => ({ ShowName, LogoID }))
+                          .catch(() => {
+                              return defaultSettings;
+                          }),
             ]);
 
             const value = {
