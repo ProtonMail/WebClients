@@ -21,6 +21,8 @@ export enum TelemetryMeasurementGroups {
     /** Setting it to any even if mail only ATM. We will expand it to other apps soon */
     securityCenter = 'any.web.security_center',
     paymentsFlow = 'payments.flow',
+    /** Drive Web */
+    driveWebFeaturePerformance = 'drive.web.feature_performance',
 }
 
 export enum TelemetrySubscriptionModalEvents {
@@ -143,6 +145,10 @@ export enum TelemetryPaymentsEvents {
     payment_failure = 'payment_failure',
 }
 
+export enum TelemetryDriveWebFeature {
+    performance = 'drive_web_feature_performance',
+}
+
 export type TelemetryEvents =
     | TelemetrySimpleLoginEvents
     | TelemetrySubscriptionModalEvents
@@ -158,7 +164,8 @@ export type TelemetryEvents =
     | TelemetryChangelog
     | TelemetrySecurityCenterEvents
     | TelemetryPaymentsEvents
-    | TelemetryAccountOrganizationLogoUploadEvents;
+    | TelemetryAccountOrganizationLogoUploadEvents
+    | TelemetryDriveWebFeature;
 
 export interface TelemetryReport {
     measurementGroup: TelemetryMeasurementGroups;
