@@ -65,10 +65,10 @@ export const getUserData = async (): Promise<HydratedUserState> => {
         features,
         user,
         userSettings: {
-            Locale: userSettings.Locale,
             Email: { Status: userSettings.Email.Status },
-            Telemetry: userSettings.Telemetry,
+            Locale: userSettings.Locale,
             Password: { Mode: userSettings.Password.Mode },
+            Telemetry: userSettings.Telemetry,
         },
     };
 };
