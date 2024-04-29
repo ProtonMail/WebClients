@@ -1,5 +1,6 @@
 import type { DragEvent, Ref, RefObject } from 'react';
 import { forwardRef, useCallback, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 
 import { c } from 'ttag';
 
@@ -74,6 +75,7 @@ const Composer = (
 ) => {
     // TODO: Define this value depending on EO or not.
     const [displayToolbar, setDisplayToolbar] = useState(true);
+    const toolbarWrapperRef = useRef<HTMLDivElement>(null);
     const mailSettings = useMailModel('MailSettings');
     const [userSettings] = useUserSettings();
     const [selectedText, setSelectedText] = useState('');
@@ -428,7 +430,11 @@ const Composer = (
                         onKeyUp={handleEditorSelection}
                         onMouseUp={handleEditorSelection}
                         isInert={isAssistantExpanded}
-                        toolbarCustomRender={(toolbar) => (displayToolbar ? toolbar : null)}
+                        toolbarCustomRender={(toolbar) =>
+                            displayToolbar && toolbarWrapperRef.current
+                                ? createPortal(toolbar, toolbarWrapperRef.current)
+                                : null
+                        }
                     />
                 </div>
                 <ComposerActions
@@ -457,6 +463,7 @@ const Composer = (
                     onToggleAssistant={handleToggleAssistant}
                     isInert={isAssistantExpanded}
                     onToggleToobar={() => setDisplayToolbar(!displayToolbar)}
+                    toolbarWrapperRef={toolbarWrapperRef}
                 />
             </div>
             {waitBeforeScheduleModal}
