@@ -26,6 +26,7 @@ import { ValidationError } from '../../../utils/errorHandling/ValidationError';
 import { isErrorDueToNameConflict } from '../../../utils/isErrorDueToNameConflict';
 import { replaceLocalURL } from '../../../utils/replaceLocalURL';
 import retryOnError from '../../../utils/retryOnError';
+import { Features, measureExperimentalPerformance } from '../../../utils/telemetry';
 import { isPhotosDisabledUploadError } from '../../../utils/transfer';
 import { useDebouncedRequest } from '../../_api';
 import { useDriveEventManager } from '../../_events';
@@ -474,15 +475,21 @@ export default function useUploadFile() {
         );
 
         const selectFileRevisionCreation = (abortSignal: AbortSignal, mimeType: string, keys: FileKeys) => {
-            if (isOptimisticUploadEnabled) {
-                if (isForPhotos) {
-                    return createPhotosFileRevision(abortSignal, mimeType, keys);
-                }
-                return createOptimisticFileRevision(abortSignal, mimeType, keys);
-            }
             // TODO [DRVWEB-3951]: Remove original function after complete rollout of 'DriveWebOptimisticUploadEnabled' feature flag
             // The original function entangle both photos and files revision and is not optimistic
-            return createFileRevision(abortSignal, mimeType, keys);
+            return measureExperimentalPerformance(
+                Features.optimisticFileUploads,
+                isOptimisticUploadEnabled,
+                () => {
+                    return createFileRevision(abortSignal, mimeType, keys);
+                },
+                () => {
+                    if (isForPhotos) {
+                        return createPhotosFileRevision(abortSignal, mimeType, keys);
+                    }
+                    return createOptimisticFileRevision(abortSignal, mimeType, keys);
+                }
+            );
         };
 
         // If the upload was aborted but we already called finalize to commit
