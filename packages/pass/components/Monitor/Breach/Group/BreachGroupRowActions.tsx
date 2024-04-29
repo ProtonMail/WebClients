@@ -10,6 +10,7 @@ import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/Drop
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
 import { useMonitor } from '@proton/pass/components/Monitor/MonitorProvider';
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
+import { MAX_CUSTOM_ADDRESSES } from '@proton/pass/constants';
 import type { MonitorTableRow } from '@proton/pass/hooks/monitor/useBreachesTable';
 import { useRequest } from '@proton/pass/hooks/useActionRequest';
 import { getAddressId, intoCustomMonitorAddress } from '@proton/pass/lib/monitor/monitor.utils';
@@ -19,8 +20,8 @@ import { addCustomAddressRequest, deleteCustomAddressRequest } from '@proton/pas
 import { selectRequestInFlight } from '@proton/pass/store/selectors';
 
 export const BreachGroupRowActions: FC<MonitorTableRow> = (row) => {
-    const { type, email, monitored } = row;
     const monitor = useMonitor();
+    const { type, email, monitored } = row;
 
     const add = useRequest(addCustomAddress, {
         initialRequestId: addCustomAddressRequest(row.email),
@@ -41,6 +42,7 @@ export const BreachGroupRowActions: FC<MonitorTableRow> = (row) => {
                     size="small"
                     onClick={() => add.dispatch(row.email)}
                     loading={add.loading}
+                    disabled={monitor.breaches.data.custom.length >= MAX_CUSTOM_ADDRESSES}
                 >
                     {c('Action').t`Add`}
                 </Button>
