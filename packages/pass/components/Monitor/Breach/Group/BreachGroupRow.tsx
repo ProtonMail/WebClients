@@ -1,4 +1,5 @@
 import type { FC } from 'react';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import { c, msgid } from 'ttag';
@@ -8,6 +9,7 @@ import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import type { MonitorTableRow } from '@proton/pass/hooks/monitor/useBreachesTable';
 import { getAddressId } from '@proton/pass/lib/monitor/monitor.utils';
 import { AddressType } from '@proton/pass/lib/monitor/types';
+import { selectMonitorSettingByType } from '@proton/pass/store/selectors';
 import { formatEpoch } from '@proton/pass/utils/time/format';
 import clsx from '@proton/utils/clsx';
 
@@ -25,6 +27,7 @@ const getStatusLabel = (row: MonitorTableRow) => {
         if (!row.verified) return c('Info').t`Unverified`;
     }
 
+    if (!row.monitored) return c('Info').t`Paused`;
     if (!row.breached) return c('Info').t`No breaches detected`;
 
     if (row.breachedAt) {
@@ -39,12 +42,15 @@ const getStatusLabel = (row: MonitorTableRow) => {
 
 export const BreachGroupRow: FC<MonitorTableRow> = (row) => {
     const { breached, email, monitored, type, usageCount } = row;
-    const statusClassName = getStatusClassname(row);
-    const status = getStatusLabel(row);
-    const clickable = (type !== AddressType.CUSTOM || row.verified) && monitored;
+    const paused = !useSelector(selectMonitorSettingByType(row.type));
+
+    const statusClassName = paused ? 'color-weak' : getStatusClassname(row);
+    const status = paused ? c('Info').t`Paused` : getStatusLabel(row);
+    const clickable = !paused && (type !== AddressType.CUSTOM || row.verified) && monitored;
+    const danger = monitored && breached;
 
     return (
-        <TableRow className={clsx(monitored && breached && 'color-danger')}>
+        <TableRow className={clsx(danger && 'color-danger')}>
             <TableCell className="text-ellipsis">
                 {clickable ? (
                     <Link

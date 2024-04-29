@@ -3,6 +3,7 @@ import { createSelector } from '@reduxjs/toolkit';
 import { isMonitored, itemEq } from '@proton/pass/lib/items/item.predicates';
 import { intoSelectedItem } from '@proton/pass/lib/items/item.utils';
 import { getDuplicatePasswords, intoAliasMonitorAddress } from '@proton/pass/lib/monitor/monitor.utils';
+import { AddressType } from '@proton/pass/lib/monitor/types';
 import type { State } from '@proton/pass/store/types';
 import type { SelectedItem } from '@proton/pass/types';
 import { invert } from '@proton/pass/utils/fp/predicates';
@@ -30,3 +31,18 @@ export const selectHasCustomDomains = createSelector(selectMonitorState, (monito
 export const selectAliasBreaches = createSelector(selectMonitoredAliases, (items) =>
     items.map(intoAliasMonitorAddress)
 );
+
+export const selectMonitorSettings = ({ user }: State) => user.monitor;
+
+export const selectMonitorSettingByType = (type: AddressType) =>
+    createSelector(selectMonitorSettings, (settings) => {
+        if (!settings) return false;
+        switch (type) {
+            case AddressType.ALIAS:
+                return settings.Aliases;
+            case AddressType.PROTON:
+                return settings.ProtonAddress;
+            default:
+                return true;
+        }
+    });
