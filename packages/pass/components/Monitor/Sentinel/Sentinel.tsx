@@ -54,6 +54,7 @@ export const Sentinel: FC<Props> = ({ onUpsell }) => {
                     checked={sentinelEnabled}
                     onChange={toggleSentinel}
                     className="self-center"
+                    loading={sentinelUpdate.loading}
                 />
             }
         />
