@@ -22,6 +22,7 @@ export type MonitorState = MaybeNull<{
     custom: MonitorAddress<AddressType.CUSTOM>[];
     preview: MonitorDomain[];
     proton: MonitorAddress<AddressType.PROTON>[];
+    customDomains: boolean;
     total: number;
 }>;
 
@@ -31,6 +32,7 @@ const monitorReducer: Reducer<MonitorState> = (state = null, action) => {
             custom: action.payload.CustomEmails?.map(intoCustomMonitorAddress) ?? [],
             preview: action.payload.DomainsPeek?.map(intoMonitorDomain) ?? [],
             proton: action.payload.Addresses?.map(intoProtonMonitorAddress) ?? [],
+            customDomains: action.payload.HasCustomDomains,
             total: action.payload.EmailsCount,
         };
     }

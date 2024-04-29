@@ -25,6 +25,8 @@ export const selectCustomBreaches = createSelector(selectMonitorState, (monitor)
 export const selectProtonBreaches = createSelector(selectMonitorState, (monitor) => monitor?.proton);
 export const selectMonitorPreview = createSelector(selectMonitorState, (monitor) => monitor?.preview);
 export const selectTotalBreaches = createSelector(selectMonitorState, (monitor) => monitor?.total);
+export const selectHasCustomDomains = createSelector(selectMonitorState, (monitor) => monitor?.customDomains);
+
 export const selectAliasBreaches = createSelector(selectMonitoredAliases, (items) =>
     items.map(intoAliasMonitorAddress)
 );
