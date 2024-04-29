@@ -66,6 +66,7 @@ interface Props {
     showAssistantButton: boolean;
     onToggleAssistant: () => void;
     isInert: boolean;
+    onToggleToobar: () => void;
 }
 
 const ComposerActions = ({
@@ -93,6 +94,7 @@ const ComposerActions = ({
     showAssistantButton,
     onToggleAssistant,
     isInert,
+    onToggleToobar,
 }: Props) => {
     const dispatch = useMailDispatch();
 
@@ -225,6 +227,16 @@ const ComposerActions = ({
 
                 <div className="flex flex-1">
                     <div className="flex">
+                        <Tooltip
+                            title={
+                                // TODO: which translation ? / Which icon ? / Which icon title ? / Which open/close state ?
+                                c('Action').t`Display toolbar`
+                            }
+                        >
+                            <Button onClick={onToggleToobar}>
+                                <Icon name="palette" alt={c('Action').t`Display toolbar`} />
+                            </Button>
+                        </Tooltip>
                         <Tooltip title={titleDeleteDraft}>
                             <Button
                                 icon
