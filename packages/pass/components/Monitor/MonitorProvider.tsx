@@ -7,7 +7,7 @@ import { useMissing2FAs } from '@proton/pass/hooks/monitor/useMissing2FAs';
 import { useRequest } from '@proton/pass/hooks/useActionRequest';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import type { AddressType, CustomAddressID, MonitorAddress } from '@proton/pass/lib/monitor/types';
-import { addCustomAddress, deleteCustomAddress, getBreaches } from '@proton/pass/store/actions';
+import { deleteCustomAddress, getBreaches } from '@proton/pass/store/actions';
 import { breachesRequest } from '@proton/pass/store/actions/requests';
 import {
     selectAliasBreaches,
@@ -45,7 +45,7 @@ export interface MonitorContextValue {
     duplicates: { data: UniqueItem[][]; count: number };
     missing2FAs: { data: UniqueItem[]; count: number };
     excluded: { data: UniqueItem[]; count: number };
-    addAddress: (email?: string) => void;
+    addAddress: () => void;
     verifyAddress: (address: MonitorAddress<AddressType.CUSTOM>, sentAt?: number) => void;
     deleteAddress: (addressId: CustomAddressID) => void;
 }
@@ -87,7 +87,7 @@ export const MonitorProvider: FC<PropsWithChildren> = ({ children }) => {
             missing2FAs,
             duplicates: { data: duplicates, count: duplicates.length },
             excluded: { data: excluded, count: excluded.length },
-            addAddress: (email) => (email ? dispatch(addCustomAddress.intent(email)) : setAction({ type: 'add' })),
+            addAddress: () => setAction({ type: 'add' }),
             verifyAddress: (data, sentAt) => setAction({ type: 'verify', data: { ...data, sentAt } }),
             deleteAddress: (addressId) => dispatch(deleteCustomAddress.intent(addressId)),
         }),

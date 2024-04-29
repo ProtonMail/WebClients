@@ -11,8 +11,10 @@ import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/Qu
 import { useMonitor } from '@proton/pass/components/Monitor/MonitorProvider';
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import type { MonitorTableRow } from '@proton/pass/hooks/monitor/useBreachesTable';
-import { getAddressId } from '@proton/pass/lib/monitor/monitor.utils';
+import { useRequest } from '@proton/pass/hooks/useActionRequest';
+import { getAddressId, intoCustomMonitorAddress } from '@proton/pass/lib/monitor/monitor.utils';
 import { AddressType } from '@proton/pass/lib/monitor/types';
+import { addCustomAddress } from '@proton/pass/store/actions';
 import { addCustomAddressRequest, deleteCustomAddressRequest } from '@proton/pass/store/actions/requests';
 import { selectRequestInFlight } from '@proton/pass/store/selectors';
 
@@ -20,9 +22,13 @@ export const BreachGroupRowActions: FC<MonitorTableRow> = (row) => {
     const { type, email, monitored, verified } = row;
     const monitor = useMonitor();
 
-    const adding = useSelector(selectRequestInFlight(addCustomAddressRequest(email)));
+    const add = useRequest(addCustomAddress, {
+        initialRequestId: addCustomAddressRequest(row.email),
+        onSuccess: ({ data }) => monitor.verifyAddress(intoCustomMonitorAddress(data)),
+    });
+
     const deleting = useSelector(selectRequestInFlight(deleteCustomAddressRequest(email)));
-    const loading = adding || deleting;
+    const loading = add.loading || deleting;
 
     if (type === AddressType.CUSTOM) {
         if (!monitored) {
@@ -33,8 +39,8 @@ export const BreachGroupRowActions: FC<MonitorTableRow> = (row) => {
                     shape="solid"
                     color="weak"
                     size="small"
-                    onClick={() => monitor.addAddress(email)}
-                    loading={adding}
+                    onClick={() => add.dispatch(row.email)}
+                    loading={add.loading}
                 >
                     {c('Action').t`Add`}
                 </Button>
