@@ -31,6 +31,7 @@ import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import { selectPassPlan } from '@proton/pass/store/selectors';
 import { PASS_SHORT_APP_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
 
+import { BreachPreviewCard } from './Breach/Card/BreachPreviewCard';
 import { useMonitor } from './MonitorProvider';
 import { getMonitorUpsellFeatures } from './utils';
 
@@ -89,14 +90,19 @@ export const Summary: FC = () => {
                         <section className="flex flex-column gap-4">
                             <h3 className="text-lg text-semibold">{c('Title').t`Dark Web Monitoring`}</h3>
                             <div className="pass-monitor-grid gap-4">
-                                {!paid && <BreachUpsellCard className="xl:self-start" onUpsell={onUpsell} />}
-
-                                {(paid || breaches.count > 0) && (
+                                {paid && (
                                     <BreachSummaryCard
                                         className="xl:self-start"
                                         breached={breaches.count > 0}
-                                        onClick={paid ? () => navigate(getLocalPath('monitor/dark-web')) : onUpsell}
+                                        onClick={() => navigate(getLocalPath('monitor/dark-web'))}
                                     />
+                                )}
+
+                                {!paid && (
+                                    <>
+                                        <BreachUpsellCard className="xl:self-start" onUpsell={onUpsell} />
+                                        <BreachPreviewCard className="xl:self-start" onUpsell={onUpsell} />
+                                    </>
                                 )}
                             </div>
                         </section>
