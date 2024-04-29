@@ -57,7 +57,7 @@ export const creationDate = {
 };
 
 export const sharedOnDate = {
-    type: 'linkCreateTime',
+    type: 'sharedOn',
     getText: () => c('Label').t`Shared on`,
     props: {
         className: 'w-1/6',
