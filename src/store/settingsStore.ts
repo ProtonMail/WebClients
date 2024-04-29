@@ -2,7 +2,9 @@ import Logger from "electron-log";
 import Store from "electron-store";
 import { SerializedTheme } from "../utils/themes";
 
-const store = new Store<{ settings: SettingsStore }>();
+const store = new Store<{ settings: SettingsStore }>({
+    configFileMode: 0o600,
+});
 
 interface SettingsStore {
     spellChecker: boolean;
