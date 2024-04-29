@@ -8,7 +8,7 @@ import { selectProxiedSettings } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 
 function* settingsEditWorker(
-    { onLocaleUpdated }: RootSagaOptions,
+    { onLocaleUpdated, onBetaUpdated }: RootSagaOptions,
     { meta, payload }: WithSenderAction<ReturnType<typeof settingsEditIntent>>
 ) {
     try {
@@ -18,6 +18,8 @@ function* settingsEditWorker(
         if (payload.locale) onLocaleUpdated?.(payload.locale);
 
         yield put(settingsEditSuccess(meta.request.id, payload, meta.request.data.silent, meta.sender?.endpoint));
+
+        if ('beta' in payload) yield onBetaUpdated?.(payload.beta ?? false);
     } catch (e) {
         yield put(settingsEditFailure(meta.request.id, e, meta.sender?.endpoint));
     }
