@@ -62,7 +62,8 @@ export type MakeFriendlyAction = {
 };
 export type ShortenAction = {
     type: 'shorten';
-    text: string;
+    fullEmail: string;
+    partToRephase: string; // partToRephase should be contained in fullEmail
 };
 export type ExpandAction = {
     type: 'expand';
