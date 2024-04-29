@@ -23,6 +23,7 @@ import useQueuedFunction from '../../../hooks/util/useQueuedFunction';
 import { logError } from '../../../utils/errorHandling';
 import { EnrichedError } from '../../../utils/errorHandling/EnrichedError';
 import { ValidationError } from '../../../utils/errorHandling/ValidationError';
+import { isErrorDueToNameConflict } from '../../../utils/isErrorDueToNameConflict';
 import { replaceLocalURL } from '../../../utils/replaceLocalURL';
 import retryOnError from '../../../utils/retryOnError';
 import { isPhotosDisabledUploadError } from '../../../utils/transfer';
@@ -42,6 +43,7 @@ import {
     UploadFileControls,
     VerificationData,
 } from '../interface';
+import { useDriveOptimisticUploadFeatureFlag } from '../useOptimisticUpload';
 import { ConflictStrategyHandler, UploadUserError } from './interface';
 import { generateClientUid } from './uploadClientUid';
 import useUploadHelper from './useUploadHelper';
@@ -68,9 +70,10 @@ export default function useUploadFile() {
     const { getLinkPrivateKey, getLinkSessionKey, getLinkHashKey } = useLink();
     const { trashLinks, deleteChildrenLinks } = useLinksActions();
     const { getShareCreatorKeys } = useShare();
-    const { findAvailableName, getLinkByName, findDuplicateContentHash } = useUploadHelper();
+    const { findAvailableName, getLinkByName, findDuplicateContentHash, findHash } = useUploadHelper();
     const driveEventManager = useDriveEventManager();
     const volumeState = useVolumesState();
+    const isOptimisticUploadEnabled = useDriveOptimisticUploadFeatureFlag();
 
     const request = <T>(args: object, abortSignal?: AbortSignal) => {
         return debouncedRequest<T>(
@@ -142,6 +145,7 @@ export default function useUploadFile() {
                     })
                 ).catch((err) => {
                     uploadFailed();
+
                     // See RFC Feature flag handling for more info
                     if (err.status === 424 && err.data?.Code === 2032 && isForPhotos) {
                         const error = new Error(
@@ -268,6 +272,44 @@ export default function useUploadFile() {
             return createFile(abortSignal, filename, mimeType, hash, keys, clientUid);
         };
 
+        const handleNameConflict = async (
+            abortSignal: AbortSignal,
+            mimeType: string,
+            keys: FileKeys,
+            {
+                filename,
+                hash,
+                draftLinkId,
+            }: {
+                filename: string;
+                hash: string;
+                draftLinkId?: string;
+            }
+        ) => {
+            log(`Name conflict`);
+            const link = await getLinkByName(abortSignal, shareId, parentId, file.name);
+            const originalIsFolder = link ? !link.isFile : false;
+
+            const conflictStrategy = await getFileConflictStrategy(abortSignal, !!draftLinkId, originalIsFolder);
+            log(`Conflict resolved with: ${conflictStrategy}`);
+            if (conflictStrategy === TransferConflictStrategy.Rename) {
+                log(`Creating new file`);
+                return createFile(abortSignal, filename, mimeType, hash, keys);
+            }
+            if (conflictStrategy === TransferConflictStrategy.Replace) {
+                if (draftLinkId) {
+                    log(`Replacing draft`);
+                    return replaceDraft(abortSignal, file.name, mimeType, hash, keys, draftLinkId);
+                }
+                log(`Replacing file`);
+                return replaceFile(abortSignal, mimeType, keys);
+            }
+            if (conflictStrategy === TransferConflictStrategy.Skip) {
+                throw new TransferCancel({ message: c('Info').t`Transfer skipped for file "${file.name}"` });
+            }
+            throw new Error(`Unknown conflict strategy: ${conflictStrategy}`);
+        };
+
         const createFileRevision = queuedFunction(
             'create_file_revision',
             async (abortSignal: AbortSignal, mimeType: string, keys: FileKeys): Promise<FileRevision> => {
@@ -320,31 +362,128 @@ export default function useUploadFile() {
                     return createFile(abortSignal, file.name, mimeType, hash, keys);
                 }
 
-                log(`Name conflict`);
-                const link = await getLinkByName(abortSignal, shareId, parentId, file.name);
-                const originalIsFolder = link ? !link.isFile : false;
-
-                const conflictStrategy = await getFileConflictStrategy(abortSignal, !!draftLinkId, originalIsFolder);
-                log(`Conflict resolved with: ${conflictStrategy}`);
-                if (conflictStrategy === TransferConflictStrategy.Rename) {
-                    log(`Creating new file`);
-                    return createFile(abortSignal, newName, mimeType, hash, keys);
-                }
-                if (conflictStrategy === TransferConflictStrategy.Replace) {
-                    if (draftLinkId) {
-                        log(`Replacing draft`);
-                        return replaceDraft(abortSignal, file.name, mimeType, hash, keys, draftLinkId);
-                    }
-                    log(`Replacing file`);
-                    return replaceFile(abortSignal, mimeType, keys);
-                }
-                if (conflictStrategy === TransferConflictStrategy.Skip) {
-                    throw new TransferCancel({ message: c('Info').t`Transfer skipped for file "${file.name}"` });
-                }
-                throw new Error(`Unknown conflict strategy: ${conflictStrategy}`);
+                return handleNameConflict(abortSignal, mimeType, keys, {
+                    filename: newName,
+                    hash,
+                    draftLinkId,
+                });
             },
             MAX_UPLOAD_BLOCKS_LOAD
         );
+
+        const createPhotosFileRevision = queuedFunction(
+            'create_file_revision',
+            async (abortSignal: AbortSignal, mimeType: string, keys: FileKeys): Promise<FileRevision> => {
+                const volumeId = volumeState.findVolumeId(shareId);
+                if (!volumeId) {
+                    throw new Error('Trying to find missing volume');
+                }
+                const {
+                    filename: newName,
+                    hash,
+                    draftLinkId,
+                    clientUid,
+                    isDuplicatePhotos = false,
+                }: {
+                    filename: string;
+                    hash: string;
+                    clientUid?: string;
+                    draftLinkId?: string;
+                    isDuplicatePhotos?: boolean;
+                } = await findDuplicateContentHash(abortSignal, {
+                    file,
+                    volumeId,
+                    shareId,
+                    parentLinkId: parentId,
+                });
+
+                checkSignal(abortSignal, file.name);
+                // Automatically replace file - previous draft was uploaded
+                // by the same client.
+                if (draftLinkId && clientUid) {
+                    log(`Automatically replacing draft link ID: ${draftLinkId}`);
+                    // Careful: uploading duplicate file has different name and
+                    // this newName has to be used, not file.name.
+                    // Example: upload A, then do it again with adding number
+                    // A (2) which will fail, then do it again to replace draft
+                    // with new upload - it needs to be A (2), not just A.
+                    return replaceDraft(abortSignal, newName, mimeType, hash, keys, draftLinkId, clientUid);
+                }
+
+                if (isDuplicatePhotos) {
+                    throw new TransferSkipped({
+                        message: c('Info').t`This item already exists in your library`,
+                    });
+                }
+
+                log(`Creating new photos file`);
+                return createFile(abortSignal, file.name, mimeType, hash, keys);
+            },
+            MAX_UPLOAD_BLOCKS_LOAD
+        );
+
+        const createOptimisticFileRevision = queuedFunction(
+            'create_file_revision',
+            async (abortSignal: AbortSignal, mimeType: string, keys: FileKeys): Promise<FileRevision> => {
+                const volumeId = volumeState.findVolumeId(shareId);
+                if (!volumeId) {
+                    throw new Error('Trying to find missing volume');
+                }
+                const hash = await findHash(abortSignal, { shareId, parentLinkId: parentId, filename: file.name });
+
+                checkSignal(abortSignal, file.name);
+
+                log(`Creating new file`);
+                return createFile(abortSignal, file.name, mimeType, hash, keys).catch(async (err) => {
+                    if (isErrorDueToNameConflict(err)) {
+                        const {
+                            filename: newName,
+                            hash,
+                            draftLinkId,
+                            clientUid,
+                        } = await findAvailableName(abortSignal, {
+                            shareId,
+                            parentLinkId: parentId,
+                            filename: file.name,
+                        });
+
+                        checkSignal(abortSignal, file.name);
+
+                        // Automatically replace file - previous draft was uploaded
+                        // by the same client.
+                        if (draftLinkId && clientUid) {
+                            log(`Automatically replacing draft link ID: ${draftLinkId}`);
+                            // Careful: uploading duplicate file has different name and
+                            // this newName has to be used, not file.name.
+                            // Example: upload A, then do it again with adding number
+                            // A (2) which will fail, then do it again to replace draft
+                            // with new upload - it needs to be A (2), not just A.
+                            return replaceDraft(abortSignal, newName, mimeType, hash, keys, draftLinkId, clientUid);
+                        }
+
+                        return handleNameConflict(abortSignal, mimeType, keys, {
+                            filename: newName,
+                            hash,
+                            draftLinkId,
+                        });
+                    }
+                    throw err;
+                });
+            },
+            MAX_UPLOAD_BLOCKS_LOAD
+        );
+
+        const selectFileRevisionCreation = (abortSignal: AbortSignal, mimeType: string, keys: FileKeys) => {
+            if (isOptimisticUploadEnabled) {
+                if (isForPhotos) {
+                    return createPhotosFileRevision(abortSignal, mimeType, keys);
+                }
+                return createOptimisticFileRevision(abortSignal, mimeType, keys);
+            }
+            // TODO [DRVWEB-3951]: Remove original function after complete rollout of 'DriveWebOptimisticUploadEnabled' feature flag
+            // The original function entangle both photos and files revision and is not optimistic
+            return createFileRevision(abortSignal, mimeType, keys);
+        };
 
         // If the upload was aborted but we already called finalize to commit
         // revision, we cannot delete the revision. API does not support
@@ -376,7 +515,7 @@ export default function useUploadFile() {
                     };
                 },
                 createFileRevision: async (abortSignal: AbortSignal, mimeType: string, keys: FileKeys) => {
-                    createdFileRevisionPromise = createFileRevision(abortSignal, mimeType, keys);
+                    createdFileRevisionPromise = selectFileRevisionCreation(abortSignal, mimeType, keys);
                     const [createdFileRevision, addressKeyInfo, parentHashKey] = await Promise.all([
                         createdFileRevisionPromise,
                         getShareKeys(abortSignal),
