@@ -9,14 +9,28 @@ import { getPrimaryPublicKeyForEmail } from '../../../../utils/getPublicKeysForE
 import { ShareInviteeValdidationError, VALIDATION_ERROR_TYPES } from './helpers/ShareInviteeValidationError';
 import { useShareInvitees } from './useShareInvitees';
 
-const invitee = {
-    name: 'test2@proton.black',
-    email: 'test2@proton.black',
+// Internal and proton account
+const inviteeInternal = {
+    name: 'bob@proton.black',
+    email: 'bob@proton.black',
 };
 
-const invitee2 = {
-    name: 'test3@proton.black',
-    email: 'test3@proton.black',
+// Internal and proton account
+const inviteeInternal2 = {
+    name: 'alice@proton.black',
+    email: 'alice@proton.black',
+};
+
+// External account but proton one
+const inviteeExternalProton = {
+    name: 'jack@proton.me',
+    email: 'jack@proton.me',
+};
+
+// External non-proton account
+const inviteeExternalNonProton = {
+    name: 'rob@jon.foo',
+    email: 'rob@jon.foo',
 };
 
 const mockedCreateNotification = jest.fn();
@@ -46,37 +60,41 @@ const publicKey = {
 describe('useShareInvitees', () => {
     beforeEach(() => {
         when(mockedGetPrimaryPublicKey)
-            .calledWith(expect.anything(), invitee.email)
+            .calledWith(expect.anything(), inviteeInternal.email)
             .mockResolvedValue(primaryPublicKey);
+
         when(mockedImportPublicKey).calledWith({ armoredKey: primaryPublicKey }).mockResolvedValue(publicKey);
-        when(mockedGetPrimaryPublicKey).calledWith(expect.anything(), invitee2.email).mockResolvedValue(undefined);
     });
     afterEach(() => {
         jest.clearAllMocks();
     });
 
     describe('add', () => {
+        // TODO: We currently don't support non-proton account, update test after support
         it('should be able to add proton/non-proton invitee', async () => {
-            when(mockedGetPrimaryPublicKey)
-                .calledWith(expect.anything(), invitee.email)
-                .mockResolvedValue(primaryPublicKey);
-            when(mockedImportPublicKey).calledWith({ armoredKey: primaryPublicKey }).mockResolvedValue(publicKey);
-            when(mockedGetPrimaryPublicKey).calledWith(expect.anything(), invitee2.email).mockResolvedValue(undefined);
             const { result } = renderHook(() => useShareInvitees([]));
 
             await act(async () => {
-                result.current.add([invitee, invitee2]);
+                result.current.add([inviteeInternal, inviteeExternalProton, inviteeExternalNonProton]);
             });
             // @ts-ignore
             expect(result.all[1].invitees).toEqual([
-                { ...invitee, isLoading: true },
-                { ...invitee2, isLoading: true },
+                { ...inviteeInternal, isLoading: true },
+                { ...inviteeExternalProton, error: new Error('External accounts are not supported yet') },
+                { ...inviteeExternalNonProton, error: new Error('External accounts are not supported yet') },
             ]);
 
-            expect(result.current.count).toBe(2);
+            expect(result.current.count).toBe(3);
             expect(result.current.invitees).toEqual([
-                { ...invitee, publicKey, isExternal: false, isLoading: false },
-                { ...invitee2, publicKey: undefined, isExternal: true, isLoading: false },
+                { ...inviteeInternal, publicKey, isExternal: false, isLoading: false },
+                {
+                    ...inviteeExternalProton,
+                    error: new Error('External accounts are not supported yet'),
+                },
+                {
+                    ...inviteeExternalNonProton,
+                    error: new Error('External accounts are not supported yet'),
+                },
             ]);
             verifyAllWhenMocksCalled();
         });
@@ -85,31 +103,31 @@ describe('useShareInvitees', () => {
             const { result, waitFor } = renderHook(() => useShareInvitees([]));
 
             act(() => {
-                result.current.add([invitee, invitee]);
+                result.current.add([inviteeInternal, inviteeInternal]);
             });
 
             await waitFor(() =>
                 expect(result.current.invitees).toEqual([
-                    { ...invitee, publicKey, isExternal: false, isLoading: false, error: undefined },
+                    { ...inviteeInternal, publicKey, isExternal: false, isLoading: false, error: undefined },
                 ])
             );
             expect(mockedCreateNotification).toHaveBeenCalledWith({
                 type: 'warning',
-                text: `Removed duplicate invitees: ${invitee.email}`,
+                text: `Removed duplicate invitees: ${inviteeInternal.email}`,
             });
         });
 
         it('adding an existing invitee should add it with an error', async () => {
-            const { result, waitFor } = renderHook(() => useShareInvitees([invitee.email]));
+            const { result, waitFor } = renderHook(() => useShareInvitees([inviteeInternal.email]));
 
             act(() => {
-                result.current.add([invitee]);
+                result.current.add([inviteeInternal]);
             });
 
             await waitFor(() =>
                 expect(result.current.invitees).toEqual([
                     {
-                        ...invitee,
+                        ...inviteeInternal,
                         error: new ShareInviteeValdidationError(VALIDATION_ERROR_TYPES.EXISTING_MEMBER),
                     },
                 ])
@@ -120,13 +138,13 @@ describe('useShareInvitees', () => {
             const { result, waitFor } = renderHook(() => useShareInvitees([]));
 
             act(() => {
-                result.current.add([{ ...invitee, email: 'lucienTest.com' }]);
+                result.current.add([{ ...inviteeInternal, email: 'lucienTest.com' }]);
             });
 
             await waitFor(() =>
                 expect(result.current.invitees).toEqual([
                     {
-                        ...invitee,
+                        ...inviteeInternal,
                         email: 'lucienTest.com',
                         error: new ShareInviteeValdidationError(VALIDATION_ERROR_TYPES.INVALID_EMAIL),
                     },
@@ -141,13 +159,13 @@ describe('useShareInvitees', () => {
             const error = new Error('This is an error');
 
             act(() => {
-                result.current.add([invitee]);
+                result.current.add([inviteeInternal]);
             });
 
-            await waitFor(() => expect(result.current.invitees).toEqual([{ ...invitee, isLoading: true }]));
+            await waitFor(() => expect(result.current.invitees).toEqual([{ ...inviteeInternal, isLoading: true }]));
 
             await waitFor(() =>
-                expect(result.current.invitees).toEqual([{ ...invitee, isLoading: false, error: error }])
+                expect(result.current.invitees).toEqual([{ ...inviteeInternal, isLoading: false, error: error }])
             );
 
             expect(mockedCreateNotification).toHaveBeenCalledWith({
@@ -159,40 +177,46 @@ describe('useShareInvitees', () => {
 
     describe('remove', () => {
         it('should be able to remove an invitee added previously', async () => {
+            when(mockedGetPrimaryPublicKey)
+                .calledWith(expect.anything(), inviteeInternal2.email)
+                .mockResolvedValue(primaryPublicKey);
             const { result } = renderHook(() => useShareInvitees([]));
 
             await act(async () => {
-                result.current.add([invitee, invitee2]);
+                result.current.add([inviteeInternal, inviteeInternal2]);
             });
 
             expect(result.current.count).toBe(2);
             expect(result.current.invitees).toEqual([
-                { ...invitee, publicKey, isExternal: false, isLoading: false, error: undefined },
-                { ...invitee2, publicKey: undefined, isExternal: true, isLoading: false, error: undefined },
+                { ...inviteeInternal, publicKey, isExternal: false, isLoading: false },
+                { ...inviteeInternal2, publicKey, isExternal: false, isLoading: false },
             ]);
 
             await act(async () => {
-                result.current.remove(invitee.email);
+                result.current.remove(inviteeInternal.email);
             });
             expect(result.current.count).toBe(1);
 
             expect(result.current.invitees).toEqual([
-                { ...invitee2, publicKey: undefined, isExternal: true, isLoading: false },
+                { ...inviteeInternal2, publicKey, isExternal: false, isLoading: false },
             ]);
         });
     });
 
     describe('clean', () => {
         it('should be able to clean all invitees added previously', async () => {
+            when(mockedGetPrimaryPublicKey)
+                .calledWith(expect.anything(), inviteeInternal2.email)
+                .mockResolvedValue(primaryPublicKey);
             const { result } = renderHook(() => useShareInvitees([]));
 
             await act(async () => {
-                result.current.add([invitee, invitee2]);
+                result.current.add([inviteeInternal, inviteeInternal2]);
             });
             expect(result.current.count).toBe(2);
             expect(result.current.invitees).toEqual([
-                { ...invitee, publicKey, isExternal: false, isLoading: false, error: undefined },
-                { ...invitee2, publicKey: undefined, isExternal: true, isLoading: false },
+                { ...inviteeInternal, publicKey, isExternal: false, isLoading: false, error: undefined },
+                { ...inviteeInternal2, publicKey, isExternal: false, isLoading: false, error: undefined },
             ]);
 
             await act(async () => {
