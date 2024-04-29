@@ -41,7 +41,7 @@ const VoidRecoveryFilesModal = ({ deviceRecoveryEnabled, onVoid, onClose, ...res
             <p className="m-0">
                 {deviceRecoveryEnabled
                     ? c('Info')
-                          .t`You won’t be able to recover locked data using your downloaded recovery files. This will also disable trusted device recovery.`
+                          .t`You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.`
                     : c('Info').t`You won’t be able to recover locked data using your downloaded recovery files.`}
             </p>
         </Prompt>
