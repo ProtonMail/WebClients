@@ -91,11 +91,7 @@ const UploadCSVFileButton = ({
 
                             {passwordMinLengthErrors.length > 0 ? (
                                 <p className="my-0">
-                                    {c('Info').ngettext(
-                                        msgid`Please use a password more than ${MIN_PASSWORD_LENGTH} character.`,
-                                        `Please use a password more than ${MIN_PASSWORD_LENGTH} characters.`,
-                                        MIN_PASSWORD_LENGTH
-                                    )}{' '}
+                                    {c('Info').t`Password must be ${MIN_PASSWORD_LENGTH} characters or more.`}{' '}
                                     {c('Info').ngettext(
                                         msgid`Affected user is on row`,
                                         `Affected users are on rows`,
