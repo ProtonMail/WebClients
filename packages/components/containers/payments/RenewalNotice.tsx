@@ -73,6 +73,7 @@ export const getCheckoutRenewNoticeText = ({
     planIDs,
     plansMap,
     currency,
+    checkout,
 }: {
     cycle: CYCLE;
     planIDs: PlanIDs;
@@ -84,7 +85,28 @@ export const getCheckoutRenewNoticeText = ({
     if (planIDs[PLANS.VPN2024]) {
         const result = getVPN2024Renew({ planIDs, plansMap, cycle })!;
         const renewCycle = result.renewalLength;
-        if (renewCycle === CYCLE.MONTHLY) {
+        const renewPrice = (
+            <Price key="renewal-price" currency={currency}>
+                {result.renewPrice}
+            </Price>
+        );
+
+        const priceWithDiscount = (
+            <Price key="price-with-discount" currency={currency}>
+                {checkout.withDiscountPerMonth}
+            </Price>
+        );
+
+        const oneMonthCoupons: COUPON_CODES[] = [COUPON_CODES.TRYVPNPLUS2024];
+
+        if (
+            renewCycle === CYCLE.MONTHLY &&
+            cycle === CYCLE.MONTHLY &&
+            oneMonthCoupons.includes(coupon as COUPON_CODES)
+        ) {
+            return c('vpn_2024: renew')
+                .jt`The specially discounted price of ${priceWithDiscount} is valid for the first month. Then it will automatically be renewed at ${renewPrice} every month. You can cancel at any time.`;
+        } else if (renewCycle === CYCLE.MONTHLY) {
             return c('vpn_2024: renew')
                 .t`Subscription auto-renews every 1 month. Your next billing date is in 1 month.`;
         }
@@ -96,11 +118,6 @@ export const getCheckoutRenewNoticeText = ({
             msgid`Your subscription will automatically renew in ${cycle} month.`,
             `Your subscription will automatically renew in ${cycle} months.`,
             cycle
-        );
-        const renewPrice = (
-            <Price key="renewal-price" currency={currency}>
-                {result.renewPrice}
-            </Price>
         );
         if (renewCycle !== CYCLE.YEARLY) {
             throw new Error('Should never happen');
