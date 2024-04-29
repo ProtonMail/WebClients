@@ -7,6 +7,7 @@ import type {
     PromiseReject,
     PromiseResolve,
     RunningAction,
+    ShortenAction,
     WriteFullEmailAction,
 } from './types';
 
@@ -19,30 +20,42 @@ function getRandomNumber(min: number, max: number): number {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-export class DummyWriteFullEmailAction {
-    private running: boolean;
+function getRandomLetter(): string {
+    return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
+}
 
-    private done: boolean;
+function generateRandomWord(): string {
+    const length = getRandomNumber(3, 10);
+    return Array.from({ length }, () => getRandomLetter()).join('');
+}
 
-    private cancelled: boolean;
-
-    private action_: WriteFullEmailAction;
-
-    private finishedPromise: Promise<void>;
-
-    private finishedPromiseSignals: { resolve: PromiseResolve; reject: PromiseReject } | undefined;
-
-    constructor(action: WriteFullEmailAction, callback: GenerationCallback) {
-        this.running = true;
-        this.done = false;
-        this.cancelled = false;
-        this.action_ = action;
-        this.finishedPromise = new Promise<void>((resolve: PromiseResolve, reject: PromiseReject) => {
-            this.finishedPromiseSignals = { resolve, reject };
-        });
-
-        void this.startGeneration(action, callback);
+function generateRandomSentence(nWords?: number): string[] {
+    if (nWords === undefined) {
+        nWords = getRandomNumber(50, 200);
     }
+
+    const words = [];
+
+    for (let i = 0; i < nWords; i++) {
+        const word = generateRandomWord();
+        words.push(word);
+    }
+
+    return words;
+}
+
+class DummyRunningActionBase implements RunningAction {
+    protected running: boolean;
+
+    protected done: boolean;
+
+    protected cancelled: boolean;
+
+    protected action_: Action;
+
+    protected finishedPromise: Promise<void>;
+
+    protected finishedPromiseSignals: { resolve: PromiseResolve; reject: PromiseReject } | undefined;
 
     isRunning(): boolean {
         return this.running;
@@ -73,10 +86,27 @@ export class DummyWriteFullEmailAction {
         return this.finishedPromise;
     }
 
+    constructor(action: Action) {
+        this.running = true;
+        this.done = false;
+        this.cancelled = false;
+        this.action_ = action;
+        this.finishedPromise = new Promise<void>((resolve: PromiseResolve, reject: PromiseReject) => {
+            this.finishedPromiseSignals = { resolve, reject };
+        });
+    }
+}
+
+export class DummyWriteFullEmailRunningAction extends DummyRunningActionBase {
+    constructor(action: WriteFullEmailAction, callback: GenerationCallback) {
+        super(action);
+        void this.startGeneration(action, callback);
+    }
+
     private async startGeneration(action: WriteFullEmailAction, callback: GenerationCallback) {
         try {
             this.running = true;
-            const words = this.generateRandomSentence();
+            const words = generateRandomSentence();
             let fulltext = '';
             await delay(5000);
             for (let i = 0; i < words.length && this.running; i++) {
@@ -94,26 +124,36 @@ export class DummyWriteFullEmailAction {
         }
         this.finishedPromiseSignals?.resolve();
     }
+}
 
-    private generateRandomSentence(): string[] {
-        const wordCount = getRandomNumber(50, 200);
-        const words = [];
+export class DummyShortenRunningAction extends DummyRunningActionBase {
+    constructor(action: ShortenAction, callback: GenerationCallback) {
+        super(action);
+        void this.startGeneration(action, callback);
+    }
 
-        for (let i = 0; i < wordCount; i++) {
-            const word = this.generateRandomWord();
-            words.push(word);
+    protected async startGeneration(action: ShortenAction, callback: GenerationCallback) {
+        try {
+            this.running = true;
+            const nWordsInput = action.partToRephase.split(/\W/).length;
+            const nWordsOutput = nWordsInput > 10 ? nWordsInput / 2 : nWordsInput;
+            const words = generateRandomSentence(nWordsOutput);
+            let fulltext = '';
+            await delay(5000);
+            for (let i = 0; i < words.length && this.running; i++) {
+                await delay(150);
+                let word = words[i] + ' ';
+                fulltext += word;
+                callback(word, fulltext);
+            }
+            this.done = true;
+            this.running = false;
+        } catch (e) {
+            this.running = false;
+            this.finishedPromiseSignals?.reject();
+            return;
         }
-
-        return words;
-    }
-
-    private generateRandomWord(): string {
-        const length = getRandomNumber(3, 10);
-        return Array.from({ length }, () => this.getRandomLetter()).join('');
-    }
-
-    private getRandomLetter(): string {
-        return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
+        this.finishedPromiseSignals?.resolve();
     }
 }
 
@@ -125,15 +165,16 @@ export class DummyLlmModel implements LlmModel {
     async performAction(action: Action, callback: GenerationCallback): Promise<RunningAction> {
         switch (action.type) {
             case 'writeFullEmail':
-                const run = new DummyWriteFullEmailAction(action, callback);
-                return run;
+                return new DummyWriteFullEmailRunningAction(action, callback);
+            case 'shorten': {
+                return new DummyShortenRunningAction(action, callback);
+            }
             default:
                 throw Error('unimplemented');
         }
     }
 }
 
-// @ts-ignore
 export class DummyLlmManager implements LlmManager {
     private TOTAL_CHUNKS = 50;
 
