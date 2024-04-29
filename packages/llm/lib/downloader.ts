@@ -13,9 +13,10 @@ type FileDownload = {
     destinationCache: Cache;
     expectedMd5?: string;
     progress: number;
+    expectedSize?: number;
 };
 
-type UpdateProgressCallback = (url: string, progress: number) => void;
+type UpdateProgressCallback = (url: string, received: number, total: number) => void;
 
 type DownloadResult = {
     headers: Headers;
@@ -79,7 +80,7 @@ async function storeLocalDataInCache(
 }
 
 // Check if a given url is already present in the cache, and optionally verify its MD5 checksum.
-async function existsInCache(url: string, destinationCache: Cache, expectedMd5: string | undefined) {
+async function existsInCache(url: string, destinationCache: Cache, expectedMd5?: string) {
     let cachedResponse = await destinationCache.match(url);
     if (!cachedResponse) {
         return false;
@@ -122,7 +123,7 @@ async function downloadFile(url: string, updateProgress: UpdateProgressCallback)
         }
         chunks.push(value);
         receivedLength += value.length;
-        updateProgress(url, (receivedLength / contentLength) * 100);
+        updateProgress(url, receivedLength, contentLength);
     }
     return { status, statusText, headers, chunks };
 }
@@ -175,26 +176,19 @@ function listFilesToDownload(variantConfig: VariantConfig, appCaches: AppCaches)
     const wasmUrl = variantConfig.model_lib_url; // 'https://mail.proton.me/.../file.wasm'
     const wasmKey = new URL(variantConfig.model_lib_url).pathname; // '/.../file.wasm'
 
-    const files: FileDownload[] = ndarrayCache.records.map((record) => ({
-        // "webllm/model" -> ".../params_shard_*.bin"
-        url: new URL(record.dataPath, baseUrl).href,
-        key: `${baseKey}${record.dataPath}`,
-        destinationCache: appCaches.model,
-        expectedMd5: record.md5sum,
-        progress: 0,
-    }));
-    files.push({
-        // "webllm/model" -> ".../tokenizer.json"
-        url: new URL('tokenizer.json', baseUrl).href,
-        key: `${baseKey}tokenizer.json`,
-        destinationCache: appCaches.model,
-        progress: 0,
-    });
+    const files: FileDownload[] = [];
     files.push({
         // "webllm/model" -> ".../mlc-chat-config.json"
         url: new URL('mlc-chat-config.json', baseUrl).href,
         key: `${baseKey}mlc-chat-config.json`,
         destinationCache: appCaches.config,
+        progress: 0,
+    });
+    files.push({
+        // "webllm/model" -> ".../tokenizer.json"
+        url: new URL('tokenizer.json', baseUrl).href,
+        key: `${baseKey}tokenizer.json`,
+        destinationCache: appCaches.model,
         progress: 0,
     });
     files.push({
@@ -204,6 +198,17 @@ function listFilesToDownload(variantConfig: VariantConfig, appCaches: AppCaches)
         destinationCache: appCaches.wasm,
         progress: 0,
     });
+    files.push(
+        ...ndarrayCache.records.map((record) => ({
+            // "webllm/model" -> ".../params_shard_*.bin"
+            url: new URL(record.dataPath, baseUrl).href,
+            key: `${baseKey}${record.dataPath}`,
+            destinationCache: appCaches.model,
+            expectedMd5: record.md5sum,
+            progress: 0,
+            expectedSize: record.nbytes,
+        }))
+    );
     return files;
 }
 
@@ -234,9 +239,35 @@ export async function downloadModel(variant: string) {
     const files = listFilesToDownload(variantConfig, appCaches);
 
     // Start downloading files
-    const updateProgress = (url: string, progress: number) => {
+    const sizes: Map<string, number> = new Map(
+        files.filter((f) => f.expectedSize).map((f) => [f.url, f.expectedSize!])
+    );
+    let overallSize = [...sizes.values()].reduce((acc, n) => acc + n, 0);
+
+    const receivedSizes: Map<string, number> = new Map(
+        await Promise.all(
+            files.map(async (f): Promise<[string, number]> => {
+                let size = await existsInCache(f.url, f.destinationCache).then((exists) =>
+                    exists ? f.expectedSize || 0 : 0
+                );
+                return [f.url, size];
+            })
+        )
+    );
+
+    const updateProgress = (url: string, received: number, total: number) => {
+        if (!sizes.has(url) && total > 0) {
+            sizes.set(url, total);
+            overallSize = [...sizes.values()].reduce((acc, n) => acc + n, 0);
+        }
+        const receivedCapped = Math.min(received, total);
+        receivedSizes.set(url, receivedCapped);
+        const overallReceived = [...receivedSizes.values()].reduce((acc, n) => acc + n, 0);
+        const progress = overallReceived / overallSize;
         /* eslint-disable-next-line no-console */
-        console.log(`${url}: downloading, progress: ${progress.toFixed(2)}%`);
+        console.log(
+            `${url}: downloading, progress: ${overallReceived} / ${overallSize} (${(progress * 100).toFixed(2)}%)`
+        );
     };
     await downloadFilesSequentially(files, updateProgress);
 }
