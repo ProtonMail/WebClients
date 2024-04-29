@@ -67,6 +67,7 @@ interface Props {
     onToggleAssistant: () => void;
     isInert: boolean;
     onToggleToobar: () => void;
+    toolbarWrapperRef: MutableRefObject<HTMLDivElement | null>;
 }
 
 const ComposerActions = ({
@@ -95,6 +96,7 @@ const ComposerActions = ({
     onToggleAssistant,
     isInert,
     onToggleToobar,
+    toolbarWrapperRef,
 }: Props) => {
     const dispatch = useMailDispatch();
 
@@ -233,9 +235,12 @@ const ComposerActions = ({
                                 c('Action').t`Display toolbar`
                             }
                         >
-                            <Button onClick={onToggleToobar}>
-                                <Icon name="palette" alt={c('Action').t`Display toolbar`} />
-                            </Button>
+                            <div className="relative">
+                                <div className="absolute" style={{ bottom: '100%' }} ref={toolbarWrapperRef} />
+                                <Button onClick={onToggleToobar}>
+                                    <Icon name="palette" alt={c('Action').t`Display toolbar`} />
+                                </Button>
+                            </div>
                         </Tooltip>
                         <Tooltip title={titleDeleteDraft}>
                             <Button
