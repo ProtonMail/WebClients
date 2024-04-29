@@ -6,6 +6,7 @@ import { getDuplicatePasswords, intoAliasMonitorAddress } from '@proton/pass/lib
 import { AddressType } from '@proton/pass/lib/monitor/types';
 import type { State } from '@proton/pass/store/types';
 import type { SelectedItem } from '@proton/pass/types';
+import { first } from '@proton/pass/utils/array/first';
 import { invert } from '@proton/pass/utils/fp/predicates';
 
 import { selectAliasItems, selectLoginItems } from './items';
@@ -24,7 +25,7 @@ export const selectItemReport = (item: SelectedItem) =>
 
 export const selectCustomBreaches = createSelector(selectMonitorState, (monitor) => monitor?.custom);
 export const selectProtonBreaches = createSelector(selectMonitorState, (monitor) => monitor?.proton);
-export const selectMonitorPreview = createSelector(selectMonitorState, (monitor) => monitor?.preview);
+export const selectMonitorPreview = createSelector(selectMonitorState, (monitor) => first(monitor?.preview ?? []));
 export const selectTotalBreaches = createSelector(selectMonitorState, (monitor) => monitor?.total);
 export const selectHasCustomDomains = createSelector(selectMonitorState, (monitor) => monitor?.customDomains);
 
