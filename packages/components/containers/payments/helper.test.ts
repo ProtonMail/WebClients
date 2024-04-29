@@ -74,4 +74,59 @@ describe('isSubscriptionUnchanged', () => {
         const result = isSubscriptionUnchanged(subscription, planIds, 'USD');
         expect(result).toBe(false);
     });
+    it('should return true if the upcoming subscription unchanged', () => {
+        const subscription = getSubscriptionMock();
+        subscription.Cycle = CYCLE.MONTHLY;
+        subscription.UpcomingSubscription = getSubscriptionMock();
+        subscription.UpcomingSubscription.Cycle = CYCLE.YEARLY;
+
+        const planIds: PlanIDs = getPlanIDs(subscription);
+
+        const currentSubscriptionUnchanged = isSubscriptionUnchanged(
+            subscription,
+            planIds,
+            subscription.Currency,
+            CYCLE.MONTHLY
+        );
+        expect(currentSubscriptionUnchanged).toBe(true);
+
+        const upcomingSubscriptionUnchanged = isSubscriptionUnchanged(
+            subscription,
+            planIds,
+            subscription.Currency,
+            CYCLE.YEARLY
+        );
+        expect(upcomingSubscriptionUnchanged).toBe(true);
+    });
+
+    it('should return false if there is no upcoming subscription', () => {
+        const subscription = getSubscriptionMock();
+        subscription.Cycle = CYCLE.MONTHLY;
+
+        const planIds: PlanIDs = getPlanIDs(subscription);
+
+        const currentSubscriptionUnchanged = isSubscriptionUnchanged(
+            subscription,
+            planIds,
+            subscription.Currency,
+            CYCLE.MONTHLY
+        );
+        expect(currentSubscriptionUnchanged).toBe(true);
+
+        const upcomingSubscriptionUnchangedYearly = isSubscriptionUnchanged(
+            subscription,
+            planIds,
+            subscription.Currency,
+            CYCLE.YEARLY
+        );
+        expect(upcomingSubscriptionUnchangedYearly).toBe(false);
+
+        const upcomingSubscriptionUnchangedTwoYears = isSubscriptionUnchanged(
+            subscription,
+            planIds,
+            subscription.Currency,
+            CYCLE.TWO_YEARS
+        );
+        expect(upcomingSubscriptionUnchangedTwoYears).toBe(false);
+    });
 });
