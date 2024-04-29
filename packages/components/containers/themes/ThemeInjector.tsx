@@ -79,7 +79,9 @@ export const ThemeInjector = () => {
 
     useEffect(() => {
         const cb = debounce((settings: ThemeSetting) => {
-            silentApi(updateTheme(settings)).catch(noop);
+            if (!hasInboxDesktopFeature('ThemeSelection')) {
+                silentApi(updateTheme(settings)).catch(noop);
+            }
         }, 500);
 
         const removeListener = addListener(cb);
