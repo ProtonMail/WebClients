@@ -3,7 +3,7 @@ import { c, msgid } from 'ttag';
 import { CYCLE } from '@proton/shared/lib/constants';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { getPlanIDs } from '@proton/shared/lib/helpers/subscription';
-import { Currency, Cycle, PlanIDs, Subscription } from '@proton/shared/lib/interfaces';
+import { Currency, Cycle, PlanIDs, SubscriptionModel } from '@proton/shared/lib/interfaces';
 
 export const getTotalBillingText = (cycle: Cycle) => {
     const n = cycle;
@@ -15,7 +15,7 @@ export const getShortBillingText = (n: number) => {
 };
 
 export function isSubscriptionUnchanged(
-    subscription: Subscription | null | undefined,
+    subscription: SubscriptionModel | null | undefined,
     planIds: PlanIDs,
     plansCurrency: Currency,
     cycle?: CYCLE
@@ -25,7 +25,8 @@ export function isSubscriptionUnchanged(
     const planIdsUnchanged = isDeepEqual(subscriptionPlanIds, planIds);
     const currencyUnchanged = !!subscription ? subscription?.Currency === plansCurrency : true;
     // Cycle is optional, so if it is not provided, we assume it is unchanged
-    const cycleUnchanged = !cycle || subscription?.Cycle === cycle;
+    const cycleUnchanged =
+        !cycle || cycle === subscription?.Cycle || cycle === subscription?.UpcomingSubscription?.Cycle;
 
     return planIdsUnchanged && cycleUnchanged && currencyUnchanged;
 }
