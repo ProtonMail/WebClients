@@ -60,7 +60,7 @@ export const Breaches: FC = () => {
                 <BreachGroupList
                     data={custom.data}
                     displayLimit={5}
-                    title={`${custom.title} (${custom.data.length})`}
+                    title={`${custom.title} (${monitor.breaches.data.custom.length})`}
                     loading={custom.loading}
                     seeAllHref={getLocalPath(`monitor/dark-web/${AddressType.CUSTOM}`)}
                     actions={<CustomAddressAddButton />}
