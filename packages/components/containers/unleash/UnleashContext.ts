@@ -49,6 +49,7 @@ enum DriveFeatureFlag {
     DriveSharingDevelopment = 'DriveSharingDevelopment',
     DriveDownloadScan = 'DriveDownloadScan',
     DriveDownloadScanDisabled = 'DriveDownloadScanDisabled',
+    DriveWebOptimisticUploadEnabled = 'DriveWebOptimisticUploadEnabled',
 }
 
 enum MailFeatureFlag {
