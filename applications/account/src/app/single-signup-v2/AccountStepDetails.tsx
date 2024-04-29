@@ -62,6 +62,42 @@ const first = <T,>(errors: T[]) => {
 const emailAsyncValidator = createAsyncValidator(validateEmailAvailability);
 const usernameAsyncValidator = createAsyncValidator(validateUsernameAvailability);
 
+const getAccountDetailsFromEmail = ({
+    email,
+    domains,
+    defaultDomain,
+}: {
+    email: string;
+    domains: string[];
+    defaultDomain: string | undefined;
+}) => {
+    const [local, domain] = getEmailParts(email);
+
+    const protonDomain = (() => {
+        if (!domain && defaultDomain) {
+            return defaultDomain;
+        }
+        if (domain) {
+            const lowerCaseDomain = domain.toLowerCase();
+            return domains.find((domain) => lowerCaseDomain === domain);
+        }
+    })();
+
+    if (protonDomain) {
+        return {
+            signupType: SignupType.Username,
+            local,
+            domain: protonDomain,
+        };
+    }
+
+    return {
+        signupType: SignupType.Email,
+        local,
+        domain,
+    };
+};
+
 interface InputState {
     interactive: boolean;
     focus: boolean;
@@ -302,21 +338,22 @@ const AccountStepDetails = ({
         });
     }, []);
 
+    const focusChallenge = (id: '#email' | '#username') => {
+        // This is a hack prevent scroll since we'd need to add support for that in challenge
+        // TODO: Add support for preventScroll
+        const scrollEl = document.body.querySelector('.overflow-auto');
+        if (!scrollEl) {
+            return;
+        }
+        runAfterScroll(scrollEl, () => {
+            challengeRefEmail.current?.focus(id);
+        });
+    };
+
     const scrollInto = (target: 'username' | 'email' | 'password' | 'passwordConfirm') => {
         if (target === 'email' || target === 'username') {
             formInputRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
-            const focusChallenge = (id: string) => {
-                // This is a hack prevent scroll since we'd need to add support for that in challenge
-                // TODO: Add support for preventScroll
-                const scrollEl = document.body.querySelector('.overflow-auto');
-                if (!scrollEl) {
-                    return;
-                }
-                runAfterScroll(scrollEl, () => {
-                    challengeRefEmail.current?.focus(id);
-                });
-            };
             if (target === 'email') {
                 focusChallenge('#email');
             }
@@ -388,13 +425,9 @@ const AccountStepDetails = ({
         return true;
     };
 
-    const onEmailValue = (value: string) => {
-        inputValuesRef.current.email = true;
-        setInputsStateDiff({ email: { interactive: true } });
-        setInputsDiff({ email: value });
-        const email = value.trim();
+    const handleEmailError = (email: string) => {
         const errors = getErrorDetails({
-            signupType,
+            signupType: SignupType.Email,
             email,
         });
         emailAsyncValidator.trigger({
@@ -404,6 +437,38 @@ const AccountStepDetails = ({
             set: setEmailAsyncValidationState,
             measure,
         });
+    };
+
+    const handleUsernameError = (username: string, domain: string, asyncSet = setUsernameAsyncValidationState) => {
+        const errors = getErrorDetails({
+            signupType: SignupType.Username,
+            username,
+            domain,
+        });
+        usernameAsyncValidator.trigger({
+            api,
+            error: !!errors.username,
+            value: joinUsernameDomain(username, domain),
+            set: asyncSet,
+            measure,
+        });
+    };
+
+    const onEmailValue = (value: string) => {
+        inputValuesRef.current.email = true;
+        setInputsStateDiff({ email: { interactive: true } });
+        setInputsDiff({ email: value });
+        const email = value.trim();
+        const accountDetails = getAccountDetailsFromEmail({
+            email,
+            domains,
+            defaultDomain: undefined,
+        });
+        if (accountDetails.signupType === SignupType.Username) {
+            handleUsernameError(accountDetails.local, accountDetails.domain, setEmailAsyncValidationState);
+        } else {
+            handleEmailError(email);
+        }
     };
 
     const onUsernameValue = (value: string, domain: string) => {
@@ -422,19 +487,7 @@ const AccountStepDetails = ({
             setInputsDiff({ username: sanitizedValue });
         }
 
-        const username = sanitizedValue.trim();
-        const errors = getErrorDetails({
-            signupType,
-            username,
-            domain,
-        });
-        usernameAsyncValidator.trigger({
-            api,
-            error: !!errors.username,
-            value: joinUsernameDomain(username, domain),
-            set: setUsernameAsyncValidationState,
-            measure,
-        });
+        handleUsernameError(sanitizedValue.trim(), domain, setUsernameAsyncValidationState);
     };
 
     useImperativeHandle(accountStepDetailsRef, () => ({
@@ -442,13 +495,34 @@ const AccountStepDetails = ({
             return validateAccountDetails();
         },
         data: async (): Promise<AccountData> => {
+            const payload = await challengeRefEmail.current?.getChallenge().catch(noop);
+
+            if (signupType === SignupType.Email) {
+                const emailAccountDetails = getAccountDetailsFromEmail({
+                    email: trimmedEmail,
+                    domains,
+                    defaultDomain: undefined,
+                });
+
+                if (signupType === SignupType.Email && emailAccountDetails.signupType === SignupType.Username) {
+                    return {
+                        email: trimmedEmail,
+                        username: emailAccountDetails.local,
+                        domain: emailAccountDetails.domain,
+                        signupType: emailAccountDetails.signupType,
+                        password: details.password,
+                        payload,
+                    };
+                }
+            }
+
             return {
-                username: trimmedUsername,
                 email: trimmedEmail,
-                password: details.password,
-                signupType,
-                payload: await challengeRefEmail.current?.getChallenge().catch(noop),
+                username: trimmedUsername,
                 domain,
+                signupType,
+                password: details.password,
+                payload,
             };
         },
         scrollInto,
@@ -480,17 +554,14 @@ const AccountStepDetails = ({
         if (!domains.length || !defaultEmail) {
             return;
         }
-        const [local, defaultDomain] = getEmailParts(defaultEmail);
-        const protonDomain = (() => {
-            if (!defaultDomain) {
-                return domain;
-            }
-            const lowerCaseDomain = defaultDomain?.toLowerCase();
-            return domains.find((domain) => lowerCaseDomain === domain);
-        })();
-        if (protonDomain) {
-            setSignupType(SignupType.Username);
-            onUsernameValue(local, protonDomain);
+        const accountDetails = getAccountDetailsFromEmail({
+            email: defaultEmail,
+            domains,
+            defaultDomain: domain,
+        });
+        if (accountDetails.signupType === SignupType.Username) {
+            setSignupType(accountDetails.signupType);
+            onUsernameValue(accountDetails.local, accountDetails.domain);
             // Ensures the error is displayed
             setInputsStateDiff({ username: { focus: true } });
         } else if (signupTypes.includes(SignupType.Email)) {
@@ -508,6 +579,7 @@ const AccountStepDetails = ({
         states.passwordConfirm.interactive && states.passwordConfirm.focus ? errorDetails.passwordConfirm : undefined;
     const inputsWrapper = 'flex flex-column';
     const hasSwitchSignupType = signupTypes.includes(SignupType.Email) && signupTypes.length > 1;
+    const dense = !passwordFields && signupTypes.length <= 1;
     return (
         <>
             {loading && (
@@ -595,8 +667,8 @@ const AccountStepDetails = ({
                                     })()}
                                     disableChange={disableChange}
                                     disabled={disableEmail}
-                                    dense={!passwordFields ? !emailError : undefined}
-                                    rootClassName={!passwordFields ? (!emailError ? 'pb-2' : undefined) : undefined}
+                                    dense={dense ? !emailError : undefined}
+                                    rootClassName={dense ? (!emailError ? 'pb-2' : undefined) : undefined}
                                     value={details.email}
                                     onValue={onEmailValue}
                                     onBlur={() => {
@@ -649,7 +721,7 @@ const AccountStepDetails = ({
                                                         title={usernameAsyncValidationState.message || usernameError}
                                                     >
                                                         <Icon
-                                                            name="exclamation-circle-filled"
+                                                            name="exclamation-circle"
                                                             className="color-danger"
                                                             size={4}
                                                             data-testid="email-invalid"
@@ -717,10 +789,12 @@ const AccountStepDetails = ({
                                         );
                                     })()}
                                     disableChange={disableChange}
-                                    dense={!passwordFields ? !emailError : undefined}
-                                    rootClassName={!passwordFields ? (!emailError ? 'pb-2' : undefined) : undefined}
+                                    dense={dense ? !usernameError : undefined}
+                                    rootClassName={dense ? (!usernameError ? 'pb-2' : undefined) : undefined}
                                     value={details.username}
-                                    onValue={(value: string) => onUsernameValue(value, domain)}
+                                    onValue={(value: string) => {
+                                        onUsernameValue(value, domain);
+                                    }}
                                     onBlur={() => {
                                         // Doesn't work because it's in the challenge
                                         setInputsStateDiff({ username: { focus: true } });
