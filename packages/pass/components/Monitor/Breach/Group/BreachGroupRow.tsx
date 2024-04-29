@@ -1,9 +1,12 @@
 import type { FC } from 'react';
+import { Link } from 'react-router-dom';
 
 import { c, msgid } from 'ttag';
 
 import { TableCell, TableRow } from '@proton/components/components/table';
+import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import type { MonitorTableRow } from '@proton/pass/hooks/monitor/useBreachesTable';
+import { getAddressId } from '@proton/pass/lib/monitor/monitor.utils';
 import { AddressType } from '@proton/pass/lib/monitor/types';
 import { formatEpoch } from '@proton/pass/utils/time/format';
 import clsx from '@proton/utils/clsx';
@@ -40,7 +43,11 @@ export const BreachGroupRow: FC<MonitorTableRow> = (row) => {
 
     return (
         <TableRow className={clsx(monitored && verified && breached && 'color-danger')}>
-            <TableCell className="text-ellipsis">{email}</TableCell>
+            <TableCell className="text-ellipsis">
+                <Link to={getLocalPath(`monitor/dark-web/${row.type}/${getAddressId(row)}`)}>
+                    <button className="color-norm">{email}</button>
+                </Link>
+            </TableCell>
             <TableCell className={clsx('text-ellipsis', statusClassName)}>{status}</TableCell>
             <TableCell className="text-ellipsis">
                 {c('Label').ngettext(msgid`${usageCount} login`, `${usageCount} logins`, usageCount)}
