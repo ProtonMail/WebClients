@@ -44,10 +44,11 @@ const getCustomSuggestions = (data: MonitorAddress[], items: LoginItem[]): Monit
             breachCount: 0,
             breached: false,
             email,
-            type: AddressType.CUSTOM,
             monitored: false,
-            verified: false,
+            suggestion: true,
+            type: AddressType.CUSTOM,
             usageCount,
+            verified: false,
         }))
         .sort(sortOn('usageCount', 'DESC'))
         .slice(0, 5);
