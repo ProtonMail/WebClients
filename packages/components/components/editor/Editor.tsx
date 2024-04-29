@@ -49,7 +49,7 @@ interface Props {
     modalLink: any;
     modalImage: any;
     modalDefaultFont: any;
-    hasToolbar?: boolean;
+    displayToolbar?: boolean;
     hasDropzone?: boolean;
     /**
      * When true forces the small breakpoint behavior for toolbar
@@ -88,7 +88,7 @@ const Editor = ({
     modalLink,
     modalImage,
     modalDefaultFont,
-    hasToolbar = true,
+    displayToolbar = true,
     hasDropzone = true,
     isSmallViewportForToolbar = undefined,
 }: Props) => {
@@ -161,7 +161,7 @@ const Editor = ({
                     )}
                 </div>
 
-                {hasToolbar && (
+                {displayToolbar && (
                     <EditorToolbar
                         config={toolbarConfig}
                         metadata={metadata}
