@@ -1,53 +1,53 @@
 import { type FC } from 'react';
-import { Route, type RouteChildrenProps, Switch } from 'react-router-dom';
+import { type RouteChildrenProps, Switch } from 'react-router-dom';
 
 import { c } from 'ttag';
 
 import { Icon } from '@proton/components/index';
-import { removeLocalPath, subPath } from '@proton/pass/components/Navigation/routing';
-import { PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
-import clsx from '@proton/utils/clsx';
+import { Breadcrumb } from '@proton/pass/components/Layout/Breadcrumbs/Breadcrumb';
+import { type BreadcrumbRoute, BreadcrumbSwitch } from '@proton/pass/components/Layout/Breadcrumbs/BreadcrumbSwitch';
+import { getLocalPath, subPath } from '@proton/pass/components/Navigation/routing';
+import { BRAND_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
-const Breadcrumb: FC<{ active: boolean; label: string }> = ({ active, label }) => (
-    <span className={clsx(active && 'text-semibold')}>{label}</span>
-);
+const getMonitorBreadcrumbs = (): BreadcrumbRoute[] => [
+    { path: 'duplicates', label: c('Title').t`Reused passwords`, active: true },
+    { path: 'weak', label: c('Title').t`Weak passwords`, active: true },
+    { path: '2fa', label: c('Title').t`Missing 2FA`, active: true },
+    { path: 'excluded', label: c('Title').t`Excluded items`, active: true },
+    {
+        path: 'dark-web',
+        label: c('Title').t`Dark Web Monitoring`,
+        sub: [
+            { path: 'custom', label: c('Title').t`Custom addresses` },
+            { path: 'alias', label: c('Title').t`Hide-my-email aliases` },
+            { path: 'proton', label: c('Title').t`${BRAND_NAME} addresses` },
+        ],
+    },
+];
 
 export const MonitorHeader: FC<RouteChildrenProps> = ({ match }) => {
-    if (!match) return null;
-
     return (
-        <div className="flex items-center gap-2 py-1">
-            <Icon name="pass-shield-monitoring-ok" className="shrink-0" />
-            <Breadcrumb active={match?.isExact ?? false} label={c('Title').t`${PASS_SHORT_APP_NAME} Monitor`} />
-            <Switch>
-                <Route path={subPath(match.path, '(duplicates|2fa|weak|excluded)')}>
-                    {({ match: subMatch }) => {
-                        if (!subMatch) return null;
-                        return (
-                            <>
-                                <span className="mx-1">{'>'}</span>
-                                <Breadcrumb
-                                    active
-                                    label={(() => {
-                                        switch (removeLocalPath(subMatch.url)) {
-                                            case 'monitor/duplicates':
-                                                return c('Title').t`Reused passwords`;
-                                            case 'monitor/weak':
-                                                return c('Title').t`Insecure passwords`;
-                                            case 'monitor/2fa':
-                                                return c('Title').t`Missing 2FA`;
-                                            case 'monitor/excluded':
-                                                return c('Title').t`Excluded items`;
-                                        }
-
-                                        return '';
-                                    })()}
-                                />
-                            </>
-                        );
-                    }}
-                </Route>
-            </Switch>
-        </div>
+        match && (
+            <div className="flex items-center gap-1 py-1">
+                <Icon name="pass-shield-monitoring-ok" className="shrink-0" />
+                <Breadcrumb
+                    first
+                    active={match?.isExact ?? false}
+                    label={c('Title').t`${PASS_SHORT_APP_NAME} Monitor`}
+                    to={getLocalPath('monitor')}
+                />
+                <Switch>
+                    {getMonitorBreadcrumbs().map((breadcrumb) => (
+                        <BreadcrumbSwitch
+                            key={breadcrumb.path}
+                            active={breadcrumb.active}
+                            label={breadcrumb.label}
+                            path={subPath(match.path, breadcrumb.path)}
+                            sub={breadcrumb.sub}
+                        />
+                    ))}
+                </Switch>
+            </div>
+        )
     );
 };
