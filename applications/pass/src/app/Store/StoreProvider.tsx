@@ -13,19 +13,23 @@ import { usePassExtensionLink } from '@proton/pass/components/Core/PassExtension
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
 import { isDocumentVisible, useVisibleEffect } from '@proton/pass/hooks/useVisibleEffect';
+import { api } from '@proton/pass/lib/api/api';
 import { authStore } from '@proton/pass/lib/auth/store';
 import { clientBooted, clientOfflineUnlocked, clientReady } from '@proton/pass/lib/client';
 import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
+import { setVersionTag } from '@proton/pass/lib/settings/beta';
 import {
     draftsGarbageCollect,
     getUserAccessIntent,
+    getUserFeaturesIntent,
     passwordHistoryGarbageCollect,
     startEventPolling,
     stopEventPolling,
 } from '@proton/pass/store/actions';
 import { withRevalidate } from '@proton/pass/store/actions/enhancers/request';
-import { selectLocale, selectOnboardingEnabled } from '@proton/pass/store/selectors';
+import { selectFeatureFlag, selectLocale, selectOnboardingEnabled } from '@proton/pass/store/selectors';
 import { OnboardingMessage } from '@proton/pass/types';
+import { PassFeature } from '@proton/pass/types/api/features';
 import noop from '@proton/utils/noop';
 
 import { useAuthService } from '../Context/AuthServiceProvider';
@@ -70,6 +74,7 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
                         store.dispatch(draftsGarbageCollect());
                         store.dispatch(passwordHistoryGarbageCollect());
                         store.dispatch(withRevalidate(getUserAccessIntent(userID)));
+                        store.dispatch(withRevalidate(getUserFeaturesIntent(userID)));
 
                         if (isDocumentVisible()) store.dispatch(startEventPolling());
 
@@ -83,6 +88,18 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
                 },
 
                 onLocaleUpdated: core.i18n.setLocale,
+
+                onBetaUpdated: async (beta) => {
+                    if (BUILD_TARGET === 'web') {
+                        const state = store.getState();
+                        const forceAlpha = selectFeatureFlag(PassFeature.PassWebInternalAlpha)(state);
+                        await api.idle();
+
+                        setVersionTag(beta, forceAlpha);
+                        window.location.reload();
+                    }
+                },
+
                 onNotification: (notification) => {
                     if (notification.type === 'error' && clientOfflineUnlocked(client.current.state.status)) {
                         notification.errorMessage = c('Warning').t`Offline`;

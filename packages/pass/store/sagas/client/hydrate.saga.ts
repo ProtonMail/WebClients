@@ -4,6 +4,7 @@ import { decryptCache } from '@proton/pass/lib/cache/decrypt';
 import { getCacheKey } from '@proton/pass/lib/cache/keys';
 import { PassCrypto } from '@proton/pass/lib/crypto';
 import { getOrganization } from '@proton/pass/lib/organization/organization.requests';
+import { sanitizeBetaSetting } from '@proton/pass/lib/settings/beta';
 import { userStateHydrated } from '@proton/pass/lib/user/user.predicates';
 import { getUserData } from '@proton/pass/lib/user/user.requests';
 import {
@@ -68,6 +69,7 @@ export function* hydrate(config: HydrateCacheOptions, { getCache, getAuthStore, 
          * when offline, it's essential to synchronize the initial settings accordingly */
         const settings: Partial<ProxiedSettings> = (yield getSettings()) ?? {};
         settings.locale = cache?.state.settings.locale ?? userState.userSettings?.Locale;
+        settings.beta = BUILD_TARGET === 'web' && sanitizeBetaSetting(settings.beta);
 
         const incoming = { user: userState, settings, organization };
         const currentState: State = yield select();
