@@ -62,7 +62,8 @@ import shareEditRole from '@proton/pass/store/sagas/shares/share-edit-role.saga'
 import shareLeave from '@proton/pass/store/sagas/shares/share-leave.saga';
 import shareRemoveMember from '@proton/pass/store/sagas/shares/share-remove-member.saga';
 import featureFlags from '@proton/pass/store/sagas/user/feature-flags.saga';
-import userPlan from '@proton/pass/store/sagas/user/user-access.saga';
+import userAccess from '@proton/pass/store/sagas/user/user-access.saga';
+import userSettings from '@proton/pass/store/sagas/user/user-settings.saga';
 import trashDelete from '@proton/pass/store/sagas/vaults/trash-empty.saga';
 import trashRestore from '@proton/pass/store/sagas/vaults/trash-restore.saga';
 import vaultCreation from '@proton/pass/store/sagas/vaults/vault-creation.saga';
@@ -139,7 +140,8 @@ export function* rootSaga(options: RootSagaOptions) {
             sync,
             trashDelete,
             trashRestore,
-            userPlan,
+            userAccess,
+            userSettings,
             vaultCreation,
             vaultDelete,
             vaultEdit,
