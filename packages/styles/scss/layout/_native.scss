@@ -39,6 +39,30 @@
 			}
 		}
 	}
+
+	.header,
+	.sign-layout-main-header {
+		-webkit-app-region: drag;
+		user-select: none;
+
+		a,
+		button,
+		input,
+		select,
+		textarea {
+			-webkit-app-region: no-drag;
+			user-select: initial;
+		}
+	}
+
+	&:has(.eventpopover),
+	&:has(#webpack-dev-server-client-overlay) {
+		.header,
+		.sign-layout-main-header {
+			-webkit-app-region: no-drag;
+			user-select: initial;
+		}
+	}
 }
 
 .is-electron-light {

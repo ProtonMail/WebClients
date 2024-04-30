@@ -4,7 +4,6 @@ import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
 import { ProtonLogo, PublicTopBanners, getAppVersion, useConfig, useTheme } from '@proton/components';
-import ElectronDraggeableHeaderWrapper from '@proton/components/components/electron/ElectronDraggeableHeaderWrapper';
 import { APPS } from '@proton/shared/lib/constants';
 import { isElectronApp, isElectronOnMac } from '@proton/shared/lib/helpers/desktop';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
@@ -65,7 +64,6 @@ const Layout = ({
             )}
         >
             <PublicTopBanners />
-            <ElectronDraggeableHeaderWrapper />
             <header
                 className={clsx(
                     headerClassName,
