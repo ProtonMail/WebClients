@@ -57,7 +57,6 @@ export const organizationSettingsRequest = () => `organization::settings::get`;
 export const organizationSettingsEditRequest = () => `organization::settings::edit`;
 
 export const sentinelToggleRequest = () => `monitor::sentinel::toggle`;
-export const monitorToggleRequest = () => `monitor::global::toggle`;
 
 export const breachesRequest = () => `monitor::breaches`;
 export const protonBreachRequest = (addressId: string) => `monitor::breaches::proton::${addressId}`;
@@ -68,7 +67,9 @@ export const addCustomAddressRequest = (email: string) => `monitor::add::custom:
 export const verifyCustomAddressRequest = (addressId: string) => `monitor::verify::custom::${addressId}`;
 export const deleteCustomAddressRequest = (email: string) => `monitor::delete::custom::${email}`;
 export const resendCustomAddressCodeRequest = (addressId: string) => `monitor::verify::custom::resend::${addressId}`;
-export const toggleCustomAddressRequest = (addressId: string) => `monitor::toggle::custom::${addressId}`;
+
+export const toggleMonitorRequest = () => `monitor::global::toggle`;
+export const toggleAddressMonitorRequest = (addressId: string) => `monitor::toggle::address::${addressId}`;
 
 export const protonResolveRequest = (addressId: string) => `monitor::resolve::proton::${addressId}`;
 export const customResolveRequest = (addressId: string) => `monitor::resolve::custom::${addressId}`;

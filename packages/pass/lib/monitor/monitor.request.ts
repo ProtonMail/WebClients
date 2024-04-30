@@ -48,11 +48,15 @@ export const deleteCustomEmail = async (addressId: string): Promise<boolean> =>
     api({ url: `pass/v1/breach/custom_email//${addressId}`, method: 'delete' }).then(() => true);
 
 /** Update the monitor status for a custom email */
-export const toggleMonitorCustomEmail = async (
+export const toggleCustomEmail = async (
     addressId: string,
     data: BreachUpdateCustomEmailRequest
 ): Promise<BreachCustomEmailGetResponse> =>
     (await api({ url: `pass/v1/breach/custom_email/${addressId}/monitor`, method: 'put', data })).Email!;
+
+/** Update the monitor status for a custom email */
+export const toggleProtonEmail = (addressId: string, data: BreachUpdateCustomEmailRequest): Promise<boolean> =>
+    api({ url: `pass/v1/breach/address/${addressId}/monitor`, method: 'put', data }).then(() => true);
 
 /** Mark a Proton address as resolved */
 export const setBreachedProtonAddressResolved = (AddressID: string): Promise<boolean> =>
