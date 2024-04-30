@@ -42,6 +42,7 @@ import { Domain } from '@proton/shared/lib/interfaces';
 import { getOrganizationKeyInfo } from '@proton/shared/lib/organization/helper';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
+import noop from '@proton/utils/noop';
 import removeIndex from '@proton/utils/removeIndex';
 
 import { CsvConfig } from '../csv';
@@ -210,135 +211,140 @@ const CreateUserAccountsModal = ({
     };
 
     const importUsers = async ({ skipCapacityValidation = false }: { skipCapacityValidation?: boolean } = {}) => {
-        const run = async () => {
-            const selectedUsers = usersToImport
-                .filter((user) => selectedUserIds.includes(user.id))
-                .map((user) => {
-                    if (hasVpnB2bPlan) {
-                        return {
-                            ...user,
-                            vpnAccess: true,
-                        };
-                    }
-
-                    return user;
-                });
-
-            const organization = await getOrganization();
-            const organizationKey = await getOrganizationKey();
-            const addresses = await getAddresses();
-            const organizationKeyInfo = getOrganizationKeyInfo(organization, organizationKey, addresses);
-            const error = validateAddUser({
-                privateUser: selectedUsers.length > 0 && selectedUsers.every((user) => user.privateSubUser),
-                organization,
-                organizationKeyInfo,
-                verifiedDomains,
-                disableStorageValidation,
-                disableDomainValidation,
-                disableAddressValidation,
-            });
-            if (error) {
-                return createNotification({ type: 'error', text: error });
-            }
-
-            if (!skipCapacityValidation) {
-                try {
-                    validateOrganizationCapacity(selectedUsers, organization);
-                } catch (error: any) {
-                    if (error instanceof OrganizationCapacityError) {
-                        setOrganizationCapacityError(error);
-                        setStep(STEPS.ORGANIZATION_VALIDATION_ERROR);
-                        return;
-                    }
+        const selectedUsers = usersToImport
+            .filter((user) => selectedUserIds.includes(user.id))
+            .map((user) => {
+                if (hasVpnB2bPlan) {
+                    return {
+                        ...user,
+                        vpnAccess: true,
+                    };
                 }
-            }
 
-            abortControllerRef.current = new AbortController();
-            setImportUsersStep();
+                return user;
+            });
 
-            const localSuccessfullyCreatedUsers: UserTemplate[] = [];
-            const localFailedUsers: UserTemplate[] = [];
-            const localInvalidAddresses: string[] = [];
-            const localUnavailableAddresses: string[] = [];
-            const localOrphanedAddresses: string[] = [];
+        const organization = await getOrganization();
+        const organizationKey = await getOrganizationKey();
+        const addresses = await getAddresses();
+        const organizationKeyInfo = getOrganizationKeyInfo(organization, organizationKey, addresses);
+        const error = validateAddUser({
+            privateUser: selectedUsers.length > 0 && selectedUsers.every((user) => user.privateSubUser),
+            organization,
+            organizationKeyInfo,
+            verifiedDomains,
+            disableStorageValidation,
+            disableDomainValidation,
+            disableAddressValidation,
+        });
+        if (error) {
+            return createNotification({ type: 'error', text: error });
+        }
 
-            const { signal } = abortControllerRef.current;
-
-            const syncState = () => {
-                setSuccessfullyCreatedUsers(localSuccessfullyCreatedUsers);
-
-                setFailedUsers(localFailedUsers);
-                setInvalidAddresses(localInvalidAddresses);
-                setUnavailableAddresses(localUnavailableAddresses);
-                setOrphanedAddresses(localOrphanedAddresses);
-            };
-
-            for (let i = 0; i < selectedUsers.length; i++) {
-                if (signal.aborted) {
+        if (!skipCapacityValidation) {
+            try {
+                validateOrganizationCapacity(selectedUsers, organization);
+            } catch (error: any) {
+                if (error instanceof OrganizationCapacityError) {
+                    setOrganizationCapacityError(error);
+                    setStep(STEPS.ORGANIZATION_VALIDATION_ERROR);
                     return;
                 }
-
-                const user = selectedUsers[i];
-                try {
-                    await createUser({
-                        user,
-                        api: getSilentApiWithAbort(api, signal),
-                        getAddresses,
-                        organizationKey: organizationKey?.privateKey,
-                        keyTransparencyVerify,
-                    });
-
-                    localSuccessfullyCreatedUsers.push(user);
-                } catch (error: any) {
-                    if (getIsOfflineError(error)) {
-                        abortControllerRef.current.abort();
-
-                        const unattemptedUsers = selectedUsers.slice(i);
-                        localFailedUsers.push(...unattemptedUsers);
-                        syncState();
-                        setStep(STEPS.DONE_WITH_ERRORS);
-                    } else if (error.cancel) {
-                        /**
-                         * Handle auth prompt cancel
-                         */
-                        abortControllerRef.current.abort();
-                        setStep(STEPS.SELECT_USERS);
-                    } else if (error instanceof InvalidAddressesError) {
-                        localInvalidAddresses.push(...error.invalidAddresses);
-                        localOrphanedAddresses.push(...error.orphanedAddresses);
-                    } else if (error instanceof UnavailableAddressesError) {
-                        localUnavailableAddresses.push(...error.unavailableAddresses);
-                        localOrphanedAddresses.push(...error.orphanedAddresses);
-                    } else {
-                        localFailedUsers.push(user);
-                        localOrphanedAddresses.push(...user.emailAddresses);
-                    }
-                }
-
-                setCurrentProgress((currentProgress) => currentProgress + 1);
             }
+        }
 
-            const userKeys = await getUserKeys();
-            await keyTransparencyCommit(userKeys);
+        abortControllerRef.current = new AbortController();
+        setImportUsersStep();
 
-            syncState();
-            start();
-            await call();
+        const localSuccessfullyCreatedUsers: UserTemplate[] = [];
+        const localFailedUsers: UserTemplate[] = [];
+        const localInvalidAddresses: string[] = [];
+        const localUnavailableAddresses: string[] = [];
+        const localOrphanedAddresses: string[] = [];
 
-            if (localFailedUsers.length || localInvalidAddresses.length || localUnavailableAddresses.length) {
-                setStep(STEPS.DONE_WITH_ERRORS);
-                return;
-            }
+        const { signal } = abortControllerRef.current;
 
-            onClose?.();
-            createNotification({
-                type: 'success',
-                text: getCreatedText(localSuccessfullyCreatedUsers.length),
-            });
+        const syncState = () => {
+            setSuccessfullyCreatedUsers(localSuccessfullyCreatedUsers);
+
+            setFailedUsers(localFailedUsers);
+            setInvalidAddresses(localInvalidAddresses);
+            setUnavailableAddresses(localUnavailableAddresses);
+            setOrphanedAddresses(localOrphanedAddresses);
         };
 
         stop();
-        await run().finally(start);
+
+        for (let i = 0; i < selectedUsers.length; i++) {
+            if (signal.aborted) {
+                break;
+            }
+
+            const user = selectedUsers[i];
+            try {
+                await createUser({
+                    user,
+                    api: getSilentApiWithAbort(api, signal),
+                    getAddresses,
+                    organizationKey: organizationKey?.privateKey,
+                    keyTransparencyVerify,
+                });
+
+                localSuccessfullyCreatedUsers.push(user);
+            } catch (error: any) {
+                if (getIsOfflineError(error)) {
+                    abortControllerRef.current.abort();
+
+                    const unattemptedUsers = selectedUsers.slice(i);
+                    localFailedUsers.push(...unattemptedUsers);
+                    syncState();
+                    setStep(STEPS.DONE_WITH_ERRORS);
+                } else if (error.cancel) {
+                    /**
+                     * Handle auth prompt cancel
+                     */
+                    abortControllerRef.current.abort();
+                    setStep(STEPS.SELECT_USERS);
+                } else if (error instanceof InvalidAddressesError) {
+                    localInvalidAddresses.push(...error.invalidAddresses);
+                    localOrphanedAddresses.push(...error.orphanedAddresses);
+                } else if (error instanceof UnavailableAddressesError) {
+                    localUnavailableAddresses.push(...error.unavailableAddresses);
+                    localOrphanedAddresses.push(...error.orphanedAddresses);
+                } else {
+                    localFailedUsers.push(user);
+                    localOrphanedAddresses.push(...user.emailAddresses);
+                }
+            }
+
+            setCurrentProgress((currentProgress) => currentProgress + 1);
+        }
+
+        start();
+
+        if (localSuccessfullyCreatedUsers.length) {
+            const callPromise = call().catch(noop);
+            const userKeys = await getUserKeys();
+            await keyTransparencyCommit(userKeys);
+            await callPromise;
+        }
+
+        if (signal.aborted) {
+            return;
+        }
+
+        syncState();
+
+        if (localFailedUsers.length || localInvalidAddresses.length || localUnavailableAddresses.length) {
+            setStep(STEPS.DONE_WITH_ERRORS);
+            return;
+        }
+
+        onClose?.();
+        createNotification({
+            type: 'success',
+            text: getCreatedText(localSuccessfullyCreatedUsers.length),
+        });
     };
 
     if (organizationCapacityError && step === STEPS.ORGANIZATION_VALIDATION_ERROR) {
@@ -346,7 +352,7 @@ const CreateUserAccountsModal = ({
             <OrganizationCapacityErrorModal
                 error={organizationCapacityError}
                 onCancel={() => setStep(STEPS.SELECT_USERS)}
-                onContinue={() => importUsers({ skipCapacityValidation: true })}
+                onContinue={() => importUsers({ skipCapacityValidation: true }).catch(noop)}
                 app={app}
                 {...rest}
             />
@@ -454,7 +460,7 @@ const CreateUserAccountsModal = ({
                         <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>
                         <Button
                             color="norm"
-                            onClick={() => withImporting(importUsers())}
+                            onClick={() => withImporting(importUsers()).catch(noop)}
                             loading={importing}
                             disabled={isCreateUsersButtonDisabled}
                             data-testid="multiUserUpload:createAccounts"
