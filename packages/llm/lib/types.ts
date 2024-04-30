@@ -69,3 +69,25 @@ export type ExpandAction = {
     type: 'expand';
     text: string;
 };
+
+export type NdarrayCache = {
+    metadata: {
+        ParamSize: number;
+        ParamBytes: number;
+        BitsPerParam: number;
+    };
+    records: {
+        dataPath: string;
+        format: string;
+        nbytes: number;
+        records: {
+            name: string;
+            shape: number[];
+            dtype: string;
+            format: string;
+            nbytes: number;
+            byteOffset: number;
+        }[];
+        md5sum: string;
+    }[];
+};
