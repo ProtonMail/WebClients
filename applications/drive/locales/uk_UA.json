@@ -184,6 +184,9 @@
       "Copy email to clipboard": [
         "Копіювати е-пошту в буфер обміну"
       ],
+      "Copy invite link": [
+        "Скопіювати посилання-запрошення"
+      ],
       "Copy link": [
         "Копіювати посилання"
       ],
@@ -570,6 +573,9 @@
       ],
       "Remove gift code": [
         "Вилучити подарунковий код"
+      ],
+      "Remove me": [
+        "Видалити мене"
       ],
       "Rename": [
         "Перейменувати"
@@ -2761,9 +2767,6 @@
       "You have reached the contacts limit for your account": [
         "Ви досягли максимальної кількості контактів для облікового запису"
       ],
-      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
-        "Ви досягли максимальної кількості календарів. Деякі календарі не можна імпортувати."
-      ],
       "You must set a name": [
         "Ви повинні вказати назву"
       ],
@@ -4170,6 +4173,9 @@
       "Emails are automatically signed": [
         "Електронні листи підписуються автоматично"
       ],
+      "Empty folder": [
+        "Пуста тека"
+      ],
       "Enabling drive search": [
         "Увімкнення пошуку на диску"
       ],
@@ -4244,6 +4250,9 @@
       ],
       "File will not be updated": [
         "Файл не буде оновлено"
+      ],
+      "Files and folders that others shared with you will appear here": [
+        "Тут з'являться файли та теки, якими поділилися з вами користувачі"
       ],
       "Finalizing": [
         "Завершення"
@@ -4527,6 +4536,9 @@
         "Дозволено лише ${ MAX_CUSTOM_PASSWORD_LENGTH } символів",
         "Дозволено лише ${ MAX_CUSTOM_PASSWORD_LENGTH } символів"
       ],
+      "Only the owner of the share will be able to invite you again.": [
+        "Тільки власник поширеного зможе запросити вас знову."
+      ],
       "Only the people with the link and the password can access this file.": [
         "Лише люди з посиланням та паролем можуть отримати доступ до цього файлу."
       ],
@@ -4755,6 +4767,9 @@
       "Shared link not found": [
         "Спільне посилання не знайдено"
       ],
+      "Shared with me": [
+        "Поділилися зі мною"
+      ],
       "Sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
         "Зареєструйте свій власний обліковий запис ${ DRIVE_APP_NAME } і захистіть свої дані за допомогою наскрізного шифрування та безпечно ними діліться."
       ],
@@ -4829,6 +4844,9 @@
       ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "Є файли, які ще потрібно передати. Закриття менеджера передачі завершить усі операції."
+      ],
+      "There is nothing to see here": [
+        "Тут немає на що дивитися"
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Цю адресу вимкнено. Щоб мати змогу надсилати на цю адресу, власник повинен спочатку активувати адресу."
@@ -5088,6 +5106,9 @@
       "Yesterday": [
         "Учора"
       ],
+      "you": [
+        "ви"
+      ],
       "You already have a free account": [
         "У мене вже є безплатний обліковий запис"
       ],
@@ -5147,6 +5168,9 @@
       ],
       "You will lose all unsaved changes.": [
         "Ви втратите всі незбережені зміни."
+      ],
+      "You will not be able to join again after.": [
+        "Після цього ви не зможете приєднатися знову."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Вас невдовзі буде перенаправлено до PayPal для підтвердження платежу."
@@ -5733,6 +5757,9 @@
       "Region": [
         "Область"
       ],
+      "Remove access": [
+        "Вилучити доступ"
+      ],
       "Replace existing file": [
         "Замінити наявний файл"
       ],
@@ -5760,6 +5787,12 @@
       "Set recovery method": [
         "Налаштуйте спосіб відновлення"
       ],
+      "Shared by": [
+        "Поширено"
+      ],
+      "Shared on": [
+        "Поширено"
+      ],
       "Show indexing progress of Encrypted Search": [
         "Показувати хід індексування зашифрованого пошуку"
       ],
@@ -5783,6 +5816,9 @@
       ],
       "Stolen data": [
         "Викрадені дані"
+      ],
+      "Stop sharing": [
+        "Припинити поширення"
       ],
       "Street address": [
         "Вулиця"
@@ -5948,6 +5984,9 @@
       ],
       "Shared": [
         "Спільний доступ"
+      ],
+      "Shared with me": [
+        "Поділилися зі мною"
       ],
       "Trash": [
         "Смітник"
@@ -7187,6 +7226,12 @@
       "${ reason } has been enabled": [
         "${ reason } увімкнено"
       ],
+      "Access for the member removed": [
+        "Доступ для учасника вилучено"
+      ],
+      "Access updated and shared": [
+        "Доступ оновлений і поширений"
+      ],
       "All items will soon be permanently deleted from trash": [
         "Усі елементи невдовзі будуть остаточно видалені зі смітника"
       ],
@@ -7217,11 +7262,17 @@
       "Encrypted search activated": [
         "Зашифрований пошук активовано"
       ],
+      "Failed to accept share invitation": [
+        "Не вдалося прийняти запрошення"
+      ],
       "Failed to download files: ${ err }": [
         "Не вдалося завантажити файли: ${ err }"
       ],
       "Failed to move, please try again": [
         "Не вдалося перемістити, повторіть спробу"
+      ],
+      "Failed to remove the file": [
+        "Не вдалось вилучити файл"
       ],
       "Failed to upload files: ${ err }": [
         "Не вдалося вивантажити файли: ${ err }"
@@ -7237,6 +7288,12 @@
       ],
       "File or folder is missing a name": [
         "Файл чи тека не мають назви"
+      ],
+      "File removed": [
+        "Файл вилучено"
+      ],
+      "Invitation removed from the share": [
+        "Запрошення вилучено з поширення"
       ],
       "Link copied to clipboard": [
         "Посилання скопійовано в буфер обміну"
@@ -7258,6 +7315,15 @@
       ],
       "Root folder failed to be loaded": [
         "Не вдалося завантажити кореневу теку"
+      ],
+      "Share invitation accepted successfully": [
+        "Запрошення успішно прийнято"
+      ],
+      "Share invitation ID was not found. Please check the link": [
+        "Ідентифікатор запрошення не знайдено. Будь ласка, перевірте посилання"
+      ],
+      "Stopping to share this item has failed": [
+        "Не вдалося зупинити поширення цього елемента"
       ],
       "Subfolder failed to be loaded": [
         "Не вдалося завантажити підтеку"
@@ -8116,9 +8182,6 @@
       "Get more storage": [
         "Збільшити сховище"
       ],
-      "Release notes": [
-        "Примітки до випуску"
-      ],
       "Upgrade storage": [
         "Збільшити сховище"
       ],
@@ -8158,6 +8221,12 @@
       ],
       "upgrade for more storage": [
         "збільште сховище, передплативши тарифний план"
+      ],
+      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
+        "У вас залишився **${ daysRemaining }** день до кінця дії вашого тарифного плану **${ currentPlanName }**.",
+        "У вас залишилося **${ daysRemaining }** днів до кінця дії вашого тарифного плану **${ currentPlanName }**.",
+        "У вас залишилося **${ daysRemaining }** днів до кінця дії вашого тарифного плану **${ currentPlanName }**.",
+        "У вас залишилося **${ daysRemaining }** днів до кінця дії вашого тарифного плану **${ currentPlanName }**."
       ],
       "Your ${ appStorage } is almost full": [
         "Ваше ${ appStorage } майже заповнене"
@@ -8594,6 +8663,9 @@
       "Are you sure you want to close the preview?": [
         "Ви впевнені, що хочете закрити попередній перегляд?"
       ],
+      "Are you sure you want to leave this share?": [
+        "Ви впевнені, що хочете покинути це поширення?"
+      ],
       "Billing cycle": [
         "Платіжний цикл"
       ],
@@ -8755,6 +8827,9 @@
       ],
       "Edit image": [
         "Змінити зображення"
+      ],
+      "Email address": [
+        "Адреса електронної пошти"
       ],
       "Email addresses": [
         "Адреси е-пошти"
@@ -8936,6 +9011,9 @@
       "Recommended": [
         "Рекомендовано"
       ],
+      "Recommended actions": [
+        "Рекомендовані дії"
+      ],
       "Reconnect your account": [
         "Повторно під'єднайте свій обліковий запис"
       ],
@@ -9001,6 +9079,9 @@
       ],
       "Shared": [
         "Спільний доступ"
+      ],
+      "Shared with me": [
+        "Поділилися зі мною"
       ],
       "Show actions": [
         "Показати дії"
@@ -9097,9 +9178,6 @@
       ],
       "What would you like to import?": [
         "Що ви бажаєте імпортувати?"
-      ],
-      "What's new": [
-        "Що нового"
       ],
       "You have inaccessible files": [
         "Ви маєте недоступні файли"
@@ -9276,6 +9354,14 @@
         "${ numberOfServers } в ${ numberOfCountries } країнах",
         "${ numberOfServers } в ${ numberOfCountries } країнах",
         "${ numberOfServers } в ${ numberOfCountries } країнах"
+      ]
+    },
+    "vpn_2024: renew": {
+      "Your subscription will automatically renew in ${ cycle } month.": [
+        "Ваша підписка буде автоматично поновлюватися через ${ cycle } місяць.",
+        "Ваша підписка буде автоматично поновлюватися через ${ cycle } місяців.",
+        "Ваша підписка буде автоматично поновлюватися через ${ cycle } місяців.",
+        "Ваша підписка буде автоматично поновлюватися через ${ cycle } місяців."
       ]
     },
     "vpn_2step: feature": {

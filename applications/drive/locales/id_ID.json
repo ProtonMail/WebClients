@@ -568,6 +568,9 @@
       "Remove gift code": [
         "Hapus kode hadiah"
       ],
+      "Remove me": [
+        "Hapus saya"
+      ],
       "Rename": [
         "Ubah nama"
       ],
@@ -2463,6 +2466,9 @@
       "Error decrypting a computer": [
         "Terjadi kesalahan mendekripsi komputer"
       ],
+      "External accounts are not supported yet": [
+        "Akun eksternal untuk saat ini belum didukung"
+      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Berkas \"${ item.name }\" tidak dapat diunggah karena terdapat kesalahan \"${ error }\""
       ],
@@ -2753,9 +2759,6 @@
       ],
       "You have reached the contacts limit for your account": [
         "Anda telah mencapai batas jumlah kontak yang diperkenankan untuk akun Anda"
-      ],
-      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
-        "Anda telah mencapai batas jumlah kalender yang diperkenankan. Sebagian kalender tidak dapat diimpor."
       ],
       "You must set a name": [
         "Anda harus mengatur nama"
@@ -4034,6 +4037,9 @@
       "Emails are automatically signed": [
         "Email ditandatangani secara otomatis"
       ],
+      "Empty folder": [
+        "Folder kosong"
+      ],
       "Enabling drive search": [
         "Mengaktifkan pencarian drive"
       ],
@@ -4394,6 +4400,9 @@
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
         "Panjang kata sandi tidak boleh melebihi ${ MAX_CUSTOM_PASSWORD_LENGTH } karakter"
       ],
+      "Only the owner of the share will be able to invite you again.": [
+        "Hanya pemilik yang berbagi yang dapat mengundang Anda lagi."
+      ],
       "Only the people with the link and the password can access this file.": [
         "Hanya mereka yang memiliki tautan dan kata sandi yang dapat mengakses berkas ini."
       ],
@@ -4417,9 +4426,6 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Pembayaran dilindungi dengan enkripsi TLS dan undang-undang privasi Swiss."
-      ],
-      "Pending": [
-        "Menunggu jawaban"
       ],
       "Permanently delete all files in your locked drive": [
         "Hapus seluruh berkas yang terdapat pada drive terkunci milik Anda secara permanen"
@@ -5039,6 +5045,9 @@
       "You will lose all unsaved changes.": [
         "Anda akan kehilangan seluruh perubahan yang belum disimpan."
       ],
+      "You will not be able to join again after.": [
+        "Anda tidak akan dapat bergabung lagi setelahnya."
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Anda akan segera dialihkan menuju PayPal untuk memverifikasi pembayaran anda."
       ],
@@ -5618,6 +5627,9 @@
       "Region": [
         "Provinsi"
       ],
+      "Remove access": [
+        "Hapus akses"
+      ],
       "Replace existing file": [
         "Gantikan berkas yang telah ada"
       ],
@@ -5674,6 +5686,9 @@
       ],
       "Stolen data": [
         "Data yang dicuri"
+      ],
+      "Stop sharing": [
+        "Berhenti berbagi"
       ],
       "Street address": [
         "Alamat jalan"
@@ -6844,7 +6859,7 @@
         "Dukungan IMAP terbatas hanya pada aplikasi desktop (mis. Outlook, Apple Mail, dan Thunderbird) via ${ MAIL_APP_NAME } Bridge. Integrasi IMAP berbasis cloud saat ini tidak didukung."
       ],
       "Keep your plans private to you and your family with an encrypted calendar": [
-        "Jaga agar rencana Anda tetap menjadi rahasia antara Anda dan keluarga dengan kalender yang terenkripsi"
+        "Jaga agar rencana Anda tetap privat antara Anda dan keluarga Anda dengan kalender yang terenkripsi"
       ],
       "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server.": [
         "Menjaga Anda agar tetap terlindung sepanjang waktu dengan memblokir seluruh koneksi jaringan apabila Anda secara tidak sengaja terputus dari server VPN kami."
@@ -7108,6 +7123,12 @@
       "${ reason } has been enabled": [
         "${ reason } telah diaktifkan"
       ],
+      "Access for the member removed": [
+        "Akses untuk anggota dihapus"
+      ],
+      "Access updated and shared": [
+        "Akses diperbarui dan dibagikan"
+      ],
       "All items will soon be permanently deleted from trash": [
         "Seluruh item akan dihapus secara permanen dari sampah"
       ],
@@ -7147,6 +7168,9 @@
       "Failed to move, please try again": [
         "Pemindahan gagal, silakan coba lagi"
       ],
+      "Failed to remove the file": [
+        "Gagal menghapus berkas"
+      ],
       "Failed to upload files: ${ err }": [
         "Gagal mengunggah berkas: ${ err }"
       ],
@@ -7158,6 +7182,9 @@
       ],
       "File or folder is missing a name": [
         "Berkas atau folder belum dinamai"
+      ],
+      "File removed": [
+        "Berkas dihapus"
       ],
       "Invitation removed from the share": [
         "Undangan dihapus dari partisi"
@@ -7186,6 +7213,9 @@
       "Share invitation ID was not found. Please check the link": [
         "ID undangan pembagian tidak ditemukan. Silakan periksa tautan"
       ],
+      "Stopping to share this item has failed": [
+        "Gagal menghentikan pembagian item"
+      ],
       "Subfolder failed to be loaded": [
         "Subfolder gagal dimuat"
       ],
@@ -7203,6 +7233,9 @@
       ],
       "Trash failed to be emptied": [
         "Gagal mengosongkan sampah"
+      ],
+      "You stopped sharing this item": [
+        "Anda berhenti membagikan item ini"
       ],
       "Your old files will be deleted in 72 hours": [
         "Berkas lama Anda akan dihapus dalam 72 jam"
@@ -8063,9 +8096,6 @@
       "Get more storage": [
         "Dapatkan ruang penyimpanan tambahan"
       ],
-      "Release notes": [
-        "Catatan rilis"
-      ],
       "Upgrade storage": [
         "Tingkatkan ruang penyimpanan"
       ],
@@ -8229,17 +8259,41 @@
       ]
     },
     "subscription reminder": {
+      "15 GB storage": [
+        "Ruang penyimpanan 15 GB"
+      ],
       "and 15 more premium features": [
         "dan 15 fitur premium lainnya"
       ],
       "Automatic email forwarding ${ strongText }": [
         "Penerusan email otomatis ${ strongText }"
       ],
+      "Data breach alerts ${ strongArgument }": [
+        "Peringatan kebocoran data ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplikasi desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Bantu kami menjaga internet tetap aman dan privat bagi siapa pun. Tingkatkan akun Anda ke paket berbayar."
+      ],
+      "No ads or tracking": [
+        "Tanpa iklan atau pelacakan"
+      ],
+      "Short @pm.me email address": [
+        "Alamat email pendek @pm.me"
+      ],
+      "Support our mission": [
+        "Dukung misi kami"
+      ],
       "Upgrade": [
         "Tingkatkan"
       ],
       "Upgrade your productivity": [
         "Tingkatkan produktivitas Anda"
+      ],
+      "We don't sell your data": [
+        "Kami tidak menjual data Anda"
       ],
       "Your privacy is our mission": [
         "Privasi Anda adalah misi kami"
@@ -8548,6 +8602,9 @@
       "Are you sure you want to close the preview?": [
         "Apakah Anda yakin untuk menutup pratinjau?"
       ],
+      "Are you sure you want to leave this share?": [
+        "Apakah Anda ingin keluar dari pembagian ini?"
+      ],
       "Billing cycle": [
         "Siklus tagihan"
       ],
@@ -8784,6 +8841,9 @@
       ],
       "Item details": [
         "Rincian item"
+      ],
+      "Last edited by": [
+        "Terakhir disunting oleh"
       ],
       "Link confirmation": [
         "Konfirmasi tautan"
@@ -9054,9 +9114,6 @@
       ],
       "What would you like to import?": [
         "Hal-hal apa saja yang hendak Anda impor?"
-      ],
-      "What's new": [
-        "Apa-apa saja yang baru"
       ],
       "You have inaccessible files": [
         "Anda memiliki berkas yang tidak dapat diakses"

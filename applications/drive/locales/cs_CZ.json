@@ -49,6 +49,9 @@
       "Add note": [
         "Přidat poznámku"
       ],
+      "Add people or groups to share": [
+        "Přidat osoby nebo skupiny ke sdílení"
+      ],
       "Add phone number": [
         "Přidat telefonní číslo"
       ],
@@ -180,6 +183,9 @@
       ],
       "Copy email to clipboard": [
         "Zkopírovat e-mail do schránky"
+      ],
+      "Copy invite link": [
+        "Kopírovat odkaz na pozvánku"
       ],
       "Copy link": [
         "Kopírovat odkaz"
@@ -637,6 +643,15 @@
       "Save changes": [
         "Uložit změny"
       ],
+      "Scan & Download": [
+        "Skenovat a stáhnout"
+      ],
+      "Scan & Download (${ count })": [
+        "Skenovat a stáhnout (${ count })"
+      ],
+      "Scan & Download all": [
+        "Skenovat a stáhnout vše"
+      ],
       "Search": [
         "Vyhledat"
       ],
@@ -840,6 +855,9 @@
         "Není možné odeslat soubory vCard více než ${ maxAttachments } kontaktů",
         "Není možné odeslat soubory vCard více než ${ maxAttachments } kontaktů",
         "Není možné odeslat soubory vCard více než ${ maxAttachments } kontaktů"
+      ],
+      "Your 3 GB bonus": [
+        "Váš 3 GB bonus"
       ],
       "Zoom in": [
         "Přiblížit"
@@ -1165,6 +1183,9 @@
       ],
       "Continue using ${ planTitle }": [
         "Pokračovat s ${ planTitle }"
+      ],
+      "Continue your subscription": [
+        "Pokračovat v předplatném"
       ]
     },
     "Checkout row": {
@@ -2400,6 +2421,9 @@
       "Aliases could not be loaded": [
         "Aliasy se nepodařilo načíst"
       ],
+      "Already a member of this share": [
+        "Jste již členem tohoto sdílení"
+      ],
       "Amount above the maximum.": [
         "Hodnota je vyšší než maximální částka."
       ],
@@ -2783,9 +2807,6 @@
       ],
       "You have reached the contacts limit for your account": [
         "Dosáhli jste limitu kontaktů vašeho účtu"
-      ],
-      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
-        "Dosáhli jste maximálního počtu kalendářů. Některé kalendáře nebylo možné importovat."
       ],
       "You must set a name": [
         "Musíte nastavit jméno"
@@ -4148,6 +4169,9 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Snížením tarifu ukončíte všechna spojení s placenými ${ VPN_APP_NAME } servery."
       ],
+      "Download": [
+        "Stáhnout"
+      ],
       "Download ${ name } app": [
         "Stáhnout aplikaci pro ${ name }"
       ],
@@ -4214,6 +4238,9 @@
       "Emails are automatically signed": [
         "E-maily jsou automaticky podepsány"
       ],
+      "Empty folder": [
+        "Vyprázdnit složku"
+      ],
       "Enabling drive search": [
         "Zapínání vyhledávání na disku"
       ],
@@ -4221,6 +4248,9 @@
         "Vyhledávání v šifrovaných datech je zde"
       ],
       "End-to-end encrypted": [
+        "Koncově šifrováno"
+      ],
+      "End-to-End Encrypted": [
         "Koncově šifrováno"
       ],
       "Enter password": [
@@ -4282,6 +4312,9 @@
       ],
       "File will not be updated": [
         "Soubor nebude aktualizován"
+      ],
+      "Files and folders that others shared with you will appear here": [
+        "Zde se zobrazí soubory a složky, které s vámi sdíleli ostatní"
       ],
       "Finalizing": [
         "Dokončování"
@@ -4433,6 +4466,9 @@
       "Last week": [
         "Minulý týden"
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Zjistěte, jak ${ staySaferOnlineLink }"
+      ],
       "Learn more": [
         "Zjistěte více"
       ],
@@ -4447,6 +4483,9 @@
       ],
       "Loading ${ appName }": [
         "Načítání aplikace ${ appName }"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Načítání kalendáře, prosím čekejte. Budete přesměrováni na naši plánovací platformu Calendly v nové záložce."
       ],
       "Loading link": [
         "Načítání odkazu"
@@ -4468,6 +4507,12 @@
       ],
       "Mastercard SecureCode logo": [
         "Logo Mastercard SecureCode"
+      ],
+      "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
+        "Max. ${ MAX_SHARED_URL_PASSWORD_LENGTH } písmeno",
+        "Max. ${ MAX_SHARED_URL_PASSWORD_LENGTH } písmena",
+        "Max. ${ MAX_SHARED_URL_PASSWORD_LENGTH } písmen",
+        "Max. ${ MAX_SHARED_URL_PASSWORD_LENGTH } písmen"
       ],
       "Medium Priority": [
         "Střední priorita"
@@ -4558,6 +4603,9 @@
         "Jsou povoleny pouze ${ MAX_CUSTOM_PASSWORD_LENGTH } znaky",
         "Je povoleno pouze ${ MAX_CUSTOM_PASSWORD_LENGTH } znaků",
         "Je povoleno pouze ${ MAX_CUSTOM_PASSWORD_LENGTH } znaků"
+      ],
+      "Only the owner of the share will be able to invite you again.": [
+        "Pouze majitel tohoto sdílení vás bude moci znovu pozvat."
       ],
       "Only the people with the link and the password can access this file.": [
         "Kdokoli s tímto odkazem a heslem má přístup k tomuto souboru."
@@ -4721,6 +4769,9 @@
       "Retry now": [
         "Zkusit znovu"
       ],
+      "Scan issue": [
+        "Problém skenování"
+      ],
       "Search cannot be enabled in this browser": [
         "V tomto prohlížeči nelze zapnout vyhledávání"
       ],
@@ -4775,6 +4826,12 @@
       "Share files with links": [
         "Sdílejte soubory pomocí odkazů"
       ],
+      "Share via link settings": [
+        "Sdílet nastavení pomocí odkazu"
+      ],
+      "Share with": [
+        "Sdílet s"
+      ],
       "Share with anyone": [
         "Sdílet s kýmkoli"
       ],
@@ -4783,6 +4840,9 @@
       ],
       "Shared link not found": [
         "Sdílený odkaz nebyl nalezen"
+      ],
+      "Shared with me": [
+        "Sdíleno se mnou"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Podpis nelze ověřit z důvodu chyby sítě, zkuste to prosím později."
@@ -4844,6 +4904,9 @@
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
         "Šifrovaná data jsou o něco větší kvůli režii šifrování a podpisů, které zajišťují bezpečnost vašich dat."
       ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "Odhalené informace unikly ze služby třetí strany. Informace vašeho účtu ${ BRAND_NAME } zůstaly v bezpečí a šifrované. ${ learnMoreLink }"
+      ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "S následujícími položkami mohl někdo bez dovolení manipulovat: ${ items }. Otevřete pouze v případě, že jim důvěřujete."
       ],
@@ -4855,6 +4918,9 @@
       ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "Ještě je třeba přenést některé soubory. Zavřením správce přenosu se ukončí všechny operace."
+      ],
+      "There is nothing to see here": [
+        "Zde není nic k zobrazení"
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Tato adresa není povolena. Pokud chcete odesílat zprávy na tuto adresu, musí ji vlastník nejdříve povolit."
@@ -5003,6 +5069,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Navyšte tarif nyní a získejte tím prémiové funkce, produkty a úložiště za speciální cenu"
       ],
+      "upgrade your storage": [
+        "navyšte své úložiště"
+      ],
       "Uploaded": [
         "Nahrané"
       ],
@@ -5108,6 +5177,9 @@
       "Yesterday": [
         "Včera"
       ],
+      "you": [
+        "vámi"
+      ],
       "You already have a free account": [
         "Již máte bezplatný účet"
       ],
@@ -5153,6 +5225,18 @@
       "You cannot undo this action.": [
         "Tuto akci nemůžete vzít zpět."
       ],
+      "You have ${ expiresInDays } day left to claim your 3 GB welcome bonus and ": [
+        "Zbývá vám ${ expiresInDays } den na získání uvítacího bonusu 3 GB a ",
+        "Zbývají vám ${ expiresInDays } dny na získání uvítacího bonusu 3 GB a ",
+        "Zbývá vám ${ expiresInDays } dnů na získání uvítacího bonusu 3 GB a ",
+        "Zbývá vám ${ expiresInDays } dnů na získání uvítacího bonusu 3 GB a "
+      ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "Máte zkušební verzi předplatného ${ planTitle }. Pokud chcete pokračovat s vaším předplatným po zkušební době, prosím přidejte platební metodu."
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "Máte zkušební verzi předplatného ${ planTitle }. Nyní není potřeba nic platit. Vaše předplatné bude automaticky obnoveno na konci zkušební doby."
+      ],
       "You may be redirected to your bank’s website.": [
         "Můžete být přesměrováni na webové stránky své banky."
       ],
@@ -5170,6 +5254,9 @@
       ],
       "You will lose all unsaved changes.": [
         "Ztratíte všechny neuložené změny."
+      ],
+      "You will not be able to join again after.": [
+        "Nebudete se moci znovu připojit."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Za účelem ověření platby budete přesměrováni na PayPal."
@@ -5210,6 +5297,9 @@
       "Your email address and password were leaked:": [
         "Vaše e-mailová adresa a heslo unikly:"
       ],
+      "Your email address was exposed:": [
+        "Došlo k odhalení vaší e-mailové adresy:"
+      ],
       "Your email will only be used for this one-time verification.": [
         "Váš e-mail bude použit pouze pro toto jednorázové ověření."
       ],
@@ -5222,11 +5312,17 @@
       "Your files will be encrypted and then saved.": [
         "Vaše soubory budou zašifrovány a uloženy."
       ],
+      "Your information was found on ${ displayedDate }": [
+        "Vaše informace byly nalezeny ${ displayedDate }"
+      ],
       "Your login information will not be saved after the import is completed.": [
         "Po dokončení importu nebudou Vaše přihlašovací údaje uloženy."
       ],
       "Your next billing date is ${ renewalTime }.": [
         "Datum příští platby je ${ renewalTime }."
+      ],
+      "Your password was leaked:": [
+        "Došlo k úniku vašeho hesla:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Vaše telefonní číslo bude použito pouze pro toto jednorázové ověření."
@@ -5365,6 +5461,12 @@
       ],
       "Add to group": [
         "Přidat do skupiny"
+      ],
+      "Anyone on the Internet with the link can view": [
+        "Kdokoli na internetu s odkazem může zobrazit"
+      ],
+      "Anyone with the link": [
+        "Kdokoli s odkazem"
       ],
       "App password": [
         "Heslo aplikace"
@@ -5525,6 +5627,9 @@
       "e.g., Amazon, eBay, Etsy": [
         "například Amazon, eBay, Etsy"
       ],
+      "Editor": [
+        "Editor"
+      ],
       "Email": [
         "E-mail"
       ],
@@ -5554,6 +5659,9 @@
       ],
       "Enter device name": [
         "Zadejte název zařízení"
+      ],
+      "Erase this link and remove everyone with access": [
+        "Smazat tento odkaz a odebrat všechny s přístupem"
       ],
       "Expiration (${ patternExpiration })": [
         "Vypršení (${ patternExpiration })"
@@ -5747,6 +5855,9 @@
       "Region": [
         "Kraj"
       ],
+      "Remove access": [
+        "Odebrat přístup"
+      ],
       "Replace existing file": [
         "Nahradit existující soubor"
       ],
@@ -5767,6 +5878,9 @@
       ],
       "Set expiration date": [
         "Nastavit datum pro vypršení platnosti"
+      ],
+      "Set link password": [
+        "Nastavit heslo odkazu"
       ],
       "Set recovery method": [
         "Nastavit metodu obnovení"
@@ -5794,6 +5908,9 @@
       ],
       "Stolen data": [
         "Odcizené údaje"
+      ],
+      "Stop sharing": [
+        "Zrušit sdílení"
       ],
       "Street address": [
         "Ulice a č. p."
@@ -5845,6 +5962,9 @@
       ],
       "Verification code": [
         "Ověřovací kód"
+      ],
+      "Viewer": [
+        "Prohlížející"
       ],
       "What happened?": [
         "Co se stalo?"
@@ -5997,17 +6117,26 @@
       "upgrade for more storage": [
         "navýšit tarif pro více prostoru"
       ],
+      "Upgrade to restore full access": [
+        "Navýšením obnovíte plný přístup"
+      ],
       "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
         "Vaše ${ driveStorage } je plné. Chcete-li nahrát nebo synchronizovat soubory, uvolněte místo nebo ${ cta }."
       ],
       "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
         "Vaše ${ mailStorage } je plné. Pro odesílání nebo přijímání e-mailů uvolněte místo nebo ${ cta }."
       ],
+      "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
+        "Váš účet je ohrožen smazáním. Abyste zabránili ztrátě dat, požádejte vašeho správce o navýšení. ${ cta }"
+      ],
       "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
         "Vaše úložiště je plné. Chcete-li odesílat nebo přijímat e-maily, uvolněte místo nebo ${ cta }."
       ],
       "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
         "Vaše úložiště je plné. Abyste mohli nahrát nebo synchronizovat soubory, uvolněte místo nebo ${ cta }."
+      ],
+      "Your subscription has ended. ${ cta } and to avoid data loss.": [
+        "Vaše předplatné skončilo. ${ cta } pro předejití ztrátě dat."
       ]
     },
     "Log preference": {
@@ -7524,6 +7653,9 @@
       "A way to contact you": [
         "Způsob, jak vás kontaktovat"
       ],
+      "Choose password": [
+        "Zvolte heslo"
+      ],
       "E.g., ": [
         "Např., "
       ],
@@ -7592,6 +7724,9 @@
       ],
       "Select state": [
         "Vyberte stav"
+      ],
+      "Set date": [
+        "Nastavte datum"
       ],
       "Start typing an email address": [
         "Začněte psát e-mailovou adresu"
@@ -7742,17 +7877,28 @@
         "Když se vás zeptají na e-mailovou adresu, dejte jim místo toho tento alias. Aliasy jsou poskytovány ${ passLink }."
       ]
     },
+    "Security Center (link to Pass App)": {
+      "(will open ${ PASS_APP_NAME })": [
+        "(otevře ${ PASS_APP_NAME })"
+      ]
+    },
     "Security Center - Action": {
       "View logs": [
         "Zobrazit logy"
       ]
     },
     "Security Center - Info": {
+      "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
+        "Nechat se upozornit, pokud vaše heslo nebo jiná data uniknou ze služby třetí strany. ${ learnMoreLink }"
+      ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Naše špičkové řešení s pomocí umělé inteligence zaměřené na uživatele, kteří vyžadují zvýšenou ochranu svých účtů. ${ learnMoreLink }"
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel je **aktivní** a chrání váš účet."
+      ],
+      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLink }": [
+        "Vaše údaje byly nalezeny při nejméně jednom úniku informací. Zapnutím ${ DARK_WEB_MONITORING_NAME } zobrazíte podrobnosti a provedete akci. ${ learnMoreLink }"
       ]
     },
     "Select files": {
@@ -8221,9 +8367,6 @@
       "Get more storage": [
         "Získat více úložného prostoru"
       ],
-      "Release notes": [
-        "Seznam změn"
-      ],
       "Upgrade storage": [
         "Navýšit úložiště"
       ],
@@ -8404,6 +8547,47 @@
         "Pro"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB úložiště"
+      ],
+      "and 15 more premium features": [
+        "a 15 dalších prémiových funkcí"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatické přesměrování e-mailu ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Upozornění na úniky informací ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktopová aplikace"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomozte nám udržet internet bezpečný a soukromý pro všechny. Přejděte na placený tarif."
+      ],
+      "No ads or tracking": [
+        "Žádné reklamy ani sledování"
+      ],
+      "Short @pm.me email address": [
+        "Zkrácená e-mailová adresa @pm.me"
+      ],
+      "Support our mission": [
+        "Podpořte naše poslání"
+      ],
+      "Upgrade": [
+        "Navýšit"
+      ],
+      "Upgrade your productivity": [
+        "Zlepšete svou produktivitu"
+      ],
+      "We don't sell your data": [
+        "Vaše údaje neprodáváme"
+      ],
+      "Your privacy is our mission": [
+        "Vaše soukromí je naším posláním"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Jste si jistý?"
@@ -8503,6 +8687,9 @@
       ],
       "Import record deleted": [
         "Záznam o importu byl smazán"
+      ],
+      "Last modified aliases stored in your oldest vault": [
+        "Naposledy upravené aliasy uložené ve vašem nejstarším trezoru"
       ],
       "Payment method added": [
         "Platební metoda byla přidána"
@@ -9160,6 +9347,9 @@
       "Settings": [
         "Nastavení"
       ],
+      "Share ${ name }": [
+        "Sdílet ${ name }"
+      ],
       "Share via link": [
         "Sdílet odkaz"
       ],
@@ -9262,9 +9452,6 @@
       "What would you like to import?": [
         "Co byste chtěli importovat?"
       ],
-      "What's new": [
-        "Co je nového"
-      ],
       "You have inaccessible files": [
         "Máte nedostupné soubory"
       ],
@@ -9274,11 +9461,20 @@
       "You have no folders yet": [
         "Zatím nemáte žádné složky"
       ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Vaše bezplatná zkušební verze ${ planName } skončí ${ textDate }"
+      ],
+      "Your 3 GB bonus": [
+        "Váš 3 GB bonus"
+      ],
       "Your account is protected": [
         "Váš účet je chráněn"
       ],
       "Your changes are not synced yet": [
         "Vaše změny zatím nejsou synchronizovány"
+      ],
+      "Your exposed information": [
+        "Vaše uniklé informace"
       ],
       "Your welcome actions": [
         "Akce na uvítanou"
