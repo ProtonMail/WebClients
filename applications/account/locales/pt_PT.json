@@ -1034,6 +1034,9 @@
       "View": [
         "Ver"
       ],
+      "View all reports": [
+        "Ver todos os relatórios"
+      ],
       "View invoice": [
         "Ver fatura"
       ],
@@ -3154,6 +3157,9 @@
       ]
     },
     "Email body for invitation (date part)": {
+      "TIME:\n${ formattedStart }": [
+        "PERÍODO: ${ formattedStart }"
+      ],
       "TIME:\n${ formattedStart } (all day)": [
         "PERÍODO: ${ formattedStart } (o dia todo)"
       ],
@@ -3898,9 +3904,6 @@
       ],
       "You have reached the contacts limit for your account": [
         "Atingiu o limite de contactos da sua conta."
-      ],
-      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
-        "Atingiu o número máximo de calendários. Não é possível importar alguns calendários."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Usou todos os endereços do seu plano. Subscreva um plano superior para adicionar um endereço."
@@ -5508,17 +5511,6 @@
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "Parte do conteúdo do seu calendário não é suportado e não será importado."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Foram detetadas chaves duplicadas adicionais. Carregue individualmente para obter mais informações."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "A chave ${ fingerprint } já foi carregada."
-      ],
-      "Selected color:": [
-        "Cor selecionada:"
       ]
     },
     "Info": {
@@ -7480,6 +7472,9 @@
         "Tem ${ availableCount } servidor dedicado disponível.",
         "Tem ${ availableCount } servidores dedicados disponíveis."
       ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "Tem uma subscrição experimental ${ planTitle }. Se gostaria de continuar com a sua subscrição após o período de avaliação, por favor, adicione um método de pagamento."
+      ],
       "You have no calendars to export.": [
         "Não tem calendários para exportar."
       ],
@@ -7536,9 +7531,6 @@
       ],
       "You won’t be able to recover locked data using your downloaded recovery files.": [
         "Não será possível recuperar dados bloqueados utilizando os ficheiros de recuperação descarregados."
-      ],
-      "You won’t be able to recover locked data using your downloaded recovery files. This will also disable trusted device recovery.": [
-        "Não será possível recuperar dados bloqueados utilizando os seus ficheiros de recuperação transferidos. Isto também irá desativar a recuperação de dispositivos fiáveis."
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
         "A sua conta da ${ BRAND_NAME } está associada com ${ externalEmailAddress }."
@@ -7621,6 +7613,17 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "A sua subscrição é gerida pela Mozilla. Contacte o suporte da Mozilla."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Foram detetadas chaves duplicadas adicionais. Carregue individualmente para obter mais informações."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "A chave ${ fingerprint } já foi carregada."
+      ],
+      "Selected color:": [
+        "Cor selecionada:"
       ]
     },
     "Info - folder colouring feature": {
@@ -8874,9 +8877,6 @@
       ],
       "Recovery phrase": [
         "Frase de recuperação"
-      ],
-      "Trusted device recovery": [
-        "Dispositivo de confiança de recuperação"
       ]
     },
     "Label for adding a new custom domain": {
@@ -11509,6 +11509,10 @@
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "Tem ${ timeRemaining.inDays } dia para redefinir a sua palavra-passe.",
         "Tem ${ timeRemaining.inDays } dias para redefinir a sua palavra-passe."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "Tem ${ timeRemaining.inSeconds }segundo para redefinir a sua palavra-passe.",
+        " Tem ${ timeRemaining.inSeconds } segundos para redefinir a sua palavra passe."
       ]
     },
     "session_recovery:available:link": {
@@ -12070,9 +12074,6 @@
       ]
     },
     "Storage": {
-      "Release notes": [
-        "Notas de lançamento"
-      ],
       "Upgrade storage": [
         "Actualizar o armazenamento"
       ],
@@ -13601,9 +13602,6 @@
       ],
       "What would you like to import?": [
         "O que gostaria de importar?"
-      ],
-      "What's new": [
-        "O que há de novo"
       ],
       "WireGuard configuration": [
         "Configuração WireGuard"

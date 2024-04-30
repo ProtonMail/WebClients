@@ -47,11 +47,11 @@
       "${ BRAND_NAME } shop": [
         "Toko ${ BRAND_NAME }"
       ],
-      "activate": [
-        "aktifkan"
-      ],
       "Activate": [
         "Aktifkan"
+      ],
+      "activate": [
+        "aktifkan"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktifkan ${ user.Name }@pm.me"
@@ -4277,9 +4277,6 @@
       "You have reached the contacts limit for your account": [
         "Anda telah mencapai batas jumlah kontak yang diperkenankan untuk akun Anda"
       ],
-      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
-        "Anda telah mencapai batas jumlah kalender yang diperkenankan. Sebagian kalender tidak dapat diimpor."
-      ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Anda telah menggunakan semua alamat dalam paket Anda. Mohon tingkatkan paket untuk menambah alamat baru."
       ],
@@ -5912,17 +5909,6 @@
         "Sebagian isi kalender Anda tidak didukung dan tidak akan diimpor."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Kami menemukan beberapa kunci duplikat. Mohon unggah satu per satu."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Kunci ${ fingerprint } sudah diunggah"
-      ],
-      "Selected color:": [
-        "Warna terpilih:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } memerlukan izin Anda untuk ${ enableDesktopNotifications }."
@@ -7259,9 +7245,6 @@
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Silakan coba lagi, gunakan metode pembayaran lainnya, atau hubungi PayPal untuk memperoleh bantuan."
       ],
-      "Please use a password more than ${ MIN_PASSWORD_LENGTH } character.": [
-        "Silakan gunakan kata sandi yang mengandung lebih dari ${ MIN_PASSWORD_LENGTH } karakter."
-      ],
       "Please use another browser or download the file.": [
         "Silakan gunakan browser lain atau unduh berkas yang bersangkutan."
       ],
@@ -8198,9 +8181,6 @@
       "You won’t be able to recover locked data using your downloaded recovery files.": [
         "Anda tidak akan lagi dapat memulihkan data yang terkunci dengan menggunakan berkas pemulihan yang Anda unduh."
       ],
-      "You won’t be able to recover locked data using your downloaded recovery files. This will also disable trusted device recovery.": [
-        "Anda tidak dapat mengembalikan data terkunci dengan berkas pemulihan yang Anda unduh. Ini juga menonaktifkan pemulihan perangkat tepercaya."
-      ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
         "Akun ${ BRAND_NAME } Anda terhubung dengan ${ externalEmailAddress }."
       ],
@@ -8293,6 +8273,17 @@
       ],
       "Zoom meeting": [
         "sesi meeting Zoom"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Kami menemukan beberapa kunci duplikat. Mohon unggah satu per satu."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Kunci ${ fingerprint } sudah diunggah"
+      ],
+      "Selected color:": [
+        "Warna terpilih:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9633,9 +9624,6 @@
       ],
       "Recovery phrase": [
         "Frasa pemulihan"
-      ],
-      "Trusted device recovery": [
-        "Pemulihan melalui perangkat yang terpercaya"
       ]
     },
     "Label for adding a new custom domain": {
@@ -11119,7 +11107,7 @@
         "Dukungan IMAP terbatas hanya pada aplikasi desktop (mis. Outlook, Apple Mail, dan Thunderbird) via ${ MAIL_APP_NAME } Bridge. Integrasi IMAP berbasis cloud saat ini tidak didukung."
       ],
       "Keep your plans private to you and your family with an encrypted calendar": [
-        "Jaga agar rencana Anda tetap menjadi rahasia antara Anda dan keluarga dengan kalender yang terenkripsi"
+        "Jaga agar rencana Anda tetap privat antara Anda dan keluarga Anda dengan kalender yang terenkripsi"
       ],
       "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server.": [
         "Menjaga Anda agar tetap terlindung sepanjang waktu dengan memblokir seluruh koneksi jaringan apabila Anda secara tidak sengaja terputus dari server VPN kami."
@@ -13418,9 +13406,6 @@
       ]
     },
     "Storage": {
-      "Release notes": [
-        "Catatan rilis"
-      ],
       "Upgrade storage": [
         "Tingkatkan ruang penyimpanan"
       ],
@@ -13779,6 +13764,9 @@
       "You **won't be able to send emails** with attachments": [
         "Anda **tidak akan dapat mengirim email** yang memiliki lampiran"
       ],
+      "You still have ${ expiryDate } on your ${ planName } plan. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling.": [
+        "Anda masih memiliki ${ expiryDate } dalam paket ${ planName } Anda. Kami akan menambahkan kredit untuk waktu yang tersisa ke Akun ${ BRAND_NAME } Anda. Pastikan Anda tidak melebihi batasan paket gratis sebelum membatalkan."
+      ],
       "Your **calendar will be frozen**": [
         "**Kalender Anda akan diblokir**"
       ],
@@ -13796,17 +13784,41 @@
       ]
     },
     "subscription reminder": {
+      "15 GB storage": [
+        "Ruang penyimpanan 15 GB"
+      ],
       "and 15 more premium features": [
         "dan 15 fitur premium lainnya"
       ],
       "Automatic email forwarding ${ strongText }": [
         "Penerusan email otomatis ${ strongText }"
       ],
+      "Data breach alerts ${ strongArgument }": [
+        "Peringatan kebocoran data ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplikasi desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Bantu kami menjaga internet tetap aman dan privat bagi siapa pun. Tingkatkan akun Anda ke paket berbayar."
+      ],
+      "No ads or tracking": [
+        "Tanpa iklan atau pelacakan"
+      ],
+      "Short @pm.me email address": [
+        "Alamat email pendek @pm.me"
+      ],
+      "Support our mission": [
+        "Dukung misi kami"
+      ],
       "Upgrade": [
         "Tingkatkan"
       ],
       "Upgrade your productivity": [
         "Tingkatkan produktivitas Anda"
+      ],
+      "We don't sell your data": [
+        "Kami tidak menjual data Anda"
       ],
       "Your privacy is our mission": [
         "Privasi Anda adalah misi kami"
@@ -14753,6 +14765,15 @@
       "Folders and labels": [
         "Folder dan label"
       ],
+      "For Linux": [
+        "Untuk Linux"
+      ],
+      "For macOS": [
+        "Untuk macOS"
+      ],
+      "For Windows": [
+        "Untuk Windows"
+      ],
       "Forward and auto-reply": [
         "Penerusan dan pembalasan otomatis"
       ],
@@ -15256,9 +15277,6 @@
       ],
       "What would you like to import?": [
         "Hal-hal apa saja yang hendak Anda impor?"
-      ],
-      "What's new": [
-        "Apa-apa saja yang baru"
       ],
       "WireGuard configuration": [
         "Konfigurasi WireGuard"

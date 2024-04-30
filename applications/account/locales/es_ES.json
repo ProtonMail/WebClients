@@ -47,11 +47,11 @@
       "${ BRAND_NAME } shop": [
         "Tienda ${ BRAND_NAME }"
       ],
-      "activate": [
-        "activar"
-      ],
       "Activate": [
         "Activar"
+      ],
+      "activate": [
+        "activar"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activar ${ user.Name }@pm.me"
@@ -627,7 +627,7 @@
         "Marcar como por defecto"
       ],
       "Mark as open": [
-        "Marcar como pendiente"
+        "Marcar como abierto"
       ],
       "Mark as resolved": [
         "Marcar como resuelto"
@@ -4295,8 +4295,8 @@
       "You have reached the contacts limit for your account": [
         "Has alcanzado el límite de contactos para tu cuenta."
       ],
-      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
-        "Has alcanzado el número máximo de calendarios. No se han podido importar algunos calendarios."
+      "You have reached the maximum number of calendars.": [
+        "Ha alcanzado la cantidad máxima de calendarios."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Has utilizado todas las direcciones de tu plan. Pasa a un plan superior para añadir una dirección."
@@ -5949,17 +5949,6 @@
         "Parte del contenido de tu calendario no es compatible y no se importará."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Se han detectado claves duplicadas adicionales. Cárgalas individualmente para obtener más información."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "La clave ${ fingerprint } ya ha sido cargada."
-      ],
-      "Selected color:": [
-        "Color seleccionado:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necesita tu permiso para ${ enableDesktopNotifications }."
@@ -7252,6 +7241,9 @@
       "Password copied to clipboard": [
         "Contraseña copiada en el portapapeles"
       ],
+      "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
+        "Las contraseñas deben tener ${ MIN_PASSWORD_LENGTH } caracteres o más."
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Los pagos están protegidos con cifrado TLS y por las leyes de privacidad suizas."
       ],
@@ -7328,10 +7320,6 @@
       ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Inténtalo de nuevo. Utiliza un método de pago diferente o ponte en contacto con PayPal para obtener ayuda."
-      ],
-      "Please use a password more than ${ MIN_PASSWORD_LENGTH } character.": [
-        "Use una contraseña con más de ${ MIN_PASSWORD_LENGTH } carácter.",
-        "Use una contraseña con más de ${ MIN_PASSWORD_LENGTH } caracteres."
       ],
       "Please use another browser or download the file.": [
         "Usa otro navegador o descarga el archivo."
@@ -8279,8 +8267,8 @@
       "You won’t be able to recover locked data using your downloaded recovery files.": [
         "No podrás recuperar los datos cifrados después de un restablecimiento de la cuenta utilizando los archivos de recuperación descargados."
       ],
-      "You won’t be able to recover locked data using your downloaded recovery files. This will also disable trusted device recovery.": [
-        "No podrás recuperar datos bloqueados utilizando tus archivos de recuperación descargados. Esto también desactivará la recuperación del dispositivo de confianza."
+      "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
+        "No podrás recuperar datos bloqueados usando los archivos de recuperación descargados. Esto también desactivará la recuperación desde un dispositivo."
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
         "Tu cuenta ${ BRAND_NAME } está asociada a ${ externalEmailAddress }."
@@ -8335,10 +8323,10 @@
         "Tus importaciones desde ${ accounts } se han retrasado temporalmente."
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
-        "Tu información está segura con nosotros. Solo te contactaremos cuando sea necesario para prestar nuestros servicios."
+        "Tus datos están a salvo con nosotros. Solo te contactaremos cuando sea necesario para prestar nuestros servicios."
       ],
       "Your information was found on ${ displayedDate }": [
-        "Tu información fue encontrada el ${ displayedDate }"
+        "Tus datos han sido encontrados el ${ displayedDate }"
       ],
       "Your login information will not be saved after the import is completed.": [
         "La información de inicio de sesión no se guardará una vez finalizada la importación."
@@ -8375,6 +8363,17 @@
       ],
       "Zoom meeting": [
         "reunión de Zoom"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Se han detectado claves duplicadas adicionales. Cárgalas individualmente para obtener más información."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "La clave ${ fingerprint } ya ha sido cargada."
+      ],
+      "Selected color:": [
+        "Color seleccionado:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9716,14 +9715,14 @@
       ]
     },
     "label": {
+      "Device-based recovery": [
+        "Recuperación desde un dispositivo"
+      ],
       "Recovery phone number": [
         "Número de teléfono de recuperación"
       ],
       "Recovery phrase": [
         "Frase de recuperación"
-      ],
-      "Trusted device recovery": [
-        "Dispositivo de confianza de recuperación"
       ]
     },
     "Label for adding a new custom domain": {
@@ -12853,7 +12852,7 @@
     },
     "Security Center - Info": {
       "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLinkBreach }": [
-        "Tu información ha sido encontrada en al menos una vulneración de datos. Activa la función ${ DARK_WEB_MONITORING_NAME } para ver los detalles y tomar acciones. ${ learnMoreLinkBreach }"
+        "Tus datos han sido encontrados en al menos una vulneración de datos. Activa la función ${ DARK_WEB_MONITORING_NAME } para ver los detalles y tomar acciones. ${ learnMoreLinkBreach }"
       ]
     },
     "Select file": {
@@ -13569,9 +13568,6 @@
       ]
     },
     "Storage": {
-      "Release notes": [
-        "Notas de la versión"
-      ],
       "Upgrade storage": [
         "Aumentar el almacenamiento"
       ],
@@ -13968,17 +13964,41 @@
       "15 GB storage": [
         "15 GB de espacio de almacenamiento"
       ],
+      "and 15 more premium features": [
+        "y 15 funciones premium más"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Reenvío de correo automático ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertas de vulneraciones de datos ${ strongArgument }"
+      ],
       "Desktop app": [
         "Aplicación de escritorio"
       ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ayúdanos a mantener internet seguro y privado para todos. Mejora a un plan de pago."
+      ],
       "No ads or tracking": [
         "Sin anuncios ni rastreadores"
+      ],
+      "Short @pm.me email address": [
+        "Dirección de correo corta @pm.me"
       ],
       "Support our mission": [
         "Apoya nuestra misión"
       ],
       "Upgrade": [
         "Mejorar"
+      ],
+      "Upgrade your productivity": [
+        "Mejora tu productividad"
+      ],
+      "We don't sell your data": [
+        "No vendemos tus datos."
+      ],
+      "Your privacy is our mission": [
+        "Tu privacidad es nuestra misión."
       ]
     },
     "Subscription renewal state": {
@@ -15446,9 +15466,6 @@
       "What would you like to import?": [
         "¿Qué te gustaría importar?"
       ],
-      "What's new": [
-        "Novedades"
-      ],
       "WireGuard configuration": [
         "Configuración de WireGuard"
       ],
@@ -15468,7 +15485,7 @@
         "Tus cambios todavía no están sincronizados."
       ],
       "Your exposed information": [
-        "Tu información expuesta"
+        "Tus datos expuestos"
       ],
       "Your plan": [
         "Tu plan"
@@ -15954,6 +15971,9 @@
       ],
       "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
         "La suscripción se renueva automáticamente cada 3 meses. Tu próxima fecha de facturación es en 3 meses."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "La oferta especial de ${ priceWithDiscount } es válida durante el primer mes. Una vez transcurrido ese plazo, se renovará automáticamente al precio de ${ renewPrice } cada mes. Puedes cancelarla en cualquier momento."
       ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Se te facturará cada 12 meses por ${ renewPrice }."

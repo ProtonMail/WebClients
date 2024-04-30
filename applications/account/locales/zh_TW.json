@@ -47,10 +47,10 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 商店"
       ],
-      "activate": [
+      "Activate": [
         "啟用"
       ],
-      "Activate": [
+      "activate": [
         "啟用"
       ],
       "Activate ${ user.Name }@pm.me": [
@@ -323,6 +323,9 @@
       "Delete link": [
         "刪除連結"
       ],
+      "Delete logo": [
+        "刪除標誌"
+      ],
       "Delete permanently": [
         "永久刪除"
       ],
@@ -586,6 +589,9 @@
       ],
       "Keep": [
         "保留"
+      ],
+      "Keep logo": [
+        "保留標誌"
       ],
       "Keep my Plus subscription": [
         "保持進階版訂購授權"
@@ -863,6 +869,9 @@
       "Select country": [
         "選擇國家"
       ],
+      "select file": [
+        "選取檔案"
+      ],
       "Select file": [
         "選取檔案"
       ],
@@ -971,6 +980,9 @@
       "Start import": [
         "開始匯入"
       ],
+      "Start live chat": [
+        "開始即時聊天"
+      ],
       "Stay": [
         "停留"
       ],
@@ -1049,6 +1061,12 @@
       "Upgrade your plan": [
         "升級您的方案"
       ],
+      "Upload": [
+        "上傳"
+      ],
+      "Upload logo": [
+        "上傳標誌圖片"
+      ],
       "Upload picture": [
         "上載圖像"
       ],
@@ -1102,6 +1120,9 @@
       ],
       "Void all recovery files?": [
         "要廢止所有帳號救援檔案嗎？"
+      ],
+      "Welcome": [
+        "歡迎"
       ],
       "What do I get?": [
         "我的方案服務內容："
@@ -3821,6 +3842,9 @@
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "無法取得使用中工作階段。請 ${ refresh } 或稍後再試。"
       ],
+      "Failed to process the logo": [
+        "無法處理此標誌檔案"
+      ],
       "Filter with this name already exists": [
         "已經有一個相同名稱的篩選器"
       ],
@@ -3991,6 +4015,9 @@
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "請升級至選用多於 1 位使用者的企業方案，以便管理多個使用者。"
+      ],
+      "Please upload a square file": [
+        "請上傳正方形圖片"
       ],
       "Please upload an xml file": [
         "請上載xml格式文檔"
@@ -4171,9 +4198,6 @@
       ],
       "You have reached the contacts limit for your account": [
         "您的帳號已達聯絡人數量限制"
-      ],
-      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
-        "您已經達到行事曆的數量上限。有部分行事曆無法被匯入。"
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "您已使用您的方案中所有電郵位址。請升級您的方案以加入電郵位址。"
@@ -5450,6 +5474,11 @@
         "免費滿意體驗最佳的 ${ MAIL_APP_NAME }"
       ]
     },
+    "Headline": {
+      "Contact us": [
+        "聯絡我們"
+      ]
+    },
     "Hint": {
       "Add this record to your domain in the control panel of your domain name registrar": [
         "請在您的網域名稱註冊機構的控制台中新增此記錄到您的網域中"
@@ -5791,17 +5820,6 @@
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "您的行事曆中有部分內容未受支援，因此不會匯入。"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "偵測到其它重複的金鑰。請單獨上傳以取得更多資訊"
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "金鑰 ${ fingerprint } 已上傳"
-      ],
-      "Selected color:": [
-        "已選取的色彩:"
       ]
     },
     "Info": {
@@ -6813,6 +6831,9 @@
       "Link type": [
         "連結類型"
       ],
+      "Live chat": [
+        "即時聊天室"
+      ],
       "Loaded content is being protected by our proxy when tracker protection is activated.": [
         "開啟追蹤程式保護功能，代理伺服器會保護已載入的內容。"
       ],
@@ -6821,6 +6842,9 @@
       ],
       "Loading ${ appName }": [
         "正在載入 ${ appName }"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "正在加載行事曆，請稍後。你將會在新的瀏覽視窗中連接到我們的行程平臺。"
       ],
       "Loading preview": [
         "正在載入預覽"
@@ -6987,6 +7011,9 @@
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "您的組織中還有其他系統管理員，您有責任告知他們新密碼。"
       ],
+      "Other users within your organization will see your busy slots. No event details are shared.": [
+        "在您的組織機構的其他用戶會看到你繁忙的時段。沒有行程的詳細資料會與他們共享。"
+      ],
       "Outdated recovery file; update to ensure access to your data": [
         "帳號救援檔案已過時，更新以確保您可以存取您的資料"
       ],
@@ -7086,9 +7113,6 @@
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "諘再試一次，您也可換另一個繳款方式，或聯絡 PayPal 尋求協助。"
       ],
-      "Please use a password more than ${ MIN_PASSWORD_LENGTH } character.": [
-        "密碼至少需要 ${ MIN_PASSWORD_LENGTH } 個字元長。"
-      ],
       "Please use another browser or download the file.": [
         "請使用其他瀏覽器或下載檔案。"
       ],
@@ -7103,6 +7127,9 @@
       ],
       "Plus or Visionary subscription required": [
         "需為 Plus 或 Visionary 訂購授權"
+      ],
+      "Preview": [
+        "預覽"
       ],
       "Preview failed to be loaded": [
         "連結載入失敗"
@@ -7181,6 +7208,9 @@
       ],
       "Report link expired": [
         "回報逾期連結"
+      ],
+      "Request a phone call": [
+        "請求電話呼叫"
       ],
       "Resend verification email": [
         "重新傳送驗證電子郵件"
@@ -7376,6 +7406,9 @@
       ],
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "電郵驗證連結已過期。請登入以重新傳送驗證連結。"
+      ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "您被曝露的資料來自第三方服務。您 ${ BRAND_NAME } 帳號資料保持安全及加密。 ${ learnMoreLink }"
       ],
       "The following address is available:": [
         "以下的電子郵件位址可用："
@@ -7875,6 +7908,9 @@
       "You can check the progress ${ importProgressLink }.": [
         "您可以檢查進度 ${ importProgressLink }。"
       ],
+      "You can close the tab or browser in the meantime.": [
+        "等待期間，您可以關閉這個標籤頁或瀏覽器。"
+      ],
       "You can edit this once to ensure the correct email address for verification.": [
         "您可以編輯這個一次以確保用於驗證的電子郵件位址正確。"
       ],
@@ -7928,6 +7964,12 @@
       ],
       "You have ${ availableCount } dedicated server available.": [
         "您有${ availableCount }台可用的獨立伺服器。"
+      ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "您有一個試用期 ${ planTitle } 訂購授權。如果您希望在試用期完結後繼續您的訂購授權，請增加一個繳款方式。"
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "您有一個試用期 ${ planTitle } 訂購授權。您暫時無需付費。你的訂購授權將會在試用期結束時自動繳付。"
       ],
       "You have no calendars to export.": [
         "您未有行事曆可匯出。"
@@ -7986,9 +8028,6 @@
       "You won’t be able to recover locked data using your downloaded recovery files.": [
         "您無法使用下載的復原檔案進行鎖定資料復原。"
       ],
-      "You won’t be able to recover locked data using your downloaded recovery files. This will also disable trusted device recovery.": [
-        "您將無法使用已下載的還原檔案還原已鎖定的資料。這樣也會停用從信任的裝置還原。"
-      ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
         "您的 ${ BRAND_NAME } 帳號已與 ${ externalEmailAddress } 關聯。"
       ],
@@ -8043,6 +8082,9 @@
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "您的各項資訊在我們安全保護下安全無虞，僅有提供服務前的身分驗證需求時，我們才會使用該資訊與您進行聯繫。"
       ],
+      "Your information was found on ${ displayedDate }": [
+        "您的資料在 ${ displayedDate } 被發現。"
+      ],
       "Your login information will not be saved after the import is completed.": [
         "匯入完成後不會保存您的登入資訊。"
       ],
@@ -8075,6 +8117,20 @@
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "您的支援服務工單已關閉。感謝您使用 ${ BRAND_NAME } 支援服務。"
+      ],
+      "Zoom meeting": [
+        "Zoom 會議"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "偵測到其它重複的金鑰。請單獨上傳以取得更多資訊"
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "金鑰 ${ fingerprint } 已上傳"
+      ],
+      "Selected color:": [
+        "已選取的色彩:"
       ]
     },
     "Info - folder colouring feature": {
@@ -8599,6 +8655,9 @@
       "Awarded": [
         "獲得獎勵"
       ],
+      "Beta": [
+        "測試版"
+      ],
       "Billing address": [
         "帳單位址"
       ],
@@ -8977,6 +9036,9 @@
       "Link label": [
         "連結標籤"
       ],
+      "Logo": [
+        "標誌"
+      ],
       "Mail Server (IMAP)": [
         "郵件伺服器 (IMAP)"
       ],
@@ -9208,6 +9270,9 @@
       "Send in": [
         "傳送"
       ],
+      "Show others when I'm busy": [
+        "向其他人顯示我正在忙"
+      ],
       "Show secondary time zone": [
         "顯示次要時區"
       ],
@@ -9377,9 +9442,6 @@
       ],
       "Recovery phrase": [
         "復原短語"
-      ],
-      "Trusted device recovery": [
-        "已信任的裝置復原"
       ]
     },
     "Label for adding a new custom domain": {
@@ -9723,6 +9785,9 @@
       ],
       "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
         "您的${ mailStorage }已滿。要傳送或接收電子郵件，釋放空間或${ cta }。"
+      ],
+      "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
+        "您的帳號可能會被刪除。為了避免資料損失，請向您的管理員查詢或升級。 ${ cta }"
       ],
       "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
         "您的儲存已滿，要傳送或接收電子郵件，釋放空間或${ cta }。"
@@ -11427,6 +11492,17 @@
         "您的方案包含最高 ${ humanReadableAvailableSpace } 的儲存空間。"
       ]
     },
+    "Organization logo upload modal": {
+      "File in PNG or JPEG format": [
+        "PNG 或 JPEG 格式檔案"
+      ],
+      "File not larger than 30 KB": [
+        "檔案大小不可超過 30 KB"
+      ],
+      "Square image of at least 128 pixels": [
+        "至少 128 像素的正方形圖片"
+      ]
+    },
     "OS compatibility": {
       ".deb (for Debian/Ubuntu)": [
         ".deb（適用於 Debian/Ubuntu）"
@@ -12878,9 +12954,6 @@
       ]
     },
     "Storage": {
-      "Release notes": [
-        "版本資訊"
-      ],
       "Upgrade storage": [
         "升級儲存空間"
       ],
@@ -13722,6 +13795,9 @@
       "Billing cycle": [
         "繳款單週期"
       ],
+      "Block trackers and malware": [
+        "遮蔽追蹤器和其他惡意軟體"
+      ],
       "Bridge for ${ platform }": [
         "適用於 ${ platform } 的 Bridge"
       ],
@@ -13851,6 +13927,9 @@
       "Custom selection of users": [
         "自選使用者"
       ],
+      "Customization": [
+        "自訂"
+      ],
       "Customize and confirm": [
         "自訂並確認"
       ],
@@ -13910,6 +13989,9 @@
       ],
       "Delete logs": [
         "刪除記錄檔"
+      ],
+      "Delete organization logo?": [
+        "刪除組織標誌？"
       ],
       "Delete the server (you will still be able to recover it for ${ days } day)": [
         "刪除伺服器（您仍可於 ${ days } 天內還原）"
@@ -14064,6 +14146,15 @@
       "Folders and labels": [
         "資料夾和標籤"
       ],
+      "For Linux": [
+        "適用於 Linux"
+      ],
+      "For macOS": [
+        "適用於 macOS"
+      ],
+      "For Windows": [
+        "適用於 Windows"
+      ],
       "Forward and auto-reply": [
         "轉寄及自動回覆"
       ],
@@ -14102,6 +14193,9 @@
       ],
       "How does it work?": [
         "那是如何運作的？"
+      ],
+      "How to choose a good logo": [
+        "如何選擇適當的標誌"
       ],
       "How to refer a friend and get credits": [
         "如何引薦親友以獲得獎勵額度"
@@ -14205,6 +14299,9 @@
       "No recovery method": [
         "沒有復原方法"
       ],
+      "Open": [
+        "開啟"
+      ],
       "Open actions dropdown": [
         "展開操作下拉選單"
       ],
@@ -14234,6 +14331,9 @@
       ],
       "Password reset settings": [
         "密碼重設設定"
+      ],
+      "Passwords made easy": [
+        "密碼便容易"
       ],
       "Pay invoice": [
         "支付帳單"
@@ -14321,6 +14421,9 @@
       ],
       "Reset password?": [
         "重設密碼？"
+      ],
+      "Resolved": [
+        "已解決"
       ],
       "Restore administrator privileges": [
         "恢復系統管理員權限"
@@ -14505,6 +14608,9 @@
       "Upload CSV file to create multiple accounts": [
         "上傳CSV檔案以創建多重帳號"
       ],
+      "Upload your organization’s logo": [
+        "上傳您的組織標誌圖片檔案"
+      ],
       "Users": [
         "使用者"
       ],
@@ -14541,14 +14647,20 @@
       "We'll send an email to your new address with instructions on completing the change.": [
         "我們將向您的新位址寄送一封電子郵件，其中包含如何完成變更的說明。"
       ],
+      "What is an alias?": [
+        "甚麼是別名?"
+      ],
+      "What is the dark web?": [
+        "甚麼是暗網?"
+      ],
       "What would you like to import?": [
         "您打算要匯入什麼資料呢？"
       ],
-      "What's new": [
-        "最新功能"
-      ],
       "WireGuard configuration": [
         "WireGuard 組態"
+      ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "您的 ${ planName } 免費方案將於 ${ textDate } 結束"
       ],
       "Your calendar link": [
         "您的行事曆連結"
