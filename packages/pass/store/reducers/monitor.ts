@@ -40,8 +40,11 @@ const monitorReducer: Reducer<MonitorState> = (state = null, action) => {
 
     if (state) {
         if (resolveCustomBreach.success.match(action)) {
+            const address = state.custom.find(({ addressId }) => addressId === action.payload);
+            if (!address) return state;
+
             return partialMerge(state, {
-                total: Math.max(0, state.total - 1),
+                total: Math.max(0, state.total - (address?.breachCount ?? 0)),
                 custom: state.custom.map((breach) => {
                     if (breach.addressId !== action.payload) return breach;
                     return { ...breach, breachCount: 0 };
@@ -50,8 +53,11 @@ const monitorReducer: Reducer<MonitorState> = (state = null, action) => {
         }
 
         if (resolveProtonBreach.success.match(action)) {
+            const address = state.proton.find(({ addressId }) => addressId === action.payload);
+            if (!address) return state;
+
             return partialMerge(state, {
-                total: Math.max(0, state.total - 1),
+                total: Math.max(0, state.total - (address?.breachCount ?? 0)),
                 proton: state.proton.map((breach) => {
                     if (breach.addressId !== action.payload) return breach;
                     return { ...breach, breachCount: 0 };
