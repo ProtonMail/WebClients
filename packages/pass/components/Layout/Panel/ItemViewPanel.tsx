@@ -79,7 +79,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
     const unpinInFlight = useSelector(selectRequestInFlight(itemUnpinRequest(shareId, itemId)));
     const canTogglePinned = !(pinInFlight || unpinInFlight);
 
-    const monitorActions = monitorEnabled && (
+    const monitorActions = monitorEnabled && !trashed && (
         <DropdownMenuButton
             disabled={optimistic}
             onClick={handleToggleFlagsClick}
