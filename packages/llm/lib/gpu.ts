@@ -9,6 +9,7 @@ import type {
     Action,
     DownloadProgressCallback,
     GenerationCallback,
+    GpuAssessmentResult,
     LlmManager,
     LlmModel,
     RunningAction,
@@ -131,7 +132,22 @@ export class GpuLlmModel implements LlmModel {
     }
 }
 
-// @ts-ignore
+type HardwareSpecs = {
+    userAgent: string;
+    deviceMemory: any;
+    platform: string;
+    webGlRenderer: string;
+    webGlVendor: string;
+};
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+function isBlacklisted(specs: HardwareSpecs): boolean {
+    // This function is meant to be completed with more cases
+    const isMacPreAppleSilicon = specs.userAgent.match(/OS X 10_([789]|1[01234])/);
+    if (isMacPreAppleSilicon) return true;
+    return false;
+}
+
 export class GpuLlmManager implements LlmManager {
     private chat: WebWorkerEngine | undefined;
 
@@ -144,8 +160,59 @@ export class GpuLlmManager implements LlmManager {
         this.status = undefined;
     }
 
-    hasGpu(): boolean {
-        throw Error('todo');
+    async checkGpu(canvas?: HTMLCanvasElement): Promise<GpuAssessmentResult> {
+        // Gather specs
+        let webGlRenderer: string | undefined;
+        let webGlVendor: string | undefined;
+        if (canvas) {
+            const gl = canvas.getContext('webgl');
+            if (!gl) {
+                return 'noWebGpu'; // no WebGL really, but it doesn't really change the conclusion
+            }
+            webGlRenderer = gl.getParameter(gl.RENDERER);
+            webGlVendor = gl.getParameter(gl.VENDOR);
+        }
+        const specs: HardwareSpecs = {
+            userAgent: navigator.userAgent,
+            platform: navigator.platform,
+            // @ts-ignore
+            deviceMemory: navigator.deviceMemory || null,
+            webGlRenderer: webGlRenderer || '',
+            webGlVendor: webGlVendor || '',
+        };
+
+        // Test if system is not blacklisted
+        if (isBlacklisted(specs)) {
+            return 'blacklisted';
+        }
+
+        // Test if there's enough memory
+        if (specs.deviceMemory !== null && specs.deviceMemory < 8) {
+            return 'insufficientRam';
+        }
+
+        // Test if we can load webgpu
+        try {
+            const navigator = globalThis.navigator as NavigatorGPU;
+            const adapter = await navigator.gpu.requestAdapter();
+            if (!adapter) {
+                if (specs.userAgent.includes('Firefox')) {
+                    return 'noWebGpuFirefox';
+                } else {
+                    return 'noWebGpu';
+                }
+            }
+        } catch (e) {
+            // eslint-disable-next-line no-console
+            console.log(e);
+            if (specs.userAgent.includes('Firefox')) {
+                return 'noWebGpuFirefox';
+            } else {
+                return 'noWebGpu';
+            }
+        }
+
+        return 'ok';
     }
 
     isDownloading(): boolean {
@@ -174,6 +241,7 @@ export class GpuLlmManager implements LlmManager {
             this.model = new GpuLlmModel(this.chat, this);
             this.status = 'loaded';
         } catch (e) {
+            // todo: check if the error is about webgpu, and throw a more specific error in this case
             /* eslint-disable-next-line no-console */
             console.error(e);
             this.status = 'error';

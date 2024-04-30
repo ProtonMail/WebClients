@@ -2,6 +2,7 @@ import type {
     Action,
     DownloadProgressCallback,
     GenerationCallback,
+    GpuAssessmentResult,
     LlmManager,
     LlmModel,
     PromiseReject,
@@ -189,8 +190,9 @@ export class DummyLlmManager implements LlmManager {
         this.downloadedChunks = 0;
     }
 
-    hasGpu(): boolean {
-        return true;
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    async checkGpu(canvas?: HTMLCanvasElement): Promise<GpuAssessmentResult> {
+        return 'ok';
     }
 
     isDownloading(): boolean {
