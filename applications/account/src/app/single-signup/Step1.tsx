@@ -1168,7 +1168,7 @@ const Step1 = ({
                             <BoxHeader
                                 step={showStepLabel ? step++ : undefined}
                                 title={c('Header').t`Create your account`}
-                            ></BoxHeader>
+                            />
                             <BoxContent>
                                 <div className="relative">
                                     <AccountStepDetails
