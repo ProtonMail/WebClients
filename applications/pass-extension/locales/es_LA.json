@@ -84,7 +84,7 @@
         "Confirmar acceso"
       ],
       "Connect your ${ BRAND_NAME } Account": [
-        "Conecte su cuenta de ${ BRAND_NAME }"
+        "Conecte la cuenta de ${ BRAND_NAME }"
       ],
       "Continue": [
         "Continuar"
@@ -210,7 +210,7 @@
         "Contraseñas generadas"
       ],
       "Get mobile apps": [
-        "Descargar apps móviles"
+        "Descargar aplicaciones móviles"
       ],
       "Help us improve": [
         "Ayúdenos a mejorar"
@@ -306,7 +306,7 @@
         "Abrir navegación"
       ],
       "Open web app": [
-        "Abrir app web"
+        "Abrir aplicación web"
       ],
       "Pass for Android": [
         "Pass para Android"
@@ -414,7 +414,7 @@
         "Enviar"
       ],
       "Submitting report...": [
-        "Enviando reporte..."
+        "Enviando informe..."
       ],
       "Transfer ownership": [
         "Transferir la propiedad"
@@ -447,7 +447,7 @@
         "Mejore ahora para compartir con más personas."
       ],
       "View app logs": [
-        "Ver registros de la app"
+        "Ver registros de la aplicación"
       ],
       "View history": [
         "Mostrar historial"
@@ -520,7 +520,7 @@
         "Error de autenticación"
       ],
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
-        "Error en la autenticación. Confirme su contraseña de ${ BRAND_NAME } para continuar con la exportación."
+        "Error en la autenticación. Confirme la contraseña de ${ BRAND_NAME } para continuar con la exportación."
       ],
       "Authentication failure: ${ message }": [
         "Error de la autenticación: ${ message }"
@@ -717,7 +717,7 @@
         "Error en la verificación de la firma"
       ],
       "Some vaults are no longer accessible due to a password reset. Reactivate your account keys in order to regain access. ${ reactivateLink }": [
-        "Algunas bóvedas ya no son accesibles debido a un restablecimiento de contraseña. Reactive las claves de su cuenta para recuperar el acceso. ${ reactivateLink }"
+        "Algunas bóvedas ya no son accesibles debido a un restablecimiento de contraseña. Reactive las claves de la cuenta para recuperar el acceso. ${ reactivateLink }"
       ],
       "Something went wrong": [
         "Ocurrió un error."
@@ -783,7 +783,7 @@
         "Código PIN incorrecto. Intente de nuevo."
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
-        "Su código PIN fue eliminado por otro cliente de ${ PASS_APP_NAME }"
+        "El código PIN fue eliminado por otro cliente de ${ PASS_APP_NAME }"
       ]
     },
     "Error message": {
@@ -888,7 +888,7 @@
         "${ trialDaysLeft } días restantes"
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
-        "Pruebe gratis las funciones premium durante 7 días, solo durante su primera semana en ${ BRAND_NAME }."
+        "Pruebe gratis las funciones premium durante 7 días, solo durante la primera semana en ${ BRAND_NAME }."
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Hay una versión nueva disponible de ${ PASS_APP_NAME }. Actualícela para disfrutar de las últimas funciones y errores corregidos."
@@ -900,19 +900,19 @@
         "El acceso fue confirmado."
       ],
       "Access your passwords on the go with our mobile apps.": [
-        "Acceda a sus contraseñas sobre la marcha con nuestras apps móviles."
+        "Acceda a sus contraseñas sobre la marcha con nuestras aplicaciones móviles."
       ],
       "Admin": [
         "Administrador"
       ],
       "After inactivity, access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
-        "Después del tiempo de inactividad, para acceder a ${ PASS_APP_NAME } se requerirá un código PIN para desbloquear su sesión. Se cerrará la sesión después de 3 intentos fallidos."
+        "Después del tiempo de inactividad, para acceder a ${ PASS_APP_NAME } se requerirá un código PIN para desbloquear la sesión. Se cerrará la sesión después de 3 intentos fallidos."
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
-        "Después de importar sus datos, puede eliminar el archivo CSV que contiene sus contraseñas por seguridad."
+        "Después de importar los datos, puede eliminar el archivo CSV que contiene sus contraseñas por seguridad."
       ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
-        "Alias \"${ item.aliasEmail }\" movido a la papelera. Dejará de reenviar correos a su buzón."
+        "Alias \"${ item.aliasEmail }\" movido a la papelera. Dejará de reenviar correos a el buzón."
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Todos los elementos de \"${ payload.content.name }\" fueron movidos."
@@ -984,13 +984,13 @@
         "Creando alias..."
       ],
       "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, passkeys...). For a complete export, we recommend using a different format.": [
-        "El formato CSV es conveniente para visualizar sus datos. Por su simpleza, algunos datos no serán incluidos (campos personalizados, claves de acceso...). Para exportar datos de manera completa un formato distinto."
+        "El formato CSV es conveniente para visualizar los datos. Por su simpleza, algunos datos no serán incluidos (campos personalizados, claves de acceso...). Para exportar datos de manera completa un formato distinto."
       ],
       "Current version": [
         "Versión actual"
       ],
       "Decrypting your data": [
-        "Descifrando sus datos"
+        "Descifrando los datos"
       ],
       "Deleted items will be moved here first": [
         "Los elementos eliminados serán movidos aquí primero"
@@ -1002,7 +1002,7 @@
         "Descubra el video de ${ PASS_APP_NAME } en YouTube"
       ],
       "Drop file here to upload": [
-        "Suelte sus archivos aquí para cargarlos"
+        "Suelte los archivos aquí para cargarlos"
       ],
       "Drop to import": [
         "Suelte aquí para importar"
@@ -1017,19 +1017,19 @@
         "Vaciando la papelera..."
       ],
       "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
-        "Active ${ PASS_APP_NAME } al conectar su cuenta de ${ BRAND_NAME }"
+        "Active ${ PASS_APP_NAME } al conectar la cuenta de ${ BRAND_NAME }"
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Ingrese el código de verificación. Digite ${ digit }."
       ],
       "Enter your PIN code": [
-        "Ingrese su código PIN"
+        "Ingrese el código PIN"
       ],
       "Fill in the CSV with your data": [
-        "Complete el CSV con sus datos"
+        "Complete el CSV con los datos"
       ],
       "Follow those steps to import your data with a generic CSV :": [
-        "Siga estos pasos para importar sus datos con un CSV genérico:"
+        "Siga estos pasos para importar los datos con un CSV genérico:"
       ],
       "For easy access to your passwords and more.": [
         "Para acceder fácilmente a sus contraseñas y más."
@@ -1122,7 +1122,7 @@
         "Dejando la bóveda..."
       ],
       "Let's get you started by creating your first item": [
-        "Comencemos creando su primer elemento"
+        "Comencemos creando el primer elemento"
       ],
       "Loading": [
         "Cargando"
@@ -1137,19 +1137,19 @@
         "conmigo"
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
-        "Más que un gestor de contraseñas, ${ PASS_APP_NAME } protege su contraseña y su dirección de correo personal a través de alias de correo electrónico. Desarrollado por la misma tecnología detrás de ${ MAIL_APP_NAME }, sus datos están cifrados de extremo a extremo y solo usted puede acceder a ellos."
+        "Más que un gestor de contraseñas, ${ PASS_APP_NAME } protege la contraseña y la dirección de correo personal a través de alias de correo electrónico. Desarrollado por la misma tecnología detrás de ${ MAIL_APP_NAME }, los datos están cifrados de extremo a extremo y solo usted puede acceder a ellos."
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its history": [
-        "Mover un elemento a otra bóveda eliminará su historial"
+        "Mover un elemento a otra bóveda eliminará el historial"
       ],
       "Moving items": [
         "Moviendo los elementos"
       ],
       "Moving items to another vault will erase their history": [
-        "Mover los elementos a otra bóveda eliminará su historial"
+        "Mover los elementos a otra bóveda eliminará el historial"
       ],
       "Moving items to trash": [
         "Moviendo los elementos a la papelera"
@@ -1201,7 +1201,7 @@
         "Eliminando permanentemente los elementos selecionados"
       ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
-        "Fije ${ PASS_APP_NAME } en su barra de herramientas"
+        "Fije ${ PASS_APP_NAME } en la barra de herramientas"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Código PIN registrado con éxito. Úselo para desbloquear ${ PASS_APP_NAME }"
@@ -1210,25 +1210,25 @@
         "Fijando elemento..."
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
-        "Confirme su contraseña de ${ BRAND_NAME } para exportar sus datos de ${ PASS_APP_NAME }"
+        "Confirme la contraseña de ${ BRAND_NAME } para exportar los datos de ${ PASS_APP_NAME }"
       ],
       "Please confirm your PIN code in order to unregister your current lock.\n${ PASS_APP_NAME } will then never lock.": [
-        "Confirme su código PIN para cancelar el registro de su bloqueo actual.\n${ PASS_APP_NAME } nunca se bloqueará."
+        "Confirme el código PIN para cancelar el registro de su bloqueo actual.\n${ PASS_APP_NAME } nunca se bloqueará."
       ],
       "Please confirm your PIN code to edit this setting.": [
-        "Confirme su código PIN para editar este ajuste."
+        "Confirme el código PIN para editar este ajuste."
       ],
       "Please confirm your PIN code to finish registering your auto-lock settings.": [
-        "Confirme su código PIN para finalizar el registro de sus ajustes de bloqueo automático."
+        "Confirme el código PIN para finalizar el registro de sus ajustes de bloqueo automático."
       ],
       "Please consider leaving a review.": [
         "Considere dejar una reseña."
       ],
       "Please enter your current PIN code to continue": [
-        "Ingrese su código PIN actual para continuar"
+        "Ingrese el código PIN actual para continuar"
       ],
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
-        "Mejore su plan para obtener acceso anticipado a la aplicación web de ${ PASS_APP_NAME }"
+        "Mejore el plan para obtener acceso anticipado a la aplicación web de ${ PASS_APP_NAME }"
       ],
       "Press Enter to copy": [
         "Presione Enter para copiar"
@@ -1279,7 +1279,7 @@
         "Sesión agotada"
       ],
       "Set up a PIN code to easily lock your data": [
-        "Establezca un código PIN para bloquear sus datos fácilmente"
+        "Establezca un código PIN para bloquear los datos fácilmente"
       ],
       "Setting up offline mode...": [
         "Configurando modo sin conexión"
@@ -1324,7 +1324,7 @@
         "La exportación solo contendrá las bóvedas que le pertenecen a usted."
       ],
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
-        "El archivo de exportación está cifrado mediante PGP y requiere una frase de contraseña segura."
+        "El archivo de exportación está cifrado con PGP y requiere una frase de contraseña segura."
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "${ result.ignored.length } elemento no pudo importarse:",
@@ -1337,7 +1337,7 @@
         "El usuario aún no aceptó la invitación."
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
-        "Esta exportación no estará cifrada y cualquier persona con acceso a su archivo exportado podrá ver sus contraseñas. Por seguridad, elimínelo una vez que haya terminado de usarlo."
+        "Esta exportación no estará cifrada y cualquier persona con acceso al archivo exportado podrá ver sus contraseñas. Por seguridad, elimínelo una vez que haya terminado de usarlo."
       ],
       "This setting is disabled on the organization level": [
         "Este ajuste está desactivado para la organización."
@@ -1349,10 +1349,10 @@
         "Esta versión será añadida al historial como la versión nueva."
       ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
-        "Para migrar los datos desde otro gestor de contraseñas, vaya al gestor, exporte sus datos y luego cárguelos en ${ PASS_APP_NAME }. Una vez que los datos se han importado, elimine el archivo exportado."
+        "Para migrar los datos desde otro gestor de contraseñas, vaya al gestor, exporte los datos y luego cárguelos en ${ PASS_APP_NAME }. Una vez que los datos se han importado, elimine el archivo exportado."
       ],
       "To review your imported data, click on the Pass icon in your browser toolbar.": [
-        "Para verificar sus datos importados, pulse el ícono de Proton Pass en la barra de herramientas del navegador."
+        "Para verificar los datos importados, pulse el ícono de Proton Pass en la barra de herramientas del navegador."
       ],
       "Unable to copy to clipboard": [
         "No se puede copiar al portapapeles"
@@ -1361,10 +1361,10 @@
         "Alias de hide-my-email ilimitados"
       ],
       "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
-        "Desbloquee ${ PASS_APP_NAME } con su código PIN para acceder a sus claves de acceso"
+        "Desbloquee ${ PASS_APP_NAME } con el código PIN para acceder a las claves de acceso"
       ],
       "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
-        "Desbloquee ${ PASS_APP_NAME } con su código PIN para guardar esta clave de acceso"
+        "Desbloquee ${ PASS_APP_NAME } con el código PIN para guardar esta clave de acceso"
       ],
       "Unlock it with your PIN to access the settings": [
         "Desbloquéela con su PIN para acceder a los ajustes"
@@ -1382,7 +1382,7 @@
         "Actualizar ${ PASS_APP_NAME }"
       ],
       "Upgrade Now to Unlock Premium Features": [
-        "Mejore su plan ahora para desbloquear funciones premium"
+        "Mejore el plan ahora para desbloquear funciones premium"
       ],
       "Use vaults to share this item with others.": [
         "Use las bóvedas para compartir este elemento con otras personas."
@@ -1412,16 +1412,16 @@
         "Visor"
       ],
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
-        "Estamos teniendo problemas en sincronizar los datos a su almacenamiento local. Asegúrese de tener suficiente espacio en el disco para que ${ PASS_SHORT_APP_NAME } funcione corectamente."
+        "Estamos teniendo problemas en sincronizar los datos a el almacenamiento local. Asegúrese de tener suficiente espacio en el disco para que ${ PASS_SHORT_APP_NAME } funcione corectamente."
       ],
       "You are about to create:": [
         "Está por crear:"
       ],
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
-        "Ahora puede usar su contraseña de ${ BRAND_NAME } para acceder sin conexión a ${ PASS_SHORT_APP_NAME }"
+        "Ahora puede usar la contraseña de ${ BRAND_NAME } para acceder sin conexión a ${ PASS_SHORT_APP_NAME }"
       ],
       "You can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
-        "Puede rellenar automáticamente sus credenciales al pulsar el icono de ${ PASS_APP_NAME }."
+        "Puede rellenar automáticamente las credenciales al pulsar el icono de ${ PASS_APP_NAME }."
       ],
       "You cannot change the mailboxes for this alias.": [
         "No puede cambiar los buzones para este alias."
@@ -1431,16 +1431,16 @@
         "Tiene ${ daysRemaining } días restantes para probar esta y otras funciones premium."
       ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
-        "Ha superado el número de bóvedas incluidas en su suscripción. Los elementos solo se pueden mover a sus primeras dos bóvedas. Para mover elementos entre todas las bóvedas, mejore su suscripción."
+        "Ha superado el número de bóvedas incluidas en la suscripción. Los elementos solo se pueden mover a sus primeras dos bóvedas. Para mover elementos entre todas las bóvedas, mejore la suscripción."
       ],
       "You have exceeded the number of vaults included in your subscription. New items can only be created in your first two vaults. To create new items in all vaults upgrade your subscription.": [
-        "Ha superado el número de bóvedas incluidas en su suscripción. Los elementos nuevos solo se pueden crear en sus primeras dos bóvedas. Para crear elementos nuevos en todas las bóvedas, mejore su suscripción."
+        "Ha superado el número de bóvedas incluidas en la suscripción. Los elementos nuevos solo se pueden crear en sus primeras dos bóvedas. Para crear elementos nuevos en todas las bóvedas, mejore la suscripción."
       ],
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
-        "Ha alcanzado el límite de alias que puede crear. Cree alias ilimitados al actualizar su suscripción."
+        "Ha alcanzado el límite de alias que puede crear. Cree alias ilimitados al actualizar la suscripción."
       ],
       "You have reached the limit of credit cards you can create. Create an unlimited number of credit cards when you upgrade your subscription.": [
-        "Ha alcanzado el límite de tarjetas de crédito que puede crear. Cree una cantidad de tarjetas de crédito ilimitadas al mejorar su suscripción."
+        "Ha alcanzado el límite de tarjetas de crédito que puede crear. Cree una cantidad de tarjetas de crédito ilimitadas al mejorar la suscripción."
       ],
       "You have reached the limit of vaults you can create.": [
         "Ha alcanzado el límite de bóvedas que puede crear."
@@ -1458,10 +1458,10 @@
         "Se le invitó a una bóveda."
       ],
       "Your ${ PASS_APP_NAME } session is locked": [
-        "Su sesión de ${ PASS_APP_NAME } está bloqueada"
+        "La sesión de ${ PASS_APP_NAME } está bloqueada"
       ],
       "Your files will be encrypted and then saved": [
-        "Sus archivos serán cifrados y luego guardados"
+        "Los archivos serán cifrados y luego guardados."
       ]
     },
     "Label": {
@@ -1672,7 +1672,7 @@
         "Invitaciones"
       ],
       "Item ID": [
-        "ID de elemento"
+        "ID del elemento"
       ],
       "Key": [
         "Clave"
@@ -1929,13 +1929,13 @@
     },
     "lobby: Info": {
       "Enter your PIN code": [
-        "Ingrese su código PIN"
+        "Ingrese el código PIN"
       ],
       "Sign in to your account": [
-        "Iniciar sesión en su cuenta"
+        "Iniciar sesión en la cuenta"
       ],
       "You are currently offline. Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
-        "Actualmente está sin conexión. Desbloquee ${ PASS_SHORT_APP_NAME } con su contraseña de ${ BRAND_NAME }"
+        "Actualmente está sin conexión. Desbloquee ${ PASS_SHORT_APP_NAME } con la contraseña de ${ BRAND_NAME }"
       ]
     },
     "lobby: Title": {
@@ -1957,7 +1957,7 @@
     },
     "Onboarding": {
       "Welcome to ${ appName }": [
-        "Bienvenido/a a ${ appName }"
+        "Le damos la bienvenida a ${ appName }"
       ]
     },
     "Option": {
@@ -2089,7 +2089,7 @@
         "Confirmar código PIN"
       ],
       "Connect your ${ BRAND_NAME } Account": [
-        "Conecte su cuenta de ${ BRAND_NAME }"
+        "Conecte la cuenta de ${ BRAND_NAME }"
       ],
       "Create PIN code": [
         "Crear código PIN"
@@ -2113,10 +2113,10 @@
         "¿Disfrutando ${ PASS_APP_NAME }?"
       ],
       "Enter your password": [
-        "Ingrese su contraseña"
+        "Ingrese la contraseña"
       ],
       "Enter your PIN": [
-        "Ingrese su código PIN"
+        "Ingrese el código PIN"
       ],
       "Fill & copy password": [
         "Completar y copiar la contraseña"
@@ -2125,7 +2125,7 @@
         "Comenzar"
       ],
       "Get the mobile apps": [
-        "Obtenga las apps móviles"
+        "Obtenga las aplicaciones móviles"
       ],
       "Grant permissions": [
         "Conceder permisos"
@@ -2206,7 +2206,7 @@
         "Revisar y compartir"
       ],
       "Secure your data": [
-        "Asegure sus datos"
+        "Asegure los datos"
       ],
       "Set access level": [
         "Configurar el nivel de acceso"
@@ -2239,7 +2239,7 @@
         "Actualización disponible"
       ],
       "Upgrade to Unlock Premium Features": [
-        "Mejore su plan para desbloquear funciones premium"
+        "Mejore el plan para desbloquear funciones premium"
       ],
       "Use my email": [
         "Usar mi correo"
@@ -2257,7 +2257,7 @@
         "¿Por qué elegir ${ PASS_APP_NAME }?"
       ],
       "Your vault is empty": [
-        "Su bóveda está vacía"
+        "La bóveda está vacía"
       ],
       "Your welcome gift": [
         "Su regalo de bienvenida"
@@ -2300,7 +2300,7 @@
         "Todos sus elementos en papelera serán eliminados permanentemente. No puede deshacer esta acción."
       ],
       "An error occured while exporting your data": [
-        "Se produjo un error al exportar sus datos"
+        "Se produjo un error al exportar los datos"
       ],
       "At least one email address is required": [
         "Al menos se requiere una dirección de correo electrónico"
@@ -2358,7 +2358,7 @@
         "No hay elementos que coincidan"
       ],
       "No passkeys found. Save your passkeys in ${ PASS_APP_NAME } to sign-in to ${ domain }.": [
-        "No se encontró ninguna clave de acceso. Guarde sus claves de acceso en ${ PASS_APP_NAME } para iniciar sesión en ${ domain }."
+        "No se encontró ninguna clave de acceso. Guarde las claves de acceso en ${ PASS_APP_NAME } para iniciar sesión en ${ domain }."
       ],
       "No password manager selected": [
         "Ningún gestor de contraseñas seleccionado"
@@ -2379,13 +2379,13 @@
         "Contacte con nosotros para investigar el problema"
       ],
       "Please verify your email address in order to use email aliases": [
-        "Verifique su dirección de correo para poder usar alias de correo."
+        "Verifique la dirección de correo para poder usar alias de correo."
       ],
       "Please verify your email address in order to use vault sharing": [
-        "Verifique su dirección de correo para poder compartir la bóveda."
+        "Verifique la dirección de correo para poder compartir la bóveda."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Los reportes no están cifrados de extremo a extremo, no envíe ninguna información confidencial."
+        "Los informes no están cifrados de extremo a extremo, no envíe ninguna información confidencial."
       ],
       "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
         "Ocurrió un error al iniciar ${ PASS_APP_NAME }. Intente refrescar o recargar la extensión."
@@ -2415,7 +2415,7 @@
         "El nombre de la bóveda es requerido"
       ],
       "You cannot create more vaults than your subscription allows.": [
-        "No puede crear más bóvedas de las que permite su suscripción."
+        "No puede crear más bóvedas de las que permite la suscripción."
       ],
       "You have reached the limit of members who can access this vault.": [
         "Ha alcanzado el límite de miembros que pueden acceder a esta bóveda."
@@ -2424,7 +2424,7 @@
         "Ha alcanzado el límite de usuarios en esta bóveda. ${ upgradeLink }"
       ],
       "You have reached the limit of vaults you can have in your plan.": [
-        "Ha alcanzado el límite de bóvedas que puede tener en su plan."
+        "Ha alcanzado el límite de bóvedas que puede tener en el plan."
       ],
       "You have unsaved changes.": [
         "Tiene cambios sin guardar."
@@ -2436,25 +2436,25 @@
         "Ya no tendrá acceso a esta bóveda. Para unirse de nuevo necesitará una invitación."
       ],
       "Your plan does not allow you to create more aliases": [
-        "Su plan no le permite crear más alias"
+        "El plan no le permite crear más alias"
       ],
       "Your plan only allows you to autofill from your first two vaults": [
-        "Su plan solo le permite completar automáticamente desde sus primeras dos bóvedas"
+        "El plan solo le permite completar automáticamente desde sus primeras dos bóvedas"
       ],
       "Your session could not be authorized.": [
-        "Su sesión no ha podido ser autorizada."
+        "La sesión no ha podido ser autorizada."
       ],
       "Your session could not be resumed.": [
-        "Su sesión no ha podido reanudarse."
+        "La sesión no ha podido reanudarse."
       ],
       "Your session is inactive.": [
-        "Su sesión está inactiva."
+        "La sesión está inactiva."
       ],
       "Your session was locked.": [
-        "Su sesión está bloqueada."
+        "La sesión está bloqueada."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
-        "Su suscripción no le permite crear varias bóvedas. Todos los elementos serán importados a su primera bóveda. Para importar a varias bóvedas mejore su suscripción."
+        "La suscripción no le permite crear varias bóvedas. Todos los elementos serán importados a la primera bóveda. Para importar a varias bóvedas mejore la suscripción."
       ]
     }
   }
