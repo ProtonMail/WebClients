@@ -23,6 +23,7 @@ import {
     draftsGarbageCollect,
     getUserAccessIntent,
     getUserFeaturesIntent,
+    getUserSettings,
     passwordHistoryGarbageCollect,
     startEventPolling,
     stopEventPolling,
@@ -77,6 +78,7 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
                         store.dispatch(passwordHistoryGarbageCollect());
                         store.dispatch(withRevalidate(getUserAccessIntent(userID)));
                         store.dispatch(withRevalidate(getUserFeaturesIntent(userID)));
+                        store.dispatch(withRevalidate(getUserSettings.intent(userID)));
 
                         if (isDocumentVisible()) store.dispatch(startEventPolling());
 
