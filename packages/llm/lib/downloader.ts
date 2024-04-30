@@ -3,7 +3,29 @@ import { arrayToHexString } from '@proton/crypto/lib/utils';
 import mlcConfig from '@proton/llm/lib/mlc-config';
 import * as _ndarrayCache from '@proton/llm/resources/Mistral-7B-Instruct-v0.2-q4f16_1-MLC/ndarray-cache.json';
 
-import type { NdarrayCache } from './types';
+import type { DownloadProgressCallback } from './types';
+
+type NdarrayCache = {
+    metadata: {
+        ParamSize: number;
+        ParamBytes: number;
+        BitsPerParam: number;
+    };
+    records: {
+        dataPath: string;
+        format: string;
+        nbytes: number;
+        records: {
+            name: string;
+            shape: number[];
+            dtype: string;
+            format: string;
+            nbytes: number;
+            byteOffset: number;
+        }[];
+        md5sum: string;
+    }[];
+};
 
 const ndarrayCache = _ndarrayCache as NdarrayCache;
 
@@ -12,11 +34,8 @@ type FileDownload = {
     key: string;
     destinationCache: Cache;
     expectedMd5?: string;
-    progress: number;
     expectedSize?: number;
 };
-
-type UpdateProgressCallback = (url: string, received: number, total: number) => void;
 
 type DownloadResult = {
     headers: Headers;
@@ -35,6 +54,9 @@ type VariantConfig = {
     model_id: string;
     vram_required_MB: number;
 };
+
+// A function to monitor the progress of a single file.
+type OneFileProgressCallback = (url: string, received: number, total: number) => void;
 
 async function computeMd5(data: Uint8Array) {
     return arrayToHexString(await CryptoProxy.computeHash({ data, algorithm: 'unsafeMD5' }));
@@ -105,7 +127,7 @@ async function existsInCache(url: string, destinationCache: Cache, expectedMd5?:
 }
 
 // Initiate a download, monitors the progress, and returns the result when finished.
-async function downloadFile(url: string, updateProgress: UpdateProgressCallback): Promise<DownloadResult> {
+async function downloadFile(url: string, callback: OneFileProgressCallback): Promise<DownloadResult> {
     const response = await fetch(url);
     const { status, statusText, ok } = response;
     if (!ok) {
@@ -123,7 +145,7 @@ async function downloadFile(url: string, updateProgress: UpdateProgressCallback)
         }
         chunks.push(value);
         receivedLength += value.length;
-        updateProgress(url, receivedLength, contentLength);
+        callback(url, receivedLength, contentLength);
     }
     return { status, statusText, headers, chunks };
 }
@@ -148,7 +170,7 @@ async function storeInCache(
     }
 }
 
-async function downloadFilesSequentially(files: FileDownload[], updateProgress: UpdateProgressCallback) {
+async function downloadFilesSequentially(files: FileDownload[], callback: OneFileProgressCallback) {
     const promises = [];
     for (let i = 0; i < files.length; i++) {
         const { url, destinationCache, expectedMd5 } = files[i];
@@ -158,7 +180,7 @@ async function downloadFilesSequentially(files: FileDownload[], updateProgress: 
         if (skip) continue;
 
         // Start the download for a new file.
-        const downloadResult = await downloadFile(url, updateProgress);
+        const downloadResult = await downloadFile(url, callback);
 
         // The following can take several seconds, so we let the promise run while
         // we loop and start another download.
@@ -182,21 +204,18 @@ function listFilesToDownload(variantConfig: VariantConfig, appCaches: AppCaches)
         url: new URL('mlc-chat-config.json', baseUrl).href,
         key: `${baseKey}mlc-chat-config.json`,
         destinationCache: appCaches.config,
-        progress: 0,
     });
     files.push({
         // "webllm/model" -> ".../tokenizer.json"
         url: new URL('tokenizer.json', baseUrl).href,
         key: `${baseKey}tokenizer.json`,
         destinationCache: appCaches.model,
-        progress: 0,
     });
     files.push({
         // "webllm/wasm" -> ".../file.wasm"
         url: wasmUrl,
         key: wasmKey,
         destinationCache: appCaches.wasm,
-        progress: 0,
     });
     files.push(
         ...ndarrayCache.records.map((record) => ({
@@ -205,14 +224,14 @@ function listFilesToDownload(variantConfig: VariantConfig, appCaches: AppCaches)
             key: `${baseKey}${record.dataPath}`,
             destinationCache: appCaches.model,
             expectedMd5: record.md5sum,
-            progress: 0,
             expectedSize: record.nbytes,
         }))
     );
     return files;
 }
 
-export async function downloadModel(variant: string) {
+// Retrieves all the files in the model config and puts them in LocalCache where Web-LLM expects to see them.
+export async function downloadModel(variant: string, updateProgress: DownloadProgressCallback) {
     // Open caches
     const appCaches = {
         model: await caches.open('webllm/model'),
@@ -241,7 +260,7 @@ export async function downloadModel(variant: string) {
     // This first map tracks how many bytes we need to download.
     //   { url: expectedSize }.
     // Thanks to it, we can compute the total overall size to download by summing the values.
-    // For most files, especially for the model weights, the size is specified in a meta file, so we know it in advance.
+    // For most files, especially for the model weights, the size is specified in a meta file, so we know it upfront.
     // Unfortunately, some small files (like wasm and tokenizer.json) have an unknown size. However, we start to fetch
     // it, Content-Length should tell us the real size. Therefore, this map will be modified a few times, as we fetch
     // some of these files that have an initially unknown size.
@@ -274,8 +293,15 @@ export async function downloadModel(variant: string) {
     await Promise.all(promises);
     const overallReceived = () => [...receivedSizes.values()].reduce((acc, n) => acc + n, 0);
 
+    const nFinishedFiles = () =>
+        files.filter((f) => {
+            let r = receivedSizes.get(f.url);
+            let e = expectedSizes.get(f.url);
+            return r !== undefined && e !== undefined && r >= e;
+        }).length;
+
     // Start downloading files
-    const updateProgress = (url: string, received: number, total: number) => {
+    const updateProgressOneFile = (url: string, received: number, total: number) => {
         if (!expectedSizes.has(url) && total > 0) {
             expectedSizes.set(url, total);
         }
@@ -283,9 +309,12 @@ export async function downloadModel(variant: string) {
         receivedSizes.set(url, receivedCapped);
         const r = overallReceived();
         const e = overallExpectedSize();
-        const progress = r / e;
-        /* eslint-disable-next-line no-console */
-        console.log(`${url}: downloading, progress: ${r} / ${e} (${(progress * 100).toFixed(2)}%)`);
+        updateProgress({
+            receivedBytes: r,
+            estimatedTotalBytes: e,
+            receivedFiles: nFinishedFiles(),
+            totalFiles: files.length,
+        });
     };
-    await downloadFilesSequentially(files, updateProgress);
+    await downloadFilesSequentially(files, updateProgressOneFile);
 }
