@@ -12,14 +12,12 @@ interface UpsellBannerProps {
     organization: Organization;
     canAccessLightLabelling: boolean;
     isPartOfFamily: boolean;
-    isLightLabellingEnabled: boolean;
 }
 
 export const OrganizationLogoUploadUpsellBanner = ({
     organization,
     canAccessLightLabelling,
     isPartOfFamily,
-    isLightLabellingEnabled,
 }: UpsellBannerProps) => {
     const [openSubscriptionModal] = useSubscriptionModal();
 
@@ -47,7 +45,7 @@ export const OrganizationLogoUploadUpsellBanner = ({
         }
     };
 
-    if (!isLightLabellingEnabled || canAccessLightLabelling || isPartOfFamily || isVisionary) {
+    if (canAccessLightLabelling || isPartOfFamily || isVisionary) {
         return;
     }
 
