@@ -47,11 +47,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } winkel"
       ],
-      "activate": [
-        "activeer"
-      ],
       "Activate": [
         "Activeren"
+      ],
+      "activate": [
+        "activeer"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activeer ${ user.Name }@pm.me"
@@ -1315,6 +1315,23 @@
         "Nieuwe e-mail"
       ]
     },
+    "app-switcher": {
+      "Browse the web privately and block ads": [
+        "Surf privé op het internet en blokkeer advertenties"
+      ],
+      "Keep your schedule private": [
+        "Houd uw planning privé"
+      ],
+      "Protect your passwords and identity": [
+        "Bescherm uw wachtwoorden en identiteit"
+      ],
+      "Safeguard your files and photos": [
+        "Bescherm uw bestanden en foto's"
+      ],
+      "Secure your communications": [
+        "Beveilig uw communicatie"
+      ]
+    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "${ BRAND_NAME }-applicaties"
@@ -1885,6 +1902,12 @@
       ]
     },
     "Call Scheduled Confirmation": {
+      "Request sent": [
+        "Verzoek verzonden"
+      ],
+      "We'll get back to you with more information as soon as we can.": [
+        "We zullen zo snel mogelijk contact met u opnemen met meer informatie."
+      ],
       "You can safely close this tab.": [
         "U kan dit tabblad veilig sluiten."
       ]
@@ -4083,7 +4106,7 @@
         "Upgrade naar een zakelijk abonnement met meer dan 1 gebruiker om meerdere gebruikers te beheren."
       ],
       "Please upload a square file": [
-        "Upload een vierkant bestand a.u.b."
+        "Upload een vierkant bestand"
       ],
       "Please upload an xml file": [
         "Upload een xml-bestand"
@@ -4271,9 +4294,6 @@
       ],
       "You have reached the contacts limit for your account": [
         "U heeft de limiet van contacten bereikt voor dit account"
-      ],
-      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
-        "U heeft het maximale aantal agenda's bereikt. Sommige agenda's konden niet worden geïmporteerd."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "U heeft alle adressen in uw abonnement gebruikt. Upgrade uw abonnement om een nieuw adres toe te voegen."
@@ -5926,17 +5946,6 @@
         "Een deel van je agenda-inhoud wordt niet ondersteund en zal niet worden geïmporteerd."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Extra dubbele sleutels gedetecteerd. Gelieve afzonderlijk te uploaden voor meer informatie."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Sleutel ${ fingerprint } is al geüpload"
-      ],
-      "Selected color:": [
-        "Geselecteerde kleur:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } heeft uw toestemming tot ${ enableDesktopNotifications } nodig."
@@ -6260,7 +6269,7 @@
         "Verschuldigd bedrag"
       ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
-        "Een email alias werkt als een e-mailadres, maar vermindert spam en houdt je werkelijke e-mailadres en identiteit verborgen."
+        "Een e-mailadres alias werkt als een e-mailadres, maar vermindert spam en houdt uw werkelijke e-mailadres en identiteit verborgen."
       ],
       "An error occurred while communicating with the extension": [
         "Er is een fout opgetreden tijdens de communicatie met de extensie"
@@ -6858,7 +6867,7 @@
         "Als u dit account met een ander account wilt combineren, verwijder deze dan NIET."
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
-        "Als je problemen hebt, zijn we hier om te helpen. ${ boldPhoneCall } of ${ boldZoomMeeting } met een van onze support specialisten, of open een ${ boldLiveChat } voor chatondersteuning."
+        "Als u problemen hebt, zijn we hier om te helpen. ${ boldPhoneCall } of ${ boldZoomMeeting } met een van onze support specialisten, of open een ${ boldLiveChat } voor chatondersteuning."
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists.": [
         "Indien u problemen heeft, zijn we hier om te helpen. ${ boldPhoneCall } of ${ boldZoomMeeting } met een van onze ondersteuningsspecialisten."
@@ -7305,10 +7314,6 @@
       ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Probeer het opnieuw, gebruik een andere betaalmethode, of neem contact op met PayPal voor hulp."
-      ],
-      "Please use a password more than ${ MIN_PASSWORD_LENGTH } character.": [
-        "Gebruik een wachtwoord van meer dan ${ MIN_PASSWORD_LENGTH } tekens.",
-        "Gebruik een wachtwoord van meer dan ${ MIN_PASSWORD_LENGTH } tekens."
       ],
       "Please use another browser or download the file.": [
         "Gebruik een andere browser of download het bestand."
@@ -8256,9 +8261,6 @@
       "You won’t be able to recover locked data using your downloaded recovery files.": [
         "U zult niet in staat zijn om vergrendelde gegevens te herstellen met behulp van uw gedownloade herstelbestanden."
       ],
-      "You won’t be able to recover locked data using your downloaded recovery files. This will also disable trusted device recovery.": [
-        "U zult niet in staat zijn om vergrendelde gegevens te herstellen met behulp van uw gedownloade herstelbestanden. Hiermee wordt ook de herstelfunctie met behulp van vertrouwde apparaten uitgeschakeld."
-      ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
         "Uw ${ BRAND_NAME }-account wordt geassocieerd met ${ externalEmailAddress }."
       ],
@@ -8352,6 +8354,17 @@
       ],
       "Zoom meeting": [
         "Zoom meeting"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Extra dubbele sleutels gedetecteerd. Gelieve afzonderlijk te uploaden voor meer informatie."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Sleutel ${ fingerprint } is al geüpload"
+      ],
+      "Selected color:": [
+        "Geselecteerde kleur:"
       ]
     },
     "Info - folder colouring feature": {
@@ -8497,10 +8510,10 @@
         "Sleutel succesvol gegenereerd."
       ],
       "Note: you already have a key with the same algorithm for this address. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
-        "Opmerking: je hebt al een sleutel met hetzelfde algoritme voor dit adres. Tenzij die sleutel in gevaar is gebracht, kan het onnodig zijn om een nieuwe sleutel te genereren, en dit kan uw account vertragen."
+        "Opmerking: u heeft al een sleutel met hetzelfde algoritme voor dit adres. Tenzij die sleutel in gevaar is gebracht, kan het onnodig zijn om een nieuwe sleutel te genereren, en dit kan uw account vertragen."
       ],
       "Note: you already have a key with the same algorithm for this user. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
-        "Opmerking: je hebt al een sleutel met hetzelfde algoritme voor deze gebruiker. Tenzij die sleutel in gevaar is gebracht, kan het onnodig zijn om een nieuwe sleutel te genereren, en dit kan uw account vertragen."
+        "Opmerking: u heeft al een sleutel met hetzelfde algoritme voor deze gebruiker. Tenzij die sleutel in gevaar is gebracht, kan het onnodig zijn om een nieuwe sleutel te genereren, en dit kan uw account vertragen."
       ],
       "This will generate a new key, which will be used to encrypt future contact details, email encryption keys, and other data.": [
         "Dit zal een nieuwe sleutel genereren, die zal worden gebruikt om toekomstige contactgegevens, e-mailsleutels en andere data te versleutelen."
@@ -9698,9 +9711,6 @@
       ],
       "Recovery phrase": [
         "Herstelzin"
-      ],
-      "Trusted device recovery": [
-        "Betrouwbaar apparaatherstel"
       ]
     },
     "Label for adding a new custom domain": {
@@ -11867,7 +11877,7 @@
         "Vierkante afbeelding van minstens 128 pixels"
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
-        "Gebruikers zullen uw logo zien in plaats van het ${ BRAND_NAME } pictogram wanneer ze inlogt zijn op onze webapps."
+        "Gebruikers zullen uw logo zien in plaats van het ${ BRAND_NAME }-pictogram wanneer ze inlogt zijn op onze webapps."
       ]
     },
     "OS compatibility": {
@@ -12357,6 +12367,9 @@
       "MM/YY": [
         "MM/JJ"
       ],
+      "Processing payment": [
+        "Betaling wordt verwerkt"
+      ],
       "Timeout exceeded": [
         "Time-out overschreden"
       ]
@@ -12742,7 +12755,7 @@
         "SCIM uitschakelen"
       ],
       "Disable SCIM integration": [
-        "SCIM integratie uitschakelen"
+        "SCIM-integratie uitschakelen"
       ],
       "Generate new token": [
         "Nieuwe token genereren"
@@ -12752,22 +12765,55 @@
       ]
     },
     "scim: Info": {
+      "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
+        "**Vereist:** SAML-authenticatie moet worden geconfigureerd om SCIM-bepaling in te schakelen."
+      ],
+      "Enter token into your identity provider": [
+        "Voer de token in bij uw identiteitsprovider"
+      ],
+      "Enter URL and token into your identity provider": [
+        "Voer URL en token in bij uw identiteitsprovider"
+      ],
+      "For security reasons, the SCIM token will be hidden after saving your changes and you won’t be able to see it again.": [
+        "Om veiligheidsredenen wordt de SCIM-token verborgen na het opslaan van uw wijzigingen en kunt u het daarna niet meer zien."
+      ],
+      "For security reasons, the token is hidden": [
+        "Om veiligheidsredenen is de token verborgen"
+      ],
+      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ VPN_APP_NAME }.": [
+        "Ga naar uw identiteitsprovider, kopieer en plak de gegevens hieronder en voltooi de configuratie van SCIM voor ${ VPN_APP_NAME }."
+      ],
+      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ VPN_APP_NAME }.": [
+        "Ga naar uw identiteitsprovider, kopieer en plak de token hieronder en schakel SCIM voor ${ VPN_APP_NAME } opnieuw in."
+      ],
+      "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
+        "Als u de SCIM-token bent vergeten of verloren, kunt u een nieuwe genereren, maar wees ervan bewust dat uw identiteitsprovider instellingen zullen moeten worden bijgewerkt."
+      ],
+      "Make sure you copy the above SCIM token now.": [
+        "Zorg ervoor dat u de bovenstaande SCIM-token nu kopieert."
+      ],
       "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
-        "Zodra SCIM is uitgeschakeld voor uw organisatie, **zullen alle SCIM gebruikers die automatisch door uw identiteitsprovider worden aangeboden worden omgezet naar SSO gebruikers** en u kunt ze direct beheren binnen de ${ BRAND_NAME } instellingen."
+        "Zodra SCIM is uitgeschakeld voor uw organisatie, **zullen alle SCIM-gebruikers die automatisch door uw identiteitsprovider worden aangeboden worden omgezet naar SSO-gebruikers** en u kunt ze direct beheren binnen de ${ BRAND_NAME } instellingen."
+      ],
+      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ VPN_APP_NAME } organization.": [
+        "Vereenvoudigt gebruikersbeheer over verschillende diensten. Voeg toe, bewerk en verwijder gebruikers in uw identiteitsprovider, en deze wijzigingen zullen automatisch worden toegepast op uw ${ VPN_APP_NAME } organisatie."
+      ],
+      "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
+        "De automatische bepaling van SCIM wordt uitgeschakeld totdat u de nieuwe SCIM-token in de instellingen van uw identiteit provider invoert."
       ],
       "The SCIM base URL and token will be deleted.": [
-        "De SCIM basis URL en token zullen worden verwijderd."
+        "De SCIM basis-URL en token zullen worden verwijderd."
       ],
       "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
-        "Om het synchroniseren met je identiteitsprovider opnieuw aan te zetten, moet je de SCIM integratie opnieuw voltooien."
+        "Om het synchroniseren met uw identiteitsprovider opnieuw aan te zetten, moet u de SCIM-integratie opnieuw voltooien."
       ]
     },
     "scim: Label": {
       "SCIM base URL": [
-        "SCIM basis URL"
+        "SCIM basis-URL"
       ],
       "SCIM base URL (or tenant URL)": [
-        "SCIM basis URL (of tenant URL)"
+        "SCIM basis-URL (of tenant URL)"
       ],
       "SCIM token": [
         "SCIM token"
@@ -12778,10 +12824,23 @@
         "SCIM integratie uitschakelen?"
       ],
       "Generate new SCIM token?": [
-        "Nieuwe SCIM token genereren?"
+        "Nieuwe SCIM-token genereren?"
       ],
       "SCIM automatic provisioning": [
         "SCIM automatisch instellen"
+      ]
+    },
+    "scim: Tooltip": {
+      "API key of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
+        "API sleutel van de SCIM connector waar uw IdP Provisioning Agent de SCIM-gegevens naar doorstuurt"
+      ],
+      "URL of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
+        "URL van de SCIM connector waar uw IdP Provisioning Agent de SCIM-gegevens naar doorstuurt"
+      ]
+    },
+    "Security Center - Info": {
+      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLinkBreach }": [
+        "Uw informatie is in tenminste één gegevenslek gevonden. Schakel ${ DARK_WEB_MONITORING_NAME } in om de details te zien en actie te ondernemen. ${ learnMoreLinkBreach }"
       ]
     },
     "Select file": {
@@ -13497,9 +13556,6 @@
       ]
     },
     "Storage": {
-      "Release notes": [
-        "Belangrijkste wijzigingen"
-      ],
       "Upgrade storage": [
         "Opslag upgraden"
       ],
@@ -13743,6 +13799,12 @@
       ]
     },
     "Subscription reminder": {
+      "${ BRAND_NAME } was targeted by Russia in one of the most aggressive censorship campaigns in recent memory, and our team fought back.": [
+        "${ BRAND_NAME } was het doelwit van Rusland in een van de meest agressieve censuurcampagnes van de laatste tijd en ons team vocht terug."
+      ],
+      "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
+        "${ BRAND_NAME } zijn enige bron van inkomsten is abonnementen van gebruikers. Uw steun stelt ons in staat om onafhankelijk te blijven, vooruitgang te boeken op onze missie om privacy de standaard van online te maken en doorgaan met het steunen van activisten en organisaties die strijden voor privacy en vrijheid."
+      ],
       "${ dayDiff } day left": [
         "${ dayDiff } dag over",
         "${ dayDiff } dagen over"
@@ -13759,17 +13821,32 @@
       "10 email addresses": [
         "10 e-mailadressen"
       ],
+      "A direct contribution to our mission": [
+        "Een directe bijdrage aan onze missie"
+      ],
+      "After ${ BRAND_NAME } got blocked in Iran during protests, our customer support team worked to get our VPN app directly into people's hands.": [
+        "Nadat ${ BRAND_NAME } tijdens protesten in Iran geblokkeerd werd, werkte ons klanten support team om onze VPN-app direct in de handen van mensen te krijgen."
+      ],
+      "After privacy and free speech were threatened in Hong Kong, we directly supported local civil rights organizations.": [
+        "Nadat de privacy en vrijheid van meningsuiting in Hongkong werden bedreigd, hebben we lokale burgerrechtenorganisaties rechtstreeks gesteund."
+      ],
       "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **1 GB** for Mail, and **1 GB** for Drive. You will also lose any storage bonuses earned previously.": [
-        "Door uw ${ planName } abonnement te annuleren, zal uw opslag verminderen van **${ planMaxSpace }** naar **1 GB** voor Mail, en **1 GB** voor Drive. Je verliest ook alle eerder verdiende opslag bonussen."
+        "Door uw ${ planName }-abonnement te annuleren, zal uw opslag verminderen van **${ planMaxSpace }** naar **1 GB** voor Mail, en **1 GB** voor Drive. U verliest ook alle eerder verdiende opslag bonussen."
       ],
       "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **1 GB** for Mail, and **5 GB** for Drive. You will also lose any storage bonuses earned previously.": [
-        "Door uw ${ planName } abonnement te annuleren, zal uw opslag verminderen van **${ planMaxSpace }** naar **1 GB** voor Mail, en **5 GB** voor Drive. Je verliest ook alle eerder verdiende opslag bonussen."
+        "Door uw ${ planName }-abonnement te annuleren, zal uw opslag verminderen van **${ planMaxSpace }** naar **1 GB** voor Mail, en **5 GB** voor Drive. U verliest ook alle eerder verdiende opslag bonussen."
       ],
       "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **500 MB** for Mail, and **1 GB** for Drive. You will also lose any storage bonuses earned previously.": [
-        "Door uw ${ planName } abonnement te annuleren, zal uw opslag verminderen van **${ planMaxSpace }** naar **500 MB** voor Mail, en **1 GB** voor Drive. Je verliest ook alle eerder verdiende opslag bonussen."
+        "Door uw ${ planName }-abonnement te annuleren, zal uw opslag verminderen van **${ planMaxSpace }** naar **500 MB** voor Mail, en **1 GB** voor Drive. U verliest ook alle eerder verdiende opslag bonussen."
       ],
       "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **500 MB** for Mail, and **5 GB** for Drive. You will also lose any storage bonuses earned previously.": [
-        "Door uw ${ planName } abonnement te annuleren, zal uw opslag verminderen van **${ planMaxSpace }** naar **500 MB** voor Mail, en **5 GB** voor Drive. Je verliest ook alle eerder verdiende opslag bonussen."
+        "Door uw ${ planName }-abonnement te annuleren, zal uw opslag verminderen van **${ planMaxSpace }** naar **500 MB** voor Mail, en **5 GB** voor Drive. U verliest ook alle eerder verdiende opslag bonussen."
+      ],
+      "By downgrading your account, you will also lose storage space": [
+        "Door uw account te downgraden verliest u ook opslagruimte"
+      ],
+      "By downgrading your account, you will lose access to these important features": [
+        "Door uw account te downgraden verliest u toegang tot deze belangrijke functies"
       ],
       "Calendar sharing": [
         "Agenda-delen"
@@ -13780,23 +13857,95 @@
       "Cancel subscription?": [
         "Abonnement opzeggen?"
       ],
+      "Close": [
+        "Sluit"
+      ],
       "Custom schedule send and snooze times": [
         "Aangepaste planning en snooze-tijden voor verzenden"
+      ],
+      "Have a question?": [
+        "Heeft u een vraag?"
+      ],
+      "Helping activists in Hong Kong": [
+        "Activisten helpen in Hongkong"
+      ],
+      "I still want to cancel": [
+        "Ik wil nog steeds opzeggen"
+      ],
+      "If you exceed your free Drive storage quota:": [
+        "Als u uw gratis Drive opslagquotum overschrijdt:"
+      ],
+      "If you exceed your free Mail storage quota:": [
+        "Als u uw gratis Mail opslagquotum overschrijdt:"
       ],
       "Keep ${ planName }": [
         "${ planName } behouden"
       ],
+      "Learn more about our impact": [
+        "Meer informatie over onze impact"
+      ],
       "Let us remind you of everything ${ planName } can do": [
-        "Laat ons je herinneren aan alles wat ${ planName } kan doen"
+        "Laat ons u herinneren aan alles wat ${ planName } kan doen"
+      ],
+      "Our fight against censorship in Russia": [
+        "Onze strijd tegen censuur in Rusland"
       ],
       "Priority support": [
         "Prioriteitsondersteuning"
       ],
+      "Read the story": [
+        "Lees het verhaal"
+      ],
+      "Resubscribe": [
+        "Opnieuw aanmelden"
+      ],
       "Resubscribe to restore access to ${ planName } features.": [
-        "Schrijf je opnieuw in om terug toegang te krijgen tot de ${ planName } functionaliteiten."
+        "Schrijf u opnieuw in om terug toegang te krijgen tot de ${ planName } functionaliteiten."
+      ],
+      "Subscription canceled": [
+        "Abonnement opgezegd"
+      ],
+      "Unblocking internet access in Iran": [
+        "Ontgrendelen van internettoegang in Iran"
       ],
       "Unlimited folders, labels and filters": [
         "Onbeperkt aantal mappen, labels en filters"
+      ],
+      "Watch the interview": [
+        "Bekijk het interview"
+      ],
+      "When you cancel, you will lose access to": [
+        "Wanneer u annuleert, verliest u toegang tot"
+      ],
+      "Yearly free storage bonuses": [
+        "Jaarlijkse gratis opslagbonussen"
+      ],
+      "You **won't be able to add any new files**": [
+        "U **zal geen nieuwe bestanden kunnen toevoegen**"
+      ],
+      "You **won't be able to backup photos** from your devices": [
+        "U **zal geen back-ups kunnen nemen van foto's** van op uw apparaten"
+      ],
+      "You **won't be able to send emails** with attachments": [
+        "U **zal geen e-mails kunnen verzenden** met bijlagen"
+      ],
+      "You still have ${ expiryDate } on your ${ planName } plan. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling.": [
+        "U heeft nog ${ expiryDate } op uw ${ planName }-abonnement. We zullen de credits voor de resterende tijd toevoegen aan uw ${ BRAND_NAME }-account. Zorg ervoor dat u de gratis abonnementslimieten niet overschrijdt voordat u opzegt."
+      ],
+      "Your **calendar will be frozen**": [
+        "Uw **agenda zal bevroren worden**"
+      ],
+      "Your devices will **stop syncing**": [
+        "Uw apparaten zullen **stoppen met synchroniseren**"
+      ],
+      "Your inbox will **stop receiving new emails**": [
+        "Uw inbox zal **geen nieuwe e-mails meer ontvangen**"
+      ],
+      "Your own custom email domain": [
+        "Uw eigen aangepaste e-maildomein"
+      ],
+      "Your own short @pm.me email alias": [
+        "Uw eigen korte @pm.me e-mailalias"
       ]
     },
     "Subscription renewal state": {
@@ -14798,7 +14947,7 @@
         "Hoe werkt het?"
       ],
       "How to choose a good logo": [
-        "Hoe kies je een goed logo"
+        "Hoe kiest u een goed logo"
       ],
       "How to refer a friend and get credits": [
         "Hoe een vriend doorverwijzen en tegoed verdienen"
@@ -15264,17 +15413,14 @@
       "What would you like to import?": [
         "Wat zou u willen importeren?"
       ],
-      "What's new": [
-        "Wat is er nieuw"
-      ],
       "WireGuard configuration": [
         "WireGuard configuratie"
       ],
       "You have no open alerts": [
-        "Je hebt geen open waarschuwingen"
+        "U heeft geen open waarschuwingen"
       ],
       "You have no resolved alerts": [
-        "Je hebt geen opgeloste waarschuwingen"
+        "U heeft geen opgeloste waarschuwingen"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Uw ${ planName } gratis proefperiode eindigt op ${ textDate }"
@@ -15562,7 +15708,7 @@
         "Gebruik de standaard schuifbalken van uw browser. Deze zijn meestal groter en gemakkelijker te gebruiken"
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
-        "Gebruikers zullen uw logo zien in plaats van het ${ BRAND_NAME } pictogram wanneer ze inlogt zijn op onze webapps."
+        "Gebruikers zullen uw logo zien in plaats van het ${ BRAND_NAME }-pictogram wanneer ze inlogt zijn op onze webapps."
       ],
       "Usually an URL that contains the identity provider's name within": [
         "Normaal gesproken een URL die de naam van de identiteitsprovider bevat binnen"

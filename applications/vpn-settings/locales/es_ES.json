@@ -3496,6 +3496,9 @@
       "Password copied to clipboard": [
         "Contraseña copiada en el portapapeles"
       ],
+      "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
+        "Las contraseñas deben tener ${ MIN_PASSWORD_LENGTH } caracteres o más."
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Los pagos están protegidos con cifrado TLS y por las leyes de privacidad suizas."
       ],
@@ -3548,10 +3551,6 @@
       ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Inténtalo de nuevo. Utiliza un método de pago diferente o ponte en contacto con PayPal para obtener ayuda."
-      ],
-      "Please use a password more than ${ MIN_PASSWORD_LENGTH } character.": [
-        "Use una contraseña con más de ${ MIN_PASSWORD_LENGTH } carácter.",
-        "Use una contraseña con más de ${ MIN_PASSWORD_LENGTH } caracteres."
       ],
       "Please use another browser or download the file.": [
         "Usa otro navegador o descarga el archivo."
@@ -4154,7 +4153,7 @@
         "Tus archivos serán cifrados y después guardados."
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
-        "Tu información está segura con nosotros. Solo te contactaremos cuando sea necesario para prestar nuestros servicios."
+        "Tus datos están a salvo con nosotros. Solo te contactaremos cuando sea necesario para prestar nuestros servicios."
       ],
       "Your next billing date is ${ renewalTime }.": [
         "Tu próxima fecha de facturación es el ${ renewalTime }."
@@ -7121,9 +7120,6 @@
       ]
     },
     "Storage": {
-      "Release notes": [
-        "Notas de la versión"
-      ],
       "Upgrade storage": [
         "Aumentar el almacenamiento"
       ],
@@ -7334,17 +7330,41 @@
       "15 GB storage": [
         "15 GB de espacio de almacenamiento"
       ],
+      "and 15 more premium features": [
+        "y 15 funciones premium más"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Reenvío de correo automático ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertas de vulneraciones de datos ${ strongArgument }"
+      ],
       "Desktop app": [
         "Aplicación de escritorio"
       ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ayúdanos a mantener internet seguro y privado para todos. Mejora a un plan de pago."
+      ],
       "No ads or tracking": [
         "Sin anuncios ni rastreadores"
+      ],
+      "Short @pm.me email address": [
+        "Dirección de correo corta @pm.me"
       ],
       "Support our mission": [
         "Apoya nuestra misión"
       ],
       "Upgrade": [
         "Mejorar"
+      ],
+      "Upgrade your productivity": [
+        "Mejora tu productividad"
+      ],
+      "We don't sell your data": [
+        "No vendemos tus datos."
+      ],
+      "Your privacy is our mission": [
+        "Tu privacidad es nuestra misión."
       ]
     },
     "Subscription renewal state": {
@@ -8150,9 +8170,6 @@
       "We'll send an email to your new address with instructions on completing the change.": [
         "Enviaremos un correo a su dirección nueva con instrucciones para finalizar el cambio."
       ],
-      "What's new": [
-        "Novedades"
-      ],
       "WireGuard configuration": [
         "Configuración de WireGuard"
       ],
@@ -8366,6 +8383,9 @@
       ],
       "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
         "La suscripción se renueva automáticamente cada 3 meses. Tu próxima fecha de facturación es en 3 meses."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "La oferta especial de ${ priceWithDiscount } es válida durante el primer mes. Una vez transcurrido ese plazo, se renovará automáticamente al precio de ${ renewPrice } cada mes. Puedes cancelarla en cualquier momento."
       ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Se te facturará cada 12 meses por ${ renewPrice }."

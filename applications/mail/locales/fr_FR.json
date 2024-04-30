@@ -4015,8 +4015,8 @@
       "You have reached the contacts limit for your account": [
         "Vous avez atteint la limite du nombre de contacts pour votre compte."
       ],
-      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
-        "Vous avez atteint le nombre maximum de calendriers. Certains calendriers n'ont pas pu être importés."
+      "You have reached the maximum number of calendars.": [
+        "Vous avez atteint le nombre maximum de calendriers."
       ],
       "You must set a name": [
         "Vous devez définir un nom."
@@ -10481,9 +10481,6 @@
       "Get more storage": [
         "Obtenir plus d'espace de stockage"
       ],
-      "Release notes": [
-        "Notes de mise à jour"
-      ],
       "Upgrade storage": [
         "Augmenter la capacité de stockage"
       ],
@@ -11871,9 +11868,6 @@
       "What would you like to import?": [
         "Que voulez-vous importer ?"
       ],
-      "What's new": [
-        "Nouveautés"
-      ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Votre essai gratuit ${ planName } se termine le ${ textDate }."
       ],
@@ -12052,6 +12046,9 @@
       ],
       "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
         "L'abonnement est renouvelé automatiquement tous les 3 mois. Votre prochaine date de facturation est dans 3 mois."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Le tarif exceptionnellement réduit de ${ priceWithDiscount } est valable le premier mois. Il sera ensuite automatiquement renouvelé à ${ renewPrice } chaque mois. Vous pouvez annuler à tout moment."
       ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Vous serez ensuite facturé tous les 12 mois à ${ renewPrice }."

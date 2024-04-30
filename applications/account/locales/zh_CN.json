@@ -30,11 +30,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 商店"
       ],
-      "activate": [
-        "激活"
-      ],
       "Activate": [
         "启用"
+      ],
+      "activate": [
+        "激活"
       ],
       "Activate ${ user.Name }@pm.me": [
         "激活 ${ user.Name }@pm.me"
@@ -3865,9 +3865,6 @@
       "You have reached the contacts limit for your account": [
         "您的账户联系人数量已达上限"
       ],
-      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
-        "您的日历数量已达上限，因此部分日历无法导入。"
-      ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "您的地址数已达上限，升级账户后方可再添加地址。"
       ],
@@ -5272,17 +5269,6 @@
         "您的日程中有部分内容我们不支持，这些日程将不会被导入。"
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "检测到多余的重复密钥，请单独上传以获取更多信息。"
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "密钥 ${ fingerprint } 已上传"
-      ],
-      "Selected color:": [
-        "所选颜色"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } 需要您授权${ enableDesktopNotifications }。"
@@ -6481,9 +6467,6 @@
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "请用其他方式支付，或联系 PayPal 寻求帮助。"
       ],
-      "Please use a password more than ${ MIN_PASSWORD_LENGTH } character.": [
-        "请使用超过 ${ MIN_PASSWORD_LENGTH } 个字符的密码。"
-      ],
       "Please use another browser or download the file.": [
         "请使用其他浏览器或下载文件。"
       ],
@@ -7333,9 +7316,6 @@
       "You won’t be able to recover locked data using your downloaded recovery files.": [
         "重置密码时您将无法再通过此前下载的恢复文件解锁账户数据。"
       ],
-      "You won’t be able to recover locked data using your downloaded recovery files. This will also disable trusted device recovery.": [
-        "您将无法使用您已下载的恢复文件恢复锁定的数据。这也将禁用信任的设备恢复。"
-      ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
         "您的 ${ BRAND_NAME } 账户已关联至 ${ externalEmailAddress }。"
       ],
@@ -7422,6 +7402,17 @@
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "您的支持工单已关闭。感谢您联系 ${ BRAND_NAME } 支持。"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "检测到多余的重复密钥，请单独上传以获取更多信息。"
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "密钥 ${ fingerprint } 已上传"
+      ],
+      "Selected color:": [
+        "所选颜色"
       ]
     },
     "Info - folder colouring feature": {
@@ -8666,9 +8657,6 @@
       ],
       "Recovery phrase": [
         "恢复密语"
-      ],
-      "Trusted device recovery": [
-        "可信设备恢复"
       ]
     },
     "Label for adding a new custom domain": {
@@ -11667,9 +11655,6 @@
       ]
     },
     "Storage": {
-      "Release notes": [
-        "版本说明"
-      ],
       "Upgrade storage": [
         "付费扩容"
       ],
@@ -12631,6 +12616,9 @@
       "Delete version history?": [
         "删除版本历史记录？"
       ],
+      "Details": [
+        "详细信息"
+      ],
       "Disable ${ email }": [
         "停用 ${ email }"
       ],
@@ -13213,17 +13201,20 @@
       "What would you like to import?": [
         "您需要导入哪些信息？"
       ],
-      "What's new": [
-        "更新内容"
-      ],
       "WireGuard configuration": [
         "WireGuard 配置"
+      ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "您的 ${ planName } 免费试用期将于 ${ textDate } 结束"
       ],
       "Your calendar link": [
         "您的日历链接"
       ],
       "Your changes are not synced yet": [
         "您的改动尚未同步"
+      ],
+      "Your exposed information": [
+        "您的泄露信息"
       ],
       "Your plan": [
         "您的账户等级"

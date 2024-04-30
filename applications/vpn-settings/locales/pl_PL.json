@@ -3609,12 +3609,6 @@
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Spróbuj ponownie, użyj innej metody płatności lub skontaktuj się z firmą PayPal w celu uzyskania pomocy."
       ],
-      "Please use a password more than ${ MIN_PASSWORD_LENGTH } character.": [
-        "Hasło musi zawierać co najmniej ${ MIN_PASSWORD_LENGTH } znak.",
-        "Hasło musi zawierać co najmniej ${ MIN_PASSWORD_LENGTH } znaki.",
-        "Hasło musi zawierać co najmniej ${ MIN_PASSWORD_LENGTH } znaków.",
-        "Hasło musi zawierać co najmniej ${ MIN_PASSWORD_LENGTH } znaków."
-      ],
       "Please use another browser or download the file.": [
         "Użyj innej przeglądarki lub pobierz plik."
       ],
@@ -6669,8 +6663,17 @@
       "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ VPN_APP_NAME }.": [
         "Przejdź do dostawcy tożsamości, a następnie skopiuj i wklej poniższy token, aby ponownie włączyć konfigurację SCIM dla ${ VPN_APP_NAME }."
       ],
+      "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
+        "Jeśli stracisz lub zapomnisz token SCIM, możesz wygenerować nowy. Pamiętaj, że w ustawieniach dostawcy tożsamości będzie wtedy konieczna jego aktualizacja."
+      ],
       "Make sure you copy the above SCIM token now.": [
         "Upewnij się, że skopiowano token SCIM."
+      ],
+      "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
+        "Jeśli wyłączysz integrację SCIM, **wszyscy użytkownicy SCIM od dostawcy tożsamości zostaną przekonwertowani na użytkowników SSO** i będzie można nimi bezpośrednio zarządzać w ustawieniach ${ BRAND_NAME }."
+      ],
+      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ VPN_APP_NAME } organization.": [
+        "Upraszcza zarządzanie użytkownikami w różnych usługach. Dodawaj, edytuj i usuwaj użytkowników u dostawcy tożsamości, a zmiany te zostaną automatycznie zastosowane w organizacji ${ VPN_APP_NAME }."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "Automatyczna konfiguracja SCIM zostanie wyłączona. Wpisz nowy token SCIM do dostawcy tożsamości."
@@ -6702,6 +6705,14 @@
       ],
       "SCIM automatic provisioning": [
         "Automatyczna konfiguracja SCIM"
+      ]
+    },
+    "scim: Tooltip": {
+      "API key of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
+        "Klucz API łącznika SCIM, do którego przekazywane są dane"
+      ],
+      "URL of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
+        "Adres URL łącznika SCIM, do którego przekazywane są dane"
       ]
     },
     "Select file": {
@@ -7284,9 +7295,6 @@
       ]
     },
     "Storage": {
-      "Release notes": [
-        "Lista zmian"
-      ],
       "Upgrade storage": [
         "Zwiększ przestrzeń dyskową"
       ],
@@ -7537,11 +7545,17 @@
       "Desktop app": [
         "Aplikacja desktopowa"
       ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomóż nam zapewnić bezpieczeństwo i prywatność w Internecie. Ulepsz konto do płatnego planu."
+      ],
       "No ads or tracking": [
         "Brak reklam i śledzenia"
       ],
       "Short @pm.me email address": [
         "Krótki adres e-mail @pm.me"
+      ],
+      "Support our mission": [
+        "Wesprzyj naszą misję"
       ],
       "Upgrade": [
         "Ulepsz"
@@ -7551,6 +7565,9 @@
       ],
       "We don't sell your data": [
         "Nie sprzedajemy Twoich danych"
+      ],
+      "Your privacy is our mission": [
+        "Prywatność to nasza misja"
       ]
     },
     "Subscription renewal state": {
@@ -8363,9 +8380,6 @@
       ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Wyślemy na nowy adres wiadomość z instrukcjami zmiany adresu."
-      ],
-      "What's new": [
-        "Co nowego"
       ],
       "WireGuard configuration": [
         "Konfiguracja WireGuard"

@@ -447,10 +447,10 @@
       "Not now": [
         "Ei nyt"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -463,7 +463,7 @@
         "Avaa asetukset"
       ],
       "Pause indexing": [
-        "Pysäytä indeksointi"
+        "Keskeytä indeksointi"
       ],
       "Pay": [
         "Maksa"
@@ -3095,9 +3095,6 @@
       "You have reached the contacts limit for your account": [
         "Tilisi yhteystietojen enimmäismäärä on saavutettu"
       ],
-      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
-        "Olet saavuttanut kalentereiden enimmäismäärän. Joitakin kalentereita ei voitu tuoda."
-      ],
       "You must set a name": [
         "Nimi on asetettava"
       ],
@@ -3690,6 +3687,9 @@
       "Contacts": [
         "Yhteystiedot"
       ],
+      "Custom recurrence": [
+        "Mukautettu toistuvuus"
+      ],
       "Name": [
         "Nimi"
       ],
@@ -3837,10 +3837,10 @@
         "${ BRAND_NAME } ei saa yhteyttä Yahoo-tiliisi. Varmista, että:"
       ],
       "2-step verification is enabled in your external account.": [
-        "Ulkoinen tilisi käyttää kaksivaiheista vahvistusta."
+        "Ulkoinen tilisi käyttää kaksivaiheista tunnistautumista."
       ],
       "2-step verification is enabled in your external email account.": [
-        "Ulkoinen sähköpostitilisi käyttää kaksivaiheista vahvistusta."
+        "Ulkoinen sähköpostitilisi käyttää kaksivaiheista tunnistautumista."
       ],
       "IMAP access is enabled in your external account.": [
         "IMAP on ulkoisella tililläsi käytössä."
@@ -3849,7 +3849,7 @@
         "IMAP on käytössä Yahoo-tilisi asetuksissa."
       ],
       "Too many recent requests. Please try again in a few moments.": [
-        "Liian monta hiljattaista pyyntöä. Yritä hetken kuluttua uudelleen."
+        "Liian monta pyyntöä lyhyen ajan sisällä. Yritä hetken kuluttua uudelleen."
       ],
       "Use your app password if:": [
         "Käytä sovellusalasanaa, jos:"
@@ -4349,11 +4349,11 @@
         "Syötä oma salasanasi (organisaation ylläpitäjänä)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
-        "Aikaa jäljellä arviolta ${ estimatedMinutes } minuutti",
-        "Aikaa jäljellä arviolta ${ estimatedMinutes } minuuttia"
+        "Arviolta ${ estimatedMinutes } minuutti jäljellä",
+        "Arviolta ${ estimatedMinutes } minuuttia jäljellä"
       ],
       "Estimated time remaining: Less than a minute": [
-        "Aikaa jäljellä arviolta alle minuutti"
+        "Arviolta vajaa minuutti jäljellä"
       ],
       "Estimating time remaining...": [
         "Arvioidaan jäljellä olevaa aikaa…"
@@ -4435,7 +4435,7 @@
         "Indeksoidaan tapahtumia: ${ current }/${ total }"
       ],
       "Indexing paused": [
-        "Indeksointi on pysäytetty"
+        "Indeksointi on keskeytetty"
       ],
       "Inherited from parent folder": [
         "Peritty yläkansiosta"
@@ -4838,7 +4838,7 @@
         "Viikko- ja kuukaisinäkymät koskevat vain työpöytäkäyttöä."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Määrittäessäsi kaksivaiheisen todennuksen saat myös palautuskoodit, joiden avulla voit kirjautua vaikka menettäisit pääsyn todennussovellukseesi."
+        "Määrittäessäsi kaksivaiheisen tunnistautumisen saat palautuskoodit, joiden avulla voit kirjautua myös silloin, kun et voi käyttää todennussovellustasi."
       ],
       "Which event would you like to delete?": [
         "Mitkä tapahtumakerrat haluat poistaa?"
@@ -4862,7 +4862,7 @@
         "Haluatko poistaa tapahtuman?"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
-        "Haluatko uuden vahvistuskoodin vai käyttää vaihtoehtoista todennustapaa?"
+        "Haluatko uuden vahvistuskoodin vai käyttää vaihtoehtoista tunnistautumistapaa?"
       ],
       "Would you like to receive a new verification code?": [
         "Haluatko uuden vahvistuskoodin?"
@@ -6412,7 +6412,7 @@
         "Tor + VPN"
       ],
       "Two-factor authentication": [
-        "Kaksivaiheinen todennus"
+        "Kaksivaiheinen tunnistautuminen"
       ],
       "Unlimited devices": [
         "Rajattomasti laitteita"
@@ -6439,7 +6439,7 @@
         "Rajattomasti viestejä päivässä"
       ],
       "Unlimited shared vaults with access permissions": [
-        "Rajattomasti jaettuja holveja käyttöoikeuksilla"
+        "Rajattomasti jaettuja holveja erityisillä käyttöoikeuksilla"
       ],
       "Unlimited vault sharing": [
         "Rajattomasti holvin jakoja"
@@ -6741,7 +6741,7 @@
         "Kirjautumiseen tarvitaan matkapuhelimeen lähetettävä koodi. Tällä varmistetaan tilin suojaus vaikka salasana olisi vaarantunut."
       ],
       "Reset user passwords and reset two-factor authentication on users": [
-        "Nollaa käyttäjien salasanat ja palauta kaksivaiheinen todennus oletustilaan"
+        "Nollaa käyttäjien salasanat ja palauta kaksivaiheinen tunnistautuminen oletustilaan"
       ],
       "Route your internet traffic through the Tor network with a single click": [
         "Ohjaa Internet-tietoliikenteesi Tor-verkon kautta yhdellä painalluksella"
@@ -6855,7 +6855,7 @@
         "Yksityiset yhdyskäytävät"
       ],
       "Require 2FA": [
-        "Pakotettava kaksivaiheinen todennus"
+        "Pakotettava kaksivaiheinen tunnistautuminen"
       ]
     },
     "Notification": {
@@ -6872,7 +6872,7 @@
         "Yhteystietoryhmä päivitettiin"
       ],
       "Link copied to clipboard": [
-        "Linkki kopioitu leikepöydälle"
+        "Linkki kopioitiin leikepöydälle"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -7994,9 +7994,6 @@
       ]
     },
     "Storage": {
-      "Release notes": [
-        "Julkaisutiedot"
-      ],
       "Upgrade storage": [
         "Hanki lisää tallennustilaa"
       ],
@@ -8170,6 +8167,47 @@
     "Subscription price": {
       "For": [
         "Hintaan"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 Gt tallennustilaa"
+      ],
+      "and 15 more premium features": [
+        "sekä 15 muuta premium-ominaisuutta"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automaattinen sähköpostiohjaus ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Tietovuotohälytykset ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Työpöytäsovellus"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Auta meitä pitämään Internet kaikille turvallisena. Päivitä maksulliseen tilaukseen."
+      ],
+      "No ads or tracking": [
+        "Ei mainoksia eikä seurantaa"
+      ],
+      "Short @pm.me email address": [
+        "Lyhyt @pm.me-sähköpostiosoite"
+      ],
+      "Support our mission": [
+        "Tue tehtäväämme"
+      ],
+      "Upgrade": [
+        "Päivitä tilaus"
+      ],
+      "Upgrade your productivity": [
+        "Tehosta tuottavuuttasi"
+      ],
+      "We don't sell your data": [
+        "Emme myy tietojasi"
+      ],
+      "Your privacy is our mission": [
+        "Yksityisyytesi on tehtävämme"
       ]
     },
     "Subscription renewal state": {
@@ -8994,9 +9032,6 @@
       ],
       "What would you like to import?": [
         "Mitä haluat tuoda?"
-      ],
-      "What's new": [
-        "Mitä uutta"
       ],
       "You have invited participants with equivalent emails": [
         "Olet kutsunut eri osallistujia samoilla sähköpostiosoitteilla"

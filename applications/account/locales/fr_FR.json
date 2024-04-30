@@ -47,11 +47,11 @@
       "${ BRAND_NAME } shop": [
         "Boutique ${ BRAND_NAME }"
       ],
-      "activate": [
-        "activer"
-      ],
       "Activate": [
         "Activer"
+      ],
+      "activate": [
+        "activer"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activer ${ user.Name }@pm.me"
@@ -4295,8 +4295,8 @@
       "You have reached the contacts limit for your account": [
         "Vous avez atteint la limite du nombre de contacts pour votre compte."
       ],
-      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
-        "Vous avez atteint le nombre maximum de calendriers. Certains calendriers n'ont pas pu être importés."
+      "You have reached the maximum number of calendars.": [
+        "Vous avez atteint le nombre maximum de calendriers."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Toutes les adresses de votre abonnement sont utilisées. Nous vous invitons à mettre à jour votre abonnement pour ajouter une nouvelle adresse."
@@ -5949,17 +5949,6 @@
         "Une partie du contenu de votre calendrier n'est pas prise en charge et ne sera pas importée."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Des doublons de clés supplémentaires ont été détectés. Nous vous invitons à les télécharger individuellement pour plus d'informations."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "La clé ${ fingerprint } a déjà été chargée."
-      ],
-      "Selected color:": [
-        "Couleur sélectionnée :"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } a besoin de votre autorisation pour ${ enableDesktopNotifications }."
@@ -7252,6 +7241,9 @@
       "Password copied to clipboard": [
         "Le mot de passe a été copié dans le presse-papiers."
       ],
+      "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
+        "Le mot de passe doit être de ${ MIN_PASSWORD_LENGTH } ou plus."
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Les paiements sont protégés par le chiffrement TLS et par les lois suisses en matière de protection de la vie privée."
       ],
@@ -7328,10 +7320,6 @@
       ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Nous vous invitons à réessayer, à utiliser un autre moyen de paiement ou à contacter PayPal pour obtenir de l'aide."
-      ],
-      "Please use a password more than ${ MIN_PASSWORD_LENGTH } character.": [
-        "Veuillez utiliser un mot de passe de plus de ${ MIN_PASSWORD_LENGTH } caractère.",
-        "Veuillez utiliser un mot de passe de plus de ${ MIN_PASSWORD_LENGTH } caractères."
       ],
       "Please use another browser or download the file.": [
         "Nous vous invitons à utiliser un autre navigateur ou à télécharger le fichier."
@@ -8279,8 +8267,8 @@
       "You won’t be able to recover locked data using your downloaded recovery files.": [
         "Vous ne pourrez pas récupérer les données verrouillées en utilisant les fichiers de récupération que vous avez téléchargés."
       ],
-      "You won’t be able to recover locked data using your downloaded recovery files. This will also disable trusted device recovery.": [
-        "Vous ne pourrez pas récupérer les données verrouillées en utilisant les fichiers de récupération que vous avez téléchargés. Cela désactivera aussi la récupération des appareils de confiance."
+      "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
+        "Vous ne pourrez pas récupérer les données verrouillées en utilisant les fichiers de récupération que vous avez téléchargés. Cela désactivera aussi la récupération depuis un appareil."
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
         "Votre compte ${ BRAND_NAME } est associé avec ${ externalEmailAddress }."
@@ -8375,6 +8363,17 @@
       ],
       "Zoom meeting": [
         "réunion Zoom"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Des doublons de clés supplémentaires ont été détectés. Nous vous invitons à les télécharger individuellement pour plus d'informations."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "La clé ${ fingerprint } a déjà été chargée."
+      ],
+      "Selected color:": [
+        "Couleur sélectionnée :"
       ]
     },
     "Info - folder colouring feature": {
@@ -9716,14 +9715,14 @@
       ]
     },
     "label": {
+      "Device-based recovery": [
+        "Récupération depuis l'appareil"
+      ],
       "Recovery phone number": [
         "Numéro de téléphone de récupération"
       ],
       "Recovery phrase": [
         "Phrase de récupération"
-      ],
-      "Trusted device recovery": [
-        "Récupération avec un appareil de confiance"
       ]
     },
     "Label for adding a new custom domain": {
@@ -13569,9 +13568,6 @@
       ]
     },
     "Storage": {
-      "Release notes": [
-        "Notes de mise à jour"
-      ],
       "Upgrade storage": [
         "Augmenter la capacité de stockage"
       ],
@@ -15470,9 +15466,6 @@
       "What would you like to import?": [
         "Que voulez-vous importer ?"
       ],
-      "What's new": [
-        "Nouveautés"
-      ],
       "WireGuard configuration": [
         "Configuration WireGuard"
       ],
@@ -15978,6 +15971,9 @@
       ],
       "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
         "L'abonnement est renouvelé automatiquement tous les 3 mois. Votre prochaine date de facturation est dans 3 mois."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Le tarif exceptionnellement réduit de ${ priceWithDiscount } est valable le premier mois. Il sera ensuite automatiquement renouvelé à ${ renewPrice } chaque mois. Vous pouvez annuler à tout moment."
       ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Vous serez ensuite facturé tous les 12 mois à ${ renewPrice }."

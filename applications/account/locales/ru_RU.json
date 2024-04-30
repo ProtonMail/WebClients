@@ -47,11 +47,11 @@
       "${ BRAND_NAME } shop": [
         "Магазин «${ BRAND_NAME }»"
       ],
-      "activate": [
-        "включить"
-      ],
       "Activate": [
         "Активировать"
+      ],
+      "activate": [
+        "включить"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Активировать ${ user.Name }@pm.me"
@@ -4165,9 +4165,6 @@
       "You have reached the contacts limit for your account": [
         "Вы достигли лимита контактов для вашего аккаунта."
       ],
-      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
-        "Вы достигли максимального количества календарей. Некоторые календари не удалось импортировать."
-      ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Вы достигли максимального числа адресов, предусмотренных вашим тарифом. Улучшите ваш тариф прежде, чем добавлять новые адреса."
       ],
@@ -5825,14 +5822,6 @@
         "Часть содержимого вашего календаря не поддерживается и не будет импортирована."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Обнаружены дополнительные дубликаты ключей. Для получения дополнительной информации загрузите их по отдельности."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Ключ ${ fingerprint } уже был загружен"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } нужно ваше разрешение, чтобы ${ enableDesktopNotifications }."
@@ -7211,12 +7200,6 @@
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Пожалуйста, попробуйте еще раз, используйте другой способ оплаты или обратитесь в PayPal для получения помощи."
       ],
-      "Please use a password more than ${ MIN_PASSWORD_LENGTH } character.": [
-        "Используйте пароль длиной более ${ MIN_PASSWORD_LENGTH } символа.",
-        "Используйте пароль длиной более ${ MIN_PASSWORD_LENGTH } символов.",
-        "Используйте пароль длиной более ${ MIN_PASSWORD_LENGTH } символов.",
-        "Используйте пароль длиной более ${ MIN_PASSWORD_LENGTH } символов."
-      ],
       "Please use another browser or download the file.": [
         "Пожалуйста, воспользуйтесь другим браузером или загрузите файл."
       ],
@@ -8132,9 +8115,6 @@
       "You won’t be able to recover locked data using your downloaded recovery files.": [
         "Вы не сможете восстановить заблокированные данные с помощью загруженных файлов восстановления."
       ],
-      "You won’t be able to recover locked data using your downloaded recovery files. This will also disable trusted device recovery.": [
-        "Вы не сможете восстановить заблокированные данные с помощью загруженных файлов восстановления. При этом также будет отключено восстановление доверенных устройств."
-      ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
         "Ваша учетная запись ${ BRAND_NAME } связана с ${ externalEmailAddress }."
       ],
@@ -8221,6 +8201,14 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Ваша подписка находится под управлением Mozilla. Пожалуйста, свяжитесь со службой поддержки Mozilla."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Обнаружены дополнительные дубликаты ключей. Для получения дополнительной информации загрузите их по отдельности."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Ключ ${ fingerprint } уже был загружен"
       ]
     },
     "Info - folder colouring feature": {
@@ -9525,9 +9513,6 @@
       ],
       "Recovery phrase": [
         "Фраза для восстановления доступа к учетной записи"
-      ],
-      "Trusted device recovery": [
-        "Восстановление доверенного устройства"
       ]
     },
     "Label for adding a new custom domain": {
@@ -13133,9 +13118,6 @@
       ]
     },
     "Storage": {
-      "Release notes": [
-        "Примечания к выпуску"
-      ],
       "Upgrade storage": [
         "Увеличить дисковое пространство"
       ],
@@ -14829,9 +14811,6 @@
       ],
       "What would you like to import?": [
         "Что бы вы хотели импортировать?"
-      ],
-      "What's new": [
-        "Что нового"
       ],
       "WireGuard configuration": [
         "Конфигурация WireGuard"

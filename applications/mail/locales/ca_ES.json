@@ -404,7 +404,7 @@
         "Emoji"
       ],
       "Enable": [
-        "Habilitar"
+        "Activar"
       ],
       "enable desktop notifications": [
         "activa les notificacions d'escriptori"
@@ -3610,7 +3610,7 @@
         "La cerca de continguts no es pot activar en aquest navegador. Tanqueu el mode de navegació privada o utilitzeu un altre navegador."
       ],
       "Content search cannot be enabled. Please restart the application or clear data.": [
-        "No es pot habilitar la cerca de contingut. Reinicieu l'aplicació o netegeu les dades."
+        "No es pot activar la cerca de contingut. Reinicieu l'aplicació o netegeu les dades."
       ],
       "Could not open created vault": [
         "No s'ha pogut obrir la caixa forta creada"
@@ -4005,9 +4005,6 @@
       ],
       "You have reached the contacts limit for your account": [
         "Heu arribat al límit de contactes per al vostre compte."
-      ],
-      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
-        "Heu assolit el nombre màxim de calendaris. No se n'han pogut importar alguns."
       ],
       "You must set a name": [
         "Heu d'establir un nom"
@@ -6458,7 +6455,7 @@
         "El remitent original d'aquest missatge ja no és vàlid. El missatge s'enviarà des de la seva adreça per defecte ${ defaultEmail }."
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
-        "El propietari d'aquesta adreça ha desactivat el xifratge d'extrem a extrem. Per a poder enviar-hi correus electrònics xifrats, el propietari ha de tornar a habilitar el xifratge d’extrem a extrem."
+        "El propietari d'aquesta adreça ha desactivat el xifratge d'extrem a extrem. Per a poder enviar-hi correus electrònics xifrats, el propietari ha de tornar a activar el xifratge d’extrem a extrem."
       ],
       "The sender has requested a read receipt.": [
         "L'emissor ha sol·licitat una confirmació de lectura."
@@ -6480,7 +6477,7 @@
         "No us poden enviar correu brossa si no saben la vostra adreça de correu electrònic. Protegiu la safata d'entrada amb els àlies de hide-my-email."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
-        "Aquesta adreça està inhabilitada. Per tal de poder enviar-hi, el propietari l'ha d'habilitar en primer lloc."
+        "Aquesta adreça està inhabilitada. Per tal de poder enviar-hi, el propietari l'ha d'activar en primer lloc."
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Aquest navegador no suporta la previsualització de documents PDF. Descarregueu-vos l'arxiu."
@@ -6608,7 +6605,7 @@
         "Per cancel·lar la subscripció a aquesta llista de correu, se us dirigirà al següent URL, on el remitent del butlletí proporcionarà instruccions:"
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
-        "Per utilitzar la verificació d'adreça, heu d'habilitar les claus de confiança i confiar en una o més de les claus públiques disponibles, incloent la clau primària per a aquesta adreça. Això evita que les claus de xifratge es falsifiquin."
+        "Per utilitzar la verificació d'adreça, heu d'activar les claus de confiança i confiar en una o més de les claus públiques disponibles, incloent la clau primària per a aquesta adreça. Això evita que les claus de xifratge es falsifiquin."
       ],
       "Tomorrow, ${ formattedTime }": [
         "Demà a les ${ formattedTime }"
@@ -7961,7 +7958,7 @@
         "Esborranys"
       ],
       "Enable an email address linked to one of your calendars.": [
-        "Habilitar una adreça de correu electrònic vinculada a un dels vostres calendaris."
+        "Activar una adreça de correu electrònic vinculada a un dels vostres calendaris."
       ],
       "Enable the email address linked to the disabled calendar to cancel the event.": [
         "Activar l'adreça de correu electrònic vinculada al calendari desactivat per a cancel·lar l'esdeveniment."
@@ -10425,9 +10422,6 @@
       "Get more storage": [
         "Aconseguiu més emmagatzematge"
       ],
-      "Release notes": [
-        "Notes de la versió"
-      ],
       "Upgrade storage": [
         "Millora l'emmagatzematge"
       ],
@@ -10572,6 +10566,26 @@
     "Subscription price": {
       "For": [
         "Per"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB d'emmagatzemament"
+      ],
+      "and 15 more premium features": [
+        "i 15 característiques prèmium més"
+      ],
+      "Desktop app": [
+        "Aplicació d'escriptori"
+      ],
+      "No ads or tracking": [
+        "Sense anuncis ni rastreig"
+      ],
+      "Upgrade": [
+        "Millora"
+      ],
+      "Upgrade your productivity": [
+        "Milloreu la vostra productivitat"
       ]
     },
     "Subscription renewal state": {
@@ -11751,9 +11765,6 @@
       ],
       "What would you like to import?": [
         "Què li agradaria importar?"
-      ],
-      "What's new": [
-        "Novetats"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "La seva prova gratuïta de ${ planName } acaba el ${ textDate }"

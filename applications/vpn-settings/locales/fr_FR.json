@@ -3496,6 +3496,9 @@
       "Password copied to clipboard": [
         "Le mot de passe a été copié dans le presse-papiers."
       ],
+      "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
+        "Le mot de passe doit être de ${ MIN_PASSWORD_LENGTH } ou plus."
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Les paiements sont protégés par le chiffrement TLS et par les lois suisses en matière de protection de la vie privée."
       ],
@@ -3548,10 +3551,6 @@
       ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Nous vous invitons à réessayer, à utiliser un autre moyen de paiement ou à contacter PayPal pour obtenir de l'aide."
-      ],
-      "Please use a password more than ${ MIN_PASSWORD_LENGTH } character.": [
-        "Veuillez utiliser un mot de passe de plus de ${ MIN_PASSWORD_LENGTH } caractère.",
-        "Veuillez utiliser un mot de passe de plus de ${ MIN_PASSWORD_LENGTH } caractères."
       ],
       "Please use another browser or download the file.": [
         "Nous vous invitons à utiliser un autre navigateur ou à télécharger le fichier."
@@ -7121,9 +7120,6 @@
       ]
     },
     "Storage": {
-      "Release notes": [
-        "Notes de mise à jour"
-      ],
       "Upgrade storage": [
         "Augmenter la capacité de stockage"
       ],
@@ -8174,9 +8170,6 @@
       "We'll send an email to your new address with instructions on completing the change.": [
         "Nous vous enverrons un message à votre nouvelle adresse e-mail avec des instructions pour effectuer la modification."
       ],
-      "What's new": [
-        "Nouveautés"
-      ],
       "WireGuard configuration": [
         "Configuration WireGuard"
       ],
@@ -8390,6 +8383,9 @@
       ],
       "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
         "L'abonnement est renouvelé automatiquement tous les 3 mois. Votre prochaine date de facturation est dans 3 mois."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Le tarif exceptionnellement réduit de ${ priceWithDiscount } est valable le premier mois. Il sera ensuite automatiquement renouvelé à ${ renewPrice } chaque mois. Vous pouvez annuler à tout moment."
       ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Vous serez ensuite facturé tous les 12 mois à ${ renewPrice }."

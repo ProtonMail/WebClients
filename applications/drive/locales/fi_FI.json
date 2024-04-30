@@ -2480,6 +2480,9 @@
       "Error decrypting a computer": [
         "Virhe purettaessa tietokoneen salausta"
       ],
+      "External accounts are not supported yet": [
+        "Ulkoisia tilejä ei vielä tueta"
+      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Tiedostoa \"${ item.name }\" ei voida tallentaa virheen \"${ error }\" vuoksi"
       ],
@@ -2776,9 +2779,6 @@
       ],
       "You have reached the contacts limit for your account": [
         "Tilisi yhteystietojen enimmäismäärä on saavutettu"
-      ],
-      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
-        "Olet saavuttanut kalentereiden enimmäismäärän. Joitakin kalentereita ei voitu tuoda."
       ],
       "You must set a name": [
         "Nimi on asetettava"
@@ -3469,10 +3469,10 @@
         "${ BRAND_NAME } ei saa yhteyttä Yahoo-tiliisi. Varmista, että:"
       ],
       "2-step verification is enabled in your external account.": [
-        "Ulkoinen tilisi käyttää kaksivaiheista vahvistusta."
+        "Ulkoinen tilisi käyttää kaksivaiheista tunnistautumista."
       ],
       "2-step verification is enabled in your external email account.": [
-        "Ulkoinen sähköpostitilisi käyttää kaksivaiheista vahvistusta."
+        "Ulkoinen sähköpostitilisi käyttää kaksivaiheista tunnistautumista."
       ],
       "IMAP access is enabled in your external account.": [
         "IMAP on ulkoisella tililläsi käytössä."
@@ -3481,7 +3481,7 @@
         "IMAP on käytössä Yahoo-tilisi asetuksissa."
       ],
       "Too many recent requests. Please try again in a few moments.": [
-        "Liian monta hiljattaista pyyntöä. Yritä hetken kuluttua uudelleen."
+        "Liian monta pyyntöä lyhyen ajan sisällä. Yritä hetken kuluttua uudelleen."
       ],
       "Use your app password if:": [
         "Käytä sovellusalasanaa, jos:"
@@ -3831,7 +3831,7 @@
         "Kaikki yhteystiedot tuodaan ${ MAX_CONTACTS_PER_USER } yhteystiedon rajoitukseen saakka"
       ],
       "Also try looking in Trash.": [
-        "Etsi myös roskakorista."
+        "Yritä etsiä myös roskakorista."
       ],
       "American Express SafeKey logo": [
         "American Express SafeKey -logo"
@@ -3855,10 +3855,10 @@
         "Ja käytä sitä mistä tahansa"
       ],
       "Anyone with this link can access your file.": [
-        "Linkin välityksellä kuka tahansa voi käyttää tiedostoasi."
+        "Linkin välityksellä kuka tahansa voi avata tiedoston."
       ],
       "Anyone with this link can access your folder.": [
-        "Linkin välityksellä kuka tahansa voi käyttää kansiotasi."
+        "Linkin välityksellä kuka tahansa voi avata kansion."
       ],
       "Are you sure you want to discard your changes?": [
         "Haluatko varmasti hylätä muutokset?"
@@ -4145,11 +4145,11 @@
         "Syötä oma salasanasi (organisaation ylläpitäjänä)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
-        "Aikaa jäljellä arviolta ${ estimatedMinutes } minuutti",
-        "Aikaa jäljellä arviolta ${ estimatedMinutes } minuuttia"
+        "Arviolta ${ estimatedMinutes } minuutti jäljellä",
+        "Arviolta ${ estimatedMinutes } minuuttia jäljellä"
       ],
       "Estimated time remaining: Less than a minute": [
-        "Aikaa jäljellä arviolta alle minuutti"
+        "Arviolta vajaa minuutti jäljellä"
       ],
       "Estimating time remaining...": [
         "Arvioidaan jäljellä olevaa aikaa…"
@@ -4291,7 +4291,7 @@
         "${ formattedTaxRate }% ${ taxName } sisältäen: ${ price }"
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
-        "Indeksoidaan kohteita ${ esProgress }/${ totalProgressToShow }"
+        "Indeksoidaan kohdetta ${ esProgress }/${ totalProgressToShow }"
       ],
       "Indexing search results…": [
         "Indeksoidaan hakutuloksia…"
@@ -4502,11 +4502,8 @@
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Maksut on suojattu TLS-salauksella ja Sveitsin tietosuojalailla."
       ],
-      "Pending": [
-        "Odottaa"
-      ],
       "Permanently delete all files in your locked drive": [
-        "Poista lukitun asemasi kaikki tiedostot"
+        "Poista kaikki lukitun levysi tiedostot"
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline on yhteensopiva vain pelkkä teksti -muodon kanssa."
@@ -4585,7 +4582,7 @@
         "Tämän tiedostotyypin esikatselua ei tällä hetkellä tueta tässä selaimessa."
       ],
       "Preview for this file type is not supported": [
-        "Tämän tiedoston esikatselua ei tueta"
+        "Tämän tiedostotyypin esikatselua ei tueta"
       ],
       "Previous versions are kept for ${ retentionLabel }": [
         "Aiemmat versiot säilytetään ${ retentionLabel }"
@@ -4600,7 +4597,7 @@
         "Ensisijainen"
       ],
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
-        "Yksityinen haku otettiin käyttöön. Voit nyt sulkea tämän ruudun ja aloittaa tiedostojen ja kansioiden etsinnän."
+        "Yksityinen haku otettiin käyttöön. Voit nyt sulkea tämän ilmoituksen ja aloittaa tiedostojen ja kansioiden etsinnän."
       ],
       "Queued": [
         "Jonossa"
@@ -4651,7 +4648,7 @@
         "Hakua ei voida käyttää tässä selaimessa"
       ],
       "Search Enabled": [
-        "Haku on käytössä"
+        "Haku otettiin käyttöön"
       ],
       "Securely downloaded ${ nbFile } file": [
         "${ nbFile } tiedosto ladattiin turvallisesti",
@@ -4709,7 +4706,7 @@
         "Jaa kenelle tahansa"
       ],
       "Shareable link for ${ boldNameText }": [
-        "Jaettava linkki kohteelle ${ boldNameText }"
+        "Jaettava linkki kohteeseen ${ boldNameText }"
       ],
       "Shared link not found": [
         "Jakolinkkiä ei löytynyt"
@@ -4829,14 +4826,14 @@
         "Linkki poistetaan käytöstä pysyvästi, jonka jälkeen kukaan ei voi enää käyttää tiedostoasi sen välityksellä. Jakaaksesi tiedoston uudelleen sinun on luotava uusi linkki."
       ],
       "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
-        "Linkki poistetaan käytöstä pysyvästi, jonka jälkeen kukaan ei voi enää käyttää kansiota sen kautta. Jakaaksesi kansion uudelleen tarvitset uuden linkin."
+        "Linkki poistetaan käytöstä pysyvästi, jonka jälkeen kukaan ei voi enää käyttää kansiotasi sen välityksellä. Jakaaksesi kansion uudelleen sinun on luotava uusi linkki."
       ],
       "This month": [
         "Tässä kuussa"
       ],
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
-        "Tämä poistaa linkin ja tiedoston/kansion käyttöoikeuden kaikilta, joilla on tämä linkki.",
-        "Tämä poistaa linkin ja tiedoston/kansion käyttöoikeuden kaikilta, joilla on nämä linkit."
+        "Tämä poistaa linkin ja tiedoston tai kansion käyttöoikeuden kaikilta, joilla on tämä linkki.",
+        "Tämä poistaa linkin ja tiedoston tai kansion käyttöoikeuden kaikilta, joilla on nämä linkit."
       ],
       "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and stop syncing folders you added to My Computers.": [
         "Tämä poistaa synkronoidun laitteen ${ deviceName } ${ DRIVE_APP_NAME }sta ja lopettaa Tietokoneisiin lisättyjen kansioiden synkronoinnin."
@@ -4860,7 +4857,7 @@
         "Aidosti yksityistä hakua varten, ${ DRIVE_APP_NAME }n on indeksoitava tiedostosi paikallisesti."
       ],
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
-        "Aidosti yksityistä hakua varten tiedostosi on indeksoitava paikallisesti. Voit jatkaa ${ DRIVE_APP_NAME }n käyttämistä normaalisti – saat ilmoituksen ideksoinnin valmistumisesta."
+        "Aidosti yksityistä hakua varten tiedostosi on indeksoitava paikallisesti. Voit jatkaa ${ DRIVE_APP_NAME }n käyttämistä normaalisti – saat ilmoituksen kun indeksointi on valmis."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Vahvista olevasi ihminen roskapostin ja väärinkäytösten torjumiseksi."
@@ -5034,7 +5031,7 @@
         "Mitä haluat tehdä?"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Määrittäessäsi kaksivaiheisen todennuksen saat myös palautuskoodit, joiden avulla voit kirjautua vaikka menettäisit pääsyn todennussovellukseesi."
+        "Määrittäessäsi kaksivaiheisen tunnistautumisen saat palautuskoodit, joiden avulla voit kirjautua myös silloin, kun et voi käyttää todennussovellustasi."
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "palautetaan ${ formattedRevisionDate } tallennettuun versioon. Kaikki muut versiot säilytetään."
@@ -5043,7 +5040,7 @@
         "${ DRIVE_APP_NAME }ssa tietosi suojataan päästä päähän -salauksella."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
-        "Haluatko uuden vahvistuskoodin vai käyttää vaihtoehtoista todennustapaa?"
+        "Haluatko uuden vahvistuskoodin vai käyttää vaihtoehtoista tunnistautumistapaa?"
       ],
       "Would you like to receive a new verification code?": [
         "Haluatko uuden vahvistuskoodin?"
@@ -6208,7 +6205,7 @@
         "MPEG-video"
       ],
       "MS Embedded OpenType fonts": [
-        "Embedded OpenType -kirjasin"
+        "MS Embedded OpenType -kirjasin"
       ],
       "Musical Instrument Digital Interface (MIDI)": [
         "MIDI (Musical Instrument Digital Interface)"
@@ -6247,7 +6244,7 @@
         "SVG (Scalable Vector Graphics)"
       ],
       "Small web format (SWF)": [
-        "SWF (Small Web Format)"
+        "Small Web Format (SWF)"
       ],
       "Tagged Image File Format (TIFF)": [
         "TIFF (Tagged Image File Format)"
@@ -6653,7 +6650,7 @@
         "Tor + VPN"
       ],
       "Two-factor authentication": [
-        "Kaksivaiheinen todennus"
+        "Kaksivaiheinen tunnistautuminen"
       ],
       "Unlimited devices": [
         "Rajattomasti laitteita"
@@ -6680,7 +6677,7 @@
         "Rajattomasti viestejä päivässä"
       ],
       "Unlimited shared vaults with access permissions": [
-        "Rajattomasti jaettuja holveja käyttöoikeuksilla"
+        "Rajattomasti jaettuja holveja erityisillä käyttöoikeuksilla"
       ],
       "Unlimited vault sharing": [
         "Rajattomasti holvin jakoja"
@@ -6982,7 +6979,7 @@
         "Kirjautumiseen tarvitaan matkapuhelimeen lähetettävä koodi. Tällä varmistetaan tilin suojaus vaikka salasana olisi vaarantunut."
       ],
       "Reset user passwords and reset two-factor authentication on users": [
-        "Nollaa käyttäjien salasanat ja palauta kaksivaiheinen todennus oletustilaan"
+        "Nollaa käyttäjien salasanat ja palauta kaksivaiheinen tunnistautuminen oletustilaan"
       ],
       "Route your internet traffic through the Tor network with a single click": [
         "Ohjaa Internet-tietoliikenteesi Tor-verkon kautta yhdellä painalluksella"
@@ -7096,7 +7093,7 @@
         "Yksityiset yhdyskäytävät"
       ],
       "Require 2FA": [
-        "Pakotettava kaksivaiheinen todennus"
+        "Pakotettava kaksivaiheinen tunnistautuminen"
       ]
     },
     "Notification": {
@@ -7260,7 +7257,7 @@
         "Kutsu poistettiin jaosta"
       ],
       "Link copied to clipboard": [
-        "Linkki kopioitu leikepöydälle"
+        "Linkki kopioitiin leikepöydälle"
       ],
       "Move ${ n } file": [
         "Siirrä ${ n } tiedosto",
@@ -7307,8 +7304,8 @@
       "Trash failed to be emptied": [
         "Roskakorin tyhjennys epäonnistui"
       ],
-      "You stopped to share this item": [
-        "Lopetit tämän kohteen jakamisen"
+      "You stopped sharing this item": [
+        "Lopetit kohteen jakamisen"
       ],
       "Your old files will be deleted in 72 hours": [
         "Vanhat tiedostosi poistetaan 72 tunnin kuluessa"
@@ -8180,7 +8177,7 @@
         "Kutsu kavereita ${ BRAND_NAME }iin"
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
-        "Nyt voit etsiä Drive tiedostoja helposti pitäen tietosi samalla turvassa."
+        "Nyt voit etsiä Driven tiedostoja helposti pitäen tietosi samalla turvassa."
       ]
     },
     "State": {
@@ -8191,9 +8188,6 @@
     "Storage": {
       "Get more storage": [
         "Hanki lisää tallennustilaa"
-      ],
-      "Release notes": [
-        "Julkaisutiedot"
       ],
       "Upgrade storage": [
         "Hanki lisää tallennustilaa"
@@ -8361,6 +8355,47 @@
     "Subscription price": {
       "For": [
         "Hintaan"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 Gt tallennustilaa"
+      ],
+      "and 15 more premium features": [
+        "sekä 15 muuta premium-ominaisuutta"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automaattinen sähköpostiohjaus ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Tietovuotohälytykset ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Työpöytäsovellus"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Auta meitä pitämään Internet kaikille turvallisena. Päivitä maksulliseen tilaukseen."
+      ],
+      "No ads or tracking": [
+        "Ei mainoksia eikä seurantaa"
+      ],
+      "Short @pm.me email address": [
+        "Lyhyt @pm.me-sähköpostiosoite"
+      ],
+      "Support our mission": [
+        "Tue tehtäväämme"
+      ],
+      "Upgrade": [
+        "Päivitä tilaus"
+      ],
+      "Upgrade your productivity": [
+        "Tehosta tuottavuuttasi"
+      ],
+      "We don't sell your data": [
+        "Emme myy tietojasi"
+      ],
+      "Your privacy is our mission": [
+        "Yksityisyytesi on tehtävämme"
       ]
     },
     "Subscription renewal state": {
@@ -8925,6 +8960,9 @@
       "Item details": [
         "Kohteen tiedot"
       ],
+      "Last edited by": [
+        "Viimeksi muokannut"
+      ],
       "Link confirmation": [
         "Linkin vahvistus"
       ],
@@ -9127,7 +9165,7 @@
         "Lopeta jakaminen"
       ],
       "Stop sharing with everyone?": [
-        "Lopetetaanko jakaminen kaikille?"
+        "Lopetetaanko jakaminen täysin?"
       ],
       "Stop transfers?": [
         "Pysäytetäänkö siirrot?"
@@ -9194,9 +9232,6 @@
       ],
       "What would you like to import?": [
         "Mitä haluat tuoda?"
-      ],
-      "What's new": [
-        "Mitä uutta"
       ],
       "You have inaccessible files": [
         "Sinulla on tiedostoja, joita ei voida käyttää"

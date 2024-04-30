@@ -2951,6 +2951,9 @@
         "Server hinzufügen (${ availableAddedCount } verfügbar)",
         "Server hinzufügen (${ availableAddedCount } verfügbar)"
       ],
+      "Add your name and logo to create a more personalized experience for your organization.": [
+        "Füge deinen Namen und dein Logo hinzu, um deiner Organisation eine persönliche Note zu geben."
+      ],
       "Adding ${ addedServerCount } gateway server": [
         "${ addedServerCount } Gateway-Server wird hinzugefügt",
         "${ addedServerCount } Gateway-Server werden hinzugefügt"
@@ -3313,6 +3316,12 @@
       "If you wish to combine this account with another one, do NOT delete it.": [
         "Wenn du dieses Konto mit einem anderen kombinieren möchtest, darfst du es NICHT löschen."
       ],
+      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
+        "Wenn du Probleme hast, sind wir für dich da. ${ boldPhoneCall } oder ${ boldZoomMeeting } mit einem unserer Support-Spezialisten, oder öffnen Sie einen ${ boldLiveChat } für Chat-Support."
+      ],
+      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists.": [
+        "Wenn du Probleme hast, sind wir für dich da. ${ boldPhoneCall } oder ${ boldZoomMeeting } mit einem unserer Support-Spezialisten."
+      ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Wichtig: Bitte stelle sicher, dass du deine Wiederherstellungscodes speicherst. Andernfalls kannst du den Zugriff auf dein Konto dauerhaft verlieren, wenn du dein Gerät zur Zwei-Faktor-Authentifizierung verlierst."
       ],
@@ -3524,10 +3533,6 @@
       ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Bitte versuche es erneut, verwende eine andere Zahlungsmethode oder wende dich an PayPal, um Hilfe zu erhalten."
-      ],
-      "Please use a password more than ${ MIN_PASSWORD_LENGTH } character.": [
-        "Bitte verwende ein Passwort mit mehr als ${ MIN_PASSWORD_LENGTH } Zeichen.",
-        "Bitte verwende ein Passwort mit mehr als ${ MIN_PASSWORD_LENGTH } Zeichen."
       ],
       "Please use another browser or download the file.": [
         "Bitte verwende einen anderen Browser oder lade die Datei herunter."
@@ -6558,6 +6563,9 @@
       ]
     },
     "Select invoice document": {
+      "Credit note": [
+        "Gutschrift"
+      ],
       "Currency conversion": [
         "Währungsumrechnung"
       ],
@@ -7091,9 +7099,6 @@
       ]
     },
     "Storage": {
-      "Release notes": [
-        "Versionshinweise"
-      ],
       "Upgrade storage": [
         "Mehr Speicher hinzufügen"
       ],
@@ -8122,9 +8127,6 @@
       ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Wir senden eine E-Mail an deine neue Adresse mit Anweisungen zum Abschluss der Änderung."
-      ],
-      "What's new": [
-        "Neuigkeiten"
       ],
       "WireGuard configuration": [
         "WireGuard-Konfiguration"

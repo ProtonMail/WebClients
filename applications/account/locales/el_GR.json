@@ -47,11 +47,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } κατάστημα"
       ],
-      "activate": [
-        "ενεργοποιήστε"
-      ],
       "Activate": [
         "Ενεργοποίηση"
+      ],
+      "activate": [
+        "ενεργοποιήστε"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Ενεργοποίηση ${ user.Name }@pm.me"
@@ -589,6 +589,9 @@
       ],
       "Keep": [
         "Διατήρηση"
+      ],
+      "Keep logo": [
+        "Διατηρήστε το λογότυπο"
       ],
       "Keep my Plus subscription": [
         "Διατηρήστε την Plus συνδρομή μου"
@@ -1312,6 +1315,23 @@
         "Νέα διεύθυνση ηλεκτρονικού ταχυδρομείου"
       ]
     },
+    "app-switcher": {
+      "Browse the web privately and block ads": [
+        "Ιδιωτική περιήγηση στον ιστό και αποκλεισμός διαφημίσεων"
+      ],
+      "Keep your schedule private": [
+        "Διατηρήστε το πρόγραμμά σας απόρρητο"
+      ],
+      "Protect your passwords and identity": [
+        "Προστατέψτε τους κωδικούς πρόσβασης και την ταυτότητά σας"
+      ],
+      "Safeguard your files and photos": [
+        "Προστατέψτε τα αρχεία και τις φωτογραφίες σας"
+      ],
+      "Secure your communications": [
+        "Ασφαλίστε τις επικοινωνίες σας"
+      ]
+    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "${ BRAND_NAME } εφαρμογές"
@@ -1884,6 +1904,9 @@
     "Call Scheduled Confirmation": {
       "Request sent": [
         "Το Αίτημα εστάλη"
+      ],
+      "We'll get back to you with more information as soon as we can.": [
+        "Θα επικοινωνήσουμε μαζί σας με περισσότερες πληροφορίες το συντομότερο δυνατό."
       ],
       "You can safely close this tab.": [
         "Μπορείτε να κλείσετε με ασφάλεια αυτήν την καρτέλα."
@@ -3900,6 +3923,12 @@
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Αποτυχία λήψης ενεργών συνεδριών. Παρακαλούμε ${ refresh } ή δοκιμάστε ξανά αργότερα."
       ],
+      "Failed to process the logo": [
+        "Αποτυχία επεξεργασίας του λογότυπου"
+      ],
+      "File too large. Your logo must be 30 KB or smaller.": [
+        "Το αρχείο είναι πολύ μεγάλο. Το λογότυπό σας πρέπει να είναι 30 KB ή μικρότερο."
+      ],
       "Filter with this name already exists": [
         "Το φίλτρο με αυτό το όνομα υπάρχει ήδη"
       ],
@@ -3917,6 +3946,9 @@
       ],
       "Impossible to rename the gateway": [
         "Δεν είναι δυνατή η μετονομασία της πύλης"
+      ],
+      "Incorrect file type. Upload a file in PNG or JPEG format.": [
+        "Εσφαλμένος τύπος αρχείου. Ανεβάστε ένα αρχείο σε μορφή PNG ή JPEG."
       ],
       "Incorrect login credentials. Please try again.": [
         "Λανθασμένα διαπιστευτήρια εισόδου. Παρακαλούμε δοκιμάστε ξανά."
@@ -4073,6 +4105,9 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Παρακαλώ αναβαθμίστε σε επιχειρηματικό πλάνο με περισσότερους από 1 χρήστες ώστε να διαχειριστείτε πολλαπλούς χρήστες."
       ],
+      "Please upload a square file": [
+        "Παρακαλούμε ανεβάστε ένα τετράγωνο αρχείο"
+      ],
       "Please upload an xml file": [
         "Παρακαλούμε ανεβάστε ένα αρχείο xml"
       ],
@@ -4145,6 +4180,12 @@
       ],
       "The email addresses do not match": [
         "Οι διευθύνσεις email δεν ταιριάζουν."
+      ],
+      "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
+        "Το αρχείο είναι πολύ μεγάλο, το μέγιστο μέγεθος είναι ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }"
+      ],
+      "The file is too small, the minimum size is ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }": [
+        "Το αρχείο είναι πολύ μικρό, το ελάχιστο μέγεθος είναι ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }"
       ],
       "The folder name is invalid. Please choose a different name.": [
         "Μη έγκυρο όνομα φακέλου. Παρακαλούμε δοκιμάστε ένα διαφορετικό."
@@ -4253,9 +4294,6 @@
       ],
       "You have reached the contacts limit for your account": [
         "Έχετε συμπληρώσει το όριο επαφών για τον λογαριασμό σας"
-      ],
-      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
-        "Έχετε συμπληρώσει τον μέγιστο αριθμό ημερολογίων. Δεν ήταν δυνατή η εισαγωγή ορισμένων ημερολογίων."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Έχετε χρησιμοποιήσει όλες τις διευθύνσεις στο πρόγραμμά σας. Για προσθήκη νέας διεύθυνσης, παρακαλούμε αναβαθμίστε το πρόγραμμά σας."
@@ -5908,17 +5946,6 @@
         "Μέρος του περιεχομένου του ημερολογίου σας δεν υποστηρίζεται και δεν θα εισαχθεί."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Εντοπίστηκαν πρόσθετα διπλότυπα κλειδιά. Παρακαλούμε ανεβάστε τα μεμονωμένα για περισσότερες πληροφορίες."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Το κλειδί ${ fingerprint } έχει ήδη ανεβεί"
-      ],
-      "Selected color:": [
-        "Επιλεγμένο χρώμα:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Το ${ appName } χρειάζεται την άδειά σας για την ${ enableDesktopNotifications }."
@@ -5934,6 +5961,9 @@
       ],
       "${ BRAND_NAME } is privacy you can trust, ensured by strong encryption, open-source code, and Swiss privacy laws. We believe nobody should be able to exploit your data, period. Our technology and business are based upon this fundamentally stronger definition of privacy.": [
         "Το ${ BRAND_NAME } είναι απόρρητο που μπορείτε να εμπιστευτείτε, το οποίο διασφαλίζεται από ισχυρή κρυπτογράφηση, κώδικα ανοιχτού κώδικα και Ελβετικούς νόμους περί απορρήτου. Πιστεύουμε ότι κανείς δεν πρέπει να μπορεί να εκμεταλλευτεί τα δεδομένα σας, τελεία και παύλα. Η τεχνολογία και η επιχείρησή μας βασίζονται σε αυτόν τον θεμελιωδώς ισχυρότερο ορισμό της ιδιωτικής ζωής."
+      ],
+      "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
+        "Το ${ BRAND_NAME } δε μοιράζεται ποτέ τις πληροφορίες σας με τρίτους. Τα δεδομένα προέρχονται από τις αναλύσεις του ίδιου του ${ BRAND_NAME } και της Constella Intelligence."
       ],
       "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "Η ${ BRAND_NAME } διέκοψε μια εισαγωγή επειδή έχασε τη σύνδεση με την άλλη υπηρεσία παροχής ηλεκτρονικού ταχυδρομείου. Παρακαλώ επανασύνδεσε."
@@ -6166,6 +6196,9 @@
         "Προσθήκη διακομιστή (${ availableAddedCount } διαθέσιμοι)",
         "Προσθήκη διακομιστή (${ availableAddedCount } διαθέσιμοι)"
       ],
+      "Add your name and logo to create a more personalized experience for your organization.": [
+        "Προσθέστε το όνομα και το λογότυπό σας για να δημιουργήσετε μια πιο εξατομικευμένη εμπειρία για τον οργανισμό σας."
+      ],
       "Adding ${ addedServerCount } gateway server": [
         "Προσθήκη ${ addedServerCount } διακομιστή πύλης",
         "Προσθήκη ${ addedServerCount } διακομιστών πύλης"
@@ -6234,6 +6267,9 @@
       ],
       "Amount due": [
         "Οφειλόμενο ποσό"
+      ],
+      "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
+        "Ένα ψευδώνυμο ηλεκτρονικού ταχυδρομείου λειτουργεί όπως μια διεύθυνση ηλεκτρονικού ταχυδρομείου, αλλά μειώνει τα ανεπιθύμητα μηνύματα και διατηρεί κρυφή την πραγματική διεύθυνση ηλεκτρονικού ταχυδρομείου και την ταυτότητά σας."
       ],
       "An error occurred while communicating with the extension": [
         "Παρουσιάστηκε σφάλμα κατά την επικοινωνία με την επέκταση"
@@ -6400,6 +6436,9 @@
       "Check the status of imports and forwarding.": [
         "Ελέγξτε την κατάσταση των εισαγωγών και της προώθησης."
       ],
+      "Choose an app to get started": [
+        "Επιλέξτε μια εφαρμογή για να ξεκινήσετε"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Κάντε κλικ στην επιλογή \"Αίτηση νέου κωδικού\" για να σταλεί ένας νέος κωδικός επαλήθευσης στο ${ strong }. Εάν αυτός ο αριθμός τηλεφώνου είναι εσφαλμένος, κάντε κλικ στο \"Επεξεργασία\" για να τον διορθώσετε."
       ],
@@ -6479,6 +6518,9 @@
       ],
       "Custom": [
         "Προσαρμοσμένο"
+      ],
+      "Custom branding": [
+        "Προσαρμοσμένη επωνυμία"
       ],
       "Custom daily": [
         "Προσαρμοσμένη καθημερινή"
@@ -6743,6 +6785,9 @@
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "Αποκτήστε πρόσβαση με τη δημιουργία ενός λογαριασμού ${ BRAND_NAME } και αποδοχή της πρόσκλησης."
       ],
+      "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
+        "Λάβετε ειδοποίηση εάν ο κωδικός πρόσβασής σας ή άλλα προσωπικά δεδομένα έχουν διαρρεύσει. ${ learnMoreLinkNoBreach }"
+      ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "Δώστε στο διακριτικό ένα περιγραφικό όνομα, όπως την υπηρεσία με την οποία σκοπεύετε να το χρησιμοποιήσετε και επιλέξτε μία από τις ενεργές προσαρμοσμένες διευθύνσεις τομέα σας. Μόνο αυτή η διεύθυνση θα μπορεί να στέλνει μηνύματα ηλεκτρονικού ταχυδρομείου με αυτό το διακριτικό."
       ],
@@ -6820,6 +6865,12 @@
       ],
       "If you wish to combine this account with another one, do NOT delete it.": [
         "Εάν επιθυμείτε να συνδυάσετε αυτόν τον λογαριασμό με έναν άλλο, ΜΗΝ τον διαγράψετε."
+      ],
+      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
+        "Αν αντιμετωπίζετε προβλήματα, είμαστε εδώ για να σας βοηθήσουμε. ${ boldPhoneCall } ή ${ boldZoomMeeting } με έναν από τους ειδικούς υποστήριξής μας ή ανοίξτε ένα ${ boldLiveChat } για υποστήριξη συνομιλίας."
+      ],
+      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists.": [
+        "Αν αντιμετωπίζετε προβλήματα, είμαστε εδώ για να σας βοηθήσουμε. ${ boldPhoneCall } ή ${ boldZoomMeeting } με έναν από τους ειδικούς υποστήριξής μας."
       ],
       "Image description": [
         "Περιγραφή εικόνας"
@@ -6919,6 +6970,9 @@
       "Just send them your personal referral link.": [
         "Απλώς αποστείλετε τους τον προσωπικό σας σύνδεσμο παραπομπής."
       ],
+      "Keep your info more secure and private with these guides and tips.": [
+        "Διατηρήστε τις πληροφορίες σας πιο ασφαλείς και ιδιωτικές με αυτούς τους οδηγούς και συμβουλές."
+      ],
       "Key deletion is irreversible!": [
         "Η διαγραφή κλειδιών είναι μη αναστρέψιμη!"
       ],
@@ -6972,6 +7026,9 @@
       ],
       "Link type": [
         "Τύπος σύνδεσης"
+      ],
+      "Live chat": [
+        "Ζωντανή Συνομιλία"
       ],
       "Loaded content is being protected by our proxy when tracker protection is activated.": [
         "Το φορτωμένο περιεχόμενο προστατεύεται από τον διακομιστή μεσολάβησης όταν είναι ενεργοποιημένη η προστασία ιχνηλάτη."
@@ -7047,6 +7104,9 @@
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Ονομάστε το νέο σας φάκελο και επιλέξτε τον γονικό φάκελο στον οποίο θέλετε να τον τοποθετήσετε. Εάν δεν επιλέξετε γονικό φάκελο, αυτός ο νέος φάκελος θα δημιουργηθεί ως φάκελος ανώτατου επιπέδου."
+      ],
+      "NetShield is an ad-blocking feature from ${ VPN_APP_NAME } that protects your device from ads, trackers, and malware.": [
+        "Το NetShield είναι μια δυνατότητα αποκλεισμού διαφημίσεων από ${ VPN_APP_NAME } που προστατεύει τη συσκευή σας από διαφημίσεις, ιχνηλάτες και κακόβουλο λογισμικό."
       ],
       "New": [
         "Νέο"
@@ -7255,10 +7315,6 @@
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Παρακαλώ προσπαθήστε ξανά, χρησιμοποιείστε ένα διαφορετικό τρόπο πληρωμής, ή επικοινωνήστε με το Paypal για περαιτέρω βοήθεια."
       ],
-      "Please use a password more than ${ MIN_PASSWORD_LENGTH } character.": [
-        "Χρησιμοποιήστε έναν κωδικό πρόσβασης περισσότερο από ${ MIN_PASSWORD_LENGTH } χαρακτήρα.",
-        "Χρησιμοποιήστε έναν κωδικό πρόσβασης περισσότερο από ${ MIN_PASSWORD_LENGTH } χαρακτήρες."
-      ],
       "Please use another browser or download the file.": [
         "Χρησιμοποιήστε άλλο πρόγραμμα περιήγησης ή κατεβάστε το αρχείο."
       ],
@@ -7354,6 +7410,9 @@
       ],
       "Report link expired": [
         "Ο σύνδεσμος αναφοράς έληξε"
+      ],
+      "Request a phone call": [
+        "Ζητήστε Τηλεφωνική Επικοινωνία"
       ],
       "Resend verification email": [
         "Επανάληψη αποστολής μηνύματος επαλήθευσης"
@@ -7518,6 +7577,9 @@
       "Support for 1 custom email domain": [
         "Υποστήριξη για 1 παραμετροποιημένο τομέα email"
       ],
+      "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
+        "Η υποστήριξη για την παρακολούθηση προσαρμοσμένων τομέων και μη ${ BRAND_NAME } διευθύνσεων ηλεκτρονικού ταχυδρομείου θα είναι σύντομα διαθέσιμη."
+      ],
       "support team": [
         "ομάδα υποστήριξης"
       ],
@@ -7553,6 +7615,9 @@
       ],
       "The credentials from your Identity Provider will be deleted.": [
         "Τα διαπιστευτήρια από τον πάροχο ταυτότητάς σας θα διαγραφούν."
+      ],
+      "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
+        "Ο σκοτεινός ιστός είναι ένα κρυφό μέρος του διαδικτύου όπου κλεμμένες προσωπικές πληροφορίες, όπως ταυτότητες, μπορούν να αγοραστούν και να πωληθούν."
       ],
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "Ο σύνδεσμος επαλήθευσης ηλεκτρονικού ταχυδρομείου έχει λήξει. Συνδεθείτε για να στείλετε ξανά έναν σύνδεσμο επαλήθευσης."
@@ -7845,11 +7910,17 @@
       "Upload your completed CSV file to create accounts": [
         "Ανεβάστε το ολοκληρωμένο CSV αρχείο σας για να δημιουργήσετε λογαριασμούς"
       ],
+      "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
+        "Ανεβάστε το λογότυπο του οργανισμού σας για να ενισχύσετε την ταυτότητα της επωνυμίας σας και να δημιουργήσετε μια εξατομικευμένη εμπειρία για τους χρήστες σας."
+      ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "Το ανεβασμένο αρχείο δεν είναι ένα έγκυρο ιδιωτικό κλειδί. Παρακαλούμε επαληθεύστε και δοκιμάστε ξανά."
       ],
       "URL link": [
         "Σύνδεσμος URL"
+      ],
+      "Use a password manager to generate and securely store your passwords, ensuring strong passwords and easier sign-ins.": [
+        "Χρησιμοποιήστε έναν διαχειριστή κωδικών πρόσβασης για να δημιουργήσετε και να αποθηκεύσετε με ασφάλεια τους κωδικούς πρόσβασής σας, εξασφαλίζοντας ισχυρούς κωδικούς πρόσβασης και ευκολότερες συνδέσεις."
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Χρησιμοποιείστε τον βέλτιστο διακομιστή για το τρέχον φορτίο και θέση: ${ formattedBestServerName }"
@@ -7928,6 +7999,9 @@
       ],
       "We just sent you a new link.": [
         "Μόλις σας στείλαμε έναν νέο σύνδεσμο."
+      ],
+      "We monitor the dark web for instances where your personal information (such as an email address or password used on a third-party site) is leaked or compromised.": [
+        "Παρακολουθούμε τον σκοτεινό ιστό για περιπτώσεις όπου τα προσωπικά σας στοιχεία (όπως μια διεύθυνση ηλεκτρονικού ταχυδρομείου ή ένας κωδικός πρόσβασης που χρησιμοποιείται σε ιστότοπο τρίτου μέρους) διαρρέουν ή παραβιάζονται."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Πρέπει να επαληθεύσουμε τον τρόπο πληρωμής σας με την τράπεζά σας."
@@ -8187,9 +8261,6 @@
       "You won’t be able to recover locked data using your downloaded recovery files.": [
         "Δε θα μπορείτε να ανακτήσετε κλειδωμένα δεδομένα χρησιμοποιώντας τα ληφθέντα αρχεία ανάκτησης."
       ],
-      "You won’t be able to recover locked data using your downloaded recovery files. This will also disable trusted device recovery.": [
-        "Δε θα μπορείτε να ανακτήσετε κλειδωμένα δεδομένα χρησιμοποιώντας τα ληφθέντα αρχεία ανάκτησης. Αυτό θα απενεργοποιήσει επίσης την ανάκτηση αξιόπιστης συσκευής."
-      ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
         "Ο ${ BRAND_NAME } Λογαριασμός συσχετίζεται με ${ externalEmailAddress }."
       ],
@@ -8280,6 +8351,20 @@
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Το εισιτήριο υποστήριξής σας έχει κλείσει. Σας ευχαριστούμε που επικοινωνήσατε με την υποστήριξη ${ BRAND_NAME }."
+      ],
+      "Zoom meeting": [
+        "Συνάντηση Zoom"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Εντοπίστηκαν πρόσθετα διπλότυπα κλειδιά. Παρακαλούμε ανεβάστε τα μεμονωμένα για περισσότερες πληροφορίες."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Το κλειδί ${ fingerprint } έχει ήδη ανεβεί"
+      ],
+      "Selected color:": [
+        "Επιλεγμένο χρώμα:"
       ]
     },
     "Info - folder colouring feature": {
@@ -8415,8 +8500,26 @@
       "Generate key": [
         "Δημιουργία κλειδιού"
       ],
+      "Generating key failed. Please try again later.": [
+        "Η δημιουργία κλειδιού απέτυχε. Προσπαθήστε ξανά αργότερα."
+      ],
+      "If you're generating a new key because you believe your existing key has been compromised, please mark it as compromised after generating this key.": [
+        "Εάν δημιουργείτε ένα νέο κλειδί επειδή πιστεύετε ότι το υπάρχον κλειδί σας έχει παραβιαστεί, επισημάνετέ το ως παραβιασμένο μετά τη δημιουργία αυτού του κλειδιού."
+      ],
       "Key successfully generated.": [
         "Το κλειδί δημιουργήθηκε με επιτυχία."
+      ],
+      "Note: you already have a key with the same algorithm for this address. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
+        "Σημείωση: έχετε ήδη ένα κλειδί με τον ίδιο αλγόριθμο για αυτή τη διεύθυνση. Εκτός εάν αυτό το κλειδί έχει παραβιαστεί, ενδέχεται να μην είναι απαραίτητο να δημιουργήσετε ένα νέο κλειδί και κάτι τέτοιο μπορεί να επιβραδύνει τον λογαριασμό σας."
+      ],
+      "Note: you already have a key with the same algorithm for this user. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
+        "Σημείωση: έχετε ήδη ένα κλειδί με τον ίδιο αλγόριθμο για αυτόν τον χρήστη. Εκτός εάν αυτό το κλειδί έχει παραβιαστεί, ενδέχεται να μην είναι απαραίτητο να δημιουργήσετε ένα νέο κλειδί και κάτι τέτοιο μπορεί να επιβραδύνει τον λογαριασμό σας."
+      ],
+      "This will generate a new key, which will be used to encrypt future contact details, email encryption keys, and other data.": [
+        "Αυτό θα δημιουργήσει ένα νέο κλειδί, το οποίο θα χρησιμοποιηθεί για την κρυπτογράφηση μελλοντικών στοιχείων επικοινωνίας, κλειδιών κρυπτογράφησης μηνυμάτων και άλλων δεδομένων."
+      ],
+      "This will generate a new key, which will be used to encrypt future emails, among other data.": [
+        "Αυτό θα δημιουργήσει ένα νέο κλειδί, το οποίο θα χρησιμοποιηθεί για την κρυπτογράφηση μελλοντικών μηνυμάτων ηλεκτρονικού ταχυδρομείου, μεταξύ άλλων δεδομένων."
       ]
     },
     "Key state badge": {
@@ -8821,6 +8924,9 @@
       "Awarded": [
         "Βραβευμένα"
       ],
+      "Beta": [
+        "Beta (Δοκιμαστική)"
+      ],
       "Billing address": [
         "Διεύθυνση χρέωσης"
       ],
@@ -9198,6 +9304,9 @@
       ],
       "Link label": [
         "Ετικέτα συνδέσμου"
+      ],
+      "Logo": [
+        "Λογότυπο"
       ],
       "Mail Server (IMAP)": [
         "Διακομιστής Αλληλογραφίας (IMAP)"
@@ -9602,9 +9711,6 @@
       ],
       "Recovery phrase": [
         "Φράση αποκατάστασης"
-      ],
-      "Trusted device recovery": [
-        "Ανάκτηση αξιόπιστης συσκευής"
       ]
     },
     "Label for adding a new custom domain": {
@@ -9830,6 +9936,9 @@
       ],
       "here": [
         "εδώ"
+      ],
+      "How does monitoring work?": [
+        "Πώς λειτουργεί η παρακολούθηση;"
       ],
       "How to pay with Bitcoin?": [
         "Πώς να πληρώσετε με Bitcoin;"
@@ -11326,6 +11435,12 @@
       "An external address cannot be default": [
         "Μια εξωτερική διεύθυνση δεν μπορεί να είναι προεπιλεγμένη"
       ],
+      "Dark Web Monitoring has been disabled": [
+        "Το Dark Web Monitoring έχει απενεργοποιηθεί"
+      ],
+      "Dark Web Monitoring has been enabled": [
+        "Το Dark Web Monitoring έχει ενεργοποιηθεί"
+      ],
       "Invalid code": [
         "Μη έγκυρος κωδικός"
       ],
@@ -11726,6 +11841,43 @@
       ],
       "Your plan includes a maximum of ${ humanReadableAvailableSpace } more storage.": [
         "Το σχέδιό σας περιλαμβάνει το μέγιστο ${ humanReadableAvailableSpace } παραπανίσιο χώρο αποθήκευσης."
+      ]
+    },
+    "Organization logo upload": {
+      "Avoid overly compressed images.": [
+        "Αποφύγετε τις υπερβολικά συμπιεσμένες εικόνες."
+      ],
+      "Ensure your logo has padding space around it.": [
+        "Βεβαιωθείτε ότι το λογότυπό σας έχει χώρο επένδυσης γύρω του."
+      ],
+      "Opt for a PNG image that is a 128x128 pixels for clarity.": [
+        "Επιλέξτε μια εικόνα PNG που είναι 128x128 pixel για λόγους σαφήνειας."
+      ],
+      "Tips on choosing a good logo": [
+        "Συμβουλές για την επιλογή ενός καλού λογότυπου"
+      ],
+      "Use a graphical icon or image rather than text.": [
+        "Χρησιμοποιήστε ένα γραφικό εικονίδιο ή εικόνα αντί για κείμενο."
+      ],
+      "Use a solid background color.": [
+        "Χρησιμοποιήστε ένα συμπαγές χρώμα φόντου."
+      ]
+    },
+    "Organization logo upload modal": {
+      "Drop image file here to upload or": [
+        "Σύρετε το αρχείο εικόνας εδώ για ανέβασμα ή"
+      ],
+      "File in PNG or JPEG format": [
+        "Αρχείο σε μορφή PNG ή JPEG"
+      ],
+      "File not larger than 30 KB": [
+        "Αρχείο όχι μεγαλύτερο από 30 KB"
+      ],
+      "Square image of at least 128 pixels": [
+        "Τετράγωνη εικόνα τουλάχιστον 128 pixel"
+      ],
+      "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
+        "Οι χρήστες θα βλέπουν το λογότυπό σας αντί για το εικονίδιο του ${ BRAND_NAME } όταν είναι συνδεδεμένοι στις εφαρμογές ιστού μας."
       ]
     },
     "OS compatibility": {
@@ -12561,6 +12713,11 @@
         "Απεγγραφή;"
       ]
     },
+    "Remove organization logo": {
+      "Users will no longer see your custom logo or organization name.": [
+        "Οι χρήστες δε θα βλέπουν πλέον το προσαρμοσμένο λογότυπο ή το όνομα του οργανισμού σας."
+      ]
+    },
     "Restore administrator panel": {
       "${ n } administrator in your organization need access to the organization key.": [
         "${ n } διαχειριστής στον οργανισμό σας χρειάζεται πρόσβαση στο κλειδί οργανισμού.",
@@ -12591,8 +12748,99 @@
       ]
     },
     "scim: Action": {
+      "Configure SCIM": [
+        "Ρύθμιση παραμέτρων SCIM"
+      ],
+      "Disable SCIM": [
+        "Απενεργοποιήστε το SCIM"
+      ],
+      "Disable SCIM integration": [
+        "Απενεργοποιήστε την ενσωμάτωση SCIM"
+      ],
+      "Generate new token": [
+        "Δημιουργία νέου διακριτικού"
+      ],
       "Generate token": [
         "Δημιουργία διακριτικού"
+      ]
+    },
+    "scim: Info": {
+      "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
+        "**Προαπαιτούμενα:** Ο έλεγχος ταυτότητας SAML πρέπει να ρυθμιστεί ώστε να ενεργοποιεί την παροχή SCIM."
+      ],
+      "Enter token into your identity provider": [
+        "Εισαγάγετε το διακριτικό στον πάροχο ταυτότητάς σας"
+      ],
+      "Enter URL and token into your identity provider": [
+        "Εισαγάγετε διεύθυνση URL και διακριτικό στον πάροχο ταυτότητάς σας"
+      ],
+      "For security reasons, the SCIM token will be hidden after saving your changes and you won’t be able to see it again.": [
+        "Για λόγους ασφαλείας, το διακριτικό SCIM θα κρυφτεί μετά την αποθήκευση των αλλαγών σας και δε θα μπορείτε να το δείτε ξανά."
+      ],
+      "For security reasons, the token is hidden": [
+        "Για λόγους ασφαλείας, το διακριτικό είναι κρυμμένο"
+      ],
+      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ VPN_APP_NAME }.": [
+        "Μεταβείτε στον πάροχο ταυτότητάς σας, αντιγράψτε και επικολλήστε τα παρακάτω δεδομένα και ολοκληρώστε τη διαμόρφωση του SCIM για το ${ VPN_APP_NAME }."
+      ],
+      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ VPN_APP_NAME }.": [
+        "Μεταβείτε στον πάροχο ταυτότητάς σας, αντιγράψτε και επικολλήστε το διακριτικό παρακάτω και ενεργοποιήστε ξανά το SCIM για το ${ VPN_APP_NAME }."
+      ],
+      "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
+        "Εάν έχετε χάσει ή ξεχάσει το διακριτικό SCIM, μπορείτε να δημιουργήσετε ένα νέο, αλλά έχετε υπόψη ότι οι ρυθμίσεις της υπηρεσίας παροχής ταυτότητάς σας θα πρέπει να ενημερωθούν."
+      ],
+      "Make sure you copy the above SCIM token now.": [
+        "Βεβαιωθείτε ότι έχετε αντιγράψει το παραπάνω διακριτικό SCIM τώρα."
+      ],
+      "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
+        "Μόλις απενεργοποιηθεί το SCIM για τον οργανισμό σας, **όλοι οι χρήστες SCIM που παρέχονται αυτόματα από τον πάροχο ταυτότητάς σας θα μετατραπούν σε χρήστες SSO** και θα μπορείτε να τους διαχειριστείτε απευθείας από τις ρυθμίσεις του ${ BRAND_NAME }."
+      ],
+      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ VPN_APP_NAME } organization.": [
+        "Απλοποιεί τη διαχείριση χρηστών σε διάφορες υπηρεσίες. Προσθέστε, επεξεργαστείτε και καταργήστε χρήστες στην υπηρεσία παροχής ταυτότητάς σας και αυτές οι αλλαγές θα εφαρμοστούν αυτόματα στον οργανισμό σας ${ VPN_APP_NAME }."
+      ],
+      "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
+        "Η αυτόματη παροχή SCIM θα απενεργοποιηθεί μέχρι να εισαγάγετε το νέο διακριτικό SCIM στις ρυθμίσεις της υπηρεσίας παροχής ταυτότητάς σας."
+      ],
+      "The SCIM base URL and token will be deleted.": [
+        "Η βασική διεύθυνση URL και το διακριτικό SCIM θα διαγραφούν."
+      ],
+      "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
+        "Για να ενεργοποιήσετε ξανά τον συγχρονισμό με την υπηρεσία παροχής ταυτότητάς σας, πρέπει να ολοκληρώσετε ξανά την ενοποίηση SCIM."
+      ]
+    },
+    "scim: Label": {
+      "SCIM base URL": [
+        "Βασική διεύθυνση URL SCIM"
+      ],
+      "SCIM base URL (or tenant URL)": [
+        "Βασική διεύθυνση URL SCIM (ή διεύθυνση URL μισθωτή)"
+      ],
+      "SCIM token": [
+        "Διακριτικό SCIM"
+      ]
+    },
+    "scim: Title": {
+      "Disable SCIM integration?": [
+        "Απενεργοποιήστε την ενσωμάτωση SCIM;"
+      ],
+      "Generate new SCIM token?": [
+        "Δημιουργία νέου διακριτικού SCIM;"
+      ],
+      "SCIM automatic provisioning": [
+        "Αυτόματη παροχή SCIM"
+      ]
+    },
+    "scim: Tooltip": {
+      "API key of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
+        "Κλειδί API της σύνδεσης SCIM στην οποία ο Φορέας Παροχής IdP προωθεί δεδομένα SCIM"
+      ],
+      "URL of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
+        "Διεύθυνση URL της σύνδεσης SCIM στην οποία ο Φορέας Παροχής IdP προωθεί δεδομένα SCIM"
+      ]
+    },
+    "Security Center - Info": {
+      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLinkBreach }": [
+        "Οι πληροφορίες σας εντοπίστηκαν σε τουλάχιστον μία παραβίαση δεδομένων. Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να δείτε λεπτομέρειες και να προβείτε σε κάποια ενέργεια. ${ learnMoreLinkBreach }"
       ]
     },
     "Select file": {
@@ -13308,9 +13556,6 @@
       ]
     },
     "Storage": {
-      "Release notes": [
-        "Σημειώσεις έκδοσης"
-      ],
       "Upgrade storage": [
         "Αναβάθμιση αποθηκευτικού χώρου"
       ],
@@ -13554,6 +13799,12 @@
       ]
     },
     "Subscription reminder": {
+      "${ BRAND_NAME } was targeted by Russia in one of the most aggressive censorship campaigns in recent memory, and our team fought back.": [
+        "Το ${ BRAND_NAME } στοχοποιήθηκε από τη Ρωσία σε μια από τις πιο επιθετικές εκστρατείες λογοκρισίας στην πρόσφατη μνήμη και η ομάδα μας αντεπιτέθηκε."
+      ],
+      "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
+        "Η μόνη πηγή εσόδων του ${ BRAND_NAME } είναι οι συνδρομές χρηστών. Η υποστήριξή σας μας επιτρέπει να παραμείνουμε ανεξάρτητοι, να προωθήσουμε την αποστολή μας να κάνουμε την ιδιωτικότητα προεπιλεγμένη στο διαδίκτυο και να συνεχίσουμε να υποστηρίζουμε ακτιβιστές και οργανώσεις που αγωνίζονται για την ιδιωτικότητα και την ελευθερία."
+      ],
       "${ dayDiff } day left": [
         "${ dayDiff } ημέρα απομένει",
         "${ dayDiff } ημέρες απομένουν"
@@ -13564,8 +13815,38 @@
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } συνολικός αποθηκευτικός χώρος"
       ],
+      "${ planName } doesn't just provide extra storage. It lets you manage your emails faster, customize your inbox and email addresses, and access the desktop app.": [
+        "Το ${ planName } δεν παρέχει απλώς επιπλέον χώρο αποθήκευσης. Σας επιτρέπει να διαχειρίζεστε τα μηνύματά σας πιο γρήγορα, να προσαρμόζετε τα εισερχόμενά σας και τις διευθύνσεις ηλεκτρονικού ταχυδρομείου σας και να έχετε πρόσβαση στην εφαρμογή για υπολογιστές."
+      ],
       "10 email addresses": [
         "10 διευθύνσεις ηλεκτρονικού ταχυδρομείου"
+      ],
+      "A direct contribution to our mission": [
+        "Μια άμεση συμβολή στην αποστολή μας"
+      ],
+      "After ${ BRAND_NAME } got blocked in Iran during protests, our customer support team worked to get our VPN app directly into people's hands.": [
+        "Αφού το ${ BRAND_NAME } μπλοκαρίστηκε στο Ιράν κατά τη διάρκεια διαμαρτυριών, η ομάδα υποστήριξης πελατών μας εργάστηκε για να παρέχει την εφαρμογή VPN απευθείας στα χέρια του λαού."
+      ],
+      "After privacy and free speech were threatened in Hong Kong, we directly supported local civil rights organizations.": [
+        "Μετά την απειλή της ιδιωτικής ζωής και της ελευθερίας του λόγου στο Χονγκ Κονγκ, υποστηρίξαμε άμεσα τις τοπικές οργανώσεις πολιτικών δικαιωμάτων."
+      ],
+      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **1 GB** for Mail, and **1 GB** for Drive. You will also lose any storage bonuses earned previously.": [
+        "Ακυρώνοντας τη συνδρομή σας ${ planName }, ο χώρος αποθήκευσης θα μειωθεί από **${ planMaxSpace }** σε **1 GB** για το Mail και **1 GB** για το Drive. Θα χάσετε επίσης τυχόν μπόνους αποθήκευσης που κερδίσατε προηγουμένως."
+      ],
+      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **1 GB** for Mail, and **5 GB** for Drive. You will also lose any storage bonuses earned previously.": [
+        "Ακυρώνοντας τη συνδρομή σας ${ planName }, ο χώρος αποθήκευσης θα μειωθεί από **${ planMaxSpace }** σε **1 GB** για το Mail και **5 GB** για το Drive. Θα χάσετε επίσης τυχόν μπόνους αποθήκευσης που κερδίσατε προηγουμένως."
+      ],
+      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **500 MB** for Mail, and **1 GB** for Drive. You will also lose any storage bonuses earned previously.": [
+        "Ακυρώνοντας τη συνδρομή σας ${ planName }, ο χώρος αποθήκευσης θα μειωθεί από **${ planMaxSpace }** σε **500 MB** για το Mail και **1 GB** για το Drive. Θα χάσετε επίσης τυχόν μπόνους αποθήκευσης που κερδίσατε προηγουμένως."
+      ],
+      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **500 MB** for Mail, and **5 GB** for Drive. You will also lose any storage bonuses earned previously.": [
+        "Ακυρώνοντας τη συνδρομή σας ${ planName }, ο χώρος αποθήκευσης θα μειωθεί από **${ planMaxSpace }** σε **500 MB** για το Mail και **5 GB** για το Drive. Θα χάσετε επίσης τυχόν μπόνους αποθήκευσης που κερδίσατε προηγουμένως."
+      ],
+      "By downgrading your account, you will also lose storage space": [
+        "Με την υποβάθμιση του λογαριασμού σας, θα χάσετε επίσης χώρο αποθήκευσης"
+      ],
+      "By downgrading your account, you will lose access to these important features": [
+        "Με την υποβάθμιση του λογαριασμού σας, θα χάσετε την πρόσβαση σε αυτές τις σημαντικές λειτουργίες"
       ],
       "Calendar sharing": [
         "Κοινή χρήση ημερολογίου"
@@ -13576,14 +13857,38 @@
       "Cancel subscription?": [
         "Ακύρωση συνδρομής;"
       ],
+      "Close": [
+        "Κλείσιμο"
+      ],
       "Custom schedule send and snooze times": [
         "Προσαρμοσμένο πρόγραμμα χρόνου αποστολής και αναβολής"
       ],
       "Have a question?": [
         "Έχετε απορίες;"
       ],
+      "Helping activists in Hong Kong": [
+        "Βοηθώντας ακτιβιστές στο Χονγκ Κονγκ"
+      ],
+      "I still want to cancel": [
+        "Εξακολουθώ να θέλω να ακυρώσω"
+      ],
+      "If you exceed your free Drive storage quota:": [
+        "Αν υπερβείτε το όριο του δωρεάν χώρου αποθήκευσης στο Drive:"
+      ],
+      "If you exceed your free Mail storage quota:": [
+        "Αν υπερβείτε το όριο του δωρεάν χώρου αποθήκευσης στο Mail:"
+      ],
       "Keep ${ planName }": [
         "Διατήρηση ${ planName }"
+      ],
+      "Learn more about our impact": [
+        "Μάθετε περισσότερα για τον αντίκτυπό μας"
+      ],
+      "Let us remind you of everything ${ planName } can do": [
+        "Ας σας υπενθυμίσουμε όλα όσα μπορεί να κάνει το ${ planName }"
+      ],
+      "Our fight against censorship in Russia": [
+        "Ο αγώνας μας ενάντια στη λογοκρισία στη Ρωσία"
       ],
       "Priority support": [
         "Υποστήριξη με προτεραιότητα"
@@ -13591,8 +13896,56 @@
       "Read the story": [
         "Διαβάστε την ιστορία"
       ],
+      "Resubscribe": [
+        "Επανεγγραφή"
+      ],
+      "Resubscribe to restore access to ${ planName } features.": [
+        "Εγγραφείτε ξανά για να επαναφέρετε την πρόσβαση στις δυνατότητες του ${ planName }."
+      ],
+      "Subscription canceled": [
+        "Η συνδρομή ακυρώθηκε"
+      ],
+      "Unblocking internet access in Iran": [
+        "Ξεμπλοκάρισμα πρόσβασης στο διαδίκτυο στο Ιράν"
+      ],
       "Unlimited folders, labels and filters": [
         "Απεριόριστοι φάκελοι, ετικέτες και φίλτρα"
+      ],
+      "Watch the interview": [
+        "Δείτε τη συνέντευξη"
+      ],
+      "When you cancel, you will lose access to": [
+        "Όταν ακυρώσετε, θα χάσετε την πρόσβαση στο"
+      ],
+      "Yearly free storage bonuses": [
+        "Ετήσια δωρεάν μπόνους αποθήκευσης"
+      ],
+      "You **won't be able to add any new files**": [
+        "**Δε θα μπορείτε να προσθέσετε νέα αρχεία**"
+      ],
+      "You **won't be able to backup photos** from your devices": [
+        "**Δε θα μπορείτε να δημιουργήσετε αντίγραφα ασφαλείας φωτογραφιών** από τις συσκευές σας"
+      ],
+      "You **won't be able to send emails** with attachments": [
+        "**δε θα μπορείτε να στείλετε μηνύματα ηλεκτρονικού ταχυδρομείου** με συνημμένα"
+      ],
+      "You still have ${ expiryDate } on your ${ planName } plan. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling.": [
+        "Εξακολουθείτε να έχετε ${ expiryDate } στο πλάνο ${ planName } σας. Θα προσθέσουμε τις πιστώσεις για τον υπόλοιπο χρόνο στον λογαριασμό σας ${ BRAND_NAME }. Βεβαιωθείτε ότι δεν υπερβαίνετε τα όρια του δωρεάν προγράμματος πριν ακυρώσετε."
+      ],
+      "Your **calendar will be frozen**": [
+        "Το **ημερολόγιό σας θα αποκλειστεί**"
+      ],
+      "Your devices will **stop syncing**": [
+        "Οι συσκευές σας **θα σταματήσουν να συγχρονίζονται**"
+      ],
+      "Your inbox will **stop receiving new emails**": [
+        "Τα εισερχόμενά σας **θα σταματήσουν να λαμβάνουν νέα μηνύματα ηλεκτρονικού ταχυδρομείου**"
+      ],
+      "Your own custom email domain": [
+        "Ο δικός σας προσαρμοσμένος τομέας ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Your own short @pm.me email alias": [
+        "Το δικό σας σύντομο ψευδώνυμο @pm.me ηλεκτρονικού ταχυδρομείου"
       ]
     },
     "Subscription renewal state": {
@@ -14590,6 +14943,9 @@
       "How does it work?": [
         "Πώς λειτουργεί;"
       ],
+      "How to choose a good logo": [
+        "Πώς να επιλέξετε ένα καλό λογότυπο"
+      ],
       "How to refer a friend and get credits": [
         "Πώς να συστήσετε έναν φίλο για να λάβετε πόντους"
       ],
@@ -14728,6 +15084,9 @@
       ],
       "Password reset settings": [
         "Ρυθμίσεις επαναφοράς κωδικού πρόσβασης"
+      ],
+      "Passwords made easy": [
+        "Εύκολοι κωδικοί πρόσβασης"
       ],
       "Pay invoice": [
         "Πληρωμή τιμολογίου"
@@ -15003,6 +15362,9 @@
       "Upload CSV file to create multiple accounts": [
         "Ανεβάστε αρχείο CSV για να δημιουργήσετε πολλούς λογαριασμούς"
       ],
+      "Upload your organization’s logo": [
+        "Αποστολή του λογότυπου του οργανισμού σας"
+      ],
       "Users": [
         "Χρήστες"
       ],
@@ -15039,14 +15401,23 @@
       "We'll send an email to your new address with instructions on completing the change.": [
         "Θα στείλουμε ένα μήνυμα ηλεκτρονικού ταχυδρομείου στη νέα σας διεύθυνση με οδηγίες για την ολοκλήρωση της αλλαγής."
       ],
+      "What is an alias?": [
+        "Τι είναι το ψευδώνυμο;"
+      ],
+      "What is the dark web?": [
+        "Τι είναι ο σκοτεινός ιστός;"
+      ],
       "What would you like to import?": [
         "Τι θα θέλατε να εισάγετε;"
       ],
-      "What's new": [
-        "Τι νέο υπάρχει"
-      ],
       "WireGuard configuration": [
         "Διαμόρφωση WireGuard"
+      ],
+      "You have no open alerts": [
+        "Δεν έχετε ανοιχτές ειδοποιήσεις"
+      ],
+      "You have no resolved alerts": [
+        "Δεν έχετε επιλύσει ειδοποιήσεις"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Η δωρεάν δοκιμή του ${ planName } λήγει στις ${ textDate }"
@@ -15332,6 +15703,9 @@
       ],
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
         "Χρησιμοποιήστε τις προεπιλεγμένες γραμμές κύλισης του προγράμματος περιήγησής σας. Αυτές είναι συνήθως μεγαλύτερες και ευκολότερες στη χρήση"
+      ],
+      "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
+        "Οι χρήστες θα βλέπουν το λογότυπό σας αντί για το εικονίδιο του ${ BRAND_NAME } όταν είναι συνδεδεμένοι στις εφαρμογές ιστού μας."
       ],
       "Usually an URL that contains the identity provider's name within": [
         "Συνήθως μια διεύθυνση URL που περιέχει το όνομα της υπηρεσίας παροχής ταυτότητας μέσα"

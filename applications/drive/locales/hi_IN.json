@@ -286,7 +286,7 @@
         "साइनइन की जानकारी बदलें"
       ],
       "Edit subscription": [
-        "सदस्यता बदले"
+        "सदस्यता संपादित करें"
       ],
       "Email settings": [
         "ईमेल सेटिंग"
@@ -323,6 +323,9 @@
       ],
       "Get ${ DRIVE_APP_NAME }": [
         "${ DRIVE_APP_NAME } लें"
+      ],
+      "Get in touch": [
+        "हमसे संपर्क करें"
       ],
       "Get link": [
         "लिंक प्राप्त करें"
@@ -385,16 +388,16 @@
         "Outlook से आयात करे"
       ],
       "Increase": [
-        "बढ़ना"
+        "बढ़ाएं"
       ],
       "Keep my Plus subscription": [
-        "मेरी प्लस सदस्यता रखें"
+        "मेरी प्लस सदस्यता को बनाए रखें"
       ],
       "Learn more": [
         "और जानें"
       ],
       "Let's talk": [
-        "चलो बात करते हैं"
+        "चलिए बात करते हैं"
       ],
       "Load": [
         "लोड करें"
@@ -532,7 +535,7 @@
         "एक्सेस हटाएं"
       ],
       "Remove bonuses": [
-        "बोनस निकालें"
+        "बोनस हटाएं"
       ],
       "Remove device": [
         "डिवाइस हटाएं"
@@ -541,7 +544,7 @@
         "इस सूची से निकालें"
       ],
       "Remove gift code": [
-        "उपहार कोड निकालें"
+        "उपहार कोड हटाएं"
       ],
       "Rename": [
         "नाम बदलें"
@@ -766,10 +769,10 @@
         "${ label } थीम इस्तेमाल करें"
       ],
       "Use a different card": [
-        "एक अलग कार्ड का उपयोग करें"
+        "अन्य कार्ड का उपयोग करें"
       ],
       "Use a different payment method": [
-        "भुगतान विधि का उपयोग करें"
+        "अन्य भुगतान विधि का उपयोग करें"
       ],
       "Use authentication code": [
         "सत्यापन कोड इस्तेमाल करें"
@@ -911,6 +914,10 @@
       ]
     },
     "bf2023: renew": {
+      "${ n } month": [
+        "${ n } महीना",
+        "पहले ${ n } महीने"
+      ],
       "the first month": [
         "पहला महीना"
       ],
@@ -1043,8 +1050,8 @@
         "${ users } यूज़र"
       ],
       "Total for ${ n } month": [
-        "${ n } महीने के लिए पूरा",
-        "${ n } महीने के लिए पूरा"
+        "${ n } महीने के लिए कुल",
+        "${ n } महीनों के लिए कुल"
       ]
     },
     "Collapsible tooltip": {
@@ -2463,9 +2470,6 @@
         "आप ${ maxContacts } से अधिक प्राप्तकर्ता को मेल नहीं भेज सकते",
         "आप ${ maxContacts } से अधिक प्राप्तकर्ता को मेल नहीं भेज सकते"
       ],
-      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
-        "आप कैलेंडर की ऊपरी सीमा पे पहुंच गए है। कुछ कैलेंडर आयात नहीं किए जा सके।"
-      ],
       "You must set a name": [
         "आपको एक नाम सेट करना होगा"
       ],
@@ -3341,6 +3345,9 @@
         "${ pausedCount } रोका गया",
         "${ pausedCount } रोके गए"
       ],
+      "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
+        "${ plan.Title } को कम से कम 1 विशेष सर्वर ${ serverPricePerMonth } की आवश्यकता है"
+      ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } फोल्डर मिला",
         "${ providerFoldersNumLocalized } फोल्डर मिले"
@@ -3446,6 +3453,9 @@
       "American Express SafeKey logo": [
         "American Express SafeKey लोगो"
       ],
+      "Amount above maximum (${ amount }).": [
+        "अधिकतम (${ amount }) से ज्यादा राशि।"
+      ],
       "Amount below minimum (${ amount }).": [
         "न्यूनतम से कम राशि (${ amount })।"
       ],
@@ -3487,6 +3497,9 @@
       ],
       "Attention required": [
         "ध्यान देने की आवश्यकता है"
+      ],
+      "Awaiting transaction": [
+        "ट्रैन्ज़ैक्शन का इंतजार है"
       ],
       "Balance from your previous subscription": [
         "आपके पिछले सदस्यता से बचा रकम"
@@ -3597,6 +3610,9 @@
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora और कुछ अन्य ऐप्स के साथ-साथ vCard 3.1 और 4.0 प्रारूप (UTF-8 एन्कोडिंग) समर्थित हैं।"
       ],
+      "Current plan": [
+        "वर्तमान योजना"
+      ],
       "Current version": [
         "चालू संस्करण"
       ],
@@ -3605,6 +3621,9 @@
       ],
       "Decrypting files": [
         "फाइल डिक्रिप्ट कर रहे"
+      ],
+      "Dedicated servers": [
+        "विशेष सर्वर"
       ],
       "Delete locked drive": [
         "लॉक किया ड्राइव मिटाएं",
@@ -3621,6 +3640,9 @@
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "कुछ दिख नहीं रहा? पॉप-अप ब्लॉकर बंद करना ना भूले।"
+      ],
+      "Downgrade": [
+        "डाउनग्रेड करें"
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "डाउनग्रेड करने से सशुल्क ${ VPN_APP_NAME } सर्वर से कोई भी कनेक्शन समाप्त हो जाएगा।"
@@ -3672,6 +3694,9 @@
       ],
       "Edit email address": [
         "ईमेल पता संपादित करें"
+      ],
+      "email": [
+        "ईमेल"
       ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "10 कस्टम ईमेल डोमेन नामों के लिए ईमेल होस्ट करना साथ में मुफ्त में मौजूद है। और डोमेन ले सकते है ${ price } देकर।"
@@ -3752,6 +3777,9 @@
       "Finalizing": [
         "अंतिम रूप दिया जा रहा है"
       ],
+      "finance": [
+        "वित्त"
+      ],
       "Folder \"${ link.name }\" was deleted during download": [
         "फोल्डर \"${ link.name }\" को डाउनलोड करते समय मिटा दिया गया"
       ],
@@ -3788,11 +3816,17 @@
       "here": [
         "यहां"
       ],
+      "High Priority": [
+        "उच्च प्राथमिकता"
+      ],
       "How does encrypted search work?": [
         "एन्क्रिप्टेड खोज कैसे काम करती है?"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "यदि आपको अपना खाता बनाने में परेशानी हो रही है, तो कृपया एक निमंत्रण का अनुरोध करें और हम एक व्यावसायिक दिन के भीतर जवाब देंगे।"
+      ],
+      "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
+        "यदि आप रद्द करते हैं, तो आपकी ${ planTitle } सदस्यता ${ expiryDate } को समाप्त होने पर नवीनीकृत नहीं की जाएगी।"
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "यदि आप अपने इनबॉक्स में ईमेल नहीं पाते हैं, तो कृपया अपने स्पैम फ़ोल्डर की जाँच करें।"
@@ -3827,6 +3861,12 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "${ fromEmail } से ${ toEmail } पे डाटा आयात कर रहे।"
+      ],
+      "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
+        "अगले चरण में, आप बिटकॉइन पते का उपयोग करके राशि जमा करने में सक्षम होंगे।"
+      ],
+      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
+        "${ formattedTaxRate }% ${ taxName } सहित: ${ price }"
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "${ totalProgressToShow } में से ${ esProgress } चीज़े लिस्ट कर रहे"
@@ -3906,17 +3946,26 @@
       "Loading...": [
         "लोड हो रहा..."
       ],
+      "Low Priority": [
+        "निम्न प्राथमिकता"
+      ],
       "Makes your account safer": [
         "आपके खाते को सुरक्षित बनाता है"
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode लोगो"
       ],
+      "Medium Priority": [
+        "मध्यम प्राथमिकता"
+      ],
       "Merged": [
         "संविलीन"
       ],
       "MM/YY": [
         "महीना/साल"
+      ],
+      "Monitor accounts": [
+        "खातों पर नज़र रखें"
       ],
       "More": [
         "और"
@@ -3941,6 +3990,9 @@
       ],
       "No": [
         "नहीं"
+      ],
+      "No changes made to the current subscription": [
+        "वर्तमान सदस्यता में कोई परिवर्तन नहीं किया गया"
       ],
       "No contacts added yet": [
         "अभी तक कोई संपर्क नहीं जोड़ा गया है"
@@ -3975,6 +4027,9 @@
       "Nothing here yet": [
         "यहां अभी कुछ नहीं"
       ],
+      "Number of dedicated servers in the organization": [
+        "संगठन में विशेष सर्वरों की संख्या"
+      ],
       "of": [
         "का"
       ],
@@ -3996,6 +4051,12 @@
       ],
       "Or use the \"+ New\" button": [
         "या '+ नया' बटन का उपयोग करें"
+      ],
+      "Organization size": [
+        "संगठन का साइज़"
+      ],
+      "password": [
+        "पासवर्ड"
       ],
       "Paused": [
         "रुका हुआ"
@@ -4224,6 +4285,15 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "निम्नलिखित पते का उपयोग करके जमा करें या क्यूआर कोड स्कैन करें। पुष्टि के बाद आपकी जमा राशि आपके खाते में दिखाई देगी।"
       ],
+      "Subscription auto-renews every 12 months.": [
+        "सदस्यता स्वचालित रूप से हर 12 महीने में नवीनीकृत होती है।"
+      ],
+      "Subscription auto-renews every 24 months.": [
+        "सदस्यता स्वचालित रूप से हर 24 महीने में नवीनीकृत होती है।"
+      ],
+      "Subscription auto-renews every month.": [
+        "सदस्यता स्वचालित रूप से हर महीने नवीनीकृत होती है।"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "अस्थाई रूप से अनुपलब्ध। कृपया फिर से बाद में जाँच करें।"
       ],
@@ -4302,6 +4372,9 @@
       ],
       "This will upload a new version of the folder": [
         "यह फ़ोल्डर का एक नई संस्करण अपलोड करेगा"
+      ],
+      "To complete your payment, please send ${ btcAmountBold } to the address below.": [
+        "अपने भुगतान को पूरा करने के लिए, कृपया नीचे दिए गए पते पर ${ btcAmountBold } भेजें।"
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "खोज पूरा निजी करने के लिए ${ DRIVE_APP_NAME } को आपके फाइलों के नाम डिवाइस में रखने पड़ेगे।"
@@ -4399,6 +4472,9 @@
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "ये फॉर्म इस्तेमाल करें हमें अनुचित, गैर-कानूनी, या फिर खतरनाक शेयर किए गए फाइलों के बारे में सूचित करने के लिए। आप अभी रिपोर्ट करने जा रहे हैं:"
       ],
+      "username": [
+        "यूज़रनेम"
+      ],
       "Users": [
         "यूज़र"
       ],
@@ -4437,6 +4513,9 @@
       ],
       "We need to authenticate your payment with your bank.": [
         "हमें आपका भुगतान आपके बैंक से सत्यापित करना होगा।"
+      ],
+      "We use 3-D Secure to protect your payments": [
+        "आपके भुगतान की सुरक्षा के लिए हम 3-D सिक्योर का उपयोग करते हैं"
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "हम इस लेनदेन को पूरा करने के लिए आपको एक नए ब्राउज़र टैब में PayPal पर पुनर्निर्देशित करेंगे। यदि आप किसी पॉप-अप ब्लॉकर्स का उपयोग करते हैं, तो कृपया उन्हें जारी रखने के लिए अक्षम करें।"
@@ -4489,6 +4568,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "आप वर्तमान में ${ user.Name } (${ user.Email }) के रूप में साइन इन हैं।"
       ],
+      "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
+        "आप ${ downgradedPlanName } योजना में शामिल से अधिक स्टोरेज का उपयोग कर रहे हैं। कृपया डाउनग्रेड करने के लिए डेटा को मिटाएं या हटाएं।"
+      ],
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "आप मौजूदा ${ BRAND_NAME } कैलेंडर के साथ आयात किए कैलेंडर भी जोड़ सकते है"
       ],
@@ -4520,6 +4602,12 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "आपके पास एक क्रेडिट कार्ड या बैंक खाता होना चाहिए जो आपके PayPal खाते से जुड़ा हो। यदि आपके पेपैल खाते में यह नहीं है, तो कृपया नीचे दिए गए बटन पर क्लिक करें।"
+      ],
+      "You will lose access to Plus features on this date.": [
+        "आप इस तिथि पर प्लस सुविधाओं तक पहुंच खो देंगे।"
+      ],
+      "You will lose access to Plus servers and features on this date.": [
+        "आप इस तिथि पर प्लस सर्वर और सुविधाओं तक पहुंच खो देंगे।"
       ],
       "You will lose all unsaved changes.": [
         "आप सभी सहेजे गए परिवर्तनों को खो देंगे।"
@@ -4571,6 +4659,9 @@
       ],
       "Your login information will not be saved after the import is completed.": [
         "आयात पूर्ण होने के बाद आपकी लॉगिन जानकारी सहेजी नहीं जाएगी।"
+      ],
+      "Your next billing date is ${ renewalTime }.": [
+        "आपकी अगली बिलिंग तिथि ${ renewalTime } है।"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "आपके फ़ोन नंबर का उपयोग केवल इस एक बार के सत्यापन के लिए किया जाएगा।"
@@ -5148,7 +5239,7 @@
         "आश्चर्यजनक"
       ],
       "Yes, I want to permanently delete my old files": [
-        "हाँ, मुझे अपनी पुरानी फाइलें स्थायी रूप से हटानी है।"
+        "हाँ, मुझे अपनी पुरानी फ़ाइलें स्थायी रूप से मिटानी है"
       ],
       "Your password (admin)": [
         "आपका पासवर्ड (व्यवस्थापक)"
@@ -5320,28 +5411,28 @@
         "7-zip संग्रहण"
       ],
       "AAC audio": [
-        "एएसी ऑडियो"
+        "AAC ऑडियो"
       ],
       "AbiWord document": [
         "अबिवर्ड दस्तावेज़"
       ],
       "Adobe Portable Document Format (PDF)": [
-        "एडोब पोर्टेबल दस्तावेज़ प्रारूप (पीडीएफ)"
+        "एडोब पोर्टेबल दस्तावेज़ प्रारूप (PDF)"
       ],
       "Amazon Kindle eBook format": [
         "अमेज़ॅन किंडल ईबुक प्रारूप"
       ],
       "Android Package": [
-        "एंड्रॉइड पैकेज"
+        "Android पैकेज"
       ],
       "Animated Portable Network Graphics": [
         "एनिमेटेड पोर्टेबल नेटवर्क ग्राफ़िक्स"
       ],
       "Apple Installer Package": [
-        "एप्पल इंस्टॉलर पैकेज"
+        "Apple इंस्टॉलर पैकेज"
       ],
       "Archive document": [
-        "पुरालेख दस्तावेज़"
+        "संग्रहण दस्तावेज़"
       ],
       "Audio file": [
         "ऑडियो फाइल"
@@ -5350,7 +5441,7 @@
         "एवी1 छवि फ़ाइल प्रारूप (एवीआईएफ़)"
       ],
       "AVI video": [
-        "एवीआई वीडियो"
+        "AVI वीडियो"
       ],
       "Binary data": [
         "बाइनरी डेटा"
@@ -5368,10 +5459,10 @@
         "सी-शेल स्क्रिप्ट"
       ],
       "Cascading Style Sheets (CSS)": [
-        "कैस्केडिंग स्टाइल शीट्स (सीएसएस)"
+        "कैस्केडिंग स्टाइल शीट्स (CSS)"
       ],
       "Comma-separated values (CSV)": [
-        "कॉमा-सेपरैटड वैल्यूज़ (सीएसवी)"
+        "कॉमा-सेपरैटड वैल्यूज़ (CSV)"
       ],
       "Electronic publication (EPUB)": [
         "इलेक्ट्रॉनिक प्रकाशन (ईपीयूबी)"
@@ -5380,13 +5471,13 @@
         "फ़्लैश वीडियो"
       ],
       "Graphics Interchange Format (GIF)": [
-        "ग्राफ़िक्स इंटरचेंज फ़ॉर्मेट (जीआईएफ)"
+        "ग्राफ़िक्स इंटरचेंज फ़ॉर्मेट (GIF)"
       ],
       "GZip Compressed Archive": [
-        "GZip संपीडित पुरालेख"
+        "GZip संपीडित संग्रहण"
       ],
       "HyperText Markup Language (HTML)": [
-        "हाइपरटेक्स्ट मार्कअप लैंग्वेज (एचटीएमएल)"
+        "हाइपरटेक्स्ट मार्कअप लैंग्वेज (HTML)"
       ],
       "Hypertext Preprocessor (Personal Home Page)": [
         "हाइपरटेक्स्ट प्रीप्रोसेसर (पर्सनल होम पेज)"
@@ -5401,16 +5492,16 @@
         "तस्वीर"
       ],
       "Java Archive (JAR)": [
-        "Java पुरालेख (JAR)"
+        "Java संग्रहण (JAR)"
       ],
       "JPEG images": [
-        "जेपीईजी छवियां"
+        "JPEG छवियां"
       ],
       "MP3 audio": [
         "MP3 ऑडियो"
       ],
       "MPEG transport stream": [
-        "एमपीईजी ट्रांसपोर्ट स्ट्रीम"
+        "MPEG ट्रांसपोर्ट स्ट्रीम"
       ],
       "MPEG Video": [
         "MPEG वीडियो"
@@ -5419,7 +5510,7 @@
         "एमएस एंबेडेड ओपनटाइप फ़ॉन्ट"
       ],
       "Musical Instrument Digital Interface (MIDI)": [
-        "म्यूज़िकल इंस्ट्रूमेंट डिजिटल इंटरफेस (मिडी)"
+        "म्यूज़िकल इंस्ट्रूमेंट डिजिटल इंटरफेस (MIDI)"
       ],
       "OGG audio": [
         "OGG ऑडियो"
@@ -5449,7 +5540,7 @@
         "RAR संग्रहण"
       ],
       "Rich Text Format (RTF)": [
-        "रिच टेक्स्ट प्रारूप (आरटीएफ)"
+        "रिच टेक्स्ट प्रारूप (RTF)"
       ],
       "Scalable Vector Graphics (SVG)": [
         "स्केलेबल वेक्टर ग्राफ़िक्स (एसवीजी)"
@@ -5461,7 +5552,7 @@
         "टैग्ड इमेज फ़ाइल प्रारूप (टिफ़)"
       ],
       "Tape Archive (TAR)": [
-        "Tape पुरालेख (TAR)"
+        "Tape संग्रहण (TAR)"
       ],
       "Text": [
         "पाठ"
@@ -5482,16 +5573,16 @@
         "वेब ओपन फ़ॉन्ट प्रारूप (डब्ल्यूओएफएफ)"
       ],
       "WEBM audio": [
-        "वेबएम ऑडियो"
+        "WEBM ऑडियो"
       ],
       "WEBM video": [
-        "वेबएम वीडियो"
+        "WEBM वीडियो"
       ],
       "WEBP image": [
         "वेबपी छवि"
       ],
       "Windows OS/2 Bitmap Graphics": [
-        "विंडोज़ ओएस/२ बिटमैप ग्राफ़िक्स"
+        "Windows OS/२ बिटमैप ग्राफ़िक्स"
       ],
       "ZIP archive": [
         "ZIP संग्रहण"
@@ -5591,8 +5682,8 @@
         "${ n } ईमेल पता/उपनाम"
       ],
       "${ n } email address per user": [
-        "${ n } ईमेल पता हर यूज़र पे",
-        "${ n } ईमेल पते हर यूज़र पे"
+        "प्रति उपयोगकर्ता ${ n } ईमेल पता",
+        "प्रति उपयोगकर्ता ${ n } ईमेल पते"
       ],
       "${ n } filter": [
         "${ n } फिल्टर",
@@ -5611,8 +5702,8 @@
         "${ n } लेबल"
       ],
       "${ n } message per day": [
-        "${ n } संदेश प्रति दिन",
-        "${ n } संदेश प्रति दिन"
+        "प्रतिदिन ${ n } संदेश",
+        "प्रतिदिन ${ n } संदेश"
       ],
       "${ n } vault": [
         "${ n } तिजोरी",
@@ -5831,6 +5922,10 @@
       "Unlimited volume/bandwidth": [
         "असीमित वॉल्युम/बैंडविड्थ"
       ],
+      "Up to ${ n } user": [
+        "${ n } उपयोगकर्ता तक",
+        "${ n } उपयोगकर्ता तक"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "${ totalStorageSize } स्टोरेज तक"
       ],
@@ -5975,8 +6070,8 @@
         "अपने ऑनलाइन पहचानो के लिए कई ईमेल पते बनाए, उदाहरण, MahfuzKhariddari@${ domain } शॉपिंग खातों के लिए, MahfuzKhabar@${ domain } समाचार सदस्यता के लिए"
       ],
       "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
-        "${ n } कैलेंडर बनाएं या दोस्त, परिवार, सहकर्मी, और संगठन से कैलेंडर जोड़े।",
-        "${ n } कैलेंडर तक बनाएं या दोस्त, परिवार, सहकर्मी, और संगठन से कैलेंडर जोड़े।"
+        "${ n } कैलेंडर तक बनाएं या दोस्तों, परिवार, सहकर्मी, और संगठनों से कैलेंडर जोड़ें।",
+        "${ n } कैलेंडर तक बनाएं या दोस्तों, परिवार, सहकर्मी, और संगठनों से कैलेंडर जोड़ें।"
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "${ n } तक ईमेल पते/उपनाम बनाएं जिन्हें आप परिवार के सदस्यों को निर्दिष्ट कर सकें। ऑनलाइन पहचान के लिए उनका उपयोग करें, उदाहरण के लिए, शॉपिंग खातों के लिए जॉनशॉपर@${ domain }।"
@@ -6448,7 +6543,7 @@
         "अपना ईमेल पता दर्ज करें"
       ],
       "Feedback": [
-        "प्रतिपुष्टि"
+        "सुझाव"
       ],
       "Filter groups": [
         "फ़िल्टर समूह"
@@ -6502,6 +6597,12 @@
     "Placeholder for contact group name": {
       "Name": [
         "नाम"
+      ]
+    },
+    "plan customizer, ips": {
+      "Should you need more than ${ maxIPs } IP, ": [
+        "अगर आपको ${ maxIPs } से अधिक IP की आवश्यकता हो, ",
+        "अगर आपको ${ maxIPs } से अधिक IP की आवश्यकता हो, "
       ]
     },
     "plan customizer, users": {
@@ -6892,9 +6993,6 @@
       "Get more storage": [
         "अधिक स्टोरेज प्राप्त करें"
       ],
-      "Release notes": [
-        "रिलीज नोट्स"
-      ],
       "Upgrade storage": [
         "संग्रहण अपग्रेड करें"
       ],
@@ -6914,26 +7012,34 @@
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
         "डाउनग्रेड करने से आप निम्नलिखित लाभों को खो देंगे। क्या आप सुनिश्चित रूप से आगे बढ़ना चाहते हैं?"
       ],
+      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
+        "आपके **${ currentPlanName }** योजना में अब भी **${ daysRemaining }** दिन शेष हैं।",
+        "आपके **${ currentPlanName }** योजना में अब भी **${ daysRemaining }** दिन शेष हैं।"
+      ],
       "Your storage is full": [
         "आपका स्टोरेज भरा है"
       ]
     },
     "Subscription attribute": {
+      "${ n } free VPN connection per user": [
+        "प्रति उपयोगकर्ता ${ n } मुफ्त VPN कनेक्शन",
+        "प्रति उपयोगकर्ता ${ n } मुफ्त VPN कनेक्शन"
+      ],
       "${ n } high-speed VPN connection": [
         "${ n } तेज़ वीपीएन कनेक्शन",
         "${ n } तेज़ वीपीएन कनेक्शन"
       ],
       "${ n } high-speed VPN connection per user": [
-        "${ n } तेज़ रफ्तार के वीपीएन कनेक्शन हर यूज़र पे",
-        "${ n } तेज़ रफ्तार के वीपीएन कनेक्शन हर यूज़र पे"
+        "प्रति उपयोगकर्ता ${ n } उच्च गति वाला VPN कनेक्शन",
+        "प्रति उपयोगकर्ता ${ n } उच्च गति वाले VPN कनेक्शन"
       ],
       "${ n } VPN connection": [
         "${ n } VPN कनेक्शन",
         "${ n } VPN कनेक्शन"
       ],
       "${ n } VPN connection per user": [
-        "${ n } वीपीएन कनेक्शन हर यूज़र पे",
-        "${ n } वीपीएन कनेक्शन हर यूज़र पे"
+        "प्रति उपयोगकर्ता ${ n } VPN कनेक्शन",
+        "प्रति उपयोगकर्ता ${ n } VPN कनेक्शन"
       ]
     },
     "Subscription change warning": {
@@ -7276,6 +7382,9 @@
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "${ MAIL_SHORT_APP_NAME } सदस्यता रद्द करें"
       ],
+      "Cancel subscription?": [
+        "सदस्यता रद्द करें?"
+      ],
       "Cannot load link": [
         "लिंक लोड नहीं कर सके"
       ],
@@ -7377,6 +7486,9 @@
       "Downgrade account": [
         "खाते को डाउनग्रेड करें"
       ],
+      "Downgrade to ${ downgradedPlanName }?": [
+        "${ downgradedPlanName } पे डाउनग्रेड करें?"
+      ],
       "Download ${ date }": [
         "${ date } डाउनलोड करें"
       ],
@@ -7409,6 +7521,9 @@
       ],
       "Edit image": [
         "तस्वीर बदलाव करें"
+      ],
+      "Email address": [
+        "ईमेल पता"
       ],
       "Email addresses": [
         "ईमेल पता"
@@ -7574,6 +7689,9 @@
       "Recommended": [
         "सलाह"
       ],
+      "Recommended actions": [
+        "अनुशंसित कार्रवाइयाँ"
+      ],
       "Reconnect your account": [
         "अपने खाते को फिर से कनेक्ट करें"
       ],
@@ -7727,9 +7845,6 @@
       "What would you like to import?": [
         "आप क्या आयात करना चाहेंगे?"
       ],
-      "What's new": [
-        "क्या नया है"
-      ],
       "You have inaccessible files": [
         "आपके पास दुर्गम फ़ाइलें हैं"
       ],
@@ -7866,9 +7981,19 @@
         "${ n } वीपीएन कनेक्शन",
         "${ n } वीपीएन कनेक्शन"
       ],
+      "${ numberOfServers } across ${ numberOfCountries } country": [
+        "${ numberOfCountries } देशों में ${ numberOfServers }",
+        "${ numberOfCountries }+ देशों में ${ numberOfServers }"
+      ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
-        "${ numberOfServers } ${ numberOfCountries } देश में",
-        "${ numberOfServers } ${ numberOfCountries } देशों में"
+        "${ numberOfCountries } देश में ${ numberOfServers }",
+        "${ numberOfCountries } देशों में ${ numberOfServers }"
+      ]
+    },
+    "vpn_2024: renew": {
+      "Your subscription will automatically renew in ${ cycle } month.": [
+        "आपकी सदस्यता ${ cycle } महीने में स्वचालित रूप से नवीकृत होगी।",
+        "आपकी सदस्यता ${ cycle } महीनों में स्वचालित रूप से नवीकृत होगी।"
       ]
     },
     "Warning": {

@@ -2757,9 +2757,6 @@
       "You have reached the contacts limit for your account": [
         "계정의 최대 연락처 수를 초과했습니다"
       ],
-      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
-        "최대 캘린더 수에 도달하셨습니다. 일부 캘린더를 불러올 수 없습니다."
-      ],
       "You must set a name": [
         "이름을 반드시 설정해야 합니다"
       ],
@@ -4427,9 +4424,6 @@
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "결제는 TLS 암호화와 스위스의 보안 법에 의해 보호되고 있습니다."
       ],
-      "Pending": [
-        "대기 중"
-      ],
       "Permanently delete all files in your locked drive": [
         "잠긴 드라이브의 모든 파일을 영구적으로 삭제합니다"
       ],
@@ -5958,7 +5952,7 @@
         "이메일 주소 10개"
       ],
       "Auto-delete Spam and Trash": [
-        "스팸과 휴지통을 자동으로 삭제합니다"
+        "스팸 및 휴지통 자동 삭제"
       ],
       "Custom schedule send and snooze times": [
         "사용자 지정 스케줄과 방해금지 시간"
@@ -6353,7 +6347,7 @@
         "향상된 공유 보안"
       ],
       "Auto-delete Spam and Trash": [
-        "스팸과 휴지통을 자동으로 삭제합니다"
+        "스팸 및 휴지통 자동 삭제"
       ],
       "Auto-delete spam and trashed messages": [
         "스팸 및 휴지통의 메시지를 자동 삭제"
@@ -7180,9 +7174,6 @@
       "Trash failed to be emptied": [
         "휴지통 비우기 실패"
       ],
-      "You stopped to share this item": [
-        "이 항목에 대한 공유를 중단했습니다."
-      ],
       "Your old files will be deleted in 72 hours": [
         "사용자의 오래된 파일이 72시간 내에 삭제됩니다"
       ],
@@ -7576,7 +7567,7 @@
         "별칭 생성"
       ],
       "Generate aliases on the fly, and easily manage your aliases and passwords.": [
-        "언제 어디서나 별칭을 생성하고, 쉽게 별명 및 비밀번호를 관리하세요."
+        "즉석에서 만들어지는 별칭, 그리고 간편한 별칭과 비밀번호의 관리."
       ],
       "Hide-my-email aliases": [
         "Hide-my-email 별칭"
@@ -8042,9 +8033,6 @@
       "Get more storage": [
         "더 많은 스토리지 얻기"
       ],
-      "Release notes": [
-        "릴리즈 노트"
-      ],
       "Upgrade storage": [
         "스토리지 업그레이드"
       ],
@@ -8205,6 +8193,47 @@
     "Subscription price": {
       "For": [
         "가격:"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "저장공간 15GB"
+      ],
+      "and 15 more premium features": [
+        "그리고 더 많은 15개의 프리미엄 기능"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "자동 이메일 포워딩 ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "데이터 침해 경고 ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "데스크톱 앱"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "저희가 모두에게 안전하고 사적인 인터넷을 가꾸는 것을 도와주세요. 유료 요금제로 업그레이드하시면 됩니다."
+      ],
+      "No ads or tracking": [
+        "광고나 트래킹이 없습니다"
+      ],
+      "Short @pm.me email address": [
+        "짧은 @pm.me 이메일 주소"
+      ],
+      "Support our mission": [
+        "저희의 사명을 지원해주세요"
+      ],
+      "Upgrade": [
+        "업그레이드"
+      ],
+      "Upgrade your productivity": [
+        "생산성을 업그레이드하세요"
+      ],
+      "We don't sell your data": [
+        "저희는 고객의 데이터를 판매하지 않습니다"
+      ],
+      "Your privacy is our mission": [
+        "당신의 프라이버시는 저희의 사명입니다"
       ]
     },
     "Subscription renewal state": {
@@ -9019,9 +9048,6 @@
       ],
       "What would you like to import?": [
         "무엇을 가져오시겠어요?"
-      ],
-      "What's new": [
-        "새로운 사항"
       ],
       "You have inaccessible files": [
         "접근이 불가능한 파일이 있습니다"

@@ -47,11 +47,11 @@
       "${ BRAND_NAME } shop": [
         "Крама ${ BRAND_NAME }"
       ],
-      "activate": [
-        "актываваць"
-      ],
       "Activate": [
         "Актываваць"
+      ],
+      "activate": [
+        "актываваць"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Актываваць ${ user.Name }@pm.me"
@@ -4331,9 +4331,6 @@
       "You have reached the contacts limit for your account": [
         "Вы дасягнулі абмежавання па колькасці кантактаў для вашага ўліковага запісу"
       ],
-      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
-        "Вы дасягнулі максімальнай колькасці календароў. Некаторыя календары не будуць імпартаваныя."
-      ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Вы дасягнулі максімальнай колькасці адрасоў на вашым тарыфным плане. Палепшыце свой тарыфны план, каб дадаць новы адрас."
       ],
@@ -6023,17 +6020,6 @@
         "Частка змесціва вашага календара не падтрымліваецца і не будзе імпартавана."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Выяўлены дадатковы дублікат ключоў. Запампуйце іх паасобку для атрымання больш падрабязнай інфармацыі."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Ключ ${ fingerprint } ужо быў запампаваны"
-      ],
-      "Selected color:": [
-        "Выбраны колер:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } неабходны ваш дазвол на ${ enableDesktopNotifications }."
@@ -7023,7 +7009,7 @@
         "URL-адрас відарыса"
       ],
       "Images have been removed because they are not allowed in auto-reply": [
-        "Відарысы былі выдалены, бо іх нельга выкарыстоўваць у аўтаматычным адказе"
+        "Відарысы былі выдалены, бо іх забаронена выкарыстоўваць у аўтаматычным адказе"
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Імпартаванне ${ calendarCount } календара з ${ totalCalendarsCount }",
@@ -7468,12 +7454,6 @@
       ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Паспрабуйце яшчэ раз, скарыстайцеся іншым спосабам аплаты або звярніцеся ў службу падтрымкі PayPal."
-      ],
-      "Please use a password more than ${ MIN_PASSWORD_LENGTH } character.": [
-        "Выкарыстоўвайце пароль даўжынёй больш за ${ MIN_PASSWORD_LENGTH } сімвал.",
-        "Выкарыстоўвайце пароль даўжынёй больш за ${ MIN_PASSWORD_LENGTH } сімвалы.",
-        "Выкарыстоўвайце пароль даўжынёй больш за ${ MIN_PASSWORD_LENGTH } сімвалаў.",
-        "Выкарыстоўвайце пароль даўжынёй больш за ${ MIN_PASSWORD_LENGTH } сімвалаў."
       ],
       "Please use another browser or download the file.": [
         "Скарыстайцеся іншым браўзерам або спампуйце файл."
@@ -8441,9 +8421,6 @@
       "You won’t be able to recover locked data using your downloaded recovery files.": [
         "У вас не будзе магчымасці аднавіць заблакіраваныя даныя з дапамогай спампаваных файлаў аднаўлення."
       ],
-      "You won’t be able to recover locked data using your downloaded recovery files. This will also disable trusted device recovery.": [
-        "У вас не будзе магчымасці аднавіць заблакіраваныя даныя з дапамогай спампаваных файлаў аднаўлення. Гэта таксама адключыць аднаўленне даверанай прылады."
-      ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
         "Ваш уліковы запіс ${ BRAND_NAME } звязаны з ${ externalEmailAddress }."
       ],
@@ -8539,6 +8516,17 @@
       ],
       "Zoom meeting": [
         "сустрэчу па Zoom"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Выяўлены дадатковы дублікат ключоў. Запампуйце іх паасобку для атрымання больш падрабязнай інфармацыі."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Ключ ${ fingerprint } ужо быў запампаваны"
+      ],
+      "Selected color:": [
+        "Выбраны колер:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9897,9 +9885,6 @@
       ],
       "Recovery phrase": [
         "Фраза аднаўлення"
-      ],
-      "Trusted device recovery": [
-        "Давераныя прылады аднаўлення"
       ]
     },
     "Label for adding a new custom domain": {
@@ -13871,9 +13856,6 @@
       ]
     },
     "Storage": {
-      "Release notes": [
-        "Нататкі да выпуску"
-      ],
       "Upgrade storage": [
         "Павялічыць сховішча"
       ],
@@ -14304,7 +14286,7 @@
         "і яшчэ 15 прэміяльных функцый"
       ],
       "Automatic email forwarding ${ strongText }": [
-        "Аўтаматычная перысылка электроннай пошты ${ strongText }"
+        "Аўтаматычная перасылка электроннай пошты ${ strongText }"
       ],
       "Data breach alerts ${ strongArgument }": [
         "Папярэджанне ўцечкі даных ${ strongArgument }"
@@ -15823,9 +15805,6 @@
       ],
       "What would you like to import?": [
         "Што вы хочаце імпартаваць?"
-      ],
-      "What's new": [
-        "Што новага"
       ],
       "WireGuard configuration": [
         "Канфігурацыя WireGuard"

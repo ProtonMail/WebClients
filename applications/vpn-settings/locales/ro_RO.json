@@ -708,6 +708,23 @@
         "Aceasta va deconecta toate ruterele și clienții care folosesc acest certificat."
       ]
     },
+    "app-switcher": {
+      "Browse the web privately and block ads": [
+        "Navigați pe web în mod privat și blocați reclamele"
+      ],
+      "Keep your schedule private": [
+        "Păstrați-vă programul privat"
+      ],
+      "Protect your passwords and identity": [
+        "Protejați-vă parolele și identitatea"
+      ],
+      "Safeguard your files and photos": [
+        "Asigurați-vă fișierele și fotografiile"
+      ],
+      "Secure your communications": [
+        "Securizați-vă informațiile"
+      ]
+    },
     "bf2023: Action": {
       "**Add our encrypted password manager** for only ${ price }": [
         "**Adăugați-vă managerul de parole criptate** pentru doar ${ price }"
@@ -1898,6 +1915,9 @@
       ]
     },
     "Delete address prompt": {
+      "Once deleted, this address can't be used again by anyone else.": [
+        "După ștergere, această adresă nu mai poate fi refolosită de nimeni."
+      ],
       "You can only delete 1 address per year.": [
         "Puteți șterge o singură adresă pe an."
       ]
@@ -2827,6 +2847,11 @@
         "Nume utilizator"
       ]
     },
+    "Headline": {
+      "Contact us": [
+        "Contactați-ne"
+      ]
+    },
     "Hint": {
       "Add this record to your domain in the control panel of your domain name registrar": [
         "Adăugați această înregistrare la domeniul personal în panoul de control al registratorului de nume de domeniu."
@@ -2966,6 +2991,9 @@
         "Adăugare server (${ availableAddedCount } disponibil)",
         "Adăugare server (${ availableAddedCount } disponibile)",
         "Adăugare server (${ availableAddedCount } disponibile)"
+      ],
+      "Add your name and logo to create a more personalized experience for your organization.": [
+        "Adăugați-vă numele sau logoul pentru a crea o experiență mai personalizată pentru organizație."
       ],
       "Adding ${ addedServerCount } gateway server": [
         "Se adaugă ${ addedServerCount } server poartă de acces",
@@ -3130,6 +3158,9 @@
       ],
       "Current plan": [
         "Plan actual"
+      ],
+      "Custom branding": [
+        "Branding personalizat"
       ],
       "Custom email domains": [
         "Domenii personale e-mail"
@@ -3331,6 +3362,12 @@
       "If you wish to combine this account with another one, do NOT delete it.": [
         "Dacă doriți să combinați acest cont cu un altul, NU îl ștergeți."
       ],
+      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
+        "Dacă întâmpinați probleme, suntem aici pentru a vă ajuta. ${ boldPhoneCall } sau ${ boldZoomMeeting } cu unul dintre specialiștii noștri de asistență sau deschideți o ${ boldLiveChat } pentru asistență."
+      ],
+      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists.": [
+        "Dacă întâmpinați probleme, suntem aici pentru a vă ajuta. ${ boldPhoneCall } sau ${ boldZoomMeeting } cu unul dintre specialiștii noștri de asistență."
+      ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Important: Asigurați-vă că ați salvat codurile de recuperare. Altfel veți putea pierde permanent accesul la cont dacă vă veți pierde dispozitivul pentru autentificarea cu doi factori."
       ],
@@ -3384,6 +3421,9 @@
       ],
       "Link copied to clipboard": [
         "Legătura a fost copiată în memorie."
+      ],
+      "Live chat": [
+        "conversație live"
       ],
       "Loading": [
         "Se încarcă"
@@ -3545,11 +3585,6 @@
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Mai încercați. Folosiți o metodă de plată diferită sau contactați PayPal pentru asistență."
       ],
-      "Please use a password more than ${ MIN_PASSWORD_LENGTH } character.": [
-        "Folosiți o parolă de cel puțin ${ MIN_PASSWORD_LENGTH } caracter.",
-        "Folosiți o parolă de cel puțin ${ MIN_PASSWORD_LENGTH } caractere.",
-        "Folosiți o parolă de cel puțin ${ MIN_PASSWORD_LENGTH } de caractere."
-      ],
       "Please use another browser or download the file.": [
         "Folosiți alt tip de navigator web sau descărcați fișierul."
       ],
@@ -3594,6 +3629,9 @@
       ],
       "Remember to share the user's sign in details with them.": [
         "Aveți grijă să furnizați utilizatorilor detaliile lor de autentificare."
+      ],
+      "Request a phone call": [
+        "Solicitați un apel telefonic"
       ],
       "Resend verification email": [
         "Retrimitere e-mail de verificare"
@@ -3891,6 +3929,9 @@
       "Upload your completed CSV file to create accounts": [
         "Încărcați fișierul CSV completat pentru a crea conturi"
       ],
+      "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
+        "Încărcați sigla organizației proprii pentru a vă îmbunătăți identitatea mărcii și pentru a crea o experiență personalizată pentru utilizatorii dvs."
+      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Folosire cel mai bun server ținând cont de încărcarea și poziția sa: ${ formattedBestServerName }"
       ],
@@ -4170,6 +4211,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Abonamentul vă este gestionat de Mozilla. Contactați Mozilla pentru suport."
+      ],
+      "Zoom meeting": [
+        "o întâlnire pe Zoom"
       ]
     },
     "Info for cash payment method": {
@@ -4482,6 +4526,9 @@
       ],
       "Level for NetShield blocker filtering": [
         "Nivelul pentru filtrarea blocatorului NetShield"
+      ],
+      "Logo": [
+        "Logo"
       ],
       "Mailbox password": [
         "Parolă mesaje"
@@ -6042,6 +6089,43 @@
         "Planul actual mai include maxim ${ humanReadableAvailableSpace } de spațiu."
       ]
     },
+    "Organization logo upload": {
+      "Avoid overly compressed images.": [
+        "Evitați imaginile comprimate în exces."
+      ],
+      "Ensure your logo has padding space around it.": [
+        "Asigurați-vă că logoul are margini goale in jurul său."
+      ],
+      "Opt for a PNG image that is a 128x128 pixels for clarity.": [
+        "Pentru claritate optați pentru o imagine PNG care are 128 x 128 pixeli."
+      ],
+      "Tips on choosing a good logo": [
+        "Sfaturi pentru alegerea unui logo adecvat"
+      ],
+      "Use a graphical icon or image rather than text.": [
+        "Folosiți o pictogramă sau o imagine în loc de text."
+      ],
+      "Use a solid background color.": [
+        "Folosiți o culoare de fundal monocromă."
+      ]
+    },
+    "Organization logo upload modal": {
+      "Drop image file here to upload or": [
+        "Trageți aici o imagine pe a fi încărcată sau"
+      ],
+      "File in PNG or JPEG format": [
+        "Fișier în format JPEG sau PNG"
+      ],
+      "File not larger than 30 KB": [
+        "Fișier nu mai mare de 30 KiB"
+      ],
+      "Square image of at least 128 pixels": [
+        "Imagine pătrată de minim 128 pixeli"
+      ],
+      "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
+        "Utilizatorii vor vedea logoul dvs. în loc de pictograma ${ BRAND_NAME } atunci când sunt conectați în aplicațiile noastre web."
+      ]
+    },
     "Pass B2B onboarding spotlight": {
       "Go to your vault to manage your passwords, aliases, and more.": [
         "Accesați seifurile pentru a vă gestiona parolele, aliasurile și alte date."
@@ -6254,6 +6338,9 @@
       "MM/YY": [
         "LL/AA"
       ],
+      "Processing payment": [
+        "Se procesează plata"
+      ],
       "Timeout exceeded": [
         "Limită de timp depășită"
       ]
@@ -6462,6 +6549,11 @@
         "Verificarea numărului de telefon vă mărește securitatea contului și permite opțiuni suplimentare de recuperare."
       ]
     },
+    "Remove organization logo": {
+      "Users will no longer see your custom logo or organization name.": [
+        "Utilizatorii nu vor mai vedea logoul personal sau numele organizației."
+      ]
+    },
     "Restore administrator panel": {
       "${ n } administrator in your organization need access to the organization key.": [
         "${ n } administrator din organizație are nevoie de acces la cheia organizației.",
@@ -6492,14 +6584,111 @@
         "Utilizator"
       ]
     },
+    "scim: Action": {
+      "Configure SCIM": [
+        "Configurare SCIM"
+      ],
+      "Disable SCIM": [
+        "Dezactivare SCIM"
+      ],
+      "Disable SCIM integration": [
+        "Dezactivare integrare SCIM"
+      ],
+      "Generate new token": [
+        "Generare cod de acces nou"
+      ],
+      "Generate token": [
+        "Generare cod de acces"
+      ]
+    },
+    "scim: Info": {
+      "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
+        "**Cerință preliminară:** autentificarea SAML trebuie configurată pentru a activa furnizarea SCIM."
+      ],
+      "Enter token into your identity provider": [
+        "Introduceți codul de acces în furnizorul dvs. de identitate."
+      ],
+      "Enter URL and token into your identity provider": [
+        "Introduceți adresa URL și codul de acces în furnizorul dvs. de identitate."
+      ],
+      "For security reasons, the SCIM token will be hidden after saving your changes and you won’t be able to see it again.": [
+        "Din motive de securitate, codul de acces SCIM va fi ascuns după salvarea modificărilor și nu îl veți putea vedea din nou."
+      ],
+      "For security reasons, the token is hidden": [
+        "Din motive de securitate, codul de acces este ascuns."
+      ],
+      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ VPN_APP_NAME }.": [
+        "Accesați-vă furnizorul de identitate, copiați și inserați datele de mai jos și finalizați configurarea SCIM pentru ${ VPN_APP_NAME }."
+      ],
+      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ VPN_APP_NAME }.": [
+        "Accesați-vă furnizorul de identitate, copiați și inserați codul de acces de mai jos și reactivați SCIM pentru ${ VPN_APP_NAME }."
+      ],
+      "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
+        "Dacă ați pierdut sau ați uitat codul de acces SCIM, puteți genera unul nou, dar rețineți că setările furnizorului dvs. de identitate vor trebui actualizate."
+      ],
+      "Make sure you copy the above SCIM token now.": [
+        "Asigurați-vă că ați copiat codul de acces SCIM acum."
+      ],
+      "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
+        "Odată ce SCIM este dezactivat pentru organizație, **toți utilizatorii SCIM furnizați automat de furnizorul dvs. de identitate vor fi convertiți în utilizatori SSO** și îi veți putea gestiona direct în setările ${ BRAND_NAME }."
+      ],
+      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ VPN_APP_NAME } organization.": [
+        "Simplificați gestionarea utilizatorilor prin diferite servicii. Adăugați, editați și eliminați utilizatori din furnizorul dvs. de identitate, iar aceste modificări vă vor fi aplicate automat organizației proprii. ${ VPN_APP_NAME }."
+      ],
+      "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
+        "Preluarea automată SCIM va fi dezactivată până când introduceți noul simbol SCIM în setările furnizorului dvs. de identitate."
+      ],
+      "The SCIM base URL and token will be deleted.": [
+        "Adresa URL de bază SCIM și codul de acces vor fi șterse."
+      ],
+      "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
+        "Pentru a reactiva sincronizarea cu furnizorul de identitate, trebuie să finalizați din nou integrarea SCIM."
+      ]
+    },
+    "scim: Label": {
+      "SCIM base URL": [
+        "Adresa URL de bază SCIM"
+      ],
+      "SCIM base URL (or tenant URL)": [
+        "Adresa URL de bază SCIM (sau adresa URL a locatarului)"
+      ],
+      "SCIM token": [
+        "Cod de acces SCIM"
+      ]
+    },
+    "scim: Title": {
+      "Disable SCIM integration?": [
+        "Dezactivați integrarea SCIM?"
+      ],
+      "Generate new SCIM token?": [
+        "Generați un nou cod de acces SCIM?"
+      ],
+      "SCIM automatic provisioning": [
+        "Preluare automată SCIM"
+      ]
+    },
+    "scim: Tooltip": {
+      "API key of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
+        "Cheia API a conectorului SCIM către care agentul dvs. de aprovizionare IdP transmite datele SCIM."
+      ],
+      "URL of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
+        "Adresa URL a conectorului SCIM către care agentul dvs. de aprovizionare IdP transmite datele SCIM."
+      ]
+    },
     "Select file": {
       "Upload CSV file": [
         "Încărcați un fișier CSV"
       ]
     },
     "Select invoice document": {
+      "Credit note": [
+        "Notă de credit"
+      ],
       "Currency conversion": [
         "Conversie valutară"
+      ],
+      "Invoice": [
+        "Factura"
       ]
     },
     "Select search results": {
@@ -7047,9 +7236,6 @@
       ]
     },
     "Storage": {
-      "Release notes": [
-        "Note de lansare"
-      ],
       "Upgrade storage": [
         "Mărire spațiu"
       ],
@@ -8077,9 +8263,6 @@
       "We'll send an email to your new address with instructions on completing the change.": [
         "Veți primi un mesaj pe e-mail la noua adresă cu instrucțiuni pentru finalizarea modificării."
       ],
-      "What's new": [
-        "Ce este nou"
-      ],
       "WireGuard configuration": [
         "Configurare WireGuard"
       ],
@@ -8182,6 +8365,9 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Tema selectată va fi activă când sistemul va fi setat în „modul luminos”."
+      ],
+      "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
+        "Utilizatorii vor vedea logoul dvs. în loc de pictograma ${ BRAND_NAME } atunci când sunt conectați în aplicațiile noastre web."
       ],
       "Usually an URL that contains the identity provider's name within": [
         "De obicei, o adresă URL care conține numele furnizorului de identitate."
