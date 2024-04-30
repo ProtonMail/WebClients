@@ -82,9 +82,21 @@ const WeakPasswordReport: FC = () => (
     </Card>
 );
 
+const Missing2FAReport: FC = () => (
+    <Card className="mb-2" type="primary">
+        <CardContent
+            icon={() => <CardIcon icon="exclamation-filled" className="self-start mt-1" />}
+            titleClassname="text-lg text-semibold"
+            title={c('Title').t`Missing two-factor authentication`}
+            subtitle={c('Description').t`It would be more secure to set up 2FA for this account.`}
+        />
+    </Card>
+);
+
 export const ItemReport: FC<SelectedItem> = (item) => (
     <Switch>
         <Route path={getLocalPath('monitor/duplicates')} render={() => <DuplicatePasswordReport {...item} />} />
         <Route path={getLocalPath('monitor/weak')} render={() => <WeakPasswordReport />} />
+        <Route path={getLocalPath('monitor/2fa')} render={() => <Missing2FAReport />} />
     </Switch>
 );
