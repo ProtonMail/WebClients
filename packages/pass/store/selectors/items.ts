@@ -2,6 +2,7 @@ import { createSelector } from '@reduxjs/toolkit';
 
 import {
     hasUsername,
+    isActive,
     isItemType,
     isPasskeyItem,
     isPinned,
@@ -41,7 +42,7 @@ import { deduplicate } from '@proton/pass/utils/array/duplicate';
 import { first } from '@proton/pass/utils/array/first';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { pipe } from '@proton/pass/utils/fp/pipe';
-import { invert, truthy } from '@proton/pass/utils/fp/predicates';
+import { truthy } from '@proton/pass/utils/fp/predicates';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 import { parseUrl } from '@proton/pass/utils/url/parser';
@@ -74,7 +75,7 @@ export const selectCCItems = selectItemsByType('creditCard');
 /** Filters out all login items which were created from an alias item */
 export const selectNonAliasedLoginItems = createSelector([selectLoginItems, selectAliasItems], (logins, aliases) => {
     const aliasEmails = new Set<string>(aliases.map(prop('aliasEmail')).filter(isTruthy));
-    return logins.filter(({ data }) => !aliasEmails.has(deobfuscate(data.content.username)));
+    return logins.filter((item) => isActive(item) && !aliasEmails.has(deobfuscate(item.data.content.username)));
 });
 
 export const selectBulkSelection = (dto: BulkSelectionDTO) =>
@@ -91,7 +92,7 @@ export const selectSelectedItems = (selection: SelectedItem[]) =>
 
 export const selectItemsByShareId = (shareId?: string) =>
     createSelector(selectItems, (items): ItemRevision[] =>
-        flattenItemsByShareId(shareId && items[shareId] ? { shareId: items[shareId] } : items).filter(invert(isTrashed))
+        flattenItemsByShareId(shareId && items[shareId] ? { shareId: items[shareId] } : items).filter(isActive)
     );
 
 export const selectItem = <T extends ItemType = ItemType>(shareId: string, itemId: string) =>
@@ -125,10 +126,7 @@ const selectSortedItemsByShareId = ({ trashed, shareId, sort }: SelectItemsOptio
     createSelector(
         [selectItemsWithOptimistic, () => trashed, () => shareId, () => sort],
         (items, trashed, shareId, sort) =>
-            pipe(
-                filterItemsByShareId(shareId),
-                sortItems(sort)
-            )(items.filter((item) => (trashed ? isTrashed(item) : !isTrashed(item))))
+            pipe(filterItemsByShareId(shareId), sortItems(sort))(items.filter(trashed ? isTrashed : isActive))
     );
 
 /** Search result selector is organized to separate sort from search, as sorting
@@ -182,7 +180,7 @@ export const selectItemsByDomain = (domain: MaybeNull<string>, options: SelectIt
                   items
                       .reduce<{ item: ItemRevisionWithOptimistic<'login'>; priority: ItemUrlMatch }[]>(
                           (matches, item) => {
-                              if (isItemType('login')(item) && !isTrashed(item)) {
+                              if (isItemType('login')(item) && isActive(item)) {
                                   const validShareIds = !shareIds || shareIds.includes(item.shareId);
                                   const validItem = !item.optimistic;
                                   const validUrls = matchAny(item.data.content.urls)(domain);
@@ -268,7 +266,7 @@ export const selectPasskeys = (payload: PasskeyQueryPayload) =>
 
         return domain
             ? items
-                  .filter((item): item is ItemRevision<'login'> => !isTrashed(item) && isPasskeyItem(item.data))
+                  .filter((item): item is ItemRevision<'login'> => isActive(item) && isPasskeyItem(item.data))
                   .flatMap((item) =>
                       (item.data.content.passkeys ?? [])
                           .filter((passkey) => {
