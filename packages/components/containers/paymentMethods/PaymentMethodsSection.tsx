@@ -13,7 +13,7 @@ import { Icon, Loader, useModalState } from '../../components';
 import { useConfig, useMozillaCheck, usePaymentMethods } from '../../hooks';
 import { SettingsParagraph, SettingsSection } from '../account';
 import MozillaInfoPanel from '../account/MozillaInfoPanel';
-import { redirectToAccountApp } from '../desktop/openExternalLink';
+import { useRedirectToAccountApp } from '../desktop/useRedirectToAccountApp';
 import EditCardModal from '../payments/EditCardModal';
 import { default as PayPalV4Modal, PayPalV5Modal } from '../payments/PayPalModal';
 import PaymentMethodsTable from './PaymentMethodsTable';
@@ -40,6 +40,7 @@ const PaymentMethodsSection = () => {
         action: EVENT_ACTIONS.CREATE,
     });
     const [pollingEvents, withPollingEvents] = useLoading();
+    const redirectToAccountApp = useRedirectToAccountApp();
 
     if (loadingPaymentMethods || loadingCheck) {
         return <Loader />;
