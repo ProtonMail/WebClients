@@ -86,7 +86,11 @@ const BusyParticipantRow = ({ attendee, contactEmailsMap, onDelete, onHighlight,
                 onHighlight(email, false);
             }}
         >
-            <div className="shrink-0 flex mt-0.5 pt-2 w-custom" style={{ width: '1rem' }}>
+            <div
+                data-testid="busy-participant-dot"
+                className="shrink-0 flex mt-0.5 pt-2 w-custom"
+                style={{ width: '1rem' }}
+            >
                 <BusyParticipantRowDot
                     display={dotDisplay}
                     color={color}
@@ -96,15 +100,21 @@ const BusyParticipantRow = ({ attendee, contactEmailsMap, onDelete, onHighlight,
                 />
             </div>
 
-            <div className={clsx('flex flex-1 p-1')} title={nameEmail}>
+            <div className={clsx('flex flex-1 p-1')} title={nameEmail} data-testid="busy-participant">
                 <div className={clsx(['text-ellipsis', displayOnlyEmail && 'max-w-full'])}>
                     {contactName ? (
                         <>
-                            <span className="text-semibold text-sm">{contactName}</span>
-                            <span className="color-weak ml-1 text-sm">{email}</span>
+                            <span className="text-semibold text-sm" data-testid="busy-participant:contact-name">
+                                {contactName}
+                            </span>
+                            <span className="color-weak ml-1 text-sm" data-testid="busy-participant:contact-email">
+                                {email}
+                            </span>
                         </>
                     ) : (
-                        <span className="text-semibold text-sm">{email}</span>
+                        <span className="text-semibold text-sm" data-testid="busy-participant:email">
+                            {email}
+                        </span>
                     )}
                 </div>
                 {isOptional && <span className="color-weak w-full text-sm">{c('Label').t`Optional`}</span>}
