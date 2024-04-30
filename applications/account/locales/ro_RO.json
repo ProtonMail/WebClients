@@ -47,11 +47,11 @@
       "${ BRAND_NAME } shop": [
         "Magazin ${ BRAND_NAME }"
       ],
-      "activate": [
-        "activare"
-      ],
       "Activate": [
         "Activare"
+      ],
+      "activate": [
+        "activare"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activare ${ user.Name }@pm.me"
@@ -1318,6 +1318,23 @@
         "Mesaj nou"
       ]
     },
+    "app-switcher": {
+      "Browse the web privately and block ads": [
+        "Navigați pe web în mod privat și blocați reclamele"
+      ],
+      "Keep your schedule private": [
+        "Păstrați-vă programul privat"
+      ],
+      "Protect your passwords and identity": [
+        "Protejați-vă parolele și identitatea"
+      ],
+      "Safeguard your files and photos": [
+        "Asigurați-vă fișierele și fotografiile"
+      ],
+      "Secure your communications": [
+        "Securizați-vă informațiile"
+      ]
+    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "Aplicații ${ BRAND_NAME }"
@@ -1892,6 +1909,12 @@
       ]
     },
     "Call Scheduled Confirmation": {
+      "Request sent": [
+        "Solicitare trimisă"
+      ],
+      "We'll get back to you with more information as soon as we can.": [
+        "Vă vom reveni cu mai multe informații cât mai curând posibil."
+      ],
       "You can safely close this tab.": [
         "Puteți închide această filă în siguranță."
       ]
@@ -3126,6 +3149,9 @@
       ]
     },
     "Delete address prompt": {
+      "Once deleted, this address can't be used again by anyone else.": [
+        "După ștergere, această adresă nu mai poate fi refolosită de nimeni."
+      ],
       "You can only delete 1 address per year.": [
         "Puteți șterge o singură adresă pe an."
       ]
@@ -3568,10 +3594,10 @@
     },
     "email_forwarding_2023: Error": {
       "Condition incomplete, please add a token": [
-        "Condiție incompletă. Adăugați un token."
+        "Condiție incompletă. Adăugați un cod de acces."
       ],
       "Token already exists": [
-        "Tokenul există deja."
+        "Codul de acces există deja."
       ]
     },
     "email_forwarding_2023: Error message, recovery": {
@@ -4286,9 +4312,6 @@
       ],
       "You have reached the contacts limit for your account": [
         "Ați atins limita de contacte disponibilă în cont."
-      ],
-      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
-        "Ați atins maximul de calendare disponibile. Unele calendare nu au putut fi importate."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Ați folosit toate adresele din plan. Treceți la un plan cu plată superior pentru a adăuga o adresă nouă."
@@ -5596,6 +5619,11 @@
         "Încercați gratuit renumitul ${ MAIL_APP_NAME }"
       ]
     },
+    "Headline": {
+      "Contact us": [
+        "Contactați-ne"
+      ]
+    },
     "Hint": {
       "Add this record to your domain in the control panel of your domain name registrar": [
         "Adăugați această înregistrare la domeniul personal în panoul de control al registratorului de nume de domeniu."
@@ -5955,17 +5983,6 @@
         "O parte din conținutul calendarului nu este suportat și nu va fi importat."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Au fost detectate chei duplicate suplimentare. Încărcați-le individual pentru mai multe informații."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Cheia ${ fingerprint } a fost deja încărcată."
-      ],
-      "Selected color:": [
-        "Culoare selectată:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necesită permisiunea pentru ${ enableDesktopNotifications }."
@@ -5981,6 +5998,9 @@
       ],
       "${ BRAND_NAME } is privacy you can trust, ensured by strong encryption, open-source code, and Swiss privacy laws. We believe nobody should be able to exploit your data, period. Our technology and business are based upon this fundamentally stronger definition of privacy.": [
         "${ BRAND_NAME } este confidențialitatea în care puteți avea încredere, asigurată prin criptare puternică, cod cu sursă publică și legi elvețiene privind confidențialitatea. Credem că nimeni nu ar trebui să vă poată exploata datele, punct. Tehnologia și afacerile noastre se bazează pe această definiție fundamental mai puternică a vieții private."
+      ],
+      "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
+        "${ BRAND_NAME } nu vă partajează niciodată informațiile cu terțe părți. Datele provin din propriile analize ale ${ BRAND_NAME } și din Constella Intelligence."
       ],
       "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "${ BRAND_NAME } a întrerupt importarea deoarece a pierdut conexiunea cu celălalt furnizor de e-mail. Reconectați-vă."
@@ -6231,6 +6251,9 @@
         "Adăugare server (${ availableAddedCount } disponibile)",
         "Adăugare server (${ availableAddedCount } disponibile)"
       ],
+      "Add your name and logo to create a more personalized experience for your organization.": [
+        "Adăugați-vă numele sau logoul pentru a crea o experiență mai personalizată pentru organizație."
+      ],
       "Adding ${ addedServerCount } gateway server": [
         "Se adaugă ${ addedServerCount } server poartă de acces",
         "Se adaugă ${ addedServerCount } servere poartă de acces",
@@ -6305,6 +6328,9 @@
       ],
       "Amount due": [
         "Suma datorată"
+      ],
+      "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
+        "Un alias de e-mail funcționează ca o adresă de e-mail, dar reduce mesajele nedorite și vă păstrează adresa de e-mail și identitatea reală ascunse."
       ],
       "An error occurred while communicating with the extension": [
         "A apărut o eroare în timpul comunicării cu extensia."
@@ -6471,6 +6497,9 @@
       "Check the status of imports and forwarding.": [
         "Verificați starea importărilor și redirecționărilor."
       ],
+      "Choose an app to get started": [
+        "Alegeți o aplicație pentru a începe"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Faceți clic pe «Solicitare cod nou» pentru a primi un cod nou de verificare trimis la ${ strong }. Dacă această acest număr de telefon nu este corect, apăsați pe «Editare» pentru a-l corecta."
       ],
@@ -6552,6 +6581,9 @@
       ],
       "Custom": [
         "Personalizat"
+      ],
+      "Custom branding": [
+        "Branding personalizat"
       ],
       "Custom daily": [
         "Zilnic personalizat"
@@ -6818,6 +6850,9 @@
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "Obțineți acces creând un cont ${ BRAND_NAME } și acceptând invitația."
       ],
+      "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
+        "Primiți notificări dacă parola sau alte date personale v-au fost divulgate. ${ learnMoreLinkNoBreach }"
+      ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "Dați un nume descriptiv codului de acces, cum ar fi serviciul pe care urmați să-l folosiți și selectați una din adresele de domeniu personale active. Numai această adresă va putea trimite mesaje cu acest cod de acces."
       ],
@@ -6895,6 +6930,12 @@
       ],
       "If you wish to combine this account with another one, do NOT delete it.": [
         "Dacă doriți să combinați acest cont cu un altul, NU îl ștergeți."
+      ],
+      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
+        "Dacă întâmpinați probleme, suntem aici pentru a vă ajuta. ${ boldPhoneCall } sau ${ boldZoomMeeting } cu unul dintre specialiștii noștri de asistență sau deschideți o ${ boldLiveChat } pentru asistență."
+      ],
+      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists.": [
+        "Dacă întâmpinați probleme, suntem aici pentru a vă ajuta. ${ boldPhoneCall } sau ${ boldZoomMeeting } cu unul dintre specialiștii noștri de asistență."
       ],
       "Image description": [
         "Descriere imagine"
@@ -6996,6 +7037,9 @@
       "Just send them your personal referral link.": [
         "Doar trimiteți-le legătua personală de recomandare."
       ],
+      "Keep your info more secure and private with these guides and tips.": [
+        "Păstrați informațiile mai sigure și private cu aceste ghiduri și sfaturi."
+      ],
       "Key deletion is irreversible!": [
         "Ștergerea cheilor este ireversibilă!"
       ],
@@ -7049,6 +7093,9 @@
       ],
       "Link type": [
         "Tip legătură"
+      ],
+      "Live chat": [
+        "conversație live"
       ],
       "Loaded content is being protected by our proxy when tracker protection is activated.": [
         "Conținutul încărcat este protejat de proxy-ul nostru atunci când blocarea urmăririi este activată."
@@ -7124,6 +7171,9 @@
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Denumiți noul folder și selectați folderul părinte în care doriți să îl puneți. Dacă nu selectaţi un folder părinte, acest folder nou va fi creat ca un folder de nivel superior."
+      ],
+      "NetShield is an ad-blocking feature from ${ VPN_APP_NAME } that protects your device from ads, trackers, and malware.": [
+        "NetShield este o funcție de blocare a reclamelor de la ${ VPN_APP_NAME } care vă protejează dispozitivul de reclame, programe de urmărire și malware."
       ],
       "New": [
         "Nou"
@@ -7338,11 +7388,6 @@
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Mai încercați. Folosiți o metodă de plată diferită sau contactați PayPal pentru asistență."
       ],
-      "Please use a password more than ${ MIN_PASSWORD_LENGTH } character.": [
-        "Folosiți o parolă de cel puțin ${ MIN_PASSWORD_LENGTH } caracter.",
-        "Folosiți o parolă de cel puțin ${ MIN_PASSWORD_LENGTH } caractere.",
-        "Folosiți o parolă de cel puțin ${ MIN_PASSWORD_LENGTH } de caractere."
-      ],
       "Please use another browser or download the file.": [
         "Folosiți alt tip de navigator web sau descărcați fișierul."
       ],
@@ -7438,6 +7483,9 @@
       ],
       "Report link expired": [
         "Legătură de raportare expirată."
+      ],
+      "Request a phone call": [
+        "Solicitați un apel telefonic"
       ],
       "Resend verification email": [
         "Retrimitere e-mail de verificare"
@@ -7603,6 +7651,9 @@
       "Support for 1 custom email domain": [
         "Suport pentru un domeniu de e-mail personal"
       ],
+      "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
+        "Asistența pentru monitorizarea domeniilor personale și a adreselor de e-mail care nu aparțin de ${ BRAND_NAME } va fi disponibilă în curând."
+      ],
       "support team": [
         "echipa de asistență"
       ],
@@ -7638,6 +7689,9 @@
       ],
       "The credentials from your Identity Provider will be deleted.": [
         "Acreditările de la furnizorul de identitate vă vor fi șterse."
+      ],
+      "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
+        "Internetul ascuns este o parte ascunsă a internetului unde informațiile personale furate, cum ar fi identitățile, pot fi cumpărate și vândute."
       ],
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "Legătura de verificare a e-mailului a expirat. Reconectați-vă pentru a vi se retrimite legătura de verificare."
@@ -7933,11 +7987,17 @@
       "Upload your completed CSV file to create accounts": [
         "Încărcați fișierul CSV completat pentru a crea conturi"
       ],
+      "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
+        "Încărcați sigla organizației proprii pentru a vă îmbunătăți identitatea mărcii și pentru a crea o experiență personalizată pentru utilizatorii dvs."
+      ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "Fișierul încărcat nu este o cheie privată validă. Verificați reîncercați."
       ],
       "URL link": [
         "URL legătură"
+      ],
+      "Use a password manager to generate and securely store your passwords, ensuring strong passwords and easier sign-ins.": [
+        "Utilizați un manager de parole pentru a vă genera și stoca în siguranță parolele, asigurând parole puternice și conectări mai ușoare."
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Folosire cel mai bun server ținând cont de încărcarea și poziția sa: ${ formattedBestServerName }"
@@ -8016,6 +8076,9 @@
       ],
       "We just sent you a new link.": [
         "Vi s-a trimis o nouă legătură."
+      ],
+      "We monitor the dark web for instances where your personal information (such as an email address or password used on a third-party site) is leaked or compromised.": [
+        "Monitorizăm internetul ascuns pentru cazurile în care informațiile personale (cum ar fi o adresă de e-mail sau o parolă folosită pe un site terță parte) vă sunt divulgate sau compromise."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Trebuie să autentificăm metoda de plată cu banca dvs."
@@ -8281,9 +8344,6 @@
       "You won’t be able to recover locked data using your downloaded recovery files.": [
         "Nu veți putea recupera datele blocate folosind fișierele de recuperare descărcate."
       ],
-      "You won’t be able to recover locked data using your downloaded recovery files. This will also disable trusted device recovery.": [
-        "Nu veți putea recupera datele blocate folosind fișierele de recuperare descărcate. Aceasta va dezactiva și dispozitivul de recuperare aprobat."
-      ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
         "Contul ${ BRAND_NAME } este asociat cu ${ externalEmailAddress }."
       ],
@@ -8375,6 +8435,20 @@
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Tichetul de asistență a fost închis. Vă mulțumim că ați contactat asistența de la ${ BRAND_NAME }."
+      ],
+      "Zoom meeting": [
+        "o întâlnire pe Zoom"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Au fost detectate chei duplicate suplimentare. Încărcați-le individual pentru mai multe informații."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Cheia ${ fingerprint } a fost deja încărcată."
+      ],
+      "Selected color:": [
+        "Culoare selectată:"
       ]
     },
     "Info - folder colouring feature": {
@@ -8511,6 +8585,27 @@
     "Key generation": {
       "Generate key": [
         "Generare cheie"
+      ],
+      "Generating key failed. Please try again later.": [
+        "Generarea cheii a eșuat. Mai reîncercați."
+      ],
+      "If you're generating a new key because you believe your existing key has been compromised, please mark it as compromised after generating this key.": [
+        "Dacă generați o cheie nouă deoarece credeți că cea existentă a fost compromisă, marcați-o ca fiind compromisă după generarea acestei chei."
+      ],
+      "Key successfully generated.": [
+        "Cheia a fost generată."
+      ],
+      "Note: you already have a key with the same algorithm for this address. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
+        "Notă: aveți deja o cheie cu același algoritm pentru această adresă. Cu excepția cazului în care cheia respectivă a fost compromisă, poate fi inutil să generați o cheie nouă, iar acest lucru vă poate încetini contul."
+      ],
+      "Note: you already have a key with the same algorithm for this user. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
+        "Notă: aveți deja o cheie cu același algoritm pentru acest utilizator. Cu excepția cazului în care cheia respectivă a fost compromisă, poate fi inutil să generați o cheie nouă, iar acest lucru vă poate încetini contul."
+      ],
+      "This will generate a new key, which will be used to encrypt future contact details, email encryption keys, and other data.": [
+        "Aceasta va genera o nouă cheie, care va fi folosită pentru a cripta viitoarele detalii de contact, cheile de criptare a e-mailului și alte date."
+      ],
+      "This will generate a new key, which will be used to encrypt future emails, among other data.": [
+        "Aceasta va genera o nouă cheie, care va fi folosită pentru a cripta viitoarele e-mailuri și alte date."
       ]
     },
     "Key state badge": {
@@ -8919,6 +9014,9 @@
       "Awarded": [
         "Acreditat"
       ],
+      "Beta": [
+        "Beta"
+      ],
       "Billing address": [
         "Adresă de facturare"
       ],
@@ -9296,6 +9394,9 @@
       ],
       "Link label": [
         "Etichetă legătură web"
+      ],
+      "Logo": [
+        "Logo"
       ],
       "Mail Server (IMAP)": [
         "Server e-mail (IMAP)"
@@ -9703,9 +9804,6 @@
       ],
       "Recovery phrase": [
         "Fraza de recuperare"
-      ],
-      "Trusted device recovery": [
-        "Dispozitiv de recuperare de încredere"
       ]
     },
     "Label for adding a new custom domain": {
@@ -9931,6 +10029,9 @@
       ],
       "here": [
         "aici"
+      ],
+      "How does monitoring work?": [
+        "Cum funcționează monitorizarea?"
       ],
       "How to pay with Bitcoin?": [
         "Cum să plătiți cu Bitcoin?"
@@ -11459,6 +11560,12 @@
       "An external address cannot be default": [
         "O adresă externă nu poate fi implicită."
       ],
+      "Dark Web Monitoring has been disabled": [
+        "Monitorizarea pe internetul ascuns a fost dezactivată."
+      ],
+      "Dark Web Monitoring has been enabled": [
+        "Monitorizarea pe internetul ascuns a fost activată."
+      ],
       "Invalid code": [
         "Cod nevalid"
       ],
@@ -11888,6 +11995,43 @@
       ],
       "Your plan includes a maximum of ${ humanReadableAvailableSpace } more storage.": [
         "Planul actual mai include maxim ${ humanReadableAvailableSpace } de spațiu."
+      ]
+    },
+    "Organization logo upload": {
+      "Avoid overly compressed images.": [
+        "Evitați imaginile comprimate în exces."
+      ],
+      "Ensure your logo has padding space around it.": [
+        "Asigurați-vă că logoul are margini goale in jurul său."
+      ],
+      "Opt for a PNG image that is a 128x128 pixels for clarity.": [
+        "Pentru claritate optați pentru o imagine PNG care are 128 x 128 pixeli."
+      ],
+      "Tips on choosing a good logo": [
+        "Sfaturi pentru alegerea unui logo adecvat"
+      ],
+      "Use a graphical icon or image rather than text.": [
+        "Folosiți o pictogramă sau o imagine în loc de text."
+      ],
+      "Use a solid background color.": [
+        "Folosiți o culoare de fundal monocromă."
+      ]
+    },
+    "Organization logo upload modal": {
+      "Drop image file here to upload or": [
+        "Trageți aici o imagine pe a fi încărcată sau"
+      ],
+      "File in PNG or JPEG format": [
+        "Fișier în format JPEG sau PNG"
+      ],
+      "File not larger than 30 KB": [
+        "Fișier nu mai mare de 30 KiB"
+      ],
+      "Square image of at least 128 pixels": [
+        "Imagine pătrată de minim 128 pixeli"
+      ],
+      "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
+        "Utilizatorii vor vedea logoul dvs. în loc de pictograma ${ BRAND_NAME } atunci când sunt conectați în aplicațiile noastre web."
       ]
     },
     "OS compatibility": {
@@ -12377,6 +12521,9 @@
       "MM/YY": [
         "LL/AA"
       ],
+      "Processing payment": [
+        "Se procesează plata"
+      ],
       "Timeout exceeded": [
         "Limită de timp depășită"
       ]
@@ -12722,6 +12869,11 @@
         "Dezabonare?"
       ]
     },
+    "Remove organization logo": {
+      "Users will no longer see your custom logo or organization name.": [
+        "Utilizatorii nu vor mai vedea logoul personal sau numele organizației."
+      ]
+    },
     "Restore administrator panel": {
       "${ n } administrator in your organization need access to the organization key.": [
         "${ n } administrator din organizație are nevoie de acces la cheia organizației.",
@@ -12752,6 +12904,102 @@
         "Utilizator"
       ]
     },
+    "scim: Action": {
+      "Configure SCIM": [
+        "Configurare SCIM"
+      ],
+      "Disable SCIM": [
+        "Dezactivare SCIM"
+      ],
+      "Disable SCIM integration": [
+        "Dezactivare integrare SCIM"
+      ],
+      "Generate new token": [
+        "Generare cod de acces nou"
+      ],
+      "Generate token": [
+        "Generare cod de acces"
+      ]
+    },
+    "scim: Info": {
+      "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
+        "**Cerință preliminară:** autentificarea SAML trebuie configurată pentru a activa furnizarea SCIM."
+      ],
+      "Enter token into your identity provider": [
+        "Introduceți codul de acces în furnizorul dvs. de identitate."
+      ],
+      "Enter URL and token into your identity provider": [
+        "Introduceți adresa URL și codul de acces în furnizorul dvs. de identitate."
+      ],
+      "For security reasons, the SCIM token will be hidden after saving your changes and you won’t be able to see it again.": [
+        "Din motive de securitate, codul de acces SCIM va fi ascuns după salvarea modificărilor și nu îl veți putea vedea din nou."
+      ],
+      "For security reasons, the token is hidden": [
+        "Din motive de securitate, codul de acces este ascuns."
+      ],
+      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ VPN_APP_NAME }.": [
+        "Accesați-vă furnizorul de identitate, copiați și inserați datele de mai jos și finalizați configurarea SCIM pentru ${ VPN_APP_NAME }."
+      ],
+      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ VPN_APP_NAME }.": [
+        "Accesați-vă furnizorul de identitate, copiați și inserați codul de acces de mai jos și reactivați SCIM pentru ${ VPN_APP_NAME }."
+      ],
+      "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
+        "Dacă ați pierdut sau ați uitat codul de acces SCIM, puteți genera unul nou, dar rețineți că setările furnizorului dvs. de identitate vor trebui actualizate."
+      ],
+      "Make sure you copy the above SCIM token now.": [
+        "Asigurați-vă că ați copiat codul de acces SCIM acum."
+      ],
+      "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
+        "Odată ce SCIM este dezactivat pentru organizație, **toți utilizatorii SCIM furnizați automat de furnizorul dvs. de identitate vor fi convertiți în utilizatori SSO** și îi veți putea gestiona direct în setările ${ BRAND_NAME }."
+      ],
+      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ VPN_APP_NAME } organization.": [
+        "Simplificați gestionarea utilizatorilor prin diferite servicii. Adăugați, editați și eliminați utilizatori din furnizorul dvs. de identitate, iar aceste modificări vă vor fi aplicate automat organizației proprii. ${ VPN_APP_NAME }."
+      ],
+      "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
+        "Preluarea automată SCIM va fi dezactivată până când introduceți noul simbol SCIM în setările furnizorului dvs. de identitate."
+      ],
+      "The SCIM base URL and token will be deleted.": [
+        "Adresa URL de bază SCIM și codul de acces vor fi șterse."
+      ],
+      "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
+        "Pentru a reactiva sincronizarea cu furnizorul de identitate, trebuie să finalizați din nou integrarea SCIM."
+      ]
+    },
+    "scim: Label": {
+      "SCIM base URL": [
+        "Adresa URL de bază SCIM"
+      ],
+      "SCIM base URL (or tenant URL)": [
+        "Adresa URL de bază SCIM (sau adresa URL a locatarului)"
+      ],
+      "SCIM token": [
+        "Cod de acces SCIM"
+      ]
+    },
+    "scim: Title": {
+      "Disable SCIM integration?": [
+        "Dezactivați integrarea SCIM?"
+      ],
+      "Generate new SCIM token?": [
+        "Generați un nou cod de acces SCIM?"
+      ],
+      "SCIM automatic provisioning": [
+        "Preluare automată SCIM"
+      ]
+    },
+    "scim: Tooltip": {
+      "API key of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
+        "Cheia API a conectorului SCIM către care agentul dvs. de aprovizionare IdP transmite datele SCIM."
+      ],
+      "URL of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
+        "Adresa URL a conectorului SCIM către care agentul dvs. de aprovizionare IdP transmite datele SCIM."
+      ]
+    },
+    "Security Center - Info": {
+      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLinkBreach }": [
+        "Informațiile v-au fost găsite în cel puțin o compromitere a datelor. Activați opțiunea ${ DARK_WEB_MONITORING_NAME } pentru a vedea detalii și a acționa. ${ learnMoreLinkBreach }"
+      ]
+    },
     "Select file": {
       "Upload CSV file": [
         "Încărcați un fișier CSV"
@@ -12769,8 +13017,14 @@
       ]
     },
     "Select invoice document": {
+      "Credit note": [
+        "Notă de credit"
+      ],
       "Currency conversion": [
         "Conversie valutară"
+      ],
+      "Invoice": [
+        "Factura"
       ]
     },
     "Select search results": {
@@ -13479,9 +13733,6 @@
       ]
     },
     "Storage": {
-      "Release notes": [
-        "Note de lansare"
-      ],
       "Upgrade storage": [
         "Mărire spațiu"
       ],
@@ -13739,6 +13990,12 @@
       ]
     },
     "Subscription reminder": {
+      "${ BRAND_NAME } was targeted by Russia in one of the most aggressive censorship campaigns in recent memory, and our team fought back.": [
+        "${ BRAND_NAME } a fost vizat de Rusia într-una dintre cele mai agresive campanii de cenzură din istoria recentă, iar echipa noastră a ripostat."
+      ],
+      "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
+        "Singura sursă de venit a ${ BRAND_NAME } sunt abonamentele utilizatorilor. Sprijinul dumneavoastră ne permite să rămânem independenți, să ne promovăm misiunea de a face confidențialitatea online implicită și să continuăm să sprijinim activiștii și organizațiile care luptă pentru confidențialitate și libertate."
+      ],
       "${ dayDiff } day left": [
         "A mai rămas ${ dayDiff } zi",
         "Au mai rămas ${ dayDiff } zile",
@@ -13750,8 +14007,38 @@
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } spațiu total"
       ],
+      "${ planName } doesn't just provide extra storage. It lets you manage your emails faster, customize your inbox and email addresses, and access the desktop app.": [
+        "${ planName } nu oferă doar spațiu de stocare suplimentar. Vă permite să vă gestionați mai rapid e-mailurile, să vă personalizați interfața de lucru și adresele de e-mail și să accesați aplicația desktop."
+      ],
       "10 email addresses": [
         "10 adrese de e-mail"
+      ],
+      "A direct contribution to our mission": [
+        "O contribuție directă la misiunea noastră"
+      ],
+      "After ${ BRAND_NAME } got blocked in Iran during protests, our customer support team worked to get our VPN app directly into people's hands.": [
+        "După ce ${ BRAND_NAME } a fost blocat în Iran în timpul protestelor, echipa noastră de asistență pentru clienți a lucrat pentru a pune aplicația noastră VPN direct în mâinile oamenilor."
+      ],
+      "After privacy and free speech were threatened in Hong Kong, we directly supported local civil rights organizations.": [
+        "După ce confidențialitatea și libertatea de exprimare au fost amenințate în Hong Kong, am susținut direct organizațiile locale pentru drepturile civile."
+      ],
+      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **1 GB** for Mail, and **1 GB** for Drive. You will also lose any storage bonuses earned previously.": [
+        "Prin anularea abonamentului ${ planName }, spațiul de stocare va scădea de la **${ planMaxSpace }** la **1 GiB** pentru Mail și **1 GiB** pentru Drive. De asemenea, veți pierde orice bonusuri de stocare câștigate anterior."
+      ],
+      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **1 GB** for Mail, and **5 GB** for Drive. You will also lose any storage bonuses earned previously.": [
+        "Prin anularea abonamentului ${ planName }, spațiul de stocare va scădea de la **${ planMaxSpace }** la **1 GiB** pentru Mail și **5 GiB** pentru Drive. De asemenea, veți pierde orice bonusuri de stocare câștigate anterior."
+      ],
+      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **500 MB** for Mail, and **1 GB** for Drive. You will also lose any storage bonuses earned previously.": [
+        "Prin anularea abonamentului ${ planName }, spațiul de stocare va scădea de la **${ planMaxSpace }** la **500 MiB** pentru Mail și **1 GiB** pentru Drive. De asemenea, veți pierde orice bonusuri de stocare câștigate anterior."
+      ],
+      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **500 MB** for Mail, and **5 GB** for Drive. You will also lose any storage bonuses earned previously.": [
+        "Prin anularea abonamentului ${ planName }, spațiul de stocare va scădea de la **${ planMaxSpace }** la **500 MiB** pentru Mail și **5 GiB** pentru Drive. De asemenea, veți pierde orice bonusuri de stocare câștigate anterior."
+      ],
+      "By downgrading your account, you will also lose storage space": [
+        "Retrogradând-vă contul, veți pierde și spațiu de stocare."
+      ],
+      "By downgrading your account, you will lose access to these important features": [
+        "Dacă treceți la un plan inferior actualului cont, veți pierde accesul la aceste funcții importante."
       ],
       "Calendar sharing": [
         "Partajare calendar"
@@ -13762,17 +14049,95 @@
       "Cancel subscription?": [
         "Anulare abonament?"
       ],
+      "Close": [
+        "Închidere"
+      ],
       "Custom schedule send and snooze times": [
         "Programări personale și amânări"
+      ],
+      "Have a question?": [
+        "Aveți o întrebare?"
+      ],
+      "Helping activists in Hong Kong": [
+        "Ajurarea activiștilor din Hong Kong"
+      ],
+      "I still want to cancel": [
+        "Doresc să anulez"
+      ],
+      "If you exceed your free Drive storage quota:": [
+        "Dacă depășiți spațiul de stocare din Drive:"
+      ],
+      "If you exceed your free Mail storage quota:": [
+        "Dacă depășiți spațiul de stocare din Mail:"
       ],
       "Keep ${ planName }": [
         "Păstrare ${ planName }"
       ],
+      "Learn more about our impact": [
+        "Aflați mai multe despre impactul nostru"
+      ],
+      "Let us remind you of everything ${ planName } can do": [
+        "Permiteți-ne să vă reamintim tot ce poate face ${ planName }"
+      ],
+      "Our fight against censorship in Russia": [
+        "Lupta noastră împotriva cenzurii în Rusia"
+      ],
       "Priority support": [
         "Asistență prioritară"
       ],
+      "Read the story": [
+        "Citiți articolul"
+      ],
+      "Resubscribe": [
+        "Reabonare"
+      ],
+      "Resubscribe to restore access to ${ planName } features.": [
+        "Reabonați-vă pentru a restabili accesul la funcțiile ${ planName }."
+      ],
+      "Subscription canceled": [
+        "Abonament anulat"
+      ],
+      "Unblocking internet access in Iran": [
+        "Deblocarea accesului la internet în Iran"
+      ],
       "Unlimited folders, labels and filters": [
         "Foldere, etichete și filtre nelimitate"
+      ],
+      "Watch the interview": [
+        "Priviți interviul"
+      ],
+      "When you cancel, you will lose access to": [
+        "Dacă anulați, veți pierde accesul la"
+      ],
+      "Yearly free storage bonuses": [
+        "Bonusuri de stocare gratuită anuală"
+      ],
+      "You **won't be able to add any new files**": [
+        "**Nu veți mai putea adăuga fișiere**"
+      ],
+      "You **won't be able to backup photos** from your devices": [
+        "**Nu veți mai putea conserva imaginile** din dispozitive"
+      ],
+      "You **won't be able to send emails** with attachments": [
+        "**Nu veți putea trimite e-mailuri** cu atașamente"
+      ],
+      "You still have ${ expiryDate } on your ${ planName } plan. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling.": [
+        "Încă mai aveți ${ expiryDate } din planul ${ planName }. Vi se vor adăuga creditele pentru timpul rămas în contul ${ BRAND_NAME }. Asigurați-vă că nu depășiți limitele planului gratuit înainte de anulare."
+      ],
+      "Your **calendar will be frozen**": [
+        "**Calendarul va fi blocat**"
+      ],
+      "Your devices will **stop syncing**": [
+        "Dispozitivele **vor înceta sincronizarea**"
+      ],
+      "Your inbox will **stop receiving new emails**": [
+        "**Nu veți mai putea primi mesaje**"
+      ],
+      "Your own custom email domain": [
+        "Domeniu personal de e-mail"
+      ],
+      "Your own short @pm.me email alias": [
+        "Propriul alias de e-mail scurt @pm.me"
       ]
     },
     "Subscription renewal state": {
@@ -15251,9 +15616,6 @@
       "What would you like to import?": [
         "Ce ați dori să importați?"
       ],
-      "What's new": [
-        "Ce este nou"
-      ],
       "WireGuard configuration": [
         "Configurare WireGuard"
       ],
@@ -15547,6 +15909,9 @@
       ],
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
         "Folosire bare de derulare implicite din navigator. De obicei sunt mai mari și mai ușor de folosit."
+      ],
+      "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
+        "Utilizatorii vor vedea logoul dvs. în loc de pictograma ${ BRAND_NAME } atunci când sunt conectați în aplicațiile noastre web."
       ],
       "Usually an URL that contains the identity provider's name within": [
         "De obicei, o adresă URL care conține numele furnizorului de identitate."

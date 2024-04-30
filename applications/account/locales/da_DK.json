@@ -47,11 +47,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butik"
       ],
-      "activate": [
-        "aktivér"
-      ],
       "Activate": [
         "Aktivér"
+      ],
+      "activate": [
+        "aktivér"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivér ${ user.Name }@pm.me"
@@ -323,6 +323,9 @@
       "Delete link": [
         "Slet link"
       ],
+      "Delete logo": [
+        "Slet logo"
+      ],
       "Delete permanently": [
         "Slet permanent"
       ],
@@ -586,6 +589,9 @@
       ],
       "Keep": [
         "Behold"
+      ],
+      "Keep logo": [
+        "Behold logo"
       ],
       "Keep my Plus subscription": [
         "Behold mit Plus-abonnement"
@@ -863,6 +869,9 @@
       "Select country": [
         "Vælg land"
       ],
+      "select file": [
+        "vælg fil"
+      ],
       "Select file": [
         "Vælg fil"
       ],
@@ -971,6 +980,9 @@
       "Start import": [
         "Start importering"
       ],
+      "Start live chat": [
+        "Start live chat"
+      ],
       "Stay": [
         "Bliv her"
       ],
@@ -1049,6 +1061,12 @@
       "Upgrade your plan": [
         "Opgradér dit abonnement"
       ],
+      "Upload": [
+        "Upload"
+      ],
+      "Upload logo": [
+        "Upload logo"
+      ],
       "Upload picture": [
         "Upload billede"
       ],
@@ -1102,6 +1120,9 @@
       ],
       "Void all recovery files?": [
         "Ugyldiggør alle gendannelsesfiler?"
+      ],
+      "Welcome": [
+        "Velkommen"
       ],
       "What do I get?": [
         "Hvad får jeg?"
@@ -4227,9 +4248,6 @@
       "You have reached the contacts limit for your account": [
         "Du har nået det maksimale antal kontakter for din konto"
       ],
-      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
-        "Du har nået det maksimale antal kalendere. Nogle kalendere kunne ikke importeres."
-      ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Du har brugt alle adresser i dit abonnement. Opgradér abonnementet for at tilføje en ny adresse."
       ],
@@ -5522,6 +5540,11 @@
         "Prøv det bedste af ${ MAIL_APP_NAME } gratis"
       ]
     },
+    "Headline": {
+      "Contact us": [
+        "Kontakt os"
+      ]
+    },
     "Hint": {
       "Add this record to your domain in the control panel of your domain name registrar": [
         "Tilføj denne post til dit domæne i kontrolpanelet hos din domæneregistrator"
@@ -5871,17 +5894,6 @@
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "En del af dit kalenderindhold er ikke understøttet og vil ikke blive importeret."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Der er fundet yderligere dubletter af nøgler. Upload venligst hver for sig for at få flere oplysninger."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Nøgle ${ fingerprint } er allerede blevet uploadet"
-      ],
-      "Selected color:": [
-        "Valgte farve:"
       ]
     },
     "Info": {
@@ -6944,6 +6956,9 @@
       "Link type": [
         "Link-type"
       ],
+      "Live chat": [
+        "Live chat"
+      ],
       "Loaded content is being protected by our proxy when tracker protection is activated.": [
         "Indlæst indhold er beskyttet af vores proxy, når sporingsbeskyttelse er aktiveret."
       ],
@@ -7229,10 +7244,6 @@
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Forsøg venligst igen, benyt en anden betalingsmetode eller kontakt PayPal for hjælp."
       ],
-      "Please use a password more than ${ MIN_PASSWORD_LENGTH } character.": [
-        "Venligst brug en kode der er længere end ${ MIN_PASSWORD_LENGTH } tegn.",
-        "Venligst brug en kode der er længere end ${ MIN_PASSWORD_LENGTH } tegn."
-      ],
       "Please use another browser or download the file.": [
         "Brug en anden browser eller download filen."
       ],
@@ -7247,6 +7258,9 @@
       ],
       "Plus or Visionary subscription required": [
         "Plus- eller Visionary abonnement påkrævet"
+      ],
+      "Preview": [
+        "Forhåndsvisning"
       ],
       "Preview failed to be loaded": [
         "Forhåndsvisning kunne ikke indlæses"
@@ -8167,9 +8181,6 @@
       "You won’t be able to recover locked data using your downloaded recovery files.": [
         "Du vil ikke kunne gendanne låste data ved hjælp af dine downloadede gendannelsesfiler."
       ],
-      "You won’t be able to recover locked data using your downloaded recovery files. This will also disable trusted device recovery.": [
-        "Du vil ikke være i stand til at gendanne låste data ved hjælp af dine downloadede gendannelsesfiler. Dette vil også deaktivere gendannelse af betroede enheder."
-      ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
         "Din ${ BRAND_NAME } konto er tilknyttet ${ externalEmailAddress }."
       ],
@@ -8260,6 +8271,17 @@
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Din supportsag er blevet lukket. Tak for at kontakte ${ BRAND_NAME } support."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Der er fundet yderligere dubletter af nøgler. Upload venligst hver for sig for at få flere oplysninger."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Nøgle ${ fingerprint } er allerede blevet uploadet"
+      ],
+      "Selected color:": [
+        "Valgte farve:"
       ]
     },
     "Info - folder colouring feature": {
@@ -8798,6 +8820,9 @@
       "Awarded": [
         "Belønnet"
       ],
+      "Beta": [
+        "Beta"
+      ],
       "Billing address": [
         "Faktureringsadresse"
       ],
@@ -9175,6 +9200,9 @@
       ],
       "Link label": [
         "Link-etiket"
+      ],
+      "Logo": [
+        "Logo"
       ],
       "Mail Server (IMAP)": [
         "Mailserver (IMAP)"
@@ -9579,9 +9607,6 @@
       ],
       "Recovery phrase": [
         "Gendannelsessætning"
-      ],
-      "Trusted device recovery": [
-        "Gendannelse via betroet enhed"
       ]
     },
     "Label for adding a new custom domain": {
@@ -12550,6 +12575,14 @@
         "Bruger"
       ]
     },
+    "scim: Action": {
+      "Configure SCIM": [
+        "Konfigurér SCIM"
+      ],
+      "Generate token": [
+        "Generér token"
+      ]
+    },
     "scim: Info": {
       "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ VPN_APP_NAME }.": [
         "Gå til din identitetsudbyder, kopier og indsæt tokenet nedenfor, og genaktiver SCIM for ${ VPN_APP_NAME }."
@@ -13273,9 +13306,6 @@
       ]
     },
     "Storage": {
-      "Release notes": [
-        "Udgivelsesnoter"
-      ],
       "Upgrade storage": [
         "Opgradér lagerplads"
       ],
@@ -13541,6 +13571,9 @@
       "Cancel subscription?": [
         "Opsig abonnement?"
       ],
+      "Close": [
+        "Luk"
+      ],
       "Custom schedule send and snooze times": [
         "Brugerdefineret tidsplan for afsendelse og udsættelse"
       ],
@@ -13557,6 +13590,9 @@
     "subscription reminder": {
       "and 15 more premium features": [
         "og 15 andre premium-funktioner"
+      ],
+      "Upgrade": [
+        "Opgradering"
       ],
       "We don't sell your data": [
         "Vi sælger ikke dine data"
@@ -14506,6 +14542,15 @@
       "Folders and labels": [
         "Mapper og etiketter"
       ],
+      "For Linux": [
+        "Til Linux"
+      ],
+      "For macOS": [
+        "Til macOS"
+      ],
+      "For Windows": [
+        "Til Windows"
+      ],
       "Forward and auto-reply": [
         "Videresendelse og autosvar"
       ],
@@ -14650,6 +14695,9 @@
       ],
       "No recovery method": [
         "Ingen gendannelsesmetode"
+      ],
+      "Open": [
+        "Åbn"
       ],
       "Open actions dropdown": [
         "Åbn handlingsrullemenu"
@@ -14999,9 +15047,6 @@
       ],
       "What would you like to import?": [
         "Hvad ønsker du at importere?"
-      ],
-      "What's new": [
-        "Nyheder"
       ],
       "WireGuard configuration": [
         "WireGuard konfiguration"

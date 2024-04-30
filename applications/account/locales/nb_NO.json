@@ -47,11 +47,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butikk"
       ],
-      "activate": [
-        "aktiver"
-      ],
       "Activate": [
         "Aktiver"
+      ],
+      "activate": [
+        "aktiver"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktiver ${ user.Name }@pm.me"
@@ -4295,8 +4295,8 @@
       "You have reached the contacts limit for your account": [
         "Du har nådd kontaktgrensen for kontoen din"
       ],
-      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
-        "Du har nådd maksimalt antall kalendere. Noen kalendere kan ikke importeres."
+      "You have reached the maximum number of calendars.": [
+        "Du har nådd maksimalt antall kalendere."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Du har brukt alle adressene i planen din. Vennligst oppgrader planen din for å legge til en ny adresse."
@@ -5949,17 +5949,6 @@
         "Deler av kalenderinnholdet ditt støttes ikke, og kan ikke importeres."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Flere dupliserte nøkler oppdaget. Vennligst last opp individuelt for mer informasjon."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Nøkkel ${ fingerprint } er allerede blitt lastet opp"
-      ],
-      "Selected color:": [
-        "Valgt farge:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } trenger din tillatelse til å ${ enableDesktopNotifications }."
@@ -7255,6 +7244,9 @@
       "Password copied to clipboard": [
         "Passord kopiert til utklippstavlen"
       ],
+      "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
+        "Passordet må være ${ MIN_PASSWORD_LENGTH } tegn eller mer."
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Betalinger er beskyttet med TLS-kryptering og sveitsiske personvernlover."
       ],
@@ -7331,10 +7323,6 @@
       ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Vennligst prøv igjen, bruk en annen betalingsmåte, eller kontakt PayPal for hjelp."
-      ],
-      "Please use a password more than ${ MIN_PASSWORD_LENGTH } character.": [
-        "Vennligst bruk et passord med mer enn ${ MIN_PASSWORD_LENGTH } tegn.",
-        "Vennligst bruk et passord med mer enn ${ MIN_PASSWORD_LENGTH } tegn"
       ],
       "Please use another browser or download the file.": [
         "Vennligst bruk en annen nettleser eller last ned filen."
@@ -8282,8 +8270,8 @@
       "You won’t be able to recover locked data using your downloaded recovery files.": [
         "Du vil ikke være i stand til å gjenopprette låst data ved å bruke dine nedlastede gjenopprettingsfiler."
       ],
-      "You won’t be able to recover locked data using your downloaded recovery files. This will also disable trusted device recovery.": [
-        "Du vil ikke kunne gjenopprette låste data ved hjelp av de nedlastede gjenopprettingsfilene. Dette vil også deaktivere gjenoppretting av klarert enhet."
+      "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
+        "Du vil ikke kunne gjenopprette låste data ved hjelp av de nedlastede gjenopprettingsfilene. Dette vil også deaktivere enhetsbasert gjenoppretting."
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
         "Din ${ BRAND_NAME }-konto er tilknyttet ${ externalEmailAddress }."
@@ -8378,6 +8366,17 @@
       ],
       "Zoom meeting": [
         "Zoom-møte"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Flere dupliserte nøkler oppdaget. Vennligst last opp individuelt for mer informasjon."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Nøkkel ${ fingerprint } er allerede blitt lastet opp"
+      ],
+      "Selected color:": [
+        "Valgt farge:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9722,14 +9721,14 @@
       ]
     },
     "label": {
+      "Device-based recovery": [
+        "Enhetsbasert gjenoppretting"
+      ],
       "Recovery phone number": [
         "Gjenopprettingstelefonnummer"
       ],
       "Recovery phrase": [
         "Gjenopprettingsfrase"
-      ],
-      "Trusted device recovery": [
-        "Gjenoppretting av klarert enhet"
       ]
     },
     "Label for adding a new custom domain": {
@@ -13596,9 +13595,6 @@
       ]
     },
     "Storage": {
-      "Release notes": [
-        "Utgivelsesmerknader"
-      ],
       "Upgrade storage": [
         "Oppgrader lagringsplass"
       ],
@@ -15494,9 +15490,6 @@
       "What would you like to import?": [
         "Hva ønsker du å importere?"
       ],
-      "What's new": [
-        "Hva er nytt"
-      ],
       "WireGuard configuration": [
         "WireGuard-konfigurering"
       ],
@@ -16002,6 +15995,9 @@
       ],
       "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
         "Abonnementet fornyes automatisk hver 3. måned. Neste faktureringsdato er om 3 måneder."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Den spesielt rabatterte prisen på ${ priceWithDiscount } er gyldig den første måneden. Da blir den automatisk fornyet til ${ renewPrice } hver måned. Du kan avbryte når som helst."
       ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Du blir deretter fakturert hver 12. måned til ${ renewPrice }."

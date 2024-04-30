@@ -47,11 +47,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } ショップ"
       ],
-      "activate": [
-        "有効にする"
-      ],
       "Activate": [
         "有効化"
+      ],
+      "activate": [
+        "有効にする"
       ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me をアクティブ化します"
@@ -1022,6 +1022,9 @@
       "Upgrade your plan": [
         "プランをアップグレード"
       ],
+      "Upload": [
+        "アップロード"
+      ],
       "Upload picture": [
         "写真をアップロード"
       ],
@@ -1806,6 +1809,9 @@
       ]
     },
     "Call Scheduled Confirmation": {
+      "Request sent": [
+        "リクエスト送信"
+      ],
       "You can safely close this tab.": [
         "安心してこのタブを閉じてください。"
       ]
@@ -3355,6 +3361,12 @@
       "Next": [
         "次へ"
       ],
+      "Pause": [
+        "一時停止"
+      ],
+      "Re-enable": [
+        "再有効化"
+      ],
       "Re-send confirmation email": [
         "確認メールを再送する"
       ],
@@ -3409,6 +3421,11 @@
       ],
       "To": [
         "宛先"
+      ]
+    },
+    "email_forwarding_2023: Incoming forwarding tab name": {
+      "From me": [
+        "自分から"
       ]
     },
     "email_forwarding_2023: Info": {
@@ -3478,6 +3495,11 @@
     "email_forwarding_2023: Link": {
       "Learn more": [
         "詳細"
+      ]
+    },
+    "email_forwarding_2023: Outgoing forwarding tab name": {
+      "To me": [
+        "自分に"
       ]
     },
     "email_forwarding_2023: Placeholder": {
@@ -4027,9 +4049,6 @@
       ],
       "You have reached the contacts limit for your account": [
         "アカウントの連絡先が上限に達しています。"
-      ],
-      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
-        "カレンダーの個数が上限に達しました。いくつかのカレンダーはインポートできませんでした。"
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "現在のプランでのメールアドレス数の上限に達しました。新規アドレスを追加するにはアップグレードしてください。"
@@ -5625,17 +5644,6 @@
         "カレンダーの内容の一部がサポートされていないため、インポートされません。"
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "追加の重複キーが検出されました。 詳細については個別にアップロードしてください。"
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "鍵 ${ fingerprint } は正常にアップロードされました"
-      ],
-      "Selected color:": [
-        "選択した色:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } からの通知を受け取るには、${ enableDesktopNotifications }必要があります。"
@@ -6870,6 +6878,9 @@
       "Plus or Visionary subscription required": [
         "PLUS または VISIONARY プランが必要です"
       ],
+      "Preview": [
+        "プレビュー"
+      ],
       "Preview failed to be loaded": [
         "プレビューの読み込みに失敗しました"
       ],
@@ -7713,9 +7724,6 @@
       "You won’t be able to recover locked data using your downloaded recovery files.": [
         "ダウンロードした回復用ファイルを使ってロックされたデータを復元することはできません。"
       ],
-      "You won’t be able to recover locked data using your downloaded recovery files. This will also disable trusted device recovery.": [
-        "ダウンロードした回復用ファイルを使用してロックされたデータを回復することはできません。 これにより、信頼されたデバイスの回復も無効になります。"
-      ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
         "あなたの ${ BRAND_NAME } アカウントは、${ externalEmailAddress } に関連付けられています。"
       ],
@@ -7799,6 +7807,17 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "あなたのサブスクリプションはMozillaによって管理されています。Mozillaのサポートへお問い合わせください。"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "追加の重複キーが検出されました。 詳細については個別にアップロードしてください。"
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "鍵 ${ fingerprint } は正常にアップロードされました"
+      ],
+      "Selected color:": [
+        "選択した色:"
       ]
     },
     "Info - folder colouring feature": {
@@ -8319,6 +8338,9 @@
       "Awarded": [
         "進呈"
       ],
+      "Beta": [
+        "ベータ"
+      ],
       "Billing address": [
         "ご請求先住所"
       ],
@@ -8696,6 +8718,9 @@
       ],
       "Link label": [
         "リンクラベル"
+      ],
+      "Logo": [
+        "ロゴ"
       ],
       "Mail Server (IMAP)": [
         "メールサーバー (IMAP)"
@@ -9079,9 +9104,6 @@
       ],
       "Recovery phrase": [
         "回復用フレーズ"
-      ],
-      "Trusted device recovery": [
-        "信頼できるデバイスによる回復"
       ]
     },
     "Label for adding a new custom domain": {
@@ -9231,6 +9253,9 @@
     "Label; import email": {
       "From: ${ from }": [
         "送信者: ${ from }"
+      ],
+      "To: ${ to }": [
+        "宛先: ${ to }"
       ]
     },
     "Limit of calendars reached": {
@@ -9298,6 +9323,9 @@
       ],
       "here": [
         "こちら"
+      ],
+      "How does monitoring work?": [
+        "モニタリングの仕組みは？"
       ],
       "How to pay with Bitcoin?": [
         "ビットコインで支払うには？"
@@ -9396,6 +9424,11 @@
       ],
       "Your import is starting": [
         "インポートが開始しました"
+      ]
+    },
+    "locked_state_storage_banner: info": {
+      "Learn more": [
+        "詳細"
       ]
     },
     "Log preference": {
@@ -10688,6 +10721,12 @@
       "An external address cannot be default": [
         "外部のアドレスは既定にすることができません"
       ],
+      "Dark Web Monitoring has been disabled": [
+        "ダークウェブモニタリングが無効になりました"
+      ],
+      "Dark Web Monitoring has been enabled": [
+        "ダークウェブモニタリングが有効になりました"
+      ],
       "Invalid code": [
         "無効なコード"
       ],
@@ -11915,6 +11954,9 @@
       ]
     },
     "Select invoice document": {
+      "Credit note": [
+        "クレジットメモ"
+      ],
       "Currency conversion": [
         "通貨レート"
       ]
@@ -12561,9 +12603,6 @@
       ]
     },
     "Storage": {
-      "Release notes": [
-        "更新情報"
-      ],
       "Upgrade storage": [
         "ストレージ容量を増やす"
       ],
@@ -12781,14 +12820,28 @@
       "Cancel subscription?": [
         "サブスクリプションをキャンセルしますか?"
       ],
+      "Close": [
+        "閉じる"
+      ],
       "Keep ${ planName }": [
         "${ planName } を使い続ける"
       ],
       "Priority support": [
         "優先サポート"
       ],
+      "Resubscribe": [
+        "再講読"
+      ],
       "Unlimited folders, labels and filters": [
         "制限なしのフォルダー、ラベル、フィルター"
+      ]
+    },
+    "subscription reminder": {
+      "Desktop app": [
+        "デスクトップアプリ"
+      ],
+      "Upgrade": [
+        "アップグレード"
       ]
     },
     "Subscription renewal state": {
@@ -13567,6 +13620,9 @@
       "Delete version history?": [
         "バージョン履歴を削除しますか？"
       ],
+      "Details": [
+        "詳細"
+      ],
       "Disable ${ email }": [
         "${ email } を無効化"
       ],
@@ -13842,6 +13898,9 @@
       ],
       "No recovery method": [
         "回復手段がありません"
+      ],
+      "Open": [
+        "開く"
       ],
       "Open actions dropdown": [
         "アクションのドロップダウンを開く"
@@ -14160,9 +14219,6 @@
       ],
       "What would you like to import?": [
         "何をインポートしたいですか?"
-      ],
-      "What's new": [
-        "更新情報"
       ],
       "WireGuard configuration": [
         "WireGuard 設定ファイル"
