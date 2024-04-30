@@ -40,6 +40,7 @@ import {
     useApi,
     useAuthentication,
     useConfig,
+    useCustomDomains,
     useGetAddresses,
     useModals,
     useNotifications,
@@ -75,6 +76,7 @@ const OrganizationSection = ({ app, organization }: Props) => {
     const [user] = useUser();
     const getAddresses = useGetAddresses();
     const api = useApi();
+    const [customDomains] = useCustomDomains();
     const [subscription] = useSubscription();
     const appLink = useAppLink();
     const [loading, withLoading] = useLoading();
@@ -92,7 +94,7 @@ const OrganizationSection = ({ app, organization }: Props) => {
     const organizationTheme = useOrganizationTheme();
     const canAccessLightLabelling = organizationTheme.access;
 
-    if (!organization || !user || !subscription) {
+    if (!organization || !user || !subscription || !customDomains) {
         return <Loader />;
     }
 
@@ -121,7 +123,7 @@ const OrganizationSection = ({ app, organization }: Props) => {
         );
     }
 
-    if (organization.RequiresDomain && organization.UsedDomains === 0) {
+    if (organization.RequiresDomain && customDomains.length === 0) {
         return (
             <>
                 <SettingsParagraph>
