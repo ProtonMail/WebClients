@@ -638,10 +638,10 @@
         "Salvar alterações"
       ],
       "Scan & Download": [
-        "Escanear e baixar"
+        "Escanear e Baixar"
       ],
       "Scan & Download (${ count })": [
-        "Escanear e baixar (${ count })"
+        "Escanear e Baixar (${ count })"
       ],
       "Scan & Download all": [
         "Escanear e Baixar tudo"
@@ -2774,9 +2774,6 @@
       "You have reached the contacts limit for your account": [
         "Você atingiu o limite de contatos da sua conta"
       ],
-      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
-        "Você atingiu o número máximo de calendários pessoais. Alguns calendários não puderam ser importados."
-      ],
       "You must set a name": [
         "Você deve especificar um nome"
       ],
@@ -4106,7 +4103,7 @@
         "E-mails são assinados automaticamente"
       ],
       "Empty folder": [
-        "A pasta está vazia"
+        "Pasta vazia"
       ],
       "Enabling drive search": [
         "Ativando pesquisa de drive"
@@ -4176,13 +4173,13 @@
         "Arquivo está sem assinatura. Não pudemos verificar quem enviou ${ fileName }."
       ],
       "File scanning in Drive": [
-        "Arquivo escaneando no Drive"
+        "Verificação de arquivos no Drive"
       ],
       "File will not be updated": [
         "O arquivo não será atualizado"
       ],
       "Files and folders that others shared with you will appear here": [
-        "Arquivos e pastas que outros compartilhem com você aparecerão aqui"
+        "Arquivos e pastas que outras pessoas compartilharam com você aparecerão aqui"
       ],
       "Finalizing": [
         "Finalizando"
@@ -4381,8 +4378,8 @@
         "Logotipo do MasterCard SecureCode"
       ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
-        "Máximo ${ MAX_SHARED_URL_PASSWORD_LENGTH } carácter",
-        "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } caracteres"
+        "Máximo de ${ MAX_SHARED_URL_PASSWORD_LENGTH } caractere",
+        "Máximo de ${ MAX_SHARED_URL_PASSWORD_LENGTH } caracteres"
       ],
       "Medium Priority": [
         "Média prioridade"
@@ -4421,7 +4418,7 @@
         "Não"
       ],
       "No changes made to the current subscription": [
-        "Nenhuma alteração feita à assinatura atual"
+        "Nenhuma alteração feita na assinatura atual"
       ],
       "No contacts added yet": [
         "Nenhum contato foi adicionado ainda"
@@ -4495,9 +4492,6 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Os pagamentos são protegidos com criptografia TLS e leis de privacidade Suíças."
-      ],
-      "Pending": [
-        "Pendente"
       ],
       "Permanently delete all files in your locked drive": [
         "Excluir permanentemente todos os arquivos no seu drive bloqueado"
@@ -4694,7 +4688,7 @@
         "Compartilhar arquivos com links"
       ],
       "Share via link settings": [
-        "Configurações do compartilhamento por link"
+        "Compartilhar por meio de configurações de link"
       ],
       "Share with": [
         "Compartilhar com"
@@ -4775,7 +4769,7 @@
         "Os dados criptografados são levemente maiores devido à sobrecarga da criptografia e assinaturas, que garantem a segurança dos seus dados."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
-        "As informações expostas vazaram de um serviço de terceiros. As informações da sua Conta ${ BRAND_NAME } permanecem seguras e criptografadas. ${ learnMoreLink }"
+        "As informações expostas vazaram de um serviço de terceiros. As informações da sua conta ${ BRAND_NAME } permanecem seguras e criptografadas. ${ learnMoreLink }"
       ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Os seguintes podem ter sido adulterados: ${ items }. Abra apenas se você confiar."
@@ -4790,7 +4784,7 @@
         "Há arquivos que ainda precisam ser transferidos. Fechar o gerenciador de transferência encerrará todas as operações."
       ],
       "There is nothing to see here": [
-        "Não há nada aqui"
+        "Não há nada para ver aqui"
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Este endereço está desativado. Para poder enviar para este endereço, o proprietário deve primeiro ativar o endereço."
@@ -5010,7 +5004,7 @@
         "Vamos redirecioná-lo para o PayPal em uma nova guia do navegador para concluir esta transação. Desative qualquer bloqueador de pop-ups que estiver usando."
       ],
       "We'll email you once import is complete.": [
-        "Lhe enviaremos um e-mail assim que a importação estiver concluída."
+        "Enviaremos um e-mail para você assim que a importação for concluída."
       ],
       "We'll notify you when the import is done.": [
         "Nós te avisaremos quando a importação estiver concluída."
@@ -5100,10 +5094,10 @@
         "Você tem ${ expiresInDays } dias restantes para reivindicar seu bônus de boas-vindas de 3 GB e "
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
-        "Você tem uma assinatura de avaliação ${ planTitle }. Se quer continuar a sua assinatura após o período de avaliação, adicione um método de pagamento."
+        "Você tem uma assinatura de avaliação do ${ planTitle }. Se deseja continuar com sua assinatura após o período de avaliação, adicione uma forma de pagamento."
       ],
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
-        "Você tem uma assinatura de avaliação ${ planTitle }. Nenhum pagamento é necessário no momento. Sua assinatura será renovada automaticamente ao final do período de avaliação."
+        "Você tem uma assinatura de avaliação do ${ planTitle }. Nenhum pagamento é necessário no momento. Sua assinatura será renovada automaticamente ao final do período de avaliação."
       ],
       "You may be redirected to your bank’s website.": [
         "Você pode ser redirecionado para o site do seu banco."
@@ -5178,7 +5172,7 @@
         "Seus arquivos serão criptografados e depois salvos."
       ],
       "Your information was found on ${ displayedDate }": [
-        "Sua inconformação foi encontrada em ${ displayedDate }"
+        "Sua informação foi encontrada em ${ displayedDate }"
       ],
       "Your login information will not be saved after the import is completed.": [
         "Suas informações de início de sessão não serão salvas após a importação ser concluída."
@@ -5733,7 +5727,7 @@
         "Definir data de vencimento"
       ],
       "Set link password": [
-        "Configurar senha de link"
+        "Definir senha do link"
       ],
       "Set recovery method": [
         "Definir método de recuperação"
@@ -5768,6 +5762,9 @@
       "Stolen data": [
         "Dados roubados"
       ],
+      "Stop sharing": [
+        "Parar de compartilhar"
+      ],
       "Street address": [
         "Endereço"
       ],
@@ -5784,7 +5781,7 @@
         "Tema"
       ],
       "This file is potentially infected": [
-        "Esse arquivo é potencialmente infectado"
+        "Esse arquivo está potencialmente infectado"
       ],
       "This will permanently delete all files in your locked drive.": [
         "Isso irá excluir permanentemente todos os arquivos em sua unidade bloqueada."
@@ -6063,7 +6060,7 @@
         "Oferta por tempo limitado, expira em 2 de abril de 2024"
       ],
       "Your subscription will auto-renew on ${ renewTime } at ${ renewablePrice }, cancel anytime": [
-        "Sua assinatura irá se autorrenovar em ${ renewTime } por ${ renewablePrice }, cancele a qualquer momento"
+        "Sua assinatura irá se autor renovar em ${ renewTime } por ${ renewablePrice }, cancele a qualquer momento"
       ]
     },
     "mailtrial2024: Title": {
@@ -6441,13 +6438,13 @@
         "Console de administração"
       ],
       "Administration Panel": [
-        "Painel de administração"
+        "Painel de Administração"
       ],
       "Advanced sharing security": [
         "Segurança avançada de compartilhamento"
       ],
       "Auto-delete Spam and Trash": [
-        "Exclusão automática de pasta de spam e lixeira"
+        "Excluir conteúdo de Spam e Lixeira de forma automática"
       ],
       "Auto-delete spam and trashed messages": [
         "Excluir automaticamente spam e mensagens da lixeira"
@@ -6599,7 +6596,7 @@
         "Suporte a roteador"
       ],
       "Schedule and snooze emails for any time": [
-        "Agendar e adiar e-mails para quando você quiser"
+        "Programe e adie e-mails para qualquer momento"
       ],
       "Schedule messages at any time": [
         "Agende mensagens a qualquer momento"
@@ -6736,7 +6733,7 @@
         "Segurança de rede avançada e gerenciamento de acesso com Gateways seguros dedicados"
       ],
       "Advanced protection for teams that goes beyond industry standards.": [
-        "Proteção avançada para sua equipe que vai além dos padrões da indústria."
+        "Proteção avançada para equipes que vai além dos padrões da indústria."
       ],
       "All ${ BRAND_NAME } apps and their premium features": [
         "Todos os aplicativos da ${ BRAND_NAME } e as suas funcionalidades premium"
@@ -6858,7 +6855,7 @@
         "Permite que você configure respostas automáticas para suas mensagens recebidas"
       ],
       "Automatically clear out messages older than 30 days from Trash and Spam": [
-        "Limpar automaticamente as mensagens com mais de 30 dias da lixeira e do spam"
+        "Limpar automaticamente mensagens com mais de 30 dias da Lixeira e do Spam"
       ],
       "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
         "Encaminhe automaticamente os e-mails enviados para sua conta do ${ MAIL_APP_NAME } para qualquer outro endereço de e-mail."
@@ -6913,7 +6910,7 @@
         "Marcadores são tags simples que podem ser adicionadas a mensagens para que fique mais fácil encontrá-las ou aplicar filtros a elas"
       ],
       "Like a folder, a vault is a convenient way to organize your items": [
-        "Como uma pasta, um cofre é uma maneira conveniente de organizar seus itens."
+        "Como uma pasta, um cofre é uma maneira conveniente de organizar seus itens"
       ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
         "Bloqueie os recursos da sua empresa da Internet pública e torne-os acessíveis apenas através de seus gateways privados"
@@ -7214,7 +7211,7 @@
         "Pesquisa criptografada ativada"
       ],
       "Failed to accept share invitation": [
-        "Falha em aceitar o convite de compartilhamento"
+        "Falha ao aceitar convite de compartilhamento"
       ],
       "Failed to download files: ${ err }": [
         "Erro ao baixar arquivos: ${ err }"
@@ -7263,10 +7260,10 @@
         "Erro ao carregar a pasta raiz"
       ],
       "Share invitation accepted successfully": [
-        "Convite de compartilhamento aceito"
+        "Convite de compartilhamento aceito com sucesso"
       ],
       "Share invitation ID was not found. Please check the link": [
-        "ID do convite de compartilhamento não encontrada. Verifique o link"
+        "O ID do convite de compartilhamento não foi encontrado. Por favor, verifique o link"
       ],
       "Subfolder failed to be loaded": [
         "Não foi possível carregar a subpasta."
@@ -8168,9 +8165,6 @@
       "Get more storage": [
         "Obter mais armazenamento"
       ],
-      "Release notes": [
-        "Notas de lançamento"
-      ],
       "Upgrade storage": [
         "Ampliar armazenamento"
       ],
@@ -8274,10 +8268,10 @@
         "Cobrança a cada 15 meses"
       ],
       "Billed for 18 months": [
-        "Cobrança a cada 18 meses"
+        "Cobrado por 18 meses"
       ],
       "Billed for 3 months": [
-        "Cobrança a cada 3 meses"
+        "Cobrado por 3 meses"
       ],
       "Billed for 30 months": [
         "Cobrança a cada 30 meses"
@@ -8337,6 +8331,44 @@
     "Subscription price": {
       "For": [
         "Por"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "Armazenamento de 15 GB"
+      ],
+      "and 15 more premium features": [
+        "e mais 15 recursos premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Encaminhamento de e-mail automático ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertas de violações de dados ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicativo para computador"
+      ],
+      "No ads or tracking": [
+        "Sem anúncios ou rastreamento"
+      ],
+      "Short @pm.me email address": [
+        "Endereço de e-mail curto @pm.me"
+      ],
+      "Support our mission": [
+        "Apoie nossa missão"
+      ],
+      "Upgrade": [
+        "Fazer upgrade"
+      ],
+      "Upgrade your productivity": [
+        "Atualize sua produtividade"
+      ],
+      "We don't sell your data": [
+        "Não vendemos seus dados"
+      ],
+      "Your privacy is our mission": [
+        "Sua privacidade é a nossa missão"
       ]
     },
     "Subscription renewal state": {
@@ -9174,9 +9206,6 @@
       "What would you like to import?": [
         "O que você gostaria de importar?"
       ],
-      "What's new": [
-        "Novidades"
-      ],
       "You have inaccessible files": [
         "Você tem arquivos inacessíveis"
       ],
@@ -9353,13 +9382,13 @@
     },
     "vpn_2024: renew": {
       "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
-        "A assinatura se renova automaticamente todo mês. Sua próxima data de cobrança será em 1 mês."
+        "A assinatura é renovada automaticamente a cada 1 mês. Sua próxima data de faturamento será em 1 mês."
       ],
       "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
         "A assinatura é renovada automaticamente a cada 3 meses. Sua próxima data de faturamento será em 3 meses."
       ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
-        "Você então será cobrado ${ renewPrice } a cada 12 meses."
+        "Você será cobrado a cada 12 meses no valor de ${ renewPrice }."
       ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Sua assinatura será renovada automaticamente em ${ cycle } mês.",

@@ -2780,9 +2780,6 @@
       "You have reached the contacts limit for your account": [
         "Du hast das Kontaktlimit für dein Konto erreicht."
       ],
-      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
-        "Du hast die maximale Anzahl von Kalendern erreicht, die du in deinem Abonnement erstellen kannst. Einige Kalender konnten nicht importiert werden."
-      ],
       "You must set a name": [
         "Du musst einen Namen eingeben"
       ],
@@ -4478,6 +4475,9 @@
         "Es ist höchstens ${ MAX_CUSTOM_PASSWORD_LENGTH } Zeichen erlaubt",
         "Es sind höchstens ${ MAX_CUSTOM_PASSWORD_LENGTH } Zeichen erlaubt"
       ],
+      "Only the owner of the share will be able to invite you again.": [
+        "Nur der Eigentümer der Freigabe kann dich erneut einladen."
+      ],
       "Only the people with the link and the password can access this file.": [
         "Nur die Personen mit dem Link und dem Passwort können auf diese Datei zugreifen."
       ],
@@ -4501,9 +4501,6 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Zahlungen sind durch TLS-Verschlüsselung und Schweizer Datenschutzgesetze geschützt."
-      ],
-      "Pending": [
-        "Ausstehend"
       ],
       "Permanently delete all files in your locked drive": [
         "Alle Dateien auf dem gesperrten Laufwerk dauerhaft löschen"
@@ -7249,6 +7246,12 @@
       "${ reason } has been enabled": [
         "${ reason } wurde aktiviert."
       ],
+      "Access for the member removed": [
+        "Zugang für das Mitglied entfernt"
+      ],
+      "Access updated and shared": [
+        "Zugang aktualisiert und geteilt"
+      ],
       "All items will soon be permanently deleted from trash": [
         "Alle Elemente werden demnächst dauerhaft aus dem Papierkorb gelöscht"
       ],
@@ -7307,6 +7310,9 @@
       "File removed": [
         "Datei entfernt"
       ],
+      "Invitation removed from the share": [
+        "Einladung aus der Freigabe entfernt"
+      ],
       "Link copied to clipboard": [
         "Link in die Zwischenablage kopiert"
       ],
@@ -7333,6 +7339,9 @@
       ],
       "Share invitation ID was not found. Please check the link": [
         "Die ID der Einladung zur gemeinsamen Nutzung wurde nicht gefunden. Bitte überprüfe den Link"
+      ],
+      "Stopping to share this item has failed": [
+        "Das Beenden der Freigabe dieses Artikels ist fehlgeschlagen"
       ],
       "Subfolder failed to be loaded": [
         "Unterordner konnte nicht geladen werden"
@@ -7797,6 +7806,9 @@
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel ist **aktiv** und schützt dein Konto."
+      ],
+      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLink }": [
+        "Deine Informationen wurden bei mindestens einem Datenleck gefunden. Schalte ${ DARK_WEB_MONITORING_NAME } ein, um Details anzuzeigen und Maßnahmen zu ergreifen. ${ learnMoreLink }"
       ]
     },
     "Select files": {
@@ -8230,9 +8242,6 @@
     "Storage": {
       "Get more storage": [
         "Mehr Speicherplatz erhalten"
-      ],
-      "Release notes": [
-        "Versionshinweise"
       ],
       "Upgrade storage": [
         "Mehr Speicher hinzufügen"
@@ -9256,9 +9265,6 @@
       ],
       "What would you like to import?": [
         "Was möchtest du importieren?"
-      ],
-      "What's new": [
-        "Neuigkeiten"
       ],
       "You have inaccessible files": [
         "Auf einige Dateien kann nicht zugegriffen werden"
