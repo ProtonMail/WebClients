@@ -1,0 +1,11 @@
+@import '~@proton/styles/scss/lib';
+
+.pass-monitor-grid {
+	display: flex;
+	flex-direction: column;
+
+	@include media('>large') {
+		display: grid !important;
+		grid-template-columns: 1fr 1fr;
+	}
+}

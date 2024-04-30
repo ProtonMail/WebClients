@@ -7,6 +7,7 @@ import { ClientProvider } from 'proton-pass-web/app/Context/ClientProvider';
 import { StoreProvider } from 'proton-pass-web/app/Store/StoreProvider';
 import { store } from 'proton-pass-web/app/Store/store';
 import { logStore } from 'proton-pass-web/lib/logger';
+import { monitor } from 'proton-pass-web/lib/monitor';
 import { onboarding } from 'proton-pass-web/lib/onboarding';
 import { telemetry } from 'proton-pass-web/lib/telemetry';
 
@@ -57,6 +58,7 @@ export const getPassCoreProps = (): PassCoreProviderProps => ({
     config: PASS_CONFIG,
     endpoint: 'desktop',
     i18n: i18n,
+    monitor,
 
     exportData: async (options) => {
         const state = store.getState();

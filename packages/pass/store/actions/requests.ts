@@ -14,6 +14,7 @@ export const itemsBulkMoveRequest = () => `items::bulk::move`;
 export const itemsBulkTrashRequest = () => `items::bulk::trash`;
 export const itemsBulkDeleteRequest = () => `items::bulk::delete`;
 export const itemsBulkRestoreRequest = () => `items::bulk::restore`;
+export const itemUpdateFlagsRequest = (shareId: string, itemId: string) => `item::flags::update${shareId + itemId}`;
 
 export const vaultCreateRequest = (optimisticId: string) => `vault::create::${optimisticId}`;
 export const vaultEditRequest = (shareId: string) => `vault::edit::${shareId}`;
@@ -54,3 +55,22 @@ export const reportBugRequest = (id: string) => `report::bug::${id}`;
 
 export const organizationSettingsRequest = () => `organization::settings::get`;
 export const organizationSettingsEditRequest = () => `organization::settings::edit`;
+
+export const sentinelToggleRequest = () => `monitor::sentinel::toggle`;
+
+export const breachesRequest = () => `monitor::breaches`;
+export const protonBreachRequest = (addressId: string) => `monitor::breaches::proton::${addressId}`;
+export const customBreachRequest = (addressId: string) => `monitor::breaches::custom::${addressId}`;
+export const aliasBreachRequest = (shareId: string, itemId: string) => `monitor::breaches::alias::${shareId + itemId}`;
+
+export const addCustomAddressRequest = (email: string) => `monitor::add::custom::${email}`;
+export const verifyCustomAddressRequest = (addressId: string) => `monitor::verify::custom::${addressId}`;
+export const deleteCustomAddressRequest = (email: string) => `monitor::delete::custom::${email}`;
+export const resendCustomAddressCodeRequest = (addressId: string) => `monitor::verify::custom::resend::${addressId}`;
+
+export const toggleMonitorRequest = () => `monitor::global::toggle`;
+export const toggleAddressMonitorRequest = (addressId: string) => `monitor::toggle::address::${addressId}`;
+
+export const protonResolveRequest = (addressId: string) => `monitor::resolve::proton::${addressId}`;
+export const customResolveRequest = (addressId: string) => `monitor::resolve::custom::${addressId}`;
+export const aliasResolveRequest = (shareId: string, itemId: string) => `monitor::resolve::alias::${shareId + itemId}`;

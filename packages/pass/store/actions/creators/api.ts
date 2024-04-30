@@ -1,8 +1,8 @@
 import { createAction } from '@reduxjs/toolkit';
 
 import { withCache } from '@proton/pass/store/actions/enhancers/cache';
-import { withRequestSuccess } from '@proton/pass/store/actions/enhancers/request';
 import { withSettings } from '@proton/pass/store/actions/enhancers/settings';
+import { withRequestSuccess } from '@proton/pass/store/request/enhancers';
 import type { ShareEventResponse } from '@proton/pass/store/sagas/events/channel.share';
 import type { UserEvent } from '@proton/pass/types/api';
 import { pipe } from '@proton/pass/utils/fp/pipe';

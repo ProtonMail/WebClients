@@ -3,7 +3,7 @@ import { createSelector } from '@reduxjs/toolkit';
 import { sortItems } from '@proton/pass/lib/items/item.utils';
 import { PlanType } from '@proton/pass/types';
 
-import { selectItemsByType } from './items';
+import { selectAliasItems, selectLoginItems } from './items';
 import { selectAllVaults } from './shares';
 import { selectUserPlan } from './user';
 
@@ -18,7 +18,7 @@ export const selectVaultLimits = createSelector([selectAllVaults, selectUserPlan
     };
 });
 
-export const selectAliasLimits = createSelector([selectItemsByType('alias'), selectUserPlan], (alias, plan) => {
+export const selectAliasLimits = createSelector([selectAliasItems, selectUserPlan], (alias, plan) => {
     const aliasLimit = plan?.AliasLimit ?? Number.MAX_SAFE_INTEGER;
 
     return {
@@ -30,7 +30,7 @@ export const selectAliasLimits = createSelector([selectItemsByType('alias'), sel
     };
 });
 
-export const selectTOTPLimits = createSelector([selectItemsByType('login'), selectUserPlan], (loginItems, plan) => {
+export const selectTOTPLimits = createSelector([selectLoginItems, selectUserPlan], (loginItems, plan) => {
     const totpLimit = plan?.TotpLimit;
     let needsUpgrade = false;
     let didDowngrade = false;

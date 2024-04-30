@@ -10,12 +10,14 @@ import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal'
 import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
 import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
 import { useOrganization } from '@proton/pass/components/Organization/OrganizationProvider';
-import type { RequestEntryFromAction } from '@proton/pass/hooks/useActionRequest';
 import { useActionRequest } from '@proton/pass/hooks/useActionRequest';
 import { useValidateInviteAddresses } from '@proton/pass/hooks/useValidateInviteAddress';
 import { validateShareInviteValues } from '@proton/pass/lib/validation/vault-invite';
-import type { inviteBatchCreateSuccess } from '@proton/pass/store/actions';
-import { inviteBatchCreateIntent } from '@proton/pass/store/actions';
+import {
+    type inviteBatchCreateFailure,
+    inviteBatchCreateIntent,
+    type inviteBatchCreateSuccess,
+} from '@proton/pass/store/actions';
 import type { VaultShareItem } from '@proton/pass/store/reducers';
 import { selectDefaultVault } from '@proton/pass/store/selectors';
 import { BitField, type Callback, type InviteFormValues, type SelectedItem } from '@proton/pass/types';
@@ -44,9 +46,12 @@ export const VaultInviteCreate: FC<VaultInviteCreateProps> = (props) => {
     const validateAddresses = org?.settings.ShareMode === BitField.ACTIVE;
     const emailFieldRef = useRef<HTMLInputElement>(null);
 
-    const createInvite = useActionRequest({
-        action: inviteBatchCreateIntent,
-        onSuccess: (req: RequestEntryFromAction<ReturnType<typeof inviteBatchCreateSuccess>>) => {
+    const createInvite = useActionRequest<
+        typeof inviteBatchCreateIntent,
+        typeof inviteBatchCreateSuccess,
+        typeof inviteBatchCreateFailure
+    >(inviteBatchCreateIntent, {
+        onSuccess: (req) => {
             const { shareId } = req.data;
             if (props.withVaultCreation) props.onVaultCreated?.(shareId);
             manageAccess(shareId);

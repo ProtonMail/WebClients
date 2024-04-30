@@ -1,5 +1,5 @@
 import { generateTOTPCode } from '@proton/pass/lib/otp/otp';
-import { selectAutofillCandidates, selectItemByShareIdAndId } from '@proton/pass/store/selectors';
+import { selectAutofillCandidates, selectItem } from '@proton/pass/store/selectors';
 import type { Maybe, OtpRequest, WorkerMessageResponse } from '@proton/pass/types';
 import { type OtpCode, WorkerMessageType } from '@proton/pass/types';
 import { withPayload } from '@proton/pass/utils/fp/lens';
@@ -26,7 +26,7 @@ export const createOTPService = () => {
                 if (payload.type === 'uri') return payload.totpUri;
                 if (payload.type === 'item') {
                     const { shareId, itemId } = payload.item;
-                    const item = selectItemByShareIdAndId(shareId, itemId)(store.getState());
+                    const item = selectItem(shareId, itemId)(store.getState());
                     if (item?.data.type === 'login') return deobfuscate(item.data.content.totpUri);
                 }
             })();

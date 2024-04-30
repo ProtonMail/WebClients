@@ -85,6 +85,8 @@ export type ItemRevision<T extends ItemType = ItemType> = Omit<OpenedItem, 'cont
     shareId: string;
 };
 
+export type LoginItem = ItemRevision<'login'>;
+
 export type ItemRevisionID = ItemIDRevision2;
 
 export type UnsafeItemRevision<T extends ItemType = ItemType> = Deobfuscate<ItemRevision<T>>;

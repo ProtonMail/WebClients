@@ -6,18 +6,18 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { Icon } from '@proton/components/index';
-import { InfoCard } from '@proton/pass/components/Layout/Card/InfoCard';
+import { CardContent } from '@proton/pass/components/Layout/Card/CardContent';
 import { ItemHistoryPanel } from '@proton/pass/components/Layout/Panel/ItemHistoryPanel';
 import { Timeline } from '@proton/pass/components/Layout/Timeline/Timeline';
+import { useItemRoute } from '@proton/pass/components/Navigation/ItemSwitch';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
 import { epochToRelativeDate } from '@proton/pass/utils/time/format';
 
 import { useItemHistory } from './ItemHistoryProvider';
 import { RevisionItem } from './RevisionItem';
 
-import './RevisionsTimeline.scss';
-
 export const RevisionsTimeline: FC<RouteChildrenProps> = ({ location }) => {
+    const { prefix } = useItemRoute();
     const { selectItem, navigate, matchTrash } = useNavigation();
     const { item, loading, more, revisions, loadMore } = useItemHistory();
     const { shareId, itemId } = item;
@@ -35,7 +35,7 @@ export const RevisionsTimeline: FC<RouteChildrenProps> = ({ location }) => {
                         shape="solid"
                         color="weak"
                         className="shrink-0"
-                        onClick={() => selectItem(shareId, itemId, { inTrash: matchTrash })}
+                        onClick={() => selectItem(shareId, itemId, { inTrash: matchTrash, prefix })}
                         title={c('Action').t`Close`}
                     >
                         <Icon name="cross" alt={c('Action').t`Close`} />
@@ -60,10 +60,11 @@ export const RevisionsTimeline: FC<RouteChildrenProps> = ({ location }) => {
                 return (
                     <>
                         {current.data.type === 'login' && (
-                            <InfoCard
+                            <CardContent
                                 icon="magic-wand"
                                 className="mb-3"
                                 title={c('Title').t`Last autofill`}
+                                ellipsis
                                 subtitle={
                                     // translator: when this login was last used
                                     current.lastUseTime ? epochToRelativeDate(current.lastUseTime) : c('Info').t`Never`
@@ -76,6 +77,7 @@ export const RevisionsTimeline: FC<RouteChildrenProps> = ({ location }) => {
                                 icon="clock"
                                 title={c('Title').t`Current version`}
                                 subtitle={epochToRelativeDate(current.revisionTime)}
+                                ellipsis
                             />
 
                             {history.map((item) => (
@@ -85,6 +87,7 @@ export const RevisionsTimeline: FC<RouteChildrenProps> = ({ location }) => {
                                     icon={item.revision === 1 ? 'bolt' : 'pencil'}
                                     title={item.revision === 1 ? c('Title').t`Created` : c('Title').t`Modified`}
                                     subtitle={epochToRelativeDate(item.revisionTime)}
+                                    ellipsis
                                 />
                             ))}
                         </Timeline>

@@ -101,7 +101,7 @@ export const AliasModal = <T extends AliasFormValues>({
                 }
             >
                 {needsUpgrade && (
-                    <Card>
+                    <Card className="text-sm" type="primary">
                         {c('Info')
                             .t`You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.`}
                     </Card>

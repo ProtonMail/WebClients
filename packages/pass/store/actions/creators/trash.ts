@@ -3,19 +3,19 @@ import { c } from 'ttag';
 
 import { withCache } from '@proton/pass/store/actions/enhancers/cache';
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
+import { trashEmptyRequest, trashRestoreRequest } from '@proton/pass/store/actions/requests';
 import {
     withRequest,
     withRequestFailure,
     withRequestProgress,
     withRequestSuccess,
-} from '@proton/pass/store/actions/enhancers/request';
-import { trashEmptyRequest, trashRestoreRequest } from '@proton/pass/store/actions/requests';
+} from '@proton/pass/store/request/enhancers';
 import type { BatchItemRevisionIDs } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 
 export const emptyTrashIntent = createAction('trash::empty::intent', () =>
     pipe(
-        withRequest({ type: 'start', id: trashEmptyRequest() }),
+        withRequest({ status: 'start', id: trashEmptyRequest() }),
         withNotification({
             type: 'info',
             text: c('Info').t`Emptying trash...`,
@@ -55,7 +55,7 @@ export const emptyTrashSuccess = createAction(
 
 export const restoreTrashIntent = createAction('trash::restore::intent', () =>
     pipe(
-        withRequest({ type: 'start', id: trashRestoreRequest() }),
+        withRequest({ status: 'start', id: trashRestoreRequest() }),
         withNotification({
             type: 'info',
             text: c('Info').t`Restoring trashed items...`,

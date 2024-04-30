@@ -61,7 +61,7 @@ export const VaultMove: FC<Props> = ({ vault, onClose }) => {
                             submitText={c('Action').t`Move all items`}
                             title={c('Title').t`Move all items ?`}
                         >
-                            <Card className="mb-2">{c('Info')
+                            <Card className="mb-2 text-sm" type="primary">{c('Info')
                                 .t`Moving an item to another vault will erase its history`}</Card>
                             <Alert className="mb-4" type="info">
                                 {

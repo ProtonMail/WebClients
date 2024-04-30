@@ -8,7 +8,7 @@ import {
     getOrganizationSettingsIntent,
     organizationSettingsEditIntent,
 } from '@proton/pass/store/actions/creators/organization';
-import { withRevalidate } from '@proton/pass/store/actions/enhancers/request';
+import { withRevalidate } from '@proton/pass/store/request/enhancers';
 import { selectOrganizationState, selectPassPlan, selectUser } from '@proton/pass/store/selectors';
 import type { MaybeNull } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';

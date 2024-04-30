@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 
 import { useClient } from 'proton-pass-web/app/Context/ClientProvider';
+import { Monitor } from 'proton-pass-web/app/Views/Monitor/Monitor';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
@@ -17,6 +18,8 @@ import { ItemsList } from '@proton/pass/components/Item/List/ItemsList';
 import { Content } from '@proton/pass/components/Layout/Section/Content';
 import { Sidebar } from '@proton/pass/components/Layout/Section/Sidebar';
 import { SubSidebar } from '@proton/pass/components/Layout/Section/SubSidebar';
+import { MonitorProvider } from '@proton/pass/components/Monitor/MonitorProvider';
+import { Autoselect } from '@proton/pass/components/Navigation/Autoselect';
 import { ItemSwitch } from '@proton/pass/components/Navigation/ItemSwitch';
 import { OnboardingProvider } from '@proton/pass/components/Onboarding/OnboardingProvider';
 import { OrganizationProvider } from '@proton/pass/components/Organization/OrganizationProvider';
@@ -72,6 +75,7 @@ const MainSwitch: FC = () => {
                         <main id="main" className="content flex-1 overflow-hidden">
                             <div className="flex flex-nowrap flex-column h-full">
                                 <Header hamburger={<Hamburger expanded={expanded} onToggle={toggle} />} />
+
                                 <div className="flex items-center justify-center flex-nowrap w-full h-full">
                                     {route.match && (
                                         <Switch>
@@ -80,6 +84,7 @@ const MainSwitch: FC = () => {
                                                 path={`${route.match.path}/onboarding`}
                                                 component={Onboarding}
                                             />
+                                            <Route path={`${route.match.path}/monitor`} component={Monitor} />
                                             <Route exact path={`${route.match.path}/settings`} component={Settings} />
                                             <Route>
                                                 {(subRoute) => (
@@ -88,7 +93,7 @@ const MainSwitch: FC = () => {
                                                             <ItemsList />
                                                         </SubSidebar>
                                                         <Content>
-                                                            <ItemSwitch {...subRoute} />
+                                                            <ItemSwitch fallback={Autoselect} {...subRoute} />
                                                         </Content>
                                                     </>
                                                 )}
@@ -116,7 +121,9 @@ export const Main: FC = () => (
                             <PasswordProvider>
                                 <SpotlightProvider>
                                     <OnboardingProvider>
-                                        <MainSwitch />
+                                        <MonitorProvider>
+                                            <MainSwitch />
+                                        </MonitorProvider>
                                     </OnboardingProvider>
                                 </SpotlightProvider>
                             </PasswordProvider>

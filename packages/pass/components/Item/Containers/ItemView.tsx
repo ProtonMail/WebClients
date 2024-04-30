@@ -9,10 +9,12 @@ import { CreditCardView } from '@proton/pass/components/Item/CreditCard/CreditCa
 import { useItemsActions } from '@proton/pass/components/Item/ItemActionsProvider';
 import { LoginView } from '@proton/pass/components/Item/Login/Login.view';
 import { NoteView } from '@proton/pass/components/Item/Note/Note.view';
+import { useItemRoute } from '@proton/pass/components/Navigation/ItemSwitch';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
-import { getItemRoute, getLocalPath, maybeTrash } from '@proton/pass/components/Navigation/routing';
+import { getItemRoute, getLocalPath, maybeTrash, subPath } from '@proton/pass/components/Navigation/routing';
 import { VaultSelectMode } from '@proton/pass/components/Vault/VaultSelect';
 import type { ItemViewProps } from '@proton/pass/components/Views/types';
+import { isMonitored } from '@proton/pass/lib/items/item.predicates';
 import { getItemActionId } from '@proton/pass/lib/items/item.utils';
 import {
     itemCreationDismiss,
@@ -21,12 +23,13 @@ import {
     itemEditIntent,
     itemPinIntent,
     itemUnpinIntent,
+    setItemFlags,
 } from '@proton/pass/store/actions';
 import selectFailedAction from '@proton/pass/store/optimistic/selectors/select-failed-action';
 import {
-    selectByShareId,
+    selectIsOptimisticId,
     selectItemWithOptimistic,
-    selectResolvedOptimisticId,
+    selectItemsState,
     selectShare,
 } from '@proton/pass/store/selectors';
 import type { ItemType, SelectedItem, ShareType } from '@proton/pass/types';
@@ -40,7 +43,8 @@ const itemTypeViewMap: { [T in ItemType]: FC<ItemViewProps<T>> } = {
 };
 
 export const ItemView: FC = () => {
-    const { selectItem, matchTrash, preserveSearch } = useNavigation();
+    const { prefix } = useItemRoute();
+    const { selectItem, matchTrash: inTrash, preserveSearch } = useNavigation();
     const inviteContext = useInviteContext();
     const itemActions = useItemsActions();
 
@@ -49,9 +53,9 @@ export const ItemView: FC = () => {
     const [inviteOpen, setInviteOpen] = useState(false);
 
     const optimisticItemId = getItemActionId({ itemId, shareId });
-    const optimisticResolved = useSelector(selectResolvedOptimisticId(itemId));
+    const optimisticResolved = useSelector(selectIsOptimisticId(itemId));
     const itemSelector = useMemo(() => selectItemWithOptimistic(shareId, itemId), [shareId, itemId]);
-    const failedItemActionSelector = pipe(selectByShareId, selectFailedAction(optimisticItemId));
+    const failedItemActionSelector = pipe(selectItemsState, selectFailedAction(optimisticItemId));
 
     const vault = useSelector(selectShare<ShareType.Vault>(shareId));
     const item = useSelector(itemSelector);
@@ -59,18 +63,19 @@ export const ItemView: FC = () => {
 
     /* if vault or item cannot be found : redirect to base path */
     if (!(vault && item)) {
-        const to = preserveSearch(getLocalPath(maybeTrash('', matchTrash)));
+        const base = maybeTrash('', inTrash);
+        const to = preserveSearch(getLocalPath(prefix ? subPath(prefix, base) : base));
         return <Redirect to={to} push={false} />;
     }
 
     /* if the item is optimistic and can be resolved to a non-optimistic item : replace */
     if (optimisticResolved) {
-        const to = preserveSearch(getItemRoute(shareId, item.itemId));
+        const to = preserveSearch(getItemRoute(shareId, item.itemId, { prefix }));
         return <Redirect to={to} push={false} />;
     }
 
-    const handleEdit = () => selectItem(shareId, itemId, { view: 'edit' });
-    const handleHistory = () => selectItem(shareId, itemId, { view: 'history', inTrash: matchTrash });
+    const handleEdit = () => selectItem(shareId, itemId, { view: 'edit', prefix });
+    const handleHistory = () => selectItem(shareId, itemId, { view: 'history', inTrash, prefix });
     const handleRetry = () => failure !== undefined && dispatch(failure.action);
     const handleTrash = () => itemActions.trash(item);
     const handleMove = () => itemActions.move(item, VaultSelectMode.Writable);
@@ -104,6 +109,11 @@ export const ItemView: FC = () => {
 
     const handlePinClick = () => dispatch((item.pinned ? itemUnpinIntent : itemPinIntent)({ shareId, itemId }));
 
+    const handleToggleFlags = () => {
+        const SkipHealthCheck = isMonitored(item);
+        dispatch(setItemFlags.intent({ shareId, itemId, SkipHealthCheck }));
+    };
+
     const ItemTypeViewComponent = itemTypeViewMap[item.data.type] as FC<ItemViewProps>;
 
     return (
@@ -112,17 +122,18 @@ export const ItemView: FC = () => {
                 key={item.itemId}
                 vault={vault}
                 revision={item}
+                handleDeleteClick={handleDelete}
+                handleDismissClick={handleDismiss}
                 handleEditClick={handleEdit}
                 handleHistoryClick={handleHistory}
-                handleRetryClick={handleRetry}
-                handleMoveToTrashClick={handleTrash}
-                handleMoveToVaultClick={handleMove}
-                handleDismissClick={handleDismiss}
-                handleRestoreClick={handleRestore}
-                handleDeleteClick={handleDelete}
                 handleInviteClick={handleInviteClick}
                 handleManageClick={handleVaultManage}
+                handleMoveToTrashClick={handleTrash}
+                handleMoveToVaultClick={handleMove}
                 handlePinClick={handlePinClick}
+                handleRestoreClick={handleRestore}
+                handleRetryClick={handleRetry}
+                handleToggleFlagsClick={handleToggleFlags}
             />
 
             <VaultInviteFromItemModal

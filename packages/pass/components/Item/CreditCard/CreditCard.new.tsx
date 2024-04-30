@@ -92,7 +92,7 @@ export const CreditCardNew: FC<ItemNewViewProps<'creditCard'>> = ({ shareId, onS
                 <FormikProvider value={form}>
                     <Form id={FORM_ID}>
                         {isFreePlan && (
-                            <Card className="mb-2">
+                            <Card className="mb-2 text-sm" type="primary">
                                 {c('Info')
                                     .t`You have reached the limit of credit cards you can create. Create an unlimited number of credit cards when you upgrade your subscription.`}
                             </Card>

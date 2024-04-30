@@ -5,7 +5,7 @@ import capitalize from '@proton/utils/capitalize';
 
 import { epochToMs } from './epoch';
 
-const formatEpoch = (dateFormat: string) => (epoch: number) =>
+export const formatEpoch = (dateFormat: string) => (epoch: number) =>
     `${format(epochToMs(epoch), dateFormat, { locale: dateLocale })}`;
 
 export const epochToDateTime = formatEpoch('dd MMM yyyy, HH:mm');

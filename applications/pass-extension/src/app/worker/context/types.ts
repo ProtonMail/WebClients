@@ -1,6 +1,6 @@
 import type { AuthService } from '@proton/pass/lib/auth/service';
 import type { AuthStore } from '@proton/pass/lib/auth/store';
-import type { PassCoreService } from '@proton/pass/lib/core/service';
+import type { PassCoreService } from '@proton/pass/lib/core/types';
 import type { AppState, AppStatus, MaybeNull } from '@proton/pass/types';
 
 import type { ActivationService } from '../services/activation';
@@ -14,6 +14,7 @@ import type { I18NService } from '../services/i18n';
 import type { ImportService } from '../services/import';
 import type { InjectionService } from '../services/injection';
 import type { LoggerService } from '../services/logger';
+import type { MonitorService } from '../services/monitor';
 import type { OnboardingService } from '../services/onboarding';
 import type { OTPService } from '../services/otp';
 import type { Passkeyservice } from '../services/passkey';
@@ -44,6 +45,7 @@ export interface WorkerContextInterface {
         import: ImportService;
         injection: InjectionService;
         logger: LoggerService;
+        monitor: MonitorService;
         onboarding: OnboardingService;
         otp: OTPService;
         passkey: Passkeyservice;

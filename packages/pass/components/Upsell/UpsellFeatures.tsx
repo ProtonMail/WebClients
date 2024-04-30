@@ -12,7 +12,9 @@ import clsx from '@proton/utils/clsx';
 import type { UpsellType } from './UpsellingModal';
 
 type Props = { upsellType: UpsellType };
-type UpsellFeature = { className: string; icon: IconName; key: string; label: string | string[] };
+type UpsellFeature = { key: UpsellFeatureName; className: string; icon: IconName; label: string | string[] };
+
+export type UpsellFeatureName = 'aliases' | '2FA' | 'logins' | 'sentinel';
 
 const PROTON_SENTINEL_LINK = (
     <a href={PASS_SENTINEL_LINK} target="_blank" key="sentinel-link">
@@ -40,7 +42,7 @@ const getFeatures = (): UpsellFeature[] => [
         label: c('Info').t`Share your logins, secure notes, with up to 10 people`,
     },
     {
-        key: 'protected',
+        key: 'sentinel',
         className: 'ui-lime',
         icon: 'list-bullets',
         label:
@@ -61,7 +63,7 @@ export const UpsellFeatures: FC<Props> = ({ upsellType }) => {
         >
             {/* We do not show aliases, and protected only for free-trial */}
             {features
-                .filter(({ key }) => !((key === 'aliases' || key === 'protected') && upsellType === 'free-trial'))
+                .filter(({ key }) => !((key === 'aliases' || key === 'sentinel') && upsellType === 'free-trial'))
                 .map(({ className, icon, label, key }, idx) => (
                     <div
                         className={clsx(
@@ -71,7 +73,7 @@ export const UpsellFeatures: FC<Props> = ({ upsellType }) => {
                         )}
                         key={key}
                     >
-                        <Icon color="var(--interaction-norm)" name={icon} size={4} />
+                        <Icon color="var(--interaction-norm)" name={icon} size={4} className="shrink-0" />
                         <div className="text-left flex-1 text-sm">{label}</div>
                     </div>
                 ))}

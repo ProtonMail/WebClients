@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { c } from 'ttag';
 
 import { VAULT_COLOR_MAP } from '@proton/pass/components/Vault/constants';
-import { selectAllTrashedItems } from '@proton/pass/store/selectors';
+import { selectTrashedItems } from '@proton/pass/store/selectors';
 import { VaultColor } from '@proton/pass/types/protobuf/vault-v1';
 import clsx from '@proton/utils/clsx';
 
@@ -19,7 +19,7 @@ type Props = {
 };
 
 export const TrashItem: FC<Props> = ({ dense, selected, handleTrashRestore, handleTrashEmpty, onSelect }) => {
-    const count = useSelector(selectAllTrashedItems).length;
+    const count = useSelector(selectTrashedItems).length;
 
     return (
         <DropdownMenuButton

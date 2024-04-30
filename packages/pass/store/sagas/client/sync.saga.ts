@@ -11,7 +11,7 @@ import {
     syncSuccess,
 } from '@proton/pass/store/actions';
 import { getOrganizationSettingsIntent } from '@proton/pass/store/actions/creators/organization';
-import { withRevalidate } from '@proton/pass/store/actions/enhancers/request';
+import { withRevalidate } from '@proton/pass/store/request/enhancers';
 import { synchronize } from '@proton/pass/store/sagas/client/sync';
 import { selectUser } from '@proton/pass/store/selectors';
 import type { State } from '@proton/pass/store/types';

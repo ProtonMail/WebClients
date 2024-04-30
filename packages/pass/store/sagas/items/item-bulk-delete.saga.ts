@@ -8,8 +8,8 @@ import {
     itemBulkDeleteProgress,
     itemBulkDeleteSuccess,
 } from '@proton/pass/store/actions';
-import type { RequestProgress } from '@proton/pass/store/actions/enhancers/request';
-import { selectItemsFromBulkSelectionDTO } from '@proton/pass/store/selectors';
+import type { RequestProgress } from '@proton/pass/store/request/types';
+import { selectBulkSelection } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { BatchItemRevisionIDs, ItemRevision } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
@@ -32,7 +32,7 @@ function* itemBulkDeleteWorker(
 ) {
     const requestId = meta.request.id;
     const { selected } = payload;
-    const items = (yield select(selectItemsFromBulkSelectionDTO(selected))) as ItemRevision[];
+    const items = (yield select(selectBulkSelection(selected))) as ItemRevision[];
     const progressChannel = bulkDeleteChannel(items);
 
     while (true) {

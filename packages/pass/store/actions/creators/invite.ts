@@ -4,7 +4,6 @@ import { c, msgid } from 'ttag';
 import type { InviteData } from '@proton/pass/lib/invites/invite.requests';
 import { withCache } from '@proton/pass/store/actions/enhancers/cache';
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
-import { withRequest, withRequestFailure, withRequestSuccess } from '@proton/pass/store/actions/enhancers/request';
 import {
     inviteAcceptRequest,
     inviteAddressesValidateRequest,
@@ -17,6 +16,7 @@ import {
     newUserInviteRemoveRequest,
 } from '@proton/pass/store/actions/requests';
 import type { InviteState } from '@proton/pass/store/reducers';
+import { withRequest, withRequestFailure, withRequestSuccess } from '@proton/pass/store/request/enhancers';
 import type { InviteFormValues, ItemRevision, Share, ShareType } from '@proton/pass/types';
 import type {
     InviteAcceptIntent,
@@ -34,7 +34,7 @@ import { uniqueId } from '@proton/pass/utils/string/unique-id';
 export const syncInvites = createAction<InviteState>('invites::sync');
 
 export const inviteBatchCreateIntent = createAction('invite::batch::create::intent', (payload: InviteFormValues) =>
-    withRequest({ type: 'start', id: inviteCreateRequest(uniqueId()) })({ payload })
+    withRequest({ status: 'start', id: inviteCreateRequest(uniqueId()) })({ payload })
 );
 
 export const inviteBatchCreateSuccess = createAction(
@@ -52,7 +52,7 @@ export const inviteBatchCreateSuccess = createAction(
                             : c('Info').t`Invite successfully sent`,
                 })
             )({ payload }),
-        { data: ({ shareId }) => ({ shareId }) }
+        { data: true }
     )
 );
 
@@ -74,7 +74,7 @@ export const inviteBatchCreateFailure = createAction(
 export const newUserInvitePromoteIntent = createAction(
     'new-user-invite::promote::intent',
     (payload: NewUserInvitePromoteIntent) =>
-        withRequest({ type: 'start', id: newUserInvitePromoteRequest(payload.newUserInviteId) })({ payload })
+        withRequest({ status: 'start', id: newUserInvitePromoteRequest(payload.newUserInviteId) })({ payload })
 );
 
 export const newUserInvitePromoteSuccess = createAction(
@@ -104,7 +104,7 @@ export const newUserInvitePromoteFailure = createAction(
 export const inviteAcceptIntent = createAction(
     'invite::accept::intent',
     (payload: Omit<InviteAcceptIntent, 'inviteKeys'>) =>
-        withRequest({ type: 'start', id: inviteAcceptRequest(payload.inviteToken) })({ payload })
+        withRequest({ status: 'start', id: inviteAcceptRequest(payload.inviteToken) })({ payload })
 );
 
 export const inviteAcceptSuccess = createAction(
@@ -128,7 +128,7 @@ export const inviteAcceptFailure = createAction(
 );
 
 export const inviteRejectIntent = createAction('invite::reject::intent', (payload: InviteRejectIntent) =>
-    withRequest({ type: 'start', id: inviteRejectRequest(payload.inviteToken) })({ payload })
+    withRequest({ status: 'start', id: inviteRejectRequest(payload.inviteToken) })({ payload })
 );
 
 export const inviteRejectSuccess = createAction(
@@ -148,7 +148,7 @@ export const inviteRejectFailure = createAction(
 );
 
 export const inviteResendIntent = createAction('invite::resend::intent', (payload: InviteResendIntent) =>
-    withRequest({ type: 'start', id: inviteResendRequest(payload.inviteId) })({ payload })
+    withRequest({ status: 'start', id: inviteResendRequest(payload.inviteId) })({ payload })
 );
 
 export const inviteResendSuccess = createAction(
@@ -176,7 +176,7 @@ export const inviteResendFailure = createAction(
 );
 
 export const inviteRemoveIntent = createAction('invite::remove::intent', (payload: InviteRemoveIntent) =>
-    withRequest({ type: 'start', id: inviteRemoveRequest(payload.inviteId) })({ payload })
+    withRequest({ status: 'start', id: inviteRemoveRequest(payload.inviteId) })({ payload })
 );
 
 export const inviteRemoveSuccess = createAction(
@@ -206,7 +206,7 @@ export const inviteRemoveFailure = createAction(
 export const newUserInviteRemoveIntent = createAction(
     'new-user-invite::remove::intent',
     (payload: NewUserInvitePromoteIntent) =>
-        withRequest({ type: 'start', id: newUserInviteRemoveRequest(payload.newUserInviteId) })({ payload })
+        withRequest({ status: 'start', id: newUserInviteRemoveRequest(payload.newUserInviteId) })({ payload })
 );
 
 export const newUserInviteRemoveSuccess = createAction(
@@ -236,14 +236,12 @@ export const newUserInviteRemoveFailure = createAction(
 export const inviteRecommendationsIntent = createAction(
     'invite::recommendations::intent',
     (payload: InviteRecommendationsIntent, requestId: string) =>
-        withRequest({ type: 'start', id: inviteRecommendationsRequest(requestId) })({ payload })
+        withRequest({ status: 'start', id: inviteRecommendationsRequest(requestId) })({ payload })
 );
 
 export const inviteRecommendationsSuccess = createAction(
     'invite::recommendations::success',
-    withRequestSuccess((payload: InviteRecommendationsSuccess) => ({ payload }), {
-        data: (payload) => payload,
-    })
+    withRequestSuccess((payload: InviteRecommendationsSuccess) => ({ payload }), { data: true })
 );
 
 export const inviteRecommendationsFailure = createAction(
@@ -260,14 +258,12 @@ export const inviteRecommendationsFailure = createAction(
 export const inviteAddressesValidateIntent = createAction(
     'invite::addresses::validate::intent',
     (payload: { shareId: string; emails: string[] }, requestId: string) =>
-        withRequest({ type: 'start', id: inviteAddressesValidateRequest(requestId) })({ payload })
+        withRequest({ status: 'start', id: inviteAddressesValidateRequest(requestId) })({ payload })
 );
 
 export const inviteAddressesValidateSuccess = createAction(
     'invite::addresses::validate::success',
-    withRequestSuccess((payload: Record<string, boolean>) => ({ payload }), {
-        data: (payload) => payload,
-    })
+    withRequestSuccess((payload: Record<string, boolean>) => ({ payload }), { data: true })
 );
 
 export const inviteAddressesValidateFailure = createAction(

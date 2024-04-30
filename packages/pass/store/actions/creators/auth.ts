@@ -5,12 +5,12 @@ import { type SessionLock } from '@proton/pass/lib/auth/session-lock';
 import { withCache } from '@proton/pass/store/actions/enhancers/cache';
 import { type ActionCallback, withCallback } from '@proton/pass/store/actions/enhancers/callback';
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
-import { withRequest, withRequestFailure, withRequestSuccess } from '@proton/pass/store/actions/enhancers/request';
 import {
     sessionLockDisableRequest,
     sessionLockEnableRequest,
     sessionUnlockRequest,
 } from '@proton/pass/store/actions/requests';
+import { withRequest, withRequestFailure, withRequestSuccess } from '@proton/pass/store/request/enhancers';
 import type { ClientEndpoint } from '@proton/pass/types';
 import { NotificationKey } from '@proton/pass/types/worker/notification';
 import { pipe } from '@proton/pass/utils/fp/pipe';
@@ -25,7 +25,7 @@ export const sessionLockSync = createAction('session::lock::sync', (payload: Ses
 export const sessionLockEnableIntent = createAction(
     'session::lock::enable::intent',
     (payload: { pin: string; ttl: number }) =>
-        withRequest({ type: 'start', id: sessionLockEnableRequest() })({ payload })
+        withRequest({ status: 'start', id: sessionLockEnableRequest() })({ payload })
 );
 
 export const sessionLockEnableFailure = createAction(
@@ -57,7 +57,7 @@ export const sessionLockEnableSuccess = createAction(
 );
 
 export const sessionLockDisableIntent = createAction('session::lock::disable::intent', (payload: { pin: string }) =>
-    withRequest({ type: 'start', id: sessionLockDisableRequest() })({ payload })
+    withRequest({ status: 'start', id: sessionLockDisableRequest() })({ payload })
 );
 
 export const sessionLockDisableFailure = createAction(
@@ -93,7 +93,7 @@ export const sessionUnlockIntent = createAction(
     (
         payload: { pin: string },
         callback?: ActionCallback<ReturnType<typeof sessionUnlockSuccess> | ReturnType<typeof sessionUnlockFailure>>
-    ) => pipe(withRequest({ type: 'start', id: sessionUnlockRequest() }), withCallback(callback))({ payload })
+    ) => pipe(withRequest({ status: 'start', id: sessionUnlockRequest() }), withCallback(callback))({ payload })
 );
 
 export const sessionUnlockFailure = createAction(

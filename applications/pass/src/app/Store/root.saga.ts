@@ -40,6 +40,21 @@ import itemPin from '@proton/pass/store/sagas/items/item-pin.saga';
 import itemRestore from '@proton/pass/store/sagas/items/item-restore.saga';
 import itemTrash from '@proton/pass/store/sagas/items/item-trash.saga';
 import itemUnpin from '@proton/pass/store/sagas/items/item-unpin.saga';
+import itemSetFlags from '@proton/pass/store/sagas/items/item.set-flags.saga';
+import breachesAlias from '@proton/pass/store/sagas/monitor/breaches.alias.saga';
+import breachesCustom from '@proton/pass/store/sagas/monitor/breaches.custom.saga';
+import breachesProton from '@proton/pass/store/sagas/monitor/breaches.proton.saga';
+import breaches from '@proton/pass/store/sagas/monitor/breaches.saga';
+import customAddressAdd from '@proton/pass/store/sagas/monitor/custom-address.add.saga';
+import customAddressVerify from '@proton/pass/store/sagas/monitor/custom-address.verify';
+import customAddressDelete from '@proton/pass/store/sagas/monitor/delete.custom.saga';
+import monitorAddressToggle from '@proton/pass/store/sagas/monitor/monitor-address.toggle.saga';
+import monitorToggle from '@proton/pass/store/sagas/monitor/monitor-toggle.saga';
+import resendCustom from '@proton/pass/store/sagas/monitor/resend.custom.saga';
+import resolveAlias from '@proton/pass/store/sagas/monitor/resolve.alias.saga';
+import resolveCustom from '@proton/pass/store/sagas/monitor/resolve.custom.saga';
+import resolveProton from '@proton/pass/store/sagas/monitor/resolve.proton.saga';
+import sentinelToggle from '@proton/pass/store/sagas/monitor/sentinel-toggle.saga';
 import organizationSettingsEdit from '@proton/pass/store/sagas/organization/organization-settings-edit.saga';
 import organizationSettingsGet from '@proton/pass/store/sagas/organization/organization-settings.saga';
 import shareAccessOptions from '@proton/pass/store/sagas/shares/share-access-options.saga';
@@ -63,7 +78,14 @@ export function* rootSaga(options: RootSagaOptions) {
             aliasDetailsRequest,
             aliasOptionsRequest,
             boot,
+            breaches,
+            breachesAlias,
+            breachesCustom,
+            breachesProton,
             cache,
+            customAddressAdd,
+            customAddressDelete,
+            customAddressVerify,
             events,
             featureFlags,
             hydrate,
@@ -85,9 +107,12 @@ export function* rootSaga(options: RootSagaOptions) {
             itemMove,
             itemPin,
             itemRestore,
+            itemSetFlags,
             itemsImport,
             itemTrash,
             itemUnpin,
+            monitorAddressToggle,
+            monitorToggle,
             newUserInvitePromote,
             newUserInviteRemove,
             notification,
@@ -97,6 +122,11 @@ export function* rootSaga(options: RootSagaOptions) {
             organizationSettingsEdit,
             organizationSettingsGet,
             reportProblem,
+            resendCustom,
+            resolveAlias,
+            resolveCustom,
+            resolveProton,
+            sentinelToggle,
             sessionLockDisable,
             sessionLockEnable,
             sessionLockImmediate,

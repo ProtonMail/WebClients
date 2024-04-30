@@ -8,8 +8,8 @@ import {
     itemBulkMoveProgress,
     itemBulkMoveSuccess,
 } from '@proton/pass/store/actions';
-import type { RequestProgress } from '@proton/pass/store/actions/enhancers/request';
-import { selectItemsFromBulkSelectionDTO } from '@proton/pass/store/selectors';
+import type { RequestProgress } from '@proton/pass/store/request/types';
+import { selectBulkSelection } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { BatchItemRevisions, ItemRevision } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
@@ -35,7 +35,7 @@ function* itemBulkMoveWorker(
 ) {
     const requestId = meta.request.id;
     const { selected, shareId } = payload;
-    const items = (yield select(selectItemsFromBulkSelectionDTO(selected))) as ItemRevision[];
+    const items = (yield select(selectBulkSelection(selected))) as ItemRevision[];
     const itemsToMove = items.filter((item) => item.shareId !== shareId);
     const channel = bulkMoveChannel(itemsToMove, shareId);
 

@@ -8,13 +8,13 @@ import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { ModalTwoContent, ModalTwoFooter, ModalTwoHeader, Progress } from '@proton/components/components';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
+import { getItemsText } from '@proton/pass/components/Settings/helper';
 import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
 import { useActionRequest } from '@proton/pass/hooks/useActionRequest';
 import { inviteAcceptIntent, inviteRejectIntent } from '@proton/pass/store/actions';
 import { selectUserVerified, selectVaultLimits } from '@proton/pass/store/selectors';
 import type { Invite } from '@proton/pass/types/data/invites';
 
-import { getItemsText } from '../Settings/helper';
 import { useInviteContext } from './InviteProvider';
 import { UserVerificationMessage } from './UserVerificationMessage';
 
@@ -24,8 +24,8 @@ export const VaultInviteRespond: FC<Invite> = (invite) => {
     const { vaultLimitReached } = useSelector(selectVaultLimits);
     const { onInviteResponse } = useInviteContext();
 
-    const acceptInvite = useActionRequest({ action: inviteAcceptIntent, onSuccess: onInviteResponse });
-    const rejectInvite = useActionRequest({ action: inviteRejectIntent, onSuccess: onInviteResponse });
+    const acceptInvite = useActionRequest(inviteAcceptIntent, { onSuccess: onInviteResponse });
+    const rejectInvite = useActionRequest(inviteRejectIntent, { onSuccess: onInviteResponse });
 
     const handleRejectInvite = () => rejectInvite.dispatch({ inviteToken: invite.token });
     const handleAcceptInvite = () => acceptInvite.dispatch({ inviteToken: token, inviterEmail, invitedAddressId });
@@ -67,7 +67,7 @@ export const VaultInviteRespond: FC<Invite> = (invite) => {
             <ModalTwoFooter className="flex flex-column items-stretch text-center">
                 {!userVerified && <UserVerificationMessage />}
                 {userVerified && vaultLimitReached && (
-                    <Card className="mb-2">
+                    <Card className="mb-2 text-sm" type="primary">
                         {c('Warning').t`You have reached the limit of vaults you can have in your plan.`}
                     </Card>
                 )}

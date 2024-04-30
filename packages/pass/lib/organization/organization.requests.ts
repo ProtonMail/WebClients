@@ -34,7 +34,7 @@ export const getOrganization = async (): Promise<MaybeNull<OrganizationState>> =
     const { Settings, CanUpdate }: OrganizationGetResponse = await getOrganizationSettings();
 
     return {
-        settings: Settings,
+        settings: Settings!,
         canUpdate: CanUpdate,
         organization,
     };

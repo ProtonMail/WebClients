@@ -7,12 +7,6 @@ import { type ActionCallback, withCallback } from '@proton/pass/store/actions/en
 import { withSynchronousAction } from '@proton/pass/store/actions/enhancers/client';
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
 import {
-    withRequest,
-    withRequestFailure,
-    withRequestProgress,
-    withRequestSuccess,
-} from '@proton/pass/store/actions/enhancers/request';
-import {
     itemPinRequest,
     itemRevisionsRequest,
     itemUnpinRequest,
@@ -23,6 +17,12 @@ import {
 } from '@proton/pass/store/actions/requests';
 import { createOptimisticAction } from '@proton/pass/store/optimistic/action/create-optimistic-action';
 import type { Draft, DraftBase } from '@proton/pass/store/reducers';
+import {
+    withRequest,
+    withRequestFailure,
+    withRequestProgress,
+    withRequestSuccess,
+} from '@proton/pass/store/request/enhancers';
 import type {
     BatchItemRevisionIDs,
     BatchItemRevisions,
@@ -165,7 +165,7 @@ export const itemBulkMoveIntent = createAction(
     'item::bulk::move::intent',
     (payload: { selected: BulkSelectionDTO; shareId: string }) =>
         pipe(
-            withRequest({ type: 'start', id: itemsBulkMoveRequest(), data: payload.selected }),
+            withRequest({ status: 'start', id: itemsBulkMoveRequest() }),
             withNotification({
                 expiration: -1,
                 type: 'info',
@@ -241,7 +241,7 @@ export const itemBulkTrashIntent = createAction(
     'item::bulk::trash::intent',
     (payload: { selected: BulkSelectionDTO }) =>
         pipe(
-            withRequest({ type: 'start', id: itemsBulkTrashRequest(), data: payload.selected }),
+            withRequest({ status: 'start', id: itemsBulkTrashRequest() }),
             withNotification({
                 expiration: -1,
                 type: 'info',
@@ -314,7 +314,7 @@ export const itemBulkDeleteIntent = createAction(
     'item::bulk::delete::intent',
     (payload: { selected: BulkSelectionDTO }) =>
         pipe(
-            withRequest({ type: 'start', id: itemsBulkDeleteRequest(), data: payload.selected }),
+            withRequest({ status: 'start', id: itemsBulkDeleteRequest() }),
             withNotification({
                 expiration: -1,
                 type: 'info',
@@ -389,7 +389,7 @@ export const itemBulkRestoreIntent = createAction(
     'item::bulk:restore::intent',
     (payload: { selected: BulkSelectionDTO }) =>
         pipe(
-            withRequest({ type: 'start', id: itemsBulkRestoreRequest(), data: payload.selected }),
+            withRequest({ status: 'start', id: itemsBulkRestoreRequest() }),
             withNotification({
                 expiration: -1,
                 type: 'info',
@@ -434,7 +434,7 @@ export const itemUsedSync = createAction(
 
 export const itemPinIntent = createAction('item::pin::intent', (payload: UniqueItem) =>
     pipe(
-        withRequest({ type: 'start', id: itemPinRequest(payload.shareId, payload.itemId) }),
+        withRequest({ status: 'start', id: itemPinRequest(payload.shareId, payload.itemId) }),
         withNotification({
             type: 'info',
             text: c('Info').t`Pinning item...`,
@@ -470,7 +470,7 @@ export const itemPinFailure = createAction(
 
 export const itemUnpinIntent = createAction('item::unpin::intent', (payload: UniqueItem) =>
     pipe(
-        withRequest({ type: 'start', id: itemUnpinRequest(payload.shareId, payload.itemId) }),
+        withRequest({ status: 'start', id: itemUnpinRequest(payload.shareId, payload.itemId) }),
         withNotification({
             type: 'info',
             text: c('Info').t`Unpinning item...`,
@@ -505,14 +505,12 @@ export const itemUnpinFailure = createAction(
 );
 
 export const itemHistoryIntent = createAction('item::history::intent', (payload: ItemRevisionsIntent) =>
-    withRequest({ type: 'start', id: itemRevisionsRequest(payload.shareId, payload.itemId) })({ payload })
+    withRequest({ status: 'start', id: itemRevisionsRequest(payload.shareId, payload.itemId) })({ payload })
 );
 
 export const itemHistorySuccess = createAction(
     'item::history::success',
-    withRequestSuccess((payload: ItemRevisionsSuccess) => ({ payload }), {
-        data: (payload) => payload,
-    })
+    withRequestSuccess((payload: ItemRevisionsSuccess) => ({ payload }), { data: true })
 );
 
 export const itemHistoryFailure = createAction(

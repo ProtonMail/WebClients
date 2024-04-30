@@ -11,6 +11,7 @@ import { createI18nService } from 'proton-pass-extension/app/worker/services/i18
 import { createImportService } from 'proton-pass-extension/app/worker/services/import';
 import { createInjectionService } from 'proton-pass-extension/app/worker/services/injection';
 import { createLoggerService } from 'proton-pass-extension/app/worker/services/logger';
+import { createMonitorService } from 'proton-pass-extension/app/worker/services/monitor';
 import { createOnboardingService } from 'proton-pass-extension/app/worker/services/onboarding';
 import { createOTPService } from 'proton-pass-extension/app/worker/services/otp';
 import { createPasskeyService } from 'proton-pass-extension/app/worker/services/passkey';
@@ -33,7 +34,7 @@ import {
     clientStatusResolved,
     clientUnauthorized,
 } from '@proton/pass/lib/client';
-import { createPassCoreService } from '@proton/pass/lib/core/service';
+import { createPassCoreSyncService } from '@proton/pass/lib/core/sync.service';
 import { exposePassCrypto } from '@proton/pass/lib/crypto';
 import { createPassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
 import { backgroundMessage } from '@proton/pass/lib/extension/message';
@@ -45,12 +46,14 @@ import createStore from '@proton/shared/lib/helpers/store';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
+import store from '../store';
 import { WorkerContext } from './context';
 
 export const createWorkerContext = (config: ProtonConfig) => {
     const api = exposeApi(createApi({ config, threshold: API_CONCURRENCY_TRESHOLD }));
     const authStore = exposeAuthStore(createAuthStore(createStore()));
     const storage = createStorageService();
+    const core = createPassCoreSyncService();
 
     exposePassCrypto(createPassCrypto());
 
@@ -64,13 +67,14 @@ export const createWorkerContext = (config: ProtonConfig) => {
             auth: createAuthService(api, authStore),
             autofill: createAutoFillService(),
             autosave: createAutoSaveService(),
-            core: createPassCoreService(),
+            core,
             export: createExportService(),
             formTracker: createFormTrackerService(),
             i18n: createI18nService(),
             import: createImportService(),
             injection: createInjectionService(),
             logger: createLoggerService(storage.local),
+            monitor: createMonitorService(core, store),
             onboarding: createOnboardingService(storage.local),
             otp: createOTPService(),
             passkey: createPasskeyService(),
