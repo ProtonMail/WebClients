@@ -12,9 +12,10 @@ import {
     useUpsellConfig,
     useUser,
 } from '@proton/components';
-import { freeTrialUpgradeClick, redirectToAccountApp } from '@proton/components/containers/desktop/openExternalLink';
+import { freeTrialUpgradeClick } from '@proton/components/containers/desktop/openExternalLink';
+import { useHasInboxDesktopInAppPayments } from '@proton/components/containers/desktop/useHasInboxDesktopInAppPayments';
+import { useRedirectToAccountApp } from '@proton/components/containers/desktop/useRedirectToAccountApp';
 import { APP_NAMES, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
-import { hasInboxDesktopFeature } from '@proton/shared/lib/desktop/ipcHelpers';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { isTrial } from '@proton/shared/lib/helpers/subscription';
 import { getUpgradePath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
@@ -49,6 +50,8 @@ const TopNavbarUpgradeButton = ({ app }: Props) => {
     const upgradeText = c('specialoffer: Link').t`Upgrade`;
     const upgradeIcon = upgradeText.length > 20 && viewportWidth['>=large'] ? undefined : 'upgrade';
     const upsellConfig = useUpsellConfig({ upsellRef, step: SUBSCRIPTION_STEPS.PLAN_SELECTION });
+    const redirectToAccountApp = useRedirectToAccountApp();
+    const hasInboxDesktopInAppPayments = useHasInboxDesktopInAppPayments();
 
     if (displayUpgradeButton) {
         return (
@@ -56,7 +59,7 @@ const TopNavbarUpgradeButton = ({ app }: Props) => {
                 <PromotionButton
                     as={ButtonLike}
                     onClick={() => {
-                        if (isElectronApp && !hasInboxDesktopFeature('InAppPayments')) {
+                        if (isElectronApp && !hasInboxDesktopInAppPayments) {
                             if (upsellRef) {
                                 freeTrialUpgradeClick(upsellRef);
                             } else {
