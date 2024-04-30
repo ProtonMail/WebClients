@@ -7,7 +7,7 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import { DropdownActions } from '../../components';
 import { useModals, useNotifications } from '../../hooks';
-import { redirectToAccountApp } from '../desktop/openExternalLink';
+import { useRedirectToAccountApp } from '../desktop/useRedirectToAccountApp';
 import PayInvoiceModal from './PayInvoiceModal';
 import { Invoice } from './interface';
 
@@ -24,6 +24,7 @@ const InvoiceActions = ({ invoice, fetchInvoices, onPreview, onDownload }: Props
     const { paymentsApi } = usePaymentsApi();
     const [downloadLoading, withDownloadLoading] = useLoading();
     const [viewLoading, withViewLoading] = useLoading();
+    const redirectToAccountApp = useRedirectToAccountApp();
 
     const list = [
         invoice.State === INVOICE_STATE.UNPAID && {
