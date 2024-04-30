@@ -8,7 +8,6 @@ import { useMonitor } from '@proton/pass/components/Monitor/MonitorProvider';
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import { useBreachesTable } from '@proton/pass/hooks/monitor/useBreachesTable';
 import { AddressType } from '@proton/pass/lib/monitor/types';
-import { epochToDateTime } from '@proton/pass/utils/time/format';
 import headerBreachImg from '@proton/styles/assets/img/breach-alert/img-breaches-found.svg';
 import headerNoBreachImg from '@proton/styles/assets/img/breach-alert/img-no-breaches-found.svg';
 
@@ -16,7 +15,6 @@ import { BreachGroupList } from './Group/BreachGroupList';
 
 export const Breaches: FC = () => {
     const monitor = useMonitor();
-    const refreshedAt = monitor.refreshedAt ? epochToDateTime(monitor.refreshedAt) : null;
     const proton = useBreachesTable(AddressType.PROTON);
     const alias = useBreachesTable(AddressType.ALIAS);
     const custom = useBreachesTable(AddressType.CUSTOM);
@@ -65,8 +63,6 @@ export const Breaches: FC = () => {
                     seeAllHref={getLocalPath(`monitor/dark-web/${AddressType.CUSTOM}`)}
                     actions={<CustomAddressAddButton />}
                 />
-
-                {refreshedAt && <span className="text-sm color-weak">{c('Info').t`Last checked: ${refreshedAt}`}</span>}
             </div>
         </>
     );
