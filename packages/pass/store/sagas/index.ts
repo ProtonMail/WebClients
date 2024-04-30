@@ -63,7 +63,8 @@ import shareEditRole from './shares/share-edit-role.saga';
 import shareLeave from './shares/share-leave.saga';
 import shareRemoveMember from './shares/share-remove-member.saga';
 import featureFlags from './user/feature-flags.saga';
-import userPlan from './user/user-access.saga';
+import userAccess from './user/user-access.saga';
+import userSettings from './user/user-settings.saga';
 import trashDelete from './vaults/trash-empty.saga';
 import trashRestore from './vaults/trash-restore.saga';
 import vaultCreation from './vaults/vault-creation.saga';
@@ -137,7 +138,8 @@ export function* workerRootSaga(options: RootSagaOptions) {
             sync,
             trashDelete,
             trashRestore,
-            userPlan,
+            userAccess,
+            userSettings,
             vaultCreation,
             vaultDelete,
             vaultEdit,

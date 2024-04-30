@@ -1,10 +1,12 @@
 import { createAction } from '@reduxjs/toolkit';
 
 import { withCache } from '@proton/pass/store/actions/enhancers/cache';
-import { userAccessRequest, userFeaturesRequest } from '@proton/pass/store/actions/requests';
+import { userAccessRequest, userFeaturesRequest, userSettingsRequest } from '@proton/pass/store/actions/requests';
 import type { FeatureFlagState, HydratedAccessState } from '@proton/pass/store/reducers';
 import { withRequest, withRequestFailure, withRequestSuccess } from '@proton/pass/store/request/enhancers';
+import { requestActionsFactory } from '@proton/pass/store/request/flow';
 import { UNIX_HOUR } from '@proton/pass/utils/time/constants';
+import type { UserSettings } from '@proton/shared/lib/interfaces';
 
 export const getUserFeaturesIntent = createAction('user::features::get::intent', (userId: string) =>
     withRequest({ status: 'start', id: userFeaturesRequest(userId) })({ payload: {} })
@@ -33,3 +35,7 @@ export const getUserAccessFailure = createAction(
     'user::access::get::failure',
     withRequestFailure((error: unknown) => ({ payload: {}, error }))
 );
+
+export const getUserSettings = requestActionsFactory<string, UserSettings>('user::settings::get')({
+    requestId: userSettingsRequest,
+});
