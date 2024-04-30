@@ -1,4 +1,3 @@
-import { useFlag } from '@proton/components/containers';
 import { baseUseSelector } from '@proton/redux-shared-store/sharedContext';
 
 import { DrawerAppScrollContainer } from '../shared';
@@ -9,15 +8,13 @@ import PassAliasesContainer from './PassAliases/PassAliasesContainer';
 import ProtonSentinel from './ProtonSentinel/ProtonSentinel';
 
 const SecurityCenter = () => {
-    const canDisplayPassAliases = useFlag('DrawerSecurityCenterDisplayPassAliases');
     const canDisplayAccountSecurity = baseUseSelector(selectCanDisplayAccountSecuritySection);
-    const canDisplayBreachAlertsInSecCenter = useFlag('BreachesSecurityCenter');
 
     return (
         <DrawerAppScrollContainer>
-            {canDisplayPassAliases && <PassAliasesContainer />}
+            <PassAliasesContainer />
             <ProtonSentinel />
-            {canDisplayBreachAlertsInSecCenter && <BreachAlertsSecurityCenter />}
+            <BreachAlertsSecurityCenter />
             {canDisplayAccountSecurity && <AccountSecurity />}
         </DrawerAppScrollContainer>
     );

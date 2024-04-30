@@ -5,7 +5,6 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button';
 import { Href } from '@proton/atoms/Href';
 import { Toggle, useModalStateObject, useSettingsLink } from '@proton/components/components';
-import { useFlag } from '@proton/components/containers';
 import { getDisabledString, getEnabledString } from '@proton/components/containers/credentialLeak/helpers';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { useApi, useEventManager, useNotifications, useUserSettings } from '@proton/components/hooks';
@@ -24,7 +23,6 @@ import ProtonSentinelUpsellModal from './modal/ProtonSentinelUpsellModal';
 
 const ProtonSentinel = () => {
     const api = useApi();
-    const canDisplaySentinel = useFlag('DrawerSecurityCenterDisplaySentinel');
     const { createNotification } = useNotifications();
     const { call } = useEventManager();
     const [userSettings, loadingUserSettings] = useUserSettings();
@@ -34,7 +32,7 @@ const ProtonSentinel = () => {
     const isSentinelEligible = isProtonSentinelEligible(userSettings);
     const isProtonSentinelEnabled = userSettings.HighSecurity.Value === SETTINGS_PROTON_SENTINEL_STATE.ENABLED;
 
-    if (loadingUserSettings || !canDisplaySentinel) {
+    if (loadingUserSettings) {
         return null;
     }
 
