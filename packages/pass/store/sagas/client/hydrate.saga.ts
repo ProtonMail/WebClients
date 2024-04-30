@@ -57,6 +57,7 @@ export function* hydrate(config: HydrateCacheOptions, { getCache, getAuthStore, 
         const snapshot = cache?.snapshot;
 
         const userState: HydratedUserState = userStateHydrated(cachedUser) ? cachedUser : yield getUserData();
+
         const user = userState.user;
         const addresses = Object.values(userState.addresses);
         const organization =

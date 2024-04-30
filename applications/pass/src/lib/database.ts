@@ -10,7 +10,8 @@ export interface PassDB extends DBSchema {
         | { key: 'encryptedCacheKey'; value: Blob }
         | { key: 'salt'; value: Blob }
         | { key: 'snapshot'; value: Blob }
-        | { key: 'state'; value: Blob };
+        | { key: 'state'; value: Blob }
+        | { key: 'version'; value: string };
 }
 
 export const CACHE_DB_VERSION = 1;
@@ -34,7 +35,7 @@ export const openPassDB = async (userID: string): Promise<Maybe<IDBPDatabase<Pas
  * Converts the encrypted strings to blobs. Concurrent writes
  * can happen if multiple tabs are trying to cache the current
  * app state. */
-export const writeDBCache = async (userID: string, cache: EncryptedPassCache): Promise<void> => {
+export const writeDBCache = async (userID: string, cache: EncryptedPassCache, version: string): Promise<void> => {
     try {
         const db = await openPassDB(userID);
         if (!db) throw new Error('No database found');
@@ -45,6 +46,7 @@ export const writeDBCache = async (userID: string, cache: EncryptedPassCache): P
             tx.store.put(new Blob([cache.salt ?? ''], { type: 'text/plain' }), 'salt'),
             tx.store.put(new Blob([cache.snapshot ?? ''], { type: 'text/plain' }), 'snapshot'),
             tx.store.put(new Blob([cache.state ?? ''], { type: 'text/plain' }), 'state'),
+            tx.store.put(version, 'version'),
             tx.done,
         ]);
 
@@ -61,17 +63,18 @@ export const getDBCache = async (userID: string): Promise<Partial<EncryptedPassC
         if (!db) throw new Error('No database found');
         const tx = db.transaction('cache', 'readwrite');
 
-        const [encryptedCacheKey, salt, snapshot, state] = await Promise.all([
+        const [encryptedCacheKey, salt, snapshot, state, version] = await Promise.all([
             tx.store.get('encryptedCacheKey').then((value) => (value instanceof Blob ? value?.text() : undefined)),
             tx.store.get('salt').then((value) => (value instanceof Blob ? value?.text() : undefined)),
             tx.store.get('snapshot').then((value) => (value instanceof Blob ? value?.text() : undefined)),
             tx.store.get('state').then((value) => (value instanceof Blob ? value?.text() : undefined)),
+            tx.store.get('version').then((value) => (typeof value === 'string' ? value : undefined)),
             tx.done.then(noop),
         ] as const);
 
         db.close();
 
-        return { encryptedCacheKey, salt, snapshot, state };
+        return { encryptedCacheKey, salt, snapshot, state, version };
     } catch (err) {
         logger.error('[PassDB] Could not resolve cache', err);
         return {};
