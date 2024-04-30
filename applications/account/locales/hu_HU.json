@@ -3601,9 +3601,6 @@
       "You have reached the contacts limit for your account": [
         "Elérte a fiókhoz létrehozható névjegyek maximális számát"
       ],
-      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
-        "Elérte a csomagjában maximálisan létrehozható naptárak számát. Néhány naptár importálása nem sikerült."
-      ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Valamennyi, az előfizetéséhez rendelkezésére álló címet elhasználta. Több cím létrehozásához váltson nagyobb csomagra."
       ],
@@ -4986,14 +4983,6 @@
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "A naptár tartalmának bizonyos részei nem támogatottak és nem kerülnek importálásra."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "További duplikált kulcsok is találhatók. Töltse fel egyesével a pontosabb információkért."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "A kulcs ${ fingerprint } már feltöltésre került"
       ]
     },
     "Info": {
@@ -6869,6 +6858,14 @@
         "Az előfizetését a Mozilla kezeli. Kérjük, forduljon a Mozilla ügyfélszolgálatához az előfizetés lemondásához."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "További duplikált kulcsok is találhatók. Töltse fel egyesével a pontosabb információkért."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "A kulcs ${ fingerprint } már feltöltésre került"
+      ]
+    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Bekapcsolásakor az almappák a szülő mappa színét öröklik."
@@ -8089,9 +8086,6 @@
       ],
       "Recovery phrase": [
         "Helyreállító jelmondat"
-      ],
-      "Trusted device recovery": [
-        "Helyreállítás megbízható eszközzel"
       ]
     },
     "Label for adding a new custom domain": {
@@ -10785,9 +10779,6 @@
       ]
     },
     "Storage": {
-      "Release notes": [
-        "Kiadási megjegyzések"
-      ],
       "Upgrade storage": [
         "Tárhely bővítése"
       ],
@@ -12184,9 +12175,6 @@
       ],
       "What would you like to import?": [
         "Mit szeretne importálni?"
-      ],
-      "What's new": [
-        "Újdonságok"
       ],
       "WireGuard configuration": [
         "WireGuard beállítás"

@@ -47,11 +47,11 @@
       "${ BRAND_NAME } shop": [
         "Botiga de ${ BRAND_NAME }"
       ],
-      "activate": [
-        "activar"
-      ],
       "Activate": [
         "Activa"
+      ],
+      "activate": [
+        "activar"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activa ${ user.Name }@pm.me"
@@ -312,7 +312,7 @@
         "Elimina"
       ],
       "Delete address": [
-        "Eliminar l'adreça"
+        "Elimina l'adreça"
       ],
       "Delete and confirm": [
         "Elimina i confirma"
@@ -749,6 +749,9 @@
       "Remove gift code": [
         "Esborra el codi de regal"
       ],
+      "Remove single sign-on": [
+        "Esborra l'inici de sessió únic"
+      ],
       "Remove this label": [
         "Esborra aquesta etiqueta"
       ],
@@ -864,7 +867,7 @@
         "Seleccioneu el país"
       ],
       "select file": [
-        "seleccionar un fitxer"
+        "seleccioneu un fitxer"
       ],
       "Select file": [
         "Selecciona un fitxer"
@@ -974,6 +977,9 @@
       "Start import": [
         "Comença la importació"
       ],
+      "Start live chat": [
+        "Inicia el xat en directe"
+      ],
       "Stay": [
         "Mantenir"
       ],
@@ -1041,10 +1047,10 @@
         "Millora a Business"
       ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
-        "Millora per habilitar ${ PROTON_SENTINEL_NAME }"
+        "Millora per activar ${ PROTON_SENTINEL_NAME }"
       ],
       "Upgrade to view all": [
-        "Actualitzi per veure-ho tot"
+        "Milloreu el pla per a veure-ho tot"
       ],
       "Upgrade your plan": [
         "Milloreu el vostre pla"
@@ -1110,7 +1116,7 @@
         "Voleu anul·lar tots els fitxers de recuperació?"
       ],
       "Welcome": [
-        "Li donem la benvinguda"
+        "Us donem la benvinguda"
       ],
       "What do I get?": [
         "Què n'obtinc?"
@@ -1207,7 +1213,7 @@
         "Edita l'adreça"
       ],
       "Enable": [
-        "Habilitar"
+        "Activar"
       ],
       "Enable E2EE mail": [
         "Activa el correu E2EE"
@@ -3812,7 +3818,7 @@
         "Signatura del contacte no verificada"
       ],
       "Coudn't load invoices. Please try again later.": [
-        "No s'han pogut pujar les factures. Torneu-ho a provar més tard."
+        "No s'han pogut carregar les factures. Torneu-ho a provar més tard."
       ],
       "Could not save preference": [
         "No s'ha pogut desar la preferència."
@@ -3858,6 +3864,9 @@
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "No s'han pogut obtenir sessions actives. ${ refresh } o torneu-ho a provar més tard."
       ],
+      "File too large. Your logo must be 30 KB or smaller.": [
+        "Fitxer massa gran. El seu logotip ha de tenir 30 KB o menys."
+      ],
       "Filter with this name already exists": [
         "Ja existeix un filtre amb aquest nom"
       ],
@@ -3866,6 +3875,9 @@
       ],
       "IMAP server is required": [
         "Es requereix un servidor IMAP."
+      ],
+      "Incorrect file type. Upload a file in PNG or JPEG format.": [
+        "Tipus de fitxer incorrecte. Carregui un fitxer en format PNG o JPEG."
       ],
       "Incorrect login credentials. Please try again.": [
         "Credencials d'inici de sessió incorrectes. Torneu-ho a provar."
@@ -4018,6 +4030,9 @@
       ],
       "Please upload an xml file": [
         "Carregueu un arxiu XML"
+      ],
+      "Please upload only 1 file": [
+        "Carregueu només un arxiu."
       ],
       "Port is required": [
         "Es requereix el port"
@@ -4190,9 +4205,6 @@
       ],
       "You have reached the contacts limit for your account": [
         "Heu arribat al límit de contactes per al vostre compte."
-      ],
-      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
-        "Heu assolit el nombre màxim de calendaris. No se n'han pogut importar alguns."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Heu utilitzat totes les adreces del vostre pla. Milloreu-lo per a afegir adreces."
@@ -5833,17 +5845,6 @@
         "Part del contingut del vostre calendari no és compatible i no s'importarà."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "S'han detectat claus addicionals duplicades. Carregueu-les individualment per obtenir més informació."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "La clau ${ fingerprint } ja s'ha carregat"
-      ],
-      "Selected color:": [
-        "Color seleccionat:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necessita el vostre permís per ${ enableDesktopNotifications }."
@@ -5856,6 +5857,9 @@
       ],
       "${ BRAND_NAME } is privacy you can trust, ensured by strong encryption, open-source code, and Swiss privacy laws. We believe nobody should be able to exploit your data, period. Our technology and business are based upon this fundamentally stronger definition of privacy.": [
         "${ BRAND_NAME } és privacitat en la qual podeu confiar, garantida per un xifratge fort, de codi obert, i lleis de privacitat suïsses. Creiem que ningú hauria de poder explotar les vostres dades i punt. La nostra tecnologia i el nostre negoci estan basats en aquesta definició fonamentalment més forta de la privacitat."
+      ],
+      "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
+        "${ BRAND_NAME } mai comparteix la seva informació amb tercers. Les dades provenen de les anàlisis pròpies de ${ BRAND_NAME } i de Constella Intelligence."
       ],
       "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "${ BRAND_NAME } ha posat en pausa una importació perquè ha perdut la connexió amb el vostre altre proveïdor de correu electrònic. Torneu a connectar-vos."
@@ -6080,6 +6084,9 @@
       "Add multiple users to your organization at once.": [
         "Afegiu diversos usuaris alhora a la vostra organització."
       ],
+      "Add your name and logo to create a more personalized experience for your organization.": [
+        "Afegeixi el seu nom i logotip per crear una experiència més personalitzada per a la seva organització."
+      ],
       "Additional options": [
         "Opcions addicionals"
       ],
@@ -6187,7 +6194,7 @@
         "Esteu segur de voler eliminar aquesta etiqueta?"
       ],
       "Are you sure you want to disable two-factor authentication?": [
-        "Esteu segur que voleu deshabilitar l'autenticació de dos factors?"
+        "Esteu segur que voleu desactivar l'autenticació de dos factors?"
       ],
       "Are you sure you want to discard your changes?": [
         "N'estás segur que desitges descartar els teus canvis?"
@@ -6304,7 +6311,7 @@
         "Tanqueu la finestra per sortir."
       ],
       "Configure SAML authentication for your organization through an identity provider like Okta, Microsoft Azure, or Google Identity Platform. This will enable SAML for the whole organization.": [
-        "Configuri l'autenticació SAML per a la seva organització mitjançant un proveïdor d'identitats com Okta, Microsoft Azure o Google Identity Platform. Això habilitarà SAML per a tota l'organització."
+        "Configuri l'autenticació SAML per a la seva organització mitjançant un proveïdor d'identitats com Okta, Microsoft Azure o Google Identity Platform. Això activarà SAML per a tota l'organització."
       ],
       "Continue with ${ freeName }": [
         "Continua amb ${ freeName }"
@@ -6421,6 +6428,9 @@
       "Do you want to revoke all other sessions than the current one?": [
         "Voleu revocar totes les altres sessions i l’actual?"
       ],
+      "Domain ownership not verified.": [
+        "No s'ha verificat la propietat del domini."
+      ],
       "Domain ownership verified.": [
         "S'ha verificat la propietat del domini."
       ],
@@ -6498,7 +6508,7 @@
         "Activeu TLS o SSL al servei extern si és compatible."
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
-        "Si torneu a habilitar la recuperació per frase, es generarà una nova frase de recuperació."
+        "Si torneu a activar la recuperació per frase, es generarà una nova frase de recuperació."
       ],
       "Encryption setting updated": [
         "S'ha actualitzat la configuració de xifratge"
@@ -7343,6 +7353,9 @@
       "Support for 1 custom email domain": [
         "Suport per a 1 domini de correu personalitzat"
       ],
+      "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
+        "Aviat estarà disponible l'assistència per a la supervisió de dominis personalitzats i d'adreces electròniques que no siguin ${ BRAND_NAME }."
+      ],
       "support team": [
         "equip de suport"
       ],
@@ -7398,7 +7411,7 @@
         "Les següents adreces no s'han creat."
       ],
       "The following members will receive an email prompting them to enable two-factor authentication as soon as possible.": [
-        "Els següents membres rebran un correu electrònic que els demanarà habilitar l'autenticació de dos factors tan aviat com sigui possible."
+        "Els següents membres rebran un correu electrònic que els demanarà activar l'autenticació de dos factors tan aviat com sigui possible."
       ],
       "The format of your CSV file is incorrect.": [
         "El format del fitxer CSV és incorrecte."
@@ -7506,7 +7519,7 @@
         "Això tancarà qualsevol sessió activa i desactivarà l'autenticació de dos factors."
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
-        "Aquest assistent habilitarà l'autenticació de dos factors (A2F) al vostre compte de ${ BRAND_NAME }. L’autenticació de dos factors farà que el vostre compte ${ BRAND_NAME_TWO } sigui més segur, de manera que us recomanem que l’activeu."
+        "Aquest assistent activarà l'autenticació de dos factors (A2F) al vostre compte de ${ BRAND_NAME }. L’autenticació de dos factors farà que el vostre compte ${ BRAND_NAME_TWO } sigui més segur, de manera que us recomanem que l’activeu."
       ],
       "to ${ product } Business": [
         "a ${ product } Business"
@@ -7646,6 +7659,9 @@
       "Upload your completed CSV file to create accounts": [
         "Pugeu el fitxer CSV completat per a crear comptes"
       ],
+      "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
+        "Carregui el logotip de la seva organització per millorar la seva identitat de marca i crear una experiència personalitzada per als seus usuaris."
+      ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "El fitxer carregat no és una clau privada vàlida. Verifiqueu-la i torneu-ho a provar."
       ],
@@ -7726,6 +7742,9 @@
       ],
       "We just sent you a new link.": [
         "Us acabem d'enviar un enllaç nou."
+      ],
+      "We monitor the dark web for instances where your personal information (such as an email address or password used on a third-party site) is leaked or compromised.": [
+        "Supervisem la web fosca per detectar casos en què la seva informació personal (com ara una adreça de correu electrònic o una contrasenya utilitzada en un lloc de tercers) es filtra o es compromet."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Hem d'autenticar el vostre mètode de pagament amb el banc."
@@ -7849,7 +7868,7 @@
         "Podeu editar-ho una vegada per a assegurar-vos que l'adreça de correu electrònic utilitzada per a la verificació és correcta."
       ],
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
-        "Podeu habilitar el registre d'autenticacions per veure quan s'accedeix al vostre compte i des de quina IP. Enregistrarem l'adreça IP que accedeix al compte i l'hora, així com els intents fallits."
+        "Podeu activar el registre d'autenticacions per veure quan s'accedeix al vostre compte i des de quina IP. Enregistrarem l'adreça IP que accedeix al compte i l'hora, així com els intents fallits."
       ],
       "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
         "Podeu desbloquejar immediatament la configuració anterior afegint ${ specificCountryCount } al nombre d'adreces IP del vostre pla o posar-vos en contacte amb nosaltres per a solucions a mida."
@@ -7962,9 +7981,6 @@
       "You won’t be able to recover locked data using your downloaded recovery files.": [
         "No podreu recuperar les dades bloquejades amb els fitxers de recuperació descarregats."
       ],
-      "You won’t be able to recover locked data using your downloaded recovery files. This will also disable trusted device recovery.": [
-        "No podreu recuperar les dades bloquejades amb els fitxers de recuperació descarregats. Això també desactivarà la recuperació mitjançant dispositius de confiança."
-      ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
         "El vostre compte de ${ BRAND_NAME } està associat amb ${ externalEmailAddress }."
       ],
@@ -8055,6 +8071,17 @@
       ],
       "Zoom meeting": [
         "reunió Zoom"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "S'han detectat claus addicionals duplicades. Carregueu-les individualment per obtenir més informació."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "La clau ${ fingerprint } ja s'ha carregat"
+      ],
+      "Selected color:": [
+        "Color seleccionat:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9356,9 +9383,6 @@
       ],
       "Recovery phrase": [
         "Frase de recuperació"
-      ],
-      "Trusted device recovery": [
-        "Recuperació amb un dispositiu de confiança"
       ]
     },
     "Label for adding a new custom domain": {
@@ -9581,7 +9605,7 @@
         "aquí"
       ],
       "How does monitoring work?": [
-        "Com funciona el monitoratge?"
+        "Com funciona la supervisió?"
       ],
       "How to pay with Bitcoin?": [
         "Com pagar amb Bitcoin?"
@@ -11051,6 +11075,12 @@
       "An external address cannot be default": [
         "Una adreça externa no pot ser una adreça per defecte."
       ],
+      "Dark Web Monitoring has been disabled": [
+        "S'ha desactivat la supervisió del Dark Web."
+      ],
+      "Dark Web Monitoring has been enabled": [
+        "S'ha activat la supervisió del Dark Web."
+      ],
       "Invalid code": [
         "El codi no és vàlid."
       ],
@@ -11451,6 +11481,22 @@
       ],
       "Your plan includes a maximum of ${ humanReadableAvailableSpace } more storage.": [
         "El vostre pla inclou un màxim de ${ humanReadableAvailableSpace } més d'espai d'emmagatzematge."
+      ]
+    },
+    "Organization logo upload": {
+      "Ensure your logo has padding space around it.": [
+        "Asseguri's que el seu logotip tingui espai de farciment al seu voltant."
+      ],
+      "Tips on choosing a good logo": [
+        "Consells per triar un bon logotip"
+      ],
+      "Use a solid background color.": [
+        "Utilitzi un color de fons sòlid."
+      ]
+    },
+    "Organization logo upload modal": {
+      "File in PNG or JPEG format": [
+        "Fitxer en format PNG o JPEG"
       ]
     },
     "OS compatibility": {
@@ -12249,7 +12295,7 @@
     },
     "scim: Info": {
       "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
-        "**Requisit previ:** L'autenticació SAML s'ha de configurar per habilitar el subministrament SCIM."
+        "**Requisit previ:** L'autenticació SAML s'ha de configurar per activar el subministrament SCIM."
       ],
       "Enter token into your identity provider": [
         "Introdueixi el token al seu proveïdor d'identitat"
@@ -12283,6 +12329,9 @@
       ],
       "The SCIM base URL and token will be deleted.": [
         "Se suprimiran l'URL base i el token SCIM."
+      ],
+      "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
+        "Per tornar a activar la sincronització amb el seu proveïdor d'identitat, ha de tornar a completar la integració SCIM."
       ]
     },
     "scim: Label": {
@@ -13014,9 +13063,6 @@
       ]
     },
     "Storage": {
-      "Release notes": [
-        "Notes de la versió"
-      ],
       "Upgrade storage": [
         "Millora l'emmagatzematge"
       ],
@@ -13296,6 +13342,9 @@
       "Resubscribe": [
         "Resubscriviu-vos"
       ],
+      "Resubscribe to restore access to ${ planName } features.": [
+        "Torni a subscriure's per restaurar l'accés a les característiques de ${ planName }."
+      ],
       "Subscription canceled": [
         "La subscripció s'ha cancel·lat."
       ],
@@ -13307,6 +13356,26 @@
       ],
       "You still have ${ expiryDate } on your ${ planName } plan. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling.": [
         "Encara té ${ expiryDate } al seu pla ${ planName }. Afegirem els crèdits del temps restant al seu compte de ${ BRAND_NAME }. Asseguri's que no supera els límits del pla gratuït abans de cancel·lar-lo."
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB d'emmagatzemament"
+      ],
+      "and 15 more premium features": [
+        "i 15 característiques prèmium més"
+      ],
+      "Desktop app": [
+        "Aplicació d'escriptori"
+      ],
+      "No ads or tracking": [
+        "Sense anuncis ni rastreig"
+      ],
+      "Upgrade": [
+        "Millora"
+      ],
+      "Upgrade your productivity": [
+        "Milloreu la vostra productivitat"
       ]
     },
     "Subscription renewal state": {
@@ -14075,7 +14144,7 @@
         "Elimina el compte"
       ],
       "Delete address permanently?": [
-        "Vol eliminar l'adreça permanentment?"
+        "Voleu eliminar l'adreça permanentment?"
       ],
       "Delete calendar": [
         "Elimina el calendari"
@@ -14289,6 +14358,9 @@
       "How does it work?": [
         "Com funciona?"
       ],
+      "How to choose a good logo": [
+        "Com triar un bon logotip"
+      ],
       "How to refer a friend and get credits": [
         "Com recomanar un amic i obtenir crèdits"
       ],
@@ -14487,6 +14559,9 @@
       ],
       "Remove domain": [
         "Esborra el domini"
+      ],
+      "Remove single sign-on": [
+        "Esborra l'inici de sessió únic"
       ],
       "Remove user?": [
         "Voleu esborrar l'usuari?"
@@ -14730,9 +14805,6 @@
       ],
       "What would you like to import?": [
         "Què li agradaria importar?"
-      ],
-      "What's new": [
-        "Novetats"
       ],
       "WireGuard configuration": [
         "Configuració del WireGuard"
@@ -15053,7 +15125,7 @@
     },
     "Tooltip prompt to trust keys": {
       "When receiving an email from another ${ MAIL_APP_NAME } user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
-        "En rebre un correu electrònic d'un altre usuari de ${ MAIL_APP_NAME } que no tingui claus de confiança als vostres contactes, un avís us preguntarà si voleu habilitar les claus de confiança."
+        "En rebre un correu electrònic d'un altre usuari de ${ MAIL_APP_NAME } que no tingui claus de confiança als vostres contactes, un avís us preguntarà si voleu activar les claus de confiança."
       ]
     },
     "Tooltip sign external messages": {

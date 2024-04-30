@@ -47,11 +47,11 @@
       "${ BRAND_NAME } shop": [
         "Negozio di ${ BRAND_NAME }"
       ],
-      "activate": [
-        "attiva"
-      ],
       "Activate": [
         "Attiva"
+      ],
+      "activate": [
+        "attiva"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Attiva ${ user.Name }@pm.me"
@@ -4295,8 +4295,8 @@
       "You have reached the contacts limit for your account": [
         "Hai raggiunto il limite di contatti per il tuo account"
       ],
-      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
-        "Hai raggiunto il numero massimo di calendari. Alcuni calendari non possono essere importati."
+      "You have reached the maximum number of calendars.": [
+        "Hai raggiunto il numero massimo di calendari."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Hai utilizzato tutti gli indirizzi del tuo piano. Per favore effettua l'upgrade del tuo piano per aggiungere un nuovo indirizzo."
@@ -5949,17 +5949,6 @@
         "Parte del contenuto del calendario non è supportata e non sarà importata."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Rilevate chiavi aggiuntive duplicate. Caricale singolarmente per maggiori informazioni."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "La chiave ${ fingerprint } è già stata caricata"
-      ],
-      "Selected color:": [
-        "Colore selezionato:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } ha bisogno della tua autorizzazione per ${ enableDesktopNotifications }."
@@ -7255,6 +7244,9 @@
       "Password copied to clipboard": [
         "Password copiata negli appunti"
       ],
+      "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
+        "La password deve contenere almeno ${ MIN_PASSWORD_LENGTH } caratteri."
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "I pagamenti sono protetti dalla crittografia TLS e dalle leggi svizzere sulla privacy."
       ],
@@ -7331,10 +7323,6 @@
       ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Riprova, usa un metodo di pagamento differente o contatta PayPal per assistenza."
-      ],
-      "Please use a password more than ${ MIN_PASSWORD_LENGTH } character.": [
-        "Usa una password più lunga di ${ MIN_PASSWORD_LENGTH } carattere.",
-        "Usa una password più lunga di ${ MIN_PASSWORD_LENGTH } caratteri."
       ],
       "Please use another browser or download the file.": [
         "Usa un altro browser o scarica il file."
@@ -8282,9 +8270,6 @@
       "You won’t be able to recover locked data using your downloaded recovery files.": [
         "Non potrai usare i file di recupero scaricati per recuperare i dati bloccati."
       ],
-      "You won’t be able to recover locked data using your downloaded recovery files. This will also disable trusted device recovery.": [
-        "Non potrai più usare i file di recupero scaricati per recuperare i dati bloccati. Questo disabiliterà anche il recupero tramite dispositivo attendibile."
-      ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
         "Il tuo Account ${ BRAND_NAME } è associato a ${ externalEmailAddress }."
       ],
@@ -8378,6 +8363,17 @@
       ],
       "Zoom meeting": [
         "Meeting Zoom"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Rilevate chiavi aggiuntive duplicate. Caricale singolarmente per maggiori informazioni."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "La chiave ${ fingerprint } è già stata caricata"
+      ],
+      "Selected color:": [
+        "Colore selezionato:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9727,9 +9723,6 @@
       ],
       "Recovery phrase": [
         "Frase di recupero"
-      ],
-      "Trusted device recovery": [
-        "Dispositivo di recupero"
       ]
     },
     "Label for adding a new custom domain": {
@@ -13599,9 +13592,6 @@
       ]
     },
     "Storage": {
-      "Release notes": [
-        "Note di rilascio"
-      ],
       "Upgrade storage": [
         "Aumenta lo spazio disponibile"
       ],
@@ -13992,6 +13982,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Il tuo alias email breve @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB di spazio di archiviazione"
+      ],
+      "and 15 more premium features": [
+        "e altre 15 funzionalità premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Inoltro automatico delle email ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Avvisi sulle violazioni di dati ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Applicazione desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Aiutaci a mantenere Internet sicuro e privato per tutti. Passa a un piano a pagamento."
+      ],
+      "No ads or tracking": [
+        "Nessun annuncio o tracciamento"
+      ],
+      "Short @pm.me email address": [
+        "Indirizzo email breve @pm.me"
+      ],
+      "Support our mission": [
+        "Sostieni la nostra missione"
+      ],
+      "Upgrade": [
+        "Effettua l'upgrade"
+      ],
+      "Upgrade your productivity": [
+        "Migliora la tua produttività"
+      ],
+      "We don't sell your data": [
+        "Non vendiamo i tuoi dati"
+      ],
+      "Your privacy is our mission": [
+        "La tua privacy è la nostra missione"
       ]
     },
     "Subscription renewal state": {
@@ -15458,9 +15489,6 @@
       ],
       "What would you like to import?": [
         "Cosa vorresti importare?"
-      ],
-      "What's new": [
-        "Cosa c'è di nuovo"
       ],
       "WireGuard configuration": [
         "Configurazione di WireGuard"

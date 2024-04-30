@@ -47,11 +47,11 @@
       "${ BRAND_NAME } shop": [
         "Obchod ${ BRAND_NAME }"
       ],
-      "activate": [
-        "aktivovať"
-      ],
       "Activate": [
         "Aktivovať"
+      ],
+      "activate": [
+        "aktivovať"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivovať ${ user.Name }@pm.me"
@@ -114,7 +114,7 @@
         "Pridať Sieve filter"
       ],
       "Add user": [
-        "Pridať užívateľa"
+        "Pridať používateľa"
       ],
       "Align center": [
         "Zarovnať na stred"
@@ -282,10 +282,10 @@
         "Vytvoriť odkaz"
       ],
       "Create user": [
-        "Vytvoriť užívateľa"
+        "Vytvoriť používateľa"
       ],
       "Create users": [
-        "Vytvoriť užívateľov"
+        "Vytvoriť používateľov"
       ],
       "Create your own": [
         "Vytvoriť si vlastný"
@@ -333,7 +333,7 @@
         "Zmazať záznam"
       ],
       "Delete user": [
-        "Vymazať užívateľa"
+        "Vymazať používateľa"
       ],
       "Delete without exporting": [
         "Zmazať bez exportu"
@@ -444,7 +444,7 @@
         "povoliť notifikácie na pracovnej ploche"
       ],
       "Enable multi-user support": [
-        "Zapnúť podporu pre viac užívateľov"
+        "Zapnúť podporu pre viac používateľov"
       ],
       "Encrypt and export": [
         "Zašifrovať a exportovať"
@@ -582,7 +582,7 @@
         "Pozvať"
       ],
       "Invite user": [
-        "Pozvite užívateľa"
+        "Pozvite používateľa"
       ],
       "Italic": [
         "Kurzíva"
@@ -1092,7 +1092,7 @@
         "Použite nastavenie “${ label }”"
       ],
       "User": [
-        "Užívateľ"
+        "Používateľ"
       ],
       "Verify": [
         "Overiť"
@@ -1928,10 +1928,10 @@
     },
     "Checkout row": {
       "${ users } user": [
-        "${ users } užívateľ",
-        "${ users } užívatelia",
-        "${ users } užívateľov",
-        "${ users } užívateľov"
+        "${ users } používateľ",
+        "${ users } používatelia",
+        "${ users } používateľov",
+        "${ users } používateľov"
       ],
       "Total for ${ n } month": [
         "Celkom za ${ n } mesiac",
@@ -3163,7 +3163,7 @@
     },
     "Delete address prompt": {
       "Once deleted, this address can't be used again by anyone else.": [
-        "Po vymazaní túto adresu už nikto iný nemôže použiť."
+        "Po vymazaní túto adresu už nikto iný nebude môcť použiť."
       ],
       "You can only delete 1 address per year.": [
         "Môžete vymazať iba 1 adresu za rok."
@@ -3409,7 +3409,7 @@
     },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
-        "Podujatie ${ eventTitle } bolo zrušené."
+        "Udalosť ${ eventTitle } bola zrušená."
       ],
       "All events in this series were updated.": [
         "Všetky udalosti v tejto sérii boli aktualizované."
@@ -3418,7 +3418,7 @@
         "Všetky udalosti v tejto sérii boli aktualizované. Zmeny sú uvedené nižšie:\n\n${ updateEventDetailsText }"
       ],
       "This event occurrence was canceled.": [
-        "Toto podujatie bolo zrušené."
+        "Táto udalosť bola zrušená."
       ],
       "This event occurrence was updated.": [
         "Výskyt tejto udalosti bol aktualizovaný."
@@ -3433,7 +3433,7 @@
         "Táto udalosť bola aktualizovaná. Zmeny sú uvedené nižšie:\n\n${ updateEventDetailsText }"
       ],
       "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
-        "Dostali ste pozvánku na podujatie ${ eventTitle }.\n\n${ eventDetailsText }"
+        "Dostali ste pozvánku na udalosť ${ eventTitle }.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -3459,13 +3459,13 @@
     },
     "Email body for response to invitation": {
       "${ emailAddress } accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } prijal vašu pozvánku na podujatie ${ eventTitle }"
+        "${ emailAddress } prijal vašu pozvánku na udalosť ${ eventTitle }"
       ],
       "${ emailAddress } declined your invitation to ${ eventTitle }": [
-        "${ emailAddress } odmietol/odmietla vašu pozvánku na podujatie ${ eventTitle }"
+        "${ emailAddress } odmietol/odmietla vašu pozvánku na udalosť ${ eventTitle }"
       ],
       "${ emailAddress } tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } predbežne prijal/a vaše pozvanie na podujatie ${ eventTitle }"
+        "${ emailAddress } predbežne prijal/a vaše pozvanie na udalosť ${ eventTitle }"
       ]
     },
     "Email spam notification": {
@@ -4330,9 +4330,6 @@
       ],
       "You have reached the contacts limit for your account": [
         "Dosiahli ste limit kontaktov pre svoj účet"
-      ],
-      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
-        "Dosiahli ste maximálny počet kalendárov. Niektoré kalendáre nebolo možné importovať."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Limit počtu adries vo vašom pláne bol vyčerpaný. Prejdite na vyšší plán, ak chcete pridať novú adresu."
@@ -6023,17 +6020,6 @@
         "Časť obsahu vášho kalendára nie je podporovaná a nebude importovaná."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Boli zistené ďalšie duplicitné kľúče. Pre viac informácií ich prosím nahrajte jednotlivo."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Kľúč ${ fingerprint } už bol nahraný"
-      ],
-      "Selected color:": [
-        "Vybraná farba:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikácia ${ appName } potrebuje Váš súhlas, aby mohla ${ enableDesktopNotifications }."
@@ -6906,7 +6892,7 @@
         "Pre členov organizácií používajúcich jednotné prihlásenie (SAML SSO)"
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
-        "Pre užívateľov, ktorí prechádzajú na ${ MAIL_APP_NAME } z inej emailovej služby, vyberte kartu ${ boldAddresses } a pred zmenou MX záznamu pridajte všetky aktívne emailové adresy, aby bol zaistený plynulý prechod."
+        "Pre používateľov, ktorí prechádzajú na ${ MAIL_APP_NAME } z inej emailovej služby, vyberte kartu ${ boldAddresses } a pred zmenou MX záznamu pridajte všetky aktívne emailové adresy, aby bol zaistený plynulý prechod."
       ],
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Preposielajte prichádzajúcu poštu z iného účtu do vašej zabezpečenej schránky ${ MAIL_APP_NAME }."
@@ -7011,10 +6997,10 @@
         "Ak si želáte skombinovať tento účet s iným, nemažte ho."
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
-        "Ak máte problémy, sme tu, aby sme vám pomohli. ${ boldPhoneCall } alebo začnite ${ boldZoomMeeting } s jedným z našich špecialistov podpory, alebo otvorte ${ boldLiveChat } pre chatovú podporu."
+        "Ak máte problémy, sme tu, aby sme vám pomohli. Skúste ${ boldPhoneCall } alebo ${ boldZoomMeeting } s jedným z našich špecialistov podpory, alebo otvorte ${ boldLiveChat } pre chatovú podporu."
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists.": [
-        "Ak máte problémy, sme tu, aby sme vám pomohli. ${ boldPhoneCall } alebo začnite ${ boldZoomMeeting } s jedným z našich špecialistov podpory."
+        "Ak máte problémy, sme tu, aby sme vám pomohli. Skúste ${ boldPhoneCall } alebo ${ boldZoomMeeting } s jedným z našich špecialistov podpory."
       ],
       "Image description": [
         "Popis obrázku"
@@ -7416,10 +7402,10 @@
         "Pridajte heslá pre používateľov na riadkoch"
       ],
       "Please add an email address for the user on row": [
-        "Pridajte e-mailovú adresu používateľa na riadku",
-        "Pridajte e-mailové adresy používateľov na riadkoch",
-        "Pridajte e-mailové adresy používateľov na riadkoch",
-        "Pridajte e-mailové adresy používateľov na riadkoch"
+        "Pridajte emailovú adresu používateľa na riadku",
+        "Pridajte emailové adresy používateľov na riadkoch",
+        "Pridajte emailové adresy používateľov na riadkoch",
+        "Pridajte emailové adresy používateľov na riadkoch"
       ],
       "Please authenticate your card in the verification tab.": [
         "Overte svoju kartu v okne overenia."
@@ -7468,12 +7454,6 @@
       ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Skúste to znova, použite iný spôsob platby, alebo požiadajte o pomoc PayPal."
-      ],
-      "Please use a password more than ${ MIN_PASSWORD_LENGTH } character.": [
-        "Použite prosím heslo s dĺžkou viac než ${ MIN_PASSWORD_LENGTH } znak.",
-        "Použite prosím heslo s dĺžkou viac než ${ MIN_PASSWORD_LENGTH } znaky.",
-        "Použite prosím heslo s dĺžkou viac než ${ MIN_PASSWORD_LENGTH } znakov.",
-        "Použite prosím heslo s dĺžkou viac než ${ MIN_PASSWORD_LENGTH } znakov."
       ],
       "Please use another browser or download the file.": [
         "Použite iný prehliadač alebo si súbor stiahnite, prosím."
@@ -8265,7 +8245,7 @@
         "S vašim súčasným plánom môžete dostávať správy iba s vašou @pm.me adresou. Upgradujte ho, aby ste mohli správy odosielať a vytvárať ďalšie adresy použitím @pm.me."
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "Bez aktivácie nebudete môcť vytvárať nových užívateľov, pridávať adresy existujúcim utívateľom, alebo pristupovať k verejným užívateľským účtom."
+        "Bez aktivácie nebudete môcť vytvárať nových používateľov, pridávať adresy existujúcim používateľom, alebo pristupovať k verejným používateľským účtom."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Chcete získať nový overovací kód alebo použiť alternatívnu metódu overovania?"
@@ -8358,10 +8338,10 @@
         "Na pripojenie k serveru ${ VPN_APP_NAME } pomocou aplikácie VPN s otvoreným zdrojovým kódom tretej strany, napríklad Tunnelblick pre macOS alebo OpenVPN pre GNU/Linux, môžete použiť nasledujúce prihlasovacie údaje."
       ],
       "You can't send more than ${ emailSendLimitNumber } email invite for the next 24 hours": [
-        "Počas nasledujúcich 24 hodín nemôžete odoslať viac ako ${ emailSendLimitNumber } e-mailovú pozvánku",
-        "Počas nasledujúcich 24 hodín nemôžete odoslať viac ako ${ emailSendLimitNumber } e-mailové pozvánky",
-        "Počas nasledujúcich 24 hodín nemôžete odoslať viac ako ${ emailSendLimitNumber } e-mailových pozvánok",
-        "Počas nasledujúcich 24 hodín nemôžete odoslať viac ako ${ emailSendLimitNumber } e-mailových pozvánok"
+        "Počas nasledujúcich 24 hodín nemôžete odoslať viac ako ${ emailSendLimitNumber } emailovú pozvánku",
+        "Počas nasledujúcich 24 hodín nemôžete odoslať viac ako ${ emailSendLimitNumber } emailové pozvánky",
+        "Počas nasledujúcich 24 hodín nemôžete odoslať viac ako ${ emailSendLimitNumber } emailových pozvánok",
+        "Počas nasledujúcich 24 hodín nemôžete odoslať viac ako ${ emailSendLimitNumber } emailových pozvánok"
       ],
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "Nemôžete odporúčať používateľom ${ MAIL_APP_NAME }"
@@ -8440,9 +8420,6 @@
       ],
       "You won’t be able to recover locked data using your downloaded recovery files.": [
         "Uzamknuté údaje nebudete môcť obnoviť pomocou stiahnutých súborov na obnovenie."
-      ],
-      "You won’t be able to recover locked data using your downloaded recovery files. This will also disable trusted device recovery.": [
-        "Pomocou stiahnutých súborov na obnovu nebudete môcť obnoviť uzamknuté údaje. Tým sa zakáže aj obnovenie z dôveryhodného zariadenia."
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
         "Váš účet ${ BRAND_NAME } je spojený s ${ externalEmailAddress }."
@@ -8541,6 +8518,17 @@
         "Zoom míting"
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Boli zistené ďalšie duplicitné kľúče. Pre viac informácií ich prosím nahrajte jednotlivo."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Kľúč ${ fingerprint } už bol nahraný"
+      ],
+      "Selected color:": [
+        "Vybraná farba:"
+      ]
+    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Ak je táto možnosť povolená, podpriečinky zdedia farbu nadradených priečinkov."
@@ -8553,7 +8541,7 @@
     },
     "Info for domain modal": {
       "Add a new address for the existing users of your organization.": [
-        "Pridajte novú adresu pre existujúcich užívateľov vašej organizácie."
+        "Pridajte novú adresu pre existujúcich používateľov vašej organizácie."
       ],
       "Add a new user to your organization and create an address for it.": [
         "Pridajte nového používateľa do vašej organizácie a vytvorte mu adresu."
@@ -8688,10 +8676,10 @@
         "Kľúč bol úspešne vygenerovaný"
       ],
       "Note: you already have a key with the same algorithm for this address. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
-        "Poznámka: pre túto adresu už máte kľúč s rovnakým algoritmom. Ak tento kľúč nebol kompromitovaný, môže byť zbytočné generovať nový kľúč a môže to spomaliť váš účet."
+        "Poznámka: pre túto adresu už máte kľúč s rovnakým algoritmom. Ak tento kľúč nebol kompromitovaný, môže byť zbytočné generovať nový kľúč, čo môže spomaliť váš účet."
       ],
       "Note: you already have a key with the same algorithm for this user. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
-        "Poznámka: pre tohto používateľa už máte kľúč s rovnakým algoritmom. Ak tento kľúč nebol kompromitovaný, môže byť zbytočné generovať nový kľúč a môže to spomaliť váš účet."
+        "Poznámka: pre tohto používateľa už máte kľúč s rovnakým algoritmom. Ak tento kľúč nebol kompromitovaný, môže byť zbytočné generovať nový kľúč, čo môže spomaliť váš účet."
       ],
       "This will generate a new key, which will be used to encrypt future contact details, email encryption keys, and other data.": [
         "Týmto sa vygeneruje nový kľúč, ktorý sa bude používať na šifrovanie budúcich kontaktných údajov, šifrovacích kľúčov emailov a ďalších údajov."
@@ -8991,10 +8979,10 @@
         "${ nbYear } rokov"
       ],
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "${ UsedAddresses } z ${ MaxAddresses } e-mail adries",
-        "${ UsedAddresses } z ${ MaxAddresses } e-mail adries",
-        "${ UsedAddresses } z ${ MaxAddresses } e-mail adries",
-        "${ UsedAddresses } z ${ MaxAddresses } e-mail adries"
+        "${ UsedAddresses } z ${ MaxAddresses } emailovej adresy",
+        "${ UsedAddresses } z ${ MaxAddresses } emailových adries",
+        "${ UsedAddresses } z ${ MaxAddresses } emailových adries",
+        "${ UsedAddresses } z ${ MaxAddresses } emailových adries"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Dočasne nedostupné. Skúste to neskôr.)"
@@ -9897,9 +9885,6 @@
       ],
       "Recovery phrase": [
         "Obnovovacia fráza"
-      ],
-      "Trusted device recovery": [
-        "Obnovenie dôveryhodného zariadenia"
       ]
     },
     "Label for adding a new custom domain": {
@@ -10175,7 +10160,7 @@
         "Prihlásiť sa"
       ],
       "stay safer online": [
-        "zostaňte bezpečnejší online"
+        "zostať bezpečnejší online"
       ],
       "switch account": [
         "prepnúť účet"
@@ -10242,22 +10227,22 @@
         "Zistiť viac"
       ],
       "upgrade for more storage": [
-        "navýšiť tarifu pre viac priestoru"
+        "upgrajdujte pre väčšie úložisko"
       ],
       "Upgrade to restore full access": [
-        "Upgradujte na obnovenie plného prístupu"
+        "Upgradujte pre obnovenie plného prístupu"
       ],
       "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
-        "Vaša ${ driveStorage } je plná. Ak chcete nahrať alebo synchronizovať súbory, uvoľnite miesto alebo ${ cta }."
+        "Vaše ${ driveStorage } je plné. Ak chcete nahrať alebo synchronizovať súbory, uvoľnite miesto alebo ${ cta }."
       ],
       "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
-        "Vaša ${ mailStorage } je plné. Pre odosielanie alebo prijímanie emailov uvoľnite miesto alebo ${ cta }."
+        "Vaše ${ mailStorage } je plné. Pre odosielanie alebo prijímanie emailov uvoľnite miesto alebo ${ cta }."
       ],
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "Vášmu kontu hrozí vymazanie. Ak chcete zabrániť strate údajov, požiadajte správcu o aktualizáciu. ${ cta }"
       ],
       "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
-        "Vaše úložisko je plné. Ak chcete odosielať alebo prijímať e-maily, uvoľnite miesto alebo ${ cta }."
+        "Vaše úložisko je plné. Ak chcete odosielať alebo prijímať emaily, uvoľnite miesto alebo ${ cta }."
       ],
       "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
         "Vaše úložisko je plné. Ak chcete nahrať alebo synchronizovať súbory, uvoľnite miesto alebo ${ cta }."
@@ -10316,7 +10301,7 @@
     },
     "mailtrial2024: Action": {
       "Get the deal": [
-        "Získajte ponuku"
+        "Získať ponuku"
       ],
       "Special Offer": [
         "Špeciálna ponuka"
@@ -10358,7 +10343,7 @@
         "Získajte ${ planName } za ${ price }"
       ],
       "Limited-time offer, expires April 2 2024": [
-        "Časovo limitovaná ponuka, končí 2. apríla 2024"
+        "Časovo obmedzená ponuka, končí 2. apríla 2024"
       ],
       "Your subscription will auto-renew on ${ renewTime } at ${ renewablePrice }, cancel anytime": [
         "Vaše predplatné sa automaticky obnoví ${ renewTime } za ${ renewablePrice }, môžete ho kedykoľvek zrušiť"
@@ -10366,7 +10351,7 @@
     },
     "mailtrial2024: Title": {
       "Get ${ planName } for only ${ planPrice }": [
-        "Získajte ${ planName } len za ${ planPrice }"
+        "Získať ${ planName } len za ${ planPrice }"
       ]
     },
     "Maintenance mode": {
@@ -10797,9 +10782,9 @@
       ],
       "${ n } email address": [
         "${ n } emailová adresa",
-        "${ n } e-mailové adriesy/aliasy",
-        "${ n } e-mailových adries/aliasov",
-        "${ n } e-mailových adries/aliasov"
+        "${ n } emailové adresy/aliasy",
+        "${ n } emailových adries/aliasov",
+        "${ n } emailových adries/aliasov"
       ],
       "${ n } email address per user": [
         "${ n } emailová adresa na používateľa",
@@ -11309,7 +11294,7 @@
         "Špecializované riešenie VPN, ktoré poskytuje bezpečný, neobmedzený a vysokorýchlostný prístup k internetu."
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
-        "Bezplatný štartovací účet navrhnutý tak, aby v predvolenom nastavení umožnil každému súkromie."
+        "Bezplatný štartovací účet, ktorý je navrhnutý tak, aby poskytol súkromie pre všetkých už v základnom nastavení."
       ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
         "Využívate propagačnú cenu vášho aktuálneho plánu. Ak svoj účet odstránite, prídete o propagačnú cenu a tá už nebude k dispozícii po opätovnom vytvorení nového účtu."
@@ -12126,7 +12111,7 @@
         "Tipy na výber dobrého loga"
       ],
       "Use a graphical icon or image rather than text.": [
-        "Radšej použite grafickú ikonu alebo obrázok namiesto textu."
+        "Namiesto textu použite skôr grafickú ikonu alebo obrázok."
       ],
       "Use a solid background color.": [
         "Použite jednofarebné pozadie."
@@ -13115,7 +13100,7 @@
     },
     "Security Center - Info": {
       "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLinkBreach }": [
-        "Vaše údaje boli zistené najmenej v jednom prípade porušenia ochrany osobných údajov. Ak chcete zobraziť podrobnosti a podniknúť kroky, zapnite funkciu ${ DARK_WEB_MONITORING_NAME }. ${ learnMoreLinkBreach }"
+        "Vaše údaje boli zistené najmenej v jednom prípade úniku ochrany osobných údajov. Ak chcete zobraziť podrobnosti a podniknúť kroky, zapnite funkciu ${ DARK_WEB_MONITORING_NAME }. ${ learnMoreLinkBreach }"
       ]
     },
     "Select file": {
@@ -13871,9 +13856,6 @@
       ]
     },
     "Storage": {
-      "Release notes": [
-        "Zoznam zmien"
-      ],
       "Upgrade storage": [
         "Navýšiť úložisko"
       ],
@@ -14074,10 +14056,10 @@
         "${ UsedAddresses } adries"
       ],
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "${ UsedAddresses } z ${ MaxAddresses } e-mail adries",
-        "${ UsedAddresses } z ${ MaxAddresses } e-mail adries",
-        "${ UsedAddresses } z ${ MaxAddresses } e-mail adries",
-        "${ UsedAddresses } z ${ MaxAddresses } e-mail adries"
+        "${ UsedAddresses } z ${ MaxAddresses } emailovej adresy",
+        "${ UsedAddresses } z ${ MaxAddresses } emailových adries",
+        "${ UsedAddresses } z ${ MaxAddresses } emailových adries",
+        "${ UsedAddresses } z ${ MaxAddresses } emailových adries"
       ],
       "${ UsedCalendars } calendar": [
         "${ UsedCalendars } kalendár",
@@ -14092,10 +14074,10 @@
         "${ UsedDomains } z ${ MaxDomains } vlastných domén"
       ],
       "${ UsedMembers } of ${ MaxMembers } user": [
-        "${ UsedMembers } z ${ MaxMembers } užívateľa",
-        "${ UsedMembers } z ${ MaxMembers } užívateľov",
-        "${ UsedMembers } z ${ MaxMembers } užívateľov",
-        "${ UsedMembers } z ${ MaxMembers } užívateľov"
+        "${ UsedMembers } z ${ MaxMembers } používateľa",
+        "${ UsedMembers } z ${ MaxMembers } používateľov",
+        "${ UsedMembers } z ${ MaxMembers } používateľov",
+        "${ UsedMembers } z ${ MaxMembers } používateľov"
       ],
       "1 email address": [
         "1 emailová adresa"
@@ -14146,7 +14128,7 @@
     },
     "Subscription reminder": {
       "${ BRAND_NAME } was targeted by Russia in one of the most aggressive censorship campaigns in recent memory, and our team fought back.": [
-        "${ BRAND_NAME } sa stalo terčom jednej z najagresívnejších cenzúrnych kampaní v poslednom čase a náš tím sa bránil."
+        "${ BRAND_NAME } sa stal terčom jednej z najagresívnejších cenzúrnych kampaní v poslednom čase a náš tím sa bránil."
       ],
       "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
         "Jediným zdrojom príjmov spoločnosti ${ BRAND_NAME } je predplatné používateľov. Vaša podpora nám umožňuje zostať nezávislými, rozvíjať naše poslanie, aby sa súkromie stalo štandardom na internete, a naďalej podporovať aktivistov a organizácie bojujúce za súkromie a slobodu."
@@ -14161,7 +14143,7 @@
         "Desktopová aplikácia ${ MAIL_APP_NAME } "
       ],
       "${ planMaxSpace } total storage": [
-        "${ planMaxSpace } celkové úložisko"
+        "${ planMaxSpace } úložného priestoru"
       ],
       "${ planName } doesn't just provide extra storage. It lets you manage your emails faster, customize your inbox and email addresses, and access the desktop app.": [
         "${ planName } neposkytuje len dodatočné úložisko. Umožňuje vám rýchlejšie spravovať emaily, prispôsobiť si doručenú poštu a emailové adresy a získať prístup k aplikácii pre počítače."
@@ -14212,7 +14194,7 @@
         "Vlastné časy odoslania a odloženia"
       ],
       "Have a question?": [
-        "Máte otázku"
+        "Máte otázku?"
       ],
       "Helping activists in Hong Kong": [
         "Pomáhame aktivistom v Hongkongu"
@@ -14221,10 +14203,10 @@
         "Stále chcem službu zrušiť"
       ],
       "If you exceed your free Drive storage quota:": [
-        "Ak ste prekročili kvótu voľného úložiska služby Drive:"
+        "Ak prekročíte kvótu voľného úložiska služby Drive:"
       ],
       "If you exceed your free Mail storage quota:": [
-        "Ak ste prekročili kvótu voľného úložiska služby Mail:"
+        "Ak prekročíte kvótu voľného úložiska služby Mail:"
       ],
       "Keep ${ planName }": [
         "Ponechať ${ planName }"
@@ -14294,6 +14276,14 @@
       ],
       "Your own short @pm.me email alias": [
         "Váš vlastný skrátený emailový alias @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB úložného priestoru"
+      ],
+      "Desktop app": [
+        "Desktopová aplikácia"
       ]
     },
     "Subscription renewal state": {
@@ -14531,7 +14521,7 @@
         "Relácia zrušená"
       ],
       "User deleted": [
-        "Užívateľ odstránený"
+        "Používateľ odstránený"
       ]
     },
     "Success message after sorting folders": {
@@ -15181,7 +15171,7 @@
         "Upraviť zoznam serverov brány"
       ],
       "Edit user": [
-        "Upraviť užívateľa"
+        "Upraviť používateľa"
       ],
       "Edit users": [
         "Upraviť používateľov"
@@ -15244,10 +15234,10 @@
         "Externé nastavenie PGP"
       ],
       "Failed to create ${ failedUsers.length } user\naccount.": [
-        "Nepodarilo sa vytvoriť ${ failedUsers.length } užívateľský účet.",
-        "Nepodarilo sa vytvoriť ${ failedUsers.length } užívateľské účty.",
-        "Nepodarilo sa vytvoriť ${ failedUsers.length } užívateľských účtov.",
-        "Nepodarilo sa vytvoriť ${ failedUsers.length } užívateľských účtov."
+        "Nepodarilo sa vytvoriť ${ failedUsers.length } používateľský účet.",
+        "Nepodarilo sa vytvoriť ${ failedUsers.length } používateľské účty.",
+        "Nepodarilo sa vytvoriť ${ failedUsers.length } používateľských účtov.",
+        "Nepodarilo sa vytvoriť ${ failedUsers.length } používateľských účtov."
       ],
       "Filter name cannot contain only spaces": [
         "Názov filtra nesmie obsahovať iba medzery"
@@ -15775,16 +15765,13 @@
         "Na vašu novú adresu vám pošleme email s pokynmi na dokončenie zmeny."
       ],
       "What is an alias?": [
-        "Čo je to alias?"
+        "Čo je alias?"
       ],
       "What is the dark web?": [
-        "Čo je to dark web?"
+        "Čo je dark web?"
       ],
       "What would you like to import?": [
         "Čo by ste chceli importovať?"
-      ],
-      "What's new": [
-        "Čo je nové"
       ],
       "WireGuard configuration": [
         "Konfigurácia WireGuard"

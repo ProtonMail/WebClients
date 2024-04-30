@@ -47,11 +47,11 @@
       "${ BRAND_NAME } shop": [
         "Trgovina ${ BRAND_NAME }"
       ],
-      "activate": [
-        "aktiviraj"
-      ],
       "Activate": [
         "Aktiviraj"
+      ],
+      "activate": [
+        "aktiviraj"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktiviraj ${ user.Name }@pm.me"
@@ -714,7 +714,7 @@
         "Obnovi podatke"
       ],
       "Refer a friend": [
-        "Priporočite prijatelja"
+        "Priporočite prijatelju"
       ],
       "Refresh status": [
         "Osveži stanje"
@@ -759,13 +759,13 @@
         "Preimenuj"
       ],
       "Report a problem": [
-        "Prijavi težavo"
+        "Prijavite težavo"
       ],
       "Request a call": [
         "Zahtevajte klic"
       ],
       "Request a feature": [
-        "Zahtevaj funkcijo"
+        "Predlagajte novo funkcijo"
       ],
       "Request new code": [
         "Zahtevaj novo kodo"
@@ -4272,9 +4272,6 @@
       "You have reached the contacts limit for your account": [
         "Dosegli ste mejo za število stikov v vašem računu."
       ],
-      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
-        "Dosegli ste največje možno število koledarjev. Nekateri koledarji se niso mogli uvoziti."
-      ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Uporabili ste vse naslove v svojem paketu. Prosimo nadgradite paket, da dodate nov naslov."
       ],
@@ -5959,17 +5956,6 @@
         "Del vsebine koledarja ni podprt in ne bo uvožen."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Zaznali smo dodatne podvojene ključe. Prosimo, da jih naložite posamično za več informacij."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Ključ ${ fingerprint } je že bil naložen."
-      ],
-      "Selected color:": [
-        "Izberi barvo:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } potrebuje vaše dovoljenje za ${ enableDesktopNotifications }."
@@ -6533,7 +6519,7 @@
         "Kopiraj predlagano geslo v odložišče."
       ],
       "Copy your referral link": [
-        "Kopirajte svojo napotitveno povezavo"
+        "Kopirajte svojo povezavo za priporočilo"
       ],
       "Country code": [
         "Koda države"
@@ -7031,7 +7017,7 @@
         "Samo potrdite svoj izbor, vse ostalo opravimo mi."
       ],
       "Just send them your personal referral link.": [
-        "Samo pošljite jim svojo osebno napotitveno povezavo."
+        "Samo pošljite jim svojo osebno povezavo za priporočilo."
       ],
       "Key deletion is irreversible!": [
         "Brisanje ključa je nepovratno!"
@@ -7372,12 +7358,6 @@
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Poskusite znova, uporabite drug način plačila ali se za pomoč obrnite na PayPal."
       ],
-      "Please use a password more than ${ MIN_PASSWORD_LENGTH } character.": [
-        "Prosimo uporabite geslo daljše od ${ MIN_PASSWORD_LENGTH } znaka.",
-        "Prosimo uporabite geslo daljše od ${ MIN_PASSWORD_LENGTH } znakov.",
-        "Prosimo uporabite geslo daljše od ${ MIN_PASSWORD_LENGTH } znakov.",
-        "Prosimo uporabite geslo daljše od ${ MIN_PASSWORD_LENGTH } znakov."
-      ],
       "Please use another browser or download the file.": [
         "Prosimo, uporabite drug brskalnik ali prenesite datoteko."
       ],
@@ -7460,7 +7440,7 @@
         "Obnovitvena fraza ni povezana z nobenimi zastarelimi ključi."
       ],
       "Referral link copied to your clipboard": [
-        "Napotitvena povezava je bila kopirana v odložišče"
+        "Povezava za priporočilo je bila kopirana v odložišče."
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Osvežitev strani ali ${ link } bo samodejno odpravilo večino težav."
@@ -8138,7 +8118,7 @@
         "Zakaj?"
       ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
-        "Z načrtom Business ali Enterprise lahko kupite ${ boldDedicatedServers } za svojo organizacijo in nastavite ${ boldGateways }, da nadzirate, kateri uporabniki lahko dostopajo do njih."
+        "S paketom Business ali Enterprise lahko kupite ${ boldDedicatedServers } za svojo organizacijo in nastavite ${ boldGateways }, da nadzirate, kateri uporabniki lahko dostopajo do njih."
       ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "S šifriranim naslovom ${ BRAND_NAME } lahko uporabljate vse storitve ${ BRAND_NAME }."
@@ -8320,9 +8300,6 @@
       "You won’t be able to recover locked data using your downloaded recovery files.": [
         "S prenesenimi datotekami za obnovitev ne boste mogli obnoviti zaklenjenih podatkov."
       ],
-      "You won’t be able to recover locked data using your downloaded recovery files. This will also disable trusted device recovery.": [
-        "S prenesenimi obnovitvenimi datotekami ne boste mogli obnoviti zaklenjenih podatkov. To bo tudi onemogočilo obnovitev zaupanja vredne naprave."
-      ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
         "Vaš račun ${ BRAND_NAME } je povezan z ${ externalEmailAddress }."
       ],
@@ -8415,6 +8392,17 @@
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Vaš zahtevek za podporo je bil zaprt. Hvala, ker ste se obrnili na podporo ${ BRAND_NAME }."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Zaznali smo dodatne podvojene ključe. Prosimo, da jih naložite posamično za več informacij."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Ključ ${ fingerprint } je že bil naložen."
+      ],
+      "Selected color:": [
+        "Izberi barvo:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9305,7 +9293,7 @@
         "ID izdajatelja"
       ],
       "Keep me signed in": [
-        "Pusti me vpisanega"
+        "Zapomni si mojo prijavo"
       ],
       "Keep messages in Sent/Drafts": [
         "Obdrži sporočila v Poslano/Osnutki"
@@ -9737,7 +9725,7 @@
         "Vaše geslo (admin)"
       ],
       "Your referral link": [
-        "Povezava za napotitev"
+        "Povezava za priporočilo"
       ]
     },
     "label": {
@@ -9746,9 +9734,6 @@
       ],
       "Recovery phrase": [
         "Stavek za obnovitev"
-      ],
-      "Trusted device recovery": [
-        "Obnovitev zaupanja vredne naprave."
       ]
     },
     "Label for adding a new custom domain": {
@@ -12086,7 +12071,7 @@
         "${ PASS_APP_NAME } ohrani vaša gesla in identiteto na varnem s strogim celovitim šifriranjem."
       ],
       "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. To add premium features of ${ PASS_APP_NAME_2 } to your current subscription, we suggest upgrading to the ${ upsellPlanName } plan.": [
-        "${ PASS_APP_NAME } varuje vaša gesla in identiteto s strogim celovitim šifriranjem. Če želite svoji trenutni naročnini dodati vrhunske funkcije ${ PASS_APP_NAME_2 }, predlagamo, da nadgradite na paket ${ upsellPlanName }."
+        "${ PASS_APP_NAME } varuje vaša gesla in identiteto s strogim celovitim šifriranjem. Če želite svoji trenutni naročnini dodati premijske funkcije ${ PASS_APP_NAME_2 }, predlagamo, da nadgradite na paket ${ upsellPlanName }."
       ],
       "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. Your current plan already gives you access to premium ${ PASS_APP_NAME_2 } features — no need to purchase again.": [
         "${ PASS_APP_NAME } ohrani vaša gesla in identiteto na varnem s strogim celovitim šifriranjem. Vaš trenutni paket vam že omogoča dostop do premijskih funkcij ${ PASS_APP_NAME_2 }. Ni potrebe po ponovnem nakupu."
@@ -13573,9 +13558,6 @@
       ]
     },
     "Storage": {
-      "Release notes": [
-        "Opombe k izdaji"
-      ],
       "Upgrade storage": [
         "Nadgradi shrambo"
       ],
@@ -14634,7 +14616,7 @@
         "Prilagoditev uvoza koledarja"
       ],
       "Customize the number of IP addresses in your plan": [
-        "Prilagodite število naslovov IP v svojem načrtu"
+        "Prilagodite število naslovov IP v svojem paketu"
       ],
       "Customize your mail import": [
         "Prilagodite uvoz pošte."
@@ -14886,7 +14868,7 @@
         "Kako deluje?"
       ],
       "How to refer a friend and get credits": [
-        "Kako priporočiti prijatelja in pridobiti dobropis."
+        "Kako priporočiti prijatelju in pridobiti dobropis?"
       ],
       "Human verification": [
         "Ali si človek"
@@ -15078,7 +15060,7 @@
         "Datoteka za obnovitev"
       ],
       "Refer a friend": [
-        "Priporočite prijatelja"
+        "Priporočite prijatelju"
       ],
       "Remove calendar": [
         "Odstrani koledar"
@@ -15344,9 +15326,6 @@
       "What would you like to import?": [
         "Kaj želite uvoziti?"
       ],
-      "What's new": [
-        "Novosti"
-      ],
       "WireGuard configuration": [
         "WireGuard nastavitev"
       ],
@@ -15360,7 +15339,7 @@
         "Vaša razkrita informacija"
       ],
       "Your plan": [
-        "Vaš načrt"
+        "Vaš paket"
       ],
       "Your recovery status": [
         "Stanje obnavljanja"
