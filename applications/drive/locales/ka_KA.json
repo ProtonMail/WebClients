@@ -2777,9 +2777,6 @@
       "You have reached the contacts limit for your account": [
         "თქვენ მიაღწიეთ კონტაქტების რაოდენობის ზღვარს თქვენი ანგარიშისთვის"
       ],
-      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
-        "თქვენ მიაღწიეთ კალენდრების მაქსიმალურ რაოდენობას. ზოგიერთი კალენდრის იმპორტი ვერ მოხერხდა."
-      ],
       "You must set a name": [
         "სახელის დაყენება აუცილებელია"
       ],
@@ -4495,9 +4492,6 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "გადახდები TLS-ით და შვეიცარიული კანონებითაა დაცული."
-      ],
-      "Pending": [
-        "რიგში"
       ],
       "Permanently delete all files in your locked drive": [
         "თქვენს დაბლოკილ დისკზე ყველა ფაილის სამუდამოდ წაშლა"
@@ -7171,6 +7165,9 @@
       "${ reason } has been enabled": [
         "${ reason } ჩაირთო"
       ],
+      "Access updated and shared": [
+        "წვდომა განახლებული და გაზიარებულია"
+      ],
       "All items will soon be permanently deleted from trash": [
         "ნაგვის ყუთიდან ფაილები მალე სამუდამოდ წაიშლება"
       ],
@@ -7209,6 +7206,9 @@
       ],
       "Failed to move, please try again": [
         "გადატანის შეცდომა. თავიდან სცადეთ"
+      ],
+      "Failed to remove the file": [
+        "ფაილის წაშლა ჩავარდა"
       ],
       "Failed to upload files: ${ err }": [
         "ფაილების ატვირთვის შეცდომა: ${ err }"
@@ -8146,9 +8146,6 @@
     "Storage": {
       "Get more storage": [
         "მიიღეთ მეტი საცავი"
-      ],
-      "Release notes": [
-        "რელიზის შენიშვნები"
       ],
       "Upgrade storage": [
         "ადგილის დამატება"
@@ -9146,9 +9143,6 @@
       ],
       "What would you like to import?": [
         "რისი შემოტანა გნებავთ?"
-      ],
-      "What's new": [
-        "სიახლეები"
       ],
       "You have inaccessible files": [
         "თქვენ გაქვთ ხელმიუწვდომელი ფაილები"
