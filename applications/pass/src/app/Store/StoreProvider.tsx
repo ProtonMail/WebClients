@@ -12,6 +12,7 @@ import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { usePassExtensionLink } from '@proton/pass/components/Core/PassExtensionLink';
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
+import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import { isDocumentVisible, useVisibleEffect } from '@proton/pass/hooks/useVisibleEffect';
 import { api } from '@proton/pass/lib/api/api';
 import { authStore } from '@proton/pass/lib/auth/store';
@@ -22,6 +23,7 @@ import {
     draftsGarbageCollect,
     getUserAccessIntent,
     getUserFeaturesIntent,
+    getUserSettings,
     passwordHistoryGarbageCollect,
     startEventPolling,
     stopEventPolling,
@@ -40,6 +42,7 @@ import { sagaMiddleware, store } from './store';
 
 export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
     const core = usePassCore();
+    const config = usePassConfig();
     const authService = useAuthService();
     const history = useHistory();
     const { installed } = usePassExtensionLink();
@@ -75,6 +78,7 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
                         store.dispatch(passwordHistoryGarbageCollect());
                         store.dispatch(withRevalidate(getUserAccessIntent(userID)));
                         store.dispatch(withRevalidate(getUserFeaturesIntent(userID)));
+                        store.dispatch(withRevalidate(getUserSettings.intent(userID)));
 
                         if (isDocumentVisible()) store.dispatch(startEventPolling());
 
@@ -111,7 +115,7 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
 
                 setCache: async (encryptedCache) => {
                     const userID = authStore.getUserID();
-                    if (userID) return writeDBCache(userID, encryptedCache);
+                    if (userID) return writeDBCache(userID, encryptedCache, config.APP_VERSION);
                 },
             })
         );
