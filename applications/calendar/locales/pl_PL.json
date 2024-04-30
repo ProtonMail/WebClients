@@ -453,11 +453,11 @@
       "Not now": [
         "Nie teraz"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Otwórz ustawienia ${ CALENDAR_APP_NAME }"
@@ -3153,9 +3153,6 @@
       "You have reached the contacts limit for your account": [
         "Osiągnięto limit kontaktów na koncie"
       ],
-      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
-        "Osiągnięto maksymalną liczbę kalendarzy. Niektóre kalendarze nie mogły zostać zaimportowane."
-      ],
       "You must set a name": [
         "Musisz wpisać nazwę"
       ],
@@ -3765,6 +3762,9 @@
     "Header": {
       "Contacts": [
         "Kontakty"
+      ],
+      "Custom recurrence": [
+        "Niestandardowe powtórzenie"
       ],
       "Name": [
         "Nazwa"
@@ -8300,9 +8300,6 @@
       ]
     },
     "Storage": {
-      "Release notes": [
-        "Lista zmian"
-      ],
       "Upgrade storage": [
         "Zwiększ przestrzeń dyskową"
       ],
@@ -8506,11 +8503,17 @@
       "Desktop app": [
         "Aplikacja desktopowa"
       ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomóż nam zapewnić bezpieczeństwo i prywatność w Internecie. Ulepsz konto do płatnego planu."
+      ],
       "No ads or tracking": [
         "Brak reklam i śledzenia"
       ],
       "Short @pm.me email address": [
         "Krótki adres e-mail @pm.me"
+      ],
+      "Support our mission": [
+        "Wesprzyj naszą misję"
       ],
       "Upgrade": [
         "Ulepsz"
@@ -8520,6 +8523,9 @@
       ],
       "We don't sell your data": [
         "Nie sprzedajemy Twoich danych"
+      ],
+      "Your privacy is our mission": [
+        "Prywatność to nasza misja"
       ]
     },
     "Subscription renewal state": {
@@ -9372,9 +9378,6 @@
       ],
       "What would you like to import?": [
         "Jakie dane chcesz zaimportować?"
-      ],
-      "What's new": [
-        "Co nowego"
       ],
       "You have invited participants with equivalent emails": [
         "Zaproszono tych samych uczestników"

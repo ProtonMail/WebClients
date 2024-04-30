@@ -435,11 +435,11 @@
       "Not now": [
         "後で"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME } の設定を開く"
@@ -2908,9 +2908,6 @@
       "You have reached the contacts limit for your account": [
         "アカウントの連絡先が上限に達しています。"
       ],
-      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
-        "カレンダーの個数が上限に達しました。いくつかのカレンダーはインポートできませんでした。"
-      ],
       "You must set a name": [
         "名前を設定してください"
       ],
@@ -4723,6 +4720,12 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "データは ${ importedEmailAddressStrong } から ${ BRAND_NAME } アカウントにインポートできる状態です。"
       ],
+      "Your email address and password were leaked:": [
+        "メールアドレスとパスワードが漏洩しました:"
+      ],
+      "Your email address was exposed:": [
+        "メールアドレスが漏洩しました:"
+      ],
       "Your email will only be used for this one-time verification.": [
         "メールアドレスは、この一度限りの認証にのみ使用されます。"
       ],
@@ -4737,6 +4740,9 @@
       ],
       "Your next billing date is ${ renewalTime }.": [
         "次回の請求日は ${ renewalTime } です。"
+      ],
+      "Your password was leaked:": [
+        "パスワードが漏洩しました:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "電話番号は、この一度限りの認証にのみ使用されます。"
@@ -5339,6 +5345,9 @@
     "Label; import email": {
       "From: ${ from }": [
         "送信者: ${ from }"
+      ],
+      "To: ${ to }": [
+        "宛先: ${ to }"
       ]
     },
     "Landmarks": {
@@ -5426,6 +5435,11 @@
       ],
       "Your import is starting": [
         "インポートが開始しました"
+      ]
+    },
+    "locked_state_storage_banner: info": {
+      "Learn more": [
+        "詳細"
       ]
     },
     "Log preference": {
@@ -6654,9 +6668,6 @@
       "Create new group": [
         "新しいグループを作成"
       ],
-      "Custom": [
-        "カスタム設定"
-      ],
       "Day": [
         "日"
       ],
@@ -7037,6 +7048,9 @@
       ]
     },
     "Security Center - Info": {
+      "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
+        "第三者のサービスから、あなたのパスワードやその他のデータが漏洩した場合に通知します。${ learnMoreLink }"
+      ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "私たちの、最先端のAI駆動セキュリティソリューションは、アカウントの高度な保護を求めるユーザー向けに設計されています。${ learnMoreLink }"
       ],
@@ -7462,6 +7476,9 @@
       "Color-coding is here!": [
         "色分けはこちら！"
       ],
+      "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
+        "デスクトップで簡単に ${ MAIL_APP_NAME } を起動できます。"
+      ],
       "Get the desktop app": [
         "デスクトップアプリを入手"
       ],
@@ -7481,9 +7498,6 @@
       ]
     },
     "Storage": {
-      "Release notes": [
-        "更新情報"
-      ],
       "Upgrade storage": [
         "ストレージ容量を増やす"
       ],
@@ -7621,6 +7635,14 @@
     "Subscription price": {
       "For": [
         "価格:"
+      ]
+    },
+    "subscription reminder": {
+      "Desktop app": [
+        "デスクトップアプリ"
+      ],
+      "Upgrade": [
+        "アップグレード"
       ]
     },
     "Subscription renewal state": {
@@ -8117,6 +8139,9 @@
       "Deleting contacts": [
         "連絡先を削除しています"
       ],
+      "Details": [
+        "詳細"
+      ],
       "Downgrade account": [
         "アカウントのダウングレード"
       ],
@@ -8224,6 +8249,9 @@
       ],
       "Night theme": [
         "夜間のテーマ"
+      ],
+      "No breaches detected": [
+        "侵害は検出されませんでした"
       ],
       "Notes": [
         "メモ"
@@ -8419,9 +8447,6 @@
       ],
       "What would you like to import?": [
         "何をインポートしたいですか?"
-      ],
-      "What's new": [
-        "更新情報"
       ],
       "You have invited participants with equivalent emails": [
         "同じ電子メールで参加者を招待しました"
