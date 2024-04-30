@@ -11,7 +11,7 @@ import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 import { ASSISTANT_STATUS, RETRY_GENERATE_TIMEOUT, UNLOAD_ASSISTANT_TIMEOUT } from './constants';
 import { GpuLlmManager } from './gpu';
 import { getAssistantStatus, getCanRunAssistant, getHasAccessToAssistant } from './helpers';
-import { GenerationCallback, LlmManager, LlmModel, RunningAction } from './types';
+import { DownloadProgressInfo, GenerationCallback, LlmManager, LlmModel, RunningAction } from './types';
 
 export interface GenerateAssistantResult {
     inputText: string;
@@ -244,8 +244,9 @@ export const AssistantProvider = ({
         }
     }, [canRunAssistant, hasAccessToAssistant]);
 
-    const downloadCallback = (downloadProgress: number) => {
-        setDownloadModelProgress(downloadProgress);
+    const downloadCallback = (info: DownloadProgressInfo) => {
+        const progress = info.receivedBytes / info.estimatedTotalBytes;
+        setDownloadModelProgress(progress);
         /* TODO temporary setting the isDownloaded flag after start download
          * because we have no way to make difference between download and load at this point
          */
