@@ -17,6 +17,7 @@ interface LinkUpload {
     state: TransferState;
     resumeState?: TransferState; // resumeState is set only when state is paused.
     error?: Error;
+    numberOfErrors: number; // how many times the upload failed (used for determining whether it is retry or not)
     originalIsDraft?: boolean;
 
     isForPhotos?: boolean; // tell if the upload is for photos
