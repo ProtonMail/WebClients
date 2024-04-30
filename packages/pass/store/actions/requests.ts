@@ -50,6 +50,7 @@ export const newUserInviteRemoveRequest = (newUserInviteId: string) => `new-user
 
 export const userAccessRequest = (userId: string) => `user::access::${userId}`;
 export const userFeaturesRequest = (userId: string) => `user::features::${userId}`;
+export const userSettingsRequest = (userId: string) => `user::settings::${userId}`;
 
 export const reportBugRequest = (id: string) => `report::bug::${id}`;
 
