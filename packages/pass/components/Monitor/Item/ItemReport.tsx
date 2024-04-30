@@ -31,41 +31,30 @@ const DuplicatePasswordReport: FC<SelectedItem> = (item) => {
                 icon={() => <CardIcon icon="exclamation-filled" className="self-start mt-1" />}
                 titleClassname="color-interaction-norm-major-2 text-lg text-semibold"
                 subtitleClassname="color-interaction-norm-major-2"
-                title={c('Title').t`Reused passwords`}
-                subtitle={
-                    <>
-                        <div>
-                            {total <= 5 ? (
-                                <>
-                                    {c('Description').ngettext(
-                                        msgid`${total} other login uses this password:`,
-                                        `${total} other logins use this password:`,
-                                        total
-                                    )}
-                                    <div className="flex gap-2 my-2 flex-nowrap overflow-overlay">
-                                        {others.map((item) => (
-                                            <PinnedItem
-                                                onClick={() =>
-                                                    selectItem(item.shareId, item.itemId, {
-                                                        prefix: 'monitor/duplicates',
-                                                    })
-                                                }
-                                                item={item}
-                                                key={getItemKey(item)}
-                                                active
-                                            />
-                                        ))}
-                                    </div>
-                                </>
-                            ) : (
-                                // translator full sentence is "X other login use this password", in this usecase X is allwas >5 and the text "X other login" is displayed as pill
-                                c('Description').jt`${total} other logins use this password`
-                            )}
-                        </div>
-                        <div>{c('Description').t`Visit the website and generate a unique password for this item.`}</div>
-                    </>
-                }
+                title={c('Description').ngettext(
+                    msgid`${total} other login uses the same password`,
+                    `${total} other logins use the same password`,
+                    total
+                )}
             />
+            <div>
+                {total <= 5 && (
+                    <div className="flex gap-2 mt-2 flex-nowrap overflow-overlay">
+                        {others.map((item) => (
+                            <PinnedItem
+                                onClick={() =>
+                                    selectItem(item.shareId, item.itemId, {
+                                        prefix: 'monitor/duplicates',
+                                    })
+                                }
+                                item={item}
+                                key={getItemKey(item)}
+                                active
+                            />
+                        ))}
+                    </div>
+                )}
+            </div>
         </Card>
     ) : null;
 };

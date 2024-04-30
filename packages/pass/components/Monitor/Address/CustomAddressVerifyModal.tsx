@@ -4,7 +4,7 @@ import { Form, type FormikErrors, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { Icon, useNotifications } from '@proton/components/index';
+import { Collapsible, CollapsibleContent, CollapsibleHeader, Icon, useNotifications } from '@proton/components/index';
 import { Field } from '@proton/pass/components/Form/Field/Field';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { TextField } from '@proton/pass/components/Form/Field/TextField';
@@ -113,18 +113,32 @@ export const CustomAddressVerifyModal: FC<Props> = ({ onClose, email, addressId,
                     </FormikProvider>
 
                     <div className="mt-2">
-                        <Button
-                            color="norm"
-                            disabled={resend.loading || remaining > 0}
-                            loading={resend.loading}
-                            onClick={() => resend.dispatch(addressId)}
-                            shape="underline"
-                        >
-                            {remaining > 0
-                                ? // translator: example usage: Resend code (in 30s)
-                                  c('Action').t`Resend code (in ${remaining}s)`
-                                : c('Action').t`Resend code`}
-                        </Button>
+                        <Collapsible>
+                            <CollapsibleHeader>
+                                <Button color="norm" size="small" shape="underline">
+                                    {c('Info').t`Didn't receive the code?`}
+                                </Button>
+                            </CollapsibleHeader>
+                            <CollapsibleContent className="text-sm py-2">
+                                <span className="color-weak">
+                                    {c('Info').t`Please check your spam folder or try resending the code.`}
+                                </span>
+                                <Button
+                                    color="norm"
+                                    size="small"
+                                    disabled={resend.loading || remaining > 0}
+                                    loading={resend.loading}
+                                    onClick={() => resend.dispatch(addressId)}
+                                    shape="underline"
+                                    className="block"
+                                >
+                                    {remaining > 0
+                                        ? // translator: example usage: Resend code (in 30s)
+                                          c('Action').t`Resend code (in ${remaining}s)`
+                                        : c('Action').t`Resend code`}
+                                </Button>
+                            </CollapsibleContent>
+                        </Collapsible>
                     </div>
                 </Panel>
             )}
