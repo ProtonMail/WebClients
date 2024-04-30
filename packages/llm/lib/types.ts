@@ -11,7 +11,7 @@ export type PromiseReject = (reason?: any) => void;
 // @ts-ignore
 export interface LlmManager {
     hasGpu: () => boolean;
-    startDownload: (callback: MonitorDownloadCallback) => Promise<void>;
+    startDownload: (updateProgress: DownloadProgressCallback) => Promise<void>;
     cancelDownload: () => boolean;
     loadOnGpu: () => Promise<LlmModel>;
 }
@@ -70,24 +70,19 @@ export type ExpandAction = {
     text: string;
 };
 
-export type NdarrayCache = {
-    metadata: {
-        ParamSize: number;
-        ParamBytes: number;
-        BitsPerParam: number;
-    };
-    records: {
-        dataPath: string;
-        format: string;
-        nbytes: number;
-        records: {
-            name: string;
-            shape: number[];
-            dtype: string;
-            format: string;
-            nbytes: number;
-            byteOffset: number;
-        }[];
-        md5sum: string;
-    }[];
+// A function to monitor the overall download progress.
+//
+// `info.estimatedTotalBytes` can change over time, because there are a few
+// files whose size is unknown until we start downloading them. That said,
+// it shouldn't be far from reality anyway, because we know the size of the
+// biggest files upfront.
+//
+// If the download is stopped and then resume, this progress will take into
+// account the files already cached and start from that number, not from zero.
+export type DownloadProgressCallback = (info: DownloadProgressInfo) => void;
+export type DownloadProgressInfo = {
+    receivedFiles: number;
+    totalFiles: number;
+    receivedBytes: number;
+    estimatedTotalBytes: number;
 };

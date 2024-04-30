@@ -1,9 +1,9 @@
 import type {
     Action,
+    DownloadProgressCallback,
     GenerationCallback,
     LlmManager,
     LlmModel,
-    MonitorDownloadCallback,
     PromiseReject,
     PromiseResolve,
     RunningAction,
@@ -178,6 +178,8 @@ export class DummyLlmModel implements LlmModel {
 export class DummyLlmManager implements LlmManager {
     private TOTAL_CHUNKS = 50;
 
+    private CHUNK_SIZE = 100 * (1024 * 1024);
+
     private downloadedChunks: number;
 
     private downloading: boolean;
@@ -195,14 +197,18 @@ export class DummyLlmManager implements LlmManager {
         return this.downloading;
     }
 
-    async startDownload(callback: MonitorDownloadCallback): Promise<void> {
+    async startDownload(updateProgress: DownloadProgressCallback): Promise<void> {
         void (async () => {
             this.downloading = this.downloadedChunks < this.TOTAL_CHUNKS;
             while (this.downloading) {
-                const progress = this.downloadedChunks / this.TOTAL_CHUNKS;
                 const done = this.downloadedChunks === this.TOTAL_CHUNKS;
                 this.downloading = !done;
-                callback(progress, done);
+                updateProgress({
+                    estimatedTotalBytes: this.CHUNK_SIZE * this.TOTAL_CHUNKS,
+                    receivedBytes: this.CHUNK_SIZE * this.downloadedChunks,
+                    receivedFiles: this.downloadedChunks,
+                    totalFiles: this.TOTAL_CHUNKS,
+                });
                 if (done) break;
                 if (!done) {
                     await delay(400);
