@@ -342,7 +342,7 @@
         "Odstrani člana"
       ],
       "Request a feature": [
-        "Zahtevaj funkcijo"
+        "Predlagajte novo funkcijo"
       ],
       "Resend invitation": [
         "Ponovno pošlji povabilo"
@@ -562,7 +562,7 @@
         "Trezorja s povabil ni bilo mogoče odpreti"
       ],
       "Could not open updated vault": [
-        "Ni bilo mogoče odpreti ustvarjenega trezorja"
+        "Ni bilo mogoče odpreti posodobljenega trezorja"
       ],
       "Could not resolve share members": [
         "Članov v skupni rabi ni bilo mogoče razrešiti"
@@ -586,7 +586,7 @@
         "Odkrita ${ errors.length } poškodovana vrstica CSV",
         "Odkriti ${ errors.length } poškodovani vrstici CSV",
         "Odkrite ${ errors.length } poškodovane vrstice CSV",
-        "Odkrite ${ errors.length } poškodovane vrstice CSV"
+        "Odkritih ${ errors.length } poškodovanih vrstic CSV"
       ],
       "Editing item failed": [
         "Urejanje predmeta ni uspelo"
@@ -730,7 +730,7 @@
         "Nekaj ​​je šlo narobe. Znova naložite razširitev ${ PASS_APP_NAME }. Ta težava je bila zabeležena"
       ],
       "The file you are trying to import is empty": [
-        "Datoteko, ki jo poskušate uvoziti, je prazna"
+        "Datoteka, ki jo poskušate uvoziti, je prazna"
       ],
       "The URL is in the list": [
         "URL je na seznamu"
@@ -852,7 +852,7 @@
     },
     "Info": {
       " Upgrade to a paid plan to create multiple vaults.": [
-        " Nadgradite na plačljivi načrt, da ustvarite več trezorjev."
+        " Nadgradite na plačljivi paket, da ustvarite več trezorjev."
       ],
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "Predmet »${ payload.item.data.metadata.name }« je bil opuščen"
@@ -865,9 +865,9 @@
       ],
       "${ memberCount } member": [
         "${ memberCount } član",
-        "${ memberCount } člani",
         "${ memberCount } člana",
-        "${ memberCount } člana"
+        "${ memberCount } člani",
+        "${ memberCount } članov"
       ],
       "${ modifiedCount } time": [
         "${ modifiedCount }-krat",
@@ -912,7 +912,7 @@
         "Še ${ trialDaysLeft } dni"
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
-        "7 dni, da brezplačno preizkusite vrhunske funkcije. Samo v prvem tednu ${ BRAND_NAME }."
+        "Sedem dni, da brezplačno preizkusite premijske funkcije. Samo v prvem tednu ${ BRAND_NAME }."
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Na voljo je nova različica aplikacije ${ PASS_APP_NAME }. Posodobite ga, če želite uživati v najnovejših funkcijah in popravkih napak."
@@ -1089,7 +1089,7 @@
         "Uvožen ${ payload.total } predmet",
         "Uvožena ${ payload.total } predmeta",
         "Uvoženi ${ payload.total } predmeti",
-        "Uvoženi ${ payload.total } predmeti"
+        "Uvoženih ${ payload.total } predmetov"
       ],
       "Imported on ${ date }": [
         "Uvoženo dne ${ date }"
@@ -1122,7 +1122,7 @@
         "predmet",
         "predmeta",
         "predmeti",
-        "predmeti"
+        "predmetov"
       ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "Predmet »${ payload.item.data.metadata.name }« je ustvarjen"
@@ -1389,7 +1389,7 @@
         "Za pregled uvoženih podatkov kliknite ikono Pass v orodni vrstici brskalnika."
       ],
       "Unable to copy to clipboard": [
-        "Kopiranja v odložišče ni mogoče"
+        "Kopiranje v odložišče ni mogoče"
       ],
       "Unlimited hide-my-email aliases": [
         "Neomejeno število vzdevkov ide-my-email"
@@ -1461,10 +1461,10 @@
         "Nabiralnikov za ta vzdevek ne morete spremeniti."
       ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
-        "Imate še ${ daysRemaining } dan, da preizkusite te in druge vrhunske funkcije.",
-        "Imate še ${ daysRemaining } dni, da preizkusite te in druge premium funkcije.",
-        "Imate še ${ daysRemaining } dni, da preizkusite te in druge premium funkcije.",
-        "Imate še ${ daysRemaining } dni, da preizkusite te in druge premium funkcije."
+        "Imate še ${ daysRemaining } dan, da preizkusite te in druge premijske funkcije.",
+        "Imate še ${ daysRemaining } dni, da preizkusite te in druge premijske funkcije.",
+        "Imate še ${ daysRemaining } dni, da preizkusite te in druge premijske funkcije.",
+        "Imate še ${ daysRemaining } dni, da preizkusite te in druge premijske funkcije."
       ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
         "Presegli ste število trezorjev, vključenih v vašo naročnino. Predmete je mogoče premakniti samo v vaša prva dva trezorja. Za premikanje predmetov med vsemi trezorji nadgradite svojo naročnino."
@@ -1502,15 +1502,15 @@
     },
     "Label": {
       "${ config.options.length } character": [
-        "${ config.options.length }/ znak",
-        "${ config.options.length }/ znaka",
-        "${ config.options.length } znakov",
+        "${ config.options.length } znak",
+        "${ config.options.length } znaka",
+        "${ config.options.length } znaki",
         "${ config.options.length } znakov"
       ],
       "${ config.options.wordCount } word": [
         "${ config.options.wordCount } beseda",
         "${ config.options.wordCount } besedi",
-        "${ config.options.wordCount } besed",
+        "${ config.options.wordCount } besede",
         "${ config.options.wordCount } besed"
       ],
       "1 hour": [
@@ -1844,7 +1844,7 @@
         "Nedavno"
       ],
       "Report a problem": [
-        "Prijavi težavo"
+        "Prijavite težavo"
       ],
       "Restore all items": [
         "Obnovi vse predmete"
@@ -1928,7 +1928,7 @@
         "Neimenovan predmet"
       ],
       "Unnamed note": [
-        "Neimenovan predmet"
+        "Neimenovana opomba"
       ],
       "Untitled": [
         "Brez naslova"
@@ -1989,9 +1989,9 @@
     "Message": {
       "${ count } item": [
         "${ count } predmet",
+        "${ count } predmeta",
         "${ count } predmeti",
-        "${ count } predmeti",
-        "${ count } predmeti"
+        "${ count } predmetov"
       ],
       "You selected ${ semiboldText } in this vault": [
         "V tem trezorju ste izbrali ${ semiboldText }"
@@ -2309,7 +2309,7 @@
     },
     "Validation": {
       "Duplicated URL": [
-        "Podvojeni URL-ji"
+        "Podvojeni URL"
       ],
       "Field name is required": [
         "Ime polja je obvezno"
@@ -2321,13 +2321,13 @@
         "Zahtevana je skrivnost OTP ali URI"
       ],
       "Url already exists": [
-        "Url že obstaja"
+        "URL že obstaja"
       ],
       "URL cannot be empty": [
         "URL vnos ne sme biti prazen."
       ],
       "Url is invalid": [
-        "Naslov Url ni veljaven"
+        "Naslov URL ni veljaven"
       ],
       "URL is invalid": [
         "Naslov URL ni veljaven."
@@ -2341,7 +2341,7 @@
         "Vzdevek »${ name }« se trenutno uporablja v elementu prijave »${ relatedLoginName }«. Prav tako ne boste več prejemali e-poštnih sporočil, poslanih na »${ aliasEmail }«"
       ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
-        "Vsi vaši predmeti v smeti bodo trajno izbrisani. Tega dejanja ne morete razveljaviti."
+        "Vsi vaši predmeti v smetnjaku bodo trajno izbrisani. Tega dejanja ne morete razveljaviti."
       ],
       "An error occured while exporting your data": [
         "Med izvozom vaših podatkov je prišlo do napake"
@@ -2482,22 +2482,22 @@
         "Ne boste več imeli dostopa do tega trezorja. Če se mu želite ponovno pridružiti, potrebujete novo povabilo."
       ],
       "Your plan does not allow you to create more aliases": [
-        "Vaš načrt vam ne dovoljuje ustvarjanja več vzdevkov"
+        "Vaš paket vam ne dovoljuje ustvarjanja več vzdevkov"
       ],
       "Your plan only allows you to autofill from your first two vaults": [
-        "Vaš načrt vam omogoča samo samodejno izpolnjevanje iz prvih dveh trezorjev"
+        "Vaš paket vam omogoča samo samodejno izpolnjevanje iz prvih dveh trezorjev"
       ],
       "Your session could not be authorized.": [
-        "Vaše povezave ni mogoče avtorizirati"
+        "Vaše seje ni mogoče avtorizirati"
       ],
       "Your session could not be resumed.": [
-        "Vaše povezave ni mogoče nadaljevati."
+        "Vaše seje ni mogoče nadaljevati."
       ],
       "Your session is inactive.": [
         "Vaša seja je neaktivna."
       ],
       "Your session was locked.": [
-        "Vaša povezava je zaklenjena."
+        "Vaša seja je zaklenjena."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Vaša naročnina vam ne dovoljuje ustvarjanja več trezorjev. Vsi predmeti bodo uvoženi v vaš prvi trezor. Za uvoz v več trezorjev nadgradite svojo naročnino."
