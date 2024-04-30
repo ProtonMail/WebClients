@@ -48,7 +48,7 @@ export const BreachGroupRow: FC<MonitorTableRow> = (row) => {
 
     const statusClassName = paused ? 'color-weak' : getStatusClassname(row);
     const status = paused ? c('Info').t`Paused` : getStatusLabel(row);
-    const clickable = !paused && (type !== AddressType.CUSTOM || row.verified) && monitored;
+    const clickable = type !== AddressType.CUSTOM || row.verified;
     const danger = monitored && breached;
 
     const handleClick = () => history.push(getLocalPath(`monitor/dark-web/${row.type}/${getAddressId(row)}`));
