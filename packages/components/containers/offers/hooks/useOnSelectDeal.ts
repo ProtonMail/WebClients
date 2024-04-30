@@ -3,16 +3,17 @@ import { useCallback } from 'react';
 import { useSettingsLink } from '@proton/components/components';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
-import { hasInboxDesktopFeature } from '@proton/shared/lib/desktop/ipcHelpers';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { Currency } from '@proton/shared/lib/interfaces';
 
 import { openLinkInBrowser } from '../../desktop/openExternalLink';
+import { useHasInboxDesktopInAppPayments } from '../../desktop/useHasInboxDesktopInAppPayments';
 import getOfferRedirectionParams from '../helpers/getOfferRedirectionParams';
 import { Deal, Offer } from '../interface';
 
 const useSelectDeal = (callback?: () => void) => {
     const goToSettingsLink = useSettingsLink();
+    const hasInboxDesktopInAppPayments = useHasInboxDesktopInAppPayments();
 
     const handleOnSelectDeal = useCallback(
         (offer: Offer, deal: Deal, currency: Currency) => {
@@ -20,7 +21,7 @@ const useSelectDeal = (callback?: () => void) => {
             callback?.();
 
             const url = `/dashboard?${urlSearchParams.toString()}`;
-            if (isElectronApp && !hasInboxDesktopFeature('InAppPayments')) {
+            if (isElectronApp && !hasInboxDesktopInAppPayments) {
                 openLinkInBrowser(getAppHref(url, APPS.PROTONACCOUNT));
                 return;
             } else {
