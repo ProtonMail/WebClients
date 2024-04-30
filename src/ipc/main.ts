@@ -5,7 +5,7 @@ import { refreshHiddenViews, setTrialEnded, updateView } from "../utils/view/vie
 import { handleIPCBadge, resetBadge, showNotification } from "./notification";
 import Logger from "electron-log";
 import { DESKTOP_FEATURES, IPCClientUpdateMessage, IPCGetInfoMessage } from "./ipcConstants";
-import { getTheme, setTheme } from "../utils/themes";
+import { getTheme, isEqualTheme, setTheme } from "../utils/themes";
 
 function isValidClientUpdateMessage(message: unknown): message is IPCClientUpdateMessage {
     return Boolean(message && typeof message === "object" && "type" in message && "payload" in message);
@@ -72,9 +72,13 @@ export const handleIPCCalls = () => {
             case "updateLocale":
                 refreshHiddenViews();
                 break;
-            case "setTheme":
-                setTheme(payload);
+            case "setTheme": {
+                if (!isEqualTheme(getTheme(), payload)) {
+                    setTheme(payload);
+                    refreshHiddenViews();
+                }
                 break;
+            }
             default:
                 Logger.error(`unknown message type: ${type}`);
                 break;

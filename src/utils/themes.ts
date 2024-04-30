@@ -84,3 +84,9 @@ export function setTheme(theme: ThemeSetting) {
         },
     });
 }
+
+export function isEqualTheme(themeA: ThemeSetting, themeB: ThemeSetting) {
+    return (
+        themeA.Mode === themeB.Mode && themeA.LightTheme === themeB.LightTheme && themeA.DarkTheme === themeB.DarkTheme
+    );
+}
