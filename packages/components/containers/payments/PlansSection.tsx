@@ -9,7 +9,6 @@ import { usePaymentsApi } from '@proton/components/payments/react-extensions/use
 import { useLoading } from '@proton/hooks';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS, APP_NAMES, DEFAULT_CYCLE, FREE_SUBSCRIPTION, PLANS, isStringPLAN } from '@proton/shared/lib/constants';
-import { hasInboxDesktopFeature } from '@proton/shared/lib/desktop/ipcHelpers';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
@@ -26,6 +25,7 @@ import { Icon, Loader } from '../../components';
 import { useApi, useLoad, useOrganization, usePlans, useSubscription, useUser, useVPNServersCount } from '../../hooks';
 import MozillaInfoPanel from '../account/MozillaInfoPanel';
 import { openLinkInBrowser, upgradeButtonClick } from '../desktop/openExternalLink';
+import { useHasInboxDesktopInAppPayments } from '../desktop/useHasInboxDesktopInAppPayments';
 import PlanSelection from './subscription/PlanSelection';
 import { useSubscriptionModal } from './subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from './subscription/constants';
@@ -76,6 +76,7 @@ const PlansSection = ({ app }: { app: APP_NAMES }) => {
     const isLoading = Boolean(loadingPlans || loadingSubscription || loadingOrganization);
     const [selectedCurrency, setCurrency] = useState<Currency>();
     const currency = selectedCurrency || getCurrency(user, subscription, plans);
+    const hasInboxDesktopInAppPayments = useHasInboxDesktopInAppPayments();
 
     const [cycle, setCycle] = useState(searchParams.cycle ?? DEFAULT_CYCLE);
     const { CouponCode } = subscription;
@@ -127,7 +128,7 @@ const PlansSection = ({ app }: { app: APP_NAMES }) => {
     const handlePlanChange = (newPlanIDs: PlanIDs) => {
         const newPlanName = Object.keys(newPlanIDs)[0];
         const isNewPlanCorrect = isStringPLAN(newPlanName);
-        if (isElectronApp && !hasInboxDesktopFeature('InAppPayments') && newPlanName && isNewPlanCorrect) {
+        if (isElectronApp && !hasInboxDesktopInAppPayments && newPlanName && isNewPlanCorrect) {
             upgradeButtonClick(cycle, newPlanName);
             return;
         }
@@ -193,7 +194,7 @@ const PlansSection = ({ app }: { app: APP_NAMES }) => {
                 shape="ghost"
                 className="flex mx-auto items-center mb-4"
                 onClick={() => {
-                    if (!hasInboxDesktopFeature('InAppPayments')) {
+                    if (!hasInboxDesktopInAppPayments) {
                         openLinkInBrowser(getAppHref(`mail/upgrade`, APPS.PROTONACCOUNT));
                         return;
                     }
