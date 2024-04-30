@@ -5,7 +5,6 @@ export interface OrganizationTheme {
     showName: boolean;
     name: string;
     access: boolean;
-    enabled: boolean;
 }
 
 const name = 'organizationTheme';
@@ -15,7 +14,6 @@ const defaultState: OrganizationTheme = {
     showName: false,
     name: '',
     access: false,
-    enabled: false,
 };
 
 export const organizationThemeSlice = createSlice({
@@ -25,11 +23,10 @@ export const organizationThemeSlice = createSlice({
         set(state, action: PayloadAction<OrganizationTheme>) {
             return action.payload;
         },
-        reset(state, action: PayloadAction<{ access: boolean; enabled: boolean }>) {
+        reset(state, action: PayloadAction<{ access: boolean }>) {
             return {
                 ...defaultState,
                 access: action.payload.access,
-                enabled: action.payload.enabled,
             };
         },
     },

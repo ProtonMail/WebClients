@@ -28,7 +28,6 @@ export const organizationThemeListener = (startListening: SharedStartListening<O
             return bootstrapEvent.match(action);
         },
         effect: async (_, listenerApi) => {
-            const flagEnabled = listenerApi.extra.unleashClient.isEnabled('LightLabeling');
             listenerApi.unsubscribe();
 
             const organizationThemeFromCookie = getOrganizationThemeFromCookie();
@@ -60,7 +59,6 @@ export const organizationThemeListener = (startListening: SharedStartListening<O
                     name: orgName,
                     showName: true,
                     logoURL,
-                    enabled: flagEnabled,
                 })
             );
         },
@@ -78,14 +76,7 @@ export const organizationThemeListener = (startListening: SharedStartListening<O
         },
         effect: async (_, listenerApi) => {
             const authentication = listenerApi.extra.authentication;
-            const flagEnabled = listenerApi.extra.unleashClient.isEnabled('LightLabeling');
             const config = listenerApi.extra.config;
-
-            if (!flagEnabled) {
-                syncToCookie(serializeOrgTheme(undefined, authentication.localID));
-                listenerApi.dispatch(organizationThemeSlice.actions.reset({ access: false, enabled: flagEnabled }));
-                return;
-            }
 
             const state = listenerApi.getState();
             const organization = selectOrganization(state).value;
@@ -96,7 +87,7 @@ export const organizationThemeListener = (startListening: SharedStartListening<O
                 if (!access) {
                     syncToCookie(serializeOrgTheme(undefined, authentication.localID));
                 }
-                listenerApi.dispatch(organizationThemeSlice.actions.reset({ access, enabled: flagEnabled }));
+                listenerApi.dispatch(organizationThemeSlice.actions.reset({ access }));
                 return;
             }
 
@@ -112,7 +103,6 @@ export const organizationThemeListener = (startListening: SharedStartListening<O
                         UID: authentication.UID,
                         API_URL: config.API_URL,
                     }),
-                    enabled: flagEnabled,
                 })
             );
         },
