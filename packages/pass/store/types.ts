@@ -47,6 +47,9 @@ export interface RootSagaOptions {
     /** Callback used when account locale is updated */
     onLocaleUpdated?: (locale: string) => void;
 
+    /** Callback used when the local beta flag is updated */
+    onBetaUpdated?: (enabled: boolean) => MaybePromise<void>;
+
     /** Callback for handling notification effects */
     onNotification?: (notification: Notification) => void;
 

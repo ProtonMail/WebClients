@@ -38,6 +38,7 @@ export type SettingsState = {
     passwordOptions: MaybeNull<GeneratePasswordConfig>;
     sessionLockRegistered: boolean;
     sessionLockTTL?: number;
+    beta?: boolean;
 };
 
 /* proxied settings will also be copied on local

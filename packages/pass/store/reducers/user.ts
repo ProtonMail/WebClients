@@ -1,7 +1,7 @@
 import type { Reducer } from 'redux';
 
 import { getUserAccessSuccess, getUserFeaturesSuccess, userEvent } from '@proton/pass/store/actions';
-import type { MaybeNull, PassPlanResponse, RequiredNonNull } from '@proton/pass/types';
+import type { BitField, MaybeNull, PassPlanResponse, RequiredNonNull } from '@proton/pass/types';
 import { EventActions } from '@proton/pass/types';
 import type { PassFeature } from '@proton/pass/types/api/features';
 import { objectDelete } from '@proton/pass/utils/object/delete';
@@ -14,7 +14,7 @@ export type FeatureFlagState = Partial<Record<PassFeature, boolean>>;
 export type UserSettingsState = {
     Email: { Status: SETTINGS_STATUS };
     Password: { Mode: SETTINGS_PASSWORD_MODE };
-    Telemetry: 1 | 0;
+    Telemetry: BitField;
     Locale?: string;
 };
 
