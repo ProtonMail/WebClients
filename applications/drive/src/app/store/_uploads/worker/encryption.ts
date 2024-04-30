@@ -10,6 +10,7 @@ import { MAX_BLOCK_VERIFICATION_RETRIES } from '../constants';
 import { EncryptedBlock, ThumbnailEncryptedBlock } from '../interface';
 import { ThumbnailInfo } from '../media';
 import { Verifier } from './interface';
+import { VerificationError } from './verifier';
 
 type LogCallback = (message: string) => void;
 
@@ -144,7 +145,7 @@ async function encryptBlock(
 
             log(`Block verification failed: ${e}`);
             // Give up after max retries reached, something's wrong
-            throw new EnrichedError('Upload failed: Verification of data failed', { extra: { e } });
+            throw new VerificationError({ extra: { e } });
         }
 
         // Encrypt the block signature after verification

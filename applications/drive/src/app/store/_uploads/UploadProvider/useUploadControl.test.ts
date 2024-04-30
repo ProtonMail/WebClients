@@ -22,6 +22,7 @@ function makeFileUpload(id: string, state: TransferState, filename: string, size
             mimeType: file.type,
             size: file.size,
         },
+        numberOfErrors: 0,
     };
 }
 
