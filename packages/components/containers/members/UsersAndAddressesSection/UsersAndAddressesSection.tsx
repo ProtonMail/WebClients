@@ -166,6 +166,25 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
         });
     }, [keywords, members]);
 
+    // Members for which addresses can be created
+    const filteredMembers = (() => {
+        if (useEmail) {
+            return members;
+        }
+
+        return members?.filter((member) => {
+            const availableAddressDomains = getAvailableAddressDomains({
+                user,
+                member,
+                protonDomains,
+                customDomains,
+                premiumDomains,
+            });
+
+            return availableAddressDomains.length;
+        });
+    })();
+
     const handleDeleteUserConfirm = async (member: Member) => {
         if (member.Role === MEMBER_ROLE.ORGANIZATION_ADMIN) {
             await api(updateRole(member.ID, MEMBER_ROLE.ORGANIZATION_MEMBER));
@@ -228,6 +247,13 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                     return;
                 }
             }
+        }
+
+        // There needs to be available members for the add address modal to be able to open properly. We assume it's failing because of an incorrect domain
+        // and not members not being fetched etc.
+        if (!filteredMembers?.length) {
+            createNotification({ type: 'error', text: getDomainAddressError() });
+            return;
         }
 
         setTmpMemberID(member?.ID || null);
@@ -299,25 +325,6 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
             },
         });
     };
-
-    // Members for which addresses can be created
-    const filteredMembers = (() => {
-        if (useEmail) {
-            return members;
-        }
-
-        return members?.filter((member) => {
-            const availableAddressDomains = getAvailableAddressDomains({
-                user,
-                member,
-                protonDomains,
-                customDomains,
-                premiumDomains,
-            });
-
-            return availableAddressDomains.length;
-        });
-    })();
 
     const userFound = membersSelected.length;
 
@@ -401,10 +408,10 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                         {...userSetupModal}
                     />
                 )}
-                {renderAddAddressModal && filteredMembers && (
+                {renderAddAddressModal && filteredMembers && filteredMembers.length > 0 && (
                     <AddressModal
                         useEmail={useEmail}
-                        member={filteredMembers?.find((member) => tmpMemberID === member.ID)}
+                        member={filteredMembers.find((member) => tmpMemberID === member.ID)}
                         members={filteredMembers}
                         {...addAddressModalProps}
                     />
