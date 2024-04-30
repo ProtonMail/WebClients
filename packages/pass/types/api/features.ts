@@ -1,4 +1,4 @@
-import type { MaybeNull } from '../utils';
+import type { MaybeNull } from '@proton/pass/types/utils';
 
 export enum PassFeature {
     PassEnableDesktopAutoUpdate = 'PassEnableDesktopAutoUpdate',
@@ -9,6 +9,7 @@ export enum PassFeature {
     PassRemovePrimaryVault = 'PassRemovePrimaryVault',
     PassSharingNewUsers = 'PassSharingNewUsers',
     PassSharingV1 = 'PassSharingV1',
+    PassWebInternalAlpha = 'PassWebInternalAlpha',
     PassWebOfflineMode = 'PassWebOfflineMode',
 }
 
