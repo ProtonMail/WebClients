@@ -1,6 +1,5 @@
 import { c } from 'ttag';
 
-import ElectronDraggeableHeaderWrapper from '@proton/components/components/electron/ElectronDraggeableHeaderWrapper';
 import { TextLoader } from '@proton/components/components/loader';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
@@ -21,7 +20,6 @@ const AccountLoaderPage = ({ text, loaderClassName = '', className, isDarkBg = f
 
     return (
         <div className={clsx('h-full', className)}>
-            <ElectronDraggeableHeaderWrapper />
             <div className={clsx(['absolute inset-center text-center'])}>
                 <div>
                     <img

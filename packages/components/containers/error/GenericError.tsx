@@ -5,7 +5,6 @@ import { differenceInMilliseconds } from 'date-fns';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import ElectronDraggeableHeader from '@proton/components/components/electron/ElectronDraggeableHeader';
 import { HOUR } from '@proton/shared/lib/constants';
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
 import errorImg from '@proton/styles/assets/img/errors/error-generic.svg';
@@ -34,8 +33,7 @@ export const GenericErrorDisplay = ({ children, className, big, isNetworkError, 
     const line1 = c('Error message').jt`Please refresh the page or try again later.`;
 
     return (
-        <div className={clsx('m-auto', big ? 'p-1' : 'p-2', className)}>
-            {big && <ElectronDraggeableHeader />}
+        <div className={clsx('generic-error', 'm-auto', big ? 'p-1' : 'p-2', className)}>
             <IllustrationPlaceholder
                 title={title ?? c('Error message').t`Something went wrong`}
                 titleSize={big ? 'big' : 'regular'}
