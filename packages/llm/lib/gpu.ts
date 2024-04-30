@@ -1,16 +1,16 @@
 import '@mlc-ai/web-llm';
-import type { InitProgressReport } from '@mlc-ai/web-llm';
 import { WebWorkerEngine } from '@mlc-ai/web-llm';
 
+import { downloadModel } from '@proton/llm/lib/downloader';
 import { BaseRunningAction } from '@proton/llm/lib/runningAction';
 
 import mlcConfig from './mlc-config';
 import type {
     Action,
+    DownloadProgressCallback,
     GenerationCallback,
     LlmManager,
     LlmModel,
-    MonitorDownloadCallback,
     RunningAction,
     ShortenAction,
     WriteFullEmailAction,
@@ -27,6 +27,8 @@ const INSTRUCTIONS_SHORTEN = [
     "Now, you shorten the part of the email that's in the the input below.",
     'Only summarize the part below and do not add anything else.',
 ].join(' ');
+
+const MODEL_VARIANT = 'Mistral-7B-Instruct-v0.2-q4f16_1';
 
 async function delay(time: number) {
     const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
@@ -129,6 +131,7 @@ export class GpuLlmModel implements LlmModel {
     }
 }
 
+// @ts-ignore
 export class GpuLlmManager implements LlmManager {
     private chat: WebWorkerEngine | undefined;
 
@@ -149,38 +152,30 @@ export class GpuLlmManager implements LlmManager {
         return this.status === 'downloading';
     }
 
-    async startDownload(callback: MonitorDownloadCallback): Promise<void> {
-        await this.mlcDownloadAndLoadToGpu(callback);
+    async startDownload(updateProgress: DownloadProgressCallback): Promise<void> {
+        this.status = 'downloading';
+        await downloadModel(MODEL_VARIANT, updateProgress);
+        this.status = 'unloaded';
     }
 
-    private async mlcDownloadAndLoadToGpu(callback?: (progress: number, done: boolean) => void) {
-        if (!this.chat) {
-            let worker = new Worker(new URL('./worker', import.meta.url), { type: 'module' });
-            this.chat = new WebWorkerEngine(worker);
-        }
-
-        // The "selfhost" variant below would download the weights from our assets dir (see public/assets/ml-models)
-        // let variant = 'Mistral-7B-Instruct-v0.2-q4f16_1-selfhost';
-        let variant = 'Mistral-7B-Instruct-v0.2-q4f16_1';
-
-        this.chat.setInitProgressCallback((report: InitProgressReport) => {
-            const done = report.progress === 1;
-            if (report.progress == 1) {
-                this.status = 'loading';
-            }
-            if (callback) {
-                void callback(report.progress, done);
-            }
-        });
-
-        const chatOpts = {};
-
-        this.status = 'downloading';
+    private async startMlcEngine() {
         try {
-            await this.chat.reload(variant, chatOpts, mlcConfig);
+            // Create Web-LLM worker
+            if (!this.chat) {
+                let worker = new Worker(new URL('./worker', import.meta.url), { type: 'module' });
+                this.chat = new WebWorkerEngine(worker);
+            }
+
+            // Call `reload` on the engine. If all the files are in place,
+            // this should go straight to loading the model on GPU without downloading.
+            this.status = 'loading';
+            const chatOpts = {};
+            await this.chat.reload(MODEL_VARIANT, chatOpts, mlcConfig);
             this.model = new GpuLlmModel(this.chat, this);
             this.status = 'loaded';
         } catch (e) {
+            /* eslint-disable-next-line no-console */
+            console.error(e);
             this.status = 'error';
             throw e;
         }
@@ -199,7 +194,7 @@ export class GpuLlmManager implements LlmManager {
         }
         if (this.status === 'unloaded') {
             // MLC will skip the download and go straight to loading on GPU
-            await this.mlcDownloadAndLoadToGpu();
+            await this.startMlcEngine();
             // @ts-ignore: TS does not see that the line above will modify `this.status`
             if (this.status !== 'loaded') {
                 throw Error('error while waiting for model to load on GPU');
