@@ -9,7 +9,7 @@ import { getOrganizationThemeFromCookie, serializeOrgTheme, syncToCookie } from 
 import { organizationThemeSlice } from './slice';
 
 const getHasAccess = (organization: Organization | undefined) => {
-    return [PLANS.BUNDLE_PRO, PLANS.PASS_BUSINESS, PLANS.VPN_BUSINESS, PLANS.ENTERPRISE].includes(
+    return [PLANS.BUNDLE_PRO, PLANS.PASS_BUSINESS, PLANS.VPN_BUSINESS, PLANS.ENTERPRISE, PLANS.NEW_VISIONARY].includes(
         organization?.PlanName as any
     );
 };
