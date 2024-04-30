@@ -45,6 +45,7 @@ const Participant = ({
                 'participant flex flex-nowrap items-center w-full relative interactive-pseudo interactive--no-background text-left',
                 className,
             ])}
+            data-testid="participant-in-popover"
         >
             <Tooltip title={tooltip}>
                 <div className="participant-display item-icon relative flex shrink-0 items-center justify-center">

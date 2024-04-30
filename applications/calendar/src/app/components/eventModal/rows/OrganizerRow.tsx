@@ -23,8 +23,12 @@ const OrganizerRow = ({ organizer }: Props) => {
 
     const nameEmailDisplay = displayFull ? (
         <>
-            <span className="text-semibold text-sm">{name}</span>
-            <span className="color-weak ml-1 text-sm">{email}</span>
+            <span className="text-semibold text-sm" data-testid="event-organizer:name">
+                {name}
+            </span>
+            <span className="color-weak ml-1 text-sm" data-testid="event-organizer:email">
+                {email}
+            </span>
         </>
     ) : (
         <span className="text-semibold text-sm">{email}</span>
@@ -32,7 +36,7 @@ const OrganizerRow = ({ organizer }: Props) => {
 
     return (
         <div key={email} className="flex items-start mb-1">
-            <div className="text-ellipsis max-w-full" title={nameEmail}>
+            <div className="text-ellipsis max-w-full" title={nameEmail} data-testid="event-organizer">
                 {nameEmailDisplay}
             </div>
             <div className="color-weak w-full text-sm">{c('Label').t`Organizer`}</div>
