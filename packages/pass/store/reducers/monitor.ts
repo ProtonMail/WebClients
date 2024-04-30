@@ -5,14 +5,14 @@ import {
     intoMonitorDomain,
     intoProtonMonitorAddress,
 } from '@proton/pass/lib/monitor/monitor.utils';
-import type { AddressType, MonitorAddress, MonitorDomain } from '@proton/pass/lib/monitor/types';
+import { AddressType, type MonitorAddress, type MonitorDomain } from '@proton/pass/lib/monitor/types';
 import {
     addCustomAddress,
     deleteCustomAddress,
     getBreaches,
     resolveCustomBreach,
     resolveProtonBreach,
-    toggleCustomAddress,
+    toggleAddressMonitor,
     verifyCustomAddress,
 } from '@proton/pass/store/actions';
 import type { MaybeNull } from '@proton/pass/types';
@@ -77,12 +77,16 @@ const monitorReducer: Reducer<MonitorState> = (state = null, action) => {
             });
         }
 
-        if (toggleCustomAddress.success.match(action)) {
+        if (toggleAddressMonitor.success.match(action)) {
+            const type = action.payload.type;
+            if (type === AddressType.ALIAS) return state;
+
             return partialMerge(state, {
-                custom: state.custom.map((breach) => {
-                    if (breach.addressId !== action.payload.addressId) return breach;
-                    return action.payload;
-                }),
+                [type]: state[type].map((breach) =>
+                    action.payload.type === AddressType.ALIAS || breach.addressId !== action.payload.addressId
+                        ? breach
+                        : action.payload
+                ),
             });
         }
     }

@@ -2,8 +2,8 @@ import { c } from 'ttag';
 
 import type { FetchedBreaches } from '@proton/components/containers';
 import { isMonitored } from '@proton/pass/lib/items/item.predicates';
+import { getAddressId } from '@proton/pass/lib/monitor/monitor.utils';
 import type {
-    AddressType,
     CustomAddressID,
     MonitorAddress,
     MonitorToggleDTO,
@@ -21,12 +21,12 @@ import {
     customResolveRequest,
     deleteCustomAddressRequest,
     itemUpdateFlagsRequest,
-    monitorToggleRequest,
     protonBreachRequest,
     protonResolveRequest,
     resendCustomAddressCodeRequest,
     sentinelToggleRequest,
-    toggleCustomAddressRequest,
+    toggleAddressMonitorRequest,
+    toggleMonitorRequest,
     verifyCustomAddressRequest,
 } from '@proton/pass/store/actions/requests';
 import { requestActionsFactory } from '@proton/pass/store/request/flow';
@@ -66,7 +66,7 @@ export const sentinelToggle = requestActionsFactory<SentinelState, SentinelState
 export const monitorToggle = requestActionsFactory<UpdateUserMonitorStateRequest, UpdateUserMonitorStateRequest>(
     'monitor::all:addresses:toggle'
 )({
-    requestId: monitorToggleRequest,
+    requestId: toggleMonitorRequest,
     success: {
         prepare: ({ ProtonAddress, Aliases }) =>
             pipe(
@@ -192,10 +192,10 @@ export const verifyCustomAddress = requestActionsFactory<MonitorVerifyDTO, Custo
     },
 });
 
-export const toggleCustomAddress = requestActionsFactory<MonitorToggleDTO, MonitorAddress<AddressType.CUSTOM>>(
-    'monitor::breaches::custom::toggle'
+export const toggleAddressMonitor = requestActionsFactory<MonitorToggleDTO, MonitorAddress>(
+    'monitor::breaches::address::toggle'
 )({
-    requestId: ({ addressId }) => toggleCustomAddressRequest(addressId),
+    requestId: (dto) => toggleAddressMonitorRequest(getAddressId(dto)),
     success: {
         prepare: (payload) =>
             withNotification({

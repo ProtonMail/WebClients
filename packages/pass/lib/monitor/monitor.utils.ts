@@ -1,4 +1,5 @@
 import type { FetchedBreaches } from '@proton/components/containers';
+import { isBreached, isMonitored } from '@proton/pass/lib/items/item.predicates';
 import type {
     Breach,
     BreachAddressGetResponse,
@@ -9,8 +10,8 @@ import type {
 } from '@proton/pass/types';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 
-import { isBreached, isMonitored } from '../items/item.predicates';
-import { AddressType, type MonitorAddress, type MonitorDomain } from './types';
+import type { AddressBreachDTO, MonitorAddress, MonitorDomain } from './types';
+import { AddressType } from './types';
 
 export const getDuplicatePasswords = (logins: ItemRevision<'login'>[]): UniqueItem[][] => {
     const duplicatesMap = new Map<string, UniqueItem[]>();
@@ -38,7 +39,7 @@ export const getDuplicatePasswords = (logins: ItemRevision<'login'>[]): UniqueIt
     return Array.from(duplicatesMap.values());
 };
 
-export const getAddressId = (address: MonitorAddress): string => {
+export const getAddressId = (address: AddressBreachDTO): string => {
     switch (address.type) {
         case AddressType.CUSTOM:
         case AddressType.PROTON:
