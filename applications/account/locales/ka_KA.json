@@ -47,10 +47,10 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-ის მაღაზია"
       ],
-      "activate": [
+      "Activate": [
         "აქტივაცია"
       ],
-      "Activate": [
+      "activate": [
         "აქტივაცია"
       ],
       "Activate ${ user.Name }@pm.me": [
@@ -3900,6 +3900,9 @@
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "აქტიური სესიების მიღების შეცდომა. ${ refresh } და თავიდან სცადეთ."
       ],
+      "Failed to process the logo": [
+        "ლოგოს დამუშავება ჩავარდა"
+      ],
       "Filter with this name already exists": [
         "ფილტრი ამ სახელით უკვე არსებობს"
       ],
@@ -4253,9 +4256,6 @@
       ],
       "You have reached the contacts limit for your account": [
         "თქვენ მიაღწიეთ კონტაქტების რაოდენობის ზღვარს თქვენი ანგარიშისთვის"
-      ],
-      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
-        "თქვენ მიაღწიეთ კალენდრების მაქსიმალურ რაოდენობას. ზოგიერთი კალენდრის იმპორტი ვერ მოხერხდა."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "თქვენს სატარიფო გეგმაში შემავალ ყველა მისამართს უკვე იყენებთ. ახალი მისამართის დასამატებლად სატარიფო გეგმის განახლებაა საჭირო."
@@ -5908,17 +5908,6 @@
         "თქვენი კალენდრის შემცველობის ნაწილი მხარდაუჭერელია და შემოტანილი არ იქნება."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "ნაპოვნია დამატებით დუბლირებული გასაღებები. მეტი ინფორმაციისთვის გთხოვთ, ატვირთოთ სათითაოდ."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "გასაღები ${ fingerprint } უკვე ატვირთულია"
-      ],
-      "Selected color:": [
-        "არჩეული ფერი:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }-ს ესაჭიროება თქვენი წვდომა ${ enableDesktopNotifications }-ზე."
@@ -7255,10 +7244,6 @@
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "ან თავიდან სცადეთ, ან გადახდის სხვა საშუალება გამოიყენეთ, ან დაუკავშირდით PayPal-ს."
       ],
-      "Please use a password more than ${ MIN_PASSWORD_LENGTH } character.": [
-        "გამოიყენეთ პაროლი ${ MIN_PASSWORD_LENGTH }-ზე მეტი სიმბოლოთი.",
-        "გამოიყენეთ პაროლი ${ MIN_PASSWORD_LENGTH }-ზე მეტი სიმბოლოთი."
-      ],
       "Please use another browser or download the file.": [
         "სცადეთ სხვა ბრაუზერი ან ფაილი გადმოწერეთ."
       ],
@@ -8178,9 +8163,6 @@
       "You won’t be able to recover locked data using your downloaded recovery files.": [
         "თქვენ არ გექნებათ შესაძლებლობა, აღადგინოთ დაბლოკილი მონაცემები აღდგენის გადმოწერილი ფაილებით."
       ],
-      "You won’t be able to recover locked data using your downloaded recovery files. This will also disable trusted device recovery.": [
-        "თქვენ არ გექნებათ შესაძლებლობა აღადგინოთ დაბლოკილი მონაცემები აღდგენის გადმოწერილი ფაილებით. ეს ასევე გათიშავს სანდო მოწყობილობების აღდგენასაც"
-      ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
         "თქვენი ${ BRAND_NAME }-ის ანგარიში ${ externalEmailAddress }-სთანაა ასოცირებული."
       ],
@@ -8274,6 +8256,17 @@
       ],
       "Zoom meeting": [
         "Zoom-ის შეხვედრა"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "ნაპოვნია დამატებით დუბლირებული გასაღებები. მეტი ინფორმაციისთვის გთხოვთ, ატვირთოთ სათითაოდ."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "გასაღები ${ fingerprint } უკვე ატვირთულია"
+      ],
+      "Selected color:": [
+        "არჩეული ფერი:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9599,9 +9592,6 @@
       ],
       "Recovery phrase": [
         "აღდგენის ფრაზა"
-      ],
-      "Trusted device recovery": [
-        "სანდო მოწყობილობის აღმოჩენა"
       ]
     },
     "Label for adding a new custom domain": {
@@ -9827,6 +9817,9 @@
       ],
       "here": [
         "აქ"
+      ],
+      "How does monitoring work?": [
+        "როგორ მუშაობს მონიტორინგი?"
       ],
       "How to pay with Bitcoin?": [
         "როგორ გადავიხადო ბიტკოინით?"
@@ -12613,6 +12606,9 @@
       ]
     },
     "scim: Title": {
+      "Disable SCIM integration?": [
+        "გამოვრთო SCIM-თან ინტეგრაცია?"
+      ],
       "Generate new SCIM token?": [
         "დავაგენერირო ახალი SCIM კოდი?"
       ]
@@ -13330,9 +13326,6 @@
       ]
     },
     "Storage": {
-      "Release notes": [
-        "რელიზის შენიშვნები"
-      ],
       "Upgrade storage": [
         "ადგილის დამატება"
       ],
@@ -14228,6 +14221,9 @@
       "Billing cycle": [
         "გადახდის პერიოდი"
       ],
+      "Block trackers and malware": [
+        "ტრეკერებისა და მავნე პროგრამების დაბლოკვა"
+      ],
       "Bridge for ${ platform }": [
         "ხიდი ${ platform }-თვის"
       ],
@@ -14420,6 +14416,9 @@
       ],
       "Delete logs": [
         "ჟურნალის წაშლა"
+      ],
+      "Delete organization logo?": [
+        "წავშალო ორგანიზაციის ლოგო?"
       ],
       "Delete the server (you will still be able to recover it for ${ days } day)": [
         "სერვერის წაშლა (მათი აღდგენა ${ days } დღის განმავლობაში შეგეძლებათ)",
@@ -14623,6 +14622,9 @@
       ],
       "How does it work?": [
         "როგორ მუშაობს?"
+      ],
+      "How to choose a good logo": [
+        "როგორ აირჩიოთ კარგი ლოგო"
       ],
       "How to refer a friend and get credits": [
         "როგორ მოვიწვიოთ მეგობარი და მივიღოთ კრედიტები"
@@ -15081,9 +15083,6 @@
       ],
       "What would you like to import?": [
         "რისი შემოტანა გნებავთ?"
-      ],
-      "What's new": [
-        "სიახლეები"
       ],
       "WireGuard configuration": [
         "WireGuard-ის მორგება"

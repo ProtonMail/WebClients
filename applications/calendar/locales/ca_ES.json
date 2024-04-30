@@ -447,10 +447,10 @@
       "Not now": [
         "Ara no"
       ],
-      "Ok": [
+      "OK": [
         "D'acord"
       ],
-      "OK": [
+      "Ok": [
         "D'acord"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -2728,7 +2728,7 @@
         "La cerca de continguts no es pot activar en aquest navegador. Tanqueu el mode de navegació privada o utilitzeu un altre navegador."
       ],
       "Content search cannot be enabled. Please restart the application or clear data.": [
-        "No es pot habilitar la cerca de contingut. Reinicieu l'aplicació o netegeu les dades."
+        "No es pot activar la cerca de contingut. Reinicieu l'aplicació o netegeu les dades."
       ],
       "Could not open created vault": [
         "No s'ha pogut obrir la caixa forta creada"
@@ -3085,9 +3085,6 @@
       ],
       "You have reached the contacts limit for your account": [
         "Heu arribat al límit de contactes per al vostre compte."
-      ],
-      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
-        "Heu assolit el nombre màxim de calendaris. No se n'han pogut importar alguns."
       ],
       "You must set a name": [
         "Heu d'establir un nom"
@@ -3680,6 +3677,9 @@
     "Header": {
       "Contacts": [
         "Contactes"
+      ],
+      "Custom recurrence": [
+        "Recurrència personalitzada"
       ],
       "Name": [
         "Nom"
@@ -4712,13 +4712,13 @@
         "No es notificarà a l'organitzador d'aquesta cadena d'esdeveniments que rebutgeu la invitació perquè no podeu enviar correus des de l'adreça electrònica convidada. Voleu suprimir aquest esdeveniment de totes maneres?"
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
-        "El propietari d'aquesta adreça ha desactivat el xifratge d'extrem a extrem. Per a poder enviar-hi correus electrònics xifrats, el propietari ha de tornar a habilitar el xifratge d’extrem a extrem."
+        "El propietari d'aquesta adreça ha desactivat el xifratge d'extrem a extrem. Per a poder enviar-hi correus electrònics xifrats, el propietari ha de tornar a activar el xifratge d’extrem a extrem."
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "El procés de verificació obrirà una pestanya nova del navegador. Desactiveu els bloquejadors de finestres emergents actius."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
-        "Aquesta adreça està inhabilitada. Per tal de poder enviar-hi, el propietari l'ha d'habilitar en primer lloc."
+        "Aquesta adreça està inhabilitada. Per tal de poder enviar-hi, el propietari l'ha d'activar en primer lloc."
       ],
       "This event has been updated by the organizer. Would you like to change your answer only for this occurrence in this series?": [
         "L'organitzador ha actualitzat aquest esdeveniment. Voleu canviar la vostra resposta només per a aquesta ocurrència de la sèrie?"
@@ -4757,7 +4757,7 @@
         "Per a recuperar les dades, heu de tornar a activar la clau del compte utilitzada en el moment que es van crear les dades. Això requereix que recordeu la contrasenya utilitzada quan es va generar la clau."
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
-        "Per utilitzar la verificació d'adreça, heu d'habilitar les claus de confiança i confiar en una o més de les claus públiques disponibles, incloent la clau primària per a aquesta adreça. Això evita que les claus de xifratge es falsifiquin."
+        "Per utilitzar la verificació d'adreça, heu d'activar les claus de confiança i confiar en una o més de les claus públiques disponibles, incloent la clau primària per a aquesta adreça. Això evita que les claus de xifratge es falsifiquin."
       ],
       "Total email addresses": [
         "Adreces de correu totals"
@@ -7054,7 +7054,7 @@
         "Crea un grup nou"
       ],
       "Custom": [
-        "Personalitzat"
+        "Personalització"
       ],
       "Day": [
         "Dia",
@@ -7941,9 +7941,6 @@
       ]
     },
     "Storage": {
-      "Release notes": [
-        "Notes de la versió"
-      ],
       "Upgrade storage": [
         "Millora l'emmagatzematge"
       ],
@@ -8095,6 +8092,26 @@
     "Subscription price": {
       "For": [
         "Per"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB d'emmagatzemament"
+      ],
+      "and 15 more premium features": [
+        "i 15 característiques prèmium més"
+      ],
+      "Desktop app": [
+        "Aplicació d'escriptori"
+      ],
+      "No ads or tracking": [
+        "Sense anuncis ni rastreig"
+      ],
+      "Upgrade": [
+        "Millora"
+      ],
+      "Upgrade your productivity": [
+        "Milloreu la vostra productivitat"
       ]
     },
     "Subscription renewal state": {
@@ -8919,9 +8936,6 @@
       ],
       "What would you like to import?": [
         "Què li agradaria importar?"
-      ],
-      "What's new": [
-        "Novetats"
       ],
       "You have invited participants with equivalent emails": [
         "Heu convidat participants amb correus electrònics idèntics"

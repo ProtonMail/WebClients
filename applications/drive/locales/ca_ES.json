@@ -572,7 +572,7 @@
         "Esborra el codi de regal"
       ],
       "Remove me": [
-        "Esborra-me"
+        "Esborra'm"
       ],
       "Rename": [
         "Canvia el nom"
@@ -641,13 +641,13 @@
         "Desa els canvis"
       ],
       "Scan & Download": [
-        "Escaneja i baixa"
+        "Escaneja i descarrega"
       ],
       "Scan & Download (${ count })": [
-        "Escaneja i baixa (${ count })"
+        "Escaneja i descarrega(${ count })"
       ],
       "Scan & Download all": [
-        "Escaneja i baixa-ho tot"
+        "Escaneja i descarrega-ho tot"
       ],
       "Search": [
         "Cerca"
@@ -2434,7 +2434,7 @@
         "La cerca de continguts no es pot activar en aquest navegador. Tanqueu el mode de navegació privada o utilitzeu un altre navegador."
       ],
       "Content search cannot be enabled. Please restart the application or clear data.": [
-        "No es pot habilitar la cerca de contingut. Reinicieu l'aplicació o netegeu les dades."
+        "No es pot activar la cerca de contingut. Reinicieu l'aplicació o netegeu les dades."
       ],
       "Could not open created vault": [
         "No s'ha pogut obrir la caixa forta creada"
@@ -2625,6 +2625,10 @@
       "Process aborted": [
         "Procés anul·lat"
       ],
+      "Removed duplicate invitee: ${ joinedInvitee }": [
+        "S'ha eliminat el convidat duplicat: ${ joinedInvitee }",
+        "S'han eliminat els convidats duplicats: ${ joinedInvitee }"
+      ],
       "Report failed to be sent": [
         "No s'ha pogut enviar la vostra denúncia"
       ],
@@ -2763,9 +2767,6 @@
       ],
       "You have reached the contacts limit for your account": [
         "Heu arribat al límit de contactes per al vostre compte."
-      ],
-      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
-        "Heu assolit el nombre màxim de calendaris. No se n'han pogut importar alguns."
       ],
       "You must set a name": [
         "Heu d'establir un nom"
@@ -4455,6 +4456,9 @@
         "Només es permet ${ MAX_CUSTOM_PASSWORD_LENGTH } caràcter",
         "Només es permeten ${ MAX_CUSTOM_PASSWORD_LENGTH } caràcters"
       ],
+      "Only the owner of the share will be able to invite you again.": [
+        "Només el propietari de la compartició us podrà tornar a convidar."
+      ],
       "Only the people with the link and the password can access this file.": [
         "Només les persones amb l'enllaç i la contrasenya poden accedir a aquest fitxer."
       ],
@@ -4478,9 +4482,6 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Els pagaments estan protegits amb xifratge TLS i les lleis de privacitat suïsses."
-      ],
-      "Pending": [
-        "Pendent"
       ],
       "Permanently delete all files in your locked drive": [
         "Elimineu de manera permanent tots els fitxers de la vostra unitat bloquejada"
@@ -4630,6 +4631,10 @@
       "Search Enabled": [
         "Cerca activa"
       ],
+      "Securely downloaded ${ nbFile } file": [
+        "S'ha descarregat de forma segura ${ nbFile } fitxer.",
+        "S'han descarregat de forma segura ${ nbFile } fitxers."
+      ],
       "Securely downloaded all encrypted files": [
         "S'han descarregat de forma segura tots els fitxers xifrats"
       ],
@@ -4757,7 +4762,7 @@
         "El següent pot haver estat manipulat: ${ items }. Obriu-ho només si hi confieu."
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
-        "El propietari d'aquesta adreça ha desactivat el xifratge d'extrem a extrem. Per a poder enviar-hi correus electrònics xifrats, el propietari ha de tornar a habilitar el xifratge d’extrem a extrem."
+        "El propietari d'aquesta adreça ha desactivat el xifratge d'extrem a extrem. Per a poder enviar-hi correus electrònics xifrats, el propietari ha de tornar a activar el xifratge d’extrem a extrem."
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "El procés de verificació obrirà una pestanya nova del navegador. Desactiveu els bloquejadors de finestres emergents actius."
@@ -4766,10 +4771,10 @@
         "Encara cal transferir alguns fitxers. Si es tanca el gestor de transferències, es finalitzaran totes les operacions."
       ],
       "There is nothing to see here": [
-        "No hi ha dades per veure aquí."
+        "Aquí no hi ha res a veure"
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
-        "Aquesta adreça està inhabilitada. Per tal de poder enviar-hi, el propietari l'ha d'habilitar en primer lloc."
+        "Aquesta adreça està inhabilitada. Per tal de poder enviar-hi, el propietari l'ha d'activar en primer lloc."
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Aquest navegador no suporta la previsualització de documents PDF. Descarregueu-vos l'arxiu."
@@ -4827,10 +4832,10 @@
         "Per a completar el pagament, envieu ${ btcAmountBold } a l'adreça següent."
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
-        "Per habilitar una cerca realment privada, ${ DRIVE_APP_NAME } necessita indexar els vostres fitxers de manera local."
+        "Per activar una cerca realment privada, ${ DRIVE_APP_NAME } necessita indexar els vostres fitxers de manera local."
       ],
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
-        "Per habilitar una cerca realment privada, necessitem indexar els vostres fitxers de manera local. Encara podeu utilitzar ${ DRIVE_APP_NAME } normalment. Us ho farem saber quan s'hagi completat la indexació."
+        "Per activar una cerca realment privada, necessitem indexar els vostres fitxers de manera local. Encara podeu utilitzar ${ DRIVE_APP_NAME } normalment. Us ho farem saber quan s'hagi completat la indexació."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Per lluitar contra el correu brossa i l'abús, verifiqueu que sou humà."
@@ -4848,7 +4853,7 @@
         "Per a recuperar les dades, heu de tornar a activar la clau del compte utilitzada en el moment que es van crear les dades. Això requereix que recordeu la contrasenya utilitzada quan es va generar la clau."
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
-        "Per utilitzar la verificació d'adreça, heu d'habilitar les claus de confiança i confiar en una o més de les claus públiques disponibles, incloent la clau primària per a aquesta adreça. Això evita que les claus de xifratge es falsifiquin."
+        "Per utilitzar la verificació d'adreça, heu d'activar les claus de confiança i confiar en una o més de les claus públiques disponibles, incloent la clau primària per a aquesta adreça. Això evita que les claus de xifratge es falsifiquin."
       ],
       "Today": [
         "Avui"
@@ -5095,6 +5100,9 @@
       ],
       "You will lose all unsaved changes.": [
         "Perdreu tots els canvis sense desar."
+      ],
+      "You will not be able to join again after.": [
+        "No s'hi podrà tornar a unir després."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Ben aviat sereu redirigits a PayPal per verificar el pagament."
@@ -6105,6 +6113,9 @@
       "Cascading Style Sheets (CSS)": [
         "Fulls d'estil en cascada (CSS)"
       ],
+      "Comma-separated values (CSV)": [
+        "Valors separats per comes (CSV)"
+      ],
       "Flash Video": [
         "Video Flash"
       ],
@@ -6154,7 +6165,7 @@
         "Àudio Opus"
       ],
       "Portable Network Graphics": [
-        "Gràfics de xarxa portàtils"
+        "Gràfics de xarxa portàtils (PNG)"
       ],
       "RAR archive": [
         "Arxiu RAR"
@@ -7081,6 +7092,12 @@
       "${ reason } has been enabled": [
         "${ reason } s'ha habilitat"
       ],
+      "Access for the member removed": [
+        "S'ha eliminat l'accés al membre"
+      ],
+      "Access updated and shared": [
+        "Accés actualitzat i compartit"
+      ],
       "All items will soon be permanently deleted from trash": [
         "Aviat se suprimiran permanentment tots els elements de la paperera"
       ],
@@ -7112,13 +7129,16 @@
         "S'ha activat la cerca xifrada"
       ],
       "Failed to accept share invitation": [
-        "No s'ha pogut acceptar la invitació per compartir"
+        "No s'ha pogut acceptar la invitació per a compartir"
       ],
       "Failed to download files: ${ err }": [
         "No s'han pogut descarregar els fitxers: ${ err }"
       ],
       "Failed to move, please try again": [
         "No s'ha pogut moure, torneu-ho a provar"
+      ],
+      "Failed to remove the file": [
+        "No s'ha pogut esborrar el fitxer"
       ],
       "Failed to upload files: ${ err }": [
         "Error carregant fitxers: ${ err }"
@@ -7135,6 +7155,9 @@
       ],
       "File removed": [
         "S'ha esborrat el fitxer."
+      ],
+      "Invitation removed from the share": [
+        "S'ha eliminat la invitació de la compartició"
       ],
       "Link copied to clipboard": [
         "S'ha copiat l'enllaç al porta-retalls."
@@ -7158,10 +7181,13 @@
         "No s'ha pogut carregar la carpeta arrel"
       ],
       "Share invitation accepted successfully": [
-        "La invitació per compartir s'ha acceptat correctament"
+        "S'ha acceptat la invitació per a compartir"
       ],
       "Share invitation ID was not found. Please check the link": [
-        "No s'ha trobat l'identificador d'invitació per compartir. Si us plau, comprovi l'enllaç"
+        "No s'ha trobat l'ID d'invitació per a compartir. Comproveu l'enllaç"
+      ],
+      "Stopping to share this item has failed": [
+        "No s'ha pogut deixar de compartir aquest element"
       ],
       "Subfolder failed to be loaded": [
         "No s'ha pogut carregar la subcarpeta."
@@ -8046,9 +8072,6 @@
       "Get more storage": [
         "Aconseguiu més emmagatzematge"
       ],
-      "Release notes": [
-        "Notes de la versió"
-      ],
       "Upgrade storage": [
         "Millora l'emmagatzematge"
       ],
@@ -8193,6 +8216,26 @@
     "Subscription price": {
       "For": [
         "Per"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB d'emmagatzemament"
+      ],
+      "and 15 more premium features": [
+        "i 15 característiques prèmium més"
+      ],
+      "Desktop app": [
+        "Aplicació d'escriptori"
+      ],
+      "No ads or tracking": [
+        "Sense anuncis ni rastreig"
+      ],
+      "Upgrade": [
+        "Millora"
+      ],
+      "Upgrade your productivity": [
+        "Milloreu la vostra productivitat"
       ]
     },
     "Subscription renewal state": {
@@ -8513,6 +8556,9 @@
       "Are you sure you want to close the preview?": [
         "Segur que voleu tancar la previsualització?"
       ],
+      "Are you sure you want to leave this share?": [
+        "Esteu segur que vol deixar aquesta compartició?"
+      ],
       "Billing cycle": [
         "Cicle de facturació"
       ],
@@ -8754,6 +8800,9 @@
       "Item details": [
         "Detalls de l'element"
       ],
+      "Last edited by": [
+        "Última edició per"
+      ],
       "Link confirmation": [
         "Confirmació d'enllaç"
       ],
@@ -8917,7 +8966,7 @@
         "Preferències"
       ],
       "Share ${ name }": [
-        "Compartiu amb ${ name }"
+        "Comparteix ${ name }"
       ],
       "Share via link": [
         "Comparteix mitjançant un enllaç"
@@ -9023,9 +9072,6 @@
       ],
       "What would you like to import?": [
         "Què li agradaria importar?"
-      ],
-      "What's new": [
-        "Novetats"
       ],
       "You have inaccessible files": [
         "Teniu fitxers inaccessibles"

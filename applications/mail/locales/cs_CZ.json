@@ -1431,6 +1431,11 @@
         "Nový e-mail"
       ]
     },
+    "App logo": {
+      "Download ${ MAIL_APP_NAME } desktop application": [
+        "Stáhněte si aplikaci ${ MAIL_APP_NAME } pro desktop"
+      ]
+    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "Aplikace ${ BRAND_NAME }"
@@ -1697,6 +1702,9 @@
       ],
       "Continue using ${ planTitle }": [
         "Pokračovat s ${ planTitle }"
+      ],
+      "Continue your subscription": [
+        "Pokračovat v předplatném"
       ]
     },
     "Calendar attachment tooltip": {
@@ -4069,9 +4077,6 @@
       "You have reached the contacts limit for your account": [
         "Dosáhli jste limitu kontaktů vašeho účtu"
       ],
-      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
-        "Dosáhli jste maximálního počtu kalendářů. Některé kalendáře nebylo možné importovat."
-      ],
       "You must set a name": [
         "Musíte nastavit jméno"
       ],
@@ -4782,6 +4787,9 @@
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } desktopová aplikace"
       ],
+      "14-day desktop app trial.": [
+        "14-denní zkušební verze desktopové aplikace"
+      ],
       "Enjoy fast, secure, and distraction-free access to your inbox and calendar.": [
         "Užívejte si rychlý, bezpečný přístup k doručené poště a kalendáři bez rozptylování."
       ],
@@ -5422,6 +5430,12 @@
         "${ elementsCount } zprávy budou přesunuty",
         "${ elementsCount } zpráv bude přesunuto",
         "${ elementsCount } zpráv bude přesunuto"
+      ],
+      "${ elementsCount } message will be unlabelled from:": [
+        "${ elementsCount } zprávě bude odebrán štítek:",
+        "${ elementsCount } zprávám bude odebrán štítek:",
+        "${ elementsCount } zprávám bude odebrán štítek:",
+        "${ elementsCount } zprávám bude odebrán štítek:"
       ],
       "${ embeddedAttachmentsCount } embedded image": [
         "${ embeddedAttachmentsCount } vložený obrázek",
@@ -6191,6 +6205,9 @@
       "Large imports can take several days.": [
         "Import velkého množství dat může trvat několik dní."
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Zjistěte, jak ${ staySaferOnlineLink }"
+      ],
       "Learn more": [
         "Zjistěte více"
       ],
@@ -6208,6 +6225,9 @@
       ],
       "Loading ${ appName }": [
         "Načítání aplikace ${ appName }"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Načítání kalendáře, prosím čekejte. Budete přesměrováni na naši plánovací platformu Calendly v nové záložce."
       ],
       "Loading message": [
         "Načítání zprávy"
@@ -6646,6 +6666,9 @@
       ],
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "Pokud stánku opustíte, může dojít ke ztrátě dat rozepsané zprávy."
+      ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "Odhalené informace unikly ze služby třetí strany. Informace vašeho účtu ${ BRAND_NAME } zůstaly v bezpečí a šifrované. ${ learnMoreLink }"
       ],
       "The local database is being prepared": [
         "Lokální databáze se připravuje"
@@ -7097,6 +7120,12 @@
         "Máte **${ count } zpráv** označených tímto štítkem",
         "Máte **${ count } zpráv** označených tímto štítkem"
       ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "Máte zkušební verzi předplatného ${ planTitle }. Pokud chcete pokračovat s vaším předplatným po zkušební době, prosím přidejte platební metodu."
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "Máte zkušební verzi předplatného ${ planTitle }. Nyní není potřeba nic platit. Vaše předplatné bude automaticky obnoveno na konci zkušební doby."
+      ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
         "Nedali jste e-mailu žádný předmět. Chcete ho i přesto odeslat?"
       ],
@@ -7208,11 +7237,17 @@
       "Your email address and password were leaked:": [
         "Vaše e-mailová adresa a heslo unikly:"
       ],
+      "Your email address was exposed:": [
+        "Došlo k odhalení vaší e-mailové adresy:"
+      ],
       "Your email will only be used for this one-time verification.": [
         "Váš e-mail bude použit pouze pro toto jednorázové ověření."
       ],
       "Your files will be encrypted and then saved": [
         "Vaše soubory budou zašifrovány a uloženy"
+      ],
+      "Your information was found on ${ displayedDate }": [
+        "Vaše informace byly nalezeny ${ displayedDate }"
       ],
       "Your login information will not be saved after the import is completed.": [
         "Po dokončení importu nebudou Vaše přihlašovací údaje uloženy."
@@ -7231,6 +7266,9 @@
       ],
       "Your next billing date is ${ renewalTime }.": [
         "Datum příští platby je ${ renewalTime }."
+      ],
+      "Your password was leaked:": [
+        "Došlo k úniku vašeho hesla:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Vaše telefonní číslo bude použito pouze pro toto jednorázové ověření."
@@ -8374,17 +8412,26 @@
       "upgrade for more storage": [
         "navýšit tarif pro více prostoru"
       ],
+      "Upgrade to restore full access": [
+        "Navýšením obnovíte plný přístup"
+      ],
       "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
         "Vaše ${ driveStorage } je plné. Chcete-li nahrát nebo synchronizovat soubory, uvolněte místo nebo ${ cta }."
       ],
       "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
         "Vaše ${ mailStorage } je plné. Pro odesílání nebo přijímání e-mailů uvolněte místo nebo ${ cta }."
       ],
+      "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
+        "Váš účet je ohrožen smazáním. Abyste zabránili ztrátě dat, požádejte vašeho správce o navýšení. ${ cta }"
+      ],
       "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
         "Vaše úložiště je plné. Chcete-li odesílat nebo přijímat e-maily, uvolněte místo nebo ${ cta }."
       ],
       "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
         "Vaše úložiště je plné. Abyste mohli nahrát nebo synchronizovat soubory, uvolněte místo nebo ${ cta }."
+      ],
+      "Your subscription has ended. ${ cta } and to avoid data loss.": [
+        "Vaše předplatné skončilo. ${ cta } pro předejití ztrátě dat."
       ]
     },
     "Log preference": {
@@ -10112,17 +10159,28 @@
         "Když se vás zeptají na e-mailovou adresu, dejte jim místo toho tento alias. Aliasy jsou poskytovány ${ passLink }."
       ]
     },
+    "Security Center (link to Pass App)": {
+      "(will open ${ PASS_APP_NAME })": [
+        "(otevře ${ PASS_APP_NAME })"
+      ]
+    },
     "Security Center - Action": {
       "View logs": [
         "Zobrazit logy"
       ]
     },
     "Security Center - Info": {
+      "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
+        "Nechat se upozornit, pokud vaše heslo nebo jiná data uniknou ze služby třetí strany. ${ learnMoreLink }"
+      ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Naše špičkové řešení s pomocí umělé inteligence zaměřené na uživatele, kteří vyžadují zvýšenou ochranu svých účtů. ${ learnMoreLink }"
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel je **aktivní** a chrání váš účet."
+      ],
+      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLink }": [
+        "Vaše údaje byly nalezeny při nejméně jednom úniku informací. Zapnutím ${ DARK_WEB_MONITORING_NAME } zobrazíte podrobnosti a provedete akci. ${ learnMoreLink }"
       ]
     },
     "Select files": {
@@ -10734,6 +10792,9 @@
       "Schedule send": [
         "Naplánovat odeslání"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME } to get notified if your data was leaked from a third-party service.": [
+        "Zapnutím ${ DARK_WEB_MONITORING_NAME } získáte upozornění, pokud dojde k úniku vašich údajů ze služby třetí strany."
+      ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Nyní ve výchozím nastavení načítáme obrázky a znemožňujeme odesílatelům, aby vás sledovali. Toto můžete změnit v ${ settingsLink }."
       ],
@@ -10771,9 +10832,6 @@
     "Storage": {
       "Get more storage": [
         "Získat více úložného prostoru"
-      ],
-      "Release notes": [
-        "Seznam změn"
       ],
       "Upgrade storage": [
         "Navýšit úložiště"
@@ -10953,6 +11011,47 @@
     "Subscription price": {
       "For": [
         "Pro"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB úložiště"
+      ],
+      "and 15 more premium features": [
+        "a 15 dalších prémiových funkcí"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatické přesměrování e-mailu ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Upozornění na úniky informací ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktopová aplikace"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomozte nám udržet internet bezpečný a soukromý pro všechny. Přejděte na placený tarif."
+      ],
+      "No ads or tracking": [
+        "Žádné reklamy ani sledování"
+      ],
+      "Short @pm.me email address": [
+        "Zkrácená e-mailová adresa @pm.me"
+      ],
+      "Support our mission": [
+        "Podpořte naše poslání"
+      ],
+      "Upgrade": [
+        "Navýšit"
+      ],
+      "Upgrade your productivity": [
+        "Zlepšete svou produktivitu"
+      ],
+      "We don't sell your data": [
+        "Vaše údaje neprodáváme"
+      ],
+      "Your privacy is our mission": [
+        "Vaše soukromí je naším posláním"
       ]
     },
     "Subscription renewal state": {
@@ -11219,6 +11318,9 @@
       ],
       "Labels applied.": [
         "Štítky použity."
+      ],
+      "Last modified aliases stored in your oldest vault": [
+        "Naposledy upravené aliasy uložené ve vašem nejstarším trezoru"
       ],
       "Mail list unsubscribed": [
         "Odhlášeno z e-mailového seznamu"
@@ -12216,14 +12318,17 @@
       "What would you like to import?": [
         "Co byste chtěli importovat?"
       ],
-      "What's new": [
-        "Co je nového"
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Vaše bezplatná zkušební verze ${ planName } skončí ${ textDate }"
       ],
       "Your account is protected": [
         "Váš účet je chráněn"
       ],
       "Your changes are not synced yet": [
         "Vaše změny zatím nejsou synchronizovány"
+      ],
+      "Your exposed information": [
+        "Vaše uniklé informace"
       ]
     },
     "Title subscription": {

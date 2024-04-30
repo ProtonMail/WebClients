@@ -444,11 +444,11 @@
       "Not now": [
         "現在不要"
       ],
-      "Ok": [
-        "確定"
-      ],
       "OK": [
         "好"
+      ],
+      "Ok": [
+        "確定"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "開啟 ${ CALENDAR_APP_NAME } 設定"
@@ -2345,6 +2345,9 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "雙重驗證可以增加一層安全保障，防止盜用。"
       ],
+      "Availability unknown": [
+        "不確定是否有空"
+      ],
       "Boost efficiency and track your time by color-coding events by category or your energy levels. Get this and much more with a paid plan.": [
         "按分類或心機為各事件貼上色彩標記，好提振工作效率並追蹤所耗時間。如此種種，盡在付費方案中。"
       ],
@@ -2368,6 +2371,9 @@
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "您正在匯入的聯絡人清單似乎包含一些群組，請查看並選擇應如何匯入這些群組。"
+      ],
+      "Loading availability": [
+        "正在加載空閒時段"
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "正在合併聯絡人... 該過程或需時數分鐘。完成後您即可以關閉此往來對話方塊。"
@@ -3056,9 +3062,6 @@
       ],
       "You have reached the contacts limit for your account": [
         "您的帳號已達聯絡人數量限制"
-      ],
-      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
-        "您已經達到行事曆的數量上限。有部分行事曆無法被匯入。"
       ],
       "You must set a name": [
         "您必須設定名稱"
@@ -4404,6 +4407,9 @@
       "Loading ${ appName }": [
         "正在載入 ${ appName }"
       ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "正在加載行事曆，請稍後。你將會在新的瀏覽視窗中連接到我們的行程平臺。"
+      ],
       "Loading event": [
         "正在載入事件"
       ],
@@ -4481,6 +4487,9 @@
       ],
       "Organization size": [
         "組織規模"
+      ],
+      "Other users within your organization will see your busy slots. No event details are shared.": [
+        "在您的組織機構的其他用戶會看到你繁忙的時段。沒有行程的詳細資料會與他們共享。"
       ],
       "password": [
         "密碼"
@@ -4607,6 +4616,9 @@
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "在可以匯出前，應用程式需要在本機先解密您的聯絡人。過程結束時，將會產生一個 VCF 檔案以供您下載。"
+      ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "您被曝露的資料來自第三方服務。您 ${ BRAND_NAME } 帳號資料保持安全及加密。 ${ learnMoreLink }"
       ],
       "The following participants cannot be notified about your changes:": [
         "下列參與者無法知悉您的變更："
@@ -4809,6 +4821,9 @@
       "You can check the progress ${ importProgressLink }.": [
         "您可以檢查進度 ${ importProgressLink }。"
       ],
+      "You can close the tab or browser in the meantime.": [
+        "等待期間，您可以關閉這個標籤頁或瀏覽器。"
+      ],
       "You can import one data type at a time.": [
         "您可以一次匯入一種資料類型。"
       ],
@@ -4826,6 +4841,12 @@
       ],
       "You cannot undo this action.": [
         "此操作無法復原。"
+      ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "您有一個試用期 ${ planTitle } 訂購授權。如果您希望在試用期完結後繼續您的訂購授權，請增加一個繳款方式。"
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "您有一個試用期 ${ planTitle } 訂購授權。您暫時無需付費。你的訂購授權將會在試用期結束時自動繳付。"
       ],
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
         "您已重新啟用您的金鑰，因此連結到下列行事曆中的事件現已能解密。"
@@ -4919,6 +4940,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "你的檔案將加密後再儲存"
+      ],
+      "Your information was found on ${ displayedDate }": [
+        "您的資料在 ${ displayedDate } 被發現。"
       ],
       "Your login information will not be saved after the import is completed.": [
         "匯入完成後不會保存您的登入資訊。"
@@ -5426,6 +5450,9 @@
       "Select your plan": [
         "選擇你的方案"
       ],
+      "Show others when I'm busy": [
+        "向其他人顯示我正在忙"
+      ],
       "Show week numbers": [
         "顯示週數"
       ],
@@ -5643,6 +5670,9 @@
       ],
       "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
         "您的${ mailStorage }已滿。要傳送或接收電子郵件，釋放空間或${ cta }。"
+      ],
+      "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
+        "您的帳號可能會被刪除。為了避免資料損失，請向您的管理員查詢或升級。 ${ cta }"
       ],
       "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
         "您的儲存已滿，要傳送或接收電子郵件，釋放空間或${ cta }。"
@@ -6894,9 +6924,6 @@
       "Create new group": [
         "創建新群組"
       ],
-      "Custom": [
-        "自訂"
-      ],
       "Day": [
         "天"
       ],
@@ -7288,6 +7315,9 @@
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel 現已 **啟動** 並正在保護你的帳號."
+      ],
+      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLink }": [
+        "您的資料在最少一次的資料外洩之中被發現。開啟 ${ DARK_WEB_MONITORING_NAME } 來瀏覽詳細資料及採取行動。 ${ learnMoreLink }"
       ]
     },
     "Select files": {
@@ -7744,6 +7774,12 @@
       "Invite friends to ${ BRAND_NAME }": [
         "揪親朋好友一起用 ${ BRAND_NAME }"
       ],
+      "No more scheduling conflicts": [
+        "沒有其他衝突的行程了"
+      ],
+      "Now you can see when participants are free to attend your meeting.": [
+        "現在您可以查看參與者何時有空加入您的會議。"
+      ],
       "With customizable event colors, you can color-code the chaos and conquer your day.": [
         "利用自訂化事件色彩，將日常瑣屑事以色彩標記，收編於統整的一天麾下。"
       ]
@@ -7754,9 +7790,6 @@
       ]
     },
     "Storage": {
-      "Release notes": [
-        "版本資訊"
-      ],
       "Upgrade storage": [
         "升級儲存空間"
       ],
@@ -8726,11 +8759,11 @@
       "What would you like to import?": [
         "您打算要匯入什麼資料呢？"
       ],
-      "What's new": [
-        "最新功能"
-      ],
       "You have invited participants with equivalent emails": [
         "您已以同等電郵邀請參與者"
+      ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "您的 ${ planName } 免費方案將於 ${ textDate } 結束"
       ],
       "Your account is protected": [
         "你的帳號已被保護"

@@ -181,6 +181,9 @@
       "Copy email to clipboard": [
         "複製電郵位址至剪貼簿"
       ],
+      "Copy invite link": [
+        "複製邀請連結"
+      ],
       "Copy link": [
         "複製連結"
       ],
@@ -2754,9 +2757,6 @@
       "You have reached the contacts limit for your account": [
         "您的帳號已達聯絡人數量限制"
       ],
-      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
-        "您已經達到行事曆的數量上限。有部分行事曆無法被匯入。"
-      ],
       "You must set a name": [
         "您必須設定名稱"
       ],
@@ -4109,6 +4109,9 @@
       "File will not be updated": [
         "將不會上傳檔案"
       ],
+      "Files and folders that others shared with you will appear here": [
+        "與他人共享的文件及資料夾會在這裡出現"
+      ],
       "Finalizing": [
         "即將完成"
       ],
@@ -4280,6 +4283,9 @@
       "Loading ${ appName }": [
         "正在載入 ${ appName }"
       ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "正在加載行事曆，請稍後。你將會在新的瀏覽視窗中連接到我們的行程平臺。"
+      ],
       "Loading link": [
         "正在載入連結"
       ],
@@ -4390,6 +4396,9 @@
       ],
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
         "僅允許 ${ MAX_CUSTOM_PASSWORD_LENGTH } 個字元"
+      ],
+      "Only the owner of the share will be able to invite you again.": [
+        "只有這個共享資料的擁有人能再次邀請您"
       ],
       "Only the people with the link and the password can access this file.": [
         "僅同時擁有連結與密碼的人才能存取此檔案。"
@@ -4622,6 +4631,9 @@
       "Shared link not found": [
         "找不到分享的連結"
       ],
+      "Shared with me": [
+        "與我分享"
+      ],
       "Sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
         "註冊您自己的 ${ DRIVE_APP_NAME } 帳號，以端到端加密保護您的資料並安全地分享。"
       ],
@@ -4685,6 +4697,9 @@
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
         "因為加密與簽章的開銷，加密後的資料會較大，保證了您資料的安全。"
       ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "您被曝露的資料來自第三方服務。您 ${ BRAND_NAME } 帳號資料保持安全及加密。 ${ learnMoreLink }"
+      ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "下列項目可能已遭竄改：${ items }。除非您信任該檔案，否則切勿開啟。"
       ],
@@ -4696,6 +4711,9 @@
       ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "目前仍有檔案等候傳輸，關閉傳輸管理員將會終止所有操作。"
+      ],
+      "There is nothing to see here": [
+        "這裡什麼都沒有。"
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "此電郵位址已停用。若要傳送到此電郵位址，請其擁有者首先啟用此電郵位址。"
@@ -4976,6 +4994,9 @@
       "You can check the progress ${ importProgressLink }.": [
         "您可以檢查進度 ${ importProgressLink }。"
       ],
+      "You can close the tab or browser in the meantime.": [
+        "等待期間，您可以關閉這個標籤頁或瀏覽器。"
+      ],
       "You can import one data type at a time.": [
         "您可以一次匯入一種資料類型。"
       ],
@@ -4997,6 +5018,12 @@
       "You have ${ expiresInDays } day left to claim your 3 GB welcome bonus and ": [
         "您還有${ expiresInDays }天的時間領取您的 3 GB 歡迎獎勵，以及 "
       ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "您有一個試用期 ${ planTitle } 訂購授權。如果您希望在試用期完結後繼續您的訂購授權，請增加一個繳款方式。"
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "您有一個試用期 ${ planTitle } 訂購授權。您暫時無需付費。你的訂購授權將會在試用期結束時自動繳付。"
+      ],
       "You may be redirected to your bank’s website.": [
         "您或會重新導向至您的銀行網站。"
       ],
@@ -5014,6 +5041,9 @@
       ],
       "You will lose all unsaved changes.": [
         "您所有未儲存的變更將會消失。"
+      ],
+      "You will not be able to join again after.": [
+        "你稍後將無法重新加入"
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "即將重新導向到 PayPal 驗證您的付款。"
@@ -5068,6 +5098,9 @@
       ],
       "Your files will be encrypted and then saved.": [
         "您的檔案將經加密後儲存。"
+      ],
+      "Your information was found on ${ displayedDate }": [
+        "您的資料在 ${ displayedDate } 被發現。"
       ],
       "Your login information will not be saved after the import is completed.": [
         "匯入完成後不會保存您的登入資訊。"
@@ -5591,6 +5624,9 @@
       "Region": [
         "地區"
       ],
+      "Remove access": [
+        "移除存取權限"
+      ],
       "Replace existing file": [
         "取代已存在的檔案"
       ],
@@ -5621,6 +5657,9 @@
       "Shared by": [
         "分享自"
       ],
+      "Shared on": [
+        "已共享於"
+      ],
       "Show indexing progress of Encrypted Search": [
         "顯示加密搜尋的索引進度"
       ],
@@ -5644,6 +5683,9 @@
       ],
       "Stolen data": [
         "失竊資料"
+      ],
+      "Stop sharing": [
+        "停止共用"
       ],
       "Street address": [
         "街道位址"
@@ -5810,6 +5852,9 @@
       "Shared": [
         "已分享"
       ],
+      "Shared with me": [
+        "與我共用"
+      ],
       "stay safer online": [
         "保持在線安全"
       ],
@@ -5858,6 +5903,9 @@
       ],
       "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
         "您的${ mailStorage }已滿。要傳送或接收電子郵件，釋放空間或${ cta }。"
+      ],
+      "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
+        "您的帳號可能會被刪除。為了避免資料損失，請向您的管理員查詢或升級。 ${ cta }"
       ],
       "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
         "您的儲存已滿，要傳送或接收電子郵件，釋放空間或${ cta }。"
@@ -6982,6 +7030,12 @@
       "${ reason } has been enabled": [
         "${ reason } 已啟用。"
       ],
+      "Access for the member removed": [
+        "使用者存取權移除"
+      ],
+      "Access updated and shared": [
+        "存取權已更新和共享"
+      ],
       "All items will soon be permanently deleted from trash": [
         "所有項目將從「垃圾桶」中永久刪除"
       ],
@@ -7012,11 +7066,17 @@
       "Encrypted search activated": [
         "已啟用加密搜索"
       ],
+      "Failed to accept share invitation": [
+        "失敗接受加入邀請"
+      ],
       "Failed to download files: ${ err }": [
         "無法下載檔案： ${ err }"
       ],
       "Failed to move, please try again": [
         "移動失敗，請再試一次"
+      ],
+      "Failed to remove the file": [
+        "刪除檔案失敗"
       ],
       "Failed to upload files: ${ err }": [
         "上載檔案失敗：${ err }"
@@ -7029,6 +7089,12 @@
       ],
       "File or folder is missing a name": [
         "檔案或資料夾缺少名稱"
+      ],
+      "File removed": [
+        "檔案已移除"
+      ],
+      "Invitation removed from the share": [
+        "邀請函從共享移除"
       ],
       "Link copied to clipboard": [
         "連結已複製到剪貼簿"
@@ -7047,6 +7113,12 @@
       ],
       "Root folder failed to be loaded": [
         "根資料夾載入失敗"
+      ],
+      "Share invitation accepted successfully": [
+        "共享邀請函成功同意"
+      ],
+      "Stopping to share this item has failed": [
+        "無法終止共享此項目"
       ],
       "Subfolder failed to be loaded": [
         "子資料夾載入失敗"
@@ -7496,6 +7568,9 @@
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel 現已 **啟動** 並正在保護你的帳號."
+      ],
+      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLink }": [
+        "您的資料在最少一次的資料外洩之中被發現。開啟 ${ DARK_WEB_MONITORING_NAME } 來瀏覽詳細資料及採取行動。 ${ learnMoreLink }"
       ]
     },
     "Select files": {
@@ -7912,9 +7987,6 @@
     "Storage": {
       "Get more storage": [
         "取得更多儲存空間"
-      ],
-      "Release notes": [
-        "版本資訊"
       ],
       "Upgrade storage": [
         "升級儲存空間"
@@ -8371,6 +8443,9 @@
       ],
       "Are you sure you want to close the preview?": [
         "您確定要關閉預覽嗎？"
+      ],
+      "Are you sure you want to leave this share?": [
+        "您確定您要繼續此分享？"
       ],
       "Billing cycle": [
         "繳款單週期"
@@ -8879,9 +8954,6 @@
       "What would you like to import?": [
         "您打算要匯入什麼資料呢？"
       ],
-      "What's new": [
-        "最新功能"
-      ],
       "You have inaccessible files": [
         "您有部份檔案無法存取"
       ],
@@ -8890,6 +8962,9 @@
       ],
       "You have no folders yet": [
         "您尚未創建任何資料夾"
+      ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "您的 ${ planName } 免費方案將於 ${ textDate } 結束"
       ],
       "Your 3 GB bonus": [
         "您的 3 GB 獎勵"

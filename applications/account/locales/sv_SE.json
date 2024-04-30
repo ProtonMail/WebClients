@@ -47,11 +47,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butik"
       ],
-      "activate": [
-        "aktivera"
-      ],
       "Activate": [
         "Aktivera"
+      ],
+      "activate": [
+        "aktivera"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivera ${ user.Name }@pm.me"
@@ -1318,6 +1318,9 @@
     "app-switcher": {
       "Browse the web privately and block ads": [
         "Surfa på webben privat och blockera annonser"
+      ],
+      "Keep your schedule private": [
+        "Håll ditt schema privat"
       ],
       "Protect your passwords and identity": [
         "Skydda dina lösenord och din identitet"
@@ -4288,8 +4291,8 @@
       "You have reached the contacts limit for your account": [
         "Du har nått kontaktgränsen för ditt konto"
       ],
-      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
-        "Du har nått det maximala antalet kalendrar. Några kalendrar kunde inte importeras."
+      "You have reached the maximum number of calendars.": [
+        "Du har nått det maximala antalet kalendrar."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Du har använt alla adresser i ditt paket. Uppgradera ditt paket för att lägga till en ny adress."
@@ -5953,17 +5956,6 @@
         "En del av ditt kalenderinnehåll stöds inte och kommer inte att importeras."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Ytterligare dubbletter av nycklar upptäcktes. Ladda upp individuellt för mer information."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Nyckel ${ fingerprint } har redan laddats upp"
-      ],
-      "Selected color:": [
-        "Vald färg:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } behöver din tillåtelse till ${ enableDesktopNotifications }."
@@ -7250,6 +7242,9 @@
       "Password copied to clipboard": [
         "Lösenord kopierat till urklipp"
       ],
+      "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
+        "Lösenord måste vara ${ MIN_PASSWORD_LENGTH } tecken eller mer."
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Betalningar skyddas med TLS-kryptering och Schweiziska integritetslagar."
       ],
@@ -7326,10 +7321,6 @@
       ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Försök igen, använd en annan betalningsmetod eller kontakta PayPal för hjälp."
-      ],
-      "Please use a password more than ${ MIN_PASSWORD_LENGTH } character.": [
-        "Använd ett lösenord som är mer än ${ MIN_PASSWORD_LENGTH } tecken.",
-        "Använd ett lösenord som är mer än ${ MIN_PASSWORD_LENGTH } tecken."
       ],
       "Please use another browser or download the file.": [
         "Använd en annan webbläsare eller ladda ner filen."
@@ -8265,9 +8256,6 @@
       "You won’t be able to recover locked data using your downloaded recovery files.": [
         "Du kommer inte kunna återställa låsta data med dina nedladdade återställningsfiler."
       ],
-      "You won’t be able to recover locked data using your downloaded recovery files. This will also disable trusted device recovery.": [
-        "Du kommer inte att kunna återställa låsta data med dina nedladdade återställningsfiler. Detta kommer också inaktivera återställning med betrodd enhet."
-      ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
         "Ditt ${ BRAND_NAME }-konto är associerad med ${ externalEmailAddress }."
       ],
@@ -8361,6 +8349,17 @@
       ],
       "Zoom meeting": [
         "Zoom-möte"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Ytterligare dubbletter av nycklar upptäcktes. Ladda upp individuellt för mer information."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Nyckel ${ fingerprint } har redan laddats upp"
+      ],
+      "Selected color:": [
+        "Vald färg:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9701,9 +9700,6 @@
       ],
       "Recovery phrase": [
         "Återställningsfras"
-      ],
-      "Trusted device recovery": [
-        "Återställning av betrodd enhet"
       ]
     },
     "Label for adding a new custom domain": {
@@ -12817,6 +12813,9 @@
       ]
     },
     "Select invoice document": {
+      "Credit note": [
+        "Kreditfaktura"
+      ],
       "Currency conversion": [
         "Valutaomvandling"
       ],
@@ -13510,9 +13509,6 @@
       ]
     },
     "Storage": {
-      "Release notes": [
-        "Utgivningsnoteringar"
-      ],
       "Upgrade storage": [
         "Uppgradera lagringsutrymme"
       ],
@@ -13829,6 +13825,9 @@
       "Resubscribe": [
         "Prenumerera igen"
       ],
+      "Resubscribe to restore access to ${ planName } features.": [
+        "Prenumerera igen för att återställa åtkomst till ${ planName }-funktioner."
+      ],
       "Subscription canceled": [
         "Prenumeration avslutad"
       ],
@@ -13844,6 +13843,9 @@
       "When you cancel, you will lose access to": [
         "När du avbryter förlorar du åtkomst till"
       ],
+      "Yearly free storage bonuses": [
+        "Årliga bonusar med gratis lagringsutrymme"
+      ],
       "You **won't be able to add any new files**": [
         "Du **kommer inte att kunna lägga till några nya filer**"
       ],
@@ -13858,6 +13860,9 @@
       ],
       "Your own custom email domain": [
         "Din egen anpassade e-postdomän"
+      ],
+      "Your own short @pm.me email alias": [
+        "Ditt egna korta @pm.me e-postalias"
       ]
     },
     "subscription reminder": {
@@ -13878,6 +13883,9 @@
       ],
       "No ads or tracking": [
         "Inga annonser eller spårning"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-postadress"
       ],
       "Support our mission": [
         "Stöd vårt uppdrag"
@@ -15365,9 +15373,6 @@
       ],
       "What would you like to import?": [
         "Vad vill du importera?"
-      ],
-      "What's new": [
-        "Vad som är nytt"
       ],
       "WireGuard": [
         "WireGuard"

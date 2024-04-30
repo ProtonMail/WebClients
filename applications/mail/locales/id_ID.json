@@ -3984,9 +3984,6 @@
       "You have reached the contacts limit for your account": [
         "Anda telah mencapai batas jumlah kontak yang diperkenankan untuk akun Anda"
       ],
-      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
-        "Anda telah mencapai batas jumlah kalender yang diperkenankan. Sebagian kalender tidak dapat diimpor."
-      ],
       "You must set a name": [
         "Anda harus mengatur nama"
       ],
@@ -8911,7 +8908,7 @@
         "Dukungan IMAP terbatas hanya pada aplikasi desktop (mis. Outlook, Apple Mail, dan Thunderbird) via ${ MAIL_APP_NAME } Bridge. Integrasi IMAP berbasis cloud saat ini tidak didukung."
       ],
       "Keep your plans private to you and your family with an encrypted calendar": [
-        "Jaga agar rencana Anda tetap menjadi rahasia antara Anda dan keluarga dengan kalender yang terenkripsi"
+        "Jaga agar rencana Anda tetap privat antara Anda dan keluarga Anda dengan kalender yang terenkripsi"
       ],
       "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server.": [
         "Menjaga Anda agar tetap terlindung sepanjang waktu dengan memblokir seluruh koneksi jaringan apabila Anda secara tidak sengaja terputus dari server VPN kami."
@@ -10292,9 +10289,6 @@
       "Get more storage": [
         "Dapatkan ruang penyimpanan tambahan"
       ],
-      "Release notes": [
-        "Catatan rilis"
-      ],
       "Upgrade storage": [
         "Tingkatkan ruang penyimpanan"
       ],
@@ -10458,17 +10452,41 @@
       ]
     },
     "subscription reminder": {
+      "15 GB storage": [
+        "Ruang penyimpanan 15 GB"
+      ],
       "and 15 more premium features": [
         "dan 15 fitur premium lainnya"
       ],
       "Automatic email forwarding ${ strongText }": [
         "Penerusan email otomatis ${ strongText }"
       ],
+      "Data breach alerts ${ strongArgument }": [
+        "Peringatan kebocoran data ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplikasi desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Bantu kami menjaga internet tetap aman dan privat bagi siapa pun. Tingkatkan akun Anda ke paket berbayar."
+      ],
+      "No ads or tracking": [
+        "Tanpa iklan atau pelacakan"
+      ],
+      "Short @pm.me email address": [
+        "Alamat email pendek @pm.me"
+      ],
+      "Support our mission": [
+        "Dukung misi kami"
+      ],
       "Upgrade": [
         "Tingkatkan"
       ],
       "Upgrade your productivity": [
         "Tingkatkan produktivitas Anda"
+      ],
+      "We don't sell your data": [
+        "Kami tidak menjual data Anda"
       ],
       "Your privacy is our mission": [
         "Privasi Anda adalah misi kami"
@@ -11608,9 +11626,6 @@
       ],
       "What would you like to import?": [
         "Hal-hal apa saja yang hendak Anda impor?"
-      ],
-      "What's new": [
-        "Apa-apa saja yang baru"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Masa uji coba gratis ${ planName } Anda akan berakhir pada ${ textDate }"

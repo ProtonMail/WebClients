@@ -447,11 +447,11 @@
       "Not now": [
         "Inte nu"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Öppna inställningar för ${ CALENDAR_APP_NAME }"
@@ -3094,8 +3094,8 @@
       "You have reached the contacts limit for your account": [
         "Du har nått kontaktgränsen för ditt konto"
       ],
-      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
-        "Du har nått det maximala antalet kalendrar. Några kalendrar kunde inte importeras."
+      "You have reached the maximum number of calendars.": [
+        "Du har nått det maximala antalet kalendrar."
       ],
       "You must set a name": [
         "Du måste ange ett namn"
@@ -3688,6 +3688,9 @@
     "Header": {
       "Contacts": [
         "Kontakter"
+      ],
+      "Custom recurrence": [
+        "Anpassad upprepning"
       ],
       "Name": [
         "Namn"
@@ -7997,9 +8000,6 @@
       ]
     },
     "Storage": {
-      "Release notes": [
-        "Utgivningsnoteringar"
-      ],
       "Upgrade storage": [
         "Uppgradera lagringsutrymme"
       ],
@@ -8193,6 +8193,9 @@
       ],
       "No ads or tracking": [
         "Inga annonser eller spårning"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-postadress"
       ],
       "Support our mission": [
         "Stöd vårt uppdrag"
@@ -9032,9 +9035,6 @@
       ],
       "What would you like to import?": [
         "Vad vill du importera?"
-      ],
-      "What's new": [
-        "Vad som är nytt"
       ],
       "You have invited participants with equivalent emails": [
         "Du har bjudit in deltagare med motsvarande e-post"

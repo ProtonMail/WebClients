@@ -47,11 +47,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-Shop"
       ],
-      "activate": [
-        "aktivieren"
-      ],
       "Activate": [
         "Aktivieren"
+      ],
+      "activate": [
+        "aktivieren"
       ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me aktivieren"
@@ -4280,9 +4280,6 @@
       "You have reached the contacts limit for your account": [
         "Du hast das Kontaktlimit für dein Konto erreicht."
       ],
-      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
-        "Du hast die maximale Anzahl von Kalendern erreicht, die du in deinem Abonnement erstellen kannst. Einige Kalender konnten nicht importiert werden."
-      ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Alle Adressen in deinem Abonnement werden bereits verwendet. Bitte wechseln dein Abonnement, um eine neue Adresse hinzuzufügen."
       ],
@@ -5934,17 +5931,6 @@
         "Ein Teil deines Kalenderinhalts wird nicht unterstützt und wird nicht importiert."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Doppelt vorhandene Schlüssel erkannt. Für weitere Informationen lade diese bitte einzeln hoch."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Schlüssel ${ fingerprint } wurde bereits hochgeladen"
-      ],
-      "Selected color:": [
-        "Ausgewählte Farbe:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } benötigt deine Erlaubnis, um ${ enableDesktopNotifications }."
@@ -6191,6 +6177,9 @@
       "Add server (${ availableAddedCount } available)": [
         "Server hinzufügen (${ availableAddedCount } verfügbar)",
         "Server hinzufügen (${ availableAddedCount } verfügbar)"
+      ],
+      "Add your name and logo to create a more personalized experience for your organization.": [
+        "Füge deinen Namen und dein Logo hinzu, um deiner Organisation eine persönliche Note zu geben."
       ],
       "Adding ${ addedServerCount } gateway server": [
         "${ addedServerCount } Gateway-Server wird hinzugefügt",
@@ -6853,6 +6842,12 @@
       "If you wish to combine this account with another one, do NOT delete it.": [
         "Wenn du dieses Konto mit einem anderen kombinieren möchtest, darfst du es NICHT löschen."
       ],
+      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
+        "Wenn du Probleme hast, sind wir für dich da. ${ boldPhoneCall } oder ${ boldZoomMeeting } mit einem unserer Support-Spezialisten, oder öffnen Sie einen ${ boldLiveChat } für Chat-Support."
+      ],
+      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists.": [
+        "Wenn du Probleme hast, sind wir für dich da. ${ boldPhoneCall } oder ${ boldZoomMeeting } mit einem unserer Support-Spezialisten."
+      ],
       "Image description": [
         "Bildbeschreibung"
       ],
@@ -7289,10 +7284,6 @@
       ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Bitte versuche es erneut, verwende eine andere Zahlungsmethode oder wende dich an PayPal, um Hilfe zu erhalten."
-      ],
-      "Please use a password more than ${ MIN_PASSWORD_LENGTH } character.": [
-        "Bitte verwende ein Passwort mit mehr als ${ MIN_PASSWORD_LENGTH } Zeichen.",
-        "Bitte verwende ein Passwort mit mehr als ${ MIN_PASSWORD_LENGTH } Zeichen."
       ],
       "Please use another browser or download the file.": [
         "Bitte verwende einen anderen Browser oder lade die Datei herunter."
@@ -8228,9 +8219,6 @@
       "You won’t be able to recover locked data using your downloaded recovery files.": [
         "Du kannst verschlüsselte Daten nach dem Zurücksetzen des Kontos mit den heruntergeladenen Wiederherstellungsdateien nicht mehr wiederherstellen."
       ],
-      "You won’t be able to recover locked data using your downloaded recovery files. This will also disable trusted device recovery.": [
-        "Verschlüsselte Daten können mit den heruntergeladenen Wiederherstellungsdateien nicht wiederhergestellt werden. Dadurch werden auch vertrauenswürdige Informationen zur Wiederherstellung des Geräts ungültig."
-      ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
         "Dein ${ BRAND_NAME }-Konto ist mit ${ externalEmailAddress } verknüpft."
       ],
@@ -8324,6 +8312,17 @@
       ],
       "Zoom meeting": [
         "Zoom-Meeting"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Doppelt vorhandene Schlüssel erkannt. Für weitere Informationen lade diese bitte einzeln hoch."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Schlüssel ${ fingerprint } wurde bereits hochgeladen"
+      ],
+      "Selected color:": [
+        "Ausgewählte Farbe:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9670,9 +9669,6 @@
       ],
       "Recovery phrase": [
         "Wiederherstellungsphrase"
-      ],
-      "Trusted device recovery": [
-        "Wiederherstellung über vertrauenswürdiges Gerät"
       ]
     },
     "Label for adding a new custom domain": {
@@ -12797,6 +12793,11 @@
         "URL des SCIM-Connectors, an den dein IdP Provisioning Agent SCIM-Daten weiterleitet"
       ]
     },
+    "Security Center - Info": {
+      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLinkBreach }": [
+        "Deine Informationen wurden bei mindestens einem Datenleck gefunden. Schalte ${ DARK_WEB_MONITORING_NAME } ein, um Details anzuzeigen und Maßnahmen zu ergreifen. ${ learnMoreLinkBreach }"
+      ]
+    },
     "Select file": {
       "Upload CSV file": [
         "CSV-Datei hochladen"
@@ -12814,6 +12815,9 @@
       ]
     },
     "Select invoice document": {
+      "Credit note": [
+        "Gutschrift"
+      ],
       "Currency conversion": [
         "Währungsumrechnung"
       ],
@@ -13507,9 +13511,6 @@
       ]
     },
     "Storage": {
-      "Release notes": [
-        "Versionshinweise"
-      ],
       "Upgrade storage": [
         "Mehr Speicher hinzufügen"
       ],
@@ -15353,9 +15354,6 @@
       ],
       "What would you like to import?": [
         "Was möchtest du importieren?"
-      ],
-      "What's new": [
-        "Neuigkeiten"
       ],
       "WireGuard configuration": [
         "WireGuard-Konfiguration"
