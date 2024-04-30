@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 import { c, msgid } from 'ttag';
 
@@ -12,6 +12,7 @@ import { AddressType } from '@proton/pass/lib/monitor/types';
 import { selectMonitorSettingByType } from '@proton/pass/store/selectors';
 import { formatEpoch } from '@proton/pass/utils/time/format';
 import clsx from '@proton/utils/clsx';
+import noop from '@proton/utils/noop';
 
 import { BreachGroupRowActions } from './BreachGroupRowActions';
 
@@ -41,6 +42,7 @@ const getStatusLabel = (row: MonitorTableRow) => {
 };
 
 export const BreachGroupRow: FC<MonitorTableRow> = (row) => {
+    const history = useHistory();
     const { breached, email, monitored, type, usageCount } = row;
     const paused = !useSelector(selectMonitorSettingByType(row.type));
 
@@ -49,20 +51,15 @@ export const BreachGroupRow: FC<MonitorTableRow> = (row) => {
     const clickable = !paused && (type !== AddressType.CUSTOM || row.verified) && monitored;
     const danger = monitored && breached;
 
+    const handleClick = () => history.push(getLocalPath(`monitor/dark-web/${row.type}/${getAddressId(row)}`));
+
     return (
-        <TableRow className={clsx(danger && 'color-danger')}>
-            <TableCell className="text-ellipsis">
-                {clickable ? (
-                    <Link
-                        to={getLocalPath(`monitor/dark-web/${row.type}/${getAddressId(row)}`)}
-                        className="block overflow-hidden"
-                    >
-                        <button className="max-w-full color-norm text-ellipsis">{email}</button>
-                    </Link>
-                ) : (
-                    email
-                )}
-            </TableCell>
+        <TableRow
+            className={clsx('pass-table--row', danger && 'color-danger')}
+            onClick={clickable ? handleClick : noop}
+            aria-disabled={clickable ? 'false' : 'true'}
+        >
+            <TableCell className="text-ellipsis">{email}</TableCell>
             <TableCell className={clsx('text-ellipsis', statusClassName)}>{status}</TableCell>
             <TableCell className="text-ellipsis">
                 {c('Label').ngettext(msgid`${usageCount} login`, `${usageCount} logins`, usageCount)}

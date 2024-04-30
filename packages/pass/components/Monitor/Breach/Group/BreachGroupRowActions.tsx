@@ -40,7 +40,10 @@ export const BreachGroupRowActions: FC<MonitorTableRow> = (row) => {
                     shape="solid"
                     color="weak"
                     size="small"
-                    onClick={() => add.dispatch(row.email)}
+                    onClick={(evt) => {
+                        evt.stopPropagation();
+                        add.dispatch(row.email);
+                    }}
                     loading={add.loading}
                     disabled={monitor.breaches.data.custom.length >= MAX_CUSTOM_ADDRESSES}
                 >
@@ -76,7 +79,11 @@ export const BreachGroupRowActions: FC<MonitorTableRow> = (row) => {
     }
 
     return (
-        <Link className="shrink-0" to={getLocalPath(`monitor/dark-web/${row.type}/${getAddressId(row)}`)}>
+        <Link
+            className="shrink-0"
+            to={getLocalPath(`monitor/dark-web/${row.type}/${getAddressId(row)}`)}
+            onClick={(evt) => evt.stopPropagation()}
+        >
             <Button pill size="small" shape="ghost" type="button">
                 <Icon name="chevron-right" />
             </Button>
