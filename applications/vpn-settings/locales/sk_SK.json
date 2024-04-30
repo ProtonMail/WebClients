@@ -36,7 +36,7 @@
         "Pridať PayPal"
       ],
       "Add user": [
-        "Pridať užívateľa"
+        "Pridať používateľa"
       ],
       "Apply": [
         "Použiť"
@@ -120,10 +120,10 @@
         "Vytvoriť bránu"
       ],
       "Create user": [
-        "Vytvoriť užívateľa"
+        "Vytvoriť používateľa"
       ],
       "Create users": [
-        "Vytvoriť užívateľov"
+        "Vytvoriť používateľov"
       ],
       "Current plan": [
         "Aktuálny plán"
@@ -147,7 +147,7 @@
         "Vymazať logo"
       ],
       "Delete user": [
-        "Vymazať užívateľa"
+        "Vymazať používateľa"
       ],
       "Delete your account": [
         "Zmazať účet"
@@ -225,7 +225,7 @@
         "povoliť notifikácie na pracovnej ploche"
       ],
       "Enable multi-user support": [
-        "Zapnúť podporu pre viac užívateľov"
+        "Zapnúť podporu pre viac používateľov"
       ],
       "Explore other ${ BRAND_NAME } plans": [
         "Preskúmať ďalšie ${ BRAND_NAME } plány"
@@ -285,7 +285,7 @@
         "Pozvať"
       ],
       "Invite user": [
-        "Pozvite užívateľa"
+        "Pozvite používateľa"
       ],
       "Keep logo": [
         "Ponechať logo"
@@ -570,7 +570,7 @@
         "Namiesto toho použiť vašu aktuálnu emailovú adresu"
       ],
       "User": [
-        "Užívateľ"
+        "Používateľ"
       ],
       "Verify": [
         "Overiť"
@@ -1013,10 +1013,10 @@
     },
     "Checkout row": {
       "${ users } user": [
-        "${ users } užívateľ",
-        "${ users } užívatelia",
-        "${ users } užívateľov",
-        "${ users } užívateľov"
+        "${ users } používateľ",
+        "${ users } používatelia",
+        "${ users } používateľov",
+        "${ users } používateľov"
       ],
       "Total for ${ n } month": [
         "Celkom za ${ n } mesiac",
@@ -1924,7 +1924,7 @@
     },
     "Delete address prompt": {
       "Once deleted, this address can't be used again by anyone else.": [
-        "Po vymazaní túto adresu už nikto iný nemôže použiť."
+        "Po vymazaní túto adresu už nikto iný nebude môcť použiť."
       ],
       "You can only delete 1 address per year.": [
         "Môžete vymazať iba 1 adresu za rok."
@@ -3394,10 +3394,10 @@
         "Ak si želáte skombinovať tento účet s iným, nemažte ho."
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
-        "Ak máte problémy, sme tu, aby sme vám pomohli. ${ boldPhoneCall } alebo začnite ${ boldZoomMeeting } s jedným z našich špecialistov podpory, alebo otvorte ${ boldLiveChat } pre chatovú podporu."
+        "Ak máte problémy, sme tu, aby sme vám pomohli. Skúste ${ boldPhoneCall } alebo ${ boldZoomMeeting } s jedným z našich špecialistov podpory, alebo otvorte ${ boldLiveChat } pre chatovú podporu."
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists.": [
-        "Ak máte problémy, sme tu, aby sme vám pomohli. ${ boldPhoneCall } alebo začnite ${ boldZoomMeeting } s jedným z našich špecialistov podpory."
+        "Ak máte problémy, sme tu, aby sme vám pomohli. Skúste ${ boldPhoneCall } alebo ${ boldZoomMeeting } s jedným z našich špecialistov podpory."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Dôležité: Uistite sa, že máte uložené kódy pre obnovenie. V opačnom prípade sa už nikdy nebudete môcť prihlásiť, ak stratíte zariadenie určené pre 2FA."
@@ -3580,10 +3580,10 @@
         "Pridajte heslá pre používateľov na riadkoch"
       ],
       "Please add an email address for the user on row": [
-        "Pridajte e-mailovú adresu používateľa na riadku",
-        "Pridajte e-mailové adresy používateľov na riadkoch",
-        "Pridajte e-mailové adresy používateľov na riadkoch",
-        "Pridajte e-mailové adresy používateľov na riadkoch"
+        "Pridajte emailovú adresu používateľa na riadku",
+        "Pridajte emailové adresy používateľov na riadkoch",
+        "Pridajte emailové adresy používateľov na riadkoch",
+        "Pridajte emailové adresy používateľov na riadkoch"
       ],
       "Please authenticate your card in the verification tab.": [
         "Overte svoju kartu v okne overenia."
@@ -3614,12 +3614,6 @@
       ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Skúste to znova, použite iný spôsob platby, alebo požiadajte o pomoc PayPal."
-      ],
-      "Please use a password more than ${ MIN_PASSWORD_LENGTH } character.": [
-        "Použite prosím heslo s dĺžkou viac než ${ MIN_PASSWORD_LENGTH } znak.",
-        "Použite prosím heslo s dĺžkou viac než ${ MIN_PASSWORD_LENGTH } znaky.",
-        "Použite prosím heslo s dĺžkou viac než ${ MIN_PASSWORD_LENGTH } znakov.",
-        "Použite prosím heslo s dĺžkou viac než ${ MIN_PASSWORD_LENGTH } znakov."
       ],
       "Please use another browser or download the file.": [
         "Použite iný prehliadač alebo si súbor stiahnite, prosím."
@@ -4096,7 +4090,7 @@
         "So šifrovanou ${ BRAND_NAME } adresou môžete používať všetky služby ${ BRAND_NAME }"
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "Bez aktivácie nebudete môcť vytvárať nových užívateľov, pridávať adresy existujúcim utívateľom, alebo pristupovať k verejným užívateľským účtom."
+        "Bez aktivácie nebudete môcť vytvárať nových používateľov, pridávať adresy existujúcim používateľom, alebo pristupovať k verejným používateľským účtom."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Chcete získať nový overovací kód alebo použiť alternatívnu metódu overovania?"
@@ -4369,10 +4363,10 @@
         "${ nbDay } dní"
       ],
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "${ UsedAddresses } z ${ MaxAddresses } e-mail adries",
-        "${ UsedAddresses } z ${ MaxAddresses } e-mail adries",
-        "${ UsedAddresses } z ${ MaxAddresses } e-mail adries",
-        "${ UsedAddresses } z ${ MaxAddresses } e-mail adries"
+        "${ UsedAddresses } z ${ MaxAddresses } emailovej adresy",
+        "${ UsedAddresses } z ${ MaxAddresses } emailových adries",
+        "${ UsedAddresses } z ${ MaxAddresses } emailových adries",
+        "${ UsedAddresses } z ${ MaxAddresses } emailových adries"
       ],
       "Account storage": [
         "Úložisko účtu"
@@ -4960,22 +4954,22 @@
         "Zistiť viac"
       ],
       "upgrade for more storage": [
-        "navýšiť tarifu pre viac priestoru"
+        "upgrajdujte pre väčšie úložisko"
       ],
       "Upgrade to restore full access": [
-        "Upgradujte na obnovenie plného prístupu"
+        "Upgradujte pre obnovenie plného prístupu"
       ],
       "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
-        "Vaša ${ driveStorage } je plná. Ak chcete nahrať alebo synchronizovať súbory, uvoľnite miesto alebo ${ cta }."
+        "Vaše ${ driveStorage } je plné. Ak chcete nahrať alebo synchronizovať súbory, uvoľnite miesto alebo ${ cta }."
       ],
       "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
-        "Vaša ${ mailStorage } je plné. Pre odosielanie alebo prijímanie emailov uvoľnite miesto alebo ${ cta }."
+        "Vaše ${ mailStorage } je plné. Pre odosielanie alebo prijímanie emailov uvoľnite miesto alebo ${ cta }."
       ],
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "Vášmu kontu hrozí vymazanie. Ak chcete zabrániť strate údajov, požiadajte správcu o aktualizáciu. ${ cta }"
       ],
       "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
-        "Vaše úložisko je plné. Ak chcete odosielať alebo prijímať e-maily, uvoľnite miesto alebo ${ cta }."
+        "Vaše úložisko je plné. Ak chcete odosielať alebo prijímať emaily, uvoľnite miesto alebo ${ cta }."
       ],
       "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
         "Vaše úložisko je plné. Ak chcete nahrať alebo synchronizovať súbory, uvoľnite miesto alebo ${ cta }."
@@ -4986,7 +4980,7 @@
     },
     "mailtrial2024: Action": {
       "Get the deal": [
-        "Získajte ponuku"
+        "Získať ponuku"
       ],
       "Special Offer": [
         "Špeciálna ponuka"
@@ -5022,7 +5016,7 @@
         "za prvý mesiac"
       ],
       "Limited-time offer, expires April 2 2024": [
-        "Časovo limitovaná ponuka, končí 2. apríla 2024"
+        "Časovo obmedzená ponuka, končí 2. apríla 2024"
       ],
       "Your subscription will auto-renew on ${ renewTime } at ${ renewablePrice }, cancel anytime": [
         "Vaše predplatné sa automaticky obnoví ${ renewTime } za ${ renewablePrice }, môžete ho kedykoľvek zrušiť"
@@ -5030,7 +5024,7 @@
     },
     "mailtrial2024: Title": {
       "Get ${ planName } for only ${ planPrice }": [
-        "Získajte ${ planName } len za ${ planPrice }"
+        "Získať ${ planName } len za ${ planPrice }"
       ]
     },
     "Member action": {
@@ -5187,9 +5181,9 @@
       ],
       "${ n } email address": [
         "${ n } emailová adresa",
-        "${ n } e-mailové adriesy/aliasy",
-        "${ n } e-mailových adries/aliasov",
-        "${ n } e-mailových adries/aliasov"
+        "${ n } emailové adresy/aliasy",
+        "${ n } emailových adries/aliasov",
+        "${ n } emailových adries/aliasov"
       ],
       "${ n } email address per user": [
         "${ n } emailová adresa na používateľa",
@@ -5678,7 +5672,7 @@
         "Špecializované riešenie VPN, ktoré poskytuje bezpečný, neobmedzený a vysokorýchlostný prístup k internetu."
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
-        "Bezplatný štartovací účet navrhnutý tak, aby v predvolenom nastavení umožnil každému súkromie."
+        "Bezplatný štartovací účet, ktorý je navrhnutý tak, aby poskytol súkromie pre všetkých už v základnom nastavení."
       ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
         "Využívate propagačnú cenu vášho aktuálneho plánu. Ak svoj účet odstránite, prídete o propagačnú cenu a tá už nebude k dispozícii po opätovnom vytvorení nového účtu."
@@ -6152,7 +6146,7 @@
         "Tipy na výber dobrého loga"
       ],
       "Use a graphical icon or image rather than text.": [
-        "Radšej použite grafickú ikonu alebo obrázok namiesto textu."
+        "Namiesto textu použite skôr grafickú ikonu alebo obrázok."
       ],
       "Use a solid background color.": [
         "Použite jednofarebné pozadie."
@@ -7307,9 +7301,6 @@
       ]
     },
     "Storage": {
-      "Release notes": [
-        "Zoznam zmien"
-      ],
       "Upgrade storage": [
         "Navýšiť úložisko"
       ],
@@ -7474,10 +7465,10 @@
         "${ UsedAddresses } adries"
       ],
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "${ UsedAddresses } z ${ MaxAddresses } e-mail adries",
-        "${ UsedAddresses } z ${ MaxAddresses } e-mail adries",
-        "${ UsedAddresses } z ${ MaxAddresses } e-mail adries",
-        "${ UsedAddresses } z ${ MaxAddresses } e-mail adries"
+        "${ UsedAddresses } z ${ MaxAddresses } emailovej adresy",
+        "${ UsedAddresses } z ${ MaxAddresses } emailových adries",
+        "${ UsedAddresses } z ${ MaxAddresses } emailových adries",
+        "${ UsedAddresses } z ${ MaxAddresses } emailových adries"
       ],
       "${ UsedCalendars } calendar": [
         "${ UsedCalendars } kalendár",
@@ -7492,10 +7483,10 @@
         "${ UsedDomains } z ${ MaxDomains } vlastných domén"
       ],
       "${ UsedMembers } of ${ MaxMembers } user": [
-        "${ UsedMembers } z ${ MaxMembers } užívateľa",
-        "${ UsedMembers } z ${ MaxMembers } užívateľov",
-        "${ UsedMembers } z ${ MaxMembers } užívateľov",
-        "${ UsedMembers } z ${ MaxMembers } užívateľov"
+        "${ UsedMembers } z ${ MaxMembers } používateľa",
+        "${ UsedMembers } z ${ MaxMembers } používateľov",
+        "${ UsedMembers } z ${ MaxMembers } používateľov",
+        "${ UsedMembers } z ${ MaxMembers } používateľov"
       ],
       "1 email address": [
         "1 emailová adresa"
@@ -7542,6 +7533,14 @@
     "Subscription price": {
       "For": [
         "Pre"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB úložného priestoru"
+      ],
+      "Desktop app": [
+        "Desktopová aplikácia"
       ]
     },
     "Subscription renewal state": {
@@ -7695,7 +7694,7 @@
         "Relácia zrušená"
       ],
       "User deleted": [
-        "Užívateľ odstránený"
+        "Používateľ odstránený"
       ]
     },
     "Success notification": {
@@ -8065,7 +8064,7 @@
         "Upraviť zoznam serverov brány"
       ],
       "Edit user": [
-        "Upraviť užívateľa"
+        "Upraviť používateľa"
       ],
       "Edit users": [
         "Upraviť používateľov"
@@ -8098,10 +8097,10 @@
         "Každý člen organizácie má prístup k"
       ],
       "Failed to create ${ failedUsers.length } user\naccount.": [
-        "Nepodarilo sa vytvoriť ${ failedUsers.length } užívateľský účet.",
-        "Nepodarilo sa vytvoriť ${ failedUsers.length } užívateľské účty.",
-        "Nepodarilo sa vytvoriť ${ failedUsers.length } užívateľských účtov.",
-        "Nepodarilo sa vytvoriť ${ failedUsers.length } užívateľských účtov."
+        "Nepodarilo sa vytvoriť ${ failedUsers.length } používateľský účet.",
+        "Nepodarilo sa vytvoriť ${ failedUsers.length } používateľské účty.",
+        "Nepodarilo sa vytvoriť ${ failedUsers.length } používateľských účtov.",
+        "Nepodarilo sa vytvoriť ${ failedUsers.length } používateľských účtov."
       ],
       "Find email or username": [
         "Nájsť email alebo používateľské meno"
@@ -8354,9 +8353,6 @@
       ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Na vašu novú adresu vám pošleme email s pokynmi na dokončenie zmeny."
-      ],
-      "What's new": [
-        "Čo je nové"
       ],
       "WireGuard configuration": [
         "Konfigurácia WireGuard"

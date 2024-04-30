@@ -4015,8 +4015,8 @@
       "You have reached the contacts limit for your account": [
         "Du har nådd kontaktgrensen for kontoen din"
       ],
-      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
-        "Du har nådd maksimalt antall kalendere. Noen kalendere kan ikke importeres."
+      "You have reached the maximum number of calendars.": [
+        "Du har nådd maksimalt antall kalendere."
       ],
       "You must set a name": [
         "Du må angi et navn"
@@ -10481,9 +10481,6 @@
       "Get more storage": [
         "Få mer lagringskapasitet"
       ],
-      "Release notes": [
-        "Utgivelsesmerknader"
-      ],
       "Upgrade storage": [
         "Oppgrader lagringsplass"
       ],
@@ -11871,9 +11868,6 @@
       "What would you like to import?": [
         "Hva ønsker du å importere?"
       ],
-      "What's new": [
-        "Hva er nytt"
-      ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Din gratis prøveversjon av ${ planName } slutter den ${ textDate }."
       ],
@@ -12052,6 +12046,9 @@
       ],
       "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
         "Abonnementet fornyes automatisk hver 3. måned. Neste faktureringsdato er om 3 måneder."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Den spesielt rabatterte prisen på ${ priceWithDiscount } er gyldig den første måneden. Da blir den automatisk fornyet til ${ renewPrice } hver måned. Du kan avbryte når som helst."
       ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Du blir deretter fakturert hver 12. måned til ${ renewPrice }."

@@ -1941,6 +1941,12 @@
       "Error connecting to the Bitcoin API.": [
         "Помилка підключення до Bitcoin API."
       ],
+      "Failed to process the logo": [
+        "Не вдалося обробити логотип"
+      ],
+      "File too large. Your logo must be 30 KB or smaller.": [
+        "Файл завеликий. Ваш логотип має становити 30 КБ або менше."
+      ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Якщо час на вашому телевізорі завершився, натисніть Оновити на телевізорі та введіть код знову."
       ],
@@ -1952,6 +1958,9 @@
       ],
       "Impossible to rename the gateway": [
         "Неможливо перейменувати мережевий шлюз"
+      ],
+      "Incorrect file type. Upload a file in PNG or JPEG format.": [
+        "Невірний тип файлу. Завантажте файл у форматі PNG або JPEG."
       ],
       "Incorrect login credentials. Please try again.": [
         "Неправильні дані входу. Спробуйте ще раз."
@@ -2043,6 +2052,9 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Для керування декількома користувачами, перейдіть на тарифний план для бізнесу."
       ],
+      "Please upload a square file": [
+        "Будь ласка, вивантажте квадратний файл"
+      ],
       "Please upload an xml file": [
         "Вивантажте файл у форматі xml"
       ],
@@ -2069,6 +2081,12 @@
       ],
       "The email addresses do not match": [
         "Електронні адреси відрізняються"
+      ],
+      "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
+        "Файл занадто великий, максимальний розмір становить ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }"
+      ],
+      "The file is too small, the minimum size is ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }": [
+        "Файл занадто малий, мінімальний розмір становить ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }"
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Найменша сума, яку можна додати — ${ price }"
@@ -2865,6 +2883,9 @@
         "Додати сервер (${ availableAddedCount } доступних)",
         "Додати сервер (${ availableAddedCount } доступних)"
       ],
+      "Add your name and logo to create a more personalized experience for your organization.": [
+        "Додайте своє ім'я та логотип, щоб створити більш персоналізований досвід вашої організації."
+      ],
       "Adding ${ addedServerCount } gateway server": [
         "Додавання ${ addedServerCount } шлюзового сервера",
         "Додавання ${ addedServerCount } шлюзових серверів",
@@ -2882,6 +2903,12 @@
       ],
       "Admin account allocation": [
         "Розподілення для облікового запису адміністратора"
+      ],
+      "Affected user is on row": [
+        "Уражений користувач знаходиться в рядку",
+        "Уражені користувачі знаходяться в рядках",
+        "Уражені користувачі знаходяться в рядках",
+        "Уражені користувачі знаходяться в рядках"
       ],
       "All your changes will be lost.": [
         "Всі зміни будуть втрачені."
@@ -2915,6 +2942,9 @@
       ],
       "Are you sure you want to discard your changes?": [
         "Ви справді хочете відхилити зміни?"
+      ],
+      "Are you sure you want to give administrative privileges to this user?": [
+        "Ви впевнені, що хочете дати цьому користувачу адміністративні привілеї?"
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Ви впевнені, що хочете забрати права адміністратора у цього користувача?"
@@ -3023,6 +3053,9 @@
       ],
       "Current plan": [
         "Поточний план"
+      ],
+      "Custom branding": [
+        "Користувацький брендинг"
       ],
       "Custom email domains": [
         "Власні домени електронної пошти"
@@ -3225,6 +3258,12 @@
       "If you wish to combine this account with another one, do NOT delete it.": [
         "Якщо ви хочете об'єднати цей обліковий запис з іншим, НЕ видаляйте його."
       ],
+      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
+        "Якщо у вас виникли проблеми, ми тут для того, щоб допомогти. ${ boldPhoneCall } або ${ boldZoomMeeting } з одним з наших фахівців з підтримки, або відкрийте ${ boldLiveChat } для отримання чату підтримки."
+      ],
+      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists.": [
+        "Якщо у вас виникли проблеми, ми тут, щоб допомогти. ${ boldPhoneCall } або ${ boldZoomMeeting } з одним з наших фахівців з підтримки."
+      ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Важливо: Впевніться, що ви зберегли коди відновлення. Інакше ви можете назавжди втратити доступ до свого облікового запису в разі втрати пристрою двоетапної перевірки."
       ],
@@ -3278,6 +3317,9 @@
       ],
       "Link copied to clipboard": [
         "Посилання скопійовано в буфер обміну"
+      ],
+      "Live chat": [
+        "Живий чат"
       ],
       "Loading": [
         "Завантаження"
@@ -3447,6 +3489,9 @@
       "Plus or Visionary subscription required": [
         "Необхідна передплата Plus або Visionary"
       ],
+      "Preview": [
+        "Попередній перегляд"
+      ],
       "Preview failed to be loaded": [
         "Не вдалося завантажити попередній перегляд"
       ],
@@ -3476,6 +3521,9 @@
       ],
       "Remember to share the user's sign in details with them.": [
         "Повідомте користувачам їхні дані для входу."
+      ],
+      "Request a phone call": [
+        "Замовити телефонний дзвінок"
       ],
       "Resend verification email": [
         "Повторно надіслати лист з підтвердженням"
@@ -3777,6 +3825,9 @@
       "Upload your completed CSV file to create accounts": [
         "Вивантажте заповнений файл CSV для створення облікових записів"
       ],
+      "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
+        "Вивантажте логотип вашої організації, щоб підкреслити ідентичність вашого бренду та створити персоналізований досвід для ваших користувачів."
+      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Використовуйте найкращий сервер відповідно до поточного навантаження та розташування: ${ formattedBestServerName }"
       ],
@@ -4055,6 +4106,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Ваша передплата керується Mozilla. Зв'яжіться зі службою підтримки Mozilla."
+      ],
+      "Zoom meeting": [
+        "Zoom-зустріч"
       ]
     },
     "Info for cash payment method": {
@@ -5833,6 +5887,14 @@
         "Ваш тарифний план включає максимум ще ${ humanReadableAvailableSpace } сховища."
       ]
     },
+    "Organization logo upload modal": {
+      "Drop image file here to upload or": [
+        "Перетягніть зображення сюди для вивантаження або"
+      ],
+      "Square image of at least 128 pixels": [
+        "Квадратне зображення не менше 128 пікселів"
+      ]
+    },
     "Pass B2B onboarding spotlight": {
       "Set up your organization": [
         "Налаштуйте свою організацію"
@@ -5898,11 +5960,62 @@
       ]
     },
     "passwordless": {
+      "All administrators will get access to the key.": [
+        "Усі адміністратори отримають доступ до ключа."
+      ],
+      "Are you sure you want to change your organization key?": [
+        "Ви впевнені, що хочете змінити ключ організації?"
+      ],
+      "Change organization key": [
+        "Змінити ключ організації"
+      ],
+      "Organization key activated": [
+        "Ключ організації активовано"
+      ],
+      "Organization key does not exist.": [
+        "Ключа організації не існує."
+      ],
+      "Organization key restored": [
+        "Ключ організації відновлено"
+      ],
+      "Organization key updated": [
+        "Ключ організації оновлено"
+      ],
       "Permission denied, administrator privileges have been restricted.": [
         "Доступ заборонено. Повноваження адміністратора було обмежено."
       ],
+      "Please ensure they have an enabled address and invite them separately later.": [
+        "Будь ласка, переконайтеся, що вони мають активну адресу, і запросіть їх окремо пізніше."
+      ],
+      "Reset organization key": [
+        "Скинути ключ організації"
+      ],
+      "The following administrators could not be restored.": [
+        "Наступні адміністратори не можуть бути відновлені."
+      ],
+      "The following administrators will get access to the organization key.": [
+        "Наступні адміністратори отримають доступ до ключа організації."
+      ],
       "The organization key must be activated first.": [
         "Спочатку необхідно активувати ключ організації."
+      ],
+      "This will send the latest organization key to the administrators that currently don't have access to it.": [
+        "Це надішле найновіший ключ організації адміністраторам, які наразі не мають до нього доступу."
+      ],
+      "To enable administrator rights on your account, activate the organization key.": [
+        "Щоб увімкнути права адміністратора на вашому обліковому запису, активуйте ключ організації."
+      ],
+      "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
+        "Ми не змогли перевірити безпеку адресного ключа цього відправника. Іноді відбувається затримка в оновленні інформації про відправника. Спробуйте ще раз пізніше. Якщо ви не впевнені в чинності цього запрошення або його відправника, зверніться до ${ BRAND_NAME } Служба підтримки клієнтів."
+      ],
+      "We have verified the authenticity of this sender and invitation.": [
+        "Ми верифікували автентичність цього відправника та запрошення."
+      ],
+      "You have been made administrator of the organization **${ organizationName }** by": [
+        "Ви були зроблені адміністратором організації **${ organizationName }**"
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "Вам потрібен доступ до ключа організації для виконання цієї операції."
       ]
     },
     "Payment method option": {
@@ -6116,6 +6229,12 @@
       ]
     },
     "Restore administrator panel": {
+      "${ n } administrator in your organization need access to the organization key.": [
+        "${ n } адміністратор у вашій організації потребує доступу до ключа організації.",
+        "${ n } адміністраторів у вашій організації потребують доступу до ключа організації.",
+        "${ n } адміністраторів у вашій організації потребують доступу до ключа організації.",
+        "${ n } адміністраторів у вашій організації потребують доступу до ключа організації."
+      ],
       "Changing organization keys": [
         "Зміна ключів організації"
       ],
@@ -6140,6 +6259,17 @@
     "Select file": {
       "Upload CSV file": [
         "Вивантажити файл CSV"
+      ]
+    },
+    "Select invoice document": {
+      "Credit note": [
+        "Кредит-нота"
+      ],
+      "Currency conversion": [
+        "Конвертування валюти"
+      ],
+      "Invoice": [
+        "Рахунок"
       ]
     },
     "Select search results": {
@@ -6617,9 +6747,6 @@
       ]
     },
     "Storage": {
-      "Release notes": [
-        "Примітки до випуску"
-      ],
       "Upgrade storage": [
         "Збільшити сховище"
       ],
@@ -6653,6 +6780,12 @@
       ],
       "upgrade for more storage": [
         "збільште сховище, передплативши тарифний план"
+      ],
+      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
+        "У вас залишився **${ daysRemaining }** день до кінця дії вашого тарифного плану **${ currentPlanName }**.",
+        "У вас залишилося **${ daysRemaining }** днів до кінця дії вашого тарифного плану **${ currentPlanName }**.",
+        "У вас залишилося **${ daysRemaining }** днів до кінця дії вашого тарифного плану **${ currentPlanName }**.",
+        "У вас залишилося **${ daysRemaining }** днів до кінця дії вашого тарифного плану **${ currentPlanName }**."
       ],
       "Your ${ appStorage } is almost full": [
         "Ваше ${ appStorage } майже заповнене"
@@ -7108,6 +7241,9 @@
       "Activate organization key": [
         "Активувати ключ організації"
       ],
+      "Activate user": [
+        "Активувати користувача"
+      ],
       "Add address": [
         "Додати адресу"
       ],
@@ -7228,6 +7364,9 @@
       "Create multiple user accounts": [
         "Створити кілька облікових записів користувачів"
       ],
+      "Create organization key": [
+        "Створити ключ організації"
+      ],
       "Create user accounts": [
         "Створити облікові записи користувачів"
       ],
@@ -7266,6 +7405,9 @@
       ],
       "Delete address permanently?": [
         "Видалити адресу остаточно?"
+      ],
+      "Delete organization logo?": [
+        "Видалити логотип організації?"
       ],
       "Delete the server (you will still be able to recover it for ${ days } day)": [
         "Видалити сервер (ви все ще зможете відновити його протягом ${ days } дня)",
@@ -7374,6 +7516,9 @@
       ],
       "Gift code": [
         "Подарунковий код"
+      ],
+      "How to choose a good logo": [
+        "Як обрати хороший логотип"
       ],
       "Human verification": [
         "Перевірка \"Я не робот\""
@@ -7588,6 +7733,9 @@
       "Upload CSV file to create multiple accounts": [
         "Завантажте файл CSV, щоб створити кілька облікових записів"
       ],
+      "Upload your organization’s logo": [
+        "Вивантажте логотип вашої організації"
+      ],
       "Users": [
         "Користувачі"
       ],
@@ -7602,9 +7750,6 @@
       ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Ми надішлемо лист на вашу нову адресу з інструкцією для завершення зміни."
-      ],
-      "What's new": [
-        "Що нового"
       ],
       "WireGuard configuration": [
         "Конфігурація WireGuard"
@@ -7794,6 +7939,14 @@
         "${ numberOfServers } в ${ numberOfCountries } країнах",
         "${ numberOfServers } в ${ numberOfCountries } країнах",
         "${ numberOfServers } в ${ numberOfCountries } країнах"
+      ]
+    },
+    "vpn_2024: renew": {
+      "Your subscription will automatically renew in ${ cycle } month.": [
+        "Ваша підписка буде автоматично поновлюватися через ${ cycle } місяць.",
+        "Ваша підписка буде автоматично поновлюватися через ${ cycle } місяців.",
+        "Ваша підписка буде автоматично поновлюватися через ${ cycle } місяців.",
+        "Ваша підписка буде автоматично поновлюватися через ${ cycle } місяців."
       ]
     },
     "vpn_2step: billing": {

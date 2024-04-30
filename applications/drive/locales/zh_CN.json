@@ -2706,9 +2706,6 @@
       "You have reached the contacts limit for your account": [
         "您的账户联系人数量已达上限"
       ],
-      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
-        "您的日历数量已达上限，因此部分日历无法导入。"
-      ],
       "You must set a name": [
         "请输入名称（必填）"
       ],
@@ -7445,9 +7442,6 @@
       "Get more storage": [
         "获得更多存储空间"
       ],
-      "Release notes": [
-        "版本说明"
-      ],
       "Upgrade storage": [
         "付费扩容"
       ],
@@ -7958,6 +7952,9 @@
       "Deleting contacts": [
         "删除联系人中"
       ],
+      "Details": [
+        "详细信息"
+      ],
       "Discard": [
         "放弃"
       ],
@@ -8345,9 +8342,6 @@
       "What would you like to import?": [
         "您需要导入哪些信息？"
       ],
-      "What's new": [
-        "更新内容"
-      ],
       "You have inaccessible files": [
         "存在无法访问的文件"
       ],
@@ -8357,11 +8351,17 @@
       "You have no folders yet": [
         "您尚未添加文件夹"
       ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "您的 ${ planName } 免费试用期将于 ${ textDate } 结束"
+      ],
       "Your account is protected": [
         "您的账户已受保护"
       ],
       "Your changes are not synced yet": [
         "您的改动尚未同步"
+      ],
+      "Your exposed information": [
+        "您的泄露信息"
       ],
       "Your welcome actions": [
         "您的新人礼包"

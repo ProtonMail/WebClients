@@ -799,6 +799,9 @@
       "View": [
         "Ver"
       ],
+      "View all reports": [
+        "Ver todos os relatórios"
+      ],
       "View invoice": [
         "Ver fatura"
       ],
@@ -2145,6 +2148,9 @@
       ]
     },
     "Email body for invitation (date part)": {
+      "TIME:\n${ formattedStart }": [
+        "PERÍODO: ${ formattedStart }"
+      ],
       "TIME:\n${ formattedStart } (all day)": [
         "PERÍODO: ${ formattedStart } (o dia todo)"
       ],
@@ -2590,9 +2596,6 @@
       ],
       "You have reached the contacts limit for your account": [
         "Atingiu o limite de contactos da sua conta."
-      ],
-      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
-        "Atingiu o número máximo de calendários. Não é possível importar alguns calendários."
       ],
       "You must set a name": [
         "Tem de definir um nome"
@@ -4742,6 +4745,9 @@
       "You cannot undo this action.": [
         "Esta ação não pode ser desfeita."
       ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "Tem uma subscrição experimental ${ planTitle }. Se gostaria de continuar com a sua subscrição após o período de avaliação, por favor, adicione um método de pagamento."
+      ],
       "You may be redirected to your bank’s website.": [
         "Pode ser redirecionado para o sítio Web do seu banco."
       ],
@@ -4793,6 +4799,12 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Os seus dados estão prontos para serem importados de ${ importedEmailAddressStrong } para a sua conta ${ BRAND_NAME }."
       ],
+      "Your email address and password were leaked:": [
+        "O seu endereço de e-mail e palavra-passe foram divulgados:"
+      ],
+      "Your email address was exposed:": [
+        "O seu endereço de e-mail foi divulgado:"
+      ],
       "Your email will only be used for this one-time verification.": [
         "O seu e-mail só será utilizado para esta verificação única."
       ],
@@ -4810,6 +4822,9 @@
       ],
       "Your next billing date is ${ renewalTime }.": [
         "A data do próximo pagamento é ${ renewalTime }."
+      ],
+      "Your password was leaked:": [
+        "A sua palavra-passe foi divulgada:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "O seu telefone só será utilizado para esta verificação única."
@@ -6962,6 +6977,10 @@
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "Tem ${ timeRemaining.inDays } dia para redefinir a sua palavra-passe.",
         "Tem ${ timeRemaining.inDays } dias para redefinir a sua palavra-passe."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "Tem ${ timeRemaining.inSeconds }segundo para redefinir a sua palavra-passe.",
+        " Tem ${ timeRemaining.inSeconds } segundos para redefinir a sua palavra passe."
       ]
     },
     "session_recovery:available:link": {
@@ -7320,9 +7339,6 @@
     "Storage": {
       "Get more storage": [
         "Obter mais espaço de armazenamento"
-      ],
-      "Release notes": [
-        "Notas de lançamento"
       ],
       "Upgrade storage": [
         "Actualizar o armazenamento"
@@ -8232,9 +8248,6 @@
       ],
       "What would you like to import?": [
         "O que gostaria de importar?"
-      ],
-      "What's new": [
-        "O que há de novo"
       ],
       "You have inaccessible files": [
         "Tem ficheiros inacessíveis"

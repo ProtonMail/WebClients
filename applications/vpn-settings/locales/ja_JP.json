@@ -518,6 +518,9 @@
       "Upgrade your plan": [
         "プランをアップグレード"
       ],
+      "Upload": [
+        "アップロード"
+      ],
       "Use ${ label } theme": [
         "${ label } テーマを使用"
       ],
@@ -3309,6 +3312,9 @@
       "Plus or Visionary subscription required": [
         "PLUS または VISIONARY プランが必要です"
       ],
+      "Preview": [
+        "プレビュー"
+      ],
       "Preview failed to be loaded": [
         "プレビューの読み込みに失敗しました"
       ],
@@ -4152,6 +4158,9 @@
       "Level for NetShield blocker filtering": [
         "NetShield ブロッカーのフィルタリング強度"
       ],
+      "Logo": [
+        "ロゴ"
+      ],
       "Mailbox password": [
         "メールボックスのパスワード"
       ],
@@ -4503,6 +4512,11 @@
     "Loading info": {
       "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
         "組織メンバーうち、${ twoFAMembers.length }/${ members.length } 人が 2 要素認証を使用しています。"
+      ]
+    },
+    "locked_state_storage_banner: info": {
+      "Learn more": [
+        "詳細"
       ]
     },
     "mailtrial2024: Action": {
@@ -5958,6 +5972,9 @@
       ]
     },
     "Select invoice document": {
+      "Credit note": [
+        "クレジットメモ"
+      ],
       "Currency conversion": [
         "通貨レート"
       ]
@@ -6445,9 +6462,6 @@
       ]
     },
     "Storage": {
-      "Release notes": [
-        "更新情報"
-      ],
       "Upgrade storage": [
         "ストレージ容量を増やす"
       ],
@@ -6608,6 +6622,14 @@
     "Subscription price": {
       "For": [
         "価格:"
+      ]
+    },
+    "subscription reminder": {
+      "Desktop app": [
+        "デスクトップアプリ"
+      ],
+      "Upgrade": [
+        "アップグレード"
       ]
     },
     "Subscription renewal state": {
@@ -7375,9 +7397,6 @@
       ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "新しいメールアドレスに、変更手続きに関するご案内メールをお送りします。"
-      ],
-      "What's new": [
-        "更新情報"
       ],
       "WireGuard configuration": [
         "WireGuard 設定ファイル"

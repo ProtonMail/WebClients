@@ -3516,9 +3516,6 @@
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Silakan coba lagi, gunakan metode pembayaran lainnya, atau hubungi PayPal untuk memperoleh bantuan."
       ],
-      "Please use a password more than ${ MIN_PASSWORD_LENGTH } character.": [
-        "Silakan gunakan kata sandi yang mengandung lebih dari ${ MIN_PASSWORD_LENGTH } karakter."
-      ],
       "Please use another browser or download the file.": [
         "Silakan gunakan browser lain atau unduh berkas yang bersangkutan."
       ],
@@ -5614,7 +5611,7 @@
         "Dukungan IMAP terbatas hanya pada aplikasi desktop (mis. Outlook, Apple Mail, dan Thunderbird) via ${ MAIL_APP_NAME } Bridge. Integrasi IMAP berbasis cloud saat ini tidak didukung."
       ],
       "Keep your plans private to you and your family with an encrypted calendar": [
-        "Jaga agar rencana Anda tetap menjadi rahasia antara Anda dan keluarga dengan kalender yang terenkripsi"
+        "Jaga agar rencana Anda tetap privat antara Anda dan keluarga Anda dengan kalender yang terenkripsi"
       ],
       "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server.": [
         "Menjaga Anda agar tetap terlindung sepanjang waktu dengan memblokir seluruh koneksi jaringan apabila Anda secara tidak sengaja terputus dari server VPN kami."
@@ -7028,9 +7025,6 @@
       ]
     },
     "Storage": {
-      "Release notes": [
-        "Catatan rilis"
-      ],
       "Upgrade storage": [
         "Tingkatkan ruang penyimpanan"
       ],
@@ -7224,17 +7218,41 @@
       ]
     },
     "subscription reminder": {
+      "15 GB storage": [
+        "Ruang penyimpanan 15 GB"
+      ],
       "and 15 more premium features": [
         "dan 15 fitur premium lainnya"
       ],
       "Automatic email forwarding ${ strongText }": [
         "Penerusan email otomatis ${ strongText }"
       ],
+      "Data breach alerts ${ strongArgument }": [
+        "Peringatan kebocoran data ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplikasi desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Bantu kami menjaga internet tetap aman dan privat bagi siapa pun. Tingkatkan akun Anda ke paket berbayar."
+      ],
+      "No ads or tracking": [
+        "Tanpa iklan atau pelacakan"
+      ],
+      "Short @pm.me email address": [
+        "Alamat email pendek @pm.me"
+      ],
+      "Support our mission": [
+        "Dukung misi kami"
+      ],
       "Upgrade": [
         "Tingkatkan"
       ],
       "Upgrade your productivity": [
         "Tingkatkan produktivitas Anda"
+      ],
+      "We don't sell your data": [
+        "Kami tidak menjual data Anda"
       ],
       "Your privacy is our mission": [
         "Privasi Anda adalah misi kami"
@@ -8038,9 +8056,6 @@
       ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Kami akan mengirimkan email ke alamat baru Anda yang berisi panduan untuk menyelesaikan proses migrasi Anda."
-      ],
-      "What's new": [
-        "Apa-apa saja yang baru"
       ],
       "WireGuard configuration": [
         "Konfigurasi WireGuard"

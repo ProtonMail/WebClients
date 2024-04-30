@@ -453,10 +453,10 @@
       "Not now": [
         "Не зараз"
       ],
-      "Ok": [
+      "OK": [
         "Добра"
       ],
-      "OK": [
+      "Ok": [
         "Добра"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -3034,7 +3034,7 @@
         "Перавышаны тэрмін чакання запыту"
       ],
       "Self invitation not allowed": [
-        "Нельга запрасіць самога сябе"
+        "Забаронена запрашаць самога сябе"
       ],
       "Signature not verified": [
         "Подпіс не правераны"
@@ -3158,9 +3158,6 @@
       ],
       "You have reached the contacts limit for your account": [
         "Вы дасягнулі абмежавання па колькасці кантактаў для вашага ўліковага запісу"
-      ],
-      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
-        "Вы дасягнулі максімальнай колькасці календароў. Некаторыя календары не будуць імпартаваныя."
       ],
       "You must set a name": [
         "Вы павінны задаць назву"
@@ -3771,6 +3768,9 @@
     "Header": {
       "Contacts": [
         "Кантакты"
+      ],
+      "Custom recurrence": [
+        "Карыстальніцкае паўтарэнне"
       ],
       "Name": [
         "Назва"
@@ -5273,7 +5273,7 @@
         "На адно запрашэнне дапускаецца не больш за ${ maxAttendees } удзельнікаў"
       ],
       "Creating invites in a shared calendar is not allowed": [
-        "Не дазваляецца стварэнне запрашэнняў у абагуленым календары"
+        "Стварэнне запрашэнняў у абагуленым календары забаронена"
       ]
     },
     "Input label": {
@@ -8306,9 +8306,6 @@
       ]
     },
     "Storage": {
-      "Release notes": [
-        "Нататкі да выпуску"
-      ],
       "Upgrade storage": [
         "Павялічыць сховішча"
       ],
@@ -8504,7 +8501,7 @@
         "і яшчэ 15 прэміяльных функцый"
       ],
       "Automatic email forwarding ${ strongText }": [
-        "Аўтаматычная перысылка электроннай пошты ${ strongText }"
+        "Аўтаматычная перасылка электроннай пошты ${ strongText }"
       ],
       "Data breach alerts ${ strongArgument }": [
         "Папярэджанне ўцечкі даных ${ strongArgument }"
@@ -9387,9 +9384,6 @@
       ],
       "What would you like to import?": [
         "Што вы хочаце імпартаваць?"
-      ],
-      "What's new": [
-        "Што новага"
       ],
       "You have invited participants with equivalent emails": [
         "Вы запрасілі ўдзельнікаў з эквівалентнай электроннай поштай"

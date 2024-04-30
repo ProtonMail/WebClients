@@ -47,11 +47,11 @@
       "${ BRAND_NAME } shop": [
         "Крамниця ${ BRAND_NAME }"
       ],
-      "activate": [
-        "активувати"
-      ],
       "Activate": [
         "Активувати"
+      ],
+      "activate": [
+        "активувати"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Активувати ${ user.Name }@pm.me"
@@ -1694,6 +1694,9 @@
     "Calendar status": {
       "Active": [
         "Активно"
+      ],
+      "Default": [
+        "За замовчуванням"
       ],
       "Disabled": [
         "Вимкнено"
@@ -3359,6 +3362,9 @@
       "Add condition": [
         "Додати умову"
       ],
+      "Add forwarding rule": [
+        "Додати правило пересилки"
+      ],
       "Back": [
         "Назад"
       ],
@@ -3371,11 +3377,29 @@
       "Delete": [
         "Видалити"
       ],
+      "Delete this condition": [
+        "Видалити цей стан"
+      ],
+      "Edit conditions": [
+        "Умови редагування"
+      ],
       "Next": [
         "Далі"
       ],
       "Pause": [
         "Призупинити"
+      ],
+      "Re-enable": [
+        "Увімкнути повторно"
+      ],
+      "Re-send confirmation email": [
+        "Вислати лист-підтвердження ще раз"
+      ],
+      "Remove “${ value }”": [
+        "Вилучити “${ value }”"
+      ],
+      "Request confirmation": [
+        "Запит підтвердження"
       ],
       "Resume": [
         "Продовжити"
@@ -3383,26 +3407,100 @@
       "Save": [
         "Зберегти"
       ],
+      "Send confirmation email": [
+        "Надіслати підтвердження електронною поштою"
+      ],
       "Set up email forwarding": [
         "Налаштувати пересилання пошти"
+      ]
+    },
+    "email_forwarding_2023: Description": {
+      "Unlock email forwarding to easily manage incoming information and more premium features when you upgrade.": [
+        "Розблокуйте переадресацію електронної пошти, щоб легко керувати вхідною інформацією та отримати більше преміум функцій під час оновлення."
+      ]
+    },
+    "email_forwarding_2023: Error": {
+      "Condition incomplete, please add a token": [
+        "Умови неповні, будь ласка, додайте токен"
+      ],
+      "Token already exists": [
+        "Токен вже існує"
+      ]
+    },
+    "email_forwarding_2023: Forwarding tooltip": {
+      "Emails forwarded to you are excluded and will not be forwarded.": [
+        "Електронні листи, надіслані вам, виключаються і не будуть пересилатися."
       ]
     },
     "email_forwarding_2023: Header": {
       "Actions": [
         "Дії"
       ],
+      "From": [
+        "Від"
+      ],
       "Status": [
         "Стан"
+      ],
+      "To": [
+        "До"
+      ]
+    },
+    "email_forwarding_2023: Incoming forwarding tab name": {
+      "From me": [
+        "Від мене"
       ]
     },
     "email_forwarding_2023: Info": {
+      "A confirmation email will be sent to ${ boldForwardeeEmail }": [
+        "Підтвердження електронною поштою буде надіслано на ${ boldForwardeeEmail }"
+      ],
+      "A new encryption key will be generated for ${ boldForwarderEmail }.": [
+        "Новий ключ шифрування буде згенеровано для ${ boldForwarderEmail }."
+      ],
+      "Automatically forward emails to another email address.": [
+        "Автоматично пересилати електронні листи на іншу електронну адресу."
+      ],
+      "Forwardee is invited and needs to accept/reject the invitation or update": [
+        "Пересилач запрошений і повинен прийняти/відхилити запрошення або оновити"
+      ],
+      "Forwarding is active": [
+        "Переадресація активна"
+      ],
+      "Forwarding to an address without end-to-end encryption will disable end-to-end encryption for your ${ boldForwarderEmail } address, but zero-access encryption remains enabled. ${ learnMoreLink }": [
+        "Переадресація на адресу без наскрізного шифрування вимкне наскрізне шифрування для вашої адреси ${ boldForwarderEmail }, але шифрування з нульовим доступом залишиться ввімкненим. ${ learnMoreLink }"
+      ],
+      "Forwarding to this address will become active once the recipient accepts the forwarding.": [
+        "Переадресація на цю адресу стане активною після того, як одержувач прийме переадресацію."
+      ],
+      "No incoming forwarding rules": [
+        "Немає правил вхідної переадресації"
+      ],
+      "No outgoing forwarding rules": [
+        "Немає правил вихідної переадресації"
+      ],
+      "Please update your forwarding keys": [
+        "Будь ласка, оновіть ваші ключі пересилки"
+      ],
+      "The forwardee rejected the forwarding request": [
+        "Пересилач відхилив запит на перенаправлення"
+      ],
+      "The forwarding is temporarily paused": [
+        "Пересилання тимчасово призупинено"
+      ],
       "You can safely close this tab.": [
         "Тепер ви можете закрити цю вкладку."
+      ],
+      "You won't receive emails forwarded automatically from ${ boldForwarderEmail }.": [
+        "Ви не будете отримувати електронні листи, переадресовані автоматично з ${ boldForwarderEmail }."
       ]
     },
     "email_forwarding_2023: Label": {
       "And": [
         "І"
+      ],
+      "Forward from": [
+        "Вперед від"
       ],
       "Forward to": [
         "Переслати"
@@ -3425,12 +3523,23 @@
         "Докладніше"
       ]
     },
+    "email_forwarding_2023: Outgoing forwarding tab name": {
+      "To me": [
+        "До мене"
+      ]
+    },
     "email_forwarding_2023: Placeholder": {
+      "Condition:": [
+        "Стан:"
+      ],
       "Enter email address": [
         "Введіть адресу е-пошти"
       ],
       "Type text or keyword": [
         "Введіть текст чи ключове слово"
+      ],
+      "Type text or keyword for this condition:": [
+        "Введіть текст або ключове слово для цієї умови:"
       ]
     },
     "email_forwarding_2023: Prompt": {
@@ -3445,6 +3554,12 @@
       "Active": [
         "Активно"
       ],
+      "Declined": [
+        "Відхилено"
+      ],
+      "Outdated": [
+        "Застаріло"
+      ],
       "Paused": [
         "Призупинено"
       ],
@@ -3453,13 +3568,49 @@
       ]
     },
     "email_forwarding_2023: Success": {
+      "A new encryption key has been generated for ${ forwarderEmail }.": [
+        "Новий ключ шифрування було згенеровано для ${ forwarderEmail }."
+      ],
       "Changes saved": [
         "Зміни збережено"
+      ],
+      "Email sent to ${ forward.ForwardeeEmail }": [
+        "Повідомлення надіслано до ${ forward.ForwardeeEmail }"
+      ],
+      "Email sent to ${ model.forwardeeEmail }.": [
+        "Повідомлення надіслано до ${ model.forwardeeEmail }."
+      ],
+      "Forwarding accepted": [
+        "Пересилання прийнято"
+      ],
+      "Forwarding declined": [
+        "Пересилання відхилено"
+      ],
+      "Forwarding deleted": [
+        "Пересилання видалено"
+      ],
+      "Forwarding paused": [
+        "Пересилання призупинено"
+      ],
+      "Forwarding resumed": [
+        "Пересилання відновлено"
       ]
     },
     "email_forwarding_2023: Title": {
+      "Automatically forward emails to other accounts": [
+        "Автоматично пересилати листи до інших облікових записів"
+      ],
       "Delete forwarding?": [
         "Видалити пересилання?"
+      ],
+      "Email forwarding deactivated": [
+        "Пересилання електронної пошти деактивоване"
+      ],
+      "Forwarding activated": [
+        "Пересилка активована"
+      ],
+      "Request confirmation": [
+        "Запит підтвердження"
       ],
       "Set up forwarding": [
         "Налаштувати пересилання"
@@ -3611,6 +3762,12 @@
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Не вдалося отримати активні сеанси. ${ refresh } або повторіть спробу пізніше."
       ],
+      "Failed to process the logo": [
+        "Не вдалося обробити логотип"
+      ],
+      "File too large. Your logo must be 30 KB or smaller.": [
+        "Файл завеликий. Ваш логотип має становити 30 КБ або менше."
+      ],
       "Filter with this name already exists": [
         "Фільтр з цією назвою вже існує"
       ],
@@ -3628,6 +3785,9 @@
       ],
       "Impossible to rename the gateway": [
         "Неможливо перейменувати мережевий шлюз"
+      ],
+      "Incorrect file type. Upload a file in PNG or JPEG format.": [
+        "Невірний тип файлу. Завантажте файл у форматі PNG або JPEG."
       ],
       "Incorrect login credentials. Please try again.": [
         "Неправильні дані входу. Спробуйте ще раз."
@@ -3788,6 +3948,9 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Для керування декількома користувачами, перейдіть на тарифний план для бізнесу."
       ],
+      "Please upload a square file": [
+        "Будь ласка, вивантажте квадратний файл"
+      ],
       "Please upload an xml file": [
         "Вивантажте файл у форматі xml"
       ],
@@ -3862,6 +4025,12 @@
       ],
       "The email addresses do not match": [
         "Електронні адреси відрізняються"
+      ],
+      "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
+        "Файл занадто великий, максимальний розмір становить ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }"
+      ],
+      "The file is too small, the minimum size is ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }": [
+        "Файл занадто малий, мінімальний розмір становить ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }"
       ],
       "The folder name is invalid. Please choose a different name.": [
         "Назва теки неправильна. Оберіть іншу назву."
@@ -3970,9 +4139,6 @@
       ],
       "You have reached the contacts limit for your account": [
         "Ви досягли максимальної кількості контактів для облікового запису"
-      ],
-      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
-        "Ви досягли максимальної кількості календарів. Деякі календарі не можна імпортувати."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Ви вже використали усі адреси з вашого тарифного плану. Для додавання нової адреси необхідно покращити тарифний план."
@@ -5614,17 +5780,6 @@
         "Частина вмісту вашого календаря не підтримується і не буде імпортована."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Виявлено додаткові дублікати ключів. Завантажте індивідуально для отримання додаткової інформації."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Ключ ${ fingerprint } вже вивантажено"
-      ],
-      "Selected color:": [
-        "Вибраний колір:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } потребує вашого дозволу, щоб ${ enableDesktopNotifications }."
@@ -5640,6 +5795,9 @@
       ],
       "${ BRAND_NAME } is privacy you can trust, ensured by strong encryption, open-source code, and Swiss privacy laws. We believe nobody should be able to exploit your data, period. Our technology and business are based upon this fundamentally stronger definition of privacy.": [
         "${ BRAND_NAME } – це приватність, якій можна довіряти, завдяки надійному шифруванню, відкритому коду та швейцарським законам про приватність. Ми вважаємо, що ніхто не повинен мати можливості використовувати ваші дані. В основі наших технологій та бізнесу закладено саме цей принцип визначення приватності."
+      ],
+      "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
+        "${ BRAND_NAME } ніколи не передає вашу інформацію третім особам. Дані отримані з власного аналізу ${ BRAND_NAME } та Constella Intelligence."
       ],
       "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "${ BRAND_NAME } призупинив імпортування, тому що втрачено з'єднання з вашим іншим провайдером е-пошти. Будь ласка, повторіть з'єднання."
@@ -5908,6 +6066,9 @@
         "Додати сервер (${ availableAddedCount } доступних)",
         "Додати сервер (${ availableAddedCount } доступних)"
       ],
+      "Add your name and logo to create a more personalized experience for your organization.": [
+        "Додайте своє ім'я та логотип, щоб створити більш персоналізований досвід вашої організації."
+      ],
       "Adding ${ addedServerCount } gateway server": [
         "Додавання ${ addedServerCount } шлюзового сервера",
         "Додавання ${ addedServerCount } шлюзових серверів",
@@ -5925,6 +6086,12 @@
       ],
       "Admin account allocation": [
         "Розподілення для облікового запису адміністратора"
+      ],
+      "Affected user is on row": [
+        "Уражений користувач знаходиться в рядку",
+        "Уражені користувачі знаходяться в рядках",
+        "Уражені користувачі знаходяться в рядках",
+        "Уражені користувачі знаходяться в рядках"
       ],
       "Align left": [
         "Вирівняти ліворуч"
@@ -5983,6 +6150,9 @@
       "Amount due": [
         "До сплати"
       ],
+      "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
+        "Псевдонім працює так само, як і адреса електронної пошти, але зменшує кількість спаму і зберігає вашу справжню адресу електронної пошти та особистість прихованою."
+      ],
       "An error occurred while communicating with the extension": [
         "Під час зв'язку з внутрішнім розширенням виникла помилка"
       ],
@@ -6036,6 +6206,9 @@
       ],
       "Are you sure you want to discard your import?": [
         "Ви дійсно хочете відхилити імпортування?"
+      ],
+      "Are you sure you want to give administrative privileges to this user?": [
+        "Ви впевнені, що хочете дати цьому користувачу адміністративні привілеї?"
       ],
       "Are you sure you want to permanently delete all your logs?": [
         "Ви дійсно хочете остаточно видалити усі ваші журнали?"
@@ -6145,6 +6318,9 @@
       "Check the status of imports and forwarding.": [
         "Перевірити стан імпортування та пересилання."
       ],
+      "Choose an app to get started": [
+        "Виберіть додаток, щоб почати"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Натисніть \"Запитати новий код\", щоб отримати новий код перевірки на ${ strong }. Якщо цей номер телефону неправильний, натисніть \"Змінити\" для його виправлення."
       ],
@@ -6228,6 +6404,9 @@
       ],
       "Custom": [
         "Власний"
+      ],
+      "Custom branding": [
+        "Користувацький брендинг"
       ],
       "Custom daily": [
         "Власне щодня"
@@ -6472,6 +6651,9 @@
       "For members of organizations using single sign-on (SAML SSO)": [
         "Для учасників організацій, що використовують єдиний вхід (SAML SSO)"
       ],
+      "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
+        "Для користувачів, які переходять на ${ MAIL_APP_NAME } з іншого поштового сервісу, виберіть вкладку ${ boldAddresses } і додайте всі активні адреси електронної пошти перед зміною MX запису, щоб забезпечити плавний перехід."
+      ],
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Пересилайте вхідні повідомлення з іншого облікового запису до своєї захищеної поштової скриньки ${ MAIL_APP_NAME }."
       ],
@@ -6492,6 +6674,9 @@
       ],
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "Отримайте доступ, створивши обліковий запис ${ BRAND_NAME } та прийнявши запрошення."
+      ],
+      "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
+        "Отримуйте сповіщення, якщо ваш пароль або інші персональні дані отримали витік. ${ learnMoreLinkNoBreach }"
       ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "Дайте токену описову назву, наприклад, службу, з якою ви плануєте його використовувати, і виберіть одну з ваших активних власних доменних адрес. Лише на цю адресу можна буде надсилати електронні листи з цим токеном."
@@ -6570,6 +6755,12 @@
       ],
       "If you wish to combine this account with another one, do NOT delete it.": [
         "Якщо ви хочете об'єднати цей обліковий запис з іншим, НЕ видаляйте його."
+      ],
+      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
+        "Якщо у вас виникли проблеми, ми тут для того, щоб допомогти. ${ boldPhoneCall } або ${ boldZoomMeeting } з одним з наших фахівців з підтримки, або відкрийте ${ boldLiveChat } для отримання чату підтримки."
+      ],
+      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists.": [
+        "Якщо у вас виникли проблеми, ми тут, щоб допомогти. ${ boldPhoneCall } або ${ boldZoomMeeting } з одним з наших фахівців з підтримки."
       ],
       "Image description": [
         "Опис зображення"
@@ -6673,6 +6864,9 @@
       "Just send them your personal referral link.": [
         "Просто надішліть їм ваше особисте реферальне посилання."
       ],
+      "Keep your info more secure and private with these guides and tips.": [
+        "Тримайте вашу інформацію більш безпечно та приватно разом з даними посібниками та порадами."
+      ],
       "Key deletion is irreversible!": [
         "Видалення ключа незворотне!"
       ],
@@ -6724,6 +6918,9 @@
       "Link type": [
         "Тип посилання"
       ],
+      "Live chat": [
+        "Живий чат"
+      ],
       "Loaded content is being protected by our proxy when tracker protection is activated.": [
         "Якщо увімкнено захист від стеження, завантажений вміст захищається нашим проксі."
       ],
@@ -6746,6 +6943,9 @@
         "Низький пріоритет"
       ],
       "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
+        "Основні поштові сервіси можуть відхиляти або фільтрувати ваші листи як спам, якщо SPF/DKIM/DMARC відсутні або налаштовані неправильно."
+      ],
+      "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not setup properly.": [
         "Основні поштові сервіси можуть відхиляти або фільтрувати ваші листи як спам, якщо SPF/DKIM/DMARC відсутні або налаштовані неправильно."
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
@@ -6792,6 +6992,9 @@
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Дайте назву своїй новій теці та виберіть теку вищого рівня, в яку ви хочете її вкласти. Якщо ви не виберете теку вищого рівня, цю нову теку буде створено як теку вищого рівня."
+      ],
+      "NetShield is an ad-blocking feature from ${ VPN_APP_NAME } that protects your device from ads, trackers, and malware.": [
+        "NetShield - це функція блокування реклами від ${ VPN_APP_NAME }, яка захищає ваш пристрій від реклами, трекерів і шкідливих програм."
       ],
       "New": [
         "Нове"
@@ -7018,6 +7221,9 @@
       "Plus or Visionary subscription required": [
         "Необхідна передплата Plus або Visionary"
       ],
+      "Preview": [
+        "Попередній перегляд"
+      ],
       "Preview failed to be loaded": [
         "Не вдалося завантажити попередній перегляд"
       ],
@@ -7095,6 +7301,9 @@
       ],
       "Report link expired": [
         "Термін дії посилання на звіт закінчився"
+      ],
+      "Request a phone call": [
+        "Замовити телефонний дзвінок"
       ],
       "Resend verification email": [
         "Повторно надіслати лист з підтвердженням"
@@ -7258,6 +7467,9 @@
       "Support for 1 custom email domain": [
         "Підтримка 1 власного домену електронної пошти"
       ],
+      "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
+        "Незабаром з'явиться підтримка моніторингу користувацьких доменів та адрес електронної пошти, що не належать до ${ BRAND_NAME }."
+      ],
       "support team": [
         "командою підтримки"
       ],
@@ -7293,6 +7505,9 @@
       ],
       "The credentials from your Identity Provider will be deleted.": [
         "Облікові дані будуть видалені у вашого провайдера ідентифікації."
+      ],
+      "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
+        "Темна павутина - це прихована частина інтернету, де можна купувати та продавати викрадену особисту інформацію, наприклад, ідентифікаційні дані."
       ],
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "Термін дії посилання для підтвердження електронною поштою завершився. Увійдіть, щоб повторно надіслати посилання."
@@ -7431,6 +7646,9 @@
       ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Це замінить ваш тимчасовий пароль. Ви будете використовувати його для доступу до свого облікового запису ${ BRAND_NAME } у майбутньому."
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "Буде виконано вихід з усіх облікових записів, до яких ви ввійшли на цю мить."
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "При цьому виконається вихід з системи в будь-яких активних сеансах та вимкнеться двоетапна перевірка."
@@ -7585,11 +7803,17 @@
       "Upload your completed CSV file to create accounts": [
         "Вивантажте заповнений файл CSV для створення облікових записів"
       ],
+      "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
+        "Вивантажте логотип вашої організації, щоб підкреслити ідентичність вашого бренду та створити персоналізований досвід для ваших користувачів."
+      ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "Завантажений файл не є чинним приватним ключем. Перевірте його та повторіть спробу."
       ],
       "URL link": [
         "URL-посилання"
+      ],
+      "Use a password manager to generate and securely store your passwords, ensuring strong passwords and easier sign-ins.": [
+        "Використовуйте менеджер паролів для створення та безпечного зберігання паролів, забезпечуючи надійні паролі та простіший вхід в систему."
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Використовуйте найкращий сервер відповідно до поточного навантаження та розташування: ${ formattedBestServerName }"
@@ -7668,6 +7892,9 @@
       ],
       "We just sent you a new link.": [
         "Ми надіслали вам нове посилання."
+      ],
+      "We monitor the dark web for instances where your personal information (such as an email address or password used on a third-party site) is leaked or compromised.": [
+        "Ми відстежуємо випадки витоку або компрометації вашої особистої інформації (наприклад, адреси електронної пошти або пароля, використаного на сторонньому сайті) у «темній павутині»."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Потрібно підтвердити вказаний спосіб оплати у вашому банку."
@@ -7831,6 +8058,9 @@
       "You can now access and manage the account as an administrator.": [
         "Тепер ви можете отримати доступ і керувати обліковим записом як адміністратор."
       ],
+      "You can now close this tab.": [
+        "Тепер ви можете закрити цю вкладку."
+      ],
       "You can now close this window.": [
         "Тепер ви можете закрити це вікно."
       ],
@@ -7924,9 +8154,6 @@
       "You won’t be able to recover locked data using your downloaded recovery files.": [
         "Ви не зможете відновити заблоковані дані за допомогою завантажених файлів відновлення."
       ],
-      "You won’t be able to recover locked data using your downloaded recovery files. This will also disable trusted device recovery.": [
-        "Ви не зможете відновити заблоковані дані за допомогою завантажених файлів відновлення. Це також вимкне відновлення довірених пристроїв."
-      ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
         "Ваш обліковий запис ${ BRAND_NAME } пов'язаний з ${ externalEmailAddress }."
       ],
@@ -8013,6 +8240,23 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Ваша передплата керується Mozilla. Зв'яжіться зі службою підтримки Mozilla."
+      ],
+      "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
+        "Ваш запит на підтримку закрито. Дякуємо, що звернулися до служби підтримки ${ BRAND_NAME }."
+      ],
+      "Zoom meeting": [
+        "Zoom-зустріч"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Виявлено додаткові дублікати ключів. Завантажте індивідуально для отримання додаткової інформації."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Ключ ${ fingerprint } вже вивантажено"
+      ],
+      "Selected color:": [
+        "Вибраний колір:"
       ]
     },
     "Info - folder colouring feature": {
@@ -8134,6 +8378,12 @@
     "Key generation": {
       "Generate key": [
         "Генерувати ключ"
+      ],
+      "If you're generating a new key because you believe your existing key has been compromised, please mark it as compromised after generating this key.": [
+        "Якщо ви генеруєте новий ключ, оскільки вважаєте, що ваш чинний ключ було скомпрометовано, позначте його як скомпрометований після генерації цього ключа."
+      ],
+      "Note: you already have a key with the same algorithm for this address. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
+        "Примітка: у вас вже є ключ з таким самим алгоритмом для цієї адреси. Якщо цей ключ не був скомпрометований, генерувати новий ключ може бути не потрібно, і це може уповільнити роботу вашого облікового запису."
       ]
     },
     "Key state badge": {
@@ -9321,9 +9571,6 @@
       ],
       "Recovery phrase": [
         "Фраза відновлення"
-      ],
-      "Trusted device recovery": [
-        "Відновлення за допомогою довіреного пристрою"
       ]
     },
     "Label for adding a new custom domain": {
@@ -11408,6 +11655,14 @@
         "Ваш тарифний план включає максимум ще ${ humanReadableAvailableSpace } сховища."
       ]
     },
+    "Organization logo upload modal": {
+      "Drop image file here to upload or": [
+        "Перетягніть зображення сюди для вивантаження або"
+      ],
+      "Square image of at least 128 pixels": [
+        "Квадратне зображення не менше 128 пікселів"
+      ]
+    },
     "OS compatibility": {
       ".deb (for Debian/Ubuntu)": [
         ".deb (для Debian/Ubuntu)"
@@ -11682,11 +11937,62 @@
       ]
     },
     "passwordless": {
+      "All administrators will get access to the key.": [
+        "Усі адміністратори отримають доступ до ключа."
+      ],
+      "Are you sure you want to change your organization key?": [
+        "Ви впевнені, що хочете змінити ключ організації?"
+      ],
+      "Change organization key": [
+        "Змінити ключ організації"
+      ],
+      "Organization key activated": [
+        "Ключ організації активовано"
+      ],
+      "Organization key does not exist.": [
+        "Ключа організації не існує."
+      ],
+      "Organization key restored": [
+        "Ключ організації відновлено"
+      ],
+      "Organization key updated": [
+        "Ключ організації оновлено"
+      ],
       "Permission denied, administrator privileges have been restricted.": [
         "Доступ заборонено. Повноваження адміністратора було обмежено."
       ],
+      "Please ensure they have an enabled address and invite them separately later.": [
+        "Будь ласка, переконайтеся, що вони мають активну адресу, і запросіть їх окремо пізніше."
+      ],
+      "Reset organization key": [
+        "Скинути ключ організації"
+      ],
+      "The following administrators could not be restored.": [
+        "Наступні адміністратори не можуть бути відновлені."
+      ],
+      "The following administrators will get access to the organization key.": [
+        "Наступні адміністратори отримають доступ до ключа організації."
+      ],
       "The organization key must be activated first.": [
         "Спочатку необхідно активувати ключ організації."
+      ],
+      "This will send the latest organization key to the administrators that currently don't have access to it.": [
+        "Це надішле найновіший ключ організації адміністраторам, які наразі не мають до нього доступу."
+      ],
+      "To enable administrator rights on your account, activate the organization key.": [
+        "Щоб увімкнути права адміністратора на вашому обліковому запису, активуйте ключ організації."
+      ],
+      "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
+        "Ми не змогли перевірити безпеку адресного ключа цього відправника. Іноді відбувається затримка в оновленні інформації про відправника. Спробуйте ще раз пізніше. Якщо ви не впевнені в чинності цього запрошення або його відправника, зверніться до ${ BRAND_NAME } Служба підтримки клієнтів."
+      ],
+      "We have verified the authenticity of this sender and invitation.": [
+        "Ми верифікували автентичність цього відправника та запрошення."
+      ],
+      "You have been made administrator of the organization **${ organizationName }** by": [
+        "Ви були зроблені адміністратором організації **${ organizationName }**"
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "Вам потрібен доступ до ключа організації для виконання цієї операції."
       ]
     },
     "Payment method option": {
@@ -12037,6 +12343,12 @@
       ]
     },
     "Restore administrator panel": {
+      "${ n } administrator in your organization need access to the organization key.": [
+        "${ n } адміністратор у вашій організації потребує доступу до ключа організації.",
+        "${ n } адміністраторів у вашій організації потребують доступу до ключа організації.",
+        "${ n } адміністраторів у вашій організації потребують доступу до ключа організації.",
+        "${ n } адміністраторів у вашій організації потребують доступу до ключа організації."
+      ],
       "Changing organization keys": [
         "Зміна ключів організації"
       ],
@@ -12072,6 +12384,17 @@
       ],
       "Upload additional files": [
         "Вивантажити додаткові файли"
+      ]
+    },
+    "Select invoice document": {
+      "Credit note": [
+        "Кредит-нота"
+      ],
+      "Currency conversion": [
+        "Конвертування валюти"
+      ],
+      "Invoice": [
+        "Рахунок"
       ]
     },
     "Select search results": {
@@ -12711,9 +13034,6 @@
       ]
     },
     "Storage": {
-      "Release notes": [
-        "Примітки до випуску"
-      ],
       "Upgrade storage": [
         "Збільшити сховище"
       ],
@@ -12756,6 +13076,12 @@
       ],
       "Upgrade your plan to continue to use your account without interruptions.": [
         "Оновіть тарифний план, щоб користуватися обліковим записом без перебоїв."
+      ],
+      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
+        "У вас залишився **${ daysRemaining }** день до кінця дії вашого тарифного плану **${ currentPlanName }**.",
+        "У вас залишилося **${ daysRemaining }** днів до кінця дії вашого тарифного плану **${ currentPlanName }**.",
+        "У вас залишилося **${ daysRemaining }** днів до кінця дії вашого тарифного плану **${ currentPlanName }**.",
+        "У вас залишилося **${ daysRemaining }** днів до кінця дії вашого тарифного плану **${ currentPlanName }**."
       ],
       "Your ${ appStorage } is almost full": [
         "Ваше ${ appStorage } майже заповнене"
@@ -12936,7 +13262,7 @@
         "Залишилось ${ dayDiff } дні"
       ],
       "${ MAIL_APP_NAME } desktop app": [
-        "Настільний застосунок ${ MAIL_APP_NAME }"
+        "Програма ${ MAIL_APP_NAME } для комп'ютера"
       ],
       "${ planMaxSpace } total storage": [
         "Усього ${ planMaxSpace } сховища"
@@ -12954,7 +13280,7 @@
         "Скасувати передплату?"
       ],
       "Custom schedule send and snooze times": [
-        "Користувацький час відправки та відкладення"
+        "Власний час запланованого надсилання та відкладення"
       ],
       "Keep ${ planName }": [
         "Залишити ${ planName }"
@@ -13475,6 +13801,9 @@
       "Activate organization key": [
         "Активувати ключ організації"
       ],
+      "Activate user": [
+        "Активувати користувача"
+      ],
       "Add address": [
         "Додати адресу"
       ],
@@ -13567,6 +13896,9 @@
       ],
       "Billing cycle": [
         "Платіжний цикл"
+      ],
+      "Block trackers and malware": [
+        "Блокувати трекери та зловмисні програми"
       ],
       "Bridge for ${ platform }": [
         "Bridge для ${ platform }"
@@ -13667,6 +13999,9 @@
       "Create multiple user accounts": [
         "Створити кілька облікових записів користувачів"
       ],
+      "Create organization key": [
+        "Створити ключ організації"
+      ],
       "Create public link": [
         "Створити загальнодоступне посилання"
       ],
@@ -13757,6 +14092,9 @@
       "Delete logs": [
         "Вилучити записи журналу"
       ],
+      "Delete organization logo?": [
+        "Видалити логотип організації?"
+      ],
       "Delete the server (you will still be able to recover it for ${ days } day)": [
         "Видалити сервер (ви все ще зможете відновити його протягом ${ days } дня)",
         "Видалити сервер (ви все ще зможете відновити його протягом ${ days } днів)",
@@ -13835,6 +14173,9 @@
       "Email": [
         "Е-пошта"
       ],
+      "Email address": [
+        "Адреса електронної пошти"
+      ],
       "Email composer": [
         "Редактор"
       ],
@@ -13904,6 +14245,15 @@
       "Folders and labels": [
         "Теки й мітки"
       ],
+      "For Linux": [
+        "Для Linux"
+      ],
+      "For macOS": [
+        "Для macOS"
+      ],
+      "For Windows": [
+        "Для Windows"
+      ],
       "Forward and auto-reply": [
         "Пересилання та автовідповідь"
       ],
@@ -13928,6 +14278,9 @@
       "Get ${ vpnPlus } to access all servers": [
         "Отримайте ${ vpnPlus } для доступу до всіх серверів"
       ],
+      "Get the apps": [
+        "Отримати додатки"
+      ],
       "Gift": [
         "Подарунок"
       ],
@@ -13939,6 +14292,9 @@
       ],
       "How does it work?": [
         "Як це працює?"
+      ],
+      "How to choose a good logo": [
+        "Як обрати хороший логотип"
       ],
       "How to refer a friend and get credits": [
         "Як запросити друзів і отримати кредити"
@@ -14042,8 +14398,14 @@
       "Night theme": [
         "Темна тема"
       ],
+      "No account information was found in any data breaches": [
+        "Не було виявлено жодних порушень даних облікових записів"
+      ],
       "No recovery method": [
         "Немає способу відновлення"
+      ],
+      "Open": [
+        "Відкрити"
       ],
       "Open actions dropdown": [
         "Випадне меню дій"
@@ -14074,6 +14436,9 @@
       ],
       "Password reset settings": [
         "Налаштування скидання пароля"
+      ],
+      "Passwords made easy": [
+        "Паролі стало легко створювати"
       ],
       "Pay invoice": [
         "Сплатити рахунок"
@@ -14107,6 +14472,9 @@
       ],
       "Recommended": [
         "Рекомендовано"
+      ],
+      "Recommended actions": [
+        "Рекомендовані дії"
       ],
       "Reconnect your account": [
         "Повторно під'єднайте свій обліковий запис"
@@ -14155,6 +14523,9 @@
       ],
       "Reset password?": [
         "Скинути пароль?"
+      ],
+      "Resolved": [
+        "Вирішено"
       ],
       "Restore administrator privileges": [
         "Відновити права адміністратора"
@@ -14339,6 +14710,9 @@
       "Upload CSV file to create multiple accounts": [
         "Завантажте файл CSV, щоб створити кілька облікових записів"
       ],
+      "Upload your organization’s logo": [
+        "Вивантажте логотип вашої організації"
+      ],
       "Users": [
         "Користувачі"
       ],
@@ -14375,14 +14749,23 @@
       "We'll send an email to your new address with instructions on completing the change.": [
         "Ми надішлемо лист на вашу нову адресу з інструкцією для завершення зміни."
       ],
+      "What is an alias?": [
+        "Що таке псевдонім?"
+      ],
+      "What is the dark web?": [
+        "Що таке темна павутина?"
+      ],
       "What would you like to import?": [
         "Що ви бажаєте імпортувати?"
       ],
-      "What's new": [
-        "Що нового"
-      ],
       "WireGuard configuration": [
         "Конфігурація WireGuard"
+      ],
+      "You have no open alerts": [
+        "У вас немає відкритих попереджень"
+      ],
+      "You have no resolved alerts": [
+        "У вас немає вирішених попереджень"
       ],
       "Your calendar link": [
         "Посилання на ваш календар"
@@ -14854,6 +15237,14 @@
         "${ numberOfServers } в ${ numberOfCountries } країнах",
         "${ numberOfServers } в ${ numberOfCountries } країнах",
         "${ numberOfServers } в ${ numberOfCountries } країнах"
+      ]
+    },
+    "vpn_2024: renew": {
+      "Your subscription will automatically renew in ${ cycle } month.": [
+        "Ваша підписка буде автоматично поновлюватися через ${ cycle } місяць.",
+        "Ваша підписка буде автоматично поновлюватися через ${ cycle } місяців.",
+        "Ваша підписка буде автоматично поновлюватися через ${ cycle } місяців.",
+        "Ваша підписка буде автоматично поновлюватися через ${ cycle } місяців."
       ]
     },
     "vpn_2step: billing": {

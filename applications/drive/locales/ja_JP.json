@@ -2608,9 +2608,6 @@
       "You have reached the contacts limit for your account": [
         "アカウントの連絡先が上限に達しています。"
       ],
-      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
-        "カレンダーの個数が上限に達しました。いくつかのカレンダーはインポートできませんでした。"
-      ],
       "You must set a name": [
         "名前を設定してください"
       ],
@@ -4431,6 +4428,9 @@
       "Shared link not found": [
         "共有リンクが見つかりません"
       ],
+      "Shared with me": [
+        "私と共有しました"
+      ],
       "Signature cannot be validated due to network error, please try again later.": [
         "ネットワークエラーのため、署名の検証ができません。後ほど再度お試しください。"
       ],
@@ -4839,6 +4839,12 @@
       "Your download is in progress": [
         "ダウンロードが進行中です"
       ],
+      "Your email address and password were leaked:": [
+        "メールアドレスとパスワードが漏洩しました:"
+      ],
+      "Your email address was exposed:": [
+        "メールアドレスが漏洩しました:"
+      ],
       "Your email will only be used for this one-time verification.": [
         "メールアドレスは、この一度限りの認証にのみ使用されます。"
       ],
@@ -4856,6 +4862,9 @@
       ],
       "Your next billing date is ${ renewalTime }.": [
         "次回の請求日は ${ renewalTime } です。"
+      ],
+      "Your password was leaked:": [
+        "パスワードが漏洩しました:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "電話番号は、この一度限りの認証にのみ使用されます。"
@@ -5412,6 +5421,9 @@
       "Stolen data": [
         "盗難されたデータ"
       ],
+      "Stop sharing": [
+        "共有を停止"
+      ],
       "Street address": [
         "番地"
       ],
@@ -5522,6 +5534,9 @@
     "Label; import email": {
       "From: ${ from }": [
         "送信者: ${ from }"
+      ],
+      "To: ${ to }": [
+        "宛先: ${ to }"
       ]
     },
     "Landmarks": {
@@ -5571,6 +5586,9 @@
       "Shared": [
         "共有中"
       ],
+      "Shared with me": [
+        "私と共有しました"
+      ],
       "Trash": [
         "ごみ箱"
       ],
@@ -5599,6 +5617,11 @@
       ],
       "Your import is starting": [
         "インポートが開始しました"
+      ]
+    },
+    "locked_state_storage_banner: info": {
+      "Learn more": [
+        "詳細"
       ]
     },
     "Log preference": {
@@ -7203,6 +7226,9 @@
       ]
     },
     "Security Center - Info": {
+      "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
+        "第三者のサービスから、あなたのパスワードやその他のデータが漏洩した場合に通知します。${ learnMoreLink }"
+      ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "私たちの、最先端のAI駆動セキュリティソリューションは、アカウントの高度な保護を求めるユーザー向けに設計されています。${ learnMoreLink }"
       ],
@@ -7601,9 +7627,6 @@
       "Get more storage": [
         "ストレージを増やす"
       ],
-      "Release notes": [
-        "更新情報"
-      ],
       "Upgrade storage": [
         "ストレージ容量を増やす"
       ],
@@ -7728,6 +7751,14 @@
     "Subscription price": {
       "For": [
         "価格:"
+      ]
+    },
+    "subscription reminder": {
+      "Desktop app": [
+        "デスクトップアプリ"
+      ],
+      "Upgrade": [
+        "アップグレード"
       ]
     },
     "Subscription renewal state": {
@@ -8144,6 +8175,9 @@
       "Deleting contacts": [
         "連絡先を削除しています"
       ],
+      "Details": [
+        "詳細"
+      ],
       "Discard": [
         "破棄"
       ],
@@ -8302,6 +8336,9 @@
       ],
       "Night theme": [
         "夜間のテーマ"
+      ],
+      "No breaches detected": [
+        "侵害は検出されませんでした"
       ],
       "No results found": [
         "該当する結果が見つかりませんでした"
@@ -8521,9 +8558,6 @@
       ],
       "What would you like to import?": [
         "何をインポートしたいですか?"
-      ],
-      "What's new": [
-        "更新情報"
       ],
       "You have inaccessible files": [
         "利用できないファイルがあります"

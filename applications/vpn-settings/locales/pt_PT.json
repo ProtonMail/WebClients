@@ -3642,6 +3642,9 @@
         "Tem ${ availableCount } servidor dedicado disponível.",
         "Tem ${ availableCount } servidores dedicados disponíveis."
       ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "Tem uma subscrição experimental ${ planTitle }. Se gostaria de continuar com a sua subscrição após o período de avaliação, por favor, adicione um método de pagamento."
+      ],
       "You have no invoices.": [
         "Não tem faturas."
       ],
@@ -5690,6 +5693,10 @@
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "Tem ${ timeRemaining.inDays } dia para redefinir a sua palavra-passe.",
         "Tem ${ timeRemaining.inDays } dias para redefinir a sua palavra-passe."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "Tem ${ timeRemaining.inSeconds }segundo para redefinir a sua palavra-passe.",
+        " Tem ${ timeRemaining.inSeconds } segundos para redefinir a sua palavra passe."
       ]
     },
     "session_recovery:available:link": {
@@ -6110,9 +6117,6 @@
       ]
     },
     "Storage": {
-      "Release notes": [
-        "Notas de lançamento"
-      ],
       "Upgrade storage": [
         "Actualizar o armazenamento"
       ],
@@ -7002,9 +7006,6 @@
       ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Enviaremos um e-mail para o seu novo endereço com instruções para concluir a alteração."
-      ],
-      "What's new": [
-        "O que há de novo"
       ],
       "WireGuard configuration": [
         "Configuração WireGuard"

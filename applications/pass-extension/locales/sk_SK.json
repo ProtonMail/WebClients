@@ -583,10 +583,10 @@
         "Odstránenie trezoru \"${ payload.content.name }\" zlyhalo"
       ],
       "Detected ${ errors.length } corrupted csv row": [
-        "Zistený ${ errors.length } poškodený riadok CSV",
-        "Zistené ${ errors.length } poškodené riadky CSV",
-        "Zistených ${ errors.length } poškodených riadkov CSV",
-        "Zistených ${ errors.length } poškodených riadkov CSV"
+        "Zistený ${ errors.length } poškodený riadok csv",
+        "Zistené ${ errors.length } poškodené riadky csv",
+        "Zistených ${ errors.length } poškodených riadkov csv",
+        "Zistených ${ errors.length } poškodených riadkov csv"
       ],
       "Editing item failed": [
         "Upravenie položky zlyhalo"

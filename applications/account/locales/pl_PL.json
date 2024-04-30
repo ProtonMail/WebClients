@@ -47,11 +47,11 @@
       "${ BRAND_NAME } shop": [
         "Sklep ${ BRAND_NAME }"
       ],
-      "activate": [
-        "aktywować"
-      ],
       "Activate": [
         "Aktywuj"
+      ],
+      "activate": [
+        "aktywować"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktywuj adres ${ user.Name }@pm.me"
@@ -4325,9 +4325,6 @@
       "You have reached the contacts limit for your account": [
         "Osiągnięto limit kontaktów na koncie"
       ],
-      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
-        "Osiągnięto maksymalną liczbę kalendarzy. Niektóre kalendarze nie mogły zostać zaimportowane."
-      ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Wykorzystano wszystkie dostępne adresy w obecnym planie. Ulepsz plan, aby dodać nowy adres."
       ],
@@ -6017,17 +6014,6 @@
         "Część zawartości kalendarza nie jest obsługiwana i nie zostanie zaimportowana."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Wykryto dodatkowe zduplikowane klucze. Prześlij klucze pojedynczo, aby uzyskać więcej informacji."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Klucz ${ fingerprint } został już przesłany"
-      ],
-      "Selected color:": [
-        "Wybrany kolor:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikacja ${ appName } potrzebuje Twojej zgody, aby ${ enableDesktopNotifications }."
@@ -7463,12 +7449,6 @@
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Spróbuj ponownie, użyj innej metody płatności lub skontaktuj się z firmą PayPal w celu uzyskania pomocy."
       ],
-      "Please use a password more than ${ MIN_PASSWORD_LENGTH } character.": [
-        "Hasło musi zawierać co najmniej ${ MIN_PASSWORD_LENGTH } znak.",
-        "Hasło musi zawierać co najmniej ${ MIN_PASSWORD_LENGTH } znaki.",
-        "Hasło musi zawierać co najmniej ${ MIN_PASSWORD_LENGTH } znaków.",
-        "Hasło musi zawierać co najmniej ${ MIN_PASSWORD_LENGTH } znaków."
-      ],
       "Please use another browser or download the file.": [
         "Użyj innej przeglądarki lub pobierz plik."
       ],
@@ -7734,7 +7714,7 @@
         "Wsparcie dla 1 niestandardowej domeny"
       ],
       "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
-        "Monitoring niestandardowych domen i adresów e-mail spoza ${ BRAND_NAME } będzie dostępne wkrótce."
+        "Monitoring niestandardowych domen i adresów e-mail spoza ${ BRAND_NAME } będzie dostępny wkrótce."
       ],
       "support team": [
         "pomocą techniczną"
@@ -8435,9 +8415,6 @@
       "You won’t be able to recover locked data using your downloaded recovery files.": [
         "Nie będziesz mógł odzyskać zablokowanych danych za pomocą plików odzyskiwania."
       ],
-      "You won’t be able to recover locked data using your downloaded recovery files. This will also disable trusted device recovery.": [
-        "Nie będziesz mógł odzyskać zablokowanych danych za pomocą plików odzyskiwania. Ta czynność spowoduje również wyłączenie odzyskiwania za pomocą zaufanego urządzenia."
-      ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
         "Twoje konto ${ BRAND_NAME } jest powiązane z adresem ${ externalEmailAddress }."
       ],
@@ -8533,6 +8510,17 @@
       ],
       "Zoom meeting": [
         "spotkanie na Zoom"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Wykryto dodatkowe zduplikowane klucze. Prześlij klucze pojedynczo, aby uzyskać więcej informacji."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Klucz ${ fingerprint } został już przesłany"
+      ],
+      "Selected color:": [
+        "Wybrany kolor:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9891,9 +9879,6 @@
       ],
       "Recovery phrase": [
         "Hasło odzyskiwania"
-      ],
-      "Trusted device recovery": [
-        "Odzyskiwanie za pomocą zaufanego urządzenia"
       ]
     },
     "Label for adding a new custom domain": {
@@ -13055,8 +13040,17 @@
       "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ VPN_APP_NAME }.": [
         "Przejdź do dostawcy tożsamości, a następnie skopiuj i wklej poniższy token, aby ponownie włączyć konfigurację SCIM dla ${ VPN_APP_NAME }."
       ],
+      "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
+        "Jeśli stracisz lub zapomnisz token SCIM, możesz wygenerować nowy. Pamiętaj, że w ustawieniach dostawcy tożsamości będzie wtedy konieczna jego aktualizacja."
+      ],
       "Make sure you copy the above SCIM token now.": [
         "Upewnij się, że skopiowano token SCIM."
+      ],
+      "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
+        "Jeśli wyłączysz integrację SCIM, **wszyscy użytkownicy SCIM od dostawcy tożsamości zostaną przekonwertowani na użytkowników SSO** i będzie można nimi bezpośrednio zarządzać w ustawieniach ${ BRAND_NAME }."
+      ],
+      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ VPN_APP_NAME } organization.": [
+        "Upraszcza zarządzanie użytkownikami w różnych usługach. Dodawaj, edytuj i usuwaj użytkowników u dostawcy tożsamości, a zmiany te zostaną automatycznie zastosowane w organizacji ${ VPN_APP_NAME }."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "Automatyczna konfiguracja SCIM zostanie wyłączona. Wpisz nowy token SCIM do dostawcy tożsamości."
@@ -13088,6 +13082,14 @@
       ],
       "SCIM automatic provisioning": [
         "Automatyczna konfiguracja SCIM"
+      ]
+    },
+    "scim: Tooltip": {
+      "API key of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
+        "Klucz API łącznika SCIM, do którego przekazywane są dane"
+      ],
+      "URL of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
+        "Adres URL łącznika SCIM, do którego przekazywane są dane"
       ]
     },
     "Security Center - Info": {
@@ -13848,9 +13850,6 @@
       ]
     },
     "Storage": {
-      "Release notes": [
-        "Lista zmian"
-      ],
       "Upgrade storage": [
         "Zwiększ przestrzeń dyskową"
       ],
@@ -14122,6 +14121,12 @@
       ]
     },
     "Subscription reminder": {
+      "${ BRAND_NAME } was targeted by Russia in one of the most aggressive censorship campaigns in recent memory, and our team fought back.": [
+        "${ BRAND_NAME } był celem jednej z najbardziej agresywnej cenzury w Rosji w ostatnim czasie, a nasz zespół dalej walczył."
+      ],
+      "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
+        "Jedynym źródłem przychodów ${ BRAND_NAME } są subskrypcje użytkowników. Twoje wsparcie pozwala nam zachować niezależność, rozwijać naszą misję zapewnieniu każdemu prywatności i nadal wspierać aktywistów oraz organizacje walczące o prywatność i wolność."
+      ],
       "${ dayDiff } day left": [
         "Pozostał ${ dayDiff } dzień",
         "Pozostały ${ dayDiff } dni",
@@ -14133,6 +14138,9 @@
       ],
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } przestrzeni dyskowej"
+      ],
+      "${ planName } doesn't just provide extra storage. It lets you manage your emails faster, customize your inbox and email addresses, and access the desktop app.": [
+        "Plan ${ planName } to nie tylko dodatkowa przestrzeń dyskowa. Pozwala szybciej zarządzać wiadomościami, dostosować skrzynkę odbiorczą i adresy e-mail oraz uzyskać dostęp do aplikacji desktopowej."
       ],
       "10 email addresses": [
         "10 adresów e-mail"
@@ -14177,7 +14185,7 @@
         "Zamknij"
       ],
       "Custom schedule send and snooze times": [
-        "Niestandardowe godziny planowego wysyłania i usypiania"
+        "Niestandardowe godziny wysyłania i odkładania wiadomości"
       ],
       "Have a question?": [
         "Masz pytanie?"
@@ -14196,6 +14204,12 @@
       ],
       "Keep ${ planName }": [
         "Zachowaj plan ${ planName }"
+      ],
+      "Learn more about our impact": [
+        "Dowiedz się więcej o naszym wpływie"
+      ],
+      "Let us remind you of everything ${ planName } can do": [
+        "Sprawdź możliwości planu ${ planName }"
       ],
       "Our fight against censorship in Russia": [
         "Nasza walka z cenzurą w Rosji"
@@ -14225,7 +14239,7 @@
         "Zobacz wywiad"
       ],
       "When you cancel, you will lose access to": [
-        "Anulowanie planu spowoduje utratę dostęp do"
+        "Anulowanie planu spowoduje utratę dostępu do"
       ],
       "Yearly free storage bonuses": [
         "Bonusowa przestrzeń dyskowa"
@@ -14274,11 +14288,17 @@
       "Desktop app": [
         "Aplikacja desktopowa"
       ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomóż nam zapewnić bezpieczeństwo i prywatność w Internecie. Ulepsz konto do płatnego planu."
+      ],
       "No ads or tracking": [
         "Brak reklam i śledzenia"
       ],
       "Short @pm.me email address": [
         "Krótki adres e-mail @pm.me"
+      ],
+      "Support our mission": [
+        "Wesprzyj naszą misję"
       ],
       "Upgrade": [
         "Ulepsz"
@@ -14288,6 +14308,9 @@
       ],
       "We don't sell your data": [
         "Nie sprzedajemy Twoich danych"
+      ],
+      "Your privacy is our mission": [
+        "Prywatność to nasza misja"
       ]
     },
     "Subscription renewal state": {
@@ -15776,9 +15799,6 @@
       ],
       "What would you like to import?": [
         "Jakie dane chcesz zaimportować?"
-      ],
-      "What's new": [
-        "Co nowego"
       ],
       "WireGuard configuration": [
         "Konfiguracja WireGuard"

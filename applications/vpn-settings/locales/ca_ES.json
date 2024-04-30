@@ -138,7 +138,7 @@
         "Elimina"
       ],
       "Delete address": [
-        "Eliminar l'adreça"
+        "Elimina l'adreça"
       ],
       "Delete Gateway": [
         "Elimina la passarel·la"
@@ -371,6 +371,9 @@
       "Remove gift code": [
         "Esborra el codi de regal"
       ],
+      "Remove single sign-on": [
+        "Esborra l'inici de sessió únic"
+      ],
       "Rename": [
         "Canvia el nom"
       ],
@@ -441,7 +444,7 @@
         "Seleccioneu el país"
       ],
       "select file": [
-        "seleccionar un fitxer"
+        "seleccioneu un fitxer"
       ],
       "Select file": [
         "Selecciona un fitxer"
@@ -493,6 +496,9 @@
       ],
       "Signing in": [
         "Iniciant sessió"
+      ],
+      "Start live chat": [
+        "Inicia el xat en directe"
       ],
       "Submit": [
         "Envia"
@@ -639,7 +645,7 @@
         "Edita l'adreça"
       ],
       "Enable": [
-        "Habilitar"
+        "Activar"
       ],
       "Enable E2EE mail": [
         "Activa el correu E2EE"
@@ -1990,7 +1996,7 @@
         "El codi és incorrecte o ja no és vàlid."
       ],
       "Coudn't load invoices. Please try again later.": [
-        "No s'han pogut pujar les factures. Torneu-ho a provar més tard."
+        "No s'han pogut carregar les factures. Torneu-ho a provar més tard."
       ],
       "Domain not available, try again later": [
         "El domini no està disponible, torneu-ho a provar més tard"
@@ -2007,8 +2013,14 @@
       "Error connecting to the Bitcoin API.": [
         "Error al connectar a l'API de Bitcoin."
       ],
+      "File too large. Your logo must be 30 KB or smaller.": [
+        "Fitxer massa gran. El seu logotip ha de tenir 30 KB o menys."
+      ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Si el temps a la vostra televisió s'ha exhaurit, premeu a Refresca a la vostra televisió i escriviu-hi el codi un altre cop."
+      ],
+      "Incorrect file type. Upload a file in PNG or JPEG format.": [
+        "Tipus de fitxer incorrecte. Carregui un fitxer en format PNG o JPEG."
       ],
       "Incorrect login credentials. Please try again.": [
         "Credencials d'inici de sessió incorrectes. Torneu-ho a provar."
@@ -2096,6 +2108,9 @@
       ],
       "Please upload an xml file": [
         "Carregueu un arxiu XML"
+      ],
+      "Please upload only 1 file": [
+        "Carregueu només un arxiu."
       ],
       "Process aborted": [
         "Procés anul·lat"
@@ -2875,6 +2890,9 @@
       "Add domain": [
         "Afegeix un domini"
       ],
+      "Add your name and logo to create a more personalized experience for your organization.": [
+        "Afegeixi el seu nom i logotip per crear una experiència més personalitzada per a la seva organització."
+      ],
       "Additional options": [
         "Opcions addicionals"
       ],
@@ -2913,7 +2931,7 @@
         "Segur que voleu eliminar aquesta adreça?"
       ],
       "Are you sure you want to disable two-factor authentication?": [
-        "Esteu segur que voleu deshabilitar l'autenticació de dos factors?"
+        "Esteu segur que voleu desactivar l'autenticació de dos factors?"
       ],
       "Are you sure you want to discard your changes?": [
         "N'estás segur que desitges descartar els teus canvis?"
@@ -2970,7 +2988,7 @@
         "Feu clic a \"Sol·licitar un nou codi\" per rebre un codi de verificació nou a ${ strong }. Si aquest número de telèfon és incorrecte, feu clic a \"Editar\" per corregir-lo."
       ],
       "Configure SAML authentication for your organization through an identity provider like Okta, Microsoft Azure, or Google Identity Platform. This will enable SAML for the whole organization.": [
-        "Configuri l'autenticació SAML per a la seva organització mitjançant un proveïdor d'identitats com Okta, Microsoft Azure o Google Identity Platform. Això habilitarà SAML per a tota l'organització."
+        "Configuri l'autenticació SAML per a la seva organització mitjançant un proveïdor d'identitats com Okta, Microsoft Azure o Google Identity Platform. Això activarà SAML per a tota l'organització."
       ],
       "Continue with ${ freeName }": [
         "Continua amb ${ freeName }"
@@ -3025,6 +3043,9 @@
       ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "No oblideu aquesta contrasenya. Si l'oblideu, no podreu administrar la vostra organització."
+      ],
+      "Domain ownership not verified.": [
+        "No s'ha verificat la propietat del domini."
       ],
       "Domain ownership verified.": [
         "S'ha verificat la propietat del domini."
@@ -3540,7 +3561,7 @@
         "Les següents adreces no s'han creat."
       ],
       "The following members will receive an email prompting them to enable two-factor authentication as soon as possible.": [
-        "Els següents membres rebran un correu electrònic que els demanarà habilitar l'autenticació de dos factors tan aviat com sigui possible."
+        "Els següents membres rebran un correu electrònic que els demanarà activar l'autenticació de dos factors tan aviat com sigui possible."
       ],
       "The format of your CSV file is incorrect.": [
         "El format del fitxer CSV és incorrecte."
@@ -3600,7 +3621,7 @@
         "Això tancarà qualsevol sessió activa i desactivarà l'autenticació de dos factors."
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
-        "Aquest assistent habilitarà l'autenticació de dos factors (A2F) al vostre compte de ${ BRAND_NAME }. L’autenticació de dos factors farà que el vostre compte ${ BRAND_NAME_TWO } sigui més segur, de manera que us recomanem que l’activeu."
+        "Aquest assistent activarà l'autenticació de dos factors (A2F) al vostre compte de ${ BRAND_NAME }. L’autenticació de dos factors farà que el vostre compte ${ BRAND_NAME_TWO } sigui més segur, de manera que us recomanem que l’activeu."
       ],
       "to ${ product } Business": [
         "a ${ product } Business"
@@ -3679,6 +3700,9 @@
       ],
       "Upload your completed CSV file to create accounts": [
         "Pugeu el fitxer CSV completat per a crear comptes"
+      ],
+      "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
+        "Carregui el logotip de la seva organització per millorar la seva identitat de marca i crear una experiència personalitzada per als seus usuaris."
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Utilitzeu el millor servidor segons la càrrega i la ubicació actuals: ${ formattedBestServerName }"
@@ -5721,6 +5745,22 @@
         "El vostre pla inclou un màxim de ${ humanReadableAvailableSpace } més d'espai d'emmagatzematge."
       ]
     },
+    "Organization logo upload": {
+      "Ensure your logo has padding space around it.": [
+        "Asseguri's que el seu logotip tingui espai de farciment al seu voltant."
+      ],
+      "Tips on choosing a good logo": [
+        "Consells per triar un bon logotip"
+      ],
+      "Use a solid background color.": [
+        "Utilitzi un color de fons sòlid."
+      ]
+    },
+    "Organization logo upload modal": {
+      "File in PNG or JPEG format": [
+        "Fitxer en format PNG o JPEG"
+      ]
+    },
     "Pass B2B onboarding spotlight": {
       "Set up your organization": [
         "Configureu la vostra organització"
@@ -6132,7 +6172,7 @@
     },
     "scim: Info": {
       "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
-        "**Requisit previ:** L'autenticació SAML s'ha de configurar per habilitar el subministrament SCIM."
+        "**Requisit previ:** L'autenticació SAML s'ha de configurar per activar el subministrament SCIM."
       ],
       "Enter token into your identity provider": [
         "Introdueixi el token al seu proveïdor d'identitat"
@@ -6166,6 +6206,9 @@
       ],
       "The SCIM base URL and token will be deleted.": [
         "Se suprimiran l'URL base i el token SCIM."
+      ],
+      "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
+        "Per tornar a activar la sincronització amb el seu proveïdor d'identitat, ha de tornar a completar la integració SCIM."
       ]
     },
     "scim: Label": {
@@ -6726,9 +6769,6 @@
       ]
     },
     "Storage": {
-      "Release notes": [
-        "Notes de la versió"
-      ],
       "Upgrade storage": [
         "Millora l'emmagatzematge"
       ],
@@ -6911,6 +6951,26 @@
     "Subscription price": {
       "For": [
         "Per"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB d'emmagatzemament"
+      ],
+      "and 15 more premium features": [
+        "i 15 característiques prèmium més"
+      ],
+      "Desktop app": [
+        "Aplicació d'escriptori"
+      ],
+      "No ads or tracking": [
+        "Sense anuncis ni rastreig"
+      ],
+      "Upgrade": [
+        "Millora"
+      ],
+      "Upgrade your productivity": [
+        "Milloreu la vostra productivitat"
       ]
     },
     "Subscription renewal state": {
@@ -7369,7 +7429,7 @@
         "Elimina el compte"
       ],
       "Delete address permanently?": [
-        "Vol eliminar l'adreça permanentment?"
+        "Voleu eliminar l'adreça permanentment?"
       ],
       "Delete organization logo?": [
         "Voleu eliminar el logo de l'organització?"
@@ -7466,6 +7526,9 @@
       "Gift code": [
         "Codi regal"
       ],
+      "How to choose a good logo": [
+        "Com triar un bon logotip"
+      ],
       "Human verification": [
         "Verificació humana"
       ],
@@ -7552,6 +7615,9 @@
       ],
       "Remove domain": [
         "Esborra el domini"
+      ],
+      "Remove single sign-on": [
+        "Esborra l'inici de sessió únic"
       ],
       "Remove user?": [
         "Voleu esborrar l'usuari?"
@@ -7678,9 +7744,6 @@
       ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Enviarem un correu electrònic a la vostra nova adreça amb instruccions per completar el canvi."
-      ],
-      "What's new": [
-        "Novetats"
       ],
       "WireGuard configuration": [
         "Configuració del WireGuard"

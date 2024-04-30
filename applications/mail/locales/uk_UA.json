@@ -4021,9 +4021,6 @@
       "You have reached the contacts limit for your account": [
         "Ви досягли максимальної кількості контактів для облікового запису"
       ],
-      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
-        "Ви досягли максимальної кількості календарів. Деякі календарі не можна імпортувати."
-      ],
       "You must set a name": [
         "Ви повинні вказати назву"
       ],
@@ -10504,9 +10501,6 @@
       "Get more storage": [
         "Збільшити сховище"
       ],
-      "Release notes": [
-        "Примітки до випуску"
-      ],
       "Upgrade storage": [
         "Збільшити сховище"
       ],
@@ -10546,6 +10540,12 @@
       ],
       "upgrade for more storage": [
         "збільште сховище, передплативши тарифний план"
+      ],
+      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
+        "У вас залишився **${ daysRemaining }** день до кінця дії вашого тарифного плану **${ currentPlanName }**.",
+        "У вас залишилося **${ daysRemaining }** днів до кінця дії вашого тарифного плану **${ currentPlanName }**.",
+        "У вас залишилося **${ daysRemaining }** днів до кінця дії вашого тарифного плану **${ currentPlanName }**.",
+        "У вас залишилося **${ daysRemaining }** днів до кінця дії вашого тарифного плану **${ currentPlanName }**."
       ],
       "Your ${ appStorage } is almost full": [
         "Ваше ${ appStorage } майже заповнене"
@@ -11424,6 +11424,9 @@
       "Edit image": [
         "Змінити зображення"
       ],
+      "Email address": [
+        "Адреса електронної пошти"
+      ],
       "Email addresses": [
         "Адреси е-пошти"
       ],
@@ -11697,6 +11700,9 @@
       "Recommended": [
         "Рекомендовано"
       ],
+      "Recommended actions": [
+        "Рекомендовані дії"
+      ],
       "Reconnect your account": [
         "Повторно під'єднайте свій обліковий запис"
       ],
@@ -11880,9 +11886,6 @@
       "What would you like to import?": [
         "Що ви бажаєте імпортувати?"
       ],
-      "What's new": [
-        "Що нового"
-      ],
       "Your account is protected": [
         "Ваш обліковий запис захищено"
       ],
@@ -12054,6 +12057,14 @@
         "${ numberOfServers } в ${ numberOfCountries } країнах",
         "${ numberOfServers } в ${ numberOfCountries } країнах",
         "${ numberOfServers } в ${ numberOfCountries } країнах"
+      ]
+    },
+    "vpn_2024: renew": {
+      "Your subscription will automatically renew in ${ cycle } month.": [
+        "Ваша підписка буде автоматично поновлюватися через ${ cycle } місяць.",
+        "Ваша підписка буде автоматично поновлюватися через ${ cycle } місяців.",
+        "Ваша підписка буде автоматично поновлюватися через ${ cycle } місяців.",
+        "Ваша підписка буде автоматично поновлюватися через ${ cycle } місяців."
       ]
     },
     "vpn_2step: feature": {
