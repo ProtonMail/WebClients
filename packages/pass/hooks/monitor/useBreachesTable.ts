@@ -54,11 +54,17 @@ const getCustomSuggestions = (data: MonitorAddress[], items: LoginItem[]): Monit
         .slice(0, 5);
 };
 
+const getRowPriority = (row: MonitorTableRow) => {
+    if ('verified' in row && !row.verified) return -1;
+    if (row.breached) return 1;
+    if (row.monitored) return 0;
+    return -1;
+};
+
 const mapToRow = <T extends AddressType>(data: MonitorAddress<T>[], items: LoginItem[]): MonitorTableRow<T>[] =>
-    data.map((entry) => ({
-        ...entry,
-        usageCount: filterItemsByUsername(entry.email)(items).length,
-    }));
+    data
+        .map((entry) => ({ ...entry, usageCount: filterItemsByUsername(entry.email)(items).length }))
+        .sort((a, b) => getRowPriority(b) - getRowPriority(a));
 
 export const useBreachesTable = (type: AddressType) => {
     const { breaches, didLoad } = useMonitor();
