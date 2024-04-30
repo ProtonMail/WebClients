@@ -12,10 +12,9 @@ import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal'
 import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
 import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
 import { UpsellRef } from '@proton/pass/constants';
-import { type RequestEntryFromAction, useActionRequest } from '@proton/pass/hooks/useActionRequest';
+import { useActionRequest } from '@proton/pass/hooks/useActionRequest';
 import { validateVaultValues } from '@proton/pass/lib/validation/vault';
-import type { vaultCreationSuccess } from '@proton/pass/store/actions';
-import { vaultCreationIntent } from '@proton/pass/store/actions';
+import { type vaultCreationFailure, vaultCreationIntent, type vaultCreationSuccess } from '@proton/pass/store/actions';
 import { selectPassPlan, selectVaultLimits } from '@proton/pass/store/selectors';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { VaultColor, VaultIcon } from '@proton/pass/types/protobuf/vault-v1';
@@ -30,10 +29,12 @@ export const VaultNew: FC<Props> = ({ onSuccess, ...modalProps }) => {
     const { vaultLimitReached } = useSelector(selectVaultLimits);
     const isFreePlan = useSelector(selectPassPlan) === UserPassPlan.FREE;
 
-    const createVault = useActionRequest({
-        action: vaultCreationIntent,
-        onSuccess: (req: RequestEntryFromAction<ReturnType<typeof vaultCreationSuccess>>) =>
-            onSuccess?.(req.data.shareId),
+    const createVault = useActionRequest<
+        typeof vaultCreationIntent,
+        typeof vaultCreationSuccess,
+        typeof vaultCreationFailure
+    >(vaultCreationIntent, {
+        onSuccess: ({ data }) => onSuccess?.(data.share.shareId),
     });
 
     const form = useFormik<VaultFormValues>({
@@ -100,7 +101,7 @@ export const VaultNew: FC<Props> = ({ onSuccess, ...modalProps }) => {
                 >
                     <>
                         {vaultLimitReached && (
-                            <Card className="mb-4">
+                            <Card className="mb-4 text-sm" type="primary">
                                 {c('Info').t`You have reached the limit of vaults you can create.`}
                                 {isFreePlan && c('Info').t` Upgrade to a paid plan to create multiple vaults.`}
                             </Card>

@@ -12,7 +12,7 @@ import type { SelectAutofillCandidatesOptions } from '@proton/pass/lib/search/ty
 import { itemAutofilled } from '@proton/pass/store/actions';
 import {
     selectAutofillCandidates,
-    selectItemByShareIdAndId,
+    selectItem,
     selectPasswordOptions,
     selectVaultLimits,
     selectWritableVaults,
@@ -30,7 +30,7 @@ export const createAutoFillService = () => {
 
     const getAutofillData = ({ shareId, itemId }: SelectedItem): Maybe<FormCredentials> => {
         const state = store.getState();
-        const item = selectItemByShareIdAndId(shareId, itemId)(state);
+        const item = selectItem(shareId, itemId)(state);
 
         if (item !== undefined && item.data.type === 'login') {
             store.dispatch(itemAutofilled({ shareId, itemId }));

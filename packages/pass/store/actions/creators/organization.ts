@@ -3,15 +3,15 @@ import { c } from 'ttag';
 
 import { withCache } from '@proton/pass/store/actions/enhancers/cache';
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
-import { withRequest, withRequestFailure, withRequestSuccess } from '@proton/pass/store/actions/enhancers/request';
 import { organizationSettingsEditRequest, organizationSettingsRequest } from '@proton/pass/store/actions/requests';
+import { withRequest, withRequestFailure, withRequestSuccess } from '@proton/pass/store/request/enhancers';
 import type { OrganizationGetResponse } from '@proton/pass/types';
 import type { OrganizationSettings } from '@proton/pass/types/data/organization';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { UNIX_MINUTE } from '@proton/pass/utils/time/constants';
 
 export const getOrganizationSettingsIntent = createAction('organization::settings::get::intent', () =>
-    withRequest({ type: 'start', id: organizationSettingsRequest() })({ payload: {} })
+    withRequest({ status: 'start', id: organizationSettingsRequest() })({ payload: {} })
 );
 
 export const getOrganizationSettingsSuccess = createAction(
@@ -28,7 +28,7 @@ export const organizationSettingsEditIntent = createAction(
     'organizationSettings::edit',
     (payload: Partial<OrganizationSettings>) =>
         pipe(
-            withRequest({ type: 'start', id: organizationSettingsEditRequest() }),
+            withRequest({ status: 'start', id: organizationSettingsEditRequest() }),
             withNotification({
                 type: 'info',
                 text: c('Info').t`Updating organization settings`,

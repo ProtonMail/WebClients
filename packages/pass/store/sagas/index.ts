@@ -1,6 +1,6 @@
 import { all } from 'redux-saga/effects';
 
-import inviteAddressesValidate from '@proton/pass/store/sagas/invites/invite-addresses-validate.saga';
+import resendCustom from '@proton/pass/store/sagas/monitor/resend.custom.saga';
 
 import type { RootSagaOptions } from '../types';
 import aliasDetailsRequest from './alias/alias-details-request.saga';
@@ -20,6 +20,7 @@ import wakeup from './client/wakeup.saga';
 import events from './events/events.saga';
 import itemsImport from './import/import.saga';
 import inviteAccept from './invites/invite-accept.saga';
+import inviteAddressesValidate from './invites/invite-addresses-validate.saga';
 import inviteCreate from './invites/invite-create.saga';
 import inviteRecommendations from './invites/invite-recommendations.saga';
 import inviteReject from './invites/invite-reject.saga';
@@ -41,6 +42,20 @@ import itemPin from './items/item-pin.saga';
 import itemRestore from './items/item-restore.saga';
 import itemTrash from './items/item-trash.saga';
 import itemUnpin from './items/item-unpin.saga';
+import itemSetFlags from './items/item.set-flags.saga';
+import breachesAlias from './monitor/breaches.alias.saga';
+import breachesCustom from './monitor/breaches.custom.saga';
+import breachesProton from './monitor/breaches.proton.saga';
+import breaches from './monitor/breaches.saga';
+import customAddressAdd from './monitor/custom-address.add.saga';
+import customAddressVerify from './monitor/custom-address.verify';
+import customAddressDelete from './monitor/delete.custom.saga';
+import monitorAddressToggle from './monitor/monitor-address.toggle.saga';
+import monitorToggle from './monitor/monitor-toggle.saga';
+import resolveAlias from './monitor/resolve.alias.saga';
+import resolveCustom from './monitor/resolve.custom.saga';
+import resolveProton from './monitor/resolve.proton.saga';
+import sentinelToggle from './monitor/sentinel-toggle.saga';
 import organizationSettingsEdit from './organization/organization-settings-edit.saga';
 import getOrganizationSettings from './organization/organization-settings.saga';
 import shareAccessOptions from './shares/share-access-options.saga';
@@ -63,9 +78,17 @@ export function* workerRootSaga(options: RootSagaOptions) {
             aliasDetailsRequest,
             aliasOptionsRequest,
             boot,
+            breaches,
+            breachesAlias,
+            breachesCustom,
+            breachesProton,
             cache,
+            customAddressAdd,
+            customAddressDelete,
+            customAddressVerify,
             events,
             featureFlags,
+            getOrganizationSettings,
             inviteAccept,
             inviteAddressesValidate,
             inviteCreate,
@@ -85,15 +108,22 @@ export function* workerRootSaga(options: RootSagaOptions) {
             itemMove,
             itemPin,
             itemRestore,
+            itemSetFlags,
             itemsImport,
             itemTrash,
             itemUnpin,
+            monitorAddressToggle,
+            monitorToggle,
             newUserInvitePromote,
             newUserInviteRemove,
             notification,
-            getOrganizationSettings,
             organizationSettingsEdit,
             reportProblem,
+            resendCustom,
+            resolveAlias,
+            resolveCustom,
+            resolveProton,
+            sentinelToggle,
             sessionLockDisable,
             sessionLockEnable,
             sessionLockImmediate,

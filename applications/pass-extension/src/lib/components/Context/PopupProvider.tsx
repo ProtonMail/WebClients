@@ -1,5 +1,6 @@
 import type { PropsWithChildren } from 'react';
 import { type FC, createContext, useContext, useEffect, useMemo, useState } from 'react';
+import { useSelector } from 'react-redux';
 
 import {
     ExtensionConnect,
@@ -11,11 +12,11 @@ import { useExpanded } from 'proton-pass-extension/lib/hooks/useExpanded';
 
 import { NotificationsContext } from '@proton/components';
 import { useNotifications } from '@proton/components/hooks';
-import { useActionRequestEffect } from '@proton/pass/hooks/useActionRequestEffect';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
 import { clientReady } from '@proton/pass/lib/client';
 import { popupMessage, sendMessage } from '@proton/pass/lib/extension/message';
 import { syncRequest } from '@proton/pass/store/actions/requests';
+import { selectRequestInFlight } from '@proton/pass/store/selectors';
 import type { AppState, MaybeNull, PopupInitialState } from '@proton/pass/types';
 import { AppStatus, WorkerMessageType, type WorkerMessageWithSender } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
@@ -59,9 +60,8 @@ const PopupContextProvider: FC<PropsWithChildren> = ({ children }) => {
     const [initial, setInitial] = useState<MaybeNull<PopupInitialState>>(null);
     const expanded = useExpanded();
 
-    const sync = useActionRequestEffect(syncRequest(), {});
-
-    const syncing = sync.loading || extensionContext.state.status === AppStatus.BOOTING;
+    const sync = useSelector(selectRequestInFlight(syncRequest()));
+    const syncing = sync || extensionContext.state.status === AppStatus.BOOTING;
 
     useEffect(() => {
         if (clientReady(status)) {

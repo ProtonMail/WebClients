@@ -4,13 +4,11 @@ import type { AppState, AppStatus, ClientEndpoint, MaybeNull, MaybePromise } fro
 import type { TelemetryEvent } from '@proton/pass/types/data/telemetry';
 import type { EncryptedPassCache } from '@proton/pass/types/worker/cache';
 
-import type * as actions from './actions';
 import type { Notification } from './actions/enhancers/notification';
 import type { FeatureFlagState, rootReducer } from './reducers';
 import type { ProxiedSettings } from './reducers/settings';
 
 export type State = ReturnType<typeof rootReducer>;
-export type Action = ReturnType<(typeof actions)[keyof typeof actions]>;
 export type Telemetry = { start: () => void; stop: () => void; push: (event: TelemetryEvent) => Promise<boolean> };
 
 export interface RootSagaOptions {

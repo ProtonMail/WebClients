@@ -8,6 +8,8 @@
 @import 'skeletons';
 @import 'text';
 @import 'password';
+@import 'utils';
+@import 'table';
 
 :root {
 	--pass-sidebar-size: 20em;
@@ -32,4 +34,8 @@ $endpoints: 'extension', 'web', 'desktop';
 			}
 		}
 	}
+}
+
+.ratio-2\/1 {
+	aspect-ratio: 2/1;
 }

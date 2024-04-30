@@ -6,6 +6,9 @@ import { objectFilter } from '@proton/pass/utils/object/filter';
 export const selectCachableState = (state: State) => {
     const whiteListedState = asIfNotOptimistic(state, reducerMap);
 
+    /** Remove monitoring data - revalidate on boot */
+    whiteListedState.monitor = null;
+
     /** Filter stale request metadata and optimisticIds */
     whiteListedState.items.byOptimisticId = {};
     whiteListedState.request = objectFilter(

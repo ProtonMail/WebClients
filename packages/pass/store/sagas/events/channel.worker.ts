@@ -6,7 +6,7 @@ import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
 import type { EventManagerEvent } from '@proton/pass/lib/events/manager';
 import { channelAcknowledge, wakeupSuccess } from '@proton/pass/store/actions';
 import { channelRequest } from '@proton/pass/store/actions/requests';
-import type { RequestEntry } from '@proton/pass/store/reducers';
+import type { RequestEntry } from '@proton/pass/store/request/types';
 import { selectRequest } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { Maybe } from '@proton/pass/types';

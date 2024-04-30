@@ -39,7 +39,9 @@ import {
     itemTrashSuccess,
     itemUnpinSuccess,
     itemUsedSync,
+    resolveAliasBreach,
     restoreTrashProgress,
+    setItemFlags,
     shareDeleteSync,
     shareLeaveSuccess,
     sharedVaultCreated,
@@ -120,18 +122,19 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
             return fullMerge(state, {
                 [shareId]: {
                     [optimisticId]: {
-                        itemId: optimisticId,
-                        shareId: shareId,
-                        revision: optimisticItem !== undefined ? optimisticItem.revision + 1 : 0,
-                        data: item,
                         aliasEmail: item.type === 'alias' ? item.extraData.aliasEmail : null,
-                        state: ItemState.Active,
+                        contentFormatVersion: ContentFormatVersion.Item,
                         createTime,
+                        data: item,
+                        flags: 1 /** default to unmonitored */,
+                        itemId: optimisticId,
+                        lastUseTime: null,
                         modifyTime: createTime,
                         pinned: false,
+                        revision: optimisticItem !== undefined ? optimisticItem.revision + 1 : 0,
                         revisionTime: createTime,
-                        lastUseTime: null,
-                        contentFormatVersion: ContentFormatVersion.Item,
+                        shareId: shareId,
+                        state: ItemState.Active,
                     },
                 },
             });
@@ -315,6 +318,16 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
             );
 
             return partialMerge(state, update);
+        }
+
+        if (setItemFlags.success.match(action)) {
+            const { shareId, itemId, item } = action.payload;
+            return partialMerge(state, { [shareId]: { [itemId]: item } });
+        }
+
+        if (resolveAliasBreach.success.match(action)) {
+            const { shareId, itemId } = action.payload;
+            return partialMerge(state, { [shareId]: { [itemId]: { flags: 0 } } });
         }
 
         return state;

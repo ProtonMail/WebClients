@@ -5,6 +5,7 @@ export enum PassFeature {
     PassEnableOrganizationExport = 'PassEnableOrganizationExport',
     PassEnableOrganizationSharing = 'PassEnableOrganizationSharing',
     PassItemHistoryV1 = 'PassItemHistoryV1',
+    PassMonitor = 'PassSentinelV1',
     PassPinningV1 = 'PassPinningV1',
     PassRemovePrimaryVault = 'PassRemovePrimaryVault',
     PassSharingNewUsers = 'PassSharingNewUsers',

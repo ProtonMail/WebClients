@@ -25,7 +25,7 @@ export const getFeatureFlags = async (): Promise<FeatureFlagState> => {
 export const getUserAccess = async (apiOptions: ApiOptions = {}): Promise<HydratedAccessState> => {
     logger.info(`[User] Syncing access & plan`);
     const { Access } = await api({ url: 'pass/v1/user/access', method: 'get', ...apiOptions });
-    return { plan: Access!.Plan, waitingNewUserInvites: Access!.WaitingNewUserInvites };
+    return { plan: Access!.Plan, waitingNewUserInvites: Access!.WaitingNewUserInvites, monitor: Access!.Monitor };
 };
 
 export const getUserSettings = async (): Promise<UserSettings> => {
@@ -66,6 +66,7 @@ export const getUserData = async (): Promise<HydratedUserState> => {
         user,
         userSettings: {
             Email: { Status: userSettings.Email.Status },
+            HighSecurity: userSettings.HighSecurity,
             Locale: userSettings.Locale,
             Password: { Mode: userSettings.Password.Mode },
             Telemetry: userSettings.Telemetry,

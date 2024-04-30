@@ -278,6 +278,7 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url, onCancel
                                     placeholder={c('Placeholder').t`Enter password`}
                                     icon="key"
                                     component={PasswordField}
+                                    showStrength
                                     onPasswordGenerated={(value: string) => {
                                         const { urls, url } = form.values;
                                         const baseUrl = urls?.[0]?.url ?? url;

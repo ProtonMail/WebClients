@@ -4,6 +4,7 @@ import { type FC, useMemo, useRef } from 'react';
 import * as config from 'proton-pass-extension/app/config';
 import locales from 'proton-pass-extension/app/locales';
 import { API_PROXY_URL } from 'proton-pass-extension/app/worker/services/api-proxy';
+import { createMonitorBridge } from 'proton-pass-extension/lib/services/monitor.bridge';
 import { promptForPermissions } from 'proton-pass-extension/lib/utils/permissions';
 
 import type { PassCoreProviderProps } from '@proton/pass/components/Core/PassCoreProvider';
@@ -32,6 +33,7 @@ const getExtensionCoreProps = (
         config,
         endpoint,
         i18n,
+        monitor: createMonitorBridge(messageFactory),
 
         exportData: (payload) =>
             sendMessage.on(messageFactory({ type: WorkerMessageType.EXPORT_REQUEST, payload }), (res) => {

@@ -6,7 +6,7 @@ import { c } from 'ttag';
 import { itemBuilder } from '@proton/pass/lib/items/item.builder';
 import { intoSafeLoginItem } from '@proton/pass/lib/items/item.utils';
 import { itemCreationIntent, itemCreationSuccess, itemEditIntent, itemEditSuccess } from '@proton/pass/store/actions';
-import { selectAutosaveCandidate, selectAutosaveVault, selectItemByShareIdAndId } from '@proton/pass/store/selectors';
+import { selectAutosaveCandidate, selectAutosaveVault, selectItem } from '@proton/pass/store/selectors';
 import type { AutosavePrompt, FormEntry } from '@proton/pass/types';
 import { AutosaveMode, WorkerMessageType } from '@proton/pass/types';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
@@ -91,7 +91,7 @@ export const createAutoSaveService = () => {
         if (payload.type === AutosaveMode.UPDATE) {
             const { shareId, itemId } = payload;
 
-            const currentItem = selectItemByShareIdAndId<'login'>(shareId, itemId)(state);
+            const currentItem = selectItem<'login'>(shareId, itemId)(state);
             if (!currentItem) throw new Error(c('Error').t`Item does not exist`);
 
             const item = itemBuilder('login', currentItem.data);

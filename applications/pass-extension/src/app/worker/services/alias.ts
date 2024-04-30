@@ -6,7 +6,7 @@ import {
     itemCreationIntent,
     itemCreationSuccess,
 } from '@proton/pass/store/actions';
-import { withRevalidate } from '@proton/pass/store/actions/enhancers/request';
+import { withRevalidate } from '@proton/pass/store/request/enhancers';
 import { selectAliasLimits, selectAutosaveVault } from '@proton/pass/store/selectors';
 import type { ItemCreateIntent } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';

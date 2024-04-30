@@ -129,7 +129,7 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
                         submitText={c('Action').t`Confirm`}
                         title={c('Title').t`Move item?`}
                     >
-                        <Card className="mb-2">{c('Info')
+                        <Card className="mb-2 text-sm" type="primary">{c('Info')
                             .t`Moving an item to another vault will erase its history`}</Card>
                         <Alert className="mb-4" type="info">
                             {
@@ -150,7 +150,7 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
                         submitText={c('Action').t`Confirm`}
                         title={c('Title').t`Move items?`}
                     >
-                        <Card className="mb-2">{c('Info')
+                        <Card className="mb-2 text-sm" type="primary">{c('Info')
                             .t`Moving items to another vault will erase their history`}</Card>
                         <Alert className="mb-4" type="info">
                             {

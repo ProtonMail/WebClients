@@ -1,8 +1,8 @@
 import { devToolsEnhancer } from '@redux-devtools/remote';
 import { configureStore } from '@reduxjs/toolkit';
 
-import { requestMiddleware } from '@proton/pass/store/middlewares/request-middleware';
 import reducer from '@proton/pass/store/reducers';
+import { requestMiddleware } from '@proton/pass/store/request/middleware';
 import type { ClientEndpoint, TabId } from '@proton/pass/types';
 
 import { relayMiddleware } from './relay.middleware';

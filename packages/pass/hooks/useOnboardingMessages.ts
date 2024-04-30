@@ -169,6 +169,14 @@ export const useOnboardingMessages = () => {
                 weak: true,
                 onClose: () => acknowledge(OnboardingMessage.EARLY_ACCESS, () => setUpselling(null)),
             },
+            [OnboardingMessage.PASS_MONITOR]: {
+                id: 'pass-monitor',
+                title: c('Title').t`${PASS_SHORT_APP_NAME} monitor`,
+                message: '',
+                className: 'ui-teal hidden',
+                icon: ShieldIcon,
+                onClose: () => acknowledge(OnboardingMessage.PASS_MONITOR),
+            },
         }),
         [user]
     );

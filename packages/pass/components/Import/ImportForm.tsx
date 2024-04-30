@@ -103,7 +103,7 @@ export const ImportForm: FC<Omit<ImportFormContext, 'reset' | 'result'>> = ({ fo
                     </div>
 
                     {form.values.provider === ImportProvider.CSV && (
-                        <Card className="mb-4">
+                        <Card className="mb-4 text-sm" type="primary">
                             {c('Info').t`Follow those steps to import your data with a generic CSV :`}
                             <ol className="mt-2 mb-0">
                                 <li>
@@ -164,7 +164,7 @@ export const ImportForm: FC<Omit<ImportFormContext, 'reset' | 'result'>> = ({ fo
                         />
                     )}
                     {providerHasUnsupportedItemTypes(form.values.provider) && (
-                        <Card className="mb-4">
+                        <Card className="mb-4 text-sm" type="primary">
                             {c('Info').t`${PASS_APP_NAME} will only import logins, notes and credit cards.`}
                         </Card>
                     )}

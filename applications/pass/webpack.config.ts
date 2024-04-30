@@ -40,6 +40,11 @@ const result = (env: any): webpack.Configuration => {
         );
     }
 
+    config.experiments = {
+        ...config.experiments,
+        asyncWebAssembly: true,
+    };
+
     return config;
 };
 
