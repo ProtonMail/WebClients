@@ -74,6 +74,7 @@ export type OpenedItem = {
     lastUseTime: MaybeNull<number>;
     modifyTime: number;
     pinned: boolean;
+    flags: number;
     revision: number;
     revisionTime: number;
     state: ItemState;

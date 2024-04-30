@@ -4,9 +4,9 @@ import { c } from 'ttag';
 import { type CacheMeta, withCache, withCacheOptions } from '@proton/pass/store/actions/enhancers/cache';
 import { type EndpointOptions, withReceiver } from '@proton/pass/store/actions/enhancers/endpoint';
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
-import { withRequest, withRequestSuccess } from '@proton/pass/store/actions/enhancers/request';
 import { withSettings } from '@proton/pass/store/actions/enhancers/settings';
 import { bootRequest, syncRequest, wakeupRequest } from '@proton/pass/store/actions/requests';
+import { withRequest, withRequestSuccess } from '@proton/pass/store/request/enhancers';
 import type { SyncType, SynchronizationResult } from '@proton/pass/store/sagas/client/sync';
 import type { AppStatus } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
@@ -29,7 +29,7 @@ export const cacheCancel = createAction('cache::cancel');
 export const wakeupIntent = createAction(
     'wakeup::intent',
     (payload: { status: AppStatus }, receiver: EndpointOptions) =>
-        pipe(withReceiver(receiver), withRequest({ id: wakeupRequest(receiver), type: 'start' }))({ payload })
+        pipe(withReceiver(receiver), withRequest({ id: wakeupRequest(receiver), status: 'start' }))({ payload })
 );
 
 export const wakeupSuccess = createAction(
@@ -38,23 +38,23 @@ export const wakeupSuccess = createAction(
 );
 
 export const bootIntent = createAction('boot::intent', (loginPassword?: string) =>
-    withRequest({ id: bootRequest(), type: 'start' })({ payload: { loginPassword } })
+    withRequest({ id: bootRequest(), status: 'start' })({ payload: { loginPassword } })
 );
 
 export const bootFailure = createAction('boot::failure', (error: unknown) =>
     pipe(
-        withRequest({ id: bootRequest(), type: 'failure' }),
+        withRequest({ id: bootRequest(), status: 'failure' }),
         withNotification({ type: 'error', text: c('Error').t`Unable to boot`, error })
     )({ payload: {}, error })
 );
 
 export const bootSuccess = createAction('boot::success', (payload?: SynchronizationResult) =>
-    pipe(withRequest({ id: bootRequest(), type: 'success' }), withSettings)({ payload })
+    pipe(withRequest({ id: bootRequest(), status: 'success' }), withSettings)({ payload })
 );
 
 export const syncIntent = createAction('sync::intent', (type: SyncType) =>
     pipe(
-        withRequest({ id: syncRequest(), type: 'start' }),
+        withRequest({ id: syncRequest(), status: 'start' }),
         withNotification({
             text: c('Info').t`Syncing your vaults…`,
             type: 'info',
@@ -68,14 +68,14 @@ export const syncIntent = createAction('sync::intent', (type: SyncType) =>
 export const syncSuccess = createAction('sync::success', (payload: SynchronizationResult) =>
     pipe(
         withCache,
-        withRequest({ id: syncRequest(), type: 'success' }),
+        withRequest({ id: syncRequest(), status: 'success' }),
         withNotification({ type: 'info', text: c('Info').t`Successfully synced all vaults` })
     )({ payload })
 );
 
 export const syncFailure = createAction('sync::failure', (error: unknown) =>
     pipe(
-        withRequest({ id: syncRequest(), type: 'failure' }),
+        withRequest({ id: syncRequest(), status: 'failure' }),
         withNotification({ type: 'error', text: c('Error').t`Unable to sync`, error })
     )({ payload: {} })
 );

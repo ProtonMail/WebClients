@@ -6,7 +6,7 @@ import { editItem } from '@proton/pass/lib/items/item.requests';
 import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
 import { aliasDetailsSync, itemEditFailure, itemEditIntent, itemEditSuccess } from '@proton/pass/store/actions';
 import type { AliasState } from '@proton/pass/store/reducers';
-import { selectAliasDetails, selectAliasOptions, selectItemByShareIdAndId } from '@proton/pass/store/selectors';
+import { selectAliasDetails, selectAliasOptions, selectItem } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { ItemEditIntent, ItemRevision, ItemRevisionContentsResponse } from '@proton/pass/types';
 import { TelemetryEventName, TelemetryItemType } from '@proton/pass/types/data/telemetry';
@@ -18,7 +18,7 @@ function* editMailboxesWorker(aliasEditIntent: ItemEditIntent<'alias'>) {
 
     const { itemId, shareId } = aliasEditIntent;
 
-    const item: ItemRevision<'alias'> = yield select(selectItemByShareIdAndId(shareId, itemId));
+    const item: ItemRevision<'alias'> = yield select(selectItem(shareId, itemId));
     const mailboxesForAlias: string[] = yield select(selectAliasDetails(item.aliasEmail!));
     const aliasOptions: AliasState['aliasOptions'] = yield select(selectAliasOptions);
 

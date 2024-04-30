@@ -14,7 +14,7 @@ import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { matchChunks } from '@proton/pass/lib/search/match-chunks';
 import { isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
 import { selectShare } from '@proton/pass/store/selectors';
-import type { ItemRevisionWithOptimistic, ShareType } from '@proton/pass/types';
+import type { ItemRevision, ShareType } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 import clsx from '@proton/utils/clsx';
@@ -25,13 +25,22 @@ import './ItemsListItem.scss';
 
 type Props = Partial<LinkProps> &
     ButtonLikeProps<any> & {
-        item: ItemRevisionWithOptimistic;
-        search?: string;
+        item: ItemRevision;
         active?: boolean;
+        failed?: boolean;
+        optimistic?: boolean;
+        search?: string;
     };
 
-const ItemsListItemRaw: FC<Props> = ({ item, search = '', active = false, ...rest }) => {
-    const { data, optimistic, failed, shareId } = item;
+const ItemsListItemRaw: FC<Props> = ({
+    item,
+    active = false,
+    failed = false,
+    optimistic = false,
+    search = '',
+    ...rest
+}) => {
+    const { data, shareId } = item;
     const { heading, subheading } = presentListItem(item);
     const vault = useSelector(selectShare<ShareType.Vault>(shareId));
     const pinningEnabled = useFeatureFlag(PassFeature.PassPinningV1);
@@ -79,7 +88,7 @@ const ItemsListItemRaw: FC<Props> = ({ item, search = '', active = false, ...res
                                         size={5}
                                     />
                                 ) : (
-                                    <ItemIconIndicators size={size} loading={loading} error={item.failed} />
+                                    <ItemIconIndicators size={size} loading={loading} error={failed} />
                                 )}
 
                                 {pinningEnabled && item.pinned && (

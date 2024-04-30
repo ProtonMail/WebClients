@@ -38,16 +38,17 @@ export const openItem = async ({ encryptedItem, vaultKey }: OpenItemKeyProcessPa
     );
 
     return {
-        itemId: encryptedItem.ItemID,
-        revision: encryptedItem.Revision,
-        contentFormatVersion: encryptedItem.ContentFormatVersion,
-        state: encryptedItem.State,
-        content: decryptedContent,
         aliasEmail: encryptedItem.AliasEmail ?? null,
+        content: decryptedContent,
+        contentFormatVersion: encryptedItem.ContentFormatVersion,
         createTime: encryptedItem.CreateTime,
-        pinned: encryptedItem.Pinned ?? false,
-        revisionTime: encryptedItem.RevisionTime,
-        modifyTime: encryptedItem.ModifyTime,
+        flags: encryptedItem.Flags,
+        itemId: encryptedItem.ItemID,
         lastUseTime: encryptedItem.LastUseTime ?? null,
+        modifyTime: encryptedItem.ModifyTime,
+        pinned: encryptedItem.Pinned ?? false,
+        revision: encryptedItem.Revision,
+        revisionTime: encryptedItem.RevisionTime,
+        state: encryptedItem.State,
     };
 };

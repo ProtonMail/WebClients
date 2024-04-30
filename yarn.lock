@@ -6584,7 +6584,7 @@ __metadata:
     "@proton/shared": "workspace:packages/shared"
     "@proton/srp": "workspace:packages/srp"
     "@proton/styles": "workspace:^"
-    "@protontech/pass-rust-core": "npm:^0.7.6"
+    "@protontech/pass-rust-core": "npm:^0.7.10"
     "@reduxjs/toolkit": "npm:^2.2.3"
     "@testing-library/jest-dom": "npm:^6.4.2"
     "@testing-library/react": "npm:^14.3.1"
@@ -6876,10 +6876,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@protontech/pass-rust-core@npm:^0.7.6":
-  version: 0.7.6
-  resolution: "@protontech/pass-rust-core@npm:0.7.6"
-  checksum: 10c0/f4d3ffcc6bb22eef083a12e45308e0494fa1874ddade7532966f9367d5fc7f8f7f78999cae110d3a21c018660e7b45363fd81aef9d622a52e6af7b8a8f93bd4f
+"@protontech/pass-rust-core@npm:^0.7.10":
+  version: 0.7.10
+  resolution: "@protontech/pass-rust-core@npm:0.7.10"
+  checksum: 10c0/72dd5d968f78004cd78d70db5547e9b32c6da63002fca40318a10ee102da7c78b9662e7b8ca84035e5f7914f0a9c34f06ce28d5aeb68e8a162472b3e5eccf3c5
   languageName: node
   linkType: hard
 

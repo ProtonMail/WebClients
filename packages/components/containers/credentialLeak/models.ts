@@ -24,6 +24,7 @@ export interface FetchedBreaches {
               code: string;
               name: string;
               desc: string;
+              urls?: string[];
           }[]
         | null;
     source: {

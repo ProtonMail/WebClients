@@ -1,0 +1,12 @@
+.pass-button-card {
+	--pass-card-background: var(--interaction-weak);
+	--pass-card-content-title: var(--text-norm);
+	--pass-card-content-subtitle: var(--text-weak);
+
+	&#{'\\:warning'},
+	&#{'\\:danger'},
+	&#{'\\:success'} {
+		--pass-card-content-subtitle: var(--interaction-norm-major-2);
+		--pass-card-color: var(--interaction-norm-major-2);
+	}
+}

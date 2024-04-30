@@ -9,8 +9,7 @@ import { useActionRequest } from './useActionRequest';
 
 export const useShareAccessOptionsPolling = (shareId: string) => {
     const timer = useRef<Maybe<ReturnType<typeof setTimeout>>>();
-
-    const { loading, dispatch, revalidate } = useActionRequest({ action: getShareAccessOptionsIntent });
+    const { loading, dispatch, revalidate } = useActionRequest(getShareAccessOptionsIntent);
 
     const wasLoading = usePrevious(loading);
     const [didLoad, setDidLoad] = useState(false);

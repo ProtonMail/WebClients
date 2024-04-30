@@ -10,7 +10,6 @@ import {
     decodeFiltersFromSearch,
     encodeFilters,
     getItemRoute,
-    getLocalPath,
     getOnboardingRoute,
     getTrashRoute,
 } from './routing';
@@ -24,18 +23,17 @@ export type NavigateOptions<LocationState = any> = {
 };
 
 export type ItemSelectOptions<LocationState = any> = NavigateOptions<LocationState> & {
-    view?: 'edit' | 'view' | 'history';
     inTrash?: boolean;
+    prefix?: string;
+    view?: 'edit' | 'view' | 'history';
 };
 
 export type NavigationContextValue = {
     /** Parsed search parameter filters. */
     filters: ItemFilters;
-    /** Flag indicating wether we are currently on the onboarding route */
+    /** Flag indicating whether we are currently on the onboarding route */
     matchOnboarding: boolean;
-    /** Flag indicating wether we are currently on a settings route */
-    matchSettings: boolean;
-    /** Flag indicating wether we are currently on a trash route */
+    /** Flag indicating whether we are currently on a trash route */
     matchTrash: boolean;
     /** Selected item's `itemId` and `shareId` parsed from URL */
     selectedItem: Maybe<SelectedItem>;
@@ -61,11 +59,12 @@ export const NavigationProvider: FC<PropsWithChildren> = ({ children }) => {
     const location = useLocation();
 
     const filters = decodeFiltersFromSearch(location.search);
-    const matchSettings = useRouteMatch(getLocalPath('settings')) !== null;
+
     const matchTrash = useRouteMatch(getTrashRoute()) !== null;
     const matchOnboarding = useRouteMatch(getOnboardingRoute()) !== null;
 
-    const selectedItem = useRouteMatch<SelectedItem>(getItemRoute(':shareId', ':itemId', matchTrash))?.params;
+    const itemRoute = getItemRoute(':shareId', ':itemId', { trashed: matchTrash });
+    const selectedItem = useRouteMatch<SelectedItem>(itemRoute)?.params;
 
     const navigate = (pathname: string, options: NavigateOptions = { mode: 'push' }) => {
         const search = new URLSearchParams(history.location.search);
@@ -92,7 +91,7 @@ export const NavigationProvider: FC<PropsWithChildren> = ({ children }) => {
     };
 
     const selectItem = (shareId: string, itemId: string, options?: ItemSelectOptions) => {
-        const base = getItemRoute(shareId, itemId, options?.inTrash);
+        const base = getItemRoute(shareId, itemId, { trashed: options?.inTrash, prefix: options?.prefix });
         const view = options?.view && options.view !== 'view' ? `/${options.view}` : '';
         navigate(base + view, options);
     };
@@ -117,7 +116,6 @@ export const NavigationProvider: FC<PropsWithChildren> = ({ children }) => {
         () => ({
             filters,
             matchOnboarding,
-            matchSettings,
             matchTrash,
             selectedItem,
             navigate,
@@ -126,13 +124,7 @@ export const NavigationProvider: FC<PropsWithChildren> = ({ children }) => {
             preserveSearch: (path) => path + history.location.search,
             getCurrentLocation: () => history.createHref(history.location),
         }),
-        [
-            location.search /* indirectly matches filter changes */,
-            matchOnboarding,
-            matchSettings,
-            matchTrash,
-            selectedItem,
-        ]
+        [location.search /* indirectly matches filter changes */, matchOnboarding, matchTrash, selectedItem]
     );
 
     return <NavigationContext.Provider value={navigation}>{children}</NavigationContext.Provider>;

@@ -1,13 +1,26 @@
 import type { Reducer } from 'redux';
 
-import { getUserAccessSuccess, getUserFeaturesSuccess, userEvent } from '@proton/pass/store/actions';
-import type { BitField, MaybeNull, PassPlanResponse, RequiredNonNull } from '@proton/pass/types';
+import {
+    getUserAccessSuccess,
+    getUserFeaturesSuccess,
+    monitorToggle,
+    sentinelToggle,
+    userEvent,
+} from '@proton/pass/store/actions';
+import type {
+    BitField,
+    MaybeNull,
+    PassPlanResponse,
+    RequiredNonNull,
+    UserMonitorStatusResponse,
+} from '@proton/pass/types';
 import { EventActions } from '@proton/pass/types';
 import type { PassFeature } from '@proton/pass/types/api/features';
 import { objectDelete } from '@proton/pass/utils/object/delete';
 import { merge, partialMerge } from '@proton/pass/utils/object/merge';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import type { Address, SETTINGS_PASSWORD_MODE, SETTINGS_STATUS, User } from '@proton/shared/lib/interfaces';
+import { SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/interfaces';
 
 export type AddressState = { [addressId: string]: Address };
 export type FeatureFlagState = Partial<Record<PassFeature, boolean>>;
@@ -16,11 +29,16 @@ export type UserSettingsState = {
     Password: { Mode: SETTINGS_PASSWORD_MODE };
     Telemetry: BitField;
     Locale?: string;
+    HighSecurity: {
+        Eligible: BitField;
+        Value: SETTINGS_PROTON_SENTINEL_STATE;
+    };
 };
 
 export type UserAccessState = {
     plan: MaybeNull<PassPlanResponse>;
     waitingNewUserInvites: number;
+    monitor: MaybeNull<UserMonitorStatusResponse>;
 };
 
 export type UserState = {
@@ -42,6 +60,12 @@ const initialState: UserState = {
     user: null,
     userSettings: null,
     waitingNewUserInvites: 0,
+    monitor: { ProtonAddress: true, Aliases: true },
+};
+
+export const INITIAL_HIGHSECURITY_SETTINGS = {
+    Eligible: 0,
+    Value: SETTINGS_PROTON_SENTINEL_STATE.DISABLED,
 };
 
 const reducer: Reducer<UserState> = (state = initialState, action) => {
@@ -58,6 +82,7 @@ const reducer: Reducer<UserState> = (state = initialState, action) => {
                   Password: { Mode: UserSettings.Password.Mode },
                   Telemetry: UserSettings.Telemetry,
                   Locale: UserSettings.Locale,
+                  HighSecurity: UserSettings.HighSecurity,
               })
             : state.userSettings;
 
@@ -76,16 +101,30 @@ const reducer: Reducer<UserState> = (state = initialState, action) => {
         };
     }
 
-    /* triggered on each popup wakeup: avoid unnecessary re-renders */
     if (getUserAccessSuccess.match(action)) {
-        const { plan, waitingNewUserInvites } = action.payload;
-        const didChange = waitingNewUserInvites !== state.waitingNewUserInvites || !isDeepEqual(plan, state.plan);
+        /* triggered on each popup wakeup: avoid unnecessary re-renders */
+        const { plan, waitingNewUserInvites, monitor } = action.payload;
+
+        const didChange =
+            waitingNewUserInvites !== state.waitingNewUserInvites ||
+            !isDeepEqual(plan, state.plan) ||
+            !isDeepEqual(monitor, state.monitor);
+
         return didChange ? partialMerge(state, { plan, waitingNewUserInvites }) : state;
     }
 
     if (getUserFeaturesSuccess.match(action)) {
         const next: UserState = { ...state, features: null }; /* wipe all features before merge */
         return partialMerge(next, { features: action.payload });
+    }
+
+    if (sentinelToggle.success.match(action)) {
+        return partialMerge(state, { userSettings: { HighSecurity: { Value: action.payload.value } } });
+    }
+
+    if (monitorToggle.success.match(action)) {
+        const { ProtonAddress, Aliases } = action.payload;
+        return partialMerge(state, { monitor: { ProtonAddress: ProtonAddress ?? false, Aliases: Aliases ?? false } });
     }
 
     return state;

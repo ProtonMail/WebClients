@@ -57,7 +57,10 @@ export const QuickActionsDropdown: FC<PropsWithChildren<QuickActionsDropdownProp
                 color={color}
                 disabled={disabled}
                 icon
-                onClick={toggle}
+                onClick={(evt) => {
+                    evt.stopPropagation();
+                    toggle();
+                }}
                 pill={pill}
                 ref={anchorRef}
                 shape={shape}

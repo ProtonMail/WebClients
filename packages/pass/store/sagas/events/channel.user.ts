@@ -5,7 +5,7 @@ import { PassCrypto } from '@proton/pass/lib/crypto';
 import type { EventCursor, EventManagerEvent } from '@proton/pass/lib/events/manager';
 import { getUserAccessIntent, getUserFeaturesIntent, syncIntent, userEvent } from '@proton/pass/store/actions';
 import { getOrganizationSettingsIntent } from '@proton/pass/store/actions/creators/organization';
-import { withRevalidate } from '@proton/pass/store/actions/enhancers/request';
+import { withRevalidate } from '@proton/pass/store/request/enhancers';
 import { SyncType } from '@proton/pass/store/sagas/client/sync';
 import { selectAllAddresses, selectLatestEventId, selectUserSettings } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';

@@ -9,11 +9,11 @@ import {
     inviteAcceptFailure,
     inviteAcceptIntent,
     inviteAcceptSuccess,
-    requestProgress,
     startEventPolling,
     stopEventPolling,
 } from '@proton/pass/store/actions';
-import type { RequestProgress } from '@proton/pass/store/actions/enhancers/request';
+import { requestProgress } from '@proton/pass/store/request/actions';
+import type { RequestProgress } from '@proton/pass/store/request/types';
 import { selectInviteByToken } from '@proton/pass/store/selectors/invites';
 import type { Invite, ItemRevision, Maybe, Share, ShareGetResponse, ShareType } from '@proton/pass/types';
 import noop from '@proton/utils/noop';

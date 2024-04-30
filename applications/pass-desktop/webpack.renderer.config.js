@@ -75,4 +75,7 @@ module.exports = {
             filename: 'styles/[name].css',
         }),
     ],
+    experiments: {
+        asyncWebAssembly: true,
+    },
 };

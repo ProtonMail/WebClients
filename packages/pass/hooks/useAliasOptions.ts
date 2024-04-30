@@ -48,8 +48,7 @@ export const useAliasOptions = ({
         [aliasOptions]
     );
 
-    const getAliasOptions = useActionRequest({
-        action: getAliasOptionsIntent,
+    const getAliasOptions = useActionRequest(getAliasOptionsIntent, {
         initialRequestId: aliasOptionsRequest(shareId),
         onSuccess: sanitizedAliasOptions ? () => onAliasOptionsLoaded?.(sanitizedAliasOptions) : noop,
     });

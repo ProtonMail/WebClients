@@ -3,6 +3,7 @@ import { Router } from 'react-router-dom';
 import { PASS_CONFIG } from 'proton-pass-web/lib/core';
 import { i18n } from 'proton-pass-web/lib/i18n';
 import { logStore } from 'proton-pass-web/lib/logger';
+import { monitor } from 'proton-pass-web/lib/monitor';
 import { onboarding } from 'proton-pass-web/lib/onboarding';
 import { telemetry } from 'proton-pass-web/lib/telemetry';
 
@@ -55,6 +56,7 @@ export const getPassCoreProps = (sw: MaybeNull<ServiceWorkerContextValue>): Pass
         config: PASS_CONFIG,
         endpoint: 'web',
         i18n: i18n,
+        monitor,
 
         exportData: async (options) => {
             const state = store.getState();

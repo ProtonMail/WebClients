@@ -1,7 +1,7 @@
 import type { Selector } from '@reduxjs/toolkit';
 import { createSelector } from '@reduxjs/toolkit';
 
-import { isTrashed } from '@proton/pass/lib/items/item.predicates';
+import { isActive } from '@proton/pass/lib/items/item.predicates';
 import { isVaultShare } from '@proton/pass/lib/shares/share.predicates';
 import { isOwnVault, isSharedVault, isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
 import type { Maybe, MaybeNull, ShareType } from '@proton/pass/types';
@@ -43,7 +43,7 @@ const createVaultsWithItemsCountSelector = (vaultSelector: Selector<State, Vault
     createSelector([vaultSelector, selectItems], (shares, itemsByShareId) =>
         shares.map((share) => ({
             ...share,
-            count: Object.values(itemsByShareId?.[share.shareId] ?? {}).filter(invert(isTrashed)).length,
+            count: Object.values(itemsByShareId?.[share.shareId] ?? {}).filter(isActive).length,
         }))
     );
 
@@ -91,7 +91,7 @@ export const selectVaultItemsCount = (shareId: MaybeNull<string>) =>
         selectShare<ShareType.Vault>(shareId),
         selectItems,
         (share, itemsByShareId): MaybeNull<number> =>
-            share ? Object.values(itemsByShareId?.[share?.shareId] ?? {}).filter(invert(isTrashed)).length : null
+            share ? Object.values(itemsByShareId?.[share?.shareId] ?? {}).filter(isActive).length : null
     );
 
 export const selectVaultSharedWithEmails = (shareId: string) =>

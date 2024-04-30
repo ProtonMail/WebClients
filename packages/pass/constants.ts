@@ -14,6 +14,9 @@ export const MAX_PASSWORD_HISTORY_RETENTION_WEEKS = 2;
 export const SESSION_RESUME_RETRY_TIMEOUT = 15; /* seconds */
 export const SESSION_RESUME_MAX_RETRIES = 7;
 
+export const MAX_VAULT_MEMBERS = 10;
+export const MAX_CUSTOM_ADDRESSES = 10;
+
 /** Matches 80% of the `SETTINGS_MAX_CONCURRENT_STREAMS=25`
  * production API configuration */
 export const API_CONCURRENCY_TRESHOLD = 20;
@@ -66,6 +69,7 @@ export enum UpsellRef {
     MENU = 'menu',
     PERSISTENT_BAR = 'persistent_bar',
     SETTING = 'setting',
+    PASS_MONITOR = 'pass_monitor',
 }
 
 export const MAX_LOCAL_STORAGE_SIZE = 5 * 1024 * 1024; /* 5MB */

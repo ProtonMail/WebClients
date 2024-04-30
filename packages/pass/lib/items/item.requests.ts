@@ -16,6 +16,7 @@ import type {
     ItemRevisionContentsResponse,
     ItemRevisionsIntent,
     ItemType,
+    ItemUpdateFlagsRequest,
     Maybe,
 } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp/predicates';
@@ -328,17 +329,19 @@ export const importItemsBatch = async (options: {
     return result.Revisions.RevisionsData;
 };
 
-export const pinItem = async (shareId: string, itemId: string) =>
-    api({
-        url: `pass/v1/share/${shareId}/item/${itemId}/pin`,
-        method: 'post',
-    });
+/** Update the item monitoring flag */
+export const updateItemFlags = async (
+    shareId: string,
+    itemId: string,
+    data: ItemUpdateFlagsRequest
+): Promise<ItemRevisionContentsResponse> =>
+    (await api({ url: `pass/v1/share/${shareId}/item/${itemId}/flags`, method: 'put', data })).Item!;
 
-export const unpinItem = async (shareId: string, itemId: string) =>
-    api({
-        url: `pass/v1/share/${shareId}/item/${itemId}/pin`,
-        method: 'delete',
-    });
+export const pinItem = (shareId: string, itemId: string) =>
+    api({ url: `pass/v1/share/${shareId}/item/${itemId}/pin`, method: 'post' });
+
+export const unpinItem = (shareId: string, itemId: string) =>
+    api({ url: `pass/v1/share/${shareId}/item/${itemId}/pin`, method: 'delete' });
 
 export const getItemRevisions = async (
     { shareId, itemId, pageSize, since }: ItemRevisionsIntent,

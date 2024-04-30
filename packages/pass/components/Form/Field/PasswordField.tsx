@@ -1,21 +1,29 @@
 import { type FC, useCallback, useRef } from 'react';
 
 import { PasswordGeneratorButton } from '@proton/pass/components/Password/PasswordGeneratorButton';
+import {
+    strenghtIconNames,
+    strengthClassNames,
+    translateStrengths,
+} from '@proton/pass/components/Password/PasswordStrength';
+import { usePasswordStrength } from '@proton/pass/hooks/monitor/usePasswordStrength';
 import clsx from '@proton/utils/clsx';
 
 import { TextField, type TextFieldProps } from './TextField';
 
 import './PasswordField.scss';
 
-type Props = { onPasswordGenerated?: (password: string) => void } & TextFieldProps;
+type Props = { onPasswordGenerated?: (password: string) => void; showStrength?: boolean } & TextFieldProps;
 
 export const PasswordField: FC<Props> = (props) => {
-    const { field, form, onPasswordGenerated, ...rest } = props;
+    const { field, form, onPasswordGenerated, label, showStrength, icon, className, ...rest } = props;
     const passwordFieldRef = useRef<HTMLInputElement>(null);
 
     const focusPasswordField = () => {
         setTimeout(() => passwordFieldRef.current?.focus(), 300);
     };
+
+    const passwordStrength = usePasswordStrength(form.values.password);
 
     const handlePasswordGeneratorDone = useCallback(
         async (password: string) => {
@@ -37,6 +45,9 @@ export const PasswordField: FC<Props> = (props) => {
 
     return (
         <TextField
+            className={passwordStrength ? clsx(className, strengthClassNames[passwordStrength]) : className}
+            icon={passwordStrength ? strenghtIconNames[passwordStrength] : icon}
+            label={passwordStrength ? `${label} · ${translateStrengths()[passwordStrength]}` : label}
             hidden
             field={field}
             form={form}

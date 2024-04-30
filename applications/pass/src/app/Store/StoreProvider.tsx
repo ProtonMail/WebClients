@@ -26,7 +26,7 @@ import {
     startEventPolling,
     stopEventPolling,
 } from '@proton/pass/store/actions';
-import { withRevalidate } from '@proton/pass/store/actions/enhancers/request';
+import { withRevalidate } from '@proton/pass/store/request/enhancers';
 import { selectFeatureFlag, selectLocale, selectOnboardingEnabled } from '@proton/pass/store/selectors';
 import { OnboardingMessage } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';

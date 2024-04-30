@@ -8,7 +8,7 @@ import { getItemRoute, getLocalPath } from '@proton/pass/components/Navigation/r
 import { selectShare } from '@proton/pass/store/selectors';
 
 export const Autoselect: FC = () => {
-    const { matchTrash, preserveSearch, filters } = useNavigation();
+    const { matchTrash: trashed, preserveSearch, filters } = useNavigation();
     const { filtered } = useItems();
     const autoselect = filtered[0];
 
@@ -17,7 +17,7 @@ export const Autoselect: FC = () => {
     const clearFilters = filters.selectedShareId !== null && selectedVault === undefined;
 
     const to = (() => {
-        if (autoselect) return preserveSearch(getItemRoute(autoselect.shareId, autoselect.itemId, matchTrash));
+        if (autoselect) return preserveSearch(getItemRoute(autoselect.shareId, autoselect.itemId, { trashed }));
         if (clearFilters) return getLocalPath();
         return null;
     })();

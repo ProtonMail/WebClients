@@ -6,15 +6,22 @@ import { ItemHistoryStats } from '@proton/pass/components/Item/History/ItemHisto
 import { LoginContent } from '@proton/pass/components/Item/Login/Login.content';
 import { MoreInfoDropdown } from '@proton/pass/components/Layout/Dropdown/MoreInfoDropdown';
 import { ItemViewPanel } from '@proton/pass/components/Layout/Panel/ItemViewPanel';
+import { ItemReport } from '@proton/pass/components/Monitor/Item/ItemReport';
 import type { ItemViewProps } from '@proton/pass/components/Views/types';
+import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
+import { isMonitored } from '@proton/pass/lib/items/item.predicates';
+import { PassFeature } from '@proton/pass/types/api/features';
 
 export const LoginView: FC<ItemViewProps<'login'>> = (itemViewProps) => {
     const { revision, handleHistoryClick } = itemViewProps;
     const { createTime, lastUseTime, modifyTime, revision: revisionNumber, shareId, itemId } = revision;
     const modifiedCount = revisionNumber - 1;
+    const monitorEnabled = useFeatureFlag(PassFeature.PassMonitor);
 
     return (
         <ItemViewPanel type="login" {...itemViewProps}>
+            {monitorEnabled && isMonitored(revision) && <ItemReport shareId={shareId} itemId={itemId} />}
+
             <LoginContent revision={revision} />
 
             <ItemHistoryStats
