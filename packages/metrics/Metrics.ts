@@ -8,6 +8,9 @@
 import Counter from './lib/Counter';
 import MetricsBase from './lib/MetricsBase';
 import IMetricsRequestService from './lib/types/IMetricsRequestService';
+import { HttpsProtonMeDriveUploadErroringUsersTotalV1SchemaJson } from './types/drive_upload_erroring_users_total_v1.schema';
+import { HttpsProtonMeDriveUploadErrorsTotalV1SchemaJson } from './types/drive_upload_errors_total_v1.schema';
+import { HttpsProtonMeDriveUploadSuccessRateTotalV1SchemaJson } from './types/drive_upload_success_rate_total_v1.schema';
 import { WebCoreDeleteAccountTotal } from './types/web_core_delete_account_total_v1.schema';
 import { WebCoreLightLabellingImageProcessingTotal } from './types/web_core_lightLabelling_imageProcessing_total_v1.schema';
 import { WebCoreLightLabellingLogoRemovalTotal } from './types/web_core_lightLabelling_logoRemoval_total_v1.schema';
@@ -67,6 +70,12 @@ import { WebPaymentsSubscriptionStepsTotal } from './types/web_payments_subscrip
 import { WebPaymentsSubscriptionTotal } from './types/web_payments_subscription_total_v1.schema';
 
 class Metrics extends MetricsBase {
+    public drive_upload_erroring_users_total: Counter<HttpsProtonMeDriveUploadErroringUsersTotalV1SchemaJson>;
+
+    public drive_upload_errors_total: Counter<HttpsProtonMeDriveUploadErrorsTotalV1SchemaJson>;
+
+    public drive_upload_success_rate_total: Counter<HttpsProtonMeDriveUploadSuccessRateTotalV1SchemaJson>;
+
     public core_delete_account_total: Counter<WebCoreDeleteAccountTotal>;
 
     public core_lightLabelling_imageProcessing_total: Counter<WebCoreLightLabellingImageProcessingTotal>;
@@ -183,6 +192,21 @@ class Metrics extends MetricsBase {
 
     constructor(requestService: IMetricsRequestService) {
         super(requestService);
+
+        this.drive_upload_erroring_users_total = new Counter<HttpsProtonMeDriveUploadErroringUsersTotalV1SchemaJson>(
+            { name: 'drive_upload_erroring_users_total', version: 1 },
+            this.requestService
+        );
+
+        this.drive_upload_errors_total = new Counter<HttpsProtonMeDriveUploadErrorsTotalV1SchemaJson>(
+            { name: 'drive_upload_errors_total', version: 1 },
+            this.requestService
+        );
+
+        this.drive_upload_success_rate_total = new Counter<HttpsProtonMeDriveUploadSuccessRateTotalV1SchemaJson>(
+            { name: 'drive_upload_success_rate_total', version: 1 },
+            this.requestService
+        );
 
         this.core_delete_account_total = new Counter<WebCoreDeleteAccountTotal>(
             { name: 'web_core_delete_account_total', version: 1 },
