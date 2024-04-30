@@ -447,11 +447,11 @@
       "Not now": [
         "Nicht jetzt"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME }-Einstellungen öffnen"
@@ -3094,9 +3094,6 @@
       ],
       "You have reached the contacts limit for your account": [
         "Du hast das Kontaktlimit für dein Konto erreicht."
-      ],
-      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
-        "Du hast die maximale Anzahl von Kalendern erreicht, die du in deinem Abonnement erstellen kannst. Einige Kalender konnten nicht importiert werden."
       ],
       "You must set a name": [
         "Du musst einen Namen eingeben"
@@ -7089,9 +7086,6 @@
       "Create new group": [
         "Neue Gruppe erstellen"
       ],
-      "Custom": [
-        "Benutzerdefiniert"
-      ],
       "Day": [
         "Tag",
         "Tage"
@@ -7501,6 +7495,9 @@
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel ist **aktiv** und schützt dein Konto."
+      ],
+      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLink }": [
+        "Deine Informationen wurden bei mindestens einem Datenleck gefunden. Schalte ${ DARK_WEB_MONITORING_NAME } ein, um Details anzuzeigen und Maßnahmen zu ergreifen. ${ learnMoreLink }"
       ]
     },
     "Select files": {
@@ -7991,9 +7988,6 @@
       ]
     },
     "Storage": {
-      "Release notes": [
-        "Versionshinweise"
-      ],
       "Upgrade storage": [
         "Mehr Speicher hinzufügen"
       ],
@@ -9011,9 +9005,6 @@
       ],
       "What would you like to import?": [
         "Was möchtest du importieren?"
-      ],
-      "What's new": [
-        "Neuigkeiten"
       ],
       "You have invited participants with equivalent emails": [
         "Du hast Teilnehmer mit entsprechenden E-Mails eingeladen"

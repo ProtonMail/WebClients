@@ -447,11 +447,11 @@
       "Not now": [
         "Agora não"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Abrir configurações do ${ CALENDAR_APP_NAME }"
@@ -3095,9 +3095,6 @@
       "You have reached the contacts limit for your account": [
         "Você atingiu o limite de contatos da sua conta"
       ],
-      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
-        "Você atingiu o número máximo de calendários pessoais. Alguns calendários não puderam ser importados."
-      ],
       "You must set a name": [
         "Você deve especificar um nome"
       ],
@@ -3689,6 +3686,9 @@
     "Header": {
       "Contacts": [
         "Contatos"
+      ],
+      "Custom recurrence": [
+        "Personalizar recorrência"
       ],
       "Name": [
         "Nome"
@@ -4522,7 +4522,7 @@
         "Novo"
       ],
       "No changes made to the current subscription": [
-        "Nenhuma alteração feita à assinatura atual"
+        "Nenhuma alteração feita na assinatura atual"
       ],
       "No contacts added yet": [
         "Nenhum contato foi adicionado ainda"
@@ -4564,7 +4564,7 @@
         "Tamanho da organização"
       ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
-        "Outros usuários na sua organização verá seus espaços ocupados. Nenhum detalhe de evento será compartilhado."
+        "Outros usuários da sua organização verão seus horários ocupados. Nenhum detalhe do evento é compartilhado."
       ],
       "password": [
         "senha"
@@ -4694,7 +4694,7 @@
         "O aplicativo precisa descriptografar localmente seus contatos antes que eles possam ser exportados. Ao final do processo, um arquivo VCF será gerado e você poderá baixá-lo."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
-        "As informações expostas vazaram de um serviço de terceiros. As informações da sua Conta ${ BRAND_NAME } permanecem seguras e criptografadas. ${ learnMoreLink }"
+        "As informações expostas vazaram de um serviço de terceiros. As informações da sua conta ${ BRAND_NAME } permanecem seguras e criptografadas. ${ learnMoreLink }"
       ],
       "The following participants cannot be notified about your changes:": [
         "Os seguintes participantes não podem ser notificados sobre suas alterações:"
@@ -4823,7 +4823,7 @@
         "Vamos redirecioná-lo para o PayPal em uma nova guia do navegador para concluir esta transação. Desative qualquer bloqueador de pop-ups que estiver usando."
       ],
       "We'll email you once import is complete.": [
-        "Lhe enviaremos um e-mail assim que a importação estiver concluída."
+        "Enviaremos um e-mail para você assim que a importação for concluída."
       ],
       "We'll notify you when the import is done.": [
         "Nós te avisaremos quando a importação estiver concluída."
@@ -4921,10 +4921,10 @@
         "Você não pode desfazer está ação."
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
-        "Você tem uma assinatura de avaliação ${ planTitle }. Se quer continuar a sua assinatura após o período de avaliação, adicione um método de pagamento."
+        "Você tem uma assinatura de avaliação do ${ planTitle }. Se deseja continuar com sua assinatura após o período de avaliação, adicione uma forma de pagamento."
       ],
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
-        "Você tem uma assinatura de avaliação ${ planTitle }. Nenhum pagamento é necessário no momento. Sua assinatura será renovada automaticamente ao final do período de avaliação."
+        "Você tem uma assinatura de avaliação do ${ planTitle }. Nenhum pagamento é necessário no momento. Sua assinatura será renovada automaticamente ao final do período de avaliação."
       ],
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
         "Você reativou suas chaves e os eventos vinculados aos seguintes calendários podem ser descriptografados."
@@ -5020,7 +5020,7 @@
         "Seus arquivos serão criptografados e depois salvos"
       ],
       "Your information was found on ${ displayedDate }": [
-        "Sua inconformação foi encontrada em ${ displayedDate }"
+        "Sua informação foi encontrada em ${ displayedDate }"
       ],
       "Your login information will not be saved after the import is completed.": [
         "Suas informações de início de sessão não serão salvas após a importação ser concluída."
@@ -5534,7 +5534,7 @@
         "Selecione seu plano"
       ],
       "Show others when I'm busy": [
-        "Mostrar aos outros quado estou ocupado"
+        "Mostrar aos outros quando estou ocupado"
       ],
       "Show week numbers": [
         "Exibir números das semanas"
@@ -5832,7 +5832,7 @@
         "Oferta por tempo limitado, expira em 2 de abril de 2024"
       ],
       "Your subscription will auto-renew on ${ renewTime } at ${ renewablePrice }, cancel anytime": [
-        "Sua assinatura irá se autorrenovar em ${ renewTime } por ${ renewablePrice }, cancele a qualquer momento"
+        "Sua assinatura irá se autor renovar em ${ renewTime } por ${ renewablePrice }, cancele a qualquer momento"
       ]
     },
     "mailtrial2024: Title": {
@@ -6212,13 +6212,13 @@
         "Console de administração"
       ],
       "Administration Panel": [
-        "Painel de administração"
+        "Painel de Administração"
       ],
       "Advanced sharing security": [
         "Segurança avançada de compartilhamento"
       ],
       "Auto-delete Spam and Trash": [
-        "Exclusão automática de pasta de spam e lixeira"
+        "Excluir conteúdo de Spam e Lixeira de forma automática"
       ],
       "Auto-delete spam and trashed messages": [
         "Excluir automaticamente spam e mensagens da lixeira"
@@ -6370,7 +6370,7 @@
         "Suporte a roteador"
       ],
       "Schedule and snooze emails for any time": [
-        "Agendar e adiar e-mails para quando você quiser"
+        "Programe e adie e-mails para qualquer momento"
       ],
       "Schedule messages at any time": [
         "Agende mensagens a qualquer momento"
@@ -6507,7 +6507,7 @@
         "Segurança de rede avançada e gerenciamento de acesso com Gateways seguros dedicados"
       ],
       "Advanced protection for teams that goes beyond industry standards.": [
-        "Proteção avançada para sua equipe que vai além dos padrões da indústria."
+        "Proteção avançada para equipes que vai além dos padrões da indústria."
       ],
       "All ${ BRAND_NAME } apps and their premium features": [
         "Todos os aplicativos da ${ BRAND_NAME } e as suas funcionalidades premium"
@@ -6629,7 +6629,7 @@
         "Permite que você configure respostas automáticas para suas mensagens recebidas"
       ],
       "Automatically clear out messages older than 30 days from Trash and Spam": [
-        "Limpar automaticamente as mensagens com mais de 30 dias da lixeira e do spam"
+        "Limpar automaticamente mensagens com mais de 30 dias da Lixeira e do Spam"
       ],
       "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
         "Encaminhe automaticamente os e-mails enviados para sua conta do ${ MAIL_APP_NAME } para qualquer outro endereço de e-mail."
@@ -6684,7 +6684,7 @@
         "Marcadores são tags simples que podem ser adicionadas a mensagens para que fique mais fácil encontrá-las ou aplicar filtros a elas"
       ],
       "Like a folder, a vault is a convenient way to organize your items": [
-        "Como uma pasta, um cofre é uma maneira conveniente de organizar seus itens."
+        "Como uma pasta, um cofre é uma maneira conveniente de organizar seus itens"
       ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
         "Bloqueie os recursos da sua empresa da Internet pública e torne-os acessíveis apenas através de seus gateways privados"
@@ -7090,7 +7090,7 @@
         "Criar novo grupo"
       ],
       "Custom": [
-        "Personalizado"
+        "Personalizada"
       ],
       "Day": [
         "Dia",
@@ -7994,9 +7994,6 @@
       ]
     },
     "Storage": {
-      "Release notes": [
-        "Notas de lançamento"
-      ],
       "Upgrade storage": [
         "Ampliar armazenamento"
       ],
@@ -8107,10 +8104,10 @@
         "Cobrança a cada 15 meses"
       ],
       "Billed for 18 months": [
-        "Cobrança a cada 18 meses"
+        "Cobrado por 18 meses"
       ],
       "Billed for 3 months": [
-        "Cobrança a cada 3 meses"
+        "Cobrado por 3 meses"
       ],
       "Billed for 30 months": [
         "Cobrança a cada 30 meses"
@@ -8170,6 +8167,44 @@
     "Subscription price": {
       "For": [
         "Por"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "Armazenamento de 15 GB"
+      ],
+      "and 15 more premium features": [
+        "e mais 15 recursos premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Encaminhamento de e-mail automático ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertas de violações de dados ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicativo para computador"
+      ],
+      "No ads or tracking": [
+        "Sem anúncios ou rastreamento"
+      ],
+      "Short @pm.me email address": [
+        "Endereço de e-mail curto @pm.me"
+      ],
+      "Support our mission": [
+        "Apoie nossa missão"
+      ],
+      "Upgrade": [
+        "Fazer upgrade"
+      ],
+      "Upgrade your productivity": [
+        "Atualize sua produtividade"
+      ],
+      "We don't sell your data": [
+        "Não vendemos seus dados"
+      ],
+      "Your privacy is our mission": [
+        "Sua privacidade é a nossa missão"
       ]
     },
     "Subscription renewal state": {
@@ -8995,9 +9030,6 @@
       "What would you like to import?": [
         "O que você gostaria de importar?"
       ],
-      "What's new": [
-        "Novidades"
-      ],
       "You have invited participants with equivalent emails": [
         "Você convidou os participantes com e-mails equivalentes."
       ],
@@ -9053,7 +9085,7 @@
         "Troque automaticamente entre seus temas preferidos para dia e noite em sincronia com os modos dia e noite do seu sistema"
       ],
       "Change start date to unselect": [
-        "Mude a data de início para desselecionar"
+        "Alterar data de início para desmarcar"
       ],
       "Customize import to reduce the number of folders": [
         "Personalize importação para reduzir o número de pastas"
@@ -9181,13 +9213,13 @@
     },
     "vpn_2024: renew": {
       "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
-        "A assinatura se renova automaticamente todo mês. Sua próxima data de cobrança será em 1 mês."
+        "A assinatura é renovada automaticamente a cada 1 mês. Sua próxima data de faturamento será em 1 mês."
       ],
       "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
         "A assinatura é renovada automaticamente a cada 3 meses. Sua próxima data de faturamento será em 3 meses."
       ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
-        "Você então será cobrado ${ renewPrice } a cada 12 meses."
+        "Você será cobrado a cada 12 meses no valor de ${ renewPrice }."
       ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Sua assinatura será renovada automaticamente em ${ cycle } mês.",
