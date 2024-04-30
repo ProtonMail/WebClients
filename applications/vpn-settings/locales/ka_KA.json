@@ -2020,6 +2020,9 @@
       "Error connecting to the Bitcoin API.": [
         "Bitcoin-ის API-თან მიერთების შეცდომა."
       ],
+      "Failed to process the logo": [
+        "ლოგოს დამუშავება ჩავარდა"
+      ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "თუ ვადა თქვენს TV-ზე უკვე უკვე გავიდა, დააწკაპუნეთ განახლებაზე თქვენს TV-ზე და კოდი თავიდან შეიყვანეთ."
       ],
@@ -3498,10 +3501,6 @@
       ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "ან თავიდან სცადეთ, ან გადახდის სხვა საშუალება გამოიყენეთ, ან დაუკავშირდით PayPal-ს."
-      ],
-      "Please use a password more than ${ MIN_PASSWORD_LENGTH } character.": [
-        "გამოიყენეთ პაროლი ${ MIN_PASSWORD_LENGTH }-ზე მეტი სიმბოლოთი.",
-        "გამოიყენეთ პაროლი ${ MIN_PASSWORD_LENGTH }-ზე მეტი სიმბოლოთი."
       ],
       "Please use another browser or download the file.": [
         "სცადეთ სხვა ბრაუზერი ან ფაილი გადმოწერეთ."
@@ -6413,6 +6412,9 @@
       ]
     },
     "scim: Title": {
+      "Disable SCIM integration?": [
+        "გამოვრთო SCIM-თან ინტეგრაცია?"
+      ],
       "Generate new SCIM token?": [
         "დავაგენერირო ახალი SCIM კოდი?"
       ]
@@ -6959,9 +6961,6 @@
       ]
     },
     "Storage": {
-      "Release notes": [
-        "რელიზის შენიშვნები"
-      ],
       "Upgrade storage": [
         "ადგილის დამატება"
       ],
@@ -7632,6 +7631,9 @@
       "Delete address permanently?": [
         "წავშალო მისამართი სამუდამოდ?"
       ],
+      "Delete organization logo?": [
+        "წავშალო ორგანიზაციის ლოგო?"
+      ],
       "Delete the server (you will still be able to recover it for ${ days } day)": [
         "სერვერის წაშლა (მათი აღდგენა ${ days } დღის განმავლობაში შეგეძლებათ)",
         "სერვერის წაშლა (მათი აღდგენა ${ days } დღის განმავლობაში შეგეძლებათ)"
@@ -7735,6 +7737,9 @@
       ],
       "Gift code": [
         "სასაჩუქრე კოდი"
+      ],
+      "How to choose a good logo": [
+        "როგორ აირჩიოთ კარგი ლოგო"
       ],
       "Human verification": [
         "ადამიანის შემოწმება"
@@ -7961,9 +7966,6 @@
       ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "ჩვენ გამოგიგზავნით ელფოსტას ახალ მისამართზე, ინსტრუქციებით, როგორ დაასრულოთ ცვლილება."
-      ],
-      "What's new": [
-        "სიახლეები"
       ],
       "WireGuard configuration": [
         "WireGuard-ის მორგება"

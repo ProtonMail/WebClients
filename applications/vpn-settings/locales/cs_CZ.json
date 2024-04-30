@@ -143,6 +143,9 @@
       "Delete Gateway": [
         "Smazat bránu"
       ],
+      "Delete logo": [
+        "Smazat logo"
+      ],
       "Delete user": [
         "Smazat uživatele"
       ],
@@ -283,6 +286,9 @@
       ],
       "Invite user": [
         "Pozvat uživatele"
+      ],
+      "Keep logo": [
+        "Ponechat logo"
       ],
       "Keep my Plus subscription": [
         "Zachovat mé předplatné Plus"
@@ -440,6 +446,9 @@
       "Select country": [
         "Vyberte zemi"
       ],
+      "select file": [
+        "vybrat soubor"
+      ],
       "Select file": [
         "Vybrat soubor"
       ],
@@ -491,6 +500,9 @@
       "Signing in": [
         "Přihlašování"
       ],
+      "Start live chat": [
+        "Spustit živý chat"
+      ],
       "Stop using single sign-on": [
         "Přestat využívat jednotné přihlášení"
       ],
@@ -532,6 +544,12 @@
       ],
       "Upgrade your plan": [
         "Přejít na vyšší tarif"
+      ],
+      "Upload": [
+        "Nahrát"
+      ],
+      "Upload logo": [
+        "Nahrát logo"
       ],
       "Use ${ label } theme": [
         "Použít ${ label } motiv"
@@ -971,6 +989,9 @@
       ],
       "Continue using ${ planTitle }": [
         "Pokračovat s ${ planTitle }"
+      ],
+      "Continue your subscription": [
+        "Pokračovat v předplatném"
       ]
     },
     "Checkout row": {
@@ -2015,6 +2036,9 @@
       "Error connecting to the Bitcoin API.": [
         "Chyba při připojování k Bitcoin API."
       ],
+      "File too large. Your logo must be 30 KB or smaller.": [
+        "Soubor je příliš velký. Vaše logo musí mít 30 KB nebo méně."
+      ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Pokud čas v TV vypršel, klikněte v TV na tlačítko Obnovit a zadejte kód znovu."
       ],
@@ -2026,6 +2050,9 @@
       ],
       "Impossible to rename the gateway": [
         "Není možné přejmenovat bránu"
+      ],
+      "Incorrect file type. Upload a file in PNG or JPEG format.": [
+        "Nesprávný typ souboru. Nahrajte soubor ve formátu PNG nebo JPEG."
       ],
       "Incorrect login credentials. Please try again.": [
         "Nesprávné přihlašovací údaje. Zkuste to prosím znovu."
@@ -2117,6 +2144,9 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Chcete-li spravovat více uživatelů, přejděte na firemní tarif."
       ],
+      "Please upload a square file": [
+        "Nahrajte obrázek ve čtvercovém tvaru"
+      ],
       "Please upload an xml file": [
         "Nahrejte prosím soubor xml"
       ],
@@ -2143,6 +2173,9 @@
       ],
       "The email addresses do not match": [
         "E-mailové adresy se neshodují"
+      ],
+      "The file is too small, the minimum size is ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }": [
+        "Soubor je příliš malý, minimální velikost je ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }"
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Minimální objem kreditu, který lze přidat je ${ price }"
@@ -2805,6 +2838,11 @@
         "Uživatelské jméno"
       ]
     },
+    "Headline": {
+      "Contact us": [
+        "Kontaktujte nás"
+      ]
+    },
     "Hint": {
       "Add this record to your domain in the control panel of your domain name registrar": [
         "Přidejte tento záznam do své domény v ovládacím panelu svého registrátora doménových jmen"
@@ -3377,6 +3415,9 @@
       "Loading ${ appName }": [
         "Načítání aplikace ${ appName }"
       ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Načítání kalendáře, prosím čekejte. Budete přesměrováni na naši plánovací platformu Calendly v nové záložce."
+      ],
       "Loading preview": [
         "Načítání náhledu"
       ],
@@ -3530,12 +3571,6 @@
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Zkuste to prosím znovu, použijte jinou platební metodu, nebo požádejte PayPal o pomoc."
       ],
-      "Please use a password more than ${ MIN_PASSWORD_LENGTH } character.": [
-        "Použijte prosím heslo delší než ${ MIN_PASSWORD_LENGTH } znak.",
-        "Použijte prosím heslo delší než ${ MIN_PASSWORD_LENGTH } znaky.",
-        "Použijte prosím heslo delší než ${ MIN_PASSWORD_LENGTH } znaků.",
-        "Použijte prosím heslo delší než ${ MIN_PASSWORD_LENGTH } znaků."
-      ],
       "Please use another browser or download the file.": [
         "Použijte jiný prohlížeč nebo si soubor stáhněte."
       ],
@@ -3547,6 +3582,9 @@
       ],
       "Plus or Visionary subscription required": [
         "Je vyžadováno předplatné Plus nebo Visionary"
+      ],
+      "Preview": [
+        "Náhled"
       ],
       "Preview failed to be loaded": [
         "Náhled se nepodařilo načíst"
@@ -4070,6 +4108,12 @@
         "Máte k dispozici ${ availableCount } dedikovaných serverů.",
         "Máte k dispozici ${ availableCount } dedikovaných serverů."
       ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "Máte zkušební verzi předplatného ${ planTitle }. Pokud chcete pokračovat s vaším předplatným po zkušební době, prosím přidejte platební metodu."
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "Máte zkušební verzi předplatného ${ planTitle }. Nyní není potřeba nic platit. Vaše předplatné bude automaticky obnoveno na konci zkušební doby."
+      ],
       "You have no invoices.": [
         "Nemáte žádné faktury."
       ],
@@ -4217,6 +4261,9 @@
       ],
       "Credit": [
         "Kredit"
+      ],
+      "Credit note": [
+        "Dobropis"
       ],
       "Currency conversion": [
         "Převod měny"
@@ -4468,6 +4515,9 @@
       ],
       "Level for NetShield blocker filtering": [
         "Úroveň filtrování NetShield"
+      ],
+      "Logo": [
+        "Logo"
       ],
       "Mailbox password": [
         "Heslo k poštovní schránce"
@@ -4853,17 +4903,26 @@
       "upgrade for more storage": [
         "navýšit tarif pro více prostoru"
       ],
+      "Upgrade to restore full access": [
+        "Navýšením obnovíte plný přístup"
+      ],
       "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
         "Vaše ${ driveStorage } je plné. Chcete-li nahrát nebo synchronizovat soubory, uvolněte místo nebo ${ cta }."
       ],
       "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
         "Vaše ${ mailStorage } je plné. Pro odesílání nebo přijímání e-mailů uvolněte místo nebo ${ cta }."
       ],
+      "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
+        "Váš účet je ohrožen smazáním. Abyste zabránili ztrátě dat, požádejte vašeho správce o navýšení. ${ cta }"
+      ],
       "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
         "Vaše úložiště je plné. Chcete-li odesílat nebo přijímat e-maily, uvolněte místo nebo ${ cta }."
       ],
       "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
         "Vaše úložiště je plné. Abyste mohli nahrát nebo synchronizovat soubory, uvolněte místo nebo ${ cta }."
+      ],
+      "Your subscription has ended. ${ cta } and to avoid data loss.": [
+        "Vaše předplatné skončilo. ${ cta } pro předejití ztrátě dat."
       ]
     },
     "mailtrial2024: Action": {
@@ -7003,9 +7062,6 @@
       ]
     },
     "Storage": {
-      "Release notes": [
-        "Seznam změn"
-      ],
       "Upgrade storage": [
         "Navýšit úložiště"
       ],
@@ -7238,6 +7294,47 @@
     "Subscription price": {
       "For": [
         "Pro"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB úložiště"
+      ],
+      "and 15 more premium features": [
+        "a 15 dalších prémiových funkcí"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatické přesměrování e-mailu ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Upozornění na úniky informací ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktopová aplikace"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomozte nám udržet internet bezpečný a soukromý pro všechny. Přejděte na placený tarif."
+      ],
+      "No ads or tracking": [
+        "Žádné reklamy ani sledování"
+      ],
+      "Short @pm.me email address": [
+        "Zkrácená e-mailová adresa @pm.me"
+      ],
+      "Support our mission": [
+        "Podpořte naše poslání"
+      ],
+      "Upgrade": [
+        "Navýšit"
+      ],
+      "Upgrade your productivity": [
+        "Zlepšete svou produktivitu"
+      ],
+      "We don't sell your data": [
+        "Vaše údaje neprodáváme"
+      ],
+      "Your privacy is our mission": [
+        "Vaše soukromí je naším posláním"
       ]
     },
     "Subscription renewal state": {
@@ -8042,11 +8139,11 @@
       "We'll send an email to your new address with instructions on completing the change.": [
         "Na vaši novou adresu vám zašleme e-mail s pokyny pro dokončení změny."
       ],
-      "What's new": [
-        "Co je nového"
-      ],
       "WireGuard configuration": [
         "Konfigurace WireGuard"
+      ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Vaše bezplatná zkušební verze ${ planName } skončí ${ textDate }"
       ],
       "Your changes are not synced yet": [
         "Vaše změny zatím nejsou synchronizovány"

@@ -143,6 +143,9 @@
       "Delete Gateway": [
         "Slet gateway"
       ],
+      "Delete logo": [
+        "Slet logo"
+      ],
       "Delete user": [
         "Slet bruger"
       ],
@@ -283,6 +286,9 @@
       ],
       "Invite user": [
         "Invitér bruger"
+      ],
+      "Keep logo": [
+        "Behold logo"
       ],
       "Keep my Plus subscription": [
         "Behold mit Plus-abonnement"
@@ -440,6 +446,9 @@
       "Select country": [
         "Vælg land"
       ],
+      "select file": [
+        "vælg fil"
+      ],
       "Select file": [
         "Vælg fil"
       ],
@@ -491,6 +500,9 @@
       "Signing in": [
         "Logger ind"
       ],
+      "Start live chat": [
+        "Start live chat"
+      ],
       "Stop using single sign-on": [
         "Stop med at bruge single sign-on"
       ],
@@ -532,6 +544,12 @@
       ],
       "Upgrade your plan": [
         "Opgradér dit abonnement"
+      ],
+      "Upload": [
+        "Upload"
+      ],
+      "Upload logo": [
+        "Upload logo"
       ],
       "Use ${ label } theme": [
         "Brug ${ label } tema"
@@ -2771,6 +2789,11 @@
         "Brugernavn"
       ]
     },
+    "Headline": {
+      "Contact us": [
+        "Kontakt os"
+      ]
+    },
     "Hint": {
       "Add this record to your domain in the control panel of your domain name registrar": [
         "Tilføj denne post til dit domæne i kontrolpanelet hos din domæneregistrator"
@@ -3315,6 +3338,9 @@
       "Link copied to clipboard": [
         "Link kopieret til udklipsholder"
       ],
+      "Live chat": [
+        "Live chat"
+      ],
       "Loading": [
         "Indlæser"
       ],
@@ -3470,10 +3496,6 @@
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Forsøg venligst igen, benyt en anden betalingsmetode eller kontakt PayPal for hjælp."
       ],
-      "Please use a password more than ${ MIN_PASSWORD_LENGTH } character.": [
-        "Venligst brug en kode der er længere end ${ MIN_PASSWORD_LENGTH } tegn.",
-        "Venligst brug en kode der er længere end ${ MIN_PASSWORD_LENGTH } tegn."
-      ],
       "Please use another browser or download the file.": [
         "Brug en anden browser eller download filen."
       ],
@@ -3485,6 +3507,9 @@
       ],
       "Plus or Visionary subscription required": [
         "Plus- eller Visionary abonnement påkrævet"
+      ],
+      "Preview": [
+        "Forhåndsvisning"
       ],
       "Preview failed to be loaded": [
         "Forhåndsvisning kunne ikke indlæses"
@@ -4391,6 +4416,9 @@
       ],
       "Level for NetShield blocker filtering": [
         "Niveau for NetShield-blokkerfiltrering"
+      ],
+      "Logo": [
+        "Logo"
       ],
       "Mailbox password": [
         "Postkasseadgangskode"
@@ -6326,6 +6354,14 @@
         "Bruger"
       ]
     },
+    "scim: Action": {
+      "Configure SCIM": [
+        "Konfigurér SCIM"
+      ],
+      "Generate token": [
+        "Generér token"
+      ]
+    },
     "scim: Info": {
       "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ VPN_APP_NAME }.": [
         "Gå til din identitetsudbyder, kopier og indsæt tokenet nedenfor, og genaktiver SCIM for ${ VPN_APP_NAME }."
@@ -6873,9 +6909,6 @@
       ]
     },
     "Storage": {
-      "Release notes": [
-        "Udgivelsesnoter"
-      ],
       "Upgrade storage": [
         "Opgradér lagerplads"
       ],
@@ -7085,6 +7118,9 @@
     "subscription reminder": {
       "and 15 more premium features": [
         "og 15 andre premium-funktioner"
+      ],
+      "Upgrade": [
+        "Opgradering"
       ],
       "We don't sell your data": [
         "Vi sælger ikke dine data"
@@ -7883,9 +7919,6 @@
       ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Vi sender en e-mail til din nye adresse med instruktioner om, hvordan du gennemfører ændringen."
-      ],
-      "What's new": [
-        "Nyheder"
       ],
       "WireGuard configuration": [
         "WireGuard konfiguration"

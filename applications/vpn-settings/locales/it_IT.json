@@ -3499,6 +3499,9 @@
       "Password copied to clipboard": [
         "Password copiata negli appunti"
       ],
+      "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
+        "La password deve contenere almeno ${ MIN_PASSWORD_LENGTH } caratteri."
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "I pagamenti sono protetti dalla crittografia TLS e dalle leggi svizzere sulla privacy."
       ],
@@ -3551,10 +3554,6 @@
       ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Riprova, usa un metodo di pagamento differente o contatta PayPal per assistenza."
-      ],
-      "Please use a password more than ${ MIN_PASSWORD_LENGTH } character.": [
-        "Usa una password più lunga di ${ MIN_PASSWORD_LENGTH } carattere.",
-        "Usa una password più lunga di ${ MIN_PASSWORD_LENGTH } caratteri."
       ],
       "Please use another browser or download the file.": [
         "Usa un altro browser o scarica il file."
@@ -7151,9 +7150,6 @@
       ]
     },
     "Storage": {
-      "Release notes": [
-        "Note di rilascio"
-      ],
       "Upgrade storage": [
         "Aumenta lo spazio disponibile"
       ],
@@ -7358,6 +7354,47 @@
     "Subscription price": {
       "For": [
         "Per"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB di spazio di archiviazione"
+      ],
+      "and 15 more premium features": [
+        "e altre 15 funzionalità premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Inoltro automatico delle email ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Avvisi sulle violazioni di dati ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Applicazione desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Aiutaci a mantenere Internet sicuro e privato per tutti. Passa a un piano a pagamento."
+      ],
+      "No ads or tracking": [
+        "Nessun annuncio o tracciamento"
+      ],
+      "Short @pm.me email address": [
+        "Indirizzo email breve @pm.me"
+      ],
+      "Support our mission": [
+        "Sostieni la nostra missione"
+      ],
+      "Upgrade": [
+        "Effettua l'upgrade"
+      ],
+      "Upgrade your productivity": [
+        "Migliora la tua produttività"
+      ],
+      "We don't sell your data": [
+        "Non vendiamo i tuoi dati"
+      ],
+      "Your privacy is our mission": [
+        "La tua privacy è la nostra missione"
       ]
     },
     "Subscription renewal state": {
@@ -8162,9 +8199,6 @@
       ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Invieremo un'email al tuo nuovo indirizzo con le istruzioni su come completare il cambio."
-      ],
-      "What's new": [
-        "Cosa c'è di nuovo"
       ],
       "WireGuard configuration": [
         "Configurazione di WireGuard"

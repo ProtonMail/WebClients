@@ -549,7 +549,7 @@
         "Enviar"
       ],
       "Upload logo": [
-        "Enviar logo"
+        "Enviar logotipo"
       ],
       "Use ${ label } theme": [
         "Usar o tema ${ label }"
@@ -2041,7 +2041,7 @@
         "Falha no processamento do logotipo"
       ],
       "File too large. Your logo must be 30 KB or smaller.": [
-        "Arquivo muito grande. Seu logo deve ter 30 KB ou menos."
+        "Arquivo muito grande. Seu logotipo deve ter 30 KB ou menos."
       ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Se o tempo na sua TV expirou, clique em Atualizar na sua TV e digite o seu código novamente."
@@ -2149,7 +2149,7 @@
         "Atualize para um plano de negócios com mais de 1 usuário para gerenciar vários usuários."
       ],
       "Please upload a square file": [
-        "Favor enviar um logo quadrado"
+        "Faça upload de um logotipo quadrado"
       ],
       "Please upload an xml file": [
         "Envie um arquivo xml"
@@ -3428,7 +3428,7 @@
         "Não existem endereços"
       ],
       "No changes made to the current subscription": [
-        "Nenhuma alteração feita à assinatura atual"
+        "Nenhuma alteração feita na assinatura atual"
       ],
       "No gateways": [
         "Sem gateways"
@@ -3539,10 +3539,6 @@
       ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Tente novamente, use um método de pagamento diferente ou entre em contato com seu banco."
-      ],
-      "Please use a password more than ${ MIN_PASSWORD_LENGTH } character.": [
-        "Use uma senha que com mais de ${ MIN_PASSWORD_LENGTH } caractere.",
-        "Use uma senha que com mais de ${ MIN_PASSWORD_LENGTH } caracteres."
       ],
       "Please use another browser or download the file.": [
         "Use outro navegador ou baixe o arquivo."
@@ -4067,10 +4063,10 @@
         "Você tem ${ availableCount } servidores dedicados disponíveis."
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
-        "Você tem uma assinatura de avaliação ${ planTitle }. Se quer continuar a sua assinatura após o período de avaliação, adicione um método de pagamento."
+        "Você tem uma assinatura de avaliação do ${ planTitle }. Se deseja continuar com sua assinatura após o período de avaliação, adicione uma forma de pagamento."
       ],
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
-        "Você tem uma assinatura de avaliação ${ planTitle }. Nenhum pagamento é necessário no momento. Sua assinatura será renovada automaticamente ao final do período de avaliação."
+        "Você tem uma assinatura de avaliação do ${ planTitle }. Nenhum pagamento é necessário no momento. Sua assinatura será renovada automaticamente ao final do período de avaliação."
       ],
       "You have no invoices.": [
         "Você não tem faturas."
@@ -4301,7 +4297,7 @@
         "Valor a pagar"
       ],
       "Assertion Consumer Service URL": [
-        "ACS (Assertion Consumer Service) URL"
+        "URL de asserção do serviço do consumidor (ACS)"
       ],
       "Attach screenshot(s)": [
         "Anexar captura(s) de tela"
@@ -4616,10 +4612,10 @@
         "Selecione seu plano"
       ],
       "Single sign-on entity ID": [
-        "ID da entidade de logon único"
+        "ID da entidade de autenticação única"
       ],
       "Single sign-on URL": [
-        "URL único de sign-on"
+        "URL de autenticação única"
       ],
       "Start date": [
         "Data de início"
@@ -4919,7 +4915,7 @@
         "Oferta por tempo limitado, expira em 2 de abril de 2024"
       ],
       "Your subscription will auto-renew on ${ renewTime } at ${ renewablePrice }, cancel anytime": [
-        "Sua assinatura irá se autorrenovar em ${ renewTime } por ${ renewablePrice }, cancele a qualquer momento"
+        "Sua assinatura irá se autor renovar em ${ renewTime } por ${ renewablePrice }, cancele a qualquer momento"
       ]
     },
     "mailtrial2024: Title": {
@@ -5151,7 +5147,7 @@
         "Console de administração"
       ],
       "Administration Panel": [
-        "Painel de administração"
+        "Painel de Administração"
       ],
       "Advanced network security": [
         "Segurança de rede avançada"
@@ -5160,7 +5156,7 @@
         "Segurança avançada de compartilhamento"
       ],
       "Auto-delete Spam and Trash": [
-        "Exclusão automática de pasta de spam e lixeira"
+        "Excluir conteúdo de Spam e Lixeira de forma automática"
       ],
       "Auto-delete spam and trashed messages": [
         "Excluir automaticamente spam e mensagens da lixeira"
@@ -5324,7 +5320,7 @@
         "Suporte a roteador"
       ],
       "Schedule and snooze emails for any time": [
-        "Agendar e adiar e-mails para quando você quiser"
+        "Programe e adie e-mails para qualquer momento"
       ],
       "Schedule messages at any time": [
         "Agende mensagens a qualquer momento"
@@ -5474,7 +5470,7 @@
         "Segurança de rede avançada e gerenciamento de acesso com Gateways seguros dedicados"
       ],
       "Advanced protection for teams that goes beyond industry standards.": [
-        "Proteção avançada para sua equipe que vai além dos padrões da indústria."
+        "Proteção avançada para equipes que vai além dos padrões da indústria."
       ],
       "All ${ BRAND_NAME } apps and their premium features": [
         "Todos os aplicativos da ${ BRAND_NAME } e as suas funcionalidades premium"
@@ -5623,7 +5619,7 @@
         "Permite que você configure respostas automáticas para suas mensagens recebidas"
       ],
       "Automatically clear out messages older than 30 days from Trash and Spam": [
-        "Limpar automaticamente as mensagens com mais de 30 dias da lixeira e do spam"
+        "Limpar automaticamente mensagens com mais de 30 dias da Lixeira e do Spam"
       ],
       "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
         "Encaminhe automaticamente os e-mails enviados para sua conta do ${ MAIL_APP_NAME } para qualquer outro endereço de e-mail."
@@ -5678,7 +5674,7 @@
         "Marcadores são tags simples que podem ser adicionadas a mensagens para que fique mais fácil encontrá-las ou aplicar filtros a elas"
       ],
       "Like a folder, a vault is a convenient way to organize your items": [
-        "Como uma pasta, um cofre é uma maneira conveniente de organizar seus itens."
+        "Como uma pasta, um cofre é uma maneira conveniente de organizar seus itens"
       ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
         "Bloqueie os recursos da sua empresa da Internet pública e torne-os acessíveis apenas através de seus gateways privados"
@@ -6001,7 +5997,7 @@
         "Use um ícone gráfico ou imagem no lugar de texto."
       ],
       "Use a solid background color.": [
-        "Use uma cor de fundo sólido"
+        "Use uma cor de fundo sólida."
       ]
     },
     "Organization logo upload modal": {
@@ -6161,7 +6157,7 @@
         "Permissão negada. Os privilégios de administrador foram restringidos."
       ],
       "Please ensure they have an enabled address and invite them separately later.": [
-        "Certifique-se de que eles tenham um endereço ativo e os convide depois, separadamente."
+        "Certifique-se de que eles tenham um endereço ativado e convide-os separadamente mais tarde."
       ],
       "Private users can be promoted to admin when they've signed in for the first time": [
         "Usuários privados podem ser promovidos a administradores quando fizerem login pela primeira vez"
@@ -6297,10 +6293,10 @@
         "por exemplo https://exemplo.com/app/protonvpn/XXXXX/sso/metadata"
       ],
       "e.g. https://idp.example.com/sso/saml": [
-        "por exemplo https://idp.example.com/sso/saml"
+        "por exemplo https://idp.exemplo.com/sso/saml"
       ],
       "e.g. https://idp.example.com/XXXXX": [
-        "por exemplo https://idp.example.com/XXXXX"
+        "por exemplo https://idp.exemplo.com/XXXXX"
       ],
       "Email address": [
         "Endereço de e-mail"
@@ -6492,7 +6488,7 @@
     },
     "scim: Info": {
       "The SCIM base URL and token will be deleted.": [
-        "O URL e token base do SCIM serão excluídos."
+        "O URL base e o token do SCIM serão excluídos."
       ]
     },
     "scim: Label": {
@@ -6500,7 +6496,7 @@
         "URL base do SCIM"
       ],
       "SCIM base URL (or tenant URL)": [
-        "URL base de SCIM (ou URL do tenant)"
+        "URL base do SCIM (ou URL do tenant)"
       ],
       "SCIM token": [
         "Token SCIM"
@@ -6511,10 +6507,10 @@
         "Desativar integração com SCIM?"
       ],
       "Generate new SCIM token?": [
-        "Gerar novos token SCIM?"
+        "Gerar novo token SCIM?"
       ],
       "SCIM automatic provisioning": [
-        "Aprovisionamento automático de SCIM"
+        "Provisionamento automático SCIM"
       ]
     },
     "Select file": {
@@ -7059,9 +7055,6 @@
       ]
     },
     "Storage": {
-      "Release notes": [
-        "Notas de lançamento"
-      ],
       "Upgrade storage": [
         "Ampliar armazenamento"
       ],
@@ -7159,10 +7152,10 @@
         "Cobrança a cada 15 meses"
       ],
       "Billed for 18 months": [
-        "Cobrança a cada 18 meses"
+        "Cobrado por 18 meses"
       ],
       "Billed for 3 months": [
-        "Cobrança a cada 3 meses"
+        "Cobrado por 3 meses"
       ],
       "Billed for 30 months": [
         "Cobrança a cada 30 meses"
@@ -7266,6 +7259,44 @@
     "Subscription price": {
       "For": [
         "Por"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "Armazenamento de 15 GB"
+      ],
+      "and 15 more premium features": [
+        "e mais 15 recursos premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Encaminhamento de e-mail automático ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertas de violações de dados ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicativo para computador"
+      ],
+      "No ads or tracking": [
+        "Sem anúncios ou rastreamento"
+      ],
+      "Short @pm.me email address": [
+        "Endereço de e-mail curto @pm.me"
+      ],
+      "Support our mission": [
+        "Apoie nossa missão"
+      ],
+      "Upgrade": [
+        "Fazer upgrade"
+      ],
+      "Upgrade your productivity": [
+        "Atualize sua produtividade"
+      ],
+      "We don't sell your data": [
+        "Não vendemos seus dados"
+      ],
+      "Your privacy is our mission": [
+        "Sua privacidade é a nossa missão"
       ]
     },
     "Subscription renewal state": {
@@ -7803,7 +7834,7 @@
         "Insira endpoints em seu provedor de identidade"
       ],
       "Enter SAML metadata": [
-        "Insira os metadados do SAML"
+        "Insira os metadados SAML"
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Entre com sua conta da ${ BRAND_NAME } para participar do programa Beta do ${ app }"
@@ -7930,10 +7961,10 @@
         "Remover domínio"
       ],
       "Remove single sign-on": [
-        "Remover início de sessão único"
+        "Remover autenticação única"
       ],
       "Remove single sign-on for your organization?": [
-        "Remover início de sessão único para sua organização?"
+        "Remover autenticação única da sua organização?"
       ],
       "Remove user?": [
         "Remover usuário?"
@@ -8008,7 +8039,7 @@
         "Iniciado sessão à conta de membro"
       ],
       "Single sign-on": [
-        "Início de sessão único"
+        "Autenticação única"
       ],
       "Status": [
         "Status"
@@ -8070,9 +8101,6 @@
       ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Enviamos um e-mail para o seu novo endereço com as instruções para completar a mudança."
-      ],
-      "What's new": [
-        "Novidades"
       ],
       "WireGuard configuration": [
         "Configuração do WireGuard"
@@ -8151,7 +8179,7 @@
         "Copie e cole este URL no campo ID do seu provedor de identidade"
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
-        "URL do Endpoint URL do provedor de identidade (por exemplo, https://idp.example.com/sso/saml)"
+        "URL do endpoint do provedor de identidade (por exemplo, https://idp.exemplo.com/sso/saml)"
       ],
       "Feature in early access": [
         "Recurso em acesso antecipado"
@@ -8280,13 +8308,13 @@
     },
     "vpn_2024: renew": {
       "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
-        "A assinatura se renova automaticamente todo mês. Sua próxima data de cobrança será em 1 mês."
+        "A assinatura é renovada automaticamente a cada 1 mês. Sua próxima data de faturamento será em 1 mês."
       ],
       "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
         "A assinatura é renovada automaticamente a cada 3 meses. Sua próxima data de faturamento será em 3 meses."
       ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
-        "Você então será cobrado ${ renewPrice } a cada 12 meses."
+        "Você será cobrado a cada 12 meses no valor de ${ renewPrice }."
       ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Sua assinatura será renovada automaticamente em ${ cycle } mês.",

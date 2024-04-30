@@ -2579,7 +2579,7 @@
     },
     "fido2: Error": {
       "Please disable 2FA via security key before disabling TOTP": [
-        "Poista kaksivaiheinen todennus todennuslaitteella käytöstä ennen TOTP:n käytöstäpoistoa"
+        "Poista kaksivaiheinen tunnistautuminen todennuslaitteella käytöstä ennen TOTP:n käytöstäpoistoa"
       ],
       "Something went wrong authenticating with your security key. Please try again.": [
         "Jotain meni pieleen todennuslaitteellasi tunnistauduttaessa. Yritä uudelleen."
@@ -2590,7 +2590,7 @@
     },
     "fido2: Info": {
       "2FA via security key disabled": [
-        "Kaksivaiheinen todennus todennuslaitteella poistettiin käytöstä"
+        "Kaksivaiheinen tunnistautuminen todennuslaitteella poistettiin käytöstä"
       ],
       "Add a name to identify your security key with.": [
         "Anna todennuslaitteellesi tunnistettava nimi."
@@ -2599,7 +2599,7 @@
         "Salli alustojen avaimet"
       ],
       "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
-        "Mahdollistaa sisäänrakennettujen todennuslaitteiden käytön (esim. Windows Hello, Face ID, Touch ID tai sisäiset TPM-piirit)"
+        "Mahdollistaa sisäänrakennettujen todennuslaitteiden käyttämisen (esim. Windows Hello, Face ID, Touch ID tai sisäiset TPM-piirit)"
       ],
       "Are you sure you want to delete security key ${ name }?": [
         "Haluatko varmasti poistaa todennuslaitteen ${ name }?"
@@ -2623,7 +2623,7 @@
         "Tämä poistaa kaikki tiliisi liitetyt todennuslaitteet."
       ],
       "To turn on 2FA via security key, you'll need to activate 2FA via authenticator app": [
-        "Käyttääksesi kaksivaiheista todennusta todennuslaitteella, on kaksivaiheinen todennus todennussovelluksella otettava käyttöön"
+        "Käyttääksesi kaksivaiheista tunnistautumista todennuslaitteella, on kaksivaiheinen tunnistautuminen todennussovelluksella otettava käyttöön"
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Vahvista henkilöllisyytesi fyysisellä U2F- tai FIDO2-todennuslaitteella"
@@ -2645,7 +2645,7 @@
         "Poistetaanko todennuslaite?"
       ],
       "Disable 2FA via security key?": [
-        "Poistetaanko kaksivaiheinen todennus todennuslaitteella käytöstä?"
+        "Poistetaanko kaksivaiheinen tunnistautuminen todennuslaitteella käytöstä?"
       ],
       "Name your security key": [
         "Nimeä todennuslaitteesi"
@@ -2957,7 +2957,7 @@
         "lisäät palautustavan"
       ],
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
-        "Lisää tilillesi yksi suojauskerros. Sinun on tunnistauduttava kaksivaiheisella todennuksella jokaisen kirjautumisen yhteydessä."
+        "Lisää tilillesi yksi suojauskerros. Sinun on suoritettava kaksivaiheinen tunnistautuminen jokaisen kirjautumisen yhteydessä."
       ],
       "Add domain": [
         "Lisää verkkotunnus"
@@ -3015,7 +3015,7 @@
         "Haluatko varmasti poistaa osoitteen?"
       ],
       "Are you sure you want to disable two-factor authentication?": [
-        "Haluatko varmasti poistaa kaksivaiheisen todennuksen käytöstä?"
+        "Haluatko varmasti poistaa kaksivaiheisen tunnistautumisen käytöstä?"
       ],
       "Are you sure you want to discard your changes?": [
         "Haluatko varmasti hylätä muutokset?"
@@ -3314,10 +3314,10 @@
         "Jos sinulla on lahjakoodi, syötä se alle hyödyntääksesi alennuksen."
       ],
       "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
-        "Jos et ole koskaan käyttänyt kaksivaiheista todennusta, suosittelemme vahvasti, että ${ guideButton }."
+        "Jos et ole koskaan käyttänyt kaksivaiheista tunnistautumista, suosittelemme vahvasti, että ${ guideButton }."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
-        "Jos menetät todennuslaitteesi, voit kirjautua tilillesi käyttäen näitä koodeja 6-numeroisen kaksivaiheisen todennuskoodin sijaan. Yksittäistä koodia voidaan käyttää vain kerran."
+        "Jos menetät todennuslaitteesi, voit kirjautua tilillesi käyttäen näitä koodeja 6-numeroisen todennuskoodin sijaan. Koodit ovat kertakäyttöisiä."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Jos jatkat alennusta, menetät maksullisten ${ MAIL_APP_NAME } ja ${ VPN_APP_NAME } -ominaisuuksien käyttöoikeuden."
@@ -3413,7 +3413,7 @@
         "Varmista, että ${ addARecoveryMethod }, jotta pääset tilillesi takaisin, mikäli unohdat salasanasi."
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Syötä nämä tiedot todennuslaitteellesi tilisi määrittämiseksi. ${ switchButton }."
+        "Määritä tilisi syöttämällä nämä tiedot todennuslaitteellesi. ${ switchButton }."
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode -logo"
@@ -3549,10 +3549,6 @@
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Yritä uudelleen, käytä eri maksutapaa tai ota yhteyttä PayPalin asiakaspalveluun."
       ],
-      "Please use a password more than ${ MIN_PASSWORD_LENGTH } character.": [
-        "Käytä salasanaa, joka sisältää enemmän kuin ${ MIN_PASSWORD_LENGTH } merkin.",
-        "Käytä salasanaa, joka sisältää enemmän kuin ${ MIN_PASSWORD_LENGTH } merkkiä."
-      ],
       "Please use another browser or download the file.": [
         "Käytä toista selainta tai lataa tiedosto."
       ],
@@ -3575,7 +3571,7 @@
         "Tämän tiedostotyypin esikatselua ei tällä hetkellä tueta tässä selaimessa."
       ],
       "Preview for this file type is not supported": [
-        "Tämän tiedoston esikatselua ei tueta"
+        "Tämän tiedostotyypin esikatselua ei tueta"
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Hinta sisältää kaikki tilillesi tallennetut soveltuvat tilausjaksopohjaiset alennukset sekä etukoodit."
@@ -3629,7 +3625,7 @@
         "Skannaa sen sijaan QR-koodi"
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Skannaa tämä koodi todennuslaitteellasi tilisi määrittämiseksi. ${ switchButton }."
+        "Määritä tilisi skannaamalla tämä koodi todennuslaitteellasi. ${ switchButton }."
       ],
       "Secure your ${ BRAND_NAME } Account": [
         "Turvaa ${ BRAND_NAME }-tilisi"
@@ -3735,7 +3731,7 @@
         "Seuraavia osoitteita ei luotu."
       ],
       "The following members will receive an email prompting them to enable two-factor authentication as soon as possible.": [
-        "Seuraavat jäsenet saavat sähköpostiviestin, jossa heitä kehotetaan ottamaan kaksivaiheinen todennus käyttöön mahdollisimman pian."
+        "Seuraavat jäsenet saavat sähköpostiviestin, jossa heitä kehotetaan ottamaan kaksivaiheinen tunnistautuminen käyttöön mahdollisimman pian."
       ],
       "The format of your CSV file is incorrect.": [
         "CSV-tiedoston muoto on virheellinen."
@@ -3804,7 +3800,7 @@
         "Tämä kirjaa ulos kaikki aktiiviset istuntosi ja poistaa kaksivaiheisen todennuksen käytöstä."
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
-        "Tämä ohjattu toiminto ottaa käyttöön kaksivaiheisen todennuksen (2FA) ${ BRAND_NAME } -tililläsi. Kaksivaiheinen todennus tekee ${ BRAND_NAME_TWO } -tilisi turvallisemmaksi, joten suosittelemme sen ottamista käyttöön."
+        "Tämä ohjattu toiminto aktivoi kaksivaiheisen tunnistautumisen (2FA) ${ BRAND_NAME }-tilillesi. Se vahvistaa ${ BRAND_NAME_TWO }-tilisi suojausta, joten suosittelemme käyttöönottoa."
       ],
       "to ${ product } Business": [
         "palveluun ${ product } Business"
@@ -3858,10 +3854,10 @@
         "VPN-yhteyksiä yhteensä"
       ],
       "Two-factor authentication disabled": [
-        "Kaksivaiheinen todennus poistettiin käytöstä"
+        "Kaksivaiheinen tunnistautuminen poistettiin käytöstä"
       ],
       "Two-factor authentication enabled": [
-        "Kaksivaiheinen todennus otettiin käyttöön"
+        "Kaksivaiheinen tunnistautuminen otettiin käyttöön"
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
         "Kahden salasanan tila vaatii kaksi salasanaa: Yhden tilillesi kirjautumiseen ja toisen postilaatikkosi salauksen purkuun. (Edistynyt)"
@@ -3924,7 +3920,7 @@
         "Vahvista verkkotunnus"
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
-        "Vahvista henkilöllisyytesi todennussovelluksen näyttämällä aikaan perustuvalla kertakäyttökoodilla"
+        "Tunnistaudu todennussovelluksen näyttämällä, aikaan perustuvalla kertakäyttökoodilla"
       ],
       "Verifying your payment": [
         "Vahvistetaan maksua"
@@ -4002,7 +3998,7 @@
         "${ appName } SAML-toiminnallisuuden lisäämiseksi identiteetinhallintaasi, sinun on mahdollisesti lisättävä takaisinkutsun (ACS) URL sekä myöntäjän ID. Kopioi ja liitä allaolevat tiedot identiteetinhallintasi soveltuviin tietokenttiin."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Määrittäessäsi kaksivaiheisen todennuksen saat myös palautuskoodit, joiden avulla voit kirjautua vaikka menettäisit pääsyn todennussovellukseesi."
+        "Määrittäessäsi kaksivaiheisen tunnistautumisen saat palautuskoodit, joiden avulla voit kirjautua myös silloin, kun et voi käyttää todennussovellustasi."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Kun tilauksesi uudistuu, kulutetaan ensin kaikki tilillä olevat krediitit ennen yllä määritetyn maksutavan veloitusta."
@@ -4023,7 +4019,7 @@
         "Ilman aktivointia et voi luoda uusia käyttäjiä, lisätä osoitteita olemassa oleville käyttäjille, etkä käyttää muita kuin yksityisiä käyttäjätilejä."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
-        "Haluatko uuden vahvistuskoodin vai käyttää vaihtoehtoista todennustapaa?"
+        "Haluatko uuden vahvistuskoodin vai käyttää vaihtoehtoista tunnistautumistapaa?"
       ],
       "Would you like to receive a new verification code?": [
         "Haluatko uuden vahvistuskoodin?"
@@ -4857,8 +4853,8 @@
     },
     "Loading info": {
       "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
-        "${ twoFAMembers.length }/${ members.length } organisaatiosi jäsen käyttää kaksivaiheista todennusta.",
-        "${ twoFAMembers.length }/${ members.length } organisaatiosi jäsentä käyttää kaksivaiheista todennusta."
+        "${ twoFAMembers.length }/${ members.length } organisaatiosi jäsen käyttää kaksivaiheista tunnistautumista.",
+        "${ twoFAMembers.length }/${ members.length } organisaatiosi jäsentä käyttää kaksivaiheista tunnistautumista."
       ]
     },
     "locked_state_storage_banner: info": {
@@ -5388,7 +5384,7 @@
         "Tor + VPN"
       ],
       "Two-factor authentication": [
-        "Kaksivaiheinen todennus"
+        "Kaksivaiheinen tunnistautuminen"
       ],
       "Unlimited devices": [
         "Rajattomasti laitteita"
@@ -5415,7 +5411,7 @@
         "Rajattomasti viestejä päivässä"
       ],
       "Unlimited shared vaults with access permissions": [
-        "Rajattomasti jaettuja holveja käyttöoikeuksilla"
+        "Rajattomasti jaettuja holveja erityisillä käyttöoikeuksilla"
       ],
       "Unlimited vault sharing": [
         "Rajattomasti holvin jakoja"
@@ -5747,7 +5743,7 @@
         "Kirjautumiseen tarvitaan matkapuhelimeen lähetettävä koodi. Tällä varmistetaan tilin suojaus vaikka salasana olisi vaarantunut."
       ],
       "Reset user passwords and reset two-factor authentication on users": [
-        "Nollaa käyttäjien salasanat ja palauta kaksivaiheinen todennus oletustilaan"
+        "Nollaa käyttäjien salasanat ja palauta kaksivaiheinen tunnistautuminen oletustilaan"
       ],
       "Route your internet traffic through the Tor network with a single click": [
         "Ohjaa Internet-tietoliikenteesi Tor-verkon kautta yhdellä painalluksella"
@@ -5866,7 +5862,7 @@
         "Yksityiset yhdyskäytävät"
       ],
       "Require 2FA": [
-        "Pakotettava kaksivaiheinen todennus"
+        "Pakotettava kaksivaiheinen tunnistautuminen"
       ]
     },
     "Notification": {
@@ -5892,13 +5888,13 @@
         "Muistutus on lähetetty"
       ],
       "Two-factor authentication has been enforced for administrators": [
-        "Kaksivaiheinen todennus on pakotettu ylläpitäjille"
+        "Kaksivaiheinen tunnistautuminen on pakotettu ylläpitäjille"
       ],
       "Two-factor authentication has been enforced for all members": [
-        "Kaksivaiheinen todennus on pakotettu kaikille jäsenille"
+        "Kaksivaiheinen tunnistautuminen on pakotettu kaikille jäsenille"
       ],
       "Two-factor authentication is not required anymore": [
-        "Kaksivaiheista todennusta ei enää vaadita"
+        "Kaksivaiheista tunnistautumista ei enää vaadita"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -6141,7 +6137,7 @@
         "**Kaikki olemassa olevat tietosi** (viestit, tapahtumat, yhteystiedot, tiedostot, ${ PASS_APP_NAME } -tietueet, yms.) **lukitaan** ja voidaan avata vain **palautuslausekkeellasi** tai **vanhalla salasanallasi**."
       ],
       "Any **two-factor authentication (2FA)** method on your account will be disabled.": [
-        "Kaikki tilillesi määritetyt **kaksivaiheiset todennusmenetelmät (2FA)** poistetaan käytöstä."
+        "Kaikki tilillesi määritetyt **kaksivaiheisen tunnistautumisen (2FA)** todennustavat poistetaan käytöstä."
       ]
     },
     "passwordless": {
@@ -6506,8 +6502,14 @@
       ]
     },
     "scim: Info": {
+      "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
+        "**Edellytys:** SCIM-provisioinnin käyttöönotto vaatii SAML-todennuksen määritystä."
+      ],
       "Enter token into your identity provider": [
         "Syötä tunniste identiteettipalveluntarjoajallesi"
+      ],
+      "Enter URL and token into your identity provider": [
+        "Syötä URL-osoite ja tunniste identiteettipalveluntarjoajallesi"
       ],
       "For security reasons, the token is hidden": [
         "Tunniste on tietoturvasyistä piilotettu"
@@ -7085,9 +7087,6 @@
       ]
     },
     "Storage": {
-      "Release notes": [
-        "Julkaisutiedot"
-      ],
       "Upgrade storage": [
         "Hanki lisää tallennustilaa"
       ],
@@ -7292,6 +7291,47 @@
     "Subscription price": {
       "For": [
         "Hintaan"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 Gt tallennustilaa"
+      ],
+      "and 15 more premium features": [
+        "sekä 15 muuta premium-ominaisuutta"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automaattinen sähköpostiohjaus ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Tietovuotohälytykset ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Työpöytäsovellus"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Auta meitä pitämään Internet kaikille turvallisena. Päivitä maksulliseen tilaukseen."
+      ],
+      "No ads or tracking": [
+        "Ei mainoksia eikä seurantaa"
+      ],
+      "Short @pm.me email address": [
+        "Lyhyt @pm.me-sähköpostiosoite"
+      ],
+      "Support our mission": [
+        "Tue tehtäväämme"
+      ],
+      "Upgrade": [
+        "Päivitä tilaus"
+      ],
+      "Upgrade your productivity": [
+        "Tehosta tuottavuuttasi"
+      ],
+      "We don't sell your data": [
+        "Emme myy tietojasi"
+      ],
+      "Your privacy is our mission": [
+        "Yksityisyytesi on tehtävämme"
       ]
     },
     "Subscription renewal state": {
@@ -7775,7 +7815,7 @@
         "Poista ${ email } käytöstä"
       ],
       "Disable two-factor authentication": [
-        "Poista kaksivaiheinen todennus käytöstä"
+        "Poista kaksivaiheinen tunnistautuminen käytöstä"
       ],
       "Downgrade account": [
         "Alenna tili"
@@ -8004,7 +8044,7 @@
         "Aseta organisaation nimi"
       ],
       "Set up two-factor authentication": [
-        "Määritä kaksivaiheinen todennus"
+        "Määritä kaksivaiheinen tunnistautuminen"
       ],
       "Set your password": [
         "Aseta salasanasi"
@@ -8059,13 +8099,13 @@
         "Televisioon kirjautuminen"
       ],
       "Two-factor authentication": [
-        "Kaksivaiheinen todennus"
+        "Kaksivaiheinen tunnistautuminen"
       ],
       "Two-factor authentication enforcement": [
-        "Kaksivaiheisen todennuksen valvonta"
+        "Kaksivaiheisen tunnistautumisen valvonta"
       ],
       "Two-factor authentication reminders": [
-        "Kaksivaiheisen todennuksen muistutukset"
+        "Kaksivaiheisen tunnistautumisen muistutukset"
       ],
       "Type": [
         "Tyyppi"
@@ -8096,9 +8136,6 @@
       ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Lähetämme uuteen osoitteeseesi sähköpostiviestin, jossa on ohjeet muutoksen tekemiseen."
-      ],
-      "What's new": [
-        "Mitä uutta"
       ],
       "WireGuard configuration": [
         "WireGuard-määritykset"

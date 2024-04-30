@@ -3499,6 +3499,9 @@
       "Password copied to clipboard": [
         "Passord kopiert til utklippstavlen"
       ],
+      "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
+        "Passordet må være ${ MIN_PASSWORD_LENGTH } tegn eller mer."
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Betalinger er beskyttet med TLS-kryptering og sveitsiske personvernlover."
       ],
@@ -3551,10 +3554,6 @@
       ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Vennligst prøv igjen, bruk en annen betalingsmåte, eller kontakt PayPal for hjelp."
-      ],
-      "Please use a password more than ${ MIN_PASSWORD_LENGTH } character.": [
-        "Vennligst bruk et passord med mer enn ${ MIN_PASSWORD_LENGTH } tegn.",
-        "Vennligst bruk et passord med mer enn ${ MIN_PASSWORD_LENGTH } tegn"
       ],
       "Please use another browser or download the file.": [
         "Vennligst bruk en annen nettleser eller last ned filen."
@@ -7148,9 +7147,6 @@
       ]
     },
     "Storage": {
-      "Release notes": [
-        "Utgivelsesmerknader"
-      ],
       "Upgrade storage": [
         "Oppgrader lagringsplass"
       ],
@@ -8198,9 +8194,6 @@
       "We'll send an email to your new address with instructions on completing the change.": [
         "Vi vil sende deg en e-post til din nye adresse med instruksjoner om hvordan du fullfører endringen."
       ],
-      "What's new": [
-        "Hva er nytt"
-      ],
       "WireGuard configuration": [
         "WireGuard-konfigurering"
       ],
@@ -8414,6 +8407,9 @@
       ],
       "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
         "Abonnementet fornyes automatisk hver 3. måned. Neste faktureringsdato er om 3 måneder."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Den spesielt rabatterte prisen på ${ priceWithDiscount } er gyldig den første måneden. Da blir den automatisk fornyet til ${ renewPrice } hver måned. Du kan avbryte når som helst."
       ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Du blir deretter fakturert hver 12. måned til ${ renewPrice }."

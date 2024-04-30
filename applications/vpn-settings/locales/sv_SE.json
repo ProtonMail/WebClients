@@ -709,6 +709,9 @@
       "Browse the web privately and block ads": [
         "Surfa på webben privat och blockera annonser"
       ],
+      "Keep your schedule private": [
+        "Håll ditt schema privat"
+      ],
       "Protect your passwords and identity": [
         "Skydda dina lösenord och din identitet"
       ],
@@ -3493,6 +3496,9 @@
       "Password copied to clipboard": [
         "Lösenord kopierat till urklipp"
       ],
+      "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
+        "Lösenord måste vara ${ MIN_PASSWORD_LENGTH } tecken eller mer."
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Betalningar skyddas med TLS-kryptering och Schweiziska integritetslagar."
       ],
@@ -3545,10 +3551,6 @@
       ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Försök igen, använd en annan betalningsmetod eller kontakta PayPal för hjälp."
-      ],
-      "Please use a password more than ${ MIN_PASSWORD_LENGTH } character.": [
-        "Använd ett lösenord som är mer än ${ MIN_PASSWORD_LENGTH } tecken.",
-        "Använd ett lösenord som är mer än ${ MIN_PASSWORD_LENGTH } tecken."
       ],
       "Please use another browser or download the file.": [
         "Använd en annan webbläsare eller ladda ner filen."
@@ -6553,6 +6555,9 @@
       ]
     },
     "Select invoice document": {
+      "Credit note": [
+        "Kreditfaktura"
+      ],
       "Currency conversion": [
         "Valutaomvandling"
       ],
@@ -7086,9 +7091,6 @@
       ]
     },
     "Storage": {
-      "Release notes": [
-        "Utgivningsnoteringar"
-      ],
       "Upgrade storage": [
         "Uppgradera lagringsutrymme"
       ],
@@ -7313,6 +7315,9 @@
       ],
       "No ads or tracking": [
         "Inga annonser eller spårning"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-postadress"
       ],
       "Support our mission": [
         "Stöd vårt uppdrag"
@@ -8132,9 +8137,6 @@
       ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Vi skickar ett e-postmeddelande till din nya adress med instruktioner om hur du slutför ändringen."
-      ],
-      "What's new": [
-        "Vad som är nytt"
       ],
       "WireGuard configuration": [
         "WireGuard-konfiguration"
