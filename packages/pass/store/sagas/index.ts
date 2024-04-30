@@ -48,9 +48,9 @@ import breachesCustom from './monitor/breaches.custom.saga';
 import breachesProton from './monitor/breaches.proton.saga';
 import breaches from './monitor/breaches.saga';
 import customAddressAdd from './monitor/custom-address.add.saga';
-import customAddressToggle from './monitor/custom-address.toggle.saga';
 import customAddressVerify from './monitor/custom-address.verify';
 import customAddressDelete from './monitor/delete.custom.saga';
+import monitorAddressToggle from './monitor/monitor-address.toggle.saga';
 import monitorToggle from './monitor/monitor-toggle.saga';
 import resolveAlias from './monitor/resolve.alias.saga';
 import resolveCustom from './monitor/resolve.custom.saga';
@@ -85,7 +85,6 @@ export function* workerRootSaga(options: RootSagaOptions) {
             cache,
             customAddressAdd,
             customAddressDelete,
-            customAddressToggle,
             customAddressVerify,
             events,
             featureFlags,
@@ -113,6 +112,8 @@ export function* workerRootSaga(options: RootSagaOptions) {
             itemsImport,
             itemTrash,
             itemUnpin,
+            monitorAddressToggle,
+            monitorToggle,
             newUserInvitePromote,
             newUserInviteRemove,
             notification,
@@ -123,7 +124,6 @@ export function* workerRootSaga(options: RootSagaOptions) {
             resolveCustom,
             resolveProton,
             sentinelToggle,
-            monitorToggle,
             sessionLockDisable,
             sessionLockEnable,
             sessionLockImmediate,

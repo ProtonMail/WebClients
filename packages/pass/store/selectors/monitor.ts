@@ -29,9 +29,7 @@ export const selectMonitorPreview = createSelector(selectMonitorState, (monitor)
 export const selectTotalBreaches = createSelector(selectMonitorState, (monitor) => monitor?.total);
 export const selectHasCustomDomains = createSelector(selectMonitorState, (monitor) => monitor?.customDomains);
 
-export const selectAliasBreaches = createSelector(selectMonitoredAliases, (items) =>
-    items.map(intoAliasMonitorAddress)
-);
+export const selectAliasBreaches = createSelector(selectAliasItems, (items) => items.map(intoAliasMonitorAddress));
 
 export const selectMonitorSettings = ({ user }: State) => user.monitor;
 
