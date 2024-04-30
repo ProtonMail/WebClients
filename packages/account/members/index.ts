@@ -130,11 +130,13 @@ const slice = createSlice({
 
 const promiseCache = createPromiseCache<Model>();
 
-const modelThunk = (): ThunkAction<Promise<Model>, MembersState, ProtonThunkArguments, UnknownAction> => {
+const modelThunk = (options?: {
+    forceFetch?: boolean;
+}): ThunkAction<Promise<Model>, MembersState, ProtonThunkArguments, UnknownAction> => {
     return (dispatch, getState, extraArgument) => {
         const select = () => {
             const oldValue = selectMembers(getState());
-            if (oldValue?.value !== undefined) {
+            if (oldValue?.value !== undefined && !options?.forceFetch) {
                 return Promise.resolve(oldValue.value);
             }
         };
