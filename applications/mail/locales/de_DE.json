@@ -4015,9 +4015,6 @@
       "You have reached the contacts limit for your account": [
         "Du hast das Kontaktlimit für dein Konto erreicht."
       ],
-      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
-        "Du hast die maximale Anzahl von Kalendern erreicht, die du in deinem Abonnement erstellen kannst. Einige Kalender konnten nicht importiert werden."
-      ],
       "You must set a name": [
         "Du musst einen Namen eingeben"
       ],
@@ -9872,6 +9869,9 @@
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel ist **aktiv** und schützt dein Konto."
+      ],
+      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLink }": [
+        "Deine Informationen wurden bei mindestens einem Datenleck gefunden. Schalte ${ DARK_WEB_MONITORING_NAME } ein, um Details anzuzeigen und Maßnahmen zu ergreifen. ${ learnMoreLink }"
       ]
     },
     "Select files": {
@@ -10437,6 +10437,9 @@
       "Schedule send": [
         "Senden planen"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME } to get notified if your data was leaked from a third-party service.": [
+        "Aktiviere ${ DARK_WEB_MONITORING_NAME }, um benachrichtigt zu werden, wenn deine Daten von einem Service eines Drittanbieters entwendet wurden."
+      ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Bilder werden jetzt standardmäßig geladen und deren Absender können dich nicht mehr zurückverfolgen.\nDies kann in den ${ settingsLink } geändert werden."
       ],
@@ -10474,9 +10477,6 @@
     "Storage": {
       "Get more storage": [
         "Mehr Speicherplatz erhalten"
-      ],
-      "Release notes": [
-        "Versionshinweise"
       ],
       "Upgrade storage": [
         "Mehr Speicher hinzufügen"
@@ -11843,9 +11843,6 @@
       ],
       "What would you like to import?": [
         "Was möchtest du importieren?"
-      ],
-      "What's new": [
-        "Neuigkeiten"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Deine kostenlose Testversion von ${ planName } endet am ${ textDate }."

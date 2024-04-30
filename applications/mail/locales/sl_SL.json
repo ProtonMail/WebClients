@@ -854,7 +854,7 @@
         "Obnovi podatke"
       ],
       "Refer a friend": [
-        "Priporočite prijatelja"
+        "Priporočite prijatelju"
       ],
       "Refine it": [
         "Zožite ga"
@@ -896,7 +896,7 @@
         "Odgovori varno"
       ],
       "Report a problem": [
-        "Prijavi težavo"
+        "Prijavite težavo"
       ],
       "Report phishing": [
         "Prijavi lažno predstavljanje"
@@ -905,7 +905,7 @@
         "Zahtevajte klic"
       ],
       "Request a feature": [
-        "Zahtevaj funkcijo"
+        "Predlagajte novo funkcijo"
       ],
       "Request new code": [
         "Zahtevaj novo kodo"
@@ -3325,7 +3325,7 @@
         "Z nadgradnjo odklenete neomejeno število map, oznak in več premijskih funkcij."
       ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
-        "Nadgradite svoj račun, da aktivirate ${ PROTON_SENTINEL_NAME }, našo vrhunsko varnostno rešitev, ki temelji na umetni inteligenci, z namensko 24//-urno strokovno podporo."
+        "Nadgradite svoj račun, da aktivirate ${ PROTON_SENTINEL_NAME }, našo vrhunsko varnostno rešitev, ki temelji na umetni inteligenci, z namensko neprekinjeno strokovno podporo."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Z vlečenjem in spuščanjem določite prioriteto združevanja med stiki. Poleg stikov, ki jih ne želite združiti, pobrišite potrditvena polja."
@@ -3667,7 +3667,7 @@
         "Ni bilo mogoče odpreti ustvarjenega trezorja"
       ],
       "Could not open updated vault": [
-        "Ni bilo mogoče odpreti ustvarjenega trezorja"
+        "Ni bilo mogoče odpreti posodobljenega trezorja"
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Napaka pri dešifriranju: dešifriranje šifrirane vsebine tega sporočila ni uspelo."
@@ -4076,9 +4076,6 @@
       ],
       "You have reached the contacts limit for your account": [
         "Dosegli ste mejo za število stikov v vašem računu."
-      ],
-      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
-        "Dosegli ste največje možno število koledarjev. Nekateri koledarji se niso mogli uvoziti."
       ],
       "You must set a name": [
         "Vnesti morate ime"
@@ -6548,7 +6545,7 @@
         "Danes zaščitite svoje datoteke z brezplačnim šifriranim shranjevanjem v oblaku."
       ],
       "Seems like you are all caught up for now": [
-        "Videti je, da ste zaenkrat na tekočem"
+        "Videti je, da ste zaenkrat na tekočem."
       ],
       "Select a service provider to start": [
         "Za začetek izberite ponudnika storitve"
@@ -6605,7 +6602,7 @@
         "SimpleLogin je storitev ${ BRAND_NAME } in vaš račun ${ BRAND_NAME_TWO } vključuje vzdevke hide-my-email. Pojdite na SimpleLogin in ustvarite vaše prve vzdevke za maskiranje vašega e-poštnega naslova."
       ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
-        "SimpleLogin vam omogoča preprost način za ustvarjanje dostopnih podatkov na spletnih straneh zaupanja nevrednih tretjih strank, kjer se ne želite izpostaviti s svojim dejanskim e-poštnim naslovom."
+        "SimpleLogin vam omogoča preprost način za ustvarjanje prijavnih podatkov na spletnih straneh, ki niso vredne zaupanja in kjer se ne želite izpostaviti s svojim dejanskim e-poštnim naslovom."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Ker ste zvest uporabnik, smo vašemu računu omogočili dodatne funkcionalnosti."
@@ -10563,7 +10560,7 @@
     },
     "Sort option": {
       "Largest first": [
-        "Najprej največji"
+        "Najprej največje"
       ],
       "Newest first": [
         "Najprej najnovejše"
@@ -10572,7 +10569,7 @@
         "Najprej najstarejše"
       ],
       "Smallest first": [
-        "Najprej najmanjši"
+        "Najprej najmanjše"
       ]
     },
     "specialoffer: Action": {
@@ -10846,9 +10843,6 @@
     "Storage": {
       "Get more storage": [
         "Pridobite več prostora"
-      ],
-      "Release notes": [
-        "Opombe k izdaji"
       ],
       "Upgrade storage": [
         "Nadgradi shrambo"
@@ -11890,7 +11884,7 @@
         "Skupine"
       ],
       "Hide your email with SimpleLogin by ${ BRAND_NAME }": [
-        "Skrijte svoj e-poštni naslov s SimpleLogin od ${ BRAND_NAME }."
+        "Skrijte svoj e-poštni naslov s SimpleLogin, ki je del storitev ${ BRAND_NAME }."
       ],
       "Human verification": [
         "Ali si človek"
@@ -12293,9 +12287,6 @@
       ],
       "What would you like to import?": [
         "Kaj želite uvoziti?"
-      ],
-      "What's new": [
-        "Novosti"
       ],
       "Your account is protected": [
         "Vaš račun je zaščiten"
