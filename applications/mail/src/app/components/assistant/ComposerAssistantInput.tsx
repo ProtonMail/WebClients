@@ -39,6 +39,7 @@ const ComposerAssistantInput = ({ onGenerateResult }: Props) => {
     const getLeftIcon = () => {
         // We have no way to differentiate the download step from the loading GPU state at this point
         // So if we have a progress, we're downloading so we can show the progress bar, otherwise show a spinner
+        // (TODO) UPDATE: now, can differentiate download and load, so maybe this can be changed?
         const progress = downloadModelProgress * 100;
         const showDownloadProgress = isModelDownloading && progress > 0 && progress < 100;
 
