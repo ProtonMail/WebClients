@@ -1,7 +1,7 @@
 import { ReactNode, createContext, useContext, useRef } from 'react';
 
 import { APP_NAMES } from '@proton/shared/lib/constants';
-import { hasInboxDesktopFeature, invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
+import { invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
 import { isManagedExternally } from '@proton/shared/lib/helpers/subscription';
 import { Nullable } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
@@ -10,7 +10,8 @@ import noop from '@proton/utils/noop';
 
 import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, useModalState } from '../../../components';
 import { useOrganization, usePlans, useSubscription } from '../../../hooks';
-import { redirectToAccountApp } from '../../desktop/openExternalLink';
+import { useHasInboxDesktopInAppPayments } from '../../desktop/useHasInboxDesktopInAppPayments';
+import { useRedirectToAccountApp } from '../../desktop/useRedirectToAccountApp';
 import InAppPurchaseModal from './InAppPurchaseModal';
 import SubscriptionContainer, { SubscriptionContainerProps } from './SubscriptionContainer';
 import { SUBSCRIPTION_STEPS, subscriptionModalClassName } from './constants';
@@ -65,6 +66,8 @@ const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
     const plans = plansResult?.plans || [];
     const freePlan = plansResult?.freePlan || FREE_PLAN;
     const [organization, loadingOrganization] = useOrganization();
+    const redirectToAccountApp = useRedirectToAccountApp();
+    const hasInboxDesktopInAppPayments = useHasInboxDesktopInAppPayments();
 
     const loading = loadingSubscription || loadingPlans || loadingOrganization;
 
@@ -87,12 +90,12 @@ const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
                 ...rest
             } = subscriptionProps.current;
 
-            if (hasInboxDesktopFeature('InAppPayments')) {
+            if (hasInboxDesktopInAppPayments) {
                 invokeInboxDesktopIPC({ type: 'subscriptionModalOpened', payload: 'subscriptionModalStarted' });
             }
 
             const handleClose = () => {
-                if (hasInboxDesktopFeature('InAppPayments')) {
+                if (hasInboxDesktopInAppPayments) {
                     invokeInboxDesktopIPC({ type: 'subscriptionModalOpened', payload: 'subscriptionModalFinished' });
                 }
 

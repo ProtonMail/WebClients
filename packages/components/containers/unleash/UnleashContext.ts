@@ -30,6 +30,7 @@ enum AccountFlag {
     BreachesAccountDashboard = 'BreachesAccountDashboard',
     AddressDeletion = 'AddressDeletion',
     ScimTenantCreation = 'ScimTenantCreation',
+    InboxDesktopInAppPayments = 'InboxDesktopInAppPayments',
     InboxDesktopThemeSelection = 'InboxDesktopThemeSelection',
     NewCancellationFlow = 'NewCancellationFlow',
 }

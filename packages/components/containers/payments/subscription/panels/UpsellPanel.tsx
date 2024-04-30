@@ -6,9 +6,9 @@ import { Button } from '@proton/atoms/Button';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
 import { Icon, StripedItem, StripedList } from '@proton/components/components';
 import { upgradeButtonClick } from '@proton/components/containers/desktop/openExternalLink';
+import { useHasInboxDesktopInAppPayments } from '@proton/components/containers/desktop/useHasInboxDesktopInAppPayments';
 import { useActiveBreakpoint } from '@proton/components/hooks';
 import { CYCLE, PLANS } from '@proton/shared/lib/constants';
-import { hasInboxDesktopFeature } from '@proton/shared/lib/desktop/ipcHelpers';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import clsx from '@proton/utils/clsx';
 
@@ -43,6 +43,7 @@ const UpsellPanel = ({ title, plan, features, children, ctas = [], isRecommended
     const [isExpanded, setIsExpanded] = useState(false);
     const toggleExpand = () => setIsExpanded((prev) => !prev);
     const { viewportWidth } = useActiveBreakpoint();
+    const hasInboxDesktopInAppPayments = useHasInboxDesktopInAppPayments();
 
     return (
         <Panel className={clsx(isRecommended ? 'border-primary border-recommended' : 'border-strong')} title={title}>
@@ -101,7 +102,7 @@ const UpsellPanel = ({ title, plan, features, children, ctas = [], isRecommended
                     if (isUpsellCta(cta)) {
                         const handleOnClick = () => {
                             // Open the link in browser on Electron unless it is supported
-                            if (isElectronApp && !hasInboxDesktopFeature('InAppPayments')) {
+                            if (isElectronApp && !hasInboxDesktopInAppPayments) {
                                 upgradeButtonClick(CYCLE.YEARLY, plan);
                             } else {
                                 cta.action();
