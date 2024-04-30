@@ -384,7 +384,7 @@
         "Näytä historia"
       ],
       "View item history": [
-        "Näytä kohdehistoria"
+        "Näytä kohteen historia"
       ],
       "View older history": [
         "Näytä aiempi historia"
@@ -529,7 +529,7 @@
         "Käyttäjän käyttöoikeuden muutos epäonnistui."
       ],
       "Failed to load item history": [
-        "Kohdehistorian lataaminen epäonnistui"
+        "Kohteen historian lataus epäonnistui"
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Kaikkia sijainnin \"${ payload.content.name }\" kohteita ei voitu siirtää"
@@ -841,7 +841,7 @@
         "Tuo olemassa olevat salasanasi ${ BRAND_NAME }iin."
       ],
       "Built in 2FA authenticator": [
-        "Sisäänrakennettu 2FA-todentaja"
+        "Sisäänrakennettu toisen vaiheen todentaja"
       ],
       "By default team members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
         "Oletusarvoisesti ryhmän jäsenet voivat viedä vain holveja, joiden omistajia he ovat. Jos tämä asetus on käytössä, he eivät voi viedä mitään tietoja"
