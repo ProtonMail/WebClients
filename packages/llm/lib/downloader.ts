@@ -238,36 +238,54 @@ export async function downloadModel(variant: string) {
     // Prepare a list of files to download and where to cache them.
     const files = listFilesToDownload(variantConfig, appCaches);
 
+    // This first map tracks how many bytes we need to download.
+    //   { url: expectedSize }.
+    // Thanks to it, we can compute the total overall size to download by summing the values.
+    // For most files, especially for the model weights, the size is specified in a meta file, so we know it in advance.
+    // Unfortunately, some small files (like wasm and tokenizer.json) have an unknown size. However, we start to fetch
+    // it, Content-Length should tell us the real size. Therefore, this map will be modified a few times, as we fetch
+    // some of these files that have an initially unknown size.
+    const expectedSizes: Map<string, number> = new Map();
+    for (const f of files) {
+        if (f.expectedSize) {
+            expectedSizes.set(f.url, f.expectedSize!);
+        }
+    }
+    const overallExpectedSize = () => [...expectedSizes.values()].reduce((acc, n) => acc + n, 0);
+
+    // This second map tracks how many bytes we have received for each file.
+    //   { url: receivedSize }
+    // The purpose is to track the overall bytes we've downloaded so far. We compute this by summing the values too.
+    // Consequently, it will be frequently updated, namely each time we receive a new chunk of data.
+    const receivedSizes: Map<string, number> = new Map();
+    const promises = [];
+    for (const f of files) {
+        const promise = existsInCache(f.url, f.destinationCache).then((exists) => {
+            if (exists) {
+                // mark the file as downloaded
+                receivedSizes.set(f.url, f.expectedSize || 0);
+            } else {
+                // mark as not yet downloaded
+                receivedSizes.set(f.url, 0);
+            }
+        });
+        promises.push(promise);
+    }
+    await Promise.all(promises);
+    const overallReceived = () => [...receivedSizes.values()].reduce((acc, n) => acc + n, 0);
+
     // Start downloading files
-    const sizes: Map<string, number> = new Map(
-        files.filter((f) => f.expectedSize).map((f) => [f.url, f.expectedSize!])
-    );
-    let overallSize = [...sizes.values()].reduce((acc, n) => acc + n, 0);
-
-    const receivedSizes: Map<string, number> = new Map(
-        await Promise.all(
-            files.map(async (f): Promise<[string, number]> => {
-                let size = await existsInCache(f.url, f.destinationCache).then((exists) =>
-                    exists ? f.expectedSize || 0 : 0
-                );
-                return [f.url, size];
-            })
-        )
-    );
-
     const updateProgress = (url: string, received: number, total: number) => {
-        if (!sizes.has(url) && total > 0) {
-            sizes.set(url, total);
-            overallSize = [...sizes.values()].reduce((acc, n) => acc + n, 0);
+        if (!expectedSizes.has(url) && total > 0) {
+            expectedSizes.set(url, total);
         }
         const receivedCapped = Math.min(received, total);
         receivedSizes.set(url, receivedCapped);
-        const overallReceived = [...receivedSizes.values()].reduce((acc, n) => acc + n, 0);
-        const progress = overallReceived / overallSize;
+        const r = overallReceived();
+        const e = overallExpectedSize();
+        const progress = r / e;
         /* eslint-disable-next-line no-console */
-        console.log(
-            `${url}: downloading, progress: ${overallReceived} / ${overallSize} (${(progress * 100).toFixed(2)}%)`
-        );
+        console.log(`${url}: downloading, progress: ${r} / ${e} (${(progress * 100).toFixed(2)}%)`);
     };
     await downloadFilesSequentially(files, updateProgress);
 }
