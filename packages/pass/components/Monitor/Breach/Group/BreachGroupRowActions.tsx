@@ -21,7 +21,7 @@ import { selectRequestInFlight } from '@proton/pass/store/selectors';
 
 export const BreachGroupRowActions: FC<MonitorTableRow> = (row) => {
     const monitor = useMonitor();
-    const { type, email, monitored } = row;
+    const { type, email } = row;
 
     const add = useRequest(addCustomAddress, {
         initialRequestId: addCustomAddressRequest(row.email),
@@ -32,7 +32,7 @@ export const BreachGroupRowActions: FC<MonitorTableRow> = (row) => {
     const loading = add.loading || deleting;
 
     if (type === AddressType.CUSTOM) {
-        if (!monitored) {
+        if (row.suggestion) {
             return (
                 <Button
                     className="shrink-0"
@@ -61,12 +61,12 @@ export const BreachGroupRowActions: FC<MonitorTableRow> = (row) => {
                 >
                     <DropdownMenuButton
                         onClick={() => monitor.verifyAddress(row)}
-                        label={c('Label').t`Verify`}
+                        label={c('Action').t`Verify`}
                         icon="envelope-open"
                     />
                     <DropdownMenuButton
                         onClick={() => monitor.deleteAddress(row.addressId)}
-                        label={c('Label').t`Remove`}
+                        label={c('Action').t`Remove`}
                         icon="trash"
                         loading={deleting}
                     />

@@ -18,7 +18,7 @@ import { BreachGroupRowActions } from './BreachGroupRowActions';
 const getStatusClassname = (row: MonitorTableRow) => {
     const verified = row.type !== AddressType.CUSTOM || row.verified;
     if (verified && row.monitored && !row.breached) return 'color-success';
-    if (!verified && row.monitored) return 'color-weak';
+    if (verified !== row.monitored) return 'color-weak';
 };
 
 const getStatusLabel = (row: MonitorTableRow) => {

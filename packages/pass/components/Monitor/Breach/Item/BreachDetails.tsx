@@ -9,9 +9,9 @@ import type { MonitorAddress } from '@proton/pass/lib/monitor/types';
 import type { Maybe } from '@proton/pass/types';
 import clsx from '@proton/utils/clsx';
 
+import { BreachActions } from './BreachActions';
 import { BreachList } from './BreachList';
 import { BreachModal } from './BreachModal';
-import { BreachResolveButton } from './BreachResolveButton';
 import { BreachUsageList } from './BreachUsageList';
 
 export const BreachDetails: FC<MonitorAddress> = (address) => {
@@ -45,7 +45,7 @@ export const BreachDetails: FC<MonitorAddress> = (address) => {
                         <span className="block">{address.email}</span>
                     </div>
                 </div>
-                {activeBreaches && <BreachResolveButton {...address} />}
+                <BreachActions resolved={!activeBreaches} disabled={loading} {...address} />
             </header>
 
             <div className="flex flex-columns gap-6">
