@@ -110,7 +110,6 @@ export enum FeatureCode {
     SpotlightInboxDesktop = 'SpotlightInboxDesktop',
     SpotlightLoadContent = 'SpotlightLoadContent',
     SpotlightScheduledSend = 'SpotlightScheduledSend',
-    SpotlightSecurityCenter = 'SpotlightSecurityCenter',
     SpyTrackerProtectionIncorporator = 'SpyTrackerProtectionIncorporator',
     SubscriptionReminderMinimalCreateTime = 'SubscriptionReminderMinimalCreateTime',
     UnreadFavicon = 'UnreadFavicon',

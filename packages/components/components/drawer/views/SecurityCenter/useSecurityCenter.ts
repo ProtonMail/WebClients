@@ -1,4 +1,3 @@
-import useFlag from '@proton/components/containers/unleash/useFlag';
 import useConfig from '@proton/components/hooks/useConfig';
 
 /**
@@ -6,10 +5,9 @@ import useConfig from '@proton/components/hooks/useConfig';
  * @returns {boolean} isSecurityCenterEnabled
  */
 const useSecurityCenter = () => {
-    const isSecurityCenterEnabled = useFlag('DrawerSecurityCenter');
     const { APP_NAME } = useConfig();
 
-    return isSecurityCenterEnabled && APP_NAME === 'proton-mail';
+    return APP_NAME === 'proton-mail';
 };
 
 export default useSecurityCenter;
