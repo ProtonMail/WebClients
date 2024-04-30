@@ -3984,9 +3984,6 @@
       "You have reached the contacts limit for your account": [
         "您的帳號已達聯絡人數量限制"
       ],
-      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
-        "您已經達到行事曆的數量上限。有部分行事曆無法被匯入。"
-      ],
       "You must set a name": [
         "您必須設定名稱"
       ],
@@ -5911,6 +5908,9 @@
       "Loading ${ appName }": [
         "正在載入 ${ appName }"
       ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "正在加載行事曆，請稍後。你將會在新的瀏覽視窗中連接到我們的行程平臺。"
+      ],
       "Loading message": [
         "正在載入郵件"
       ],
@@ -6343,6 +6343,9 @@
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "若您離開此頁面，您在草稿中輸入的資料將不作儲存。"
       ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "您被曝露的資料來自第三方服務。您 ${ BRAND_NAME } 帳號資料保持安全及加密。 ${ learnMoreLink }"
+      ],
       "The local database is being prepared": [
         "正在準備本機資料庫"
       ],
@@ -6718,6 +6721,9 @@
       "You can check the progress ${ importProgressLink }.": [
         "您可以檢查進度 ${ importProgressLink }。"
       ],
+      "You can close the tab or browser in the meantime.": [
+        "等待期間，您可以關閉這個標籤頁或瀏覽器。"
+      ],
       "You can either update your search query or ${ button }": [
         "您可以更新您的搜尋查詢，又或者${ button }。"
       ],
@@ -6762,6 +6768,12 @@
       ],
       "You have **${ count } message** tagged with this label": [
         "您選取了有此標籤的 **${ count } 則訊息**"
+      ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "您有一個試用期 ${ planTitle } 訂購授權。如果您希望在試用期完結後繼續您的訂購授權，請增加一個繳款方式。"
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "您有一個試用期 ${ planTitle } 訂購授權。您暫時無需付費。你的訂購授權將會在試用期結束時自動繳付。"
       ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
         "您的電郵未有加上主旨。無論如何，您仍要傳送郵件嗎？"
@@ -6858,6 +6870,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "你的檔案將加密後再儲存"
+      ],
+      "Your information was found on ${ displayedDate }": [
+        "您的資料在 ${ displayedDate } 被發現。"
       ],
       "Your login information will not be saved after the import is completed.": [
         "匯入完成後不會保存您的登入資訊。"
@@ -8006,6 +8021,9 @@
       ],
       "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
         "您的${ mailStorage }已滿。要傳送或接收電子郵件，釋放空間或${ cta }。"
+      ],
+      "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
+        "您的帳號可能會被刪除。為了避免資料損失，請向您的管理員查詢或升級。 ${ cta }"
       ],
       "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
         "您的儲存已滿，要傳送或接收電子郵件，釋放空間或${ cta }。"
@@ -9643,6 +9661,9 @@
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel 現已 **啟動** 並正在保護你的帳號."
+      ],
+      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLink }": [
+        "您的資料在最少一次的資料外洩之中被發現。開啟 ${ DARK_WEB_MONITORING_NAME } 來瀏覽詳細資料及採取行動。 ${ learnMoreLink }"
       ]
     },
     "Select files": {
@@ -10185,6 +10206,9 @@
       "Schedule send": [
         "排程傳送"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME } to get notified if your data was leaked from a third-party service.": [
+        "開啟 ${ DARK_WEB_MONITORING_NAME } 以取得資料外洩至第三方服務的消息。"
+      ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "我們將預設載入所有圖像，並且攔截寄件者進行追蹤。此功能可在 ${ settingsLink } 進行變更。"
       ],
@@ -10222,9 +10246,6 @@
     "Storage": {
       "Get more storage": [
         "取得更多儲存空間"
-      ],
-      "Release notes": [
-        "版本資訊"
       ],
       "Upgrade storage": [
         "升級儲存空間"
@@ -11514,8 +11535,8 @@
       "What would you like to import?": [
         "您打算要匯入什麼資料呢？"
       ],
-      "What's new": [
-        "最新功能"
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "您的 ${ planName } 免費方案將於 ${ textDate } 結束"
       ],
       "Your account is protected": [
         "你的帳號已被保護"
