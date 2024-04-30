@@ -306,6 +306,9 @@
       "Hide affected calendars": [
         "隐藏受影响的日历"
       ],
+      "Hide busy times": [
+        "隐藏忙碌时间"
+      ],
       "Hide time zones": [
         "隐藏时区"
       ],
@@ -438,10 +441,10 @@
       "Not now": [
         "以后再说"
       ],
-      "Ok": [
+      "OK": [
         "确定"
       ],
-      "OK": [
+      "Ok": [
         "确定"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -587,6 +590,9 @@
       ],
       "Show affected calendars": [
         "显示受影响的日历"
+      ],
+      "Show busy times": [
+        "显示忙碌时间"
       ],
       "Show less": [
         "显示更少"
@@ -3038,9 +3044,6 @@
       ],
       "You have reached the contacts limit for your account": [
         "您的账户联系人数量已达上限"
-      ],
-      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
-        "您的日历数量已达上限，因此部分日历无法导入。"
       ],
       "You must set a name": [
         "请输入名称（必填）"
@@ -6802,9 +6805,6 @@
       "Create new group": [
         "创建群组"
       ],
-      "Custom": [
-        "自定义"
-      ],
       "Day": [
         "天"
       ],
@@ -7617,9 +7617,6 @@
       ]
     },
     "Storage": {
-      "Release notes": [
-        "版本说明"
-      ],
       "Upgrade storage": [
         "付费扩容"
       ],
@@ -8217,6 +8214,9 @@
       "Deleting contacts": [
         "删除联系人中"
       ],
+      "Details": [
+        "详细信息"
+      ],
       "Downgrade account": [
         "降级账户"
       ],
@@ -8526,17 +8526,20 @@
       "What would you like to import?": [
         "您需要导入哪些信息？"
       ],
-      "What's new": [
-        "更新内容"
-      ],
       "You have invited participants with equivalent emails": [
         "您已通过相同的邮件邀请了参与者"
+      ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "您的 ${ planName } 免费试用期将于 ${ textDate } 结束"
       ],
       "Your account is protected": [
         "您的账户已受保护"
       ],
       "Your calendar link": [
         "您的日历链接"
+      ],
+      "Your exposed information": [
+        "您的泄露信息"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

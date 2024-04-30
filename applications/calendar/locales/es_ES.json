@@ -134,7 +134,7 @@
         "Cerrar este banner"
       ],
       "Compose": [
-        "Redactar"
+        "Escribir"
       ],
       "Confirm": [
         "Confirmar"
@@ -447,11 +447,11 @@
       "Not now": [
         "Ahora no"
       ],
-      "Ok": [
-        "OK"
-      ],
       "OK": [
         "Aceptar"
+      ],
+      "Ok": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Abrir la configuración de ${ CALENDAR_APP_NAME }"
@@ -3095,8 +3095,8 @@
       "You have reached the contacts limit for your account": [
         "Has alcanzado el límite de contactos para tu cuenta."
       ],
-      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
-        "Has alcanzado el número máximo de calendarios. No se han podido importar algunos calendarios."
+      "You have reached the maximum number of calendars.": [
+        "Ha alcanzado la cantidad máxima de calendarios."
       ],
       "You must set a name": [
         "Debes establecer un nombre."
@@ -3689,6 +3689,9 @@
     "Header": {
       "Contacts": [
         "Contactos"
+      ],
+      "Custom recurrence": [
+        "Recurrencia personalizada"
       ],
       "Name": [
         "Nombre"
@@ -5020,7 +5023,7 @@
         "Tus archivos serán cifrados y después guardados."
       ],
       "Your information was found on ${ displayedDate }": [
-        "Tu información fue encontrada el ${ displayedDate }"
+        "Tus datos han sido encontrados el ${ displayedDate }"
       ],
       "Your login information will not be saved after the import is completed.": [
         "La información de inicio de sesión no se guardará una vez finalizada la importación."
@@ -7093,7 +7096,7 @@
         "Crear grupo"
       ],
       "Custom": [
-        "Personalizado"
+        "Personalizada"
       ],
       "Day": [
         "Día",
@@ -7506,7 +7509,7 @@
         "Sentinel está **activo** y protegiendo tu cuenta."
       ],
       "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLink }": [
-        "Tu información ha sido encontrada en al menos una vulneración de datos. Activa la función ${ DARK_WEB_MONITORING_NAME } para ver los detalles y tomar acciones. ${ learnMoreLink }"
+        "Tus datos han sido encontrados en al menos una vulneración de datos. Activa la función ${ DARK_WEB_MONITORING_NAME } para ver los detalles y tomar acciones. ${ learnMoreLink }"
       ]
     },
     "Select files": {
@@ -7997,9 +8000,6 @@
       ]
     },
     "Storage": {
-      "Release notes": [
-        "Notas de la versión"
-      ],
       "Upgrade storage": [
         "Aumentar el almacenamiento"
       ],
@@ -8179,17 +8179,41 @@
       "15 GB storage": [
         "15 GB de espacio de almacenamiento"
       ],
+      "and 15 more premium features": [
+        "y 15 funciones premium más"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Reenvío de correo automático ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertas de vulneraciones de datos ${ strongArgument }"
+      ],
       "Desktop app": [
         "Aplicación de escritorio"
       ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ayúdanos a mantener internet seguro y privado para todos. Mejora a un plan de pago."
+      ],
       "No ads or tracking": [
         "Sin anuncios ni rastreadores"
+      ],
+      "Short @pm.me email address": [
+        "Dirección de correo corta @pm.me"
       ],
       "Support our mission": [
         "Apoya nuestra misión"
       ],
       "Upgrade": [
         "Mejorar"
+      ],
+      "Upgrade your productivity": [
+        "Mejora tu productividad"
+      ],
+      "We don't sell your data": [
+        "No vendemos tus datos."
+      ],
+      "Your privacy is our mission": [
+        "Tu privacidad es nuestra misión."
       ]
     },
     "Subscription renewal state": {
@@ -9015,9 +9039,6 @@
       "What would you like to import?": [
         "¿Qué te gustaría importar?"
       ],
-      "What's new": [
-        "Novedades"
-      ],
       "You have invited participants with equivalent emails": [
         "Has invitado a participantes con correos electrónicos idénticos."
       ],
@@ -9031,7 +9052,7 @@
         "Enlace a tu calendario"
       ],
       "Your exposed information": [
-        "Tu información expuesta"
+        "Tus datos expuestos"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -9205,6 +9226,9 @@
       ],
       "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
         "La suscripción se renueva automáticamente cada 3 meses. Tu próxima fecha de facturación es en 3 meses."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "La oferta especial de ${ priceWithDiscount } es válida durante el primer mes. Una vez transcurrido ese plazo, se renovará automáticamente al precio de ${ renewPrice } cada mes. Puedes cancelarla en cualquier momento."
       ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Se te facturará cada 12 meses por ${ renewPrice }."

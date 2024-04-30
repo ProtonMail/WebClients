@@ -316,7 +316,7 @@
         "Skryť zasiahnuté kalendáre"
       ],
       "Hide busy times": [
-        "Ukryť časy nedostupnosti"
+        "Skryť časy nedostupnosti"
       ],
       "Hide time zones": [
         "Skryť časové pásma"
@@ -453,11 +453,11 @@
       "Not now": [
         "Teraz nie"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Otvoriť nastavenia ${ CALENDAR_APP_NAME }"
@@ -1326,10 +1326,10 @@
     },
     "Checkout row": {
       "${ users } user": [
-        "${ users } užívateľ",
-        "${ users } užívatelia",
-        "${ users } užívateľov",
-        "${ users } užívateľov"
+        "${ users } používateľ",
+        "${ users } používatelia",
+        "${ users } používateľov",
+        "${ users } používateľov"
       ],
       "Total for ${ n } month": [
         "Celkom za ${ n } mesiac",
@@ -2454,7 +2454,7 @@
         "Pre import kontaktov zo služby Google alebo Outlook ${ easySwitchLink }."
       ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
-        "Aktualizujte si váš účet a aktivujte si ${ PROTON_SENTINEL_NAME }, naše špičkové bezpečnostné riešenie založené na umelej inteligencii s vyhradenou nepretržitou odbornou podporou."
+        "Aktualizujte si svoj účet a aktivujte si ${ PROTON_SENTINEL_NAME }, naše špičkové bezpečnostné riešenie založené na umelej inteligencii (AI) s vyhradenou nepretržitou (24/7) odbornou podporou."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Pomocou myši ťahajte a pustite pre zmenu priority spojenie kontaktov. Odškrtnite kontakty, ktoré nechcete zlúčiť."
@@ -2572,7 +2572,7 @@
     },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
-        "Podujatie ${ eventTitle } bolo zrušené."
+        "Udalosť ${ eventTitle } bola zrušená."
       ],
       "All events in this series were updated.": [
         "Všetky udalosti v tejto sérii boli aktualizované."
@@ -2581,7 +2581,7 @@
         "Všetky udalosti v tejto sérii boli aktualizované. Zmeny sú uvedené nižšie:\n\n${ updateEventDetailsText }"
       ],
       "This event occurrence was canceled.": [
-        "Toto podujatie bolo zrušené."
+        "Táto udalosť bola zrušená."
       ],
       "This event occurrence was updated.": [
         "Výskyt tejto udalosti bol aktualizovaný."
@@ -2596,7 +2596,7 @@
         "Táto udalosť bola aktualizovaná. Zmeny sú uvedené nižšie:\n\n${ updateEventDetailsText }"
       ],
       "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
-        "Dostali ste pozvánku na podujatie ${ eventTitle }.\n\n${ eventDetailsText }"
+        "Dostali ste pozvánku na udalosť ${ eventTitle }.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -2622,13 +2622,13 @@
     },
     "Email body for response to invitation": {
       "${ emailAddress } accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } prijal vašu pozvánku na podujatie ${ eventTitle }"
+        "${ emailAddress } prijal vašu pozvánku na udalosť ${ eventTitle }"
       ],
       "${ emailAddress } declined your invitation to ${ eventTitle }": [
-        "${ emailAddress } odmietol/odmietla vašu pozvánku na podujatie ${ eventTitle }"
+        "${ emailAddress } odmietol/odmietla vašu pozvánku na udalosť ${ eventTitle }"
       ],
       "${ emailAddress } tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } predbežne prijal/a vaše pozvanie na podujatie ${ eventTitle }"
+        "${ emailAddress } predbežne prijal/a vaše pozvanie na udalosť ${ eventTitle }"
       ]
     },
     "Email subject": {
@@ -3158,9 +3158,6 @@
       ],
       "You have reached the contacts limit for your account": [
         "Dosiahli ste limit kontaktov pre svoj účet"
-      ],
-      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
-        "Dosiahli ste maximálny počet kalendárov. Niektoré kalendáre nebolo možné importovať."
       ],
       "You must set a name": [
         "Musíte nastaviť meno"
@@ -5859,7 +5856,7 @@
         "Požiadať o pozvánku"
       ],
       "stay safer online": [
-        "zostaňte bezpečnejší online"
+        "zostať bezpečnejší online"
       ],
       "What’s this?": [
         "Čo je to?"
@@ -5906,22 +5903,22 @@
         "Zistiť viac"
       ],
       "upgrade for more storage": [
-        "navýšiť tarifu pre viac priestoru"
+        "upgrajdujte pre väčšie úložisko"
       ],
       "Upgrade to restore full access": [
-        "Upgradujte na obnovenie plného prístupu"
+        "Upgradujte pre obnovenie plného prístupu"
       ],
       "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
-        "Vaša ${ driveStorage } je plná. Ak chcete nahrať alebo synchronizovať súbory, uvoľnite miesto alebo ${ cta }."
+        "Vaše ${ driveStorage } je plné. Ak chcete nahrať alebo synchronizovať súbory, uvoľnite miesto alebo ${ cta }."
       ],
       "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
-        "Vaša ${ mailStorage } je plné. Pre odosielanie alebo prijímanie emailov uvoľnite miesto alebo ${ cta }."
+        "Vaše ${ mailStorage } je plné. Pre odosielanie alebo prijímanie emailov uvoľnite miesto alebo ${ cta }."
       ],
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "Vášmu kontu hrozí vymazanie. Ak chcete zabrániť strate údajov, požiadajte správcu o aktualizáciu. ${ cta }"
       ],
       "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
-        "Vaše úložisko je plné. Ak chcete odosielať alebo prijímať e-maily, uvoľnite miesto alebo ${ cta }."
+        "Vaše úložisko je plné. Ak chcete odosielať alebo prijímať emaily, uvoľnite miesto alebo ${ cta }."
       ],
       "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
         "Vaše úložisko je plné. Ak chcete nahrať alebo synchronizovať súbory, uvoľnite miesto alebo ${ cta }."
@@ -5963,7 +5960,7 @@
     },
     "mailtrial2024: Action": {
       "Get the deal": [
-        "Získajte ponuku"
+        "Získať ponuku"
       ],
       "Special Offer": [
         "Špeciálna ponuka"
@@ -5999,7 +5996,7 @@
         "za prvý mesiac"
       ],
       "Limited-time offer, expires April 2 2024": [
-        "Časovo limitovaná ponuka, končí 2. apríla 2024"
+        "Časovo obmedzená ponuka, končí 2. apríla 2024"
       ],
       "Your subscription will auto-renew on ${ renewTime } at ${ renewablePrice }, cancel anytime": [
         "Vaše predplatné sa automaticky obnoví ${ renewTime } za ${ renewablePrice }, môžete ho kedykoľvek zrušiť"
@@ -6007,7 +6004,7 @@
     },
     "mailtrial2024: Title": {
       "Get ${ planName } for only ${ planPrice }": [
-        "Získajte ${ planName } len za ${ planPrice }"
+        "Získať ${ planName } len za ${ planPrice }"
       ]
     },
     "Message": {
@@ -6321,9 +6318,9 @@
       ],
       "${ n } email address": [
         "${ n } emailová adresa",
-        "${ n } e-mailové adriesy/aliasy",
-        "${ n } e-mailových adries/aliasov",
-        "${ n } e-mailových adries/aliasov"
+        "${ n } emailové adresy/aliasy",
+        "${ n } emailových adries/aliasov",
+        "${ n } emailových adries/aliasov"
       ],
       "${ n } email address per user": [
         "${ n } emailová adresa na používateľa",
@@ -6779,7 +6776,7 @@
         "Špecializované riešenie VPN, ktoré poskytuje bezpečný, neobmedzený a vysokorýchlostný prístup k internetu."
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
-        "Bezplatný štartovací účet navrhnutý tak, aby v predvolenom nastavení umožnil každému súkromie."
+        "Bezplatný štartovací účet, ktorý je navrhnutý tak, aby poskytol súkromie pre všetkých už v základnom nastavení."
       ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
         "Využívate propagačnú cenu vášho aktuálneho plánu. Ak svoj účet odstránite, prídete o propagačnú cenu a tá už nebude k dispozícii po opätovnom vytvorení nového účtu."
@@ -7737,7 +7734,7 @@
         "Hide-my-email aliasy"
       ],
       "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
-        "Aliasy Hide-my-email vám umožnia zaregistrovať sa do online služieb bez toho, aby ste museli zdieľať svoju hlavnú emailovú adresu. ${ learnMoreLink }"
+        "Aliasy Hide-my-email vám umožnia zaregistrovať sa do online služieb bez toho, aby ste museli zdieľať svoju emailovú adresu. ${ learnMoreLink }"
       ],
       "New alias": [
         "Nový alias"
@@ -7779,7 +7776,7 @@
         "Sentinel je **aktívny** a chráni váš účet."
       ],
       "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLink }": [
-        "Vaše údaje boli zistené najmenej v jednom prípade porušenia ochrany osobných údajov. Ak chcete zobraziť podrobnosti a podniknúť kroky, zapnite funkciu ${ DARK_WEB_MONITORING_NAME }. ${ learnMoreLink }"
+        "Vaše údaje boli zistené najmenej v jednom prípade úniku ochrany osobných údajov. Ak chcete zobraziť podrobnosti a podniknúť kroky, zapnite funkciu ${ DARK_WEB_MONITORING_NAME }. ${ learnMoreLink }"
       ]
     },
     "Select files": {
@@ -8282,7 +8279,7 @@
         "Pohodlne spustite ${ MAIL_APP_NAME } priamo z plochy."
       ],
       "Get the desktop app": [
-        "Získajte desktopovú aplikáciu"
+        "Získať desktopovú aplikáciu"
       ],
       "Get up to ${ credits } in credits.": [
         "Získajte až ${ credits } v kreditoch."
@@ -8306,9 +8303,6 @@
       ]
     },
     "Storage": {
-      "Release notes": [
-        "Zoznam zmien"
-      ],
       "Upgrade storage": [
         "Navýšiť úložisko"
       ],
@@ -8494,6 +8488,14 @@
     "Subscription price": {
       "For": [
         "Pre"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB úložného priestoru"
+      ],
+      "Desktop app": [
+        "Desktopová aplikácia"
       ]
     },
     "Subscription renewal state": {
@@ -9346,9 +9348,6 @@
       ],
       "What would you like to import?": [
         "Čo by ste chceli importovať?"
-      ],
-      "What's new": [
-        "Čo je nové"
       ],
       "You have invited participants with equivalent emails": [
         "Pozvali ste účastníkov s rovnakými emailami"

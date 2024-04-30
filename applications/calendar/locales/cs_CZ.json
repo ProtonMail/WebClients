@@ -315,6 +315,9 @@
       "Hide affected calendars": [
         "Skrýt dotčené kalendáře"
       ],
+      "Hide busy times": [
+        "Skrýt časy zaneprázdnění"
+      ],
       "Hide time zones": [
         "Skrýt časová pásma"
       ],
@@ -450,11 +453,11 @@
       "Not now": [
         "Nyní ne"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Otevřít nastavení ${ CALENDAR_APP_NAME }"
@@ -599,6 +602,9 @@
       ],
       "Show affected calendars": [
         "Zobrazit dotčené kalendáře"
+      ],
+      "Show busy times": [
+        "Zobrazit časy zaneprázdnění"
       ],
       "Show less": [
         "Zobrazit méně"
@@ -859,6 +865,11 @@
       ],
       "By leaving now, you will lose your event.": [
         "Pokud nyní odejdete, přijdete o svou událost."
+      ]
+    },
+    "App logo": {
+      "Download ${ MAIL_APP_NAME } desktop application": [
+        "Stáhněte si aplikaci ${ MAIL_APP_NAME } pro desktop"
       ]
     },
     "Apps dropdown": {
@@ -1124,6 +1135,9 @@
       ],
       "Continue using ${ planTitle }": [
         "Pokračovat s ${ planTitle }"
+      ],
+      "Continue your subscription": [
+        "Pokračovat v předplatném"
       ]
     },
     "Calendar access select label": {
@@ -2391,6 +2405,9 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA přidává další úroveň zabezpečení a zabraňuje neoprávněnému přístupu."
       ],
+      "Availability unknown": [
+        "Dostupnost neznámá"
+      ],
       "Boost efficiency and track your time by color-coding events by category or your energy levels. Get this and much more with a paid plan.": [
         "Zvyšte efektivitu a rozvrhněte svůj čas pomocí barevného označení událostí podle kategorií nebo podle úrovně energie. Toto a mnohem více získáte s placeným tarifem."
       ],
@@ -2414,6 +2431,9 @@
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Zdá se, že seznam kontaktů který importujete, zahrnuje nějaké skupiny. Prosím, zkontrolujte jak by tyto skupiny měly být importovány."
+      ],
+      "Loading availability": [
+        "Načítání dostupnosti"
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Slučování kontaktů... Tento proces může trvat několik minut. Po dokončení můžete okno zavřít."
@@ -3139,9 +3159,6 @@
       "You have reached the contacts limit for your account": [
         "Dosáhli jste limitu kontaktů vašeho účtu"
       ],
-      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
-        "Dosáhli jste maximálního počtu kalendářů. Některé kalendáře nebylo možné importovat."
-      ],
       "You must set a name": [
         "Musíte nastavit jméno"
       ],
@@ -3752,6 +3769,9 @@
       "Contacts": [
         "Kontakty"
       ],
+      "Custom recurrence": [
+        "Vlastní opakování"
+      ],
       "Name": [
         "Jméno"
       ],
@@ -4267,6 +4287,9 @@
       "An invitation will be sent to added participants.": [
         "Pozvánka bude zaslána přidaným účastníkům."
       ],
+      "An invitation will be sent to all participants. Which event would you like to update?": [
+        "Pozvánka bude zaslána všem účastníkům. Jakou událost chcete aktualizovat?"
+      ],
       "An invitation will be sent to the event participants.": [
         "Účastníkům události bude zaslána pozvánka."
       ],
@@ -4585,6 +4608,9 @@
       "Large imports can take several days.": [
         "Import velkého množství dat může trvat několik dní."
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Zjistěte, jak ${ staySaferOnlineLink }"
+      ],
       "Learn more": [
         "Zjistěte více"
       ],
@@ -4599,6 +4625,9 @@
       ],
       "Loading ${ appName }": [
         "Načítání aplikace ${ appName }"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Načítání kalendáře, prosím čekejte. Budete přesměrováni na naši plánovací platformu Calendly v nové záložce."
       ],
       "Loading event": [
         "Načítání události"
@@ -4677,6 +4706,9 @@
       ],
       "Organization size": [
         "Velikost organizace"
+      ],
+      "Other users within your organization will see your busy slots. No event details are shared.": [
+        "Ostatní uživatelé ve vaši organizaci uvidí, kdy jste zaneprázdněni. Žádné detaily události nebudou sdíleny."
       ],
       "password": [
         "heslo"
@@ -4806,6 +4838,9 @@
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Před exportem kontaktů musí aplikace kontakty lokálně dešifrovat. Na konci procesu bude vygenerován soubor VCF, který si budete moci stáhnout."
+      ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "Odhalené informace unikly ze služby třetí strany. Informace vašeho účtu ${ BRAND_NAME } zůstaly v bezpečí a šifrované. ${ learnMoreLink }"
       ],
       "The following participants cannot be notified about your changes:": [
         "Následující účastníci nemohou být o vašich změnách informováni:"
@@ -5035,6 +5070,12 @@
       "You cannot undo this action.": [
         "Tuto akci nemůžete vzít zpět."
       ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "Máte zkušební verzi předplatného ${ planTitle }. Pokud chcete pokračovat s vaším předplatným po zkušební době, prosím přidejte platební metodu."
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "Máte zkušební verzi předplatného ${ planTitle }. Nyní není potřeba nic platit. Vaše předplatné bude automaticky obnoveno na konci zkušební doby."
+      ],
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
         "Znovu jste aktivovali klíče a události spojené s následujícími kalendáři mohou být nyní dešifrovány."
       ],
@@ -5116,6 +5157,9 @@
       "Your email address and password were leaked:": [
         "Vaše e-mailová adresa a heslo unikly:"
       ],
+      "Your email address was exposed:": [
+        "Došlo k odhalení vaší e-mailové adresy:"
+      ],
       "Your email will only be used for this one-time verification.": [
         "Váš e-mail bude použit pouze pro toto jednorázové ověření."
       ],
@@ -5125,11 +5169,17 @@
       "Your files will be encrypted and then saved": [
         "Vaše soubory budou zašifrovány a uloženy"
       ],
+      "Your information was found on ${ displayedDate }": [
+        "Vaše informace byly nalezeny ${ displayedDate }"
+      ],
       "Your login information will not be saved after the import is completed.": [
         "Po dokončení importu nebudou Vaše přihlašovací údaje uloženy."
       ],
       "Your next billing date is ${ renewalTime }.": [
         "Datum příští platby je ${ renewalTime }."
+      ],
+      "Your password was leaked:": [
+        "Došlo k úniku vašeho hesla:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Vaše telefonní číslo bude použito pouze pro toto jednorázové ověření."
@@ -5276,6 +5326,9 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Dočasně nedostupné. Zkontrolujte to prosím později.)"
+      ],
+      "Access to my events": [
+        "Přístup k mým událostem"
       ],
       "Add email address": [
         "Přidat e-mailovou adresu"
@@ -5640,6 +5693,9 @@
       "Select your plan": [
         "Vyberte tarif"
       ],
+      "Show others when I'm busy": [
+        "Zobrazit ostatním kdy jsem zaneprázdněn"
+      ],
       "Show week numbers": [
         "Zobrazovat číslo týdne"
       ],
@@ -5852,17 +5908,26 @@
       "upgrade for more storage": [
         "navýšit tarif pro více prostoru"
       ],
+      "Upgrade to restore full access": [
+        "Navýšením obnovíte plný přístup"
+      ],
       "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
         "Vaše ${ driveStorage } je plné. Chcete-li nahrát nebo synchronizovat soubory, uvolněte místo nebo ${ cta }."
       ],
       "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
         "Vaše ${ mailStorage } je plné. Pro odesílání nebo přijímání e-mailů uvolněte místo nebo ${ cta }."
       ],
+      "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
+        "Váš účet je ohrožen smazáním. Abyste zabránili ztrátě dat, požádejte vašeho správce o navýšení. ${ cta }"
+      ],
       "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
         "Vaše úložiště je plné. Chcete-li odesílat nebo přijímat e-maily, uvolněte místo nebo ${ cta }."
       ],
       "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
         "Vaše úložiště je plné. Abyste mohli nahrát nebo synchronizovat soubory, uvolněte místo nebo ${ cta }."
+      ],
+      "Your subscription has ended. ${ cta } and to avoid data loss.": [
+        "Vaše předplatné skončilo. ${ cta } pro předejití ztrátě dat."
       ]
     },
     "Log preference": {
@@ -7670,17 +7735,28 @@
         "Když se vás zeptají na e-mailovou adresu, dejte jim místo toho tento alias. Aliasy jsou poskytovány ${ passLink }."
       ]
     },
+    "Security Center (link to Pass App)": {
+      "(will open ${ PASS_APP_NAME })": [
+        "(otevře ${ PASS_APP_NAME })"
+      ]
+    },
     "Security Center - Action": {
       "View logs": [
         "Zobrazit logy"
       ]
     },
     "Security Center - Info": {
+      "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
+        "Nechat se upozornit, pokud vaše heslo nebo jiná data uniknou ze služby třetí strany. ${ learnMoreLink }"
+      ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Naše špičkové řešení s pomocí umělé inteligence zaměřené na uživatele, kteří vyžadují zvýšenou ochranu svých účtů. ${ learnMoreLink }"
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel je **aktivní** a chrání váš účet."
+      ],
+      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLink }": [
+        "Vaše údaje byly nalezeny při nejméně jednom úniku informací. Zapnutím ${ DARK_WEB_MONITORING_NAME } zobrazíte podrobnosti a provedete akci. ${ learnMoreLink }"
       ]
     },
     "Select files": {
@@ -8191,6 +8267,12 @@
       "Invite friends to ${ BRAND_NAME }": [
         "Pozvěte přátele do ${ BRAND_NAME }"
       ],
+      "No more scheduling conflicts": [
+        "Žádné další konflikty plánování"
+      ],
+      "Now you can see when participants are free to attend your meeting.": [
+        "Nyní můžete vidět, kdy se mohou ostatní zúčastnit vašeho setkání."
+      ],
       "With customizable event colors, you can color-code the chaos and conquer your day.": [
         "Díky přizpůsobitelným barvám událostí, můžete chaos barevně odlišit a ovládnout svůj den."
       ]
@@ -8201,9 +8283,6 @@
       ]
     },
     "Storage": {
-      "Release notes": [
-        "Seznam změn"
-      ],
       "Upgrade storage": [
         "Navýšit úložiště"
       ],
@@ -8391,6 +8470,47 @@
         "Pro"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB úložiště"
+      ],
+      "and 15 more premium features": [
+        "a 15 dalších prémiových funkcí"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatické přesměrování e-mailu ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Upozornění na úniky informací ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktopová aplikace"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomozte nám udržet internet bezpečný a soukromý pro všechny. Přejděte na placený tarif."
+      ],
+      "No ads or tracking": [
+        "Žádné reklamy ani sledování"
+      ],
+      "Short @pm.me email address": [
+        "Zkrácená e-mailová adresa @pm.me"
+      ],
+      "Support our mission": [
+        "Podpořte naše poslání"
+      ],
+      "Upgrade": [
+        "Navýšit"
+      ],
+      "Upgrade your productivity": [
+        "Zlepšete svou produktivitu"
+      ],
+      "We don't sell your data": [
+        "Vaše údaje neprodáváme"
+      ],
+      "Your privacy is our mission": [
+        "Vaše soukromí je naším posláním"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Jste si jistý?"
@@ -8559,6 +8679,9 @@
       ],
       "Invitation sent and participants added to all events": [
         "Pozvánka odeslána a účástníci přidání ke všem událostem"
+      ],
+      "Last modified aliases stored in your oldest vault": [
+        "Naposledy upravené aliasy uložené ve vašem nejstarším trezoru"
       ],
       "Participants notified and all events updated": [
         "Účastníci byli upozorněni a všechny události aktualizovány"
@@ -9239,17 +9362,20 @@
       "What would you like to import?": [
         "Co byste chtěli importovat?"
       ],
-      "What's new": [
-        "Co je nového"
-      ],
       "You have invited participants with equivalent emails": [
         "Pozvali jste účastníky se stejnými e-maily"
+      ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Vaše bezplatná zkušební verze ${ planName } skončí ${ textDate }"
       ],
       "Your account is protected": [
         "Váš účet je chráněn"
       ],
       "Your calendar link": [
         "URL adresa kalendáře"
+      ],
+      "Your exposed information": [
+        "Vaše uniklé informace"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -9289,6 +9415,9 @@
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Automatické přepínání mezi preferovanými denními a nočními motivy v synchronizaci s denním a nočním režimem systému."
+      ],
+      "Change start date to unselect": [
+        "Změňte datum zahájení pro zrušení výběru"
       ],
       "Customize import to reduce the number of folders": [
         "Přizpůsobte proces importu, abyste snížili počet složek"
