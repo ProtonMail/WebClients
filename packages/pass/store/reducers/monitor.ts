@@ -10,6 +10,7 @@ import {
     addCustomAddress,
     deleteCustomAddress,
     getBreaches,
+    resolveAliasBreach,
     resolveCustomBreach,
     resolveProtonBreach,
     toggleAddressMonitor,
@@ -40,6 +41,7 @@ const monitorReducer: Reducer<MonitorState> = (state = null, action) => {
     if (state) {
         if (resolveCustomBreach.success.match(action)) {
             return partialMerge(state, {
+                total: Math.max(0, state.total - 1),
                 custom: state.custom.map((breach) => {
                     if (breach.addressId !== action.payload) return breach;
                     return { ...breach, breachCount: 0 };
@@ -49,11 +51,16 @@ const monitorReducer: Reducer<MonitorState> = (state = null, action) => {
 
         if (resolveProtonBreach.success.match(action)) {
             return partialMerge(state, {
+                total: Math.max(0, state.total - 1),
                 proton: state.proton.map((breach) => {
                     if (breach.addressId !== action.payload) return breach;
                     return { ...breach, breachCount: 0 };
                 }),
             });
+        }
+
+        if (resolveAliasBreach.success.match(action)) {
+            return partialMerge(state, { total: Math.max(0, state.total - 1) });
         }
 
         if (addCustomAddress.success.match(action)) {
