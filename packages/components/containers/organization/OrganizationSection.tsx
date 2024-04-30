@@ -90,7 +90,6 @@ const OrganizationSection = ({ app, organization }: Props) => {
         useModalState();
 
     const organizationTheme = useOrganizationTheme();
-    const isLightLabellingEnabled = organizationTheme.enabled;
     const canAccessLightLabelling = organizationTheme.access;
 
     if (!organization || !user || !subscription) {
@@ -280,7 +279,6 @@ const OrganizationSection = ({ app, organization }: Props) => {
                 organization={organization}
                 canAccessLightLabelling={canAccessLightLabelling}
                 isPartOfFamily={isPartOfFamily}
-                isLightLabellingEnabled={isLightLabellingEnabled}
             />
 
             {canAccessLightLabelling && (
