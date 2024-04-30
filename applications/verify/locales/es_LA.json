@@ -21,7 +21,7 @@
         "Continuar"
       ],
       "Don't know your password?": [
-        "¿Ha olvidado su contraseña?"
+        "¿Ha olvidado la contraseña?"
       ],
       "Edit email address": [
         "Editar dirección de correo"
@@ -902,17 +902,17 @@
         "Hubo un problema"
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
-        "No pudimos cargar esta página. Actualice la página o revise su conexión a internet."
+        "No pudimos cargar esta página. Actualice la página o revise la conexión a internet."
       ]
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Hubo un problema al autenticar con su clave de seguridad. Intente de nuevo."
+        "Hubo un problema al autenticar con la clave de seguridad. Intente de nuevo."
       ]
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Inserte una clave de seguridad asociada con su cuenta de ${ BRAND_NAME }."
+        "Inserte una clave de seguridad asociada con la cuenta de ${ BRAND_NAME }."
       ],
       "Security key": [
         "Clave de seguridad"
@@ -964,7 +964,7 @@
         "Un número telefónico solo puede usarse para verificar una cuenta de ${ BRAND_NAME }"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        "Antes de solicitar un código de verificación nuevo, revise su carpeta de spam y verifique que ${ strong } sea la dirección correcta."
+        "Antes de solicitar un código de verificación nuevo, revise la carpeta de spam y verifique que ${ strong } sea la dirección correcta."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Haga clic en \"Solicitar código nuevo\" para que se envíe un código de verificación nuevo a ${ strong }. Si este número telefónico es incorrecto, haga clic en \"Editar\" para corregirlo."
@@ -979,7 +979,7 @@
         "Editar dirección de correo"
       ],
       "Enter the code from your authenticator app": [
-        "Ingrese el código de su app de autenticación"
+        "Ingrese el código de la aplicación de autenticación"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Ingrese el código de verificación que fue enviado a ${ destinationText }."
@@ -991,10 +991,10 @@
         "Ingrese su propia contraseña (como administrador de la organización)."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "Si tiene problemas para crear su cuenta, solicite una invitación y responderemos dentro de un día hábil."
+        "Si tiene problemas para crear la cuenta, solicite una invitación y responderemos dentro de un día hábil."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "Si no encuentra el correo electrónico en su buzón, revise en la carpeta de spam."
+        "Si no encuentra el correo electrónico en el buzón, revise en la carpeta de spam."
       ],
       "Internet connection lost": [
         "Sin conexión a Internet"
@@ -1021,7 +1021,7 @@
         "Enviaremos un código de verificación nuevo a ${ strong }"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Cuando configura la autenticación de dos factores, nosotros proporcionamos códigos de recuperación que podrá usar para iniciar sesión si llega a perder acceso a su app de autenticación."
+        "Cuando configura la autenticación de dos factores, nosotros proporcionamos códigos de recuperación que podrá usar para iniciar sesión si llega a perder acceso a la aplicación de autenticación."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "¿Quiere recibir un código de verificación nuevo o usar un método de verificación alternativo?"
@@ -1033,16 +1033,16 @@
         "Ahora puede regresar a la aplicación para continuar."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "Su cuenta de ${ BRAND_NAME } está suspendida. Después de 28 días, no recibirá correos en su buzón, los enlaces compartidos de Drive serán bloqueados y no podrá cargar archivos nuevos. Para reanudar el servicio, pague cualquier factura pendiente."
+        "La cuenta de ${ BRAND_NAME } está suspendida. Después de 28 días, no recibirá correos en el buzón, los enlaces compartidos de Drive serán bloqueados y no podrá cargar archivos nuevos. Para reanudar el servicio, pague cualquier factura pendiente."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Su cuenta de ${ BRAND_NAME } está suspendida. No recibirá correos en su buzón. Los enlaces compartidos de Drive ya no están activos y no podrá cargar archivos nuevos. Para continuar usando su cuenta, pague cualquier factura pendiente."
+        "La cuenta de ${ BRAND_NAME } está suspendida. No recibirá correos en el buzón. Los enlaces compartidos de Drive ya no están activos y no podrá cargar archivos nuevos. Para continuar usando la cuenta, pague cualquier factura pendiente."
       ],
       "Your email will only be used for this one-time verification.": [
-        "Su correo electrónico sólo se usará para esta verificación única."
+        "El correo electrónico sólo se usará para esta verificación única."
       ],
       "Your phone number will only be used for this one-time verification.": [
-        "Su número de teléfono sólo se usará para esta verificación única."
+        "El número de teléfono sólo se usará para esta verificación única."
       ]
     },
     "Label": {
@@ -1071,7 +1071,7 @@
         "Código de verificación"
       ],
       "Your password (admin)": [
-        "Su contraseña (admin)"
+        "La contraseña (admin)"
       ]
     },
     "Link": {
@@ -1097,7 +1097,7 @@
     },
     "Title": {
       "Enter your password": [
-        "Ingrese su contraseña"
+        "Ingrese la contraseña"
       ],
       "Human verification": [
         "Verificación humana"
