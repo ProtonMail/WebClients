@@ -1,7 +1,6 @@
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button';
-import ElectronDraggeableHeaderWrapper from '@proton/components/components/electron/ElectronDraggeableHeaderWrapper';
 import { CALENDAR_APP_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import errorGeneric from '@proton/styles/assets/img/errors/error-generic.svg';
 
@@ -19,9 +18,8 @@ const ElectronBlockedContainer = () => {
 
     return (
         <>
-            <ElectronDraggeableHeaderWrapper />
             <IllustrationPlaceholder
-                className="h-full justify-center"
+                className="generic-error h-full justify-center"
                 title={c('Error message').t`App currently unavailable`}
                 url={errorGeneric}
                 children={children}
