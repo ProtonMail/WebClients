@@ -30,15 +30,21 @@ const ParticipantRow = ({ attendee, contactEmailsMap, onToggleOptional, onDelete
 
     return (
         <div key={email} className="address-item flex items-start mb-1 group-hover-opacity-container">
-            <div className="flex flex-1 py-1 pr-1" title={nameEmail}>
+            <div className="flex flex-1 py-1 pr-1" title={nameEmail} data-testid="participant-row">
                 <div className={clsx(['text-ellipsis', displayOnlyEmail && 'max-w-full'])}>
                     {contactName ? (
                         <>
-                            <span className="text-semibold text-sm">{contactName}</span>
-                            <span className="color-weak ml-1 text-sm">{email}</span>
+                            <span className="text-semibold text-sm" data-testid="participant-row:contact-name">
+                                {contactName}
+                            </span>
+                            <span className="color-weak ml-1 text-sm" data-testid="participant-row:contact-email">
+                                {email}
+                            </span>
                         </>
                     ) : (
-                        <span className="text-semibold text-sm">{email}</span>
+                        <span className="text-semibold text-sm" data-testid="participant-row:email">
+                            {email}
+                        </span>
                     )}
                 </div>
                 {isOptional ? <span className="color-weak text-sm w-full">{c('Label').t`Optional`}</span> : null}
