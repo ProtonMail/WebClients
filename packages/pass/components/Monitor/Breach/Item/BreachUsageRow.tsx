@@ -1,4 +1,4 @@
-import type { FC } from 'react';
+import type { FC, MouseEvent } from 'react';
 
 import { Button } from '@proton/atoms/Button';
 import { Icon } from '@proton/components/components/icon';
@@ -15,8 +15,13 @@ export const BreachUsageRow: FC<Props> = ({ item }) => {
     const { shareId, itemId } = item;
     const { selectItem } = useNavigation();
 
+    const handleClick = (evt: MouseEvent) => {
+        evt.stopPropagation();
+        selectItem(shareId, itemId, { inTrash: isTrashed(item) });
+    };
+
     return (
-        <TableRow>
+        <TableRow className="pass-table--row" onClick={handleClick}>
             <TableCell>
                 <div className="flex flex-nowrap items-center gap-3">
                     <SafeItemIcon item={item} size={4.5} />
@@ -26,13 +31,7 @@ export const BreachUsageRow: FC<Props> = ({ item }) => {
             <TableCell className="text-ellipsis">{formatEpoch('MMM d, yyyy')(item.modifyTime)}</TableCell>
             <TableCell>
                 <div className="flex justify-end">
-                    <Button
-                        pill
-                        size="small"
-                        shape="ghost"
-                        type="button"
-                        onClick={() => selectItem(shareId, itemId, { inTrash: isTrashed(item) })}
-                    >
+                    <Button pill size="small" shape="ghost" type="button" onClick={handleClick}>
                         <Icon name="chevron-right" />
                     </Button>
                 </div>
