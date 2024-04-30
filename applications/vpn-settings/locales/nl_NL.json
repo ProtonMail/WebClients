@@ -705,6 +705,23 @@
         "Dit zal alle routers en clients die dit certificaat gebruiken loskoppelen."
       ]
     },
+    "app-switcher": {
+      "Browse the web privately and block ads": [
+        "Surf privé op het internet en blokkeer advertenties"
+      ],
+      "Keep your schedule private": [
+        "Houd uw planning privé"
+      ],
+      "Protect your passwords and identity": [
+        "Bescherm uw wachtwoorden en identiteit"
+      ],
+      "Safeguard your files and photos": [
+        "Bescherm uw bestanden en foto's"
+      ],
+      "Secure your communications": [
+        "Beveilig uw communicatie"
+      ]
+    },
     "bf2023: Action": {
       "**Add our encrypted password manager** for only ${ price }": [
         "**Voeg onze versleutelde wachtwoordmanager toe** voor slechts ${ price }"
@@ -2135,7 +2152,7 @@
         "Upgrade naar een zakelijk abonnement met meer dan 1 gebruiker om meerdere gebruikers te beheren."
       ],
       "Please upload a square file": [
-        "Upload een vierkant bestand a.u.b."
+        "Upload een vierkant bestand"
       ],
       "Please upload an xml file": [
         "Upload een xml-bestand"
@@ -3315,7 +3332,7 @@
         "Als u dit account met een ander account wilt combineren, verwijder deze dan NIET."
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
-        "Als je problemen hebt, zijn we hier om te helpen. ${ boldPhoneCall } of ${ boldZoomMeeting } met een van onze support specialisten, of open een ${ boldLiveChat } voor chatondersteuning."
+        "Als u problemen hebt, zijn we hier om te helpen. ${ boldPhoneCall } of ${ boldZoomMeeting } met een van onze support specialisten, of open een ${ boldLiveChat } voor chatondersteuning."
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists.": [
         "Indien u problemen heeft, zijn we hier om te helpen. ${ boldPhoneCall } of ${ boldZoomMeeting } met een van onze ondersteuningsspecialisten."
@@ -3531,10 +3548,6 @@
       ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Probeer het opnieuw, gebruik een andere betaalmethode, of neem contact op met PayPal voor hulp."
-      ],
-      "Please use a password more than ${ MIN_PASSWORD_LENGTH } character.": [
-        "Gebruik een wachtwoord van meer dan ${ MIN_PASSWORD_LENGTH } tekens.",
-        "Gebruik een wachtwoord van meer dan ${ MIN_PASSWORD_LENGTH } tekens."
       ],
       "Please use another browser or download the file.": [
         "Gebruik een andere browser of download het bestand."
@@ -6013,7 +6026,7 @@
         "Vierkante afbeelding van minstens 128 pixels"
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
-        "Gebruikers zullen uw logo zien in plaats van het ${ BRAND_NAME } pictogram wanneer ze inlogt zijn op onze webapps."
+        "Gebruikers zullen uw logo zien in plaats van het ${ BRAND_NAME }-pictogram wanneer ze inlogt zijn op onze webapps."
       ]
     },
     "Pass B2B onboarding spotlight": {
@@ -6227,6 +6240,9 @@
       ],
       "MM/YY": [
         "MM/JJ"
+      ],
+      "Processing payment": [
+        "Betaling wordt verwerkt"
       ],
       "Timeout exceeded": [
         "Time-out overschreden"
@@ -6476,7 +6492,7 @@
         "SCIM uitschakelen"
       ],
       "Disable SCIM integration": [
-        "SCIM integratie uitschakelen"
+        "SCIM-integratie uitschakelen"
       ],
       "Generate new token": [
         "Nieuwe token genereren"
@@ -6486,22 +6502,55 @@
       ]
     },
     "scim: Info": {
+      "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
+        "**Vereist:** SAML-authenticatie moet worden geconfigureerd om SCIM-bepaling in te schakelen."
+      ],
+      "Enter token into your identity provider": [
+        "Voer de token in bij uw identiteitsprovider"
+      ],
+      "Enter URL and token into your identity provider": [
+        "Voer URL en token in bij uw identiteitsprovider"
+      ],
+      "For security reasons, the SCIM token will be hidden after saving your changes and you won’t be able to see it again.": [
+        "Om veiligheidsredenen wordt de SCIM-token verborgen na het opslaan van uw wijzigingen en kunt u het daarna niet meer zien."
+      ],
+      "For security reasons, the token is hidden": [
+        "Om veiligheidsredenen is de token verborgen"
+      ],
+      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ VPN_APP_NAME }.": [
+        "Ga naar uw identiteitsprovider, kopieer en plak de gegevens hieronder en voltooi de configuratie van SCIM voor ${ VPN_APP_NAME }."
+      ],
+      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ VPN_APP_NAME }.": [
+        "Ga naar uw identiteitsprovider, kopieer en plak de token hieronder en schakel SCIM voor ${ VPN_APP_NAME } opnieuw in."
+      ],
+      "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
+        "Als u de SCIM-token bent vergeten of verloren, kunt u een nieuwe genereren, maar wees ervan bewust dat uw identiteitsprovider instellingen zullen moeten worden bijgewerkt."
+      ],
+      "Make sure you copy the above SCIM token now.": [
+        "Zorg ervoor dat u de bovenstaande SCIM-token nu kopieert."
+      ],
       "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
-        "Zodra SCIM is uitgeschakeld voor uw organisatie, **zullen alle SCIM gebruikers die automatisch door uw identiteitsprovider worden aangeboden worden omgezet naar SSO gebruikers** en u kunt ze direct beheren binnen de ${ BRAND_NAME } instellingen."
+        "Zodra SCIM is uitgeschakeld voor uw organisatie, **zullen alle SCIM-gebruikers die automatisch door uw identiteitsprovider worden aangeboden worden omgezet naar SSO-gebruikers** en u kunt ze direct beheren binnen de ${ BRAND_NAME } instellingen."
+      ],
+      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ VPN_APP_NAME } organization.": [
+        "Vereenvoudigt gebruikersbeheer over verschillende diensten. Voeg toe, bewerk en verwijder gebruikers in uw identiteitsprovider, en deze wijzigingen zullen automatisch worden toegepast op uw ${ VPN_APP_NAME } organisatie."
+      ],
+      "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
+        "De automatische bepaling van SCIM wordt uitgeschakeld totdat u de nieuwe SCIM-token in de instellingen van uw identiteit provider invoert."
       ],
       "The SCIM base URL and token will be deleted.": [
-        "De SCIM basis URL en token zullen worden verwijderd."
+        "De SCIM basis-URL en token zullen worden verwijderd."
       ],
       "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
-        "Om het synchroniseren met je identiteitsprovider opnieuw aan te zetten, moet je de SCIM integratie opnieuw voltooien."
+        "Om het synchroniseren met uw identiteitsprovider opnieuw aan te zetten, moet u de SCIM-integratie opnieuw voltooien."
       ]
     },
     "scim: Label": {
       "SCIM base URL": [
-        "SCIM basis URL"
+        "SCIM basis-URL"
       ],
       "SCIM base URL (or tenant URL)": [
-        "SCIM basis URL (of tenant URL)"
+        "SCIM basis-URL (of tenant URL)"
       ],
       "SCIM token": [
         "SCIM token"
@@ -6512,10 +6561,18 @@
         "SCIM integratie uitschakelen?"
       ],
       "Generate new SCIM token?": [
-        "Nieuwe SCIM token genereren?"
+        "Nieuwe SCIM-token genereren?"
       ],
       "SCIM automatic provisioning": [
         "SCIM automatisch instellen"
+      ]
+    },
+    "scim: Tooltip": {
+      "API key of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
+        "API sleutel van de SCIM connector waar uw IdP Provisioning Agent de SCIM-gegevens naar doorstuurt"
+      ],
+      "URL of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
+        "URL van de SCIM connector waar uw IdP Provisioning Agent de SCIM-gegevens naar doorstuurt"
       ]
     },
     "Select file": {
@@ -7060,9 +7117,6 @@
       ]
     },
     "Storage": {
-      "Release notes": [
-        "Belangrijkste wijzigingen"
-      ],
       "Upgrade storage": [
         "Opslag upgraden"
       ],
@@ -7841,7 +7895,7 @@
         "Geschenkcode"
       ],
       "How to choose a good logo": [
-        "Hoe kies je een goed logo"
+        "Hoe kiest u een goed logo"
       ],
       "Human verification": [
         "Persoonsverificatie"
@@ -8072,9 +8126,6 @@
       "We'll send an email to your new address with instructions on completing the change.": [
         "We zullen een e-mail naar uw nieuwe e-mailadres sturen met instructies voor het voltooien van de wijziging."
       ],
-      "What's new": [
-        "Wat is er nieuw"
-      ],
       "WireGuard configuration": [
         "WireGuard configuratie"
       ],
@@ -8179,7 +8230,7 @@
         "Het geselecteerde thema is actief wanneer uw systeem is ingesteld op \"lichte modus\""
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
-        "Gebruikers zullen uw logo zien in plaats van het ${ BRAND_NAME } pictogram wanneer ze inlogt zijn op onze webapps."
+        "Gebruikers zullen uw logo zien in plaats van het ${ BRAND_NAME }-pictogram wanneer ze inlogt zijn op onze webapps."
       ],
       "Usually an URL that contains the identity provider's name within": [
         "Normaal gesproken een URL die de naam van de identiteitsprovider bevat binnen"

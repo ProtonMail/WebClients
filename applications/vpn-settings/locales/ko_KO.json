@@ -3519,9 +3519,6 @@
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "다시 시도하거나, 다른 결제 수단을 사용하거나 PayPal에 연락해 도움을 요청하세요."
       ],
-      "Please use a password more than ${ MIN_PASSWORD_LENGTH } character.": [
-        "최소 ${ MIN_PASSWORD_LENGTH }자 이상의 비밀번호를 사용해주세요."
-      ],
       "Please use another browser or download the file.": [
         "파일을 다운로드 하거나 다른 브라우저를 사용하세요."
       ],
@@ -4865,7 +4862,7 @@
         "이메일 주소 10개"
       ],
       "Auto-delete Spam and Trash": [
-        "스팸과 휴지통을 자동으로 삭제합니다"
+        "스팸 및 휴지통 자동 삭제"
       ],
       "Custom schedule send and snooze times": [
         "사용자 지정 스케줄과 방해금지 시간"
@@ -5117,7 +5114,7 @@
         "향상된 공유 보안"
       ],
       "Auto-delete Spam and Trash": [
-        "스팸과 휴지통을 자동으로 삭제합니다"
+        "스팸 및 휴지통 자동 삭제"
       ],
       "Auto-delete spam and trashed messages": [
         "스팸 및 휴지통의 메시지를 자동 삭제"
@@ -6441,26 +6438,95 @@
         "사용자"
       ]
     },
+    "scim: Action": {
+      "Configure SCIM": [
+        "SCIM 구성"
+      ],
+      "Disable SCIM": [
+        "SCIM 비활성화"
+      ],
+      "Disable SCIM integration": [
+        "SCIM 통합 비활성화"
+      ],
+      "Generate new token": [
+        "새 토큰 생성"
+      ],
+      "Generate token": [
+        "토큰 생성"
+      ]
+    },
     "scim: Info": {
+      "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
+        "**설정 필요:** SCIM 프로비저닝을 사용하려면 SAML 인증이 구성되어 있어야 합니다."
+      ],
       "Enter token into your identity provider": [
         "사용자의 신원 제공자로 이 토큰을 입력하십시오"
+      ],
+      "Enter URL and token into your identity provider": [
+        "사용자의 신원 제공자로 이 토큰과 URL을 입력하십시오"
+      ],
+      "For security reasons, the SCIM token will be hidden after saving your changes and you won’t be able to see it again.": [
+        "보안상의 이유로 변경 사항을 저장한 후에는 SCIM 토큰이 숨겨지며 다시 볼 수 없습니다."
+      ],
+      "For security reasons, the token is hidden": [
+        "보안 상의 이유로 토큰이 숨겨짐"
+      ],
+      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ VPN_APP_NAME }.": [
+        "ID 공급업체로 이동하여 아래 데이터를 복사하여 붙여넣고 ${ VPN_APP_NAME }에 대해서 SCIM 설정을 완료합니다."
+      ],
+      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ VPN_APP_NAME }.": [
+        "ID 공급업체로 이동하여 아래 토큰을 복사하여 붙여넣고 ${ VPN_APP_NAME }에 대해서 SCIM을 다시 활성화합니다."
+      ],
+      "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
+        "SCIM 토큰을 분실하거나 잊어버리셨다면 새로 만들 수는 있지만, ID 공급자 설정이 업데이트되어 있어야 합니다."
+      ],
+      "Make sure you copy the above SCIM token now.": [
+        "위에 있는 SCIM 토큰이 복사되어야 합니다."
       ],
       "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
         "SCIM이 사용자 조직에 한 번 비활성화 되면, **사용자의 신원 인증 제공자에 의한 모든 SCIM 사용자들이 SSO 사용자로 전환됩니다.** ${ BRAND_NAME } 설정 내에서 즉시 관리 또한 가능하게 됩니다."
       ],
+      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ VPN_APP_NAME } organization.": [
+        "여러 서비스 간에 사용자 관리를 간소화합니다. ID 공급자에서 사용자를 추가, 편집, 제거하면 해당 변경 사항이 ${ VPN_APP_NAME } 조직에 자동으로 적용됩니다."
+      ],
+      "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
+        "SCIM 자동 프로비저닝은 신원 제공자의 설정에 새 SCIM 토큰을 입력할 때까지 비활성화됩니다."
+      ],
       "The SCIM base URL and token will be deleted.": [
-        "SCIM 베이스 URL 및 토큰이 비활성 됩니다."
+        "SCIM 베이스 URL 및 토큰이 비활성됩니다."
+      ],
+      "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
+        "신원 제공자와의 동기화를 다시 활성화하려면, SCIM 통합을 다시 완료해야 합니다."
+      ]
+    },
+    "scim: Label": {
+      "SCIM base URL": [
+        "SCIM 기본 URL"
+      ],
+      "SCIM base URL (or tenant URL)": [
+        "SCIM 베이스 URL (또는 테넌트 URL)"
+      ],
+      "SCIM token": [
+        "SMTP 토큰"
       ]
     },
     "scim: Title": {
       "Disable SCIM integration?": [
-        "SCIM 통합화를 비활성화 합니까?"
+        "SCIM 통합화를 비활성화합니까?"
       ],
       "Generate new SCIM token?": [
         "새 SCIM 토큰을 생성합니까?"
       ],
       "SCIM automatic provisioning": [
         "SCIM 자동 프로비저닝"
+      ]
+    },
+    "scim: Tooltip": {
+      "API key of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
+        "IdP 프로비저닝 에이전트가 SCIM 데이터를 전달하는 SCIM 커넥터의 API 키"
+      ],
+      "URL of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
+        "IdP 프로비저닝 에이전트가 SCIM 데이터를 전달하는 SCIM 커넥터의 URL"
       ]
     },
     "Select file": {
@@ -6986,9 +7052,6 @@
       ]
     },
     "Storage": {
-      "Release notes": [
-        "릴리즈 노트"
-      ],
       "Upgrade storage": [
         "스토리지 업그레이드"
       ],
@@ -7179,6 +7242,47 @@
     "Subscription price": {
       "For": [
         "가격:"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "저장공간 15GB"
+      ],
+      "and 15 more premium features": [
+        "그리고 더 많은 15개의 프리미엄 기능"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "자동 이메일 포워딩 ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "데이터 침해 경고 ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "데스크톱 앱"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "저희가 모두에게 안전하고 사적인 인터넷을 가꾸는 것을 도와주세요. 유료 요금제로 업그레이드하시면 됩니다."
+      ],
+      "No ads or tracking": [
+        "광고나 트래킹이 없습니다"
+      ],
+      "Short @pm.me email address": [
+        "짧은 @pm.me 이메일 주소"
+      ],
+      "Support our mission": [
+        "저희의 사명을 지원해주세요"
+      ],
+      "Upgrade": [
+        "업그레이드"
+      ],
+      "Upgrade your productivity": [
+        "생산성을 업그레이드하세요"
+      ],
+      "We don't sell your data": [
+        "저희는 고객의 데이터를 판매하지 않습니다"
+      ],
+      "Your privacy is our mission": [
+        "당신의 프라이버시는 저희의 사명입니다"
       ]
     },
     "Subscription renewal state": {
@@ -7976,9 +8080,6 @@
       ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "주소 변경에 대한 지침과 함께 새 주소로 이메일을 보내드립니다."
-      ],
-      "What's new": [
-        "새로운 사항"
       ],
       "WireGuard configuration": [
         "WireGuard 설정"
