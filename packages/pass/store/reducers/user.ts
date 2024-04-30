@@ -3,6 +3,7 @@ import type { Reducer } from 'redux';
 import {
     getUserAccessSuccess,
     getUserFeaturesSuccess,
+    getUserSettings,
     monitorToggle,
     sentinelToggle,
     userEvent,
@@ -111,6 +112,19 @@ const reducer: Reducer<UserState> = (state = initialState, action) => {
             !isDeepEqual(monitor, state.monitor);
 
         return didChange ? partialMerge(state, { plan, waitingNewUserInvites }) : state;
+    }
+
+    if (getUserSettings.success.match(action)) {
+        const settings = action.payload;
+        return partialMerge(state, {
+            userSettings: {
+                Email: { Status: settings.Email.Status },
+                Password: { Mode: settings.Password.Mode },
+                Telemetry: settings.Telemetry,
+                Locale: settings.Locale,
+                HighSecurity: settings.HighSecurity,
+            },
+        });
     }
 
     if (getUserFeaturesSuccess.match(action)) {
