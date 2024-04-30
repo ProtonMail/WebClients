@@ -3615,12 +3615,6 @@
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Паспрабуйце яшчэ раз, скарыстайцеся іншым спосабам аплаты або звярніцеся ў службу падтрымкі PayPal."
       ],
-      "Please use a password more than ${ MIN_PASSWORD_LENGTH } character.": [
-        "Выкарыстоўвайце пароль даўжынёй больш за ${ MIN_PASSWORD_LENGTH } сімвал.",
-        "Выкарыстоўвайце пароль даўжынёй больш за ${ MIN_PASSWORD_LENGTH } сімвалы.",
-        "Выкарыстоўвайце пароль даўжынёй больш за ${ MIN_PASSWORD_LENGTH } сімвалаў.",
-        "Выкарыстоўвайце пароль даўжынёй больш за ${ MIN_PASSWORD_LENGTH } сімвалаў."
-      ],
       "Please use another browser or download the file.": [
         "Скарыстайцеся іншым браўзерам або спампуйце файл."
       ],
@@ -7307,9 +7301,6 @@
       ]
     },
     "Storage": {
-      "Release notes": [
-        "Нататкі да выпуску"
-      ],
       "Upgrade storage": [
         "Павялічыць сховішча"
       ],
@@ -7552,7 +7543,7 @@
         "і яшчэ 15 прэміяльных функцый"
       ],
       "Automatic email forwarding ${ strongText }": [
-        "Аўтаматычная перысылка электроннай пошты ${ strongText }"
+        "Аўтаматычная перасылка электроннай пошты ${ strongText }"
       ],
       "Data breach alerts ${ strongArgument }": [
         "Папярэджанне ўцечкі даных ${ strongArgument }"
@@ -8395,9 +8386,6 @@
       ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Мы адправілі ліст з інструкцыямі пра завяршэнне змены на ваш новы адрас."
-      ],
-      "What's new": [
-        "Што новага"
       ],
       "WireGuard configuration": [
         "Канфігурацыя WireGuard"

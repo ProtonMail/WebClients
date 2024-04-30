@@ -143,6 +143,9 @@
       "Delete Gateway": [
         "刪除閘道器"
       ],
+      "Delete logo": [
+        "刪除標誌"
+      ],
       "Delete user": [
         "刪除使用者"
       ],
@@ -283,6 +286,9 @@
       ],
       "Invite user": [
         "邀請使用者"
+      ],
+      "Keep logo": [
+        "保留標誌"
       ],
       "Keep my Plus subscription": [
         "保持進階版訂購授權"
@@ -440,6 +446,9 @@
       "Select country": [
         "選擇國家"
       ],
+      "select file": [
+        "選取檔案"
+      ],
       "Select file": [
         "選取檔案"
       ],
@@ -491,6 +500,9 @@
       "Signing in": [
         "正在登入"
       ],
+      "Start live chat": [
+        "開始即時聊天"
+      ],
       "Stop using single sign-on": [
         "停止使用單一登入"
       ],
@@ -532,6 +544,12 @@
       ],
       "Upgrade your plan": [
         "升級您的方案"
+      ],
+      "Upload": [
+        "上傳"
+      ],
+      "Upload logo": [
+        "上傳標誌圖片"
       ],
       "Use ${ label } theme": [
         "使用 ${ label } 布景主題"
@@ -1985,6 +2003,9 @@
       "Error connecting to the Bitcoin API.": [
         "連線到比特幣 API 時發生錯誤。"
       ],
+      "Failed to process the logo": [
+        "無法處理此標誌檔案"
+      ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "您電視上的時間是否已到期？在您的電視上點擊重新整理並重試您的代碼。"
       ],
@@ -2086,6 +2107,9 @@
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "請升級至選用多於 1 位使用者的企業方案，以便管理多個使用者。"
+      ],
+      "Please upload a square file": [
+        "請上傳正方形圖片"
       ],
       "Please upload an xml file": [
         "請上載xml格式文檔"
@@ -2748,6 +2772,11 @@
         "使用者名稱"
       ]
     },
+    "Headline": {
+      "Contact us": [
+        "聯絡我們"
+      ]
+    },
     "Hint": {
       "Add this record to your domain in the control panel of your domain name registrar": [
         "請在您的網域名稱註冊機構的控制台中新增此記錄到您的網域中"
@@ -3272,11 +3301,17 @@
       "Link copied to clipboard": [
         "連結已複製到剪貼簿"
       ],
+      "Live chat": [
+        "即時聊天室"
+      ],
       "Loading": [
         "正在載入"
       ],
       "Loading ${ appName }": [
         "正在載入 ${ appName }"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "正在加載行事曆，請稍後。你將會在新的瀏覽視窗中連接到我們的行程平臺。"
       ],
       "Loading preview": [
         "正在載入預覽"
@@ -3422,9 +3457,6 @@
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "諘再試一次，您也可換另一個繳款方式，或聯絡 PayPal 尋求協助。"
       ],
-      "Please use a password more than ${ MIN_PASSWORD_LENGTH } character.": [
-        "密碼至少需要 ${ MIN_PASSWORD_LENGTH } 個字元長。"
-      ],
       "Please use another browser or download the file.": [
         "請使用其他瀏覽器或下載檔案。"
       ],
@@ -3436,6 +3468,9 @@
       ],
       "Plus or Visionary subscription required": [
         "需為 Plus 或 Visionary 訂購授權"
+      ],
+      "Preview": [
+        "預覽"
       ],
       "Preview failed to be loaded": [
         "連結載入失敗"
@@ -3466,6 +3501,9 @@
       ],
       "Remember to share the user's sign in details with them.": [
         "請記得與使用者分享其登入詳細資料。"
+      ],
+      "Request a phone call": [
+        "請求電話呼叫"
       ],
       "Resend verification email": [
         "重新傳送驗證電子郵件"
@@ -3929,6 +3967,12 @@
       "You have ${ availableCount } dedicated server available.": [
         "您有${ availableCount }台可用的獨立伺服器。"
       ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "您有一個試用期 ${ planTitle } 訂購授權。如果您希望在試用期完結後繼續您的訂購授權，請增加一個繳款方式。"
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "您有一個試用期 ${ planTitle } 訂購授權。您暫時無需付費。你的訂購授權將會在試用期結束時自動繳付。"
+      ],
       "You have no invoices.": [
         "您沒有任何帳單。"
       ],
@@ -4015,6 +4059,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "您的訂購授權是由 Mozilla 管理。請聯絡 Mozilla 支援。"
+      ],
+      "Zoom meeting": [
+        "Zoom 會議"
       ]
     },
     "Info for cash payment method": {
@@ -4316,6 +4363,9 @@
       ],
       "Level for NetShield blocker filtering": [
         "Bridge 攔截過濾等級"
+      ],
+      "Logo": [
+        "標誌"
       ],
       "Mailbox password": [
         "信箱密碼"
@@ -4706,6 +4756,9 @@
       ],
       "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
         "您的${ mailStorage }已滿。要傳送或接收電子郵件，釋放空間或${ cta }。"
+      ],
+      "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
+        "您的帳號可能會被刪除。為了避免資料損失，請向您的管理員查詢或升級。 ${ cta }"
       ],
       "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
         "您的儲存已滿，要傳送或接收電子郵件，釋放空間或${ cta }。"
@@ -5766,6 +5819,17 @@
         "您的方案包含最高 ${ humanReadableAvailableSpace } 的儲存空間。"
       ]
     },
+    "Organization logo upload modal": {
+      "File in PNG or JPEG format": [
+        "PNG 或 JPEG 格式檔案"
+      ],
+      "File not larger than 30 KB": [
+        "檔案大小不可超過 30 KB"
+      ],
+      "Square image of at least 128 pixels": [
+        "至少 128 像素的正方形圖片"
+      ]
+    },
     "Pass B2B onboarding spotlight": {
       "Go to your vault to manage your passwords, aliases, and more.": [
         "移至你的保管庫管理密碼、別名和更多項目。"
@@ -6671,9 +6735,6 @@
       ]
     },
     "Storage": {
-      "Release notes": [
-        "版本資訊"
-      ],
       "Upgrade storage": [
         "升級儲存空間"
       ],
@@ -7320,6 +7381,9 @@
       "Delete address permanently?": [
         "永久刪除主要地址？"
       ],
+      "Delete organization logo?": [
+        "刪除組織標誌？"
+      ],
       "Delete the server (you will still be able to recover it for ${ days } day)": [
         "刪除伺服器（您仍可於 ${ days } 天內還原）"
       ],
@@ -7421,6 +7485,9 @@
       ],
       "Gift code": [
         "禮品代碼"
+      ],
+      "How to choose a good logo": [
+        "如何選擇適當的標誌"
       ],
       "Human verification": [
         "真人身分驗證"
@@ -7632,6 +7699,9 @@
       "Upload CSV file to create multiple accounts": [
         "上傳CSV檔案以創建多重帳號"
       ],
+      "Upload your organization’s logo": [
+        "上傳您的組織標誌圖片檔案"
+      ],
       "Users": [
         "使用者"
       ],
@@ -7647,11 +7717,11 @@
       "We'll send an email to your new address with instructions on completing the change.": [
         "我們將向您的新位址寄送一封電子郵件，其中包含如何完成變更的說明。"
       ],
-      "What's new": [
-        "最新功能"
-      ],
       "WireGuard configuration": [
         "WireGuard 組態"
+      ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "您的 ${ planName } 免費方案將於 ${ textDate } 結束"
       ],
       "Your changes are not synced yet": [
         "您的變更尚未同步"

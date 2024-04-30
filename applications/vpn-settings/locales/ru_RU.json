@@ -3481,12 +3481,6 @@
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Пожалуйста, попробуйте еще раз, используйте другой способ оплаты или обратитесь в PayPal для получения помощи."
       ],
-      "Please use a password more than ${ MIN_PASSWORD_LENGTH } character.": [
-        "Используйте пароль длиной более ${ MIN_PASSWORD_LENGTH } символа.",
-        "Используйте пароль длиной более ${ MIN_PASSWORD_LENGTH } символов.",
-        "Используйте пароль длиной более ${ MIN_PASSWORD_LENGTH } символов.",
-        "Используйте пароль длиной более ${ MIN_PASSWORD_LENGTH } символов."
-      ],
       "Please use another browser or download the file.": [
         "Пожалуйста, воспользуйтесь другим браузером или загрузите файл."
       ],
@@ -6820,9 +6814,6 @@
       ]
     },
     "Storage": {
-      "Release notes": [
-        "Примечания к выпуску"
-      ],
       "Upgrade storage": [
         "Увеличить дисковое пространство"
       ],
@@ -7814,9 +7805,6 @@
       ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Мы отправим электронное письмо на ваш новый адрес с инструкцией для завершения изменения."
-      ],
-      "What's new": [
-        "Что нового"
       ],
       "WireGuard configuration": [
         "Конфигурация WireGuard"

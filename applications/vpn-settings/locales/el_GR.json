@@ -287,6 +287,9 @@
       "Invite user": [
         "Πρόσκληση χρήστη"
       ],
+      "Keep logo": [
+        "Διατηρήστε το λογότυπο"
+      ],
       "Keep my Plus subscription": [
         "Διατηρήστε την Plus συνδρομή μου"
       ],
@@ -700,6 +703,23 @@
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
         "Αυτό θα αποσυνδέσει όλους τους δρομολογητές και πελάτες που χρησιμοποιούν αυτό το πιστοποιητικό."
+      ]
+    },
+    "app-switcher": {
+      "Browse the web privately and block ads": [
+        "Ιδιωτική περιήγηση στον ιστό και αποκλεισμός διαφημίσεων"
+      ],
+      "Keep your schedule private": [
+        "Διατηρήστε το πρόγραμμά σας απόρρητο"
+      ],
+      "Protect your passwords and identity": [
+        "Προστατέψτε τους κωδικούς πρόσβασης και την ταυτότητά σας"
+      ],
+      "Safeguard your files and photos": [
+        "Προστατέψτε τα αρχεία και τις φωτογραφίες σας"
+      ],
+      "Secure your communications": [
+        "Ασφαλίστε τις επικοινωνίες σας"
       ]
     },
     "bf2023: Action": {
@@ -2020,6 +2040,12 @@
       "Error connecting to the Bitcoin API.": [
         "Πρόβλημα σύνδεσης με το Bitcoin API."
       ],
+      "Failed to process the logo": [
+        "Αποτυχία επεξεργασίας του λογότυπου"
+      ],
+      "File too large. Your logo must be 30 KB or smaller.": [
+        "Το αρχείο είναι πολύ μεγάλο. Το λογότυπό σας πρέπει να είναι 30 KB ή μικρότερο."
+      ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Εάν ο χρόνος στην τηλεόρασή σας έχει λήξει, κάντε κλικ στο Ανανέωση στην τηλεόρασή σας και εισαγάγετε ξανά τον κωδικό σας."
       ],
@@ -2031,6 +2057,9 @@
       ],
       "Impossible to rename the gateway": [
         "Δεν είναι δυνατή η μετονομασία της πύλης"
+      ],
+      "Incorrect file type. Upload a file in PNG or JPEG format.": [
+        "Εσφαλμένος τύπος αρχείου. Ανεβάστε ένα αρχείο σε μορφή PNG ή JPEG."
       ],
       "Incorrect login credentials. Please try again.": [
         "Λανθασμένα διαπιστευτήρια εισόδου. Παρακαλούμε δοκιμάστε ξανά."
@@ -2122,6 +2151,9 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Παρακαλώ αναβαθμίστε σε επιχειρηματικό πλάνο με περισσότερους από 1 χρήστες ώστε να διαχειριστείτε πολλαπλούς χρήστες."
       ],
+      "Please upload a square file": [
+        "Παρακαλούμε ανεβάστε ένα τετράγωνο αρχείο"
+      ],
       "Please upload an xml file": [
         "Παρακαλούμε ανεβάστε ένα αρχείο xml"
       ],
@@ -2148,6 +2180,12 @@
       ],
       "The email addresses do not match": [
         "Οι διευθύνσεις email δεν ταιριάζουν."
+      ],
+      "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
+        "Το αρχείο είναι πολύ μεγάλο, το μέγιστο μέγεθος είναι ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }"
+      ],
+      "The file is too small, the minimum size is ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }": [
+        "Το αρχείο είναι πολύ μικρό, το ελάχιστο μέγεθος είναι ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }"
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Το ελάχιστο ποσό πίστωσης που μπορεί να προστεθεί είναι ${ price }"
@@ -2928,6 +2966,9 @@
         "Προσθήκη διακομιστή (${ availableAddedCount } διαθέσιμοι)",
         "Προσθήκη διακομιστή (${ availableAddedCount } διαθέσιμοι)"
       ],
+      "Add your name and logo to create a more personalized experience for your organization.": [
+        "Προσθέστε το όνομα και το λογότυπό σας για να δημιουργήσετε μια πιο εξατομικευμένη εμπειρία για τον οργανισμό σας."
+      ],
       "Adding ${ addedServerCount } gateway server": [
         "Προσθήκη ${ addedServerCount } διακομιστή πύλης",
         "Προσθήκη ${ addedServerCount } διακομιστών πύλης"
@@ -3087,6 +3128,9 @@
       ],
       "Current plan": [
         "Τρέχον πλάνο"
+      ],
+      "Custom branding": [
+        "Προσαρμοσμένη επωνυμία"
       ],
       "Custom email domains": [
         "Προσαρμοσμένοι τομείς"
@@ -3287,6 +3331,12 @@
       "If you wish to combine this account with another one, do NOT delete it.": [
         "Εάν επιθυμείτε να συνδυάσετε αυτόν τον λογαριασμό με έναν άλλο, ΜΗΝ τον διαγράψετε."
       ],
+      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
+        "Αν αντιμετωπίζετε προβλήματα, είμαστε εδώ για να σας βοηθήσουμε. ${ boldPhoneCall } ή ${ boldZoomMeeting } με έναν από τους ειδικούς υποστήριξής μας ή ανοίξτε ένα ${ boldLiveChat } για υποστήριξη συνομιλίας."
+      ],
+      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists.": [
+        "Αν αντιμετωπίζετε προβλήματα, είμαστε εδώ για να σας βοηθήσουμε. ${ boldPhoneCall } ή ${ boldZoomMeeting } με έναν από τους ειδικούς υποστήριξής μας."
+      ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Σημαντικό: Βεβαιωθείτε ότι έχετε αποθηκεύσει τους κωδικούς ανάκτησης. Διαφορετικά, μπορείτε να χάσετε μόνιμα την πρόσβαση στο λογαριασμό σας αν χάσετε τη συσκευή ελέγχου ταυτότητας δύο παραγόντων."
       ],
@@ -3340,6 +3390,9 @@
       ],
       "Link copied to clipboard": [
         "Ο σύνδεσμος αντιγράφηκε στο πρόχειρο"
+      ],
+      "Live chat": [
+        "Ζωντανή Συνομιλία"
       ],
       "Loading": [
         "Φόρτωση"
@@ -3496,10 +3549,6 @@
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Παρακαλώ προσπαθήστε ξανά, χρησιμοποιείστε ένα διαφορετικό τρόπο πληρωμής, ή επικοινωνήστε με το Paypal για περαιτέρω βοήθεια."
       ],
-      "Please use a password more than ${ MIN_PASSWORD_LENGTH } character.": [
-        "Χρησιμοποιήστε έναν κωδικό πρόσβασης περισσότερο από ${ MIN_PASSWORD_LENGTH } χαρακτήρα.",
-        "Χρησιμοποιήστε έναν κωδικό πρόσβασης περισσότερο από ${ MIN_PASSWORD_LENGTH } χαρακτήρες."
-      ],
       "Please use another browser or download the file.": [
         "Χρησιμοποιήστε άλλο πρόγραμμα περιήγησης ή κατεβάστε το αρχείο."
       ],
@@ -3544,6 +3593,9 @@
       ],
       "Remember to share the user's sign in details with them.": [
         "Θυμηθείτε να μοιραστείτε τις λεπτομέρειες σύνδεσης με τον χρήστη."
+      ],
+      "Request a phone call": [
+        "Ζητήστε Τηλεφωνική Επικοινωνία"
       ],
       "Resend verification email": [
         "Επανάληψη αποστολής μηνύματος επαλήθευσης"
@@ -3837,6 +3889,9 @@
       "Upload your completed CSV file to create accounts": [
         "Ανεβάστε το ολοκληρωμένο CSV αρχείο σας για να δημιουργήσετε λογαριασμούς"
       ],
+      "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
+        "Ανεβάστε το λογότυπο του οργανισμού σας για να ενισχύσετε την ταυτότητα της επωνυμίας σας και να δημιουργήσετε μια εξατομικευμένη εμπειρία για τους χρήστες σας."
+      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Χρησιμοποιείστε τον βέλτιστο διακομιστή για το τρέχον φορτίο και θέση: ${ formattedBestServerName }"
       ],
@@ -4111,6 +4166,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Η συνδρομή σας διαχειρίζεται απο το Mozilla. Επικοινωνήστε με την υποστήριξη του Mozilla."
+      ],
+      "Zoom meeting": [
+        "Συνάντηση Zoom"
       ]
     },
     "Info for cash payment method": {
@@ -4420,6 +4478,9 @@
       ],
       "Level for NetShield blocker filtering": [
         "Επίπεδο φίλτρου φραγής NetShield"
+      ],
+      "Logo": [
+        "Λογότυπο"
       ],
       "Mailbox password": [
         "Κωδικός Θυρίδας"
@@ -5931,6 +5992,43 @@
         "Το σχέδιό σας περιλαμβάνει το μέγιστο ${ humanReadableAvailableSpace } παραπανίσιο χώρο αποθήκευσης."
       ]
     },
+    "Organization logo upload": {
+      "Avoid overly compressed images.": [
+        "Αποφύγετε τις υπερβολικά συμπιεσμένες εικόνες."
+      ],
+      "Ensure your logo has padding space around it.": [
+        "Βεβαιωθείτε ότι το λογότυπό σας έχει χώρο επένδυσης γύρω του."
+      ],
+      "Opt for a PNG image that is a 128x128 pixels for clarity.": [
+        "Επιλέξτε μια εικόνα PNG που είναι 128x128 pixel για λόγους σαφήνειας."
+      ],
+      "Tips on choosing a good logo": [
+        "Συμβουλές για την επιλογή ενός καλού λογότυπου"
+      ],
+      "Use a graphical icon or image rather than text.": [
+        "Χρησιμοποιήστε ένα γραφικό εικονίδιο ή εικόνα αντί για κείμενο."
+      ],
+      "Use a solid background color.": [
+        "Χρησιμοποιήστε ένα συμπαγές χρώμα φόντου."
+      ]
+    },
+    "Organization logo upload modal": {
+      "Drop image file here to upload or": [
+        "Σύρετε το αρχείο εικόνας εδώ για ανέβασμα ή"
+      ],
+      "File in PNG or JPEG format": [
+        "Αρχείο σε μορφή PNG ή JPEG"
+      ],
+      "File not larger than 30 KB": [
+        "Αρχείο όχι μεγαλύτερο από 30 KB"
+      ],
+      "Square image of at least 128 pixels": [
+        "Τετράγωνη εικόνα τουλάχιστον 128 pixel"
+      ],
+      "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
+        "Οι χρήστες θα βλέπουν το λογότυπό σας αντί για το εικονίδιο του ${ BRAND_NAME } όταν είναι συνδεδεμένοι στις εφαρμογές ιστού μας."
+      ]
+    },
     "Pass B2B onboarding spotlight": {
       "Go to your vault to manage your passwords, aliases, and more.": [
         "Μεταβείτε στην κρύπτη για να διαχειριστείτε τους κωδικούς πρόσβασης, τα ψευδώνυμα και πολλά άλλα."
@@ -6352,6 +6450,11 @@
         "Η επαλήθευση του αριθμού τηλεφώνου σας αυξάνει την ασφάλεια του λογαριασμού σας και επιτρέπει πρόσθετες επιλογές ανάκτησης."
       ]
     },
+    "Remove organization logo": {
+      "Users will no longer see your custom logo or organization name.": [
+        "Οι χρήστες δε θα βλέπουν πλέον το προσαρμοσμένο λογότυπο ή το όνομα του οργανισμού σας."
+      ]
+    },
     "Restore administrator panel": {
       "${ n } administrator in your organization need access to the organization key.": [
         "${ n } διαχειριστής στον οργανισμό σας χρειάζεται πρόσβαση στο κλειδί οργανισμού.",
@@ -6382,8 +6485,94 @@
       ]
     },
     "scim: Action": {
+      "Configure SCIM": [
+        "Ρύθμιση παραμέτρων SCIM"
+      ],
+      "Disable SCIM": [
+        "Απενεργοποιήστε το SCIM"
+      ],
+      "Disable SCIM integration": [
+        "Απενεργοποιήστε την ενσωμάτωση SCIM"
+      ],
+      "Generate new token": [
+        "Δημιουργία νέου διακριτικού"
+      ],
       "Generate token": [
         "Δημιουργία διακριτικού"
+      ]
+    },
+    "scim: Info": {
+      "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
+        "**Προαπαιτούμενα:** Ο έλεγχος ταυτότητας SAML πρέπει να ρυθμιστεί ώστε να ενεργοποιεί την παροχή SCIM."
+      ],
+      "Enter token into your identity provider": [
+        "Εισαγάγετε το διακριτικό στον πάροχο ταυτότητάς σας"
+      ],
+      "Enter URL and token into your identity provider": [
+        "Εισαγάγετε διεύθυνση URL και διακριτικό στον πάροχο ταυτότητάς σας"
+      ],
+      "For security reasons, the SCIM token will be hidden after saving your changes and you won’t be able to see it again.": [
+        "Για λόγους ασφαλείας, το διακριτικό SCIM θα κρυφτεί μετά την αποθήκευση των αλλαγών σας και δε θα μπορείτε να το δείτε ξανά."
+      ],
+      "For security reasons, the token is hidden": [
+        "Για λόγους ασφαλείας, το διακριτικό είναι κρυμμένο"
+      ],
+      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ VPN_APP_NAME }.": [
+        "Μεταβείτε στον πάροχο ταυτότητάς σας, αντιγράψτε και επικολλήστε τα παρακάτω δεδομένα και ολοκληρώστε τη διαμόρφωση του SCIM για το ${ VPN_APP_NAME }."
+      ],
+      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ VPN_APP_NAME }.": [
+        "Μεταβείτε στον πάροχο ταυτότητάς σας, αντιγράψτε και επικολλήστε το διακριτικό παρακάτω και ενεργοποιήστε ξανά το SCIM για το ${ VPN_APP_NAME }."
+      ],
+      "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
+        "Εάν έχετε χάσει ή ξεχάσει το διακριτικό SCIM, μπορείτε να δημιουργήσετε ένα νέο, αλλά έχετε υπόψη ότι οι ρυθμίσεις της υπηρεσίας παροχής ταυτότητάς σας θα πρέπει να ενημερωθούν."
+      ],
+      "Make sure you copy the above SCIM token now.": [
+        "Βεβαιωθείτε ότι έχετε αντιγράψει το παραπάνω διακριτικό SCIM τώρα."
+      ],
+      "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
+        "Μόλις απενεργοποιηθεί το SCIM για τον οργανισμό σας, **όλοι οι χρήστες SCIM που παρέχονται αυτόματα από τον πάροχο ταυτότητάς σας θα μετατραπούν σε χρήστες SSO** και θα μπορείτε να τους διαχειριστείτε απευθείας από τις ρυθμίσεις του ${ BRAND_NAME }."
+      ],
+      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ VPN_APP_NAME } organization.": [
+        "Απλοποιεί τη διαχείριση χρηστών σε διάφορες υπηρεσίες. Προσθέστε, επεξεργαστείτε και καταργήστε χρήστες στην υπηρεσία παροχής ταυτότητάς σας και αυτές οι αλλαγές θα εφαρμοστούν αυτόματα στον οργανισμό σας ${ VPN_APP_NAME }."
+      ],
+      "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
+        "Η αυτόματη παροχή SCIM θα απενεργοποιηθεί μέχρι να εισαγάγετε το νέο διακριτικό SCIM στις ρυθμίσεις της υπηρεσίας παροχής ταυτότητάς σας."
+      ],
+      "The SCIM base URL and token will be deleted.": [
+        "Η βασική διεύθυνση URL και το διακριτικό SCIM θα διαγραφούν."
+      ],
+      "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
+        "Για να ενεργοποιήσετε ξανά τον συγχρονισμό με την υπηρεσία παροχής ταυτότητάς σας, πρέπει να ολοκληρώσετε ξανά την ενοποίηση SCIM."
+      ]
+    },
+    "scim: Label": {
+      "SCIM base URL": [
+        "Βασική διεύθυνση URL SCIM"
+      ],
+      "SCIM base URL (or tenant URL)": [
+        "Βασική διεύθυνση URL SCIM (ή διεύθυνση URL μισθωτή)"
+      ],
+      "SCIM token": [
+        "Διακριτικό SCIM"
+      ]
+    },
+    "scim: Title": {
+      "Disable SCIM integration?": [
+        "Απενεργοποιήστε την ενσωμάτωση SCIM;"
+      ],
+      "Generate new SCIM token?": [
+        "Δημιουργία νέου διακριτικού SCIM;"
+      ],
+      "SCIM automatic provisioning": [
+        "Αυτόματη παροχή SCIM"
+      ]
+    },
+    "scim: Tooltip": {
+      "API key of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
+        "Κλειδί API της σύνδεσης SCIM στην οποία ο Φορέας Παροχής IdP προωθεί δεδομένα SCIM"
+      ],
+      "URL of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
+        "Διεύθυνση URL της σύνδεσης SCIM στην οποία ο Φορέας Παροχής IdP προωθεί δεδομένα SCIM"
       ]
     },
     "Select file": {
@@ -6928,9 +7117,6 @@
       ]
     },
     "Storage": {
-      "Release notes": [
-        "Σημειώσεις έκδοσης"
-      ],
       "Upgrade storage": [
         "Αναβάθμιση αποθηκευτικού χώρου"
       ],
@@ -7705,6 +7891,9 @@
       "Gift code": [
         "Κωδικός δώρου"
       ],
+      "How to choose a good logo": [
+        "Πώς να επιλέξετε ένα καλό λογότυπο"
+      ],
       "Human verification": [
         "Ανθρώπινη Επαλήθευση"
       ],
@@ -7916,6 +8105,9 @@
       "Upload CSV file to create multiple accounts": [
         "Ανεβάστε αρχείο CSV για να δημιουργήσετε πολλούς λογαριασμούς"
       ],
+      "Upload your organization’s logo": [
+        "Αποστολή του λογότυπου του οργανισμού σας"
+      ],
       "Users": [
         "Χρήστες"
       ],
@@ -7930,9 +8122,6 @@
       ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Θα στείλουμε ένα μήνυμα ηλεκτρονικού ταχυδρομείου στη νέα σας διεύθυνση με οδηγίες για την ολοκλήρωση της αλλαγής."
-      ],
-      "What's new": [
-        "Τι νέο υπάρχει"
       ],
       "WireGuard configuration": [
         "Διαμόρφωση WireGuard"
@@ -8036,6 +8225,9 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Το επιλεγμένο θέμα θα είναι ενεργό όταν το σύστημά σας έχει ρυθμιστεί σε \"λειτουργία φωτισμού\""
+      ],
+      "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
+        "Οι χρήστες θα βλέπουν το λογότυπό σας αντί για το εικονίδιο του ${ BRAND_NAME } όταν είναι συνδεδεμένοι στις εφαρμογές ιστού μας."
       ],
       "Usually an URL that contains the identity provider's name within": [
         "Συνήθως μια διεύθυνση URL που περιέχει το όνομα της υπηρεσίας παροχής ταυτότητας μέσα"
