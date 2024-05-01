@@ -182,51 +182,53 @@ const joinUsernameDomain = (username: string, domain: string) => {
     return [username, '@', domain].join('');
 };
 
-const getErrorDetails = ({
-    signupType,
-    passwords,
-    emailValidationState,
+const getUsernameError = ({
+    username,
+    domain,
     usernameValidationState,
-    domain = '',
-    username = '',
-    email = '',
+}: {
+    domain: string;
+    username: string;
+    usernameValidationState?: AsyncValidationState;
+}): ErrorDetails['username'] => {
+    const trimmedUsername = username.trim();
+    return first([
+        joinUsernameDomain(trimmedUsername, domain) === usernameValidationState?.value
+            ? usernameValidationState?.message
+            : '',
+        requiredValidator(trimmedUsername),
+        usernameLengthValidator(trimmedUsername),
+        usernameStartCharacterValidator(trimmedUsername),
+        usernameEndCharacterValidator(trimmedUsername),
+        usernameCharacterValidator(trimmedUsername),
+    ]);
+};
+
+const getEmailError = ({
+    email,
+    emailValidationState,
+}: {
+    email: string;
+    emailValidationState?: AsyncValidationState;
+}): ErrorDetails['email'] => {
+    const trimmedEmail = email.trim();
+    return first([
+        trimmedEmail === emailValidationState?.value ? emailValidationState?.message : '',
+        requiredValidator(trimmedEmail),
+        emailValidator(trimmedEmail),
+    ]);
+};
+
+const getPasswordError = ({
+    passwords,
     password = '',
     passwordConfirm = '',
 }: {
-    signupType: SignupType;
-    emailValidationState?: AsyncValidationState;
-    usernameValidationState?: AsyncValidationState;
-    domain?: string;
-    username?: string;
-    email?: string;
     passwords?: boolean;
     password?: string;
     passwordConfirm?: string;
-}): ErrorDetails => {
-    const trimmedUsername = username.trim();
-    const trimmedEmail = email.trim();
+}): Pick<ErrorDetails, 'password' | 'passwordConfirm'> => {
     return {
-        username:
-            signupType === SignupType.Username
-                ? first([
-                      joinUsernameDomain(trimmedUsername, domain) === usernameValidationState?.value
-                          ? usernameValidationState?.message
-                          : '',
-                      requiredValidator(trimmedUsername),
-                      usernameLengthValidator(trimmedUsername),
-                      usernameStartCharacterValidator(trimmedUsername),
-                      usernameEndCharacterValidator(trimmedUsername),
-                      usernameCharacterValidator(trimmedUsername),
-                  ])
-                : undefined,
-        email:
-            signupType === SignupType.Email
-                ? first([
-                      trimmedEmail === emailValidationState?.value ? emailValidationState?.message : '',
-                      requiredValidator(trimmedEmail),
-                      emailValidator(trimmedEmail),
-                  ])
-                : undefined,
         password: passwords ? first([requiredValidator(password), passwordLengthValidator(password)]) : undefined,
         passwordConfirm: passwords
             ? first([requiredValidator(passwordConfirm), confirmPasswordValidator(passwordConfirm, password)])
@@ -378,17 +380,44 @@ const AccountStepDetails = ({
         el.scrollIntoView({ behavior: 'smooth', block: 'center' });
     };
 
-    const errorDetails = getErrorDetails({
-        signupType,
-        username: trimmedUsername,
-        domain,
-        emailValidationState: emailAsyncValidationState,
-        usernameValidationState: usernameAsyncValidationState,
-        email: trimmedEmail,
-        passwords: passwordFields,
-        password: details.password,
-        passwordConfirm: details.passwordConfirm,
-    });
+    const errorDetails = (() => {
+        let emailError: ErrorDetails['email'] = undefined;
+        let usernameError: ErrorDetails['username'] = undefined;
+
+        if (signupType === SignupType.Email) {
+            const accountDetails = getAccountDetailsFromEmail({
+                email: details.email,
+                domains,
+                defaultDomain: undefined,
+            });
+
+            if (accountDetails.signupType === SignupType.Username) {
+                emailError = getUsernameError({
+                    username: accountDetails.local,
+                    domain: accountDetails.domain,
+                    usernameValidationState: emailAsyncValidationState,
+                });
+            } else {
+                emailError = getEmailError({ email: trimmedEmail, emailValidationState: emailAsyncValidationState });
+            }
+        } else {
+            usernameError = getUsernameError({
+                username: trimmedUsername,
+                domain,
+                usernameValidationState: usernameAsyncValidationState,
+            });
+        }
+
+        return {
+            username: usernameError,
+            email: emailError,
+            ...getPasswordError({
+                passwords: passwordFields,
+                password: details.password,
+                passwordConfirm: details.passwordConfirm,
+            }),
+        };
+    })();
 
     const validateAccountDetails = () => {
         const fields = ((): (keyof AccountDetailsInputState)[] => {
@@ -425,29 +454,27 @@ const AccountStepDetails = ({
         return true;
     };
 
-    const handleEmailError = (email: string) => {
-        const errors = getErrorDetails({
-            signupType: SignupType.Email,
+    const handleEmailError = (email: string, asyncSet = setEmailAsyncValidationState) => {
+        const emailError = getEmailError({
             email,
         });
         emailAsyncValidator.trigger({
             api,
-            error: !!errors.email,
+            error: !!emailError,
             value: email,
-            set: setEmailAsyncValidationState,
+            set: asyncSet,
             measure,
         });
     };
 
     const handleUsernameError = (username: string, domain: string, asyncSet = setUsernameAsyncValidationState) => {
-        const errors = getErrorDetails({
-            signupType: SignupType.Username,
+        const usernameError = getUsernameError({
             username,
             domain,
         });
         usernameAsyncValidator.trigger({
             api,
-            error: !!errors.username,
+            error: !!usernameError,
             value: joinUsernameDomain(username, domain),
             set: asyncSet,
             measure,
