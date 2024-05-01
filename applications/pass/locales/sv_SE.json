@@ -101,6 +101,9 @@
       "Create alias": [
         "Skapa alias"
       ],
+      "Create an alias": [
+        "Skapa ett alias"
+      ],
       "Create card": [
         "Skapa kort"
       ],
@@ -158,6 +161,12 @@
       "Edit vault": [
         "Redigera valv"
       ],
+      "Enable NetShield": [
+        "Aktivera NetShield"
+      ],
+      "Exclude from monitoring": [
+        "Exkludera från övervakning"
+      ],
       "Export": [
         "Exportera"
       ],
@@ -182,6 +191,9 @@
       "Get mobile apps": [
         "Skaffa mobilappar"
       ],
+      "Get Pass Plus": [
+        "Skaffa Pass Plus"
+      ],
       "Get Started": [
         "Kom igång"
       ],
@@ -199,6 +211,9 @@
       ],
       "Importing": [
         "Importerar"
+      ],
+      "Include in monitoring": [
+        "Inkludera i övervakning"
       ],
       "Install extension": [
         "Installera utökning"
@@ -235,6 +250,9 @@
       ],
       "Manually sync your data": [
         "Synkronisera dina data manuellt"
+      ],
+      "Mark as resolved": [
+        "Markera som löst"
       ],
       "More info: ${ safeTitle }": [
         "Mer information: ${ safeTitle }"
@@ -275,6 +293,9 @@
       "Pass for iOS": [
         "Pass för iOS"
       ],
+      "Pause monitoring": [
+        "Pausa övervakning"
+      ],
       "Pin item": [
         "Fäst objekt"
       ],
@@ -290,6 +311,9 @@
       "Reject invitation": [
         "Avböj inbjudan"
       ],
+      "Remove": [
+        "Ta bort"
+      ],
       "Remove access": [
         "Ta bort åtkomst"
       ],
@@ -298,6 +322,12 @@
       ],
       "Request a feature": [
         "Begär en funktion"
+      ],
+      "Resend code": [
+        "Skicka koden igen"
+      ],
+      "Resend code (in ${ remaining }s)": [
+        "Skicka kod igen (om ${ remaining }s)"
       ],
       "Resend invitation": [
         "Skicka inbjudan igen"
@@ -308,6 +338,9 @@
       "Restore item": [
         "Återställ objekt"
       ],
+      "Resume monitoring": [
+        "Återuppta övervakning"
+      ],
       "Retry": [
         "Försök igen"
       ],
@@ -316,6 +349,9 @@
       ],
       "Saving": [
         "Sparar"
+      ],
+      "See all": [
+        "Se alla"
       ],
       "See members": [
         "Se medlemmar"
@@ -380,6 +416,12 @@
       "Upgrade now to share with more people": [
         "Uppgradera nu för att dela med fler personer"
       ],
+      "Verify": [
+        "Verifiera"
+      ],
+      "View details": [
+        "Visa detaljer"
+      ],
       "View history": [
         "Visa historik"
       ],
@@ -430,6 +472,45 @@
       ],
       "Expand": [
         "Expandera"
+      ]
+    },
+    "Description": {
+      "${ total } other login uses the same password": [
+        "${ total } annan inloggning använder samma lösenord",
+        "${ total } andra inloggningar använder samma lösenord"
+      ],
+      "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
+        "Ett e-postalias fungerar som en e-postadress, men minskar skräppost och håller din faktiska e-postadress och identitet dold."
+      ],
+      "Change your passwords": [
+        "Ändra dina lösenord"
+      ],
+      "Create unique passwords": [
+        "Skapa unika lösenord"
+      ],
+      "Get notified if your email, password or other personal data was leaked.": [
+        "Bli aviserad om din e-post, lösenord eller annan personlig data har läckt."
+      ],
+      "Increase your security": [
+        "Öka din säkerhet"
+      ],
+      "It would be more secure to set up 2FA for this account.": [
+        "Det skulle vara mer säkert att ställa in 2FA för detta konto."
+      ],
+      "Keep your info more secure and private with these guides and tips.": [
+        "Håll din information mer säker och privat med dessa guider och tips."
+      ],
+      "NetShield is an ad-blocking feature from ${ VPN_APP_NAME } that protects your device from ads, trackers, and malware. ": [
+        "NetShield är en annonsblockerande funktion från ${ VPN_APP_NAME } som skyddar din enhet från annonser, spårare och skadlig kod. "
+      ],
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "Vår banbrytande AI-drivna säkerhetslösning designad för användare som söker utökat skydd för sina konton. ${ learnMoreLink }"
+      ],
+      "This account is vulnerable, visit the service and change your password.": [
+        "Detta konto är sårbart, besök tjänsten och ändra ditt lösenord."
+      ],
+      "Your email addresses were leaked in at least 1 data breach.": [
+        "Dina e-postadresser läckte vid minst 1 dataintrång."
       ]
     },
     "Error": {
@@ -516,6 +597,12 @@
       "Failed resending invite.": [
         "Misslyckades skicka inbjudan igen."
       ],
+      "Failed to add email address": [
+        "Misslyckades att lägga till e-postadress"
+      ],
+      "Failed to delete email address from monitoring": [
+        "Misslyckades att ta bort e-postadress från övervakning"
+      ],
       "Failed to delete selected items": [
         "Misslyckades att ta bort markerade objekt"
       ],
@@ -525,8 +612,20 @@
       "Failed to edit user's access.": [
         "Misslyckades att redigera användaråtkomst."
       ],
+      "Failed to load breaches": [
+        "Misslyckades att ladda intrång"
+      ],
+      "Failed to load breaches for this address": [
+        "Misslyckades att ladda intrång för denna adress"
+      ],
+      "Failed to load breaches for this email alias": [
+        "Misslyckades att ladda intrång för detta e-postalias"
+      ],
       "Failed to load item history": [
         "Misslyckades att ladda objekthistorik"
+      ],
+      "Failed to mark this address as resolved": [
+        "Misslyckades att markera denna adress som löst"
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Misslyckades att flytta alla objekt från “${ payload.content.name }“"
@@ -543,6 +642,9 @@
       "Failed to remove user's access.": [
         "Misslyckades att ta bort användaråtkomst."
       ],
+      "Failed to resend verification for custom email": [
+        "Misslyckades att skicka verifieringskod igen för anpassad e-post"
+      ],
       "Failed to restore items from trash": [
         "Misslyckades att återställa objekt från papperskorg"
       ],
@@ -551,6 +653,18 @@
       ],
       "Failed to unpin item": [
         "Misslyckades att lossa objekt"
+      ],
+      "Failed to update monitoring settings": [
+        "Misslyckades att uppdatera övervakningsinställningar"
+      ],
+      "Failed to verify email address": [
+        "Misslyckades att verifiera e-postadress"
+      ],
+      "Failed updating ${ PROTON_SENTINEL_NAME } setting": [
+        "Misslyckades uppdatera ${ PROTON_SENTINEL_NAME }-inställingar"
+      ],
+      "Failed updating monitoring status for this email address": [
+        "Misslyckades att uppdatera övervakningsstatus för denna e-postadress"
       ],
       "File could not be parsed": [
         "Fil kunde inte analyseras"
@@ -678,6 +792,14 @@
         "Något gick fel"
       ]
     },
+    "Feature": {
+      "Unlimited hide-my-email aliases": [
+        "Obegränsat antal hide-my-email-alias"
+      ],
+      "Vault sharing (up to ${ MAX_VAULT_MEMBERS } people)": [
+        "Valvdelning (upp till ${ MAX_VAULT_MEMBERS } personer)"
+      ]
+    },
     "file size format": {
       "byte": [
         "byte",
@@ -752,6 +874,15 @@
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } kommer att kräva ditt ${ BRAND_NAME }-lösenord för att komma åt data offline."
       ],
+      "${ PROTON_SENTINEL_NAME } successfully disabled": [
+        "${ PROTON_SENTINEL_NAME } inaktiverades"
+      ],
+      "${ PROTON_SENTINEL_NAME } successfully enabled": [
+        "${ PROTON_SENTINEL_NAME } aktiverades"
+      ],
+      "${ row.breachCount } breaches detected": [
+        "${ row.breachCount } intrång upptäckta"
+      ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 dagar att prova premiumfunktioner gratis. Endast under din första vecka med ${ BRAND_NAME }."
       ],
@@ -760,6 +891,9 @@
       ],
       "Access successfully confirmed": [
         "Åtkomst bekräftad"
+      ],
+      "Add your custom email address to monitor :": [
+        "Lägg till din anpassade e-postadress att övervaka:"
       ],
       "Admin": [
         "Admin"
@@ -772,6 +906,12 @@
       ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Alias “${ item.aliasEmail }“ har flyttats till papperskorg – den kommer stoppa vidarebefordra e-post till din brevlåda"
+      ],
+      "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
+        "Alias med anpassade domäner övervakas inte, lägg till dem som en anpassad e-post för övervakning."
+      ],
+      "All current breaches will be marked as resolved. In case of future data breaches, you'll be notified.": [
+        "Alla nuvarande intrång kommer att markeras som lösta. I händelse av framtida dataintrång kommer du att aviseras."
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Alla objekt från “${ payload.content.name }“ flyttades"
@@ -800,6 +940,9 @@
       "Auto-lock successfully disabled": [
         "Automatisk låsning inaktiverat"
       ],
+      "Breaches detected": [
+        "Intrång upptäckta"
+      ],
       "Bring your existing passwords into ${ BRAND_NAME }.": [
         "Ta med dina befintliga lösenord till ${ BRAND_NAME }."
       ],
@@ -820,6 +963,9 @@
       ],
       "Can view items in this vault.": [
         "Kan visa objekt i detta valv."
+      ],
+      "Change your password": [
+        "Ändra ditt lösenord"
       ],
       "Congratulations, your access has been confirmed": [
         "Grattis, din åtkomst har bekräftats"
@@ -842,6 +988,9 @@
       "Deleting \"${ payload.content.name }\"": [
         "Tar bort “${ payload.content.name }“"
       ],
+      "Didn't receive the code?": [
+        "Fick du inte koden?"
+      ],
       "Drop file here to upload": [
         "Släpp filer här för att ladda upp"
       ],
@@ -851,6 +1000,18 @@
       "Editor": [
         "Redaktör"
       ],
+      "email": [
+        "e-post"
+      ],
+      "Email address successfully deleted from monitoring": [
+        "E-postadress borttagen från övervakning"
+      ],
+      "Email address successfully excluded from monitoring": [
+        "E-postadress exkluderad från övervakning"
+      ],
+      "Email address successfully included in monitoring": [
+        "E-postadress inkluderad i övervakning"
+      ],
       "Emptying trash...": [
         "Tömmer papperskorg..."
       ],
@@ -859,6 +1020,9 @@
       ],
       "Fill in the CSV with your data": [
         "Fyll i CSV med dina data"
+      ],
+      "finance": [
+        "finans"
       ],
       "Follow those steps to import your data with a generic CSV :": [
         "Följ dessa steg för att importera dina data med en generisk CSV:"
@@ -875,6 +1039,9 @@
       ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Få obegränsade alias, njut av exklusiva funktioner och stöd oss ​​genom att prenumerera på Pass Plus."
+      ],
+      "High Priority": [
+        "Hög prioritet"
       ],
       "Import in progress:": [
         "Import pågår:"
@@ -944,6 +1111,12 @@
       "Item restored": [
         "Objekt återställt"
       ],
+      "Item successfully excluded from monitoring": [
+        "Objekt exkluderat från övervakning"
+      ],
+      "Item successfully included in monitoring": [
+        "Objekt inkluderat i övervakning"
+      ],
       "Item successfully moved": [
         "Objekt flyttades"
       ],
@@ -952,6 +1125,9 @@
       ],
       "Item successfully unpinned": [
         "Objekt lossat"
+      ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Lär dig hur man ${ staySaferOnlineLink }"
       ],
       "Leaving vault...": [
         "Lämnar valv..."
@@ -971,8 +1147,20 @@
       "Logging you out...": [
         "Du loggas ut …"
       ],
+      "Low Priority": [
+        "Låg prioritet"
+      ],
       "me": [
         "jag"
+      ],
+      "Medium Priority": [
+        "Medium prioritet"
+      ],
+      "Monitor accounts": [
+        "Övervaka konton"
+      ],
+      "Monitoring settings successfully updated": [
+        "Övervakningsinställningar uppdaterades"
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "Mer än en lösenordshanterare. ${ PASS_APP_NAME } skyddar ditt lösenord och din personliga e-postadress via e-postalias. Drivs av samma teknologi bakom ${ MAIL_APP_NAME }, din data är krypterad från början och är endast åtkomlig för dig."
@@ -994,6 +1182,9 @@
       ],
       "Never": [
         "Aldrig"
+      ],
+      "No breaches detected": [
+        "Inga intrång upptäckta"
       ],
       "No network connection": [
         "Ingen nätverksanslutning"
@@ -1019,9 +1210,15 @@
       "Pass Plus trial": [
         "Pass Plus provperiod"
       ],
+      "password": [
+        "lösenord"
+      ],
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
         "Lösenord som är äldre än ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } vecka tas bort automatiskt från historiken.",
         "Lösenord som är äldre än ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } veckor tas bort automatiskt från historiken."
+      ],
+      "Paused": [
+        "Pausad"
       ],
       "Permanently deleting selected items": [
         "Tar bort markerade objekt permanent"
@@ -1031,6 +1228,9 @@
       ],
       "Pinning item...": [
         "Fäster objekt..."
+      ],
+      "Please check your spam folder or try resending the code.": [
+        "Kontrollera din skräppostmapp eller försök att skicka koden igen."
       ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Bekräfta ditt ${ BRAND_NAME }-lösenord för att aktivera offlineläge"
@@ -1122,6 +1322,9 @@
       "Successfully synced all vaults": [
         "Alla valv synkroniserade"
       ],
+      "Suggested": [
+        "Föreslagen"
+      ],
       "Switch to another vault or create an item in this vault": [
         "Byt till ett annat valv eller skapa ett objekt i detta valv"
       ],
@@ -1139,6 +1342,9 @@
       ],
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "Den exporterade filen kommer att krypteras med PGP och kräver en stark lösenfras."
+      ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "Den exponerade informationen läckte från en tredjepartstjänst. Din ${ BRAND_NAME }-kontoinformation förblir säker och krypterad. ${ learnMoreLink }"
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Följande ${ result.ignored.length } objekt kunde inte importeras:",
@@ -1168,6 +1374,9 @@
       "To review your imported data, click on the Pass icon in your browser toolbar.": [
         "För att granska dina importerade data, klicka på Pass-ikonen i webbläsarens verktygsfält."
       ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "Prova nya ${ BRAND_NAME }-funktioner, uppdateringar och produkter innan de släpps för allmänheten. Detta kommer ladda om applikationen"
+      ],
       "Unable to copy to clipboard": [
         "Kan inte kopiera till urklipp"
       ],
@@ -1176,6 +1385,9 @@
       ],
       "Unpinning item...": [
         "Lossar objekt..."
+      ],
+      "Unverified": [
+        "Overifierad"
       ],
       "Updating organization settings": [
         "Uppdaterar organisationsinställningar"
@@ -1192,6 +1404,9 @@
       "User's access sucessfuly updated": [
         "Användaråtkomst uppdaterad"
       ],
+      "username": [
+        "användarnamn"
+      ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Valv “${ payload.content.name }“ borttaget"
       ],
@@ -1204,11 +1419,17 @@
       "Vault \"${ share.content.name }\" was removed": [
         "Valv “${ share.content.name }“ togs bort"
       ],
+      "Verification code sent.": [
+        "Verifieringskod skickad."
+      ],
       "Viewer": [
         "Läsare"
       ],
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Vi har problem att synkronisera data till ditt lokala lagringsutrymme. Se till att du har tillräckligt med diskutrymme för att ${ PASS_SHORT_APP_NAME } ska fungera smidigt."
+      ],
+      "We’ve sent a verification code to ${ email }. Please enter it below:": [
+        "Vi har skickat en verifieringskod till ${ email }. Ange den nedan:"
       ],
       "You are about to create:": [
         "Du är på väg att skapa:"
@@ -1241,6 +1462,12 @@
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Du har nått den högsta tillåtna längden på ${ maxLength } tecken."
       ],
+      "You will be notified of data breaches for this email address.": [
+        "Du kommer att aviseras om dataintrång för denna e-postadress."
+      ],
+      "You will no longer be notified of data breaches for this email address.": [
+        "Du kommer inte längre att aviseras om dataintrång för denna e-postadress."
+      ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "Du kommer använda denna PIN-kod för att låsa upp ${ PASS_APP_NAME } när den låses automatiskt efter en period av inaktivitet."
       ],
@@ -1249,6 +1476,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Dina filer kommer att krypteras och sedan sparas"
+      ],
+      "Your information was found on ${ displayedDate }": [
+        "Din information hittades den ${ displayedDate }"
       ]
     },
     "Label": {
@@ -1259,6 +1489,10 @@
       "${ config.options.wordCount } word": [
         "${ config.options.wordCount } ord",
         "${ config.options.wordCount } ord"
+      ],
+      "${ usageCount } login": [
+        "${ usageCount } inloggning",
+        "${ usageCount } inloggningar"
       ],
       "1 hour": [
         "1 timme"
@@ -1320,6 +1554,9 @@
       "Auto-lock after": [
         "Lås automatiskt efter"
       ],
+      "Beta Access": [
+        "Beta-åtkomst"
+      ],
       "Capital letters (A-Z)": [
         "Versaler (A–Ö)"
       ],
@@ -1334,6 +1571,9 @@
       ],
       "Cards": [
         "Kort"
+      ],
+      "Code": [
+        "Kod"
       ],
       "Confirm vault name": [
         "Bekräfta valvnamn"
@@ -1356,6 +1596,9 @@
       "Created": [
         "Skapad"
       ],
+      "Date": [
+        "Datum"
+      ],
       "Disable data export for team members": [
         "Inaktivera dataexport för teammedlemmar"
       ],
@@ -1370,6 +1613,12 @@
       ],
       "Download logs": [
         "Ladda ner loggar"
+      ],
+      "Email": [
+        "E-post"
+      ],
+      "Email address": [
+        "E-postadress"
       ],
       "Empty trash": [
         "Töm papperskorg"
@@ -1452,6 +1701,9 @@
       "Last month": [
         "Förra månaden"
       ],
+      "Last updated": [
+        "Senast uppdaterad"
+      ],
       "Last week": [
         "Förra veckan"
       ],
@@ -1508,6 +1760,9 @@
       ],
       "No history": [
         "Ingen historik"
+      ],
+      "None": [
+        "Ingen"
       ],
       "Note": [
         "Anteckning"
@@ -1596,6 +1851,12 @@
       "Special characters (!&*)": [
         "Specialtecken (!&*)"
       ],
+      "Status": [
+        "Status"
+      ],
+      "Strong": [
+        "Starkt"
+      ],
       "Suffix": [
         "Suffix"
       ],
@@ -1641,6 +1902,9 @@
       "Update": [
         "Uppdatera"
       ],
+      "Used in": [
+        "Används i"
+      ],
       "Username": [
         "Användarnamn"
       ],
@@ -1665,11 +1929,25 @@
       "View logs": [
         "Visa loggar"
       ],
+      "Vulnerable": [
+        "Sårbart"
+      ],
+      "Weak": [
+        "Svagt"
+      ],
       "Websites": [
         "Webbplatser"
       ],
       "You are about to create": [
         "Du är på väg att skapa"
+      ]
+    },
+    "Link": {
+      "Learn more": [
+        "Lär dig mer"
+      ],
+      "stay safer online": [
+        "var säkrare online"
       ]
     },
     "lobby: Info": {
@@ -1691,6 +1969,11 @@
         "Välkommen till ${ brandNameJSX }"
       ]
     },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Aktivera ${ reason }"
+      ]
+    },
     "Message": {
       "${ count } item": [
         "${ count } objekt",
@@ -1698,6 +1981,14 @@
       ],
       "You selected ${ semiboldText } in this vault": [
         "Du markerade ${ semiboldText } i detta valv"
+      ]
+    },
+    "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } har inaktiverats"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } har aktiverats"
       ]
     },
     "Option": {
@@ -1760,6 +2051,9 @@
       "Full Name": [
         "Fullständigt namn"
       ],
+      "me@example.com": [
+        "me@example.com"
+      ],
       "MM/YY": [
         "MM/ÅÅ"
       ],
@@ -1819,11 +2113,32 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } addresses": [
+        "${ BRAND_NAME }-adresser"
+      ],
+      "Account protection": [
+        "Kontoskydd"
+      ],
       "Auto-lock update": [
         "Uppdatering av autolås"
       ],
+      "Block trackers and malware": [
+        "Blockera spårare och skadlig kod"
+      ],
+      "Breach detected": [
+        "Intrång upptäckt"
+      ],
+      "Breaches": [
+        "Intrång"
+      ],
+      "Breaches detected for": [
+        "Intrång upptäckta för"
+      ],
       "Confirm PIN code": [
         "Bekräfta PIN-kod"
+      ],
+      "Confirm your email": [
+        "Bekräfta din e-post"
       ],
       "Create a vault": [
         "Skapa ett valv"
@@ -1837,11 +2152,26 @@
       "Current version": [
         "Nuvarande version"
       ],
+      "Custom addresses": [
+        "Anpassade adresser"
+      ],
+      "Custom email monitoring": [
+        "Anpassad e-postövervakning"
+      ],
+      "Custom emails": [
+        "Anpassad e-post"
+      ],
       "Delete vault \"${ vaultName }\" ?": [
         "Ta bort “${ vaultName }“?"
       ],
+      "Details": [
+        "Detaljer"
+      ],
       "Discard changes?": [
         "Ignorera ändringar?"
+      ],
+      "Email address": [
+        "E-postadress"
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Gillar du ${ PASS_APP_NAME }?"
@@ -1852,11 +2182,17 @@
       "Enter your PIN": [
         "Ange din PIN-kod"
       ],
+      "Excluded items": [
+        "Exkluderade objekt"
+      ],
       "Get Started": [
         "Kom igång"
       ],
       "Grant permissions": [
         "Bevilja behörigheter"
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email-alias"
       ],
       "History": [
         "Historik"
@@ -1885,11 +2221,20 @@
       "Low disk space": [
         "Lågt diskutrymme"
       ],
+      "Mark as resolved?": [
+        "Markera som löst?"
+      ],
       "Member limit": [
         "Medlemsgräns"
       ],
       "Members": [
         "Medlemmar"
+      ],
+      "Missing 2FA": [
+        "Saknar 2FA"
+      ],
+      "Missing two-factor authentication": [
+        "Saknar tvåfaktorsautentisering"
       ],
       "Modified": [
         "Ändrad"
@@ -1903,14 +2248,32 @@
       "Move items?": [
         "Flytta objekt?"
       ],
+      "No excluded items": [
+        "Inga exkluderade objekt"
+      ],
+      "No insecure passwords": [
+        "Inga osäkra lösenord"
+      ],
       "No items selected": [
         "Inga objekt markerade"
+      ],
+      "No reused passwords": [
+        "Inga återanvända lösenord"
       ],
       "Our welcome gift to you": [
         "Vår välkomstgåva till dig"
       ],
       "Passkey": [
         "Passkey"
+      ],
+      "Password": [
+        "Lösenord"
+      ],
+      "Password Health": [
+        "Lösenordshälsa"
+      ],
+      "Pause monitoring?": [
+        "Pausa övervakning?"
       ],
       "Pending access to the shared data": [
         "Väntar på åtkomst till delade data"
@@ -1921,8 +2284,27 @@
       "Pinned (${ items.length })": [
         "Fäst (${ items.length })"
       ],
+      "Recommended actions": [
+        "Rekommenderade åtgärder"
+      ],
+      "Remove email address?": [
+        "Ta bort e-postadress?"
+      ],
+      "Resolved breaches": [
+        "Lösta intrång"
+      ],
       "Restore this version?": [
         "Återställ denna version?"
+      ],
+      "Resume monitoring?": [
+        "Återuppta övervakning?"
+      ],
+      "Reused ${ count } time": [
+        "Återanvänt ${ count } gång",
+        "Återanvänt ${ count } gånger"
+      ],
+      "Reused passwords": [
+        "Återanvända lösenord"
       ],
       "Review and share": [
         "Granska och dela"
@@ -1941,6 +2323,9 @@
       ],
       "Share with": [
         "Dela med"
+      ],
+      "Stay safer online": [
+        "Var säkrare online"
       ],
       "Suggestions": [
         "Förslag"
@@ -1963,8 +2348,23 @@
       "Vault shared with you": [
         "Valv delade med dig"
       ],
+      "Want to learn more?": [
+        "Vill du lära dig mer?"
+      ],
+      "Weak password": [
+        "Svagt lösenord"
+      ],
+      "Weak passwords": [
+        "Svaga lösenord"
+      ],
+      "What is an alias?": [
+        "Vad är ett alias?"
+      ],
       "Why ${ PASS_APP_NAME }?": [
         "Varför ${ PASS_APP_NAME }?"
+      ],
+      "Your exposed information": [
+        "Din exponerade information"
       ],
       "Your vault is empty": [
         "Ditt valv är tomt"
@@ -2027,6 +2427,9 @@
       "Duplicate email addresses.": [
         "Dubbletter av e-postadresser."
       ],
+      "Email is required": [
+        "E-post är obligatoriskt"
+      ],
       "Empty note": [
         "Tom anteckning"
       ],
@@ -2038,6 +2441,12 @@
       ],
       "Invalid alias prefix": [
         "Ogiltigt alias-prefix"
+      ],
+      "Invalid code": [
+        "Ogiltig kod"
+      ],
+      "Invalid email": [
+        "Ogiltig e-post"
       ],
       "Invalid email addresses.": [
         "Ogiltiga e-postadresser."
@@ -2117,6 +2526,9 @@
       ],
       "Vault name is required": [
         "Valvnamn är obligatoriskt"
+      ],
+      "Verification code is required": [
+        "Verifieringskod är obligatoriskt"
       ],
       "You cannot create more vaults than your subscription allows.": [
         "Du kan inte skapa fler valv än vad din prenumeration tillåter."

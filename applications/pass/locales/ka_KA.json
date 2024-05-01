@@ -236,6 +236,9 @@
       "Manually sync your data": [
         "თქვენი მონაცემების ხელით სინქრონიზაცია"
       ],
+      "Mark as resolved": [
+        "მონიშნე გადაწყვეტილად"
+      ],
       "More info: ${ safeTitle }": [
         "გაიგეთ მეტი: ${ safeTitle }"
       ],
@@ -290,6 +293,9 @@
       "Reject invitation": [
         "მოსაწვევის უარყოფა"
       ],
+      "Remove": [
+        "წაშლა"
+      ],
       "Remove access": [
         "წვდომის გაუქმება"
       ],
@@ -298,6 +304,9 @@
       ],
       "Request a feature": [
         "თვისების მოთხოვნა"
+      ],
+      "Resend code": [
+        "კოდის თავიდან გაგზავნა"
       ],
       "Resend invitation": [
         "მოსაწვევის თავიდან გაგზავნა"
@@ -379,6 +388,9 @@
       ],
       "Upgrade now to share with more people": [
         "ასწიეთ ტარიფი ახლა და გაუზიარეთ მეტ ხალხს"
+      ],
+      "Verify": [
+        "გადამოწმება"
       ],
       "View history": [
         "ისტორიის ნახვა"
@@ -833,6 +845,9 @@
       "Can view items in this vault.": [
         "შეუძლია ამ საცავის ელემენტების დათვალიერება."
       ],
+      "Change your password": [
+        "შეცვალეთ თქვენი პაროლი"
+      ],
       "Congratulations, your access has been confirmed": [
         "გილოცავთ, თქვენი წვდომა დადასტურებულია"
       ],
@@ -860,6 +875,9 @@
       "Editor": [
         "რედაქტორი"
       ],
+      "email": [
+        "ელფოსტა"
+      ],
       "Emptying trash...": [
         "ნაგვის ყუთის დაცარიელება..."
       ],
@@ -868,6 +886,9 @@
       ],
       "Fill in the CSV with your data": [
         "შეავსეთ CSV თქვენი მონაცემებით"
+      ],
+      "finance": [
+        "ფინანსები"
       ],
       "Follow those steps to import your data with a generic CSV :": [
         "მიყევით ამ ნაბიჯებს, რომ შემოიტანოთ თქვენი მონაცემები ზოგადი CSV-ით:"
@@ -884,6 +905,9 @@
       ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "მიიღეთ უსაზღვრო რაოდენობის ფსევდონიმები, ისიამოვნეთ ექსკლუზიური ფუნქციებით და დაგვიჭირეთ მხარი, Pass Plus-ზე გადართვით."
+      ],
+      "High Priority": [
+        "მაღალი პრიორიტეტი"
       ],
       "Import in progress:": [
         "მიმდინარეობს შემოტანა:"
@@ -962,6 +986,9 @@
       "Item successfully unpinned": [
         "ელემენტის მოხსნა წარმატებულია"
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "გაიგეთ, როგორ ${ staySaferOnlineLink }"
+      ],
       "Leaving vault...": [
         "საცავიდან გასლვა..."
       ],
@@ -980,8 +1007,17 @@
       "Logging you out...": [
         "მიმდინარეობს თქვენი სისტემიდან გაყვანა..."
       ],
+      "Low Priority": [
+        "დაბალი პრიორიტეტი"
+      ],
       "me": [
         "მე"
+      ],
+      "Medium Priority": [
+        "საშუალო პრიორიტეტი"
+      ],
+      "Monitor accounts": [
+        "ანგარიშების მონიტორი"
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "წარმოადგენს რა მეტს, ვიდრე პაროლების მმართველი, ${ PASS_APP_NAME } თქვენს პაროლებს და პირადი ელფოსტის მისამართებს ფსევდონიებით იცავს. დაფუძნებული იგივე ტექნოლოგიაზე, რაზეც ${ MAIL_APP_NAME }, თქვენი მონაცემები გამჭოლადაა დაშიფრული და წვდომადი, მხოლოდ, თქვენთვსაა."
@@ -1031,9 +1067,15 @@
       "Pass Plus trial": [
         "Pass Plus-ის საცდელი"
       ],
+      "password": [
+        "პაროლი"
+      ],
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
         "${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } კვირაზე ძველი პაროლები ისტორიიდან ავტომატურად წაიშლება",
         "${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } კვირაზე ძველი პაროლები ისტორიიდან ავტომატურად წაიშლება"
+      ],
+      "Paused": [
+        "შეჩერებულია"
       ],
       "Permanently deleting selected items": [
         "მონიშნული ელემენტების სამუდამოდ წაშლა"
@@ -1180,6 +1222,9 @@
       "To review your imported data, click on the Pass icon in your browser toolbar.": [
         "შემოტანილი მონაცემების სანახავად დააწკაპუნეთ Pass-ის ხატულაზე თქვენი ბრაუზერის პანელზე."
       ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "სცადეთ ახალი ${ BRAND_NAME }-ის თვისებები, განახლებები და პროდუქტები მანამდე, სანამ ისინი საჯარო გახდება. ეს ქმედება აპლიკაციას თავიდან ჩატვირთავს."
+      ],
       "Unable to copy to clipboard": [
         "ბუფერში დაკოპირება შეუძლებელია"
       ],
@@ -1188,6 +1233,9 @@
       ],
       "Unpinning item...": [
         "ელემენტის მოხსნა..."
+      ],
+      "Unverified": [
+        "გადაუმოწმებელი"
       ],
       "Updating organization settings": [
         "ორგანიზაციის პარამეტრების განახლება"
@@ -1203,6 +1251,9 @@
       ],
       "User's access sucessfuly updated": [
         "მომხმარებლის წვდომები წარმატებით განახლდა"
+      ],
+      "username": [
+        "მომხმარებლის სახელი"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "საცავი \"${ payload.content.name }\" წარმატებით წაიშალა"
@@ -1261,6 +1312,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "თქვენი ფაილები ჯერ დაიშიფრება და, მხოლოდ, შემდეგ შეინახება"
+      ],
+      "Your information was found on ${ displayedDate }": [
+        "თქვენი ინფორმაციის აღმოჩენის თარიღია ${ displayedDate }"
       ]
     },
     "Label": {
@@ -1332,6 +1386,9 @@
       "Auto-lock after": [
         "ავტომატური დაბლოკვის დრო"
       ],
+      "Beta Access": [
+        "წვდომა ბეტა ვერსიებზე"
+      ],
       "Capital letters (A-Z)": [
         "მაღალი რეგისტრის სიმბოლოები (A-Z)"
       ],
@@ -1346,6 +1403,9 @@
       ],
       "Cards": [
         "ბარათები"
+      ],
+      "Code": [
+        "კოდი"
       ],
       "Confirm vault name": [
         "დაადასტურეთ საცავის სახელი"
@@ -1368,6 +1428,9 @@
       "Created": [
         "შექმნილია"
       ],
+      "Date": [
+        "თარიღი"
+      ],
       "Disable data export for team members": [
         "მონაცემების გატანის გათიშვა გუნდის წევრებისთვის"
       ],
@@ -1382,6 +1445,12 @@
       ],
       "Download logs": [
         "ჟურნალის გადმოწერა"
+      ],
+      "Email": [
+        "ელფოსტა"
+      ],
+      "Email address": [
+        "ელფოსტის მისამართი"
       ],
       "Empty trash": [
         "ნაგვის ყუთის გასუფთავება"
@@ -1681,6 +1750,14 @@
         "აპირებთ, შექმნათ"
       ]
     },
+    "Link": {
+      "Learn more": [
+        "გაიგეთ მეტი"
+      ],
+      "stay safer online": [
+        "იყავით უსაფრთხოდ ინტერნეტში"
+      ]
+    },
     "lobby: Info": {
       "Enter your PIN code": [
         "შეიყვანეთ თქვენი PIN კოდი"
@@ -1700,6 +1777,11 @@
         "კეთილი იყოს თქვენი მობრძანება ${ brandNameJSX }-ში"
       ]
     },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "${ reason }-ის ჩართვა"
+      ]
+    },
     "Message": {
       "${ count } item": [
         "${ count } ელემენტი",
@@ -1707,6 +1789,14 @@
       ],
       "You selected ${ semiboldText } in this vault": [
         "აირჩიეთ ${ semiboldText } ამ საცავში"
+      ]
+    },
+    "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } გაითიშა"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } ჩაირთო"
       ]
     },
     "Option": {
@@ -1831,6 +1921,9 @@
       "Auto-lock update": [
         "ავტომატური დაბლოკვის განახლება"
       ],
+      "Block trackers and malware": [
+        "ტრეკერებისა და მავნე პროგრამების დაბლოკვა"
+      ],
       "Confirm PIN code": [
         "დაადასტურეთ PIN–კოდი"
       ],
@@ -1849,8 +1942,14 @@
       "Delete vault \"${ vaultName }\" ?": [
         "წავშალო საცავი \"${ vaultName }\" ?"
       ],
+      "Details": [
+        "დეტალები"
+      ],
       "Discard changes?": [
         "ცვლილებების გაუქმება?"
+      ],
+      "Email address": [
+        "ელფოსტის მისამართი"
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "მოგწონთ${ PASS_APP_NAME }?"
@@ -1921,6 +2020,9 @@
       "Passkey": [
         "წვდომის გასაღები"
       ],
+      "Password": [
+        "პაროლი"
+      ],
       "Pending access to the shared data": [
         "გაზიარებულ მონაცემებთან წვდომის მოლოდინი"
       ],
@@ -1929,6 +2031,9 @@
       ],
       "Pinned (${ items.length })": [
         "მიმაგრებულია (${ items.length })"
+      ],
+      "Recommended actions": [
+        "რეკომენდებული ქმედებები"
       ],
       "Restore this version?": [
         "ამ ვერსიის აღდგენა?"
@@ -1972,8 +2077,17 @@
       "Vault shared with you": [
         "თქვენთან გაზიარებული საცავი"
       ],
+      "What is an alias?": [
+        "რა არის ფსევდონიმი?"
+      ],
+      "What is the dark web?": [
+        "რა არს ბნელი ვები?"
+      ],
       "Why ${ PASS_APP_NAME }?": [
         "რატომ ${ PASS_APP_NAME }?"
+      ],
+      "Your exposed information": [
+        "თქვენი გაჟონილი ინფორმაცია"
       ],
       "Your vault is empty": [
         "თქვენი საცავი ცარიელია"
