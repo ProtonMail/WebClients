@@ -158,6 +158,12 @@
       "Edit vault": [
         "Sunting brankas"
       ],
+      "Enable NetShield": [
+        "Aktifkan NetShield"
+      ],
+      "Exclude from monitoring": [
+        "Kecualikan dari pemantauan"
+      ],
       "Export": [
         "Ekspor"
       ],
@@ -182,6 +188,9 @@
       "Get mobile apps": [
         "Dapatkan Pass versi mobile"
       ],
+      "Get Pass Plus": [
+        "Dapatkan Pass Plus"
+      ],
       "Get Started": [
         "Mulai"
       ],
@@ -199,6 +208,9 @@
       ],
       "Importing": [
         "Mengimpor"
+      ],
+      "Include in monitoring": [
+        "Sertakan dalam pemantauan"
       ],
       "Install extension": [
         "Pasang ekstensi"
@@ -235,6 +247,9 @@
       ],
       "Manually sync your data": [
         "Sinkronkan data"
+      ],
+      "Mark as resolved": [
+        "Tandai sebagai terselesaikan"
       ],
       "More info: ${ safeTitle }": [
         "Info lebih lanjut: ${ safeTitle }"
@@ -275,6 +290,9 @@
       "Pass for iOS": [
         "Pass untuk iOS"
       ],
+      "Pass Monitor": [
+        "Pemantauan Pass"
+      ],
       "Pin item": [
         "Sematkan item"
       ],
@@ -290,6 +308,9 @@
       "Reject invitation": [
         "Tolak undangan"
       ],
+      "Remove": [
+        "Hapus"
+      ],
       "Remove access": [
         "Hapus akses"
       ],
@@ -298,6 +319,12 @@
       ],
       "Request a feature": [
         "Minta fitur"
+      ],
+      "Resend code": [
+        "Kirim ulang kode"
+      ],
+      "Resend code (in ${ remaining }s)": [
+        "Kirim ulang kode (dalam ${ remaining } detik)"
       ],
       "Resend invitation": [
         "Kirim ulang undangan"
@@ -380,6 +407,9 @@
       "Upgrade now to share with more people": [
         "Tingkatkan sekarang untuk berbagi dengan lebih banyak pengguna"
       ],
+      "Verify": [
+        "Verifikasi"
+      ],
       "View history": [
         "Lihat riwayat"
       ],
@@ -430,6 +460,41 @@
       ],
       "Expand": [
         "Lebarkan"
+      ]
+    },
+    "Description": {
+      "${ total } other login uses the same password": [
+        "${ total } entri masuk lainnya menggunakan kata sandi yang sama"
+      ],
+      "Change your passwords": [
+        "Ubah kata sandi Anda"
+      ],
+      "Get notified if your email, password or other personal data was leaked.": [
+        "Dapatkan notifikasi apabila email, kata sandi, atau data pribadi Anda lainnya dibocorkan."
+      ],
+      "Increase your security": [
+        "Tingkatkan keamanan Anda"
+      ],
+      "It would be more secure to set up 2FA for this account.": [
+        "Akun ini akan lebih aman dengan pengaturan 2FA."
+      ],
+      "Keep your info more secure and private with these guides and tips.": [
+        "Jaga agar informasi Anda lebih aman dan privat dengan berbagai panduan dan tips berikut."
+      ],
+      "NetShield is an ad-blocking feature from ${ VPN_APP_NAME } that protects your device from ads, trackers, and malware. ": [
+        "NetShield merupakan fitur pemblokir iklan dari ${ VPN_APP_NAME } yang melindungi perangkat Anda dari iklan, pelacak, dan malware. "
+      ],
+      "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
+        "Dark web merupakan bagian tersembunyi dari internet di mana informasi pribadi yang dicuri, seperti identitas diri, dapat diperjualbelikan."
+      ],
+      "This account is vulnerable, visit the service and change your password.": [
+        "Akun ini terindikasi rentan. Kunjungi layanan keamanan kami dan ubah kata sandi Anda."
+      ],
+      "Your email addresses were leaked in at least 1 data breach.": [
+        "Alamat email Anda telah dibocorkan pada setidaknya 1 insiden kebocoran data."
+      ],
+      "Your personal info was leaked in a data breach of a third-party service.": [
+        "Informasi pribadi Anda telah dibocorkan dalam insiden kebocoran data dari layanan pihak ketiga."
       ]
     },
     "Error": {
@@ -517,6 +582,12 @@
       "Failed resending invite.": [
         "Undangan gagal dikirim ulang."
       ],
+      "Failed to add email address": [
+        "Alamat email gagal ditambahkan"
+      ],
+      "Failed to delete email address from monitoring": [
+        "Alamat email gagal dihapus dari pemantauan"
+      ],
       "Failed to delete selected items": [
         "Item yang dipilih gagal dihapus"
       ],
@@ -526,8 +597,20 @@
       "Failed to edit user's access.": [
         "Akses pengguna gagal disunting."
       ],
+      "Failed to load breaches": [
+        "Daftar kebocoran gagal dimuat"
+      ],
+      "Failed to load breaches for this address": [
+        "Daftar kebocoran untuk alamat ini gagal dimuat"
+      ],
+      "Failed to load breaches for this email alias": [
+        "Daftar kebocoran untuk alias email ini gagal dimuat"
+      ],
       "Failed to load item history": [
         "Riwayat item gagal dimuat"
+      ],
+      "Failed to mark this address as resolved": [
+        "Alamat ini gagal ditandai sebagai telah terselesaikan"
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Gagal memindahkan semua item dari \"${ payload.content.name }\""
@@ -544,6 +627,9 @@
       "Failed to remove user's access.": [
         "Akses pengguna gagal dihapus."
       ],
+      "Failed to resend verification for custom email": [
+        "Verifikasi untuk email khusus gagal dikirim ulang"
+      ],
       "Failed to restore items from trash": [
         "Item gagal dipulihkan dari sampah"
       ],
@@ -552,6 +638,21 @@
       ],
       "Failed to unpin item": [
         "Sematan item gagal dilepas"
+      ],
+      "Failed to update monitoring settings": [
+        "Pengaturan pemantauan gagal diperbarui"
+      ],
+      "Failed to verify email address": [
+        "Alamat email gagal diverifikasi"
+      ],
+      "Failed updating ${ PROTON_SENTINEL_NAME } setting": [
+        "Pengaturan ${ PROTON_SENTINEL_NAME } gagal diperbarui"
+      ],
+      "Failed updating monitor flag of the item": [
+        "Status pemantauan item ini gagal diperbarui"
+      ],
+      "Failed updating monitoring status for this email address": [
+        "Status pemantauan untuk alamat email ini gagal diperbarui"
       ],
       "File could not be parsed": [
         "Berkas tidak dapat diurai"
@@ -587,7 +688,7 @@
         "Item gagal dipindahkan"
       ],
       "Offline mode is currently not available for two password mode.": [
-        "Mode offline saat ini tidak tersedia pada mode kata sandi ganda."
+        "Mode luring saat ini tidak tersedia pada mode kata sandi ganda."
       ],
       "Offline mode isn't currently available for your plan and not compatible with two password mode.": [
         "Mode offline saat ini tidak tersedia untuk paket Anda dan tidak kompatibel dengan mode kata sandi ganda."
@@ -688,6 +789,11 @@
         "Terdapat suatu kesalahan"
       ]
     },
+    "Feature": {
+      "Integrated 2FA authenticator": [
+        "Autentikator 2FA terintegrasi"
+      ]
+    },
     "file size format": {
       "byte": [
         "byte"
@@ -753,6 +859,15 @@
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } akan membutuhkan kata sandi ${ BRAND_NAME } Anda untuk dapat mengakses data secara offline."
       ],
+      "${ PROTON_SENTINEL_NAME } successfully disabled": [
+        "${ PROTON_SENTINEL_NAME } berhasil dinonaktifkan"
+      ],
+      "${ PROTON_SENTINEL_NAME } successfully enabled": [
+        "${ PROTON_SENTINEL_NAME } berhasil diaktifkan"
+      ],
+      "${ row.breachCount } breaches detected": [
+        "${ row.breachCount } kebocoran terdeteksi"
+      ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 hari untuk mencoba fitur premium secara gratis. Hanya tersedia saat minggu pertama dengan ${ BRAND_NAME }."
       ],
@@ -761,6 +876,9 @@
       ],
       "Access successfully confirmed": [
         "Akses berhasil dikonfirmasi"
+      ],
+      "Add your custom email address to monitor :": [
+        "Tambahkan alamat email khusus Anda untuk dipantau:"
       ],
       "Admin": [
         "Admin"
@@ -773,6 +891,9 @@
       ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Alias \"${ item.aliasEmail }\" dipindahkan ke sampah - alamat ini tidak akan lagi meneruskan email ke kotak surat Anda"
+      ],
+      "All current breaches will be marked as resolved. In case of future data breaches, you'll be notified.": [
+        "Seluruh kebocoran yang ada saat ini akan ditandai sebagai telah terselesaikan. Apabila ke depannya terdapat kebocoran data baru, Anda akan menerima notifikasi seputar hal ini."
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Semua item dari \"${ payload.content.name }\" berhasil dipindahkan"
@@ -801,6 +922,9 @@
       "Auto-lock successfully disabled": [
         "Pengunci otomatis berhasil dinonaktifkan"
       ],
+      "Breaches detected": [
+        "Kebocoran terdeteksi"
+      ],
       "Bring your existing passwords into ${ BRAND_NAME }.": [
         "Bawa kata sandi Anda ke ${ BRAND_NAME }."
       ],
@@ -821,6 +945,9 @@
       ],
       "Can view items in this vault.": [
         "Dapat melihat item yang terkandung dalam brankas ini."
+      ],
+      "Change your password": [
+        "Ubah kata sandi Anda"
       ],
       "Congratulations, your access has been confirmed": [
         "Selamat, akses Anda telah dikonfirmasi"
@@ -843,6 +970,9 @@
       "Deleting \"${ payload.content.name }\"": [
         "Menghapus \"${ payload.content.name }\""
       ],
+      "Didn't receive the code?": [
+        "Tidak menerima kode?"
+      ],
       "Drop file here to upload": [
         "Lepaskan berkas di sini untuk mengunggah"
       ],
@@ -852,6 +982,18 @@
       "Editor": [
         "Penyunting"
       ],
+      "email": [
+        "email"
+      ],
+      "Email address successfully deleted from monitoring": [
+        "Alamat email berhasil dihapus dari pemantauan"
+      ],
+      "Email address successfully excluded from monitoring": [
+        "Alamat email berhasil dikecualikan dari pemantauan"
+      ],
+      "Email address successfully included in monitoring": [
+        "Alamat email berhasil diikutsertakan dalam pemantauan"
+      ],
       "Emptying trash...": [
         "Mengosongkan sampah..."
       ],
@@ -860,6 +1002,9 @@
       ],
       "Fill in the CSV with your data": [
         "Isi CSV dengan data Anda"
+      ],
+      "finance": [
+        "keuangan"
       ],
       "Follow those steps to import your data with a generic CSV :": [
         "Ikuti langkah-langkah berikut untuk mengimpor data Anda dengan berkas CSV umum:"
@@ -875,6 +1020,9 @@
       ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Dapatkan alias tak terbatas, nikmati fitur eksklusif, dan dukung kami dengan berlangganan Pass Plus."
+      ],
+      "High Priority": [
+        "Prioritas Tinggi"
       ],
       "Import in progress:": [
         "Impor yang sedang berlangsung:"
@@ -942,6 +1090,12 @@
       "Item restored": [
         "Item dipulihkan"
       ],
+      "Item successfully excluded from monitoring": [
+        "Item berhasil dikecualikan dari pemantauan"
+      ],
+      "Item successfully included in monitoring": [
+        "Item berhasil diikutsertakan dalam pemantauan"
+      ],
       "Item successfully moved": [
         "Item berhasil dipindahkan"
       ],
@@ -950,6 +1104,12 @@
       ],
       "Item successfully unpinned": [
         "Sematan item berhasil dilepas"
+      ],
+      "Latest breach on ${ formattedDate }": [
+        "Kebocoran terkini pada ${ formattedDate }"
+      ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Pelajari cara untuk ${ staySaferOnlineLink }"
       ],
       "Leaving vault...": [
         "Meninggalkan brankas..."
@@ -969,8 +1129,20 @@
       "Logging you out...": [
         "Mengeluarkan Anda dari akun..."
       ],
+      "Low Priority": [
+        "Prioritas Rendah"
+      ],
       "me": [
         "saya"
+      ],
+      "Medium Priority": [
+        "Prioritas Menengah"
+      ],
+      "Monitor accounts": [
+        "Monitor akun"
+      ],
+      "Monitoring settings successfully updated": [
+        "Pengaturan pemantauan berhasil diperbarui"
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "Lebih dari sekadar pengelola kata sandi, ${ PASS_APP_NAME } melindungi kata sandi dan alamat email pribadi Anda melalui alamat email samaran. Dengan didukung oleh teknologi yang serupa dengan ${ MAIL_APP_NAME }, data Anda akan terenkripsi secara end-to-end dan hanya akan dapat diakses oleh Anda."
@@ -992,6 +1164,9 @@
       ],
       "Never": [
         "Tidak pernah"
+      ],
+      "No breaches detected": [
+        "Tidak ada kebocoran yang terdeteksi"
       ],
       "No network connection": [
         "Tidak ada koneksi jaringan"
@@ -1020,8 +1195,14 @@
       "Pass Plus trial": [
         "Uji coba Pass Plus"
       ],
+      "password": [
+        "kata sandi"
+      ],
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
         "Kata sandi yang berusia lebih dari ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } minggu akan dihapus dari daftar riwayat secara otomatis."
+      ],
+      "Paused": [
+        "Dijeda"
       ],
       "Permanently deleting selected items": [
         "Menghapus item yang dipilih secara permanen"
@@ -1031,6 +1212,9 @@
       ],
       "Pinning item...": [
         "Menyematkan item..."
+      ],
+      "Please check your spam folder or try resending the code.": [
+        "Silakan periksa folder spam Anda atau cobalah untuk mengirimkan ulang kode ini."
       ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Silakan konfirmasi kata sandi ${ BRAND_NAME } Anda untuk mengaktifkan mode offline"
@@ -1063,7 +1247,7 @@
         "Privasi merupakan hal yang sangat penting bagi kami. Pelajari mengapa ${ PASS_APP_NAME } berbeda."
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
-        "Terlindung oleh ${ PROTON_SENTINEL_LINK }, program perlindungan akun mutakhir kami"
+        "Dilindungi oleh ${ PROTON_SENTINEL_LINK }, program perlindungan akun mutakhir kami"
       ],
       "Reconnect": [
         "Hubungkan ulang"
@@ -1122,6 +1306,9 @@
       "Successfully synced all vaults": [
         "Seluruh brankas berhasil disinkronkan"
       ],
+      "Suggested": [
+        "Disarankan"
+      ],
       "Switch to another vault or create an item in this vault": [
         "Ganti ke brankas lain atau buat item dalam brankas ini"
       ],
@@ -1139,6 +1326,9 @@
       ],
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "Berkas yang diekspor akan dienkripsi menggunakan PGP dan memerlukan frasa sandi yang aman."
+      ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "Informasi yang terpapar ini dibocorkan oleh layanan pihak ketiga. Informasi Akun ${ BRAND_NAME } Anda tetap aman dan terenkripsi. ${ learnMoreLink }"
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "${ result.ignored.length } item berikut tidak dapat diimpor:"
@@ -1167,6 +1357,9 @@
       "To review your imported data, click on the Pass icon in your browser toolbar.": [
         "Untuk meninjau data Anda yang telah diimpor, klik ikon Pass pada toolbar browser Anda."
       ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "Coba berbagai fitur, pembaruan, dan produk ${ BRAND_NAME } baru sebelum waktu rilisnya kepada publik. Mengubah peraturan ini akan memuat ulang halaman."
+      ],
       "Unable to copy to clipboard": [
         "Tidak dapat menyalin ke papan klip"
       ],
@@ -1175,6 +1368,9 @@
       ],
       "Unpinning item...": [
         "Melepas sematan item..."
+      ],
+      "Unverified": [
+        "Tidak terverifikasi"
       ],
       "Updating organization settings": [
         "Memperbarui pengaturan organisasi"
@@ -1191,6 +1387,9 @@
       "User's access sucessfuly updated": [
         "Akses pengguna berhasil diperbarui"
       ],
+      "username": [
+        "nama pengguna"
+      ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Brankas \"${ payload.content.name }\" berhasil dihapus"
       ],
@@ -1203,11 +1402,17 @@
       "Vault \"${ share.content.name }\" was removed": [
         "Brankas \"${ share.content.name }\" telah dihapus"
       ],
+      "Verification code sent.": [
+        "Kode verifikasi telah dikirim."
+      ],
       "Viewer": [
         "Pengamat"
       ],
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Kami mengalami masalah menyinkronkan data ke penyimpanan lokal Anda. Pastikan Anda memiliki ruang penyimpanan yang cukup supaya ${ PASS_SHORT_APP_NAME } dapat bekerja."
+      ],
+      "We’ve sent a verification code to ${ email }. Please enter it below:": [
+        "Kami telah mengirimkan kode verifikasi ke ${ email }. Masukkan kode tersebut pada kolom di bawah ini:"
       ],
       "You are about to create:": [
         "Anda akan membuat:"
@@ -1239,6 +1444,12 @@
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Anda telah mencapai panjang maksimum yang diizinkan sebesar ${ maxLength } karakter."
       ],
+      "You will be notified of data breaches for this email address.": [
+        "Anda akan diberi tahu seputar kebocoran data yang terjadi pada alamat email ini."
+      ],
+      "You will no longer be notified of data breaches for this email address.": [
+        "Anda tidak akan lagi diberi tahu seputar kebocoran data yang terjadi pada alamat email ini."
+      ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "Anda akan menggunakan PIN ini untuk membuka ${ PASS_APP_NAME } setelah aplikasi terkunci secara otomatis akibat tidak digunakan dalam jangka waktu tertentu."
       ],
@@ -1247,6 +1458,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Berkas Anda akan dienkripsi dan kemudian disimpan"
+      ],
+      "Your information was found on ${ displayedDate }": [
+        "Informasi Anda ditemukan pada tanggal ${ displayedDate }"
       ]
     },
     "Label": {
@@ -1255,6 +1469,9 @@
       ],
       "${ config.options.wordCount } word": [
         "${ config.options.wordCount } kata"
+      ],
+      "${ usageCount } login": [
+        "${ usageCount } entri masuk"
       ],
       "1 hour": [
         "1 jam"
@@ -1316,6 +1533,9 @@
       "Auto-lock after": [
         "Kunci Pass secara otomatis setelah"
       ],
+      "Beta Access": [
+        "Akses Beta"
+      ],
       "Capital letters (A-Z)": [
         "Huruf kapital (A-Z)"
       ],
@@ -1330,6 +1550,9 @@
       ],
       "Cards": [
         "Kartu"
+      ],
+      "Code": [
+        "Kode"
       ],
       "Confirm vault name": [
         "Konfirmasi nama brankas"
@@ -1352,6 +1575,9 @@
       "Created": [
         "Waktu pembuatan"
       ],
+      "Date": [
+        "Tanggal"
+      ],
       "Disable data export for team members": [
         "Nonaktifkan ekspor data bagi anggota tim"
       ],
@@ -1366,6 +1592,12 @@
       ],
       "Download logs": [
         "Unduh log"
+      ],
+      "Email": [
+        "Email"
+      ],
+      "Email address": [
+        "Alamat email"
       ],
       "Empty trash": [
         "Kosongkan sampah"
@@ -1445,6 +1677,9 @@
       "Last month": [
         "Bulan lalu"
       ],
+      "Last updated": [
+        "Terakhir diperbarui"
+      ],
       "Last week": [
         "Minggu lalu"
       ],
@@ -1501,6 +1736,9 @@
       ],
       "No history": [
         "Tidak ada riwayat"
+      ],
+      "None": [
+        "Tidak ada"
       ],
       "Note": [
         "Catatan"
@@ -1589,6 +1827,9 @@
       "Special characters (!&*)": [
         "Karakter khusus (!&*)"
       ],
+      "Status": [
+        "Status"
+      ],
       "Suffix": [
         "Akhiran"
       ],
@@ -1634,6 +1875,9 @@
       "Update": [
         "Perbarui"
       ],
+      "Used in": [
+        "Digunakan pada"
+      ],
       "Username": [
         "Nama pengguna"
       ],
@@ -1658,11 +1902,25 @@
       "View logs": [
         "Lihat log"
       ],
+      "Vulnerable": [
+        "Rentan"
+      ],
+      "Weak": [
+        "Lemah"
+      ],
       "Websites": [
         "Situs web"
       ],
       "You are about to create": [
         "Anda akan membuat"
+      ]
+    },
+    "Link": {
+      "Learn more": [
+        "Lebih lanjut"
+      ],
+      "stay safer online": [
+        "beraktivitas online secara lebih aman"
       ]
     },
     "lobby: Info": {
@@ -1684,12 +1942,25 @@
         "Selamat datang di ${ brandNameJSX }"
       ]
     },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Aktifkan ${ reason }"
+      ]
+    },
     "Message": {
       "${ count } item": [
         "${ count } item"
       ],
       "You selected ${ semiboldText } in this vault": [
         "Anda memilih ${ semiboldText } pada brankas ini"
+      ]
+    },
+    "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } telah dinonaktifkan"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } telah diaktifkan"
       ]
     },
     "Option": {
@@ -1752,6 +2023,9 @@
       "Full Name": [
         "Nama Lengkap"
       ],
+      "me@example.com": [
+        "saya@contoh.com"
+      ],
       "MM/YY": [
         "BB/TT"
       ],
@@ -1810,8 +2084,20 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } addresses": [
+        "Alamat ${ BRAND_NAME }"
+      ],
+      "${ PASS_SHORT_APP_NAME } Monitor": [
+        "Pemantauan ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Account protection": [
+        "Perlindungan akun"
+      ],
       "Auto-lock update": [
         "Pembaruan kunci otomatis"
+      ],
+      "Block trackers and malware": [
+        "Blokir pelacak dan malware"
       ],
       "Confirm PIN code": [
         "Konfirmasikan kode PIN"
@@ -1828,11 +2114,20 @@
       "Current version": [
         "Versi saat ini"
       ],
+      "Custom addresses": [
+        "Alamat khusus"
+      ],
       "Delete vault \"${ vaultName }\" ?": [
         "Hapus brankas \"${ vaultName }\" ?"
       ],
+      "Details": [
+        "Rincian"
+      ],
       "Discard changes?": [
         "Batalkan perubahan?"
+      ],
+      "Email address": [
+        "Alamat email"
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Menikmati ${ PASS_APP_NAME }?"
@@ -1843,11 +2138,17 @@
       "Enter your PIN": [
         "Masukkan PIN Anda"
       ],
+      "Excluded items": [
+        "Item yang dikecualikan"
+      ],
       "Get Started": [
         "Mulai"
       ],
       "Grant permissions": [
         "Berikan izin"
+      ],
+      "Hide-my-email aliases": [
+        "Alias hide-my-email"
       ],
       "History": [
         "Riwayat"
@@ -1882,6 +2183,9 @@
       "Members": [
         "Anggota"
       ],
+      "Missing 2FA": [
+        "2FA hilang"
+      ],
       "Modified": [
         "Dimodifikasi"
       ],
@@ -1897,11 +2201,20 @@
       "No items selected": [
         "Tidak ada item yang dipilih"
       ],
+      "No missing 2FAs": [
+        "Tidak ada 2FA yang hilang"
+      ],
       "Our welcome gift to you": [
         "Hadiah selamat datang kami kepada Anda"
       ],
       "Passkey": [
         "Passkey"
+      ],
+      "Password": [
+        "Kata sandi"
+      ],
+      "Password Health": [
+        "Kesehatan Kata Sandi"
       ],
       "Pending access to the shared data": [
         "Menunggu akses ke data yang dibagikan"
@@ -1912,8 +2225,17 @@
       "Pinned (${ items.length })": [
         "Disematkan (${ items.length })"
       ],
+      "Recommended actions": [
+        "Tindakan yang direkomendasikan"
+      ],
       "Restore this version?": [
         "Pulihkan versi ini?"
+      ],
+      "Reused ${ count } time": [
+        "Digunakan ulang ${ count } kali"
+      ],
+      "Reused passwords": [
+        "Kata sandi yang digunakan ulang"
       ],
       "Review and share": [
         "Kaji dan bagikan"
@@ -1932,6 +2254,9 @@
       ],
       "Share with": [
         "Bagikan dengan"
+      ],
+      "Stay safer online": [
+        "Tetap aman saat online"
       ],
       "Suggestions": [
         "Saran"
@@ -1954,8 +2279,23 @@
       "Vault shared with you": [
         "Brankas yang dibagikan dengan Anda"
       ],
+      "Want to learn more?": [
+        "Ingin mempelajari lebih lanjut?"
+      ],
+      "Weak passwords": [
+        "Kata sandi yang lemah"
+      ],
+      "What is an alias?": [
+        "Apa itu alias?"
+      ],
+      "What is the dark web?": [
+        "Apa itu dark web?"
+      ],
       "Why ${ PASS_APP_NAME }?": [
         "Mengapa ${ PASS_APP_NAME }?"
+      ],
+      "Your exposed information": [
+        "Informasi Anda yang terpapar"
       ],
       "Your vault is empty": [
         "Brankas Anda kosong"
@@ -2004,7 +2344,7 @@
         "Terdapat kesalahan pada saat mengekspor data Anda"
       ],
       "At least one email address is required": [
-        "Setidaknya satu alamat email dibutuhkan"
+        "Setidaknya satu alamat surel dibutuhkan"
       ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Kotak surat untuk alias ini tidak dapat diterima untuk saat ini"
@@ -2030,8 +2370,11 @@
       "Invalid alias prefix": [
         "Awalan alias tidak valid"
       ],
+      "Invalid code": [
+        "Kode tidak valid"
+      ],
       "Invalid email addresses.": [
-        "Terdapat alamat email yang tidak valid."
+        "Terdapat alamat surel yang tidak valid."
       ],
       "Inviting email addresses outside organization is not allowed.": [
         "Mengundang alamat email di luar organisasi tidak diperkenankan"
@@ -2089,6 +2432,9 @@
       ],
       "The alias prefix cannot be longer than 40 characters": [
         "Awalan alias tidak boleh melebihi 40 karakter"
+      ],
+      "This email address will no longer be monitored for data breaches.": [
+        "Alamat email ini tidak akan lagi dipantau untuk kebocoran data."
       ],
       "Title is required": [
         "Judul dibutuhkan"

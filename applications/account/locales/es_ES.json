@@ -47,11 +47,11 @@
       "${ BRAND_NAME } shop": [
         "Tienda ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Activar"
-      ],
       "activate": [
         "activar"
+      ],
+      "Activate": [
+        "Activar"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activar ${ user.Name }@pm.me"
@@ -5949,6 +5949,17 @@
         "Parte del contenido de tu calendario no es compatible y no se importará."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Se han detectado claves duplicadas adicionales. Cárgalas individualmente para obtener más información."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "La clave ${ fingerprint } ya ha sido cargada."
+      ],
+      "Selected color:": [
+        "Color seleccionado:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necesita tu permiso para ${ enableDesktopNotifications }."
@@ -8363,17 +8374,6 @@
       ],
       "Zoom meeting": [
         "reunión de Zoom"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Se han detectado claves duplicadas adicionales. Cárgalas individualmente para obtener más información."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "La clave ${ fingerprint } ya ha sido cargada."
-      ],
-      "Selected color:": [
-        "Color seleccionado:"
       ]
     },
     "Info - folder colouring feature": {

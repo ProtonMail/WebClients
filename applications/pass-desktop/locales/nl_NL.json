@@ -236,6 +236,9 @@
       "Manually sync your data": [
         "Synchroniseer uw data manueel"
       ],
+      "Mark as resolved": [
+        "Markeren als opgelost"
+      ],
       "More info: ${ safeTitle }": [
         "Meer informatie: ${ safeTitle }"
       ],
@@ -290,6 +293,9 @@
       "Reject invitation": [
         "Uitnodiging afwijzen"
       ],
+      "Remove": [
+        "Verwijderen"
+      ],
       "Remove access": [
         "Toegang verwijderen"
       ],
@@ -298,6 +304,9 @@
       ],
       "Request a feature": [
         "Vraag een functie aan"
+      ],
+      "Resend code": [
+        "Verstuur code opnieuw"
       ],
       "Resend invitation": [
         "Uitnodiging opnieuw verzenden"
@@ -379,6 +388,9 @@
       ],
       "Upgrade now to share with more people": [
         "Upgrade nu om met meer mensen te delen"
+      ],
+      "Verify": [
+        "Verifiëren"
       ],
       "View history": [
         "Geschiedenis bekijken"
@@ -858,6 +870,9 @@
       "Can view items in this vault.": [
         "Kan items bekijken in deze kluis."
       ],
+      "Change your password": [
+        "Wijzig uw wachtwoord"
+      ],
       "Congratulations, your access has been confirmed": [
         "Gefeliciteerd, uw toegang werd bevestigd"
       ],
@@ -888,6 +903,9 @@
       "Editor": [
         "Bewerker"
       ],
+      "email": [
+        "e-mail"
+      ],
       "Emptying trash...": [
         "Prullenbak leegmaken..."
       ],
@@ -896,6 +914,9 @@
       ],
       "Fill in the CSV with your data": [
         "Vul de CSV in met uw gegevens"
+      ],
+      "finance": [
+        "financiën"
       ],
       "Follow those steps to import your data with a generic CSV :": [
         "Volg deze stappen om uw gegevens te importeren met een algemeen CSV-bestand:"
@@ -912,6 +933,9 @@
       ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Krijg ongelimiteerde aliassen, geniet van exclusieve functies, en ondersteun ons door te abonneren op Pass Plus."
+      ],
+      "High Priority": [
+        "Hoge Prioriteit"
       ],
       "Import in progress:": [
         "Bezig met importeren:"
@@ -990,6 +1014,9 @@
       "Item successfully unpinned": [
         "Item succesvol losgemaakt"
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Leer ${ staySaferOnlineLink }"
+      ],
       "Leaving vault...": [
         "Kluis verlaten..."
       ],
@@ -1008,8 +1035,17 @@
       "Logging you out...": [
         "Afmelden..."
       ],
+      "Low Priority": [
+        "Lage Prioriteit"
+      ],
       "me": [
         "ik"
+      ],
+      "Medium Priority": [
+        "Middelmatige prioriteit"
+      ],
+      "Monitor accounts": [
+        "Accounts monitoren"
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "${ PASS_APP_NAME } is meer dan een wachtwoordbeheerder en beschermt je wachtwoord en je persoonlijke e-mailadres via e-mailaliassen. Aangedreven door dezelfde technologie achter ${ MAIL_APP_NAME }, zijn je gegevens end-to-end versleuteld en alleen toegankelijk voor jou."
@@ -1059,9 +1095,15 @@
       "Pass Plus trial": [
         "Proton Pass Plus-proefversie"
       ],
+      "password": [
+        "wachtwoord"
+      ],
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
         "Wachtwoorden ouder dan ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week worden automatisch uit de geschiedenis verwijderd.",
         "Wachtwoorden ouder dan ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } weken worden automatisch uit de geschiedenis verwijderd."
+      ],
+      "Paused": [
+        "Gepauzeerd"
       ],
       "Permanently deleting selected items": [
         "Geselecteerde items permanent verwijderen"
@@ -1180,6 +1222,9 @@
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "Het geëxporteerde bestand wordt versleuteld met PGP en vereist een sterke wachtwoordzin."
       ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "De gelekte informatie werd gelekt door een dienst van een derde partij. Uw ${ BRAND_NAME } accountinformatie blijft veilig en versleuteld. ${ learnMoreLink }"
+      ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Het volgende ${ result.ignored.length } item kon niet geïmporteerd worden:",
         "De volgende ${ result.ignored.length } items konden niet geïmporteerd worden:"
@@ -1217,6 +1262,9 @@
       "Unpinning item...": [
         "Item losmaken..."
       ],
+      "Unverified": [
+        "Niet geverifieerd"
+      ],
       "Updating organization settings": [
         "Organisatie-instellingen worden bijgewerkt"
       ],
@@ -1231,6 +1279,9 @@
       ],
       "User's access sucessfuly updated": [
         "Toegang gebruiker succesvol bijgewerkt"
+      ],
+      "username": [
+        "gebruikersnaam"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Kluis \"${ payload.content.name }\" succesvol verwijderd"
@@ -1289,6 +1340,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Uw bestanden worden versleuteld en vervolgens opgeslagen"
+      ],
+      "Your information was found on ${ displayedDate }": [
+        "Uw informatie is gevonden op ${ displayedDate }"
       ]
     },
     "Label": {
@@ -1375,6 +1429,9 @@
       "Cards": [
         "Kaarten"
       ],
+      "Code": [
+        "Code"
+      ],
       "Confirm vault name": [
         "Bevestig naam van kluis"
       ],
@@ -1396,6 +1453,9 @@
       "Created": [
         "Aangemaakt"
       ],
+      "Date": [
+        "Datum"
+      ],
       "Disable data export for team members": [
         "Gegevensexport uitschakelen voor teamleden"
       ],
@@ -1410,6 +1470,12 @@
       ],
       "Download logs": [
         "Logboeken downloaden"
+      ],
+      "Email": [
+        "E-mailadres"
+      ],
+      "Email address": [
+        "E-mailadres"
       ],
       "Empty trash": [
         "Prullenbak leegmaken"
@@ -1709,6 +1775,14 @@
         "U staat op het punt volgende aan te maken"
       ]
     },
+    "Link": {
+      "Learn more": [
+        "Meer informatie"
+      ],
+      "stay safer online": [
+        "blijf veilig online"
+      ]
+    },
     "lobby: Info": {
       "Enter your PIN code": [
         "Voer uw pincode in"
@@ -1728,6 +1802,11 @@
         "Welkom bij ${ brandNameJSX }"
       ]
     },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "${ reason } inschakelen"
+      ]
+    },
     "Message": {
       "${ count } item": [
         "${ count } item",
@@ -1735,6 +1814,14 @@
       ],
       "You selected ${ semiboldText } in this vault": [
         "U heeft ${ semiboldText } geselecteerd in deze kluis"
+      ]
+    },
+    "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } is uitgezet"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } is aangezet"
       ]
     },
     "Option": {
@@ -1859,6 +1946,9 @@
       "Auto-lock update": [
         "Automatische vergrendelingsupdate"
       ],
+      "Block trackers and malware": [
+        "Blokkeer trackers en malware"
+      ],
       "Confirm PIN code": [
         "Pincode bevestigen"
       ],
@@ -1877,8 +1967,14 @@
       "Delete vault \"${ vaultName }\" ?": [
         "Kluis \"${ vaultName }\" verwijderen?"
       ],
+      "Details": [
+        "Details"
+      ],
       "Discard changes?": [
         "Wijzigingen annuleren?"
+      ],
+      "Email address": [
+        "E-mailadres"
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Tevreden met ${ PASS_APP_NAME }?"
@@ -1949,6 +2045,9 @@
       "Passkey": [
         "Toegangssleutel"
       ],
+      "Password": [
+        "Wachtwoord"
+      ],
       "Pending access to the shared data": [
         "Toegang tot gedeelde data hangende"
       ],
@@ -1957,6 +2056,9 @@
       ],
       "Pinned (${ items.length })": [
         "Vastgemaakt (${ items.length })"
+      ],
+      "Recommended actions": [
+        "Aanbevolen acties"
       ],
       "Restore this version?": [
         "Deze versie herstellen?"
@@ -2000,8 +2102,17 @@
       "Vault shared with you": [
         "Kluis gedeeld met u"
       ],
+      "What is an alias?": [
+        "Wat is een alias?"
+      ],
+      "What is the dark web?": [
+        "Wat is het dark web?"
+      ],
       "Why ${ PASS_APP_NAME }?": [
         "Waarom ${ PASS_APP_NAME }?"
+      ],
+      "Your exposed information": [
+        "Uw blootgestelde informatie"
       ],
       "Your vault is empty": [
         "Uw kluis is leeg."

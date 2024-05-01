@@ -47,11 +47,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butik"
       ],
-      "Activate": [
-        "Aktivera"
-      ],
       "activate": [
         "aktivera"
+      ],
+      "Activate": [
+        "Aktivera"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivera ${ user.Name }@pm.me"
@@ -5956,6 +5956,17 @@
         "En del av ditt kalenderinnehåll stöds inte och kommer inte att importeras."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Ytterligare dubbletter av nycklar upptäcktes. Ladda upp individuellt för mer information."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Nyckel ${ fingerprint } har redan laddats upp"
+      ],
+      "Selected color:": [
+        "Vald färg:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } behöver din tillåtelse till ${ enableDesktopNotifications }."
@@ -8351,17 +8362,6 @@
         "Zoom-möte"
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Ytterligare dubbletter av nycklar upptäcktes. Ladda upp individuellt för mer information."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Nyckel ${ fingerprint } har redan laddats upp"
-      ],
-      "Selected color:": [
-        "Vald färg:"
-      ]
-    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "När det är aktiverat ärver undermappar färgen på den överordnade mappen."
@@ -9695,6 +9695,9 @@
       ]
     },
     "label": {
+      "Device-based recovery": [
+        "Enhetsbaserad återställning"
+      ],
       "Recovery phone number": [
         "Telefonnummer för återställning"
       ],
@@ -13852,6 +13855,9 @@
       "You **won't be able to backup photos** from your devices": [
         "Du **kommer inte att kunna säkerhetskopiera foton** från dina enheter"
       ],
+      "You **won't be able to send emails** with attachments": [
+        "Du **kommer inte att kunna skicka e-post** med bilagor"
+      ],
       "Your **calendar will be frozen**": [
         "Din **kalender kommer att blockeras**"
       ],
@@ -15876,6 +15882,9 @@
       ],
       "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
         "Prenumeration förnyas automatiskt var 3:e månad. Ditt nästa faktureringsdatum är om 3 månader."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Det speciellt rabatterade priset på ${ priceWithDiscount } är giltigt under den första månaden. Sedan förnyas det automatiskt med ${ renewPrice } varje månad. Du kan avbryta när som helst."
       ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Du kommer sedan att faktureras var 12:e månad med ${ renewPrice }."

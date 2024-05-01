@@ -236,6 +236,9 @@
       "Manually sync your data": [
         "Verilerinizi el ile eşitleyin"
       ],
+      "Mark as resolved": [
+        "Çözülmüş olarak işaretle"
+      ],
       "More info: ${ safeTitle }": [
         "Ayrıntılı bilgi: ${ safeTitle }"
       ],
@@ -290,6 +293,9 @@
       "Reject invitation": [
         "Daveti reddet"
       ],
+      "Remove": [
+        "Kaldır"
+      ],
       "Remove access": [
         "Erişimi kaldır"
       ],
@@ -298,6 +304,9 @@
       ],
       "Request a feature": [
         "Bir özellik istiyorum"
+      ],
+      "Resend code": [
+        "Kodu yeniden gönder"
       ],
       "Resend invitation": [
         "Daveti yeniden gönder"
@@ -379,6 +388,9 @@
       ],
       "Upgrade now to share with more people": [
         "Daha fazla kişiyle paylaşmak için tarifenizi yükseltin"
+      ],
+      "Verify": [
+        "Doğrula"
       ],
       "View history": [
         "Geçmişi görüntüle"
@@ -858,6 +870,9 @@
       "Can view items in this vault.": [
         "Bu kasadaki ögeleri görüntüleyebilir."
       ],
+      "Change your password": [
+        "Parolanızı değiştirin"
+      ],
       "Congratulations, your access has been confirmed": [
         "Tebrikler erişiminiz onaylandı"
       ],
@@ -888,6 +903,9 @@
       "Editor": [
         "Düzenleyici"
       ],
+      "email": [
+        "e-posta"
+      ],
       "Emptying trash...": [
         "Çöp kutusu boşaltılıyor..."
       ],
@@ -896,6 +914,9 @@
       ],
       "Fill in the CSV with your data": [
         "CSV dosyasına verilerinizi ekleyin"
+      ],
+      "finance": [
+        "finans"
       ],
       "Follow those steps to import your data with a generic CSV :": [
         "Verilerinizi bir CSV dosyasından içe aktarmak için şu adımları izleyin:"
@@ -912,6 +933,9 @@
       ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Sınırsız sayıda takma ad edinin, ücretli özelliklerin tadını çıkarın ve Pass Plus tarifesine abone olarak bizi destekleyin."
+      ],
+      "High Priority": [
+        "Yüksek öncelik"
       ],
       "Import in progress:": [
         "İçe aktarılıyor:"
@@ -990,6 +1014,9 @@
       "Item successfully unpinned": [
         "Ögenin sabitlemesi kaldırıldı"
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Nasıl ${ staySaferOnlineLink } öğrenin"
+      ],
       "Leaving vault...": [
         "Kasa bırakılıyor..."
       ],
@@ -1008,8 +1035,17 @@
       "Logging you out...": [
         "Oturumunuz kapatılıyor..."
       ],
+      "Low Priority": [
+        "Düşük Öncelik"
+      ],
       "me": [
         "benim"
+      ],
+      "Medium Priority": [
+        "Orta öncelik"
+      ],
+      "Monitor accounts": [
+        "Hesapları izle"
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "Bir parola yöneticisinden daha fazlası. ${ PASS_APP_NAME } parolalarınızı ve takma e-posta adresleri ile e-posta adresinizi korur. ${ MAIL_APP_NAME } ile aynı teknolojiyi kullandığından, verileriniz uçtan uca şifreleme ile korunur ve yalnızca sizin tarafınızdan erişilebilir."
@@ -1059,9 +1095,15 @@
       "Pass Plus trial": [
         "Proton Pass Plus denemesi"
       ],
+      "password": [
+        "parola"
+      ],
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
         "${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } haftadan eski parolalar geçmişten otomatik olarak silinir.",
         "${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } haftadan eski parolalar geçmişten otomatik olarak silinir."
+      ],
+      "Paused": [
+        "Duraklatıldı"
       ],
       "Permanently deleting selected items": [
         "Seçilmiş ögeler kalıcı olarak siliniyor"
@@ -1180,6 +1222,9 @@
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "Dışa aktarılan dosya PGP ile şifrelenir ve güçlü bir parola ifadesi kullanılması gerekir."
       ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "Bilgiler üçüncü taraf bir hizmetten açığa çıkmış. ${ BRAND_NAME } Hesap bilgileriniz güvende ve şifrelenmiş olarak kalır. ${ learnMoreLink }"
+      ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Şu ${ result.ignored.length } öge içe aktarılamadı:",
         "Şu ${ result.ignored.length } öge içe aktarılamadı:"
@@ -1217,6 +1262,9 @@
       "Unpinning item...": [
         "Ögenin sabitlemesi kaldırılıyor..."
       ],
+      "Unverified": [
+        "Doğrulanmamış"
+      ],
       "Updating organization settings": [
         "Kuruluş ayarları güncelleniyor"
       ],
@@ -1231,6 +1279,9 @@
       ],
       "User's access sucessfuly updated": [
         "Kullanıcının erişimi güncellendi"
+      ],
+      "username": [
+        "kullanıcı adı"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "\"${ payload.content.name }\" kasası silindi"
@@ -1289,6 +1340,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Dosyalarınız şifrelendikten sonra kaydedilir"
+      ],
+      "Your information was found on ${ displayedDate }": [
+        "Bilgileriniz ${ displayedDate } tarihinde bulundu"
       ]
     },
     "Label": {
@@ -1375,6 +1429,9 @@
       "Cards": [
         "Kartlar"
       ],
+      "Code": [
+        "Kod"
+      ],
       "Confirm vault name": [
         "Kasa adı onayı"
       ],
@@ -1396,6 +1453,9 @@
       "Created": [
         "Oluşturulma"
       ],
+      "Date": [
+        "Tarih"
+      ],
       "Disable data export for team members": [
         "Ekip üyelerinin verileri dışa aktarmasını kapat"
       ],
@@ -1410,6 +1470,12 @@
       ],
       "Download logs": [
         "Günlükleri indir"
+      ],
+      "Email": [
+        "E-posta"
+      ],
+      "Email address": [
+        "E-posta adresi"
       ],
       "Empty trash": [
         "Çöp kutusunu boşalt"
@@ -1709,6 +1775,14 @@
         "Şunu oluşturmak üzeresiniz"
       ]
     },
+    "Link": {
+      "Learn more": [
+        "Ayrıntılı bilgi alın"
+      ],
+      "stay safer online": [
+        "çevrim içi ortamda güvende kalın"
+      ]
+    },
     "lobby: Info": {
       "Enter your PIN code": [
         "PIN kodunuzu yazın"
@@ -1728,6 +1802,11 @@
         "${ brandNameJSX } uygulamasına hoş geldiniz"
       ]
     },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "${ reason } özelliğini aç"
+      ]
+    },
     "Message": {
       "${ count } item": [
         "${ count } öge",
@@ -1735,6 +1814,14 @@
       ],
       "You selected ${ semiboldText } in this vault": [
         "Bu kasadaki ${ semiboldText } ögeyi seçtiniz"
+      ]
+    },
+    "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } özelliği kapatıldı"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } özelliği açıldı"
       ]
     },
     "Option": {
@@ -1859,6 +1946,9 @@
       "Auto-lock update": [
         "Ootmatik kilitleme güncellemesi"
       ],
+      "Block trackers and malware": [
+        "İzleyicileri ve zararlı yazılımları engelle"
+      ],
       "Confirm PIN code": [
         "PIN kodu onayı"
       ],
@@ -1877,8 +1967,14 @@
       "Delete vault \"${ vaultName }\" ?": [
         "\"${ vaultName }\" kasası silinsin mi?"
       ],
+      "Details": [
+        "Ayrıntılar"
+      ],
       "Discard changes?": [
         "Değişiklikler silinsin mi?"
+      ],
+      "Email address": [
+        "E-posta adresi"
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "${ PASS_APP_NAME } hoşunuza gitti mi?"
@@ -1949,6 +2045,9 @@
       "Passkey": [
         "Geçiş anahtarı"
       ],
+      "Password": [
+        "Parola"
+      ],
       "Pending access to the shared data": [
         "Paylaşılmış verilere erişilmesi bekleniyor"
       ],
@@ -1957,6 +2056,9 @@
       ],
       "Pinned (${ items.length })": [
         "Sabitlenmiş (${ items.length })"
+      ],
+      "Recommended actions": [
+        "Önerilen işlemler"
       ],
       "Restore this version?": [
         "Bu sürüm geri yüklensin mi?"
@@ -2000,8 +2102,17 @@
       "Vault shared with you": [
         "Sizinle bir kasa paylaşıldı"
       ],
+      "What is an alias?": [
+        "Takma ad nedir?"
+      ],
+      "What is the dark web?": [
+        "Karanlık ağ nedir?"
+      ],
       "Why ${ PASS_APP_NAME }?": [
         "Neden ${ PASS_APP_NAME }?"
+      ],
+      "Your exposed information": [
+        "Açığa çıkmış bilgileriniz"
       ],
       "Your vault is empty": [
         "Kasanız boş"

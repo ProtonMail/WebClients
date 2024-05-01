@@ -236,6 +236,9 @@
       "Manually sync your data": [
         "Μη αυτόματος συγχρονισμός των δεδομένων σας"
       ],
+      "Mark as resolved": [
+        "Σήμανση ως επιλυμένου"
+      ],
       "More info: ${ safeTitle }": [
         "Περισσότερες πληροφορίες: ${ safeTitle }"
       ],
@@ -290,6 +293,9 @@
       "Reject invitation": [
         "Απόρριψη πρόσκλησης"
       ],
+      "Remove": [
+        "Αφαίρεση"
+      ],
       "Remove access": [
         "Αφαίρεση πρόσβασης"
       ],
@@ -298,6 +304,9 @@
       ],
       "Request a feature": [
         "Ζητήστε μια δυνατότητα"
+      ],
+      "Resend code": [
+        "Επαναποστολή κωδικού"
       ],
       "Resend invitation": [
         "Επανάληψη αποστολής πρόσκλησης"
@@ -379,6 +388,9 @@
       ],
       "Upgrade now to share with more people": [
         "Κάντε αναβάθμιση τώρα για κοινή χρήση με περισσότερα άτομα"
+      ],
+      "Verify": [
+        "Επαλήθευση"
       ],
       "View history": [
         "Προβολή ιστορικού"
@@ -858,6 +870,9 @@
       "Can view items in this vault.": [
         "Μπορεί να προβάλει στοιχεία σε αυτή την κρύπτη."
       ],
+      "Change your password": [
+        "Αλλάξτε τον κωδικό πρόσβασής σας"
+      ],
       "Congratulations, your access has been confirmed": [
         "Συγχαρητήρια, η πρόσβασή σας επιβεβαιώθηκε"
       ],
@@ -888,6 +903,9 @@
       "Editor": [
         "Πρόγραμμα επεξεργασίας"
       ],
+      "email": [
+        "ηλεκτρονικό ταχυδρομείο"
+      ],
       "Emptying trash...": [
         "Άδειασμα διαγραμμένων..."
       ],
@@ -896,6 +914,9 @@
       ],
       "Fill in the CSV with your data": [
         "Συμπληρώστε το CSV με τα δεδομένα σας"
+      ],
+      "finance": [
+        "οικονομικά"
       ],
       "Follow those steps to import your data with a generic CSV :": [
         "Ακολουθήστε αυτά τα βήματα για να εισαγάγετε τα δεδομένα σας με ένα γενικό αρχείο CSV:"
@@ -912,6 +933,9 @@
       ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Λάβετε απεριόριστα ψευδώνυμα, απολαύστε αποκλειστικές λειτουργίες και υποστηρίξτε μας με την εγγραφή σας στο Pass Plus."
+      ],
+      "High Priority": [
+        "Υψηλή προτεραιότητα"
       ],
       "Import in progress:": [
         "Εισαγωγή σε εξέλιξη:"
@@ -990,6 +1014,9 @@
       "Item successfully unpinned": [
         "Το στοιχείο ξεκαρφιτσώθηκε επιτυχώς"
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Μάθετε πώς μπορείτε να ${ staySaferOnlineLink }"
+      ],
       "Leaving vault...": [
         "Αποχώρηση από την κρύπτη..."
       ],
@@ -1008,8 +1035,17 @@
       "Logging you out...": [
         "Αποσύνδεση..."
       ],
+      "Low Priority": [
+        "Χαμηλή προτεραιότητα"
+      ],
       "me": [
         "εγώ"
+      ],
+      "Medium Priority": [
+        "Μεσαία προτεραιότητα"
+      ],
+      "Monitor accounts": [
+        "Παρακολούθηση λογαριασμών"
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "Περισσότερο από έναν διαχειριστή κωδικών πρόσβασης, το ${ PASS_APP_NAME } προστατεύει τον κωδικό πρόσβασής σας και την προσωπική σας διεύθυνση email μέσω ψευδωνύμων email. Με την ίδια τεχνολογία πίσω από το ${ MAIL_APP_NAME }, τα δεδομένα σας είναι κρυπτογραφημένα από άκρο σε άκρο και είναι προσβάσιμα μόνο από εσάς."
@@ -1059,9 +1095,15 @@
       "Pass Plus trial": [
         "Δοκιμή Pass Plus"
       ],
+      "password": [
+        "κωδικός πρόσβασης"
+      ],
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
         "Οι κωδικοί πρόσβασης που είναι παλαιότεροι από ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } εβδομάδα διαγράφονται αυτόματα από το ιστορικό.",
         "Οι κωδικοί πρόσβασης που είναι παλαιότεροι από ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } εβδομάδων διαγράφονται αυτόματα από το ιστορικό."
+      ],
+      "Paused": [
+        "Σε παύση"
       ],
       "Permanently deleting selected items": [
         "Οριστική διαγραφή επιλεγμένων στοιχείων"
@@ -1180,6 +1222,9 @@
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "Το εξαγόμενο αρχείο θα κρυπτογραφηθεί χρησιμοποιώντας PGP και απαιτεί μια ισχυρή φράση πρόσβασης."
       ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "Οι εκτεθειμένες πληροφορίες διέρρευσαν από μια υπηρεσία τρίτου μέρους. Οι πληροφορίες του λογαριασμού σας ${ BRAND_NAME } παραμένουν ασφαλείς και κρυπτογραφημένες. ${ learnMoreLink }"
+      ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Δεν ήταν δυνατή η εισαγωγή του ${ result.ignored.length } στοιχείου:",
         "Δεν ήταν δυνατή η εισαγωγή των ${ result.ignored.length } στοιχείων:"
@@ -1217,6 +1262,9 @@
       "Unpinning item...": [
         "Ξεκαρφίτσωμα στοιχείου..."
       ],
+      "Unverified": [
+        "Ανεπιβεβαίωτος"
+      ],
       "Updating organization settings": [
         "Ενημέρωση ρυθμίσεων οργανισμού"
       ],
@@ -1231,6 +1279,9 @@
       ],
       "User's access sucessfuly updated": [
         "Η πρόσβαση του χρήστη ενημερώθηκε με επιτυχία"
+      ],
+      "username": [
+        "όνομα χρήστη"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Η κρύπτη \"${ payload.content.name }\" διαγράφηκε με επιτυχία"
@@ -1289,6 +1340,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Τα αρχεία σας θα κρυπτογραφηθούν και στη συνέχεια θα αποθηκευτούν"
+      ],
+      "Your information was found on ${ displayedDate }": [
+        "Οι πληροφορίες σας βρέθηκαν στις ${ displayedDate }"
       ]
     },
     "Label": {
@@ -1375,6 +1429,9 @@
       "Cards": [
         "Κάρτες"
       ],
+      "Code": [
+        "Κωδικός"
+      ],
       "Confirm vault name": [
         "Επιβεβαίωση ονόματος κρύπτης"
       ],
@@ -1396,6 +1453,9 @@
       "Created": [
         "Δημιουργήθηκε"
       ],
+      "Date": [
+        "Ημερομηνία"
+      ],
       "Disable data export for team members": [
         "Απενεργοποίηση εξαγωγής δεδομένων για μέλη της ομάδας"
       ],
@@ -1410,6 +1470,12 @@
       ],
       "Download logs": [
         "Λήψη αρχείων καταγραφής"
+      ],
+      "Email": [
+        "Διεύθυνση ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Email address": [
+        "Διεύθυνση email"
       ],
       "Empty trash": [
         "Άδειασμα Διαγραμμένων"
@@ -1709,6 +1775,14 @@
         "Είστε έτοιμοι να δημιουργήσετε"
       ]
     },
+    "Link": {
+      "Learn more": [
+        "Μάθετε περισσότερα"
+      ],
+      "stay safer online": [
+        "παραμείνετε πιο ασφαλείς στο διαδίκτυο"
+      ]
+    },
     "lobby: Info": {
       "Enter your PIN code": [
         "Εισαγωγή κωδικού ΡΙΝ"
@@ -1728,6 +1802,11 @@
         "Καλώς ήρθατε στο ${ brandNameJSX }"
       ]
     },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Ενεργοποίηση ${ reason }"
+      ]
+    },
     "Message": {
       "${ count } item": [
         "${ count } στοιχείο",
@@ -1735,6 +1814,14 @@
       ],
       "You selected ${ semiboldText } in this vault": [
         "Επιλέξατε ${ semiboldText } σε αυτή την κρύπτη"
+      ]
+    },
+    "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } έχει απενεργοποιηθεί"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } έχει ενεργοποιηθεί"
       ]
     },
     "Option": {
@@ -1859,6 +1946,9 @@
       "Auto-lock update": [
         "Ενημέρωση αυτόματου κλειδώματος"
       ],
+      "Block trackers and malware": [
+        "Αποκλεισμός ιχνηλατών και κακόβουλου λογισμικού"
+      ],
       "Confirm PIN code": [
         "Επιβεβαιώστε τον κωδικό PIN"
       ],
@@ -1877,8 +1967,14 @@
       "Delete vault \"${ vaultName }\" ?": [
         "Διαγραφή'η κρύπτης \"${ vaultName }\" ;"
       ],
+      "Details": [
+        "Λεπτομέρειες"
+      ],
       "Discard changes?": [
         "Απόρριψη αλλαγών;"
+      ],
+      "Email address": [
+        "Διεύθυνση ηλεκτρονικού ταχυδρομείου"
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Απολαμβάνετε το ${ PASS_APP_NAME };"
@@ -1949,6 +2045,9 @@
       "Passkey": [
         "Κλειδί πρόσβασης"
       ],
+      "Password": [
+        "Κωδικός"
+      ],
       "Pending access to the shared data": [
         "Εκκρεμής πρόσβαση στα κοινόχρηστα δεδομένα"
       ],
@@ -1957,6 +2056,9 @@
       ],
       "Pinned (${ items.length })": [
         "Καρφιτσώθηκαν (${ items.length })"
+      ],
+      "Recommended actions": [
+        "Συνιστώμενες ενέργειες"
       ],
       "Restore this version?": [
         "Επαναφορά αυτής της έκδοσης?"
@@ -2000,8 +2102,17 @@
       "Vault shared with you": [
         "Η κρύπτη που έχει κοινοποιηθεί σε εσάς"
       ],
+      "What is an alias?": [
+        "Τι είναι το ψευδώνυμο;"
+      ],
+      "What is the dark web?": [
+        "Τι είναι ο σκοτεινός ιστός;"
+      ],
       "Why ${ PASS_APP_NAME }?": [
         "Γιατί ${ PASS_APP_NAME };"
+      ],
+      "Your exposed information": [
+        "Οι εκτεθειμένες πληροφορίες σας"
       ],
       "Your vault is empty": [
         "Η κρύπτη σας είναι άδεια"

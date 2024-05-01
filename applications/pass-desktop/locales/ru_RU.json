@@ -266,11 +266,20 @@
       "Reject invitation": [
         "Отклонить приглашение"
       ],
+      "Remove": [
+        "Удалить"
+      ],
       "Remove access": [
         "Отменить доступ"
       ],
+      "Remove member": [
+        "Удалить участника"
+      ],
       "Request a feature": [
         "Запросить функцию"
+      ],
+      "Resend code": [
+        "Повторно отправить код"
       ],
       "Resend invitation": [
         "Отправить повторное приглашение"
@@ -352,6 +361,9 @@
       ],
       "Upgrade now to share with more people": [
         "Улучшите тарифы сейчас, чтобы поделиться с большим количеством людей"
+      ],
+      "Verify": [
+        "Подтвердить"
       ],
       "Write us on Reddit": [
         "Написать нам в Reddit"
@@ -791,6 +803,9 @@
       "Can view items in this vault.": [
         "Может просматривать элементы в этом хранилище."
       ],
+      "Change your password": [
+        "Измените пароль"
+      ],
       "Congratulations, your access has been confirmed": [
         "Congratulations, your access has been confirmed"
       ],
@@ -818,6 +833,9 @@
       "Editor": [
         "Редактор"
       ],
+      "email": [
+        "электронная почта"
+      ],
       "Emptying trash...": [
         "Очистка корзины..."
       ],
@@ -829,6 +847,9 @@
       ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Получите неограниченное количество псевдонимов, наслаждайтесь эксклюзивными функциями и поддержите нас, подписавшись на Pass Plus."
+      ],
+      "High Priority": [
+        "Высокий приоритет"
       ],
       "Import in progress:": [
         "Выполняется импорт:"
@@ -917,8 +938,17 @@
       "Logging you out...": [
         "Выполняется выход из системы..."
       ],
+      "Low Priority": [
+        "Низкий приоритет"
+      ],
       "me": [
         "я"
+      ],
+      "Medium Priority": [
+        "Средний приоритет"
+      ],
+      "Monitor accounts": [
+        "Отслеживать аккаунты"
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "Более чем просто менеджер паролей, ${ PASS_APP_NAME } защищает ваш пароль и ваш личный адрес электронной почты с помощью псевдонимов электронной почты. Работая на технологии, лежащей в основе ${ MAIL_APP_NAME }, ваши данные защищены конечным шифрованием и доступны только вам."
@@ -958,6 +988,12 @@
       ],
       "Pass Plus trial": [
         "Пробная версия Pass Plus"
+      ],
+      "password": [
+        "пароль"
+      ],
+      "Paused": [
+        "Приостановлено"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "PIN-код успешно зарегистрирован. Используйте его для разблокировки ${ PASS_APP_NAME }"
@@ -1088,6 +1124,9 @@
       "Unpinning item...": [
         "Открепление элемента..."
       ],
+      "Unverified": [
+        "Не подтвержденный"
+      ],
       "Upgrade Now to Unlock Premium Features": [
         "Улучшите сейчас, чтобы получить платне функции"
       ],
@@ -1099,6 +1138,9 @@
       ],
       "User's access sucessfuly updated": [
         "Доступ пользователя обновлен"
+      ],
+      "username": [
+        "имя пользователя"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Хранилище \"${ payload.content.name }\" успешно удалено"
@@ -1246,6 +1288,9 @@
       "Cards": [
         "Карты"
       ],
+      "Code": [
+        "Код"
+      ],
       "Confirm vault name": [
         "Подтвердите название хранилища"
       ],
@@ -1267,6 +1312,9 @@
       "Created": [
         "Создано"
       ],
+      "Date": [
+        "Дата"
+      ],
       "Display": [
         "Показать"
       ],
@@ -1275,6 +1323,12 @@
       ],
       "Download logs": [
         "Скачать журналы"
+      ],
+      "Email": [
+        "Электронная почта"
+      ],
+      "Email address": [
+        "Адрес эл. почты"
       ],
       "Empty trash": [
         "Очистить корзину"
@@ -1547,6 +1601,11 @@
         "Вы собираетесь создать"
       ]
     },
+    "Link": {
+      "Learn more": [
+        "Подробнее"
+      ]
+    },
     "lobby: Info": {
       "Enter your PIN code": [
         "Введите свой PIN-код"
@@ -1566,12 +1625,25 @@
         "Добро пожаловать в ${ brandNameJSX }"
       ]
     },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Включите ${ reason }"
+      ]
+    },
     "Message": {
       "${ count } item": [
         "${ count } элемент",
         "${ count } элемента",
         "${ count } элементов",
         "${ count } элементов"
+      ]
+    },
+    "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } был отключен"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } был включен"
       ]
     },
     "Option": {
@@ -1701,6 +1773,9 @@
       "Confirm PIN code": [
         "Подтвердите ПИН-код"
       ],
+      "Create a vault": [
+        "Создать хранилище"
+      ],
       "Create PIN code": [
         "Создать PIN-код"
       ],
@@ -1710,8 +1785,14 @@
       "Delete vault \"${ vaultName }\" ?": [
         "Удалить хранилище \"${ vaultName }\"?"
       ],
+      "Details": [
+        "Информация"
+      ],
       "Discard changes?": [
         "Сбросить изменения?"
+      ],
+      "Email address": [
+        "Адрес электронной почты"
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Наслаждаетесь ${ PASS_APP_NAME }?"
@@ -1767,6 +1848,9 @@
       "Our welcome gift to you": [
         "Our welcome gift to you"
       ],
+      "Password": [
+        "Пароль"
+      ],
       "Pending access to the shared data": [
         "Pending access to the shared data"
       ],
@@ -1775,6 +1859,9 @@
       ],
       "Pinned (${ items.length })": [
         "Закреплено (${ items.length })"
+      ],
+      "Recommended actions": [
+        "Рекомендуемые действия"
       ],
       "Restore this version?": [
         "Восстановить эту версию?"

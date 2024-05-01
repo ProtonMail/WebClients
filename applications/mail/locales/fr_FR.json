@@ -1415,7 +1415,7 @@
     },
     "App logo": {
       "Download ${ MAIL_APP_NAME } desktop application": [
-        "Téléchargez l'application de bureau ${ MAIL_APP_NAME }"
+        "Télécharger l'application de bureau ${ MAIL_APP_NAME }"
       ]
     },
     "Apps dropdown": {
@@ -3287,7 +3287,7 @@
         "Bénéficiez d'un nombre illimité de dossiers, de labels et d'autres fonctionnalités premium en passant à un abonnement supérieur."
       ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
-        "Mettez à jour votre compte pour activer ${ PROTON_SENTINEL_NAME } ; notre solution de sécurité innovante par IA avec un support d'experts dédié 24h/24 et 7j/7."
+        "Changez d'abonnement pour activer ${ PROTON_SENTINEL_NAME }, notre solution de sécurité de pointe reposant sur l'IA et une assistance d'experts dédiée 24h/24 et 7j/7."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Utilisez le glisser-déposer pour classer la priorité de fusion entre les contacts. Décochez les contacts que vous ne voulez pas fusionner."
@@ -4716,13 +4716,13 @@
         "14 jours d'essai de l'application de bureau."
       ],
       "Enjoy fast, secure, and distraction-free access to your inbox and calendar.": [
-        "Profitez d'un accès rapide, sécurisé et sans distraction à votre boîte de réception et votre calendrier."
+        "Profitez d'un accès rapide, sécurisé et sans distraction à votre boite mail et à votre calendrier."
       ],
       "Get unlimited access with any ${ MAIL_APP_NAME } plan.": [
         "Obtenez un accès illimité avec l'un des forfaits payants ${ MAIL_APP_NAME }."
       ],
       "No credit card required.": [
-        "Aucune carte bancaire nécessaire."
+        "Aucune carte bancaire n’est nécessaire."
       ],
       "Start free trial": [
         "Commencez l'essai gratuit"
@@ -6054,7 +6054,7 @@
         "Fusionné"
       ],
       "Message actions in progress. This may take a while.": [
-        "Des actions sont en cours sur le message. Cela peut prendre un certain temps."
+        "Des actions sont en cours sur les messages. Cela peut prendre un certain temps."
       ],
       "Message download status:": [
         "État du téléchargement des messages :"
@@ -9440,7 +9440,7 @@
     },
     "passwordless": {
       "Non-private users can be promoted to admin when they have setup keys": [
-        "Les utilisateurs non privés peuvent être promus comme administrateur lorsqu'ils disposent de clés de configuration."
+        "Les utilisateurs non privés peuvent être promus administrateur lorsqu'ils disposent de clés de configuration."
       ],
       "Organization key must be activated to give admin privileges": [
         "La clé de l'organisation doit être activée pour accorder des droits administrateur."
@@ -9485,13 +9485,13 @@
         "La date d'expiration n’est pas valide."
       ],
       "Invalid security code": [
-        "Code de sécurité invalide"
+        "Le code de sécurité n'est pas valide."
       ],
       "Something went wrong. Please try again later.": [
         "Une erreur s'est produite. Veuillez réessayer plus tard."
       ],
       "We are unable to authenticate your payment method. Please choose a different payment method or try again.": [
-        "Nous n'avons pas pu authentifier votre moyen de paiement. Veuillez choisir un moyen différent ou réessayer."
+        "Nous ne sommes pas en mesure d'authentifier votre moyen de paiement. Veuillez en choisir un autre ou essayer à nouveau."
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Votre carte a été refusée. Veuillez essayer une autre carte ou contactez votre banque pour autoriser le prélèvement."
@@ -9847,7 +9847,7 @@
         "Essayer ${ PASS_APP_NAME }"
       ],
       "Used on amazon for shopping, etc.": [
-        "Par exemple, à utiliser sur des sites marchands comme Amazon pour vos achats, etc."
+        "Utilisé par exemple sur Amazon pour vos achats."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Lorsque vous devez renseigner votre adresse e-mail, donnez cet alias à la place. Les alias sont fournis par ${ passLink }."
@@ -10422,9 +10422,6 @@
       "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
         "Démarrez ${ MAIL_APP_NAME } tout simplement depuis votre bureau."
       ],
-      "Create hide-my-email aliases and keep track of them here.": [
-        "Créez des alias « hide-my-email » et suivez-les ici."
-      ],
       "Email tracking protection": [
         "Protection contre le suivi des e-mails"
       ],
@@ -10441,7 +10438,7 @@
         "Programmer l'envoi"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME } to get notified if your data was leaked from a third-party service.": [
-        "Activez ${ DARK_WEB_MONITORING_NAME } pour recevoir des notifications si vos données ont été divulguées par un service tiers."
+        "Activez la ${ DARK_WEB_MONITORING_NAME } pour recevoir des notifications si vos données ont été divulguées par un service tiers."
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Nous chargeons désormais les images par défaut et empêchons les expéditeurs de vous suivre.\nVous pouvez changer cela dans les ${ settingsLink }."
@@ -10684,10 +10681,10 @@
         "Améliorez votre productivité"
       ],
       "We don't sell your data": [
-        "Nous ne vendons pas vos données."
+        "Nous ne vendons pas vos données"
       ],
       "Your privacy is our mission": [
-        "Le respect de votre vie privée est notre priorité."
+        "La protection de votre vie privée est notre priorité."
       ]
     },
     "Subscription renewal state": {

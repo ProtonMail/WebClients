@@ -47,11 +47,11 @@
       "${ BRAND_NAME } shop": [
         "Крама ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Актываваць"
-      ],
       "activate": [
         "актываваць"
+      ],
+      "Activate": [
+        "Актываваць"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Актываваць ${ user.Name }@pm.me"
@@ -4331,6 +4331,9 @@
       "You have reached the contacts limit for your account": [
         "Вы дасягнулі абмежавання па колькасці кантактаў для вашага ўліковага запісу"
       ],
+      "You have reached the maximum number of calendars.": [
+        "Вы дасягнулі максімальнай колькасці календароў."
+      ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Вы дасягнулі максімальнай колькасці адрасоў на вашым тарыфным плане. Палепшыце свой тарыфны план, каб дадаць новы адрас."
       ],
@@ -6020,6 +6023,17 @@
         "Частка змесціва вашага календара не падтрымліваецца і не будзе імпартавана."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Выяўлены дадатковы дублікат ключоў. Запампуйце іх паасобку для атрымання больш падрабязнай інфармацыі."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Ключ ${ fingerprint } ужо быў запампаваны"
+      ],
+      "Selected color:": [
+        "Выбраны колер:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } неабходны ваш дазвол на ${ enableDesktopNotifications }."
@@ -7374,6 +7388,9 @@
       "Password copied to clipboard": [
         "Пароль скапіяваны ў буфер абмену"
       ],
+      "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
+        "Мінімальная даўжыня пароля складае наступнаю колькасць сімвалаў або больш: ${ MIN_PASSWORD_LENGTH }"
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Плацяжы абаронены шыфраваннем TLS і швейцарскімі законамі аб прыватнасці."
       ],
@@ -8421,6 +8438,9 @@
       "You won’t be able to recover locked data using your downloaded recovery files.": [
         "У вас не будзе магчымасці аднавіць заблакіраваныя даныя з дапамогай спампаваных файлаў аднаўлення."
       ],
+      "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
+        "У вас не будзе магчымасці аднавіць заблакіраваныя даныя з дапамогай спампаваных файлаў аднаўлення. Гэта таксама адключыць прыладу аднаўлення."
+      ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
         "Ваш уліковы запіс ${ BRAND_NAME } звязаны з ${ externalEmailAddress }."
       ],
@@ -8516,17 +8536,6 @@
       ],
       "Zoom meeting": [
         "сустрэчу па Zoom"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Выяўлены дадатковы дублікат ключоў. Запампуйце іх паасобку для атрымання больш падрабязнай інфармацыі."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Ключ ${ fingerprint } ужо быў запампаваны"
-      ],
-      "Selected color:": [
-        "Выбраны колер:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9880,6 +9889,9 @@
       ]
     },
     "label": {
+      "Device-based recovery": [
+        "Прылада аднаўлення"
+      ],
       "Recovery phone number": [
         "Нумар тэлефона для аднаўлення"
       ],
@@ -16325,6 +16337,9 @@
       ],
       "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
         "Падпіска аўтаматычна падаўжаецца кожны 3 месяцы. Наступная дата спагнання грашовых сродкаў адбудзецца праз 3 месяцы."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае за першы месяц аплаты. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ renewPrice } за кожны месяц. Скасаваць можна ў любы момант."
       ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "З вас будзе спаганяцца плата кожныя 12 месяцаў у памеры ${ renewPrice }"

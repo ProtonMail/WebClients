@@ -47,10 +47,10 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 商店"
       ],
-      "Activate": [
+      "activate": [
         "啟用"
       ],
-      "activate": [
+      "Activate": [
         "啟用"
       ],
       "Activate ${ user.Name }@pm.me": [
@@ -5822,6 +5822,17 @@
         "您的行事曆中有部分內容未受支援，因此不會匯入。"
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "偵測到其它重複的金鑰。請單獨上傳以取得更多資訊"
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "金鑰 ${ fingerprint } 已上傳"
+      ],
+      "Selected color:": [
+        "已選取的色彩:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } 需要您的授權以${ enableDesktopNotifications }。"
@@ -8120,17 +8131,6 @@
       ],
       "Zoom meeting": [
         "Zoom 會議"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "偵測到其它重複的金鑰。請單獨上傳以取得更多資訊"
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "金鑰 ${ fingerprint } 已上傳"
-      ],
-      "Selected color:": [
-        "已選取的色彩:"
       ]
     },
     "Info - folder colouring feature": {

@@ -4940,7 +4940,7 @@
     },
     "Member action": {
       "Activate user": [
-        "Autoriser l'utilisateur"
+        "Activer l'utilisateur"
       ],
       "Add address": [
         "Ajouter une adresse"
@@ -6076,10 +6076,10 @@
         "/mois /utilisateur"
       ],
       "/month /user, billed annually": [
-        "/mois /utilsateur, facturation annuelle"
+        "par mois et par utilisateur, facturation annuelle"
       ],
       "/month /user, billed biennially": [
-        "/mois /utilsateur, facturation tous les 2 ans"
+        "par mois et par utilisateur, facturation tous les 2 ans"
       ],
       "Creating your account": [
         "Création de votre compte"
@@ -6154,7 +6154,7 @@
         "Changer la clé de l’organisation"
       ],
       "Non-private users can be promoted to admin when they have setup keys": [
-        "Les utilisateurs non privés peuvent être promus comme administrateur lorsqu'ils disposent de clés de configuration."
+        "Les utilisateurs non privés peuvent être promus administrateur lorsqu'ils disposent de clés de configuration."
       ],
       "Organization key activated": [
         "La clé de l'organisation a été activée."
@@ -6259,13 +6259,13 @@
         "La date d'expiration n’est pas valide."
       ],
       "Invalid security code": [
-        "Code de sécurité invalide"
+        "Le code de sécurité n'est pas valide."
       ],
       "Something went wrong. Please try again later.": [
         "Une erreur s'est produite. Veuillez réessayer plus tard."
       ],
       "We are unable to authenticate your payment method. Please choose a different payment method or try again.": [
-        "Nous n'avons pas pu authentifier votre moyen de paiement. Veuillez choisir un moyen différent ou réessayer."
+        "Nous ne sommes pas en mesure d'authentifier votre moyen de paiement. Veuillez en choisir un autre ou essayer à nouveau."
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Votre carte a été refusée. Veuillez essayer une autre carte ou contactez votre banque pour autoriser le prélèvement."
@@ -6512,7 +6512,7 @@
         "Saisissez le jeton dans votre fournisseur d'identité."
       ],
       "Enter URL and token into your identity provider": [
-        "Saisissez le jeton et l'URL dans votre fournisseur d'identité."
+        "Saisissez l'URL et le jeton dans votre fournisseur d'identité."
       ],
       "For security reasons, the SCIM token will be hidden after saving your changes and you won’t be able to see it again.": [
         "Pour des raisons de sécurité, le jeton SCIM sera masqué une fois vos modifications enregistrées et vous ne pourrez plus l'afficher à nouveau."
@@ -7361,10 +7361,10 @@
         "Améliorez votre productivité"
       ],
       "We don't sell your data": [
-        "Nous ne vendons pas vos données."
+        "Nous ne vendons pas vos données"
       ],
       "Your privacy is our mission": [
-        "Le respect de votre vie privée est notre priorité."
+        "La protection de votre vie privée est notre priorité."
       ]
     },
     "Subscription renewal state": {

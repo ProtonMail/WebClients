@@ -47,11 +47,11 @@
       "${ BRAND_NAME } shop": [
         "Boutique ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Activer"
-      ],
       "activate": [
         "activer"
+      ],
+      "Activate": [
+        "Activer"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activer ${ user.Name }@pm.me"
@@ -5323,7 +5323,7 @@
         "Ouvrir ${ MAIL_APP_NAME } dans le ${ webAppMessage }"
       ],
       "Your desktop app free trial has ended": [
-        "Votre essai gratuit de l'application de bureau est terminé"
+        "Votre essai gratuit de l'application de bureau est terminé."
       ]
     },
     "Frequency of news": {
@@ -5947,6 +5947,17 @@
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "Une partie du contenu de votre calendrier n'est pas prise en charge et ne sera pas importée."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Des doublons de clés supplémentaires ont été détectés. Nous vous invitons à les télécharger individuellement pour plus d'informations."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "La clé ${ fingerprint } a déjà été chargée."
+      ],
+      "Selected color:": [
+        "Couleur sélectionnée :"
       ]
     },
     "Info": {
@@ -8365,17 +8376,6 @@
         "réunion Zoom"
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Des doublons de clés supplémentaires ont été détectés. Nous vous invitons à les télécharger individuellement pour plus d'informations."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "La clé ${ fingerprint } a déjà été chargée."
-      ],
-      "Selected color:": [
-        "Couleur sélectionnée :"
-      ]
-    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Quand cette option est activée, les sous-dossiers sont de la même couleur que le dossier dans lequel ils se trouvent."
@@ -9468,13 +9468,13 @@
         "La phrase se compose de 12 mots uniques dans un ordre spécifique."
       ],
       "Please add all 3 of the following CNAME records. Note: DNS records can take several hours to update.": [
-        "Ajoutez les 3 enregistrements CNAME suivants. Attention : les enregistrements DNS peuvent prendre plusieurs heures pour être mis à jour."
+        "Ajoutez les 3 enregistrements CNAME suivants. Notez que les enregistrements DNS peuvent prendre plusieurs heures pour être mis à jour."
       ],
       "Please add the following two MX records. Note: DNS records can take several hours to update.": [
-        "Veuillez ajouter les 2 enregistrements MX suivants. Attention : les enregistrements DNS peuvent prendre plusieurs heures pour être mis à jour."
+        "Veuillez ajouter les 2 enregistrements MX suivants. Notez que les enregistrements DNS peuvent prendre plusieurs heures pour être mis à jour."
       ],
       "Please add the following TXT record. Note: DNS records can take several hours to update.": [
-        "Veuillez ajouter l'enregistrement TXT suivant. Attention : les enregistrements DNS peuvent prendre plusieurs heures pour être mis à jour."
+        "Veuillez ajouter l'enregistrement TXT suivant. Notez que les enregistrements DNS peuvent prendre plusieurs heures pour être mis à jour."
       ],
       "Please select files to upload": [
         "Sélectionnez les fichiers à charger."
@@ -10202,7 +10202,7 @@
     },
     "Member action": {
       "Activate user": [
-        "Autoriser l'utilisateur"
+        "Activer l'utilisateur"
       ],
       "Add address": [
         "Ajouter une adresse"
@@ -12038,10 +12038,10 @@
         "/mois /utilisateur"
       ],
       "/month /user, billed annually": [
-        "/mois /utilsateur, facturation annuelle"
+        "par mois et par utilisateur, facturation annuelle"
       ],
       "/month /user, billed biennially": [
-        "/mois /utilsateur, facturation tous les 2 ans"
+        "par mois et par utilisateur, facturation tous les 2 ans"
       ],
       "Advanced protection that goes beyond industry standards": [
         "Une protection avancée qui dépasse les standards de l'industrie"
@@ -12137,7 +12137,7 @@
         "Je comprends qu'en cas de perte de mes informations de récupération, je peux perdre définitivement l'accès à mon compte."
       ],
       "If you get locked out of your ${ BRAND_NAME } Account, your **Recovery kit** will allow you to sign in and recover your data.": [
-        "Si vous ne pouvez pas accéder à votre compte ${ BRAND_NAME }, vos **informations de récupération** vous permettront de vous connecter et de récupérer vos données."
+        "Si vous ne pouvez pas accéder à votre compte ${ BRAND_NAME }, votre **Kit de récupération** vous permettra de vous connecter et de récupérer vos données."
       ],
       "Includes:": [
         "Comprend :"
@@ -12152,7 +12152,7 @@
         "Installez les applications et extensions"
       ],
       "It’s the only way to fully restore your account, so make sure you keep it somewhere safe.": [
-        "Ce kit de récupération est le seul moyen de restaurer l'accès à votre compte. Nous vous conseillons de le garder dans un endroit sûr."
+        "Il s'agit du seul moyen de restaurer complètement votre compte, nous vous conseillons de le garder en lieu sûr."
       ],
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
         "Rejoignez plus de 100 millions de personnes qui ont choisi ${ BRAND_NAME } pour être en sécurité en ligne."
@@ -12289,7 +12289,7 @@
         "Changer la clé de l’organisation"
       ],
       "Non-private users can be promoted to admin when they have setup keys": [
-        "Les utilisateurs non privés peuvent être promus comme administrateur lorsqu'ils disposent de clés de configuration."
+        "Les utilisateurs non privés peuvent être promus administrateur lorsqu'ils disposent de clés de configuration."
       ],
       "Organization key activated": [
         "La clé de l'organisation a été activée."
@@ -12394,13 +12394,13 @@
         "La date d'expiration n’est pas valide."
       ],
       "Invalid security code": [
-        "Code de sécurité invalide"
+        "Le code de sécurité n'est pas valide."
       ],
       "Something went wrong. Please try again later.": [
         "Une erreur s'est produite. Veuillez réessayer plus tard."
       ],
       "We are unable to authenticate your payment method. Please choose a different payment method or try again.": [
-        "Nous n'avons pas pu authentifier votre moyen de paiement. Veuillez choisir un moyen différent ou réessayer."
+        "Nous ne sommes pas en mesure d'authentifier votre moyen de paiement. Veuillez en choisir un autre ou essayer à nouveau."
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Votre carte a été refusée. Veuillez essayer une autre carte ou contactez votre banque pour autoriser le prélèvement."
@@ -12784,7 +12784,7 @@
         "Saisissez le jeton dans votre fournisseur d'identité."
       ],
       "Enter URL and token into your identity provider": [
-        "Saisissez le jeton et l'URL dans votre fournisseur d'identité."
+        "Saisissez l'URL et le jeton dans votre fournisseur d'identité."
       ],
       "For security reasons, the SCIM token will be hidden after saving your changes and you won’t be able to see it again.": [
         "Pour des raisons de sécurité, le jeton SCIM sera masqué une fois vos modifications enregistrées et vous ne pourrez plus l'afficher à nouveau."
@@ -13995,10 +13995,10 @@
         "Améliorez votre productivité"
       ],
       "We don't sell your data": [
-        "Nous ne vendons pas vos données."
+        "Nous ne vendons pas vos données"
       ],
       "Your privacy is our mission": [
-        "Le respect de votre vie privée est notre priorité."
+        "La protection de votre vie privée est notre priorité."
       ]
     },
     "Subscription renewal state": {

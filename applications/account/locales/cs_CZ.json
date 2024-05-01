@@ -47,11 +47,11 @@
       "${ BRAND_NAME } shop": [
         "Obchod ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Aktivovat"
-      ],
       "activate": [
         "aktivovat"
+      ],
+      "Activate": [
+        "Aktivovat"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivovat ${ user.Name }@pm.me"
@@ -5968,6 +5968,17 @@
         "Část obsahu vašeho kalendáře není podporována a nebude importována."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Byly zjištěny další duplicitní klíče. Pro více informací je prosím nahrajte jednotlivě."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "${ fingerprint } klíče byl již nahrán"
+      ],
+      "Selected color:": [
+        "Vybraná barva:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikace ${ appName } potřebuje Váš souhlas, aby mohla ${ enableDesktopNotifications }."
@@ -8407,17 +8418,6 @@
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Vaše žádost na podporu byla uzavřena. Děkujeme za kontaktování podpory ${ BRAND_NAME }."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Byly zjištěny další duplicitní klíče. Pro více informací je prosím nahrajte jednotlivě."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "${ fingerprint } klíče byl již nahrán"
-      ],
-      "Selected color:": [
-        "Vybraná barva:"
       ]
     },
     "Info - folder colouring feature": {
@@ -13833,7 +13833,7 @@
         "Prioritní podpora"
       ],
       "Resubscribe": [
-        "Obnovit odběr"
+        "Obnovit předplatné"
       ],
       "Unlimited folders, labels and filters": [
         "Neomezený počet složek, štítků a filtrů"
