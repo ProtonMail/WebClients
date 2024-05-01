@@ -13,7 +13,6 @@ export type GpuAssessmentResult =
     | 'insufficientRam' // total ram can't hold the model in memory, and swapping would give terrible perfs
     | 'blacklisted'; // maybe WebGPU could load, but we know that token generation will be too slow
 
-// @ts-ignore
 export interface LlmManager {
     hasGpu: () => boolean;
     // prefer passing a canvas, it will allow us to get some info using WebGL

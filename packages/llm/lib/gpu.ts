@@ -253,6 +253,10 @@ export class GpuLlmManager implements LlmManager {
         throw Error('todo');
     }
 
+    hasGpu(): boolean {
+        throw Error('todo');
+    }
+
     async loadOnGpu(): Promise<LlmModel> {
         if (this.status === undefined) {
             throw Error('model is not downloaded, run startDownload() first');
