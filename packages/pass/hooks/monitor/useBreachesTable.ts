@@ -51,7 +51,7 @@ const getCustomSuggestions = (data: MonitorAddress[], items: LoginItem[]): Monit
             verified: false,
         }))
         .sort(sortOn('usageCount', 'DESC'))
-        .slice(0, 5);
+        .slice(0, 3);
 };
 
 const getRowPriority = (row: MonitorTableRow) => {

@@ -10,9 +10,7 @@ import {
     addCustomAddress,
     deleteCustomAddress,
     getBreaches,
-    resolveAliasBreach,
-    resolveCustomBreach,
-    resolveProtonBreach,
+    resolveAddressMonitor,
     toggleAddressMonitor,
     verifyCustomAddress,
 } from '@proton/pass/store/actions';
@@ -39,36 +37,6 @@ const monitorReducer: Reducer<MonitorState> = (state = null, action) => {
     }
 
     if (state) {
-        if (resolveCustomBreach.success.match(action)) {
-            const address = state.custom.find(({ addressId }) => addressId === action.payload);
-            if (!address) return state;
-
-            return partialMerge(state, {
-                total: Math.max(0, state.total - (address?.breachCount ?? 0)),
-                custom: state.custom.map((breach) => {
-                    if (breach.addressId !== action.payload) return breach;
-                    return { ...breach, breachCount: 0 };
-                }),
-            });
-        }
-
-        if (resolveProtonBreach.success.match(action)) {
-            const address = state.proton.find(({ addressId }) => addressId === action.payload);
-            if (!address) return state;
-
-            return partialMerge(state, {
-                total: Math.max(0, state.total - (address?.breachCount ?? 0)),
-                proton: state.proton.map((breach) => {
-                    if (breach.addressId !== action.payload) return breach;
-                    return { ...breach, breachCount: 0 };
-                }),
-            });
-        }
-
-        if (resolveAliasBreach.success.match(action)) {
-            return partialMerge(state, { total: Math.max(0, state.total - 1) });
-        }
-
         if (addCustomAddress.success.match(action)) {
             return partialMerge(state, {
                 custom: state.custom.concat(intoCustomMonitorAddress(action.payload)),
@@ -88,6 +56,42 @@ const monitorReducer: Reducer<MonitorState> = (state = null, action) => {
             return partialMerge(state, {
                 custom: state.custom.filter((breach) => breach.addressId !== action.payload),
             });
+        }
+
+        if (resolveAddressMonitor.success.match(action)) {
+            const dto = action.payload;
+
+            switch (dto.type) {
+                case AddressType.ALIAS: {
+                    return partialMerge(state, { total: Math.max(0, state.total - 1) });
+                }
+
+                case AddressType.CUSTOM: {
+                    const address = state.custom.find(({ addressId }) => addressId === dto.addressId);
+                    if (!address) return state;
+
+                    return partialMerge(state, {
+                        total: Math.max(0, state.total - (address?.breachCount ?? 0)),
+                        custom: state.custom.map((breach) => {
+                            if (breach.addressId !== dto.addressId) return breach;
+                            return { ...breach, breachCount: 0, breached: false };
+                        }),
+                    });
+                }
+
+                case AddressType.PROTON: {
+                    const address = state.proton.find(({ addressId }) => addressId === dto.addressId);
+                    if (!address) return state;
+
+                    return partialMerge(state, {
+                        total: Math.max(0, state.total - (address?.breachCount ?? 0)),
+                        proton: state.proton.map((breach) => {
+                            if (breach.addressId !== dto.addressId) return breach;
+                            return { ...breach, breachCount: 0, breached: false };
+                        }),
+                    });
+                }
+            }
         }
 
         if (toggleAddressMonitor.success.match(action)) {

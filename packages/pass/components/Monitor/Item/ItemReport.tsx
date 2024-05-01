@@ -104,33 +104,48 @@ const DuplicatePasswordReport: FC<SelectedItem> = (item) => {
     ) : null;
 };
 
-const WeakPasswordReport: FC = () => (
-    <Card className="mb-2" type="warning">
-        <CardContent
-            icon={() => <CardIcon icon="exclamation-filled" className="self-start mt-0.5" />}
-            titleClassname="color-interaction-norm-major-2 text-lg text-semibold"
-            subtitleClassname="color-interaction-norm-major-2"
-            title={c('Title').t`Weak password`}
-            subtitle={c('Description').t`This account is vulnerable, visit the service and change your password.`}
-        />
-    </Card>
-);
+const WeakPasswordReport: FC<SelectedItem> = (item) => {
+    const { insecure } = useMonitor();
+    const isWeak = insecure.data.some(itemEq(item));
 
-const Missing2FAReport: FC = () => (
-    <Card className="mb-2" type="primary">
-        <CardContent
-            icon={() => <CardIcon icon="exclamation-filled" className="self-start mt-0.5" />}
-            titleClassname="text-lg text-semibold"
-            title={c('Title').t`Missing two-factor authentication`}
-            subtitle={c('Description').t`It would be more secure to set up 2FA for this account.`}
-        />
-    </Card>
-);
+    return (
+        isWeak && (
+            <Card className="mb-2" type="warning">
+                <CardContent
+                    icon={() => <CardIcon icon="exclamation-filled" className="self-start mt-0.5" />}
+                    titleClassname="color-interaction-norm-major-2 text-lg text-semibold"
+                    subtitleClassname="color-interaction-norm-major-2"
+                    title={c('Title').t`Weak password`}
+                    subtitle={c('Description')
+                        .t`This account is vulnerable, visit the service and change your password.`}
+                />
+            </Card>
+        )
+    );
+};
+
+const Missing2FAReport: FC<SelectedItem> = (item) => {
+    const { insecure } = useMonitor();
+    const isMissing2FA = insecure.data.some(itemEq(item));
+
+    return (
+        isMissing2FA && (
+            <Card className="mb-2" type="primary">
+                <CardContent
+                    icon={() => <CardIcon icon="exclamation-filled" className="self-start mt-0.5" />}
+                    titleClassname="text-lg text-semibold"
+                    title={c('Title').t`Missing two-factor authentication`}
+                    subtitle={c('Description').t`It would be more secure to set up 2FA for this account.`}
+                />
+            </Card>
+        )
+    );
+};
 
 export const ItemReport: FC<SelectedItem> = (item) => (
     <Switch>
         <Route path={getLocalPath('monitor/duplicates')} render={() => <DuplicatePasswordReport {...item} />} />
-        <Route path={getLocalPath('monitor/weak')} render={() => <WeakPasswordReport />} />
-        <Route path={getLocalPath('monitor/2fa')} render={() => <Missing2FAReport />} />
+        <Route path={getLocalPath('monitor/weak')} render={() => <WeakPasswordReport {...item} />} />
+        <Route path={getLocalPath('monitor/2fa')} render={() => <Missing2FAReport {...item} />} />
     </Switch>
 );
