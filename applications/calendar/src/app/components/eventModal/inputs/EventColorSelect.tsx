@@ -2,7 +2,14 @@ import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import { ColorPicker, Spotlight, UpsellModal, useModalState, useSpotlightShow } from '@proton/components/components';
+import {
+    Badge,
+    ColorPicker,
+    Spotlight,
+    UpsellModal,
+    useModalState,
+    useSpotlightShow,
+} from '@proton/components/components';
 import { FeatureCode } from '@proton/components/containers/features';
 import { useSpotlightOnFeature, useUser, useWelcomeFlags } from '@proton/components/hooks';
 import { APP_UPSELL_REF_PATH, CALENDAR_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
@@ -64,9 +71,12 @@ const EventColorSelect = ({ model, setModel, isSmallViewport, isDrawerApp }: Pro
             <Spotlight
                 content={
                     <>
-                        <div className="text-lg text-bold mb-1">{c('Spotlight').t`Color-coding is here!`}</div>
+                        <div className="flex flex-nowrap items-start mb-1">
+                            <div className="text-lg text-bold flex-1">{c('Spotlight').t`Custom event colors`}</div>
+                            <Badge className="rounded shrink-0 text-sm ml-1" type="success">{c('Badge').t`New!`}</Badge>
+                        </div>
                         <p className="m-0">{c('Spotlight')
-                            .t`With customizable event colors, you can color-code the chaos and conquer your day.`}</p>
+                            .t`Color-code your calendar to better organize your day, track your time, and more.`}</p>
                     </>
                 }
                 show={shouldShowColorSpotlight}
@@ -90,7 +100,7 @@ const EventColorSelect = ({ model, setModel, isSmallViewport, isDrawerApp }: Pro
                     modalProps={upsellModalProps}
                     features={['more-storage', 'more-email-addresses', 'more-calendars', 'calendar-sharing']}
                     description={c('Description')
-                        .t`Boost efficiency and track your time by color-coding events by category or your energy levels. Get this and much more with a paid plan.`}
+                        .t`Better organize your day, track your time, and prioritize tasks. Color-code your calendar with custom event colors.`}
                     title={c('Title').t`Add some color to your day`}
                     upgradePath={addUpsellPath(
                         getUpgradePath({ user }),
