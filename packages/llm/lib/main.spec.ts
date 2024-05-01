@@ -16,7 +16,7 @@ describe.skip('DummyLlmManager', () => {
     });
 
     it('should return true for hasGpu()', () => {
-        expect(llmManager.hasGpu()).toBeTruthy();
+        expect(llmManager.checkGpu()).toBeTruthy();
     });
 
     describe('startDownload()', () => {
