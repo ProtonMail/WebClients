@@ -47,10 +47,10 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-ის მაღაზია"
       ],
-      "Activate": [
+      "activate": [
         "აქტივაცია"
       ],
-      "activate": [
+      "Activate": [
         "აქტივაცია"
       ],
       "Activate ${ user.Name }@pm.me": [
@@ -1313,6 +1313,14 @@
       ],
       "New email": [
         "ახალი ელფოსტა"
+      ]
+    },
+    "app-switcher": {
+      "Keep your schedule private": [
+        "შეინარჩუნეთ თქვენი განრიგი კონფიდენციალურად"
+      ],
+      "Secure your communications": [
+        "დაიცავით თქვენი კომუნიკაცია"
       ]
     },
     "Apps dropdown": {
@@ -4076,6 +4084,9 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "ბევრი მომხმარებლის სამართავად შეიძინეთ სატარიფო გეგმა, რომელიც 1-ზე მეტ მომხმარებელს შეიცავს."
       ],
+      "Please upload a square file": [
+        "ატვირთეთ ოთხკუთხედი გამოსახულება"
+      ],
       "Please upload an xml file": [
         "ატვირთეთ XML ფაილი"
       ],
@@ -5906,6 +5917,17 @@
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "თქვენი კალენდრის შემცველობის ნაწილი მხარდაუჭერელია და შემოტანილი არ იქნება."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "ნაპოვნია დამატებით დუბლირებული გასაღებები. მეტი ინფორმაციისთვის გთხოვთ, ატვირთოთ სათითაოდ."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "გასაღები ${ fingerprint } უკვე ატვირთულია"
+      ],
+      "Selected color:": [
+        "არჩეული ფერი:"
       ]
     },
     "Info": {
@@ -8258,17 +8280,6 @@
         "Zoom-ის შეხვედრა"
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "ნაპოვნია დამატებით დუბლირებული გასაღებები. მეტი ინფორმაციისთვის გთხოვთ, ატვირთოთ სათითაოდ."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "გასაღები ${ fingerprint } უკვე ატვირთულია"
-      ],
-      "Selected color:": [
-        "არჩეული ფერი:"
-      ]
-    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "თუ ჩართულია, ქვესაქაღალდეები მშობელი საქაღალდის ფერს მემკვიდრეობით მიიღებენ."
@@ -8401,6 +8412,9 @@
     "Key generation": {
       "Generate key": [
         "გასაღების გენერაცია"
+      ],
+      "Key successfully generated.": [
+        "გასაღების გენერაცია წარმატებულია."
       ]
     },
     "Key state badge": {
@@ -11718,6 +11732,14 @@
         "თქვენი ტარიფი კიდევ, მაქსიმუმ, ${ humanReadableAvailableSpace } საცავს შეიცავს."
       ]
     },
+    "Organization logo upload modal": {
+      "File in PNG or JPEG format": [
+        "ფაილი PNG ან JPEG ფორმატში"
+      ],
+      "File not larger than 30 KB": [
+        "ფაილი 30 კბ-ზე პატარაა"
+      ]
+    },
     "OS compatibility": {
       ".deb (for Debian/Ubuntu)": [
         ".deb (Debian/Ubuntu-თვის)"
@@ -12611,6 +12633,9 @@
       ],
       "Generate new SCIM token?": [
         "დავაგენერირო ახალი SCIM კოდი?"
+      ],
+      "SCIM automatic provisioning": [
+        "SCIM ავტომატური მუშაობისთვის მომზადება"
       ]
     },
     "Select file": {
@@ -13605,6 +13630,9 @@
       ],
       "Keep ${ planName }": [
         "${ planName }-ის დატოვება"
+      ],
+      "Learn more about our impact": [
+        "გაიგეთ მეტი ჩვენი გავლენის შესახებ"
       ],
       "Priority support": [
         "პრიორიტეტული მხარდაჭერა"
@@ -15089,6 +15117,9 @@
       ],
       "You have no open alerts": [
         "ღია განგაშები არ გაქვთ"
+      ],
+      "You have no resolved alerts": [
+        "ამოხსნილი განგაშების გარეშე"
       ],
       "Your calendar link": [
         "თქვენი კალენდრის ბმული"
