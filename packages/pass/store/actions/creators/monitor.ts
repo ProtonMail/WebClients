@@ -4,6 +4,7 @@ import type { FetchedBreaches } from '@proton/components/containers';
 import { isMonitored } from '@proton/pass/lib/items/item.predicates';
 import { getAddressId } from '@proton/pass/lib/monitor/monitor.utils';
 import type {
+    AddressBreachDTO,
     CustomAddressID,
     MonitorAddress,
     MonitorToggleDTO,
@@ -15,15 +16,13 @@ import { withNotification } from '@proton/pass/store/actions/enhancers/notificat
 import {
     addCustomAddressRequest,
     aliasBreachRequest,
-    aliasResolveRequest,
     breachesRequest,
     customBreachRequest,
-    customResolveRequest,
     deleteCustomAddressRequest,
     itemUpdateFlagsRequest,
     protonBreachRequest,
-    protonResolveRequest,
     resendCustomAddressCodeRequest,
+    resolveAddressMonitorRequest,
     sentinelToggleRequest,
     toggleAddressMonitorRequest,
     toggleMonitorRequest,
@@ -215,42 +214,21 @@ export const toggleAddressMonitor = requestActionsFactory<MonitorToggleDTO, Moni
     },
 });
 
-export const resolveProtonBreach = requestActionsFactory<ProtonAddressID, ProtonAddressID>(
-    'monitor::breaches::proton_address::resolve'
+export const resolveAddressMonitor = requestActionsFactory<AddressBreachDTO, AddressBreachDTO>(
+    'monitor::breaches::address::resolve'
 )({
-    requestId: protonResolveRequest,
-    failure: {
-        prepare: (error) =>
+    requestId: (dto) => resolveAddressMonitorRequest(getAddressId(dto)),
+    success: {
+        prepare: (payload) =>
             withNotification({
-                text: c('Error').t`Failed to mark this address as resolved`,
-                type: 'error',
-                error,
-            })({ payload: null }),
+                type: 'info',
+                text: c('Info').t`All breaches for this address were resolved`,
+            })({ payload }),
     },
-});
-
-export const resolveCustomBreach = requestActionsFactory<CustomAddressID, CustomAddressID>(
-    'monitor::breaches::custom::resolve'
-)({
-    requestId: customResolveRequest,
     failure: {
         prepare: (error) =>
             withNotification({
-                text: c('Error').t`Failed to mark this address as resolved`,
-                type: 'error',
-                error,
-            })({ payload: null }),
-    },
-});
-
-export const resolveAliasBreach = requestActionsFactory<SelectedItem, SelectedItem>(
-    'monitor::breaches::alias_address::resolve'
-)({
-    requestId: ({ shareId, itemId }) => aliasResolveRequest(shareId, itemId),
-    failure: {
-        prepare: (error) =>
-            withNotification({
-                text: c('Error').t`Failed to mark this address as resolved`,
+                text: c('Error').t`Failed to resolve breaches for this address`,
                 type: 'error',
                 error,
             })({ payload: null }),
