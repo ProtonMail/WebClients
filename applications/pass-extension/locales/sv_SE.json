@@ -188,6 +188,9 @@
       "Edit vault": [
         "Redigera valv"
       ],
+      "Exclude from monitoring": [
+        "Exkludera från övervakning"
+      ],
       "Export": [
         "Exportera"
       ],
@@ -212,6 +215,9 @@
       "Get mobile apps": [
         "Skaffa mobilappar"
       ],
+      "Get Pass Plus": [
+        "Skaffa Pass Plus"
+      ],
       "Help us improve": [
         "Hjälp oss att förbättra"
       ],
@@ -232,6 +238,9 @@
       ],
       "Importing": [
         "Importerar"
+      ],
+      "Include in monitoring": [
+        "Inkludera i övervakning"
       ],
       "Invite others": [
         "Bjud in andra"
@@ -368,6 +377,9 @@
       "Saving passkey...": [
         "Sparar passkey …"
       ],
+      "See all": [
+        "Se alla"
+      ],
       "See members": [
         "Se medlemmar"
       ],
@@ -502,11 +514,21 @@
       ]
     },
     "Description": {
+      "${ total } other login uses the same password": [
+        "${ total } annan inloggning använder samma lösenord",
+        "${ total } andra inloggningar använder samma lösenord"
+      ],
       "A checked box means the feature is disabled.": [
         "En ikryssad ruta betyder att funktionen är inaktiverad."
       ],
+      "It would be more secure to set up 2FA for this account.": [
+        "Det skulle vara mer säkert att ställa in 2FA för detta konto."
+      ],
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
         "Lista över domäner där vissa automatiska funktioner i ${ PASS_SHORT_APP_NAME } (automatisk ifyllnad, automatiskt förslag, automatiskt spara) inte ska köras.${ infoText }"
+      ],
+      "This account is vulnerable, visit the service and change your password.": [
+        "Detta konto är sårbart, besök tjänsten och ändra ditt lösenord."
       ]
     },
     "Error": {
@@ -524,9 +546,6 @@
       ],
       "Authentication failure: ${ message }": [
         "Autentiseringsfel: ${ message }"
-      ],
-      "Authenticator failure": [
-        "Autentiseringsfel"
       ],
       "Auto-lock could not be activated": [
         "Automatisk låsning kunde inte aktiveras"
@@ -602,6 +621,12 @@
       "Failed resending invite.": [
         "Misslyckades skicka inbjudan igen."
       ],
+      "Failed to add email address": [
+        "Misslyckades att lägga till e-postadress"
+      ],
+      "Failed to delete email address from monitoring": [
+        "Misslyckades att ta bort e-postadress från övervakning"
+      ],
       "Failed to delete selected items": [
         "Misslyckades att ta bort markerade objekt"
       ],
@@ -611,8 +636,20 @@
       "Failed to edit user's access.": [
         "Misslyckades att redigera användaråtkomst."
       ],
+      "Failed to load breaches": [
+        "Misslyckades att ladda intrång"
+      ],
+      "Failed to load breaches for this address": [
+        "Misslyckades att ladda intrång för denna adress"
+      ],
+      "Failed to load breaches for this email alias": [
+        "Misslyckades att ladda intrång för detta e-postalias"
+      ],
       "Failed to load item history": [
         "Misslyckades att ladda objekthistorik"
+      ],
+      "Failed to mark this address as resolved": [
+        "Misslyckades att markera denna adress som löst"
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Misslyckades att flytta alla objekt från “${ payload.content.name }“"
@@ -629,6 +666,9 @@
       "Failed to remove user's access.": [
         "Misslyckades att ta bort användaråtkomst."
       ],
+      "Failed to resend verification for custom email": [
+        "Misslyckades att skicka verifieringskod igen för anpassad e-post"
+      ],
       "Failed to restore items from trash": [
         "Misslyckades att återställa objekt från papperskorg"
       ],
@@ -637,6 +677,18 @@
       ],
       "Failed to unpin item": [
         "Misslyckades att lossa objekt"
+      ],
+      "Failed to update monitoring settings": [
+        "Misslyckades att uppdatera övervakningsinställningar"
+      ],
+      "Failed to verify email address": [
+        "Misslyckades att verifiera e-postadress"
+      ],
+      "Failed updating ${ PROTON_SENTINEL_NAME } setting": [
+        "Misslyckades uppdatera ${ PROTON_SENTINEL_NAME }-inställingar"
+      ],
+      "Failed updating monitoring status for this email address": [
+        "Misslyckades att uppdatera övervakningsstatus för denna e-postadress"
       ],
       "File could not be parsed": [
         "Fil kunde inte analyseras"
@@ -877,6 +929,12 @@
       "${ PASS_APP_NAME } will suggest saving passkeys.": [
         "${ PASS_APP_NAME } kommer föreslå sparade passkeys."
       ],
+      "${ PROTON_SENTINEL_NAME } successfully disabled": [
+        "${ PROTON_SENTINEL_NAME } inaktiverades"
+      ],
+      "${ PROTON_SENTINEL_NAME } successfully enabled": [
+        "${ PROTON_SENTINEL_NAME } aktiverades"
+      ],
       "${ trialDaysLeft } day left": [
         "${ trialDaysLeft } dag kvar",
         "${ trialDaysLeft } dagar kvar"
@@ -1007,6 +1065,15 @@
       "Editor": [
         "Redaktör"
       ],
+      "Email address successfully deleted from monitoring": [
+        "E-postadress borttagen från övervakning"
+      ],
+      "Email address successfully excluded from monitoring": [
+        "E-postadress exkluderad från övervakning"
+      ],
+      "Email address successfully included in monitoring": [
+        "E-postadress inkluderad i övervakning"
+      ],
       "Emptying trash...": [
         "Tömmer papperskorg..."
       ],
@@ -1103,6 +1170,12 @@
       "Item restored": [
         "Objekt återställt"
       ],
+      "Item successfully excluded from monitoring": [
+        "Objekt exkluderat från övervakning"
+      ],
+      "Item successfully included in monitoring": [
+        "Objekt inkluderat i övervakning"
+      ],
       "Item successfully moved": [
         "Objekt flyttades"
       ],
@@ -1129,6 +1202,9 @@
       ],
       "me": [
         "jag"
+      ],
+      "Monitoring settings successfully updated": [
+        "Övervakningsinställningar uppdaterades"
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "Mer än en lösenordshanterare. ${ PASS_APP_NAME } skyddar ditt lösenord och din personliga e-postadress via e-postalias. Drivs av samma teknologi bakom ${ MAIL_APP_NAME }, din data är krypterad från början och är endast åtkomlig för dig."
@@ -1842,6 +1918,9 @@
       "Special characters (!&*)": [
         "Specialtecken (!&*)"
       ],
+      "Strong": [
+        "Starkt"
+      ],
       "Suffix": [
         "Suffix"
       ],
@@ -1907,6 +1986,12 @@
       ],
       "View logs": [
         "Visa loggar"
+      ],
+      "Vulnerable": [
+        "Sårbart"
+      ],
+      "Weak": [
+        "Svagt"
       ],
       "Website": [
         "Webbplats"
@@ -2154,6 +2239,9 @@
       "Members": [
         "Medlemmar"
       ],
+      "Missing two-factor authentication": [
+        "Saknar tvåfaktorsautentisering"
+      ],
       "Modified": [
         "Ändrad"
       ],
@@ -2205,6 +2293,9 @@
       "Share with": [
         "Dela med"
       ],
+      "Stay safer online": [
+        "Var säkrare online"
+      ],
       "Suggestions": [
         "Förslag"
       ],
@@ -2240,6 +2331,9 @@
       ],
       "Vault shared with you": [
         "Valv delade med dig"
+      ],
+      "Weak password": [
+        "Svagt lösenord"
       ],
       "Welcome to your new password manager!": [
         "Välkommen till din nya lösenordshanterare!"
