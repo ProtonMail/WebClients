@@ -236,6 +236,9 @@
       "Manually sync your data": [
         "Synkronoi tietosi"
       ],
+      "Mark as resolved": [
+        "Merkitse ratkaistuksi"
+      ],
       "More info: ${ safeTitle }": [
         "Lisätietoja: ${ safeTitle }"
       ],
@@ -290,6 +293,9 @@
       "Reject invitation": [
         "Kieltäydy kutsusta"
       ],
+      "Remove": [
+        "Poista"
+      ],
       "Remove access": [
         "Mitätöi käyttöoikeus"
       ],
@@ -298,6 +304,9 @@
       ],
       "Request a feature": [
         "Pyydä ominaisuutta"
+      ],
+      "Resend code": [
+        "Lähetä koodi uudelleen"
       ],
       "Resend invitation": [
         "Lähetä kutsu uudelleen"
@@ -379,6 +388,9 @@
       ],
       "Upgrade now to share with more people": [
         "Jaa useammalle henkilölle päivittämällä tilauksesi"
+      ],
+      "Verify": [
+        "Vahvista"
       ],
       "View history": [
         "Näytä historia"
@@ -858,6 +870,9 @@
       "Can view items in this vault.": [
         "Voi tarkastella holvin kohteita."
       ],
+      "Change your password": [
+        "Vaihda salasanasi"
+      ],
       "Congratulations, your access has been confirmed": [
         "Onnittelut, käyttöoikeutesi on vahvistettu"
       ],
@@ -888,6 +903,9 @@
       "Editor": [
         "Muokkaus"
       ],
+      "email": [
+        "sähköpostiosoite"
+      ],
       "Emptying trash...": [
         "Tyhjennetään roskakoria..."
       ],
@@ -896,6 +914,9 @@
       ],
       "Fill in the CSV with your data": [
         "Täytä CSV omilla tiedoillasi"
+      ],
+      "finance": [
+        "rahoitus"
       ],
       "Follow those steps to import your data with a generic CSV :": [
         "Tuo tietosi yleisenä CSV -tiedostona noudattamalla ohjeita"
@@ -912,6 +933,9 @@
       ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Hanki rajattomasti aliaksia, nauti ainutlaatuisista ominaisuuksista ja tuet toimintaamme tilaamalla Pass Plus."
+      ],
+      "High Priority": [
+        "Korkea tärkeys"
       ],
       "Import in progress:": [
         "Tuonti on käynnissä:"
@@ -990,6 +1014,9 @@
       "Item successfully unpinned": [
         "Kohde irrotettiin"
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Opi kuinka ${ staySaferOnlineLink }"
+      ],
       "Leaving vault...": [
         "Poistutaan holvista..."
       ],
@@ -1008,8 +1035,17 @@
       "Logging you out...": [
         "Sinua kirjataan ulos..."
       ],
+      "Low Priority": [
+        "Alhainen tärkeys"
+      ],
       "me": [
         "minä"
+      ],
+      "Medium Priority": [
+        "Keskitason tärkeys"
+      ],
+      "Monitor accounts": [
+        "Valvo tilejä"
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "${ PASS_APP_NAME } on muutakin kuin pelkkä salasanahallinta, sillä se voi salasanojesi lisäksi suojata myös sähköpostiosoitteesi sähköpostialiaksilla. Tietosi ovat päästä päähän -salattuja ${ MAIL_APP_NAME }in käyttämällä tekniikalla ja vain sinä pääset niihin käsiksi."
@@ -1059,9 +1095,15 @@
       "Pass Plus trial": [
         "Pass Plus -kokeilu"
       ],
+      "password": [
+        "salasana"
+      ],
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
         "Yli ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } viikon ikäiset salasanat poistetaan historiasta automaattisesti.",
         "Yli ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } viikon ikäiset salasanat poistetaan historiasta automaattisesti."
+      ],
+      "Paused": [
+        "Keskeytetty"
       ],
       "Permanently deleting selected items": [
         "Valittuja kohteita poistetaan pysyvästi"
@@ -1180,6 +1222,9 @@
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "Viety tiedosto salataan PGP:llä ja se vaatii vahvan tunnuslausekkeen."
       ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "Paljastuneet tiedot vuotivat kolmannen osapuolen palvelusta. Sinun ${ BRAND_NAME } -tilisi tiedot pysyvät suojattuina ja salattuina. ${ learnMoreLink }"
+      ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Seuraavaa ${ result.ignored.length } kohdetta ei voitu tuoda:",
         "Seuraavia ${ result.ignored.length } kohdetta ei voitu tuoda:"
@@ -1217,6 +1262,9 @@
       "Unpinning item...": [
         "Kohdetta irrotetaan..."
       ],
+      "Unverified": [
+        "Vahvistamaton"
+      ],
       "Updating organization settings": [
         "Organisaation asetuksia päivitetään"
       ],
@@ -1231,6 +1279,9 @@
       ],
       "User's access sucessfuly updated": [
         "Käyttäjän käyttöoikeutta muutettiin"
+      ],
+      "username": [
+        "käyttäjätunnus"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Holvi \"${ payload.content.name }\" poistettiin"
@@ -1289,6 +1340,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Tiedostosi salataan ja tallennetaan"
+      ],
+      "Your information was found on ${ displayedDate }": [
+        "Tietosi löytyivät ${ displayedDate }"
       ]
     },
     "Label": {
@@ -1375,6 +1429,9 @@
       "Cards": [
         "Kortit"
       ],
+      "Code": [
+        "Koodi"
+      ],
       "Confirm vault name": [
         "Vahvista holvin nimi"
       ],
@@ -1396,6 +1453,9 @@
       "Created": [
         "Luotu"
       ],
+      "Date": [
+        "Päiväys"
+      ],
       "Disable data export for team members": [
         "Poista tietojen vienti käytöstä ryhmän jäseniltä"
       ],
@@ -1410,6 +1470,12 @@
       ],
       "Download logs": [
         "Lataa lokitiedot"
+      ],
+      "Email": [
+        "Sähköposti"
+      ],
+      "Email address": [
+        "Sähköpostiosoite"
       ],
       "Empty trash": [
         "Tyhjennä roskakori"
@@ -1709,6 +1775,14 @@
         "Luot aliasta"
       ]
     },
+    "Link": {
+      "Learn more": [
+        "Lue lisää"
+      ],
+      "stay safer online": [
+        "pysy turvassa verkossa"
+      ]
+    },
     "lobby: Info": {
       "Enter your PIN code": [
         "Syötä PIN-koodisi"
@@ -1728,6 +1802,11 @@
         "Tervetuloa ${ brandNameJSX }iin"
       ]
     },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Ota ${ reason } käyttöön"
+      ]
+    },
     "Message": {
       "${ count } item": [
         "${ count } kohde",
@@ -1735,6 +1814,14 @@
       ],
       "You selected ${ semiboldText } in this vault": [
         "Olet valinnut holvista ${ semiboldText } kohdetta"
+      ]
+    },
+    "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } poistettiin käytöstä"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } otettiin käyttöön"
       ]
     },
     "Option": {
@@ -1859,6 +1946,9 @@
       "Auto-lock update": [
         "Muuta automaattilukitusta"
       ],
+      "Block trackers and malware": [
+        "Estä seurantoja ja haittaohjelmia"
+      ],
       "Confirm PIN code": [
         "Vahvista PIN-koodi"
       ],
@@ -1877,8 +1967,14 @@
       "Delete vault \"${ vaultName }\" ?": [
         "Poistetaanko holvi \"${ vaultName }\"?"
       ],
+      "Details": [
+        "Lisätiedot"
+      ],
       "Discard changes?": [
         "Hylätäänkö muutokset?"
+      ],
+      "Email address": [
+        "Sähköpostiosoite"
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Nautitko ${ PASS_APP_NAME }ista?"
@@ -1949,6 +2045,9 @@
       "Passkey": [
         "Suojausavain"
       ],
+      "Password": [
+        "Salasana"
+      ],
       "Pending access to the shared data": [
         "Odotetaan käyttöoikeutta jaettuihin tietoihin"
       ],
@@ -1957,6 +2056,9 @@
       ],
       "Pinned (${ items.length })": [
         "Kiinnitykset (${ items.length })"
+      ],
+      "Recommended actions": [
+        "Suositellut toimenpiteet"
       ],
       "Restore this version?": [
         "Palautetaanko tämä versio?"
@@ -2000,8 +2102,17 @@
       "Vault shared with you": [
         "Sinulle on jaettu holvi"
       ],
+      "What is an alias?": [
+        "Mikä on alias?"
+      ],
+      "What is the dark web?": [
+        "Mikä on pimeä verkko?"
+      ],
       "Why ${ PASS_APP_NAME }?": [
         "Miksi ${ PASS_APP_NAME }?"
+      ],
+      "Your exposed information": [
+        "Paljastuneet tietosi"
       ],
       "Your vault is empty": [
         "Holvisi on tyhjä"

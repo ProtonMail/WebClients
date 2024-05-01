@@ -278,6 +278,9 @@
       "Reject invitation": [
         "招待を拒否する"
       ],
+      "Remove": [
+        "削除"
+      ],
       "Remove access": [
         "アクセス権の削除"
       ],
@@ -286,6 +289,9 @@
       ],
       "Request a feature": [
         "機能を提案"
+      ],
+      "Resend code": [
+        "コードを再送信"
       ],
       "Resend invitation": [
         "招待の再送"
@@ -367,6 +373,9 @@
       ],
       "Upgrade now to share with more people": [
         "今すぐアップグレードしてより多くの人と共有しましょう"
+      ],
+      "Verify": [
+        "検証"
       ],
       "Write us on Reddit": [
         "Redditに書き込む"
@@ -784,6 +793,9 @@
       "Can view items in this vault.": [
         "このフォルダー内のアイテムを閲覧できます。"
       ],
+      "Change your password": [
+        "パスワードを変更"
+      ],
       "Congratulations, your access has been confirmed": [
         "おめでとうございます。アクセスが確認されました"
       ],
@@ -811,6 +823,9 @@
       "Editor": [
         "エディター"
       ],
+      "email": [
+        "メール"
+      ],
       "Emptying trash...": [
         "ごみ箱を空にしています..."
       ],
@@ -828,6 +843,9 @@
       ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Pass Plus に登録して、無制限のエイリアスを取得し、限定機能を利用し、サポートしてください。"
+      ],
+      "High Priority": [
+        "優先度：高"
       ],
       "Import in progress:": [
         "インポートが進行中:"
@@ -919,8 +937,14 @@
       "Logging you out...": [
         "ユーザーをログアウト中…"
       ],
+      "Low Priority": [
+        "優先度：低"
+      ],
       "me": [
         "私"
+      ],
+      "Medium Priority": [
+        "優先度：中"
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "${ PASS_APP_NAME } は単なるパスワード マネージャーではなく、メール エイリアスを介してパスワードと個人メール アドレスを保護します。 ${ MAIL_APP_NAME } の背後にある同じテクノロジーを利用して、あなたのデータはエンドツーエンドで暗号化され、あなただけがアクセスできます。"
@@ -954,6 +978,9 @@
       ],
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
         "${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } 週間より古いパスワードは履歴から自動的に削除されます。"
+      ],
+      "Paused": [
+        "一時停止"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "PINコードの登録が完了しました。 それを使用して ${ PASS_APP_NAME } のロックを解除します"
@@ -1075,6 +1102,9 @@
       "Unpinning item...": [
         "アイテムの固定解除中..."
       ],
+      "Unverified": [
+        "未検証"
+      ],
       "Use vaults to share this item with others.": [
         "このアイテムを他の人と共有するには、保管庫を使用してください。"
       ],
@@ -1083,6 +1113,9 @@
       ],
       "User's access sucessfuly updated": [
         "ユーザーのアクセス権を正常に更新しました。"
+      ],
+      "username": [
+        "ユーザー名"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "保管庫「${ payload.content.name }」が正常に削除されました"
@@ -1218,6 +1251,9 @@
       "Cards": [
         "カード"
       ],
+      "Code": [
+        "コード"
+      ],
       "Confirm vault name": [
         "保管庫名を確認する"
       ],
@@ -1239,6 +1275,9 @@
       "Created": [
         "作成日時"
       ],
+      "Date": [
+        "日付"
+      ],
       "Display": [
         "表示"
       ],
@@ -1247,6 +1286,12 @@
       ],
       "Download logs": [
         "過去ログのダウンロード"
+      ],
+      "Email": [
+        "メールアドレス"
+      ],
+      "Email address": [
+        "メールアドレス"
       ],
       "Empty trash": [
         "ごみ箱を空にする"
@@ -1537,6 +1582,11 @@
         "作成されるメールアドレス"
       ]
     },
+    "Link": {
+      "Learn more": [
+        "詳細"
+      ]
+    },
     "lobby: Info": {
       "Enter your PIN code": [
         "PINコードの入力"
@@ -1553,9 +1603,22 @@
         "${ brandNameJSX } へようこそ"
       ]
     },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "${ reason } を有効にする"
+      ]
+    },
     "Message": {
       "${ count } item": [
         "${ count } 件のアイテム"
+      ]
+    },
+    "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } が無効になりました"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } が有効になりました"
       ]
     },
     "Option": {
@@ -1694,8 +1757,14 @@
       "Delete vault \"${ vaultName }\" ?": [
         "保管庫「${ vaultName }」を削除しますか？"
       ],
+      "Details": [
+        "詳細"
+      ],
       "Discard changes?": [
         "変更を破棄しますか?"
+      ],
+      "Email address": [
+        "メールアドレス"
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "${ PASS_APP_NAME } をお楽しみですか?"
@@ -1756,6 +1825,9 @@
       ],
       "Passkey": [
         "パスキー"
+      ],
+      "Password": [
+        "パスワード"
       ],
       "Pending access to the shared data": [
         "共有データへのアクセスが保留中です"
