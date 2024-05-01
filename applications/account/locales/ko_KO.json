@@ -47,10 +47,10 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 상점"
       ],
-      "Activate": [
+      "activate": [
         "활성화"
       ],
-      "activate": [
+      "Activate": [
         "활성화"
       ],
       "Activate ${ user.Name }@pm.me": [
@@ -5909,6 +5909,17 @@
         "캘린더 콘텐츠 중 일부가 지원되지 않으며, 불러와지지 않습니다."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "추가적인 복제 키가 감지되었습니다. 자세한 정보를 위해 따로 업로드해주세요."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "${ fingerprint } 키가 업로드 되었습니다"
+      ],
+      "Selected color:": [
+        "선택한 색상:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }에서 ${ enableDesktopNotifications }하려면 권한이 필요합니다."
@@ -7173,6 +7184,9 @@
       "Password copied to clipboard": [
         "비밀번호 복사됨"
       ],
+      "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
+        "비밀번호는 ${ MIN_PASSWORD_LENGTH }자 이상이어야 합니다."
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "결제는 TLS 암호화와 스위스의 보안 법에 의해 보호되고 있습니다."
       ],
@@ -8184,6 +8198,9 @@
       "You won’t be able to recover locked data using your downloaded recovery files.": [
         "잠긴 파일을 복구하지 않을 경우, 다운로드된 복구 파일을 사용하세요"
       ],
+      "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
+        "다운로드한 복구 파일을 사용하여 잠긴 데이터를 복구할 수 없게 됩니다. 또한 장치 기반 복구도 비활성화됩니다."
+      ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
         "사용자의 ${ BRAND_NAME } 계정이 ${ externalEmailAddress } 와 연결되어 있습니다."
       ],
@@ -8276,17 +8293,6 @@
       ],
       "Zoom meeting": [
         "Zoom 미팅"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "추가적인 복제 키가 감지되었습니다. 자세한 정보를 위해 따로 업로드해주세요."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "${ fingerprint } 키가 업로드 되었습니다"
-      ],
-      "Selected color:": [
-        "선택한 색상:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9625,6 +9631,9 @@
       ]
     },
     "label": {
+      "Device-based recovery": [
+        "기기 기반 복구"
+      ],
       "Recovery phone number": [
         "복구 전화번호"
       ],
@@ -13815,7 +13824,7 @@
         "저장공간 15GB"
       ],
       "and 15 more premium features": [
-        "그리고 더 많은 15개의 프리미엄 기능"
+        "그리고 15개의 프리미엄 기능"
       ],
       "Automatic email forwarding ${ strongText }": [
         "자동 이메일 포워딩 ${ strongText }"
