@@ -9505,6 +9505,9 @@
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel 现已 **启用** 并正在保护您的帐户。"
+      ],
+      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLink }": [
+        "您的信息在至少一次数据泄露中被发现。打开 ${ DARK_WEB_MONITORING_NAME } 查看详细信息并采取行动。 ${ learnMoreLink }"
       ]
     },
     "Select files": {
@@ -10024,9 +10027,6 @@
       "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
         "方便地从您的桌面启动 ${ MAIL_APP_NAME }。"
       ],
-      "Create hide-my-email aliases and keep track of them here.": [
-        "在此处即可创建并管理 ide-my-email 邮箱别名。"
-      ],
       "Email tracking protection": [
         "邮件追踪防护"
       ],
@@ -10041,6 +10041,9 @@
       ],
       "Schedule send": [
         "定时发送"
+      ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME } to get notified if your data was leaked from a third-party service.": [
+        "开启 ${ DARK_WEB_MONITORING_NAME } 以获得通知，如果您的数据被第三方服务泄漏。"
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "我们现已默认允许外链图片加载，并为您开启发件方追踪防护。这些选项可以在${ settingsLink }中更改。"

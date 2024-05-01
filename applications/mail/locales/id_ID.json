@@ -3984,6 +3984,9 @@
       "You have reached the contacts limit for your account": [
         "Anda telah mencapai batas jumlah kontak yang diperkenankan untuk akun Anda"
       ],
+      "You have reached the maximum number of calendars.": [
+        "Anda telah mencapai batas jumlah kalender maksimum."
+      ],
       "You must set a name": [
         "Anda harus mengatur nama"
       ],
@@ -6164,7 +6167,7 @@
         "Cetak email"
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
-        "Lindungi email Anda agar tidak bocor ke tangan oknum milis atau spammer dengan ${ maskMyEmailButton }."
+        "Lindungi email Anda agar tidak bocor ke tangan milis atau pengirim spam dengan ${ maskMyEmailButton }."
       ],
       "Recipient: ": [
         "Penerima: "
@@ -9696,7 +9699,7 @@
     },
     "Security Center - Info": {
       "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
-        "Dapatkan notifikasi pada saat kata sandi atau data lainnya yang Anda miliki dibocorkan dari layanan pihak ketiga. ${ learnMoreLink }"
+        "Dapatkan notifikasi apabila kata sandi atau data lainnya yang Anda miliki dibocorkan dari layanan pihak ketiga. ${ learnMoreLink }"
       ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Solusi keamanan mutakhir berbasis AI kami dirancang untuk para pengguna yang menginginkan perlindungan yang lebih bagi akun mereka. ${ learnMoreLink }"
@@ -10229,9 +10232,6 @@
     "Spotlight": {
       "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
         "Luncurkan ${ MAIL_APP_NAME } secara mudah langsung dari desktop Anda."
-      ],
-      "Create hide-my-email aliases and keep track of them here.": [
-        "Hasilkan alias hide-my-email dan lacak seluruh alias Anda di sini."
       ],
       "Email tracking protection": [
         "Perlindungan pelacak email"
@@ -11799,6 +11799,9 @@
       ],
       "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
         "Paket langganan diperbarui secara otomatis setiap 3 bulan. Anda akan menerima tagihan berikutnya dalam 3 bulan ke depan."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Harga diskon khusus ${ priceWithDiscount } berlaku valid untuk bulan pertama. Setelahnya, langganan Anda akan diperbarui secara otomatis pada harga ${ renewPrice } per bulannya. Anda dapat membatalkan langganan Anda kapan saja."
       ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Setelahnya, Anda akan ditagih setiap 12 bulan pada harga ${ renewPrice }."
