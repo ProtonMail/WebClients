@@ -81,6 +81,16 @@ export const getSentinel = (included: boolean = false): PlanCardFeatureDefinitio
     };
 };
 
+export const getPassKeys = (included: boolean = false): PlanCardFeatureDefinition => {
+    return {
+        text: c('new_plans: feature').t`Passkeys supported`,
+        tooltip: c('new_plans: tooltip')
+            .t`Provides the highest level of account security protection and specialist support`,
+        included: included,
+        icon: 'shield',
+    };
+};
+
 export const getAdminPanel = (): PlanCardFeatureDefinition => {
     return {
         text: c('new_plans: feature').t`Administration Panel`,
