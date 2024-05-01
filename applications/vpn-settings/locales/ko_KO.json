@@ -3468,6 +3468,9 @@
       "Password copied to clipboard": [
         "비밀번호 복사됨"
       ],
+      "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
+        "비밀번호는 ${ MIN_PASSWORD_LENGTH }자 이상이어야 합니다."
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "결제는 TLS 암호화와 스위스의 보안 법에 의해 보호되고 있습니다."
       ],
@@ -7249,7 +7252,7 @@
         "저장공간 15GB"
       ],
       "and 15 more premium features": [
-        "그리고 더 많은 15개의 프리미엄 기능"
+        "그리고 15개의 프리미엄 기능"
       ],
       "Automatic email forwarding ${ strongText }": [
         "자동 이메일 포워딩 ${ strongText }"

@@ -705,6 +705,14 @@
         "გაითიშება ყველა რაუტერი და კლიენტი, რომელიც ამ სერტიფიკატს იყენებს."
       ]
     },
+    "app-switcher": {
+      "Keep your schedule private": [
+        "შეინარჩუნეთ თქვენი განრიგი კონფიდენციალურად"
+      ],
+      "Secure your communications": [
+        "დაიცავით თქვენი კომუნიკაცია"
+      ]
+    },
     "bf2023: Action": {
       "**Add our encrypted password manager** for only ${ price }": [
         "**დაამატეთ ჩვენი დაშიფრული პაროლების მმართველი** მხოლოდ ${ price }-ად"
@@ -2124,6 +2132,9 @@
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "ბევრი მომხმარებლის სამართავად შეიძინეთ სატარიფო გეგმა, რომელიც 1-ზე მეტ მომხმარებელს შეიცავს."
+      ],
+      "Please upload a square file": [
+        "ატვირთეთ ოთხკუთხედი გამოსახულება"
       ],
       "Please upload an xml file": [
         "ატვირთეთ XML ფაილი"
@@ -5936,6 +5947,14 @@
         "თქვენი ტარიფი კიდევ, მაქსიმუმ, ${ humanReadableAvailableSpace } საცავს შეიცავს."
       ]
     },
+    "Organization logo upload modal": {
+      "File in PNG or JPEG format": [
+        "ფაილი PNG ან JPEG ფორმატში"
+      ],
+      "File not larger than 30 KB": [
+        "ფაილი 30 კბ-ზე პატარაა"
+      ]
+    },
     "Pass B2B onboarding spotlight": {
       "Go to your vault to manage your passwords, aliases, and more.": [
         "გადადით თქვენს საცავზე, რომ მართოთ თქვენი პაროლები, ფსევდონიმები და სხვ."
@@ -6417,6 +6436,9 @@
       ],
       "Generate new SCIM token?": [
         "დავაგენერირო ახალი SCIM კოდი?"
+      ],
+      "SCIM automatic provisioning": [
+        "SCIM ავტომატური მუშაობისთვის მომზადება"
       ]
     },
     "Select file": {
