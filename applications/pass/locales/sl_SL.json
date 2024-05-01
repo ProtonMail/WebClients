@@ -236,6 +236,9 @@
       "Manually sync your data": [
         "Ročno sinhroniziraj vaše podatke"
       ],
+      "Mark as resolved": [
+        "Označi kot rešeno"
+      ],
       "More info: ${ safeTitle }": [
         "Več informacij: ${ safeTitle }"
       ],
@@ -290,6 +293,9 @@
       "Reject invitation": [
         "Zavrni povabilo"
       ],
+      "Remove": [
+        "Odstrani"
+      ],
       "Remove access": [
         "Odstrani dostop"
       ],
@@ -298,6 +304,9 @@
       ],
       "Request a feature": [
         "Predlagajte novo funkcijo"
+      ],
+      "Resend code": [
+        "Znova pošlji kodo"
       ],
       "Resend invitation": [
         "Ponovno pošlji povabilo"
@@ -379,6 +388,9 @@
       ],
       "Upgrade now to share with more people": [
         "Nadgradite zdaj za skupno rabo z več ljudmi"
+      ],
+      "Verify": [
+        "Preveri"
       ],
       "View history": [
         "Pokaži zgodovino"
@@ -855,6 +867,9 @@
       "Can view items in this vault.": [
         "Lahko si ogleda predmete v tem trezorju."
       ],
+      "Change your password": [
+        "Spremenite vaše geslo"
+      ],
       "Congratulations, your access has been confirmed": [
         "Čestitamo, vaš dostop je potrjen"
       ],
@@ -885,6 +900,9 @@
       "Editor": [
         "Urejevalnik"
       ],
+      "email": [
+        "e-pošta"
+      ],
       "Emptying trash...": [
         "Izprazni smetnjak..."
       ],
@@ -893,6 +911,9 @@
       ],
       "Fill in the CSV with your data": [
         "Izpolnite CSV s svojimi podatki"
+      ],
+      "finance": [
+        "finance"
       ],
       "Follow those steps to import your data with a generic CSV :": [
         "Za uvoz podatkov z generičnim CSV sledite tem korakom:"
@@ -911,6 +932,9 @@
       ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Pridobite neomejeno število vzdevkov, uživajte v ekskluzivnih funkcijah in nas podprite tako, da se naročite na Pass Plus."
+      ],
+      "High Priority": [
+        "Visoka pomembnost"
       ],
       "Import in progress:": [
         "Uvoz v teku:"
@@ -993,6 +1017,9 @@
       "Item successfully unpinned": [
         "Predmet je bil uspešno odpet"
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Naučite se ${ staySaferOnlineLink }"
+      ],
       "Leaving vault...": [
         "Zapuščam trezor..."
       ],
@@ -1011,8 +1038,17 @@
       "Logging you out...": [
         "Izpisujem..."
       ],
+      "Low Priority": [
+        "Nizka pomembnost"
+      ],
       "me": [
         "jaz"
+      ],
+      "Medium Priority": [
+        "Srednja pomembnost"
+      ],
+      "Monitor accounts": [
+        "Nadzor računov"
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "Več kot upravitelj gesel, ${ PASS_APP_NAME } ščiti vaše geslo in vaš osebni e-poštni naslov prek e-poštnih vzdevkov. Vaši podatki, ki jih poganja ista tehnologija za ${ MAIL_APP_NAME }, so šifrirani od konca do konca in dostopni samo vam."
@@ -1062,11 +1098,17 @@
       "Pass Plus trial": [
         "Pass Plus preizkus"
       ],
+      "password": [
+        "geslo"
+      ],
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
         "Gesla, starejša od ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } teden, se samodejno izbrišejo iz zgodovine.",
         "Gesla, starejša od ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tedna, se samodejno izbrišejo iz zgodovine.",
         "Gesla, starejša od ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tedne, se samodejno izbrišejo iz zgodovine.",
         "Gesla, starejša od ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tedne, se samodejno izbrišejo iz zgodovine."
+      ],
+      "Paused": [
+        "Začasno zaustavljeno"
       ],
       "Permanently deleting selected items": [
         "Trajno brisanje izbranih predmetov"
@@ -1185,6 +1227,9 @@
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "Izvožena datoteka bo šifrirana s PGP in zahteva močno geslo."
       ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "Razkrite informacije so pricurljale iz storitve tretje osebe. Podatki o vašem računu ${ BRAND_NAME } ostajajo varni in šifrirani. ${ learnMoreLink }"
+      ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Tega predmeta ${ result.ignored.length } ni bilo mogoče uvoziti:",
         "Teh dveh predmetov ${ result.ignored.length } ni bilo mogoče uvoziti:",
@@ -1215,6 +1260,9 @@
       "To review your imported data, click on the Pass icon in your browser toolbar.": [
         "Za pregled uvoženih podatkov kliknite ikono Pass v orodni vrstici brskalnika."
       ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "Preizkusite nove zmožnosti, posodobitve in izdelke ${ BRAND_NAME }, preden postanejo dostopni širši javnosti. Aplikacija se bo znova naložila."
+      ],
       "Unable to copy to clipboard": [
         "Kopiranje v odložišče ni mogoče"
       ],
@@ -1223,6 +1271,9 @@
       ],
       "Unpinning item...": [
         "Odpenjanje predmeta..."
+      ],
+      "Unverified": [
+        "Nepotrjeno"
       ],
       "Updating organization settings": [
         "Posodabljanje nastavitev organizacije"
@@ -1238,6 +1289,9 @@
       ],
       "User's access sucessfuly updated": [
         "Uporabnikov dostop je bil uspešno posodobljen"
+      ],
+      "username": [
+        "uporabniško ime"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Trezor \"${ payload.content.name }\" je uspešno izbrisan"
@@ -1298,6 +1352,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Vaše datoteke bodo šifrirane in nato shranjene."
+      ],
+      "Your information was found on ${ displayedDate }": [
+        "Vaše informacije so bile najdene ${ displayedDate }"
       ]
     },
     "Label": {
@@ -1373,6 +1430,9 @@
       "Auto-lock after": [
         "Samodejno zaklepanje po"
       ],
+      "Beta Access": [
+        "Dostop beta"
+      ],
       "Capital letters (A-Z)": [
         "Velike črke (A-Z)"
       ],
@@ -1387,6 +1447,9 @@
       ],
       "Cards": [
         "Kartice"
+      ],
+      "Code": [
+        "Koda"
       ],
       "Confirm vault name": [
         "Potrdite ime trezorja"
@@ -1409,6 +1472,9 @@
       "Created": [
         "Ustvarjeno"
       ],
+      "Date": [
+        "Datum"
+      ],
       "Disable data export for team members": [
         "Onemogočite izvoz podatkov za člane ekipe"
       ],
@@ -1423,6 +1489,12 @@
       ],
       "Download logs": [
         "Prenesite dnevnike"
+      ],
+      "Email": [
+        "E-pošta"
+      ],
+      "Email address": [
+        "E-poštni naslov"
       ],
       "Empty trash": [
         "Izprazni smetnjak"
@@ -1722,6 +1794,14 @@
         "Ustvarili boste"
       ]
     },
+    "Link": {
+      "Learn more": [
+        "Več o tem"
+      ],
+      "stay safer online": [
+        "izboljšajte svojo spletno varnost"
+      ]
+    },
     "lobby: Info": {
       "Enter your PIN code": [
         "Vnesi svojo PIN kodo."
@@ -1741,6 +1821,11 @@
         "Dobrodošli v ${ brandNameJSX }"
       ]
     },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Omogoči ${ reason }"
+      ]
+    },
     "Message": {
       "${ count } item": [
         "${ count } predmet",
@@ -1750,6 +1835,14 @@
       ],
       "You selected ${ semiboldText } in this vault": [
         "V tem trezorju ste izbrali ${ semiboldText }"
+      ]
+    },
+    "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } je bil onemogočen."
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } je bil omogočen."
       ]
     },
     "Option": {
@@ -1894,8 +1987,14 @@
       "Delete vault \"${ vaultName }\" ?": [
         "Želite izbrisati trezor \"${ vaultName }\"?"
       ],
+      "Details": [
+        "Podrobnosti"
+      ],
       "Discard changes?": [
         "Zavrzi spremembe?"
+      ],
+      "Email address": [
+        "E-poštni naslov"
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Uživate v ${ PASS_APP_NAME }?"
@@ -1966,6 +2065,9 @@
       "Passkey": [
         "Identifikacijski ključ"
       ],
+      "Password": [
+        "Geslo"
+      ],
       "Pending access to the shared data": [
         "Čakanje na dostop do podatkov v skupni rabi"
       ],
@@ -1974,6 +2076,9 @@
       ],
       "Pinned (${ items.length })": [
         "Pripeto (${ items.length })"
+      ],
+      "Recommended actions": [
+        "Priporočena dejanja"
       ],
       "Restore this version?": [
         "Obnovi to različico?"
@@ -2017,8 +2122,14 @@
       "Vault shared with you": [
         "Trezor v skupni rabi z vami"
       ],
+      "What is an alias?": [
+        "Kaj je vzdevek?"
+      ],
       "Why ${ PASS_APP_NAME }?": [
         "Zakaj ${ PASS_APP_NAME }?"
+      ],
+      "Your exposed information": [
+        "Vaša razkrita informacija"
       ],
       "Your vault is empty": [
         "Vaša košarica je prazna"

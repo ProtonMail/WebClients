@@ -236,6 +236,9 @@
       "Manually sync your data": [
         "수동으로 데이터 동기화"
       ],
+      "Mark as resolved": [
+        "해결됨으로 표시"
+      ],
       "More info: ${ safeTitle }": [
         "추가 정보: ${ safeTitle }"
       ],
@@ -290,6 +293,9 @@
       "Reject invitation": [
         "초대 거절"
       ],
+      "Remove": [
+        "삭제"
+      ],
       "Remove access": [
         "접근 제거"
       ],
@@ -298,6 +304,9 @@
       ],
       "Request a feature": [
         "기능 요청"
+      ],
+      "Resend code": [
+        "코드 다시 보내기"
       ],
       "Resend invitation": [
         "초대장 재전송"
@@ -379,6 +388,9 @@
       ],
       "Upgrade now to share with more people": [
         "더 많은 사람들과 공유하려면 업그레이드"
+      ],
+      "Verify": [
+        "인증"
       ],
       "View history": [
         "기록 보기"
@@ -847,6 +859,9 @@
       "Can view items in this vault.": [
         "이 금고에서 항목을 확인 가능합니다."
       ],
+      "Change your password": [
+        "비밀번호를 변경하십시오"
+      ],
       "Congratulations, your access has been confirmed": [
         "축하합니다! 접근이 수락되었습니다."
       ],
@@ -877,6 +892,9 @@
       "Editor": [
         "편집자"
       ],
+      "email": [
+        "이메일"
+      ],
       "Emptying trash...": [
         "휴지통 비우는 중..."
       ],
@@ -885,6 +903,9 @@
       ],
       "Fill in the CSV with your data": [
         "사용자의 데이터인 CSV를 채워 넣으십시오"
+      ],
+      "finance": [
+        "금융정보"
       ],
       "Follow those steps to import your data with a generic CSV :": [
         "생성된 CSV로 데이터를 불러오려면 다음 단계를 따르세요:"
@@ -900,6 +921,9 @@
       ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Pass Plus를 구독하여 무제한 별명을 사용하고, 독점 기능과 Proton 지원을 사용해 보세요."
+      ],
+      "High Priority": [
+        "중요도 높음"
       ],
       "Import in progress:": [
         "처리가 진행 중입니다:"
@@ -976,6 +1000,9 @@
       "Item successfully unpinned": [
         "항목을 성공적으로 고정 해제했습니다."
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "${ staySaferOnlineLink }하는 법 알아보기"
+      ],
       "Leaving vault...": [
         "금고 나가는 중..."
       ],
@@ -994,8 +1021,17 @@
       "Logging you out...": [
         "사용자를 로그아웃하는 중..."
       ],
+      "Low Priority": [
+        "중요도 낮음"
+      ],
       "me": [
         "나"
+      ],
+      "Medium Priority": [
+        "중요도 보통"
+      ],
+      "Monitor accounts": [
+        "계정 모니터링"
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "비밀번호 그 이상을 보호하다, ${ PASS_APP_NAME }는 이메일 별명을 통해 비밀번호와 개인 이메일 주소를 보호합니다. ${ MAIL_APP_NAME }의 같은 기술로, 데이터가 종단간 암호화되며 오직 당신만 접근 가능합니다."
@@ -1045,8 +1081,14 @@
       "Pass Plus trial": [
         "Pass Plus 체험"
       ],
+      "password": [
+        "비밀번호"
+      ],
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
         "${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS }주보다 오래된 비밀번호는 기록에서 자동 삭제됩니다."
+      ],
+      "Paused": [
+        "일시 정지됨"
       ],
       "Permanently deleting selected items": [
         "선택 항목을 영구적으로 삭제하는 중"
@@ -1165,6 +1207,9 @@
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "내보낸 파일이 PGP를 통해 암호화되며 강력한 암호가 필요합니다."
       ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "노출된 정보가 서드 파티 서비스에서 유출되었습니다. 사용자의 ${ BRAND_NAME } 계정 정보는 안전하고 암호화 상태로 유지됩니다. ${ learnMoreLink }"
+      ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "다음 ${ result.ignored.length }개 항목은 불러올 수 없습니다:"
       ],
@@ -1201,6 +1246,9 @@
       "Unpinning item...": [
         "항목 고정 해제 중..."
       ],
+      "Unverified": [
+        "확인되지 않음"
+      ],
       "Updating organization settings": [
         "조직 설정 업데이트 중"
       ],
@@ -1215,6 +1263,9 @@
       ],
       "User's access sucessfuly updated": [
         "사용자의 접근을 성공적으로 업데이트 했습니다."
+      ],
+      "username": [
+        "사용자 이름"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "금고 :${ payload.content.name }\" 이(가) 성공적으로 삭제되었습니다."
@@ -1272,6 +1323,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "파일이 암호화된 후 저장됩니다"
+      ],
+      "Your information was found on ${ displayedDate }": [
+        "${ displayedDate }에 사용자의 정보가 발견되었습니다."
       ]
     },
     "Label": {
@@ -1356,6 +1410,9 @@
       "Cards": [
         "카드"
       ],
+      "Code": [
+        "코드"
+      ],
       "Confirm vault name": [
         "금고 이름 확인"
       ],
@@ -1377,6 +1434,9 @@
       "Created": [
         "제작"
       ],
+      "Date": [
+        "날짜"
+      ],
       "Disable data export for team members": [
         "팀 멤버들의 데이터 내보내기 비활성화"
       ],
@@ -1391,6 +1451,12 @@
       ],
       "Download logs": [
         "로그 다운로드"
+      ],
+      "Email": [
+        "이메일"
+      ],
+      "Email address": [
+        "이메일 주소"
       ],
       "Empty trash": [
         "휴지통 비우기"
@@ -1690,6 +1756,14 @@
         "생성하려고 하는 주소:"
       ]
     },
+    "Link": {
+      "Learn more": [
+        "더 알아보기"
+      ],
+      "stay safer online": [
+        "온라인 상에서 안전하게"
+      ]
+    },
     "lobby: Info": {
       "Enter your PIN code": [
         "PIN 코드를 입력하세요"
@@ -1709,12 +1783,25 @@
         "${ brandNameJSX }에 오신 것을 환영합니다."
       ]
     },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "${ reason } 활성화"
+      ]
+    },
     "Message": {
       "${ count } item": [
         "${ count }개 항목"
       ],
       "You selected ${ semiboldText } in this vault": [
         "이 금고애서 ${ semiboldText }개 선택했습니다."
+      ]
+    },
+    "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason }이(가) 비활성화 되었습니다."
+      ],
+      "${ reason } has been enabled": [
+        "${ reason }이(가) 활성화 되었습니다."
       ]
     },
     "Option": {
@@ -1838,6 +1925,9 @@
       "Auto-lock update": [
         "자동 잠금 업데이트"
       ],
+      "Block trackers and malware": [
+        "트래커와 멀웨어를 차단합니다"
+      ],
       "Confirm PIN code": [
         "PIN 코드 확인"
       ],
@@ -1856,8 +1946,14 @@
       "Delete vault \"${ vaultName }\" ?": [
         "금고 \"${ vaultName }\"을(를) 삭제합니까?"
       ],
+      "Details": [
+        "세부 사항"
+      ],
       "Discard changes?": [
         "변경 사항을 취소할까요?"
+      ],
+      "Email address": [
+        "이메일 주소"
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "${ PASS_APP_NAME }를 잘 사용하고 계신가요?"
@@ -1928,6 +2024,9 @@
       "Passkey": [
         "패스키"
       ],
+      "Password": [
+        "비밀번호"
+      ],
       "Pending access to the shared data": [
         "공유 데이터에 대한 접근 대기 중"
       ],
@@ -1936,6 +2035,9 @@
       ],
       "Pinned (${ items.length })": [
         "고정됨 (${ items.length })"
+      ],
+      "Recommended actions": [
+        "권장하는 조치"
       ],
       "Restore this version?": [
         "이 버전을 복구하시겠습니까?"
@@ -1979,8 +2081,17 @@
       "Vault shared with you": [
         "나와 공유된 금고"
       ],
+      "What is an alias?": [
+        "별칭이란?"
+      ],
+      "What is the dark web?": [
+        "다크 웹이란?"
+      ],
       "Why ${ PASS_APP_NAME }?": [
         "왜 ${ PASS_APP_NAME }인가?"
+      ],
+      "Your exposed information": [
+        "사용자의 노출된 정보"
       ],
       "Your vault is empty": [
         "금고가 비어있음"

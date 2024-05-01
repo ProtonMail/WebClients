@@ -236,6 +236,9 @@
       "Manually sync your data": [
         "Daten manuell synchronisieren"
       ],
+      "Mark as resolved": [
+        "Als gelöst markieren"
+      ],
       "More info: ${ safeTitle }": [
         "Weitere Informationen: ${ safeTitle }"
       ],
@@ -290,6 +293,9 @@
       "Reject invitation": [
         "Einladung ablehnen"
       ],
+      "Remove": [
+        "Entfernen"
+      ],
       "Remove access": [
         "Zugriff entfernen"
       ],
@@ -298,6 +304,9 @@
       ],
       "Request a feature": [
         "Funktion vorschlagen"
+      ],
+      "Resend code": [
+        "Code erneut senden"
       ],
       "Resend invitation": [
         "Einladung erneut senden"
@@ -379,6 +388,9 @@
       ],
       "Upgrade now to share with more people": [
         "Jetzt upgraden, um mit weiteren Personen zu teilen"
+      ],
+      "Verify": [
+        "Verifizieren"
       ],
       "View history": [
         "Verlauf anzeigen"
@@ -858,6 +870,9 @@
       "Can view items in this vault.": [
         "Darf Einträge in diesem Tresor anzeigen."
       ],
+      "Change your password": [
+        "Passwort ändern"
+      ],
       "Congratulations, your access has been confirmed": [
         "Gratulation, dein Zugriff wurde bestätigt."
       ],
@@ -888,6 +903,9 @@
       "Editor": [
         "Bearbeiter"
       ],
+      "email": [
+        "E-Mail"
+      ],
       "Emptying trash...": [
         "Papierkorb wird geleert..."
       ],
@@ -896,6 +914,9 @@
       ],
       "Fill in the CSV with your data": [
         "Fülle die CSV-Datei mit deinen Daten aus."
+      ],
+      "finance": [
+        "finanzen"
       ],
       "Follow those steps to import your data with a generic CSV :": [
         "Befolge diese Schritte, um deine Daten mit einer generischen CSV zu importieren:"
@@ -912,6 +933,9 @@
       ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Erhalte unbegrenzte Aliasse, genieße exklusive Funktionen und unterstütze uns, indem du Pass Plus abonnierst."
+      ],
+      "High Priority": [
+        "Hohe Priorität"
       ],
       "Import in progress:": [
         "Import im Gange:"
@@ -990,6 +1014,9 @@
       "Item successfully unpinned": [
         "Eintrag erfolgreich losgelöst"
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Erfahre, wie man ${ staySaferOnlineLink }"
+      ],
       "Leaving vault...": [
         "Tresor wird verlassen..."
       ],
@@ -1008,8 +1035,17 @@
       "Logging you out...": [
         "Du wirst abgemeldet..."
       ],
+      "Low Priority": [
+        "Niedrige Priorität"
+      ],
       "me": [
         "Ich"
+      ],
+      "Medium Priority": [
+        "Mittlere Priorität"
+      ],
+      "Monitor accounts": [
+        "Konten überwachen"
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "${ PASS_APP_NAME } ist mehr als nur ein Passwort-Manager: Er schützt dein Passwort und deine persönliche E-Mail-Adresse über E-Mail-Aliasse. Dank der gleichen Technologie wie bei ${ MAIL_APP_NAME } sind deine Daten durchgängig verschlüsselt und nur für dich zugänglich."
@@ -1059,9 +1095,15 @@
       "Pass Plus trial": [
         "Pass Plus-Testversion"
       ],
+      "password": [
+        "Passwort"
+      ],
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
         "Kennwörter, die älter als ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } Woche sind, werden automatisch aus dem Verlauf gelöscht.",
         "Kennwörter, die älter als ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } Wochen sind, werden automatisch aus dem Verlauf gelöscht."
+      ],
+      "Paused": [
+        "Angehalten"
       ],
       "Permanently deleting selected items": [
         "Ausgewählte Einträge dauerhaft löschen"
@@ -1180,6 +1222,9 @@
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "Die exportierte Datei wird mit PGP verschlüsselt und erfordert eine starke Passphrase."
       ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "Die offengelegten Informationen wurden von einem Service eines Drittanbieters preisgegeben. Deine ${ BRAND_NAME } Kontoinformationen bleiben sicher und verschlüsselt. ${ learnMoreLink }"
+      ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Der folgende ${ result.ignored.length } Eintrag konnte nicht importiert werden:",
         "Die folgenden ${ result.ignored.length } Einträge konnten nicht importiert werden:"
@@ -1217,6 +1262,9 @@
       "Unpinning item...": [
         "Eintrag wird losgelöst..."
       ],
+      "Unverified": [
+        "Nicht verifiziert"
+      ],
       "Updating organization settings": [
         "Aktualisierung der Organisationseinstellungen"
       ],
@@ -1231,6 +1279,9 @@
       ],
       "User's access sucessfuly updated": [
         "Benutzerzugriff erfolgreich aktualisiert"
+      ],
+      "username": [
+        "Benutzername"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Tresor \"${ payload.content.name }\" erfolgreich gelöscht."
@@ -1289,6 +1340,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Deine Dateien werden verschlüsselt und anschließend gespeichert"
+      ],
+      "Your information was found on ${ displayedDate }": [
+        "Deine Informationen wurden gefunden am ${ displayedDate }"
       ]
     },
     "Label": {
@@ -1375,6 +1429,9 @@
       "Cards": [
         "Karten"
       ],
+      "Code": [
+        "Code"
+      ],
       "Confirm vault name": [
         "Tresorname bestätigen"
       ],
@@ -1396,6 +1453,9 @@
       "Created": [
         "Erstellt"
       ],
+      "Date": [
+        "Datum"
+      ],
       "Disable data export for team members": [
         "Datenexport für Teammitglieder deaktivieren"
       ],
@@ -1410,6 +1470,12 @@
       ],
       "Download logs": [
         "Protokolle herunterladen"
+      ],
+      "Email": [
+        "E-Mail-Adresse"
+      ],
+      "Email address": [
+        "E-Mail-Adresse"
       ],
       "Empty trash": [
         "Papierkorb leeren"
@@ -1709,6 +1775,14 @@
         "Folgender Alias wird erstellt:"
       ]
     },
+    "Link": {
+      "Learn more": [
+        "Mehr erfahren"
+      ],
+      "stay safer online": [
+        "bleib online geschützter"
+      ]
+    },
     "lobby: Info": {
       "Enter your PIN code": [
         "PIN-Code eingeben"
@@ -1728,6 +1802,11 @@
         "Willkommen bei ${ brandNameJSX }"
       ]
     },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "${ reason } aktivieren"
+      ]
+    },
     "Message": {
       "${ count } item": [
         "${ count } Eintrag",
@@ -1735,6 +1814,14 @@
       ],
       "You selected ${ semiboldText } in this vault": [
         "Du hast ${ semiboldText } in diesem Tresor ausgewählt"
+      ]
+    },
+    "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } wurde deaktiviert."
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } wurde aktiviert."
       ]
     },
     "Option": {
@@ -1877,8 +1964,14 @@
       "Delete vault \"${ vaultName }\" ?": [
         "Tresor \"${ vaultName }\" löschen?"
       ],
+      "Details": [
+        "Details"
+      ],
       "Discard changes?": [
         "Änderungen verwerfen?"
+      ],
+      "Email address": [
+        "E‐Mail‐Adresse"
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Gefällt dir ${ PASS_APP_NAME }?"
@@ -1949,6 +2042,9 @@
       "Passkey": [
         "Passkey"
       ],
+      "Password": [
+        "Passwort"
+      ],
       "Pending access to the shared data": [
         "Zugriff auf die geteilten Daten ist ausstehend"
       ],
@@ -1957,6 +2053,9 @@
       ],
       "Pinned (${ items.length })": [
         "Angeheftet (${ items.length })"
+      ],
+      "Recommended actions": [
+        "Empfohlene Aktionen"
       ],
       "Restore this version?": [
         "Diese Version wiederherstellen?"
@@ -2000,8 +2099,17 @@
       "Vault shared with you": [
         "Mit dir geteilter Tresor"
       ],
+      "What is an alias?": [
+        "Was ist ein Alias?"
+      ],
+      "What is the dark web?": [
+        "Was ist das Dark Web?"
+      ],
       "Why ${ PASS_APP_NAME }?": [
         "Warum ${ PASS_APP_NAME }?"
+      ],
+      "Your exposed information": [
+        "Deine exponierten Informationen"
       ],
       "Your vault is empty": [
         "Dein Tresor ist leer."

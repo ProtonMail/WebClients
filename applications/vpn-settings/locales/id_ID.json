@@ -3465,6 +3465,9 @@
       "Password copied to clipboard": [
         "Kata sandi disalin ke papan klip"
       ],
+      "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
+        "Kata sandi harus mengandung ${ MIN_PASSWORD_LENGTH } karakter atau lebih."
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Pembayaran dilindungi dengan enkripsi TLS dan undang-undang privasi Swiss."
       ],
@@ -8264,6 +8267,9 @@
       ],
       "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
         "Paket langganan diperbarui secara otomatis setiap 3 bulan. Anda akan menerima tagihan berikutnya dalam 3 bulan ke depan."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Harga diskon khusus ${ priceWithDiscount } berlaku valid untuk bulan pertama. Setelahnya, langganan Anda akan diperbarui secara otomatis pada harga ${ renewPrice } per bulannya. Anda dapat membatalkan langganan Anda kapan saja."
       ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Setelahnya, Anda akan ditagih setiap 12 bulan pada harga ${ renewPrice }."

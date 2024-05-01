@@ -2466,6 +2466,9 @@
       "Error decrypting a computer": [
         "컴퓨터 복호화 중 오류"
       ],
+      "External accounts are not supported yet": [
+        "외부 계정은 아직 지원하지 않습니다"
+      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "\"${ item.name }\" 파일을  \"${ error }\" 오류로 인해 업로드할 수 없습니다."
       ],
@@ -7174,6 +7177,9 @@
       "Trash failed to be emptied": [
         "휴지통 비우기 실패"
       ],
+      "You stopped sharing this item": [
+        "이 항목에 대한 공유를 멈추었습니다"
+      ],
       "Your old files will be deleted in 72 hours": [
         "사용자의 오래된 파일이 72시간 내에 삭제됩니다"
       ],
@@ -8200,7 +8206,7 @@
         "저장공간 15GB"
       ],
       "and 15 more premium features": [
-        "그리고 더 많은 15개의 프리미엄 기능"
+        "그리고 15개의 프리미엄 기능"
       ],
       "Automatic email forwarding ${ strongText }": [
         "자동 이메일 포워딩 ${ strongText }"

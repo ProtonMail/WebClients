@@ -218,6 +218,9 @@
       "Manually sync your data": [
         "Manuálně synchronizovat"
       ],
+      "Mark as resolved": [
+        "Označit jako vyřešené"
+      ],
       "More info: ${ safeTitle }": [
         "Více informací: ${ safeTitle }"
       ],
@@ -272,6 +275,9 @@
       "Reject invitation": [
         "Odmítnout pozvánku"
       ],
+      "Remove": [
+        "Odstranit"
+      ],
       "Remove access": [
         "Odebrat přístup"
       ],
@@ -280,6 +286,9 @@
       ],
       "Request a feature": [
         "Požádejte o funkci"
+      ],
+      "Resend code": [
+        "Znovu odeslat kód"
       ],
       "Resend invitation": [
         "Znovu poslat pozvánku"
@@ -361,6 +370,9 @@
       ],
       "Upgrade now to share with more people": [
         "Navyšte nyní a sdílejte s více lidmi"
+      ],
+      "Verify": [
+        "Ověřit"
       ],
       "View history": [
         "Zobrazit historii"
@@ -819,6 +831,9 @@
       "Can view items in this vault.": [
         "Může zobrazovat položky v tomto trezoru."
       ],
+      "Change your password": [
+        "Změňte své heslo"
+      ],
       "Congratulations, your access has been confirmed": [
         "Blahopřejeme, váš přístup byl potvrzen"
       ],
@@ -849,11 +864,17 @@
       "Editor": [
         "Editor"
       ],
+      "email": [
+        "e-mail"
+      ],
       "Emptying trash...": [
         "Vysypávání koše..."
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Zadejte ověřovací kód. Číslice ${ digit }."
+      ],
+      "finance": [
+        "finance"
       ],
       "For security reasons, your access needs to be confirmed": [
         "Z bezpečnostních důvodů musí být váš přístup potvrzen"
@@ -869,6 +890,9 @@
       ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Získejte neomezený počet aliasů, využívejte exkluzivní funkce a podpořte nás předplacením Proton Pass Plus."
+      ],
+      "High Priority": [
+        "Vysoká priorita"
       ],
       "Import in progress:": [
         "Import probíhá:"
@@ -948,6 +972,9 @@
       "Item successfully unpinned": [
         "Položka úspěšně odepnuta"
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Zjistěte, jak ${ staySaferOnlineLink }"
+      ],
       "Leaving vault...": [
         "Opouštění trezoru..."
       ],
@@ -966,8 +993,17 @@
       "Logging you out...": [
         "Odhlašování..."
       ],
+      "Low Priority": [
+        "Nízká priorita"
+      ],
       "me": [
         "já"
+      ],
+      "Medium Priority": [
+        "Střední priorita"
+      ],
+      "Monitor accounts": [
+        "Sledování účtů"
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "${ PASS_APP_NAME } není obyčejný správce hesel. Chrání vaše heslo a osobní e-mailovou adresu pomocí e-mailových aliasů. Funguje na stejné technologii jako ${ MAIL_APP_NAME }, vaše data jsou koncově šifrována a dostupná jen vám."
@@ -1011,11 +1047,17 @@
       "Pass Plus trial": [
         "Zkušební verze Pass Plus"
       ],
+      "password": [
+        "heslo"
+      ],
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
         "Hesla starší než ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } týden budou z historie automaticky smazána.",
         "Hesla starší než ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } týdny budou z historie automaticky smazána.",
         "Hesla starší než ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } týdnů budou z historie automaticky smazána.",
         "Hesla starší než ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } týdnů budou z historie automaticky smazána."
+      ],
+      "Paused": [
+        "Pozastaveno"
       ],
       "Permanently deleting selected items": [
         "Trvalé mazání vybraných položek"
@@ -1131,6 +1173,9 @@
       "The export will only contain vaults that you own.": [
         "Export bude obsahovat pouze vaše vlastní trezory."
       ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "Odhalené informace unikly ze služby třetí strany. Informace vašeho účtu ${ BRAND_NAME } zůstaly v bezpečí a šifrované. ${ learnMoreLink }"
+      ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Následující ${ result.ignored.length } položku nelze importovat:",
         "Následující ${ result.ignored.length } položky nelze importovat:",
@@ -1155,6 +1200,9 @@
       "To review your imported data, click on the Pass icon in your browser toolbar.": [
         "Chcete-li si prohlédnout importovaná data, klikněte na ikonu Pass v panelu nástrojů svého prohlížeče."
       ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "Vyzkoušejte si nové funkce, aktualizace a produkty ${ BRAND_NAME } ještě před jejich zveřejněním. Toto znovu načte aplikaci"
+      ],
       "Unable to copy to clipboard": [
         "Nelze kopírovat do schránky"
       ],
@@ -1163,6 +1211,9 @@
       ],
       "Unpinning item...": [
         "Odepínání položky..."
+      ],
+      "Unverified": [
+        "Neověřený"
       ],
       "Updating organization settings": [
         "Aktualizace nastavení organizace"
@@ -1178,6 +1229,9 @@
       ],
       "User's access sucessfuly updated": [
         "Přístup uživatele byl úspěšně aktualizován"
+      ],
+      "username": [
+        "uživatelské jméno"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Trezor \"${ payload.content.name }\" úspěšně smazán"
@@ -1238,6 +1292,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Vaše soubory budou zašifrovány a uloženy"
+      ],
+      "Your information was found on ${ displayedDate }": [
+        "Vaše informace byly nalezeny ${ displayedDate }"
       ]
     },
     "Label": {
@@ -1313,6 +1370,9 @@
       "Auto-lock after": [
         "Automaticky zamknout po"
       ],
+      "Beta Access": [
+        "Beta přístup"
+      ],
       "Capital letters (A-Z)": [
         "Velká písmena (A-Z)"
       ],
@@ -1327,6 +1387,9 @@
       ],
       "Cards": [
         "Karty"
+      ],
+      "Code": [
+        "Kód"
       ],
       "Confirm vault name": [
         "Potvrdit název trezoru"
@@ -1349,6 +1412,9 @@
       "Created": [
         "Vytvořeno"
       ],
+      "Date": [
+        "Datum"
+      ],
       "Display": [
         "Zobrazení"
       ],
@@ -1357,6 +1423,12 @@
       ],
       "Download logs": [
         "Stáhnout logy"
+      ],
+      "Email": [
+        "E-mail"
+      ],
+      "Email address": [
+        "E-mailová adresa"
       ],
       "Empty trash": [
         "Vyprázdnit koš"
@@ -1650,6 +1722,14 @@
         "Chystáte se vytvořit"
       ]
     },
+    "Link": {
+      "Learn more": [
+        "Zjistit více"
+      ],
+      "stay safer online": [
+        "zůstaňte v bezpečí online"
+      ]
+    },
     "lobby: Info": {
       "Enter your PIN code": [
         "Zadejte PIN kód"
@@ -1669,12 +1749,25 @@
         "Vítejte v ${ brandNameJSX }"
       ]
     },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Povolit ${ reason }"
+      ]
+    },
     "Message": {
       "${ count } item": [
         "${ count } položka",
         "${ count } položky",
         "${ count } položek",
         "${ count } položek"
+      ]
+    },
+    "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } byl deaktivován"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } byl povolen"
       ]
     },
     "Option": {
@@ -1819,8 +1912,14 @@
       "Delete vault \"${ vaultName }\" ?": [
         "Smazat trezor \"${ vaultName }\"?"
       ],
+      "Details": [
+        "Podrobnosti"
+      ],
       "Discard changes?": [
         "Zahodit změny?"
+      ],
+      "Email address": [
+        "E-mailová adresa"
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Užíváte si ${ PASS_APP_NAME }?"
@@ -1891,6 +1990,9 @@
       "Passkey": [
         "Přístupový klíč"
       ],
+      "Password": [
+        "Heslo"
+      ],
       "Pending access to the shared data": [
         "Čekání na přístup ke sdíleným datům"
       ],
@@ -1899,6 +2001,9 @@
       ],
       "Pinned (${ items.length })": [
         "Připnuto (${ items.length })"
+      ],
+      "Recommended actions": [
+        "Doporučené akce"
       ],
       "Restore this version?": [
         "Obnovit tuto verzi?"
@@ -1944,6 +2049,9 @@
       ],
       "Why ${ PASS_APP_NAME }?": [
         "Proč ${ PASS_APP_NAME }?"
+      ],
+      "Your exposed information": [
+        "Vaše uniklé informace"
       ],
       "Your vault is empty": [
         "Váš trezor je prázdný"
