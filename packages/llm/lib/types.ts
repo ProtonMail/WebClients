@@ -2,15 +2,22 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-use-before-define */
 
-export type MonitorDownloadCallback = (progress: number, done: boolean) => void;
-
 export type PromiseResolve = (value: PromiseLike<void> | void) => void;
 
 export type PromiseReject = (reason?: any) => void;
 
+export type GpuAssessmentResult =
+    | 'ok' // seems like WebGPU should work
+    | 'noWebGpu' // we cannot load WebGPU
+    | 'noWebGpuFirefox' // we cannot load WebGPU and we specifically know it's because the user uses Firefox
+    | 'insufficientRam' // total ram can't hold the model in memory, and swapping would give terrible perfs
+    | 'blacklisted'; // maybe WebGPU could load, but we know that token generation will be too slow
+
 // @ts-ignore
 export interface LlmManager {
     hasGpu: () => boolean;
+    // prefer passing a canvas, it will allow us to get some info using WebGL
+    checkGpu: (canvas?: HTMLCanvasElement) => Promise<GpuAssessmentResult>;
     startDownload: (updateProgress: DownloadProgressCallback) => Promise<void>;
     cancelDownload: () => boolean;
     loadOnGpu: () => Promise<LlmModel>;
