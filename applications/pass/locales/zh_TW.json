@@ -221,6 +221,9 @@
       "Manually sync your data": [
         "手動同步您的資料"
       ],
+      "Mark as resolved": [
+        "標記為已解決"
+      ],
       "More info: ${ safeTitle }": [
         "更多資訊：${ safeTitle }"
       ],
@@ -272,6 +275,9 @@
       "Reject invitation": [
         "婉拒邀請"
       ],
+      "Remove": [
+        "移除"
+      ],
       "Remove access": [
         "移除存取權限"
       ],
@@ -280,6 +286,9 @@
       ],
       "Request a feature": [
         "提出新功能建議"
+      ],
+      "Resend code": [
+        "重新傳送驗證碼"
       ],
       "Resend invitation": [
         "重新發送邀請"
@@ -361,6 +370,9 @@
       ],
       "Upgrade now to share with more people": [
         "立即升級即可分享給更多人"
+      ],
+      "Verify": [
+        "驗證"
       ],
       "View history": [
         "查看歷史"
@@ -745,6 +757,9 @@
       "Can view items in this vault.": [
         "可查看保管庫的項目。"
       ],
+      "Change your password": [
+        "變更您的密碼"
+      ],
       "Copied to clipboard": [
         "已複製到剪貼簿"
       ],
@@ -769,6 +784,9 @@
       "Editor": [
         "編輯器"
       ],
+      "email": [
+        "電子信箱"
+      ],
       "Emptying trash...": [
         "清空垃圾桶..."
       ],
@@ -778,6 +796,9 @@
       "Fill in the CSV with your data": [
         "CSV格式的檔案"
       ],
+      "finance": [
+        "金融"
+      ],
       "Follow those steps to import your data with a generic CSV :": [
         "跟隨這些步驟以CSV匯入資料:"
       ],
@@ -786,6 +807,9 @@
       ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "獲得無限制的別名，享受獨家的功能，並透過訂閱 Pass Plus 來支持我們。"
+      ],
+      "High Priority": [
+        "首要優先順序"
       ],
       "Import in progress:": [
         "匯入進行中:"
@@ -853,6 +877,9 @@
       "Item successfully unpinned": [
         "項目成功取消標記"
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "了解如何 ${ staySaferOnlineLink }"
+      ],
       "Leaving vault...": [
         "離開保管庫..."
       ],
@@ -871,8 +898,17 @@
       "Logging you out...": [
         "即將登出帳號..."
       ],
+      "Low Priority": [
+        "較低優先順序"
+      ],
       "me": [
         "我"
+      ],
+      "Medium Priority": [
+        "中等優先順序"
+      ],
+      "Monitor accounts": [
+        "監控帳號"
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "超越密碼管理器，${ PASS_APP_NAME }保護密碼及私人的電子郵件位址及電子郵件別名。使用與${ MAIL_APP_NAME }相同技術，您的資料使用點到點加密，只有您能存取。"
@@ -906,6 +942,12 @@
       ],
       "Pass Plus trial": [
         "Pass Plus 滿意體驗期"
+      ],
+      "password": [
+        "密碼"
+      ],
+      "Paused": [
+        "已暫停"
       ],
       "Permanently deleting selected items": [
         "永久刪除選取項目"
@@ -997,6 +1039,9 @@
       "Thank you, the problem has been reported": [
         "感謝您舉報問題"
       ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "您被曝露的資料來自第三方服務。您 ${ BRAND_NAME } 帳號資料保持安全及加密。 ${ learnMoreLink }"
+      ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "以下${ result.ignored.length }項目無法匯入:"
       ],
@@ -1012,6 +1057,9 @@
       "To review your imported data, click on the Pass icon in your browser toolbar.": [
         "以接收匯入資料，點擊於瀏覽器工具列的Pass標示。"
       ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "在它們公開前，嘗試新的 ${ BRAND_NAME } 功能，更新與產品。這將會重新載入應用程式"
+      ],
       "Unable to copy to clipboard": [
         "無法複製到剪貼簿"
       ],
@@ -1020,6 +1068,9 @@
       ],
       "Unpinning item...": [
         "取消訂選項目..."
+      ],
+      "Unverified": [
+        "未驗證"
       ],
       "Updating organization settings": [
         "更新組織設定"
@@ -1032,6 +1083,9 @@
       ],
       "User's access sucessfuly updated": [
         "使用者權限已成功更新"
+      ],
+      "username": [
+        "使用者名稱"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "保管庫${ payload.content.name }已成功刪除"
@@ -1071,6 +1125,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "你的檔案將加密後再儲存"
+      ],
+      "Your information was found on ${ displayedDate }": [
+        "您的資料在 ${ displayedDate } 被發現。"
       ]
     },
     "Label": {
@@ -1140,6 +1197,9 @@
       "Auto-lock after": [
         "閒置時自動鎖定"
       ],
+      "Beta Access": [
+        "測試版體驗"
+      ],
       "Capital letters (A-Z)": [
         "大寫字母(A~Z)"
       ],
@@ -1154,6 +1214,9 @@
       ],
       "Cards": [
         "卡片"
+      ],
+      "Code": [
+        "代碼"
       ],
       "Confirm vault name": [
         "確認保管庫名稱"
@@ -1176,6 +1239,9 @@
       "Created": [
         "已創建"
       ],
+      "Date": [
+        "日期"
+      ],
       "Display": [
         "顯示"
       ],
@@ -1184,6 +1250,12 @@
       ],
       "Download logs": [
         "下載記錄檔"
+      ],
+      "Email": [
+        "電郵"
+      ],
+      "Email address": [
+        "電郵位址"
       ],
       "Empty trash": [
         "清空垃圾桶"
@@ -1465,6 +1537,14 @@
         "您將要創建"
       ]
     },
+    "Link": {
+      "Learn more": [
+        "瞭解詳情"
+      ],
+      "stay safer online": [
+        "保持在線安全"
+      ]
+    },
     "lobby: Info": {
       "Enter your PIN code": [
         "輸入個人識別數字代碼"
@@ -1481,12 +1561,25 @@
         "歡迎使用 ${ brandNameJSX }"
       ]
     },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "啟用${ reason }"
+      ]
+    },
     "Message": {
       "${ count } item": [
         "${ count } 個項目"
       ],
       "You selected ${ semiboldText } in this vault": [
         "您選取於保管庫的${ semiboldText }"
+      ]
+    },
+    "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } 已停用。"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } 已啟用。"
       ]
     },
     "Option": {
@@ -1610,6 +1703,9 @@
       "Auto-lock update": [
         "更新自動鎖定"
       ],
+      "Block trackers and malware": [
+        "遮蔽追蹤器和其他惡意軟體"
+      ],
       "Confirm PIN code": [
         "確認個人識別數字代碼"
       ],
@@ -1628,8 +1724,14 @@
       "Delete vault \"${ vaultName }\" ?": [
         "刪除保管庫${ vaultName }?"
       ],
+      "Details": [
+        "詳細資訊"
+      ],
       "Discard changes?": [
         "捨棄變更？"
+      ],
+      "Email address": [
+        "電子郵件地址"
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "享受 ${ PASS_APP_NAME }?"
@@ -1700,11 +1802,17 @@
       "Passkey": [
         "密碼金鑰"
       ],
+      "Password": [
+        "密碼"
+      ],
       "Pending access to the shared data": [
         "暫緩存取分享的資料"
       ],
       "Permanently remove all items ?": [
         "永久刪除所有項目嗎?"
+      ],
+      "Recommended actions": [
+        "建議行動"
       ],
       "Restore this version?": [
         "還原此版本?"
@@ -1745,8 +1853,17 @@
       "Vault shared with you": [
         "與您分享的保管庫"
       ],
+      "What is an alias?": [
+        "甚麼是別名?"
+      ],
+      "What is the dark web?": [
+        "甚麼是暗網?"
+      ],
       "Why ${ PASS_APP_NAME }?": [
         "為甚麼 ${ PASS_APP_NAME }?"
+      ],
+      "Your exposed information": [
+        "你的外﻿﻿﻿洩資料"
       ],
       "Your vault is empty": [
         "您的保管庫為空的"

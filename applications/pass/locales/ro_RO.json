@@ -236,6 +236,9 @@
       "Manually sync your data": [
         "Sincronizare manuală date"
       ],
+      "Mark as resolved": [
+        "Marcare ca rezolvată"
+      ],
       "More info: ${ safeTitle }": [
         "Mai multe informații: ${ safeTitle }"
       ],
@@ -290,6 +293,9 @@
       "Reject invitation": [
         "Refuzare invitație"
       ],
+      "Remove": [
+        "Eliminare"
+      ],
       "Remove access": [
         "Eliminare acces"
       ],
@@ -298,6 +304,9 @@
       ],
       "Request a feature": [
         "Solicitare funcție"
+      ],
+      "Resend code": [
+        "Retrimitere cod"
       ],
       "Resend invitation": [
         "Retrimitere invitație"
@@ -379,6 +388,9 @@
       ],
       "Upgrade now to share with more people": [
         "Schimbați planul acum pentru a partaja cu mai mulți oameni"
+      ],
+      "Verify": [
+        "Verifică"
       ],
       "View history": [
         "Afișare istoric"
@@ -844,6 +856,9 @@
       "Can view items in this vault.": [
         "Poate vizualiza articolele din acest seif."
       ],
+      "Change your password": [
+        "Schimbare parolă"
+      ],
       "Congratulations, your access has been confirmed": [
         "Accesul v-a fost confirmat."
       ],
@@ -874,6 +889,9 @@
       "Editor": [
         "Editor"
       ],
+      "email": [
+        "e-mail"
+      ],
       "Emptying trash...": [
         "Se golește gunoiul..."
       ],
@@ -882,6 +900,9 @@
       ],
       "Fill in the CSV with your data": [
         "Completați fișierul CSV cu datele necesare."
+      ],
+      "finance": [
+        "finanțe"
       ],
       "Follow those steps to import your data with a generic CSV :": [
         "Urmați acești pași pentru a importa datele dintr-un fișier CSV generic:"
@@ -899,6 +920,9 @@
       ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Obțineți pseudonime nelimitate, bucurați-vă de funcții exclusive și sprijiniți-ne abonându-vă la Pass Plus."
+      ],
+      "High Priority": [
+        "Prioritate înaltă"
       ],
       "Import in progress:": [
         "Importare în derulare:"
@@ -979,6 +1003,9 @@
       "Item successfully unpinned": [
         "Fixarea elementului s-a anulat."
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Aflați cum să ${ staySaferOnlineLink }"
+      ],
       "Leaving vault...": [
         "Se părăsește seiful..."
       ],
@@ -997,8 +1024,17 @@
       "Logging you out...": [
         "Se deconectează…"
       ],
+      "Low Priority": [
+        "Prioritate scăzută"
+      ],
       "me": [
         "Eu"
+      ],
+      "Medium Priority": [
+        "Prioritate medie"
+      ],
+      "Monitor accounts": [
+        "Monitorizare conturi"
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "Mai mult decât un manager de parole, ${ PASS_APP_NAME } vă protejează parolele și adresele de e-mail personale prin aliasuri de e-mail. Creat cu aceeași tehnologie folosită la ${ MAIL_APP_NAME }, datele vă sunt criptate în ambele sensuri și doar dvs. le puteți accesa."
@@ -1048,10 +1084,16 @@
       "Pass Plus trial": [
         "Încercare Proton Pass Plus"
       ],
+      "password": [
+        "parola"
+      ],
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
         "Parolele mai vechi de ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } săptămână sunt șterse automat din istoric.",
         "Parolele mai vechi de ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } săptămâni sunt șterse automat din istoric.",
         "Parolele mai vechi de ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } de săptămâni sunt șterse automat din istoric."
+      ],
+      "Paused": [
+        "Suspendat"
       ],
       "Permanently deleting selected items": [
         "Articolele selectate se șterg permanent."
@@ -1170,6 +1212,9 @@
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "Fișierul exportat va fi criptat folosind PGP și necesită o frază de acces puternică."
       ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "Informațiile expuse au fost divulgate de la un serviciu terță parte. Informațiile contului ${ BRAND_NAME } rămân securizate și criptate. ${ learnMoreLink }"
+      ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Nu s-a putut importa ${ result.ignored.length } articol:",
         "Nu s-au putut importa ${ result.ignored.length } articole:",
@@ -1199,6 +1244,9 @@
       "To review your imported data, click on the Pass icon in your browser toolbar.": [
         "Pentru a revizui datele importate, faceți clic pe pictograma Proton Pass din bara de utilitare a navigatorului."
       ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "Încercați noile funcții, actualizări și produse ${ BRAND_NAME } înainte ca acestea să fie lansate publicului. Aceasta va reporni aplicația."
+      ],
       "Unable to copy to clipboard": [
         "Nu se poate copia în memorie."
       ],
@@ -1207,6 +1255,9 @@
       ],
       "Unpinning item...": [
         "Se anulează fixarea articolului..."
+      ],
+      "Unverified": [
+        "Neverificat"
       ],
       "Updating organization settings": [
         "Se actualizează setările organizației."
@@ -1222,6 +1273,9 @@
       ],
       "User's access sucessfuly updated": [
         "Accesul utilizatorului a fost actualizat."
+      ],
+      "username": [
+        "utilizator"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Seiful „${ payload.content.name }” a fost șters."
@@ -1281,6 +1335,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Fișierele vor fi criptate și apoi salvate."
+      ],
+      "Your information was found on ${ displayedDate }": [
+        "Informațiile v-au fost găsite la ${ displayedDate }"
       ]
     },
     "Label": {
@@ -1354,6 +1411,9 @@
       "Auto-lock after": [
         "Autoblocare după"
       ],
+      "Beta Access": [
+        "Acces la Beta"
+      ],
       "Capital letters (A-Z)": [
         "Majuscule (A-Z)"
       ],
@@ -1368,6 +1428,9 @@
       ],
       "Cards": [
         "Carduri"
+      ],
+      "Code": [
+        "Cod"
       ],
       "Confirm vault name": [
         "Confirmare nume seif"
@@ -1390,6 +1453,9 @@
       "Created": [
         "Creat la"
       ],
+      "Date": [
+        "Data"
+      ],
       "Disable data export for team members": [
         "Dezactivare exportare date pentru membri echipei"
       ],
@@ -1404,6 +1470,12 @@
       ],
       "Download logs": [
         "Descărcare jurnale"
+      ],
+      "Email": [
+        "E-mail"
+      ],
+      "Email address": [
+        "Adresă e-mail"
       ],
       "Empty trash": [
         "Golire «Gunoi»"
@@ -1703,6 +1775,14 @@
         "Sunteți pe cale să creați"
       ]
     },
+    "Link": {
+      "Learn more": [
+        "Detalii"
+      ],
+      "stay safer online": [
+        "rămâneți în siguranță online"
+      ]
+    },
     "lobby: Info": {
       "Enter your PIN code": [
         "Introduceți codul PIN"
@@ -1722,6 +1802,11 @@
         "Bun venit la ${ brandNameJSX }"
       ]
     },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Activare ${ reason }"
+      ]
+    },
     "Message": {
       "${ count } item": [
         "${ count } element",
@@ -1730,6 +1815,14 @@
       ],
       "You selected ${ semiboldText } in this vault": [
         "Articole selectate în acest seif: ${ semiboldText }"
+      ]
+    },
+    "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } a fost dezactivat"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } a fost activat"
       ]
     },
     "Option": {
@@ -1855,6 +1948,9 @@
       "Auto-lock update": [
         "Actualizare autoblocare"
       ],
+      "Block trackers and malware": [
+        "Blocați instrumentele de urmărire și programele malware"
+      ],
       "Confirm PIN code": [
         "Confirmare cod PIN"
       ],
@@ -1873,8 +1969,14 @@
       "Delete vault \"${ vaultName }\" ?": [
         "Ștergeți seiful „${ vaultName }”?"
       ],
+      "Details": [
+        "Detalii"
+      ],
       "Discard changes?": [
         "Anulare modificări?"
+      ],
+      "Email address": [
+        "Adresa de e-mail"
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Vă bucurați de ${ PASS_APP_NAME }?"
@@ -1945,6 +2047,9 @@
       "Passkey": [
         "Cheie de acces"
       ],
+      "Password": [
+        "Parola"
+      ],
       "Pending access to the shared data": [
         "În așteptarea accesului la datele partajate"
       ],
@@ -1953,6 +2058,9 @@
       ],
       "Pinned (${ items.length })": [
         "Fixate (${ items.length })"
+      ],
+      "Recommended actions": [
+        "Acțiuni recomandate"
       ],
       "Restore this version?": [
         "Restaurați această versiune?"
@@ -1996,8 +2104,17 @@
       "Vault shared with you": [
         "Seif partajat cu dvs."
       ],
+      "What is an alias?": [
+        "Ce este un alias?"
+      ],
+      "What is the dark web?": [
+        "Ce este internetul ascuns?"
+      ],
       "Why ${ PASS_APP_NAME }?": [
         "De ce ${ PASS_APP_NAME }?"
+      ],
+      "Your exposed information": [
+        "Informațiile expuse"
       ],
       "Your vault is empty": [
         "Seiful este gol"

@@ -224,6 +224,9 @@
       "Manually sync your data": [
         "Sincronitzeu les vostres dades manualment"
       ],
+      "Mark as resolved": [
+        "Marca com a resolt"
+      ],
       "More info: ${ safeTitle }": [
         "Més informació: ${ safeTitle }"
       ],
@@ -278,6 +281,9 @@
       "Reject invitation": [
         "Rebutja la invitació"
       ],
+      "Remove": [
+        "Esborra"
+      ],
       "Remove access": [
         "Esborra l'accés"
       ],
@@ -286,6 +292,9 @@
       ],
       "Request a feature": [
         "Demana una nova característica"
+      ],
+      "Resend code": [
+        "Reenvia el codi"
       ],
       "Resend invitation": [
         "Reenvia la invitació"
@@ -364,6 +373,9 @@
       ],
       "Upgrade now": [
         "Millora ara"
+      ],
+      "Verify": [
+        "Verifica"
       ],
       "View history": [
         "Visualitza l'historial"
@@ -728,6 +740,9 @@
       "Can view items in this vault.": [
         "Permet veure els elements d'aquesta caixa forte."
       ],
+      "Change your password": [
+        "Canvieu la vostra contrasenya"
+      ],
       "Copied to clipboard": [
         "Copiat al porta-retalls"
       ],
@@ -752,11 +767,20 @@
       "Editor": [
         "Editor"
       ],
+      "email": [
+        "corrreu electrònic"
+      ],
       "Emptying trash...": [
         "Buidant la paperera..."
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Introduïu el codi de verificació. Dígit ${ digit }."
+      ],
+      "finance": [
+        "finances"
+      ],
+      "High Priority": [
+        "Alta prioritat"
       ],
       "Import in progress:": [
         "Importació en curs:"
@@ -823,6 +847,9 @@
       "Item successfully unpinned": [
         "S'ha desancorat l'element."
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Més informació sobre com ${ staySaferOnlineLink }"
+      ],
       "Leaving vault...": [
         "Deixant la caixa forta..."
       ],
@@ -838,8 +865,17 @@
       "Logging you out...": [
         "Desconnectant-vos..."
       ],
+      "Low Priority": [
+        "Prioritat baixa"
+      ],
       "me": [
         "jo"
+      ],
+      "Medium Priority": [
+        "Prioritat mitjana"
+      ],
+      "Monitor accounts": [
+        "Supervisar els comptes"
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "Més que un gestor de contrasenyes, ${ PASS_APP_NAME } protegeix la vostra contrasenya i la vostra adreça de correu electrònic personal mitjançant àlies de correu electrònic. Desenvolupat amb la mateixa tecnologia que hi ha darrere de ${ MAIL_APP_NAME }, les vostres dades estan xifrades d'extrem a extrem i només són accessibles per vós."
@@ -879,6 +915,12 @@
       ],
       "Pass Plus trial": [
         "Prova Pass Plus"
+      ],
+      "password": [
+        "contrasenya"
+      ],
+      "Paused": [
+        "Pausat"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "El codi PIN s'ha registrat correctament. Utilitzeu-lo per desbloquejar ${ PASS_APP_NAME }"
@@ -955,6 +997,9 @@
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "El fitxer exportat es xifrarà amb PGP i requereix una contrasenya forta."
       ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "La informació exposada es va filtrar d'un servei de tercers. La informació del vostre compte de ${ BRAND_NAME } continua sent segura i xifrada. ${ learnMoreLink }"
+      ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "No s'ha pogut importar ${ result.ignored.length } element:",
         "No s'han pogut importar els ${ result.ignored.length } elements següents:"
@@ -977,6 +1022,9 @@
       "This version will be added to the history as the newest version.": [
         "Aquesta versió s'afegirà a l'historial com a versió més nova."
       ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "Proveu les noves característiques, actualitzacions i productes de ${ BRAND_NAME } abans que es llancin al públic. Això tornarà a carregar l'aplicació"
+      ],
       "Unable to copy to clipboard": [
         "No s'ha pogut copiar al porta-retalls"
       ],
@@ -986,6 +1034,9 @@
       "Unpinning item...": [
         "Desancorant l'element..."
       ],
+      "Unverified": [
+        "Sense verificar"
+      ],
       "Updating organization settings": [
         "Actualització de la configuració de l'organització"
       ],
@@ -994,6 +1045,9 @@
       ],
       "User's access sucessfuly updated": [
         "S'ha actualitzat l'accés del usuari."
+      ],
+      "username": [
+        "nom d'usuari"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "S'ha eliminat la caixa forta \"${ payload.content.name }\""
@@ -1049,6 +1103,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Es xifraran els fitxers i després es desaran."
+      ],
+      "Your information was found on ${ displayedDate }": [
+        "La vostra informació es va trobar el ${ displayedDate }"
       ]
     },
     "Label": {
@@ -1120,6 +1177,9 @@
       "Auto-lock after": [
         "Bloqueig automàtic després de"
       ],
+      "Beta Access": [
+        "Accés beta"
+      ],
       "Capital letters (A-Z)": [
         "Lletres majúscules (A-Z)"
       ],
@@ -1134,6 +1194,9 @@
       ],
       "Cards": [
         "Targetes"
+      ],
+      "Code": [
+        "Codi"
       ],
       "Confirm vault name": [
         "Confirma el nom de la caixa forta"
@@ -1156,6 +1219,9 @@
       "Created": [
         "Creat"
       ],
+      "Date": [
+        "Data"
+      ],
       "Disable data export for team members": [
         "Desactivar l'exportació de dades per als membres de l'equip"
       ],
@@ -1170,6 +1236,12 @@
       ],
       "Download logs": [
         "Descarrega els registres"
+      ],
+      "Email": [
+        "Correu electrònic"
+      ],
+      "Email address": [
+        "Adreça de correu electrònic"
       ],
       "Empty trash": [
         "Buida la paperera"
@@ -1466,6 +1538,14 @@
         "Esteu a punt de crear"
       ]
     },
+    "Link": {
+      "Learn more": [
+        "Més informació"
+      ],
+      "stay safer online": [
+        "mantenir-se més segur en línia"
+      ]
+    },
     "lobby: Info": {
       "Enter your PIN code": [
         "Introduïu el codi PIN"
@@ -1482,10 +1562,23 @@
         "Us donem la benvinguda a ${ brandNameJSX }"
       ]
     },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Habilita ${ reason }"
+      ]
+    },
     "Message": {
       "${ count } item": [
         "${ count } element",
         "${ count } elements"
+      ]
+    },
+    "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } s'ha desactivat"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } s'ha habilitat"
       ]
     },
     "Option": {
@@ -1610,6 +1703,9 @@
       "Auto-lock update": [
         "Actualització del bloqueig automàtic"
       ],
+      "Block trackers and malware": [
+        "Bloca els rastrejadors i programaris maliciosos"
+      ],
       "Confirm PIN code": [
         "Confirmeu el codi PIN"
       ],
@@ -1628,8 +1724,14 @@
       "Delete vault \"${ vaultName }\" ?": [
         "Voleu eliminar la caixa forta \"${ vaultName }\"?"
       ],
+      "Details": [
+        "Detalls"
+      ],
       "Discard changes?": [
         "Voleu descartar els canvis?"
+      ],
+      "Email address": [
+        "Adreça electrònica"
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Gaudint ${ PASS_APP_NAME }?"
@@ -1700,6 +1802,9 @@
       "Passkey": [
         "Contrasenya"
       ],
+      "Password": [
+        "Contrasenya"
+      ],
       "Pending access to the shared data": [
         "Accés a les dades compartides pendent"
       ],
@@ -1708,6 +1813,9 @@
       ],
       "Pinned (${ items.length })": [
         "Ancorat (${ items.length })"
+      ],
+      "Recommended actions": [
+        "Accions recomanades"
       ],
       "Restore this version?": [
         "Vol restaurar aquesta versió?"
@@ -1745,8 +1853,14 @@
       "Vault shared with you": [
         "Caixa forta compartida amb vosaltres"
       ],
+      "What is an alias?": [
+        "Què és un àlies?"
+      ],
       "Why ${ PASS_APP_NAME }?": [
         "Per què ${ PASS_APP_NAME }?"
+      ],
+      "Your exposed information": [
+        "La vostra informació exposada"
       ],
       "Your vault is empty": [
         "La vostra caixa forta està buida"

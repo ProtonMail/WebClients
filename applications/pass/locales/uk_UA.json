@@ -17,6 +17,9 @@
       "Add new item": [
         "Додати новий елемент"
       ],
+      "Admin panel": [
+        "Панель адміністратора"
+      ],
       "Advanced": [
         "Розширені"
       ],
@@ -112,6 +115,9 @@
       ],
       "Delete vault": [
         "Видалити сховище"
+      ],
+      "Deselect": [
+        "Прибрати вибір"
       ],
       "Discard": [
         "Відхилити"
@@ -242,11 +248,17 @@
       "Reject invitation": [
         "Відхилити запрошення"
       ],
+      "Remove": [
+        "Вилучити"
+      ],
       "Remove access": [
         "Вилучити доступ"
       ],
       "Request a feature": [
         "Запит нової функції"
+      ],
+      "Resend code": [
+        "Надіслати код повторно"
       ],
       "Resend invitation": [
         "Повторно надіслати запрошення"
@@ -316,6 +328,12 @@
       ],
       "Upgrade now": [
         "Покращити"
+      ],
+      "Verify": [
+        "Перевірити"
+      ],
+      "View history": [
+        "Переглянути історію"
       ],
       "Write us on Reddit": [
         "Напишіть нам на Reddit"
@@ -649,6 +667,9 @@
       "Can view items in this vault.": [
         "Може переглядати елементи в цьому сховищі."
       ],
+      "Change your password": [
+        "Змініть свій пароль"
+      ],
       "Copied to clipboard": [
         "Скопійовано до буфера обміну"
       ],
@@ -670,6 +691,9 @@
       "Editor": [
         "Редактор"
       ],
+      "email": [
+        "е-пошта"
+      ],
       "Emptying trash...": [
         "Спорожнення смітника..."
       ],
@@ -679,11 +703,17 @@
       "Fill in the CSV with your data": [
         "Заповніть CSV своїми даними"
       ],
+      "finance": [
+        "фінанси"
+      ],
       "Follow those steps to import your data with a generic CSV :": [
         "Виконайте ці кроки, щоб імпортувати дані у загальному форматі CSV:"
       ],
       "For security reasons, your access needs to be confirmed": [
         "З міркувань безпеки ваш доступ потребує підтвердження."
+      ],
+      "High Priority": [
+        "Високий пріоритет"
       ],
       "Import in progress:": [
         "Виконується імпорт:"
@@ -766,8 +796,17 @@
       "Loading ${ PASS_APP_NAME }": [
         "Завантажується ${ PASS_APP_NAME }"
       ],
+      "Low Priority": [
+        "Низький пріоритет"
+      ],
       "me": [
         "я"
+      ],
+      "Medium Priority": [
+        "Середній пріоритет"
+      ],
+      "Monitor accounts": [
+        "Моніторинг облікових записів"
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "Більше, ніж менеджер паролів, ${ PASS_APP_NAME } захищає ваш пароль та вашу особисту адресу електронної пошти за допомогою псевдонімів електронної пошти. Працюючи за тією ж технологією, що й ${ MAIL_APP_NAME }, ваші дані наскрізно зашифровані та доступні лише вам."
@@ -792,6 +831,12 @@
       ],
       "Pass Plus trial": [
         "Пробна версія Pass Plus"
+      ],
+      "password": [
+        "пароль"
+      ],
+      "Paused": [
+        "Зупинено"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "PIN-код успішно зареєстровано. Використовуйте його для розблокування ${ PASS_APP_NAME }"
@@ -859,14 +904,23 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Цей експорт буде незашифрований, і кожен, хто має доступ до експортованого файлу, зможе побачити ваші паролі. Для безпеки видаліть його після його завершення."
       ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "Спробуйте нові функції, оновлення та продукти ${ BRAND_NAME } до того, як вони будуть випущені для широкого загалу. Це призведе до перезапуску програми"
+      ],
       "Unable to copy to clipboard": [
         "Неможливо скопіювати в буфер обміну"
       ],
       "Unlimited hide-my-email aliases": [
         "Необмежена кількість псевдонімів Hide-my-email"
       ],
+      "Unverified": [
+        "Не підтверджено"
+      ],
       "User's access removed": [
         "Доступ користувача вилучено"
+      ],
+      "username": [
+        "ім'я користувача"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Сховище \"${ payload.content.name }\" успішно видалено"
@@ -978,6 +1032,9 @@
       "Auto-lock after": [
         "Автоблокування після"
       ],
+      "Beta Access": [
+        "Бета-доступ"
+      ],
       "Capital letters (A-Z)": [
         "Великі літери (А-Я)"
       ],
@@ -992,6 +1049,9 @@
       ],
       "Cards": [
         "Картки"
+      ],
+      "Code": [
+        "Код"
       ],
       "Confirm vault name": [
         "Підтвердити назву сховища"
@@ -1014,6 +1074,9 @@
       "Created": [
         "Створено"
       ],
+      "Date": [
+        "Дата"
+      ],
       "Display": [
         "Показувати"
       ],
@@ -1022,6 +1085,12 @@
       ],
       "Download logs": [
         "Завантажити журнали"
+      ],
+      "Email": [
+        "Е-пошта"
+      ],
+      "Email address": [
+        "Адреса е-пошти"
       ],
       "Empty trash": [
         "Очистити смітник"
@@ -1148,6 +1217,9 @@
       ],
       "Oldest to newest": [
         "Найдавніші"
+      ],
+      "Organization": [
+        "Організація"
       ],
       "Passphrase": [
         "Парольна фраза"
@@ -1282,6 +1354,11 @@
         "Ви збираєтеся створити"
       ]
     },
+    "Link": {
+      "Learn more": [
+        "Докладніше"
+      ]
+    },
     "lobby: Info": {
       "Enter your PIN code": [
         "Введіть PIN-код"
@@ -1301,12 +1378,25 @@
         "Ласкаво просимо до ${ brandNameJSX }"
       ]
     },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Увімкнути ${ reason }"
+      ]
+    },
     "Message": {
       "${ count } item": [
         "${ count } елемент",
         "${ count } елементи",
         "${ count } елементи",
         "${ count } елементів"
+      ]
+    },
+    "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } вимкнено"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } увімкнено"
       ]
     },
     "Option": {
@@ -1419,8 +1509,14 @@
       "Auto-lock update": [
         "Оновлення автоблокування"
       ],
+      "Block trackers and malware": [
+        "Блокувати трекери та зловмисні програми"
+      ],
       "Confirm PIN code": [
         "Підтвердьте PIN-код"
+      ],
+      "Create a vault": [
+        "Створити сховище"
       ],
       "Create PIN code": [
         "Створіть PIN-код"
@@ -1433,6 +1529,9 @@
       ],
       "Discard changes?": [
         "Відхилити зміни?"
+      ],
+      "Email address": [
+        "Адреса електронної пошти"
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Вам подобається ${ PASS_APP_NAME }?"
@@ -1467,11 +1566,17 @@
       "Our welcome gift to you": [
         "Наш вітальний подарунок для вас"
       ],
+      "Password": [
+        "Пароль"
+      ],
       "Pending access to the shared data": [
         "Очікування доступу до спільних даних"
       ],
       "Permanently remove all items ?": [
         "Остаточно видалити всі елементи ?"
+      ],
+      "Recommended actions": [
+        "Рекомендовані дії"
       ],
       "Restore this version?": [
         "Відновити цю версію?"
@@ -1505,6 +1610,12 @@
       ],
       "Vault shared with you": [
         "Вам надано спільний доступ до сховища"
+      ],
+      "What is an alias?": [
+        "Що таке псевдонім?"
+      ],
+      "What is the dark web?": [
+        "Що таке темна павутина?"
       ],
       "Why ${ PASS_APP_NAME }?": [
         "Чому ${ PASS_APP_NAME }?"
