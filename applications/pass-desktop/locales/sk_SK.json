@@ -236,6 +236,9 @@
       "Manually sync your data": [
         "Synchronizovať údaje manuálne"
       ],
+      "Mark as resolved": [
+        "Označiť ako vyriešené"
+      ],
       "More info: ${ safeTitle }": [
         "Viac informácií: ${ safeTitle }"
       ],
@@ -290,6 +293,9 @@
       "Reject invitation": [
         "Odmietnuť pozvánku"
       ],
+      "Remove": [
+        "Vymazať"
+      ],
       "Remove access": [
         "Odstrániť prístup"
       ],
@@ -298,6 +304,9 @@
       ],
       "Request a feature": [
         "Požiadavka na funkciu"
+      ],
+      "Resend code": [
+        "Znovu odoslať kód"
       ],
       "Resend invitation": [
         "Znovu poslať pozvánku"
@@ -379,6 +388,9 @@
       ],
       "Upgrade now to share with more people": [
         "Aktualizujte teraz, aby ste sa mohli podeliť s viacerými ľuďmi"
+      ],
+      "Verify": [
+        "Overiť"
       ],
       "View history": [
         "Zobraziť históriu"
@@ -880,6 +892,9 @@
       "Can view items in this vault.": [
         "Môže zobraziť položky v tomto trezore"
       ],
+      "Change your password": [
+        "Zmeňte si heslo"
+      ],
       "Congratulations, your access has been confirmed": [
         "Blahoželáme, váš prístup bol potvrdený"
       ],
@@ -910,6 +925,9 @@
       "Editor": [
         "Editor"
       ],
+      "email": [
+        "email"
+      ],
       "Emptying trash...": [
         "Vyprázdňovanie koša..."
       ],
@@ -918,6 +936,9 @@
       ],
       "Fill in the CSV with your data": [
         "Vyplňte CSV súbor svojimi údajmi"
+      ],
+      "finance": [
+        "financie"
       ],
       "Follow those steps to import your data with a generic CSV :": [
         "Pre importovanie údajov pomocou všeobecného CSV súboru, postupujte nasledovne:"
@@ -936,6 +957,9 @@
       ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Získajte neobmedzený počet aliasov, využívajte exkluzívne funkcie a podporte nás predplatením služby Pass Plus."
+      ],
+      "High Priority": [
+        "Vysoká priorita"
       ],
       "Import in progress:": [
         "Prebieha import:"
@@ -1018,6 +1042,9 @@
       "Item successfully unpinned": [
         "Položka bola úspešne odopnutá"
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Zistite, ako ${ staySaferOnlineLink }"
+      ],
       "Leaving vault...": [
         "Opustenie trezoru..."
       ],
@@ -1036,8 +1063,17 @@
       "Logging you out...": [
         "Odhlasovanie..."
       ],
+      "Low Priority": [
+        "Nízka priorita"
+      ],
       "me": [
         "ja"
+      ],
+      "Medium Priority": [
+        "Stredná priorita"
+      ],
+      "Monitor accounts": [
+        "Monitorujte účty"
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "${ PASS_APP_NAME } je viac ako správca hesiel, chráni vaše heslo a váš osobný email prostredníctvom emailových aliasov. Vďaka rovnakej technológii, akú používa ${ MAIL_APP_NAME }, sú vaše údaje šifrované počas celého spojenia a prístup k nim máte len vy."
@@ -1087,11 +1123,17 @@
       "Pass Plus trial": [
         "Skúšobná verzia Pass Plus"
       ],
+      "password": [
+        "heslo"
+      ],
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
         "Heslá staršie ako ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } týždeň sa automaticky odstránia z histórie.",
         "Heslá staršie ako ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } týždne sa automaticky odstránia z histórie.",
         "Heslá staršie ako ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } týždňov sa automaticky odstránia z histórie.",
         "Heslá staršie ako ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } týždňov sa automaticky odstránia z histórie."
+      ],
+      "Paused": [
+        "Pozastavené"
       ],
       "Permanently deleting selected items": [
         "Trvalé odstránenie vybraných položiek"
@@ -1210,6 +1252,9 @@
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "Exportovaný súbor bude šifrovaný pomocou PGP a vyžaduje silnú prístupovú frázu."
       ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "Informácie, ktoré boli zverejnené, unikli zo služby tretej strany. Vaše informácie o účte ${ BRAND_NAME } zostávajú zabezpečené a zašifrované. ${ learnMoreLink }"
+      ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Nasledujúcu ${ result.ignored.length } položku nebolo možné importovať:",
         "Nasledujúce ${ result.ignored.length } položky nebolo možné importovať:",
@@ -1249,6 +1294,9 @@
       "Unpinning item...": [
         "Odopínanie položky..."
       ],
+      "Unverified": [
+        "Neoverený"
+      ],
       "Updating organization settings": [
         "Aktualizujem nastavenia organizácie"
       ],
@@ -1263,6 +1311,9 @@
       ],
       "User's access sucessfuly updated": [
         "Prístup používateľa bol aktualizovaný"
+      ],
+      "username": [
+        "používateľské meno"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Trezor \"${ payload.content.name }\" bol úspešne odstránený"
@@ -1323,6 +1374,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Vaše súbory budú zašifrované a potom uložené"
+      ],
+      "Your information was found on ${ displayedDate }": [
+        "Vaše informácie boli nájdené dňa ${ displayedDate }"
       ]
     },
     "Label": {
@@ -1413,6 +1467,9 @@
       "Cards": [
         "Karty"
       ],
+      "Code": [
+        "Kód"
+      ],
       "Confirm vault name": [
         "Potvrdiť názov trezoru"
       ],
@@ -1434,6 +1491,9 @@
       "Created": [
         "Vytvorené"
       ],
+      "Date": [
+        "Dátum"
+      ],
       "Disable data export for team members": [
         "Zakázať export údajov členom tímu"
       ],
@@ -1448,6 +1508,12 @@
       ],
       "Download logs": [
         "Stiahnuť záznamy"
+      ],
+      "Email": [
+        "Email"
+      ],
+      "Email address": [
+        "Emailová adresa"
       ],
       "Empty trash": [
         "Vyprázdniť kôš"
@@ -1747,6 +1813,14 @@
         "Chystáte sa vytvoriť"
       ]
     },
+    "Link": {
+      "Learn more": [
+        "Zistiť viac"
+      ],
+      "stay safer online": [
+        "zostať bezpečnejší online"
+      ]
+    },
     "lobby: Info": {
       "Enter your PIN code": [
         "Zadajte PIN kód"
@@ -1766,6 +1840,11 @@
         "Víta vás ${ brandNameJSX }"
       ]
     },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Povoliť ${ reason }"
+      ]
+    },
     "Message": {
       "${ count } item": [
         "${ count } položka",
@@ -1775,6 +1854,14 @@
       ],
       "You selected ${ semiboldText } in this vault": [
         "Vybrali ste ${ semiboldText } v tomto trezore"
+      ]
+    },
+    "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } bol zakázaný"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } bol povolený"
       ]
     },
     "Option": {
@@ -1901,6 +1988,9 @@
       "Auto-lock update": [
         "Aktualizácia automatického uzamknutia"
       ],
+      "Block trackers and malware": [
+        "Blokovať trackery a malware"
+      ],
       "Confirm PIN code": [
         "Potvrdiť PIN kód"
       ],
@@ -1919,8 +2009,14 @@
       "Delete vault \"${ vaultName }\" ?": [
         "Odstrániť trezor \"${ vaultName }\"?"
       ],
+      "Details": [
+        "Podrobnosti"
+      ],
       "Discard changes?": [
         "Zrušiť zmeny?"
+      ],
+      "Email address": [
+        "Emailová adresa"
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Páči sa vám ${ PASS_APP_NAME }?"
@@ -1991,6 +2087,9 @@
       "Passkey": [
         "Prístupový kľúč"
       ],
+      "Password": [
+        "Heslo"
+      ],
       "Pending access to the shared data": [
         "Čaká sa na prístup k zdieľaným údajom"
       ],
@@ -1999,6 +2098,9 @@
       ],
       "Pinned (${ items.length })": [
         "Pripnuté (${ items.length })"
+      ],
+      "Recommended actions": [
+        "Odporúčané opatrenia"
       ],
       "Restore this version?": [
         "Obnoviť túto verziu?"
@@ -2042,8 +2144,17 @@
       "Vault shared with you": [
         "Trezor zdieľaný s vami"
       ],
+      "What is an alias?": [
+        "Čo je alias?"
+      ],
+      "What is the dark web?": [
+        "Čo je dark web?"
+      ],
       "Why ${ PASS_APP_NAME }?": [
         "Prečo ${ PASS_APP_NAME }?"
+      ],
+      "Your exposed information": [
+        "Vaše odhalené informácie"
       ],
       "Your vault is empty": [
         "Váš trezor je prázdny"
