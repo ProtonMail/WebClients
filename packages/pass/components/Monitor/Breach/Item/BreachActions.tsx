@@ -9,13 +9,16 @@ import { ConfirmationModal } from '@proton/pass/components/Confirmation/Confirma
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
 import { useMonitor } from '@proton/pass/components/Monitor/MonitorProvider';
-import { useResolveBreach } from '@proton/pass/hooks/monitor/useResolveBreach';
 import { useRequest } from '@proton/pass/hooks/useActionRequest';
 import { useConfirm } from '@proton/pass/hooks/useConfirm';
 import { getAddressId } from '@proton/pass/lib/monitor/monitor.utils';
 import { AddressType, type MonitorAddress } from '@proton/pass/lib/monitor/types';
-import { toggleAddressMonitor } from '@proton/pass/store/actions';
-import { deleteCustomAddressRequest, toggleAddressMonitorRequest } from '@proton/pass/store/actions/requests';
+import { resolveAddressMonitor, toggleAddressMonitor } from '@proton/pass/store/actions';
+import {
+    deleteCustomAddressRequest,
+    resolveAddressMonitorRequest,
+    toggleAddressMonitorRequest,
+} from '@proton/pass/store/actions/requests';
 import { selectMonitorSettingByType, selectRequestInFlight } from '@proton/pass/store/selectors';
 
 type Props = { resolved: boolean; disabled: boolean } & MonitorAddress;
@@ -27,18 +30,18 @@ export const BreachActions: FC<Props> = ({ resolved, disabled, ...address }) => 
     const groupMonitored = useSelector(selectMonitorSettingByType(type));
     const deleting = useSelector(selectRequestInFlight(deleteCustomAddressRequest(email)));
 
-    const { resolve, loading } = useResolveBreach(address);
-    const initialRequestId = toggleAddressMonitorRequest(getAddressId(address));
-    const toggle = useRequest(toggleAddressMonitor, { initialRequestId });
+    const addressId = getAddressId(address);
+    const resolve = useRequest(resolveAddressMonitor, { initialRequestId: resolveAddressMonitorRequest(addressId) });
+    const toggle = useRequest(toggleAddressMonitor, { initialRequestId: toggleAddressMonitorRequest(addressId) });
 
-    const confirmResolve = useConfirm(resolve);
+    const confirmResolve = useConfirm(() => resolve.dispatch(address));
     const confirmToggle = useConfirm(() => toggle.dispatch({ ...address, monitor: !monitored }));
     const confirmDelete = useConfirm(() => monitor.deleteAddress(getAddressId(address)));
 
     return (
         <div className="flex flex-nowrap gap-2">
             {!resolved && (
-                <Button pill shape="solid" color="weak" onClick={confirmResolve.prompt} loading={loading}>
+                <Button pill shape="solid" color="weak" onClick={confirmResolve.prompt} loading={resolve.loading}>
                     {c('Action').t`Mark as resolved`}
                 </Button>
             )}
