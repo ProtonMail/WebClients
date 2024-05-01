@@ -45,7 +45,7 @@ export const monitorCustomEmail = async (data: BreachEmailCreateRequest): Promis
 
 /** Remove a custom email from breaches monitoring */
 export const deleteCustomEmail = async (addressId: string): Promise<boolean> =>
-    api({ url: `pass/v1/breach/custom_email//${addressId}`, method: 'delete' }).then(() => true);
+    api({ url: `pass/v1/breach/custom_email/${addressId}`, method: 'delete' }).then(() => true);
 
 /** Update the monitor status for a custom email */
 export const toggleCustomEmail = async (

@@ -71,7 +71,4 @@ export const resendCustomAddressCodeRequest = (addressId: string) => `monitor::v
 
 export const toggleMonitorRequest = () => `monitor::global::toggle`;
 export const toggleAddressMonitorRequest = (addressId: string) => `monitor::toggle::address::${addressId}`;
-
-export const protonResolveRequest = (addressId: string) => `monitor::resolve::proton::${addressId}`;
-export const customResolveRequest = (addressId: string) => `monitor::resolve::custom::${addressId}`;
-export const aliasResolveRequest = (shareId: string, itemId: string) => `monitor::resolve::alias::${shareId + itemId}`;
+export const resolveAddressMonitorRequest = (addressId: string) => `monitor::resolve::address::${addressId}`;
