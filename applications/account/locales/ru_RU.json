@@ -47,11 +47,11 @@
       "${ BRAND_NAME } shop": [
         "Магазин «${ BRAND_NAME }»"
       ],
-      "Activate": [
-        "Активировать"
-      ],
       "activate": [
         "включить"
+      ],
+      "Activate": [
+        "Активировать"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Активировать ${ user.Name }@pm.me"
@@ -1034,6 +1034,9 @@
       "Upgrade your plan": [
         "Улучшить тариф"
       ],
+      "Upload": [
+        "Загрузить"
+      ],
       "Upload picture": [
         "Загрузить картинку"
       ],
@@ -1855,6 +1858,9 @@
       ]
     },
     "Call Scheduled Confirmation": {
+      "Request sent": [
+        "Запрос отправлен"
+      ],
       "You can safely close this tab.": [
         "Вы можете безопасно закрыть эту вкладку."
       ]
@@ -5458,6 +5464,11 @@
         "Попробуйте лучшее из ${ MAIL_APP_NAME } бесплатно"
       ]
     },
+    "Headline": {
+      "Contact us": [
+        "Служба поддержки"
+      ]
+    },
     "Hint": {
       "Found ${ items.length } suggestion, use keyboard to navigate.": [
         "Найдено ${ items.length } предложение, используйте клавиатуру для навигации.",
@@ -5820,6 +5831,14 @@
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "Часть содержимого вашего календаря не поддерживается и не будет импортирована."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Обнаружены дополнительные дубликаты ключей. Для получения дополнительной информации загрузите их по отдельности."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Ключ ${ fingerprint } уже был загружен"
       ]
     },
     "Info": {
@@ -7212,6 +7231,9 @@
       "Plus or Visionary subscription required": [
         "Требуется подписка Plus или Visionary"
       ],
+      "Preview": [
+        "Предпросмотр"
+      ],
       "Preview failed to be loaded": [
         "Не удалось загрузить предварительный просмотр"
       ],
@@ -8203,14 +8225,6 @@
         "Ваша подписка находится под управлением Mozilla. Пожалуйста, свяжитесь со службой поддержки Mozilla."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Обнаружены дополнительные дубликаты ключей. Для получения дополнительной информации загрузите их по отдельности."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Ключ ${ fingerprint } уже был загружен"
-      ]
-    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Когда включено, вложенные папки наследуют цвет родительской папки."
@@ -8747,6 +8761,9 @@
       "Awarded": [
         "Присуждено"
       ],
+      "Beta": [
+        "Бета"
+      ],
       "Billing address": [
         "Адрес для выставления счета"
       ],
@@ -9124,6 +9141,9 @@
       ],
       "Link label": [
         "Ярлык ссылки"
+      ],
+      "Logo": [
+        "Логотип"
       ],
       "Mail Server (IMAP)": [
         "Почтовый сервер (IMAP)"
@@ -9837,6 +9857,9 @@
       ]
     },
     "locked_state_storage_banner: info": {
+      "Learn more": [
+        "Подробнее"
+      ],
       "upgrade for more storage": [
         "выберите другой тариф для увеличения хранилища"
       ]
@@ -12451,6 +12474,14 @@
         "Пользователь"
       ]
     },
+    "scim: Action": {
+      "Configure SCIM": [
+        "Настройка SCIM"
+      ],
+      "Generate token": [
+        "Сгенерировать токен"
+      ]
+    },
     "Select file": {
       "Upload CSV file": [
         "Загрузить файл CSV"
@@ -13375,8 +13406,14 @@
       "Cancel subscription?": [
         "Отменить подписку?"
       ],
+      "Close": [
+        "Закрыть"
+      ],
       "Custom schedule send and snooze times": [
         "Пользовательское планирование и откладывание писем на любое время"
+      ],
+      "Have a question?": [
+        "Появились вопросы?"
       ],
       "Keep ${ planName }": [
         "Сохранить ${ planName }"
@@ -14191,6 +14228,9 @@
       "Delete version history?": [
         "Очистить историю версий?"
       ],
+      "Details": [
+        "Информация"
+      ],
       "Disable ${ email }": [
         "Отключить ${ email }"
       ],
@@ -14328,6 +14368,12 @@
       ],
       "Folders and labels": [
         "Папки и ярлыки"
+      ],
+      "For Linux": [
+        "Для Linux"
+      ],
+      "For macOS": [
+        "Для macOS"
       ],
       "Forward and auto-reply": [
         "Пересылка и автоответчик"
@@ -14475,6 +14521,9 @@
       ],
       "No recovery method": [
         "Отсутствует метод восстановления"
+      ],
+      "Open": [
+        "Открыть"
       ],
       "Open actions dropdown": [
         "Показать список доступных действий"
