@@ -236,6 +236,9 @@
       "Manually sync your data": [
         "Synkronisér data manuelt"
       ],
+      "Mark as resolved": [
+        "Markér som løst"
+      ],
       "More info: ${ safeTitle }": [
         "Yderligere information: ${ safeTitle }"
       ],
@@ -290,6 +293,9 @@
       "Reject invitation": [
         "Afvis invitation"
       ],
+      "Remove": [
+        "Fjern"
+      ],
       "Remove access": [
         "Fjern adgang"
       ],
@@ -298,6 +304,9 @@
       ],
       "Request a feature": [
         "Anmod om en funktion"
+      ],
+      "Resend code": [
+        "Send kode igen"
       ],
       "Resend invitation": [
         "Gensend invitation"
@@ -379,6 +388,9 @@
       ],
       "Upgrade now to share with more people": [
         "Opgradér nu for at dele med flere"
+      ],
+      "Verify": [
+        "Bekræft"
       ],
       "View history": [
         "Se historik"
@@ -858,6 +870,9 @@
       "Can view items in this vault.": [
         "Kan se elementer i denne boks."
       ],
+      "Change your password": [
+        "Skift din adgangskode"
+      ],
       "Congratulations, your access has been confirmed": [
         "Tillykke, din adgang er blevet bekræftet"
       ],
@@ -888,6 +903,9 @@
       "Editor": [
         "Redaktør"
       ],
+      "email": [
+        "e-mail"
+      ],
       "Emptying trash...": [
         "Tømmer papirkurven..."
       ],
@@ -896,6 +914,9 @@
       ],
       "Fill in the CSV with your data": [
         "Udfyld CSV-filen med dine data"
+      ],
+      "finance": [
+        "finans"
       ],
       "Follow those steps to import your data with a generic CSV :": [
         "Følg disse trin for at importere dine data med en generisk CSV:"
@@ -912,6 +933,9 @@
       ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Få ubegrænsede aliasser, eksklusive funktioner, og støt os ved at abonnere på Pass Plus."
+      ],
+      "High Priority": [
+        "Høj prioritet"
       ],
       "Import in progress:": [
         "Import i gang:"
@@ -990,6 +1014,9 @@
       "Item successfully unpinned": [
         "Element frigjort"
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Lær, hvordan du ${ staySaferOnlineLink }"
+      ],
       "Leaving vault...": [
         "Forlader boks..."
       ],
@@ -1008,8 +1035,17 @@
       "Logging you out...": [
         "Logger dig ud..."
       ],
+      "Low Priority": [
+        "Lav prioritet"
+      ],
       "me": [
         "mig"
+      ],
+      "Medium Priority": [
+        "Mellem prioritet"
+      ],
+      "Monitor accounts": [
+        "Overvåg konti"
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "${ PASS_APP_NAME } er mere end en adgangskodeadministrator, den beskytter din adgangskode og din personlige e-mailadresse via e-mail-aliasser. Med samme teknologi, som bruges til ${ MAIL_APP_NAME }, er dine data end-to-end krypteret og kun tilgængelige for dig."
@@ -1059,9 +1095,15 @@
       "Pass Plus trial": [
         "Pass Plus prøveversion"
       ],
+      "password": [
+        "adgangskode"
+      ],
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
         "Adgangskoder, der er ældre end ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } uge slettes automatisk fra historikken.",
         "Adgangskoder, der er ældre end ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } uger slettes automatisk fra historikken."
+      ],
+      "Paused": [
+        "Sat på pause"
       ],
       "Permanently deleting selected items": [
         "De valgte elementer slettes permanent"
@@ -1180,6 +1222,9 @@
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "Den eksporterede fil vil blive krypteret med PGP og kræver en stærk adgangssætning."
       ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "De eksponerede oplysninger blev lækket fra en tredjepartstjeneste. Din ${ BRAND_NAME }-kontooplysninger er stadig sikre og krypterede. ${ learnMoreLink }"
+      ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Følgende ${ result.ignored.length } element kunne ikke importeres:",
         "Følgende ${ result.ignored.length } elementer kunne ikke importeres:"
@@ -1217,6 +1262,9 @@
       "Unpinning item...": [
         "Frigør element..."
       ],
+      "Unverified": [
+        "Ubekræftet"
+      ],
       "Updating organization settings": [
         "Opdaterer organisationsindstillinger"
       ],
@@ -1231,6 +1279,9 @@
       ],
       "User's access sucessfuly updated": [
         "Brugers adgang opdateret"
+      ],
+      "username": [
+        "brugernavn"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Boksen \"${ payload.content.name }\" blev slettet"
@@ -1289,6 +1340,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Din filer vil blive krypteret og derefter gemt"
+      ],
+      "Your information was found on ${ displayedDate }": [
+        "Dine oplysninger blev fundet ${ displayedDate }"
       ]
     },
     "Label": {
@@ -1375,6 +1429,9 @@
       "Cards": [
         "Kort"
       ],
+      "Code": [
+        "Kode"
+      ],
       "Confirm vault name": [
         "Bekræft boks-navn"
       ],
@@ -1396,6 +1453,9 @@
       "Created": [
         "Oprettet"
       ],
+      "Date": [
+        "Dato"
+      ],
       "Disable data export for team members": [
         "Deaktivér dataeksport for teammedlemmer"
       ],
@@ -1410,6 +1470,12 @@
       ],
       "Download logs": [
         "Hent logfiler"
+      ],
+      "Email": [
+        "E-mail"
+      ],
+      "Email address": [
+        "E-mail"
       ],
       "Empty trash": [
         "Tøm papirkurv"
@@ -1709,6 +1775,14 @@
         "Du er ved at oprette"
       ]
     },
+    "Link": {
+      "Learn more": [
+        "Få mere at vide"
+      ],
+      "stay safer online": [
+        "bliv mere sikker online"
+      ]
+    },
     "lobby: Info": {
       "Enter your PIN code": [
         "Indtast din pinkode"
@@ -1728,6 +1802,11 @@
         "Velkommen til ${ brandNameJSX }"
       ]
     },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Aktivér ${ reason }"
+      ]
+    },
     "Message": {
       "${ count } item": [
         "${ count } element",
@@ -1735,6 +1814,14 @@
       ],
       "You selected ${ semiboldText } in this vault": [
         "Du valgte ${ semiboldText } i denne boks"
+      ]
+    },
+    "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } er blevet deaktiveret"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } er blevet aktiveret"
       ]
     },
     "Option": {
@@ -1859,6 +1946,9 @@
       "Auto-lock update": [
         "Autolås-opdatering"
       ],
+      "Block trackers and malware": [
+        "Blokér trackere og malware"
+      ],
       "Confirm PIN code": [
         "Bekræft pinkode"
       ],
@@ -1877,8 +1967,14 @@
       "Delete vault \"${ vaultName }\" ?": [
         "Slet boksen \"${ vaultName }\"?"
       ],
+      "Details": [
+        "Detaljer"
+      ],
       "Discard changes?": [
         "Kassér ændringer?"
+      ],
+      "Email address": [
+        "E-mailadresse"
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Glad for ${ PASS_APP_NAME }?"
@@ -1949,6 +2045,9 @@
       "Passkey": [
         "Adgangsnøgle"
       ],
+      "Password": [
+        "Adgangskode"
+      ],
       "Pending access to the shared data": [
         "Afventer adgang til de delte data"
       ],
@@ -1957,6 +2056,9 @@
       ],
       "Pinned (${ items.length })": [
         "Fastgjorte (${ items.length })"
+      ],
+      "Recommended actions": [
+        "Anbefalede handlinger"
       ],
       "Restore this version?": [
         "Gendan denne version?"
@@ -2000,8 +2102,17 @@
       "Vault shared with you": [
         "Boks delt med dig"
       ],
+      "What is an alias?": [
+        "Hvad er et alias?"
+      ],
+      "What is the dark web?": [
+        "Hvad er det mørke net?"
+      ],
       "Why ${ PASS_APP_NAME }?": [
         "Hvorfor ${ PASS_APP_NAME }?"
+      ],
+      "Your exposed information": [
+        "Dine blotlagte oplysninger"
       ],
       "Your vault is empty": [
         "Din boks er tom"
