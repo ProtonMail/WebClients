@@ -2188,7 +2188,7 @@
         "Pour importer vos contacts depuis Google ou Outlook, ${ easySwitchLink }."
       ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
-        "Mettez à jour votre compte pour activer ${ PROTON_SENTINEL_NAME } ; notre solution de sécurité innovante par IA avec un support d'experts dédié 24h/24 et 7j/7."
+        "Changez d'abonnement pour activer ${ PROTON_SENTINEL_NAME }, notre solution de sécurité de pointe reposant sur l'IA et une assistance d'experts dédiée 24h/24 et 7j/7."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Utilisez le glisser-déposer pour classer la priorité de fusion entre les contacts. Décochez les contacts que vous ne voulez pas fusionner."
@@ -6118,7 +6118,7 @@
         "Document AbiWord"
       ],
       "Adobe Portable Document Format (PDF)": [
-        "Format de document portable Adobe (PDF)"
+        "Format PDF Adobe (Portable Document Format)"
       ],
       "Amazon Kindle eBook format": [
         "Format de livre électronique Amazon Kindle"
@@ -6211,7 +6211,7 @@
         "Polices OpenType intégrées pour le web"
       ],
       "Musical Instrument Digital Interface (MIDI)": [
-        "Interface numérique des instruments de musique (MIDI)"
+        "Musical Instrument Digital Interface (MIDI)"
       ],
       "OGG audio": [
         "Audio OGG"
@@ -7193,7 +7193,7 @@
         "${ reason } a été activé."
       ],
       "Access for the member removed": [
-        "Accès pour le membre retiré"
+        "L'accès pour le membre a été retiré."
       ],
       "Access updated and shared": [
         "L'accès a été mis à jour et partagé."
@@ -7229,7 +7229,7 @@
         "La recherche chiffrée a été activée."
       ],
       "Failed to accept share invitation": [
-        "L'acceptation de l'invitation partagée n'a pas abouti."
+        "L'invitation au partage n'a pas pu être acceptée."
       ],
       "Failed to download files: ${ err }": [
         "Les fichiers n'ont pas pu être téléchargés : ${ err }"
@@ -7257,7 +7257,7 @@
         "Le fichier a été retiré."
       ],
       "Invitation removed from the share": [
-        "Invitation retirée du partage"
+        "L'invitation a été retirée du partage."
       ],
       "Link copied to clipboard": [
         "Le lien est copié dans le presse-papiers."
@@ -7308,7 +7308,7 @@
         "Le dossier Corbeille n'a pas pu être vidé."
       ],
       "You stopped sharing this item": [
-        "Vous avez interrompu le partage de cet élément."
+        "Vous avez arrêté le partage de cet élément."
       ],
       "Your old files will be deleted in 72 hours": [
         "Vos anciens fichiers seront supprimés dans 72 heures."
@@ -7431,7 +7431,7 @@
     },
     "passwordless": {
       "Non-private users can be promoted to admin when they have setup keys": [
-        "Les utilisateurs non privés peuvent être promus comme administrateur lorsqu'ils disposent de clés de configuration."
+        "Les utilisateurs non privés peuvent être promus administrateur lorsqu'ils disposent de clés de configuration."
       ],
       "Organization key must be activated to give admin privileges": [
         "La clé de l'organisation doit être activée pour accorder des droits administrateur."
@@ -7476,13 +7476,13 @@
         "La date d'expiration n’est pas valide."
       ],
       "Invalid security code": [
-        "Code de sécurité invalide"
+        "Le code de sécurité n'est pas valide."
       ],
       "Something went wrong. Please try again later.": [
         "Une erreur s'est produite. Veuillez réessayer plus tard."
       ],
       "We are unable to authenticate your payment method. Please choose a different payment method or try again.": [
-        "Nous n'avons pas pu authentifier votre moyen de paiement. Veuillez choisir un moyen différent ou réessayer."
+        "Nous ne sommes pas en mesure d'authentifier votre moyen de paiement. Veuillez en choisir un autre ou essayer à nouveau."
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Votre carte a été refusée. Veuillez essayer une autre carte ou contactez votre banque pour autoriser le prélèvement."
@@ -7730,7 +7730,7 @@
         "Essayer ${ PASS_APP_NAME }"
       ],
       "Used on amazon for shopping, etc.": [
-        "Par exemple, à utiliser sur des sites marchands comme Amazon pour vos achats, etc."
+        "Utilisé par exemple sur Amazon pour vos achats."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Lorsque vous devez renseigner votre adresse e-mail, donnez cet alias à la place. Les alias sont fournis par ${ passLink }."
@@ -8395,10 +8395,10 @@
         "Améliorez votre productivité"
       ],
       "We don't sell your data": [
-        "Nous ne vendons pas vos données."
+        "Nous ne vendons pas vos données"
       ],
       "Your privacy is our mission": [
-        "Le respect de votre vie privée est notre priorité."
+        "La protection de votre vie privée est notre priorité."
       ]
     },
     "Subscription renewal state": {
