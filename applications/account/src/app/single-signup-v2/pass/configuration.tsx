@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { IconName, PassLogo } from '@proton/components/components';
-import { getSentinel } from '@proton/components/containers/payments/features/highlights';
+import { getPassKeys, getSentinel } from '@proton/components/containers/payments/features/highlights';
 import { PlanCardFeatureDefinition } from '@proton/components/containers/payments/features/interface';
 import {
     FREE_PASS_ALIASES,
@@ -144,6 +144,13 @@ export const getPassBenefits = (isPaidPass: boolean): BenefitItem[] => {
                       },
                   },
               ]),
+        {
+            key: 20,
+            text: c('pass_signup_2023: Info').t`Passkeys supported on all devices`,
+            icon: {
+                name: 'pass-passkey' as const,
+            },
+        },
         ...getGenericBenefits(),
     ].filter(isTruthy);
 };
@@ -152,6 +159,7 @@ export const getFreePassFeatures = () => {
     return [
         getLoginsAndNotes(),
         getDevices(),
+        getPassKeys(true),
         getHideMyEmailAliases(FREE_PASS_ALIASES),
         getVaultSharing(FREE_VAULT_SHARING),
     ];
@@ -161,6 +169,7 @@ export const getCustomPassFeatures = () => {
     return [
         getLoginsAndNotes(),
         getDevices(),
+        getPassKeys(true),
         getHideMyEmailAliases('unlimited'),
         get2FAAuthenticator(true),
         getItems(),
