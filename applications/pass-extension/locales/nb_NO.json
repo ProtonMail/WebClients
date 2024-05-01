@@ -525,9 +525,6 @@
       "Authentication failure: ${ message }": [
         "Autentiseringsfeil: ${ message }"
       ],
-      "Authenticator failure": [
-        "Autentiseringsfeil"
-      ],
       "Auto-lock could not be activated": [
         "Autolås kunne ikke aktiveres"
       ],
@@ -1472,6 +1469,9 @@
       "${ config.options.wordCount } word": [
         "${ config.options.wordCount } ord",
         "${ config.options.wordCount } ord"
+      ],
+      "${ PASS_SHORT_APP_NAME } monitor": [
+        "${ PASS_SHORT_APP_NAME } overvåke"
       ],
       "1 hour": [
         "1 time"

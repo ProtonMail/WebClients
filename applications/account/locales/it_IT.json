@@ -47,11 +47,11 @@
       "${ BRAND_NAME } shop": [
         "Negozio di ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Attiva"
-      ],
       "activate": [
         "attiva"
+      ],
+      "Activate": [
+        "Attiva"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Attiva ${ user.Name }@pm.me"
@@ -5949,6 +5949,17 @@
         "Parte del contenuto del calendario non è supportata e non sarà importata."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Rilevate chiavi aggiuntive duplicate. Caricale singolarmente per maggiori informazioni."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "La chiave ${ fingerprint } è già stata caricata"
+      ],
+      "Selected color:": [
+        "Colore selezionato:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } ha bisogno della tua autorizzazione per ${ enableDesktopNotifications }."
@@ -8270,6 +8281,9 @@
       "You won’t be able to recover locked data using your downloaded recovery files.": [
         "Non potrai usare i file di recupero scaricati per recuperare i dati bloccati."
       ],
+      "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
+        "Non sarai in grado di recuperare i dati bloccati utilizzando i file di ripristino scaricati. Questa azione disabiliterà anche il ripristino basato sul dispositivo."
+      ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
         "Il tuo Account ${ BRAND_NAME } è associato a ${ externalEmailAddress }."
       ],
@@ -8363,17 +8377,6 @@
       ],
       "Zoom meeting": [
         "Meeting Zoom"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Rilevate chiavi aggiuntive duplicate. Caricale singolarmente per maggiori informazioni."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "La chiave ${ fingerprint } è già stata caricata"
-      ],
-      "Selected color:": [
-        "Colore selezionato:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9718,6 +9721,9 @@
       ]
     },
     "label": {
+      "Device-based recovery": [
+        "Ripristino basato sul dispositivo"
+      ],
       "Recovery phone number": [
         "Numero di telefono di recupero"
       ],
@@ -15995,6 +16001,9 @@
       ],
       "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
         "L'abbonamento si rinnova automaticamente ogni 3 mesi. La tua prossima data di fatturazione è tra 3 mesi."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "La tariffa scontata, con un prezzo speciale di ${ priceWithDiscount }, è valida per il primo mese. Il piano si rinnoverà poi automaticamente a ${ renewPrice } al mese. Puoi annullare in qualsiasi momento."
       ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Ti verrà addebitato un importo pari a ${ renewPrice } ogni 12 mesi."

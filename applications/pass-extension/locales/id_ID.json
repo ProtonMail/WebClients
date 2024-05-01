@@ -188,6 +188,9 @@
       "Edit vault": [
         "Sunting brankas"
       ],
+      "Exclude from monitoring": [
+        "Kecualikan dari pemantauan"
+      ],
       "Export": [
         "Ekspor"
       ],
@@ -212,6 +215,9 @@
       "Get mobile apps": [
         "Dapatkan Pass versi mobile"
       ],
+      "Get Pass Plus": [
+        "Dapatkan Pass Plus"
+      ],
       "Help us improve": [
         "Bantu kami untuk berkembang"
       ],
@@ -232,6 +238,9 @@
       ],
       "Importing": [
         "Mengimpor"
+      ],
+      "Include in monitoring": [
+        "Sertakan dalam pemantauan"
       ],
       "Invite others": [
         "Undang yang lain"
@@ -502,11 +511,20 @@
       ]
     },
     "Description": {
+      "${ total } other login uses the same password": [
+        "${ total } entri masuk lainnya menggunakan kata sandi yang sama"
+      ],
       "A checked box means the feature is disabled.": [
         "Boks yang tercentang merupakan tanda bahwa fitur tersebut sedang dinonaktifkan."
       ],
+      "It would be more secure to set up 2FA for this account.": [
+        "Akun ini akan lebih aman dengan pengaturan 2FA."
+      ],
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
         "Daftar domain di mana fungsi otomatis ${ PASS_SHORT_APP_NAME } tertentu (Isi Otomatis, Saran Otomatis, Simpan Otomatis) tidak akan berjalan.${ infoText }"
+      ],
+      "This account is vulnerable, visit the service and change your password.": [
+        "Akun ini terindikasi rentan. Kunjungi layanan keamanan kami dan ubah kata sandi Anda."
       ]
     },
     "Error": {
@@ -524,9 +542,6 @@
       ],
       "Authentication failure: ${ message }": [
         "Autentikasi gagal: ${ message }"
-      ],
-      "Authenticator failure": [
-        "Kesalahan pengautentikasi"
       ],
       "Auto-lock could not be activated": [
         "Kunci otomatis tidak dapat diaktifkan"
@@ -603,6 +618,12 @@
       "Failed resending invite.": [
         "Undangan gagal dikirim ulang."
       ],
+      "Failed to add email address": [
+        "Alamat email gagal ditambahkan"
+      ],
+      "Failed to delete email address from monitoring": [
+        "Alamat email gagal dihapus dari pemantauan"
+      ],
       "Failed to delete selected items": [
         "Item yang dipilih gagal dihapus"
       ],
@@ -612,8 +633,20 @@
       "Failed to edit user's access.": [
         "Akses pengguna gagal disunting."
       ],
+      "Failed to load breaches": [
+        "Daftar kebocoran gagal dimuat"
+      ],
+      "Failed to load breaches for this address": [
+        "Daftar kebocoran untuk alamat ini gagal dimuat"
+      ],
+      "Failed to load breaches for this email alias": [
+        "Daftar kebocoran untuk alias email ini gagal dimuat"
+      ],
       "Failed to load item history": [
         "Riwayat item gagal dimuat"
+      ],
+      "Failed to mark this address as resolved": [
+        "Alamat ini gagal ditandai sebagai telah terselesaikan"
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Gagal memindahkan semua item dari \"${ payload.content.name }\""
@@ -630,6 +663,9 @@
       "Failed to remove user's access.": [
         "Akses pengguna gagal dihapus."
       ],
+      "Failed to resend verification for custom email": [
+        "Verifikasi untuk email khusus gagal dikirim ulang"
+      ],
       "Failed to restore items from trash": [
         "Item gagal dipulihkan dari sampah"
       ],
@@ -638,6 +674,21 @@
       ],
       "Failed to unpin item": [
         "Sematan item gagal dilepas"
+      ],
+      "Failed to update monitoring settings": [
+        "Pengaturan pemantauan gagal diperbarui"
+      ],
+      "Failed to verify email address": [
+        "Alamat email gagal diverifikasi"
+      ],
+      "Failed updating ${ PROTON_SENTINEL_NAME } setting": [
+        "Pengaturan ${ PROTON_SENTINEL_NAME } gagal diperbarui"
+      ],
+      "Failed updating monitor flag of the item": [
+        "Status pemantauan item ini gagal diperbarui"
+      ],
+      "Failed updating monitoring status for this email address": [
+        "Status pemantauan untuk alamat email ini gagal diperbarui"
       ],
       "File could not be parsed": [
         "Berkas tidak dapat diurai"
@@ -872,6 +923,12 @@
       "${ PASS_APP_NAME } will suggest saving passkeys.": [
         "${ PASS_APP_NAME } akan menyarankan untuk menyimpan passkey."
       ],
+      "${ PROTON_SENTINEL_NAME } successfully disabled": [
+        "${ PROTON_SENTINEL_NAME } berhasil dinonaktifkan"
+      ],
+      "${ PROTON_SENTINEL_NAME } successfully enabled": [
+        "${ PROTON_SENTINEL_NAME } berhasil diaktifkan"
+      ],
       "${ trialDaysLeft } day left": [
         "${ trialDaysLeft } hari tersisa"
       ],
@@ -1001,6 +1058,15 @@
       "Editor": [
         "Penyunting"
       ],
+      "Email address successfully deleted from monitoring": [
+        "Alamat email berhasil dihapus dari pemantauan"
+      ],
+      "Email address successfully excluded from monitoring": [
+        "Alamat email berhasil dikecualikan dari pemantauan"
+      ],
+      "Email address successfully included in monitoring": [
+        "Alamat email berhasil diikutsertakan dalam pemantauan"
+      ],
       "Emptying trash...": [
         "Mengosongkan sampah..."
       ],
@@ -1094,6 +1160,12 @@
       "Item restored": [
         "Item dipulihkan"
       ],
+      "Item successfully excluded from monitoring": [
+        "Item berhasil dikecualikan dari pemantauan"
+      ],
+      "Item successfully included in monitoring": [
+        "Item berhasil diikutsertakan dalam pemantauan"
+      ],
       "Item successfully moved": [
         "Item berhasil dipindahkan"
       ],
@@ -1120,6 +1192,9 @@
       ],
       "me": [
         "saya"
+      ],
+      "Monitoring settings successfully updated": [
+        "Pengaturan pemantauan berhasil diperbarui"
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "Lebih dari sekadar pengelola kata sandi, ${ PASS_APP_NAME } melindungi kata sandi dan alamat email pribadi Anda melalui alamat email samaran. Dengan didukung oleh teknologi yang serupa dengan ${ MAIL_APP_NAME }, data Anda akan terenkripsi secara end-to-end dan hanya akan dapat diakses oleh Anda."
@@ -1221,7 +1296,7 @@
         "Privasi merupakan hal yang sangat penting bagi kami. Pelajari mengapa ${ PASS_APP_NAME } berbeda."
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
-        "Terlindung oleh ${ PROTON_SENTINEL_LINK }, program perlindungan akun mutakhir kami"
+        "Dilindungi oleh ${ PROTON_SENTINEL_LINK }, program perlindungan akun mutakhir kami"
       ],
       "Restoring items from trash": [
         "Memulihkan item dari sampah"
@@ -1452,6 +1527,9 @@
       ],
       "${ config.options.wordCount } word": [
         "${ config.options.wordCount } kata"
+      ],
+      "${ PASS_SHORT_APP_NAME } monitor": [
+        "Pemantauan ${ PASS_SHORT_APP_NAME }"
       ],
       "1 hour": [
         "1 jam"
@@ -1897,6 +1975,12 @@
       "View logs": [
         "Lihat log"
       ],
+      "Vulnerable": [
+        "Rentan"
+      ],
+      "Weak": [
+        "Lemah"
+      ],
       "Website": [
         "Situs web"
       ],
@@ -2192,6 +2276,9 @@
       "Share with": [
         "Bagikan dengan"
       ],
+      "Stay safer online": [
+        "Tetap aman saat online"
+      ],
       "Suggestions": [
         "Saran"
       ],
@@ -2281,7 +2368,7 @@
         "Terdapat kesalahan pada saat mengekspor data Anda"
       ],
       "At least one email address is required": [
-        "Setidaknya satu alamat email dibutuhkan"
+        "Setidaknya satu alamat surel dibutuhkan"
       ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Kotak surat untuk alias ini tidak dapat diterima untuk saat ini"
@@ -2308,7 +2395,7 @@
         "Awalan alias tidak valid"
       ],
       "Invalid email addresses.": [
-        "Terdapat alamat email yang tidak valid."
+        "Terdapat alamat surel yang tidak valid."
       ],
       "Inviting email addresses outside organization is not allowed.": [
         "Mengundang alamat email di luar organisasi tidak diperkenankan"

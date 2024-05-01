@@ -4107,6 +4107,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Dit abonnement håndteres af Mozilla. Kontakt venligst Mozilla-support."
+      ],
+      "Zoom meeting": [
+        "Zoom-møde"
       ]
     },
     "Info for cash payment method": {
@@ -5921,6 +5924,19 @@
         "Dit abonnement har et maksimum ${ humanReadableAvailableSpace } mere lagerplads."
       ]
     },
+    "Organization logo upload": {
+      "Tips on choosing a good logo": [
+        "Tips til at vælge et godt logo"
+      ]
+    },
+    "Organization logo upload modal": {
+      "File in PNG or JPEG format": [
+        "Fil i PNG eller JPEG format"
+      ],
+      "File not larger than 30 KB": [
+        "Filen er ikke større end 30 KB"
+      ]
+    },
     "Pass B2B onboarding spotlight": {
       "Go to your vault to manage your passwords, aliases, and more.": [
         "Gå til din boks for at administrere dine adgangskoder, aliaser og mere."
@@ -6365,6 +6381,14 @@
     "scim: Info": {
       "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ VPN_APP_NAME }.": [
         "Gå til din identitetsudbyder, kopier og indsæt tokenet nedenfor, og genaktiver SCIM for ${ VPN_APP_NAME }."
+      ]
+    },
+    "scim: Title": {
+      "Disable SCIM integration?": [
+        "Deaktiver SCIM integration?"
+      ],
+      "Generate new SCIM token?": [
+        "Generer ny SCIM token?"
       ]
     },
     "Select file": {

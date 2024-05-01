@@ -236,6 +236,9 @@
       "Manually sync your data": [
         "Сінхранізацыя даных уручную"
       ],
+      "Mark as resolved": [
+        "Пазначыць як вырашанае"
+      ],
       "More info: ${ safeTitle }": [
         "Больш інфармацыі: ${ safeTitle }"
       ],
@@ -290,6 +293,9 @@
       "Reject invitation": [
         "Адхіліць запрашэнне"
       ],
+      "Remove": [
+        "Выдаліць"
+      ],
       "Remove access": [
         "Выдаліць доступ"
       ],
@@ -298,6 +304,9 @@
       ],
       "Request a feature": [
         "Запытаць функцыю"
+      ],
+      "Resend code": [
+        "Адправіць код яшчэ раз"
       ],
       "Resend invitation": [
         "Паўторна адправіць запрашэнне"
@@ -379,6 +388,9 @@
       ],
       "Upgrade now to share with more people": [
         "Палепшыце, каб абагуліць з большай колькасцю людзей"
+      ],
+      "Verify": [
+        "Праверка"
       ],
       "View history": [
         "Праглядзець гісторыю"
@@ -880,6 +892,9 @@
       "Can view items in this vault.": [
         "Можа праглядаць элементы ў гэтым сховішчы."
       ],
+      "Change your password": [
+        "Змяніць свой пароль"
+      ],
       "Congratulations, your access has been confirmed": [
         "Віншуем! Вы паспяхова пацвердзілі свой доступ"
       ],
@@ -910,6 +925,9 @@
       "Editor": [
         "Рэдактар​​"
       ],
+      "email": [
+        "электронная пошта"
+      ],
       "Emptying trash...": [
         "Ачышчэнне сметніцы..."
       ],
@@ -918,6 +936,9 @@
       ],
       "Fill in the CSV with your data": [
         "Запоўніце CSV сваімі данымі"
+      ],
+      "finance": [
+        "фінансы"
       ],
       "Follow those steps to import your data with a generic CSV :": [
         "Выканайце наступныя дзеянні, каб імпартаваць свае даныя з агульнага CSV:"
@@ -936,6 +957,9 @@
       ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Атрымайце неабмежаваную колькасць псеўданімаў, атрымлівайце асалоду ад эксклюзіўных функцый і падтрымлівайце нас падпісаўшыся на Pass Plus."
+      ],
+      "High Priority": [
+        "Высокі прыярытэт"
       ],
       "Import in progress:": [
         "Выконваецца імпартаванне:"
@@ -1018,6 +1042,9 @@
       "Item successfully unpinned": [
         "Элемент паспяхова адмацаваны"
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Даведайцеся, як ${ staySaferOnlineLink }"
+      ],
       "Leaving vault...": [
         "Выхад са сховішча..."
       ],
@@ -1036,8 +1063,17 @@
       "Logging you out...": [
         "Адбываецца выхад..."
       ],
+      "Low Priority": [
+        "Нізкі прыярытэт"
+      ],
       "me": [
         "я"
+      ],
+      "Medium Priority": [
+        "Сярэдні прыярытэт"
+      ],
+      "Monitor accounts": [
+        "Назіранне за ўліковымі запісамі"
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "Больш, чым менеджар пароляў. ${ PASS_APP_NAME } абараняе ваш пароль і ваш асабісты адрас электроннай пошты з дапамогай псеўданімаў электроннай пошты. Распрацаваны на падставе тэхналогіі, якая ляжыць у аснове ${ MAIL_APP_NAME }. Вашы даныя зашыфраваны скразным метадам і даступны толькі вам."
@@ -1087,11 +1123,17 @@
       "Pass Plus trial": [
         "Пробны перыяд Pass Plus"
       ],
+      "password": [
+        "пароль"
+      ],
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
         "Паролі старэйшыя за ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } тыдзень будуць аўтаматычна выдаляцца з гісторыі.",
         "Паролі старэйшыя за ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } тыдні будуць аўтаматычна выдаляцца з гісторыі.",
         "Паролі старэйшыя за ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } тыдняў будуць аўтаматычна выдаляцца з гісторыі.",
         "Паролі старэйшыя за ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } тыдняў будуць аўтаматычна выдаляцца з гісторыі."
+      ],
+      "Paused": [
+        "Прыпынена"
       ],
       "Permanently deleting selected items": [
         "Незваротнае выдаленне выбраных элементаў"
@@ -1210,6 +1252,9 @@
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "Экспартаваны файл будзе зашыфраваны з дапамогай PGP і яму спатрэбіцца надзейная парольная фраза."
       ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "Адбылася ўцечка скампраметаваных звестак са старонняга сэрвісу. Гэта не закранула звесткі вашага ўліковага запісу ${ BRAND_NAME }, бо яны зашыфраваны і знаходзяцца ў бяспецы. ${ learnMoreLink }"
+      ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Не атрымалася імпартаваць наступны ${ result.ignored.length } элемент:",
         "Не атрымалася імпартаваць наступныя ${ result.ignored.length } элементы:",
@@ -1249,6 +1294,9 @@
       "Unpinning item...": [
         "Адмацаванне элемента..."
       ],
+      "Unverified": [
+        "Неправераны"
+      ],
       "Updating organization settings": [
         "Абнаўленне налад арганізацыі"
       ],
@@ -1263,6 +1311,9 @@
       ],
       "User's access sucessfuly updated": [
         "Доступ карыстальніка абноўлены"
+      ],
+      "username": [
+        "імя карыстальніка"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Сховішча \"${ payload.content.name }\" паспяхова выдалена"
@@ -1323,6 +1374,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Вашы файлы будуць зашыфраваны, а пасля гэтага захаваны"
+      ],
+      "Your information was found on ${ displayedDate }": [
+        "Вашы звесткі былі знойдзены ${ displayedDate }"
       ]
     },
     "Label": {
@@ -1413,6 +1467,9 @@
       "Cards": [
         "Карткі"
       ],
+      "Code": [
+        "Код"
+      ],
       "Confirm vault name": [
         "Пацвярджэнне назвы сховішча"
       ],
@@ -1434,6 +1491,9 @@
       "Created": [
         "Створана"
       ],
+      "Date": [
+        "Дата"
+      ],
       "Disable data export for team members": [
         "Адключыць экспартаванне даных для ўдзельнікаў каманды"
       ],
@@ -1448,6 +1508,12 @@
       ],
       "Download logs": [
         "Спампаваць журналы"
+      ],
+      "Email": [
+        "Электронная пошта"
+      ],
+      "Email address": [
+        "Адрас электроннай пошты"
       ],
       "Empty trash": [
         "Ачысціць сметніцу"
@@ -1747,6 +1813,14 @@
         "Вы збіраецеся стварыць"
       ]
     },
+    "Link": {
+      "Learn more": [
+        "Даведацца больш"
+      ],
+      "stay safer online": [
+        "застацца абароненым у інтэрнэце"
+      ]
+    },
     "lobby: Info": {
       "Enter your PIN code": [
         "Увядзіце свой PIN-код."
@@ -1766,6 +1840,11 @@
         "Вітаем у ${ brandNameJSX }"
       ]
     },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Уключыць ${ reason }"
+      ]
+    },
     "Message": {
       "${ count } item": [
         "${ count } элемент",
@@ -1775,6 +1854,14 @@
       ],
       "You selected ${ semiboldText } in this vault": [
         "Вы выбралі ${ semiboldText } у гэтым сховішчы"
+      ]
+    },
+    "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } было адключана"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } было ўключана"
       ]
     },
     "Option": {
@@ -1901,6 +1988,9 @@
       "Auto-lock update": [
         "Абнаўленне аўтаблакіравання"
       ],
+      "Block trackers and malware": [
+        "Блакіроўка праграм сачэння і шкодных праграм"
+      ],
       "Confirm PIN code": [
         "Пацвердзіць PIN-код"
       ],
@@ -1919,8 +2009,14 @@
       "Delete vault \"${ vaultName }\" ?": [
         "Выдаліць сховішча \"${ vaultName }\"?"
       ],
+      "Details": [
+        "Падрабязнасці"
+      ],
       "Discard changes?": [
         "Адхіліць змены?"
+      ],
+      "Email address": [
+        "Адрас электроннай пошты"
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Падабаецца ${ PASS_APP_NAME }?"
@@ -1991,6 +2087,9 @@
       "Passkey": [
         "Ключ доступу"
       ],
+      "Password": [
+        "Пароль"
+      ],
       "Pending access to the shared data": [
         "Чаканне доступу да абагуленых даных"
       ],
@@ -1999,6 +2098,9 @@
       ],
       "Pinned (${ items.length })": [
         "Замацавана (${ items.length })"
+      ],
+      "Recommended actions": [
+        "Рэкамендаваныя дзеянні"
       ],
       "Restore this version?": [
         "Аднавіць гэту версію?"
@@ -2042,8 +2144,17 @@
       "Vault shared with you": [
         "Сховішча абагуленае з вамі"
       ],
+      "What is an alias?": [
+        "Што такое псеўданім?"
+      ],
+      "What is the dark web?": [
+        "Што такое цёмная сетка?"
+      ],
       "Why ${ PASS_APP_NAME }?": [
         "Чаму менавіта ${ PASS_APP_NAME }?"
+      ],
+      "Your exposed information": [
+        "Вашы скампраметаваныя звесткі"
       ],
       "Your vault is empty": [
         "Ваша сховішча нічога не змяшчае"

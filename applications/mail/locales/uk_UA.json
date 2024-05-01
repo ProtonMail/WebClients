@@ -1461,6 +1461,9 @@
       ]
     },
     "bf2023: Action": {
+      "**Add our encrypted password manager** for only ${ price }": [
+        "**Додайте наш менеджер зашифрованих паролів** всього за ${ price }"
+      ],
       "Add ${ PASS_APP_NAME }": [
         "Додати ${ PASS_APP_NAME }"
       ],
@@ -1469,6 +1472,9 @@
       ],
       "Remove ${ PASS_APP_NAME }": [
         "Вилучити ${ PASS_APP_NAME }"
+      ],
+      "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
+        "Підпишіться на 15 місяців і отримайте наш **шифрований менеджер паролів** всього за ${ priceNoSuffix } додатково на місяць!"
       ]
     },
     "bf2023: Deal details": {
@@ -1516,6 +1522,17 @@
         "Гарантія повернення коштів протягом 30 днів"
       ]
     },
+    "bf2023: renew": {
+      "the first month": [
+        "перший місяць"
+      ],
+      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
+        "Спеціальна знижена ціна ${ discountedPrice } діє протягом ${ discountedMonths }. Після цього його буде автоматично продовжено за зниженою ціною ${ nextPrice } на ${ nextMonths }. Ви можете скасувати в будь-який час."
+      ],
+      "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
+        "Спеціальна знижена ціна ${ discountedPrice } діє протягом першого місяця. Після цього він буде автоматично продовжуватися за ціною ${ nextPrice } щомісяця. Ви можете скасувати в будь-який час."
+      ]
+    },
     "bf2023: Tooltip": {
       "Access blocked content and browse privately. Includes 3,000+ servers across 65+ countries, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "Отримайте доступ до заблокованого вмісту та переглядайте сторінки приватно. Містить понад 3000 серверів у 65+ країнах, найвищі швидкості VPN, доступ до всесвітніх стримінгових сервісів, блокувальник шкідливих програм і реклами, швидке завантаження BitTorrent тощо."
@@ -1554,6 +1571,9 @@
         "${ n } місяці",
         "${ n } місяців",
         "${ n } місяців"
+      ],
+      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
+        "Поновлюється автоматично за ціною ${ renewPrice }, протягом ${ renewalLength }"
       ]
     },
     "Billing cycle option": {
@@ -8342,6 +8362,9 @@
       ],
       "Limited-time offer, expires April 2 2024": [
         "Термін дії обмеженої пропозиції закінчується 2 квітня 2024 року"
+      ],
+      "Your subscription will auto-renew on ${ renewTime } at ${ renewablePrice }, cancel anytime": [
+        "Ваша підписка буде автоматично поновлена в ${ renewTime } за ${ renewablePrice }, скасувати її можна будь-коли"
       ]
     },
     "mailtrial2024: Title": {
@@ -8708,6 +8731,9 @@
       "1 user": [
         "1 користувач"
       ],
+      "24/7 account management support": [
+        "Підтримка управління обліковими записами 24/7"
+      ],
       "99.95% SLA": [
         "99.95% SLA"
       ],
@@ -8716,6 +8742,9 @@
       ],
       "Admin console": [
         "Консоль адміністратора"
+      ],
+      "Administration Panel": [
+        "Панель адміністрування"
       ],
       "Advanced sharing security": [
         "Розширені можливості спільного доступу"
@@ -8771,6 +8800,9 @@
       "Data breach monitoring (coming soon)": [
         "Відстеження витоків даних (скоро з'явиться)"
       ],
+      "Desktop app": [
+        "Настільна програма"
+      ],
       "DNS leak prevention": [
         "Захист від витоку DNS"
       ],
@@ -8812,6 +8844,9 @@
       ],
       "GDPR data processing agreement": [
         "Угода про обробку даних GDPR"
+      ],
+      "Group management (coming soon)": [
+        "Групове керування (скоро)"
       ],
       "Hide-my-email aliases": [
         "Псевдоніми Hide-my-email"
@@ -8869,6 +8904,9 @@
       ],
       "Router support": [
         "Підтримка маршрутизатора"
+      ],
+      "Schedule and snooze emails for any time": [
+        "Запланувати та відкладати електронні листи на будь-який час"
       ],
       "Schedule messages at any time": [
         "Заплануйте надсилання повідомлень в будь-який час"
@@ -8939,6 +8977,9 @@
       "Unlimited shared vaults with access permissions": [
         "Необмежені спільні сховища з дозволами доступу"
       ],
+      "Unlimited vault sharing": [
+        "Необмежене поширення сховища"
+      ],
       "Unlimited vaults": [
         "Необмежена кількість сховищ"
       ],
@@ -8999,6 +9040,9 @@
       "Advanced network security and access management with dedicated secure Gateways": [
         "Розширена мережева безпека та управління доступом за допомогою спеціальних захищених мережевих шлюзів"
       ],
+      "Advanced protection for teams that goes beyond industry standards.": [
+        "Удосконалений захист для команд, який виходить за рамки галузевих стандартів."
+      ],
       "All ${ BRAND_NAME } apps and their premium features": [
         "Всі програми від ${ BRAND_NAME } з преміальними функціями"
       ],
@@ -9010,6 +9054,9 @@
       ],
       "Early access to new apps and features": [
         "Ранній доступ до нових програм і функцій"
+      ],
+      "Essential protection and secure collaboration for unlimited users.": [
+        "Необхідний захист і безпечна співпраця для необмеженої кількості користувачів."
       ],
       "For next-level password management and identity protection.": [
         "Для вдосконаленого керування паролями та захисту особистих даних."
@@ -9088,6 +9135,21 @@
       ]
     },
     "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }: Захистіть свій розклад за допомогою наскрізного шифрування. Включає підтримку користувацьких календарів, спільний доступ до календарів тощо."
+      ],
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: Захистіть свої файли за допомогою зашифрованого хмарного сховища. Включає історію версій, зашифрований обмін файлами та багато іншого."
+      ],
+      "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
+        "${ MAIL_APP_NAME }: Захистіть свої електронні листи за допомогою наскрізного шифрування. Включає підтримку власних поштових доменів, 15 адрес електронної пошти, необмежену кількість псевдонімів для hide-my-email та багато іншого."
+      ],
+      "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
+        "${ VPN_APP_NAME }: Отримуйте доступ до заблокованого контенту та переглядайте його в приватному режимі. Включає ${ serversAndCountries }, найвищу швидкість VPN, доступ до світових потокових сервісів, захист від шкідливих програм і реклами, швидке завантаження BitTorrent та багато іншого."
+      ],
+      "Access ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME } from the convenience of your desktop": [
+        "Доступ до ${ MAIL_APP_NAME } та ${ CALENDAR_APP_NAME } зі свого зручного робочого столу"
+      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Доступ звідусіль до сервісів потокової трансляції, включно з Netflix, Disney+ та Prime Video"
       ],
@@ -9100,8 +9162,17 @@
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
         "Дає вам змогу встановлювати автоматичні відповіді для вхідних повідомлень"
       ],
+      "Automatically clear out messages older than 30 days from Trash and Spam": [
+        "Автоматично очищати повідомлення, яким більше ніж 30 днів, від сміття та спаму"
+      ],
+      "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
+        "Автоматично пересилати електронні листи, надіслані на ваш обліковий запис ${ MAIL_APP_NAME }, на будь-яку іншу адресу електронної пошти."
+      ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "Масові та програмовані розсилки листів наразі не підтримуються. Для таких потреб ми радимо користуватися окремою службою електронної пошти від інших постачальників."
+      ],
+      "Choose custom times to be reminded about an email or for your message to arrive": [
+        "Виберіть власний час для нагадування про електронний лист або прибуття повідомлення"
       ],
       "Control access to your shared files by adding password protection and link expiration dates": [
         "Контролюйте спільний доступ до файлів, додаючи захист паролем або термін дії посилання"
@@ -9148,6 +9219,9 @@
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Мітки – це прості позначки, які можна застосовувати до повідомлень для спрощення пошуку чи створення фільтрів"
       ],
+      "Like a folder, a vault is a convenient way to organize your items": [
+        "Як і тека, сховище - це зручний спосіб впорядкувати ваші речі"
+      ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
         "Заблокуйте ресурси компанії від загального доступу в інтернеті та зробіть їх доступними лише через ваші приватні мережеві шлюзи"
       ],
@@ -9156,6 +9230,9 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "Отримуйте допомогу від команди підтримки клієнтів ${ BRAND_NAME } упродовж 24 годин після запиту в робочі дні"
+      ],
+      "One VPN connection allows one device to connect to ${ VPN_APP_NAME } at any given time. For instance, to connect a phone and a laptop to ${ VPN_APP_NAME } at the same time, you need two VPN connections.": [
+        "Одне VPN-з'єднання дозволяє одному пристрою підключатися до ${ VPN_APP_NAME } в будь-який момент часу. Наприклад, щоб під'єднати телефон і ноутбук до ${ VPN_APP_NAME } одночасно, вам знадобиться два VPN-з'єднання."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Можливість перегляду не приватних вхідних скриньок користувача, включно з усіма повідомленнями та подробицями контактів"
@@ -9187,6 +9264,9 @@
       "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
         "Захистіть свою родину від небезпечних вебсайтів та отримайте доступ до наших швидкісних VPN-серверів, щоб переглядати улюблені матеріали"
       ],
+      "Provides the highest level of account security protection and specialist support": [
+        "Забезпечує найвищий рівень захисту облікового запису та підтримку спеціалістів"
+      ],
       "Quickly set up out-of-office messages": [
         "Швидко налаштовуйте автоматичні відповіді"
       ],
@@ -9217,11 +9297,20 @@
       "Share your files or folders with anyone by using secure, shareable links": [
         "Діліться своїми файлами чи теками з ким завгодно з використанням надійних посилань для спільного доступу"
       ],
+      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }.": [
+        "SMTP дозволяє стороннім сервісам або пристроям надсилати електронну пошту через ${ MAIL_APP_NAME }."
+      ],
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "Спеціально розроблений NetShield захищає ваш пристрій та пришвидшує користування інтернетом, блокуючи рекламу, стеження та зловмисні програми"
       ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "Місце для зберігання ділиться між ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } та ${ PASS_APP_NAME }"
+      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
         "Обсяг сховища використовується спільно для ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } та ${ DRIVE_APP_NAME }. Адміністратори можуть призначати різний обсяг сховища користувачам своєї організації"
+      ],
+      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "Простір для зберігання даних ділиться між користувачами через ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } та ${ PASS_APP_NAME }"
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Підтримка протоколів обміну даними, як-от BitTorrent"
@@ -9492,6 +9581,20 @@
         "Ви"
       ]
     },
+    "passwordless": {
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Неприватні користувачі можуть бути підвищені до адміністратора, якщо у них є ключі налаштування"
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "Ключ організації повинен бути активований для надання прав адміністратора"
+      ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Приватні користувачі можуть бути підвищені до адміністратора, коли вони вперше увійшли в систему"
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "Ви повинні приватизувати всіх користувачів перед створенням нового ключа організації"
+      ]
+    },
     "Payment method option": {
       "Credit/debit card": [
         "Банківська картка"
@@ -9507,8 +9610,14 @@
       "Card number": [
         "Номер картки"
       ],
+      "CVC": [
+        "CVC"
+      ],
       "MM/YY": [
         "ММ/РР"
+      ],
+      "Timeout exceeded": [
+        "Перевищено час очікування"
       ]
     },
     "Payments.Error": {
@@ -9517,6 +9626,15 @@
       ],
       "Invalid expiration date": [
         "Недійсний термін дії картки"
+      ],
+      "Invalid security code": [
+        "Невірний код безпеки"
+      ],
+      "Something went wrong. Please try again later.": [
+        "Щось пішло не так. Будь ласка, спробуйте ще раз пізніше."
+      ],
+      "We are unable to authenticate your payment method. Please choose a different payment method or try again.": [
+        "Ми не можемо підтвердити ваш спосіб оплати. Будь ласка, оберіть інший спосіб оплати або спробуйте ще раз."
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Вашу картку відхилено. Спробуйте скористатися іншою картою або зверніться до свого банку, щоб авторизувати платіж."
@@ -9668,6 +9786,12 @@
       ]
     },
     "plan customizer, ips": {
+      "please ${ contactHref } our Sales team.": [
+        "будь ласка, ${ contactHref } наш відділ продажів."
+      ],
+      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
+        "Виберіть кількість IP-адрес, які ви хочете включити у свій план. Кожен додатковий IP коштує ${ price }."
+      ],
       "Should you need more than ${ maxIPs } IP, ": [
         "Якщо потребуєте більше ніж ${ maxIPs } IP-адресу, ",
         "Якщо потребуєте більше ніж ${ maxIPs } IP-адреси, ",
@@ -10445,9 +10569,6 @@
       "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
         "Зручно запускайте ${ MAIL_APP_NAME } прямо зі свого робочого столу."
       ],
-      "Create hide-my-email aliases and keep track of them here.": [
-        "Створюйте псевдоніми hide-my-email і відстежуйте їх тут."
-      ],
       "Email tracking protection": [
         "Захист від стеження електронної пошти"
       ],
@@ -10513,6 +10634,17 @@
         "Залишити ${ currentPlanName }"
       ]
     },
+    "storage_split: feature": {
+      "Storage for data generated by ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }": [
+        "Сховище для даних згенеровано завдяки ${ BRAND_NAME }${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }${ CONTACTS_SHORT_APP_NAME } та ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Up to ${ totalStorageSize } Drive storage": [
+        "Аж до ${ totalStorageSize } сховища Диска"
+      ],
+      "Up to ${ totalStorageSize } Mail storage": [
+        "Аж до ${ totalStorageSize } сховища Пошти"
+      ]
+    },
     "storage_split: info": {
       "${ app } storage": [
         "${ app } сховища"
@@ -10525,6 +10657,9 @@
       ],
       "contact your administrator": [
         "зверніться до адміністратора"
+      ],
+      "For all ${ BRAND_NAME } services": [
+        "Для всіх ${ BRAND_NAME } сервісів"
       ],
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Для подальшого завантаження й синхронізації файлів звільніть місце або передплатіть тарифний план, щоб збільшити сховище."
@@ -10540,6 +10675,9 @@
       ],
       "upgrade for more storage": [
         "збільште сховище, передплативши тарифний план"
+      ],
+      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
+        "Ми додамо кредити за час, що залишився, на ваш ${ BRAND_NAME } Рахунок."
       ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "У вас залишився **${ daysRemaining }** день до кінця дії вашого тарифного плану **${ currentPlanName }**.",
@@ -10567,11 +10705,35 @@
       ],
       "Your storage is full. ${ cta }.": [
         "Ваше сховище заповнене. ${ cta }."
+      ],
+      "You’ll lose access to ${ gb } storage and priority support.": [
+        "Ви втратите доступ до сховища ${ gb } і пріоритетну підтримку."
+      ],
+      "You’ll lose access to additional storage, email addresses, aliases, calendars, as well as priority support.": [
+        "Ви втратите доступ до додаткового сховища, адрес електронної пошти, псевдонімів, календарів, а також до пріоритетної підтримки."
+      ],
+      "You’ll lose access to the highest VPN speed, protection for 10 devices, high-speed streaming, ad-blocker and malware protection, as well as priority support.": [
+        "Ви втратите доступ до найвищої швидкості VPN, захисту для 10 пристроїв, високошвидкісного потокового передавання даних, блокувальника реклами та захисту від шкідливих програм, а також пріоритетної підтримки."
+      ],
+      "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
+        "Ви втратите доступ до необмеженої кількості даних входу і нотаток, необмеженої кількості псевдонімів для hide-my-email, 20 сховищ, а також до пріоритетної підтримки."
       ]
     },
     "Subscription": {
       "Billed every 2 years": [
         "Сплачується кожні 2 роки"
+      ],
+      "Billed for 15 months": [
+        "Рахунок виставлено за 15 місяців"
+      ],
+      "Billed for 18 months": [
+        "Рахунок виставлено за 18 місяців"
+      ],
+      "Billed for 3 months": [
+        "Рахунок виставлено за 3 місяці"
+      ],
+      "Billed for 30 months": [
+        "Рахунок виставлено за 30 місяців"
       ],
       "Billed monthly": [
         "Сплачується щомісяця"
@@ -10638,6 +10800,11 @@
     "Subscription price": {
       "For": [
         "За"
+      ]
+    },
+    "subscription reminder": {
+      "Desktop app": [
+        "Настільна програма"
       ]
     },
     "Subscription renewal state": {
@@ -11992,6 +12159,11 @@
         "У вас немає контактів для експорту"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Безпечні входи на всіх ваших пристроях. Включає необмежену кількість псевдонімів, спільний доступ, інтегрований 2FA та багато іншого."
+      ]
+    },
     "Tor out of date": {
       "stable release": [
         "стабільна версія"
@@ -12060,6 +12232,15 @@
       ]
     },
     "vpn_2024: renew": {
+      "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
+        "Підписка авто подовжується кожен 1 місяць. Дата наступної вашої оплати становить 1 місяць."
+      ],
+      "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
+        "Підписка авто подовжується кожен 3 місяці. Дата наступної вашої оплати становить 3 місяці."
+      ],
+      "You'll then be billed every 12 months at ${ renewPrice }.": [
+        "Вам тоді буде виставлено рахунок кожні 12 місяців по ${ renewPrice }."
+      ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Ваша підписка буде автоматично поновлюватися через ${ cycle } місяць.",
         "Ваша підписка буде автоматично поновлюватися через ${ cycle } місяців.",
@@ -12073,6 +12254,11 @@
       ],
       "No ads": [
         "Без реклами"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Доступ до захищених основних серверів, швидке завантаження P2P/BitTorrent, Tor через VPN та багато іншого."
       ]
     },
     "Warning": {
