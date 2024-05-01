@@ -1,6 +1,7 @@
 import type { Action, Reducer } from 'redux';
 
 import { itemEq } from '@proton/pass/lib/items/item.predicates';
+import { AddressType } from '@proton/pass/lib/monitor/types';
 import {
     bootSuccess,
     draftDiscard,
@@ -39,7 +40,7 @@ import {
     itemTrashSuccess,
     itemUnpinSuccess,
     itemUsedSync,
-    resolveAliasBreach,
+    resolveAddressMonitor,
     restoreTrashProgress,
     setItemFlags,
     shareDeleteSync,
@@ -325,9 +326,12 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
             return partialMerge(state, { [shareId]: { [itemId]: item } });
         }
 
-        if (resolveAliasBreach.success.match(action)) {
-            const { shareId, itemId } = action.payload;
-            return partialMerge(state, { [shareId]: { [itemId]: { flags: 0 } } });
+        if (resolveAddressMonitor.success.match(action)) {
+            const dto = action.payload;
+            if (dto.type === AddressType.ALIAS) {
+                const { shareId, itemId } = dto;
+                return partialMerge(state, { [shareId]: { [itemId]: { flags: 0 } } });
+            }
         }
 
         return state;
