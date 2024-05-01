@@ -46,14 +46,12 @@ import breachesCustom from '@proton/pass/store/sagas/monitor/breaches.custom.sag
 import breachesProton from '@proton/pass/store/sagas/monitor/breaches.proton.saga';
 import breaches from '@proton/pass/store/sagas/monitor/breaches.saga';
 import customAddressAdd from '@proton/pass/store/sagas/monitor/custom-address.add.saga';
+import customAddressDelete from '@proton/pass/store/sagas/monitor/custom-address.delete';
+import customAddressResend from '@proton/pass/store/sagas/monitor/custom-address.resend';
 import customAddressVerify from '@proton/pass/store/sagas/monitor/custom-address.verify';
-import customAddressDelete from '@proton/pass/store/sagas/monitor/delete.custom.saga';
+import monitorAddressResolve from '@proton/pass/store/sagas/monitor/monitor-address.resolve.saga';
 import monitorAddressToggle from '@proton/pass/store/sagas/monitor/monitor-address.toggle.saga';
 import monitorToggle from '@proton/pass/store/sagas/monitor/monitor-toggle.saga';
-import resendCustom from '@proton/pass/store/sagas/monitor/resend.custom.saga';
-import resolveAlias from '@proton/pass/store/sagas/monitor/resolve.alias.saga';
-import resolveCustom from '@proton/pass/store/sagas/monitor/resolve.custom.saga';
-import resolveProton from '@proton/pass/store/sagas/monitor/resolve.proton.saga';
 import sentinelToggle from '@proton/pass/store/sagas/monitor/sentinel-toggle.saga';
 import organizationSettingsEdit from '@proton/pass/store/sagas/organization/organization-settings-edit.saga';
 import organizationSettingsGet from '@proton/pass/store/sagas/organization/organization-settings.saga';
@@ -86,6 +84,7 @@ export function* rootSaga(options: RootSagaOptions) {
             cache,
             customAddressAdd,
             customAddressDelete,
+            customAddressResend,
             customAddressVerify,
             events,
             featureFlags,
@@ -112,6 +111,7 @@ export function* rootSaga(options: RootSagaOptions) {
             itemsImport,
             itemTrash,
             itemUnpin,
+            monitorAddressResolve,
             monitorAddressToggle,
             monitorToggle,
             newUserInvitePromote,
@@ -123,10 +123,6 @@ export function* rootSaga(options: RootSagaOptions) {
             organizationSettingsEdit,
             organizationSettingsGet,
             reportProblem,
-            resendCustom,
-            resolveAlias,
-            resolveCustom,
-            resolveProton,
             sentinelToggle,
             sessionLockDisable,
             sessionLockEnable,
