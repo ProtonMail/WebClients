@@ -193,7 +193,8 @@ export class GpuLlmManager implements LlmManager {
 
         // Test if we can load webgpu
         try {
-            const navigator = globalThis.navigator as NavigatorGPU;
+            // TODO fix me
+            const navigator = globalThis.navigator as any;
             const adapter = await navigator.gpu.requestAdapter();
             if (!adapter) {
                 if (specs.userAgent.includes('Firefox')) {
