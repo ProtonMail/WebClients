@@ -1,4 +1,7 @@
 {
     "extends": "../../tsconfig.base.json",
-    "exclude": ["**/node_modules", "**/dist", "**/public", "**/.*/"]
+    "exclude": ["**/node_modules", "**/dist", "**/public", "**/.*/"],
+    "compilerOptions": {
+        "types": ["@webgpu/types", "@types/jest"]
+    }
 }
