@@ -26,7 +26,7 @@ const SharedWithMeToolbar = ({ items }: Props) => {
             <>
                 <PreviewButton selectedLinks={selectedItems} />
                 <DownloadButton selectedLinks={selectedItems} />
-                <Vr />
+                {selectedItems.length ? <Vr /> : null}
                 <DetailsButton selectedLinks={selectedItems} />
             </>
         );
@@ -36,7 +36,7 @@ const SharedWithMeToolbar = ({ items }: Props) => {
         <Toolbar className="py-1 px-2 toolbar--heavy toolbar--in-container">
             <div className="gap-2 flex flex-nowrap shrink-0">{renderSelectionActions()}</div>
             <span className="ml-auto flex flex-nowrap shrink-0">
-                <Vr className="hidden lg:flex mx-2" />
+                {selectedItems.length ? <Vr className="hidden lg:flex mx-2" /> : null}
                 <LayoutButton />
             </span>
         </Toolbar>
