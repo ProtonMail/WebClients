@@ -58,5 +58,10 @@ export const getCompatibilityList = () => {
             valid: isSSR || isGoodPrngAvailable(),
             text: 'Please update to a modern browser with support for PRNG.',
         },
+        {
+            name: 'BigInt',
+            valid: typeof BigInt !== 'undefined',
+            text: 'Please update to a modern browser with BigInt support',
+        },
     ];
 };
