@@ -188,6 +188,9 @@
       "Edit vault": [
         "금고 편집"
       ],
+      "Exclude from monitoring": [
+        "모니터링에서 제외"
+      ],
       "Export": [
         "내보내기"
       ],
@@ -232,6 +235,9 @@
       ],
       "Importing": [
         "가져오는 중"
+      ],
+      "Include in monitoring": [
+        "모니터링에 포함"
       ],
       "Invite others": [
         "다른 사용자 초대"
@@ -367,6 +373,9 @@
       ],
       "Saving passkey...": [
         "패스키 저장 중..."
+      ],
+      "See all": [
+        "모두 보기"
       ],
       "See members": [
         "회원 보기"
@@ -505,6 +514,9 @@
       "A checked box means the feature is disabled.": [
         "해당 체크박스가 이 기능이 비활성화 상태임을 의미합니다."
       ],
+      "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
+        "다크 웹 모니터링은 유료 요금제에서 이용할 수 있습니다. 업그레이드하는 즉시 접근할 수 있습니다."
+      ],
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
         "${ PASS_SHORT_APP_NAME } (자동 완성, 자동 제안, 자동 저장)의 특정 자동 기능을 실행해서는 안 되는 도메인 목록.${ infoText }"
       ]
@@ -635,6 +647,9 @@
       ],
       "Failed to unpin item": [
         "항목 고정 해제 실패"
+      ],
+      "Failed updating ${ PROTON_SENTINEL_NAME } setting": [
+        "${ PROTON_SENTINEL_NAME } 설정 업데이트에 실패했습니다."
       ],
       "File could not be parsed": [
         "파일을 분석할 수 없음."
@@ -869,6 +884,12 @@
       "${ PASS_APP_NAME } will suggest saving passkeys.": [
         "${ PASS_APP_NAME }에서 패스키 저장을 제안합니다."
       ],
+      "${ PROTON_SENTINEL_NAME } successfully disabled": [
+        "${ PROTON_SENTINEL_NAME }이 성공적으로 비활성화되었습니다"
+      ],
+      "${ PROTON_SENTINEL_NAME } successfully enabled": [
+        "${ PROTON_SENTINEL_NAME }이 성공적으로 활성화되었습니다"
+      ],
       "${ trialDaysLeft } day left": [
         "${ trialDaysLeft }일 남음"
       ],
@@ -998,6 +1019,15 @@
       "Editor": [
         "편집자"
       ],
+      "Email address successfully deleted from monitoring": [
+        "이메일 주소가 모니터링에서 삭제되었습니다"
+      ],
+      "Email address successfully excluded from monitoring": [
+        "이메일 주소가 모니터링에서 제외되었습니다"
+      ],
+      "Email address successfully included in monitoring": [
+        "이메일 주소가 모니터링에 포함되었습니다"
+      ],
       "Emptying trash...": [
         "휴지통 비우는 중..."
       ],
@@ -1091,6 +1121,12 @@
       "Item restored": [
         "항목이 복구되었습니다"
       ],
+      "Item successfully excluded from monitoring": [
+        "항목이 모니터링에서 제외되었습니다"
+      ],
+      "Item successfully included in monitoring": [
+        "항목이 모니터링에 포함되었습니다"
+      ],
       "Item successfully moved": [
         "항목을 성공적으로 이동했습니다."
       ],
@@ -1117,6 +1153,9 @@
       ],
       "me": [
         "나"
+      ],
+      "Monitoring settings successfully updated": [
+        "모니터링 설정이 업데이트되었습니다"
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "비밀번호 그 이상을 보호하다, ${ PASS_APP_NAME }는 이메일 별명을 통해 비밀번호와 개인 이메일 주소를 보호합니다. ${ MAIL_APP_NAME }의 같은 기술로, 데이터가 종단간 암호화되며 오직 당신만 접근 가능합니다."
@@ -1828,6 +1867,9 @@
       "Special characters (!&*)": [
         "특수 문자 (!&*)"
       ],
+      "Strong": [
+        "강함"
+      ],
       "Suffix": [
         "접미어"
       ],
@@ -1893,6 +1935,12 @@
       ],
       "View logs": [
         "로그 보기"
+      ],
+      "Vulnerable": [
+        "취약함"
+      ],
+      "Weak": [
+        "약함"
       ],
       "Website": [
         "웹 사이트"
@@ -2057,6 +2105,9 @@
       "${ PASS_APP_NAME } Settings": [
         "${ PASS_APP_NAME } 설정"
       ],
+      "${ PASS_SHORT_APP_NAME } monitor": [
+        "${ PASS_SHORT_APP_NAME } 모니터링"
+      ],
       "Auto-lock update": [
         "자동 잠금 업데이트"
       ],
@@ -2189,6 +2240,9 @@
       "Share with": [
         "공유 대상:"
       ],
+      "Stay safer online": [
+        "온라인 상에서 더욱 안전하게"
+      ],
       "Suggestions": [
         "제안"
       ],
@@ -2224,6 +2278,9 @@
       ],
       "Vault shared with you": [
         "나와 공유된 금고"
+      ],
+      "Weak password": [
+        "약한 비밀번호"
       ],
       "Welcome to your new password manager!": [
         "새로운 비밀번호 관리자에 오신 것을 환영해요!"

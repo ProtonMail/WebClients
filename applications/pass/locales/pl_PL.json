@@ -657,9 +657,6 @@
       "Failed to load item history": [
         "Nie udało się załadować historii"
       ],
-      "Failed to mark this address as resolved": [
-        "Nie udało się oznaczyć adresu jako rozwiązanego"
-      ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Przenoszenie wszystkich elementów z sejfu \"${ payload.content.name }\" nie powiodło się"
       ],
@@ -677,6 +674,9 @@
       ],
       "Failed to resend verification for custom email": [
         "Nie udało się wysłać kodu weryfikacji do niestandardowego adresu e-mail"
+      ],
+      "Failed to resolve breaches for this address": [
+        "Nie udało się oznaczyć wycieków dla tego adresu jako rozwiązane"
       ],
       "Failed to restore items from trash": [
         "Nie udało się przywrócić elementów z Kosza"
@@ -972,6 +972,9 @@
       ],
       "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
         "Aliasy z niestandardowymi domenami nie są monitorowane. Dodaj je jako niestandardowy adres e-mail do monitorowania."
+      ],
+      "All breaches for this address were resolved": [
+        "Wszystkie wycieki dla tego adresu zostały oznaczone jako rozwiązane"
       ],
       "All current breaches will be marked as resolved. In case of future data breaches, you'll be notified.": [
         "Wszystkie obecne wycieki zostaną oznaczone jako rozwiązane. W przypadku przyszłych wycieków danych zostaniesz powiadomiony."
@@ -1401,6 +1404,9 @@
       ],
       "Successfully synced all vaults": [
         "Wszystkie sejfy zostały zsynchronizowane"
+      ],
+      "Suggested": [
+        "Zalecane"
       ],
       "Switch to another vault or create an item in this vault": [
         "Wybierz, w którym sejfie utworzysz element"

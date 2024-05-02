@@ -101,6 +101,9 @@
       "Create alias": [
         "Стварыць псеўданім"
       ],
+      "Create an alias": [
+        "Стварыць псеўданім"
+      ],
       "Create card": [
         "Стварыць картку"
       ],
@@ -158,6 +161,15 @@
       "Edit vault": [
         "Рэдагаваць сховішча"
       ],
+      "Enable Dark Web Monitoring": [
+        "Уключыць Dark Web Monitoring"
+      ],
+      "Enable NetShield": [
+        "Уключыць NetShield"
+      ],
+      "Exclude from monitoring": [
+        "Выключыць з назірання"
+      ],
       "Export": [
         "Экспартаваць"
       ],
@@ -182,6 +194,9 @@
       "Get mobile apps": [
         "Атрымаць мабільныя праграмы"
       ],
+      "Get Pass Plus": [
+        "Атрымаць Pass Plus"
+      ],
       "Get Started": [
         "Пачаць працу"
       ],
@@ -199,6 +214,9 @@
       ],
       "Importing": [
         "Імпартаванне"
+      ],
+      "Include in monitoring": [
+        "Уключыць у назіранне"
       ],
       "Install extension": [
         "Усталяваць пашырэнне"
@@ -278,6 +296,12 @@
       "Pass for iOS": [
         "Pass для iOS"
       ],
+      "Pass Monitor": [
+        "Назіраць за Proton Pass"
+      ],
+      "Pause monitoring": [
+        "Прыпыніць назіранне"
+      ],
       "Pin item": [
         "Замацаваць элемент"
       ],
@@ -308,6 +332,9 @@
       "Resend code": [
         "Адправіць код яшчэ раз"
       ],
+      "Resend code (in ${ remaining }s)": [
+        "Адправіць код паўторна (праз ${ remaining } сек)"
+      ],
       "Resend invitation": [
         "Паўторна адправіць запрашэнне"
       ],
@@ -317,6 +344,9 @@
       "Restore item": [
         "Аднавіць элемент"
       ],
+      "Resume monitoring": [
+        "Аднавіць назіранне"
+      ],
       "Retry": [
         "Паўтарыць"
       ],
@@ -325,6 +355,9 @@
       ],
       "Saving": [
         "Захаванне"
+      ],
+      "See all": [
+        "Праглядзець усе"
       ],
       "See members": [
         "Паглядзець удзельнікаў"
@@ -387,10 +420,13 @@
         "Палепшыць зараз"
       ],
       "Upgrade now to share with more people": [
-        "Палепшыце, каб абагуліць з большай колькасцю людзей"
+        "Палепшыце, каб абагуліць з большай колькасцю карыстальнікаў"
       ],
       "Verify": [
         "Праверка"
+      ],
+      "View details": [
+        "Паглядзець падрабязнасці"
       ],
       "View history": [
         "Праглядзець гісторыю"
@@ -442,6 +478,62 @@
       ],
       "Expand": [
         "Разгарнуць"
+      ]
+    },
+    "Description": {
+      "${ total } other login uses the same password": [
+        "${ total } запіс уваходу выкарыстоўвае такі ж самы пароль",
+        "${ total } запісы ўваходу выкарыстоўваюць такі ж самы пароль",
+        "${ total } запісаў уваходу выкарыстоўваюць такі ж самы пароль",
+        "${ total } запісаў уваходу выкарыстоўваюць такі ж самы пароль"
+      ],
+      "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
+        "Псеўданімы электроннай пошты працуюць аналагічна адрасам электроннай пошты, але змяншаюць колькасць спама і захоўваюць ваш фактычны адрас электроннай пошты і асабістыя даныя схаванымі."
+      ],
+      "Change your passwords": [
+        "Змяненне вашага пароля"
+      ],
+      "Create unique passwords": [
+        "Стварэнне ўнікальнага пароля"
+      ],
+      "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
+        "Функцыя Dark Web Monitoring даступна з платным тарыфным планам. Палепшыце сваю падпіску, каб неадкладна атрымаць доступ да гэтай функцыі."
+      ],
+      "Get notified if your email, password or other personal data was leaked.": [
+        "Атрымліваць апавяшчэнне, калі адбываецца ўцечка вашай электроннай пошты, пароля або іншых асабістых даных."
+      ],
+      "Increase your security": [
+        "Павелічэнне вашай бяспекі"
+      ],
+      "It would be more secure to set up 2FA for this account.": [
+        "Будзе больш бяспечна наладзіць 2ФА для гэтага ўліковага запісу."
+      ],
+      "Keep your info more secure and private with these guides and tips.": [
+        "Захоўвайце свае звесткі больш бяспечна і прыватна з дапамогай гэтых дапаможнікаў і парад."
+      ],
+      "NetShield is an ad-blocking feature from ${ VPN_APP_NAME } that protects your device from ads, trackers, and malware. ": [
+        "NetShield - гэта функцыя блакіроўкі рэкламы ад ${ VPN_APP_NAME }, якая абараняе вашу прыладу ад рэкламы, праграм сачэння і шкодных праграм. "
+      ],
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "Наша перадавое рашэнне па бяспецы на базе штучнага інтэлекту распрацавана для карыстальнікаў, якія шукаюць дадатковую абарону для сваіх уліковых запісаў. ${ learnMoreLink }"
+      ],
+      "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
+        "Пачаць назіранне за ўцечкай даных звязаных уліковых запісаў, якія створаны з дапамогай вашага адраса электроннай пошты і вашых псеўданімаў hide-my-email."
+      ],
+      "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
+        "Цёмная сетка - гэта схаваная частка інтэрнэту, дзе знаходзяцца скрадзеныя асабістыя звесткі, якія можна купіць або прадаць."
+      ],
+      "These items remain at risk": [
+        "Гэтыя элементы застаюцца ў зоне рызыкі"
+      ],
+      "This account is vulnerable, visit the service and change your password.": [
+        "Гэты ўліковы запіс з'яўляецца ўразлівым. Наведайце сэрвіс і змяніце пароль."
+      ],
+      "Your email addresses were leaked in at least 1 data breach.": [
+        "Ваш адрас электроннай пошты выяўлены прынамсі ў 1 уцечцы даных."
+      ],
+      "Your personal info was leaked in a data breach of a third-party service.": [
+        "Адбылася ўцечка вашых асабістых звестак у выніку ўзлому старонняга сэрвісу."
       ]
     },
     "Error": {
@@ -535,6 +627,12 @@
       "Failed resending invite.": [
         "Збой паўторнай адпраўкі запрашэння"
       ],
+      "Failed to add email address": [
+        "Не ўдалося дадаць адрас электроннай пошты"
+      ],
+      "Failed to delete email address from monitoring": [
+        "Не ўдалося выдаліць адрас электроннай пошты з назірання"
+      ],
       "Failed to delete selected items": [
         "Не ўдалося выдаліць выбраныя элементы"
       ],
@@ -543,6 +641,15 @@
       ],
       "Failed to edit user's access.": [
         "Збой рэдагавання доступу карыстальніка."
+      ],
+      "Failed to load breaches": [
+        "Не ўдалося загрузіць парушэнні"
+      ],
+      "Failed to load breaches for this address": [
+        "Не ўдалося загрузіць парушэнні для гэтага адраса"
+      ],
+      "Failed to load breaches for this email alias": [
+        "Не ўдалося загрузіць парушэнні для гэтага псеўданіма электроннай пошты"
       ],
       "Failed to load item history": [
         "Не ўдалося загрузіць элементы гісторыі"
@@ -562,6 +669,12 @@
       "Failed to remove user's access.": [
         "Збой выдалення доступу карыстальніка."
       ],
+      "Failed to resend verification for custom email": [
+        "Не ўдалося паўторна адправіць код праверкі для карыстальніцкай электроннай пошты"
+      ],
+      "Failed to resolve breaches for this address": [
+        "Не ўдалося вырашыць парушэнні для гэтага адраса"
+      ],
       "Failed to restore items from trash": [
         "Не ўдалося аднавіць элементы са сметніцы"
       ],
@@ -570,6 +683,21 @@
       ],
       "Failed to unpin item": [
         "Не ўдалося адмацаваць элемент"
+      ],
+      "Failed to update monitoring settings": [
+        "Не ўдалося абнавіць налады назірання."
+      ],
+      "Failed to verify email address": [
+        "Не ўдалося праверыць адрас электроннай пошты"
+      ],
+      "Failed updating ${ PROTON_SENTINEL_NAME } setting": [
+        "Збой абнаўлення налад ${ PROTON_SENTINEL_NAME }"
+      ],
+      "Failed updating monitor flag of the item": [
+        "Збой абнаўлення сцяга назірання элемента"
+      ],
+      "Failed updating monitoring status for this email address": [
+        "Збой абнаўлення статусу назірання для гэтага адраса электроннай пошты"
       ],
       "File could not be parsed": [
         "Не атрымалася прааналізаваць файл"
@@ -706,6 +834,20 @@
         "Нешта пайшло не так"
       ]
     },
+    "Feature": {
+      "Dark Web Monitoring": [
+        "Dark Web Monitoring"
+      ],
+      "Integrated 2FA authenticator": [
+        "Інтэграваны аўтэнтыфікатар 2ФА"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Неабмежаваная колькасць псеўданімаў hide-my-email"
+      ],
+      "Vault sharing (up to ${ MAX_VAULT_MEMBERS } people)": [
+        "Абагуленне сховішча (максімальная колькасць карыстальнікаў: ${ MAX_VAULT_MEMBERS })"
+      ]
+    },
     "file size format": {
       "byte": [
         "байт",
@@ -823,6 +965,12 @@
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } запатрабуе ваш пароль ${ BRAND_NAME } для доступу да даных па-за сеткай."
       ],
+      "${ PROTON_SENTINEL_NAME } successfully disabled": [
+        "${ PROTON_SENTINEL_NAME } паспяхова адключана"
+      ],
+      "${ PROTON_SENTINEL_NAME } successfully enabled": [
+        "${ PROTON_SENTINEL_NAME } паспяхова ўключана"
+      ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "Паспрабуйце прэміяльныя функцыі праграмы на працягу 7 дзён бясплатна. Толькі на працягу першага тыдня выкарыстання ${ BRAND_NAME }."
       ],
@@ -928,6 +1076,15 @@
       "email": [
         "электронная пошта"
       ],
+      "Email address successfully deleted from monitoring": [
+        "Адрас электроннай пошты паспяхова выдалены з назірання"
+      ],
+      "Email address successfully excluded from monitoring": [
+        "Адрас электроннай пошты паспяхова выключаны з назірання"
+      ],
+      "Email address successfully included in monitoring": [
+        "Адрас электроннай пошты паспяхова ўключаны ў назіранне"
+      ],
       "Emptying trash...": [
         "Ачышчэнне сметніцы..."
       ],
@@ -995,7 +1152,7 @@
         "Запрашэнне адпраўлена"
       ],
       "Invite specific people and set the right permissions.": [
-        "Запрасіце пэўных людзей і задайце правы доступу."
+        "Запрасіце пэўных карыстальнікаў і задайце правы доступу."
       ],
       "Invite successfully removed": [
         "Запрашэнне паспяхова выдалена"
@@ -1074,6 +1231,9 @@
       ],
       "Monitor accounts": [
         "Назіранне за ўліковымі запісамі"
+      ],
+      "Monitoring settings successfully updated": [
+        "Налады назірання паспяхова абноўлены"
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "Больш, чым менеджар пароляў. ${ PASS_APP_NAME } абараняе ваш пароль і ваш асабісты адрас электроннай пошты з дапамогай псеўданімаў электроннай пошты. Распрацаваны на падставе тэхналогіі, якая ляжыць у аснове ${ MAIL_APP_NAME }. Вашы даныя зашыфраваны скразным метадам і даступны толькі вам."
@@ -1274,7 +1434,7 @@
         "Налада адключана на ўзроўні арганізацыі"
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
-        "Сховішча пакуль не з'яўляецца агульнадаступным. Запрасіце людзей, каб абагуліць яго з іншымі."
+        "Сховішча пакуль не з'яўляецца агульнадаступным. Запрасіце карыстальнікаў, каб абагуліць яго з іншымі."
       ],
       "This version will be added to the history as the newest version.": [
         "Гэта версія будзе дададзена ў гісторыю як самая новая."
@@ -1391,6 +1551,12 @@
         "${ config.options.wordCount } словы",
         "${ config.options.wordCount } слоў",
         "${ config.options.wordCount } слоў"
+      ],
+      "${ usageCount } login": [
+        "${ usageCount } запіс уваходу",
+        "${ usageCount } запісы ўваходу",
+        "${ usageCount } запісаў уваходу",
+        "${ usageCount } запісаў уваходу"
       ],
       "1 hour": [
         "1 гадзіна"
@@ -1924,6 +2090,9 @@
       "Full Name": [
         "Поўнае імя"
       ],
+      "me@example.com": [
+        "ya@pryklad.by"
+      ],
       "MM/YY": [
         "ММ/ГГ"
       ],
@@ -1985,6 +2154,18 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } addresses": [
+        "Адрасы ${ BRAND_NAME }"
+      ],
+      "${ PASS_SHORT_APP_NAME } Monitor": [
+        "Назіранне ${ PASS_SHORT_APP_NAME }"
+      ],
+      "${ PASS_SHORT_APP_NAME } monitor": [
+        "Назіранне ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Account protection": [
+        "Абарона ўліковага запісу"
+      ],
       "Auto-lock update": [
         "Абнаўленне аўтаблакіравання"
       ],
@@ -2005,6 +2186,12 @@
       ],
       "Current version": [
         "Бягучая версія"
+      ],
+      "Custom addresses": [
+        "Карыстальніцкія адрасы"
+      ],
+      "Custom emails": [
+        "Карыстальніцкія адрасы электроннай пошты"
       ],
       "Delete vault \"${ vaultName }\" ?": [
         "Выдаліць сховішча \"${ vaultName }\"?"
@@ -2027,11 +2214,17 @@
       "Enter your PIN": [
         "Увядзіце свой PIN"
       ],
+      "Excluded items": [
+        "Выключаныя элементы"
+      ],
       "Get Started": [
         "Пачаць працу"
       ],
       "Grant permissions": [
         "Даць дазволы"
+      ],
+      "Hide-my-email aliases": [
+        "Псеўданімы Hide-my-email"
       ],
       "History": [
         "Гісторыя"
@@ -2066,6 +2259,9 @@
       "Members": [
         "Удзельнікі"
       ],
+      "Missing 2FA": [
+        "Адсутнічае 2ФА"
+      ],
       "Modified": [
         "Зменена"
       ],
@@ -2078,8 +2274,14 @@
       "Move items?": [
         "Перамясціць элементы?"
       ],
+      "No insecure passwords": [
+        "Небяспечныя паролі адсутнічаюць"
+      ],
       "No items selected": [
         "Элементы не выбраны"
+      ],
+      "No reused passwords": [
+        "Паўторна выкарыстаныя паролі адсутнічаюць"
       ],
       "Our welcome gift to you": [
         "Наш прывітальны падарунак для вас"
@@ -2089,6 +2291,9 @@
       ],
       "Password": [
         "Пароль"
+      ],
+      "Password Health": [
+        "Якасць пароля"
       ],
       "Pending access to the shared data": [
         "Чаканне доступу да абагуленых даных"
@@ -2104,6 +2309,15 @@
       ],
       "Restore this version?": [
         "Аднавіць гэту версію?"
+      ],
+      "Reused ${ count } time": [
+        "Паўторна выкарыстаны ${ count } раз",
+        "Паўторна выкарыстаны ${ count } разы",
+        "Паўторна выкарыстаны ${ count } разоў",
+        "Паўторна выкарыстаны ${ count } разоў"
+      ],
+      "Reused passwords": [
+        "Паўторна выкарыстаныя паролі"
       ],
       "Review and share": [
         "Прагляд і абагуленне"
@@ -2122,6 +2336,9 @@
       ],
       "Share with": [
         "Абагуліць з"
+      ],
+      "Stay safer online": [
+        "Заставайцеся абароненымі ў інтэрнэце"
       ],
       "Suggestions": [
         "Прапановы"
@@ -2143,6 +2360,12 @@
       ],
       "Vault shared with you": [
         "Сховішча абагуленае з вамі"
+      ],
+      "Want to learn more?": [
+        "Хочаце даведацца больш?"
+      ],
+      "Weak passwords": [
+        "Ненадзейныя паролі"
       ],
       "What is an alias?": [
         "Што такое псеўданім?"

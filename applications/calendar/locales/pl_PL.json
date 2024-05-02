@@ -453,11 +453,11 @@
       "Not now": [
         "Nie teraz"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Otwórz ustawienia ${ CALENDAR_APP_NAME }"
@@ -900,6 +900,11 @@
     "Attendee role": {
       "Optional": [
         "Opcjonalnie"
+      ]
+    },
+    "Badge": {
+      "New!": [
+        "Nowość!"
       ]
     },
     "bf2023: Action": {
@@ -2402,8 +2407,8 @@
       "Availability unknown": [
         "Dostępność jest nieznana"
       ],
-      "Boost efficiency and track your time by color-coding events by category or your energy levels. Get this and much more with a paid plan.": [
-        "Zwiększ wydajność i kontroluj swój czas, oznaczając wydarzenia kolorami. Ulepsz do płatnego planu, aby uzyskać dostęp do tej funkcji."
+      "Better organize your day, track your time, and prioritize tasks. Color-code your calendar with custom event colors.": [
+        "Zorganizuj lepiej dzień, śledź swój czas i ustaw priorytet dla zadań. Pokoloruj kalendarz za pomocą niestandardowych kolorów wydarzenia."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Trwa odszyfrowywanie kontaktów… Proces może potrwać kilka minut. Kiedy się zakończy, będziesz mógł pobrać plik z wyeksportowanymi kontaktami."
@@ -6547,6 +6552,9 @@
       "Organize items with multiple vaults": [
         "Organizuj elementy w wielu sejfach"
       ],
+      "Passkeys supported": [
+        "Klucze dostępu są obsługiwane"
+      ],
       "Password-protected Emails": [
         "Wiadomości chronione hasłem"
       ],
@@ -8272,11 +8280,14 @@
       ]
     },
     "Spotlight": {
-      "Color-coding is here!": [
-        "Oznaczanie kolorami jest tutaj!"
+      "Color-code your calendar to better organize your day, track your time, and more.": [
+        "Pokoloruj kalendarz, aby lepiej zorganizować dzień i śledzić swój czas."
       ],
       "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
         "Uruchamiaj ${ MAIL_APP_NAME } z pulpitu."
+      ],
+      "Custom event colors": [
+        "Niestandardowe kolory wydarzenia"
       ],
       "Get the desktop app": [
         "Pobierz aplikację desktopową"
@@ -8292,9 +8303,6 @@
       ],
       "Now you can see when participants are free to attend your meeting.": [
         "Możesz zobaczyć, kiedy uczestnicy mogą wziąć udział w spotkaniu."
-      ],
-      "With customizable event colors, you can color-code the chaos and conquer your day.": [
-        "Wydarzenia możesz oznaczyć kolorami, aby zapanować nad chaosem i swoim dniem."
       ]
     },
     "State": {

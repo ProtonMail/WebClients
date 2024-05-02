@@ -377,6 +377,9 @@
       "Saving passkey...": [
         "Menyimpan passkey..."
       ],
+      "See all": [
+        "Lihat semua"
+      ],
       "See members": [
         "Lihat anggota"
       ],
@@ -517,6 +520,9 @@
       "A checked box means the feature is disabled.": [
         "Boks yang tercentang merupakan tanda bahwa fitur tersebut sedang dinonaktifkan."
       ],
+      "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
+        "Pemantauan Dark Web tersedia dengan paket berbayar. Tingkatkan akun Anda untuk memperoleh akses ke fitur ini dengan segera."
+      ],
       "It would be more secure to set up 2FA for this account.": [
         "Akun ini akan lebih aman dengan pengaturan 2FA."
       ],
@@ -645,9 +651,6 @@
       "Failed to load item history": [
         "Riwayat item gagal dimuat"
       ],
-      "Failed to mark this address as resolved": [
-        "Alamat ini gagal ditandai sebagai telah terselesaikan"
-      ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Gagal memindahkan semua item dari \"${ payload.content.name }\""
       ],
@@ -665,6 +668,9 @@
       ],
       "Failed to resend verification for custom email": [
         "Verifikasi untuk email khusus gagal dikirim ulang"
+      ],
+      "Failed to resolve breaches for this address": [
+        "Kebocoran untuk alamat ini gagal diselesaikan"
       ],
       "Failed to restore items from trash": [
         "Item gagal dipulihkan dari sampah"
@@ -958,6 +964,9 @@
       ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Alias \"${ item.aliasEmail }\" dipindahkan ke sampah - alamat ini tidak akan lagi meneruskan email ke kotak surat Anda"
+      ],
+      "All breaches for this address were resolved": [
+        "Seluruh kebocoran untuk alamat ini telah terselesaikan"
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Semua item dari \"${ payload.content.name }\" berhasil dipindahkan"
@@ -1909,6 +1918,9 @@
       "Special characters (!&*)": [
         "Karakter khusus (!&*)"
       ],
+      "Strong": [
+        "Kuat"
+      ],
       "Suffix": [
         "Akhiran"
       ],
@@ -2144,6 +2156,9 @@
       "${ PASS_APP_NAME } Settings": [
         "Pengaturan ${ PASS_APP_NAME }"
       ],
+      "${ PASS_SHORT_APP_NAME } monitor": [
+        "Pemantauan ${ PASS_SHORT_APP_NAME }"
+      ],
       "Auto-lock update": [
         "Pembaruan kunci otomatis"
       ],
@@ -2224,6 +2239,9 @@
       ],
       "Members": [
         "Anggota"
+      ],
+      "Missing two-factor authentication": [
+        "Autentikasi dua faktor hilang"
       ],
       "Modified": [
         "Dimodifikasi"
@@ -2314,6 +2332,9 @@
       ],
       "Vault shared with you": [
         "Brankas yang dibagikan dengan Anda"
+      ],
+      "Weak password": [
+        "Kata sandi lemah"
       ],
       "Welcome to your new password manager!": [
         "Selamat datang di pengelola kata sandi Anda yang baru!"

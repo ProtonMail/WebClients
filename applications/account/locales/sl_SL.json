@@ -384,7 +384,7 @@
         "Prenesi našo vzorčno CSV datoteko."
       ],
       "Download recovery file": [
-        "Prenesite obnovitveno datoteko"
+        "Prenesite datoteko za obnovitev"
       ],
       "Download the ${ MAIL_APP_NAME } Export Tool": [
         "Prenesite ${ MAIL_APP_NAME } Export Tool"
@@ -999,7 +999,7 @@
         "Poskusi znova"
       ],
       "Try another method": [
-        "Poskusi z drugo metodo"
+        "Poskusi z drugim načinom"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Poskusite znova. Shranjevanje ni uspelo iz naslednjega razloga: ${ saveError }"
@@ -1026,7 +1026,7 @@
         "Posodobi"
       ],
       "Update recovery file": [
-        "Posodobi obnovitveno datoteko"
+        "Posodobi datoteko za obnovitev"
       ],
       "Update recovery phrase": [
         "Posodobi stavek za obnovitev"
@@ -1098,10 +1098,10 @@
         "Nična"
       ],
       "Void all recovery files": [
-        "Izničiti vse obnovitvene datoteke"
+        "Izničiti vse datoteke za obnovitev"
       ],
       "Void all recovery files?": [
-        "Izničiti vse obnovitvene datoteke?"
+        "Izničiti vse datoteke za obnovitev?"
       ],
       "Welcome": [
         "Dobrodošli"
@@ -1288,7 +1288,7 @@
         "${ nameToDisplay }: prejeto"
       ],
       "5 trackers removed": [
-        "5 sledilcev odstranjenih"
+        "5 sledilnikov odstranjenih"
       ],
       "Auto forwarded": [
         "Samodejno posredovano"
@@ -1319,7 +1319,7 @@
         "Neveljavna datoteka ICS"
       ],
       "Invalid method": [
-        "Neveljavna metoda"
+        "Neveljaven način"
       ],
       "Unsupported calendar component": [
         "Nepodprta komponenta koledarja"
@@ -4171,10 +4171,10 @@
         "Ime mape je predolgo. Izberite drugačno ime."
       ],
       "The keys in your recovery file can't be validated. Please contact support.": [
-        "Ključev v vaši obnovitveni datoteki ni mogoče preveriti. Obrnite se na podporo."
+        "Ključev v vaši datoteki za obnovitev ni mogoče preveriti. Obrnite se na podporo."
       ],
       "The keys in your recovery files can't be validated. Please upload individually for more information.": [
-        "Ključev v vaših obnovitvenih datotekah ni mogoče potrditi. Prosimo, naložite jih posamično za več informacij."
+        "Ključev v vaših datotekah za obnovitev ni mogoče potrditi. Prosimo, naložite jih posamično za več informacij."
       ],
       "The label name is invalid. Please choose a different name.": [
         "To ime oznake ni veljavno. Izberite drugačno ime."
@@ -6185,7 +6185,7 @@
         "S telefonsko številko lahko preverite samo en ${ BRAND_NAME } račun"
       ],
       "A recovery file lets you unlock and view your data after an account reset": [
-        "Obnovitvena datoteka vam omogoča odklepanje in ogled vaših podatkov po ponastavitvi računa."
+        "Datoteka za obnovitev vam omogoča odklepanje in ogled vaših podatkov po ponastavitvi računa."
       ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password": [
         "Obnovitvena fraza vam omogoča dostop do vašega računa in obnovitev vaših šifriranih sporočil, če pozabite svoje geslo."
@@ -6200,7 +6200,7 @@
         "Zaradi neplačanih računov je dostop do računa omejen. Obrnite se na svojega skrbnika."
       ],
       "account recovery and data recovery method": [
-        "način za obnovo računa in podatkov"
+        "način za obnovitev računa in podatkov"
       ],
       "account recovery method": [
         "način za obnovitev računa"
@@ -6212,7 +6212,7 @@
         "Račun je uspešno posodobljen"
       ],
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
-        "Aktivirajte vsaj eno metodo za obnovitev podatkov, da lahko v primeru izgube gesla še naprej dostopate do vsebine računa ${ BRAND_NAME }."
+        "Aktivirajte vsaj en način za obnovitev podatkov, da lahko v primeru izgube gesla še naprej dostopate do vsebine računa ${ BRAND_NAME }."
       ],
       "active": [
         "aktivno"
@@ -6680,7 +6680,7 @@
         "Prenesite našo predlogo CSV, izpolnite podrobnosti uporabnikov in nato naložite dokončano CSV datoteko, da ustvarite račune za te uporabnike."
       ],
       "Download recovery file": [
-        "Prenesite obnovitveno datoteko"
+        "Prenesite datoteko za obnovitev"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Prenesite svojo najljubšo aplikacijo in uživajte v svoji zasebnosti povsod."
@@ -7019,7 +7019,7 @@
         "Zdi se, da je nekaj vaših podatkov šifriranih in zaklenjenih."
       ],
       "it’s imperative": [
-        "to je nujno"
+        "je nujno"
       ],
       "I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${ referrerLink }": [
         "Uporabljam @ProtonMail in pomislil sem, da vam bo morda všeč. To je e-poštna storitev, ki varuje vašo zasebnost. Prijavite se prek te povezave in za en mesec dobite brezplačne premijske funkcije: ${ referrerLink }"
@@ -7427,7 +7427,7 @@
         "Prenos datoteke za obnovitev je opravljen."
       ],
       "Recovery files have been voided": [
-        "Obnovitvene datoteke so bile razveljavljene."
+        "Datoteke za obnovitev so bile razveljavljene."
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Podatki za obnovitev bodo ostali v tej napravi, razen če jih izbrišete."
@@ -7742,7 +7742,7 @@
         "To je fraza iz 12 besed, ki ste jo morali nastaviti."
       ],
       "This is a recovery file or encryption key you may have previously saved.": [
-        "To je obnovitvena datoteka ali šifrirni ključ, ki ste ga morda predhodno shranili."
+        "To je datoteka za obnovitev ali šifrirni ključ, ki ste ga morda predhodno shranili."
       ],
       "This is an encryption key you may have previously saved.": [
         "To je šifrirni ključ, ki ste ga morda že prej shranili."
@@ -7907,7 +7907,7 @@
         "Način z dvema gesloma uporablja ločeni gesli za prijavo in dešifriranje poštnega predala. To zagotavlja manjšo varnostno prednost v nekaterih situacijah, vendar večini uporabnikov priporočamo način z enim geslom. Za preklop na način z dvema gesloma najprej nastavite prijavno geslo, nato pa nastavite geslo za poštni predal."
       ],
       "Unable to verify recovery file signature. Please contact support.": [
-        "Ni mogoče preveriti podpisa obnovitvene datoteke. Prosim, obrnite se na podporo."
+        "Ni mogoče preveriti podpisa datoteke za obnovitev. Prosim, obrnite se na podporo."
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Na žalost ni shranjenega načina za obnovitev tega računa."
@@ -7940,7 +7940,7 @@
         "Nepotrjen e-poštni naslov."
       ],
       "Update recovery file": [
-        "Posodobite obnovitveno datoteko"
+        "Posodobite datoteko za obnovitev"
       ],
       "Update recovery phrase": [
         "Posodobi izraz za obnovitev"
@@ -8141,7 +8141,7 @@
         "Brez aktivacije ne boste mogli ustvariti novih uporabnikov, dodati naslovov obstoječim uporabnikom ali dostopati do nezasebnih uporabniških računov."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
-        "Ali želite prejeti novo kodo za preverjanje ali uporabiti drugačno metodo preverjanja?"
+        "Ali želite prejeti novo kodo za preverjanje ali uporabiti drugačen način preverjanja?"
       ],
       "Would you like to receive a new verification code?": [
         "Bi želeli prejeti novo kodo za preverjanje?"
@@ -9359,7 +9359,7 @@
         "URL metapodatkov za ${ appName }"
       ],
       "Method for importing metadata": [
-        "Metoda za uvoz metapodatkov"
+        "Način za uvoz metapodatkov"
       ],
       "Moderate NAT": [
         "Zmerni NAT"
@@ -9506,7 +9506,7 @@
         "Prejšnje geslo"
       ],
       "Prompt to trust keys": [
-        "Vprašaj za zaupanje ključem"
+        "Vprašaj za potrditev zaupanja ključev"
       ],
       "Proration": [
         "Sorazmerna delitev"
@@ -9662,7 +9662,7 @@
         "Naložite eno ali več šifrirnih ključev."
       ],
       "Upload 1 or more recovery files or encryption keys": [
-        "Naložite eno ali več obnovitvenih datotek ali ključev za šifriranje."
+        "Naložite eno ali več datotek za obnovitev ali ključev za šifriranje."
       ],
       "URL": [
         "URL"
@@ -10289,7 +10289,7 @@
         "Poiščite uporabniško ime za svoj račun ${ BRAND_NAME }"
       ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "Ste pozabili geslo za račun ${ BRAND_NAME }? Ponastavite jo tukaj z obnovitveno kodo, e-pošto ali SMS-om in znova pridobite dostop do svojih ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } in drugih storitev."
+        "Ste pozabili geslo za račun ${ BRAND_NAME }? Ponastavite ga tukaj z obnovitveno kodo, e-pošto ali SMS-om in znova pridobite dostop do svojih ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } in drugih storitev."
       ],
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Ste pozabili uporabniško ime za račun ${ BRAND_NAME }? Poiščite ga z obnovitvenim e-poštnim naslovom ali telefonsko številko in znova pridobite dostop do svojih ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } in drugih storitev."
@@ -12382,10 +12382,10 @@
         "Če želite omogočiti skrbniške pravice za svoj račun, aktivirajte organizacijski ključ."
       ],
       "Use a data recovery method or reset the organization key to restore administrator privileges.": [
-        "Uporabite metodo za obnovitev podatkov ali ponastavite organizacijski ključ, da obnovite skrbniške pravice."
+        "Uporabite način za obnovitev podatkov ali ponastavite organizacijski ključ, da obnovite skrbniške pravice."
       ],
       "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
-        "Uporabite metodo za obnovitev podatkov, se obrnite na drugega skrbnika ali ponastavite organizacijski ključ, da obnovite skrbniške pravice."
+        "Uporabite način za obnovitev podatkov, se obrnite na drugega skrbnika ali ponastavite organizacijski ključ, da obnovite skrbniške pravice."
       ],
       "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
         "Nismo mogli preveriti varnosti ključa naslova tega pošiljatelja. Včasih pride do zamude pri posodabljanju podatkov o pošiljatelju. Poskusi znova kasneje. Če ne zaupate veljavnosti tega povabila ali pošiljatelja, se obrnite na podporo za stranke ${ BRAND_NAME }."
@@ -13002,7 +13002,7 @@
     },
     "session_recovery:disable:info": {
       "Make sure you have access to a recovery method.": [
-        "Zagotovite, da imate dostop do načina za obnovo."
+        "Zagotovite, da imate dostop do načina za obnovitev."
       ],
       "You will no longer be able to request a password reset from your account settings.": [
         "Ne boste več mogli zahtevati ponastavitev gesla iz vaših nastavitev računa."
@@ -15054,7 +15054,7 @@
         "Obnovi podatke"
       ],
       "Recovery": [
-        "Obnova"
+        "Obnovitev"
       ],
       "Recovery file": [
         "Datoteka za obnovitev"
@@ -15342,7 +15342,7 @@
         "Vaš paket"
       ],
       "Your recovery status": [
-        "Stanje obnavljanja"
+        "Vaše stanje obnovitve"
       ],
       "Your SMTP token": [
         "Vaš SMTP žeton"
@@ -15367,7 +15367,7 @@
         "Dejanja"
       ],
       "Method": [
-        "Metoda"
+        "Način"
       ],
       "Status": [
         "Stanje"

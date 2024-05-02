@@ -293,6 +293,9 @@
       "Pass for iOS": [
         "Pass för iOS"
       ],
+      "Pass Monitor": [
+        "Pass-övervakning"
+      ],
       "Pause monitoring": [
         "Pausa övervakning"
       ],
@@ -506,11 +509,17 @@
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Vår banbrytande AI-drivna säkerhetslösning designad för användare som söker utökat skydd för sina konton. ${ learnMoreLink }"
       ],
+      "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
+        "Börja övervaka för dataintrång relaterade till konton som skapats med din e-postadress och dina hide-my-email-alias."
+      ],
       "This account is vulnerable, visit the service and change your password.": [
         "Detta konto är sårbart, besök tjänsten och ändra ditt lösenord."
       ],
       "Your email addresses were leaked in at least 1 data breach.": [
         "Dina e-postadresser läckte vid minst 1 dataintrång."
+      ],
+      "Your personal info was leaked in a data breach of a third-party service.": [
+        "Din personliga information läckte i ett dataintrång från en tredjepartstjänst."
       ]
     },
     "Error": {
@@ -624,9 +633,6 @@
       "Failed to load item history": [
         "Misslyckades att ladda objekthistorik"
       ],
-      "Failed to mark this address as resolved": [
-        "Misslyckades att markera denna adress som löst"
-      ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Misslyckades att flytta alla objekt från “${ payload.content.name }“"
       ],
@@ -644,6 +650,9 @@
       ],
       "Failed to resend verification for custom email": [
         "Misslyckades att skicka verifieringskod igen för anpassad e-post"
+      ],
+      "Failed to resolve breaches for this address": [
+        "Misslyckades att lösa intrång för denna adress"
       ],
       "Failed to restore items from trash": [
         "Misslyckades att återställa objekt från papperskorg"
@@ -793,6 +802,9 @@
       ]
     },
     "Feature": {
+      "Integrated 2FA authenticator": [
+        "Integrerad 2FA-autentisering"
+      ],
       "Unlimited hide-my-email aliases": [
         "Obegränsat antal hide-my-email-alias"
       ],
@@ -934,6 +946,9 @@
       ],
       "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
         "Alias med anpassade domäner övervakas inte, lägg till dem som en anpassad e-post för övervakning."
+      ],
+      "All breaches for this address were resolved": [
+        "Alla intrång för denna adress löstes"
       ],
       "All current breaches will be marked as resolved. In case of future data breaches, you'll be notified.": [
         "Alla nuvarande intrång kommer att markeras som lösta. I händelse av framtida dataintrång kommer du att aviseras."
@@ -1150,6 +1165,9 @@
       ],
       "Item successfully unpinned": [
         "Objekt lossat"
+      ],
+      "Latest breach on ${ formattedDate }": [
+        "Senaste intrång den ${ formattedDate }"
       ],
       "Learn how to ${ staySaferOnlineLink }": [
         "Lär dig hur man ${ staySaferOnlineLink }"
@@ -2135,6 +2153,12 @@
       "${ BRAND_NAME } addresses": [
         "${ BRAND_NAME }-adresser"
       ],
+      "${ PASS_SHORT_APP_NAME } Monitor": [
+        "${ PASS_SHORT_APP_NAME }-övervakning"
+      ],
+      "${ PASS_SHORT_APP_NAME } monitor": [
+        "${ PASS_SHORT_APP_NAME }-övervakning"
+      ],
       "Account protection": [
         "Kontoskydd"
       ],
@@ -2527,6 +2551,9 @@
       ],
       "The alias prefix cannot be longer than 40 characters": [
         "Alias-prefixet får inte vara längre än 40 tecken"
+      ],
+      "This email address will no longer be monitored for data breaches.": [
+        "Denna e-postadress kommer inte längre att övervakas för dataintrång."
       ],
       "Title is required": [
         "Rubrik är obligatoriskt"

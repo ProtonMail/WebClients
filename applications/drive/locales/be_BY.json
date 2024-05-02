@@ -50,7 +50,7 @@
         "Дадаць нататку"
       ],
       "Add people or groups to share": [
-        "Дадаць людзей або групы для абагулення"
+        "Дадаць карыстальнікаў або групы для абагулення"
       ],
       "Add phone number": [
         "Дадаць нумар тэлефона"
@@ -4632,7 +4632,7 @@
         "Толькі ўладальнік абагуленага файла можа запрасіць вас яшчэ раз."
       ],
       "Only the people with the link and the password can access this file.": [
-        "Толькі людзі ў якіх будзе спасылка і пароль змогуць атрымаць доступ да файла."
+        "Толькі карыстальнікі са спасылкай і паролем змогуць атрымаць доступ да файла."
       ],
       "Only the people with the link and the password can access this folder.": [
         "Толькі людзі ў якіх будзе спасылка і пароль змогуць атрымаць доступ да папкі."
@@ -5022,7 +5022,7 @@
         "У мэтах барацьбы са спамам і іншымі злоўжываннямі, нам неабходна пераканацца, што вы чалавек."
       ],
       "To help protect you, ${ DRIVE_APP_NAME } can scan and block malicious files. You should still only download files from people you trust.": [
-        "${ DRIVE_APP_NAME } можа сканіраваць і блакіраваць шкодныя файлы, каб дапамагчы абараніць вас. Варта спампоўваць файлы толькі ў тых людзей, якім вы давяраеце."
+        "${ DRIVE_APP_NAME } можа сканіраваць і блакіраваць шкодныя файлы, каб дапамагчы абараніць вас. Варта спампоўваць файлы толькі ў тых карыстальнікаў, якім вы давяраеце."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Спачатку стварыце каляндар у ${ CALENDAR_APP_NAME } для імпартавання падзей. Менавіта тут з'явяцца падзеі пасля імпартавання."
@@ -6849,6 +6849,9 @@
       ],
       "Organize items with multiple vaults": [
         "Упарадкаванне элементаў з некалькімі сховішчамі"
+      ],
+      "Passkeys supported": [
+        "Падтрымліваюцца ключы доступу"
       ],
       "Password-protected Emails": [
         "Лісты абароненыя паролем"
