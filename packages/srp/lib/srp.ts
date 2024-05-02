@@ -1,4 +1,4 @@
-import { BigIntegerInstance, getBigInteger } from '@proton/crypto/lib/bigInteger';
+import BigInteger from '@proton/crypto/lib/bigInteger';
 import { arrayToBinaryString, binaryStringToArray, decodeBase64, encodeBase64 } from '@proton/crypto/lib/utils';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
@@ -10,10 +10,7 @@ import { checkUsername } from './utils/username';
 
 export const srpHasher = (arr: Uint8Array) => expandHash(arr);
 
-const littleEndianArrayToBigInteger = async (arr: Uint8Array) => {
-    const BigInteger = await getBigInteger();
-    return new BigInteger(arr.slice().reverse());
-};
+const littleEndianArrayToBigInteger = async (arr: Uint8Array) => new BigInteger(arr.slice().reverse());
 
 /**
  * Generate a random client secret.
@@ -25,8 +22,8 @@ const generateClientSecret = (length: number) => {
 
 interface GenerateParametersArgs {
     byteLength: number;
-    generator: BigIntegerInstance;
-    modulus: BigIntegerInstance;
+    generator: BigInteger;
+    modulus: BigInteger;
     serverEphemeralArray: Uint8Array;
 }
 
@@ -83,7 +80,6 @@ export const generateProofs = async ({
     hashedPasswordArray,
     serverEphemeralArray,
 }: GenerateProofsArgs) => {
-    const BigInteger = await getBigInteger();
     const modulus = await littleEndianArrayToBigInteger(modulusArray);
     if (modulus.byteLength() !== byteLength) {
         throw new Error('SRP modulus has incorrect size');
@@ -216,8 +212,6 @@ export const getSrp = async (
 };
 
 const generateVerifier = async (byteLength: number, hashedPasswordBytes: Uint8Array, modulusBytes: Uint8Array) => {
-    const BigInteger = await getBigInteger();
-
     const generator = new BigInteger(2);
 
     const modulus = await littleEndianArrayToBigInteger(modulusBytes);
