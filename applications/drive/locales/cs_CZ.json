@@ -4170,7 +4170,7 @@
         "Snížením tarifu ukončíte všechna spojení s placenými ${ VPN_APP_NAME } servery."
       ],
       "Download": [
-        "Stáhnout"
+        "Stahování"
       ],
       "Download ${ name } app": [
         "Stáhnout aplikaci pro ${ name }"
@@ -9649,6 +9649,12 @@
       ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Potom vám bude účtováno ${ renewPrice } každých 12 měsíců."
+      ],
+      "Your subscription will automatically renew in ${ cycle } month.": [
+        "Vaše předplatné se automaticky obnoví za ${ cycle } měsíc.",
+        "Vaše předplatné se automaticky obnoví za ${ cycle } měsíce.",
+        "Vaše předplatné se automaticky obnoví za ${ cycle } měsíců.",
+        "Vaše předplatné se automaticky obnoví za ${ cycle } měsíců."
       ]
     },
     "vpn_2step: feature": {
