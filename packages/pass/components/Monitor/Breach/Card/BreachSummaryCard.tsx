@@ -16,7 +16,7 @@ export const BreachSummaryCard: FC<Props> = ({ className, breached, onClick }) =
             <ButtonCard
                 className={className}
                 onClick={onClick}
-                title={c('Title').t`Dark web monitoring`}
+                title={c('Title').t`Dark Web Monitoring`}
                 subtitle="No breaches detected"
                 icon="checkmark"
                 type="success"
