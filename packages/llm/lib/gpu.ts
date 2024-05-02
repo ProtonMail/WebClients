@@ -223,17 +223,20 @@ export class GpuLlmManager implements LlmManager {
         return this.status === 'downloading';
     }
 
-    async startDownload(updateProgress: DownloadProgressCallback): Promise<void> {
+    async startDownload(updateProgress: DownloadProgressCallback): Promise<boolean> {
         this.status = 'downloading';
         this.abortController = new AbortController();
         try {
             await downloadModel(MODEL_VARIANT, updateProgress, this.abortController);
             this.status = 'unloaded';
+            return true;
         } catch (e: any) {
             if (typeof e === 'object' && e.name === 'AbortError') {
                 // user aborted, and it was successful
                 this.status = undefined;
+                return false;
             } else {
+                console.error(e);
                 this.status = 'error';
                 throw e;
             }
