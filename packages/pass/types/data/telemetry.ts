@@ -18,6 +18,18 @@ export enum TelemetryEventName {
     PasskeyCreated = 'passkey.create_done',
     PasskeyCreateDisplay = 'passkey.create_prompt_display',
     PasskeysSuggestionsDisplay = 'passkey.display_suggestions',
+    PassMonitorDisplayHome = 'pass_monitor.display_home',
+    PassMonitorDisplayWeakPasswords = 'pass_monitor.display_weak_passwords',
+    PassMonitorDisplayReusedPasswords = 'pass_monitor.display_reused_passwords',
+    PassMonitorDisplayMissing2FA = 'pass_monitor.display_missing_2fa',
+    PassMonitorDisplayExcludedItems = 'pass_monitor.display_excluded_items',
+    PassMonitorDisplayDarkWebMonitoring = 'pass_monitor.display_dark_web_monitoring',
+    PassMonitorDisplayMonitoringProtonAddresses = 'pass_monitor.display_monitoring_proton_addresses',
+    PassMonitorDisplayMonitoringEmailAliases = 'pass_monitor.display_monitoring_email_aliases',
+    PassMonitorAddCustomEmailFromSuggestion = 'pass_monitor.add_custom_email_from_suggestion',
+    PassMonitorItemDetailFromWeakPassword = 'pass_monitor.item_detail_from_weak_password',
+    PassMonitorItemDetailFromMissing2FA = 'pass_monitor.item_detail_from_missing_2fa',
+    PassMonitorItemDetailFromReusedPassword = 'pass_monitor.item_detail_from_reused_password',
     SearchClick = 'search.click',
     SearchTriggered = 'search.triggered',
     TwoFAAutofill = '2fa.autofill',
@@ -62,6 +74,18 @@ export type TelemetryEvent<T extends TelemetryEventName = TelemetryEventName> = 
         [TelemetryEventName.PasskeyCreated]: BaseTelemetryEvent<T>;
         [TelemetryEventName.PasskeyCreateDisplay]: BaseTelemetryEvent<T>;
         [TelemetryEventName.PasskeysSuggestionsDisplay]: BaseTelemetryEvent<T>;
+        [TelemetryEventName.PassMonitorDisplayHome]: BaseTelemetryEvent<T>;
+        [TelemetryEventName.PassMonitorDisplayWeakPasswords]: BaseTelemetryEvent<T>;
+        [TelemetryEventName.PassMonitorDisplayReusedPasswords]: BaseTelemetryEvent<T>;
+        [TelemetryEventName.PassMonitorDisplayMissing2FA]: BaseTelemetryEvent<T>;
+        [TelemetryEventName.PassMonitorDisplayExcludedItems]: BaseTelemetryEvent<T>;
+        [TelemetryEventName.PassMonitorDisplayDarkWebMonitoring]: BaseTelemetryEvent<T>;
+        [TelemetryEventName.PassMonitorDisplayMonitoringProtonAddresses]: BaseTelemetryEvent<T>;
+        [TelemetryEventName.PassMonitorDisplayMonitoringEmailAliases]: BaseTelemetryEvent<T>;
+        [TelemetryEventName.PassMonitorAddCustomEmailFromSuggestion]: BaseTelemetryEvent<T>;
+        [TelemetryEventName.PassMonitorItemDetailFromWeakPassword]: BaseTelemetryEvent<T>;
+        [TelemetryEventName.PassMonitorItemDetailFromMissing2FA]: BaseTelemetryEvent<T>;
+        [TelemetryEventName.PassMonitorItemDetailFromReusedPassword]: BaseTelemetryEvent<T>;
         [TelemetryEventName.SearchClick]: BaseTelemetryEvent<T>;
         [TelemetryEventName.SearchTriggered]: BaseTelemetryEvent<T>;
         [TelemetryEventName.TwoFAAutofill]: BaseTelemetryEvent<T>;
