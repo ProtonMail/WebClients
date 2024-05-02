@@ -434,6 +434,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                         onSuccess={setupOrgSpotlight.close}
                         useEmail={useEmail}
                         optionalName={hasVpnOrPassB2BPlan}
+                        members={members}
                         allowStorageConfiguration={allowStorageConfiguration}
                         allowVpnAccessConfiguration={allowVpnAccessConfiguration}
                         allowPrivateMemberConfiguration={allowPrivateMemberConfiguration}
@@ -469,6 +470,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                 )}
                 {renderInviteOrCreateUserModal && (
                     <InviteUserCreateSubUserModal
+                        members={members}
                         organization={organization}
                         verifiedDomains={verifiedDomains}
                         onInviteUser={handleInviteUser}

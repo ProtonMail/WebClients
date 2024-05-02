@@ -8,7 +8,7 @@ import { Tooltip } from '@proton/components/components/tooltip';
 import { APP_NAMES } from '@proton/shared/lib/constants';
 import { getIsDomainActive } from '@proton/shared/lib/organization/helper';
 
-import { useCustomDomains } from '../../../hooks';
+import { useCustomDomains, useMembers } from '../../../hooks';
 import { SettingsParagraph, SettingsSectionWide } from '../../account';
 import CreateUserAccountsModal from './CreateUserAccountsModal/CreateUserAccountsModal';
 import UploadCSVFileButton from './UploadCSVFileButton';
@@ -25,6 +25,7 @@ const csvConfig: CsvConfig = {
 const MultiUserCreationSection = ({ app }: { app: APP_NAMES }) => {
     const [customDomains = []] = useCustomDomains();
     const [usersToImport, setUsersToImport] = useState<UserTemplate[]>();
+    const [members] = useMembers();
     const [createUserAccountsModal, setCreateUserAccountsModal, renderCreateUserAccountsModal] = useModalState();
 
     const verifiedDomains = useMemo(() => (customDomains || []).filter(getIsDomainActive), [customDomains]);
@@ -42,6 +43,7 @@ const MultiUserCreationSection = ({ app }: { app: APP_NAMES }) => {
         <>
             {renderCreateUserAccountsModal && usersToImport && (
                 <CreateUserAccountsModal
+                    members={members}
                     usersToImport={usersToImport}
                     app={app}
                     verifiedDomains={verifiedDomains}

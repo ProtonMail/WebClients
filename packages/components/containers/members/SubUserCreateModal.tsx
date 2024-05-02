@@ -16,7 +16,7 @@ import {
     requiredValidator,
 } from '@proton/shared/lib/helpers/formValidators';
 import { getHasVpnB2BPlan } from '@proton/shared/lib/helpers/subscription';
-import { Domain, Organization } from '@proton/shared/lib/interfaces';
+import { Domain, EnhancedMember, Organization } from '@proton/shared/lib/interfaces';
 import { getIsPasswordless } from '@proton/shared/lib/keys';
 import clamp from '@proton/utils/clamp';
 import isTruthy from '@proton/utils/isTruthy';
@@ -61,6 +61,7 @@ enum Step {
 interface Props extends ModalProps {
     organization?: Organization;
     verifiedDomains: Domain[];
+    members: EnhancedMember[] | undefined;
     app: APP_NAMES;
     onSuccess?: () => void;
     optionalName?: boolean;
@@ -76,6 +77,7 @@ interface Props extends ModalProps {
 
 const SubUserCreateModal = ({
     organization,
+    members,
     verifiedDomains,
     onClose,
     app,
@@ -200,6 +202,7 @@ const SubUserCreateModal = ({
             <SubUserBulkCreateModal
                 open
                 verifiedDomains={verifiedDomains}
+                members={members}
                 onBack={setSingleStep}
                 onClose={handleClose}
                 app={app}

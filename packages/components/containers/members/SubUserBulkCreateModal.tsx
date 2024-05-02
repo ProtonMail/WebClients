@@ -9,7 +9,7 @@ import CreateUserAccountsModal from '@proton/components/containers/members/multi
 import UploadCSVFileButton from '@proton/components/containers/members/multipleUserCreation/UploadCSVFileButton';
 import { UserTemplate } from '@proton/components/containers/members/multipleUserCreation/types';
 import { APP_NAMES } from '@proton/shared/lib/constants';
-import { Domain } from '@proton/shared/lib/interfaces';
+import { Domain, EnhancedMember } from '@proton/shared/lib/interfaces';
 
 import {
     ModalTwo as Modal,
@@ -67,6 +67,7 @@ interface Props extends ModalProps {
     onBack: () => void;
     app: APP_NAMES;
     verifiedDomains: Domain[];
+    members: EnhancedMember[] | undefined;
     csvConfig: CsvConfig;
     disableStorageValidation?: boolean;
     disableDomainValidation?: boolean;
@@ -77,6 +78,7 @@ const SubUserBulkCreateModal = ({
     onBack,
     app,
     verifiedDomains,
+    members,
     csvConfig,
     disableStorageValidation,
     disableDomainValidation,
@@ -96,6 +98,7 @@ const SubUserBulkCreateModal = ({
     if (step === Step.SELECT_USER && renderCreateUserAccountsModal && usersToImport) {
         return (
             <CreateUserAccountsModal
+                members={members}
                 usersToImport={usersToImport}
                 app={app}
                 verifiedDomains={verifiedDomains}
