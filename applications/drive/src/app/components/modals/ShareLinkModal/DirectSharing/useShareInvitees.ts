@@ -146,7 +146,6 @@ export const useShareInvitees = (existingEmails: string[]) => {
 
     return {
         invitees,
-        count: invitees.length,
         add,
         remove,
         clean,
