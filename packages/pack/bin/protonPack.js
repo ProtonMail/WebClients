@@ -24,6 +24,7 @@ const writeConfig = async (configFile) => {
 const addGlobalOptions = (program) => {
     return program
         .option('--appMode <appMode>', '')
+        .option('--analyze', '')
         .option('--featureFlags <featureFlags>', '')
         .option('--api <api>', '', (api) => getApi(api), getApi(''))
         .option('--sso <sso>', '')
@@ -56,6 +57,7 @@ const getWebpackArgs = (options, env, { appData, buildData }) => {
         overlayErrors: options.overlayErrors,
         overlayRuntimeErrors: options.overlayRuntimeErrors,
         logical: Boolean(options.logical),
+        analyze: options.analyze,
         ...buildData,
     };
     const extraWebpackArgs = env.args.join(' ');
