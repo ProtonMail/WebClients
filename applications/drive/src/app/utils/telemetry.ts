@@ -1,8 +1,6 @@
-import {
-    TelemetryDriveWebFeature,
-    TelemetryMeasurementGroups,
-    sendTelemetryData,
-} from '@proton/shared/lib/api/telemetry';
+import { TelemetryDriveWebFeature, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
+import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
+import { Api } from '@proton/shared/lib/interfaces';
 
 export enum ExperimentGroup {
     control = 'control',
@@ -15,17 +13,19 @@ export enum Features {
 }
 
 export const sendTelemetryFeaturePerformance = (
+    api: Api,
     featureName: Features,
     timeInMs: number,
     treatment: ExperimentGroup
 ) => {
-    sendTelemetryData({
-        MeasurementGroup: TelemetryMeasurementGroups.driveWebFeaturePerformance,
-        Event: TelemetryDriveWebFeature.performance,
-        Values: {
+    sendTelemetryReport({
+        api: api,
+        measurementGroup: TelemetryMeasurementGroups.driveWebFeaturePerformance,
+        event: TelemetryDriveWebFeature.performance,
+        values: {
             milliseconds: timeInMs,
         },
-        Dimensions: {
+        dimensions: {
             experimentGroup: treatment,
             featureName,
         },
@@ -42,6 +42,7 @@ export const sendTelemetryFeaturePerformance = (
  * @returns {T} The result of the executed function, both control and treatment should have same return type
  */
 export const measureExperimentalPerformance = <T>(
+    api: Api,
     feature: Features,
     applyTreatment: boolean,
     controlFunction: () => T,
@@ -52,6 +53,7 @@ export const measureExperimentalPerformance = <T>(
     performance.mark(`end-${feature}`);
     const measure = performance.measure(`duration-${feature}`, `start-${feature}`, `end-${feature}`);
     sendTelemetryFeaturePerformance(
+        api,
         feature,
         measure.duration,
         applyTreatment ? ExperimentGroup.treatment : ExperimentGroup.control
