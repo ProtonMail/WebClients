@@ -101,6 +101,9 @@
       "Create alias": [
         "별칭 생성"
       ],
+      "Create an alias": [
+        "별칭 만들기"
+      ],
       "Create card": [
         "카드 생성"
       ],
@@ -158,6 +161,12 @@
       "Edit vault": [
         "금고 편집"
       ],
+      "Enable NetShield": [
+        "NetShield 활성화"
+      ],
+      "Exclude from monitoring": [
+        "모니터링에서 제외"
+      ],
       "Export": [
         "내보내기"
       ],
@@ -199,6 +208,9 @@
       ],
       "Importing": [
         "가져오는 중"
+      ],
+      "Include in monitoring": [
+        "모니터링에 포함"
       ],
       "Install extension": [
         "확장 설치"
@@ -278,6 +290,9 @@
       "Pass for iOS": [
         "iOS용 Pass"
       ],
+      "Pause monitoring": [
+        "모니터링 일시정지"
+      ],
       "Pin item": [
         "항목 고정"
       ],
@@ -325,6 +340,9 @@
       ],
       "Saving": [
         "저장 중"
+      ],
+      "See all": [
+        "모두 보기"
       ],
       "See members": [
         "회원 보기"
@@ -442,6 +460,23 @@
       ],
       "Expand": [
         "펼치기"
+      ]
+    },
+    "Description": {
+      "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
+        "이메일 별칭은 이메일 주소와 같이 동작하지만 스팸을 줄여주고 당신의 실제 이메일 주소와 신원을 감추어 줍니다."
+      ],
+      "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
+        "다크 웹 모니터링은 유료 요금제에서 이용할 수 있습니다. 업그레이드하는 즉시 접근할 수 있습니다."
+      ],
+      "NetShield is an ad-blocking feature from ${ VPN_APP_NAME } that protects your device from ads, trackers, and malware. ": [
+        "NetShield는 디바이스를 광고, 트래커, 멀웨어로부터 보호하는 ${ VPN_APP_NAME }의 광고 차단 기능입니다. "
+      ],
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "계정에 대한 강화된 보호를 원하는 사용자를 위해 설계된 최첨단 AI 기반 보안 솔루션입니다. ${ learnMoreLink }"
+      ],
+      "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
+        "다크 웹이란 신원과 같은 도난당한 개인 정보의 매매가 이루어지기도 하는 인터넷의 숨겨진 일부입니다."
       ]
     },
     "Error": {
@@ -564,6 +599,9 @@
       ],
       "Failed to unpin item": [
         "항목 고정 해제 실패"
+      ],
+      "Failed updating ${ PROTON_SENTINEL_NAME } setting": [
+        "${ PROTON_SENTINEL_NAME } 설정 업데이트에 실패했습니다."
       ],
       "File could not be parsed": [
         "파일을 분석할 수 없음."
@@ -700,6 +738,11 @@
         "문제가 발생했습니다"
       ]
     },
+    "Feature": {
+      "Dark Web Monitoring": [
+        "다크 웹 모니터링"
+      ]
+    },
     "file size format": {
       "byte": [
         "바이트"
@@ -789,6 +832,12 @@
       ],
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME }에서 오프라인 데이터 접근을 위해 ${ BRAND_NAME } 비밀번호를 필요로 합니다."
+      ],
+      "${ PROTON_SENTINEL_NAME } successfully disabled": [
+        "${ PROTON_SENTINEL_NAME }이 성공적으로 비활성화되었습니다"
+      ],
+      "${ PROTON_SENTINEL_NAME } successfully enabled": [
+        "${ PROTON_SENTINEL_NAME }이 성공적으로 활성화되었습니다"
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7일 동안 프리미엄 기능을 무료로 사용하실 수 있습니다. ${ BRAND_NAME } 첫 주 사용에 한합니다."
@@ -895,6 +944,15 @@
       "email": [
         "이메일"
       ],
+      "Email address successfully deleted from monitoring": [
+        "이메일 주소가 모니터링에서 삭제되었습니다"
+      ],
+      "Email address successfully excluded from monitoring": [
+        "이메일 주소가 모니터링에서 제외되었습니다"
+      ],
+      "Email address successfully included in monitoring": [
+        "이메일 주소가 모니터링에 포함되었습니다"
+      ],
       "Emptying trash...": [
         "휴지통 비우는 중..."
       ],
@@ -991,6 +1049,12 @@
       "Item restored": [
         "항목이 복구되었습니다"
       ],
+      "Item successfully excluded from monitoring": [
+        "항목이 모니터링에서 제외되었습니다"
+      ],
+      "Item successfully included in monitoring": [
+        "항목이 모니터링에 포함되었습니다"
+      ],
       "Item successfully moved": [
         "항목을 성공적으로 이동했습니다."
       ],
@@ -1032,6 +1096,9 @@
       ],
       "Monitor accounts": [
         "계정 모니터링"
+      ],
+      "Monitoring settings successfully updated": [
+        "모니터링 설정이 업데이트되었습니다"
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "비밀번호 그 이상을 보호하다, ${ PASS_APP_NAME }는 이메일 별명을 통해 비밀번호와 개인 이메일 주소를 보호합니다. ${ MAIL_APP_NAME }의 같은 기술로, 데이터가 종단간 암호화되며 오직 당신만 접근 가능합니다."
@@ -1680,6 +1747,9 @@
       "Special characters (!&*)": [
         "특수 문자 (!&*)"
       ],
+      "Strong": [
+        "강함"
+      ],
       "Suffix": [
         "접미어"
       ],
@@ -1748,6 +1818,12 @@
       ],
       "View logs": [
         "로그 보기"
+      ],
+      "Vulnerable": [
+        "취약함"
+      ],
+      "Weak": [
+        "약함"
       ],
       "Websites": [
         "웹 사이트"
@@ -1864,6 +1940,9 @@
       "Full Name": [
         "성명"
       ],
+      "me@example.com": [
+        "나@예제.com"
+      ],
       "MM/YY": [
         "MM/YY (월/년)"
       ],
@@ -1922,6 +2001,15 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } addresses": [
+        "${ BRAND_NAME } 주소를 얻으세요"
+      ],
+      "${ PASS_SHORT_APP_NAME } monitor": [
+        "${ PASS_SHORT_APP_NAME } 모니터링"
+      ],
+      "Account protection": [
+        "계정 보호"
+      ],
       "Auto-lock update": [
         "자동 잠금 업데이트"
       ],
@@ -1942,6 +2030,18 @@
       ],
       "Current version": [
         "현재 버전"
+      ],
+      "Custom addresses": [
+        "커스텀 주소"
+      ],
+      "Custom emails": [
+        "커스텀 이메일"
+      ],
+      "Dark Web Monitoring": [
+        "다크 웹 모니터링"
+      ],
+      "Dark web monitoring": [
+        "다크 웹 모니터링"
       ],
       "Delete vault \"${ vaultName }\" ?": [
         "금고 \"${ vaultName }\"을(를) 삭제합니까?"
@@ -1969,6 +2069,9 @@
       ],
       "Grant permissions": [
         "권한 부여"
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email 별칭"
       ],
       "History": [
         "기록"
@@ -2002,6 +2105,9 @@
       ],
       "Members": [
         "멤버"
+      ],
+      "Missing 2FA": [
+        "2FA가 없음"
       ],
       "Modified": [
         "수정됨"
@@ -2060,6 +2166,9 @@
       "Share with": [
         "공유 대상:"
       ],
+      "Stay safer online": [
+        "온라인 상에서 더욱 안전하게"
+      ],
       "Suggestions": [
         "제안"
       ],
@@ -2080,6 +2189,12 @@
       ],
       "Vault shared with you": [
         "나와 공유된 금고"
+      ],
+      "Want to learn more?": [
+        "더 알아보시겠습니까?"
+      ],
+      "Weak password": [
+        "약한 비밀번호"
       ],
       "What is an alias?": [
         "별칭이란?"
