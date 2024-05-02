@@ -125,8 +125,8 @@ const WeakPasswordReport: FC<SelectedItem> = (item) => {
 };
 
 const Missing2FAReport: FC<SelectedItem> = (item) => {
-    const { insecure } = useMonitor();
-    const isMissing2FA = insecure.data.some(itemEq(item));
+    const { missing2FAs } = useMonitor();
+    const isMissing2FA = missing2FAs.data.some(itemEq(item));
 
     return (
         isMissing2FA && (
