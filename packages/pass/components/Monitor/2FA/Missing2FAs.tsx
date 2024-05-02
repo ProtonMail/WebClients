@@ -63,7 +63,7 @@ export const Missing2FAs: FC = () => {
         />
     ) : (
         <div className="flex items-center justify-center color-weak text-sm text-center text-break h-full">
-            <strong>{c('Title').t`No missing 2FAs`}</strong>
+            <strong>{c('Title').t`No inactive 2FAs`}</strong>
         </div>
     );
 };

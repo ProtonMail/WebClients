@@ -132,8 +132,8 @@ export const Summary: FC = () => {
                                     actions={<PillBadge label={missing2FAs.count} />}
                                     disabled={missing2FAs.count === 0}
                                     onClick={() => navigate(`${getLocalPath('monitor/2fa')}`)}
-                                    subtitle={c('Description').t`Increase your security`}
-                                    title={c('Title').t`Missing two-factor authentication`}
+                                    subtitle={c('Description').t`Set up 2FA for more security`}
+                                    title={c('Title').t`Inactive 2FA`}
                                 />
                                 <ButtonCard
                                     actions={<PillBadge label={excluded.count} />}

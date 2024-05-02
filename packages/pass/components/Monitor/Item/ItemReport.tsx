@@ -134,7 +134,7 @@ const Missing2FAReport: FC<SelectedItem> = (item) => {
                 <CardContent
                     icon={() => <CardIcon icon="exclamation-filled" className="self-start mt-0.5" />}
                     titleClassname="text-lg text-semibold"
-                    title={c('Title').t`Missing two-factor authentication`}
+                    title={c('Title').t`Inactive 2FA`}
                     subtitle={c('Description').t`It would be more secure to set up 2FA for this account.`}
                 />
             </Card>
