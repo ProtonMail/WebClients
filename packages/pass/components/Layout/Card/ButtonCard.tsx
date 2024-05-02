@@ -10,13 +10,13 @@ import { type CardType, getCardTheme } from './utils';
 
 import './ButtonCard.scss';
 
-type Props = CardContentProps & {
+export type ButtonCardProps = CardContentProps & {
     disabled?: boolean;
     type?: CardType;
     onClick?: () => void;
 };
 
-export const ButtonCard: FC<Props> = ({ actions, disabled, title, subtitle, icon, type, onClick }) => (
+export const ButtonCard: FC<ButtonCardProps> = ({ actions, disabled, title, subtitle, icon, type, onClick }) => (
     <div
         className={clsx(
             getCardTheme(type),
@@ -31,7 +31,7 @@ export const ButtonCard: FC<Props> = ({ actions, disabled, title, subtitle, icon
             size="medium"
             className={clsx(
                 'border-norm flex justify-space-between flex-nowrap items-center rounded-lg button-fluid',
-                !onClick && 'cursor-default pointer-events-none',
+                !onClick && 'cursor-default',
                 !type && 'bg-weak'
             )}
             onClick={onClick}
