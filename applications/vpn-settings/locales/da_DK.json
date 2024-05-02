@@ -2017,6 +2017,9 @@
       "Error connecting to the Bitcoin API.": [
         "Fejl under oprettelse af forbindelse til Bitcoin-API."
       ],
+      "File too large. Your logo must be 30 KB or smaller.": [
+        "Filen er for stor. Logoet skal være 30 KB eller mindre."
+      ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Hvis tiden på dit tv er udløbet, skal du klikke på Opdater på dit TV og indtaste din kode igen."
       ],
@@ -2119,6 +2122,9 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Opgrader venligst til et erhversabonnement med mere end 1 bruger for at administrere flere brugere."
       ],
+      "Please upload a square file": [
+        "Upload en kvadratisk fil"
+      ],
       "Please upload an xml file": [
         "Upload en xml-fil"
       ],
@@ -2145,6 +2151,12 @@
       ],
       "The email addresses do not match": [
         "E-Mailadresserne stemmer ikke overens"
+      ],
+      "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
+        "Filen er for stor, maksimumsstørrelsen er ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }"
+      ],
+      "The file is too small, the minimum size is ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }": [
+        "Filen er for lille, minimumsstørrelsen er ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }"
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Det mindste kreditstørrelse, der kan tilføjes, er ${ price }"

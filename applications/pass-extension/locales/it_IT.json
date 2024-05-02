@@ -188,6 +188,9 @@
       "Edit vault": [
         "Modifica cassaforte"
       ],
+      "Exclude from monitoring": [
+        "Escludi dal monitoraggio"
+      ],
       "Export": [
         "Esporta"
       ],
@@ -212,6 +215,9 @@
       "Get mobile apps": [
         "Scarica le applicazioni per dispositivi mobili"
       ],
+      "Get Pass Plus": [
+        "Ottieni Pass Plus"
+      ],
       "Help us improve": [
         "Aiutaci a migliorare"
       ],
@@ -232,6 +238,9 @@
       ],
       "Importing": [
         "Importazione"
+      ],
+      "Include in monitoring": [
+        "Includi nel monitoraggio"
       ],
       "Invite others": [
         "Invita altri"
@@ -368,6 +377,9 @@
       "Saving passkey...": [
         "Salvataggio della passkey in corso"
       ],
+      "See all": [
+        "Mostra tutto"
+      ],
       "See members": [
         "Visualizza membri"
       ],
@@ -502,11 +514,24 @@
       ]
     },
     "Description": {
+      "${ total } other login uses the same password": [
+        "${ total } altro login utilizza la stessa password",
+        "${ total } altri login utilizzano la stessa password"
+      ],
       "A checked box means the feature is disabled.": [
         "Una casella selezionata significa che la funzione è disabilitata."
       ],
+      "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
+        "Dark Web Monitoring è disponibile con un piano a pagamento. Aggiorna per l'accesso immediato."
+      ],
+      "It would be more secure to set up 2FA for this account.": [
+        "Sarebbe più sicuro impostare la 2FA per questo account."
+      ],
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
         "Lista di domini dove alcune funzioni automatiche di ${ PASS_SHORT_APP_NAME } (Compilazione automatica, Suggerimento automatico, Salvataggio automatico) non dovrebbero essere eseguite. ${ infoText }"
+      ],
+      "This account is vulnerable, visit the service and change your password.": [
+        "Questo account è vulnerabile, visita il servizio e cambia la password."
       ]
     },
     "Error": {
@@ -602,6 +627,12 @@
       "Failed resending invite.": [
         "Reinvio dell'invito non riuscito."
       ],
+      "Failed to add email address": [
+        "Impossibile aggiungere l'indirizzo email"
+      ],
+      "Failed to delete email address from monitoring": [
+        "Impossibile eliminare l'indirizzo email dal monitoraggio"
+      ],
       "Failed to delete selected items": [
         "Impossibile eliminare gli elementi selezionati"
       ],
@@ -610,6 +641,15 @@
       ],
       "Failed to edit user's access.": [
         "Modifica dell'accesso dell'utente non riuscita."
+      ],
+      "Failed to load breaches": [
+        "Impossibile caricare le violazioni di dati"
+      ],
+      "Failed to load breaches for this address": [
+        "Impossibile caricare le violazioni di dati per questo indirizzo"
+      ],
+      "Failed to load breaches for this email alias": [
+        "Impossibile caricare le violazioni di dati per questo alias email"
       ],
       "Failed to load item history": [
         "Caricamento della cronologia dell'elemento non riuscito"
@@ -629,6 +669,12 @@
       "Failed to remove user's access.": [
         "Rimozione dell'accesso dell'utente non riuscita."
       ],
+      "Failed to resend verification for custom email": [
+        "Impossibile reinviare la verifica per l'email personalizzata"
+      ],
+      "Failed to resolve breaches for this address": [
+        "Impossibile risolvere le violazioni di dati per questo indirizzo"
+      ],
       "Failed to restore items from trash": [
         "Impossibile recuperare gli elementi dal cestino"
       ],
@@ -637,6 +683,21 @@
       ],
       "Failed to unpin item": [
         "Annullamento del fissaggio dell'elemento non riuscito"
+      ],
+      "Failed to update monitoring settings": [
+        "Impossibile aggiornare le impostazioni di monitoraggio"
+      ],
+      "Failed to verify email address": [
+        "Impossibile verificare l'indirizzo email"
+      ],
+      "Failed updating ${ PROTON_SENTINEL_NAME } setting": [
+        "Impossibile aggiornare l'impostazione ${ PROTON_SENTINEL_NAME }"
+      ],
+      "Failed updating monitor flag of the item": [
+        "Impossibile aggiornare il flag di monitoraggio dell'elemento"
+      ],
+      "Failed updating monitoring status for this email address": [
+        "Impossibile aggiornare lo stato del monitoraggio per questo indirizzo email"
       ],
       "File could not be parsed": [
         "Impossibile analizzare il file"
@@ -880,6 +941,12 @@
       "${ PASS_APP_NAME } will suggest saving passkeys.": [
         "${ PASS_APP_NAME } ti suggerirà di salvare le passkey."
       ],
+      "${ PROTON_SENTINEL_NAME } successfully disabled": [
+        "${ PROTON_SENTINEL_NAME } disabilitato"
+      ],
+      "${ PROTON_SENTINEL_NAME } successfully enabled": [
+        "${ PROTON_SENTINEL_NAME } abilitato"
+      ],
       "${ trialDaysLeft } day left": [
         "${ trialDaysLeft } giorno rimasto",
         "${ trialDaysLeft } giorni rimasti"
@@ -910,6 +977,9 @@
       ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "L'alias \"${ item.aliasEmail }\" è stato spostato nel cestino - non inoltrerà più alla tua casella di posta"
+      ],
+      "All breaches for this address were resolved": [
+        "Tutte le violazioni di dati relative a questo indirizzo sono state risolte"
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Tutti gli elementi di \"${ payload.content.name }\" spostati con successo"
@@ -1010,6 +1080,15 @@
       "Editor": [
         "Editor"
       ],
+      "Email address successfully deleted from monitoring": [
+        "Indirizzo email eliminato dal monitoraggio"
+      ],
+      "Email address successfully excluded from monitoring": [
+        "Indirizzo email escluso dal monitoraggio"
+      ],
+      "Email address successfully included in monitoring": [
+        "Indirizzo email incluso nel monitoraggio"
+      ],
       "Emptying trash...": [
         "Svuotamento del cestino in corso"
       ],
@@ -1106,6 +1185,12 @@
       "Item restored": [
         "Elemento ripristinato"
       ],
+      "Item successfully excluded from monitoring": [
+        "Elemento escluso dal monitoraggio"
+      ],
+      "Item successfully included in monitoring": [
+        "Elemento incluso nel monitoraggio"
+      ],
       "Item successfully moved": [
         "Elemento spostato con successo"
       ],
@@ -1132,6 +1217,9 @@
       ],
       "me": [
         "me"
+      ],
+      "Monitoring settings successfully updated": [
+        "Impostazioni di monitoraggio aggiornate con successo"
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "Molto più che un gestore di password, ${ PASS_APP_NAME } protegge le tue password e i tuoi indirizzi email tramite gli alias. Grazie alla tecnologia che sta alla base di ${ MAIL_APP_NAME }, i tuoi dati sono crittografati end-to-end e rimangono accessibili solo a te."
@@ -1469,6 +1557,9 @@
       "${ config.options.wordCount } word": [
         "${ config.options.wordCount } parola",
         "${ config.options.wordCount } parole"
+      ],
+      "${ PASS_SHORT_APP_NAME } monitor": [
+        "${ PASS_SHORT_APP_NAME } monitor"
       ],
       "1 hour": [
         "1 ora"
@@ -1848,6 +1939,9 @@
       "Special characters (!&*)": [
         "Caratteri speciali (!&*)"
       ],
+      "Strong": [
+        "Sicura"
+      ],
       "Suffix": [
         "Suffisso"
       ],
@@ -1913,6 +2007,12 @@
       ],
       "View logs": [
         "Visualizza i log"
+      ],
+      "Vulnerable": [
+        "Vulnerabile"
+      ],
+      "Weak": [
+        "Debole"
       ],
       "Website": [
         "Sito web"
@@ -2079,6 +2179,9 @@
       "${ PASS_APP_NAME } Settings": [
         "${ PASS_APP_NAME } Impostazioni"
       ],
+      "${ PASS_SHORT_APP_NAME } monitor": [
+        "${ PASS_SHORT_APP_NAME } monitor"
+      ],
       "Auto-lock update": [
         "Aggiornamento del blocco automatico"
       ],
@@ -2160,6 +2263,9 @@
       "Members": [
         "Membri"
       ],
+      "Missing two-factor authentication": [
+        "Autenticazione a due fattori mancante"
+      ],
       "Modified": [
         "Modificato"
       ],
@@ -2211,6 +2317,9 @@
       "Share with": [
         "Condividi con"
       ],
+      "Stay safer online": [
+        "Stai più sicuro online"
+      ],
       "Suggestions": [
         "Suggerimenti"
       ],
@@ -2246,6 +2355,9 @@
       ],
       "Vault shared with you": [
         "Cassaforte condivisa con te"
+      ],
+      "Weak password": [
+        "Password debole"
       ],
       "Welcome to your new password manager!": [
         "Benvenuto nel tuo nuovo gestore di password!"

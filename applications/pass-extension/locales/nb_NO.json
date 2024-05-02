@@ -188,6 +188,9 @@
       "Edit vault": [
         "Rediger hvelv"
       ],
+      "Exclude from monitoring": [
+        "Ekskluder fra overvåking"
+      ],
       "Export": [
         "Eksport"
       ],
@@ -212,6 +215,9 @@
       "Get mobile apps": [
         "Få mobilapper"
       ],
+      "Get Pass Plus": [
+        "Få Pass Plus"
+      ],
       "Help us improve": [
         "Hjelp oss å bli bedre"
       ],
@@ -232,6 +238,9 @@
       ],
       "Importing": [
         "Importerer"
+      ],
+      "Include in monitoring": [
+        "Inkluder i overvåking"
       ],
       "Invite others": [
         "Inviter andre"
@@ -368,6 +377,9 @@
       "Saving passkey...": [
         "Lagrer tilgangsnøkkel..."
       ],
+      "See all": [
+        "Se alle"
+      ],
       "See members": [
         "Vis medlemmer"
       ],
@@ -502,11 +514,24 @@
       ]
     },
     "Description": {
+      "${ total } other login uses the same password": [
+        "${ total } annen pålogging bruker det samme passordet",
+        "${ total } andre pålogginger bruker det samme passordet"
+      ],
       "A checked box means the feature is disabled.": [
         "En avmerket boks betyr at funksjonen er deaktivert."
       ],
+      "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
+        "Overvåking av det \"mørke nettet\" er tilgjengelige med en betalt plan. Oppgrader for umiddelbar tilgang."
+      ],
+      "It would be more secure to set up 2FA for this account.": [
+        "Det ville være sikrere å sette opp 2FA for denne kontoen."
+      ],
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
         "Liste over domener der visse autofunksjoner i ${ PASS_SHORT_APP_NAME } (autofyll, autoforslag, autolagre) ikke skal kjøres. ${ infoText }"
+      ],
+      "This account is vulnerable, visit the service and change your password.": [
+        "Denne kontoen er sårbar, besøk tjenesten og endre passordet ditt."
       ]
     },
     "Error": {
@@ -602,6 +627,12 @@
       "Failed resending invite.": [
         "Sending av invitering på nytt mislyktes."
       ],
+      "Failed to add email address": [
+        "Kunne ikke legge til e-postadresse"
+      ],
+      "Failed to delete email address from monitoring": [
+        "Kunne ikke slette e-postadresse fra overvåking"
+      ],
       "Failed to delete selected items": [
         "Kunne ikke slette valgte elementer"
       ],
@@ -610,6 +641,15 @@
       ],
       "Failed to edit user's access.": [
         "Kunne ikke redigere brukerens tilgang."
+      ],
+      "Failed to load breaches": [
+        "Kunne ikke laste inn brudd"
+      ],
+      "Failed to load breaches for this address": [
+        "Kunne ikke laste inn brudd for denne adressen"
+      ],
+      "Failed to load breaches for this email alias": [
+        "Kunne ikke laste inn brudd for denne e-postaliasen"
       ],
       "Failed to load item history": [
         "Kunne ikke laste inn elementhistorikken"
@@ -629,6 +669,9 @@
       "Failed to remove user's access.": [
         "Kunne ikke fjerne brukerens tilgang."
       ],
+      "Failed to resend verification for custom email": [
+        "Kunne ikke sende bekreftelse på nytt for tilpasset e-post"
+      ],
       "Failed to restore items from trash": [
         "Kunne ikke gjenopprette elementer fra papirkurven"
       ],
@@ -637,6 +680,21 @@
       ],
       "Failed to unpin item": [
         "Kunne ikke løsne element"
+      ],
+      "Failed to update monitoring settings": [
+        "Kunne ikke oppdatere overvåkingsinnstillingene"
+      ],
+      "Failed to verify email address": [
+        "Kunne ikke verifisere e-postadressen"
+      ],
+      "Failed updating ${ PROTON_SENTINEL_NAME } setting": [
+        "Kunne ikke oppdatere ${ PROTON_SENTINEL_NAME }-innstillingen"
+      ],
+      "Failed updating monitor flag of the item": [
+        "Kunne ikke oppdatere overvåkningsflagget for elementet"
+      ],
+      "Failed updating monitoring status for this email address": [
+        "Kunne ikke oppdatere overvåkingsstatus for denne e-postadressen"
       ],
       "File could not be parsed": [
         "Fil kunne ikke tolkes"
@@ -880,6 +938,12 @@
       "${ PASS_APP_NAME } will suggest saving passkeys.": [
         "${ PASS_APP_NAME } vil foreslå å lagre tilgangsnøkler."
       ],
+      "${ PROTON_SENTINEL_NAME } successfully disabled": [
+        "${ PROTON_SENTINEL_NAME } deaktivert"
+      ],
+      "${ PROTON_SENTINEL_NAME } successfully enabled": [
+        "${ PROTON_SENTINEL_NAME } aktivert"
+      ],
       "${ trialDaysLeft } day left": [
         "${ trialDaysLeft } dag igjen",
         "${ trialDaysLeft } dager igjen"
@@ -1010,6 +1074,15 @@
       "Editor": [
         "Redaktør"
       ],
+      "Email address successfully deleted from monitoring": [
+        "E-postadresse slettet fra overvåking"
+      ],
+      "Email address successfully excluded from monitoring": [
+        "E-postadresse ekskludert fra overvåking"
+      ],
+      "Email address successfully included in monitoring": [
+        "E-postadresse inkludert i overvåking"
+      ],
       "Emptying trash...": [
         "Tømming av papirkurven..."
       ],
@@ -1106,6 +1179,12 @@
       "Item restored": [
         "Element gjenopprettet"
       ],
+      "Item successfully excluded from monitoring": [
+        "Element ekskludert fra overvåking"
+      ],
+      "Item successfully included in monitoring": [
+        "Element inkludert i overvåking"
+      ],
       "Item successfully moved": [
         "Element flyttet"
       ],
@@ -1132,6 +1211,9 @@
       ],
       "me": [
         "meg"
+      ],
+      "Monitoring settings successfully updated": [
+        "Overvåkingsinnstillingene er oppdatert"
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "Mer enn en passordbehandler, ${ PASS_APP_NAME } beskytter passordet ditt og din personlige e-postadresse via e-postaliaser. Drevet av den samme teknologien bak ${ MAIL_APP_NAME }, er dataene dine kryptert fra ende til ende og er bare tilgjengelige for deg."
@@ -1471,7 +1553,7 @@
         "${ config.options.wordCount } ord"
       ],
       "${ PASS_SHORT_APP_NAME } monitor": [
-        "${ PASS_SHORT_APP_NAME } overvåke"
+        "${ PASS_SHORT_APP_NAME }-overvåking"
       ],
       "1 hour": [
         "1 time"
@@ -1851,6 +1933,9 @@
       "Special characters (!&*)": [
         "Spesialtegn (!&*)"
       ],
+      "Strong": [
+        "Sterk"
+      ],
       "Suffix": [
         "Suffiks"
       ],
@@ -1916,6 +2001,12 @@
       ],
       "View logs": [
         "Se logger"
+      ],
+      "Vulnerable": [
+        "Sårbar"
+      ],
+      "Weak": [
+        "Svak"
       ],
       "Website": [
         "Nettsted"
@@ -2082,6 +2173,9 @@
       "${ PASS_APP_NAME } Settings": [
         "${ PASS_APP_NAME }-innstillinger"
       ],
+      "${ PASS_SHORT_APP_NAME } monitor": [
+        "${ PASS_SHORT_APP_NAME }-overvåking"
+      ],
       "Auto-lock update": [
         "Oppdatering av autolås"
       ],
@@ -2163,6 +2257,9 @@
       "Members": [
         "Medlemmer"
       ],
+      "Missing two-factor authentication": [
+        "Mangler tofaktorautentisering"
+      ],
       "Modified": [
         "Endret"
       ],
@@ -2214,6 +2311,9 @@
       "Share with": [
         "Del med"
       ],
+      "Stay safer online": [
+        "Hold deg tryggere på nettet"
+      ],
       "Suggestions": [
         "Forslag"
       ],
@@ -2249,6 +2349,9 @@
       ],
       "Vault shared with you": [
         "Hvelv delt med deg"
+      ],
+      "Weak password": [
+        "Svakt passord"
       ],
       "Welcome to your new password manager!": [
         "Velkommen til din nye passordbehandler!"

@@ -322,7 +322,7 @@
         "Skrij časovne pasove"
       ],
       "Image could not be loaded with tracker protection.": [
-        "Slika ni bila naložena zaradi zaščite pred sledilci."
+        "Slika ni bila naložena zaradi zaščite pred sledilniki."
       ],
       "Image will be loaded without a proxy": [
         "Slika bo naložena brez uporabe posredniškega strežnika."
@@ -453,10 +453,10 @@
       "Not now": [
         "Ne zdaj"
       ],
-      "OK": [
+      "Ok": [
         "V redu"
       ],
-      "Ok": [
+      "OK": [
         "V redu"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -658,7 +658,7 @@
         "Poskusi znova"
       ],
       "Try another method": [
-        "Poskusi z drugo metodo"
+        "Poskusi z drugim načinom"
       ],
       "Unlock data": [
         "Odkleni podatke"
@@ -673,7 +673,7 @@
         "Posodobi"
       ],
       "Update recovery file": [
-        "Posodobi obnovitveno datoteko"
+        "Posodobi datoteko za obnovitev"
       ],
       "Update recovery phrase": [
         "Posodobi stavek za obnovitev"
@@ -888,7 +888,7 @@
         "Neveljavna datoteka ICS"
       ],
       "Invalid method": [
-        "Neveljavna metoda"
+        "Neveljaven način"
       ],
       "Unsupported calendar component": [
         "Nepodprta komponenta koledarja"
@@ -2408,9 +2408,6 @@
       "Availability unknown": [
         "Razpoložljivost ni znana"
       ],
-      "Boost efficiency and track your time by color-coding events by category or your energy levels. Get this and much more with a paid plan.": [
-        "Povečajte učinkovitost in spremljajte svoj čas z barvnim kodiranjem dogodkov glede na kategorijo ali raven pomembnosti. Pridobite to in še veliko več s plačljivim paketom."
-      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Dešifriranje stikov … To lahko traja nekaj minut. Po končanem postopku boste lahko prenesli datoteko z vsemi izvoženimi stiki."
       ],
@@ -2469,7 +2466,7 @@
         "Vaš račun in načini obnovitve podatkov so nastavljeni in 2FA je omogočen."
       ],
       "Your account and data recovery methods are set.": [
-        "Vaš račun in metode za obnovitev podatkov so nastavljene."
+        "Vaš račun in načini za obnovitev podatkov so nastavljeni."
       ]
     },
     "description": {
@@ -5002,7 +4999,7 @@
         "Ali želite izbrisati ta dogodek?"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
-        "Ali želite prejeti novo kodo za preverjanje ali uporabiti drugačno metodo preverjanja?"
+        "Ali želite prejeti novo kodo za preverjanje ali uporabiti drugačen način preverjanja?"
       ],
       "Would you like to receive a new verification code?": [
         "Bi želeli prejeti novo kodo za preverjanje?"
@@ -5238,7 +5235,7 @@
     },
     "Info; reset calendar keys modal; part 2": {
       "This is because your password was recently reset without using a recovery method.": [
-        "To je zato, ker je bilo vaše geslo nedavno ponastavljeno brez uporabe obnovitvene metode."
+        "To je zato, ker je bilo vaše geslo nedavno ponastavljeno brez uporabe načina za obnovitev."
       ]
     },
     "Info; reset calendar keys modal; part 3": {
@@ -5863,7 +5860,7 @@
     },
     "Link; reset calendar keys modal": {
       "What's a recovery method?": [
-        "Kaj je metoda obnovitve?"
+        "Kaj je način obnovitve?"
       ]
     },
     "Loading info": {
@@ -8260,9 +8257,6 @@
       ]
     },
     "Spotlight": {
-      "Color-coding is here!": [
-        "Označevanje z barvami je tu!"
-      ],
       "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
         "Priročno zaženite ${ MAIL_APP_NAME } neposredno z namizja."
       ],
@@ -8280,9 +8274,6 @@
       ],
       "Now you can see when participants are free to attend your meeting.": [
         "Vidite lahko, kdaj se lahko udeleženci udeležijo sestanka."
-      ],
-      "With customizable event colors, you can color-code the chaos and conquer your day.": [
-        "Z označevanjem dogodkov z različnimi barvami si lahko uredite kaotične dnevne obveznosti in zmagate."
       ]
     },
     "State": {

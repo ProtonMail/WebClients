@@ -7177,6 +7177,9 @@
       "${ reason } has been enabled": [
         "${ reason } er blevet aktiveret"
       ],
+      "Access for the member removed": [
+        "Adgang for medlemmet fjernet"
+      ],
       "Access updated and shared": [
         "Adgang opdateret og delt"
       ],
@@ -7219,6 +7222,9 @@
       "Failed to move, please try again": [
         "Flytning mislykkedes. Forsøg venligst igen"
       ],
+      "Failed to remove the file": [
+        "Kunne ikke fjerne filen"
+      ],
       "Failed to upload files: ${ err }": [
         "Kunne ikke uploade filer: ${ err }"
       ],
@@ -7234,6 +7240,9 @@
       ],
       "File removed": [
         "Fil slettet"
+      ],
+      "Invitation removed from the share": [
+        "Invitation fjernet fra delingen"
       ],
       "Link copied to clipboard": [
         "Link kopieret til udklipsholder"
@@ -7261,6 +7270,9 @@
       ],
       "Share invitation ID was not found. Please check the link": [
         "Delings-invitation-ID blev ikke fundet. Tjek linket"
+      ],
+      "Stopping to share this item has failed": [
+        "Det lykkedes ikke at stoppe med at dele dette element"
       ],
       "Subfolder failed to be loaded": [
         "Undermappe kunne ikke indlæses"

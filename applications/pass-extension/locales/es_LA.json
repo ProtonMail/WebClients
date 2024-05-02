@@ -515,8 +515,8 @@
     },
     "Description": {
       "${ total } other login uses the same password": [
-        "Otro ${ total } inicio de sesión usa la misma contraseña",
-        "Otros ${ total } inicios de sesión usan la misma contraseña"
+        "${ total } otro inicio de sesión usa la misma contraseña.",
+        "Otros ${ total } inicios de sesión usan la misma contraseña."
       ],
       "A checked box means the feature is disabled.": [
         "Una casilla marcada significa que la función está desactivada."
@@ -628,10 +628,10 @@
         "Error al reenviar la invitación."
       ],
       "Failed to add email address": [
-        "Error al añadir dirección de correo"
+        "Error al añadir la dirección de correo electrónico"
       ],
       "Failed to delete email address from monitoring": [
-        "Error al eliminar dirección de correo del monitoreo"
+        "Error al eliminar la dirección de correo electrónico del monitoreo."
       ],
       "Failed to delete selected items": [
         "Error al eliminar los elementos seleccionados"
@@ -654,9 +654,6 @@
       "Failed to load item history": [
         "Error al leer el historial de elementos"
       ],
-      "Failed to mark this address as resolved": [
-        "Error al marcar esta dirección como resuelta"
-      ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Error al mover todos los elementos desde \"${ payload.content.name }\""
       ],
@@ -675,6 +672,9 @@
       "Failed to resend verification for custom email": [
         "Error al reenviar verificación para este correo electrónico personalizado"
       ],
+      "Failed to resolve breaches for this address": [
+        "Error al solucionar las vulneraciones para esta dirección"
+      ],
       "Failed to restore items from trash": [
         "Error al restaurar los elementos de la papelera"
       ],
@@ -688,7 +688,7 @@
         "Error al actualizar los ajustes de monitoreo"
       ],
       "Failed to verify email address": [
-        "Error al verificar dirección de correo"
+        "Error al verificar la dirección de correo electrónico"
       ],
       "Failed updating ${ PROTON_SENTINEL_NAME } setting": [
         "Error al actualizar los ajustes de ${ PROTON_SENTINEL_NAME }"
@@ -697,7 +697,7 @@
         "Error al actualizar el indicador de monitoreo de este elemento"
       ],
       "Failed updating monitoring status for this email address": [
-        "Error al actualizar el estado de monitoreo para esta dirección de correo"
+        "Error al actualizar el estado de monitoreo para esta dirección de correo electrónico"
       ],
       "File could not be parsed": [
         "No se pudo analizar el archivo"
@@ -978,6 +978,9 @@
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Alias \"${ item.aliasEmail }\" movido a la papelera. Dejará de reenviar correos a el buzón."
       ],
+      "All breaches for this address were resolved": [
+        "Todas las vulneraciones fueron resueltas para esta dirección."
+      ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Todos los elementos de \"${ payload.content.name }\" fueron movidos."
       ],
@@ -1078,13 +1081,13 @@
         "Editor"
       ],
       "Email address successfully deleted from monitoring": [
-        "Dirección de correo eliminada del monitoreo"
+        "La dirección de correo electrónico fue eliminada del monitoreo."
       ],
       "Email address successfully excluded from monitoring": [
-        "Dirección de correo electrónico excluida del monitoreo"
+        "La dirección de correo electrónico fue excluida del monitoreo."
       ],
       "Email address successfully included in monitoring": [
-        "Dirección de correo incluida en el monitoreo"
+        "La dirección de correo electrónico fue incluida en el monitoreo."
       ],
       "Emptying trash...": [
         "Vaciando la papelera..."
@@ -1183,10 +1186,10 @@
         "Elemento restaurado"
       ],
       "Item successfully excluded from monitoring": [
-        "Elemento excluido del monitoreo"
+        "Elemento fue excluido del monitoreo."
       ],
       "Item successfully included in monitoring": [
-        "Elemento incluido en el monitoreo"
+        "El elemento fue incluido en el monitoreo."
       ],
       "Item successfully moved": [
         "Elemento movido con éxito"
@@ -1216,7 +1219,7 @@
         "conmigo"
       ],
       "Monitoring settings successfully updated": [
-        "Ajustes de monitoreo actualizados"
+        "Los ajustes de monitoreo se actualizaron."
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "Más que un gestor de contraseñas, ${ PASS_APP_NAME } protege la contraseña y la dirección de correo personal a través de alias de correo electrónico. Desarrollado por la misma tecnología detrás de ${ MAIL_APP_NAME }, los datos están cifrados de extremo a extremo y solo usted puede acceder a ellos."
@@ -2009,7 +2012,7 @@
         "Vulnerable"
       ],
       "Weak": [
-        "Débil"
+        "Poco segura"
       ],
       "Website": [
         "Sitio web"
@@ -2261,7 +2264,7 @@
         "Miembros"
       ],
       "Missing two-factor authentication": [
-        "Falta la autenticación de dos factores"
+        "Falta la autenticación de dos factores."
       ],
       "Modified": [
         "Modificado"
@@ -2354,7 +2357,7 @@
         "Bóveda compartida con usted"
       ],
       "Weak password": [
-        "Contraseña débil"
+        "Contraseña poco segura"
       ],
       "Welcome to your new password manager!": [
         "¡Le damos la bienvenida a su nuevo gestor de contraseñas!"

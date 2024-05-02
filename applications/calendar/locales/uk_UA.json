@@ -447,11 +447,11 @@
       "Not now": [
         "Не зараз"
       ],
-      "OK": [
-        "Застосувати"
-      ],
       "Ok": [
         "OK"
+      ],
+      "OK": [
+        "Застосувати"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Відкрити налаштування ${ CALENDAR_APP_NAME }"
@@ -2362,9 +2362,6 @@
     "Description": {
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "Двоетапна автентифікація підвищує рівень безпеки, запобігаючи несанкціонованому доступу."
-      ],
-      "Boost efficiency and track your time by color-coding events by category or your energy levels. Get this and much more with a paid plan.": [
-        "Підвищуйте ефективність і відстежуйте свій час, позначаючи події кольором за категоріями або рівнями енергії. Отримайте це та багато іншого з платним тарифом."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Розшифрування контактів… Це може тривати кілька хвилин. Після завершення процесу ви зможете завантажити файл з усіма експортованими контактами."
@@ -8098,9 +8095,6 @@
       ]
     },
     "Spotlight": {
-      "Color-coding is here!": [
-        "Презентуємо кольорове кодування!"
-      ],
       "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
         "Зручно запускайте ${ MAIL_APP_NAME } прямо зі свого робочого столу."
       ],
@@ -8112,9 +8106,6 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Запросіть друзів до ${ BRAND_NAME }"
-      ],
-      "With customizable event colors, you can color-code the chaos and conquer your day.": [
-        "За допомогою налаштовуваних кольорів подій ви можете упорядкувати свій день."
       ]
     },
     "State": {
@@ -8175,10 +8166,10 @@
         "Ми додамо кредити за час, що залишився, на ваш ${ BRAND_NAME } Рахунок."
       ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
-        "У вас залишився **${ daysRemaining }** день до кінця дії вашого тарифного плану **${ currentPlanName }**.",
-        "У вас залишилося **${ daysRemaining }** днів до кінця дії вашого тарифного плану **${ currentPlanName }**.",
-        "У вас залишилося **${ daysRemaining }** днів до кінця дії вашого тарифного плану **${ currentPlanName }**.",
-        "У вас залишилося **${ daysRemaining }** днів до кінця дії вашого тарифного плану **${ currentPlanName }**."
+        "Залишився **${ daysRemaining }** день до завершення дії вашого тарифного плану **${ currentPlanName }**.",
+        "Залишилося **${ daysRemaining }** дні до завершення дії вашого тарифного плану **${ currentPlanName }**.",
+        "Залишилося **${ daysRemaining }** днів до завершення дії вашого тарифного плану **${ currentPlanName }**.",
+        "Залишилося **${ daysRemaining }** днів до завершення дії вашого тарифного плану **${ currentPlanName }**."
       ],
       "Your ${ appStorage } is almost full": [
         "Ваше ${ appStorage } майже заповнене"
@@ -9356,12 +9347,6 @@
       ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Вам тоді буде виставлено рахунок кожні 12 місяців по ${ renewPrice }."
-      ],
-      "Your subscription will automatically renew in ${ cycle } month.": [
-        "Ваша підписка буде автоматично поновлюватися через ${ cycle } місяць.",
-        "Ваша підписка буде автоматично поновлюватися через ${ cycle } місяців.",
-        "Ваша підписка буде автоматично поновлюватися через ${ cycle } місяців.",
-        "Ваша підписка буде автоматично поновлюватися через ${ cycle } місяців."
       ]
     },
     "vpn_2step: feature": {

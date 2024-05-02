@@ -2585,6 +2585,9 @@
       "Are you sure you want to discard your changes?": [
         "क्या आप वाकई अपने परिवर्तनों को छोड़ना चाहते हैं?"
       ],
+      "Are you sure you want to give administrative privileges to this user?": [
+        "क्या आप वाकई इस उपयोगकर्ता को प्रशासनिक विशेषाधिकार देना चाहते हैं?"
+      ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "क्या आप वाकई इस उपयोगकर्ता से प्रशासनिक विशेषाधिकार हटाना चाहते हैं?"
       ],
@@ -2740,6 +2743,9 @@
       ],
       "expires ${ expirationDate }": [
         "एक्सपायर होगा ${ expirationDate }"
+      ],
+      "Fill in user details": [
+        "उपयोगकर्ता जानकारी भरें"
       ],
       "for choosing ${ product }": [
         "${ product } चुनने के लिए"
@@ -3143,6 +3149,9 @@
       "This can take a few seconds or a few minutes depending on your device": [
         "यह आपके डिवाइस के आधार पर कुछ सेकंड या कुछ मिनट ले सकता है"
       ],
+      "This could take some time. Please do not close this page or disconnect from the internet.": [
+        "यह कुछ समय ले सकता है। कृपया इस पेज को बंद न करें और इंटरनेट से डिस्कनेक्ट न करें।"
+      ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "वर्तमान में यह उपयोगकर्ता आपके संगठन के लिए भुगतान के लिए जिम्मेदार है। इस सदस्य को डिमोट करके, आप अपने संगठन के लिए भुगतान के लिए जिम्मेदार बन जाएंगे।"
       ],
@@ -3239,11 +3248,17 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "विशेष मूल्य पर प्रीमियम सुविधाएं, उत्पाद और संग्रहण प्राप्त करने के लिए अभी अपग्रेड करें"
       ],
+      "Upload your completed CSV file to create accounts": [
+        "खाते बनाने के लिए अपनी पूरी CSV फ़ाइल अपलोड करें"
+      ],
       "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
         "अपनी ब्रांड पहचान को बढ़ावा देने और अपने उपयोगकर्ताओं के लिए व्यक्तिगत अनुभव बनाने के लिए अपने संगठन का चिन्ह अपलोड करें।"
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "वर्तमान लोड और स्थिति के अनुसार सर्वश्रेष्ठ सर्वर का उपयोग करें: ${ formattedBestServerName }"
+      ],
+      "Use the different types of email addresses and aliases offered by ${ BRAND_NAME }.": [
+        "${ BRAND_NAME } द्वारा प्रस्तुत किए गए विभिन्न प्रकार के ईमेल पतों और उपनाम का उपयोग करें।"
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "बिना ऐप के ${ VPN_APP_NAME } के सर्वर से जुड़ते समय इस प्रमाण का इस्तेमाल करें। उदाहरण स्थितियों में शामिल है: Tunnelblick macOS पे, OpenVPN GNU/Linux पे।"

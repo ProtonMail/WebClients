@@ -101,6 +101,9 @@
       "Create alias": [
         "Opprett alias"
       ],
+      "Create an alias": [
+        "Opprett et alias"
+      ],
       "Create card": [
         "Opprett kort"
       ],
@@ -158,6 +161,15 @@
       "Edit vault": [
         "Rediger hvelv"
       ],
+      "Enable Dark Web Monitoring": [
+        "Aktiver overvåking av det mørke nettet"
+      ],
+      "Enable NetShield": [
+        "Aktiver NetShield"
+      ],
+      "Exclude from monitoring": [
+        "Ekskluder fra overvåking"
+      ],
       "Export": [
         "Eksport"
       ],
@@ -182,6 +194,9 @@
       "Get mobile apps": [
         "Få mobilapper"
       ],
+      "Get Pass Plus": [
+        "Få Pass Plus"
+      ],
       "Get Started": [
         "Kom i gang"
       ],
@@ -199,6 +214,9 @@
       ],
       "Importing": [
         "Importerer"
+      ],
+      "Include in monitoring": [
+        "Inkluder i overvåking"
       ],
       "Install extension": [
         "Installer utvidelse"
@@ -278,6 +296,12 @@
       "Pass for iOS": [
         "Pass for iOS"
       ],
+      "Pass Monitor": [
+        "Pass-overvåking"
+      ],
+      "Pause monitoring": [
+        "Sett overvåking på vent"
+      ],
       "Pin item": [
         "Fest element"
       ],
@@ -308,6 +332,9 @@
       "Resend code": [
         "Send kode på nytt"
       ],
+      "Resend code (in ${ remaining }s)": [
+        "Send kode på nytt (om ${ remaining }s)"
+      ],
       "Resend invitation": [
         "Send invitasjon på nytt"
       ],
@@ -317,6 +344,9 @@
       "Restore item": [
         "Gjenopprett element"
       ],
+      "Resume monitoring": [
+        "Gjenoppta overvåking"
+      ],
       "Retry": [
         "Prøv på nytt"
       ],
@@ -325,6 +355,9 @@
       ],
       "Saving": [
         "Lagrer"
+      ],
+      "See all": [
+        "Se alle"
       ],
       "See members": [
         "Vis medlemmer"
@@ -392,6 +425,9 @@
       "Verify": [
         "Verifiser"
       ],
+      "View details": [
+        "Vis detaljer"
+      ],
       "View history": [
         "Vis historikk"
       ],
@@ -442,6 +478,63 @@
       ],
       "Expand": [
         "Utvid"
+      ]
+    },
+    "Description": {
+      "${ total } other login uses the same password": [
+        "${ total } annen pålogging bruker det samme passordet",
+        "${ total } andre pålogginger bruker det samme passordet"
+      ],
+      "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
+        "Et e-postalias fungerer som en e-postadresse, men reduserer søppelpost og holder den faktiske e-postadressen og identiteten din skjult."
+      ],
+      "Change your passwords": [
+        "Endre passordene dine"
+      ],
+      "Create unique passwords": [
+        "Opprett unike passord"
+      ],
+      "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
+        "Overvåking av det \"mørke nettet\" er tilgjengelige med en betalt plan. Oppgrader for umiddelbar tilgang."
+      ],
+      "Get notified if your email, password or other personal data was leaked.": [
+        "Bli varslet hvis e-posten, passordet eller andre personlige data ble lekket."
+      ],
+      "Increase your security": [
+        "Øk sikkerheten din"
+      ],
+      "It would be more secure to set up 2FA for this account.": [
+        "Det ville være sikrere å sette opp 2FA for denne kontoen."
+      ],
+      "Keep your info more secure and private with these guides and tips.": [
+        "Hold informasjonen din sikrere og mer privat med disse veiledningene og tipsene."
+      ],
+      "NetShield is an ad-blocking feature from ${ VPN_APP_NAME } that protects your device from ads, trackers, and malware. ": [
+        "NetShield er en annonseblokkeringsfunksjon fra ${ VPN_APP_NAME } som beskytter enheten din mot annonser, sporere og skadelig programvare. "
+      ],
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "Vår banebrytende AI-drevne sikkerhetsløsning designet for brukere som ønsker økt beskyttelse for kontoene sine. ${ learnMoreLink }."
+      ],
+      "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
+        "Begynn å overvåke for datainnbrudd relatert til kontoer som er opprettet med e-postadressen din og dine hide-my-email-aliaser."
+      ],
+      "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
+        "Det mørke nettet er en skjult del av internett hvor stjålet personlig informasjon, som identiteter, kan kjøpes og selges."
+      ],
+      "These items remain at risk": [
+        "Disse elementene er fortsatt i fare"
+      ],
+      "This account is vulnerable, visit the service and change your password.": [
+        "Denne kontoen er sårbar, besøk tjenesten og endre passordet ditt."
+      ],
+      "With ${ PASS_SHORT_APP_NAME } Monitor, stay ahead of threats by getting instant alerts if your credentials are compromised. Unlock advanced security features and detailed logs to safeguard your online presence.": [
+        "Med ${ PASS_SHORT_APP_NAME }-overvåking, hold deg i forkant av trusler ved å få øyeblikkelige varsler hvis legitimasjonen din er kompromittert. Lås opp avanserte sikkerhetsfunksjoner og detaljerte logger for å beskytte din tilstedeværelse på nettet."
+      ],
+      "Your email addresses were leaked in at least 1 data breach.": [
+        "E-postadressene dine ble lekket i minst 1 datainnbrudd."
+      ],
+      "Your personal info was leaked in a data breach of a third-party service.": [
+        "Din personlige informasjon ble lekket i et datainnbrudd på en tredjepartstjeneste."
       ]
     },
     "Error": {
@@ -531,6 +624,12 @@
       "Failed resending invite.": [
         "Sending av invitering på nytt mislyktes."
       ],
+      "Failed to add email address": [
+        "Kunne ikke legge til e-postadresse"
+      ],
+      "Failed to delete email address from monitoring": [
+        "Kunne ikke slette e-postadresse fra overvåking"
+      ],
       "Failed to delete selected items": [
         "Kunne ikke slette valgte elementer"
       ],
@@ -539,6 +638,15 @@
       ],
       "Failed to edit user's access.": [
         "Kunne ikke redigere brukerens tilgang."
+      ],
+      "Failed to load breaches": [
+        "Kunne ikke laste inn brudd"
+      ],
+      "Failed to load breaches for this address": [
+        "Kunne ikke laste inn brudd for denne adressen"
+      ],
+      "Failed to load breaches for this email alias": [
+        "Kunne ikke laste inn brudd for denne e-postaliasen"
       ],
       "Failed to load item history": [
         "Kunne ikke laste inn elementhistorikken"
@@ -558,6 +666,9 @@
       "Failed to remove user's access.": [
         "Kunne ikke fjerne brukerens tilgang."
       ],
+      "Failed to resend verification for custom email": [
+        "Kunne ikke sende bekreftelse på nytt for tilpasset e-post"
+      ],
       "Failed to restore items from trash": [
         "Kunne ikke gjenopprette elementer fra papirkurven"
       ],
@@ -566,6 +677,21 @@
       ],
       "Failed to unpin item": [
         "Kunne ikke løsne element"
+      ],
+      "Failed to update monitoring settings": [
+        "Kunne ikke oppdatere overvåkingsinnstillingene"
+      ],
+      "Failed to verify email address": [
+        "Kunne ikke verifisere e-postadressen"
+      ],
+      "Failed updating ${ PROTON_SENTINEL_NAME } setting": [
+        "Kunne ikke oppdatere ${ PROTON_SENTINEL_NAME }-innstillingen"
+      ],
+      "Failed updating monitor flag of the item": [
+        "Kunne ikke oppdatere overvåkningsflagget for elementet"
+      ],
+      "Failed updating monitoring status for this email address": [
+        "Kunne ikke oppdatere overvåkingsstatus for denne e-postadressen"
       ],
       "File could not be parsed": [
         "Fil kunne ikke tolkes"
@@ -702,6 +828,20 @@
         "Noe gikk galt"
       ]
     },
+    "Feature": {
+      "Dark Web Monitoring": [
+        "Mørk webovervåking"
+      ],
+      "Integrated 2FA authenticator": [
+        "Integrert 2FA-autentisering"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Ubegrenset antall hide-my-email-aliaser"
+      ],
+      "Vault sharing (up to ${ MAX_VAULT_MEMBERS } people)": [
+        "Deling av hvelv (opptil ${ MAX_VAULT_MEMBERS } personer)"
+      ]
+    },
     "file size format": {
       "byte": [
         "byte",
@@ -776,6 +916,15 @@
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } krever passordet ditt for ${ BRAND_NAME } for å få frakoblet tilgang til data."
       ],
+      "${ PROTON_SENTINEL_NAME } successfully disabled": [
+        "${ PROTON_SENTINEL_NAME } deaktivert"
+      ],
+      "${ PROTON_SENTINEL_NAME } successfully enabled": [
+        "${ PROTON_SENTINEL_NAME } aktivert"
+      ],
+      "${ row.breachCount } breaches detected": [
+        "${ row.breachCount } brudd oppdaget"
+      ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 dager for å prøve premiumfunksjoner gratis. Bare i løpet av den første uken med ${ BRAND_NAME }."
       ],
@@ -784,6 +933,9 @@
       ],
       "Access successfully confirmed": [
         "Tilgang bekreftet"
+      ],
+      "Add your custom email address to monitor :": [
+        "Legg til den tilpassede e-postadressen din for å overvåke:"
       ],
       "Admin": [
         "Administrator"
@@ -796,6 +948,12 @@
       ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Alias \"${ item.aliasEmail }\" flyttet til papirkurven - det vil slutte å videresende e-post til postkassen din."
+      ],
+      "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
+        "Aliaser med egendefinerte domener overvåkes ikke, vennligst legg dem til som en tilpasset e-post for overvåking."
+      ],
+      "All current breaches will be marked as resolved. In case of future data breaches, you'll be notified.": [
+        "Alle gjeldende brudd vil bli merket som løst. Ved fremtidige datainnbrudd vil du bli varslet."
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Alle elementer fra \"${ payload.content.name }\" flyttet"
@@ -823,6 +981,9 @@
       ],
       "Auto-lock successfully disabled": [
         "Autolås deaktivert"
+      ],
+      "Breaches detected": [
+        "Brudd oppdaget"
       ],
       "Bring your existing passwords into ${ BRAND_NAME }.": [
         "Ta med eksisterende passord til ${ BRAND_NAME }."
@@ -869,6 +1030,9 @@
       "Deleting \"${ payload.content.name }\"": [
         "Sletter \"${ payload.content.name }\""
       ],
+      "Didn't receive the code?": [
+        "Fikk du ikke koden?"
+      ],
       "Drop file here to upload": [
         "Slipp fil her for å laste opp"
       ],
@@ -881,8 +1045,20 @@
       "email": [
         "e-post"
       ],
+      "Email address successfully deleted from monitoring": [
+        "E-postadresse slettet fra overvåking"
+      ],
+      "Email address successfully excluded from monitoring": [
+        "E-postadresse ekskludert fra overvåking"
+      ],
+      "Email address successfully included in monitoring": [
+        "E-postadresse inkludert i overvåking"
+      ],
       "Emptying trash...": [
         "Tømming av papirkurven..."
+      ],
+      "Enable ${ PASS_SHORT_APP_NAME } beta": [
+        "Aktiver ${ PASS_SHORT_APP_NAME }-testversjon"
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Skriv inn verifiseringskode. Siffer ${ digit }."
@@ -980,6 +1156,12 @@
       "Item restored": [
         "Element gjenopprettet"
       ],
+      "Item successfully excluded from monitoring": [
+        "Element ekskludert fra overvåking"
+      ],
+      "Item successfully included in monitoring": [
+        "Element inkludert i overvåking"
+      ],
       "Item successfully moved": [
         "Element flyttet"
       ],
@@ -988,6 +1170,9 @@
       ],
       "Item successfully unpinned": [
         "Element ikke festet"
+      ],
+      "Latest breach on ${ formattedDate }": [
+        "Siste brudd den ${ formattedDate }."
       ],
       "Learn how to ${ staySaferOnlineLink }": [
         "Lær hvordan du ${ staySaferOnlineLink }"
@@ -1022,6 +1207,9 @@
       "Monitor accounts": [
         "Overvåk kontoer"
       ],
+      "Monitoring settings successfully updated": [
+        "Overvåkingsinnstillingene er oppdatert"
+      ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "Mer enn en passordbehandler, ${ PASS_APP_NAME } beskytter passordet ditt og din personlige e-postadresse via e-postaliaser. Drevet av den samme teknologien bak ${ MAIL_APP_NAME }, er dataene dine kryptert fra ende til ende og er bare tilgjengelige for deg."
       ],
@@ -1042,6 +1230,9 @@
       ],
       "Never": [
         "Aldri"
+      ],
+      "No breaches detected": [
+        "Ingen brudd oppdaget"
       ],
       "No network connection": [
         "Ingen internettforbindelse"
@@ -1088,6 +1279,9 @@
       ],
       "Pinning item...": [
         "Fester element..."
+      ],
+      "Please check your spam folder or try resending the code.": [
+        "Vennligst sjekk søppelpostmappen din eller prøv å sende koden på nytt."
       ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Vennligst bekreft passordet for ${ BRAND_NAME } for å aktivere frakoblet modus"
@@ -1178,6 +1372,9 @@
       ],
       "Successfully synced all vaults": [
         "Alle hvelv synkronisert"
+      ],
+      "Suggested": [
+        "Foreslått"
       ],
       "Switch to another vault or create an item in this vault": [
         "Bytt til et annet hvelv eller opprett et element i dette hvelvet."
@@ -1273,11 +1470,17 @@
       "Vault \"${ share.content.name }\" was removed": [
         "Hvelv \"${ share.content.name }\" ble fjernet."
       ],
+      "Verification code sent.": [
+        "Verifiseringskode sendt."
+      ],
       "Viewer": [
         "Leser"
       ],
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Vi har problemer med å synkronisere data til din lokale lagring. Forsikre deg om at du har nok diskplass til at ${ PASS_SHORT_APP_NAME } kan fungere problemfritt."
+      ],
+      "We’ve sent a verification code to ${ email }. Please enter it below:": [
+        "Vi har sendt en verifiseringskode til ${ email }. Vennligst angi den nedenfor:"
       ],
       "You are about to create:": [
         "Du er i ferd med å opprette:"
@@ -1310,6 +1513,12 @@
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Du har nådd den maksimalt tillatte lengden på ${ maxLength }-tegn."
       ],
+      "You will be notified of data breaches for this email address.": [
+        "Du vil bli varslet om datainnbrudd for denne e-postadressen."
+      ],
+      "You will no longer be notified of data breaches for this email address.": [
+        "Du vil ikke lenger bli varslet om datainnbrudd for denne e-postadressen."
+      ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "Du vil bruke denne PIN-koden til å låse opp ${ PASS_APP_NAME } når den låses automatisk etter en periode med inaktivitet."
       ],
@@ -1331,6 +1540,10 @@
       "${ config.options.wordCount } word": [
         "${ config.options.wordCount } ord",
         "${ config.options.wordCount } ord"
+      ],
+      "${ usageCount } login": [
+        "${ usageCount } pålogging",
+        "${ usageCount } pålogginger"
       ],
       "1 hour": [
         "1 time"
@@ -1536,6 +1749,9 @@
       "Last month": [
         "Siste måned"
       ],
+      "Last updated": [
+        "Sist oppdatert"
+      ],
       "Last week": [
         "Forrige uke"
       ],
@@ -1592,6 +1808,9 @@
       ],
       "No history": [
         "Ingen historikk"
+      ],
+      "None": [
+        "Ingen"
       ],
       "Note": [
         "Notat"
@@ -1680,6 +1899,12 @@
       "Special characters (!&*)": [
         "Spesialtegn (!&*)"
       ],
+      "Status": [
+        "Status"
+      ],
+      "Strong": [
+        "Sterk"
+      ],
       "Suffix": [
         "Suffiks"
       ],
@@ -1725,6 +1950,9 @@
       "Update": [
         "Oppdater"
       ],
+      "Used in": [
+        "Brukt i"
+      ],
       "Username": [
         "Brukernavn"
       ],
@@ -1748,6 +1976,12 @@
       ],
       "View logs": [
         "Se logger"
+      ],
+      "Vulnerable": [
+        "Sårbar"
+      ],
+      "Weak": [
+        "Svak"
       ],
       "Websites": [
         "Nettsteder"
@@ -1865,6 +2099,9 @@
       "Full Name": [
         "Fullt navn"
       ],
+      "me@example.com": [
+        "meg@eksempel.no"
+      ],
       "MM/YY": [
         "MM/ÅÅ"
       ],
@@ -1924,14 +2161,38 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } addresses": [
+        "${ BRAND_NAME }-adresser"
+      ],
+      "${ PASS_SHORT_APP_NAME } Monitor": [
+        "${ PASS_SHORT_APP_NAME }-overvåking"
+      ],
+      "${ PASS_SHORT_APP_NAME } monitor": [
+        "${ PASS_SHORT_APP_NAME }-overvåking"
+      ],
+      "Account protection": [
+        "Kontobeskyttelse"
+      ],
       "Auto-lock update": [
         "Oppdatering av autolås"
       ],
       "Block trackers and malware": [
         "Blokkér sporere og skadelig programvare"
       ],
+      "Breach detected": [
+        "Brudd oppdaget"
+      ],
+      "Breaches": [
+        "Brudd"
+      ],
+      "Breaches detected for": [
+        "Brudd oppdaget for"
+      ],
       "Confirm PIN code": [
         "Bekreft PIN-kode"
+      ],
+      "Confirm your email": [
+        "Bekreft e-posten din"
       ],
       "Create a vault": [
         "Opprett et hvelv"
@@ -1944,6 +2205,21 @@
       ],
       "Current version": [
         "Gjeldende versjon"
+      ],
+      "Custom addresses": [
+        "Tilpassede adresser"
+      ],
+      "Custom email monitoring": [
+        "Overvåking av tilpasset e-post"
+      ],
+      "Custom emails": [
+        "Tilpassede e-poster"
+      ],
+      "Dark Web Monitoring": [
+        "Mørk webovervåking"
+      ],
+      "Dark web monitoring": [
+        "Mørk webovervåking"
       ],
       "Delete vault \"${ vaultName }\" ?": [
         "Slett hvelv \"${ vaultName }\" ?"
@@ -1966,11 +2242,17 @@
       "Enter your PIN": [
         "Skriv inn PIN-koden din"
       ],
+      "Excluded items": [
+        "Ekskluderte elementer"
+      ],
       "Get Started": [
         "Kom i gang"
       ],
       "Grant permissions": [
         "Gi tillatelser"
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email-aliaser"
       ],
       "History": [
         "Historikk"
@@ -1999,11 +2281,20 @@
       "Low disk space": [
         "Lite diskplass"
       ],
+      "Mark as resolved?": [
+        "Merke som løst?"
+      ],
       "Member limit": [
         "Medlemsgrense"
       ],
       "Members": [
         "Medlemmer"
+      ],
+      "Missing 2FA": [
+        "Mangler 2FA"
+      ],
+      "Missing two-factor authentication": [
+        "Mangler tofaktorautentisering"
       ],
       "Modified": [
         "Endret"
@@ -2017,8 +2308,20 @@
       "Move items?": [
         "Flytte elementer?"
       ],
+      "No excluded items": [
+        "Ingen ekskluderte elementer"
+      ],
+      "No insecure passwords": [
+        "Ingen usikre passord"
+      ],
       "No items selected": [
         "Ingen elementer valgt"
+      ],
+      "No missing 2FAs": [
+        "Ingen manglende 2FA-er"
+      ],
+      "No reused passwords": [
+        "Ingen gjenbrukte passord"
       ],
       "Our welcome gift to you": [
         "Vår velkomstgave til deg"
@@ -2028,6 +2331,12 @@
       ],
       "Password": [
         "Passord"
+      ],
+      "Password Health": [
+        "Passordhelse"
+      ],
+      "Pause monitoring?": [
+        "Sette overvåking på vent?"
       ],
       "Pending access to the shared data": [
         "Venter på tilgang til de delte dataene"
@@ -2041,8 +2350,24 @@
       "Recommended actions": [
         "Anbefalte tiltak"
       ],
+      "Remove email address?": [
+        "Fjerne e-postadresse?"
+      ],
+      "Resolved breaches": [
+        "Løste brudd"
+      ],
       "Restore this version?": [
         "Gjenopprette denne versjonen?"
+      ],
+      "Resume monitoring?": [
+        "Gjenoppta overvåking?"
+      ],
+      "Reused ${ count } time": [
+        "Gjenbrukt ${ count } gang",
+        "Gjenbrukt ${ count } ganger"
+      ],
+      "Reused passwords": [
+        "Gjenbrukte passord"
       ],
       "Review and share": [
         "Se over og del"
@@ -2061,6 +2386,9 @@
       ],
       "Share with": [
         "Del med"
+      ],
+      "Stay safer online": [
+        "Hold deg tryggere på nettet"
       ],
       "Suggestions": [
         "Forslag"
@@ -2082,6 +2410,15 @@
       ],
       "Vault shared with you": [
         "Hvelv delt med deg"
+      ],
+      "Want to learn more?": [
+        "Vil du lære mer?"
+      ],
+      "Weak password": [
+        "Svakt passord"
+      ],
+      "Weak passwords": [
+        "Svake passord"
       ],
       "What is an alias?": [
         "Hva er et alias?"
@@ -2156,6 +2493,9 @@
       "Duplicate email addresses.": [
         "Dupliserte e-postadresser."
       ],
+      "Email is required": [
+        "E-postadresse kreves"
+      ],
       "Empty note": [
         "Tomt notat"
       ],
@@ -2167,6 +2507,12 @@
       ],
       "Invalid alias prefix": [
         "Ugyldig aliasprefiks"
+      ],
+      "Invalid code": [
+        "Ugyldig kode"
+      ],
+      "Invalid email": [
+        "Ugyldig e-post"
       ],
       "Invalid email addresses.": [
         "Ugyldige e-postadresser"
@@ -2229,6 +2575,9 @@
       "The alias prefix cannot be longer than 40 characters": [
         "Aliasprefikset kan ikke være lenger enn 40 tegn."
       ],
+      "This email address will no longer be monitored for data breaches.": [
+        "Denne e-postadressen vil ikke lenger overvåkes for datainnbrudd."
+      ],
       "Title is required": [
         "Tittel kreves"
       ],
@@ -2246,6 +2595,9 @@
       ],
       "Vault name is required": [
         "Hvelvnavn kreves"
+      ],
+      "Verification code is required": [
+        "Bekreftelseskode er påkrevd"
       ],
       "You cannot create more vaults than your subscription allows.": [
         "Du kan ikke opprette flere hvelv enn det abonnementet ditt tillater."
