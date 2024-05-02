@@ -125,8 +125,8 @@ const WeakPasswordReport: FC<SelectedItem> = (item) => {
 };
 
 const Missing2FAReport: FC<SelectedItem> = (item) => {
-    const { insecure } = useMonitor();
-    const isMissing2FA = insecure.data.some(itemEq(item));
+    const { missing2FAs } = useMonitor();
+    const isMissing2FA = missing2FAs.data.some(itemEq(item));
 
     return (
         isMissing2FA && (
@@ -134,8 +134,8 @@ const Missing2FAReport: FC<SelectedItem> = (item) => {
                 <CardContent
                     icon={() => <CardIcon icon="exclamation-filled" className="self-start mt-0.5" />}
                     titleClassname="text-lg text-semibold"
-                    title={c('Title').t`Inactive 2FA`}
-                    subtitle={c('Description').t`It would be more secure to set up 2FA for this account.`}
+                    title={c('Title').t`Set up 2FA for more security`}
+                    subtitle={c('Description').t`This service offers 2FA. Enable it for added account security.`}
                 />
             </Card>
         )

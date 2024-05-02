@@ -15,6 +15,7 @@ export type UseActionRequestOptions<
     SuccessAction extends WithRequest<Action, 'success', any> = any,
     FailureAction extends WithRequest<Action, 'failure', any> = any,
 > = {
+    initialLoading?: boolean;
     initialRequestId?: string;
     onStart?: (request: ActionRequestEntry<IntentAction>) => MaybePromise<void>;
     onSuccess?: (request: ActionRequestEntry<SuccessAction>) => MaybePromise<void>;
@@ -33,7 +34,7 @@ export const useActionRequest = <
     options?: UseActionRequestOptions<ReturnType<IntentAction>, ReturnType<SuccessAction>, ReturnType<FailureAction>>
 ) => {
     const dispatch = useDispatch();
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(options?.initialLoading ?? false);
     const [requestId, setRequestId] = useState<string>(options?.initialRequestId ?? '');
     const request = useSelector(selectRequest(requestId));
 
@@ -85,6 +86,7 @@ export const useActionRequest = <
 };
 
 type UseRequestOptions<T extends RequestFlow<any, any, any>> = {
+    initialLoading?: boolean;
     initialRequestId?: string;
     onStart?: (request: ActionRequestEntry<ReturnType<T['intent']>>) => MaybePromise<void>;
     onFailure?: (request: ActionRequestEntry<ReturnType<T['failure']>>) => MaybePromise<void>;

@@ -42,18 +42,6 @@ import itemRestore from './items/item-restore.saga';
 import itemTrash from './items/item-trash.saga';
 import itemUnpin from './items/item-unpin.saga';
 import itemSetFlags from './items/item.set-flags.saga';
-import breachesAlias from './monitor/breaches.alias.saga';
-import breachesCustom from './monitor/breaches.custom.saga';
-import breachesProton from './monitor/breaches.proton.saga';
-import breaches from './monitor/breaches.saga';
-import customAddressAdd from './monitor/custom-address.add.saga';
-import customAddressDelete from './monitor/custom-address.delete';
-import customAddressResend from './monitor/custom-address.resend';
-import customAddressVerify from './monitor/custom-address.verify';
-import monitorAddressResolve from './monitor/monitor-address.resolve.saga';
-import monitorAddressToggle from './monitor/monitor-address.toggle.saga';
-import monitorToggle from './monitor/monitor-toggle.saga';
-import sentinelToggle from './monitor/sentinel-toggle.saga';
 import organizationSettingsEdit from './organization/organization-settings-edit.saga';
 import getOrganizationSettings from './organization/organization-settings.saga';
 import shareAccessOptions from './shares/share-access-options.saga';
@@ -77,15 +65,7 @@ export function* workerRootSaga(options: RootSagaOptions) {
             aliasDetailsRequest,
             aliasOptionsRequest,
             boot,
-            breaches,
-            breachesAlias,
-            breachesCustom,
-            breachesProton,
             cache,
-            customAddressAdd,
-            customAddressDelete,
-            customAddressResend,
-            customAddressVerify,
             events,
             featureFlags,
             getOrganizationSettings,
@@ -112,15 +92,11 @@ export function* workerRootSaga(options: RootSagaOptions) {
             itemsImport,
             itemTrash,
             itemUnpin,
-            monitorAddressResolve,
-            monitorAddressToggle,
-            monitorToggle,
             newUserInvitePromote,
             newUserInviteRemove,
             notification,
             organizationSettingsEdit,
             reportProblem,
-            sentinelToggle,
             sessionLockDisable,
             sessionLockEnable,
             sessionLockImmediate,
