@@ -163,7 +163,6 @@ export interface PaymentMethodStatus {
 
 export interface PaymentMethodStatusExtended {
     CountryCode?: string | null;
-    ZipCode?: string | null;
     State?: string | null;
     VendorStates: PaymentMethodStatus;
 }
