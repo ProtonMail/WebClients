@@ -6,7 +6,6 @@ import {
     domainsReducer,
     inactiveKeysReducer,
     paymentMethodsReducer,
-    plansReducer,
     protonDomainsReducer,
     samlReducer,
 } from '@proton/account';
@@ -16,7 +15,6 @@ import { sharedReducers } from '@proton/redux-shared-store';
 export const rootReducer = combineReducers({
     ...sharedReducers,
     ...paymentMethodsReducer,
-    ...plansReducer,
     ...protonDomainsReducer,
     ...domainsReducer,
     ...domainsAddressesReducer,
