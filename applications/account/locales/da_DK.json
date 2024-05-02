@@ -3894,6 +3894,9 @@
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Kunne ikke hente aktive sessioner. ${ refresh } eller prøv igen senere."
       ],
+      "File too large. Your logo must be 30 KB or smaller.": [
+        "Filen er for stor. Logoet skal være 30 KB eller mindre."
+      ],
       "Filter with this name already exists": [
         "Et filter med dette navn findes allerede"
       ],
@@ -4067,6 +4070,9 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Opgrader venligst til et erhversabonnement med mere end 1 bruger for at administrere flere brugere."
       ],
+      "Please upload a square file": [
+        "Upload en kvadratisk fil"
+      ],
       "Please upload an xml file": [
         "Upload en xml-fil"
       ],
@@ -4139,6 +4145,12 @@
       ],
       "The email addresses do not match": [
         "E-Mailadresserne stemmer ikke overens"
+      ],
+      "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
+        "Filen er for stor, maksimumsstørrelsen er ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }"
+      ],
+      "The file is too small, the minimum size is ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }": [
+        "Filen er for lille, minimumsstørrelsen er ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }"
       ],
       "The folder name is invalid. Please choose a different name.": [
         "Mappenavnet er ikke gyldigt. Vælg venligst et andet navn."

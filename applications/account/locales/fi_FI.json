@@ -11,13 +11,13 @@
     },
     "Access level": {
       "Full view": [
-        "Täysi näkymä"
+        "Täysi tarkastelu"
       ],
       "Full view (see all event details)": [
         "Täysi tarkastelu (näytä kaikki tapahtumatiedot)"
       ],
       "Limited view": [
-        "Rajoitettu näkymä"
+        "Rajoitettu tarkastelu"
       ],
       "Limited view (see only free/busy)": [
         "Rajoitettu tarkastelu (näytä vain vapaa/varattu)"
@@ -426,7 +426,7 @@
         "Muokkaa palvelimia"
       ],
       "Edit sieve": [
-        "Muokkaa Sieveä"
+        "Muokkaa Sieve-suodatinta"
       ],
       "Edit sign-in details": [
         "Muokkaa kirjautumistietoja"
@@ -777,7 +777,7 @@
         "Pyydä uusi koodi"
       ],
       "Requires a verified recovery email address": [
-        "Vaatii vahvistetun palautussähköpostin"
+        "Vaatii vahvistetun palautusosoitteen"
       ],
       "Resend code": [
         "Lähetä koodi uudelleen"
@@ -975,7 +975,7 @@
         "Järjestä"
       ],
       "Spam": [
-        "Roskapostia"
+        "Roskaposti"
       ],
       "Start import": [
         "Aloita tuonti"
@@ -3140,12 +3140,12 @@
         "Poiston jälkeen kukaan muu ei voi enää käyttää tätä osoitetta."
       ],
       "You can only delete 1 address per year.": [
-        "Voit poistaa vain yhden osoitteen vuodessa."
+        "Voit poistaa vuoden sisällä vain yhden osoitteen."
       ]
     },
     "Delete address tooltip": {
       "You can only delete 1 address per year": [
-        "Voit poistaa vain yhden osoitteen vuodessa"
+        "Voit poistaa vuoden sisällä vain yhden osoitteen"
       ],
       "You've reached the limit of address deletions for this user.": [
         "Olet saavuttanut tämän käyttäjän osoitteiden poistojen enimmäismäärän."
@@ -4452,7 +4452,7 @@
         "Puuttuva aloitusaika"
       ],
       "No UID, title or start time": [
-        "Ei UID:ta, nimikettä tai aloitusaikaa"
+        "Ei UID:ta, nimeä tai aloitusaikaa"
       ],
       "Non-Gregorian": [
         "Ei-gregoriaaninen"
@@ -4643,7 +4643,7 @@
     },
     "Event title": {
       "(no title)": [
-        "(ei nimikettä)"
+        "(ei nimeä)"
       ]
     },
     "Export calendar": {
@@ -5178,7 +5178,7 @@
         "Valitse…"
       ],
       "The attachment": [
-        "Liitteet"
+        "Liite"
       ],
       "The recipient": [
         "Vastaanottaja"
@@ -5208,18 +5208,18 @@
     },
     "filter: Label": {
       "the email was sent ${ label }": [
-        "sähköposti lähetettiin ${ label }"
+        "viesti lähetettiin ${ label }"
       ],
       "with attachments": [
-        "liitteiden kanssa"
+        "liitteillä"
       ],
       "without attachments": [
-        "ilman liitteitä"
+        "liitteittä"
       ]
     },
     "filter: Label, jt": {
       "the email was sent ${ label }": [
-        "sähköposti lähetettiin ${ label }"
+        "viesti lähetettiin ${ label }"
       ]
     },
     "FilterSettings": {
@@ -5227,10 +5227,10 @@
         "Automatisoi viestien merkinnän ja arkistoinnin kaltaisia toimintoja lisäämällä omia suodattimia."
       ],
       "Allow:": [
-        "Salli:"
+        "Sallitut:"
       ],
       "Block:": [
-        "Estä:"
+        "Estetyt:"
       ],
       "Search list": [
         "Etsi listalta"
@@ -5239,10 +5239,10 @@
         "Roskaposti:"
       ],
       "Take control over what lands in your inbox by creating the following lists:": [
-        "Hallitse postilaatikkoosi saapuvaa sisältöä luomalla seuraavat listat:"
+        "Hallitse postilaatikkoosi saapuvaa sisältöä seuraavilla listauksilla:"
       ],
       "Take control over what lands in your organization members' inboxes by creating the following lists:": [
-        "Hallitse organisaatiosi jäsenten postilaatikoihin saapuvaa sisältöä luomalla seuraavat listat:"
+        "Hallitse organisaatiosi jäsenten postilaatikoihin saapuvaa sisältöä seuraavilla listauksilla:"
       ],
       "These lists apply to all accounts in your organization. Members can create their own individual filters, but won't be able to override addresses or domains you blocked.": [
         "Nämä listat koskevat kaikkia organisaatiosi tilejä. Jäsenet voivat luoda omia henkilökohtaisia suodattimia, mutta eivät voi ohittaa estämiäsi osoitteita tai verkkotunnuksia."
@@ -6180,13 +6180,13 @@
         "Lisää tilillesi @pm.me-sähköpostiosoite. Tämä yksinkertainen, lyhyempi osoite on lyhenne sanoista \"${ MAIL_APP_NAME } me\" tai \"Private Message me\"."
       ],
       "Add a recovery email address": [
-        "Lisää palautussähköposti"
+        "Lisää palautusosoite"
       ],
       "add a recovery method": [
         "lisäät palautustavan"
       ],
       "Add a recovery phone number": [
-        "Lisää palautuspuhelin"
+        "Lisää palautusnumero"
       ],
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
         "Lisää tilillesi yksi suojauskerros. Sinun on suoritettava kaksivaiheinen tunnistautuminen jokaisen kirjautumisen yhteydessä."
@@ -6295,7 +6295,7 @@
         "Linkin välityksellä kuka tahansa voi nähdä kalenterin tapahtumien nimien, sijaintien ja osallistujien kaltaisia tietoja."
       ],
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
-        "Linkin välityksellä kuka tahansa voi nähdä oletko kalenterissasi vapaana vai varattuna. He eivät näe tapahtumien nimien, sijaintien ja osallistujien kaltaisia tietoja."
+        "Linkin välityksellä kuka tahansa voi nähdä oletko kalenterissasi vapaana vai varattuna. He eivät näe tapahtumista niiden nimien, sijaintien ja osallistujien kaltaisia tietoja."
       ],
       "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
         "Kukaan ei voi enää synkronoida tai nähdä tämän kalenterin uusia päivityksiä tämän linkin välityksellä. Jos haluat myöntää heille käyttöoikeuden uudestaan, sinun on luotava uusi linkki."
@@ -6731,10 +6731,10 @@
         "Syötä oma salasanasi (organisaation ylläpitäjänä)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
-        "Syötä palautussähköpostisi osoite niin käyttäjätunnuksesi tai sähköpostiosoitteesi lähetetään sinulle."
+        "Syötä palautusosoitteesi niin käyttäjätunnuksesi tai sähköpostiosoitteesi lähetetään sinulle."
       ],
       "Enter your recovery phone number and we will send you your username or email address.": [
-        "Syötä palautuspuhelimesi numero niin käyttäjätunnuksesi tai sähköpostiosoitteesi lähetetään sinulle."
+        "Syötä palautusnumerosi niin käyttäjätunnuksesi tai sähköpostiosoitteesi lähetetään sinulle."
       ],
       "Enter your recovery phrase to change your password now.": [
         "Syötä palautuslausekkeesi vaihtaaksesi salasanasi."
@@ -7015,7 +7015,7 @@
         "Lue lisää"
       ],
       "learn more about Sieve programming language": [
-        "Lue lisää Sieve-ohjelmointikielestä"
+        "Lisätietoja Sieve-ohjelmointikielestä"
       ],
       "Left to Right": [
         "Vasemmalta oikealle"
@@ -7248,6 +7248,9 @@
       ],
       "Password copied to clipboard": [
         "Salasana kopioitiin leikepöydälle"
+      ],
+      "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
+        "Salasanan täytyy sisältää vähintään ${ MIN_PASSWORD_LENGTH } merkkiä."
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Maksut on suojattu TLS-salauksella ja Sveitsin tietosuojalailla."
@@ -7832,7 +7835,7 @@
         "Tarvitset ${ toAppName } -palvelun käyttöön ${ MAIL_APP_NAME } -osoitteen."
       ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
-        "Toimiakseen oikein, jokaisen suodattimen täytyy sisältää ainakin nimi ja toimiva Sieve-skripti. ${ link }"
+        "Toimiakseen oikein, jokaisen suodattimen täytyy sisältää ainakin nimi ja toimiva Sieve-komentosarja. ${ link }"
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Lisää tilillesi krediittejä, joilla voit maksaa tilauspäivityksen tai nykyisen tilauksen uudistuksen. Saat yhden krediitin jokaista kuluttamaasi ${ i18nCurrency } kohden."
@@ -8509,6 +8512,15 @@
       "Key successfully generated.": [
         "Avain luotu onnistuneesti."
       ],
+      "Note: you already have a key with the same algorithm for this address. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
+        "Huomioi: Sinulla on jo samaa algoritmia käyttävä avain tälle osoitteelle. Jos se avain ei ole vaarantunut, voi uuden avaimen luonti olla tarpeetonta ja saattaa vain hidastaa tilisi toimintaa."
+      ],
+      "Note: you already have a key with the same algorithm for this user. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
+        "Huomioi: Sinulla on jo samaa algoritmia käyttävä avain tälle käyttäjälle. Jos se avain ei ole vaarantunut, voi uuden avaimen luonti olla tarpeetonta ja saattaa vain hidastaa tilisi toimintaa."
+      ],
+      "This will generate a new key, which will be used to encrypt future contact details, email encryption keys, and other data.": [
+        "Tämä luo uuden avaimen, jota käytetään jatkossa yhteystietojen, sähköpostin salausavainten ja muiden tietojen salaukseen."
+      ],
       "This will generate a new key, which will be used to encrypt future emails, among other data.": [
         "Tämä luo uuden avaimen, jota käytetään muun muassa tulevien sähköpostien salaamiseen."
       ]
@@ -8880,7 +8892,7 @@
         "Sovellussalasana"
       ],
       "Apply filter to existing emails": [
-        "Sovella suodatinta nykyisille viesteille"
+        "Käytä suodatinta nykyisille viesteille"
       ],
       "Assertion Consumer Service URL": [
         "Valtuutuksen käyttäjäpalvelun (Assertion Consumer Service, ACS) URL"
@@ -9489,13 +9501,13 @@
         "Luetuksi"
       ],
       "Recovery email address": [
-        "Palautussähköposti"
+        "Palautusosoite"
       ],
       "Recovery file": [
         "Palautustiedosto"
       ],
       "Recovery phone number": [
-        "Palautuspuhelin"
+        "Palautusnumero"
       ],
       "Recovery phrase": [
         "Palautuslauseke"
@@ -9681,7 +9693,7 @@
         "Liitteillä"
       ],
       "Without attachment": [
-        "Ilman liitteitä"
+        "Liitteittä"
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Kyllä, haluan poistaa tilin ja kaikki sen tiedot pysyvästi."
@@ -9697,8 +9709,11 @@
       ]
     },
     "label": {
+      "Device-based recovery": [
+        "Laitteistopohjainen palautus"
+      ],
       "Recovery phone number": [
-        "Palautuspuhelin"
+        "Palautusnumero"
       ],
       "Recovery phrase": [
         "Palautuslauseke"
@@ -10247,7 +10262,7 @@
         "Unohditko ${ BRAND_NAME }-tilisi salasanan? Nollaa se täältä palautuskoodilla, sähköpostitse tai tekstiviestitse ja jatka ${ MAIL_APP_NAME }in, ${ DRIVE_SHORT_APP_NAME }n, ${ CALENDAR_SHORT_APP_NAME }in ja muiden palveluiden käyttämistä."
       ],
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "Unohditko ${ BRAND_NAME }-tilisi käyttäjätunnuksen? Etsi se palautussähköpostin tai -puhelimen avulla ja jatka ${ MAIL_APP_NAME }in, ${ DRIVE_SHORT_APP_NAME }n, ${ CALENDAR_SHORT_APP_NAME }in ja muiden palveluiden käyttämistä."
+        "Unohditko ${ BRAND_NAME }-tilisi käyttäjätunnuksen? Löydä se palautussähköpostisi tai -puhelimesi avulla ja jatka ${ MAIL_APP_NAME }in, ${ DRIVE_SHORT_APP_NAME }n, ${ CALENDAR_SHORT_APP_NAME }in ja muiden palveluiden käyttämistä."
       ],
       "Private and secure email, no credit card required": [
         "Yksityinen ja turvallinen sähköposti, eikä luottokorttia tarvita"
@@ -12154,6 +12169,9 @@
       "Open-source and audited": [
         "Avoin lähdekoodi ja auditoitu"
       ],
+      "Passkeys supported on all devices": [
+        "Suojausavaimia tuetaan kaikilla laitteilla"
+      ],
       "per month": [
         "kuukaudessa"
       ],
@@ -12625,7 +12643,7 @@
         "Vahvista tämä palautusosoite nyt: ${ email.Value }"
       ],
       "Verify recovery email?": [
-        "Vahvistetaanko palautussähköposti?"
+        "Vahvistetaanko palautusosoite?"
       ],
       "Verify with email": [
         "Vahvista sähköpostitse"
@@ -12665,7 +12683,7 @@
         "Vahvista nyt"
       ],
       "Verify recovery phone?": [
-        "Vahvistetaanko palautuspuhelin?"
+        "Vahvistetaanko palautusnumero?"
       ],
       "Verify this recovery phone number now: ${ phone.Value }": [
         "Vahvista tämä palautusnumero nyt: ${ phone.Value }"
@@ -12905,7 +12923,7 @@
         "Tämä käyttöoikeus vanhenee pian"
       ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
-        "Voit nyt vaihtaa salasanasi tilille ${ boldEmail } vapaasti ${ boldDaysRemaining } ajan."
+        "Voit nyt vapaasti vaihtaa salasanasi tilille ${ boldEmail } ${ boldDaysRemaining } ajan."
       ],
       "You can now change your password for the account ${ boldEmail }.": [
         "Voit nyt vaihtaa salasanasi tilille ${ boldEmail }."
@@ -14057,7 +14075,7 @@
         "Lahjakoodi käytetty"
       ],
       "If you entered a valid recovery email we will send you an email with your usernames in the next minute.": [
-        "Mikäli syötit kelvollisen palautussähköpostin osoitteen, lähetetään käyttäjätunnuksesi sinulle hetken kuluttua sähköpostitse."
+        "Mikäli syötit kelvollisen palautusosoitteen, lähetetään käyttäjätunnuksesi sinulle hetken kuluttua sähköpostitse."
       ],
       "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
         "Mikäli syötit kelvollisen palautuspuhelimen numeron, lähetetään käyttäjätunnuksesi sinulle hetken kuluttua tekstiviestitse."
@@ -14505,7 +14523,7 @@
         "Ulkoasu"
       ],
       "Apply filter to existing messages": [
-        "Käytä suodatinta nykyisille viesteillesi"
+        "Käytä suodatinta nykyisille viesteille"
       ],
       "Apply gift code": [
         "Käytä lahjakoodia"
@@ -14595,7 +14613,7 @@
         "Vahvista"
       ],
       "Confirm address": [
-        "Vahvista sähköpostiosoite"
+        "Vahvista osoite"
       ],
       "Confirm downgrade": [
         "Vahvista alennus"
