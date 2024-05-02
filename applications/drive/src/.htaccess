@@ -52,3 +52,7 @@ ErrorDocument 404 /assets/404.html
   AddOutputFilter INCLUDES;DEFLATE svg
 </IfModule>
 
+# Browser should cache assets for 14 days
+<FilesMatch ".(js|css)$"> 
+  Header set Cache-Control "max-age=1209600, public" 
+</FilesMatch>
