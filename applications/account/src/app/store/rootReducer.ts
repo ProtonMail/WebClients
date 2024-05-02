@@ -6,7 +6,6 @@ import {
     domainsReducer,
     inactiveKeysReducer,
     paymentMethodsReducer,
-    plansReducer,
     protonDomainsReducer,
     samlReducer,
 } from '@proton/account';
@@ -18,7 +17,6 @@ import { selectPersistModel } from '@proton/redux-utilities';
 export const rootReducer = combineReducers({
     ...sharedReducers,
     ...paymentMethodsReducer,
-    ...plansReducer,
     ...domainsReducer,
     ...protonDomainsReducer,
     ...filtersReducer,
@@ -38,7 +36,6 @@ export type AccountState = ReturnType<typeof rootReducer>;
 export const persistReducer: Partial<{ [key in keyof AccountState]: any }> = {
     ...sharedPersistReducer,
     paymentMethods: selectPersistModel,
-    plans: selectPersistModel,
     domains: selectPersistModel,
     members: selectPersistModel,
     protonDomains: selectPersistModel,
