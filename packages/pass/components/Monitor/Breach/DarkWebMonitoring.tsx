@@ -1,15 +1,25 @@
-import { type FC, useLayoutEffect, useRef } from 'react';
+import { type FC, useEffect, useLayoutEffect, useRef } from 'react';
 import { Route, type RouteChildrenProps, Switch } from 'react-router-dom';
 
 import { Scroll } from '@proton/atoms/Scroll';
+import { useMonitor } from '@proton/pass/components/Monitor/MonitorProvider';
 
 import { Breach } from './Breach';
 import { BreachGroup } from './BreachGroup';
 import { Breaches } from './Breaches';
 
 export const DarkWebMonitoring: FC<RouteChildrenProps> = ({ match, history }) => {
+    const monitor = useMonitor();
+    const { didLoad, breaches } = monitor;
+
     const scrollRef = useRef<HTMLElement>(null);
     useLayoutEffect(() => scrollRef.current?.scrollTo({ top: 0 }), [history.location.pathname]);
+
+    useEffect(() => {
+        /** if the monitor data wasn't loaded - try to
+         * revalidate when mounting this route */
+        if (!didLoad && !breaches.loading) monitor.sync();
+    }, [didLoad, breaches.loading]);
 
     return match ? (
         <Scroll className="flex-1 w-full" customContainerRef={scrollRef}>

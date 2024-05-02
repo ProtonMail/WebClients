@@ -72,6 +72,7 @@ export const MonitorProvider: FC<PropsWithChildren> = ({ children }) => {
     const excluded = useSelector(selectExcludedItems);
 
     const breaches = useRequest(getBreaches, {
+        initialLoading: true,
         initialRequestId: breachesRequest(),
         onSuccess: () => setRefreshedAt(getEpoch()),
     });
