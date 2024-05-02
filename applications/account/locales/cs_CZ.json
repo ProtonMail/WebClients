@@ -3927,6 +3927,9 @@
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Nepodařilo se získat aktivní relace. Prosím ${ refresh } nebo to zkuste znovu později."
       ],
+      "Failed to process the logo": [
+        "Logo se nepodařilo zpracovat"
+      ],
       "File too large. Your logo must be 30 KB or smaller.": [
         "Soubor je příliš velký. Vaše logo musí mít 30 KB nebo méně."
       ],
@@ -4187,6 +4190,9 @@
       ],
       "The email addresses do not match": [
         "E-mailové adresy se neshodují"
+      ],
+      "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
+        "Soubor je příliš velký, maximální velikost je ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }"
       ],
       "The file is too small, the minimum size is ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }": [
         "Soubor je příliš malý, minimální velikost je ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }"
@@ -5995,6 +6001,9 @@
       "${ BRAND_NAME } is privacy you can trust, ensured by strong encryption, open-source code, and Swiss privacy laws. We believe nobody should be able to exploit your data, period. Our technology and business are based upon this fundamentally stronger definition of privacy.": [
         "${ BRAND_NAME } je soukromí, kterému můžete důvěřovat, zajištěné silným šifrováním, otevřeným zdrojovým kódem a švýcarskými zákony o ochraně osobních údajů. Věříme, že nikdo by neměl mít možnost zneužít vaše data, tečka. Naše technologie a podnikání jsou založeny na takto vysoké definici soukromí."
       ],
+      "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
+        "${ BRAND_NAME } nikdy nesdílí vaše informace s třetími stranami. Data pocházejí z vlastních analýz ${ BRAND_NAME } a Constella Intelligence."
+      ],
       "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "${ BRAND_NAME } pozastavil import, protože ztratil spojení se vzdáleným e-mailovým serverem. Prosím znovu se připojte."
       ],
@@ -6262,6 +6271,9 @@
         "Přidat servery (${ availableAddedCount } k dispozici)",
         "Přidat servery (${ availableAddedCount } k dispozici)"
       ],
+      "Add your name and logo to create a more personalized experience for your organization.": [
+        "Přidejte své jméno a logo a vytvořte pro svou organizaci personalizované prostředí."
+      ],
       "Adding ${ addedServerCount } gateway server": [
         "Přidávání ${ addedServerCount } serveru brány",
         "Přidávání ${ addedServerCount } serverů brány",
@@ -6279,6 +6291,12 @@
       ],
       "Admin account allocation": [
         "Přidělení účtu správce"
+      ],
+      "Affected user is on row": [
+        "Dotčený uživatel jse na řádku",
+        "Dotčení uživatelé jsou na řádcích",
+        "Dotčení uživatelé jsou na řádcích",
+        "Dotčení uživatelé jsou na řádcích"
       ],
       "Align left": [
         "Zarovnat doleva"
@@ -6336,6 +6354,9 @@
       ],
       "Amount due": [
         "Částka k zaplacení"
+      ],
+      "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
+        "E-mailový alias funguje stejně jako e-mailová adresa, ale omezuje šíření spamu a udržuje vaši skutečnou e-mailovou adresu a identitu skrytou."
       ],
       "An error occurred while communicating with the extension": [
         "Při komunikaci s rozšířením došlo k chybě"
@@ -6502,6 +6523,9 @@
       "Check the status of imports and forwarding.": [
         "Zkontrolujte stav importování a přeposílání."
       ],
+      "Choose an app to get started": [
+        "Vyberte si aplikaci a začněte"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klikněte na \"Požádat o nový kód\" pro zaslání nového ověřovacího kódu na ${ strong }. Pokud je toto telefonní číslo nesprávné, klepněte na tlačítko \"Upravit\" pro jeho opravu."
       ],
@@ -6585,6 +6609,9 @@
       ],
       "Custom": [
         "Vlastní"
+      ],
+      "Custom branding": [
+        "Vlastní značka"
       ],
       "Custom daily": [
         "Denní nastavení"
@@ -6853,6 +6880,9 @@
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "Získejte přístup vytvořením účtu ${ BRAND_NAME } a přijetím pozvánky."
       ],
+      "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
+        "Dostanete upozornění, pokud došlo k úniku vašeho hesla nebo jiných osobních údajů. ${ learnMoreLinkNoBreach }"
+      ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "Pojmenujte token např. názvem služby, se kterou jej plánujete používat a vyberte jednu ze svých aktivních doménových adres. Pouze tato adresa bude moci odesílat e-maily tímto tokenem."
       ],
@@ -6930,6 +6960,12 @@
       ],
       "If you wish to combine this account with another one, do NOT delete it.": [
         "Jestliže si přejete kombinovat tento účet s dalším, nemažte jej."
+      ],
+      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
+        "Pokud máte potíže, rádi vám pomůžeme. ${ boldPhoneCall } nebo ${ boldZoomMeeting } s jedním z našich specialistů podpory, nebo si otevřete ${ boldLiveChat } pro podporu na chatu."
+      ],
+      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists.": [
+        "Pokud máte potíže, rádi vám pomůžeme. ${ boldPhoneCall } nebo ${ boldZoomMeeting } s jedním z našich specialistů podpory."
       ],
       "Image description": [
         "Popis obrázku"
@@ -7033,6 +7069,9 @@
       "Just send them your personal referral link.": [
         "Stačí jim poslat svůj osobní doporučující odkaz."
       ],
+      "Keep your info more secure and private with these guides and tips.": [
+        "Udržujte své informace v bezpečí a soukromí pomocí těchto návodů a tipů."
+      ],
       "Key deletion is irreversible!": [
         "Smazání klíče je nevratné!"
       ],
@@ -7086,6 +7125,9 @@
       ],
       "Link type": [
         "Typ odkazu"
+      ],
+      "Live chat": [
+        "Živý chat"
       ],
       "Loaded content is being protected by our proxy when tracker protection is activated.": [
         "Načtený obsah je chráněn naším proxy serverem, v případě, že je aktivována ochrana proti sledování."
@@ -7161,6 +7203,9 @@
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Pojmenujte svou novou složku a vyberte nadřazenou složku, do které ji chcete vložit. Pokud nevyberete nadřazenou složku, bude nová složka vytvořena v kořenové složce."
+      ],
+      "NetShield is an ad-blocking feature from ${ VPN_APP_NAME } that protects your device from ads, trackers, and malware.": [
+        "NetShield je funkce blokování reklam od ${ VPN_APP_NAME }, která chrání vaše zařízení před reklamami, sledovacímí prvky a malware."
       ],
       "New": [
         "Nový"
@@ -7474,6 +7519,9 @@
       "Report link expired": [
         "Odkaz na hlášení vypršel"
       ],
+      "Request a phone call": [
+        "Požádat o telefonní hovor"
+      ],
       "Resend verification email": [
         "Znovu zaslat ověřovací e-mail"
       ],
@@ -7639,6 +7687,9 @@
       "Support for 1 custom email domain": [
         "Podpora 1 vlastní e-mailové domény"
       ],
+      "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
+        "Podpora sledování vlastních domén a e-mailových adres, které nejsou ${ BRAND_NAME }, bude brzy k dispozici."
+      ],
       "support team": [
         "tým podpory"
       ],
@@ -7674,6 +7725,9 @@
       ],
       "The credentials from your Identity Provider will be deleted.": [
         "Přihlašovací údaje od vašeho poskytovatele identity budou smazány."
+      ],
+      "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
+        "Dark web je skrytá část internetu, kde lze koupit a prodat ukradené osobní údaje, například identitu."
       ],
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "Ověřovací odkaz e-mailu vypršel. Prosím přihlaste se znovu pro odeslání ověřovacího odkazu."
@@ -7972,11 +8026,17 @@
       "Upload your completed CSV file to create accounts": [
         "Nahrajte svůj kompletní soubor CSV pro vytvoření účtů"
       ],
+      "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
+        "Nahráním loga své organizace podpoříte identitu své značky a vytvoříte pro své uživatele personalizované prostředí."
+      ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "Nahraný soubor není platným soukromým klíčem. Prosím ověřte a zkuste to znovu."
       ],
       "URL link": [
         "URL odkaz"
+      ],
+      "Use a password manager to generate and securely store your passwords, ensuring strong passwords and easier sign-ins.": [
+        "Ke generování a bezpečnému ukládání hesel používejte správce hesel, který zajistí silná hesla a snadnější přihlašování."
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Použijte nejlepší server podle aktuálního zatížení a polohy: ${ formattedBestServerName }"
@@ -8055,6 +8115,9 @@
       ],
       "We just sent you a new link.": [
         "Právě jsme vám poslali nový odkaz."
+      ],
+      "We monitor the dark web for instances where your personal information (such as an email address or password used on a third-party site) is leaked or compromised.": [
+        "Sledujeme dark web, zda nedošlo k úniku nebo ohrožení vašich osobních údajů (například e-mailové adresy nebo hesla používaného na webu třetí strany)."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Potřebujeme ověřit vaši platební metodu u vaší banky."
@@ -8418,6 +8481,9 @@
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Vaše žádost na podporu byla uzavřena. Děkujeme za kontaktování podpory ${ BRAND_NAME }."
+      ],
+      "Zoom meeting": [
+        "Setkání Zoom"
       ]
     },
     "Info - folder colouring feature": {
@@ -14488,6 +14554,9 @@
       "Billing cycle": [
         "Fakturační cyklus"
       ],
+      "Block trackers and malware": [
+        "Blokování sledovacích prvků a malware"
+      ],
       "Bridge for ${ platform }": [
         "Bridge pro ${ platform }"
       ],
@@ -14620,6 +14689,9 @@
       "Custom selection of users": [
         "Vlastní výběr uživatelů"
       ],
+      "Customization": [
+        "Přizpůsobení"
+      ],
       "Customize and confirm": [
         "Přizpůsobit a potvrdit"
       ],
@@ -14679,6 +14751,9 @@
       ],
       "Delete logs": [
         "Odstranit záznamy"
+      ],
+      "Delete organization logo?": [
+        "Smazat logo organizace?"
       ],
       "Delete the server (you will still be able to recover it for ${ days } day)": [
         "Smazat server (budete ho moci zpět obnovit za ${ days } den)",
@@ -14887,6 +14962,9 @@
       "How does it work?": [
         "Jak to funguje?"
       ],
+      "How to choose a good logo": [
+        "Jak vybrat správné logo"
+      ],
       "How to refer a friend and get credits": [
         "Jak doporučit známého a získat kredity"
       ],
@@ -15028,6 +15106,9 @@
       "Password reset settings": [
         "Nastavení resetování hesla"
       ],
+      "Passwords made easy": [
+        "Snadná tvorba hesel"
+      ],
       "Pay invoice": [
         "Zaplatit fakturu"
       ],
@@ -15114,6 +15195,9 @@
       ],
       "Reset password?": [
         "Obnova hesla?"
+      ],
+      "Resolved": [
+        "Vyřešeno"
       ],
       "Restore administrator privileges": [
         "Obnovit oprávnění správce"
@@ -15301,6 +15385,9 @@
       "Upload CSV file to create multiple accounts": [
         "Nahrajte soubor CSV pro vytvoření více účtů"
       ],
+      "Upload your organization’s logo": [
+        "Nahrajte logo své organizace"
+      ],
       "Users": [
         "Uživatelé"
       ],
@@ -15337,11 +15424,23 @@
       "We'll send an email to your new address with instructions on completing the change.": [
         "Na vaši novou adresu vám zašleme e-mail s pokyny pro dokončení změny."
       ],
+      "What is an alias?": [
+        "Co je alias?"
+      ],
+      "What is the dark web?": [
+        "Co je dark web?"
+      ],
       "What would you like to import?": [
         "Co byste chtěli importovat?"
       ],
       "WireGuard configuration": [
         "Konfigurace WireGuard"
+      ],
+      "You have no open alerts": [
+        "Nemáte žádné otevřené výstrahy"
+      ],
+      "You have no resolved alerts": [
+        "Nemáte žádné vyřešené výstrahy"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Vaše bezplatná zkušební verze ${ planName } skončí ${ textDate }"
@@ -15853,6 +15952,12 @@
       ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Potom vám bude účtováno ${ renewPrice } každých 12 měsíců."
+      ],
+      "Your subscription will automatically renew in ${ cycle } month.": [
+        "Vaše předplatné se automaticky obnoví za ${ cycle } měsíc.",
+        "Vaše předplatné se automaticky obnoví za ${ cycle } měsíce.",
+        "Vaše předplatné se automaticky obnoví za ${ cycle } měsíců.",
+        "Vaše předplatné se automaticky obnoví za ${ cycle } měsíců."
       ]
     },
     "vpn_2step: billing": {

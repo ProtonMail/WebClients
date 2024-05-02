@@ -8429,6 +8429,9 @@
       "You won’t be able to recover locked data using your downloaded recovery files.": [
         "Nie będziesz mógł odzyskać zablokowanych danych za pomocą plików odzyskiwania."
       ],
+      "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
+        "Odzyskiwanie zablokowanych danych za pomocą pobranych plików odzyskiwania nie będzie możliwe. Spowoduje to również wyłączenie odzyskiwania za pomocą zaufanego urządzenia."
+      ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
         "Twoje konto ${ BRAND_NAME } jest powiązane z adresem ${ externalEmailAddress }."
       ],
@@ -9877,6 +9880,9 @@
       ]
     },
     "label": {
+      "Device-based recovery": [
+        "Odzyskiwanie za pomocą zaufanego urządzenia"
+      ],
       "Recovery phone number": [
         "Numer pomocniczy"
       ],
@@ -11025,6 +11031,9 @@
       ],
       "Organize items with multiple vaults": [
         "Organizuj elementy w wielu sejfach"
+      ],
+      "Passkeys supported": [
+        "Klucze dostępu są obsługiwane"
       ],
       "Password-protected Emails": [
         "Wiadomości chronione hasłem"
@@ -12413,6 +12422,9 @@
       ],
       "Open-source and audited": [
         "Aplikacje z otwartym kodem źródłowym zweryfikowane przez audyt"
+      ],
+      "Passkeys supported on all devices": [
+        "Klucze dostępu są obsługiwane na wszystkich urządzeniach"
       ],
       "per month": [
         "miesięcznie"
