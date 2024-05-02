@@ -42,6 +42,7 @@ const getConfig = (env: any): Configuration => {
         overlayErrors: env.overlayErrors || false,
         overlayRuntimeErrors: env.overlayRuntimeErrors || false,
         logical: env.logical || false,
+        analyze: env.analyze || false,
     };
 
     const version = options.buildData.version;
