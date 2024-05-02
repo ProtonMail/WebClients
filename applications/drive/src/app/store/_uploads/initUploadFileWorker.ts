@@ -45,6 +45,7 @@ export function initUploadFileWorker(
             const worker = new Worker(
                 /* webpackChunkName: "drive-worker" */
                 /* webpackPrefetch: true */
+                /* webpackPreload: true */
                 new URL('./worker/worker.ts', import.meta.url)
             );
 
