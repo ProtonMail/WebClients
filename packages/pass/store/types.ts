@@ -40,7 +40,7 @@ export interface RootSagaOptions {
 
     /** Callback with the result of the boot sequence. The `clearCache`
      * flag indicates if the boot failure should result in a cache wipe */
-    onBoot?: (result: { ok: true } | { ok: false; clearCache: boolean }) => void;
+    onBoot?: (result: { ok: true; fromCache: boolean } | { ok: false; clearCache: boolean }) => void;
 
     /** Callback used when account locale is updated */
     onLocaleUpdated?: (locale: string) => void;
