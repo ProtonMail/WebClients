@@ -1,6 +1,5 @@
 import { combineReducers, configureStore, createListenerMiddleware } from '@reduxjs/toolkit';
 
-import { plansReducer } from '@proton/account';
 import { calendarsReducer } from '@proton/calendar';
 import { type ProtonThunkArguments, sharedReducers } from '@proton/redux-shared-store';
 import { ignoredActions, ignoredPaths } from '@proton/redux-shared-store/sharedSerializable';
@@ -11,7 +10,6 @@ export const listenerMiddleware = createListenerMiddleware();
 
 const rootReducer = combineReducers({
     ...sharedReducers,
-    ...plansReducer,
     ...calendarsReducer,
 });
 export type RootState = ReturnType<typeof rootReducer>;
