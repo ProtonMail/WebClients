@@ -38,7 +38,7 @@ import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { escapeRegex, getMatches } from '@proton/shared/lib/helpers/regex';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import { getHasVpnB2BPlan } from '@proton/shared/lib/helpers/subscription';
-import { Domain } from '@proton/shared/lib/interfaces';
+import { Domain, EnhancedMember } from '@proton/shared/lib/interfaces';
 import { getOrganizationKeyInfo } from '@proton/shared/lib/organization/helper';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
@@ -97,6 +97,7 @@ const filterOptions = (searchValue: string, usersToImport: UserTemplate[]) => {
 };
 
 interface Props extends ModalProps {
+    members: EnhancedMember[] | undefined;
     usersToImport: UserTemplate[];
     app: APP_NAMES;
     verifiedDomains: Domain[];
@@ -107,6 +108,7 @@ interface Props extends ModalProps {
 }
 
 const CreateUserAccountsModal = ({
+    members,
     verifiedDomains,
     usersToImport,
     app,
@@ -138,7 +140,19 @@ const CreateUserAccountsModal = ({
     const [searchValue, setSearchValue] = useState('');
     const filteredOptions = useMemo(() => filterOptions(searchValue, usersToImport), [searchValue, usersToImport]);
 
-    const [selectedUserIds, setSelectedUserIds] = useState<string[]>(usersToImport.map((user) => user.id));
+    const [selectedUserIds, setSelectedUserIds] = useState<string[]>(() => {
+        const existingNamesSet = new Set((members ?? []).map((member) => member.Name));
+        const existingAddressesSet = new Set(
+            (members ?? []).flatMap((member) => (member.Addresses ?? []).map((address) => address.Email))
+        );
+        return usersToImport
+            .filter((userTemplate) => {
+                const nameExists = existingNamesSet.has(userTemplate.displayName);
+                const addressExists = userTemplate.emailAddresses.some((email) => existingAddressesSet.has(email));
+                return !nameExists && !addressExists;
+            })
+            .map((userTemplate) => userTemplate.id);
+    });
     const [successfullyCreatedUsers, setSuccessfullyCreatedUsers] = useState<UserTemplate[]>([]);
     const [currentProgress, setCurrentProgress] = useState(0);
     const [failedUsers, setFailedUsers] = useState<UserTemplate[]>([]);
