@@ -31,7 +31,12 @@ module.exports = /** @type { (env: any) => import('webpack').Options.Optimizatio
             // This is the default "async" filter provided by webpack
             const async = !chunk.canBeInitial();
             // We exclude the crypto-worker and recovery-kit to be split, because we want them all in one file
-            return chunk.name !== 'recovery-kit' && chunk.name !== 'crypto-worker' && async;
+            return (
+                chunk.name !== 'recovery-kit' &&
+                chunk.name !== 'crypto-worker' &&
+                chunk.name !== 'drive-worker' &&
+                async
+            );
         },
     },
 });
