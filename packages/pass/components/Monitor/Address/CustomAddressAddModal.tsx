@@ -18,6 +18,8 @@ import { addCustomAddress } from '@proton/pass/store/actions';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 
+import { HIBPWarning } from './HIBPWarning';
+
 export const FORM_ID = 'custom-address-add';
 type Props = { onClose: () => void };
 type FormValues = { email: string };
@@ -80,7 +82,7 @@ export const CustomAddressAddModal: FC<Props> = ({ onClose }) => {
                     <h2 className="text-xl text-bold mb-3">{c('Title').t`Custom email monitoring`}</h2>
                     <p>{c('Info').t`Add your custom email address to monitor :`}</p>
                     <FormikProvider value={form}>
-                        <Form id={FORM_ID}>
+                        <Form id={FORM_ID} className="mb-4">
                             <FieldsetCluster>
                                 <Field
                                     name="email"
@@ -93,6 +95,9 @@ export const CustomAddressAddModal: FC<Props> = ({ onClose }) => {
                             </FieldsetCluster>
                         </Form>
                     </FormikProvider>
+                    <div className="color-weak">
+                        <HIBPWarning />
+                    </div>
                 </Panel>
             )}
         </SidebarModal>
