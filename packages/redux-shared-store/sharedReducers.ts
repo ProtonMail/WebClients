@@ -5,6 +5,7 @@ import {
     organizationKeyReducer,
     organizationReducer,
     organizationThemeSlice,
+    plansReducer,
     scheduleCallReducer,
     subscriptionReducer,
     userInvitationsReducer,
@@ -27,6 +28,7 @@ import { selectPersistModel } from '@proton/redux-utilities';
 export const sharedReducers = {
     ...userReducer,
     ...userKeysReducer,
+    ...plansReducer,
     ...addressesReducer,
     ...addressKeysReducer,
     ...userSettingsReducer,
@@ -55,6 +57,7 @@ export const sharedPersistReducer: Partial<{ [key in keyof typeof sharedReducers
     subscription: selectPersistModel,
     contacts: selectPersistModel,
     contactEmails: selectPersistModel,
+    plans: selectPersistModel,
     categories: selectPersistModel,
     organization: selectPersistModel,
     userInvitations: selectPersistModel,
