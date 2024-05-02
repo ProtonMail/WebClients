@@ -512,7 +512,7 @@
         "vzdevki hide-my-email"
       ],
       "Image could not be loaded with tracker protection.": [
-        "Slika ni bila naložena zaradi zaščite pred sledilci."
+        "Slika ni bila naložena zaradi zaščite pred sledilniki."
       ],
       "Image will be loaded without a proxy": [
         "Slika bo naložena brez uporabe posredniškega strežnika."
@@ -1079,7 +1079,7 @@
         "Dremež"
       ],
       "Some images could not be loaded with tracker protection.": [
-        "Nekaterih slik ni bilo mogoče naložiti z zaščito pred sledilci."
+        "Nekaterih slik ni bilo mogoče naložiti z zaščito pred sledilniki."
       ],
       "Star": [
         "Označi z zvezdico"
@@ -1145,7 +1145,7 @@
         "Poskusi znova"
       ],
       "Try another method": [
-        "Poskusi z drugo metodo"
+        "Poskusi z drugim načinom"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Poskusite znova. Shranjevanje ni uspelo iz naslednjega razloga: ${ saveError }"
@@ -1187,7 +1187,7 @@
         "Posodobi"
       ],
       "Update recovery file": [
-        "Posodobi obnovitveno datoteko"
+        "Posodobi datoteko za obnovitev"
       ],
       "Update recovery phrase": [
         "Posodobi stavek za obnovitev"
@@ -1416,7 +1416,7 @@
         "Nabiralnik osebe ${ nameToDisplay }"
       ],
       "5 trackers removed": [
-        "5 sledilcev odstranjenih"
+        "5 sledilnikov odstranjenih"
       ],
       "Auto forwarded": [
         "Samodejno posredovano"
@@ -1452,7 +1452,7 @@
         "Neveljavna datoteka ICS"
       ],
       "Invalid method": [
-        "Neveljavna metoda"
+        "Neveljaven način"
       ],
       "Unsupported calendar component": [
         "Nepodprta komponenta koledarja"
@@ -3310,7 +3310,7 @@
         "Za uvoz stikov iz Googla ali Outlooka ${ easySwitchLink }."
       ],
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
-        "Vključite zaščito pred e-poštnimi sledilci, da oglaševalcem in ostalim preprečite zbiranje podatkov o vaši lokaciji in spletni dejavnosti."
+        "Vključite zaščito pred e-poštnimi sledilniki, da oglaševalcem in ostalim preprečite zbiranje podatkov o vaši lokaciji in spletni dejavnosti."
       ],
       "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
         "Odklenite razporejanje sporočil po meri in druge ugodnosti, ko nadgradite svoj paket."
@@ -3331,7 +3331,7 @@
         "Z vlečenjem in spuščanjem določite prioriteto združevanja med stiki. Poleg stikov, ki jih ne želite združiti, pobrišite potrditvena polja."
       ],
       "We didn't find any known trackers and tracking URLs in this email.": [
-        "V tem sporočilu nismo zaznali znanih sledilcev ali sledilnih spletnih naslovov."
+        "V tem sporočilu nismo zaznali znanih sledilnikov ali sledilnih spletnih naslovov."
       ],
       "When do you want your message to be sent?": [
         "Kdaj želite, da se sporočilo pošlje?"
@@ -3346,7 +3346,7 @@
         "Vaš račun in načini obnovitve podatkov so nastavljeni in 2FA je omogočen."
       ],
       "Your account and data recovery methods are set.": [
-        "Vaš račun in metode za obnovitev podatkov so nastavljene."
+        "Vaš račun in načini za obnovitev podatkov so nastavljeni."
       ]
     },
     "description": {
@@ -4913,7 +4913,7 @@
         "Zaščitite in poenostavite svojo e-pošto"
       ],
       "Protection from trackers": [
-        "Zaščita pred sledilci"
+        "Zaščita pred sledilniki"
       ],
       "Set up ${ strongText } from Gmail": [
         "Nastavite ${ strongText } iz Gmaila."
@@ -5471,16 +5471,16 @@
         "${ n } neprebranih pogovorov"
       ],
       "${ numberOfImageTrackers } email tracker blocked": [
-        "${ numberOfImageTrackers } blokiran e-poštni sledilec",
-        "${ numberOfImageTrackers } blokirana e-poštna sledilca",
-        "${ numberOfImageTrackers } blokirani e-poštni sledilci",
-        "${ numberOfImageTrackers } blokiranih e-poštnih sledilcev"
+        "${ numberOfImageTrackers } blokiran e-poštni sledilnik",
+        "${ numberOfImageTrackers } blokirana e-poštna sledilnika",
+        "${ numberOfImageTrackers } blokirani e-poštni sledilniki",
+        "${ numberOfImageTrackers } blokiranih e-poštnih sledilnikov"
       ],
       "${ numberOfImageTrackers } tracker blocked": [
-        "${ numberOfImageTrackers } blokiran sledilec",
-        "${ numberOfImageTrackers } blokirana sledilca",
-        "${ numberOfImageTrackers } blokirani sledilci",
-        "${ numberOfImageTrackers } blokiranih sledilcev"
+        "${ numberOfImageTrackers } blokiran sledilnik",
+        "${ numberOfImageTrackers } blokirana sledilnika",
+        "${ numberOfImageTrackers } blokirani sledilniki",
+        "${ numberOfImageTrackers } blokiranih sledilnikov"
       ],
       "${ numberOfUTMTrackers } link cleaned": [
         "${ numberOfUTMTrackers } očiščena povezava",
@@ -5993,7 +5993,7 @@
         "Pošta se posreduje v vaš nabiralnik, vaš e-poštni naslov pa ostane skrit."
       ],
       "Email tracker protection is disabled": [
-        "Zaščita pred e-poštnimi sledilci je izključena"
+        "Zaščita pred e-poštnimi sledilniki je izključena"
       ],
       "Emails are automatically signed": [
         "Sporočila so samodejno podpisana"
@@ -6350,7 +6350,7 @@
         "Ni najdenih rezultatov"
       ],
       "No trackers found": [
-        "Nobenih sledilcev ni bilo najdenih."
+        "Nobenih sledilnikov ni bilo najdenih."
       ],
       "non-${ MAIL_APP_NAME }": [
         "ne-${ MAIL_APP_NAME }"
@@ -7022,7 +7022,7 @@
         "Ko nastavite dvojno preverjanje pristnosti, nudimo obnovitvene kode, ki jih lahko uporabite za prijavo, če izgubite dostop do aplikacije za preverjanje pristnosti."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
-        "Ali želite prejeti novo kodo za preverjanje ali uporabiti drugačno metodo preverjanja?"
+        "Ali želite prejeti novo kodo za preverjanje ali uporabiti drugačen način preverjanja?"
       ],
       "Would you like to receive a new verification code?": [
         "Bi želeli prejeti novo kodo za preverjanje?"
@@ -9642,7 +9642,7 @@
         "Naprej"
       ],
       "Protection from trackers": [
-        "Zaščita pred sledilci"
+        "Zaščita pred sledilniki"
       ],
       "Skip": [
         "Preskoči"
@@ -12037,7 +12037,7 @@
         "Ni odkritih uhajanj podatkov"
       ],
       "No trackers found": [
-        "Ni najdenih sledilcev."
+        "Ni najdenih sledilnikov"
       ],
       "Notes": [
         "Zapiski"
@@ -12079,7 +12079,7 @@
         "Obdelovanje ..."
       ],
       "Protect yourself from trackers": [
-        "Zaščitite se pred sledilci"
+        "Zaščitite se pred sledilniki"
       ],
       "Re-sign all contacts": [
         "Ponovno podpiši vse stike"
@@ -12271,10 +12271,10 @@
         "Pozor: morebitno lažno spletno mesto"
       ],
       "We protected you from ${ trackersCount } tracker": [
-        "Zaščitili smo vas pred ${ trackersCount } sledilcem",
-        "Zaščitili smo vas pred ${ trackersCount } sledilcema",
-        "Zaščitili smo vas pred ${ trackersCount } sledilci",
-        "Zaščitili smo vas pred ${ trackersCount } sledilci"
+        "Zaščitili smo vas pred ${ trackersCount } sledilnikom",
+        "Zaščitili smo vas pred ${ trackersCount } sledilnikoma",
+        "Zaščitili smo vas pred ${ trackersCount } sledilniki",
+        "Zaščitili smo vas pred ${ trackersCount } sledilniki."
       ],
       "Welcome": [
         "Dobrodošli"
