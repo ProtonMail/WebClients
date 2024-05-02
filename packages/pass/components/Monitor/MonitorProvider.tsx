@@ -48,6 +48,7 @@ export interface MonitorContextValue {
     addAddress: () => void;
     verifyAddress: (address: MonitorAddress<AddressType.CUSTOM>, sentAt?: number) => void;
     deleteAddress: (addressId: CustomAddressID) => void;
+    sync: () => void;
 }
 
 const MonitorContext = createContext<MaybeNull<MonitorContextValue>>(null);
@@ -90,6 +91,7 @@ export const MonitorProvider: FC<PropsWithChildren> = ({ children }) => {
             addAddress: () => setAction({ type: 'add' }),
             verifyAddress: (data, sentAt) => setAction({ type: 'verify', data: { ...data, sentAt } }),
             deleteAddress: (addressId) => dispatch(deleteCustomAddress.intent(addressId)),
+            sync: breaches.dispatch,
         }),
         [enabled, breaches, insecure, duplicates, missing2FAs, excluded, alias, proton, custom, refreshedAt]
     );
