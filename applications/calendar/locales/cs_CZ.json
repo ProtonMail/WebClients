@@ -453,11 +453,11 @@
       "Not now": [
         "Nyní ne"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Otevřít nastavení ${ CALENDAR_APP_NAME }"
@@ -2407,9 +2407,6 @@
       ],
       "Availability unknown": [
         "Dostupnost neznámá"
-      ],
-      "Boost efficiency and track your time by color-coding events by category or your energy levels. Get this and much more with a paid plan.": [
-        "Zvyšte efektivitu a rozvrhněte svůj čas pomocí barevného označení událostí podle kategorií nebo podle úrovně energie. Toto a mnohem více získáte s placeným tarifem."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Dešifrování kontaktů… Tato akce může trvat několik minut. Jakmile bude proces ukončen, budete si moci stáhnout soubor s vašimi exportovanými kontakty."
@@ -8252,9 +8249,6 @@
       ]
     },
     "Spotlight": {
-      "Color-coding is here!": [
-        "Barevné označení je zde!"
-      ],
       "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
         "Pohodlné spuštění ${ MAIL_APP_NAME } přímo z plochy."
       ],
@@ -8272,9 +8266,6 @@
       ],
       "Now you can see when participants are free to attend your meeting.": [
         "Nyní můžete vidět, kdy se mohou ostatní zúčastnit vašeho setkání."
-      ],
-      "With customizable event colors, you can color-code the chaos and conquer your day.": [
-        "Díky přizpůsobitelným barvám událostí, můžete chaos barevně odlišit a ovládnout svůj den."
       ]
     },
     "State": {
@@ -9564,6 +9555,12 @@
       ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Potom vám bude účtováno ${ renewPrice } každých 12 měsíců."
+      ],
+      "Your subscription will automatically renew in ${ cycle } month.": [
+        "Vaše předplatné se automaticky obnoví za ${ cycle } měsíc.",
+        "Vaše předplatné se automaticky obnoví za ${ cycle } měsíce.",
+        "Vaše předplatné se automaticky obnoví za ${ cycle } měsíců.",
+        "Vaše předplatné se automaticky obnoví za ${ cycle } měsíců."
       ]
     },
     "vpn_2step: feature": {
