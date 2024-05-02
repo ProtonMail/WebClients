@@ -19,7 +19,7 @@ const useOrgLogoUploadTelemetry = () => {
     const sendOrgLogoUploadSuccessReport = () => {
         void sendTelemetryReport({
             api,
-            measurementGroup: TelemetryMeasurementGroups.mailComposerAssistant,
+            measurementGroup: TelemetryMeasurementGroups.accountOrgLogoUpload,
             event: TelemetryAccountOrganizationLogoUploadEvents.processSuccess,
         });
     };
@@ -27,7 +27,7 @@ const useOrgLogoUploadTelemetry = () => {
     const sendOrgLogoUploadFailureReport = () => {
         void sendTelemetryReport({
             api,
-            measurementGroup: TelemetryMeasurementGroups.mailComposerAssistant,
+            measurementGroup: TelemetryMeasurementGroups.accountOrgLogoUpload,
             event: TelemetryAccountOrganizationLogoUploadEvents.processFailure,
         });
     };
