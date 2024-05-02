@@ -221,6 +221,7 @@ export class UploadWorker {
                         let module;
                         // Dynamic import is needed since we want pmcrypto (incl. openpgpjs) to be loaded
                         // inside the worker, not in the main thread.
+                        // Warning: Do not rename the "crypto-worker-api" naming as this is also used in the initDriveWorker.ts file
                         try {
                             module = await import(
                                 /* webpackChunkName: "crypto-worker-api" */ '@proton/crypto/lib/worker/api'
