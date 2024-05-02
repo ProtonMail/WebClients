@@ -648,9 +648,6 @@
       "Failed to load item history": [
         "Misslyckades att ladda objekthistorik"
       ],
-      "Failed to mark this address as resolved": [
-        "Misslyckades att markera denna adress som löst"
-      ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Misslyckades att flytta alla objekt från “${ payload.content.name }“"
       ],
@@ -668,6 +665,9 @@
       ],
       "Failed to resend verification for custom email": [
         "Misslyckades att skicka verifieringskod igen för anpassad e-post"
+      ],
+      "Failed to resolve breaches for this address": [
+        "Misslyckades att lösa intrång för denna adress"
       ],
       "Failed to restore items from trash": [
         "Misslyckades att återställa objekt från papperskorg"
@@ -965,6 +965,9 @@
       ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Alias “${ item.aliasEmail }“ har flyttats till papperskorg – den kommer stoppa vidarebefordra e-post till din brevlåda"
+      ],
+      "All breaches for this address were resolved": [
+        "Alla intrång för denna adress löstes"
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Alla objekt från “${ payload.content.name }“ flyttades"
@@ -1539,6 +1542,9 @@
       "${ config.options.wordCount } word": [
         "${ config.options.wordCount } ord",
         "${ config.options.wordCount } ord"
+      ],
+      "${ PASS_SHORT_APP_NAME } monitor": [
+        "${ PASS_SHORT_APP_NAME }-övervakning"
       ],
       "1 hour": [
         "1 timme"
@@ -2157,6 +2163,9 @@
     "Title": {
       "${ PASS_APP_NAME } Settings": [
         "Inställningar för ${ PASS_APP_NAME }"
+      ],
+      "${ PASS_SHORT_APP_NAME } monitor": [
+        "${ PASS_SHORT_APP_NAME }-övervakning"
       ],
       "Auto-lock update": [
         "Uppdatering av autolås"
