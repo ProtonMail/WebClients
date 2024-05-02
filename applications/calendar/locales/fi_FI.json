@@ -447,10 +447,10 @@
       "Not now": [
         "Ei nyt"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -886,6 +886,11 @@
     "Attendee role": {
       "Optional": [
         "Valinnainen"
+      ]
+    },
+    "Badge": {
+      "New!": [
+        "Uutta!"
       ]
     },
     "bf2023: Action": {
@@ -2368,8 +2373,8 @@
       "Availability unknown": [
         "Tavoitettavuus ei ole tiedossa"
       ],
-      "Boost efficiency and track your time by color-coding events by category or your energy levels. Get this and much more with a paid plan.": [
-        "Lisää tehokkuutta ja seuraa aikaasi värikoodaamalla tapahtumia kategorian tai energiatasosi mukaan. Hanki tämä ja paljon muuta maksullisella paketilla."
+      "Better organize your day, track your time, and prioritize tasks. Color-code your calendar with custom event colors.": [
+        "Hallitse päivääsi, seuraa ajankäyttöäsi ja korosta tärkeitä tapahtumia. Värikoodaa kalenterisi mukautettavilla tapahtumaväreillä."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Yhteystietojen salausta puretaan… Tämä voi kestää muutamia minuutteja ja käsittelyn valmistuttua voit ladata tiedoston, joka sisältää kaikki viedyt yhteystietosi."
@@ -3241,7 +3246,7 @@
         "Puuttuva aloitusaika"
       ],
       "No UID, title or start time": [
-        "Ei UID:ta, nimikettä tai aloitusaikaa"
+        "Ei UID:ta, nimeä tai aloitusaikaa"
       ],
       "Non-Gregorian": [
         "Ei-gregoriaaninen"
@@ -3422,7 +3427,7 @@
     },
     "Event title": {
       "(no title)": [
-        "(ei nimikettä)"
+        "(ei nimeä)"
       ]
     },
     "familyOffer_2023: Deal details": {
@@ -4162,7 +4167,7 @@
         "Linkin välityksellä kuka tahansa voi nähdä kalenterin tapahtumien nimien, sijaintien ja osallistujien kaltaisia tietoja."
       ],
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
-        "Linkin välityksellä kuka tahansa voi nähdä oletko kalenterissasi vapaana vai varattuna. He eivät näe tapahtumien nimien, sijaintien ja osallistujien kaltaisia tietoja."
+        "Linkin välityksellä kuka tahansa voi nähdä oletko kalenterissasi vapaana vai varattuna. He eivät näe tapahtumista niiden nimien, sijaintien ja osallistujien kaltaisia tietoja."
       ],
       "Are you sure you want to discard your import?": [
         "Haluatko varmasti hylätä tuontisi?"
@@ -7562,7 +7567,7 @@
         "Tämä käyttöoikeus vanhenee pian"
       ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
-        "Voit nyt vaihtaa salasanasi tilille ${ boldEmail } vapaasti ${ boldDaysRemaining } ajan."
+        "Voit nyt vapaasti vaihtaa salasanasi tilille ${ boldEmail } ${ boldDaysRemaining } ajan."
       ],
       "You can now change your password for the account ${ boldEmail }.": [
         "Voit nyt vaihtaa salasanasi tilille ${ boldEmail }."
@@ -7963,11 +7968,14 @@
       ]
     },
     "Spotlight": {
-      "Color-coding is here!": [
-        "Värikoodaus on täällä!"
+      "Color-code your calendar to better organize your day, track your time, and more.": [
+        "Hallitse päivääsi ja seuraa ajankäyttöäsi entistä paremmin värikoodaamalla kalenterisi."
       ],
       "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
         "Käynnistä ${ MAIL_APP_NAME } kätevästi suoraan työpöydältäsi."
+      ],
+      "Custom event colors": [
+        "Mukautetut tapahtumavärit"
       ],
       "Get the desktop app": [
         "Hanki työpöytäsovellus"
@@ -7983,9 +7991,6 @@
       ],
       "Now you can see when participants are free to attend your meeting.": [
         "Nyt voit nähdä milloin osallistujat ovat vapaita osallistumaan kokoukseesi."
-      ],
-      "With customizable event colors, you can color-code the chaos and conquer your day.": [
-        "Mukautettavien tapahtumavärien avulla voit värikoodata kaaoksen ja valloittaa päiväsi."
       ]
     },
     "State": {
