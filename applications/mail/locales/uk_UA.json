@@ -10680,10 +10680,10 @@
         "Ми додамо кредити за час, що залишився, на ваш ${ BRAND_NAME } Рахунок."
       ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
-        "У вас залишився **${ daysRemaining }** день до кінця дії вашого тарифного плану **${ currentPlanName }**.",
-        "У вас залишилося **${ daysRemaining }** днів до кінця дії вашого тарифного плану **${ currentPlanName }**.",
-        "У вас залишилося **${ daysRemaining }** днів до кінця дії вашого тарифного плану **${ currentPlanName }**.",
-        "У вас залишилося **${ daysRemaining }** днів до кінця дії вашого тарифного плану **${ currentPlanName }**."
+        "Залишився **${ daysRemaining }** день до завершення дії вашого тарифного плану **${ currentPlanName }**.",
+        "Залишилося **${ daysRemaining }** дні до завершення дії вашого тарифного плану **${ currentPlanName }**.",
+        "Залишилося **${ daysRemaining }** днів до завершення дії вашого тарифного плану **${ currentPlanName }**.",
+        "Залишилося **${ daysRemaining }** днів до завершення дії вашого тарифного плану **${ currentPlanName }**."
       ],
       "Your ${ appStorage } is almost full": [
         "Ваше ${ appStorage } майже заповнене"
@@ -12240,12 +12240,6 @@
       ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Вам тоді буде виставлено рахунок кожні 12 місяців по ${ renewPrice }."
-      ],
-      "Your subscription will automatically renew in ${ cycle } month.": [
-        "Ваша підписка буде автоматично поновлюватися через ${ cycle } місяць.",
-        "Ваша підписка буде автоматично поновлюватися через ${ cycle } місяців.",
-        "Ваша підписка буде автоматично поновлюватися через ${ cycle } місяців.",
-        "Ваша підписка буде автоматично поновлюватися через ${ cycle } місяців."
       ]
     },
     "vpn_2step: feature": {

@@ -4186,7 +4186,7 @@
         "Puuttuva aloitusaika"
       ],
       "No UID, title or start time": [
-        "Ei UID:ta, nimikettä tai aloitusaikaa"
+        "Ei UID:ta, nimeä tai aloitusaikaa"
       ],
       "Non-Gregorian": [
         "Ei-gregoriaaninen"
@@ -4323,7 +4323,7 @@
     },
     "Event title": {
       "(no title)": [
-        "(ei nimikettä)"
+        "(ei nimeä)"
       ]
     },
     "familyOffer_2023: Deal details": {
@@ -4590,7 +4590,7 @@
         "Valitse…"
       ],
       "The attachment": [
-        "Liitteet"
+        "Liite"
       ],
       "The recipient": [
         "Vastaanottaja"
@@ -4642,18 +4642,18 @@
     },
     "filter: Label": {
       "the email was sent ${ label }": [
-        "sähköposti lähetettiin ${ label }"
+        "viesti lähetettiin ${ label }"
       ],
       "with attachments": [
-        "liitteiden kanssa"
+        "liitteillä"
       ],
       "without attachments": [
-        "ilman liitteitä"
+        "liitteittä"
       ]
     },
     "filter: Label, jt": {
       "the email was sent ${ label }": [
-        "sähköposti lähetettiin ${ label }"
+        "viesti lähetettiin ${ label }"
       ]
     },
     "Font Face Default": {
@@ -7352,7 +7352,7 @@
         "Sovellussalasana"
       ],
       "Apply filter to existing emails": [
-        "Sovella suodatinta nykyisille viesteille"
+        "Käytä suodatinta nykyisille viesteille"
       ],
       "Attach screenshot(s)": [
         "Liitä kuvankaappauksia"
@@ -7835,7 +7835,7 @@
         "Liitteillä"
       ],
       "Without attachment": [
-        "Ilman liitteitä"
+        "Liitteittä"
       ],
       "Wonderful": [
         "Erinomainen"
@@ -10017,7 +10017,7 @@
         "Tämä käyttöoikeus vanhenee pian"
       ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
-        "Voit nyt vaihtaa salasanasi tilille ${ boldEmail } vapaasti ${ boldDaysRemaining } ajan."
+        "Voit nyt vapaasti vaihtaa salasanasi tilille ${ boldEmail } ${ boldDaysRemaining } ajan."
       ],
       "You can now change your password for the account ${ boldEmail }.": [
         "Voit nyt vaihtaa salasanasi tilille ${ boldEmail }."
