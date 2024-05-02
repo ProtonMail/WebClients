@@ -22,31 +22,34 @@ export const VolumeLinkContainer: FC<RouteComponentProps<{ volumeId: string; lin
     useEffect(() => {
         const abortController = new AbortController();
         if (invitationId) {
-            acceptInvitation(abortController.signal, { invitationId, volumeId, linkId }).then(
-                (result) => {
-                    if (result?.Code === 1000) {
-                        createNotification({
-                            type: 'success',
-                            text: c('Notification').t`Share invitation accepted successfully`,
-                        });
-                        navigateToSharedWithMe();
-                    } else {
-                        createNotification({
-                            type: 'error',
-                            text: c('Notification').t`Failed to accept share invitation`,
-                        });
-                        throw new EnrichedError('Failed to accept share invitation', {
+            acceptInvitation(abortController.signal, { invitationId, volumeId, linkId })
+                .then(
+                    (result) => {
+                        if (result?.Code === 1000) {
+                            createNotification({
+                                type: 'success',
+                                text: c('Notification').t`Share invitation accepted successfully`,
+                            });
+                        } else {
+                            createNotification({
+                                type: 'error',
+                                text: c('Notification').t`Failed to accept share invitation`,
+                            });
+                            throw new EnrichedError('Failed to accept share invitation', {
+                                tags: { invitationId, volumeId, linkId },
+                            });
+                        }
+                    },
+                    (e) => {
+                        throw new EnrichedError('Error while accepting share invitation', {
                             tags: { invitationId, volumeId, linkId },
+                            extra: { e },
                         });
                     }
-                },
-                (e) => {
-                    throw new EnrichedError('Error while accepting share invitation', {
-                        tags: { invitationId, volumeId, linkId },
-                        extra: { e },
-                    });
-                }
-            );
+                )
+                .finally(() => {
+                    navigateToSharedWithMe();
+                });
         } else {
             createNotification({
                 type: 'error',
