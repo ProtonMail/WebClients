@@ -101,6 +101,9 @@
       "Create alias": [
         "Buat alias"
       ],
+      "Create an alias": [
+        "Buat alias"
+      ],
       "Create card": [
         "Buat kartu"
       ],
@@ -293,6 +296,9 @@
       "Pass Monitor": [
         "Pemantauan Pass"
       ],
+      "Pause monitoring": [
+        "Jeda pemantauan"
+      ],
       "Pin item": [
         "Sematkan item"
       ],
@@ -335,6 +341,9 @@
       "Restore item": [
         "Pulihkan item"
       ],
+      "Resume monitoring": [
+        "Lanjutkan pemantauan"
+      ],
       "Retry": [
         "Coba lagi"
       ],
@@ -343,6 +352,9 @@
       ],
       "Saving": [
         "Menyimpan"
+      ],
+      "See all": [
+        "Lihat semua"
       ],
       "See members": [
         "Lihat anggota"
@@ -410,6 +422,9 @@
       "Verify": [
         "Verifikasi"
       ],
+      "View details": [
+        "Lihat rincian"
+      ],
       "View history": [
         "Lihat riwayat"
       ],
@@ -466,8 +481,14 @@
       "${ total } other login uses the same password": [
         "${ total } entri masuk lainnya menggunakan kata sandi yang sama"
       ],
+      "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
+        "Alias email berfungsi seperti alamat email pada umumnya, namun alias akan mengurangi spam dan menjaga agar alamat email asli dan identitas diri Anda tersembunyi."
+      ],
       "Change your passwords": [
         "Ubah kata sandi Anda"
+      ],
+      "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
+        "Pemantauan Dark Web tersedia dengan paket berbayar. Tingkatkan akun Anda untuk memperoleh akses ke fitur ini dengan segera."
       ],
       "Get notified if your email, password or other personal data was leaked.": [
         "Dapatkan notifikasi apabila email, kata sandi, atau data pribadi Anda lainnya dibocorkan."
@@ -484,11 +505,20 @@
       "NetShield is an ad-blocking feature from ${ VPN_APP_NAME } that protects your device from ads, trackers, and malware. ": [
         "NetShield merupakan fitur pemblokir iklan dari ${ VPN_APP_NAME } yang melindungi perangkat Anda dari iklan, pelacak, dan malware. "
       ],
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "Solusi keamanan mutakhir berbasis AI kami dirancang untuk para pengguna yang menginginkan perlindungan yang lebih bagi akun mereka. ${ learnMoreLink }"
+      ],
+      "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
+        "Mulai pantau kebocoran data yang terhubung dengan akun yang dibuat dengan alamat email dan alias hide-my-email Anda."
+      ],
       "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
         "Dark web merupakan bagian tersembunyi dari internet di mana informasi pribadi yang dicuri, seperti identitas diri, dapat diperjualbelikan."
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "Akun ini terindikasi rentan. Kunjungi layanan keamanan kami dan ubah kata sandi Anda."
+      ],
+      "With ${ PASS_SHORT_APP_NAME } Monitor, stay ahead of threats by getting instant alerts if your credentials are compromised. Unlock advanced security features and detailed logs to safeguard your online presence.": [
+        "Dengan Pemantauan ${ PASS_SHORT_APP_NAME }, buat diri Anda tetap berada selangkah di depan ancaman dengan memperoleh pemberitahuan secara instan apabila kredensial Anda dibocorkan. Dapatkan berbagai fitur keamanan lanjutan dan log yang terperinci untuk melindungi presensi online Anda."
       ],
       "Your email addresses were leaked in at least 1 data breach.": [
         "Alamat email Anda telah dibocorkan pada setidaknya 1 insiden kebocoran data."
@@ -609,9 +639,6 @@
       "Failed to load item history": [
         "Riwayat item gagal dimuat"
       ],
-      "Failed to mark this address as resolved": [
-        "Alamat ini gagal ditandai sebagai telah terselesaikan"
-      ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Gagal memindahkan semua item dari \"${ payload.content.name }\""
       ],
@@ -629,6 +656,9 @@
       ],
       "Failed to resend verification for custom email": [
         "Verifikasi untuk email khusus gagal dikirim ulang"
+      ],
+      "Failed to resolve breaches for this address": [
+        "Kebocoran untuk alamat ini gagal diselesaikan"
       ],
       "Failed to restore items from trash": [
         "Item gagal dipulihkan dari sampah"
@@ -790,8 +820,17 @@
       ]
     },
     "Feature": {
+      "Dark Web Monitoring": [
+        "Pemantauan Dark Web"
+      ],
       "Integrated 2FA authenticator": [
         "Autentikator 2FA terintegrasi"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Tanpa batasan jumlah alias hide-my-email"
+      ],
+      "Vault sharing (up to ${ MAX_VAULT_MEMBERS } people)": [
+        "Pembagian brankas (hingga ${ MAX_VAULT_MEMBERS } pengguna)"
       ]
     },
     "file size format": {
@@ -891,6 +930,12 @@
       ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Alias \"${ item.aliasEmail }\" dipindahkan ke sampah - alamat ini tidak akan lagi meneruskan email ke kotak surat Anda"
+      ],
+      "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
+        "Alias dengan domain khusus tidak dipantau. Silakan tambahkan alias ini sebagai email khusus untuk keperluan pemantauan."
+      ],
+      "All breaches for this address were resolved": [
+        "Seluruh kebocoran untuk alamat ini telah terselesaikan"
       ],
       "All current breaches will be marked as resolved. In case of future data breaches, you'll be notified.": [
         "Seluruh kebocoran yang ada saat ini akan ditandai sebagai telah terselesaikan. Apabila ke depannya terdapat kebocoran data baru, Anda akan menerima notifikasi seputar hal ini."
@@ -996,6 +1041,9 @@
       ],
       "Emptying trash...": [
         "Mengosongkan sampah..."
+      ],
+      "Enable ${ PASS_SHORT_APP_NAME } beta": [
+        "Aktifkan ${ PASS_SHORT_APP_NAME } beta"
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Masukkan kode verifikasi. Digit ${ digit }."
@@ -1830,6 +1878,9 @@
       "Status": [
         "Status"
       ],
+      "Strong": [
+        "Kuat"
+      ],
       "Suffix": [
         "Akhiran"
       ],
@@ -2090,6 +2141,9 @@
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "Pemantauan ${ PASS_SHORT_APP_NAME }"
       ],
+      "${ PASS_SHORT_APP_NAME } monitor": [
+        "Pemantauan ${ PASS_SHORT_APP_NAME }"
+      ],
       "Account protection": [
         "Perlindungan akun"
       ],
@@ -2099,8 +2153,20 @@
       "Block trackers and malware": [
         "Blokir pelacak dan malware"
       ],
+      "Breach detected": [
+        "Kebocoran terdeteksi"
+      ],
+      "Breaches": [
+        "Kebocoran"
+      ],
+      "Breaches detected for": [
+        "Kebocoran terdeteksi untuk"
+      ],
       "Confirm PIN code": [
         "Konfirmasikan kode PIN"
+      ],
+      "Confirm your email": [
+        "Konfirmasi email Anda"
       ],
       "Create a vault": [
         "Buat brankas"
@@ -2116,6 +2182,18 @@
       ],
       "Custom addresses": [
         "Alamat khusus"
+      ],
+      "Custom email monitoring": [
+        "Pemantauan email khusus"
+      ],
+      "Custom emails": [
+        "Email khusus"
+      ],
+      "Dark Web Monitoring": [
+        "Pemantauan Dark Web"
+      ],
+      "Dark web monitoring": [
+        "Pemantauan dark web"
       ],
       "Delete vault \"${ vaultName }\" ?": [
         "Hapus brankas \"${ vaultName }\" ?"
@@ -2177,6 +2255,9 @@
       "Low disk space": [
         "Ruang penyimpanan rendah"
       ],
+      "Mark as resolved?": [
+        "Tandai sebagai terselesaikan?"
+      ],
       "Member limit": [
         "Batas anggota"
       ],
@@ -2185,6 +2266,9 @@
       ],
       "Missing 2FA": [
         "2FA hilang"
+      ],
+      "Missing two-factor authentication": [
+        "Autentikasi dua faktor hilang"
       ],
       "Modified": [
         "Dimodifikasi"
@@ -2198,11 +2282,20 @@
       "Move items?": [
         "Pindahkan item?"
       ],
+      "No excluded items": [
+        "Tidak ada item yang dikecualikan"
+      ],
+      "No insecure passwords": [
+        "Tidak ada kata sandi yang tidak aman"
+      ],
       "No items selected": [
         "Tidak ada item yang dipilih"
       ],
       "No missing 2FAs": [
         "Tidak ada 2FA yang hilang"
+      ],
+      "No reused passwords": [
+        "Tidak ada kata sandi yang digunakan ulang"
       ],
       "Our welcome gift to you": [
         "Hadiah selamat datang kami kepada Anda"
@@ -2216,6 +2309,9 @@
       "Password Health": [
         "Kesehatan Kata Sandi"
       ],
+      "Pause monitoring?": [
+        "Jeda pemantauan?"
+      ],
       "Pending access to the shared data": [
         "Menunggu akses ke data yang dibagikan"
       ],
@@ -2228,8 +2324,17 @@
       "Recommended actions": [
         "Tindakan yang direkomendasikan"
       ],
+      "Remove email address?": [
+        "Hapus alamat email?"
+      ],
+      "Resolved breaches": [
+        "Kebocoran yang telah terselesaikan"
+      ],
       "Restore this version?": [
         "Pulihkan versi ini?"
+      ],
+      "Resume monitoring?": [
+        "Lanjutkan pemantauan?"
       ],
       "Reused ${ count } time": [
         "Digunakan ulang ${ count } kali"
@@ -2281,6 +2386,9 @@
       ],
       "Want to learn more?": [
         "Ingin mempelajari lebih lanjut?"
+      ],
+      "Weak password": [
+        "Kata sandi lemah"
       ],
       "Weak passwords": [
         "Kata sandi yang lemah"
@@ -2358,6 +2466,9 @@
       "Duplicate email addresses.": [
         "Terdapat alamat email duplikat."
       ],
+      "Email is required": [
+        "Email diperlukan"
+      ],
       "Empty note": [
         "Catatan kosong"
       ],
@@ -2372,6 +2483,9 @@
       ],
       "Invalid code": [
         "Kode tidak valid"
+      ],
+      "Invalid email": [
+        "Email tidak valid"
       ],
       "Invalid email addresses.": [
         "Terdapat alamat surel yang tidak valid."
@@ -2453,6 +2567,9 @@
       ],
       "Vault name is required": [
         "Nama brankas dibutuhkan"
+      ],
+      "Verification code is required": [
+        "Kode verifikasi diperlukan"
       ],
       "You cannot create more vaults than your subscription allows.": [
         "Anda tidak dapat membuat lebih banyak brankas dari yang diizinkan oleh paket langganan Anda."
