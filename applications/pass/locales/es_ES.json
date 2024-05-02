@@ -101,6 +101,9 @@
       "Create alias": [
         "Crear alias"
       ],
+      "Create an alias": [
+        "Crear un alias"
+      ],
       "Create card": [
         "Crear una tarjeta"
       ],
@@ -158,6 +161,15 @@
       "Edit vault": [
         "Editar la caja fuerte"
       ],
+      "Enable Dark Web Monitoring": [
+        "Activar el monitoreo de la Dark Web"
+      ],
+      "Enable NetShield": [
+        "Activar NetShield"
+      ],
+      "Exclude from monitoring": [
+        "Excluir del monitoreo"
+      ],
       "Export": [
         "Exportar"
       ],
@@ -182,6 +194,9 @@
       "Get mobile apps": [
         "Descargar las aplicaciones móviles"
       ],
+      "Get Pass Plus": [
+        "Obtener Pass Plus"
+      ],
       "Get Started": [
         "Comenzar"
       ],
@@ -199,6 +214,9 @@
       ],
       "Importing": [
         "Importando"
+      ],
+      "Include in monitoring": [
+        "Incluir en el monitoreo"
       ],
       "Install extension": [
         "Instalar la extensión"
@@ -278,6 +296,12 @@
       "Pass for iOS": [
         "Pass para iOS"
       ],
+      "Pass Monitor": [
+        "Monitor de Pass"
+      ],
+      "Pause monitoring": [
+        "Pausar el monitoreo"
+      ],
       "Pin item": [
         "Anclar elemento"
       ],
@@ -308,6 +332,9 @@
       "Resend code": [
         "Reenviar código"
       ],
+      "Resend code (in ${ remaining }s)": [
+        "Reenviar el código (en ${ remaining }s)"
+      ],
       "Resend invitation": [
         "Reenviar la invitación"
       ],
@@ -317,6 +344,9 @@
       "Restore item": [
         "Restaurar elemento"
       ],
+      "Resume monitoring": [
+        "Reanudar el monitoreo"
+      ],
       "Retry": [
         "Reintentar"
       ],
@@ -325,6 +355,9 @@
       ],
       "Saving": [
         "Guardando"
+      ],
+      "See all": [
+        "Ver todo"
       ],
       "See members": [
         "Ver los miembros"
@@ -392,6 +425,9 @@
       "Verify": [
         "Verificar"
       ],
+      "View details": [
+        "Mostrar los detalles"
+      ],
       "View history": [
         "Mostrar el historial"
       ],
@@ -442,6 +478,63 @@
       ],
       "Expand": [
         "Expandir"
+      ]
+    },
+    "Description": {
+      "${ total } other login uses the same password": [
+        "${ total } otro inicio de sesión usa la misma contraseña.",
+        "Otros ${ total } inicios de sesión usan la misma contraseña."
+      ],
+      "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
+        "Un alias de correo funciona como una dirección de correo electrónico, pero reduce el spam y mantiene tu dirección e identidad real ocultas."
+      ],
+      "Change your passwords": [
+        "Cambia las contraseñas"
+      ],
+      "Create unique passwords": [
+        "Crea contraseñas únicas"
+      ],
+      "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
+        "El monitoreo de la Dark Web está disponible con un plan de pago. Mejora el plan para un acceso inmediato."
+      ],
+      "Get notified if your email, password or other personal data was leaked.": [
+        "Recibe notificaciones si el correo electrónico, contraseña u otro dato personal ha sido filtrado."
+      ],
+      "Increase your security": [
+        "Mejora tu seguridad"
+      ],
+      "It would be more secure to set up 2FA for this account.": [
+        "Sería más seguro configurar 2FA para esta cuenta."
+      ],
+      "Keep your info more secure and private with these guides and tips.": [
+        "Mantén tu información más segura y privada con estas guías y consejos."
+      ],
+      "NetShield is an ad-blocking feature from ${ VPN_APP_NAME } that protects your device from ads, trackers, and malware. ": [
+        "NetShield es una función de bloqueo de anuncios en ${ VPN_APP_NAME } que protege el dispositivo de anuncios, rastreadores y malware."
+      ],
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "Nuestra solución de seguridad de vanguardia impulsada por inteligencia artificial, diseñada para usuarios que buscan una protección más intensificada para sus cuentas. ${ learnMoreLink }"
+      ],
+      "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
+        "Empieza a monitorear vulneraciones de datos relacionadas a cuentas creadas con la dirección de correo y los alias de hide-my-email."
+      ],
+      "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
+        "La dark web es una parte de internet oculta donde se puede comprar y vender información robada como identidades."
+      ],
+      "These items remain at risk": [
+        "Estos elementos siguen en riesgo."
+      ],
+      "This account is vulnerable, visit the service and change your password.": [
+        "Esta cuenta es vulnerable. Visita el servicio y cambia tu contraseña."
+      ],
+      "With ${ PASS_SHORT_APP_NAME } Monitor, stay ahead of threats by getting instant alerts if your credentials are compromised. Unlock advanced security features and detailed logs to safeguard your online presence.": [
+        "Con el Monitoreo de ${ PASS_SHORT_APP_NAME } mantente un paso adelante de las amenazas al recibir alertas instantáneas si tus credenciales son comprometidas. Desbloquea funciones avanzadas de seguridad y registros detallados para salvaguardar tu presencia en línea."
+      ],
+      "Your email addresses were leaked in at least 1 data breach.": [
+        "Las direcciones de correo fueron filtradas en al menos una filtración de datos."
+      ],
+      "Your personal info was leaked in a data breach of a third-party service.": [
+        "Tu información personal fue filtrada en una vulneración de datos de un servicio de terceros."
       ]
     },
     "Error": {
@@ -531,6 +624,12 @@
       "Failed resending invite.": [
         "Error al reenviar la invitación."
       ],
+      "Failed to add email address": [
+        "Error al añadir la dirección de correo electrónico"
+      ],
+      "Failed to delete email address from monitoring": [
+        "Error al eliminar la dirección de correo electrónico del monitoreo."
+      ],
       "Failed to delete selected items": [
         "No se han podido eliminar los elementos seleccionados."
       ],
@@ -539,6 +638,15 @@
       ],
       "Failed to edit user's access.": [
         "Error al editar el acceso del usuario."
+      ],
+      "Failed to load breaches": [
+        "Error al cargar vulneraciones"
+      ],
+      "Failed to load breaches for this address": [
+        "Error al cargar vulneraciones para esta dirección"
+      ],
+      "Failed to load breaches for this email alias": [
+        "Error al cargar vulneraciones para este alias de correo electrónico"
       ],
       "Failed to load item history": [
         "Error al cargar historial del elemento"
@@ -558,6 +666,12 @@
       "Failed to remove user's access.": [
         "Error al borrar el acceso del usuario"
       ],
+      "Failed to resend verification for custom email": [
+        "Error al reenviar verificación para este correo electrónico personalizado"
+      ],
+      "Failed to resolve breaches for this address": [
+        "Error al solucionar las vulneraciones para esta dirección"
+      ],
       "Failed to restore items from trash": [
         "Error al restaurar elementos en la papelera"
       ],
@@ -566,6 +680,21 @@
       ],
       "Failed to unpin item": [
         "No se pudo desanclar el elemento"
+      ],
+      "Failed to update monitoring settings": [
+        "Error al actualizar los ajustes de monitoreo"
+      ],
+      "Failed to verify email address": [
+        "Error al verificar la dirección de correo electrónico"
+      ],
+      "Failed updating ${ PROTON_SENTINEL_NAME } setting": [
+        "Error al actualizar los ajustes de ${ PROTON_SENTINEL_NAME }"
+      ],
+      "Failed updating monitor flag of the item": [
+        "Error al actualizar el indicador de monitoreo de este elemento"
+      ],
+      "Failed updating monitoring status for this email address": [
+        "Error al actualizar el estado de monitoreo para esta dirección de correo electrónico"
       ],
       "File could not be parsed": [
         "No se ha podido analizar el archivo."
@@ -702,6 +831,20 @@
         "Se ha producido un error."
       ]
     },
+    "Feature": {
+      "Dark Web Monitoring": [
+        "Monitoreo de la Dark Web"
+      ],
+      "Integrated 2FA authenticator": [
+        "Autenticador 2FA integrado"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Alias hide-my-email ilimitados"
+      ],
+      "Vault sharing (up to ${ MAX_VAULT_MEMBERS } people)": [
+        "Compartir la caja fuerte (hasta ${ MAX_VAULT_MEMBERS } personas)"
+      ]
+    },
     "file size format": {
       "byte": [
         "byte",
@@ -776,6 +919,15 @@
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } requerirá tu contraseña de ${ BRAND_NAME } para acceder a datos sin conexión."
       ],
+      "${ PROTON_SENTINEL_NAME } successfully disabled": [
+        "${ PROTON_SENTINEL_NAME } desactivado"
+      ],
+      "${ PROTON_SENTINEL_NAME } successfully enabled": [
+        "${ PROTON_SENTINEL_NAME } activado"
+      ],
+      "${ row.breachCount } breaches detected": [
+        "${ row.breachCount } vulneraciones detectadas"
+      ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "Prueba gratis las funciones premium durante 7 días, solo durante tu primera semana en ${ BRAND_NAME }."
       ],
@@ -784,6 +936,9 @@
       ],
       "Access successfully confirmed": [
         "El acceso ha sido confirmado."
+      ],
+      "Add your custom email address to monitor :": [
+        "Añade tu dirección de correo personalizado para monitorear:"
       ],
       "Admin": [
         "Administrador"
@@ -796,6 +951,15 @@
       ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Alias \"${ item.aliasEmail }\" movido a la papelera. Dejará de reenviar correos a tu buzón."
+      ],
+      "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
+        "Los alias con dominios personalizados no son monitoreados. Añádelos como correo electrónico personalizado para monitorearlos."
+      ],
+      "All breaches for this address were resolved": [
+        "Todas las vulneraciones han sido resueltas para esta dirección."
+      ],
+      "All current breaches will be marked as resolved. In case of future data breaches, you'll be notified.": [
+        "Todas las vulneraciones actuales serán marcadas como resueltas. Se te notificará en caso de futuras vulneraciones de datos."
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Todos los elementos de \"${ payload.content.name }\" han sido movidos."
@@ -823,6 +987,9 @@
       ],
       "Auto-lock successfully disabled": [
         "Se ha desactivado el bloqueo automático"
+      ],
+      "Breaches detected": [
+        "Vulneraciones detectadas"
       ],
       "Bring your existing passwords into ${ BRAND_NAME }.": [
         "Trae tus contraseñas existentes a ${ BRAND_NAME }."
@@ -869,6 +1036,9 @@
       "Deleting \"${ payload.content.name }\"": [
         "Eliminando \"${ payload.content.name }\""
       ],
+      "Didn't receive the code?": [
+        "¿No has recibido el código?"
+      ],
       "Drop file here to upload": [
         "Suelta tus archivos aquí para cargarlos"
       ],
@@ -880,6 +1050,15 @@
       ],
       "email": [
         "correo"
+      ],
+      "Email address successfully deleted from monitoring": [
+        "La dirección de correo electrónico ha sido eliminada del monitoreo."
+      ],
+      "Email address successfully excluded from monitoring": [
+        "La dirección de correo electrónico ha sido excluida del monitoreo."
+      ],
+      "Email address successfully included in monitoring": [
+        "La dirección de correo electrónico ha sido incluida en el monitoreo."
       ],
       "Emptying trash...": [
         "Vaciando la papelera..."
@@ -983,6 +1162,12 @@
       "Item restored": [
         "Elemento restaurado"
       ],
+      "Item successfully excluded from monitoring": [
+        "El elemento ha sido excluido del monitoreo."
+      ],
+      "Item successfully included in monitoring": [
+        "El elemento ha sido incluido en el monitoreo."
+      ],
       "Item successfully moved": [
         "Se ha movido el elemento"
       ],
@@ -991,6 +1176,9 @@
       ],
       "Item successfully unpinned": [
         "Elemento desanclado con éxito"
+      ],
+      "Latest breach on ${ formattedDate }": [
+        "Última vulneración en ${ formattedDate }"
       ],
       "Learn how to ${ staySaferOnlineLink }": [
         "Aprende cómo ${ staySaferOnlineLink }"
@@ -1025,6 +1213,9 @@
       "Monitor accounts": [
         "Monitoreo de cuentas"
       ],
+      "Monitoring settings successfully updated": [
+        "Los ajustes de monitoreo se han actualizado."
+      ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "Más que un gestor de contraseñas, ${ PASS_APP_NAME } protege tu contraseña y tu dirección de correo personal a través de alias de correo electrónico. Se ha desarrollado con la misma tecnología detrás de ${ MAIL_APP_NAME }, tus datos están cifrados de extremo a extremo y sólo son accesibles por ti."
       ],
@@ -1045,6 +1236,9 @@
       ],
       "Never": [
         "Nunca"
+      ],
+      "No breaches detected": [
+        "No se han detectado vulneraciones."
       ],
       "No network connection": [
         "No hay conexión a la red."
@@ -1091,6 +1285,9 @@
       ],
       "Pinning item...": [
         "Anclando el elemento..."
+      ],
+      "Please check your spam folder or try resending the code.": [
+        "Comprueba la carpeta de spam o intenta reenviar el código."
       ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Confirma tu contraseña de ${ BRAND_NAME } para activar el modo sin conexión."
@@ -1181,6 +1378,9 @@
       ],
       "Successfully synced all vaults": [
         "Se han sincronizado con éxito todas las cajas fuertes."
+      ],
+      "Suggested": [
+        "Sugerido"
       ],
       "Switch to another vault or create an item in this vault": [
         "Cambia a otra caja fuerte o crea un elemento en esta caja fuerte."
@@ -1276,11 +1476,17 @@
       "Vault \"${ share.content.name }\" was removed": [
         "La caja fuerte \"${ share.content.name }\" ha sido borrada."
       ],
+      "Verification code sent.": [
+        "Se ha enviado el código de verificación."
+      ],
       "Viewer": [
         "Visualizador"
       ],
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Estamos teniendo problemas en sincronizar los datos a tu almacenamiento local. Asegúrate de tener suficiente espacio en el disco para que ${ PASS_SHORT_APP_NAME } funcione corectamente."
+      ],
+      "We’ve sent a verification code to ${ email }. Please enter it below:": [
+        "Hemos enviado un código de verificación a ${ email }. Ingresa el código abajo:"
       ],
       "You are about to create:": [
         "Vas a crear:"
@@ -1313,6 +1519,12 @@
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Has alcanzado el número máximo de ${ maxLength } caracteres."
       ],
+      "You will be notified of data breaches for this email address.": [
+        "Se te notificará las vulneraciones de datos para esta dirección de correo electrónico."
+      ],
+      "You will no longer be notified of data breaches for this email address.": [
+        "No se te notificará las vulneraciones de datos para esta dirección de correo electrónico."
+      ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "Utilizarás este PIN para desbloquear ${ PASS_APP_NAME } automáticamente una vez pase el tiempo de inactividad."
       ],
@@ -1334,6 +1546,10 @@
       "${ config.options.wordCount } word": [
         "${ config.options.wordCount } palabra",
         "${ config.options.wordCount } palabras"
+      ],
+      "${ usageCount } login": [
+        "${ usageCount } inicio de sesión",
+        "${ usageCount } inicios de sesión"
       ],
       "1 hour": [
         "1 hora"
@@ -1539,6 +1755,9 @@
       "Last month": [
         "Último mes"
       ],
+      "Last updated": [
+        "Última actualización:"
+      ],
       "Last week": [
         "La semana pasada"
       ],
@@ -1595,6 +1814,9 @@
       ],
       "No history": [
         "Sin historial"
+      ],
+      "None": [
+        "Ninguna"
       ],
       "Note": [
         "Nota"
@@ -1683,6 +1905,12 @@
       "Special characters (!&*)": [
         "Caracteres especiales (!&*)"
       ],
+      "Status": [
+        "Estado"
+      ],
+      "Strong": [
+        "Segura"
+      ],
       "Suffix": [
         "Sufijo"
       ],
@@ -1728,6 +1956,9 @@
       "Update": [
         "Actualizar"
       ],
+      "Used in": [
+        "Uso en"
+      ],
       "Username": [
         "Nombre de usuario"
       ],
@@ -1751,6 +1982,12 @@
       ],
       "View logs": [
         "Ver los registros"
+      ],
+      "Vulnerable": [
+        "Vulnerable"
+      ],
+      "Weak": [
+        "Poco segura"
       ],
       "Websites": [
         "Sitios web"
@@ -1868,6 +2105,9 @@
       "Full Name": [
         "Nombre completo"
       ],
+      "me@example.com": [
+        "correo@ejemplo.com"
+      ],
       "MM/YY": [
         "MM/AA"
       ],
@@ -1927,14 +2167,38 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } addresses": [
+        "Direcciones de ${ BRAND_NAME }"
+      ],
+      "${ PASS_SHORT_APP_NAME } Monitor": [
+        "Monitoreo de ${ PASS_SHORT_APP_NAME }"
+      ],
+      "${ PASS_SHORT_APP_NAME } monitor": [
+        "Monitoreo de ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Account protection": [
+        "Protección de la cuenta"
+      ],
       "Auto-lock update": [
         "Actualización de bloqueo automático"
       ],
       "Block trackers and malware": [
         "Bloquea rastreadores y malware"
       ],
+      "Breach detected": [
+        "Se ha detectado una vulneración."
+      ],
+      "Breaches": [
+        "Vulneraciones"
+      ],
+      "Breaches detected for": [
+        "Se han detectado vulneraciones para"
+      ],
       "Confirm PIN code": [
         "Confirmar código PIN"
+      ],
+      "Confirm your email": [
+        "Confirma el correo electrónico"
       ],
       "Create a vault": [
         "Crear una caja fuerte"
@@ -1947,6 +2211,21 @@
       ],
       "Current version": [
         "Versión actual"
+      ],
+      "Custom addresses": [
+        "Direcciones personalizadas"
+      ],
+      "Custom email monitoring": [
+        "Monitoreo de correo electrónico personalizado"
+      ],
+      "Custom emails": [
+        "Correos electrónicos personalizados"
+      ],
+      "Dark Web Monitoring": [
+        "Monitoreo de la Dark Web"
+      ],
+      "Dark web monitoring": [
+        "Monitoreo de la Dark Web"
       ],
       "Delete vault \"${ vaultName }\" ?": [
         "¿Eliminar la caja fuerte \"${ vaultName }\"?"
@@ -1969,11 +2248,17 @@
       "Enter your PIN": [
         "Introduce tu código PIN"
       ],
+      "Excluded items": [
+        "Elementos excluidos"
+      ],
       "Get Started": [
         "Comenzar"
       ],
       "Grant permissions": [
         "Conceder permisos"
+      ],
+      "Hide-my-email aliases": [
+        "Alias de hide-my-email"
       ],
       "History": [
         "Historial"
@@ -2002,11 +2287,20 @@
       "Low disk space": [
         "Poco espacio en el disco"
       ],
+      "Mark as resolved?": [
+        "¿Marcar como resuelta?"
+      ],
       "Member limit": [
         "Límite de miembros"
       ],
       "Members": [
         "Miembros"
+      ],
+      "Missing 2FA": [
+        "Falta el 2FA"
+      ],
+      "Missing two-factor authentication": [
+        "Falta la autenticación de dos factores."
       ],
       "Modified": [
         "Modificado"
@@ -2020,8 +2314,20 @@
       "Move items?": [
         "¿Mover los elementos?"
       ],
+      "No excluded items": [
+        "No hay elementos excluidos."
+      ],
+      "No insecure passwords": [
+        "No hay contraseñas inseguras."
+      ],
       "No items selected": [
         "No hay elementos seleccionados."
+      ],
+      "No missing 2FAs": [
+        "No hay 2FA faltantes."
+      ],
+      "No reused passwords": [
+        "No hay contraseñas reusadas."
       ],
       "Our welcome gift to you": [
         "Nuestro regalo de bienvenida para ti"
@@ -2031,6 +2337,12 @@
       ],
       "Password": [
         "Contraseña"
+      ],
+      "Password Health": [
+        "Estado de la contraseña"
+      ],
+      "Pause monitoring?": [
+        "¿Pausar el monitoreo?"
       ],
       "Pending access to the shared data": [
         "Acceso pendiente a los datos compartidos"
@@ -2044,8 +2356,24 @@
       "Recommended actions": [
         "Acciones recomendadas"
       ],
+      "Remove email address?": [
+        "¿Borrar la dirección de correo electrónico?"
+      ],
+      "Resolved breaches": [
+        "Vulneraciones resueltas"
+      ],
       "Restore this version?": [
         "¿Restaurar esta versión?"
+      ],
+      "Resume monitoring?": [
+        "¿Reanudar el monitoreo?"
+      ],
+      "Reused ${ count } time": [
+        "Reusada ${ count } vez",
+        "Reusada ${ count } veces"
+      ],
+      "Reused passwords": [
+        "Contraseñas reusadas"
       ],
       "Review and share": [
         "Revisar y compartir"
@@ -2064,6 +2392,9 @@
       ],
       "Share with": [
         "Compartir con"
+      ],
+      "Stay safer online": [
+        "Más seguridad en línea"
       ],
       "Suggestions": [
         "Sugerencias"
@@ -2085,6 +2416,15 @@
       ],
       "Vault shared with you": [
         "caja fuerte compartida contigo"
+      ],
+      "Want to learn more?": [
+        "¿Quieres saber más?"
+      ],
+      "Weak password": [
+        "Contraseña poco segura"
+      ],
+      "Weak passwords": [
+        "Contraseñas poco seguras"
       ],
       "What is an alias?": [
         "¿Qué es un alias?"
@@ -2159,6 +2499,9 @@
       "Duplicate email addresses.": [
         "Direcciones de correo duplicadas"
       ],
+      "Email is required": [
+        "Se requiere un correo electrónico."
+      ],
       "Empty note": [
         "Nota vacía"
       ],
@@ -2170,6 +2513,12 @@
       ],
       "Invalid alias prefix": [
         "Prefijo del alias no válido"
+      ],
+      "Invalid code": [
+        "El código no es válido."
+      ],
+      "Invalid email": [
+        "La dirección de correo electrónico no es válida."
       ],
       "Invalid email addresses.": [
         "Las direcciones de correo no son válidas."
@@ -2232,6 +2581,9 @@
       "The alias prefix cannot be longer than 40 characters": [
         "El prefijo del alias no puede tener más de 40 caracteres."
       ],
+      "This email address will no longer be monitored for data breaches.": [
+        "Esta dirección de correo ya no será monitoreada para vulneraciones de datos."
+      ],
       "Title is required": [
         "Título no puede estar vacío"
       ],
@@ -2249,6 +2601,9 @@
       ],
       "Vault name is required": [
         "El nombre de la caja fuerte es requerido."
+      ],
+      "Verification code is required": [
+        "El código de verificación es obligatorio."
       ],
       "You cannot create more vaults than your subscription allows.": [
         "No puedes crear más cajas fuertes de las que permite tu suscripción."
