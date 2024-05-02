@@ -155,9 +155,12 @@ export class GpuLlmManager implements LlmManager {
 
     private model: GpuLlmModel | undefined; // defined iff status === 'loaded'
 
+    private abortController: AbortController | undefined; // defined iff status === 'loading'
+
     constructor() {
         this.chat = undefined;
         this.status = undefined;
+        this.abortController = undefined;
     }
 
     async checkGpu(canvas?: HTMLCanvasElement): Promise<GpuAssessmentResult> {
@@ -220,10 +223,26 @@ export class GpuLlmManager implements LlmManager {
         return this.status === 'downloading';
     }
 
-    async startDownload(updateProgress: DownloadProgressCallback): Promise<void> {
+    async startDownload(updateProgress: DownloadProgressCallback): Promise<boolean> {
         this.status = 'downloading';
-        await downloadModel(MODEL_VARIANT, updateProgress);
-        this.status = 'unloaded';
+        this.abortController = new AbortController();
+        try {
+            await downloadModel(MODEL_VARIANT, updateProgress, this.abortController);
+            this.status = 'unloaded';
+            return true;
+        } catch (e: any) {
+            if (typeof e === 'object' && e.name === 'AbortError') {
+                // user aborted, and it was successful
+                this.status = undefined;
+                return false;
+            } else {
+                console.error(e);
+                this.status = 'error';
+                throw e;
+            }
+        } finally {
+            this.abortController = undefined;
+        }
     }
 
     private async startMlcEngine() {
@@ -250,12 +269,18 @@ export class GpuLlmManager implements LlmManager {
         }
     }
 
+    // Request to cancel an ongoing download. Returns whether there was a download in progress
+    // that we did request to abort.
+    //
+    // This will return immediately, but the cancellation will be complete when the startDownload() promise is
+    // resolved, which shouldn't take long.
     cancelDownload(): boolean {
-        throw Error('todo');
-    }
-
-    hasGpu(): boolean {
-        throw Error('todo');
+        if (this.abortController) {
+            this.abortController.abort();
+            return true;
+        } else {
+            return false;
+        }
     }
 
     async loadOnGpu(): Promise<LlmModel> {

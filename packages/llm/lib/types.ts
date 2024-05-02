@@ -14,10 +14,9 @@ export type GpuAssessmentResult =
     | 'blacklisted'; // maybe WebGPU could load, but we know that token generation will be too slow
 
 export interface LlmManager {
-    hasGpu: () => boolean;
     // prefer passing a canvas, it will allow us to get some info using WebGL
     checkGpu: (canvas?: HTMLCanvasElement) => Promise<GpuAssessmentResult>;
-    startDownload: (updateProgress: DownloadProgressCallback) => Promise<void>;
+    startDownload: (updateProgress: DownloadProgressCallback) => Promise<boolean>; // returns whether it completed
     cancelDownload: () => boolean;
     loadOnGpu: () => Promise<LlmModel>;
 }

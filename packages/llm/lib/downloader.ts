@@ -127,8 +127,13 @@ async function existsInCache(url: string, destinationCache: Cache, expectedMd5?:
 }
 
 // Initiate a download, monitors the progress, and returns the result when finished.
-async function downloadFile(url: string, callback: OneFileProgressCallback): Promise<DownloadResult> {
-    const response = await fetch(url);
+async function downloadFile(
+    url: string,
+    callback: OneFileProgressCallback,
+    abortController: AbortController
+): Promise<DownloadResult> {
+    const signal = abortController.signal;
+    const response = await fetch(url, { signal });
     const { status, statusText, ok } = response;
     if (!ok) {
         throw Error(`${url}: Failed to download: ${status} ${statusText}`);
@@ -170,9 +175,15 @@ async function storeInCache(
     }
 }
 
-async function downloadFilesSequentially(files: FileDownload[], callback: OneFileProgressCallback) {
+async function downloadFilesSequentially(
+    files: FileDownload[],
+    callback: OneFileProgressCallback,
+    abortController: AbortController
+) {
     const promises = [];
     for (let i = 0; i < files.length; i++) {
+        if (abortController.signal.aborted) return;
+
         const { url, destinationCache, expectedMd5 } = files[i];
 
         // First, check if we already have this file cached.
@@ -180,7 +191,7 @@ async function downloadFilesSequentially(files: FileDownload[], callback: OneFil
         if (skip) continue;
 
         // Start the download for a new file.
-        const downloadResult = await downloadFile(url, callback);
+        const downloadResult = await downloadFile(url, callback, abortController);
 
         // The following can take several seconds, so we let the promise run while
         // we loop and start another download.
@@ -231,7 +242,11 @@ function listFilesToDownload(variantConfig: VariantConfig, appCaches: AppCaches)
 }
 
 // Retrieves all the files in the model config and puts them in LocalCache where Web-LLM expects to see them.
-export async function downloadModel(variant: string, updateProgress: DownloadProgressCallback) {
+export async function downloadModel(
+    variant: string,
+    updateProgress: DownloadProgressCallback,
+    abortController: AbortController
+) {
     // Open caches
     const appCaches = {
         model: await caches.open('webllm/model'),
@@ -316,5 +331,5 @@ export async function downloadModel(variant: string, updateProgress: DownloadPro
             totalFiles: files.length,
         });
     };
-    await downloadFilesSequentially(files, updateProgressOneFile);
+    await downloadFilesSequentially(files, updateProgressOneFile, abortController);
 }
