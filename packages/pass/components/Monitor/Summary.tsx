@@ -40,7 +40,7 @@ import './Summary.scss';
 export const Summary: FC = () => {
     const { onLink } = usePassCore();
     const { navigate } = useNavigation();
-    const { breaches, duplicates, insecure, missing2FAs, excluded } = useMonitor();
+    const { breaches, duplicates, insecure, missing2FAs, excluded, didLoad } = useMonitor();
 
     const paid = isPaidPlan(useSelector(selectPassPlan));
     const [upsellModalOpen, setUpsellModalOpen] = useState(false);
@@ -95,6 +95,8 @@ export const Summary: FC = () => {
                                         className="xl:self-start"
                                         breached={breaches.count > 0}
                                         onClick={() => navigate(getLocalPath('monitor/dark-web'))}
+                                        loading={breaches.loading}
+                                        error={!breaches.loading && !didLoad}
                                     />
                                 )}
 

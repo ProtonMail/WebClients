@@ -15,6 +15,7 @@ import { VAULT_ICON_MAP } from '@proton/pass/components/Vault/constants';
 import type { ItemViewProps } from '@proton/pass/components/Views/types';
 import { UpsellRef } from '@proton/pass/constants';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
+import { EXTENSION_BUILD } from '@proton/pass/lib/client';
 import { isMonitored, isPinned, isTrashed } from '@proton/pass/lib/items/item.predicates';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import { isVaultMemberLimitReached } from '@proton/pass/lib/vaults/vault.predicates';
@@ -65,7 +66,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
     const sharingEnabled = useFeatureFlag(PassFeature.PassSharingV1);
     const pinningEnabled = useFeatureFlag(PassFeature.PassPinningV1);
     const historyEnabled = useFeatureFlag(PassFeature.PassItemHistoryV1);
-    const monitorEnabled = useFeatureFlag(PassFeature.PassMonitor);
+    const monitorEnabled = useFeatureFlag(PassFeature.PassMonitor) && !EXTENSION_BUILD;
     const monitored = isMonitored(revision);
 
     const hasMultipleVaults = vaults.length > 1;
