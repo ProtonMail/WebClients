@@ -84,7 +84,6 @@ describe('useShareInvitees', () => {
                 { ...inviteeExternalNonProton, error: new Error('External accounts are not supported yet') },
             ]);
 
-            expect(result.current.count).toBe(3);
             expect(result.current.invitees).toEqual([
                 { ...inviteeInternal, publicKey, isExternal: false, isLoading: false },
                 {
@@ -186,7 +185,6 @@ describe('useShareInvitees', () => {
                 result.current.add([inviteeInternal, inviteeInternal2]);
             });
 
-            expect(result.current.count).toBe(2);
             expect(result.current.invitees).toEqual([
                 { ...inviteeInternal, publicKey, isExternal: false, isLoading: false },
                 { ...inviteeInternal2, publicKey, isExternal: false, isLoading: false },
@@ -195,7 +193,6 @@ describe('useShareInvitees', () => {
             await act(async () => {
                 result.current.remove(inviteeInternal.email);
             });
-            expect(result.current.count).toBe(1);
 
             expect(result.current.invitees).toEqual([
                 { ...inviteeInternal2, publicKey, isExternal: false, isLoading: false },
@@ -213,7 +210,6 @@ describe('useShareInvitees', () => {
             await act(async () => {
                 result.current.add([inviteeInternal, inviteeInternal2]);
             });
-            expect(result.current.count).toBe(2);
             expect(result.current.invitees).toEqual([
                 { ...inviteeInternal, publicKey, isExternal: false, isLoading: false, error: undefined },
                 { ...inviteeInternal2, publicKey, isExternal: false, isLoading: false, error: undefined },
@@ -222,8 +218,6 @@ describe('useShareInvitees', () => {
             await act(async () => {
                 result.current.clean();
             });
-
-            expect(result.current.count).toBe(0);
         });
     });
 });

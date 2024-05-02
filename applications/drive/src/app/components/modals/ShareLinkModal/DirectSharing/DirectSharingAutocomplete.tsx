@@ -15,41 +15,49 @@ import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
 import { MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 import clsx from '@proton/utils/clsx';
 
-import { ShareInvitee, ShareMember } from '../../../../store';
+import { ShareInvitee } from '../../../../store';
 import MemberPermissionsSelect from './MemberPermissionsSelect';
 import { getAddressInputItemAttributes } from './helpers/getAddressInputItemAttributes';
 import { getGroupsWithContactsMap } from './helpers/getGroupsWithContactsMap';
 import { inviteesToRecipients, recipientsToInvitees } from './helpers/transformers';
-import { useShareInvitees } from './useShareInvitees';
 
 interface Props {
-    onClose: () => void;
-    onFocus: () => void;
-    onSubmit: (invitees: ShareInvitee[]) => void;
-    hidden: boolean;
-    members: ShareMember[];
-    addNewMembers: (invitees: ShareInvitee[], permissions: SHARE_MEMBER_PERMISSIONS) => Promise<void>;
+    invitees: ShareInvitee[];
+    existingEmails: string[];
+    hideFormActions: boolean;
+    onAdd: (invitees: ShareInvitee[]) => void;
+    onRemove: (email: string) => void;
+    onSubmit: (invitees: ShareInvitee[], selectedPermissions: SHARE_MEMBER_PERMISSIONS) => void;
+    onCancel: () => void;
     isAdding: boolean;
 }
-const DirectSharingAutocomplete = ({ onFocus, onClose, onSubmit, hidden, members, addNewMembers, isAdding }: Props) => {
+const DirectSharingAutocomplete = ({
+    invitees,
+    existingEmails,
+    hideFormActions,
+    onAdd,
+    onRemove,
+    onSubmit,
+    onCancel,
+    isAdding,
+}: Props) => {
     const [selectedPermissions, setPermissions] = useState<SHARE_MEMBER_PERMISSIONS>(MEMBER_PERMISSIONS.VIEWER);
     const addressesInputText = c('Action').t`Add people or groups to share`;
 
     const [contactEmails] = useContactEmails();
     const [contactGroups] = useContactGroups();
     const groupsWithContactsMap = getGroupsWithContactsMap(contactEmails || [], contactGroups || []);
-    const existingEmails = [...members].map((member) => member.inviterEmail);
-    const { invitees, count, add, remove, clean } = useShareInvitees(existingEmails);
 
     const inputId = 'direct-sharing';
     const addressesAutocompleteRef = useRef<HTMLInputElement>(null);
+
+    const count = invitees.length;
 
     // Here we check if the email address is already in invited members
     const isSubmitDisabled =
         !invitees.length ||
         !!invitees.find(
-            (invitee) =>
-                invitee.isLoading || invitee.error || members.some((member) => invitee.email === member.inviterEmail)
+            (invitee) => invitee.isLoading || invitee.error || existingEmails.some((email) => invitee.email === email)
         );
 
     const items = invitees.map((invitee) => {
@@ -66,7 +74,7 @@ const DirectSharingAutocomplete = ({ onFocus, onClose, onSubmit, hidden, members
                 icon={inputItemAttributes?.icon}
                 iconTooltipTitle={inputItemAttributes?.iconTooltip}
                 onClick={(event) => event.stopPropagation()}
-                onRemove={() => remove(invitee.email)}
+                onRemove={() => onRemove(invitee.email)}
             />
         );
     });
@@ -87,7 +95,6 @@ const DirectSharingAutocomplete = ({ onFocus, onClose, onSubmit, hidden, members
                     }}
                     autocomplete={
                         <AddressesAutocompleteTwo
-                            onKeyDown={() => onFocus()}
                             hasAddOnBlur
                             id={inputId}
                             compact
@@ -97,16 +104,16 @@ const DirectSharingAutocomplete = ({ onFocus, onClose, onSubmit, hidden, members
                             contactGroups={contactGroups}
                             groupsWithContactsMap={groupsWithContactsMap}
                             recipients={recipients}
-                            onAddRecipients={(newRecipients) => add(recipientsToInvitees(newRecipients))}
+                            onAddRecipients={(newRecipients) => onAdd(recipientsToInvitees(newRecipients))}
                             className="min-w-5 unstyled"
                             inputClassName={clsx([
-                                (!count || hidden) && 'my-0.5',
-                                !!count && !hidden && 'p-0 rounded-none',
+                                (!count || hideFormActions) && 'my-0.5',
+                                !!count && !hideFormActions && 'p-0 rounded-none',
                             ])}
-                            placeholder={recipients.length && !hidden ? '' : addressesInputText}
+                            placeholder={recipients.length && count ? '' : addressesInputText}
                         />
                     }
-                    items={!hidden ? items : null}
+                    items={items}
                     className={clsx(['multi-select-container', !!count && 'px-2 py-0.5'])}
                 >
                     <MemberPermissionsSelect
@@ -115,22 +122,15 @@ const DirectSharingAutocomplete = ({ onFocus, onClose, onSubmit, hidden, members
                     />
                 </InputField>
             </div>
-            {!hidden ? (
+            {!hideFormActions ? (
                 <div className="flex justify-space-between ">
-                    <Button
-                        onClick={() => {
-                            clean();
-                            onClose();
-                        }}
-                    >{c('Action').t`Cancel`}</Button>
+                    <Button onClick={onCancel}>{c('Action').t`Cancel`}</Button>
                     <Button
                         color="norm"
                         disabled={isSubmitDisabled}
                         loading={isAdding}
-                        onClick={async () => {
-                            await addNewMembers(invitees, selectedPermissions);
-                            clean();
-                            onSubmit(invitees);
+                        onClick={() => {
+                            onSubmit(invitees, selectedPermissions);
                         }}
                     >
                         {c('Action').t`Share`}
