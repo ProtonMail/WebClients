@@ -32,7 +32,6 @@ beforeEach(() => {
     addApiMock('payments/v5/status', () => ({
         Code: 1000,
         CountryCode: 'CH',
-        ZipCode: '3001',
         State: null,
         VendorStates: {
             Apple: 1,
