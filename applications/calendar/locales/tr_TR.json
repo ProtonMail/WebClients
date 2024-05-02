@@ -447,10 +447,10 @@
       "Not now": [
         "Şimdi değil"
       ],
-      "OK": [
+      "Ok": [
         "Tamam"
       ],
-      "Ok": [
+      "OK": [
         "Tamam"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -886,6 +886,11 @@
     "Attendee role": {
       "Optional": [
         "İsteğe bağlı"
+      ]
+    },
+    "Badge": {
+      "New!": [
+        "Yeni!"
       ]
     },
     "bf2023: Action": {
@@ -2367,9 +2372,6 @@
       ],
       "Availability unknown": [
         "Kullanılabilirlik durumu bilinmiyor"
-      ],
-      "Boost efficiency and track your time by color-coding events by category or your energy levels. Get this and much more with a paid plan.": [
-        "Etkinlikleri kategoriye ya da enerji düzeylerine göre renklendirerek verimliliği artırın ve zamanınızı izleyin. Ücretli bir tarifeye geçerek bunun gibi başka pek çok özelliği edinin."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Kişilerin şifresi çözülüyor… Bu işlem birkaç dakika sürebilir. İşlem tamamlandığında dışa aktardığınız tüm kişilerin bulunduğu dosyayı indirebilirsiniz."
@@ -7086,6 +7088,9 @@
       "Create new group": [
         "Yeni grup ekle"
       ],
+      "Custom": [
+        "Özel"
+      ],
       "Day": [
         "Gün",
         "Gün"
@@ -7957,9 +7962,6 @@
       ]
     },
     "Spotlight": {
-      "Color-coding is here!": [
-        "Renklendirme burada!"
-      ],
       "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
         "${ MAIL_APP_NAME } uygulamasını doğrudan masaüstünüzden kolayca başlatın."
       ],
@@ -7977,9 +7979,6 @@
       ],
       "Now you can see when participants are free to attend your meeting.": [
         "Artık katılımcıların toplantınıza ne zaman katılabileceklerini görebilirsiniz."
-      ],
-      "With customizable event colors, you can color-code the chaos and conquer your day.": [
-        "Özelleştirilebilir etkinlik renklerini kullanarak karmaşayı renklendirebilir ve gününüzü yönetebilirsiniz."
       ]
     },
     "State": {
@@ -8161,6 +8160,17 @@
     "Subscription price": {
       "For": [
         "Toplam"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB depolama alanı"
+      ],
+      "Desktop app": [
+        "Masaüstü uygulaması"
+      ],
+      "Upgrade": [
+        "Yükselt"
       ]
     },
     "Subscription renewal state": {

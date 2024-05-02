@@ -444,10 +444,10 @@
       "Not now": [
         "Tidak sekarang"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -879,6 +879,11 @@
     "Attendee role": {
       "Optional": [
         "Opsional"
+      ]
+    },
+    "Badge": {
+      "New!": [
+        "Baru!"
       ]
     },
     "bf2023: Action": {
@@ -2348,8 +2353,8 @@
       "Availability unknown": [
         "Ketersediaan tidak diketahui"
       ],
-      "Boost efficiency and track your time by color-coding events by category or your energy levels. Get this and much more with a paid plan.": [
-        "Tingkatkan efisiensi dan lacak waktu Anda dengan memberi kode warna pada acara berdasarkan kategori atau tingkat energi Anda. Dapatkan ini dan banyak lagi dengan paket berbayar."
+      "Better organize your day, track your time, and prioritize tasks. Color-code your calendar with custom event colors.": [
+        "Organisir hari Anda secara lebih baik, lacak waktu Anda, dan prioritaskan tugas tertentu. Warnai kalender Anda dengan warna acara yang dapat disesuaikan."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Mendekripsi kontak… Proses ini dapat memakan waktu hingga beberapa menit. Setelah selesai, Anda akan dapat mengunduh berkas yang berisi seluruh kontak yang Anda ekspor."
@@ -2911,7 +2916,7 @@
         "Silakan buat alamat terlebih dahulu."
       ],
       "Please fix the highlighted conflict to proceed.": [
-        "Harap selesaikan permasalahan yang ada terlebih dahulu sebelum melanjutkan."
+        "Silakan selesaikan permasalahan yang disorot untuk melanjutkan."
       ],
       "Please provide either a first name, a last name or a display name": [
         "Silakan sediakan nama depan, nama belakang, atau nama tampilan"
@@ -6244,6 +6249,9 @@
       "Organize items with multiple vaults": [
         "Kelola item dengan berbagai brankas"
       ],
+      "Passkeys supported": [
+        "Passkey didukung"
+      ],
       "Password-protected Emails": [
         "Email yang terlindung oleh kata sandi"
       ],
@@ -6565,7 +6573,7 @@
         "Memastikan seluruh email yang terkirim ke domain Anda, bahkan yang terkirim ke alamat yang fiktif ataupun salah ketik sekalipun, akan tetap dapat Anda terima"
       ],
       "Force sign-out of user sessions when user credentials are believed to be compromised": [
-        "Putuskan sesi pengguna secara paksa apabila kredensial akun mereka telah terindikasi bocor"
+        "Keluarkan pengguna dari sesi mereka secara paksa apabila kredensial pengguna mereka telah dipercayai bocor"
       ],
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "Dukungan IMAP terbatas hanya pada aplikasi desktop (mis. Outlook, Apple Mail, dan Thunderbird) via ${ MAIL_APP_NAME } Bridge. Integrasi IMAP berbasis cloud saat ini tidak didukung."
@@ -6604,7 +6612,7 @@
         "Infrastruktur kami yang perkasa memastikan bahwa Anda akan selalu dapat mengakses akun Anda pada saat Anda membutuhkannya"
       ],
       "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
-        "Seluruh cakram penyimpanan data yang ada di server kami terenkripsi dengan kata sandi yang berlapis, sehingga data Anda akan tetap aman bahkan apabila aset dan perangkat kami disita"
+        "Seluruh cakram data milik server kami terenkripsi dengan kata sandi yang berlapis, sehingga data Anda akan tetap terlindung bahkan apabila perangkat keras kami disusupi"
       ],
       "Password management and identity protection": [
         "Pengelolaan kata sandi dan perlindungan identitas"
@@ -7810,11 +7818,14 @@
       ]
     },
     "Spotlight": {
-      "Color-coding is here!": [
-        "Kode warna ada di sini!"
+      "Color-code your calendar to better organize your day, track your time, and more.": [
+        "Warnai kalender Anda agar Anda dapat mengorganisir hari Anda secara lebih baik, melacak waktu Anda, dan masih banyak lagi."
       ],
       "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
         "Luncurkan ${ MAIL_APP_NAME } secara mudah langsung dari desktop Anda."
+      ],
+      "Custom event colors": [
+        "Warna acara khusus"
       ],
       "Get the desktop app": [
         "Dapatkan aplikasi desktop"
@@ -7830,9 +7841,6 @@
       ],
       "Now you can see when participants are free to attend your meeting.": [
         "Kini Anda dapat melihat kapan saja para peserta dapat menghadiri meeting Anda."
-      ],
-      "With customizable event colors, you can color-code the chaos and conquer your day.": [
-        "Dengan warna acara yang dapat disesuaikan, Anda dapat mengurai kekacauan yang ada dan memaksimalkan hari Anda dengen memberikan kode warna bagi acara tertentu."
       ]
     },
     "State": {

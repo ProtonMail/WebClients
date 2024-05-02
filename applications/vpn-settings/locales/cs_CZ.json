@@ -2036,6 +2036,9 @@
       "Error connecting to the Bitcoin API.": [
         "Chyba při připojování k Bitcoin API."
       ],
+      "Failed to process the logo": [
+        "Logo se nepodařilo zpracovat"
+      ],
       "File too large. Your logo must be 30 KB or smaller.": [
         "Soubor je příliš velký. Vaše logo musí mít 30 KB nebo méně."
       ],
@@ -2173,6 +2176,9 @@
       ],
       "The email addresses do not match": [
         "E-mailové adresy se neshodují"
+      ],
+      "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
+        "Soubor je příliš velký, maximální velikost je ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }"
       ],
       "The file is too small, the minimum size is ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }": [
         "Soubor je příliš malý, minimální velikost je ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }"
@@ -2992,6 +2998,9 @@
         "Přidat servery (${ availableAddedCount } k dispozici)",
         "Přidat servery (${ availableAddedCount } k dispozici)"
       ],
+      "Add your name and logo to create a more personalized experience for your organization.": [
+        "Přidejte své jméno a logo a vytvořte pro svou organizaci personalizované prostředí."
+      ],
       "Adding ${ addedServerCount } gateway server": [
         "Přidávání ${ addedServerCount } serveru brány",
         "Přidávání ${ addedServerCount } serverů brány",
@@ -3009,6 +3018,12 @@
       ],
       "Admin account allocation": [
         "Přidělení účtu správce"
+      ],
+      "Affected user is on row": [
+        "Dotčený uživatel jse na řádku",
+        "Dotčení uživatelé jsou na řádcích",
+        "Dotčení uživatelé jsou na řádcích",
+        "Dotčení uživatelé jsou na řádcích"
       ],
       "All your changes will be lost.": [
         "Veškeré vaše změny budou ztraceny."
@@ -3153,6 +3168,9 @@
       ],
       "Current plan": [
         "Aktuální tarif"
+      ],
+      "Custom branding": [
+        "Vlastní značka"
       ],
       "Custom email domains": [
         "Vlastní e-mailové domény"
@@ -3355,6 +3373,12 @@
       "If you wish to combine this account with another one, do NOT delete it.": [
         "Jestliže si přejete kombinovat tento účet s dalším, nemažte jej."
       ],
+      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
+        "Pokud máte potíže, rádi vám pomůžeme. ${ boldPhoneCall } nebo ${ boldZoomMeeting } s jedním z našich specialistů podpory, nebo si otevřete ${ boldLiveChat } pro podporu na chatu."
+      ],
+      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists.": [
+        "Pokud máte potíže, rádi vám pomůžeme. ${ boldPhoneCall } nebo ${ boldZoomMeeting } s jedním z našich specialistů podpory."
+      ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Důležité: Ujistěte se, že jste si uložili kódy pro obnovení. V opačném případě se již nikdy nebudete moci přihlásit, pokud ztratíte zařízení určené pro 2FA."
       ],
@@ -3408,6 +3432,9 @@
       ],
       "Link copied to clipboard": [
         "Odkaz zkopírován do schránky"
+      ],
+      "Live chat": [
+        "Živý chat"
       ],
       "Loading": [
         "Načítání"
@@ -3615,6 +3642,9 @@
       ],
       "Remember to share the user's sign in details with them.": [
         "Nezapomeňte s nimi sdílet přihlašovací údaje uživatele."
+      ],
+      "Request a phone call": [
+        "Požádat o telefonní hovor"
       ],
       "Resend verification email": [
         "Znovu zaslat ověřovací e-mail"
@@ -3916,6 +3946,9 @@
       "Upload your completed CSV file to create accounts": [
         "Nahrajte svůj kompletní soubor CSV pro vytvoření účtů"
       ],
+      "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
+        "Nahráním loga své organizace podpoříte identitu své značky a vytvoříte pro své uživatele personalizované prostředí."
+      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Použijte nejlepší server podle aktuálního zatížení a polohy: ${ formattedBestServerName }"
       ],
@@ -4200,6 +4233,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Váš předplatné je spravováno Mozillou. Kontaktujte prosím Mozilla podporu."
+      ],
+      "Zoom meeting": [
+        "Setkání Zoom"
       ]
     },
     "Info for cash payment method": {
@@ -7803,6 +7839,9 @@
       "Delete address permanently?": [
         "Trvale smazat adresu?"
       ],
+      "Delete organization logo?": [
+        "Smazat logo organizace?"
+      ],
       "Delete the server (you will still be able to recover it for ${ days } day)": [
         "Smazat server (budete ho moci zpět obnovit za ${ days } den)",
         "Smazat server (budete ho moci zpět obnovit za ${ days } dny)",
@@ -7910,6 +7949,9 @@
       ],
       "Gift code": [
         "Dárkový kód"
+      ],
+      "How to choose a good logo": [
+        "Jak vybrat správné logo"
       ],
       "Human verification": [
         "Lidské ověření"
@@ -8123,6 +8165,9 @@
       ],
       "Upload CSV file to create multiple accounts": [
         "Nahrajte soubor CSV pro vytvoření více účtů"
+      ],
+      "Upload your organization’s logo": [
+        "Nahrajte logo své organizace"
       ],
       "Users": [
         "Uživatelé"
@@ -8364,6 +8409,12 @@
       ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Potom vám bude účtováno ${ renewPrice } každých 12 měsíců."
+      ],
+      "Your subscription will automatically renew in ${ cycle } month.": [
+        "Vaše předplatné se automaticky obnoví za ${ cycle } měsíc.",
+        "Vaše předplatné se automaticky obnoví za ${ cycle } měsíce.",
+        "Vaše předplatné se automaticky obnoví za ${ cycle } měsíců.",
+        "Vaše předplatné se automaticky obnoví za ${ cycle } měsíců."
       ]
     },
     "vpn_2step: billing": {
