@@ -5,6 +5,7 @@
     "author": "",
     "main": "index.ts",
     "scripts": {
+        "analyze": "yarn build --analyze",
         "build": "cross-env NODE_ENV=production TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack build --appMode=sso",
         "check-types": "tsc",
         "i18n:getlatest": "proton-i18n upgrade",
