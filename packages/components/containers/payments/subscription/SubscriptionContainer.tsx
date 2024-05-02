@@ -5,7 +5,6 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { useModalTwoPromise } from '@proton/components/components/modalTwo/useModalTwo';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
-import { getVPNIntroPricingVariant } from '@proton/components/containers';
 import { getShortBillingText, isSubscriptionUnchanged } from '@proton/components/containers/payments/helper';
 import VPNPassPromotionButton from '@proton/components/containers/payments/subscription/VPNPassPromotionButton';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
@@ -281,8 +280,6 @@ const SubscriptionContainer = ({
 
     const coupon = maybeCoupon || subscription.CouponCode || undefined;
 
-    const vpnIntroPricingVariant = getVPNIntroPricingVariant();
-
     const [model, setModel] = useState<Model>(() => {
         const step = (() => {
             // Users with VPN B2B plans must not have access to the checkout step.
@@ -356,7 +353,6 @@ const SubscriptionContainer = ({
                 planIDs,
                 plansMap,
                 cycle: subscription?.Cycle,
-                vpnIntroPricingVariant,
             })
     );
 
@@ -880,7 +876,6 @@ const SubscriptionContainer = ({
             {model.step === SUBSCRIPTION_STEPS.NETWORK_ERROR && <GenericError />}
             {model.step === SUBSCRIPTION_STEPS.PLAN_SELECTION && (
                 <PlanSelection
-                    vpnIntroPricingVariant={vpnIntroPricingVariant}
                     app={app}
                     freePlan={freePlan}
                     loading={loadingCheck}

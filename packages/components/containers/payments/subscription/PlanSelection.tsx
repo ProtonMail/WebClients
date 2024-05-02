@@ -49,7 +49,6 @@ import {
     useSettingsLink,
 } from '../../../components';
 import { useFlag } from '../../unleash';
-import { VPNIntroPricingVariant } from '../../unleash/vpnIntroPricing';
 import CurrencySelector from '../CurrencySelector';
 import CycleSelector from '../CycleSelector';
 import { getAllFeatures } from '../features';
@@ -120,7 +119,6 @@ interface Props {
     subscription?: SubscriptionModel | FreeSubscription;
     organization?: Organization;
     filter?: Audience[];
-    vpnIntroPricingVariant: VPNIntroPricingVariant;
 }
 
 export const getPrice = (plan: Plan, cycle: Cycle, plansMap: PlansMap, priceType?: PriceType): number | null => {
@@ -209,7 +207,6 @@ const PlanSelection = ({
     selectedProductPlans,
     onChangeSelectedProductPlans,
     filter,
-    vpnIntroPricingVariant,
 }: Props) => {
     const isVpnSettingsApp = app == APPS.PROTONVPN_SETTINGS;
     const isPassSettingsApp = app == APPS.PROTONPASS;
@@ -217,10 +214,10 @@ const PlanSelection = ({
     const renderCycleSelector = isFreeSubscription(subscription);
     const enabledProductB2CPlans = [
         PLANS.MAIL,
-        getVPNPlanToUse(plansMap, planIDs, subscription?.Cycle, { vpnIntroPricingVariant }),
+        getVPNPlanToUse({ plansMap, planIDs, cycle: subscription?.Cycle }),
         PLANS.DRIVE,
         PLANS.PASS_PLUS,
-    ].filter(isTruthy);
+    ];
     const enabledProductB2BPlans = [PLANS.MAIL_PRO /*, PLANS.DRIVE_PRO*/];
     const goToSettings = useSettingsLink();
 
