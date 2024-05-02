@@ -125,6 +125,10 @@ export const createHooks = <State, Extra, Returned, ThunkArg = void>(
     };
 
     const hookSelector = createSelector(selector, (result): [Returned | undefined, boolean] => {
+        if (!result) {
+            return [undefined, true];
+        }
+
         const { error, value } = result;
 
         if ((error !== undefined || value !== undefined) && queueRef.state) {
