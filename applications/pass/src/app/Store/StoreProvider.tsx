@@ -76,9 +76,13 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
 
                         store.dispatch(draftsGarbageCollect());
                         store.dispatch(passwordHistoryGarbageCollect());
-                        store.dispatch(withRevalidate(getUserAccessIntent(userID)));
-                        store.dispatch(withRevalidate(getUserFeaturesIntent(userID)));
-                        store.dispatch(withRevalidate(getUserSettings.intent(userID)));
+
+                        if (res.fromCache) {
+                            /** Revalidate user data when booting from cache  */
+                            store.dispatch(withRevalidate(getUserFeaturesIntent(userID)));
+                            store.dispatch(withRevalidate(getUserAccessIntent(userID)));
+                            store.dispatch(withRevalidate(getUserSettings.intent(userID)));
+                        }
 
                         if (isDocumentVisible()) store.dispatch(startEventPolling());
 
