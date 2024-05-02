@@ -27,7 +27,7 @@ function* bootWorker(options: RootSagaOptions, { payload: { loginPassword } }: R
         yield put(stopEventPolling());
         yield loadCryptoWorker();
 
-        const hydratedFromCache: boolean = yield hydrate(
+        const fromCache: boolean = yield hydrate(
             {
                 allowFailure: loginPassword === undefined,
                 loginPassword,
@@ -41,10 +41,10 @@ function* bootWorker(options: RootSagaOptions, { payload: { loginPassword } }: R
             options
         );
 
-        yield put(bootSuccess(hydratedFromCache ? undefined : yield synchronize(SyncType.FULL)));
+        yield put(bootSuccess(fromCache ? undefined : yield synchronize(SyncType.FULL)));
 
         options.setAppStatus(loginPassword ? AppStatus.OFFLINE_UNLOCKED : AppStatus.READY);
-        options.onBoot?.({ ok: true });
+        options.onBoot?.({ ok: true, fromCache });
     } catch (error: unknown) {
         logger.warn('[Saga::Boot]', error);
         yield put(bootFailure(error));
