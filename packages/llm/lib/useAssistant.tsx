@@ -263,12 +263,15 @@ export const AssistantProvider = ({
             }
             const startDownloadingTime = performance.now();
             setIsModelDownloading(true);
-            await llmManager.current.startDownload(downloadCallback);
+            const completed = await llmManager.current.startDownload(downloadCallback);
             setIsModelDownloading(false);
-            setIsModelDownloaded(true);
-            const endDownloadingTime = performance.now();
-            const downloadingTime = endDownloadingTime - startDownloadingTime;
-            sendDownloadAssistantReport(downloadingTime);
+            setIsModelDownloaded(completed);
+            if (completed) {
+                // fixme: this can report partial download time if we were resuming a previous download session
+                const endDownloadingTime = performance.now();
+                const downloadingTime = endDownloadingTime - startDownloadingTime;
+                sendDownloadAssistantReport(downloadingTime);
+            }
         } catch (e: any) {
             traceInitiativeError('assistant', e);
             const errorMessage = c('loc_nightly_assistant').t`Something went wrong while downloading the model`;
@@ -338,7 +341,7 @@ export const AssistantProvider = ({
             if (!isModelDownloaded && !isModelDownloading) {
                 await downloadModel();
             }
-            if (!isModelLoadedOnGPU && !isModelLoadingOnGPU) {
+            if (isModelDownloaded && !isModelLoadedOnGPU && !isModelLoadingOnGPU) {
                 await loadModelOnGPU();
             }
         } catch {}
