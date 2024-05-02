@@ -2,13 +2,14 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { APP_NAMES, BRAND_NAME, PLAN_NAMES } from '@proton/shared/lib/constants';
-import { Domain, Organization } from '@proton/shared/lib/interfaces';
+import { Domain, EnhancedMember, Organization } from '@proton/shared/lib/interfaces';
 
 import { ModalStateProps, Prompt, Tooltip, useModalState } from '../../components';
 import { useCustomDomains } from '../../hooks';
 import SubUserCreateModal from './SubUserCreateModal';
 
 interface Props extends ModalStateProps {
+    members: EnhancedMember[] | undefined;
     organization?: Organization;
     verifiedDomains: Domain[];
     onInviteUser: () => void;
@@ -63,7 +64,14 @@ const InviteProtonUserButton = ({ onClick, organization }: ButtonProps & InviteB
     );
 };
 
-const InviteUserCreateSubUserModal = ({ organization, verifiedDomains, onInviteUser, app, ...modalState }: Props) => {
+const InviteUserCreateSubUserModal = ({
+    members,
+    organization,
+    verifiedDomains,
+    onInviteUser,
+    app,
+    ...modalState
+}: Props) => {
     const [subUserCreateModalProps, setSubUserCreateModalOpen, renderSubUserCreateModal] = useModalState();
 
     const handleAddUser = () => {
@@ -90,6 +98,7 @@ const InviteUserCreateSubUserModal = ({ organization, verifiedDomains, onInviteU
             </Prompt>
             {renderSubUserCreateModal && organization && verifiedDomains?.length > 0 && (
                 <SubUserCreateModal
+                    members={members}
                     organization={organization}
                     verifiedDomains={verifiedDomains}
                     {...subUserCreateModalProps}
