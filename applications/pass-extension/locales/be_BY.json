@@ -188,6 +188,9 @@
       "Edit vault": [
         "Рэдагаваць сховішча"
       ],
+      "Exclude from monitoring": [
+        "Выключыць з назірання"
+      ],
       "Export": [
         "Экспартаваць"
       ],
@@ -212,6 +215,9 @@
       "Get mobile apps": [
         "Атрымаць мабільныя праграмы"
       ],
+      "Get Pass Plus": [
+        "Атрымаць Pass Plus"
+      ],
       "Help us improve": [
         "Дапамажыце нам палепшыць наш сэрвіс"
       ],
@@ -232,6 +238,9 @@
       ],
       "Importing": [
         "Імпартаванне"
+      ],
+      "Include in monitoring": [
+        "Уключыць у назіранне"
       ],
       "Invite others": [
         "Запрасіць іншых"
@@ -368,6 +377,9 @@
       "Saving passkey...": [
         "Захаванне ключа доступу..."
       ],
+      "See all": [
+        "Праглядзець усе"
+      ],
       "See members": [
         "Паглядзець удзельнікаў"
       ],
@@ -444,7 +456,7 @@
         "Палепшыць зараз"
       ],
       "Upgrade now to share with more people": [
-        "Палепшыце, каб абагуліць з большай колькасцю людзей"
+        "Палепшыце, каб абагуліць з большай колькасцю карыстальнікаў"
       ],
       "View app logs": [
         "Паглядзець журнал праграмы"
@@ -502,11 +514,26 @@
       ]
     },
     "Description": {
+      "${ total } other login uses the same password": [
+        "${ total } запіс уваходу выкарыстоўвае такі ж самы пароль",
+        "${ total } запісы ўваходу выкарыстоўваюць такі ж самы пароль",
+        "${ total } запісаў уваходу выкарыстоўваюць такі ж самы пароль",
+        "${ total } запісаў уваходу выкарыстоўваюць такі ж самы пароль"
+      ],
       "A checked box means the feature is disabled.": [
         "Сцяжок азначае, што функцыя адключана."
       ],
+      "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
+        "Функцыя Dark Web Monitoring даступна з платным тарыфным планам. Палепшыце сваю падпіску, каб неадкладна атрымаць доступ да гэтай функцыі."
+      ],
+      "It would be more secure to set up 2FA for this account.": [
+        "Будзе больш бяспечна наладзіць 2ФА для гэтага ўліковага запісу."
+      ],
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
         "Спіс даменаў, дзе некаторыя функцыі ў праграме ${ PASS_SHORT_APP_NAME } (аўтазапаўненне, аўтапрапанова, аўтазахаванне) могуць не працаваць.${ infoText }"
+      ],
+      "This account is vulnerable, visit the service and change your password.": [
+        "Гэты ўліковы запіс з'яўляецца ўразлівым. Наведайце сэрвіс і змяніце пароль."
       ]
     },
     "Error": {
@@ -606,6 +633,12 @@
       "Failed resending invite.": [
         "Збой паўторнай адпраўкі запрашэння"
       ],
+      "Failed to add email address": [
+        "Не ўдалося дадаць адрас электроннай пошты"
+      ],
+      "Failed to delete email address from monitoring": [
+        "Не ўдалося выдаліць адрас электроннай пошты з назірання"
+      ],
       "Failed to delete selected items": [
         "Не ўдалося выдаліць выбраныя элементы"
       ],
@@ -614,6 +647,15 @@
       ],
       "Failed to edit user's access.": [
         "Збой рэдагавання доступу карыстальніка."
+      ],
+      "Failed to load breaches": [
+        "Не ўдалося загрузіць парушэнні"
+      ],
+      "Failed to load breaches for this address": [
+        "Не ўдалося загрузіць парушэнні для гэтага адраса"
+      ],
+      "Failed to load breaches for this email alias": [
+        "Не ўдалося загрузіць парушэнні для гэтага псеўданіма электроннай пошты"
       ],
       "Failed to load item history": [
         "Не ўдалося загрузіць элементы гісторыі"
@@ -633,6 +675,12 @@
       "Failed to remove user's access.": [
         "Збой выдалення доступу карыстальніка."
       ],
+      "Failed to resend verification for custom email": [
+        "Не ўдалося паўторна адправіць код праверкі для карыстальніцкай электроннай пошты"
+      ],
+      "Failed to resolve breaches for this address": [
+        "Не ўдалося вырашыць парушэнні для гэтага адраса"
+      ],
       "Failed to restore items from trash": [
         "Не ўдалося аднавіць элементы са сметніцы"
       ],
@@ -641,6 +689,21 @@
       ],
       "Failed to unpin item": [
         "Не ўдалося адмацаваць элемент"
+      ],
+      "Failed to update monitoring settings": [
+        "Не ўдалося абнавіць налады назірання."
+      ],
+      "Failed to verify email address": [
+        "Не ўдалося праверыць адрас электроннай пошты"
+      ],
+      "Failed updating ${ PROTON_SENTINEL_NAME } setting": [
+        "Збой абнаўлення налад ${ PROTON_SENTINEL_NAME }"
+      ],
+      "Failed updating monitor flag of the item": [
+        "Збой абнаўлення сцяга назірання элемента"
+      ],
+      "Failed updating monitoring status for this email address": [
+        "Збой абнаўлення статусу назірання для гэтага адраса электроннай пошты"
       ],
       "File could not be parsed": [
         "Не атрымалася прааналізаваць файл"
@@ -902,6 +965,12 @@
       "${ PASS_APP_NAME } will suggest saving passkeys.": [
         "${ PASS_APP_NAME } прапануе захаваць ключы доступу."
       ],
+      "${ PROTON_SENTINEL_NAME } successfully disabled": [
+        "${ PROTON_SENTINEL_NAME } паспяхова адключана"
+      ],
+      "${ PROTON_SENTINEL_NAME } successfully enabled": [
+        "${ PROTON_SENTINEL_NAME } паспяхова ўключана"
+      ],
       "${ trialDaysLeft } day left": [
         "Застаўся ${ trialDaysLeft } дзень",
         "Засталося ${ trialDaysLeft } дні",
@@ -1034,6 +1103,15 @@
       "Editor": [
         "Рэдактар​​"
       ],
+      "Email address successfully deleted from monitoring": [
+        "Адрас электроннай пошты паспяхова выдалены з назірання"
+      ],
+      "Email address successfully excluded from monitoring": [
+        "Адрас электроннай пошты паспяхова выключаны з назірання"
+      ],
+      "Email address successfully included in monitoring": [
+        "Адрас электроннай пошты паспяхова ўключаны ў назіранне"
+      ],
       "Emptying trash...": [
         "Ачышчэнне сметніцы..."
       ],
@@ -1162,6 +1240,9 @@
       ],
       "me": [
         "я"
+      ],
+      "Monitoring settings successfully updated": [
+        "Налады назірання паспяхова абноўлены"
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "Больш, чым менеджар пароляў. ${ PASS_APP_NAME } абараняе ваш пароль і ваш асабісты адрас электроннай пошты з дапамогай псеўданімаў электроннай пошты. Распрацаваны на падставе тэхналогіі, якая ляжыць у аснове ${ MAIL_APP_NAME }. Вашы даныя зашыфраваны скразным метадам і даступны толькі вам."
@@ -1374,7 +1455,7 @@
         "Налада адключана на ўзроўні арганізацыі"
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
-        "Сховішча пакуль не з'яўляецца агульнадаступным. Запрасіце людзей, каб абагуліць яго з іншымі."
+        "Сховішча пакуль не з'яўляецца агульнадаступным. Запрасіце карыстальнікаў, каб абагуліць яго з іншымі."
       ],
       "This version will be added to the history as the newest version.": [
         "Гэта версія будзе дададзена ў гісторыю як самая новая."
@@ -1509,6 +1590,9 @@
         "${ config.options.wordCount } словы",
         "${ config.options.wordCount } слоў",
         "${ config.options.wordCount } слоў"
+      ],
+      "${ PASS_SHORT_APP_NAME } monitor": [
+        "Назіранне ${ PASS_SHORT_APP_NAME }"
       ],
       "1 hour": [
         "1 гадзіна"
@@ -2123,6 +2207,9 @@
       "${ PASS_APP_NAME } Settings": [
         "Налады ${ PASS_APP_NAME }"
       ],
+      "${ PASS_SHORT_APP_NAME } monitor": [
+        "Назіранне ${ PASS_SHORT_APP_NAME }"
+      ],
       "Auto-lock update": [
         "Абнаўленне аўтаблакіравання"
       ],
@@ -2254,6 +2341,9 @@
       ],
       "Share with": [
         "Абагуліць з"
+      ],
+      "Stay safer online": [
+        "Заставайцеся абароненымі ў інтэрнэце"
       ],
       "Suggestions": [
         "Прапановы"
