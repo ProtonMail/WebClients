@@ -23,7 +23,7 @@ export const BreachUpsellCard: FC<Props> = ({ className, onUpsell }) => (
             }}
         />
         <CardContent
-            title={c('Title').t`Dark web monitoring`}
+            title={c('Title').t`Dark Web Monitoring`}
             titleClassname="text-lg text-bold"
             subtitle={c('Description').t`Get notified if your email, password or other personal data was leaked.`}
             subtitleClassname="color-norm-major"
