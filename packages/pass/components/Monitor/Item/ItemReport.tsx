@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import { type FC, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 
@@ -6,6 +6,7 @@ import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { Dropdown, DropdownMenu, usePopperAnchor } from '@proton/components/index';
+import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { ItemTag } from '@proton/pass/components/Item/List/ItemTag';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { CardContent } from '@proton/pass/components/Layout/Card/CardContent';
@@ -16,8 +17,10 @@ import { useNavigation } from '@proton/pass/components/Navigation/NavigationProv
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import { itemEq } from '@proton/pass/lib/items/item.predicates';
 import { getItemKey } from '@proton/pass/lib/items/item.utils';
+import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
 import { selectSelectedItems } from '@proton/pass/store/selectors';
 import type { ItemRevision, SelectedItem } from '@proton/pass/types';
+import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { invert } from '@proton/pass/utils/fp/predicates';
 
 const BTN_STYLES = {
@@ -30,6 +33,7 @@ const BTN_STYLES = {
 };
 
 const DuplicatePasswordReport: FC<SelectedItem> = (item) => {
+    const { onTelemetry } = usePassCore();
     const { duplicates } = useMonitor();
     const { selectItem } = useNavigation();
 
@@ -41,6 +45,10 @@ const DuplicatePasswordReport: FC<SelectedItem> = (item) => {
 
     const handleClick = (item: ItemRevision) => () =>
         selectItem(item.shareId, item.itemId, { prefix: 'monitor/duplicates' });
+
+    useEffect(() => {
+        onTelemetry(createTelemetryEvent(TelemetryEventName.PassMonitorItemDetailFromReusedPassword, {}, {}));
+    }, []);
 
     return total > 0 ? (
         <Card className="mb-2" type="warning">
@@ -105,8 +113,13 @@ const DuplicatePasswordReport: FC<SelectedItem> = (item) => {
 };
 
 const WeakPasswordReport: FC<SelectedItem> = (item) => {
+    const { onTelemetry } = usePassCore();
     const { insecure } = useMonitor();
     const isWeak = insecure.data.some(itemEq(item));
+
+    useEffect(() => {
+        onTelemetry(createTelemetryEvent(TelemetryEventName.PassMonitorItemDetailFromWeakPassword, {}, {}));
+    }, []);
 
     return (
         isWeak && (
@@ -125,8 +138,13 @@ const WeakPasswordReport: FC<SelectedItem> = (item) => {
 };
 
 const Missing2FAReport: FC<SelectedItem> = (item) => {
+    const { onTelemetry } = usePassCore();
     const { missing2FAs } = useMonitor();
     const isMissing2FA = missing2FAs.data.some(itemEq(item));
+
+    useEffect(() => {
+        onTelemetry(createTelemetryEvent(TelemetryEventName.PassMonitorItemDetailFromMissing2FA, {}, {}));
+    }, []);
 
     return (
         isMissing2FA && (

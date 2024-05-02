@@ -7,6 +7,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button';
 import { Icon } from '@proton/components/components/icon';
 import { Tooltip } from '@proton/components/index';
+import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
 import { HIBPWarning } from '@proton/pass/components/Monitor/Address/HIBPWarning';
@@ -17,11 +18,14 @@ import type { MonitorTableRow } from '@proton/pass/hooks/monitor/useBreachesTabl
 import { useRequest } from '@proton/pass/hooks/useActionRequest';
 import { getAddressId, intoCustomMonitorAddress } from '@proton/pass/lib/monitor/monitor.utils';
 import { AddressType } from '@proton/pass/lib/monitor/types';
+import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
 import { addCustomAddress } from '@proton/pass/store/actions';
 import { addCustomAddressRequest, deleteCustomAddressRequest } from '@proton/pass/store/actions/requests';
 import { selectRequestInFlight } from '@proton/pass/store/selectors';
+import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 
 export const BreachGroupRowActions: FC<MonitorTableRow> = (row) => {
+    const { onTelemetry } = usePassCore();
     const monitor = useMonitor();
     const { type, email } = row;
 
@@ -46,6 +50,9 @@ export const BreachGroupRowActions: FC<MonitorTableRow> = (row) => {
                         onClick={(evt) => {
                             evt.stopPropagation();
                             add.dispatch(row.email);
+                            onTelemetry(
+                                createTelemetryEvent(TelemetryEventName.PassMonitorAddCustomEmailFromSuggestion, {}, {})
+                            );
                         }}
                         loading={add.loading}
                         disabled={monitor.breaches.data.custom.length >= MAX_CUSTOM_ADDRESSES}
