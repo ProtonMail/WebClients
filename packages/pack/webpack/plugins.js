@@ -14,6 +14,7 @@ const SentryCliPlugin = require('@sentry/webpack-plugin');
 const PostCssLogicalWebpackPlugin = require('./postcss-logical-webpack-plugin').default;
 const WriteWebpackPlugin = require('./write-webpack-plugin').default;
 const HtmlEditWebpackPlugin = require('./html-edit-webpack-plugin').default;
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const defaultFaviconConfig = require('./favicon.config');
 const faviconConfig = require(path.resolve('./favicon.config.js'));
@@ -31,6 +32,7 @@ module.exports = ({
     errorLogs,
     logical,
     cssName,
+    analyze,
 }) => {
     return [
         ...(isProduction
@@ -216,5 +218,7 @@ module.exports = ({
         }),
 
         logical && new PostCssLogicalWebpackPlugin(),
+
+        analyze && new BundleAnalyzerPlugin(),
     ].filter(Boolean);
 };
