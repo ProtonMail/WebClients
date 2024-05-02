@@ -16,7 +16,7 @@ export type GpuAssessmentResult =
 export interface LlmManager {
     // prefer passing a canvas, it will allow us to get some info using WebGL
     checkGpu: (canvas?: HTMLCanvasElement) => Promise<GpuAssessmentResult>;
-    startDownload: (updateProgress: DownloadProgressCallback) => Promise<void>;
+    startDownload: (updateProgress: DownloadProgressCallback) => Promise<boolean>; // returns whether it completed
     cancelDownload: () => boolean;
     loadOnGpu: () => Promise<LlmModel>;
 }
