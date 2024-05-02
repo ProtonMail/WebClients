@@ -6,8 +6,10 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { Icon } from '@proton/components/components/icon';
+import { Tooltip } from '@proton/components/index';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
+import { HIBPWarning } from '@proton/pass/components/Monitor/Address/HIBPWarning';
 import { useMonitor } from '@proton/pass/components/Monitor/MonitorProvider';
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import { MAX_CUSTOM_ADDRESSES } from '@proton/pass/constants';
@@ -34,21 +36,23 @@ export const BreachGroupRowActions: FC<MonitorTableRow> = (row) => {
     if (type === AddressType.CUSTOM) {
         if (row.suggestion) {
             return (
-                <Button
-                    className="shrink-0"
-                    pill
-                    shape="solid"
-                    color="weak"
-                    size="small"
-                    onClick={(evt) => {
-                        evt.stopPropagation();
-                        add.dispatch(row.email);
-                    }}
-                    loading={add.loading}
-                    disabled={monitor.breaches.data.custom.length >= MAX_CUSTOM_ADDRESSES}
-                >
-                    {c('Action').t`Add`}
-                </Button>
+                <Tooltip openDelay={50} originalPlacement={'top'} title={<HIBPWarning />}>
+                    <Button
+                        className="shrink-0"
+                        pill
+                        shape="solid"
+                        color="weak"
+                        size="small"
+                        onClick={(evt) => {
+                            evt.stopPropagation();
+                            add.dispatch(row.email);
+                        }}
+                        loading={add.loading}
+                        disabled={monitor.breaches.data.custom.length >= MAX_CUSTOM_ADDRESSES}
+                    >
+                        {c('Action').t`Add`}
+                    </Button>
+                </Tooltip>
             );
         }
 
