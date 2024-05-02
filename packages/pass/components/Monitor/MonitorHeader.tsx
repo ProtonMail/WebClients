@@ -12,7 +12,7 @@ import { BRAND_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 const getMonitorBreadcrumbs = (): BreadcrumbRoute[] => [
     { path: 'duplicates', label: c('Title').t`Reused passwords`, active: true },
     { path: 'weak', label: c('Title').t`Weak passwords`, active: true },
-    { path: '2fa', label: c('Title').t`Missing 2FA`, active: true },
+    { path: '2fa', label: c('Title').t`Inactive 2FA`, active: true },
     { path: 'excluded', label: c('Title').t`Excluded items`, active: true },
     {
         path: 'dark-web',
