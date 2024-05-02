@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -8,19 +8,19 @@ import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
 import { ShareInvitee, ShareMember, useShareMemberView } from '../../../../store';
 import DirectSharingAutocomplete from './DirectSharingAutocomplete';
 import DirectSharingListing from './DirectSharingListing';
+import { useShareInvitees } from './useShareInvitees';
 
 interface Props {
     rootShareId: string;
     linkId: string;
-    isDirectSharingWorkflow: boolean;
-    onSubmit: () => void;
-    onClose: () => void;
-    onFocus: () => void;
+    onInviteeCountChange: (inviteeCount: number) => void;
+    isInvitationWorkflow: boolean;
 }
-const DirectSharing = ({ rootShareId, linkId, isDirectSharingWorkflow, onSubmit, onClose, onFocus }: Props) => {
+const DirectSharing = ({ rootShareId, linkId, onInviteeCountChange, isInvitationWorkflow }: Props) => {
     const {
         volumeId,
         members,
+        membersEmail,
         invitations,
         isLoading,
         isAdding,
@@ -36,10 +36,16 @@ const DirectSharing = ({ rootShareId, linkId, isDirectSharingWorkflow, onSubmit,
             name: member.email,
         }))
     );
+    const { invitees, add: addInvitee, remove: removeInvitee, clean: cleanInvitees } = useShareInvitees(membersEmail);
 
-    const handleSubmit = (invitees: ShareInvitee[]) => {
+    const handleSubmit = async (invitees: ShareInvitee[], selectedPermissions: SHARE_MEMBER_PERMISSIONS) => {
         setDirectSharingList([...directSharingList, ...invitees]);
-        onSubmit();
+        await addNewMembers(invitees, selectedPermissions);
+        cleanInvitees();
+    };
+
+    const handleCancel = () => {
+        cleanInvitees();
     };
 
     const handlePermissionsChange = async (member: ShareMember, permissions: SHARE_MEMBER_PERMISSIONS) => {
@@ -58,19 +64,24 @@ const DirectSharing = ({ rootShareId, linkId, isDirectSharingWorkflow, onSubmit,
         await removeInvitation(invitationId);
     };
 
+    useEffect(() => {
+        onInviteeCountChange(invitees.length);
+    }, [invitees.length]);
+
     return (
         <ContactEmailsProvider>
             <DirectSharingAutocomplete
-                onClose={onClose}
-                onFocus={onFocus}
+                onCancel={handleCancel}
                 isAdding={isAdding}
                 onSubmit={handleSubmit}
-                members={members}
-                hidden={!isDirectSharingWorkflow}
-                addNewMembers={addNewMembers}
+                existingEmails={membersEmail}
+                invitees={invitees}
+                onAdd={addInvitee}
+                onRemove={removeInvitee}
+                hideFormActions={!isInvitationWorkflow}
             />
 
-            {!isDirectSharingWorkflow && (
+            {!isInvitationWorkflow && (
                 <>
                     <h2 className="text-lg text-semibold">{c('Info').t`Share with`}</h2>
                     <DirectSharingListing

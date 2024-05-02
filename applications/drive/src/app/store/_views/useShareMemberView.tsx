@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -32,6 +32,8 @@ const useShareMemberView = (rootShareId: string, linkId: string) => {
     const { createShare } = useShareActions();
     const events = useDriveEventManager();
     const [volumeId, setVolumeId] = useState<string>();
+
+    const membersEmail = useMemo(() => [...members].map((member) => member.inviterEmail), [members]);
 
     useEffect(() => {
         const abortController = new AbortController();
@@ -192,6 +194,7 @@ const useShareMemberView = (rootShareId: string, linkId: string) => {
     return {
         volumeId,
         members,
+        membersEmail,
         invitations,
         isLoading,
         isAdding,

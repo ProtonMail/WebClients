@@ -49,7 +49,7 @@ export function ShareLinkModal({ shareId: rootShareId, linkId, onClose, ...modal
     } = useShareURLView(rootShareId, linkId);
 
     const [settingsModal, showSettingsModal] = useLinkSharingSettingsModal();
-    const [isDirectSharingWorkflow, setIsDirectSharingWorkflow] = useState(false);
+    const [isInvitationWorkflow, setIsInvitationWorkflow] = useState(false);
 
     const isClosedButtonDisabled = isSaving || isDeleting || isCreating;
     const isTooltipDisabled = isShareUrlLoading || isSaving || isDeleting || isCreating || !isShared;
@@ -99,12 +99,10 @@ export function ShareLinkModal({ shareId: rootShareId, linkId, onClose, ...modal
                     <DirectSharing
                         rootShareId={rootShareId}
                         linkId={linkId}
-                        isDirectSharingWorkflow={isDirectSharingWorkflow}
-                        onClose={() => setIsDirectSharingWorkflow(false)}
-                        onSubmit={() => setIsDirectSharingWorkflow(false)}
-                        onFocus={() => setIsDirectSharingWorkflow(true)}
+                        onInviteeCountChange={(inviteeCount) => setIsInvitationWorkflow(!!inviteeCount)}
+                        isInvitationWorkflow={isInvitationWorkflow}
                     />
-                    {!isDirectSharingWorkflow ? (
+                    {!isInvitationWorkflow ? (
                         <ShareWithAnyone
                             createSharedLink={createSharedLink}
                             isLoading={isShareWithAnyoneLoading}
