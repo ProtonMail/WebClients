@@ -4,7 +4,6 @@ import {
     OnLoginCallback,
     StandardLoadErrorPage,
     UnAuthenticated,
-    getVPNIntroPricingVariant,
     useActiveBreakpoint,
     useApi,
     useConfig,
@@ -13,7 +12,7 @@ import {
 import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
 import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
 import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/components/containers/payments/TaxCountrySelector';
-import { getIsVpn2024Deal, getVPNPlanToUse } from '@proton/components/containers/payments/subscription/helpers';
+import { getIsVpn2024Deal } from '@proton/components/containers/payments/subscription/helpers';
 import { usePaymentsTelemetry } from '@proton/components/payments/client-extensions/usePaymentsTelemetry';
 import { PaymentProcessorType } from '@proton/components/payments/react-extensions/interface';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
@@ -25,7 +24,7 @@ import { getFreePlan, queryPlans } from '@proton/shared/lib/api/payments';
 import { TelemetryAccountSignupEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { ProductParam } from '@proton/shared/lib/apps/product';
 import { getWelcomeToText } from '@proton/shared/lib/apps/text';
-import { APP_NAMES, CLIENT_TYPES, CYCLE, DEFAULT_CURRENCY, PLANS, VPN_APP_NAME } from '@proton/shared/lib/constants';
+import { APP_NAMES, CLIENT_TYPES, DEFAULT_CURRENCY, PLANS, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { getPlanFromPlanIDs, hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
@@ -90,7 +89,6 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
         flow: 'signup-vpn',
     });
     const activeBreakpoint = useActiveBreakpoint();
-    const vpnIntroPricingVariant = getVPNIntroPricingVariant();
 
     useMetaTags(metaTags);
 
@@ -183,19 +181,13 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
             ]);
 
             const plansMap = toMap(Plans, 'Name') as PlansMap;
-            const vpnPlanName = getVPNPlanToUse(
-                plansMap,
-                signupParameters.preSelectedPlan ? { [signupParameters.preSelectedPlan]: 1 } : {},
-                CYCLE.TWO_YEARS, // TWO_YEARS as a cycle to land in the vpn2024 condition in case it's the preSelectedPlan
-                { vpnIntroPricingVariant }
-            );
+            const vpnPlanName = PLANS.VPN2024;
 
             const coupon = signupParameters.coupon;
 
             const cycleData = getCycleData({
                 plan: vpnPlanName,
                 coupon,
-                vpnIntroPricingVariant,
             });
 
             const defaults: SignupDefaults = {

@@ -1,4 +1,3 @@
-import { VPNIntroPricingVariant } from '@proton/components/containers';
 import { ProductParam } from '@proton/shared/lib/apps/product';
 import {
     APPS,
@@ -20,36 +19,26 @@ import {
     UserModel,
 } from '@proton/shared/lib/interfaces';
 
+export const getVPNPlanToUse = ({
+    planIDs,
+}: {
+    plansMap: PlansMap;
+    planIDs: PlanIDs | undefined;
+    cycle: CYCLE | undefined;
+}) => {
+    // If the user is on the vpn2022 plan, we keep showing that
+    if (planIDs?.[PLANS.VPN]) {
+        return PLANS.VPN;
+    }
+    return PLANS.VPN2024;
+};
+
 export const getCurrency = (
     user: UserModel | undefined,
     subscription: Subscription | FreeSubscription | undefined,
     plans: Plan[] | undefined
 ) => {
     return user?.Currency || subscription?.Currency || plans?.[0]?.Currency || DEFAULT_CURRENCY;
-};
-
-export const getVPNPlanToUse = (
-    _: PlansMap,
-    planIDs: PlanIDs | undefined,
-    cycle: CYCLE | undefined,
-    options?: {
-        vpnIntroPricingVariant?: VPNIntroPricingVariant;
-    }
-) => {
-    /*
-    Can enable this when this should be the new default
-    if (plansMap[PLANS.VPN2024]) {
-        return PLANS.VPN2024;
-    }
-     */
-    // If the user is on the vpn2024 plan on these cycles, we keep showing it
-    if (planIDs?.[PLANS.VPN2024] && [CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS].includes(cycle as any)) {
-        return PLANS.VPN2024;
-    }
-    if (options?.vpnIntroPricingVariant === VPNIntroPricingVariant.New2024) {
-        return PLANS.VPN2024;
-    }
-    return PLANS.VPN;
 };
 
 export const getIsVpn2024Deal = (planName: PLANS, coupon: string | undefined) => {
@@ -69,20 +58,18 @@ export const getDefaultSelectedProductPlans = ({
     appName,
     plan,
     planIDs,
-    cycle,
     plansMap,
-    vpnIntroPricingVariant,
+    cycle,
 }: {
     appName: ProductParam;
     plan?: string;
     planIDs: PlanIDs;
     cycle: CYCLE | undefined;
     plansMap: PlansMap;
-    vpnIntroPricingVariant: VPNIntroPricingVariant;
 }) => {
     let defaultB2CPlan = PLANS.MAIL;
     if (appName === APPS.PROTONVPN_SETTINGS) {
-        defaultB2CPlan = getVPNPlanToUse(plansMap, planIDs, cycle, { vpnIntroPricingVariant });
+        defaultB2CPlan = getVPNPlanToUse({ plansMap, planIDs, cycle });
     } else if (appName === APPS.PROTONDRIVE) {
         defaultB2CPlan = PLANS.DRIVE;
     } else if (appName === APPS.PROTONPASS) {
