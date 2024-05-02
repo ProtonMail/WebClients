@@ -82,12 +82,6 @@ const getConfig = (env: any): Configuration => {
                     const strippedChunkName = chunkName.replaceAll(/-index-js|-json/g, '');
                     return result.replace('[name]', strippedChunkName);
                 }
-                // drive-worker does not append the version number and solely rely on the contenthash
-                // If there is a bytesize difference to it's content the hash will be different
-                // This is made to reduce the amount of 'RefreshErrors' when releasing since we are not touching the drive-worker very often
-                if (chunkName && chunkName.startsWith('drive-worker')) {
-                    return `${assetsFolder}/[name].[contenthash].chunk.js`;
-                }
                 // Drive need static URL for transpiled SW
                 if (chunkName && chunkName.startsWith('downloadSW')) {
                     return `[name].js?v=${version}`;
