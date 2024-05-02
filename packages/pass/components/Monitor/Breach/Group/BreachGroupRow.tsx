@@ -36,7 +36,13 @@ const getStatusLabel = (row: MonitorTableRow) => {
         return c('Info').t`Latest breach on ${formattedDate}`;
     }
 
-    if (row.breachCount) return c('Info').t`${row.breachCount} breaches detected`;
+    if (row.breachCount) {
+        return c('Info').ngettext(
+            msgid`${row.breachCount} breach detected`,
+            `${row.breachCount} breaches detected`,
+            row.breachCount
+        );
+    }
 
     return c('Info').t`Breaches detected`;
 };
