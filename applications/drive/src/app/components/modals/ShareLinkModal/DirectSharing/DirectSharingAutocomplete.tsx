@@ -54,11 +54,7 @@ const DirectSharingAutocomplete = ({
     const count = invitees.length;
 
     // Here we check if the email address is already in invited members
-    const isSubmitDisabled =
-        !invitees.length ||
-        !!invitees.find(
-            (invitee) => invitee.isLoading || invitee.error || existingEmails.some((email) => invitee.email === email)
-        );
+    const isSubmitDisabled = !invitees.length || !!invitees.find((invitee) => invitee.isLoading || invitee.error);
 
     const items = invitees.map((invitee) => {
         const inputItemAttributes = getAddressInputItemAttributes(invitee);
