@@ -1,23 +1,67 @@
-import { ReactNode, createContext, useContext, useEffect, useMemo, useRef, useState } from 'react';
+import { ReactNode, createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
 import { FeatureFlag, useFlag } from '@proton/components/containers';
+import { useApi, useNotifications, useUser } from '@proton/components/hooks';
 import useAssistantTelemetry from '@proton/llm/lib/useAssistantTelemetry';
 import { domIsBusy } from '@proton/shared/lib/busy';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 
-import { ASSISTANT_STATUS, RETRY_GENERATE_TIMEOUT, UNLOAD_ASSISTANT_TIMEOUT } from './constants';
+import { ASSISTANT_FEATURE_NAME, ASSISTANT_STATUS, UNLOAD_ASSISTANT_TIMEOUT } from './constants';
 import { GpuLlmManager } from './gpu';
-import { getAssistantStatus, getCanRunAssistant, getHasAccessToAssistant } from './helpers';
-import { DownloadProgressInfo, GenerationCallback, LlmManager, LlmModel, RunningAction } from './types';
+import {
+    buildMLCConfig,
+    getAssistantHasCompatibleBrowser,
+    getAssistantHasCompatibleHardware,
+    getAssistantStatus,
+    getCanShowAssistant,
+    getCanUseAssistant,
+    queryAssistantModels,
+} from './helpers';
+import {
+    AssistantConfig,
+    DownloadProgressInfo,
+    GenerationCallback,
+    LlmManager,
+    LlmModel,
+    RunningAction,
+} from './types';
 
 export interface GenerateAssistantResult {
+    assistantID: string;
     inputText: string;
     callback: GenerationCallback;
-    ingestionStartTime?: number;
 }
+
+export interface AssistantRunningActionResolver {
+    assistantID: string;
+    resolver: () => void;
+}
+
+export interface AssistantRunningAction {
+    assistantID: string;
+    runningAction: RunningAction;
+}
+
+export enum AssistantErrorTypes {
+    globalError,
+    specificError,
+}
+
+export interface AssistantGlobalError {
+    type: AssistantErrorTypes.globalError;
+}
+
+export interface AssistantSpecificError {
+    type: AssistantErrorTypes.specificError;
+    assistantID: string;
+}
+
+export type AssistantError = (AssistantGlobalError | AssistantSpecificError) & {
+    error: string;
+};
 
 /**
  * Warning: this is a POC, so several parts of this code have been implemented using "shortcuts"
@@ -33,25 +77,33 @@ export interface GenerateAssistantResult {
  */
 export const AssistantContext = createContext<{
     /**
-     * TODO Temporary for alpha, is the assistant opened
+     * All assistant instances opened in the context
      */
     openedAssistants: string[];
     /**
-     * TODO Temporary for alpha, set is assistant opened
+     * Add assistant instance to the context
      */
-    openAssistant: (value: string) => void;
+    openAssistant: (assistantID: string) => void;
     /**
-     * TODO Temporary for alpha, set is assistant opened
+     * Remove assistant instance from the context
      */
-    closeAssistant: (value: string) => void;
+    closeAssistant: (assistantID: string) => void;
     /**
-     * Can the user use the assistant (depending on the computer and browser)
+     * Can the user see the assistant in the UI (based on feature flag)
      */
-    canRunAssistant: boolean;
+    canShowAssistant: boolean;
     /**
-     * Can the user use the assistant (depending on the feature flag and eligibility)
+     * Can the user run the assistant on his machine
      */
-    hasAccessToAssistant: boolean;
+    hasCompatibleHardware: boolean;
+    /**
+     * Can the user run the assistant in the browser
+     */
+    hasCompatibleBrowser: boolean;
+    /**
+     * Can the user run the assistant (based on the plan and trial state)
+     */
+    canUseAssistant: boolean;
     /**
      * Has the user downloaded the model
      */
@@ -61,9 +113,17 @@ export const AssistantContext = createContext<{
      */
     isModelDownloading: boolean;
     /**
-     * The model download progress, when downloading it
+     * The model download progress in bytes, when downloading it
      */
-    downloadModelProgress: number;
+    downloadReceivedBytes: number;
+    /**
+     * The full model size, when downloading it
+     */
+    downloadModelSize: number;
+    /**
+     * Is the model downloading paused
+     */
+    downloadPaused: boolean;
     /**
      * Is the model being loaded on the GPU at the moment
      */
@@ -73,22 +133,17 @@ export const AssistantContext = createContext<{
      */
     isModelLoadingOnGPU: boolean;
     /**
-     * Is the assistant currently generating a result
-     */
-    isGeneratingResult: boolean;
-    /**
-     * Is the user waiting for an assistant result
-     * This is a combination of downloading the model, loading it on th GPU and generating a result
-     */
-    isWaitingForResult: boolean;
-    /**
      * Potential error that occurred while using the assistant
      */
-    error: string;
+    errors: AssistantError[];
     /**
      * Manually cancel the model download
      */
     cancelDownloadModel: () => void;
+    /**
+     * Manually resume the model download
+     */
+    resumeDownloadModel: () => void;
     /**
      * Manually unload the model from the GPU
      */
@@ -102,14 +157,18 @@ export const AssistantContext = createContext<{
     /**
      * Generate a result from a prompt
      */
-    generateResult: ({ inputText, callback }: GenerateAssistantResult) => Promise<void>;
+    generateResult: (generateAssistantResult: GenerateAssistantResult) => Promise<void>;
     /**
      * Cancel the current running action (result generation)
      */
-    cancelRunningAction: () => void;
+    cancelRunningAction: (assistantID: string) => void;
+    /**
+     * All running actions in the assistant
+     */
+    runningActionResolvers: AssistantRunningActionResolver[];
 } | null>(null);
 
-export const useAssistant = () => {
+export const useAssistant = (assistantID?: string) => {
     const assistantContext = useContext(AssistantContext);
 
     if (!assistantContext) {
@@ -117,45 +176,92 @@ export const useAssistant = () => {
     }
 
     const {
-        canRunAssistant,
-        hasAccessToAssistant,
+        canShowAssistant,
+        hasCompatibleHardware,
+        hasCompatibleBrowser,
+        canUseAssistant,
         isModelDownloaded,
         isModelDownloading,
-        downloadModelProgress,
+        downloadReceivedBytes,
+        downloadModelSize,
+        downloadPaused,
         isModelLoadedOnGPU,
         isModelLoadingOnGPU,
-        isGeneratingResult,
-        isWaitingForResult,
         openedAssistants,
-        error,
+        errors,
         openAssistant,
         closeAssistant,
         cancelDownloadModel,
+        resumeDownloadModel,
         unloadModelOnGPU,
         initAssistant,
         generateResult,
         cancelRunningAction,
+        runningActionResolvers,
     } = assistantContext;
 
+    const isGeneratingResult = useMemo(() => {
+        const runningActionsInAssistant = runningActionResolvers.filter(
+            (resolver) => resolver.assistantID === assistantID
+        );
+        return runningActionsInAssistant.length > 0;
+    }, [assistantID, runningActionResolvers]);
+
+    const error = useMemo(() => {
+        const specificError = errors.find((error) => {
+            if (error.type === AssistantErrorTypes.specificError) {
+                return error.assistantID === assistantID;
+            }
+            return false;
+        });
+        const globalError = errors.find((error) => {
+            return error.type === AssistantErrorTypes.globalError;
+        });
+
+        return specificError?.error || globalError?.error;
+    }, [assistantID, errors]);
+
+    const handleCancelRunningAction = () => {
+        if (assistantID) {
+            cancelRunningAction(assistantID);
+        }
+    };
+
+    const handleGenerateResult = async ({
+        inputText,
+        callback,
+    }: {
+        inputText: string;
+        callback: (token: string, fullText: string) => void;
+    }) => {
+        if (assistantID) {
+            return generateResult({ inputText, callback, assistantID });
+        }
+    };
+
     return {
-        canRunAssistant,
-        hasAccessToAssistant,
+        canShowAssistant,
+        hasCompatibleHardware,
+        hasCompatibleBrowser,
+        canUseAssistant,
         isModelDownloaded,
         isModelDownloading,
-        downloadModelProgress,
+        downloadReceivedBytes,
+        downloadModelSize,
+        downloadPaused,
         isModelLoadedOnGPU,
         isModelLoadingOnGPU,
         isGeneratingResult,
-        isWaitingForResult,
         openedAssistants,
         error,
         openAssistant,
         closeAssistant,
         cancelDownloadModel,
+        resumeDownloadModel,
         unloadModelOnGPU,
         initAssistant,
-        generateResult,
-        cancelRunningAction,
+        generateResult: handleGenerateResult,
+        cancelRunningAction: handleCancelRunningAction,
     };
 };
 
@@ -166,31 +272,35 @@ export const AssistantProvider = ({
     children: ReactNode;
     assistantFeature: FeatureFlag;
 }) => {
+    const api = useApi();
+    const { createNotification } = useNotifications();
     const assistantFeatureEnabled = useFlag(assistantFeature);
 
     const llmManager = useRef<LlmManager | null>(null);
     const llmModel = useRef<LlmModel | null>(null);
 
-    const runningActionRef = useRef<RunningAction | null>(null);
+    const assistantConfigRef = useRef<AssistantConfig>();
 
     const [openedAssistants, setOpenedAssistants] = useState<string[]>([]);
 
     const [isModelDownloaded, setIsModelDownloaded] = useState(false);
     const [isModelDownloading, setIsModelDownloading] = useState(false);
-    const [downloadModelProgress, setDownloadModelProgress] = useState(0);
+    const [downloadReceivedBytes, setDownloadReceivedBytes] = useState(0);
+    const [downloadModelSize, setDownloadModelSize] = useState(0);
+    const [downloadPaused, setDownloadPaused] = useState(false);
+    // ref to know if the user downloaded the model in this session
+    const userDownloadedModel = useRef(false);
 
     const [isModelLoadedOnGPU, setIsModelLoadedOnGPU] = useState(false);
     const [isModelLoadingOnGPU, setIsModelLoadingOnGPU] = useState(false);
 
-    const [isGeneratingResult, setIsGeneratingResult] = useState(false);
-
-    const [error, setError] = useState('');
+    const [errors, setErrors] = useState<AssistantError[]>([]);
 
     const generatedTokensNumber = useRef(0);
+    const initPromise = useRef<Promise<void>>();
 
-    const isWaitingForResult = useMemo(() => {
-        return isGeneratingResult || isModelLoadingOnGPU || isModelDownloading;
-    }, [isModelDownloading, isModelLoadingOnGPU, isGeneratingResult]);
+    const runningActionsRef = useRef<AssistantRunningAction[]>([]);
+    const [runningActionResolvers, setRunningActionResolvers] = useState<AssistantRunningActionResolver[]>([]);
 
     const assistantStatus = useRef<ASSISTANT_STATUS>(ASSISTANT_STATUS.NOT_LOADED);
 
@@ -200,70 +310,174 @@ export const AssistantProvider = ({
             isModelDownloaded,
             isModelLoadingOnGPU,
             isModelLoadedOnGPU,
-            isGeneratingResult,
         });
-    }, [isModelDownloading, isModelDownloaded, isModelLoadingOnGPU, isModelLoadedOnGPU, isGeneratingResult]);
+    }, [isModelDownloading, isModelDownloaded, isModelLoadingOnGPU, isModelLoadedOnGPU]);
 
     const { sendRequestAssistantReport, sendUnloadModelAssistantReport, sendDownloadAssistantReport } =
         useAssistantTelemetry();
 
-    const cancelRunningAction = () => {
+    const cleanRunningActionPromises = (assistantID: string) => {
+        setRunningActionResolvers(() =>
+            runningActionResolvers.filter((resolver) => resolver.assistantID !== assistantID)
+        );
+    };
+
+    const resolveRunningActionPromise = (assistantID: string) => {
+        const generationResolver = runningActionResolvers.find((resolver) => resolver.assistantID === assistantID);
+        if (generationResolver) {
+            generationResolver?.resolver();
+            cleanRunningActionPromises(assistantID);
+        }
+    };
+
+    const getRunningActionFromAssistantID = (assistantID: string) => {
+        return runningActionsRef.current.find((runningAction) => runningAction.assistantID === assistantID);
+    };
+
+    const cleanAssistantRunningAction = (assistantID: string) => {
+        runningActionsRef.current = runningActionsRef.current.filter(
+            (runningAction) => runningAction.assistantID !== assistantID
+        );
+    };
+
+    const addSpecificError = ({ assistantID, errorMessage }: { assistantID: string; errorMessage: string }) => {
+        const newError: AssistantError = {
+            type: AssistantErrorTypes.specificError,
+            assistantID,
+            error: errorMessage,
+        };
+
+        setErrors([...errors, newError]);
+    };
+
+    const addGlobalError = (errorMessage: string) => {
+        const newError: AssistantError = {
+            type: AssistantErrorTypes.globalError,
+            error: errorMessage,
+        };
+
+        setErrors([...errors, newError]);
+    };
+
+    const cleanSpecificErrors = (assistantID: string) => {
+        const filteredErrors = errors.filter((error) => {
+            if (error.type === AssistantErrorTypes.specificError) {
+                return error.assistantID !== assistantID;
+            }
+            return error;
+        });
+
+        setErrors(filteredErrors);
+    };
+
+    const cleanGlobalErrors = () => {
+        const filteredErrors = errors.filter((error) => {
+            return error.type !== AssistantErrorTypes.globalError;
+        });
+
+        setErrors(filteredErrors);
+    };
+
+    const cancelAssistantRunningAction = (assistantID: string) => {
+        const assistantRunningAction = getRunningActionFromAssistantID(assistantID);
+        if (assistantRunningAction) {
+            assistantRunningAction.runningAction.cancel();
+            cleanAssistantRunningAction(assistantID);
+        }
+    };
+
+    const cancelRunningAction = (assistantID: string) => {
         try {
-            runningActionRef.current?.cancel();
-            setIsGeneratingResult(false);
-            runningActionRef.current = null;
+            resolveRunningActionPromise(assistantID);
+            cancelAssistantRunningAction(assistantID);
         } catch (e: any) {
             traceInitiativeError('assistant', e);
-            setError(c('loc_nightly_assistant').t`Something went wrong while cancelling the generation`);
+            const errorMessage = c('loc_nightly_assistant').t`Something went wrong while cancelling the generation`;
+            addSpecificError({ assistantID, errorMessage });
         }
     };
 
-    const openAssistant = (id: string) => {
-        setOpenedAssistants([...openedAssistants, id]);
+    const openAssistant = (assistantID: string) => {
+        setOpenedAssistants([...openedAssistants, assistantID]);
     };
 
-    const closeAssistant = (id: string) => {
-        const filteredAssistants = openedAssistants.filter((assistant) => assistant !== id);
+    const closeAssistant = (assistantID: string) => {
+        const filteredAssistants = openedAssistants.filter((assistant) => assistant !== assistantID);
         setOpenedAssistants(filteredAssistants);
-        cancelRunningAction();
-        setError('');
+        cancelRunningAction(assistantID);
+        cleanSpecificErrors(assistantID);
     };
 
-    // Is the user machine/browser able to run the assistant
-    const canRunAssistant = useMemo(() => getCanRunAssistant(), []);
+    const [user, isLoadingUser] = useUser();
 
-    // Does the user have access to the assistant (plan and feature flag)
-    const hasAccessToAssistant = useMemo(
-        () => getHasAccessToAssistant(assistantFeatureEnabled),
-        [assistantFeatureEnabled]
-    );
+    // Show the feature in the UI only when the feature flag is ON
+    const canShowAssistant = useMemo(() => {
+        return getCanShowAssistant(assistantFeatureEnabled);
+    }, [assistantFeatureEnabled]);
+
+    // When hardware is not compatible, show an error in the UI
+    const [hasCompatibleHardware, setHasCompatibleHardware] = useState(false);
+
+    // When the browser is not compatible, suggest the user to run it on a compatible browser
+    const hasCompatibleBrowser = useMemo(() => {
+        return getAssistantHasCompatibleBrowser(); // TODO refactor
+    }, []);
+
+    // The assistant can be run if the user is paying the feature or is in trial
+    const canUseAssistant = useMemo(() => {
+        return isLoadingUser ? false : getCanUseAssistant(user);
+    }, [user, isLoadingUser]);
+
+    const handleGetAssistantModels = () => {
+        void queryAssistantModels(api).then((models) => {
+            const config = buildMLCConfig(models);
+            if (config) {
+                assistantConfigRef.current = config;
+            }
+        });
+    };
+
+    const handleCheckHardwareCompatibility = async () => {
+        const isCompatible = await getAssistantHasCompatibleHardware();
+        setHasCompatibleHardware(isCompatible);
+    };
 
     useEffect(() => {
-        if (!llmManager.current && canRunAssistant && hasAccessToAssistant) {
+        void handleCheckHardwareCompatibility();
+    }, []);
+
+    useEffect(() => {
+        if (
+            !llmManager.current &&
+            canShowAssistant &&
+            canUseAssistant &&
+            hasCompatibleHardware &&
+            hasCompatibleBrowser
+        ) {
             llmManager.current = new GpuLlmManager();
+
+            // Get assistant models API side
+            handleGetAssistantModels();
         }
-    }, [canRunAssistant, hasAccessToAssistant]);
+    }, [canShowAssistant, canUseAssistant, hasCompatibleHardware, hasCompatibleBrowser]);
 
     const downloadCallback = (info: DownloadProgressInfo) => {
-        const progress = info.receivedBytes / info.estimatedTotalBytes;
-        setDownloadModelProgress(progress);
-        /* TODO temporary setting the isDownloaded flag after start download
-         * because we have no way to make difference between download and load at this point
-         */
-        // if (downloadComplete) {
-        //     setIsModelDownloading(false);
-        //     setIsModelDownloaded(true);
-        // }
+        userDownloadedModel.current = true;
+        setDownloadModelSize(info.estimatedTotalBytes);
+        setDownloadReceivedBytes(info.receivedBytes);
     };
 
     const downloadModel = async () => {
         try {
-            if (!llmManager.current) {
+            if (!llmManager.current || !assistantConfigRef.current) {
                 return; // throw an error?
             }
+            // Clean global errors when downloading the model
+            cleanGlobalErrors();
+
             const startDownloadingTime = performance.now();
             setIsModelDownloading(true);
-            const completed = await llmManager.current.startDownload(downloadCallback);
+            const completed = await llmManager.current.startDownload(downloadCallback, assistantConfigRef.current);
             setIsModelDownloading(false);
             setIsModelDownloaded(completed);
             if (completed) {
@@ -271,35 +485,37 @@ export const AssistantProvider = ({
                 const endDownloadingTime = performance.now();
                 const downloadingTime = endDownloadingTime - startDownloadingTime;
                 sendDownloadAssistantReport(downloadingTime);
+                return true;
             }
+            return false;
         } catch (e: any) {
             traceInitiativeError('assistant', e);
+            console.error(e);
             const errorMessage = c('loc_nightly_assistant').t`Something went wrong while downloading the model`;
-            setError(errorMessage);
+            addGlobalError(errorMessage);
             setIsModelDownloading(false);
             throw new Error(errorMessage);
         }
     };
 
-    const cancelDownloadModel = () => {
-        // TODO not possible for now, to implement later
-        // llmManager.current.cancelDownload();
-    };
-
     const loadModelOnGPU = async () => {
         try {
-            if (!llmManager.current) {
+            if (!llmManager.current || !assistantConfigRef.current) {
                 return; // throw an error?
             }
+            // Clean global errors when loading the model
+            cleanGlobalErrors();
+
             setIsModelLoadingOnGPU(true);
-            const model = await llmManager.current.loadOnGpu();
+            const model = await llmManager.current.loadOnGpu(assistantConfigRef.current);
             llmModel.current = model;
             setIsModelLoadingOnGPU(false);
             setIsModelLoadedOnGPU(true);
         } catch (e: any) {
             traceInitiativeError('assistant', e);
+            console.error(e);
             const errorMessage = c('loc_nightly_assistant').t`Something went wrong while loading the model on the GPU`;
-            setError(errorMessage);
+            addGlobalError(errorMessage);
             setIsModelLoadingOnGPU(false);
             setIsModelLoadedOnGPU(false);
             throw new Error(errorMessage);
@@ -316,102 +532,149 @@ export const AssistantProvider = ({
             }
         } catch (e: any) {
             traceInitiativeError('assistant', e);
-            setError(c('loc_nightly_assistant').t`Something went wrong while unloading the model from the GPU`);
+            console.error(e);
+            const errorMessage = c('loc_nightly_assistant')
+                .t`Something went wrong while unloading the model from the GPU`;
+            addGlobalError(errorMessage);
         }
     };
 
-    const initAssistant = async () => {
-        // If the assistant is being loaded at the moment, wait for the loading to be completed before continuing initialization
-        // We are running in this scenario if the user starts the initialization, closes the assistant and open it again
-        const isAssistantInitializing =
-            assistantStatus.current === ASSISTANT_STATUS.DOWNLOADING ||
-            assistantStatus.current === ASSISTANT_STATUS.DOWNLOADED ||
-            assistantStatus.current === ASSISTANT_STATUS.LOADING_GPU;
-        if (isAssistantInitializing) {
-            setTimeout(() => initAssistant(), RETRY_GENERATE_TIMEOUT);
-            return;
+    const initAssistant = useCallback(() => {
+        // Reset download pause state
+        setDownloadPaused(false);
+
+        // If the assistant is already initializing, then we simply wait for the end of the initialization
+        if (initPromise.current) {
+            return initPromise.current;
         }
 
-        /*
-         * To init the assistant
-         * 1 - We start by downloading the model if not downloaded yet and model is not downloading at the moment
-         * 2 - Then we can load the model on the GPU if not loaded yet and not loading at the moment
-         */
-        try {
-            if (!isModelDownloaded && !isModelDownloading) {
-                await downloadModel();
-            }
-            if (isModelDownloaded && !isModelLoadedOnGPU && !isModelLoadingOnGPU) {
-                await loadModelOnGPU();
-            }
-        } catch {}
+        initPromise.current = (async () => {
+            /*
+             * To init the assistant
+             * 1 - We start by downloading the model if not downloaded yet and model is not downloading at the moment
+             * 2 - Then we can load the model on the GPU if not loaded yet and not loading at the moment
+             */
+            const isModelDownloaded = assistantStatus.current >= ASSISTANT_STATUS.DOWNLOADED;
+            const isModelDownloading = assistantStatus.current === ASSISTANT_STATUS.DOWNLOADING;
+            const isModelLoadedOnGPU = assistantStatus.current >= ASSISTANT_STATUS.READY;
+            const isModelLoadingOnGPU = assistantStatus.current === ASSISTANT_STATUS.LOADING_GPU;
+            // Use try catch in case one of the steps fails, so that we don't run the next step
+            try {
+                let completedDownload;
+                if (!isModelDownloaded && !isModelDownloading) {
+                    completedDownload = await downloadModel();
+                }
+                if (completedDownload && !isModelLoadedOnGPU && !isModelLoadingOnGPU) {
+                    await loadModelOnGPU();
+                }
+
+                // Show a notification only when the user had to download the model
+                if (completedDownload && userDownloadedModel.current) {
+                    createNotification({
+                        text: c('loc_nightly_assistant').t`${ASSISTANT_FEATURE_NAME} is ready to use`,
+                    });
+                    userDownloadedModel.current = false;
+                }
+            } catch {}
+            initPromise.current = undefined;
+        })();
+    }, []);
+
+    const cancelDownloadModel = () => {
+        if (llmManager.current) {
+            llmManager.current.cancelDownload();
+            initPromise.current = undefined;
+            setDownloadPaused(true);
+        }
+    };
+
+    const resumeDownloadModel = () => {
+        void initAssistant();
+        setDownloadPaused(false);
     };
 
     // TODO pass promptType
-    const generateResult = async ({ inputText, callback, ingestionStartTime }: GenerateAssistantResult) => {
-        const ingestionStart = ingestionStartTime || performance.now();
-        // If the assistant is being loaded at the moment, wait for the loading to be completed before generating
-        const isAssistantInitializing =
-            assistantStatus.current === ASSISTANT_STATUS.DOWNLOADING ||
-            assistantStatus.current === ASSISTANT_STATUS.DOWNLOADED ||
-            assistantStatus.current === ASSISTANT_STATUS.LOADING_GPU;
-        if (isAssistantInitializing) {
-            // If we are waiting for the initialization to be complete before generating, pass the start ingestion time here,
-            // so that we obtain the real "waiting" time
-            setTimeout(
-                () => generateResult({ inputText, callback, ingestionStartTime: ingestionStart }),
-                RETRY_GENERATE_TIMEOUT
-            );
+    const generateResult = async ({ inputText, callback, assistantID }: GenerateAssistantResult) => {
+        // Do not start multiple actions in the same assistant
+        const runningActionInAssistant = getRunningActionFromAssistantID(assistantID);
+        if (runningActionInAssistant) {
             return;
         }
-        // Init the assistant in case it's not loaded (if it has been unloaded after inactivity for example)
-        if (assistantStatus.current === ASSISTANT_STATUS.NOT_LOADED) {
-            await initAssistant();
-        }
-        const ingestionEnd = performance.now();
-        const ingestionTime = ingestionEnd - ingestionStart;
 
-        try {
-            const assistantStatusReady =
-                assistantStatus.current === ASSISTANT_STATUS.READY ||
-                assistantStatus.current === ASSISTANT_STATUS.GENERATING;
-            if (assistantStatusReady && llmModel.current) {
-                const generationCallback = (token: string, fulltext: string) => {
-                    generatedTokensNumber.current++;
-                    callback(token, fulltext);
-                };
+        // Reset generation errors in this assistant
+        cleanSpecificErrors(assistantID);
 
-                setIsGeneratingResult(true);
-                const generationStart = performance.now();
-                const runningAction = await llmModel.current.performAction(
-                    {
-                        type: 'writeFullEmail',
-                        prompt: inputText,
-                    },
-                    generationCallback
-                );
-                runningActionRef.current = runningAction;
-                await runningAction.waitForCompletion();
+        let isResolved = false;
 
-                // Send telemetry report
-                const generationEnd = performance.now();
-                const generationTime = generationEnd - generationStart;
-                sendRequestAssistantReport({
-                    ingestionTime,
-                    generationTime,
-                    tokensGenerated: generatedTokensNumber.current,
-                });
-                generatedTokensNumber.current = 0;
+        // The generation needs to be stopped in two different cases:
+        // 1 - The assistant is ready (everything is loaded) and the user stops it.
+        //      In that case, we can stop the running action.
+        // 2 - The assistant is still loading, but the user submitted a request and cancelled it.
+        //      In that case, we don't have the running action yet, so we need to cancel the promise.
+        //      That's why the entire function is run into a Promise. We can then store it in a ref and cancel it when needed.
+        await new Promise<void>(async (res) => {
+            const resolver = () => {
+                res();
+                isResolved = true;
+            };
+            setRunningActionResolvers([...runningActionResolvers, { resolver, assistantID }]);
 
-                // Reset the generating state
-                runningActionRef.current = null;
-                setIsGeneratingResult(false);
+            const ingestionStart = performance.now();
+            try {
+                // Start the initialization in case the assistant is not loaded yet.
+                // If it is loaded already, then nothing will be done,
+                // else we will wait for the init process to be finished before starting the generation
+                await initAssistant();
+            } catch {
+                // If an error occurred during the init, we set an error.
+                // In that case, we can stop the generation before going further.
+                return;
             }
-        } catch (e: any) {
-            traceInitiativeError('assistant', e);
-            setError(c('loc_nightly_assistant').t`Something went wrong while generating a result`);
-            setIsGeneratingResult(false);
-        }
+
+            const ingestionEnd = performance.now();
+            const ingestionTime = ingestionEnd - ingestionStart;
+
+            try {
+                // If the promise is resolved, we cancelled it after a user interaction.
+                // We don't want to generate a result anymore.
+                if (llmModel.current && !isResolved) {
+                    const generationCallback = (token: string, fulltext: string) => {
+                        generatedTokensNumber.current++;
+                        callback(token, fulltext);
+                    };
+
+                    const generationStart = performance.now();
+                    const runningAction = await llmModel.current.performAction(
+                        {
+                            type: 'writeFullEmail',
+                            prompt: inputText,
+                        },
+                        generationCallback
+                    );
+                    runningActionsRef.current.push({ runningAction, assistantID });
+                    await runningAction.waitForCompletion();
+
+                    // Send telemetry report
+                    const generationEnd = performance.now();
+                    const generationTime = generationEnd - generationStart;
+                    sendRequestAssistantReport({
+                        ingestionTime,
+                        generationTime,
+                        tokensGenerated: generatedTokensNumber.current,
+                    });
+                    generatedTokensNumber.current = 0;
+                }
+            } catch (e: any) {
+                traceInitiativeError('assistant', e);
+                console.error(e);
+                const errorMessage = c('loc_nightly_assistant').t`Something went wrong while generating a result`;
+                addSpecificError({ assistantID, errorMessage });
+            }
+
+            // Reset the generating state
+            cleanAssistantRunningAction(assistantID);
+            cleanRunningActionPromises(assistantID);
+        });
     };
 
     // Unload the model after some time of non usage
@@ -436,29 +699,33 @@ export const AssistantProvider = ({
         return () => {
             clearInterval(id);
         };
-    }, [isModelLoadedOnGPU, isGeneratingResult]);
+    }, [isModelLoadedOnGPU, runningActionResolvers]);
 
     return (
         <AssistantContext.Provider
             value={{
                 isModelDownloaded,
                 isModelDownloading,
-                downloadModelProgress,
+                downloadReceivedBytes,
+                downloadModelSize,
+                downloadPaused,
                 isModelLoadedOnGPU,
                 isModelLoadingOnGPU,
-                isGeneratingResult,
-                isWaitingForResult,
-                canRunAssistant,
-                hasAccessToAssistant,
+                canShowAssistant,
+                hasCompatibleHardware,
+                hasCompatibleBrowser,
+                canUseAssistant,
                 openedAssistants,
-                error,
+                errors,
                 openAssistant,
                 closeAssistant,
                 cancelDownloadModel,
+                resumeDownloadModel,
                 unloadModelOnGPU,
                 initAssistant,
                 generateResult,
                 cancelRunningAction,
+                runningActionResolvers,
             }}
         >
             {children}

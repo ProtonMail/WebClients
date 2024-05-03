@@ -15,10 +15,9 @@ export type GpuAssessmentResult =
 
 export interface LlmManager {
     // prefer passing a canvas, it will allow us to get some info using WebGL
-    checkGpu: (canvas?: HTMLCanvasElement) => Promise<GpuAssessmentResult>;
-    startDownload: (updateProgress: DownloadProgressCallback) => Promise<boolean>; // returns whether it completed
+    startDownload: (updateProgress: DownloadProgressCallback, assistantConfig: AssistantConfig) => Promise<boolean>; // returns whether it completed
     cancelDownload: () => boolean;
-    loadOnGpu: () => Promise<LlmModel>;
+    loadOnGpu: (assistantConfig: AssistantConfig) => Promise<LlmModel>;
 }
 
 export interface LlmModel {
@@ -91,3 +90,27 @@ export type DownloadProgressInfo = {
     receivedBytes: number;
     estimatedTotalBytes: number;
 };
+
+export interface AssistantModel {
+    ModelID: string;
+    Priority: number;
+    ModelURL: string;
+    ModelLibURL: string;
+    VRAMRequiredMB: number;
+    LowResourceRequired: boolean;
+    RequiredFeatures: string[];
+}
+
+export interface AssistantConfigModel {
+    model_url: string;
+    model_id: string;
+    model_lib_url: string;
+    vram_required_MB: number;
+    low_resource_required: boolean;
+    required_features: string[];
+}
+
+export interface AssistantConfig {
+    model_list: AssistantConfigModel[];
+    use_web_worker: boolean;
+}
