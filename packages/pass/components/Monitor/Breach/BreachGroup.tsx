@@ -11,7 +11,6 @@ import { CustomAddressAddButton } from '@proton/pass/components/Monitor/Address/
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import { useBreachesTable } from '@proton/pass/hooks/monitor/useBreachesTable';
 import { AddressType } from '@proton/pass/lib/monitor/types';
-import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
 import { selectHasCustomDomains } from '@proton/pass/store/selectors';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 
@@ -26,8 +25,8 @@ const validateType = (type?: string): type is AddressType =>
     type !== undefined && Object.values<string>(AddressType).includes(type);
 
 export const BreachGroup: FC<Props> = ({ match }) => {
-    const { onTelemetry } = usePassCore();
     const history = useHistory();
+    const { onTelemetry } = usePassCore();
     const customDomains = useSelector(selectHasCustomDomains);
     const type = validateType(match?.params.type) ? match.params.type : null;
     const { title, data, loading } = useBreachesTable(type ?? FALLBACK);
@@ -39,15 +38,11 @@ export const BreachGroup: FC<Props> = ({ match }) => {
     useEffect(() => {
         switch (type) {
             case AddressType.PROTON:
-                onTelemetry(
-                    createTelemetryEvent(TelemetryEventName.PassMonitorDisplayMonitoringProtonAddresses, {}, {})
-                );
+                onTelemetry(TelemetryEventName.PassMonitorDisplayMonitoringProtonAddresses, {}, {});
                 break;
             case AddressType.ALIAS:
-                onTelemetry(createTelemetryEvent(TelemetryEventName.PassMonitorDisplayMonitoringEmailAliases, {}, {}));
+                onTelemetry(TelemetryEventName.PassMonitorDisplayMonitoringEmailAliases, {}, {});
                 break;
-            default:
-                return;
         }
     }, []);
 

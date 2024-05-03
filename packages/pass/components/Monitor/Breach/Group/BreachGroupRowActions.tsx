@@ -18,7 +18,6 @@ import type { MonitorTableRow } from '@proton/pass/hooks/monitor/useBreachesTabl
 import { useRequest } from '@proton/pass/hooks/useActionRequest';
 import { getAddressId, intoCustomMonitorAddress } from '@proton/pass/lib/monitor/monitor.utils';
 import { AddressType } from '@proton/pass/lib/monitor/types';
-import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
 import { addCustomAddress } from '@proton/pass/store/actions';
 import { addCustomAddressRequest, deleteCustomAddressRequest } from '@proton/pass/store/actions/requests';
 import { selectRequestInFlight } from '@proton/pass/store/selectors';
@@ -50,9 +49,7 @@ export const BreachGroupRowActions: FC<MonitorTableRow> = (row) => {
                         onClick={(evt) => {
                             evt.stopPropagation();
                             add.dispatch(row.email);
-                            onTelemetry(
-                                createTelemetryEvent(TelemetryEventName.PassMonitorAddCustomEmailFromSuggestion, {}, {})
-                            );
+                            onTelemetry(TelemetryEventName.PassMonitorAddCustomEmailFromSuggestion, {}, {});
                         }}
                         loading={add.loading}
                         disabled={monitor.breaches.data.custom.length >= MAX_CUSTOM_ADDRESSES}

@@ -1,4 +1,4 @@
-import { type FC, useEffect } from 'react';
+import { type FC } from 'react';
 
 import { useIFrameContext } from 'proton-pass-extension/app/content/injections/apps/components/IFrameApp';
 import { PauseListDropdown } from 'proton-pass-extension/app/content/injections/apps/components/PauseListDropdown';
@@ -10,7 +10,7 @@ import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { OTPDonut } from '@proton/pass/components/Otp/OTPDonut';
 import { OTPValue } from '@proton/pass/components/Otp/OTPValue';
 import { usePeriodicOtpCode } from '@proton/pass/hooks/usePeriodicOtpCode';
-import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
+import { useTelemetryEvent } from '@proton/pass/hooks/useTelemetryEvent';
 import { type SelectedItem } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 
@@ -19,17 +19,15 @@ import { NotificationHeader } from '../components/NotificationHeader';
 type Props = { hostname: string; item: SelectedItem };
 
 export const AutofillOTP: FC<Props> = ({ hostname, item }) => {
-    const { generateOTP, onTelemetry } = usePassCore();
-    const { close, forwardMessage } = useIFrameContext();
+    const { generateOTP } = usePassCore();
+    const { close, forwardMessage, visible } = useIFrameContext();
 
     const [otp, percent] = usePeriodicOtpCode({
         generate: generateOTP,
         payload: { type: 'item', item },
     });
 
-    useEffect(() => {
-        onTelemetry(createTelemetryEvent(TelemetryEventName.TwoFADisplay, {}, {}));
-    }, []);
+    useTelemetryEvent(TelemetryEventName.TwoFADisplay, {}, {})([visible]);
 
     return (
         <div className="flex flex-column flex-nowrap justify-space-between h-full anime-fade-in">
