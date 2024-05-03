@@ -2,7 +2,6 @@ import { useCallback } from 'react';
 
 import type { ItemSelectOptions } from '@proton/pass/components/Navigation/NavigationProvider';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
-import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
 import type { ItemRevision } from '@proton/pass/types';
 import { TelemetryEventName, TelemetryItemType } from '@proton/pass/types/data/telemetry';
 
@@ -26,13 +25,9 @@ export const useSelectItemAction = () => {
             const { type } = item.data;
 
             selectItem(shareId, itemId, options);
-            onTelemetry(createTelemetryEvent(TelemetryEventName.ItemRead, {}, { type: TelemetryItemType[type] }));
 
-            if (!isEmptyString(search)) {
-                onTelemetry(
-                    createTelemetryEvent(TelemetryEventName.SearchClick, {}, { type: TelemetryItemType[type] })
-                );
-            }
+            onTelemetry(TelemetryEventName.ItemRead, {}, { type: TelemetryItemType[type] });
+            if (!isEmptyString(search)) onTelemetry(TelemetryEventName.SearchClick, {}, {});
         },
         [search, selectedItem]
     );

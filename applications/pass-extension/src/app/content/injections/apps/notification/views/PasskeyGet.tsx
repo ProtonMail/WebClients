@@ -17,7 +17,6 @@ import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { useMountedState } from '@proton/pass/hooks/useEnsureMounted';
 import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
 import type { SanitizedPublicKeyRequest, SelectedPasskey } from '@proton/pass/lib/passkeys/types';
-import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
 import { type MaybeNull, WorkerMessageType } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
@@ -55,7 +54,7 @@ const PasskeyGetView: FC<Props> = ({ domain, request, token }) => {
                         )
                     );
 
-                    onTelemetry(createTelemetryEvent(TelemetryEventName.PasskeyAuthSuccess, {}, {}));
+                    onTelemetry(TelemetryEventName.PasskeyAuthSuccess, {}, {});
                     close();
                 }
             )
@@ -79,7 +78,7 @@ const PasskeyGetView: FC<Props> = ({ domain, request, token }) => {
             );
 
             setPasskeys(response.type === 'success' ? response.passkeys : []);
-            onTelemetry(createTelemetryEvent(TelemetryEventName.PasskeysSuggestionsDisplay, {}, {}));
+            onTelemetry(TelemetryEventName.PasskeysSuggestionsDisplay, {}, {});
         };
 
         run().catch(close);

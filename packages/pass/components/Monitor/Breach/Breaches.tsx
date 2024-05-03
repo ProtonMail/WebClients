@@ -7,7 +7,9 @@ import { CustomAddressAddButton } from '@proton/pass/components/Monitor/Address/
 import { useMonitor } from '@proton/pass/components/Monitor/MonitorProvider';
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import { useBreachesTable } from '@proton/pass/hooks/monitor/useBreachesTable';
+import { useTelemetryEvent } from '@proton/pass/hooks/useTelemetryEvent';
 import { AddressType } from '@proton/pass/lib/monitor/types';
+import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import headerBreachImg from '@proton/styles/assets/img/breach-alert/img-breaches-found.svg';
 import headerNoBreachImg from '@proton/styles/assets/img/breach-alert/img-no-breaches-found.svg';
 
@@ -18,6 +20,8 @@ export const Breaches: FC = () => {
     const proton = useBreachesTable(AddressType.PROTON);
     const alias = useBreachesTable(AddressType.ALIAS);
     const custom = useBreachesTable(AddressType.CUSTOM);
+
+    useTelemetryEvent(TelemetryEventName.PassMonitorDisplayDarkWebMonitoring, {}, {})([]);
 
     return (
         <>
