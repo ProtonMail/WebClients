@@ -97,9 +97,16 @@ const ShareLinkSettingsModal = ({
         e.preventDefault();
 
         const newCustomPassword = !passwordEnabled || !password ? '' : password;
-        const newDuration = !expirationEnabled || !expiration ? null : expiration - getUnixTime(Date.now());
+        const newExpiration = !expirationEnabled || !expiration ? null : expiration;
+        const newDuration = newExpiration ? newExpiration - getUnixTime(Date.now()) : null;
 
-        await withSubmitting(onSaveLinkClick(newCustomPassword, newDuration));
+        // Instead of blocking user action, we just save the form without sending a request
+        // For exemple if the user toggled the password field but don't put any password, we just don't do anything.
+        // This make the UX smoother
+        const needUpdate = newCustomPassword !== customPassword || newExpiration !== initialExpiration;
+        if (needUpdate) {
+            await withSubmitting(onSaveLinkClick(newCustomPassword, newDuration));
+        }
         modalProps.onClose?.();
     };
 
