@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { Link, useHistory, useParams } from 'react-router-dom';
 
 import { Button } from '@proton/atoms/Button';
 import { Icon } from '@proton/components/components/icon';
@@ -7,15 +7,15 @@ import { TableCell, TableRow } from '@proton/components/components/table';
 import type { FetchedBreaches } from '@proton/components/containers';
 import ReadableDate from '@proton/components/containers/credentialLeak/ReadableDate';
 import { getBreachIcon } from '@proton/components/containers/credentialLeak/helpers';
-import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
+import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 
 type Props = { breach: FetchedBreaches };
 
 export const BreachListRow: FC<Props> = ({ breach: { id, name, publishedAt, severity, resolvedState } }) => {
     const history = useHistory();
-    const { getCurrentLocation } = useNavigation();
+    const { addressId, type } = useParams<{ addressId: string; type: string }>();
     const breachIcon = getBreachIcon(severity, { resolved: resolvedState > 2 });
-    const breachHref = `${getCurrentLocation()}/${id}`;
+    const breachHref = getLocalPath(`monitor/dark-web/${type}/${addressId}/${id}`);
 
     const handleClick = () => history.push(breachHref);
 
