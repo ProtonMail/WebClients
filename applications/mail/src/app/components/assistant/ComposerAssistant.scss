@@ -1,58 +1,107 @@
 @import '~@proton/styles/scss/lib';
 
 .composer-assistant {
-	// will need to taxonomise these, not needed for alpha
-	--upgrade-color-stop-1: #ad7ffc;
-	--upgrade-color-stop-2: #db4fe8;
-	--upgrade-background-color: var(--background-norm);
+	// will need to taxonomise, left as exception ATM
+	--special-color: #d132ea;
 
 	&-container {
 		inset-inline: 0;
-		inset-block-end: 0.5em;
-		block-size: calc(100% - 10.5em);
+		padding-inline: 1em 1em;
 		background: var(--background-norm);
-		padding-inline: 1.5em 1em;
 		z-index: 2;
+		margin-block-start: 3.5em;
 
-		// to hide properly everything, including dark modes
+		// need to push the composer content when collapsed
+		+ .composer-body-container .editor-wrapper {
+			margin-block-start: 5em; // move it from good size
+		}
+
+		&--expanded {
+			// to hide properly everything, including dark modes
+			inset-block-end: 0.5em;
+		}
+
+		// plain text case
+		&:has(+ .composer-body-container .editor-textarea) {
+			margin-block-start: 0.2em;
+		}
+
+		+ .composer-body-container .editor-textarea {
+			margin-block-start: 5em; // move it from good size
+			block-size: calc(100% - 5em);
+		}
 	}
 
-	// custom border
 	position: relative;
 	block-size: 95%;
-	padding: 1em;
-	background:
-		linear-gradient(var(--upgrade-background-color), var(--upgrade-background-color)) padding-box,
-		linear-gradient(var(--background-norm), var(--background-norm)) padding-box,
-		linear-gradient(to right, var(--upgrade-color-stop-1), var(--upgrade-color-stop-2)) border-box;
-	color: var(--text-norm);
-	border: 1px solid transparent;
-
-	> span {
-		z-index: 2;
-	}
-
-	&-spinner {
-		font-size: em(20);
-	}
+	padding-inline: 1em;
+	padding-block: 0;
 
 	&-input {
 		color: var(--text-hint);
+		display: flex;
+		min-block-size: 0;
+
+		&:placeholder-shown {
+			block-size: rem(26);
+			overflow: hidden;
+		}
 
 		&:focus {
 			color: inherit;
 		}
 	}
 
-	&-button {
-		&,
-		&:hover,
-		&:focus,
-		&:focus-within {
-			// will need to taxonomise these
-			background: linear-gradient(54.12deg, var(--upgrade-color-stop-1) 5.58%, var(--upgrade-color-stop-2) 92.13%);
-			color: white;
-			border: 1px solid transparent;
+	&-hint {
+		min-block-size: 2.2em; // magic value to avoid jumps, because pause button is taller than some others
+		margin-block-start: 1px;
+
+		/* &:empty {
+			min-block-size: 0; // to see if we keep it
+		} */
+	}
+
+	&-special-color {
+		color: var(--special-color);
+	}
+
+	&-refine-popover {
+		inset-inline: 0.5em;
+		inset-block-end: 100%;
+		margin-block-end: 0.8em;
+
+		&:has(.composer-assistant-refine-content:empty) {
+			display: none;
+		}
+	}
+
+	&-refine-content {
+		max-block-size: 4.2em;
+	}
+
+	&-progress {
+		block-size: 1px;
+		border-radius: 0;
+		color: var(--special-color);
+
+		&::-webkit-progress-value {
+			background: var(--special-color);
+		}
+
+		&::-moz-progress-bar {
+			background: var(--special-color);
+		}
+
+		&--error {
+			color: var(--signal-danger);
+
+			&::-webkit-progress-value {
+				background: var(--signal-danger);
+			}
+
+			&::-moz-progress-bar {
+				background: var(--signal-danger);
+			}
 		}
 	}
 }

@@ -10,9 +10,10 @@ import {
     useState,
 } from 'react';
 
+import { GetContentMode } from 'roosterjs-editor-types/lib/enum/GetContentMode';
 import { c } from 'ttag';
 
-import { useAddresses, useHandler, useSubscribeEventManager, useUserSettings } from '@proton/components';
+import { useHandler, useSubscribeEventManager } from '@proton/components';
 import { cleanAssistantEmailGeneration } from '@proton/llm/lib';
 import { useAssistant } from '@proton/llm/lib/useAssistant';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
@@ -22,7 +23,9 @@ import { getRecipients } from '@proton/shared/lib/mail/messages';
 import noop from '@proton/utils/noop';
 
 import ComposerAssistant from 'proton-mail/components/assistant/ComposerAssistant';
-import { insertTextBeforeBlockquotes } from 'proton-mail/helpers/message/messageContent';
+import useComposerAssistantInitialSetup from 'proton-mail/components/assistant/useComposerAssistantInitialSetup';
+import { insertTextBeforeContent } from 'proton-mail/helpers/message/messageContent';
+import { removeLineBreaks } from 'proton-mail/helpers/string';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { DRAG_ADDRESS_KEY } from '../../constants';
@@ -79,11 +82,13 @@ const Composer = (
     ref: Ref<ComposerAction>
 ) => {
     const mailSettings = useMailModel('MailSettings');
-    const [userSettings] = useUserSettings();
-    const [addresses = []] = useAddresses();
+    const [selectedText, setSelectedText] = useState('');
 
     const bodyRef = useRef<HTMLDivElement>(null);
     const [hasVerticalScroll] = useHasScroll(bodyRef);
+    const composerContentRef = useRef<HTMLElement>(null);
+    const composerContainerRef = useRef<HTMLDivElement>(null);
+    const composerMetaRef = useRef<HTMLDivElement>(null);
 
     // onClose handler can be called in an async handler
     // Input onClose ref can change in the meantime
@@ -109,10 +114,14 @@ const Composer = (
         }
     };
 
-    const { initAssistant, openedAssistants, openAssistant, closeAssistant, hasAccessToAssistant, canRunAssistant } =
-        useAssistant();
-
-    const showAssistantButton = hasAccessToAssistant && canRunAssistant;
+    const {
+        openedAssistants,
+        openAssistant,
+        closeAssistant,
+        canShowAssistant,
+        hasCompatibleHardware,
+        hasCompatibleBrowser,
+    } = useAssistant(composerID);
 
     const {
         modelMessage,
@@ -212,6 +221,25 @@ const Composer = (
         }
     });
 
+    const isAssistantOpenedInComposer = openedAssistants.includes(composerID);
+
+    const handleToggleAssistant = () => {
+        toggleAssistant();
+        if (isAssistantOpenedInComposer) {
+            closeAssistant(composerID);
+        } else {
+            openAssistant(composerID);
+        }
+    };
+
+    // Hook used to open the assistant automatically the first time the user opens the composer
+    const { isAssistantInitialSetup } = useComposerAssistantInitialSetup({
+        onToggleAssistant: handleToggleAssistant,
+        canShowAssistant,
+        hasCompatibleHardware,
+        hasCompatibleBrowser,
+    });
+
     const handleChangeFlag = useHandler((changes: Map<number, boolean>, shouldReloadSendInfo: boolean = false) => {
         handleChange((message) => {
             let Flags = message.data?.Flags || 0;
@@ -257,18 +285,9 @@ const Composer = (
         onFocus(); // Events on the main div will not fire because the editor is in an iframe
     }, []);
 
-    const handleToggleAssistant = () => {
-        toggleAssistant();
-        const isAssistantOpenedInComposer = openedAssistants.includes(composerID);
-        if (isAssistantOpenedInComposer) {
-            closeAssistant(composerID);
-        } else {
-            openAssistant(composerID);
-        }
-    };
-
     const handleInsertGeneratedTextInEditor = (textToInsert: string) => {
-        const newBody = insertTextBeforeBlockquotes(textToInsert, modelMessage, mailSettings, userSettings, addresses);
+        // const newBody = insertTextBeforeBlockquotes(textToInsert, modelMessage, mailSettings, userSettings, addresses);
+        const newBody = insertTextBeforeContent(modelMessage, textToInsert);
 
         // Update the content in the composer
         handleChangeContent(newBody, true);
@@ -276,11 +295,36 @@ const Composer = (
         setHasUsedAssistantText(true);
     };
 
+    // TODO wip refine logic
+    const handleRefineEditorContent = (selectedText: string) => {
+        if (editorRef.current) {
+            const plain = editorRef.current.getContent(GetContentMode.PlainText);
+            const beginning = plain.indexOf(selectedText);
+            const end = beginning + removeLineBreaks(selectedText).length;
+
+            // TODO call refine
+            console.log({ plain, beginning, end });
+        }
+    };
+
+    const handleEditorSelection = () => {
+        if (editorRef.current) {
+            const selectedText = editorRef.current.getSelectionContent();
+            const cleanedText = selectedText ? removeLineBreaks(selectedText) : '';
+            setSelectedText(cleanedText);
+        }
+    };
+
+    // Disable the assistant button if another composer has the assistant opened,
+    // but allow to close the assistant in the current composer by clicking on the button
+    const disableAssistantButton = openedAssistants.length > 0 && !isAssistantOpenedInComposer;
+
     return (
         <div
             className="composer-container flex flex-column flex-1 relative w-full"
             onDragEnter={handleDragEnter}
             data-messagetime={timestamp}
+            ref={composerContainerRef}
         >
             <ComposerInnerModals
                 innerModal={innerModal}
@@ -303,6 +347,12 @@ const Composer = (
                         onUpdateShowAssistant={(value: boolean) => setShowAssistant(value)}
                         assistantID={composerID}
                         onCleanGeneration={cleanAssistantEmailGeneration}
+                        composerContentRef={composerContentRef}
+                        composerContainerRef={composerContainerRef}
+                        composerMetaRef={composerMetaRef}
+                        isAssistantInitialSetup={isAssistantInitialSetup}
+                        selectedText={selectedText}
+                        onRefine={handleRefineEditorContent}
                     />
                 )}
                 <div
@@ -310,15 +360,16 @@ const Composer = (
                     className="composer-body-container flex flex-column flex-nowrap flex-1 max-w-full mt-2"
                 >
                     <ComposerMeta
-                        composerID={composerID}
-                        message={modelMessage}
-                        messageSendInfo={messageSendInfo}
-                        disabled={opening}
-                        onChange={handleChange}
-                        onChangeContent={handleChangeContent}
                         addressesBlurRef={addressesBlurRef}
                         addressesFocusRef={addressesFocusRef}
+                        composerID={composerID}
+                        disabled={opening}
+                        message={modelMessage}
+                        messageSendInfo={messageSendInfo}
+                        onChange={handleChange}
+                        onChangeContent={handleChangeContent}
                         onEditExpiration={handleExpiration}
+                        ref={composerMetaRef}
                     />
                     <ComposerContent
                         message={modelMessage}
@@ -333,9 +384,13 @@ const Composer = (
                         pendingUploads={pendingUploads}
                         mailSettings={mailSettings}
                         editorMetadata={metadata}
+                        ref={composerContentRef}
+                        onKeyUp={handleEditorSelection}
+                        onMouseUp={handleEditorSelection}
                     />
                 </div>
                 <ComposerActions
+                    composerID={composerID}
                     addressesBlurRef={addressesBlurRef}
                     attachmentTriggerRef={attachmentTriggerRef}
                     className={hasVerticalScroll ? 'composer-actions--has-scroll' : undefined}
@@ -356,10 +411,9 @@ const Composer = (
                     opening={opening}
                     syncInProgress={pendingSave.isPending}
                     canScheduleSend={canScheduleSend}
-                    showAssistantButton={showAssistantButton}
-                    disableAssistant={openedAssistants.length > 0} // TODO remove this after alpha
+                    showAssistantButton={canShowAssistant}
+                    disableAssistant={disableAssistantButton}
                     onToggleAssistant={handleToggleAssistant}
-                    initAssistant={initAssistant}
                 />
             </div>
             {waitBeforeScheduleModal}

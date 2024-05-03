@@ -293,6 +293,7 @@ export type IconName =
     | 'paper-plane-horizontal'
     | 'paper-plane-horizontal-clock'
     | 'pause'
+    | 'pause-filled'
     | 'pen'
     | 'pen-sparks'
     | 'pen-square'

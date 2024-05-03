@@ -1,9 +1,8 @@
 import { CryptoProxy } from '@proton/crypto';
 import { arrayToHexString } from '@proton/crypto/lib/utils';
-import mlcConfig from '@proton/llm/lib/mlc-config';
 import * as _ndarrayCache from '@proton/llm/resources/Mistral-7B-Instruct-v0.2-q4f16_1-MLC/ndarray-cache.json';
 
-import type { DownloadProgressCallback } from './types';
+import type { AssistantConfig, DownloadProgressCallback } from './types';
 
 type NdarrayCache = {
     metadata: {
@@ -245,6 +244,7 @@ function listFilesToDownload(variantConfig: VariantConfig, appCaches: AppCaches)
 export async function downloadModel(
     variant: string,
     updateProgress: DownloadProgressCallback,
+    assistantConfig: AssistantConfig,
     abortController: AbortController
 ) {
     // Open caches
@@ -255,7 +255,7 @@ export async function downloadModel(
     };
 
     // Grab the entry for our chosen model inside mlc-config.
-    const variantConfig = mlcConfig.model_list.find((m) => m.model_id === variant);
+    const variantConfig = assistantConfig.model_list.find((m) => m.model_id === variant);
     if (variantConfig === undefined) {
         console.error(`Model not found in MLC config: ${variant}`);
         throw Error(`Model not found in MLC config: ${variant}`);

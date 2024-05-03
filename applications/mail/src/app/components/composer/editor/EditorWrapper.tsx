@@ -22,8 +22,8 @@ import { getEmbeddedImages } from '../../../helpers/message/messageImages';
 import { MessageState } from '../../../store/messages/messagesTypes';
 import { MessageChange } from '../Composer';
 
-export interface ExternalEditorActions extends Pick<EditorActions, 'getSelectionContent' | 'setSelectionContent'> {
-    getContent: () => string;
+export interface ExternalEditorActions
+    extends Pick<EditorActions, 'getSelectionContent' | 'setSelectionContent' | 'getContent'> {
     setContent: (message: MessageState) => void;
     focus: () => void;
     insertEmbedded: (attachment: Attachment, data: string | Uint8Array) => void;
