@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useApi } from '@proton/components/hooks';
 import { CryptoProxy, PrivateKeyReference, SessionKey } from '@proton/crypto';
 import {
     queryCreateFile,
@@ -75,6 +76,7 @@ export default function useUploadFile() {
     const driveEventManager = useDriveEventManager();
     const volumeState = useVolumesState();
     const isOptimisticUploadEnabled = useDriveOptimisticUploadFeatureFlag();
+    const api = useApi();
 
     const request = <T>(args: object, abortSignal?: AbortSignal) => {
         return debouncedRequest<T>(
@@ -478,6 +480,7 @@ export default function useUploadFile() {
             // TODO [DRVWEB-3951]: Remove original function after complete rollout of 'DriveWebOptimisticUploadEnabled' feature flag
             // The original function entangle both photos and files revision and is not optimistic
             return measureExperimentalPerformance(
+                api,
                 Features.optimisticFileUploads,
                 isOptimisticUploadEnabled,
                 () => {
