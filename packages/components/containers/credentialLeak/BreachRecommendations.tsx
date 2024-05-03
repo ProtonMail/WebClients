@@ -79,7 +79,7 @@ const Action = ({ code, action, link }: ActionProps) => {
 
 // translator: full sentence is: Learn how to <stay safer online>
 const staySaferOnlineLink = (
-    <Href href={getKnowledgeBaseUrl('/dark-web-monitoring')}>{c('Link').jt`stay safer online`}</Href>
+    <Href href={getKnowledgeBaseUrl('/dark-web-monitoring')} key="link">{c('Link').t`stay safer online`}</Href>
 );
 
 const BreachRecommendations = ({ actions, inModal = false }: Props) => {
@@ -97,8 +97,8 @@ const BreachRecommendations = ({ actions, inModal = false }: Props) => {
             <ul className="unstyled m-0">
                 {actions.map(({ code, name, urls }) => {
                     return (
-                        <li className="border-top border-weak text-sm relative">
-                            <Action key={`${name}`} code={code} action={name} link={urls?.[0]} />
+                        <li className="border-top border-weak text-sm relative" key={name}>
+                            <Action code={code} action={name} link={urls?.[0]} />
                         </li>
                     );
                 })}

@@ -24,7 +24,7 @@ const ReadableDate = ({
     const timeDate = format(parsedDate, 'yyyy-MM-dd');
 
     const displayedDate = (
-        <time dateTime={timeDate} className={clsx(dateInBold && 'text-semibold')}>
+        <time dateTime={timeDate} className={clsx(dateInBold && 'text-semibold')} key="readable-date">
             {formattedDate}
         </time>
     );
