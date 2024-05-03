@@ -5,15 +5,18 @@ import type { List } from 'react-virtualized';
 
 import { c, msgid } from 'ttag';
 
+import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { ItemsListItem } from '@proton/pass/components/Item/List/ItemsListItem';
 import { VirtualList } from '@proton/pass/components/Layout/List/VirtualList';
 import { useMonitor } from '@proton/pass/components/Monitor/MonitorProvider';
 import { getItemRoute } from '@proton/pass/components/Navigation/routing';
 import { useSelectItemAction } from '@proton/pass/hooks/useSelectItemAction';
+import { useTelemetryEvent } from '@proton/pass/hooks/useTelemetryEvent';
 import { isTrashed, itemEq } from '@proton/pass/lib/items/item.predicates';
 import { getItemKey } from '@proton/pass/lib/items/item.utils';
 import { selectOptimisticItemsFactory, selectSelectedItems } from '@proton/pass/store/selectors';
 import type { ItemRevisionWithOptimistic, SelectedItem, UniqueItem } from '@proton/pass/types';
+import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 
 type InterpolationItem = { type: 'divider'; label: string } | { type: 'item'; item: ItemRevisionWithOptimistic };
 type Interpolation = { interpolation: InterpolationItem[]; interpolationIndexes: number[]; sliceAt: number };
@@ -36,6 +39,7 @@ const interpolateDuplicates = (groups: UniqueItem[][], items: ItemRevisionWithOp
     );
 
 export const DuplicatePasswords: FC = () => {
+    const { onTelemetry } = usePassCore();
     const listRef = useRef<List>(null);
     const selectItem = useSelectItemAction();
 
@@ -51,11 +55,13 @@ export const DuplicatePasswords: FC = () => {
     );
 
     useEffect(() => {
-        if (duplicatePasswordItems.length && !selectedItem) {
+        if (duplicatePasswordItems.length > 0 && !selectedItem) {
             const item = duplicatePasswordItems[0];
             selectItem(item, { inTrash: isTrashed(item), prefix: 'monitor/duplicates', mode: 'replace' });
         }
     }, [selectedItem, duplicatePasswordItems]);
+
+    useTelemetryEvent(TelemetryEventName.PassMonitorDisplayReusedPasswords, {}, {})([]);
 
     return interpolation.length > 0 ? (
         <VirtualList
@@ -78,6 +84,7 @@ export const DuplicatePasswords: FC = () => {
                                     key={id}
                                     onClick={(e) => {
                                         e.preventDefault();
+                                        onTelemetry(TelemetryEventName.PassMonitorItemDetailFromReusedPassword, {}, {});
                                         selectItem(item, {
                                             inTrash: isTrashed(item),
                                             prefix: 'monitor/duplicates',

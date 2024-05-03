@@ -17,6 +17,7 @@ import { getWebStoreUrl } from '@proton/pass/lib/extension/utils/browser';
 import browser from '@proton/pass/lib/globals/browser';
 import { type I18nService, createI18nService } from '@proton/pass/lib/i18n/service';
 import { isProtonPassEncryptedImport } from '@proton/pass/lib/import/reader';
+import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
 import { type ClientEndpoint, type MaybeNull, WorkerMessageType } from '@proton/pass/types';
 import { transferableToFile } from '@proton/pass/utils/file/transferable-file';
 import type { ParsedUrl } from '@proton/pass/utils/url/parser';
@@ -121,8 +122,13 @@ const getExtensionCoreProps = (
                 .catch(noop);
         },
 
-        onTelemetry: (event) =>
-            sendMessage(messageFactory({ type: WorkerMessageType.TELEMETRY_EVENT, payload: { event } })).catch(noop),
+        onTelemetry: (Event, Values, Dimensions, platform) =>
+            sendMessage(
+                messageFactory({
+                    type: WorkerMessageType.TELEMETRY_EVENT,
+                    payload: { event: createTelemetryEvent(Event, Values, Dimensions, platform) },
+                })
+            ).catch(noop),
 
         writeToClipboard: (value) => navigator.clipboard.writeText(value),
     };
