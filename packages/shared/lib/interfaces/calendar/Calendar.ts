@@ -93,7 +93,7 @@ export interface CalendarViewModelFull {
     fullDayNotifications: NotificationModel[];
     url?: string;
     type: CALENDAR_TYPE;
-    shareBusyTimeSlots: CALENDAR_SHARE_BUSY_TIME_SLOTS;
+    shareBusySlots: CALENDAR_SHARE_BUSY_TIME_SLOTS;
 }
 
 export interface CalendarErrors {

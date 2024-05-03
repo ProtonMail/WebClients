@@ -3,9 +3,10 @@ import React from 'react';
 import { c } from 'ttag';
 
 import { Checkbox, Info, InputFieldTwo } from '@proton/components/components';
+import { useConfig } from '@proton/components/hooks';
 import { CALENDAR_SHARE_BUSY_TIME_SLOTS } from '@proton/shared/lib/calendar/constants';
 
-import useBusyTimeSlotsAvailable from '../hooks/useBusyTimeSlotsAvailable';
+import useBusySlotsAvailable from '../hooks/useBusySlotsAvailable';
 
 interface Props {
     value: CALENDAR_SHARE_BUSY_TIME_SLOTS | undefined;
@@ -13,24 +14,25 @@ interface Props {
     disabled?: boolean;
 }
 
-export const BusyTimeSlotsLabelInfo = () => (
+export const BusySlotsLabelInfo = () => (
     <Info
         className="ml-2"
         title={c('Info').t`Other users within your organization will see your busy slots. No event details are shared.`}
     />
 );
 
-const BusyTimeSlotsLabel = () => (
+const BusySlotsLabel = () => (
     <>
         <span>{c('Label').t`Access to my events`}</span>
-        <BusyTimeSlotsLabelInfo />
+        <BusySlotsLabelInfo />
     </>
 );
 
-const BusyTimeSlotsCheckbox = ({ value, onChange, disabled }: Props) => {
-    const isBusyTimeSlotsAvailable = useBusyTimeSlotsAvailable();
+const BusySlotsCheckbox = ({ value, onChange, disabled }: Props) => {
+    const { APP_NAME } = useConfig();
+    const isBusySlotsAvailable = useBusySlotsAvailable();
 
-    if (!isBusyTimeSlotsAvailable) {
+    if (!isBusySlotsAvailable || APP_NAME !== 'proton-calendar') {
         return null;
     }
 
@@ -47,7 +49,7 @@ const BusyTimeSlotsCheckbox = ({ value, onChange, disabled }: Props) => {
             as={Checkbox}
             checked={value === CALENDAR_SHARE_BUSY_TIME_SLOTS.YES}
             id="default-share-busy-schedule"
-            label={<BusyTimeSlotsLabel />}
+            label={<BusySlotsLabel />}
             onChange={handleChange}
             disabled={disabled}
         >
@@ -56,4 +58,4 @@ const BusyTimeSlotsCheckbox = ({ value, onChange, disabled }: Props) => {
     );
 };
 
-export default BusyTimeSlotsCheckbox;
+export default BusySlotsCheckbox;

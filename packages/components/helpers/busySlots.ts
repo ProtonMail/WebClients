@@ -2,7 +2,7 @@ import { CALENDAR_SHARE_BUSY_TIME_SLOTS, CALENDAR_TYPE } from '@proton/shared/li
 import { PLANS } from '@proton/shared/lib/constants';
 import { Organization } from '@proton/shared/lib/interfaces';
 
-export const isUserEligibleForBusyTimeSlots = (organization: Organization): boolean => {
+export const isUserEligibleForBusySlots = (organization: Organization): boolean => {
     const isEligible = [
         PLANS.BUNDLE_PRO, // Business
         PLANS.NEW_VISIONARY, // Visionary
@@ -14,7 +14,7 @@ export const isUserEligibleForBusyTimeSlots = (organization: Organization): bool
     return !!isEligible;
 };
 
-export const getBusyTimeSlotCalSettingValue = (calendarType: CALENDAR_TYPE): CALENDAR_SHARE_BUSY_TIME_SLOTS => {
+export const getBusySlotSettingValue = (calendarType: CALENDAR_TYPE): CALENDAR_SHARE_BUSY_TIME_SLOTS => {
     if (CALENDAR_TYPE.PERSONAL === calendarType) {
         return CALENDAR_SHARE_BUSY_TIME_SLOTS.YES;
     }

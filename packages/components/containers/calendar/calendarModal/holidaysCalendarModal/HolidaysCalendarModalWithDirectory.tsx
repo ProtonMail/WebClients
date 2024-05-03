@@ -59,7 +59,7 @@ import {
 } from '../../../../hooks';
 import { useCalendarModelEventManager } from '../../../eventManager';
 import Notifications from '../../notifications/Notifications';
-import BusyTimeSlotsCheckbox from '../BusyTimeSlotsCheckbox';
+import BusySlotsCheckbox from '../BusySlotsCheckbox';
 import { getDefaultModel } from '../personalCalendarModal/calendarModalState';
 
 const getInitialCalendarNotifications = (bootstrap?: CalendarBootstrap) => {
@@ -140,7 +140,7 @@ const HolidaysCalendarModalWithDirectory = ({
     const readCalendarBootstrap = useReadCalendarBootstrap();
     const defaultModel = getDefaultModel(CALENDAR_TYPE.HOLIDAYS);
     const [makesUserBusy, setMakesUserBusy] = useState(
-        calendarBootstrap?.CalendarSettings?.MakesUserBusy ?? defaultModel.shareBusyTimeSlots
+        calendarBootstrap?.CalendarSettings?.MakesUserBusy ?? defaultModel.shareBusySlots
     );
 
     const memoizedHolidaysCalendars = useMemo(() => {
@@ -467,7 +467,7 @@ const HolidaysCalendarModalWithDirectory = ({
                         }}
                     />
                 )}
-                <BusyTimeSlotsCheckbox
+                <BusySlotsCheckbox
                     onChange={(nextMakesUserBusy) => {
                         setMakesUserBusy(nextMakesUserBusy);
                     }}

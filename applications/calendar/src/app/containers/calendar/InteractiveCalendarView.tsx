@@ -130,7 +130,7 @@ import { getCanEditSharedEventData } from '../../helpers/event';
 import { extractInviteEmails } from '../../helpers/invite';
 import { getCleanSendDataFromSendPref, getSendPrefErrorMap } from '../../helpers/sendPreferences';
 import { getIsCalendarAppInDrawer } from '../../helpers/views';
-import useBusyTimeSlots from '../../hooks/useBusyTimeSlots';
+import useBusySlots from '../../hooks/useBusySlots';
 import { OpenedMailEvent } from '../../hooks/useGetOpenedMailEvents';
 import useOpenCalendarEvents from '../../hooks/useOpenCalendarEvents';
 import { useOpenEventsFromMail } from '../../hooks/useOpenEventsFromMail';
@@ -1565,9 +1565,9 @@ const InteractiveCalendarView = ({
         const handler = (e: MouseEvent) => {
             // Only ask to auto close if an action wasn't clicked.
             if (
-                e.target instanceof HTMLElement &&
+                (e.target instanceof HTMLElement || e.target instanceof Element) &&
                 e.currentTarget instanceof HTMLElement &&
-                findUpwards(e.target, e.currentTarget, (el: HTMLElement) => {
+                findUpwards(e.target as HTMLElement, e.currentTarget, (el: HTMLElement) => {
                     return ['BUTTON', 'A', 'SELECT', 'INPUT'].includes(el.nodeName);
                 })
             ) {
@@ -1665,9 +1665,8 @@ const InteractiveCalendarView = ({
         return getTemporaryEvent(getEditTemporaryEvent(targetEvent, newTemporaryModel, tzid), newTemporaryModel, tzid);
     };
 
-    const preventFetchBusySlots = useBusyTimeSlots({
+    const preventFetchBusySlots = useBusySlots({
         dateRange,
-        now,
         temporaryEvent,
         tzid,
         view,

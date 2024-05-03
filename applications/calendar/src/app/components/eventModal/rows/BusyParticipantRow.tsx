@@ -10,8 +10,8 @@ import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import clsx from '@proton/utils/clsx';
 
-import { selectAttendeeBusyData } from '../../../store/busyTimeSlots/busyTimeSlotsSelectors';
-import { busyTimeSlotsActions } from '../../../store/busyTimeSlots/busyTimeSlotsSlice';
+import { selectAttendeeBusyData } from '../../../store/busySlots/busySlotsSelectors';
+import { busySlotsActions } from '../../../store/busySlots/busySlotsSlice';
 import { useCalendarDispatch, useCalendarSelector } from '../../../store/hooks';
 import BusyParticipantRowDot from './BusyPartipantRowDot';
 
@@ -41,7 +41,7 @@ const BusyParticipantRow = ({ attendee, contactEmailsMap, onDelete, onHighlight,
             return;
         }
         dispatch(
-            busyTimeSlotsActions.setAttendeeVisibility({
+            busySlotsActions.setAttendeeVisibility({
                 email: attendeeEmail,
                 visible: !isVisible,
             })
@@ -159,7 +159,7 @@ const BusyParticipantRow = ({ attendee, contactEmailsMap, onDelete, onHighlight,
                     size="small"
                     className="flex shrink-0 group-hover:opacity-100 group-hover:opacity-100-no-width"
                     onClick={() => {
-                        dispatch(busyTimeSlotsActions.removeAttendee(attendeeEmail));
+                        dispatch(busySlotsActions.removeAttendee(attendeeEmail));
                         onDelete(attendee);
                     }}
                 >
