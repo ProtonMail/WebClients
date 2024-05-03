@@ -2,8 +2,8 @@ import { c } from 'ttag';
 
 import { Button, Scroll } from '@proton/atoms';
 import { useLoading } from '@proton/hooks';
-import { orderFolders } from '@proton/shared/lib/api/labels';
-import { MAIL_UPSELL_PATHS, ROOT_FOLDER } from '@proton/shared/lib/constants';
+import { orderAllFolders } from '@proton/shared/lib/api/labels';
+import { MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import { hasReachedFolderLimit } from '@proton/shared/lib/helpers/folder';
 
 import { Info, LabelsUpsellModal, Loader, MailUpsellButton, useModalState } from '../../components';
@@ -41,13 +41,8 @@ export default function FoldersSection() {
     const [editLabelProps, setEditLabelModalOpen] = useModalState();
     const [upsellModalProps, handleUpsellModalDisplay, renderUpsellModal] = useModalState();
 
-    const handleSortFolders = async () => {
-        const rootFolders = folders.filter(({ ParentID = ROOT_FOLDER }) => ParentID === ROOT_FOLDER);
-
-        const LabelIDs = [...rootFolders]
-            .sort((a, b) => a.Name.localeCompare(b.Name, undefined, { numeric: true }))
-            .map(({ ID }) => ID);
-        await api(orderFolders({ LabelIDs }));
+    const handleSortAllFolders = async () => {
+        await api(orderAllFolders());
         await call();
         createNotification({ text: c('Success message after sorting folders').t`Folders sorted` });
     };
@@ -102,7 +97,7 @@ export default function FoldersSection() {
                                 shape="outline"
                                 title={c('Title').t`Sort folders alphabetically`}
                                 loading={loading}
-                                onClick={() => withLoading(handleSortFolders())}
+                                onClick={() => withLoading(handleSortAllFolders())}
                             >
                                 {c('Action').t`Sort`}
                             </Button>
