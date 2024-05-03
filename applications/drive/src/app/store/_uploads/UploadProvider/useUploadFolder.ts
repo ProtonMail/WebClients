@@ -1,5 +1,7 @@
 import { c } from 'ttag';
 
+import { useApi } from '@proton/components/hooks';
+
 import { TransferCancel } from '../../../components/TransferManager/transfer';
 import useQueuedFunction from '../../../hooks/util/useQueuedFunction';
 import { isErrorDueToNameConflict } from '../../../utils/isErrorDueToNameConflict';
@@ -24,6 +26,7 @@ export default function useUploadFolder() {
     const { deleteChildrenLinks } = useLinksActions();
     const { findAvailableName, getLinkByName } = useUploadHelper();
     const isOptimisticUploadEnabled = useDriveOptimisticUploadFeatureFlag();
+    const api = useApi();
 
     const createEmptyFolder = async (
         abortSignal: AbortSignal,
@@ -232,6 +235,7 @@ export default function useUploadFolder() {
             start: () => {
                 // TODO [DRVWEB-3951]: Remove original function after complete rollout of 'DriveWebOptimisticUploadEnabled' feature flag
                 return measureExperimentalPerformance(
+                    api,
                     Features.optimisticFolderUploads,
                     isOptimisticUploadEnabled,
                     () =>

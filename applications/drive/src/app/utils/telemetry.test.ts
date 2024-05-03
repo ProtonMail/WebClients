@@ -1,15 +1,19 @@
+import { useApi } from '@proton/components/hooks';
 import {
     TelemetryDriveWebFeature,
     TelemetryMeasurementGroups,
     sendTelemetryData,
 } from '@proton/shared/lib/api/telemetry';
+import { setMetricsEnabled } from '@proton/shared/lib/helpers/metrics';
 
 import { ExperimentGroup, Features, measureExperimentalPerformance } from './telemetry';
 
 jest.mock('@proton/shared/lib/api/telemetry');
+jest.mock('@proton/components/hooks/useApi');
 
 describe('measureExperimentalPerformance', () => {
     beforeEach(() => {
+        setMetricsEnabled(true);
         jest.useFakeTimers();
         window.performance.mark = jest.fn();
         window.performance.measure = jest.fn().mockImplementation(() => ({ duration: 100 }));
@@ -25,7 +29,7 @@ describe('measureExperimentalPerformance', () => {
         const controlFunction = jest.fn(() => 'control result');
         const treatmentFunction = jest.fn(() => 'treatment result');
 
-        measureExperimentalPerformance(feature, flag, controlFunction, treatmentFunction);
+        measureExperimentalPerformance(useApi(), feature, flag, controlFunction, treatmentFunction);
 
         expect(controlFunction).toHaveBeenCalledTimes(1);
         expect(performance.mark).toHaveBeenCalledTimes(2);
@@ -50,7 +54,7 @@ describe('measureExperimentalPerformance', () => {
         const controlFunction = jest.fn(() => 'control result');
         const treatmentFunction = jest.fn(() => 'treatment result');
 
-        measureExperimentalPerformance(feature, flag, controlFunction, treatmentFunction);
+        measureExperimentalPerformance(useApi(), feature, flag, controlFunction, treatmentFunction);
 
         expect(treatmentFunction).toHaveBeenCalledTimes(1);
         expect(performance.mark).toHaveBeenCalledTimes(2);
