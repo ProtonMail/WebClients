@@ -135,3 +135,11 @@ export const querySharedWithMeLinks = (params?: { AnchorID?: string }) => {
         params,
     };
 };
+
+export const querySharedByMeLinks = (volumeId: string, params?: { AnchorID?: string }) => {
+    return {
+        method: 'get',
+        url: `drive/v2/volumes/${volumeId}/shares`,
+        params,
+    };
+};

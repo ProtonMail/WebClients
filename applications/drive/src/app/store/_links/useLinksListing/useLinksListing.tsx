@@ -321,8 +321,12 @@ export function useLinksListingProvider() {
         loadTrashedLinks: (signal: AbortSignal, volumeId: string) => {
             return trashedLinksListing.loadTrashedLinks(signal, volumeId, loadLinksMeta);
         },
-        loadLinksSharedByLink: (signal: AbortSignal, volumeId: string) => {
-            return sharedLinksListing.loadSharedLinks(signal, volumeId, loadLinksMeta);
+        loadLinksSharedByLinkLEGACY: (signal: AbortSignal, volumeId: string) => {
+            return sharedLinksListing.loadSharedLinksLEGACY(signal, volumeId, loadLinksMeta);
+        },
+        // This include direct sharing shares
+        loadLinksSharedByMeLink: (signal: AbortSignal, volumeId: string) => {
+            return sharedLinksListing.loadSharedByMeLinks(signal, volumeId, loadLinksMeta);
         },
         loadLinksSharedWithMeLink: (signal: AbortSignal) => {
             return sharedWithMeLinksListing.loadSharedWithMeLinks(signal, loadLinksMeta);

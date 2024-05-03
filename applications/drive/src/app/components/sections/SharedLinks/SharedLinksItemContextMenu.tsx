@@ -9,7 +9,7 @@ import { useLinkSharingModal } from '../../modals/ShareLinkModal/ShareLinkModal'
 import { DetailsButton, DownloadButton, PreviewButton, RenameButton, ShareLinkButton } from '../ContextMenu';
 import { ItemContextMenu } from '../ContextMenu/ItemContextMenu';
 import ShareLinkButtonLEGACY from '../ContextMenu/buttons/_legacy/ShareLinkButtonLEGACY';
-import { StopSharingButton } from './ContextMenuButtons';
+import { StopSharingButton, StopSharingButtonLEGACY } from './ContextMenuButtons';
 
 export function SharedLinksItemContextMenu({
     selectedLinks,
@@ -29,7 +29,7 @@ export function SharedLinksItemContextMenu({
         selectedLink.mimeType &&
         isPreviewAvailable(selectedLink.mimeType, selectedLink.size);
 
-    const { stopSharingLinks, confirmModal } = useActions();
+    const { stopSharingLinks, stopSharing, confirmModal } = useActions();
 
     const [renameModal, showRenameModal] = useRenameModal();
     const [detailsModal, showDetailsModal] = useDetailsModal();
@@ -60,7 +60,17 @@ export function SharedLinksItemContextMenu({
                         close={close}
                     />
                 )}
-                <StopSharingButton selectedLinks={selectedLinks} stopSharingLinks={stopSharingLinks} close={close} />
+                {/* //TODO: Add multiple share deletion support */}
+                {isOnlyOneItem && driveSharing && (
+                    <StopSharingButton selectedLink={selectedLink} stopSharing={stopSharing} close={close} />
+                )}
+                {!driveSharing && (
+                    <StopSharingButtonLEGACY
+                        selectedLinks={selectedLinks}
+                        stopSharingLinks={stopSharingLinks}
+                        close={close}
+                    />
+                )}
             </ItemContextMenu>
             {renameModal}
             {detailsModal}
