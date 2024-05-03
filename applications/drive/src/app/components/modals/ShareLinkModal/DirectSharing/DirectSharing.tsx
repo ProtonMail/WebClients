@@ -20,8 +20,8 @@ const DirectSharing = ({ rootShareId, linkId, onInviteeCountChange, isInvitation
     const {
         volumeId,
         members,
-        membersEmail,
         invitations,
+        existingEmails,
         isLoading,
         isAdding,
         addNewMembers,
@@ -36,7 +36,7 @@ const DirectSharing = ({ rootShareId, linkId, onInviteeCountChange, isInvitation
             name: member.email,
         }))
     );
-    const { invitees, add: addInvitee, remove: removeInvitee, clean: cleanInvitees } = useShareInvitees(membersEmail);
+    const { invitees, add: addInvitee, remove: removeInvitee, clean: cleanInvitees } = useShareInvitees(existingEmails);
 
     const handleSubmit = async (invitees: ShareInvitee[], selectedPermissions: SHARE_MEMBER_PERMISSIONS) => {
         setDirectSharingList([...directSharingList, ...invitees]);
@@ -74,7 +74,7 @@ const DirectSharing = ({ rootShareId, linkId, onInviteeCountChange, isInvitation
                 onCancel={handleCancel}
                 isAdding={isAdding}
                 onSubmit={handleSubmit}
-                existingEmails={membersEmail}
+                existingEmails={existingEmails}
                 invitees={invitees}
                 onAdd={addInvitee}
                 onRemove={removeInvitee}
