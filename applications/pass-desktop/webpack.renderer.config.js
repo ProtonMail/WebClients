@@ -19,7 +19,7 @@ const options = {
     featureFlags: env.featureFlags || '',
     writeSRI: env.writeSri !== 'false',
     browserslist: isProduction
-        ? `> 0.5%, not IE 11, Firefox ESR, Safari 11`
+        ? `> 0.5%, not IE 11, Firefox ESR, Safari 14, iOS 14`
         : 'last 1 chrome version, last 1 firefox version, last 1 safari version',
     buildData: {
         version: env.version,
