@@ -17,7 +17,7 @@ import { useApi } from '../../../../hooks';
 import { GenericError } from '../../../error';
 import useGetCalendarActions from '../../hooks/useGetCalendarActions';
 import useGetCalendarSetup from '../../hooks/useGetCalendarSetup';
-import BusyTimeSlotsCheckbox from '../BusyTimeSlotsCheckbox';
+import BusySlotsCheckbox from '../BusySlotsCheckbox';
 import {
     getCalendarPayload,
     getCalendarSettingsPayload,
@@ -182,10 +182,10 @@ ${kbLink}
                             className="mb-4"
                         />
 
-                        <BusyTimeSlotsCheckbox
-                            value={model.shareBusyTimeSlots}
-                            onChange={(shareBusyTimeSlots) => {
-                                setModel({ ...model, shareBusyTimeSlots });
+                        <BusySlotsCheckbox
+                            value={model.shareBusySlots}
+                            onChange={(shareBusySlots) => {
+                                setModel({ ...model, shareBusySlots });
                             }}
                         />
                     </>

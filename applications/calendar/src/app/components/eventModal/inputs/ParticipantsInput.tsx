@@ -4,7 +4,7 @@ import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { AddressesAutocompleteTwo, Alert, Details, Icon, Summary, useMailSettings } from '@proton/components';
-import useBusyTimeSlotsAvailable from '@proton/components/containers/calendar/hooks/useBusyTimeSlotsAvailable';
+import useBusySlotsAvailable from '@proton/components/containers/calendar/hooks/useBusySlotsAvailable';
 import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
 import { emailToAttendee } from '@proton/shared/lib/calendar/attendees';
 import { ICAL_ATTENDEE_ROLE, VIEWS } from '@proton/shared/lib/calendar/constants';
@@ -20,7 +20,7 @@ import { AttendeeModel, OrganizerModel } from '@proton/shared/lib/interfaces/cal
 import { inputToRecipient } from '@proton/shared/lib/mail/recipient';
 import uniqueBy from '@proton/utils/uniqueBy';
 
-import { selectDisplayAvailabilityUnknown } from '../../../store/busyTimeSlots/busyTimeSlotsSelectors';
+import { selectDisplayAvailabilityUnknown } from '../../../store/busySlots/busySlotsSelectors';
 import { useCalendarSelector } from '../../../store/hooks';
 import { getParticipantsError } from '../helpers';
 import OrganizerRow from '../rows/OrganizerRow';
@@ -60,7 +60,7 @@ const ParticipantsInput = ({
     view,
 }: Props) => {
     const [mailSettings] = useMailSettings();
-    const isBusyTimeSlotsAvailable = useBusyTimeSlotsAvailable(view);
+    const isBusySlotsAvailable = useBusySlotsAvailable(view);
     const displayAvailabilityUnknown = useCalendarSelector(selectDisplayAvailabilityUnknown) && displayBusySlots;
     const numberOfAttendees = value.length;
 
@@ -134,7 +134,7 @@ const ParticipantsInput = ({
         <ParticipantRows
             attendeeModel={value}
             contactEmailsMap={contactEmailsMap}
-            isBusyTimeSlotsAvailable={isBusyTimeSlotsAvailable && displayBusySlots}
+            isBusySlotsAvailable={isBusySlotsAvailable && displayBusySlots}
             onDelete={onDelete}
             toggleIsOptional={toggleIsOptional}
         />
@@ -193,7 +193,7 @@ const ParticipantsInput = ({
                     participantRows
                 ))}
             {numberOfAttendees > 0 && organizer && <OrganizerRow organizer={organizer} />}
-            {isBusyTimeSlotsAvailable && displayAvailabilityUnknown && (
+            {isBusySlotsAvailable && displayAvailabilityUnknown && (
                 <div
                     className="flex items-center color-weak mt-2 text-sm bg-weak rounded py-1 px-2"
                     data-testid="availability-unknown-banner"
@@ -202,7 +202,7 @@ const ParticipantsInput = ({
                     {c('Description').t`Availability unknown`}
                 </div>
             )}
-            {isBusyTimeSlotsAvailable && !!onDisplayBusySlots && (
+            {isBusySlotsAvailable && !!onDisplayBusySlots && (
                 <Button
                     onClick={(e) => {
                         e.preventDefault();

@@ -14,7 +14,18 @@ interface Props {
 
 const BusyParticipantRowDot = ({ color, display, tooltipText, onClick, classname }: Props) => {
     if (display === 'loader') {
-        return <CircleLoader size="tiny" className="m-auto" style={{ color: color || 'black' }} onClick={onClick} />;
+        return (
+            <Tooltip title={tooltipText}>
+                <div className="flex">
+                    <CircleLoader
+                        size="tiny"
+                        className="m-auto"
+                        style={{ color: color || 'black' }}
+                        onClick={onClick}
+                    />
+                </div>
+            </Tooltip>
+        );
     }
 
     const colorStyle = ((): CSSProperties => {
