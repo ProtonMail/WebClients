@@ -4,11 +4,13 @@ import { EasySwitchProvider } from '@proton/activation';
 import {
     FeatureCode,
     InboxDesktopFreeTrialOnboardingModal,
+    LightLabellingFeatureModal,
     RebrandingFeedbackModal,
     getShouldOpenReferralModal,
     useFeature,
     useModalState,
     useRebrandingFeedback,
+    useShowLightLabellingFeatureModal,
     useSubscription,
     useUser,
     useWelcomeFlags,
@@ -36,6 +38,10 @@ const MailStartupModals = ({ onboardingOpen }: Props) => {
     const handleRebrandingFeedbackModalDisplay = useRebrandingFeedback();
     const [, setWelcomeFlagsDone] = useWelcomeFlags();
 
+    const showLightLabellingFeatureModal = useShowLightLabellingFeatureModal();
+    const [lightLabellingFeatureModalProps, setLightLabellingFeatureModal, renderLightLabellingFeatureModal] =
+        useModalState();
+
     const onceRef = useRef(false);
     useEffect(() => {
         if (onceRef.current || isElectronMail) {
@@ -52,10 +58,18 @@ const MailStartupModals = ({ onboardingOpen }: Props) => {
         } else if (shouldOpenReferralModal.open) {
             onceRef.current = true;
             document.dispatchEvent(new CustomEvent(OPEN_OFFER_MODAL_EVENT));
+        } else if (showLightLabellingFeatureModal) {
+            onceRef.current = true;
+            setLightLabellingFeatureModal(true);
         } else if (handleRebrandingFeedbackModalDisplay) {
             openModal(setRebrandingFeedbackModal);
         }
-    }, [shouldOpenReferralModal.open, handleRebrandingFeedbackModalDisplay, onboardingOpen]);
+    }, [
+        shouldOpenReferralModal.open,
+        handleRebrandingFeedbackModalDisplay,
+        showLightLabellingFeatureModal,
+        onboardingOpen,
+    ]);
 
     return (
         <>
@@ -72,6 +86,9 @@ const MailStartupModals = ({ onboardingOpen }: Props) => {
                         open={onboardingModal.open}
                     />
                 </EasySwitchProvider>
+            )}
+            {renderLightLabellingFeatureModal && (
+                <LightLabellingFeatureModal {...lightLabellingFeatureModalProps} />
             )}
             {renderRebrandingFeedbackModal && (
                 <RebrandingFeedbackModal onMount={handleRebrandingFeedbackModalDisplay} {...rebrandingFeedbackModal} />
