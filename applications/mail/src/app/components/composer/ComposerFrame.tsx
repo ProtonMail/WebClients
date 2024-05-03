@@ -2,10 +2,10 @@ import { DragEvent, useEffect, useRef, useState } from 'react';
 
 import { ErrorBoundary, useHandler, useToggle, useWindowSize } from '@proton/components';
 import type { Breakpoints } from '@proton/components/hooks/useActiveBreakpoint';
+import { useAssistant } from '@proton/llm/lib/useAssistant';
 import { COMPOSER_MODE } from '@proton/shared/lib/mail/mailSettings';
 import clsx from '@proton/utils/clsx';
 
-import { useAssistant } from '@proton/llm/lib/useAssistant';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { ADVANCED_SEARCH_OVERLAY_CLOSE_EVENT, DRAG_ADDRESS_KEY } from '../../constants';
@@ -77,7 +77,7 @@ const ComposerFrame = ({
         drawerOffset,
     });
 
-    const { openedAssistants, closeAssistant } = useAssistant();
+    const { openedAssistants, closeAssistant } = useAssistant(composerID);
 
     // onClose handler can be called in a async handler
     // Input onClose ref can change in the meantime

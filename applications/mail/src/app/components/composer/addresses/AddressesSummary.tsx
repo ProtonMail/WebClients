@@ -43,7 +43,7 @@ const AddressesSummary = ({
         <div className="flex flex-row flex-nowrap flex-column md:flex-row items-center relative my-0">
             <Label
                 className={clsx([
-                    'composer-meta-label composer-meta-label-to pr-2 text-semibold',
+                    'composer-meta-label composer-meta-label-to sr-only pr-2 text-semibold',
                     disabled && 'placeholder',
                 ])}
             >

@@ -19,8 +19,8 @@ const getRoosterEditorActions = (
     openEmojiPicker: () => void
 ): EditorActions => {
     return {
-        getContent() {
-            return editorInstance.getContent();
+        getContent: (...args) => {
+            return editorInstance.getContent(...args);
         },
         isDisposed() {
             return editorInstance.isDisposed();

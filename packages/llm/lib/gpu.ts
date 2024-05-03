@@ -4,12 +4,11 @@ import { WebWorkerEngine } from '@mlc-ai/web-llm';
 import { downloadModel } from '@proton/llm/lib/downloader';
 import { BaseRunningAction } from '@proton/llm/lib/runningAction';
 
-import mlcConfig from './mlc-config';
 import type {
     Action,
+    AssistantConfig,
     DownloadProgressCallback,
     GenerationCallback,
-    GpuAssessmentResult,
     LlmManager,
     LlmModel,
     RunningAction,
@@ -132,22 +131,6 @@ export class GpuLlmModel implements LlmModel {
     }
 }
 
-type HardwareSpecs = {
-    userAgent: string;
-    deviceMemory: any;
-    platform: string;
-    webGlRenderer: string;
-    webGlVendor: string;
-};
-
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-function isBlacklisted(specs: HardwareSpecs): boolean {
-    // This function is meant to be completed with more cases
-    const isMacPreAppleSilicon = specs.userAgent.match(/OS X 10_([789]|1[01234])/);
-    if (isMacPreAppleSilicon) return true;
-    return false;
-}
-
 export class GpuLlmManager implements LlmManager {
     private chat: WebWorkerEngine | undefined;
 
@@ -163,71 +146,15 @@ export class GpuLlmManager implements LlmManager {
         this.abortController = undefined;
     }
 
-    async checkGpu(canvas?: HTMLCanvasElement): Promise<GpuAssessmentResult> {
-        // Gather specs
-        let webGlRenderer: string | undefined;
-        let webGlVendor: string | undefined;
-        if (canvas) {
-            const gl = canvas.getContext('webgl');
-            if (!gl) {
-                return 'noWebGpu'; // no WebGL really, but it doesn't really change the conclusion
-            }
-            webGlRenderer = gl.getParameter(gl.RENDERER);
-            webGlVendor = gl.getParameter(gl.VENDOR);
-        }
-        const specs: HardwareSpecs = {
-            userAgent: navigator.userAgent,
-            platform: navigator.platform,
-            // @ts-ignore
-            deviceMemory: navigator.deviceMemory || null,
-            webGlRenderer: webGlRenderer || '',
-            webGlVendor: webGlVendor || '',
-        };
-
-        // Test if system is not blacklisted
-        if (isBlacklisted(specs)) {
-            return 'blacklisted';
-        }
-
-        // Test if there's enough memory
-        if (specs.deviceMemory !== null && specs.deviceMemory < 8) {
-            return 'insufficientRam';
-        }
-
-        // Test if we can load webgpu
-        try {
-            // TODO fix me
-            const navigator = globalThis.navigator as any;
-            const adapter = await navigator.gpu.requestAdapter();
-            if (!adapter) {
-                if (specs.userAgent.includes('Firefox')) {
-                    return 'noWebGpuFirefox';
-                } else {
-                    return 'noWebGpu';
-                }
-            }
-        } catch (e) {
-            // eslint-disable-next-line no-console
-            console.log(e);
-            if (specs.userAgent.includes('Firefox')) {
-                return 'noWebGpuFirefox';
-            } else {
-                return 'noWebGpu';
-            }
-        }
-
-        return 'ok';
-    }
-
     isDownloading(): boolean {
         return this.status === 'downloading';
     }
 
-    async startDownload(updateProgress: DownloadProgressCallback): Promise<boolean> {
+    async startDownload(updateProgress: DownloadProgressCallback, assistantConfig: AssistantConfig): Promise<boolean> {
         this.status = 'downloading';
         this.abortController = new AbortController();
         try {
-            await downloadModel(MODEL_VARIANT, updateProgress, this.abortController);
+            await downloadModel(MODEL_VARIANT, updateProgress, assistantConfig, this.abortController);
             this.status = 'unloaded';
             return true;
         } catch (e: any) {
@@ -245,7 +172,7 @@ export class GpuLlmManager implements LlmManager {
         }
     }
 
-    private async startMlcEngine() {
+    private async startMlcEngine(assistantConfig: AssistantConfig) {
         try {
             // Create Web-LLM worker
             if (!this.chat) {
@@ -257,7 +184,7 @@ export class GpuLlmManager implements LlmManager {
             // this should go straight to loading the model on GPU without downloading.
             this.status = 'loading';
             const chatOpts = {};
-            await this.chat.reload(MODEL_VARIANT, chatOpts, mlcConfig);
+            await this.chat.reload(MODEL_VARIANT, chatOpts, assistantConfig);
             this.model = new GpuLlmModel(this.chat, this);
             this.status = 'loaded';
         } catch (e) {
@@ -283,7 +210,7 @@ export class GpuLlmManager implements LlmManager {
         }
     }
 
-    async loadOnGpu(): Promise<LlmModel> {
+    async loadOnGpu(assistantConfig: AssistantConfig): Promise<LlmModel> {
         if (this.status === undefined) {
             throw Error('model is not downloaded, run startDownload() first');
         }
@@ -292,7 +219,7 @@ export class GpuLlmManager implements LlmManager {
         }
         if (this.status === 'unloaded') {
             // MLC will skip the download and go straight to loading on GPU
-            await this.startMlcEngine();
+            await this.startMlcEngine(assistantConfig);
             // @ts-ignore: TS does not see that the line above will modify `this.status`
             if (this.status !== 'loaded') {
                 throw Error('error while waiting for model to load on GPU');
