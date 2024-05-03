@@ -65,7 +65,7 @@ const PlainTextEditor = ({ onFocus, onReady, onChange, onMouseUp, onKeyUp, child
     return (
         <div className="w-full h-full pt-2 pb-4 px-2" {...rest}>
             <textarea
-                className="w-full h-full"
+                className="w-full h-full editor-textarea"
                 ref={textareaRef}
                 onFocus={onFocus}
                 onChange={(event: ChangeEvent<HTMLTextAreaElement>) => {

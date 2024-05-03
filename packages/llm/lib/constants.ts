@@ -1,7 +1,10 @@
-import { MINUTE, SECOND } from '@proton/shared/lib/constants';
+import { MINUTE } from '@proton/shared/lib/constants';
+
+export const ASSISTANT_FEATURE_NAME = 'AI Assistant';
 
 export const UNLOAD_ASSISTANT_TIMEOUT = 15 * MINUTE;
-export const RETRY_GENERATE_TIMEOUT = 5 * SECOND;
+
+export const ASSISTANT_TRIAL_TIME_DAYS = 14;
 
 export const enum ASSISTANT_STATUS {
     NOT_LOADED,
@@ -9,5 +12,4 @@ export const enum ASSISTANT_STATUS {
     DOWNLOADED,
     LOADING_GPU,
     READY,
-    GENERATING,
 }

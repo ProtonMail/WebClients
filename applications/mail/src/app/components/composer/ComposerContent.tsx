@@ -1,3 +1,5 @@
+import { Ref, forwardRef } from 'react';
+
 import { c } from 'ttag';
 
 import { Dropzone, EditorMetadata, EllipsisLoader } from '@proton/components';
@@ -48,7 +50,8 @@ const ComposerContent = ({
     outsideKey,
     mailSettings,
     editorMetadata,
-}: Props) => {
+}: Props,
+  ref: Ref<HTMLElement>) => {
     const attachments = getAttachments(message.data);
     const showAttachments = attachments.length + (pendingUploads?.length || 0) > 0;
 
@@ -58,6 +61,7 @@ const ComposerContent = ({
                 'flex-auto mb-2 flex flex-column flex-nowrap relative composer-content pt-2',
                 attachments?.length > 0 && 'composer-content--has-attachments',
             ])}
+            ref={ref}
         >
             {disabled && (
                 <>
@@ -114,4 +118,4 @@ const ComposerContent = ({
     );
 };
 
-export default ComposerContent;
+export default forwardRef(ComposerContent);
