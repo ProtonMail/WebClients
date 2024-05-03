@@ -14,7 +14,7 @@
 	flex-wrap: nowrap;
 
 	&:not(#{&}--no-shrink) {
-		min-inline-size: 1.5em;
+		min-inline-size: 2em;
 	}
 }
 
