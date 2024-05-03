@@ -42,6 +42,8 @@ export enum FeatureCode {
     CalendarEncryptedSearch = 'CalendarEncryptedSearch',
     CalendarEventColorSpotlight = 'CalendarEventColorSpotlight',
     CleanUTMTrackers = 'CleanUTMTrackers',
+    ComposerAssistantInitialSetup = 'ComposerAssistantInitialSetup',
+    ComposerAssistantSpotlight = 'ComposerAssistantSpotlight',
     DarkStylesInBody = 'DarkStylesInBody',
     DismissedRecoverDataCard = 'DismissedRecoverDataCard',
     DriveMyDevices = 'DriveWebMyDevices',

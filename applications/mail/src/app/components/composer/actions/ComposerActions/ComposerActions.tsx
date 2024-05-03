@@ -3,11 +3,15 @@ import { MutableRefObject } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { EditorMetadata, FeatureCode, Icon, Tooltip, useFeature } from '@proton/components';
+import { EditorMetadata, FeatureCode, Icon, Tooltip, useFeature, useModalState } from '@proton/components';
+import { useAssistant } from '@proton/llm/lib';
 import useAssistantTelemetry from '@proton/llm/lib/useAssistantTelemetry';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 import { hasFlag } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
+
+import AssistantIncompatibleBrowserModal from 'proton-mail/components/assistant/AssistantIncompatibleBrowserModal';
+import AssistantIncompatibleHardwareModal from 'proton-mail/components/assistant/AssistantIncompatibleHardwareModal';
 
 import { getAttachmentCounts } from '../../../../helpers/message/messages';
 import { MessageState } from '../../../../store/messages/messagesTypes';
@@ -23,6 +27,7 @@ import useScheduleSendSpotlight from '../scheduleSend/useScheduleSendSpotlight';
 import useComposerSendActionsText from './useComposerActionsText';
 
 interface Props {
+    composerID: string;
     addressesBlurRef: MutableRefObject<() => void>;
     attachmentTriggerRef: MutableRefObject<() => void>;
     className?: string;
@@ -46,10 +51,10 @@ interface Props {
     showAssistantButton: boolean;
     disableAssistant: boolean;
     onToggleAssistant: () => void;
-    initAssistant: () => void;
 }
 
 const ComposerActions = ({
+    composerID,
     addressesBlurRef,
     attachmentTriggerRef,
     className,
@@ -73,7 +78,6 @@ const ComposerActions = ({
     showAssistantButton,
     disableAssistant,
     onToggleAssistant,
-    initAssistant,
 }: Props) => {
     const disabled = opening;
     const { feature: numAttachmentsWithoutEmbeddedFeature } = useFeature(FeatureCode.NumAttachmentsWithoutEmbedded);
@@ -94,9 +98,31 @@ const ComposerActions = ({
             syncInProgress,
         });
 
+    const { initAssistant, hasCompatibleHardware, hasCompatibleBrowser, canUseAssistant, openedAssistants } =
+        useAssistant(composerID);
+
+    const [assistantIncompatibleHardwareProps, setAssistantIncompatibleHardwareModalOpen] = useModalState();
+    const [assistantIncompatibleBrowserProps, setAssistantIncompatibleBrowserModalOpen] = useModalState();
+
     const handleToggleAssistant = () => {
-        // Start initializing the Assistant when opening it
-        void initAssistant();
+        if (!hasCompatibleHardware) {
+            setAssistantIncompatibleHardwareModalOpen(true);
+            sendShowAssistantReport();
+            return;
+        }
+
+        if (!hasCompatibleBrowser) {
+            setAssistantIncompatibleBrowserModalOpen(true);
+            sendShowAssistantReport();
+            return;
+        }
+
+        // Start initializing the Assistant when opening it if able to
+        const isAssistantOpened = openedAssistants.find((assistantID) => assistantID === composerID);
+        const shouldInitAssistant = canUseAssistant && !isAssistantOpened;
+        if (shouldInitAssistant) {
+            void initAssistant();
+        }
 
         onToggleAssistant();
 
@@ -206,6 +232,8 @@ const ComposerActions = ({
                     </div>
                 </div>
             </div>
+            <AssistantIncompatibleHardwareModal {...assistantIncompatibleHardwareProps} />
+            <AssistantIncompatibleBrowserModal {...assistantIncompatibleBrowserProps} />
         </footer>
     );
 };
