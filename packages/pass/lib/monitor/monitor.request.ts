@@ -71,8 +71,11 @@ export const setBreachedCustomEmailResolved = (customEmailId: string): Promise<b
     api({ url: `pass/v1/breach/custom_email/${customEmailId}/resolved`, method: 'put' }).then(() => true);
 
 /** Verify a custom email with the validation code */
-export const verifyCustomEmail = (addressId: string, data: BreachEmailValidateRequest): Promise<boolean> =>
-    api({ url: `pass/v1/breach/custom_email/${addressId}/verify`, method: 'put', data }).then(() => true);
+export const verifyCustomEmail = async (
+    addressId: string,
+    data: BreachEmailValidateRequest
+): Promise<BreachCustomEmailGetResponse> =>
+    (await api({ url: `pass/v1/breach/custom_email/${addressId}/verify`, method: 'put', data })).Email!;
 
 /** Re-send the verification email for custom address */
 export const resendVerificationCustomEmail = (addressId: string): Promise<boolean> =>
