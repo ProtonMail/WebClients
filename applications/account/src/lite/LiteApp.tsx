@@ -43,7 +43,7 @@ const bootstrapApp = () => {
         APP_NAME: APPS.PROTONACCOUNTLITE,
     };
     const api = createApi({ config, sendLocaleHeaders: true });
-    const authentication = bootstrap.createAuthentication({ initialAuth: false, mode: 'standalone' });
+    const authentication = bootstrap.createAuthentication({ mode: 'standalone' });
     bootstrap.init({ config, authentication, locales });
     initSafariFontFixClassnames();
 
