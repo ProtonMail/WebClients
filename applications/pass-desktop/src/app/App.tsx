@@ -41,6 +41,7 @@ import { API_BODYLESS_STATUS_CODES } from '@proton/pass/lib/api/utils';
 import { createPassExport } from '@proton/pass/lib/export/export';
 import { prepareImport } from '@proton/pass/lib/import/reader';
 import { generateTOTPCode } from '@proton/pass/lib/otp/otp';
+import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
 import { selectExportData } from '@proton/pass/store/selectors/export';
 import { transferableToFile } from '@proton/pass/utils/file/transferable-file';
 import { prop } from '@proton/pass/utils/fp/lens';
@@ -125,7 +126,7 @@ export const getPassCoreProps = (): PassCoreProviderProps => ({
     onLink: (url) => window.open(url, '_blank'),
     onboardingAcknowledge: onboarding.acknowledge,
     onboardingCheck: pipe(onboarding.checkMessage, prop('enabled')),
-    onTelemetry: telemetry.push,
+    onTelemetry: pipe(createTelemetryEvent, telemetry.push),
 
     openSettings: (page) =>
         history.push({
