@@ -18,18 +18,18 @@ export enum TelemetryEventName {
     PasskeyCreated = 'passkey.create_done',
     PasskeyCreateDisplay = 'passkey.create_prompt_display',
     PasskeysSuggestionsDisplay = 'passkey.display_suggestions',
-    PassMonitorDisplayHome = 'pass_monitor.display_home',
-    PassMonitorDisplayWeakPasswords = 'pass_monitor.display_weak_passwords',
-    PassMonitorDisplayReusedPasswords = 'pass_monitor.display_reused_passwords',
-    PassMonitorDisplayMissing2FA = 'pass_monitor.display_missing_2fa',
-    PassMonitorDisplayExcludedItems = 'pass_monitor.display_excluded_items',
-    PassMonitorDisplayDarkWebMonitoring = 'pass_monitor.display_dark_web_monitoring',
-    PassMonitorDisplayMonitoringProtonAddresses = 'pass_monitor.display_monitoring_proton_addresses',
-    PassMonitorDisplayMonitoringEmailAliases = 'pass_monitor.display_monitoring_email_aliases',
     PassMonitorAddCustomEmailFromSuggestion = 'pass_monitor.add_custom_email_from_suggestion',
-    PassMonitorItemDetailFromWeakPassword = 'pass_monitor.item_detail_from_weak_password',
+    PassMonitorDisplayDarkWebMonitoring = 'pass_monitor.display_dark_web_monitoring',
+    PassMonitorDisplayExcludedItems = 'pass_monitor.display_excluded_items',
+    PassMonitorDisplayHome = 'pass_monitor.display_home',
+    PassMonitorDisplayMissing2FA = 'pass_monitor.display_missing_2fa',
+    PassMonitorDisplayMonitoringEmailAliases = 'pass_monitor.display_monitoring_email_aliases',
+    PassMonitorDisplayMonitoringProtonAddresses = 'pass_monitor.display_monitoring_proton_addresses',
+    PassMonitorDisplayReusedPasswords = 'pass_monitor.display_reused_passwords',
+    PassMonitorDisplayWeakPasswords = 'pass_monitor.display_weak_passwords',
     PassMonitorItemDetailFromMissing2FA = 'pass_monitor.item_detail_from_missing_2fa',
     PassMonitorItemDetailFromReusedPassword = 'pass_monitor.item_detail_from_reused_password',
+    PassMonitorItemDetailFromWeakPassword = 'pass_monitor.item_detail_from_weak_password',
     SearchClick = 'search.click',
     SearchTriggered = 'search.triggered',
     TwoFAAutofill = '2fa.autofill',
@@ -45,53 +45,50 @@ export enum TelemetryItemType {
     creditCard = 'credit_card',
 }
 
-type BaseTelemetryEvent<T extends TelemetryEventName, V = {}, D = {}> = {
+export type BaseTelemetryEvent<T extends TelemetryEventName, V = {}, D = {}> = {
     MeasurementGroup: `pass.${TelemetryPlatform}.user_actions`;
     Event: T;
     Values: V;
     Dimensions: { user_tier?: PassPlanResponse['InternalName'] } & D;
-} & T;
+};
 
-type AutofillSource = 'source' | 'app';
+type ImportValues = { item_count: number; vaults: number };
+type ImportDimensions = { source: ImportProvider };
+type ItemDimensions = { type: TelemetryItemType };
+type AutofillDimensions = { location: 'source' | 'app' };
 
-export type TelemetryEvent<T extends TelemetryEventName = TelemetryEventName> = Extract<
-    {
-        [TelemetryEventName.AutofillDisplay]: BaseTelemetryEvent<T, {}, { location: AutofillSource }>;
-        [TelemetryEventName.AutofillTriggered]: BaseTelemetryEvent<T, {}, { location: AutofillSource }>;
-        [TelemetryEventName.AutosaveDisplay]: BaseTelemetryEvent<T>;
-        [TelemetryEventName.AutosaveDone]: BaseTelemetryEvent<T>;
-        [TelemetryEventName.AutosuggestAliasCreated]: BaseTelemetryEvent<T>;
-        [TelemetryEventName.ImportCompletion]: BaseTelemetryEvent<
-            T,
-            { item_count: number; vaults: number },
-            { source: ImportProvider }
-        >;
-        [TelemetryEventName.ItemCreation]: BaseTelemetryEvent<T, {}, { type: TelemetryItemType }>;
-        [TelemetryEventName.ItemDeletion]: BaseTelemetryEvent<T, {}, { type: TelemetryItemType }>;
-        [TelemetryEventName.ItemRead]: BaseTelemetryEvent<T, {}, { type: TelemetryItemType }>;
-        [TelemetryEventName.ItemUpdate]: BaseTelemetryEvent<T, {}, { type: TelemetryItemType }>;
-        [TelemetryEventName.PasskeyAuthSuccess]: BaseTelemetryEvent<T>;
-        [TelemetryEventName.PasskeyCreated]: BaseTelemetryEvent<T>;
-        [TelemetryEventName.PasskeyCreateDisplay]: BaseTelemetryEvent<T>;
-        [TelemetryEventName.PasskeysSuggestionsDisplay]: BaseTelemetryEvent<T>;
-        [TelemetryEventName.PassMonitorDisplayHome]: BaseTelemetryEvent<T>;
-        [TelemetryEventName.PassMonitorDisplayWeakPasswords]: BaseTelemetryEvent<T>;
-        [TelemetryEventName.PassMonitorDisplayReusedPasswords]: BaseTelemetryEvent<T>;
-        [TelemetryEventName.PassMonitorDisplayMissing2FA]: BaseTelemetryEvent<T>;
-        [TelemetryEventName.PassMonitorDisplayExcludedItems]: BaseTelemetryEvent<T>;
-        [TelemetryEventName.PassMonitorDisplayDarkWebMonitoring]: BaseTelemetryEvent<T>;
-        [TelemetryEventName.PassMonitorDisplayMonitoringProtonAddresses]: BaseTelemetryEvent<T>;
-        [TelemetryEventName.PassMonitorDisplayMonitoringEmailAliases]: BaseTelemetryEvent<T>;
-        [TelemetryEventName.PassMonitorAddCustomEmailFromSuggestion]: BaseTelemetryEvent<T>;
-        [TelemetryEventName.PassMonitorItemDetailFromWeakPassword]: BaseTelemetryEvent<T>;
-        [TelemetryEventName.PassMonitorItemDetailFromMissing2FA]: BaseTelemetryEvent<T>;
-        [TelemetryEventName.PassMonitorItemDetailFromReusedPassword]: BaseTelemetryEvent<T>;
-        [TelemetryEventName.SearchClick]: BaseTelemetryEvent<T>;
-        [TelemetryEventName.SearchTriggered]: BaseTelemetryEvent<T>;
-        [TelemetryEventName.TwoFAAutofill]: BaseTelemetryEvent<T>;
-        [TelemetryEventName.TwoFACreation]: BaseTelemetryEvent<T>;
-        [TelemetryEventName.TwoFADisplay]: BaseTelemetryEvent<T>;
-        [TelemetryEventName.TwoFAUpdate]: BaseTelemetryEvent<T>;
-    }[T],
-    T
->;
+type TelemetryEvents =
+    | BaseTelemetryEvent<TelemetryEventName.AutofillDisplay, {}, AutofillDimensions>
+    | BaseTelemetryEvent<TelemetryEventName.AutofillTriggered, {}, AutofillDimensions>
+    | BaseTelemetryEvent<TelemetryEventName.AutosaveDisplay>
+    | BaseTelemetryEvent<TelemetryEventName.AutosaveDone>
+    | BaseTelemetryEvent<TelemetryEventName.AutosuggestAliasCreated>
+    | BaseTelemetryEvent<TelemetryEventName.ImportCompletion, ImportValues, ImportDimensions>
+    | BaseTelemetryEvent<TelemetryEventName.ItemCreation, {}, ItemDimensions>
+    | BaseTelemetryEvent<TelemetryEventName.ItemDeletion, {}, ItemDimensions>
+    | BaseTelemetryEvent<TelemetryEventName.ItemRead, {}, ItemDimensions>
+    | BaseTelemetryEvent<TelemetryEventName.ItemUpdate, {}, ItemDimensions>
+    | BaseTelemetryEvent<TelemetryEventName.PasskeyAuthSuccess>
+    | BaseTelemetryEvent<TelemetryEventName.PasskeyCreated>
+    | BaseTelemetryEvent<TelemetryEventName.PasskeyCreateDisplay>
+    | BaseTelemetryEvent<TelemetryEventName.PasskeysSuggestionsDisplay>
+    | BaseTelemetryEvent<TelemetryEventName.PassMonitorAddCustomEmailFromSuggestion>
+    | BaseTelemetryEvent<TelemetryEventName.PassMonitorDisplayDarkWebMonitoring>
+    | BaseTelemetryEvent<TelemetryEventName.PassMonitorDisplayExcludedItems>
+    | BaseTelemetryEvent<TelemetryEventName.PassMonitorDisplayHome>
+    | BaseTelemetryEvent<TelemetryEventName.PassMonitorDisplayMissing2FA>
+    | BaseTelemetryEvent<TelemetryEventName.PassMonitorDisplayMonitoringEmailAliases>
+    | BaseTelemetryEvent<TelemetryEventName.PassMonitorDisplayMonitoringProtonAddresses>
+    | BaseTelemetryEvent<TelemetryEventName.PassMonitorDisplayReusedPasswords>
+    | BaseTelemetryEvent<TelemetryEventName.PassMonitorDisplayWeakPasswords>
+    | BaseTelemetryEvent<TelemetryEventName.PassMonitorItemDetailFromMissing2FA>
+    | BaseTelemetryEvent<TelemetryEventName.PassMonitorItemDetailFromReusedPassword>
+    | BaseTelemetryEvent<TelemetryEventName.PassMonitorItemDetailFromWeakPassword>
+    | BaseTelemetryEvent<TelemetryEventName.SearchClick>
+    | BaseTelemetryEvent<TelemetryEventName.SearchTriggered>
+    | BaseTelemetryEvent<TelemetryEventName.TwoFAAutofill>
+    | BaseTelemetryEvent<TelemetryEventName.TwoFACreation>
+    | BaseTelemetryEvent<TelemetryEventName.TwoFADisplay>
+    | BaseTelemetryEvent<TelemetryEventName.TwoFAUpdate>;
+
+export type TelemetryEvent<T extends TelemetryEventName = TelemetryEventName> = Extract<TelemetryEvents, { Event: T }>;

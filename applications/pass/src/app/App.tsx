@@ -31,6 +31,7 @@ import { imageResponsetoDataURL } from '@proton/pass/lib/api/images';
 import { createPassExport } from '@proton/pass/lib/export/export';
 import { prepareImport } from '@proton/pass/lib/import/reader';
 import { generateTOTPCode } from '@proton/pass/lib/otp/otp';
+import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
 import { selectExportData } from '@proton/pass/store/selectors/export';
 import type { Maybe, MaybeNull } from '@proton/pass/types';
 import { transferableToFile } from '@proton/pass/utils/file/transferable-file';
@@ -94,7 +95,8 @@ export const getPassCoreProps = (sw: MaybeNull<ServiceWorkerContextValue>): Pass
         onboardingAcknowledge: onboarding.acknowledge,
         onboardingCheck: pipe(onboarding.checkMessage, prop('enabled')),
         onLink: (url, options) => window.open(url, options?.replace ? '_self' : '_blank'),
-        onTelemetry: telemetry.push,
+
+        onTelemetry: pipe(createTelemetryEvent, telemetry.push),
 
         openSettings: (page) =>
             history.push({
