@@ -12,7 +12,7 @@ import useDevicesActions from '../_devices/useDevicesActions';
 import { useDownload } from '../_downloads';
 import { useLinkActions, useLinksActions } from '../_links';
 import { usePhotos } from '../_photos';
-import { useShareUrl } from '../_shares';
+import { useShareActions, useShareUrl } from '../_shares';
 import useUploadFile from '../_uploads/UploadProvider/useUploadFile';
 import { TransferConflictStrategy } from '../_uploads/interface';
 import { useErrorHandler } from '../_utils';
@@ -41,6 +41,7 @@ export default function useActions() {
     const link = useLinkActions();
     const links = useLinksActions();
     const shareUrl = useShareUrl();
+    const shareActions = useShareActions();
     const devicesActions = useDevicesActions();
     const { removePhotosFromCache } = usePhotos();
 
@@ -353,6 +354,29 @@ export default function useActions() {
         });
     };
 
+    // TODO: This can support multiple links in the future
+    const stopSharing = (shareId: string) => {
+        void showConfirmModal({
+            title: c('Title').t`Stop sharing?`,
+            submitText: c('Title').t`Stop sharing`,
+            message: c('Info').t`This action will delete the link and revoke access for all users.`,
+            onSubmit: () =>
+                shareActions
+                    .deleteShare(shareId, { force: true })
+                    .then(() => {
+                        createNotification({
+                            text: c('Notification').t`You stopped sharing this item`,
+                        });
+                    })
+                    .catch(() => {
+                        createNotification({
+                            type: 'error',
+                            text: c('Notification').t`Stopping to share this item has failed`,
+                        });
+                    }),
+        });
+    };
+
     const stopSharingLinks = (abortSignal: AbortSignal, linksToStopSharing: LinkInfo[]) => {
         if (!linksToStopSharing.length) {
             return;
@@ -440,6 +464,7 @@ export default function useActions() {
         restoreLinks,
         deletePermanently,
         emptyTrash,
+        stopSharing,
         stopSharingLinks,
         copyShareLinkToClipboard,
         removeDevice,

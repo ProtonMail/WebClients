@@ -1,5 +1,5 @@
 import { SessionKey } from '@proton/crypto';
-import { SHARE_MEMBER_STATE, SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
+import { SHARE_MEMBER_PERMISSIONS, SHARE_MEMBER_STATE } from '@proton/shared/lib/drive/constants';
 
 import { AuthVersion } from '../../authentication/interface';
 import { DriveFileBlock, ScanResultItem, Thumbnail } from './file';
@@ -173,6 +173,16 @@ export interface InviteShareMemberPayload {
 export interface ListDriveSharedWithMeLinksPayload {
     Links: {
         VolumeID: string;
+        ShareID: string;
+        LinkID: string;
+    }[];
+    AnchorID: string;
+    More: boolean;
+}
+
+export interface ListDriveSharedByMeLinksPayload {
+    Links: {
+        ContextShareID: string;
         ShareID: string;
         LinkID: string;
     }[];

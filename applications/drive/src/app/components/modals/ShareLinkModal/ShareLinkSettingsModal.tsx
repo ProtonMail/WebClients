@@ -81,7 +81,7 @@ const ShareLinkSettingsModal = ({
 
     const handleStopSharing = async () => {
         void showConfirmActionModal({
-            title: c('Title').t`Stop sharing with everyone?`,
+            title: c('Title').t`Stop sharing?`,
             submitText: c('Action').t`Stop sharing`,
             message: confirmationMessage,
             canUndo: true, // Just to hide the message
@@ -127,9 +127,13 @@ const ShareLinkSettingsModal = ({
                     >
                         <Label
                             htmlFor="epirationDateInputId"
-                            className={clsx('p-0 text-semibold', !havePublicSharedLink && 'opacity-30')}
+                            className={clsx(
+                                'flex flex-column p-0 text-semibold',
+                                !havePublicSharedLink && 'opacity-30'
+                            )}
                         >
                             {c('Label').t`Set expiration date`}
+                            <span className="color-weak text-normal">{c('Label').t`Public link expiration date`}</span>
                         </Label>
                         <div className="flex items-center justify-space-between gap-2 ">
                             <ExpirationTimeDatePicker
@@ -157,10 +161,14 @@ const ShareLinkSettingsModal = ({
                         style={{ '--h-custom': '2.25rem' }}
                     >
                         <Label
-                            className={clsx('p-0 text-semibold', !havePublicSharedLink && 'opacity-30')}
+                            className={clsx(
+                                'flex flex-column p-0 text-semibold',
+                                !havePublicSharedLink && 'opacity-30'
+                            )}
                             htmlFor="sharing-modal-password"
                         >
                             {c('Label').t`Set link password`}
+                            <span className="color-weak text-normal">{c('Label').t`Public link password`}</span>
                         </Label>
                         <div className="flex items-center justify-space-between gap-2 md:flex-nowrap">
                             <InputFieldTwo
