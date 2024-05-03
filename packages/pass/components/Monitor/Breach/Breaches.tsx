@@ -2,10 +2,12 @@ import { type FC } from 'react';
 
 import { c } from 'ttag';
 
+import { Href } from '@proton/atoms/Href';
 import { SubHeader } from '@proton/pass/components/Layout/Section/SubHeader';
 import { CustomAddressAddButton } from '@proton/pass/components/Monitor/Address/CustomAddressAddButton';
 import { useMonitor } from '@proton/pass/components/Monitor/MonitorProvider';
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
+import { PASS_BLOG_MONITORING_URL } from '@proton/pass/constants';
 import { useBreachesTable } from '@proton/pass/hooks/monitor/useBreachesTable';
 import { useTelemetryEvent } from '@proton/pass/hooks/useTelemetryEvent';
 import { AddressType } from '@proton/pass/lib/monitor/types';
@@ -28,8 +30,14 @@ export const Breaches: FC = () => {
             <div className="flex flex-nowrap mb-3">
                 <SubHeader
                     title={c('Title').t`Dark Web Monitoring`}
-                    description={c('Description')
-                        .t`Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.`}
+                    description={
+                        <>
+                            {c('Description')
+                                .t`Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.`}
+                            <Href href={PASS_BLOG_MONITORING_URL} className="block mt-2">{c('Info')
+                                .t`How does monitoring work?`}</Href>
+                        </>
+                    }
                 />
                 <div className="hidden lg:block shrink-0 w-2/5">
                     <div className="relative w-full ratio-2/1">
