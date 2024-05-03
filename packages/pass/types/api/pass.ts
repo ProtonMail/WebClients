@@ -899,7 +899,7 @@ export type BreachString = {
 };
 
 export type BreachAction = {
-    /* Unique identifier of the action */
+    /* Unique identifier of the action. Possible values are: <ul><li>stay_alert: No special action required</li><li>password_exposed: Plaintext password leaked. User needs to change the password</li><li>password_source: hashed password exposed. User would better change the password</li><li>passwords_all: all hashed passwords leaked for a site. Recommendation for a paranoid person would be to change all passwords everywhere</li><li>2fa: Recommended to enable 2fa</li><li>aliases: Use an alias instead of your email address</li></ul> */
     Code: string;
     /* Translated name of the action to take */
     Name: string;
@@ -1287,6 +1287,7 @@ export type ApiResponse<Path extends string, Method extends ApiMethod> = Path ex
                                                                                                                     ? Method extends `put`
                                                                                                                         ? {
                                                                                                                               Code?: ResponseCodeSuccess;
+                                                                                                                              Email?: BreachCustomEmailGetResponse;
                                                                                                                           }
                                                                                                                         : never
                                                                                                                     : Path extends `pass/v1/breach/custom_email/${string}/resolved`
