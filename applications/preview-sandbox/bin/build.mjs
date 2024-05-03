@@ -18,7 +18,7 @@ esbuild.buildSync({
     bundle: true,
 
     platform: 'browser',
-    target: browserslistToEsbuild('> 0.5%, not IE 11, Firefox ESR, Safari 11'),
+    target: browserslistToEsbuild('> 0.5%, not IE 11, Firefox ESR, Safari 14, iOS 14'),
 
     entryPoints: [path.join(srcDir, 'index.ts')],
     outfile: outFile,
