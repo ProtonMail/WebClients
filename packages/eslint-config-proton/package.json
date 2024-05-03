@@ -16,8 +16,8 @@
     "license": "GPL-3.0",
     "author": "Proton AG",
     "dependencies": {
-        "@typescript-eslint/eslint-plugin": "^7.7.1",
-        "@typescript-eslint/parser": "^7.7.1",
+        "@typescript-eslint/eslint-plugin": "^7.8.0",
+        "@typescript-eslint/parser": "^7.8.0",
         "eslint": "^8.57.0",
         "eslint-config-airbnb": "^19.0.4",
         "eslint-config-airbnb-typescript": "^18.0.0",
@@ -31,10 +31,10 @@
         "eslint-plugin-monorepo-cop": "^1.0.2",
         "eslint-plugin-no-only-tests": "^3.1.0",
         "eslint-plugin-react": "^7.34.1",
-        "eslint-plugin-react-hooks": "^4.6.1"
+        "eslint-plugin-react-hooks": "^4.6.2"
     },
     "peerDependencies": {
-        "prettier": "3.x",
+        "prettier": "3.2.5",
         "typescript": "*"
     }
 }
