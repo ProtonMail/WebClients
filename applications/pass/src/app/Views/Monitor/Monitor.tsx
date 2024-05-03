@@ -6,9 +6,9 @@ import { SubSidebar } from '@proton/pass/components/Layout/Section/SubSidebar';
 import { Missing2FAs } from '@proton/pass/components/Monitor/2FA/Missing2FAs';
 import { DarkWebMonitoring } from '@proton/pass/components/Monitor/Breach/DarkWebMonitoring';
 import { ExcludedItems } from '@proton/pass/components/Monitor/Item/ExcludedItems';
+import { MonitorSummary } from '@proton/pass/components/Monitor/MonitorSummary';
 import { DuplicatePasswords } from '@proton/pass/components/Monitor/Password/DuplicatePasswords';
 import { WeakPasswords } from '@proton/pass/components/Monitor/Password/WeakPasswords';
-import { Summary } from '@proton/pass/components/Monitor/Summary';
 import { ItemSwitch } from '@proton/pass/components/Navigation/ItemSwitch';
 import { getLocalPath, removeLocalPath } from '@proton/pass/components/Navigation/routing';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
@@ -26,7 +26,7 @@ export const Monitor: FC<RouteChildrenProps> = ({ match }) => {
                     <Route path={`${match?.path}/weak`} component={WeakPasswords} />
                     <Route path={`${match?.path}/excluded`} component={ExcludedItems} />
                     <Route path={`${match?.path}/dark-web`} component={DarkWebMonitoring} />
-                    <Route component={Summary} />
+                    <Route component={MonitorSummary} />
                 </Switch>
             </SubSidebar>
             <Switch>
