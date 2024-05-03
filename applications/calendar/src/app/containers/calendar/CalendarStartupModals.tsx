@@ -2,11 +2,13 @@ import { Dispatch, SetStateAction, useEffect, useRef } from 'react';
 
 import {
     FeatureCode,
+    LightLabellingFeatureModal,
     RebrandingFeedbackModal,
     getShouldOpenReferralModal,
     useFeature,
     useModalState,
     useRebrandingFeedback,
+    useShowLightLabellingFeatureModal,
     useSubscription,
 } from '@proton/components';
 import { OPEN_OFFER_MODAL_EVENT } from '@proton/shared/lib/constants';
@@ -24,6 +26,10 @@ const CalendarStartupModals = ({ setStartupModalState }: Props) => {
 
     const [rebrandingFeedbackModal, setRebrandingFeedbackModal, renderRebrandingFeedbackModal] = useModalState();
     const handleRebrandingFeedbackModalDisplay = useRebrandingFeedback();
+
+    const showLightLabellingFeatureModal = useShowLightLabellingFeatureModal();
+    const [lightLabellingFeatureModalProps, setLightLabellingFeatureModal, renderLightLabellingFeatureModal] =
+        useModalState();
 
     const onCloseWithState = (onClose: () => void) => () => {
         onClose();
@@ -51,15 +57,21 @@ const CalendarStartupModals = ({ setStartupModalState }: Props) => {
             onceRef.current = true;
             setStartupModalState({ hasModal: true, isOpen: true });
             document.dispatchEvent(new CustomEvent(OPEN_OFFER_MODAL_EVENT));
+        } else if (showLightLabellingFeatureModal) {
+            onceRef.current = true;
+            setLightLabellingFeatureModal(true);
         } else if (handleRebrandingFeedbackModalDisplay) {
             openModal(setRebrandingFeedbackModal);
         } else {
             setStartupModalState({ hasModal: false, isOpen: false });
         }
-    }, [shouldOpenReferralModal.open, handleRebrandingFeedbackModalDisplay]);
+    }, [shouldOpenReferralModal.open, showLightLabellingFeatureModal, handleRebrandingFeedbackModalDisplay]);
 
     return (
         <>
+            {renderLightLabellingFeatureModal && (
+                <LightLabellingFeatureModal {...lightLabellingFeatureModalProps} />
+            )}
             {renderRebrandingFeedbackModal && (
                 <RebrandingFeedbackModal
                     onMount={handleRebrandingFeedbackModalDisplay}

@@ -32,6 +32,7 @@ enum AccountFlag {
     ScimTenantCreation = 'ScimTenantCreation',
     InboxDesktopInAppPayments = 'InboxDesktopInAppPayments',
     InboxDesktopThemeSelection = 'InboxDesktopThemeSelection',
+    LightLabellingFeatureModal = 'LightLabellingFeatureModal',
     NewCancellationFlow = 'NewCancellationFlow',
 }
 
