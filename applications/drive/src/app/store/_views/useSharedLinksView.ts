@@ -6,7 +6,7 @@ import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { sendErrorReport } from '../../utils/errorHandling';
 import { useLinksListing } from '../_links';
 import { useUserSettings } from '../_settings';
-import { useDefaultShare } from '../_shares';
+import { useDefaultShare, useDriveSharingFeatureFlag } from '../_shares';
 import { useAbortSignal, useMemoArrayNoMatterTheOrder, useSortingWithDefault } from './utils';
 import { SortField } from './utils/useSorting';
 
@@ -23,6 +23,7 @@ export default function useSharedLinksView(shareId: string) {
     const { getDefaultShare } = useDefaultShare();
     const volumeId = useRef<string>();
     const [isLoading, withLoading] = useLoading(true);
+    const driveSharing = useDriveSharingFeatureFlag();
 
     const linksListing = useLinksListing();
     const { links: sharedLinks, isDecrypting } = linksListing.getCachedSharedByLink(abortSignal, volumeId.current);
@@ -34,7 +35,11 @@ export default function useSharedLinksView(shareId: string) {
     const loadSharedLinks = async (signal: AbortSignal) => {
         const defaultShare = await getDefaultShare(signal);
         volumeId.current = defaultShare.volumeId;
-        await linksListing.loadLinksSharedByLink(signal, defaultShare.volumeId);
+        if (driveSharing) {
+            await linksListing.loadLinksSharedByMeLink(signal, defaultShare.volumeId);
+        } else {
+            await linksListing.loadLinksSharedByLinkLEGACY(signal, defaultShare.volumeId);
+        }
     };
 
     useEffect(() => {

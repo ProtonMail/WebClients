@@ -17,6 +17,7 @@ import {
 import ShareLinkButtonLEGACY from '../ToolbarButtons/_legacy/ShareLinkButtonLEGACY';
 import { getSelectedItems } from '../helpers';
 import { StopSharingButton } from './ToolbarButtons';
+import StopSharingButtonLEGACY from './ToolbarButtons/_legacy/StopSharingButtonLEGACY';
 
 interface Props {
     shareId: string;
@@ -31,6 +32,7 @@ const SharedLinksToolbar = ({ shareId, items }: Props) => {
         () => getSelectedItems(items, selectionControls!.selectedItemIds),
         [items, selectionControls!.selectedItemIds]
     );
+    const isOnlyOneItem = selectedItems.length === 1;
 
     const renderSelectionActions = () => {
         if (!selectedItems.length) {
@@ -48,14 +50,18 @@ const SharedLinksToolbar = ({ shareId, items }: Props) => {
                 <Vr />
                 <RenameButton selectedLinks={selectedItems} />
                 <DetailsButton selectedLinks={selectedItems} />
-                <Vr />
+                {isOnlyOneItem && <Vr />}
                 {driveSharing ? (
                     <ShareLinkButton selectedLinks={selectedItems} />
                 ) : (
                     <ShareLinkButtonLEGACY selectedLinks={selectedItems} />
                 )}
-
-                <StopSharingButton selectedLinks={selectedItems} />
+                {/* //TODO: Add multiple share deletion support */}
+                {driveSharing ? (
+                    <StopSharingButton selectedLinks={selectedItems} />
+                ) : (
+                    <StopSharingButtonLEGACY selectedLinks={selectedItems} />
+                )}
             </>
         );
     };

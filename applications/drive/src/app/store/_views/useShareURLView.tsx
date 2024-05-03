@@ -22,12 +22,8 @@ const getLoadingMessage = (isLinkLoading: boolean, haveShareUrl: boolean, isFile
     return isFile ? c('Info').t`Creating link to file` : c('Info').t`Creating link to folder`;
 };
 
-const getConfirmationMessage = (isFile: boolean) => {
-    return isFile
-        ? c('Info')
-              .t`This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.`
-        : c('Info')
-              .t`This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.`;
+const getConfirmationMessage = () => {
+    return c('Info').t`This action will delete the link and revoke access for all users.`;
 };
 
 const getErrorMessage = (isCreationError: boolean, error: string) => {
@@ -55,7 +51,7 @@ const getPasswordProtectedSharingInfoMessage = (isFile: boolean) => {
  * useLinkView loads link if not cached yet.
  */
 export default function useShareURLView(shareId: string, linkId: string) {
-    const { getLink, loadFreshLink } = useLink();
+    const { getLink } = useLink();
     const [shareUrlInfo, setShareUrlInfo] = useState<{
         shareUrl: ShareURL;
         keyInfo: SharedURLSessionKeyPayload;
@@ -80,14 +76,6 @@ export default function useShareURLView(shareId: string, linkId: string) {
     const shareUrl = shareUrlInfo?.shareUrl;
 
     const [, customPassword] = splitGeneratedAndCustomPassword(password, shareUrl);
-
-    // TODO: Remove this when events or refactor will be in place
-    const manualCacheRefresh = async (abortSignal: AbortSignal) => {
-        const link = await loadFreshLink(abortSignal, shareId, linkId);
-        setLink(link);
-        // If sharingDetails is null that mean there is no public share or direct share
-        setIsShared(!!link.sharingDetails);
-    };
 
     useEffect(() => {
         const abortController = new AbortController();
@@ -159,7 +147,6 @@ export default function useShareURLView(shareId: string, linkId: string) {
                         }
                     }
                 })
-                .then(() => manualCacheRefresh(abortController.signal))
                 .catch((err) => {
                     setError(err);
                 });
@@ -227,7 +214,6 @@ export default function useShareURLView(shareId: string, linkId: string) {
         }
 
         return withDeleting(async () => {
-            const abortController = new AbortController();
             return deleteShareUrl(shareUrl.shareId, shareUrl.shareUrlId)
                 .then(() => {
                     setShareUrlInfo(undefined);
@@ -238,7 +224,6 @@ export default function useShareURLView(shareId: string, linkId: string) {
                         text: c('Notification').t`The link to your item was deleted`,
                     });
                 })
-                .then(() => manualCacheRefresh(abortController.signal))
                 .catch(() => {
                     createNotification({
                         type: 'error',
@@ -252,7 +237,6 @@ export default function useShareURLView(shareId: string, linkId: string) {
         if (!link?.sharingDetails) {
             return;
         }
-        const abortController = new AbortController();
         return withDeleting(
             deleteShare(link.sharingDetails.shareId, { force: true })
                 .then(() => {
@@ -260,7 +244,6 @@ export default function useShareURLView(shareId: string, linkId: string) {
                         text: c('Notification').t`You stopped sharing this item`,
                     });
                 })
-                .then(() => manualCacheRefresh(abortController.signal))
                 .catch(() => {
                     createNotification({
                         type: 'error',
@@ -274,7 +257,7 @@ export default function useShareURLView(shareId: string, linkId: string) {
         isLinkLoading || isShareUrlLoading
             ? getLoadingMessage(isLinkLoading, !!link?.shareUrl, !!link?.isFile)
             : undefined;
-    const confirmationMessage = getConfirmationMessage(!!link?.isFile);
+    const confirmationMessage = getConfirmationMessage();
     const haveError = error || (!isLinkLoading && !link);
     const errorMessage = haveError ? getErrorMessage(!link?.shareUrl, error) : undefined;
     // Show message "protected by password" only when password is saved.

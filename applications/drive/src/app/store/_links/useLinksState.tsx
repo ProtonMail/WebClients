@@ -113,7 +113,12 @@ export function useLinksStateProvider() {
 
     const getSharedByLink = useCallback(
         (shareId: string): Link[] => {
-            return getAllShareLinks(shareId).filter(({ encrypted }) => !encrypted.trashed && !!encrypted.shareUrl);
+            return getAllShareLinks(shareId).filter(
+                ({ encrypted }) =>
+                    !encrypted.trashed &&
+                    !!encrypted.sharingDetails?.shareId &&
+                    encrypted.sharingDetails.shareId !== encrypted.rootShareId
+            );
         },
         [state]
     );
@@ -123,7 +128,7 @@ export function useLinksStateProvider() {
             return getAllShareLinks(shareId).filter(
                 ({ encrypted }) =>
                     !encrypted.trashed &&
-                    !!encrypted.sharingDetails &&
+                    !!encrypted.sharingDetails?.shareId &&
                     encrypted.sharingDetails.shareId === encrypted.rootShareId
             );
         },
