@@ -27,7 +27,6 @@ import { useMountedState } from '@proton/pass/hooks/useEnsureMounted';
 import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
 import type { SanitizedPublicKeyCreate } from '@proton/pass/lib/passkeys/types';
 import { sanitizePasskey } from '@proton/pass/lib/passkeys/utils';
-import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
 import { validateItemName } from '@proton/pass/lib/validation/item';
 import type { MaybeNull, SafeLoginItem, SelectedItem } from '@proton/pass/types';
 import { AutosaveMode, WorkerMessageType } from '@proton/pass/types';
@@ -102,7 +101,7 @@ const PasskeyCreateView: FC<Props> = ({ domain, request, token }) => {
                 })();
 
                 postMessage(response);
-                onTelemetry(createTelemetryEvent(TelemetryEventName.PasskeyCreated, {}, {}));
+                onTelemetry(TelemetryEventName.PasskeyCreated, {}, {});
                 close();
             } catch (err) {
                 const message = getErrorMessage(err);
@@ -129,7 +128,7 @@ const PasskeyCreateView: FC<Props> = ({ domain, request, token }) => {
             const candidates = response.type === 'success' ? response.items : [];
             await form.setFieldValue('step', candidates.length > 0 ? 'items' : 'passkey');
             setItems(candidates);
-            onTelemetry(createTelemetryEvent(TelemetryEventName.PasskeyCreateDisplay, {}, {}));
+            onTelemetry(TelemetryEventName.PasskeyCreateDisplay, {}, {});
         };
 
         run().catch(close);

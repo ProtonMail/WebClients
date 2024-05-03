@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import { useEffect, useMemo } from 'react';
+import { useMemo } from 'react';
 
 import { useIFrameContext } from 'proton-pass-extension/app/content/injections/apps/components/IFrameApp';
 import { ListItem } from 'proton-pass-extension/app/content/injections/apps/components/ListItem';
@@ -9,11 +9,10 @@ import { DropdownItemsList } from 'proton-pass-extension/app/content/injections/
 import { IFrameMessageType } from 'proton-pass-extension/app/content/types';
 import { c } from 'ttag';
 
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { UpsellRef } from '@proton/pass/constants';
 import { useNavigateToUpgrade } from '@proton/pass/hooks/useNavigateToUpgrade';
+import { useTelemetryEvent } from '@proton/pass/hooks/useTelemetryEvent';
 import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
-import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
 import { type SafeLoginItem, WorkerMessageType } from '@proton/pass/types';
 import { PassIconStatus } from '@proton/pass/types/data/pass-icon';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
@@ -28,12 +27,9 @@ type Props = {
 
 export const AutofillLogin: FC<Props> = ({ hostname, items, needsUpgrade }) => {
     const { settings, visible, close, forwardMessage } = useIFrameContext();
-    const { onTelemetry } = usePassCore();
     const navigateToUpgrade = useNavigateToUpgrade({ upsellRef: UpsellRef.LIMIT_AUTOFILL });
 
-    useEffect(() => {
-        if (visible) onTelemetry(createTelemetryEvent(TelemetryEventName.AutofillDisplay, {}, { location: 'source' }));
-    }, [visible]);
+    useTelemetryEvent(TelemetryEventName.AutofillDisplay, {}, { location: 'source' })([visible]);
 
     const dropdownItems = useMemo(
         () =>

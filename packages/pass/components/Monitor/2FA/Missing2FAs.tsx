@@ -5,17 +5,21 @@ import type { List } from 'react-virtualized';
 
 import { c } from 'ttag';
 
+import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { ItemsListItem } from '@proton/pass/components/Item/List/ItemsListItem';
 import { VirtualList } from '@proton/pass/components/Layout/List/VirtualList';
 import { useMonitor } from '@proton/pass/components/Monitor/MonitorProvider';
 import { getItemRoute } from '@proton/pass/components/Navigation/routing';
 import { useSelectItemAction } from '@proton/pass/hooks/useSelectItemAction';
+import { useTelemetryEvent } from '@proton/pass/hooks/useTelemetryEvent';
 import { isTrashed, itemEq } from '@proton/pass/lib/items/item.predicates';
 import { getItemKey } from '@proton/pass/lib/items/item.utils';
 import { selectOptimisticItemsFactory, selectSelectedItems } from '@proton/pass/store/selectors';
 import type { SelectedItem } from '@proton/pass/types';
+import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 
 export const Missing2FAs: FC = () => {
+    const { onTelemetry } = usePassCore();
     const listRef = useRef<List>(null);
     const selectItem = useSelectItemAction();
 
@@ -25,13 +29,15 @@ export const Missing2FAs: FC = () => {
     const selectedItem = useRouteMatch<SelectedItem>(itemRoute)?.params;
 
     useEffect(() => {
-        if (items.length && !selectedItem) {
+        if (items.length > 0 && !selectedItem) {
             const item = items[0];
             selectItem(item, { inTrash: isTrashed(item), prefix: 'monitor/2fa', mode: 'replace' });
         }
     }, [selectedItem, items]);
 
-    return items.length ? (
+    useTelemetryEvent(TelemetryEventName.PassMonitorDisplayMissing2FA, {}, {})([]);
+
+    return items.length > 0 ? (
         <VirtualList
             ref={listRef}
             rowCount={items.length}
@@ -51,6 +57,7 @@ export const Missing2FAs: FC = () => {
                             optimistic={item.optimistic}
                             onClick={(e) => {
                                 e.preventDefault();
+                                onTelemetry(TelemetryEventName.PassMonitorItemDetailFromMissing2FA, {}, {});
                                 selectItem(item, {
                                     inTrash: isTrashed(item),
                                     prefix: 'monitor/2fa',

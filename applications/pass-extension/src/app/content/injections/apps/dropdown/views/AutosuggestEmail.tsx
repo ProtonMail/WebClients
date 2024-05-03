@@ -15,7 +15,6 @@ import { UpsellRef } from '@proton/pass/constants';
 import { useEnsureMounted } from '@proton/pass/hooks/useEnsureMounted';
 import { useNavigateToUpgrade } from '@proton/pass/hooks/useNavigateToUpgrade';
 import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
-import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
 import type { AliasState } from '@proton/pass/store/reducers';
 import type { AliasOptions } from '@proton/pass/types';
 import { type MaybeNull, WorkerMessageType } from '@proton/pass/types';
@@ -90,7 +89,8 @@ export const AutosuggestEmail: FC<Props> = ({ hostname, prefix }) => {
                                 payload: { email: aliasEmail },
                             });
 
-                            onTelemetry(createTelemetryEvent(TelemetryEventName.AutosuggestAliasCreated, {}, {}));
+                            onTelemetry(TelemetryEventName.AutosuggestAliasCreated, {}, {});
+
                             close({ refocus: false });
                         } else setError(response.error);
                     })

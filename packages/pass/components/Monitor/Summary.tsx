@@ -27,8 +27,10 @@ import { useNavigation } from '@proton/pass/components/Navigation/NavigationProv
 import { getLocalPath, getNewItemRoute } from '@proton/pass/components/Navigation/routing';
 import { UpsellingModal } from '@proton/pass/components/Upsell/UpsellingModal';
 import { UpsellRef } from '@proton/pass/constants';
+import { useTelemetryEvent } from '@proton/pass/hooks/useTelemetryEvent';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import { selectPassPlan } from '@proton/pass/store/selectors';
+import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { PASS_SHORT_APP_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
 
 import { BreachPreviewCard } from './Breach/Card/BreachPreviewCard';
@@ -75,6 +77,8 @@ export const Summary: FC = () => {
         ],
         []
     );
+
+    useTelemetryEvent(TelemetryEventName.PassMonitorDisplayHome, {}, {})([]);
 
     return (
         <div className="w-full h-full">
