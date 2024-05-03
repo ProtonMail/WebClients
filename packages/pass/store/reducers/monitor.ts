@@ -46,8 +46,8 @@ const monitorReducer: Reducer<MonitorState> = (state = null, action) => {
         if (verifyCustomAddress.success.match(action)) {
             return partialMerge(state, {
                 custom: state.custom.map((breach) => {
-                    if (breach.addressId !== action.payload) return breach;
-                    return { ...breach, verified: true };
+                    if (breach.addressId !== action.payload.addressId) return breach;
+                    return action.payload;
                 }),
             });
         }

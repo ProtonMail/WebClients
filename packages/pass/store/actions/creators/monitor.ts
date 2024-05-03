@@ -5,6 +5,7 @@ import { isMonitored } from '@proton/pass/lib/items/item.predicates';
 import { getAddressId } from '@proton/pass/lib/monitor/monitor.utils';
 import type {
     AddressBreachDTO,
+    AddressType,
     CustomAddressID,
     MonitorAddress,
     MonitorToggleDTO,
@@ -177,7 +178,7 @@ export const deleteCustomAddress = requestActionsFactory<CustomAddressID, Custom
     },
 });
 
-export const verifyCustomAddress = requestActionsFactory<MonitorVerifyDTO, CustomAddressID>(
+export const verifyCustomAddress = requestActionsFactory<MonitorVerifyDTO, MonitorAddress<AddressType.CUSTOM>>(
     'monitor::breaches::custom::verify'
 )({
     requestId: ({ addressId }) => verifyCustomAddressRequest(addressId),
