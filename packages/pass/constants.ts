@@ -31,6 +31,7 @@ export const PASS_REDDIT_URL = 'https://www.reddit.com/r/ProtonPass/';
 export const PASS_GITHUB_URL = 'https://github.com/ProtonMail/WebClients/tree/main/applications/pass-extension';
 export const PASS_REQUEST_URL = 'https://protonmail.uservoice.com/forums/953584-proton-pass';
 export const PASS_BLOG_TRIAL_URL = 'https://proton.me/support/pass-trial';
+export const PASS_BLOG_MONITORING_URL = 'https://proton.me/support/dark-web-monitoring';
 export const PASS_CHROME_URL = 'https://chrome.google.com/webstore/detail/proton-pass/ghmbeldphafepmbegfdlkpapadhbakde';
 export const PASS_FIREFOX_URL = 'https://addons.mozilla.org/en-US/firefox/addon/proton-pass/';
 export const PASS_SENTINEL_LINK = 'https://proton.me/blog/sentinel-included-pass-plus';
