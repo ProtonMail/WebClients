@@ -1,5 +1,6 @@
 import type { Reducer } from 'redux';
 
+import { PassErrorCode } from '@proton/pass/lib/api/errors';
 import {
     intoCustomMonitorAddress,
     intoMonitorDomain,
@@ -16,6 +17,7 @@ import {
 } from '@proton/pass/store/actions';
 import type { MaybeNull } from '@proton/pass/types';
 import { partialMerge } from '@proton/pass/utils/object/merge';
+import lastItem from '@proton/utils/lastItem';
 
 export type MonitorState = MaybeNull<{
     custom: MonitorAddress<AddressType.CUSTOM>[];
@@ -46,10 +48,17 @@ const monitorReducer: Reducer<MonitorState> = (state = null, action) => {
         if (verifyCustomAddress.success.match(action)) {
             return partialMerge(state, {
                 custom: state.custom.map((breach) => {
-                    if (breach.addressId !== action.payload) return breach;
-                    return { ...breach, verified: true };
+                    if (breach.addressId !== action.payload.addressId) return breach;
+                    return action.payload;
                 }),
             });
+        }
+
+        if (verifyCustomAddress.failure.match(action)) {
+            const addressId = lastItem(action.meta.request.id.split('::'));
+            if (action.payload.code === PassErrorCode.NOT_ALLOWED && addressId) {
+                return partialMerge(state, { custom: state.custom.filter((breach) => breach.addressId !== addressId) });
+            }
         }
 
         if (deleteCustomAddress.success.match(action)) {
