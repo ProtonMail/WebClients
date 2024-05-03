@@ -19,8 +19,8 @@ import { TitleField } from '@proton/pass/components/Form/Field/TitleField';
 import { ItemIcon } from '@proton/pass/components/Layout/Icon/ItemIcon';
 import { MAX_ITEM_NAME_LENGTH } from '@proton/pass/constants';
 import { useMountedState } from '@proton/pass/hooks/useEnsureMounted';
+import { useTelemetryEvent } from '@proton/pass/hooks/useTelemetryEvent';
 import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
-import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
 import { validateItemName } from '@proton/pass/lib/validation/item';
 import type { AutosavePayload, AutosaveRequest, AutosaveType, SelectedItem } from '@proton/pass/types';
 import { AutosaveMode, WorkerMessageType } from '@proton/pass/types';
@@ -89,7 +89,7 @@ export const Autosave: FC<Props> = ({ data }) => {
             )
                 .then((result) => {
                     if (result.type === 'success') {
-                        onTelemetry(createTelemetryEvent(TelemetryEventName.AutosaveDone, {}, {}));
+                        onTelemetry(TelemetryEventName.AutosaveDone, {}, {});
                         close?.({ discard: true });
                     } else createNotification({ text: c('Warning').t`Unable to save`, type: 'error' });
                 })
@@ -98,9 +98,7 @@ export const Autosave: FC<Props> = ({ data }) => {
         },
     });
 
-    useEffect(() => {
-        if (visible) onTelemetry(createTelemetryEvent(TelemetryEventName.AutosaveDisplay, {}, {}));
-    }, [visible]);
+    useTelemetryEvent(TelemetryEventName.AutosaveDisplay, {}, {})([visible]);
 
     useEffect(() => {
         if (shouldUpdate) form.setValues(getInitialValues(data)).catch(noop);

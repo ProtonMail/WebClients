@@ -11,9 +11,9 @@ import { VirtualList } from '@proton/pass/components/Layout/List/VirtualList';
 import { useMonitor } from '@proton/pass/components/Monitor/MonitorProvider';
 import { getItemRoute } from '@proton/pass/components/Navigation/routing';
 import { useSelectItemAction } from '@proton/pass/hooks/useSelectItemAction';
+import { useTelemetryEvent } from '@proton/pass/hooks/useTelemetryEvent';
 import { isTrashed, itemEq } from '@proton/pass/lib/items/item.predicates';
 import { getItemKey } from '@proton/pass/lib/items/item.utils';
-import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
 import { selectOptimisticItemsFactory, selectSelectedItems } from '@proton/pass/store/selectors';
 import type { ItemRevisionWithOptimistic, SelectedItem, UniqueItem } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
@@ -55,15 +55,13 @@ export const DuplicatePasswords: FC = () => {
     );
 
     useEffect(() => {
-        if (duplicatePasswordItems.length && !selectedItem) {
+        if (duplicatePasswordItems.length > 0 && !selectedItem) {
             const item = duplicatePasswordItems[0];
             selectItem(item, { inTrash: isTrashed(item), prefix: 'monitor/duplicates', mode: 'replace' });
         }
     }, [selectedItem, duplicatePasswordItems]);
 
-    useEffect(() => {
-        onTelemetry(createTelemetryEvent(TelemetryEventName.PassMonitorDisplayReusedPasswords, {}, {}));
-    }, []);
+    useTelemetryEvent(TelemetryEventName.PassMonitorDisplayReusedPasswords, {}, {})([]);
 
     return interpolation.length > 0 ? (
         <VirtualList
@@ -86,6 +84,7 @@ export const DuplicatePasswords: FC = () => {
                                     key={id}
                                     onClick={(e) => {
                                         e.preventDefault();
+                                        onTelemetry(TelemetryEventName.PassMonitorItemDetailFromReusedPassword, {}, {});
                                         selectItem(item, {
                                             inTrash: isTrashed(item),
                                             prefix: 'monitor/duplicates',
