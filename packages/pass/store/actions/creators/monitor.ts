@@ -5,6 +5,7 @@ import { isMonitored } from '@proton/pass/lib/items/item.predicates';
 import { getAddressId } from '@proton/pass/lib/monitor/monitor.utils';
 import type {
     AddressBreachDTO,
+    AddressType,
     CustomAddressID,
     MonitorAddress,
     MonitorToggleDTO,
@@ -36,6 +37,7 @@ import type {
     UpdateUserMonitorStateRequest,
 } from '@proton/pass/types/api/pass';
 import { pipe } from '@proton/pass/utils/fp/pipe';
+import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { PROTON_SENTINEL_NAME } from '@proton/shared/lib/constants';
 import type { SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/interfaces';
 
@@ -177,17 +179,18 @@ export const deleteCustomAddress = requestActionsFactory<CustomAddressID, Custom
     },
 });
 
-export const verifyCustomAddress = requestActionsFactory<MonitorVerifyDTO, CustomAddressID>(
+export const verifyCustomAddress = requestActionsFactory<MonitorVerifyDTO, MonitorAddress<AddressType.CUSTOM>>(
     'monitor::breaches::custom::verify'
 )({
     requestId: ({ addressId }) => verifyCustomAddressRequest(addressId),
     failure: {
+        config: { data: true },
         prepare: (error) =>
             withNotification({
                 text: c('Error').t`Failed to verify email address`,
                 type: 'error',
                 error,
-            })({ payload: null }),
+            })({ payload: getApiError(error) }),
     },
 });
 
