@@ -27,7 +27,7 @@
         "node-gyp": "^10.1.0",
         "rfc2047@^2.0.1": "patch:rfc2047@npm%3A2.0.1#./.yarn/patches/rfc2047-npm-2.0.1-60a2a07c99.patch",
         "safe-buffer": "^5.2.1",
-        "terser": "^5.30.4"
+        "terser": "^5.31.0"
     },
     "dependencies": {
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
@@ -45,7 +45,7 @@
         "prettier": "^3.2.5",
         "sort-package-json": "^2.10.0"
     },
-    "packageManager": "yarn@4.1.1",
+    "packageManager": "yarn@4.2.1",
     "engines": {
         "node": ">= 20.12.2"
     }
