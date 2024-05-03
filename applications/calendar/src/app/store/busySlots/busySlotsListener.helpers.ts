@@ -1,6 +1,6 @@
 import { fromUnixTime, getUnixTime } from 'date-fns';
 
-import { getBusyTimeSlots } from '@proton/shared/lib/api/calendars';
+import { getBusySlots } from '@proton/shared/lib/api/calendars';
 import { BUSY_TIME_SLOTS_MAX_ATTENDEES_DISPLAYED } from '@proton/shared/lib/calendar/constants';
 import { ACCENT_COLORS } from '@proton/shared/lib/colors';
 import { convertZonedDateTimeToUTC, fromUTCDate, toUTCDate } from '@proton/shared/lib/date/timezone';
@@ -8,28 +8,37 @@ import { Api } from '@proton/shared/lib/interfaces';
 import {
     BUSY_TIME_SLOT_TYPE,
     CalendarWithOwnMembers,
-    GetBusyTimeSlotsResponse,
+    GetBusySlotsResponse,
 } from '@proton/shared/lib/interfaces/calendar';
 import diff from '@proton/utils/diff';
 
 import type { CalendarState } from '../store';
-import type {
-    BusyAttendeeFetchStatusSuccessActionPayload,
-    BusyTimeSlot,
-    BusyTimeSlotsState,
-} from './busyTimeSlotsSlice';
+import {
+    type BusySlot,
+    type BusySlotsAttendeeFetchStatusSuccessActionPayload,
+    type BusySlotsState,
+    busySlotsSliceName,
+} from './busySlotsSlice';
 
 export const getBusyAttendeesToFetch = (state: CalendarState): string[] => {
-    const { busyTimeSlots } = state;
-    const { attendees: eventAttendees, attendeeFetchStatus } = busyTimeSlots;
+    const { attendees: eventAttendees, attendeeFetchStatus } = state[busySlotsSliceName];
     const attendeesToFetch = eventAttendees.filter((email) => attendeeFetchStatus[email] === undefined);
 
     return attendeesToFetch;
 };
 
-export const getBusyAttendeesColor = (
+const getInfinitelyLoopingColor = (() => {
+    let index = 0;
+    return () => {
+        const color = ACCENT_COLORS[index];
+        index = (index + 1) % ACCENT_COLORS.length;
+        return color;
+    };
+})();
+
+const getBusyAttendeesColor = (
     nextAttendees: string[],
-    actualAttendeesColors: BusyTimeSlotsState['attendeeColor'],
+    actualAttendeesColors: BusySlotsState['attendeeColor'],
     userCalendars: CalendarWithOwnMembers[]
 ) => {
     const result: { [email: string]: string } = {};
@@ -43,11 +52,17 @@ export const getBusyAttendeesColor = (
         const attendeeColor = (() => {
             const calendarColors = userCalendars.map((item) => item?.Members?.[0]?.Color).filter(Boolean) || [];
             const attendeeColors = [...Object.values(actualAttendeesColors), ...Object.values(result)];
-            const availableColors = ACCENT_COLORS.filter((color) => {
-                return !calendarColors.includes(color) && !attendeeColors.includes(color);
-            });
+            const availableColors = ACCENT_COLORS.filter(
+                (color) => !calendarColors.includes(color) && !attendeeColors.includes(color)
+            );
 
-            return availableColors[0] || ACCENT_COLORS[0];
+            // If filtered colors are available, return the first one
+            if (availableColors.length > 0) {
+                return availableColors[0];
+            }
+
+            // If too much attendees then loop over the entire color palette
+            return getInfinitelyLoopingColor();
         })();
 
         result[email] = attendeeColor;
@@ -60,9 +75,9 @@ export const getBusyAttendeesColor = (
  * @param metadata
  * @returns object metatada
  */
-export const assertBusyTimeSlotMetadata = (
-    metadata: BusyTimeSlotsState['metadata']
-): Exclude<BusyTimeSlotsState['metadata'], undefined> => {
+const assertBusySlotsMetadata = (
+    metadata: BusySlotsState['metadata']
+): Exclude<BusySlotsState['metadata'], undefined> => {
     if (metadata === undefined) {
         throw new Error('Missing metadata');
     }
@@ -73,8 +88,8 @@ export const assertBusyTimeSlotMetadata = (
  * Get the range of dates to fetch busy slots
  * @returns Timerange to fetch busy slots in UTC timestamp based on the current view Timezone
  */
-export const getBusyDatesToFetch = (state: CalendarState): [startTimestamp: number, endTimestamp: number] => {
-    const { viewStartDate, viewEndDate, tzid } = assertBusyTimeSlotMetadata(state.busyTimeSlots.metadata);
+const getBusyDatesToFetch = (state: CalendarState): [startTimestamp: number, endTimestamp: number] => {
+    const { viewStartDate, viewEndDate, tzid } = assertBusySlotsMetadata(state[busySlotsSliceName].metadata);
 
     return [
         getUnixTime(toUTCDate(convertZonedDateTimeToUTC(fromUTCDate(fromUnixTime(viewStartDate)), tzid))),
@@ -82,33 +97,12 @@ export const getBusyDatesToFetch = (state: CalendarState): [startTimestamp: numb
     ];
 };
 
-/**
- * Check if busy slots date range has changed
- * @returns boolean
- */
-export const busySlotsDateRangeChanged = (prevState: CalendarState, nextState: CalendarState) => {
-    // If prev state start date was not defined it's not considered as a change but an init
-    if (prevState.busyTimeSlots.metadata?.viewStartDate === undefined) {
-        return false;
-    }
-
-    const prevStartDate = getBusyDatesToFetch(prevState)[0];
-    const nextStartDate = getBusyDatesToFetch(nextState)[0];
-
-    // If the start date has changed and the view start date is not the same day
-    if (prevStartDate !== nextStartDate) {
-        return true;
-    }
-
-    return false;
-};
-
-const normalizeDataFromResponse = (
-    response: GetBusyTimeSlotsResponse,
+const normalizeBusySlotsResponse = (
+    response: GetBusySlotsResponse,
     type: BUSY_TIME_SLOT_TYPE
-): { busyTimeSlots: BusyTimeSlot[]; isDataAccessible: boolean } => {
+): { busySlots: BusySlot[]; isDataAccessible: boolean } => {
     const isDataAccessible = !!response?.BusySchedule?.IsDataAccessible;
-    const busyTimeSlots = (response?.BusySchedule?.BusyTimeSlots || []).reduce<BusyTimeSlot[]>((acc, timeSlot) => {
+    const busySlots = (response?.BusySchedule?.BusyTimeSlots || []).reduce<BusySlot[]>((acc, timeSlot) => {
         if (!timeSlot || !timeSlot.Start || !timeSlot.End) {
             return acc;
         }
@@ -123,17 +117,17 @@ const normalizeDataFromResponse = (
         return acc;
     }, []);
 
-    return { busyTimeSlots, isDataAccessible };
+    return { busySlots, isDataAccessible };
 };
 
 const fetchBusySlotsFactory = async (
     type: BUSY_TIME_SLOT_TYPE,
-    options: FetchAttendeeBusyTimeSlotsOptions,
-    normalizer: typeof normalizeDataFromResponse
+    options: FetchAttendeeBusySlotsOptions,
+    normalizer: typeof normalizeBusySlotsResponse
 ) => {
     const { api, email, startDate, endDate, tzid } = options;
-    const result = await api<GetBusyTimeSlotsResponse>(
-        getBusyTimeSlots(email, {
+    const result = await api<GetBusySlotsResponse>(
+        getBusySlots(email, {
             Start: startDate,
             End: endDate,
             Type: type,
@@ -143,7 +137,7 @@ const fetchBusySlotsFactory = async (
 
     return normalizer(result, type);
 };
-interface FetchAttendeeBusyTimeSlotsOptions {
+interface FetchAttendeeBusySlotsOptions {
     api: Api;
     email: string;
     startDate: number;
@@ -151,17 +145,17 @@ interface FetchAttendeeBusyTimeSlotsOptions {
     tzid: string;
 }
 
-export const fetchAttendeeBusyTimeSlots = async (options: FetchAttendeeBusyTimeSlotsOptions) => {
+const fetchAttendeeBusySlots = async (options: FetchAttendeeBusySlotsOptions) => {
     // Fetch with `allSettled` to get results even if some of them fail
     const results = await Promise.allSettled([
-        fetchBusySlotsFactory(BUSY_TIME_SLOT_TYPE.PARTIAL_DAY_IN, options, normalizeDataFromResponse),
-        fetchBusySlotsFactory(BUSY_TIME_SLOT_TYPE.PARTIAL_DAY_BEFORE, options, normalizeDataFromResponse),
-        fetchBusySlotsFactory(BUSY_TIME_SLOT_TYPE.FULL_DAY_IN, options, normalizeDataFromResponse),
-        fetchBusySlotsFactory(BUSY_TIME_SLOT_TYPE.FULL_DAY_BEFORE, options, normalizeDataFromResponse),
+        fetchBusySlotsFactory(BUSY_TIME_SLOT_TYPE.PARTIAL_DAY_IN, options, normalizeBusySlotsResponse),
+        fetchBusySlotsFactory(BUSY_TIME_SLOT_TYPE.PARTIAL_DAY_BEFORE, options, normalizeBusySlotsResponse),
+        fetchBusySlotsFactory(BUSY_TIME_SLOT_TYPE.FULL_DAY_IN, options, normalizeBusySlotsResponse),
+        fetchBusySlotsFactory(BUSY_TIME_SLOT_TYPE.FULL_DAY_BEFORE, options, normalizeBusySlotsResponse),
     ]);
 
     // Filter out the failed promises
-    const result = results.reduce<ReturnType<typeof normalizeDataFromResponse>[]>((acc, res) => {
+    const result = results.reduce<ReturnType<typeof normalizeBusySlotsResponse>[]>((acc, res) => {
         if (res.status === 'fulfilled') {
             acc.push(res.value);
         }
@@ -171,16 +165,16 @@ export const fetchAttendeeBusyTimeSlots = async (options: FetchAttendeeBusyTimeS
     /** Based on the first successful result out of all the busy time slots calls for this attendee */
     const isDataAccessible = !!result[0].isDataAccessible;
 
-    let busyTimeSlots: BusyTimeSlot[] = result.reduce<BusyTimeSlot[]>((acc, res) => {
-        if (Array.isArray(res.busyTimeSlots)) {
-            acc.push(...res.busyTimeSlots);
+    let busySlots: BusySlot[] = result.reduce<BusySlot[]>((acc, res) => {
+        if (Array.isArray(res.busySlots)) {
+            acc.push(...res.busySlots);
         }
         return acc;
     }, []);
 
     return {
         isDataAccessible,
-        busyTimeSlots,
+        busySlots,
     };
 };
 
@@ -189,7 +183,7 @@ interface FetchAttendeesParams {
     attendeesToFetch: string[];
     state: CalendarState;
     onColorChange: (attendees: { email: string; color: string }[]) => void;
-    onFetchSuccess: (attendees: BusyAttendeeFetchStatusSuccessActionPayload[]) => void;
+    onFetchSuccess: (attendees: BusySlotsAttendeeFetchStatusSuccessActionPayload[]) => void;
     onFetchFailed: (attendees: string[]) => void;
 }
 
@@ -197,7 +191,7 @@ interface FetchAttendeesParams {
  * Main function in charge of fetching attendees busy slots
  * @info This function dispatches redux actions
  */
-export const fetchAttendeesBusyTimeSlots = async ({
+export const fetchAttendeesBusySlots = async ({
     attendeesToFetch,
     state,
     api,
@@ -205,12 +199,12 @@ export const fetchAttendeesBusyTimeSlots = async ({
     onFetchFailed,
     onFetchSuccess,
 }: FetchAttendeesParams) => {
-    const { tzid } = assertBusyTimeSlotMetadata(state.busyTimeSlots.metadata);
+    const { tzid } = assertBusySlotsMetadata(state[busySlotsSliceName].metadata);
 
     // Define attendees color
     const nextAttendeesColor = getBusyAttendeesColor(
         attendeesToFetch,
-        state.busyTimeSlots.attendeeColor,
+        state[busySlotsSliceName].attendeeColor,
         state.calendars.value || []
     );
 
@@ -225,7 +219,7 @@ export const fetchAttendeesBusyTimeSlots = async ({
 
     // Set statuses to fetching
     const promises = attendeesToFetch.map((email) =>
-        fetchAttendeeBusyTimeSlots({
+        fetchAttendeeBusySlots({
             api,
             email,
             startDate: startDateToFetch,
@@ -235,7 +229,7 @@ export const fetchAttendeesBusyTimeSlots = async ({
     );
 
     const results = await Promise.allSettled(promises);
-    const fulfilledAttendees: Record<string, Awaited<ReturnType<typeof fetchAttendeeBusyTimeSlots>>> = {};
+    const fulfilledAttendees: Record<string, Awaited<ReturnType<typeof fetchAttendeeBusySlots>>> = {};
     const rejectedAttendeesEmails: string[] = [];
 
     results.forEach((result, index) => {
@@ -248,26 +242,29 @@ export const fetchAttendeesBusyTimeSlots = async ({
         }
     });
 
-    const currentVisibleAttendeesCount = state.busyTimeSlots.attendees.filter(
+    const currentVisibleAttendeesCount = state[busySlotsSliceName].attendees.filter(
         (email) =>
-            state.busyTimeSlots.attendeeVisibility[email] === 'visible' &&
-            state.busyTimeSlots.attendeeDataAccessible[email]
+            state[busySlotsSliceName].attendeeVisibility[email] === 'visible' &&
+            state[busySlotsSliceName].attendeeDataAccessible[email]
     ).length;
 
     if (Object.keys(fulfilledAttendees).length > 0) {
         let nonAccessibleCounter = 0;
-        const formattedAttendees: BusyAttendeeFetchStatusSuccessActionPayload[] = Object.entries(
+        const formattedAttendees: BusySlotsAttendeeFetchStatusSuccessActionPayload[] = Object.entries(
             fulfilledAttendees
-        ).map(([email, { isDataAccessible, busyTimeSlots }], index) => {
+        ).map(([email, { isDataAccessible, busySlots }], index) => {
             if (!isDataAccessible) {
                 nonAccessibleCounter++;
             }
             const visibleAttendeesCount = currentVisibleAttendeesCount + index - nonAccessibleCounter;
 
-            const visibility = visibleAttendeesCount >= BUSY_TIME_SLOTS_MAX_ATTENDEES_DISPLAYED ? 'hidden' : 'visible';
+            const visibility =
+                visibleAttendeesCount >= BUSY_TIME_SLOTS_MAX_ATTENDEES_DISPLAYED || !isDataAccessible
+                    ? 'hidden'
+                    : 'visible';
 
             return {
-                busyTimeSlots,
+                busySlots,
                 email,
                 isDataAccessible,
                 visibility,
@@ -283,16 +280,22 @@ export const fetchAttendeesBusyTimeSlots = async ({
 
 export const getBusySlotStateChangeReason = (prevState: CalendarState, nextState: CalendarState) => {
     const attendeesChanged =
-        nextState.busyTimeSlots.attendees !== prevState.busyTimeSlots.attendees &&
-        diff(nextState.busyTimeSlots.attendees, prevState.busyTimeSlots.attendees).length > 0;
+        nextState[busySlotsSliceName].attendees !== prevState[busySlotsSliceName].attendees &&
+        diff(nextState[busySlotsSliceName].attendees, prevState[busySlotsSliceName].attendees).length > 0;
 
     const calendarViewDateChanged =
-        nextState.busyTimeSlots.attendees.length > 0 &&
-        nextState.busyTimeSlots.metadata?.viewStartDate !== prevState.busyTimeSlots.metadata?.viewStartDate;
+        nextState[busySlotsSliceName].attendees.length > 0 &&
+        nextState[busySlotsSliceName].metadata?.viewStartDate !== prevState[busySlotsSliceName].metadata?.viewStartDate;
 
     const calendarViewChanged =
-        nextState.busyTimeSlots.attendees.length > 0 &&
-        nextState.busyTimeSlots.metadata?.view !== prevState.busyTimeSlots.metadata?.view;
+        nextState[busySlotsSliceName].attendees.length > 0 &&
+        nextState[busySlotsSliceName].metadata?.view !== prevState[busySlotsSliceName].metadata?.view;
+
+    const timezoneChanged =
+        nextState[busySlotsSliceName].attendees.length > 0 &&
+        nextState[busySlotsSliceName].metadata?.tzid !== prevState[busySlotsSliceName].metadata?.tzid;
+
+    const displayChanged = nextState[busySlotsSliceName].displayOnGrid !== prevState[busySlotsSliceName].displayOnGrid;
 
     if (attendeesChanged) {
         return 'attendees-changed';
@@ -304,6 +307,14 @@ export const getBusySlotStateChangeReason = (prevState: CalendarState, nextState
 
     if (calendarViewChanged) {
         return 'calendar-view-changed';
+    }
+
+    if (displayChanged) {
+        return 'display-changed';
+    }
+
+    if (timezoneChanged) {
+        return 'timezone-changed';
     }
 
     return null;

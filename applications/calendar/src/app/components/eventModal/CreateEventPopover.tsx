@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { PrimaryButton, useMailSettings } from '@proton/components';
-import useBusyTimeSlotsAvailable from '@proton/components/containers/calendar/hooks/useBusyTimeSlotsAvailable';
+import useBusySlotsAvailable from '@proton/components/containers/calendar/hooks/useBusySlotsAvailable';
 import { VIEWS } from '@proton/shared/lib/calendar/constants';
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { Address } from '@proton/shared/lib/interfaces';
@@ -15,7 +15,7 @@ import throttle from '@proton/utils/throttle';
 import { getCannotSaveEvent } from '../../helpers/event';
 import { useRect } from '../../hooks/useRect';
 import { INVITE_ACTION_TYPES, InviteActions } from '../../interfaces/Invite';
-import { busyTimeSlotsActions } from '../../store/busyTimeSlots/busyTimeSlotsSlice';
+import { busySlotsActions } from '../../store/busySlots/busySlotsSlice';
 import { useCalendarDispatch } from '../../store/hooks';
 import PopoverContainer from '../events/PopoverContainer';
 import PopoverFooter from '../events/PopoverFooter';
@@ -63,7 +63,7 @@ const CreateEventPopover = ({
 }: Props) => {
     const [mailSettings] = useMailSettings();
     const dispatch = useCalendarDispatch();
-    const isBusyTimeSlotsAvailable = useBusyTimeSlotsAvailable();
+    const isBusySlotsAvailable = useBusySlotsAvailable();
     const [participantError, setParticipantError] = useState(false);
     const errors = { ...validateEventModel(model), participantError };
     const cannotSave = getCannotSaveEvent({
@@ -128,8 +128,8 @@ const CreateEventPopover = ({
     };
 
     useEffect(() => {
-        if (isBusyTimeSlotsAvailable) {
-            dispatch(busyTimeSlotsActions.setDisplay(true));
+        if (isBusySlotsAvailable) {
+            dispatch(busySlotsActions.setDisplay(true));
         }
     }, []);
 

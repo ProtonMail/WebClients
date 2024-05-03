@@ -246,7 +246,7 @@ export enum BUSY_TIME_SLOT_TYPE {
     FULL_DAY_BEFORE = 3,
 }
 
-export interface GetBusyTimeSlotsParams {
+export interface GetBusySlotsParams {
     /** Min 0, Max 100. Defaults to 100 */
     PageSize?: number;
     /** 0 based index. Defaults to 0 */
@@ -260,7 +260,7 @@ export interface GetBusyTimeSlotsParams {
     Timezone: string;
 }
 
-export interface GetBusyTimeSlotsResponse extends ApiResponse {
+export interface GetBusySlotsResponse extends ApiResponse {
     BusySchedule: {
         IsDataAccessible: boolean;
         BusyTimeSlots: { Start: number; End: number }[] | null;

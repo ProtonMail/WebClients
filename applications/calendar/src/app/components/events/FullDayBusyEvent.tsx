@@ -37,7 +37,9 @@ const FullDayBusyEvent = ({
     const { Name: contactName } = contactEmailsMap[canonicalizedEmail] || {};
     const { nameEmail } = getContactDisplayNameEmail({ name: contactName, email: event.email });
 
-    const isHighlighted = useCalendarSelector((state) => state.busyTimeSlots.attendeeHighlight === canonicalizedEmail);
+    const isHighlighted = useCalendarSelector(
+        (state) => state.calendarBusySlots.attendeeHighlight === canonicalizedEmail
+    );
 
     const eventStyle = useMemo(() => {
         return getEventStyle(color);
