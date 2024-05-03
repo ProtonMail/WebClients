@@ -111,19 +111,19 @@ export const useShareInvitees = (existingEmails: string[]) => {
                     });
                     return copy;
                 });
-                return;
-            }
-            const publicKey = await CryptoProxy.importPublicKey({ armoredKey: primaryPublicKey });
-            setInviteesMap((map) => {
-                const copy = new Map(map);
-                copy.set(email, {
-                    ...filteredInvitee,
-                    isLoading: false,
-                    isExternal: false,
-                    publicKey,
+            } else {
+                const publicKey = await CryptoProxy.importPublicKey({ armoredKey: primaryPublicKey });
+                setInviteesMap((map) => {
+                    const copy = new Map(map);
+                    copy.set(email, {
+                        ...filteredInvitee,
+                        isLoading: false,
+                        isExternal: false,
+                        publicKey,
+                    });
+                    return copy;
                 });
-                return copy;
-            });
+            }
         }
 
         if (duplicateInvitees.length) {
