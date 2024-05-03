@@ -73,19 +73,34 @@ describe('useShareInvitees', () => {
         // TODO: We currently don't support non-proton account, update test after support
         it('should be able to add proton/non-proton invitee', async () => {
             const { result } = renderHook(() => useShareInvitees([]));
+            when(mockedGetPrimaryPublicKey)
+                .calledWith(expect.anything(), inviteeInternal2.email)
+                .mockResolvedValueOnce(undefined);
 
             await act(async () => {
-                result.current.add([inviteeInternal, inviteeExternalProton, inviteeExternalNonProton]);
+                result.current.add([
+                    inviteeInternal,
+                    inviteeInternal2,
+                    inviteeExternalProton,
+                    inviteeExternalNonProton,
+                ]);
             });
             // @ts-ignore
             expect(result.all[1].invitees).toEqual([
                 { ...inviteeInternal, isLoading: true },
+                { ...inviteeInternal2, publicKey: undefined, isLoading: true },
                 { ...inviteeExternalProton, error: new Error('External accounts are not supported yet') },
                 { ...inviteeExternalNonProton, error: new Error('External accounts are not supported yet') },
             ]);
 
             expect(result.current.invitees).toEqual([
                 { ...inviteeInternal, publicKey, isExternal: false, isLoading: false },
+                {
+                    ...inviteeInternal2,
+                    isExternal: true,
+                    error: new Error('Not a Proton account'),
+                    isLoading: false,
+                },
                 {
                     ...inviteeExternalProton,
                     error: new Error('External accounts are not supported yet'),
