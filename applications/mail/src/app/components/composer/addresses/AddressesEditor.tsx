@@ -55,7 +55,7 @@ const AddressesEditor = ({
     return (
         <div className="flex flex-column flex-nowrap items-start mt-0">
             <div className="flex flex-row w-full relative flex-column md:flex-row" data-testid="composer:to-field">
-                <Label htmlFor={`to-${uid}`} className="composer-meta-label text-semibold">
+                <Label htmlFor={`to-${uid}`} className="composer-meta-label sr-only text-semibold">
                     {c('Title').t`To`}
                 </Label>
                 <div
@@ -71,7 +71,7 @@ const AddressesEditor = ({
                         messageSendInfo={messageSendInfo}
                         onChange={handleChange('ToList')}
                         inputFocusRef={inputFocusRefs.to}
-                        placeholder={c('Placeholder').t`Email address`}
+                        placeholder={c('Title').t`To`}
                         expanded={expanded}
                         dataTestId="composer:to"
                         classname="composer-editor-to flex-1"
@@ -121,7 +121,7 @@ const AddressesEditor = ({
                         >
                             <Label
                                 htmlFor={`cc-${uid}`}
-                                className="composer-meta-label text-semibold"
+                                className="composer-meta-label sr-only text-semibold"
                                 title={c('Label').t`Carbon Copy`}
                             >
                                 {c('Title').t`CC`}
@@ -131,7 +131,7 @@ const AddressesEditor = ({
                                 recipients={composer.recipients.CCList}
                                 messageSendInfo={messageSendInfo}
                                 onChange={handleChange('CCList')}
-                                placeholder={c('Placeholder').t`Email address`}
+                                placeholder={c('Title').t`CC`}
                                 dataTestId="composer:to-cc"
                                 inputFocusRef={inputFocusRefs.cc}
                                 addContactButton={c('Title').t`CC`}
@@ -150,7 +150,7 @@ const AddressesEditor = ({
                         >
                             <Label
                                 htmlFor={`bcc-${uid}`}
-                                className="composer-meta-label text-semibold"
+                                className="composer-meta-label sr-only text-semibold"
                                 title={c('Label').t`Blind Carbon Copy`}
                             >
                                 {c('Title').t`BCC`}
@@ -160,7 +160,7 @@ const AddressesEditor = ({
                                 recipients={composer.recipients.BCCList}
                                 messageSendInfo={messageSendInfo}
                                 onChange={handleChange('BCCList')}
-                                placeholder={c('Placeholder').t`Email address`}
+                                placeholder={c('Title').t`BCC`}
                                 dataTestId="composer:to-bcc"
                                 addContactButton={c('Title').t`BCC`}
                                 inputFocusRef={inputFocusRefs.bcc}

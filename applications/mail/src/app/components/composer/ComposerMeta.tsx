@@ -1,4 +1,4 @@
-import { ChangeEvent, MutableRefObject, useState } from 'react';
+import { ChangeEvent, MutableRefObject, forwardRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -26,70 +26,77 @@ interface Props {
     onEditExpiration: () => void;
 }
 
-const ComposerMeta = ({
-    composerID,
-    message,
-    messageSendInfo,
-    disabled,
-    onChange,
-    onChangeContent,
-    addressesBlurRef,
-    addressesFocusRef,
-    onEditExpiration,
-}: Props) => {
-    const [uid] = useState(generateUID('composer'));
+const ComposerMeta = forwardRef<HTMLDivElement, Props>(
+    (
+        {
+            composerID,
+            message,
+            messageSendInfo,
+            disabled,
+            onChange,
+            onChangeContent,
+            addressesBlurRef,
+            addressesFocusRef,
+            onEditExpiration,
+        },
+        ref
+    ) => {
+        const [uid] = useState(generateUID('composer'));
 
-    const handleSubjectChange = (event: ChangeEvent) => {
-        const input = event.target as HTMLInputElement;
-        onChange({ data: { Subject: input.value } });
-    };
+        const handleSubjectChange = (event: ChangeEvent) => {
+            const input = event.target as HTMLInputElement;
+            onChange({ data: { Subject: input.value } });
+        };
 
-    return (
-        <div className="composer-meta shrink-0 ml-2 mr-5 pl-5 pr-1">
-            <div className="flex flex-row flex-nowrap flex-column md:flex-row items-center w-full">
-                <Label
-                    htmlFor={`from-${uid}`}
-                    className={clsx(['composer-meta-label pt-0 text-semibold', disabled && 'placeholder'])}
-                >
-                    {c('Info').t`From`}
-                </Label>
-                <SelectSender
-                    composerID={composerID}
+        return (
+            <div className="composer-meta shrink-0 ml-2 mr-5 pl-5 pr-1" ref={ref}>
+                <div className="flex flex-row flex-nowrap flex-column md:flex-row items-center w-full">
+                    <Label
+                        htmlFor={`from-${uid}`}
+                        className={clsx(['composer-meta-label sr-only pt-0 text-semibold', disabled && 'placeholder'])}
+                    >
+                        {c('Info').t`From`}
+                    </Label>
+                    <SelectSender
+                        composerID={composerID}
+                        message={message}
+                        disabled={disabled}
+                        onChangeContent={onChangeContent}
+                        addressesBlurRef={addressesBlurRef}
+                    />
+                </div>
+                <ComposerAddresses
                     message={message}
+                    messageSendInfo={messageSendInfo}
                     disabled={disabled}
-                    onChangeContent={onChangeContent}
                     addressesBlurRef={addressesBlurRef}
+                    addressesFocusRef={addressesFocusRef}
+                    composerID={composerID}
                 />
+                <div className="flex flex-row flex-nowrap flex-column md:flex-row items-stretch md:items-center mt-0">
+                    <Label
+                        htmlFor={`subject-${uid}`}
+                        className={clsx(['composer-meta-label sr-only pt-0 text-semibold', disabled && 'placeholder'])}
+                    >
+                        {c('Info').t`Subject`}
+                    </Label>
+                    <Input
+                        id={`subject-${uid}`}
+                        value={message.data?.Subject || ''}
+                        placeholder={c('Placeholder').t`Subject`}
+                        disabled={disabled}
+                        onChange={handleSubjectChange}
+                        onFocus={addressesBlurRef.current}
+                        data-testid="composer:subject"
+                        className="composer-light-field composer-meta-input-subject"
+                    />
+                </div>
+                <ComposerExpirationTime message={message} onEditExpiration={onEditExpiration} />
             </div>
-            <ComposerAddresses
-                message={message}
-                messageSendInfo={messageSendInfo}
-                disabled={disabled}
-                addressesBlurRef={addressesBlurRef}
-                addressesFocusRef={addressesFocusRef}
-                composerID={composerID}
-            />
-            <div className="flex flex-row flex-nowrap flex-column md:flex-row items-stretch md:items-center mt-0">
-                <Label
-                    htmlFor={`subject-${uid}`}
-                    className={clsx(['composer-meta-label pt-0 text-semibold', disabled && 'placeholder'])}
-                >
-                    {c('Info').t`Subject`}
-                </Label>
-                <Input
-                    id={`subject-${uid}`}
-                    value={message.data?.Subject || ''}
-                    placeholder={c('Placeholder').t`Subject`}
-                    disabled={disabled}
-                    onChange={handleSubjectChange}
-                    onFocus={addressesBlurRef.current}
-                    data-testid="composer:subject"
-                    className="composer-light-field composer-meta-input-subject"
-                />
-            </div>
-            <ComposerExpirationTime message={message} onEditExpiration={onEditExpiration} />
-        </div>
-    );
-};
+        );
+    }
+);
+
+ComposerMeta.displayName = 'ComposerMeta';
 
 export default ComposerMeta;

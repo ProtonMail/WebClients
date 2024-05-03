@@ -1,8 +1,11 @@
+import { useRef } from 'react';
+
 import { c } from 'ttag';
 
 import { Kbd } from '@proton/atoms';
 import { SidebarPrimaryButton, Tooltip } from '@proton/components';
 
+import ComposerAssistantSpotlight from 'proton-mail/components/assistant/ComposerAssistantSpotlight';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
 interface Props {
@@ -10,6 +13,7 @@ interface Props {
 }
 
 const MailSidebarPrimaryButton = ({ handleCompose }: Props) => {
+    const anchorRef = useRef<HTMLButtonElement>(null);
     const { Shortcuts } = useMailModel('MailSettings');
 
     const titlePrimaryButton = Shortcuts ? (
@@ -22,17 +26,27 @@ const MailSidebarPrimaryButton = ({ handleCompose }: Props) => {
 
     const sideBarPrimaryButton = Shortcuts ? (
         <Tooltip title={titlePrimaryButton} originalPlacement="top">
-            <SidebarPrimaryButton className="hidden md:inline" onClick={handleCompose} data-testid="sidebar:compose">
+            <SidebarPrimaryButton
+                className="hidden md:inline"
+                onClick={handleCompose}
+                data-testid="sidebar:compose"
+                ref={anchorRef}
+            >
                 {c('Action').t`New message`}
             </SidebarPrimaryButton>
         </Tooltip>
     ) : (
-        <SidebarPrimaryButton className="hidden md:inline" onClick={handleCompose} data-testid="sidebar:compose">
+        <SidebarPrimaryButton
+            className="hidden md:inline"
+            onClick={handleCompose}
+            data-testid="sidebar:compose"
+            ref={anchorRef}
+        >
             {c('Action').t`New message`}
         </SidebarPrimaryButton>
     );
 
-    return sideBarPrimaryButton;
+    return <ComposerAssistantSpotlight anchorRef={anchorRef}>{sideBarPrimaryButton}</ComposerAssistantSpotlight>;
 };
 
 export default MailSidebarPrimaryButton;

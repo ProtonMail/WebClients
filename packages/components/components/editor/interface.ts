@@ -21,8 +21,8 @@ export interface EditorMetadata {
 export interface EditorActions {
     focus: () => void;
     setContent: (content: string, triggerAutoSave?: boolean) => void;
-    getContent: () => string;
-    getSelectionContent: () => void;
+    getContent: IEditor['getContent'];
+    getSelectionContent: () => string | undefined;
     setSelectionContent: (selection: string) => void;
     insertImage?: (url: string, attrs?: { [key: string]: string }) => void;
     clearUndoHistory?: () => void;
