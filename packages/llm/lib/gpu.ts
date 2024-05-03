@@ -11,6 +11,7 @@ import type {
     GenerationCallback,
     LlmManager,
     LlmModel,
+    RefineAction,
     RunningAction,
     ShortenAction,
     WriteFullEmailAction,
@@ -26,6 +27,11 @@ const INSTRUCTIONS_WRITE_FULL_EMAIL = [
 const INSTRUCTIONS_SHORTEN = [
     "Now, you shorten the part of the email that's in the the input below.",
     'Only summarize the part below and do not add anything else.',
+].join(' ');
+
+const INSTRUCTIONS_REFINE = [
+    'The user wants to modify a part of the email identified by the span tags.',
+    "If the user's request is unethical or harmful, you do not replace the part to modify.",
 ].join(' ');
 
 const MODEL_VARIANT = 'Mistral-7B-Instruct-v0.2-q4f16_1';
@@ -93,10 +99,39 @@ export class GpuShortenRunningAction extends BaseRunningAction {
             },
             {
                 role: 'long_part',
-                contents: action.partToRephase,
+                contents: action.partToRephrase,
             },
             {
                 role: 'short_part',
+            },
+        ]);
+        super(prompt, callback, chat, action);
+    }
+}
+
+export class GpuRefineRunningAction extends BaseRunningAction {
+    constructor(action: RefineAction, chat: WebWorkerEngine, callback: GenerationCallback) {
+        const pre = action.fullEmail.slice(0, action.idxStart);
+        const mid = action.fullEmail.slice(action.idxStart, action.idxEnd);
+        const end = action.fullEmail.slice(action.idxEnd);
+        const fullEmail = `${pre}<span class="to-modify">${mid}</span>${end}`;
+        const newEmailStart = `${pre}<span class="modified">`;
+        const prompt = formatPrompt([
+            {
+                role: 'email',
+                contents: fullEmail,
+            },
+            {
+                role: 'system',
+                contents: INSTRUCTIONS_REFINE,
+            },
+            {
+                role: 'user',
+                contents: action.prompt,
+            },
+            {
+                role: 'email',
+                contents: newEmailStart,
             },
         ]);
         super(prompt, callback, chat, action);
@@ -125,6 +160,8 @@ export class GpuLlmModel implements LlmModel {
                 return new GpuWriteFullEmailRunningAction(action, this.chat, callback);
             case 'shorten':
                 return new GpuShortenRunningAction(action, this.chat, callback);
+            case 'refine':
+                return new GpuRefineRunningAction(action, this.chat, callback);
             default:
                 throw Error('unimplemented');
         }
