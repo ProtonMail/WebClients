@@ -35,43 +35,23 @@ export interface RunningAction {
 }
 
 export type GenerationCallback = (token: string, fulltext: string) => void;
-export type Action =
-    | WriteFullEmailAction
-    | RephraseAction
-    | EnhanceAction
-    | MakeFormalAction
-    | MakeFriendlyAction
-    | ShortenAction
-    | ExpandAction;
+export type Action = WriteFullEmailAction | RefineAction | ShortenAction;
 
 export type WriteFullEmailAction = {
     type: 'writeFullEmail';
     prompt: string;
 };
-export type RephraseAction = {
-    type: 'rephrase';
-    text: string;
-};
-export type EnhanceAction = {
-    type: 'enhance';
-    text: string;
-};
-export type MakeFormalAction = {
-    type: 'makeFormal';
-    text: string;
-};
-export type MakeFriendlyAction = {
-    type: 'makeFriendly';
-    text: string;
+export type RefineAction = {
+    type: 'refine';
+    fullEmail: string; // `fullEmail.slice(idxStart, idxEnd)` is the part to rephrase
+    idxStart: number; // beginning of part to rephrase
+    idxEnd: number; // end of part to rephrase
+    prompt: string; // user-submitted instruction of what to do with this text
 };
 export type ShortenAction = {
     type: 'shorten';
     fullEmail: string;
-    partToRephase: string; // partToRephase should be contained in fullEmail
-};
-export type ExpandAction = {
-    type: 'expand';
-    text: string;
+    partToRephrase: string; // partToRephrase should be contained in fullEmail
 };
 
 // A function to monitor the overall download progress.
