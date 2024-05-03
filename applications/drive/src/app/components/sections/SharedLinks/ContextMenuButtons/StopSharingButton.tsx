@@ -4,18 +4,22 @@ import { DecryptedLink, useActions } from '../../../../store';
 import { ContextMenuButton } from '../../ContextMenu';
 
 interface Props {
-    selectedLinks: DecryptedLink[];
-    stopSharingLinks: ReturnType<typeof useActions>['stopSharingLinks'];
+    selectedLink: DecryptedLink;
+    stopSharing: ReturnType<typeof useActions>['stopSharing'];
     close: () => void;
 }
 
-const StopSharingButton = ({ selectedLinks, stopSharingLinks, close }: Props) => {
+const StopSharingButton = ({ selectedLink, stopSharing, close }: Props) => {
+    const shareId = selectedLink?.sharingDetails?.shareId;
+    if (!shareId) {
+        return;
+    }
     return (
         <ContextMenuButton
             name={c('Action').t`Stop sharing`}
             icon="link-slash"
             testId="context-menu-stop-sharing"
-            action={() => stopSharingLinks(new AbortController().signal, selectedLinks)}
+            action={() => stopSharing(shareId)}
             close={close}
         />
     );

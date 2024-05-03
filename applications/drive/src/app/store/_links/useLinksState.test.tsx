@@ -29,18 +29,38 @@ jest.mock('../_events/useDriveEventManager', () => {
     };
 });
 
-function generateTestLink(id: string, parentId: string | undefined, decrypted = false): Link {
+function generateTestLink({
+    id,
+    parentId,
+    decrypted,
+    shareId,
+    rootShareId = 'defaultShareId',
+}: {
+    id: string;
+    parentId: string | undefined;
+    decrypted?: boolean;
+    shareId?: string;
+    rootShareId?: string;
+}): Link {
     return {
         encrypted: {
             linkId: id,
             name: id,
             parentLinkId: parentId,
+            sharingDetails: {
+                shareId,
+            },
+            rootShareId,
         },
         decrypted: decrypted
             ? {
                   linkId: id,
                   name: id,
                   parentLinkId: parentId,
+                  sharingDetails: {
+                      shareId,
+                  },
+                  rootShareId,
               }
             : undefined,
     } as Link;
@@ -67,16 +87,26 @@ describe('useLinksState', () => {
         state = {
             shareId: {
                 links: {
-                    linkId0: generateTestLink('linkId0', undefined),
-                    linkId1: generateTestLink('linkId1', 'linkId0'),
-                    linkId2: generateTestLink('linkId2', 'linkId1'),
-                    linkId3: generateTestLink('linkId3', 'linkId1'),
-                    linkId4: generateTestLink('linkId4', 'linkId0'),
-                    linkId5: generateTestLink('linkId5', 'linkId4'),
-                    linkId6: generateTestLink('linkId6', 'linkId4'),
-                    linkId7: generateTestLink('linkId7', 'linkId0', true),
-                    linkId8: generateTestLink('linkId8', 'linkId7', true),
-                    linkId9: generateTestLink('linkId9', 'linkId7', true),
+                    linkId0: generateTestLink({ id: 'linkId0', parentId: undefined }),
+                    linkId1: generateTestLink({ id: 'linkId1', parentId: 'linkId0' }),
+                    linkId2: generateTestLink({ id: 'linkId2', parentId: 'linkId1' }),
+                    linkId3: generateTestLink({ id: 'linkId3', parentId: 'linkId1' }),
+                    linkId4: generateTestLink({ id: 'linkId4', parentId: 'linkId0' }),
+                    linkId5: generateTestLink({
+                        id: 'linkId5',
+                        parentId: 'linkId4',
+                        shareId: 'shareId1',
+                        rootShareId: 'shareId0',
+                    }),
+                    linkId6: generateTestLink({
+                        id: 'linkId6',
+                        parentId: 'linkId4',
+                        shareId: 'shareId2',
+                        rootShareId: 'shareId2',
+                    }),
+                    linkId7: generateTestLink({ id: 'linkId7', parentId: 'linkId0', decrypted: true }),
+                    linkId8: generateTestLink({ id: 'linkId8', parentId: 'linkId7', decrypted: true }),
+                    linkId9: generateTestLink({ id: 'linkId9', parentId: 'linkId7', decrypted: true }),
                 },
                 tree: {
                     linkId0: ['linkId1', 'linkId4', 'linkId7'],
@@ -642,6 +672,11 @@ describe('useLinksState', () => {
 
         it('returns shared links', () => {
             const links = hook.current.getSharedByLink('shareId');
+            expect(links.map((link) => link.encrypted.linkId)).toMatchObject(['linkId5']);
+        });
+
+        it('returns shared with me links', () => {
+            const links = hook.current.getSharedWithMeByLink('shareId');
             expect(links.map((link) => link.encrypted.linkId)).toMatchObject(['linkId6']);
         });
     });
