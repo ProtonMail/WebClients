@@ -13,6 +13,7 @@ import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
 import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
 import { useRequest } from '@proton/pass/hooks/useActionRequest';
 import { useCountdown } from '@proton/pass/hooks/useCountdown';
+import { PassErrorCode } from '@proton/pass/lib/api/errors';
 import type { AddressType, MonitorAddress } from '@proton/pass/lib/monitor/types';
 import { resendVerificationCode, verifyCustomAddress } from '@proton/pass/store/actions';
 import type { Maybe } from '@proton/pass/types';
@@ -36,7 +37,13 @@ export const CustomAddressVerifyModal: FC<Props> = ({ onClose, email, addressId,
     const [remaining, countdown] = useCountdown(getInitialCountdown(sentAt));
     const { createNotification } = useNotifications();
 
-    const verify = useRequest(verifyCustomAddress, { onSuccess: onClose });
+    const verify = useRequest(verifyCustomAddress, {
+        onSuccess: onClose,
+        onFailure: ({ data }) => {
+            if (data.code === PassErrorCode.NOT_ALLOWED) onClose();
+        },
+    });
+
     const resend = useRequest(resendVerificationCode, {
         onSuccess: () => {
             createNotification({ text: c('Info').t`Verification code sent.`, type: 'success' });
