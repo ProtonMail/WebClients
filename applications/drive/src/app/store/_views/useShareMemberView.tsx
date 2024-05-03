@@ -33,7 +33,11 @@ const useShareMemberView = (rootShareId: string, linkId: string) => {
     const events = useDriveEventManager();
     const [volumeId, setVolumeId] = useState<string>();
 
-    const membersEmail = useMemo(() => [...members].map((member) => member.inviterEmail), [members]);
+    const existingEmails = useMemo(() => {
+        const membersEmail = members.map((member) => member.email);
+        const invitationsEmail = invitations.map((invitation) => invitation.inviteeEmail);
+        return [...membersEmail, ...invitationsEmail];
+    }, [members, invitations]);
 
     useEffect(() => {
         const abortController = new AbortController();
@@ -194,8 +198,8 @@ const useShareMemberView = (rootShareId: string, linkId: string) => {
     return {
         volumeId,
         members,
-        membersEmail,
         invitations,
+        existingEmails,
         isLoading,
         isAdding,
         removeInvitation,
