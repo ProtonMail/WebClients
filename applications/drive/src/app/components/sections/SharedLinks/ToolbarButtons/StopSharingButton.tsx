@@ -3,16 +3,21 @@ import { c } from 'ttag';
 import { Icon, ToolbarButton } from '@proton/components';
 
 import { DecryptedLink, useActions } from '../../../../store';
-import { noSelection } from '../../ToolbarButtons/utils';
+import { isMultiSelect, noSelection } from '../../ToolbarButtons/utils';
 
 interface Props {
     selectedLinks: DecryptedLink[];
 }
 
 const StopSharingButton = ({ selectedLinks }: Props) => {
-    const { stopSharingLinks, confirmModal } = useActions();
+    const { stopSharing, confirmModal } = useActions();
 
-    if (noSelection(selectedLinks)) {
+    if (noSelection(selectedLinks) || isMultiSelect(selectedLinks)) {
+        return null;
+    }
+
+    const shareId = selectedLinks[0]?.sharingDetails?.shareId;
+    if (!shareId) {
         return null;
     }
 
@@ -21,7 +26,7 @@ const StopSharingButton = ({ selectedLinks }: Props) => {
             <ToolbarButton
                 title={c('Action').t`Stop sharing`}
                 icon={<Icon name="link-slash" />}
-                onClick={() => stopSharingLinks(new AbortController().signal, selectedLinks)}
+                onClick={() => stopSharing(shareId)}
                 data-testid="toolbar-button-stop-sharing"
             />
             {confirmModal}
