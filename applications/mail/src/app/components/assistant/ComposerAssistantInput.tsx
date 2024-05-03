@@ -144,7 +144,7 @@ const ComposerAssistantInput = ({ onGenerateResult, assistantID, onContentChange
                 shape="ghost"
                 color="weak"
                 size="small"
-                disabled={isGeneratingResult}
+                disabled={isGeneratingResult || assistantRequest === ''}
                 onClick={startGeneratingResult}
             >
                 <Icon
