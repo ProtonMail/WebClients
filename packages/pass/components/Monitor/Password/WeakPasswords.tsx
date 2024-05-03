@@ -11,9 +11,9 @@ import { VirtualList } from '@proton/pass/components/Layout/List/VirtualList';
 import { useMonitor } from '@proton/pass/components/Monitor/MonitorProvider';
 import { getItemRoute } from '@proton/pass/components/Navigation/routing';
 import { useSelectItemAction } from '@proton/pass/hooks/useSelectItemAction';
+import { useTelemetryEvent } from '@proton/pass/hooks/useTelemetryEvent';
 import { isTrashed, itemEq } from '@proton/pass/lib/items/item.predicates';
 import { getItemKey } from '@proton/pass/lib/items/item.utils';
-import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
 import { selectOptimisticItemsFactory, selectSelectedItems } from '@proton/pass/store/selectors';
 import type { SelectedItem } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
@@ -35,9 +35,7 @@ export const WeakPasswords: FC = () => {
         }
     }, [selectedItem, items]);
 
-    useEffect(() => {
-        onTelemetry(createTelemetryEvent(TelemetryEventName.PassMonitorDisplayWeakPasswords, {}, {}));
-    }, []);
+    useTelemetryEvent(TelemetryEventName.PassMonitorDisplayWeakPasswords, {}, {})([]);
 
     return items.length > 0 ? (
         <VirtualList
@@ -59,6 +57,7 @@ export const WeakPasswords: FC = () => {
                             optimistic={item.optimistic}
                             onClick={(e) => {
                                 e.preventDefault();
+                                onTelemetry(TelemetryEventName.PassMonitorItemDetailFromWeakPassword, {}, {});
                                 selectItem(item, {
                                     inTrash: isTrashed(item),
                                     prefix: 'monitor/weak',

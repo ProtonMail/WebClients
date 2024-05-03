@@ -1,4 +1,4 @@
-import { type FC, useEffect, useMemo, useState } from 'react';
+import { type FC, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
@@ -27,7 +27,7 @@ import { useNavigation } from '@proton/pass/components/Navigation/NavigationProv
 import { getLocalPath, getNewItemRoute } from '@proton/pass/components/Navigation/routing';
 import { UpsellingModal } from '@proton/pass/components/Upsell/UpsellingModal';
 import { UpsellRef } from '@proton/pass/constants';
-import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
+import { useTelemetryEvent } from '@proton/pass/hooks/useTelemetryEvent';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import { selectPassPlan } from '@proton/pass/store/selectors';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
@@ -40,7 +40,7 @@ import { getMonitorUpsellFeatures } from './utils';
 import './Summary.scss';
 
 export const Summary: FC = () => {
-    const { onLink, onTelemetry } = usePassCore();
+    const { onLink } = usePassCore();
     const { navigate } = useNavigation();
     const { breaches, duplicates, insecure, missing2FAs, excluded, didLoad } = useMonitor();
 
@@ -78,9 +78,7 @@ export const Summary: FC = () => {
         []
     );
 
-    useEffect(() => {
-        onTelemetry(createTelemetryEvent(TelemetryEventName.PassMonitorDisplayHome, {}, {}));
-    }, []);
+    useTelemetryEvent(TelemetryEventName.PassMonitorDisplayHome, {}, {})([]);
 
     return (
         <div className="w-full h-full">

@@ -1,15 +1,14 @@
-import { type FC, useEffect } from 'react';
+import { type FC } from 'react';
 
 import { c } from 'ttag';
 
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { SubHeader } from '@proton/pass/components/Layout/Section/SubHeader';
 import { CustomAddressAddButton } from '@proton/pass/components/Monitor/Address/CustomAddressAddButton';
 import { useMonitor } from '@proton/pass/components/Monitor/MonitorProvider';
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import { useBreachesTable } from '@proton/pass/hooks/monitor/useBreachesTable';
+import { useTelemetryEvent } from '@proton/pass/hooks/useTelemetryEvent';
 import { AddressType } from '@proton/pass/lib/monitor/types';
-import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import headerBreachImg from '@proton/styles/assets/img/breach-alert/img-breaches-found.svg';
 import headerNoBreachImg from '@proton/styles/assets/img/breach-alert/img-no-breaches-found.svg';
@@ -17,15 +16,12 @@ import headerNoBreachImg from '@proton/styles/assets/img/breach-alert/img-no-bre
 import { BreachGroupList } from './Group/BreachGroupList';
 
 export const Breaches: FC = () => {
-    const { onTelemetry } = usePassCore();
     const monitor = useMonitor();
     const proton = useBreachesTable(AddressType.PROTON);
     const alias = useBreachesTable(AddressType.ALIAS);
     const custom = useBreachesTable(AddressType.CUSTOM);
 
-    useEffect(() => {
-        onTelemetry(createTelemetryEvent(TelemetryEventName.PassMonitorDisplayDarkWebMonitoring, {}, {}));
-    }, []);
+    useTelemetryEvent(TelemetryEventName.PassMonitorDisplayDarkWebMonitoring, {}, {})([]);
 
     return (
         <>
