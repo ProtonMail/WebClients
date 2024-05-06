@@ -15,8 +15,6 @@ import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 
-export type BreachedUsages = { aliases: number; logins: number };
-
 export type MonitorTableRow<T extends AddressType = AddressType> = MonitorAddress<T> & { usageCount: number };
 
 export type MonitorTable<T extends AddressType = AddressType> = {
@@ -56,8 +54,8 @@ const getCustomSuggestions = (data: MonitorAddress[], items: LoginItem[]): Monit
 
 const getRowPriority = (row: MonitorTableRow) => {
     if ('verified' in row && !row.verified) return -1;
-    if (row.breached) return 1;
-    if (row.monitored) return 0;
+    if (row.breached || row.monitored) return 1;
+    if (!row.monitored) return 0;
     return -1;
 };
 
