@@ -4,7 +4,7 @@ import { Editor, EditorActions, EditorMetadata, useHandler } from '@proton/compo
 import { useToolbar } from '@proton/components/components/editor/hooks/useToolbar';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
-import { MailSettings } from '@proton/shared/lib/interfaces';
+import { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { DIRECTION } from '@proton/shared/lib/mail/mailSettings';
 import { isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages';
@@ -45,6 +45,7 @@ interface Props {
     onAddAttachments: (files: File[]) => void;
     onRemoveAttachment: (attachment: Attachment) => Promise<void>;
     mailSettings?: MailSettings;
+    userSettings?: UserSettings;
     editorMetadata: EditorMetadata;
 }
 
@@ -60,6 +61,7 @@ const EditorWrapper = ({
     onRemoveAttachment,
     onFocus,
     mailSettings,
+    userSettings,
     editorMetadata,
 }: Props) => {
     const isMounted = useIsMounted();
@@ -301,6 +303,7 @@ const EditorWrapper = ({
             modalLink={modalLink}
             modalImage={modalImage}
             modalDefaultFont={modalDefaultFont}
+            userSettings={userSettings}
         />
     ) : null;
 };

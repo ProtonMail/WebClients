@@ -13,7 +13,7 @@ import {
 import { GetContentMode } from 'roosterjs-editor-types/lib/enum/GetContentMode';
 import { c } from 'ttag';
 
-import { useHandler, useSubscribeEventManager } from '@proton/components';
+import { useHandler, useSubscribeEventManager, useUserSettings } from '@proton/components';
 import { cleanAssistantEmailGeneration } from '@proton/llm/lib';
 import { useAssistant } from '@proton/llm/lib/useAssistant';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
@@ -82,6 +82,7 @@ const Composer = (
     ref: Ref<ComposerAction>
 ) => {
     const mailSettings = useMailModel('MailSettings');
+    const [userSettings] = useUserSettings();
     const [selectedText, setSelectedText] = useState('');
 
     const bodyRef = useRef<HTMLDivElement>(null);
@@ -383,6 +384,7 @@ const Composer = (
                         onRemoveUpload={handleRemoveUpload}
                         pendingUploads={pendingUploads}
                         mailSettings={mailSettings}
+                        userSettings={userSettings}
                         editorMetadata={metadata}
                         ref={composerContentRef}
                         onKeyUp={handleEditorSelection}
