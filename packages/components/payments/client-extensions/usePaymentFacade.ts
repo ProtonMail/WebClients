@@ -120,7 +120,7 @@ export const usePaymentFacade = ({
     const chargebeeEvents: ChargebeeIframeEvents = iframeHandles.events;
 
     const chargebeeEnabledCache = useChargebeeEnabledCache();
-    const chargebeeEnabled = chargebeeEnabledOverride ?? chargebeeEnabledCache;
+    const isChargebeeEnabled: () => ChargebeeEnabled = () => chargebeeEnabledOverride ?? chargebeeEnabledCache();
 
     const { chargebeeKillSwitch, forceEnableChargebee } = useChargebeeKillSwitch();
     useChargebeeUserStatusTracker();
@@ -150,7 +150,7 @@ export const usePaymentFacade = ({
             onMethodChanged,
             paymentMethods,
             paymentMethodStatusExtended,
-            chargebeeEnabled,
+            isChargebeeEnabled,
             chargebeeKillSwitch,
             forceEnableChargebee,
             selectedPlanName,
@@ -304,7 +304,7 @@ export const usePaymentFacade = ({
         userCanTrigger,
         userCanTriggerSelected,
         iframeHandles,
-        chargebeeEnabled,
+        isChargebeeEnabled,
         selectedPlanName,
         paymentComponentLoaded: reportPaymentLoad,
         telemetry,

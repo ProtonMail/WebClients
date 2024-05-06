@@ -27,7 +27,7 @@ export const useChargebeeContext = () => {
 
 export const useChargebeeEnabledCache = () => {
     const chargebeeContext = useChargebeeContext();
-    return chargebeeContext.enableChargebeeRef.current;
+    return (): ChargebeeEnabled => chargebeeContext.enableChargebeeRef.current;
 };
 
 export const useChargebeeUserStatusTracker = () => {

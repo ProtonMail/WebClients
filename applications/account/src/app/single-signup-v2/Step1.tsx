@@ -240,7 +240,7 @@ const Step1 = ({
             }
 
             const checkResult = await getSubscriptionPrices(
-                getPaymentsApi(silentApi, chargebeeEnabled),
+                getPaymentsApi(silentApi, chargebeeEnabled?.result),
                 newPlanIDs,
                 newCurrency,
                 newCycle,
