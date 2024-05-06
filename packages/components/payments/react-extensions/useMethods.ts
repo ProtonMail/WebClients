@@ -30,7 +30,7 @@ export interface Props {
     paymentMethodStatusExtended?: PaymentMethodStatusExtended;
     paymentMethods?: SavedPaymentMethod[];
     onMethodChanged?: OnMethodChangedHandler;
-    chargebeeEnabled: ChargebeeEnabled;
+    isChargebeeEnabled: () => ChargebeeEnabled;
     paymentsApi: PaymentsApi;
     selectedPlanName: PLANS | ADDON_NAMES | undefined;
 }
@@ -137,7 +137,7 @@ export const useMethods = (
         coupon,
         flow,
         onMethodChanged,
-        chargebeeEnabled,
+        isChargebeeEnabled,
         paymentsApi,
         selectedPlanName,
     }: Props,
@@ -196,7 +196,7 @@ export const useMethods = (
                 amount,
                 coupon ?? '',
                 flow,
-                chargebeeEnabled,
+                isChargebeeEnabled(),
                 paymentsApi,
                 selectedPlanName
             );
@@ -252,7 +252,7 @@ export const useMethods = (
                 pendingAmount: amount,
                 pendingCoupon: coupon,
                 pendingFlow: flow,
-                pendingChargebee: chargebeeEnabled,
+                pendingChargebee: isChargebeeEnabled(),
                 pendingSelectedPlanName: selectedPlanName,
             };
             return;
@@ -261,11 +261,11 @@ export const useMethods = (
         paymentMethodsRef.current.amount = amount;
         paymentMethodsRef.current.coupon = coupon ?? '';
         paymentMethodsRef.current.flow = flow;
-        paymentMethodsRef.current.chargebeeEnabled = chargebeeEnabled;
+        paymentMethodsRef.current.chargebeeEnabled = isChargebeeEnabled();
         paymentMethodsRef.current.selectedPlanName = selectedPlanName;
 
         updateMethods();
-    }, [amount, coupon, flow, chargebeeEnabled, selectedPlanName]);
+    }, [amount, coupon, flow, isChargebeeEnabled(), selectedPlanName]);
 
     const { usedMethods, newMethods, allMethods, lastUsedMethod } = getComputedMethods();
 

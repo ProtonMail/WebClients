@@ -1,3 +1,4 @@
+import { useIsChargebeeEnabledWithoutParams } from '@proton/components/containers/payments/PaymentSwitcher';
 import { getIsConnectionIssue } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { setPaymentsVersion } from '@proton/shared/lib/api/payments';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
@@ -8,6 +9,8 @@ import { useChargebeeContext } from './useChargebeeContext';
 
 export const useChargebeeKillSwitch = () => {
     const chargebeeContext = useChargebeeContext();
+
+    const isChargebeeEnabled = useIsChargebeeEnabledWithoutParams();
 
     const chargebeeKillSwitch: ChargebeeKillSwitch = (_data?: ChargebeeKillSwitchData) => {
         const { reason, data, error } = _data ?? {};
@@ -22,15 +25,22 @@ export const useChargebeeKillSwitch = () => {
 
             const sentryError = error ?? reason;
             if (sentryError) {
-                const context = {
-                    reason,
-                    ...data,
+                const sendMessage = async () => {
+                    const chargebeeEnabled = await isChargebeeEnabled();
+
+                    const context = {
+                        reason,
+                        chargebeeEnabled,
+                        ...data,
+                    };
+
+                    captureMessage('Payments: Chargebee kill switch activated', {
+                        level: 'error',
+                        extra: { error: sentryError, context },
+                    });
                 };
 
-                captureMessage('Payments: Chargebee kill switch activated', {
-                    level: 'error',
-                    extra: { error: sentryError, context },
-                });
+                void sendMessage();
             }
 
             return true;

@@ -34,7 +34,7 @@ const PaymentMethodsSection = () => {
     const [creditCardModalProps, setCreditCardModalOpen, renderCreditCardModal] = useModalState();
     const [paypalV4ModalProps, setPaypalV4ModalOpen, renderPaypalV4Modal] = useModalState();
     const [paypalV5ModalProps, setPaypalV5ModalOpen, renderPaypalV5Modal] = useModalState();
-    const chargebeeEnabled = useChargebeeEnabledCache();
+    const isChargebeeEnabled = useChargebeeEnabledCache();
     const pollPaymentMethodsCreate = usePollEvents({
         subscribeToProperty: 'PaymentMethods',
         action: EVENT_ACTIONS.CREATE,
@@ -55,7 +55,7 @@ const PaymentMethodsSection = () => {
             ? 'https://protonvpn.com/support/payment-options/'
             : getKnowledgeBaseUrl('/payment-options');
 
-    const canAddV4 = chargebeeEnabled !== ChargebeeEnabled.CHARGEBEE_FORCED;
+    const canAddV4 = isChargebeeEnabled() !== ChargebeeEnabled.CHARGEBEE_FORCED;
 
     const canAddPaypalV4 =
         !paymentMethods.some(

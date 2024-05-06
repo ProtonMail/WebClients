@@ -34,48 +34,88 @@ const forceInHouseInDev = (): boolean => {
     return localStorage.getItem('inhouseForced') === 'true';
 };
 
-export async function isChargebeeEnabledInner(
+export async function isChargebeeEnabled(
     UID: string | undefined,
     getUser: () => Promise<User>,
     chargebeeSignupsFlag: boolean,
     chargebeeFreeToPaidUpgradeFlag: boolean,
     isAccountLite: boolean
-) {
+): Promise<{
+    result: ChargebeeEnabled;
+    reason: string;
+    params?: Record<string, any>;
+}> {
     if (forceEnableChargebeeInDev()) {
-        return ChargebeeEnabled.CHARGEBEE_FORCED;
+        return {
+            result: ChargebeeEnabled.CHARGEBEE_FORCED,
+            reason: 'forced in dev',
+        };
     }
 
     if (forceInHouseInDev()) {
-        return ChargebeeEnabled.INHOUSE_FORCED;
+        return {
+            result: ChargebeeEnabled.INHOUSE_FORCED,
+            reason: 'forced in dev',
+        };
     }
 
     // user logged in
     if (UID) {
         const user = await getUser();
         const chargebeeUser = user?.ChargebeeUser;
-        if (user?.ChargebeeUser === ChargebeeEnabled.CHARGEBEE_FORCED) {
-            return ChargebeeEnabled.CHARGEBEE_FORCED;
+        if (chargebeeUser === ChargebeeEnabled.CHARGEBEE_FORCED) {
+            return {
+                result: ChargebeeEnabled.CHARGEBEE_FORCED,
+                reason: 'user forced',
+            };
         }
 
         const isInhouseForced =
-            user?.ChargebeeUser === ChargebeeEnabled.INHOUSE_FORCED ||
+            chargebeeUser === ChargebeeEnabled.INHOUSE_FORCED ||
             isAccountLite ||
             (!chargebeeFreeToPaidUpgradeFlag && chargebeeUser === ChargebeeEnabled.CHARGEBEE_ALLOWED);
 
         if (isInhouseForced) {
-            return ChargebeeEnabled.INHOUSE_FORCED;
+            return {
+                result: ChargebeeEnabled.INHOUSE_FORCED,
+                reason: 'user forced',
+                params: {
+                    isAccountLite,
+                    chargebeeFreeToPaidUpgradeFlag,
+                    chargebeeUser,
+                },
+            };
         }
 
         // Make sure that the property exists before returning it
-        return user?.ChargebeeUser ?? ChargebeeEnabled.INHOUSE_FORCED;
+        return {
+            result: chargebeeUser ?? ChargebeeEnabled.INHOUSE_FORCED,
+            reason: chargebeeUser !== undefined ? 'user defined' : 'user not defined',
+        };
     }
 
     // signups
     if (!chargebeeSignupsFlag || isAccountLite) {
-        return ChargebeeEnabled.INHOUSE_FORCED;
+        return {
+            result: ChargebeeEnabled.INHOUSE_FORCED,
+            reason: !chargebeeSignupsFlag ? 'signups disabled' : 'account lite',
+            params: {
+                isAccountLite,
+                chargebeeSignupsFlag,
+            },
+        };
     }
 
-    return ChargebeeEnabled.CHARGEBEE_ALLOWED;
+    return {
+        result: ChargebeeEnabled.CHARGEBEE_ALLOWED,
+        reason: 'fallback',
+        params: {
+            authenticated: !!UID,
+            chargebeeSignupsFlag,
+            isAccountLite,
+            chargebeeFreeToPaidUpgradeFlag,
+        },
+    };
 }
 
 export const useIsChargebeeEnabled = () => {
@@ -85,7 +125,15 @@ export const useIsChargebeeEnabled = () => {
     const isAccountLite = APP_NAME === APPS.PROTONACCOUNTLITE;
 
     return (UID: string | undefined, getUser: () => Promise<User>) =>
-        isChargebeeEnabledInner(UID, getUser, chargebeeSignupsFlag, chargebeeFreeToPaidUpgradeFlag, isAccountLite);
+        isChargebeeEnabled(UID, getUser, chargebeeSignupsFlag, chargebeeFreeToPaidUpgradeFlag, isAccountLite);
+};
+
+export const useIsChargebeeEnabledWithoutParams = () => {
+    const getUser = useGetUser();
+    const { UID } = useAuthentication();
+    const isChargebeeEnabled = useIsChargebeeEnabled();
+
+    return () => isChargebeeEnabled(UID, getUser);
 };
 
 /**
@@ -122,14 +170,14 @@ export const useChargebeeFeature = () => {
 
     useEffect(() => {
         async function run() {
-            const chargebeeEnabled = await isChargebeeEnabledInner(
+            const chargebeeEnabled = await isChargebeeEnabled(
                 UID,
                 getUser,
                 chargebeeSignupsFlag,
                 chargebeeFreeToPaidUpgradeFlag,
                 isAccountLite
             );
-            setChargebeeEnabled(chargebeeEnabled);
+            setChargebeeEnabled(chargebeeEnabled.result);
             setLoaded(true);
         }
 
