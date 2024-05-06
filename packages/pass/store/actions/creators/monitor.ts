@@ -37,6 +37,7 @@ import type {
     UpdateUserMonitorStateRequest,
 } from '@proton/pass/types/api/pass';
 import { pipe } from '@proton/pass/utils/fp/pipe';
+import { UNIX_MINUTE } from '@proton/pass/utils/time/constants';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { PROTON_SENTINEL_NAME } from '@proton/shared/lib/constants';
 import type { SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/interfaces';
@@ -90,14 +91,7 @@ export const monitorToggle = requestActionsFactory<UpdateUserMonitorStateRequest
 
 export const getBreaches = requestActionsFactory<void, BreachesGetResponse>('monitor::breaches::get')({
     requestId: breachesRequest,
-    failure: {
-        prepare: (error) =>
-            withNotification({
-                text: c('Error').t`Failed to load breaches`,
-                type: 'error',
-                error,
-            })({ payload: null }),
-    },
+    success: { config: { maxAge: UNIX_MINUTE } },
 });
 
 export const getProtonBreach = requestActionsFactory<ProtonAddressID, FetchedBreaches[]>(
