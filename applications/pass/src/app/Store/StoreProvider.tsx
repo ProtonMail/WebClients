@@ -21,6 +21,7 @@ import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
 import { setVersionTag } from '@proton/pass/lib/settings/beta';
 import {
     draftsGarbageCollect,
+    getBreaches,
     getUserAccessIntent,
     getUserFeaturesIntent,
     getUserSettings,
@@ -76,6 +77,7 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
 
                         store.dispatch(draftsGarbageCollect());
                         store.dispatch(passwordHistoryGarbageCollect());
+                        store.dispatch(withRevalidate(getBreaches.intent()));
 
                         if (res.fromCache) {
                             /** Revalidate user data when booting from cache  */
