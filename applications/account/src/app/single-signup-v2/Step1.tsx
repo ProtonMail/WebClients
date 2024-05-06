@@ -17,7 +17,7 @@ import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
 import { Vr } from '@proton/atoms/Vr';
 import { Icon, IconName, useModalState } from '@proton/components/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
-import { CurrencySelector, CycleSelector, getCheckoutRenewNoticeText } from '@proton/components/containers';
+import { CurrencySelector, CycleSelector, getCheckoutRenewNoticeText, useFlag } from '@proton/components/containers';
 import { useIsChargebeeEnabled } from '@proton/components/containers/payments/PaymentSwitcher';
 import {
     getBlackFridayRenewalNoticeText,
@@ -85,6 +85,7 @@ import {
     SignupParameters2,
     UpsellTypes,
 } from './interface';
+import DriveTrial2024UpsellModal from './modals/DriveTrial2024UpsellModal';
 import MailTrial2024UpsellModal from './modals/MailTrial2024UpsellModal';
 import { getFreePassFeatures } from './pass/configuration';
 
@@ -161,10 +162,13 @@ const Step1 = ({
     step1Ref: MutableRefObject<Step1Rref | undefined>;
     activeSessions?: LocalSessionPersisted[];
 }) => {
+    const mailTrialOfferEnabled = useFlag('MailTrialOffer');
+    const driveTrialOfferEnabled = useFlag('DriveTrialOffer');
     const silentApi = getSilentApi(normalApi);
     const { getPaymentsApi } = usePaymentsApi();
     const isChargebeeEnabled = useIsChargebeeEnabled();
     const [upsellMailTrialModal, setUpsellMailTrialModal, renderUpsellMailTrialModal] = useModalState();
+    const [upsellDriveTrialModal, setUpsellDriveTrialModal, renderUpsellDriveTrialModal] = useModalState();
     const [loadingSignup, withLoadingSignup] = useLoading();
     const [loadingSignout, withLoadingSignout] = useLoading();
     const [loadingChallenge, setLoadingChallenge] = useState(false);
@@ -404,6 +408,24 @@ const Step1 = ({
                         await handleOptimistic({
                             coupon: COUPON_CODES.MAILPLUSINTRO,
                             planIDs: { [PLANS.MAIL]: 1 },
+                            cycle: CYCLE.MONTHLY,
+                        });
+                    }}
+                    onContinue={async () => {
+                        withLoadingSignup(handleCompletion(getFreeSubscriptionData(model.subscriptionData))).catch(
+                            noop
+                        );
+                    }}
+                />
+            )}
+            {renderUpsellDriveTrialModal && (
+                <DriveTrial2024UpsellModal
+                    {...upsellDriveTrialModal}
+                    currency={options.currency}
+                    onConfirm={async () => {
+                        await handleOptimistic({
+                            coupon: COUPON_CODES.TRYDRIVEPLUS2024,
+                            planIDs: { [PLANS.DRIVE]: 1 },
                             cycle: CYCLE.MONTHLY,
                         });
                     }}
@@ -775,12 +797,23 @@ const Step1 = ({
                                                     hasSelectedFree
                                                         ? () => {
                                                               if (
-                                                                  app === APPS.PROTONMAIL &&
                                                                   options.plan.Name === PLANS.FREE &&
                                                                   !signupParameters.noPromo
                                                               ) {
-                                                                  setUpsellMailTrialModal(true);
-                                                                  return;
+                                                                  if (
+                                                                      app === APPS.PROTONMAIL &&
+                                                                      mailTrialOfferEnabled
+                                                                  ) {
+                                                                      setUpsellMailTrialModal(true);
+                                                                      return;
+                                                                  }
+                                                                  if (
+                                                                      app === APPS.PROTONDRIVE &&
+                                                                      driveTrialOfferEnabled
+                                                                  ) {
+                                                                      setUpsellDriveTrialModal(true);
+                                                                      return;
+                                                                  }
                                                               }
 
                                                               let subscriptionData = getFreeSubscriptionData(
