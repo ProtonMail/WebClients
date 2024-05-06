@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
+import { NavLink } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { CollapsingBreadcrumbs, Loader, useNotifications } from '@proton/components';
+import { CollapsingBreadcrumbs, Icon, Loader, useNotifications } from '@proton/components';
 import { BreadcrumbInfo } from '@proton/components/components/collapsingBreadcrumbs/interfaces';
 
 import { DriveFolder } from '../../hooks/drive/useActiveShare';
@@ -10,6 +11,7 @@ import { useDriveDragMoveTarget } from '../../hooks/drive/useDriveDragMove';
 import useNavigate from '../../hooks/drive/useNavigate';
 import { useLinkPath } from '../../store';
 import { Share, ShareType, useShare } from '../../store/_shares';
+import { useDirectSharingInfo } from '../../store/_shares/useDirectSharingInfo';
 import { sendErrorReport } from '../../utils/errorHandling';
 import SignatureIcon from '../SignatureIcon';
 import { useDetailsModal } from '../modals/DetailsModal';
@@ -25,6 +27,7 @@ const DriveBreadcrumbs = ({ activeFolder }: Props) => {
     const { getHandleItemDrop } = useDriveDragMoveTarget(activeFolder.shareId);
     const { traverseLinksToRoot } = useLinkPath(); // TODO: Get data using useFolderView instead one day.
     const [detailsModal, showDetailsModal] = useDetailsModal();
+    const { isSharedWithMe: getIsSharedWithMe } = useDirectSharingInfo();
 
     const [dropTarget, setDropTarget] = useState<string>();
     const [rootShare, setRootShare] = useState<Share>();
@@ -32,6 +35,7 @@ const DriveBreadcrumbs = ({ activeFolder }: Props) => {
     const sectionTitle = getDevicesSectionName();
 
     const [breadcrumbs, setBreadcrumbs] = useState<BreadcrumbInfo[]>([]);
+    const [isSharedWithMeFolder, setIsSharedWithMeFolder] = useState(false);
 
     useEffect(() => {
         const abortController = new AbortController();
@@ -119,6 +123,10 @@ const DriveBreadcrumbs = ({ activeFolder }: Props) => {
                 setRootShare(share);
             })
             .catch(sendErrorReport);
+
+        getIsSharedWithMe(abortController.signal, activeFolder.shareId).then((result) => {
+            setIsSharedWithMeFolder(result);
+        });
         return () => {
             abortController.abort();
         };
@@ -139,6 +147,19 @@ const DriveBreadcrumbs = ({ activeFolder }: Props) => {
 
     return (
         <>
+            {isSharedWithMeFolder ? (
+                <>
+                    <NavLink
+                        to="/shared-with-me"
+                        className="button button-medium button-ghost-weak text-pre p-1 m-0 text-ellipsis *:pointer-events-none color-weak"
+                    >
+                        {c('Link').t`Shared with me`}
+                    </NavLink>
+                    <div className="rtl:mirror shrink-0" aria-hidden="true">
+                        <Icon size={4} name="chevron-right" />
+                    </div>
+                </>
+            ) : null}
             <CollapsingBreadcrumbs breadcrumbs={breadcrumbs} />
             {detailsModal}
         </>
