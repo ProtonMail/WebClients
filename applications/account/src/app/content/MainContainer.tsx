@@ -276,7 +276,7 @@ const MainContainer = () => {
 
     return (
         <PrivateAppContainer top={top} header={header} sidebar={sidebar}>
-            <AccountStartupModals app={app} />
+            <AccountStartupModals />
             <Switch>
                 <Route path={anyAccountAppRoute}>
                     <AccountSettingsRouter
