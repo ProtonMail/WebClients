@@ -1,4 +1,5 @@
 import { GpuAssessmentResult } from '@proton/llm/lib/types';
+import { isBrave } from '@proton/shared/lib/helpers/browser';
 
 type HardwareSpecs = {
     userAgent: string;
@@ -44,8 +45,12 @@ export const checkGpu = async (): Promise<GpuAssessmentResult> => {
     }
 
     // Test if there's enough memory
-    if (specs.deviceMemory !== null && specs.deviceMemory < 8) {
-        return 'insufficientRam';
+    // ...except for Brave, which under-reports the device memory
+    // https://github.com/brave/brave-browser/issues/1157
+    if (!isBrave()) {
+        if (specs.deviceMemory !== null && specs.deviceMemory < 8) {
+            return 'insufficientRam';
+        }
     }
 
     // Test if we can load webgpu
