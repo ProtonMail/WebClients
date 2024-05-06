@@ -4,7 +4,6 @@ import { useHistory } from 'react-router-dom';
 import { c } from 'ttag';
 
 import {
-    FeatureCode,
     OnLoginCallback,
     StandardLoadErrorPage,
     UnAuthenticated,
@@ -28,7 +27,6 @@ import { usePaymentsApi } from '@proton/components/payments/react-extensions/use
 import { useLoading } from '@proton/hooks';
 import { checkReferrer } from '@proton/shared/lib/api/core/referrals';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
-import { updateFeatureValue } from '@proton/shared/lib/api/features';
 import { getSilentApi, getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { getFreePlan, queryPlans } from '@proton/shared/lib/api/payments';
 import { TelemetryAccountSignupEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
@@ -1068,10 +1066,6 @@ const SingleSignupContainerV2 = ({
         ]);
 
         measure(getSignupTelemetryData(model.plansMap, cache));
-
-        if (toApp === APPS.PROTONPASS) {
-            silentApi(updateFeatureValue(FeatureCode.PassSignup, true)).catch(noop);
-        }
 
         return result.cache;
     };
