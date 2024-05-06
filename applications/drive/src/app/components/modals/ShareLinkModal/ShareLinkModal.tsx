@@ -53,6 +53,7 @@ export function ShareLinkModal({ shareId: rootShareId, linkId, onClose, ...modal
 
     const isClosedButtonDisabled = isSaving || isDeleting || isCreating;
     const isTooltipDisabled = isShareUrlLoading || isSaving || isDeleting || isCreating || !isShared;
+    const isTooltipHidden = isInvitationWorkflow;
     const isShareWithAnyoneLoading = isShareUrlLoading || isDeleting || isCreating;
 
     const renderModalState = () => {
@@ -69,31 +70,35 @@ export function ShareLinkModal({ shareId: rootShareId, linkId, onClose, ...modal
                 <ModalTwoHeader
                     title={c('Title').t`Share ${name}`}
                     closeButtonProps={{ disabled: isClosedButtonDisabled }}
-                    actions={[
-                        <Tooltip disabled={isTooltipDisabled} title={c('Info').t`Share via link settings`}>
-                            <Button
-                                icon
-                                shape="ghost"
-                                onClick={() =>
-                                    showSettingsModal({
-                                        customPassword,
-                                        initialExpiration,
-                                        onSaveLinkClick: saveSharedLink,
-                                        isDeleting,
-                                        stopSharing: async () => {
-                                            await stopSharing();
-                                            onClose();
-                                        },
-                                        havePublicSharedLink: !!sharedLink,
-                                        confirmationMessage,
-                                        modificationDisabled: !hasGeneratedPasswordIncluded,
-                                    })
-                                }
-                            >
-                                <Icon name="cog-wheel" />
-                            </Button>
-                        </Tooltip>,
-                    ]}
+                    actions={
+                        !isTooltipHidden
+                            ? [
+                                  <Tooltip disabled={isTooltipDisabled} title={c('Info').t`Share via link settings`}>
+                                      <Button
+                                          icon
+                                          shape="ghost"
+                                          onClick={() =>
+                                              showSettingsModal({
+                                                  customPassword,
+                                                  initialExpiration,
+                                                  onSaveLinkClick: saveSharedLink,
+                                                  isDeleting,
+                                                  stopSharing: async () => {
+                                                      await stopSharing();
+                                                      onClose();
+                                                  },
+                                                  havePublicSharedLink: !!sharedLink,
+                                                  confirmationMessage,
+                                                  modificationDisabled: !hasGeneratedPasswordIncluded,
+                                              })
+                                          }
+                                      >
+                                          <Icon name="cog-wheel" />
+                                      </Button>
+                                  </Tooltip>,
+                              ]
+                            : undefined
+                    }
                 />
                 <ModalTwoContent>
                     <DirectSharing
