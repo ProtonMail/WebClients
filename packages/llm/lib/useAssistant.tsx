@@ -21,6 +21,7 @@ import {
     queryAssistantModels,
 } from './helpers';
 import {
+    Action,
     AssistantConfig,
     DownloadProgressInfo,
     GenerationCallback,
@@ -31,7 +32,7 @@ import {
 
 export interface GenerateAssistantResult {
     assistantID: string;
-    inputText: string;
+    action: Action;
     callback: GenerationCallback;
 }
 
@@ -227,15 +228,9 @@ export const useAssistant = (assistantID?: string) => {
         }
     };
 
-    const handleGenerateResult = async ({
-        inputText,
-        callback,
-    }: {
-        inputText: string;
-        callback: (token: string, fullText: string) => void;
-    }) => {
+    const handleGenerateResult = async ({ action, callback }: Omit<GenerateAssistantResult, 'assistantID'>) => {
         if (assistantID) {
-            return generateResult({ inputText, callback, assistantID });
+            return generateResult({ action, callback, assistantID });
         }
     };
 
@@ -593,8 +588,7 @@ export const AssistantProvider = ({
         setDownloadPaused(false);
     };
 
-    // TODO pass promptType
-    const generateResult = async ({ inputText, callback, assistantID }: GenerateAssistantResult) => {
+    const generateResult = async ({ action, callback, assistantID }: GenerateAssistantResult) => {
         // Do not start multiple actions in the same assistant
         const runningActionInAssistant = getRunningActionFromAssistantID(assistantID);
         if (runningActionInAssistant) {
@@ -644,13 +638,7 @@ export const AssistantProvider = ({
                     };
 
                     const generationStart = performance.now();
-                    const runningAction = await llmModel.current.performAction(
-                        {
-                            type: 'writeFullEmail',
-                            prompt: inputText,
-                        },
-                        generationCallback
-                    );
+                    const runningAction = await llmModel.current.performAction(action, generationCallback);
                     runningActionsRef.current.push({ runningAction, assistantID });
                     await runningAction.waitForCompletion();
 
