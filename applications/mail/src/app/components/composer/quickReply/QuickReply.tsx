@@ -317,6 +317,7 @@ const QuickReply = ({
                                     ])}
                                     onInsert={toolbarConfig.emoji.insert}
                                     openRef={openEmojiPickerRef}
+                                    userSettings={userSettings}
                                 />
                             </Suspense>
                         </ErrorBoundary>

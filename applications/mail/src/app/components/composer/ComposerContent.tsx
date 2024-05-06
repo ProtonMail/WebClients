@@ -3,7 +3,7 @@ import { Ref, forwardRef } from 'react';
 import { c } from 'ttag';
 
 import { Dropzone, EditorMetadata, EllipsisLoader } from '@proton/components';
-import { MailSettings } from '@proton/shared/lib/interfaces';
+import { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { getAttachments } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
@@ -30,28 +30,32 @@ interface Props {
     isOutside?: boolean;
     outsideKey?: OutsideKey;
     mailSettings?: MailSettings;
+    userSettings?: UserSettings;
     editorMetadata: EditorMetadata;
 }
 
-const ComposerContent = ({
-    message,
-    disabled,
-    onEditorReady,
-    onChange,
-    onMouseUp,
-    onKeyUp,
-    onChangeContent,
-    onFocus,
-    onAddAttachments,
-    onRemoveAttachment,
-    onRemoveUpload,
-    pendingUploads,
-    isOutside = false,
-    outsideKey,
-    mailSettings,
-    editorMetadata,
-}: Props,
-  ref: Ref<HTMLElement>) => {
+const ComposerContent = (
+    {
+        message,
+        disabled,
+        onEditorReady,
+        onChange,
+        onMouseUp,
+        onKeyUp,
+        onChangeContent,
+        onFocus,
+        onAddAttachments,
+        onRemoveAttachment,
+        onRemoveUpload,
+        pendingUploads,
+        isOutside = false,
+        outsideKey,
+        mailSettings,
+        userSettings,
+        editorMetadata,
+    }: Props,
+    ref: Ref<HTMLElement>
+) => {
     const attachments = getAttachments(message.data);
     const showAttachments = attachments.length + (pendingUploads?.length || 0) > 0;
 
@@ -92,6 +96,7 @@ const ComposerContent = ({
                     onAddAttachments={onAddAttachments}
                     onRemoveAttachment={onRemoveAttachment}
                     mailSettings={mailSettings}
+                    userSettings={userSettings}
                     editorMetadata={editorMetadata}
                 />
             </div>
