@@ -1,7 +1,8 @@
 {
     "name": "proton-mail",
     "productName": "Proton Mail",
-    "version": "1.0.3",
+    "FIXME_version": "1.0.2",
+    "version": "1.1.0",
     "icon": "assets/icons/icon.png",
     "description": "Proton official desktop application for Proton Mail and Proton Calendar",
     "license": "GPL-3.0",
@@ -14,7 +15,8 @@
         "appBundleId": "ch.protonmail.desktop",
         "appUserModelId": "com.squirrel.proton_mail.ProtonMail",
         "copyright": "Copyright (c) 2024, Proton AG <contact@protonmail.com>",
-        "githubUser": "ProtonMail",
+        "FIXME_githubUser": "ProtonMail",
+        "githubUser": "cuthix",
         "githubRepo": "inbox-desktop"
     },
     "main": ".webpack/main",

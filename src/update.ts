@@ -17,7 +17,8 @@ export const checkForUpdates = () => {
 
     updateElectronApp({
         repo: `${pkg.config.githubUser}/${pkg.config.githubRepo}`,
-        updateInterval: "1 hour",
+        // FIXME updateInterval: "1 hour",
+        updateInterval: "5 min", // minimal
         logger: Logger,
     });
 };
