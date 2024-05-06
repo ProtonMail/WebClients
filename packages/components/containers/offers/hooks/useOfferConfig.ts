@@ -21,6 +21,7 @@ import {
     useBlackFriday2023VPNTwoYears,
 } from '../operations/blackFridayVPN2023TwoYears';
 import { blackFriday2023VPNYearlyConfig, useBlackFriday2023VPNYearly } from '../operations/blackFridayVPN2023Yearly';
+import { drivePlus2024Config, useDrivePlus2024 } from '../operations/drivePlus2024';
 import { goUnlimited2022Config, useGoUnlimited2022 } from '../operations/goUnlimited2022';
 import { mailTrial2023Config, useMailTrial2023 } from '../operations/mailTrial2023';
 import { mailTrial2024Config, useMailTrial2024 } from '../operations/mailTrial2024';
@@ -41,6 +42,7 @@ const configs: Record<OfferId, OfferConfig> = {
     'black-friday-2023-drive-free': blackFriday2023DriveFreeConfig,
     'black-friday-2023-drive-plus': blackFriday2023DrivePlusConfig,
     'black-friday-2023-drive-unlimited': blackFriday2023DriveUnlimitedConfig,
+    'try-drive-plus-2024': drivePlus2024Config,
 };
 
 const OFFERS_FEATURE_FLAGS = Object.values(configs).map(({ featureCode }) => featureCode);
@@ -64,6 +66,7 @@ const useOfferConfig = (): [OfferConfig | undefined, boolean] => {
     const blackFriday2023DriveFree = useBlackFriday2023DriveFree();
     const blackFriday2023DrivePlus = useBlackFriday2023DrivePlus();
     const blackFriday2023DriveUnlimited = useBlackFriday2023DriveUnlimited();
+    const drivePlus2024 = useDrivePlus2024();
 
     // Offer order matters
     const allOffers: Operation[] = [
@@ -81,6 +84,7 @@ const useOfferConfig = (): [OfferConfig | undefined, boolean] => {
         goUnlimited2022,
         mailTrial2023,
         mailTrial2024,
+        drivePlus2024,
     ];
 
     const validOffers: Operation[] | undefined = allOffers.filter((offer) => !offer.isLoading && offer.isValid);
