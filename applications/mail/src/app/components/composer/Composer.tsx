@@ -10,7 +10,6 @@ import {
     useState,
 } from 'react';
 
-import { GetContentMode } from 'roosterjs-editor-types/lib/enum/GetContentMode';
 import { c } from 'ttag';
 
 import { useHandler, useSubscribeEventManager, useUserSettings } from '@proton/components';
@@ -296,23 +295,17 @@ const Composer = (
         setHasUsedAssistantText(true);
     };
 
-    // TODO wip refine logic
-    const handleRefineEditorContent = (selectedText: string) => {
-        if (editorRef.current) {
-            const plain = editorRef.current.getContent(GetContentMode.PlainText);
-            const beginning = plain.indexOf(selectedText);
-            const end = beginning + removeLineBreaks(selectedText).length;
-
-            // TODO call refine
-            console.log({ plain, beginning, end });
-        }
-    };
-
     const handleEditorSelection = () => {
         if (editorRef.current) {
             const selectedText = editorRef.current.getSelectionContent();
             const cleanedText = selectedText ? removeLineBreaks(selectedText) : '';
             setSelectedText(cleanedText);
+        }
+    };
+
+    const handleSetEditorSelection = (textToInsert: string) => {
+        if (editorRef.current) {
+            editorRef.current.setSelectionContent(textToInsert);
         }
     };
 
@@ -345,6 +338,7 @@ const Composer = (
                 {showAssistant && (
                     <ComposerAssistant
                         onUseGeneratedText={handleInsertGeneratedTextInEditor}
+                        onUseRefinedText={handleSetEditorSelection}
                         onUpdateShowAssistant={(value: boolean) => setShowAssistant(value)}
                         assistantID={composerID}
                         onCleanGeneration={cleanAssistantEmailGeneration}
@@ -353,7 +347,7 @@ const Composer = (
                         composerMetaRef={composerMetaRef}
                         isAssistantInitialSetup={isAssistantInitialSetup}
                         selectedText={selectedText}
-                        onRefine={handleRefineEditorContent}
+                        editorRef={editorRef}
                     />
                 )}
                 <div

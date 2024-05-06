@@ -1,5 +1,7 @@
 import { memo, useCallback, useEffect, useRef, useState } from 'react';
 
+import type { GetContentMode } from 'roosterjs-editor-types';
+
 import { Editor, EditorActions, EditorMetadata, useHandler } from '@proton/components';
 import { useToolbar } from '@proton/components/components/editor/hooks/useToolbar';
 import useIsMounted from '@proton/hooks/useIsMounted';
@@ -94,8 +96,8 @@ const EditorWrapper = ({
         }
     }, [isPlainText, message.messageDocument?.plainText, message.messageDocument?.document?.innerHTML]);
 
-    const handleGetContent = useHandler(() => {
-        const editorContent = editorActionsRef.current?.getContent() || '';
+    const handleGetContent = useHandler((format?: GetContentMode) => {
+        const editorContent = editorActionsRef.current?.getContent(format) || '';
 
         if (!editorMetadata.blockquoteExpanded && blockquoteSaved !== '') {
             return editorContent + blockquoteSaved;
