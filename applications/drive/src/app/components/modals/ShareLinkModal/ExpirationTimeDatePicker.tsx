@@ -79,7 +79,7 @@ const ExpirationTimeDatePicker = ({ expiration, handleExpirationChange, disabled
     return (
         <>
             <DateInputTwo
-                id="epirationDateInputId"
+                id="expirationDateInputId"
                 className="flex-1 grow-2"
                 disabled={disabled}
                 value={expDate}
@@ -90,7 +90,7 @@ const ExpirationTimeDatePicker = ({ expiration, handleExpirationChange, disabled
                 placeholder={c('Title').t`Date`}
                 title={c('Title').t`Select link expiration date`}
                 hasToday={false}
-                data-testid="epirationDateInputId"
+                data-testid="expirationDateInputId"
                 {...rest}
             />
             {allowTime && expTime && (
@@ -102,7 +102,7 @@ const ExpirationTimeDatePicker = ({ expiration, handleExpirationChange, disabled
                     onChange={handleChangeTime}
                     max={maxTime}
                     title={c('Title').t`Select link expiration time`}
-                    data-testid="epirationTimeInputId"
+                    data-testid="expirationDateInputId"
                     {...rest}
                 />
             )}

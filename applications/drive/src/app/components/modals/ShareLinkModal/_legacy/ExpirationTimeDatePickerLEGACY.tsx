@@ -77,7 +77,7 @@ const ExpirationTimeDatePickerLEGACY = ({ expiration, handleExpirationChange, di
     return (
         <>
             <DateInput
-                id="epirationDateInputId"
+                id="expirationDateInputId"
                 className="flex-1 grow-2"
                 disabled={disabled}
                 value={expDate}
@@ -88,7 +88,7 @@ const ExpirationTimeDatePickerLEGACY = ({ expiration, handleExpirationChange, di
                 placeholder={c('Title').t`Date`}
                 title={c('Title').t`Select link expiration date`}
                 hasToday={false}
-                data-testid="epirationDateInputId"
+                data-testid="expirationDateInputId"
             />
             {allowTime && expTime && (
                 <TimeInput
