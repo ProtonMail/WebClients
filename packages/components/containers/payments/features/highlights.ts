@@ -81,6 +81,14 @@ export const getSentinel = (included: boolean = false): PlanCardFeatureDefinitio
     };
 };
 
+export const getPassMonitor = (included: boolean = false): PlanCardFeatureDefinition => {
+    return {
+        text: c('new_plans: feature').t`Pass Monitor - premium features`,
+        included: included,
+        icon: 'shield',
+    };
+};
+
 export const getPassKeys = (included: boolean = false): PlanCardFeatureDefinition => {
     return {
         text: c('new_plans: feature').t`Passkeys supported`,

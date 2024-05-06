@@ -77,9 +77,22 @@ export const getDevicesText = () => {
     return c('new_plans: feature').t`Unlimited devices`;
 };
 
+export const getDevicesAndAliasesText = () => {
+    return c('new_plans: feature').t`Unlimited devices and aliases`;
+};
+
 export const getDevices = (): PlanCardFeatureDefinition => {
     return {
         text: getDevicesText(),
+        icon: 'mobile',
+        included: true,
+        hideInDowngrade: true,
+    };
+};
+
+export const getDevicesAndAliases = (): PlanCardFeatureDefinition => {
+    return {
+        text: getDevicesAndAliasesText(),
         icon: 'mobile',
         included: true,
         hideInDowngrade: true,
@@ -153,6 +166,37 @@ export const getVaultSharingText = (n: number | 'unlimited') => {
 export const getVaultSharing = (n: number | 'unlimited'): PlanCardFeatureDefinition => {
     return {
         text: getVaultSharingText(n),
+        icon: 'arrow-up-from-square',
+        included: true,
+        hideInDowngrade: true,
+    };
+};
+
+export const getSecureVaultSharing = (): PlanCardFeatureDefinition => {
+    return {
+        text: c('pass_signup_2023: Info').t`Secure vault sharing`,
+        icon: 'arrow-up-from-square',
+        included: true,
+        hideInDowngrade: true,
+    };
+};
+
+export const getSecureSharingText = (n: number | 'multiple') => {
+    if (n === 'multiple') {
+        return c('pass_signup_2023: Info').t`Secure sharing with multiple vaults`;
+    }
+    return c('pass_signup_2023: Info').ngettext(
+        msgid`Secure sharing with ${n} vault`,
+        `Secure sharing with ${n} vaults`,
+        n
+    );
+};
+
+export const getSecureVaultSharingWith = (
+    n: Parameters<typeof getSecureSharingText>['0']
+): PlanCardFeatureDefinition => {
+    return {
+        text: getSecureSharingText(n),
         icon: 'arrow-up-from-square',
         included: true,
         hideInDowngrade: true,
