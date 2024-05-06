@@ -21,19 +21,18 @@ export class BaseRunningAction implements RunningAction {
     protected generation: Promise<void>;
 
     constructor(prompt: string, callback: GenerationCallback, chat: WebWorkerEngine, action: Action, stop?: string[]) {
-        let fulltext = '';
         const generateProgressCallback = (_step: number, message: string) => {
-            const token = message.slice(fulltext.length);
-            fulltext = message;
-            callback(token, fulltext);
+            const fulltext = message.replace(/^[ \n]*Subject:[^\n]*(\n+|$)/, '');
+            callback(fulltext);
         };
 
         this.finishedPromise = new Promise<void>((resolve: PromiseResolve, reject: PromiseReject) => {
             this.finishedPromiseSignals = { resolve, reject };
         });
 
+        const stopStrings = ['<|', '\n[Your Name]', ...(stop || [])];
         const genConfig: GenerationConfig = {
-            stop: ['<|', '\n[Your Name]'] + (stop || []),
+            stop: stopStrings,
         };
 
         this.generation = chat
