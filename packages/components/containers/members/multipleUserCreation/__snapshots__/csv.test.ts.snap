@@ -3,39 +3,39 @@
 exports[`getSampleCSV includePrivateSubUser when true PrivateSubUser item is present 1`] = `
 "Name,EmailAddress,Password,PrivateSubUser
 # Display name for the user (optional) must be unique,# Enter the email address you want to set up for this user,# Add a password with a minimum of 8 characters for their account,# Enter 1 to make the user account private
-Alice,alice@mydomain.com,alice_password,0
-Bob,bob@mydomain.com,bob_password,1
-Charlie,charlie@mydomain.com,charlie_password,1"
+Alice,alice@mydomain.com,alice_example_password,0
+Bob,bob@mydomain.com,bob_example_password,1
+Charlie,charlie@mydomain.com,charlie_example_password,1"
 `;
 
 exports[`getSampleCSV includeStorage when true TotalStorage item is present 1`] = `
 "Name,EmailAddress,Password,TotalStorage
 # Display name for the user (optional) must be unique,# Enter the email address you want to set up for this user,# Add a password with a minimum of 8 characters for their account,# Amount of storage the user will have in GiB
-Alice,alice@mydomain.com,alice_password,1
-Bob,bob@mydomain.com,bob_password,1
-Charlie,charlie@mydomain.com,charlie_password,1"
+Alice,alice@mydomain.com,alice_example_password,1
+Bob,bob@mydomain.com,bob_example_password,1
+Charlie,charlie@mydomain.com,charlie_example_password,1"
 `;
 
 exports[`getSampleCSV includeVpnAccess when true VPNAccess item is present 1`] = `
 "Name,EmailAddress,Password,VPNAccess
 # Display name for the user (optional) must be unique,# Enter the email address you want to set up for this user,# Add a password with a minimum of 8 characters for their account,# Enter 1 to give the user a VPN account
-Alice,alice@mydomain.com,alice_password,1
-Bob,bob@mydomain.com,bob_password,0
-Charlie,charlie@mydomain.com,charlie_password,1"
+Alice,alice@mydomain.com,alice_example_password,1
+Bob,bob@mydomain.com,bob_example_password,0
+Charlie,charlie@mydomain.com,charlie_example_password,1"
 `;
 
 exports[`getSampleCSV matches snapshot 1`] = `
 "Name,EmailAddress,Password
 # Display name for the user (optional) must be unique,# Enter the email address you want to set up for this user,# Add a password with a minimum of 8 characters for their account
-Alice,alice@mydomain.com,alice_password
-Bob,bob@mydomain.com,bob_password
-Charlie,charlie@mydomain.com,charlie_password"
+Alice,alice@mydomain.com,alice_example_password
+Bob,bob@mydomain.com,bob_example_password
+Charlie,charlie@mydomain.com,charlie_example_password"
 `;
 
 exports[`getSampleCSV multipleAddresses when true uses EmailAddresses header 1`] = `
 "Name,EmailAddresses,Password
 # Display name for the user (optional) must be unique,"# Enter the email address you want to set up for this user. To add more than 1 email address for a user, separate the addresses with commas.",# Add a password with a minimum of 8 characters for their account
-Alice,alice@mydomain.com,alice_password
-Bob,bob@mydomain.com,bob_password
-Charlie,"charlie@mydomain.com, anotheraddress@mydomain.com, notanotherone@mydomain.com",charlie_password"
+Alice,alice@mydomain.com,alice_example_password
+Bob,bob@mydomain.com,bob_example_password
+Charlie,"charlie@mydomain.com, anotheraddress@mydomain.com, notanotherone@mydomain.com",charlie_example_password"
 `;
