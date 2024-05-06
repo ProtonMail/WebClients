@@ -42,9 +42,11 @@ const VirtualListRender: ForwardRefRenderFunction<List, Props> = (
     );
 
     useLayoutEffect(() => {
-        const ref = virtualListRef as RefObject<List>;
-        ref.current?.recomputeRowHeights();
-        ref.current?.measureAllRows();
+        if (rowCount > 0) {
+            const ref = virtualListRef as RefObject<List>;
+            ref.current?.recomputeRowHeights();
+            ref.current?.measureAllRows();
+        }
     }, [interpolationIndexes, rowCount]);
 
     return (
