@@ -187,6 +187,19 @@ export const getMailPlus2024InboxFeatures = (): { name: string; icon: IconName }
     ];
 };
 
+export const getTryDrivePlus2024Features = (): { name: string; icon: IconName }[] => {
+    const TWO_HUNDREDS_GIGABYTES = 200 * 1024 ** 3;
+
+    return [
+        {
+            ...getStorageSizeFeature(humanSize({ bytes: TWO_HUNDREDS_GIGABYTES, fraction: 0, unit: 'GB' }), true),
+            icon: 'storage',
+        },
+        { name: c('driveplus2024: Deal details').t`Extended version history`, icon: 'clock-rotate-left' },
+        { name: c('driveplus2024: Deal details').t`Priority support`, icon: 'life-ring' },
+    ];
+};
+
 export const getUnlimitedVPNFeatures = () => [
     getPremiumVPNFeature(),
     getPremiumPasswordManagerFeature(),
