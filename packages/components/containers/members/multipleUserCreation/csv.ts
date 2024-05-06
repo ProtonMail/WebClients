@@ -224,7 +224,7 @@ const defaultSampleCSV: SampleCsvUser[] = [
     {
         Name: 'Alice',
         EmailAddresses: 'alice@mydomain.com',
-        Password: 'alice_password',
+        Password: 'alice_example_password',
         TotalStorage: 1,
         VPNAccess: 1,
         PrivateSubUser: 0,
@@ -232,7 +232,7 @@ const defaultSampleCSV: SampleCsvUser[] = [
     {
         Name: 'Bob',
         EmailAddresses: 'bob@mydomain.com',
-        Password: 'bob_password',
+        Password: 'bob_example_password',
         TotalStorage: 1,
         VPNAccess: 0,
         PrivateSubUser: 1,
@@ -240,7 +240,7 @@ const defaultSampleCSV: SampleCsvUser[] = [
     {
         Name: 'Charlie',
         EmailAddresses: 'charlie@mydomain.com, anotheraddress@mydomain.com, notanotherone@mydomain.com',
-        Password: 'charlie_password',
+        Password: 'charlie_example_password',
         TotalStorage: 1,
         VPNAccess: 1,
         PrivateSubUser: 1,
