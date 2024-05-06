@@ -11,22 +11,19 @@ import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { CardContent } from '@proton/pass/components/Layout/Card/CardContent';
 import { useMonitor } from '@proton/pass/components/Monitor/MonitorProvider';
 
-type Props = {
-    className?: string;
-    breached: boolean;
-    error?: boolean;
-    loading?: boolean;
-    onClick: () => void;
-};
+type Props = { className?: string; onClick: () => void };
 
 type SummaryProps = Pick<ButtonCardProps, 'subtitle' | 'icon' | 'disabled' | 'onClick' | 'type'>;
 
-export const BreachSummaryCard: FC<Props> = ({ className, breached, error, loading, onClick }) => {
-    const monitor = useMonitor();
+export const BreachSummaryCard: FC<Props> = ({ className, onClick }) => {
+    const { breaches, didLoad, sync } = useMonitor();
+    const breached = breaches.count > 0;
+    const loading = breaches.loading;
+    const error = !loading && !didLoad;
 
     if (!breached) {
         const props = ((): SummaryProps => {
-            if (loading) {
+            if (!didLoad && loading) {
                 return {
                     disabled: true,
                     icon: () => <CircleLoader size="small" className="mx-1" />,
@@ -42,14 +39,14 @@ export const BreachSummaryCard: FC<Props> = ({ className, breached, error, loadi
                     subtitle: (
                         <span>
                             {c('Warning').t`Failed to load breaches.`}{' '}
-                            <InlineLinkButton onClick={monitor.sync}>{c('Action').t`Try again.`}</InlineLinkButton>
+                            <InlineLinkButton onClick={sync}>{c('Action').t`Try again.`}</InlineLinkButton>
                         </span>
                     ),
                 };
             }
 
             return {
-                icon: 'checkmark',
+                icon: loading ? () => <CircleLoader size="small" className="mx-1" /> : 'checkmark',
                 subtitle: c('Info').t`No breaches detected`,
                 type: 'success',
                 onClick,
