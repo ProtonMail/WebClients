@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import { c } from 'ttag';
 
 import { useMonitor } from '@proton/pass/components/Monitor/MonitorProvider';
+import { MAX_CUSTOM_ADDRESSES } from '@proton/pass/constants';
 import { filterItemsByUsername } from '@proton/pass/lib/items/item.utils';
 import { AddressType, type MonitorAddress } from '@proton/pass/lib/monitor/types';
 import { selectLoginItems, selectNonAliasedLoginItems } from '@proton/pass/store/selectors';
@@ -50,8 +51,7 @@ const getCustomSuggestions = (data: MonitorAddress[], items: LoginItem[]): Monit
             usageCount,
             verified: false,
         }))
-        .sort(sortOn('usageCount', 'DESC'))
-        .slice(0, 3);
+        .sort(sortOn('usageCount', 'DESC'));
 };
 
 const getRowPriority = (row: MonitorTableRow) => {
@@ -90,7 +90,8 @@ export const useBreachesTable = (type: AddressType) => {
 
             case AddressType.CUSTOM:
                 const monitored = [alias, custom, proton].flat();
-                const suggestions = getCustomSuggestions(monitored, nonAliasedLogins);
+                const suggestionsCount = custom.length >= MAX_CUSTOM_ADDRESSES ? 0 : 3;
+                const suggestions = getCustomSuggestions(monitored, nonAliasedLogins).slice(0, suggestionsCount);
 
                 return {
                     title: c('Title').t`Custom emails`,
