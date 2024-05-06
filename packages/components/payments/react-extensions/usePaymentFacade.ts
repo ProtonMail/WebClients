@@ -161,7 +161,7 @@ export const usePaymentFacade = (
         onMethodChanged,
         paymentMethods,
         paymentMethodStatusExtended,
-        chargebeeEnabled,
+        isChargebeeEnabled,
         chargebeeKillSwitch,
         forceEnableChargebee,
         selectedPlanName,
@@ -186,7 +186,7 @@ export const usePaymentFacade = (
         onMethodChanged?: OnMethodChangedHandler;
         paymentMethods?: SavedPaymentMethod[];
         paymentMethodStatusExtended?: PaymentMethodStatusExtended;
-        chargebeeEnabled: ChargebeeEnabled;
+        isChargebeeEnabled: () => ChargebeeEnabled;
         chargebeeKillSwitch: ChargebeeKillSwitch;
         forceEnableChargebee: ForceEnableChargebee;
         selectedPlanName: PLANS | ADDON_NAMES | undefined;
@@ -232,7 +232,7 @@ export const usePaymentFacade = (
             onMethodChanged,
             paymentMethods,
             paymentMethodStatusExtended,
-            chargebeeEnabled,
+            isChargebeeEnabled,
             paymentsApi,
             selectedPlanName,
         },
