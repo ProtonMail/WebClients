@@ -110,7 +110,6 @@ export enum FeatureCode {
     SmtpToken = 'SmtpToken',
     SpotlightBreachAlertSecurityCenter = 'SpotlightBreachAlertSecurityCenter',
     SpotlightGetStartedChecklist = 'SpotlightGetStartedChecklist',
-    SpotlightInboxDesktop = 'SpotlightInboxDesktop',
     SpotlightLoadContent = 'SpotlightLoadContent',
     SpotlightScheduledSend = 'SpotlightScheduledSend',
     SpyTrackerProtectionIncorporator = 'SpyTrackerProtectionIncorporator',
