@@ -20,7 +20,8 @@ export type OfferId =
     | 'black-friday-2023-vpn-two-years'
     | 'black-friday-2023-drive-free'
     | 'black-friday-2023-drive-plus'
-    | 'black-friday-2023-drive-unlimited';
+    | 'black-friday-2023-drive-unlimited'
+    | 'try-drive-plus-2024';
 
 export type OfferGlobalFeatureCodeValue = Record<OfferId, boolean>;
 
