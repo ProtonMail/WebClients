@@ -737,6 +737,7 @@ const BasePublicApp = ({ onLogin }: Props) => {
                                                     {(() => {
                                                         if (
                                                             hasBFCoupon ||
+                                                            maybePreAppIntent === APPS.PROTONDRIVE ||
                                                             searchParams.get('mode') === 'sps' ||
                                                             searchParams.get('plan') === PLANS.NEW_VISIONARY
                                                         ) {
