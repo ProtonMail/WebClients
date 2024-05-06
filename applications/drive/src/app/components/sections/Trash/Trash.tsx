@@ -32,6 +32,7 @@ export interface TrashItem extends FileBrowserBaseItem {
     trashed: number | null;
     parentLinkId: string;
     rootShareId: string;
+    sharedOn?: number;
 }
 interface Props {
     shareId: string;
