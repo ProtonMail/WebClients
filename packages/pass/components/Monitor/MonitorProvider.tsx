@@ -14,12 +14,12 @@ import {
     selectCustomBreaches,
     selectDuplicatePasswords,
     selectExcludedItems,
+    selectMonitorState,
     selectProtonBreaches,
     selectTotalBreaches,
 } from '@proton/pass/store/selectors';
 import type { MaybeNull, UniqueItem } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
-import { getEpoch } from '@proton/pass/utils/time/epoch';
 
 import { CustomAddressAddModal } from './Address/CustomAddressAddModal';
 import { CustomAddressVerifyModal } from './Address/CustomAddressVerifyModal';
@@ -31,7 +31,6 @@ type MonitorAction =
 export interface MonitorContextValue {
     enabled: boolean;
     didLoad: boolean;
-    refreshedAt: MaybeNull<number>;
     breaches: {
         data: {
             alias: MonitorAddress<AddressType.ALIAS>[];
@@ -57,9 +56,7 @@ export const MonitorProvider: FC<PropsWithChildren> = ({ children }) => {
     const dispatch = useDispatch();
 
     const enabled = useFeatureFlag(PassFeature.PassMonitor);
-    const [refreshedAt, setRefreshedAt] = useState<MaybeNull<number>>(null);
-    const [action, setAction] = useState<MaybeNull<MonitorAction>>(null);
-    const onClose = () => setAction(null);
+    const didLoad = useSelector(selectMonitorState) !== null;
 
     const alias = useSelector(selectAliasBreaches) ?? [];
     const proton = useSelector(selectProtonBreaches) ?? [];
@@ -71,19 +68,20 @@ export const MonitorProvider: FC<PropsWithChildren> = ({ children }) => {
     const insecure = useInsecurePasswords();
     const excluded = useSelector(selectExcludedItems);
 
+    const [action, setAction] = useState<MaybeNull<MonitorAction>>(null);
+    const onClose = () => setAction(null);
+
     const breaches = useRequest(getBreaches, {
         initialLoading: true,
         initialRequestId: breachesRequest(),
-        onSuccess: () => setRefreshedAt(getEpoch()),
     });
 
-    useEffect(() => breaches.revalidate(), []);
+    useEffect(() => breaches.dispatch(), []);
 
     const context = useMemo<MonitorContextValue>(
         () => ({
             enabled,
-            didLoad: refreshedAt !== null,
-            refreshedAt,
+            didLoad,
             breaches: { data: { alias, proton, custom }, loading: breaches.loading, count },
             insecure,
             missing2FAs,
@@ -92,9 +90,9 @@ export const MonitorProvider: FC<PropsWithChildren> = ({ children }) => {
             addAddress: () => setAction({ type: 'add' }),
             verifyAddress: (data, sentAt) => setAction({ type: 'verify', data: { ...data, sentAt } }),
             deleteAddress: (addressId) => dispatch(deleteCustomAddress.intent(addressId)),
-            sync: breaches.dispatch,
+            sync: breaches.revalidate,
         }),
-        [enabled, breaches, insecure, duplicates, missing2FAs, excluded, alias, proton, custom, refreshedAt]
+        [enabled, breaches, insecure, duplicates, missing2FAs, excluded, alias, proton, custom, didLoad]
     );
     return (
         <MonitorContext.Provider value={context}>

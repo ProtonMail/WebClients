@@ -6,6 +6,7 @@ import { SubSidebar } from '@proton/pass/components/Layout/Section/SubSidebar';
 import { Missing2FAs } from '@proton/pass/components/Monitor/2FA/Missing2FAs';
 import { DarkWebMonitoring } from '@proton/pass/components/Monitor/Breach/DarkWebMonitoring';
 import { ExcludedItems } from '@proton/pass/components/Monitor/Item/ExcludedItems';
+import { MonitorProvider } from '@proton/pass/components/Monitor/MonitorProvider';
 import { MonitorSummary } from '@proton/pass/components/Monitor/MonitorSummary';
 import { DuplicatePasswords } from '@proton/pass/components/Monitor/Password/DuplicatePasswords';
 import { WeakPasswords } from '@proton/pass/components/Monitor/Password/WeakPasswords';
@@ -18,7 +19,7 @@ export const Monitor: FC<RouteChildrenProps> = ({ match }) => {
     const enabled = useFeatureFlag(PassFeature.PassMonitor);
 
     return enabled ? (
-        <>
+        <MonitorProvider>
             <SubSidebar>
                 <Switch>
                     <Route path={`${match?.path}/duplicates`} component={DuplicatePasswords} />
@@ -47,7 +48,7 @@ export const Monitor: FC<RouteChildrenProps> = ({ match }) => {
                     }}
                 </Route>
             </Switch>
-        </>
+        </MonitorProvider>
     ) : (
         <Redirect to={getLocalPath()} push={false} />
     );
