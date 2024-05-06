@@ -203,7 +203,6 @@ const SingleSignupContainerV2 = ({
     const ktActivation = useKTActivation();
     const { APP_NAME } = useConfig();
     const visionarySignupEnabled = useFlag('VisionarySignup');
-    const mailTrialOfferEnabled = useFlag('MailTrialOffer');
 
     const history = useHistory();
     const location = useLocationWithoutLocale<{ invite?: InviteData }>();
@@ -649,9 +648,6 @@ const SingleSignupContainerV2 = ({
                 if (isMailTrial || isMailRefer) {
                     history.replace(SSO_PATHS.SIGNUP);
                 }
-            }
-            if (!mailTrialOfferEnabled) {
-                signupParametersDiff.noPromo = true;
             }
             if (Object.keys(signupParametersDiff).length > 0) {
                 setSignupParameters((old) => ({ ...old, ...signupParametersDiff }));

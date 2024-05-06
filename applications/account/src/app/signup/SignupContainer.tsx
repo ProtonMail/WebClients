@@ -137,6 +137,7 @@ const SignupContainer = ({
 
     const ktActivation = useKTActivation();
     const mailTrialOfferEnabled = useFlag('MailTrialOffer');
+    const driveTrialOfferEnabled = useFlag('DriveTrialOffer');
 
     // Override the app to always be mail in trial or refer-a-friend signup
     if (isMailTrial || isMailRefer) {
@@ -752,6 +753,9 @@ const SignupContainer = ({
             {step === Upsell && (
                 <UpsellStep
                     hasMailTrialUpsell={toApp === APPS.PROTONMAIL && !signupParameters.noPromo && mailTrialOfferEnabled}
+                    hasDriveTrialUpsell={
+                        toApp === APPS.PROTONDRIVE && !signupParameters.noPromo && driveTrialOfferEnabled
+                    }
                     freePlan={model.freePlan}
                     onBack={handleBackStep}
                     currency={model.subscriptionData.currency}
