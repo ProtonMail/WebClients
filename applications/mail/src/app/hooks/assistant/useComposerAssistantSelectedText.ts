@@ -1,13 +1,16 @@
-import { RefObject, useEffect, useState } from 'react';
+import { RefObject, useEffect, useRef, useState } from 'react';
 
 interface Props {
     assistantResultRef: RefObject<HTMLDivElement>;
-    canCheckSelection: boolean;
     inputSelectedText?: string;
 }
-const useComposerAssistantSelectedText = ({ assistantResultRef, canCheckSelection, inputSelectedText }: Props) => {
+const useComposerAssistantSelectedText = ({ assistantResultRef, inputSelectedText }: Props) => {
     // Selected text in the composer or assistant result that the user might want to refine
     const [selectedText, setSelectedText] = useState(inputSelectedText);
+
+    const [displayRefinePopover, setDisplayRefinePopover] = useState<boolean>(false);
+
+    const mouseDownRef = useRef(false);
 
     const handleSelectionChange = () => {
         const selection = document.getSelection();
@@ -19,27 +22,63 @@ const useComposerAssistantSelectedText = ({ assistantResultRef, canCheckSelectio
                 assistantResultRef.current.contains(selection.focusNode);
             if (selectionInAssistant) {
                 setSelectedText(selection.toString());
-                // setDisplayRefinePopover(true); TODO enable this later
                 return;
             }
         }
         setSelectedText('');
     };
 
+    const handleMouseDown = () => {
+        mouseDownRef.current = true;
+    };
+
+    // Listen mouse up at document lvl to handle the case when the user clicks
+    // outside the assistant
     useEffect(() => {
-        let hasListener = false;
-        if (canCheckSelection) {
-            document.addEventListener('selectionchange', handleSelectionChange);
-            hasListener = true;
-        }
-        return () => {
-            if (hasListener) {
-                document.removeEventListener('selectionchange', handleSelectionChange);
+        const handleMouseUp = () => {
+            if (mouseDownRef.current) {
+                mouseDownRef.current = false;
+                handleSelectionChange();
             }
         };
-    }, [canCheckSelection]);
+        document.addEventListener('mouseup', handleMouseUp);
 
-    return { selectedText, setSelectedText };
+        return () => {
+            document.removeEventListener('mouseup', handleMouseUp);
+        };
+    }, []);
+
+    // Controls the popover display
+    useEffect(() => {
+        if (selectedText && !displayRefinePopover) {
+            setDisplayRefinePopover(true);
+        } else if (!selectedText) {
+            setDisplayRefinePopover(false);
+        }
+    }, [selectedText, displayRefinePopover]);
+
+    // Update selected text when selection in editor is changing,
+    // and hide the refine popover when the user deselect content in the editor.
+    useEffect(() => {
+        setSelectedText(inputSelectedText);
+        if (inputSelectedText) {
+            setDisplayRefinePopover(true);
+        }
+    }, [inputSelectedText]);
+
+    const handleCloseRefinePopover = () => {
+        setSelectedText('');
+        setDisplayRefinePopover(false);
+    };
+
+    return {
+        selectedText,
+        setSelectedText,
+        handleMouseDown,
+        handleCloseRefinePopover,
+        handleSelectionChange,
+        displayRefinePopover,
+    };
 };
 
 export default useComposerAssistantSelectedText;
