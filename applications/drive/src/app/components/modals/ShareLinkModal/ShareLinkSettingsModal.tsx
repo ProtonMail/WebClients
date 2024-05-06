@@ -133,7 +133,7 @@ const ShareLinkSettingsModal = ({
                         style={{ '--h-custom': '2.25rem' }}
                     >
                         <Label
-                            htmlFor="epirationDateInputId"
+                            htmlFor="expirationDateInputId"
                             className={clsx(
                                 'flex flex-column p-0 text-semibold',
                                 !havePublicSharedLink && 'opacity-30'
@@ -148,8 +148,8 @@ const ShareLinkSettingsModal = ({
                                 containerProps={{
                                     style: { '--w-custom': '12.5rem', '--max-w-custom': '12.5rem' },
                                 }}
+                                id="expirationDateInputId"
                                 disabled={!expirationEnabled}
-                                type="text"
                                 allowTime={false}
                                 expiration={expiration}
                                 handleExpirationChange={setExpiration}
@@ -188,6 +188,7 @@ const ShareLinkSettingsModal = ({
                                 as={PasswordInputTwo}
                                 data-testid="sharing-modal-password"
                                 label={false}
+                                autoComplete="new-password"
                                 value={password}
                                 onInput={(e: ChangeEvent<HTMLInputElement>) => {
                                     setPassword(e.target.value);
@@ -226,7 +227,7 @@ const ShareLinkSettingsModal = ({
                     </div>
                 </ModalTwoContent>
                 <ModalTwoFooter>
-                    <Button onClick={modalProps.onClose}>{c('Action').t`Back`}</Button>
+                    <Button onClick={handleClose}>{c('Action').t`Back`}</Button>
                     <Button disabled={isSaveDisabled} loading={isSubmitting} color="norm" type="submit">{c('Action')
                         .t`Save changes`}</Button>
                 </ModalTwoFooter>
