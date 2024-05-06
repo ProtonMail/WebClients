@@ -2,7 +2,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { EditorMetadata, useHandler } from '@proton/components';
 import { PublicKeyReference } from '@proton/crypto';
-import { EO_DEFAULT_MAILSETTINGS, eoDefaultUserSettings } from '@proton/shared/lib/mail/eo/constants';
+import { EO_DEFAULT_MAILSETTINGS, EO_DEFAULT_USER_SETTINGS } from '@proton/shared/lib/mail/eo/constants';
 import { DIRECTION } from '@proton/shared/lib/mail/mailSettings';
 import { isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages';
 import noop from '@proton/utils/noop';
@@ -42,7 +42,7 @@ const EOComposer = ({ referenceMessage, id, publicKey, outsideKey, numberOfRepli
             MESSAGE_ACTIONS.REPLY,
             referenceMessage,
             EO_DEFAULT_MAILSETTINGS,
-            eoDefaultUserSettings,
+            EO_DEFAULT_USER_SETTINGS,
             [],
             // eslint-disable-next-line @typescript-eslint/no-unused-vars
             (ID) => {
@@ -147,6 +147,7 @@ const EOComposer = ({ referenceMessage, id, publicKey, outsideKey, numberOfRepli
                     onRemoveAttachment={handleRemoveAttachment}
                     outsideKey={outsideKey}
                     mailSettings={EO_DEFAULT_MAILSETTINGS}
+                    userSettings={EO_DEFAULT_USER_SETTINGS}
                     editorMetadata={metadata}
                     isOutside
                 />

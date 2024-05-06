@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { Vr } from '@proton/atoms';
 import { ErrorBoundary } from '@proton/components/containers';
 import { COMPOSER_TOOLBAR_ICON_SIZE } from '@proton/shared/lib/constants';
-import { MailSettings } from '@proton/shared/lib/interfaces';
+import { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import { useActiveBreakpoint } from '../../../hooks';
@@ -29,6 +29,7 @@ interface ToolbarProps {
     config: ToolbarConfig | undefined;
     metadata: EditorMetadata;
     mailSettings?: MailSettings;
+    userSettings?: UserSettings;
     className?: string;
     openEmojiPickerRef: Ref<() => void>;
     simple?: boolean;
@@ -43,6 +44,7 @@ const Toolbar = ({
     className,
     simple,
     isSmallViewportForToolbar,
+    userSettings,
 }: ToolbarProps) => {
     const { viewportWidth } = useActiveBreakpoint();
 
@@ -175,7 +177,11 @@ const Toolbar = ({
                             <Vr aria-hidden="true" />{' '}
                             <ErrorBoundary component={null}>
                                 <Suspense fallback={null}>
-                                    <ToolbarEmojiDropdown onInsert={config.emoji.insert} openRef={openEmojiPickerRef} />
+                                    <ToolbarEmojiDropdown
+                                        onInsert={config.emoji.insert}
+                                        openRef={openEmojiPickerRef}
+                                        userSettings={userSettings}
+                                    />
                                 </Suspense>
                             </ErrorBoundary>
                         </>
