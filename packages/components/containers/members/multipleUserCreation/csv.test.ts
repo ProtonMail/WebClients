@@ -50,7 +50,7 @@ describe('getSampleCSV', () => {
                         {
                             Name: 'Alice',
                             EmailAddresses: 'alice@mydomain.com,alice2@mydomain.com',
-                            Password: 'alice_password',
+                            Password: 'alice_example_password',
                         },
                     ],
                     { multipleAddresses: false }
@@ -76,7 +76,7 @@ describe('getSampleCSV', () => {
                         {
                             Name: 'Alice',
                             EmailAddresses: 'alice@mydomain.com,alice2@mydomain.com',
-                            Password: 'alice_password',
+                            Password: 'alice_example_password',
                         },
                     ],
                     { multipleAddresses: true }
@@ -177,7 +177,7 @@ describe('parseMultiUserCsv', () => {
         const defaultUser: SampleCsvUser = {
             Name: 'Alice',
             EmailAddresses: 'alice@mydomain.com',
-            Password: 'alice_password',
+            Password: 'alice_example_password',
         };
 
         it('throws error if no files are passed', async () => {
@@ -235,7 +235,7 @@ describe('parseMultiUserCsv', () => {
         });
 
         it('throws error if the EmailAddress field is not defined', async () => {
-            const fileContent = ['Password', 'alice_password'].join('\n');
+            const fileContent = ['Password', 'alice_example_password'].join('\n');
             const file = getFile(fileContent);
 
             await expect(parseMultiUserCsv([file])).rejects.toThrow(
@@ -253,7 +253,9 @@ describe('parseMultiUserCsv', () => {
         });
 
         it('throws error if a row contains too few fields', async () => {
-            const fileContent = [defaultCsvFields, 'alice@mydomain.com,alice_password,1073741824,1,0'].join('\n');
+            const fileContent = [defaultCsvFields, 'alice@mydomain.com,alice_example_password,1073741824,1,0'].join(
+                '\n'
+            );
             const file = getFile(fileContent);
 
             await expect(parseMultiUserCsv([file])).rejects.toThrow('Error on row 1.');
@@ -262,7 +264,7 @@ describe('parseMultiUserCsv', () => {
         it('throws error if a row contains too many fields', async () => {
             const fileContent = [
                 defaultCsvFields,
-                'Alice,alice@mydomain.com,alice_password,1073741824,1,0' + ',ExtraItem',
+                'Alice,alice@mydomain.com,alice_example_password,1073741824,1,0' + ',ExtraItem',
             ].join('\n');
             const file = getFile(fileContent);
 
@@ -284,7 +286,7 @@ describe('parseMultiUserCsv', () => {
                 /**
                  * `Alice,"` must be of this form - it will parse incorrectly if there is a space before the `"` ie `Alice, "`
                  */
-                `  Alice,"  alice1@mydomain.com ",alice_password, 2 ,1 ,0 `,
+                `  Alice,"  alice1@mydomain.com ",alice_example_password, 2 ,1 ,0 `,
             ].join('\n');
             const file = getFile(fileContent);
 
@@ -301,7 +303,7 @@ describe('parseMultiUserCsv', () => {
             expect(user.displayName).toBe('Alice');
             expect(user.emailAddresses.length).toBe(1);
             expect(user.emailAddresses[0]).toBe('alice1@mydomain.com');
-            expect(user.password).toBe('alice_password');
+            expect(user.password).toBe('alice_example_password');
             expect(user.totalStorage).toBe(2 * GIGA);
             expect(user.vpnAccess).toBe(true);
             expect(user.privateSubUser).toBe(false);
@@ -311,9 +313,9 @@ describe('parseMultiUserCsv', () => {
             it('equals the row number', async () => {
                 const fileContent = [
                     defaultCsvFields,
-                    `Alice,alice@mydomain.com,alice_password,1073741824,1,0`,
-                    `Bob,bob@mydomain.com,bob_password,1073741824,1,0`,
-                    `Charlie,charlie@mydomain.com,charlie_password,1073741824,1,0`,
+                    `Alice,alice@mydomain.com,alice_example_password,1073741824,1,0`,
+                    `Bob,bob@mydomain.com,bob_example_password,1073741824,1,0`,
+                    `Charlie,charlie@mydomain.com,charlie_example_password,1073741824,1,0`,
                 ].join('\n');
                 const file = getFile(fileContent);
 
@@ -331,7 +333,7 @@ describe('parseMultiUserCsv', () => {
                 const displayName = 'Alice';
                 const fileContent = [
                     defaultCsvFields,
-                    `${displayName},alice@mydomain.com,alice_password,1073741824,1,0`,
+                    `${displayName},alice@mydomain.com,alice_example_password,1073741824,1,0`,
                 ].join('\n');
                 const file = getFile(fileContent);
 
@@ -346,7 +348,7 @@ describe('parseMultiUserCsv', () => {
                 const displayName = '';
                 const fileContent = [
                     defaultCsvFields,
-                    `${displayName},alice@mydomain.com,alice_password,1073741824,1,0`,
+                    `${displayName},alice@mydomain.com,alice_example_password,1073741824,1,0`,
                 ].join('\n');
                 const file = getFile(fileContent);
 
@@ -361,7 +363,7 @@ describe('parseMultiUserCsv', () => {
                 const displayName = 123;
                 const fileContent = [
                     defaultCsvFields,
-                    `${displayName},alice@mydomain.com,alice_password,1073741824,1,0`,
+                    `${displayName},alice@mydomain.com,alice_example_password,1073741824,1,0`,
                 ].join('\n');
                 const file = getFile(fileContent);
 
@@ -376,9 +378,10 @@ describe('parseMultiUserCsv', () => {
         describe('emailAddresses', () => {
             it('adds error if no email addresses are defined', async () => {
                 const emailAddresses = '';
-                const fileContent = [defaultCsvFields, `Alice,${emailAddresses},alice_password,1073741824,1,0`].join(
-                    '\n'
-                );
+                const fileContent = [
+                    defaultCsvFields,
+                    `Alice,${emailAddresses},alice_example_password,1073741824,1,0`,
+                ].join('\n');
                 const file = getFile(fileContent);
 
                 const result = await parseMultiUserCsv([file]);
@@ -390,9 +393,10 @@ describe('parseMultiUserCsv', () => {
 
             it('returns no errors if emailAddresses is a string', async () => {
                 const emailAddresses = 'alice@mydomain.com';
-                const fileContent = [defaultCsvFields, `Alice,${emailAddresses},alice_password,1073741824,1,0`].join(
-                    '\n'
-                );
+                const fileContent = [
+                    defaultCsvFields,
+                    `Alice,${emailAddresses},alice_example_password,1073741824,1,0`,
+                ].join('\n');
                 const file = getFile(fileContent);
 
                 const result = await parseMultiUserCsv([file]);
@@ -405,7 +409,7 @@ describe('parseMultiUserCsv', () => {
 
             describe('multipleAddresses', () => {
                 it('defaults to false', async () => {
-                    const fileContent = ['Password', 'alice_password'].join('\n');
+                    const fileContent = ['Password', 'alice_example_password'].join('\n');
                     const file = getFile(fileContent);
 
                     await expect(parseMultiUserCsv([file])).rejects.toThrow(
@@ -418,7 +422,7 @@ describe('parseMultiUserCsv', () => {
                         const emailAddresses = ['alice1@mydomain.com', 'alice2@mydomain.com'];
                         const fileContent = [
                             defaultCsvFields,
-                            `Alice,"${emailAddresses.join(',')}",alice_password,1073741824,1,0`,
+                            `Alice,"${emailAddresses.join(',')}",alice_example_password,1073741824,1,0`,
                         ].join('\n');
                         const file = getFile(fileContent);
 
@@ -434,7 +438,7 @@ describe('parseMultiUserCsv', () => {
 
                 describe('when true', () => {
                     it('throws error if the EmailAddresses field is not defined', async () => {
-                        const fileContent = ['Password', 'alice_password'].join('\n');
+                        const fileContent = ['Password', 'alice_example_password'].join('\n');
                         const file = getFile(fileContent);
 
                         await expect(parseMultiUserCsv([file], { multipleAddresses: true })).rejects.toThrow(
@@ -446,7 +450,7 @@ describe('parseMultiUserCsv', () => {
                         const emailAddresses = ['alice1@mydomain.com', 'alice2@mydomain.com'];
                         const fileContent = [
                             defaultCsvFields,
-                            `Alice,"${emailAddresses.join(',')}",alice_password,1073741824,1,0`,
+                            `Alice,"${emailAddresses.join(',')}",alice_example_password,1073741824,1,0`,
                         ].join('\n');
                         const file = getFile(fileContent);
 
@@ -465,7 +469,7 @@ describe('parseMultiUserCsv', () => {
                             /**
                              * `Alice,"` must be of this form - it will parse incorrectly if there is a space before the `"` ie `Alice, "`
                              */
-                            `  Alice,"  alice1@mydomain.com , alice2@mydomain.com ",alice_password, 2 ,1 ,0 `,
+                            `  Alice,"  alice1@mydomain.com , alice2@mydomain.com ",alice_example_password, 2 ,1 ,0 `,
                         ].join('\n');
                         const file = getFile(fileContent);
 
@@ -485,9 +489,10 @@ describe('parseMultiUserCsv', () => {
 
             it('is considered to be defined if set to falsy 0 value', async () => {
                 const emailAddresses = 0;
-                const fileContent = [defaultCsvFields, `Alice,${emailAddresses},alice_password,1073741824,1,0`].join(
-                    '\n'
-                );
+                const fileContent = [
+                    defaultCsvFields,
+                    `Alice,${emailAddresses},alice_example_password,1073741824,1,0`,
+                ].join('\n');
                 const file = getFile(fileContent);
 
                 const result = await parseMultiUserCsv([file]);
@@ -500,9 +505,10 @@ describe('parseMultiUserCsv', () => {
 
             it('casts to a string', async () => {
                 const emailAddresses = 123;
-                const fileContent = [defaultCsvFields, `Alice,${emailAddresses},alice_password,1073741824,1,0`].join(
-                    '\n'
-                );
+                const fileContent = [
+                    defaultCsvFields,
+                    `Alice,${emailAddresses},alice_example_password,1073741824,1,0`,
+                ].join('\n');
                 const file = getFile(fileContent);
 
                 const result = await parseMultiUserCsv([file]);
@@ -544,7 +550,7 @@ describe('parseMultiUserCsv', () => {
             });
 
             it('returns no errors if password is a string', async () => {
-                const password = 'alice_password';
+                const password = 'alice_example_password';
                 const fileContent = [defaultCsvFields, `Alice,alice@mydomain.com,${password},1073741824,1,0`].join(
                     '\n'
                 );
@@ -554,7 +560,7 @@ describe('parseMultiUserCsv', () => {
                 const user = result.users[0];
 
                 expect(result.errors.length).toBe(0);
-                expect(user.password).toBe('alice_password');
+                expect(user.password).toBe('alice_example_password');
             });
 
             it('does not throw PASSWORD_REQUIRED error if set to falsy 0 value', async () => {
@@ -591,7 +597,7 @@ describe('parseMultiUserCsv', () => {
                 const totalStorage = '123';
                 const fileContent = [
                     defaultCsvFields,
-                    `Alice,alice@mydomain.com,alice_password,${totalStorage},1,0`,
+                    `Alice,alice@mydomain.com,alice_example_password,${totalStorage},1,0`,
                 ].join('\n');
                 const file = getFile(fileContent);
 
@@ -607,7 +613,7 @@ describe('parseMultiUserCsv', () => {
                     const totalStorage = '123';
                     const fileContent = [
                         defaultCsvFields,
-                        `Alice,alice@mydomain.com,alice_password,${totalStorage},1,0`,
+                        `Alice,alice@mydomain.com,alice_example_password,${totalStorage},1,0`,
                     ].join('\n');
                     const file = getFile(fileContent);
 
@@ -624,7 +630,7 @@ describe('parseMultiUserCsv', () => {
                     const totalStorage = '123';
                     const fileContent = [
                         defaultCsvFields,
-                        `Alice,alice@mydomain.com,alice_password,${totalStorage},1,0`,
+                        `Alice,alice@mydomain.com,alice_example_password,${totalStorage},1,0`,
                     ].join('\n');
                     const file = getFile(fileContent);
 
@@ -639,7 +645,7 @@ describe('parseMultiUserCsv', () => {
                     const totalStorage = 'not a number';
                     const fileContent = [
                         defaultCsvFields,
-                        `Alice,alice@mydomain.com,alice_password,${totalStorage},1,0`,
+                        `Alice,alice@mydomain.com,alice_example_password,${totalStorage},1,0`,
                     ].join('\n');
                     const file = getFile(fileContent);
 
@@ -651,7 +657,9 @@ describe('parseMultiUserCsv', () => {
                 });
 
                 it('defaults totalStorage to 0', async () => {
-                    const fileContent = ['EmailAddresses,Password', `alice@mydomain.com,alice_password`].join('\n');
+                    const fileContent = ['EmailAddresses,Password', `alice@mydomain.com,alice_example_password`].join(
+                        '\n'
+                    );
                     const file = getFile(fileContent);
 
                     const result = await parseMultiUserCsv([file], { includeStorage: true });
@@ -665,7 +673,7 @@ describe('parseMultiUserCsv', () => {
                     const totalStorage = 1.5;
                     const fileContent = [
                         defaultCsvFields,
-                        `Alice,alice@mydomain.com,alice_password,${totalStorage},1,0`,
+                        `Alice,alice@mydomain.com,alice_example_password,${totalStorage},1,0`,
                     ].join('\n');
                     const file = getFile(fileContent);
 
@@ -683,7 +691,7 @@ describe('parseMultiUserCsv', () => {
                 const vpnAccess = 0;
                 const fileContent = [
                     defaultCsvFields,
-                    `Alice,alice@mydomain.com,alice_password,1073741824,${vpnAccess},0`,
+                    `Alice,alice@mydomain.com,alice_example_password,1073741824,${vpnAccess},0`,
                 ].join('\n');
                 const file = getFile(fileContent);
 
@@ -699,7 +707,7 @@ describe('parseMultiUserCsv', () => {
                     const vpnAccess = 1;
                     const fileContent = [
                         defaultCsvFields,
-                        `Alice,alice@mydomain.com,alice_password,1073741824,${vpnAccess},0`,
+                        `Alice,alice@mydomain.com,alice_example_password,1073741824,${vpnAccess},0`,
                     ].join('\n');
                     const file = getFile(fileContent);
 
@@ -716,7 +724,7 @@ describe('parseMultiUserCsv', () => {
                     const vpnAccess = 0;
                     const fileContent = [
                         defaultCsvFields,
-                        `Alice,alice@mydomain.com,alice_password,1073741824,${vpnAccess},0`,
+                        `Alice,alice@mydomain.com,alice_example_password,1073741824,${vpnAccess},0`,
                     ].join('\n');
                     const file = getFile(fileContent);
 
@@ -731,7 +739,7 @@ describe('parseMultiUserCsv', () => {
                     const vpnAccess = 1;
                     const fileContent = [
                         defaultCsvFields,
-                        `Alice,alice@mydomain.com,alice_password,1073741824,${vpnAccess},0`,
+                        `Alice,alice@mydomain.com,alice_example_password,1073741824,${vpnAccess},0`,
                     ].join('\n');
                     const file = getFile(fileContent);
 
@@ -746,7 +754,7 @@ describe('parseMultiUserCsv', () => {
                     const vpnAccess = 'not a number';
                     const fileContent = [
                         defaultCsvFields,
-                        `Alice,alice@mydomain.com,alice_password,1073741824,${vpnAccess},0`,
+                        `Alice,alice@mydomain.com,alice_example_password,1073741824,${vpnAccess},0`,
                     ].join('\n');
                     const file = getFile(fileContent);
 
@@ -758,7 +766,9 @@ describe('parseMultiUserCsv', () => {
                 });
 
                 it('defaults vpnAccess to false', async () => {
-                    const fileContent = ['EmailAddresses,Password', `alice@mydomain.com,alice_password`].join('\n');
+                    const fileContent = ['EmailAddresses,Password', `alice@mydomain.com,alice_example_password`].join(
+                        '\n'
+                    );
                     const file = getFile(fileContent);
 
                     const result = await parseMultiUserCsv([file], { includeStorage: true });
@@ -775,7 +785,7 @@ describe('parseMultiUserCsv', () => {
                 const privateSubUser = 1;
                 const fileContent = [
                     defaultCsvFields,
-                    `Alice,alice@mydomain.com,alice_password,1073741824,1,${privateSubUser}`,
+                    `Alice,alice@mydomain.com,alice_example_password,1073741824,1,${privateSubUser}`,
                 ].join('\n');
                 const file = getFile(fileContent);
 
@@ -791,7 +801,7 @@ describe('parseMultiUserCsv', () => {
                     const privateSubUser = 1;
                     const fileContent = [
                         defaultCsvFields,
-                        `Alice,alice@mydomain.com,alice_password,1073741824,1,${privateSubUser}`,
+                        `Alice,alice@mydomain.com,alice_example_password,1073741824,1,${privateSubUser}`,
                     ].join('\n');
                     const file = getFile(fileContent);
 
@@ -808,7 +818,7 @@ describe('parseMultiUserCsv', () => {
                     const privateSubUser = 0;
                     const fileContent = [
                         defaultCsvFields,
-                        `Alice,alice@mydomain.com,alice_password,1073741824,1,${privateSubUser}`,
+                        `Alice,alice@mydomain.com,alice_example_password,1073741824,1,${privateSubUser}`,
                     ].join('\n');
                     const file = getFile(fileContent);
 
@@ -823,7 +833,7 @@ describe('parseMultiUserCsv', () => {
                     const privateSubUser = 1;
                     const fileContent = [
                         defaultCsvFields,
-                        `Alice,alice@mydomain.com,alice_password,1073741824,1,${privateSubUser}`,
+                        `Alice,alice@mydomain.com,alice_example_password,1073741824,1,${privateSubUser}`,
                     ].join('\n');
                     const file = getFile(fileContent);
 
@@ -838,7 +848,7 @@ describe('parseMultiUserCsv', () => {
                     const privateSubUser = 'not a number';
                     const fileContent = [
                         defaultCsvFields,
-                        `Alice,alice@mydomain.com,alice_password,1073741824,1,${privateSubUser}`,
+                        `Alice,alice@mydomain.com,alice_example_password,1073741824,1,${privateSubUser}`,
                     ].join('\n');
                     const file = getFile(fileContent);
 
@@ -850,7 +860,9 @@ describe('parseMultiUserCsv', () => {
                 });
 
                 it('defaults privateSubUser to false', async () => {
-                    const fileContent = ['EmailAddresses,Password', `alice@mydomain.com,alice_password`].join('\n');
+                    const fileContent = ['EmailAddresses,Password', `alice@mydomain.com,alice_example_password`].join(
+                        '\n'
+                    );
                     const file = getFile(fileContent);
 
                     const result = await parseMultiUserCsv([file], { includePrivateSubUser: true });
