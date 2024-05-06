@@ -47,6 +47,10 @@ const PaymentStepContext = applyHOCs(
 
 jest.spyOn(paymentsDataUtilsModule, 'useCachedUser').mockReturnValue(buildUser());
 
+jest.mock('@proton/components/payments/client-extensions/useChargebeeKillSwitch', () => ({
+    useChargebeeKillSwitch: jest.fn().mockReturnValue({ chargebeeKillSwitch: jest.fn().mockReturnValue(false) }),
+}));
+
 let props: Props;
 
 beforeEach(() => {

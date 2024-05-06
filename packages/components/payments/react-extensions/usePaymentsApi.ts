@@ -90,7 +90,9 @@ export const usePaymentsApi = (
     const { APP_NAME } = useConfig();
     const reportRoutingError = useReportRoutingError();
 
-    const getPaymentsApi = (api: Api, chargebeeEnabled: ChargebeeEnabled = chargebeeEnabledCache): PaymentsApi => {
+    const getPaymentsApi = (api: Api, chargebeeEnabledOverride?: ChargebeeEnabled): PaymentsApi => {
+        const getChargebeeEnabled = (): ChargebeeEnabled => chargebeeEnabledOverride ?? chargebeeEnabledCache();
+
         const statusExtended = (version: PaymentsVersion): Promise<PaymentMethodStatusExtended> => {
             return api<PaymentMethodStatusExtended | PaymentMethodStatus>(queryPaymentMethodStatus(version))
                 .then((result) => {
@@ -137,6 +139,8 @@ export const usePaymentsApi = (
         };
 
         const statusExtendedAutomatic = async (): Promise<PaymentMethodStatusExtended> => {
+            const chargebeeEnabled = getChargebeeEnabled();
+
             if (chargebeeEnabled === ChargebeeEnabled.INHOUSE_FORCED) {
                 return statusExtended('v4');
             }
@@ -210,6 +214,8 @@ export const usePaymentsApi = (
             data: CheckSubscriptionData,
             signal?: AbortSignal
         ): Promise<SubscriptionCheckResponse> => {
+            const chargebeeEnabled = getChargebeeEnabled();
+
             if (chargebeeEnabled === ChargebeeEnabled.INHOUSE_FORCED) {
                 return checkV4(data, signal, { system: 'inhouse', reason: 'forced' });
             }
