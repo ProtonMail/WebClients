@@ -1,8 +1,10 @@
+import { DEFAULT_LOCALE } from '../../constants';
 import { Address, MailSettings, UserSettings } from '../../interfaces';
 import { AUTO_SAVE_CONTACTS, DEFAULT_MAILSETTINGS, IMAGE_PROXY_FLAGS, SHOW_IMAGES } from '../mailSettings';
 
-export const eoDefaultUserSettings = {
+export const EO_DEFAULT_USER_SETTINGS = {
     Referral: undefined,
+    Locale: DEFAULT_LOCALE,
 } as UserSettings;
 
 export const EO_REPLY_NUM_ATTACHMENTS_LIMIT = 10;

@@ -2,7 +2,7 @@ import { RefObject, useCallback } from 'react';
 
 import { Dropzone } from '@proton/components/components';
 import { ToolbarConfig } from '@proton/components/components/editor/helpers/getToolbarConfig';
-import { MailSettings } from '@proton/shared/lib/interfaces';
+import { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
@@ -37,6 +37,10 @@ interface Props {
      * at same time component is first rendered
      */
     mailSettings?: MailSettings;
+    /**
+     * Used for locale in the emoji picker
+     */
+    userSettings?: UserSettings;
     isPlainText?: boolean;
     openEmojiPickerRef: RefObject<() => void>;
     toolbarConfig?: ToolbarConfig;
@@ -75,6 +79,7 @@ const Editor = ({
     onBlockquoteToggleClick = noop,
     onAddAttachments,
     mailSettings,
+    userSettings,
     isPlainText,
     openEmojiPickerRef,
     toolbarConfig,
@@ -164,6 +169,7 @@ const Editor = ({
                         openEmojiPickerRef={openEmojiPickerRef}
                         simple={simple}
                         isSmallViewportForToolbar={isSmallViewportForToolbar}
+                        userSettings={userSettings}
                     />
                 )}
             </div>
