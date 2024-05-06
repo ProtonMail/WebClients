@@ -1,4 +1,4 @@
-import { KeyboardEvent, useMemo, useRef, useState } from 'react';
+import { KeyboardEvent, MouseEvent, useMemo, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -20,9 +20,18 @@ interface Props {
     assistantID: string;
     onContentChange: () => void;
     isAssistantInitialSetup?: boolean;
+    onRefine: (prompt: string) => Promise<void>;
+    hasSelection: boolean;
 }
 
-const ComposerAssistantInput = ({ onGenerateResult, assistantID, onContentChange, isAssistantInitialSetup }: Props) => {
+const ComposerAssistantInput = ({
+    onGenerateResult,
+    assistantID,
+    onContentChange,
+    onRefine,
+    isAssistantInitialSetup,
+    hasSelection,
+}: Props) => {
     // Request that the user is writing in the input
     const [assistantRequest, setAssistantRequest] = useState<string>('');
 
@@ -48,12 +57,28 @@ const ComposerAssistantInput = ({ onGenerateResult, assistantID, onContentChange
         initAssistant,
     } = useAssistant(assistantID);
 
+    const refineResult = async () => {
+        await onRefine(assistantRequest);
+    };
+
     const startGeneratingResult = async () => {
         // Warn the user that we need the download to be completed before generating a result
         if (downloadPaused) {
             setResumeDownloadModalOpen(true);
         } else {
-            await generateResult({ inputText: assistantRequest, callback: onGenerateResult });
+            if (hasSelection) {
+                // Refine some part of the editor content
+                await refineResult();
+            } else {
+                // Generate result from a prompt
+                await generateResult({
+                    action: {
+                        type: 'writeFullEmail',
+                        prompt: assistantRequest,
+                    },
+                    callback: onGenerateResult,
+                });
+            }
         }
     };
 
@@ -111,12 +136,18 @@ const ComposerAssistantInput = ({ onGenerateResult, assistantID, onContentChange
         resumeDownloadModel();
     };
 
-    const handleClickOnInput = () => {
+    const handleClickOnInput = (e: MouseEvent) => {
+        e.stopPropagation(); // TODO REMOVE?
         // The first time the user is opening the composer, the assistant will be opened by default to show the feature
         // Then when the user clicks on the input, we will show a spotlight and start the model init (download + load on GPU)
         if (isAssistantInitialSetup) {
             initAssistant();
             setShowSetupSpotlight(true);
+        }
+
+        // Reset the input content when the user wants to refine text and clicks on the input, so that he can add a new prompt
+        if (hasSelection) {
+            setAssistantRequest('');
         }
     };
 
