@@ -536,7 +536,7 @@ const SingleSignupContainerV2 = ({
                 const user: User = resumedSession.User;
                 chargebeeEnabled = await isChargebeeEnabled(resumedSession?.UID, async () => user);
             }
-            const paymentsApi = getPaymentsApi(silentApi, chargebeeEnabled);
+            const paymentsApi = getPaymentsApi(silentApi, chargebeeEnabled?.result);
 
             const forcePaymentsVersion = getMaybeForcePaymentsVersion(resumedSession?.User);
             const plans = await silentApi<{ Plans: Plan[] }>(
@@ -828,7 +828,7 @@ const SingleSignupContainerV2 = ({
             const { subscriptionData, upsell, ...userInfo } = await getUserInfo({
                 api: silentApi,
                 audience,
-                paymentsApi: getPaymentsApi(silentApi, chargebeeEnabled),
+                paymentsApi: getPaymentsApi(silentApi, chargebeeEnabled.result),
                 user,
                 plans: model.plans,
                 plansMap: model.plansMap,
