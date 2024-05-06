@@ -3,7 +3,6 @@ import { c } from 'ttag';
 import { ThemeColor } from '@proton/colors/types';
 import { Icon } from '@proton/components/components';
 import DrawerAppButton, { Props } from '@proton/components/components/drawer/drawerAppButtons/DrawerAppButton';
-import { useDesktopSpotlight } from '@proton/components/containers';
 import { useDrawer } from '@proton/components/hooks';
 import useQuickSettingsReminders from '@proton/components/hooks/drawer/useQuickSettingsReminders';
 import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
@@ -13,7 +12,6 @@ import { Optional } from '@proton/shared/lib/interfaces';
 const InboxQuickSettingsAppButton = ({
     onClick,
 }: Optional<Omit<Props, 'tooltipText' | 'buttonContent'>, 'onClick'>) => {
-    useDesktopSpotlight();
     const { toggleDrawerApp } = useDrawer();
 
     const reminders = useQuickSettingsReminders();
