@@ -136,7 +136,7 @@ export default function useShareURLView(shareId: string, linkId: string) {
             );
 
             return createShareUrl(abortController.signal, shareId, linkShareId, sessionKey)
-                .then((shareUrlInfo) => {
+                .then(async (shareUrlInfo) => {
                     if (shareUrlInfo) {
                         setShareUrlInfo(shareUrlInfo);
                         setPassword(shareUrlInfo.shareUrl.password);
@@ -144,6 +144,9 @@ export default function useShareURLView(shareId: string, linkId: string) {
                         const sharedLink = getSharedLink(shareUrlInfo.shareUrl);
                         if (sharedLink) {
                             setSharedLink(sharedLink);
+                            const link = await getLink(abortController.signal, shareId, linkId);
+                            setLink(link);
+                            setIsShared(true);
                         }
                     }
                 })
