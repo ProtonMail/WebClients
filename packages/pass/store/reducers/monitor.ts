@@ -47,6 +47,7 @@ const monitorReducer: Reducer<MonitorState> = (state = null, action) => {
 
         if (verifyCustomAddress.success.match(action)) {
             return partialMerge(state, {
+                total: state.total + (action.payload.breachCount ?? 0),
                 custom: state.custom.map((breach) => {
                     if (breach.addressId !== action.payload.addressId) return breach;
                     return action.payload;
@@ -62,7 +63,10 @@ const monitorReducer: Reducer<MonitorState> = (state = null, action) => {
         }
 
         if (deleteCustomAddress.success.match(action)) {
+            const breach = state.custom.find((breach) => breach.addressId === action.payload);
+
             return partialMerge(state, {
+                total: Math.max(0, state.total - (breach?.breachCount ?? 0)),
                 custom: state.custom.filter((breach) => breach.addressId !== action.payload),
             });
         }
