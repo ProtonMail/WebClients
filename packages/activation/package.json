@@ -33,9 +33,9 @@
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
         "@proton/i18n": "workspace:packages/i18n",
-        "@testing-library/dom": "^9.3.4",
+        "@testing-library/dom": "^10.1.0",
         "@testing-library/jest-dom": "^6.4.3",
-        "@testing-library/react": "^14.3.1",
+        "@testing-library/react": "^15.0.6",
         "@testing-library/react-hooks": "^8.0.1",
         "babel-jest": "^29.7.0",
         "babel-plugin-transform-require-context": "^0.1.1",

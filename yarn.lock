@@ -5981,7 +5981,7 @@ __metadata:
     "@proton/redux-shared-store": "workspace:^"
     "@reduxjs/toolkit": "npm:^2.2.3"
     "@testing-library/jest-dom": "npm:^6.4.3"
-    "@testing-library/react": "npm:^14.3.1"
+    "@testing-library/react": "npm:^15.0.6"
     eslint: "npm:^8.57.0"
     jest: "npm:^29.7.0"
     jest-environment-jsdom: "npm:^29.7.0"
@@ -6005,9 +6005,9 @@ __metadata:
     "@proton/styles": "workspace:packages/styles"
     "@proton/utils": "workspace:packages/utils"
     "@reduxjs/toolkit": "npm:^2.2.3"
-    "@testing-library/dom": "npm:^9.3.4"
+    "@testing-library/dom": "npm:^10.1.0"
     "@testing-library/jest-dom": "npm:^6.4.3"
-    "@testing-library/react": "npm:^14.3.1"
+    "@testing-library/react": "npm:^15.0.6"
     "@testing-library/react-hooks": "npm:^8.0.1"
     "@types/jest": "npm:^29.5.12"
     "@types/react": "npm:^18.3.1"
@@ -6057,7 +6057,7 @@ __metadata:
     "@storybook/react": "npm:^6.5.16"
     "@storybook/source-loader": "npm:^6.5.16"
     "@testing-library/jest-dom": "npm:^6.4.3"
-    "@testing-library/react": "npm:^14.3.1"
+    "@testing-library/react": "npm:^15.0.6"
     "@types/jest": "npm:^29.5.12"
     "@types/mustache": "npm:^4.2.5"
     "@types/node": "npm:^20.12.8"
@@ -6090,7 +6090,7 @@ __metadata:
     "@proton/redux-shared-store": "workspace:^"
     "@reduxjs/toolkit": "npm:^2.2.3"
     "@testing-library/jest-dom": "npm:^6.4.3"
-    "@testing-library/react": "npm:^14.3.1"
+    "@testing-library/react": "npm:^15.0.6"
     eslint: "npm:^8.57.0"
     jest: "npm:^29.7.0"
     jest-environment-jsdom: "npm:^29.7.0"
@@ -6170,7 +6170,7 @@ __metadata:
     "@proton/styles": "workspace:packages/styles"
     "@proton/testing": "workspace:packages/testing"
     "@testing-library/jest-dom": "npm:^6.4.3"
-    "@testing-library/react": "npm:^14.3.1"
+    "@testing-library/react": "npm:^15.0.6"
     "@testing-library/react-hooks": "npm:^8.0.1"
     "@testing-library/user-event": "npm:^14.5.2"
     "@types/codemirror": "npm:5.60.15"
@@ -6293,7 +6293,7 @@ __metadata:
     "@proton/styles": "workspace:packages/styles"
     "@proton/testing": "workspace:packages/testing"
     "@testing-library/jest-dom": "npm:^6.4.3"
-    "@testing-library/react": "npm:^14.3.1"
+    "@testing-library/react": "npm:^15.0.6"
     "@testing-library/react-hooks": "npm:^8.0.1"
     "@types/jest": "npm:^29.5.12"
     "@types/mime-types": "npm:^2.1.4"
@@ -6390,7 +6390,7 @@ __metadata:
   resolution: "@proton/hooks@workspace:packages/hooks"
   dependencies:
     "@proton/eslint-config-proton": "workspace:^"
-    "@testing-library/react": "npm:^14.3.1"
+    "@testing-library/react": "npm:^15.0.6"
     "@testing-library/react-hooks": "npm:^8.0.1"
     "@types/jest": "npm:^29.5.12"
     eslint: "npm:^8.57.0"
@@ -6458,7 +6458,7 @@ __metadata:
     "@proton/components": "workspace:packages/components"
     "@proton/shared": "workspace:packages/shared"
     "@testing-library/jest-dom": "npm:^6.4.3"
-    "@testing-library/react": "npm:^14.3.1"
+    "@testing-library/react": "npm:^15.0.6"
     "@types/jest": "npm:^29.5.12"
     "@webgpu/types": "npm:^0.1.40"
     babel-jest: "npm:^29.7.0"
@@ -6480,7 +6480,7 @@ __metadata:
     "@proton/redux-shared-store": "workspace:^"
     "@reduxjs/toolkit": "npm:^2.2.3"
     "@testing-library/jest-dom": "npm:^6.4.3"
-    "@testing-library/react": "npm:^14.3.1"
+    "@testing-library/react": "npm:^15.0.6"
     eslint: "npm:^8.57.0"
     jest: "npm:^29.7.0"
     jest-environment-jsdom: "npm:^29.7.0"
@@ -6594,7 +6594,7 @@ __metadata:
     "@protontech/pass-rust-core": "npm:^0.7.10"
     "@reduxjs/toolkit": "npm:^2.2.3"
     "@testing-library/jest-dom": "npm:^6.4.3"
-    "@testing-library/react": "npm:^14.3.1"
+    "@testing-library/react": "npm:^15.0.6"
     "@testing-library/react-hooks": "npm:^8.0.1"
     "@types/chrome": "npm:^0.0.267"
     "@types/lodash": "npm:^4.17.0"
@@ -6689,7 +6689,7 @@ __metadata:
     "@proton/redux-shared-store": "workspace:^"
     "@reduxjs/toolkit": "npm:^2.2.3"
     "@testing-library/jest-dom": "npm:^6.4.3"
-    "@testing-library/react": "npm:^14.3.1"
+    "@testing-library/react": "npm:^15.0.6"
     eslint: "npm:^8.57.0"
     jest: "npm:^29.7.0"
     jest-environment-jsdom: "npm:^29.7.0"
@@ -9292,19 +9292,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@testing-library/dom@npm:^9.0.0, @testing-library/dom@npm:^9.3.4":
-  version: 9.3.4
-  resolution: "@testing-library/dom@npm:9.3.4"
+"@testing-library/dom@npm:^10.0.0, @testing-library/dom@npm:^10.1.0":
+  version: 10.1.0
+  resolution: "@testing-library/dom@npm:10.1.0"
   dependencies:
     "@babel/code-frame": "npm:^7.10.4"
     "@babel/runtime": "npm:^7.12.5"
     "@types/aria-query": "npm:^5.0.1"
-    aria-query: "npm:5.1.3"
+    aria-query: "npm:5.3.0"
     chalk: "npm:^4.1.0"
     dom-accessibility-api: "npm:^0.5.9"
     lz-string: "npm:^1.5.0"
     pretty-format: "npm:^27.0.2"
-  checksum: 10c0/147da340e8199d7f98f3a4ad8aa22ed55b914b83957efa5eb22bfea021a979ebe5a5182afa9c1e5b7a5f99a7f6744a5a4d9325ae46ec3b33b5a15aed8750d794
+  checksum: 10c0/81f0e0a510d24e458c3af17777960ed678fb4fe464903ef8ec9ed816c9794fc69a673ea94f87b9e054b181383c51814605451dbf4fd9df93d0d8f24b4859990d
   languageName: node
   linkType: hard
 
@@ -9377,17 +9377,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@testing-library/react@npm:^14.3.1":
-  version: 14.3.1
-  resolution: "@testing-library/react@npm:14.3.1"
+"@testing-library/react@npm:^15.0.6":
+  version: 15.0.6
+  resolution: "@testing-library/react@npm:15.0.6"
   dependencies:
     "@babel/runtime": "npm:^7.12.5"
-    "@testing-library/dom": "npm:^9.0.0"
+    "@testing-library/dom": "npm:^10.0.0"
     "@types/react-dom": "npm:^18.0.0"
   peerDependencies:
+    "@types/react": ^18.0.0
     react: ^18.0.0
     react-dom: ^18.0.0
-  checksum: 10c0/1ccf4eb1510500cc20a805cb0244c9098dca28a8745173a8f71ea1274d63774f0b7898a35c878b43c797b89c13621548909ff37843b835c1a27ee1efbbdd098c
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+  checksum: 10c0/3705a2272f929f2f848f5d7e6ac9829bf7ecc1725a35733ffae7e7a261d4bdab470b080558e8544edb1f9ba25db9fbc4232527df9b4ec6ab6ae4462a902a7f95
   languageName: node
   linkType: hard
 
@@ -12147,16 +12151,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"aria-query@npm:5.1.3":
-  version: 5.1.3
-  resolution: "aria-query@npm:5.1.3"
-  dependencies:
-    deep-equal: "npm:^2.0.5"
-  checksum: 10c0/edcbc8044c4663d6f88f785e983e6784f98cb62b4ba1e9dd8d61b725d0203e4cfca38d676aee984c31f354103461102a3d583aa4fbe4fd0a89b679744f4e5faf
-  languageName: node
-  linkType: hard
-
-"aria-query@npm:^5.0.0, aria-query@npm:^5.3.0":
+"aria-query@npm:5.3.0, aria-query@npm:^5.0.0, aria-query@npm:^5.3.0":
   version: 5.3.0
   resolution: "aria-query@npm:5.3.0"
   dependencies:
@@ -17259,31 +17254,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"deep-equal@npm:^2.0.5":
-  version: 2.2.0
-  resolution: "deep-equal@npm:2.2.0"
-  dependencies:
-    call-bind: "npm:^1.0.2"
-    es-get-iterator: "npm:^1.1.2"
-    get-intrinsic: "npm:^1.1.3"
-    is-arguments: "npm:^1.1.1"
-    is-array-buffer: "npm:^3.0.1"
-    is-date-object: "npm:^1.0.5"
-    is-regex: "npm:^1.1.4"
-    is-shared-array-buffer: "npm:^1.0.2"
-    isarray: "npm:^2.0.5"
-    object-is: "npm:^1.1.5"
-    object-keys: "npm:^1.1.1"
-    object.assign: "npm:^4.1.4"
-    regexp.prototype.flags: "npm:^1.4.3"
-    side-channel: "npm:^1.0.4"
-    which-boxed-primitive: "npm:^1.0.2"
-    which-collection: "npm:^1.0.1"
-    which-typed-array: "npm:^1.1.9"
-  checksum: 10c0/31de99f3c1b516ef67ba82cbe54fdc1691cdd93ab8ede561eee94f7f8baff6594ddc0860c48707f6cd12e4efd5421e3450e20c40ca71906a9d0abe9017944cd3
-  languageName: node
-  linkType: hard
-
 "deep-equal@npm:~1.0.1":
   version: 1.0.1
   resolution: "deep-equal@npm:1.0.1"
@@ -18596,7 +18566,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"es-get-iterator@npm:^1.0.2, es-get-iterator@npm:^1.1.2":
+"es-get-iterator@npm:^1.0.2":
   version: 1.1.3
   resolution: "es-get-iterator@npm:1.1.3"
   dependencies:
@@ -23616,7 +23586,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"is-array-buffer@npm:^3.0.1, is-array-buffer@npm:^3.0.4":
+"is-array-buffer@npm:^3.0.4":
   version: 3.0.4
   resolution: "is-array-buffer@npm:3.0.4"
   dependencies:
@@ -28858,16 +28828,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"object-is@npm:^1.1.5":
-  version: 1.1.5
-  resolution: "object-is@npm:1.1.5"
-  dependencies:
-    call-bind: "npm:^1.0.2"
-    define-properties: "npm:^1.1.3"
-  checksum: 10c0/8c263fb03fc28f1ffb54b44b9147235c5e233dc1ca23768e7d2569740b5d860154d7cc29a30220fe28ed6d8008e2422aefdebfe987c103e1c5d190cf02d9d886
-  languageName: node
-  linkType: hard
-
 "object-keys@npm:^1.1.1":
   version: 1.1.1
   resolution: "object-keys@npm:1.1.1"
@@ -31371,7 +31331,7 @@ __metadata:
     "@proton/styles": "workspace:packages/styles"
     "@proton/testing": "workspace:packages/testing"
     "@testing-library/jest-dom": "npm:^6.4.3"
-    "@testing-library/react": "npm:^14.3.1"
+    "@testing-library/react": "npm:^15.0.6"
     "@testing-library/user-event": "npm:^14.5.2"
     "@types/jest": "npm:^29.5.12"
     "@types/react": "npm:^18.3.1"
@@ -31409,9 +31369,9 @@ __metadata:
     "@proton/shared": "workspace:packages/shared"
     "@proton/styles": "workspace:packages/styles"
     "@proton/testing": "workspace:packages/testing"
-    "@testing-library/dom": "npm:^9.3.4"
+    "@testing-library/dom": "npm:^10.1.0"
     "@testing-library/jest-dom": "npm:^6.4.3"
-    "@testing-library/react": "npm:^14.3.1"
+    "@testing-library/react": "npm:^15.0.6"
     "@types/jest": "npm:^29.5.12"
     "@types/react": "npm:^18.3.1"
     "@types/react-dom": "npm:^18.3.0"
@@ -31451,7 +31411,7 @@ __metadata:
     "@proton/testing": "workspace:packages/testing"
     "@protontech/interval-tree": "npm:^1.0.0"
     "@testing-library/jest-dom": "npm:^6.4.3"
-    "@testing-library/react": "npm:^14.3.1"
+    "@testing-library/react": "npm:^15.0.6"
     "@testing-library/react-hooks": "npm:^8.0.1"
     "@testing-library/user-event": "npm:^14.5.2"
     "@types/jest": "npm:^29.5.12"
@@ -31496,7 +31456,7 @@ __metadata:
     "@proton/styles": "workspace:packages/styles"
     "@proton/testing": "workspace:packages/testing"
     "@testing-library/jest-dom": "npm:^6.4.3"
-    "@testing-library/react": "npm:^14.3.1"
+    "@testing-library/react": "npm:^15.0.6"
     "@testing-library/react-hooks": "npm:^8.0.1"
     "@types/mime-types": "npm:^2.1.4"
     "@types/react": "npm:^18.3.1"
@@ -31586,9 +31546,9 @@ __metadata:
     "@protontech/mimemessage": "npm:~v1.1.4"
     "@protontech/tidy-url": "npm:^1.10.1"
     "@reduxjs/toolkit": "npm:^2.2.3"
-    "@testing-library/dom": "npm:^9.3.4"
+    "@testing-library/dom": "npm:^10.1.0"
     "@testing-library/jest-dom": "npm:^6.4.3"
-    "@testing-library/react": "npm:^14.3.1"
+    "@testing-library/react": "npm:^15.0.6"
     "@testing-library/react-hooks": "npm:^8.0.1"
     "@testing-library/user-event": "npm:^14.5.2"
     "@types/dompurify": "npm:^3.0.5"
@@ -33794,7 +33754,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"regexp.prototype.flags@npm:^1.4.3, regexp.prototype.flags@npm:^1.5.0, regexp.prototype.flags@npm:^1.5.2":
+"regexp.prototype.flags@npm:^1.5.0, regexp.prototype.flags@npm:^1.5.2":
   version: 1.5.2
   resolution: "regexp.prototype.flags@npm:1.5.2"
   dependencies:
