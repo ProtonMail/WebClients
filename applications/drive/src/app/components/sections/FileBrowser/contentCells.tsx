@@ -93,10 +93,11 @@ export const DeletedCell = ({ item }: { item: TrashItem }) => {
     );
 };
 
-export const CreatedCell = ({ item }: { item: TrashItem }) => {
+export const CreatedCell = ({ item }: { item: TrashItem | SharedLinkItem }) => {
+    const time = item.shareUrl?.createTime || item.sharedOn;
     return (
         <TableCell className="flex items-center m-0 w-1/6" data-testid="column-share-created">
-            {item.shareUrl?.createTime && <TimeCell time={item.shareUrl.createTime} />}
+            {time && <TimeCell time={time} />}
         </TableCell>
     );
 };
