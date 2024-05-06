@@ -90,7 +90,6 @@ export enum FeatureCode {
     Offers = 'Offers',
     OrgSpamBlockList = 'OrgSpamBlockList',
     OrgTwoFactor = 'OrgTwoFactor',
-    PassSignup = 'PassSignup',
     PaymentsDisabled = 'PaymentsDisabled',
     PrivacyDropdownOpened = 'PrivacyDropdownOpened',
     ProtonBadge = 'ProtonBadge',
