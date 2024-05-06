@@ -1,21 +1,19 @@
 import { c } from 'ttag';
 
 import { IconName, PassLogo } from '@proton/components/components';
-import { getPassKeys, getSentinel } from '@proton/components/containers/payments/features/highlights';
+import { getPassKeys, getPassMonitor } from '@proton/components/containers/payments/features/highlights';
 import { PlanCardFeatureDefinition } from '@proton/components/containers/payments/features/interface';
 import {
-    FREE_PASS_ALIASES,
-    FREE_VAULT_SHARING,
-    PASS_PLUS_VAULT_SHARING,
+    FREE_VAULTS,
     get2FAAuthenticator,
     get2FAAuthenticatorText,
-    getDevices,
-    getHideMyEmailAliases,
-    getItems,
+    getDevicesAndAliases,
     getLoginsAndNotes,
+    getSecureSharingText,
+    getSecureVaultSharing,
+    getSecureVaultSharingWith,
     getUnlimitedVaultSharingText,
     getVaultSharing,
-    getVaultSharingText,
 } from '@proton/components/containers/payments/features/pass';
 import {
     getPassBusinessSignupPlan,
@@ -51,13 +49,7 @@ import BundlePlanSubSection from '../BundlePlanSubSection';
 import FeatureListPlanCardSubSection from '../FeatureListPlanCardSubSection';
 import LetsTalkSubsection from '../LetsTalkSubsection';
 import { planCardFeatureProps } from '../PlanCardSelector';
-import {
-    getBasedString,
-    getBenefits,
-    getGenericBenefits,
-    getGenericFeatures,
-    getJoinString,
-} from '../configuration/helper';
+import { getBasedString, getBenefits, getGenericFeatures, getJoinString } from '../configuration/helper';
 import { SignupConfiguration, SignupMode } from '../interface';
 import setupAccount from '../mail/account-setup.svg';
 import CustomStep from './CustomStep';
@@ -113,7 +105,14 @@ export const getPassBenefits = (isPaidPass: boolean): BenefitItem[] => {
     return [
         {
             key: 1,
-            text: c('pass_signup_2023: Info').t`Hide-my-email aliases protect your email from data breaches`,
+            text: c('pass_signup_2023: Info').t`Works on all devices`,
+            icon: {
+                name: 'mobile' as const,
+            },
+        },
+        {
+            key: 2,
+            text: c('pass_signup_2023: Info').t`Aliases for email protection from breaches`,
             icon: {
                 name: 'alias' as const,
             },
@@ -121,26 +120,40 @@ export const getPassBenefits = (isPaidPass: boolean): BenefitItem[] => {
         ...(isPaidPass
             ? [
                   {
-                      key: 2,
+                      key: 3,
+                      text: getSecureSharingText('multiple'),
+                      icon: {
+                          name: 'arrow-up-from-square' as const,
+                      },
+                  },
+                  {
+                      key: 4,
                       text: get2FAAuthenticatorText(),
                       icon: {
                           name: 'key' as const,
                       },
                   },
                   {
-                      key: 3,
-                      text: getVaultSharingText(10),
+                      key: 5,
+                      text: c('pass_signup_2023: Info').t`Alerts for compromised emails and vulnerable passwords`,
                       icon: {
-                          name: 'lock' as const,
+                          name: 'shield' as const,
                       },
                   },
               ]
             : [
                   {
-                      key: 2,
-                      text: c('pass_signup_2023: Info').t`End-to-end encrypted notes`,
+                      key: 3,
+                      text: getSecureSharingText(FREE_VAULTS),
                       icon: {
-                          name: 'lock' as const,
+                          name: 'arrow-up-from-square' as const,
+                      },
+                  },
+                  {
+                      key: 4,
+                      text: c('pass_signup_2023: Info').t`Alerts for vulnerable passwords`,
+                      icon: {
+                          name: 'shield' as const,
                       },
                   },
               ]),
@@ -151,30 +164,28 @@ export const getPassBenefits = (isPaidPass: boolean): BenefitItem[] => {
                 name: 'pass-passkey' as const,
             },
         },
-        ...getGenericBenefits(),
+        {
+            key: 21,
+            text: c('pass_signup_2023: Info').t`Secured by end-to-end encryption`,
+            icon: {
+                name: 'lock' as const,
+            },
+        },
     ].filter(isTruthy);
 };
 
 export const getFreePassFeatures = () => {
-    return [
-        getLoginsAndNotes(),
-        getDevices(),
-        getPassKeys(true),
-        getHideMyEmailAliases(FREE_PASS_ALIASES),
-        getVaultSharing(FREE_VAULT_SHARING),
-    ];
+    return [getLoginsAndNotes(), getDevicesAndAliases(), getPassKeys(true), getSecureVaultSharingWith(FREE_VAULTS)];
 };
 
 export const getCustomPassFeatures = () => {
     return [
         getLoginsAndNotes(),
-        getDevices(),
+        getDevicesAndAliases(),
         getPassKeys(true),
-        getHideMyEmailAliases('unlimited'),
+        getSecureVaultSharing(),
+        getPassMonitor(true),
         get2FAAuthenticator(true),
-        getItems(),
-        getSentinel(true),
-        getVaultSharing(PASS_PLUS_VAULT_SHARING),
     ];
 };
 
@@ -303,7 +314,7 @@ export const getPassConfiguration = ({
                         className="mt-5 mb-5"
                         features={getBenefitItems([
                             getLoginsAndNotes(),
-                            getHideMyEmailAliases('unlimited'),
+                            getDevicesAndAliases(),
                             get2FAAuthenticator(true),
                             getVaultSharing(10),
                         ])}

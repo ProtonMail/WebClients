@@ -39,9 +39,9 @@ import {
     getCustomFields,
     getDataBreachMonitoring,
     getDevices,
+    getDevicesAndAliases,
     getGroupManagement,
     getHideMyEmailAliases,
-    getItems,
     getLoginsAndNotes,
     getPassAppFeature,
     getProtonPassFeature,
@@ -250,7 +250,7 @@ export const getPassEssentialsSignupPlan = (plan?: Plan): ShortPlan => {
         label: '',
         description: '',
         cta: getCTA(title),
-        features: [getLoginsAndNotes(), getHideMyEmailAliases('unlimited'), get2FAAuthenticator(true), getItems()],
+        features: [getLoginsAndNotes(), getDevicesAndAliases(), get2FAAuthenticator(true)],
     };
 };
 
