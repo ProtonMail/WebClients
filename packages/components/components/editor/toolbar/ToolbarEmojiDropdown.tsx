@@ -5,10 +5,10 @@ import { Picker } from 'emoji-mart';
 import { c } from 'ttag';
 
 import { DropdownSizeUnit, Icon } from '@proton/components/components';
-import { useUserSettings } from '@proton/components/hooks';
 import { COMPOSER_TOOLBAR_ICON_SIZE } from '@proton/shared/lib/constants';
 import { getClosestLocaleCode } from '@proton/shared/lib/i18n/helper';
 import { locales } from '@proton/shared/lib/i18n/locales';
+import { UserSettings } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import { useTheme } from '../../../containers/themes';
@@ -44,12 +44,12 @@ interface Props {
     onInsert: (emoji: Emoji) => void;
     openRef: Ref<() => void>;
     className?: string;
+    userSettings?: UserSettings;
 }
 
-const ToolbarEmojiDropdown = ({ onInsert, openRef, className }: Props) => {
+const ToolbarEmojiDropdown = ({ onInsert, openRef, className, userSettings }: Props) => {
     const theme = useTheme();
     const dropdownRef = useRef<ToolbarDropdownAction>(null);
-    const [userSettings] = useUserSettings();
     const [pickerTranslationsLoading, setPickerTranslationsLoading] = useState(true);
     const [pickerTranslations, setPickerTranslations] = useState(undefined);
 
