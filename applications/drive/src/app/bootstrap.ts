@@ -20,17 +20,17 @@ import noop from '@proton/utils/noop';
 import locales from './locales';
 import { extendStore, setupStore } from './redux-store/store';
 import { sendErrorReport } from './utils/errorHandling';
-import { getRefreshError } from './utils/errorHandling/RefreshError';
+import { getWebpackChunkFailedToLoadError } from './utils/errorHandling/WebpackChunkFailedToLoadError';
 import { initDriveWorker } from './utils/initDriveWorker';
 
 const getAppContainer = () =>
     import(/* webpackChunkName: "MainContainer" */ './containers/MainContainer')
         .then((result) => result.default)
         .catch((e) => {
-            console.warn(e);
-            sendErrorReport(e);
-
-            return Promise.reject(getRefreshError());
+            const report = getWebpackChunkFailedToLoadError(e, 'MainContainer');
+            console.warn(report);
+            sendErrorReport(report);
+            return Promise.reject(report);
         });
 
 export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; signal?: AbortSignal }) => {
