@@ -87,6 +87,12 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
         const userPromise = loadUser();
         const evPromise = bootstrap.eventManager({ api: silentApi, eventID: persistedState?.eventID });
 
+        if (persistedState?.state?.userSettings?.value) {
+            // Force fetch user settings in background in case it is persisted because entities like referral program have tricky
+            // eligibility conditions which don't properly propagate through the event loop. E.g. unleash feature flags which are enabled or disabled.
+            dispatch(userSettingsThunk({ forceFetch: true })).catch(noop);
+        }
+
         await unleashPromise;
         await bootstrap.loadCrypto({ appName, unleashClient });
         const [MainContainer, userData, eventManager] = await Promise.all([
