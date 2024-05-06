@@ -4,7 +4,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { ModalTwoPromiseHandlers } from '@proton/components/components/modalTwo/useModalTwo';
-import { BRAND_NAME, SUBSCRIPTION_CANCELLATION_REASONS } from '@proton/shared/lib/constants';
+import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
+import { APPS, BRAND_NAME, SUBSCRIPTION_CANCELLATION_REASONS } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { UserModel } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
@@ -24,6 +25,7 @@ import {
     useFormErrors,
 } from '../../../components';
 import { useConfig } from '../../../hooks';
+import { useFlag } from '../../unleash';
 
 interface ReasonOption {
     title: string;
@@ -43,6 +45,8 @@ const {
     STREAMING_SERVICE_UNSUPPORTED,
     SWITCHING_TO_DIFFERENT_SERVICE,
     TEMPORARY,
+    VPN_CONNECTION_ISSUE,
+    NOT_WILLING_TO_SHARE,
     OTHER,
 } = SUBSCRIPTION_CANCELLATION_REASONS;
 
@@ -77,10 +81,12 @@ const FeedbackDowngradeModal = ({
     ...rest
 }: FeedbackDowngradeModalProps & PromiseHandlers) => {
     const { APP_NAME } = useConfig();
+    const showAdditionalVpnDowngradeReasons = useFlag('ShowAdditionalVpnDowngradeReasons');
 
     const { isPaid } = user;
 
-    const isVpnApp = APP_NAME === 'proton-vpn-settings';
+    const isVpnApp =
+        APP_NAME === APPS.PROTONVPN_SETTINGS || getAppFromPathnameSafe(location.pathname) === APPS.PROTONVPN_SETTINGS;
 
     const [model, setModel] = useState<FeedbackDowngradeData>({
         Reason: '',
@@ -100,7 +106,9 @@ const FeedbackDowngradeModal = ({
                 : undefined,
             isPaid
                 ? {
-                      title: c('Downgrade account reason').t`Subscription is too expensive`,
+                      title: isVpnApp
+                          ? c('Downgrade account reason').t`I found a cheaper VPN`
+                          : c('Downgrade account reason').t`Subscription is too expensive`,
                       value: TOO_EXPENSIVE,
                   }
                 : undefined,
@@ -109,34 +117,48 @@ const FeedbackDowngradeModal = ({
                 value: MISSING_FEATURE,
             },
             {
-                title: c('Downgrade account reason').t`Bugs or quality issue`,
+                title: isVpnApp
+                    ? c('Downgrade account reason').t`The VPN is too slow`
+                    : c('Downgrade account reason').t`Bugs or quality issue`,
                 value: QUALITY_ISSUE,
             },
             isVpnApp
                 ? {
-                      title: c('Downgrade account reason').t`Streaming service unsupported`,
+                      title: c('Downgrade account reason').t`It doesn't do what I need`,
                       value: STREAMING_SERVICE_UNSUPPORTED,
                   }
                 : undefined,
             {
-                title: c('Downgrade account reason').t`Switching to a different provider`,
+                title: isVpnApp
+                    ? c('Downgrade account reason').t`I found a VPN with better features`
+                    : c('Downgrade account reason').t`Switching to a different provider`,
                 value: SWITCHING_TO_DIFFERENT_SERVICE,
             },
             {
-                title: c('Downgrade account reason').t`Temporary need, may come back in the future`,
+                title: isVpnApp
+                    ? c('Downgrade account reason').t`I only needed a VPN short-term`
+                    : c('Downgrade account reason').t`Temporary need, may come back in the future`,
                 value: TEMPORARY,
             },
+            isVpnApp && showAdditionalVpnDowngradeReasons
+                ? {
+                      title: c('Downgrade account reason').t`I have not managed to connect`,
+                      value: VPN_CONNECTION_ISSUE,
+                  }
+                : undefined,
+            isVpnApp && showAdditionalVpnDowngradeReasons
+                ? {
+                      title: c('Downgrade account reason').t`I do not wish to share`,
+                      value: NOT_WILLING_TO_SHARE,
+                  }
+                : undefined,
         ].filter(isTruthy);
         return shuffle(reasons);
     });
 
     const options = [
         ...randomisedOptions.map(({ title, value }) => <Option key={value} title={title} value={value} />),
-        <Option
-            title={c('Downgrade account reason').t`My reason isn't listed, please comment`}
-            value={OTHER}
-            key={OTHER}
-        />,
+        <Option title={c('Downgrade account reason').t`Other reason (please comment)`} value={OTHER} key={OTHER} />,
     ];
 
     const sharedReasonDetailsProps = {
