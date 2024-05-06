@@ -20,7 +20,7 @@
         "@proton/shared": "workspace:packages/shared",
         "@proton/styles": "workspace:packages/styles",
         "@proton/testing": "workspace:packages/testing",
-        "@testing-library/react": "^14.3.1",
+        "@testing-library/react": "^15.0.6",
         "@testing-library/react-hooks": "^8.0.1",
         "client-zip": "^2.4.5",
         "exifreader": "^4.22.1",
@@ -36,7 +36,7 @@
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:^",
         "@testing-library/jest-dom": "^6.4.3",
-        "@testing-library/react": "^14.3.1",
+        "@testing-library/react": "^15.0.6",
         "@testing-library/react-hooks": "^8.0.1",
         "@types/jest": "^29.5.12",
         "@types/mime-types": "^2.1.4",
