@@ -5,12 +5,10 @@ import { c } from 'ttag';
 import { Button, Href } from '@proton/atoms';
 import { useLoading } from '@proton/hooks';
 import { leaveOrganisation } from '@proton/shared/lib/api/organization';
-import { reportBug } from '@proton/shared/lib/api/reports';
 import { canDelete, deleteUser, unlockPasswordChanges } from '@proton/shared/lib/api/user';
 import { handleLogout } from '@proton/shared/lib/authentication/logout';
 import { ACCOUNT_DELETION_REASONS, BRAND_NAME } from '@proton/shared/lib/constants';
-import { emailValidator, minLengthValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
-import { omit } from '@proton/shared/lib/helpers/object';
+import { minLengthValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { isOrganizationFamily } from '@proton/shared/lib/organization/helper';
@@ -35,7 +33,6 @@ import {
     useModalState,
 } from '../../components';
 import { AuthModal } from '../../containers';
-import { getClientName, getReportInfo } from '../../helpers/report';
 import {
     useApi,
     useAuthentication,
@@ -75,18 +72,16 @@ const DeleteAccountModal = (props: Props) => {
     const eventManager = useEventManager();
     const api = useApi();
     const authentication = useAuthentication();
-    const [{ isAdmin, Name, Email }] = useUser();
+    const [{ isAdmin }] = useUser();
     const getOrganization = useGetOrganization();
     const [loading, withLoading] = useLoading();
     const [model, setModel] = useState({
         check: false,
         reason: '',
         feedback: '',
-        email: '',
     });
     const { validator, onFormSubmit } = useFormErrors();
-    const { APP_NAME, APP_VERSION, CLIENT_TYPE } = useConfig();
-    const Client = getClientName(APP_NAME);
+    const { APP_NAME } = useConfig();
 
     const reasons = [
         <Option
@@ -114,21 +109,6 @@ const DeleteAccountModal = (props: Props) => {
 
             await api(canDelete());
 
-            if (isAdmin) {
-                await api(
-                    reportBug({
-                        ...omit(getReportInfo(), ['OSArtificial']),
-                        Client,
-                        ClientVersion: APP_VERSION,
-                        ClientType: CLIENT_TYPE,
-                        Title: `[DELETION FEEDBACK] ${Name}`,
-                        Username: Name || Email,
-                        Email: model.email,
-                        Description: model.feedback,
-                    })
-                );
-            }
-
             const organization = await getOrganization();
             // If a user is part of a family plan we first need to leave the organization before deleting the account.
             // Refreshing the event manager is necessary to update the organization state
@@ -143,7 +123,6 @@ const DeleteAccountModal = (props: Props) => {
                 deleteUser({
                     Reason: model.reason,
                     Feedback: model.feedback,
-                    Email: model.email,
                 })
             );
 
@@ -200,7 +179,6 @@ const DeleteAccountModal = (props: Props) => {
                         </div>
                     </Alert>
                     <InputFieldTwo
-                        rootClassName="mb-2"
                         as={SelectTwo}
                         label={c('Label').t`What is the main reason you are deleting your account?`}
                         placeholder={c('Placeholder').t`Select a reason`}
@@ -217,7 +195,6 @@ const DeleteAccountModal = (props: Props) => {
                     <InputFieldTwo
                         id="feedback"
                         as={TextAreaTwo}
-                        rootClassName="mt-2"
                         rows={3}
                         label={c('Label')
                             .t`We are sorry to see you go. Please explain why you are leaving to help us improve.`}
@@ -229,19 +206,6 @@ const DeleteAccountModal = (props: Props) => {
                     />
 
                     <InputFieldTwo
-                        id="email"
-                        rootClassName="mt-2"
-                        label={c('Label').t`Email address`}
-                        placeholder={c('Placeholder').t`Email address`}
-                        assistiveText={c('Info').t`Please provide an email address in case we need to contact you.`}
-                        value={model.email}
-                        onValue={(value: string) => setModel({ ...model, email: value })}
-                        error={validator([requiredValidator(model.email), emailValidator(model.email)])}
-                        disabled={loading}
-                    />
-
-                    <InputFieldTwo
-                        rootClassName="mt-4"
                         id="check"
                         as={Checkbox}
                         error={validator([!model.check ? requiredValidator(undefined) : ''])}
