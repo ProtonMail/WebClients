@@ -30,7 +30,7 @@ import './MonitorSummary.scss';
 
 export const MonitorSummary: FC = () => {
     const { navigate } = useNavigation();
-    const { breaches, duplicates, insecure, missing2FAs, excluded, didLoad } = useMonitor();
+    const { duplicates, insecure, missing2FAs, excluded } = useMonitor();
 
     const paid = isPaidPlan(useSelector(selectPassPlan));
     const [upsellModalOpen, setUpsellModalOpen] = useState(false);
@@ -55,10 +55,7 @@ export const MonitorSummary: FC = () => {
                                 {paid && (
                                     <BreachSummaryCard
                                         className="xl:self-start"
-                                        breached={breaches.count > 0}
                                         onClick={() => navigate(getLocalPath('monitor/dark-web'))}
-                                        loading={breaches.loading}
-                                        error={!breaches.loading && !didLoad}
                                     />
                                 )}
 
