@@ -116,7 +116,7 @@ const SubscriptionsSection = () => {
             };
         }
 
-        if (latestPlanIDs[PLANS.VPN2024]) {
+        if (latestPlanIDs[PLANS.VPN2024] || latestPlanIDs[PLANS.DRIVE]) {
             const result = getVPN2024Renew({ plansMap, planIDs: latestPlanIDs, cycle: latestSubscription.Cycle })!;
             return {
                 renewPrice: (

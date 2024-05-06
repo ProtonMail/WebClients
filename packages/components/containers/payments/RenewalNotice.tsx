@@ -82,7 +82,7 @@ export const getCheckoutRenewNoticeText = ({
     currency: Currency;
     coupon?: string;
 }) => {
-    if (planIDs[PLANS.VPN2024]) {
+    if (planIDs[PLANS.VPN2024] || planIDs[PLANS.DRIVE]) {
         const result = getVPN2024Renew({ planIDs, plansMap, cycle })!;
         const renewCycle = result.renewalLength;
         const renewPrice = (
@@ -97,7 +97,7 @@ export const getCheckoutRenewNoticeText = ({
             </Price>
         );
 
-        const oneMonthCoupons: COUPON_CODES[] = [COUPON_CODES.TRYVPNPLUS2024];
+        const oneMonthCoupons: COUPON_CODES[] = [COUPON_CODES.TRYVPNPLUS2024, COUPON_CODES.TRYDRIVEPLUS2024];
 
         if (
             renewCycle === CYCLE.MONTHLY &&
