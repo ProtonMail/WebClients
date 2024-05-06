@@ -21,6 +21,7 @@ enum CommonFeatureFlag {
 
 enum AccountFlag {
     MailTrialOffer = 'MailTrialOffer',
+    DriveTrialOffer = 'DriveTrialOffer',
     MaintenanceImporter = 'MaintenanceImporter',
     VisionarySignup = 'VisionarySignup',
     Chargebee = 'Chargebee',

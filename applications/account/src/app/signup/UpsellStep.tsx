@@ -25,12 +25,14 @@ import Content from '../public/Content';
 import Header from '../public/Header';
 import Main from '../public/Main';
 import Text from '../public/Text';
+import DriveTrial2024UpsellModal from '../single-signup-v2/modals/DriveTrial2024UpsellModal';
 import MailTrial2024UpsellModal from '../single-signup-v2/modals/MailTrial2024UpsellModal';
 import UpsellPlanCard from './UpsellPlanCard';
 import { getSignupApplication } from './helper';
 
 interface Props {
     hasMailTrialUpsell?: boolean;
+    hasDriveTrialUpsell?: boolean;
     onPlan: (data: { planIDs: PlanIDs; cycle?: Cycle; coupon?: string }) => Promise<void>;
     currency: Currency;
     onChangeCurrency: (currency: Currency) => void;
@@ -71,6 +73,7 @@ const hasNoIcon = (features: PlanCardFeatureDefinition[]) => {
 
 const UpsellStep = ({
     hasMailTrialUpsell,
+    hasDriveTrialUpsell,
     plans,
     vpnServers,
     freePlan,
@@ -87,6 +90,7 @@ const UpsellStep = ({
     const [loading, withLoading] = useLoading();
     const [type, setType] = useState('free');
     const [upsellMailTrialModal, setUpsellMailTrialModal, renderUpsellMailTrialModal] = useModalState();
+    const [upsellDriveTrialModal, setUpsellDriveTrialModal, renderUpsellDriveTrialModal] = useModalState();
 
     useEffect(() => {
         void metrics.core_signup_pageLoad_total.increment({
@@ -216,6 +220,26 @@ const UpsellStep = ({
                     }}
                 />
             )}
+            {renderUpsellDriveTrialModal && (
+                <DriveTrial2024UpsellModal
+                    {...upsellDriveTrialModal}
+                    currency={currency}
+                    onConfirm={async () => {
+                        setType('drivetrial');
+                        await withLoading(
+                            onPlan({
+                                planIDs: { [PLANS.DRIVE]: 1 },
+                                cycle: CYCLE.MONTHLY,
+                                coupon: COUPON_CODES.TRYDRIVEPLUS2024,
+                            })
+                        );
+                    }}
+                    onContinue={async () => {
+                        setType('free');
+                        void withLoading(onPlan({ planIDs: {} }));
+                    }}
+                />
+            )}
             {shortFreePlan && (
                 <Main center={false} className="sign-layout-upsell">
                     <Header title={shortFreePlan.title} onBack={onBack} />
@@ -236,6 +260,10 @@ const UpsellStep = ({
                                     onClick={() => {
                                         if (hasMailTrialUpsell) {
                                             setUpsellMailTrialModal(true);
+                                            return;
+                                        }
+                                        if (hasDriveTrialUpsell) {
+                                            setUpsellDriveTrialModal(true);
                                             return;
                                         }
                                         setType('free');
