@@ -119,11 +119,10 @@ export const getCheckoutRenewNoticeText = ({
             `Your subscription will automatically renew in ${cycle} months.`,
             cycle
         );
-        if (renewCycle !== CYCLE.YEARLY) {
-            throw new Error('Should never happen');
+        if (renewCycle === CYCLE.YEARLY) {
+            const second = c('vpn_2024: renew').jt`You'll then be billed every 12 months at ${renewPrice}.`;
+            return [first, ' ', second];
         }
-        const second = c('vpn_2024: renew').jt`You'll then be billed every 12 months at ${renewPrice}.`;
-        return [first, ' ', second];
     }
     if (planIDs[PLANS.MAIL] && (coupon === COUPON_CODES.TRYMAILPLUS2024 || coupon === COUPON_CODES.MAILPLUSINTRO)) {
         const renewablePrice = (
