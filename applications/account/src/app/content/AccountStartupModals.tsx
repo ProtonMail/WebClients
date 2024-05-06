@@ -1,42 +1,38 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import {
     FeatureCode,
     LightLabellingFeatureModal,
     getShouldOpenReferralModal,
-    useApi,
-    useAuthentication,
     useFeature,
     useModalState,
     useShowLightLabellingFeatureModal,
     useSubscription,
-    useUser,
 } from '@proton/components';
-import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import { APPS, APP_NAMES, OPEN_OFFER_MODAL_EVENT } from '@proton/shared/lib/constants';
+import { domIsBusy } from '@proton/shared/lib/busy';
+import { OPEN_OFFER_MODAL_EVENT, SECOND } from '@proton/shared/lib/constants';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
-import { getPlan } from '@proton/shared/lib/helpers/subscription';
-import noop from '@proton/utils/noop';
 
-import PassOnboardingModal from './PassOnboardingModal';
+interface StartPayload {
+    time: number;
+}
 
-const AccountStartupModals = ({ app }: { app: APP_NAMES }) => {
-    const authentication = useAuthentication();
-    const api = useApi();
-    const [user] = useUser();
-    const silentApi = getSilentApi(api);
+const getStartModalExpired = (initial: StartPayload, now: StartPayload) => {
+    return now.time - initial.time > 20 * SECOND;
+};
+
+const AccountStartupModals = () => {
     const [subscription] = useSubscription();
     const onceRef = useRef(false);
+    const [initial] = useState(() => {
+        return { time: Date.now() };
+    });
 
     const seenReferralModal = useFeature<boolean>(FeatureCode.SeenReferralModal);
     const shouldOpenReferralModal = getShouldOpenReferralModal({
         subscription,
         feature: seenReferralModal.feature,
     });
-
-    const seenPassSignupFeature = useFeature<boolean>(FeatureCode.PassSignup);
-    const seenPassSignup = seenPassSignupFeature.feature?.Value;
-    const [passOnboardingProps, setPassOnboardingModal, renderPassOnboardingModal] = useModalState();
 
     const showLightLabellingFeatureModal = useShowLightLabellingFeatureModal();
     const [lightLabellingFeatureModalProps, setLightLabellingFeatureModal, renderLightLabellingFeatureModal] =
@@ -49,7 +45,14 @@ const AccountStartupModals = ({ app }: { app: APP_NAMES }) => {
     }, [shouldOpenReferralModal.open]);
 
     useEffect(() => {
-        if (onceRef.current || isElectronMail) {
+        if (
+            onceRef.current ||
+            isElectronMail ||
+            domIsBusy() ||
+            getStartModalExpired(initial, {
+                time: Date.now(),
+            })
+        ) {
             return;
         }
 
@@ -58,52 +61,10 @@ const AccountStartupModals = ({ app }: { app: APP_NAMES }) => {
             setLightLabellingFeatureModal(true);
             return;
         }
-
-        if (app !== APPS.PROTONPASS || !subscription || seenPassSignup === undefined || seenPassSignup) {
-            return;
-        }
-
-        const getHasNotUsedPass = async () => {
-            const result = await silentApi<{
-                Data: { ActivationTime: number } | null;
-            }>({
-                url: 'pass/v1/user/access/check',
-                method: 'GET',
-            }).catch(noop);
-            return result?.Data === null;
-        };
-
-        const run = async () => {
-            if (await getHasNotUsedPass()) {
-                onceRef.current = true;
-                setPassOnboardingModal(true);
-                seenPassSignupFeature.update(true).catch(noop);
-            }
-        };
-
-        run().catch(noop);
-    }, [seenPassSignup, subscription, showLightLabellingFeatureModal]);
+    }, [showLightLabellingFeatureModal]);
 
     return (
-        <>
-            {renderPassOnboardingModal && (
-                <PassOnboardingModal
-                    user={user}
-                    plan={getPlan(subscription)?.Name}
-                    {...passOnboardingProps}
-                    onClose={() => {
-                        const params = new URLSearchParams();
-                        params.set('u', `${authentication.localID}`);
-                        params.set('mode', 'onboarding');
-                        window.open(`${window.location.origin}/pass/signup?${params.toString()}`, '_self');
-                        passOnboardingProps.onClose?.();
-                    }}
-                />
-            )}
-            {renderLightLabellingFeatureModal && (
-                <LightLabellingFeatureModal {...lightLabellingFeatureModalProps} />
-            )}
-        </>
+        <>{renderLightLabellingFeatureModal && <LightLabellingFeatureModal {...lightLabellingFeatureModalProps} />}</>
     );
 };
 

@@ -24,54 +24,16 @@ const getOrganizationLogoURL = (data: { logoID: string | null; API_URL: string; 
 
 export const organizationThemeListener = (startListening: SharedStartListening<OrganizationState>) => {
     startListening({
-        predicate: (action) => {
-            return bootstrapEvent.match(action);
-        },
-        effect: async (_, listenerApi) => {
-            listenerApi.unsubscribe();
-
-            const organizationThemeFromCookie = getOrganizationThemeFromCookie();
-            let logoURL = '';
-            let orgName = '';
-            let access = false;
-            const authentication = listenerApi.extra.authentication;
-            const config = listenerApi.extra.config;
-
-            if (organizationThemeFromCookie && organizationThemeFromCookie.LocalID === authentication.localID) {
-                logoURL = getOrganizationLogoURL({
-                    logoID: organizationThemeFromCookie.LogoID,
-                    UID: authentication.UID,
-                    API_URL: config.API_URL,
-                });
-                orgName = organizationThemeFromCookie.Name;
-                access = true;
-            } else {
-                const state = listenerApi.getState();
-                const organization = selectOrganization(state).value;
-                if (organization) {
-                    access = getHasAccess(organization);
-                }
-            }
-
-            listenerApi.dispatch(
-                organizationThemeSlice.actions.set({
-                    access,
-                    name: orgName,
-                    showName: true,
-                    logoURL,
-                })
-            );
-        },
-    });
-
-    startListening({
         predicate: (action, currentState, nextState) => {
             const currentOrganization = selectOrganization(currentState).value;
             const nextOrganization = selectOrganization(nextState).value;
-            return Boolean(
-                currentOrganization?.PlanName !== nextOrganization?.PlanName ||
-                    currentOrganization?.Settings !== nextOrganization?.Settings ||
-                    currentOrganization?.Name !== nextOrganization?.Name
+            return (
+                bootstrapEvent.match(action) ||
+                Boolean(
+                    currentOrganization?.PlanName !== nextOrganization?.PlanName ||
+                        currentOrganization?.Settings !== nextOrganization?.Settings ||
+                        currentOrganization?.Name !== nextOrganization?.Name
+                )
             );
         },
         effect: async (_, listenerApi) => {
@@ -80,10 +42,29 @@ export const organizationThemeListener = (startListening: SharedStartListening<O
 
             const state = listenerApi.getState();
             const organization = selectOrganization(state).value;
-            const settings = organization?.Settings;
+            const organizationSettings = organization?.Settings;
+
+            if (!organization || !organizationSettings) {
+                const organizationThemeFromCookie = getOrganizationThemeFromCookie();
+                if (organizationThemeFromCookie && organizationThemeFromCookie.LocalID === authentication.localID) {
+                    listenerApi.dispatch(
+                        organizationThemeSlice.actions.set({
+                            access: true,
+                            name: organizationThemeFromCookie.Name,
+                            showName: true,
+                            logoURL: getOrganizationLogoURL({
+                                logoID: organizationThemeFromCookie.LogoID,
+                                UID: authentication.UID,
+                                API_URL: config.API_URL,
+                            }),
+                        })
+                    );
+                    return;
+                }
+            }
 
             const access = getHasAccess(organization);
-            if (!organization || !settings || !access) {
+            if (!organization || !organizationSettings || !access) {
                 if (!access) {
                     syncToCookie(serializeOrgTheme(undefined, authentication.localID));
                 }
@@ -97,9 +78,9 @@ export const organizationThemeListener = (startListening: SharedStartListening<O
                 organizationThemeSlice.actions.set({
                     access,
                     name: organization.Name || '',
-                    showName: settings.ShowName,
+                    showName: organizationSettings.ShowName,
                     logoURL: getOrganizationLogoURL({
-                        logoID: settings.LogoID,
+                        logoID: organizationSettings.LogoID,
                         UID: authentication.UID,
                         API_URL: config.API_URL,
                     }),

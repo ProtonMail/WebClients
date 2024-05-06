@@ -1,6 +1,5 @@
 import { c } from 'ttag';
 
-import { FeatureCode } from '@proton/components/containers';
 import { getAutoCoupon } from '@proton/components/containers/payments/subscription/helpers';
 import { getMaybeForcePaymentsVersion } from '@proton/components/payments/client-extensions';
 import {
@@ -9,7 +8,6 @@ import {
     PaymentsApi,
     SavedPaymentMethod,
 } from '@proton/components/payments/core';
-import { updateFeatureValue } from '@proton/shared/lib/api/features';
 import { getOrganization } from '@proton/shared/lib/api/organization';
 import { getSubscription, queryPaymentMethods } from '@proton/shared/lib/api/payments';
 import {
@@ -52,7 +50,6 @@ import {
     hasPaidMail,
     hasPaidPass,
 } from '@proton/shared/lib/user/helpers';
-import noop from '@proton/utils/noop';
 
 import { getSubscriptionPrices } from '../signup/helper';
 import { PlanIDs, SessionData, SignupCacheResult, SubscriptionData } from '../signup/interfaces';
@@ -541,10 +538,6 @@ export const getUserInfo = async ({
 
         return getSubscriptionData(paymentsApi, optionsWithSubscriptionDefaults);
     })();
-
-    if (toApp === APPS.PROTONPASS) {
-        await api(updateFeatureValue(FeatureCode.PassSignup, true)).catch(noop);
-    }
 
     if (user && hasAccess({ toApp, user, audience, currentPlan })) {
         state.access = true;
