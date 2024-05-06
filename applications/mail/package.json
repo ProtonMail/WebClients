@@ -62,9 +62,9 @@
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
         "@proton/i18n": "workspace:packages/i18n",
-        "@testing-library/dom": "^9.3.4",
+        "@testing-library/dom": "^10.1.0",
         "@testing-library/jest-dom": "^6.4.3",
-        "@testing-library/react": "^14.3.1",
+        "@testing-library/react": "^15.0.6",
         "@testing-library/react-hooks": "^8.0.1",
         "@testing-library/user-event": "^14.5.2",
         "@types/dompurify": "^3.0.5",
