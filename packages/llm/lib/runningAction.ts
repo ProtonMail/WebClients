@@ -1,6 +1,6 @@
-import { WebWorkerEngine } from '@mlc-ai/web-llm';
+import { GenerationConfig, WebWorkerEngine } from '@mlc-ai/web-llm';
 
-import type { Action, PromiseReject, PromiseResolve, RunningAction } from '@proton/llm/lib/types';
+import type { Action, GenerationCallback, PromiseReject, PromiseResolve, RunningAction } from '@proton/llm/lib/types';
 
 export class BaseRunningAction implements RunningAction {
     private action_: Action;
@@ -20,7 +20,7 @@ export class BaseRunningAction implements RunningAction {
     // @ts-ignore
     protected generation: Promise<void>;
 
-    constructor(prompt: any, callback: any, chat: any, action: Action) {
+    constructor(prompt: string, callback: GenerationCallback, chat: WebWorkerEngine, action: Action, stop?: string[]) {
         let fulltext = '';
         const generateProgressCallback = (_step: number, message: string) => {
             const token = message.slice(fulltext.length);
@@ -32,8 +32,12 @@ export class BaseRunningAction implements RunningAction {
             this.finishedPromiseSignals = { resolve, reject };
         });
 
+        const genConfig: GenerationConfig = {
+            stop: ['<|', '\n[Your Name]'] + (stop || []),
+        };
+
         this.generation = chat
-            .generate(prompt, generateProgressCallback)
+            .generate(prompt, generateProgressCallback, undefined, genConfig)
             .then(() => {
                 this.finishedPromiseSignals!.resolve();
             })
