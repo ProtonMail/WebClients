@@ -35,6 +35,7 @@ enum AccountFlag {
     InboxDesktopThemeSelection = 'InboxDesktopThemeSelection',
     LightLabellingFeatureModal = 'LightLabellingFeatureModal',
     NewCancellationFlow = 'NewCancellationFlow',
+    ShowAdditionalVpnDowngradeReasons = 'ShowAdditionalVpnDowngradeReasons',
 }
 
 enum CalendarFeatureFlag {
