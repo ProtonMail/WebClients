@@ -632,9 +632,9 @@ export const AssistantProvider = ({
                 // If the promise is resolved, we cancelled it after a user interaction.
                 // We don't want to generate a result anymore.
                 if (llmModel.current && !isResolved) {
-                    const generationCallback = (token: string, fulltext: string) => {
+                    const generationCallback = (fulltext: string) => {
                         generatedTokensNumber.current++;
-                        callback(token, fulltext);
+                        callback(fulltext);
                     };
 
                     const generationStart = performance.now();

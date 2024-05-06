@@ -16,7 +16,7 @@ import ResumeDownloadingModal from './modals/ResumeDownloadingModal';
 import ComposerAssistantInitialSetupSpotlight from './spotlights/ComposerAssistantInitialSetupSpotlight';
 
 interface Props {
-    onGenerateResult: (token: string, fulltext: string) => void;
+    onGenerateResult: (fulltext: string) => void;
     assistantID: string;
     onContentChange: () => void;
     isAssistantInitialSetup?: boolean;

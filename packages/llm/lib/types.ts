@@ -34,7 +34,7 @@ export interface RunningAction {
     waitForCompletion(): Promise<void>;
 }
 
-export type GenerationCallback = (token: string, fulltext: string) => void;
+export type GenerationCallback = (fulltext: string) => void;
 export type Action = WriteFullEmailAction | RefineAction | ShortenAction;
 
 export type WriteFullEmailAction = {
