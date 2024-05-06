@@ -7,6 +7,13 @@ package proton_pass_item_v1;
 message ItemNote {
 }
 
+message PasskeyCreationData {
+	string os_name = 1;
+	string os_version = 2;
+	string device_name = 3;
+	string app_version = 4;
+}
+
 message Passkey {
 	string key_id = 1;
 	bytes content = 2;
@@ -20,6 +27,7 @@ message Passkey {
 	string note = 10;
 	bytes credential_id = 11;
 	bytes user_handle = 12;
+	PasskeyCreationData creation_data = 13;
 }
 
 message ItemLogin {
