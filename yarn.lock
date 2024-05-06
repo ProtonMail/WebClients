@@ -3372,14 +3372,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fullhuman/postcss-purgecss@npm:^5.0.0":
-  version: 5.0.0
-  resolution: "@fullhuman/postcss-purgecss@npm:5.0.0"
+"@fullhuman/postcss-purgecss@npm:^6.0.0":
+  version: 6.0.0
+  resolution: "@fullhuman/postcss-purgecss@npm:6.0.0"
   dependencies:
-    purgecss: "npm:^5.0.0"
+    purgecss: "npm:^6.0.0"
   peerDependencies:
     postcss: ^8.0.0
-  checksum: 10c0/27a87a708c316b5d84d2ee6a557a3c0301eae1cea355276670d0c1c76d146a19f40ffa0a79fecaea270ff4b609448c6490ec54b585f81114b502aa9519f642e6
+  checksum: 10c0/817c1103c400249841cc86257fbdb1da90c75dc412ff3b63b156f72055fe43347281749432f680f7e13673473a7daebf496bd1d2f7b17370f6dafb011cbf83f7
   languageName: node
   linkType: hard
 
@@ -6106,7 +6106,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@proton/chargebee@workspace:packages/chargebee"
   dependencies:
-    "@fullhuman/postcss-purgecss": "npm:^5.0.0"
+    "@fullhuman/postcss-purgecss": "npm:^6.0.0"
     "@proton/styles": "workspace:packages/styles"
     eslint: "npm:^8.57.0"
     jest: "npm:^29.7.0"
@@ -15785,7 +15785,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"commander@npm:^9.0.0, commander@npm:^9.3.0, commander@npm:^9.4.0":
+"commander@npm:^9.3.0, commander@npm:^9.4.0":
   version: 9.5.0
   resolution: "commander@npm:9.5.0"
   checksum: 10c0/5f7784fbda2aaec39e89eb46f06a999e00224b3763dc65976e05929ec486e174fe9aac2655f03ba6a5e83875bd173be5283dc19309b7c65954701c02025b3c1d
@@ -31952,17 +31952,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"purgecss@npm:^5.0.0":
-  version: 5.0.0
-  resolution: "purgecss@npm:5.0.0"
+"purgecss@npm:^6.0.0":
+  version: 6.0.0
+  resolution: "purgecss@npm:6.0.0"
   dependencies:
-    commander: "npm:^9.0.0"
-    glob: "npm:^8.0.3"
+    commander: "npm:^12.0.0"
+    glob: "npm:^10.3.10"
     postcss: "npm:^8.4.4"
     postcss-selector-parser: "npm:^6.0.7"
   bin:
     purgecss: bin/purgecss.js
-  checksum: 10c0/d5a459adc0ad653da9393e643eae9f2084307a3655d10d6c570605292bafe39017bdf57f3d9cf7b95b3ee7a4240435268213511628946f2b5f3985d6cbc7ba05
+  checksum: 10c0/24f01c1f46e7908964e0d99d48b3ed701d0b878abe111e8706ba26206bcd3747d7ae8c9c01173e5e79ae2d565c6bfc06dc683bfb999f2d00f204243edf603281
   languageName: node
   linkType: hard
 
