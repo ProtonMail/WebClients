@@ -12,8 +12,8 @@ import humanSize from '@proton/shared/lib/helpers/humanSize';
 import generatingLoader from '@proton/styles/assets/img/illustrations/dot-loader.svg';
 import clsx from '@proton/utils/clsx';
 
-import ComposerAssistantInitialSetupSpotlight from './ComposerAssistantInitialSetupSpotlight';
-import ResumeDownloadingModal from './ResumeDownloadingModal';
+import ResumeDownloadingModal from './modals/ResumeDownloadingModal';
+import ComposerAssistantInitialSetupSpotlight from './spotlights/ComposerAssistantInitialSetupSpotlight';
 
 interface Props {
     onGenerateResult: (token: string, fulltext: string) => void;
@@ -23,7 +23,10 @@ interface Props {
 }
 
 const ComposerAssistantInput = ({ onGenerateResult, assistantID, onContentChange, isAssistantInitialSetup }: Props) => {
+    // Request that the user is writing in the input
     const [assistantRequest, setAssistantRequest] = useState<string>('');
+
+    // Show a spotlight the first time the user is viewing the assistant (when clicking on the input)
     const [showSetupSpotlight, setShowSetupSpotlight] = useState(false);
     const spotlightAnchorRef = useRef<HTMLDivElement>(null);
 
@@ -46,6 +49,7 @@ const ComposerAssistantInput = ({ onGenerateResult, assistantID, onContentChange
     } = useAssistant(assistantID);
 
     const startGeneratingResult = async () => {
+        // Warn the user that we need the download to be completed before generating a result
         if (downloadPaused) {
             setResumeDownloadModalOpen(true);
         } else {
@@ -54,8 +58,10 @@ const ComposerAssistantInput = ({ onGenerateResult, assistantID, onContentChange
     };
 
     const handleGenieKeyDown = async (event: KeyboardEvent<HTMLTextAreaElement>) => {
-        // If a generation is going on in the current input, block the user from performing another generation
-        if (event.key === 'Enter' && !isGeneratingResult) {
+        // Block the submit action when
+        // - A generation is going on in the current input
+        // - There is no prompt in the input
+        if (event.key === 'Enter' && !event.shiftKey && !isGeneratingResult && assistantRequest !== '') {
             await startGeneratingResult();
         }
     };
@@ -106,6 +112,8 @@ const ComposerAssistantInput = ({ onGenerateResult, assistantID, onContentChange
     };
 
     const handleClickOnInput = () => {
+        // The first time the user is opening the composer, the assistant will be opened by default to show the feature
+        // Then when the user clicks on the input, we will show a spotlight and start the model init (download + load on GPU)
         if (isAssistantInitialSetup) {
             initAssistant();
             setShowSetupSpotlight(true);
@@ -113,8 +121,6 @@ const ComposerAssistantInput = ({ onGenerateResult, assistantID, onContentChange
     };
 
     const getLeftIcon = () => {
-        // We have no way to differentiate the download step from the loading GPU state at this point
-        // So if we have a progress, we're downloading so we can show the progress bar, otherwise show a spinner
         if (isGeneratingResult) {
             return <img src={generatingLoader} alt="" width={20} />;
         }
@@ -131,6 +137,7 @@ const ComposerAssistantInput = ({ onGenerateResult, assistantID, onContentChange
                         size="small"
                         disabled={!isGeneratingResult}
                         onClick={cancelRunningAction}
+                        className="mb-auto"
                     >
                         <Icon name="stop" alt={c('loc_nightly_assistant').t`Stop generating result`} />
                     </Button>
@@ -146,6 +153,7 @@ const ComposerAssistantInput = ({ onGenerateResult, assistantID, onContentChange
                 size="small"
                 disabled={isGeneratingResult || assistantRequest === ''}
                 onClick={startGeneratingResult}
+                className="mb-auto"
             >
                 <Icon
                     name="arrow-left-and-up"

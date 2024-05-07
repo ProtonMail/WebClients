@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { Kbd } from '@proton/atoms';
 import { SidebarPrimaryButton, Tooltip } from '@proton/components';
 
-import ComposerAssistantSpotlight from 'proton-mail/components/assistant/ComposerAssistantSpotlight';
+import ComposerAssistantSpotlight from 'proton-mail/components/assistant/spotlights/ComposerAssistantSpotlight';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
 interface Props {

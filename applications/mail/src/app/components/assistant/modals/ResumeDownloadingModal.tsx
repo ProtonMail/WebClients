@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { ModalProps, Prompt } from '@proton/components';
+import { Button } from '@proton/atoms/index';
+import { ModalProps, Prompt } from '@proton/components/index';
 import { ASSISTANT_FEATURE_NAME } from '@proton/llm/lib';
 
 interface Props extends ModalProps {

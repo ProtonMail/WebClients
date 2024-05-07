@@ -145,7 +145,7 @@ const ComposerTitleBar = ({
                 <Icon name={maximized ? 'arrows-to-center' : 'arrows-from-center'} alt={title} className="m-auto" />
             </TitleBarButton>
             <TitleBarButton title={titleClose} onClick={onClose} dataTestId="composer:close-button">
-                <Icon name="cross" alt={title} className="m-auto" />
+                <Icon name="cross-big" alt={title} className="m-auto" />
             </TitleBarButton>
         </header>
     );
