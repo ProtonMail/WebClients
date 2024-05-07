@@ -18,6 +18,10 @@ const getConfig = (env: any): Configuration => {
 
     const assetsFolder = 'assets';
 
+    const defaultBrowsersList = isProduction
+        ? `> 0.5%, not IE 11, Firefox ESR, Safari 14, iOS 14`
+        : 'last 1 chrome version, last 1 firefox version, last 1 safari version';
+
     const options = {
         isProduction,
         isRelease,
@@ -26,9 +30,7 @@ const getConfig = (env: any): Configuration => {
         appMode: env.appMode || 'standalone',
         featureFlags: env.featureFlags || '',
         writeSRI: env.writeSri !== 'false',
-        browserslist: isProduction
-            ? `> 0.5%, not IE 11, Firefox ESR, Safari 14, iOS 14`
-            : 'last 1 chrome version, last 1 firefox version, last 1 safari version',
+        browserslist: env.browserslist ?? defaultBrowsersList,
         buildData: {
             version: env.version,
             commit: env.commit,
