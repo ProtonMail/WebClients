@@ -11,6 +11,7 @@ export enum OnboardingMessage {
     B2B_ONBOARDING,
     EARLY_ACCESS,
     PASS_MONITOR,
+    PASS_MONITOR_LEARN_MORE,
 }
 
 export type OnboardingAcknowledgment = {
