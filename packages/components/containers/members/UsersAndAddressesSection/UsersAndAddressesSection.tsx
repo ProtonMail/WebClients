@@ -552,14 +552,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                         const memberAddresses = memberAddressesMap?.[member.ID] || [];
                         const isInvitationPending = member.State === MEMBER_STATE.STATUS_INVITED;
 
-                        const memberName = (() => {
-                            if (hasFamily(subscription) && member.Role === MEMBER_ROLE.ORGANIZATION_ADMIN) {
-                                return memberAddresses[0]?.Email || member.Name;
-                            }
-
-                            return member.Name;
-                        })();
-
+                        const memberName = member.Name || memberAddresses[0]?.Email;
                         const canAddAddress = memberAddresses.length === 0;
 
                         return (
