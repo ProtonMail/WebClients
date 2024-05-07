@@ -188,6 +188,9 @@
       "Edit vault": [
         "Kasayı düzenle"
       ],
+      "Exclude from monitoring": [
+        "İzlemeye katma"
+      ],
       "Export": [
         "Dışa aktar"
       ],
@@ -212,6 +215,9 @@
       "Get mobile apps": [
         "Mobil uygulamaları edinin"
       ],
+      "Get Pass Plus": [
+        "Pass Plus edinin"
+      ],
       "Help us improve": [
         "Kendimizi geliştirmemize yardımcı olun"
       ],
@@ -232,6 +238,9 @@
       ],
       "Importing": [
         "İçe aktarılıyor"
+      ],
+      "Include in monitoring": [
+        "İzlemeye kat"
       ],
       "Invite others": [
         "Başkalarını davet edin"
@@ -368,6 +377,9 @@
       "Saving passkey...": [
         "Geçiş anahtarı kaydediliyor..."
       ],
+      "See all": [
+        "Tümünü görüntüle"
+      ],
       "See members": [
         "Üyeleri görüntüle"
       ],
@@ -502,11 +514,21 @@
       ]
     },
     "Description": {
+      "${ total } other login uses the same password": [
+        "${ total } oturum açma kaydı aynı parolayı kullanıyor",
+        "${ total } oturum açma kaydı aynı parolayı kullanıyor"
+      ],
       "A checked box means the feature is disabled.": [
         "Seçeneğin işaretlenmesi özelliğin kapatılmasını sağlar."
       ],
+      "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
+        "Karanlık ağ izleme özelliği ücretli bir tarife ile kullanılabilir. Hemen kullanmak için tarifenizi yükseltin."
+      ],
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
         "${ PASS_SHORT_APP_NAME } içinde belirli otomatik işlemlerin (otomatik doldurma, otomatik önerme, otomatik kaydetme) yapılmayacağı etki alanlarının listesi.${ infoText }"
+      ],
+      "This account is vulnerable, visit the service and change your password.": [
+        "Bu hesapta güvenlik açığı var. Hizmeti ziyaret edin ve parolanızı değiştirin."
       ]
     },
     "Error": {
@@ -602,6 +624,12 @@
       "Failed resending invite.": [
         "Davet yeniden gönderilemedi."
       ],
+      "Failed to add email address": [
+        "E-posta adresi eklenemedi"
+      ],
+      "Failed to delete email address from monitoring": [
+        "E-posta adresi izlemeden çıkarılamadı"
+      ],
       "Failed to delete selected items": [
         "Seçilmiş ögeler silinemedi"
       ],
@@ -610,6 +638,12 @@
       ],
       "Failed to edit user's access.": [
         "Kullanıcının erişimi düzenlenemedi."
+      ],
+      "Failed to load breaches for this address": [
+        "Bu adres için verilerin ele geçirilmesi olayları yüklenemedi"
+      ],
+      "Failed to load breaches for this email alias": [
+        "Bu e-posta takma adı için verilerin ele geçirilmesi olayları yüklenemedi"
       ],
       "Failed to load item history": [
         "Öge geçmişi yüklenemedi"
@@ -629,6 +663,12 @@
       "Failed to remove user's access.": [
         "Kullanıcının erişimi kaldırılamadı."
       ],
+      "Failed to resend verification for custom email": [
+        "Özel e-posta için doğrulama yeniden gönderilemedi"
+      ],
+      "Failed to resolve breaches for this address": [
+        "Bu adres için verilerin ele geçirilmesi olayları çözümlenemedi"
+      ],
       "Failed to restore items from trash": [
         "Ögeler çöpten çıkarılamadı"
       ],
@@ -637,6 +677,21 @@
       ],
       "Failed to unpin item": [
         "Ögenin sabitlemesi kaldırılamadı"
+      ],
+      "Failed to update monitoring settings": [
+        "İzleme ayarları güncellenemedi"
+      ],
+      "Failed to verify email address": [
+        "E-posta adresi doğrulanamadı"
+      ],
+      "Failed updating ${ PROTON_SENTINEL_NAME } setting": [
+        "${ PROTON_SENTINEL_NAME } ayarı güncellenemedi"
+      ],
+      "Failed updating monitor flag of the item": [
+        "Ögenin izleme işareti güncellenemedi"
+      ],
+      "Failed updating monitoring status for this email address": [
+        "Bu e-posta adresi için izleme durumu güncellenemedi"
       ],
       "File could not be parsed": [
         "Dosya işlenemedi"
@@ -880,6 +935,12 @@
       "${ PASS_APP_NAME } will suggest saving passkeys.": [
         "${ PASS_APP_NAME } geçiş anahtarlarını kaydetmeyi önerecek."
       ],
+      "${ PROTON_SENTINEL_NAME } successfully disabled": [
+        "${ PROTON_SENTINEL_NAME } kullanımdan kaldırıldı"
+      ],
+      "${ PROTON_SENTINEL_NAME } successfully enabled": [
+        "${ PROTON_SENTINEL_NAME } kullanıma alındı"
+      ],
       "${ trialDaysLeft } day left": [
         "${ trialDaysLeft } gün kaldı",
         "${ trialDaysLeft } gün kaldı"
@@ -910,6 +971,9 @@
       ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "\"${ item.aliasEmail }\" takma adı çöpe atıldı. Artık e-postaları gelen kutunuza iletmeyecek"
+      ],
+      "All breaches for this address were resolved": [
+        "Bu adres için tüm verilerin ele geçirilmesi olayları çözümlendi"
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "\"${ payload.content.name }\" içindeki tüm ögeler taşındı"
@@ -1010,6 +1074,15 @@
       "Editor": [
         "Düzenleyici"
       ],
+      "Email address successfully deleted from monitoring": [
+        "E-posta adresi izlemeden çıkarıldı"
+      ],
+      "Email address successfully excluded from monitoring": [
+        "E-posta adresi izlemeye katılmadı"
+      ],
+      "Email address successfully included in monitoring": [
+        "E-posta adresi izlemeye eklendi"
+      ],
       "Emptying trash...": [
         "Çöp kutusu boşaltılıyor..."
       ],
@@ -1106,6 +1179,12 @@
       "Item restored": [
         "Öge geri yüklendi"
       ],
+      "Item successfully excluded from monitoring": [
+        "Öge izlemeye katılmayacak"
+      ],
+      "Item successfully included in monitoring": [
+        "Öge izlemeye katılacak"
+      ],
       "Item successfully moved": [
         "Öge taşındı"
       ],
@@ -1132,6 +1211,9 @@
       ],
       "me": [
         "benim"
+      ],
+      "Monitoring settings successfully updated": [
+        "İzleme ayarları güncellendi"
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "Bir parola yöneticisinden daha fazlası. ${ PASS_APP_NAME } parolalarınızı ve takma e-posta adresleri ile e-posta adresinizi korur. ${ MAIL_APP_NAME } ile aynı teknolojiyi kullandığından, verileriniz uçtan uca şifreleme ile korunur ve yalnızca sizin tarafınızdan erişilebilir."
@@ -1469,6 +1551,9 @@
       "${ config.options.wordCount } word": [
         "${ config.options.wordCount } sözcük",
         "${ config.options.wordCount } sözcük"
+      ],
+      "${ PASS_SHORT_APP_NAME } monitor": [
+        "${ PASS_SHORT_APP_NAME } izleyici"
       ],
       "1 hour": [
         "1 saat"
@@ -1848,6 +1933,9 @@
       "Special characters (!&*)": [
         "Özel karakterler (!&*)"
       ],
+      "Strong": [
+        "Güçlü"
+      ],
       "Suffix": [
         "Son ek"
       ],
@@ -1913,6 +2001,12 @@
       ],
       "View logs": [
         "Günlükleri görüntüle"
+      ],
+      "Vulnerable": [
+        "Çok zayıf"
+      ],
+      "Weak": [
+        "Zayıf"
       ],
       "Website": [
         "Site"
@@ -2079,6 +2173,9 @@
       "${ PASS_APP_NAME } Settings": [
         "${ PASS_APP_NAME } ayarları"
       ],
+      "${ PASS_SHORT_APP_NAME } monitor": [
+        "${ PASS_SHORT_APP_NAME } izleyici"
+      ],
       "Auto-lock update": [
         "Ootmatik kilitleme güncellemesi"
       ],
@@ -2211,6 +2308,9 @@
       "Share with": [
         "Şununla paylaş"
       ],
+      "Stay safer online": [
+        "Çevrim içi ortamda daha güvende kalın"
+      ],
       "Suggestions": [
         "Öneriler"
       ],
@@ -2246,6 +2346,9 @@
       ],
       "Vault shared with you": [
         "Sizinle bir kasa paylaşıldı"
+      ],
+      "Weak password": [
+        "Parola zayıf"
       ],
       "Welcome to your new password manager!": [
         "Yeni parola yöneticinize hoş geldiniz!"

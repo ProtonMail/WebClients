@@ -524,14 +524,14 @@
       "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
         "Overvåking av det \"mørke nettet\" er tilgjengelige med en betalt plan. Oppgrader for umiddelbar tilgang."
       ],
-      "It would be more secure to set up 2FA for this account.": [
-        "Det ville være sikrere å sette opp 2FA for denne kontoen."
-      ],
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
         "Liste over domener der visse autofunksjoner i ${ PASS_SHORT_APP_NAME } (autofyll, autoforslag, autolagre) ikke skal kjøres. ${ infoText }"
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "Denne kontoen er sårbar, besøk tjenesten og endre passordet ditt."
+      ],
+      "This service offers 2FA. Enable it for added account security.": [
+        "Denne tjenesten tilbyr 2FA. Aktiver den for ekstra kontosikkerhet."
       ]
     },
     "Error": {
@@ -642,9 +642,6 @@
       "Failed to edit user's access.": [
         "Kunne ikke redigere brukerens tilgang."
       ],
-      "Failed to load breaches": [
-        "Kunne ikke laste inn brudd"
-      ],
       "Failed to load breaches for this address": [
         "Kunne ikke laste inn brudd for denne adressen"
       ],
@@ -671,6 +668,9 @@
       ],
       "Failed to resend verification for custom email": [
         "Kunne ikke sende bekreftelse på nytt for tilpasset e-post"
+      ],
+      "Failed to resolve breaches for this address": [
+        "Kunne ikke løse brudd for denne adressen"
       ],
       "Failed to restore items from trash": [
         "Kunne ikke gjenopprette elementer fra papirkurven"
@@ -974,6 +974,9 @@
       ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Alias \"${ item.aliasEmail }\" flyttet til papirkurven - det vil slutte å videresende e-post til postkassen din."
+      ],
+      "All breaches for this address were resolved": [
+        "Alle brudd for denne adressen ble løst"
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Alle elementer fra \"${ payload.content.name }\" flyttet"
@@ -2257,9 +2260,6 @@
       "Members": [
         "Medlemmer"
       ],
-      "Missing two-factor authentication": [
-        "Mangler tofaktorautentisering"
-      ],
       "Modified": [
         "Endret"
       ],
@@ -2307,6 +2307,9 @@
       ],
       "Set access level": [
         "Sett tilgangsnivå"
+      ],
+      "Set up 2FA for more security": [
+        "Sett opp 2FA for ekstra sikkerhet"
       ],
       "Share with": [
         "Del med"

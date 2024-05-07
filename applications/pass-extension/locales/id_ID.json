@@ -523,14 +523,14 @@
       "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
         "Pemantauan Dark Web tersedia dengan paket berbayar. Tingkatkan akun Anda untuk memperoleh akses ke fitur ini dengan segera."
       ],
-      "It would be more secure to set up 2FA for this account.": [
-        "Akun ini akan lebih aman dengan pengaturan 2FA."
-      ],
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
         "Daftar domain di mana fungsi otomatis ${ PASS_SHORT_APP_NAME } tertentu (Isi Otomatis, Saran Otomatis, Simpan Otomatis) tidak akan berjalan.${ infoText }"
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "Akun ini terindikasi rentan. Kunjungi layanan keamanan kami dan ubah kata sandi Anda."
+      ],
+      "This service offers 2FA. Enable it for added account security.": [
+        "Layanan ini menawarkan 2FA. Aktifkan fitur ini untuk meningkatkan keamanan akun."
       ]
     },
     "Error": {
@@ -638,9 +638,6 @@
       ],
       "Failed to edit user's access.": [
         "Akses pengguna gagal disunting."
-      ],
-      "Failed to load breaches": [
-        "Daftar kebocoran gagal dimuat"
       ],
       "Failed to load breaches for this address": [
         "Daftar kebocoran untuk alamat ini gagal dimuat"
@@ -2240,9 +2237,6 @@
       "Members": [
         "Anggota"
       ],
-      "Missing two-factor authentication": [
-        "Autentikasi dua faktor hilang"
-      ],
       "Modified": [
         "Dimodifikasi"
       ],
@@ -2290,6 +2284,9 @@
       ],
       "Set access level": [
         "Tentukan tingkat akses"
+      ],
+      "Set up 2FA for more security": [
+        "Atur 2FA untuk keamanan yang lebih"
       ],
       "Share with": [
         "Bagikan dengan"
