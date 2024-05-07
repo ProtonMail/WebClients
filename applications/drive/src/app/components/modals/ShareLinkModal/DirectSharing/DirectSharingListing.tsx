@@ -66,7 +66,7 @@ const MemberItem = ({
     );
 };
 
-const DirectSharingListing = ({
+export const DirectSharingListing = ({
     volumeId,
     linkId,
     members,
@@ -144,5 +144,3 @@ const DirectSharingListing = ({
         </>
     );
 };
-
-export default DirectSharingListing;

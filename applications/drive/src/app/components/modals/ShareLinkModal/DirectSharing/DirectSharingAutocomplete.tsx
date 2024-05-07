@@ -31,7 +31,7 @@ interface Props {
     onCancel: () => void;
     isAdding: boolean;
 }
-const DirectSharingAutocomplete = ({
+export const DirectSharingAutocomplete = ({
     invitees,
     existingEmails,
     hideFormActions,
@@ -136,5 +136,3 @@ const DirectSharingAutocomplete = ({
         </>
     );
 };
-
-export default DirectSharingAutocomplete;
