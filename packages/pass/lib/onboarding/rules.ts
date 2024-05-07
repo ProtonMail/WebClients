@@ -122,3 +122,10 @@ export const createMonitorRule = (store: Store<State>) =>
             return !previous && selectFeatureFlag(PassFeature.PassMonitor)(state);
         },
     });
+
+export const createMonitorLearnMoreRule = () =>
+    createOnboardingRule({
+        message: OnboardingMessage.PASS_MONITOR_LEARN_MORE,
+        onAcknowledge: (ack) => merge(ack, { extraData: { expanded: !ack.extraData?.expanded } }),
+        when: (previous) => !previous || !previous.extraData?.expanded,
+    });

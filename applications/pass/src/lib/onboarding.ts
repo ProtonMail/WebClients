@@ -3,6 +3,7 @@ import { store } from 'proton-pass-web/app/Store/store';
 import {
     createB2BRule,
     createBlackFridayRule,
+    createMonitorLearnMoreRule,
     createPendingShareAccessRule,
     createSecurityRule,
     createTrialRule,
@@ -17,5 +18,6 @@ export const onboarding = createOnboardingService({
         createBlackFridayRule(store),
         createSecurityRule(store),
         createB2BRule(store),
+        createMonitorLearnMoreRule(),
     ],
 });

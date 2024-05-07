@@ -4,17 +4,16 @@ import { useSelector } from 'react-redux';
 import { c } from 'ttag';
 
 import { useMonitor } from '@proton/pass/components/Monitor/MonitorProvider';
+import { MAX_CUSTOM_ADDRESSES } from '@proton/pass/constants';
 import { filterItemsByUsername } from '@proton/pass/lib/items/item.utils';
 import { AddressType, type MonitorAddress } from '@proton/pass/lib/monitor/types';
-import { selectNonAliasedLoginItems } from '@proton/pass/store/selectors';
+import { selectLoginItems, selectNonAliasedLoginItems } from '@proton/pass/store/selectors';
 import type { LoginItem } from '@proton/pass/types';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { sortOn } from '@proton/pass/utils/fp/sort';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
-
-export type BreachedUsages = { aliases: number; logins: number };
 
 export type MonitorTableRow<T extends AddressType = AddressType> = MonitorAddress<T> & { usageCount: number };
 
@@ -50,14 +49,13 @@ const getCustomSuggestions = (data: MonitorAddress[], items: LoginItem[]): Monit
             usageCount,
             verified: false,
         }))
-        .sort(sortOn('usageCount', 'DESC'))
-        .slice(0, 3);
+        .sort(sortOn('usageCount', 'DESC'));
 };
 
 const getRowPriority = (row: MonitorTableRow) => {
     if ('verified' in row && !row.verified) return -1;
-    if (row.breached) return 1;
-    if (row.monitored) return 0;
+    if (row.breached || row.monitored) return 1;
+    if (!row.monitored) return 0;
     return -1;
 };
 
@@ -69,33 +67,35 @@ const mapToRow = <T extends AddressType>(data: MonitorAddress<T>[], items: Login
 export const useBreachesTable = (type: AddressType) => {
     const { breaches, didLoad } = useMonitor();
     const { alias, custom, proton } = breaches.data;
-    const items = useSelector(selectNonAliasedLoginItems);
+    const logins = useSelector(selectLoginItems);
+    const nonAliasedLogins = useSelector(selectNonAliasedLoginItems);
 
     return useMemo<MonitorTable>(() => {
         switch (type) {
             case AddressType.ALIAS:
                 return {
                     title: c('Title').t`Hide-my-email aliases`,
-                    data: mapToRow<AddressType.ALIAS>(alias, items),
+                    data: mapToRow<AddressType.ALIAS>(alias, logins),
                     loading: false,
                 };
 
             case AddressType.PROTON:
                 return {
                     title: c('Title').t`${BRAND_NAME} addresses`,
-                    data: mapToRow<AddressType.PROTON>(proton, items),
+                    data: mapToRow<AddressType.PROTON>(proton, logins),
                     loading: !didLoad && breaches.loading,
                 };
 
             case AddressType.CUSTOM:
                 const monitored = [alias, custom, proton].flat();
-                const suggestions = getCustomSuggestions(monitored, items);
+                const suggestionsCount = custom.length >= MAX_CUSTOM_ADDRESSES ? 0 : 3;
+                const suggestions = getCustomSuggestions(monitored, nonAliasedLogins).slice(0, suggestionsCount);
 
                 return {
                     title: c('Title').t`Custom emails`,
-                    data: mapToRow<AddressType.CUSTOM>(breaches.data.custom, items).concat(suggestions),
+                    data: mapToRow<AddressType.CUSTOM>(breaches.data.custom, logins).concat(suggestions),
                     loading: !didLoad && breaches.loading,
                 };
         }
-    }, [breaches, items, didLoad]);
+    }, [breaches, logins, didLoad]);
 };

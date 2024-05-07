@@ -25,10 +25,10 @@ export const useOnboardingListener = () => {
             if (message.sender === 'background') {
                 switch (message.type) {
                     case WorkerMessageType.UPDATE_AVAILABLE:
-                        setOnboardingMessage(definitions[OnboardingMessage.UPDATE_AVAILABLE]);
+                        setOnboardingMessage(definitions[OnboardingMessage.UPDATE_AVAILABLE] ?? null);
                         break;
                     case WorkerMessageType.PERMISSIONS_UPDATE:
-                        setOnboardingMessage(definitions[OnboardingMessage.PERMISSIONS_REQUIRED]);
+                        setOnboardingMessage(definitions[OnboardingMessage.PERMISSIONS_REQUIRED] ?? null);
                         break;
                 }
             }
@@ -52,7 +52,7 @@ export const useOnboardingListener = () => {
         const check = async () => (await onboardingCheck?.(OnboardingMessage.USER_RATING)) ?? false;
 
         check()
-            .then((enabled) => enabled && setOnboardingMessage(definitions[OnboardingMessage.USER_RATING]))
+            .then((enabled) => enabled && setOnboardingMessage(definitions[OnboardingMessage.USER_RATING] ?? null))
             .catch(noop);
     }, [createdItemsCount]);
 };
