@@ -44,6 +44,7 @@ describe('ItemContentTransformer', () => {
 
     it('should be able to encode and decode a Login', () => {
         const itemName = 'Item' + Math.random();
+        const itemEmail = 'Email' + Math.random();
         const itemUsername = 'Username' + Math.random();
         const itemPassword = 'Password' + Math.random();
 
@@ -57,7 +58,8 @@ describe('ItemContentTransformer', () => {
                 content: {
                     oneofKind: 'login',
                     login: {
-                        username: itemUsername,
+                        itemEmail,
+                        itemUsername,
                         password: itemPassword,
                         urls: [],
                         totpUri: '',
@@ -75,7 +77,8 @@ describe('ItemContentTransformer', () => {
         expect(decoded.metadata.name).toStrictEqual(itemName);
 
         const login = checkAndCast(decoded, 'login');
-        expect(login.content.content.login.username).toStrictEqual(itemUsername);
+        expect(login.content.content.login.itemEmail).toStrictEqual(itemEmail);
+        expect(login.content.content.login.itemUsername).toStrictEqual(itemUsername);
         expect(login.content.content.login.password).toStrictEqual(itemPassword);
     });
 });
