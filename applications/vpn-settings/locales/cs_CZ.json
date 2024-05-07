@@ -1906,6 +1906,9 @@
       ]
     },
     "Delete address prompt": {
+      "Once deleted, this address can't be used again by anyone else.": [
+        "Po smazání této adresy ji nebude moci použít nikdo jiný."
+      ],
       "You can only delete 1 address per year.": [
         "Můžete smazat pouze 1 adresu ročně."
       ]
@@ -1938,12 +1941,6 @@
       "Missing feature(s)": [
         "Chybějící funkce"
       ],
-      "My reason isn't listed, please comment": [
-        "Můj důvod není uveden, prosím okomentujte"
-      ],
-      "Streaming service unsupported": [
-        "Streamovací služba není podporována"
-      ],
       "Subscription is too expensive": [
         "Předplatné je příliš drahé"
       ],
@@ -1957,6 +1954,29 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Pomozte nám se zlepšit!"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Rozšířená historie verzí"
+      ],
+      "Priority support": [
+        "Prioritní podpora"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Obnovuje se za ${ renewablePrice }, zrušit lze kdykoli"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "za první měsíc"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Získejte ${ planName } pouze za ${ planPrice }"
       ]
     },
     "Email verification": {
@@ -3020,7 +3040,7 @@
         "Přidělení účtu správce"
       ],
       "Affected user is on row": [
-        "Dotčený uživatel jse na řádku",
+        "Dotčený uživatel je na řádku",
         "Dotčení uživatelé jsou na řádcích",
         "Dotčení uživatelé jsou na řádcích",
         "Dotčení uživatelé jsou na řádcích"
@@ -3588,9 +3608,6 @@
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Vezměte prosím na vědomí, že po kliknutí na tlačítko Potvrdit vám na účtu zbudou kredity ve výši ${ creditsRemaining }."
-      ],
-      "Please provide an email address in case we need to contact you.": [
-        "Zadejte prosím e-mailovou adresu pro případ, že bychom Vás potřebovali kontaktovat."
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Zkuste prosím použít jinou platební metodu a nebo kontaktujte svou banku."
@@ -4235,7 +4252,7 @@
         "Váš předplatné je spravováno Mozillou. Kontaktujte prosím Mozilla podporu."
       ],
       "Zoom meeting": [
-        "Setkání Zoom"
+        "setkání na Zoomu"
       ]
     },
     "Info for cash payment method": {
@@ -5065,17 +5082,11 @@
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Zapomněli jste uživatelské jméno svého ${ BRAND_NAME } účtu? Najděte ho pomocí obnovovacího e-mailu nebo telefonního čísla a získejte zpět přístup k ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } a dalším."
       ],
-      "Private and secure email, no credit card required": [
-        "Soukromý a zabezpečený e-mail, bez nutnosti platební karty"
-      ],
       "Reset your ${ BRAND_NAME } Account password": [
         "Resetujte heslo ke svém účtu ${ BRAND_NAME }."
       ],
       "Sign in to access your ${ appName } account": [
         "Přihlaste se pro přístup do účtu ${ appName }"
-      ],
-      "Try ${ planName } for free with this link": [
-        "Vyzkoušejte ${ planName } zdarma pomocí tohoto odkazu"
       ]
     },
     "Monetary unit": {
@@ -5410,6 +5421,9 @@
       ],
       "Organize items with multiple vaults": [
         "Uspořádání položek pomocí více trezorů"
+      ],
+      "Passkeys supported": [
+        "Přístupové klíče podporovány"
       ],
       "Password-protected Emails": [
         "Zprávy chráněné heslem"
@@ -6130,6 +6144,23 @@
         "Váš tarif zahrnuje maximálně ${ humanReadableAvailableSpace } dalšího úložného prostoru."
       ]
     },
+    "Organization logo upload modal": {
+      "Drop image file here to upload or": [
+        "Zde upusťte soubor obrázku pro nahrání, nebo"
+      ],
+      "File in PNG or JPEG format": [
+        "Soubor ve formátu PNG nebo JPEG"
+      ],
+      "File not larger than 30 KB": [
+        "Soubor ne větší než 30 KB"
+      ],
+      "Square image of at least 128 pixels": [
+        "Čtvercový obrázek o velikosti nejméně 128 pixelů"
+      ],
+      "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
+        "Po přihlášení do našich webových aplikací uvidí uživatelé vaše logo místo ikony ${ BRAND_NAME }."
+      ]
+    },
     "Pass B2B onboarding spotlight": {
       "Go to your vault to manage your passwords, aliases, and more.": [
         "Přejděte do svého trezoru a spravujte svá hesla, aliasy a další."
@@ -6346,9 +6377,6 @@
       "e.g. https://idp.example.com/XXXXX": [
         "např.: https://idp.example.com/XXXXX"
       ],
-      "Email address": [
-        "E-mailová adresa"
-      ],
       "Feedback": [
         "Zpětná vazba"
       ],
@@ -6485,6 +6513,11 @@
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Ověřením telefonního čísla zvyšujete bezpečnost účtu a umožňujete další možnosti obnovení."
+      ]
+    },
+    "Remove organization logo": {
+      "Users will no longer see your custom logo or organization name.": [
+        "Uživatelé již neuvidí vaše vlastní logo ani název organizace."
       ]
     },
     "Restore administrator panel": {
@@ -8287,6 +8320,9 @@
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Vybraný motiv bude použit, když je systém nastaven na \"světlý režim\"."
       ],
+      "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
+        "Po přihlášení do našich webových aplikací uvidí uživatelé vaše logo místo ikony ${ BRAND_NAME }."
+      ],
       "Usually an URL that contains the identity provider's name within": [
         "Obvykle URL adresa, která obsahuje název poskytovatele identity v rámci"
       ],
@@ -8406,6 +8442,9 @@
       ],
       "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
         "Předplatné se automaticky obnoví každé 3 měsíce. Další datum fakturace je za 3 měsíce."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Speciálně zvýhodněná cena ${ priceWithDiscount } platí první měsíc. Poté bude každý měsíc automaticky obnovena za cenu ${ renewPrice }. Službu můžete kdykoli zrušit."
       ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Potom vám bude účtováno ${ renewPrice } každých 12 měsíců."

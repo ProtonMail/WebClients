@@ -367,6 +367,9 @@
       "Go to parent": [
         "Gå til overordnet"
       ],
+      "Go to settings": [
+        "Gå til innstillinger"
+      ],
       "Got it": [
         "Forstått"
       ],
@@ -414,6 +417,9 @@
       ],
       "Keep my Plus subscription": [
         "Behold mitt Plus-abonnement"
+      ],
+      "Later": [
+        "Senere"
       ],
       "Learn more": [
         "Lær mer"
@@ -2223,17 +2229,32 @@
       "Bugs or quality issue": [
         "Feil eller kvalitetsproblem"
       ],
+      "I do not wish to share": [
+        "Jeg ønsker ikke å dele"
+      ],
+      "I found a cheaper VPN": [
+        "Jeg fant en billigere VPN"
+      ],
+      "I found a VPN with better features": [
+        "Jeg fant en VPN med bedre funksjoner"
+      ],
+      "I have not managed to connect": [
+        "Jeg har ikke klart å koble til"
+      ],
+      "I only needed a VPN short-term": [
+        "Jeg trengte bare en VPN kortsiktig"
+      ],
       "I use a different ${ BRAND_NAME } account": [
         "Jeg bruker en annen ${ BRAND_NAME }-konto"
+      ],
+      "It doesn't do what I need": [
+        "Det gjør ikke det jeg trenger"
       ],
       "Missing feature(s)": [
         "Mangler funksjon(er)"
       ],
-      "My reason isn't listed, please comment": [
-        "Min årsak er ikke listet, vennligst kommenter"
-      ],
-      "Streaming service unsupported": [
-        "Ustøttet strømmetjeneste"
+      "Other reason (please comment)": [
+        "Annen årsak (vennligst kommenter)"
       ],
       "Subscription is too expensive": [
         "Abonnementet er for dyrt"
@@ -2243,11 +2264,48 @@
       ],
       "Temporary need, may come back in the future": [
         "Midlertidig behov, kan komme tilbake i fremtiden"
+      ],
+      "The VPN is too slow": [
+        "VPNet er for tregt"
       ]
     },
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Hjelp oss å bli bedre!"
+      ]
+    },
+    "drivePlus2024: Action": {
+      "Get the deal": [
+        "Få avtalen"
+      ],
+      "Special Offer": [
+        "Spesialtilbud"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Utvidet versjonshistorikk"
+      ],
+      "Priority support": [
+        "Prioritert brukerstøtte"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Fornyes til ${ renewablePrice }, avbryt når som helst"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "for den første måneden"
+      ],
+      "Limited-time offer": [
+        "Tidsbegrenset tilbud"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Få ${ planName } for kun ${ planPrice }"
       ]
     },
     "Email body for description (description part)": {
@@ -3899,6 +3957,9 @@
       "Billing cycle: ${ text }": [
         "Faktureringssyklus: ${ text }"
       ],
+      "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
+        "Styrk organisasjonens merkeidentitet og skap en mer konsekvent nettopplevelse for brukerne."
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ved å nedgradere til en gratis plan, vil du permanent miste disse fordelene, selv om du oppgraderer igjen i fremtiden."
       ],
@@ -4214,9 +4275,6 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Du får best resultat hvis du unngår strømming og minneintensive oppgaver, eller deler opp opplastingen i mindre grupper."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Videresend innkommende e-post fra en annen konto til din sikre ${ MAIL_APP_NAME }-innboks."
-      ],
       "from the version history?": [
         "fra versjonshistorikken?"
       ],
@@ -4274,9 +4332,6 @@
       ],
       "Import mailbox": [
         "Importer postboks"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Importer dine e-poster, kalendere og kontakter fra en annen tjeneste til ${ BRAND_NAME }."
       ],
       "Important note": [
         "Viktig merknad"
@@ -4797,6 +4852,9 @@
       ],
       "There is nothing to see here": [
         "Det er ingenting å se her"
+      ],
+      "This action will delete the link and revoke access for all users.": [
+        "Denne handlingen sletter koblingen og tilbakekaller tilgang for alle brukere."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Denne adressen er deaktivert. For å kunne sende til denne adressen, må eieren først aktivere adressen."
@@ -5713,6 +5771,12 @@
       ],
       "Public keys": [
         "Offentlige nøkler"
+      ],
+      "Public link expiration date": [
+        "Utløpsdato for offentlig kobling"
+      ],
+      "Public link password": [
+        "Passord for offentlig kobling"
       ],
       "Region": [
         "Region"
@@ -6642,6 +6706,12 @@
       "Organize items with multiple vaults": [
         "Organiser elementer med flere hvelv"
       ],
+      "Pass Monitor - premium features": [
+        "Pass Monitor - premium funksjoner"
+      ],
+      "Passkeys supported": [
+        "Tilgangsnøkler støttes"
+      ],
       "Password-protected Emails": [
         "Passordbeskyttede e-poster"
       ],
@@ -6714,6 +6784,9 @@
       ],
       "Unlimited devices": [
         "Ubegrenset antall enheter"
+      ],
+      "Unlimited devices and aliases": [
+        "Ubegrensede enheter og aliaser"
       ],
       "Unlimited filters": [
         "Ubegrenset antall filtre"
@@ -7484,6 +7557,18 @@
     "Participant name": {
       "You": [
         "Deg"
+      ]
+    },
+    "pass_signup_2023: Info": {
+      "Secure sharing with ${ n } vault": [
+        "Sikker deling med ${ n } hvelv",
+        "Sikker deling med ${ n } hvelv"
+      ],
+      "Secure sharing with multiple vaults": [
+        "Sikker deling med flere hvelv"
+      ],
+      "Secure vault sharing": [
+        "Sikker hvelvdeling"
       ]
     },
     "passwordless": {
@@ -8745,6 +8830,9 @@
       "Active": [
         "Aktiv"
       ],
+      "Add a custom logo": [
+        "Legg til en tilpasset logo"
+      ],
       "Add contact group name": [
         "Legg til navn på kontaktgruppen"
       ],
@@ -9226,6 +9314,9 @@
       ],
       "Stop sharing with everyone?": [
         "Slutte å dele med alle?"
+      ],
+      "Stop sharing?": [
+        "Avslutt deling?"
       ],
       "Stop transfers?": [
         "Stanse overføringer?"

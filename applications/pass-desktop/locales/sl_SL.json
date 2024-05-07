@@ -158,6 +158,9 @@
       "Edit vault": [
         "Uredi trezor"
       ],
+      "Exclude from monitoring": [
+        "Izključi iz spremljanja"
+      ],
       "Export": [
         "Izvozi"
       ],
@@ -177,7 +180,7 @@
         "Ustvari geslo"
       ],
       "Generated passwords": [
-        "Generiraj geslo"
+        "Ustvarjena gesla"
       ],
       "Get mobile apps": [
         "Priskrbite si mobilno aplikacijo"
@@ -199,6 +202,9 @@
       ],
       "Importing": [
         "Uvažanje"
+      ],
+      "Include in monitoring": [
+        "Vključi v spremljanje"
       ],
       "Install extension": [
         "Namestite razširitev"
@@ -366,7 +372,7 @@
         "Pošlji"
       ],
       "Submitting report...": [
-        "Pošiljanje poročila..."
+        "Pošiljanje poročila ..."
       ],
       "Transfer ownership": [
         "Prenos lastništva"
@@ -442,6 +448,26 @@
       ],
       "Expand": [
         "Razširi"
+      ]
+    },
+    "Description": {
+      "Create unique passwords": [
+        "Ustvarite edinstvena gesla"
+      ],
+      "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
+        "Spremljanje Dark Web je na voljo s plačljivim paketom. Nadgradite za takojšen dostop."
+      ],
+      "Get notified if your email, password or other personal data was leaked.": [
+        "Prejmite obvestilo, če je pricurljal vaš e-poštni naslov, geslo ali drugi osebni podatki."
+      ],
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "Naša vrhunska varnostna rešitev, ki temelji na umetni inteligenci, je zasnovana za uporabnike, ki iščejo večjo zaščito za svoje račune. ${ learnMoreLink }"
+      ],
+      "This account is vulnerable, visit the service and change your password.": [
+        "Vaš račun je ranljiv, pojdite v nastavitve in spremenite geslo."
+      ],
+      "Your email addresses were leaked in at least 1 data breach.": [
+        "Vaši e-poštni naslovi so pricurljali zaradi vsaj 1 kršitve podatkov"
       ]
     },
     "Error": {
@@ -617,7 +643,7 @@
         "Kodi PIN se ne ujemata"
       ],
       "Please upgrade to have early access to ${ PASS_APP_NAME } desktop app": [
-        "Nadgradite za zgodnji dostop do ${ PASS_APP_NAME } namizne aplikacije"
+        "Nadgradite za zgodnji dostop do ${ PASS_APP_NAME } namizne aplikacije."
       ],
       "Request timed out": [
         "Zahteva se je iztekla"
@@ -704,6 +730,20 @@
       ],
       "Something went wrong": [
         "Nekaj je šlo narobe"
+      ]
+    },
+    "Feature": {
+      "Dark Web Monitoring": [
+        "Spremljanje Dark Web"
+      ],
+      "Integrated 2FA authenticator": [
+        "Vgrajen modul za preverjanje pristnosti 2FA"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Neomejeno število vzdevkov hide-my-email"
+      ],
+      "Vault sharing (up to ${ MAX_VAULT_MEMBERS } people)": [
+        "Delitev trezorja (z do ${ MAX_VAULT_MEMBERS } osebami)"
       ]
     },
     "file size format": {
@@ -794,7 +834,7 @@
         "Posodobitev »${ payload.item.data.metadata.name }« je bila opuščena"
       ],
       "${ count } invites successfully sent": [
-        "${ count } povabil je bilo uspešno poslanih"
+        "${ count } povabil je bilo poslanih."
       ],
       "${ memberCount } member": [
         "${ memberCount } član",
@@ -830,7 +870,7 @@
         "Na voljo je nova različica aplikacije ${ PASS_APP_NAME }. Posodobite ga, če želite uživati v najnovejših funkcijah in popravkih napak."
       ],
       "Access successfully confirmed": [
-        "Dostop je uspešno potrjen"
+        "Dostop je potrjen"
       ],
       "Admin": [
         "Administrator"
@@ -839,22 +879,22 @@
         "Po nedejavnosti bo za dostop do ${ PASS_APP_NAME } potrebna koda PIN za odklepanje vaše seje. Po 3 neuspelih poskusih boste odjavljeni."
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
-        "Po uspešnem uvozu vaših podatkov lahko zaradi varnosti izbrišete datoteko CSV, ki vsebuje vaša gesla."
+        "Po uvozu vaših podatkov lahko zaradi varnosti izbrišete datoteko CSV, ki vsebuje vaša gesla."
       ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Vzdevek »${ item.aliasEmail }« premaknjen v smetnjak – ne bo več posredoval e-pošte v vaš nabiralnik"
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
-        "Vsi premeti iz »${ payload.content.name }« so bili uspešno premaknjeni"
+        "Vsi premeti iz »${ payload.content.name }« so bili premaknjeni."
       ],
       "All items successfully moved": [
-        "Vsi predmeti so uspešno premaknjeni"
+        "Vsi predmeti so premaknjeni"
       ],
       "All trashed items permanently deleted": [
-        "Vse predmete v smetnjaku trajno izbrisanti"
+        "Vsi predmeti v smetnjaku trajno izbrisani"
       ],
       "All trashed items successfully restored": [
-        "Vsi predmeti v smetnjaku so bili uspešno obnovljeni"
+        "Vsi predmeti v smetnjaku so bili obnovljeni."
       ],
       "An item previously shared with you was removed": [
         "Predmet, ki je bil prej v skupni rabi z vami, je bil odstranjen"
@@ -869,13 +909,13 @@
         "Ali ste prepričani, da želite premakniti predmet v \"${ name }\"?"
       ],
       "Auto-lock successfully disabled": [
-        "Samodejno zaklepanje je uspešno onemogočeno"
+        "Samodejno zaklepanje je onemogočeno"
+      ],
+      "Breaches detected": [
+        "Zaznana kršitev"
       ],
       "Bring your existing passwords into ${ BRAND_NAME }.": [
         "Prenesite svoja obstoječa gesla v ${ BRAND_NAME }."
-      ],
-      "Built in 2FA authenticator": [
-        "Vgrajen 2FA autentifikator"
       ],
       "By default team members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
         "Člani ekipe lahko privzeto izvozijo le trezorje, katerih lastniki so. Če je ta možnost vklopljena, ne bodo mogli izvoziti nobenih podatkov."
@@ -929,7 +969,7 @@
         "e-pošta"
       ],
       "Emptying trash...": [
-        "Izprazni smetnjak..."
+        "Praznim smetnjak ..."
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Vnesite potrditveno kodo. Števka ${ digit }."
@@ -998,13 +1038,13 @@
         "Povabite določene ljudi in nastavite prava dovoljenja."
       ],
       "Invite successfully removed": [
-        "Vabilo je bilo uspešno odstranjen"
+        "Vabilo je bilo odstranjeno"
       ],
       "Invite successfully resent": [
-        "Povabilo uspešno ponovno poslano"
+        "Povabilo ponovno poslano"
       ],
       "Invite successfully sent": [
-        "Vabilo uspešno poslano"
+        "Vabilo poslano"
       ],
       "invites you to access items in": [
         "vas vabi k dostopu do predmetov v"
@@ -1033,20 +1073,29 @@
       "Item restored": [
         "Predmet je bil obnovljen."
       ],
+      "Item successfully excluded from monitoring": [
+        "Predmet je bil izključen iz spremljanja."
+      ],
+      "Item successfully included in monitoring": [
+        "Predmet je bil vključen v spremljanje."
+      ],
       "Item successfully moved": [
-        "Predmet je bil uspešno premaknjen"
+        "Predmet je bil premaknjen"
       ],
       "Item successfully pinned": [
-        "Predmet je bil uspešno pripet"
+        "Predmet je bil pripet."
       ],
       "Item successfully unpinned": [
-        "Predmet je bil uspešno odpet"
+        "Predmet je bil odpet."
+      ],
+      "Latest breach on ${ formattedDate }": [
+        "Zadnja kršitev dne ${ formattedDate }"
       ],
       "Learn how to ${ staySaferOnlineLink }": [
         "Naučite se ${ staySaferOnlineLink }"
       ],
       "Leaving vault...": [
-        "Zapuščam trezor..."
+        "Zapuščam trezor ..."
       ],
       "Let's get you started by creating your first item": [
         "Začnimo z ustvarjanjem vašega prvega predmeta"
@@ -1058,10 +1107,10 @@
         "${ PASS_APP_NAME } se nalaga"
       ],
       "Locking your session...": [
-        "Zaklepam vašo sejo..."
+        "Zaklepam vašo sejo ..."
       ],
       "Logging you out...": [
-        "Izpisujem..."
+        "Izpisujem ..."
       ],
       "Low Priority": [
         "Nizka pomembnost"
@@ -1096,6 +1145,9 @@
       "Never": [
         "Nikoli"
       ],
+      "No breaches detected": [
+        "Ni odkritih uhajanj podatkov"
+      ],
       "No network connection": [
         "Ni omrežne povezave"
       ],
@@ -1109,16 +1161,16 @@
         "Način brez povezave trenutno ne more biti vključen"
       ],
       "Offline support successfully disabled": [
-        "Način brez povezave je onemogočen"
+        "Način brez povezave je bil onemogočen."
       ],
       "Organization settings successfully updated": [
-        "Nastavitve organizacije so bile posodobljene"
+        "Nastavitve organizacije so bile posodobljene."
       ],
       "Owner": [
         "Lastnik"
       ],
       "Ownership successfully transfered. You are no long the owner of this vault.": [
-        "Lastništvo uspešno preneseno. Niste več lastnik tega trezorja."
+        "Lastništvo je bilo preneseno. Niste več lastnik tega trezorja."
       ],
       "Pass Plus trial": [
         "Pass Plus preizkus"
@@ -1139,19 +1191,19 @@
         "Trajno brisanje izbranih predmetov"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
-        "PIN koda uspešno registrirana. Uporabite ga za odklepanje ${ PASS_APP_NAME }"
+        "PIN koda registrirana. Uporabite jo za odklepanje ${ PASS_APP_NAME }"
       ],
       "Pinning item...": [
-        "Pripenjanje predmeta..."
+        "Pripenjanje predmeta ..."
       ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
-        "Potrdite svoje ${ BRAND_NAME } geslo, da omogočite način brez povezave"
+        "Potrdite svoje ${ BRAND_NAME } geslo, da omogočite način brez povezave."
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
-        "Potrdite geslo za ${ BRAND_NAME }, če želite izvoziti podatke o aplikaciji ${ PASS_APP_NAME }"
+        "Potrdite geslo za ${ BRAND_NAME }, če želite izvoziti podatke o aplikaciji ${ PASS_APP_NAME }."
       ],
       "Please confirm your PIN code in order to unregister your current lock.\n${ PASS_APP_NAME } will then never lock.": [
-        "Prosimo, potrdite kodo PIN, če želite odjaviti trenutno ključavnico.\n${ PASS_APP_NAME } se potem ne bo nikoli zaklenila."
+        "Potrdite kodo PIN, če želite odjaviti trenutno ključavnico.\n${ PASS_APP_NAME } se potem ne bo nikoli zaklenila."
       ],
       "Please confirm your PIN code to edit this setting.": [
         "Za urejanje te nastavitve potrdite kodo PIN."
@@ -1163,7 +1215,7 @@
         "Prosimo, razmislite o pisanju ocene."
       ],
       "Please enter your current PIN code to continue": [
-        "Za nadaljevanje vnesite veljaven PIN"
+        "Za nadaljevanje vnesite veljaven PIN."
       ],
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "Nadgradite za zgodnji dostop do spletne aplikacije ${ PASS_APP_NAME }"
@@ -1184,7 +1236,7 @@
         "Obnavljanje predmetov iz smetnjaka"
       ],
       "Restoring trashed items...": [
-        "Obnovitev predmetov v smetnjaku..."
+        "Obnovitev predmetov v smetnjaku ..."
       ],
       "Select destination vault": [
         "Izberite ciljni trezor"
@@ -1199,10 +1251,10 @@
         "Izbrani predmeti so trajno izbrisani"
       ],
       "Selected items successfully moved to trash": [
-        "Izbrani predmeti so bili uspešno premaknjeni v semtnjak"
+        "Izbrani predmeti so bili premaknjeni v smetnjak"
       ],
       "Selected items successfully restored from trash": [
-        "Izbrani predmeti so bili uspešno obnovljeni iz smetnjaka"
+        "Izbrani predmeti so bili obnovljeni iz smetnjaka"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Strežniki so nedosegljivi. Poskusite znova čez nekaj minut"
@@ -1217,7 +1269,7 @@
         "Pripravljanje načina brez povezave"
       ],
       "Settings successfully updated": [
-        "Nastavitve so bile uspešno posodobljene"
+        "Nastavitve so bile posodobljene"
       ],
       "Share your logins, secure notes, with up to 10 people": [
         "Delite svoje prijave, varne zapiske z do 10 osebami"
@@ -1226,10 +1278,10 @@
         "Vpisujem vas"
       ],
       "Successfully exported all your items": [
-        "Vsi vaši predmeti so bili uspešno izvoženi"
+        "Vsi vaši predmeti so bili izvoženi."
       ],
       "Successfully left the vault": [
-        "Uspešno ste zapustil trezor"
+        "Uspešno ste zapustili trezor"
       ],
       "Successfully synced all vaults": [
         "Uspešno so sinhronizirani vsi trezorji"
@@ -1289,10 +1341,10 @@
         "Kopiranje v odložišče ni mogoče"
       ],
       "Unlimited hide-my-email aliases": [
-        "Neomejeno število vzdevkov ide-my-email"
+        "Neomejeno število vzdevkov hide-my-email"
       ],
       "Unpinning item...": [
-        "Odpenjanje predmeta..."
+        "Odpenjanje predmeta ..."
       ],
       "Unverified": [
         "Nepotrjeno"
@@ -1301,7 +1353,7 @@
         "Posodabljanje nastavitev organizacije"
       ],
       "Upgrade Now to Unlock Premium Features": [
-        "Nadgradite zdaj, da odklenete Premium funkcije"
+        "Nadgradite zdaj, da odklenete premijske funkcije"
       ],
       "Use vaults to share this item with others.": [
         "Uporabite trezorje za skupno rabo predmetov z drugimi."
@@ -1316,13 +1368,13 @@
         "uporabniško ime"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
-        "Trezor \"${ payload.content.name }\" je uspešno izbrisan"
+        "Trezor \"${ payload.content.name }\" je izbrisan"
       ],
       "Vault \"${ payload.share.content.name }\" successfully created": [
-        "Trezor \"${ payload.share.content.name }\" je bil uspešno ustvarjen"
+        "Trezor \"${ payload.share.content.name }\" je bil ustvarjen"
       ],
       "Vault \"${ payload.share.content.name }\" successfully updated": [
-        "Trezor \"${ payload.share.content.name }\" je bil uspešno posodobljen"
+        "Trezor \"${ payload.share.content.name }\" je bil posodobljen"
       ],
       "Vault \"${ share.content.name }\" was removed": [
         "Trezor \"${ share.content.name }\" je bil odstranjen"
@@ -1609,7 +1661,7 @@
         "Prijave"
       ],
       "Make all admins": [
-        "Omogoči vsem adminstratorja"
+        "Omogoči vsem pravice skrbnika"
       ],
       "Make all editors": [
         "Omogoči vsem urejanje"
@@ -1910,7 +1962,7 @@
         "E-poštni naslov"
       ],
       "Enter a note...": [
-        "Vnesite opombe..."
+        "Vnesite opombo ..."
       ],
       "Enter a prefix": [
         "Vnesite pripono"
@@ -1985,8 +2037,17 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } addresses": [
+        "${ BRAND_NAME } naslovov"
+      ],
       "Auto-lock update": [
         "Posodobitev samodejnega zaklepanja"
+      ],
+      "Breach detected": [
+        "Odkrito je uhajanje podatkov"
+      ],
+      "Breaches detected for": [
+        "Zaznane kršitve za"
       ],
       "Confirm PIN code": [
         "Potrdi PIN kodo"
@@ -2002,6 +2063,9 @@
       ],
       "Current version": [
         "Trenutna različica"
+      ],
+      "Dark Web Monitoring": [
+        "Spremljanje Dark Web"
       ],
       "Delete vault \"${ vaultName }\" ?": [
         "Želite izbrisati trezor \"${ vaultName }\"?"
@@ -2030,6 +2094,9 @@
       "Grant permissions": [
         "Odobrite dovoljenja"
       ],
+      "Hide-my-email aliases": [
+        "Vzdevki hide-my-email"
+      ],
       "History": [
         "Zgodovina"
       ],
@@ -2056,6 +2123,9 @@
       ],
       "Low disk space": [
         "Malo prostora na disku"
+      ],
+      "Mark as resolved?": [
+        "Označi kot rešeno?"
       ],
       "Member limit": [
         "Omejitev članov"
@@ -2087,6 +2157,9 @@
       "Password": [
         "Geslo"
       ],
+      "Password Health": [
+        "Močno geslo"
+      ],
       "Pending access to the shared data": [
         "Čakanje na dostop do podatkov v skupni rabi"
       ],
@@ -2101,6 +2174,15 @@
       ],
       "Restore this version?": [
         "Obnovi to različico?"
+      ],
+      "Reused ${ count } time": [
+        "Ponovno uporabljeno ${ count }-krat",
+        "Ponovno uporabljeno ${ count }-krat",
+        "Ponovno uporabljeno ${ count }-krat",
+        "Ponovno uporabljeno ${ count }-krat"
+      ],
+      "Reused passwords": [
+        "Ponovno uporabljena gesla"
       ],
       "Review and share": [
         "Preglejte in delite"
@@ -2120,6 +2202,9 @@
       "Share with": [
         "Deli z"
       ],
+      "Stay safer online": [
+        "Izboljšajte spletno varnost"
+      ],
       "Suggestions": [
         "Predlogi"
       ],
@@ -2133,13 +2218,16 @@
         "Na voljo je nadgradnja!"
       ],
       "Upgrade to Unlock Premium Features": [
-        "Nadgradite za odklepanje Premium funkcij"
+        "Nadgradite za odklepanje premijskih funkcij"
       ],
       "Vault": [
         "Trezor"
       ],
       "Vault shared with you": [
         "Trezor v skupni rabi z vami"
+      ],
+      "Want to learn more?": [
+        "Si želite izvedeti več?"
       ],
       "What is an alias?": [
         "Kaj je vzdevek?"

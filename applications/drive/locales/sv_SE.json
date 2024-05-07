@@ -367,6 +367,9 @@
       "Go to parent": [
         "Gå till överordnad"
       ],
+      "Go to settings": [
+        "Gå till inställningar"
+      ],
       "Got it": [
         "Förstått"
       ],
@@ -414,6 +417,9 @@
       ],
       "Keep my Plus subscription": [
         "Behåll min Plus-prenumeration"
+      ],
+      "Later": [
+        "Senare"
       ],
       "Learn more": [
         "Lär dig mer"
@@ -2226,17 +2232,32 @@
       "Bugs or quality issue": [
         "Buggar eller kvalitetsproblem"
       ],
+      "I do not wish to share": [
+        "Jag vill inte dela"
+      ],
+      "I found a cheaper VPN": [
+        "Jag hittade ett billigare VPN"
+      ],
+      "I found a VPN with better features": [
+        "Jag hittade ett VPN med bättre funktioner"
+      ],
+      "I have not managed to connect": [
+        "Jag har inte lyckats att ansluta"
+      ],
+      "I only needed a VPN short-term": [
+        "Jag behövde bara ett VPN kortsiktigt"
+      ],
       "I use a different ${ BRAND_NAME } account": [
         "Jag använder ett annat ${ BRAND_NAME }-konto"
+      ],
+      "It doesn't do what I need": [
+        "Det gör inte vad jag behöver"
       ],
       "Missing feature(s)": [
         "Saknade funktion(er)"
       ],
-      "My reason isn't listed, please comment": [
-        "Min anledning är inte listad, kommentera"
-      ],
-      "Streaming service unsupported": [
-        "Streamingtjänst stöds inte"
+      "Other reason (please comment)": [
+        "Annan anledning (kommentera gärna)"
       ],
       "Subscription is too expensive": [
         "Prenumeration är för dyrt"
@@ -2246,11 +2267,48 @@
       ],
       "Temporary need, may come back in the future": [
         "Tillfälligt behov, kan komma tillbaka i framtiden"
+      ],
+      "The VPN is too slow": [
+        "VPN är för långsamt"
       ]
     },
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Hjälp oss att förbättra!"
+      ]
+    },
+    "drivePlus2024: Action": {
+      "Get the deal": [
+        "Ta del av erbjudandet"
+      ],
+      "Special Offer": [
+        "Specialerbjudande"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Utökad versionshistorik"
+      ],
+      "Priority support": [
+        "Prioriterad support"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Förnyas med ${ renewablePrice }, avbryt när som helst"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "för första månaden"
+      ],
+      "Limited-time offer": [
+        "Tidsbegränsat erbjudande"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Skaffa ${ planName } för endast ${ planPrice }"
       ]
     },
     "Email body for description (description part)": {
@@ -3911,6 +3969,9 @@
       "Billing cycle: ${ text }": [
         "Faktureringsperiod: ${ text }"
       ],
+      "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
+        "Förstärk din organisations varumärkesidentitet och skapa en mer konsekvent upplevelse online för dina användare."
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Genom att nedgradera till ett gratiskonto kommer du permanent att förlora dessa fördelar, även om du uppgraderar igen i framtiden."
       ],
@@ -4226,9 +4287,6 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "För bästa resultat bör du undvika streaming och minneskrävande aktiviteter eller dela upp din uppladdning i mindre partier."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Vidarebefordra inkommande e-post från annat konto till din säkra inkorg för ${ MAIL_APP_NAME }."
-      ],
       "from the version history?": [
         "från versionshistoriken?"
       ],
@@ -4286,9 +4344,6 @@
       ],
       "Import mailbox": [
         "Importera brevlåda"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Importera din e-post, kalendrar och kontakter från en annan tjänst till ${ BRAND_NAME }."
       ],
       "Important note": [
         "Viktig notering"
@@ -4809,6 +4864,9 @@
       ],
       "There is nothing to see here": [
         "Det finns inget att se här"
+      ],
+      "This action will delete the link and revoke access for all users.": [
+        "Denna åtgärd kommer ta bort länken och återkalla åtkomst för alla användare."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Denna adress är inaktiverad. För att kunna skicka till denna adress måste ägaren först aktivera adressen."
@@ -5731,6 +5789,9 @@
       ],
       "Public keys": [
         "Offentliga nycklar"
+      ],
+      "Public link password": [
+        "Offentligt länklösenord"
       ],
       "Region": [
         "Region"
@@ -6657,6 +6718,9 @@
       "Organize items with multiple vaults": [
         "Organisera objekt med flera valv"
       ],
+      "Pass Monitor - premium features": [
+        "Pass Monitor - premiumfunktioner"
+      ],
       "Passkeys supported": [
         "Passkeys stöds"
       ],
@@ -6732,6 +6796,9 @@
       ],
       "Unlimited devices": [
         "Obegränsat antal enheter"
+      ],
+      "Unlimited devices and aliases": [
+        "Obegränsat antal enheter och alias"
       ],
       "Unlimited filters": [
         "Obegränsade filter"
@@ -7498,6 +7565,18 @@
     "Participant name": {
       "You": [
         "Du"
+      ]
+    },
+    "pass_signup_2023: Info": {
+      "Secure sharing with ${ n } vault": [
+        "Säker delning med ${ n } valv",
+        "Säker delning med ${ n } valv"
+      ],
+      "Secure sharing with multiple vaults": [
+        "Säker delning med flera valv"
+      ],
+      "Secure vault sharing": [
+        "Säker valvdelning"
       ]
     },
     "passwordless": {
@@ -8757,6 +8836,9 @@
       "Active": [
         "Aktiv"
       ],
+      "Add a custom logo": [
+        "Lägg till en anpassad logga"
+      ],
       "Add contact group name": [
         "Lägg till kontaktgruppens namn"
       ],
@@ -9241,6 +9323,9 @@
       ],
       "Stop sharing with everyone?": [
         "Sluta dela med alla?"
+      ],
+      "Stop sharing?": [
+        "Sluta dela?"
       ],
       "Stop transfers?": [
         "Stoppa överföringar?"

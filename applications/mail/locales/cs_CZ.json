@@ -367,6 +367,9 @@
       "Download ${ attachmentName }": [
         "Stáhnout ${ attachmentName }"
       ],
+      "Download Desktop App": [
+        "Stáhněte si desktopovou aplikaci"
+      ],
       "Download now": [
         "Stáhnout nyní"
       ],
@@ -484,6 +487,9 @@
       "Go to previous page": [
         "Jít na předchozí stránku"
       ],
+      "Go to settings": [
+        "Přejít do nastavení"
+      ],
       "Go to SimpleLogin": [
         "Přejít na SimpleLogin"
       ],
@@ -591,6 +597,9 @@
       ],
       "label emails as": [
         "označit e-maily jako"
+      ],
+      "Later": [
+        "Později"
       ],
       "Later this week": [
         "Koncem tohoto týdne"
@@ -1132,12 +1141,6 @@
       "Trust": [
         "Důvěřovat"
       ],
-      "Trust key": [
-        "Důvěřovat klíči",
-        "Důvěřovat klíčům",
-        "Důvěřovat klíčům",
-        "Důvěřovat klíčům"
-      ],
       "Trust public key": [
         "Důvěřovat veřejnému klíči"
       ],
@@ -1429,11 +1432,6 @@
       ],
       "New email": [
         "Nový e-mail"
-      ]
-    },
-    "App logo": {
-      "Download ${ MAIL_APP_NAME } desktop application": [
-        "Stáhněte si aplikaci ${ MAIL_APP_NAME } pro desktop"
       ]
     },
     "Apps dropdown": {
@@ -3382,12 +3380,6 @@
       "Missing feature(s)": [
         "Chybějící funkce"
       ],
-      "My reason isn't listed, please comment": [
-        "Můj důvod není uveden, prosím okomentujte"
-      ],
-      "Streaming service unsupported": [
-        "Streamovací služba není podporována"
-      ],
       "Subscription is too expensive": [
         "Předplatné je příliš drahé"
       ],
@@ -3406,6 +3398,29 @@
     "Download attachments": {
       "Download all": [
         "Stáhnout vše"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Rozšířená historie verzí"
+      ],
+      "Priority support": [
+        "Prioritní podpora"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Obnovuje se za ${ renewablePrice }, zrušit lze kdykoli"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "za první měsíc"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Získejte ${ planName } pouze za ${ planPrice }"
       ]
     },
     "Email body for description (description part)": {
@@ -4076,6 +4091,9 @@
       ],
       "You have reached the contacts limit for your account": [
         "Dosáhli jste limitu kontaktů vašeho účtu"
+      ],
+      "You have reached the maximum number of calendars.": [
+        "Dosáhli jste maximálního počtu kalendářů."
       ],
       "You must set a name": [
         "Musíte nastavit jméno"
@@ -5788,6 +5806,9 @@
       "Body: ": [
         "Tělo: "
       ],
+      "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
+        "Zlepšete identitu značky své organizace a vytvořte konzistentnější online prostředí pro své uživatele."
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Pokud svůj aktuální tarif snížíte na bezplatnou verzi, navždy ztratíte současné výhody, i když v budoucnu svůj účet znovu povýšíte."
       ],
@@ -6079,9 +6100,6 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "Chcete-li získat více výsledků vyhledávání, zkuste toto klíčové slovo vyhledat v obsahu e-mailových zpráv."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Přepošlete příchozí mail z jiného účtu do vaší bezpečné ${ MAIL_APP_NAME } schránky."
-      ],
       "From": [
         "Od"
       ],
@@ -6150,9 +6168,6 @@
       ],
       "Import mailbox": [
         "Importovat poštovní schránku"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Importujte své e-maily, kalendáře a kontakty z jiných služeb do ${ BRAND_NAME }."
       ],
       "Important note": [
         "Důležitá poznámka"
@@ -9046,6 +9061,9 @@
       "Organize items with multiple vaults": [
         "Uspořádání položek pomocí více trezorů"
       ],
+      "Passkeys supported": [
+        "Přístupové klíče podporovány"
+      ],
       "Password-protected Emails": [
         "Zprávy chráněné heslem"
       ],
@@ -10771,14 +10789,8 @@
       ]
     },
     "Spotlight": {
-      "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
-        "Pohodlné spuštění ${ MAIL_APP_NAME } přímo z plochy."
-      ],
       "Email tracking protection": [
         "Ochrana před sledovacími prvky v e-mailech"
-      ],
-      "Get the desktop app": [
-        "Získejte desktopovou aplikaci"
       ],
       "Get up to ${ credits } in credits.": [
         "Získejte až ${ credits } v kreditech."
@@ -11609,6 +11621,9 @@
       ],
       "Action all messages": [
         "Akce všech zpráv"
+      ],
+      "Add a custom logo": [
+        "Přidejte vlastní logo"
       ],
       "Add contact group name": [
         "Přidat název skupiny kontaktů"
@@ -12505,6 +12520,9 @@
       ],
       "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
         "Předplatné se automaticky obnoví každé 3 měsíce. Další datum fakturace je za 3 měsíce."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Speciálně zvýhodněná cena ${ priceWithDiscount } platí první měsíc. Poté bude každý měsíc automaticky obnovena za cenu ${ renewPrice }. Službu můžete kdykoli zrušit."
       ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Potom vám bude účtováno ${ renewPrice } každých 12 měsíců."

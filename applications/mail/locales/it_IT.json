@@ -361,6 +361,9 @@
       "Download ${ attachmentName }": [
         "Scarica ${ attachmentName }"
       ],
+      "Download Desktop App": [
+        "Scarica l'app per desktop"
+      ],
       "Download now": [
         "Scarica ora"
       ],
@@ -478,6 +481,9 @@
       "Go to previous page": [
         "Vai alla pagina precedente"
       ],
+      "Go to settings": [
+        "Vai alle impostazioni"
+      ],
       "Go to SimpleLogin": [
         "Vai a SimpleLogin"
       ],
@@ -583,6 +589,9 @@
       ],
       "label emails as": [
         "etichetta le email come"
+      ],
+      "Later": [
+        "Più tardi"
       ],
       "Later this week": [
         "Più tardi questa settimana"
@@ -1124,10 +1133,6 @@
       "Trust": [
         "Considera attendibile"
       ],
-      "Trust key": [
-        "Considera attendibile la chiave",
-        "Considera attendibili le chiavi"
-      ],
       "Trust public key": [
         "Chiave pubblica attendibile"
       ],
@@ -1411,11 +1416,6 @@
       ],
       "New email": [
         "Nuova email"
-      ]
-    },
-    "App logo": {
-      "Download ${ MAIL_APP_NAME } desktop application": [
-        "Scarica l'applicazione desktop di ${ MAIL_APP_NAME }"
       ]
     },
     "Apps dropdown": {
@@ -3344,12 +3344,6 @@
       "Missing feature(s)": [
         "Funzionalità mancante(i)"
       ],
-      "My reason isn't listed, please comment": [
-        "Il motivo non è elencato, per favore commenta"
-      ],
-      "Streaming service unsupported": [
-        "Servizio di streaming non supportato"
-      ],
       "Subscription is too expensive": [
         "Abbonamento troppo costoso"
       ],
@@ -3368,6 +3362,40 @@
     "Download attachments": {
       "Download all": [
         "Scarica tutti"
+      ]
+    },
+    "drivePlus2024: Action": {
+      "Get the deal": [
+        "Ottieni l'offerta"
+      ],
+      "Special Offer": [
+        "Offerta speciale"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Cronologia estesa della versione"
+      ],
+      "Priority support": [
+        "Supporto prioritario"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Rinnova a ${ renewablePrice }, annulla in qualsiasi momento"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "per il primo mese"
+      ],
+      "Limited-time offer": [
+        "Offerta a tempo limitato"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Ottieni ${ planName } a soli ${ planPrice }"
       ]
     },
     "Email body for description (description part)": {
@@ -5597,6 +5625,9 @@
       "Body: ": [
         "Corpo: "
       ],
+      "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
+        "Rafforza l'identità della tua organizzazione e crea un'esperienza online più coerente per i tuoi utenti."
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Declassando ad un piano gratuito, perderai definitivamente questi benefici, anche se in futuro effettuerai un nuovo upgrade."
       ],
@@ -5874,9 +5905,6 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "Per più risultati di ricerca, prova a cercare questa parola chiave nel contenuto dei tuoi messaggi email."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Inoltra la posta in arrivo da un altro account alla tua casella di posta sicura di ${ MAIL_APP_NAME }."
-      ],
       "From": [
         "Da"
       ],
@@ -5941,9 +5969,6 @@
       ],
       "Import mailbox": [
         "Importa casella di posta"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Importa le tue email, calendari e contatti da un altro servizio su ${ BRAND_NAME }."
       ],
       "Important note": [
         "Nota importante"
@@ -8742,6 +8767,9 @@
       "Organize items with multiple vaults": [
         "Organizza gli elementi con più casseforti"
       ],
+      "Pass Monitor - premium features": [
+        "Pass Monitor - funzionalità premium"
+      ],
       "Passkeys supported": [
         "Passkey supportate"
       ],
@@ -8817,6 +8845,9 @@
       ],
       "Unlimited devices": [
         "Dispositivi illimitati"
+      ],
+      "Unlimited devices and aliases": [
+        "Dispositivi e alias illimitati"
       ],
       "Unlimited filters": [
         "Filtri illimitati"
@@ -9447,6 +9478,18 @@
     "Participant name": {
       "You": [
         "Tu"
+      ]
+    },
+    "pass_signup_2023: Info": {
+      "Secure sharing with ${ n } vault": [
+        "Condivisione sicura con ${ n } cassaforte",
+        "Condivisione sicura con ${ n } casseforti"
+      ],
+      "Secure sharing with multiple vaults": [
+        "Condivisione sicura con più casseforti"
+      ],
+      "Secure vault sharing": [
+        "Condivisione sicura della cassaforte"
       ]
     },
     "passwordless": {
@@ -10430,14 +10473,8 @@
       ]
     },
     "Spotlight": {
-      "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
-        "Avvia ${ MAIL_APP_NAME } direttamente dal tuo desktop."
-      ],
       "Email tracking protection": [
         "Protezione dal tracciamento email"
-      ],
-      "Get the desktop app": [
-        "Ottieni l'applicazione desktop"
       ],
       "Get up to ${ credits } in credits.": [
         "Guadagna fino a ${ credits } in crediti."
@@ -11188,6 +11225,9 @@
       ],
       "Action all messages": [
         "Applica a tutti i messaggi"
+      ],
+      "Add a custom logo": [
+        "Aggiungi un logo personalizzato"
       ],
       "Add contact group name": [
         "Aggiungi nome gruppo di contatti"

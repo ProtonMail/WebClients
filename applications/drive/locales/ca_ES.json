@@ -367,6 +367,9 @@
       "Go to parent": [
         "Ves al pare"
       ],
+      "Go to settings": [
+        "Anar a preferències"
+      ],
       "Got it": [
         "D'acord"
       ],
@@ -414,6 +417,9 @@
       ],
       "Keep my Plus subscription": [
         "Mantén la meva subscripció Plus"
+      ],
+      "Later": [
+        "Més tard"
       ],
       "Learn more": [
         "Més informació"
@@ -2220,12 +2226,6 @@
       "Missing feature(s)": [
         "Característiques que falten"
       ],
-      "My reason isn't listed, please comment": [
-        "La meva raó no es troba a la llista (deixeu-nos un comentari)."
-      ],
-      "Streaming service unsupported": [
-        "Servei de reproducció en línia no admès"
-      ],
       "Subscription is too expensive": [
         "La subscripció és massa cara"
       ],
@@ -2239,6 +2239,40 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Ajudeu-nos a millorar!"
+      ]
+    },
+    "drivePlus2024: Action": {
+      "Get the deal": [
+        "Aconsegueixi l'oferta"
+      ],
+      "Special Offer": [
+        "Oferta especial"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Historial de versions ampliat"
+      ],
+      "Priority support": [
+        "Suport prioritari"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Es renova per ${ renewablePrice } i ho podeu cancel·lar en qualsevol moment"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "el primer mes"
+      ],
+      "Limited-time offer": [
+        "Oferta per temps limitat"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Obteniu ${ planName } per tan sols ${ planPrice }"
       ]
     },
     "Email body for description (description part)": {
@@ -2767,6 +2801,9 @@
       ],
       "You have reached the contacts limit for your account": [
         "Heu arribat al límit de contactes per al vostre compte."
+      ],
+      "You have reached the maximum number of calendars.": [
+        "Heu arribat al nombre màxim de calendaris."
       ],
       "You must set a name": [
         "Heu d'establir un nom"
@@ -3884,6 +3921,9 @@
       "Billing cycle: ${ text }": [
         "Cicle de facturació: ${ text }"
       ],
+      "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
+        "Potenciï la identitat de marca de la seva organització i creï una experiència en línia més coherent per als seus usuaris."
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Si baixeu a un pla gratuït, perdreu per sempre aquests avantatges, fins i tot si en tornareu a actualitzar."
       ],
@@ -4199,9 +4239,6 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Per obtenir els millors resultats, eviteu retransmissions i activitats que consumeixin molta memòria o dividiu la càrrega en lots més petits."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Reenvieu els missatges entrants d'un altre compte a la vostra safata d'entrada segura de ${ MAIL_APP_NAME }."
-      ],
       "from the version history?": [
         "de l'historial de versions?"
       ],
@@ -4259,9 +4296,6 @@
       ],
       "Import mailbox": [
         "Importar bústia de correu"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Importeu els vostres correus electrònics, calendaris i contactes d'un altre servei a ${ BRAND_NAME }."
       ],
       "Important note": [
         "Nota important"
@@ -5033,7 +5067,7 @@
         "Ahir"
       ],
       "you": [
-        "vostè"
+        "vós"
       ],
       "You already have a free account": [
         "Ja teniu un compte gratuït"
@@ -5682,6 +5716,9 @@
       ],
       "Public keys": [
         "Claus públiques"
+      ],
+      "Public link password": [
+        "Contrasenya de l'enllaç públic"
       ],
       "Region": [
         "Regió"
@@ -6502,6 +6539,9 @@
       ],
       "Organize items with multiple vaults": [
         "Organitzeu els elements amb múltiples caixes fortes"
+      ],
+      "Passkeys supported": [
+        "Claus de pas suportades"
       ],
       "Password-protected Emails": [
         "Correus protegits amb contrasenya"
@@ -8525,6 +8565,9 @@
       "Active": [
         "Actiu"
       ],
+      "Add a custom logo": [
+        "Afegeixi un logotip personalitzat"
+      ],
       "Add contact group name": [
         "Afegeix el nom del grup de contactes"
       ],
@@ -9245,6 +9288,9 @@
     "vpn_2024: renew": {
       "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
         "La subscripció es renova automàticament cada tres mesos. La següent data de facturació és d'aquí a tres mesos."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant el primer mes. Aleshores, es renovarà automàticament a ${ renewPrice } cada mes. Pot cancel·lar-ho en qualsevol moment."
       ]
     },
     "vpn_2step: feature": {

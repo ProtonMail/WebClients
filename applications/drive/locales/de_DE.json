@@ -415,6 +415,9 @@
       "Keep my Plus subscription": [
         "Plus-Abonnement behalten"
       ],
+      "Later": [
+        "Später"
+      ],
       "Learn more": [
         "Mehr erfahren"
       ],
@@ -2229,12 +2232,6 @@
       "Missing feature(s)": [
         "Fehlende Funktion(en)"
       ],
-      "My reason isn't listed, please comment": [
-        "Mein Grund ist nicht aufgeführt (bitte beschreibe das Problem)"
-      ],
-      "Streaming service unsupported": [
-        "Streaming-Dienst wird nicht unterstützt"
-      ],
       "Subscription is too expensive": [
         "Das Abonnement ist zu teuer"
       ],
@@ -2248,6 +2245,40 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Hilf uns, besser zu werden!"
+      ]
+    },
+    "drivePlus2024: Action": {
+      "Get the deal": [
+        "Sichere dir das Angebot"
+      ],
+      "Special Offer": [
+        "Sonderangebot"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Erweiterter Versionsverlauf"
+      ],
+      "Priority support": [
+        "Priorisierter Support"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Verlängert sich zu ${ renewablePrice }, jederzeit kündbar"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "im ersten Monat"
+      ],
+      "Limited-time offer": [
+        "Zeitlich begrenztes Angebot"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Hol dir ${ planName } für nur ${ planPrice }"
       ]
     },
     "Email body for description (description part)": {
@@ -2779,6 +2810,9 @@
       ],
       "You have reached the contacts limit for your account": [
         "Du hast das Kontaktlimit für dein Konto erreicht."
+      ],
+      "You have reached the maximum number of calendars.": [
+        "Du hast die maximale Anzahl an Kalendern erreicht."
       ],
       "You must set a name": [
         "Du musst einen Namen eingeben"
@@ -4211,9 +4245,6 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Die besten Ergebnisse können erzielt werden, indem du Streaming und speicherintensive Aktivitäten vermeidest oder Uploads in kleinere Stapel aufteilst."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Leite ankommende E-Mails eines anderen Kontos in deinen sicheren ${ MAIL_APP_NAME } Posteingang weiter."
-      ],
       "from the version history?": [
         "dauerhaft aus dem Versionsverlauf löschen möchtest?"
       ],
@@ -4271,9 +4302,6 @@
       ],
       "Import mailbox": [
         "Postfach importieren"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Importiere deine E-Mails, Kalender und Kontakte eines anderen Dienstes zu ${ BRAND_NAME }."
       ],
       "Important note": [
         "Wichtiger Hinweis"
@@ -8415,6 +8443,9 @@
       "15 GB storage": [
         "15 GB Speicherplatz"
       ],
+      "and 15 more premium features": [
+        "und 15 weitere Premium-Funktionen"
+      ],
       "Automatic email forwarding ${ strongText }": [
         "Automatische E-Mail-Weiterleitung ${ strongText }"
       ],
@@ -9200,6 +9231,9 @@
       "Stop sharing with everyone?": [
         "Nicht mehr mit allen teilen?"
       ],
+      "Stop sharing?": [
+        "Teilen beenden?"
+      ],
       "Stop transfers?": [
         "Übertragung abbrechen?"
       ],
@@ -9446,6 +9480,9 @@
       ],
       "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
         "Das Abonnement erneuert sich automatisch alle 3 Monate. Dein nächstes Abrechnungsdatum ist in drei Monaten."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Der speziell ermäßigte Preis von ${ priceWithDiscount } ist für den ersten Monat gültig. Danach wird das Abonnement automatisch jeden Monat zum Preis von ${ renewPrice } verlängert. Du kannst jederzeit kündigen."
       ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Du erhältst dann alle 12 Monate eine Rechnung über ${ renewPrice }."

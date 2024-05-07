@@ -285,7 +285,7 @@
         "Pozvať"
       ],
       "Invite user": [
-        "Pozvite používateľa"
+        "Pozvať používateľa"
       ],
       "Keep logo": [
         "Ponechať logo"
@@ -1958,12 +1958,6 @@
       "Missing feature(s)": [
         "Chýbajúce funkcie"
       ],
-      "My reason isn't listed, please comment": [
-        "Môj dôvod nie je uvedený, prosím okomentujte"
-      ],
-      "Streaming service unsupported": [
-        "Streamovacia služba nie je podporovaná"
-      ],
       "Subscription is too expensive": [
         "Predplatné je príliš drahé"
       ],
@@ -1977,6 +1971,29 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Pomôžte nám zlepšiť sa!"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Rozšírená história verzií"
+      ],
+      "Priority support": [
+        "Prioritná podpora"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Obnovuje sa za ${ renewablePrice }, zrušiť môžete kedykoľvek"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "za prvý mesiac"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Získať ${ planName } len za ${ planPrice }"
       ]
     },
     "Email verification": {
@@ -3581,7 +3598,7 @@
       ],
       "Please add an email address for the user on row": [
         "Pridajte emailovú adresu používateľa na riadku",
-        "Pridajte emailové adresy používateľov na riadkoch",
+        "Pridajte prosím emailové adresy používateľov na riadkoch",
         "Pridajte emailové adresy používateľov na riadkoch",
         "Pridajte emailové adresy používateľov na riadkoch"
       ],
@@ -3605,9 +3622,6 @@
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Berte prosím na vedomie, že po kliknutí na tlačidlo Potvrdiť vám na účte zostanú kredity vo výške ${ creditsRemaining }."
-      ],
-      "Please provide an email address in case we need to contact you.": [
-        "Zadajte prosím emailovú adresu pre prípad, že vás budeme potrebovať kontaktovať."
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Skúste to znova pomocou iného spôsobu platby, alebo kontaktujte svoju banku."
@@ -5082,17 +5096,11 @@
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Zabudli ste používateľské meno vášho ${ BRAND_NAME } účtu? Nájdite ho pomocou obnovovacieho emailu alebo telefónneho čísla a získajte opätovný prístup k ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } a ďalším."
       ],
-      "Private and secure email, no credit card required": [
-        "Súkromný a zabezpečený email, bez potreby platobnej karty"
-      ],
       "Reset your ${ BRAND_NAME } Account password": [
         "Resetujte heslo k vášmu účtu ${ BRAND_NAME }"
       ],
       "Sign in to access your ${ appName } account": [
         "Prihláste sa pre prístup k vášmu účtu ${ appName }"
-      ],
-      "Try ${ planName } for free with this link": [
-        "Vyskúšajte ${ planName } zdarma s týmto odkazom"
       ]
     },
     "Monetary unit": {
@@ -6453,9 +6461,6 @@
       "e.g. https://idp.example.com/XXXXX": [
         "napr. https://idp.example.com/XXXXX"
       ],
-      "Email address": [
-        "Emailová adresa"
-      ],
       "Feedback": [
         "Spätná väzba"
       ],
@@ -7541,6 +7546,9 @@
       ],
       "Desktop app": [
         "Desktopová aplikácia"
+      ],
+      "Upgrade": [
+        "Prejsť na platený plán"
       ]
     },
     "Subscription renewal state": {
@@ -8579,6 +8587,9 @@
       ],
       "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
         "Predplatné sa automaticky obnovuje každé 3 mesiace. Ďalší dátum fakturácie je o 3 mesiace."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Špeciálne zľavnená cena ${ priceWithDiscount } platí prvý mesiac. Potom sa každý mesiac automaticky obnoví za ${ renewPrice }. Službu môžete kedykoľvek zrušiť."
       ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Potom vám bude každých 12 mesiacov vystavená faktúra vo výške ${ renewPrice }."

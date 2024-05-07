@@ -527,6 +527,9 @@
       "Go to label": [
         "라벨로 이동"
       ],
+      "Go to settings": [
+        "설정으로 이동하기"
+      ],
       "Got it": [
         "알겠습니다"
       ],
@@ -598,6 +601,9 @@
       ],
       "label emails as": [
         "다음으로 라벨 지정"
+      ],
+      "Later": [
+        "나중에"
       ],
       "Leave": [
         "나가기"
@@ -3298,12 +3304,6 @@
       "Missing feature(s)": [
         "없는 기능"
       ],
-      "My reason isn't listed, please comment": [
-        "리스트에 저의 사유가 없습니다, 사유를 적어주세요"
-      ],
-      "Streaming service unsupported": [
-        "스트리밍 서비스 지원되지 않음"
-      ],
       "Subscription is too expensive": [
         "구독이 너무 비쌉니다"
       ],
@@ -3336,6 +3336,29 @@
       ],
       "Secure cloud storage and file sharing that protects your data": [
         "데이터를 보호하는 클라우드 스토리지와 파일 공유로 보호하세요."
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "연장된 버전 기록"
+      ],
+      "Priority support": [
+        "우선 지원"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "${ renewablePrice }에 갱신되며 언제나 취소할 수 있습니다."
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "첫 한달간"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "${ planName }를 ${ planPrice }만으로 만나다"
       ]
     },
     "Duration": {
@@ -4276,6 +4299,9 @@
       ],
       "You have reached the contacts limit for your account": [
         "계정의 최대 연락처 수를 초과했습니다"
+      ],
+      "You have reached the maximum number of calendars.": [
+        "캘린더 갯수의 한도에 도달했습니다."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "현재 요금제에서 가능한 모든 주소를 사용했습니다. 새 주소를 추가하려면 요금제를 업그레이드해 주세요."
@@ -6359,6 +6385,9 @@
       "Blocks senders from seeing if and when you opened a message.": [
         "전송자가 메시지를 열었는지 그리고 언제 열었는지 확인할 수 없도록 차단합니다."
       ],
+      "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
+        "조직의 브랜드 아이덴티티를 증진하고 사용자를 위한 더욱 일관된 온라인 경험을 창출하십시오."
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "무료 플랜으로 다운그레이드하면, 만약에 나중에 다시 업그레이드 한다 해도 다음 혜택을 영구적으로 잃을 것입니다."
       ],
@@ -7247,9 +7276,6 @@
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "확인 버튼을 누르면 계정에는 ${ creditsRemaining } 크레딧이 남습니다."
       ],
-      "Please provide an email address in case we need to contact you.": [
-        "만일 연락이 필요할 경우를 위해 이메일 주소를 추가해 주세요."
-      ],
       "Please select the folders you would like to import:": [
         "가져올 폴더 선택:"
       ],
@@ -7797,7 +7823,7 @@
         "이중 암호 모드는 로그인 및 사서함 암호 해독에 별도의 암호를 사용합니다. 일부 상황에서는 약간의 보안 이점이 있지만 대부분의 사용자에게는 단일 암호 모드를 권장합니다. 이중 암호 모드로 전환하려면 먼저 로그인 암호를 설정한 다음 메일함 암호를 설정하십시오."
       ],
       "Unable to verify recovery file signature. Please contact support.": [
-        "복구 파일 서명을 알아볼 수 없는 경우, 고객지원을 통해 문의해주세요"
+        "복구 파일의 서명을 검증할 수 없습니다. 고객지원으로 문의해 주십시오."
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "이 계정에는 저장된 복구 방법이 없습니다."
@@ -8196,7 +8222,7 @@
         "결제를 인증하기 위해 곧 PayPal로 이동됩니다."
       ],
       "You won’t be able to recover locked data using your downloaded recovery files.": [
-        "잠긴 파일을 복구하지 않을 경우, 다운로드된 복구 파일을 사용하세요"
+        "다운로드한 복구 파일을 사용하여 잠긴 데이터를 복구할 수 없게 됩니다"
       ],
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "다운로드한 복구 파일을 사용하여 잠긴 데이터를 복구할 수 없게 됩니다. 또한 장치 기반 복구도 비활성화됩니다."
@@ -10705,6 +10731,9 @@
       "Organize items with multiple vaults": [
         "다중 금고와 항목 정리"
       ],
+      "Passkeys supported": [
+        "패스키를 지원함"
+      ],
       "Password-protected Emails": [
         "비밀번호로 보호된 이메일"
       ],
@@ -11826,9 +11855,6 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Check out ${ appName } features": [
-        "${ appName } 기능 살펴보기"
-      ],
       "Continue": [
         "계속하기"
       ],
@@ -11919,15 +11945,6 @@
       "${ PASS_APP_NAME } is available as a browser extension on the Chrome Web Store.": [
         "${ PASS_APP_NAME }는 Chrome Web Store에서 설치할 수 있는 확장 프로그램압니다."
       ],
-      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption.": [
-        "${ PASS_APP_NAME }가 엄격한 종단간 암호화로 비밀번호와 신원을 안전하게 유지합니다."
-      ],
-      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. To add premium features of ${ PASS_APP_NAME_2 } to your current subscription, we suggest upgrading to the ${ upsellPlanName } plan.": [
-        "${ PASS_APP_NAME }가 엄격한 종단간 암호화로 비밀번호와 신원을 안전하게 유지합니다. ${ PASS_APP_NAME_2 } 프리미엄 기능을 현재 구독에 추가하려면, ${ upsellPlanName } 플랜으로 업그레이드 하는 것을 권장합니다."
-      ],
-      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. Your current plan already gives you access to premium ${ PASS_APP_NAME_2 } features — no need to purchase again.": [
-        "${ PASS_APP_NAME }는 엄격한 종단간 암호화로 비밀번호와 신원을 안전하게 유지합니다. 현재 플랜으로 ${ PASS_APP_NAME_2 } 프리미엄 기능을 사용할 수 있습니다 — 다시 구매할 필요 없습니다."
-      ],
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice }/월간"
       ],
@@ -11969,9 +11986,6 @@
       ],
       "Current plan": [
         "현재 플랜"
-      ],
-      "Discover ${ PASS_APP_NAME },${ br }our new encrypted password manager": [
-        "${ PASS_APP_NAME }를 탐험해 보세요,${ br }새로운 암호화 비밀번호 관리자입니다."
       ],
       "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME }을 사용하려면 관련된 앱 또는 확장을 다운로드 및 설치해주세요"
@@ -12027,9 +12041,6 @@
       "Get the security and features your business needs": [
         "당신의 비즈니스에 필요한 보안과 기능을 얻으세요"
       ],
-      "Hide-my-email aliases protect your email from data breaches": [
-        "데이터 유출로부터 이메일을 보호해주는 Hide-my-email 별칭"
-      ],
       "I understand that if I lose my recovery details, I may permanently lose access to my account.": [
         "만일 복구 방법을 잃어버리면 계정에 영구적으로 접근할 수 없음을 확인합니다."
       ],
@@ -12071,6 +12082,9 @@
       ],
       "Open-source and audited": [
         "오픈 소스이며 외부 감사를 받았음"
+      ],
+      "Passkeys supported on all devices": [
+        "모든 기기에서 패스키를 지원합니다"
       ],
       "per month": [
         "매월"
@@ -12917,12 +12931,12 @@
     },
     "session_recovery:disable:action": {
       "Disable password reset": [
-        "비밀번호 재설정 취소"
+        "비밀번호 재설정 비활성화하기"
       ]
     },
     "session_recovery:disable:info": {
       "Make sure you have access to a recovery method.": [
-        "계정 복구 방법으로 접근할 수 있도록 조치해야 합니다."
+        "복구 방법을 사용할 수 있는지 꼭 확인하십시오."
       ],
       "You will no longer be able to request a password reset from your account settings.": [
         "사용자의 계정 설정에서 비밀번호 재설정 요청을 더 이상 할 수 없게 될 수 있습니다."
@@ -12930,7 +12944,7 @@
     },
     "session_recovery:disable:title": {
       "Disable password reset?": [
-        "비밀번호 재설정을 취소합니까?"
+        "비밀번호 재설정을 비활성화하시겠습니까?"
       ]
     },
     "session_recovery:in_progress:action": {
@@ -13042,7 +13056,7 @@
         "비밀번호 재설정을 허용하지 않으려면, 복구 방법 설정이 필요합니다."
       ],
       "To enhance the security of your account and protect your data, you can request a password reset from your account settings in the web application.": [
-        "계정 보안의 향상과 데이터 손실 방지를 위해, 웹 애플리케이션 내에 있는 계정 설정에서 비밀번호 재설정을 요청할 수 있습니다."
+        "계정의 보안을 강화하고 데이터를 보호하기 위해, 웹 어플리케이션의 계정 설정 내에서 비밀번호 재설정을 요청할 수 있습니다."
       ]
     },
     "session_recovery:sign_out:action": {
@@ -14350,6 +14364,9 @@
       ],
       "Activate user": [
         "사용자 활성화"
+      ],
+      "Add a custom logo": [
+        "커스텀 로고 추가하기"
       ],
       "Add address": [
         "주소 추가"
@@ -15809,6 +15826,9 @@
       ],
       "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
         "구독은 3개월 단위로 자동 갱신됩니다. 다음 갱신 주기는 3개월입니다."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "특별 할인가 ${ priceWithDiscount }는 첫 달에만 유효합니다. 이후 매 달 ${ renewPrice }에 자동으로 갱신됩니다. 취소는 언제나 가능합니다."
       ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "12개월마다 ${ renewPrice }가 결제됩니다."

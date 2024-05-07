@@ -1847,12 +1847,6 @@
       "Missing feature(s)": [
         "機能が不足している"
       ],
-      "My reason isn't listed, please comment": [
-        "この中の理由以外 (コメントに記載してください)"
-      ],
-      "Streaming service unsupported": [
-        "ストリーミングサービスがサポートされていない"
-      ],
       "Subscription is too expensive": [
         "サブスクリプションが高すぎる"
       ],
@@ -1866,6 +1860,29 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "改善にご協力してください!"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "拡張バージョン履歴"
+      ],
+      "Priority support": [
+        "優先サポート"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "以降は ${ renewablePrice } で更新されます。いつでもキャンセル可能です。"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "最初の 1 か月"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "${ planName } を ${ planPrice } で入手"
       ]
     },
     "Email verification": {
@@ -3291,9 +3308,6 @@
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "確認ボタンをクリックすると、アカウントに ${ creditsRemaining } クレジットが残ります。"
       ],
-      "Please provide an email address in case we need to contact you.": [
-        "あなたに連絡する必要がある場合のメールアドレスを入力してください。"
-      ],
       "Please try again using a different payment method, or contact your bank.": [
         "別の支払い方法で再度お試しいただくか、銀行へお問い合わせください。"
       ],
@@ -4614,17 +4628,11 @@
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "${ BRAND_NAME } アカウントのユーザー名をお忘れですか? 予備のメールアドレスまたは電話番号を使用して検索し、${ MAIL_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } などへのアクセスを取り戻します。"
       ],
-      "Private and secure email, no credit card required": [
-        "プライベートで安全なEメール、クレジットカード不要"
-      ],
       "Reset your ${ BRAND_NAME } Account password": [
         "${ BRAND_NAME } アカウントのパスワードをリセット"
       ],
       "Sign in to access your ${ appName } account": [
         "${ appName } アカウントにアクセスするには、サインインしてください"
-      ],
-      "Try ${ planName } for free with this link": [
-        "このリンクから ${ planName } を無料でお試しください"
       ]
     },
     "Monetary unit": {
@@ -5805,9 +5813,6 @@
       ],
       "e.g. https://idp.example.com/XXXXX": [
         "例:https://idp.example.com/XXXXX"
-      ],
-      "Email address": [
-        "メールアドレス"
       ],
       "Feedback": [
         "ご意見"
@@ -7591,6 +7596,11 @@
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfCountries } か国で ${ numberOfServers } 台"
+      ]
+    },
+    "vpn_2024: renew": {
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "特別割引価格 ${ priceWithDiscount } は最初の 1 か月間有効です。 その後、毎月 ${ renewPrice } で自動的に更新されます。 いつでもキャンセルできます。"
       ]
     },
     "vpn_2step: billing": {

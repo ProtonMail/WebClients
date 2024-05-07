@@ -158,6 +158,9 @@
       "Edit vault": [
         "Kluis bewerken"
       ],
+      "Exclude from monitoring": [
+        "Uitsluiten van controle"
+      ],
       "Export": [
         "Exporteren"
       ],
@@ -182,6 +185,9 @@
       "Get mobile apps": [
         "Download mobiele apps"
       ],
+      "Get Pass Plus": [
+        "Neem Pass Plus"
+      ],
       "Get Started": [
         "Aan de slag"
       ],
@@ -199,6 +205,9 @@
       ],
       "Importing": [
         "Importeren"
+      ],
+      "Include in monitoring": [
+        "Opnemen in monitoring"
       ],
       "Install extension": [
         "Extensie installeren"
@@ -278,6 +287,9 @@
       "Pass for iOS": [
         "Proton Pass voor iOS"
       ],
+      "Pass Monitor": [
+        "Pass Monitor"
+      ],
       "Pin item": [
         "Item vastpinnen"
       ],
@@ -325,6 +337,9 @@
       ],
       "Saving": [
         "Bezig met opslaan"
+      ],
+      "See all": [
+        "Alles weergeven"
       ],
       "See members": [
         "Bekijk leden"
@@ -392,6 +407,9 @@
       "Verify": [
         "Verifiëren"
       ],
+      "View details": [
+        "Details weergeven"
+      ],
       "View history": [
         "Geschiedenis bekijken"
       ],
@@ -442,6 +460,38 @@
       ],
       "Expand": [
         "Uitvouwen"
+      ]
+    },
+    "Description": {
+      "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
+        "Een e-mailadres alias werkt als een e-mailadres, maar vermindert spam en houdt uw werkelijke e-mailadres en identiteit verborgen."
+      ],
+      "Create unique passwords": [
+        "Maak unieke wachtwoorden"
+      ],
+      "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
+        "Dark Web Monitoring is beschikbaar met een betaald abonnement. Upgrade voor directe toegang."
+      ],
+      "Get notified if your email, password or other personal data was leaked.": [
+        "Ontvang een melding als je e-mail, wachtwoord of andere persoonlijke gegevens zijn gelekt."
+      ],
+      "Keep your info more secure and private with these guides and tips.": [
+        "Houd uw info veiliger en privé met deze handleidingen en tips."
+      ],
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "Onze geavanceerde AI-gedreven beveiligingsoplossing ontworpen voor gebruikers die verhoogde bescherming zoeken voor hun accounts. ${ learnMoreLink }"
+      ],
+      "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
+        "Het dark web is een verborgen onderdeel van het internet waar gestolen persoonlijke informatie, zoals identiteiten, gekocht en verkocht kunnen worden."
+      ],
+      "These items remain at risk": [
+        "Deze items blijven in gevaar"
+      ],
+      "This account is vulnerable, visit the service and change your password.": [
+        "Dit account is kwetsbaar, bezoek de service en wijzig uw wachtwoord."
+      ],
+      "Your email addresses were leaked in at least 1 data breach.": [
+        "Je e-mailadressen zijn gelekt in ten minste 1 datalek."
       ]
     },
     "Error": {
@@ -566,6 +616,12 @@
       ],
       "Failed to unpin item": [
         "Kan item niet losmaken"
+      ],
+      "Failed to update monitoring settings": [
+        "Bijwerken van monitoring-instellingen mislukt"
+      ],
+      "Failed updating ${ PROTON_SENTINEL_NAME } setting": [
+        "Bijwerken van ${ PROTON_SENTINEL_NAME } instelling mislukt"
       ],
       "File could not be parsed": [
         "Bestand kon niet verwerkt worden"
@@ -702,6 +758,20 @@
         "Er is iets fout gegaan"
       ]
     },
+    "Feature": {
+      "Dark Web Monitoring": [
+        "Dark Web Monitoring"
+      ],
+      "Integrated 2FA authenticator": [
+        "Geïntegreerde tweestapsverificatie"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Onbeperkt aantal hide-my-email-aliassen"
+      ],
+      "Vault sharing (up to ${ MAX_VAULT_MEMBERS } people)": [
+        "Kluis delen (tot ${ MAX_VAULT_MEMBERS } personen)"
+      ]
+    },
     "file size format": {
       "byte": [
         "byte",
@@ -822,6 +892,9 @@
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Alias \"${ item.aliasEmail }\" verplaatst naar prullenbak - het zal stoppen met het doorsturen van e-mails naar uw mailbox"
       ],
+      "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
+        "Aliassen met aangepaste domeinen worden niet gecontroleerd, voeg ze toe als een aangepaste e-mail voor controle."
+      ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Alle items uit \"${ payload.content.name }\" succesvol verplaatst"
       ],
@@ -848,6 +921,9 @@
       ],
       "Auto-lock successfully disabled": [
         "Auto-vergrendelen succesvol ingeschakeld"
+      ],
+      "Breaches detected": [
+        "Inbreuken gedetecteerd"
       ],
       "Bring your existing passwords into ${ BRAND_NAME }.": [
         "Breng uw bestaande wachtwoorden naar ${ BRAND_NAME }."
@@ -937,6 +1013,9 @@
       "High Priority": [
         "Hoge Prioriteit"
       ],
+      "How does monitoring work?": [
+        "Hoe werkt monitoring?"
+      ],
       "Import in progress:": [
         "Bezig met importeren:"
       ],
@@ -1005,6 +1084,12 @@
       "Item restored": [
         "Item hersteld"
       ],
+      "Item successfully excluded from monitoring": [
+        "Item succesvol uitgesloten van monitoring"
+      ],
+      "Item successfully included in monitoring": [
+        "Item succesvol opgenomen in monitoring"
+      ],
       "Item successfully moved": [
         "Item succesvol verplaatst"
       ],
@@ -1013,6 +1098,9 @@
       ],
       "Item successfully unpinned": [
         "Item succesvol losgemaakt"
+      ],
+      "Latest breach on ${ formattedDate }": [
+        "Laatste inbreuk op ${ formattedDate }"
       ],
       "Learn how to ${ staySaferOnlineLink }": [
         "Leer ${ staySaferOnlineLink }"
@@ -1067,6 +1155,9 @@
       ],
       "Never": [
         "Nooit"
+      ],
+      "No breaches detected": [
+        "Geen inbreuken gedetecteerd"
       ],
       "No network connection": [
         "Geen netwerkverbinding"
@@ -1301,6 +1392,9 @@
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "We hebben moeite met het synchroniseren van gegevens naar uw lokale opslag. Zorg ervoor dat u voldoende schijfruimte heeft voor ${ PASS_SHORT_APP_NAME } om soepel te werken."
       ],
+      "We’ve sent a verification code to ${ email }. Please enter it below:": [
+        "We hebben een verificatiecode gestuurd naar ${ email }. Voer deze hieronder in:"
+      ],
       "You are about to create:": [
         "U staat op het punt volgende aan te maken:"
       ],
@@ -1353,6 +1447,10 @@
       "${ config.options.wordCount } word": [
         "${ config.options.wordCount } woord",
         "${ config.options.wordCount } woorden"
+      ],
+      "${ usageCount } login": [
+        "${ usageCount } login",
+        "${ usageCount } logins"
       ],
       "1 hour": [
         "1 uur"
@@ -1612,6 +1710,9 @@
       "No history": [
         "Geen geschiedenis"
       ],
+      "None": [
+        "Geen"
+      ],
       "Note": [
         "Notitie"
       ],
@@ -1699,6 +1800,12 @@
       "Special characters (!&*)": [
         "Speciale tekens (!&*)"
       ],
+      "Status": [
+        "Status"
+      ],
+      "Strong": [
+        "Sterk"
+      ],
       "Suffix": [
         "Achtervoegsel"
       ],
@@ -1744,6 +1851,9 @@
       "Update": [
         "Bijwerken"
       ],
+      "Used in": [
+        "Gebruikt in"
+      ],
       "Username": [
         "Gebruikersnaam"
       ],
@@ -1767,6 +1877,9 @@
       ],
       "View logs": [
         "Logboeken bekijken"
+      ],
+      "Weak": [
+        "Zwak"
       ],
       "Websites": [
         "Websites"
@@ -1943,14 +2056,32 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } addresses": [
+        "${ BRAND_NAME } adressen"
+      ],
+      "${ PASS_SHORT_APP_NAME } Monitor": [
+        "${ PASS_SHORT_APP_NAME } Monitor"
+      ],
+      "${ PASS_SHORT_APP_NAME } monitor": [
+        "${ PASS_SHORT_APP_NAME } monitor"
+      ],
       "Auto-lock update": [
         "Automatische vergrendelingsupdate"
       ],
-      "Block trackers and malware": [
-        "Blokkeer trackers en malware"
+      "Breach detected": [
+        "Inbreuk gedetecteerd"
+      ],
+      "Breaches": [
+        "Inbreuken"
+      ],
+      "Breaches detected for": [
+        "Inbreuken gedetecteerd voor"
       ],
       "Confirm PIN code": [
         "Pincode bevestigen"
+      ],
+      "Confirm your email": [
+        "Bevestig uw e-mailadres"
       ],
       "Create a vault": [
         "Kluis aanmaken"
@@ -1963,6 +2094,12 @@
       ],
       "Current version": [
         "Huidige versie"
+      ],
+      "Custom email monitoring": [
+        "Gepersonaliseerde e-mail monitoring"
+      ],
+      "Dark Web Monitoring": [
+        "Dark Web Monitoring"
       ],
       "Delete vault \"${ vaultName }\" ?": [
         "Kluis \"${ vaultName }\" verwijderen?"
@@ -1985,11 +2122,17 @@
       "Enter your PIN": [
         "Voer uw pincode in"
       ],
+      "Excluded items": [
+        "Uitgesloten items"
+      ],
       "Get Started": [
         "Aan de slag"
       ],
       "Grant permissions": [
         "Toestemmingen verlenen"
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email-aliassen"
       ],
       "History": [
         "Geschiedenis"
@@ -2017,6 +2160,9 @@
       ],
       "Low disk space": [
         "Weinig schijfruimte"
+      ],
+      "Mark as resolved?": [
+        "Markeren als opgelost?"
       ],
       "Member limit": [
         "Limiet aantal leden"
@@ -2048,6 +2194,9 @@
       "Password": [
         "Wachtwoord"
       ],
+      "Password Health": [
+        "Wachtwoord gezondheid"
+      ],
       "Pending access to the shared data": [
         "Toegang tot gedeelde data hangende"
       ],
@@ -2060,8 +2209,18 @@
       "Recommended actions": [
         "Aanbevolen acties"
       ],
+      "Resolved breaches": [
+        "Opgeloste inbreuken"
+      ],
       "Restore this version?": [
         "Deze versie herstellen?"
+      ],
+      "Reused ${ count } time": [
+        "${ count } keer hergebruikt",
+        "${ count } keer hergebruikt"
+      ],
+      "Reused passwords": [
+        "Hergebruikte wachtwoorden"
       ],
       "Review and share": [
         "Beoordelen en delen"
@@ -2080,6 +2239,9 @@
       ],
       "Share with": [
         "Deel met"
+      ],
+      "Stay safer online": [
+        "Blijf veilig online"
       ],
       "Suggestions": [
         "Suggesties"
@@ -2101,6 +2263,12 @@
       ],
       "Vault shared with you": [
         "Kluis gedeeld met u"
+      ],
+      "Want to learn more?": [
+        "Wilt u meer weten?"
+      ],
+      "Weak passwords": [
+        "Zwakke wachtwoorden"
       ],
       "What is an alias?": [
         "Wat is een alias?"
@@ -2175,6 +2343,9 @@
       "Duplicate email addresses.": [
         "Dubbele e-mailadressen."
       ],
+      "Email is required": [
+        "E-mailadres is vereist"
+      ],
       "Empty note": [
         "Lege notitie"
       ],
@@ -2186,6 +2357,12 @@
       ],
       "Invalid alias prefix": [
         "Ongeldig aliasvoorvoegsel"
+      ],
+      "Invalid code": [
+        "Ongeldige code"
+      ],
+      "Invalid email": [
+        "Ongeldig e-mailadres"
       ],
       "Invalid email addresses.": [
         "Ongeldige e-mailadressen."

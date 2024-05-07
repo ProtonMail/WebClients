@@ -158,6 +158,12 @@
       "Edit vault": [
         "Redigér boks"
       ],
+      "Enable Dark Web Monitoring": [
+        "Aktivér monitorering af det mørke net"
+      ],
+      "Exclude from monitoring": [
+        "Undtag fra monitorering"
+      ],
       "Export": [
         "Eksportér"
       ],
@@ -182,6 +188,9 @@
       "Get mobile apps": [
         "Hent mobilapps"
       ],
+      "Get Pass Plus": [
+        "Få Pass Plus"
+      ],
       "Get Started": [
         "Kom i gang"
       ],
@@ -199,6 +208,9 @@
       ],
       "Importing": [
         "Importerer"
+      ],
+      "Include in monitoring": [
+        "Inkluder i monitorering"
       ],
       "Install extension": [
         "Installér udvidelse"
@@ -278,6 +290,12 @@
       "Pass for iOS": [
         "Pass til iOS"
       ],
+      "Pass Monitor": [
+        "Pass Monitor"
+      ],
+      "Pause monitoring": [
+        "Sæt monitorering på pause"
+      ],
       "Pin item": [
         "Fastgør element"
       ],
@@ -308,6 +326,9 @@
       "Resend code": [
         "Send kode igen"
       ],
+      "Resend code (in ${ remaining }s)": [
+        "Send kode igen (om ${ remaining } s)"
+      ],
       "Resend invitation": [
         "Gensend invitation"
       ],
@@ -317,6 +338,9 @@
       "Restore item": [
         "Gendan element"
       ],
+      "Resume monitoring": [
+        "Genoptag monitorering"
+      ],
       "Retry": [
         "Prøv igen"
       ],
@@ -325,6 +349,9 @@
       ],
       "Saving": [
         "Gemmer"
+      ],
+      "See all": [
+        "Se alle"
       ],
       "See members": [
         "Vis medlemmer"
@@ -374,6 +401,9 @@
       "Trash": [
         "Flyt til papirkurv"
       ],
+      "Try again.": [
+        "Prøv igen."
+      ],
       "Unpin item": [
         "Frigør element"
       ],
@@ -391,6 +421,9 @@
       ],
       "Verify": [
         "Bekræft"
+      ],
+      "View details": [
+        "Vis detaljer"
       ],
       "View history": [
         "Se historik"
@@ -442,6 +475,63 @@
       ],
       "Expand": [
         "Udvid"
+      ]
+    },
+    "Description": {
+      "${ total } other login uses the same password": [
+        "${ total } andet login bruger samme adgangskode",
+        "${ total } andre logins bruger samme adgangskode"
+      ],
+      "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
+        "2FA tilføjer endnu et lag af sikkerhed til dine logins. ${ PASS_APP_NAME } gør 2FA nemmere ved at gemme og automatisk udfylde dine 2FA-koder."
+      ],
+      "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
+        "Et e-mailalias fungerer som en e-mailadresse, men reducerer spam og holder din faktiske e-mailadresse og identitet skjult."
+      ],
+      "Change your passwords": [
+        "Skift dine adgangskoder"
+      ],
+      "Create unique passwords": [
+        "Opret unikke adgangskoder"
+      ],
+      "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
+        "Monitorering af det mørke net er tilgængelig med et betalt abonnement. Opgrader for øjeblikkelig adgang."
+      ],
+      "Get notified if your email, password or other personal data was leaked.": [
+        "Få besked, hvis din e-mail, adgangskode eller andre personlige data er blevet lækket."
+      ],
+      "Keep your info more secure and private with these guides and tips.": [
+        "Hold dine oplysninger mere sikre og private med disse vejledninger og tips."
+      ],
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "Vores banebrydende AI-drevne sikkerhedsløsning designet til brugere, der søger øget beskyttelse for deres konto. ${ learnMoreLink }"
+      ],
+      "Set up 2FA for more security": [
+        "Indstil 2FA for mere sikkerhed"
+      ],
+      "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
+        "Begynd at monitorere for databrud relateret til konti, der er oprettet med din e-mailadresse og dine hide-my-email-aliasser."
+      ],
+      "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
+        "Det mørke net (engelsk: dark web) er en skjult del af internettet, hvor stjålne personlige oplysninger, f.eks. identiteter, kan købes og sælges."
+      ],
+      "These items remain at risk": [
+        "Disse elementer er fortsat i farezonen"
+      ],
+      "This account is vulnerable, visit the service and change your password.": [
+        "Denne konto er sårbar, besøg tjenesten og skift din adgangskode."
+      ],
+      "This service offers 2FA. Enable it for added account security.": [
+        "Denne tjeneste tilbyder 2FA. Aktivér det for at få ekstra kontosikkerhed."
+      ],
+      "With ${ PASS_SHORT_APP_NAME } Monitor, stay ahead of threats by getting instant alerts if your credentials are compromised. Unlock advanced security features and detailed logs to safeguard your online presence.": [
+        "Med ${ PASS_SHORT_APP_NAME } Monitor er du på forkant af trusler ved at få øjeblikkelige varsler, hvis dine legitimationsoplysninger kompromitteres. Lås op for avancerede sikkerhedsfunktioner og detaljerede logfiler for at beskytte din online tilstedeværelse."
+      ],
+      "Your email addresses were leaked in at least 1 data breach.": [
+        "Dine e-mailadresser blev lækket i mindst 1 databrud."
+      ],
+      "Your personal info was leaked in a data breach of a third-party service.": [
+        "Dine personlige oplysninger blev lækket i et databrud hos en tredjepartstjeneste."
       ]
     },
     "Error": {
@@ -531,6 +621,12 @@
       "Failed resending invite.": [
         "Kunne ikke sende invitation igen."
       ],
+      "Failed to add email address": [
+        "Kunne ikke tilføje e-mailadresse"
+      ],
+      "Failed to delete email address from monitoring": [
+        "Kunne ikke slette e-mailadresse fra monitorering"
+      ],
       "Failed to delete selected items": [
         "Kunne ikke slette de valgte elementer"
       ],
@@ -539,6 +635,12 @@
       ],
       "Failed to edit user's access.": [
         "Kunne ikke redigere brugerens adgang."
+      ],
+      "Failed to load breaches for this address": [
+        "Kunne ikke indlæse databrud for denne adresse"
+      ],
+      "Failed to load breaches for this email alias": [
+        "Kunne ikke indlæse databrud for dette e-mail-alias"
       ],
       "Failed to load item history": [
         "Kunne ikke indlæse elementhistorik"
@@ -558,6 +660,12 @@
       "Failed to remove user's access.": [
         "Kunne ikke fjerne brugerens adgang."
       ],
+      "Failed to resend verification for custom email": [
+        "Kunne ikke gensende bekræftelse for brugerdefineret e-mail"
+      ],
+      "Failed to resolve breaches for this address": [
+        "Kunne ikke håndtere databrud for denne adresse"
+      ],
       "Failed to restore items from trash": [
         "Kunne ikke gendanne elementer fra papirkurven"
       ],
@@ -566,6 +674,21 @@
       ],
       "Failed to unpin item": [
         "Kunne ikke frigøre element"
+      ],
+      "Failed to update monitoring settings": [
+        "Kunne ikke opdatere monitoreringens indstillinger"
+      ],
+      "Failed to verify email address": [
+        "Kunne ikke bekræfte e-mailadresse"
+      ],
+      "Failed updating ${ PROTON_SENTINEL_NAME } setting": [
+        "Opdatering af ${ PROTON_SENTINEL_NAME }-indstilling mislykkedes"
+      ],
+      "Failed updating monitor flag of the item": [
+        "Opdatering af elementets monitoreringsmærkning mislykkedes"
+      ],
+      "Failed updating monitoring status for this email address": [
+        "Opdatering af monitoreringsstatus for denne e-mailadresse mislykkedes"
       ],
       "File could not be parsed": [
         "Fil kunne ikke fortolkes"
@@ -625,7 +748,7 @@
         "Genoprettelse af element mislykkedes"
       ],
       "Restoring trashed items failed": [
-        "Genoprettelse af elementer i papirkurven mislykkedes"
+        "Gendannelse af elementer i papirkurven mislykkedes"
       ],
       "Settings update failed": [
         "Ændring af indstillinger mislykkedes"
@@ -700,6 +823,20 @@
       ],
       "Something went wrong": [
         "Noget gik galt"
+      ]
+    },
+    "Feature": {
+      "Dark Web Monitoring": [
+        "Monitorering af det mørke net"
+      ],
+      "Integrated 2FA authenticator": [
+        "Integreret 2FA-godkendelsesværktøj"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Ubegrænsede hide-my-email-aliasser"
+      ],
+      "Vault sharing (up to ${ MAX_VAULT_MEMBERS } people)": [
+        "Deling af boks (op til ${ MAX_VAULT_MEMBERS } personer)"
       ]
     },
     "file size format": {
@@ -801,6 +938,16 @@
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } kræver din ${ BRAND_NAME }-adgangskode for at tilgå data offline."
       ],
+      "${ PROTON_SENTINEL_NAME } successfully disabled": [
+        "${ PROTON_SENTINEL_NAME } deaktiveret"
+      ],
+      "${ PROTON_SENTINEL_NAME } successfully enabled": [
+        "${ PROTON_SENTINEL_NAME } aktiveret"
+      ],
+      "${ row.breachCount } breach detected": [
+        "${ row.breachCount } databrud registreret",
+        "${ row.breachCount } databrud registreret"
+      ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 dage til at prøve premium-funktioner gratis. Kun i din første uge med ${ BRAND_NAME }."
       ],
@@ -809,6 +956,9 @@
       ],
       "Access successfully confirmed": [
         "Adgang bekræftet"
+      ],
+      "Add your custom email address to monitor :": [
+        "Tilføj din brugerdefinerede e-mailadresse, som skal monitoreres:"
       ],
       "Admin": [
         "Admin"
@@ -821,6 +971,15 @@
       ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Aliasset \"${ item.aliasEmail }\" blev flyttet til papirkurven - det vil stoppe med at videresende e-mails til din indbakke"
+      ],
+      "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
+        "Aliasser med brugerdefinerede domæner monitoreres ikke, tilføj dem som en brugerdefineret e-mail for monitorering."
+      ],
+      "All breaches for this address were resolved": [
+        "Alle databrud for denne adresse blev håndteret"
+      ],
+      "All current breaches will be marked as resolved. In case of future data breaches, you'll be notified.": [
+        "Alle aktuelle databrud vil blive markeret som håndteret. I tilfælde af fremtidige databrud får du besked."
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Alle elementer fra \"${ payload.content.name }\" blev flyttet"
@@ -848,6 +1007,9 @@
       ],
       "Auto-lock successfully disabled": [
         "Autolås deaktiveret"
+      ],
+      "Breaches detected": [
+        "Databrud registreret"
       ],
       "Bring your existing passwords into ${ BRAND_NAME }.": [
         "Hent dine eksisterende adgangskoder ind i ${ BRAND_NAME }."
@@ -894,6 +1056,9 @@
       "Deleting \"${ payload.content.name }\"": [
         "Sletter \"${ payload.content.name }\""
       ],
+      "Didn't receive the code?": [
+        "Modtog du ikke koden?"
+      ],
       "Drop file here to upload": [
         "Træk fil hertil for at uploade"
       ],
@@ -905,6 +1070,15 @@
       ],
       "email": [
         "e-mail"
+      ],
+      "Email address successfully deleted from monitoring": [
+        "E-mail-adresse slettet fra monitorering"
+      ],
+      "Email address successfully excluded from monitoring": [
+        "E-mail-adresse undtaget fra monitorering"
+      ],
+      "Email address successfully included in monitoring": [
+        "E-mail-adresse inkluderet i monitorering"
       ],
       "Emptying trash...": [
         "Tømmer papirkurven..."
@@ -936,6 +1110,9 @@
       ],
       "High Priority": [
         "Høj prioritet"
+      ],
+      "How does monitoring work?": [
+        "Hvordan fungerer monitorering?"
       ],
       "Import in progress:": [
         "Import i gang:"
@@ -1005,6 +1182,12 @@
       "Item restored": [
         "Element gendannet"
       ],
+      "Item successfully excluded from monitoring": [
+        "Element undtaget fra monitorering"
+      ],
+      "Item successfully included in monitoring": [
+        "Element inkluderet i monitorering"
+      ],
       "Item successfully moved": [
         "Element flyttet"
       ],
@@ -1013,6 +1196,9 @@
       ],
       "Item successfully unpinned": [
         "Element frigjort"
+      ],
+      "Latest breach on ${ formattedDate }": [
+        "Seneste databrud ${ formattedDate }"
       ],
       "Learn how to ${ staySaferOnlineLink }": [
         "Lær, hvordan du ${ staySaferOnlineLink }"
@@ -1047,6 +1233,9 @@
       "Monitor accounts": [
         "Overvåg konti"
       ],
+      "Monitoring settings successfully updated": [
+        "Indstillinger for monitorering opdateret"
+      ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "${ PASS_APP_NAME } er mere end en adgangskodeadministrator, den beskytter din adgangskode og din personlige e-mailadresse via e-mail-aliasser. Med samme teknologi, som bruges til ${ MAIL_APP_NAME }, er dine data end-to-end krypteret og kun tilgængelige for dig."
       ],
@@ -1067,6 +1256,9 @@
       ],
       "Never": [
         "Aldrig"
+      ],
+      "No breaches detected": [
+        "Ingen databrud registreret"
       ],
       "No network connection": [
         "Ingen internetforbindelse"
@@ -1113,6 +1305,9 @@
       ],
       "Pinning item...": [
         "Fastgør element..."
+      ],
+      "Please check your spam folder or try resending the code.": [
+        "Tjek din spam-mappe, eller prøv at sende koden igen."
       ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Bekræft din adgangskode til ${ BRAND_NAME } for at aktivere offline-tilstand"
@@ -1204,6 +1399,9 @@
       "Successfully synced all vaults": [
         "Synkroniserede alle bokse"
       ],
+      "Suggested": [
+        "Foreslået"
+      ],
       "Switch to another vault or create an item in this vault": [
         "Skift til en anden boks, eller opret et element i denne boks"
       ],
@@ -1215,6 +1413,9 @@
       ],
       "Thank you, the problem has been reported": [
         "Tak, problemet er blevet rapporteret"
+      ],
+      "The custom email will be sent to ${ href } for monitoring. No other data will be sent to HIBP.": [
+        "Den brugerdefinerede e-mail sendes til ${ href } til monitorering. Ingen andre data vil blive sendt til HIBP."
       ],
       "The export will only contain vaults that you own.": [
         "Eksporten vil kun indeholde bokse, som du ejer."
@@ -1295,11 +1496,17 @@
       "Vault \"${ share.content.name }\" was removed": [
         "Boksen \"${ share.content.name }\" blev fjernet"
       ],
+      "Verification code sent.": [
+        "Bekræftelseskode sendt."
+      ],
       "Viewer": [
         "Seer"
       ],
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Vi har problemer med at synkronisere data til dit lokale lager. Sørg for, at du har tilstrækkelig diskplads til, at ${ PASS_SHORT_APP_NAME } kan fungere optimalt."
+      ],
+      "We’ve sent a verification code to ${ email }. Please enter it below:": [
+        "Vi har sendt en bekræftelseskode til ${ email }. Indtast den nedenfor:"
       ],
       "You are about to create:": [
         "Du er ved at oprette:"
@@ -1332,6 +1539,18 @@
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Du har nået den maksimalt tilladte længde på ${ maxLength } tegn."
       ],
+      "You will be notified of data breaches for these email addresses.": [
+        "Du vil blive underrettet om databrud for disse e-mailadresser."
+      ],
+      "You will be notified of data breaches for this email address.": [
+        "Du vil blive underrettet om databrud for denne e-mailadresse."
+      ],
+      "You will no longer be notified of data breaches for these email addresses.": [
+        "Du vil ikke længere blive underrettet om databrud for disse e-mailadresser."
+      ],
+      "You will no longer be notified of data breaches for this email address.": [
+        "Du vil ikke længere blive underrettet om databrud for denne e-mailadresse."
+      ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "Du skal bruge denne pinkode til at låse ${ PASS_APP_NAME } op, når den låses automatisk efter en periode med inaktivitet."
       ],
@@ -1353,6 +1572,10 @@
       "${ config.options.wordCount } word": [
         "${ config.options.wordCount } ord",
         "${ config.options.wordCount } ord"
+      ],
+      "${ usageCount } login": [
+        "${ usageCount } login",
+        "${ usageCount } logins"
       ],
       "1 hour": [
         "1 time"
@@ -1555,6 +1778,9 @@
       "Last month": [
         "Sidste måned"
       ],
+      "Last updated": [
+        "Sidst opdateret"
+      ],
       "Last week": [
         "Sidste uge"
       ],
@@ -1611,6 +1837,9 @@
       ],
       "No history": [
         "Ingen historik"
+      ],
+      "None": [
+        "Ingen"
       ],
       "Note": [
         "Note"
@@ -1699,6 +1928,12 @@
       "Special characters (!&*)": [
         "Specielle tegn (!&*)"
       ],
+      "Status": [
+        "Status"
+      ],
+      "Strong": [
+        "Stærk"
+      ],
       "Suffix": [
         "Suffiks"
       ],
@@ -1744,6 +1979,9 @@
       "Update": [
         "Opdatér"
       ],
+      "Used in": [
+        "Anvendt i"
+      ],
       "Username": [
         "Brugernavn"
       ],
@@ -1767,6 +2005,12 @@
       ],
       "View logs": [
         "Vis logfiler"
+      ],
+      "Vulnerable": [
+        "Sårbar"
+      ],
+      "Weak": [
+        "Svag"
       ],
       "Websites": [
         "Websider"
@@ -1884,6 +2128,9 @@
       "Full Name": [
         "Fuldt navn"
       ],
+      "me@example.com": [
+        "mig@eksempel.dk"
+      ],
       "MM/YY": [
         "MM/ÅÅ"
       ],
@@ -1943,14 +2190,35 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } addresses": [
+        "${ BRAND_NAME } adresser"
+      ],
+      "${ PASS_SHORT_APP_NAME } Monitor": [
+        "${ PASS_SHORT_APP_NAME } Monitor"
+      ],
+      "${ PASS_SHORT_APP_NAME } monitor": [
+        "${ PASS_SHORT_APP_NAME } monitor"
+      ],
+      "Account protection": [
+        "Kontobeskyttelse"
+      ],
       "Auto-lock update": [
         "Autolås-opdatering"
       ],
-      "Block trackers and malware": [
-        "Blokér trackere og malware"
+      "Breach detected": [
+        "Databrud registreret"
+      ],
+      "Breaches": [
+        "Databrud"
+      ],
+      "Breaches detected for": [
+        "Databrud registreret for"
       ],
       "Confirm PIN code": [
         "Bekræft pinkode"
+      ],
+      "Confirm your email": [
+        "Bekræft din e-mail"
       ],
       "Create a vault": [
         "Opret en boks"
@@ -1963,6 +2231,18 @@
       ],
       "Current version": [
         "Aktuel version"
+      ],
+      "Custom addresses": [
+        "Brugerdefinerede adresser"
+      ],
+      "Custom email monitoring": [
+        "Monitorering af brugerdefinerede e-mails"
+      ],
+      "Custom emails": [
+        "Brugerdefinerede e-mails"
+      ],
+      "Dark Web Monitoring": [
+        "Monitorering af det mørke net"
       ],
       "Delete vault \"${ vaultName }\" ?": [
         "Slet boksen \"${ vaultName }\"?"
@@ -1985,11 +2265,17 @@
       "Enter your PIN": [
         "Indtast din pinkode"
       ],
+      "Excluded items": [
+        "Ekskluderede elementer"
+      ],
       "Get Started": [
         "Kom i gang"
       ],
       "Grant permissions": [
         "Giv tilladelser"
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email aliasser"
       ],
       "History": [
         "Historik"
@@ -2003,6 +2289,9 @@
       "Import your data": [
         "Importér dine data"
       ],
+      "Inactive 2FA": [
+        "Inaktiv 2FA"
+      ],
       "Install extension": [
         "Installér udvidelse"
       ],
@@ -2015,8 +2304,14 @@
       "Leave vault ?": [
         "Forlad boks?"
       ],
+      "Loading breaches...": [
+        "Indlæser databrud..."
+      ],
       "Low disk space": [
         "Kun lidt diskplads"
+      ],
+      "Mark as resolved?": [
+        "Markér som løst?"
       ],
       "Member limit": [
         "Medlemsgrænse"
@@ -2036,8 +2331,20 @@
       "Move items?": [
         "Flyt elementer?"
       ],
+      "No excluded items": [
+        "Ingen ekskluderede elementer"
+      ],
+      "No inactive 2FAs": [
+        "Ingen inaktive 2FA'er"
+      ],
+      "No insecure passwords": [
+        "Ingen usikre adgangskoder"
+      ],
       "No items selected": [
         "Ingen elementer valgt"
+      ],
+      "No reused passwords": [
+        "Ingen genbrugte adgangskoder"
       ],
       "Our welcome gift to you": [
         "Vores velkomstgave til dig"
@@ -2047,6 +2354,12 @@
       ],
       "Password": [
         "Adgangskode"
+      ],
+      "Password Health": [
+        "Adgangskode-sundhed"
+      ],
+      "Pause monitoring?": [
+        "Sæt monitorering på pause?"
       ],
       "Pending access to the shared data": [
         "Afventer adgang til de delte data"
@@ -2060,8 +2373,24 @@
       "Recommended actions": [
         "Anbefalede handlinger"
       ],
+      "Remove email address?": [
+        "Fjern e-mailadresse?"
+      ],
+      "Resolved breaches": [
+        "Løste databrud"
+      ],
       "Restore this version?": [
         "Gendan denne version?"
+      ],
+      "Resume monitoring?": [
+        "Genoptag monitorering?"
+      ],
+      "Reused ${ count } time": [
+        "Genbrugt ${ count } gang",
+        "Genbrugt ${ count } gange"
+      ],
+      "Reused passwords": [
+        "Genbrugte adgangskoder"
       ],
       "Review and share": [
         "Gennemgå og del"
@@ -2072,6 +2401,12 @@
       "Set access level": [
         "Angiv adgangsniveau"
       ],
+      "Set up 2FA for better security": [
+        "Indstil 2FA for bedre sikkerhed"
+      ],
+      "Set up 2FA for more security": [
+        "Indstil 2FA for mere sikkerhed"
+      ],
       "Settings": [
         "Indstillinger"
       ],
@@ -2080,6 +2415,9 @@
       ],
       "Share with": [
         "Del med"
+      ],
+      "Stay safer online": [
+        "Bliv mere sikker online"
       ],
       "Suggestions": [
         "Forslag"
@@ -2101,6 +2439,15 @@
       ],
       "Vault shared with you": [
         "Boks delt med dig"
+      ],
+      "Want to learn more?": [
+        "Vil du vide mere?"
+      ],
+      "Weak password": [
+        "Svag adgangskode"
+      ],
+      "Weak passwords": [
+        "Svage adgangskoder"
       ],
       "What is an alias?": [
         "Hvad er et alias?"
@@ -2175,6 +2522,9 @@
       "Duplicate email addresses.": [
         "Dubletter af e-mailadresser."
       ],
+      "Email is required": [
+        "E-mail er påkrævet"
+      ],
       "Empty note": [
         "Tom note"
       ],
@@ -2184,8 +2534,17 @@
       "Expiration Date is not in the format MM/YY": [
         "Udløbsdatoen er ikke i formatet MM/ÅÅ"
       ],
+      "Failed to load breaches.": [
+        "Kunne ikke indlæse databrud."
+      ],
       "Invalid alias prefix": [
         "Ugyldigt alias-præfiks"
+      ],
+      "Invalid code": [
+        "Ugyldig kode"
+      ],
+      "Invalid email": [
+        "Ugyldig e-mail"
       ],
       "Invalid email addresses.": [
         "Ugyldige e-mailadresser."
@@ -2248,6 +2607,9 @@
       "The alias prefix cannot be longer than 40 characters": [
         "Alias-præfikset må højest være 40 tegn langt."
       ],
+      "This email address will no longer be monitored for data breaches.": [
+        "Denne e-mailadresse vil ikke længere blive monitoreret for databrud."
+      ],
       "Title is required": [
         "Titel er påkrævet"
       ],
@@ -2265,6 +2627,9 @@
       ],
       "Vault name is required": [
         "Navn på boks er påkrævet"
+      ],
+      "Verification code is required": [
+        "Bekræftelseskode er påkrævet."
       ],
       "You cannot create more vaults than your subscription allows.": [
         "Du kan ikke oprette flere bokse, end dit abonnement tillader."

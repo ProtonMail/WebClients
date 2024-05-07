@@ -599,6 +599,9 @@
       "label emails as": [
         "Nachrichten folgender Kategorie zuordnen"
       ],
+      "Later": [
+        "Später"
+      ],
       "Leave": [
         "Verlassen"
       ],
@@ -1316,8 +1319,14 @@
       ]
     },
     "app-switcher": {
+      "Keep your schedule private": [
+        "Halte deinen Terminplan privat"
+      ],
       "Protect your passwords and identity": [
         "Schütze deine Passwörter und Identität"
+      ],
+      "Secure your communications": [
+        "Sichere deine Kommunikation"
       ]
     },
     "Apps dropdown": {
@@ -3296,12 +3305,6 @@
       "Missing feature(s)": [
         "Fehlende Funktion(en)"
       ],
-      "My reason isn't listed, please comment": [
-        "Mein Grund ist nicht aufgeführt (bitte beschreibe das Problem)"
-      ],
-      "Streaming service unsupported": [
-        "Streaming-Dienst wird nicht unterstützt"
-      ],
       "Subscription is too expensive": [
         "Das Abonnement ist zu teuer"
       ],
@@ -3334,6 +3337,40 @@
       ],
       "Secure cloud storage and file sharing that protects your data": [
         "Sichere Cloud-Speicherung und Dateifreigabe zum Schutz deiner Daten"
+      ]
+    },
+    "drivePlus2024: Action": {
+      "Get the deal": [
+        "Sichere dir das Angebot"
+      ],
+      "Special Offer": [
+        "Sonderangebot"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Erweiterter Versionsverlauf"
+      ],
+      "Priority support": [
+        "Priorisierter Support"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Verlängert sich zu ${ renewablePrice }, jederzeit kündbar"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "im ersten Monat"
+      ],
+      "Limited-time offer": [
+        "Zeitlich begrenztes Angebot"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Hol dir ${ planName } für nur ${ planPrice }"
       ]
     },
     "Duration": {
@@ -4279,6 +4316,9 @@
       ],
       "You have reached the contacts limit for your account": [
         "Du hast das Kontaktlimit für dein Konto erreicht."
+      ],
+      "You have reached the maximum number of calendars.": [
+        "Du hast die maximale Anzahl an Kalendern erreicht."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Alle Adressen in deinem Abonnement werden bereits verwendet. Bitte wechseln dein Abonnement, um eine neue Adresse hinzuzufügen."
@@ -7280,9 +7320,6 @@
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Bitte beachte, dass nach dem Klicken auf die Schaltfläche „Bestätigen“ auf deinem Konto noch ${ creditsRemaining } Guthaben verbleibt."
-      ],
-      "Please provide an email address in case we need to contact you.": [
-        "Bitte gib eine E‐Mail‐Adresse an, falls wir dich kontaktieren müssen."
       ],
       "Please select the folders you would like to import:": [
         "Bitte die zu importierenden Ordner auswählen:"
@@ -11872,9 +11909,6 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Check out ${ appName } features": [
-        "Sieh dir die Funktionen von ${ appName } an"
-      ],
       "Continue": [
         "Fortfahren"
       ],
@@ -11965,15 +11999,6 @@
       "${ PASS_APP_NAME } is available as a browser extension on the Chrome Web Store.": [
         "${ PASS_APP_NAME } ist als Browser-Erweiterung im Chrome Web Store verfügbar."
       ],
-      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption.": [
-        "${ PASS_APP_NAME } schützt deine Passwörter und deine Identität mit einer strengen Ende-zu-Ende-Verschlüsselung."
-      ],
-      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. To add premium features of ${ PASS_APP_NAME_2 } to your current subscription, we suggest upgrading to the ${ upsellPlanName } plan.": [
-        "${ PASS_APP_NAME } schützt deine Passwörter und deine Identität mit einer strengen Ende-zu-Ende-Verschlüsselung. Um die Premium-Funktionen von ${ PASS_APP_NAME_2 } zu deinem aktuellen Abonnement hinzuzufügen, empfehlen wir ein Upgrade auf ${ upsellPlanName }."
-      ],
-      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. Your current plan already gives you access to premium ${ PASS_APP_NAME_2 } features — no need to purchase again.": [
-        "${ PASS_APP_NAME } schützt deine Passwörter und deine Identität mit einer strengen Ende-zu-Ende-Verschlüsselung. Dein aktuelles Abonnement gibt dir bereits Zugang zu den Premium-Funktionen von ${ PASS_APP_NAME_2 } - du musst nichts erneut kaufen."
-      ],
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } pro Monat"
       ],
@@ -12015,9 +12040,6 @@
       ],
       "Current plan": [
         "Aktuelles Abonnement"
-      ],
-      "Discover ${ PASS_APP_NAME },${ br }our new encrypted password manager": [
-        "Entdecke ${ PASS_APP_NAME },${ br }unseren neuen verschlüsselten Passwortmanager"
       ],
       "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
         "Lade die entsprechenden Apps und Erweiterungen herunter und installiere sie, um ${ PASS_APP_NAME } zu verwenden."
@@ -12072,9 +12094,6 @@
       ],
       "Get the security and features your business needs": [
         "Hol dir die Sicherheit und die Funktionen, die dein Unternehmen braucht"
-      ],
-      "Hide-my-email aliases protect your email from data breaches": [
-        "Hide-my-email-Aliasse schützen deine E-Mails vor Datenpannen"
       ],
       "I understand that if I lose my recovery details, I may permanently lose access to my account.": [
         "Ich verstehe, dass ich bei Verlust meiner Wiederherstellungsdaten den Zugang zu meinem Konto dauerhaft verlieren kann."
@@ -13845,6 +13864,9 @@
       "Unlimited folders, labels and filters": [
         "Unbegrenzte Anzahl von Ordnern, Kategorien und Filtern"
       ],
+      "Watch the interview": [
+        "Schau dir das Interview an"
+      ],
       "When you cancel, you will lose access to": [
         "Wenn du kündigst, verlierst du den Zugang zu"
       ],
@@ -13879,6 +13901,9 @@
     "subscription reminder": {
       "15 GB storage": [
         "15 GB Speicherplatz"
+      ],
+      "and 15 more premium features": [
+        "und 15 weitere Premium-Funktionen"
       ],
       "Automatic email forwarding ${ strongText }": [
         "Automatische E-Mail-Weiterleitung ${ strongText }"
@@ -14491,6 +14516,9 @@
       ],
       "Billing cycle": [
         "Abrechnungszeitraum"
+      ],
+      "Block trackers and malware": [
+        "Tracker und Schadsoftware blockieren"
       ],
       "Bridge for ${ platform }": [
         "Bridge für ${ platform }"
@@ -15854,6 +15882,9 @@
       ],
       "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
         "Das Abonnement erneuert sich automatisch alle 3 Monate. Dein nächstes Abrechnungsdatum ist in drei Monaten."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Der speziell ermäßigte Preis von ${ priceWithDiscount } ist für den ersten Monat gültig. Danach wird das Abonnement automatisch jeden Monat zum Preis von ${ renewPrice } verlängert. Du kannst jederzeit kündigen."
       ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Du erhältst dann alle 12 Monate eine Rechnung über ${ renewPrice }."

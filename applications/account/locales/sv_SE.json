@@ -527,6 +527,9 @@
       "Go to label": [
         "Gå till etikett"
       ],
+      "Go to settings": [
+        "Gå till inställningar"
+      ],
       "Got it": [
         "Förstått"
       ],
@@ -598,6 +601,9 @@
       ],
       "label emails as": [
         "märk e-postmeddelanden som"
+      ],
+      "Later": [
+        "Senare"
       ],
       "Leave": [
         "Lämna"
@@ -3304,17 +3310,32 @@
       "Bugs or quality issue": [
         "Buggar eller kvalitetsproblem"
       ],
+      "I do not wish to share": [
+        "Jag vill inte dela"
+      ],
+      "I found a cheaper VPN": [
+        "Jag hittade ett billigare VPN"
+      ],
+      "I found a VPN with better features": [
+        "Jag hittade ett VPN med bättre funktioner"
+      ],
+      "I have not managed to connect": [
+        "Jag har inte lyckats att ansluta"
+      ],
+      "I only needed a VPN short-term": [
+        "Jag behövde bara ett VPN kortsiktigt"
+      ],
       "I use a different ${ BRAND_NAME } account": [
         "Jag använder ett annat ${ BRAND_NAME }-konto"
+      ],
+      "It doesn't do what I need": [
+        "Det gör inte vad jag behöver"
       ],
       "Missing feature(s)": [
         "Saknade funktion(er)"
       ],
-      "My reason isn't listed, please comment": [
-        "Min anledning är inte listad, kommentera"
-      ],
-      "Streaming service unsupported": [
-        "Streamingtjänst stöds inte"
+      "Other reason (please comment)": [
+        "Annan anledning (kommentera gärna)"
       ],
       "Subscription is too expensive": [
         "Prenumeration är för dyrt"
@@ -3324,6 +3345,9 @@
       ],
       "Temporary need, may come back in the future": [
         "Tillfälligt behov, kan komma tillbaka i framtiden"
+      ],
+      "The VPN is too slow": [
+        "VPN är för långsamt"
       ]
     },
     "Downgrade modal exit survey title": {
@@ -3348,6 +3372,40 @@
       ],
       "Secure cloud storage and file sharing that protects your data": [
         "Säker molnlagring och fildelning som skyddar din data"
+      ]
+    },
+    "drivePlus2024: Action": {
+      "Get the deal": [
+        "Ta del av erbjudandet"
+      ],
+      "Special Offer": [
+        "Specialerbjudande"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Utökad versionshistorik"
+      ],
+      "Priority support": [
+        "Prioriterad support"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Förnyas med ${ renewablePrice }, avbryt när som helst"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "för första månaden"
+      ],
+      "Limited-time offer": [
+        "Tidsbegränsat erbjudande"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Skaffa ${ planName } för endast ${ planPrice }"
       ]
     },
     "Duration": {
@@ -6427,6 +6485,9 @@
       "Blocks senders from seeing if and when you opened a message.": [
         "Blockerar avsändare från att se om och när du öppnade ett meddelande."
       ],
+      "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
+        "Förstärk din organisations varumärkesidentitet och skapa en mer konsekvent upplevelse online för dina användare."
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Genom att nedgradera till ett gratiskonto kommer du permanent att förlora dessa fördelar, även om du uppgraderar igen i framtiden."
       ],
@@ -7318,9 +7379,6 @@
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Observera att när du klickar på knappen ”Bekräfta” kommer ditt konto att ha ${ creditsRemaining } krediter kvar."
       ],
-      "Please provide an email address in case we need to contact you.": [
-        "Ange en e-postadress om vi behöver kontakta dig."
-      ],
       "Please select the folders you would like to import:": [
         "Välj mapparna du vill importera:"
       ],
@@ -7630,6 +7688,9 @@
       ],
       "The credentials from your Identity Provider will be deleted.": [
         "Inloggningsuppgifterna från din identitetsleverantör kommer att tas bort."
+      ],
+      "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
+        "”Dark web” är en dold del av Internet där stulen personlig information, som identiteter, kan köpas och säljas."
       ],
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "Länken för e-postverifiering har löpt ut. Logga in för att skicka en verifieringslänk igen."
@@ -8266,6 +8327,9 @@
       ],
       "You won’t be able to recover locked data using your downloaded recovery files.": [
         "Du kommer inte kunna återställa låsta data med dina nedladdade återställningsfiler."
+      ],
+      "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
+        "Du kommer inte att kunna återställa låsta data med dina nedladdade återställningsfiler. Detta kommer också att inaktivera enhetsbaserad återställning."
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
         "Ditt ${ BRAND_NAME }-konto är associerad med ${ externalEmailAddress }."
@@ -10787,6 +10851,9 @@
       "Organize items with multiple vaults": [
         "Organisera objekt med flera valv"
       ],
+      "Pass Monitor - premium features": [
+        "Pass Monitor - premiumfunktioner"
+      ],
       "Passkeys supported": [
         "Passkeys stöds"
       ],
@@ -10872,6 +10939,9 @@
       ],
       "Unlimited devices": [
         "Obegränsat antal enheter"
+      ],
+      "Unlimited devices and aliases": [
+        "Obegränsat antal enheter och alias"
       ],
       "Unlimited filters": [
         "Obegränsade filter"
@@ -11422,6 +11492,12 @@
       "An external address cannot be default": [
         "En extern adress kan inte vara standard"
       ],
+      "Dark Web Monitoring has been disabled": [
+        "Övervakning av ”Dark web” har inaktiverats"
+      ],
+      "Dark Web Monitoring has been enabled": [
+        "Övervakning av ”Dark web” har aktiverats"
+      ],
       "Invalid code": [
         "Ogiltig kod"
       ],
@@ -11913,9 +11989,6 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Check out ${ appName } features": [
-        "Kolla in ${ appName }-funktioner"
-      ],
       "Continue": [
         "Fortsätt"
       ],
@@ -12006,15 +12079,6 @@
       "${ PASS_APP_NAME } is available as a browser extension on the Chrome Web Store.": [
         "${ PASS_APP_NAME } är tillgängligt som ett webbläsartillägg på Chrome Web Store."
       ],
-      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption.": [
-        "${ PASS_APP_NAME } håller dina lösenord och identitet säkra med rigorös end-to-end-kryptering."
-      ],
-      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. To add premium features of ${ PASS_APP_NAME_2 } to your current subscription, we suggest upgrading to the ${ upsellPlanName } plan.": [
-        "${ PASS_APP_NAME } håller dina lösenord och identitet säkra med rigorös end-to-end-kryptering. För att lägga till premiumfunktioner för ${ PASS_APP_NAME_2 } till din nuvarande prenumeration, föreslår vi att du uppgraderar till ${ upsellPlanName }-paketet."
-      ],
-      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. Your current plan already gives you access to premium ${ PASS_APP_NAME_2 } features — no need to purchase again.": [
-        "${ PASS_APP_NAME } håller dina lösenord och identitet säkra med rigorös end-to-end-kryptering. Ditt nuvarande paket ger dig redan åtkomst till premiumfunktioner för ${ PASS_APP_NAME_2 } – du behöver inte köpa igen."
-      ],
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } per månad"
       ],
@@ -12029,6 +12093,9 @@
       ],
       "Advanced protection that goes beyond industry standards": [
         "Avancerat skydd som går utöver branschstandarder"
+      ],
+      "Aliases for email protection from breaches": [
+        "Alias för e-postskydd mot intrång"
       ],
       "All premium ${ BRAND_NAME } services.": [
         "Alla premiumtjänster för ${ BRAND_NAME }."
@@ -12056,9 +12123,6 @@
       ],
       "Current plan": [
         "Nuvarande paket"
-      ],
-      "Discover ${ PASS_APP_NAME },${ br }our new encrypted password manager": [
-        "Upptäck ${ PASS_APP_NAME },${ br }vår nya krypterade lösenordshanterare"
       ],
       "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
         "Ladda ner och installera relevanta appar och tillägg för att börja använda ${ PASS_APP_NAME }"
@@ -12113,9 +12177,6 @@
       ],
       "Get the security and features your business needs": [
         "Skaffa den säkerhet och de funktioner som ditt företag behöver"
-      ],
-      "Hide-my-email aliases protect your email from data breaches": [
-        "Hide-my-email-alias skyddar din e-post från dataintrång"
       ],
       "I understand that if I lose my recovery details, I may permanently lose access to my account.": [
         "Jag förstår att om jag förlorar mina återställningsuppgifter kan jag permanent förlora åtkomsten till mitt konto."
@@ -12182,6 +12243,19 @@
       ],
       "Save your recovery kit to continue": [
         "Spara ditt återställningskit för att fortsätta"
+      ],
+      "Secure sharing with ${ n } vault": [
+        "Säker delning med ${ n } valv",
+        "Säker delning med ${ n } valv"
+      ],
+      "Secure sharing with multiple vaults": [
+        "Säker delning med flera valv"
+      ],
+      "Secure vault sharing": [
+        "Säker valvdelning"
+      ],
+      "Secured by end-to-end encryption": [
+        "Säkrad med end-to-end-kryptering"
       ],
       "Setting up your organization": [
         "Ställer in din organisation"
@@ -14418,6 +14492,9 @@
       "Activate user": [
         "Aktivera användare"
       ],
+      "Add a custom logo": [
+        "Lägg till en anpassad logga"
+      ],
       "Add address": [
         "Lägg till adress"
       ],
@@ -15382,6 +15459,9 @@
       ],
       "What is an alias?": [
         "Vad är ett alias?"
+      ],
+      "What is the dark web?": [
+        "Vad är ”Dark web”?"
       ],
       "What would you like to import?": [
         "Vad vill du importera?"

@@ -361,6 +361,9 @@
       "Download ${ attachmentName }": [
         "Descarregar ${ attachmentName }"
       ],
+      "Download Desktop App": [
+        "Descarregueu l'aplicació d'escriptori"
+      ],
       "Download now": [
         "Descarrega"
       ],
@@ -478,6 +481,9 @@
       "Go to previous page": [
         "Ves a la pàgina anterior"
       ],
+      "Go to settings": [
+        "Anar a preferències"
+      ],
       "Go to SimpleLogin": [
         "Ves a SimpleLogin"
       ],
@@ -583,6 +589,9 @@
       ],
       "label emails as": [
         "etiquetar correus electrònics com"
+      ],
+      "Later": [
+        "Més tard"
       ],
       "Later this week": [
         "Més tard aquesta setmana"
@@ -1124,10 +1133,6 @@
       "Trust": [
         "De confiança"
       ],
-      "Trust key": [
-        "Clau de confiança",
-        "Claus de confiança"
-      ],
       "Trust public key": [
         "Confia en la clau pública"
       ],
@@ -1411,11 +1416,6 @@
       ],
       "New email": [
         "Correu nou"
-      ]
-    },
-    "App logo": {
-      "Download ${ MAIL_APP_NAME } desktop application": [
-        "Descarregueu l'aplicació d'escriptori ${ MAIL_APP_NAME }"
       ]
     },
     "Apps dropdown": {
@@ -3335,12 +3335,6 @@
       "Missing feature(s)": [
         "Característiques que falten"
       ],
-      "My reason isn't listed, please comment": [
-        "La meva raó no es troba a la llista (deixeu-nos un comentari)."
-      ],
-      "Streaming service unsupported": [
-        "Servei de reproducció en línia no admès"
-      ],
       "Subscription is too expensive": [
         "La subscripció és massa cara"
       ],
@@ -3359,6 +3353,40 @@
     "Download attachments": {
       "Download all": [
         "Desa tot"
+      ]
+    },
+    "drivePlus2024: Action": {
+      "Get the deal": [
+        "Aconsegueixi l'oferta"
+      ],
+      "Special Offer": [
+        "Oferta especial"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Historial de versions ampliat"
+      ],
+      "Priority support": [
+        "Suport prioritari"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Es renova per ${ renewablePrice } i ho podeu cancel·lar en qualsevol moment"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "el primer mes"
+      ],
+      "Limited-time offer": [
+        "Oferta per temps limitat"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Obteniu ${ planName } per tan sols ${ planPrice }"
       ]
     },
     "Email body for description (description part)": {
@@ -4005,6 +4033,9 @@
       ],
       "You have reached the contacts limit for your account": [
         "Heu arribat al límit de contactes per al vostre compte."
+      ],
+      "You have reached the maximum number of calendars.": [
+        "Heu arribat al nombre màxim de calendaris."
       ],
       "You must set a name": [
         "Heu d'establir un nom"
@@ -5585,6 +5616,9 @@
       "Body: ": [
         "Cos: "
       ],
+      "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
+        "Potenciï la identitat de marca de la seva organització i creï una experiència en línia més coherent per als seus usuaris."
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Si baixeu a un pla gratuït, perdreu per sempre aquests avantatges, fins i tot si en tornareu a actualitzar."
       ],
@@ -5862,9 +5896,6 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "Per obtenir més resultats de cerca, proveu de cercar aquesta paraula clau al contingut dels vostres missatges de correu electrònic."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Reenvieu els missatges entrants d'un altre compte a la vostra safata d'entrada segura de ${ MAIL_APP_NAME }."
-      ],
       "From": [
         "De"
       ],
@@ -5929,9 +5960,6 @@
       ],
       "Import mailbox": [
         "Importar bústia de correu"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Importeu els vostres correus electrònics, calendaris i contactes d'un altre servei a ${ BRAND_NAME }."
       ],
       "Important note": [
         "Nota important"
@@ -8718,6 +8746,9 @@
       "Organize items with multiple vaults": [
         "Organitzeu els elements amb múltiples caixes fortes"
       ],
+      "Passkeys supported": [
+        "Claus de pas suportades"
+      ],
       "Password-protected Emails": [
         "Correus protegits amb contrasenya"
       ],
@@ -10368,14 +10399,8 @@
       ]
     },
     "Spotlight": {
-      "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
-        "Inicieu còmodament ${ MAIL_APP_NAME } des de l'escriptori."
-      ],
       "Email tracking protection": [
         "Protecció de seguiment de correu electrònic"
-      ],
-      "Get the desktop app": [
-        "Obteniu l'aplicació d'escriptori"
       ],
       "Get up to ${ credits } in credits.": [
         "Obteniu fins a ${ credits } en crèdits."
@@ -11075,6 +11100,9 @@
       ],
       "Action all messages": [
         "Aplica a tots els missatges"
+      ],
+      "Add a custom logo": [
+        "Afegeixi un logotip personalitzat"
       ],
       "Add contact group name": [
         "Afegeix el nom del grup de contactes"
@@ -11933,6 +11961,9 @@
     "vpn_2024: renew": {
       "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
         "La subscripció es renova automàticament cada tres mesos. La següent data de facturació és d'aquí a tres mesos."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant el primer mes. Aleshores, es renovarà automàticament a ${ renewPrice } cada mes. Pot cancel·lar-ho en qualsevol moment."
       ]
     },
     "vpn_2step: feature": {

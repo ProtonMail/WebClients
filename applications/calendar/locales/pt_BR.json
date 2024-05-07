@@ -297,6 +297,9 @@
       "Go to panel ${ index }": [
         "Ir para o painel ${ index }"
       ],
+      "Go to settings": [
+        "Ir para configurações"
+      ],
       "Got it": [
         "Entendi"
       ],
@@ -362,6 +365,9 @@
       ],
       "Keep my Plus subscription": [
         "Manter minha assinatura Plus"
+      ],
+      "Later": [
+        "Mais tarde"
       ],
       "Let's talk": [
         "Vamos conversar"
@@ -447,11 +453,11 @@
       "Not now": [
         "Agora não"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Abrir configurações do ${ CALENDAR_APP_NAME }"
@@ -853,11 +859,6 @@
         "Ao sair agora, você perderá o seu evento."
       ]
     },
-    "App logo": {
-      "Download ${ MAIL_APP_NAME } desktop application": [
-        "Baixe o aplicativo para computador do ${ MAIL_APP_NAME }"
-      ]
-    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "Aplicativos da ${ BRAND_NAME }"
@@ -886,6 +887,11 @@
     "Attendee role": {
       "Optional": [
         "Opcional"
+      ]
+    },
+    "Badge": {
+      "New!": [
+        "Novo!"
       ]
     },
     "bf2023: Action": {
@@ -2472,12 +2478,6 @@
       "Missing feature(s)": [
         "Funções ausentes"
       ],
-      "My reason isn't listed, please comment": [
-        "Meu motivo não está listado. Comente."
-      ],
-      "Streaming service unsupported": [
-        "Serviço de streaming não suportado"
-      ],
       "Subscription is too expensive": [
         "A assinatura é muito cara"
       ],
@@ -2491,6 +2491,40 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Ajude-nos a melhorar!"
+      ]
+    },
+    "drivePlus2024: Action": {
+      "Get the deal": [
+        "Obtenha a oferta"
+      ],
+      "Special Offer": [
+        "Oferta especial"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Histórico de versão estendido"
+      ],
+      "Priority support": [
+        "Suporte prioritário"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Se renova por ${ renewablePrice }, cancele a qualquer momento"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "pelo primeiro mês"
+      ],
+      "Limited-time offer": [
+        "Oferta por tempo limitado"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Obtenha ${ planName } por apenas ${ planPrice }"
       ]
     },
     "Dropdown action icon tooltip": {
@@ -3091,6 +3125,9 @@
       ],
       "You have reached the contacts limit for your account": [
         "Você atingiu o limite de contatos da sua conta"
+      ],
+      "You have reached the maximum number of calendars.": [
+        "Você atingiu o número máximo de calendários."
       ],
       "You must set a name": [
         "Você deve especificar um nome"
@@ -4182,6 +4219,9 @@
       "Billing cycle: ${ text }": [
         "Ciclo de faturamento: ${ text }"
       ],
+      "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
+        "Aumente a identidade de marca da sua organização e crie uma experiência online mais consistente para os seus usuários."
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ao fazer o downgrade para um plano gratuito, você perderá permanentemente esses benefícios, mesmo que você faça o upgrade novamente no futuro."
       ],
@@ -4370,9 +4410,6 @@
       "finance": [
         "finança"
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Encaminhe e-mails recebidos de outra conta para sua caixa de entrada segura do ${ MAIL_APP_NAME }."
-      ],
       "Frequency modifications will be lost.": [
         "As modificações de frequência serão perdidas."
       ],
@@ -4412,9 +4449,6 @@
       ],
       "Import mailbox": [
         "Importar Caixa de Entrada"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Importe seus e-mails, calendários e contatos de outro serviço para ${ BRAND_NAME }."
       ],
       "Important note": [
         "Nota importante"
@@ -6341,6 +6375,9 @@
       "Organize items with multiple vaults": [
         "Organize itens com múltiplos cofres"
       ],
+      "Passkeys supported": [
+        "Passkeys suportadas"
+      ],
       "Password-protected Emails": [
         "E-mails protegidos por senha"
       ],
@@ -7960,11 +7997,8 @@
       ]
     },
     "Spotlight": {
-      "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
-        "Inicie ${ MAIL_APP_NAME } com facilidade diretamente do seu computador"
-      ],
-      "Get the desktop app": [
-        "Obter o aplicativo para computador"
+      "Custom event colors": [
+        "Cores de evento personalizadas"
       ],
       "Get up to ${ credits } in credits.": [
         "Receba até ${ credits } em créditos."
@@ -8551,6 +8585,9 @@
       ],
       "Account security": [
         "Segurança da conta"
+      ],
+      "Add a custom logo": [
+        "Adicionar um logotipo personalizado"
       ],
       "Add another notification to remind you of this event": [
         "Adicione outra notificação para lembrá-lo deste evento"
@@ -9208,6 +9245,9 @@
       ],
       "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
         "A assinatura é renovada automaticamente a cada 3 meses. Sua próxima data de faturamento será em 3 meses."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "O preço com desconto especial de ${ priceWithDiscount } é válido no primeiro mês. Em seguida, ele será renovado automaticamente pelo preço de ${ renewPrice } todo mês. Você pode cancelar a qualquer momento."
       ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Você será cobrado a cada 12 meses no valor de ${ renewPrice }."

@@ -215,6 +215,9 @@
       "Get mobile apps": [
         "모바일 앱 다운로드"
       ],
+      "Get Pass Plus": [
+        "Pass Plus 구매하기"
+      ],
       "Help us improve": [
         "저희를 도와주세요"
       ],
@@ -511,6 +514,9 @@
       ]
     },
     "Description": {
+      "${ total } other login uses the same password": [
+        "${ total }개의 다른 로그인이 같은 비밀번호를 사용하고 있습니다"
+      ],
       "A checked box means the feature is disabled.": [
         "해당 체크박스가 이 기능이 비활성화 상태임을 의미합니다."
       ],
@@ -519,6 +525,9 @@
       ],
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
         "${ PASS_SHORT_APP_NAME } (자동 완성, 자동 제안, 자동 저장)의 특정 자동 기능을 실행해서는 안 되는 도메인 목록.${ infoText }"
+      ],
+      "This account is vulnerable, visit the service and change your password.": [
+        "이 계정은 취약합니다. 서비스를 방문하여 비밀번호를 변경하십시오."
       ]
     },
     "Error": {
@@ -612,6 +621,12 @@
       "Failed resending invite.": [
         "초대 재전송 실패."
       ],
+      "Failed to add email address": [
+        "이메일 주소를 추가하지 못했습니다"
+      ],
+      "Failed to delete email address from monitoring": [
+        "모니터링에서 이메일 주소를 삭제하지 못했습니다"
+      ],
       "Failed to delete selected items": [
         "선택한 항목을 지우기 실패했습니다."
       ],
@@ -620,6 +635,12 @@
       ],
       "Failed to edit user's access.": [
         "사용자 접근 수정 실패."
+      ],
+      "Failed to load breaches for this address": [
+        "이 주소의 침해를 불러오지 못했습니다"
+      ],
+      "Failed to load breaches for this email alias": [
+        "이 별칭의 침해를 불러오지 못했습니다"
       ],
       "Failed to load item history": [
         "항목 내역 불러오기 실패"
@@ -639,6 +660,12 @@
       "Failed to remove user's access.": [
         "사용자 접근 삭제 실패."
       ],
+      "Failed to resend verification for custom email": [
+        "커스텀 이메일에 대한 확인을 다시 전송하지 못했습니다"
+      ],
+      "Failed to resolve breaches for this address": [
+        "이 주소에 대한 침해를 해결하지 못했습니다"
+      ],
       "Failed to restore items from trash": [
         "휴지통 내의 항목 복구 실패"
       ],
@@ -648,8 +675,20 @@
       "Failed to unpin item": [
         "항목 고정 해제 실패"
       ],
+      "Failed to update monitoring settings": [
+        "모니터링 설정을 업데이트하지 못했습니다"
+      ],
+      "Failed to verify email address": [
+        "이메일 주소를 확인하지 못했습니다"
+      ],
       "Failed updating ${ PROTON_SENTINEL_NAME } setting": [
         "${ PROTON_SENTINEL_NAME } 설정 업데이트에 실패했습니다."
+      ],
+      "Failed updating monitor flag of the item": [
+        "항목의 모니터링 플래그를 업데이트하지 못했습니다"
+      ],
+      "Failed updating monitoring status for this email address": [
+        "이 이메일 주소에 대한 모니터링 상태를 업데이트하지 못했습니다"
       ],
       "File could not be parsed": [
         "파일을 분석할 수 없음."
@@ -919,6 +958,9 @@
       ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "별명 \"${ item.aliasEmail }\" 이(가) 휴지통으로 이동됨 - 사용자의 메일함에 대한 모든 포워딩이 중단됩니다."
+      ],
+      "All breaches for this address were resolved": [
+        "이 주소의 모든 침해가 해결되었습니다"
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "\"${ payload.content.name }\" 내의 모든 항목을 성공적으로 이동했습니다."
@@ -1488,6 +1530,9 @@
       ],
       "${ config.options.wordCount } word": [
         "${ config.options.wordCount }단어"
+      ],
+      "${ PASS_SHORT_APP_NAME } monitor": [
+        "${ PASS_SHORT_APP_NAME } 모니터링"
       ],
       "1 hour": [
         "1시간"

@@ -576,7 +576,7 @@
         "Bekræft"
       ],
       "Verify account": [
-        "Verificer konto"
+        "Bekræft konto"
       ],
       "Verify code": [
         "Verificér kode"
@@ -705,6 +705,23 @@
         "Dette vil afbryde forbindelsen til alle routere og klienter, der bruger dette certifikat."
       ]
     },
+    "app-switcher": {
+      "Browse the web privately and block ads": [
+        "Surf privat på nettet og bloker reklamer"
+      ],
+      "Keep your schedule private": [
+        "Hold dit skema privat"
+      ],
+      "Protect your passwords and identity": [
+        "Beskyt dine adgangskoder og identitet"
+      ],
+      "Safeguard your files and photos": [
+        "Pas på dine filer og fotos"
+      ],
+      "Secure your communications": [
+        "Beskyt din kommunikation"
+      ]
+    },
     "bf2023: Action": {
       "**Add our encrypted password manager** for only ${ price }": [
         "**Tilføj vores krypterede adgangskodeadministrator** for kun ${ price }"
@@ -731,7 +748,7 @@
         "Fjern ${ PASS_APP_NAME }"
       ],
       "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
-        "Tegn et abonnement på 15 måneder og få vores **krypteret adgangskodeadministrator** for kun ${ priceNoSuffix } ekstra pr. måned!"
+        "Tegn et abonnement på 15 måneder og få vores **krypterede adgangskodeadministrator** for kun ${ priceNoSuffix } ekstra pr. måned!"
       ]
     },
     "bf2023: Deal details": {
@@ -763,7 +780,7 @@
         "Streaming ved høj hastighed"
       ],
       "Premium Password Manager": [
-        "Premium Adgangskodeadministrator"
+        "Premium adgangskodeadministrator"
       ]
     },
     "bf2023: Footer": {
@@ -932,7 +949,7 @@
         "Mail-problem"
       ],
       "Manual setup problem": [
-        "Problem ifm. manual opsætning"
+        "Problem med manuel opsætning"
       ],
       "Other": [
         "Andet"
@@ -1890,6 +1907,9 @@
       ]
     },
     "Delete address prompt": {
+      "Once deleted, this address can't be used again by anyone else.": [
+        "Så snart adressen er slettet, kan den ikke bruges igen af andre."
+      ],
       "You can only delete 1 address per year.": [
         "Du kan kun slette 1 adresse om året."
       ]
@@ -1897,6 +1917,9 @@
     "Delete address tooltip": {
       "You can only delete 1 address per year": [
         "Du kan kun slette 1 adresse om året"
+      ],
+      "You've reached the limit of address deletions for this user.": [
+        "Du har nået grænsen for adressesletninger for denne bruger."
       ]
     },
     "Delinquent modal title": {
@@ -1913,17 +1936,32 @@
       "Bugs or quality issue": [
         "Fejl eller kvalitetsproblem"
       ],
+      "I do not wish to share": [
+        "Jeg ønsker ikke at dele"
+      ],
+      "I found a cheaper VPN": [
+        "Jeg fandt en billigere VPN"
+      ],
+      "I found a VPN with better features": [
+        "Jeg fandt en VPN med bedre funktioner"
+      ],
+      "I have not managed to connect": [
+        "Jeg har ikke formået at forbinde"
+      ],
+      "I only needed a VPN short-term": [
+        "Jeg behøvede kun en VPN på kort sigt"
+      ],
       "I use a different ${ BRAND_NAME } account": [
         "Jeg bruger en anden ${ BRAND_NAME }-konto"
+      ],
+      "It doesn't do what I need": [
+        "Den gør ikke det, jeg har brug for"
       ],
       "Missing feature(s)": [
         "Manglende funktion(er)"
       ],
-      "My reason isn't listed, please comment": [
-        "Min begrundelse er ikke anført. Efterlad venligst en kommentar"
-      ],
-      "Streaming service unsupported": [
-        "Streaming-tjeneste understøttes ikke"
+      "Other reason (please comment)": [
+        "Anden årsag (kommenter venligst)"
       ],
       "Subscription is too expensive": [
         "Abonnementet er for dyrt"
@@ -1933,11 +1971,48 @@
       ],
       "Temporary need, may come back in the future": [
         "Midlertidigt behov, komme måske tilbage engang i fremtiden"
+      ],
+      "The VPN is too slow": [
+        "VPN er for langsom"
       ]
     },
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Hjælp os med at blive bedre!"
+      ]
+    },
+    "drivePlus2024: Action": {
+      "Get the deal": [
+        "Få tilbuddet"
+      ],
+      "Special Offer": [
+        "Særtilbud"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Udvidet versionshistorik"
+      ],
+      "Priority support": [
+        "Prioriteret support"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Fornyes til ${ renewablePrice }, annuller når som helst"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "den første måned"
+      ],
+      "Limited-time offer": [
+        "Tidsbegrænset tilbud"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Få ${ planName } for kun ${ planPrice }"
       ]
     },
     "Email verification": {
@@ -2017,6 +2092,9 @@
       "Error connecting to the Bitcoin API.": [
         "Fejl under oprettelse af forbindelse til Bitcoin-API."
       ],
+      "Failed to process the logo": [
+        "Logoet blev ikke behandlet"
+      ],
       "File too large. Your logo must be 30 KB or smaller.": [
         "Filen er for stor. Logoet skal være 30 KB eller mindre."
       ],
@@ -2031,6 +2109,9 @@
       ],
       "Impossible to rename the gateway": [
         "Ikke muligt at omdøbe gatewayen"
+      ],
+      "Incorrect file type. Upload a file in PNG or JPEG format.": [
+        "Forkert filtype. Fremsæt en fil i PNG- eller JPEG-format."
       ],
       "Incorrect login credentials. Please try again.": [
         "Forkerte loginoplysninger. Prøv venligst igen."
@@ -2081,7 +2162,7 @@
         "Organisationsnøgle skal være aktiveret for at oprette ikke private brugere"
       ],
       "Passwords do not match": [
-        "Adgangskoder matcher ikke"
+        "Adgangskoder stemmer ikke overens"
       ],
       "Payment process canceled": [
         "Betalingproces annulleret"
@@ -2102,7 +2183,7 @@
         "Sæt et brugerdomæne op, før du tilføjer adresser."
       ],
       "Please configure a custom domain before adding users to your organization.": [
-        "Opsæt et brugerdomæne, inden du tilføjer brugere til din organisation."
+        "Konfigurer et brugerdomæne, inden du tilføjer brugere til din organisation."
       ],
       "Please enable multi-user support before adding users to your organization.": [
         "Aktivér flerbrugerunderstøttelse inden du tilføjer brugere til din organisation."
@@ -2392,7 +2473,7 @@
         "Du er tilmeldt familie-abonnementet."
       ],
       "You need to configure a custom domain before creating a new user.": [
-        "Du skal opsætte et brugerdefineret domæne, før du tilføjer en ny bruger."
+        "Du skal konfigurere et brugerdefineret domæne, før du tilføjer en ny bruger."
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Du er inviteret til at forbinde din ${ BRAND_NAME }-konto til dette gruppe-abonnement og sammen nyde alle ${ BRAND_NAME_TWO } premium funktionerne."
@@ -2907,7 +2988,7 @@
         "Et navn, så du kan fastslå, hvor du bruger den, så du nemt kan tilbagekalde den eller forlænge den senere."
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
-        "Et telefonnummer kan kun bruges til at verificere én ${ BRAND_NAME } konto"
+        "Et telefonnummer kan kun bruges til at bekræfte én ${ BRAND_NAME }-konto"
       ],
       "A user is an account associated with a single username, mailbox, and person": [
         "En bruger er en konto, der er knyttet til et enkelt brugernavn, en enkelt postkasse og en enkelt person"
@@ -2936,6 +3017,9 @@
       "Add server (${ availableAddedCount } available)": [
         "Tilføj server (${ availableAddedCount } tilgængelig)",
         "Tilføje server (${ availableAddedCount } tilgængelige)"
+      ],
+      "Add your name and logo to create a more personalized experience for your organization.": [
+        "Tilføj dit navn og logo for at gøre oplevelsen mere personlig for din organisation."
       ],
       "Adding ${ addedServerCount } gateway server": [
         "Tilføjer ${ addedServerCount } gateway-server",
@@ -2998,7 +3082,7 @@
         "Er du sikker på, at du vil fjerne domænet ${ boldDomain }?"
       ],
       "Ask your organisation admin to setup Gateways.": [
-        "Bed din organisationsadministrator om at opsætte gateways."
+        "Bed din organisationsadministrator om at indstille gateways."
       ],
       "Attention required": [
         "Opmærksomhed påkrævet"
@@ -3097,6 +3181,9 @@
       "Current plan": [
         "Nuværende abonnement"
       ],
+      "Custom branding": [
+        "Tilpasset varemærke"
+      ],
       "Custom email domains": [
         "Brugerdefinerede e-maildomæner"
       ],
@@ -3150,7 +3237,7 @@
         "Nedgradering vil afslutte alle forbindelser til betalte ${ VPN_APP_NAME }-servere."
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
-        "Download din favoritapp i dag og tag dit privatliv med dig overalt."
+        "Hent din yndlingsapp i dag, og tag privatsfæren med dig overalt."
       ],
       "Drop file here to upload": [
         "Træk fil hertil for at uploade"
@@ -3296,6 +3383,12 @@
       "If you wish to combine this account with another one, do NOT delete it.": [
         "Slet IKKE denne konto, hvis du ønsker at kombinere den med en anden."
       ],
+      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
+        "Ved problemer er vi her for at hjælpe. ${ boldPhoneCall } eller ${ boldZoomMeeting } med en af vores supportspecialister, eller åbn en ${ boldLiveChat } for chatsupport."
+      ],
+      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists.": [
+        "Ved problemer er vi her for at hjælpe. ${ boldPhoneCall } eller ${ boldZoomMeeting } med en af vores supportspecialister."
+      ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Vigtigt: Sørg for at du har gemt gendannelseskoderne. Ellers risikerer du at miste adgangen til din konto permanent, hvis du mister din 2FA-enhed."
       ],
@@ -3318,7 +3411,7 @@
         "Installer en Free-server konfigurationsfil for at oprette forbindelse til en bestemt server på en af de tre gratis placeringer."
       ],
       "Install a Secure Core configuration file to benefit from an additional protection against VPN endpoint compromise.": [
-        "Installer en Secure Core opsætningsfil for at få yderligere beskyttelse mpd VPN-endepunktskompromittering."
+        "Installer en Secure Core opsætningsfil for at få yderligere beskyttelse mod VPN-endepunktskompromittering."
       ],
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "Installer en server-konfigurationsfil for at oprette forbindelse til en bestemt server i et land af eget valg."
@@ -3455,6 +3548,9 @@
       "Password copied to clipboard": [
         "Adgangskode kopieret til udklipsholder"
       ],
+      "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
+        "Adgangskoden skal bestå af ${ MIN_PASSWORD_LENGTH } tegn eller mere."
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Betalinger er beskyttet af TLS-kryptering og schweizisk lovgivning om beskyttelse af privatlivets fred."
       ],
@@ -3498,9 +3594,6 @@
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Bemærk at når du klikker på Bekræft-knappen vil din konto have ${ creditsRemaining } kreditter tilbage."
-      ],
-      "Please provide an email address in case we need to contact you.": [
-        "Angiv venligst en e-mailadresse i tilfælde af at vi får brug for at kontakte dig."
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Prøv igen med en anden betalingsmetode, eller kontakt din bank."
@@ -3552,6 +3645,9 @@
       ],
       "Remember to share the user's sign in details with them.": [
         "Husk at dele brugerens login-oplysninger med vedkommende."
+      ],
+      "Request a phone call": [
+        "Anmod om et telefonopkald"
       ],
       "Resend verification email": [
         "Gensend bekræftelsesmail"
@@ -3702,7 +3798,7 @@
         "Bekræftelsesprocessen åbner en ny browserfane. Deaktivér venligst alle aktive pop-up-blokkere."
       ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
-        "Disse konfigurationsfiler lader dig vælge, hvilken ${ VPN_APP_NAME }-server du opretter forbindelse til, når du bruger en tredjeparts-VPN-app eller opsætter en VPN-forbindelse på en router."
+        "Disse konfigurationsfiler lader dig vælge, hvilken ${ VPN_APP_NAME }-server du opretter forbindelse til, når du bruger en tredjeparts-VPN-app eller indstiller en VPN-forbindelse på en router."
       ],
       "These configurations are provided to work with WireGuard routers and official clients.": [
         "Disse konfigurationer er beregnet til at fungere med WireGuard-routere og officielle klienter."
@@ -3845,6 +3941,9 @@
       "Upload your completed CSV file to create accounts": [
         "Upload din udfyldte CSV-fil for at oprette konti"
       ],
+      "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
+        "Fremsæt din organisations logo for at styrke din varemærkeidentitet og give dine brugere en personlig oplevelse."
+      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Brug den bedste server i henhold til den aktuelle belastning og placering: ${ formattedBestServerName }"
       ],
@@ -3876,7 +3975,7 @@
         "Bekræft din identitet med en tidsbaseret engangsadgangskode fra en godkendelsesapp"
       ],
       "Verifying your payment": [
-        "Verificerer din betaling"
+        "Bekræfter din betaling"
       ],
       "Version ${ version }": [
         "Version ${ version }"
@@ -3963,7 +4062,7 @@
         "Hvorfor?"
       ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
-        "Med et Business- eller Enterprise-abonnement kan du købe ${ boldDedicatedServers } til din organisation og opsætte ${ boldGateways } for at kontrollere, hvilke brugere der har adgang til dem."
+        "Med et Business- eller Enterprise-abonnement kan du købe ${ boldDedicatedServers } til din organisation og indstille ${ boldGateways } for at kontrollere, hvilke brugere der har adgang til dem."
       ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Med en krypteret ${ BRAND_NAME }-adresse kan du bruge alle ${ BRAND_NAME }-tjenester"
@@ -4807,7 +4906,7 @@
     "Loading info": {
       "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
         "${ twoFAMembers.length }/${ members.length } af din organisations medlem bruger to-faktor-godkendelse.",
-        "${ twoFAMembers.length }/${ members.length } af din organisations medlemmer bruger to-faktor-godkendelse."
+        "${ twoFAMembers.length }/${ members.length } af din organisations medlemmer bruger totrins-godkendelse."
       ]
     },
     "locked_state_storage_banner: info": {
@@ -4878,6 +4977,9 @@
       ],
       "Limited-time offer, expires April 2 2024": [
         "Tidsbegrænset tilbud, udløber den 2. april 2024"
+      ],
+      "Your subscription will auto-renew on ${ renewTime } at ${ renewablePrice }, cancel anytime": [
+        "Dit abonnement fornys automatisk på ${ renewTime } til ${ renewablePrice }, og kan opsiges når som helst."
       ]
     },
     "mailtrial2024: Title": {
@@ -4940,17 +5042,11 @@
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Glemt dit brugernavn til ${ BRAND_NAME }-konto? Find den ved hjælp af din gendannelses-e-mail eller dit telefonnummer, og få adgang til din ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } og mere."
       ],
-      "Private and secure email, no credit card required": [
-        "Privat og sikker e-mail, intet betalingskort påkrævet"
-      ],
       "Reset your ${ BRAND_NAME } Account password": [
         "Nulstil adgangskoden til din ${ BRAND_NAME }-konto"
       ],
       "Sign in to access your ${ appName } account": [
         "Log ind for at få adgang til din ${ appName }-konto"
-      ],
-      "Try ${ planName } for free with this link": [
-        "Prøv ${ planName } gratis med dette link"
       ]
     },
     "Monetary unit": {
@@ -5256,6 +5352,12 @@
       "Organize items with multiple vaults": [
         "Organiser elementer med flere bokse"
       ],
+      "Pass Monitor - premium features": [
+        "Pass Monitor - eksklusive funktioner"
+      ],
+      "Passkeys supported": [
+        "Adgangsnøgler understøttes"
+      ],
       "Password-protected Emails": [
         "Adgangskodebeskyttede e-mails"
       ],
@@ -5338,6 +5440,9 @@
       ],
       "Unlimited devices": [
         "Ubegrænset antal enheder"
+      ],
+      "Unlimited devices and aliases": [
+        "Ubegrænsede enheder og aliasser"
       ],
       "Unlimited filters": [
         "Ubegrænsede filtre"
@@ -5565,6 +5670,9 @@
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "${ VPN_APP_NAME }: Få adgang til blokeret indhold, og browse privat. Inkluderer ${ serversAndCountries }, højeste VPN-hastigheder, adgang til verdensomspændende streamingtjenester, malware- og reklamer-blokering, hurtige BitTorrent-downloads og meget mere."
       ],
+      "Access ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME } from the convenience of your desktop": [
+        "Tilgå nemt ${ MAIL_APP_NAME } og ${ CALENDAR_APP_NAME } fra dit skrivebord."
+      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Få adgang til indhold på streamingtjenester, herunder Netflix, Disney+ og Prime Video, hvor som helst"
       ],
@@ -5585,6 +5693,9 @@
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "Masseudsendelse af salgsfremmende eller programmatiske e-mails understøttes ikke i øjeblikket. Vi anbefaler, at du bruger en dedikeret e-mailtjenesteudbyder til dette formål."
+      ],
+      "Choose custom times to be reminded about an email or for your message to arrive": [
+        "Vælg tilpassede tidspunkter for påmindelse om en e-mail eller modtagelse af din besked"
       ],
       "Control access to your shared files by adding password protection and link expiration dates": [
         "Kontroller adgang til dine delte filer ved at tilføje adgangskodebeskyttelse og link-udløbsdatoer"
@@ -5678,7 +5789,7 @@
         "Giver det højeste niveau af kontosikkerhedsbeskyttelse og specialsupport"
       ],
       "Quickly set up out-of-office messages": [
-        "Hurtig opsætning af meddelelser til automatisk svar, når du ikke er på kontoret"
+        "Indstil hurtigt meddelelser til automatisk svar, når du ikke er på kontoret"
       ],
       "Quickly transfer your emails, calendars or contacts from any provider": [
         "Overflyt hurtigt dine e-mails, kalendere eller kontakter fra en anden udbyder"
@@ -5702,7 +5813,7 @@
         "Send e-mails til store grupper hurtigt og nemt ved at oprette så mange kontaktgrupper, som du har brug for (Op til 100 kontakter pr. gruppe)"
       ],
       "Set up filters to automatically reply to, sort, and/or label your emails": [
-        "Opsæt filtre til automatisk at besvare, sortere og/eller sætte etiketter på dine e-mails"
+        "Indstil filtre til automatisk at besvare, sortere og/eller sætte etiketter på dine e-mails"
       ],
       "Share your files or folders with anyone by using secure, shareable links": [
         "Del dine filer eller mapper med enhver ved hjælp af sikre, delbare links"
@@ -5937,16 +6048,40 @@
       ]
     },
     "Organization logo upload": {
+      "Avoid overly compressed images.": [
+        "Undgå alt for kompakte billeder."
+      ],
+      "Ensure your logo has padding space around it.": [
+        "Sørg for, at der er plads omkring dit logo."
+      ],
+      "Opt for a PNG image that is a 128x128 pixels for clarity.": [
+        "Vælg et PNG-billede, der er 128x128 pixel for klarhedens skyld."
+      ],
       "Tips on choosing a good logo": [
         "Tips til at vælge et godt logo"
+      ],
+      "Use a graphical icon or image rather than text.": [
+        "Brug et grafisk ikon eller billede frem for tekst."
+      ],
+      "Use a solid background color.": [
+        "Brug en ensfarvet baggrundsfarve."
       ]
     },
     "Organization logo upload modal": {
+      "Drop image file here to upload or": [
+        "Slip billedfilen her for at uploade eller"
+      ],
       "File in PNG or JPEG format": [
         "Fil i PNG eller JPEG format"
       ],
       "File not larger than 30 KB": [
         "Filen er ikke større end 30 KB"
+      ],
+      "Square image of at least 128 pixels": [
+        "Kvadratisk billede på mindst 128 pixels"
+      ],
+      "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
+        "Brugere vil se dit logo i stedet for ${ BRAND_NAME }-ikonet, når de er logget ind på vores webapps."
       ]
     },
     "Pass B2B onboarding spotlight": {
@@ -6037,6 +6172,16 @@
       "Preparing your Recovery Kit": [
         "Forbereder dit gendannelseskit"
       ],
+      "Secure sharing with ${ n } vault": [
+        "Sikker deling med ${ n } boks",
+        "Sikker deling med ${ n } bokse"
+      ],
+      "Secure sharing with multiple vaults": [
+        "Sikker deling med flere bokse"
+      ],
+      "Secure vault sharing": [
+        "Sikker deling af boks"
+      ],
       "Updating your account": [
         "Opdaterer din konto"
       ],
@@ -6047,6 +6192,17 @@
     "pass_signup_2023: Title": {
       "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
         "Alle ${ BRAND_NAME } Plus-tjenester.${ br }Ét nemt abonnement"
+      ]
+    },
+    "password_reset: info": {
+      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **old password**.": [
+        "**Alle dine eksisterende data** (e-mails, events, kontakter, filer, ${ PASS_APP_NAME }-poster osv.) **bliver låst** og kan kun låses op med din **gamle adgangskode**."
+      ],
+      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **recovery phrase** or your **old password**.": [
+        "**Alle dine eksisterende data** (e-mails, begivenheder, kontakter, filer, ${ PASS_APP_NAME }-elementer, etc.) **vil blive låst** og kan kun låses op med din **gendannelsessætning** eller din **gamle adgangskode**."
+      ],
+      "Any **two-factor authentication (2FA)** method on your account will be disabled.": [
+        "Enhver **to-faktor-godkendelse (2FA)** metode på din konto vil blive deaktiveret."
       ]
     },
     "passwordless": {
@@ -6088,6 +6244,9 @@
       ],
       "Reset organization key": [
         "Nulstil organisationsnøglen"
+      ],
+      "The following administrators could not be restored.": [
+        "Følgende administratorer kunne ikke gendannes."
       ],
       "The following administrators will get access to the organization key.": [
         "Følgende administratorer får adgang til organisationsnøglen."
@@ -6146,6 +6305,9 @@
       ],
       "MM/YY": [
         "MM/ÅÅ"
+      ],
+      "Processing payment": [
+        "Behandler betaling"
       ],
       "Timeout exceeded": [
         "Timeout overskredet"
@@ -6216,9 +6378,6 @@
       "e.g. https://idp.example.com/XXXXX": [
         "f.eks. https://idp.example.com/XXXXX"
       ],
-      "Email address": [
-        "E-mail"
-      ],
       "Feedback": [
         "Feedback"
       ],
@@ -6276,8 +6435,8 @@
         "Vælg det antal brugere, du vil inkludere i dit abonnement. Hver ekstra bruger koster ${ price }."
       ],
       "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "Hvis du har brug for mere end ${ maxUsers } konto, bedes du ${ contact } vores salgsteam.",
-        "Hvis du har brug for flere end ${ maxUsers } konti, bedes du ${ contact } vores salgsteam."
+        "Hvis du har brug for mere end ${ maxUsers } brugerkonto, bedes du ${ contact } vores salgsteam.",
+        "Hvis du har brug for mere end ${ maxUsers } brugerkonti, bedes du ${ contact } vores salgsteam."
       ]
     },
     "Price": {
@@ -6310,10 +6469,10 @@
         "Bekræft e-mail til gendannelse?"
       ],
       "Verify with email": [
-        "Verificer med e-mail"
+        "Bekræft med e-mail"
       ],
       "Verifying your email address increases your account security and allows additional options for recovery.": [
-        "Ved at bekræfte din e-mailadresse øger du din kontosikkerhed og giver dig flere muligheder for at genoprette din konto."
+        "Ved at bekræfte din e-mailadresse øger du din kontosikkerhed og giver dig flere muligheder for at gendanne din konto."
       ]
     },
     "Recovery method": {
@@ -6338,19 +6497,24 @@
         "Telefonnummer er endnu ikke bekræftet."
       ],
       "Verify by SMS": [
-        "Verificer med SMS"
+        "Bekræft med SMS"
       ],
       "Verify now": [
         "Bekræft nu"
       ],
       "Verify recovery phone?": [
-        "Verificer telefon til gendannelse?"
+        "Bekræft telefon til gendannelse?"
       ],
       "Verify this recovery phone number now: ${ phone.Value }": [
         "Bekræft dette telefonnummer til gendannelse nu: ${ phone.Value }"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
-        "Ved at verificere dit telefonnummer øger du din kontos sikkerhed og giver flere muligheder for gendannelse."
+        "Ved at Bekræfte dit telefonnummer øger du din kontos sikkerhed og giver flere muligheder for gendannelse."
+      ]
+    },
+    "Remove organization logo": {
+      "Users will no longer see your custom logo or organization name.": [
+        "Brugere vil ikke længere se dit tilpassede logo eller organisationsnavn."
       ]
     },
     "Restore administrator panel": {
@@ -6386,13 +6550,72 @@
       "Configure SCIM": [
         "Konfigurér SCIM"
       ],
+      "Disable SCIM": [
+        "Deaktiver SCIM"
+      ],
+      "Disable SCIM integration": [
+        "Deaktiver SCIM-integration"
+      ],
+      "Generate new token": [
+        "Generer et nyt token"
+      ],
       "Generate token": [
         "Generér token"
       ]
     },
     "scim: Info": {
+      "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
+        "**Forudsætning:** SAML-godkendelse skal være konfigureret for at aktivere SCIM-provisionering."
+      ],
+      "Enter token into your identity provider": [
+        "Indtast token hos din identitetsudbyder"
+      ],
+      "Enter URL and token into your identity provider": [
+        "Indtast URL og token hos din identitetsudbyder"
+      ],
+      "For security reasons, the SCIM token will be hidden after saving your changes and you won’t be able to see it again.": [
+        "SCIM-tokenet bliver, af sikkerhedsmæssige årsager skjult, når ændringerne er gemt, og du vil ikke kunne se det igen."
+      ],
+      "For security reasons, the token is hidden": [
+        "Af hensyn til sikkerheden er tokenet skjult"
+      ],
+      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ VPN_APP_NAME }.": [
+        "Gå til din identitetsudbyder, kopier og indsæt data nedenfor, og afslut konfigurationen af SCIM for ${ VPN_APP_NAME }."
+      ],
       "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ VPN_APP_NAME }.": [
         "Gå til din identitetsudbyder, kopier og indsæt tokenet nedenfor, og genaktiver SCIM for ${ VPN_APP_NAME }."
+      ],
+      "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
+        "Hvis du har mistet eller glemt SCIM-tokenet, kan du generere et nyt, men vær opmærksom på, at indstillingerne for din identitetsudbyder skal opdateres."
+      ],
+      "Make sure you copy the above SCIM token now.": [
+        "Sørg for at kopiere ovennævnte SCIM-token nu."
+      ],
+      "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
+        "Så snart SCIM er deaktiveret for din organisation, bliver **alle SCIM-brugere, der tildeles automatisk af din identitetsudbyder, omdannet til SSO-brugere**, og du vil kunne styre dem direkte i ${ BRAND_NAME }-indstillingerne."
+      ],
+      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ VPN_APP_NAME } organization.": [
+        "Brugeradministration forenkles på tværs af forskellige tjenester. Tilføj, rediger og fjern brugere i din identitetsudbyder, og disse ændringer anvendes automatisk i din ${ VPN_APP_NAME }-organisation."
+      ],
+      "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
+        "SCIM's automatiske provisionering deaktiveres, indtil du indtaster det nye SCIM-token via din identitetsudbyders indstillinger."
+      ],
+      "The SCIM base URL and token will be deleted.": [
+        "SCIM-basens URL og token vil blive slettet."
+      ],
+      "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
+        "For at genaktivere synkronisering med din identitetsudbyder skal du gennemføre SCIM-integreringen igen."
+      ]
+    },
+    "scim: Label": {
+      "SCIM base URL": [
+        "SCIM-basens URL"
+      ],
+      "SCIM base URL (or tenant URL)": [
+        "SCIM-basens URL (eller lejers URL)"
+      ],
+      "SCIM token": [
+        "SCIM-token"
       ]
     },
     "scim: Title": {
@@ -6401,6 +6624,17 @@
       ],
       "Generate new SCIM token?": [
         "Generer ny SCIM token?"
+      ],
+      "SCIM automatic provisioning": [
+        "Automatisk provisionering af SCIM"
+      ]
+    },
+    "scim: Tooltip": {
+      "API key of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
+        "API-nøgle til SCIM-forbindelsen, som ens IdP-provisioneringsagent videresender SCIM-data til"
+      ],
+      "URL of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
+        "Adresse på SCIM-forbindelsen, som ens IdP-provisioneringsagent videresender SCIM-data til"
       ]
     },
     "Select file": {
@@ -6659,8 +6893,8 @@
         "Anmod om nulstilling af adgangskode?"
       ],
       "You'll be able to reset your password in ${ gracePeriodHoursRemaining } hour": [
-        "Du kan nulstille din adgangskode om ${ gracePeriodHoursRemaining } time",
-        "Du kan nulstille din adgangskode om ${ gracePeriodHoursRemaining } timer"
+        "Du vil kunne nulstille adgangskoden inden for ${ gracePeriodHoursRemaining } time",
+        "Du vil kunne nulstille adgangskoden inden for ${ gracePeriodHoursRemaining } timer"
       ]
     },
     "session_recovery:sign_out:action": {
@@ -6925,7 +7159,7 @@
         "Perfekt til familier eller små teams, hvor alle kan have deres egen indbakke og aliasser. Kræver et brugerdomæne."
       ],
       "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
-        "Modtag uden ekstra omkostninger betalingsversionerne af alle nye privatlivstjenester, vi lancerer i fremtiden, samt tidlig adgang til alle fremtidige funktioner og produkter."
+        "Modtag betalingsversioner af alle nye privatlivstjenester, vi frigiver i fremtiden, uden ekstra omkostninger, samt forhåndsadgang til alle fremtidige funktioner og produkter."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Beskyt dine filer med krypteret lagring i skyen. Inkluderer automatisk synkronisering, krypteret fildeling og meget mere."
@@ -7152,14 +7386,44 @@
       ]
     },
     "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagerplads"
+      ],
       "and 15 more premium features": [
         "og 15 andre premium-funktioner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk videresendelse af e-mail ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varsler om databrud ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Skrivebordsapp"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Vær med til at holde internettet sikkert og privat for alle. Opgrader til en betalingsløsning."
+      ],
+      "No ads or tracking": [
+        "Ingen reklamer eller sporing"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-mailadresse"
+      ],
+      "Support our mission": [
+        "Støt vores mission"
       ],
       "Upgrade": [
         "Opgradering"
       ],
+      "Upgrade your productivity": [
+        "Opgrader din produktivitet"
+      ],
       "We don't sell your data": [
         "Vi sælger ikke dine data"
+      ],
+      "Your privacy is our mission": [
+        "Dit privatliv er vores mission"
       ]
     },
     "Subscription renewal state": {
@@ -7626,9 +7890,12 @@
       "Delete address permanently?": [
         "Slet adresse permanent?"
       ],
+      "Delete organization logo?": [
+        "Slet organisationens logo?"
+      ],
       "Delete the server (you will still be able to recover it for ${ days } day)": [
-        "Slet serveren (du har stadig mulighed for at gendanne den inden for ${ days } dag)",
-        "Slet serveren (du har stadig mulighed for at gendanne den inden for ${ days } dage)"
+        "Slet serveren (du vil stadig kunne gendanne den inden for ${ days } dag)",
+        "Slet serveren (du vil stadig kunne gendanne den inden for ${ days } dage)"
       ],
       "Delete user?": [
         "Slet bruger?"
@@ -7730,6 +7997,9 @@
       "Gift code": [
         "Gavekode"
       ],
+      "How to choose a good logo": [
+        "Hvordan vælger man et godt logo"
+      ],
       "Human verification": [
         "Menneskelig bekræftelse"
       ],
@@ -7770,7 +8040,7 @@
         "OpenVPN / IKEv2-brugernavn"
       ],
       "OpenVPN configuration files": [
-        "OpenVPN-opsætningsfiler"
+        "OpenVPN-konfigurationsfiler"
       ],
       "Organization name": [
         "Organisationsnavn"
@@ -7866,7 +8136,7 @@
         "Angiv organisationsnavn"
       ],
       "Set up two-factor authentication": [
-        "Opsæt to-faktor-godkendelse"
+        "Indstil to-faktor-godkendelse"
       ],
       "Set your password": [
         "Indstil din adgangskode"
@@ -7875,7 +8145,7 @@
         "Indstillinger"
       ],
       "Setup dedicated servers by upgrading to Business": [
-        "Opsæt dedikerede servere ved at opgradere til Business"
+        "Indstil dedikerede servere ved at opgradere til Business"
       ],
       "Sign in": [
         "Log ind"
@@ -7941,14 +8211,17 @@
       "Upload CSV file to create multiple accounts": [
         "Upload CSV-fil for at oprette flere konti"
       ],
+      "Upload your organization’s logo": [
+        "Fremsæt din organisations logo"
+      ],
       "Users": [
         "Brugere"
       ],
       "Verification failed": [
-        "Verificering mislykkedes"
+        "Bekræftelse mislykkedes"
       ],
       "Verifying your card...": [
-        "Verificerer dit kort..."
+        "Bekræfter dit kort..."
       ],
       "Verifying your payment...": [
         "Verificerer din betaling..."
@@ -8059,11 +8332,14 @@
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Det valgte tema vil blive aktiveret når dit system er sat til \"lys tilstand\""
       ],
+      "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
+        "Brugere vil se dit logo i stedet for ${ BRAND_NAME }-ikonet, når de er logget ind på vores webapps."
+      ],
       "Usually an URL that contains the identity provider's name within": [
         "Normalt en URL-adresse, der indeholder identitetsudbyderens navn i"
       ],
       "Verified email address": [
-        "Verificeret e-mailadresse"
+        "Bekræftet e-mailadresse"
       ]
     },
     "tooltip": {
@@ -8152,7 +8428,7 @@
         "${ n } VPN-forbindelser"
       ],
       "${ numberOfServers } across ${ numberOfCountries } country": [
-        "${ numberOfServers } i ${ numberOfCountries } land",
+        "${ numberOfServers } fordelt på ${ numberOfCountries } land",
         "${ numberOfServers } fordelt på ${ numberOfCountries }+ lande"
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
@@ -8163,6 +8439,12 @@
     "vpn_2024: renew": {
       "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
         "Abonnementet fornys automatisk hver måned. Din næste faktureringsdato er om en måned."
+      ],
+      "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
+        "Abonnementet fornys automatisk hver 3. måned. Din næste forfaldsdato er om 3 måneder."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Den særligt nedsatte pris på ${ priceWithDiscount } gælder den første måned. Derefter vil den automatisk blive fornyet for ${ renewPrice } hver måned. Du kan til enhver tid opsige."
       ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Du vil blive faktureret ${ renewPrice } hver 12. måned."
