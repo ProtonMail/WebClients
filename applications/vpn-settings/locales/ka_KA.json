@@ -1930,12 +1930,6 @@
       "Missing feature(s)": [
         "ნაკლული თვისებ(ებ/ა)"
       ],
-      "My reason isn't listed, please comment": [
-        "ჩემი მიზეზი სიაში არაა. მიუთითეთ კომენტარის სახით"
-      ],
-      "Streaming service unsupported": [
-        "სტრიმინგის სერვისი მხარდაუჭერელია"
-      ],
       "Subscription is too expensive": [
         "გამოწერა ძალიან ძვირია"
       ],
@@ -1949,6 +1943,29 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "დაგვეხმარეთ გავუმჯობესდეთ!"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "გაფართოებული ვერსიის ისტორია"
+      ],
+      "Priority support": [
+        "პრიორიტეტული მხარდაჭერა"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "განახლების დრო ${ renewablePrice }. გააუქმეთ ნებისმიერ დროს"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "პირველი თვისთვის"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "მიიღეთ ${ planName } ფასით სულ რაღაც ${ planPrice }"
       ]
     },
     "Email verification": {
@@ -3504,9 +3521,6 @@
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "დადასტურების ღილაკზე დაწოლის შემდეგ თქვენს ანგარიშზე ${ creditsRemaining } კრედიტი იქნება დარჩენილი."
       ],
-      "Please provide an email address in case we need to contact you.": [
-        "შეიყვანეთ ელფოსტა, რომელზეც შეგვიძლია, საჭიროების შემთხვევაში დაგიკავშირდეთ."
-      ],
       "Please try again using a different payment method, or contact your bank.": [
         "ან თავიდან სცადეთ, ან გადახდის სხვა საშუალება გამოიყენეთ, ან დაუკავშირდით თქვენს ბანკს."
       ],
@@ -4945,17 +4959,11 @@
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "დაგავიწყდათ თქვენი ${ BRAND_NAME }-ის ანგარიშის მომხმარებლის სახელი? იპოვეთ ის თქვენი აღდგენის ელფოსტის ან ტელეფონის ნომრის საშუალებით და დაიბრუნეთ წვდომა ${ MAIL_APP_NAME }-სთან, ${ DRIVE_SHORT_APP_NAME }-სთან, ${ CALENDAR_SHORT_APP_NAME }-სთან და სხვ."
       ],
-      "Private and secure email, no credit card required": [
-        "კოფიდენციალური და უსაფრთხო ელფოსტა. საკრედიტო ბარათი საჭირო არაა"
-      ],
       "Reset your ${ BRAND_NAME } Account password": [
         "შეცვალეთ თქვენი ${ BRAND_NAME }-ის ანგარიშის პაროლი"
       ],
       "Sign in to access your ${ appName } account": [
         "თქვენი ${ appName }-ის ანგარიშთან წვდომისთვის საჭიროა, შეხვიდეთ"
-      ],
-      "Try ${ planName } for free with this link": [
-        "სცადეთ ${ planName } უფასოდ ამ ბმულით"
       ]
     },
     "Monetary unit": {
@@ -6238,9 +6246,6 @@
       ],
       "e.g. https://idp.example.com/XXXXX": [
         "მაგ: https://idp.example.com/XXXXX"
-      ],
-      "Email address": [
-        "ელ-ფოსტის მისამართი"
       ],
       "Feedback": [
         "უკუკავშირი"
@@ -8196,6 +8201,9 @@
       ],
       "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
         "გამოწერა ავტომატურად განახლდება ყოველ 3 თვეში. შემდეგი გადახდის თარიღი 3 თვეშია."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "საგანგებოდ დაკლებული ფასი ${ priceWithDiscount }-სთვის პირველ თვეშია ხელმისაწვდომი. ამის შემდეგ ის ავტომატურად განახლდება ${ renewPrice } ფასით ყოველთვე. გაუქმება ყოველთვის შეგიძლიათ."
       ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "გადაიხდით ყოველ 12 თვეში ტარიფით ${ renewPrice }"

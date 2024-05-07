@@ -1942,12 +1942,6 @@
       "Missing feature(s)": [
         "Faltan funciones."
       ],
-      "My reason isn't listed, please comment": [
-        "Mi razón no está en la lista. Déjanos un comentario."
-      ],
-      "Streaming service unsupported": [
-        "Servicio de streaming no compatible"
-      ],
       "Subscription is too expensive": [
         "La suscripción es demasiado cara."
       ],
@@ -1961,6 +1955,40 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "¡Ayúdanos a mejorar!"
+      ]
+    },
+    "drivePlus2024: Action": {
+      "Get the deal": [
+        "Aprovéchate de la oferta"
+      ],
+      "Special Offer": [
+        "Oferta especial"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Historial de versiones extendido"
+      ],
+      "Priority support": [
+        "Soporte prioritario"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Se renueva por ${ renewablePrice } y cancela cuando quieras"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "por el primer mes"
+      ],
+      "Limited-time offer": [
+        "Oferta por tiempo limitado"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Obtén ${ planName } por solo ${ planPrice }"
       ]
     },
     "Email verification": {
@@ -3543,9 +3571,6 @@
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Ten en cuenta que al hacer clic en el botón Confirmar, tu cuenta tendrá ${ creditsRemaining } créditos restantes."
       ],
-      "Please provide an email address in case we need to contact you.": [
-        "Indica una dirección de correo electrónico en caso de que necesitemos contactarte."
-      ],
       "Please try again using a different payment method, or contact your bank.": [
         "Inténtalo de nuevo con otro método de pago o ponte en contacto con tu banco."
       ],
@@ -4993,17 +5018,11 @@
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "¿Has olvidado tu nombre de usuario de ${ BRAND_NAME }? Encuéntralo con tu correo de recuperación o número de teléfono y retoma el acceso a ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } y más."
       ],
-      "Private and secure email, no credit card required": [
-        "Correo seguro y privado, sin tarjeta de crédito"
-      ],
       "Reset your ${ BRAND_NAME } Account password": [
         "Restablece la contraseña de tu cuenta de ${ BRAND_NAME }"
       ],
       "Sign in to access your ${ appName } account": [
         "Inicia sesión para acceder a tu cuenta de ${ appName }"
-      ],
-      "Try ${ planName } for free with this link": [
-        "Prueba ${ planName } gratis con este enlace"
       ]
     },
     "Monetary unit": {
@@ -5309,6 +5328,12 @@
       "Organize items with multiple vaults": [
         "Organizar elementos en cajas fuertes múltiples"
       ],
+      "Pass Monitor - premium features": [
+        "Pass Monitor - funciones premium"
+      ],
+      "Passkeys supported": [
+        "Las claves de acceso están admitidas."
+      ],
       "Password-protected Emails": [
         "Correos electrónicos protegidos con contraseña"
       ],
@@ -5391,6 +5416,9 @@
       ],
       "Unlimited devices": [
         "Dispositivos ilimitados"
+      ],
+      "Unlimited devices and aliases": [
+        "Alias y dispositivos ilimitados"
       ],
       "Unlimited filters": [
         "Filtros ilimitados"
@@ -6120,6 +6148,16 @@
       "Preparing your Recovery Kit": [
         "Preparando tu kit de recuperación"
       ],
+      "Secure sharing with ${ n } vault": [
+        "Compartición segura con ${ n } caja fuerte",
+        "Compartición segura con ${ n } cajas fuertes"
+      ],
+      "Secure sharing with multiple vaults": [
+        "Compartición segura con varias cajas fuertes"
+      ],
+      "Secure vault sharing": [
+        "Compartición segura de cajas fuertes"
+      ],
       "Updating your account": [
         "Actualizando tu cuenta"
       ],
@@ -6315,9 +6353,6 @@
       ],
       "e.g. https://idp.example.com/XXXXX": [
         "por ejemplo https://idp.ejemplo.com/XXXXX"
-      ],
-      "Email address": [
-        "Dirección de correo electrónico"
       ],
       "Feedback": [
         "Comentarios"

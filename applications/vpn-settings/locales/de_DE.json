@@ -706,8 +706,14 @@
       ]
     },
     "app-switcher": {
+      "Keep your schedule private": [
+        "Halte deinen Terminplan privat"
+      ],
       "Protect your passwords and identity": [
         "Schütze deine Passwörter und Identität"
+      ],
+      "Secure your communications": [
+        "Sichere deine Kommunikation"
       ]
     },
     "bf2023: Action": {
@@ -1927,12 +1933,6 @@
       "Missing feature(s)": [
         "Fehlende Funktion(en)"
       ],
-      "My reason isn't listed, please comment": [
-        "Mein Grund ist nicht aufgeführt (bitte beschreibe das Problem)"
-      ],
-      "Streaming service unsupported": [
-        "Streaming-Dienst wird nicht unterstützt"
-      ],
       "Subscription is too expensive": [
         "Das Abonnement ist zu teuer"
       ],
@@ -1946,6 +1946,40 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Hilf uns, besser zu werden!"
+      ]
+    },
+    "drivePlus2024: Action": {
+      "Get the deal": [
+        "Sichere dir das Angebot"
+      ],
+      "Special Offer": [
+        "Sonderangebot"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Erweiterter Versionsverlauf"
+      ],
+      "Priority support": [
+        "Priorisierter Support"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Verlängert sich zu ${ renewablePrice }, jederzeit kündbar"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "im ersten Monat"
+      ],
+      "Limited-time offer": [
+        "Zeitlich begrenztes Angebot"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Hol dir ${ planName } für nur ${ planPrice }"
       ]
     },
     "Email verification": {
@@ -3525,9 +3559,6 @@
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Bitte beachte, dass nach dem Klicken auf die Schaltfläche „Bestätigen“ auf deinem Konto noch ${ creditsRemaining } Guthaben verbleibt."
       ],
-      "Please provide an email address in case we need to contact you.": [
-        "Bitte gib eine E‐Mail‐Adresse an, falls wir dich kontaktieren müssen."
-      ],
       "Please try again using a different payment method, or contact your bank.": [
         "Bitte versuche es mit einer anderen Zahlungsmethode erneut oder kontaktiere deine Bank."
       ],
@@ -4975,17 +5006,11 @@
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Du hast deinen ${ BRAND_NAME }-Benutzernamen vergessen? Finde ihn mit deiner Wiederherstellungs-E-Mail oder -Telefonnummer und erhalte wieder Zugang zu ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } und mehr."
       ],
-      "Private and secure email, no credit card required": [
-        "Private und sichere E-Mails, keine Kreditkarte erforderlich"
-      ],
       "Reset your ${ BRAND_NAME } Account password": [
         "${ BRAND_NAME }-Kontopasswort zurücksetzen"
       ],
       "Sign in to access your ${ appName } account": [
         "Melde dich an, um auf dein ${ appName }-Konto zuzugreifen."
-      ],
-      "Try ${ planName } for free with this link": [
-        "Probiere ${ planName } über diesen Link kostenlos aus"
       ]
     },
     "Monetary unit": {
@@ -6295,9 +6320,6 @@
       "e.g. https://idp.example.com/XXXXX": [
         "z.B. https://idp.beispiel.com/XXXXX"
       ],
-      "Email address": [
-        "E-Mail-Adresse"
-      ],
       "Feedback": [
         "Feedback"
       ],
@@ -7308,6 +7330,9 @@
     "subscription reminder": {
       "15 GB storage": [
         "15 GB Speicherplatz"
+      ],
+      "and 15 more premium features": [
+        "und 15 weitere Premium-Funktionen"
       ],
       "Automatic email forwarding ${ strongText }": [
         "Automatische E-Mail-Weiterleitung ${ strongText }"
@@ -8341,6 +8366,9 @@
       ],
       "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
         "Das Abonnement erneuert sich automatisch alle 3 Monate. Dein nächstes Abrechnungsdatum ist in drei Monaten."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Der speziell ermäßigte Preis von ${ priceWithDiscount } ist für den ersten Monat gültig. Danach wird das Abonnement automatisch jeden Monat zum Preis von ${ renewPrice } verlängert. Du kannst jederzeit kündigen."
       ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Du erhältst dann alle 12 Monate eine Rechnung über ${ renewPrice }."
