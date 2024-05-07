@@ -297,6 +297,9 @@
       "Go to panel ${ index }": [
         "Ir al panel ${ index }"
       ],
+      "Go to settings": [
+        "Ir a los ajustes"
+      ],
       "Got it": [
         "Entendido"
       ],
@@ -362,6 +365,9 @@
       ],
       "Keep my Plus subscription": [
         "Mantener mi suscripción Plus"
+      ],
+      "Later": [
+        "Después"
       ],
       "Let's talk": [
         "Hablemos"
@@ -447,10 +453,10 @@
       "Not now": [
         "Ahora no"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -851,11 +857,6 @@
       ],
       "By leaving now, you will lose your event.": [
         "Si sale ahora, perderá su evento."
-      ]
-    },
-    "App logo": {
-      "Download ${ MAIL_APP_NAME } desktop application": [
-        "Descargue la aplicación de escritorio de ${ MAIL_APP_NAME }"
       ]
     },
     "Apps dropdown": {
@@ -2373,6 +2374,9 @@
       "Availability unknown": [
         "Disponibilidad desconocida"
       ],
+      "Better organize your day, track your time, and prioritize tasks. Color-code your calendar with custom event colors.": [
+        "Organice mejor su día, realice un seguimiento de su tiempo y establezca prioridades entre las tareas. Codifique por colores su calendario con colores de eventos personalizados."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Descifrando contactos… esto puede tardar unos minutos. Cuando el proceso se complete, podrá descargar el archivo con todos los contactos exportados."
       ],
@@ -2471,17 +2475,32 @@
       "Bugs or quality issue": [
         "Errores o problemas de calidad"
       ],
+      "I do not wish to share": [
+        "Prefiero no decirlo"
+      ],
+      "I found a cheaper VPN": [
+        "Encontré una VPN más barata"
+      ],
+      "I found a VPN with better features": [
+        "Encontré una VPN con mejores funciones"
+      ],
+      "I have not managed to connect": [
+        "No conseguí conectarme"
+      ],
+      "I only needed a VPN short-term": [
+        "Solo necesitaba una VPN por un corto tiempo"
+      ],
       "I use a different ${ BRAND_NAME } account": [
         "Uso una cuenta diferente de ${ BRAND_NAME }"
+      ],
+      "It doesn't do what I need": [
+        "No hace lo que necesito"
       ],
       "Missing feature(s)": [
         "Faltan funciones"
       ],
-      "My reason isn't listed, please comment": [
-        "Mi motivo no está en la lista. Déjenos un comentario."
-      ],
-      "Streaming service unsupported": [
-        "Servicio de transmisión no compatible"
+      "Other reason (please comment)": [
+        "Otra razón (coméntenos en qué podemos mejorar)"
       ],
       "Subscription is too expensive": [
         "La suscripción es muy costosa"
@@ -2491,11 +2510,48 @@
       ],
       "Temporary need, may come back in the future": [
         "Necesidad temporal, puedo volver en el futuro"
+      ],
+      "The VPN is too slow": [
+        "La VPN es muy lenta"
       ]
     },
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "¡Ayúdenos a mejorar!"
+      ]
+    },
+    "drivePlus2024: Action": {
+      "Get the deal": [
+        "Aprovéchese de la oferta"
+      ],
+      "Special Offer": [
+        "Oferta especial"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Historial de versiones extendido"
+      ],
+      "Priority support": [
+        "Soporte prioritario"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Se renueva por ${ renewablePrice }, cancele cuando quiera"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "por el primer mes"
+      ],
+      "Limited-time offer": [
+        "Oferta por tiempo limitado"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Obtenga ${ planName } por solo ${ planPrice }"
       ]
     },
     "Dropdown action icon tooltip": {
@@ -4190,6 +4246,9 @@
       "Billing cycle: ${ text }": [
         "Ciclo de facturación: ${ text }"
       ],
+      "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
+        "Impulse la identidad de marca de su organización y cree una experiencia en línea más consistente para sus usuarios."
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Al pasar a un plan gratuito, perderá permanentemente estos beneficios, incluso si mejore de nuevo el plan en el futuro."
       ],
@@ -4378,9 +4437,6 @@
       "finance": [
         "finanzas"
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Redirija correos entrantes desde otra cuenta a el buzón seguro de ${ MAIL_APP_NAME }."
-      ],
       "Frequency modifications will be lost.": [
         "Se perderán las modificaciones de frecuencia."
       ],
@@ -4420,9 +4476,6 @@
       ],
       "Import mailbox": [
         "Importar buzón"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Importe los correos, calendarios y contactos desde otro servicio a ${ BRAND_NAME }."
       ],
       "Important note": [
         "Nota importante"
@@ -6352,6 +6405,12 @@
       "Organize items with multiple vaults": [
         "Organizar elementos en bóvedas múltiples"
       ],
+      "Pass Monitor - premium features": [
+        "Pass Monitor - funciones premium"
+      ],
+      "Passkeys supported": [
+        "Claves de acceso admitidas"
+      ],
       "Password-protected Emails": [
         "Correos electrónicos protegidos con contraseña"
       ],
@@ -6424,6 +6483,9 @@
       ],
       "Unlimited devices": [
         "Dispositivos ilimitados"
+      ],
+      "Unlimited devices and aliases": [
+        "Alias y dispositivos ilimitados"
       ],
       "Unlimited filters": [
         "Filtros ilimitados"
@@ -7165,6 +7227,18 @@
     "Participants expand button label": {
       "Expand participants list": [
         "Expandir lista de participantes"
+      ]
+    },
+    "pass_signup_2023: Info": {
+      "Secure sharing with ${ n } vault": [
+        "Uso compartido seguro con ${ n } bóveda",
+        "Uso compartido seguro con ${ n } bóvedas"
+      ],
+      "Secure sharing with multiple vaults": [
+        "Uso compartido seguro con varias bóvedas"
+      ],
+      "Secure vault sharing": [
+        "Uso compartido seguro de bóvedas"
       ]
     },
     "passwordless": {
@@ -7971,14 +8045,11 @@
       ]
     },
     "Spotlight": {
-      "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
-        "Inicie ${ MAIL_APP_NAME } con facilidad directamente desde el escritorio."
+      "Color-code your calendar to better organize your day, track your time, and more.": [
+        "Codifique con colores su calendario para organizar mejor su día, realizar un seguimiento de su tiempo y más."
       ],
       "Custom event colors": [
         "Colores de eventos personalizados"
-      ],
-      "Get the desktop app": [
-        "Obtenga la aplicación de escritorio"
       ],
       "Get up to ${ credits } in credits.": [
         "Obtenga hasta ${ credits } en créditos."
@@ -8568,6 +8639,9 @@
       ],
       "Account security": [
         "Seguridad de la cuenta"
+      ],
+      "Add a custom logo": [
+        "Añada un logo personalizado"
       ],
       "Add another notification to remind you of this event": [
         "Añada otra notificación para recordarle de este evento"

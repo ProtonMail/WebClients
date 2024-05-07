@@ -297,6 +297,9 @@
       "Go to panel ${ index }": [
         "Μετάβαση στο πλαίσιο ${ index }"
       ],
+      "Go to settings": [
+        "Μετάβαση στις ρυθμίσεις"
+      ],
       "Got it": [
         "Το κατάλαβα"
       ],
@@ -362,6 +365,9 @@
       ],
       "Keep my Plus subscription": [
         "Διατηρήστε την Plus συνδρομή μου"
+      ],
+      "Later": [
+        "Αργότερα"
       ],
       "Let's talk": [
         "Ας μιλήσουμε"
@@ -447,11 +453,11 @@
       "Not now": [
         "Όχι τώρα"
       ],
-      "Ok": [
-        "OK"
-      ],
       "OK": [
         "ΟΚ"
+      ],
+      "Ok": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Ανοίξτε τις ρυθμίσεις του ${ CALENDAR_APP_NAME }"
@@ -851,11 +857,6 @@
       ],
       "By leaving now, you will lose your event.": [
         "Φεύγοντας τώρα, θα χάσετε την εκδήλωση σας."
-      ]
-    },
-    "App logo": {
-      "Download ${ MAIL_APP_NAME } desktop application": [
-        "Κατεβάστε την εφαρμογή επιφάνειας εργασίας ${ MAIL_APP_NAME }"
       ]
     },
     "Apps dropdown": {
@@ -2472,12 +2473,6 @@
       "Missing feature(s)": [
         "Έλλειψη χαρακτηριστικών"
       ],
-      "My reason isn't listed, please comment": [
-        "Άλλη αιτιολογία, παρακαλούμε σχολιάστε"
-      ],
-      "Streaming service unsupported": [
-        "Μη υποστηριζόμενη υπηρεσία μετάδοσης - streaming"
-      ],
       "Subscription is too expensive": [
         "Υπερβολικά ακριβή συνδρομή"
       ],
@@ -2491,6 +2486,40 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Βοηθήστε μας να βελτιωθούμε!"
+      ]
+    },
+    "drivePlus2024: Action": {
+      "Get the deal": [
+        "Αποκτήστε την προσφορά"
+      ],
+      "Special Offer": [
+        "Ειδική Προσφορά"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Εκτεταμένο ιστορικό εκδόσεων"
+      ],
+      "Priority support": [
+        "Υποστήριξη με προτεραιότητα"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Ανανεώνει σε ${ renewablePrice }, ακυρώστε ανά πάσα στιγμή"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "για τον πρώτο μήνα"
+      ],
+      "Limited-time offer": [
+        "Προσφορά περιορισμένου χρόνου"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Λάβετε το ${ planName } μόνο για ${ planPrice }"
       ]
     },
     "Dropdown action icon tooltip": {
@@ -3091,6 +3120,9 @@
       ],
       "You have reached the contacts limit for your account": [
         "Έχετε συμπληρώσει το όριο επαφών για τον λογαριασμό σας"
+      ],
+      "You have reached the maximum number of calendars.": [
+        "Έχετε φτάσει τον μέγιστο αριθμό ημερολογίων."
       ],
       "You must set a name": [
         "Πρέπει να ορίσετε ένα όνομα"
@@ -4179,6 +4211,9 @@
       "Billing cycle: ${ text }": [
         "Κύκλος χρέωσης: ${ text }"
       ],
+      "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
+        "Ενισχύστε την ταυτότητα επωνυμίας του οργανισμού σας και δημιουργήστε μια πιο συνεπή εμπειρία στο διαδίκτυο για τους χρήστες σας."
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Με την υποβάθμιση σε ένα Δωρεάν Λογαριασμό, θα χάσετε μόνιμα αυτά τα οφέλη, ακόμη και αν αναβαθμίσετε ξανά στο μέλλον."
       ],
@@ -4367,9 +4402,6 @@
       "finance": [
         "οικονομικά"
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Προωθήστε την εισερχόμενη αλληλογραφία από άλλο λογαριασμό στα ασφαλή εισερχόμενά σας ${ MAIL_APP_NAME }."
-      ],
       "Frequency modifications will be lost.": [
         "Οι τροποποιήσεις συχνότητας θα χαθούν."
       ],
@@ -4409,9 +4441,6 @@
       ],
       "Import mailbox": [
         "Εισαγωγή γραμματοκιβωτίου"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Εισαγάγετε τα μηνύματα ηλεκτρονικού ταχυδρομείου, τα ημερολόγια και τις επαφές σας από άλλη υπηρεσία στο ${ BRAND_NAME }."
       ],
       "Important note": [
         "Σημαντική σημείωση"
@@ -6338,6 +6367,9 @@
       "Organize items with multiple vaults": [
         "Οργάνωση στοιχείων με πολλές κρύπτες"
       ],
+      "Passkeys supported": [
+        "Υποστηρίζονται κλειδιά πρόσβασης"
+      ],
       "Password-protected Emails": [
         "Μηνύματα ηλεκτρονικού ταχυδρομείου που προστατεύονται με κωδικό πρόσβασης"
       ],
@@ -7954,12 +7986,6 @@
       ]
     },
     "Spotlight": {
-      "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
-        "Εκκινήστε εύκολα το ${ MAIL_APP_NAME } απευθείας από την επιφάνεια εργασίας σας."
-      ],
-      "Get the desktop app": [
-        "Λήψη της εφαρμογής για υπολογιστές"
-      ],
       "Get up to ${ credits } in credits.": [
         "Λάβετε έως και ${ credits } σε πιστώσεις."
       ],
@@ -8152,6 +8178,47 @@
     "Subscription price": {
       "For": [
         "Για"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB αποθηκευτικός χώρος"
+      ],
+      "and 15 more premium features": [
+        "και 15 περισσότερα premium χαρακτηριστικά"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Αυτόματη προώθηση ηλεκτρονικού ταχυδρομείου ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Ειδοποιήσεις παραβίασης δεδομένων ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Εφαρμογή σταθερού υπολογιστή"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Βοηθήστε μας να διατηρήσουμε το διαδίκτυο ασφαλές και ιδιωτικό για όλους. Αναβαθμίστε σε πρόγραμμα επί πληρωμή."
+      ],
+      "No ads or tracking": [
+        "Χωρίς διαφημίσεις ή παρακολούθηση"
+      ],
+      "Short @pm.me email address": [
+        "Σύντομη διεύθυνση ηλεκτρονικού ταχυδρομείου @pm.me"
+      ],
+      "Support our mission": [
+        "Υποστηρίξτε την αποστολή μας"
+      ],
+      "Upgrade": [
+        "Αναβάθμιση"
+      ],
+      "Upgrade your productivity": [
+        "Αναβαθμίστε την παραγωγικότητά σας"
+      ],
+      "We don't sell your data": [
+        "Δεν πουλάμε τα δεδομένα σας"
+      ],
+      "Your privacy is our mission": [
+        "Το απόρρητό σας είναι η αποστολή μας"
       ]
     },
     "Subscription renewal state": {
@@ -8507,6 +8574,9 @@
       ],
       "Account security": [
         "Διασφάλιση λογαριασμού"
+      ],
+      "Add a custom logo": [
+        "Προσθήκη προσαρμοσμένου λογότυπου"
       ],
       "Add another notification to remind you of this event": [
         "Προσθέστε μια άλλη ειδοποίηση για να σας υπενθυμίσει αυτή την εκδήλωση"
@@ -9164,6 +9234,9 @@
       ],
       "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
         "Η συνδρομή ανανεώνεται αυτόματα κάθε 3 μήνες. Η επόμενη ημερομηνία χρέωσης είναι σε 3 μήνες."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Η ειδικά μειωμένη τιμή ${ priceWithDiscount } ισχύει για τον πρώτο μήνα. Στη συνέχεια, θα ανανεώνεται αυτόματα σε ${ renewPrice } κάθε μήνα. Μπορείτε να ακυρώσετε ανά πάσα στιγμή."
       ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Στη συνέχεια, θα χρεώνεστε κάθε 12 μήνες με ${ renewPrice }."

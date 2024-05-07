@@ -447,10 +447,10 @@
       "Not now": [
         "არა ახლა"
       ],
-      "Ok": [
+      "OK": [
         "დიახ"
       ],
-      "OK": [
+      "Ok": [
         "დიახ"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -851,11 +851,6 @@
       ],
       "By leaving now, you will lose your event.": [
         "ახლა თუ გახვალთ, ამ მოვლენას დაკარგავთ."
-      ]
-    },
-    "App logo": {
-      "Download ${ MAIL_APP_NAME } desktop application": [
-        "გადმოწერეთ ${ MAIL_APP_NAME }-ის კომპიუტერის აპლიკაცია"
       ]
     },
     "Apps dropdown": {
@@ -2472,12 +2467,6 @@
       "Missing feature(s)": [
         "ნაკლული თვისებ(ებ/ა)"
       ],
-      "My reason isn't listed, please comment": [
-        "ჩემი მიზეზი სიაში არაა. მიუთითეთ კომენტარის სახით"
-      ],
-      "Streaming service unsupported": [
-        "სტრიმინგის სერვისი მხარდაუჭერელია"
-      ],
       "Subscription is too expensive": [
         "გამოწერა ძალიან ძვირია"
       ],
@@ -2491,6 +2480,29 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "დაგვეხმარეთ გავუმჯობესდეთ!"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "გაფართოებული ვერსიის ისტორია"
+      ],
+      "Priority support": [
+        "პრიორიტეტული მხარდაჭერა"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "განახლების დრო ${ renewablePrice }. გააუქმეთ ნებისმიერ დროს"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "პირველი თვისთვის"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "მიიღეთ ${ planName } ფასით სულ რაღაც ${ planPrice }"
       ]
     },
     "Dropdown action icon tooltip": {
@@ -3091,6 +3103,9 @@
       ],
       "You have reached the contacts limit for your account": [
         "თქვენ მიაღწიეთ კონტაქტების რაოდენობის ზღვარს თქვენი ანგარიშისთვის"
+      ],
+      "You have reached the maximum number of calendars.": [
+        "თქვენ მიაღწიეთ კალენდრების მაქსიმალურ რაოდენობას."
       ],
       "You must set a name": [
         "სახელის დაყენება აუცილებელია"
@@ -4367,9 +4382,6 @@
       "finance": [
         "ფინანსები"
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "შემომავალი ფოსტის გადამისამართება სხვა ანგარიშიდან თქვენს უსაფრთხო ${ MAIL_APP_NAME } შემოსულებში."
-      ],
       "Frequency modifications will be lost.": [
         "სიხშირის ცვლილებები დაიკარგება."
       ],
@@ -4409,9 +4421,6 @@
       ],
       "Import mailbox": [
         "საფოსტო ყუთის შემოტანა"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "თქვენი ელფოსტის, კალენდრების და კონტაქტების შემოტანა სხვა სერვისიდან ${ BRAND_NAME }-ში."
       ],
       "Important note": [
         "მნიშვნელოვანი შენიშვნა"
@@ -7933,12 +7942,6 @@
       ]
     },
     "Spotlight": {
-      "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
-        "მოხერხებულად გაუშვით ${ MAIL_APP_NAME } პირდაპირ სამუშაო მაგიდიდან."
-      ],
-      "Get the desktop app": [
-        "მიიღეთ კომპიუტერის აპი"
-      ],
       "Get up to ${ credits } in credits.": [
         "მიღეთ ${ credits }-მდე კრედიტი."
       ],
@@ -9140,6 +9143,9 @@
       ],
       "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
         "გამოწერა ავტომატურად განახლდება ყოველ 3 თვეში. შემდეგი გადახდის თარიღი 3 თვეშია."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "საგანგებოდ დაკლებული ფასი ${ priceWithDiscount }-სთვის პირველ თვეშია ხელმისაწვდომი. ამის შემდეგ ის ავტომატურად განახლდება ${ renewPrice } ფასით ყოველთვე. გაუქმება ყოველთვის შეგიძლიათ."
       ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "გადაიხდით ყოველ 12 თვეში ტარიფით ${ renewPrice }"
