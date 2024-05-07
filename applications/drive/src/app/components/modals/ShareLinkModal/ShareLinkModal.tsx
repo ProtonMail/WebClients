@@ -1,9 +1,8 @@
-import { useState } from 'react';
-
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import {
+    ContactEmailsProvider,
     Icon,
     ModalStateProps,
     ModalTwo,
@@ -12,13 +11,20 @@ import {
     Tooltip,
     useModalTwoStatic,
 } from '@proton/components';
+import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
 
-import { useDriveSharingFeatureFlag, useShareURLView } from '../../../store';
+import {
+    ShareInvitee,
+    ShareMember,
+    useDriveSharingFeatureFlag,
+    useShareMemberView,
+    useShareURLView,
+} from '../../../store';
 import ModalContentLoader from '../ModalContentLoader';
-import DirectSharing from './DirectSharing';
+import { DirectSharingAutocomplete, DirectSharingListing, useShareInvitees } from './DirectSharing';
 import ErrorState from './ErrorState';
+import { PublicSharing } from './PublicSharing';
 import { useLinkSharingSettingsModal } from './ShareLinkSettingsModal';
-import ShareWithAnyone from './ShareWithAnyone';
 import { ShareLinkModalLEGACY } from './_legacy/ShareLinkModalLEGACY';
 
 interface Props {
@@ -27,7 +33,7 @@ interface Props {
     linkId: string;
 }
 
-export function ShareLinkModal({ shareId: rootShareId, linkId, onClose, ...modalProps }: Props & ModalStateProps) {
+export function SharingModal({ shareId: rootShareId, linkId, onClose, ...modalProps }: Props & ModalStateProps) {
     const {
         customPassword,
         initialExpiration,
@@ -44,17 +50,57 @@ export function ShareLinkModal({ shareId: rootShareId, linkId, onClose, ...modal
         isSaving,
         isDeleting,
         isCreating,
-        isShared,
         isShareUrlLoading,
     } = useShareURLView(rootShareId, linkId);
 
-    const [settingsModal, showSettingsModal] = useLinkSharingSettingsModal();
-    const [isInvitationWorkflow, setIsInvitationWorkflow] = useState(false);
+    const {
+        volumeId,
+        members,
+        invitations,
+        existingEmails,
+        isLoading,
+        isAdding,
+        addNewMembers,
+        removeMember,
+        updateMemberPermissions,
+        removeInvitation,
+        updateInvitePermissions,
+    } = useShareMemberView(rootShareId, linkId);
 
-    const isClosedButtonDisabled = isSaving || isDeleting || isCreating;
-    const isTooltipDisabled = isShareUrlLoading || isSaving || isDeleting || isCreating || !isShared;
-    const isTooltipHidden = isInvitationWorkflow;
+    const [settingsModal, showSettingsModal] = useLinkSharingSettingsModal();
+
+    const isClosedButtonDisabled = isSaving || isDeleting || isCreating || isAdding;
+    const isShareActive = !!sharedLink || !!members.length || !!invitations.length;
+    const isSettingsDisabled = isShareUrlLoading || isSaving || isDeleting || isCreating || !isShareActive;
+    const { invitees, add: addInvitee, remove: removeInvitee, clean: cleanInvitees } = useShareInvitees(existingEmails);
+
+    const isInvitationWorkflow = !!invitees.length;
     const isShareWithAnyoneLoading = isShareUrlLoading || isDeleting || isCreating;
+
+    const handleSubmit = async (invitees: ShareInvitee[], selectedPermissions: SHARE_MEMBER_PERMISSIONS) => {
+        await addNewMembers(invitees, selectedPermissions);
+        cleanInvitees();
+    };
+
+    const handleCancel = () => {
+        cleanInvitees();
+    };
+
+    const handlePermissionsChange = async (member: ShareMember, permissions: SHARE_MEMBER_PERMISSIONS) => {
+        await updateMemberPermissions({ ...member, permissions });
+    };
+
+    const handleInvitationPermissionsChange = async (invitationId: string, permissions: SHARE_MEMBER_PERMISSIONS) => {
+        await updateInvitePermissions(invitationId, permissions);
+    };
+
+    const handleMemberRemove = async (member: ShareMember) => {
+        await removeMember(member);
+    };
+
+    const handleInvitationRemove = async (invitationId: string) => {
+        await removeInvitation(invitationId);
+    };
 
     const renderModalState = () => {
         if (errorMessage) {
@@ -71,9 +117,9 @@ export function ShareLinkModal({ shareId: rootShareId, linkId, onClose, ...modal
                     title={c('Title').t`Share ${name}`}
                     closeButtonProps={{ disabled: isClosedButtonDisabled }}
                     actions={
-                        !isTooltipHidden
+                        !isInvitationWorkflow
                             ? [
-                                  <Tooltip disabled={isTooltipDisabled} title={c('Info').t`Share via link settings`}>
+                                  <Tooltip disabled={isSettingsDisabled} title={c('Info').t`Share via link settings`}>
                                       <Button
                                           icon
                                           shape="ghost"
@@ -101,14 +147,38 @@ export function ShareLinkModal({ shareId: rootShareId, linkId, onClose, ...modal
                     }
                 />
                 <ModalTwoContent>
-                    <DirectSharing
-                        rootShareId={rootShareId}
-                        linkId={linkId}
-                        onInviteeCountChange={(inviteeCount) => setIsInvitationWorkflow(!!inviteeCount)}
-                        isInvitationWorkflow={isInvitationWorkflow}
-                    />
+                    <ContactEmailsProvider>
+                        <DirectSharingAutocomplete
+                            onCancel={handleCancel}
+                            isAdding={isAdding}
+                            onSubmit={handleSubmit}
+                            existingEmails={existingEmails}
+                            invitees={invitees}
+                            onAdd={addInvitee}
+                            onRemove={removeInvitee}
+                            hideFormActions={!isInvitationWorkflow}
+                        />
+
+                        {!isInvitationWorkflow && (
+                            <>
+                                <h2 className="text-lg text-semibold">{c('Info').t`Share with`}</h2>
+                                <DirectSharingListing
+                                    volumeId={volumeId}
+                                    linkId={linkId}
+                                    isLoading={isLoading}
+                                    members={members}
+                                    invitations={invitations}
+                                    onPermissionsChange={handlePermissionsChange}
+                                    onMemberRemove={handleMemberRemove}
+                                    onInvitationRemove={handleInvitationRemove}
+                                    onInvitationPermissionsChange={handleInvitationPermissionsChange}
+                                />
+                            </>
+                        )}
+                    </ContactEmailsProvider>
+
                     {!isInvitationWorkflow ? (
-                        <ShareWithAnyone
+                        <PublicSharing
                             createSharedLink={createSharedLink}
                             isLoading={isShareWithAnyoneLoading}
                             publicSharedLink={sharedLink}
@@ -143,5 +213,5 @@ export function ShareLinkModal({ shareId: rootShareId, linkId, onClose, ...modal
 
 export const useLinkSharingModal = () => {
     const driveSharing = useDriveSharingFeatureFlag();
-    return useModalTwoStatic(driveSharing ? ShareLinkModal : ShareLinkModalLEGACY);
+    return useModalTwoStatic(driveSharing ? SharingModal : ShareLinkModalLEGACY);
 };
