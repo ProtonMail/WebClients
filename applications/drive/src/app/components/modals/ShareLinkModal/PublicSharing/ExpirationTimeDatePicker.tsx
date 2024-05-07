@@ -20,7 +20,13 @@ const getMaxDate = () => {
     return date;
 };
 
-const ExpirationTimeDatePicker = ({ expiration, handleExpirationChange, disabled, allowTime, ...rest }: Props) => {
+export const ExpirationTimeDatePicker = ({
+    expiration,
+    handleExpirationChange,
+    disabled,
+    allowTime,
+    ...rest
+}: Props) => {
     const initialValue = expiration ? fromUnixTime(expiration) : undefined;
     const [expDate, setExpDate] = useState<Date | undefined>(initialValue);
     const [expTime, setExpTime] = useState<Date | undefined>(initialValue);
@@ -109,4 +115,3 @@ const ExpirationTimeDatePicker = ({ expiration, handleExpirationChange, disabled
         </>
     );
 };
-export default ExpirationTimeDatePicker;

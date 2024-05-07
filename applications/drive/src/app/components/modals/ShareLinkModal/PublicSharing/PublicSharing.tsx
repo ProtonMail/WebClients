@@ -13,7 +13,7 @@ interface Props {
     deleteSharedLink: () => void;
     isLoading: boolean;
 }
-const ShareWithAnyone = ({ publicSharedLink, createSharedLink, deleteSharedLink, isLoading }: Props) => {
+export const PublicSharing = ({ publicSharedLink, createSharedLink, deleteSharedLink, isLoading }: Props) => {
     const contentRef = useRef<HTMLDivElement>(null);
     const { createNotification } = useNotifications();
     const handleCopyURLClick = () => {
@@ -73,5 +73,3 @@ const ShareWithAnyone = ({ publicSharedLink, createSharedLink, deleteSharedLink,
         </div>
     );
 };
-
-export default ShareWithAnyone;
