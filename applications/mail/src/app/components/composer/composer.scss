@@ -1,4 +1,4 @@
-@use "sass:map";
+@use 'sass:map';
 @import '~@proton/styles/scss/lib';
 
 .composer {
@@ -267,6 +267,7 @@
 			border-block-start-width: 0;
 			border-inline-width: 0;
 			min-block-size: em(44);
+			border-color: var(--border-weak);
 
 			&:focus,
 			&:focus-within {

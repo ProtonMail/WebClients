@@ -43,7 +43,7 @@ const SelectSender = ({ composerID, message, disabled, addressesBlurRef }: Props
         >
             <span className="inline-flex flex-nowrap flex-row items-center max-w-full">
                 <span className="text-ellipsis">{address.Email}</span>
-                <Icon name="chevron-down" className="select--inline-caret-option shrink-0 ml-2" />
+                <Icon name="chevron-down-filled" className="select--inline-caret-option shrink-0 ml-2" />
             </span>
         </Option>
     ));

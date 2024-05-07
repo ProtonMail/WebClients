@@ -1,4 +1,4 @@
-import { RefObject, useEffect, useRef, useState } from 'react';
+import { RefObject, useMemo, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -13,8 +13,9 @@ import { getBlogURL } from '@proton/shared/lib/helpers/url';
 import clsx from '@proton/utils/clsx';
 
 import ComposerAssistantInput from 'proton-mail/components/assistant/ComposerAssistantInput';
+import useComposerAssistantSelectedText from 'proton-mail/hooks/assistant/useComposerAssistantSelectedText';
 
-import useComposerAssistantPosition from './useComposerAssistantPosition';
+import useComposerAssistantPosition from '../../hooks/assistant/useComposerAssistantPosition';
 
 import './ComposerAssistant.scss';
 
@@ -43,22 +44,30 @@ const ComposerAssistant = ({
     selectedText: inputSelectedText,
 }: Props) => {
     const [result, setResult] = useState('');
-
     const [expanded, setExpanded] = useState(false);
+    const [displayRefinePopover, setDisplayRefinePopover] = useState<boolean>(false);
+
+    const { sendUseAnswerAssistantReport } = useAssistantTelemetry();
+
     const composerAssistantTopValue = useComposerAssistantPosition({
         composerContainerRef,
         composerContentRef,
         composerMetaRef,
     });
 
-    // Selected text in the assistant result that the user might want to refine
-    const [selectedText, setSelectedText] = useState(inputSelectedText);
-    const assistantResultRef = useRef<HTMLDivElement>(null);
-
     const { error, closeAssistant, isGeneratingResult } = useAssistant(assistantID);
-    const { sendUseAnswerAssistantReport } = useAssistantTelemetry();
 
-    const hasAssistantError = !!error;
+    // Selected text in the composer or assistant result that the user might want to refine
+    const assistantResultRef = useRef<HTMLDivElement>(null);
+    const { selectedText } = useComposerAssistantSelectedText({
+        assistantResultRef,
+        inputSelectedText,
+        canCheckSelection: !!result && !isGeneratingResult,
+    });
+
+    const hasAssistantError = useMemo(() => {
+        return !!error;
+    }, [error]);
 
     const replaceMessageBody = async () => {
         onUseGeneratedText(result);
@@ -67,39 +76,6 @@ const ComposerAssistant = ({
         sendUseAnswerAssistantReport();
         closeAssistant(assistantID);
     };
-
-    const [displayRefinePopover, setDisplayRefinePopover] = useState<boolean>(false);
-
-    // TODO move the selection detection in a dedicated hook?
-    const handleSelectionChange = () => {
-        const selection = document.getSelection();
-        if (selection && assistantResultRef.current) {
-            // Selection can start before or end after the div containing the result
-            // We want to make sure the full selected text is inside the result container
-            const selectionInAssistant =
-                assistantResultRef.current.contains(selection.anchorNode) &&
-                assistantResultRef.current.contains(selection.focusNode);
-            if (selectionInAssistant) {
-                setSelectedText(selection.toString());
-                // setDisplayRefinePopover(true); TODO enable this later
-                return;
-            }
-        }
-        setSelectedText('');
-    };
-
-    useEffect(() => {
-        let hasListener = false;
-        if (result && !isGeneratingResult) {
-            document.addEventListener('selectionchange', handleSelectionChange);
-            hasListener = true;
-        }
-        return () => {
-            if (hasListener) {
-                document.removeEventListener('selectionchange', handleSelectionChange);
-            }
-        };
-    }, [result, isGeneratingResult]);
 
     const handleGenerateResult = (_: string, fulltext: string) => {
         const cleanedText = onCleanGeneration?.(fulltext) || fulltext;
