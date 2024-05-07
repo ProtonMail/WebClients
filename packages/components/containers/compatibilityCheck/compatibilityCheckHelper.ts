@@ -34,6 +34,14 @@ const hasLocalStorage = () => {
     }
 };
 
+const hasReplaceAll = () => {
+    try {
+        return 'a'.replaceAll('a', 'b') === 'b';
+    } catch (e) {
+        return false;
+    }
+};
+
 // Locale is not loaded here so no translations
 export const getCompatibilityList = () => {
     const isSSR = typeof window === 'undefined';
@@ -62,6 +70,11 @@ export const getCompatibilityList = () => {
             name: 'BigInt',
             valid: typeof BigInt !== 'undefined',
             text: 'Please update to a modern browser with BigInt support',
+        },
+        {
+            name: 'ReplaceAll',
+            valid: hasReplaceAll(),
+            text: '',
         },
     ];
 };
