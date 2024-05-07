@@ -6,7 +6,7 @@
   "contexts": {
     "account": {
       "Forwarding will start soon. New emails will appear in your inbox.": [
-        "Penerusan email akan segera dimulai. email baru akan muncul pada kotak masuk Anda."
+        "Penerusan akan segera dimulai. Email baru akan muncul pada kotak masuk Anda."
       ],
       "Mail forward stopped": [
         "Penerusan email diberhentikan"
@@ -358,6 +358,9 @@
       "Download ${ attachmentName }": [
         "Unduh ${ attachmentName }"
       ],
+      "Download Desktop App": [
+        "Unduh Aplikasi Desktop"
+      ],
       "Download now": [
         "Unduh sekarang"
       ],
@@ -475,6 +478,9 @@
       "Go to previous page": [
         "Ke halaman sebelumnya"
       ],
+      "Go to settings": [
+        "Pergi ke pengaturan"
+      ],
       "Go to SimpleLogin": [
         "Tuju SimpleLogin"
       ],
@@ -579,6 +585,9 @@
       ],
       "label emails as": [
         "labeli email sebagai"
+      ],
+      "Later": [
+        "Nanti"
       ],
       "Later this week": [
         "Selama minggu ini"
@@ -1120,9 +1129,6 @@
       "Trust": [
         "Percayai"
       ],
-      "Trust key": [
-        "Percayai kunci"
-      ],
       "Trust public key": [
         "Percayai kunci publik"
       ],
@@ -1404,11 +1410,6 @@
         "Email baru"
       ]
     },
-    "App logo": {
-      "Download ${ MAIL_APP_NAME } desktop application": [
-        "Unduh aplikasi desktop ${ MAIL_APP_NAME }"
-      ]
-    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "Aplikasi ${ BRAND_NAME }"
@@ -1532,13 +1533,13 @@
         "Meliputi dukungan untuk ${ domains } domain email khusus, ${ addresses } alamat email, alias hide-my-email tanpa batasan jumlah, fitur berbagi kalender, dan masih banyak lagi."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Termasuk dukungan untuk 1 domain email kustom, 10 alamat email, 10 alias hide-my-email, pembagian kalender, dan lainnya."
+        "Meliputi dukungan 1 domain email khusus, 10 alamat email, 10 alias hide-my-email, pembagian kalender, dan masih banyak lagi."
       ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "Masuk secara aman di semua perangkat Anda. Termasuk alias terbatas, pembagian, 2FA terintegrasi, dan lainnya."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Amankan email Anda dan jadwalkan dengan enkripsi ujung ke ujung. Termasuk dukungan untuk beberapa domain email kustom, 15 alamat email, alias hide-my-email tak terbatas, pembagian kalender, dan lainnya."
+        "Amankan email dan jadwal Anda dengan enkripsi end-to-end. Meliuti dukungan untuk domain email khusus, 15 alamat email, alias hide-my-email tanpa batasan jumlah, pembagian kalender, dan masih banyak lagi."
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Amankan berkas Anda dengan penyimpanan cloud yang terenkripsi. Meliputi riwayat versi, pembagian berkas terenkripsi, dan masih banyak lagi."
@@ -1689,7 +1690,7 @@
         "${ participantName } telah menyetujui undangan untuk dapat hadir dan telah mengusulkan jadwal baru untuk acara ini."
       ],
       "${ participantName } accepted an invitation to one occurrence of the event.": [
-        "${ participantName } telah menyetujui undangan untuk dapat hadir pada salah satu acara dalam rangkaian acara ini."
+        "${ participantName } menyetujui undangan untuk salah satu keberlangsungan acara."
       ],
       "${ participantName } accepted an invitation to this event.": [
         "${ participantName } telah menyetujui undangan untuk dapat hadir di acara ini."
@@ -1701,7 +1702,7 @@
         "${ participantName } sudah menerima undangan Anda dan mengusulkan waktu baru untuk acara ini."
       ],
       "${ participantName } accepted your invitation to one occurrence of the event.": [
-        "${ participantName } menerima undangan Anda untuk satu kegiatan acara."
+        "${ participantName } menyetujui undangan Anda untuk salah satu keberlangsungan acara."
       ],
       "${ participantName } accepted your invitation.": [
         "${ participantName } menerima undangan Anda."
@@ -1725,7 +1726,7 @@
         "${ participantName } telah menolak undangan untuk dapat hadir dan telah mengusulkan jadwal baru untuk acara ini."
       ],
       "${ participantName } declined an invitation to one occurrence of the event.": [
-        "${ participantName } telah menolak undangan untuk dapat hadir pada salah satu acara dalam rangkaian acara ini."
+        "${ participantName } menolak undangan untuk salah satu keberlangsungan acara."
       ],
       "${ participantName } declined an invitation to this event.": [
         "${ participantName } telah menolak undangan untuk dapat hadir di acara ini."
@@ -1737,7 +1738,7 @@
         "${ participantName } sudah menolak undangan Anda dan mengusulkan waktu baru untuk acara ini."
       ],
       "${ participantName } declined your invitation to one occurrence of the event.": [
-        "${ participantName } menolak undangan Anda untuk satu kegiatan acara."
+        "${ participantName } menolak undangan Anda untuk salah satu keberlangsungan acara."
       ],
       "${ participantName } declined your invitation.": [
         "${ participantName } menolak undangan Anda."
@@ -1749,7 +1750,7 @@
         "${ participantName } telah menerima undangan untuk dapat hadir dan telah mengusulkan jadwal baru untuk acara ini. Jawaban dan proposal yang diberikan sudah tidak lagi berlaku."
       ],
       "${ participantName } had accepted an invitation to one occurrence of the event.": [
-        "${ participantName } telah menyetujui undangan untuk dapat hadir pada salah satu acara dalam rangkaian acara ini."
+        "${ participantName } telah menyetujui undangan untuk salah satu keberlangsungan acara."
       ],
       "${ participantName } had accepted an invitation to this event.": [
         "${ participantName } telah menyetujui undangan untuk dapat hadir di acara ini."
@@ -1767,7 +1768,7 @@
         "${ participantName } telah menolak undangan untuk dapat hadir dan telah mengusulkan jadwal baru untuk acara ini. Jawaban dan proposal yang diberikan sudah tidak lagi berlaku."
       ],
       "${ participantName } had declined an invitation to one occurrence of the event.": [
-        "${ participantName } telah menolak undangan untuk dapat hadir pada salah satu acara dalam rangkaian acara ini."
+        "${ participantName } telah menolak undangan untuk salah satu keberlangsungan acara."
       ],
       "${ participantName } had declined an invitation to this event.": [
         "${ participantName } telah menolak undangan untuk dapat hadir di acara ini."
@@ -1779,19 +1780,19 @@
         "${ participantName } sudah menolak undangan Anda dan mengusulkan waktu baru untuk acara ini. Jawaban dan usulan kedaluwarsa."
       ],
       "${ participantName } had previously accepted your invitation to one occurrence of the event.": [
-        "${ participantName } sebelumnya menerima undangan Anda untuk satu kegiatan acara."
+        "${ participantName } telah sebelumnya menyetujui undangan Anda untuk salah satu keberlangsungan acara."
       ],
       "${ participantName } had previously accepted your invitation.": [
         "${ participantName } sebelumnya menerima undangan Anda."
       ],
       "${ participantName } had previously declined your invitation to one occurrence of the event.": [
-        "${ participantName } sebelumnya menolak undangan Anda untuk satu kegiatan acara."
+        "${ participantName } telah sebelumnya menolak undangan Anda untuk salah satu keberlangsungan acara."
       ],
       "${ participantName } had previously declined your invitation.": [
         "${ participantName } sebelumnya menolak undangan Anda."
       ],
       "${ participantName } had previously tentatively accepted your invitation to one occurrence of the event.": [
-        "${ participantName } sebelumnya menerima sementara undangan Anda untuk satu kegiatan acara."
+        "${ participantName } telah sebelumnya menyetujui undangan Anda secara tentatif untuk salah satu keberlangsungan acara."
       ],
       "${ participantName } had previously tentatively accepted your invitation.": [
         "${ participantName } sebelumnya menerima sementara undangan Anda."
@@ -1803,7 +1804,7 @@
         "${ participantName } sudah mengusulkan waktu baru untuk satu kegiatan acara. Usulan ini kedaluwarsa. Acara sudah tidak ada di kalender Anda."
       ],
       "${ participantName } had proposed a new time for one occurrence of this event. This proposal is out of date. You have no calendars.": [
-        "${ participantName } sudah mengusulkan waktu baru untuk satu kegiatan acara. Usulan ini kedaluwarsa. Anda tidak memiliki kalender."
+        "${ participantName } telah mengusulkan waktu baru untuk salah satu keberlangsungan acara. Proposal ini telah kedaluwarsa. Anda tidak memiliki kalender."
       ],
       "${ participantName } had proposed a new time for this event. This proposal is out of date.": [
         "${ participantName } sudah mengusulkan waktu baru untuk acara ini. Usulan kedaluwarsa."
@@ -1821,7 +1822,7 @@
         "${ participantName } telah secara tentatif menerima undangan untuk dapat hadir dan telah mengusulkan jadwal baru untuk acara ini. Jawaban dan proposal yang diberikan sudah tidak lagi berlaku."
       ],
       "${ participantName } had tentatively accepted an invitation to one occurrence of the event.": [
-        "${ participantName } telah secara tentatif menyetujui undangan untuk dapat hadir pada salah satu acara dalam rangkaian acara ini."
+        "${ participantName } telah secara tentatif menyetujui undangan untuk salah satu keberlangsungan acara."
       ],
       "${ participantName } had tentatively accepted an invitation to this event.": [
         "${ participantName } telah secara tentatif menyetujui undangan untuk dapat hadir di acara ini."
@@ -1848,7 +1849,7 @@
         "${ participantName } telah secara tentatif menyetujui undangan untuk dapat hadir dan telah mengusulkan jadwal baru untuk acara ini."
       ],
       "${ participantName } tentatively accepted an invitation to one occurrence of the event.": [
-        "${ participantName } telah secara tentatif menyetujui undangan untuk dapat hadir pada salah satu acara dalam rangkaian acara ini."
+        "${ participantName } secara tentatif menyetujui undangan untuk salah satu keberlangsungan acara."
       ],
       "${ participantName } tentatively accepted an invitation to this event.": [
         "${ participantName } telah secara tentatif menyetujui undangan untuk dapat hadir di acara ini."
@@ -1860,7 +1861,7 @@
         "${ participantName } sementara menerima undangan Anda dan mengusulkan waktu baru untuk acara ini."
       ],
       "${ participantName } tentatively accepted your invitation to one occurrence of the event.": [
-        "${ participantName } sementara menerima undangan Anda untuk satu kegiatan acara."
+        "${ participantName } secara tentatif menyetujui undangan Anda untuk salah satu keberlangsungan acara."
       ],
       "${ participantName } tentatively accepted your invitation.": [
         "${ participantName } sementara menerima undangan Anda."
@@ -1869,7 +1870,7 @@
         "(Kehadiran tidak diwajibkan)"
       ],
       "Adding occurrences to an event is not supported for the moment": [
-        "Menambahkan kegiatan ke dalam suatu acara tidak didukung untuk saat ini"
+        "Menambahkan keberlangsungan ke dalam acara saat ini tidak didukung"
       ],
       "Event refreshing is not supported for the moment": [
         "Pemuatan ulang acara belum didukung untuk saat ini"
@@ -3229,7 +3230,7 @@
         "Penggabungan kontak memakan beberapa menit. Anda dapat menutup jendela ini setelah proses selesai."
       ],
       "New emails from ${ senderEmailAddress } and ${ otherSendersCount } other won't be delivered and will be permanently deleted.": [
-        "Email baru dari ${ senderEmailAddress } dan ${ otherSendersCount } pengirim lainnya tidak akan disampaikan kepada Anda dan akan dihapus secara permanen."
+        "Email baru dari ${ senderEmailAddress } dan ${ otherSendersCount } pengirim lainnya tidak akan disampaikan dan akan dihapus secara permanen."
       ],
       "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
         "Email baru dari ${ senderEmailAddress } tidak akan disampaikan kepada Anda dan akan dihapus secara permanen."
@@ -3312,24 +3313,39 @@
     },
     "Desktop notification title": {
       "New email received": [
-        "Pesan baru diterima"
+        "Email baru diterima"
       ]
     },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "Terdapat bug-bug yang mengganggu saya"
       ],
+      "I do not wish to share": [
+        "Saya tidak ingin membagikan alasan saya"
+      ],
+      "I found a cheaper VPN": [
+        "Saya menemukan VPN yang lebih murah"
+      ],
+      "I found a VPN with better features": [
+        "Saya menemukan VPN dengan fitur yang lebih baik"
+      ],
+      "I have not managed to connect": [
+        "Saya belum berhasil terhubung"
+      ],
+      "I only needed a VPN short-term": [
+        "Saya hanya membutuhkan VPN untuk jangka pendek"
+      ],
       "I use a different ${ BRAND_NAME } account": [
         "Saya menggunakan akun ${ BRAND_NAME } lainnya"
+      ],
+      "It doesn't do what I need": [
+        "VPN ini tidak memenuhi kebutuhan saya"
       ],
       "Missing feature(s)": [
         "Terdapat fitur yang hilang"
       ],
-      "My reason isn't listed, please comment": [
-        "Lainnya (harap berikan komentar)"
-      ],
-      "Streaming service unsupported": [
-        "Layanan streaming yang saya gunakan tidak didukung"
+      "Other reason (please comment)": [
+        "Alasan lainnya (mohon tulis di kolom komentar)"
       ],
       "Subscription is too expensive": [
         "Biaya berlangganan terlalu mahal"
@@ -3339,6 +3355,9 @@
       ],
       "Temporary need, may come back in the future": [
         "Saya hanya bermaksud menurunkan jenis akun saya untuk sementara waktu"
+      ],
+      "The VPN is too slow": [
+        "VPN saya terlalu lambat"
       ]
     },
     "Downgrade modal exit survey title": {
@@ -3349,6 +3368,40 @@
     "Download attachments": {
       "Download all": [
         "Unduh semua"
+      ]
+    },
+    "drivePlus2024: Action": {
+      "Get the deal": [
+        "Dapatkan penawaran ini"
+      ],
+      "Special Offer": [
+        "Penawaran Spesial"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Riwayat versi yang terperinci"
+      ],
+      "Priority support": [
+        "Dukungan prioritas"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Terbarui dengan harga ${ renewablePrice }, batalkan kapan saja"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "untuk bulan pertama"
+      ],
+      "Limited-time offer": [
+        "Penawaran waktu terbatas"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Dapatkan ${ planName } hanya dengan harga ${ planPrice }"
       ]
     },
     "Email body for description (description part)": {
@@ -3367,13 +3420,13 @@
         "Semua acara dalam seri ini telah diperbarui. Berikut adalah apa yang diubah:\n\n${ updateEventDetailsText }"
       ],
       "This event occurrence was canceled.": [
-        "Kejadian acara ini telah dibatalkan."
+        "Keberlangsungan acara ini telah dibatalkan."
       ],
       "This event occurrence was updated.": [
-        "Kejadian acara ini telah diperbarui."
+        "Keberlangsungan acara ini telah diperbarui."
       ],
       "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Kejadian acara ini telah diperbarui. Berikut adalah apa yang diubah:\n\n${ updateEventDetailsText }"
+        "Keberlangsungan acara ini telah diperbarui. Berikut merupakan apa-apa saja yang telah diubah:\n\n${ updateEventDetailsText }"
       ],
       "This event was updated.": [
         "Acara ini telah diperbarui."
@@ -3457,19 +3510,19 @@
         "Pembatalan acara pada ${ formattedStart }"
       ],
       "Cancellation of an event starting on ${ formattedStart }": [
-        "Pembatalan acara mulai pada ${ formattedStart }"
+        "Pembatalan acara yang dimulai pada ${ formattedStart }"
       ],
       "Invitation for an event on ${ formattedStart }": [
-        "Undangan acara pada ${ formattedStart }"
+        "Undangan untuk acara pada ${ formattedStart }"
       ],
       "Invitation for an event starting on ${ formattedStart }": [
-        "Undangan acara mulai pada ${ formattedStart }"
+        "Undangan untuk acara yang dimulai pada ${ formattedStart }"
       ],
       "Update for an event on ${ formattedStart }": [
         "Pembaruan acara pada ${ formattedStart }"
       ],
       "Update for an event starting on ${ formattedStart }": [
-        "Pembaruan acara mulai pada ${ formattedStart }"
+        "Pembaruan untuk acara yang dimulai pada ${ formattedStart }"
       ]
     },
     "email_forwarding_2023: Composer email icon": {
@@ -3754,7 +3807,7 @@
         "Tidak ada kontak yang dapat diimpor"
       ],
       "No emails found to import - the account does not have an inbox": [
-        "Tidak ada email yang dapat diimpor - akun ini tidak memiliki kotak masuk"
+        "Tidak ada email yang ditemukan untuk dapat diimpor - akun ini tidak memiliki kotak masuk"
       ],
       "No external key retrieved for user is valid for sending": [
         "Tidak ada kunci eksternal untuk penerima yang valid untuk pengiriman"
@@ -3766,7 +3819,7 @@
         "Nomor telepon tidak valid"
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
-        "Kontak tidak memiliki alamat email: ${ noEmailsContactNamesList } "
+        "Sebagian kontak tidak memiliki alamat email: ${ noEmailsContactNamesList } "
       ],
       "One of the groups has no contacts: ${ noContactGroupList }": [
         "Grup tidak memiliki kontak: ${ noContactGroupList } "
@@ -4168,7 +4221,7 @@
         "Acara berulang yang asli tidak ditemukan"
       ],
       "Recurring event has no occurrences": [
-        "Acara berulang tidak terlaksana"
+        "Acara yang berulang tidak memiiliki keberlangsungan"
       ],
       "Recurring rule not supported": [
         "Aturan berulang tidak didukung"
@@ -4940,7 +4993,7 @@
     },
     "Import calendar; import invitation": {
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
-        "Undangan yang diimpor akan muncul pada ${ CALENDAR_APP_NAME } dalam bentuk simple event tanpa rincian seputar penyelenggara dan peserta. Untuk dapat memperoleh pembaruan terkini dan melihat daftar peserta, mintalah penyelenggara untuk mengundang Anda melalui alamat email ${ BRAND_NAME } Anda."
+        "Undangan yang diimpor akan muncul pada ${ CALENDAR_APP_NAME } sebagai acara sederhana tanpa rincian seputar penyelenggara dan peserta. Untuk memperoleh pembaruan seputar acara dan melihat daftar peserta, mintalah penyelenggara acara untuk mengundang Anda melalui alamat email ${ BRAND_NAME } Anda."
       ],
       "This file contains an event invitation:": [
         "Berkas ini mengandung undangan acara:"
@@ -5500,6 +5553,9 @@
       "Body: ": [
         "Isi: "
       ],
+      "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
+        "Angkat identitas merek organisasi Anda dan ciptakan pengalaman online yang lebih konsisten bagi para pengguna Anda."
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Dengan menurunkan ke paket Free, Anda akan kehilangan berbagai manfaat berikut secara permanen, bahkan apabila Anda kembali meningkatkan jenis akun Anda di kemudian hari."
       ],
@@ -5770,9 +5826,6 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "Untuk hasil pencarian yang lebih banyak, cobalah untuk mencari kata kunci ini pada konten email Anda."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Teruskan pesan yang datang dari akun lainnya menuju kotak masuk akun ${ MAIL_APP_NAME } aman Anda."
-      ],
       "From": [
         "Dari"
       ],
@@ -5835,9 +5888,6 @@
       ],
       "Import mailbox": [
         "Impor kotak surat"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Impor email, kalender, dan kontak Anda dari layanan lain ke ${ BRAND_NAME }."
       ],
       "Important note": [
         "Catatan penting"
@@ -6476,7 +6526,7 @@
         "Pesan ini akan kedaluwarsa besok pada pukul ${ value }"
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
-        "Kunci publik ini akan digunakan secara otomatis untuk mengenkripsi email-email yang dikirim ke alamat ini."
+        "Kunci publik ini akan digunakan secara otomatis untuk mengenkripsi email yang dikirim ke alamat ini."
       ],
       "This removes all data associated with this app, including downloaded messages. The app will restart and you will need to sign in again to use the app.": [
         "Tindakan ini akan menghapus seluruh data yang terhubung dengan akun ini, termasuk pesan yang diunduh. Aplikasi akan dimulai ulang dan Anda harus masuk kembali untuk dapat menggunakan aplikasi."
@@ -6503,7 +6553,7 @@
         "Untuk memulihkan data, Anda perlu mengaktifkan ulang kunci akun yang digunakan saat data dibuat. Ini membutuhkan Anda mengingat kata sandi yang digunakan saat kuncinya dibuat."
       ],
       "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
-        "Untuk berhenti berlangganan dari milis ini, sebuah email akan dikirimkan dari ${ boldFrom } dengan rincian berikut sebagaimana yang diterakan oleh pengelola milis:"
+        "Untuk berhenti berlangganan dari milis ini, sebuah email akan dikirimkan dari ${ boldFrom } dengan rincian berikut sebagaimana yang ditetapkan oleh pengirim milis:"
       ],
       "To unsubscribe from this mailing list, you will be taken to the following URL where instructions will be provided by the sender of the newsletter:": [
         "Untuk berhenti berlangganan dari milis ini, Anda akan dibawa ke URL berikut yang berisikan arahan lebih lanjut dari pengelola milis:"
@@ -6779,7 +6829,7 @@
         "Anda memiliki langganan ${ planTitle } yang berada dalam masa uji coba. Tidak ada pembayaran yang diperlukan untuk saat ini. Langganan Anda akan diperbarui secara otomatis pada akhir masa uji coba."
       ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
-        "Anda belum memberikan subjek apa pun pada email Anda. Apakah Anda ingin tetap mengirim email ini?"
+        "Anda belum menuliskan subjek apa pun pada email Anda. Apakah Anda ingin tetap mengirim pesan ini?"
       ],
       "You have reached 100% of your storage capacity. Consider freeing up some space or upgrading your account with additional storage space to compose new messages.": [
         "Anda telah mencapai batas kapasitas penyimpanan Anda. Silakan kosongkan ruang penyimpanan Anda atau tingkatkan akun Anda ke paket dengan kapasitas penyimpanan yang lebih besar untuk menulis pesan baru."
@@ -7940,7 +7990,7 @@
         "beraktivitas online secara lebih aman"
       ],
       "Terms": [
-        "Ketentuan"
+        "Ketentuan layanan"
       ],
       "This ICS file contains more than one event. Please download it and import the events in ${ CALENDAR_APP_NAME }": [
         "Berkas ICS ini mengandung lebih dari satu acara. Silakan unduh dan impor acara di ${ CALENDAR_APP_NAME }"
@@ -8183,10 +8233,10 @@
         "Cara untuk mengimpor kontak dari Yahoo"
       ],
       "How to import emails from another service": [
-        "Cara untuk mengimpor email-email dari layanan email lainnya"
+        "Cara untuk mengimpor email dari layanan lainnya"
       ],
       "How to import emails from Yahoo": [
-        "Cara untuk mengimpor email-email dari Yahoo"
+        "Cara untuk mengimpor email dari Yahoo"
       ]
     },
     "Monthly recurring event, frequency": {
@@ -8390,7 +8440,7 @@
         "${ n } domain email khusus"
       ],
       "${ n } email address": [
-        "${ n } alamat email"
+        "${ n } alamat email/alias"
       ],
       "${ n } email address per user": [
         "${ n } alamat email per pengguna"
@@ -8584,6 +8634,9 @@
       "Organize items with multiple vaults": [
         "Kelola item dengan berbagai brankas"
       ],
+      "Pass Monitor - premium features": [
+        "Pemantauan Pass - fitur premium"
+      ],
       "Passkeys supported": [
         "Passkey didukung"
       ],
@@ -8659,6 +8712,9 @@
       "Unlimited devices": [
         "Tanpa batasan jumlah perangkat"
       ],
+      "Unlimited devices and aliases": [
+        "Tanpa batasan jumlah perangkat dan alias"
+      ],
       "Unlimited filters": [
         "Tanpa batasan jumlah filter"
       ],
@@ -8716,7 +8772,7 @@
     },
     "new_plans: feature info": {
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
-        "Berikan masing-masing identitas online Anda alamat emailnya tersendiri, mis. JohnShopper@${ domain } untuk berbelanja dan JohnNews@${ domain2 } untuk berlangganan berita"
+        "Buat berbagai alamat email untuk masing-masing identitas online Anda, mis. JohnShopper@${ domain } untuk akun belanja dan JohnNews@${ domain2 } untuk akun langganan berita"
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Dapatkan alamat email samaran tanpa batasan jumlah dengan SimpleLogin oleh ${ BRAND_NAME }"
@@ -9205,7 +9261,7 @@
     },
     "Online accounts": {
       "Have an account with one of these services? Just click to change the email address to your ${ MAIL_APP_NAME } address.": [
-        "Memiliki akun pada salah satu layanan di bawah ini? Kini, Anda hanya mengganti email Anda pada layanan yang terkait ke alamat ${ MAIL_APP_NAME } Anda hanya dengan sekali klik."
+        "Memiliki akun pada salah satu layanan di bawah ini? Cukup klik layanan yang terkait untuk mengubah alamat email yang terdaftar ke alamat ${ MAIL_APP_NAME } Anda."
       ]
     },
     "Online Accounts Name": {
@@ -9281,6 +9337,11 @@
         "Anda"
       ]
     },
+    "pass_signup_2023: Info": {
+      "Secure vault sharing": [
+        "Pembagian brankas yang aman"
+      ]
+    },
     "passwordless": {
       "Non-private users can be promoted to admin when they have setup keys": [
         "Pengguna non-privat dapat dipromosikan sebagai admin pada saat mereka memiliki kunci setup"
@@ -9347,7 +9408,7 @@
     },
     "PGP Key info": {
       "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
-        "${ emailAddress } telah menandai kunci ini sebagai kunci yang bocor. Kunci ini tidak akan lagi dapat digunakan baik untuk mengenkipsi pesan maupun untuk memverifikasi tanda tangan."
+        "${ emailAddress } telah menandai kunci ini sebagai kunci yang bocor. Kunci ini tidak akan lagi dapat digunakan baik untuk enkripsi ataupun verifikasi tanda tangan."
       ],
       "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
         "${ emailAddress } telah menandai kunci ini sebagai kunci yang usang. Kunci ini hanya akan dapat digunakan untuk memverifikasi tanda tangan."
@@ -10233,14 +10294,8 @@
       ]
     },
     "Spotlight": {
-      "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
-        "Luncurkan ${ MAIL_APP_NAME } secara mudah langsung dari desktop Anda."
-      ],
       "Email tracking protection": [
         "Perlindungan pelacak email"
-      ],
-      "Get the desktop app": [
-        "Dapatkan aplikasi desktop"
       ],
       "Get up to ${ credits } in credits.": [
         "Dapatkan saldo hingga ${ credits }."
@@ -10952,6 +11007,9 @@
       "Action all messages": [
         "Terapkan pada seluruh pesan"
       ],
+      "Add a custom logo": [
+        "Tambah logo khusus"
+      ],
       "Add contact group name": [
         "Tambah nama grup kontak"
       ],
@@ -11091,7 +11149,7 @@
         "Sesuaikan proses impor kalender"
       ],
       "Customize your mail import": [
-        "Sesuaikan proses impor email"
+        "Sesuaikan impor email Anda"
       ],
       "Customize your plan": [
         "Sesuaikan paket Anda"
@@ -11292,7 +11350,7 @@
         "Tandai percakapan sebagai belum dibaca"
       ],
       "Mark email as legitimate": [
-        "Tandai sah pada pesan"
+        "Tandai email sebagai absah"
       ],
       "Mark messages as read": [
         "Tandai pesan sebagai telah dibaca"
@@ -11472,7 +11530,7 @@
         "Minta kode baru"
       ],
       "Save time with email filters": [
-        "Hemat waktu dengan saringan email"
+        "Hemat waktu dengan filter email"
       ],
       "Schedule send": [
         "Jadwalkan pengiriman"

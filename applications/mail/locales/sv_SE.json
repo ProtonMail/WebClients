@@ -361,6 +361,9 @@
       "Download ${ attachmentName }": [
         "Ladda ner ${ attachmentName }"
       ],
+      "Download Desktop App": [
+        "Ladda ner appen för stationär dator"
+      ],
       "Download now": [
         "Ladda ner nu"
       ],
@@ -478,6 +481,9 @@
       "Go to previous page": [
         "Gå till föregående sida"
       ],
+      "Go to settings": [
+        "Gå till inställningar"
+      ],
       "Go to SimpleLogin": [
         "Gå till SimpleLogin"
       ],
@@ -586,6 +592,9 @@
       ],
       "label emails as": [
         "märk e-postmeddelanden som"
+      ],
+      "Later": [
+        "Senare"
       ],
       "Later this week": [
         "Senare denna vecka"
@@ -1127,10 +1136,6 @@
       "Trust": [
         "Lita på"
       ],
-      "Trust key": [
-        "Lita på nyckel",
-        "Lita på nycklar"
-      ],
       "Trust public key": [
         "Lita på offentlig nyckel"
       ],
@@ -1419,11 +1424,6 @@
       ],
       "New email": [
         "Ny e-post"
-      ]
-    },
-    "App logo": {
-      "Download ${ MAIL_APP_NAME } desktop application": [
-        "Ladda ner ${ MAIL_APP_NAME }-applikation för stationär dator"
       ]
     },
     "Apps dropdown": {
@@ -3345,17 +3345,32 @@
       "Bugs or quality issue": [
         "Buggar eller kvalitetsproblem"
       ],
+      "I do not wish to share": [
+        "Jag vill inte dela"
+      ],
+      "I found a cheaper VPN": [
+        "Jag hittade ett billigare VPN"
+      ],
+      "I found a VPN with better features": [
+        "Jag hittade ett VPN med bättre funktioner"
+      ],
+      "I have not managed to connect": [
+        "Jag har inte lyckats att ansluta"
+      ],
+      "I only needed a VPN short-term": [
+        "Jag behövde bara ett VPN kortsiktigt"
+      ],
       "I use a different ${ BRAND_NAME } account": [
         "Jag använder ett annat ${ BRAND_NAME }-konto"
+      ],
+      "It doesn't do what I need": [
+        "Det gör inte vad jag behöver"
       ],
       "Missing feature(s)": [
         "Saknade funktion(er)"
       ],
-      "My reason isn't listed, please comment": [
-        "Min anledning är inte listad, kommentera"
-      ],
-      "Streaming service unsupported": [
-        "Streamingtjänst stöds inte"
+      "Other reason (please comment)": [
+        "Annan anledning (kommentera gärna)"
       ],
       "Subscription is too expensive": [
         "Prenumeration är för dyrt"
@@ -3365,6 +3380,9 @@
       ],
       "Temporary need, may come back in the future": [
         "Tillfälligt behov, kan komma tillbaka i framtiden"
+      ],
+      "The VPN is too slow": [
+        "VPN är för långsamt"
       ]
     },
     "Downgrade modal exit survey title": {
@@ -3375,6 +3393,40 @@
     "Download attachments": {
       "Download all": [
         "Ladda ner alla"
+      ]
+    },
+    "drivePlus2024: Action": {
+      "Get the deal": [
+        "Ta del av erbjudandet"
+      ],
+      "Special Offer": [
+        "Specialerbjudande"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Utökad versionshistorik"
+      ],
+      "Priority support": [
+        "Prioriterad support"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Förnyas med ${ renewablePrice }, avbryt när som helst"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "för första månaden"
+      ],
+      "Limited-time offer": [
+        "Tidsbegränsat erbjudande"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Skaffa ${ planName } för endast ${ planPrice }"
       ]
     },
     "Email body for description (description part)": {
@@ -5618,6 +5670,9 @@
       "Body: ": [
         "Innehåll: "
       ],
+      "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
+        "Förstärk din organisations varumärkesidentitet och skapa en mer konsekvent upplevelse online för dina användare."
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Genom att nedgradera till ett gratiskonto kommer du permanent att förlora dessa fördelar, även om du uppgraderar igen i framtiden."
       ],
@@ -5895,9 +5950,6 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "För fler sökresultat, prova att söka efter detta nyckelord i innehållet i dina e-postmeddelanden."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Vidarebefordra inkommande e-post från annat konto till din säkra inkorg för ${ MAIL_APP_NAME }."
-      ],
       "From": [
         "Från"
       ],
@@ -5962,9 +6014,6 @@
       ],
       "Import mailbox": [
         "Importera brevlåda"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Importera din e-post, kalendrar och kontakter från en annan tjänst till ${ BRAND_NAME }."
       ],
       "Important note": [
         "Viktig notering"
@@ -8755,6 +8804,9 @@
       "Organize items with multiple vaults": [
         "Organisera objekt med flera valv"
       ],
+      "Pass Monitor - premium features": [
+        "Pass Monitor - premiumfunktioner"
+      ],
       "Passkeys supported": [
         "Passkeys stöds"
       ],
@@ -8830,6 +8882,9 @@
       ],
       "Unlimited devices": [
         "Obegränsat antal enheter"
+      ],
+      "Unlimited devices and aliases": [
+        "Obegränsat antal enheter och alias"
       ],
       "Unlimited filters": [
         "Obegränsade filter"
@@ -9457,6 +9512,18 @@
     "Participant name": {
       "You": [
         "Du"
+      ]
+    },
+    "pass_signup_2023: Info": {
+      "Secure sharing with ${ n } vault": [
+        "Säker delning med ${ n } valv",
+        "Säker delning med ${ n } valv"
+      ],
+      "Secure sharing with multiple vaults": [
+        "Säker delning med flera valv"
+      ],
+      "Secure vault sharing": [
+        "Säker valvdelning"
       ]
     },
     "passwordless": {
@@ -10441,14 +10508,8 @@
       ]
     },
     "Spotlight": {
-      "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
-        "Starta ${ MAIL_APP_NAME } bekvämt direkt från din stationära dator."
-      ],
       "Email tracking protection": [
         "E-postspårningsskydd"
-      ],
-      "Get the desktop app": [
-        "Skaffa appen för stationär dator"
       ],
       "Get up to ${ credits } in credits.": [
         "Få upp till ${ credits } i krediter."
@@ -11196,6 +11257,9 @@
       ],
       "Action all messages": [
         "Åtgärda alla meddelanden"
+      ],
+      "Add a custom logo": [
+        "Lägg till en anpassad logga"
       ],
       "Add contact group name": [
         "Lägg till kontaktgruppens namn"

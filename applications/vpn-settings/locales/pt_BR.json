@@ -1939,12 +1939,6 @@
       "Missing feature(s)": [
         "Funções ausentes"
       ],
-      "My reason isn't listed, please comment": [
-        "Meu motivo não está listado. Comente."
-      ],
-      "Streaming service unsupported": [
-        "Serviço de streaming não suportado"
-      ],
       "Subscription is too expensive": [
         "A assinatura é muito cara"
       ],
@@ -1958,6 +1952,40 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Ajude-nos a melhorar!"
+      ]
+    },
+    "drivePlus2024: Action": {
+      "Get the deal": [
+        "Obtenha a oferta"
+      ],
+      "Special Offer": [
+        "Oferta especial"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Histórico de versão estendido"
+      ],
+      "Priority support": [
+        "Suporte prioritário"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Se renova por ${ renewablePrice }, cancele a qualquer momento"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "pelo primeiro mês"
+      ],
+      "Limited-time offer": [
+        "Oferta por tempo limitado"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Obtenha ${ planName } por apenas ${ planPrice }"
       ]
     },
     "Email verification": {
@@ -3531,9 +3559,6 @@
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Note que ao clicar no botão Confirmar a sua conta terá ${ creditsRemaining } créditos restantes."
       ],
-      "Please provide an email address in case we need to contact you.": [
-        "Forneça um endereço de e-mail para entrar em contato com você."
-      ],
       "Please try again using a different payment method, or contact your bank.": [
         "Tente novamente com outro método de pagamento ou entre em contato com seu banco."
       ],
@@ -4978,17 +5003,11 @@
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Esqueceu o seu nome de usuário ${ BRAND_NAME }? Encontre-o usando seu e-mail ou número de telefone de recuperação e recupere seu acesso aos serviços ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, e muito mais."
       ],
-      "Private and secure email, no credit card required": [
-        "Email privado e seguro, sem necessidade de cartão de crédito"
-      ],
       "Reset your ${ BRAND_NAME } Account password": [
         "Redefina a senha da sua conta da ${ BRAND_NAME }"
       ],
       "Sign in to access your ${ appName } account": [
         "Inicie sessão para acessar sua conta ${ appName }"
-      ],
-      "Try ${ planName } for free with this link": [
-        "Experimente ${ planName } gratuitamente com este link"
       ]
     },
     "Monetary unit": {
@@ -5293,6 +5312,9 @@
       ],
       "Organize items with multiple vaults": [
         "Organize itens com múltiplos cofres"
+      ],
+      "Passkeys supported": [
+        "Passkeys suportadas"
       ],
       "Password-protected Emails": [
         "E-mails protegidos por senha"
@@ -6298,9 +6320,6 @@
       "e.g. https://idp.example.com/XXXXX": [
         "por exemplo https://idp.exemplo.com/XXXXX"
       ],
-      "Email address": [
-        "Endereço de e-mail"
-      ],
       "Feedback": [
         "Comentários"
       ],
@@ -6487,6 +6506,9 @@
       ]
     },
     "scim: Info": {
+      "Enter token into your identity provider": [
+        "Insira o token em seu provedor de identidade"
+      ],
       "The SCIM base URL and token will be deleted.": [
         "O URL base e o token do SCIM serão excluídos."
       ]
@@ -8312,6 +8334,9 @@
       ],
       "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
         "A assinatura é renovada automaticamente a cada 3 meses. Sua próxima data de faturamento será em 3 meses."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "O preço com desconto especial de ${ priceWithDiscount } é válido no primeiro mês. Em seguida, ele será renovado automaticamente pelo preço de ${ renewPrice } todo mês. Você pode cancelar a qualquer momento."
       ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Você será cobrado a cada 12 meses no valor de ${ renewPrice }."

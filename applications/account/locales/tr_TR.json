@@ -527,6 +527,9 @@
       "Go to label": [
         "Etikete git"
       ],
+      "Go to settings": [
+        "Ayarlara git"
+      ],
       "Got it": [
         "Anladım"
       ],
@@ -599,6 +602,9 @@
       "label emails as": [
         "e-postalar şöyle etiketlensin"
       ],
+      "Later": [
+        "Daha sonra"
+      ],
       "Leave": [
         "Ayrıl"
       ],
@@ -630,7 +636,7 @@
         "Açılmış olarak işaretle"
       ],
       "Mark as resolved": [
-        "Çözülmüş olarak işaretle"
+        "Çözümlenmiş olarak işaretle"
       ],
       "mark emails as": [
         "e-postalar şöyle işaretlensin"
@@ -3311,12 +3317,6 @@
       "Missing feature(s)": [
         "Eksik özellikler"
       ],
-      "My reason isn't listed, please comment": [
-        "Gerekçem listede yok. Lütfen açıklayın"
-      ],
-      "Streaming service unsupported": [
-        "Yayın akışı hizmetinin desteklenmemesi"
-      ],
       "Subscription is too expensive": [
         "Abonelik çok pahalı"
       ],
@@ -3349,6 +3349,40 @@
       ],
       "Secure cloud storage and file sharing that protects your data": [
         "Verilerinizi koruyan güvenli bulut depolama alanı ve dosya paylaşımı"
+      ]
+    },
+    "drivePlus2024: Action": {
+      "Get the deal": [
+        "Teklifi al"
+      ],
+      "Special Offer": [
+        "Özel Teklif"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Genişletilmiş sürüm geçmişi"
+      ],
+      "Priority support": [
+        "Öncelikli destek"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "${ renewablePrice } ile yenilenir. İstediğiniz zaman iptal edebilirsiniz"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "ilk ay için"
+      ],
+      "Limited-time offer": [
+        "Sınırlı süreli teklif"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "${ planName } tarifesini yalnızca ${ planPrice } ödeyerek alın"
       ]
     },
     "Duration": {
@@ -4294,6 +4328,9 @@
       ],
       "You have reached the contacts limit for your account": [
         "Hesabınızın kişi sayısı sınırına ulaştınız"
+      ],
+      "You have reached the maximum number of calendars.": [
+        "Eklenebilecek en fazla takvim sayısı sınırına ulaştınız."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Tarifenizdeki tüm adresleri kullandınız. Yeni bir adres eklemek için lütfen tarifenizi yükseltin."
@@ -6420,6 +6457,9 @@
       "Blocks senders from seeing if and when you opened a message.": [
         "Göndericilerin bir iletiyi açıp açmadığınızı ve ne zaman açtığınızı görmesini engeller."
       ],
+      "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
+        "Kuruluşunuzun marka kimliğini güçlendirerek kullanıcılarınız için daha istikrarlı bir çevrimiçi deneyim oluşturun."
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ücretsiz bir tarifeye geçtiğinizde, gelecekte yeniden ücretli tarifeye geçseniz bile bu ek faydaları kalıcı olarak kaybedersiniz."
       ],
@@ -7310,9 +7350,6 @@
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Lütfen Onayla düğmesine tıkladığınızda, hesabınızda ${ creditsRemaining } kredi kalacağını unutmayın."
-      ],
-      "Please provide an email address in case we need to contact you.": [
-        "Sizinle iletişim kurmamız gerekirse kullanabileceğimiz bir e-posta adresi yazın."
       ],
       "Please select the folders you would like to import:": [
         "Lütfen içe aktarmak istediğiniz klasörleri seçin:"
@@ -9986,7 +10023,7 @@
         "Oturum aç"
       ],
       "stay safer online": [
-        "çevrim içi ortamda güvende kalın"
+        "çevrim içi ortamda daha güvende kalın"
       ],
       "switch account": [
         "hesabı değiştir"
@@ -10802,6 +10839,9 @@
       ],
       "Organize items with multiple vaults": [
         "Birden çok kasa ile ögeleri gruplayın"
+      ],
+      "Passkeys supported": [
+        "Geçiş anahtarları desteklenmektedir"
       ],
       "Password-protected Emails": [
         "Parola korumalı e-postalar"
@@ -11917,9 +11957,6 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Check out ${ appName } features": [
-        "${ appName } özelliklerine bakın"
-      ],
       "Continue": [
         "İlerle"
       ],
@@ -12010,15 +12047,6 @@
       "${ PASS_APP_NAME } is available as a browser extension on the Chrome Web Store.": [
         "${ PASS_APP_NAME } Chrome Web Store üzerinde bir tarayıcı eklentisi olarak bulunabilir."
       ],
-      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption.": [
-        "${ PASS_APP_NAME }, titiz uçtan uca şifreleme ile parolalarınızı ve kimliğinizi güvende tutar."
-      ],
-      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. To add premium features of ${ PASS_APP_NAME_2 } to your current subscription, we suggest upgrading to the ${ upsellPlanName } plan.": [
-        "${ PASS_APP_NAME }, titiz uçtan uca şifreleme ile parolalarınızı ve kimliğinizi güvende tutar. Ücretli ${ PASS_APP_NAME_2 } özelliklerini geçerli aboneliğinize eklemek için ${ upsellPlanName } tarifesine geçmenizi öneririz."
-      ],
-      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. Your current plan already gives you access to premium ${ PASS_APP_NAME_2 } features — no need to purchase again.": [
-        "${ PASS_APP_NAME }, titiz uçtan uca şifreleme ile parolalarınızı ve kimliğinizi güvende tutar. Geçerli tarifeniz zaten ücretli ${ PASS_APP_NAME_2 } özelliklerine erişmenizi sağlıyor. Yeniden satın almanıza gerek yok."
-      ],
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } aylık"
       ],
@@ -12060,9 +12088,6 @@
       ],
       "Current plan": [
         "Geçerli tarife"
-      ],
-      "Discover ${ PASS_APP_NAME },${ br }our new encrypted password manager": [
-        "${ PASS_APP_NAME },${ br }yeni şifrelenmiş parola yöneticimiz"
       ],
       "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } kullanmaya başlamak için ilgili uygulamaları ve eklentileri indirip kurun"
@@ -12117,9 +12142,6 @@
       ],
       "Get the security and features your business needs": [
         "Kuruluşunuza uygun güvenlik ve özellik düzeyini seçin"
-      ],
-      "Hide-my-email aliases protect your email from data breaches": [
-        "Hide-my-email takma adları, e-postanızı verilerinizin ele geçirilmesinden korur"
       ],
       "I understand that if I lose my recovery details, I may permanently lose access to my account.": [
         "Kurtarma bilgilerimi kaybedersem hesabıma erişimi kalıcı olarak kaybedeceğimi anladım."
@@ -13952,11 +13974,41 @@
       "15 GB storage": [
         "15 GB depolama alanı"
       ],
+      "and 15 more premium features": [
+        "ve 15 ücretli özellik daha"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Otomatik e-posta iletisi ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Veri ihlali uyarısı ${ strongArgument }"
+      ],
       "Desktop app": [
         "Masaüstü uygulaması"
       ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ücretli bir tarifeye geçiş yaparak interneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
+      ],
+      "No ads or tracking": [
+        "Reklamlar ve izleyiciler yok"
+      ],
+      "Short @pm.me email address": [
+        "Kısa @pm.me e-posta adresi"
+      ],
+      "Support our mission": [
+        "Misyonumuzu destekleyin"
+      ],
       "Upgrade": [
         "Yükselt"
+      ],
+      "Upgrade your productivity": [
+        "Verimliliğinizi artırın"
+      ],
+      "We don't sell your data": [
+        "Verilerinizi satmıyoruz"
+      ],
+      "Your privacy is our mission": [
+        "Gizliliğiniz bizim misyonumuzdur"
       ]
     },
     "Subscription renewal state": {
@@ -14458,6 +14510,9 @@
       ],
       "Activate user": [
         "Kullanıcıyı etkinleştir"
+      ],
+      "Add a custom logo": [
+        "Özel bir logo ekle"
       ],
       "Add address": [
         "Adres ekle"
@@ -15929,6 +15984,9 @@
       ],
       "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
         "Abonelik her 3 ayda bir otomatik olarak yenilenir. Bir sonraki fatura tarihiniz 3 ay sonra."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "İlk ay için ${ priceWithDiscount } özel indirimli fiyat geçerlidir. Ardından aylık ${ renewPrice } tutarla otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
       ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Daha sonra faturanız her 12 ayda bir ${ renewPrice } üzerinden hazırlanacak."

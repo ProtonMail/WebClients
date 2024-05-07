@@ -2071,12 +2071,6 @@
       "Missing feature(s)": [
         "Funkciók hiányoznak"
       ],
-      "My reason isn't listed, please comment": [
-        "Nem a felsorolt indokok miatt. Kérjük írja le"
-      ],
-      "Streaming service unsupported": [
-        "Videó szolgáltatás nem támogatott"
-      ],
       "Subscription is too expensive": [
         "Az előfizetés túl drága"
       ],
@@ -2090,6 +2084,11 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Segítsen fejlődni!"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Priority support": [
+        "Elsőbbségi támogatás"
       ]
     },
     "Email subject": {
@@ -3841,9 +3840,6 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "A legjobb eredményért addig ne videózzon vagy végezzem memóriaigényes műveletet, vagy darabolja a feltöltését kisebb részekre."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Irányítsa át a bejövő leveleit másik címről, a biztonságos ${ MAIL_APP_NAME } fiókjába."
-      ],
       "from the version history?": [
         "az előző változatok közül?"
       ],
@@ -3892,9 +3888,6 @@
       ],
       "Import mailbox": [
         "E-mail fiók importálása"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Importálja az e-mailjeit, naptárait és névjegyeit másik szolgáltatásból a ${ BRAND_NAME } fiókjába."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Adatok importálása innen: ${ fromEmail }, ide: ${ toEmail }."

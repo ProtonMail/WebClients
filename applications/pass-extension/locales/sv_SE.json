@@ -521,14 +521,17 @@
       "A checked box means the feature is disabled.": [
         "En ikryssad ruta betyder att funktionen är inaktiverad."
       ],
-      "It would be more secure to set up 2FA for this account.": [
-        "Det skulle vara mer säkert att ställa in 2FA för detta konto."
+      "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
+        "Övervakning av ”Dark web” är tillgängligt med ett betalt paket. Uppgradera för omedelbar åtkomst."
       ],
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
         "Lista över domäner där vissa automatiska funktioner i ${ PASS_SHORT_APP_NAME } (automatisk ifyllnad, automatiskt förslag, automatiskt spara) inte ska köras.${ infoText }"
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "Detta konto är sårbart, besök tjänsten och ändra ditt lösenord."
+      ],
+      "This service offers 2FA. Enable it for added account security.": [
+        "Denna tjänst erbjuder 2FA. Aktivera det för extra kontosäkerhet."
       ]
     },
     "Error": {
@@ -635,9 +638,6 @@
       ],
       "Failed to edit user's access.": [
         "Misslyckades att redigera användaråtkomst."
-      ],
-      "Failed to load breaches": [
-        "Misslyckades att ladda intrång"
       ],
       "Failed to load breaches for this address": [
         "Misslyckades att ladda intrång för denna adress"
@@ -2248,9 +2248,6 @@
       "Members": [
         "Medlemmar"
       ],
-      "Missing two-factor authentication": [
-        "Saknar tvåfaktorsautentisering"
-      ],
       "Modified": [
         "Ändrad"
       ],
@@ -2298,6 +2295,9 @@
       ],
       "Set access level": [
         "Ställ in åtkomstnivå"
+      ],
+      "Set up 2FA for more security": [
+        "Ställ in 2FA för mer säkerhet"
       ],
       "Share with": [
         "Dela med"

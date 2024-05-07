@@ -367,6 +367,9 @@
       "Go to parent": [
         "Ga naar bovenliggende"
       ],
+      "Go to settings": [
+        "Ga naar instellingen"
+      ],
       "Got it": [
         "Begrepen"
       ],
@@ -414,6 +417,9 @@
       ],
       "Keep my Plus subscription": [
         "Behoud mijn Plus-abonnement"
+      ],
+      "Later": [
+        "Later"
       ],
       "Learn more": [
         "Meer informatie"
@@ -2229,12 +2235,6 @@
       "Missing feature(s)": [
         "Ontbrekend(e) kenmerk(en)"
       ],
-      "My reason isn't listed, please comment": [
-        "Mijn reden staat er niet bij, graag commentaar"
-      ],
-      "Streaming service unsupported": [
-        "Streamingdienst niet ondersteund"
-      ],
       "Subscription is too expensive": [
         "Abonnement is te duur"
       ],
@@ -2248,6 +2248,40 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Help ons verbeteren!"
+      ]
+    },
+    "drivePlus2024: Action": {
+      "Get the deal": [
+        "Pak deze deal"
+      ],
+      "Special Offer": [
+        "Speciale aanbieding"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Uitgebreide versiegeschiedenis bekijken"
+      ],
+      "Priority support": [
+        "Prioriteitsondersteuning"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Wordt verlengd voor ${ renewablePrice }, altijd opzegbaar"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "voor de eerste maand"
+      ],
+      "Limited-time offer": [
+        "Tijdelijke aanbieding"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Neem ${ planName } voor slechts ${ planPrice }"
       ]
     },
     "Email body for description (description part)": {
@@ -2776,6 +2810,9 @@
       ],
       "You have reached the contacts limit for your account": [
         "U heeft de limiet van contacten bereikt voor dit account"
+      ],
+      "You have reached the maximum number of calendars.": [
+        "U hebt het maximum aantal agenda's bereikt."
       ],
       "You must set a name": [
         "U moet een naam instellen"
@@ -3893,6 +3930,9 @@
       "Billing cycle: ${ text }": [
         "Facturatiefrequentie: ${ text }"
       ],
+      "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
+        "Boost de merkidentiteit van uw organisatie en creëer een consistentere online ervaring voor uw gebruikers."
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Door het downgraden naar een gratis abonnement verliest u deze voordelen, zelfs als u in de toekomst opnieuw upgrade."
       ],
@@ -4208,9 +4248,6 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Vermijd streaming en andere geheugenintensieve activiteiten of splits je upload op in kleinere delen voor het beste resultaat."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Binnenkomende mail doorsturen van een ander account naar uw veilige ${ MAIL_APP_NAME }-inbox."
-      ],
       "from the version history?": [
         "van de versie geschiedenis?"
       ],
@@ -4268,9 +4305,6 @@
       ],
       "Import mailbox": [
         "Mailbox importeren"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Importeer uw e-mails, agenda, en contactpersonen van een andere dienst naar ${ BRAND_NAME }."
       ],
       "Important note": [
         "Belangrijke opmerking"
@@ -6579,6 +6613,9 @@
       "Organize items with multiple vaults": [
         "Organiseer items met meerdere kluizen"
       ],
+      "Passkeys supported": [
+        "Toegangscodes ondersteund"
+      ],
       "Password-protected Emails": [
         "E-mails met wachtwoordbeveiliging"
       ],
@@ -7300,6 +7337,9 @@
       ],
       "Trash failed to be emptied": [
         "Prullenbak legen mislukt"
+      ],
+      "You stopped sharing this item": [
+        "Je bent gestopt met dit item te delen"
       ],
       "Your old files will be deleted in 72 hours": [
         "Uw oude bestanden worden binnen 72 uur verwijderd"
@@ -8351,6 +8391,26 @@
         "Voor"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB opslagruimte"
+      ],
+      "and 15 more premium features": [
+        "en 15 meer premium functies"
+      ],
+      "Desktop app": [
+        "Desktop-app"
+      ],
+      "No ads or tracking": [
+        "Geen advertenties of tracking"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "We don't sell your data": [
+        "Wij verkopen uw data niet"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Weet u het zeker?"
@@ -8637,6 +8697,9 @@
       ],
       "Active": [
         "Actief"
+      ],
+      "Add a custom logo": [
+        "Voeg een aangepast logo toe"
       ],
       "Add contact group name": [
         "Naam contactgroep toevoegen"
@@ -9117,6 +9180,9 @@
       "Stop sharing with everyone?": [
         "Stop het delen met iedereen?"
       ],
+      "Stop sharing?": [
+        "Delen stoppen?"
+      ],
       "Stop transfers?": [
         "Overdrachten stoppen?"
       ],
@@ -9363,6 +9429,9 @@
       ],
       "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
         "Abonnement wordt elke 3 maanden automatisch verlengd. Uw volgende facturatiedatum is over 3 maanden."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste maand. Daarna wordt uw abonnement automatisch vernieuwd voor ${ renewPrice } per maand. U kunt opzeggen wanneer u wilt."
       ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "U wordt vervolgens elke 12 maanden ${ renewPrice } aangerekend."

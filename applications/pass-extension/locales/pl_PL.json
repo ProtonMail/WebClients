@@ -515,7 +515,7 @@
     },
     "Description": {
       "${ total } other login uses the same password": [
-        "Tego hasła używają jeszcze ${ total } inne dane logowania",
+        "Tego hasła używa jeszcze ${ total } inne dane logowania",
         "Tego hasła używają jeszcze ${ total } inne dane logowania",
         "Tego hasła używa jeszcze ${ total } innych danych logowania",
         "Tego hasła używa jeszcze ${ total } innych danych logowania"
@@ -526,14 +526,14 @@
       "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
         "Monitoring dark web jest dostępny w płatnym planie. Ulepsz konto, aby uzyskać do niego dostęp."
       ],
-      "It would be more secure to set up 2FA for this account.": [
-        "Zalecamy skonfigurowanie uwierzytelniania dwustopniowego."
-      ],
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
         "Lista domen, w których niektóre funkcje aplikacji ${ PASS_SHORT_APP_NAME } (autouzupełnianie, automatyczne sugestie, automatyczne zapisywanie) nie powinny zostać uruchamiane.${ infoText }"
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "Konto jest zagrożone. Przejdź do usługi i zmień hasło."
+      ],
+      "This service offers 2FA. Enable it for added account security.": [
+        "Usługa oferuje uwierzytelnianie dwustopniowe. Włącz je, aby zwiększyć bezpieczeństwo konta."
       ]
     },
     "Error": {
@@ -647,9 +647,6 @@
       ],
       "Failed to edit user's access.": [
         "Nie udało się zmienić uprawień użytkownika."
-      ],
-      "Failed to load breaches": [
-        "Nie udało się załadować wycieków"
       ],
       "Failed to load breaches for this address": [
         "Nie udało się załadować wycieków dla tego adresu"
@@ -2303,9 +2300,6 @@
       "Members": [
         "Użytkownicy"
       ],
-      "Missing two-factor authentication": [
-        "Brak uwierzytelniania dwustopniowego"
-      ],
       "Modified": [
         "Zmodyfikowano"
       ],
@@ -2353,6 +2347,9 @@
       ],
       "Set access level": [
         "Ustaw uprawnienia"
+      ],
+      "Set up 2FA for more security": [
+        "Skonfiguruj uwierzytelnianie dwustopniowe dla większego bezpieczeństwa"
       ],
       "Share with": [
         "Udostępnij"

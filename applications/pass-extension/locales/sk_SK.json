@@ -188,6 +188,9 @@
       "Edit vault": [
         "Upraviť trezor"
       ],
+      "Exclude from monitoring": [
+        "Vylúčiť z monitorovania"
+      ],
       "Export": [
         "Exportovať"
       ],
@@ -212,6 +215,9 @@
       "Get mobile apps": [
         "Získať mobilné aplikácie"
       ],
+      "Get Pass Plus": [
+        "Získajte Pass Plus"
+      ],
       "Help us improve": [
         "Pomôžte nám zlepšiť sa"
       ],
@@ -232,6 +238,9 @@
       ],
       "Importing": [
         "Prebieha import"
+      ],
+      "Include in monitoring": [
+        "Zaharnúť do monitorovania"
       ],
       "Invite others": [
         "Pozvať iných"
@@ -368,6 +377,9 @@
       "Saving passkey...": [
         "Ukladá sa prístupový kľúč..."
       ],
+      "See all": [
+        "Zobraziť všetko"
+      ],
       "See members": [
         "Zobraziť členov"
       ],
@@ -502,11 +514,23 @@
       ]
     },
     "Description": {
+      "${ total } other login uses the same password": [
+        "${ total } iné prihlásenie už používa rovnaké heslo",
+        "${ total } iné prihlasovania už používajú rovnaké heslo",
+        "${ total } iných prihlasovaní už používa rovnaké heslo",
+        "${ total } iných prihlasovaní už používa rovnaké heslo"
+      ],
       "A checked box means the feature is disabled.": [
         "Začiarknuté políčko znamená, že funkcia je vypnutá."
       ],
+      "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
+        "K dispozícii je platený plán monitorovania Dark Webu. Aktualizujte si ho pre okamžitý prístup."
+      ],
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
         "Zoznam domén, na ktorých by sa nemali spúšťať určité automatické funkcie v ${ PASS_SHORT_APP_NAME } (automatické vypĺňanie, automatické návrhy, automatické ukladanie). ${ infoText }"
+      ],
+      "This account is vulnerable, visit the service and change your password.": [
+        "Tento účet je zraniteľný. Navštívte službu a zmeňte si heslo."
       ]
     },
     "Error": {
@@ -606,6 +630,12 @@
       "Failed resending invite.": [
         "Opätovné zaslanie pozvánky zlyhalo."
       ],
+      "Failed to add email address": [
+        "Pridanie emailovej adresy zlyhalo"
+      ],
+      "Failed to delete email address from monitoring": [
+        "Vymazanie emailovej adresy z monitorovania zlyhalo"
+      ],
       "Failed to delete selected items": [
         "Nepodarilo sa odstrániť vybrané položky"
       ],
@@ -614,6 +644,12 @@
       ],
       "Failed to edit user's access.": [
         "Úprava prístupových práv používateľa zlyhala."
+      ],
+      "Failed to load breaches for this address": [
+        "Načítanie únikov pre túto adresu zlyhalo"
+      ],
+      "Failed to load breaches for this email alias": [
+        "Načítanie únikov pre tento emailový alias zlyhalo"
       ],
       "Failed to load item history": [
         "Nepodarilo sa načítať históriu položky"
@@ -633,6 +669,12 @@
       "Failed to remove user's access.": [
         "Odstránenie prístupu používateľa zlyhalo."
       ],
+      "Failed to resend verification for custom email": [
+        "Nepodarilo sa opätovne odoslať overenie pre vlastnú emailovú adresu"
+      ],
+      "Failed to resolve breaches for this address": [
+        "Vyriešenie únikov pre túto adresu zlyhalo"
+      ],
       "Failed to restore items from trash": [
         "Nepodarilo sa obnoviť položky z koša"
       ],
@@ -641,6 +683,21 @@
       ],
       "Failed to unpin item": [
         "Odopnutie položky zlyhalo"
+      ],
+      "Failed to update monitoring settings": [
+        "Zlyhala aktualizácia nastavení monitorovania"
+      ],
+      "Failed to verify email address": [
+        "Overenie emailovej adresy zlyhalo"
+      ],
+      "Failed updating ${ PROTON_SENTINEL_NAME } setting": [
+        "Zlyhala aktualizácia nastavení ${ PROTON_SENTINEL_NAME }"
+      ],
+      "Failed updating monitor flag of the item": [
+        "Zlyhala aktualizácia značky monitorovania položky"
+      ],
+      "Failed updating monitoring status for this email address": [
+        "Aktualizácia stavu monitorovania tejto emailovej adresy zlyhala"
       ],
       "File could not be parsed": [
         "Súbor sa nepodarilo analyzovať"
@@ -902,6 +959,12 @@
       "${ PASS_APP_NAME } will suggest saving passkeys.": [
         "${ PASS_APP_NAME } navrhne uloženie prístupových kľúčov."
       ],
+      "${ PROTON_SENTINEL_NAME } successfully disabled": [
+        "${ PROTON_SENTINEL_NAME } úspešne vypnutý"
+      ],
+      "${ PROTON_SENTINEL_NAME } successfully enabled": [
+        "${ PROTON_SENTINEL_NAME } úspešne zapnutý"
+      ],
       "${ trialDaysLeft } day left": [
         "Zostáva ${ trialDaysLeft } deň",
         "Zostávajú ${ trialDaysLeft } dni",
@@ -934,6 +997,9 @@
       ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Alias \"${ item.aliasEmail }\" presunutý do koša – prestanú sa preposielať emaily do vašej poštovej schránky"
+      ],
+      "All breaches for this address were resolved": [
+        "Všetky úniky pre túto emailovú adresu boli vyriešené"
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Všetky položky z \"${ payload.content.name }\" boli úspešne presunuté"
@@ -1033,6 +1099,15 @@
       ],
       "Editor": [
         "Editor"
+      ],
+      "Email address successfully deleted from monitoring": [
+        "Emailová adresa bola z monitorovania úspešne odstránená"
+      ],
+      "Email address successfully excluded from monitoring": [
+        "Emailová adresa bola z monitorovania úspešne vynechaná"
+      ],
+      "Email address successfully included in monitoring": [
+        "Emailová adresa bola úspešne pridaná do monitorovania"
       ],
       "Emptying trash...": [
         "Vyprázdňovanie koša..."
@@ -1136,6 +1211,12 @@
       "Item restored": [
         "Položka bola obnovená"
       ],
+      "Item successfully excluded from monitoring": [
+        "Položka bola úspešne vylúčená z monitorovania"
+      ],
+      "Item successfully included in monitoring": [
+        "Položka bola úspešne zahrnutá do monitorovania"
+      ],
       "Item successfully moved": [
         "Položka bola úspešne presunutá"
       ],
@@ -1162,6 +1243,9 @@
       ],
       "me": [
         "ja"
+      ],
+      "Monitoring settings successfully updated": [
+        "Nastavenia monitorovania boli úspešne aktualizované"
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "${ PASS_APP_NAME } je viac ako správca hesiel, chráni vaše heslo a váš osobný email prostredníctvom emailových aliasov. Vďaka rovnakej technológii, akú používa ${ MAIL_APP_NAME }, sú vaše údaje šifrované počas celého spojenia a prístup k nim máte len vy."
@@ -1509,6 +1593,9 @@
         "${ config.options.wordCount } slová",
         "${ config.options.wordCount } slov",
         "${ config.options.wordCount } slov"
+      ],
+      "${ PASS_SHORT_APP_NAME } monitor": [
+        "${ PASS_SHORT_APP_NAME } monitor"
       ],
       "1 hour": [
         "1 hodine"
@@ -1888,6 +1975,9 @@
       "Special characters (!&*)": [
         "Špeciálne znaky (!&*)"
       ],
+      "Strong": [
+        "Silné"
+      ],
       "Suffix": [
         "Prípona"
       ],
@@ -1953,6 +2043,12 @@
       ],
       "View logs": [
         "Zobraziť záznamy"
+      ],
+      "Vulnerable": [
+        "Zraniteľné"
+      ],
+      "Weak": [
+        "Slabé"
       ],
       "Website": [
         "Webová stránka"
@@ -2123,6 +2219,9 @@
       "${ PASS_APP_NAME } Settings": [
         "Nastavenia ${ PASS_APP_NAME }"
       ],
+      "${ PASS_SHORT_APP_NAME } monitor": [
+        "${ PASS_SHORT_APP_NAME } monitor"
+      ],
       "Auto-lock update": [
         "Aktualizácia automatického uzamknutia"
       ],
@@ -2255,6 +2354,9 @@
       "Share with": [
         "Zdieľať s"
       ],
+      "Stay safer online": [
+        "Zostaňte bezpečnejší online"
+      ],
       "Suggestions": [
         "Návrhy"
       ],
@@ -2290,6 +2392,9 @@
       ],
       "Vault shared with you": [
         "Trezor zdieľaný s vami"
+      ],
+      "Weak password": [
+        "Slabé heslo"
       ],
       "Welcome to your new password manager!": [
         "Vitajte vo svojom novom správcovi hesiel!"

@@ -188,6 +188,9 @@
       "Edit vault": [
         "Muokkaa holvia"
       ],
+      "Exclude from monitoring": [
+        "Sulje valvonnan ulkopuolelle"
+      ],
       "Export": [
         "Vie"
       ],
@@ -212,6 +215,9 @@
       "Get mobile apps": [
         "Hanki mobiilisovellukset"
       ],
+      "Get Pass Plus": [
+        "Hanki Pass Plus"
+      ],
       "Help us improve": [
         "Auta meitä parantamaan"
       ],
@@ -232,6 +238,9 @@
       ],
       "Importing": [
         "Tuodaan"
+      ],
+      "Include in monitoring": [
+        "Sisällytä valvontaan"
       ],
       "Invite others": [
         "Kutsu muita"
@@ -368,6 +377,9 @@
       "Saving passkey...": [
         "Tallennetaan suojausavainta..."
       ],
+      "See all": [
+        "Näytä kaikki"
+      ],
       "See members": [
         "Näytä jäsenet"
       ],
@@ -465,7 +477,7 @@
         "Kirjoita meille Twitterissä"
       ],
       "Your password manager not here? Request it.": [
-        "Eikö salasanahallintaasi ole listattu? Pyydä sitä."
+        "Eikö salasanahallintaasi ole listattu? Pyydä sen lisäystä."
       ]
     },
     "bf2023: Info": {
@@ -502,11 +514,24 @@
       ]
     },
     "Description": {
+      "${ total } other login uses the same password": [
+        "${ total } muu kirjautumistieto käyttää samaa salasanaa",
+        "${ total } muuta kirjautumistietoa käyttää samaa salasanaa"
+      ],
       "A checked box means the feature is disabled.": [
         "Rasti ruudussa tarkoittaa, että toiminto on poistettu käytöstä."
       ],
+      "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
+        "Pimeän verkon valvonta sisältyy maksullisiin tilauksiin. Saat sen heti käyttöösi päivitämällä tilauksesi."
+      ],
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
         "Lista verkkotunnuksista, joilla joitakin automaattisia ${ PASS_SHORT_APP_NAME } -toimintoja (automaattitäyttö, automaattiehdotus, automaattitallennus) ei suoriteta.${ infoText }"
+      ],
+      "This account is vulnerable, visit the service and change your password.": [
+        "Tämä tili on vaarassa, käy palvelussa ja vaihda salasanasi."
+      ],
+      "This service offers 2FA. Enable it for added account security.": [
+        "Palvelu mahdollistaa kaksivaiheisen tunnistautumisen. Paranna tilin suojausta ottamalla se käyttöön."
       ]
     },
     "Error": {
@@ -602,6 +627,12 @@
       "Failed resending invite.": [
         "Kutsun uudelleenlähetys epäonnistui."
       ],
+      "Failed to add email address": [
+        "Sähköpostiosoitteen lisääminen epäonnistui"
+      ],
+      "Failed to delete email address from monitoring": [
+        "Sähköpostiosoitteen poistaminen valvonnasta epäonnistui"
+      ],
       "Failed to delete selected items": [
         "Valittujen kohteiden poisto epäonnistui"
       ],
@@ -610,6 +641,12 @@
       ],
       "Failed to edit user's access.": [
         "Käyttäjän käyttöoikeuden muutos epäonnistui."
+      ],
+      "Failed to load breaches for this address": [
+        "Tähän osoitteeseen liittyvien tietomurtojen lataus epäonnistui"
+      ],
+      "Failed to load breaches for this email alias": [
+        "Tähän sähköpostialiakseen liittyvien tietomurtojen lataus epäonnistui"
       ],
       "Failed to load item history": [
         "Kohteen historian lataus epäonnistui"
@@ -629,6 +666,12 @@
       "Failed to remove user's access.": [
         "Käyttäjän käyttöoikeuden mitätöinti epäonnistui."
       ],
+      "Failed to resend verification for custom email": [
+        "Mukautetun sähköpostiosoitteen vahvistuksen uudelleenlähetys epäonnistui"
+      ],
+      "Failed to resolve breaches for this address": [
+        "Tietomurtojen ratkaiseminen tälle osoitteelle epäonnistui"
+      ],
       "Failed to restore items from trash": [
         "Kohteiden palautus roskakorista epäonnistui"
       ],
@@ -637,6 +680,21 @@
       ],
       "Failed to unpin item": [
         "Kohteen irrotus epäonnistui"
+      ],
+      "Failed to update monitoring settings": [
+        "Valvonta-asetusten päivitys epäonnistui"
+      ],
+      "Failed to verify email address": [
+        "Sähköpostiosoitteen vahvistaminen epäonnistui"
+      ],
+      "Failed updating ${ PROTON_SENTINEL_NAME } setting": [
+        "${ PROTON_SENTINEL_NAME } -asetuksen päivitys epäonnistui"
+      ],
+      "Failed updating monitor flag of the item": [
+        "Kohteen valvontalipun päivittäminen epäonnistui"
+      ],
+      "Failed updating monitoring status for this email address": [
+        "Tämän sähköpostiosoitteen valvontatilan päivittäminen epäonnistui"
       ],
       "File could not be parsed": [
         "Tiedostoa ei voitu jäsentää"
@@ -880,6 +938,12 @@
       "${ PASS_APP_NAME } will suggest saving passkeys.": [
         "${ PASS_APP_NAME } tarjoaa suojausavainten tallennusta."
       ],
+      "${ PROTON_SENTINEL_NAME } successfully disabled": [
+        "${ PROTON_SENTINEL_NAME } poistettiin käytöstä"
+      ],
+      "${ PROTON_SENTINEL_NAME } successfully enabled": [
+        "${ PROTON_SENTINEL_NAME } otettiin käyttöön"
+      ],
       "${ trialDaysLeft } day left": [
         "${ trialDaysLeft } päivä jäljellä",
         "${ trialDaysLeft } päivää jäljellä"
@@ -910,6 +974,9 @@
       ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Alias \"${ item.aliasEmail }\" siirrettiin roskakoriin, eikä se enää ohjaa viestejä postilaatikkoosi."
+      ],
+      "All breaches for this address were resolved": [
+        "Kaikki tämän osoitteet tieetomurrot ratkaistiin"
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Kohteen \"${ payload.content.name }\" kaikki kohteet on siirretty"
@@ -1010,6 +1077,15 @@
       "Editor": [
         "Muokkaus"
       ],
+      "Email address successfully deleted from monitoring": [
+        "Sähköpostiosoite poistettiin valvonnasta"
+      ],
+      "Email address successfully excluded from monitoring": [
+        "Sähköpostiosoite poissuljettiin valvonnasta"
+      ],
+      "Email address successfully included in monitoring": [
+        "Sähköpostiosoite lisättiin valvontaan"
+      ],
       "Emptying trash...": [
         "Tyhjennetään roskakoria..."
       ],
@@ -1106,6 +1182,12 @@
       "Item restored": [
         "Kohde palautettiin"
       ],
+      "Item successfully excluded from monitoring": [
+        "Kohde poistettiin valvonnasta"
+      ],
+      "Item successfully included in monitoring": [
+        "Kohde lisättiin valvontaan"
+      ],
       "Item successfully moved": [
         "Kohde siirrettiin"
       ],
@@ -1132,6 +1214,9 @@
       ],
       "me": [
         "minä"
+      ],
+      "Monitoring settings successfully updated": [
+        "Valvota-asetusten päivitys onnistui"
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "${ PASS_APP_NAME } on muutakin kuin pelkkä salasanahallinta, sillä se voi salasanojesi lisäksi suojata myös sähköpostiosoitteesi sähköpostialiaksilla. Tietosi ovat päästä päähän -salattuja ${ MAIL_APP_NAME }in käyttämällä tekniikalla ja vain sinä pääset niihin käsiksi."
@@ -1470,6 +1555,9 @@
         "${ config.options.wordCount } sana",
         "${ config.options.wordCount } sanaa"
       ],
+      "${ PASS_SHORT_APP_NAME } monitor": [
+        "${ PASS_SHORT_APP_NAME } -valvonta"
+      ],
       "1 hour": [
         "Tunnin kuluttua"
       ],
@@ -1522,7 +1610,7 @@
         "Aakkosellisesti"
       ],
       "Application logs": [
-        "Sovelluksen lokitiedot"
+        "Sovelluslokit"
       ],
       "Authenticate with passkeys": [
         "Tunnistaudu suojausavaimilla"
@@ -1848,6 +1936,9 @@
       "Special characters (!&*)": [
         "Erikoismerkit (!&*)"
       ],
+      "Strong": [
+        "Vahva"
+      ],
       "Suffix": [
         "Jälkiliite"
       ],
@@ -1913,6 +2004,12 @@
       ],
       "View logs": [
         "Näytä lokitiedot"
+      ],
+      "Vulnerable": [
+        "Haavoittuva"
+      ],
+      "Weak": [
+        "Heikko"
       ],
       "Website": [
         "Verkkosivusto"
@@ -2079,6 +2176,9 @@
       "${ PASS_APP_NAME } Settings": [
         "${ PASS_APP_NAME } -asetukset"
       ],
+      "${ PASS_SHORT_APP_NAME } monitor": [
+        "${ PASS_SHORT_APP_NAME } -valvonta"
+      ],
       "Auto-lock update": [
         "Muuta automaattilukitusta"
       ],
@@ -2208,8 +2308,14 @@
       "Set access level": [
         "Aseta käyttöoikeustaso"
       ],
+      "Set up 2FA for more security": [
+        "Tehosta suojausta määrittämällä kaksivaiheinen tunnistautuminen"
+      ],
       "Share with": [
         "Jaa henkilölle"
+      ],
+      "Stay safer online": [
+        "Pysy turvassa verkossa"
       ],
       "Suggestions": [
         "Ehdotukset"
@@ -2246,6 +2352,9 @@
       ],
       "Vault shared with you": [
         "Sinulle on jaettu holvi"
+      ],
+      "Weak password": [
+        "Heikko salasana"
       ],
       "Welcome to your new password manager!": [
         "Tervetuloa uuteen salasanahallintaasi!"

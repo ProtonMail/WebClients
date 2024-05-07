@@ -1946,17 +1946,32 @@
       "Bugs or quality issue": [
         "Błędy lub problemy z jakością usługi"
       ],
+      "I do not wish to share": [
+        "Nie chcę komentować"
+      ],
+      "I found a cheaper VPN": [
+        "Mam tańszą usługę VPN"
+      ],
+      "I found a VPN with better features": [
+        "Mam lepszą usługę VPN"
+      ],
+      "I have not managed to connect": [
+        "Nie udało mi się połączyć"
+      ],
+      "I only needed a VPN short-term": [
+        "VPN był mi potrzebny na chwilę"
+      ],
       "I use a different ${ BRAND_NAME } account": [
         "Używam innego konta ${ BRAND_NAME }"
+      ],
+      "It doesn't do what I need": [
+        "Nie spełnia moich potrzeb"
       ],
       "Missing feature(s)": [
         "Brakujące funkcje"
       ],
-      "My reason isn't listed, please comment": [
-        "Inna, niewymieniona wyżej przyczyna"
-      ],
-      "Streaming service unsupported": [
-        "Usługi streamingu są nieobsługiwane"
+      "Other reason (please comment)": [
+        "Inny (wpisz)"
       ],
       "Subscription is too expensive": [
         "Cena jest zbyt wysoka"
@@ -1966,11 +1981,48 @@
       ],
       "Temporary need, may come back in the future": [
         "Potrzebowałem konto tymczasowo"
+      ],
+      "The VPN is too slow": [
+        "VPN jest zbyt wolny"
       ]
     },
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Pomóż nam ulepszyć usługę!"
+      ]
+    },
+    "drivePlus2024: Action": {
+      "Get the deal": [
+        "Skorzystaj z oferty"
+      ],
+      "Special Offer": [
+        "Oferta specjalna"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Rozszerzona historia wersji"
+      ],
+      "Priority support": [
+        "Priorytetowe wsparcie"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Odnowienie za ${ renewablePrice }. Anuluj w dowolnym momencie"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "za pierwszy miesiąc"
+      ],
+      "Limited-time offer": [
+        "Oferta ograniczona czasowo"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Uzyskaj plan ${ planName } za ${ planPrice }"
       ]
     },
     "Email verification": {
@@ -3600,9 +3652,6 @@
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Po kliknięciu przycisku Potwierdź na koncie pozostanie ${ creditsRemaining } środków."
       ],
-      "Please provide an email address in case we need to contact you.": [
-        "Wpisz adres e-mail na wypadek, gdybyśmy potrzebowali się z Tobą skontaktować."
-      ],
       "Please try again using a different payment method, or contact your bank.": [
         "Użyj innej metody płatności lub skontaktuj się ze swoim bankiem."
       ],
@@ -5076,17 +5125,11 @@
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Nie pamiętasz nazwy użytkownika ${ BRAND_NAME }? Znajdź je za pomocą adresu pomocniczego lub numeru telefonu, aby odzyskać dostęp do ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } i wiele więcej."
       ],
-      "Private and secure email, no credit card required": [
-        "Prywatna i bezpieczna poczta. Karta płatnicza nie jest wymagana"
-      ],
       "Reset your ${ BRAND_NAME } Account password": [
         "Resetowanie hasła ${ BRAND_NAME }"
       ],
       "Sign in to access your ${ appName } account": [
         "Zaloguj się do konta ${ appName }"
-      ],
-      "Try ${ planName } for free with this link": [
-        "Wypróbuj plan ${ planName } za darmo za pomocą tego linku"
       ]
     },
     "Monetary unit": {
@@ -5273,7 +5316,7 @@
         "Konsola administratora"
       ],
       "Administration Panel": [
-        "Panel administracyjny"
+        "Panel administratora"
       ],
       "Advanced network security": [
         "Zaawansowane bezpieczeństwo sieci"
@@ -5422,6 +5465,9 @@
       "Organize items with multiple vaults": [
         "Organizuj elementy w wielu sejfach"
       ],
+      "Pass Monitor - premium features": [
+        "Monitoring Proton Pass — funkcje premium"
+      ],
       "Passkeys supported": [
         "Klucze dostępu są obsługiwane"
       ],
@@ -5511,6 +5557,9 @@
       ],
       "Unlimited devices": [
         "Nieograniczona liczba urządzeń"
+      ],
+      "Unlimited devices and aliases": [
+        "Nieograniczona liczba urządzeń i aliasów"
       ],
       "Unlimited filters": [
         "Nieograniczona liczba filtrów"
@@ -6254,6 +6303,18 @@
       "Preparing your Recovery Kit": [
         "Przygotowywanie zestawu odzyskiwania"
       ],
+      "Secure sharing with ${ n } vault": [
+        "Bezpieczne udostępnianie ${ n } sejfu",
+        "Bezpieczne udostępnianie ${ n } sejfów",
+        "Bezpieczne udostępnianie ${ n } sejfów",
+        "Bezpieczne udostępnianie ${ n } sejfów"
+      ],
+      "Secure sharing with multiple vaults": [
+        "Bezpieczne udostępnianie wielu sejfów"
+      ],
+      "Secure vault sharing": [
+        "Bezpieczne udostępnianie sejfu"
+      ],
       "Updating your account": [
         "Aktualizowanie konta"
       ],
@@ -6449,9 +6510,6 @@
       ],
       "e.g. https://idp.example.com/XXXXX": [
         "np. https://idp.przyklad.pl/XXXXX"
-      ],
-      "Email address": [
-        "Adres e-mail"
       ],
       "Feedback": [
         "Opinia"

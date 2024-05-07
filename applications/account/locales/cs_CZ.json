@@ -527,6 +527,9 @@
       "Go to label": [
         "Přejít na štítek"
       ],
+      "Go to settings": [
+        "Přejít do nastavení"
+      ],
       "Got it": [
         "Rozumím"
       ],
@@ -598,6 +601,9 @@
       ],
       "label emails as": [
         "označit e-maily jako"
+      ],
+      "Later": [
+        "Později"
       ],
       "Leave": [
         "Opustit"
@@ -3139,6 +3145,9 @@
       ]
     },
     "Delete address prompt": {
+      "Once deleted, this address can't be used again by anyone else.": [
+        "Po smazání této adresy ji nebude moci použít nikdo jiný."
+      ],
       "You can only delete 1 address per year.": [
         "Můžete smazat pouze 1 adresu ročně."
       ]
@@ -3311,12 +3320,6 @@
       "Missing feature(s)": [
         "Chybějící funkce"
       ],
-      "My reason isn't listed, please comment": [
-        "Můj důvod není uveden, prosím okomentujte"
-      ],
-      "Streaming service unsupported": [
-        "Streamovací služba není podporována"
-      ],
       "Subscription is too expensive": [
         "Předplatné je příliš drahé"
       ],
@@ -3349,6 +3352,29 @@
       ],
       "Secure cloud storage and file sharing that protects your data": [
         "Bezpečné cloudové úložiště a sdílení souborů, které chrání vaše údaje"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Rozšířená historie verzí"
+      ],
+      "Priority support": [
+        "Prioritní podpora"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Obnovuje se za ${ renewablePrice }, zrušit lze kdykoli"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "za první měsíc"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Získejte ${ planName } pouze za ${ planPrice }"
       ]
     },
     "Duration": {
@@ -4304,6 +4330,9 @@
       ],
       "You have reached the contacts limit for your account": [
         "Dosáhli jste limitu kontaktů vašeho účtu"
+      ],
+      "You have reached the maximum number of calendars.": [
+        "Dosáhli jste maximálního počtu kalendářů."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Všechny adresy ve vašem tarifu jsou vyčerpány. Přejděte na vyšší tarif, abyste mohli přidat další adresu."
@@ -6293,7 +6322,7 @@
         "Přidělení účtu správce"
       ],
       "Affected user is on row": [
-        "Dotčený uživatel jse na řádku",
+        "Dotčený uživatel je na řádku",
         "Dotčení uživatelé jsou na řádcích",
         "Dotčení uživatelé jsou na řádcích",
         "Dotčení uživatelé jsou na řádcích"
@@ -6495,6 +6524,9 @@
       ],
       "Blocks senders from seeing if and when you opened a message.": [
         "Zamezuje odesílatelům zjistit, zda a kdy jste zprávu otevřeli."
+      ],
+      "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
+        "Zlepšete identitu značky své organizace a vytvořte konzistentnější online prostředí pro své uživatele."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Pokud svůj aktuální tarif snížíte na bezplatnou verzi, navždy ztratíte současné výhody, i když v budoucnu svůj účet znovu povýšíte."
@@ -7408,9 +7440,6 @@
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Vezměte prosím na vědomí, že po kliknutí na tlačítko Potvrdit vám na účtu zbudou kredity ve výši ${ creditsRemaining }."
       ],
-      "Please provide an email address in case we need to contact you.": [
-        "Zadejte prosím e-mailovou adresu pro případ, že bychom Vás potřebovali kontaktovat."
-      ],
       "Please select the folders you would like to import:": [
         "Vyberte složky, které chcete importovat:"
       ],
@@ -7688,7 +7717,7 @@
         "Podpora 1 vlastní e-mailové domény"
       ],
       "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
-        "Podpora sledování vlastních domén a e-mailových adres, které nejsou ${ BRAND_NAME }, bude brzy k dispozici."
+        "Podpora sledování vlastních domén a e-mailových adres, které nejsou od ${ BRAND_NAME }, bude brzy k dispozici."
       ],
       "support team": [
         "tým podpory"
@@ -8117,7 +8146,7 @@
         "Právě jsme vám poslali nový odkaz."
       ],
       "We monitor the dark web for instances where your personal information (such as an email address or password used on a third-party site) is leaked or compromised.": [
-        "Sledujeme dark web, zda nedošlo k úniku nebo ohrožení vašich osobních údajů (například e-mailové adresy nebo hesla používaného na webu třetí strany)."
+        "Sledujeme dark web, zda nedošlo k úniku nebo kompromitaci vašich osobních údajů (například e-mailové adresy nebo hesla používaného na webu třetí strany)."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Potřebujeme ověřit vaši platební metodu u vaší banky."
@@ -8483,7 +8512,7 @@
         "Vaše žádost na podporu byla uzavřena. Děkujeme za kontaktování podpory ${ BRAND_NAME }."
       ],
       "Zoom meeting": [
-        "Setkání Zoom"
+        "setkání na Zoomu"
       ]
     },
     "Info - folder colouring feature": {
@@ -8622,6 +8651,21 @@
     "Key generation": {
       "Generate key": [
         "Vygenerovat klíč"
+      ],
+      "Generating key failed. Please try again later.": [
+        "Generování klíče selhalo. Zkuste to prosím později."
+      ],
+      "Key successfully generated.": [
+        "Klíč byl úspěšně vygenerován."
+      ],
+      "Note: you already have a key with the same algorithm for this user. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
+        "Poznámka: pro tohoto uživatele již máte klíč se stejným algoritmem. Pokud tento klíč nebyl kompromitován, nemusí být nutné generovat nový klíč, což by mohlo zpomalit váš účet."
+      ],
+      "This will generate a new key, which will be used to encrypt future contact details, email encryption keys, and other data.": [
+        "Tím se vygeneruje nový klíč, který se bude používat k šifrování budoucích kontaktních údajů, šifrovacích klíčů e-mailů a dalších dat."
+      ],
+      "This will generate a new key, which will be used to encrypt future emails, among other data.": [
+        "Toto vygeneruje nový klíč, který bude použit mimo jiné k šifrování budoucích e-mailů."
       ]
     },
     "Key state badge": {
@@ -10047,6 +10091,9 @@
       "here": [
         "zde"
       ],
+      "How does monitoring work?": [
+        "Jak sledování funguje?"
+      ],
       "How to pay with Bitcoin?": [
         "Jak platit pomocí Bitcoinu?"
       ],
@@ -10962,6 +11009,9 @@
       "Organize items with multiple vaults": [
         "Uspořádání položek pomocí více trezorů"
       ],
+      "Passkeys supported": [
+        "Přístupové klíče podporovány"
+      ],
       "Password-protected Emails": [
         "Zprávy chráněné heslem"
       ],
@@ -11600,6 +11650,12 @@
       "An external address cannot be default": [
         "Externí adresa nemůže být výchozí"
       ],
+      "Dark Web Monitoring has been disabled": [
+        "Sledování Dark webu bylo deaktivováno"
+      ],
+      "Dark Web Monitoring has been enabled": [
+        "Sledování Dark webu bylo povoleno"
+      ],
       "Invalid code": [
         "Neplatný kód"
       ],
@@ -12039,6 +12095,23 @@
         "Váš tarif zahrnuje maximálně ${ humanReadableAvailableSpace } dalšího úložného prostoru."
       ]
     },
+    "Organization logo upload modal": {
+      "Drop image file here to upload or": [
+        "Zde upusťte soubor obrázku pro nahrání, nebo"
+      ],
+      "File in PNG or JPEG format": [
+        "Soubor ve formátu PNG nebo JPEG"
+      ],
+      "File not larger than 30 KB": [
+        "Soubor ne větší než 30 KB"
+      ],
+      "Square image of at least 128 pixels": [
+        "Čtvercový obrázek o velikosti nejméně 128 pixelů"
+      ],
+      "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
+        "Po přihlášení do našich webových aplikací uvidí uživatelé vaše logo místo ikony ${ BRAND_NAME }."
+      ]
+    },
     "OS compatibility": {
       ".deb (for Debian/Ubuntu)": [
         ".deb (pro Debian/Ubuntu)"
@@ -12076,9 +12149,6 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Check out ${ appName } features": [
-        "Podívejte se na funkce ${ appName }"
-      ],
       "Continue": [
         "Pokračovat"
       ],
@@ -12169,15 +12239,6 @@
       "${ PASS_APP_NAME } is available as a browser extension on the Chrome Web Store.": [
         "${ PASS_APP_NAME } je k dispozici jako rozšíření prohlížeče ve webovém obchodě Chrome."
       ],
-      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption.": [
-        "${ PASS_APP_NAME } uchovává vaše hesla a identitu v bezpečí díky silnému koncovému šifrování."
-      ],
-      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. To add premium features of ${ PASS_APP_NAME_2 } to your current subscription, we suggest upgrading to the ${ upsellPlanName } plan.": [
-        "${ PASS_APP_NAME } uchovává vaše hesla a identitu v bezpečí díky silnému koncovému šifrování. Chcete-li ke svému stávajícímu předplatnému přidat prémiové funkce ${ PASS_APP_NAME_2 }, doporučujeme přejít na tarif ${ upsellPlanName }."
-      ],
-      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. Your current plan already gives you access to premium ${ PASS_APP_NAME_2 } features — no need to purchase again.": [
-        "${ PASS_APP_NAME } uchovává vaše hesla a identitu v bezpečí díky silnému koncovému šifrování. Váš současný tarif vám již poskytuje přístup k prémiovým funkcím ${ PASS_APP_NAME_2 } - není třeba jej kupovat znovu."
-      ],
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } za měsíc"
       ],
@@ -12219,9 +12280,6 @@
       ],
       "Current plan": [
         "Aktuální tarif"
-      ],
-      "Discover ${ PASS_APP_NAME },${ br }our new encrypted password manager": [
-        "Objevte ${ PASS_APP_NAME },${ br }náš nový šifrovaný správce hesel"
       ],
       "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
         "Pro používání ${ PASS_APP_NAME } si stáhněte a nainstalujte příslušné aplikace a rozšíření."
@@ -12273,9 +12331,6 @@
       ],
       "Get the security and features your business needs": [
         "Získejte zabezpečení a funkce, které vaše firma potřebuje"
-      ],
-      "Hide-my-email aliases protect your email from data breaches": [
-        "Aliasy Hide-my-email chrání váš e-mail před únikem dat"
       ],
       "I understand that if I lose my recovery details, I may permanently lose access to my account.": [
         "Beru na vědomí, že v případě ztráty údajů pro obnovení mohu trvale ztratit přístup ke svému účtu."
@@ -12800,6 +12855,11 @@
       ],
       "Unsubscribe?": [
         "Odhlásit?"
+      ]
+    },
+    "Remove organization logo": {
+      "Users will no longer see your custom logo or organization name.": [
+        "Uživatelé již neuvidí vaše vlastní logo ani název organizace."
       ]
     },
     "Restore administrator panel": {
@@ -14458,6 +14518,9 @@
       "Activate user": [
         "Aktivovat uživatele"
       ],
+      "Add a custom logo": [
+        "Přidejte vlastní logo"
+      ],
       "Add address": [
         "Přidat adresu"
       ],
@@ -15107,7 +15170,7 @@
         "Nastavení resetování hesla"
       ],
       "Passwords made easy": [
-        "Snadná tvorba hesel"
+        "Snadná správa hesel"
       ],
       "Pay invoice": [
         "Zaplatit fakturu"
@@ -15437,10 +15500,10 @@
         "Konfigurace WireGuard"
       ],
       "You have no open alerts": [
-        "Nemáte žádné otevřené výstrahy"
+        "Nemáte žádná otevřená upozornění"
       ],
       "You have no resolved alerts": [
-        "Nemáte žádné vyřešené výstrahy"
+        "Nemáte žádná vyřešená upozornění"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Vaše bezplatná zkušební verze ${ planName } skončí ${ textDate }"
@@ -15727,6 +15790,9 @@
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
         "Použijte výchozí posuvníky prohlížeče. Ty jsou obvykle větší a snadněji se používají"
       ],
+      "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
+        "Po přihlášení do našich webových aplikací uvidí uživatelé vaše logo místo ikony ${ BRAND_NAME }."
+      ],
       "Usually an URL that contains the identity provider's name within": [
         "Obvykle URL adresa, která obsahuje název poskytovatele identity v rámci"
       ],
@@ -15949,6 +16015,9 @@
       ],
       "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
         "Předplatné se automaticky obnoví každé 3 měsíce. Další datum fakturace je za 3 měsíce."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Speciálně zvýhodněná cena ${ priceWithDiscount } platí první měsíc. Poté bude každý měsíc automaticky obnovena za cenu ${ renewPrice }. Službu můžete kdykoli zrušit."
       ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Potom vám bude účtováno ${ renewPrice } každých 12 měsíců."

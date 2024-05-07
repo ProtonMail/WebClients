@@ -421,6 +421,11 @@
         "展開"
       ]
     },
+    "Description": {
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "最新的 AI 安全方案，為希望加強帳號防護的人而設計。 ${ learnMoreLink }"
+      ]
+    },
     "Error": {
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider } 的檔案無法進行剖析。 ${ errorDetail }"
@@ -642,6 +647,17 @@
       ],
       "Something went wrong": [
         "發生錯誤"
+      ]
+    },
+    "Feature": {
+      "Integrated 2FA authenticator": [
+        "整合了雙重驗證的驗證器"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "無限制的 hide-my-email 別名"
+      ],
+      "Vault sharing (up to ${ MAX_VAULT_MEMBERS } people)": [
+        "保管共享(每人至多${ MAX_VAULT_MEMBERS })"
       ]
     },
     "file size format": {
@@ -952,6 +968,9 @@
       ],
       "Never": [
         "永不"
+      ],
+      "No breaches detected": [
+        "無偵測到外洩"
       ],
       "None": [
         "無"
@@ -1719,11 +1738,11 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } addresses": [
+        "${ BRAND_NAME } 個電郵位址"
+      ],
       "Auto-lock update": [
         "更新自動鎖定"
-      ],
-      "Block trackers and malware": [
-        "遮蔽追蹤器和其他惡意軟體"
       ],
       "Confirm PIN code": [
         "確認個人識別數字代碼"
@@ -1767,6 +1786,9 @@
       "Grant permissions": [
         "取得權限"
       ],
+      "Hide-my-email aliases": [
+        "Hide-my-email 別名"
+      ],
       "History": [
         "歷程記錄"
       ],
@@ -1793,6 +1815,9 @@
       ],
       "Low disk space": [
         "磁碟空間過低"
+      ],
+      "Mark as resolved?": [
+        "標記為已解決?"
       ],
       "Member limit": [
         "成員限制"
@@ -1871,6 +1896,9 @@
       ],
       "Vault shared with you": [
         "與您分享的保管庫"
+      ],
+      "Want to learn more?": [
+        "點擊瞭解更多"
       ],
       "What is an alias?": [
         "甚麼是別名?"

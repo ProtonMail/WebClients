@@ -28,7 +28,7 @@
         "Hapus penerusan email"
       ],
       "Forwarding will start soon. New emails will appear in your inbox.": [
-        "Penerusan email akan segera dimulai. email baru akan muncul pada kotak masuk Anda."
+        "Penerusan akan segera dimulai. Email baru akan muncul pada kotak masuk Anda."
       ],
       "Mail forward stopped": [
         "Penerusan email diberhentikan"
@@ -527,6 +527,9 @@
       "Go to label": [
         "Tuju label"
       ],
+      "Go to settings": [
+        "Pergi ke pengaturan"
+      ],
       "Got it": [
         "Dimengerti"
       ],
@@ -598,6 +601,9 @@
       ],
       "label emails as": [
         "labeli email sebagai"
+      ],
+      "Later": [
+        "Nanti"
       ],
       "Leave": [
         "Tinggalkan"
@@ -798,7 +804,7 @@
         "Pulihkan"
       ],
       "Resubscribe": [
-        "Berlangganan ulang"
+        "Langgan ulang"
       ],
       "Resume": [
         "Lanjutkan"
@@ -1207,7 +1213,7 @@
         "Nonaktifkan"
       ],
       "Disable E2EE mail": [
-        "Nonaktif enkripsi email"
+        "Nonaktifkan E2EE"
       ],
       "Disallow unsigned mail": [
         "Larang email tanpa Ttd."
@@ -1222,7 +1228,7 @@
         "Aktifkan"
       ],
       "Enable E2EE mail": [
-        "Aktifkan enkripsi email"
+        "Aktifkan E2EE"
       ],
       "Generate missing keys": [
         "Buat kunci yang hilang"
@@ -1239,7 +1245,7 @@
         "Aktif"
       ],
       "Allow unsigned mail": [
-        "Perbolehkan email tidak ditandatangani"
+        "Izinkan email yang tidak bertanda tangan"
       ],
       "Default": [
         "Bawaan"
@@ -1546,13 +1552,13 @@
         "Meliputi dukungan untuk ${ domains } domain email khusus, ${ addresses } alamat email, alias hide-my-email tanpa batasan jumlah, fitur berbagi kalender, dan masih banyak lagi."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Termasuk dukungan untuk 1 domain email kustom, 10 alamat email, 10 alias hide-my-email, pembagian kalender, dan lainnya."
+        "Meliputi dukungan 1 domain email khusus, 10 alamat email, 10 alias hide-my-email, pembagian kalender, dan masih banyak lagi."
       ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "Masuk secara aman di semua perangkat Anda. Termasuk alias terbatas, pembagian, 2FA terintegrasi, dan lainnya."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Amankan email Anda dan jadwalkan dengan enkripsi ujung ke ujung. Termasuk dukungan untuk beberapa domain email kustom, 15 alamat email, alias hide-my-email tak terbatas, pembagian kalender, dan lainnya."
+        "Amankan email dan jadwal Anda dengan enkripsi end-to-end. Meliuti dukungan untuk domain email khusus, 15 alamat email, alias hide-my-email tanpa batasan jumlah, pembagian kalender, dan masih banyak lagi."
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Amankan berkas Anda dengan penyimpanan cloud yang terenkripsi. Meliputi riwayat versi, pembagian berkas terenkripsi, dan masih banyak lagi."
@@ -3292,17 +3298,32 @@
       "Bugs or quality issue": [
         "Terdapat bug-bug yang mengganggu saya"
       ],
+      "I do not wish to share": [
+        "Saya tidak ingin membagikan alasan saya"
+      ],
+      "I found a cheaper VPN": [
+        "Saya menemukan VPN yang lebih murah"
+      ],
+      "I found a VPN with better features": [
+        "Saya menemukan VPN dengan fitur yang lebih baik"
+      ],
+      "I have not managed to connect": [
+        "Saya belum berhasil terhubung"
+      ],
+      "I only needed a VPN short-term": [
+        "Saya hanya membutuhkan VPN untuk jangka pendek"
+      ],
       "I use a different ${ BRAND_NAME } account": [
         "Saya menggunakan akun ${ BRAND_NAME } lainnya"
+      ],
+      "It doesn't do what I need": [
+        "VPN ini tidak memenuhi kebutuhan saya"
       ],
       "Missing feature(s)": [
         "Terdapat fitur yang hilang"
       ],
-      "My reason isn't listed, please comment": [
-        "Lainnya (harap berikan komentar)"
-      ],
-      "Streaming service unsupported": [
-        "Layanan streaming yang saya gunakan tidak didukung"
+      "Other reason (please comment)": [
+        "Alasan lainnya (mohon tulis di kolom komentar)"
       ],
       "Subscription is too expensive": [
         "Biaya berlangganan terlalu mahal"
@@ -3312,6 +3333,9 @@
       ],
       "Temporary need, may come back in the future": [
         "Saya hanya bermaksud menurunkan jenis akun saya untuk sementara waktu"
+      ],
+      "The VPN is too slow": [
+        "VPN saya terlalu lambat"
       ]
     },
     "Downgrade modal exit survey title": {
@@ -3336,6 +3360,40 @@
       ],
       "Secure cloud storage and file sharing that protects your data": [
         "Layanan penyimpanan cloud dan file-sharing aman yang melindungi data Anda"
+      ]
+    },
+    "drivePlus2024: Action": {
+      "Get the deal": [
+        "Dapatkan penawaran ini"
+      ],
+      "Special Offer": [
+        "Penawaran Spesial"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Riwayat versi yang terperinci"
+      ],
+      "Priority support": [
+        "Dukungan prioritas"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Terbarui dengan harga ${ renewablePrice }, batalkan kapan saja"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "untuk bulan pertama"
+      ],
+      "Limited-time offer": [
+        "Penawaran waktu terbatas"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Dapatkan ${ planName } hanya dengan harga ${ planPrice }"
       ]
     },
     "Duration": {
@@ -3379,13 +3437,13 @@
         "Semua acara dalam seri ini telah diperbarui. Berikut adalah apa yang diubah:\n\n${ updateEventDetailsText }"
       ],
       "This event occurrence was canceled.": [
-        "Kejadian acara ini telah dibatalkan."
+        "Keberlangsungan acara ini telah dibatalkan."
       ],
       "This event occurrence was updated.": [
-        "Kejadian acara ini telah diperbarui."
+        "Keberlangsungan acara ini telah diperbarui."
       ],
       "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Kejadian acara ini telah diperbarui. Berikut adalah apa yang diubah:\n\n${ updateEventDetailsText }"
+        "Keberlangsungan acara ini telah diperbarui. Berikut merupakan apa-apa saja yang telah diubah:\n\n${ updateEventDetailsText }"
       ],
       "This event was updated.": [
         "Acara ini telah diperbarui."
@@ -3463,19 +3521,19 @@
         "Pembatalan acara pada ${ formattedStart }"
       ],
       "Cancellation of an event starting on ${ formattedStart }": [
-        "Pembatalan acara mulai pada ${ formattedStart }"
+        "Pembatalan acara yang dimulai pada ${ formattedStart }"
       ],
       "Invitation for an event on ${ formattedStart }": [
-        "Undangan acara pada ${ formattedStart }"
+        "Undangan untuk acara pada ${ formattedStart }"
       ],
       "Invitation for an event starting on ${ formattedStart }": [
-        "Undangan acara mulai pada ${ formattedStart }"
+        "Undangan untuk acara yang dimulai pada ${ formattedStart }"
       ],
       "Update for an event on ${ formattedStart }": [
         "Pembaruan acara pada ${ formattedStart }"
       ],
       "Update for an event starting on ${ formattedStart }": [
-        "Pembaruan acara mulai pada ${ formattedStart }"
+        "Pembaruan untuk acara yang dimulai pada ${ formattedStart }"
       ]
     },
     "Email Unsubscribe": {
@@ -3486,10 +3544,10 @@
         "Email mana saja yang ingin Anda terima dari ${ BRAND_NAME }?"
       ],
       "You resubscribed to ${ categoriesJsx } emails.": [
-        "Anda berlangganan lagi ke email ${ categoriesJsx }."
+        "Anda telah berlangganan ulang ke ${ categoriesJsx } email ."
       ],
       "You unsubscribed from ${ categoriesJsx } emails.": [
-        "Anda berhenti berlangganan dari email ${ categoriesJsx }."
+        "Anda telah berhenti berlangganan dari ${ categoriesJsx } email."
       ]
     },
     "Email Unsubscribe Categories": {
@@ -3632,7 +3690,7 @@
         "Tidak ada peraturan penerusan keluar yang ditentukan"
       ],
       "Please update your forwarding keys": [
-        "Mohon perbarui kunci penerusan Anda"
+        "Silakan perbarui kunci penerusan Anda"
       ],
       "The forwardee rejected the forwarding request": [
         "Target penerusan menolak permintaan penerusan"
@@ -3655,7 +3713,7 @@
         "Teruskan dari"
       ],
       "Forward to": [
-        "Teruskan kepada"
+        "Teruskan ke"
       ],
       "or": [
         "atau"
@@ -3756,7 +3814,7 @@
         "Hapus penerusan?"
       ],
       "Email forwarding deactivated": [
-        "Penerusan dinonaktifkan"
+        "Penerusan email dinonaktifkan"
       ],
       "Forwarding activated": [
         "Penerusan diaktifkan"
@@ -4014,7 +4072,7 @@
         "Tidak ada kontak yang dapat diimpor"
       ],
       "No emails found to import - the account does not have an inbox": [
-        "Tidak ada email yang dapat diimpor - akun ini tidak memiliki kotak masuk"
+        "Tidak ada email yang ditemukan untuk dapat diimpor - akun ini tidak memiliki kotak masuk"
       ],
       "No external key retrieved for user is valid for sending": [
         "Tidak ada kunci eksternal untuk penerima yang valid untuk pengiriman"
@@ -4448,7 +4506,7 @@
         "Acara berulang yang asli tidak ditemukan"
       ],
       "Recurring event has no occurrences": [
-        "Acara berulang tidak terlaksana"
+        "Acara yang berulang tidak memiiliki keberlangsungan"
       ],
       "Recurring rule not supported": [
         "Aturan berulang tidak didukung"
@@ -4534,7 +4592,7 @@
         "Kontak ${ BRAND_NAME }"
       ],
       "Please ${ signIn } to resend a recovery email verification request.": [
-        "Mohon ${ signIn } untuk mengirimkan ulang permintaan email verifikasi."
+        "Silakan ${ signIn } untuk mengirimkan ulang permintaan verifikasi email pemulihan."
       ],
       "sign in": [
         "masuk"
@@ -5630,7 +5688,7 @@
     },
     "Import calendar; import invitation": {
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
-        "Undangan yang diimpor akan muncul pada ${ CALENDAR_APP_NAME } dalam bentuk simple event tanpa rincian seputar penyelenggara dan peserta. Untuk dapat memperoleh pembaruan terkini dan melihat daftar peserta, mintalah penyelenggara untuk mengundang Anda melalui alamat email ${ BRAND_NAME } Anda."
+        "Undangan yang diimpor akan muncul pada ${ CALENDAR_APP_NAME } sebagai acara sederhana tanpa rincian seputar penyelenggara dan peserta. Untuk memperoleh pembaruan seputar acara dan melihat daftar peserta, mintalah penyelenggara acara untuk mengundang Anda melalui alamat email ${ BRAND_NAME } Anda."
       ],
       "This file contains an event invitation:": [
         "Berkas ini mengandung undangan acara:"
@@ -6362,6 +6420,9 @@
       "Blocks senders from seeing if and when you opened a message.": [
         "Mencegah pengirim pesan untuk dapat mengetahui apakah Anda telah membuka pesan yang mereka kirim."
       ],
+      "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
+        "Angkat identitas merek organisasi Anda dan ciptakan pengalaman online yang lebih konsisten bagi para pengguna Anda."
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Dengan menurunkan ke paket Free, Anda akan kehilangan berbagai manfaat berikut secara permanen, bahkan apabila Anda kembali meningkatkan jenis akun Anda di kemudian hari."
       ],
@@ -6795,7 +6856,7 @@
         "Apabila Anda kehilangan kata sandi Anda dan perlu untuk menyetel ulang akun, ${ boldImperative } bagi Anda untuk memiliki ${ boldAccountRecovery } yang aktif."
       ],
       "If you lose your password and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
-        "Apabila Anda kehilangan kata sandi Anda dan perlu untuk menyetel ulang akun, ${ boldImperative } bagi Anda untuk memiliki ${ boldAccountAndRecovery } yang aktif. Apabila tidak, Anda beresiko untuk tidak lagi dapat mengakses email, kontak, atau berkas yang Anda miliki."
+        "Apabila Anda kehilangan kata sandi Anda dan perlu untuk mengatur ulang akun, ${ boldImperative } bagi Anda untuk memiliki ${ boldAccountAndRecovery } yang aktif. Apabila tidak, Anda beresiko untuk tidak lagi dapat mengakses email, kontak, atau berkas yang Anda miliki."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Apabila Anda kehilangan perangkat yang Anda gunakan untuk proses autentikasi dua faktor, kode berikut akan dapat digunakan sebagai pengganti kode autentikasi dua faktor agar Anda dapat masuk ke akun Anda. Masing-masing kode hanya dapat digunakan sekali."
@@ -7236,7 +7297,7 @@
         "Harap simpan frasa pemulihan ini sebaik-baiknya. Anda akan memerlukan frasa pemulihan ini untuk dapat mengakses akun Anda apabila di kemudian waktu Anda harus mengatur ulang kata sandi Anda."
       ],
       "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
-        "Harap diperhatikan bahwa dengan menghapus alamat ini, Anda tidak lagi akan dapat mengirim atau menerima email melalui alamat ini."
+        "Mohon diperhatikan bahwa apabila Anda menghapus alamat ini, Anda tidak lagi akan dapat mengirim atau menerima email menggunakan alamat ini."
       ],
       "Please note that if you delete this domain, all the addresses associated with it will be disabled.": [
         "Harap dicatat bahwa dengan menghapus domain ini, seluruh alamat yang terhubung dengan domain tersebut akan dinonaktifkan."
@@ -7246,9 +7307,6 @@
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Mohon diperhatikan bahwa dengan mengeklik tombol Konfirmasi, total saldo Anda akan berkurang menjadi ${ creditsRemaining }."
-      ],
-      "Please provide an email address in case we need to contact you.": [
-        "Harap sertakan alamat email seandainya kami perlu menghubungi Anda."
       ],
       "Please select the folders you would like to import:": [
         "Harap pilih folder-folder yang hendak Anda impor:"
@@ -8859,7 +8917,7 @@
         "Diblokir"
       ],
       "Block email tracking": [
-        "Blokir pelacak email"
+        "Blokir pelacakan email"
       ],
       "Block malware only": [
         "Blokir malware saja"
@@ -9917,7 +9975,7 @@
         "ganti akun"
       ],
       "Terms": [
-        "Ketentuan"
+        "Ketentuan layanan"
       ],
       "Trouble signing in?": [
         "Mengalami masalah saat akan masuk?"
@@ -10214,10 +10272,10 @@
         "Cara untuk mengimpor kontak dari Yahoo"
       ],
       "How to import emails from another service": [
-        "Cara untuk mengimpor email-email dari layanan email lainnya"
+        "Cara untuk mengimpor email dari layanan lainnya"
       ],
       "How to import emails from Yahoo": [
-        "Cara untuk mengimpor email-email dari Yahoo"
+        "Cara untuk mengimpor email dari Yahoo"
       ]
     },
     "Modal title and action": {
@@ -10490,7 +10548,7 @@
         "${ n } domain email khusus"
       ],
       "${ n } email address": [
-        "${ n } alamat email"
+        "${ n } alamat email/alias"
       ],
       "${ n } email address per user": [
         "${ n } alamat email per pengguna"
@@ -10702,6 +10760,9 @@
       "Organize items with multiple vaults": [
         "Kelola item dengan berbagai brankas"
       ],
+      "Pass Monitor - premium features": [
+        "Pemantauan Pass - fitur premium"
+      ],
       "Passkeys supported": [
         "Passkey didukung"
       ],
@@ -10786,6 +10847,9 @@
       "Unlimited devices": [
         "Tanpa batasan jumlah perangkat"
       ],
+      "Unlimited devices and aliases": [
+        "Tanpa batasan jumlah perangkat dan alias"
+      ],
       "Unlimited filters": [
         "Tanpa batasan jumlah filter"
       ],
@@ -10843,7 +10907,7 @@
     },
     "new_plans: feature info": {
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
-        "Berikan masing-masing identitas online Anda alamat emailnya tersendiri, mis. JohnShopper@${ domain } untuk berbelanja dan JohnNews@${ domain2 } untuk berlangganan berita"
+        "Buat berbagai alamat email untuk masing-masing identitas online Anda, mis. JohnShopper@${ domain } untuk akun belanja dan JohnNews@${ domain2 } untuk akun langganan berita"
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Dapatkan alamat email samaran tanpa batasan jumlah dengan SimpleLogin oleh ${ BRAND_NAME }"
@@ -11805,9 +11869,6 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Check out ${ appName } features": [
-        "Telusuri berbagai fitur ${ appName }"
-      ],
       "Continue": [
         "Lanjutkan"
       ],
@@ -11898,15 +11959,6 @@
       "${ PASS_APP_NAME } is available as a browser extension on the Chrome Web Store.": [
         "${ PASS_APP_NAME } tersedia sebagai ekstensi browser dalam Chrome Web Store."
       ],
-      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption.": [
-        "${ PASS_APP_NAME } mengamankan kata sandi dan identitas Anda dengan enkripsi end-to-end yang ketat."
-      ],
-      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. To add premium features of ${ PASS_APP_NAME_2 } to your current subscription, we suggest upgrading to the ${ upsellPlanName } plan.": [
-        "${ PASS_APP_NAME } menjaga keamanan kata sandi dan identitas Anda dengan enkripsi end-to-end yang ketat. Untuk menambahkan berbagai fitur premium ${ PASS_APP_NAME_2 } ke paket langganan Anda saat ini, kami menyarankan Anda untuk meningkatkan paket Anda ke ${ upsellPlanName }."
-      ],
-      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. Your current plan already gives you access to premium ${ PASS_APP_NAME_2 } features — no need to purchase again.": [
-        "${ PASS_APP_NAME } menjaga keamanan kata sandi dan identitas Anda dengan enkripsi end-to-end yang ketat. Paket Anda saat ini telah meliputi akses ke seluruh fitur premium ${ PASS_APP_NAME_2 } — Anda tidak perlu membeli paket apapun lagi."
-      ],
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } per bulan"
       ],
@@ -11948,9 +12000,6 @@
       ],
       "Current plan": [
         "Paket saat ini"
-      ],
-      "Discover ${ PASS_APP_NAME },${ br }our new encrypted password manager": [
-        "Telusuri ${ PASS_APP_NAME }.${ br }pengelola kata sandi terenkripsi baru kami"
       ],
       "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
         "Unduh dan instal aplikasi dan ekstensi yang sesuai untuk mulai menggunakan ${ PASS_APP_NAME }"
@@ -12005,9 +12054,6 @@
       ],
       "Get the security and features your business needs": [
         "Dapatkan keamanan dan rangkaian fitur yang bisnis Anda butuhkan"
-      ],
-      "Hide-my-email aliases protect your email from data breaches": [
-        "Alias hide-my-email melindungi alamat email Anda dari ancaman kebocoran data"
       ],
       "I understand that if I lose my recovery details, I may permanently lose access to my account.": [
         "Saya mengerti bahwa jika saya kehilangan detail pemulihan, saya dapat kehilangan akses ke akun saya secara permanen."
@@ -12074,6 +12120,9 @@
       ],
       "Save your recovery kit to continue": [
         "Simpan kit pemulihan Anda untuk melanjutkan"
+      ],
+      "Secure vault sharing": [
+        "Pembagian brankas yang aman"
       ],
       "Setting up your organization": [
         "Menyiapkan organisasi Anda"
@@ -12505,10 +12554,10 @@
         "Batal"
       ],
       "Email address has been verified.": [
-        "Alamat email telah diverifikasi."
+        "Alamat email telah terverifikasi."
       ],
       "Email address not yet verified.": [
-        "Alamat email belum diverifikasi."
+        "Alamat email belum terverifikasi."
       ],
       "Email removed": [
         "Email dihapus"
@@ -12523,7 +12572,7 @@
         "Verifikasi alamat email pemulihan ini sekarang: ${ email.Value }"
       ],
       "Verify recovery email?": [
-        "Verifikasi alamat email pemulihan?"
+        "Verifikasi email pemulihan?"
       ],
       "Verify with email": [
         "Verifikasi melalui email"
@@ -14336,6 +14385,9 @@
       "Activate user": [
         "Aktifkan pengguna"
       ],
+      "Add a custom logo": [
+        "Tambah logo khusus"
+      ],
       "Add address": [
         "Tambah alamat"
       ],
@@ -14577,7 +14629,7 @@
         "Sesuaikan jumlah alamat IP dalam paket Anda"
       ],
       "Customize your mail import": [
-        "Sesuaikan proses impor email"
+        "Sesuaikan impor email Anda"
       ],
       "Customize your plan": [
         "Sesuaikan paket Anda"
@@ -15075,7 +15127,7 @@
         "Autentikasi SAML"
       ],
       "Save time with email filters": [
-        "Hemat waktu dengan saringan email"
+        "Hemat waktu dengan filter email"
       ],
       "Secure email based in Switzerland": [
         "Email aman berbasis di Swiss"
