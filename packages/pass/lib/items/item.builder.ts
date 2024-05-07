@@ -35,7 +35,8 @@ export const itemContentBuilder = <T extends ItemType, R = ObjectHandler<UnsafeI
             return objectHandler<UnsafeItemContent<'login'>>({
                 urls: [],
                 passkeys: [],
-                username: '',
+                itemEmail: '',
+                itemUsername: '',
                 password: '',
                 totpUri: '',
             }) as R;

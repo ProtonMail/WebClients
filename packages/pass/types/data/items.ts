@@ -37,7 +37,7 @@ type ExtraFieldContent<T extends ExtraFieldType> = {
 export type ItemContent<T extends ItemType> = {
     alias: ProtobufItemAlias;
     note: ProtobufItemNote;
-    login: Obfuscate<SanitizedBuffers<ProtobufItemLogin>, 'username' | 'password' | 'totpUri'>;
+    login: Obfuscate<SanitizedBuffers<ProtobufItemLogin>, 'itemEmail' | 'itemUsername' | 'password' | 'totpUri'>;
     creditCard: Obfuscate<ProtobufItemCreditCard, 'number' | 'verificationNumber' | 'pin'>;
 }[T];
 
