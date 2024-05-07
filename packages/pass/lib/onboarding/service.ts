@@ -82,7 +82,12 @@ export const createOnboardingService = (options: OnboardingServiceOptions) => {
         setState({
             acknowledged: [
                 ...state.acknowledged.filter((data) => data.message !== message),
-                onAcknowledge({ message, acknowledgedOn: getEpoch(), count: (acknowledged?.count ?? 0) + 1 }),
+                onAcknowledge({
+                    ...(acknowledged ?? {}),
+                    message,
+                    acknowledgedOn: getEpoch(),
+                    count: (acknowledged?.count ?? 0) + 1,
+                }),
             ],
         });
 

@@ -22,7 +22,7 @@ export const useOnboardingMessages = () => {
     const { SSO_URL } = usePassConfig();
     const user = useSelector(selectUser);
 
-    return useMemo<Record<OnboardingMessage, SpotlightMessageDefinition>>(
+    return useMemo<Partial<Record<OnboardingMessage, SpotlightMessageDefinition>>>(
         () => ({
             [OnboardingMessage.PENDING_SHARE_ACCESS]: {
                 id: 'welcome',
@@ -168,14 +168,6 @@ export const useOnboardingMessages = () => {
                 message: c('Info').t`Please upgrade to have early access ${PASS_APP_NAME} web app`,
                 weak: true,
                 onClose: () => acknowledge(OnboardingMessage.EARLY_ACCESS, () => setUpselling(null)),
-            },
-            [OnboardingMessage.PASS_MONITOR]: {
-                id: 'pass-monitor',
-                title: c('Title').t`${PASS_SHORT_APP_NAME} monitor`,
-                message: '',
-                className: 'ui-teal hidden',
-                icon: ShieldIcon,
-                onClose: () => acknowledge(OnboardingMessage.PASS_MONITOR),
             },
         }),
         [user]
