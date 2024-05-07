@@ -1,4 +1,4 @@
-export { default as ContacEmailsProvider } from './ContactEmailsProvider';
+export { default as ContactEmailsProvider } from './ContactEmailsProvider';
 export { default as ContactGroupDropdown } from './ContactGroupDropdown';
 export { default as ContactImage } from './ContactImage';
 export { default as ContactProvider } from './ContactProvider';
