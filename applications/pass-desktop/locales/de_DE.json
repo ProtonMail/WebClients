@@ -158,6 +158,9 @@
       "Edit vault": [
         "Tresor bearbeiten"
       ],
+      "Exclude from monitoring": [
+        "Von der Überwachung ausschließen"
+      ],
       "Export": [
         "Exportieren"
       ],
@@ -182,6 +185,9 @@
       "Get mobile apps": [
         "Mobile Apps holen"
       ],
+      "Get Pass Plus": [
+        "Pass Plus erwerben"
+      ],
       "Get Started": [
         "Erste Schritte"
       ],
@@ -199,6 +205,9 @@
       ],
       "Importing": [
         "Wird importiert"
+      ],
+      "Include in monitoring": [
+        "In die Überwachung einbeziehen"
       ],
       "Install extension": [
         "Erweiterung installieren"
@@ -278,6 +287,9 @@
       "Pass for iOS": [
         "Pass für iOS"
       ],
+      "Pass Monitor": [
+        "Pass-Monitor"
+      ],
       "Pin item": [
         "Eintrag anheften"
       ],
@@ -325,6 +337,9 @@
       ],
       "Saving": [
         "Wird gespeichert"
+      ],
+      "See all": [
+        "Alle ansehen"
       ],
       "See members": [
         "Mitglieder anzeigen"
@@ -374,6 +389,9 @@
       "Trash": [
         "In Papierkorb verschieben"
       ],
+      "Try again.": [
+        "Bitte versuche es erneut."
+      ],
       "Unpin item": [
         "Eintrag loslösen"
       ],
@@ -391,6 +409,9 @@
       ],
       "Verify": [
         "Verifizieren"
+      ],
+      "View details": [
+        "Details anzeigen"
       ],
       "View history": [
         "Verlauf anzeigen"
@@ -442,6 +463,29 @@
       ],
       "Expand": [
         "Erweitern"
+      ]
+    },
+    "Description": {
+      "Create unique passwords": [
+        "Erstelle einzigartige Passwörter"
+      ],
+      "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
+        "Dark Web-Überwachung ist mit einem kostenpflichtigen Plan verfügbar. Upgrade für sofortigen Zugriff."
+      ],
+      "Get notified if your email, password or other personal data was leaked.": [
+        "Lass dich benachrichtigen, wenn deine E-Mail, dein Passwort oder andere persönliche Daten entwendet wurden."
+      ],
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "Unsere hochmoderne, KI-gesteuerte Sicherheitslösung für Benutzer, die einen erhöhten Schutz für ihre Konten wünschen. ${ learnMoreLink }"
+      ],
+      "These items remain at risk": [
+        "Diese Einträge sind weiterhin gefährdet"
+      ],
+      "This account is vulnerable, visit the service and change your password.": [
+        "Dieses Konto ist angreifbar, besuche den Dienst und ändere dein Passwort."
+      ],
+      "Your email addresses were leaked in at least 1 data breach.": [
+        "Deine E-Mail-Adressen sind bei mindestens 1 Datendiebstahl veröffentlicht worden."
       ]
     },
     "Error": {
@@ -702,6 +746,20 @@
         "Etwas ist schief gelaufen."
       ]
     },
+    "Feature": {
+      "Dark Web Monitoring": [
+        "Dark Web-Überwachung"
+      ],
+      "Integrated 2FA authenticator": [
+        "Integrierter 2FA-Authentifikator"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Unbegrenzte Hide-my-email-Aliasse"
+      ],
+      "Vault sharing (up to ${ MAX_VAULT_MEMBERS } people)": [
+        "Tresor teilen (bis zu ${ MAX_VAULT_MEMBERS } Personen)"
+      ]
+    },
     "file size format": {
       "byte": [
         "Byte",
@@ -801,6 +859,9 @@
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } benötigt dein ${ BRAND_NAME }-Passwort, um offline auf Daten zugreifen zu können."
       ],
+      "${ PROTON_SENTINEL_NAME } successfully disabled": [
+        "${ PROTON_SENTINEL_NAME } erfolgreich gelöscht"
+      ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 Tage, um Premium-Funktionen kostenlos zu testen. Nur während deiner ersten Woche bei ${ BRAND_NAME }."
       ],
@@ -848,6 +909,9 @@
       ],
       "Auto-lock successfully disabled": [
         "Automatisches Sperren erfolgreich deaktiviert."
+      ],
+      "Breaches detected": [
+        "Datendiebstahl entdeckt"
       ],
       "Bring your existing passwords into ${ BRAND_NAME }.": [
         "Bring deine bestehenden Passwörter in ${ BRAND_NAME }"
@@ -937,6 +1001,9 @@
       "High Priority": [
         "Hohe Priorität"
       ],
+      "How does monitoring work?": [
+        "Wie funktioniert die Überwachung?"
+      ],
       "Import in progress:": [
         "Import im Gange:"
       ],
@@ -1005,6 +1072,12 @@
       "Item restored": [
         "Eintrag wiederhergestellt."
       ],
+      "Item successfully excluded from monitoring": [
+        "Element erfolgreich von der Überwachung ausgeschlossen"
+      ],
+      "Item successfully included in monitoring": [
+        "Element erfolgreich in die Überwachung einbezogen"
+      ],
       "Item successfully moved": [
         "Eintrag erfolgreich verschoben."
       ],
@@ -1013,6 +1086,9 @@
       ],
       "Item successfully unpinned": [
         "Eintrag erfolgreich losgelöst"
+      ],
+      "Latest breach on ${ formattedDate }": [
+        "Letztes Datenleck am ${ formattedDate }"
       ],
       "Learn how to ${ staySaferOnlineLink }": [
         "Erfahre, wie man ${ staySaferOnlineLink }"
@@ -1067,6 +1143,9 @@
       ],
       "Never": [
         "Niemals"
+      ],
+      "No breaches detected": [
+        "Kein Datendiebstahl entdeckt"
       ],
       "No network connection": [
         "Keine Netzwerkverbindung"
@@ -1612,6 +1691,9 @@
       "No history": [
         "Kein Verlauf"
       ],
+      "None": [
+        "Keine"
+      ],
       "Note": [
         "Notiz"
       ],
@@ -1699,6 +1781,12 @@
       "Special characters (!&*)": [
         "Sonderzeichen (!&*)"
       ],
+      "Status": [
+        "Status"
+      ],
+      "Strong": [
+        "Stark"
+      ],
       "Suffix": [
         "Suffix"
       ],
@@ -1744,6 +1832,9 @@
       "Update": [
         "Aktualisieren"
       ],
+      "Used in": [
+        "Verwendet in"
+      ],
       "Username": [
         "Benutzername"
       ],
@@ -1767,6 +1858,12 @@
       ],
       "View logs": [
         "Protokolle anzeigen"
+      ],
+      "Vulnerable": [
+        "Verwundbar"
+      ],
+      "Weak": [
+        "Schwach"
       ],
       "Websites": [
         "Websites"
@@ -1943,11 +2040,26 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } addresses": [
+        "${ BRAND_NAME } Adressen"
+      ],
       "Auto-lock update": [
         "Aktualisieren der automatischen Sperre"
       ],
+      "Breach detected": [
+        "Datendiebstahl entdeckt"
+      ],
+      "Breaches": [
+        "Datenlecks"
+      ],
+      "Breaches detected for": [
+        "Entdeckte Verstöße für"
+      ],
       "Confirm PIN code": [
         "PIN-Code bestätigen"
+      ],
+      "Confirm your email": [
+        "E-Mail-Adresse bestätigen"
       ],
       "Create a vault": [
         "Tresor erstellen"
@@ -1960,6 +2072,12 @@
       ],
       "Current version": [
         "Aktuelle Version"
+      ],
+      "Custom email monitoring": [
+        "Benutzerdefinierte E-Mail-Überwachung"
+      ],
+      "Dark Web Monitoring": [
+        "Dark Web-Überwachung"
       ],
       "Delete vault \"${ vaultName }\" ?": [
         "Tresor \"${ vaultName }\" löschen?"
@@ -1988,6 +2106,9 @@
       "Grant permissions": [
         "Berechtigungen erteilen"
       ],
+      "Hide-my-email aliases": [
+        "Hide-my-email-Aliasse"
+      ],
       "History": [
         "Verlauf"
       ],
@@ -2014,6 +2135,9 @@
       ],
       "Low disk space": [
         "Wenig Speicherplatz auf der Festplatte"
+      ],
+      "Mark as resolved?": [
+        "Als gelöst markieren?"
       ],
       "Member limit": [
         "Mitgliederlimit"
@@ -2045,6 +2169,9 @@
       "Password": [
         "Passwort"
       ],
+      "Password Health": [
+        "Passwort Sicherheit"
+      ],
       "Pending access to the shared data": [
         "Zugriff auf die geteilten Daten ist ausstehend"
       ],
@@ -2057,8 +2184,18 @@
       "Recommended actions": [
         "Empfohlene Aktionen"
       ],
+      "Resolved breaches": [
+        "Gelöste Datenlecks"
+      ],
       "Restore this version?": [
         "Diese Version wiederherstellen?"
+      ],
+      "Reused ${ count } time": [
+        "${ count } Mal wiederverwendet",
+        "${ count } Mal wiederverwendet"
+      ],
+      "Reused passwords": [
+        "Wiederverwendete Passwörter"
       ],
       "Review and share": [
         "Überprüfen und teilen"
@@ -2077,6 +2214,9 @@
       ],
       "Share with": [
         "Teilen mit"
+      ],
+      "Stay safer online": [
+        "Bleib online geschützter"
       ],
       "Suggestions": [
         "Vorschläge"
@@ -2098,6 +2238,9 @@
       ],
       "Vault shared with you": [
         "Mit dir geteilter Tresor"
+      ],
+      "Want to learn more?": [
+        "Möchtest du mehr erfahren?"
       ],
       "What is an alias?": [
         "Was ist ein Alias?"
@@ -2183,6 +2326,12 @@
       ],
       "Invalid alias prefix": [
         "Ungültiges Alias-Präfix"
+      ],
+      "Invalid code": [
+        "Ungültiger Code"
+      ],
+      "Invalid email": [
+        "Ungültige E-Mail-Adresse"
       ],
       "Invalid email addresses.": [
         "Ungültige E-Mail-Adressen."
