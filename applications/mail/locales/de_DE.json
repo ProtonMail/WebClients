@@ -361,6 +361,9 @@
       "Download ${ attachmentName }": [
         "${ attachmentName } herunterladen"
       ],
+      "Download Desktop App": [
+        "Desktop-App herunterladen"
+      ],
       "Download now": [
         "Jetzt herunterladen"
       ],
@@ -583,6 +586,9 @@
       ],
       "label emails as": [
         "Nachrichten folgender Kategorie zuordnen"
+      ],
+      "Later": [
+        "Später"
       ],
       "Later this week": [
         "Später in dieser Woche"
@@ -1124,10 +1130,6 @@
       "Trust": [
         "Vertrauen"
       ],
-      "Trust key": [
-        "Schlüssel vertrauen",
-        "Schlüssel vertrauen"
-      ],
       "Trust public key": [
         "Öffentlichem Schlüssel vertrauen"
       ],
@@ -1411,11 +1413,6 @@
       ],
       "New email": [
         "Neue E-Mail"
-      ]
-    },
-    "App logo": {
-      "Download ${ MAIL_APP_NAME } desktop application": [
-        "${ MAIL_APP_NAME }-Desktop-App herunterladen"
       ]
     },
     "Apps dropdown": {
@@ -3344,12 +3341,6 @@
       "Missing feature(s)": [
         "Fehlende Funktion(en)"
       ],
-      "My reason isn't listed, please comment": [
-        "Mein Grund ist nicht aufgeführt (bitte beschreibe das Problem)"
-      ],
-      "Streaming service unsupported": [
-        "Streaming-Dienst wird nicht unterstützt"
-      ],
       "Subscription is too expensive": [
         "Das Abonnement ist zu teuer"
       ],
@@ -3368,6 +3359,40 @@
     "Download attachments": {
       "Download all": [
         "Alle herunterladen"
+      ]
+    },
+    "drivePlus2024: Action": {
+      "Get the deal": [
+        "Sichere dir das Angebot"
+      ],
+      "Special Offer": [
+        "Sonderangebot"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Erweiterter Versionsverlauf"
+      ],
+      "Priority support": [
+        "Priorisierter Support"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Verlängert sich zu ${ renewablePrice }, jederzeit kündbar"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "im ersten Monat"
+      ],
+      "Limited-time offer": [
+        "Zeitlich begrenztes Angebot"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Hol dir ${ planName } für nur ${ planPrice }"
       ]
     },
     "Email body for description (description part)": {
@@ -4014,6 +4039,9 @@
       ],
       "You have reached the contacts limit for your account": [
         "Du hast das Kontaktlimit für dein Konto erreicht."
+      ],
+      "You have reached the maximum number of calendars.": [
+        "Du hast die maximale Anzahl an Kalendern erreicht."
       ],
       "You must set a name": [
         "Du musst einen Namen eingeben"
@@ -5871,9 +5899,6 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "Um mehr Suchergebnisse zu erhalten, suche nach diesem Schlüsselwort im Inhalt deiner E-Mails."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Leite ankommende E-Mails eines anderen Kontos in deinen sicheren ${ MAIL_APP_NAME } Posteingang weiter."
-      ],
       "From": [
         "Von"
       ],
@@ -5938,9 +5963,6 @@
       ],
       "Import mailbox": [
         "Postfach importieren"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Importiere deine E-Mails, Kalender und Kontakte eines anderen Dienstes zu ${ BRAND_NAME }."
       ],
       "Important note": [
         "Wichtiger Hinweis"
@@ -10416,14 +10438,8 @@
       ]
     },
     "Spotlight": {
-      "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
-        "Starte ${ MAIL_APP_NAME } ganz bequem von deinem Desktop aus."
-      ],
       "Email tracking protection": [
         "Schutz vor E-Mail-Trackern"
-      ],
-      "Get the desktop app": [
-        "Desktop-App herunterladen"
       ],
       "Get up to ${ credits } in credits.": [
         "Erhalte bis zu ${ credits } als Guthaben."
@@ -10646,6 +10662,9 @@
     "subscription reminder": {
       "15 GB storage": [
         "15 GB Speicherplatz"
+      ],
+      "and 15 more premium features": [
+        "und 15 weitere Premium-Funktionen"
       ],
       "Automatic email forwarding ${ strongText }": [
         "Automatische E-Mail-Weiterleitung ${ strongText }"
@@ -12019,6 +12038,9 @@
       ],
       "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
         "Das Abonnement erneuert sich automatisch alle 3 Monate. Dein nächstes Abrechnungsdatum ist in drei Monaten."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Der speziell ermäßigte Preis von ${ priceWithDiscount } ist für den ersten Monat gültig. Danach wird das Abonnement automatisch jeden Monat zum Preis von ${ renewPrice } verlängert. Du kannst jederzeit kündigen."
       ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Du erhältst dann alle 12 Monate eine Rechnung über ${ renewPrice }."

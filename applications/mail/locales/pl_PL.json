@@ -367,6 +367,9 @@
       "Download ${ attachmentName }": [
         "Pobierz ${ attachmentName }"
       ],
+      "Download Desktop App": [
+        "Pobierz aplikację desktopową"
+      ],
       "Download now": [
         "Pobierz"
       ],
@@ -484,6 +487,9 @@
       "Go to previous page": [
         "Przejdź do poprzedniej strony"
       ],
+      "Go to settings": [
+        "Przejdź do ustawień"
+      ],
       "Go to SimpleLogin": [
         "Przejdź do SimpleLogin"
       ],
@@ -591,6 +597,9 @@
       ],
       "label emails as": [
         "oznacz wiadomości jako"
+      ],
+      "Later": [
+        "Później"
       ],
       "Later this week": [
         "W tym tygodniu"
@@ -1132,12 +1141,6 @@
       "Trust": [
         "Zaufaj"
       ],
-      "Trust key": [
-        "Zaufaj kluczowi",
-        "Zaufaj kluczom",
-        "Zaufaj kluczom",
-        "Zaufaj kluczom"
-      ],
       "Trust public key": [
         "Zaufaj kluczowi publicznemu"
       ],
@@ -1429,11 +1432,6 @@
       ],
       "New email": [
         "Nowa wiadomość"
-      ]
-    },
-    "App logo": {
-      "Download ${ MAIL_APP_NAME } desktop application": [
-        "Pobierz aplikację desktopową ${ MAIL_APP_NAME }"
       ]
     },
     "Apps dropdown": {
@@ -3370,17 +3368,32 @@
       "Bugs or quality issue": [
         "Błędy lub problemy z jakością usługi"
       ],
+      "I do not wish to share": [
+        "Nie chcę komentować"
+      ],
+      "I found a cheaper VPN": [
+        "Mam tańszą usługę VPN"
+      ],
+      "I found a VPN with better features": [
+        "Mam lepszą usługę VPN"
+      ],
+      "I have not managed to connect": [
+        "Nie udało mi się połączyć"
+      ],
+      "I only needed a VPN short-term": [
+        "VPN był mi potrzebny na chwilę"
+      ],
       "I use a different ${ BRAND_NAME } account": [
         "Używam innego konta ${ BRAND_NAME }"
+      ],
+      "It doesn't do what I need": [
+        "Nie spełnia moich potrzeb"
       ],
       "Missing feature(s)": [
         "Brakujące funkcje"
       ],
-      "My reason isn't listed, please comment": [
-        "Inna, niewymieniona wyżej przyczyna"
-      ],
-      "Streaming service unsupported": [
-        "Usługi streamingu są nieobsługiwane"
+      "Other reason (please comment)": [
+        "Inny (wpisz)"
       ],
       "Subscription is too expensive": [
         "Cena jest zbyt wysoka"
@@ -3390,6 +3403,9 @@
       ],
       "Temporary need, may come back in the future": [
         "Potrzebowałem konto tymczasowo"
+      ],
+      "The VPN is too slow": [
+        "VPN jest zbyt wolny"
       ]
     },
     "Downgrade modal exit survey title": {
@@ -3400,6 +3416,40 @@
     "Download attachments": {
       "Download all": [
         "Pobierz wszystkie"
+      ]
+    },
+    "drivePlus2024: Action": {
+      "Get the deal": [
+        "Skorzystaj z oferty"
+      ],
+      "Special Offer": [
+        "Oferta specjalna"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Rozszerzona historia wersji"
+      ],
+      "Priority support": [
+        "Priorytetowe wsparcie"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Odnowienie za ${ renewablePrice }. Anuluj w dowolnym momencie"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "za pierwszy miesiąc"
+      ],
+      "Limited-time offer": [
+        "Oferta ograniczona czasowo"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Uzyskaj plan ${ planName } za ${ planPrice }"
       ]
     },
     "Email body for description (description part)": {
@@ -5785,6 +5835,9 @@
       "Body: ": [
         "Treść: "
       ],
+      "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
+        "Zwiększ rozpoznawalność marki."
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Obniżając plan do wersji Free, utracisz te bonusy na zawsze, nawet jeśli w przyszłości ponownie ulepszysz swoje konto."
       ],
@@ -6076,9 +6129,6 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "Szukaj słów kluczowych w zawartości wiadomości, aby uzyskać więcej wyników wyszukiwania."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Przekieruj wiadomości przychodzące z innego konta do bezpiecznej skrzynki odbiorczej ${ MAIL_APP_NAME }."
-      ],
       "From": [
         "Od"
       ],
@@ -6147,9 +6197,6 @@
       ],
       "Import mailbox": [
         "Importuj skrzynkę pocztową"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Importuj wiadomości, kalendarze i kontakty z innej usługi do ${ BRAND_NAME }."
       ],
       "Important note": [
         "Uwaga"
@@ -8909,7 +8956,7 @@
         "Konsola administratora"
       ],
       "Administration Panel": [
-        "Panel administracyjny"
+        "Panel administratora"
       ],
       "Advanced sharing security": [
         "Zaawansowane bezpieczeństwo udostępniania"
@@ -9043,6 +9090,9 @@
       "Organize items with multiple vaults": [
         "Organizuj elementy w wielu sejfach"
       ],
+      "Pass Monitor - premium features": [
+        "Monitoring Proton Pass — funkcje premium"
+      ],
       "Passkeys supported": [
         "Klucze dostępu są obsługiwane"
       ],
@@ -9120,6 +9170,9 @@
       ],
       "Unlimited devices": [
         "Nieograniczona liczba urządzeń"
+      ],
+      "Unlimited devices and aliases": [
+        "Nieograniczona liczba urządzeń i aliasów"
       ],
       "Unlimited filters": [
         "Nieograniczona liczba filtrów"
@@ -9753,6 +9806,20 @@
     "Participant name": {
       "You": [
         "Ty"
+      ]
+    },
+    "pass_signup_2023: Info": {
+      "Secure sharing with ${ n } vault": [
+        "Bezpieczne udostępnianie ${ n } sejfu",
+        "Bezpieczne udostępnianie ${ n } sejfów",
+        "Bezpieczne udostępnianie ${ n } sejfów",
+        "Bezpieczne udostępnianie ${ n } sejfów"
+      ],
+      "Secure sharing with multiple vaults": [
+        "Bezpieczne udostępnianie wielu sejfów"
+      ],
+      "Secure vault sharing": [
+        "Bezpieczne udostępnianie sejfu"
       ]
     },
     "passwordless": {
@@ -10794,14 +10861,8 @@
       ]
     },
     "Spotlight": {
-      "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
-        "Uruchamiaj ${ MAIL_APP_NAME } z pulpitu."
-      ],
       "Email tracking protection": [
         "Ochrona przed śledzeniem wiadomości"
-      ],
-      "Get the desktop app": [
-        "Pobierz aplikację desktopową"
       ],
       "Get up to ${ credits } in credits.": [
         "Uzyskaj do ${ credits }."
@@ -11632,6 +11693,9 @@
       ],
       "Action all messages": [
         "Zastosuj do wszystkich wiadomości"
+      ],
+      "Add a custom logo": [
+        "Dodaj niestandardowe logo"
       ],
       "Add contact group name": [
         "Dodaj nazwę grupy kontaktów"

@@ -1120,9 +1120,6 @@
       "Trust": [
         "信任"
       ],
-      "Trust key": [
-        "信任金鑰"
-      ],
       "Trust public key": [
         "信任公開金鑰"
       ],
@@ -1402,11 +1399,6 @@
       ],
       "New email": [
         "新電子郵件"
-      ]
-    },
-    "App logo": {
-      "Download ${ MAIL_APP_NAME } desktop application": [
-        "下載${ MAIL_APP_NAME }桌面應用程式"
       ]
     },
     "Apps dropdown": {
@@ -3325,12 +3317,6 @@
       "Missing feature(s)": [
         "缺少功能"
       ],
-      "My reason isn't listed, please comment": [
-        "我的理由未列出，請留言"
-      ],
-      "Streaming service unsupported": [
-        "不支援串流服務"
-      ],
       "Subscription is too expensive": [
         "訂購授權太貴了"
       ],
@@ -3349,6 +3335,29 @@
     "Download attachments": {
       "Download all": [
         "下載全部"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "展開版本紀錄"
+      ],
+      "Priority support": [
+        "優先支援"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "更新價 ${ renewablePrice }，任何時間都可取消"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "首月"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "只需 ${ planPrice } 即可取得 ${ planName }"
       ]
     },
     "Email body for description (description part)": {
@@ -3983,6 +3992,9 @@
       ],
       "You have reached the contacts limit for your account": [
         "您的帳號已達聯絡人數量限制"
+      ],
+      "You have reached the maximum number of calendars.": [
+        "您已用鑿行事曆組的上限。"
       ],
       "You must set a name": [
         "您必須設定名稱"
@@ -5767,9 +5779,6 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "若要更多結果，請於通訊錄中搜尋您的電子郵件訊息的關鍵字。"
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "將收到的郵件從另一個帳號轉發至您的安全 ${ MAIL_APP_NAME } 收件匣。"
-      ],
       "From": [
         "寄件人"
       ],
@@ -5832,9 +5841,6 @@
       ],
       "Import mailbox": [
         "匯入信箱"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "從其它服務匯入您的電子郵件、行事曆與通訊錄至 ${ BRAND_NAME }。"
       ],
       "Important note": [
         "重要提示"
@@ -10185,14 +10191,8 @@
       ]
     },
     "Spotlight": {
-      "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
-        "方便地從桌面應用程式啟動${ MAIL_APP_NAME }"
-      ],
       "Email tracking protection": [
         "電郵追蹤防護"
-      ],
-      "Get the desktop app": [
-        "取得桌面應用程式"
       ],
       "Get up to ${ credits } in credits.": [
         "取得多達 ${ credits } 的積點。"
@@ -11699,6 +11699,9 @@
       ]
     },
     "vpn_2024: renew": {
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "${ priceWithDiscount } 特殊折扣將套用於第一個月。其後將於每月自動以 ${ renewPrice } 續約。您可以在任何時候取消。"
+      ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "您的訂閱將每 ${ cycle }月自動更新。"
       ]

@@ -1097,10 +1097,6 @@
       "Trust": [
         "Megbízható"
       ],
-      "Trust key": [
-        "Megbízható kulcs",
-        "Kulcsok megjelölése megbízhatóként"
-      ],
       "Trust public key": [
         "Nyilvános kulcs megjelölése megbízhatóként"
       ],
@@ -1364,11 +1360,6 @@
       ],
       "New email": [
         "Új e-mail"
-      ]
-    },
-    "App logo": {
-      "Download ${ MAIL_APP_NAME } desktop application": [
-        "${ MAIL_APP_NAME } asztali alkalmazás letöltése"
       ]
     },
     "Apps dropdown": {
@@ -3198,12 +3189,6 @@
       "Missing feature(s)": [
         "Funkciók hiányoznak"
       ],
-      "My reason isn't listed, please comment": [
-        "Nem a felsorolt indokok miatt. Kérjük írja le"
-      ],
-      "Streaming service unsupported": [
-        "Videó szolgáltatás nem támogatott"
-      ],
       "Subscription is too expensive": [
         "Az előfizetés túl drága"
       ],
@@ -3222,6 +3207,11 @@
     "Download attachments": {
       "Download all": [
         "Összes letöltése"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Priority support": [
+        "Elsőbbségi támogatás"
       ]
     },
     "Email reminder banner": {
@@ -5477,9 +5467,6 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "További keresési eredményekért, próbáljon meg erre a kulcsszóra keresni az e-mail üzenetek tartalmában"
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Irányítsa át a bejövő leveleit másik címről, a biztonságos ${ MAIL_APP_NAME } fiókjába."
-      ],
       "From": [
         "Forrás:"
       ],
@@ -5541,9 +5528,6 @@
       ],
       "Import mailbox": [
         "E-mail fiók importálása"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Importálja az e-mailjeit, naptárait és névjegyeit másik szolgáltatásból a ${ BRAND_NAME } fiókjába."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Adatok importálása innen: ${ fromEmail }, ide: ${ toEmail }."
@@ -9356,14 +9340,8 @@
       ]
     },
     "Spotlight": {
-      "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
-        "Használja kényelmesen a ${ MAIL_APP_NAME } alkalmazást közvetlenül a számítógépén."
-      ],
       "Email tracking protection": [
         "E-mail követési védelem"
-      ],
-      "Get the desktop app": [
-        "Töltse le az asztali alkalmazást"
       ],
       "Get up to ${ credits } in credits.": [
         "Szerezzen akár ${ credits } kreditet."
