@@ -101,9 +101,6 @@
       "Create alias": [
         "Buat alias"
       ],
-      "Create an alias": [
-        "Buat alias"
-      ],
       "Create card": [
         "Buat kartu"
       ],
@@ -161,8 +158,8 @@
       "Edit vault": [
         "Sunting brankas"
       ],
-      "Enable NetShield": [
-        "Aktifkan NetShield"
+      "Enable Dark Web Monitoring": [
+        "Aktifkan Pengawasan Web Gelap"
       ],
       "Exclude from monitoring": [
         "Kecualikan dari pemantauan"
@@ -404,6 +401,9 @@
       "Trash": [
         "Pindahkan ke sampah"
       ],
+      "Try again.": [
+        "Coba lagi."
+      ],
       "Unpin item": [
         "Lepas sematan item"
       ],
@@ -481,11 +481,17 @@
       "${ total } other login uses the same password": [
         "${ total } entri masuk lainnya menggunakan kata sandi yang sama"
       ],
+      "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
+        "2FA menambahkan lapisan keamanan tambahan pada entri masuk Anda. ${ PASS_APP_NAME } menjadikan 2FA lebih mudah dengan menyimpan dan mengisi kode 2FA Anda secara otomatis."
+      ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Alias email berfungsi seperti alamat email pada umumnya, namun alias akan mengurangi spam dan menjaga agar alamat email asli dan identitas diri Anda tersembunyi."
       ],
       "Change your passwords": [
         "Ubah kata sandi Anda"
+      ],
+      "Create unique passwords": [
+        "Hasilkan kata sandi yang unik"
       ],
       "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
         "Pemantauan Dark Web tersedia dengan paket berbayar. Tingkatkan akun Anda untuk memperoleh akses ke fitur ini dengan segera."
@@ -493,20 +499,14 @@
       "Get notified if your email, password or other personal data was leaked.": [
         "Dapatkan notifikasi apabila email, kata sandi, atau data pribadi Anda lainnya dibocorkan."
       ],
-      "Increase your security": [
-        "Tingkatkan keamanan Anda"
-      ],
-      "It would be more secure to set up 2FA for this account.": [
-        "Akun ini akan lebih aman dengan pengaturan 2FA."
-      ],
       "Keep your info more secure and private with these guides and tips.": [
         "Jaga agar informasi Anda lebih aman dan privat dengan berbagai panduan dan tips berikut."
       ],
-      "NetShield is an ad-blocking feature from ${ VPN_APP_NAME } that protects your device from ads, trackers, and malware. ": [
-        "NetShield merupakan fitur pemblokir iklan dari ${ VPN_APP_NAME } yang melindungi perangkat Anda dari iklan, pelacak, dan malware. "
-      ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Solusi keamanan mutakhir berbasis AI kami dirancang untuk para pengguna yang menginginkan perlindungan yang lebih bagi akun mereka. ${ learnMoreLink }"
+      ],
+      "Set up 2FA for more security": [
+        "Atur 2FA untuk keamanan yang lebih"
       ],
       "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
         "Mulai pantau kebocoran data yang terhubung dengan akun yang dibuat dengan alamat email dan alias hide-my-email Anda."
@@ -514,8 +514,14 @@
       "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
         "Dark web merupakan bagian tersembunyi dari internet di mana informasi pribadi yang dicuri, seperti identitas diri, dapat diperjualbelikan."
       ],
+      "These items remain at risk": [
+        "Item berikut tetap berisiko"
+      ],
       "This account is vulnerable, visit the service and change your password.": [
         "Akun ini terindikasi rentan. Kunjungi layanan keamanan kami dan ubah kata sandi Anda."
+      ],
+      "This service offers 2FA. Enable it for added account security.": [
+        "Layanan ini menawarkan 2FA. Aktifkan fitur ini untuk meningkatkan keamanan akun."
       ],
       "With ${ PASS_SHORT_APP_NAME } Monitor, stay ahead of threats by getting instant alerts if your credentials are compromised. Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Dengan Pemantauan ${ PASS_SHORT_APP_NAME }, buat diri Anda tetap berada selangkah di depan ancaman dengan memperoleh pemberitahuan secara instan apabila kredensial Anda dibocorkan. Dapatkan berbagai fitur keamanan lanjutan dan log yang terperinci untuk melindungi presensi online Anda."
@@ -626,9 +632,6 @@
       ],
       "Failed to edit user's access.": [
         "Akses pengguna gagal disunting."
-      ],
-      "Failed to load breaches": [
-        "Daftar kebocoran gagal dimuat"
       ],
       "Failed to load breaches for this address": [
         "Daftar kebocoran untuk alamat ini gagal dimuat"
@@ -904,7 +907,7 @@
       "${ PROTON_SENTINEL_NAME } successfully enabled": [
         "${ PROTON_SENTINEL_NAME } berhasil diaktifkan"
       ],
-      "${ row.breachCount } breaches detected": [
+      "${ row.breachCount } breach detected": [
         "${ row.breachCount } kebocoran terdeteksi"
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
@@ -1071,6 +1074,9 @@
       ],
       "High Priority": [
         "Prioritas Tinggi"
+      ],
+      "How does monitoring work?": [
+        "Bagaimana cara pemantauan ini bekerja?"
       ],
       "Import in progress:": [
         "Impor yang sedang berlangsung:"
@@ -1369,6 +1375,9 @@
       "Thank you, the problem has been reported": [
         "Terima kasih, masalah ini telah dilaporkan"
       ],
+      "The custom email will be sent to ${ href } for monitoring. No other data will be sent to HIBP.": [
+        "Email khusus ini akan dikirim ke ${ href } untuk dipantau. Tidak ada data lain yang akan dikirim ke HIBP."
+      ],
       "The export will only contain vaults that you own.": [
         "Ekspor ini hanya akan mengandung brankas yang Anda miliki."
       ],
@@ -1492,8 +1501,14 @@
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Anda telah mencapai panjang maksimum yang diizinkan sebesar ${ maxLength } karakter."
       ],
+      "You will be notified of data breaches for these email addresses.": [
+        "Anda akan diberi tahu seputar kebocoran data yang terjadi pada alamat email ini."
+      ],
       "You will be notified of data breaches for this email address.": [
         "Anda akan diberi tahu seputar kebocoran data yang terjadi pada alamat email ini."
+      ],
+      "You will no longer be notified of data breaches for these email addresses.": [
+        "Anda tidak akan lagi diberi tahu seputar kebocoran data yang terjadi pada alamat email ini."
       ],
       "You will no longer be notified of data breaches for this email address.": [
         "Anda tidak akan lagi diberi tahu seputar kebocoran data yang terjadi pada alamat email ini."
@@ -2150,9 +2165,6 @@
       "Auto-lock update": [
         "Pembaruan kunci otomatis"
       ],
-      "Block trackers and malware": [
-        "Blokir pelacak dan malware"
-      ],
       "Breach detected": [
         "Kebocoran terdeteksi"
       ],
@@ -2191,9 +2203,6 @@
       ],
       "Dark Web Monitoring": [
         "Pemantauan Dark Web"
-      ],
-      "Dark web monitoring": [
-        "Pemantauan dark web"
       ],
       "Delete vault \"${ vaultName }\" ?": [
         "Hapus brankas \"${ vaultName }\" ?"
@@ -2240,6 +2249,9 @@
       "Import your data": [
         "Impor data Anda"
       ],
+      "Inactive 2FA": [
+        "2FA tidak aktif"
+      ],
       "Install extension": [
         "Pasang ekstensi"
       ],
@@ -2252,6 +2264,9 @@
       "Leave vault ?": [
         "Tinggalkan brankas?"
       ],
+      "Loading breaches...": [
+        "Memuat kebocoran..."
+      ],
       "Low disk space": [
         "Ruang penyimpanan rendah"
       ],
@@ -2263,12 +2278,6 @@
       ],
       "Members": [
         "Anggota"
-      ],
-      "Missing 2FA": [
-        "2FA hilang"
-      ],
-      "Missing two-factor authentication": [
-        "Autentikasi dua faktor hilang"
       ],
       "Modified": [
         "Dimodifikasi"
@@ -2285,14 +2294,14 @@
       "No excluded items": [
         "Tidak ada item yang dikecualikan"
       ],
+      "No inactive 2FAs": [
+        "Tidak ada 2FA yang tidak aktif"
+      ],
       "No insecure passwords": [
         "Tidak ada kata sandi yang tidak aman"
       ],
       "No items selected": [
         "Tidak ada item yang dipilih"
-      ],
-      "No missing 2FAs": [
-        "Tidak ada 2FA yang hilang"
       ],
       "No reused passwords": [
         "Tidak ada kata sandi yang digunakan ulang"
@@ -2350,6 +2359,12 @@
       ],
       "Set access level": [
         "Tentukan tingkat akses"
+      ],
+      "Set up 2FA for better security": [
+        "Atur 2FA untuk keamanan yang lebih"
+      ],
+      "Set up 2FA for more security": [
+        "Atur 2FA untuk keamanan yang lebih"
       ],
       "Settings": [
         "Pengaturan"
@@ -2477,6 +2492,9 @@
       ],
       "Expiration Date is not in the format MM/YY": [
         "Tanggal Kedaluwarsa bukan dalam format BB/TT"
+      ],
+      "Failed to load breaches.": [
+        "Daftar kebocoran gagal dimuat."
       ],
       "Invalid alias prefix": [
         "Awalan alias tidak valid"

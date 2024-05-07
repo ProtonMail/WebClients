@@ -146,6 +146,9 @@
       "Edit vault": [
         "保管庫を編集"
       ],
+      "Enable Dark Web Monitoring": [
+        "Dark Web Monitoring を有効にする"
+      ],
       "Export": [
         "エクスポート"
       ],
@@ -420,6 +423,14 @@
         "開く"
       ]
     },
+    "Description": {
+      "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
+        "ダークウェブモニタリングは有料プランで利用できます。アップグレードしてすぐにアクセスできます。"
+      ],
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "私たちの、最先端のAI駆動セキュリティソリューションは、アカウントの高度な保護を求めるユーザー向けに設計されています。${ learnMoreLink }"
+      ]
+    },
     "Error": {
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider } ファイルを解析できませんでした。 ${ errorDetail }"
@@ -650,6 +661,20 @@
       ],
       "Something went wrong": [
         "不具合が発生しました"
+      ]
+    },
+    "Feature": {
+      "Dark Web Monitoring": [
+        "ダークウェブモニタリング"
+      ],
+      "Integrated 2FA authenticator": [
+        "統合された 2FA 認証システム"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "無制限の Hide-my-email エイリアス"
+      ],
+      "Vault sharing (up to ${ MAX_VAULT_MEMBERS } people)": [
+        "保管庫の共有 (最大 ${ MAX_VAULT_MEMBERS } 人)"
       ]
     },
     "file size format": {
@@ -932,6 +957,9 @@
       ],
       "Never": [
         "なし"
+      ],
+      "No breaches detected": [
+        "侵害は検出されませんでした"
       ],
       "No network connection": [
         "ネットワーク接続がありません"
@@ -1720,6 +1748,9 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } addresses": [
+        "${ BRAND_NAME } アドレス"
+      ],
       "Auto-lock update": [
         "自動ロックアップデート"
       ],
@@ -1734,6 +1765,9 @@
       ],
       "Current version": [
         "現在のバージョン"
+      ],
+      "Dark Web Monitoring": [
+        "ダークウェブモニタリング"
       ],
       "Delete vault \"${ vaultName }\" ?": [
         "保管庫「${ vaultName }」を削除しますか？"
@@ -1761,6 +1795,9 @@
       ],
       "Grant permissions": [
         "権限を付与する"
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email エイリアス"
       ],
       "History": [
         "履歴"
@@ -1857,6 +1894,15 @@
       ],
       "Vault shared with you": [
         "あなたと共有しているフォルダー"
+      ],
+      "Want to learn more?": [
+        "もっと詳しく知りたいですか?"
+      ],
+      "What is an alias?": [
+        "エイリアスとは？"
+      ],
+      "What is the dark web?": [
+        "ダークウェブとは？"
       ],
       "Why ${ PASS_APP_NAME }?": [
         "${ PASS_APP_NAME } を使用する理由"
