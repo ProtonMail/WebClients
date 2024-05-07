@@ -3190,12 +3190,6 @@
       "Missing feature(s)": [
         "機能が不足している"
       ],
-      "My reason isn't listed, please comment": [
-        "この中の理由以外 (コメントに記載してください)"
-      ],
-      "Streaming service unsupported": [
-        "ストリーミングサービスがサポートされていない"
-      ],
       "Subscription is too expensive": [
         "サブスクリプションが高すぎる"
       ],
@@ -3220,6 +3214,29 @@
       ],
       "Secure cloud storage and file sharing that protects your data": [
         "データを保護する安全なクラウド ストレージとファイル共有"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "拡張バージョン履歴"
+      ],
+      "Priority support": [
+        "優先サポート"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "以降は ${ renewablePrice } で更新されます。いつでもキャンセル可能です。"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "最初の 1 か月"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "${ planName } を ${ planPrice } で入手"
       ]
     },
     "Duration": {
@@ -4049,6 +4066,9 @@
       ],
       "You have reached the contacts limit for your account": [
         "アカウントの連絡先が上限に達しています。"
+      ],
+      "You have reached the maximum number of calendars.": [
+        "カレンダーの上限数に達しました。"
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "現在のプランでのメールアドレス数の上限に達しました。新規アドレスを追加するにはアップグレードしてください。"
@@ -5668,6 +5688,9 @@
       "${ BRAND_NAME } is privacy you can trust, ensured by strong encryption, open-source code, and Swiss privacy laws. We believe nobody should be able to exploit your data, period. Our technology and business are based upon this fundamentally stronger definition of privacy.": [
         "${ BRAND_NAME } は信頼できるプライバシーであり、強力な暗号化、オープンソース コード、スイスのプライバシー法によって保証されています。 私たちは、誰もあなたのデータを悪用できないようにすべきだと信じています。 当社のテクノロジーとビジネスは、この根本的により強力なプライバシーの定義に基づいています。"
       ],
+      "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
+        "${ BRAND_NAME } はあなたの情報を第三者と共有しません。データは、${ BRAND_NAME } 独自の分析と Constella Intelligence によるものです。"
+      ],
       "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "${ BRAND_NAME } は他のメールプロバイダーとの接続が失われたためインポートを一時停止しました。再接続してください。"
       ],
@@ -6862,9 +6885,6 @@
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "確認ボタンをクリックすると、アカウントに ${ creditsRemaining } クレジットが残ります。"
       ],
-      "Please provide an email address in case we need to contact you.": [
-        "あなたに連絡する必要がある場合のメールアドレスを入力してください。"
-      ],
       "Please select the folders you would like to import:": [
         "インポートしたいフォルダーを選択してください:"
       ],
@@ -7119,6 +7139,9 @@
       ],
       "Support for 1 custom email domain": [
         "1 つの独自メールドメインをサポート"
+      ],
+      "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
+        "カスタムドメインと非 ${ BRAND_NAME } メールアドレスのモニタリング対応は、近日公開予定です。"
       ],
       "support team": [
         "サポートチーム"
@@ -7503,6 +7526,9 @@
       ],
       "We just sent you a new link.": [
         "ただいま新しいリンクを送信しました"
+      ],
+      "We monitor the dark web for instances where your personal information (such as an email address or password used on a third-party site) is leaked or compromised.": [
+        "あなたの個人情報 (第三者のサイトで使用しているメールアドレス、パスワードなど) が漏洩または侵害された場合、私たちはダークウェブをモニターします。"
       ],
       "We need to authenticate your payment method with your bank.": [
         "お客様のお支払方法を銀行で認証する必要があります。"
@@ -10722,10 +10748,10 @@
         "外部のアドレスは既定にすることができません"
       ],
       "Dark Web Monitoring has been disabled": [
-        "ダークウェブモニタリングが無効になりました"
+        "Dark Web Monitoring が無効になりました"
       ],
       "Dark Web Monitoring has been enabled": [
-        "ダークウェブモニタリングが有効になりました"
+        "Dark Web Monitoring が有効になりました"
       ],
       "Invalid code": [
         "無効なコード"
@@ -11153,9 +11179,6 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Check out ${ appName } features": [
-        "${ appName } の機能をチェックしてください"
-      ],
       "Continue": [
         "続ける"
       ],
@@ -11246,15 +11269,6 @@
       "${ PASS_APP_NAME } is available as a browser extension on the Chrome Web Store.": [
         "${ PASS_APP_NAME } は、Chrome ウェブストアでブラウザ拡張機能として入手できます。"
       ],
-      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption.": [
-        "${ PASS_APP_NAME } は、厳格なエンドツーエンド暗号化によりパスワードと ID を安全に保ちます。"
-      ],
-      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. To add premium features of ${ PASS_APP_NAME_2 } to your current subscription, we suggest upgrading to the ${ upsellPlanName } plan.": [
-        "${ PASS_APP_NAME } は、厳格なエンドツーエンド暗号化によりパスワードと ID を安全に保ちます。 ${ PASS_APP_NAME_2 } のプレミアム機能を現在のサブスクリプションに追加するには、${ upsellPlanName } プランにアップグレードすることをお勧めします。"
-      ],
-      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. Your current plan already gives you access to premium ${ PASS_APP_NAME_2 } features — no need to purchase again.": [
-        "${ PASS_APP_NAME } は、厳格なエンドツーエンド暗号化によりパスワードと ID を安全に保ちます。 現在のプランではすでに ${ PASS_APP_NAME_2 } のプレミアム機能にアクセスできるため、再度購入する必要はありません。"
-      ],
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice }/月あたり"
       ],
@@ -11287,9 +11301,6 @@
       ],
       "Current plan": [
         "現在のプラン"
-      ],
-      "Discover ${ PASS_APP_NAME },${ br }our new encrypted password manager": [
-        "${ PASS_APP_NAME }、${ br }の新しい暗号化パスワード マネージャーをご覧ください"
       ],
       "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } の使用を開始するには、関連するアプリと拡張機能をダウンロードしてインストールしてください"
@@ -11344,9 +11355,6 @@
       ],
       "Get the security and features your business needs": [
         "ビジネスに必要なセキュリティと機能を入手"
-      ],
-      "Hide-my-email aliases protect your email from data breaches": [
-        "Hide-my-email エイリアスは電子メールをデータ侵害から保護します"
       ],
       "I understand that if I lose my recovery details, I may permanently lose access to my account.": [
         "リカバリーの詳細を紛失した場合、アカウントに永久にアクセスできなくなる可能性があることを理解しています。"
@@ -13428,6 +13436,9 @@
       "Billing cycle": [
         "支払い間隔"
       ],
+      "Block trackers and malware": [
+        "トラッカーとマルウェアをブロックする"
+      ],
       "Bridge for ${ platform }": [
         "${ platform } 版 Bridge"
       ],
@@ -14217,6 +14228,12 @@
       "We'll send an email to your new address with instructions on completing the change.": [
         "新しいメールアドレスに、変更手続きに関するご案内メールをお送りします。"
       ],
+      "What is an alias?": [
+        "エイリアスとは？"
+      ],
+      "What is the dark web?": [
+        "ダークウェブとは？"
+      ],
       "What would you like to import?": [
         "何をインポートしたいですか?"
       ],
@@ -14695,6 +14712,11 @@
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfCountries } か国で ${ numberOfServers } 台"
+      ]
+    },
+    "vpn_2024: renew": {
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "特別割引価格 ${ priceWithDiscount } は最初の 1 か月間有効です。 その後、毎月 ${ renewPrice } で自動的に更新されます。 いつでもキャンセルできます。"
       ]
     },
     "vpn_2step: billing": {

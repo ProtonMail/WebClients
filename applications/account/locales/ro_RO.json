@@ -3324,12 +3324,6 @@
       "Missing feature(s)": [
         "Funcție (funcții) lipsă."
       ],
-      "My reason isn't listed, please comment": [
-        "Motivul meu nu este afişat. Vă rugăm să comentați."
-      ],
-      "Streaming service unsupported": [
-        "Serviciu de trasmisie în flux neacceptat."
-      ],
       "Subscription is too expensive": [
         "Abonamentul este prea scump."
       ],
@@ -3362,6 +3356,29 @@
       ],
       "Secure cloud storage and file sharing that protects your data": [
         "Stocare securizată în cloud și partajare de fișiere care vă protejează datele"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Istoric extins versiuni"
+      ],
+      "Priority support": [
+        "Asistență prioritară"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Reînnoire cu ${ renewablePrice }, anulați oricând"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "pentru prima lună"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Luați ${ planName } cu doar ${ planPrice }"
       ]
     },
     "Duration": {
@@ -4312,6 +4329,9 @@
       ],
       "You have reached the contacts limit for your account": [
         "Ați atins limita de contacte disponibilă în cont."
+      ],
+      "You have reached the maximum number of calendars.": [
+        "Ați atins numărul maxim de calendare."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Ați folosit toate adresele din plan. Treceți la un plan cu plată superior pentru a adăuga o adresă nouă."
@@ -7383,9 +7403,6 @@
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "După apăsarea pe butonul de confirmare, contul va mai avea ${ creditsRemaining } credite rămase."
-      ],
-      "Please provide an email address in case we need to contact you.": [
-        "Furnizați o adresă de e-mail în caz că trebuie să vă contactăm."
       ],
       "Please select the folders you would like to import:": [
         "Selectați folderele pe care doriți să le importați:"
@@ -12071,9 +12088,6 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Check out ${ appName } features": [
-        "Consultați funcțiile ${ appName }"
-      ],
       "Continue": [
         "Continuare"
       ],
@@ -12164,15 +12178,6 @@
       "${ PASS_APP_NAME } is available as a browser extension on the Chrome Web Store.": [
         "${ PASS_APP_NAME } este disponibil ca o extensie de navigator pe magazinul Chrome Web."
       ],
-      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption.": [
-        "${ PASS_APP_NAME } vă păstrează parolele și identitatea în siguranță cu criptare riguroasă în ambele sensuri."
-      ],
-      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. To add premium features of ${ PASS_APP_NAME_2 } to your current subscription, we suggest upgrading to the ${ upsellPlanName } plan.": [
-        "${ PASS_APP_NAME } vă păstrează parolele și identitatea în siguranță cu criptare riguroasă în ambele sensuri. Pentru a adăuga funcții premium de la ${ PASS_APP_NAME_2 } la abonamentul actual, vă recomandăm să faceți treceți la planul ${ upsellPlanName }."
-      ],
-      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. Your current plan already gives you access to premium ${ PASS_APP_NAME_2 } features — no need to purchase again.": [
-        "${ PASS_APP_NAME } vă păstrează parolele și identitatea în siguranță cu criptare riguroasă în ambele sensuri. Planul actual vă oferă deja acces la funcțiile premium ${ PASS_APP_NAME_2 } - nu este nevoie să cumpărați din nou."
-      ],
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } pe lună"
       ],
@@ -12214,9 +12219,6 @@
       ],
       "Current plan": [
         "Plan actual"
-      ],
-      "Discover ${ PASS_APP_NAME },${ br }our new encrypted password manager": [
-        "Descoperiți ${ PASS_APP_NAME },${ br }noul nostru manager de parole criptate"
       ],
       "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
         "Descărcați și instalați aplicațiile și extensiile relevante pentru a începe să utilizați ${ PASS_APP_NAME }"
@@ -12271,9 +12273,6 @@
       ],
       "Get the security and features your business needs": [
         "Obțineți securitatea și funcțiile de care aveți nevoie în afaceri"
-      ],
-      "Hide-my-email aliases protect your email from data breaches": [
-        "Aliasurile hide-my-email vă protejează adresa de e-mail împotriva divulgării datelor personale."
       ],
       "I understand that if I lose my recovery details, I may permanently lose access to my account.": [
         "Înțeleg că, dacă îmi pierd detaliile de recuperare, este posibil să pierd definitiv accesul la contul meu."
@@ -16128,6 +16127,9 @@
       ],
       "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
         "Abonamentul se reînnoiește automat la fiecare 3 luni. Următoarea dată de facturare este peste 3 luni."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Prețul cu reducere specială de ${ priceWithDiscount } este valabil pentru prima lună. Apoi va fi reînnoit automat cu ${ renewPrice } în fiecare lună. Puteți anula oricând."
       ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Vi se va emite factura la fiecare 12 luni cu ${ renewPrice }."

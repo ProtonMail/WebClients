@@ -3296,12 +3296,6 @@
       "Missing feature(s)": [
         "ნაკლული თვისებ(ებ/ა)"
       ],
-      "My reason isn't listed, please comment": [
-        "ჩემი მიზეზი სიაში არაა. მიუთითეთ კომენტარის სახით"
-      ],
-      "Streaming service unsupported": [
-        "სტრიმინგის სერვისი მხარდაუჭერელია"
-      ],
       "Subscription is too expensive": [
         "გამოწერა ძალიან ძვირია"
       ],
@@ -3334,6 +3328,29 @@
       ],
       "Secure cloud storage and file sharing that protects your data": [
         "დაცული ღრუბლოვანი საცავი და ფაილების გაზიარება, რომელიც თქვენს მონაცემებს იცავს"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "გაფართოებული ვერსიის ისტორია"
+      ],
+      "Priority support": [
+        "პრიორიტეტული მხარდაჭერა"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "განახლების დრო ${ renewablePrice }. გააუქმეთ ნებისმიერ დროს"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "პირველი თვისთვის"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "მიიღეთ ${ planName } ფასით სულ რაღაც ${ planPrice }"
       ]
     },
     "Duration": {
@@ -4267,6 +4284,9 @@
       ],
       "You have reached the contacts limit for your account": [
         "თქვენ მიაღწიეთ კონტაქტების რაოდენობის ზღვარს თქვენი ანგარიშისთვის"
+      ],
+      "You have reached the maximum number of calendars.": [
+        "თქვენ მიაღწიეთ კალენდრების მაქსიმალურ რაოდენობას."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "თქვენს სატარიფო გეგმაში შემავალ ყველა მისამართს უკვე იყენებთ. ახალი მისამართის დასამატებლად სატარიფო გეგმის განახლებაა საჭირო."
@@ -7250,9 +7270,6 @@
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "დადასტურების ღილაკზე დაწოლის შემდეგ თქვენს ანგარიშზე ${ creditsRemaining } კრედიტი იქნება დარჩენილი."
-      ],
-      "Please provide an email address in case we need to contact you.": [
-        "შეიყვანეთ ელფოსტა, რომელზეც შეგვიძლია, საჭიროების შემთხვევაში დაგიკავშირდეთ."
       ],
       "Please select the folders you would like to import:": [
         "აირჩიეთ შემოსატანი საქაღალდეები:"
@@ -11777,9 +11794,6 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Check out ${ appName } features": [
-        "დაათვალიერეთ ${ appName }-ის ფუნქციები"
-      ],
       "Continue": [
         "გაგრძელება"
       ],
@@ -11870,15 +11884,6 @@
       "${ PASS_APP_NAME } is available as a browser extension on the Chrome Web Store.": [
         "${ PASS_APP_NAME } ხელმისაწვდომია, როგორც ბრაუზერის გაფართოება Chrome Web Store-ში."
       ],
-      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption.": [
-        "${ PASS_APP_NAME } თქვენს პაროლებსა და იდენტიფიკაციას უსაფრთხოდ, უძლიერესი გამჭოლი დაშიფვრით იცავს."
-      ],
-      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. To add premium features of ${ PASS_APP_NAME_2 } to your current subscription, we suggest upgrading to the ${ upsellPlanName } plan.": [
-        "${ PASS_APP_NAME } თქვენს პაროლებს გულდასმით, გამჭოლად დაშიფრულს ინახავს. ${ PASS_APP_NAME_2 }-ის ფასიანი ფუნქციების თქვენს გამოწერაში ჩასამატებლად გირჩევთ, ტარიფი ${ upsellPlanName }-ზე ასწიოთ."
-      ],
-      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. Your current plan already gives you access to premium ${ PASS_APP_NAME_2 } features — no need to purchase again.": [
-        "${ PASS_APP_NAME } თქვენს პაროლებს და იდენტიფიკაციას გულდასმითი გამჭოლი დაშიფვრით ინახავს. თქვენი მიმდინარე ტარიფი უკვე გაძლევთ წვდომას ფასიან ${ PASS_APP_NAME_2 }-ის ფუნქციებთან - თავიდან შეძენა საჭირო არაა."
-      ],
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } თვეში"
       ],
@@ -11920,9 +11925,6 @@
       ],
       "Current plan": [
         "მიმდინარე ტარიფი"
-      ],
-      "Discover ${ PASS_APP_NAME },${ br }our new encrypted password manager": [
-        "აღმოაჩინეთ ${ PASS_APP_NAME },${ br }ჩვენი ახალი დაშიფრული პაროლების მმართველი"
       ],
       "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME }-ის გამოყენების დასაწყებად გადმოწერეთ და დააყენეთ შესაბამისი აპები და გაფართოებები"
@@ -11977,9 +11979,6 @@
       ],
       "Get the security and features your business needs": [
         "მიიღეთ უსაფრთხოება და ფუნქციები თქვენი საქმიანი მოთხოვნებისთვის"
-      ],
-      "Hide-my-email aliases protect your email from data breaches": [
-        "Hide-my-email ფსევდონიმები თქვენს ელფოსტას მონაცემების გაჟონვისგან იცავს"
       ],
       "I understand that if I lose my recovery details, I may permanently lose access to my account.": [
         "მე მესმის, რომ თუ დავკარგავ ჩემს აღდგენის დეტალების, შეიძლება, ჩემს ანგარიშთან წვდომა სამუდამოდ დავკარგო."
@@ -15611,6 +15610,9 @@
       ],
       "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
         "გამოწერა ავტომატურად განახლდება ყოველ 3 თვეში. შემდეგი გადახდის თარიღი 3 თვეშია."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "საგანგებოდ დაკლებული ფასი ${ priceWithDiscount }-სთვის პირველ თვეშია ხელმისაწვდომი. ამის შემდეგ ის ავტომატურად განახლდება ${ renewPrice } ფასით ყოველთვე. გაუქმება ყოველთვის შეგიძლიათ."
       ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "გადაიხდით ყოველ 12 თვეში ტარიფით ${ renewPrice }"
