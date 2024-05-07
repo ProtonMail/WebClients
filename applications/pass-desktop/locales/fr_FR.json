@@ -101,9 +101,6 @@
       "Create alias": [
         "Créer un alias"
       ],
-      "Create an alias": [
-        "Créer un alias"
-      ],
       "Create card": [
         "Créer une carte"
       ],
@@ -163,9 +160,6 @@
       ],
       "Enable Dark Web Monitoring": [
         "Activer la surveillance du dark web"
-      ],
-      "Enable NetShield": [
-        "Activer NetShield "
       ],
       "Exclude from monitoring": [
         "Exclure de la surveillance"
@@ -407,6 +401,9 @@
       "Trash": [
         "Corbeille"
       ],
+      "Try again.": [
+        "Nous vous invitons à réessayer."
+      ],
       "Unpin item": [
         "Désépingler l'élément"
       ],
@@ -485,6 +482,9 @@
         "${ total } autre identifiant utilise le même mot de passe.",
         "${ total } autres identifiants utilisent le même mot de passe."
       ],
+      "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
+        "L'authentification A2F ajoute une couche supplémentaire de sécurité à vos connexions. ${ PASS_APP_NAME } simplifie cette authentification en stockant et en remplissant automatiquement vos codes A2F."
+      ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Un alias d'adresse e-mail fonctionne comme une adresse e-mail. Il réduit toutefois le nombre de spams et permet de ne pas divulguer votre véritable adresse e-mail et identité."
       ],
@@ -500,20 +500,14 @@
       "Get notified if your email, password or other personal data was leaked.": [
         "Soyez averti si votre adresse e-mail, mot de passe ou d'autres données personnelles ont été divulguées."
       ],
-      "Increase your security": [
-        "Améliorez votre sécurité"
-      ],
-      "It would be more secure to set up 2FA for this account.": [
-        "Il serait plus sûr d'activer l'A2F pour ce compte."
-      ],
       "Keep your info more secure and private with these guides and tips.": [
         "Renforcez la sécurité et la confidentialité de vos informations avec ces conseils."
       ],
-      "NetShield is an ad-blocking feature from ${ VPN_APP_NAME } that protects your device from ads, trackers, and malware. ": [
-        "NetShield est une fonctionnalité de ${ VPN_APP_NAME } qui bloque les publicités, les traqueurs et les logiciels malveillants."
-      ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Notre solution de sécurité de pointe utilise l'IA et est conçue pour les utilisateurs qui ont besoin d'une protection renforcée de leurs comptes. ${ learnMoreLink }"
+      ],
+      "Set up 2FA for more security": [
+        "Configurez l'A2F pour plus de sécurité"
       ],
       "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
         "Commencez à surveiller les fuites de données liées aux comptes créés avec votre adresse e-mail et alias « hide-my-email »."
@@ -526,6 +520,9 @@
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "Ce compte est vulnérable. Visitez le service et changez votre mot de passe."
+      ],
+      "This service offers 2FA. Enable it for added account security.": [
+        "Ce service offre l'A2F. Activez-le pour améliorer votre sécurité."
       ],
       "With ${ PASS_SHORT_APP_NAME } Monitor, stay ahead of threats by getting instant alerts if your credentials are compromised. Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Grâce à la fonction de surveillance de ${ PASS_SHORT_APP_NAME }, restez à l'affût des menaces en recevant des alertes instantanées lorsque vos informations d'identification sont compromises. Débloquez des fonctions de sécurité avancées et des journaux détaillés pour protéger vos activités en ligne."
@@ -557,11 +554,11 @@
         "Le verrouillage automatique n’a pu être désactivé."
       ],
       "Cannot send invitation at the moment": [
-        "L'envoi de l'invitation est impossible pour le moment",
-        "L'envoi des invitations est impossible pour le moment"
+        "L'envoi de l'invitation n'est pas possible pour le moment.",
+        "L'envoi des invitations n'est pas possible pour le moment."
       ],
       "Cannot send invitations at the moment": [
-        "L'envoi des invitations est impossible pour le moment."
+        "L'envoi d'invitations n'est pas possible pour le moment."
       ],
       "Could not confirm this invite at the moment": [
         "Cette invitation n'a pu être confirmée pour le moment."
@@ -638,9 +635,6 @@
       ],
       "Failed to edit user's access.": [
         "L'accès de l'utilisateur n'a pas pu être modifié."
-      ],
-      "Failed to load breaches": [
-        "Les fuites de données n'ont pas pu être chargées."
       ],
       "Failed to load breaches for this address": [
         "Les fuites de données pour cette adresse n'ont pas été chargées."
@@ -950,7 +944,8 @@
       "${ PROTON_SENTINEL_NAME } successfully enabled": [
         "${ PROTON_SENTINEL_NAME } a été activé."
       ],
-      "${ row.breachCount } breaches detected": [
+      "${ row.breachCount } breach detected": [
+        "${ row.breachCount } fuite de données a été détectée.",
         "${ row.breachCount } fuites de données ont été détectées."
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
@@ -1005,7 +1000,7 @@
         "Voulez-vous vraiment déplacer tous les éléments depuis « ${ fromVaultName } » vers « ${ toVaultName } » ?"
       ],
       "Are you sure you want to move items to \"${ name }\" ?": [
-        "Êtes-vous sûr de vouloir déplacer les éléments vers « ${ name } » ?"
+        "Voulez-vous vraiment déplacer les éléments vers « ${ name } » ?"
       ],
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "Êtes-vous sûr de vouloir déplacer l'élément vers « ${ name } » ?"
@@ -1115,6 +1110,9 @@
       ],
       "High Priority": [
         "Priorité élevée"
+      ],
+      "How does monitoring work?": [
+        "Comment fonctionne la surveillance ?"
       ],
       "Import in progress:": [
         "L'importation est en cours :"
@@ -1416,6 +1414,9 @@
       "Thank you, the problem has been reported": [
         "Nous vous remercions. Le bug a été signalé."
       ],
+      "The custom email will be sent to ${ href } for monitoring. No other data will be sent to HIBP.": [
+        "Cette adresse personnalisée sera envoyée à ${ href } pour être surveillé. Aucune autre information n'est partagée avec HIBP."
+      ],
       "The export will only contain vaults that you own.": [
         "L'exportation ne contiendra que les coffres-forts que vous possédez"
       ],
@@ -1538,8 +1539,14 @@
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Vous avez atteint le nombre maximum de ${ maxLength } caractères."
       ],
+      "You will be notified of data breaches for these email addresses.": [
+        "Vous serez informé en cas de fuites de données pour cette adresse e-mail."
+      ],
       "You will be notified of data breaches for this email address.": [
         "Vous serez informé en cas de fuites de données pour cette adresse e-mail."
+      ],
+      "You will no longer be notified of data breaches for these email addresses.": [
+        "Vous ne serez plus informé en cas de fuites de données pour cette adresse e-mail."
       ],
       "You will no longer be notified of data breaches for this email address.": [
         "Vous ne serez plus informé en cas de fuites de données pour cette adresse e-mail."
@@ -2198,9 +2205,6 @@
       "Auto-lock update": [
         "Mise à jour du verrouillage automatique"
       ],
-      "Block trackers and malware": [
-        "Bloquez les logiciels malveillants et traqueurs"
-      ],
       "Breach detected": [
         "Une fuite de données a été détectée."
       ],
@@ -2238,9 +2242,6 @@
         "E-mails personnalisés"
       ],
       "Dark Web Monitoring": [
-        "Surveillance du dark web"
-      ],
-      "Dark web monitoring": [
         "Surveillance du dark web"
       ],
       "Delete vault \"${ vaultName }\" ?": [
@@ -2288,6 +2289,9 @@
       "Import your data": [
         "Importer vos données"
       ],
+      "Inactive 2FA": [
+        "A2F inactive"
+      ],
       "Install extension": [
         "Installer l'extension"
       ],
@@ -2300,6 +2304,9 @@
       "Leave vault ?": [
         "Quitter le coffre-fort ?"
       ],
+      "Loading breaches...": [
+        "Chargement des fuites de données..."
+      ],
       "Low disk space": [
         "Il y a peu d'espace disque."
       ],
@@ -2311,12 +2318,6 @@
       ],
       "Members": [
         "Membres"
-      ],
-      "Missing 2FA": [
-        "A2F manquante"
-      ],
-      "Missing two-factor authentication": [
-        "L'authentification à deux facteurs est manquante."
       ],
       "Modified": [
         "Modifié"
@@ -2333,14 +2334,14 @@
       "No excluded items": [
         "Il n'existe aucun élément exclu."
       ],
+      "No inactive 2FAs": [
+        "Aucune A2F active"
+      ],
       "No insecure passwords": [
         "Il n'existe aucun mot de passe non sécurisé."
       ],
       "No items selected": [
         "Aucun élément n'est sélectionné."
-      ],
-      "No missing 2FAs": [
-        "Il ne manque aucune authentification A2F."
       ],
       "No reused passwords": [
         "Aucun mot de passe n'a été réutilisé."
@@ -2399,6 +2400,12 @@
       ],
       "Set access level": [
         "Définir le niveau d'accès"
+      ],
+      "Set up 2FA for better security": [
+        "Configurez l'A2F pour une meilleure sécurité"
+      ],
+      "Set up 2FA for more security": [
+        "Configurez l'A2F pour plus de sécurité"
       ],
       "Settings": [
         "Paramètres"
@@ -2526,6 +2533,9 @@
       ],
       "Expiration Date is not in the format MM/YY": [
         "La date d'expiration n'est pas au format MM/AA."
+      ],
+      "Failed to load breaches.": [
+        "Les fuites de données n'ont pas pu être chargées."
       ],
       "Invalid alias prefix": [
         "Le préfixe de l'alias n'est pas valide."

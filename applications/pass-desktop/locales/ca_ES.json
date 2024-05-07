@@ -146,6 +146,9 @@
       "Edit vault": [
         "Edita la caixa forta"
       ],
+      "Exclude from monitoring": [
+        "Exclou de la supervisió"
+      ],
       "Export": [
         "Exporta"
       ],
@@ -187,6 +190,9 @@
       ],
       "Importing": [
         "S'està important"
+      ],
+      "Include in monitoring": [
+        "Incloure en la supervisió"
       ],
       "Install extension": [
         "Instal·la l'extensió"
@@ -314,6 +320,9 @@
       "Saving": [
         "Desant"
       ],
+      "See all": [
+        "Mostra-les totes"
+      ],
       "See members": [
         "Mostra els membres"
       ],
@@ -362,6 +371,9 @@
       "Trash": [
         "Paperera"
       ],
+      "Try again.": [
+        "Proveu de nou."
+      ],
       "Unpin item": [
         "Desancora l'element"
       ],
@@ -376,6 +388,9 @@
       ],
       "Verify": [
         "Verifica"
+      ],
+      "View details": [
+        "Mostra els detalls"
       ],
       "View history": [
         "Visualitza l'historial"
@@ -419,6 +434,32 @@
       ],
       "Expand": [
         "Amplia"
+      ]
+    },
+    "Description": {
+      "Change your passwords": [
+        "Canviï les seves contrasenyes"
+      ],
+      "Create unique passwords": [
+        "Creï contrasenyes úniques"
+      ],
+      "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
+        "La supervisió del Dark Web està disponible amb un pla de pagament. Milloreu el vostre pla per accedir-hi immediatament."
+      ],
+      "Get notified if your email, password or other personal data was leaked.": [
+        "Rebi una notificació si s'han filtrat el seu correu electrònic, contrasenya o altres dades personals."
+      ],
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "La nostra solució de seguretat d'avantguarda, impulsada per IA, dissenyada per als usuaris que busquen una protecció més elevada per als seus comptes. ${ learnMoreLink }"
+      ],
+      "These items remain at risk": [
+        "Aquests elements continuen en risc"
+      ],
+      "This account is vulnerable, visit the service and change your password.": [
+        "Aquest compte és vulnerable, visiti el servei i canviï la contrasenya."
+      ],
+      "Your email addresses were leaked in at least 1 data breach.": [
+        "Les vostres adreces de correu electrònic s'han filtrat en almenys 1 infracció de dades."
       ]
     },
     "Error": {
@@ -492,11 +533,23 @@
       "Failed resending invite.": [
         "No s'ha pogut reenviar la invitació."
       ],
+      "Failed to add email address": [
+        "No s'ha pogut afegir l'adreça de correu electrònic"
+      ],
+      "Failed to delete email address from monitoring": [
+        "No s'ha pogut suprimir l'adreça de correu electrònic de la supervisió"
+      ],
       "Failed to edit organization settings": [
         "No s'ha pogut editar la configuració de l'organització"
       ],
       "Failed to edit user's access.": [
         "No s'ha pogut Editar l'accés de l'usuari."
+      ],
+      "Failed to load breaches for this address": [
+        "No s'han pogut carregar les infraccions per a aquesta adreça"
+      ],
+      "Failed to load breaches for this email alias": [
+        "No s'han pogut carregar les infraccions per a aquest àlies de correu electrònic"
       ],
       "Failed to load item history": [
         "No s'ha pogut carregar l'historial d'elements"
@@ -510,11 +563,32 @@
       "Failed to remove user's access.": [
         "No s'ha pogut esborrar l'accés de l'usuari."
       ],
+      "Failed to resend verification for custom email": [
+        "No s'ha pogut tornar a enviar la verificació per al correu electrònic personalitzat"
+      ],
+      "Failed to resolve breaches for this address": [
+        "No s'han pogut resoldre les infraccions d'aquesta adreça"
+      ],
       "Failed to transfer this vault's ownership.": [
         "No s'ha pogut transferir la propietat de la caixa forta."
       ],
       "Failed to unpin item": [
         "No s'ha pogut desancorar l'element."
+      ],
+      "Failed to update monitoring settings": [
+        "No s'han pogut actualitzar les preferències de supervisió"
+      ],
+      "Failed to verify email address": [
+        "No s'ha pogut verificar l'adreça de correu electrònic"
+      ],
+      "Failed updating ${ PROTON_SENTINEL_NAME } setting": [
+        "No s'ha pogut actualitzar la preferència ${ PROTON_SENTINEL_NAME }"
+      ],
+      "Failed updating monitor flag of the item": [
+        "No s'ha pogut actualitzar l'indicador del monitor de l'element"
+      ],
+      "Failed updating monitoring status for this email address": [
+        "No s'ha pogut actualitzar l'estat de supervisió d'aquesta adreça de correu electrònic"
       ],
       "File could not be parsed": [
         "No s'ha pogut analitzar el fitxer"
@@ -636,6 +710,20 @@
         "Alguna cosa ha anat malament."
       ]
     },
+    "Feature": {
+      "Dark Web Monitoring": [
+        "Supervisió del Dark Web"
+      ],
+      "Integrated 2FA authenticator": [
+        "Autenticador A2F integrat"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Nombre il·limitat d'àlies hide-my-email"
+      ],
+      "Vault sharing (up to ${ MAX_VAULT_MEMBERS } people)": [
+        "Compartició de la caixa forta (fins a ${ MAX_VAULT_MEMBERS } persones)"
+      ]
+    },
     "file size format": {
       "byte": [
         "byte",
@@ -729,14 +817,32 @@
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } només importarà inicis de sessió, notes i targetes de crèdit."
       ],
+      "${ PROTON_SENTINEL_NAME } successfully disabled": [
+        "${ PROTON_SENTINEL_NAME } s'ha desactivat correctament"
+      ],
+      "${ PROTON_SENTINEL_NAME } successfully enabled": [
+        "${ PROTON_SENTINEL_NAME } s'ha habilitat correctament"
+      ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Hi ha disponible una nova versió de ${ PASS_APP_NAME }. Actualitzeu-lo per gaudir de les últimes característiques i correccions d'errors."
+      ],
+      "Add your custom email address to monitor :": [
+        "Afegeixi la vostra adreça electrònica personalitzada per supervisar:"
       ],
       "Admin": [
         "Administrador"
       ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "S'ha mogut l'àlies \"${ item.aliasEmail }\" a la paperera - deixarà de reenviar correus electrònics a la vostra bústia"
+      ],
+      "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
+        "Els àlies amb dominis personalitzats no se supervisen; afegeixi'ls com a correu electrònic personalitzat per al seguiment."
+      ],
+      "All breaches for this address were resolved": [
+        "S'han resolt totes les infraccions d'aquesta adreça"
+      ],
+      "All current breaches will be marked as resolved. In case of future data breaches, you'll be notified.": [
+        "Totes les infraccions actuals es marcaran com a resoltes. En cas de futures infraccions de dades, se li notificarà."
       ],
       "An item previously shared with you was removed": [
         "S'ha esborrat un element compartit anteriorment amb vós."
@@ -749,6 +855,9 @@
       ],
       "Auto-lock successfully disabled": [
         "El bloqueig automàtic s'ha desactivat."
+      ],
+      "Breaches detected": [
+        "S'han detectat infraccions"
       ],
       "By default team members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
         "Per defecte, els membres de l'equip només poden exportar les caixes fortes de la seva propietat. Si aquesta opció està activada, no podran exportar cap dada"
@@ -783,6 +892,9 @@
       "Deleted items will be moved here first": [
         "Els elements eliminats es mouran aquí primer"
       ],
+      "Didn't receive the code?": [
+        "No ha rebut el codi?"
+      ],
       "Drop file here to upload": [
         "Arrossegueu el fitxer aquí per carregar-lo."
       ],
@@ -795,6 +907,15 @@
       "email": [
         "corrreu electrònic"
       ],
+      "Email address successfully deleted from monitoring": [
+        "L'adreça de correu electrònic s'ha suprimit correctament de la supervisió"
+      ],
+      "Email address successfully excluded from monitoring": [
+        "L'adreça de correu electrònic s'ha exclòs correctament de la supervisió"
+      ],
+      "Email address successfully included in monitoring": [
+        "L'adreça de correu electrònic s'ha inclòs correctament a la supervisió"
+      ],
       "Emptying trash...": [
         "Buidant la paperera..."
       ],
@@ -806,6 +927,9 @@
       ],
       "High Priority": [
         "Alta prioritat"
+      ],
+      "How does monitoring work?": [
+        "Com funciona la supervisió?"
       ],
       "Import in progress:": [
         "Importació en curs:"
@@ -863,6 +987,12 @@
       "Item restored": [
         "S'ha restaurat l'element"
       ],
+      "Item successfully excluded from monitoring": [
+        "S'ha exclòs l'element de la supervisió."
+      ],
+      "Item successfully included in monitoring": [
+        "Element inclòs correctament al seguiment"
+      ],
       "Item successfully moved": [
         "S'ha mogut l'element"
       ],
@@ -871,6 +1001,9 @@
       ],
       "Item successfully unpinned": [
         "S'ha desancorat l'element."
+      ],
+      "Latest breach on ${ formattedDate }": [
+        "Última infracció el ${ formattedDate }"
       ],
       "Learn how to ${ staySaferOnlineLink }": [
         "Més informació sobre com ${ staySaferOnlineLink }"
@@ -902,6 +1035,9 @@
       "Monitor accounts": [
         "Supervisar els comptes"
       ],
+      "Monitoring settings successfully updated": [
+        "Les preferències de seguiment s'han actualitzat correctament"
+      ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "Més que un gestor de contrasenyes, ${ PASS_APP_NAME } protegeix la vostra contrasenya i la vostra adreça de correu electrònic personal mitjançant àlies de correu electrònic. Desenvolupat amb la mateixa tecnologia que hi ha darrere de ${ MAIL_APP_NAME }, les vostres dades estan xifrades d'extrem a extrem i només són accessibles per vós."
       ],
@@ -919,6 +1055,9 @@
       ],
       "Never": [
         "Mai"
+      ],
+      "No breaches detected": [
+        "No s'han detectat infraccions"
       ],
       "No network connection": [
         "No hi ha connexió de xarxa."
@@ -952,6 +1091,9 @@
       ],
       "Pinning item...": [
         "Ancorant l'element..."
+      ],
+      "Please check your spam folder or try resending the code.": [
+        "Si us plau, comprovi la seva carpeta de correu brossa o provi de tornar a enviar el codi."
       ],
       "Please confirm your PIN code in order to unregister your current lock.\n${ PASS_APP_NAME } will then never lock.": [
         "Confirmeu el codi PIN per a desregistrar el bloqueig actual.\nAixí, ${ PASS_APP_NAME } no es bloquejarà mai."
@@ -1006,6 +1148,9 @@
       ],
       "Successfully synced all vaults": [
         "S'han sincronitzat totes les caixes fortes"
+      ],
+      "Suggested": [
+        "Suggeriment"
       ],
       "Syncing your vaults…": [
         "S'estan sincronitzant les vostres caixes fortes..."
@@ -1083,11 +1228,17 @@
       "Vault \"${ share.content.name }\" was removed": [
         "S'ha esborrat la caixa forta \"${ share.content.name }\"."
       ],
+      "Verification code sent.": [
+        "Codi de verificació enviat."
+      ],
       "Viewer": [
         "Visualitzador"
       ],
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Estem tenint problemes per sincronitzar les dades amb el vostre emmagatzematge local. Assegureu-vos que teniu prou espai al disc perquè ${ PASS_SHORT_APP_NAME } funcioni correctament."
+      ],
+      "We’ve sent a verification code to ${ email }. Please enter it below:": [
+        "Hem enviat un codi de verificació a ${ email }. Si us plau, introdueixi'l a continuació:"
       ],
       "You are about to create:": [
         "Esteu a punt de crear:"
@@ -1117,6 +1268,12 @@
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Heu assolit la longitud màxima permesa de ${ maxLength } caràcters."
       ],
+      "You will be notified of data breaches for this email address.": [
+        "Se li notificaran les infraccions de dades d'aquesta adreça de correu electrònic."
+      ],
+      "You will no longer be notified of data breaches for this email address.": [
+        "Aquesta adreça de correu electrònic deixarà de rebre notificacions sobre infraccions de dades."
+      ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "Utilitzareu aquest PIN per a desbloquejar ${ PASS_APP_NAME } un cop es bloquegi automàticament després d'un període d'inactivitat."
       ],
@@ -1138,6 +1295,10 @@
       "${ config.options.wordCount } word": [
         "${ config.options.wordCount } paraula",
         "${ config.options.wordCount } paraules"
+      ],
+      "${ usageCount } login": [
+        "${ usageCount } inici de sessió",
+        "${ usageCount } inicis de sessió"
       ],
       "1 hour": [
         "1 hora"
@@ -1340,6 +1501,9 @@
       "Last month": [
         "El mes passat"
       ],
+      "Last updated": [
+        "Última actualització"
+      ],
       "Last week": [
         "La setmana passada"
       ],
@@ -1396,6 +1560,9 @@
       ],
       "No history": [
         "Sense historial"
+      ],
+      "None": [
+        "Cap"
       ],
       "Note": [
         "Nota"
@@ -1481,6 +1648,12 @@
       "Special characters (!&*)": [
         "Caràcters especials (!&*)"
       ],
+      "Status": [
+        "Estat"
+      ],
+      "Strong": [
+        "Forta"
+      ],
       "Suffix": [
         "Sufix"
       ],
@@ -1526,6 +1699,9 @@
       "Update": [
         "Actualitza"
       ],
+      "Used in": [
+        "Utilitzat en"
+      ],
       "Username": [
         "Nom d'usuari"
       ],
@@ -1549,6 +1725,12 @@
       ],
       "View logs": [
         "Mostra els registres"
+      ],
+      "Vulnerable": [
+        "Vulnerable"
+      ],
+      "Weak": [
+        "Feble"
       ],
       "Websites": [
         "Llocs web"
@@ -1719,14 +1901,29 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } addresses": [
+        "Adreces de ${ BRAND_NAME }"
+      ],
+      "${ PASS_SHORT_APP_NAME } Monitor": [
+        "Supervisar ${ PASS_SHORT_APP_NAME }"
+      ],
       "Auto-lock update": [
         "Actualització del bloqueig automàtic"
       ],
-      "Block trackers and malware": [
-        "Bloca els rastrejadors i programaris maliciosos"
+      "Breach detected": [
+        "Infracció detectada"
+      ],
+      "Breaches": [
+        "Infraccions"
+      ],
+      "Breaches detected for": [
+        "Infraccions detectades per"
       ],
       "Confirm PIN code": [
         "Confirmeu el codi PIN"
+      ],
+      "Confirm your email": [
+        "Confirmi el vostre correu electrònic"
       ],
       "Create a vault": [
         "Crea una caixa forta"
@@ -1739,6 +1936,12 @@
       ],
       "Current version": [
         "Versió actual"
+      ],
+      "Custom email monitoring": [
+        "Supervisió personalitzada del correu electrònic"
+      ],
+      "Dark Web Monitoring": [
+        "Supervisió del Dark Web"
       ],
       "Delete vault \"${ vaultName }\" ?": [
         "Voleu eliminar la caixa forta \"${ vaultName }\"?"
@@ -1767,6 +1970,9 @@
       "Grant permissions": [
         "Concediu permisos"
       ],
+      "Hide-my-email aliases": [
+        "Àlies hide-my-email"
+      ],
       "History": [
         "Historial"
       ],
@@ -1778,6 +1984,9 @@
       ],
       "Import your data": [
         "Importeu les vostres dades"
+      ],
+      "Inactive 2FA": [
+        "2FA inactiva"
       ],
       "Install extension": [
         "Instal·la l'extensió"
@@ -1793,6 +2002,9 @@
       ],
       "Low disk space": [
         "Poc espai al disc"
+      ],
+      "Mark as resolved?": [
+        "Marca com a resolt?"
       ],
       "Member limit": [
         "Límit de nombre de membres"
@@ -1812,8 +2024,17 @@
       "Move items?": [
         "Vol moure els elements?"
       ],
+      "No excluded items": [
+        "No hi ha elements exclosos"
+      ],
+      "No insecure passwords": [
+        "Sense contrasenyes insegures"
+      ],
       "No items selected": [
         "No s'ha seleccionat cap element."
+      ],
+      "No reused passwords": [
+        "No hi ha contrasenyes reutilitzades"
       ],
       "Our welcome gift to you": [
         "El nostre regal de benvinguda per a vostè."
@@ -1823,6 +2044,12 @@
       ],
       "Password": [
         "Contrasenya"
+      ],
+      "Password Health": [
+        "Salut de la contrasenya"
+      ],
+      "Pause monitoring?": [
+        "Posar en pausa la supervisió?"
       ],
       "Pending access to the shared data": [
         "Accés a les dades compartides pendent"
@@ -1836,8 +2063,24 @@
       "Recommended actions": [
         "Accions recomanades"
       ],
+      "Remove email address?": [
+        "Vols esborrar l'adreça de correu electrònic?"
+      ],
+      "Resolved breaches": [
+        "Infraccions resoltes"
+      ],
       "Restore this version?": [
         "Vol restaurar aquesta versió?"
+      ],
+      "Resume monitoring?": [
+        "Reprendre la supervisió?"
+      ],
+      "Reused ${ count } time": [
+        "Reutilitzat ${ count } vegada",
+        "Reutilitzat ${ count } vegades"
+      ],
+      "Reused passwords": [
+        "Contrasenyes reutilitzades"
       ],
       "Review and share": [
         "Reviseu i comparteu"
@@ -1853,6 +2096,9 @@
       ],
       "Share with": [
         "Comparteix amb"
+      ],
+      "Stay safer online": [
+        "Estigui més segur en línia"
       ],
       "Suggestions": [
         "Suggeriments"
@@ -1871,6 +2117,12 @@
       ],
       "Vault shared with you": [
         "Caixa forta compartida amb vosaltres"
+      ],
+      "Want to learn more?": [
+        "Voleu saber més?"
+      ],
+      "Weak password": [
+        "Contrasenya feble"
       ],
       "What is an alias?": [
         "Què és un àlies?"
@@ -1933,11 +2185,20 @@
       "Could not create vault \"${ vaultName }\"": [
         "No s'ha pogut crear la caixa forta \"${ vaultName }\""
       ],
+      "Email is required": [
+        "El correu electrònic és obligatori"
+      ],
       "Empty note": [
         "Nota buida"
       ],
       "Invalid alias prefix": [
         "El prefix de l'àlies no és vàlid"
+      ],
+      "Invalid code": [
+        "Codi no vàlid"
+      ],
+      "Invalid email": [
+        "Correu electrònic no vàlid"
       ],
       "Invalid email addresses.": [
         "Les adreces de correu electrònic no són vàlides."
@@ -1994,6 +2255,9 @@
       "The alias prefix cannot be longer than 40 characters": [
         "El prefix de l'àlies no pot tenir més de 40 caràcters"
       ],
+      "This email address will no longer be monitored for data breaches.": [
+        "Aquesta adreça de correu electrònic ja no es controlarà per detectar infraccions de dades."
+      ],
       "Title is required": [
         "El títol és obligatori"
       ],
@@ -2011,6 +2275,9 @@
       ],
       "Vault name is required": [
         "Es requereix el nom de la caixa forta"
+      ],
+      "Verification code is required": [
+        "Cal un codi de verificació"
       ],
       "You cannot create more vaults than your subscription allows.": [
         "No podeu crear més caixes fortes del que permet la vostra subscripció."

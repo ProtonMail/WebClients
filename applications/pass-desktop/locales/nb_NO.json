@@ -101,9 +101,6 @@
       "Create alias": [
         "Opprett alias"
       ],
-      "Create an alias": [
-        "Opprett et alias"
-      ],
       "Create card": [
         "Opprett kort"
       ],
@@ -163,9 +160,6 @@
       ],
       "Enable Dark Web Monitoring": [
         "Aktiver overvåking av det mørke nettet"
-      ],
-      "Enable NetShield": [
-        "Aktiver NetShield"
       ],
       "Exclude from monitoring": [
         "Ekskluder fra overvåking"
@@ -297,7 +291,7 @@
         "Pass for iOS"
       ],
       "Pass Monitor": [
-        "Pass-overvåking"
+        "Pass Monitor"
       ],
       "Pause monitoring": [
         "Sett overvåking på vent"
@@ -407,6 +401,9 @@
       "Trash": [
         "Papirkurv"
       ],
+      "Try again.": [
+        "Prøv igjen."
+      ],
       "Unpin item": [
         "Løsne element"
       ],
@@ -485,6 +482,9 @@
         "${ total } annen pålogging bruker det samme passordet",
         "${ total } andre pålogginger bruker det samme passordet"
       ],
+      "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
+        "2FA legger til et nytt lag med sikkerhet til påloggingene dine. ${ PASS_APP_NAME } gjør 2FA enklere ved å lagre og automatisk fylle ut 2FA-kodene dine."
+      ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Et e-postalias fungerer som en e-postadresse, men reduserer søppelpost og holder den faktiske e-postadressen og identiteten din skjult."
       ],
@@ -500,20 +500,14 @@
       "Get notified if your email, password or other personal data was leaked.": [
         "Bli varslet hvis e-posten, passordet eller andre personlige data ble lekket."
       ],
-      "Increase your security": [
-        "Øk sikkerheten din"
-      ],
-      "It would be more secure to set up 2FA for this account.": [
-        "Det ville være sikrere å sette opp 2FA for denne kontoen."
-      ],
       "Keep your info more secure and private with these guides and tips.": [
         "Hold informasjonen din sikrere og mer privat med disse veiledningene og tipsene."
       ],
-      "NetShield is an ad-blocking feature from ${ VPN_APP_NAME } that protects your device from ads, trackers, and malware. ": [
-        "NetShield er en annonseblokkeringsfunksjon fra ${ VPN_APP_NAME } som beskytter enheten din mot annonser, sporere og skadelig programvare. "
-      ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Vår banebrytende AI-drevne sikkerhetsløsning designet for brukere som ønsker økt beskyttelse for kontoene sine. ${ learnMoreLink }."
+      ],
+      "Set up 2FA for more security": [
+        "Sett opp 2FA for ekstra sikkerhet"
       ],
       "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
         "Begynn å overvåke for datainnbrudd relatert til kontoer som er opprettet med e-postadressen din og dine hide-my-email-aliaser."
@@ -526,6 +520,9 @@
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "Denne kontoen er sårbar, besøk tjenesten og endre passordet ditt."
+      ],
+      "This service offers 2FA. Enable it for added account security.": [
+        "Denne tjenesten tilbyr 2FA. Aktiver den for ekstra kontosikkerhet."
       ],
       "With ${ PASS_SHORT_APP_NAME } Monitor, stay ahead of threats by getting instant alerts if your credentials are compromised. Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Med ${ PASS_SHORT_APP_NAME }-overvåking, hold deg i forkant av trusler ved å få øyeblikkelige varsler hvis legitimasjonen din er kompromittert. Lås opp avanserte sikkerhetsfunksjoner og detaljerte logger for å beskytte din tilstedeværelse på nettet."
@@ -639,9 +636,6 @@
       "Failed to edit user's access.": [
         "Kunne ikke redigere brukerens tilgang."
       ],
-      "Failed to load breaches": [
-        "Kunne ikke laste inn brudd"
-      ],
       "Failed to load breaches for this address": [
         "Kunne ikke laste inn brudd for denne adressen"
       ],
@@ -668,6 +662,9 @@
       ],
       "Failed to resend verification for custom email": [
         "Kunne ikke sende bekreftelse på nytt for tilpasset e-post"
+      ],
+      "Failed to resolve breaches for this address": [
+        "Kunne ikke løse brudd for denne adressen"
       ],
       "Failed to restore items from trash": [
         "Kunne ikke gjenopprette elementer fra papirkurven"
@@ -947,7 +944,8 @@
       "${ PROTON_SENTINEL_NAME } successfully enabled": [
         "${ PROTON_SENTINEL_NAME } aktivert"
       ],
-      "${ row.breachCount } breaches detected": [
+      "${ row.breachCount } breach detected": [
+        "${ row.breachCount } brudd oppdaget",
         "${ row.breachCount } brudd oppdaget"
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
@@ -976,6 +974,9 @@
       ],
       "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
         "Aliaser med egendefinerte domener overvåkes ikke, vennligst legg dem til som en tilpasset e-post for overvåking."
+      ],
+      "All breaches for this address were resolved": [
+        "Alle brudd for denne adressen ble løst"
       ],
       "All current breaches will be marked as resolved. In case of future data breaches, you'll be notified.": [
         "Alle gjeldende brudd vil bli merket som løst. Ved fremtidige datainnbrudd vil du bli varslet."
@@ -1109,6 +1110,9 @@
       ],
       "High Priority": [
         "Høy prioritet"
+      ],
+      "How does monitoring work?": [
+        "Hvordan fungerer overvåking?"
       ],
       "Import in progress:": [
         "Import pågår:"
@@ -1410,6 +1414,9 @@
       "Thank you, the problem has been reported": [
         "Takk, problemet er rapportert"
       ],
+      "The custom email will be sent to ${ href } for monitoring. No other data will be sent to HIBP.": [
+        "Den tilpassede e-posten vil bli sendt til ${ href } for overvåking. Ingen andre data vil bli sendt til HIBP."
+      ],
       "The export will only contain vaults that you own.": [
         "Eksporten inneholder bare hvelv som du eier."
       ],
@@ -1532,8 +1539,14 @@
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Du har nådd den maksimalt tillatte lengden på ${ maxLength }-tegn."
       ],
+      "You will be notified of data breaches for these email addresses.": [
+        "Du vil bli varslet om datainnbrudd for disse e-postadressene."
+      ],
       "You will be notified of data breaches for this email address.": [
         "Du vil bli varslet om datainnbrudd for denne e-postadressen."
+      ],
+      "You will no longer be notified of data breaches for these email addresses.": [
+        "Du vil ikke lenger bli varslet om datainnbrudd for disse e-postadressene."
       ],
       "You will no longer be notified of data breaches for this email address.": [
         "Du vil ikke lenger bli varslet om datainnbrudd for denne e-postadressen."
@@ -2192,9 +2205,6 @@
       "Auto-lock update": [
         "Oppdatering av autolås"
       ],
-      "Block trackers and malware": [
-        "Blokkér sporere og skadelig programvare"
-      ],
       "Breach detected": [
         "Brudd oppdaget"
       ],
@@ -2232,9 +2242,6 @@
         "Tilpassede e-poster"
       ],
       "Dark Web Monitoring": [
-        "Mørk webovervåking"
-      ],
-      "Dark web monitoring": [
         "Mørk webovervåking"
       ],
       "Delete vault \"${ vaultName }\" ?": [
@@ -2282,6 +2289,9 @@
       "Import your data": [
         "Importer dine data"
       ],
+      "Inactive 2FA": [
+        "Inaktiv 2FA"
+      ],
       "Install extension": [
         "Installer utvidelse"
       ],
@@ -2294,6 +2304,9 @@
       "Leave vault ?": [
         "Forlate hvelvet?"
       ],
+      "Loading breaches...": [
+        "Laster inn brudd..."
+      ],
       "Low disk space": [
         "Lite diskplass"
       ],
@@ -2305,12 +2318,6 @@
       ],
       "Members": [
         "Medlemmer"
-      ],
-      "Missing 2FA": [
-        "Mangler 2FA"
-      ],
-      "Missing two-factor authentication": [
-        "Mangler tofaktorautentisering"
       ],
       "Modified": [
         "Endret"
@@ -2327,14 +2334,14 @@
       "No excluded items": [
         "Ingen ekskluderte elementer"
       ],
+      "No inactive 2FAs": [
+        "Ingen inaktive 2FAer"
+      ],
       "No insecure passwords": [
         "Ingen usikre passord"
       ],
       "No items selected": [
         "Ingen elementer valgt"
-      ],
-      "No missing 2FAs": [
-        "Ingen manglende 2FA-er"
       ],
       "No reused passwords": [
         "Ingen gjenbrukte passord"
@@ -2393,6 +2400,12 @@
       ],
       "Set access level": [
         "Sett tilgangsnivå"
+      ],
+      "Set up 2FA for better security": [
+        "Sett opp 2FA for bedre sikkerhet"
+      ],
+      "Set up 2FA for more security": [
+        "Sett opp 2FA for ekstra sikkerhet"
       ],
       "Settings": [
         "Innstillinger"
@@ -2520,6 +2533,9 @@
       ],
       "Expiration Date is not in the format MM/YY": [
         "Utløpsdato er ikke i formatet MM/ÅÅ"
+      ],
+      "Failed to load breaches.": [
+        "Kunne ikke laste inn brudd."
       ],
       "Invalid alias prefix": [
         "Ugyldig aliasprefiks"

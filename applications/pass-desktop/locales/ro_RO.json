@@ -158,6 +158,12 @@
       "Edit vault": [
         "Editare seif"
       ],
+      "Enable Dark Web Monitoring": [
+        "Activare monitorizare pe internetul ascuns"
+      ],
+      "Exclude from monitoring": [
+        "Excludere de la monitorizare"
+      ],
       "Export": [
         "Exportare"
       ],
@@ -182,6 +188,9 @@
       "Get mobile apps": [
         "Obținere aplicați mobil"
       ],
+      "Get Pass Plus": [
+        "Luați Pass Plus"
+      ],
       "Get Started": [
         "Începeți"
       ],
@@ -199,6 +208,9 @@
       ],
       "Importing": [
         "Se importă"
+      ],
+      "Include in monitoring": [
+        "Includere în monitorizare"
       ],
       "Install extension": [
         "Instalare extensie"
@@ -278,6 +290,12 @@
       "Pass for iOS": [
         "Proton Pass pentru iOS"
       ],
+      "Pass Monitor": [
+        "Monitorizare Proton Pass"
+      ],
+      "Pause monitoring": [
+        "Suspendare monitorizare"
+      ],
       "Pin item": [
         "Fixare"
       ],
@@ -308,6 +326,9 @@
       "Resend code": [
         "Retrimitere cod"
       ],
+      "Resend code (in ${ remaining }s)": [
+        "Retrimitere cod (peste ${ remaining } s)"
+      ],
       "Resend invitation": [
         "Retrimitere invitație"
       ],
@@ -317,6 +338,9 @@
       "Restore item": [
         "Restabilire articol"
       ],
+      "Resume monitoring": [
+        "Reluare monitorizare"
+      ],
       "Retry": [
         "Reîncercare"
       ],
@@ -325,6 +349,9 @@
       ],
       "Saving": [
         "Se salvează"
+      ],
+      "See all": [
+        "Afișare toate"
       ],
       "See members": [
         "Afișare membri"
@@ -392,6 +419,9 @@
       "Verify": [
         "Verifică"
       ],
+      "View details": [
+        "Afișare detalii"
+      ],
       "View history": [
         "Afișare istoric"
       ],
@@ -442,6 +472,55 @@
       ],
       "Expand": [
         "Extindere"
+      ]
+    },
+    "Description": {
+      "${ total } other login uses the same password": [
+        "Alte autentificări care folosesc aceeași parolă: ${ total }",
+        "Alte autentificări care folosesc aceeași parolă: ${ total }",
+        "Alte autentificări care folosesc aceeași parolă: ${ total }"
+      ],
+      "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
+        "Un alias de e-mail funcționează ca o adresă de e-mail, dar reduce mesajele nedorite și vă păstrează adresa de e-mail și identitatea reală ascunse."
+      ],
+      "Change your passwords": [
+        "Schimbați-vă parolele"
+      ],
+      "Create unique passwords": [
+        "Creați parole unice"
+      ],
+      "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
+        "Monitorizarea de pe internetul ascuns este disponibilă cu un plan cu plată. Modificați planul pentru a avea acces imediat."
+      ],
+      "Get notified if your email, password or other personal data was leaked.": [
+        "Primiți notificări dacă adresele de e-mail, parolele sau alte date personale au fost divulgate."
+      ],
+      "Keep your info more secure and private with these guides and tips.": [
+        "Păstrați informațiile mai sigure și private cu aceste ghiduri și sfaturi."
+      ],
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "Soluția noastră de securitate de ultimă oră, bazată pe inteligență artificială, concepută pentru utilizatorii care doresc o protecție sporită pentru conturile lor. ${ learnMoreLink }"
+      ],
+      "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
+        "Pornire monitorizare divulgare date legate de conturile create cu adresa de e-mail și aliasurile hide-my-email proprii."
+      ],
+      "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
+        "Internetul ascuns este o parte ascunsă a internetului unde informațiile personale furate, cum ar fi identitățile, pot fi cumpărate și vândute."
+      ],
+      "These items remain at risk": [
+        "Aceste articole rămân riscante"
+      ],
+      "This account is vulnerable, visit the service and change your password.": [
+        "Acest cont este vulnerabil, accesați serviciul și schimbați-vă parola."
+      ],
+      "With ${ PASS_SHORT_APP_NAME } Monitor, stay ahead of threats by getting instant alerts if your credentials are compromised. Unlock advanced security features and detailed logs to safeguard your online presence.": [
+        "Cu funcția de monitorizare ${ PASS_SHORT_APP_NAME }, preveniți amenințările primind alerte instantanee dacă datele de autentificare vă sunt compromise. Deblocați funcțiile de securitate avansate și jurnale detaliate pentru a vă proteja prezența online."
+      ],
+      "Your email addresses were leaked in at least 1 data breach.": [
+        "Adresele de e-mail v-au fost divulgate în cel puțin o compromitere a datelor."
+      ],
+      "Your personal info was leaked in a data breach of a third-party service.": [
+        "Informațiile personale v-au fost divulgate într-o compromitere a datelor a unui serviciu terță parte."
       ]
     },
     "Error": {
@@ -533,6 +612,12 @@
       "Failed resending invite.": [
         "Eșuare retrimitere invitație."
       ],
+      "Failed to add email address": [
+        "Adăugarea adresei de e-mail a eșuat."
+      ],
+      "Failed to delete email address from monitoring": [
+        "Eliminarea adresei de la monitorizare a eșuat."
+      ],
       "Failed to delete selected items": [
         "Ștergerea articolelor selectate a eșuat."
       ],
@@ -541,6 +626,12 @@
       ],
       "Failed to edit user's access.": [
         "Eșuare editare acces utilizator."
+      ],
+      "Failed to load breaches for this address": [
+        "Încărcarea divulgărilor pentru această adresă a eșuat."
+      ],
+      "Failed to load breaches for this email alias": [
+        "Încărcarea divulgărilor pentru acest alias a eșuat."
       ],
       "Failed to load item history": [
         "Încărcarea istoricului articolelor a eșuat."
@@ -560,6 +651,12 @@
       "Failed to remove user's access.": [
         "Eșuare eliminare acces utilizator."
       ],
+      "Failed to resend verification for custom email": [
+        "Retrimiterea codului de verificare pentru adresa personală a eșuat."
+      ],
+      "Failed to resolve breaches for this address": [
+        "Rezolvarea divulgărilor pentru această adresă a eșuat."
+      ],
       "Failed to restore items from trash": [
         "Restaurarea articolelor din gunoi a eșuat."
       ],
@@ -568,6 +665,21 @@
       ],
       "Failed to unpin item": [
         "Anularea fixării articolului a eșuat."
+      ],
+      "Failed to update monitoring settings": [
+        "Actualizarea setărilor de monitorizare a eșuat."
+      ],
+      "Failed to verify email address": [
+        "Verificarea adresei a eșuat."
+      ],
+      "Failed updating ${ PROTON_SENTINEL_NAME } setting": [
+        "Actualizarea setărilor ${ PROTON_SENTINEL_NAME } au eșuat."
+      ],
+      "Failed updating monitor flag of the item": [
+        "Actualizarea stării de monitorizare pentru a acest articol a eșuat."
+      ],
+      "Failed updating monitoring status for this email address": [
+        "Actualizarea stării de monitorizare pentru a această adresă a eșuat."
       ],
       "File could not be parsed": [
         "Fișierul nu a putut fi analizat."
@@ -704,6 +816,20 @@
         "Ceva nu a funcționat corect."
       ]
     },
+    "Feature": {
+      "Dark Web Monitoring": [
+        "Monitorizare pe internetul ascuns"
+      ],
+      "Integrated 2FA authenticator": [
+        "Autentificator A2F integrat"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Aliasuri hide-my-email nelimitate"
+      ],
+      "Vault sharing (up to ${ MAX_VAULT_MEMBERS } people)": [
+        "Partajare seif (maxim ${ MAX_VAULT_MEMBERS } de persoane)"
+      ]
+    },
     "file size format": {
       "byte": [
         "bait",
@@ -812,6 +938,12 @@
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } vă va solicita parola ${ BRAND_NAME } pentru a accesa datele deconectat."
       ],
+      "${ PROTON_SENTINEL_NAME } successfully disabled": [
+        "${ PROTON_SENTINEL_NAME } s-a dezactivat."
+      ],
+      "${ PROTON_SENTINEL_NAME } successfully enabled": [
+        "${ PROTON_SENTINEL_NAME } s-a activat."
+      ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "Aveți 7 zile de încercare gratuită a funcțiilor premium. Valabil doar pentru prima săptămână de utilizare a ${ BRAND_NAME }."
       ],
@@ -820,6 +952,9 @@
       ],
       "Access successfully confirmed": [
         "Acces confirmat."
+      ],
+      "Add your custom email address to monitor :": [
+        "Adăugați-vă adresa personală la monitorizare:"
       ],
       "Admin": [
         "Administrator"
@@ -832,6 +967,15 @@
       ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Aliasul „${ item.aliasEmail }” a fost mutat în gunoi - nu va mai redirecționa mesajele către adresa principală de e-mail."
+      ],
+      "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
+        "Aliasurile cu domenii personale nu sunt monitorizate. Adăugați-le ca e-mail personal pentru monitorizare."
+      ],
+      "All breaches for this address were resolved": [
+        "Toate divulgările pentru această adresă s-au rezolvat."
+      ],
+      "All current breaches will be marked as resolved. In case of future data breaches, you'll be notified.": [
+        "Toate divulgările actuale vor fi marcate ca rezolvate. În caz de compromiteri ulterioare veți primi o notificare."
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "S-au mutat toate articolele din „${ payload.content.name }”."
@@ -859,6 +1003,9 @@
       ],
       "Auto-lock successfully disabled": [
         "Blocare automată s-a dezactivat."
+      ],
+      "Breaches detected": [
+        "Divulgări detectate"
       ],
       "Bring your existing passwords into ${ BRAND_NAME }.": [
         "Aduceți-vă parolele actuale în ${ BRAND_NAME }."
@@ -905,6 +1052,9 @@
       "Deleting \"${ payload.content.name }\"": [
         "Se șterge ”${ payload.content.name }”"
       ],
+      "Didn't receive the code?": [
+        "Nu ați primit codul?"
+      ],
       "Drop file here to upload": [
         "Plasați fișiere aici pentru încărcare"
       ],
@@ -916,6 +1066,15 @@
       ],
       "email": [
         "e-mail"
+      ],
+      "Email address successfully deleted from monitoring": [
+        "Adresa de e-mail s-a eliminat de la monitorizare."
+      ],
+      "Email address successfully excluded from monitoring": [
+        "Adresa de e-mail s-a exclus de la monitorizare."
+      ],
+      "Email address successfully included in monitoring": [
+        "Adresa de e-mail s-a inclus la monitorizare."
       ],
       "Emptying trash...": [
         "Se golește gunoiul..."
@@ -1019,6 +1178,12 @@
       "Item restored": [
         "Articolul s-a restaurat."
       ],
+      "Item successfully excluded from monitoring": [
+        "Articol a fost exclus de la monitorizare."
+      ],
+      "Item successfully included in monitoring": [
+        "Articolul a fost inclus în monitorizare."
+      ],
       "Item successfully moved": [
         "Articolul s-a mutat."
       ],
@@ -1027,6 +1192,9 @@
       ],
       "Item successfully unpinned": [
         "Fixarea elementului s-a anulat."
+      ],
+      "Latest breach on ${ formattedDate }": [
+        "Ultima divulgare: ${ formattedDate }"
       ],
       "Learn how to ${ staySaferOnlineLink }": [
         "Aflați cum să ${ staySaferOnlineLink }"
@@ -1061,6 +1229,9 @@
       "Monitor accounts": [
         "Monitorizare conturi"
       ],
+      "Monitoring settings successfully updated": [
+        "Setările monitorizării s-au actualizat,"
+      ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "Mai mult decât un manager de parole, ${ PASS_APP_NAME } vă protejează parolele și adresele de e-mail personale prin aliasuri de e-mail. Creat cu aceeași tehnologie folosită la ${ MAIL_APP_NAME }, datele vă sunt criptate în ambele sensuri și doar dvs. le puteți accesa."
       ],
@@ -1081,6 +1252,9 @@
       ],
       "Never": [
         "Niciodată"
+      ],
+      "No breaches detected": [
+        "Nu există divulgări"
       ],
       "No network connection": [
         "Nu există conexiune la rețea."
@@ -1128,6 +1302,9 @@
       ],
       "Pinning item...": [
         "Se fixează articolul..."
+      ],
+      "Please check your spam folder or try resending the code.": [
+        "Verificați în folderul de mesaje nedorite sau reîncercați trimiterea codului."
       ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Confirmați parola ${ BRAND_NAME } pentru a activa modul deconectat."
@@ -1218,6 +1395,9 @@
       ],
       "Successfully synced all vaults": [
         "Toate seifurile au fost actualizate."
+      ],
+      "Suggested": [
+        "Sugerat"
       ],
       "Switch to another vault or create an item in this vault": [
         "Comutare la alt seif sau creare alt articol în acest seif."
@@ -1311,11 +1491,17 @@
       "Vault \"${ share.content.name }\" was removed": [
         "Seiful „${ share.content.name }” a fost șters."
       ],
+      "Verification code sent.": [
+        "Codul de verificare a fost trimis."
+      ],
       "Viewer": [
         "Utilizator"
       ],
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Există probleme la sincronizarea datelor cu stocarea locală. Asigurați-vă că aveți suficient spațiu pe disc pentru ca ${ PASS_SHORT_APP_NAME } să funcționeze fără probleme."
+      ],
+      "We’ve sent a verification code to ${ email }. Please enter it below:": [
+        "Vi s-a trimis un cod de verificare la ${ email }. Introduceți codul primit mai jos:"
       ],
       "You are about to create:": [
         "Sunteți pe cale să creați:"
@@ -1349,6 +1535,12 @@
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Ați atins lungimea maximă permisă de ${ maxLength } de caractere."
       ],
+      "You will be notified of data breaches for this email address.": [
+        "Veți primi notificări despre compromiterea datelor pentru această adresă de e-mail."
+      ],
+      "You will no longer be notified of data breaches for this email address.": [
+        "Nu veți mai primi notificări despre compromiterea datelor pentru această adresă de e-mail."
+      ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "Veți folosi acest cod PIN pentru a debloca ${ PASS_APP_NAME } când se va autobloca după o perioadă de inactivitate."
       ],
@@ -1372,6 +1564,11 @@
         "${ config.options.wordCount } cuvânt",
         "${ config.options.wordCount } cuvinte",
         "${ config.options.wordCount } de cuvinte"
+      ],
+      "${ usageCount } login": [
+        "${ usageCount } autentificare",
+        "${ usageCount } autentificări",
+        "${ usageCount } de autentificări"
       ],
       "1 hour": [
         "o oră"
@@ -1574,6 +1771,9 @@
       "Last month": [
         "Luna trecută"
       ],
+      "Last updated": [
+        "Ultima actualizare"
+      ],
       "Last week": [
         "Săptămâna trecută"
       ],
@@ -1630,6 +1830,9 @@
       ],
       "No history": [
         "Fără istoric"
+      ],
+      "None": [
+        "Niciuna"
       ],
       "Note": [
         "Notă"
@@ -1718,6 +1921,12 @@
       "Special characters (!&*)": [
         "Caractere speciale (!&*)"
       ],
+      "Status": [
+        "Stare"
+      ],
+      "Strong": [
+        "Puternică"
+      ],
       "Suffix": [
         "Sufix"
       ],
@@ -1763,6 +1972,9 @@
       "Update": [
         "Actualizare"
       ],
+      "Used in": [
+        "Utilizată în"
+      ],
       "Username": [
         "Nume utilizator"
       ],
@@ -1786,6 +1998,12 @@
       ],
       "View logs": [
         "Afișare jurnale"
+      ],
+      "Vulnerable": [
+        "Vulnerabilă"
+      ],
+      "Weak": [
+        "Slabă"
       ],
       "Websites": [
         "Pagini web"
@@ -1904,6 +2122,9 @@
       "Full Name": [
         "Numele complet"
       ],
+      "me@example.com": [
+        "eu@examplu.com"
+      ],
       "MM/YY": [
         "LL/AA"
       ],
@@ -1964,14 +2185,35 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } addresses": [
+        "${ BRAND_NAME } adrese"
+      ],
+      "${ PASS_SHORT_APP_NAME } Monitor": [
+        "Monitorizare ${ PASS_SHORT_APP_NAME }"
+      ],
+      "${ PASS_SHORT_APP_NAME } monitor": [
+        "Monitorizare ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Account protection": [
+        "Protecție cont"
+      ],
       "Auto-lock update": [
         "Actualizare autoblocare"
       ],
-      "Block trackers and malware": [
-        "Blocați instrumentele de urmărire și programele malware"
+      "Breach detected": [
+        "Divulgare detectată"
+      ],
+      "Breaches": [
+        "Divulgări"
+      ],
+      "Breaches detected for": [
+        "Divulgări detectate pentru"
       ],
       "Confirm PIN code": [
         "Confirmare cod PIN"
+      ],
+      "Confirm your email": [
+        "Confirmare adresă de e-mail"
       ],
       "Create a vault": [
         "Creați un seif"
@@ -1984,6 +2226,18 @@
       ],
       "Current version": [
         "Versiune curentă"
+      ],
+      "Custom addresses": [
+        "Adrese personale"
+      ],
+      "Custom email monitoring": [
+        "Monitorizare adresă de e-mail personalizată"
+      ],
+      "Custom emails": [
+        "Adrese personale"
+      ],
+      "Dark Web Monitoring": [
+        "Monitorizare pe internetul ascuns"
       ],
       "Delete vault \"${ vaultName }\" ?": [
         "Ștergeți seiful „${ vaultName }”?"
@@ -2006,11 +2260,17 @@
       "Enter your PIN": [
         "Introduceți codul PIN"
       ],
+      "Excluded items": [
+        "Articole excluse"
+      ],
       "Get Started": [
         "Începeți"
       ],
       "Grant permissions": [
         "Acordare permisiuni"
+      ],
+      "Hide-my-email aliases": [
+        "Aliasuri hide-my-email"
       ],
       "History": [
         "Istoric"
@@ -2039,6 +2299,9 @@
       "Low disk space": [
         "Spațiu pe disc redus"
       ],
+      "Mark as resolved?": [
+        "Marcare ca rezolvată?"
+      ],
       "Member limit": [
         "Limită membri"
       ],
@@ -2057,8 +2320,17 @@
       "Move items?": [
         "Mutați articolele?"
       ],
+      "No excluded items": [
+        "Nu sunt articole excluse"
+      ],
+      "No insecure passwords": [
+        "Nu sunt parole nesigure"
+      ],
       "No items selected": [
         "Nu sunt selectate articole"
+      ],
+      "No reused passwords": [
+        "Nu sunt parole reutilizate"
       ],
       "Our welcome gift to you": [
         "Cadoul nostru de bun venit"
@@ -2068,6 +2340,12 @@
       ],
       "Password": [
         "Parola"
+      ],
+      "Password Health": [
+        "Stare parolă"
+      ],
+      "Pause monitoring?": [
+        "Suspendați monitorizarea?"
       ],
       "Pending access to the shared data": [
         "În așteptarea accesului la datele partajate"
@@ -2081,8 +2359,25 @@
       "Recommended actions": [
         "Acțiuni recomandate"
       ],
+      "Remove email address?": [
+        "Eliminați adresa de e-mail?"
+      ],
+      "Resolved breaches": [
+        "Divulgări rezolvate"
+      ],
       "Restore this version?": [
         "Restaurați această versiune?"
+      ],
+      "Resume monitoring?": [
+        "Reluați monitorizarea?"
+      ],
+      "Reused ${ count } time": [
+        "Refolosită ${ count } dată",
+        "Refolosită de ${ count } ori",
+        "Refolosită de ${ count } de ori"
+      ],
+      "Reused passwords": [
+        "Parole refolosite"
       ],
       "Review and share": [
         "Revizuire și partajare"
@@ -2101,6 +2396,9 @@
       ],
       "Share with": [
         "Partajare cu"
+      ],
+      "Stay safer online": [
+        "Rămâneți în siguranță online"
       ],
       "Suggestions": [
         "Sugestii"
@@ -2122,6 +2420,15 @@
       ],
       "Vault shared with you": [
         "Seif partajat cu dvs."
+      ],
+      "Want to learn more?": [
+        "Doriți să aflați mai multe?"
+      ],
+      "Weak password": [
+        "Parolă slabă"
+      ],
+      "Weak passwords": [
+        "Parole slabe"
       ],
       "What is an alias?": [
         "Ce este un alias?"
@@ -2196,6 +2503,9 @@
       "Duplicate email addresses.": [
         "Adrese de e-mail duplicate."
       ],
+      "Email is required": [
+        "Adresa de e-mail este obligatorie."
+      ],
       "Empty note": [
         "Notă goală."
       ],
@@ -2207,6 +2517,12 @@
       ],
       "Invalid alias prefix": [
         "Prefix alias nevalid."
+      ],
+      "Invalid code": [
+        "Cod nevalid."
+      ],
+      "Invalid email": [
+        "Adresă de e-mail nevalidă."
       ],
       "Invalid email addresses.": [
         "Adrese de e-mail nevalide."
@@ -2270,6 +2586,9 @@
       "The alias prefix cannot be longer than 40 characters": [
         "Prefixul aliasului nu poate fi mai lung de 40 de caractere."
       ],
+      "This email address will no longer be monitored for data breaches.": [
+        "Această adresă de e-mail nu va mai fi monitorizată pentru divulgări."
+      ],
       "Title is required": [
         "Titlul este obligatoriu."
       ],
@@ -2287,6 +2606,9 @@
       ],
       "Vault name is required": [
         "Numele seifului este obligatoriu."
+      ],
+      "Verification code is required": [
+        "Este necesar codul de verificare."
       ],
       "You cannot create more vaults than your subscription allows.": [
         "Abonamentul actual nu vă permite să creați mai multe seifuri."

@@ -140,6 +140,9 @@
       "Edit vault": [
         "Upravit trezor"
       ],
+      "Exclude from monitoring": [
+        "Vyloučit ze sledování"
+      ],
       "Export": [
         "Exportovat"
       ],
@@ -181,6 +184,9 @@
       ],
       "Importing": [
         "Importuji"
+      ],
+      "Include in monitoring": [
+        "Zahrnout do sledování"
       ],
       "Install extension": [
         "Nainstalovat rozšíření"
@@ -421,6 +427,20 @@
       ],
       "Expand": [
         "Rozbalit"
+      ]
+    },
+    "Description": {
+      "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
+        "E-mailový alias funguje stejně jako e-mailová adresa, ale omezuje šíření spamu a udržuje vaši skutečnou e-mailovou adresu a identitu skrytou."
+      ],
+      "Keep your info more secure and private with these guides and tips.": [
+        "Udržujte své informace v bezpečí a soukromí pomocí těchto návodů a tipů."
+      ],
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "Naše špičkové řešení s pomocí umělé inteligence zaměřené na uživatele, kteří vyžadují zvýšenou ochranu svých účtů. ${ learnMoreLink }"
+      ],
+      "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
+        "Dark web je skrytá část internetu, kde lze koupit a prodat ukradené osobní údaje, například identitu."
       ]
     },
     "Error": {
@@ -683,6 +703,17 @@
       ],
       "Something went wrong": [
         "Něco se pokazilo"
+      ]
+    },
+    "Feature": {
+      "Integrated 2FA authenticator": [
+        "Integrované ověřování 2FA"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Neomezený počet aliasů Hide-my-email"
+      ],
+      "Vault sharing (up to ${ MAX_VAULT_MEMBERS } people)": [
+        "Sdílení trezoru (až ${ MAX_VAULT_MEMBERS } osob)"
       ]
     },
     "file size format": {
@@ -1044,6 +1075,9 @@
       ],
       "Never": [
         "Nikdy"
+      ],
+      "No breaches detected": [
+        "Žádné úniky informací nebyly zjištěny"
       ],
       "No network connection": [
         "Bez připojení k síti"
@@ -1910,11 +1944,11 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } addresses": [
+        "${ BRAND_NAME } adresy"
+      ],
       "Auto-lock update": [
         "Aktualizace automatického uzamčení"
-      ],
-      "Block trackers and malware": [
-        "Blokování sledovacích prvků a malware"
       ],
       "Confirm PIN code": [
         "Potvrdit PIN kód"
@@ -1958,6 +1992,9 @@
       "Grant permissions": [
         "Udělit oprávnění"
       ],
+      "Hide-my-email aliases": [
+        "Aliasy Hide-my-email"
+      ],
       "History": [
         "Historie"
       ],
@@ -1984,6 +2021,9 @@
       ],
       "Low disk space": [
         "Málo místa na disku"
+      ],
+      "Mark as resolved?": [
+        "Označit jako vyřešené?"
       ],
       "Member limit": [
         "Limit počtu členů"
@@ -2048,6 +2088,9 @@
       "Share with": [
         "Sdílet s"
       ],
+      "Stay safer online": [
+        "Buďte na internetu ve větším bezpečí"
+      ],
       "Suggestions": [
         "Návrhy"
       ],
@@ -2068,6 +2111,9 @@
       ],
       "Vault shared with you": [
         "Trezor sdílený s vámi"
+      ],
+      "Want to learn more?": [
+        "Chcete se dozvědět více?"
       ],
       "What is an alias?": [
         "Co je alias?"
