@@ -367,6 +367,9 @@
       "Download ${ attachmentName }": [
         "Спампаваць ${ attachmentName }"
       ],
+      "Download Desktop App": [
+        "Спампаваць настольную праграму"
+      ],
       "Download now": [
         "Спампаваць"
       ],
@@ -484,6 +487,9 @@
       "Go to previous page": [
         "Перайсці на папярэднюю старонку"
       ],
+      "Go to settings": [
+        "Перайсці ў налады"
+      ],
       "Go to SimpleLogin": [
         "Перайсці да SimpleLogin"
       ],
@@ -591,6 +597,9 @@
       ],
       "label emails as": [
         "пазначыць лісты як"
+      ],
+      "Later": [
+        "Пазней"
       ],
       "Later this week": [
         "Пазней на гэтым тыдні"
@@ -1132,12 +1141,6 @@
       "Trust": [
         "Давяраць"
       ],
-      "Trust key": [
-        "Давяраць ключу",
-        "Давяраць ключам",
-        "Давяраць ключам",
-        "Давяраць ключам"
-      ],
       "Trust public key": [
         "Давяраць публічнаму ключу"
       ],
@@ -1431,11 +1434,6 @@
         "Новы ліст"
       ]
     },
-    "App logo": {
-      "Download ${ MAIL_APP_NAME } desktop application": [
-        "Спампаваць настольную праграму для ${ MAIL_APP_NAME }"
-      ]
-    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "Праграмы ${ BRAND_NAME }"
@@ -1565,16 +1563,16 @@
         "Уключае падтрымку для ${ domains } карыстальніцкіх даменаў электроннай пошты, ${ addresses } адрасоў электроннай пошты, неабмежаваную колькасць псеўданімаў hide-my-email, абагульванне календара і іншыя функцыі."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Уключае падтрымку 1 карыстальніцкага дамена электроннай пошты, 10 адрасоў электроннай пошты, 10 псеўданімаў hide-my-email, абагуленне календара і іншыя функцыі."
+        "Уключае падтрымку 1 карыстальніцкага дамена электроннай пошты, 10 адрасоў электроннай пошты, 10 псеўданімаў hide-my-email, абагульванне календара і іншыя функцыі."
       ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "Бяспечныя запісы ўваходу на ўсіх вашых прыладах. Уключае неабмежаваную колькасць псеўданімаў, абагульненне, інтэграцыю з 2ФА і іншыя функцыі."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае падтрымку карыстальніцкіх даменаў электроннай пошты, 15 адрасоў электроннай пошты, неабмежаваную колькасць псеўданімаў электроннай пошты hide-my-email, абагуленне календара і іншыя функцыі."
+        "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае падтрымку карыстальніцкіх даменаў электроннай пошты, 15 адрасоў электроннай пошты, неабмежаваную колькасць псеўданімаў электроннай пошты hide-my-email, абагульванне календара і іншыя функцыі."
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "Абараніце свае файлы з дапамогай зашыфраванага воблачнага сховішча. Уключае гісторыю версій, абагуленне зашыфраваных файлаў і іншыя функцыі."
+        "Абараніце свае файлы з дапамогай зашыфраванага воблачнага сховішча. Уключае гісторыю версій, абагульванне зашыфраваных файлаў і іншыя функцыі."
       ],
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
         "Адмыслова распрацаваная функцыя NetShield абароніць вашы прылады і паскорыць прагляд старонак пры дапамозе блакіравання рэкламы, праграм сачэння і шкодных праграм."
@@ -3376,17 +3374,32 @@
       "Bugs or quality issue": [
         "Памылкі або праблемы з якасцю"
       ],
+      "I do not wish to share": [
+        "Я не хачу абагульваць"
+      ],
+      "I found a cheaper VPN": [
+        "Я знайшоў больш танны VPN"
+      ],
+      "I found a VPN with better features": [
+        "Я знайшоў больш функцыянальны VPN"
+      ],
+      "I have not managed to connect": [
+        "Я не змог падключыцца"
+      ],
+      "I only needed a VPN short-term": [
+        "Мне VPN быў патрэбны толькі на вызначаны тэрмін"
+      ],
       "I use a different ${ BRAND_NAME } account": [
         "Я выкарыстоўваю іншы ўліковы запіс ${ BRAND_NAME }"
+      ],
+      "It doesn't do what I need": [
+        "Адсутнічаюць патрэбныя мне функцыі"
       ],
       "Missing feature(s)": [
         "Адсутнічае функцыя(-і)"
       ],
-      "My reason isn't listed, please comment": [
-        "Нічога з пералічанага. Я хачу дадаць каментарый"
-      ],
-      "Streaming service unsupported": [
-        "Сэрвіс трансляцыі не падтрымліваецца"
+      "Other reason (please comment)": [
+        "Іншая прычына (напішыце каментарый)"
       ],
       "Subscription is too expensive": [
         "Занадта дарагая падпіска"
@@ -3396,6 +3409,9 @@
       ],
       "Temporary need, may come back in the future": [
         "Неабходна было толькі на некаторы час. Магчыма, што вярнуся пазней"
+      ],
+      "The VPN is too slow": [
+        "Занадта павольны VPN"
       ]
     },
     "Downgrade modal exit survey title": {
@@ -3406,6 +3422,40 @@
     "Download attachments": {
       "Download all": [
         "Спампаваць усё"
+      ]
+    },
+    "drivePlus2024: Action": {
+      "Get the deal": [
+        "Скарыстацца прапановай"
+      ],
+      "Special Offer": [
+        "Спецыяльная прапанова"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Пашыраная гісторыя версій"
+      ],
+      "Priority support": [
+        "Прыярытэтная падтрымка"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Падаўжаецца за ${ renewablePrice }. Скасаваць можна ў любы час"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "за першы месяц"
+      ],
+      "Limited-time offer": [
+        "Часовая прапанова"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Атрымаць тарыфны план ${ planName } усяго за ${ planPrice }"
       ]
     },
     "Email body for description (description part)": {
@@ -3549,7 +3599,7 @@
     },
     "eof2023: Tooltip": {
       "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
-        "Уключае гісторыю версій у ${ DRIVE_SHORT_APP_NAME }, доступ да тысяч высакахуткасных сервераў ${ VPN_SHORT_APP_NAME }, абагуленне ў ${ PASS_SHORT_APP_NAME } і іншыя функцыі."
+        "Уключае гісторыю версій у ${ DRIVE_SHORT_APP_NAME }, доступ да тысяч высакахуткасных сервераў ${ VPN_SHORT_APP_NAME }, абагульванне ў ${ PASS_SHORT_APP_NAME } і іншыя функцыі."
       ]
     },
     "eoy2023: Deal details": {
@@ -4537,10 +4587,10 @@
         "Уключае 2700 сервераў у больш чым 65 краінах, магчымасць падключаць да 10 прылад, сэрвісы з трансляцыямі па ўсім свеце, блакіроўку шкодных праграм і рэкламы, а таксама іншыя функцыі."
       ],
       "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
-        "Уключае падтрымку для 3 карыстальніцкіх даменаў электроннай пошты, 90 адрасоў электроннай пошты, неабмежаваную колькасць псеўданімаў Hide-my-email, абагуленне календара і іншыя функцыі."
+        "Уключае падтрымку для 3 карыстальніцкіх даменаў электроннай пошты, 90 адрасоў электроннай пошты, неабмежаваную колькасць псеўданімаў Hide-my-email, абагульванне календара і іншыя функцыі."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Абараніце свае файлы з дапамогай зашыфраванага воблачнага сховішча. Уключае аўтаматычную сінхранізацыю, абагуленне зашыфраваных файлаў і іншыя функцыі."
+        "Абараніце свае файлы з дапамогай зашыфраванага воблачнага сховішча. Уключае аўтаматычную сінхранізацыю, абагульванне зашыфраваных файлаў і іншыя функцыі."
       ]
     },
     "Feedback Modal Title": {
@@ -5791,6 +5841,9 @@
       "Body: ": [
         "Цела: "
       ],
+      "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
+        "Палепшыце ідэнтычнасць вашай арганізацыі і стварыце больш паслядоўны досвед працы ў інтэрнэце для сваіх карыстальнікаў."
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Пры пераходзе на бясплатны тарыфны план вы незваротна страціце гэтыя перавагі, нават калі ў будучыні вы зноў пяройдзеце на яго."
       ],
@@ -6082,9 +6135,6 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "Паспрабуйце пашукаць па гэтым ключавым слове ў змесціве вашых лістоў, каб атрымаць больш вынікаў пошуку."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Перасылка ўваходных лістоў з іншага ўліковага запісу ў вашу бяспечную паштовую скрыню ${ MAIL_APP_NAME }."
-      ],
       "From": [
         "Ад"
       ],
@@ -6153,9 +6203,6 @@
       ],
       "Import mailbox": [
         "Імпартаванне паштовай скрыні"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Імпартуйце вашы лісты, календары і кантакты з іншых сэрвісаў у ${ BRAND_NAME }."
       ],
       "Important note": [
         "Важная заўвага"
@@ -9049,6 +9096,9 @@
       "Organize items with multiple vaults": [
         "Упарадкаванне элементаў з некалькімі сховішчамі"
       ],
+      "Pass Monitor - premium features": [
+        "Pass Monitor - прэміяльныя функцыі"
+      ],
       "Passkeys supported": [
         "Падтрымліваюцца ключы доступу"
       ],
@@ -9095,7 +9145,7 @@
         "Адпраўка і атрыманне запрашэнняў"
       ],
       "Share files and folders via link": [
-        "Абагуленне файлаў і папак праз спасылкі"
+        "Абагульванне файлаў і папак праз спасылкі"
       ],
       "Sign in as user": [
         "Увайсці як карыстальнік"
@@ -9126,6 +9176,9 @@
       ],
       "Unlimited devices": [
         "Неабмежаваная колькасць прылад"
+      ],
+      "Unlimited devices and aliases": [
+        "Неабмежаваная колькасць прылад і псеўданімаў"
       ],
       "Unlimited filters": [
         "Неабмежаваная колькасць фільтраў"
@@ -9182,10 +9235,10 @@
         "Кіраванне сеансамі карыстальнікаў"
       ],
       "Vault sharing (up to ${ n } person)": [
-        "Абагуленне сховішча (да ${ n } асобы)",
-        "Абагуленне сховішча (да ${ n } асоб)",
-        "Абагуленне сховішча (да ${ n } асоб)",
-        "Абагуленне сховішча (да ${ n } асоб)"
+        "Абагульванне сховішча (да ${ n } асобы)",
+        "Абагульванне сховішча (да ${ n } асоб)",
+        "Абагульванне сховішча (да ${ n } асоб)",
+        "Абагульванне сховішча (да ${ n } асоб)"
       ]
     },
     "new_plans: feature info": {
@@ -9239,7 +9292,7 @@
         "Неабходная абарона і бяспечная супрацоўніцтва для неабмежаванай колькасці карыстальнікаў."
       ],
       "For next-level password management and identity protection.": [
-        "Для больш высокага ўзроўню кіравання паролямі і абароны асабістых даных."
+        "Для больш высокага ўзроўню кіравання паролямі і абароны ідэнтычнасці."
       ],
       "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
         "Калі вы выдаліце свой уліковы запіс, то згубіце ўсе перавагі тарыфнага плана ${ visionary } і пры гэтым яго нельга будзе выбраць падчас стварэння новага ўліковага запісу."
@@ -9266,7 +9319,7 @@
         "Бяспечны доступ у інтэрнэт з любой краіны ў свеце, дзякуючы назіранню за сеткай"
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Бяспечнае воблачнае сховішча, якое дазваляе вам лёгка і бяспечна захоўваць, сінхранізаваць і абагуляць файлы."
+        "Бяспечнае воблачнае сховішча, якое дазваляе вам лёгка і бяспечна захоўваць, сінхранізаваць і абагульваць файлы."
       ],
       "Secure email and calendar for professionals and businesses.": [
         "Бяспечная электронная пошта і каляндар для прафесіяналаў, а таксама кампаній."
@@ -9319,7 +9372,7 @@
         "${ CALENDAR_APP_NAME }: Абараняйце свой расклад з дапамогай скразнога шыфравання. Уключае падтрымку для карыстальніцкіх календароў, абагуленых календароў і іншыя функцыі."
       ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME }: Абараняйце свае файлы з дапамогай зашыфраванага воблачнага сховішча. Уключае гісторыю версій для файлаў, абагуленне зашыфраваных файлаў і іншыя функцыі."
+        "${ DRIVE_APP_NAME }: Абараняйце свае файлы з дапамогай зашыфраванага воблачнага сховішча. Уключае гісторыю версій для файлаў, абагульванне зашыфраваных файлаў і іншыя функцыі."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Абараняйце свае лісты з дапамогай скразнога шыфравання. Уключае падтрымку карыстальніцкіх даменаў электроннай пошты, 15 адрасоў электроннай пошты, неабмежаваную колькасць псеўданімаў hide-my-email і іншыя функцыі."
@@ -9427,7 +9480,7 @@
         "Жорсткія дыскі на нашых серверах цалкам зашыфраваны і маюць некалькі ўзроўняў пароляў. Таму, нават калі бяспека цэнтра апрацоўкі даных будзе парушана вашы даныя будуць надзейна абаронены"
       ],
       "Password management and identity protection": [
-        "Кіраванне паролямі і абарона асабістых даных"
+        "Кіраванне паролямі і абарона ідэнтычнасці"
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Персаналізуйце свой подпіс у электронных лістах з дапамогай лагатыпаў, відарысаў, значкоў з сацыяльных сетак, спасылак на вашы кантактныя звесткі і г.д."
@@ -9463,7 +9516,7 @@
         "Накіроўвайце свой трафік праз сетку Tor адным націскам"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Абараніце свае файлы з дапамогай зашыфраванага воблачнага сховішча. Уключае аўтаматычную сінхранізацыю, абагуленне зашыфраваных файлаў і іншыя функцыі."
+        "Абараніце свае файлы з дапамогай зашыфраванага воблачнага сховішча. Уключае аўтаматычную сінхранізацыю, абагульванне зашыфраваных файлаў і іншыя функцыі."
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Бяспечна захоўвайце кантактныя звесткі, такія як нумары тэлефонаў, адрасы, дні нараджэнні і іншыя асабістыя нататкі. Шыфраванне з нулявым доступам гарантуе, што даныя не будуць даступны нікому, нават супрацоўнікам ${ BRAND_NAME }."
@@ -9496,7 +9549,7 @@
         "Падтрымка пратаколаў абмену файламі, такіх як BitTorrent"
       ],
       "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
-        "Унікальныя, імгненныя адрасы электроннай пошты, якія абараняюць вашы асабістыя даныя ў інтэрнэце і дазваляюць кантраляваць, што трапляе ў вашу паштовую скрыню. З SimpleLogin ад ${ BRAND_NAME }."
+        "Унікальныя, імгненныя адрасы электроннай пошты, якія абараняюць вашу ідэнтычнасць у інтэрнэце і дазваляюць кантраляваць, што трапляе ў вашу паштовую скрыню. З SimpleLogin ад ${ BRAND_NAME }."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Выкарыстоўвайце свой уласны карыстальніцкі дамен электроннай пошты. Напрыклад, you@yourname.com"
@@ -9759,6 +9812,20 @@
     "Participant name": {
       "You": [
         "Вы"
+      ]
+    },
+    "pass_signup_2023: Info": {
+      "Secure sharing with ${ n } vault": [
+        "Бяспечнае абагульванне з ${ n } сховішчам",
+        "Бяспечнае абагульванне з ${ n } сховішчамі",
+        "Бяспечнае абагульванне з ${ n } сховішчамі",
+        "Бяспечнае абагульванне з ${ n } сховішчамі"
+      ],
+      "Secure sharing with multiple vaults": [
+        "Бяспечнае абагульванне з некалькімі сховішчамі"
+      ],
+      "Secure vault sharing": [
+        "Бяспечнае абагульванне сховішча"
       ]
     },
     "passwordless": {
@@ -10784,10 +10851,10 @@
         "Атрымлівайце доступ да змесціва сэрвісаў з трансляцыямі, такіх як Netflix, Disney+ і Prime Video з любой краіны ў свеце."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Усе нашы прэміяльныя сэрвісы з іх найвышэйшымі квотамі: 100 адрасоў электроннай пошты, падтрымка для 10 карыстальніцкіх даменаў, неабмежаваная колькасць псеўданімаў Hide-my-email, абагуленне календара, зашыфраванае воблачнае сховішча, абагуленне файлаў і іншыя функцыі."
+        "Усе нашы прэміяльныя сэрвісы з іх найвышэйшымі квотамі: 100 адрасоў электроннай пошты, падтрымка для 10 карыстальніцкіх даменаў, неабмежаваная колькасць псеўданімаў Hide-my-email, абагульванне календара, зашыфраванае воблачнае сховішча, абагульванне файлаў і іншыя функцыі."
       ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Уключае падтрымку для 3 карыстальніцкіх даменаў электроннай пошты, 15 адрасоў электроннай пошты, неабмежаваную колькасць псеўданімаў Hide-my-email, абагуленне календара і іншыя функцыі."
+        "Уключае падтрымку для 3 карыстальніцкіх даменаў электроннай пошты, 15 адрасоў электроннай пошты, неабмежаваную колькасць псеўданімаў Hide-my-email, абагульванне календара і іншыя функцыі."
       ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
         "Ідэальна пасуе для сем'яў або невялікіх каманд. У кожнага карыстальніка будзе свая ўласная паштовая скрыня і псеўданімы. Патрабуецца карыстальніцкі дамен."
@@ -10796,18 +10863,12 @@
         "Атрымлівайце платныя версіі ўсіх сэрвісаў, якія будуць выпушчаны ў будучым, а таксама ранні доступ да ўсіх будучых функцый і прадуктаў без дадатковай платы."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Абараніце свае файлы з дапамогай зашыфраванага воблачнага сховішча. Уключае аўтаматычную сінхранізацыю, абагуленне зашыфраваных файлаў і іншыя функцыі."
+        "Абараніце свае файлы з дапамогай зашыфраванага воблачнага сховішча. Уключае аўтаматычную сінхранізацыю, абагульванне зашыфраваных файлаў і іншыя функцыі."
       ]
     },
     "Spotlight": {
-      "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
-        "Зручны запуск ${ MAIL_APP_NAME } непасрэдна з вашага працоўнага стала."
-      ],
       "Email tracking protection": [
         "Абарона ад праграм сачэння электроннай пошты"
-      ],
-      "Get the desktop app": [
-        "Атрымаць настольную праграму"
       ],
       "Get up to ${ credits } in credits.": [
         "Атрымайце да ${ credits } у крэдыты."
@@ -11482,10 +11543,10 @@
         "Уключае больш за 2950 сервераў у больш чым 65 краінах, магчымасць падключаць да 10 прылад, сэрвісы з трансляцыямі па ўсім свеце, блакіроўку шкодных праграм і рэкламы, а таксама іншыя функцыі."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Уключае падтрымку 1 карыстальніцкага дамена электроннай пошты, 10 адрасоў электроннай пошты, 10 псеўданімаў hide-my-email, абагуленне календара і іншыя функцыі."
+        "Уключае падтрымку 1 карыстальніцкага дамена электроннай пошты, 10 адрасоў электроннай пошты, 10 псеўданімаў hide-my-email, абагульванне календара і іншыя функцыі."
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "Абараніце свае файлы з дапамогай зашыфраванага воблачнага сховішча. Уключае гісторыю версій, абагуленне зашыфраваных файлаў і іншыя функцыі."
+        "Абараніце свае файлы з дапамогай зашыфраванага воблачнага сховішча. Уключае гісторыю версій, абагульванне зашыфраваных файлаў і іншыя функцыі."
       ]
     },
     "Tab subscription modal": {
@@ -11638,6 +11699,9 @@
       ],
       "Action all messages": [
         "Прымяніць да ўсіх паведамленняў"
+      ],
+      "Add a custom logo": [
+        "Дадаць карыстальніцкі лагатып"
       ],
       "Add contact group name": [
         "Дадаць назву групы кантактаў"
