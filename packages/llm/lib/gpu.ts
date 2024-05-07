@@ -134,7 +134,7 @@ export class GpuRefineRunningAction extends BaseRunningAction {
                 contents: newEmailStart,
             },
         ]);
-        super(prompt, callback, chat, action);
+        super(prompt, callback, chat, action, ['</span']);
     }
 }
 
