@@ -641,6 +641,17 @@
         "Что-то пошло не так"
       ]
     },
+    "Feature": {
+      "Integrated 2FA authenticator": [
+        "Интегрированная двухфакторная аутентификация"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Неограниченное количество псевдонимов hide-my-email"
+      ],
+      "Vault sharing (up to ${ MAX_VAULT_MEMBERS } people)": [
+        "Совместное использование хранилища (до ${ MAX_VAULT_MEMBERS } человек)"
+      ]
+    },
     "file size format": {
       "byte": [
         "байт",
@@ -1748,6 +1759,9 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } addresses": [
+        "${ BRAND_NAME } адресов"
+      ],
       "Auto-lock update": [
         "Обновление авто-блокировки"
       ],
@@ -1790,6 +1804,9 @@
       "Grant permissions": [
         "Предоставить разрешения"
       ],
+      "Hide-my-email aliases": [
+        "Псевдонимы hide-my-email"
+      ],
       "History": [
         "История"
       ],
@@ -1813,6 +1830,9 @@
       ],
       "Member limit": [
         "Ограничение количества участников"
+      ],
+      "Members": [
+        "Участники"
       ],
       "Modified": [
         "Изменено"
@@ -1883,8 +1903,14 @@
       "Vault shared with you": [
         "Хранилище, предоставленное вам"
       ],
+      "Want to learn more?": [
+        "Хотите узнать больше?"
+      ],
       "Why ${ PASS_APP_NAME }?": [
         "Почему ${ PASS_APP_NAME }?"
+      ],
+      "Your exposed information": [
+        "Ваша раскрытая информация"
       ],
       "Your vault is empty": [
         "Ваше хранилище пусто"
