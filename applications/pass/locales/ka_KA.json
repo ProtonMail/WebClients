@@ -158,6 +158,9 @@
       "Edit vault": [
         "საცავის ჩასწორება"
       ],
+      "Exclude from monitoring": [
+        "მონიტორინგიდან ამოღება"
+      ],
       "Export": [
         "გატანა"
       ],
@@ -182,6 +185,9 @@
       "Get mobile apps": [
         "მობილური აპების დაყენება"
       ],
+      "Get Pass Plus": [
+        "მიიღეთ Pass Plus"
+      ],
       "Get Started": [
         "დაიწყეთ"
       ],
@@ -199,6 +205,9 @@
       ],
       "Importing": [
         "შემოტანა"
+      ],
+      "Include in monitoring": [
+        "მონიტორინგში ჩასმა"
       ],
       "Install extension": [
         "გაფართოების დაყენება"
@@ -278,6 +287,12 @@
       "Pass for iOS": [
         "Pass-ი iOS-ისთვის"
       ],
+      "Pass Monitor": [
+        "Pass-ის მონიტორი"
+      ],
+      "Pause monitoring": [
+        "მონიტორინგის შეჩერება"
+      ],
       "Pin item": [
         "ელემენტის მიმაგრება"
       ],
@@ -325,6 +340,9 @@
       ],
       "Saving": [
         "დაზოგვა"
+      ],
+      "See all": [
+        "ყველას ნახვა"
       ],
       "See members": [
         "წევრების ნახვა"
@@ -392,6 +410,9 @@
       "Verify": [
         "გადამოწმება"
       ],
+      "View details": [
+        "დეტალების ხილვა"
+      ],
       "View history": [
         "ისტორიის ნახვა"
       ],
@@ -442,6 +463,29 @@
       ],
       "Expand": [
         "ამოკეცვა"
+      ]
+    },
+    "Description": {
+      "Create unique passwords": [
+        "უნიკალური პაროლების შექმნა"
+      ],
+      "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
+        "Dark Web Monitoring ფასიან ვერსიაშია ხელმისაწვდომი. ასწიეთ ტარიფი წვდომის დაუყოვნებლივ მისაღებად."
+      ],
+      "Get notified if your email, password or other personal data was leaked.": [
+        "მიიღეთ შეტყობინება, თუ თქვენი ელფოსტა, პაროლი ან რამე თქვენ შესახებ გაიჟონება."
+      ],
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "ჩვენი უკანასკნელი სიტყვა - AI-ზე დაშენებული უსაფრთხოების გადაწყვეტილება მომხმარებლები, რომლებსაც თავიანთი ანგარიშებისთვის გაძლიერებული უსაფრთხოება სჭირდებათ. ${ learnMoreLink }"
+      ],
+      "These items remain at risk": [
+        "ეს ელემენტები რჩება რისკის ქვეშ"
+      ],
+      "This account is vulnerable, visit the service and change your password.": [
+        "ეს ანგარიში მოწყვლადია. მიმართეთ სერვისს და შეცვალეთ თქვენი პაროლი."
+      ],
+      "Your email addresses were leaked in at least 1 data breach.": [
+        "თქვენი ელფოსტის მისამართები, სულ ცოტა, 1 მონაცემების გაჟონვაში გამოჩნდა."
       ]
     },
     "Error": {
@@ -702,6 +746,20 @@
         "რაღაც არასწორად წავიდა"
       ]
     },
+    "Feature": {
+      "Dark Web Monitoring": [
+        "Dark Web Monitoring"
+      ],
+      "Integrated 2FA authenticator": [
+        "ჩაშენებული 2FA ავთენტიკატორი"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "განუსაზღვრელი რაოდენობის მეტსახელი Hide-my-email-სთვის"
+      ],
+      "Vault sharing (up to ${ MAX_VAULT_MEMBERS } people)": [
+        "საცავის გაზიარება (${ MAX_VAULT_MEMBERS }-მდე პიროვნებასთან)"
+      ]
+    },
     "file size format": {
       "byte": [
         "ბაიტი",
@@ -823,6 +881,9 @@
       ],
       "Auto-lock successfully disabled": [
         "ავტომატური დაბლოკვა წარმატებით გამოირთო"
+      ],
+      "Breaches detected": [
+        "აღმოჩენილია გაჟონვები"
       ],
       "Bring your existing passwords into ${ BRAND_NAME }.": [
         "შემოიტანეთ თქვენი არსებული პაროლები ${ BRAND_NAME }-ში."
@@ -977,6 +1038,12 @@
       "Item restored": [
         "ელემენტი აღდგენილია"
       ],
+      "Item successfully excluded from monitoring": [
+        "ელემენტის მონიტორინგიდან ამოღება წარმატებულია"
+      ],
+      "Item successfully included in monitoring": [
+        "ელემენტის მონიტორინგში ჩასმა წარმატებულია"
+      ],
       "Item successfully moved": [
         "ელემენტის გადატანა წარმატებულია"
       ],
@@ -985,6 +1052,9 @@
       ],
       "Item successfully unpinned": [
         "ელემენტის მოხსნა წარმატებულია"
+      ],
+      "Latest breach on ${ formattedDate }": [
+        "უახლესი გაჟონვის თარიღი ${ formattedDate }"
       ],
       "Learn how to ${ staySaferOnlineLink }": [
         "გაიგეთ, როგორ ${ staySaferOnlineLink }"
@@ -1039,6 +1109,9 @@
       ],
       "Never": [
         "არასოდეს"
+      ],
+      "No breaches detected": [
+        "გაჟონვები აღმოჩენილი არაა"
       ],
       "No network connection": [
         "ქსელთან კავშირი არ არის"
@@ -1175,6 +1248,9 @@
       ],
       "Successfully synced all vaults": [
         "ყელა საცავის სინქრონიზაცია წარმატებულია"
+      ],
+      "Suggested": [
+        "მინიშნება"
       ],
       "Switch to another vault or create an item in this vault": [
         "ამ საცავში ელემენტის შესაქმნელად სხვა საცავზე გადაერთეთ"
@@ -1530,6 +1606,9 @@
       "Last month": [
         "ბოლო თვის"
       ],
+      "Last updated": [
+        "უკანასკნელი განახლება"
+      ],
       "Last week": [
         "გასულ კვირას"
       ],
@@ -1586,6 +1665,9 @@
       ],
       "No history": [
         "ისტორია არ არის"
+      ],
+      "None": [
+        "არცერთი"
       ],
       "Note": [
         "შენიშვნა"
@@ -1674,6 +1756,12 @@
       "Special characters (!&*)": [
         "სპეცსიმბოლოები (!&*)"
       ],
+      "Status": [
+        "სტატუსი"
+      ],
+      "Strong": [
+        "ძლიერი"
+      ],
       "Suffix": [
         "სუფიქსი"
       ],
@@ -1719,6 +1807,9 @@
       "Update": [
         "განახლება"
       ],
+      "Used in": [
+        "გამოყენებულია სად"
+      ],
       "Username": [
         "მომხმარებლის სახელი"
       ],
@@ -1742,6 +1833,12 @@
       ],
       "View logs": [
         "ჟურნალის ნახვა"
+      ],
+      "Vulnerable": [
+        "მოწყვლადი"
+      ],
+      "Weak": [
+        "სუსტი"
       ],
       "Websites": [
         "ვებსაიტები"
@@ -1859,6 +1956,9 @@
       "Full Name": [
         "სახელი და გვარი"
       ],
+      "me@example.com": [
+        "me@example.com"
+      ],
       "MM/YY": [
         "თთ/წწ"
       ],
@@ -1918,14 +2018,26 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } addresses": [
+        "${ BRAND_NAME } მისამართი"
+      ],
       "Auto-lock update": [
         "ავტომატური დაბლოკვის განახლება"
       ],
-      "Block trackers and malware": [
-        "ტრეკერებისა და მავნე პროგრამების დაბლოკვა"
+      "Breach detected": [
+        "აღმოჩენილია გაჟონვა"
+      ],
+      "Breaches": [
+        "გაჟონვები"
+      ],
+      "Breaches detected for": [
+        "აღმოჩენილია გაჟონვები ვისთვის"
       ],
       "Confirm PIN code": [
         "დაადასტურეთ PIN–კოდი"
+      ],
+      "Confirm your email": [
+        "დაადასტურეთ თქვენი ელფოსტა"
       ],
       "Create a vault": [
         "საცავის შექმნა"
@@ -1938,6 +2050,18 @@
       ],
       "Current version": [
         "მიმდინარე ვერსია"
+      ],
+      "Custom addresses": [
+        "მორგებული მისამართები"
+      ],
+      "Custom email monitoring": [
+        "მომხმარებლის ელფოსტის მონიტორინგი"
+      ],
+      "Custom emails": [
+        "მომხმარებლის ელფოსტები"
+      ],
+      "Dark Web Monitoring": [
+        "Dark Web Monitoring"
       ],
       "Delete vault \"${ vaultName }\" ?": [
         "წავშალო საცავი \"${ vaultName }\" ?"
@@ -1960,11 +2084,17 @@
       "Enter your PIN": [
         "შეიყვანეთ PIN-კოდი"
       ],
+      "Excluded items": [
+        "ამოღებული ელემენტები"
+      ],
       "Get Started": [
         "დაიწყეთ"
       ],
       "Grant permissions": [
         "წვდომების მინიჭება"
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email-ის ფსევდონიმები"
       ],
       "History": [
         "ისტორია"
@@ -1992,6 +2122,9 @@
       ],
       "Low disk space": [
         "დისკზე ადგილი ცოტაღაა"
+      ],
+      "Mark as resolved?": [
+        "მონიშნე გადაწყვეტილად?"
       ],
       "Member limit": [
         "წევრების ზღვარი"
@@ -2023,6 +2156,9 @@
       "Password": [
         "პაროლი"
       ],
+      "Password Health": [
+        "პაროლის სიძლიერე"
+      ],
       "Pending access to the shared data": [
         "გაზიარებულ მონაცემებთან წვდომის მოლოდინი"
       ],
@@ -2035,8 +2171,18 @@
       "Recommended actions": [
         "რეკომენდებული ქმედებები"
       ],
+      "Resolved breaches": [
+        "ამოხსნილი გაჟონვები"
+      ],
       "Restore this version?": [
         "ამ ვერსიის აღდგენა?"
+      ],
+      "Reused ${ count } time": [
+        "გამოყენებულია ${ count }-ხელ",
+        "გამოყენებულია ${ count }-ჯერ"
+      ],
+      "Reused passwords": [
+        "განმეორებით გამოყენებული პაროლები"
       ],
       "Review and share": [
         "მიმოხილვა და გაზიარება"
@@ -2055,6 +2201,9 @@
       ],
       "Share with": [
         "გაზიარება"
+      ],
+      "Stay safer online": [
+        "იყავით უსაფრთხოდ ინტერნეტში"
       ],
       "Suggestions": [
         "შეთავაზებები"
@@ -2076,6 +2225,15 @@
       ],
       "Vault shared with you": [
         "თქვენთან გაზიარებული საცავი"
+      ],
+      "Want to learn more?": [
+        "გნებავთ, მეტი გაიგოთ?"
+      ],
+      "Weak password": [
+        "სუსტი პაროლი."
+      ],
+      "Weak passwords": [
+        "სუსტი პაროლები"
       ],
       "What is an alias?": [
         "რა არის ფსევდონიმი?"
@@ -2161,6 +2319,12 @@
       ],
       "Invalid alias prefix": [
         "არასწორი ფსევდონიმის პრეფიქსი"
+      ],
+      "Invalid code": [
+        "არასწორი კოდი"
+      ],
+      "Invalid email": [
+        "არასწორი ელფოსტა"
       ],
       "Invalid email addresses.": [
         "არასწორი ელფოსტის მისამართები."
