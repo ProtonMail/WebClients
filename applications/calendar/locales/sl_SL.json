@@ -453,10 +453,10 @@
       "Not now": [
         "Ne zdaj"
       ],
-      "Ok": [
+      "OK": [
         "V redu"
       ],
-      "OK": [
+      "Ok": [
         "V redu"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -867,11 +867,6 @@
         "Če prekinete zdaj, dogodek ne bo shranjen."
       ]
     },
-    "App logo": {
-      "Download ${ MAIL_APP_NAME } desktop application": [
-        "Prenesite namizno aplikacijo ${ MAIL_APP_NAME }"
-      ]
-    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "Aplikacije ${ BRAND_NAME }"
@@ -1134,7 +1129,7 @@
         "Nadaljuj z uporabo ${ MAIL_APP_NAME }a."
       ],
       "Continue using ${ planTitle }": [
-        "Nadaljuj z uporabo ${ planTitle }a"
+        "Nadaljujte z uporabo ${ planTitle }"
       ],
       "Continue your subscription": [
         "Podaljšajte naročnino"
@@ -2512,12 +2507,6 @@
       "Missing feature(s)": [
         "Manjkajoče funkcije"
       ],
-      "My reason isn't listed, please comment": [
-        "Mojega razloga ni na seznamu, prosim, komentirajte."
-      ],
-      "Streaming service unsupported": [
-        "Pretočni servis ni podprt"
-      ],
       "Subscription is too expensive": [
         "Naročnina je predraga."
       ],
@@ -2531,6 +2520,29 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Pomagajte nam izboljšati!"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Razširjena zgodovina različic"
+      ],
+      "Priority support": [
+        "Prednostna podpora"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Obnovitev za ${ renewablePrice }, prekličete lahko kadarkoli"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "za prvi mesec"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Pridobite ${ planName } za samo ${ planPrice }"
       ]
     },
     "Dropdown action icon tooltip": {
@@ -4509,9 +4521,6 @@
       "finance": [
         "finance"
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Posredujte dohodno pošto iz drugega računa v vaš varni ${ MAIL_APP_NAME } nabiralnik."
-      ],
       "Frequency modifications will be lost.": [
         "Spremembe pogostosti bodo izgubljene."
       ],
@@ -4553,9 +4562,6 @@
       ],
       "Import mailbox": [
         "Uvoz nabiralnika"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Uvozite vaša sporočila, koledarje in stike iz druge storitve v ${ BRAND_NAME }."
       ],
       "Important note": [
         "Pomembna opomba"
@@ -4753,7 +4759,7 @@
         "Izberite, kateri e-poštni naslov ali naslove želite dodati v ${ groupName }."
       ],
       "Please try again in a few moments": [
-        "Poskusite znova čez nekaj trenutkov"
+        "Poskusite znova čez nekaj trenutkov."
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Prosimo, poskusite znova z uporabo drugega načina plačila ali se obrnite na vašo banko."
@@ -4885,7 +4891,7 @@
         "Ta dogodek je bil posodobljen. Organizator ne bo obveščen, da ste zavrnili vabilo, saj ne morete pošiljati e-poštnih sporočil s povabljenega naslova. Ali želite vseeno izbrisati ta dogodek?"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
-        "Ta povezava vodi na spletno mesto, ki bi lahko poskušalo ukrasti vaše podatke, kot so gesla in podatki o kreditnih karticah."
+        "Ta povezava vodi na spletno mesto, ki bi lahko poskušalo ukrasti vaše podatke, kot so gesla in podatki o plačilnih karticah."
       ],
       "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Ta povezava je morda homografski napad in je brskalnik Edge ne more odpreti. Če ste prepričani, da je povezava neškodljiva, jo odprite z drugim brskalnikom."
@@ -5074,7 +5080,7 @@
         "Preden lahko zmanjšate paket, morate onemogočiti ali odstraniti vse dodatne uporabnike, naslove in domene po meri aplikacije ${ MAIL_APP_NAME }."
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "Imeti morate kreditno kartico ali bančni račun, ki je povezan z vašim PayPal računom. Če vaš PayPal račun tega nima, kliknite na gumb spodaj."
+        "Imeti morate plačilno kartico ali bančni račun, ki je povezan z vašim PayPal računom. Če vaš PayPal račun tega nima, kliknite na gumb spodaj."
       ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "To povabilo ste že zavrnili. Prosite lastnika za ponovno povabilo"
@@ -6419,7 +6425,7 @@
         "Samodejni odgovor"
       ],
       "Autofill credit cards (coming soon)": [
-        "Samodejno izpolnjevanje kreditnih kartic (prihaja kmalu)."
+        "Samodejno izpolnjevanje plačilnih kartic (prihaja kmalu)."
       ],
       "Automatic email forwarding": [
         "Samodejno posredovanje elektronske pošte"
@@ -7460,7 +7466,7 @@
         "Neveljavna varnostna koda"
       ],
       "Something went wrong. Please try again later.": [
-        "Nekaj ​​je šlo narobe. Prosim poskusite kasneje."
+        "Nekaj ​​je šlo narobe. Poskusite kasneje."
       ],
       "We are unable to authenticate your payment method. Please choose a different payment method or try again.": [
         "Vašega plačilnega sredstva ne moremo preveriti. Izberite drugo plačilno sredstvo ali poskusite znova."
@@ -8257,12 +8263,6 @@
       ]
     },
     "Spotlight": {
-      "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
-        "Priročno zaženite ${ MAIL_APP_NAME } neposredno z namizja."
-      ],
-      "Get the desktop app": [
-        "Prenesite program za namizja"
-      ],
       "Get up to ${ credits } in credits.": [
         "Pridobite do ${ credits } dobropisov."
       ],
@@ -8273,12 +8273,12 @@
         "Nič več sporov pri razporejanju"
       ],
       "Now you can see when participants are free to attend your meeting.": [
-        "Vidite lahko, kdaj se lahko udeleženci udeležijo sestanka."
+        "Vidite lahko, kdaj imajo udeleženci čas za udeležbo na vašem sestanku."
       ]
     },
     "State": {
       "Cancelling your subscription, please wait": [
-        "Preklic vaše naročnine, počakajte"
+        "Preklic vaše naročnine je v teku, počakajte."
       ]
     },
     "Storage": {
@@ -8331,7 +8331,7 @@
         "dokupite prostor za shranjevanje"
       ],
       "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
-        "Kreditne točke za preostali čas bomo dodali vašemu ${ BRAND_NAME } računu."
+        "Dobroimetje za preostali čas bomo dodali vašemu ${ BRAND_NAME } računu."
       ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "Na trenutnem paketu **${ currentPlanName }** vam je preostal še **${ daysRemaining }** dan uporabe.",
@@ -8704,7 +8704,7 @@
     },
     "summer2023: Tooltip": {
       "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
-        "Ustvarite varne podatke za prijavo v vseh svojih napravah. Vključuje neomejeno število vzdevkov, 20 trezorjev, integrirano 2FA, samodejno izpolnjevanje kreditnih kartic in več."
+        "Ustvarite varne podatke za prijavo v vseh svojih napravah. Vključuje neomejeno število vzdevkov, 20 trezorjev, integrirano 2FA, samodejno izpolnjevanje plačilnih kartic in drugo."
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Vključuje več kot 2950 strežnikov v več kot 65 državah, povezovanje do 10 naprav, dostop do svetovnih storitev pretakanja, zlonamerne programske opreme in zaviralcev oglasov ter več."
@@ -9516,6 +9516,9 @@
       ],
       "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
         "Naročnina se samodejno podaljša vsake 3 mesece. Vaš obračunski dan je čez 3 mesece."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Izredno znižana cena ${ priceWithDiscount } velja za prvi mesec. Potem se bo samodejno podaljšala mesečno za ${ renewPrice }. Naročnino lahko kadarkoli prekinete."
       ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Nato boste vsakih 12 mesecev prejeli račun v znesku ${ renewPrice }."
