@@ -31,10 +31,10 @@ module.exports = function (config) {
             karmaJasmine,
             karmaWebpack,
             karmaChromeLauncher,
-            karmaFirefoxLauncher,
+            process.env.CI ? undefined : karmaFirefoxLauncher,
             karmaWebkitLauncher,
             karmaSpecReporter,
-        ],
+        ].filter(Boolean),
 
         // list of files / patterns to load in the browser
         files: [
@@ -109,7 +109,9 @@ module.exports = function (config) {
                 flags: ['--no-sandbox'],
             },
         },
-        browsers: ['ChromeHeadlessCI', 'FirefoxHeadless', 'WebkitHeadless'],
+        browsers: ['ChromeHeadlessCI', process.env.CI ? undefined : 'FirefoxHeadless', 'WebkitHeadless'].filter(
+            Boolean
+        ),
 
         // Continuous Integration mode
         // if true, Karma captures browsers, runs the tests and exits
