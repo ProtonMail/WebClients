@@ -421,6 +421,9 @@
       "Keep my Plus subscription": [
         "Ponechať moje predplatné Plus"
       ],
+      "Later": [
+        "Neskôr"
+      ],
       "Learn more": [
         "Zistiť viac"
       ],
@@ -2253,12 +2256,6 @@
       "Missing feature(s)": [
         "Chýbajúce funkcie"
       ],
-      "My reason isn't listed, please comment": [
-        "Môj dôvod nie je uvedený, prosím okomentujte"
-      ],
-      "Streaming service unsupported": [
-        "Streamovacia služba nie je podporovaná"
-      ],
       "Subscription is too expensive": [
         "Predplatné je príliš drahé"
       ],
@@ -2272,6 +2269,29 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Pomôžte nám zlepšiť sa!"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Rozšírená história verzií"
+      ],
+      "Priority support": [
+        "Prioritná podpora"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Obnovuje sa za ${ renewablePrice }, zrušiť môžete kedykoľvek"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "za prvý mesiac"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Získať ${ planName } len za ${ planPrice }"
       ]
     },
     "Email body for description (description part)": {
@@ -2816,6 +2836,9 @@
       ],
       "You have reached the contacts limit for your account": [
         "Dosiahli ste limit kontaktov pre svoj účet"
+      ],
+      "You have reached the maximum number of calendars.": [
+        "Dosiahli ste maximálny počet kalendárov."
       ],
       "You must set a name": [
         "Musíte nastaviť meno"
@@ -4352,9 +4375,6 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Na dosiahnutie najlepších výsledkov sa vyhnite streamovaniu a činnostiam náročným na pamäť alebo rozdeľte nahrávanie na menšie časti."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Preposielajte prichádzajúcu poštu z iného účtu do vašej zabezpečenej schránky ${ MAIL_APP_NAME }."
-      ],
       "from the version history?": [
         "z histórie verzií?"
       ],
@@ -4414,9 +4434,6 @@
       ],
       "Import mailbox": [
         "Importovať poštovú schránku"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Importujte svoje emaily, kalendáre a kontakty z inej služby do ${ BRAND_NAME }u."
       ],
       "Important note": [
         "Dôležitá poznámka"
@@ -7635,7 +7652,7 @@
         "Vyberte motív"
       ],
       "Set up your organization": [
-        "Nastavte svoju organizáciu"
+        "Nastaviť svoju organizáciu"
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME }.": [
         "Výberom aplikácie v ľavom hornom rohu získate prístup ku všetkým službám ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } a ${ PASS_SHORT_APP_NAME }."
@@ -8672,6 +8689,9 @@
       ],
       "Desktop app": [
         "Desktopová aplikácia"
+      ],
+      "Upgrade": [
+        "Prejsť na platený plán"
       ]
     },
     "Subscription renewal state": {
@@ -9738,6 +9758,9 @@
       ],
       "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
         "Predplatné sa automaticky obnovuje každé 3 mesiace. Ďalší dátum fakturácie je o 3 mesiace."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Špeciálne zľavnená cena ${ priceWithDiscount } platí prvý mesiac. Potom sa každý mesiac automaticky obnoví za ${ renewPrice }. Službu môžete kedykoľvek zrušiť."
       ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Potom vám bude každých 12 mesiacov vystavená faktúra vo výške ${ renewPrice }."

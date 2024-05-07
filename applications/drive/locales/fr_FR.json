@@ -367,6 +367,9 @@
       "Go to parent": [
         "Revenir au dossier parent"
       ],
+      "Go to settings": [
+        "Accéder aux paramètres"
+      ],
       "Got it": [
         "J'ai compris"
       ],
@@ -414,6 +417,9 @@
       ],
       "Keep my Plus subscription": [
         "Conserver mon abonnement à Plus"
+      ],
+      "Later": [
+        "Plus tard"
       ],
       "Learn more": [
         "En savoir plus"
@@ -2229,12 +2235,6 @@
       "Missing feature(s)": [
         "Fonctionnalités manquantes"
       ],
-      "My reason isn't listed, please comment": [
-        "Raison non proposée ici, pouvez-vous préciser"
-      ],
-      "Streaming service unsupported": [
-        "Service de streaming non pris en charge"
-      ],
       "Subscription is too expensive": [
         "Abonnement trop cher"
       ],
@@ -2248,6 +2248,40 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Aidez-nous à nous améliorer."
+      ]
+    },
+    "drivePlus2024: Action": {
+      "Get the deal": [
+        "J'en profite"
+      ],
+      "Special Offer": [
+        "Offre spéciale"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Historique des versions plus détaillé"
+      ],
+      "Priority support": [
+        "Assistance prioritaire"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Renouvellement au prix de ${ renewablePrice } avec possibilité de résiliation à tout moment"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "pour le premier mois"
+      ],
+      "Limited-time offer": [
+        "Offre limitée dans le temps"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Obtenez ${ planName } pour seulement ${ planPrice }."
       ]
     },
     "Email body for description (description part)": {
@@ -3899,6 +3933,9 @@
       "Billing cycle: ${ text }": [
         "Cycle de facturation : ${ text }"
       ],
+      "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
+        "Mettez en avant l'image de marque de votre organisation et créez une expérience en ligne plus cohérente pour vos utilisateurs."
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "En passant à l'abonnement Free, vous perdrez définitivement ces avantages, même si vous repassez par la suite à un abonnement supérieur."
       ],
@@ -4214,9 +4251,6 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Pour de meilleurs résultats, évitez les activités de streaming et gourmandes en mémoire ou réduisez la taille de votre envoi."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Transférez les messages entrants d'un autre compte vers votre boite de réception sécurisée ${ MAIL_APP_NAME }."
-      ],
       "from the version history?": [
         "de l'historique des versions ?"
       ],
@@ -4274,9 +4308,6 @@
       ],
       "Import mailbox": [
         "Importer une messagerie"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Importez vos messages, calendriers et contacts depuis un autre service vers ${ BRAND_NAME }."
       ],
       "Important note": [
         "Remarque importante"
@@ -4797,6 +4828,9 @@
       ],
       "There is nothing to see here": [
         "Il n'y a aucune donnée à afficher."
+      ],
+      "This action will delete the link and revoke access for all users.": [
+        "Cette action supprimera le lien et révoquera l'accès de tous les utilisateurs."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Cette adresse est désactivée. Pour pouvoir envoyer des messages à cette adresse, son propriétaire doit d’abord l’activer."
@@ -5714,6 +5748,12 @@
       "Public keys": [
         "Clés publiques"
       ],
+      "Public link expiration date": [
+        "Date d'expiration du lien"
+      ],
+      "Public link password": [
+        "Mot de passe du lien public"
+      ],
       "Region": [
         "Région"
       ],
@@ -6585,6 +6625,12 @@
       "Organize items with multiple vaults": [
         "Plusieurs coffres-forts pour organiser vos mots de passe"
       ],
+      "Pass Monitor - premium features": [
+        "Pass Monitor - fonctionnalités premium"
+      ],
+      "Passkeys supported": [
+        "Les clés d'identification sont prises en charge."
+      ],
       "Password-protected Emails": [
         "Messages protégés par mot de passe"
       ],
@@ -6657,6 +6703,9 @@
       ],
       "Unlimited devices": [
         "Nombre illimité d'appareils"
+      ],
+      "Unlimited devices and aliases": [
+        "Nombre illimité d'alias et d'appareils"
       ],
       "Unlimited filters": [
         "Nombre illimité de filtres"
@@ -7427,6 +7476,18 @@
     "Participant name": {
       "You": [
         "Vous"
+      ]
+    },
+    "pass_signup_2023: Info": {
+      "Secure sharing with ${ n } vault": [
+        "Partage sécurisé avec ${ n } coffre-fort",
+        "Partage sécurisé avec ${ n } coffre-forts"
+      ],
+      "Secure sharing with multiple vaults": [
+        "Partage sécurisé avec plusieurs coffre-forts"
+      ],
+      "Secure vault sharing": [
+        "Partage sécurisé de coffre-forts"
       ]
     },
     "passwordless": {
@@ -8688,6 +8749,9 @@
       "Active": [
         "Actifs"
       ],
+      "Add a custom logo": [
+        "Ajouter un logo personnalisé"
+      ],
       "Add contact group name": [
         "Ajouter le nom du groupe de contacts"
       ],
@@ -9169,6 +9233,9 @@
       ],
       "Stop sharing with everyone?": [
         "Arrêter le partage avec tout le monde ?"
+      ],
+      "Stop sharing?": [
+        "Arrêter le partage ?"
       ],
       "Stop transfers?": [
         "Arrêter les transferts ?"

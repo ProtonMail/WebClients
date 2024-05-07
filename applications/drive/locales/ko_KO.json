@@ -364,6 +364,9 @@
       "Go to parent": [
         "상위 이동"
       ],
+      "Go to settings": [
+        "설정으로 이동하기"
+      ],
       "Got it": [
         "알겠습니다"
       ],
@@ -411,6 +414,9 @@
       ],
       "Keep my Plus subscription": [
         "나의 Plus 구독 유지"
+      ],
+      "Later": [
+        "나중에"
       ],
       "Learn more": [
         "더 알아보기"
@@ -2217,12 +2223,6 @@
       "Missing feature(s)": [
         "없는 기능"
       ],
-      "My reason isn't listed, please comment": [
-        "리스트에 저의 사유가 없습니다, 사유를 적어주세요"
-      ],
-      "Streaming service unsupported": [
-        "스트리밍 서비스 지원되지 않음"
-      ],
       "Subscription is too expensive": [
         "구독이 너무 비쌉니다"
       ],
@@ -2236,6 +2236,29 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "저희를 도와주세요!"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "연장된 버전 기록"
+      ],
+      "Priority support": [
+        "우선 지원"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "${ renewablePrice }에 갱신되며 언제나 취소할 수 있습니다."
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "첫 한달간"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "${ planName }를 ${ planPrice }만으로 만나다"
       ]
     },
     "Email body for description (description part)": {
@@ -2759,6 +2782,9 @@
       ],
       "You have reached the contacts limit for your account": [
         "계정의 최대 연락처 수를 초과했습니다"
+      ],
+      "You have reached the maximum number of calendars.": [
+        "캘린더 갯수의 한도에 도달했습니다."
       ],
       "You must set a name": [
         "이름을 반드시 설정해야 합니다"
@@ -3827,6 +3853,9 @@
       "Billing cycle: ${ text }": [
         "청구 주기: ${ text }"
       ],
+      "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
+        "조직의 브랜드 아이덴티티를 증진하고 사용자를 위한 더욱 일관된 온라인 경험을 창출하십시오."
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "무료 플랜으로 다운그레이드하면, 만약에 나중에 다시 업그레이드 한다 해도 다음 혜택을 영구적으로 잃을 것입니다."
       ],
@@ -4139,9 +4168,6 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "최상의 결과를 얻으려면 스트리밍 및 메모리를 많이 사용하는 활동을 피하거나 파일을 나누어 업로드하세요."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "다른 계정에서 전송되는 메일을 안전한 ${ MAIL_APP_NAME } 받은 편지함으로 전달하세요."
-      ],
       "from the version history?": [
         "을(를) 버전 기록에서 영구적으로 삭제하시겠습니까?"
       ],
@@ -4198,9 +4224,6 @@
       ],
       "Import mailbox": [
         "메일함 불러오기"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "이메일, 캘린더 및 연락처를 타사 서비스에서 ${ BRAND_NAME }으로 불러오세요."
       ],
       "Important note": [
         "중요 사항"
@@ -4717,6 +4740,9 @@
       ],
       "There is nothing to see here": [
         "이곳엔 아무것도 없습니다."
+      ],
+      "This action will delete the link and revoke access for all users.": [
+        "이것으로 링크를 삭제하고 모든 사용자의 접근을 취소하게 됩니다."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "이 주소는 사용할 수 없습니다. 이 주소로 보내려면 소유자가 먼저 주소를 사용 가능으로 설정해야 합니다."
@@ -5624,6 +5650,12 @@
       "Public keys": [
         "공개 키"
       ],
+      "Public link expiration date": [
+        "공개 링크 만료일"
+      ],
+      "Public link password": [
+        "공개 링크 비밀번호"
+      ],
       "Region": [
         "시/도"
       ],
@@ -6474,6 +6506,9 @@
       ],
       "Organize items with multiple vaults": [
         "다중 금고와 항목 정리"
+      ],
+      "Passkeys supported": [
+        "패스키를 지원함"
       ],
       "Password-protected Emails": [
         "비밀번호로 보호된 이메일"
@@ -8515,6 +8550,9 @@
       "Active": [
         "활성"
       ],
+      "Add a custom logo": [
+        "커스텀 로고 추가하기"
+      ],
       "Add contact group name": [
         "연락처 그룹 이름 추가"
       ],
@@ -8785,6 +8823,9 @@
       "Item details": [
         "항목 세부사항"
       ],
+      "Last edited by": [
+        "마지막으로 편집한 이"
+      ],
       "Link confirmation": [
         "링크 확인"
       ],
@@ -8988,6 +9029,9 @@
       ],
       "Stop sharing with everyone?": [
         "모두에게 공유를 중지할까요?"
+      ],
+      "Stop sharing?": [
+        "공유를 중단합니까?"
       ],
       "Stop transfers?": [
         "이동을 중단할까요?"
@@ -9228,6 +9272,9 @@
       ],
       "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
         "구독은 3개월 단위로 자동 갱신됩니다. 다음 갱신 주기는 3개월입니다."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "특별 할인가 ${ priceWithDiscount }는 첫 달에만 유효합니다. 이후 매 달 ${ renewPrice }에 자동으로 갱신됩니다. 취소는 언제나 가능합니다."
       ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "12개월마다 ${ renewPrice }가 결제됩니다."
