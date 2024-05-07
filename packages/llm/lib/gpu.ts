@@ -114,7 +114,7 @@ export class GpuRefineRunningAction extends BaseRunningAction {
         const pre = action.fullEmail.slice(0, action.idxStart);
         const mid = action.fullEmail.slice(action.idxStart, action.idxEnd);
         const end = action.fullEmail.slice(action.idxEnd);
-        const fullEmail = `${pre}<span class="to-modify">${mid}</span>${end}`;
+        const fullEmail = `${pre}<span class="to-modify"> ${mid}</span>${end}`;
         const newEmailStart = `${pre}<span class="modified">`;
         const prompt = formatPrompt([
             {
@@ -225,6 +225,7 @@ export class GpuLlmManager implements LlmManager {
                 conv_config: {
                     stop_str: ['</s>', '[INST]', '[/INST]'],
                     stop_token_ids: [2],
+                    role_empty_sep: ' ',
                 },
             };
             await this.chat.reload(MODEL_VARIANT, chatOpts, assistantConfig);
