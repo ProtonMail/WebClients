@@ -456,7 +456,7 @@
         "Палепшыць зараз"
       ],
       "Upgrade now to share with more people": [
-        "Палепшыце, каб абагуліць з большай колькасцю карыстальнікаў"
+        "Палепшыце, каб абагульваць з большай колькасцю карыстальнікаў"
       ],
       "View app logs": [
         "Паглядзець журнал праграмы"
@@ -524,16 +524,16 @@
         "Сцяжок азначае, што функцыя адключана."
       ],
       "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
-        "Функцыя Dark Web Monitoring даступна з платным тарыфным планам. Палепшыце сваю падпіску, каб неадкладна атрымаць доступ да гэтай функцыі."
-      ],
-      "It would be more secure to set up 2FA for this account.": [
-        "Будзе больш бяспечна наладзіць 2ФА для гэтага ўліковага запісу."
+        "Назіранне за Dark Web даступна з платным тарыфным планам. Палепшыце сваю падпіску, каб неадкладна атрымаць доступ да гэтай функцыі."
       ],
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
         "Спіс даменаў, дзе некаторыя функцыі ў праграме ${ PASS_SHORT_APP_NAME } (аўтазапаўненне, аўтапрапанова, аўтазахаванне) могуць не працаваць.${ infoText }"
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "Гэты ўліковы запіс з'яўляецца ўразлівым. Наведайце сэрвіс і змяніце пароль."
+      ],
+      "This service offers 2FA. Enable it for added account security.": [
+        "Гэты сэрвіс прапануе 2ФА. Уключыце гэту функцыю, каб дадаць бяспеку ўліковаму запісу."
       ]
     },
     "Error": {
@@ -589,7 +589,7 @@
         "Немагчыма адкрыць абноўленае сховішча"
       ],
       "Could not resolve share members": [
-        "Немагчыма вырашыць абагуленне ўдзельнікаў"
+        "Немагчыма вырашыць абагульванне ўдзельнікаў"
       ],
       "Could not validate addresses at the moment.": [
         "Немагчыма праверыць адрасы ў дадзены момант."
@@ -647,9 +647,6 @@
       ],
       "Failed to edit user's access.": [
         "Збой рэдагавання доступу карыстальніка."
-      ],
-      "Failed to load breaches": [
-        "Не ўдалося загрузіць парушэнні"
       ],
       "Failed to load breaches for this address": [
         "Не ўдалося загрузіць парушэнні для гэтага адраса"
@@ -1004,6 +1001,9 @@
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Псеўданім \"${ item.aliasEmail }\" перамешчаны ў сметніцу. Ён перастане перасылаць лісты ў вашу паштовую скрыню"
       ],
+      "All breaches for this address were resolved": [
+        "Усе парушэнні для гэтага адраса былі вырашаны"
+      ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Усе элементы з \"${ payload.content.name }\" паспяхова перамешчаны"
       ],
@@ -1214,6 +1214,12 @@
       "Item restored": [
         "Элемент адноўлены"
       ],
+      "Item successfully excluded from monitoring": [
+        "Элемент паспяхова выключаны з назірання"
+      ],
+      "Item successfully included in monitoring": [
+        "Элемент паспяхова ўключаны ў назіранне"
+      ],
       "Item successfully moved": [
         "Элемент паспяхова перамешчаны"
       ],
@@ -1422,7 +1428,7 @@
         "Сінхранізацыя вашых сховішчаў..."
       ],
       "Team members can only share vaults within organization": [
-        "Удзельнікі каманды могуць абагуляць сховішчы толькі ў межах арганізацыі"
+        "Удзельнікі каманды могуць абагульваць сховішчы толькі ў межах арганізацыі"
       ],
       "Thank you, the problem has been reported": [
         "Дзякуй, што паведамілі аб праблеме"
@@ -1715,7 +1721,7 @@
         "Адключыць экспартаванне даных для ўдзельнікаў каманды"
       ],
       "Disable sharing outside the organization": [
-        "Адключыць абагуленне па-за межамі арганізацыі"
+        "Адключыць абагульванне па-за межамі арганізацыі"
       ],
       "Display": [
         "Адлюстроўваць"
@@ -1964,13 +1970,16 @@
         "Налады"
       ],
       "Sharing policy": [
-        "Палітыка абагуленне"
+        "Палітыка абагульвання"
       ],
       "Show website favicons": [
         "Паказваць піктаграмы вэб-сайтаў"
       ],
       "Special characters (!&*)": [
         "Спецыяльныя сімвалы (!&*)"
+      ],
+      "Strong": [
+        "Надзейны"
       ],
       "Suffix": [
         "Суфікс"
@@ -2037,6 +2046,12 @@
       ],
       "View logs": [
         "Паглядзець журнал"
+      ],
+      "Vulnerable": [
+        "Уразлівы"
+      ],
+      "Weak": [
+        "Ненадзейны"
       ],
       "Website": [
         "Вэб-сайт"
@@ -2331,13 +2346,16 @@
         "Аднавіць гэту версію?"
       ],
       "Review and share": [
-        "Прагляд і абагуленне"
+        "Прагляд і абагульванне"
       ],
       "Secure your data": [
         "Бяспека вашых даных"
       ],
       "Set access level": [
         "Задаць узровень доступу"
+      ],
+      "Set up 2FA for more security": [
+        "Наладзьце 2ФА для большай бяспекі"
       ],
       "Share with": [
         "Абагуліць з"
@@ -2380,6 +2398,9 @@
       ],
       "Vault shared with you": [
         "Сховішча абагуленае з вамі"
+      ],
+      "Weak password": [
+        "Ненадзейны пароль"
       ],
       "Welcome to your new password manager!": [
         "Вітаем у вашым новым менеджары пароляў!"

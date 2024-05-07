@@ -188,6 +188,9 @@
       "Edit vault": [
         "Kluis bewerken"
       ],
+      "Exclude from monitoring": [
+        "Uitsluiten van controle"
+      ],
       "Export": [
         "Exporteren"
       ],
@@ -212,6 +215,9 @@
       "Get mobile apps": [
         "Download mobiele apps"
       ],
+      "Get Pass Plus": [
+        "Neem Pass Plus"
+      ],
       "Help us improve": [
         "Help ons verbeteren"
       ],
@@ -232,6 +238,9 @@
       ],
       "Importing": [
         "Importeren"
+      ],
+      "Include in monitoring": [
+        "Opnemen in monitoring"
       ],
       "Invite others": [
         "Nodig anderen uit"
@@ -367,6 +376,9 @@
       ],
       "Saving passkey...": [
         "Toeganssleutel opslaan..."
+      ],
+      "See all": [
+        "Alles weergeven"
       ],
       "See members": [
         "Bekijk leden"
@@ -505,8 +517,14 @@
       "A checked box means the feature is disabled.": [
         "Een selectievakje betekent dat de functie is uitgeschakeld."
       ],
+      "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
+        "Dark Web Monitoring is beschikbaar met een betaald abonnement. Upgrade voor directe toegang."
+      ],
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
         "Lijst van domeinen waar bepaalde automatische functies in ${ PASS_SHORT_APP_NAME } (Automatisch invullen, automatisch suggesties geven, automatisch opslaan) niet mogen uitgevoerd worden. ${ infoText }"
+      ],
+      "This account is vulnerable, visit the service and change your password.": [
+        "Dit account is kwetsbaar, bezoek de service en wijzig uw wachtwoord."
       ]
     },
     "Error": {
@@ -637,6 +655,12 @@
       ],
       "Failed to unpin item": [
         "Kan item niet losmaken"
+      ],
+      "Failed to update monitoring settings": [
+        "Bijwerken van monitoring-instellingen mislukt"
+      ],
+      "Failed updating ${ PROTON_SENTINEL_NAME } setting": [
+        "Bijwerken van ${ PROTON_SENTINEL_NAME } instelling mislukt"
       ],
       "File could not be parsed": [
         "Bestand kon niet verwerkt worden"
@@ -1106,6 +1130,12 @@
       "Item restored": [
         "Item hersteld"
       ],
+      "Item successfully excluded from monitoring": [
+        "Item succesvol uitgesloten van monitoring"
+      ],
+      "Item successfully included in monitoring": [
+        "Item succesvol opgenomen in monitoring"
+      ],
       "Item successfully moved": [
         "Item succesvol verplaatst"
       ],
@@ -1469,6 +1499,9 @@
       "${ config.options.wordCount } word": [
         "${ config.options.wordCount } woord",
         "${ config.options.wordCount } woorden"
+      ],
+      "${ PASS_SHORT_APP_NAME } monitor": [
+        "${ PASS_SHORT_APP_NAME } monitor"
       ],
       "1 hour": [
         "1 uur"
@@ -1848,6 +1881,9 @@
       "Special characters (!&*)": [
         "Speciale tekens (!&*)"
       ],
+      "Strong": [
+        "Sterk"
+      ],
       "Suffix": [
         "Achtervoegsel"
       ],
@@ -1913,6 +1949,9 @@
       ],
       "View logs": [
         "Logboeken bekijken"
+      ],
+      "Weak": [
+        "Zwak"
       ],
       "Website": [
         "Website"
@@ -2079,6 +2118,9 @@
       "${ PASS_APP_NAME } Settings": [
         "${ PASS_APP_NAME } Instellingen"
       ],
+      "${ PASS_SHORT_APP_NAME } monitor": [
+        "${ PASS_SHORT_APP_NAME } monitor"
+      ],
       "Auto-lock update": [
         "Automatische vergrendelingsupdate"
       ],
@@ -2210,6 +2252,9 @@
       ],
       "Share with": [
         "Deel met"
+      ],
+      "Stay safer online": [
+        "Blijf veilig online"
       ],
       "Suggestions": [
         "Suggesties"

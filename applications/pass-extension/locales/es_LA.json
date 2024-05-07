@@ -524,14 +524,14 @@
       "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
         "El monitoreo de la Dark Web está disponible con un plan de pago. Mejore el plan para un acceso inmediato."
       ],
-      "It would be more secure to set up 2FA for this account.": [
-        "Sería más seguro configurar 2FA para esta cuenta."
-      ],
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
         "Lista de dominios donde ciertas funciones automáticas en ${ PASS_SHORT_APP_NAME } (completado automático, sugerencia automática, guardado automático) no deberían de ejecutarse. ${ infoText }"
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "Esta cuenta es vulnerable. Visite el servicio y cambie la contraseña."
+      ],
+      "This service offers 2FA. Enable it for added account security.": [
+        "Este servicio ofrece 2FA. Actívelo para añadir seguridad a la cuenta."
       ]
     },
     "Error": {
@@ -628,10 +628,10 @@
         "Error al reenviar la invitación."
       ],
       "Failed to add email address": [
-        "Error al añadir la dirección de correo electrónico"
+        "Error al añadir la dirección de correo"
       ],
       "Failed to delete email address from monitoring": [
-        "Error al eliminar la dirección de correo electrónico del monitoreo."
+        "Error al eliminar la dirección de correo del monitoreo"
       ],
       "Failed to delete selected items": [
         "Error al eliminar los elementos seleccionados"
@@ -641,9 +641,6 @@
       ],
       "Failed to edit user's access.": [
         "Error al editar el acceso del usuario."
-      ],
-      "Failed to load breaches": [
-        "Error al cargar vulneraciones"
       ],
       "Failed to load breaches for this address": [
         "Error al cargar vulneraciones para esta dirección"
@@ -688,7 +685,7 @@
         "Error al actualizar los ajustes de monitoreo"
       ],
       "Failed to verify email address": [
-        "Error al verificar la dirección de correo electrónico"
+        "Error al verificar la dirección de correo"
       ],
       "Failed updating ${ PROTON_SENTINEL_NAME } setting": [
         "Error al actualizar los ajustes de ${ PROTON_SENTINEL_NAME }"
@@ -1084,10 +1081,10 @@
         "La dirección de correo electrónico fue eliminada del monitoreo."
       ],
       "Email address successfully excluded from monitoring": [
-        "La dirección de correo electrónico fue excluida del monitoreo."
+        "Dirección de correo excluida del monitoreo."
       ],
       "Email address successfully included in monitoring": [
-        "La dirección de correo electrónico fue incluida en el monitoreo."
+        "Dirección de correo incluida en el monitoreo."
       ],
       "Emptying trash...": [
         "Vaciando la papelera..."
@@ -1186,10 +1183,10 @@
         "Elemento restaurado"
       ],
       "Item successfully excluded from monitoring": [
-        "Elemento fue excluido del monitoreo."
+        "Elemento excluido del monitoreo."
       ],
       "Item successfully included in monitoring": [
-        "El elemento fue incluido en el monitoreo."
+        "Elemento incluido en el monitoreo."
       ],
       "Item successfully moved": [
         "Elemento movido con éxito"
@@ -1219,7 +1216,7 @@
         "conmigo"
       ],
       "Monitoring settings successfully updated": [
-        "Los ajustes de monitoreo se actualizaron."
+        "Ajustes de monitoreo actualizados"
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "Más que un gestor de contraseñas, ${ PASS_APP_NAME } protege la contraseña y la dirección de correo personal a través de alias de correo electrónico. Desarrollado por la misma tecnología detrás de ${ MAIL_APP_NAME }, los datos están cifrados de extremo a extremo y solo usted puede acceder a ellos."
@@ -2012,7 +2009,7 @@
         "Vulnerable"
       ],
       "Weak": [
-        "Poco segura"
+        "Débil"
       ],
       "Website": [
         "Sitio web"
@@ -2263,9 +2260,6 @@
       "Members": [
         "Miembros"
       ],
-      "Missing two-factor authentication": [
-        "Falta la autenticación de dos factores."
-      ],
       "Modified": [
         "Modificado"
       ],
@@ -2314,6 +2308,9 @@
       "Set access level": [
         "Configurar el nivel de acceso"
       ],
+      "Set up 2FA for more security": [
+        "Configure 2FA para más seguridad"
+      ],
       "Share with": [
         "Compartir con"
       ],
@@ -2357,7 +2354,7 @@
         "Bóveda compartida con usted"
       ],
       "Weak password": [
-        "Contraseña poco segura"
+        "Contraseña débil"
       ],
       "Welcome to your new password manager!": [
         "¡Le damos la bienvenida a su nuevo gestor de contraseñas!"

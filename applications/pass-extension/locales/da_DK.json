@@ -188,6 +188,9 @@
       "Edit vault": [
         "Redigér boks"
       ],
+      "Exclude from monitoring": [
+        "Undtag fra monitorering"
+      ],
       "Export": [
         "Eksportér"
       ],
@@ -212,6 +215,9 @@
       "Get mobile apps": [
         "Hent mobilapps"
       ],
+      "Get Pass Plus": [
+        "Få Pass Plus"
+      ],
       "Help us improve": [
         "Hjælp os med at blive bedre"
       ],
@@ -232,6 +238,9 @@
       ],
       "Importing": [
         "Importerer"
+      ],
+      "Include in monitoring": [
+        "Inkluder i monitorering"
       ],
       "Invite others": [
         "Invitér andre"
@@ -368,6 +377,9 @@
       "Saving passkey...": [
         "Gemmer adgangsnøgle..."
       ],
+      "See all": [
+        "Se alle"
+      ],
       "See members": [
         "Vis medlemmer"
       ],
@@ -502,11 +514,24 @@
       ]
     },
     "Description": {
+      "${ total } other login uses the same password": [
+        "${ total } andet login bruger samme adgangskode",
+        "${ total } andre logins bruger samme adgangskode"
+      ],
       "A checked box means the feature is disabled.": [
         "Et afkrydset felt betyder, at funktionen er deaktiveret."
       ],
+      "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
+        "Monitorering af det mørke net er tilgængelig med et betalt abonnement. Opgrader for øjeblikkelig adgang."
+      ],
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
         "Liste over domæner, hvor visse automatiske funktioner i ${ PASS_SHORT_APP_NAME } (Autofyld, Autoforslag, Autogem) ikke skal køre.${ infoText }"
+      ],
+      "This account is vulnerable, visit the service and change your password.": [
+        "Denne konto er sårbar, besøg tjenesten og skift din adgangskode."
+      ],
+      "This service offers 2FA. Enable it for added account security.": [
+        "Denne tjeneste tilbyder 2FA. Aktivér det for at få ekstra kontosikkerhed."
       ]
     },
     "Error": {
@@ -602,6 +627,12 @@
       "Failed resending invite.": [
         "Kunne ikke sende invitation igen."
       ],
+      "Failed to add email address": [
+        "Kunne ikke tilføje e-mailadresse"
+      ],
+      "Failed to delete email address from monitoring": [
+        "Kunne ikke slette e-mailadresse fra monitorering"
+      ],
       "Failed to delete selected items": [
         "Kunne ikke slette de valgte elementer"
       ],
@@ -610,6 +641,12 @@
       ],
       "Failed to edit user's access.": [
         "Kunne ikke redigere brugerens adgang."
+      ],
+      "Failed to load breaches for this address": [
+        "Kunne ikke indlæse databrud for denne adresse"
+      ],
+      "Failed to load breaches for this email alias": [
+        "Kunne ikke indlæse databrud for dette e-mail-alias"
       ],
       "Failed to load item history": [
         "Kunne ikke indlæse elementhistorik"
@@ -629,6 +666,12 @@
       "Failed to remove user's access.": [
         "Kunne ikke fjerne brugerens adgang."
       ],
+      "Failed to resend verification for custom email": [
+        "Kunne ikke gensende bekræftelse for brugerdefineret e-mail"
+      ],
+      "Failed to resolve breaches for this address": [
+        "Kunne ikke håndtere databrud for denne adresse"
+      ],
       "Failed to restore items from trash": [
         "Kunne ikke gendanne elementer fra papirkurven"
       ],
@@ -637,6 +680,21 @@
       ],
       "Failed to unpin item": [
         "Kunne ikke frigøre element"
+      ],
+      "Failed to update monitoring settings": [
+        "Kunne ikke opdatere monitoreringens indstillinger"
+      ],
+      "Failed to verify email address": [
+        "Kunne ikke bekræfte e-mailadresse"
+      ],
+      "Failed updating ${ PROTON_SENTINEL_NAME } setting": [
+        "Opdatering af ${ PROTON_SENTINEL_NAME }-indstilling mislykkedes"
+      ],
+      "Failed updating monitor flag of the item": [
+        "Opdatering af elementets monitoreringsmærkning mislykkedes"
+      ],
+      "Failed updating monitoring status for this email address": [
+        "Opdatering af monitoreringsstatus for denne e-mailadresse mislykkedes"
       ],
       "File could not be parsed": [
         "Fil kunne ikke fortolkes"
@@ -705,7 +763,7 @@
         "Genoprettelse af element mislykkedes"
       ],
       "Restoring trashed items failed": [
-        "Genoprettelse af elementer i papirkurven mislykkedes"
+        "Gendannelse af elementer i papirkurven mislykkedes"
       ],
       "Settings update failed": [
         "Ændring af indstillinger mislykkedes"
@@ -880,6 +938,12 @@
       "${ PASS_APP_NAME } will suggest saving passkeys.": [
         "${ PASS_APP_NAME } vil foreslå at gemme adgangsnøgler."
       ],
+      "${ PROTON_SENTINEL_NAME } successfully disabled": [
+        "${ PROTON_SENTINEL_NAME } deaktiveret"
+      ],
+      "${ PROTON_SENTINEL_NAME } successfully enabled": [
+        "${ PROTON_SENTINEL_NAME } aktiveret"
+      ],
       "${ trialDaysLeft } day left": [
         "${ trialDaysLeft } dag tilbage",
         "${ trialDaysLeft } dage tilbage"
@@ -910,6 +974,9 @@
       ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Aliasset \"${ item.aliasEmail }\" blev flyttet til papirkurven - det vil stoppe med at videresende e-mails til din indbakke"
+      ],
+      "All breaches for this address were resolved": [
+        "Alle databrud for denne adresse blev håndteret"
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Alle elementer fra \"${ payload.content.name }\" blev flyttet"
@@ -1010,6 +1077,15 @@
       "Editor": [
         "Redaktør"
       ],
+      "Email address successfully deleted from monitoring": [
+        "E-mail-adresse slettet fra monitorering"
+      ],
+      "Email address successfully excluded from monitoring": [
+        "E-mail-adresse undtaget fra monitorering"
+      ],
+      "Email address successfully included in monitoring": [
+        "E-mail-adresse inkluderet i monitorering"
+      ],
       "Emptying trash...": [
         "Tømmer papirkurven..."
       ],
@@ -1106,6 +1182,12 @@
       "Item restored": [
         "Element gendannet"
       ],
+      "Item successfully excluded from monitoring": [
+        "Element undtaget fra monitorering"
+      ],
+      "Item successfully included in monitoring": [
+        "Element inkluderet i monitorering"
+      ],
       "Item successfully moved": [
         "Element flyttet"
       ],
@@ -1132,6 +1214,9 @@
       ],
       "me": [
         "mig"
+      ],
+      "Monitoring settings successfully updated": [
+        "Indstillinger for monitorering opdateret"
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "${ PASS_APP_NAME } er mere end en adgangskodeadministrator, den beskytter din adgangskode og din personlige e-mailadresse via e-mail-aliasser. Med samme teknologi, som bruges til ${ MAIL_APP_NAME }, er dine data end-to-end krypteret og kun tilgængelige for dig."
@@ -1469,6 +1554,9 @@
       "${ config.options.wordCount } word": [
         "${ config.options.wordCount } ord",
         "${ config.options.wordCount } ord"
+      ],
+      "${ PASS_SHORT_APP_NAME } monitor": [
+        "${ PASS_SHORT_APP_NAME } monitor"
       ],
       "1 hour": [
         "1 time"
@@ -1848,6 +1936,9 @@
       "Special characters (!&*)": [
         "Specielle tegn (!&*)"
       ],
+      "Strong": [
+        "Stærk"
+      ],
       "Suffix": [
         "Suffiks"
       ],
@@ -1913,6 +2004,12 @@
       ],
       "View logs": [
         "Vis logfiler"
+      ],
+      "Vulnerable": [
+        "Sårbar"
+      ],
+      "Weak": [
+        "Svag"
       ],
       "Website": [
         "Websted"
@@ -2079,6 +2176,9 @@
       "${ PASS_APP_NAME } Settings": [
         "${ PASS_APP_NAME }-indstillinger"
       ],
+      "${ PASS_SHORT_APP_NAME } monitor": [
+        "${ PASS_SHORT_APP_NAME } monitor"
+      ],
       "Auto-lock update": [
         "Autolås-opdatering"
       ],
@@ -2208,8 +2308,14 @@
       "Set access level": [
         "Angiv adgangsniveau"
       ],
+      "Set up 2FA for more security": [
+        "Indstil 2FA for mere sikkerhed"
+      ],
       "Share with": [
         "Del med"
+      ],
+      "Stay safer online": [
+        "Bliv mere sikker online"
       ],
       "Suggestions": [
         "Forslag"
@@ -2247,8 +2353,11 @@
       "Vault shared with you": [
         "Boks delt med dig"
       ],
+      "Weak password": [
+        "Svag adgangskode"
+      ],
       "Welcome to your new password manager!": [
-        "Vælg din nye adgangskodeadministrator!"
+        "Velkommen til din nye adgangskodeadministrator!"
       ],
       "Why ${ PASS_APP_NAME }?": [
         "Hvorfor ${ PASS_APP_NAME }?"
