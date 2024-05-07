@@ -2155,12 +2155,6 @@
       "Missing feature(s)": [
         "機能が不足している"
       ],
-      "My reason isn't listed, please comment": [
-        "この中の理由以外 (コメントに記載してください)"
-      ],
-      "Streaming service unsupported": [
-        "ストリーミングサービスがサポートされていない"
-      ],
       "Subscription is too expensive": [
         "サブスクリプションが高すぎる"
       ],
@@ -2174,6 +2168,29 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "改善にご協力してください!"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "拡張バージョン履歴"
+      ],
+      "Priority support": [
+        "優先サポート"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "以降は ${ renewablePrice } で更新されます。いつでもキャンセル可能です。"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "最初の 1 か月"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "${ planName } を ${ planPrice } で入手"
       ]
     },
     "Email body for description (description part)": {
@@ -2607,6 +2624,9 @@
       ],
       "You have reached the contacts limit for your account": [
         "アカウントの連絡先が上限に達しています。"
+      ],
+      "You have reached the maximum number of calendars.": [
+        "カレンダーの上限数に達しました。"
       ],
       "You must set a name": [
         "名前を設定してください"
@@ -3972,9 +3992,6 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "最適な結果を得るには、ストリーミングやメモリ消費の大きな処理を避けるか、より小さな処理単位にアップロードを分割してください。"
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "他のアカウントで受信したメールを、安全な ${ MAIL_APP_NAME } 受信トレイへ転送します。"
-      ],
       "from the version history?": [
         "を完全に削除してよろしいですか？"
       ],
@@ -4031,9 +4048,6 @@
       ],
       "Import mailbox": [
         "メールボックスのインポート"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "メール、カレンダー、連絡先を他のサービスから ${ BRAND_NAME } にインポートします。"
       ],
       "Important note": [
         "注意事項"
@@ -8718,6 +8732,11 @@
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfCountries } か国で ${ numberOfServers } 台"
+      ]
+    },
+    "vpn_2024: renew": {
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "特別割引価格 ${ priceWithDiscount } は最初の 1 か月間有効です。 その後、毎月 ${ renewPrice } で自動的に更新されます。 いつでもキャンセルできます。"
       ]
     },
     "vpn_2step: feature": {

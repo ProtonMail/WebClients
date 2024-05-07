@@ -367,6 +367,9 @@
       "Go to parent": [
         "Ir a la principal"
       ],
+      "Go to settings": [
+        "Ir a los ajustes"
+      ],
       "Got it": [
         "Entendido"
       ],
@@ -414,6 +417,9 @@
       ],
       "Keep my Plus subscription": [
         "Mantener mi suscripción Plus"
+      ],
+      "Later": [
+        "Después"
       ],
       "Learn more": [
         "Más información"
@@ -2223,17 +2229,32 @@
       "Bugs or quality issue": [
         "Errores o problemas de calidad"
       ],
+      "I do not wish to share": [
+        "Prefiero no decirlo"
+      ],
+      "I found a cheaper VPN": [
+        "Encontré una VPN más barata"
+      ],
+      "I found a VPN with better features": [
+        "Encontré una VPN con mejores funciones"
+      ],
+      "I have not managed to connect": [
+        "No conseguí conectarme"
+      ],
+      "I only needed a VPN short-term": [
+        "Solo necesitaba una VPN por un corto tiempo"
+      ],
       "I use a different ${ BRAND_NAME } account": [
         "Uso una cuenta diferente de ${ BRAND_NAME }"
+      ],
+      "It doesn't do what I need": [
+        "No hace lo que necesito"
       ],
       "Missing feature(s)": [
         "Faltan funciones"
       ],
-      "My reason isn't listed, please comment": [
-        "Mi motivo no está en la lista. Déjenos un comentario."
-      ],
-      "Streaming service unsupported": [
-        "Servicio de transmisión no compatible"
+      "Other reason (please comment)": [
+        "Otra razón (coméntenos en qué podemos mejorar)"
       ],
       "Subscription is too expensive": [
         "La suscripción es muy costosa"
@@ -2243,11 +2264,48 @@
       ],
       "Temporary need, may come back in the future": [
         "Necesidad temporal, puedo volver en el futuro"
+      ],
+      "The VPN is too slow": [
+        "La VPN es muy lenta"
       ]
     },
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "¡Ayúdenos a mejorar!"
+      ]
+    },
+    "drivePlus2024: Action": {
+      "Get the deal": [
+        "Aprovéchese de la oferta"
+      ],
+      "Special Offer": [
+        "Oferta especial"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Historial de versiones extendido"
+      ],
+      "Priority support": [
+        "Soporte prioritario"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Se renueva por ${ renewablePrice }, cancele cuando quiera"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "por el primer mes"
+      ],
+      "Limited-time offer": [
+        "Oferta por tiempo limitado"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Obtenga ${ planName } por solo ${ planPrice }"
       ]
     },
     "Email body for description (description part)": {
@@ -3899,6 +3957,9 @@
       "Billing cycle: ${ text }": [
         "Ciclo de facturación: ${ text }"
       ],
+      "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
+        "Impulse la identidad de marca de su organización y cree una experiencia en línea más consistente para sus usuarios."
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Al pasar a un plan gratuito, perderá permanentemente estos beneficios, incluso si mejore de nuevo el plan en el futuro."
       ],
@@ -4214,9 +4275,6 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Para mejores resultados, evite las actividades de streaming o demandantes de memoria, o divida la carga de archivos en lotes más pequeños."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Redirija correos entrantes desde otra cuenta a el buzón seguro de ${ MAIL_APP_NAME }."
-      ],
       "from the version history?": [
         "del historial de versiones?"
       ],
@@ -4274,9 +4332,6 @@
       ],
       "Import mailbox": [
         "Importar buzón"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Importe los correos, calendarios y contactos desde otro servicio a ${ BRAND_NAME }."
       ],
       "Important note": [
         "Nota importante"
@@ -4797,6 +4852,9 @@
       ],
       "There is nothing to see here": [
         "No hay datos que ver aquí."
+      ],
+      "This action will delete the link and revoke access for all users.": [
+        "Esta acción eliminará el enlace y revocará el acceso de todos los usuarios."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Esta dirección está desactivada. Para poder enviar a esta dirección, el dueño debe primero activar la dirección."
@@ -5716,6 +5774,12 @@
       ],
       "Public keys": [
         "Claves públicas"
+      ],
+      "Public link expiration date": [
+        "Fecha de expiración del enlace público"
+      ],
+      "Public link password": [
+        "Contraseña del enlace público"
       ],
       "Region": [
         "Estado"
@@ -6645,6 +6709,12 @@
       "Organize items with multiple vaults": [
         "Organizar elementos en bóvedas múltiples"
       ],
+      "Pass Monitor - premium features": [
+        "Pass Monitor - funciones premium"
+      ],
+      "Passkeys supported": [
+        "Claves de acceso admitidas"
+      ],
       "Password-protected Emails": [
         "Correos electrónicos protegidos con contraseña"
       ],
@@ -6717,6 +6787,9 @@
       ],
       "Unlimited devices": [
         "Dispositivos ilimitados"
+      ],
+      "Unlimited devices and aliases": [
+        "Alias y dispositivos ilimitados"
       ],
       "Unlimited filters": [
         "Filtros ilimitados"
@@ -7487,6 +7560,18 @@
     "Participant name": {
       "You": [
         "Usted"
+      ]
+    },
+    "pass_signup_2023: Info": {
+      "Secure sharing with ${ n } vault": [
+        "Uso compartido seguro con ${ n } bóveda",
+        "Uso compartido seguro con ${ n } bóvedas"
+      ],
+      "Secure sharing with multiple vaults": [
+        "Uso compartido seguro con varias bóvedas"
+      ],
+      "Secure vault sharing": [
+        "Uso compartido seguro de bóvedas"
       ]
     },
     "passwordless": {
@@ -8748,6 +8833,9 @@
       "Active": [
         "Activa"
       ],
+      "Add a custom logo": [
+        "Añada un logo personalizado"
+      ],
       "Add contact group name": [
         "Añadir nombre al grupo de contactos"
       ],
@@ -9229,6 +9317,9 @@
       ],
       "Stop sharing with everyone?": [
         "¿Dejar de compartir con todos?"
+      ],
+      "Stop sharing?": [
+        "¿Dejar de compartir?"
       ],
       "Stop transfers?": [
         "¿Detener transferencias?"
