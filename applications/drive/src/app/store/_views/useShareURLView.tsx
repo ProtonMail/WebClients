@@ -65,7 +65,6 @@ export default function useShareURLView(shareId: string, linkId: string) {
     const [error, setError] = useState('');
 
     const [link, setLink] = useState<DecryptedLink>();
-    const [isShared, setIsShared] = useState(false);
     const [isLinkLoading, withLinkLoading] = useLoading(true);
     const [isShareUrlLoading, withShareUrlLoading] = useLoading(true);
     const [isSaving, withSaving] = useLoading();
@@ -81,11 +80,7 @@ export default function useShareURLView(shareId: string, linkId: string) {
         const abortController = new AbortController();
         void withLinkLoading(
             getLink(abortController.signal, shareId, linkId)
-                .then((link) => {
-                    setLink(link);
-                    // If sharingDetails is null that mean there is no public share or direct share
-                    setIsShared(!!link.sharingDetails);
-                })
+                .then(setLink)
                 .catch((err) => {
                     setError(err);
                     sendErrorReport(err);
@@ -146,7 +141,6 @@ export default function useShareURLView(shareId: string, linkId: string) {
                             setSharedLink(sharedLink);
                             const link = await getLink(abortController.signal, shareId, linkId);
                             setLink(link);
-                            setIsShared(true);
                         }
                     }
                 })
@@ -237,11 +231,13 @@ export default function useShareURLView(shareId: string, linkId: string) {
     };
 
     const stopSharing = async () => {
-        if (!link?.sharingDetails) {
-            return;
-        }
-        return withDeleting(
-            deleteShare(link.sharingDetails.shareId, { force: true })
+        return withDeleting(async () => {
+            const abortController = new AbortController();
+            const loadedLink = await getLink(abortController.signal, shareId, linkId);
+            if (!loadedLink?.sharingDetails) {
+                return;
+            }
+            return deleteShare(loadedLink.sharingDetails.shareId, { force: true })
                 .then(() => {
                     createNotification({
                         text: c('Notification').t`You stopped sharing this item`,
@@ -252,8 +248,8 @@ export default function useShareURLView(shareId: string, linkId: string) {
                         type: 'error',
                         text: c('Notification').t`Stopping to share this item has failed`,
                     });
-                })
-        );
+                });
+        });
     };
 
     const loadingMessage =
@@ -269,7 +265,6 @@ export default function useShareURLView(shareId: string, linkId: string) {
         : getSharingInfoMessage(!!link?.isFile);
 
     return {
-        isShared,
         isDeleting,
         isSaving,
         name: link?.name || '', // If the link is not loaded we will return an error message anyway
