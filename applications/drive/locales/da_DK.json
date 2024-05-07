@@ -204,7 +204,7 @@
         "Opret ny mappe"
       ],
       "Create new text file": [
-        "Opret en ny tekstfil"
+        "Opret ny tekstfil"
       ],
       "Current plan": [
         "Nuværende abonnement"
@@ -367,6 +367,9 @@
       "Go to parent": [
         "Gå til overordnet"
       ],
+      "Go to settings": [
+        "Gå til indstillinger"
+      ],
       "Got it": [
         "Forstået"
       ],
@@ -414,6 +417,9 @@
       ],
       "Keep my Plus subscription": [
         "Behold mit Plus-abonnement"
+      ],
+      "Later": [
+        "Senere"
       ],
       "Learn more": [
         "Få mere at vide"
@@ -680,7 +686,7 @@
         "Send feedback"
       ],
       "Set recovery phrase": [
-        "Opsæt gendannelsessætning"
+        "Indstil gendannelsessætning"
       ],
       "Settings": [
         "Indstillinger"
@@ -833,7 +839,7 @@
         "Bekræft"
       ],
       "Verify account": [
-        "Verificer konto"
+        "Bekræft konto"
       ],
       "View": [
         "Vis"
@@ -953,7 +959,7 @@
         "Fjern ${ PASS_APP_NAME }"
       ],
       "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
-        "Tegn et abonnement på 15 måneder og få vores **krypteret adgangskodeadministrator** for kun ${ priceNoSuffix } ekstra pr. måned!"
+        "Tegn et abonnement på 15 måneder og få vores **krypterede adgangskodeadministrator** for kun ${ priceNoSuffix } ekstra pr. måned!"
       ]
     },
     "bf2023: Deal details": {
@@ -985,7 +991,7 @@
         "Streaming ved høj hastighed"
       ],
       "Premium Password Manager": [
-        "Premium Adgangskodeadministrator"
+        "Premium adgangskodeadministrator"
       ]
     },
     "bf2023: Footer": {
@@ -1121,7 +1127,7 @@
         "Mail-problem"
       ],
       "Manual setup problem": [
-        "Problem ifm. manual opsætning"
+        "Problem med manuel opsætning"
       ],
       "Other": [
         "Andet"
@@ -2179,10 +2185,10 @@
         "Spar tid ved at sende e-mail eller invitationer til alle på en gang, en premium-funktion blandt mange andre. Opgrader i dag."
       ],
       "Set a data recovery method to prevent data loss.": [
-        "Sæt en data genoprettelsesmetode for at forhindre tab af data."
+        "Indstil en datagendannelsesmetode for at forhindre datatab."
       ],
       "Set a recovery method to prevent losing access to your account.": [
-        "Sæt en genoprettelsesmetode for at forhindre at blive låst ude af din konto."
+        "Indstil en gendannelsesmetode for at forhindre, at du mister adgang til din konto."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "For at importere dine kontakter fra Google eller Outlook, ${ easySwitchLink }."
@@ -2223,17 +2229,32 @@
       "Bugs or quality issue": [
         "Fejl eller kvalitetsproblem"
       ],
+      "I do not wish to share": [
+        "Jeg ønsker ikke at dele"
+      ],
+      "I found a cheaper VPN": [
+        "Jeg fandt en billigere VPN"
+      ],
+      "I found a VPN with better features": [
+        "Jeg fandt en VPN med bedre funktioner"
+      ],
+      "I have not managed to connect": [
+        "Jeg har ikke formået at forbinde"
+      ],
+      "I only needed a VPN short-term": [
+        "Jeg behøvede kun en VPN på kort sigt"
+      ],
       "I use a different ${ BRAND_NAME } account": [
         "Jeg bruger en anden ${ BRAND_NAME }-konto"
+      ],
+      "It doesn't do what I need": [
+        "Den gør ikke det, jeg har brug for"
       ],
       "Missing feature(s)": [
         "Manglende funktion(er)"
       ],
-      "My reason isn't listed, please comment": [
-        "Min begrundelse er ikke anført. Efterlad venligst en kommentar"
-      ],
-      "Streaming service unsupported": [
-        "Streaming-tjeneste understøttes ikke"
+      "Other reason (please comment)": [
+        "Anden årsag (kommenter venligst)"
       ],
       "Subscription is too expensive": [
         "Abonnementet er for dyrt"
@@ -2243,11 +2264,48 @@
       ],
       "Temporary need, may come back in the future": [
         "Midlertidigt behov, komme måske tilbage engang i fremtiden"
+      ],
+      "The VPN is too slow": [
+        "VPN er for langsom"
       ]
     },
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Hjælp os med at blive bedre!"
+      ]
+    },
+    "drivePlus2024: Action": {
+      "Get the deal": [
+        "Få tilbuddet"
+      ],
+      "Special Offer": [
+        "Særtilbud"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Udvidet versionshistorik"
+      ],
+      "Priority support": [
+        "Prioriteret support"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Fornyes til ${ renewablePrice }, annuller når som helst"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "den første måned"
+      ],
+      "Limited-time offer": [
+        "Tidsbegrænset tilbud"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Få ${ planName } for kun ${ planPrice }"
       ]
     },
     "Email body for description (description part)": {
@@ -2480,6 +2538,9 @@
       "Error decrypting a computer": [
         "Fejl ved dekryptering af en computer"
       ],
+      "External accounts are not supported yet": [
+        "Eksterne konti understøttes ikke endnu"
+      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Filen \"${ item.name }\" kan ikke uploades på grund af \"${ error }\" fejl"
       ],
@@ -2595,7 +2656,7 @@
         "Adgangskode er påkrævet."
       ],
       "Passwords do not match": [
-        "Adgangskoder matcher ikke"
+        "Adgangskoder stemmer ikke overens"
       ],
       "Payment process canceled": [
         "Betalingproces annulleret"
@@ -2776,6 +2837,9 @@
       ],
       "You have reached the contacts limit for your account": [
         "Du har nået det maksimale antal kontakter for din konto"
+      ],
+      "You have reached the maximum number of calendars.": [
+        "Du har nået det maksimale antal kalendere."
       ],
       "You must set a name": [
         "Du skal angive et navn"
@@ -3789,7 +3853,7 @@
         "Et nummer vil blive tilføjet mappenavnet"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
-        "Et telefonnummer kan kun bruges til at verificere én ${ BRAND_NAME } konto"
+        "Et telefonnummer kan kun bruges til at bekræfte én ${ BRAND_NAME }-konto"
       ],
       "A user is an account associated with a single username, mailbox, and person": [
         "En bruger er en konto, der er knyttet til et enkelt brugernavn, en enkelt postkasse og en enkelt person"
@@ -3843,7 +3907,7 @@
         "En aktiv gendannelsesfil"
       ],
       "An issue occurred during the restore process.": [
-        "Et problem opstod under genoprettelsesprocessen."
+        "Et problem opstod under gendannelsesprocessen."
       ],
       "and": [
         "og"
@@ -3893,6 +3957,9 @@
       "Billing cycle: ${ text }": [
         "Faktureringsperiode: ${ text }"
       ],
+      "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
+        "Styrk din organisations varemærkeidentitet, og skab en mere ensartet onlineoplevelse for dine brugere."
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ved at nedgradere til et gratis abonnement mister du disse fordele permanent, selvom du senere opgraderer igen."
       ],
@@ -3903,10 +3970,10 @@
         "Annulleret"
       ],
       "Cannot load link": [
-        "Link kunne ikke indlæses"
+        "Link kan ikke indlæses"
       ],
       "Cannot load links": [
-        "Linkene kunne ikke indlæses"
+        "Links kan ikke indlæses"
       ],
       "Cannot load shared link": [
         "Delt link kunne ikke indlæses"
@@ -4064,7 +4131,7 @@
         "Downloadet er sat på pause på grund af forbindelsesproblemer - det vil fortsætte automatisk"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
-        "Download din favoritapp i dag og tag dit privatliv med dig overalt."
+        "Hent din yndlingsapp i dag, og tag privatsfæren med dig overalt."
       ],
       "Downloaded": [
         "Downloadet"
@@ -4170,7 +4237,7 @@
         "Filen \"${ name }\" blev slettet under download"
       ],
       "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Filen mangler sin signatur. Vi kunne ikke verficere at ${ emailAddress } uploadede ${ fileName }."
+        "Fil mangler signatur. Vi kunne ikke verificere at ${ emailAddress } uploadede ${ fileName }."
       ],
       "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
         "Filen mangler sin signatur. Vi kunne ikke verificere, hvem der uploadede ${ fileName }."
@@ -4191,7 +4258,7 @@
         "finans"
       ],
       "Folder \"${ link.name }\" was deleted during download": [
-        "Mappe \"${ link.name }\" blev slettet under download"
+        "Mappen \"${ link.name }\" blev slettet under download"
       ],
       "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Mappen mangler sin signatur. Vi kunne ikke verficere at ${ emailAddress } uploadede ${ fileName }."
@@ -4207,9 +4274,6 @@
       ],
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "For de bedste resultater bør du undgå streaming og hukommelsesintensive aktiviteter eller dele dit upload op i mindre bidder."
-      ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Videresend indgående e-mails fra en anden konto til din sikre ${ MAIL_APP_NAME }-indbakke."
       ],
       "from the version history?": [
         "fra versionshistorikken"
@@ -4268,9 +4332,6 @@
       ],
       "Import mailbox": [
         "Importér postkasse"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Importér dine e-mails, kalendere og kontakter fra en anden tjeneste til ${ BRAND_NAME }."
       ],
       "Important note": [
         "Vigtig note"
@@ -4582,7 +4643,7 @@
         "Forhåndsvisning af denne filtype er ikke understøttet"
       ],
       "Previous versions are kept for ${ retentionLabel }": [
-        "Tidligere versioner er gemt i ${ retentionLabel }"
+        "Tidligere versioner gemmes i ${ retentionLabel }"
       ],
       "Previous versions are not saved": [
         "Tidligere versioner er ikke gemt"
@@ -4627,13 +4688,13 @@
         "Gendannelsen er i gang. Dette kan tage nogle sekunder."
       ],
       "Restore Photos": [
-        "Genopret fotos"
+        "Gendan fotos"
       ],
       "Restored files ${ formattedDate }": [
         "Gendannede filer ${ formattedDate }"
       ],
       "Restoring Photos... Please keep the tab open": [
-        "Genopretter fotos... Hold fanen åben."
+        "Gendanner fotos... Hold fanen åben."
       ],
       "Retry now": [
         "Forsøg igen nu"
@@ -4688,7 +4749,7 @@
         "Session er udløbet"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
-        "Opsætning af PGP giver dig mulighed for at sende end-to-end krypterede e-mails til en ikke-${ BRAND_NAME } bruger, der benytter en PGP-kompatibel tjeneste."
+        "Ved at indstille PGP kan du sende end-to-end-krypterede e-mails til en ikke-${ BRAND_NAME } bruger, der benytter en PGP-kompatibel tjeneste."
       ],
       "Share files with links": [
         "Del filer med links"
@@ -4791,6 +4852,9 @@
       ],
       "There is nothing to see here": [
         "Der er ikke noget at se her"
+      ],
+      "This action will delete the link and revoke access for all users.": [
+        "Denne handling vil slette linket og fjerne adgangen for alle brugere."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Denne adresse er deaktiveret. Vil du kunne sende til denne adreses, skal ejeren først aktivere den."
@@ -5708,6 +5772,12 @@
       "Public keys": [
         "Offentlige nøgler"
       ],
+      "Public link expiration date": [
+        "Udløbsdato for offentligt link"
+      ],
+      "Public link password": [
+        "Adgangskode til offentligt link"
+      ],
       "Region": [
         "Område"
       ],
@@ -6067,6 +6137,9 @@
       ],
       "Limited-time offer, expires April 2 2024": [
         "Tidsbegrænset tilbud, udløber den 2. april 2024"
+      ],
+      "Your subscription will auto-renew on ${ renewTime } at ${ renewablePrice }, cancel anytime": [
+        "Dit abonnement fornys automatisk på ${ renewTime } til ${ renewablePrice }, og kan opsiges når som helst."
       ]
     },
     "mailtrial2024: Title": {
@@ -6576,6 +6649,12 @@
       "Organize items with multiple vaults": [
         "Organiser elementer med flere bokse"
       ],
+      "Pass Monitor - premium features": [
+        "Pass Monitor - eksklusive funktioner"
+      ],
+      "Passkeys supported": [
+        "Adgangsnøgler understøttes"
+      ],
       "Password-protected Emails": [
         "Adgangskodebeskyttede e-mails"
       ],
@@ -6648,6 +6727,9 @@
       ],
       "Unlimited devices": [
         "Ubegrænset antal enheder"
+      ],
+      "Unlimited devices and aliases": [
+        "Ubegrænsede enheder og aliasser"
       ],
       "Unlimited filters": [
         "Ubegrænsede filtre"
@@ -6845,6 +6927,9 @@
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "${ VPN_APP_NAME }: Få adgang til blokeret indhold, og browse privat. Inkluderer ${ serversAndCountries }, højeste VPN-hastigheder, adgang til verdensomspændende streamingtjenester, malware- og reklamer-blokering, hurtige BitTorrent-downloads og meget mere."
       ],
+      "Access ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME } from the convenience of your desktop": [
+        "Tilgå nemt ${ MAIL_APP_NAME } og ${ CALENDAR_APP_NAME } fra dit skrivebord."
+      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Få adgang til indhold på streamingtjenester, herunder Netflix, Disney+ og Prime Video, hvor som helst"
       ],
@@ -6865,6 +6950,9 @@
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "Masseudsendelse af salgsfremmende eller programmatiske e-mails understøttes ikke i øjeblikket. Vi anbefaler, at du bruger en dedikeret e-mailtjenesteudbyder til dette formål."
+      ],
+      "Choose custom times to be reminded about an email or for your message to arrive": [
+        "Vælg tilpassede tidspunkter for påmindelse om en e-mail eller modtagelse af din besked"
       ],
       "Control access to your shared files by adding password protection and link expiration dates": [
         "Kontroller adgang til dine delte filer ved at tilføje adgangskodebeskyttelse og link-udløbsdatoer"
@@ -6958,7 +7046,7 @@
         "Giver det højeste niveau af kontosikkerhedsbeskyttelse og specialsupport"
       ],
       "Quickly set up out-of-office messages": [
-        "Hurtig opsætning af meddelelser til automatisk svar, når du ikke er på kontoret"
+        "Indstil hurtigt meddelelser til automatisk svar, når du ikke er på kontoret"
       ],
       "Quickly transfer your emails, calendars or contacts from any provider": [
         "Overflyt hurtigt dine e-mails, kalendere eller kontakter fra en anden udbyder"
@@ -6982,7 +7070,7 @@
         "Send e-mails til store grupper hurtigt og nemt ved at oprette så mange kontaktgrupper, som du har brug for (Op til 100 kontakter pr. gruppe)"
       ],
       "Set up filters to automatically reply to, sort, and/or label your emails": [
-        "Opsæt filtre til automatisk at besvare, sortere og/eller sætte etiketter på dine e-mails"
+        "Indstil filtre til automatisk at besvare, sortere og/eller sætte etiketter på dine e-mails"
       ],
       "Share your files or folders with anyone by using secure, shareable links": [
         "Del dine filer eller mapper med enhver ved hjælp af sikre, delbare links"
@@ -7239,7 +7327,7 @@
         "Der mangler et navn på en fil eller mappe"
       ],
       "File removed": [
-        "Fil slettet"
+        "Fil fjernet"
       ],
       "Invitation removed from the share": [
         "Invitation fjernet fra delingen"
@@ -7278,7 +7366,7 @@
         "Undermappe kunne ikke indlæses"
       ],
       "The link to \"${ name }\" failed to be deleted": [
-        "Linket til \"${ name }\" kune ikke slettes"
+        "Linket til \"${ name }\" kunne ikke slettes"
       ],
       "The link to \"${ name }\" was deleted": [
         "Linket til \"${ name }\" blev slettet"
@@ -7291,6 +7379,9 @@
       ],
       "Trash failed to be emptied": [
         "Papirkurv kunne ikke tømmes"
+      ],
+      "You stopped sharing this item": [
+        "Du stoppede med at dele dette emne"
       ],
       "Your old files will be deleted in 72 hours": [
         "Dine gamle filer vil blive slettet om 72 timer"
@@ -7409,6 +7500,18 @@
     "Participant name": {
       "You": [
         "Dig"
+      ]
+    },
+    "pass_signup_2023: Info": {
+      "Secure sharing with ${ n } vault": [
+        "Sikker deling med ${ n } boks",
+        "Sikker deling med ${ n } bokse"
+      ],
+      "Secure sharing with multiple vaults": [
+        "Sikker deling med flere bokse"
+      ],
+      "Secure vault sharing": [
+        "Sikker deling af boks"
       ]
     },
     "passwordless": {
@@ -7608,8 +7711,8 @@
         "Vælg det antal brugere, du vil inkludere i dit abonnement. Hver ekstra bruger koster ${ price }."
       ],
       "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "Hvis du har brug for mere end ${ maxUsers } konto, bedes du ${ contact } vores salgsteam.",
-        "Hvis du har brug for flere end ${ maxUsers } konti, bedes du ${ contact } vores salgsteam."
+        "Hvis du har brug for mere end ${ maxUsers } brugerkonto, bedes du ${ contact } vores salgsteam.",
+        "Hvis du har brug for mere end ${ maxUsers } brugerkonti, bedes du ${ contact } vores salgsteam."
       ]
     },
     "Price": {
@@ -8145,7 +8248,7 @@
         "Perfekt til familier eller små teams, hvor alle kan have deres egen indbakke og aliasser. Kræver et brugerdomæne."
       ],
       "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
-        "Modtag uden ekstra omkostninger betalingsversionerne af alle nye privatlivstjenester, vi lancerer i fremtiden, samt tidlig adgang til alle fremtidige funktioner og produkter."
+        "Modtag betalingsversioner af alle nye privatlivstjenester, vi frigiver i fremtiden, uden ekstra omkostninger, samt forhåndsadgang til alle fremtidige funktioner og produkter."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Beskyt dine filer med krypteret lagring i skyen. Inkluderer automatisk synkronisering, krypteret fildeling og meget mere."
@@ -8343,14 +8446,44 @@
       ]
     },
     "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagerplads"
+      ],
       "and 15 more premium features": [
         "og 15 andre premium-funktioner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk videresendelse af e-mail ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varsler om databrud ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Skrivebordsapp"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Vær med til at holde internettet sikkert og privat for alle. Opgrader til en betalingsløsning."
+      ],
+      "No ads or tracking": [
+        "Ingen reklamer eller sporing"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-mailadresse"
+      ],
+      "Support our mission": [
+        "Støt vores mission"
       ],
       "Upgrade": [
         "Opgradering"
       ],
+      "Upgrade your productivity": [
+        "Opgrader din produktivitet"
+      ],
       "We don't sell your data": [
         "Vi sælger ikke dine data"
+      ],
+      "Your privacy is our mission": [
+        "Dit privatliv er vores mission"
       ]
     },
     "Subscription renewal state": {
@@ -8640,6 +8773,9 @@
       "Active": [
         "Aktiv"
       ],
+      "Add a custom logo": [
+        "Tilføj et brugertilpasset logo"
+      ],
       "Add contact group name": [
         "Tilføj kontaktgruppenavn"
       ],
@@ -8735,7 +8871,7 @@
         "Opret en ny fil"
       ],
       "Create a new folder": [
-        "Opret ny mappe"
+        "Opret en ny mappe"
       ],
       "Create contact": [
         "Opret kontakt"
@@ -8891,7 +9027,7 @@
         "Grupper"
       ],
       "Hm, we couldn't find that one": [
-        "Hm, den kunne vi ikke finde"
+        "Hmm, den kunne vi ikke finde"
       ],
       "Human verification": [
         "Menneskelig bekræftelse"
@@ -8914,6 +9050,9 @@
       ],
       "Item details": [
         "Elementdetaljer"
+      ],
+      "Last edited by": [
+        "Sidst redigeret af"
       ],
       "Link confirmation": [
         "Linkbekræftelse"
@@ -9119,6 +9258,9 @@
       "Stop sharing with everyone?": [
         "Stop deling med alle?"
       ],
+      "Stop sharing?": [
+        "Stop med at dele?"
+      ],
       "Stop transfers?": [
         "Stop overførsler?"
       ],
@@ -9162,10 +9304,10 @@
         "Uploader en stor fil eller mappe"
       ],
       "Verification failed": [
-        "Verificering mislykkedes"
+        "Bekræftelse mislykkedes"
       ],
       "Verifying your card...": [
-        "Verificerer dit kort..."
+        "Bekræfter dit kort..."
       ],
       "Verifying your payment...": [
         "Verificerer din betaling..."
@@ -9351,7 +9493,7 @@
         "${ n } VPN-forbindelser"
       ],
       "${ numberOfServers } across ${ numberOfCountries } country": [
-        "${ numberOfServers } i ${ numberOfCountries } land",
+        "${ numberOfServers } fordelt på ${ numberOfCountries } land",
         "${ numberOfServers } fordelt på ${ numberOfCountries }+ lande"
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
@@ -9362,6 +9504,12 @@
     "vpn_2024: renew": {
       "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
         "Abonnementet fornys automatisk hver måned. Din næste faktureringsdato er om en måned."
+      ],
+      "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
+        "Abonnementet fornys automatisk hver 3. måned. Din næste forfaldsdato er om 3 måneder."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Den særligt nedsatte pris på ${ priceWithDiscount } gælder den første måned. Derefter vil den automatisk blive fornyet for ${ renewPrice } hver måned. Du kan til enhver tid opsige."
       ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Du vil blive faktureret ${ renewPrice } hver 12. måned."

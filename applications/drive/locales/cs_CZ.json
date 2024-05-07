@@ -185,7 +185,7 @@
         "Zkopírovat e-mail do schránky"
       ],
       "Copy invite link": [
-        "Kopírovat odkaz na pozvánku"
+        "Kopírovat odkaz pozvánky"
       ],
       "Copy link": [
         "Kopírovat odkaz"
@@ -373,6 +373,9 @@
       "Go to parent": [
         "Přejít do nadřazené složky"
       ],
+      "Go to settings": [
+        "Přejít do nastavení"
+      ],
       "Got it": [
         "Rozumím"
       ],
@@ -420,6 +423,9 @@
       ],
       "Keep my Plus subscription": [
         "Zachovat mé předplatné Plus"
+      ],
+      "Later": [
+        "Později"
       ],
       "Learn more": [
         "Více informací"
@@ -576,6 +582,9 @@
       ],
       "Remove gift code": [
         "Odstranit dárkový kód"
+      ],
+      "Remove me": [
+        "Odebrat mě"
       ],
       "Rename": [
         "Přejmenovat"
@@ -2250,12 +2259,6 @@
       "Missing feature(s)": [
         "Chybějící funkce"
       ],
-      "My reason isn't listed, please comment": [
-        "Můj důvod není uveden, prosím okomentujte"
-      ],
-      "Streaming service unsupported": [
-        "Streamovací služba není podporována"
-      ],
       "Subscription is too expensive": [
         "Předplatné je příliš drahé"
       ],
@@ -2269,6 +2272,29 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Pomozte nám se zlepšit!"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Rozšířená historie verzí"
+      ],
+      "Priority support": [
+        "Prioritní podpora"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Obnovuje se za ${ renewablePrice }, zrušit lze kdykoli"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "za první měsíc"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Získejte ${ planName } pouze za ${ planPrice }"
       ]
     },
     "Email body for description (description part)": {
@@ -2422,7 +2448,7 @@
         "Aliasy se nepodařilo načíst"
       ],
       "Already a member of this share": [
-        "Jste již členem tohoto sdílení"
+        "Již má členství v tomto sdílení"
       ],
       "Amount above the maximum.": [
         "Hodnota je vyšší než maximální částka."
@@ -2504,6 +2530,9 @@
       ],
       "Error decrypting a computer": [
         "Chyba při dešifrování počítače"
+      ],
+      "External accounts are not supported yet": [
+        "Externí účty nejsou zatím podporovány"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Soubor „${ item.name }“ nelze nahrát kvůli chybě „${ error }“"
@@ -2807,6 +2836,9 @@
       ],
       "You have reached the contacts limit for your account": [
         "Dosáhli jste limitu kontaktů vašeho účtu"
+      ],
+      "You have reached the maximum number of calendars.": [
+        "Dosáhli jste maximálního počtu kalendářů."
       ],
       "You must set a name": [
         "Musíte nastavit jméno"
@@ -4022,6 +4054,9 @@
       "Billing cycle: ${ text }": [
         "Fakturační cyklus: ${ text }"
       ],
+      "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
+        "Zlepšete identitu značky své organizace a vytvořte konzistentnější online prostředí pro své uživatele."
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Pokud svůj aktuální tarif snížíte na bezplatnou verzi, navždy ztratíte současné výhody, i když v budoucnu svůj účet znovu povýšíte."
       ],
@@ -4310,6 +4345,9 @@
       "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
         "Souboru chybí podpis. Nemohli jsme ověřit, kdo nahrál ${ fileName }."
       ],
+      "File scanning in Drive": [
+        "Skenováni souboru na disku"
+      ],
       "File will not be updated": [
         "Soubor nebude aktualizován"
       ],
@@ -4340,9 +4378,6 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Chcete-li dosáhnout nejlepších výsledků, vyhněte se streamování a činnostem náročným na paměť nebo rozdělte nahrávání na menší části."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Přepošlete příchozí mail z jiného účtu do vaší bezpečné ${ MAIL_APP_NAME } schránky."
-      ],
       "from the version history?": [
         "z historie verzí?"
       ],
@@ -4351,6 +4386,9 @@
       ],
       "Get the desktop app to sync files from your computer.": [
         "Získejte aplikaci pro desktop k synchronizaci souborů z počítače."
+      ],
+      "Get to know ${ DRIVE_APP_NAME } and earn your 3 GB storage bonus! Take action today.": [
+        "Seznamte se s ${ DRIVE_APP_NAME } a získejte bonus 3 GB úložného prostoru! Učiňte tak ještě dnes."
       ],
       "Go to \"My files\" and upload some files first.": [
         "Jděte na \"Moje Soubory\" a nahrajte nejdříve soubory."
@@ -4400,14 +4438,14 @@
       "Import mailbox": [
         "Importovat poštovní schránku"
       ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Importujte své e-maily, kalendáře a kontakty z jiných služeb do ${ BRAND_NAME }."
-      ],
       "Important note": [
         "Důležitá poznámka"
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Import vašich dat z ${ fromEmail } do ${ toEmail }."
+      ],
+      "In the meantime, sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
+        "Mezitím si založte vlastní účet ${ DRIVE_APP_NAME } a chraňte svá data pomocí koncového šifrování a bezpečně je sdílejte."
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "V dalším kroku budete moci odeslat vklad pomocí adresy Bitcoin."
@@ -4751,6 +4789,9 @@
       "Report has been sent": [
         "Hlášení bylo odesláno"
       ],
+      "Report link": [
+        "Nahlásit odkaz"
+      ],
       "Restore": [
         "Obnovit"
       ],
@@ -4844,6 +4885,9 @@
       "Shared with me": [
         "Sdíleno se mnou"
       ],
+      "Sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
+        "Založte si vlastní účet ${ DRIVE_APP_NAME } a chraňte svá data koncovým šifrováním a bezpečně je sdílejte."
+      ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Podpis nelze ověřit z důvodu chyby sítě, zkuste to prosím později."
       ],
@@ -4922,6 +4966,9 @@
       "There is nothing to see here": [
         "Zde není nic k zobrazení"
       ],
+      "This action will delete the link and revoke access for all users.": [
+        "Tato akce smaže odkaz a zruší přistup všem uživatelům."
+      ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Tato adresa není povolena. Pokud chcete odesílat zprávy na tuto adresu, musí ji vlastník nejdříve povolit."
       ],
@@ -4990,6 +5037,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Abyste zamezili spamu a obtěžování, potvrďte, že jste člověk."
+      ],
+      "To help protect you, ${ DRIVE_APP_NAME } can scan and block malicious files. You should still only download files from people you trust.": [
+        "Aby jsme vás ochránili, ${ DRIVE_APP_NAME } umí skenovat a blokovat nebezpečné soubory. Měli byste stahovat soubory jen od lidí, kterým věříte."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Chcete-li importovat události, nejprve vytvořte kalendář v ${ CALENDAR_APP_NAME }. Po importu se zde zobrazí události."
@@ -5110,6 +5160,9 @@
       ],
       "Warning": [
         "Varování"
+      ],
+      "Way to go, you've just increased your storage to 5 GB!": [
+        "Výborně, právě jste si navýšili úložný prostor na 5 GB!"
       ],
       "We are experiencing technical issues. Uploading new photos is temporarily disabled.": [
         "Máme technické problémy. Nahrávání nových fotek je dočasně vypnuto."
@@ -5852,6 +5905,9 @@
       "Public keys": [
         "Veřejné klíče"
       ],
+      "Public link expiration date": [
+        "Vypršení platnosti veřejného odkazu"
+      ],
       "Region": [
         "Kraj"
       ],
@@ -5884,6 +5940,12 @@
       ],
       "Set recovery method": [
         "Nastavit metodu obnovení"
+      ],
+      "Shared by": [
+        "Sdílel(a)"
+      ],
+      "Shared on": [
+        "Sdíleno na"
       ],
       "Show indexing progress of Encrypted Search": [
         "Zobrazit průběh indexování šifrovaného vyhledávání"
@@ -5926,6 +5988,9 @@
       ],
       "Theme": [
         "Motiv"
+      ],
+      "This file is potentially infected": [
+        "Tento soubor je potenciálně infikován"
       ],
       "This will permanently delete all files in your locked drive.": [
         "Tím se trvale odstraní všechny soubory na uzamčeném disku."
@@ -6073,6 +6138,9 @@
       ],
       "Shared": [
         "Sdílené"
+      ],
+      "Shared with me": [
+        "Sdíleno se mnou"
       ],
       "stay safer online": [
         "zůstaňte v bezpečí online"
@@ -6238,6 +6306,9 @@
       ]
     },
     "Mimetype": {
+      "3GPP audio/video container": [
+        "3GPP audio/video container"
+      ],
       "3GPP2 audio/video container": [
         "3GPP2 audio/video"
       ],
@@ -6270,6 +6341,9 @@
       ],
       "Audio file": [
         "Zvukový soubor"
+      ],
+      "AV1 Image File Format (AVIF)": [
+        "AV1 Image File Format (AVIF)"
       ],
       "AVI video": [
         "AVI video"
@@ -6337,6 +6411,12 @@
       "MPEG Video": [
         "MPEG Video"
       ],
+      "MS Embedded OpenType fonts": [
+        "MS Embedded OpenType fonts"
+      ],
+      "Musical Instrument Digital Interface (MIDI)": [
+        "Musical Instrument Digital Interface (MIDI)"
+      ],
       "OGG audio": [
         "OGG audio"
       ],
@@ -6373,6 +6453,9 @@
       "Small web format (SWF)": [
         "SWF"
       ],
+      "Tagged Image File Format (TIFF)": [
+        "Tagged Image File Format (TIFF)"
+      ],
       "Tape Archive (TAR)": [
         "TAR archiv"
       ],
@@ -6387,6 +6470,12 @@
       ],
       "Video file": [
         "Video soubor"
+      ],
+      "Waveform Audio Format": [
+        "Waveform Audio Format"
+      ],
+      "Web Open Font Format (WOFF)": [
+        "Web Open Font Format (WOFF)"
       ],
       "WEBM audio": [
         "WEBM audio"
@@ -6729,6 +6818,9 @@
       ],
       "Organize items with multiple vaults": [
         "Uspořádání položek pomocí více trezorů"
+      ],
+      "Passkeys supported": [
+        "Přístupové klíče podporovány"
       ],
       "Password-protected Emails": [
         "Zprávy chráněné heslem"
@@ -7363,6 +7455,12 @@
       "${ reason } has been enabled": [
         "${ reason } byl povolen"
       ],
+      "Access for the member removed": [
+        "Přístup pro člena odebrán"
+      ],
+      "Access updated and shared": [
+        "Přístup aktualizován a sdílen"
+      ],
       "All items will soon be permanently deleted from trash": [
         "Všechny položky budou brzy nevratně smazány z koše"
       ],
@@ -7399,6 +7497,9 @@
       "Failed to move, please try again": [
         "Přesun selhal, zkuste to prosím znovu"
       ],
+      "Failed to remove the file": [
+        "Odebrání souboru selhalo"
+      ],
       "Failed to upload files: ${ err }": [
         "Nepodařilo se nahrát soubory: ${ err }"
       ],
@@ -7413,6 +7514,12 @@
       ],
       "File or folder is missing a name": [
         "Souboru nebo složce chybí název"
+      ],
+      "File removed": [
+        "Soubor odebrán"
+      ],
+      "Invitation removed from the share": [
+        "Pozvánka odebrána ze sdílení"
       ],
       "Link copied to clipboard": [
         "Odkaz zkopírován do schránky"
@@ -7440,6 +7547,9 @@
       ],
       "Root folder failed to be loaded": [
         "Kořenovou složku se nepodařilo načíst"
+      ],
+      "Stopping to share this item has failed": [
+        "Ukončení sdílení této položky selhalo"
       ],
       "Subfolder failed to be loaded": [
         "Podsložku se nepodařilo načíst"
@@ -8903,6 +9013,9 @@
       "Active": [
         "Aktivní"
       ],
+      "Add a custom logo": [
+        "Přidejte vlastní logo"
+      ],
       "Add contact group name": [
         "Přidat název skupiny kontaktů"
       ],
@@ -8935,6 +9048,9 @@
       ],
       "Are you sure you want to close the preview?": [
         "Jste si jisti, že chcete náhled zavřít?"
+      ],
+      "Are you sure you want to leave this share?": [
+        "Jste si jisti, že chcete opustit toto sdílení?"
       ],
       "Billing cycle": [
         "Fakturační cyklus"
@@ -9356,6 +9472,9 @@
       "Shared": [
         "Sdílené"
       ],
+      "Shared with me": [
+        "Sdíleno se mnou"
+      ],
       "Show actions": [
         "Zobrazit akce"
       ],
@@ -9646,6 +9765,9 @@
       ],
       "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
         "Předplatné se automaticky obnoví každé 3 měsíce. Další datum fakturace je za 3 měsíce."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Speciálně zvýhodněná cena ${ priceWithDiscount } platí první měsíc. Poté bude každý měsíc automaticky obnovena za cenu ${ renewPrice }. Službu můžete kdykoli zrušit."
       ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Potom vám bude účtováno ${ renewPrice } každých 12 měsíců."

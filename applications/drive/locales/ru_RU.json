@@ -2201,12 +2201,6 @@
       "Missing feature(s)": [
         "Не хватает функции(й)"
       ],
-      "My reason isn't listed, please comment": [
-        "Моя причина не указана, пожалуйста, прокомментируйте"
-      ],
-      "Streaming service unsupported": [
-        "Служба трансляции не поддерживается"
-      ],
       "Subscription is too expensive": [
         "Подписка слишком дорогая"
       ],
@@ -2220,6 +2214,29 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Помогите нам совершенствоваться!"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Подробная история версий"
+      ],
+      "Priority support": [
+        "Приоритетная поддержка"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Затем стоимость подписки составит ${ renewablePrice }. Отменить её можно в любое время"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "за первый месяц"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Получите тариф ${ planName } всего за ${ planPrice }"
       ]
     },
     "Email subject": {
@@ -2677,6 +2694,9 @@
       ],
       "You have reached the contacts limit for your account": [
         "Вы достигли лимита контактов для вашего аккаунта."
+      ],
+      "You have reached the maximum number of calendars.": [
+        "Вы достигли максимального количества календарей."
       ],
       "You must set a name": [
         "Вы должны задать имя"
@@ -4198,9 +4218,6 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Для достижения наилучших результатов избегайте просмотра трансляций и действий, требующих большого объема памяти, или разделите загрузку на более мелкие пакеты."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Пересылка входящей почты в ваш безопасный почтовый ящик ${ MAIL_APP_NAME } из другого аккаунта."
-      ],
       "from the version history?": [
         "из истории версий?"
       ],
@@ -4260,9 +4277,6 @@
       ],
       "Import mailbox": [
         "Импорт почтового ящика"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Импортируйте ваши письма, календари и контакты в ${ BRAND_NAME } из другого сервиса."
       ],
       "Important note": [
         "Важное примечание"
@@ -5668,6 +5682,9 @@
       ],
       "Region": [
         "Регион"
+      ],
+      "Remove access": [
+        "Отменить доступ"
       ],
       "Replace existing file": [
         "Заменить существующий файл"
@@ -7573,6 +7590,9 @@
       "Create alias": [
         "Создать псевдоним"
       ],
+      "Create an alias": [
+        "Создать псевдоним"
+      ],
       "Hide-my-email aliases": [
         "Псевдонимы hide-my-email"
       ],
@@ -7994,6 +8014,14 @@
         "Сохранить ${ currentPlanName }"
       ]
     },
+    "storage_split: feature": {
+      "Up to ${ totalStorageSize } Drive storage": [
+        "Объём хранилища Drive: до ${ totalStorageSize }"
+      ],
+      "Up to ${ totalStorageSize } Mail storage": [
+        "До ${ totalStorageSize } Хранилище Mail"
+      ]
+    },
     "storage_split: info": {
       "${ app } storage": [
         "${ app } хранилища"
@@ -8116,6 +8144,11 @@
     "Subscription price": {
       "For": [
         "За"
+      ]
+    },
+    "subscription reminder": {
+      "Upgrade": [
+        "Сменить тариф"
       ]
     },
     "Subscription renewal state": {
@@ -8979,6 +9012,9 @@
       "Your changes are not synced yet": [
         "Изменения ещё не сохранены"
       ],
+      "Your exposed information": [
+        "Ваша раскрытая информация"
+      ],
       "Your welcome actions": [
         "Ваши приветственные действия"
       ],
@@ -9149,6 +9185,9 @@
       ],
       "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
         "Подписка автоматически продлевается каждые 3 месяца. Следующая дата выставления счета наступит через 3 месяца."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Специальная цена в ${ priceWithDiscount } действует за первый месяц. Затем будет выполнено автоматическое продление по сниженной цене в ${ renewPrice } каждый месяц. Отменить подписку можно в любой момент."
       ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Затем вам будут выставляться счета каждые 12 месяцев по ${ renewPrice }."
