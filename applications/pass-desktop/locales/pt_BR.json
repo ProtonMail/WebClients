@@ -158,6 +158,9 @@
       "Edit vault": [
         "Editar cofre"
       ],
+      "Exclude from monitoring": [
+        "Excluir do monitoramento"
+      ],
       "Export": [
         "Exportar"
       ],
@@ -182,6 +185,9 @@
       "Get mobile apps": [
         "Baixar aplicativos móveis"
       ],
+      "Get Pass Plus": [
+        "Obter Pass Plus"
+      ],
       "Get Started": [
         "Começar"
       ],
@@ -199,6 +205,9 @@
       ],
       "Importing": [
         "Importando"
+      ],
+      "Include in monitoring": [
+        "Incluir no monitoramento"
       ],
       "Install extension": [
         "Instalar extensão"
@@ -278,6 +287,12 @@
       "Pass for iOS": [
         "Pass para iOS"
       ],
+      "Pass Monitor": [
+        "Pass Monitor"
+      ],
+      "Pause monitoring": [
+        "Pausar monitoramento"
+      ],
       "Pin item": [
         "Fixar item"
       ],
@@ -317,6 +332,9 @@
       "Restore item": [
         "Restaurar item"
       ],
+      "Resume monitoring": [
+        "Retomar monitoramento"
+      ],
       "Retry": [
         "Tentar novamente"
       ],
@@ -325,6 +343,9 @@
       ],
       "Saving": [
         "Salvando"
+      ],
+      "See all": [
+        "Ver tudo"
       ],
       "See members": [
         "Ver membros"
@@ -374,6 +395,9 @@
       "Trash": [
         "Lixeira"
       ],
+      "Try again.": [
+        "Tente novamente."
+      ],
       "Unpin item": [
         "Desafixar item"
       ],
@@ -392,6 +416,9 @@
       "Verify": [
         "Verificar"
       ],
+      "View details": [
+        "Ver detalhes"
+      ],
       "View history": [
         "Visualizar histórico"
       ],
@@ -399,7 +426,7 @@
         "Visualizar histórico do item"
       ],
       "View older history": [
-        "Ver a história mais antiga"
+        "Ver histórico mais antigo"
       ],
       "Write us on Reddit": [
         "Escreva-nos no Reddit"
@@ -442,6 +469,44 @@
       ],
       "Expand": [
         "Expandir"
+      ]
+    },
+    "Description": {
+      "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
+        "Um alias de e-mail funciona como um endereço de e-mail, mas reduz o spam e mantém seu endereço de e-mail e identidade reais ocultos."
+      ],
+      "Create unique passwords": [
+        "Crie senhas únicas"
+      ],
+      "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
+        "O monitoramento da Dark Web está disponível com um plano pago. Faça upgrade para acesso imediato."
+      ],
+      "Get notified if your email, password or other personal data was leaked.": [
+        "Seja notificado se seu email, senha ou outros dados pessoais foram vazados."
+      ],
+      "Keep your info more secure and private with these guides and tips.": [
+        "Mantenha suas informações mais seguras e privadas com estes guias e dicas."
+      ],
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "Nossa solução de segurança de última geração orientada por IA, projetada para usuários que buscam proteção reforçada para suas contas. ${ learnMoreLink }"
+      ],
+      "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
+        "Comece a monitorar violações de dados relacionadas a contas criadas com seu endereço de e-mail e seus aliases de hide-my-email"
+      ],
+      "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
+        "A dark web é uma parte oculta da Internet onde informações pessoais roubadas, como identidades, podem ser compradas e vendidas."
+      ],
+      "These items remain at risk": [
+        "Esses itens permanecem em risco"
+      ],
+      "This account is vulnerable, visit the service and change your password.": [
+        "Esta conta está vulnerável, visite o serviço e altere sua senha."
+      ],
+      "Your email addresses were leaked in at least 1 data breach.": [
+        "Seus endereços de email foram vazados em pelo menos 1 violação de dados."
+      ],
+      "Your personal info was leaked in a data breach of a third-party service.": [
+        "Suas informações pessoais vazaram em uma violação de dados de um serviço de terceiros."
       ]
     },
     "Error": {
@@ -492,7 +557,7 @@
         "Não é possível determinar os membros do compartilhamento"
       ],
       "Could not validate addresses at the moment.": [
-        "Não foi possível validar endereços neste momento."
+        "Não foi possível validar endereços agora."
       ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "O arquivo CSV está faltando cabeçalhos esperados: ${ missingHeaders }"
@@ -541,7 +606,7 @@
         "Falha ao editar o acesso do usuário."
       ],
       "Failed to load item history": [
-        "Falha ao carregar a história do item"
+        "Falha ao carregar o histórico do item"
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Falha ao mover todos os itens de \"${ payload.content.name }\""
@@ -550,7 +615,7 @@
         "Falha ao mover os itens"
       ],
       "Failed to move items to trash": [
-        "Falha ao mover os itens para a lixeira"
+        "Falha ao mover itens para a lixeira"
       ],
       "Failed to pin item": [
         "Falha ao fixar item"
@@ -559,7 +624,7 @@
         "Falha ao remover o acesso do usuário."
       ],
       "Failed to restore items from trash": [
-        "Falha ao restaurar os itens da lixeira"
+        "Falha ao restaurar itens da lixeira"
       ],
       "Failed to transfer this vault's ownership.": [
         "Falha ao transferir a propriedade deste cofre."
@@ -702,6 +767,20 @@
         "Algo deu errado"
       ]
     },
+    "Feature": {
+      "Dark Web Monitoring": [
+        "Monitoramento da Dark Web"
+      ],
+      "Integrated 2FA authenticator": [
+        "Autenticador A2F integrado"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Aliases do Hide-my-email ilimitados"
+      ],
+      "Vault sharing (up to ${ MAX_VAULT_MEMBERS } people)": [
+        "Compartilhar cofre (até ${ MAX_VAULT_MEMBERS } pessoa)"
+      ]
+    },
     "file size format": {
       "byte": [
         "byte",
@@ -801,6 +880,10 @@
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } exigirá sua senha da ${ BRAND_NAME } para acessar seus dados no modo off-line."
       ],
+      "${ row.breachCount } breach detected": [
+        "${ row.breachCount } violação detectada",
+        "${ row.breachCount } violações detectadas"
+      ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 dias para testar os recursos premium de graça. Somente durante a primeira semana da ${ BRAND_NAME }."
       ],
@@ -826,7 +909,7 @@
         "Todos os itens de \"${ payload.content.name }\" movidos com sucesso"
       ],
       "All items successfully moved": [
-        "Todos os itens movidos"
+        "Todos os itens movidos com sucesso"
       ],
       "All trashed items permanently deleted": [
         "Todos os itens da lixeira foram excluídos permanentemente"
@@ -848,6 +931,9 @@
       ],
       "Auto-lock successfully disabled": [
         "Bloqueio automático desativado"
+      ],
+      "Breaches detected": [
+        "Violações detectadas"
       ],
       "Bring your existing passwords into ${ BRAND_NAME }.": [
         "Traga suas senhas existentes para ${ BRAND_NAME }."
@@ -894,6 +980,9 @@
       "Deleting \"${ payload.content.name }\"": [
         "Excluindo o cofre \"${ payload.content.name }\""
       ],
+      "Didn't receive the code?": [
+        "Não recebeu o código?"
+      ],
       "Drop file here to upload": [
         "Solte o arquivo aqui para enviar"
       ],
@@ -936,6 +1025,9 @@
       ],
       "High Priority": [
         "Alta prioridade"
+      ],
+      "How does monitoring work?": [
+        "Como funciona o monitoramento?"
       ],
       "Import in progress:": [
         "Importação em progresso:"
@@ -1005,6 +1097,12 @@
       "Item restored": [
         "Item restaurado"
       ],
+      "Item successfully excluded from monitoring": [
+        "Item excluído com sucesso do monitoramento."
+      ],
+      "Item successfully included in monitoring": [
+        "Item incluído com sucesso no monitoramento"
+      ],
       "Item successfully moved": [
         "Item movido"
       ],
@@ -1013,6 +1111,9 @@
       ],
       "Item successfully unpinned": [
         "Item desafixado com sucesso"
+      ],
+      "Latest breach on ${ formattedDate }": [
+        "Última violação em ${ formattedDate }"
       ],
       "Learn how to ${ staySaferOnlineLink }": [
         "Aprenda como ${ staySaferOnlineLink }"
@@ -1068,6 +1169,9 @@
       "Never": [
         "Nunca"
       ],
+      "No breaches detected": [
+        "Nenhuma violação detectada"
+      ],
       "No network connection": [
         "Sem conexão com a internet"
       ],
@@ -1084,7 +1188,7 @@
         "Modo off-line desativado com sucesso"
       ],
       "Organization settings successfully updated": [
-        "Configurações da organização foram atualizadas"
+        "Configurações da organização atualizadas com sucesso"
       ],
       "Owner": [
         "Proprietário"
@@ -1204,6 +1308,9 @@
       "Successfully synced all vaults": [
         "Todos os cofres foram sincronizados"
       ],
+      "Suggested": [
+        "Recomendado"
+      ],
       "Switch to another vault or create an item in this vault": [
         "Altere para outro cofre ou crie um item nesse cofre"
       ],
@@ -1215,6 +1322,9 @@
       ],
       "Thank you, the problem has been reported": [
         "Nós lhe agradecemos. O problema foi relatado."
+      ],
+      "The custom email will be sent to ${ href } for monitoring. No other data will be sent to HIBP.": [
+        "O e-mail personalizado será enviado para ${ href } para monitoramento. Nenhum outro dado será enviado ao HIBP."
       ],
       "The export will only contain vaults that you own.": [
         "A exportação conterá apenas cofres que você possui."
@@ -1239,7 +1349,7 @@
         "Esta exportação não será criptografada e qualquer pessoa com acesso ao seu arquivo exportado poderá ver suas senhas. Por segurança, exclua-o após terminar de usá-lo."
       ],
       "This setting is disabled on the organization level": [
-        "A configuração está desativada para a organização"
+        "Esta configuração está desativada no nível da organização"
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Este cofre não é mais compartilhado com ninguém. Convide outras pessoas para compartilha-lo."
@@ -1294,6 +1404,9 @@
       ],
       "Vault \"${ share.content.name }\" was removed": [
         "O cofre \"${ share.content.name }\" foi removido"
+      ],
+      "Verification code sent.": [
+        "Código de verificação enviado."
       ],
       "Viewer": [
         "Visualizador "
@@ -1353,6 +1466,10 @@
       "${ config.options.wordCount } word": [
         "${ config.options.wordCount } palavra",
         "${ config.options.wordCount } palavras"
+      ],
+      "${ usageCount } login": [
+        "${ usageCount } início de sessão",
+        "${ usageCount } inícios de sessão"
       ],
       "1 hour": [
         "1 hora"
@@ -1490,7 +1607,7 @@
         "Exportar"
       ],
       "Exporting policy": [
-        "Exportando política"
+        "Política de exportação"
       ],
       "Field name": [
         "Nome do campo"
@@ -1555,6 +1672,9 @@
       "Last month": [
         "Último mês"
       ],
+      "Last updated": [
+        "Última atualização:"
+      ],
       "Last week": [
         "Última semana"
       ],
@@ -1611,6 +1731,9 @@
       ],
       "No history": [
         "Sem histórico"
+      ],
+      "None": [
+        "Nenhuma"
       ],
       "Note": [
         "Nota"
@@ -1699,6 +1822,12 @@
       "Special characters (!&*)": [
         "Carateres especiais (!&*)"
       ],
+      "Status": [
+        "Status"
+      ],
+      "Strong": [
+        "Forte"
+      ],
       "Suffix": [
         "Sufixo"
       ],
@@ -1744,6 +1873,9 @@
       "Update": [
         "Atualizar"
       ],
+      "Used in": [
+        "Usada em"
+      ],
       "Username": [
         "Nome de usuário"
       ],
@@ -1767,6 +1899,12 @@
       ],
       "View logs": [
         "Visualizar registros"
+      ],
+      "Vulnerable": [
+        "Vulnerável"
+      ],
+      "Weak": [
+        "Fraco"
       ],
       "Websites": [
         "Sites"
@@ -1943,14 +2081,29 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } addresses": [
+        "Endereços da ${ BRAND_NAME }"
+      ],
+      "Account protection": [
+        "Proteção de conta"
+      ],
       "Auto-lock update": [
         "Atualização de bloqueio automático"
       ],
-      "Block trackers and malware": [
-        "Bloqueie rastreadores e malware"
+      "Breach detected": [
+        "Violação detectada"
+      ],
+      "Breaches": [
+        "Vulnerações"
+      ],
+      "Breaches detected for": [
+        "Violações detectadas para"
       ],
       "Confirm PIN code": [
         "Confirmar código PIN"
+      ],
+      "Confirm your email": [
+        "Confirmar seu e-mail"
       ],
       "Create a vault": [
         "Criar um cofre"
@@ -1963,6 +2116,18 @@
       ],
       "Current version": [
         "Versão atual"
+      ],
+      "Custom addresses": [
+        "Endereços personalizados"
+      ],
+      "Custom email monitoring": [
+        "Monitoramento de e-mail personalizado"
+      ],
+      "Custom emails": [
+        "E-mails personalizados"
+      ],
+      "Dark Web Monitoring": [
+        "Monitoramento da Dark Web"
       ],
       "Delete vault \"${ vaultName }\" ?": [
         "Excluir cofre \"${ vaultName }\""
@@ -1985,11 +2150,17 @@
       "Enter your PIN": [
         "Digite o seu PIN"
       ],
+      "Excluded items": [
+        "Itens excluídos"
+      ],
       "Get Started": [
         "Começar"
       ],
       "Grant permissions": [
         "Conceder permissões"
+      ],
+      "Hide-my-email aliases": [
+        "Aliases do hide-my-email"
       ],
       "History": [
         "Histórico"
@@ -2002,6 +2173,9 @@
       ],
       "Import your data": [
         "Importe seus dados"
+      ],
+      "Inactive 2FA": [
+        "A2F inativa"
       ],
       "Install extension": [
         "Instalar extensão"
@@ -2017,6 +2191,9 @@
       ],
       "Low disk space": [
         "Pouco espaço no disco"
+      ],
+      "Mark as resolved?": [
+        "Marcar como resolvido?"
       ],
       "Member limit": [
         "Limite de membros"
@@ -2036,8 +2213,14 @@
       "Move items?": [
         "Mover itens?"
       ],
+      "No insecure passwords": [
+        "Senhas não seguras"
+      ],
       "No items selected": [
         "Nenhum item selecionado"
+      ],
+      "No reused passwords": [
+        "Sem senhas reutilizadas"
       ],
       "Our welcome gift to you": [
         "Nosso presente de boas-vindas para você"
@@ -2047,6 +2230,12 @@
       ],
       "Password": [
         "Senha"
+      ],
+      "Password Health": [
+        "Estado da senha"
+      ],
+      "Pause monitoring?": [
+        "Pausar monitoramento?"
       ],
       "Pending access to the shared data": [
         "Acesso pendente para compartilhar os dados."
@@ -2062,6 +2251,16 @@
       ],
       "Restore this version?": [
         "Restaurar essa versão?"
+      ],
+      "Resume monitoring?": [
+        "Retomar monitoramento?"
+      ],
+      "Reused ${ count } time": [
+        "Reutilizada ${ count } vez",
+        "Reutilizada ${ count } vezes"
+      ],
+      "Reused passwords": [
+        "Senhas reutilizadas"
       ],
       "Review and share": [
         "Revisar e compartilhar"
@@ -2080,6 +2279,9 @@
       ],
       "Share with": [
         "Compartilhar com"
+      ],
+      "Stay safer online": [
+        "Fique seguro on-line"
       ],
       "Suggestions": [
         "Sugestões"
@@ -2101,6 +2303,15 @@
       ],
       "Vault shared with you": [
         "Cofre compartilhado com você"
+      ],
+      "Want to learn more?": [
+        "Deseja saber mais?"
+      ],
+      "Weak password": [
+        "Senha fraca"
+      ],
+      "Weak passwords": [
+        "Senhas fracas"
       ],
       "What is an alias?": [
         "O que é um alias?"
@@ -2175,6 +2386,9 @@
       "Duplicate email addresses.": [
         "Endereços de e-mail duplicados."
       ],
+      "Email is required": [
+        "O e-mail é obrigatório"
+      ],
       "Empty note": [
         "Nota vazia"
       ],
@@ -2186,6 +2400,12 @@
       ],
       "Invalid alias prefix": [
         "O prefixo de alias não é valido."
+      ],
+      "Invalid code": [
+        "O código não é válido."
+      ],
+      "Invalid email": [
+        "O e-mail não é válido."
       ],
       "Invalid email addresses.": [
         "Endereços de e-mail inválidos."
@@ -2265,6 +2485,9 @@
       ],
       "Vault name is required": [
         "O nome do cofre é obrigatório"
+      ],
+      "Verification code is required": [
+        "O código de verificação é necessário."
       ],
       "You cannot create more vaults than your subscription allows.": [
         "Sua assinatura não permite a criação de múltiplos cofres."

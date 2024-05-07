@@ -101,9 +101,6 @@
       "Create alias": [
         "Skapa alias"
       ],
-      "Create an alias": [
-        "Skapa ett alias"
-      ],
       "Create card": [
         "Skapa kort"
       ],
@@ -161,8 +158,8 @@
       "Edit vault": [
         "Redigera valv"
       ],
-      "Enable NetShield": [
-        "Aktivera NetShield"
+      "Enable Dark Web Monitoring": [
+        "Aktivera övervakning för ”Dark web”"
       ],
       "Exclude from monitoring": [
         "Exkludera från övervakning"
@@ -404,6 +401,9 @@
       "Trash": [
         "Lägg i papperskorg"
       ],
+      "Try again.": [
+        "Försök igen."
+      ],
       "Unpin item": [
         "Lossa objekt"
       ],
@@ -482,6 +482,9 @@
         "${ total } annan inloggning använder samma lösenord",
         "${ total } andra inloggningar använder samma lösenord"
       ],
+      "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
+        "2FA lägger till ytterligare ett lager av säkerhet till dina inloggningar. ${ PASS_APP_NAME } gör 2FA enklare genom att lagra och automatiskt fylla i dina 2FA-koder."
+      ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Ett e-postalias fungerar som en e-postadress, men minskar skräppost och håller din faktiska e-postadress och identitet dold."
       ],
@@ -491,29 +494,32 @@
       "Create unique passwords": [
         "Skapa unika lösenord"
       ],
+      "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
+        "Övervakning av ”Dark web” är tillgängligt med ett betalt paket. Uppgradera för omedelbar åtkomst."
+      ],
       "Get notified if your email, password or other personal data was leaked.": [
         "Bli aviserad om din e-post, lösenord eller annan personlig data har läckt."
-      ],
-      "Increase your security": [
-        "Öka din säkerhet"
-      ],
-      "It would be more secure to set up 2FA for this account.": [
-        "Det skulle vara mer säkert att ställa in 2FA för detta konto."
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "Håll din information mer säker och privat med dessa guider och tips."
       ],
-      "NetShield is an ad-blocking feature from ${ VPN_APP_NAME } that protects your device from ads, trackers, and malware. ": [
-        "NetShield är en annonsblockerande funktion från ${ VPN_APP_NAME } som skyddar din enhet från annonser, spårare och skadlig kod. "
-      ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Vår banbrytande AI-drivna säkerhetslösning designad för användare som söker utökat skydd för sina konton. ${ learnMoreLink }"
+      ],
+      "Set up 2FA for more security": [
+        "Ställ in 2FA för mer säkerhet"
       ],
       "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
         "Börja övervaka för dataintrång relaterade till konton som skapats med din e-postadress och dina hide-my-email-alias."
       ],
+      "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
+        "”Dark web” är en dold del av Internet där stulen personlig information, som identiteter, kan köpas och säljas."
+      ],
       "This account is vulnerable, visit the service and change your password.": [
         "Detta konto är sårbart, besök tjänsten och ändra ditt lösenord."
+      ],
+      "This service offers 2FA. Enable it for added account security.": [
+        "Denna tjänst erbjuder 2FA. Aktivera det för extra kontosäkerhet."
       ],
       "Your email addresses were leaked in at least 1 data breach.": [
         "Dina e-postadresser läckte vid minst 1 dataintrång."
@@ -620,9 +626,6 @@
       ],
       "Failed to edit user's access.": [
         "Misslyckades att redigera användaråtkomst."
-      ],
-      "Failed to load breaches": [
-        "Misslyckades att ladda intrång"
       ],
       "Failed to load breaches for this address": [
         "Misslyckades att ladda intrång för denna adress"
@@ -802,6 +805,9 @@
       ]
     },
     "Feature": {
+      "Dark Web Monitoring": [
+        "Övervakning Dark Web"
+      ],
       "Integrated 2FA authenticator": [
         "Integrerad 2FA-autentisering"
       ],
@@ -892,7 +898,8 @@
       "${ PROTON_SENTINEL_NAME } successfully enabled": [
         "${ PROTON_SENTINEL_NAME } aktiverades"
       ],
-      "${ row.breachCount } breaches detected": [
+      "${ row.breachCount } breach detected": [
+        "${ row.breachCount } intrång upptäckt",
         "${ row.breachCount } intrång upptäckta"
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
@@ -1060,6 +1067,9 @@
       ],
       "High Priority": [
         "Hög prioritet"
+      ],
+      "How does monitoring work?": [
+        "Hur fungerar övervakning?"
       ],
       "Import in progress:": [
         "Import pågår:"
@@ -1358,6 +1368,9 @@
       "Thank you, the problem has been reported": [
         "Tack, problemet har rapporterats"
       ],
+      "The custom email will be sent to ${ href } for monitoring. No other data will be sent to HIBP.": [
+        "Den anpassad e-posten kommer att skickas till ${ href } för övervakning. Ingen annan data kommer att skickas till HIBP."
+      ],
       "The export will only contain vaults that you own.": [
         "Exporten kommer endast innehålla valv som du äger."
       ],
@@ -1483,8 +1496,14 @@
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Du har nått den högsta tillåtna längden på ${ maxLength } tecken."
       ],
+      "You will be notified of data breaches for these email addresses.": [
+        "Du kommer att aviseras om dataintrång för dessa e-postadresser."
+      ],
       "You will be notified of data breaches for this email address.": [
         "Du kommer att aviseras om dataintrång för denna e-postadress."
+      ],
+      "You will no longer be notified of data breaches for these email addresses.": [
+        "Du kommer inte längre att aviseras om dataintrång för dessa e-postadresser."
       ],
       "You will no longer be notified of data breaches for this email address.": [
         "Du kommer inte längre att aviseras om dataintrång för denna e-postadress."
@@ -2149,9 +2168,6 @@
       "Auto-lock update": [
         "Uppdatering av autolås"
       ],
-      "Block trackers and malware": [
-        "Blockera spårare och skadlig kod"
-      ],
       "Breach detected": [
         "Intrång upptäckt"
       ],
@@ -2187,6 +2203,9 @@
       ],
       "Custom emails": [
         "Anpassad e-post"
+      ],
+      "Dark Web Monitoring": [
+        "Övervakning Dark Web"
       ],
       "Delete vault \"${ vaultName }\" ?": [
         "Ta bort “${ vaultName }“?"
@@ -2233,6 +2252,9 @@
       "Import your data": [
         "Importera din data"
       ],
+      "Inactive 2FA": [
+        "Inaktiv 2FA"
+      ],
       "Install extension": [
         "Installera utökning"
       ],
@@ -2245,6 +2267,9 @@
       "Leave vault ?": [
         "Lämna valv?"
       ],
+      "Loading breaches...": [
+        "Laddar in intrång …"
+      ],
       "Low disk space": [
         "Lågt diskutrymme"
       ],
@@ -2256,12 +2281,6 @@
       ],
       "Members": [
         "Medlemmar"
-      ],
-      "Missing 2FA": [
-        "Saknar 2FA"
-      ],
-      "Missing two-factor authentication": [
-        "Saknar tvåfaktorsautentisering"
       ],
       "Modified": [
         "Ändrad"
@@ -2277,6 +2296,9 @@
       ],
       "No excluded items": [
         "Inga exkluderade objekt"
+      ],
+      "No inactive 2FAs": [
+        "Inga inaktiva 2FA"
       ],
       "No insecure passwords": [
         "Inga osäkra lösenord"
@@ -2342,6 +2364,12 @@
       "Set access level": [
         "Ställ in åtkomstnivå"
       ],
+      "Set up 2FA for better security": [
+        "Ställ in 2FA för bättre säkerhet"
+      ],
+      "Set up 2FA for more security": [
+        "Ställ in 2FA för mer säkerhet"
+      ],
       "Settings": [
         "Inställningar"
       ],
@@ -2386,6 +2414,9 @@
       ],
       "What is an alias?": [
         "Vad är ett alias?"
+      ],
+      "What is the dark web?": [
+        "Vad är ”Dark web”?"
       ],
       "Why ${ PASS_APP_NAME }?": [
         "Varför ${ PASS_APP_NAME }?"
@@ -2465,6 +2496,9 @@
       ],
       "Expiration Date is not in the format MM/YY": [
         "Utgångsdatum är inte i formatet MM/ÅÅ"
+      ],
+      "Failed to load breaches.": [
+        "Misslyckades att ladda intrång."
       ],
       "Invalid alias prefix": [
         "Ogiltigt alias-prefix"

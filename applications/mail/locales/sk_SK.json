@@ -367,6 +367,9 @@
       "Download ${ attachmentName }": [
         "Stiahnuť ${ attachmentName }"
       ],
+      "Download Desktop App": [
+        "Stiahnuť desktopové aplikácie"
+      ],
       "Download now": [
         "Stiahnuť teraz"
       ],
@@ -591,6 +594,9 @@
       ],
       "label emails as": [
         "označiť emaily ako"
+      ],
+      "Later": [
+        "Neskôr"
       ],
       "Later this week": [
         "Neskôr tento týždeň"
@@ -1132,12 +1138,6 @@
       "Trust": [
         "Dôverovať"
       ],
-      "Trust key": [
-        "Dôveryhodný kľúč",
-        "Dôveryhodný kľúč",
-        "Dôverovať kľúčom",
-        "Dôverovať novým kľúčom"
-      ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
       ],
@@ -1429,11 +1429,6 @@
       ],
       "New email": [
         "Nový email"
-      ]
-    },
-    "App logo": {
-      "Download ${ MAIL_APP_NAME } desktop application": [
-        "Stiahnuť desktopovú aplikáciu ${ MAIL_APP_NAME }"
       ]
     },
     "Apps dropdown": {
@@ -3382,12 +3377,6 @@
       "Missing feature(s)": [
         "Chýbajúce funkcie"
       ],
-      "My reason isn't listed, please comment": [
-        "Môj dôvod nie je uvedený, prosím okomentujte"
-      ],
-      "Streaming service unsupported": [
-        "Streamovacia služba nie je podporovaná"
-      ],
       "Subscription is too expensive": [
         "Predplatné je príliš drahé"
       ],
@@ -3406,6 +3395,29 @@
     "Download attachments": {
       "Download all": [
         "Stiahnuť všetko"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Rozšírená história verzií"
+      ],
+      "Priority support": [
+        "Prioritná podpora"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Obnovuje sa za ${ renewablePrice }, zrušiť môžete kedykoľvek"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "za prvý mesiac"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Získať ${ planName } len za ${ planPrice }"
       ]
     },
     "Email body for description (description part)": {
@@ -4076,6 +4088,9 @@
       ],
       "You have reached the contacts limit for your account": [
         "Dosiahli ste limit kontaktov pre svoj účet"
+      ],
+      "You have reached the maximum number of calendars.": [
+        "Dosiahli ste maximálny počet kalendárov."
       ],
       "You must set a name": [
         "Musíte nastaviť meno"
@@ -6079,9 +6094,6 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "Pre viac výsledkov skúste toto kľúčové slovo vyhľadať v obsahu vašich emailových správ."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Preposielajte prichádzajúcu poštu z iného účtu do vašej zabezpečenej schránky ${ MAIL_APP_NAME }."
-      ],
       "From": [
         "Od"
       ],
@@ -6150,9 +6162,6 @@
       ],
       "Import mailbox": [
         "Importovať poštovú schránku"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Importujte svoje emaily, kalendáre a kontakty z inej služby do ${ BRAND_NAME }u."
       ],
       "Important note": [
         "Dôležitá poznámka"
@@ -9668,7 +9677,7 @@
         "Vyberte motív"
       ],
       "Set up your organization": [
-        "Nastavte svoju organizáciu"
+        "Nastaviť svoju organizáciu"
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME }.": [
         "Výberom aplikácie v ľavom hornom rohu získate prístup ku všetkým službám ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } a ${ PASS_SHORT_APP_NAME }."
@@ -10794,14 +10803,8 @@
       ]
     },
     "Spotlight": {
-      "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
-        "Pohodlne spustite ${ MAIL_APP_NAME } priamo z plochy."
-      ],
       "Email tracking protection": [
         "Ochrana pred sledovacími prvkami v emailoch"
-      ],
-      "Get the desktop app": [
-        "Získať desktopovú aplikáciu"
       ],
       "Get up to ${ credits } in credits.": [
         "Získajte až ${ credits } v kreditoch."
@@ -11039,6 +11042,9 @@
       ],
       "Desktop app": [
         "Desktopová aplikácia"
+      ],
+      "Upgrade": [
+        "Prejsť na platený plán"
       ]
     },
     "Subscription renewal state": {
@@ -12495,6 +12501,9 @@
       ],
       "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
         "Predplatné sa automaticky obnovuje každé 3 mesiace. Ďalší dátum fakturácie je o 3 mesiace."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Špeciálne zľavnená cena ${ priceWithDiscount } platí prvý mesiac. Potom sa každý mesiac automaticky obnoví za ${ renewPrice }. Službu môžete kedykoľvek zrušiť."
       ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Potom vám bude každých 12 mesiacov vystavená faktúra vo výške ${ renewPrice }."

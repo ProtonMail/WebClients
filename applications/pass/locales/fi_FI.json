@@ -158,6 +158,12 @@
       "Edit vault": [
         "Muokkaa holvia"
       ],
+      "Enable Dark Web Monitoring": [
+        "Ota Pimeän verkon valvonta käyttöön"
+      ],
+      "Exclude from monitoring": [
+        "Sulje valvonnan ulkopuolelle"
+      ],
       "Export": [
         "Vie"
       ],
@@ -182,6 +188,9 @@
       "Get mobile apps": [
         "Hanki mobiilisovellukset"
       ],
+      "Get Pass Plus": [
+        "Hanki Pass Plus"
+      ],
       "Get Started": [
         "Aloita"
       ],
@@ -199,6 +208,9 @@
       ],
       "Importing": [
         "Tuodaan"
+      ],
+      "Include in monitoring": [
+        "Sisällytä valvontaan"
       ],
       "Install extension": [
         "Asenna laajennus"
@@ -278,6 +290,12 @@
       "Pass for iOS": [
         "Pass iOS:lle"
       ],
+      "Pass Monitor": [
+        "Pass-valvonta"
+      ],
+      "Pause monitoring": [
+        "Keskeytä valvonta"
+      ],
       "Pin item": [
         "Kiinnitä kohde"
       ],
@@ -308,6 +326,9 @@
       "Resend code": [
         "Lähetä koodi uudelleen"
       ],
+      "Resend code (in ${ remaining }s)": [
+        "Lähetä koodi uudelleen (${ remaining }s kuluttua)"
+      ],
       "Resend invitation": [
         "Lähetä kutsu uudelleen"
       ],
@@ -317,6 +338,9 @@
       "Restore item": [
         "Palauta kohde"
       ],
+      "Resume monitoring": [
+        "Palauta valvonta"
+      ],
       "Retry": [
         "Yritä uudelleen"
       ],
@@ -325,6 +349,9 @@
       ],
       "Saving": [
         "Tallennetaan"
+      ],
+      "See all": [
+        "Näytä kaikki"
       ],
       "See members": [
         "Näytä jäsenet"
@@ -374,6 +401,9 @@
       "Trash": [
         "Poista"
       ],
+      "Try again.": [
+        "Yritä uudelleen."
+      ],
       "Unpin item": [
         "Irrota kohde"
       ],
@@ -392,6 +422,9 @@
       "Verify": [
         "Vahvista"
       ],
+      "View details": [
+        "Näytä tiedot"
+      ],
       "View history": [
         "Näytä historia"
       ],
@@ -408,7 +441,7 @@
         "Kirjoita meille Twitterissä"
       ],
       "Your password manager not here? Request it.": [
-        "Eikö salasanahallintaasi ole listattu? Pyydä sitä."
+        "Eikö salasanahallintaasi ole listattu? Pyydä sen lisäystä."
       ]
     },
     "bf2023: Info": {
@@ -442,6 +475,63 @@
       ],
       "Expand": [
         "Laajenna"
+      ]
+    },
+    "Description": {
+      "${ total } other login uses the same password": [
+        "${ total } muu kirjautumistieto käyttää samaa salasanaa",
+        "${ total } muuta kirjautumistietoa käyttää samaa salasanaa"
+      ],
+      "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
+        "Kaksivaiheinen tunnistautuminen vaihvistaa kirjautumistietojesi suojausta. ${ PASS_APP_NAME } helpottaa tätä säilyttämällä 2FA-koodisi ja täyttämällä ne automaattisesti."
+      ],
+      "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
+        "Sähköpostialias toimii tavallisen sähköpostiosoitteen tapaan, mutta vähentää roskapostia ja pitää todellisen osoitteesi ja identiteettisi piilossa."
+      ],
+      "Change your passwords": [
+        "Vaihda salasanasi"
+      ],
+      "Create unique passwords": [
+        "Luo yksilöllisiä salasanoja"
+      ],
+      "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
+        "Pimeän verkon valvonta sisältyy maksullisiin tilauksiin. Saat sen heti käyttöösi päivitämällä tilauksesi."
+      ],
+      "Get notified if your email, password or other personal data was leaked.": [
+        "Vastaanota ilmoituksia, jos sähköpostiosoitteesi, salasanasi tai muita henkilökohtaisia tietojasi on vuotanut."
+      ],
+      "Keep your info more secure and private with these guides and tips.": [
+        "Suojaa tietosi paremmin ja vahvista niiden yksityisyyttä näillä oppailla ja vinkeillä."
+      ],
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "Huippumoderni tekoälypohjainen tietoturvaratkaisumme, joka on suunniteltu tileilleen tehostettua suojausta kaipaaville käyttäjille. ${ learnMoreLink }"
+      ],
+      "Set up 2FA for more security": [
+        "Tehosta suojausta määrittämällä kaksivaiheinen tunnistautuminen"
+      ],
+      "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
+        "Aloita sähköpostiosoitettasi ja Hide-my-email-aliaksiasi käyttävien tilien tietomurtovalvonta."
+      ],
+      "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
+        "Pimeä verkko on Internetin piilotettu osa, jossa verkkoidentiteettien kaltaiset henkilökohtaiset tiedot ovat kauppatavaraa."
+      ],
+      "These items remain at risk": [
+        "Nämä kohteet ovat edelleen vaarassa"
+      ],
+      "This account is vulnerable, visit the service and change your password.": [
+        "Tämä tili on vaarassa, käy palvelussa ja vaihda salasanasi."
+      ],
+      "This service offers 2FA. Enable it for added account security.": [
+        "Palvelu mahdollistaa kaksivaiheisen tunnistautumisen. Paranna tilin suojausta ottamalla se käyttöön."
+      ],
+      "With ${ PASS_SHORT_APP_NAME } Monitor, stay ahead of threats by getting instant alerts if your credentials are compromised. Unlock advanced security features and detailed logs to safeguard your online presence.": [
+        "${ PASS_SHORT_APP_NAME }-valvonnalla pysyt uhkien edellä välittömillä ilmoituksilla, jos käyttäjätietosi ovat vaarantuneet. Suojaa verkkoidentiteettiäsi avaamalla edistyneet suojausominaisuudet ja yksityiskohtaiset lokitiedot."
+      ],
+      "Your email addresses were leaked in at least 1 data breach.": [
+        "Sähköpostiosoitteesi ovat paljastuneet ainakin yhdessä tietomurrossa."
+      ],
+      "Your personal info was leaked in a data breach of a third-party service.": [
+        "Henkilökohtaisia tietojasi on vuotanut ulkopuolisen palveluun kohdistuneen tietomurron yhteydessä."
       ]
     },
     "Error": {
@@ -531,6 +621,12 @@
       "Failed resending invite.": [
         "Kutsun uudelleenlähetys epäonnistui."
       ],
+      "Failed to add email address": [
+        "Sähköpostiosoitteen lisääminen epäonnistui"
+      ],
+      "Failed to delete email address from monitoring": [
+        "Sähköpostiosoitteen poistaminen valvonnasta epäonnistui"
+      ],
       "Failed to delete selected items": [
         "Valittujen kohteiden poisto epäonnistui"
       ],
@@ -539,6 +635,12 @@
       ],
       "Failed to edit user's access.": [
         "Käyttäjän käyttöoikeuden muutos epäonnistui."
+      ],
+      "Failed to load breaches for this address": [
+        "Tähän osoitteeseen liittyvien tietomurtojen lataus epäonnistui"
+      ],
+      "Failed to load breaches for this email alias": [
+        "Tähän sähköpostialiakseen liittyvien tietomurtojen lataus epäonnistui"
       ],
       "Failed to load item history": [
         "Kohteen historian lataus epäonnistui"
@@ -558,6 +660,12 @@
       "Failed to remove user's access.": [
         "Käyttäjän käyttöoikeuden mitätöinti epäonnistui."
       ],
+      "Failed to resend verification for custom email": [
+        "Mukautetun sähköpostiosoitteen vahvistuksen uudelleenlähetys epäonnistui"
+      ],
+      "Failed to resolve breaches for this address": [
+        "Tietomurtojen ratkaiseminen tälle osoitteelle epäonnistui"
+      ],
       "Failed to restore items from trash": [
         "Kohteiden palautus roskakorista epäonnistui"
       ],
@@ -566,6 +674,21 @@
       ],
       "Failed to unpin item": [
         "Kohteen irrotus epäonnistui"
+      ],
+      "Failed to update monitoring settings": [
+        "Valvonta-asetusten päivitys epäonnistui"
+      ],
+      "Failed to verify email address": [
+        "Sähköpostiosoitteen vahvistaminen epäonnistui"
+      ],
+      "Failed updating ${ PROTON_SENTINEL_NAME } setting": [
+        "${ PROTON_SENTINEL_NAME } -asetuksen päivitys epäonnistui"
+      ],
+      "Failed updating monitor flag of the item": [
+        "Kohteen valvontalipun päivittäminen epäonnistui"
+      ],
+      "Failed updating monitoring status for this email address": [
+        "Tämän sähköpostiosoitteen valvontatilan päivittäminen epäonnistui"
       ],
       "File could not be parsed": [
         "Tiedostoa ei voitu jäsentää"
@@ -702,6 +825,20 @@
         "Jotain meni pieleen"
       ]
     },
+    "Feature": {
+      "Dark Web Monitoring": [
+        "Pimeän verkon valvonta"
+      ],
+      "Integrated 2FA authenticator": [
+        "Sisäänrakennettu kaksivaiheinen todentaja"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Rajattomasti Hide-my-email-aliaksia"
+      ],
+      "Vault sharing (up to ${ MAX_VAULT_MEMBERS } people)": [
+        "Holvin jakaminen (enintään ${ MAX_VAULT_MEMBERS } henkilöä)"
+      ]
+    },
     "file size format": {
       "byte": [
         "tavu",
@@ -776,6 +913,16 @@
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } vaatii ${ BRAND_NAME }-salasanasi tietojen yhteydettömään käyttöön."
       ],
+      "${ PROTON_SENTINEL_NAME } successfully disabled": [
+        "${ PROTON_SENTINEL_NAME } poistettiin käytöstä"
+      ],
+      "${ PROTON_SENTINEL_NAME } successfully enabled": [
+        "${ PROTON_SENTINEL_NAME } otettiin käyttöön"
+      ],
+      "${ row.breachCount } breach detected": [
+        "${ row.breachCount } tietomurto on havaittu",
+        "${ row.breachCount } tietomurtoa on havaittu"
+      ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 päivää aikaa kokeilla premium-ominaisuuksia ilmaiseksi. Voimassa vain ensimmäisen ${ BRAND_NAME } -viikkosi ajan."
       ],
@@ -784,6 +931,9 @@
       ],
       "Access successfully confirmed": [
         "Käyttöoikeus vahvistettiin"
+      ],
+      "Add your custom email address to monitor :": [
+        "Lisää valvontaan mukautettu sähköpostiosoite:"
       ],
       "Admin": [
         "Ylläpito"
@@ -796,6 +946,15 @@
       ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Alias \"${ item.aliasEmail }\" siirrettiin roskakoriin, eikä se enää ohjaa viestejä postilaatikkoosi."
+      ],
+      "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
+        "Omia verkkotunnuksiasi käyttäviä aliaksia ei valvota. Lisää ne valvontaan mukautettuina sähköpostiosoitteina."
+      ],
+      "All breaches for this address were resolved": [
+        "Kaikki tämän osoitteet tieetomurrot ratkaistiin"
+      ],
+      "All current breaches will be marked as resolved. In case of future data breaches, you'll be notified.": [
+        "Kaikki nykyiset tietomurrot merkitään ratkaistuiksi. Tulevista tietomurroista ilmoitetaan sinulle."
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Kohteen \"${ payload.content.name }\" kaikki kohteet on siirretty"
@@ -823,6 +982,9 @@
       ],
       "Auto-lock successfully disabled": [
         "Automaattilukitus poistettiin käytöstä"
+      ],
+      "Breaches detected": [
+        "Tietovuotoja havaittiin"
       ],
       "Bring your existing passwords into ${ BRAND_NAME }.": [
         "Tuo olemassa olevat salasanasi ${ BRAND_NAME }iin."
@@ -869,6 +1031,9 @@
       "Deleting \"${ payload.content.name }\"": [
         "Poistetaan kohdetta \"${ payload.content.name }\""
       ],
+      "Didn't receive the code?": [
+        "Etkö saanut koodia?"
+      ],
       "Drop file here to upload": [
         "Pudota ladattava tiedosto tähän"
       ],
@@ -881,8 +1046,20 @@
       "email": [
         "sähköpostiosoite"
       ],
+      "Email address successfully deleted from monitoring": [
+        "Sähköpostiosoite poistettiin valvonnasta"
+      ],
+      "Email address successfully excluded from monitoring": [
+        "Sähköpostiosoite poissuljettiin valvonnasta"
+      ],
+      "Email address successfully included in monitoring": [
+        "Sähköpostiosoite lisättiin valvontaan"
+      ],
       "Emptying trash...": [
         "Tyhjennetään roskakoria..."
+      ],
+      "Enable ${ PASS_SHORT_APP_NAME } beta": [
+        "Ota ${ PASS_SHORT_APP_NAME } -betaversio käyttöön"
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Syötä vahvistuskoodi. Numero ${ digit }."
@@ -911,6 +1088,9 @@
       ],
       "High Priority": [
         "Korkea tärkeys"
+      ],
+      "How does monitoring work?": [
+        "Miten valvonta toimii?"
       ],
       "Import in progress:": [
         "Tuonti on käynnissä:"
@@ -980,6 +1160,12 @@
       "Item restored": [
         "Kohde palautettiin"
       ],
+      "Item successfully excluded from monitoring": [
+        "Kohde poistettiin valvonnasta"
+      ],
+      "Item successfully included in monitoring": [
+        "Kohde lisättiin valvontaan"
+      ],
       "Item successfully moved": [
         "Kohde siirrettiin"
       ],
@@ -989,8 +1175,11 @@
       "Item successfully unpinned": [
         "Kohde irrotettiin"
       ],
+      "Latest breach on ${ formattedDate }": [
+        "Viimeisin tietomurto ${ formattedDate }"
+      ],
       "Learn how to ${ staySaferOnlineLink }": [
-        "Opi kuinka ${ staySaferOnlineLink }"
+        "Opi ${ staySaferOnlineLink }"
       ],
       "Leaving vault...": [
         "Poistutaan holvista..."
@@ -1022,6 +1211,9 @@
       "Monitor accounts": [
         "Valvo tilejä"
       ],
+      "Monitoring settings successfully updated": [
+        "Valvota-asetusten päivitys onnistui"
+      ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "${ PASS_APP_NAME } on muutakin kuin pelkkä salasanahallinta, sillä se voi salasanojesi lisäksi suojata myös sähköpostiosoitteesi sähköpostialiaksilla. Tietosi ovat päästä päähän -salattuja ${ MAIL_APP_NAME }in käyttämällä tekniikalla ja vain sinä pääset niihin käsiksi."
       ],
@@ -1042,6 +1234,9 @@
       ],
       "Never": [
         "Ei koskaan"
+      ],
+      "No breaches detected": [
+        "Tietomurtoja ei havaittu"
       ],
       "No network connection": [
         "Verkkoyhteyttä ei ole"
@@ -1088,6 +1283,9 @@
       ],
       "Pinning item...": [
         "Kohdetta kiinnitetään..."
+      ],
+      "Please check your spam folder or try resending the code.": [
+        "Tarkista roskapostikansiosi tai yritä lähettää koodi uudelleen."
       ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Vahvista yhteydettömän tilan käyttöönotto ${ BRAND_NAME }-salasanallasi."
@@ -1179,6 +1377,9 @@
       "Successfully synced all vaults": [
         "Kaikki holvit synkronoitiin"
       ],
+      "Suggested": [
+        "Ehdotukset"
+      ],
       "Switch to another vault or create an item in this vault": [
         "Vaihda toiseen holviin tai luo kohde tähän holviin"
       ],
@@ -1191,6 +1392,9 @@
       "Thank you, the problem has been reported": [
         "Kiitos, ongelmasta on ilmoitettu"
       ],
+      "The custom email will be sent to ${ href } for monitoring. No other data will be sent to HIBP.": [
+        "Mukautettu sähköpostiosoite lähetetään valvottavaksi palveluun ${ href }. HIPB:lle ei lähetetä muita tietoja."
+      ],
       "The export will only contain vaults that you own.": [
         "Vienti sisältää vain omistamasi holvit."
       ],
@@ -1198,7 +1402,7 @@
         "Viety tiedosto salataan PGP:llä ja se vaatii vahvan tunnuslausekkeen."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
-        "Paljastuneet tiedot vuotivat kolmannen osapuolen palvelusta. Sinun ${ BRAND_NAME } -tilisi tiedot pysyvät suojattuina ja salattuina. ${ learnMoreLink }"
+        "Paljastuneet tiedot vuosivat ulkopuolisesta palvelusta. ${ BRAND_NAME }-tilisi tiedot ovat suojassa ja salattuina. ${ learnMoreLink }"
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Seuraavaa ${ result.ignored.length } kohdetta ei voitu tuoda:",
@@ -1273,11 +1477,17 @@
       "Vault \"${ share.content.name }\" was removed": [
         "Holvi \"${ share.content.name }\" poistettiin"
       ],
+      "Verification code sent.": [
+        "Vahvistuskoodi lähetettiin."
+      ],
       "Viewer": [
         "Tarkastelu"
       ],
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Tietojen synkronoinnissa laitteelle on ongelmia. Varmista, että vapaata tilaa on riittävästi, jotta ${ PASS_SHORT_APP_NAME } toimii sujuvasti."
+      ],
+      "We’ve sent a verification code to ${ email }. Please enter it below:": [
+        "Vahvistuskoodi lähetettiin osoitteeseen ${ email }. Syötä se alle:"
       ],
       "You are about to create:": [
         "Luot aliasta:"
@@ -1310,6 +1520,18 @@
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Olet saavuttanut ${ maxLength }-merkin enimmäispituuden."
       ],
+      "You will be notified of data breaches for these email addresses.": [
+        "Sinulle ilmoitetaan näihin sähköpostiosoitteisiin liittyvistä tietomurroista."
+      ],
+      "You will be notified of data breaches for this email address.": [
+        "Sinulle ilmoitetaan tämän sähköpostiosoitteen tietomurroista."
+      ],
+      "You will no longer be notified of data breaches for these email addresses.": [
+        "Sinulle ei enää ilmoiteta näihin sähköpostiosoitteisiin liittyvistä tietomurroista."
+      ],
+      "You will no longer be notified of data breaches for this email address.": [
+        "Sinulle ei enää ilmoiteta tähän sähköpostiosoitteeseen liittyvistä tietomurroista."
+      ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "Tällä PIN-koodilla voit avata ${ PASS_APP_NAME }in sen lukkiuduttua toimettomuuden seuraksena automaattisesti."
       ],
@@ -1331,6 +1553,10 @@
       "${ config.options.wordCount } word": [
         "${ config.options.wordCount } sana",
         "${ config.options.wordCount } sanaa"
+      ],
+      "${ usageCount } login": [
+        "${ usageCount } kirjautuminen",
+        "${ usageCount } kirjautumista"
       ],
       "1 hour": [
         "Tunnin kuluttua"
@@ -1384,7 +1610,7 @@
         "Aakkosellisesti"
       ],
       "Application logs": [
-        "Sovelluksen lokitiedot"
+        "Sovelluslokit"
       ],
       "Auto-lock ${ PASS_APP_NAME }": [
         "Lukitse ${ PASS_APP_NAME } automaattisesti"
@@ -1536,6 +1762,9 @@
       "Last month": [
         "Neljän viikon aikana"
       ],
+      "Last updated": [
+        "Viimeksi päivitetty"
+      ],
       "Last week": [
         "Viikon aikana"
       ],
@@ -1592,6 +1821,9 @@
       ],
       "No history": [
         "Historiaa ei ole"
+      ],
+      "None": [
+        "Ei määritetty"
       ],
       "Note": [
         "Muistiinpano"
@@ -1680,6 +1912,12 @@
       "Special characters (!&*)": [
         "Erikoismerkit (!&*)"
       ],
+      "Status": [
+        "Tila"
+      ],
+      "Strong": [
+        "Vahva"
+      ],
       "Suffix": [
         "Jälkiliite"
       ],
@@ -1725,6 +1963,9 @@
       "Update": [
         "Päivitä"
       ],
+      "Used in": [
+        "Käytössä:"
+      ],
       "Username": [
         "Käyttäjätunnus"
       ],
@@ -1749,6 +1990,12 @@
       "View logs": [
         "Näytä lokitiedot"
       ],
+      "Vulnerable": [
+        "Haavoittuva"
+      ],
+      "Weak": [
+        "Heikko"
+      ],
       "Websites": [
         "Verkkosivustot"
       ],
@@ -1761,7 +2008,7 @@
         "Lue lisää"
       ],
       "stay safer online": [
-        "pysy turvassa verkossa"
+        "pysymään turvassa verkossa"
       ]
     },
     "lobby: Info": {
@@ -1865,6 +2112,9 @@
       "Full Name": [
         "Koko nimi"
       ],
+      "me@example.com": [
+        "mina@esimerkki.fi"
+      ],
       "MM/YY": [
         "KK/VV"
       ],
@@ -1924,14 +2174,35 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } addresses": [
+        "${ BRAND_NAME } osoitetta"
+      ],
+      "${ PASS_SHORT_APP_NAME } Monitor": [
+        "${ PASS_SHORT_APP_NAME } -Valvonta"
+      ],
+      "${ PASS_SHORT_APP_NAME } monitor": [
+        "${ PASS_SHORT_APP_NAME } -valvonta"
+      ],
+      "Account protection": [
+        "Tilisuojaus"
+      ],
       "Auto-lock update": [
         "Muuta automaattilukitusta"
       ],
-      "Block trackers and malware": [
-        "Estä seurantoja ja haittaohjelmia"
+      "Breach detected": [
+        "Havaittiin tietovuoto"
+      ],
+      "Breaches": [
+        "Tietomurrot"
+      ],
+      "Breaches detected for": [
+        "Tietomurtoja havaittu:"
       ],
       "Confirm PIN code": [
         "Vahvista PIN-koodi"
+      ],
+      "Confirm your email": [
+        "Vahvista sähköpostiosoitteesi"
       ],
       "Create a vault": [
         "Luo holvi"
@@ -1944,6 +2215,18 @@
       ],
       "Current version": [
         "Nykyinen versio"
+      ],
+      "Custom addresses": [
+        "Omat osoitteet"
+      ],
+      "Custom email monitoring": [
+        "Mukautettujen sähköpostiosoitteiden valvonta"
+      ],
+      "Custom emails": [
+        "Omat sähköpostiosoitteet"
+      ],
+      "Dark Web Monitoring": [
+        "Pimeän verkon valvonta"
       ],
       "Delete vault \"${ vaultName }\" ?": [
         "Poistetaanko holvi \"${ vaultName }\"?"
@@ -1966,11 +2249,17 @@
       "Enter your PIN": [
         "Syötä PIN-koodi"
       ],
+      "Excluded items": [
+        "Poissuljetut kohteet"
+      ],
       "Get Started": [
         "Aloita"
       ],
       "Grant permissions": [
         "Myönnä käyttöoikeudet"
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email-aliakset"
       ],
       "History": [
         "Historia"
@@ -1984,6 +2273,9 @@
       "Import your data": [
         "Tuo tietosi"
       ],
+      "Inactive 2FA": [
+        "Kaksivaiheinen tunnistautuminen ei ole käytössä"
+      ],
       "Install extension": [
         "Asenna laajennus"
       ],
@@ -1996,8 +2288,14 @@
       "Leave vault ?": [
         "Poistutaanko holvista?"
       ],
+      "Loading breaches...": [
+        "Tietomurtoja ladataan..."
+      ],
       "Low disk space": [
         "Tallennustila on vähissä"
+      ],
+      "Mark as resolved?": [
+        "Merkitse ratkaistuksi?"
       ],
       "Member limit": [
         "Jäsenrajoitus"
@@ -2017,8 +2315,20 @@
       "Move items?": [
         "Siirrä kohteet?"
       ],
+      "No excluded items": [
+        "Ei poissuljettuja kohteita"
+      ],
+      "No inactive 2FAs": [
+        "Ei löytynyt tilejä ilman kaksivaiheista tunnistautumista"
+      ],
+      "No insecure passwords": [
+        "Ei turvattomia salasanoja"
+      ],
       "No items selected": [
         "Kohteita ei ole valittu"
+      ],
+      "No reused passwords": [
+        "Ei uudelleenkäytettyjä salasanoja"
       ],
       "Our welcome gift to you": [
         "Tervetuliaislahjamme sinulle"
@@ -2028,6 +2338,12 @@
       ],
       "Password": [
         "Salasana"
+      ],
+      "Password Health": [
+        "Salasanan terveys"
+      ],
+      "Pause monitoring?": [
+        "Keskeytetäänkö valvonta?"
       ],
       "Pending access to the shared data": [
         "Odotetaan käyttöoikeutta jaettuihin tietoihin"
@@ -2041,8 +2357,24 @@
       "Recommended actions": [
         "Suositellut toimenpiteet"
       ],
+      "Remove email address?": [
+        "Poista sähköpostiosoite?"
+      ],
+      "Resolved breaches": [
+        "Ratkaistut tietovuodot"
+      ],
       "Restore this version?": [
         "Palautetaanko tämä versio?"
+      ],
+      "Resume monitoring?": [
+        "Palautetaanko valvonta?"
+      ],
+      "Reused ${ count } time": [
+        "Uudelleenkäytetty ${ count } kerran",
+        "Uudelleenkäytetty ${ count } kertaa"
+      ],
+      "Reused passwords": [
+        "Uudelleenkäytetyt salasanat"
       ],
       "Review and share": [
         "Tarkista ja jaa"
@@ -2053,6 +2385,12 @@
       "Set access level": [
         "Aseta käyttöoikeustaso"
       ],
+      "Set up 2FA for better security": [
+        "Tehosta suojausta määrittämällä kaksivaiheinen tunnistautuminen"
+      ],
+      "Set up 2FA for more security": [
+        "Tehosta suojausta määrittämällä kaksivaiheinen tunnistautuminen"
+      ],
       "Settings": [
         "Asetukset"
       ],
@@ -2061,6 +2399,9 @@
       ],
       "Share with": [
         "Jaa henkilölle"
+      ],
+      "Stay safer online": [
+        "Pysy turvassa verkossa"
       ],
       "Suggestions": [
         "Ehdotukset"
@@ -2082,6 +2423,15 @@
       ],
       "Vault shared with you": [
         "Sinulle on jaettu holvi"
+      ],
+      "Want to learn more?": [
+        "Haluatko lukea lisää?"
+      ],
+      "Weak password": [
+        "Heikko salasana"
+      ],
+      "Weak passwords": [
+        "Heikot salasanat"
       ],
       "What is an alias?": [
         "Mikä on alias?"
@@ -2156,6 +2506,9 @@
       "Duplicate email addresses.": [
         "Sähköpostiosoitteiden kaksoiskappaleita."
       ],
+      "Email is required": [
+        "Sähköpostiosoite vaaditaan"
+      ],
       "Empty note": [
         "Tyhjä muistiinpano"
       ],
@@ -2165,8 +2518,17 @@
       "Expiration Date is not in the format MM/YY": [
         "Erääntymisaika ei ole muodossa KK/VV"
       ],
+      "Failed to load breaches.": [
+        "Tietomurtojen lataus epäonnistui."
+      ],
       "Invalid alias prefix": [
         "Virheellinen aliaksen etuliite"
+      ],
+      "Invalid code": [
+        "Virheellinen koodi"
+      ],
+      "Invalid email": [
+        "Virheellinen sähköpostiosoite"
       ],
       "Invalid email addresses.": [
         "Virheellisiä sähköpostiosoitteita."
@@ -2229,6 +2591,9 @@
       "The alias prefix cannot be longer than 40 characters": [
         "Aliaksen etuliite voi sisältää enintään 40 merkkiä"
       ],
+      "This email address will no longer be monitored for data breaches.": [
+        "Tätä sähköpostiosoitetta ei enää valvota tietomurtojen varalta."
+      ],
       "Title is required": [
         "Otsikko vaaditaan"
       ],
@@ -2246,6 +2611,9 @@
       ],
       "Vault name is required": [
         "Holvin nimi vaaditaan"
+      ],
+      "Verification code is required": [
+        "Vahvistuskoodi vaaditaan"
       ],
       "You cannot create more vaults than your subscription allows.": [
         "Et voi luoda enempää holveja kuin tilauksesi sallii."

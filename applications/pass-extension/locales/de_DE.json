@@ -188,6 +188,9 @@
       "Edit vault": [
         "Tresor bearbeiten"
       ],
+      "Exclude from monitoring": [
+        "Von der Überwachung ausschließen"
+      ],
       "Export": [
         "Exportieren"
       ],
@@ -212,6 +215,9 @@
       "Get mobile apps": [
         "Mobile Apps holen"
       ],
+      "Get Pass Plus": [
+        "Pass Plus erwerben"
+      ],
       "Help us improve": [
         "Hilf uns, besser zu werden"
       ],
@@ -232,6 +238,9 @@
       ],
       "Importing": [
         "Wird importiert"
+      ],
+      "Include in monitoring": [
+        "In die Überwachung einbeziehen"
       ],
       "Invite others": [
         "Jemanden einladen"
@@ -367,6 +376,9 @@
       ],
       "Saving passkey...": [
         "Passkey wird gespeichert..."
+      ],
+      "See all": [
+        "Alle ansehen"
       ],
       "See members": [
         "Mitglieder anzeigen"
@@ -505,8 +517,14 @@
       "A checked box means the feature is disabled.": [
         "Ein angekreuztes Kästchen bedeutet, dass die Funktion deaktiviert ist."
       ],
+      "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
+        "Dark Web-Überwachung ist mit einem kostenpflichtigen Plan verfügbar. Upgrade für sofortigen Zugriff."
+      ],
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
         "Liste der Domains, bei denen bestimmte automatische Funktionen in ${ PASS_SHORT_APP_NAME } (Automatisches Ausfüllen, automatische Vorschläge, automatisches Speichern) nicht ausgeführt werden sollen. ${ infoText }"
+      ],
+      "This account is vulnerable, visit the service and change your password.": [
+        "Dieses Konto ist angreifbar, besuche den Dienst und ändere dein Passwort."
       ]
     },
     "Error": {
@@ -880,6 +898,9 @@
       "${ PASS_APP_NAME } will suggest saving passkeys.": [
         "${ PASS_APP_NAME } wird das Speichern von Passkeys vorschlagen."
       ],
+      "${ PROTON_SENTINEL_NAME } successfully disabled": [
+        "${ PROTON_SENTINEL_NAME } erfolgreich gelöscht"
+      ],
       "${ trialDaysLeft } day left": [
         "${ trialDaysLeft } verbleibender Tag",
         "${ trialDaysLeft } verbleibende Tage"
@@ -1105,6 +1126,12 @@
       ],
       "Item restored": [
         "Eintrag wiederhergestellt."
+      ],
+      "Item successfully excluded from monitoring": [
+        "Element erfolgreich von der Überwachung ausgeschlossen"
+      ],
+      "Item successfully included in monitoring": [
+        "Element erfolgreich in die Überwachung einbezogen"
       ],
       "Item successfully moved": [
         "Eintrag erfolgreich verschoben."
@@ -1848,6 +1875,9 @@
       "Special characters (!&*)": [
         "Sonderzeichen (!&*)"
       ],
+      "Strong": [
+        "Stark"
+      ],
       "Suffix": [
         "Suffix"
       ],
@@ -1913,6 +1943,12 @@
       ],
       "View logs": [
         "Protokolle anzeigen"
+      ],
+      "Vulnerable": [
+        "Verwundbar"
+      ],
+      "Weak": [
+        "Schwach"
       ],
       "Website": [
         "Website"
@@ -2210,6 +2246,9 @@
       ],
       "Share with": [
         "Teilen mit"
+      ],
+      "Stay safer online": [
+        "Bleib online geschützter"
       ],
       "Suggestions": [
         "Vorschläge"

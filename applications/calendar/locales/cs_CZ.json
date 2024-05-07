@@ -303,6 +303,9 @@
       "Go to panel ${ index }": [
         "Přejít na panel ${ index }"
       ],
+      "Go to settings": [
+        "Přejít do nastavení"
+      ],
       "Got it": [
         "Rozumím"
       ],
@@ -368,6 +371,9 @@
       ],
       "Keep my Plus subscription": [
         "Zachovat mé předplatné Plus"
+      ],
+      "Later": [
+        "Později"
       ],
       "Let's talk": [
         "Promluvme si"
@@ -453,11 +459,11 @@
       "Not now": [
         "Nyní ne"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Otevřít nastavení ${ CALENDAR_APP_NAME }"
@@ -867,11 +873,6 @@
         "Pokud nyní odejdete, přijdete o svou událost."
       ]
     },
-    "App logo": {
-      "Download ${ MAIL_APP_NAME } desktop application": [
-        "Stáhněte si aplikaci ${ MAIL_APP_NAME } pro desktop"
-      ]
-    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "Aplikace ${ BRAND_NAME }"
@@ -900,6 +901,11 @@
     "Attendee role": {
       "Optional": [
         "Volitelné"
+      ]
+    },
+    "Badge": {
+      "New!": [
+        "Nové!"
       ]
     },
     "bf2023: Action": {
@@ -2408,6 +2414,9 @@
       "Availability unknown": [
         "Dostupnost neznámá"
       ],
+      "Better organize your day, track your time, and prioritize tasks. Color-code your calendar with custom event colors.": [
+        "Lépe si zorganizujte den, sledujte svůj čas a určujte priority úkolů. Barevně označte kalendář pomocí vlastních barev událostí."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Dešifrování kontaktů… Tato akce může trvat několik minut. Jakmile bude proces ukončen, budete si moci stáhnout soubor s vašimi exportovanými kontakty."
       ],
@@ -2512,12 +2521,6 @@
       "Missing feature(s)": [
         "Chybějící funkce"
       ],
-      "My reason isn't listed, please comment": [
-        "Můj důvod není uveden, prosím okomentujte"
-      ],
-      "Streaming service unsupported": [
-        "Streamovací služba není podporována"
-      ],
       "Subscription is too expensive": [
         "Předplatné je příliš drahé"
       ],
@@ -2531,6 +2534,29 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Pomozte nám se zlepšit!"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Rozšířená historie verzí"
+      ],
+      "Priority support": [
+        "Prioritní podpora"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Obnovuje se za ${ renewablePrice }, zrušit lze kdykoli"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "za první měsíc"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Získejte ${ planName } pouze za ${ planPrice }"
       ]
     },
     "Dropdown action icon tooltip": {
@@ -3155,6 +3181,9 @@
       ],
       "You have reached the contacts limit for your account": [
         "Dosáhli jste limitu kontaktů vašeho účtu"
+      ],
+      "You have reached the maximum number of calendars.": [
+        "Dosáhli jste maximálního počtu kalendářů."
       ],
       "You must set a name": [
         "Musíte nastavit jméno"
@@ -4320,6 +4349,9 @@
       "Billing cycle: ${ text }": [
         "Fakturační cyklus: ${ text }"
       ],
+      "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
+        "Zlepšete identitu značky své organizace a vytvořte konzistentnější online prostředí pro své uživatele."
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Pokud svůj aktuální tarif snížíte na bezplatnou verzi, navždy ztratíte současné výhody, i když v budoucnu svůj účet znovu povýšíte."
       ],
@@ -4512,9 +4544,6 @@
       "finance": [
         "finance"
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Přepošlete příchozí mail z jiného účtu do vaší bezpečné ${ MAIL_APP_NAME } schránky."
-      ],
       "Frequency modifications will be lost.": [
         "Změny frekvence budou ztraceny."
       ],
@@ -4556,9 +4585,6 @@
       ],
       "Import mailbox": [
         "Importovat poštovní schránku"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Importujte své e-maily, kalendáře a kontakty z jiných služeb do ${ BRAND_NAME }."
       ],
       "Important note": [
         "Důležitá poznámka"
@@ -6547,6 +6573,9 @@
       "Organize items with multiple vaults": [
         "Uspořádání položek pomocí více trezorů"
       ],
+      "Passkeys supported": [
+        "Přístupové klíče podporovány"
+      ],
       "Password-protected Emails": [
         "Zprávy chráněné heslem"
       ],
@@ -8249,11 +8278,11 @@
       ]
     },
     "Spotlight": {
-      "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
-        "Pohodlné spuštění ${ MAIL_APP_NAME } přímo z plochy."
+      "Color-code your calendar to better organize your day, track your time, and more.": [
+        "Nastavte barvy vašeho kalendáře aby jste lépe organizovali váš den, sledovali váš čas atd."
       ],
-      "Get the desktop app": [
-        "Získejte desktopovou aplikaci"
+      "Custom event colors": [
+        "Vlastní barvy událostí"
       ],
       "Get up to ${ credits } in credits.": [
         "Získejte až ${ credits } v kreditech."
@@ -8875,6 +8904,9 @@
       ],
       "Account security": [
         "Zabezpečení účtu"
+      ],
+      "Add a custom logo": [
+        "Přidejte vlastní logo"
       ],
       "Add another notification to remind you of this event": [
         "Přidat další upozornění pro připomenutí této události"
@@ -9552,6 +9584,9 @@
       ],
       "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
         "Předplatné se automaticky obnoví každé 3 měsíce. Další datum fakturace je za 3 měsíce."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Speciálně zvýhodněná cena ${ priceWithDiscount } platí první měsíc. Poté bude každý měsíc automaticky obnovena za cenu ${ renewPrice }. Službu můžete kdykoli zrušit."
       ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Potom vám bude účtováno ${ renewPrice } každých 12 měsíců."

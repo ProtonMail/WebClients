@@ -101,9 +101,6 @@
       "Create alias": [
         "Crear alias"
       ],
-      "Create an alias": [
-        "Crear un alias"
-      ],
       "Create card": [
         "Crear una tarjeta"
       ],
@@ -163,9 +160,6 @@
       ],
       "Enable Dark Web Monitoring": [
         "Activar el monitoreo de la Dark Web"
-      ],
-      "Enable NetShield": [
-        "Activar NetShield"
       ],
       "Exclude from monitoring": [
         "Excluir del monitoreo"
@@ -407,6 +401,9 @@
       "Trash": [
         "Papelera"
       ],
+      "Try again.": [
+        "Vuelva a intentarlo."
+      ],
       "Unpin item": [
         "Desanclar elemento"
       ],
@@ -485,6 +482,9 @@
         "${ total } otro inicio de sesión usa la misma contraseña.",
         "Otros ${ total } inicios de sesión usan la misma contraseña."
       ],
+      "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
+        "La autenticación 2FA añade otra capa de seguridad a tus inicios de sesión. ${ PASS_APP_NAME } hace más fácil usar la autenticación 2FA al almacenar y rellenar automáticamente los códigos 2FA."
+      ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Un alias de correo funciona como una dirección de correo electrónico, pero reduce el spam y mantiene tu dirección e identidad real ocultas."
       ],
@@ -500,20 +500,14 @@
       "Get notified if your email, password or other personal data was leaked.": [
         "Recibe notificaciones si el correo electrónico, contraseña u otro dato personal ha sido filtrado."
       ],
-      "Increase your security": [
-        "Mejora tu seguridad"
-      ],
-      "It would be more secure to set up 2FA for this account.": [
-        "Sería más seguro configurar 2FA para esta cuenta."
-      ],
       "Keep your info more secure and private with these guides and tips.": [
         "Mantén tu información más segura y privada con estas guías y consejos."
       ],
-      "NetShield is an ad-blocking feature from ${ VPN_APP_NAME } that protects your device from ads, trackers, and malware. ": [
-        "NetShield es una función de bloqueo de anuncios en ${ VPN_APP_NAME } que protege el dispositivo de anuncios, rastreadores y malware."
-      ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Nuestra solución de seguridad de vanguardia impulsada por inteligencia artificial, diseñada para usuarios que buscan una protección más intensificada para sus cuentas. ${ learnMoreLink }"
+      ],
+      "Set up 2FA for more security": [
+        "Configura la 2FA para más seguridad"
       ],
       "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
         "Empieza a monitorear vulneraciones de datos relacionadas a cuentas creadas con la dirección de correo y los alias de hide-my-email."
@@ -526,6 +520,9 @@
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "Esta cuenta es vulnerable. Visita el servicio y cambia tu contraseña."
+      ],
+      "This service offers 2FA. Enable it for added account security.": [
+        "Este servicio ofrece la 2FA. Actívala para aumentar la seguridad de la cuenta."
       ],
       "With ${ PASS_SHORT_APP_NAME } Monitor, stay ahead of threats by getting instant alerts if your credentials are compromised. Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Con el Monitoreo de ${ PASS_SHORT_APP_NAME } mantente un paso adelante de las amenazas al recibir alertas instantáneas si tus credenciales son comprometidas. Desbloquea funciones avanzadas de seguridad y registros detallados para salvaguardar tu presencia en línea."
@@ -638,9 +635,6 @@
       ],
       "Failed to edit user's access.": [
         "Error al editar el acceso del usuario."
-      ],
-      "Failed to load breaches": [
-        "Error al cargar vulneraciones"
       ],
       "Failed to load breaches for this address": [
         "Error al cargar vulneraciones para esta dirección"
@@ -950,7 +944,8 @@
       "${ PROTON_SENTINEL_NAME } successfully enabled": [
         "${ PROTON_SENTINEL_NAME } activado"
       ],
-      "${ row.breachCount } breaches detected": [
+      "${ row.breachCount } breach detected": [
+        "${ row.breachCount } vulneración detectada",
         "${ row.breachCount } vulneraciones detectadas"
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
@@ -1115,6 +1110,9 @@
       ],
       "High Priority": [
         "Prioridad alta"
+      ],
+      "How does monitoring work?": [
+        "¿Cómo funciona el monitoreo?"
       ],
       "Import in progress:": [
         "Importación en progreso:"
@@ -1416,6 +1414,9 @@
       "Thank you, the problem has been reported": [
         "Gracias por notificar el problema."
       ],
+      "The custom email will be sent to ${ href } for monitoring. No other data will be sent to HIBP.": [
+        "El correo electrónico personalizado será enviado a ${ href } para el monitoreo. Ningún otro dato será enviado a HIBP."
+      ],
       "The export will only contain vaults that you own.": [
         "La exportación solo contendrá las cajas fuertes que te pertenecen."
       ],
@@ -1538,8 +1539,14 @@
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Has alcanzado el número máximo de ${ maxLength } caracteres."
       ],
+      "You will be notified of data breaches for these email addresses.": [
+        "Se te notificará las vulneraciones de datos para estas direcciones de correo electrónico."
+      ],
       "You will be notified of data breaches for this email address.": [
         "Se te notificará las vulneraciones de datos para esta dirección de correo electrónico."
+      ],
+      "You will no longer be notified of data breaches for these email addresses.": [
+        "No se te notificará las vulneraciones de datos para estas direcciones de correo electrónico."
       ],
       "You will no longer be notified of data breaches for this email address.": [
         "No se te notificará las vulneraciones de datos para esta dirección de correo electrónico."
@@ -2198,9 +2205,6 @@
       "Auto-lock update": [
         "Actualización de bloqueo automático"
       ],
-      "Block trackers and malware": [
-        "Bloquea rastreadores y malware"
-      ],
       "Breach detected": [
         "Se ha detectado una vulneración."
       ],
@@ -2238,9 +2242,6 @@
         "Correos electrónicos personalizados"
       ],
       "Dark Web Monitoring": [
-        "Monitoreo de la Dark Web"
-      ],
-      "Dark web monitoring": [
         "Monitoreo de la Dark Web"
       ],
       "Delete vault \"${ vaultName }\" ?": [
@@ -2288,6 +2289,9 @@
       "Import your data": [
         "Importa tus datos"
       ],
+      "Inactive 2FA": [
+        "2FA inactiva"
+      ],
       "Install extension": [
         "Instalar la extensión"
       ],
@@ -2300,6 +2304,9 @@
       "Leave vault ?": [
         "¿Dejar la caja fuerte?"
       ],
+      "Loading breaches...": [
+        "Cargando las vulneraciones..."
+      ],
       "Low disk space": [
         "Poco espacio en el disco"
       ],
@@ -2311,12 +2318,6 @@
       ],
       "Members": [
         "Miembros"
-      ],
-      "Missing 2FA": [
-        "Falta el 2FA"
-      ],
-      "Missing two-factor authentication": [
-        "Falta la autenticación de dos factores."
       ],
       "Modified": [
         "Modificado"
@@ -2333,14 +2334,14 @@
       "No excluded items": [
         "No hay elementos excluidos."
       ],
+      "No inactive 2FAs": [
+        "Ninguna 2FA inactiva"
+      ],
       "No insecure passwords": [
         "No hay contraseñas inseguras."
       ],
       "No items selected": [
         "No hay elementos seleccionados."
-      ],
-      "No missing 2FAs": [
-        "No hay 2FA faltantes."
       ],
       "No reused passwords": [
         "No hay contraseñas reusadas."
@@ -2399,6 +2400,12 @@
       ],
       "Set access level": [
         "Configurar el nivel de acceso"
+      ],
+      "Set up 2FA for better security": [
+        "Configura 2FA para una mejor seguridad"
+      ],
+      "Set up 2FA for more security": [
+        "Configura la 2FA para más seguridad"
       ],
       "Settings": [
         "Configuración"
@@ -2526,6 +2533,9 @@
       ],
       "Expiration Date is not in the format MM/YY": [
         "La fecha de expiración no está en formato MM/AA."
+      ],
+      "Failed to load breaches.": [
+        "Error al cargar las vulneraciones."
       ],
       "Invalid alias prefix": [
         "Prefijo del alias no válido"

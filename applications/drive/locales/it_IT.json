@@ -367,6 +367,9 @@
       "Go to parent": [
         "Vai al principale"
       ],
+      "Go to settings": [
+        "Vai alle impostazioni"
+      ],
       "Got it": [
         "Ho capito"
       ],
@@ -414,6 +417,9 @@
       ],
       "Keep my Plus subscription": [
         "Mantieni il mio abbonamento Plus"
+      ],
+      "Later": [
+        "Più tardi"
       ],
       "Learn more": [
         "Scopri di più"
@@ -2229,12 +2235,6 @@
       "Missing feature(s)": [
         "Funzionalità mancante(i)"
       ],
-      "My reason isn't listed, please comment": [
-        "Il motivo non è elencato, per favore commenta"
-      ],
-      "Streaming service unsupported": [
-        "Servizio di streaming non supportato"
-      ],
       "Subscription is too expensive": [
         "Abbonamento troppo costoso"
       ],
@@ -2248,6 +2248,40 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Aiutaci a migliorare!"
+      ]
+    },
+    "drivePlus2024: Action": {
+      "Get the deal": [
+        "Ottieni l'offerta"
+      ],
+      "Special Offer": [
+        "Offerta speciale"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Cronologia estesa della versione"
+      ],
+      "Priority support": [
+        "Supporto prioritario"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Rinnova a ${ renewablePrice }, annulla in qualsiasi momento"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "per il primo mese"
+      ],
+      "Limited-time offer": [
+        "Offerta a tempo limitato"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Ottieni ${ planName } a soli ${ planPrice }"
       ]
     },
     "Email body for description (description part)": {
@@ -3899,6 +3933,9 @@
       "Billing cycle: ${ text }": [
         "Ciclo di fatturazione: ${ text }"
       ],
+      "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
+        "Rafforza l'identità della tua organizzazione e crea un'esperienza online più coerente per i tuoi utenti."
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Declassando ad un piano gratuito, perderai definitivamente questi benefici, anche se in futuro effettuerai un nuovo upgrade."
       ],
@@ -4214,9 +4251,6 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Per ottenere risultati migliori, evita lo streaming e le attività che richiedono molta memoria o suddividi il caricamento in batch più piccoli."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Inoltra la posta in arrivo da un altro account alla tua casella di posta sicura di ${ MAIL_APP_NAME }."
-      ],
       "from the version history?": [
         "della cronologia delle versioni?"
       ],
@@ -4274,9 +4308,6 @@
       ],
       "Import mailbox": [
         "Importa casella di posta"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Importa le tue email, calendari e contatti da un altro servizio su ${ BRAND_NAME }."
       ],
       "Important note": [
         "Nota importante"
@@ -4797,6 +4828,9 @@
       ],
       "There is nothing to see here": [
         "Non c'è niente da vedere qui"
+      ],
+      "This action will delete the link and revoke access for all users.": [
+        "Questa azione eliminerà il link e revocherà l'accesso a tutti gli utenti."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Questo indirizzo è disabilitato. Per poter inviare a questo indirizzo il proprietario deve prima abilitarlo."
@@ -5717,6 +5751,12 @@
       "Public keys": [
         "Chiavi pubbliche"
       ],
+      "Public link expiration date": [
+        "Data di scadenza del link pubblico"
+      ],
+      "Public link password": [
+        "Password del link pubblico"
+      ],
       "Region": [
         "Regione"
       ],
@@ -6636,6 +6676,9 @@
       "Organize items with multiple vaults": [
         "Organizza gli elementi con più casseforti"
       ],
+      "Pass Monitor - premium features": [
+        "Pass Monitor - funzionalità premium"
+      ],
       "Passkeys supported": [
         "Passkey supportate"
       ],
@@ -6711,6 +6754,9 @@
       ],
       "Unlimited devices": [
         "Dispositivi illimitati"
+      ],
+      "Unlimited devices and aliases": [
+        "Dispositivi e alias illimitati"
       ],
       "Unlimited filters": [
         "Filtri illimitati"
@@ -7486,6 +7532,18 @@
     "Participant name": {
       "You": [
         "Tu"
+      ]
+    },
+    "pass_signup_2023: Info": {
+      "Secure sharing with ${ n } vault": [
+        "Condivisione sicura con ${ n } cassaforte",
+        "Condivisione sicura con ${ n } casseforti"
+      ],
+      "Secure sharing with multiple vaults": [
+        "Condivisione sicura con più casseforti"
+      ],
+      "Secure vault sharing": [
+        "Condivisione sicura della cassaforte"
       ]
     },
     "passwordless": {
@@ -8747,6 +8805,9 @@
       "Active": [
         "Attivo"
       ],
+      "Add a custom logo": [
+        "Aggiungi un logo personalizzato"
+      ],
       "Add contact group name": [
         "Aggiungi nome gruppo di contatti"
       ],
@@ -9228,6 +9289,9 @@
       ],
       "Stop sharing with everyone?": [
         "Smettere di condividere con tutti?"
+      ],
+      "Stop sharing?": [
+        "Vuoi interrompere la condivisione?"
       ],
       "Stop transfers?": [
         "Interrompere i trasferimenti?"

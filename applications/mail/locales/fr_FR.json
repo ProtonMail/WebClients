@@ -361,6 +361,9 @@
       "Download ${ attachmentName }": [
         "Télécharger ${ attachmentName }"
       ],
+      "Download Desktop App": [
+        "Télécharger l’application de bureau"
+      ],
       "Download now": [
         "Télécharger"
       ],
@@ -478,6 +481,9 @@
       "Go to previous page": [
         "Aller à la page précédente"
       ],
+      "Go to settings": [
+        "Accéder aux paramètres"
+      ],
       "Go to SimpleLogin": [
         "Accéder à SimpleLogin"
       ],
@@ -583,6 +589,9 @@
       ],
       "label emails as": [
         "labelliser les messages comme"
+      ],
+      "Later": [
+        "Plus tard"
       ],
       "Later this week": [
         "Plus tard dans la semaine"
@@ -1124,10 +1133,6 @@
       "Trust": [
         "Faire confiance"
       ],
-      "Trust key": [
-        "Approuver la clé",
-        "Approuver les clés"
-      ],
       "Trust public key": [
         "Approuver la clé publique"
       ],
@@ -1411,11 +1416,6 @@
       ],
       "New email": [
         "Nouveau message"
-      ]
-    },
-    "App logo": {
-      "Download ${ MAIL_APP_NAME } desktop application": [
-        "Télécharger l'application de bureau ${ MAIL_APP_NAME }"
       ]
     },
     "Apps dropdown": {
@@ -3344,12 +3344,6 @@
       "Missing feature(s)": [
         "Fonctionnalités manquantes"
       ],
-      "My reason isn't listed, please comment": [
-        "Raison non proposée ici, pouvez-vous préciser"
-      ],
-      "Streaming service unsupported": [
-        "Service de streaming non pris en charge"
-      ],
       "Subscription is too expensive": [
         "Abonnement trop cher"
       ],
@@ -3368,6 +3362,40 @@
     "Download attachments": {
       "Download all": [
         "Tout télécharger"
+      ]
+    },
+    "drivePlus2024: Action": {
+      "Get the deal": [
+        "J'en profite"
+      ],
+      "Special Offer": [
+        "Offre spéciale"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Historique des versions plus détaillé"
+      ],
+      "Priority support": [
+        "Assistance prioritaire"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Renouvellement au prix de ${ renewablePrice } avec possibilité de résiliation à tout moment"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "pour le premier mois"
+      ],
+      "Limited-time offer": [
+        "Offre limitée dans le temps"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Obtenez ${ planName } pour seulement ${ planPrice }."
       ]
     },
     "Email body for description (description part)": {
@@ -5597,6 +5625,9 @@
       "Body: ": [
         "Corps : "
       ],
+      "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
+        "Mettez en avant l'image de marque de votre organisation et créez une expérience en ligne plus cohérente pour vos utilisateurs."
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "En passant à l'abonnement Free, vous perdrez définitivement ces avantages, même si vous repassez par la suite à un abonnement supérieur."
       ],
@@ -5874,9 +5905,6 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "Pour avoir plus de résultats, essayez de faire une recherche avec ce mot-clé dans le contenu de vos messages."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Transférez les messages entrants d'un autre compte vers votre boite de réception sécurisée ${ MAIL_APP_NAME }."
-      ],
       "From": [
         "De"
       ],
@@ -5941,9 +5969,6 @@
       ],
       "Import mailbox": [
         "Importer une messagerie"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Importez vos messages, calendriers et contacts depuis un autre service vers ${ BRAND_NAME }."
       ],
       "Important note": [
         "Remarque importante"
@@ -8739,6 +8764,12 @@
       "Organize items with multiple vaults": [
         "Plusieurs coffres-forts pour organiser vos mots de passe"
       ],
+      "Pass Monitor - premium features": [
+        "Pass Monitor - fonctionnalités premium"
+      ],
+      "Passkeys supported": [
+        "Les clés d'identification sont prises en charge."
+      ],
       "Password-protected Emails": [
         "Messages protégés par mot de passe"
       ],
@@ -8811,6 +8842,9 @@
       ],
       "Unlimited devices": [
         "Nombre illimité d'appareils"
+      ],
+      "Unlimited devices and aliases": [
+        "Nombre illimité d'alias et d'appareils"
       ],
       "Unlimited filters": [
         "Nombre illimité de filtres"
@@ -9436,6 +9470,18 @@
     "Participant name": {
       "You": [
         "Vous"
+      ]
+    },
+    "pass_signup_2023: Info": {
+      "Secure sharing with ${ n } vault": [
+        "Partage sécurisé avec ${ n } coffre-fort",
+        "Partage sécurisé avec ${ n } coffre-forts"
+      ],
+      "Secure sharing with multiple vaults": [
+        "Partage sécurisé avec plusieurs coffre-forts"
+      ],
+      "Secure vault sharing": [
+        "Partage sécurisé de coffre-forts"
       ]
     },
     "passwordless": {
@@ -10419,14 +10465,8 @@
       ]
     },
     "Spotlight": {
-      "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
-        "Démarrez ${ MAIL_APP_NAME } tout simplement depuis votre bureau."
-      ],
       "Email tracking protection": [
         "Protection contre le suivi des e-mails"
-      ],
-      "Get the desktop app": [
-        "Téléchargez l'application de bureau"
       ],
       "Get up to ${ credits } in credits.": [
         "Recevez jusqu'à ${ credits } en crédits."
@@ -11177,6 +11217,9 @@
       ],
       "Action all messages": [
         "Appliquer à tous les messages"
+      ],
+      "Add a custom logo": [
+        "Ajouter un logo personnalisé"
       ],
       "Add contact group name": [
         "Ajouter le nom du groupe de contacts"

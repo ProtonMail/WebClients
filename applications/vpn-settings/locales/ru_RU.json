@@ -687,6 +687,11 @@
         "Это приведет к отключению всех маршрутизаторов и клиентов, использующих данный сертификат."
       ]
     },
+    "app-switcher": {
+      "Secure your communications": [
+        "Держите письма в надежном месте"
+      ]
+    },
     "bf2023: Action": {
       "**Add our encrypted password manager** for only ${ price }": [
         "**Добавьте менеджер зашифрованных паролей** всего за ${ price }"
@@ -1906,12 +1911,6 @@
       "Missing feature(s)": [
         "Не хватает функции(й)"
       ],
-      "My reason isn't listed, please comment": [
-        "Моя причина не указана, пожалуйста, прокомментируйте"
-      ],
-      "Streaming service unsupported": [
-        "Служба трансляции не поддерживается"
-      ],
       "Subscription is too expensive": [
         "Подписка слишком дорогая"
       ],
@@ -1925,6 +1924,29 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Помогите нам совершенствоваться!"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Подробная история версий"
+      ],
+      "Priority support": [
+        "Приоритетная поддержка"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Затем стоимость подписки составит ${ renewablePrice }. Отменить её можно в любое время"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "за первый месяц"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Получите тариф ${ planName } всего за ${ planPrice }"
       ]
     },
     "Email verification": {
@@ -1967,6 +1989,9 @@
     "Error": {
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Вы можете также проверить нашу ${ statusPageLink }"
+      ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } — ваше имя пользователя. Чтобы создать ${ emailAddress }, перейдите в Настройки > Сообщения и написание писем > Короткий домен (pm.me)"
       ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Весь объём хранилища был распределён. Пожалуйста, уменьшите объём хранилища, выделенного для других пользователей."
@@ -3480,9 +3505,6 @@
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Пожалуйста, учтите, что после нажатия на кнопку \"Подтвердить\" в аккаунте останется ${ creditsRemaining } кредитов на счету."
       ],
-      "Please provide an email address in case we need to contact you.": [
-        "Пожалуйста, укажите адрес электронной почты для случая, если нам понадобится связаться с вами."
-      ],
       "Please try again using a different payment method, or contact your bank.": [
         "Пожалуйста, попробуйте другой способ оплаты или свяжитесь с вашим банком."
       ],
@@ -4890,17 +4912,11 @@
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Забыли имя пользователя аккаунта ${ BRAND_NAME }? Найдите его, используя вашу резервную электронную почту или номер телефона, и восстановите доступ к ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } и другим сервисам."
       ],
-      "Private and secure email, no credit card required": [
-        "Приватная и защищенная электронная почта, кредитная карта не требуется"
-      ],
       "Reset your ${ BRAND_NAME } Account password": [
         "Сбросить пароль от аккаунта ${ BRAND_NAME }"
       ],
       "Sign in to access your ${ appName } account": [
         "Войти, чтобы получить доступ к аккаунту ${ appName }"
-      ],
-      "Try ${ planName } for free with this link": [
-        "Попробуйте ${ planName } бесплатно, перейдя по этой ссылке"
       ]
     },
     "Monetary unit": {
@@ -6168,9 +6184,6 @@
       "e.g. https://idp.example.com/XXXXX": [
         "например, https://idp.example.com/XXXXX"
       ],
-      "Email address": [
-        "Адрес электронной почты"
-      ],
       "Feedback": [
         "Обратная связь"
       ],
@@ -6343,6 +6356,11 @@
       ],
       "Generate token": [
         "Сгенерировать токен"
+      ]
+    },
+    "scim: Title": {
+      "Generate new SCIM token?": [
+        "Генерировать новый токен SCIM?"
       ]
     },
     "Select file": {
@@ -6851,6 +6869,14 @@
         "Сохранить ${ currentPlanName }"
       ]
     },
+    "storage_split: feature": {
+      "Up to ${ totalStorageSize } Drive storage": [
+        "Объём хранилища Drive: до ${ totalStorageSize }"
+      ],
+      "Up to ${ totalStorageSize } Mail storage": [
+        "До ${ totalStorageSize } Хранилище Mail"
+      ]
+    },
     "storage_split: info": {
       "${ app } storage": [
         "${ app } хранилища"
@@ -7033,6 +7059,11 @@
     "Subscription price": {
       "For": [
         "За"
+      ]
+    },
+    "subscription reminder": {
+      "Upgrade": [
+        "Сменить тариф"
       ]
     },
     "Subscription renewal state": {
@@ -8030,6 +8061,9 @@
       ],
       "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
         "Подписка автоматически продлевается каждые 3 месяца. Следующая дата выставления счета наступит через 3 месяца."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Специальная цена в ${ priceWithDiscount } действует за первый месяц. Затем будет выполнено автоматическое продление по сниженной цене в ${ renewPrice } каждый месяц. Отменить подписку можно в любой момент."
       ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Затем вам будут выставляться счета каждые 12 месяцев по ${ renewPrice }."

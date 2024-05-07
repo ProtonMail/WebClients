@@ -1915,12 +1915,6 @@
       "Missing feature(s)": [
         "Característiques que falten"
       ],
-      "My reason isn't listed, please comment": [
-        "La meva raó no es troba a la llista (deixeu-nos un comentari)."
-      ],
-      "Streaming service unsupported": [
-        "Servei de reproducció en línia no admès"
-      ],
       "Subscription is too expensive": [
         "La subscripció és massa cara"
       ],
@@ -1934,6 +1928,40 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Ajudeu-nos a millorar!"
+      ]
+    },
+    "drivePlus2024: Action": {
+      "Get the deal": [
+        "Aconsegueixi l'oferta"
+      ],
+      "Special Offer": [
+        "Oferta especial"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Historial de versions ampliat"
+      ],
+      "Priority support": [
+        "Suport prioritari"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Es renova per ${ renewablePrice } i ho podeu cancel·lar en qualsevol moment"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "el primer mes"
+      ],
+      "Limited-time offer": [
+        "Oferta per temps limitat"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Obteniu ${ planName } per tan sols ${ planPrice }"
       ]
     },
     "Email verification": {
@@ -3385,9 +3413,6 @@
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Tingueu en compte que quan feu clic al botó \"Confirmar\", el vostre compte restarà crèdit de ${ creditsRemaining }."
       ],
-      "Please provide an email address in case we need to contact you.": [
-        "Proporcioneu una adreça de correu electrònic per al cas que necessitem posar-nos en contacte."
-      ],
       "Please try again using a different payment method, or contact your bank.": [
         "Torneu-ho a provar amb un mètode de pagament diferent o poseu-vos en contacte amb el vostre banc."
       ],
@@ -4263,7 +4288,7 @@
         "Nivell de filtratge del bloquejador NetShield"
       ],
       "Logo": [
-        "Logo"
+        "Logotip"
       ],
       "Mailbox password": [
         "Contrasenya de la bústia"
@@ -4761,17 +4786,11 @@
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Heu oblidat el vostre nom d'usuari del compte ${ BRAND_NAME }? Trobeu-lo mitjançant el vostre correu electrònic de recuperació o el número de telèfon i torneu a obtenir accés a ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } i més."
       ],
-      "Private and secure email, no credit card required": [
-        "Correu electrònic privat i segur, no es requereix targeta de crèdit"
-      ],
       "Reset your ${ BRAND_NAME } Account password": [
         "Restabliu la vostra contrasenya del compte ${ BRAND_NAME }"
       ],
       "Sign in to access your ${ appName } account": [
         "Inicieu la sessió al compte de ${ appName }"
-      ],
-      "Try ${ planName } for free with this link": [
-        "Proveu ${ planName } de forma gratuïta amb aquest enllaç."
       ]
     },
     "Monetary unit": {
@@ -5076,6 +5095,9 @@
       ],
       "Organize items with multiple vaults": [
         "Organitzeu els elements amb múltiples caixes fortes"
+      ],
+      "Passkeys supported": [
+        "Claus de pas suportades"
       ],
       "Password-protected Emails": [
         "Correus protegits amb contrasenya"
@@ -5990,9 +6012,6 @@
       ],
       "Confirm": [
         "Confirma"
-      ],
-      "Email address": [
-        "Adreça de correu electrònic"
       ],
       "Feedback": [
         "Comentaris"
@@ -7921,6 +7940,9 @@
     "vpn_2024: renew": {
       "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
         "La subscripció es renova automàticament cada tres mesos. La següent data de facturació és d'aquí a tres mesos."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant el primer mes. Aleshores, es renovarà automàticament a ${ renewPrice } cada mes. Pot cancel·lar-ho en qualsevol moment."
       ]
     },
     "vpn_2step: billing": {

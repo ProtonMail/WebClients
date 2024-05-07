@@ -367,6 +367,9 @@
       "Go to parent": [
         "Üst klasöre git"
       ],
+      "Go to settings": [
+        "Ayarlara git"
+      ],
       "Got it": [
         "Anladım"
       ],
@@ -415,6 +418,9 @@
       "Keep my Plus subscription": [
         "Plus aboneliğimi koru"
       ],
+      "Later": [
+        "Daha sonra"
+      ],
       "Learn more": [
         "Ayrıntılı bilgi alın"
       ],
@@ -443,7 +449,7 @@
         "Bağlantıyı yönet"
       ],
       "Mark as resolved": [
-        "Çözülmüş olarak işaretle"
+        "Çözümlenmiş olarak işaretle"
       ],
       "Mark for deletion": [
         "Silinecek olarak işaretle"
@@ -2229,12 +2235,6 @@
       "Missing feature(s)": [
         "Eksik özellikler"
       ],
-      "My reason isn't listed, please comment": [
-        "Gerekçem listede yok. Lütfen açıklayın"
-      ],
-      "Streaming service unsupported": [
-        "Yayın akışı hizmetinin desteklenmemesi"
-      ],
       "Subscription is too expensive": [
         "Abonelik çok pahalı"
       ],
@@ -2248,6 +2248,40 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Kendimizi geliştirmemize yardımcı olun!"
+      ]
+    },
+    "drivePlus2024: Action": {
+      "Get the deal": [
+        "Teklifi al"
+      ],
+      "Special Offer": [
+        "Özel Teklif"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Genişletilmiş sürüm geçmişi"
+      ],
+      "Priority support": [
+        "Öncelikli destek"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "${ renewablePrice } ile yenilenir. İstediğiniz zaman iptal edebilirsiniz"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "ilk ay için"
+      ],
+      "Limited-time offer": [
+        "Sınırlı süreli teklif"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "${ planName } tarifesini yalnızca ${ planPrice } ödeyerek alın"
       ]
     },
     "Email body for description (description part)": {
@@ -2776,6 +2810,9 @@
       ],
       "You have reached the contacts limit for your account": [
         "Hesabınızın kişi sayısı sınırına ulaştınız"
+      ],
+      "You have reached the maximum number of calendars.": [
+        "Eklenebilecek en fazla takvim sayısı sınırına ulaştınız."
       ],
       "You must set a name": [
         "Bir ad belirtmelisiniz"
@@ -3893,6 +3930,9 @@
       "Billing cycle: ${ text }": [
         "Faturalama dönemi: ${ text }"
       ],
+      "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
+        "Kuruluşunuzun marka kimliğini güçlendirerek kullanıcılarınız için daha istikrarlı bir çevrimiçi deneyim oluşturun."
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ücretsiz bir tarifeye geçtiğinizde, gelecekte yeniden ücretli tarifeye geçseniz bile bu ek faydaları kalıcı olarak kaybedersiniz."
       ],
@@ -4208,9 +4248,6 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "En iyi sonucu almak için yayın akışları ve fazla bellek kullanılması gereken etkinliklerden kaçının ya da yüklemenizi daha küçük gruplara ayırın."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Başka bir hesaptaki e-postalarınızı güvenli ${ MAIL_APP_NAME } gelen kutunuza iletin."
-      ],
       "from the version history?": [
         "sürüm geçmişinden?"
       ],
@@ -4268,9 +4305,6 @@
       ],
       "Import mailbox": [
         "Posta kutusunu içe aktar"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "E-postalarınızı, takvimlerinizi ve kişilerinizi başka bir hizmetten ${ BRAND_NAME } içine aktarın."
       ],
       "Important note": [
         "Önemli not"
@@ -5943,7 +5977,7 @@
         "Benimle paylaşılan"
       ],
       "stay safer online": [
-        "çevrim içi ortamda güvende kalın"
+        "çevrim içi ortamda daha güvende kalın"
       ],
       "Trash": [
         "Çöp kutusu"
@@ -6578,6 +6612,9 @@
       ],
       "Organize items with multiple vaults": [
         "Birden çok kasa ile ögeleri gruplayın"
+      ],
+      "Passkeys supported": [
+        "Geçiş anahtarları desteklenmektedir"
       ],
       "Password-protected Emails": [
         "Parola korumalı e-postalar"
@@ -8355,11 +8392,41 @@
       "15 GB storage": [
         "15 GB depolama alanı"
       ],
+      "and 15 more premium features": [
+        "ve 15 ücretli özellik daha"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Otomatik e-posta iletisi ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Veri ihlali uyarısı ${ strongArgument }"
+      ],
       "Desktop app": [
         "Masaüstü uygulaması"
       ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ücretli bir tarifeye geçiş yaparak interneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
+      ],
+      "No ads or tracking": [
+        "Reklamlar ve izleyiciler yok"
+      ],
+      "Short @pm.me email address": [
+        "Kısa @pm.me e-posta adresi"
+      ],
+      "Support our mission": [
+        "Misyonumuzu destekleyin"
+      ],
       "Upgrade": [
         "Yükselt"
+      ],
+      "Upgrade your productivity": [
+        "Verimliliğinizi artırın"
+      ],
+      "We don't sell your data": [
+        "Verilerinizi satmıyoruz"
+      ],
+      "Your privacy is our mission": [
+        "Gizliliğiniz bizim misyonumuzdur"
       ]
     },
     "Subscription renewal state": {
@@ -8648,6 +8715,9 @@
       ],
       "Active": [
         "İşlenen"
+      ],
+      "Add a custom logo": [
+        "Özel bir logo ekle"
       ],
       "Add contact group name": [
         "Kişi grubu adı ekle"
@@ -8964,7 +9034,7 @@
         "Gece teması"
       ],
       "No breaches detected": [
-        "Herhangi bir veri açığa çıkmamış"
+        "Herhangi bir veri ele geçirilmemiş"
       ],
       "No results found": [
         "Herhangi bir sonuç bulunamadı"
@@ -9374,6 +9444,9 @@
       ],
       "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
         "Abonelik her 3 ayda bir otomatik olarak yenilenir. Bir sonraki fatura tarihiniz 3 ay sonra."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "İlk ay için ${ priceWithDiscount } özel indirimli fiyat geçerlidir. Ardından aylık ${ renewPrice } tutarla otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
       ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Daha sonra faturanız her 12 ayda bir ${ renewPrice } üzerinden hazırlanacak."

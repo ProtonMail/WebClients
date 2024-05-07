@@ -582,7 +582,7 @@
         "Pozvať"
       ],
       "Invite user": [
-        "Pozvite používateľa"
+        "Pozvať používateľa"
       ],
       "Italic": [
         "Kurzíva"
@@ -598,6 +598,9 @@
       ],
       "label emails as": [
         "označiť emaily ako"
+      ],
+      "Later": [
+        "Neskôr"
       ],
       "Leave": [
         "Opustiť"
@@ -3337,12 +3340,6 @@
       "Missing feature(s)": [
         "Chýbajúce funkcie"
       ],
-      "My reason isn't listed, please comment": [
-        "Môj dôvod nie je uvedený, prosím okomentujte"
-      ],
-      "Streaming service unsupported": [
-        "Streamovacia služba nie je podporovaná"
-      ],
       "Subscription is too expensive": [
         "Predplatné je príliš drahé"
       ],
@@ -3375,6 +3372,29 @@
       ],
       "Secure cloud storage and file sharing that protects your data": [
         "Bezpečné cloudové úložisko a zdieľanie súborov, ktoré chráni vaše údaje"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Rozšírená história verzií"
+      ],
+      "Priority support": [
+        "Prioritná podpora"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Obnovuje sa za ${ renewablePrice }, zrušiť môžete kedykoľvek"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "za prvý mesiac"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Získať ${ planName } len za ${ planPrice }"
       ]
     },
     "Duration": {
@@ -4330,6 +4350,9 @@
       ],
       "You have reached the contacts limit for your account": [
         "Dosiahli ste limit kontaktov pre svoj účet"
+      ],
+      "You have reached the maximum number of calendars.": [
+        "Dosiahli ste maximálny počet kalendárov."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Limit počtu adries vo vašom pláne bol vyčerpaný. Prejdite na vyšší plán, ak chcete pridať novú adresu."
@@ -7414,7 +7437,7 @@
       ],
       "Please add an email address for the user on row": [
         "Pridajte emailovú adresu používateľa na riadku",
-        "Pridajte emailové adresy používateľov na riadkoch",
+        "Pridajte prosím emailové adresy používateľov na riadkoch",
         "Pridajte emailové adresy používateľov na riadkoch",
         "Pridajte emailové adresy používateľov na riadkoch"
       ],
@@ -7450,9 +7473,6 @@
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Berte prosím na vedomie, že po kliknutí na tlačidlo Potvrdiť vám na účte zostanú kredity vo výške ${ creditsRemaining }."
-      ],
-      "Please provide an email address in case we need to contact you.": [
-        "Zadajte prosím emailovú adresu pre prípad, že vás budeme potrebovať kontaktovať."
       ],
       "Please select the folders you would like to import:": [
         "Vyberte priečinky, ktoré chcete importovať:"
@@ -12171,9 +12191,6 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Check out ${ appName } features": [
-        "Pozrite si funkcie ${ appName }"
-      ],
       "Continue": [
         "Pokračovať"
       ],
@@ -12264,15 +12281,6 @@
       "${ PASS_APP_NAME } is available as a browser extension on the Chrome Web Store.": [
         "${ PASS_APP_NAME } je k dispozícii ako rozšírenie prehliadača v internetovom obchode Chrome."
       ],
-      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption.": [
-        "${ PASS_APP_NAME } uchováva vaše heslá a identitu v bezpečí pomocou dôsledného šifrovania počas celého spojenia."
-      ],
-      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. To add premium features of ${ PASS_APP_NAME_2 } to your current subscription, we suggest upgrading to the ${ upsellPlanName } plan.": [
-        "${ PASS_APP_NAME } uchováva vaše heslá a identitu v bezpečí pomocou dôsledného end-to-end šifrovania. Ak chcete k aktuálnemu predplatnému pridať prémiové funkcie ${ PASS_APP_NAME_2 }, odporúčame prejsť na plán ${ upsellPlanName }."
-      ],
-      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. Your current plan already gives you access to premium ${ PASS_APP_NAME_2 } features — no need to purchase again.": [
-        "${ PASS_APP_NAME } uchováva vaše heslá a identitu v bezpečí pomocou dôsledného end-to-end šifrovania. Váš aktuálny plán vám už poskytuje prístup k prémiovým funkciám ${ PASS_APP_NAME_2 } - nie je potrebné kupovať znova."
-      ],
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } mesačne"
       ],
@@ -12314,9 +12322,6 @@
       ],
       "Current plan": [
         "Súčasný plán"
-      ],
-      "Discover ${ PASS_APP_NAME },${ br }our new encrypted password manager": [
-        "Objavte ${ PASS_APP_NAME },${ br }nášho nového šifrovaného správcu hesiel"
       ],
       "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
         "Na začatie používania ${ PASS_APP_NAME } si stiahnite a nainštalujte príslušné aplikácie a rozšírenia"
@@ -12371,9 +12376,6 @@
       ],
       "Get the security and features your business needs": [
         "Získajte zabezpečenie a funkcie, ktoré vaša firma potrebuje"
-      ],
-      "Hide-my-email aliases protect your email from data breaches": [
-        "Hide-my-email aliasy chránia váš email pred únikom údajov"
       ],
       "I understand that if I lose my recovery details, I may permanently lose access to my account.": [
         "Beriem na vedomie, že ak stratím svoje údaje pre obnovenie, môžem natrvalo stratiť prístup k svojmu účtu."
@@ -14284,6 +14286,9 @@
       ],
       "Desktop app": [
         "Desktopová aplikácia"
+      ],
+      "Upgrade": [
+        "Prejsť na platený plán"
       ]
     },
     "Subscription renewal state": {
@@ -16292,6 +16297,9 @@
       ],
       "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
         "Predplatné sa automaticky obnovuje každé 3 mesiace. Ďalší dátum fakturácie je o 3 mesiace."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Špeciálne zľavnená cena ${ priceWithDiscount } platí prvý mesiac. Potom sa každý mesiac automaticky obnoví za ${ renewPrice }. Službu môžete kedykoľvek zrušiť."
       ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Potom vám bude každých 12 mesiacov vystavená faktúra vo výške ${ renewPrice }."

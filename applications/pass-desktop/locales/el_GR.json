@@ -158,6 +158,12 @@
       "Edit vault": [
         "Επεξεργασία κρύπτης"
       ],
+      "Enable Dark Web Monitoring": [
+        "Ενεργοποιήστε Παρακολούθηση Dark Web"
+      ],
+      "Exclude from monitoring": [
+        "Εξαίρεση από την παρακολούθηση"
+      ],
       "Export": [
         "Εξαγωγή"
       ],
@@ -182,6 +188,9 @@
       "Get mobile apps": [
         "Αποκτήστε εφαρμογές κινητών"
       ],
+      "Get Pass Plus": [
+        "Αποκτήστε το Pass Plus"
+      ],
       "Get Started": [
         "Ξεκινήστε"
       ],
@@ -199,6 +208,9 @@
       ],
       "Importing": [
         "Εισαγωγή"
+      ],
+      "Include in monitoring": [
+        "Συμπερίληψη στην παρακολούθηση"
       ],
       "Install extension": [
         "Εγκατάσταση επέκτασης"
@@ -278,6 +290,12 @@
       "Pass for iOS": [
         "Έγκριση για το iOS"
       ],
+      "Pass Monitor": [
+        "Παρακολούθηση Pass"
+      ],
+      "Pause monitoring": [
+        "Παύση παρακολούθησης"
+      ],
       "Pin item": [
         "Καρφίτσωμα στοιχείου"
       ],
@@ -308,6 +326,9 @@
       "Resend code": [
         "Επαναποστολή κωδικού"
       ],
+      "Resend code (in ${ remaining }s)": [
+        "Επανάληψη αποστολής κωδικού (σε ${ remaining })"
+      ],
       "Resend invitation": [
         "Επανάληψη αποστολής πρόσκλησης"
       ],
@@ -317,6 +338,9 @@
       "Restore item": [
         "Επαναφορά στοιχείου"
       ],
+      "Resume monitoring": [
+        "Συνέχιση παρακολούθησης"
+      ],
       "Retry": [
         "Δοκιμάστε ξανά"
       ],
@@ -325,6 +349,9 @@
       ],
       "Saving": [
         "Αποθήκευση"
+      ],
+      "See all": [
+        "Προβολή όλων"
       ],
       "See members": [
         "Προβολή μελών"
@@ -392,6 +419,9 @@
       "Verify": [
         "Επαλήθευση"
       ],
+      "View details": [
+        "Προβολή λεπτομερειών"
+      ],
       "View history": [
         "Προβολή ιστορικού"
       ],
@@ -442,6 +472,54 @@
       ],
       "Expand": [
         "Ανάπτυξη"
+      ]
+    },
+    "Description": {
+      "${ total } other login uses the same password": [
+        "${ total } άλλη σύνδεση χρησιμοποιεί τον ίδιο κωδικό πρόσβασης",
+        "${ total } άλλες συνδέσεις χρησιμοποιούν τον ίδιο κωδικό πρόσβασης"
+      ],
+      "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
+        "Ένα ψευδώνυμο ηλεκτρονικού ταχυδρομείου λειτουργεί όπως μια διεύθυνση ηλεκτρονικού ταχυδρομείου, αλλά μειώνει τα ανεπιθύμητα μηνύματα και διατηρεί κρυφή την πραγματική διεύθυνση ηλεκτρονικού ταχυδρομείου και την ταυτότητά σας."
+      ],
+      "Change your passwords": [
+        "Αλλάξτε τους κωδικούς πρόσβασής σας"
+      ],
+      "Create unique passwords": [
+        "Δημιουργήστε μοναδικούς κωδικούς πρόσβασης"
+      ],
+      "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
+        "Το Dark Web Monitoring είναι διαθέσιμο με πλάνο επί πληρωμή. Αναβαθμίστε το πλάνο σας για άμεση πρόσβαση."
+      ],
+      "Get notified if your email, password or other personal data was leaked.": [
+        "Λάβετε ειδοποίηση εάν η διεύθυνση ηλεκτρονικού ταχυδρομείου, ο κωδικός πρόσβασης ή άλλα προσωπικά δεδομένα σας έχουν διαρρεύσει."
+      ],
+      "Keep your info more secure and private with these guides and tips.": [
+        "Διατηρήστε τις πληροφορίες σας πιο ασφαλείς και ιδιωτικές με αυτούς τους οδηγούς και συμβουλές."
+      ],
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "Η πρωτοποριακή μας λύση ασφάλειας με γνώμονα την τεχνητή νοημοσύνη, σχεδιασμένη για χρήστες που αναζητούν αυξημένη προστασία για τους λογαριασμούς τους. ${ learnMoreLink }"
+      ],
+      "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
+        "Ξεκινήστε την παρακολούθηση για παραβιάσεις δεδομένων που σχετίζονται με λογαριασμούς που έχουν δημιουργηθεί με τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας και τα hide-my-email ψευδώνυμά σας."
+      ],
+      "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
+        "Ο σκοτεινός ιστός είναι ένα κρυφό μέρος του διαδικτύου όπου κλεμμένες προσωπικές πληροφορίες, όπως ταυτότητες, μπορούν να αγοραστούν και να πωληθούν."
+      ],
+      "These items remain at risk": [
+        "Αυτά τα στοιχεία παραμένουν σε κίνδυνο"
+      ],
+      "This account is vulnerable, visit the service and change your password.": [
+        "Αυτός ο λογαριασμός είναι ευάλωτος, επισκεφθείτε την υπηρεσία και αλλάξτε τον κωδικό πρόσβασής σας."
+      ],
+      "With ${ PASS_SHORT_APP_NAME } Monitor, stay ahead of threats by getting instant alerts if your credentials are compromised. Unlock advanced security features and detailed logs to safeguard your online presence.": [
+        "Με την ${ PASS_SHORT_APP_NAME } Παρακολούθηση, παραμείνετε μπροστά από απειλές λαμβάνοντας άμεσες ειδοποιήσεις εάν παραβιαστούν τα διαπιστευτήριά σας. Ξεκλειδώστε προηγμένες λειτουργίες ασφαλείας και λεπτομερή αρχεία καταγραφής για να προστατεύσετε την παρουσία σας στο διαδίκτυο."
+      ],
+      "Your email addresses were leaked in at least 1 data breach.": [
+        "Οι διευθύνσεις ηλεκτρονικού ταχυδρομείου σας διέρρευσαν σε τουλάχιστον 1 παραβίαση δεδομένων."
+      ],
+      "Your personal info was leaked in a data breach of a third-party service.": [
+        "Τα προσωπικά σας στοιχεία διέρρευσαν σε παραβίαση δεδομένων μιας υπηρεσίας τρίτου μέρους."
       ]
     },
     "Error": {
@@ -531,6 +609,12 @@
       "Failed resending invite.": [
         "Απέτυχε η εκ νέου αποστολή πρόσκλησης."
       ],
+      "Failed to add email address": [
+        "Αποτυχία προσθήκης διεύθυνσης ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Failed to delete email address from monitoring": [
+        "Αποτυχία διαγραφής διεύθυνσης ηλεκτρονικού ταχυδρομείου από την παρακολούθηση"
+      ],
       "Failed to delete selected items": [
         "Αποτυχία διαγραφής επιλεγμένων στοιχείων."
       ],
@@ -539,6 +623,12 @@
       ],
       "Failed to edit user's access.": [
         "Απέτυχε η επεξεργασία της πρόσβασης του χρήστη."
+      ],
+      "Failed to load breaches for this address": [
+        "Αποτυχία φόρτωσης παραβιάσεων για αυτή τη διεύθυνση"
+      ],
+      "Failed to load breaches for this email alias": [
+        "Αποτυχία φόρτωσης παραβιάσεων για αυτό το ψευδώνυμο ηλεκτρονικού ταχυδρομείου"
       ],
       "Failed to load item history": [
         "Αποτυχία φόρτωσης ιστορικού στοιχείων"
@@ -558,6 +648,12 @@
       "Failed to remove user's access.": [
         "Αποτυχία κατάργησης πρόσβασης χρήστη."
       ],
+      "Failed to resend verification for custom email": [
+        "Αποτυχία επανάληψης αποστολής επαλήθευσης για προσαρμοσμένο ηλεκτρονικό ταχυδρομείο"
+      ],
+      "Failed to resolve breaches for this address": [
+        "Αποτυχία επίλυσης παραβιάσεων για αυτή τη διεύθυνση"
+      ],
       "Failed to restore items from trash": [
         "Αποτυχία επαναφοράς στοιχείων από τα διαγραμμένα"
       ],
@@ -566,6 +662,21 @@
       ],
       "Failed to unpin item": [
         "Αποτυχία ξεκαρφιτσώματος στοιχείου"
+      ],
+      "Failed to update monitoring settings": [
+        "Αποτυχία ενημέρωσης των ρυθμίσεων παρακολούθησης"
+      ],
+      "Failed to verify email address": [
+        "Αποτυχία επαλήθευσης διεύθυνσης ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Failed updating ${ PROTON_SENTINEL_NAME } setting": [
+        "Αποτυχία ενημέρωσης της ρύθμισης ${ PROTON_SENTINEL_NAME }"
+      ],
+      "Failed updating monitor flag of the item": [
+        "Αποτυχία ενημέρωσης της σημαίας παρακολούθησης του στοιχείου"
+      ],
+      "Failed updating monitoring status for this email address": [
+        "Απέτυχε η ενημέρωση της κατάστασης παρακολούθησης για αυτήν τη διεύθυνση ηλεκτρονικού ταχυδρομείου"
       ],
       "File could not be parsed": [
         "Δεν ήταν δυνατή η ανάλυση του αρχείου"
@@ -702,6 +813,20 @@
         "Κάτι πήγε στραβά"
       ]
     },
+    "Feature": {
+      "Dark Web Monitoring": [
+        "Dark Web Monitoring"
+      ],
+      "Integrated 2FA authenticator": [
+        "Ενσωματωμένος ελεγκτής 2FA"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Απεριόριστα hide-my-email ψευδώνυμα"
+      ],
+      "Vault sharing (up to ${ MAX_VAULT_MEMBERS } people)": [
+        "Κοινή χρήση κρύπτης (έως ${ MAX_VAULT_MEMBERS } άτομα)"
+      ]
+    },
     "file size format": {
       "byte": [
         "byte",
@@ -801,6 +926,12 @@
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "Το ${ PASS_APP_NAME } θα απαιτήσει τον ${ BRAND_NAME } κωδικό πρόσβασής σας για να αποκτήσει πρόσβαση σε δεδομένα εκτός σύνδεσης."
       ],
+      "${ PROTON_SENTINEL_NAME } successfully disabled": [
+        "Το ${ PROTON_SENTINEL_NAME } απενεργοποιήθηκε επιτυχώς"
+      ],
+      "${ PROTON_SENTINEL_NAME } successfully enabled": [
+        "Το ${ PROTON_SENTINEL_NAME } ενεργοποιήθηκε επιτυχώς"
+      ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 ημέρες για να δοκιμάσετε δωρεάν premium χαρακτηριστικά. Μόνο κατά την πρώτη εβδομάδα χρησιμοποιώντας το ${ BRAND_NAME }."
       ],
@@ -809,6 +940,9 @@
       ],
       "Access successfully confirmed": [
         "Η πρόσβαση επιβεβαιώθηκε με επιτυχία"
+      ],
+      "Add your custom email address to monitor :": [
+        "Προσθέστε την προσαρμοσμένη διεύθυνση ηλεκτρονικού ταχυδρομείου σας για παρακολούθηση:"
       ],
       "Admin": [
         "Διαχειριστής"
@@ -821,6 +955,15 @@
       ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Το ψευδώνυμο \"${ item.aliasEmail }\" μετακινήθηκε στα διαγραμμένα - θα σταματήσει να προωθεί μηνύματα ηλεκτρονικού ταχυδρομείου στο γραμματοκιβώτιό σας"
+      ],
+      "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
+        "Τα ψευδώνυμα με προσαρμοσμένους τομείς δεν παρακολουθούνται, προσθέστε τα ως προσαρμοσμένο email για παρακολούθηση."
+      ],
+      "All breaches for this address were resolved": [
+        "Επιλύθηκαν όλες οι παραβιάσεις για αυτήν τη διεύθυνση"
+      ],
+      "All current breaches will be marked as resolved. In case of future data breaches, you'll be notified.": [
+        "Όλες οι τρέχουσες παραβιάσεις θα επισημανθούν ως επιλυμένες. Σε περίπτωση μελλοντικών παραβιάσεων δεδομένων, θα ειδοποιηθείτε."
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Όλα τα στοιχεία από το \"${ payload.content.name }\" μετακινήθηκαν με επιτυχία"
@@ -848,6 +991,9 @@
       ],
       "Auto-lock successfully disabled": [
         "Το αυτόματο κλείδωμα απενεργοποιήθηκε με επιτυχία"
+      ],
+      "Breaches detected": [
+        "Εντοπίστηκαν παραβιάσεις"
       ],
       "Bring your existing passwords into ${ BRAND_NAME }.": [
         "Φέρτε τους υπάρχοντες κωδικούς πρόσβασής σας στο ${ BRAND_NAME }."
@@ -894,6 +1040,9 @@
       "Deleting \"${ payload.content.name }\"": [
         "Διαγραφή του \"${ payload.content.name }\""
       ],
+      "Didn't receive the code?": [
+        "Δε λάβατε τον κωδικό;"
+      ],
       "Drop file here to upload": [
         "Σύρετε ένα αρχείο εδώ για μεταφόρτωση"
       ],
@@ -905,6 +1054,15 @@
       ],
       "email": [
         "ηλεκτρονικό ταχυδρομείο"
+      ],
+      "Email address successfully deleted from monitoring": [
+        "Η διεύθυνση ηλεκτρονικού ταχυδρομείου διαγράφηκε επιτυχώς από την παρακολούθηση"
+      ],
+      "Email address successfully excluded from monitoring": [
+        "Η διεύθυνση ηλεκτρονικού ταχυδρομείου εξαιρέθηκε επιτυχώς από την παρακολούθηση"
+      ],
+      "Email address successfully included in monitoring": [
+        "Η διεύθυνση ηλεκτρονικού ταχυδρομείου συμπεριλήφθηκε επιτυχώς στην παρακολούθηση"
       ],
       "Emptying trash...": [
         "Άδειασμα διαγραμμένων..."
@@ -1005,6 +1163,12 @@
       "Item restored": [
         "Έγινε επαναφορά στοιχείου"
       ],
+      "Item successfully excluded from monitoring": [
+        "Το στοιχείο εξαιρέθηκε επιτυχώς από την παρακολούθηση"
+      ],
+      "Item successfully included in monitoring": [
+        "Το στοιχείο συμπεριλήφθηκε επιτυχώς στην παρακολούθηση"
+      ],
       "Item successfully moved": [
         "Στοιχείο μετακινήθηκε επιτυχώς"
       ],
@@ -1013,6 +1177,9 @@
       ],
       "Item successfully unpinned": [
         "Το στοιχείο ξεκαρφιτσώθηκε επιτυχώς"
+      ],
+      "Latest breach on ${ formattedDate }": [
+        "Τελευταία παραβίαση στις ${ formattedDate }"
       ],
       "Learn how to ${ staySaferOnlineLink }": [
         "Μάθετε πώς μπορείτε να ${ staySaferOnlineLink }"
@@ -1047,6 +1214,9 @@
       "Monitor accounts": [
         "Παρακολούθηση λογαριασμών"
       ],
+      "Monitoring settings successfully updated": [
+        "Οι ρυθμίσεις παρακολούθησης ενημερώθηκαν με επιτυχία"
+      ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "Περισσότερο από έναν διαχειριστή κωδικών πρόσβασης, το ${ PASS_APP_NAME } προστατεύει τον κωδικό πρόσβασής σας και την προσωπική σας διεύθυνση email μέσω ψευδωνύμων email. Με την ίδια τεχνολογία πίσω από το ${ MAIL_APP_NAME }, τα δεδομένα σας είναι κρυπτογραφημένα από άκρο σε άκρο και είναι προσβάσιμα μόνο από εσάς."
       ],
@@ -1067,6 +1237,9 @@
       ],
       "Never": [
         "Ποτέ"
+      ],
+      "No breaches detected": [
+        "Δεν εντοπίστηκαν παραβιάσεις"
       ],
       "No network connection": [
         "Δεν υπάρχει σύνδεση δικτύου"
@@ -1113,6 +1286,9 @@
       ],
       "Pinning item...": [
         "Καρφίτσωμα στοιχείου..."
+      ],
+      "Please check your spam folder or try resending the code.": [
+        "Παρακαλούμε ελέγξτε τον φάκελο ανεπιθύμητης αλληλογραφίας ή δοκιμάστε να στείλετε ξανά τον κωδικό."
       ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Επιβεβαιώστε τον κωδικό πρόσβασης ${ BRAND_NAME } για να ενεργοποιήσετε τη λειτουργία εκτός σύνδεσης"
@@ -1203,6 +1379,9 @@
       ],
       "Successfully synced all vaults": [
         "Επιτυχής συγχρονισμός όλων των κρυπτών"
+      ],
+      "Suggested": [
+        "Προτεινόμενο"
       ],
       "Switch to another vault or create an item in this vault": [
         "Μεταβείτε σε άλλη κρύπτη ή δημιουργήστε ένα στοιχείο σε αυτήν την κρύπτη"
@@ -1295,11 +1474,17 @@
       "Vault \"${ share.content.name }\" was removed": [
         "Η κρύπτη \"${ share.content.name }\" καταργήθηκε"
       ],
+      "Verification code sent.": [
+        "Ο κωδικός επαλήθευσης στάλθηκε."
+      ],
       "Viewer": [
         "Πρόγραμμα προβολής"
       ],
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Αντιμετωπίζουμε προβλήματα συγχρονισμού δεδομένων στον τοπικό σας χώρο αποθήκευσης. Βεβαιωθείτε ότι έχετε αρκετό χώρο στο δίσκο για να λειτουργεί ομαλά το ${ PASS_SHORT_APP_NAME }."
+      ],
+      "We’ve sent a verification code to ${ email }. Please enter it below:": [
+        "Στείλαμε έναν κωδικό επαλήθευσης στη διεύθυνση ${ email }. Παρακαλούμε εισάγετε τον παρακάτω:"
       ],
       "You are about to create:": [
         "Είστε έτοιμοι να δημιουργήσετε:"
@@ -1332,6 +1517,12 @@
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Έχετε φτάσει στο μέγιστο επιτρεπόμενο μήκος των ${ maxLength } χαρακτήρων."
       ],
+      "You will be notified of data breaches for this email address.": [
+        "Θα ειδοποιηθείτε για παραβιάσεις δεδομένων για αυτήν τη διεύθυνση ηλεκτρονικού ταχυδρομείου."
+      ],
+      "You will no longer be notified of data breaches for this email address.": [
+        "Δε θα ειδοποιείστε πλέον για παραβιάσεις δεδομένων για αυτήν τη διεύθυνση ηλεκτρονικού ταχυδρομείου."
+      ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "Θα χρησιμοποιήσετε αυτό το PIN για να ξεκλειδώσετε το ${ PASS_APP_NAME } όταν κλειδώσει αυτόματα μετά από μια περίοδο αδράνειας."
       ],
@@ -1353,6 +1544,10 @@
       "${ config.options.wordCount } word": [
         "${ config.options.wordCount } λέξη",
         "${ config.options.wordCount } λέξεις"
+      ],
+      "${ usageCount } login": [
+        "${ usageCount } σύνδεση",
+        "${ usageCount } συνδέσεις"
       ],
       "1 hour": [
         "1 ώρα"
@@ -1555,6 +1750,9 @@
       "Last month": [
         "Προηγούμενος μήνας"
       ],
+      "Last updated": [
+        "Τελευταία ενημέρωση"
+      ],
       "Last week": [
         "Προηγούμενη εβδομάδα"
       ],
@@ -1611,6 +1809,9 @@
       ],
       "No history": [
         "Χωρίς ιστορικό"
+      ],
+      "None": [
+        "Κανένα"
       ],
       "Note": [
         "Σημείωση"
@@ -1699,6 +1900,12 @@
       "Special characters (!&*)": [
         "Ειδικοί χαρακτήρες (!&*)"
       ],
+      "Status": [
+        "Κατάσταση"
+      ],
+      "Strong": [
+        "Δυνατό"
+      ],
       "Suffix": [
         "Επίθεμα"
       ],
@@ -1744,6 +1951,9 @@
       "Update": [
         "Αναβάθμιση"
       ],
+      "Used in": [
+        "Χρησιμοποιείται σε"
+      ],
       "Username": [
         "Όνομα Χρήστη"
       ],
@@ -1767,6 +1977,12 @@
       ],
       "View logs": [
         "Προβολή αρχείων καταγραφής"
+      ],
+      "Vulnerable": [
+        "Ευάλωτο"
+      ],
+      "Weak": [
+        "Αδύναμο"
       ],
       "Websites": [
         "Ιστοσελίδες"
@@ -1884,6 +2100,9 @@
       "Full Name": [
         "Ονοματεπώνυμο"
       ],
+      "me@example.com": [
+        "me@example.com"
+      ],
       "MM/YY": [
         "ΜΜ/ΕΕ"
       ],
@@ -1943,14 +2162,35 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } addresses": [
+        "${ BRAND_NAME } διευθύνσεις"
+      ],
+      "${ PASS_SHORT_APP_NAME } Monitor": [
+        "${ PASS_SHORT_APP_NAME } Παρακολούθηση"
+      ],
+      "${ PASS_SHORT_APP_NAME } monitor": [
+        "${ PASS_SHORT_APP_NAME } παρακολούθηση"
+      ],
+      "Account protection": [
+        "Προστασία λογαριασμού"
+      ],
       "Auto-lock update": [
         "Ενημέρωση αυτόματου κλειδώματος"
       ],
-      "Block trackers and malware": [
-        "Αποκλεισμός ιχνηλατών και κακόβουλου λογισμικού"
+      "Breach detected": [
+        "Εντοπίστηκε παραβίαση"
+      ],
+      "Breaches": [
+        "Παραβιάσεις"
+      ],
+      "Breaches detected for": [
+        "Εντοπίστηκαν παραβιάσεις για"
       ],
       "Confirm PIN code": [
         "Επιβεβαιώστε τον κωδικό PIN"
+      ],
+      "Confirm your email": [
+        "Επιβεβαιώστε τη διεύθυνση email σας"
       ],
       "Create a vault": [
         "Δημιουργία κρύπτης"
@@ -1963,6 +2203,18 @@
       ],
       "Current version": [
         "Τρέχουσα έκδοση"
+      ],
+      "Custom addresses": [
+        "Προσαρμοσμένες διευθύνσεις"
+      ],
+      "Custom email monitoring": [
+        "Παρακολούθηση προσαρμοσμένων διευθύνσεων ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Custom emails": [
+        "Προσαρμοσμένα μηνύματα ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Dark Web Monitoring": [
+        "Dark Web Monitoring"
       ],
       "Delete vault \"${ vaultName }\" ?": [
         "Διαγραφή'η κρύπτης \"${ vaultName }\" ;"
@@ -1985,11 +2237,17 @@
       "Enter your PIN": [
         "Εισαγάγετε το PIN σας"
       ],
+      "Excluded items": [
+        "Εξαιρούμενα στοιχεία"
+      ],
       "Get Started": [
         "Ξεκινήστε"
       ],
       "Grant permissions": [
         "Απαιτούμενα δικαιώματα"
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email ψευδώνυμα"
       ],
       "History": [
         "Ιστορία"
@@ -2018,6 +2276,9 @@
       "Low disk space": [
         "Περιορισμένος χώρος στο δίσκο"
       ],
+      "Mark as resolved?": [
+        "Σήμανση ως επιλυμένου?"
+      ],
       "Member limit": [
         "Όριο μελών"
       ],
@@ -2036,8 +2297,17 @@
       "Move items?": [
         "Μετακίνηση στοιχείων;"
       ],
+      "No excluded items": [
+        "Δεν υπάρχουν εξαιρούμενα στοιχεία"
+      ],
+      "No insecure passwords": [
+        "Δεν υπάρχουν μη ασφαλείς κωδικοί πρόσβασης"
+      ],
       "No items selected": [
         "Δεν επιλέχθηκαν αντικείμενα"
+      ],
+      "No reused passwords": [
+        "Δεν υπάρχουν επαναχρησιμοποιημένοι κωδικοί πρόσβασης"
       ],
       "Our welcome gift to you": [
         "Το δώρο καλωσορίσματος σας"
@@ -2047,6 +2317,12 @@
       ],
       "Password": [
         "Κωδικός"
+      ],
+      "Password Health": [
+        "Υγεία κωδικού πρόσβασης"
+      ],
+      "Pause monitoring?": [
+        "Παύση παρακολούθησης;"
       ],
       "Pending access to the shared data": [
         "Εκκρεμής πρόσβαση στα κοινόχρηστα δεδομένα"
@@ -2060,8 +2336,24 @@
       "Recommended actions": [
         "Συνιστώμενες ενέργειες"
       ],
+      "Remove email address?": [
+        "Αφαίρεση διεύθυνσης ηλεκτρονικού ταχυδρομείου;"
+      ],
+      "Resolved breaches": [
+        "Επιλυμένες παραβιάσεις"
+      ],
       "Restore this version?": [
         "Επαναφορά αυτής της έκδοσης?"
+      ],
+      "Resume monitoring?": [
+        "Συνέχιση παρακολούθησης;"
+      ],
+      "Reused ${ count } time": [
+        "Επαναχρησιμοποιημένη ${ count } φορά",
+        "Επαναχρησιμοποιημένες ${ count } φορές"
+      ],
+      "Reused passwords": [
+        "Επαναχρησιμοποιημένοι κωδικοί πρόσβασης"
       ],
       "Review and share": [
         "Επανεξέταση και κοινή χρήση"
@@ -2080,6 +2372,9 @@
       ],
       "Share with": [
         "Κοινοποίηση με"
+      ],
+      "Stay safer online": [
+        "Παραμείνετε πιο ασφαλείς στο διαδίκτυο"
       ],
       "Suggestions": [
         "Προτάσεις"
@@ -2101,6 +2396,15 @@
       ],
       "Vault shared with you": [
         "Η κρύπτη που έχει κοινοποιηθεί σε εσάς"
+      ],
+      "Want to learn more?": [
+        "Θέλετε να μάθετε περισσότερα;"
+      ],
+      "Weak password": [
+        "Αδύναμος κωδικός πρόσβασης"
+      ],
+      "Weak passwords": [
+        "Αδύναμοι κωδικοί πρόσβασης"
       ],
       "What is an alias?": [
         "Τι είναι το ψευδώνυμο;"
@@ -2175,6 +2479,9 @@
       "Duplicate email addresses.": [
         "Διπλές διευθύνσεις ηλεκτρονικού ταχυδρομείου."
       ],
+      "Email is required": [
+        "Η διεύθυνση email είναι υποχρεωτική"
+      ],
       "Empty note": [
         "Κενή σημείωση"
       ],
@@ -2186,6 +2493,12 @@
       ],
       "Invalid alias prefix": [
         "Μην έγκυρο πρόθεμα ψευδωνύμου"
+      ],
+      "Invalid code": [
+        "Μη έγκυρος κωδικός"
+      ],
+      "Invalid email": [
+        "Μη έγκυρο email"
       ],
       "Invalid email addresses.": [
         "Μη έγκυρες διευθύνσεις ηλεκτρονικού ταχυδρομείου."
@@ -2248,6 +2561,9 @@
       "The alias prefix cannot be longer than 40 characters": [
         "Το πρόθεμα ψευδωνύμου δεν μπορεί να υπερβαίνει τους 40 χαρακτήρες"
       ],
+      "This email address will no longer be monitored for data breaches.": [
+        "Αυτή η διεύθυνση ηλεκτρονικού ταχυδρομείου δε θα παρακολουθείται πλέον για παραβιάσεις δεδομένων."
+      ],
       "Title is required": [
         "Απαιτείται τίτλος"
       ],
@@ -2265,6 +2581,9 @@
       ],
       "Vault name is required": [
         "Απαιτείται όνομα κρύπτης"
+      ],
+      "Verification code is required": [
+        "Απαιτείται κωδικός επαλήθευσης"
       ],
       "You cannot create more vaults than your subscription allows.": [
         "Δεν μπορείτε να δημιουργήσετε περισσότερες κρύπτες από όσες επιτρέπει η συνδρομή σας."

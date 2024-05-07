@@ -297,6 +297,9 @@
       "Go to panel ${ index }": [
         "Vai al pannello ${ index }"
       ],
+      "Go to settings": [
+        "Vai alle impostazioni"
+      ],
       "Got it": [
         "Ho capito"
       ],
@@ -362,6 +365,9 @@
       ],
       "Keep my Plus subscription": [
         "Mantieni il mio abbonamento Plus"
+      ],
+      "Later": [
+        "Più tardi"
       ],
       "Let's talk": [
         "Parliamo"
@@ -447,11 +453,11 @@
       "Not now": [
         "Non ora"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Apri impostazioni ${ CALENDAR_APP_NAME }"
@@ -851,11 +857,6 @@
       ],
       "By leaving now, you will lose your event.": [
         "Uscendo ora, perderai il tuo evento."
-      ]
-    },
-    "App logo": {
-      "Download ${ MAIL_APP_NAME } desktop application": [
-        "Scarica l'applicazione desktop di ${ MAIL_APP_NAME }"
       ]
     },
     "Apps dropdown": {
@@ -2480,12 +2481,6 @@
       "Missing feature(s)": [
         "Funzionalità mancante(i)"
       ],
-      "My reason isn't listed, please comment": [
-        "Il motivo non è elencato, per favore commenta"
-      ],
-      "Streaming service unsupported": [
-        "Servizio di streaming non supportato"
-      ],
       "Subscription is too expensive": [
         "Abbonamento troppo costoso"
       ],
@@ -2499,6 +2494,40 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Aiutaci a migliorare!"
+      ]
+    },
+    "drivePlus2024: Action": {
+      "Get the deal": [
+        "Ottieni l'offerta"
+      ],
+      "Special Offer": [
+        "Offerta speciale"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Cronologia estesa della versione"
+      ],
+      "Priority support": [
+        "Supporto prioritario"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Rinnova a ${ renewablePrice }, annulla in qualsiasi momento"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "per il primo mese"
+      ],
+      "Limited-time offer": [
+        "Offerta a tempo limitato"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Ottieni ${ planName } a soli ${ planPrice }"
       ]
     },
     "Dropdown action icon tooltip": {
@@ -4193,6 +4222,9 @@
       "Billing cycle: ${ text }": [
         "Ciclo di fatturazione: ${ text }"
       ],
+      "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
+        "Rafforza l'identità della tua organizzazione e crea un'esperienza online più coerente per i tuoi utenti."
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Declassando ad un piano gratuito, perderai definitivamente questi benefici, anche se in futuro effettuerai un nuovo upgrade."
       ],
@@ -4381,9 +4413,6 @@
       "finance": [
         "dati finanziari"
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Inoltra la posta in arrivo da un altro account alla tua casella di posta sicura di ${ MAIL_APP_NAME }."
-      ],
       "Frequency modifications will be lost.": [
         "Le modifiche di frequenza andranno perse."
       ],
@@ -4423,9 +4452,6 @@
       ],
       "Import mailbox": [
         "Importa casella di posta"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Importa le tue email, calendari e contatti da un altro servizio su ${ BRAND_NAME }."
       ],
       "Important note": [
         "Nota importante"
@@ -6355,6 +6381,9 @@
       "Organize items with multiple vaults": [
         "Organizza gli elementi con più casseforti"
       ],
+      "Pass Monitor - premium features": [
+        "Pass Monitor - funzionalità premium"
+      ],
       "Passkeys supported": [
         "Passkey supportate"
       ],
@@ -6430,6 +6459,9 @@
       ],
       "Unlimited devices": [
         "Dispositivi illimitati"
+      ],
+      "Unlimited devices and aliases": [
+        "Dispositivi e alias illimitati"
       ],
       "Unlimited filters": [
         "Filtri illimitati"
@@ -7176,6 +7208,18 @@
     "Participants expand button label": {
       "Expand participants list": [
         "Espandi la lista dei partecipanti"
+      ]
+    },
+    "pass_signup_2023: Info": {
+      "Secure sharing with ${ n } vault": [
+        "Condivisione sicura con ${ n } cassaforte",
+        "Condivisione sicura con ${ n } casseforti"
+      ],
+      "Secure sharing with multiple vaults": [
+        "Condivisione sicura con più casseforti"
+      ],
+      "Secure vault sharing": [
+        "Condivisione sicura della cassaforte"
       ]
     },
     "passwordless": {
@@ -7985,14 +8029,8 @@
       "Color-code your calendar to better organize your day, track your time, and more.": [
         "Colora il tuo calendario per organizzare al meglio la tua giornata, tenere traccia del tuo tempo e molto altro ancora."
       ],
-      "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
-        "Avvia ${ MAIL_APP_NAME } direttamente dal tuo desktop."
-      ],
       "Custom event colors": [
         "Colori degli eventi personalizzati"
-      ],
-      "Get the desktop app": [
-        "Ottieni l'applicazione desktop"
       ],
       "Get up to ${ credits } in credits.": [
         "Guadagna fino a ${ credits } in crediti."
@@ -8582,6 +8620,9 @@
       ],
       "Account security": [
         "Sicurezza dell'account"
+      ],
+      "Add a custom logo": [
+        "Aggiungi un logo personalizzato"
       ],
       "Add another notification to remind you of this event": [
         "Aggiungi un'altra notifica per ricordarti di questo evento"

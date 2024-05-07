@@ -1675,7 +1675,7 @@
         "Nadaljuj z uporabo ${ MAIL_APP_NAME }a."
       ],
       "Continue using ${ planTitle }": [
-        "Nadaljuj z uporabo ${ planTitle }a"
+        "Nadaljujte z uporabo ${ planTitle }"
       ],
       "Continue your subscription": [
         "Podaljšajte naročnino"
@@ -3296,12 +3296,6 @@
       "Missing feature(s)": [
         "Manjkajoče funkcije"
       ],
-      "My reason isn't listed, please comment": [
-        "Mojega razloga ni na seznamu, prosim, komentirajte."
-      ],
-      "Streaming service unsupported": [
-        "Pretočni servis ni podprt"
-      ],
       "Subscription is too expensive": [
         "Naročnina je predraga."
       ],
@@ -3322,7 +3316,7 @@
         ".deb za Debian / Ubuntu"
       ],
       ".rpm for Fedora / Red Hat": [
-        ".rpm za Fedoro / Red Hat"
+        ".rpm za Fedora / Red Hat"
       ]
     },
     "drive_signup_2023: Info": {
@@ -3334,6 +3328,29 @@
       ],
       "Secure cloud storage and file sharing that protects your data": [
         "Varna shramba v oblaku in delitev datotek, ki varuje vaše podatke"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Razširjena zgodovina različic"
+      ],
+      "Priority support": [
+        "Prednostna podpora"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Obnovitev za ${ renewablePrice }, prekličete lahko kadarkoli"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "za prvi mesec"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Pridobite ${ planName } za samo ${ planPrice }"
       ]
     },
     "Duration": {
@@ -3811,7 +3828,7 @@
         "${ errorMessage }. Lahko tudi preverite stanje na ${ statusPageLink }"
       ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ user.Name } je vaše uporabniško ime. Če želite ustvariti ${ emailAddress }, pojdite v Nastavitve > Sporočila in sestavljanje > Kratka domena (pm.me)"
+        "${ user.Name } je vaše uporabniško ime. Če želite ustvariti ${ emailAddress }, pojdite v Nastavitve > Sporočila in sestavljanje > Kratka domena (pm.me)."
       ],
       "A group with this name already exists": [
         "Skupina z enakim imenom že obstaja"
@@ -3862,7 +3879,7 @@
         "Podpis stika ni potrjen"
       ],
       "Coudn't load invoices. Please try again later.": [
-        "Računov ni bilo mogoče naložiti. Prosim poskusite kasneje."
+        "Računov ni bilo mogoče naložiti. Poskusite kasneje."
       ],
       "Could not save preference": [
         "Nastavitve ni bilo mogoče shraniti"
@@ -4090,10 +4107,10 @@
         "Prosim, nadgradite na poslovni paket z več kot enim uporabnikom, da boste lahko upravljali več uporabnikov."
       ],
       "Please upload an xml file": [
-        "Naložite datoteko xml"
+        "Naložite datoteko xml."
       ],
       "Please upload only 1 file": [
-        "Naložite samo 1 datoteko"
+        "Naložite samo 1 datoteko."
       ],
       "Port is required": [
         "Zahtevana so vrata"
@@ -6080,7 +6097,7 @@
         "Strežniki ${ provisioningCounter } se še nastavljajo. To običajno traja približno ${ provisioningDuration }."
       ],
       "${ quarantine }: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
-        "${ quarantine }: poziva platforme prejemnikov, naj nepooblaščena e-poštna sporočila označijo kot vsiljeno pošto ali jih postavijo v karanteno."
+        "${ quarantine }: poziva platforme prejemnikov, naj nepooblaščena e-poštna sporočila označijo kot neželeno pošto ali jih postavijo v karanteno."
       ],
       "${ reject }: asking the recipient platforms to reject the unauthorized emails.": [
         "${ reject }: poziva platforme prejemnikov, da zavrnejo nepooblaščena e-poštna sporočila."
@@ -6519,9 +6536,6 @@
       ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Kopirajte in prilepite ta URL v polje URL ACS (Assertion Consumer Service) vašega ponudnika identitete"
-      ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
-        "Copy and paste this URL into the entity ID field of your identity provider"
       ],
       "Copy the link to clipboard": [
         "Kopiraj povezavo v odložišče"
@@ -7112,7 +7126,7 @@
         "Večje e-poštne storitve lahko zavrnejo ali filtrirajo vašo e-pošto v neželeno pošto, če SPF/DKIM/DMARC manjka ali ni pravilno nastavljen."
       ],
       "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not setup properly.": [
-        "Večje e-poštne storitve lahko zavrnejo ali filtrirajo vaša e-poštna sporočila v vsiljeno pošto, če SPF/DKIM/DMARC manjka ali ni pravilno nastavljen."
+        "Večje e-poštne storitve lahko zavrnejo ali filtrirajo vaša e-poštna sporočila v neželeno pošto, če SPF/DKIM/DMARC manjka ali ni pravilno nastavljen."
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Poskrbite, da ${ addARecoveryMethod }, da boste lahko ponovno dostopali do svojega računa, če pozabite geslo."
@@ -7175,7 +7189,7 @@
         "Pri trenutni naročnini ni bilo sprememb."
       ],
       "No credit card required": [
-        "Kreditna kartica ni potrebna"
+        "Plačilna kartica ni potrebna"
       ],
       "No data recovery method set; you are at risk of losing access to your data": [
         "Način za obnovitev podatkov ni nastavljen, zato tvegate izgubo dostopa do vaših podatkov."
@@ -7353,9 +7367,6 @@
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Po kliku na gumb Potrdi bo na vašem računu ostalo še ${ creditsRemaining }."
-      ],
-      "Please provide an email address in case we need to contact you.": [
-        "Prosimo, navedite e-poštni naslov, če vas moramo kontaktirati."
       ],
       "Please select the folders you would like to import:": [
         "Izberite mape, ki jih želite uvoziti:"
@@ -7574,7 +7585,7 @@
         "Nekatere od vaših razpoložljivih strežnikov je mogoče uporabljati samo v določenih državah zaradi nedavnih odstranitev"
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
-        "Specify the domain which is allowed to authenticate with SAML SSO."
+        "Določite domeno, ki ima dovoljenje za preverjanje pristnosti s SAML SSO."
       ],
       "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "SPF pojasnjuje, komu je dovoljeno pošiljati e-pošto za vašo domeno. Prepričajte se, da ste dodali naslednji zapis TXT v konzolo DNS (ki se nahaja na platformi, kjer ste kupili domeno po meri)."
@@ -7751,7 +7762,7 @@
         "To je geslo, ki ste ga uporabili pred ponastavitvijo gesla."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
-        "Ta povezava vodi na spletno mesto, ki bi lahko poskušalo ukrasti vaše podatke, kot so gesla in podatki o kreditnih karticah."
+        "Ta povezava vodi na spletno mesto, ki bi lahko poskušalo ukrasti vaše podatke, kot so gesla in podatki o plačilnih karticah."
       ],
       "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Ta povezava je morda homografski napad in je brskalnik Edge ne more odpreti. Če ste prepričani, da je povezava neškodljiva, jo odprite z drugim brskalnikom."
@@ -8276,7 +8287,7 @@
         "Preden lahko zmanjšate paket, morate onemogočiti ali odstraniti vse dodatne uporabnike, naslove in domene po meri aplikacije ${ MAIL_APP_NAME }."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
-        "Da bi jo dodali kot način plačila, morate imeti kreditno kartico ali bančni račun, ki je povezan z vašim PayPal računom."
+        "Da bi jo dodali kot način plačila, morate imeti plačilno kartico ali bančni račun, ki je povezan z vašim PayPal računom."
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Imeti morate kreditno kartico ali bančni račun, ki je povezan z vašim PayPal računom. Če vaš PayPal račun tega nima, kliknite na gumb spodaj."
@@ -9353,7 +9364,7 @@
         "Sporočil na stran"
       ],
       "Metadata file for ${ appName }": [
-        "Url metapodatkov za ${ appName }"
+        "Datoteka z metapodatki za ${ appName }"
       ],
       "Metadata URL for ${ appName }": [
         "URL metapodatkov za ${ appName }"
@@ -10744,7 +10755,7 @@
         "Samodejni odgovor"
       ],
       "Autofill credit cards (coming soon)": [
-        "Samodejno izpolnjevanje kreditnih kartic (prihaja kmalu)."
+        "Samodejno izpolnjevanje plačilnih kartic (prihaja kmalu)."
       ],
       "Automatic email forwarding": [
         "Samodejno posredovanje elektronske pošte"
@@ -11846,7 +11857,7 @@
         "Nastavitve Secure Core"
       ],
       "Select who can access...": [
-        "Izberite, kdo ima dostop do..."
+        "Izberite, kdo ima dostop do ..."
       ],
       "Send to all": [
         "Pošlji vsem"
@@ -11974,9 +11985,6 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Check out ${ appName } features": [
-        "Preverite funkcije aplikacije ${ appName }"
-      ],
       "Continue": [
         "Nadaljuj"
       ],
@@ -12067,15 +12075,6 @@
       "${ PASS_APP_NAME } is available as a browser extension on the Chrome Web Store.": [
         "${ PASS_APP_NAME } je na voljo kot razširitev spletnega brskalnika v Chrome Web Store."
       ],
-      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption.": [
-        "${ PASS_APP_NAME } ohrani vaša gesla in identiteto na varnem s strogim celovitim šifriranjem."
-      ],
-      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. To add premium features of ${ PASS_APP_NAME_2 } to your current subscription, we suggest upgrading to the ${ upsellPlanName } plan.": [
-        "${ PASS_APP_NAME } varuje vaša gesla in identiteto s strogim celovitim šifriranjem. Če želite svoji trenutni naročnini dodati premijske funkcije ${ PASS_APP_NAME_2 }, predlagamo, da nadgradite na paket ${ upsellPlanName }."
-      ],
-      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. Your current plan already gives you access to premium ${ PASS_APP_NAME_2 } features — no need to purchase again.": [
-        "${ PASS_APP_NAME } ohrani vaša gesla in identiteto na varnem s strogim celovitim šifriranjem. Vaš trenutni paket vam že omogoča dostop do premijskih funkcij ${ PASS_APP_NAME_2 }. Ni potrebe po ponovnem nakupu."
-      ],
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } na mesec"
       ],
@@ -12117,9 +12116,6 @@
       ],
       "Current plan": [
         "Trenutni paket"
-      ],
-      "Discover ${ PASS_APP_NAME },${ br }our new encrypted password manager": [
-        "Odkrijte ${ PASS_APP_NAME },${ br }naš nov šifrirani upravitelj gesel"
       ],
       "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
         "Naložite in namestite ustrezne aplikacije in razširitve, da začnete uporabljati ${ PASS_APP_NAME }."
@@ -12174,9 +12170,6 @@
       ],
       "Get the security and features your business needs": [
         "Zagotovite si varnost in funkcije, ki jih potrebuje vaše podjetje"
-      ],
-      "Hide-my-email aliases protect your email from data breaches": [
-        "Vzdevki hide-my-email ščitijo vašo e-pošto pred vdori"
       ],
       "I understand that if I lose my recovery details, I may permanently lose access to my account.": [
         "Zavedam se, da lahko trajno izgubim dostop do svojega računa, če izgubim podatke za obnovitev."
@@ -12442,7 +12435,7 @@
         "Neveljavna varnostna koda"
       ],
       "Something went wrong. Please try again later.": [
-        "Nekaj ​​je šlo narobe. Prosim poskusite kasneje."
+        "Nekaj ​​je šlo narobe. Poskusite kasneje."
       ],
       "We are unable to authenticate your payment method. Please choose a different payment method or try again.": [
         "Vašega plačilnega sredstva ne moremo preveriti. Izberite drugo plačilno sredstvo ali poskusite znova."
@@ -13540,7 +13533,7 @@
     },
     "State": {
       "Cancelling your subscription, please wait": [
-        "Preklic vaše naročnine, počakajte"
+        "Preklic vaše naročnine je v teku, počakajte."
       ]
     },
     "Step in filter modal": {
@@ -13625,7 +13618,7 @@
         "Nadgradite svoj paket in povečajte prostor za shranjevanje."
       ],
       "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
-        "Kreditne točke za preostali čas bomo dodali vašemu ${ BRAND_NAME } računu."
+        "Dobroimetje za preostali čas bomo dodali vašemu ${ BRAND_NAME } računu."
       ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "Na trenutnem paketu **${ currentPlanName }** vam je preostal še **${ daysRemaining }** dan uporabe.",
@@ -14175,7 +14168,7 @@
     },
     "summer2023: Tooltip": {
       "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
-        "Ustvarite varne podatke za prijavo v vseh svojih napravah. Vključuje neomejeno število vzdevkov, 20 trezorjev, integrirano 2FA, samodejno izpolnjevanje kreditnih kartic in več."
+        "Ustvarite varne podatke za prijavo v vseh svojih napravah. Vključuje neomejeno število vzdevkov, 20 trezorjev, integrirano 2FA, samodejno izpolnjevanje plačilnih kartic in drugo."
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Vključuje več kot 2950 strežnikov v več kot 65 državah, povezovanje do 10 naprav, dostop do svetovnih storitev pretakanja, zlonamerne programske opreme in zaviralcev oglasov ter več."
@@ -15798,7 +15791,7 @@
     },
     "VPN info": {
       "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
-        "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now in še več."
+        "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now in drugi."
       ]
     },
     "VPN Plan Feature": {
@@ -15833,6 +15826,9 @@
       ],
       "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
         "Naročnina se samodejno podaljša vsake 3 mesece. Vaš obračunski dan je čez 3 mesece."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Izredno znižana cena ${ priceWithDiscount } velja za prvi mesec. Potem se bo samodejno podaljšala mesečno za ${ renewPrice }. Naročnino lahko kadarkoli prekinete."
       ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Nato boste vsakih 12 mesecev prejeli račun v znesku ${ renewPrice }."

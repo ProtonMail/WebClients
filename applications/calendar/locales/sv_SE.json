@@ -297,6 +297,9 @@
       "Go to panel ${ index }": [
         "Gå till panel ${ index }"
       ],
+      "Go to settings": [
+        "Gå till inställningar"
+      ],
       "Got it": [
         "Förstått"
       ],
@@ -362,6 +365,9 @@
       ],
       "Keep my Plus subscription": [
         "Behåll min Plus-prenumeration"
+      ],
+      "Later": [
+        "Senare"
       ],
       "Let's talk": [
         "Låt oss prata!"
@@ -447,11 +453,11 @@
       "Not now": [
         "Inte nu"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Öppna inställningar för ${ CALENDAR_APP_NAME }"
@@ -851,11 +857,6 @@
       ],
       "By leaving now, you will lose your event.": [
         "Genom att lämna nu kommer du att förlora din händelse."
-      ]
-    },
-    "App logo": {
-      "Download ${ MAIL_APP_NAME } desktop application": [
-        "Ladda ner ${ MAIL_APP_NAME }-applikation för stationär dator"
       ]
     },
     "Apps dropdown": {
@@ -2372,6 +2373,9 @@
       "Availability unknown": [
         "Tillgänglighet okänt"
       ],
+      "Better organize your day, track your time, and prioritize tasks. Color-code your calendar with custom event colors.": [
+        "Organisera din dag bättre, spåra din tid och prioritera uppgifter. Färgkoda din kalender med anpassade händelsefärger."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Dekrypterar kontakter… Detta kan ta några minuter. När processen är klar kommer du att kunna ladda ner filen med alla dina kontakter exporterade."
       ],
@@ -2470,17 +2474,32 @@
       "Bugs or quality issue": [
         "Buggar eller kvalitetsproblem"
       ],
+      "I do not wish to share": [
+        "Jag vill inte dela"
+      ],
+      "I found a cheaper VPN": [
+        "Jag hittade ett billigare VPN"
+      ],
+      "I found a VPN with better features": [
+        "Jag hittade ett VPN med bättre funktioner"
+      ],
+      "I have not managed to connect": [
+        "Jag har inte lyckats att ansluta"
+      ],
+      "I only needed a VPN short-term": [
+        "Jag behövde bara ett VPN kortsiktigt"
+      ],
       "I use a different ${ BRAND_NAME } account": [
         "Jag använder ett annat ${ BRAND_NAME }-konto"
+      ],
+      "It doesn't do what I need": [
+        "Det gör inte vad jag behöver"
       ],
       "Missing feature(s)": [
         "Saknade funktion(er)"
       ],
-      "My reason isn't listed, please comment": [
-        "Min anledning är inte listad, kommentera"
-      ],
-      "Streaming service unsupported": [
-        "Streamingtjänst stöds inte"
+      "Other reason (please comment)": [
+        "Annan anledning (kommentera gärna)"
       ],
       "Subscription is too expensive": [
         "Prenumeration är för dyrt"
@@ -2490,11 +2509,48 @@
       ],
       "Temporary need, may come back in the future": [
         "Tillfälligt behov, kan komma tillbaka i framtiden"
+      ],
+      "The VPN is too slow": [
+        "VPN är för långsamt"
       ]
     },
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Hjälp oss att förbättra!"
+      ]
+    },
+    "drivePlus2024: Action": {
+      "Get the deal": [
+        "Ta del av erbjudandet"
+      ],
+      "Special Offer": [
+        "Specialerbjudande"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Utökad versionshistorik"
+      ],
+      "Priority support": [
+        "Prioriterad support"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Förnyas med ${ renewablePrice }, avbryt när som helst"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "för första månaden"
+      ],
+      "Limited-time offer": [
+        "Tidsbegränsat erbjudande"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Skaffa ${ planName } för endast ${ planPrice }"
       ]
     },
     "Dropdown action icon tooltip": {
@@ -4198,6 +4254,9 @@
       "Billing cycle: ${ text }": [
         "Faktureringsperiod: ${ text }"
       ],
+      "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
+        "Förstärk din organisations varumärkesidentitet och skapa en mer konsekvent upplevelse online för dina användare."
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Genom att nedgradera till ett gratiskonto kommer du permanent att förlora dessa fördelar, även om du uppgraderar igen i framtiden."
       ],
@@ -4386,9 +4445,6 @@
       "finance": [
         "finans"
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Vidarebefordra inkommande e-post från annat konto till din säkra inkorg för ${ MAIL_APP_NAME }."
-      ],
       "Frequency modifications will be lost.": [
         "Frekvensändringar kommer att gå förlorade."
       ],
@@ -4428,9 +4484,6 @@
       ],
       "Import mailbox": [
         "Importera brevlåda"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Importera din e-post, kalendrar och kontakter från en annan tjänst till ${ BRAND_NAME }."
       ],
       "Important note": [
         "Viktig notering"
@@ -6352,6 +6405,9 @@
       "Organize items with multiple vaults": [
         "Organisera objekt med flera valv"
       ],
+      "Pass Monitor - premium features": [
+        "Pass Monitor - premiumfunktioner"
+      ],
       "Passkeys supported": [
         "Passkeys stöds"
       ],
@@ -6427,6 +6483,9 @@
       ],
       "Unlimited devices": [
         "Obegränsat antal enheter"
+      ],
+      "Unlimited devices and aliases": [
+        "Obegränsat antal enheter och alias"
       ],
       "Unlimited filters": [
         "Obegränsade filter"
@@ -7170,6 +7229,18 @@
     "Participants expand button label": {
       "Expand participants list": [
         "Expandera deltagarlista"
+      ]
+    },
+    "pass_signup_2023: Info": {
+      "Secure sharing with ${ n } vault": [
+        "Säker delning med ${ n } valv",
+        "Säker delning med ${ n } valv"
+      ],
+      "Secure sharing with multiple vaults": [
+        "Säker delning med flera valv"
+      ],
+      "Secure vault sharing": [
+        "Säker valvdelning"
       ]
     },
     "passwordless": {
@@ -7977,14 +8048,11 @@
       ]
     },
     "Spotlight": {
-      "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
-        "Starta ${ MAIL_APP_NAME } bekvämt direkt från din stationära dator."
+      "Color-code your calendar to better organize your day, track your time, and more.": [
+        "Färgkoda din kalender för att bättre organisera din dag, spåra din tid och mer."
       ],
       "Custom event colors": [
         "Anpassa händelsefärger"
-      ],
-      "Get the desktop app": [
-        "Skaffa appen för stationär dator"
       ],
       "Get up to ${ credits } in credits.": [
         "Få upp till ${ credits } i krediter."
@@ -8568,6 +8636,9 @@
       ],
       "Account security": [
         "Kontosäkerhet"
+      ],
+      "Add a custom logo": [
+        "Lägg till en anpassad logga"
       ],
       "Add another notification to remind you of this event": [
         "Lägg till ytterligare en avisering för att påminna dig om denna händelse"

@@ -524,14 +524,14 @@
       "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
         "El monitoreo de la Dark Web está disponible con un plan de pago. Mejora el plan para un acceso inmediato."
       ],
-      "It would be more secure to set up 2FA for this account.": [
-        "Sería más seguro configurar 2FA para esta cuenta."
-      ],
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
         "Lista de dominios donde ciertas funciones automáticas en ${ PASS_SHORT_APP_NAME } (completado automático, sugerencia automática, guardado automático) no deberían de ejecutarse. ${ infoText }"
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "Esta cuenta es vulnerable. Visita el servicio y cambia tu contraseña."
+      ],
+      "This service offers 2FA. Enable it for added account security.": [
+        "Este servicio ofrece la 2FA. Actívala para aumentar la seguridad de la cuenta."
       ]
     },
     "Error": {
@@ -641,9 +641,6 @@
       ],
       "Failed to edit user's access.": [
         "Error al editar el acceso del usuario."
-      ],
-      "Failed to load breaches": [
-        "Error al cargar vulneraciones"
       ],
       "Failed to load breaches for this address": [
         "Error al cargar vulneraciones para esta dirección"
@@ -2263,9 +2260,6 @@
       "Members": [
         "Miembros"
       ],
-      "Missing two-factor authentication": [
-        "Falta la autenticación de dos factores."
-      ],
       "Modified": [
         "Modificado"
       ],
@@ -2313,6 +2307,9 @@
       ],
       "Set access level": [
         "Configurar el nivel de acceso"
+      ],
+      "Set up 2FA for more security": [
+        "Configura la 2FA para más seguridad"
       ],
       "Share with": [
         "Compartir con"

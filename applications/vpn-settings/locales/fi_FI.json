@@ -621,7 +621,7 @@
         "${ ips } palvelinta"
       ],
       "${ price } per dedicated server": [
-        "${ price }/kohdistettu palvelin"
+        "${ price }/oma palvelin"
       ],
       "${ price } per domain": [
         "${ price }/verkkotunnus"
@@ -689,7 +689,7 @@
         "Puuttuvat avaimet"
       ],
       "No E2EE mail": [
-        "Ei päästä päähän -salattua postia"
+        "Ei PP-salattua postia"
       ],
       "Orphan": [
         "Hylätty"
@@ -816,7 +816,7 @@
         "Valitettavasti tämä tarjous ei ole saatavilla nykyisen tilauksesi kanssa."
       ],
       "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Valitettavasti tämä tarjous ei ole saatavilla nykyisellä tilauksellasi. Mutta voit saada **${ discountPercentage } alennuksen ${ plan.Title }**, kun tilaat **${ months }**."
+        "Valitettavasti tätä tarjousta ei ole saatavilla nykyiseen tilaukseesi. Voit kuitenkin saada **${ discountPercentage } alennuksen ${ plan.Title }**, kun tilaat **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -833,10 +833,10 @@
         "ensimmäinen kuukausi"
       ],
       "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
-        "Erikoisalennettu hinta ${ discountedPrice } on voimassa vain ${ discountedMonths } ajan. Sen jälkeen se uusitaan automaattisesti ${ nextMonths } kuukaudeksi ${ nextPrice } kuukausihintaan. Voit peruuttaa sen milloin tahansa."
+        "${ discountedPrice } erityishinta on voimassa ${ discountedMonths }, jonka jälkeen tilaus jatkuu automaattisesti seuraavat ${ nextMonths } alennettulla ${ nextPrice } hinnalla. Voit peruuttaa milloin tahansa."
       ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
-        "Erikoisalennettu hinta ${ discountedPrice } on voimassa vain ensimmäisen kuukauden ajan. Sen jälkeen se uusitaan automaattisesti ${ nextPrice } kuukausihintaan. Voit peruuttaa sen milloin tahansa."
+        "Erityishinta ${ discountedPrice } on voimassa vain ensimmäisen kuukauden ajan, jonka jälkeen tilaus jatkuu automaattisesti ${ nextPrice } kuukausihintaan. Voit peruuttaa milloin tahansa."
       ]
     },
     "bf2023: Title": {
@@ -1942,12 +1942,6 @@
       "Missing feature(s)": [
         "Ominaisuuksia puuttuu"
       ],
-      "My reason isn't listed, please comment": [
-        "Syytäni ei ole listattu, kommentoi"
-      ],
-      "Streaming service unsupported": [
-        "Suoratoistopalvelua ei tueta"
-      ],
       "Subscription is too expensive": [
         "Tilaus on liian kallis"
       ],
@@ -1961,6 +1955,40 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Auta meitä parantamaan!"
+      ]
+    },
+    "drivePlus2024: Action": {
+      "Get the deal": [
+        "Hyödynnä tarjous"
+      ],
+      "Special Offer": [
+        "Erikoistarjous"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Laajennettu versiohistoria"
+      ],
+      "Priority support": [
+        "Ensisijainen tuki"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Uusitaan hintaan ${ renewablePrice }, peruuta milloin tahansa"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "ensimmäisen kuukauden ajan"
+      ],
+      "Limited-time offer": [
+        "Tarjous voimassa rajoitetun ajan"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Hanki ${ planName } -tilaus, nyt vain ${ planPrice }"
       ]
     },
     "Email verification": {
@@ -2412,10 +2440,10 @@
         "Sinut on kutsuttu liittymään organisaatioon ${ bannerOrganization }. ${ viewInviteButton }"
       ],
       "You have reached the limit of 10 accepted invitations in 6 months.": [
-        "Olet saavuttanut kuuden kuukauden aikana sallitun 10 hyväksytyn kutsun rajoituksen."
+        "Olet saavuttanut kuuden kuukauden sisällä sallitun 10 hyväksytyn kutsun rajoituksen."
       ],
       "You have reached the limit of 10 accepted invitations in 6 months. The button will become clickable when you can invite additional users.": [
-        "Olet saavuttanut 10 hyväksytyn kutsun rajan 6 kuukauden sisällä. Painike muuttuu klikattavaksii, kun voit kutsua lisää käyttäjiä."
+        "Olet saavuttanut 10 hyväksytyn kutsun rajan 6 kuukauden sisällä. Painike aktivoituu, kun voit kutsua lisää käyttäjiä."
       ],
       "You have successfully joined the Family plan": [
         "Olet liittynyt perhetilaukseen"
@@ -2886,7 +2914,7 @@
         "${ number } palvelinta"
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
-        "${ plan.Title } vaatii ainakin yhden kohdistetun palvelimen ${ serverPricePerMonth }"
+        "${ plan.Title } vaatii ainakin yhden oman palvelimen ${ serverPricePerMonth }"
       ],
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "${ provisioningCounter } palvelinta määritetään vielä. Tämä kestää yleensä n. ${ provisioningDuration }.",
@@ -3139,13 +3167,13 @@
         "Mukauta ${ BRAND_NAME }-sovellusten ulkoasua."
       ],
       "Dedicated servers": [
-        "Kohdistetut palvelimet"
+        "Omat palvelimet"
       ],
       "dedicated servers": [
-        "kohdistettuja palvelimia"
+        "omia palvelimia"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
-        "Kohdistetut palvelimet kohdistetuilla IP-osoitteilla voidaan lisätä yksityisiin yhdyskäytäviin tarkkaa käytönvalvontaa varten."
+        "Omat palvelimet kiinteillä IP-osoitteilla voidaan lisätä yksityisiin yhdyskäytäviin tarkkaa käytönvalvontaa varten."
       ],
       "Deleting ${ deletedServerCount } gateway server": [
         "Poistetaan ${ deletedServerCount } yhdyskäytäväpalvelinta",
@@ -3278,7 +3306,7 @@
         "Ikuisesti ilmainen"
       ],
       "Gateways": [
-        "yhdyskäytäviä"
+        "Yhdyskäytävät"
       ],
       "Get ${ upsellPlanName }": [
         "Hanki ${ upsellPlanName }"
@@ -3458,10 +3486,10 @@
         "Kertakirjautumisen ulkopuoliset, manuaalisesti luodut käyttäjät, jotka eivät ole peräisin identiteettitoimitajasi, voivat edelleen kirjautua organisaatioosi."
       ],
       "Number of dedicated servers in the organization": [
-        "Organisaation kohdistettujen palvelinten määrä"
+        "Organisaation omien palvelinten määrä"
       ],
       "Number of dedicated servers you try to assign (${ addedCount }) is more than what is still available in your plan (${ remainingCount }) as you own ${ ownedCount } and you already use ${ usedCount }.": [
-        "Yrität määrittää suurempaa kohdistettujen palvelimien määrää (${ addedCount }) kuin tilauksessasi on vielä käytettävissä (${ remainingCount }). Tilauksesi sisältää ${ ownedCount } palvelinta, joista olet varannut jo ${ usedCount }."
+        "Yrität määrittää suurempaa omien palvelinten määrää (${ addedCount }) kuin tilauksesi palvelimista on vapaana (${ remainingCount }). Tilaukseesi sisältyy ${ ownedCount } palvelinta, joista käytössäsi on jo ${ usedCount }."
       ],
       "of": [
         "/"
@@ -3488,7 +3516,7 @@
         "Organisaation koko"
       ],
       "Organize your dedicated servers into Gateways and decide which members can access them.": [
-        "Lajittele kohdistetut palvelimesi yhdyskäytäviin ja määritä millä käyttäjillä on niiden käyttöoikeus."
+        "Järjestä omat palvelimesi yhdyskäytäviin ja määritä millä käyttäjillä on niiden käyttöoikeus."
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Organisaatiossasi on muita ylläpitäjiä ja olet vastuussa uuden salasanan välityksestä heille."
@@ -3542,9 +3570,6 @@
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Huomioithan, että painettuasi \"Vahvista\", tilillesi jää ${ creditsRemaining } krediittiä."
-      ],
-      "Please provide an email address in case we need to contact you.": [
-        "Syötä sähköpostiosoite siltä varalta, että meidän on otettava sinuun yhteyttä."
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Yritä uudelleen eri maksutavalla tai ota yhteyttä pankkiisi."
@@ -4034,8 +4059,8 @@
         "Olet kirjautuneena ${ user.Name } (${ user.Email })."
       ],
       "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
-        "Käytössäsi on ${ ipCount } IP-osoite tilaukseesi sisältyvästä kohdistetuille palvelimille varatusta ${ ipAddresses } osoitteesta.",
-        "Käytössäsi on ${ ipCount } IP-osoite tilaukseesi sisältyvästä kohdistetuille palvelimille varatusta ${ ipAddresses } osoitteesta."
+        "Käytössäsi on tällä hetkellä ${ ipCount } tilauksesi ${ ipAddresses } omasta palvelimesta.",
+        "Käytössäsi on tällä hetkellä ${ ipCount } tilauksesi ${ ipAddresses } omasta palvelimesta."
       ],
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
         "Käytössäsi on ${ usedMembers } käyttäjä lisenssiisi sisältyvästä ${ maxMembers } käyttäjästä.",
@@ -4074,8 +4099,8 @@
         "Seuraavilla tunnistetiedoilla voit muodostaa yhteyden ${ VPN_APP_NAME } -palvelimiin muiden tahojen kehittämillä avoimen lähdekoodin VPN-sovelluksilla. Esimerkkejä: Tunnelblick macOS:lle ja OpenVPN GNU/Linuxille."
       ],
       "You have ${ availableCount } dedicated server available.": [
-        "Käytettävissä on ${ availableCount } kohdistettu palvelin.",
-        "Käytettävissä on ${ availableCount } kohdistettua palvelinta."
+        "Käytettävissäsi on ${ availableCount } oma palvelin.",
+        "Käytettävissäsi on ${ availableCount } omaa palvelinta."
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "Sinulla on ${ planTitle } -kokeilutilaus. Jos haluat jatkaa tilausta kokeilujakson jälkeen, lisää maksutapa."
@@ -4501,7 +4526,7 @@
         "Metatietojen tuontitapa"
       ],
       "Moderate NAT": [
-        "Keskitason NAT"
+        "Keskitasoinen NAT"
       ],
       "Name": [
         "Nimi"
@@ -4993,17 +5018,11 @@
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Unohditko ${ BRAND_NAME }-tilisi käyttäjätunnuksen? Löydä se palautussähköpostisi tai -puhelimesi avulla ja jatka ${ MAIL_APP_NAME }in, ${ DRIVE_SHORT_APP_NAME }n, ${ CALENDAR_SHORT_APP_NAME }in ja muiden palveluiden käyttämistä."
       ],
-      "Private and secure email, no credit card required": [
-        "Yksityinen ja turvallinen sähköposti, eikä luottokorttia tarvita"
-      ],
       "Reset your ${ BRAND_NAME } Account password": [
         "Nollaa ${ BRAND_NAME }-tilisi salasana"
       ],
       "Sign in to access your ${ appName } account": [
         "Käytä ${ appName } -tiliäsi kirjautumalla sisään"
-      ],
-      "Try ${ planName } for free with this link": [
-        "Kokeile ${ planName } -tilausta ilmaiseksi tästä linkistä"
       ]
     },
     "Monetary unit": {
@@ -5219,13 +5238,13 @@
         "Oma torkutusaika"
       ],
       "Data breach monitoring": [
-        "Tietovuotovalvonta"
+        "Tietomurtovalvonta"
       ],
       "Data breach monitoring (coming soon)": [
-        "Tietovuotovalvonta (tulossa pian)"
+        "Tietomurtovalvonta (tulossa pian)"
       ],
       "Dedicated servers and IP": [
-        "Kohdistetut palvelimet ja IP-osoitteet"
+        "Omat palvelimet ja kiinteät IP-osoitteet"
       ],
       "Desktop app": [
         "Työpöytäsovellus"
@@ -5234,7 +5253,7 @@
         "DNS-vuotosuojaus"
       ],
       "Document editors (docs, sheets, slides)": [
-        "Dokumenttien muokkaus (dokumentit, taulukot, esitykset)"
+        "Asiakirjaeditorit (tekstinkäsittely, taulukot, esitykset)"
       ],
       "Double hop": [
         "Double hop"
@@ -5308,6 +5327,9 @@
       ],
       "Organize items with multiple vaults": [
         "Järjestele kohteita useilla holveilla"
+      ],
+      "Passkeys supported": [
+        "Suojausavaimia tuetaan"
       ],
       "Password-protected Emails": [
         "Salasanasuojatut sähköpostiviestit"
@@ -5482,7 +5504,7 @@
         "${ BRAND_NAME } mahdollistaa sähköpostiosoitteiden luonnin ja alikäyttäjien tilien hallinan. Ihanteellinen perheille ja organisaatioille."
       ],
       "Advanced network security and access management with dedicated secure Gateways": [
-        "Kehittynyt verkkoturvallisuus ja pääsynhallinta dedikoitujen turvallisten yhdyskäytävien avulla"
+        "Kehittynyt verkkotietoturva ja käytönvalvonta omilla turvallisilla yhdyskäytävillä"
       ],
       "Advanced protection for teams that goes beyond industry standards.": [
         "Kehittynyt ja alan standardit ylittävä suojaus ryhmille."
@@ -5640,7 +5662,7 @@
         "Välitä ${ MAIL_APP_NAME }-tilillesi lähetetyt sähköpostit automaattisesti mihin tahansa muuhun sähköpostiosoitteeseen."
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
-        "Massamainontaa tai ohjelmallista sähköpostin lähetystä ei tällä hetkellä tueta. Suosittelemme käyttämään tähän tarkoitukseen erityisesti tarkoitettua sähköpostipalveluntarjoajaa."
+        "Massamainontaa tai ohjelmoitavaa viestien lähetystä ei tällä hetkellä tueta. Suosittelemme käyttämään erityisesti tähän tarkoitukseen tarkoitettua sähköpostipalvelua."
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
         "Mukauta aikoja, jolloin sinua muistutetaan sähköpostista tai viestisi saapumisesta"
@@ -5659,7 +5681,7 @@
         "Luo jopa ${ n } sähköpostiosoitetta/aliasta, jotka voit määrittää perheenjäsenille ja käytä niitä verkkoidentiteeteillesi, kuten esim. MikkoOstaja@${ domain } ostostileille."
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
-        "Kohdistetut palvelimet kohdistetuilla IP-osoitteilla voidaan lisätä yksityisiin yhdyskäytäviin tarkkaa käytönvalvontaa varten."
+        "Omat palvelimet kiinteillä IP-osoitteilla voidaan lisätä yksityisiin yhdyskäytäviin tarkkaa käytönvalvontaa varten."
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Suojaa VPN-yksityisyyden uhkilta ohjaamalla Internet-tietoliikenteesi useiden palvelinten kautta"
@@ -5853,10 +5875,10 @@
         "Oma tilinhoitaja"
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
-        "Kohdistetut palvelinsijainnit ${ numberOfCountries }+ maassa"
+        "Omat palvelinsijainnit ${ numberOfCountries }+ maassa"
       ],
       "Dedicated server locations in North America and Europe": [
-        "Kohdistetut palvelinsijainnit Pohjois-Amerikassa ja Euroopassa"
+        "Omat palvelinsijainnit Pohjois-Amerikassa ja Euroopassa"
       ],
       "Multi-platform support": [
         "Tuki useille alustoille"
@@ -6316,9 +6338,6 @@
       "e.g. https://idp.example.com/XXXXX": [
         "esim. https://idp.esimerkki.fi/XXXXX"
       ],
-      "Email address": [
-        "Sähköpostiosoite"
-      ],
       "Feedback": [
         "Palautteesi"
       ],
@@ -6516,6 +6535,9 @@
       ],
       "For security reasons, the token is hidden": [
         "Tunniste on tietoturvasyistä piilotettu"
+      ],
+      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ VPN_APP_NAME } organization.": [
+        "Yksinkertaistaa eri palveluiden välistä käyttäjähallintaa. Lisää, muokkaa ja poista käyttäjiä identiteettitoimittajastasi, niin muutokset toteutetaan automaattisesti myös ${ VPN_APP_NAME } -organisaatiossasi."
       ]
     },
     "scim: Label": {
@@ -7204,8 +7226,8 @@
     },
     "Subscription attribute": {
       "${ ipAddresses } dedicated server": [
-        "${ ipAddresses } dedikoitu palvelin",
-        "${ ipAddresses } dedikoitua palvelinta"
+        "${ ipAddresses } oma palvelin",
+        "${ ipAddresses } omaa palvelinta"
       ],
       "${ n } calendar per user": [
         "${ n } kalenteri/käyttäjä",
@@ -7307,7 +7329,7 @@
         "Automaattinen sähköpostiohjaus ${ strongText }"
       ],
       "Data breach alerts ${ strongArgument }": [
-        "Tietovuotohälytykset ${ strongArgument }"
+        "Tietomurtohälytykset ${ strongArgument }"
       ],
       "Desktop app": [
         "Työpöytäsovellus"
@@ -8056,7 +8078,7 @@
         "Asetukset"
       ],
       "Setup dedicated servers by upgrading to Business": [
-        "Määritä kohdistettuja palvelimia päivittämällä Business-tilaukseen"
+        "Määritä omia palvelimia päivittämällä Business-tilaukseen"
       ],
       "Sign in": [
         "Kirjaudu sisään"
@@ -8117,7 +8139,7 @@
         "Avaa postilaatikkosi"
       ],
       "Upgrade your network protection with dedicated servers": [
-        "Paranna verkkosi suojausta kohdistetuilla palvelimilla"
+        "Paranna verkkosi suojausta omilla palvelimilla"
       ],
       "Upload CSV file to create multiple accounts": [
         "Lisää useiden tilien luontiin käytettävä CSV-malli"
@@ -8353,6 +8375,9 @@
       ],
       "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
         "Tilauksesi uusiutuu automaattisesti kolmen kuukauden välein. Seuraava veloitusajankohta on kolmen kuukauden kuluttua."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Erityishinta ${ priceWithDiscount } on voimassa vain ensimmäisen kuukauden ajan, jonka jälkeen tilaus jatkuu automaattisesti ${ renewPrice } kuukausihintaan. Voit peruuttaa milloin tahansa."
       ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Silloin sinulta laskutetaan ${ renewPrice } vuoden välein."

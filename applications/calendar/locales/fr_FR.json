@@ -297,6 +297,9 @@
       "Go to panel ${ index }": [
         "Aller au panneau ${ index }"
       ],
+      "Go to settings": [
+        "Accéder aux paramètres"
+      ],
       "Got it": [
         "J'ai compris"
       ],
@@ -362,6 +365,9 @@
       ],
       "Keep my Plus subscription": [
         "Conserver mon abonnement à Plus"
+      ],
+      "Later": [
+        "Plus tard"
       ],
       "Let's talk": [
         "Parlons-nous"
@@ -447,10 +453,10 @@
       "Not now": [
         "Plus tard"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -851,11 +857,6 @@
       ],
       "By leaving now, you will lose your event.": [
         "En quittant maintenant, vous perdrez votre événement."
-      ]
-    },
-    "App logo": {
-      "Download ${ MAIL_APP_NAME } desktop application": [
-        "Télécharger l'application de bureau ${ MAIL_APP_NAME }"
       ]
     },
     "Apps dropdown": {
@@ -2480,12 +2481,6 @@
       "Missing feature(s)": [
         "Fonctionnalités manquantes"
       ],
-      "My reason isn't listed, please comment": [
-        "Raison non proposée ici, pouvez-vous préciser"
-      ],
-      "Streaming service unsupported": [
-        "Service de streaming non pris en charge"
-      ],
       "Subscription is too expensive": [
         "Abonnement trop cher"
       ],
@@ -2499,6 +2494,40 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Aidez-nous à nous améliorer."
+      ]
+    },
+    "drivePlus2024: Action": {
+      "Get the deal": [
+        "J'en profite"
+      ],
+      "Special Offer": [
+        "Offre spéciale"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Historique des versions plus détaillé"
+      ],
+      "Priority support": [
+        "Assistance prioritaire"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Renouvellement au prix de ${ renewablePrice } avec possibilité de résiliation à tout moment"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "pour le premier mois"
+      ],
+      "Limited-time offer": [
+        "Offre limitée dans le temps"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Obtenez ${ planName } pour seulement ${ planPrice }."
       ]
     },
     "Dropdown action icon tooltip": {
@@ -4193,6 +4222,9 @@
       "Billing cycle: ${ text }": [
         "Cycle de facturation : ${ text }"
       ],
+      "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
+        "Mettez en avant l'image de marque de votre organisation et créez une expérience en ligne plus cohérente pour vos utilisateurs."
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "En passant à l'abonnement Free, vous perdrez définitivement ces avantages, même si vous repassez par la suite à un abonnement supérieur."
       ],
@@ -4381,9 +4413,6 @@
       "finance": [
         "finance"
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Transférez les messages entrants d'un autre compte vers votre boite de réception sécurisée ${ MAIL_APP_NAME }."
-      ],
       "Frequency modifications will be lost.": [
         "Les modifications de fréquence seront perdues."
       ],
@@ -4423,9 +4452,6 @@
       ],
       "Import mailbox": [
         "Importer une messagerie"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Importez vos messages, calendriers et contacts depuis un autre service vers ${ BRAND_NAME }."
       ],
       "Important note": [
         "Remarque importante"
@@ -6352,6 +6378,12 @@
       "Organize items with multiple vaults": [
         "Plusieurs coffres-forts pour organiser vos mots de passe"
       ],
+      "Pass Monitor - premium features": [
+        "Pass Monitor - fonctionnalités premium"
+      ],
+      "Passkeys supported": [
+        "Les clés d'identification sont prises en charge."
+      ],
       "Password-protected Emails": [
         "Messages protégés par mot de passe"
       ],
@@ -6424,6 +6456,9 @@
       ],
       "Unlimited devices": [
         "Nombre illimité d'appareils"
+      ],
+      "Unlimited devices and aliases": [
+        "Nombre illimité d'alias et d'appareils"
       ],
       "Unlimited filters": [
         "Nombre illimité de filtres"
@@ -7165,6 +7200,18 @@
     "Participants expand button label": {
       "Expand participants list": [
         "Voir la liste des participants"
+      ]
+    },
+    "pass_signup_2023: Info": {
+      "Secure sharing with ${ n } vault": [
+        "Partage sécurisé avec ${ n } coffre-fort",
+        "Partage sécurisé avec ${ n } coffre-forts"
+      ],
+      "Secure sharing with multiple vaults": [
+        "Partage sécurisé avec plusieurs coffre-forts"
+      ],
+      "Secure vault sharing": [
+        "Partage sécurisé de coffre-forts"
       ]
     },
     "passwordless": {
@@ -7974,14 +8021,8 @@
       "Color-code your calendar to better organize your day, track your time, and more.": [
         "Ajoutez des couleurs à votre calendrier pour mieux organiser votre journée, gérer votre temps et plus encore."
       ],
-      "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
-        "Démarrez ${ MAIL_APP_NAME } tout simplement depuis votre bureau."
-      ],
       "Custom event colors": [
         "Couleurs personnalisées des événements"
-      ],
-      "Get the desktop app": [
-        "Téléchargez l'application de bureau"
       ],
       "Get up to ${ credits } in credits.": [
         "Recevez jusqu'à ${ credits } en crédits."
@@ -8571,6 +8612,9 @@
       ],
       "Account security": [
         "Sécurité du compte"
+      ],
+      "Add a custom logo": [
+        "Ajouter un logo personnalisé"
       ],
       "Add another notification to remind you of this event": [
         "Ajoutez une autre notification pour vous rappeler cet événement."

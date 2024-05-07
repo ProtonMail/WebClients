@@ -441,10 +441,10 @@
       "Not now": [
         "以后再说"
       ],
-      "Ok": [
+      "OK": [
         "确定"
       ],
-      "OK": [
+      "Ok": [
         "确定"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -520,7 +520,7 @@
         "反馈问题"
       ],
       "Request a call": [
-        "请求回复"
+        "申请电话沟通"
       ],
       "Request a feature": [
         "功能建议"
@@ -843,11 +843,6 @@
         "如果现在退出，该日程将不会被保存。"
       ]
     },
-    "App logo": {
-      "Download ${ MAIL_APP_NAME } desktop application": [
-        "下载 ${ MAIL_APP_NAME } 桌面应用"
-      ]
-    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "${ BRAND_NAME } 应用"
@@ -974,7 +969,7 @@
         "安全登录您的所有设备。包括无限邮箱别名、共享、集成2FA等等。"
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "采用端到端加密技术守护您的邮件安全。包含自定义域名、15 个电子邮件地址、无限量的 hide-my-email 别名、日历共享等高级功能。"
+        "采用端到端加密技术守护您的邮件安全。支持自有域名、15 个邮箱地址、无限量的 hide-my-email 别名、日历共享等高级功能。"
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "使用加密的云存储保护您的文件。包括版本历史记录、加密文件共享等。"
@@ -986,7 +981,7 @@
         "所有 ${ BRAND_NAME } 服务共用同一存储空间。"
       ],
       "Store up to 200 versions of each file for up to 10 years.": [
-        "最多可存储长达10年的200个日程记录。"
+        "最多可将每份文件的 200 个历史版本存储 10 年。"
       ]
     },
     "Billing cycle": {
@@ -1019,7 +1014,7 @@
     },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
-        "下载 ${ MAIL_APP_NAME } 桌面应用"
+        "${ MAIL_APP_NAME } 桌面应用"
       ]
     },
     "Bug category": {
@@ -2437,12 +2432,6 @@
       "Missing feature(s)": [
         "缺失功能"
       ],
-      "My reason isn't listed, please comment": [
-        "其他原因，请留言"
-      ],
-      "Streaming service unsupported": [
-        "不支持在线视频平台"
-      ],
       "Subscription is too expensive": [
         "费用过高"
       ],
@@ -2456,6 +2445,29 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "帮助我们做得更好！"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "更长的版本历史"
+      ],
+      "Priority support": [
+        "优先支持"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "续费价为 ${ renewablePrice }，可随时退订"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "首月"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "开通 ${ planName } 仅需 ${ planPrice }"
       ]
     },
     "Dropdown action icon tooltip": {
@@ -2580,7 +2592,7 @@
     },
     "eof2023: Tooltip": {
       "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
-        "包含 ${ DRIVE_SHORT_APP_NAME }版本历史，访问数以千计的高速 ${ VPN_SHORT_APP_NAME } 服务器，保存到 ${ PASS_SHORT_APP_NAME } 以及更多。"
+        "包含 ${ DRIVE_SHORT_APP_NAME } 文件版本历史、数千台高速 ${ VPN_SHORT_APP_NAME } 服务器、${ PASS_SHORT_APP_NAME } 密码共享等功能。"
       ]
     },
     "eoy2023: Deal details": {
@@ -3041,6 +3053,9 @@
       ],
       "You have reached the contacts limit for your account": [
         "您的账户联系人数量已达上限"
+      ],
+      "You have reached the maximum number of calendars.": [
+        "您已达到日历创建数量的上限。"
       ],
       "You must set a name": [
         "请输入名称（必填）"
@@ -4255,9 +4270,6 @@
       "finance": [
         "金融"
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "将其他邮箱收到的邮件自动转发至您安全的 ${ MAIL_APP_NAME } 邮箱。"
-      ],
       "Frequency modifications will be lost.": [
         "频率修改将丢失"
       ],
@@ -4296,9 +4308,6 @@
       ],
       "Import mailbox": [
         "导入收件箱"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "将您的邮件、日历和通讯录从其他邮箱导入至 ${ BRAND_NAME }。"
       ],
       "Important note": [
         "重要提示"
@@ -6783,7 +6792,7 @@
         "通过左上角的切换按钮可以前往所有 ${ BRAND_NAME } 服务：${ MAIL_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME } 和 ${ PASS_SHORT_APP_NAME }。"
       ],
       "You will be able to change your theme any time in your settings.": [
-        "您可以在设置中随时更改您的主题。"
+        "您可以随时在设置中更换配色。"
       ]
     },
     "Option": {
@@ -6902,13 +6911,13 @@
         "此密钥已被 ${ emailAddress } 作废，只能用于验证数字签名。"
       ],
       "External key automatically fetched from keys.openpgp.org.": [
-        "从 keys.openpgp.org 自动获取外部密钥。"
+        "从 keys.openpgp.org 自动获取的外部密钥。"
       ],
       "External key automatically fetched via WKD.": [
-        "通过 WKD 自动获取外部密钥。"
+        "从 WKD 自动获取的外部密钥。"
       ],
       "This key is used to encrypt messages to this contact": [
-        "此密钥用于到此联系人的消息加密"
+        "该密钥用于加密发往此联系人的邮件"
       ],
       "We recommend that you \"untrust\" this key.": [
         "建议您不再信任此密钥。"
@@ -7195,7 +7204,7 @@
         "${ timeRemaining.inHours } 小时"
       ],
       "Password reset request approved (${ user.Email }).": [
-        "密码重置请求已被批准(${ user.Email })。"
+        "密码重置申请已通过（${ user.Email }）。"
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "请转到已登录的设备（在发起请求的会话中）更改您的密码。"
@@ -7213,7 +7222,7 @@
         "从现在起 ${ boldDaysRemaining }内您可以自由更改 ${ boldEmail } 账户的密码。"
       ],
       "You can now change your password for the account ${ boldEmail }.": [
-        "您现在可以更改此账户 ${ boldEmail }的密码。"
+        "您现在可以为 ${ boldEmail } 更改密码了。"
       ],
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "您有 ${ timeRemaining.inDays } 天重置您的密码。"
@@ -7597,12 +7606,6 @@
       ]
     },
     "Spotlight": {
-      "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
-        "方便地从您的桌面启动 ${ MAIL_APP_NAME }。"
-      ],
-      "Get the desktop app": [
-        "获取桌面应用"
-      ],
       "Get up to ${ credits } in credits.": [
         "最高可获 ${ credits } 余额奖励。"
       ],
@@ -8688,6 +8691,9 @@
       ]
     },
     "vpn_2024: renew": {
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "特别折扣价 ${ priceWithDiscount } 仅首月有效，之后将以每月 ${ renewPrice } 的价格自动续订，您可随时取消。"
+      ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "您的订阅将在 ${ cycle } 个月后自动续期。"
       ]
