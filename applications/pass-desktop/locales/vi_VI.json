@@ -596,6 +596,11 @@
         "Đã xảy ra sự cố"
       ]
     },
+    "Feature": {
+      "Integrated 2FA authenticator": [
+        "Trình xác thực 2 bước được tích hợp"
+      ]
+    },
     "file size format": {
       "byte": [
         "byte\nbytes"
@@ -1599,6 +1604,9 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } addresses": [
+        "${ BRAND_NAME } địa chỉ"
+      ],
       "Auto-lock update": [
         "Cập nhật tự động khóa"
       ],
@@ -1694,6 +1702,9 @@
       ],
       "Vault shared with you": [
         "Kho lưu trữ được chia sẽ với bạn"
+      ],
+      "Want to learn more?": [
+        "Muốn tìm hiểu thêm?"
       ],
       "Why ${ PASS_APP_NAME }?": [
         "Lý do chọn ${ PASS_APP_NAME }?"
