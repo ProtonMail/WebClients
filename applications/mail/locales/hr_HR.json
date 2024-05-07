@@ -893,11 +893,6 @@
       "Trust": [
         "Vjeruj"
       ],
-      "Trust key": [
-        "Ključ povjerenja",
-        "Ključevi povjerenja",
-        "Ključevi povjerenja"
-      ],
       "Trust public key": [
         "Vjeruj javnom ključu"
       ],
@@ -2651,6 +2646,11 @@
         "Preuzmi sve"
       ]
     },
+    "driveplus2024: Deal details": {
+      "Priority support": [
+        "Prioritetna podrška"
+      ]
+    },
     "Email subject": {
       "Cancellation of an event on ${ formattedStart }": [
         "Otkazani događaj ${ formattedStart }"
@@ -2943,6 +2943,9 @@
       ],
       "You did not provide a file.": [
         "Niste pružili datoteku."
+      ],
+      "You have reached the maximum number of calendars.": [
+        "Dosegli ste maksimalan broj kalendara."
       ],
       "You must set a name": [
         "Morate postaviti naziv"

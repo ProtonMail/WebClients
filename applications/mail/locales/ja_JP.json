@@ -1102,9 +1102,6 @@
       "Trust": [
         "信頼する"
       ],
-      "Trust key": [
-        "鍵を信頼する"
-      ],
       "Trust public key": [
         "公開鍵を信頼"
       ],
@@ -1381,11 +1378,6 @@
       ],
       "New email": [
         "新しいメール"
-      ]
-    },
-    "App logo": {
-      "Download ${ MAIL_APP_NAME } desktop application": [
-        "${ MAIL_APP_NAME } デスクトップアプリをダウンロード"
       ]
     },
     "Apps dropdown": {
@@ -3254,12 +3246,6 @@
       "Missing feature(s)": [
         "機能が不足している"
       ],
-      "My reason isn't listed, please comment": [
-        "この中の理由以外 (コメントに記載してください)"
-      ],
-      "Streaming service unsupported": [
-        "ストリーミングサービスがサポートされていない"
-      ],
       "Subscription is too expensive": [
         "サブスクリプションが高すぎる"
       ],
@@ -3278,6 +3264,29 @@
     "Download attachments": {
       "Download all": [
         "すべてダウンロード"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "拡張バージョン履歴"
+      ],
+      "Priority support": [
+        "優先サポート"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "以降は ${ renewablePrice } で更新されます。いつでもキャンセル可能です。"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "最初の 1 か月"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "${ planName } を ${ planPrice } で入手"
       ]
     },
     "Email body for description (description part)": {
@@ -3819,6 +3828,9 @@
       ],
       "You have reached the contacts limit for your account": [
         "アカウントの連絡先が上限に達しています。"
+      ],
+      "You have reached the maximum number of calendars.": [
+        "カレンダーの上限数に達しました。"
       ],
       "You must set a name": [
         "名前を設定してください"
@@ -5564,9 +5576,6 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "さらに検索結果を表示するには、メッセージ内容の検索をお試しください。"
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "他のアカウントで受信したメールを、安全な ${ MAIL_APP_NAME } 受信トレイへ転送します。"
-      ],
       "From": [
         "差出人"
       ],
@@ -5629,9 +5638,6 @@
       ],
       "Import mailbox": [
         "メールボックスのインポート"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "メール、カレンダー、連絡先を他のサービスから ${ BRAND_NAME } にインポートします。"
       ],
       "Important note": [
         "注意事項"
@@ -9805,14 +9811,8 @@
       ]
     },
     "Spotlight": {
-      "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
-        "デスクトップで簡単に ${ MAIL_APP_NAME } を起動できます。"
-      ],
       "Email tracking protection": [
         "メールトラッキング防止"
-      ],
-      "Get the desktop app": [
-        "デスクトップアプリを入手"
       ],
       "Get up to ${ credits } in credits.": [
         "最大${ credits }分のクレジットを獲得できます"
@@ -11264,6 +11264,11 @@
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfCountries } か国で ${ numberOfServers } 台"
+      ]
+    },
+    "vpn_2024: renew": {
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "特別割引価格 ${ priceWithDiscount } は最初の 1 か月間有効です。 その後、毎月 ${ renewPrice } で自動的に更新されます。 いつでもキャンセルできます。"
       ]
     },
     "vpn_2step: feature": {

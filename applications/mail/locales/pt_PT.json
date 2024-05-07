@@ -1115,10 +1115,6 @@
       "Trust": [
         "Confiar"
       ],
-      "Trust key": [
-        "Confiar na chave",
-        "Confiar nas chaves"
-      ],
       "Trust public key": [
         "Confiar na chave pública"
       ],
@@ -3235,12 +3231,6 @@
       "Missing feature(s)": [
         "Funções ausentes"
       ],
-      "My reason isn't listed, please comment": [
-        "O meu motivo não consta da lista. Comente."
-      ],
-      "Streaming service unsupported": [
-        "O serviço de streaming não é suportado."
-      ],
       "Subscription is too expensive": [
         "A subscrição é demasiado cara."
       ],
@@ -3259,6 +3249,19 @@
     "Download attachments": {
       "Download all": [
         "Transferir tudo"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Histórico de versão estendido"
+      ],
+      "Priority support": [
+        "Apoio ao cliente prioritário"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "pelo primeiro mês"
       ]
     },
     "Email body for description (description part)": {
@@ -3851,6 +3854,9 @@
       ],
       "You have reached the contacts limit for your account": [
         "Atingiu o limite de contactos da sua conta."
+      ],
+      "You have reached the maximum number of calendars.": [
+        "Atingiu o número máximo de calendários."
       ],
       "You must set a name": [
         "Tem de definir um nome"
@@ -5647,9 +5653,6 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "Para obter mais resultados de pesquisa, tente pesquisar esta palavra-chave no conteúdo das suas mensagens de e-mail."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Encaminhe o correio recebido de outra conta para a sua caixa de entrada segura de ${ MAIL_APP_NAME }."
-      ],
       "From": [
         "De"
       ],
@@ -5711,9 +5714,6 @@
       ],
       "Import mailbox": [
         "Importar caixa de correio"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Importe os seus e-mails, calendários e contactos de outro serviço para ${ BRAND_NAME }."
       ],
       "Important note": [
         "Nota importante:"
@@ -5979,6 +5979,9 @@
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Selecione os e-mails a adicionar a ${ groupName }."
+      ],
+      "Please try again in a few moments": [
+        "Por favor, tente novamente dentro de alguns momentos"
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Tente novamente utilizando um método de pagamento diferente ou contacte o seu banco."
@@ -6498,6 +6501,9 @@
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "A página será redirecionada para um novo separador PayPal no seu navegador, para concluir a transação. Se utiliza bloqueadores de janelas, desative-os."
+      ],
+      "We'll email you once import is complete.": [
+        "Enviaremos um e-mail para si assim que a importação estiver concluída."
       ],
       "We'll notify you when the import is done.": [
         "Vamos avisá-lo quando a importação for concluída."
@@ -9847,9 +9853,6 @@
       "Email tracking protection": [
         "Proteção contra rastreamento de e-mail"
       ],
-      "Get the desktop app": [
-        "Obtenha a aplicação para computador"
-      ],
       "Get up to ${ credits } in credits.": [
         "Obtenha até ${ credits } em créditos."
       ],
@@ -10915,6 +10918,9 @@
       ],
       "No attachment found": [
         "Nenhum anexo encontrado"
+      ],
+      "No breaches detected": [
+        "Nenhuma violação detetada"
       ],
       "No trackers found": [
         "Nenhum rastreador encontrado"

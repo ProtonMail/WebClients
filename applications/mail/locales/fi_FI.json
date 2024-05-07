@@ -361,6 +361,9 @@
       "Download ${ attachmentName }": [
         "Lataa ${ attachmentName }"
       ],
+      "Download Desktop App": [
+        "Lataa työpöytäsovellus"
+      ],
       "Download now": [
         "Lataa nyt"
       ],
@@ -478,6 +481,9 @@
       "Go to previous page": [
         "Siirry edelliselle sivulle"
       ],
+      "Go to settings": [
+        "Avaa asetukset"
+      ],
       "Go to SimpleLogin": [
         "Avaa SimpleLogin"
       ],
@@ -583,6 +589,9 @@
       ],
       "label emails as": [
         "merkitse viestit tunnisteilla"
+      ],
+      "Later": [
+        "Myöhemmin"
       ],
       "Later this week": [
         "Myöhemmin tällä viikolla"
@@ -1124,10 +1133,6 @@
       "Trust": [
         "Luota"
       ],
-      "Trust key": [
-        "Luota avaimeen",
-        "Luota avaimiin"
-      ],
       "Trust public key": [
         "Luota julkiseen avaimeen"
       ],
@@ -1255,7 +1260,7 @@
         "Mitä saan?"
       ],
       "Why not?": [
-        "Mikset?"
+        "Mistä syystä?"
       ],
       "Yes": [
         "Kyllä"
@@ -1336,7 +1341,7 @@
         "${ ips } palvelinta"
       ],
       "${ price } per dedicated server": [
-        "${ price }/kohdistettu palvelin"
+        "${ price }/oma palvelin"
       ],
       "${ price } per domain": [
         "${ price }/verkkotunnus"
@@ -1411,11 +1416,6 @@
       ],
       "New email": [
         "Uusi viesti saapuu"
-      ]
-    },
-    "App logo": {
-      "Download ${ MAIL_APP_NAME } desktop application": [
-        "Lataa ${ MAIL_APP_NAME } -työpöytäsovellus"
       ]
     },
     "Apps dropdown": {
@@ -1522,10 +1522,10 @@
         "ensimmäinen kuukausi"
       ],
       "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
-        "Erikoisalennettu hinta ${ discountedPrice } on voimassa vain ${ discountedMonths } ajan. Sen jälkeen se uusitaan automaattisesti ${ nextMonths } kuukaudeksi ${ nextPrice } kuukausihintaan. Voit peruuttaa sen milloin tahansa."
+        "${ discountedPrice } erityishinta on voimassa ${ discountedMonths }, jonka jälkeen tilaus jatkuu automaattisesti seuraavat ${ nextMonths } alennettulla ${ nextPrice } hinnalla. Voit peruuttaa milloin tahansa."
       ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
-        "Erikoisalennettu hinta ${ discountedPrice } on voimassa vain ensimmäisen kuukauden ajan. Sen jälkeen se uusitaan automaattisesti ${ nextPrice } kuukausihintaan. Voit peruuttaa sen milloin tahansa."
+        "Erityishinta ${ discountedPrice } on voimassa vain ensimmäisen kuukauden ajan, jonka jälkeen tilaus jatkuu automaattisesti ${ nextPrice } kuukausihintaan. Voit peruuttaa milloin tahansa."
       ]
     },
     "bf2023: Tooltip": {
@@ -3287,7 +3287,7 @@
         "Päivittämällä avaat rajattomasti kansioita, tunnisteita ja muita premium-ominaisuuksia."
       ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
-        "Päivitä tilisi ottaaksesi käyttöön ${ PROTON_SENTINEL_NAME }, huippuluokan tekoälyyn perustuva tietoturvaratkaisumme, johon kuuluu 24/7 asiantuntijatuki."
+        "Päivitä tilisi aktivoidaksesi huippumoderniin tekoälyyn perustuvan ${ PROTON_SENTINEL_NAME } -tietoturvaratkaisumme, johon sisältyy myös 24/7 asiantuntijatuki."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Määritä yhdistettävien yhteystietojen painotusjärjestys vetämällä ja pudottamalla. Poista niiden valinta, joita et halua yhdistää."
@@ -3305,7 +3305,7 @@
         "Voit merkitä yhteystiedot, joita et haluat yhdistää tai säilyttää, poistettaviksi. Poisto suoritetaan vasta Yhdistä-painiketta painettaessa."
       ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
-        "Tilisi ja tietojesi palautusmenetelmät on määritetty ja 2FA on käytössä."
+        "Tilisi ja tietojesi palautusmenetelmät on määritetty ja kaksivaiheinen tunnistautuminen on käytössä."
       ],
       "Your account and data recovery methods are set.": [
         "Tilisi ja tietojesi palautusmenetelmät on määritetty."
@@ -3344,12 +3344,6 @@
       "Missing feature(s)": [
         "Ominaisuuksia puuttuu"
       ],
-      "My reason isn't listed, please comment": [
-        "Syytäni ei ole listattu, kommentoi"
-      ],
-      "Streaming service unsupported": [
-        "Suoratoistopalvelua ei tueta"
-      ],
       "Subscription is too expensive": [
         "Tilaus on liian kallis"
       ],
@@ -3368,6 +3362,40 @@
     "Download attachments": {
       "Download all": [
         "Lataa kaikki"
+      ]
+    },
+    "drivePlus2024: Action": {
+      "Get the deal": [
+        "Hyödynnä tarjous"
+      ],
+      "Special Offer": [
+        "Erikoistarjous"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Laajennettu versiohistoria"
+      ],
+      "Priority support": [
+        "Ensisijainen tuki"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Uusitaan hintaan ${ renewablePrice }, peruuta milloin tahansa"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "ensimmäisen kuukauden ajan"
+      ],
+      "Limited-time offer": [
+        "Tarjous voimassa rajoitetun ajan"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Hanki ${ planName } -tilaus, nyt vain ${ planPrice }"
       ]
     },
     "Email body for description (description part)": {
@@ -4014,6 +4042,9 @@
       ],
       "You have reached the contacts limit for your account": [
         "Tilisi yhteystietojen enimmäismäärä on saavutettu"
+      ],
+      "You have reached the maximum number of calendars.": [
+        "Olet saavuttanut kalenterien enimmäismäärän."
       ],
       "You must set a name": [
         "Nimi on asetettava"
@@ -5353,7 +5384,7 @@
         "Viestin sisällöstä löytyi ${ numOccurrences } tapahtumakertaa"
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
-        "${ plan.Title } vaatii ainakin yhden kohdistetun palvelimen ${ serverPricePerMonth }"
+        "${ plan.Title } vaatii ainakin yhden oman palvelimen ${ serverPricePerMonth }"
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } kansio löytyi",
@@ -5594,6 +5625,9 @@
       "Body: ": [
         "Sisältö: "
       ],
+      "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
+        "Tehosta organisaatiosi brändin identiteettiä ja tee käyttäjiesi verkkokokemuksesta yhtenäisempi."
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Alentamalla ilmaiseen palveluun, menetät nämä edut pysyvästi, vaikka päivittäisit tilauksesi tulevaisuudessa uudelleen."
       ],
@@ -5707,7 +5741,7 @@
         "Päivittäin"
       ],
       "Dedicated servers": [
-        "Kohdistetut palvelimet"
+        "Omat palvelimet"
       ],
       "Default email application": [
         "Sähköpostin oletussovellus"
@@ -5871,9 +5905,6 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "Jos haluat enemmän hakutuloksia, kokeile etsiä tätä avainsanaa myös sähköpostiviestien sisällöstä"
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Ohjaa muiden tilien saapuvat viestit suojattuun ${ MAIL_APP_NAME } -postilaatikkoosi."
-      ],
       "From": [
         "Lähettäjä"
       ],
@@ -5939,9 +5970,6 @@
       "Import mailbox": [
         "Tuo postilaatikko"
       ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Tuo viestit, kalenterit ja yhteystiedot muista palveluista ${ BRAND_NAME }iin."
-      ],
       "Important note": [
         "Tärkeä muistiinpano"
       ],
@@ -5994,7 +6022,7 @@
         "Suuret tuonnit saattavat kestää useita päiviä."
       ],
       "Learn how to ${ staySaferOnlineLink }": [
-        "Opi kuinka ${ staySaferOnlineLink }"
+        "Opi ${ staySaferOnlineLink }"
       ],
       "Learn more": [
         "Lue lisää"
@@ -6153,7 +6181,7 @@
         "Virheellinen URL"
       ],
       "Number of dedicated servers in the organization": [
-        "Organisaation kohdistettujen palvelinten määrä"
+        "Organisaation omien palvelinten määrä"
       ],
       "of": [
         "/"
@@ -6452,7 +6480,7 @@
         "Luonnostasi ei tallenneta, jos poistut sivulta."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
-        "Paljastuneet tiedot vuotivat kolmannen osapuolen palvelusta. Sinun ${ BRAND_NAME } -tilisi tiedot pysyvät suojattuina ja salattuina. ${ learnMoreLink }"
+        "Paljastuneet tiedot vuosivat ulkopuolisesta palvelusta. ${ BRAND_NAME }-tilisi tiedot ovat suojassa ja salattuina. ${ learnMoreLink }"
       ],
       "The local database is being prepared": [
         "Paikallista tietokantaa valmistellaan"
@@ -6985,10 +7013,10 @@
         "Tietosi lähteestä ${ importedEmailAddressStrong } ovat valmiina ${ BRAND_NAME }-tilillesi tuontia varten."
       ],
       "Your email address and password were leaked:": [
-        "Sähköpostiosoitteesi ja salasanasi ovat vuotaneet:"
+        "Sähköpostiosoitteesi ja salasanasi paljastuivat:"
       ],
       "Your email address was exposed:": [
-        "Sähköpostiosoitteesi paljastui:"
+        "Sähköpostiosoitteesi vuosi:"
       ],
       "Your email will only be used for this one-time verification.": [
         "Sähköpostiosoitettasi käytetään vain tähän kertaluontoiseen vahvistukseen."
@@ -7016,7 +7044,7 @@
         "Seuraava laskutuspäivä on ${ renewalTime }."
       ],
       "Your password was leaked:": [
-        "Salasanasi on vuotanut:"
+        "Salasanasi paljastui:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Puhelinnumeroasi käytetään vain tähän kertaluontoiseen vahvistukseen."
@@ -8066,7 +8094,7 @@
         "Tähdelliset"
       ],
       "stay safer online": [
-        "pysy turvassa verkossa"
+        "pysymään turvassa verkossa"
       ],
       "Terms": [
         "Ehdot"
@@ -8655,10 +8683,10 @@
         "Oma torkutusaika"
       ],
       "Data breach monitoring": [
-        "Tietovuotovalvonta"
+        "Tietomurtovalvonta"
       ],
       "Data breach monitoring (coming soon)": [
-        "Tietovuotovalvonta (tulossa pian)"
+        "Tietomurtovalvonta (tulossa pian)"
       ],
       "Desktop app": [
         "Työpöytäsovellus"
@@ -8667,7 +8695,7 @@
         "DNS-vuotosuojaus"
       ],
       "Document editors (docs, sheets, slides)": [
-        "Dokumenttien muokkaus (dokumentit, taulukot, esitykset)"
+        "Asiakirjaeditorit (tekstinkäsittely, taulukot, esitykset)"
       ],
       "Double hop": [
         "Double hop"
@@ -8735,6 +8763,9 @@
       ],
       "Organize items with multiple vaults": [
         "Järjestele kohteita useilla holveilla"
+      ],
+      "Passkeys supported": [
+        "Suojausavaimia tuetaan"
       ],
       "Password-protected Emails": [
         "Salasanasuojatut sähköpostiviestit"
@@ -8896,7 +8927,7 @@
         "${ brand }, päättyy ${ last4 }"
       ],
       "Advanced network security and access management with dedicated secure Gateways": [
-        "Kehittynyt verkkoturvallisuus ja pääsynhallinta dedikoitujen turvallisten yhdyskäytävien avulla"
+        "Kehittynyt verkkotietoturva ja käytönvalvonta omilla turvallisilla yhdyskäytävillä"
       ],
       "Advanced protection for teams that goes beyond industry standards.": [
         "Kehittynyt ja alan standardit ylittävä suojaus ryhmille."
@@ -9027,7 +9058,7 @@
         "Välitä ${ MAIL_APP_NAME }-tilillesi lähetetyt sähköpostit automaattisesti mihin tahansa muuhun sähköpostiosoitteeseen."
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
-        "Massamainontaa tai ohjelmallista sähköpostin lähetystä ei tällä hetkellä tueta. Suosittelemme käyttämään tähän tarkoitukseen erityisesti tarkoitettua sähköpostipalveluntarjoajaa."
+        "Massamainontaa tai ohjelmoitavaa viestien lähetystä ei tällä hetkellä tueta. Suosittelemme käyttämään erityisesti tähän tarkoitukseen tarkoitettua sähköpostipalvelua."
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
         "Mukauta aikoja, jolloin sinua muistutetaan sähköpostista tai viestisi saapumisesta"
@@ -9046,7 +9077,7 @@
         "Luo jopa ${ n } sähköpostiosoitetta/aliasta, jotka voit määrittää perheenjäsenille ja käytä niitä verkkoidentiteeteillesi, kuten esim. MikkoOstaja@${ domain } ostostileille."
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
-        "Kohdistetut palvelimet kohdistetuilla IP-osoitteilla voidaan lisätä yksityisiin yhdyskäytäviin tarkkaa käytönvalvontaa varten."
+        "Omat palvelimet kiinteillä IP-osoitteilla voidaan lisätä yksityisiin yhdyskäytäviin tarkkaa käytönvalvontaa varten."
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Suojaa VPN-yksityisyyden uhkilta ohjaamalla Internet-tietoliikenteesi useiden palvelinten kautta"
@@ -9235,10 +9266,10 @@
         "Oma tilinhoitaja"
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
-        "Kohdistetut palvelinsijainnit ${ numberOfCountries }+ maassa"
+        "Omat palvelinsijainnit ${ numberOfCountries }+ maassa"
       ],
       "Dedicated server locations in North America and Europe": [
-        "Kohdistetut palvelinsijainnit Pohjois-Amerikassa ja Euroopassa"
+        "Omat palvelinsijainnit Pohjois-Amerikassa ja Euroopassa"
       ],
       "Multi-platform support": [
         "Tuki useille alustoille"
@@ -9862,7 +9893,7 @@
     },
     "Security Center - Info": {
       "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
-        "Saat ilmoituksen, jos salasanasi tai muut tietosi ovat vuotaneet kolmannen osapuolen palvelusta. ${ learnMoreLink }"
+        "Saat ilmoituksen, jos salasanasi tai muita tietojasi on vuotanut ulkopuolisesta palvelusta. ${ learnMoreLink }"
       ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Huippumoderni tekoälypohjainen tietoturvaratkaisumme, joka on suunniteltu tileilleen tehostettua suojausta kaipaaville käyttäjille. ${ learnMoreLink }"
@@ -9871,7 +9902,7 @@
         "Sentinel on **käytössä** ja suojaa tiliäsi."
       ],
       "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLink }": [
-        "Tietojasi löytyi ainakin yhdestä tietovuodosta. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi yksityiskohdat ja ryhtyäksesi toimenpiteisiin. ${ learnMoreLink }"
+        "Tietojasi löytyi ainakin yhdestä tietomurrosta. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi yksityiskohdat ja ryhtyäksesi toimenpiteisiin. ${ learnMoreLink }"
       ]
     },
     "Select files": {
@@ -10416,14 +10447,8 @@
       ]
     },
     "Spotlight": {
-      "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
-        "Käynnistä ${ MAIL_APP_NAME } kätevästi suoraan työpöydältäsi."
-      ],
       "Email tracking protection": [
         "Sähköpostin seurantasuojaus"
-      ],
-      "Get the desktop app": [
-        "Hanki työpöytäsovellus"
       ],
       "Get up to ${ credits } in credits.": [
         "Ansaitse jopa ${ credits } krediittiä."
@@ -10654,7 +10679,7 @@
         "Automaattinen sähköpostiohjaus ${ strongText }"
       ],
       "Data breach alerts ${ strongArgument }": [
-        "Tietovuotohälytykset ${ strongArgument }"
+        "Tietomurtohälytykset ${ strongArgument }"
       ],
       "Desktop app": [
         "Työpöytäsovellus"
@@ -11174,6 +11199,9 @@
       ],
       "Action all messages": [
         "Käytä kaikkiin viesteihin"
+      ],
+      "Add a custom logo": [
+        "Lisää oma logo"
       ],
       "Add contact group name": [
         "Lisää yhteystietoryhmän nimi"
@@ -12040,6 +12068,9 @@
       ],
       "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
         "Tilauksesi uusiutuu automaattisesti kolmen kuukauden välein. Seuraava veloitusajankohta on kolmen kuukauden kuluttua."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Erityishinta ${ priceWithDiscount } on voimassa vain ensimmäisen kuukauden ajan, jonka jälkeen tilaus jatkuu automaattisesti ${ renewPrice } kuukausihintaan. Voit peruuttaa milloin tahansa."
       ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Silloin sinulta laskutetaan ${ renewPrice } vuoden välein."
