@@ -40,14 +40,15 @@ export class BaseRunningAction implements RunningAction {
             .then(() => {
                 this.finishedPromiseSignals!.resolve();
             })
-            .catch(() => {
+            .catch((e) => {
                 this.done = true;
-                this.finishedPromiseSignals!.reject();
-                this.done = true;
+                this.finishedPromiseSignals!.reject(e);
             })
-            .finally(() => {
+            .finally(async () => {
                 this.running = false;
+                await chat.resetChat();
             });
+
         this.chat = chat;
         this.running = true;
         this.done = false;
