@@ -23,7 +23,7 @@ import { useLoading } from '@proton/hooks';
 import { MAX_SHARED_URL_PASSWORD_LENGTH } from '@proton/shared/lib/drive/constants';
 import clsx from '@proton/utils/clsx';
 
-import ExpirationTimeDatePicker from './ExpirationTimeDatePicker';
+import { ExpirationTimeDatePicker } from './PublicSharing';
 
 interface Props {
     initialExpiration: number | null;
@@ -39,7 +39,7 @@ interface Props {
     havePublicSharedLink: boolean;
 }
 
-const ShareLinkSettingsModal = ({
+const SharingSettingsModal = ({
     customPassword,
     initialExpiration,
     onSaveLinkClick,
@@ -237,8 +237,8 @@ const ShareLinkSettingsModal = ({
     );
 };
 
-export default ShareLinkSettingsModal;
+export default SharingSettingsModal;
 
 export const useLinkSharingSettingsModal = () => {
-    return useModalTwoStatic(ShareLinkSettingsModal);
+    return useModalTwoStatic(SharingSettingsModal);
 };
