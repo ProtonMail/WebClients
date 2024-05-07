@@ -970,7 +970,7 @@
         "Nadaljuj z uporabo ${ MAIL_APP_NAME }a."
       ],
       "Continue using ${ planTitle }": [
-        "Nadaljuj z uporabo ${ planTitle }a"
+        "Nadaljujte z uporabo ${ planTitle }"
       ],
       "Continue your subscription": [
         "Podaljšajte naročnino"
@@ -1920,12 +1920,6 @@
       "Missing feature(s)": [
         "Manjkajoče funkcije"
       ],
-      "My reason isn't listed, please comment": [
-        "Mojega razloga ni na seznamu, prosim, komentirajte."
-      ],
-      "Streaming service unsupported": [
-        "Pretočni servis ni podprt"
-      ],
       "Subscription is too expensive": [
         "Naročnina je predraga."
       ],
@@ -1939,6 +1933,29 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Pomagajte nam izboljšati!"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Razširjena zgodovina različic"
+      ],
+      "Priority support": [
+        "Prednostna podpora"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Obnovitev za ${ renewablePrice }, prekličete lahko kadarkoli"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "za prvi mesec"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Pridobite ${ planName } za samo ${ planPrice }"
       ]
     },
     "Email verification": {
@@ -2001,7 +2018,7 @@
         "Koda je neveljavna ali je potekla"
       ],
       "Coudn't load invoices. Please try again later.": [
-        "Računov ni bilo mogoče naložiti. Prosim poskusite kasneje."
+        "Računov ni bilo mogoče naložiti. Poskusite kasneje."
       ],
       "Domain not available, try again later": [
         "Domena ni na voljo, poskusite znova pozneje"
@@ -3092,9 +3109,6 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Kopirajte in prilepite ta URL v polje URL ACS (Assertion Consumer Service) vašega ponudnika identitete"
       ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
-        "Copy and paste this URL into the entity ID field of your identity provider"
-      ],
       "Copy the suggested password to clipboard": [
         "Kopiraj predlagano geslo v odložišče."
       ],
@@ -3530,9 +3544,6 @@
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Po kliku na gumb Potrdi bo na vašem računu ostalo še ${ creditsRemaining }."
       ],
-      "Please provide an email address in case we need to contact you.": [
-        "Prosimo, navedite e-poštni naslov, če vas moramo kontaktirati."
-      ],
       "Please try again using a different payment method, or contact your bank.": [
         "Prosimo, poskusite znova z uporabo drugega načina plačila ali se obrnite na vašo banko."
       ],
@@ -3649,9 +3660,6 @@
       ],
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "Nekatere od vaših razpoložljivih strežnikov je mogoče uporabljati samo v določenih državah zaradi nedavnih odstranitev"
-      ],
-      "Specify the domain which is allowed to authenticate with SAML SSO.": [
-        "Specify the domain which is allowed to authenticate with SAML SSO."
       ],
       "SSO users (provided by your Identity Provider) will be deleted": [
         "Uporabniki SSO (ki jih zagotovi vaš ponudnik identitete) bodo izbrisani"
@@ -4098,7 +4106,7 @@
         "Preden lahko zmanjšate paket, morate onemogočiti ali odstraniti vse dodatne uporabnike, naslove in domene po meri aplikacije ${ MAIL_APP_NAME }."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
-        "Da bi jo dodali kot način plačila, morate imeti kreditno kartico ali bančni račun, ki je povezan z vašim PayPal računom."
+        "Da bi jo dodali kot način plačila, morate imeti plačilno kartico ali bančni račun, ki je povezan z vašim PayPal računom."
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Imeti morate kreditno kartico ali bančni račun, ki je povezan z vašim PayPal računom. Če vaš PayPal račun tega nima, kliknite na gumb spodaj."
@@ -4491,7 +4499,7 @@
         "Glavno"
       ],
       "Metadata file for ${ appName }": [
-        "Url metapodatkov za ${ appName }"
+        "Datoteka z metapodatki za ${ appName }"
       ],
       "Metadata URL for ${ appName }": [
         "URL metapodatkov za ${ appName }"
@@ -4994,17 +5002,11 @@
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Ste pozabili uporabniško ime za račun ${ BRAND_NAME }? Poiščite ga z obnovitvenim e-poštnim naslovom ali telefonsko številko in znova pridobite dostop do svojih ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } in drugih storitev."
       ],
-      "Private and secure email, no credit card required": [
-        "Zasebna in varna e-pošta, brez zahteve po plačilni kartici"
-      ],
       "Reset your ${ BRAND_NAME } Account password": [
         "Ponastavite geslo za račun ${ BRAND_NAME }"
       ],
       "Sign in to access your ${ appName } account": [
         "Prijavite se za dostop do svojega računa ${ appName }"
-      ],
-      "Try ${ planName } for free with this link": [
-        "Preizkusite ${ planName } brezplačno na tej povezavi."
       ]
     },
     "Monetary unit": {
@@ -5209,7 +5211,7 @@
         "Samodejni odgovor"
       ],
       "Autofill credit cards (coming soon)": [
-        "Samodejno izpolnjevanje kreditnih kartic (prihaja kmalu)."
+        "Samodejno izpolnjevanje plačilnih kartic (prihaja kmalu)."
       ],
       "Automatic email forwarding": [
         "Samodejno posredovanje elektronske pošte"
@@ -5994,7 +5996,7 @@
         "Nastavitve Secure Core"
       ],
       "Select who can access...": [
-        "Izberite, kdo ima dostop do..."
+        "Izberite, kdo ima dostop do ..."
       ],
       "Send to all": [
         "Pošlji vsem"
@@ -6274,7 +6276,7 @@
         "Neveljavna varnostna koda"
       ],
       "Something went wrong. Please try again later.": [
-        "Nekaj ​​je šlo narobe. Prosim poskusite kasneje."
+        "Nekaj ​​je šlo narobe. Poskusite kasneje."
       ],
       "We are unable to authenticate your payment method. Please choose a different payment method or try again.": [
         "Vašega plačilnega sredstva ne moremo preveriti. Izberite drugo plačilno sredstvo ali poskusite znova."
@@ -6327,9 +6329,6 @@
       ],
       "e.g. https://idp.example.com/XXXXX": [
         "npr. https://idp.example.com/XXXXX"
-      ],
-      "Email address": [
-        "E-poštni naslov"
       ],
       "Feedback": [
         "Povratne informacije"
@@ -7129,7 +7128,7 @@
         "dokupite prostor za shranjevanje"
       ],
       "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
-        "Kreditne točke za preostali čas bomo dodali vašemu ${ BRAND_NAME } računu."
+        "Dobroimetje za preostali čas bomo dodali vašemu ${ BRAND_NAME } računu."
       ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "Na trenutnem paketu **${ currentPlanName }** vam je preostal še **${ daysRemaining }** dan uporabe.",
@@ -7509,7 +7508,7 @@
     },
     "summer2023: Tooltip": {
       "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
-        "Ustvarite varne podatke za prijavo v vseh svojih napravah. Vključuje neomejeno število vzdevkov, 20 trezorjev, integrirano 2FA, samodejno izpolnjevanje kreditnih kartic in več."
+        "Ustvarite varne podatke za prijavo v vseh svojih napravah. Vključuje neomejeno število vzdevkov, 20 trezorjev, integrirano 2FA, samodejno izpolnjevanje plačilnih kartic in drugo."
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Vključuje več kot 2950 strežnikov v več kot 65 državah, povezovanje do 10 naprav, dostop do svetovnih storitev pretakanja, zlonamerne programske opreme in zaviralcev oglasov ter več."
@@ -8297,7 +8296,7 @@
     },
     "VPN info": {
       "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
-        "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now in še več."
+        "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now in drugi."
       ]
     },
     "VPN Plan Feature": {
@@ -8332,6 +8331,9 @@
       ],
       "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
         "Naročnina se samodejno podaljša vsake 3 mesece. Vaš obračunski dan je čez 3 mesece."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Izredno znižana cena ${ priceWithDiscount } velja za prvi mesec. Potem se bo samodejno podaljšala mesečno za ${ renewPrice }. Naročnino lahko kadarkoli prekinete."
       ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Nato boste vsakih 12 mesecev prejeli račun v znesku ${ renewPrice }."

@@ -1905,12 +1905,6 @@
       "Missing feature(s)": [
         "缺少功能"
       ],
-      "My reason isn't listed, please comment": [
-        "我的理由未列出，請留言"
-      ],
-      "Streaming service unsupported": [
-        "不支援串流服務"
-      ],
       "Subscription is too expensive": [
         "訂購授權太貴了"
       ],
@@ -1924,6 +1918,29 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "協助我們改善！"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "展開版本紀錄"
+      ],
+      "Priority support": [
+        "優先支援"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "更新價 ${ renewablePrice }，任何時間都可取消"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "首月"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "只需 ${ planPrice } 即可取得 ${ planName }"
       ]
     },
     "Email verification": {
@@ -3448,9 +3465,6 @@
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "在按一下「確認」按鈕後，您的帳號儲值餘額將為 ${ creditsRemaining }。"
       ],
-      "Please provide an email address in case we need to contact you.": [
-        "請提供一個電郵位址，萬一有需要時，我們也可以聯絡到您。"
-      ],
       "Please try again using a different payment method, or contact your bank.": [
         "諘換另一個繳款方式再試一次，或聯絡您的銀行尋求協助。"
       ],
@@ -4871,17 +4885,11 @@
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "忘記您的 ${ BRAND_NAME } 帳號使用者名稱？使用您的備援電子郵件或手機號碼找到它，並重新取得對 ${ MAIL_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } 等的存取權。"
       ],
-      "Private and secure email, no credit card required": [
-        "隱私與安全保護的電子郵件，免信用卡身分驗證"
-      ],
       "Reset your ${ BRAND_NAME } Account password": [
         "重設您的 ${ BRAND_NAME } 帳號密碼"
       ],
       "Sign in to access your ${ appName } account": [
         "登入以存取您的 ${ appName } 帳號"
-      ],
-      "Try ${ planName } for free with this link": [
-        "免費 ${ planName } 滿意體驗連結請點擊這裡"
       ]
     },
     "Monetary unit": {
@@ -6057,9 +6065,6 @@
       ],
       "e.g. https://idp.example.com/XXXXX": [
         "例如 https://idp.example.com/XXXXX"
-      ],
-      "Email address": [
-        "電郵位址"
       ],
       "Feedback": [
         "意見回饋"
@@ -7913,6 +7918,9 @@
       ]
     },
     "vpn_2024: renew": {
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "${ priceWithDiscount } 特殊折扣將套用於第一個月。其後將於每月自動以 ${ renewPrice } 續約。您可以在任何時候取消。"
+      ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "您的訂閱將每 ${ cycle }月自動更新。"
       ]

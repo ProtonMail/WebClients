@@ -1936,17 +1936,32 @@
       "Bugs or quality issue": [
         "Buggar eller kvalitetsproblem"
       ],
+      "I do not wish to share": [
+        "Jag vill inte dela"
+      ],
+      "I found a cheaper VPN": [
+        "Jag hittade ett billigare VPN"
+      ],
+      "I found a VPN with better features": [
+        "Jag hittade ett VPN med bättre funktioner"
+      ],
+      "I have not managed to connect": [
+        "Jag har inte lyckats att ansluta"
+      ],
+      "I only needed a VPN short-term": [
+        "Jag behövde bara ett VPN kortsiktigt"
+      ],
       "I use a different ${ BRAND_NAME } account": [
         "Jag använder ett annat ${ BRAND_NAME }-konto"
+      ],
+      "It doesn't do what I need": [
+        "Det gör inte vad jag behöver"
       ],
       "Missing feature(s)": [
         "Saknade funktion(er)"
       ],
-      "My reason isn't listed, please comment": [
-        "Min anledning är inte listad, kommentera"
-      ],
-      "Streaming service unsupported": [
-        "Streamingtjänst stöds inte"
+      "Other reason (please comment)": [
+        "Annan anledning (kommentera gärna)"
       ],
       "Subscription is too expensive": [
         "Prenumeration är för dyrt"
@@ -1956,11 +1971,48 @@
       ],
       "Temporary need, may come back in the future": [
         "Tillfälligt behov, kan komma tillbaka i framtiden"
+      ],
+      "The VPN is too slow": [
+        "VPN är för långsamt"
       ]
     },
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Hjälp oss att förbättra!"
+      ]
+    },
+    "drivePlus2024: Action": {
+      "Get the deal": [
+        "Ta del av erbjudandet"
+      ],
+      "Special Offer": [
+        "Specialerbjudande"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Utökad versionshistorik"
+      ],
+      "Priority support": [
+        "Prioriterad support"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Förnyas med ${ renewablePrice }, avbryt när som helst"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "för första månaden"
+      ],
+      "Limited-time offer": [
+        "Tidsbegränsat erbjudande"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Skaffa ${ planName } för endast ${ planPrice }"
       ]
     },
     "Email verification": {
@@ -3543,9 +3595,6 @@
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Observera att när du klickar på knappen ”Bekräfta” kommer ditt konto att ha ${ creditsRemaining } krediter kvar."
       ],
-      "Please provide an email address in case we need to contact you.": [
-        "Ange en e-postadress om vi behöver kontakta dig."
-      ],
       "Please try again using a different payment method, or contact your bank.": [
         "Försök igen med en annan betalningsmetod eller kontakta din bank."
       ],
@@ -4981,17 +5030,11 @@
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Har du glömt ditt användarnamn för ditt ${ BRAND_NAME }-konto? Hitta den med din e-postadress eller ditt telefonnummer för återställning och återfå åtkomst till dina ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } och fler."
       ],
-      "Private and secure email, no credit card required": [
-        "Privat och säker e-post, inget kreditkort krävs"
-      ],
       "Reset your ${ BRAND_NAME } Account password": [
         "Återställ lösenordet för ditt ${ BRAND_NAME }-konto"
       ],
       "Sign in to access your ${ appName } account": [
         "Logga in för att komma åt ditt ${ appName }-konto"
-      ],
-      "Try ${ planName } for free with this link": [
-        "Prova ${ planName } gratis med denna länk"
       ]
     },
     "Monetary unit": {
@@ -5297,6 +5340,9 @@
       "Organize items with multiple vaults": [
         "Organisera objekt med flera valv"
       ],
+      "Pass Monitor - premium features": [
+        "Pass Monitor - premiumfunktioner"
+      ],
       "Passkeys supported": [
         "Passkeys stöds"
       ],
@@ -5382,6 +5428,9 @@
       ],
       "Unlimited devices": [
         "Obegränsat antal enheter"
+      ],
+      "Unlimited devices and aliases": [
+        "Obegränsat antal enheter och alias"
       ],
       "Unlimited filters": [
         "Obegränsade filter"
@@ -6126,6 +6175,16 @@
       "Preparing your Recovery Kit": [
         "Förbereder ditt återställningskit"
       ],
+      "Secure sharing with ${ n } vault": [
+        "Säker delning med ${ n } valv",
+        "Säker delning med ${ n } valv"
+      ],
+      "Secure sharing with multiple vaults": [
+        "Säker delning med flera valv"
+      ],
+      "Secure vault sharing": [
+        "Säker valvdelning"
+      ],
       "Updating your account": [
         "Uppdaterar ditt konto"
       ],
@@ -6324,9 +6383,6 @@
       ],
       "e.g. https://idp.example.com/XXXXX": [
         "t.ex. https://idp.example.com/XXXXX"
-      ],
-      "Email address": [
-        "E-postadress"
       ],
       "Feedback": [
         "Feedback"

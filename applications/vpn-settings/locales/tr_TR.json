@@ -1942,12 +1942,6 @@
       "Missing feature(s)": [
         "Eksik özellikler"
       ],
-      "My reason isn't listed, please comment": [
-        "Gerekçem listede yok. Lütfen açıklayın"
-      ],
-      "Streaming service unsupported": [
-        "Yayın akışı hizmetinin desteklenmemesi"
-      ],
       "Subscription is too expensive": [
         "Abonelik çok pahalı"
       ],
@@ -1961,6 +1955,40 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Kendimizi geliştirmemize yardımcı olun!"
+      ]
+    },
+    "drivePlus2024: Action": {
+      "Get the deal": [
+        "Teklifi al"
+      ],
+      "Special Offer": [
+        "Özel Teklif"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Genişletilmiş sürüm geçmişi"
+      ],
+      "Priority support": [
+        "Öncelikli destek"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "${ renewablePrice } ile yenilenir. İstediğiniz zaman iptal edebilirsiniz"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "ilk ay için"
+      ],
+      "Limited-time offer": [
+        "Sınırlı süreli teklif"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "${ planName } tarifesini yalnızca ${ planPrice } ödeyerek alın"
       ]
     },
     "Email verification": {
@@ -3540,9 +3568,6 @@
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Lütfen Onayla düğmesine tıkladığınızda, hesabınızda ${ creditsRemaining } kredi kalacağını unutmayın."
       ],
-      "Please provide an email address in case we need to contact you.": [
-        "Sizinle iletişim kurmamız gerekirse kullanabileceğimiz bir e-posta adresi yazın."
-      ],
       "Please try again using a different payment method, or contact your bank.": [
         "Lütfen farklı bir ödeme yöntemi kullanarak yeniden deneyin ya da bankanızla görüşün."
       ],
@@ -4990,17 +5015,11 @@
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "${ BRAND_NAME } hesabınızın kullanıcı adını unuttunuz mu? Kurtarma e-posta adresinizi ya da telefon numaranızı kullanarak ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } gibi hizmetlere yeniden erişin."
       ],
-      "Private and secure email, no credit card required": [
-        "Gizli ve güvenli e-posta. Kredi kartı bilgilerinizi vermeniz gerekmez"
-      ],
       "Reset your ${ BRAND_NAME } Account password": [
         "${ BRAND_NAME } hesabınızın parolasını sıfırlayın"
       ],
       "Sign in to access your ${ appName } account": [
         "${ appName } hesabınıza erişmek için oturum açın"
-      ],
-      "Try ${ planName } for free with this link": [
-        "Bu bağlantı ile ${ planName } tarifesini ücretsiz olarak deneyin"
       ]
     },
     "Monetary unit": {
@@ -5305,6 +5324,9 @@
       ],
       "Organize items with multiple vaults": [
         "Birden çok kasa ile ögeleri gruplayın"
+      ],
+      "Passkeys supported": [
+        "Geçiş anahtarları desteklenmektedir"
       ],
       "Password-protected Emails": [
         "Parola korumalı e-postalar"
@@ -6312,9 +6334,6 @@
       ],
       "e.g. https://idp.example.com/XXXXX": [
         "örnek: https://idp.ornek.com/XXXXX"
-      ],
-      "Email address": [
-        "E-posta adresi"
       ],
       "Feedback": [
         "Geri bildirim"
@@ -7327,11 +7346,41 @@
       "15 GB storage": [
         "15 GB depolama alanı"
       ],
+      "and 15 more premium features": [
+        "ve 15 ücretli özellik daha"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Otomatik e-posta iletisi ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Veri ihlali uyarısı ${ strongArgument }"
+      ],
       "Desktop app": [
         "Masaüstü uygulaması"
       ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ücretli bir tarifeye geçiş yaparak interneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
+      ],
+      "No ads or tracking": [
+        "Reklamlar ve izleyiciler yok"
+      ],
+      "Short @pm.me email address": [
+        "Kısa @pm.me e-posta adresi"
+      ],
+      "Support our mission": [
+        "Misyonumuzu destekleyin"
+      ],
       "Upgrade": [
         "Yükselt"
+      ],
+      "Upgrade your productivity": [
+        "Verimliliğinizi artırın"
+      ],
+      "We don't sell your data": [
+        "Verilerinizi satmıyoruz"
+      ],
+      "Your privacy is our mission": [
+        "Gizliliğiniz bizim misyonumuzdur"
       ]
     },
     "Subscription renewal state": {
@@ -8350,6 +8399,9 @@
       ],
       "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
         "Abonelik her 3 ayda bir otomatik olarak yenilenir. Bir sonraki fatura tarihiniz 3 ay sonra."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "İlk ay için ${ priceWithDiscount } özel indirimli fiyat geçerlidir. Ardından aylık ${ renewPrice } tutarla otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
       ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Daha sonra faturanız her 12 ayda bir ${ renewPrice } üzerinden hazırlanacak."
