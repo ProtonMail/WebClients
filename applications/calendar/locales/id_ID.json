@@ -14,7 +14,7 @@
     },
     "account": {
       "Forwarding will start soon. New emails will appear in your inbox.": [
-        "Penerusan email akan segera dimulai. email baru akan muncul pada kotak masuk Anda."
+        "Penerusan akan segera dimulai. Email baru akan muncul pada kotak masuk Anda."
       ],
       "Mail forward stopped": [
         "Penerusan email diberhentikan"
@@ -294,6 +294,9 @@
       "Go to panel ${ index }": [
         "Ke panel ${ index }"
       ],
+      "Go to settings": [
+        "Pergi ke pengaturan"
+      ],
       "Got it": [
         "Dimengerti"
       ],
@@ -359,6 +362,9 @@
       ],
       "Keep my Plus subscription": [
         "Pertahankan langganan Plus saya"
+      ],
+      "Later": [
+        "Nanti"
       ],
       "Let's talk": [
         "Mari berbincang"
@@ -444,10 +450,10 @@
       "Not now": [
         "Tidak sekarang"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -846,11 +852,6 @@
         "Dengan keluar sekarang, Anda akan kehilangan acara Anda."
       ]
     },
-    "App logo": {
-      "Download ${ MAIL_APP_NAME } desktop application": [
-        "Unduh aplikasi desktop ${ MAIL_APP_NAME }"
-      ]
-    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "Aplikasi ${ BRAND_NAME }"
@@ -976,13 +977,13 @@
         "Meliputi dukungan untuk ${ domains } domain email khusus, ${ addresses } alamat email, alias hide-my-email tanpa batasan jumlah, fitur berbagi kalender, dan masih banyak lagi."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Termasuk dukungan untuk 1 domain email kustom, 10 alamat email, 10 alias hide-my-email, pembagian kalender, dan lainnya."
+        "Meliputi dukungan 1 domain email khusus, 10 alamat email, 10 alias hide-my-email, pembagian kalender, dan masih banyak lagi."
       ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "Masuk secara aman di semua perangkat Anda. Termasuk alias terbatas, pembagian, 2FA terintegrasi, dan lainnya."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Amankan email Anda dan jadwalkan dengan enkripsi ujung ke ujung. Termasuk dukungan untuk beberapa domain email kustom, 15 alamat email, alias hide-my-email tak terbatas, pembagian kalender, dan lainnya."
+        "Amankan email dan jadwal Anda dengan enkripsi end-to-end. Meliuti dukungan untuk domain email khusus, 15 alamat email, alias hide-my-email tanpa batasan jumlah, pembagian kalender, dan masih banyak lagi."
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Amankan berkas Anda dengan penyimpanan cloud yang terenkripsi. Meliputi riwayat versi, pembagian berkas terenkripsi, dan masih banyak lagi."
@@ -2454,17 +2455,32 @@
       "Bugs or quality issue": [
         "Terdapat bug-bug yang mengganggu saya"
       ],
+      "I do not wish to share": [
+        "Saya tidak ingin membagikan alasan saya"
+      ],
+      "I found a cheaper VPN": [
+        "Saya menemukan VPN yang lebih murah"
+      ],
+      "I found a VPN with better features": [
+        "Saya menemukan VPN dengan fitur yang lebih baik"
+      ],
+      "I have not managed to connect": [
+        "Saya belum berhasil terhubung"
+      ],
+      "I only needed a VPN short-term": [
+        "Saya hanya membutuhkan VPN untuk jangka pendek"
+      ],
       "I use a different ${ BRAND_NAME } account": [
         "Saya menggunakan akun ${ BRAND_NAME } lainnya"
+      ],
+      "It doesn't do what I need": [
+        "VPN ini tidak memenuhi kebutuhan saya"
       ],
       "Missing feature(s)": [
         "Terdapat fitur yang hilang"
       ],
-      "My reason isn't listed, please comment": [
-        "Lainnya (harap berikan komentar)"
-      ],
-      "Streaming service unsupported": [
-        "Layanan streaming yang saya gunakan tidak didukung"
+      "Other reason (please comment)": [
+        "Alasan lainnya (mohon tulis di kolom komentar)"
       ],
       "Subscription is too expensive": [
         "Biaya berlangganan terlalu mahal"
@@ -2474,11 +2490,48 @@
       ],
       "Temporary need, may come back in the future": [
         "Saya hanya bermaksud menurunkan jenis akun saya untuk sementara waktu"
+      ],
+      "The VPN is too slow": [
+        "VPN saya terlalu lambat"
       ]
     },
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Bantu kami untuk berkembang!"
+      ]
+    },
+    "drivePlus2024: Action": {
+      "Get the deal": [
+        "Dapatkan penawaran ini"
+      ],
+      "Special Offer": [
+        "Penawaran Spesial"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Riwayat versi yang terperinci"
+      ],
+      "Priority support": [
+        "Dukungan prioritas"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Terbarui dengan harga ${ renewablePrice }, batalkan kapan saja"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "untuk bulan pertama"
+      ],
+      "Limited-time offer": [
+        "Penawaran waktu terbatas"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Dapatkan ${ planName } hanya dengan harga ${ planPrice }"
       ]
     },
     "Dropdown action icon tooltip": {
@@ -2526,13 +2579,13 @@
         "Semua acara dalam seri ini telah diperbarui. Berikut adalah apa yang diubah:\n\n${ updateEventDetailsText }"
       ],
       "This event occurrence was canceled.": [
-        "Kejadian acara ini telah dibatalkan."
+        "Keberlangsungan acara ini telah dibatalkan."
       ],
       "This event occurrence was updated.": [
-        "Kejadian acara ini telah diperbarui."
+        "Keberlangsungan acara ini telah diperbarui."
       ],
       "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Kejadian acara ini telah diperbarui. Berikut adalah apa yang diubah:\n\n${ updateEventDetailsText }"
+        "Keberlangsungan acara ini telah diperbarui. Berikut merupakan apa-apa saja yang telah diubah:\n\n${ updateEventDetailsText }"
       ],
       "This event was updated.": [
         "Acara ini telah diperbarui."
@@ -2581,19 +2634,19 @@
         "Pembatalan acara pada ${ formattedStart }"
       ],
       "Cancellation of an event starting on ${ formattedStart }": [
-        "Pembatalan acara mulai pada ${ formattedStart }"
+        "Pembatalan acara yang dimulai pada ${ formattedStart }"
       ],
       "Invitation for an event on ${ formattedStart }": [
-        "Undangan acara pada ${ formattedStart }"
+        "Undangan untuk acara pada ${ formattedStart }"
       ],
       "Invitation for an event starting on ${ formattedStart }": [
-        "Undangan acara mulai pada ${ formattedStart }"
+        "Undangan untuk acara yang dimulai pada ${ formattedStart }"
       ],
       "Update for an event on ${ formattedStart }": [
         "Pembaruan acara pada ${ formattedStart }"
       ],
       "Update for an event starting on ${ formattedStart }": [
-        "Pembaruan acara mulai pada ${ formattedStart }"
+        "Pembaruan untuk acara yang dimulai pada ${ formattedStart }"
       ]
     },
     "eof2023: Deal details": {
@@ -2772,7 +2825,7 @@
         "Acara gagal diperoleh"
       ],
       "Failed to get original occurrence in series": [
-        "Gagal mendapatkan rangkaian kejadian asli"
+        "Keberlangsungan asli dalam rangkaian acara gagal diperoleh"
       ],
       "First name is too long": [
         "Nama depan terlalu panjang"
@@ -2868,7 +2921,7 @@
         "Tidak ada kontak yang dapat diimpor"
       ],
       "No emails found to import - the account does not have an inbox": [
-        "Tidak ada email yang dapat diimpor - akun ini tidak memiliki kotak masuk"
+        "Tidak ada email yang ditemukan untuk dapat diimpor - akun ini tidak memiliki kotak masuk"
       ],
       "No external key retrieved for user is valid for sending": [
         "Tidak ada kunci eksternal untuk penerima yang valid untuk pengiriman"
@@ -2883,10 +2936,10 @@
         "Nomor telepon tidak valid"
       ],
       "Number of occurrences cannot be empty": [
-        "Nomor peristiwa tidak boleh kosong"
+        "Jumlah keberlangsungan tidak boleh kosong"
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
-        "Kontak tidak memiliki alamat email: ${ noEmailsContactNamesList } "
+        "Sebagian kontak tidak memiliki alamat email: ${ noEmailsContactNamesList } "
       ],
       "One of the groups has no contacts: ${ noContactGroupList }": [
         "Grup tidak memiliki kontak: ${ noContactGroupList } "
@@ -3228,7 +3281,7 @@
         "Acara berulang yang asli tidak ditemukan"
       ],
       "Recurring event has no occurrences": [
-        "Acara berulang tidak terlaksana"
+        "Acara yang berulang tidak memiiliki keberlangsungan"
       ],
       "Recurring rule not supported": [
         "Aturan berulang tidak didukung"
@@ -3725,7 +3778,7 @@
     },
     "Import calendar; import invitation": {
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
-        "Undangan yang diimpor akan muncul pada ${ CALENDAR_APP_NAME } dalam bentuk simple event tanpa rincian seputar penyelenggara dan peserta. Untuk dapat memperoleh pembaruan terkini dan melihat daftar peserta, mintalah penyelenggara untuk mengundang Anda melalui alamat email ${ BRAND_NAME } Anda."
+        "Undangan yang diimpor akan muncul pada ${ CALENDAR_APP_NAME } sebagai acara sederhana tanpa rincian seputar penyelenggara dan peserta. Untuk memperoleh pembaruan seputar acara dan melihat daftar peserta, mintalah penyelenggara acara untuk mengundang Anda melalui alamat email ${ BRAND_NAME } Anda."
       ],
       "This file contains an event invitation:": [
         "Berkas ini mengandung undangan acara:"
@@ -4124,6 +4177,9 @@
       "Billing cycle: ${ text }": [
         "Siklus tagihan: ${ text }"
       ],
+      "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
+        "Angkat identitas merek organisasi Anda dan ciptakan pengalaman online yang lebih konsisten bagi para pengguna Anda."
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Dengan menurunkan ke paket Free, Anda akan kehilangan berbagai manfaat berikut secara permanen, bahkan apabila Anda kembali meningkatkan jenis akun Anda di kemudian hari."
       ],
@@ -4310,9 +4366,6 @@
       "finance": [
         "keuangan"
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Teruskan pesan yang datang dari akun lainnya menuju kotak masuk akun ${ MAIL_APP_NAME } aman Anda."
-      ],
       "Frequency modifications will be lost.": [
         "Perubahan frekuensi akan hilang."
       ],
@@ -4351,9 +4404,6 @@
       ],
       "Import mailbox": [
         "Impor kotak surat"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Impor email, kalender, dan kontak Anda dari layanan lain ke ${ BRAND_NAME }."
       ],
       "Important note": [
         "Catatan penting"
@@ -4641,7 +4691,7 @@
         "Pengelola acara berikut tidak dapat diberi tahu bahwa Anda ingin mengubah jawaban Anda:"
       ],
       "The organizer could not be notified that you changed your answer:": [
-        "Pengelola acara berikut tidak dapat diberi tahu bahwa Anda telah mengubah jawaban Anda:"
+        "Penyelenggara acara tidak dapat diberi tahu bahwa Anda telah mengubah jawaban Anda:"
       ],
       "The organizer has updated some of the events in this series. Changing the calendar is not supported yet for this type of recurring events.": [
         "Penyelenggara acara telah memperbarui sebagian acara yang terdapat pada rangkaian ini. Fitur untuk mengubah tipe acara yang berulang ini pada kalender saat ini belum didukung."
@@ -5837,10 +5887,10 @@
         "Cara untuk mengimpor kontak dari Yahoo"
       ],
       "How to import emails from another service": [
-        "Cara untuk mengimpor email-email dari layanan email lainnya"
+        "Cara untuk mengimpor email dari layanan lainnya"
       ],
       "How to import emails from Yahoo": [
-        "Cara untuk mengimpor email-email dari Yahoo"
+        "Cara untuk mengimpor email dari Yahoo"
       ],
       "Share calendar": [
         "Bagikan kalender"
@@ -6055,7 +6105,7 @@
         "${ n } domain email khusus"
       ],
       "${ n } email address": [
-        "${ n } alamat email"
+        "${ n } alamat email/alias"
       ],
       "${ n } email address per user": [
         "${ n } alamat email per pengguna"
@@ -6249,6 +6299,9 @@
       "Organize items with multiple vaults": [
         "Kelola item dengan berbagai brankas"
       ],
+      "Pass Monitor - premium features": [
+        "Pemantauan Pass - fitur premium"
+      ],
       "Passkeys supported": [
         "Passkey didukung"
       ],
@@ -6324,6 +6377,9 @@
       "Unlimited devices": [
         "Tanpa batasan jumlah perangkat"
       ],
+      "Unlimited devices and aliases": [
+        "Tanpa batasan jumlah perangkat dan alias"
+      ],
       "Unlimited filters": [
         "Tanpa batasan jumlah filter"
       ],
@@ -6381,7 +6437,7 @@
     },
     "new_plans: feature info": {
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
-        "Berikan masing-masing identitas online Anda alamat emailnya tersendiri, mis. JohnShopper@${ domain } untuk berbelanja dan JohnNews@${ domain2 } untuk berlangganan berita"
+        "Buat berbagai alamat email untuk masing-masing identitas online Anda, mis. JohnShopper@${ domain } untuk akun belanja dan JohnNews@${ domain2 } untuk akun langganan berita"
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Dapatkan alamat email samaran tanpa batasan jumlah dengan SimpleLogin oleh ${ BRAND_NAME }"
@@ -7037,6 +7093,11 @@
         "Lebarkan daftar peserta"
       ]
     },
+    "pass_signup_2023: Info": {
+      "Secure vault sharing": [
+        "Pembagian brankas yang aman"
+      ]
+    },
     "passwordless": {
       "Non-private users can be promoted to admin when they have setup keys": [
         "Pengguna non-privat dapat dipromosikan sebagai admin pada saat mereka memiliki kunci setup"
@@ -7103,7 +7164,7 @@
     },
     "PGP Key info": {
       "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
-        "${ emailAddress } telah menandai kunci ini sebagai kunci yang bocor. Kunci ini tidak akan lagi dapat digunakan baik untuk mengenkipsi pesan maupun untuk memverifikasi tanda tangan."
+        "${ emailAddress } telah menandai kunci ini sebagai kunci yang bocor. Kunci ini tidak akan lagi dapat digunakan baik untuk enkripsi ataupun verifikasi tanda tangan."
       ],
       "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
         "${ emailAddress } telah menandai kunci ini sebagai kunci yang usang. Kunci ini hanya akan dapat digunakan untuk memverifikasi tanda tangan."
@@ -7821,14 +7882,8 @@
       "Color-code your calendar to better organize your day, track your time, and more.": [
         "Warnai kalender Anda agar Anda dapat mengorganisir hari Anda secara lebih baik, melacak waktu Anda, dan masih banyak lagi."
       ],
-      "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
-        "Luncurkan ${ MAIL_APP_NAME } secara mudah langsung dari desktop Anda."
-      ],
       "Custom event colors": [
         "Warna acara khusus"
-      ],
-      "Get the desktop app": [
-        "Dapatkan aplikasi desktop"
       ],
       "Get up to ${ credits } in credits.": [
         "Dapatkan saldo hingga ${ credits }."
@@ -8403,6 +8458,9 @@
       "Account security": [
         "Keamanan akun"
       ],
+      "Add a custom logo": [
+        "Tambah logo khusus"
+      ],
       "Add another notification to remind you of this event": [
         "Tambah pemberitahuan lain untuk mengingatkan Anda pada acara ini"
       ],
@@ -8524,7 +8582,7 @@
         "Sesuaikan proses impor kalender"
       ],
       "Customize your mail import": [
-        "Sesuaikan proses impor email"
+        "Sesuaikan impor email Anda"
       ],
       "Customize your plan": [
         "Sesuaikan paket Anda"

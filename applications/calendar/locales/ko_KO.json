@@ -294,6 +294,9 @@
       "Go to panel ${ index }": [
         "패널로 가기 ${ index }"
       ],
+      "Go to settings": [
+        "설정으로 이동하기"
+      ],
       "Got it": [
         "알겠습니다"
       ],
@@ -359,6 +362,9 @@
       ],
       "Keep my Plus subscription": [
         "나의 Plus 구독 유지"
+      ],
+      "Later": [
+        "나중에"
       ],
       "Let's talk": [
         "상담 및 계약 필요"
@@ -444,10 +450,10 @@
       "Not now": [
         "다음에"
       ],
-      "Ok": [
+      "OK": [
         "확인"
       ],
-      "OK": [
+      "Ok": [
         "확인"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -844,11 +850,6 @@
       ],
       "By leaving now, you will lose your event.": [
         "지금 떠나면, 이벤트를 잃게 됩니다."
-      ]
-    },
-    "App logo": {
-      "Download ${ MAIL_APP_NAME } desktop application": [
-        "${ MAIL_APP_NAME } 데스크톱 애플리케이션 다운로드"
       ]
     },
     "Apps dropdown": {
@@ -2348,6 +2349,9 @@
       "Availability unknown": [
         "활동 상태를 확인할 수 없음"
       ],
+      "Better organize your day, track your time, and prioritize tasks. Color-code your calendar with custom event colors.": [
+        "더 나은 하루의 정리, 시간의 추적과 작업의 우선순위를. 캘린더를 커스텀 이벤트 색상으로 색 부호화 하세요."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "연락처 복호화 중... 몇 분이 걸릴 수 있습니다. 이 처리가 완료되면, 내보낼 모든 연락처 다운로드가 가능합니다."
       ],
@@ -2452,12 +2456,6 @@
       "Missing feature(s)": [
         "없는 기능"
       ],
-      "My reason isn't listed, please comment": [
-        "리스트에 저의 사유가 없습니다, 사유를 적어주세요"
-      ],
-      "Streaming service unsupported": [
-        "스트리밍 서비스 지원되지 않음"
-      ],
       "Subscription is too expensive": [
         "구독이 너무 비쌉니다"
       ],
@@ -2471,6 +2469,29 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "저희를 도와주세요!"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "연장된 버전 기록"
+      ],
+      "Priority support": [
+        "우선 지원"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "${ renewablePrice }에 갱신되며 언제나 취소할 수 있습니다."
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "첫 한달간"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "${ planName }를 ${ planPrice }만으로 만나다"
       ]
     },
     "Dropdown action icon tooltip": {
@@ -3059,6 +3080,9 @@
       ],
       "You have reached the contacts limit for your account": [
         "계정의 최대 연락처 수를 초과했습니다"
+      ],
+      "You have reached the maximum number of calendars.": [
+        "캘린더 갯수의 한도에 도달했습니다."
       ],
       "You must set a name": [
         "이름을 반드시 설정해야 합니다"
@@ -4110,6 +4134,9 @@
       "Billing cycle: ${ text }": [
         "청구 주기: ${ text }"
       ],
+      "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
+        "조직의 브랜드 아이덴티티를 증진하고 사용자를 위한 더욱 일관된 온라인 경험을 창출하십시오."
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "무료 플랜으로 다운그레이드하면, 만약에 나중에 다시 업그레이드 한다 해도 다음 혜택을 영구적으로 잃을 것입니다."
       ],
@@ -4296,9 +4323,6 @@
       "finance": [
         "금융정보"
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "다른 계정에서 전송되는 메일을 안전한 ${ MAIL_APP_NAME } 받은 편지함으로 전달하세요."
-      ],
       "Frequency modifications will be lost.": [
         "빈도 수정사항을 잃게 됩니다."
       ],
@@ -4337,9 +4361,6 @@
       ],
       "Import mailbox": [
         "메일함 불러오기"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "이메일, 캘린더 및 연락처를 타사 서비스에서 ${ BRAND_NAME }으로 불러오세요."
       ],
       "Important note": [
         "중요 사항"
@@ -6235,6 +6256,9 @@
       "Organize items with multiple vaults": [
         "다중 금고와 항목 정리"
       ],
+      "Passkeys supported": [
+        "패스키를 지원함"
+      ],
       "Password-protected Emails": [
         "비밀번호로 보호된 이메일"
       ],
@@ -7798,11 +7822,8 @@
       ]
     },
     "Spotlight": {
-      "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
-        "데스크톱에서 바로 ${ MAIL_APP_NAME }을 실행할 수 있습니다."
-      ],
-      "Get the desktop app": [
-        "데스크톱 앱 다운로드"
+      "Color-code your calendar to better organize your day, track your time, and more.": [
+        "캘린더를 색 부호화해 더 나은 하루의 정리와 시간의 추적, 그 이상을."
       ],
       "Get up to ${ credits } in credits.": [
         "최대 ${ credits }의 크레딧 받기"
@@ -8376,6 +8397,9 @@
       ],
       "Account security": [
         "계정 보안"
+      ],
+      "Add a custom logo": [
+        "커스텀 로고 추가하기"
       ],
       "Add another notification to remind you of this event": [
         "이 이벤트를 상기시키기 위해 다른 알림을 추가하세요."
@@ -9023,6 +9047,9 @@
       ],
       "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
         "구독은 3개월 단위로 자동 갱신됩니다. 다음 갱신 주기는 3개월입니다."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "특별 할인가 ${ priceWithDiscount }는 첫 달에만 유효합니다. 이후 매 달 ${ renewPrice }에 자동으로 갱신됩니다. 취소는 언제나 가능합니다."
       ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "12개월마다 ${ renewPrice }가 결제됩니다."

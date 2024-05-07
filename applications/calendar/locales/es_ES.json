@@ -297,6 +297,9 @@
       "Go to panel ${ index }": [
         "Ir al panel ${ index }"
       ],
+      "Go to settings": [
+        "Ir a los ajustes"
+      ],
       "Got it": [
         "Entendido"
       ],
@@ -362,6 +365,9 @@
       ],
       "Keep my Plus subscription": [
         "Mantener mi suscripción Plus"
+      ],
+      "Later": [
+        "Más tarde"
       ],
       "Let's talk": [
         "Habla con nosotros"
@@ -447,11 +453,11 @@
       "Not now": [
         "Ahora no"
       ],
-      "Ok": [
-        "OK"
-      ],
       "OK": [
         "Aceptar"
+      ],
+      "Ok": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Abrir la configuración de ${ CALENDAR_APP_NAME }"
@@ -851,11 +857,6 @@
       ],
       "By leaving now, you will lose your event.": [
         "Si sales ahora, perderás tu evento."
-      ]
-    },
-    "App logo": {
-      "Download ${ MAIL_APP_NAME } desktop application": [
-        "Descarga la aplicación de escritorio de ${ MAIL_APP_NAME }"
       ]
     },
     "Apps dropdown": {
@@ -2373,6 +2374,9 @@
       "Availability unknown": [
         "Disponibilidad desconocida"
       ],
+      "Better organize your day, track your time, and prioritize tasks. Color-code your calendar with custom event colors.": [
+        "Organiza mejor tu día, realice un seguimiento de tu tiempo y establece prioridades entre las tareas. Codifica por colores tu calendario con colores de eventos personalizados."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Descifrando contactos... Esto puede tardar unos minutos. Cuando se finaliza el proceso, podrás descargar el archivo con todos tus contactos exportados."
       ],
@@ -2477,12 +2481,6 @@
       "Missing feature(s)": [
         "Faltan funciones."
       ],
-      "My reason isn't listed, please comment": [
-        "Mi razón no está en la lista. Déjanos un comentario."
-      ],
-      "Streaming service unsupported": [
-        "Servicio de streaming no compatible"
-      ],
       "Subscription is too expensive": [
         "La suscripción es demasiado cara."
       ],
@@ -2496,6 +2494,40 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "¡Ayúdanos a mejorar!"
+      ]
+    },
+    "drivePlus2024: Action": {
+      "Get the deal": [
+        "Aprovéchate de la oferta"
+      ],
+      "Special Offer": [
+        "Oferta especial"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Historial de versiones extendido"
+      ],
+      "Priority support": [
+        "Soporte prioritario"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Se renueva por ${ renewablePrice } y cancela cuando quieras"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "por el primer mes"
+      ],
+      "Limited-time offer": [
+        "Oferta por tiempo limitado"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Obtén ${ planName } por solo ${ planPrice }"
       ]
     },
     "Dropdown action icon tooltip": {
@@ -4190,6 +4222,9 @@
       "Billing cycle: ${ text }": [
         "Ciclo de facturación: ${ text }"
       ],
+      "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
+        "Impulsa la identidad de marca de tu organización y crea una experiencia en línea más consistente para tus usuarios."
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Al pasar a un plan gratuito, perderás permanentemente estos beneficios, incluso si mejoras de nuevo tu plan en el futuro."
       ],
@@ -4378,9 +4413,6 @@
       "finance": [
         "finanzas"
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Redirige correos entrantes desde otra cuenta a tu bandeja de entrada segura de ${ MAIL_APP_NAME }."
-      ],
       "Frequency modifications will be lost.": [
         "Se perderán las modificaciones de frecuencia."
       ],
@@ -4420,9 +4452,6 @@
       ],
       "Import mailbox": [
         "Importar buzón"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Importa tus correos, calendarios y contactos desde otro proveedor a ${ BRAND_NAME }."
       ],
       "Important note": [
         "Aviso importante"
@@ -6352,6 +6381,12 @@
       "Organize items with multiple vaults": [
         "Organizar elementos en cajas fuertes múltiples"
       ],
+      "Pass Monitor - premium features": [
+        "Pass Monitor - funciones premium"
+      ],
+      "Passkeys supported": [
+        "Las claves de acceso están admitidas."
+      ],
       "Password-protected Emails": [
         "Correos electrónicos protegidos con contraseña"
       ],
@@ -6424,6 +6459,9 @@
       ],
       "Unlimited devices": [
         "Dispositivos ilimitados"
+      ],
+      "Unlimited devices and aliases": [
+        "Alias y dispositivos ilimitados"
       ],
       "Unlimited filters": [
         "Filtros ilimitados"
@@ -7165,6 +7203,18 @@
     "Participants expand button label": {
       "Expand participants list": [
         "Expandir lista de participantes"
+      ]
+    },
+    "pass_signup_2023: Info": {
+      "Secure sharing with ${ n } vault": [
+        "Compartición segura con ${ n } caja fuerte",
+        "Compartición segura con ${ n } cajas fuertes"
+      ],
+      "Secure sharing with multiple vaults": [
+        "Compartición segura con varias cajas fuertes"
+      ],
+      "Secure vault sharing": [
+        "Compartición segura de cajas fuertes"
       ]
     },
     "passwordless": {
@@ -7971,14 +8021,11 @@
       ]
     },
     "Spotlight": {
-      "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
-        "Inicia ${ MAIL_APP_NAME } con facilidad directamente desde tu escritorio."
+      "Color-code your calendar to better organize your day, track your time, and more.": [
+        "Codifica con colores tu calendario para organizar mejor tu día, realizar un seguimiento de tu tiempo y más."
       ],
       "Custom event colors": [
         "Colores de eventos personalizados"
-      ],
-      "Get the desktop app": [
-        "Obtén la aplicación de escritorio"
       ],
       "Get up to ${ credits } in credits.": [
         "Consigue hasta ${ credits } en créditos."
@@ -8568,6 +8615,9 @@
       ],
       "Account security": [
         "Seguridad de la cuenta"
+      ],
+      "Add a custom logo": [
+        "Añade un logo personalizado"
       ],
       "Add another notification to remind you of this event": [
         "Añade otra notificación para recordarte de este evento."

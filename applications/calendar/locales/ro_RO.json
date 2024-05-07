@@ -450,10 +450,10 @@
       "Not now": [
         "Nu acum"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -858,11 +858,6 @@
       ],
       "By leaving now, you will lose your event.": [
         "Renunțând acum, veți pierde evenimentul."
-      ]
-    },
-    "App logo": {
-      "Download ${ MAIL_APP_NAME } desktop application": [
-        "Descărcați aplicația pentru desktop ${ MAIL_APP_NAME }"
       ]
     },
     "Apps dropdown": {
@@ -2492,12 +2487,6 @@
       "Missing feature(s)": [
         "Funcție (funcții) lipsă."
       ],
-      "My reason isn't listed, please comment": [
-        "Motivul meu nu este afişat. Vă rugăm să comentați."
-      ],
-      "Streaming service unsupported": [
-        "Serviciu de trasmisie în flux neacceptat."
-      ],
       "Subscription is too expensive": [
         "Abonamentul este prea scump."
       ],
@@ -2511,6 +2500,29 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Ajutaţi-ne să ne îmbunătățim!"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Istoric extins versiuni"
+      ],
+      "Priority support": [
+        "Asistență prioritară"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Reînnoire cu ${ renewablePrice }, anulați oricând"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "pentru prima lună"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Luați ${ planName } cu doar ${ planPrice }"
       ]
     },
     "Dropdown action icon tooltip": {
@@ -3123,6 +3135,9 @@
       ],
       "You have reached the contacts limit for your account": [
         "Ați atins limita de contacte disponibilă în cont."
+      ],
+      "You have reached the maximum number of calendars.": [
+        "Ați atins numărul maxim de calendare."
       ],
       "You must set a name": [
         "Trebuie specificat un nume"
@@ -4438,9 +4453,6 @@
       "finance": [
         "finanțe"
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Redirecționați mesajele primite pe e-mail de la un alt cont în contul securizat al ${ MAIL_APP_NAME }."
-      ],
       "Frequency modifications will be lost.": [
         "Modificările de frecvență vor fi pierdute."
       ],
@@ -4481,9 +4493,6 @@
       ],
       "Import mailbox": [
         "Importare mesaje"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Importați mesajele, calendarele și contactele de la un alt serviciu la ${ BRAND_NAME }."
       ],
       "Important note": [
         "Notă importantă"
@@ -8110,12 +8119,6 @@
       ]
     },
     "Spotlight": {
-      "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
-        "Lansați convenient ${ MAIL_APP_NAME } chiar de pe desktop."
-      ],
-      "Get the desktop app": [
-        "Luați aplicația pentru desktop"
-      ],
       "Get up to ${ credits } in credits.": [
         "Obțineți până la ${ credits } de credite."
       ],
@@ -9346,6 +9349,9 @@
       ],
       "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
         "Abonamentul se reînnoiește automat la fiecare 3 luni. Următoarea dată de facturare este peste 3 luni."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Prețul cu reducere specială de ${ priceWithDiscount } este valabil pentru prima lună. Apoi va fi reînnoit automat cu ${ renewPrice } în fiecare lună. Puteți anula oricând."
       ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Vi se va emite factura la fiecare 12 luni cu ${ renewPrice }."
