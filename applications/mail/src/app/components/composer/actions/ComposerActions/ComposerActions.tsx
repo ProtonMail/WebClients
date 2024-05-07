@@ -10,8 +10,8 @@ import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 import { hasFlag } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
 
-import AssistantIncompatibleBrowserModal from 'proton-mail/components/assistant/AssistantIncompatibleBrowserModal';
-import AssistantIncompatibleHardwareModal from 'proton-mail/components/assistant/AssistantIncompatibleHardwareModal';
+import AssistantIncompatibleBrowserModal from 'proton-mail/components/assistant/modals/AssistantIncompatibleBrowserModal';
+import AssistantIncompatibleHardwareModal from 'proton-mail/components/assistant/modals/AssistantIncompatibleHardwareModal';
 
 import { getAttachmentCounts } from '../../../../helpers/message/messages';
 import { MessageState } from '../../../../store/messages/messagesTypes';
