@@ -1,5 +1,5 @@
 import '@mlc-ai/web-llm';
-import { WebWorkerEngine } from '@mlc-ai/web-llm';
+import { ChatOptions, WebWorkerEngine } from '@mlc-ai/web-llm';
 
 import { downloadModel } from '@proton/llm/lib/downloader';
 import { BaseRunningAction } from '@proton/llm/lib/runningAction';
@@ -220,7 +220,13 @@ export class GpuLlmManager implements LlmManager {
             // Call `reload` on the engine. If all the files are in place,
             // this should go straight to loading the model on GPU without downloading.
             this.status = 'loading';
-            const chatOpts = {};
+            const chatOpts: ChatOptions = {
+                conv_template: 'empty',
+                conv_config: {
+                    stop_str: ['</s>', '[INST]', '[/INST]'],
+                    stop_token_ids: [2],
+                },
+            };
             await this.chat.reload(MODEL_VARIANT, chatOpts, assistantConfig);
             this.model = new GpuLlmModel(this.chat, this);
             this.status = 'loaded';
