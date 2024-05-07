@@ -344,6 +344,9 @@
       "Report a problem": [
         "समस्या रिपोर्ट करें"
       ],
+      "Request a call": [
+        "कॉल का अनुरोध करें"
+      ],
       "Request a feature": [
         "सुविधा मांगें"
       ],
@@ -561,17 +564,29 @@
       ]
     },
     "Address action": {
+      "Delete address": [
+        "पता मिटा दें"
+      ],
       "Disable": [
         "डिसेबल"
       ],
       "Disable E2EE mail": [
         "E2EE मेल अक्षम करें"
       ],
+      "Disallow unsigned mail": [
+        "संकेतहीन मेल अस्वीकृत करें"
+      ],
       "Edit": [
         "बदलाव करें"
       ],
+      "Edit address": [
+        "पता संपादित करें"
+      ],
       "Enable": [
         "एनेबल"
+      ],
+      "Enable E2EE mail": [
+        "E2EE मेल सक्षम करें"
       ],
       "Generate missing keys": [
         "लापता कुंजी उत्पन्न करें"
@@ -587,6 +602,9 @@
       "Active": [
         "सक्रिय"
       ],
+      "Allow unsigned mail": [
+        "संकेतहीन मेल को अनुमति दें"
+      ],
       "Default": [
         "डिफॉल्ट"
       ],
@@ -599,8 +617,16 @@
       "Missing keys": [
         "खोई हुई चाबियां"
       ],
+      "No E2EE mail": [
+        "कोई E2EE मेल नहीं"
+      ],
       "Orphan": [
         "अनाथ"
+      ]
+    },
+    "Admin": {
+      "admin": [
+        "व्यवस्थापक"
       ]
     },
     "Alter": {
@@ -795,6 +821,12 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME } का उपयोग करते रहें।"
+      ],
+      "Continue using ${ planTitle }": [
+        "${ planTitle } का उपयोग करते रहें"
+      ],
+      "Continue your subscription": [
+        "अपनी सदस्यता जारी रखें"
       ]
     },
     "Checkout row": {
@@ -1701,9 +1733,30 @@
         "/यूज़र हर महीने"
       ]
     },
+    "Delete address prompt": {
+      "Once deleted, this address can't be used again by anyone else.": [
+        "एक बार हटा दिए जाने के बाद, इस पते का उपयोग किसी अन्य व्यक्ति द्वारा दोबारा नहीं किया जा सकेगा।"
+      ],
+      "You can only delete 1 address per year.": [
+        "आप प्रति वर्ष केवल 1 पता ही हटा सकते हैं।"
+      ]
+    },
+    "Delete address tooltip": {
+      "You can only delete 1 address per year": [
+        "आप प्रति वर्ष केवल 1 पता हटा सकते हैं"
+      ],
+      "You've reached the limit of address deletions for this user.": [
+        "आप इस उपयोगकर्ता के लिए पता हटाने की सीमा तक पहुंच गए हैं।"
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "अतिदेय चालान"
+      ]
+    },
+    "Description": {
+      "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
+        "अपने जीवन के विभिन्न पहलुओं को एकाधिक ईमेल पतों के साथ अलग करें और अपग्रेड करने पर अधिक प्रीमियम सुविधाओं को अनलॉक करें।"
       ]
     },
     "Downgrade account reason": {
@@ -1715,12 +1768,6 @@
       ],
       "Missing feature(s)": [
         "अनुपलब्ध विशेषता"
-      ],
-      "My reason isn't listed, please comment": [
-        "मेरा कारण सूचीबद्ध नहीं है, कृपया टिप्पणी करें"
-      ],
-      "Streaming service unsupported": [
-        "स्ट्रीमिंग सेवा असमर्थित"
       ],
       "Subscription is too expensive": [
         "सदस्यता बहुत महंगी है"
@@ -1735,6 +1782,11 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "हमें सुधरने में मदद करें!"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Priority support": [
+        "प्राथमिक सहायता"
       ]
     },
     "Email verification": {
@@ -2071,6 +2123,9 @@
       "Manage user accounts": [
         "यूज़र खाते संभालें"
       ],
+      "Only 10 accepted invitations are allowed in a 6-month period.": [
+        "6 महीने की अवधि में केवल 10 स्वीकृत निमंत्रणों की अनुमति है।"
+      ],
       "Pending": [
         "लंबित"
       ],
@@ -2089,11 +2144,17 @@
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
         "Visionary और पारिवारिक योजनाएँ वर्तमान में बाहरी खातों का समर्थन नहीं करती हैं। शामिल होने से पहले एक ${ BRAND_NAME } पता बनाएं। ${ addressSettingsLink }"
       ],
+      "You have reached the limit of 10 accepted invitations in 6 months.": [
+        "आप 6 महीने में 10 स्वीकृत आमंत्रणों की सीमा तक पहुँच चुके हैं।"
+      ],
       "You have reached the limit of 10 accepted invitations in 6 months. The button will become clickable when you can invite additional users.": [
         "आप 6 महीनों में 10 स्वीकृत निमंत्रणों की सीमा तक पहुँच गए हैं। जब आप अतिरिक्त उपयोगकर्ताओं को आमंत्रित कर सकेंगे तो बटन क्लिक करने योग्य हो जाएगा।"
       ],
       "You have successfully joined the Family plan": [
         "आप परिवार प्लान से जुड़ गए है"
+      ],
+      "You need to configure a custom domain before creating a new user.": [
+        "नया उपयोगकर्ता बनाने से पहले आपको एक कस्टम डोमेन कॉन्फ़िगर करना होगा।"
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "आपको अपने ${ BRAND_NAME } खाते को इस समूह योजना से लिंक करने और साथ में सभी ${ BRAND_NAME_TWO } प्रीमियम सुविधाओं का आनंद लेने के लिए आमंत्रित किया जाता है।"
@@ -2108,6 +2169,24 @@
       ],
       "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
         "डिफ़ॉल्ट रूप से हम व्यवस्थापक खाते को ${ formattedStorage } संग्रहण सौंपते हैं। आप बाद में अतिरिक्त उपयोगकर्ताओं के बीच वितरित करने के लिए निर्दिष्ट संग्रहण का प्रबंधन कर सकते हैं।"
+      ],
+      "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
+        "परिवार के सदस्य बनाएं और प्रबंधित करें और और उन में${ DRIVE_APP_NAME } और ${ MAIL_APP_NAME } के बीच साझा स्टोरेज स्थान का आवंटन करें।"
+      ],
+      "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
+        "यदि उपयोगकर्ता के पास पहले से ही ${ MAIL_APP_NAME } पता है, तो उसे यहाँ दर्ज करें। अन्यथा उन्हें पहले एक खाता बनाना होगा।"
+      ],
+      "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
+        "आमंत्रण रद्द कर दिया जाएगा और उपयोगकर्ता ${ organizationName } में शामिल नहीं हो सकेगा।"
+      ],
+      "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
+        "उपयोगकर्ता का खाता 30-दिन के निःशुल्क परीक्षण* के लिए ${ BRAND_NAME } असीमित योजना में स्थानांतरित कर दिया जाएगा।"
+      ],
+      "To create a new user, a configured custom domain is required.": [
+        "नया उपयोगकर्ता बनाने के लिए, कॉन्फ़िगर किया गया कस्टम डोमेन आवश्यक है।"
+      ],
+      "You can increase or reduce the storage for this user.": [
+        "आप इस उपयोगकर्ता के लिए स्टोरेज बढ़ा या घटा सकते हैं।"
       ]
     },
     "familyOffer_2023:Label": {
@@ -2135,6 +2214,9 @@
       ]
     },
     "familyOffer_2023:Title": {
+      "Add a user to your ${ PLAN_NAMES.visionary2022 } account": [
+        "अपने ${ PLAN_NAMES.visionary2022 } खाते में कोई उपयोगकर्ता जोड़ें"
+      ],
       "Change family name": [
         "परिवार नाम बदलें"
       ],
@@ -2400,6 +2482,12 @@
       "Name": [
         "नाम"
       ],
+      "Save big with the best deals on ${ VPN_APP_NAME }": [
+        "${ VPN_APP_NAME } पर बेहतरीन डील के साथ बड़ी बचत करें"
+      ],
+      "Select your deal": [
+        "अपनी डील चुनें"
+      ],
       "Select your pricing plan": [
         "अपना दाम संभालने वाला प्लान चुनें"
       ],
@@ -2428,6 +2516,11 @@
       ],
       "Username": [
         "यूज़रनेम"
+      ]
+    },
+    "Headline": {
+      "Contact us": [
+        "हमें संपर्क करें"
       ]
     },
     "Human verification method": {
@@ -2603,6 +2696,9 @@
       "Basic, Plus or Visionary subscription required": [
         "बेसिक, प्लस या दूरदर्शी सदस्यता आवश्यक"
       ],
+      "Be sure to copy your password and store it somewhere safe.": [
+        "अपना पासवर्ड कॉपी करें और इसे किसी सुरक्षित स्थान पर संग्रहित करें।"
+      ],
       "Before activating the user, you need to provide a password and create encryption keys for the addresses.": [
         "उपयोगकर्ता को सक्रिय करने से पहले, आपको एक पासवर्ड देना होगा और पते के लिए एन्क्रिप्शन कुंजियाँ बनानी होगी।"
       ],
@@ -2614,6 +2710,12 @@
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "इससे पहले कि आप अपने नए पते से ईमेल भेजना और प्राप्त करना शुरू कर सकें, आपको उनके लिए एन्क्रिप्शन कुंजी बनाने की आवश्यकता है।"
+      ],
+      "Beta": [
+        "बीटा"
+      ],
+      "Billed at ${ price }": [
+        "${ price } पर बिल किया गया"
       ],
       "Billing cycle: ${ text }": [
         "बिल चक्र: ${ text }"
@@ -2662,6 +2764,9 @@
       ],
       "Dedicated servers": [
         "विशेष सर्वर"
+      ],
+      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
+        "विशेष IP पते वाले विशेष सर्वर को निजी गेटवे में जोड़ा जा सकता है ताकि बेहतर पहुंच नियंत्रण संभव हो सके।"
       ],
       "Discover ProtectBuy logo": [
         "ProtectBuy लोगो देखें"
@@ -2749,6 +2854,9 @@
       ],
       "for choosing ${ product }": [
         "${ product } चुनने के लिए"
+      ],
+      "For members of organizations using single sign-on (SAML SSO)": [
+        "सिंगल साइन-ऑन (SAML SSO) का उपयोग करने वाले संगठनों के सदस्यों के लिए"
       ],
       "Free forever": [
         "हमेशा मुफ्त"
@@ -2858,6 +2966,9 @@
       "Loading ${ appName }": [
         "लोड हो रहा है ${ appName }"
       ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "कैलेंडर लोड हो रहा है, कृपया प्रतीक्षा करें। आपको एक नए टैब में हमारे शेड्यूलिंग प्लेटफ़ॉर्म Calendly पर पुनः निर्देशित किया जाएगा।"
+      ],
       "Loading preview": [
         "पूर्वावलोकन लोड हो रहा है"
       ],
@@ -2927,6 +3038,15 @@
       "per month": [
         "हर महीने"
       ],
+      "per month, billed at ${ price }": [
+        "प्रति माह, ${ price } पर बिल किया गया"
+      ],
+      "per month, billed every 12 months": [
+        "प्रति माह, हर 12 महीने पर बिल किया गया"
+      ],
+      "per month, billed every 24 months": [
+        "प्रति माह, हर 24 महीने पर बिल किया गया"
+      ],
       "Please add a password for the user on row": [
         "कृपया पंक्ति पर उपयोगकर्ता के लिए पासवर्ड जोड़ें",
         "कृपया पंक्तियों पर उपयोगकर्ताओं के लिए पासवर्ड जोड़ें"
@@ -2955,9 +3075,6 @@
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "कृपया ध्यान दें कि कन्फर्म बटन पर क्लिक करने पर, आपके खाते में ${ creditsRemaining } क्रेडिट शेष रह जाएंगे।"
-      ],
-      "Please provide an email address in case we need to contact you.": [
-        "यदि हमें आपसे संपर्क करने की आवश्यकता हो तो कृपया एक ईमेल पता प्रदान करें।"
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "एक अलग भुगतान तरीका इस्तेमाल आज़माएं, या अपने बैंक से संपर्क करें।"
@@ -3057,6 +3174,9 @@
       ],
       "Session timed out": [
         "सत्र का समय समाप्त हो गया"
+      ],
+      "Setting up your organization": [
+        "अपना संगठन स्थापित करना"
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "अपना पता सक्रिय करने के लिए ${ MAIL_APP_NAME } पे साइनइन करें"
@@ -3178,6 +3298,9 @@
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
         "ये प्रक्रिया आपके ${ BRAND_NAME } खाते पे दो-कदम सत्यापन (2-एफए) सक्षम करेगा। दो-कदम सत्यापन आपके ${ BRAND_NAME_TWO } खाते को और सुरक्षित बना देगा और इसलिए हम इसे सक्षम करने की सलाह देते हैं।"
+      ],
+      "to ${ product } Business": [
+        "${ product } व्यवसाय में"
       ],
       "To cancel your subscription, please reach out to us.": [
         "अपनी सदस्यता रद्द करने के लिए, कृपया हमसे संपर्क करें।"
@@ -3305,11 +3428,17 @@
       "We couldn’t process your payment.": [
         "आपका भुगतान प्रॉसेस नहीं कर सके।"
       ],
+      "We generated a strong password for you": [
+        "हमने आपके लिए एक मजबूत पासवर्ड तैयार किया है"
+      ],
       "We need to authenticate your payment method with your bank.": [
         "हमें आपका भुगतान तरीका आपके बैंक से सत्यापित करना होगा।"
       ],
       "We need to authenticate your payment with your bank.": [
         "हमें आपका भुगतान आपके बैंक से सत्यापित करना होगा।"
+      ],
+      "We recommend having at least 2 servers in order to provide redundancy.": [
+        "हम अतिरेक प्रदान करने के लिए कम से कम 2 सर्वर रखने की अनुशंसा करते हैं।"
       ],
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "हम अनुशंसा करते हैं कि 2FA का उपयोग लागू करने से पहले संगठन के सदस्यों को सूचित करें और उनसे अपने खातों के लिए 2FA स्थापित करने के लिए कहें।"
@@ -3401,6 +3530,12 @@
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "आप ${ VPN_APP_NAME } सर्वर से किसी तृतीय-पक्ष, ओपन सोर्स VPN ऐप का उपयोग करके कनेक्ट करने के लिए निम्न क्रेडेंशियल का उपयोग कर सकते हैं, जैसे macOS के लिए Tunnelblick या GNU/Linux के लिए OpenVPN।"
       ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "आपके पास परीक्षण ${ planTitle } सदस्यता है। यदि आप परीक्षण अवधि के बाद अपनी सदस्यता जारी रखना चाहते हैं, तो कृपया भुगतान विधि जोड़ें।"
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "आपके पास परीक्षण ${ planTitle } सदस्यता है। इस समय कोई भुगतान आवश्यक नहीं है। परीक्षण अवधि के अंत में आपकी सदस्यता स्वचालित रूप से नवीनीकृत हो जाएगी।"
+      ],
       "You have no invoices.": [
         "आपका कोई चालान नहीं है।"
       ],
@@ -3421,6 +3556,9 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "आपके पास एक क्रेडिट कार्ड या बैंक खाता होना चाहिए जो आपके PayPal खाते से जुड़ा हो। यदि आपके पेपैल खाते में यह नहीं है, तो कृपया नीचे दिए गए बटन पर क्लिक करें।"
+      ],
+      "You will be redirected to ${ destination } after signing in.": [
+        "साइन इन के बाद आपको ${ destination } पर पुनःनिर्देशित किया जाएगा।"
       ],
       "You will lose access to Plus features on this date.": [
         "आप इस तिथि पर प्लस सुविधाओं तक पहुंच खो देंगे।"
@@ -3464,8 +3602,14 @@
       "Your email will only be used for this one-time verification.": [
         "आपके ईमेल का उपयोग केवल इस एक बार के सत्यापन के लिए किया जाएगा।"
       ],
+      "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
+        "आपकी जानकारी हमारे साथ सुरक्षित है। हम आपसे केवल तब संपर्क करेंगे जब हमारी सेवाएं प्रदान करने के लिए आवश्यक हो।"
+      ],
       "Your next billing date is ${ renewalTime }.": [
         "आपकी अगली बिलिंग तिथि ${ renewalTime } है।"
+      ],
+      "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
+        "आपका संगठन सिंगल साइन-ऑन (SSO) का उपयोग करता है। आगे बढ़ने के लिए अपने SSO प्रदाता के साथ साइन इन करें।"
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "आपके भुगतान विवरण TLS एन्क्रिप्शन और स्विस गोपनीयता कानूनों के साथ सुरक्षित हैं।"
@@ -3585,6 +3729,9 @@
       "Addresses": [
         "पतों"
       ],
+      "Administrators": [
+        "प्रशासकों"
+      ],
       "Allow recovery by email": [
         "ईमेल द्वारा पुनर्प्राप्ति की अनुमति दें"
       ],
@@ -3602,6 +3749,9 @@
       ],
       "Authenticator app": [
         "प्रमाणीकरण अनुप्रयोग"
+      ],
+      "Billing address": [
+        "बिलिंग पता"
       ],
       "Billing cycle": [
         "बिल चक्र"
@@ -3623,6 +3773,9 @@
       ],
       "BTC amount": [
         "बीटीसी राशि"
+      ],
+      "Card details": [
+        "कार्ड विवरण"
       ],
       "Card holder": [
         "कार्ड धारक"
@@ -3647,6 +3800,9 @@
       ],
       "Config to connect to ${ serverName }": [
         "${ serverName } से जुड़ने को बदले"
+      ],
+      "Confirm email": [
+        "ईमेल की पुष्टि करें"
       ],
       "Confirm login password": [
         "लॉगिन पासवर्ड की पुष्टि करें"
@@ -3687,6 +3843,9 @@
       "Current display name": [
         "अभी डिस्पले नाम"
       ],
+      "Current email": [
+        "वर्तमान ईमेल"
+      ],
       "Default language": [
         "डिफ़ॉल्ट भाषा"
       ],
@@ -3720,6 +3879,9 @@
       "Enter the code displayed on your TV": [
         "अपने टीवी पे दिखनेवाला कोड डालें"
       ],
+      "Expiration (${ patternExpiration })": [
+        "समाप्ति (${ patternExpiration })"
+      ],
       "Expires": [
         "समय खत्म"
       ],
@@ -3741,6 +3903,9 @@
       "Level for NetShield blocker filtering": [
         "NetShield ब्लॉकर फिल्टर की ताकत"
       ],
+      "Logo": [
+        "चिन्ह"
+      ],
       "Mailbox password": [
         "मेलबॉक्स पासवर्ड"
       ],
@@ -3752,6 +3917,9 @@
       ],
       "Name": [
         "नाम"
+      ],
+      "Name and address": [
+        "नाम और पता"
       ],
       "NAT-PMP (Port Forwarding)": [
         "NAT-PMP (पोर्ट फॉरवर्ड)"
@@ -3776,6 +3944,9 @@
       ],
       "New password": [
         "नया पासवर्ड"
+      ],
+      "New plan": [
+        "नई योजना"
       ],
       "No filter": [
         "फिल्टर नहीं"
@@ -3804,6 +3975,9 @@
       "Organization password": [
         "संगठन का पासवर्ड"
       ],
+      "Organization size": [
+        "संगठन का साइज़"
+      ],
       "Other amount": [
         "दूसरा रकम"
       ],
@@ -3825,6 +3999,9 @@
       "Phrase consists of 12 unique words in a specific order": [
         "वाक्यांश में एक विशिष्ट क्रम में 12 अद्वितीय शब्द होते हैं"
       ],
+      "Please share any feedback to help us improve.": [
+        "हमें बेहतर बनाने में मदद करने के लिए कोई भी सुझाव साझा करें।"
+      ],
       "Postal code": [
         "डाक कोड"
       ],
@@ -3840,8 +4017,20 @@
       "Recovery phrase": [
         "पुनर्प्राप्ति वाक्यांश"
       ],
+      "Require 2FA for administrators": [
+        "प्रशासकों के लिए 2FA आवश्यक करें"
+      ],
+      "Require 2FA for everyone": [
+        "सभी के लिए 2FA अनिवार्य करें"
+      ],
       "Reveal password": [
         "पासवर्ड प्रकट"
+      ],
+      "Security code (${ codeName })": [
+        "सुरक्षा कोड (${ codeName })"
+      ],
+      "Select your plan": [
+        "अपनी योजना चुनें"
       ],
       "Start date": [
         "आरंभ करने की तिथि"
@@ -3867,6 +4056,9 @@
       "Username": [
         "उपयोगकर्ता का नाम"
       ],
+      "VAT": [
+        "VAT"
+      ],
       "Verification code": [
         "पुष्टि संख्या"
       ],
@@ -3881,6 +4073,9 @@
       ],
       "What is the main reason you are deleting your account?": [
         "आपका खाता हटाने का मुख्य कारण क्या है?"
+      ],
+      "Why would you like to cancel?": [
+        "आप इसे रद्द क्यों करना चाहेंगे?"
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "हां, मैं इस खाते और इसके सभी डेटा को स्थायी रूप से हटाना चाहता हूं।"
@@ -3945,6 +4140,9 @@
       "Add a gift code": [
         "एक उपहार कोड जोड़ें"
       ],
+      "Add gift code": [
+        "उपहार कोड जोड़ें"
+      ],
       "clearing your browser cache": [
         "अपना ब्राउज़र कैश साफ़ करना"
       ],
@@ -3969,6 +4167,9 @@
       "Help translate": [
         "हमें अनुवाद करने में मदद करें"
       ],
+      "How to pay with Bitcoin?": [
+        "बिटकॉइन से भुगतान कैसे करें?"
+      ],
       "Learn more": [
         "और जानें"
       ],
@@ -3980,6 +4181,9 @@
       ],
       "Pay invoice": [
         "चालान भुगतान करें"
+      ],
+      "Paypal without credit card": [
+        "पेपैल बिना क्रेडिट कार्ड के"
       ],
       "Privacy policy": [
         "गोपनीयता नीति"
@@ -4004,6 +4208,9 @@
       ],
       "View guide": [
         "गाइड देखें"
+      ],
+      "visit our blog": [
+        "हमारे ब्लॉग पर जाएँ"
       ],
       "What is the difference between UDP and TCP protocols?": [
         "UDP और TCP प्रोटोकॉल में क्या अंतर है?"
@@ -4192,6 +4399,9 @@
         "${ n } VPN कनेक्शन",
         "${ n } VPN कनेक्शन"
       ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "${ PROTON_SENTINEL_NAME } क्रमादेश"
+      ],
       "${ size } attachment size": [
         "${ size } अटैचमेंट साइज़"
       ],
@@ -4203,6 +4413,9 @@
       ],
       "1 user": [
         "1 यूज़र"
+      ],
+      "24/7 account management support": [
+        "24/7 खाता प्रबंधन सहायता"
       ],
       "24/7 support": [
         "24/7 सहायता"
@@ -4216,14 +4429,29 @@
       "Admin console": [
         "एडमिन कंसोल"
       ],
+      "Administration Panel": [
+        "प्रशासन पैनल"
+      ],
+      "Advanced network security": [
+        "उन्नत नेटवर्क सुरक्षा"
+      ],
       "Advanced sharing security": [
         "एडवांस शेयर करते हुए सुरक्षा"
+      ],
+      "Auto-delete Spam and Trash": [
+        "स्पैम और ट्रैश को स्वचालित रूप से हटाएं"
       ],
       "Auto-delete spam and trashed messages": [
         "स्पैम और कचरे के संदेशो को अपनेआप मिटाएं"
       ],
       "Auto-reply": [
         "ऑटोमैटिक-जवाब"
+      ],
+      "Autofill credit cards (coming soon)": [
+        "स्वतः भरण क्रेडिट कार्ड (जल्द ही आ रहा है)"
+      ],
+      "Automatic email forwarding": [
+        "स्वचालित ईमेल फॉरवर्ड"
       ],
       "Available on all platforms": [
         "सभी प्लेटफॉर्म पे उपलब्ध"
@@ -4236,6 +4464,9 @@
       ],
       "Centralized billing": [
         "केंद्रित बिल"
+      ],
+      "Centralized settings and billings": [
+        "केंद्रीकृत सेटिंग और बिलिंग"
       ],
       "Contact groups": [
         "संपर्क समूह"
@@ -4257,6 +4488,12 @@
       ],
       "Data breach monitoring (coming soon)": [
         "डाटा लीक की निगरानी (जल्द आ रहा है)"
+      ],
+      "Dedicated servers and IP": [
+        "विशेष सर्वर और IP"
+      ],
+      "Desktop app": [
+        "डेस्कटॉप ऐप"
       ],
       "DNS leak prevention": [
         "DNS लीक सुरक्षा"
@@ -4288,6 +4525,9 @@
       "Fast P2P/BitTorrent downloads": [
         "तेज़ P2P/BitTorrent डाउनलोड"
       ],
+      "Free features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and ${ DRIVE_SHORT_APP_NAME }": [
+        "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, और ${ DRIVE_SHORT_APP_NAME } की ओर से निःशुल्क सुविधाएँ"
+      ],
       "Free VPN on a single device": [
         "मुफ्त वीपीएन एक डिवाइस पे"
       ],
@@ -4297,11 +4537,17 @@
       "GDPR data processing agreement": [
         "जीडीपीआर डाटा प्रोसेस समझोता"
       ],
+      "Group management (coming soon)": [
+        "समूह प्रबंधन (शीघ्र ही आ रहा है)"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email नकलीनाम"
       ],
       "High-speed streaming": [
         "तेज़ स्ट्रीमिंग"
+      ],
+      "High-speed Swiss VPN that protects your privacy": [
+        "उच्च गति स्विस VPN जो आपकी गोपनीयता की रक्षा करता है"
       ],
       "High-speed VPN on ${ n } device": [
         "तेज़ वीपीएन ${ n } डिवाइस पे",
@@ -4325,6 +4571,9 @@
       "No-logs policy": [
         "लॉग-नहीं नीति"
       ],
+      "Organize items with multiple vaults": [
+        "कई तिजोरी के साथ आइटम व्यवस्थित करें"
+      ],
       "Password-protected Emails": [
         "पासवर्ड-सुरक्षित ईमेल"
       ],
@@ -4344,8 +4593,14 @@
         "एक वक्त में ${ n } डिवाइस सुरक्षित करें",
         "एक वक्त में ${ n } डिवाइस सुरक्षित करें"
       ],
+      "Require 2FA for organization": [
+        "संगठन के लिए 2FA अनिवार करें"
+      ],
       "Router support": [
         "राउटर सपोर्ट"
+      ],
+      "Schedule and snooze emails for any time": [
+        "किसी भी समय के लिए ईमेल शेड्यूल करें और स्नूज़ करें"
       ],
       "Schedule messages at any time": [
         "संदेश कभी भी शेड्यूल करें"
@@ -4369,8 +4624,23 @@
       "Sign in as user": [
         "यूज़र के रूप में साइनइन"
       ],
+      "SMTP submission": [
+        "SMTP सबमिशन"
+      ],
+      "SMTP submission for select organizations": [
+        "चुनिंदा संगठनों के लिए SMTP सबमिशन"
+      ],
       "Split tunneling (Android and Windows)": [
         "स्प्लिट टनलिंग (Android और Windows)"
+      ],
+      "SSO integration (coming soon)": [
+        "SSO एकीकरण (शीघ्र ही आ रहा है)"
+      ],
+      "Start protecting your organization": [
+        "अपने संगठन की सुरक्षा करना शुरू करें"
+      ],
+      "Start protecting yourself online in 2 easy steps": [
+        "2 आसान चरणों में खुद को ऑनलाइन सुरक्षित करना शुरू करें"
       ],
       "Strict no-logs policy": [
         "सख्त लॉग-नहीं नीति"
@@ -4405,6 +4675,12 @@
       "Unlimited messages per day": [
         "असीमित संदेश हर दिन"
       ],
+      "Unlimited shared vaults with access permissions": [
+        "असीमित साझा तिजोरियाँ जिनमें पहुँच अनुमतियाँ हैं"
+      ],
+      "Unlimited vault sharing": [
+        "असीमित तिजोरी साझाकरण"
+      ],
       "Unlimited vaults": [
         "असीम तिजोरी"
       ],
@@ -4429,6 +4705,10 @@
       ],
       "User session management": [
         "यूज़र सत्र मैनेजमेंट"
+      ],
+      "Vault sharing (up to ${ n } person)": [
+        "तिजोरी शेयर करें (अधिकतम ${ n } व्यक्ति को)",
+        "तिजोरी शेयर करें (अधिकतम ${ n } लोगों को)"
       ]
     },
     "new_plans: feature info": {
@@ -4457,11 +4737,26 @@
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "${ BRAND_NAME } आपको ईमेल पते बनाने और उप-यूज़र के खाते संभालने देता हैं। परिवारों और संगठनों के लिए अच्छा।"
       ],
+      "Advanced network security and access management with dedicated secure Gateways": [
+        "विशेष सुरक्षित गेटवे के साथ उन्नत नेटवर्क सुरक्षा और पहुँच प्रबंधन"
+      ],
+      "Advanced protection for teams that goes beyond industry standards.": [
+        "दलों के लिए उन्नत सुरक्षा जो उद्योग मानकों से आगे है।"
+      ],
+      "All ${ BRAND_NAME } apps and their premium features": [
+        "सभी ${ BRAND_NAME } ऐप्स और उनकी प्रीमियम सुविधाएँ"
+      ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "क्रेडिट, प्रोरेशन, और कूपन जो लागू हो सकते है अगले कदम में लगाए जाएगे"
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "सारे ${ BRAND_NAME } सेवाओं के साथ पूरी निजता और सुरक्षा।"
+      ],
+      "Essential protection and secure collaboration for unlimited users.": [
+        "असीमित उपयोगकर्ताओं के लिए आवश्यक सुरक्षा और सुरक्षित सहकार्य।"
+      ],
+      "For next-level password management and identity protection.": [
+        "उच्च स्तर के पासवर्ड प्रबंधन और पहचान सुरक्षा के लिए।"
       ],
       "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
         "अगर आप प्लान बदलते हैं, तो आप ${ visionary } प्लान के सारे फायदे खो देंगे और अगर आप वापिस खाता बनाने की कोशिश करें तो वो मौजूद नहीं होगा।"
@@ -4481,6 +4776,12 @@
       "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
         "बिज़नेस के लिए निजता और सुरक्षा का बंडल, सारे प्रीमियम ${ BRAND_NAME } सेवाओं के साथ।"
       ],
+      "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
+        "सभी ${ BRAND_NAME } सेवाओं के साथ अपने परिवार की गोपनीयता की रक्षा करें।"
+      ],
+      "Safely access internet from anywhere with essential network monitoring": [
+        "आवश्यक नेटवर्क मॉनिटरिंग के साथ कहीं से भी सुरक्षित रूप से इंटरनेट एक्सेस करें"
+      ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "सुरक्षित क्लाउड स्टोरेज जो करने दे आपको फाइल स्टोर, सिंक, और शेयर आसान और सुरक्षित तरीके से।"
       ],
@@ -4489,6 +4790,9 @@
       ],
       "Secure email with advanced features for your everyday communications.": [
         "आपके रोज़मर्रा के बातचीत के लिए एडवांस सुविधाओं के साथ सुरक्षित ईमेल।"
+      ],
+      "Tailor-made solutions for larger organizations with specific security needs": [
+        "विशिष्ट सुरक्षा आवश्यकताओं के साथ बड़े संगठनों के लिए अनुकूलित समाधान"
       ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "वफादार वीपीएन जो इंटरनेट तक दे सुरक्षित, बिन-रोकटोक, और तेज़ एक्सेस।"
@@ -4701,6 +5005,11 @@
         "आपके पास एक से ज़्यादा एडमिन है। सारे एडमिन यूज़र को जोड़ और संभाल सकते है लेकिन बिल के ऊपर नियंत्रण सिर्फ मुख्य एडमिन के पास है।"
       ]
     },
+    "new_plans: upgrade": {
+      "Included with multiple users ${ BRAND_NAME } for Business plans.": [
+        "एकाधिक उपयोगकर्ताओं के साथ शामिल ${ BRAND_NAME } Business योजना।"
+      ]
+    },
     "new_plans: Upsell attribute": {
       "Access advanced VPN features": [
         "एडवांस वीपीएन सुविधाएं एक्सेस करें"
@@ -4729,8 +5038,26 @@
       "An external address cannot be default": [
         "एक बाहरी पता डिफॉल्ट नहीं हो सकता"
       ],
+      "Invalid code": [
+        "अमान्य कोड"
+      ],
+      "Key copied to the clipboard": [
+        "कुंजी क्लिपबोर्ड पर कॉपी की गई"
+      ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN / IKEv2 क्रेडेंशियल फिर से जनरेट किए गए"
+      ],
+      "Reminder has been sent": [
+        "अनुस्मारक भेज दिया गया है"
+      ],
+      "Two-factor authentication has been enforced for administrators": [
+        "प्रशासकों के लिए टू फैक्टर ऑथेंटिकेशन लागू किया गया है"
+      ],
+      "Two-factor authentication has been enforced for all members": [
+        "सभी सदस्यों के लिए टू फैक्टर ऑथेंटिकेशन लागू किया गया है"
+      ],
+      "Two-factor authentication is not required anymore": [
+        "अब टू फैक्टर ऑथेंटिकेशन की आवश्यकता नहीं है"
       ]
     },
     "Onboarding": {
@@ -4763,11 +5090,26 @@
       "My reason isn't listed": [
         "मेरा कारण सूचीबद्ध नहीं है"
       ],
+      "No permission": [
+        "कोई अनुमति नहीं"
+      ],
+      "Organization only": [
+        "केवल संगठन से"
+      ],
+      "Receive from all": [
+        "सभी से प्राप्त करें"
+      ],
       "Router": [
         "राऊटर"
       ],
       "Secure Core configs": [
         "Secure Core कॉन्फ़िगरेशन"
+      ],
+      "Send to all": [
+        "सभी को भेजें"
+      ],
+      "Setup incomplete": [
+        "सेटअप अपूर्ण"
       ],
       "Standard server configs": [
         "स्टैंडर्ड सर्वर कॉन्फ़िगरेशन"
@@ -4800,6 +5142,43 @@
       ],
       "Your plan includes a maximum of ${ humanReadableAvailableSpace } more storage.": [
         "आपके प्लान में ${ humanReadableAvailableSpace } और स्टोरेज जगह है।"
+      ]
+    },
+    "Organization logo upload": {
+      "Avoid overly compressed images.": [
+        "अत्यधिक संपीड़ित छवियों से बचें।"
+      ],
+      "Ensure your logo has padding space around it.": [
+        "सुनिश्चित करें कि आपके चिन्ह के चारों ओर पैडिंग का स्थान हो।"
+      ],
+      "Opt for a PNG image that is a 128x128 pixels for clarity.": [
+        "स्पष्टता के लिए 128x128 पिक्सल वाली PNG छवि चुनें।"
+      ],
+      "Tips on choosing a good logo": [
+        "अच्छा चिन्ह चुनने के सुझाव"
+      ],
+      "Use a graphical icon or image rather than text.": [
+        "पाठ के बजाय ग्राफिकल आइकन या छवि का उपयोग करें।"
+      ],
+      "Use a solid background color.": [
+        "ठोस पृष्ठभूमि रंग का उपयोग करें।"
+      ]
+    },
+    "Organization logo upload modal": {
+      "Drop image file here to upload or": [
+        "अपलोड करने के लिए छवि फ़ाइल यहाँ छोड़ें या"
+      ],
+      "File in PNG or JPEG format": [
+        "फ़ाइल PNG या JPEG प्रारूप में हो"
+      ],
+      "File not larger than 30 KB": [
+        "फ़ाइल 30 KB से बड़ी नहीं होनी चाहिए"
+      ],
+      "Square image of at least 128 pixels": [
+        "कम से कम 128 पिक्सेल की वर्गाकार छवि"
+      ],
+      "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
+        "हमारे वेब ऐप पर साइन इन करने पर उपयोगकर्ताओं को ${ BRAND_NAME } आइकन के बजाय आपका चिन्ह दिखाई देगा।"
       ]
     },
     "Pass B2B onboarding spotlight": {
@@ -4838,11 +5217,83 @@
       ]
     },
     "passwordless": {
+      "All administrators will get access to the key.": [
+        "सभी प्रशासकों को कुंजी तक पहुंच प्राप्त होगी।"
+      ],
+      "Are you sure you want to change your organization key?": [
+        "क्या आप वाकई अपनी संगठन कुंजी बदलना चाहते हैं?"
+      ],
+      "Change organization key": [
+        "संगठन कुंजी बदलें"
+      ],
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "गैर-निजी उपयोगकर्ताओं को व्यवस्थापक बनाया जा सकता है जब उन्होंने कुंजी सेटअप कर ली हो"
+      ],
+      "Organization key activated": [
+        "संगठन कुंजी सक्रिय की गई"
+      ],
+      "Organization key does not exist.": [
+        "संगठन कुंजी मौजूद नहीं है।"
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "व्यवस्थापकीय विशेषाधिकार देने के लिए संगठन कुंजी सक्रिय होनी चाहिए"
+      ],
+      "Organization key restored": [
+        "संगठन कुंजी पुनर्स्थापित की गई"
+      ],
+      "Organization key updated": [
+        "संगठन कुंजी अपडेट की गई"
+      ],
       "Permission denied, administrator privileges have been restricted.": [
         "अनुमति से इनकार कर दिया, व्यवस्थापक विशेषाधिकार प्रतिबंधित कर दिया गया है।"
       ],
+      "Please ensure they have an enabled address and invite them separately later.": [
+        "कृपया सुनिश्चित करें कि उनके पास सक्रिय पता है और बाद में उन्हें अलग से आमंत्रित करें।"
+      ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "निजी उपयोगकर्ताओं को पहली बार साइन इन करने पर व्यवस्थापक के रूप में पदोन्नत किया जा सकता है"
+      ],
+      "Reset organization key": [
+        "संगठन कुंजी रीसेट करें"
+      ],
+      "The following administrators could not be restored.": [
+        "निम्नलिखित प्रशासकों को पुनर्स्थापित नहीं किया जा सका।"
+      ],
+      "The following administrators will get access to the organization key.": [
+        "निम्नलिखित प्रशासकों को संगठन कुंजी तक पहुंच प्राप्त होगी।"
+      ],
       "The organization key must be activated first.": [
         "संगठन कुंजी को पहले सक्रिय किया जाना चाहिए।"
+      ],
+      "This will send the latest organization key to the administrators that currently don't have access to it.": [
+        "इससे नवीनतम संगठन कुंजी उन प्रशासकों को भेज दी जाएगी जिनके पास वर्तमान में उस तक पहुंच नहीं है।"
+      ],
+      "To create non-private user accounts and access their accounts, you'll need to activate your organization key.": [
+        "गैर-निजी उपयोगकर्ता खाते बनाने और उनके खातों तक पहुंच के लिए, आपको अपनी संगठन कुंजी सक्रिय करनी होगी।"
+      ],
+      "To enable administrator rights on your account, activate the organization key.": [
+        "अपने खाते पर प्रशासकीय अधिकार सक्षम करने के लिए, संगठन कुंजी सक्रिय करें।"
+      ],
+      "Use a data recovery method or reset the organization key to restore administrator privileges.": [
+        "प्रशासक विशेषाधिकारों को पुनर्स्थापित करने के लिए डेटा पुनर्प्राप्ति विधि का उपयोग करें या संगठन कुंजी को रीसेट करें।"
+      ],
+      "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
+        "प्रशासक विशेषाधिकारों को पुनर्स्थापित करने के लिए डेटा पुनर्प्राप्ति विधि का उपयोग करें, किसी अन्य प्रशासक से संपर्क करें, या संगठन कुंजी को रीसेट करें।"
+      ],
+      "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
+        "हम इस प्रेषक की पता कुंजी की सुरक्षा की पुष्टि नहीं कर पाएँ। कभी-कभी प्रेषक की जानकारी को अपडेट करने में देरी होती है। बाद में पुनः प्रयास करें। यदि आप इस निमंत्रण या प्रेषक की प्रामाणिकता पर विश्वास नहीं करते हैं, तो ${ BRAND_NAME } ग्राहक सहायता से संपर्क करें।"
+      ],
+      "We have verified the authenticity of this sender and invitation.": [
+        "हमने इस प्रेषक और निमंत्रण की प्रामाणिकता की पुष्टि की है।"
+      ],
+      "You have been made administrator of the organization **${ organizationName }** by": [
+        "आपको **${ organizationName }** संगठन का प्रशासक बना दिया गया है"
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "नई संगठन कुंजी बनाने से पहले आपको सभी उपयोगकर्ताओं का निजीकरण करना होगा"
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "इस कार्य को करने के लिए आपको संगठन कुंजी तक पहुंच की आवश्यकता है।"
       ]
     },
     "Payment method option": {
@@ -4859,6 +5310,23 @@
       ],
       "Invalid expiration date": [
         "अमान्य एक्सपायर तारीख"
+      ]
+    },
+    "Permission": {
+      "No permission": [
+        "कोई अनुमति नहीं"
+      ],
+      "Organization only": [
+        "केवल संगठन से"
+      ],
+      "Receive from all": [
+        "सभी से प्राप्त करें"
+      ],
+      "Send to all": [
+        "सभी को भेजें"
+      ],
+      "Setup incomplete": [
+        "सेटअप अपूर्ण"
       ]
     },
     "Placeholder": {
@@ -4879,9 +5347,6 @@
       ],
       "Confirm": [
         "पुष्टि करें"
-      ],
-      "Email address": [
-        "ई-मेल पता"
       ],
       "Feedback": [
         "सुझाव"
@@ -5008,6 +5473,11 @@
         "अपना ईमेल पता सत्यापित करने से खाते की सुरक्षा बढ़ जाती है और रिकवरी के लिए ज़्यादा विकल्प खुल जाते है।"
       ]
     },
+    "Remove organization logo": {
+      "Users will no longer see your custom logo or organization name.": [
+        "उपयोगकर्ताओं को अब आपका कस्टम चिन्ह या संगठन का नाम दिखाई नहीं देगा।"
+      ]
+    },
     "Restore administrator panel": {
       "${ n } administrator in your organization need access to the organization key.": [
         "आपके संगठन में ${ n } प्रशासक को संगठन कुंजी की पहुंच चाहिए।",
@@ -5019,6 +5489,9 @@
       "Changing organization password": [
         "संगठन का पासवर्ड बदलना"
       ],
+      "Creating or accessing non-private users": [
+        "गैर-निजी उपयोगकर्ताओं को बनाना या उन तक पहुँचना"
+      ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "पासवर्ड परिवर्तन के कारण, आपके संगठन व्यवस्थापक विशेषाधिकार प्रतिबंधित कर दिए गए हैं। निम्नलिखित क्रियाओं की अब अनुमति नहीं है:"
       ]
@@ -5026,6 +5499,61 @@
     "Role": {
       "Primary admin": [
         "प्राथमिक व्यवस्थापक"
+      ]
+    },
+    "scim: Action": {
+      "Configure SCIM": [
+        "SCIM कॉन्फ़िगर करें"
+      ],
+      "Disable SCIM": [
+        "SCIM अक्षम करें"
+      ],
+      "Disable SCIM integration": [
+        "SCIM एकीकरण अक्षम करें"
+      ],
+      "Generate new token": [
+        "नया टोकन उत्पन्न करें"
+      ],
+      "Generate token": [
+        "टोकन उत्पन्न करें"
+      ]
+    },
+    "scim: Info": {
+      "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
+        "**पूर्वापेक्षा:** SCIM प्रावधान को सक्षम करने के लिए SAML प्रमाणीकरण कॉन्फ़िगर करना आवश्यक है।"
+      ],
+      "For security reasons, the token is hidden": [
+        "सुरक्षा कारणों से, टोकन छिपा दिया गया है"
+      ],
+      "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
+        "यदि आपने SCIM टोकन खो दिया या भूल गए हैं, तो आप एक नया उत्पन्न कर सकते हैं, लेकिन ध्यान दें कि आपके पहचान प्रदाता सेटिंग्स को अपडेट किया जाना चाहिए।"
+      ],
+      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ VPN_APP_NAME } organization.": [
+        "विभिन्न सेवाओं में उपयोगकर्ता प्रबंधन को सरल बनाता है। अपने पहचान प्रदाता में उपयोगकर्ताओं को जोड़ें, संपादित करें, और हटाएं, और ये परिवर्तन आपके ${ VPN_APP_NAME } संगठन में स्वचालित रूप से लागू हो जाएंगे।"
+      ]
+    },
+    "scim: Label": {
+      "SCIM token": [
+        "SCIM टोकन"
+      ]
+    },
+    "scim: Title": {
+      "Disable SCIM integration?": [
+        "SCIM एकीकरण अक्षम करें?"
+      ],
+      "Generate new SCIM token?": [
+        "नया SCIM टोकन उत्पन्न करें?"
+      ],
+      "SCIM automatic provisioning": [
+        "SCIM स्वचालित प्रावधान"
+      ]
+    },
+    "scim: Tooltip": {
+      "API key of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
+        "SCIM कनेक्टर की API कुंजी जिस पर आपका IdP प्रोविज़निंग एजेंट SCIM डेटा अग्रेषित करता है"
+      ],
+      "URL of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
+        "SCIM कनेक्टर का URL जिस पर आपका IdP प्रोविज़निंग एजेंट SCIM डेटा अग्रेषित करता है"
       ]
     },
     "Select file": {
@@ -5039,11 +5567,20 @@
       ]
     },
     "Server-Info": {
+      "active": [
+        "सक्रिय"
+      ],
+      "inactive": [
+        "निष्क्रिय"
+      ],
       "pending": [
         "लंबित"
       ]
     },
     "session_recovery:available:action": {
+      "Cancel password reset": [
+        "पासवर्ड रीसेट रद्द करें"
+      ],
       "Reset password": [
         "पासवर्ड रीसेट करें"
       ]
@@ -5061,6 +5598,18 @@
       "${ timeRemaining.inHours } hour": [
         "${ timeRemaining.inHours } घंटा",
         "${ timeRemaining.inHours } घंटे"
+      ],
+      "Didn’t make this request?": [
+        "क्या आपने यह अनुरोध नहीं किया?"
+      ],
+      "If you didn’t ask to reset your password, cancel the request now.": [
+        "यदि आपने अपना पासवर्ड रीसेट करने का निवेदन नहीं किया था, तो तुरंत अनुरोध रद्द करें।"
+      ],
+      "You can now reset your password": [
+        "अब आप अपना पासवर्ड रीसेट कर सकते हैं"
+      ],
+      "You can reset your password until ${ boldDate }.": [
+        "आप अपना पासवर्ड ${ boldDate } तक रीसेट कर सकते हैं।"
       ]
     },
     "session_recovery:available:link": {
@@ -5084,6 +5633,9 @@
       ]
     },
     "session_recovery:in_progress:action": {
+      "Cancel password reset": [
+        "पासवर्ड रीसेट रद्द करें"
+      ],
       "Got it": [
         "समझ गया"
       ],
@@ -5092,6 +5644,15 @@
       ]
     },
     "session_recovery:in_progress:info": {
+      "Didn’t make this request?": [
+        "क्या आपने यह अनुरोध नहीं किया?"
+      ],
+      "If you didn’t ask to reset your password, cancel the request now.": [
+        "यदि आपने अपना पासवर्ड रीसेट करने का निवेदन नहीं किया था, तो तुरंत अनुरोध रद्द करें।"
+      ],
+      "Password reset available from ${ boldDate }. This gives you time to cancel any fraudulent requests.": [
+        "पासवर्ड रीसेट ${ boldDate } से उपलब्ध है। इससे आपको किसी भी धोखाधड़ी वाले अनुरोध को रद्द करने का समय मिल जाता है।"
+      ],
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
         "यह सुनिश्चित करने के लिए कि वास्तव में आप ही अपना पासवर्ड रीसेट करने का प्रयास कर रहे हैं, हम अनुरोधों को स्वीकृत करने से पहले 72 घंटे तक प्रतीक्षा करते हैं। आप अपना पासवर्ड ${ boldTimeLeft } में बदल सकते हैं। ${ viewRequest }"
       ],
@@ -5369,12 +5930,30 @@
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
         "डाउनग्रेड करने से आप निम्नलिखित लाभों को खो देंगे। क्या आप सुनिश्चित रूप से आगे बढ़ना चाहते हैं?"
       ],
+      "For all ${ BRAND_NAME } services": [
+        "सभी ${ BRAND_NAME } सेवाओं के लिए"
+      ],
+      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
+        "हम शेष समय के लिए क्रेडिट आपके ${ BRAND_NAME } खाते में जोड़ देंगे।"
+      ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "आपके **${ currentPlanName }** योजना में अब भी **${ daysRemaining }** दिन शेष हैं।",
         "आपके **${ currentPlanName }** योजना में अब भी **${ daysRemaining }** दिन शेष हैं।"
       ],
       "Your storage is full": [
         "आपका स्टोरेज भरा है"
+      ],
+      "You’ll lose access to ${ gb } storage and priority support.": [
+        "आप ${ gb } स्टोरेज और प्राथमिकता सहायता तक पहुंच खो देंगे।"
+      ],
+      "You’ll lose access to additional storage, email addresses, aliases, calendars, as well as priority support.": [
+        "आप अतिरिक्त स्टोरेज, ईमेल पते, प्रकारांतर, कैलेंडर, साथ ही प्राथमिकता सहायता तक पहुंच खो देंगे।"
+      ],
+      "You’ll lose access to the highest VPN speed, protection for 10 devices, high-speed streaming, ad-blocker and malware protection, as well as priority support.": [
+        "आपक उच्चतम VPN गति, 10 डिवाइस के लिए सुरक्षा, उच्च गति स्ट्रीमिंग, विज्ञापन अवरोधक और मैलवेयर सुरक्षा, साथ ही प्राथमिकता सहायता तक पहुंच खो देंगे।"
+      ],
+      "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
+        "आप असीमित लॉगिन और नोट्स, असीमित ide-my-email प्रकारांतर, 20 तिजोरी, साथ ही प्राथमिकता सहायता तक पहुंच खो देंगे।"
       ]
     },
     "Subscription attribute": {
@@ -5514,6 +6093,9 @@
       "Address added": [
         "पता जोड़ा गया"
       ],
+      "Administrator privileges restored": [
+        "प्रशासकीय विशेषाधिकार पुनःस्थापित हुआ"
+      ],
       "Bug reported": [
         "बग की सूचना दी"
       ],
@@ -5531,6 +6113,9 @@
       ],
       "Email address copied to clipboard": [
         "ईमेल पता क्लिपबोर्ड पर कॉपी किया गया"
+      ],
+      "Email address updated": [
+        "ईमेल पता अपडेट किया गया"
       ],
       "Email updated": [
         "ईमेल अपडेट किया गया"
@@ -5592,8 +6177,14 @@
       "User updated": [
         "यूज़र अपडेट किए गए"
       ],
+      "Username copied to clipboard": [
+        "यूज़रनेम नाम क्लिपबोर्ड पर कॉपी किया गया"
+      ],
       "Verification successful": [
         "सत्यापन सफल रहा"
+      ],
+      "You have successfully cancelled your subscription.": [
+        "आपने अपनी सदस्यता सफलतापूर्वक रद्द कर दी है।"
       ],
       "You have successfully unsubscribed": [
         "आपने अपनी सदस्यता सफलतापूर्वक समाप्त किया"
@@ -5683,6 +6274,9 @@
       ],
       "Email": [
         "ईमेल"
+      ],
+      "Email address": [
+        "ईमेल पता"
       ],
       "Email addresses": [
         "ईमेल पता"
@@ -6230,11 +6824,23 @@
       ]
     },
     "Tooltip": {
+      "Admins can make changes to your subscription, manage user accounts and passwords, and give admin privileges to other users.": [
+        "व्यवस्थापक आपकी सदस्यता में परिवर्तन कर सकते हैं, उपयोगकर्ता खातों और पासवर्डों का प्रबंधन कर सकते हैं, तथा अन्य उपयोगकर्ताओं को प्रशासनिक विशेषाधिकार दे सकते हैं।"
+      ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "यदि आपने एक उपहार कोड खरीदा है या हमारी सहायता टीम से एक प्राप्त किया है, तो आप इसे यहां दर्ज कर सकते हैं।"
       ],
+      "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
+        "जो सदस्य 2FA का उपयोग नहीं करते हैं, उन्हें एक ईमेल प्राप्त होगा जिसमें उन्हें इसे यथाशीघ्र सक्षम करने के लिए कहा जाएगा।"
+      ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "नई सदस्यता साइकिल ${ formattedTime } को शुरू होगी"
+      ],
+      "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
+        "हमारे वेब ऐप पर साइन इन करने पर उपयोगकर्ताओं को ${ BRAND_NAME } आइकन के बजाय आपका चिन्ह दिखाई देगा।"
+      ],
+      "Verified email address": [
+        "सत्यापित ईमेल पता"
       ]
     },
     "Tor out of date": {
@@ -6306,6 +6912,9 @@
       ]
     },
     "vpn_2024: renew": {
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "${ priceWithDiscount } की विशेष रियायती कीमत पहले महीने के लिए वैध है। फिर यह स्वचालित रूप से हर महीने ${ renewPrice } पर नवीनीकृत हो जाएगा। आप किसी भी समय निरस्त कर सकते हैं।"
+      ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "आपकी सदस्यता ${ cycle } महीने में स्वचालित रूप से नवीकृत होगी।",
         "आपकी सदस्यता ${ cycle } महीनों में स्वचालित रूप से नवीकृत होगी।"
@@ -6354,6 +6963,9 @@
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "दुर्भाग्य से, हम इस समय ऑनलाइन नहीं हैं। अपनी समस्या का वर्णन करने के लिए कृपया नीचे दिया गया फ़ॉर्म भरें, और जब हम वापस ऑनलाइन होंगे तो हम इस पर गौर करेंगे और संपर्क में रहेंगे।"
+      ],
+      "You must ${ activateLink } the organization key before adding an email address to a non-private member.": [
+        "गैर-निजी सदस्य के ईमेल पते को जोड़ने से पहले, आपको संगठन कुंजी ${ activateLink } करनी होगी।"
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "आपका निःशुल्क परीक्षण ${ textDate } को समाप्त होगा। ${ action }"

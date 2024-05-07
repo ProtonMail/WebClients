@@ -1942,12 +1942,6 @@
       "Missing feature(s)": [
         "Ontbrekend(e) kenmerk(en)"
       ],
-      "My reason isn't listed, please comment": [
-        "Mijn reden staat er niet bij, graag commentaar"
-      ],
-      "Streaming service unsupported": [
-        "Streamingdienst niet ondersteund"
-      ],
       "Subscription is too expensive": [
         "Abonnement is te duur"
       ],
@@ -1961,6 +1955,40 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Help ons verbeteren!"
+      ]
+    },
+    "drivePlus2024: Action": {
+      "Get the deal": [
+        "Pak deze deal"
+      ],
+      "Special Offer": [
+        "Speciale aanbieding"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Uitgebreide versiegeschiedenis bekijken"
+      ],
+      "Priority support": [
+        "Prioriteitsondersteuning"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Wordt verlengd voor ${ renewablePrice }, altijd opzegbaar"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "voor de eerste maand"
+      ],
+      "Limited-time offer": [
+        "Tijdelijke aanbieding"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Neem ${ planName } voor slechts ${ planPrice }"
       ]
     },
     "Email verification": {
@@ -3540,9 +3568,6 @@
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Let op: wanneer u op de knop Bevestigen klikt, heeft uw account nog ${ creditsRemaining } credits over."
       ],
-      "Please provide an email address in case we need to contact you.": [
-        "Geef een e-mailadres op voor het geval we contact met u moeten opnemen."
-      ],
       "Please try again using a different payment method, or contact your bank.": [
         "Probeer opnieuw met een andere betalingsmethode, of neem contact op met uw bank."
       ],
@@ -4990,17 +5015,11 @@
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "${ BRAND_NAME }-account gebruikersnaam vergeten? Reset het door uw recovery code, e-mail of SMS te gebruiken en krijg toegang tot uw ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, en meer."
       ],
-      "Private and secure email, no credit card required": [
-        "Privé en beveiligde email, geen kredietkaart noodzakelijk"
-      ],
       "Reset your ${ BRAND_NAME } Account password": [
         "Reset uw ${ BRAND_NAME }-account wachtwoord"
       ],
       "Sign in to access your ${ appName } account": [
         "Log in om toegang te krijgen tot uw ${ appName }-account"
-      ],
-      "Try ${ planName } for free with this link": [
-        "U kan ${ planName } gratis proberen met deze link."
       ]
     },
     "Monetary unit": {
@@ -5305,6 +5324,9 @@
       ],
       "Organize items with multiple vaults": [
         "Organiseer items met meerdere kluizen"
+      ],
+      "Passkeys supported": [
+        "Toegangscodes ondersteund"
       ],
       "Password-protected Emails": [
         "E-mails met wachtwoordbeveiliging"
@@ -6313,9 +6335,6 @@
       "e.g. https://idp.example.com/XXXXX": [
         "bv. https://idp.example.com/XXXXX"
       ],
-      "Email address": [
-        "E-mailadres"
-      ],
       "Feedback": [
         "Feedback"
       ],
@@ -7321,6 +7340,26 @@
     "Subscription price": {
       "For": [
         "Voor"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB opslagruimte"
+      ],
+      "and 15 more premium features": [
+        "en 15 meer premium functies"
+      ],
+      "Desktop app": [
+        "Desktop-app"
+      ],
+      "No ads or tracking": [
+        "Geen advertenties of tracking"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "We don't sell your data": [
+        "Wij verkopen uw data niet"
       ]
     },
     "Subscription renewal state": {
@@ -8339,6 +8378,9 @@
       ],
       "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
         "Abonnement wordt elke 3 maanden automatisch verlengd. Uw volgende facturatiedatum is over 3 maanden."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste maand. Daarna wordt uw abonnement automatisch vernieuwd voor ${ renewPrice } per maand. U kunt opzeggen wanneer u wilt."
       ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "U wordt vervolgens elke 12 maanden ${ renewPrice } aangerekend."

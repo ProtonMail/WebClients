@@ -1942,12 +1942,6 @@
       "Missing feature(s)": [
         "Fonctionnalités manquantes"
       ],
-      "My reason isn't listed, please comment": [
-        "Raison non proposée ici, pouvez-vous préciser"
-      ],
-      "Streaming service unsupported": [
-        "Service de streaming non pris en charge"
-      ],
       "Subscription is too expensive": [
         "Abonnement trop cher"
       ],
@@ -1961,6 +1955,40 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Aidez-nous à nous améliorer."
+      ]
+    },
+    "drivePlus2024: Action": {
+      "Get the deal": [
+        "J'en profite"
+      ],
+      "Special Offer": [
+        "Offre spéciale"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Historique des versions plus détaillé"
+      ],
+      "Priority support": [
+        "Assistance prioritaire"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Renouvellement au prix de ${ renewablePrice } avec possibilité de résiliation à tout moment"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "pour le premier mois"
+      ],
+      "Limited-time offer": [
+        "Offre limitée dans le temps"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Obtenez ${ planName } pour seulement ${ planPrice }."
       ]
     },
     "Email verification": {
@@ -3543,9 +3571,6 @@
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Après avoir cliqué sur le bouton Confirmer, il restera ${ creditsRemaining } crédits sur votre compte."
       ],
-      "Please provide an email address in case we need to contact you.": [
-        "Nous vous invitons à nous communiquer une adresse e-mail au cas où nous aurions besoin de vous contacter."
-      ],
       "Please try again using a different payment method, or contact your bank.": [
         "Nous vous invitons à réessayer en utilisant un autre moyen de paiement, ou bien à contacter votre banque."
       ],
@@ -4993,17 +5018,11 @@
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Vous avez oublié votre nom d'utilisateur pour votre compte ${ BRAND_NAME } ? Retrouvez-le en utilisant votre e-mail ou votre numéro de téléphone de récupération et accédez de nouveau à ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } et aux autres services Proton."
       ],
-      "Private and secure email, no credit card required": [
-        "Messagerie privée et sécurisée, aucune carte de paiement n'est nécessaire"
-      ],
       "Reset your ${ BRAND_NAME } Account password": [
         "Réinitialisez le mot de passe de votre compte ${ BRAND_NAME }"
       ],
       "Sign in to access your ${ appName } account": [
         "Connectez-vous pour accéder à votre compte ${ appName }"
-      ],
-      "Try ${ planName } for free with this link": [
-        "Essayez gratuitement ${ planName } avec ce lien"
       ]
     },
     "Monetary unit": {
@@ -5309,6 +5328,12 @@
       "Organize items with multiple vaults": [
         "Plusieurs coffres-forts pour organiser vos mots de passe"
       ],
+      "Pass Monitor - premium features": [
+        "Pass Monitor - fonctionnalités premium"
+      ],
+      "Passkeys supported": [
+        "Les clés d'identification sont prises en charge."
+      ],
       "Password-protected Emails": [
         "Messages protégés par mot de passe"
       ],
@@ -5391,6 +5416,9 @@
       ],
       "Unlimited devices": [
         "Nombre illimité d'appareils"
+      ],
+      "Unlimited devices and aliases": [
+        "Nombre illimité d'alias et d'appareils"
       ],
       "Unlimited filters": [
         "Nombre illimité de filtres"
@@ -6120,6 +6148,16 @@
       "Preparing your Recovery Kit": [
         "Préparation de votre kit de récupération"
       ],
+      "Secure sharing with ${ n } vault": [
+        "Partage sécurisé avec ${ n } coffre-fort",
+        "Partage sécurisé avec ${ n } coffre-forts"
+      ],
+      "Secure sharing with multiple vaults": [
+        "Partage sécurisé avec plusieurs coffre-forts"
+      ],
+      "Secure vault sharing": [
+        "Partage sécurisé de coffre-forts"
+      ],
       "Updating your account": [
         "Mise à jour de votre compte"
       ],
@@ -6314,10 +6352,7 @@
         "ex. : https://idp.example.com/sso/saml"
       ],
       "e.g. https://idp.example.com/XXXXX": [
-        "ex. : https://idp.example.com/XXXXX"
-      ],
-      "Email address": [
-        "Adresse e-mail"
+        "ex. : https://idp.example.fr/XXXXX"
       ],
       "Feedback": [
         "Votre avis"
