@@ -527,6 +527,9 @@
       "Go to label": [
         "Ves a l'etiqueta"
       ],
+      "Go to settings": [
+        "Anar a preferències"
+      ],
       "Got it": [
         "D'acord"
       ],
@@ -598,6 +601,9 @@
       ],
       "label emails as": [
         "etiquetar correus electrònics com"
+      ],
+      "Later": [
+        "Més tard"
       ],
       "Leave": [
         "Surt"
@@ -3275,12 +3281,6 @@
       "Missing feature(s)": [
         "Característiques que falten"
       ],
-      "My reason isn't listed, please comment": [
-        "La meva raó no es troba a la llista (deixeu-nos un comentari)."
-      ],
-      "Streaming service unsupported": [
-        "Servei de reproducció en línia no admès"
-      ],
       "Subscription is too expensive": [
         "La subscripció és massa cara"
       ],
@@ -3310,6 +3310,40 @@
       ],
       "Encrypted cloud storage for all your files": [
         "Emmagatzematge en el núvol xifrat per a tots els vostres fitxers"
+      ]
+    },
+    "drivePlus2024: Action": {
+      "Get the deal": [
+        "Aconsegueixi l'oferta"
+      ],
+      "Special Offer": [
+        "Oferta especial"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Historial de versions ampliat"
+      ],
+      "Priority support": [
+        "Suport prioritari"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Es renova per ${ renewablePrice } i ho podeu cancel·lar en qualsevol moment"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "el primer mes"
+      ],
+      "Limited-time offer": [
+        "Oferta per temps limitat"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Obteniu ${ planName } per tan sols ${ planPrice }"
       ]
     },
     "Duration": {
@@ -4205,6 +4239,9 @@
       ],
       "You have reached the contacts limit for your account": [
         "Heu arribat al límit de contactes per al vostre compte."
+      ],
+      "You have reached the maximum number of calendars.": [
+        "Heu arribat al nombre màxim de calendaris."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Heu utilitzat totes les adreces del vostre pla. Milloreu-lo per a afegir adreces."
@@ -6291,6 +6328,9 @@
       "Blocks senders from seeing if and when you opened a message.": [
         "Bloqueja que els remitents puguin veure si heu obert un missatge i quan ho heu fet."
       ],
+      "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
+        "Potenciï la identitat de marca de la seva organització i creï una experiència en línia més coherent per als seus usuaris."
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Si baixeu a un pla gratuït, perdreu per sempre aquests avantatges, fins i tot si en tornareu a actualitzar."
       ],
@@ -7101,9 +7141,6 @@
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Tingueu en compte que quan feu clic al botó \"Confirmar\", el vostre compte restarà crèdit de ${ creditsRemaining }."
-      ],
-      "Please provide an email address in case we need to contact you.": [
-        "Proporcioneu una adreça de correu electrònic per al cas que necessitem posar-nos en contacte."
       ],
       "Please select the folders you would like to import:": [
         "Seleccioneu les carpetes que voleu importar:"
@@ -8993,7 +9030,7 @@
         "Etiqueta d'enllaç"
       ],
       "Logo": [
-        "Logo"
+        "Logotip"
       ],
       "Mail Server (IMAP)": [
         "Servidor de correu (IMAP)"
@@ -10464,6 +10501,9 @@
       "Organize items with multiple vaults": [
         "Organitzeu els elements amb múltiples caixes fortes"
       ],
+      "Passkeys supported": [
+        "Claus de pas suportades"
+      ],
       "Password-protected Emails": [
         "Correus protegits amb contrasenya"
       ],
@@ -11530,9 +11570,6 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Check out ${ appName } features": [
-        "Descobriu les característiques de ${ appName }"
-      ],
       "Continue": [
         "Continua"
       ],
@@ -11623,15 +11660,6 @@
       "${ PASS_APP_NAME } is available as a browser extension on the Chrome Web Store.": [
         "${ PASS_APP_NAME } està disponible com a extensió del navegador a la Chrome Web Store."
       ],
-      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption.": [
-        "${ PASS_APP_NAME } manté les vostres contrasenyes i la vostra identitat segures amb un xifratge d'extrem a extrem rigorós."
-      ],
-      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. To add premium features of ${ PASS_APP_NAME_2 } to your current subscription, we suggest upgrading to the ${ upsellPlanName } plan.": [
-        "${ PASS_APP_NAME } manté les vostres contrasenyes i identitat segures amb un xifratge d'extrem a extrem rigorós. Per afegir les característiques prèmium de ${ PASS_APP_NAME_2 } a la vostra subscripció actual, us suggerim millorar al pla ${ upsellPlanName }."
-      ],
-      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. Your current plan already gives you access to premium ${ PASS_APP_NAME_2 } features — no need to purchase again.": [
-        "${ PASS_APP_NAME } manté les contrasenyes i la identitat segures amb un rigorós xifratge d'extrem a extrem. El vostre pla actual ja us dona accés a les característiques prèmium ${ PASS_APP_NAME_2 } (no cal fer una compra addicional)."
-      ],
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } al mes"
       ],
@@ -11661,9 +11689,6 @@
       ],
       "Current plan": [
         "Pla actual"
-      ],
-      "Discover ${ PASS_APP_NAME },${ br }our new encrypted password manager": [
-        "Descobriu ${ PASS_APP_NAME },${ br }el nostre nou gestor de contrasenyes xifrat."
       ],
       "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
         "Descarregueu i instal·leu les aplicacions i extensions pertinents per a començar a utilitzar ${ PASS_APP_NAME }."
@@ -11709,9 +11734,6 @@
       ],
       "Get the security and features your business needs": [
         "Obteniu la seguretat i les característiques que la vostra empresa necessita"
-      ],
-      "Hide-my-email aliases protect your email from data breaches": [
-        "Els àlies Hide-my-email protegeixen el vostre correu electrònic d'infraccions de dades"
       ],
       "Includes:": [
         "Inclou:"
@@ -13878,6 +13900,9 @@
       "Activate user": [
         "Activa l'usuari"
       ],
+      "Add a custom logo": [
+        "Afegeixi un logotip personalitzat"
+      ],
       "Add address": [
         "Afegeix una adreça"
       ],
@@ -15268,6 +15293,9 @@
     "vpn_2024: renew": {
       "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
         "La subscripció es renova automàticament cada tres mesos. La següent data de facturació és d'aquí a tres mesos."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant el primer mes. Aleshores, es renovarà automàticament a ${ renewPrice } cada mes. Pot cancel·lar-ho en qualsevol moment."
       ]
     },
     "vpn_2step: billing": {

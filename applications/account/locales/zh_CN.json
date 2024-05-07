@@ -706,7 +706,7 @@
         "反馈问题"
       ],
       "Request a call": [
-        "请求回复"
+        "申请电话沟通"
       ],
       "Request a feature": [
         "功能建议"
@@ -1404,7 +1404,7 @@
         "安全登录您的所有设备。包括无限邮箱别名、共享、集成2FA等等。"
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "采用端到端加密技术守护您的邮件安全。包含自定义域名、15 个电子邮件地址、无限量的 hide-my-email 别名、日历共享等高级功能。"
+        "采用端到端加密技术守护您的邮件安全。支持自有域名、15 个邮箱地址、无限量的 hide-my-email 别名、日历共享等高级功能。"
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "使用加密的云存储保护您的文件。包括版本历史记录、加密文件共享等。"
@@ -1416,7 +1416,7 @@
         "所有 ${ BRAND_NAME } 服务共用同一存储空间。"
       ],
       "Store up to 200 versions of each file for up to 10 years.": [
-        "最多可存储长达10年的200个日程记录。"
+        "最多可将每份文件的 200 个历史版本存储 10 年。"
       ]
     },
     "Billing cycle": {
@@ -1459,7 +1459,7 @@
     },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
-        "下载 ${ MAIL_APP_NAME } 桌面应用"
+        "${ MAIL_APP_NAME } 桌面应用"
       ]
     },
     "Bug category": {
@@ -3088,12 +3088,6 @@
       "Missing feature(s)": [
         "缺失功能"
       ],
-      "My reason isn't listed, please comment": [
-        "其他原因，请留言"
-      ],
-      "Streaming service unsupported": [
-        "不支持在线视频平台"
-      ],
       "Subscription is too expensive": [
         "费用过高"
       ],
@@ -3120,6 +3114,29 @@
     "drive_signup_2023: Info": {
       "Advanced sharing security": [
         "保障文件分享安全"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "更长的版本历史"
+      ],
+      "Priority support": [
+        "优先支持"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "续费价为 ${ renewablePrice }，可随时退订"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "首月"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "开通 ${ planName } 仅需 ${ planPrice }"
       ]
     },
     "Duration": {
@@ -3412,7 +3429,7 @@
     },
     "eof2023: Tooltip": {
       "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
-        "包含 ${ DRIVE_SHORT_APP_NAME }版本历史，访问数以千计的高速 ${ VPN_SHORT_APP_NAME } 服务器，保存到 ${ PASS_SHORT_APP_NAME } 以及更多。"
+        "包含 ${ DRIVE_SHORT_APP_NAME } 文件版本历史、数千台高速 ${ VPN_SHORT_APP_NAME } 服务器、${ PASS_SHORT_APP_NAME } 密码共享等功能。"
       ]
     },
     "eoy2023: Deal details": {
@@ -3864,6 +3881,9 @@
       ],
       "You have reached the contacts limit for your account": [
         "您的账户联系人数量已达上限"
+      ],
+      "You have reached the maximum number of calendars.": [
+        "您已达到日历创建数量的上限。"
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "您的地址数已达上限，升级账户后方可再添加地址。"
@@ -6462,9 +6482,6 @@
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "请注意，点击确认按钮后，您的账户余额将剩余 ${ creditsRemaining }。"
-      ],
-      "Please provide an email address in case we need to contact you.": [
-        "请提供一个电子邮箱以便我们联系您。"
       ],
       "Please select the folders you would like to import:": [
         "请选择要导入的文件夹："
@@ -10570,9 +10587,6 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Check out ${ appName } features": [
-        "开通 ${ appName } 高级功能"
-      ],
       "Continue to ${ free }": [
         "继续使用 ${ free }"
       ],
@@ -10630,15 +10644,6 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption.": [
-        "${ PASS_APP_NAME } 采用严格的端到端加密保护您的密码与身份安全。"
-      ],
-      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. To add premium features of ${ PASS_APP_NAME_2 } to your current subscription, we suggest upgrading to the ${ upsellPlanName } plan.": [
-        "${ PASS_APP_NAME } 采用严格的端到端加密保护您的密码与身份安全。为了体验 ${ PASS_APP_NAME_2 } 的各类高级功能，建议您开通 ${ upsellPlanName } 账户等级。"
-      ],
-      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. Your current plan already gives you access to premium ${ PASS_APP_NAME_2 } features — no need to purchase again.": [
-        "${ PASS_APP_NAME } 采用严格的端到端加密保护您的密码与身份安全。您当前的账户等级已包含所有 ${ PASS_APP_NAME_2 } 高级功能，无需额外付费。"
-      ],
       "Advanced protection that goes beyond industry standards": [
         "超越行业标准的高级保护功能"
       ],
@@ -10647,9 +10652,6 @@
       ],
       "Creating your account": [
         "正在为您创建账户"
-      ],
-      "Discover ${ PASS_APP_NAME },${ br }our new encrypted password manager": [
-        "体验 ${ PASS_APP_NAME }，${ br }我们的全新密码加密管理器"
       ],
       "End-to-end encryption": [
         "端到端加密"
@@ -11099,7 +11101,7 @@
         "${ timeRemaining.inHours } 小时"
       ],
       "Password reset request approved (${ user.Email }).": [
-        "密码重置请求已被批准(${ user.Email })。"
+        "密码重置申请已通过（${ user.Email }）。"
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "请转到已登录的设备（在发起请求的会话中）更改您的密码。"
@@ -11117,7 +11119,7 @@
         "从现在起 ${ boldDaysRemaining }内您可以自由更改 ${ boldEmail } 账户的密码。"
       ],
       "You can now change your password for the account ${ boldEmail }.": [
-        "您现在可以更改此账户 ${ boldEmail }的密码。"
+        "您现在可以为 ${ boldEmail } 更改密码了。"
       ],
       "You can now reset your password": [
         "您现在可以重设密码"
@@ -13633,6 +13635,9 @@
       ]
     },
     "vpn_2024: renew": {
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "特别折扣价 ${ priceWithDiscount } 仅首月有效，之后将以每月 ${ renewPrice } 的价格自动续订，您可随时取消。"
+      ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "您的订阅将在 ${ cycle } 个月后自动续期。"
       ]

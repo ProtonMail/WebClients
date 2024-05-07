@@ -527,6 +527,9 @@
       "Go to label": [
         "Gå til etikett"
       ],
+      "Go to settings": [
+        "Gå til innstillinger"
+      ],
       "Got it": [
         "Forstått"
       ],
@@ -598,6 +601,9 @@
       ],
       "label emails as": [
         "merke e-poster som"
+      ],
+      "Later": [
+        "Senere"
       ],
       "Leave": [
         "Forlat"
@@ -3305,17 +3311,32 @@
       "Bugs or quality issue": [
         "Feil eller kvalitetsproblem"
       ],
+      "I do not wish to share": [
+        "Jeg ønsker ikke å dele"
+      ],
+      "I found a cheaper VPN": [
+        "Jeg fant en billigere VPN"
+      ],
+      "I found a VPN with better features": [
+        "Jeg fant en VPN med bedre funksjoner"
+      ],
+      "I have not managed to connect": [
+        "Jeg har ikke klart å koble til"
+      ],
+      "I only needed a VPN short-term": [
+        "Jeg trengte bare en VPN kortsiktig"
+      ],
       "I use a different ${ BRAND_NAME } account": [
         "Jeg bruker en annen ${ BRAND_NAME }-konto"
+      ],
+      "It doesn't do what I need": [
+        "Det gjør ikke det jeg trenger"
       ],
       "Missing feature(s)": [
         "Mangler funksjon(er)"
       ],
-      "My reason isn't listed, please comment": [
-        "Min årsak er ikke listet, vennligst kommenter"
-      ],
-      "Streaming service unsupported": [
-        "Ustøttet strømmetjeneste"
+      "Other reason (please comment)": [
+        "Annen årsak (vennligst kommenter)"
       ],
       "Subscription is too expensive": [
         "Abonnementet er for dyrt"
@@ -3325,6 +3346,9 @@
       ],
       "Temporary need, may come back in the future": [
         "Midlertidig behov, kan komme tilbake i fremtiden"
+      ],
+      "The VPN is too slow": [
+        "VPNet er for tregt"
       ]
     },
     "Downgrade modal exit survey title": {
@@ -3349,6 +3373,40 @@
       ],
       "Secure cloud storage and file sharing that protects your data": [
         "Sikker skylagring og fildeling som beskytter dataene dine"
+      ]
+    },
+    "drivePlus2024: Action": {
+      "Get the deal": [
+        "Få avtalen"
+      ],
+      "Special Offer": [
+        "Spesialtilbud"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Utvidet versjonshistorikk"
+      ],
+      "Priority support": [
+        "Prioritert brukerstøtte"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Fornyes til ${ renewablePrice }, avbryt når som helst"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "for den første måneden"
+      ],
+      "Limited-time offer": [
+        "Tidsbegrenset tilbud"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Få ${ planName } for kun ${ planPrice }"
       ]
     },
     "Duration": {
@@ -6423,6 +6481,9 @@
       "Blocks senders from seeing if and when you opened a message.": [
         "Blokkerer sendere fra å se hvis og når du åpnet en melding."
       ],
+      "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
+        "Styrk organisasjonens merkeidentitet og skap en mer konsekvent nettopplevelse for brukerne."
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ved å nedgradere til en gratis plan, vil du permanent miste disse fordelene, selv om du oppgraderer igjen i fremtiden."
       ],
@@ -7319,9 +7380,6 @@
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Vennligst vær oppmerksom på at ved å klikke på knappen \"bekreft\", vil kontoen din ha ${ creditsRemaining } kreditter igjen."
-      ],
-      "Please provide an email address in case we need to contact you.": [
-        "Vennligst oppgi en e-postadresse i tilfelle vi trenger å kontakte deg."
       ],
       "Please select the folders you would like to import:": [
         "Vennligst velg hvilke mapper du ønsker å importere:"
@@ -10821,6 +10879,12 @@
       "Organize items with multiple vaults": [
         "Organiser elementer med flere hvelv"
       ],
+      "Pass Monitor - premium features": [
+        "Pass Monitor - premium funksjoner"
+      ],
+      "Passkeys supported": [
+        "Tilgangsnøkler støttes"
+      ],
       "Password-protected Emails": [
         "Passordbeskyttede e-poster"
       ],
@@ -10903,6 +10967,9 @@
       ],
       "Unlimited devices": [
         "Ubegrenset antall enheter"
+      ],
+      "Unlimited devices and aliases": [
+        "Ubegrensede enheter og aliaser"
       ],
       "Unlimited filters": [
         "Ubegrenset antall filtre"
@@ -11956,9 +12023,6 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Check out ${ appName } features": [
-        "Sjekk ut ${ appName }-funksjoner"
-      ],
       "Continue": [
         "Fortsett"
       ],
@@ -12049,15 +12113,6 @@
       "${ PASS_APP_NAME } is available as a browser extension on the Chrome Web Store.": [
         "${ PASS_APP_NAME } er tilgjengelig som en nettleserutvidelse på Chrome Web Store."
       ],
-      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption.": [
-        "${ PASS_APP_NAME } holder passordene og identiteten din sikker med streng ende-til-ende kryptering."
-      ],
-      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. To add premium features of ${ PASS_APP_NAME_2 } to your current subscription, we suggest upgrading to the ${ upsellPlanName } plan.": [
-        "${ PASS_APP_NAME } holder passordene og identiteten din sikker med streng ende-til-ende kryptering. For å legge til ${ PASS_APP_NAME_2 }-premiumfunksjoner til ditt gjeldende abonnement, foreslår vi å oppgradere til ${ upsellPlanName }-planen."
-      ],
-      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. Your current plan already gives you access to premium ${ PASS_APP_NAME_2 } features — no need to purchase again.": [
-        "${ PASS_APP_NAME } holder passordene og identiteten din sikker med streng ende-til-ende kryptering. Din gjeldende plan gir deg allerede tilgang til ${ PASS_APP_NAME_2 }-premiumfunksjoner - trenger ikke å kjøpe igjen."
-      ],
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } per måned"
       ],
@@ -12072,6 +12127,15 @@
       ],
       "Advanced protection that goes beyond industry standards": [
         "Avansert beskyttelse som går utover industristandarder"
+      ],
+      "Alerts for compromised emails and vulnerable passwords": [
+        "Varsler for kompromitterte e-poster og sårbare passord"
+      ],
+      "Alerts for vulnerable passwords": [
+        "Varsler for sårbare passord"
+      ],
+      "Aliases for email protection from breaches": [
+        "Aliaser for e-postbeskyttelse mot brudd"
       ],
       "All premium ${ BRAND_NAME } services.": [
         "Alle ${ BRAND_NAME }-premiumtjenester."
@@ -12099,9 +12163,6 @@
       ],
       "Current plan": [
         "Gjeldende plan"
-      ],
-      "Discover ${ PASS_APP_NAME },${ br }our new encrypted password manager": [
-        "Oppdag ${ PASS_APP_NAME },${ br }vår nye krypterte passordhåndterer"
       ],
       "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
         "Last ned og installer de relevante appene og utvidelsene for å begynne å bruke ${ PASS_APP_NAME }"
@@ -12157,9 +12218,6 @@
       "Get the security and features your business needs": [
         "Få sikkerheten og funksjonene bedriften din trenger"
       ],
-      "Hide-my-email aliases protect your email from data breaches": [
-        "Hide-my-email-aliaser beskytter din e-post fra datainnbrudd"
-      ],
       "I understand that if I lose my recovery details, I may permanently lose access to my account.": [
         "Jeg forstår at hvis jeg mister gjenopprettingsdetaljene mine, kan jeg miste tilgangen til kontoen min permanent."
       ],
@@ -12202,6 +12260,9 @@
       "Open-source and audited": [
         "Åpen kildekode og overvåket"
       ],
+      "Passkeys supported on all devices": [
+        "Tilgangsnøkler støttes på alle enheter"
+      ],
       "per month": [
         "per måned"
       ],
@@ -12222,6 +12283,19 @@
       ],
       "Save your recovery kit to continue": [
         "Lagre gjenopprettingssettet for å fortsette"
+      ],
+      "Secure sharing with ${ n } vault": [
+        "Sikker deling med ${ n } hvelv",
+        "Sikker deling med ${ n } hvelv"
+      ],
+      "Secure sharing with multiple vaults": [
+        "Sikker deling med flere hvelv"
+      ],
+      "Secure vault sharing": [
+        "Sikker hvelvdeling"
+      ],
+      "Secured by end-to-end encryption": [
+        "Sikret med ende-til-ende-kryptering"
       ],
       "Setting up your organization": [
         "Setter opp organisasjonen din"
@@ -14524,6 +14598,9 @@
       ],
       "Activate user": [
         "Aktiver bruker"
+      ],
+      "Add a custom logo": [
+        "Legg til en tilpasset logo"
       ],
       "Add address": [
         "Legg til adresse"

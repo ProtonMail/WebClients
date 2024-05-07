@@ -527,6 +527,9 @@
       "Go to label": [
         "Przejdź do etykiety"
       ],
+      "Go to settings": [
+        "Przejdź do ustawień"
+      ],
       "Got it": [
         "Ok"
       ],
@@ -598,6 +601,9 @@
       ],
       "label emails as": [
         "oznacz wiadomości jako"
+      ],
+      "Later": [
+        "Później"
       ],
       "Leave": [
         "Opuść"
@@ -3325,17 +3331,32 @@
       "Bugs or quality issue": [
         "Błędy lub problemy z jakością usługi"
       ],
+      "I do not wish to share": [
+        "Nie chcę komentować"
+      ],
+      "I found a cheaper VPN": [
+        "Mam tańszą usługę VPN"
+      ],
+      "I found a VPN with better features": [
+        "Mam lepszą usługę VPN"
+      ],
+      "I have not managed to connect": [
+        "Nie udało mi się połączyć"
+      ],
+      "I only needed a VPN short-term": [
+        "VPN był mi potrzebny na chwilę"
+      ],
       "I use a different ${ BRAND_NAME } account": [
         "Używam innego konta ${ BRAND_NAME }"
+      ],
+      "It doesn't do what I need": [
+        "Nie spełnia moich potrzeb"
       ],
       "Missing feature(s)": [
         "Brakujące funkcje"
       ],
-      "My reason isn't listed, please comment": [
-        "Inna, niewymieniona wyżej przyczyna"
-      ],
-      "Streaming service unsupported": [
-        "Usługi streamingu są nieobsługiwane"
+      "Other reason (please comment)": [
+        "Inny (wpisz)"
       ],
       "Subscription is too expensive": [
         "Cena jest zbyt wysoka"
@@ -3345,6 +3366,9 @@
       ],
       "Temporary need, may come back in the future": [
         "Potrzebowałem konto tymczasowo"
+      ],
+      "The VPN is too slow": [
+        "VPN jest zbyt wolny"
       ]
     },
     "Downgrade modal exit survey title": {
@@ -3369,6 +3393,40 @@
       ],
       "Secure cloud storage and file sharing that protects your data": [
         "Bezpieczna przestrzeń dyskowa w chmurze i udostępnianie plików, które chronią Twoje dane"
+      ]
+    },
+    "drivePlus2024: Action": {
+      "Get the deal": [
+        "Skorzystaj z oferty"
+      ],
+      "Special Offer": [
+        "Oferta specjalna"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Rozszerzona historia wersji"
+      ],
+      "Priority support": [
+        "Priorytetowe wsparcie"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Odnowienie za ${ renewablePrice }. Anuluj w dowolnym momencie"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "za pierwszy miesiąc"
+      ],
+      "Limited-time offer": [
+        "Oferta ograniczona czasowo"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Uzyskaj plan ${ planName } za ${ planPrice }"
       ]
     },
     "Duration": {
@@ -6539,6 +6597,9 @@
       "Blocks senders from seeing if and when you opened a message.": [
         "Blokuje nadawcom możliwość sprawdzenia, czy i kiedy otwierasz wiadomość."
       ],
+      "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
+        "Zwiększ rozpoznawalność marki."
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Obniżając plan do wersji Free, utracisz te bonusy na zawsze, nawet jeśli w przyszłości ponownie ulepszysz swoje konto."
       ],
@@ -7447,9 +7508,6 @@
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Po kliknięciu przycisku Potwierdź na koncie pozostanie ${ creditsRemaining } środków."
-      ],
-      "Please provide an email address in case we need to contact you.": [
-        "Wpisz adres e-mail na wypadek, gdybyśmy potrzebowali się z Tobą skontaktować."
       ],
       "Please select the folders you would like to import:": [
         "Wybierz foldery, które chcesz zaimportować:"
@@ -10883,7 +10941,7 @@
         "Konsola administratora"
       ],
       "Administration Panel": [
-        "Panel administracyjny"
+        "Panel administratora"
       ],
       "Advanced network security": [
         "Zaawansowane bezpieczeństwo sieci"
@@ -11032,6 +11090,9 @@
       "Organize items with multiple vaults": [
         "Organizuj elementy w wielu sejfach"
       ],
+      "Pass Monitor - premium features": [
+        "Monitoring Proton Pass — funkcje premium"
+      ],
       "Passkeys supported": [
         "Klucze dostępu są obsługiwane"
       ],
@@ -11121,6 +11182,9 @@
       ],
       "Unlimited devices": [
         "Nieograniczona liczba urządzeń"
+      ],
+      "Unlimited devices and aliases": [
+        "Nieograniczona liczba urządzeń i aliasów"
       ],
       "Unlimited filters": [
         "Nieograniczona liczba filtrów"
@@ -12177,9 +12241,6 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Check out ${ appName } features": [
-        "Sprawdź funkcje ${ appName }"
-      ],
       "Continue": [
         "Kontynuuj"
       ],
@@ -12270,15 +12331,6 @@
       "${ PASS_APP_NAME } is available as a browser extension on the Chrome Web Store.": [
         "${ PASS_APP_NAME } jest dostępny jako rozszerzenie w sklepie Chrome Web Store."
       ],
-      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption.": [
-        "${ PASS_APP_NAME } bezpiecznie przechowuje hasła i tożsamości za pomocą szyfrowania end-to-end."
-      ],
-      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. To add premium features of ${ PASS_APP_NAME_2 } to your current subscription, we suggest upgrading to the ${ upsellPlanName } plan.": [
-        "${ PASS_APP_NAME } bezpiecznie przechowuje hasła i tożsamości za pomocą szyfrowania end-to-end. Aby dodać funkcje premium ${ PASS_APP_NAME_2 } do obecnej subskrypcji, ulepsz plan do wersji ${ upsellPlanName }."
-      ],
-      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. Your current plan already gives you access to premium ${ PASS_APP_NAME_2 } features — no need to purchase again.": [
-        "${ PASS_APP_NAME } bezpiecznie przechowuje hasła i tożsamości za pomocą szyfrowania end-to-end. Twój plan zapewnia dostęp do funkcji premium ${ PASS_APP_NAME_2 }. Nie musisz nic robić."
-      ],
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } miesięcznie"
       ],
@@ -12293,6 +12345,15 @@
       ],
       "Advanced protection that goes beyond industry standards": [
         "Zaawansowana ochrona, która wykracza poza standardy"
+      ],
+      "Alerts for compromised emails and vulnerable passwords": [
+        "Alerty o zagrożonych adresach i słabych hasłach"
+      ],
+      "Alerts for vulnerable passwords": [
+        "Alerty słabych haseł"
+      ],
+      "Aliases for email protection from breaches": [
+        "Aliasy do ochrony adresów e-mail przed wyciekami"
       ],
       "All premium ${ BRAND_NAME } services.": [
         "Wszystkie usługi ${ BRAND_NAME } w wersji premium."
@@ -12320,9 +12381,6 @@
       ],
       "Current plan": [
         "Obecny plan"
-      ],
-      "Discover ${ PASS_APP_NAME },${ br }our new encrypted password manager": [
-        "Poznaj ${ PASS_APP_NAME },${ br }czyli nasz nowy szyfrowany menedżer haseł"
       ],
       "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
         "Aby korzystać z ${ PASS_APP_NAME }, pobierz i zainstaluj odpowiednie aplikacje oraz rozszerzenia"
@@ -12377,9 +12435,6 @@
       ],
       "Get the security and features your business needs": [
         "Skorzystaj z zabezpieczeń i funkcji, których potrzebuje Twój biznes"
-      ],
-      "Hide-my-email aliases protect your email from data breaches": [
-        "Aliasy hide-my-email chronią Twój adres przed wyciekami danych"
       ],
       "I understand that if I lose my recovery details, I may permanently lose access to my account.": [
         "Rozumiem, że jeśli stracę dane odzyskiwania, mogę trwale utracić dostęp do konta."
@@ -12446,6 +12501,21 @@
       ],
       "Save your recovery kit to continue": [
         "Zapisz zestaw odzyskiwania, aby kontynuować"
+      ],
+      "Secure sharing with ${ n } vault": [
+        "Bezpieczne udostępnianie ${ n } sejfu",
+        "Bezpieczne udostępnianie ${ n } sejfów",
+        "Bezpieczne udostępnianie ${ n } sejfów",
+        "Bezpieczne udostępnianie ${ n } sejfów"
+      ],
+      "Secure sharing with multiple vaults": [
+        "Bezpieczne udostępnianie wielu sejfów"
+      ],
+      "Secure vault sharing": [
+        "Bezpieczne udostępnianie sejfu"
+      ],
+      "Secured by end-to-end encryption": [
+        "Zabezpieczone za pomocą szyfrowania end-to-end"
       ],
       "Setting up your organization": [
         "Konfiguracja organizacji"
@@ -14839,6 +14909,9 @@
       ],
       "Activate user": [
         "Aktywuj użytkownika"
+      ],
+      "Add a custom logo": [
+        "Dodaj niestandardowe logo"
       ],
       "Add address": [
         "Dodaj adres"

@@ -3257,12 +3257,6 @@
       "Missing feature(s)": [
         "缺少功能"
       ],
-      "My reason isn't listed, please comment": [
-        "我的理由未列出，請留言"
-      ],
-      "Streaming service unsupported": [
-        "不支援串流服務"
-      ],
       "Subscription is too expensive": [
         "訂購授權太貴了"
       ],
@@ -3295,6 +3289,29 @@
       ],
       "Secure cloud storage and file sharing that protects your data": [
         "安全雲端儲存和檔案共享保護您的資料"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "展開版本紀錄"
+      ],
+      "Priority support": [
+        "優先支援"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "更新價 ${ renewablePrice }，任何時間都可取消"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "首月"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "只需 ${ planPrice } 即可取得 ${ planName }"
       ]
     },
     "Duration": {
@@ -4198,6 +4215,9 @@
       ],
       "You have reached the contacts limit for your account": [
         "您的帳號已達聯絡人數量限制"
+      ],
+      "You have reached the maximum number of calendars.": [
+        "您已用鑿行事曆組的上限。"
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "您已使用您的方案中所有電郵位址。請升級您的方案以加入電郵位址。"
@@ -7108,9 +7128,6 @@
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "在按一下「確認」按鈕後，您的帳號儲值餘額將為 ${ creditsRemaining }。"
-      ],
-      "Please provide an email address in case we need to contact you.": [
-        "請提供一個電郵位址，萬一有需要時，我們也可以聯絡到您。"
       ],
       "Please select the folders you would like to import:": [
         "請選擇您想匯入的資料夾："
@@ -11540,9 +11557,6 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Check out ${ appName } features": [
-        "查看${ appName }功能"
-      ],
       "Continue": [
         "繼續"
       ],
@@ -11633,15 +11647,6 @@
       "${ PASS_APP_NAME } is available as a browser extension on the Chrome Web Store.": [
         "${ PASS_APP_NAME }於Chrome網頁商店瀏覽器擴充提供。"
       ],
-      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption.": [
-        "${ PASS_APP_NAME } 採用嚴格的端對端加密，保護您的密碼和身分安全。"
-      ],
-      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. To add premium features of ${ PASS_APP_NAME_2 } to your current subscription, we suggest upgrading to the ${ upsellPlanName } plan.": [
-        "${ PASS_APP_NAME }透過點對點加密保護密碼及身分。添加付費版${ PASS_APP_NAME_2 }至目前的訂購授權，我們建議您升級至${ upsellPlanName }方案。"
-      ],
-      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. Your current plan already gives you access to premium ${ PASS_APP_NAME_2 } features — no need to purchase again.": [
-        "${ PASS_APP_NAME }透過點對點加密保護您的密碼和身分。您目前付費方案包含${ PASS_APP_NAME_2 }功能 —無須再購買一次"
-      ],
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice }每月"
       ],
@@ -11674,9 +11679,6 @@
       ],
       "Current plan": [
         "目前方案"
-      ],
-      "Discover ${ PASS_APP_NAME },${ br }our new encrypted password manager": [
-        "探索發掘 ${ PASS_APP_NAME },${ br }全新推出的加密安全密碼管理程式"
       ],
       "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
         "下載及安裝新版應用程式及擴充以開始使用${ PASS_APP_NAME }"
@@ -11722,9 +11724,6 @@
       ],
       "Get in touch with our sales team": [
         "與銷售團隊聯繫"
-      ],
-      "Hide-my-email aliases protect your email from data breaches": [
-        "Hide-my-email 別名保護您免於資料外洩的威脅"
       ],
       "Includes:": [
         "包含:"
@@ -15140,6 +15139,9 @@
       ]
     },
     "vpn_2024: renew": {
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "${ priceWithDiscount } 特殊折扣將套用於第一個月。其後將於每月自動以 ${ renewPrice } 續約。您可以在任何時候取消。"
+      ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "您的訂閱將每 ${ cycle }月自動更新。"
       ]

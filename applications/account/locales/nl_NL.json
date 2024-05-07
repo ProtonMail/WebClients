@@ -527,6 +527,9 @@
       "Go to label": [
         "Ga naar label"
       ],
+      "Go to settings": [
+        "Ga naar instellingen"
+      ],
       "Got it": [
         "Begrepen"
       ],
@@ -598,6 +601,9 @@
       ],
       "label emails as": [
         "e-mail labellen als"
+      ],
+      "Later": [
+        "Later"
       ],
       "Leave": [
         "Verlaat"
@@ -3311,12 +3317,6 @@
       "Missing feature(s)": [
         "Ontbrekend(e) kenmerk(en)"
       ],
-      "My reason isn't listed, please comment": [
-        "Mijn reden staat er niet bij, graag commentaar"
-      ],
-      "Streaming service unsupported": [
-        "Streamingdienst niet ondersteund"
-      ],
       "Subscription is too expensive": [
         "Abonnement is te duur"
       ],
@@ -3349,6 +3349,40 @@
       ],
       "Secure cloud storage and file sharing that protects your data": [
         "Beveiligde cloudopslag en bestandsdeling die uw gegevens beschermt."
+      ]
+    },
+    "drivePlus2024: Action": {
+      "Get the deal": [
+        "Pak deze deal"
+      ],
+      "Special Offer": [
+        "Speciale aanbieding"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Uitgebreide versiegeschiedenis bekijken"
+      ],
+      "Priority support": [
+        "Prioriteitsondersteuning"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Wordt verlengd voor ${ renewablePrice }, altijd opzegbaar"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "voor de eerste maand"
+      ],
+      "Limited-time offer": [
+        "Tijdelijke aanbieding"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Neem ${ planName } voor slechts ${ planPrice }"
       ]
     },
     "Duration": {
@@ -4294,6 +4328,9 @@
       ],
       "You have reached the contacts limit for your account": [
         "U heeft de limiet van contacten bereikt voor dit account"
+      ],
+      "You have reached the maximum number of calendars.": [
+        "U hebt het maximum aantal agenda's bereikt."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "U heeft alle adressen in uw abonnement gebruikt. Upgrade uw abonnement om een nieuw adres toe te voegen."
@@ -6420,6 +6457,9 @@
       "Blocks senders from seeing if and when you opened a message.": [
         "Blokkeert dat afzenders kunnen zien of en wanneer u een bericht hebt geopend."
       ],
+      "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
+        "Boost de merkidentiteit van uw organisatie en creëer een consistentere online ervaring voor uw gebruikers."
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Door het downgraden naar een gratis abonnement verliest u deze voordelen, zelfs als u in de toekomst opnieuw upgrade."
       ],
@@ -7310,9 +7350,6 @@
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Let op: wanneer u op de knop Bevestigen klikt, heeft uw account nog ${ creditsRemaining } credits over."
-      ],
-      "Please provide an email address in case we need to contact you.": [
-        "Geef een e-mailadres op voor het geval we contact met u moeten opnemen."
       ],
       "Please select the folders you would like to import:": [
         "Selecteer de mappen die u wilt importeren:"
@@ -10803,6 +10840,9 @@
       "Organize items with multiple vaults": [
         "Organiseer items met meerdere kluizen"
       ],
+      "Passkeys supported": [
+        "Toegangscodes ondersteund"
+      ],
       "Password-protected Emails": [
         "E-mails met wachtwoordbeveiliging"
       ],
@@ -11917,9 +11957,6 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Check out ${ appName } features": [
-        "Bekijk ${ appName }-functies"
-      ],
       "Continue": [
         "Doorgaan"
       ],
@@ -12010,15 +12047,6 @@
       "${ PASS_APP_NAME } is available as a browser extension on the Chrome Web Store.": [
         "${ PASS_APP_NAME } is beschikbaar als browserextensie in de Chrome Web Store."
       ],
-      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption.": [
-        "${ PASS_APP_NAME } houdt uw wachtwoorden en identiteit veilig met grondige end-to-end versleuteling."
-      ],
-      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. To add premium features of ${ PASS_APP_NAME_2 } to your current subscription, we suggest upgrading to the ${ upsellPlanName } plan.": [
-        "${ PASS_APP_NAME } houdt uw wachtwoorden en identiteit veilig met grondige end-to-end versleutelingOm premium functies van ${ PASS_APP_NAME_2 } toe te voegen aan uw huidige abonnement, raden we aan om te upgraden naar het ${ upsellPlanName }-abonnement."
-      ],
-      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. Your current plan already gives you access to premium ${ PASS_APP_NAME_2 } features — no need to purchase again.": [
-        "${ PASS_APP_NAME } houdt uw wachtwoorden en identiteit veilig met grondige end-to-end versleutelingUw huidige abonnement geeft u al toegang tot de premium ${ PASS_APP_NAME_2 }-functies — het is niet nodig om dit opnieuw aan te kopen."
-      ],
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } per maand"
       ],
@@ -12060,9 +12088,6 @@
       ],
       "Current plan": [
         "Huidig abonnement"
-      ],
-      "Discover ${ PASS_APP_NAME },${ br }our new encrypted password manager": [
-        "Ontdek ${ PASS_APP_NAME },${ br }onze nieuwe versleutelde wachtwoordmanager"
       ],
       "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
         "Download en installeer de relevante apps en extensies om ${ PASS_APP_NAME } te beginnen gebruiken"
@@ -12117,9 +12142,6 @@
       ],
       "Get the security and features your business needs": [
         "Krijgt de veiligheid en de functies die uw bedrijf nodig heeft"
-      ],
-      "Hide-my-email aliases protect your email from data breaches": [
-        "Hide-my-email-aliassen beschermen uw e-mail tegen datalekken"
       ],
       "I understand that if I lose my recovery details, I may permanently lose access to my account.": [
         "Ik begrijp dat wanneer ik mijn herstelgegevens verlies, ik definitief de toegang tot mijn account verlies."
@@ -13948,6 +13970,26 @@
         "Uw eigen korte @pm.me e-mailalias"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB opslagruimte"
+      ],
+      "and 15 more premium features": [
+        "en 15 meer premium functies"
+      ],
+      "Desktop app": [
+        "Desktop-app"
+      ],
+      "No ads or tracking": [
+        "Geen advertenties of tracking"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "We don't sell your data": [
+        "Wij verkopen uw data niet"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Weet u het zeker?"
@@ -14447,6 +14489,9 @@
       ],
       "Activate user": [
         "Activeer gebruiker"
+      ],
+      "Add a custom logo": [
+        "Voeg een aangepast logo toe"
       ],
       "Add address": [
         "E-mailadres toevoegen"
@@ -15918,6 +15963,9 @@
       ],
       "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
         "Abonnement wordt elke 3 maanden automatisch verlengd. Uw volgende facturatiedatum is over 3 maanden."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste maand. Daarna wordt uw abonnement automatisch vernieuwd voor ${ renewPrice } per maand. U kunt opzeggen wanneer u wilt."
       ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "U wordt vervolgens elke 12 maanden ${ renewPrice } aangerekend."
