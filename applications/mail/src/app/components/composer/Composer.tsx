@@ -23,9 +23,9 @@ import { getRecipients } from '@proton/shared/lib/mail/messages';
 import noop from '@proton/utils/noop';
 
 import ComposerAssistant from 'proton-mail/components/assistant/ComposerAssistant';
-import useComposerAssistantInitialSetup from 'proton-mail/components/assistant/useComposerAssistantInitialSetup';
 import { insertTextBeforeContent } from 'proton-mail/helpers/message/messageContent';
 import { removeLineBreaks } from 'proton-mail/helpers/string';
+import useComposerAssistantInitialSetup from 'proton-mail/hooks/assistant/useComposerAssistantInitialSetup';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { DRAG_ADDRESS_KEY } from '../../constants';

@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import { Button, Href } from '@proton/atoms';
-import { ModalProps, Prompt } from '@proton/components';
+import { Button, Href } from '@proton/atoms/index';
+import { ModalProps, Prompt } from '@proton/components/index';
 import { ASSISTANT_FEATURE_NAME } from '@proton/llm/lib';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
