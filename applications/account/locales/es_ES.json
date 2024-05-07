@@ -527,6 +527,9 @@
       "Go to label": [
         "Ir a la etiqueta"
       ],
+      "Go to settings": [
+        "Ir a los ajustes"
+      ],
       "Got it": [
         "Entendido"
       ],
@@ -598,6 +601,9 @@
       ],
       "label emails as": [
         "etiquetar el correos electrónicos como"
+      ],
+      "Later": [
+        "Más tarde"
       ],
       "Leave": [
         "Salir"
@@ -3311,12 +3317,6 @@
       "Missing feature(s)": [
         "Faltan funciones."
       ],
-      "My reason isn't listed, please comment": [
-        "Mi razón no está en la lista. Déjanos un comentario."
-      ],
-      "Streaming service unsupported": [
-        "Servicio de streaming no compatible"
-      ],
       "Subscription is too expensive": [
         "La suscripción es demasiado cara."
       ],
@@ -3349,6 +3349,40 @@
       ],
       "Secure cloud storage and file sharing that protects your data": [
         "Almacenamiento en la nube e intercambio de archivos sin riesgos que protegen tus datos."
+      ]
+    },
+    "drivePlus2024: Action": {
+      "Get the deal": [
+        "Aprovéchate de la oferta"
+      ],
+      "Special Offer": [
+        "Oferta especial"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Historial de versiones extendido"
+      ],
+      "Priority support": [
+        "Soporte prioritario"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Se renueva por ${ renewablePrice } y cancela cuando quieras"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "por el primer mes"
+      ],
+      "Limited-time offer": [
+        "Oferta por tiempo limitado"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Obtén ${ planName } por solo ${ planPrice }"
       ]
     },
     "Duration": {
@@ -6423,6 +6457,9 @@
       "Blocks senders from seeing if and when you opened a message.": [
         "Impide que los remitentes vean si has abierto un mensaje y cuándo lo has hecho."
       ],
+      "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
+        "Impulsa la identidad de marca de tu organización y crea una experiencia en línea más consistente para tus usuarios."
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Al pasar a un plan gratuito, perderás permanentemente estos beneficios, incluso si mejoras de nuevo tu plan en el futuro."
       ],
@@ -7316,9 +7353,6 @@
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Ten en cuenta que al hacer clic en el botón Confirmar, tu cuenta tendrá ${ creditsRemaining } créditos restantes."
-      ],
-      "Please provide an email address in case we need to contact you.": [
-        "Indica una dirección de correo electrónico en caso de que necesitemos contactarte."
       ],
       "Please select the folders you would like to import:": [
         "Selecciona las carpetas que te gustaría importar:"
@@ -10815,6 +10849,12 @@
       "Organize items with multiple vaults": [
         "Organizar elementos en cajas fuertes múltiples"
       ],
+      "Pass Monitor - premium features": [
+        "Pass Monitor - funciones premium"
+      ],
+      "Passkeys supported": [
+        "Las claves de acceso están admitidas."
+      ],
       "Password-protected Emails": [
         "Correos electrónicos protegidos con contraseña"
       ],
@@ -10897,6 +10937,9 @@
       ],
       "Unlimited devices": [
         "Dispositivos ilimitados"
+      ],
+      "Unlimited devices and aliases": [
+        "Alias y dispositivos ilimitados"
       ],
       "Unlimited filters": [
         "Filtros ilimitados"
@@ -11929,9 +11972,6 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Check out ${ appName } features": [
-        "Comprueba las características de ${ appName }"
-      ],
       "Continue": [
         "Continuar"
       ],
@@ -12022,15 +12062,6 @@
       "${ PASS_APP_NAME } is available as a browser extension on the Chrome Web Store.": [
         "${ PASS_APP_NAME } está disponible como una extensión de navegador Chrome en la Chrome Web Store."
       ],
-      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption.": [
-        "${ PASS_APP_NAME } mantiene tus contraseñas y tu identidad a salvo gracias a un cifrado riguroso."
-      ],
-      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. To add premium features of ${ PASS_APP_NAME_2 } to your current subscription, we suggest upgrading to the ${ upsellPlanName } plan.": [
-        "${ PASS_APP_NAME } mantiene tus contraseñas y tu identidad a salvo gracias a un crifrado riguroso de extremo a extremo. Para añadir características premium de ${ PASS_APP_NAME_2 } a tu suscripción actual, te sugerimos pasarte al plan ${ upsellPlanName }."
-      ],
-      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. Your current plan already gives you access to premium ${ PASS_APP_NAME_2 } features — no need to purchase again.": [
-        "${ PASS_APP_NAME } mantiene tus contraseñas y tu identidad a salvo gracias a un cifrado riguroso de extremo a extremo. Tu plan actual da acceso características ${ PASS_APP_NAME_2 } premium — no es necesario comprar de nuevo."
-      ],
       "+ ${ relativePrice } per month": [
         "+${ relativePrice } por mes"
       ],
@@ -12045,6 +12076,15 @@
       ],
       "Advanced protection that goes beyond industry standards": [
         "Protección avanzada que va más allá del estándar industrial"
+      ],
+      "Alerts for compromised emails and vulnerable passwords": [
+        "Alertas para contraseñas e emails vulnerables"
+      ],
+      "Alerts for vulnerable passwords": [
+        "Alertas para contraseñas vulnerables"
+      ],
+      "Aliases for email protection from breaches": [
+        "Alias para proteger el correo electrónico de filtraciones"
       ],
       "All premium ${ BRAND_NAME } services.": [
         "Todos los servicios premium de ${ BRAND_NAME }."
@@ -12072,9 +12112,6 @@
       ],
       "Current plan": [
         "Plan actual"
-      ],
-      "Discover ${ PASS_APP_NAME },${ br }our new encrypted password manager": [
-        "Descubre ${ PASS_APP_NAME },${ br }nuestro nuevo gestor encriptado de contraseñas"
       ],
       "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
         "Descarga e instala las aplicaciones relevantes y tus extensiones para poder comenzar a utilizar ${ PASS_APP_NAME }"
@@ -12130,9 +12167,6 @@
       "Get the security and features your business needs": [
         "Obtén la seguridad y funciones que necesita tu negocio"
       ],
-      "Hide-my-email aliases protect your email from data breaches": [
-        "Los alias hide-my-email protegen tu correo electrónico de las filtraciones de datos."
-      ],
       "I understand that if I lose my recovery details, I may permanently lose access to my account.": [
         "Entiendo que al perder mis detalles de recuperación, puedo permanentemente perder acceso a mi cuenta."
       ],
@@ -12175,6 +12209,9 @@
       "Open-source and audited": [
         "Código abierto y auditoría"
       ],
+      "Passkeys supported on all devices": [
+        "Las claves de acceso están admitidas en todos los dispositivos."
+      ],
       "per month": [
         "por mes"
       ],
@@ -12195,6 +12232,19 @@
       ],
       "Save your recovery kit to continue": [
         "Guarda tu kit de recuperación para continuar"
+      ],
+      "Secure sharing with ${ n } vault": [
+        "Compartición segura con ${ n } caja fuerte",
+        "Compartición segura con ${ n } cajas fuertes"
+      ],
+      "Secure sharing with multiple vaults": [
+        "Compartición segura con varias cajas fuertes"
+      ],
+      "Secure vault sharing": [
+        "Compartición segura de cajas fuertes"
+      ],
+      "Secured by end-to-end encryption": [
+        "Protegido por encriptación de extremo a extremo"
       ],
       "Setting up your organization": [
         "Configurando tu organización"
@@ -14500,6 +14550,9 @@
       ],
       "Activate user": [
         "Activar el usuario"
+      ],
+      "Add a custom logo": [
+        "Añade un logo personalizado"
       ],
       "Add address": [
         "Añadir dirección"

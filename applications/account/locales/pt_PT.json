@@ -3072,12 +3072,6 @@
       "Missing feature(s)": [
         "Funções ausentes"
       ],
-      "My reason isn't listed, please comment": [
-        "O meu motivo não consta da lista. Comente."
-      ],
-      "Streaming service unsupported": [
-        "O serviço de streaming não é suportado."
-      ],
       "Subscription is too expensive": [
         "A subscrição é demasiado cara."
       ],
@@ -3104,6 +3098,19 @@
     "drive_signup_2023: Info": {
       "Advanced sharing security": [
         "Segurança avançada de partilha"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Histórico de versão estendido"
+      ],
+      "Priority support": [
+        "Apoio ao cliente prioritário"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "pelo primeiro mês"
       ]
     },
     "Duration": {
@@ -3904,6 +3911,9 @@
       ],
       "You have reached the contacts limit for your account": [
         "Atingiu o limite de contactos da sua conta."
+      ],
+      "You have reached the maximum number of calendars.": [
+        "Atingiu o número máximo de calendários."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Usou todos os endereços do seu plano. Subscreva um plano superior para adicionar um endereço."
@@ -6681,9 +6691,6 @@
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Note que ao clicar em Confirmar a sua conta terá ${ creditsRemaining } créditos restantes."
       ],
-      "Please provide an email address in case we need to contact you.": [
-        "Forneça um endereço de e-mail, caso necessitemos de o contactar."
-      ],
       "Please select the folders you would like to import:": [
         "Selecione as pastas que deseja importar:"
       ],
@@ -7332,6 +7339,9 @@
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "A página será redirecionada para um novo separador PayPal no seu navegador, para concluir a transação. Se utiliza bloqueadores de janelas, desative-os."
+      ],
+      "We'll email you once import is complete.": [
+        "Enviaremos um e-mail para si assim que a importação estiver concluída."
       ],
       "We'll get back to you shortly.": [
         "Entraremos em contacto consigo em breve."
@@ -10814,9 +10824,6 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Check out ${ appName } features": [
-        "Descubra as funcionalidades do ${ appName }"
-      ],
       "Continue": [
         "Continuar"
       ],
@@ -10895,20 +10902,14 @@
       "${ PASS_APP_NAME } is available as a browser extension on the Chrome Web Store.": [
         "O ${ PASS_APP_NAME } está disponível como uma extensão do Chrome Web Store."
       ],
-      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption.": [
-        "O ${ PASS_APP_NAME } mantém as suas palavras-passe e a sua identidade seguras com rigorosa encriptação de ponta-a-ponta."
-      ],
-      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. To add premium features of ${ PASS_APP_NAME_2 } to your current subscription, we suggest upgrading to the ${ upsellPlanName } plan.": [
-        "O ${ PASS_APP_NAME } mantém as suas palavras-passe e a sua identidade seguras com rigorosa encriptação de ponta a ponta. Para adicionar funcionalidades premium do ${ PASS_APP_NAME_2 } à sua assinatura atual, nós sugerimos atualizar para o plano ${ upsellPlanName }."
-      ],
-      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. Your current plan already gives you access to premium ${ PASS_APP_NAME_2 } features — no need to purchase again.": [
-        "O ${ PASS_APP_NAME } mantém as suas palavras-passe e a sua identidade seguras com rigorosa encriptação de ponta a ponta. O seu plano atual já dá acesso premium às funcionalidades do ${ PASS_APP_NAME_2 } — não é necessária uma nova compra."
-      ],
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } por mês"
       ],
       "/month /user": [
         "/mês /utilizador"
+      ],
+      "Advanced protection that goes beyond industry standards": [
+        "Proteção avançada que ultrapassa os padrões da indústria"
       ],
       "All premium ${ BRAND_NAME } services.": [
         "Todos os serviços premium da ${ BRAND_NAME }."
@@ -10924,9 +10925,6 @@
       ],
       "Current plan": [
         "Plano atual"
-      ],
-      "Discover ${ PASS_APP_NAME },${ br }our new encrypted password manager": [
-        "Descubra ${ PASS_APP_NAME },${ br }o nosso novo gestor de palavras-passe encriptadas"
       ],
       "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
         "Descarregue e instale as aplicações relevantes e as suas extensões para começar a utilizar o ${ PASS_APP_NAME }"
@@ -10957,9 +10955,6 @@
       ],
       "Get ${ appName } for ${ browserName } soon": [
         "Descarrega o ${ appName } para ${ browserName } em breve"
-      ],
-      "Hide-my-email aliases protect your email from data breaches": [
-        "Os aliases hide-my-email protegem o seu e-mail contra violações de dados."
       ],
       "Includes:": [
         "Incluí:"

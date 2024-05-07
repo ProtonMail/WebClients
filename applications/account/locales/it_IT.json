@@ -527,6 +527,9 @@
       "Go to label": [
         "Vai all'etichetta"
       ],
+      "Go to settings": [
+        "Vai alle impostazioni"
+      ],
       "Got it": [
         "Ho capito"
       ],
@@ -598,6 +601,9 @@
       ],
       "label emails as": [
         "etichetta le email come"
+      ],
+      "Later": [
+        "Più tardi"
       ],
       "Leave": [
         "Abbandona"
@@ -3311,12 +3317,6 @@
       "Missing feature(s)": [
         "Funzionalità mancante(i)"
       ],
-      "My reason isn't listed, please comment": [
-        "Il motivo non è elencato, per favore commenta"
-      ],
-      "Streaming service unsupported": [
-        "Servizio di streaming non supportato"
-      ],
       "Subscription is too expensive": [
         "Abbonamento troppo costoso"
       ],
@@ -3349,6 +3349,40 @@
       ],
       "Secure cloud storage and file sharing that protects your data": [
         "Archiviazione su cloud crittografata e condivisione dei file che protegge i tuoi dati"
+      ]
+    },
+    "drivePlus2024: Action": {
+      "Get the deal": [
+        "Ottieni l'offerta"
+      ],
+      "Special Offer": [
+        "Offerta speciale"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Cronologia estesa della versione"
+      ],
+      "Priority support": [
+        "Supporto prioritario"
+      ]
+    },
+    "drivePlus2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Rinnova a ${ renewablePrice }, annulla in qualsiasi momento"
+      ]
+    },
+    "drivePlus2024: Info": {
+      "for the first month": [
+        "per il primo mese"
+      ],
+      "Limited-time offer": [
+        "Offerta a tempo limitato"
+      ]
+    },
+    "drivePlus2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Ottieni ${ planName } a soli ${ planPrice }"
       ]
     },
     "Duration": {
@@ -6423,6 +6457,9 @@
       "Blocks senders from seeing if and when you opened a message.": [
         "Impedisce ai mittenti di vedere se e quando hai aperto un messaggio."
       ],
+      "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
+        "Rafforza l'identità della tua organizzazione e crea un'esperienza online più coerente per i tuoi utenti."
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Declassando ad un piano gratuito, perderai definitivamente questi benefici, anche se in futuro effettuerai un nuovo upgrade."
       ],
@@ -7319,9 +7356,6 @@
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Nota che cliccando sul pulsante Conferma, il tuo account avrà ${ creditsRemaining } crediti rimanenti."
-      ],
-      "Please provide an email address in case we need to contact you.": [
-        "Per favore fornisci un indirizzo email nel caso in cui dovessimo contattarti."
       ],
       "Please select the folders you would like to import:": [
         "Seleziona le cartelle che vuoi importare:"
@@ -10821,6 +10855,9 @@
       "Organize items with multiple vaults": [
         "Organizza gli elementi con più casseforti"
       ],
+      "Pass Monitor - premium features": [
+        "Pass Monitor - funzionalità premium"
+      ],
       "Passkeys supported": [
         "Passkey supportate"
       ],
@@ -10906,6 +10943,9 @@
       ],
       "Unlimited devices": [
         "Dispositivi illimitati"
+      ],
+      "Unlimited devices and aliases": [
+        "Dispositivi e alias illimitati"
       ],
       "Unlimited filters": [
         "Filtri illimitati"
@@ -11962,9 +12002,6 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Check out ${ appName } features": [
-        "Scopri le caratteristiche di ${ appName }"
-      ],
       "Continue": [
         "Continua"
       ],
@@ -12055,15 +12092,6 @@
       "${ PASS_APP_NAME } is available as a browser extension on the Chrome Web Store.": [
         "${ PASS_APP_NAME } è disponibile come estensione per il browser sul Chrome Web Store."
       ],
-      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption.": [
-        "${ PASS_APP_NAME } mantiene le tue password e identità al sicuro con una rigorosa crittografia end-to-end."
-      ],
-      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. To add premium features of ${ PASS_APP_NAME_2 } to your current subscription, we suggest upgrading to the ${ upsellPlanName } plan.": [
-        "${ PASS_APP_NAME } protegge le tue password e la tua identità con una rigorosa crittografia end-to-end. Per aggiungere funzionalità premium di ${ PASS_APP_NAME_2 } al tuo abbonamento attuale, ti suggeriamo di eseguire l'upgrade al piano ${ upsellPlanName }."
-      ],
-      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. Your current plan already gives you access to premium ${ PASS_APP_NAME_2 } features — no need to purchase again.": [
-        "${ PASS_APP_NAME } mantiene le tue password e identità al sicuro con una rigorosa crittografia end-to-end. Il tuo piano attuale ti consente già di accedere alle funzionalità premium di ${ PASS_APP_NAME_2 }: non è necessario effettuare nuovamente l'acquisto."
-      ],
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } al mese"
       ],
@@ -12078,6 +12106,15 @@
       ],
       "Advanced protection that goes beyond industry standards": [
         "Protezione avanzata che va oltre gli standard aziendali"
+      ],
+      "Alerts for compromised emails and vulnerable passwords": [
+        "Avvisi per le email compromesse e le password vulnerabili"
+      ],
+      "Alerts for vulnerable passwords": [
+        "Avvisi per le password vulnerabili"
+      ],
+      "Aliases for email protection from breaches": [
+        "Alias ​​per la protezione delle email dalle violazioni di dati"
       ],
       "All premium ${ BRAND_NAME } services.": [
         "Tutti i servizi premium di ${ BRAND_NAME }."
@@ -12105,9 +12142,6 @@
       ],
       "Current plan": [
         "Piano attuale"
-      ],
-      "Discover ${ PASS_APP_NAME },${ br }our new encrypted password manager": [
-        "Scopri ${ PASS_APP_NAME },${ br }il nostro nuovo gestore di password crittografato"
       ],
       "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
         "Scarica e installa le apposite app ed estensioni per iniziare ad usare ${ PASS_APP_NAME }"
@@ -12162,9 +12196,6 @@
       ],
       "Get the security and features your business needs": [
         "Ottieni la sicurezza e le funzionalità di cui la tua azienda ha bisogno"
-      ],
-      "Hide-my-email aliases protect your email from data breaches": [
-        "Gli alias Hide-my-email proteggono la tua email dalle violazioni dei dati"
       ],
       "I understand that if I lose my recovery details, I may permanently lose access to my account.": [
         "Comprendo che se perdessi i miei dati di recupero, potrei perdere definitivamente l'accesso al mio account."
@@ -12231,6 +12262,19 @@
       ],
       "Save your recovery kit to continue": [
         "Salva il tuo kit di recupero per continuare"
+      ],
+      "Secure sharing with ${ n } vault": [
+        "Condivisione sicura con ${ n } cassaforte",
+        "Condivisione sicura con ${ n } casseforti"
+      ],
+      "Secure sharing with multiple vaults": [
+        "Condivisione sicura con più casseforti"
+      ],
+      "Secure vault sharing": [
+        "Condivisione sicura della cassaforte"
+      ],
+      "Secured by end-to-end encryption": [
+        "Protetta con crittografia end-to-end"
       ],
       "Setting up your organization": [
         "Configurazione dell'organizzazione in corso"
@@ -14536,6 +14580,9 @@
       ],
       "Activate user": [
         "Attiva utente"
+      ],
+      "Add a custom logo": [
+        "Aggiungi un logo personalizzato"
       ],
       "Add address": [
         "Aggiungi indirizzi"
