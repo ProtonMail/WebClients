@@ -167,6 +167,9 @@
       "Edit vault": [
         "Edita la caixa forta"
       ],
+      "Exclude from monitoring": [
+        "Exclou de la supervisió"
+      ],
       "Export": [
         "Exporta"
       ],
@@ -211,6 +214,9 @@
       ],
       "Importing": [
         "S'està important"
+      ],
+      "Include in monitoring": [
+        "Incloure en la supervisió"
       ],
       "Invite others": [
         "Convida altres persones"
@@ -347,6 +353,9 @@
       "Saving passkey...": [
         "S'està desant la contrasenya..."
       ],
+      "See all": [
+        "Mostra-les totes"
+      ],
       "See members": [
         "Mostra els membres"
       ],
@@ -469,6 +478,14 @@
         "Amplia"
       ]
     },
+    "Description": {
+      "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
+        "La supervisió del Dark Web està disponible amb un pla de pagament. Milloreu el vostre pla per accedir-hi immediatament."
+      ],
+      "This account is vulnerable, visit the service and change your password.": [
+        "Aquest compte és vulnerable, visiti el servei i canviï la contrasenya."
+      ]
+    },
     "Error": {
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "No s'ha pogut analitzar el fitxer de ${ provider }. ${ errorDetail }"
@@ -546,11 +563,23 @@
       "Failed resending invite.": [
         "No s'ha pogut reenviar la invitació."
       ],
+      "Failed to add email address": [
+        "No s'ha pogut afegir l'adreça de correu electrònic"
+      ],
+      "Failed to delete email address from monitoring": [
+        "No s'ha pogut suprimir l'adreça de correu electrònic de la supervisió"
+      ],
       "Failed to edit organization settings": [
         "No s'ha pogut editar la configuració de l'organització"
       ],
       "Failed to edit user's access.": [
         "No s'ha pogut Editar l'accés de l'usuari."
+      ],
+      "Failed to load breaches for this address": [
+        "No s'han pogut carregar les infraccions per a aquesta adreça"
+      ],
+      "Failed to load breaches for this email alias": [
+        "No s'han pogut carregar les infraccions per a aquest àlies de correu electrònic"
       ],
       "Failed to load item history": [
         "No s'ha pogut carregar l'historial d'elements"
@@ -564,11 +593,32 @@
       "Failed to remove user's access.": [
         "No s'ha pogut esborrar l'accés de l'usuari."
       ],
+      "Failed to resend verification for custom email": [
+        "No s'ha pogut tornar a enviar la verificació per al correu electrònic personalitzat"
+      ],
+      "Failed to resolve breaches for this address": [
+        "No s'han pogut resoldre les infraccions d'aquesta adreça"
+      ],
       "Failed to transfer this vault's ownership.": [
         "No s'ha pogut transferir la propietat de la caixa forta."
       ],
       "Failed to unpin item": [
         "No s'ha pogut desancorar l'element."
+      ],
+      "Failed to update monitoring settings": [
+        "No s'han pogut actualitzar les preferències de supervisió"
+      ],
+      "Failed to verify email address": [
+        "No s'ha pogut verificar l'adreça de correu electrònic"
+      ],
+      "Failed updating ${ PROTON_SENTINEL_NAME } setting": [
+        "No s'ha pogut actualitzar la preferència ${ PROTON_SENTINEL_NAME }"
+      ],
+      "Failed updating monitor flag of the item": [
+        "No s'ha pogut actualitzar l'indicador del monitor de l'element"
+      ],
+      "Failed updating monitoring status for this email address": [
+        "No s'ha pogut actualitzar l'estat de supervisió d'aquesta adreça de correu electrònic"
       ],
       "File could not be parsed": [
         "No s'ha pogut analitzar el fitxer"
@@ -800,6 +850,12 @@
       "${ PASS_APP_NAME } will suggest saving passkeys.": [
         "${ PASS_APP_NAME } suggerirà desar les claus d'accés."
       ],
+      "${ PROTON_SENTINEL_NAME } successfully disabled": [
+        "${ PROTON_SENTINEL_NAME } s'ha desactivat correctament"
+      ],
+      "${ PROTON_SENTINEL_NAME } successfully enabled": [
+        "${ PROTON_SENTINEL_NAME } s'ha habilitat correctament"
+      ],
       "${ trialDaysLeft } day left": [
         "Queda ${ trialDaysLeft } dia",
         "Queden ${ trialDaysLeft } dies"
@@ -818,6 +874,9 @@
       ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "S'ha mogut l'àlies \"${ item.aliasEmail }\" a la paperera - deixarà de reenviar correus electrònics a la vostra bústia"
+      ],
+      "All breaches for this address were resolved": [
+        "S'han resolt totes les infraccions d'aquesta adreça"
       ],
       "An item previously shared with you was removed": [
         "S'ha esborrat un element compartit anteriorment amb vós."
@@ -891,6 +950,15 @@
       "Editor": [
         "Editor"
       ],
+      "Email address successfully deleted from monitoring": [
+        "L'adreça de correu electrònic s'ha suprimit correctament de la supervisió"
+      ],
+      "Email address successfully excluded from monitoring": [
+        "L'adreça de correu electrònic s'ha exclòs correctament de la supervisió"
+      ],
+      "Email address successfully included in monitoring": [
+        "L'adreça de correu electrònic s'ha inclòs correctament a la supervisió"
+      ],
       "Emptying trash...": [
         "Buidant la paperera..."
       ],
@@ -962,6 +1030,12 @@
       "Item restored": [
         "S'ha restaurat l'element"
       ],
+      "Item successfully excluded from monitoring": [
+        "S'ha exclòs l'element de la supervisió."
+      ],
+      "Item successfully included in monitoring": [
+        "Element inclòs correctament al seguiment"
+      ],
       "Item successfully moved": [
         "S'ha mogut l'element"
       ],
@@ -988,6 +1062,9 @@
       ],
       "me": [
         "jo"
+      ],
+      "Monitoring settings successfully updated": [
+        "Les preferències de seguiment s'han actualitzat correctament"
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "Més que un gestor de contrasenyes, ${ PASS_APP_NAME } protegeix la vostra contrasenya i la vostra adreça de correu electrònic personal mitjançant àlies de correu electrònic. Desenvolupat amb la mateixa tecnologia que hi ha darrere de ${ MAIL_APP_NAME }, les vostres dades estan xifrades d'extrem a extrem i només són accessibles per vós."
@@ -1255,6 +1332,9 @@
       "${ config.options.wordCount } word": [
         "${ config.options.wordCount } paraula",
         "${ config.options.wordCount } paraules"
+      ],
+      "${ PASS_SHORT_APP_NAME } monitor": [
+        "Monitor de ${ PASS_SHORT_APP_NAME }"
       ],
       "1 hour": [
         "1 hora"
@@ -1631,6 +1711,9 @@
       "Special characters (!&*)": [
         "Caràcters especials (!&*)"
       ],
+      "Strong": [
+        "Forta"
+      ],
       "Suffix": [
         "Sufix"
       ],
@@ -1696,6 +1779,12 @@
       ],
       "View logs": [
         "Mostra els registres"
+      ],
+      "Vulnerable": [
+        "Vulnerable"
+      ],
+      "Weak": [
+        "Feble"
       ],
       "Website": [
         "Lloc web"
@@ -1988,6 +2077,9 @@
       "Share with": [
         "Comparteix amb"
       ],
+      "Stay safer online": [
+        "Estigui més segur en línia"
+      ],
       "Suggestions": [
         "Suggeriments"
       ],
@@ -2020,6 +2112,9 @@
       ],
       "Vault shared with you": [
         "Caixa forta compartida amb vosaltres"
+      ],
+      "Weak password": [
+        "Contrasenya feble"
       ],
       "Welcome to your new password manager!": [
         "Us donem la benvinguda al vostre nou gestor de contrasenyes!"

@@ -524,14 +524,14 @@
       "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
         "La surveillance de fuites de données sur le dark web est disponible avec un abonnement payant. Changez d'abonnement pour y accéder immédiatement."
       ],
-      "It would be more secure to set up 2FA for this account.": [
-        "Il serait plus sûr d'activer l'A2F pour ce compte."
-      ],
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
         "Liste des domaines pour lesquels certaines fonctionnalités automatiques de ${ PASS_SHORT_APP_NAME } (remplissage, suggestion ou enregistrement automatique) ne doivent pas être exécutées.${ infoText }"
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "Ce compte est vulnérable. Visitez le service et changez votre mot de passe."
+      ],
+      "This service offers 2FA. Enable it for added account security.": [
+        "Ce service offre l'A2F. Activez-le pour améliorer votre sécurité."
       ]
     },
     "Error": {
@@ -560,11 +560,11 @@
         "Impossible de créer l'alias (${ error })"
       ],
       "Cannot send invitation at the moment": [
-        "L'envoi de l'invitation est impossible pour le moment",
-        "L'envoi des invitations est impossible pour le moment"
+        "L'envoi de l'invitation n'est pas possible pour le moment.",
+        "L'envoi des invitations n'est pas possible pour le moment."
       ],
       "Cannot send invitations at the moment": [
-        "L'envoi des invitations est impossible pour le moment."
+        "L'envoi d'invitations n'est pas possible pour le moment."
       ],
       "Could not confirm this invite at the moment": [
         "Cette invitation n'a pu être confirmée pour le moment."
@@ -641,9 +641,6 @@
       ],
       "Failed to edit user's access.": [
         "L'accès de l'utilisateur n'a pas pu être modifié."
-      ],
-      "Failed to load breaches": [
-        "Les fuites de données n'ont pas pu être chargées."
       ],
       "Failed to load breaches for this address": [
         "Les fuites de données pour cette adresse n'ont pas été chargées."
@@ -1000,7 +997,7 @@
         "Voulez-vous vraiment déplacer tous les éléments depuis « ${ fromVaultName } » vers « ${ toVaultName } » ?"
       ],
       "Are you sure you want to move items to \"${ name }\" ?": [
-        "Êtes-vous sûr de vouloir déplacer les éléments vers « ${ name } » ?"
+        "Voulez-vous vraiment déplacer les éléments vers « ${ name } » ?"
       ],
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "Êtes-vous sûr de vouloir déplacer l'élément vers « ${ name } » ?"
@@ -2263,9 +2260,6 @@
       "Members": [
         "Membres"
       ],
-      "Missing two-factor authentication": [
-        "L'authentification à deux facteurs est manquante."
-      ],
       "Modified": [
         "Modifié"
       ],
@@ -2313,6 +2307,9 @@
       ],
       "Set access level": [
         "Définir le niveau d'accès"
+      ],
+      "Set up 2FA for more security": [
+        "Configurez l'A2F pour plus de sécurité"
       ],
       "Share with": [
         "Partager avec"

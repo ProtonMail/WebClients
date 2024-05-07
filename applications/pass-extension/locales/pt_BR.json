@@ -188,6 +188,9 @@
       "Edit vault": [
         "Editar cofre"
       ],
+      "Exclude from monitoring": [
+        "Excluir do monitoramento"
+      ],
       "Export": [
         "Exportar"
       ],
@@ -212,6 +215,9 @@
       "Get mobile apps": [
         "Baixar aplicativos móveis"
       ],
+      "Get Pass Plus": [
+        "Obter Pass Plus"
+      ],
       "Help us improve": [
         "Ajude-nos a melhorar"
       ],
@@ -232,6 +238,9 @@
       ],
       "Importing": [
         "Importando"
+      ],
+      "Include in monitoring": [
+        "Incluir no monitoramento"
       ],
       "Invite others": [
         "Convidar outras pessoas"
@@ -368,6 +377,9 @@
       "Saving passkey...": [
         "Salvando chave de acesso"
       ],
+      "See all": [
+        "Ver tudo"
+      ],
       "See members": [
         "Ver membros"
       ],
@@ -456,7 +468,7 @@
         "Visualizar histórico do item"
       ],
       "View older history": [
-        "Ver a história mais antiga"
+        "Ver histórico mais antigo"
       ],
       "Write us on Reddit": [
         "Escreva-nos no Reddit"
@@ -505,8 +517,14 @@
       "A checked box means the feature is disabled.": [
         "Uma caixa marcada significa que o recurso está desativado."
       ],
+      "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
+        "O monitoramento da Dark Web está disponível com um plano pago. Faça upgrade para acesso imediato."
+      ],
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
         "Lista de domínios onde certas funções automáticas em ${ PASS_SHORT_APP_NAME } (preenchimento automático, sugestão automática, salvamento automático) não devem ser executadas.${ infoText }"
+      ],
+      "This account is vulnerable, visit the service and change your password.": [
+        "Esta conta está vulnerável, visite o serviço e altere sua senha."
       ]
     },
     "Error": {
@@ -563,7 +581,7 @@
         "Não é possível determinar os membros do compartilhamento"
       ],
       "Could not validate addresses at the moment.": [
-        "Não foi possível validar endereços neste momento."
+        "Não foi possível validar endereços agora."
       ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "O arquivo CSV está faltando cabeçalhos esperados: ${ missingHeaders }"
@@ -612,7 +630,7 @@
         "Falha ao editar o acesso do usuário."
       ],
       "Failed to load item history": [
-        "Falha ao carregar a história do item"
+        "Falha ao carregar o histórico do item"
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Falha ao mover todos os itens de \"${ payload.content.name }\""
@@ -621,7 +639,7 @@
         "Falha ao mover os itens"
       ],
       "Failed to move items to trash": [
-        "Falha ao mover os itens para a lixeira"
+        "Falha ao mover itens para a lixeira"
       ],
       "Failed to pin item": [
         "Falha ao fixar item"
@@ -630,7 +648,7 @@
         "Falha ao remover o acesso do usuário."
       ],
       "Failed to restore items from trash": [
-        "Falha ao restaurar os itens da lixeira"
+        "Falha ao restaurar itens da lixeira"
       ],
       "Failed to transfer this vault's ownership.": [
         "Falha ao transferir a propriedade deste cofre."
@@ -669,7 +687,7 @@
         "Erro na criação do item"
       ],
       "Item does not exist": [
-        "Item não existe"
+        "O item não existe"
       ],
       "LastPass will export a corrupted CSV file if any of your item fields contain unexpected commas, quotes or multiple lines": [
         "O LastPass exportará um arquivo CSV corrompido se algum campo do item contiver vírgulas, aspas ou várias linhas inesperadas."
@@ -863,13 +881,13 @@
         "${ PASS_APP_NAME } importará somente inícios de sessão, notas e cartões de crédito."
       ],
       "${ PASS_APP_NAME } will prompt you as soon as generated passwords are autofilled.": [
-        "${ PASS_APP_NAME } irá te avisar assim que as senhas geradas forem autopreenchidas."
+        "${ PASS_APP_NAME } irá te avisar assim que as senhas geradas forem preenchidas automaticamente."
       ],
       "${ PASS_APP_NAME } will prompt you to save or update credentials.": [
         "O ${ PASS_APP_NAME } irá solicitar que você salve ou atualize suas credenciais."
       ],
       "${ PASS_APP_NAME } will suggest authenticating using saved passkeys": [
-        "${ PASS_APP_NAME } sugerirá a autenticação com as chaves de acesso salvadas."
+        "${ PASS_APP_NAME } irá sugerir a autenticação usando senhas salvas"
       ],
       "${ PASS_APP_NAME } will suggest creating an email alias on sign-up forms.": [
         "O ${ PASS_APP_NAME } irá sugerir a criação de um alias de e-mail em formulários de cadastro."
@@ -878,7 +896,7 @@
         "O ${ PASS_APP_NAME } irá sugerir a criação de senhas fortes em formulários de cadastro."
       ],
       "${ PASS_APP_NAME } will suggest saving passkeys.": [
-        "${ PASS_APP_NAME } sugerirá salvar as chaves de acesso."
+        "${ PASS_APP_NAME } irá sugerir salvar chaves de acesso."
       ],
       "${ trialDaysLeft } day left": [
         "${ trialDaysLeft } dia restante",
@@ -891,7 +909,7 @@
         "Uma nova versão do ${ PASS_APP_NAME } está disponível. Atualize para desfrutar dos recursos e correções de bugs mais recentes."
       ],
       "A passkey for \"${ username }\" will be saved and available on devices where ${ PASS_APP_NAME } is installed.": [
-        "A chave de acesso de \"${ username }\" será salva e disponibilizada em dispositivos que tenham ${ PASS_APP_NAME }."
+        "Uma chave de acesso para \"${ username }\" será salva e estará disponível em dispositivos onde ${ PASS_APP_NAME } estiver instalado."
       ],
       "Access successfully confirmed": [
         "Acesso confirmado com sucesso"
@@ -915,7 +933,7 @@
         "Todos os itens de \"${ payload.content.name }\" movidos com sucesso"
       ],
       "All items successfully moved": [
-        "Todos os itens movidos"
+        "Todos os itens movidos com sucesso"
       ],
       "All trashed items permanently deleted": [
         "Todos os itens da lixeira foram excluídos permanentemente"
@@ -1106,6 +1124,12 @@
       "Item restored": [
         "Item restaurado"
       ],
+      "Item successfully excluded from monitoring": [
+        "Item excluído com sucesso do monitoramento."
+      ],
+      "Item successfully included in monitoring": [
+        "Item incluído com sucesso no monitoramento"
+      ],
       "Item successfully moved": [
         "Item movido"
       ],
@@ -1170,7 +1194,7 @@
         "Abrir o menu de extensões"
       ],
       "Organization settings successfully updated": [
-        "Configurações da organização foram atualizadas"
+        "Configurações da organização atualizadas com sucesso"
       ],
       "Owner": [
         "Proprietário"
@@ -1337,7 +1361,7 @@
         "Esta exportação não será criptografada e qualquer pessoa com acesso ao seu arquivo exportado poderá ver suas senhas. Por segurança, exclua-o após terminar de usá-lo."
       ],
       "This setting is disabled on the organization level": [
-        "A configuração está desativada para a organização"
+        "Esta configuração está desativada no nível da organização"
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Este cofre não é mais compartilhado com ninguém. Convide outras pessoas para compartilha-lo."
@@ -1361,7 +1385,7 @@
         "Desbloqueie o aplicativo ${ PASS_APP_NAME } com o código PIN para acessar as chaves de acesso"
       ],
       "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
-        "Desbloqueie o aplicativo ${ PASS_APP_NAME } com o código PIN para salvar a chave de acesso"
+        "Desbloqueie o aplicativo ${ PASS_APP_NAME } com o código PIN para salvar esta chave de acesso"
       ],
       "Unlock it with your PIN to access the settings": [
         "Desbloqueie com seu código PIN para acessar as configurações"
@@ -1621,7 +1645,7 @@
         "Exportar"
       ],
       "Exporting policy": [
-        "Exportando política"
+        "Política de exportação"
       ],
       "Field name": [
         "Nome do campo"
@@ -1851,6 +1875,9 @@
       "Special characters (!&*)": [
         "Carateres especiais (!&*)"
       ],
+      "Strong": [
+        "Forte"
+      ],
       "Suffix": [
         "Sufixo"
       ],
@@ -1916,6 +1943,12 @@
       ],
       "View logs": [
         "Visualizar registros"
+      ],
+      "Vulnerable": [
+        "Vulnerável"
+      ],
+      "Weak": [
+        "Fraco"
       ],
       "Website": [
         "Site"
@@ -2214,6 +2247,9 @@
       "Share with": [
         "Compartilhar com"
       ],
+      "Stay safer online": [
+        "Fique seguro on-line"
+      ],
       "Suggestions": [
         "Sugestões"
       ],
@@ -2249,6 +2285,9 @@
       ],
       "Vault shared with you": [
         "Cofre compartilhado com você"
+      ],
+      "Weak password": [
+        "Senha fraca"
       ],
       "Welcome to your new password manager!": [
         "Bem-vindo ao seu novo gerenciador de senhas!"
@@ -2358,7 +2397,7 @@
         "Nenhum item correspondente"
       ],
       "No passkeys found. Save your passkeys in ${ PASS_APP_NAME } to sign-in to ${ domain }.": [
-        "Não foram encontradas chaves de acesso. Salve suas chaves de acesso no ${ PASS_APP_NAME } para se conectar a ${ domain }."
+        "Nenhuma chave de acesso encontrada. Salve suas chaves de acesso no ${ PASS_APP_NAME } para se conectar a ${ domain }."
       ],
       "No password manager selected": [
         "Nenhum gerenciador de senhas selecionado"

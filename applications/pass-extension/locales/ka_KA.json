@@ -188,6 +188,9 @@
       "Edit vault": [
         "საცავის ჩასწორება"
       ],
+      "Exclude from monitoring": [
+        "მონიტორინგიდან ამოღება"
+      ],
       "Export": [
         "გატანა"
       ],
@@ -212,6 +215,9 @@
       "Get mobile apps": [
         "მობილური აპების დაყენება"
       ],
+      "Get Pass Plus": [
+        "მიიღეთ Pass Plus"
+      ],
       "Help us improve": [
         "დაგვეხმარეთ, გავუმჯობესდეთ"
       ],
@@ -232,6 +238,9 @@
       ],
       "Importing": [
         "შემოტანა"
+      ],
+      "Include in monitoring": [
+        "მონიტორინგში ჩასმა"
       ],
       "Invite others": [
         "სხვების მოწვევა"
@@ -367,6 +376,9 @@
       ],
       "Saving passkey...": [
         "წვდომის გასაღების შენახვა..."
+      ],
+      "See all": [
+        "ყველას ნახვა"
       ],
       "See members": [
         "წევრების ნახვა"
@@ -505,8 +517,14 @@
       "A checked box means the feature is disabled.": [
         "ჩართული ნიშნავს, რომ ეს ფუნქცია გამორთულია."
       ],
+      "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
+        "Dark Web Monitoring ფასიან ვერსიაშია ხელმისაწვდომი. ასწიეთ ტარიფი წვდომის დაუყოვნებლივ მისაღებად."
+      ],
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
         "დომენების სია, სადაც ${ PASS_SHORT_APP_NAME }-ში მითითებული ავტომატური ფუნქციები (ავტომატური შევსება, ავტომატური შეთავაზება და ავტომატური შენახვა) არ უნდა მუშაობდეს. ${ infoText }"
+      ],
+      "This account is vulnerable, visit the service and change your password.": [
+        "ეს ანგარიში მოწყვლადია. მიმართეთ სერვისს და შეცვალეთ თქვენი პაროლი."
       ]
     },
     "Error": {
@@ -1102,6 +1120,12 @@
       ],
       "Item restored": [
         "ელემენტი აღდგენილია"
+      ],
+      "Item successfully excluded from monitoring": [
+        "ელემენტის მონიტორინგიდან ამოღება წარმატებულია"
+      ],
+      "Item successfully included in monitoring": [
+        "ელემენტის მონიტორინგში ჩასმა წარმატებულია"
       ],
       "Item successfully moved": [
         "ელემენტის გადატანა წარმატებულია"
@@ -1845,6 +1869,9 @@
       "Special characters (!&*)": [
         "სპეცსიმბოლოები (!&*)"
       ],
+      "Strong": [
+        "ძლიერი"
+      ],
       "Suffix": [
         "სუფიქსი"
       ],
@@ -1910,6 +1937,12 @@
       ],
       "View logs": [
         "ჟურნალის ნახვა"
+      ],
+      "Vulnerable": [
+        "მოწყვლადი"
+      ],
+      "Weak": [
+        "სუსტი"
       ],
       "Website": [
         "საიტი"
@@ -2208,6 +2241,9 @@
       "Share with": [
         "გაზიარება"
       ],
+      "Stay safer online": [
+        "იყავით უსაფრთხოდ ინტერნეტში"
+      ],
       "Suggestions": [
         "შეთავაზებები"
       ],
@@ -2243,6 +2279,9 @@
       ],
       "Vault shared with you": [
         "თქვენთან გაზიარებული საცავი"
+      ],
+      "Weak password": [
+        "სუსტი პაროლი."
       ],
       "Welcome to your new password manager!": [
         "მოგესალმებით თქვენი ახალ პაროლების მმართველში!"
