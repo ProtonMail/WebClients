@@ -12,11 +12,11 @@ import {
     getStyle,
     toCamelCase,
 } from '@proton/components/containers/credentialLeak/helpers';
-import { BREACH_STATE } from '@proton/components/containers/credentialLeak/models';
+import { BREACH_STATE, FetchedBreaches } from '@proton/components/containers/credentialLeak/models';
 import { useBreaches } from '@proton/components/containers/credentialLeak/useBreaches';
 import { useApi, useErrorHandler, useNotifications, useUser, useUserSettings } from '@proton/components/hooks';
 import { useLoading } from '@proton/hooks';
-import { getBreaches } from '@proton/shared/lib/api/breaches';
+import { getBreaches, updateBreachState } from '@proton/shared/lib/api/breaches';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { enableBreachAlert } from '@proton/shared/lib/api/settings';
 import {
@@ -95,6 +95,20 @@ const BreachAlertsSecurityCenter = () => {
             return;
         },
     });
+
+    const markAsOpened = async (breach: FetchedBreaches) => {
+        try {
+            await api(
+                updateBreachState({
+                    ID: breach.id,
+                    State: BREACH_STATE.READ,
+                })
+            );
+            actions.open(breach);
+        } catch (e) {
+            handleError(e);
+        }
+    };
 
     const handleToggleOpenSubscriptionModal = () => {
         onUpgrade?.();
@@ -196,6 +210,9 @@ const BreachAlertsSecurityCenter = () => {
                                                 password={breach.passwordLastChars}
                                                 key={breach.id}
                                                 onClick={() => {
+                                                    if (breach.resolvedState === BREACH_STATE.UNREAD) {
+                                                        markAsOpened(breach);
+                                                    }
                                                     setSelectedBreachID(breach.id);
                                                     openBreachModal();
                                                 }}
