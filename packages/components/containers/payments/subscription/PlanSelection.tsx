@@ -16,7 +16,6 @@ import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
 import {
     getIpPricePerMonth,
     getOverriddenPricePerCycle,
-    hasMail,
     hasMaximumCycle,
 } from '@proton/shared/lib/helpers/subscription';
 import {
@@ -46,7 +45,6 @@ import {
     SelectTwo,
     Tabs,
     VpnLogo,
-    useSettingsLink,
 } from '../../../components';
 import { useFlag } from '../../unleash';
 import CurrencySelector from '../CurrencySelector';
@@ -56,7 +54,7 @@ import { ShortPlanLike, isShortPlanLike } from '../features/interface';
 import { getShortPlan, getVPNEnterprisePlan } from '../features/plan';
 import PlanCard from './PlanCard';
 import PlanCardFeatures, { PlanCardFeatureList, PlanCardFeaturesShort } from './PlanCardFeatures';
-import { CANCEL_ROUTE } from './b2cCancellationFlow/helper';
+import { useB2CCancellationFlow } from './b2cCancellationFlow';
 import VpnEnterpriseAction from './helpers/VpnEnterpriseAction';
 import { getVPNPlanToUse } from './helpers/payment';
 
@@ -219,7 +217,8 @@ const PlanSelection = ({
         PLANS.PASS_PLUS,
     ];
     const enabledProductB2BPlans = [PLANS.MAIL_PRO /*, PLANS.DRIVE_PRO*/];
-    const goToSettings = useSettingsLink();
+
+    const { hasAccess, redirectToCancellationFlow } = useB2CCancellationFlow();
 
     const alreadyHasMaxCycle = hasMaximumCycle(subscription);
 
@@ -374,8 +373,8 @@ const PlanSelection = ({
                 features={featuresElement}
                 onSelect={(planName) => {
                     // Mail plus users selecting free plan are redirected to the cancellation reminder flow
-                    if (planName === PLANS.FREE && hasMail(subscription) && isNewCancellationFlowEnabled) {
-                        goToSettings(CANCEL_ROUTE);
+                    if (planName === PLANS.FREE && hasAccess && isNewCancellationFlowEnabled) {
+                        redirectToCancellationFlow();
                         return;
                     }
 

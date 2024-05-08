@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { Button, ButtonLike } from '@proton/atoms/Button';
 import { Icon, SettingsLink, useModalState } from '@proton/components/components';
 import { SettingsSection } from '@proton/components/containers/account';
-import { useAppTitle, usePlans } from '@proton/components/hooks';
+import { useAppTitle, useVPNServersCount } from '@proton/components/hooks';
 import { APP_NAMES } from '@proton/shared/lib/constants';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
 
@@ -24,27 +24,23 @@ interface Props {
 }
 
 export const CancellationReminderSection = ({ app }: Props) => {
+    const [{ paid }] = useVPNServersCount();
     const { hasAccess, plan, redirectToDashboard, subscription, setStartedCancellation } = useB2CCancellationFlow();
     const { cancelSubscription, cancelSubscriptionModals, loadingCancelSubscription } = useCancelSubscriptionFlow({
         app,
     });
 
-    const [planResult] = usePlans();
     const [cancelModalProps, setCancelModalOpen, cancelRenderModal] = useModalState();
     const [redirectModalProps, setRedirectModalOpen, redirectRenderModal] = useModalState();
 
-    const freePlan = planResult?.freePlan ?? undefined;
-    const rewardedDrive = freePlan ? freePlan.MaxDriveSpace >= freePlan.MaxDriveRewardSpace : false;
-    const rewardedMail = freePlan ? freePlan.MaxBaseSpace >= freePlan.MaxBaseRewardSpace : false;
-
     const [config, setConfig] = useState<ReturnType<typeof getReminderPageConfig> | null>(
-        getReminderPageConfig(rewardedDrive, rewardedMail, subscription, plan)
+        getReminderPageConfig(subscription, plan)
     );
 
     useEffect(() => {
-        const config = getReminderPageConfig(rewardedDrive, rewardedMail, subscription, plan);
+        const config = getReminderPageConfig(subscription, plan, paid.countries);
         setConfig(config);
-    }, [hasAccess]);
+    }, [hasAccess, paid]);
 
     useAppTitle(c('Subscription reminder').t`Cancel subscription`);
 
@@ -74,23 +70,9 @@ export const CancellationReminderSection = ({ app }: Props) => {
                     <ReminderSectionPlan {...config.reminder} />
                     <ReminderSectionTestimonials {...config.testimonials} />
                     <ReminderSectionFeatures {...config.features} />
-                    <ReminderSectionStorage {...config.storage} />
-                    <SettingsSection className="container-section-sticky-section flex flex-column-reverse lg:flex-row gap-6 lg:gap-0 items-start justify-space-between">
-                        <Button
-                            shape="underline"
-                            className="color-weak"
-                            onClick={() => {
-                                setCancelModalOpen(true);
-                            }}
-                        >{c('Subscription reminder').t`I still want to cancel`}</Button>
-                        <div className="flex gap-2">
-                            <ButtonLike
-                                as="a"
-                                href={getStaticURL('/support')}
-                                target="_blank"
-                                shape="outline"
-                                disabled={loadingCancelSubscription}
-                            >{c('Subscription reminder').t`Have a question?`}</ButtonLike>
+                    {config.storage && <ReminderSectionStorage {...config.storage} />}
+                    <SettingsSection className="container-section-sticky-section">
+                        <div className="flex gap-2 border-bottom mb-6 pb-6">
                             <ButtonLike
                                 as={SettingsLink}
                                 path="/dashboard"
@@ -98,18 +80,32 @@ export const CancellationReminderSection = ({ app }: Props) => {
                                 color="norm"
                                 className="flex flex-nowrap items-center justify-center"
                             >
-                                <Icon name="brand-proton-mail-filled-plus" size={5} className="mr-1" />
-                                {config.planCta}
+                                <Icon name={config.keepPlanCTAIcon} size={5} className="mr-1" />
+                                {config.keepPlanCTA}
                             </ButtonLike>
+                            <ButtonLike
+                                as="a"
+                                href={getStaticURL('/support')}
+                                target="_blank"
+                                shape="outline"
+                                disabled={loadingCancelSubscription}
+                            >{c('Subscription reminder').t`Have a question?`}</ButtonLike>
                         </div>
+                        <Button
+                            shape="underline"
+                            className="color-weak py-0"
+                            onClick={() => {
+                                setCancelModalOpen(true);
+                            }}
+                        >{c('Subscription reminder').t`I still want to cancel`}</Button>
                     </SettingsSection>
                 </div>
             </div>
             {cancelRenderModal && (
                 <CancelConfirmationModal
                     {...cancelModalProps}
-                    ctaText={config.planCta}
-                    features={config.features.features}
+                    ctaKeepIcon={config.keepPlanCTAIcon}
+                    ctaText={config.keepPlanCTA}
                     cancelSubscription={handleCancelSubscription}
                     {...config.confirmationModal}
                 />
