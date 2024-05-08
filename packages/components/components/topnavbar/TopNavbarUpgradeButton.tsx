@@ -67,10 +67,9 @@ const TopNavbarUpgradeButton = ({ app }: Props) => {
                             }
                         } else if (upsellConfig.onUpgrade) {
                             upsellConfig.onUpgrade();
-                            return;
+                        } else {
+                            goToSettings(upsellConfig.upgradePath);
                         }
-
-                        goToSettings(upsellConfig.upgradePath);
                     }}
                     iconName={upgradeIcon}
                     size={upgradeText.length > 14 ? 'small' : 'medium'}
