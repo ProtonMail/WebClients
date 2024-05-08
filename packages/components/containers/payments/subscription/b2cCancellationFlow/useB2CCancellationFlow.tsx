@@ -1,7 +1,14 @@
 import { useState } from 'react';
 
 import { useSubscription } from '@proton/components/hooks';
-import { getPlan, hasMail } from '@proton/shared/lib/helpers/subscription';
+import {
+    getPlan,
+    hasBundle,
+    hasDrive,
+    hasFamily,
+    hasMail,
+    hasNewVisionary,
+} from '@proton/shared/lib/helpers/subscription';
 
 import useSettingsLink from '../../../../components/link/useSettingsLink';
 import { CANCEL_ROUTE } from './helper';
@@ -13,7 +20,14 @@ const useB2CCancellationFlow = () => {
     const plan = getPlan(subscription);
 
     const getHasAccess = () => {
-        if (startedCancellation || hasMail(subscription)) {
+        if (
+            startedCancellation ||
+            hasMail(subscription) ||
+            hasBundle(subscription) ||
+            hasFamily(subscription) ||
+            hasNewVisionary(subscription) ||
+            hasDrive(subscription)
+        ) {
             return true;
         }
 

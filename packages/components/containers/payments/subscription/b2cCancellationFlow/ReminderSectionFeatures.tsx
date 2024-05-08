@@ -1,19 +1,33 @@
 import { Icon, StripedItem, StripedList } from '@proton/components/components';
-import { SettingsSection, SettingsSectionTitle } from '@proton/components/containers/account';
+import { SettingsParagraph, SettingsSection, SettingsSectionTitle } from '@proton/components/containers/account';
 
 import { PlanConfigFeatures } from './interface';
 
-const ReminderSectionFeatures = ({ title, features }: PlanConfigFeatures) => {
+const ReminderSectionFeatures = ({ title, features, description, extraWarning }: PlanConfigFeatures) => {
     return (
-        <SettingsSection className="container-section-sticky-section">
+        <SettingsSection className="container-section-sticky-section mb-6">
             <SettingsSectionTitle>{title}</SettingsSectionTitle>
-            <StripedList className="lg:w-2/3" alternate="odd">
-                {features.map(({ icon, text }) => (
-                    <StripedItem key={text} left={<Icon name={icon} className="color-primary" />}>
-                        {text}
-                    </StripedItem>
-                ))}
-            </StripedList>
+            <SettingsParagraph>{description}</SettingsParagraph>
+            <section className="border rounded-lg p-4 lg:w-2/3">
+                <StripedList className="my-0" alternate="odd">
+                    {features.map(({ icon, text }) => (
+                        <StripedItem key={text} left={<Icon name={icon} className="color-primary" />}>
+                            {text}
+                        </StripedItem>
+                    ))}
+                </StripedList>
+            </section>
+            {extraWarning && (
+                <SettingsParagraph className="mt-6">
+                    <div
+                        className="rounded p-2 flex flex-nowrap gap-2"
+                        style={{ backgroundColor: 'var(--signal-danger-minor-1)' }}
+                    >
+                        <Icon name="exclamation-circle-filled" className="shrink-0 mt-0.5 color-danger" />
+                        <span className="flex-1">{extraWarning}</span>
+                    </div>
+                </SettingsParagraph>
+            )}
         </SettingsSection>
     );
 };
