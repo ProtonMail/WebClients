@@ -189,7 +189,7 @@ const PlansSection = ({ app }: { app: APP_NAMES }) => {
                 shape="ghost"
                 className="flex mx-auto items-center mb-4"
                 onClick={() => {
-                    if (!hasInboxDesktopInAppPayments) {
+                    if (isElectronApp && !hasInboxDesktopInAppPayments) {
                         openLinkInBrowser(getAppHref(`mail/upgrade`, APPS.PROTONACCOUNT));
                         return;
                     }
