@@ -136,7 +136,7 @@ export class DummyShortenRunningAction extends DummyRunningActionBase {
     protected async startGeneration(action: ShortenAction, callback: GenerationCallback) {
         try {
             this.running = true;
-            const nWordsInput = action.partToRephase.split(/\W/).length;
+            const nWordsInput = action.partToRephrase.split(/\W/).length;
             const nWordsOutput = nWordsInput > 10 ? nWordsInput / 2 : nWordsInput;
             const words = generateRandomSentence(nWordsOutput);
             let fulltext = '';
@@ -199,26 +199,25 @@ export class DummyLlmManager implements LlmManager {
         return this.downloading;
     }
 
-    async startDownload(updateProgress: DownloadProgressCallback): Promise<void> {
-        void (async () => {
-            this.downloading = this.downloadedChunks < this.TOTAL_CHUNKS;
-            while (this.downloading) {
-                const done = this.downloadedChunks === this.TOTAL_CHUNKS;
-                this.downloading = !done;
-                updateProgress({
-                    estimatedTotalBytes: this.CHUNK_SIZE * this.TOTAL_CHUNKS,
-                    receivedBytes: this.CHUNK_SIZE * this.downloadedChunks,
-                    receivedFiles: this.downloadedChunks,
-                    totalFiles: this.TOTAL_CHUNKS,
-                });
-                if (done) break;
-                if (!done) {
-                    await delay(400);
-                    this.downloadedChunks++;
-                }
+    async startDownload(updateProgress: DownloadProgressCallback): Promise<boolean> {
+        this.downloading = this.downloadedChunks < this.TOTAL_CHUNKS;
+        while (this.downloading) {
+            const done = this.downloadedChunks === this.TOTAL_CHUNKS;
+            this.downloading = !done;
+            updateProgress({
+                estimatedTotalBytes: this.CHUNK_SIZE * this.TOTAL_CHUNKS,
+                receivedBytes: this.CHUNK_SIZE * this.downloadedChunks,
+                receivedFiles: this.downloadedChunks,
+                totalFiles: this.TOTAL_CHUNKS,
+            });
+            if (done) break;
+            if (!done) {
+                await delay(400);
+                this.downloadedChunks++;
             }
-            this.downloading = false;
-        })();
+        }
+        this.downloading = false;
+        return true;
     }
 
     cancelDownload(): boolean {
