@@ -32,7 +32,7 @@ const ReminderSectionTestimonials = ({
             <section className="testimonial-grid">
                 {testimonials.map(({ title, description, ctaText, link, picture }) => (
                     <div key={title} className="border flex flex-column gap-2 rounded-lg h-full p-4">
-                        <img src={picture} alt={title} className="rounded-lg" />
+                        <img src={picture} alt={title} className="rounded-lg object-cover" />
                         <p className="m-0 text-bold">{title}</p>
                         <p className="m-0 grow color-weak text-sm">{description}</p>
                         <a href={link} target="_blank" rel="noopener noreferrer">

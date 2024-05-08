@@ -126,7 +126,7 @@ export const getAccountAppRoutes = ({
                         available: isPaid && canPay && !cancellablePlan && hasVPNOrPassB2BPlan,
                     },
                     {
-                        text: c('Title').t`Downgrade account`,
+                        text: c('Title').t`Cancel subscription`,
                         id: 'downgrade-account',
                         available: isPaid && canPay && !cancellablePlan && !hasVPNOrPassB2BPlan,
                     },
