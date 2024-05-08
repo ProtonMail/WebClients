@@ -7,6 +7,7 @@ import {
     FREE_VAULTS,
     get2FAAuthenticator,
     get2FAAuthenticatorText,
+    getDevices,
     getDevicesAndAliases,
     getLoginsAndNotes,
     getSecureSharingText,
@@ -175,7 +176,7 @@ export const getPassBenefits = (isPaidPass: boolean): BenefitItem[] => {
 };
 
 export const getFreePassFeatures = () => {
-    return [getLoginsAndNotes(), getDevicesAndAliases(), getPassKeys(true), getSecureVaultSharingWith(FREE_VAULTS)];
+    return [getLoginsAndNotes(), getDevices(), getPassKeys(true), getSecureVaultSharingWith(FREE_VAULTS)];
 };
 
 export const getCustomPassFeatures = () => {
