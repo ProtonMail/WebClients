@@ -169,7 +169,7 @@ describe('LlmModel', () => {
                 'hesitate to reach out. Let me know if there is anything else I can help you with.\n\n' +
                 'Best regards,\n' +
                 '[Your Name]',
-            partToRephase:
+            partToRephrase:
                 "If you're still interested in attending, I would recommend checking out the official website for " +
                 'more information on ticket sales and availability. Additionally, you may want to explore alternative ' +
                 'options such as speaking at the conference or volunteering, which could potentially grant access ' +
@@ -183,6 +183,6 @@ describe('LlmModel', () => {
         expect(resolved).toEqual(true);
         expect(callback).toHaveBeenCalled();
         expect(acc.length).toBeGreaterThanOrEqual(3);
-        expect(acc.length).toBeLessThanOrEqual(action.partToRephase.length);
+        expect(acc.length).toBeLessThanOrEqual(action.partToRephrase.length);
     });
 });
