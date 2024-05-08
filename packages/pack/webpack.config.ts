@@ -19,7 +19,7 @@ const getConfig = (env: any): Configuration => {
     const assetsFolder = 'assets';
 
     const defaultBrowsersList = isProduction
-        ? `> 0.5%, not IE 11, Firefox ESR, Safari 14, iOS 14`
+        ? `> 0.5%, not IE 11, Firefox ESR, Safari 14, iOS 14, Chrome 80`
         : 'last 1 chrome version, last 1 firefox version, last 1 safari version';
 
     const options = {
