@@ -17,6 +17,7 @@ interface Props {
 const PlainTextEditor = ({ onFocus, onReady, onChange, onMouseUp, onKeyUp, children, ...rest }: Props) => {
     const textareaRef = useRef<HTMLTextAreaElement>(null);
     const isMountedCallback = useIsMounted();
+    const mouseDownRef = useRef(false);
 
     let beforeSelection: string;
     let afterSelection: string;
@@ -62,6 +63,26 @@ const PlainTextEditor = ({ onFocus, onReady, onChange, onMouseUp, onKeyUp, child
         onReady(actions);
     }, []);
 
+    // Listen mouse up at document lvl to handle the case when the user clicks
+    // outside the editor
+    useEffect(() => {
+        const handleMouseUp = () => {
+            if (mouseDownRef.current) {
+                mouseDownRef.current = false;
+                onMouseUp?.();
+            }
+        };
+        document.addEventListener('mouseup', handleMouseUp);
+
+        return () => {
+            document.removeEventListener('mouseup', handleMouseUp);
+        };
+    }, []);
+
+    const handleMouseDown = () => {
+        mouseDownRef.current = true;
+    };
+
     return (
         <div className="w-full h-full pt-2 pb-4 px-2" {...rest}>
             <textarea
@@ -71,7 +92,7 @@ const PlainTextEditor = ({ onFocus, onReady, onChange, onMouseUp, onKeyUp, child
                 onChange={(event: ChangeEvent<HTMLTextAreaElement>) => {
                     onChange(event.target.value);
                 }}
-                onMouseUp={onMouseUp}
+                onMouseDown={handleMouseDown}
                 onKeyUp={onKeyUp}
                 data-testid="editor-textarea"
             />

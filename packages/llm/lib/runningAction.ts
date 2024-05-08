@@ -1,6 +1,6 @@
-import { WebWorkerEngine } from '@mlc-ai/web-llm';
+import { GenerationConfig, WebWorkerEngine } from '@mlc-ai/web-llm';
 
-import type { Action, PromiseReject, PromiseResolve, RunningAction } from '@proton/llm/lib/types';
+import type { Action, GenerationCallback, PromiseReject, PromiseResolve, RunningAction } from '@proton/llm/lib/types';
 
 export class BaseRunningAction implements RunningAction {
     private action_: Action;
@@ -20,31 +20,35 @@ export class BaseRunningAction implements RunningAction {
     // @ts-ignore
     protected generation: Promise<void>;
 
-    constructor(prompt: any, callback: any, chat: any, action: Action) {
-        let fulltext = '';
+    constructor(prompt: string, callback: GenerationCallback, chat: WebWorkerEngine, action: Action, stop?: string[]) {
         const generateProgressCallback = (_step: number, message: string) => {
-            const token = message.slice(fulltext.length);
-            fulltext = message;
-            callback(token, fulltext);
+            const fulltext = message.replace(/^[ \n]*Subject:[^\n]*(\n+|$)/, '');
+            callback(fulltext);
         };
 
         this.finishedPromise = new Promise<void>((resolve: PromiseResolve, reject: PromiseReject) => {
             this.finishedPromiseSignals = { resolve, reject };
         });
 
+        const stopStrings = ['<|', '\n[Your Name]', ...(stop || [])];
+        const genConfig: GenerationConfig = {
+            stop: stopStrings,
+        };
+
         this.generation = chat
-            .generate(prompt, generateProgressCallback)
+            .generate(prompt, generateProgressCallback, undefined, genConfig)
             .then(() => {
                 this.finishedPromiseSignals!.resolve();
             })
-            .catch(() => {
+            .catch((e) => {
                 this.done = true;
-                this.finishedPromiseSignals!.reject();
-                this.done = true;
+                this.finishedPromiseSignals!.reject(e);
             })
-            .finally(() => {
+            .finally(async () => {
                 this.running = false;
+                await chat.resetChat();
             });
+
         this.chat = chat;
         this.running = true;
         this.done = false;
