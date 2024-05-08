@@ -3,7 +3,6 @@ import { PLANS } from '@proton/shared/lib/constants';
 
 export interface PlanConfigReminder {
     title: string;
-    description: string;
 }
 
 export interface PlanConfigTestimonial {
@@ -22,24 +21,24 @@ export interface PlanConfigTestimonial {
 
 export interface PlanConfigFeatures {
     title: string;
+    description: string;
     features: {
         icon: IconName;
         text: string;
     }[];
+    extraWarning?: string;
 }
 
 export interface PlanConfigStorage {
     title: string;
+    description: string;
     warning: string | JSX.Element;
-    quotaWarning: {
-        title: string;
-        description: { id: number; text: string | JSX.Element }[];
-    }[];
 }
 
 export interface ConfirmationModal {
     description: string[];
-    learnMoreLink: string;
+    warningTitle: string;
+    warningPoints: string[];
 }
 
 export interface PlanConfig {
@@ -47,8 +46,9 @@ export interface PlanConfig {
     reminder: PlanConfigReminder;
     testimonials: PlanConfigTestimonial;
     features: PlanConfigFeatures;
-    storage: PlanConfigStorage;
+    storage?: PlanConfigStorage;
     confirmationModal: ConfirmationModal;
-    planCta: string;
+    keepPlanCTA: string;
+    keepPlanCTAIcon: IconName;
     redirectModal: string;
 }
