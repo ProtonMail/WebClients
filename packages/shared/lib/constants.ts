@@ -791,7 +791,7 @@ export const PLAN_NAMES = {
     [PLANS.BUNDLE_PRO]: 'Business',
     [PLANS.ENTERPRISE]: 'Enterprise',
     [PLANS.FAMILY]: 'Proton Family',
-    [PLANS.NEW_VISIONARY]: 'Visionary',
+    [PLANS.NEW_VISIONARY]: 'Proton Visionary',
     [PLANS.VPN_PRO]: 'VPN Essentials',
     [PLANS.VPN_BUSINESS]: 'VPN Business',
     [PLANS.VPN_PASS_BUNDLE]: 'VPN and Pass bundle',

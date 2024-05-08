@@ -10,15 +10,28 @@ interface Props extends ModalProps {
 }
 
 const CancelRedirectionModal = ({ text, plan, ...props }: Props) => {
+    const ResubscribeButton = () => {
+        if (plan === PLANS.NEW_VISIONARY) {
+            return null;
+        }
+
+        return (
+            <ButtonLike
+                as={SettingsLink}
+                fullWidth
+                path={`/dashboard/upgrade?plan=${plan}&target=compare`}
+                color="norm"
+            >{c('Subscription reminder').t`Resubscribe`}</ButtonLike>
+        );
+    };
+
     return (
         <Prompt
             {...props}
             title={c('Subscription reminder').t`Subscription canceled`}
             data-testid="cancellation-reminder-redirection"
             buttons={[
-                <ButtonLike as={SettingsLink} path={`/dashboard/upgrade?plan=${plan}&target=compare`} color="norm">{c(
-                    'Subscription reminder'
-                ).t`Resubscribe`}</ButtonLike>,
+                <ResubscribeButton />,
                 <ButtonLike as={SettingsLink} path="/dashboard">{c('Subscription reminder').t`Close`}</ButtonLike>,
             ]}
         >
