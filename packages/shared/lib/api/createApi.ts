@@ -202,7 +202,7 @@ const createApi = ({
                                     text: errorMessage,
                                     ...(code in codeExpirations
                                         ? {
-                                              id: code,
+                                              key: code,
                                               expiration: codeExpirations[code],
                                           }
                                         : {
