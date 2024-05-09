@@ -453,11 +453,11 @@
       "Not now": [
         "Agora não"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Abrir configurações do ${ CALENDAR_APP_NAME }"
@@ -1488,6 +1488,9 @@
       ],
       "Work": [
         "Trabalho"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -3744,6 +3747,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "E-mail"
       ],
@@ -3752,6 +3758,9 @@
       ],
       "No verification method available": [
         "Nenhum método de verificação disponível"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "Import calendar": {
@@ -3985,6 +3994,9 @@
       ],
       "ICS file": [
         "Arquivo ICS"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -4220,7 +4232,7 @@
         "Ciclo de faturamento: ${ text }"
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
-        "Aumente a identidade de marca da sua organização e crie uma experiência online mais consistente para os seus usuários."
+        "Aumente a identidade de marca da sua organização e crie uma experiência on-line mais consistente para os seus usuários."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ao fazer o downgrade para um plano gratuito, você perderá permanentemente esses benefícios, mesmo que você faça o upgrade novamente no futuro."
@@ -5171,6 +5183,9 @@
       "Expired": [
         "Expirado"
       ],
+      "KOO": [
+        "KOO"
+      ],
       "Obsolete": [
         "Obsoleta"
       ],
@@ -5182,6 +5197,9 @@
       ],
       "Trusted": [
         "Confiável"
+      ],
+      "WKD": [
+        "WKD"
       ]
     },
     "Knowledge base link label": {
@@ -6376,7 +6394,7 @@
         "Organize itens com múltiplos cofres"
       ],
       "Passkeys supported": [
-        "Passkeys suportadas"
+        "Chaves de acesso suportadas"
       ],
       "Password-protected Emails": [
         "E-mails protegidos por senha"
@@ -6632,6 +6650,11 @@
       ],
       "Switch plans?": [
         "Mudar de plano?"
+      ]
+    },
+    "new_plans: Title": {
+      "VPN Enterprise": [
+        "VPN Enterprise"
       ]
     },
     "new_plans: tooltip": {
@@ -7208,11 +7231,17 @@
       ]
     },
     "Payment method option": {
+      "Bitcoin": [
+        "Bitcoin"
+      ],
       "Credit/debit card": [
         "Cartão de crédito/débito"
       ],
       "New credit/debit card": [
         "Novo cartão de crédito/débito"
+      ],
+      "PayPal": [
+        "PayPal"
       ]
     },
     "Payments": {
@@ -8205,7 +8234,7 @@
         "Encaminhamento de e-mail automático ${ strongText }"
       ],
       "Data breach alerts ${ strongArgument }": [
-        "Alertas de violações de dados ${ strongArgument }"
+        "Alerta de violações de dados ${ strongArgument }"
       ],
       "Desktop app": [
         "Aplicativo para computador"

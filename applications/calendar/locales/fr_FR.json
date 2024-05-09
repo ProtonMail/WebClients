@@ -453,10 +453,10 @@
       "Not now": [
         "Plus tard"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -2399,7 +2399,7 @@
         "Il semble que la liste de contacts que vous importez contienne des groupes. Nous vous invitons à vérifier comment ces groupes doivent être importés."
       ],
       "Loading availability": [
-        "Chargement des disponibilités…"
+        "Chargement des disponibilités"
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Fusion des contacts en cours, ceci peut prendre quelques minutes. Une fois le processus terminé, vous pourrez fermer cette fenêtre."
@@ -2475,11 +2475,32 @@
       "Bugs or quality issue": [
         "Bugs ou problème de qualité"
       ],
+      "I do not wish to share": [
+        "Je ne souhaite pas partager la raison."
+      ],
+      "I found a cheaper VPN": [
+        "J'ai trouvé un VPN moins cher."
+      ],
+      "I found a VPN with better features": [
+        "J'ai trouvé un VPN avec plus de fonctionnalités."
+      ],
+      "I have not managed to connect": [
+        "Je n'ai pas réussi à me connecter."
+      ],
+      "I only needed a VPN short-term": [
+        "J'avais besoin d'un VPN uniquement pour une courte durée."
+      ],
       "I use a different ${ BRAND_NAME } account": [
         "J'utilise un autre compte ${ BRAND_NAME }."
       ],
+      "It doesn't do what I need": [
+        "Il ne répond pas à mes besoins."
+      ],
       "Missing feature(s)": [
         "Fonctionnalités manquantes"
+      ],
+      "Other reason (please comment)": [
+        "Autre raison (dites-nous comment nous pouvons nous améliorer)"
       ],
       "Subscription is too expensive": [
         "Abonnement trop cher"
@@ -2489,6 +2510,9 @@
       ],
       "Temporary need, may come back in the future": [
         "Besoin temporaire, qui pourrait revenir à l'avenir"
+      ],
+      "The VPN is too slow": [
+        "Le VPN est trop lent."
       ]
     },
     "Downgrade modal exit survey title": {
@@ -4187,7 +4211,7 @@
         "Une invitation sera envoyée aux participants ajoutés."
       ],
       "An invitation will be sent to all participants. Which event would you like to update?": [
-        "Une invitation a été envoyée à tous les participants. Quel événement souhaitez-vous mettre à jour ?"
+        "Une invitation sera envoyée à tous les participants. Quel événement souhaitez-vous mettre à jour ?"
       ],
       "An invitation will be sent to the event participants.": [
         "Une invitation sera envoyée aux participants."
@@ -4223,7 +4247,7 @@
         "Cycle de facturation : ${ text }"
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
-        "Mettez en avant l'image de marque de votre organisation et créez une expérience en ligne plus cohérente pour vos utilisateurs."
+        "Mettez en avant l'image de marque de votre organisation et créez une véritable expérience en ligne pour vos utilisateurs."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "En passant à l'abonnement Free, vous perdrez définitivement ces avantages, même si vous repassez par la suite à un abonnement supérieur."
@@ -4728,7 +4752,7 @@
         "Nous devons déchiffrer vos contacts localement avant de pouvoir les exporter. À la fin du processus, un fichier VCF sera généré et vous pourrez le télécharger."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
-        "Les informations exposées ont été divulguées par un service tiers. Les informations de votre compte ${ BRAND_NAME } restent en sécurité et chiffrées. ${ learnMoreLink }"
+        "Les informations exposées ont été divulguées par un service tiers. Les informations de votre compte ${ BRAND_NAME } restent sécurisées et chiffrées. ${ learnMoreLink }"
       ],
       "The following participants cannot be notified about your changes:": [
         "Ces participants ne peuvent pas être informés de vos modifications :"
@@ -5733,7 +5757,7 @@
         "Demander une invitation"
       ],
       "stay safer online": [
-        "améliorer votre sécurité en ligne"
+        "Protégez-vous en ligne"
       ],
       "What’s this?": [
         "Qu'est-ce que c'est ?"
@@ -5790,7 +5814,7 @@
         "Votre ${ mailStorage } est plein. Pour envoyer ou recevoir des messages, libérez de l'espace ou ${ cta }."
       ],
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
-        "Votre compte risque d'être supprimé. Pour éviter de perdre des données, demandez à votre administrateur de changer d'abonnement. ${ cta }"
+        "Votre compte risque d'être supprimé. Pour éviter de perdre des données, demandez à votre administrateur de mettre à jour votre abonnement. ${ cta }"
       ],
       "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
         "Votre espace de stockage est plein. Pour envoyer ou recevoir des messages, libérez de l'espace ou ${ cta }."
@@ -8423,7 +8447,7 @@
         "L'invitation a été envoyée et les participants ont été ajoutés à tous les événements."
       ],
       "Last modified aliases stored in your oldest vault": [
-        "Derniers alias modifiés stockés dans votre coffre-fort le plus ancien"
+        "Les derniers alias modifiés sont stockés dans votre coffre-fort le plus ancien"
       ],
       "Participants notified and all events updated": [
         "Les participants ont été informés et tous les événements ont été mis à jour."
