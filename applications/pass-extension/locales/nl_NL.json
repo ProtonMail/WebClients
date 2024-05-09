@@ -514,6 +514,10 @@
       ]
     },
     "Description": {
+      "${ total } other login uses the same password": [
+        "${ total } andere login gebruikt hetzelfde wachtwoord",
+        "${ total } andere logins gebruiken hetzelfde wachtwoord"
+      ],
       "A checked box means the feature is disabled.": [
         "Een selectievakje betekent dat de functie is uitgeschakeld."
       ],
@@ -2117,9 +2121,6 @@
     "Title": {
       "${ PASS_APP_NAME } Settings": [
         "${ PASS_APP_NAME } Instellingen"
-      ],
-      "${ PASS_SHORT_APP_NAME } monitor": [
-        "${ PASS_SHORT_APP_NAME } monitor"
       ],
       "Auto-lock update": [
         "Automatische vergrendelingsupdate"
