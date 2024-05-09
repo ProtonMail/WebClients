@@ -4,9 +4,12 @@ import { useLocation } from 'react-router-dom';
 import { DEFAULT_APP, getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
 import { getIsIframe } from '@proton/shared/lib/helpers/browser';
+import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 
 import { useConfig } from '../../hooks';
 import AppLink, { AppLinkProps } from './AppLink';
+
+const NEW_TAB_TARGET = isElectronMail ? '_top' : '_blank';
 
 const canOpenInSameTab = (APP_NAME: APP_NAMES, settingsApp: APP_NAMES | undefined, toSettingsForApp: APP_NAMES) => {
     const isIframe = getIsIframe();
@@ -49,7 +52,7 @@ const SettingsLink = ({ path, app, children, ...rest }: Props, ref: Ref<HTMLAnch
             ref={ref}
             toApp={APPS.PROTONACCOUNT}
             // If going to settings for the same app
-            target={canOpenInSameTab(APP_NAME, settingsApp, toSettingsForApp) ? '_self' : '_blank'}
+            target={canOpenInSameTab(APP_NAME, settingsApp, toSettingsForApp) ? '_self' : NEW_TAB_TARGET}
             {...rest}
         >
             {children}
