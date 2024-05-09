@@ -108,7 +108,7 @@
         "PayPal जोड़ें"
       ],
       "Add public holidays": [
-        "सार्वजनिक छुट्टियां जोड़ें"
+        "सार्वजनिक अवकाश जोड़ें"
       ],
       "Add sieve filter": [
         "चलनी फ़िल्टर जोड़ें"
@@ -249,7 +249,7 @@
         "कुंजी को क्लिपबोर्ड में कॉपी करें"
       ],
       "Copy link": [
-        "प्रतिरूप जोड़ना"
+        "लिंक कॉपी करें"
       ],
       "Create": [
         "बनाएँ"
@@ -358,9 +358,6 @@
       ],
       "Downgrade": [
         "डाउनग्रेड करें"
-      ],
-      "Downgrade account": [
-        "खाते को डाउनग्रेड करें"
       ],
       "Download": [
         "डाउनलोड करें"
@@ -867,7 +864,7 @@
         "सेटिंग"
       ],
       "Share": [
-        "शेयर करें"
+        "साझा करें"
       ],
       "Share via link": [
         "लिंक से शेयर करें"
@@ -5350,14 +5347,6 @@
         "आपके कैलेंडर कंटेंट का कुछ हिस्सा सपोर्ट नहीं किया जाता है और आयात नहीं किया जाएगा।"
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "अतिरिक्त डुप्लिकेट कुंजियों का पता चला। अधिक जानकारी के लिए कृपया व्यक्तिगत रूप से अपलोड करें।"
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "कुंजी ${ fingerprint } पहले ही अपलोड की जा चुकी है"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } के लिए आपकी अनुमति की आवश्यकता है ${ enableDesktopNotifications }"
@@ -6934,9 +6923,6 @@
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "इससे आपकी वर्तमान सशुल्क सदस्यता रद्द हो जाएगी और आपने जो भी लॉयल्टी लाभ अर्जित किया है वह खो देंगे।"
       ],
-      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
-        "यह आपकी वर्तमान सशुल्क सदस्यता को रद्द कर देगा और आपके द्वारा जमा किए गए किसी भी लॉयल्टी लाभ को खो देंगे। आपकी सदस्यता की शेष राशि खाता क्रेडिट के रूप में वापस कर दी जाएगी।"
-      ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
         "इससे ${ rententionLabel } से पुराने आपके फ़ाइलों के सभी पिछले संस्करण हटा दिए जाएंगे।"
       ],
@@ -7511,6 +7497,14 @@
       ],
       "Zoom meeting": [
         "ज़ूम मीटिंग"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "अतिरिक्त डुप्लिकेट कुंजियों का पता चला। अधिक जानकारी के लिए कृपया व्यक्तिगत रूप से अपलोड करें।"
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "कुंजी ${ fingerprint } पहले ही अपलोड की जा चुकी है"
       ]
     },
     "Info - folder colouring feature": {
@@ -10347,7 +10341,7 @@
         "उसी दिन"
       ],
       "week before": [
-        "इतने सप्ताह पहले",
+        "सप्ताह पहले",
         "सप्ताह पहले"
       ]
     },
@@ -11957,9 +11951,6 @@
       ]
     },
     "Subscription reminder": {
-      "${ BRAND_NAME } was targeted by Russia in one of the most aggressive censorship campaigns in recent memory, and our team fought back.": [
-        "${ BRAND_NAME } को रूस द्वारा हाल के दिनों में सबसे आक्रामक सेंसरशिप अभियानों में से एक के तहत निशाना बनाया गया, और हमारी टीम ने इसका डटकर मुकाबला किया।"
-      ],
       "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
         "${ BRAND_NAME } की आय का एकमात्र स्रोत उपयोगकर्ता सदस्यताएँ हैं। आपका समर्थन हमें स्वतंत्र रहने, गोपनीयता को ऑनलाइन डिफ़ॉल्ट बनाने के हमारे लक्ष्य को आगे बढ़ाने और गोपनीयता और स्वतंत्रता के लिए लड़ने वाले कार्यकर्ताओं और संगठनों का समर्थन जारी रखने की अनुमति देता है।"
       ],
@@ -11970,14 +11961,8 @@
       "${ planMaxSpace } total storage": [
         "कुल स्टोरेज ${ planMaxSpace }"
       ],
-      "${ planName } doesn't just provide extra storage. It lets you manage your emails faster, customize your inbox and email addresses, and access the desktop app.": [
-        "${ planName } सिर्फ़ अतिरिक्त स्टोरेज ही नहीं देता है। यह आपको अपने ईमेल तेज़ी से प्रबंधित करने, अपने इनबॉक्स और ईमेल पते को अनुकूलित करने और डेस्कटॉप ऐप तक पहुँच की सुविधा देता है।"
-      ],
       "10 email addresses": [
         "10 ईमेल पते"
-      ],
-      "A direct contribution to our mission": [
-        "हमारे लक्ष्य में प्रत्यक्ष योगदान"
       ],
       "Calendar sharing": [
         "कैलेंडर शेयर"
@@ -12000,9 +11985,6 @@
       "Learn more about our impact": [
         "हमारे प्रभाव के बारे में अधिक जानें"
       ],
-      "Let us remind you of everything ${ planName } can do": [
-        "हम आपको याद दिलाना चाहते हैं कि ${ planName } कितनी चीजें कर सकता है"
-      ],
       "Our fight against censorship in Russia": [
         "रूस में सेंसरशिप के खिलाफ हमारी लड़ाई"
       ],
@@ -12017,9 +11999,6 @@
       ],
       "Subscription canceled": [
         "सदस्यता रद्द की गई"
-      ],
-      "When you cancel, you will lose access to": [
-        "जब आप रद्द करेंगे, आप इन तक पहुंच खो देंगे"
       ]
     },
     "Subscription renewal state": {
@@ -12511,7 +12490,7 @@
         "पता जोड़े"
       ],
       "Add another notification to remind you of this event": [
-        "आपको इस घटना की याद दिलाने के लिए एक और सूचना जोड़ें"
+        "इस कार्यक्रम की याद दिलाने के लिए आप और सूचना जोड़ें"
       ],
       "Add contact group name": [
         "संपर्क समूह का नाम जोड़ें"

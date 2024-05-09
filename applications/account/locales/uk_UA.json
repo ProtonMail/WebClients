@@ -371,9 +371,6 @@
       "Downgrade": [
         "Перейти на нижчий тарифний план"
       ],
-      "Downgrade account": [
-        "Понизити тарифний план"
-      ],
       "Download": [
         "Завантажити"
       ],
@@ -6027,17 +6024,6 @@
         "Частина вмісту вашого календаря не підтримується і не буде імпортована."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Виявлено додаткові дублікати ключів. Завантажте індивідуально для отримання додаткової інформації."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Ключ ${ fingerprint } вже вивантажено"
-      ],
-      "Selected color:": [
-        "Вибраний колір:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } потребує вашого дозволу, щоб ${ enableDesktopNotifications }."
@@ -7887,9 +7873,6 @@
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Це скасує вашу поточну передплату, і ви втратите всі накопичені привілеї лояльності."
       ],
-      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
-        "Це скасує вашу поточну передплату і ви втратите будь-які накопичені переваги лояльності. Залишковий баланс вашої передплати буде повернено як кредити облікового запису."
-      ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
         "Це призведе до видалення всіх попередніх версій ваших файлів, що зберігаються понад ${ rententionLabel }"
       ],
@@ -8531,6 +8514,17 @@
       ],
       "Zoom meeting": [
         "зустріч у Zoom"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Виявлено додаткові дублікати ключів. Завантажте індивідуально для отримання додаткової інформації."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Ключ ${ fingerprint } вже вивантажено"
+      ],
+      "Selected color:": [
+        "Вибраний колір:"
       ]
     },
     "Info - folder colouring feature": {
@@ -14068,9 +14062,6 @@
       ]
     },
     "Subscription reminder": {
-      "${ BRAND_NAME } was targeted by Russia in one of the most aggressive censorship campaigns in recent memory, and our team fought back.": [
-        "${ BRAND_NAME } став мішенню для однієї з найагресивніших цензурних кампаній Росії за останній час, і наша команда дала відсіч."
-      ],
       "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
         "Єдиним джерелом доходу ${ BRAND_NAME } є підписки користувачів. Ваша підтримка дозволяє нам залишатися незалежними, просувати нашу місію, щоб зробити конфіденційність в Інтернеті стандартом за замовчуванням, і продовжувати підтримувати активістів та організації, які борються за приватність і свободу."
       ],
@@ -14086,38 +14077,8 @@
       "${ planMaxSpace } total storage": [
         "Усього ${ planMaxSpace } сховища"
       ],
-      "${ planName } doesn't just provide extra storage. It lets you manage your emails faster, customize your inbox and email addresses, and access the desktop app.": [
-        "${ planName } не тільки забезпечить додаткове сховище. Це дозволяє керувати електронною поштою швидше, налаштовувати вхідні повідомлення та адреси електронної пошти та доступ до настільної програми."
-      ],
       "10 email addresses": [
         "10 адрес електронної пошти"
-      ],
-      "A direct contribution to our mission": [
-        "Прямий внесок до нашої місії"
-      ],
-      "After ${ BRAND_NAME } got blocked in Iran during protests, our customer support team worked to get our VPN app directly into people's hands.": [
-        "Після того, як ${ BRAND_NAME } заблокували в Ірані під час протестів, наша команда підтримки клієнтів працювала над тим, щоб наш VPN-додаток потрапив безпосередньо в руки людей."
-      ],
-      "After privacy and free speech were threatened in Hong Kong, we directly supported local civil rights organizations.": [
-        "Після того, як приватність і свобода слова опинилися під загрозою в Гонконзі, ми безпосередньо підтримали місцеві правозахисні організації."
-      ],
-      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **1 GB** for Mail, and **1 GB** for Drive. You will also lose any storage bonuses earned previously.": [
-        "Скасувавши підписку на ${ planName }, обсяг вашого сховища зменшиться з **${ planMaxSpace }** до **1 ГБ** для Пошти та **1 ГБ** для Диска. Ви також втратите всі бонуси за зберігання, зароблені раніше."
-      ],
-      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **1 GB** for Mail, and **5 GB** for Drive. You will also lose any storage bonuses earned previously.": [
-        "Скасувавши підписку на ${ planName }, обсяг вашого сховища зменшиться з **${ planMaxSpace }** до **1 ГБ** для Пошти та **5 ГБ** для Диска. Ви також втратите всі бонуси за зберігання, зароблені раніше."
-      ],
-      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **500 MB** for Mail, and **1 GB** for Drive. You will also lose any storage bonuses earned previously.": [
-        "Скасувавши підписку на ${ planName }, обсяг вашого сховища зменшиться з **${ planMaxSpace }** до **500 МБ** для Пошти та **1 ГБ** для Диска. Ви також втратите всі бонуси за зберігання, зароблені раніше."
-      ],
-      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **500 MB** for Mail, and **5 GB** for Drive. You will also lose any storage bonuses earned previously.": [
-        "Скасувавши підписку на ${ planName }, обсяг вашого сховища зменшиться з **${ planMaxSpace }** до **500 МБ** для Пошти та **5 ГБ** для Диска. Ви також втратите всі бонуси за зберігання, зароблені раніше."
-      ],
-      "By downgrading your account, you will also lose storage space": [
-        "При переході на нижчий тарифний план, ви також втратите місце для зберігання."
-      ],
-      "By downgrading your account, you will lose access to these important features": [
-        "Понизивши рівень свого облікового запису, ви втратите доступ до таких важливих функцій"
       ],
       "Calendar sharing": [
         "Спільний доступ до календаря"
@@ -14143,20 +14104,11 @@
       "I still want to cancel": [
         "Я все ще хочу скасувати"
       ],
-      "If you exceed your free Drive storage quota:": [
-        "Якщо ви перевищили ліміт безплатного сховища диску:"
-      ],
-      "If you exceed your free Mail storage quota:": [
-        "Якщо ви перевищили ліміт безплатного сховища пошти:"
-      ],
       "Keep ${ planName }": [
         "Залишити ${ planName }"
       ],
       "Learn more about our impact": [
         "Дізнайтеся більше про результати нашої діяльності"
-      ],
-      "Let us remind you of everything ${ planName } can do": [
-        "Дозвольте нагадати вам про все, що може зробити ${ planName }"
       ],
       "Our fight against censorship in Russia": [
         "Наша боротьба проти цензури в Росії"
@@ -14185,32 +14137,8 @@
       "Watch the interview": [
         "Перегляд інтерв'ю"
       ],
-      "When you cancel, you will lose access to": [
-        "У разі скасування ви втратите доступ до"
-      ],
       "Yearly free storage bonuses": [
         "Щорічні бонуси на безплатне зберігання"
-      ],
-      "You **won't be able to add any new files**": [
-        "Ви **не зможете додати будь-які нові файли**"
-      ],
-      "You **won't be able to backup photos** from your devices": [
-        "Ви **не зможете створювати резервні копії фотографій** з ваших пристроїв"
-      ],
-      "You **won't be able to send emails** with attachments": [
-        "Ви **не зможете надсилати електронні листи** з вкладеннями"
-      ],
-      "You still have ${ expiryDate } on your ${ planName } plan. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling.": [
-        "У вас все ще є ${ expiryDate } для вашого плану ${ planName }. Ми додамо кредити за час, що залишився, на ваш ${ BRAND_NAME } Рахунок. Перед скасуванням переконайтеся, що ви не перевищили ліміти безплатного тарифного плану."
-      ],
-      "Your **calendar will be frozen**": [
-        "Ваш **календар буде заморожений**"
-      ],
-      "Your devices will **stop syncing**": [
-        "Ваші пристрої **припинять синхронізацію**"
-      ],
-      "Your inbox will **stop receiving new emails**": [
-        "Ваша поштова скринька **перестане отримувати нові електронні листи**"
       ],
       "Your own custom email domain": [
         "Ваш власний домен електронної пошти"

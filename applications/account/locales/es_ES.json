@@ -371,9 +371,6 @@
       "Downgrade": [
         "Pasar a un plan inferior"
       ],
-      "Downgrade account": [
-        "Pasar a un plan inferior"
-      ],
       "Download": [
         "Descargar"
       ],
@@ -3311,11 +3308,32 @@
       "Bugs or quality issue": [
         "Errores o problemas de calidad"
       ],
+      "I do not wish to share": [
+        "Prefiero no decirlo."
+      ],
+      "I found a cheaper VPN": [
+        "He encontrado una VPN más barata."
+      ],
+      "I found a VPN with better features": [
+        "He encontrado una VPN con mejores funciones."
+      ],
+      "I have not managed to connect": [
+        "No he conseguido conectarme."
+      ],
+      "I only needed a VPN short-term": [
+        "Solo necesitaba una VPN a corto plazo."
+      ],
       "I use a different ${ BRAND_NAME } account": [
         "Utilizo una cuenta ${ BRAND_NAME } diferente."
       ],
+      "It doesn't do what I need": [
+        "No hace lo que necesito."
+      ],
       "Missing feature(s)": [
         "Faltan funciones."
+      ],
+      "Other reason (please comment)": [
+        "Otra razón (coméntanos en qué podemos mejorar)"
       ],
       "Subscription is too expensive": [
         "La suscripción es demasiado cara."
@@ -3325,6 +3343,9 @@
       ],
       "Temporary need, may come back in the future": [
         "Necesidad temporal que puede volver en el futuro"
+      ],
+      "The VPN is too slow": [
+        "La VPN es muy lenta."
       ]
     },
     "Downgrade modal exit survey title": {
@@ -5983,17 +6004,6 @@
         "Parte del contenido de tu calendario no es compatible y no se importará."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Se han detectado claves duplicadas adicionales. Cárgalas individualmente para obtener más información."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "La clave ${ fingerprint } ya ha sido cargada."
-      ],
-      "Selected color:": [
-        "Color seleccionado:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necesita tu permiso para ${ enableDesktopNotifications }."
@@ -7775,9 +7785,6 @@
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Esto cancelará tu suscripción de pago y perderás todas las ventajas de fidelidad acumuladas."
       ],
-      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
-        "Esto cancelará tu suscripción de pago actual y perderás cualquier beneficio de lealtad acumulado. El saldo restante de tu suscripción será devuelto como crédito de cuenta."
-      ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
         "Esto eliminará todas las versiones anteriores de tus archivos anteriores a ${ rententionLabel }."
       ],
@@ -8408,6 +8415,17 @@
       ],
       "Zoom meeting": [
         "reunión de Zoom"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Se han detectado claves duplicadas adicionales. Cárgalas individualmente para obtener más información."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "La clave ${ fingerprint } ya ha sido cargada."
+      ],
+      "Selected color:": [
+        "Color seleccionado:"
       ]
     },
     "Info - folder colouring feature": {
@@ -13861,9 +13879,6 @@
       ]
     },
     "Subscription reminder": {
-      "${ BRAND_NAME } was targeted by Russia in one of the most aggressive censorship campaigns in recent memory, and our team fought back.": [
-        "${ BRAND_NAME } fue atacado por Rusia en una de las campañas de censura más agresivas en los últimos tiempos y nuestro equipo contraatacó."
-      ],
       "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
         "Los ingresos de ${ BRAND_NAME } solo provienen de las suscripciones de sus usuarios. Tu ayuda nos permite mantenernos independientes, avanzar en nuestra misión de hacer que la privacidad en línea sea lo primero y seguir apoyando a activistas y organizaciones que luchan por la privacidad y la libertad."
       ],
@@ -13877,38 +13892,8 @@
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } de almacenamiento total"
       ],
-      "${ planName } doesn't just provide extra storage. It lets you manage your emails faster, customize your inbox and email addresses, and access the desktop app.": [
-        "${ planName } no solo provee almacenamiento adicional. Te permite gestionar tus correos electrónicos más rápido, personalizar tu bandeja de entrada y direcciones de correo, además de acceder a la aplicación de escritorio."
-      ],
       "10 email addresses": [
         "10 direcciones de correo electrónico"
-      ],
-      "A direct contribution to our mission": [
-        "Una contribución directa a nuestra misión"
-      ],
-      "After ${ BRAND_NAME } got blocked in Iran during protests, our customer support team worked to get our VPN app directly into people's hands.": [
-        "Después de que ${ BRAND_NAME } fue bloqueado en Irán durante las protestas, nuestro equipo de atención al cliente trabajó para dar acceso directo a nuestra aplicación VPN a todos."
-      ],
-      "After privacy and free speech were threatened in Hong Kong, we directly supported local civil rights organizations.": [
-        "Después de que la privacidad y la libertad de expresión sean amenazadas en Hong Kong, apoyamos directamente a organizaciones de derechos civiles locales."
-      ],
-      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **1 GB** for Mail, and **1 GB** for Drive. You will also lose any storage bonuses earned previously.": [
-        "Al cancelar tu suscripción ${ planName }, tu almacenamiento se reducirá de **${ planMaxSpace }** a **1 GB** para Mail, y **1 GB** para Drive. También perderás los bonos de almacenamiento obtenidos previamente."
-      ],
-      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **1 GB** for Mail, and **5 GB** for Drive. You will also lose any storage bonuses earned previously.": [
-        "Al cancelar tu suscripción ${ planName }, tu almacenamiento se reducirá de **${ planMaxSpace }** a **1 GB** para Mail, y **5 GB** para Drive. También perderás los bonos de almacenamiento obtenidos previamente."
-      ],
-      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **500 MB** for Mail, and **1 GB** for Drive. You will also lose any storage bonuses earned previously.": [
-        "Al cancelar tu suscripción ${ planName }, tu almacenamiento se reducirá de **${ planMaxSpace }** a **500 MB** para Mail, y **1 GB** para Drive. También perderás los bonos de almacenamiento obtenidos previamente."
-      ],
-      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **500 MB** for Mail, and **5 GB** for Drive. You will also lose any storage bonuses earned previously.": [
-        "Al cancelar tu suscripción ${ planName }, tu almacenamiento se reducirá de **${ planMaxSpace }** a **500 MB** para Mail, y **5 GB** para Drive. También perderás los bonos de almacenamiento obtenidos previamente."
-      ],
-      "By downgrading your account, you will also lose storage space": [
-        "Al pasar a un plan inferior, también perderás espacio de almacenamiento"
-      ],
-      "By downgrading your account, you will lose access to these important features": [
-        "Al pasar a un plan inferior, perderás acceso a estas importantes funciones"
       ],
       "Calendar sharing": [
         "Calendarios compartidos"
@@ -13934,20 +13919,11 @@
       "I still want to cancel": [
         "Aún quiero cancelar"
       ],
-      "If you exceed your free Drive storage quota:": [
-        "Si excedes tu cuota gratuita de almacenamiento de Drive:"
-      ],
-      "If you exceed your free Mail storage quota:": [
-        "Si excedes tu cuota gratuita de almacenamiento de Mail:"
-      ],
       "Keep ${ planName }": [
         "Seguir con ${ planName }"
       ],
       "Learn more about our impact": [
         "Más información acerca de nuestro impacto"
-      ],
-      "Let us remind you of everything ${ planName } can do": [
-        "Permítenos recordarte todo lo que ${ planName } puede hacer"
       ],
       "Our fight against censorship in Russia": [
         "Nuestra lucha contra la censura en Rusia"
@@ -13976,32 +13952,8 @@
       "Watch the interview": [
         "Ve la entrevista"
       ],
-      "When you cancel, you will lose access to": [
-        "Al cancelar, perderás acceso a"
-      ],
       "Yearly free storage bonuses": [
         "Bono de almacenamiento gratuito al año"
-      ],
-      "You **won't be able to add any new files**": [
-        "**No podrás añadir archivos** nuevos"
-      ],
-      "You **won't be able to backup photos** from your devices": [
-        "**No podrás hacer copias de seguridad de tus fotos** desde tus dispositivos."
-      ],
-      "You **won't be able to send emails** with attachments": [
-        "**No podrás enviar correos electrónicos** con archivos adjuntos."
-      ],
-      "You still have ${ expiryDate } on your ${ planName } plan. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling.": [
-        "Aún tienes ${ expiryDate } en tu plan de ${ planName }. Añadiremos los créditos por el tiempo restante a tu cuenta de ${ BRAND_NAME }. Asegúrate de no exceder los límites del plan gratuito antes de cancelar."
-      ],
-      "Your **calendar will be frozen**": [
-        "Tu **calendario será bloqueado**."
-      ],
-      "Your devices will **stop syncing**": [
-        "Tus dispositivos **dejarán de sincronizarse**."
-      ],
-      "Your inbox will **stop receiving new emails**": [
-        "Tu bandeja de entrada **dejará de recibir correos electrónicos nuevos**"
       ],
       "Your own custom email domain": [
         "Tu propio dominio de correo electrónico personalizado"
