@@ -401,6 +401,9 @@
       "Trash": [
         "Διαγραμμένα"
       ],
+      "Try again.": [
+        "Δοκιμάστε ξανά."
+      ],
       "Unpin item": [
         "Ξεκαρφίτσωμα στοιχείου"
       ],
@@ -479,6 +482,9 @@
         "${ total } άλλη σύνδεση χρησιμοποιεί τον ίδιο κωδικό πρόσβασης",
         "${ total } άλλες συνδέσεις χρησιμοποιούν τον ίδιο κωδικό πρόσβασης"
       ],
+      "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
+        "Το 2FA προσθέτει ένα άλλο επίπεδο ασφάλειας στις συνδέσεις σας. ${ PASS_APP_NAME } διευκολύνει το 2FA αποθηκεύοντας και συμπληρώνοντας αυτόματα τους κωδικούς 2FA."
+      ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Ένα ψευδώνυμο ηλεκτρονικού ταχυδρομείου λειτουργεί όπως μια διεύθυνση ηλεκτρονικού ταχυδρομείου, αλλά μειώνει τα ανεπιθύμητα μηνύματα και διατηρεί κρυφή την πραγματική διεύθυνση ηλεκτρονικού ταχυδρομείου και την ταυτότητά σας."
       ],
@@ -500,6 +506,9 @@
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Η πρωτοποριακή μας λύση ασφάλειας με γνώμονα την τεχνητή νοημοσύνη, σχεδιασμένη για χρήστες που αναζητούν αυξημένη προστασία για τους λογαριασμούς τους. ${ learnMoreLink }"
       ],
+      "Set up 2FA for more security": [
+        "Ρυθμίστε το 2FA για περισσότερη ασφάλεια"
+      ],
       "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
         "Ξεκινήστε την παρακολούθηση για παραβιάσεις δεδομένων που σχετίζονται με λογαριασμούς που έχουν δημιουργηθεί με τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας και τα hide-my-email ψευδώνυμά σας."
       ],
@@ -511,6 +520,9 @@
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "Αυτός ο λογαριασμός είναι ευάλωτος, επισκεφθείτε την υπηρεσία και αλλάξτε τον κωδικό πρόσβασής σας."
+      ],
+      "This service offers 2FA. Enable it for added account security.": [
+        "Αυτή η υπηρεσία προσφέρει 2FA. Ενεργοποιήστε το για πρόσθετη ασφάλεια λογαριασμού."
       ],
       "With ${ PASS_SHORT_APP_NAME } Monitor, stay ahead of threats by getting instant alerts if your credentials are compromised. Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Με την ${ PASS_SHORT_APP_NAME } Παρακολούθηση, παραμείνετε μπροστά από απειλές λαμβάνοντας άμεσες ειδοποιήσεις εάν παραβιαστούν τα διαπιστευτήριά σας. Ξεκλειδώστε προηγμένες λειτουργίες ασφαλείας και λεπτομερή αρχεία καταγραφής για να προστατεύσετε την παρουσία σας στο διαδίκτυο."
@@ -907,6 +919,10 @@
       "${ PROTON_SENTINEL_NAME } successfully enabled": [
         "Το ${ PROTON_SENTINEL_NAME } ενεργοποιήθηκε επιτυχώς"
       ],
+      "${ row.breachCount } breach detected": [
+        "${ row.breachCount } παραβίαση εντοπίστηκε",
+        "${ row.breachCount } παραβιάσεις εντοπίστηκαν"
+      ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 ημέρες για να δοκιμάσετε δωρεάν premium χαρακτηριστικά. Μόνο κατά την πρώτη εβδομάδα χρησιμοποιώντας το ${ BRAND_NAME }."
       ],
@@ -1072,6 +1088,9 @@
       ],
       "High Priority": [
         "Υψηλή προτεραιότητα"
+      ],
+      "How does monitoring work?": [
+        "Πώς λειτουργεί η παρακολούθηση;"
       ],
       "Import in progress:": [
         "Εισαγωγή σε εξέλιξη:"
@@ -1373,6 +1392,9 @@
       "Thank you, the problem has been reported": [
         "Σας ευχαριστώ, το πρόβλημα έχει αναφερθεί"
       ],
+      "The custom email will be sent to ${ href } for monitoring. No other data will be sent to HIBP.": [
+        "Το προσαρμοσμένο email θα σταλεί στο ${ href } για παρακολούθηση. Δε θα σταλούν άλλα δεδομένα στο HIBP."
+      ],
       "The export will only contain vaults that you own.": [
         "Η εξαγωγή θα περιέχει μόνο κρύπτες που σας ανήκουν."
       ],
@@ -1498,8 +1520,14 @@
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Έχετε φτάσει στο μέγιστο επιτρεπόμενο μήκος των ${ maxLength } χαρακτήρων."
       ],
+      "You will be notified of data breaches for these email addresses.": [
+        "Θα ειδοποιηθείτε για παραβιάσεις δεδομένων για αυτές τις διευθύνσεις ηλεκτρονικού ταχυδρομείου."
+      ],
       "You will be notified of data breaches for this email address.": [
         "Θα ειδοποιηθείτε για παραβιάσεις δεδομένων για αυτήν τη διεύθυνση ηλεκτρονικού ταχυδρομείου."
+      ],
+      "You will no longer be notified of data breaches for these email addresses.": [
+        "Δε θα ειδοποιείστε πλέον για παραβιάσεις δεδομένων για αυτές τις διευθύνσεις ηλεκτρονικού ταχυδρομείου."
       ],
       "You will no longer be notified of data breaches for this email address.": [
         "Δε θα ειδοποιείστε πλέον για παραβιάσεις δεδομένων για αυτήν τη διεύθυνση ηλεκτρονικού ταχυδρομείου."
@@ -2152,9 +2180,6 @@
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "${ PASS_SHORT_APP_NAME } Παρακολούθηση"
       ],
-      "${ PASS_SHORT_APP_NAME } monitor": [
-        "${ PASS_SHORT_APP_NAME } παρακολούθηση"
-      ],
       "Account protection": [
         "Προστασία λογαριασμού"
       ],
@@ -2245,6 +2270,9 @@
       "Import your data": [
         "Εισαγωγή των δεδομένων σας"
       ],
+      "Inactive 2FA": [
+        "Απενεργοποιημένο 2FA"
+      ],
       "Install extension": [
         "Εγκατάσταση επέκτασης"
       ],
@@ -2256,6 +2284,9 @@
       ],
       "Leave vault ?": [
         "Αποχώρηση από την κρύπτη;"
+      ],
+      "Loading breaches...": [
+        "Φόρτωση παραβιάσεων..."
       ],
       "Low disk space": [
         "Περιορισμένος χώρος στο δίσκο"
@@ -2283,6 +2314,9 @@
       ],
       "No excluded items": [
         "Δεν υπάρχουν εξαιρούμενα στοιχεία"
+      ],
+      "No inactive 2FAs": [
+        "Χωρίς ανενεργά 2FA"
       ],
       "No insecure passwords": [
         "Δεν υπάρχουν μη ασφαλείς κωδικοί πρόσβασης"
@@ -2347,6 +2381,12 @@
       ],
       "Set access level": [
         "Ορισμός επιπέδου πρόσβασης"
+      ],
+      "Set up 2FA for better security": [
+        "Ρυθμίστε το 2FA για καλύτερη ασφάλεια"
+      ],
+      "Set up 2FA for more security": [
+        "Ρυθμίστε το 2FA για περισσότερη ασφάλεια"
       ],
       "Settings": [
         "Ρυθμίσεις"
@@ -2474,6 +2514,9 @@
       ],
       "Expiration Date is not in the format MM/YY": [
         "Η ημερομηνία λήξης δεν έχει τη μορφή ΜΜ/ΕΕ"
+      ],
+      "Failed to load breaches.": [
+        "Αποτυχία φόρτωσης παραβιάσεων."
       ],
       "Invalid alias prefix": [
         "Μην έγκυρο πρόθεμα ψευδωνύμου"

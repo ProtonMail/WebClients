@@ -401,6 +401,9 @@
       "Trash": [
         "Kôš"
       ],
+      "Try again.": [
+        "Skúsiť znova."
+      ],
       "Unpin item": [
         "Odopnúť položku"
       ],
@@ -481,6 +484,9 @@
         "${ total } iných prihlasovaní už používa rovnaké heslo",
         "${ total } iných prihlasovaní už používa rovnaké heslo"
       ],
+      "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
+        "Funkcia 2FA pridáva ďalšiu úroveň zabezpečenia prihlásenia. ${ PASS_APP_NAME } uľahčuje 2FA ukladaním a automatickým vypĺňaním kódov 2FA."
+      ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Emailový alias funguje ako emailová adresa, ale znižuje množstvo spamu a udržuje vašu skutočnú emailovú adresu a identitu skrytú."
       ],
@@ -502,6 +508,9 @@
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Naše špičkové bezpečnostné riešenie založené na umelej inteligencii určené pre používateľov, ktorí hľadajú zvýšenú ochranu svojich účtov. ${ learnMoreLink }"
       ],
+      "Set up 2FA for more security": [
+        "Nastavte 2FA na zvýšenie bezpečnosti"
+      ],
       "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
         "Začnite monitorovať prípady únikov údajov v súvislosti s účtami vytvorenými pomocou vašej emailovej adresy a aliasov typu hide-my-email."
       ],
@@ -513,6 +522,9 @@
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "Tento účet je zraniteľný. Navštívte službu a zmeňte si heslo."
+      ],
+      "This service offers 2FA. Enable it for added account security.": [
+        "Táto služba ponúka 2FA. Aktiváciou tejto funkcie zvýšite bezpečnosť účtu."
       ],
       "With ${ PASS_SHORT_APP_NAME } Monitor, stay ahead of threats by getting instant alerts if your credentials are compromised. Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Pomocou ${ PASS_SHORT_APP_NAME } Monitor máte pred hrozbami náskok vďaka okamžitým upozorneniam, ak dôjde ku kompromitácii vašich prihlasovacích údajov. Odomknite pokročilé funkcie zabezpečenia a podrobné protokoly na ochranu vašej online prítomnosti."
@@ -931,6 +943,12 @@
       "${ PROTON_SENTINEL_NAME } successfully enabled": [
         "${ PROTON_SENTINEL_NAME } úspešne zapnutý"
       ],
+      "${ row.breachCount } breach detected": [
+        "${ row.breachCount } zistený únik",
+        "${ row.breachCount } zistených únikov",
+        "${ row.breachCount } zistené úniky",
+        "${ row.breachCount } zistené úniky"
+      ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 dní na bezplatné vyskúšanie prémiových funkcií. Len počas vášho prvého týždňa s ${ BRAND_NAME }."
       ],
@@ -1098,6 +1116,9 @@
       ],
       "High Priority": [
         "Vysoká priorita"
+      ],
+      "How does monitoring work?": [
+        "Ako monitorovanie funguje?"
       ],
       "Import in progress:": [
         "Prebieha import:"
@@ -1405,6 +1426,9 @@
       "Thank you, the problem has been reported": [
         "Ďakujeme, problém bol nahlásený"
       ],
+      "The custom email will be sent to ${ href } for monitoring. No other data will be sent to HIBP.": [
+        "Vlastný email bude odoslaný na adresu ${ href } na monitorovanie. Do systému HIBP sa nebudú odosielať žiadne iné údaje."
+      ],
       "The export will only contain vaults that you own.": [
         "Export bude obsahovať iba trezory, ktoré vlastníte."
       ],
@@ -1534,8 +1558,14 @@
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Dosiahli ste maximálnu povolenú dĺžku ${ maxLength } znakov."
       ],
+      "You will be notified of data breaches for these email addresses.": [
+        "V prípade týchto emailových adries vám budú zasielané oznámenia o úniku údajov."
+      ],
       "You will be notified of data breaches for this email address.": [
         "Na túto emailovú adresu vám budú zasielané oznámenia o úniku údajov."
+      ],
+      "You will no longer be notified of data breaches for these email addresses.": [
+        "V prípade týchto emailových adries vám už nebudú zasielané oznámenia o úniku údajov."
       ],
       "You will no longer be notified of data breaches for this email address.": [
         "Na túto emailovú adresu vám už nebudú zasielané oznámenia o úniku údajov."
@@ -2198,9 +2228,6 @@
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "${ PASS_SHORT_APP_NAME } Monitor"
       ],
-      "${ PASS_SHORT_APP_NAME } monitor": [
-        "${ PASS_SHORT_APP_NAME } monitor"
-      ],
       "Account protection": [
         "Ochrana účtu"
       ],
@@ -2291,6 +2318,9 @@
       "Import your data": [
         "Import údajov"
       ],
+      "Inactive 2FA": [
+        "Neaktívne 2FA"
+      ],
       "Install extension": [
         "Inštalovať rozšírenie"
       ],
@@ -2302,6 +2332,9 @@
       ],
       "Leave vault ?": [
         "Opustiť trezor ?"
+      ],
+      "Loading breaches...": [
+        "Načítavanie únikov..."
       ],
       "Low disk space": [
         "Málo miesta na disku"
@@ -2329,6 +2362,9 @@
       ],
       "No excluded items": [
         "Žiadne vylúčené položky"
+      ],
+      "No inactive 2FAs": [
+        "Žiadne neaktívne 2FA"
       ],
       "No insecure passwords": [
         "Žiadne nebezpečné heslá"
@@ -2395,6 +2431,12 @@
       ],
       "Set access level": [
         "Nastavte úroveň prístupu"
+      ],
+      "Set up 2FA for better security": [
+        "Nastavte 2FA pre lepšiu bezpečnosť"
+      ],
+      "Set up 2FA for more security": [
+        "Nastavte 2FA na zvýšenie bezpečnosti"
       ],
       "Settings": [
         "Nastavenia"
@@ -2522,6 +2564,9 @@
       ],
       "Expiration Date is not in the format MM/YY": [
         "Koniec platnosti nie je vo formáte MM/RR"
+      ],
+      "Failed to load breaches.": [
+        "Načítanie únikov zlyhalo."
       ],
       "Invalid alias prefix": [
         "Neplatná predpona aliasu"

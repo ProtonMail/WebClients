@@ -837,6 +837,10 @@
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } erfolgreich gelöscht"
       ],
+      "${ row.breachCount } breach detected": [
+        "${ row.breachCount } Datendiebstahl entdeckt",
+        "${ row.breachCount } Datendiebstähle entdeckt"
+      ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 Tage, um Premium-Funktionen kostenlos zu testen. Nur während deiner ersten Woche bei ${ BRAND_NAME }."
       ],
