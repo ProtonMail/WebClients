@@ -371,9 +371,6 @@
       "Downgrade": [
         "Passer à un abonnement inférieur"
       ],
-      "Downgrade account": [
-        "Passer à un abonnement inférieur"
-      ],
       "Download": [
         "Télécharger"
       ],
@@ -3311,11 +3308,32 @@
       "Bugs or quality issue": [
         "Bugs ou problème de qualité"
       ],
+      "I do not wish to share": [
+        "Je ne souhaite pas partager la raison."
+      ],
+      "I found a cheaper VPN": [
+        "J'ai trouvé un VPN moins cher."
+      ],
+      "I found a VPN with better features": [
+        "J'ai trouvé un VPN avec plus de fonctionnalités."
+      ],
+      "I have not managed to connect": [
+        "Je n'ai pas réussi à me connecter."
+      ],
+      "I only needed a VPN short-term": [
+        "J'avais besoin d'un VPN uniquement pour une courte durée."
+      ],
       "I use a different ${ BRAND_NAME } account": [
         "J'utilise un autre compte ${ BRAND_NAME }."
       ],
+      "It doesn't do what I need": [
+        "Il ne répond pas à mes besoins."
+      ],
       "Missing feature(s)": [
         "Fonctionnalités manquantes"
+      ],
+      "Other reason (please comment)": [
+        "Autre raison (dites-nous comment nous pouvons nous améliorer)"
       ],
       "Subscription is too expensive": [
         "Abonnement trop cher"
@@ -3325,6 +3343,9 @@
       ],
       "Temporary need, may come back in the future": [
         "Besoin temporaire, qui pourrait revenir à l'avenir"
+      ],
+      "The VPN is too slow": [
+        "Le VPN est trop lent."
       ]
     },
     "Downgrade modal exit survey title": {
@@ -3860,7 +3881,7 @@
         "${ errorMessage }. Vous pouvez aussi vérifier notre ${ statusPageLink }."
       ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ user.Name } est votre nom d'utilisateur. Pour créer ${ emailAddress }, visitez les Paramètres > Messages et rédaction > Domaine court (pm.me)"
+        "${ user.Name } est votre nom d'utilisateur. Pour créer ${ emailAddress }, allez dans Paramètres > Messages et rédaction > Domaine court (pm.me)."
       ],
       "A group with this name already exists": [
         "Un groupe avec ce nom existe déjà."
@@ -4140,7 +4161,7 @@
         "Nous vous invitons à passer à un abonnement entreprise avec plus d'un utilisateur pour gérer plusieurs utilisateurs."
       ],
       "Please upload a square file": [
-        "Veuillez importer un fichier carré."
+        "Veuillez importer un fichier de format carré."
       ],
       "Please upload an xml file": [
         "Veuillez importer un fichier XML."
@@ -4216,10 +4237,10 @@
         "Les adresses e-mail ne correspondent pas."
       ],
       "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
-        "Ce fichier est trop grand. La taille maximum est de ${ MAX_FILE_DIMENSIONS } x ${ MAX_FILE_DIMENSIONS }."
+        "Ce fichier est trop grand. La dimension maximale est de ${ MAX_FILE_DIMENSIONS } x ${ MAX_FILE_DIMENSIONS }."
       ],
       "The file is too small, the minimum size is ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }": [
-        "Ce fichier est trop petit. La taille minimum est de ${ MIN_FILE_DIMENSIONS } x ${ MIN_FILE_DIMENSIONS }."
+        "Ce fichier est trop petit. La dimension minimale est de ${ MIN_FILE_DIMENSIONS } x ${ MIN_FILE_DIMENSIONS }."
       ],
       "The folder name is invalid. Please choose a different name.": [
         "Le nom du dossier n'est pas valide, veuillez en choisir un autre."
@@ -5983,17 +6004,6 @@
         "Une partie du contenu de votre calendrier n'est pas prise en charge et ne sera pas importée."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Des doublons de clés supplémentaires ont été détectés. Nous vous invitons à les télécharger individuellement pour plus d'informations."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "La clé ${ fingerprint } a déjà été chargée."
-      ],
-      "Selected color:": [
-        "Couleur sélectionnée :"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } a besoin de votre autorisation pour ${ enableDesktopNotifications }."
@@ -6458,7 +6468,7 @@
         "Empêche les expéditeurs de voir si vous avez ouvert un message et à quel moment vous l'avez ouvert."
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
-        "Mettez en avant l'image de marque de votre organisation et créez une expérience en ligne plus cohérente pour vos utilisateurs."
+        "Mettez en avant l'image de marque de votre organisation et créez une véritable expérience en ligne pour vos utilisateurs."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "En passant à l'abonnement Free, vous perdrez définitivement ces avantages, même si vous repassez par la suite à un abonnement supérieur."
@@ -7674,7 +7684,7 @@
         "Le lien de vérification par e-mail a expiré. Nous vous invitons à vous connecter pour renvoyer un lien de vérification."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
-        "Les informations exposées ont été divulguées par un service tiers. Les informations de votre compte ${ BRAND_NAME } restent en sécurité et chiffrées. ${ learnMoreLink }"
+        "Les informations exposées ont été divulguées par un service tiers. Les informations de votre compte ${ BRAND_NAME } restent sécurisées et chiffrées. ${ learnMoreLink }"
       ],
       "The following address is available:": [
         "Les adresses suivantes sont disponibles :"
@@ -7774,9 +7784,6 @@
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Cela annulera votre abonnement payant actuel et vous perdrez tous les avantages de fidélité dont vous bénéficiez."
-      ],
-      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
-        "Ceci annulera votre abonnement payant actuel et vous perdrez tous les avantages de fidélité que vous avez accumulés. Le solde restant de votre abonnement sera restitué sous forme de crédits de compte."
       ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
         "Cela supprimera toutes les versions précédentes de vos fichiers qui datent de plus de ${ rententionLabel }."
@@ -8408,6 +8415,17 @@
       ],
       "Zoom meeting": [
         "réunion Zoom"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Des doublons de clés supplémentaires ont été détectés. Nous vous invitons à les télécharger individuellement pour plus d'informations."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "La clé ${ fingerprint } a déjà été chargée."
+      ],
+      "Selected color:": [
+        "Couleur sélectionnée :"
       ]
     },
     "Info - folder colouring feature": {
@@ -10032,7 +10050,7 @@
         "Se connecter"
       ],
       "stay safer online": [
-        "améliorer votre sécurité en ligne"
+        "Protégez-vous en ligne"
       ],
       "switch account": [
         "changer de compte"
@@ -10107,7 +10125,7 @@
         "Votre ${ mailStorage } est plein. Pour envoyer ou recevoir des messages, libérez de l'espace ou ${ cta }."
       ],
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
-        "Votre compte risque d'être supprimé. Pour éviter de perdre des données, demandez à votre administrateur de changer d'abonnement. ${ cta }"
+        "Votre compte risque d'être supprimé. Pour éviter de perdre des données, demandez à votre administrateur de mettre à jour votre abonnement. ${ cta }"
       ],
       "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
         "Votre espace de stockage est plein. Pour envoyer ou recevoir des messages, libérez de l'espace ou ${ cta }."
@@ -13861,9 +13879,6 @@
       ]
     },
     "Subscription reminder": {
-      "${ BRAND_NAME } was targeted by Russia in one of the most aggressive censorship campaigns in recent memory, and our team fought back.": [
-        "La Russie a pris pour cible ${ BRAND_NAME } dans le cadre de l'une des campagnes de censure les plus agressives de l'histoire récente et notre équipe a riposté."
-      ],
       "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
         "La seule source de revenus de ${ BRAND_NAME } provient des abonnements des utilisateurs. Votre soutien nous permet de rester indépendants, de poursuivre notre mission visant à faire de la protection de la vie privée la règle absolue en ligne et de continuer à soutenir les militants et les organisations qui luttent pour la protection de la vie privée et la liberté."
       ],
@@ -13877,38 +13892,8 @@
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } d'espace de stockage total"
       ],
-      "${ planName } doesn't just provide extra storage. It lets you manage your emails faster, customize your inbox and email addresses, and access the desktop app.": [
-        "${ planName } n'apporte pas uniquement plus d'espace de stockage. Il vous permet de gérer plus rapidement vos e-mails, de personnaliser votre boite de réception et vos adresses e-mail et d'accéder à l'application de bureau."
-      ],
       "10 email addresses": [
         "10 adresses e-mail"
-      ],
-      "A direct contribution to our mission": [
-        "Une contribution directe à notre mission"
-      ],
-      "After ${ BRAND_NAME } got blocked in Iran during protests, our customer support team worked to get our VPN app directly into people's hands.": [
-        "Après que ${ BRAND_NAME } a été bloqué en Iran pendant les manifestations, l'équipe de notre service client a fait en sorte que notre application VPN soit directement mise à la disposition de tous."
-      ],
-      "After privacy and free speech were threatened in Hong Kong, we directly supported local civil rights organizations.": [
-        "Lorsque la vie privée et la liberté d'expression ont été menacées à Hong Kong, nous avons soutenu directement les organisations locales de défense des droits civils."
-      ],
-      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **1 GB** for Mail, and **1 GB** for Drive. You will also lose any storage bonuses earned previously.": [
-        "En annulant votre abonnement ${ planName }, votre espace de stockage sera réduit de **${ planMaxSpace }** à **1 Go** pour Mail et à **1 Go** pour Drive. Vous ne bénéficierez également plus de l'espace de stockage supplémentaire précédemment accordé."
-      ],
-      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **1 GB** for Mail, and **5 GB** for Drive. You will also lose any storage bonuses earned previously.": [
-        "En annulant votre abonnement ${ planName }, votre espace de stockage sera réduit de **${ planMaxSpace }** à **1 Go** pour Mail et à **5 Go** pour Drive. Vous ne bénéficierez également plus de l'espace de stockage supplémentaire précédemment accordé."
-      ],
-      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **500 MB** for Mail, and **1 GB** for Drive. You will also lose any storage bonuses earned previously.": [
-        "En annulant votre abonnement ${ planName }, votre espace de stockage sera réduit de **${ planMaxSpace }** à **500 Mo** pour Mail et à **1 Go** pour Drive. Vous ne bénéficierez également plus de l'espace de stockage supplémentaire précédemment accordé."
-      ],
-      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **500 MB** for Mail, and **5 GB** for Drive. You will also lose any storage bonuses earned previously.": [
-        "En annulant votre abonnement ${ planName }, votre espace de stockage sera réduit de **${ planMaxSpace }** à **500 Mo** pour Mail et à **5 Go** pour Drive. Vous ne bénéficierez également plus de l'espace de stockage supplémentaire précédemment accordé."
-      ],
-      "By downgrading your account, you will also lose storage space": [
-        "En passant à un abonnement inférieur, vous réduisez également votre espace de stockage."
-      ],
-      "By downgrading your account, you will lose access to these important features": [
-        "En passant à un abonnement inférieur, vous n'aurez plus accès à ces fonctionnalités importantes."
       ],
       "Calendar sharing": [
         "Partage de calendrier"
@@ -13934,20 +13919,11 @@
       "I still want to cancel": [
         "Je souhaite toujours annuler"
       ],
-      "If you exceed your free Drive storage quota:": [
-        "Si vous dépassez le quota de votre espace de stockage Drive gratuit :"
-      ],
-      "If you exceed your free Mail storage quota:": [
-        "Si vous dépassez le quota de votre espace de stockage Mail gratuit :"
-      ],
       "Keep ${ planName }": [
         "Conserver ${ planName }"
       ],
       "Learn more about our impact": [
         "En savoir plus sur notre impact"
-      ],
-      "Let us remind you of everything ${ planName } can do": [
-        "Nous vous rappelons tous les avantages de ${ planName }"
       ],
       "Our fight against censorship in Russia": [
         "Notre combat contre la censure en Russie"
@@ -13976,32 +13952,8 @@
       "Watch the interview": [
         "Voir l'interview"
       ],
-      "When you cancel, you will lose access to": [
-        "Si vous annulez, vous n'aurez plus accès à"
-      ],
       "Yearly free storage bonuses": [
         "Bonus annuels gratuits pour votre espace de stockage"
-      ],
-      "You **won't be able to add any new files**": [
-        "Vous **ne pourrez plus ajouter de nouveaux fichiers**."
-      ],
-      "You **won't be able to backup photos** from your devices": [
-        "Vous **ne pourrez plus sauvegarder vos photos** depuis vos appareils."
-      ],
-      "You **won't be able to send emails** with attachments": [
-        "Vous **ne pourrez plus envoyer de messages** avec des pièces jointes."
-      ],
-      "You still have ${ expiryDate } on your ${ planName } plan. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling.": [
-        "Vous disposez encore de ${ expiryDate } pour votre abonnement ${ planName }. Nous ajouterons ces crédits pour le temps restant sur votre compte ${ BRAND_NAME }. Assurez-vous de ne pas dépasser les limites de l'abonnement gratuit avant d'annuler votre abonnement."
-      ],
-      "Your **calendar will be frozen**": [
-        "Votre **calendrier sera bloqué**."
-      ],
-      "Your devices will **stop syncing**": [
-        "Vos appareils **ne seront plus synchronisés**."
-      ],
-      "Your inbox will **stop receiving new emails**": [
-        "Votre boite de réception **ne recevra plus de nouveaux messages**."
       ],
       "Your own custom email domain": [
         "Votre domaine de messagerie personnalisé"

@@ -371,9 +371,6 @@
       "Downgrade": [
         "Downgraden"
       ],
-      "Downgrade account": [
-        "Account downgraden"
-      ],
       "Download": [
         "Downloaden"
       ],
@@ -5983,17 +5980,6 @@
         "Een deel van je agenda-inhoud wordt niet ondersteund en zal niet worden geïmporteerd."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Extra dubbele sleutels gedetecteerd. Gelieve afzonderlijk te uploaden voor meer informatie."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Sleutel ${ fingerprint } is al geüpload"
-      ],
-      "Selected color:": [
-        "Geselecteerde kleur:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } heeft uw toestemming tot ${ enableDesktopNotifications } nodig."
@@ -7772,9 +7758,6 @@
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Dit zal uw huidig betalend abonnement annuleren en u zult al uw opgebouwde loyaliteitsvoordelen verliezen."
       ],
-      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
-        "Dit zal uw huidige betaalde abonnement annuleren en u verliest alle voordelen van loyaliteit die u heeft verzameld. Het resterende saldo van uw abonnement zal worden teruggestuurd als accountcredits."
-      ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
         "Dit zal alle vorige versies van uw bestanden die ouder zijn dan ${ rententionLabel } verwijderen."
       ],
@@ -8402,6 +8385,17 @@
       ],
       "Zoom meeting": [
         "Zoom meeting"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Extra dubbele sleutels gedetecteerd. Gelieve afzonderlijk te uploaden voor meer informatie."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Sleutel ${ fingerprint } is al geüpload"
+      ],
+      "Selected color:": [
+        "Geselecteerde kleur:"
       ]
     },
     "Info - folder colouring feature": {
@@ -13821,9 +13815,6 @@
       ]
     },
     "Subscription reminder": {
-      "${ BRAND_NAME } was targeted by Russia in one of the most aggressive censorship campaigns in recent memory, and our team fought back.": [
-        "${ BRAND_NAME } was het doelwit van Rusland in een van de meest agressieve censuurcampagnes van de laatste tijd en ons team vocht terug."
-      ],
       "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
         "${ BRAND_NAME } zijn enige bron van inkomsten is abonnementen van gebruikers. Uw steun stelt ons in staat om onafhankelijk te blijven, vooruitgang te boeken op onze missie om privacy de standaard van online te maken en doorgaan met het steunen van activisten en organisaties die strijden voor privacy en vrijheid."
       ],
@@ -13837,38 +13828,8 @@
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } opslagruimte"
       ],
-      "${ planName } doesn't just provide extra storage. It lets you manage your emails faster, customize your inbox and email addresses, and access the desktop app.": [
-        "${ planName } biedt niet alleen extra opslag. Hiermee kunt u uw e-mails sneller beheren, uw inbox en e-mailadressen personaliseren en toegang krijgen tot de desktop app."
-      ],
       "10 email addresses": [
         "10 e-mailadressen"
-      ],
-      "A direct contribution to our mission": [
-        "Een directe bijdrage aan onze missie"
-      ],
-      "After ${ BRAND_NAME } got blocked in Iran during protests, our customer support team worked to get our VPN app directly into people's hands.": [
-        "Nadat ${ BRAND_NAME } tijdens protesten in Iran geblokkeerd werd, werkte ons klanten support team om onze VPN-app direct in de handen van mensen te krijgen."
-      ],
-      "After privacy and free speech were threatened in Hong Kong, we directly supported local civil rights organizations.": [
-        "Nadat de privacy en vrijheid van meningsuiting in Hongkong werden bedreigd, hebben we lokale burgerrechtenorganisaties rechtstreeks gesteund."
-      ],
-      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **1 GB** for Mail, and **1 GB** for Drive. You will also lose any storage bonuses earned previously.": [
-        "Door uw ${ planName }-abonnement te annuleren, zal uw opslag verminderen van **${ planMaxSpace }** naar **1 GB** voor Mail, en **1 GB** voor Drive. U verliest ook alle eerder verdiende opslag bonussen."
-      ],
-      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **1 GB** for Mail, and **5 GB** for Drive. You will also lose any storage bonuses earned previously.": [
-        "Door uw ${ planName }-abonnement te annuleren, zal uw opslag verminderen van **${ planMaxSpace }** naar **1 GB** voor Mail, en **5 GB** voor Drive. U verliest ook alle eerder verdiende opslag bonussen."
-      ],
-      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **500 MB** for Mail, and **1 GB** for Drive. You will also lose any storage bonuses earned previously.": [
-        "Door uw ${ planName }-abonnement te annuleren, zal uw opslag verminderen van **${ planMaxSpace }** naar **500 MB** voor Mail, en **1 GB** voor Drive. U verliest ook alle eerder verdiende opslag bonussen."
-      ],
-      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **500 MB** for Mail, and **5 GB** for Drive. You will also lose any storage bonuses earned previously.": [
-        "Door uw ${ planName }-abonnement te annuleren, zal uw opslag verminderen van **${ planMaxSpace }** naar **500 MB** voor Mail, en **5 GB** voor Drive. U verliest ook alle eerder verdiende opslag bonussen."
-      ],
-      "By downgrading your account, you will also lose storage space": [
-        "Door uw account te downgraden verliest u ook opslagruimte"
-      ],
-      "By downgrading your account, you will lose access to these important features": [
-        "Door uw account te downgraden verliest u toegang tot deze belangrijke functies"
       ],
       "Calendar sharing": [
         "Agenda-delen"
@@ -13894,20 +13855,11 @@
       "I still want to cancel": [
         "Ik wil nog steeds opzeggen"
       ],
-      "If you exceed your free Drive storage quota:": [
-        "Als u uw gratis Drive opslagquotum overschrijdt:"
-      ],
-      "If you exceed your free Mail storage quota:": [
-        "Als u uw gratis Mail opslagquotum overschrijdt:"
-      ],
       "Keep ${ planName }": [
         "${ planName } behouden"
       ],
       "Learn more about our impact": [
         "Meer informatie over onze impact"
-      ],
-      "Let us remind you of everything ${ planName } can do": [
-        "Laat ons u herinneren aan alles wat ${ planName } kan doen"
       ],
       "Our fight against censorship in Russia": [
         "Onze strijd tegen censuur in Rusland"
@@ -13936,32 +13888,8 @@
       "Watch the interview": [
         "Bekijk het interview"
       ],
-      "When you cancel, you will lose access to": [
-        "Wanneer u annuleert, verliest u toegang tot"
-      ],
       "Yearly free storage bonuses": [
         "Jaarlijkse gratis opslagbonussen"
-      ],
-      "You **won't be able to add any new files**": [
-        "U **zal geen nieuwe bestanden kunnen toevoegen**"
-      ],
-      "You **won't be able to backup photos** from your devices": [
-        "U **zal geen back-ups kunnen nemen van foto's** van op uw apparaten"
-      ],
-      "You **won't be able to send emails** with attachments": [
-        "U **zal geen e-mails kunnen verzenden** met bijlagen"
-      ],
-      "You still have ${ expiryDate } on your ${ planName } plan. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling.": [
-        "U heeft nog ${ expiryDate } op uw ${ planName }-abonnement. We zullen de credits voor de resterende tijd toevoegen aan uw ${ BRAND_NAME }-account. Zorg ervoor dat u de gratis abonnementslimieten niet overschrijdt voordat u opzegt."
-      ],
-      "Your **calendar will be frozen**": [
-        "Uw **agenda zal bevroren worden**"
-      ],
-      "Your devices will **stop syncing**": [
-        "Uw apparaten zullen **stoppen met synchroniseren**"
-      ],
-      "Your inbox will **stop receiving new emails**": [
-        "Uw inbox zal **geen nieuwe e-mails meer ontvangen**"
       ],
       "Your own custom email domain": [
         "Uw eigen aangepaste e-maildomein"
@@ -13977,17 +13905,38 @@
       "and 15 more premium features": [
         "en 15 meer premium functies"
       ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisch doorsturen van e-mail ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Datalek waarschuwingen ${ strongArgument }"
+      ],
       "Desktop app": [
         "Desktop-app"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Help ons het internet veilig en privé te houden voor iedereen. Upgrade naar een betaald abonnement."
       ],
       "No ads or tracking": [
         "Geen advertenties of tracking"
       ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-mailadres"
+      ],
+      "Support our mission": [
+        "Steun onze missie"
+      ],
       "Upgrade": [
         "Upgraden"
       ],
+      "Upgrade your productivity": [
+        "Upgrade uw productiviteit"
+      ],
       "We don't sell your data": [
         "Wij verkopen uw data niet"
+      ],
+      "Your privacy is our mission": [
+        "Uw privacy is onze missie"
       ]
     },
     "Subscription renewal state": {

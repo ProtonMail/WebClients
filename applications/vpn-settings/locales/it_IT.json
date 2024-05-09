@@ -173,9 +173,6 @@
       "Downgrade": [
         "Effettua il downgrade"
       ],
-      "Downgrade account": [
-        "Effettua il downgrade dell'account"
-      ],
       "Download": [
         "Scarica"
       ],
@@ -1936,11 +1933,32 @@
       "Bugs or quality issue": [
         "Bug o problemi di qualità"
       ],
+      "I do not wish to share": [
+        "Preferisco non dirlo"
+      ],
+      "I found a cheaper VPN": [
+        "Ho trovato una VPN più economica"
+      ],
+      "I found a VPN with better features": [
+        "Ho trovato una VPN con funzionalità migliori"
+      ],
+      "I have not managed to connect": [
+        "Non sono riuscito a connettermi"
+      ],
+      "I only needed a VPN short-term": [
+        "Avevo bisogno di una VPN solo per un breve periodo"
+      ],
       "I use a different ${ BRAND_NAME } account": [
         "Utilizzo un account ${ BRAND_NAME } differente"
       ],
+      "It doesn't do what I need": [
+        "Non fa quello di cui ho bisogno"
+      ],
       "Missing feature(s)": [
         "Funzionalità mancante(i)"
+      ],
+      "Other reason (please comment)": [
+        "Altro motivo (per favore commenta)"
       ],
       "Subscription is too expensive": [
         "Abbonamento troppo costoso"
@@ -1950,6 +1968,9 @@
       ],
       "Temporary need, may come back in the future": [
         "Necessità temporanea, potrei tornare in futuro"
+      ],
+      "The VPN is too slow": [
+        "La VPN è troppo lenta"
       ]
     },
     "Downgrade modal exit survey title": {
@@ -3809,9 +3830,6 @@
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Questo annullerà il tuo attuale abbonamento a pagamento e perderai i benefici di fedeltà che hai accumulato."
       ],
-      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
-        "Questo annullerà il tuo attuale abbonamento a pagamento e perderai i benefici di fedeltà che hai accumulato. Il saldo residuo dell'abbonamento verrà restituito come crediti dell'account."
-      ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Questo abiliterà l'uso di PayPal per pagare il tuo abbonamento ${ BRAND_NAME }. Ti reindirizzeremo a PayPal in una nuova scheda del browser. Se usi un qualsiasi blocco pop-up, disabilitalo per continuare."
       ],
@@ -4027,6 +4045,9 @@
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Quando abiliti SAML per ${ appName } nel tuo fornitore di identità, ti potrebbe essere chiesto di usare l'issuer ID e l'URL (ACS) di callback. Copia e incolla i dati seguenti nei campi del tuo fornitore di identità."
+      ],
+      "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
+        "Quando annulli il tuo piano di abbonamento a pagamento attualmente attivo, il saldo rimanente verrà restituito come crediti sull'account e verrà effettuato il downgrade al piano ${ BRAND_NAME } ${ PLANS.FREE }."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Quando configuri l'autenticazione a due fattori, forniamo dei codici di recupero che puoi usare per accedere se perdi l'accesso alla tua app di autenticazione."

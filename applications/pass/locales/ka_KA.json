@@ -834,6 +834,10 @@
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME }-ს თქვენი ${ BRAND_NAME }-ის პაროლი დასჭირდება, რომ მონაცემებთან წვდომა ქსელის გარეშეც გქონდეთ."
       ],
+      "${ row.breachCount } breach detected": [
+        "აღმოჩენილია ${ row.breachCount } გაჟონვა",
+        "აღმოჩენილია ${ row.breachCount } გაჟონვა"
+      ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 დღე ფასიანი ფუნქციების უფასოდ მისაღებად. მხოლოდ, ${ BRAND_NAME }-ის ანგარიშის მიღების პირველი კვირის განმავლობაში."
       ],
@@ -969,6 +973,9 @@
       ],
       "High Priority": [
         "მაღალი პრიორიტეტი"
+      ],
+      "How does monitoring work?": [
+        "როგორ მუშაობს მონიტორინგი?"
       ],
       "Import in progress:": [
         "მიმდინარეობს შემოტანა:"

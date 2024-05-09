@@ -371,9 +371,6 @@
       "Downgrade": [
         "Zurückstufen"
       ],
-      "Downgrade account": [
-        "Konto downgraden"
-      ],
       "Download": [
         "Herunterladen"
       ],
@@ -5971,17 +5968,6 @@
         "Ein Teil deines Kalenderinhalts wird nicht unterstützt und wird nicht importiert."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Doppelt vorhandene Schlüssel erkannt. Für weitere Informationen lade diese bitte einzeln hoch."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Schlüssel ${ fingerprint } wurde bereits hochgeladen"
-      ],
-      "Selected color:": [
-        "Ausgewählte Farbe:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } benötigt deine Erlaubnis, um ${ enableDesktopNotifications }."
@@ -7736,9 +7722,6 @@
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Dadurch wird dein aktuelles bezahltes Abonnement gekündigt und du verlierst alle Treuevorteile, die du angesammelt hast."
       ],
-      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
-        "Dadurch wird dein aktuelles kostenpflichtiges Abonnement aufgehoben und du verlierst alle angesammelten Treuevorteile. Der verbleibende Restbetrag deines Abonnements wird als Kontoguthaben zurückerstattet."
-      ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
         "Dadurch werden alle früheren Versionen, die älter sind als ${ rententionLabel }, gelöscht."
       ],
@@ -8360,6 +8343,17 @@
       ],
       "Zoom meeting": [
         "Zoom-Meeting"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Doppelt vorhandene Schlüssel erkannt. Für weitere Informationen lade diese bitte einzeln hoch."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Schlüssel ${ fingerprint } wurde bereits hochgeladen"
+      ],
+      "Selected color:": [
+        "Ausgewählte Farbe:"
       ]
     },
     "Info - folder colouring feature": {
@@ -13773,9 +13767,6 @@
       ]
     },
     "Subscription reminder": {
-      "${ BRAND_NAME } was targeted by Russia in one of the most aggressive censorship campaigns in recent memory, and our team fought back.": [
-        "${ BRAND_NAME } wurde von Russland in einer der aggressivsten Zensurkampagnen der letzten Zeit ins Visier genommen, und unser Team hat sich gewehrt."
-      ],
       "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
         "Die einzige Einnahmequelle von ${ BRAND_NAME } sind Nutzerabonnements. Deine Unterstützung ermöglicht es uns, unabhängig zu bleiben, unsere Mission voranzutreiben, den Datenschutz im Internet zum Standard zu machen, und weiterhin Aktivisten und Organisationen zu unterstützen, die für Datenschutz und Freiheit kämpfen."
       ],
@@ -13789,29 +13780,8 @@
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } Speicherplatz insgesamt"
       ],
-      "${ planName } doesn't just provide extra storage. It lets you manage your emails faster, customize your inbox and email addresses, and access the desktop app.": [
-        "${ planName } bietet nicht nur zusätzlichen Speicherplatz. Damit kannst du deine E-Mails schneller verwalten, deinen Posteingang und deine E-Mail-Adressen anpassen und auf die Desktop-App zugreifen."
-      ],
       "10 email addresses": [
         "10 E-Mail-Adressen"
-      ],
-      "A direct contribution to our mission": [
-        "Ein direkter Beitrag zu unserer Mission"
-      ],
-      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **1 GB** for Mail, and **1 GB** for Drive. You will also lose any storage bonuses earned previously.": [
-        "Wenn du dein Abonnement für ${ planName } kündigst, verringert sich dein Speicherplatz von **${ planMaxSpace }** auf **1 GB** für Mail und **1 GB** für Drive. Außerdem verlierst du alle zuvor erhaltenen Speicherplatzboni."
-      ],
-      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **1 GB** for Mail, and **5 GB** for Drive. You will also lose any storage bonuses earned previously.": [
-        "Wenn du dein Abonnement für ${ planName } kündigst, verringert sich dein Speicherplatz von **${ planMaxSpace }** auf **1 GB** für Mail und **5 GB** für Drive. Außerdem verlierst du alle zuvor erhaltenen Speicherplatzboni."
-      ],
-      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **500 MB** for Mail, and **1 GB** for Drive. You will also lose any storage bonuses earned previously.": [
-        "Wenn du dein Abonnement für ${ planName } kündigst, verringert sich dein Speicherplatz von **${ planMaxSpace }** auf **500 MB** für Mail und **1 GB** für Drive. Außerdem verlierst du alle zuvor erhaltenen Speicherplatzboni."
-      ],
-      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **500 MB** for Mail, and **5 GB** for Drive. You will also lose any storage bonuses earned previously.": [
-        "Wenn du dein Abonnement für ${ planName } kündigst, verringert sich dein Speicherplatz von **${ planMaxSpace }** auf **500 MB** für Mail und **5 GB** für Drive. Außerdem verlierst du alle zuvor erhaltenen Speicherplatzboni."
-      ],
-      "By downgrading your account, you will also lose storage space": [
-        "Wenn du dein Konto herabstufst, verlierst du auch Speicherplatz."
       ],
       "Calendar sharing": [
         "Kalenderfreigabe"
@@ -13833,12 +13803,6 @@
       ],
       "I still want to cancel": [
         "Ich möchte trotzdem kündigen"
-      ],
-      "If you exceed your free Drive storage quota:": [
-        "Wenn du dein Kontingent an freiem Drive-Speicher überschreitest:"
-      ],
-      "If you exceed your free Mail storage quota:": [
-        "Wenn du dein Kontingent an freiem Mail-Speicher überschreitest:"
       ],
       "Keep ${ planName }": [
         "${ planName } behalten"
@@ -13866,30 +13830,6 @@
       ],
       "Watch the interview": [
         "Schau dir das Interview an"
-      ],
-      "When you cancel, you will lose access to": [
-        "Wenn du kündigst, verlierst du den Zugang zu"
-      ],
-      "You **won't be able to add any new files**": [
-        "Du **kannst keine neuen Dateien hinzufügen**."
-      ],
-      "You **won't be able to backup photos** from your devices": [
-        "Du **kannst keine Fotos** von deinen Geräten sichern"
-      ],
-      "You **won't be able to send emails** with attachments": [
-        "Du **kannst keine E-Mails** mit Anhängen versenden"
-      ],
-      "You still have ${ expiryDate } on your ${ planName } plan. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling.": [
-        "Du hast noch ${ expiryDate } in deinem ${ planName }-Abonnement verbleibend. Wir fügen das Guthaben für die verbleibende Zeit deinem ${ BRAND_NAME }-Konto hinzu. Vergewissere dich, dass du die Grenzen des kostenlosen Abonnements nicht überschreitest, bevor du kündigst."
-      ],
-      "Your **calendar will be frozen**": [
-        "Dein **Kalender wird blockiert**"
-      ],
-      "Your devices will **stop syncing**": [
-        "Deine Geräte werden **nicht mehr synchronisiert**."
-      ],
-      "Your inbox will **stop receiving new emails**": [
-        "Dein Posteingang wird **keine neuen E-Mails mehr erhalten**"
       ],
       "Your own custom email domain": [
         "Deine eigene E-Mail-Domain"

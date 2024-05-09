@@ -185,6 +185,9 @@
       "Get mobile apps": [
         "Priskrbite si mobilno aplikacijo"
       ],
+      "Get Pass Plus": [
+        "Pridobite Pass Plus"
+      ],
       "Get Started": [
         "Začnite"
       ],
@@ -284,6 +287,12 @@
       "Pass for iOS": [
         "ProtonPass za iOS"
       ],
+      "Pass Monitor": [
+        "Nadzor nad Proton Pass"
+      ],
+      "Pause monitoring": [
+        "Začasno ustavi spremljanje"
+      ],
       "Pin item": [
         "Pripni predmet"
       ],
@@ -314,6 +323,9 @@
       "Resend code": [
         "Znova pošlji kodo"
       ],
+      "Resend code (in ${ remaining }s)": [
+        "Znova pošlji kodo (v ${ remaining }s)"
+      ],
       "Resend invitation": [
         "Ponovno pošlji povabilo"
       ],
@@ -323,6 +335,9 @@
       "Restore item": [
         "Obnovi predmet"
       ],
+      "Resume monitoring": [
+        "Nadaljuj spremljanje"
+      ],
       "Retry": [
         "Poskusite znova"
       ],
@@ -331,6 +346,9 @@
       ],
       "Saving": [
         "Shranjeno"
+      ],
+      "See all": [
+        "Poglejte vse"
       ],
       "See members": [
         "Ogled članov"
@@ -380,6 +398,9 @@
       "Trash": [
         "Smeti"
       ],
+      "Try again.": [
+        "Poskusite ponovno."
+      ],
       "Unpin item": [
         "Odpni predmet"
       ],
@@ -397,6 +418,9 @@
       ],
       "Verify": [
         "Preveri"
+      ],
+      "View details": [
+        "Prikaži podrobnosti"
       ],
       "View history": [
         "Pokaži zgodovino"
@@ -451,6 +475,9 @@
       ]
     },
     "Description": {
+      "Change your passwords": [
+        "Spremenite svoja gesla"
+      ],
       "Create unique passwords": [
         "Ustvarite edinstvena gesla"
       ],
@@ -462,6 +489,9 @@
       ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Naša vrhunska varnostna rešitev, ki temelji na umetni inteligenci, je zasnovana za uporabnike, ki iščejo večjo zaščito za svoje račune. ${ learnMoreLink }"
+      ],
+      "Set up 2FA for more security": [
+        "Nastavite 2FA za večjo varnost"
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "Vaš račun je ranljiv, pojdite v nastavitve in spremenite geslo."
@@ -1645,6 +1675,9 @@
       "Last month": [
         "Prejšnji mesec"
       ],
+      "Last updated": [
+        "Nazadnje posodobljeno"
+      ],
       "Last week": [
         "Prejšnji teden"
       ],
@@ -1701,6 +1734,9 @@
       ],
       "No history": [
         "Brez zgodovine"
+      ],
+      "None": [
+        "Brez"
       ],
       "Note": [
         "Opomba"
@@ -1789,6 +1825,12 @@
       "Special characters (!&*)": [
         "Posebni znaki (!&*)"
       ],
+      "Status": [
+        "Stanje"
+      ],
+      "Strong": [
+        "Močno"
+      ],
       "Suffix": [
         "Pripona"
       ],
@@ -1834,6 +1876,9 @@
       "Update": [
         "Posodobi"
       ],
+      "Used in": [
+        "Uporablja se v"
+      ],
       "Username": [
         "Uporabniško ime"
       ],
@@ -1857,6 +1902,12 @@
       ],
       "View logs": [
         "Prikaži dnevnik"
+      ],
+      "Vulnerable": [
+        "Ranljivo"
+      ],
+      "Weak": [
+        "Šibko"
       ],
       "Websites": [
         "Spletne strani"
@@ -1976,6 +2027,9 @@
       "Full Name": [
         "Polno ime"
       ],
+      "me@example.com": [
+        "ime@primer.si"
+      ],
       "MM/YY": [
         "MM/LL"
       ],
@@ -2040,6 +2094,9 @@
       "${ BRAND_NAME } addresses": [
         "${ BRAND_NAME } naslovov"
       ],
+      "Account protection": [
+        "Zaščita računa"
+      ],
       "Auto-lock update": [
         "Posodobitev samodejnega zaklepanja"
       ],
@@ -2052,6 +2109,9 @@
       "Confirm PIN code": [
         "Potrdi PIN kodo"
       ],
+      "Confirm your email": [
+        "Potrdite svoj elektronski naslov."
+      ],
       "Create a vault": [
         "Ustvari nov trezor"
       ],
@@ -2063,6 +2123,12 @@
       ],
       "Current version": [
         "Trenutna različica"
+      ],
+      "Custom addresses": [
+        "Naslovi po meri"
+      ],
+      "Custom emails": [
+        "E-poštni naslovi po meri"
       ],
       "Dark Web Monitoring": [
         "Spremljanje Dark Web"
@@ -2087,6 +2153,9 @@
       ],
       "Enter your PIN": [
         "Vnesite PIN"
+      ],
+      "Excluded items": [
+        "Izključeni predmeti"
       ],
       "Get Started": [
         "Začnite"
@@ -2148,6 +2217,9 @@
       "No items selected": [
         "Izbran ni noben predmet"
       ],
+      "No reused passwords": [
+        "Ni ponovno uporabljenih gesel"
+      ],
       "Our welcome gift to you": [
         "Naše darilo dobrodošlice za vas"
       ],
@@ -2193,6 +2265,9 @@
       "Set access level": [
         "Nastavite raven dostopa"
       ],
+      "Set up 2FA for more security": [
+        "Nastavite 2FA za večjo varnost"
+      ],
       "Settings": [
         "Nastavitve"
       ],
@@ -2228,6 +2303,9 @@
       ],
       "Want to learn more?": [
         "Si želite izvedeti več?"
+      ],
+      "Weak passwords": [
+        "Šibka gesla"
       ],
       "What is an alias?": [
         "Kaj je vzdevek?"
@@ -2299,6 +2377,9 @@
       "Duplicate email addresses.": [
         "Podvojeni e-poštni naslovi."
       ],
+      "Email is required": [
+        "E-poštni naslov je obvezen"
+      ],
       "Empty note": [
         "Prazna opomba"
       ],
@@ -2310,6 +2391,12 @@
       ],
       "Invalid alias prefix": [
         "Neveljavna predpona vzdevka"
+      ],
+      "Invalid code": [
+        "Neveljavna koda"
+      ],
+      "Invalid email": [
+        "Neveljaven e-poštni naslov"
       ],
       "Invalid email addresses.": [
         "Neveljavni e-poštni naslovi."
@@ -2391,6 +2478,9 @@
       ],
       "Vault name is required": [
         "Zahtevano je ime trezorja"
+      ],
+      "Verification code is required": [
+        "Zahtevana je koda za preverjanje"
       ],
       "You cannot create more vaults than your subscription allows.": [
         "Ne morete ustvariti več trezorjev, kot dovoljuje vaša naročnina."
