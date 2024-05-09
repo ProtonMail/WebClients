@@ -371,9 +371,6 @@
       "Downgrade": [
         "Downgradovat"
       ],
-      "Downgrade account": [
-        "Snížit úroveň účtu"
-      ],
       "Download": [
         "Stáhnout"
       ],
@@ -6003,17 +6000,6 @@
         "Část obsahu vašeho kalendáře není podporována a nebude importována."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Byly zjištěny další duplicitní klíče. Pro více informací je prosím nahrajte jednotlivě."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "${ fingerprint } klíče byl již nahrán"
-      ],
-      "Selected color:": [
-        "Vybraná barva:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikace ${ appName } potřebuje Váš souhlas, aby mohla ${ enableDesktopNotifications }."
@@ -7869,9 +7855,6 @@
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Tím se zruší vaše stávající předplatné a ztratíte veškeré věrnostní výhody, které jste nashromáždili."
       ],
-      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
-        "Tímto úkonem zrušíte aktuální placené předplatné a ztratíte všechny věrnostní výhody, které jste nashromáždili. Zbývající zůstatek předplatného bude vrácen jako kredit na účet."
-      ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
         "Toto smaže všechny předchozí verze vašich souborů, které jsou starší než ${ rententionLabel }."
       ],
@@ -8513,6 +8496,17 @@
       ],
       "Zoom meeting": [
         "setkání na Zoomu"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Byly zjištěny další duplicitní klíče. Pro více informací je prosím nahrajte jednotlivě."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "${ fingerprint } klíče byl již nahrán"
+      ],
+      "Selected color:": [
+        "Vybraná barva:"
       ]
     },
     "Info - folder colouring feature": {

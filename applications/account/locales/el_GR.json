@@ -371,9 +371,6 @@
       "Downgrade": [
         "Υποβαθμίστε"
       ],
-      "Downgrade account": [
-        "Υποβάθμιση λογαριασμού"
-      ],
       "Download": [
         "Λήψη"
       ],
@@ -5983,17 +5980,6 @@
         "Μέρος του περιεχομένου του ημερολογίου σας δεν υποστηρίζεται και δεν θα εισαχθεί."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Εντοπίστηκαν πρόσθετα διπλότυπα κλειδιά. Παρακαλούμε ανεβάστε τα μεμονωμένα για περισσότερες πληροφορίες."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Το κλειδί ${ fingerprint } έχει ήδη ανεβεί"
-      ],
-      "Selected color:": [
-        "Επιλεγμένο χρώμα:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Το ${ appName } χρειάζεται την άδειά σας για την ${ enableDesktopNotifications }."
@@ -7772,9 +7758,6 @@
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Αυτό θα ακυρώσει την τρέχουσα συνδρομή επί πληρωμή και θα χάσετε τυχόν οφέλη αφοσίωσης που έχετε συγκεντρώσει."
       ],
-      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
-        "Αυτό θα ακυρώσει την τρέχουσα συνδρομή σας επί πληρωμή και θα χάσετε τυχόν οφέλη αφοσίωσης που έχετε συσσωρεύσει. Το υπόλοιπο ποσό της εγγραφής σας θα επιστραφεί στον λογαριασμό σας ως πίστωση."
-      ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
         "Αυτό θα διαγράψει όλες τις προηγούμενες εκδόσεις των αρχείων σας που είναι παλαιότερες από ${ rententionLabel }."
       ],
@@ -8402,6 +8385,17 @@
       ],
       "Zoom meeting": [
         "Συνάντηση Zoom"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Εντοπίστηκαν πρόσθετα διπλότυπα κλειδιά. Παρακαλούμε ανεβάστε τα μεμονωμένα για περισσότερες πληροφορίες."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Το κλειδί ${ fingerprint } έχει ήδη ανεβεί"
+      ],
+      "Selected color:": [
+        "Επιλεγμένο χρώμα:"
       ]
     },
     "Info - folder colouring feature": {
@@ -13821,9 +13815,6 @@
       ]
     },
     "Subscription reminder": {
-      "${ BRAND_NAME } was targeted by Russia in one of the most aggressive censorship campaigns in recent memory, and our team fought back.": [
-        "Το ${ BRAND_NAME } στοχοποιήθηκε από τη Ρωσία σε μια από τις πιο επιθετικές εκστρατείες λογοκρισίας στην πρόσφατη μνήμη και η ομάδα μας αντεπιτέθηκε."
-      ],
       "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
         "Η μόνη πηγή εσόδων του ${ BRAND_NAME } είναι οι συνδρομές χρηστών. Η υποστήριξή σας μας επιτρέπει να παραμείνουμε ανεξάρτητοι, να προωθήσουμε την αποστολή μας να κάνουμε την ιδιωτικότητα προεπιλεγμένη στο διαδίκτυο και να συνεχίσουμε να υποστηρίζουμε ακτιβιστές και οργανώσεις που αγωνίζονται για την ιδιωτικότητα και την ελευθερία."
       ],
@@ -13837,38 +13828,8 @@
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } συνολικός αποθηκευτικός χώρος"
       ],
-      "${ planName } doesn't just provide extra storage. It lets you manage your emails faster, customize your inbox and email addresses, and access the desktop app.": [
-        "Το ${ planName } δεν παρέχει απλώς επιπλέον χώρο αποθήκευσης. Σας επιτρέπει να διαχειρίζεστε τα μηνύματά σας πιο γρήγορα, να προσαρμόζετε τα εισερχόμενά σας και τις διευθύνσεις ηλεκτρονικού ταχυδρομείου σας και να έχετε πρόσβαση στην εφαρμογή για υπολογιστές."
-      ],
       "10 email addresses": [
         "10 διευθύνσεις ηλεκτρονικού ταχυδρομείου"
-      ],
-      "A direct contribution to our mission": [
-        "Μια άμεση συμβολή στην αποστολή μας"
-      ],
-      "After ${ BRAND_NAME } got blocked in Iran during protests, our customer support team worked to get our VPN app directly into people's hands.": [
-        "Αφού το ${ BRAND_NAME } μπλοκαρίστηκε στο Ιράν κατά τη διάρκεια διαμαρτυριών, η ομάδα υποστήριξης πελατών μας εργάστηκε για να παρέχει την εφαρμογή VPN απευθείας στα χέρια του λαού."
-      ],
-      "After privacy and free speech were threatened in Hong Kong, we directly supported local civil rights organizations.": [
-        "Μετά την απειλή της ιδιωτικής ζωής και της ελευθερίας του λόγου στο Χονγκ Κονγκ, υποστηρίξαμε άμεσα τις τοπικές οργανώσεις πολιτικών δικαιωμάτων."
-      ],
-      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **1 GB** for Mail, and **1 GB** for Drive. You will also lose any storage bonuses earned previously.": [
-        "Ακυρώνοντας τη συνδρομή σας ${ planName }, ο χώρος αποθήκευσης θα μειωθεί από **${ planMaxSpace }** σε **1 GB** για το Mail και **1 GB** για το Drive. Θα χάσετε επίσης τυχόν μπόνους αποθήκευσης που κερδίσατε προηγουμένως."
-      ],
-      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **1 GB** for Mail, and **5 GB** for Drive. You will also lose any storage bonuses earned previously.": [
-        "Ακυρώνοντας τη συνδρομή σας ${ planName }, ο χώρος αποθήκευσης θα μειωθεί από **${ planMaxSpace }** σε **1 GB** για το Mail και **5 GB** για το Drive. Θα χάσετε επίσης τυχόν μπόνους αποθήκευσης που κερδίσατε προηγουμένως."
-      ],
-      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **500 MB** for Mail, and **1 GB** for Drive. You will also lose any storage bonuses earned previously.": [
-        "Ακυρώνοντας τη συνδρομή σας ${ planName }, ο χώρος αποθήκευσης θα μειωθεί από **${ planMaxSpace }** σε **500 MB** για το Mail και **1 GB** για το Drive. Θα χάσετε επίσης τυχόν μπόνους αποθήκευσης που κερδίσατε προηγουμένως."
-      ],
-      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **500 MB** for Mail, and **5 GB** for Drive. You will also lose any storage bonuses earned previously.": [
-        "Ακυρώνοντας τη συνδρομή σας ${ planName }, ο χώρος αποθήκευσης θα μειωθεί από **${ planMaxSpace }** σε **500 MB** για το Mail και **5 GB** για το Drive. Θα χάσετε επίσης τυχόν μπόνους αποθήκευσης που κερδίσατε προηγουμένως."
-      ],
-      "By downgrading your account, you will also lose storage space": [
-        "Με την υποβάθμιση του λογαριασμού σας, θα χάσετε επίσης χώρο αποθήκευσης"
-      ],
-      "By downgrading your account, you will lose access to these important features": [
-        "Με την υποβάθμιση του λογαριασμού σας, θα χάσετε την πρόσβαση σε αυτές τις σημαντικές λειτουργίες"
       ],
       "Calendar sharing": [
         "Κοινή χρήση ημερολογίου"
@@ -13894,20 +13855,11 @@
       "I still want to cancel": [
         "Εξακολουθώ να θέλω να ακυρώσω"
       ],
-      "If you exceed your free Drive storage quota:": [
-        "Αν υπερβείτε το όριο του δωρεάν χώρου αποθήκευσης στο Drive:"
-      ],
-      "If you exceed your free Mail storage quota:": [
-        "Αν υπερβείτε το όριο του δωρεάν χώρου αποθήκευσης στο Mail:"
-      ],
       "Keep ${ planName }": [
         "Διατήρηση ${ planName }"
       ],
       "Learn more about our impact": [
         "Μάθετε περισσότερα για τον αντίκτυπό μας"
-      ],
-      "Let us remind you of everything ${ planName } can do": [
-        "Ας σας υπενθυμίσουμε όλα όσα μπορεί να κάνει το ${ planName }"
       ],
       "Our fight against censorship in Russia": [
         "Ο αγώνας μας ενάντια στη λογοκρισία στη Ρωσία"
@@ -13936,32 +13888,8 @@
       "Watch the interview": [
         "Δείτε τη συνέντευξη"
       ],
-      "When you cancel, you will lose access to": [
-        "Όταν ακυρώσετε, θα χάσετε την πρόσβαση στο"
-      ],
       "Yearly free storage bonuses": [
         "Ετήσια δωρεάν μπόνους αποθήκευσης"
-      ],
-      "You **won't be able to add any new files**": [
-        "**Δε θα μπορείτε να προσθέσετε νέα αρχεία**"
-      ],
-      "You **won't be able to backup photos** from your devices": [
-        "**Δε θα μπορείτε να δημιουργήσετε αντίγραφα ασφαλείας φωτογραφιών** από τις συσκευές σας"
-      ],
-      "You **won't be able to send emails** with attachments": [
-        "**δε θα μπορείτε να στείλετε μηνύματα ηλεκτρονικού ταχυδρομείου** με συνημμένα"
-      ],
-      "You still have ${ expiryDate } on your ${ planName } plan. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling.": [
-        "Εξακολουθείτε να έχετε ${ expiryDate } στο πλάνο ${ planName } σας. Θα προσθέσουμε τις πιστώσεις για τον υπόλοιπο χρόνο στον λογαριασμό σας ${ BRAND_NAME }. Βεβαιωθείτε ότι δεν υπερβαίνετε τα όρια του δωρεάν προγράμματος πριν ακυρώσετε."
-      ],
-      "Your **calendar will be frozen**": [
-        "Το **ημερολόγιό σας θα αποκλειστεί**"
-      ],
-      "Your devices will **stop syncing**": [
-        "Οι συσκευές σας **θα σταματήσουν να συγχρονίζονται**"
-      ],
-      "Your inbox will **stop receiving new emails**": [
-        "Τα εισερχόμενά σας **θα σταματήσουν να λαμβάνουν νέα μηνύματα ηλεκτρονικού ταχυδρομείου**"
       ],
       "Your own custom email domain": [
         "Ο δικός σας προσαρμοσμένος τομέας ηλεκτρονικού ταχυδρομείου"

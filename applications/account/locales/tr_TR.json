@@ -371,9 +371,6 @@
       "Downgrade": [
         "Tarifeyi düşür"
       ],
-      "Downgrade account": [
-        "Hesap tarifesini düşür"
-      ],
       "Download": [
         "İndir"
       ],
@@ -5983,17 +5980,6 @@
         "Takvim içeriğinizin bir bölümü desteklenmiyor ve içe aktarılmayacak."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Ek çift anahtar algılandı. Ayrıntılı bilgi almak için lütfen tek tek yükleyin."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "${ fingerprint } anahtarı zaten yüklenmiş"
-      ],
-      "Selected color:": [
-        "Seçilmiş renk:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }, ${ enableDesktopNotifications } için izninizi istiyor."
@@ -7772,9 +7758,6 @@
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Bu işlem, var olan ücretli aboneliğinizi iptal edecek ve kazandığınız sadık müşteri özelliklerini kaybedeceksiniz."
       ],
-      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
-        "Bu işlem, geçerli ücretli aboneliğinizi iptal edecek ve kazandığınız sadık kullanıcı ek faydalarını kaybedeceksiniz. Aboneliğinizin kalan bakiyesi hesap kredisi olarak geri ödenecek."
-      ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
         "Bu işlem, dosyalarınızın ${ rententionLabel } tarihinden önceki tüm sürümlerini siler."
       ],
@@ -8402,6 +8385,17 @@
       ],
       "Zoom meeting": [
         "Zoom toplantısı"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Ek çift anahtar algılandı. Ayrıntılı bilgi almak için lütfen tek tek yükleyin."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "${ fingerprint } anahtarı zaten yüklenmiş"
+      ],
+      "Selected color:": [
+        "Seçilmiş renk:"
       ]
     },
     "Info - folder colouring feature": {
@@ -13821,9 +13815,6 @@
       ]
     },
     "Subscription reminder": {
-      "${ BRAND_NAME } was targeted by Russia in one of the most aggressive censorship campaigns in recent memory, and our team fought back.": [
-        "${ BRAND_NAME }, yakın geçmişteki en saldırgan sansür uygulamalarından birinde Rusya tarafından hedef alındı ve ekibimiz karşılık verdi."
-      ],
       "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
         "${ BRAND_NAME } tek gelir kaynağını kullanıcı aboneliklerinden sağlıyor. Desteğiniz bağımsız kalmamızı, çevrim içi gizliliğe odaklanma misyonumuzu ilerletmemizi ve gizlilik ve özgürlük için mücadele eden aktivistleri ve kuruluşları desteklemeyi sürdürmemizi sağlıyor."
       ],
@@ -13837,38 +13828,8 @@
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } toplam depolama alanı"
       ],
-      "${ planName } doesn't just provide extra storage. It lets you manage your emails faster, customize your inbox and email addresses, and access the desktop app.": [
-        "${ planName } yalnızca ek depolama alanı sağlamaz. E-postalarınızı daha hızlı yönetmenizi, gelen kutunuzu ve e-posta adreslerinizi özelleştirmenizi ve masaüstü uygulamasına erişmenizi sağlar."
-      ],
       "10 email addresses": [
         "10 e-posta adresi"
-      ],
-      "A direct contribution to our mission": [
-        "Misyonumuza doğrudan katkıda bulunmak"
-      ],
-      "After ${ BRAND_NAME } got blocked in Iran during protests, our customer support team worked to get our VPN app directly into people's hands.": [
-        "İran'daki protestolar sırasında ${ BRAND_NAME } engellendikten sonra müşteri destek ekibimiz VPN uygulamamızı doğrudan insanların kullanımına sunmak için çalıştı."
-      ],
-      "After privacy and free speech were threatened in Hong Kong, we directly supported local civil rights organizations.": [
-        "Hong Kong'da gizlilik ve ifade özgürlüğü tehdit altına girdiğinde yerel sivil haklar örgütlerini doğrudan destekledik."
-      ],
-      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **1 GB** for Mail, and **1 GB** for Drive. You will also lose any storage bonuses earned previously.": [
-        "${ planName } aboneliğinizi iptal ettiğinizde, depolama alanınız **${ planMaxSpace }** değerinden Mail için **1 GB** ve Drive için **1 GB** değerine düşer. Ayrıca daha önce kazandığınız depolama alanı hediyelerini de kaybedersiniz."
-      ],
-      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **1 GB** for Mail, and **5 GB** for Drive. You will also lose any storage bonuses earned previously.": [
-        "${ planName } aboneliğinizi iptal ettiğinizde, depolama alanınız **${ planMaxSpace }** değerinden Mail için **1 GB** ve Drive için **5 GB** değerine düşer. Ayrıca daha önce kazandığınız depolama alanı hediyelerini de kaybedersiniz."
-      ],
-      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **500 MB** for Mail, and **1 GB** for Drive. You will also lose any storage bonuses earned previously.": [
-        "${ planName } aboneliğinizi iptal ettiğinizde, depolama alanınız **${ planMaxSpace }** değerinden Mail için **500 MB** ve Drive için **1 GB** değerine düşer. Ayrıca daha önce kazandığınız depolama alanı hediyelerini de kaybedersiniz."
-      ],
-      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **500 MB** for Mail, and **5 GB** for Drive. You will also lose any storage bonuses earned previously.": [
-        "${ planName } aboneliğinizi iptal ettiğinizde, depolama alanınız **${ planMaxSpace }** değerinden Mail için **500 MB** ve Drive için **5 GB** değerine düşer. Ayrıca daha önce kazandığınız depolama alanı hediyelerini de kaybedersiniz."
-      ],
-      "By downgrading your account, you will also lose storage space": [
-        "Tarifenizi düşürdüğünüzde depolama alanınızı da kaybedersiniz"
-      ],
-      "By downgrading your account, you will lose access to these important features": [
-        "Tarifenizi düşürdüğünüzde, şu önemli özelliklere erişiminizi kaybedeceksiniz"
       ],
       "Calendar sharing": [
         "Takvim paylaşımı"
@@ -13894,20 +13855,11 @@
       "I still want to cancel": [
         "Yine de iptal etmek istiyorum"
       ],
-      "If you exceed your free Drive storage quota:": [
-        "Ücretsiz Drive depolama alanı kotanızı aşarsanız:"
-      ],
-      "If you exceed your free Mail storage quota:": [
-        "Ücretsiz Mail depolama alanı kotanızı aşarsanız:"
-      ],
       "Keep ${ planName }": [
         "${ planName } tarifesinde kal"
       ],
       "Learn more about our impact": [
         "Yarattığımız etki hakkında ayrıntılı bilgi alın"
-      ],
-      "Let us remind you of everything ${ planName } can do": [
-        "${ planName } tarifesi ile yapabileceklerinizi size hatırlatalım"
       ],
       "Our fight against censorship in Russia": [
         "Rusya'da sansüre karşı mücadelemiz"
@@ -13936,32 +13888,8 @@
       "Watch the interview": [
         "Röportajı izleyin"
       ],
-      "When you cancel, you will lose access to": [
-        "İptal ettiğinizde, şu özelliklere erişimi kaybedeceksiniz"
-      ],
       "Yearly free storage bonuses": [
         "Yıllık ücretsiz depolama alanı hediyeleri"
-      ],
-      "You **won't be able to add any new files**": [
-        "**Herhangi bir yeni dosya ekleyemezsiniz**"
-      ],
-      "You **won't be able to backup photos** from your devices": [
-        "Aygıtlarınızdaki **fotoğrafları yedekleyemeyeceksiniz**"
-      ],
-      "You **won't be able to send emails** with attachments": [
-        "Ek dosyalar bulunan **e-postalar gönderemezsiniz**"
-      ],
-      "You still have ${ expiryDate } on your ${ planName } plan. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling.": [
-        "${ planName } tarifenizin ${ expiryDate } süresi daha var. Kalan süreye ait kredileri ${ BRAND_NAME } hesabınıza ekleyeceğiz. İptal etmeden önce ücretsiz tarifenin sınırlarını aşmadığınızdan emin olun."
-      ],
-      "Your **calendar will be frozen**": [
-        "**Takviminiz dondurulur**"
-      ],
-      "Your devices will **stop syncing**": [
-        "Aygıtlarınızın **eşitlemesi durdurulur**"
-      ],
-      "Your inbox will **stop receiving new emails**": [
-        "Gelen kutunuz **yeni e-posta almayı durdurur**"
       ],
       "Your own custom email domain": [
         "Kendi özel e-posta etki alanınız"
