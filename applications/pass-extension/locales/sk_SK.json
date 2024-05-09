@@ -531,6 +531,9 @@
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "Tento účet je zraniteľný. Navštívte službu a zmeňte si heslo."
+      ],
+      "This service offers 2FA. Enable it for added account security.": [
+        "Táto služba ponúka 2FA. Aktiváciou tejto funkcie zvýšite bezpečnosť účtu."
       ]
     },
     "Error": {
@@ -2219,9 +2222,6 @@
       "${ PASS_APP_NAME } Settings": [
         "Nastavenia ${ PASS_APP_NAME }"
       ],
-      "${ PASS_SHORT_APP_NAME } monitor": [
-        "${ PASS_SHORT_APP_NAME } monitor"
-      ],
       "Auto-lock update": [
         "Aktualizácia automatického uzamknutia"
       ],
@@ -2350,6 +2350,9 @@
       ],
       "Set access level": [
         "Nastavte úroveň prístupu"
+      ],
+      "Set up 2FA for more security": [
+        "Nastavte 2FA na zvýšenie bezpečnosti"
       ],
       "Share with": [
         "Zdieľať s"
