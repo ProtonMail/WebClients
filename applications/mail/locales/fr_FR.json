@@ -3338,11 +3338,32 @@
       "Bugs or quality issue": [
         "Bugs ou problème de qualité"
       ],
+      "I do not wish to share": [
+        "Je ne souhaite pas partager la raison."
+      ],
+      "I found a cheaper VPN": [
+        "J'ai trouvé un VPN moins cher."
+      ],
+      "I found a VPN with better features": [
+        "J'ai trouvé un VPN avec plus de fonctionnalités."
+      ],
+      "I have not managed to connect": [
+        "Je n'ai pas réussi à me connecter."
+      ],
+      "I only needed a VPN short-term": [
+        "J'avais besoin d'un VPN uniquement pour une courte durée."
+      ],
       "I use a different ${ BRAND_NAME } account": [
         "J'utilise un autre compte ${ BRAND_NAME }."
       ],
+      "It doesn't do what I need": [
+        "Il ne répond pas à mes besoins."
+      ],
       "Missing feature(s)": [
         "Fonctionnalités manquantes"
+      ],
+      "Other reason (please comment)": [
+        "Autre raison (dites-nous comment nous pouvons nous améliorer)"
       ],
       "Subscription is too expensive": [
         "Abonnement trop cher"
@@ -3352,6 +3373,9 @@
       ],
       "Temporary need, may come back in the future": [
         "Besoin temporaire, qui pourrait revenir à l'avenir"
+      ],
+      "The VPN is too slow": [
+        "Le VPN est trop lent."
       ]
     },
     "Downgrade modal exit survey title": {
@@ -5626,7 +5650,7 @@
         "Corps : "
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
-        "Mettez en avant l'image de marque de votre organisation et créez une expérience en ligne plus cohérente pour vos utilisateurs."
+        "Mettez en avant l'image de marque de votre organisation et créez une véritable expérience en ligne pour vos utilisateurs."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "En passant à l'abonnement Free, vous perdrez définitivement ces avantages, même si vous repassez par la suite à un abonnement supérieur."
@@ -6480,7 +6504,7 @@
         "Les données que vous avez saisies dans le brouillon ne peuvent pas être sauvegardées si vous quittez la page."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
-        "Les informations exposées ont été divulguées par un service tiers. Les informations de votre compte ${ BRAND_NAME } restent en sécurité et chiffrées. ${ learnMoreLink }"
+        "Les informations exposées ont été divulguées par un service tiers. Les informations de votre compte ${ BRAND_NAME } restent sécurisées et chiffrées. ${ learnMoreLink }"
       ],
       "The local database is being prepared": [
         "La base de données locale est en cours de préparation."
@@ -8094,7 +8118,7 @@
         "Favoris"
       ],
       "stay safer online": [
-        "améliorer votre sécurité en ligne"
+        "Protégez-vous en ligne"
       ],
       "Terms": [
         "Conditions générales d'utilisation"
@@ -8184,7 +8208,7 @@
         "Votre ${ mailStorage } est plein. Pour envoyer ou recevoir des messages, libérez de l'espace ou ${ cta }."
       ],
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
-        "Votre compte risque d'être supprimé. Pour éviter de perdre des données, demandez à votre administrateur de changer d'abonnement. ${ cta }"
+        "Votre compte risque d'être supprimé. Pour éviter de perdre des données, demandez à votre administrateur de mettre à jour votre abonnement. ${ cta }"
       ],
       "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
         "Votre espace de stockage est plein. Pour envoyer ou recevoir des messages, libérez de l'espace ou ${ cta }."
@@ -10945,7 +10969,7 @@
         "Les labels ont été appliqués."
       ],
       "Last modified aliases stored in your oldest vault": [
-        "Derniers alias modifiés stockés dans votre coffre-fort le plus ancien"
+        "Les derniers alias modifiés sont stockés dans votre coffre-fort le plus ancien"
       ],
       "Mail list unsubscribed": [
         "Le désabonnement de la liste de diffusion a été effectué."
