@@ -173,9 +173,6 @@
       "Downgrade": [
         "Pasar a un plan inferior"
       ],
-      "Downgrade account": [
-        "Pasar a un plan inferior"
-      ],
       "Download": [
         "Descargar"
       ],
@@ -1936,11 +1933,32 @@
       "Bugs or quality issue": [
         "Errores o problemas de calidad"
       ],
+      "I do not wish to share": [
+        "Prefiero no decirlo."
+      ],
+      "I found a cheaper VPN": [
+        "He encontrado una VPN más barata."
+      ],
+      "I found a VPN with better features": [
+        "He encontrado una VPN con mejores funciones."
+      ],
+      "I have not managed to connect": [
+        "No he conseguido conectarme."
+      ],
+      "I only needed a VPN short-term": [
+        "Solo necesitaba una VPN a corto plazo."
+      ],
       "I use a different ${ BRAND_NAME } account": [
         "Utilizo una cuenta ${ BRAND_NAME } diferente."
       ],
+      "It doesn't do what I need": [
+        "No hace lo que necesito."
+      ],
       "Missing feature(s)": [
         "Faltan funciones."
+      ],
+      "Other reason (please comment)": [
+        "Otra razón (coméntanos en qué podemos mejorar)"
       ],
       "Subscription is too expensive": [
         "La suscripción es demasiado cara."
@@ -1950,6 +1968,9 @@
       ],
       "Temporary need, may come back in the future": [
         "Necesidad temporal que puede volver en el futuro"
+      ],
+      "The VPN is too slow": [
+        "La VPN es muy lenta."
       ]
     },
     "Downgrade modal exit survey title": {
@@ -3805,9 +3826,6 @@
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Esto cancelará tu suscripción de pago y perderás todas las ventajas de fidelidad acumuladas."
-      ],
-      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
-        "Esto cancelará tu suscripción de pago actual y perderás cualquier beneficio de lealtad acumulado. El saldo restante de tu suscripción será devuelto como crédito de cuenta."
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Esto permitirá que se utilice PayPal para pagar tu suscripción a ${ BRAND_NAME }. Te redirigiremos a PayPal en una nueva pestaña del navegador. Si utilizas algún bloqueador de ventanas emergentes, desactívalo para continuar."

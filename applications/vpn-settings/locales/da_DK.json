@@ -173,9 +173,6 @@
       "Downgrade": [
         "Nedgradér"
       ],
-      "Downgrade account": [
-        "Nedgradér konto"
-      ],
       "Download": [
         "Download"
       ],
@@ -2111,7 +2108,7 @@
         "Ikke muligt at omdøbe gatewayen"
       ],
       "Incorrect file type. Upload a file in PNG or JPEG format.": [
-        "Forkert filtype. Fremsæt en fil i PNG- eller JPEG-format."
+        "Forkert filtype. Upload en fil i PNG- eller JPEG-format."
       ],
       "Incorrect login credentials. Please try again.": [
         "Forkerte loginoplysninger. Prøv venligst igen."
@@ -3830,9 +3827,6 @@
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Dette vil annullere dit nuværende betalte abonnement, og du vil miste eventuelle loyalitetsfordele, du har akkumuleret."
       ],
-      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
-        "Dette vil annullere dit nuværende betalte abonnement, og du vil miste alle loyalitetsfordele, du har akkumuleret. Den resterende saldo for dit abonnement vil blive returneret som kontokreditter."
-      ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Dette gør det muligt at benytte PayPal til betaling af dit ${ BRAND_NAME }-abonnement. Du omdirigeres til PayPal i en ny browserfane. Benytter du pop-up blockers, bedes du deaktivere disse for at fortsætte."
       ],
@@ -3942,7 +3936,7 @@
         "Upload din udfyldte CSV-fil for at oprette konti"
       ],
       "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
-        "Fremsæt din organisations logo for at styrke din varemærkeidentitet og give dine brugere en personlig oplevelse."
+        "Upload din organisations logo for at styrke din varemærkeidentitet og give dine brugere en personlig oplevelse."
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Brug den bedste server i henhold til den aktuelle belastning og placering: ${ formattedBestServerName }"
@@ -4048,6 +4042,9 @@
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Når du aktiverer SAML for ${ appName } i din identitetsudbyder, bliver du muligvis bedt om at bruge callback-URL'en (ACS) og udsteder-ID'et. Du skal blot kopiere og indsætte nedenstående data i din identitetsudbyders felter."
+      ],
+      "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
+        "Når du opsiger dit nuværende betalte abonnement, returneres restbeløbet af abonnementet som kontokredit, og du nedgraderes til ${ BRAND_NAME }. ${ PLANS.FREE }-abonnementet"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Når du indstiller to-faktor-godkendelse, giver vi dig gendannelseskoder, som du kan bruge til at logge på, hvis du mister adgangen til din godkendelsesapp."
@@ -8212,7 +8209,7 @@
         "Upload CSV-fil for at oprette flere konti"
       ],
       "Upload your organization’s logo": [
-        "Fremsæt din organisations logo"
+        "Upload din organisations logo"
       ],
       "Users": [
         "Brugere"
