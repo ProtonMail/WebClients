@@ -210,12 +210,14 @@ export interface UpdatePrivateKeyPayload {
     KeySalt: string;
     Keys: { ID: string; PrivateKey: string }[];
     OrganizationKey?: string;
+    PersistPasswordScope?: boolean;
 }
 
 export interface UpdatePrivateKeyPayloadV2 {
     KeySalt: string;
     UserKeys: { ID: string; PrivateKey: string }[];
     OrganizationKey?: string;
+    PersistPasswordScope?: boolean;
 }
 
 export const updatePrivateKeyRoute = (data: UpdatePrivateKeyPayload | UpdatePrivateKeyPayloadV2) => ({

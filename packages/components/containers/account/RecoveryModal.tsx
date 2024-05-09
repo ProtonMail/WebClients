@@ -69,7 +69,12 @@ const RecoveryModal = ({
 
     if (step === STEP.NEW_PASSWORD) {
         return (
-            <ChangePasswordModal onClose={onClose} {...rest} mode={MODES.CHANGE_ONE_PASSWORD_MODE} authCheck={false} />
+            <ChangePasswordModal
+                onClose={onClose}
+                {...rest}
+                mode={MODES.CHANGE_ONE_PASSWORD_MODE}
+                signedInRecoveryFlow
+            />
         );
     }
 
