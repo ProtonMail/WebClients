@@ -158,6 +158,9 @@
       "Edit vault": [
         "Editar cofre"
       ],
+      "Enable Dark Web Monitoring": [
+        "Ativar monitoramento da Dark Web"
+      ],
       "Exclude from monitoring": [
         "Excluir do monitoramento"
       ],
@@ -472,11 +475,18 @@
       ]
     },
     "Description": {
+      "${ total } other login uses the same password": [
+        "${ total } outro início de sessão usa a mesma senha",
+        "${ total } outros inícios de sessão usam a mesma senha"
+      ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Um alias de e-mail funciona como um endereço de e-mail, mas reduz o spam e mantém seu endereço de e-mail e identidade reais ocultos."
       ],
+      "Change your passwords": [
+        "Altere suas senhas"
+      ],
       "Create unique passwords": [
-        "Crie senhas únicas"
+        "Crie senhas exclusivas"
       ],
       "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
         "O monitoramento da Dark Web está disponível com um plano pago. Faça upgrade para acesso imediato."
@@ -489,6 +499,9 @@
       ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Nossa solução de segurança de última geração orientada por IA, projetada para usuários que buscam proteção reforçada para suas contas. ${ learnMoreLink }"
+      ],
+      "Set up 2FA for more security": [
+        "Configure A2F para mais segurança"
       ],
       "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
         "Comece a monitorar violações de dados relacionadas a contas criadas com seu endereço de e-mail e seus aliases de hide-my-email"
@@ -596,6 +609,9 @@
       "Failed resending invite.": [
         "Falha ao reenviar o convite."
       ],
+      "Failed to add email address": [
+        "Falha ao adicionar o email"
+      ],
       "Failed to delete selected items": [
         "Falha ao excluir itens selecionados"
       ],
@@ -631,6 +647,9 @@
       ],
       "Failed to unpin item": [
         "Falha ao desafixar item"
+      ],
+      "Failed to verify email address": [
+        "Falha ao verificar o email"
       ],
       "File could not be parsed": [
         "Não foi possível analisar o arquivo."
@@ -855,6 +874,12 @@
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } exigirá sua senha da ${ BRAND_NAME } para acessar seus dados no modo off-line."
       ],
+      "${ PROTON_SENTINEL_NAME } successfully disabled": [
+        "${ PROTON_SENTINEL_NAME } desativado"
+      ],
+      "${ PROTON_SENTINEL_NAME } successfully enabled": [
+        "${ PROTON_SENTINEL_NAME } ativado"
+      ],
       "${ row.breachCount } breach detected": [
         "${ row.breachCount } violação detectada",
         "${ row.breachCount } violações detectadas"
@@ -1024,10 +1049,10 @@
         "Para obter a melhor experiência com o ${ PASS_APP_NAME }, conceda as permissões de extensão necessárias"
       ],
       "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins.": [
-        "Instale ${ PASS_APP_NAME } para ${ browser.title } para um ágil preenchimento automático dos seus logins."
+        "Instale o ${ PASS_APP_NAME } para ${ browser.title } para preencher automaticamente seus inícios de sessão."
       ],
       "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins. ": [
-        "Instale ${ PASS_APP_NAME } para ${ browser.title } para preencher automaticamente seus logins rapidamente. "
+        "Instale o ${ PASS_APP_NAME } para ${ browser.title } para preencher automaticamente seus logins rapidamente."
       ],
       "Internet connection lost": [
         "Perda de conexão com a internet"
@@ -1125,6 +1150,9 @@
       ],
       "Monitor accounts": [
         "Monitor de contas"
+      ],
+      "Monitoring settings successfully updated": [
+        "Configurações de monitoramento atualizadas com sucesso"
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "Mais do que um gerenciador de senhas, o ${ PASS_APP_NAME } protege sua senha e seu endereço de e-mail pessoal através de aliases de email. Alimentado pela mesma tecnologia por trás do ${ MAIL_APP_NAME }, seus dados são criptografados de ponta a ponta e são acessíveis apenas por você."
@@ -1641,6 +1669,9 @@
       "Item ID": [
         "ID do item"
       ],
+      "JSON": [
+        "JSON"
+      ],
       "Key": [
         "Chave"
       ],
@@ -1750,7 +1781,7 @@
         "Histórico de senhas"
       ],
       "PGP-encrypted JSON (recommended)": [
-        "JSON criptografado con PGP (recomendado)"
+        "JSON criptografado com PGP (recomendado)"
       ],
       "PIN": [
         "Código PIN"
@@ -2068,6 +2099,9 @@
       "${ BRAND_NAME } addresses": [
         "Endereços da ${ BRAND_NAME }"
       ],
+      "${ PASS_SHORT_APP_NAME } Monitor": [
+        "${ PASS_SHORT_APP_NAME } Monitor"
+      ],
       "Account protection": [
         "Proteção de conta"
       ],
@@ -2173,6 +2207,9 @@
       "Leave vault ?": [
         "Deixar cofre ?"
       ],
+      "Loading breaches...": [
+        "Carregando violações..."
+      ],
       "Low disk space": [
         "Pouco espaço no disco"
       ],
@@ -2196,6 +2233,9 @@
       ],
       "Move items?": [
         "Mover itens?"
+      ],
+      "No excluded items": [
+        "Sem itens excluídos"
       ],
       "No insecure passwords": [
         "Senhas não seguras"
@@ -2233,6 +2273,12 @@
       "Recommended actions": [
         "Ações recomendadas"
       ],
+      "Remove email address?": [
+        "Remover endereço de e-mail?"
+      ],
+      "Resolved breaches": [
+        "Violações resolvidas"
+      ],
       "Restore this version?": [
         "Restaurar essa versão?"
       ],
@@ -2254,6 +2300,12 @@
       ],
       "Set access level": [
         "Definir nível de acesso"
+      ],
+      "Set up 2FA for better security": [
+        "Configure A2F para melhor segurança"
+      ],
+      "Set up 2FA for more security": [
+        "Configure A2F para mais segurança"
       ],
       "Settings": [
         "Configurações"

@@ -499,6 +499,9 @@
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "계정에 대한 강화된 보호를 원하는 사용자를 위해 설계된 최첨단 AI 기반 보안 솔루션입니다. ${ learnMoreLink }"
       ],
+      "Set up 2FA for more security": [
+        "더 나은 보안을 위해 2단계 인증 설정"
+      ],
       "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
         "이메일 주소와 hide-my-email 별칭으로 만든 계정과 관련된 데이터 유출에 대한 모니터링을 시작하세요."
       ],
@@ -895,6 +898,9 @@
       "${ PROTON_SENTINEL_NAME } successfully enabled": [
         "${ PROTON_SENTINEL_NAME }이 성공적으로 활성화되었습니다"
       ],
+      "${ row.breachCount } breach detected": [
+        "${ row.breachCount }개 침해 사례 감지됨"
+      ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7일 동안 프리미엄 기능을 무료로 사용하실 수 있습니다. ${ BRAND_NAME } 첫 주 사용에 한합니다."
       ],
@@ -1059,6 +1065,9 @@
       ],
       "High Priority": [
         "중요도 높음"
+      ],
+      "How does monitoring work?": [
+        "모니터링이 어떻게 작동하나요?"
       ],
       "Import in progress:": [
         "처리가 진행 중입니다:"
@@ -2129,9 +2138,6 @@
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "${ PASS_SHORT_APP_NAME } 모니터링"
       ],
-      "${ PASS_SHORT_APP_NAME } monitor": [
-        "${ PASS_SHORT_APP_NAME } 모니터링"
-      ],
       "Account protection": [
         "계정 보호"
       ],
@@ -2324,6 +2330,9 @@
       "Set access level": [
         "접근 수준 설정"
       ],
+      "Set up 2FA for more security": [
+        "더 나은 보안을 위해 2단계 인증 설정"
+      ],
       "Settings": [
         "설정"
       ],
@@ -2450,6 +2459,9 @@
       ],
       "Expiration Date is not in the format MM/YY": [
         "만료 일자가 MM/YY(월/년) 포맷으로 되어 있지 않습니다."
+      ],
+      "Failed to load breaches.": [
+        "침해를 불러오지 못했습니다."
       ],
       "Invalid alias prefix": [
         "잘못된 별명 접두어 입니다."
