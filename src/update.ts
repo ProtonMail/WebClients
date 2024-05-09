@@ -3,16 +3,13 @@ import Logger from "electron-log";
 import { updateElectronApp, UpdateSourceType } from "update-electron-app";
 import pkg from "../package.json";
 import { getPlatform, DESKTOP_PLATFORMS, semver } from "./utils/helpers";
-
-export enum UPDATE_CHANNEL {
-    LIVE = "Stable",
-    BETA = "EarlyAccess",
-}
+import { RELEASE_CATEGORIES } from "./constants";
+import { getSettings } from "./store/settingsStore";
 
 type ReleaseInfo = {
     Version: string;
-    RolloutPercentage: number;
-    CathegoryName: UPDATE_CHANNEL;
+    RolloutProportion: number;
+    CategoryName: RELEASE_CATEGORIES;
 };
 
 type ReleaseList = {
@@ -35,45 +32,49 @@ export const initializeUpdateChecks = () => {
     Logger.info("Initialization of update checks.");
 
     // FIXME const updateInterval = 60*60*1000 // 1 hour
-    const updateInterval = 5 * 60 * 1000; // 5 min
+    const updateInterval = 30 * 1000; // 5 min
 
     setInterval(checkForValidUpdates, updateInterval)
 };
 
 const checkForValidUpdates = async () => {
-    const local = {
-        Version: app.getVersion(),
-        RolloutPercentage: 100, // FIXME get local rollout
-        CathegoryName: "Stable" // TODO get from web
-    };
+    Logger.info("Checking for new valid version.")
 
     const platform = getPlatform();
     if (!platform) {
-        Logger.error("Failed to get platform.")
+        Logger.error("Check update: failed to get platform.")
         return
     }
+
+    const settings = getSettings();
+    const local = {
+        Version: app.getVersion(),
+        RolloutProportion: settings.rolloutProportion ? settings.rolloutProportion : 1,
+        CategoryName: settings.releaseCategory ? settings.releaseCategory : RELEASE_CATEGORIES.STABLE // TODO get from web
+    };
+
 
     // get version file
     const availableVersions = await getAvailableVersions(platform);
     if (!availableVersions) {
-        Logger.warn("Failed to get available versions.")
+        Logger.warn("Check update: failed to get available versions.")
         return
     }
 
     // find the latest version for given channel
     const latest = (() : ReleaseInfo | undefined => {
-        if (local.CathegoryName == UPDATE_CHANNEL.BETA) {
-            const latest_early = availableVersions.Releases.find((r: ReleaseInfo) => r.CathegoryName == UPDATE_CHANNEL.BETA);
+        if (local.CategoryName === RELEASE_CATEGORIES.EARLY_ACCESS) {
+            const latest_early = availableVersions.Releases.find((r: ReleaseInfo) => r.CategoryName === RELEASE_CATEGORIES.EARLY_ACCESS);
             if (latest_early) {
                 return latest_early;
             }
         }
 
-        return availableVersions.Releases.find((r: ReleaseInfo) => r.CathegoryName == UPDATE_CHANNEL.LIVE)
+        return availableVersions.Releases.find((r: ReleaseInfo) => r.CategoryName === RELEASE_CATEGORIES.STABLE)
     })();
 
     if (!latest) {
-        Logger.warn(`Failed to find latest versions for "${local.CathegoryName}"`)
+        Logger.warn(`Check update: failed to find latest versions for "${local.CategoryName}"`)
         return
     }
 
@@ -82,14 +83,12 @@ const checkForValidUpdates = async () => {
         return
     }
 
-    /* 50
-    if (local.RolloutPercentage > latest.RolloutPercentage) {
-        Logger.info(`Skipping update: a newer version is available "${latest.Version}" but rollout is low, local:${local.RolloutPercentage}%, latest:${latest.RolloutPercentage}%`);
+    if (local.RolloutProportion > latest.RolloutProportion) {
+        Logger.info(`Skipping update: a newer version is available "${latest.Version}" but rollout is low, local:${local.RolloutProportion*100}%, latest:${latest.RolloutProportion*100}%`);
         return
     }
-    */
 
-   Logger.info(`New valid update available, version:"${latest.Version}", rollout:${latest.RolloutPercentage}%`)
+   Logger.info(`New valid update found: version:"${latest.Version}", rollout:${latest.RolloutProportion*100}%`)
 
     updateElectronApp({
         updateSource: {
@@ -103,11 +102,11 @@ const checkForValidUpdates = async () => {
 
 const getVersionURL = (platform: string) => {
     // FIXME return `https://proton.me/download/mail/${platform}/version.json`;
-    return `https://nexus.protontech.ch/service/rest/repository/browse/bridge-devel-builds/tmp/inda/${platform}/version.json`;
+    return `https://nexus.protontech.ch/repository/bridge-devel-builds/tmp/inda/${platform}/version.json`
 }
 
 const isANewerThanB = (a: string, b:string) => {
-    return semver(a) < semver(b);
+    return semver(a) > semver(b);
 }
 
 
