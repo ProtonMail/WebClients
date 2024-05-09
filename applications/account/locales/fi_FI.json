@@ -371,9 +371,6 @@
       "Downgrade": [
         "Alenna"
       ],
-      "Downgrade account": [
-        "Alenna tili"
-      ],
       "Download": [
         "Lataa"
       ],
@@ -5983,17 +5980,6 @@
         "Osaa kalenterisi sisällöstä ei tueta, eikä sitä tämän vuoksi tuoda."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Havaittiin lisää avainten kaksoiskappaleita. Lataa yksitellen nähdäksesi lisätietoja."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Avain ${ fingerprint } on jo ladattu"
-      ],
-      "Selected color:": [
-        "Valittu väri:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } tarvitsee käyttöoikeuden ${ enableDesktopNotifications }."
@@ -7775,9 +7761,6 @@
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Tämä peruu nykyisen maksullisen tilauksesi ja menetät kaikki kertyneet uskollisuusetusi."
       ],
-      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
-        "Tämä lopettaa nykyisen tilauksen ja menetät kaikki kertyneet uskollisuusedut. Jäljellä oleva tilausaika palautetaan tilillesi krediitteinä."
-      ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
         "Tämä poistaa tiedostojesi kaikki aiemmat versiot, jotka ovat vanhempia kuin ${ rententionLabel }."
       ],
@@ -8408,6 +8391,17 @@
       ],
       "Zoom meeting": [
         "Zoom-tapaamista"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Havaittiin lisää avainten kaksoiskappaleita. Lataa yksitellen nähdäksesi lisätietoja."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Avain ${ fingerprint } on jo ladattu"
+      ],
+      "Selected color:": [
+        "Valittu väri:"
       ]
     },
     "Info - folder colouring feature": {
@@ -13806,9 +13800,6 @@
       ]
     },
     "Subscription reminder": {
-      "${ BRAND_NAME } was targeted by Russia in one of the most aggressive censorship campaigns in recent memory, and our team fought back.": [
-        "${ BRAND_NAME } joutui Venäjän kohteeksi yhdessä lähiaikojen aggressiivisimmista sensurointikampanjoista, ja tiimimme vastasi haasteeseen."
-      ],
       "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
         "${ BRAND_NAME }in ainoa tulonlähde ovat käyttäjien tilaukset. Tukesi avulla voimme säilyttää itsenäisyytemme, edistää tavoitettamme tehdä yksityisyydestä oletusarvoista verkossa, ja lisäksi se auttaa meitä jatkossakin tukemaan yksityisyyden ja vapauden puolesta taistelevia aktivisteja ja organisaatioita."
       ],
@@ -13822,38 +13813,8 @@
       "${ planMaxSpace } total storage": [
         "Yhteensä ${ planMaxSpace } tallennustilaa"
       ],
-      "${ planName } doesn't just provide extra storage. It lets you manage your emails faster, customize your inbox and email addresses, and access the desktop app.": [
-        "${ planName } ei tarjoa ainoastaan lisää tallennustilaa, vaan sen avulla hallitset viestejäsi nopeammin, mukautat postilaatikkoasi sekä sähköpostiosoitteitasi, ja käytät työpöytäsovellusta."
-      ],
       "10 email addresses": [
         "10 sähköpostiosoitetta"
-      ],
-      "A direct contribution to our mission": [
-        "Tukee tehtäväämme suoraan"
-      ],
-      "After ${ BRAND_NAME } got blocked in Iran during protests, our customer support team worked to get our VPN app directly into people's hands.": [
-        "Kun ${ BRAND_NAME } estettiin mielenosoitusten aikana Iranissa, asiakaspalvelutiimimme työskenteli saadakseen VPN-sovelluksemme suoraan ihmisten käsiin."
-      ],
-      "After privacy and free speech were threatened in Hong Kong, we directly supported local civil rights organizations.": [
-        "Kun yksityisyyttä ja sananvapautta uhattiin Hongkongissa, tuimme suoraan paikallisia kansalaisoikeusjärjestöjä."
-      ],
-      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **1 GB** for Mail, and **1 GB** for Drive. You will also lose any storage bonuses earned previously.": [
-        "Kun perut ${ planName }-tilauksesi, laskee **${ planMaxSpace }** tallennustilasi Mailissa **1 gigatavuun** ja Drivessa **1 gigatavuun**. Menetät myös kaikki aiemmin ansaitsemasi tallennustilakorotukset."
-      ],
-      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **1 GB** for Mail, and **5 GB** for Drive. You will also lose any storage bonuses earned previously.": [
-        "Kun perut ${ planName }-tilauksesi, laskee **${ planMaxSpace }** tallennustilasi Mailissa **1 gigatavuun** ja Drivessa **5 gigatavuun**. Menetät myös kaikki aiemmin ansaitsemasi tallennustilakorotukset."
-      ],
-      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **500 MB** for Mail, and **1 GB** for Drive. You will also lose any storage bonuses earned previously.": [
-        "Kun perut ${ planName }-tilauksesi, laskee **${ planMaxSpace }** tallennustilasi Mailissa **500 megatavuun** ja Drivessa **1 gigatavuun**. Menetät myös kaikki aiemmin ansaitsemasi tallennustilakorotukset."
-      ],
-      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **500 MB** for Mail, and **5 GB** for Drive. You will also lose any storage bonuses earned previously.": [
-        "Kun perut ${ planName }-tilauksesi, laskee **${ planMaxSpace }** tallennustilasi Mailissa **500 megatavuun** ja Drivessa **5 gigatavuun**. Menetät myös kaikki aiemmin ansaitsemasi tallennustilakorotukset."
-      ],
-      "By downgrading your account, you will also lose storage space": [
-        "Alentaessasi tilisi menetät myös tallennustilaa"
-      ],
-      "By downgrading your account, you will lose access to these important features": [
-        "Alentaessasi tilisi menetät näiden tärkeiden ominaisuuksien käyttöoikeuden"
       ],
       "Calendar sharing": [
         "Kalenterien jakaminen"
@@ -13879,20 +13840,11 @@
       "I still want to cancel": [
         "Haluan edelleen perua"
       ],
-      "If you exceed your free Drive storage quota:": [
-        "Jos ylität ilmaisen Drive-tallennuskiintiösi:"
-      ],
-      "If you exceed your free Mail storage quota:": [
-        "Jos ylität ilmaisen Mail-tallennuskiintiösi:"
-      ],
       "Keep ${ planName }": [
         "Pidä ${ planName }"
       ],
       "Learn more about our impact": [
         "Lue lisää vaikutuksestamme"
-      ],
-      "Let us remind you of everything ${ planName } can do": [
-        "Anna meidän muistuttaa sinua ${ planName }-tilauksen tarjonnasta"
       ],
       "Our fight against censorship in Russia": [
         "Taistelumme Venäjän sensuuria vastaan"
@@ -13921,32 +13873,8 @@
       "Watch the interview": [
         "Katso haastattelu"
       ],
-      "When you cancel, you will lose access to": [
-        "Kun perut tilauksesi, menetät seuraavat käyttöoikeudet"
-      ],
       "Yearly free storage bonuses": [
         "Vuotuiset ilmaiset tallennustilakorotukset"
-      ],
-      "You **won't be able to add any new files**": [
-        "**Et voi enää lisätä uusia tiedostoja**"
-      ],
-      "You **won't be able to backup photos** from your devices": [
-        "**Et voi varmuuskopioida laitteidesi kuvia**"
-      ],
-      "You **won't be able to send emails** with attachments": [
-        "**Et voi lähettää liitteitä sisältäviä viestejä**"
-      ],
-      "You still have ${ expiryDate } on your ${ planName } plan. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling.": [
-        "${ planName } -tilauksellasi on edelleen ${ expiryDate }. Lisäämme jäljellä olevan ajan krediitit ${ BRAND_NAME }-tilillesi. Varmista, ettet ylitä ilmaistilauksen rajoituksia ennen tilauksesi päättymistä."
-      ],
-      "Your **calendar will be frozen**": [
-        "**Kalenterisi jäädytetään**"
-      ],
-      "Your devices will **stop syncing**": [
-        "Laitteesi **lopettavat synkronoinnin**"
-      ],
-      "Your inbox will **stop receiving new emails**": [
-        "Postilaatikkosi **ei enää vastaanota uusia viestejä**"
       ],
       "Your own custom email domain": [
         "Oma sähköpostiverkkotunnuksesi"

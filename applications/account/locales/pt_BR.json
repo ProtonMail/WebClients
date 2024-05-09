@@ -371,9 +371,6 @@
       "Downgrade": [
         "Fazer downgrade"
       ],
-      "Downgrade account": [
-        "Fazer downgrade da conta"
-      ],
       "Download": [
         "Baixar"
       ],
@@ -2258,6 +2255,9 @@
       ],
       "Work": [
         "Trabalho"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -5639,6 +5639,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "E-mail"
       ],
@@ -5888,6 +5891,9 @@
       ],
       "ICS file": [
         "Arquivo ICS"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -5978,17 +5984,6 @@
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "Parte do conteúdo de seu calendário não é suportado e por isso não será importado."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Chaves adicionais duplicadas detectadas. Envie individualmente para mais informações."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Chave ${ fingerprint } já foi enviada"
-      ],
-      "Selected color:": [
-        "Cor selecionada:"
       ]
     },
     "Info": {
@@ -6449,7 +6444,7 @@
         "Impede que os remetentes vejam se e quando você abriu uma mensagem."
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
-        "Aumente a identidade de marca da sua organização e crie uma experiência online mais consistente para os seus usuários."
+        "Aumente a identidade de marca da sua organização e crie uma experiência on-line mais consistente para os seus usuários."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ao fazer o downgrade para um plano gratuito, você perderá permanentemente esses benefícios, mesmo que você faça o upgrade novamente no futuro."
@@ -7757,9 +7752,6 @@
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Esta ação cancelará seu atual plano pago e você perderá todas as vantagens e benefícios acumulados"
       ],
-      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
-        "Isso cancelará sua assinatura paga atual e você perderá qualquer benefício de fidelidade acumulado. O saldo restante da sua assinatura será devolvido como crédito de conta."
-      ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
         "Isso excluirá todas as versões anteriores de seus arquivos anteriores a ${ rententionLabel }."
       ],
@@ -8384,6 +8376,17 @@
       ],
       "Zoom meeting": [
         "Reunião no Zoom"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Chaves adicionais duplicadas detectadas. Envie individualmente para mais informações."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Chave ${ fingerprint } já foi enviada"
+      ],
+      "Selected color:": [
+        "Cor selecionada:"
       ]
     },
     "Info - folder colouring feature": {
@@ -10802,7 +10805,7 @@
         "Organize itens com múltiplos cofres"
       ],
       "Passkeys supported": [
-        "Passkeys suportadas"
+        "Chaves de acesso suportadas"
       ],
       "Password-protected Emails": [
         "E-mails protegidos por senha"
@@ -11437,10 +11440,10 @@
         "Um endereço externo não pode ser padrão."
       ],
       "Dark Web Monitoring has been disabled": [
-        "O Monitoramento da Dark Web foi desativado"
+        "O monitoramento da Dark Web foi desativado"
       ],
       "Dark Web Monitoring has been enabled": [
-        "O Monitoramento da Dark Web foi ativado"
+        "O monitoramento da Dark Web foi ativado"
       ],
       "Invalid code": [
         "Código inválido"
@@ -11856,6 +11859,12 @@
     "Organization logo upload": {
       "Avoid overly compressed images.": [
         "Evite imagens muitos comprimidas."
+      ],
+      "Opt for a PNG image that is a 128x128 pixels for clarity.": [
+        "Opte por uma imagem PNG de 128x128 pixels para maior claridade."
+      ],
+      "Tips on choosing a good logo": [
+        "Dicas para escolherum bom logotipo"
       ],
       "Use a graphical icon or image rather than text.": [
         "Use um ícone gráfico ou imagem no lugar de texto."
@@ -13735,9 +13744,15 @@
       ]
     },
     "Subscription reminder": {
+      "${ CALENDAR_APP_NAME } including calendar sharing": [
+        "${ CALENDAR_APP_NAME } incluindo compartilhamento do calendário"
+      ],
       "${ dayDiff } day left": [
         "${ dayDiff } dia restante",
         "${ dayDiff } dias restantes"
+      ],
+      "${ DRIVE_APP_NAME } including version history": [
+        "${ DRIVE_APP_NAME } incluindo histórico de versões"
       ],
       "${ MAIL_APP_NAME } desktop app": [
         "Aplicativo para computador do ${ MAIL_APP_NAME }"
@@ -13745,11 +13760,23 @@
       "${ planMaxSpace } total storage": [
         "Armazenamento total de ${ planMaxSpace }"
       ],
+      "${ planName } offers ${ planMaxSpace } storage for your emails, attachments, events, passwords, and files. You are also eligible for yearly storage bonuses.": [
+        "${ planName } oferece ${ planMaxSpace } de armazenamento para os seus e-mails, anexos, eventos, senhas, e arquivos. Você também está elegível para bônus de armazenamento anualmente."
+      ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "Programa ${ PROTON_SENTINEL_NAME }"
+      ],
       "10 email addresses": [
         "10 endereços de e-mail"
       ],
-      "By downgrading your account, you will also lose storage space": [
-        "Ao fazer downgrade da sua conta, você também perderá espaço de armazenamento"
+      "6 users": [
+        "6 usuários"
+      ],
+      "Add any new files": [
+        "Adicionar qualquer novo arquivo"
+      ],
+      "Back up photos from your devices": [
+        "Faça backup de fotos de seus dispositivos"
       ],
       "Calendar sharing": [
         "Calendários compartilhados"
@@ -13766,20 +13793,29 @@
       "Custom schedule send and snooze times": [
         "Programação personalizada de envio e adiamento"
       ],
+      "Direct contribution to our mission": [
+        "Contribuição direta para a nossa missão"
+      ],
+      "Early access to new apps and features": [
+        "Acesso antecipado a novos aplicativos e recursos"
+      ],
+      "Extra storage and bonuses": [
+        "Armazenamento extra e bônus"
+      ],
       "Have a question?": [
         "Tem alguma pergunta?"
       ],
       "Helping activists in Hong Kong": [
         "Ajudando ativistas em Hong Kong"
       ],
+      "How we supported local activists when privacy and free speech were threatened in Hong Kong.": [
+        "Como apoiamos ativistas locais quando a privacidade e a liberdade de expressão foi ameaçada em Hong Kong."
+      ],
       "I still want to cancel": [
         "Ainda quero cancelar"
       ],
-      "If you exceed your free Drive storage quota:": [
-        "Se você exceder a cota de armazenamento grátis do Drive:"
-      ],
-      "If you exceed your free Mail storage quota:": [
-        "Se você exceder a cota de armazenamento grátis do Mail:"
+      "If you exceed the free plan limits when your ${ planName } subscription expires, you will not be able to:": [
+        "Se você exceder os limites do plano gratuito quando sua assinatura ${ planName } expirar, você não poderá:"
       ],
       "Keep ${ planName }": [
         "Manter o ${ planName }"
@@ -13787,32 +13823,56 @@
       "Learn more about our impact": [
         "Saiba mais sobre nosso impacto"
       ],
+      "Manage your calendar": [
+        "Gerencie seu calendário"
+      ],
+      "Our fight against censorship in Russia": [
+        "Nossa luta contra a censura na Rússia"
+      ],
+      "Premium productivity features": [
+        "Recursos de produtividade premium"
+      ],
       "Priority support": [
         "Suporte prioritário"
       ],
       "Read the story": [
         "Leia a história"
       ],
+      "Receive new emails": [
+        "Receba novos e-mais"
+      ],
       "Resubscribe": [
         "Reinscrever-se"
+      ],
+      "Send emails with attachments": [
+        "Envie e-mails com anexos"
       ],
       "Subscription canceled": [
         "Assinatura cancelada"
       ],
+      "Sync files on devices": [
+        "Sincronize arquivos nos dispositivos"
+      ],
+      "The best of ${ BRAND_NAME }": [
+        "O melhor da ${ BRAND_NAME }"
+      ],
+      "Unblocking internet access in Iran": [
+        "Desbloqueio de acesso à internet no Irã"
+      ],
       "Unlimited folders, labels and filters": [
         "Pastas, marcadores e filtros ilimitados"
       ],
-      "You **won't be able to add any new files**": [
-        "Você **não poderá adicionar novos arquivos**"
+      "Version history": [
+        "Histórico de versões"
       ],
-      "Your **calendar will be frozen**": [
-        "Seu **calendário será bloqueado**"
+      "Watch the interview": [
+        "Assista à entrevista"
       ],
-      "Your devices will **stop syncing**": [
-        "Seus dispositivos **deixarão de sincronizar**"
+      "Yearly free storage bonuses": [
+        "Bônus anuais de armazenamento gratuito"
       ],
-      "Your inbox will **stop receiving new emails**": [
-        "Sua caixa de entrada **deixará de receber novos e-mais**"
+      "Your ${ planName } has been canceled.": [
+        "Seu ${ planName } foi cancelado."
       ],
       "Your own custom email domain": [
         "Seu domínio de e-mail personalizado"
@@ -13829,7 +13889,7 @@
         "Encaminhamento de e-mail automático ${ strongText }"
       ],
       "Data breach alerts ${ strongArgument }": [
-        "Alertas de violações de dados ${ strongArgument }"
+        "Alerta de violações de dados ${ strongArgument }"
       ],
       "Desktop app": [
         "Aplicativo para computador"

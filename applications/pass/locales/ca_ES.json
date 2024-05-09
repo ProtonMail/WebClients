@@ -452,6 +452,9 @@
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "La nostra solució de seguretat d'avantguarda, impulsada per IA, dissenyada per als usuaris que busquen una protecció més elevada per als seus comptes. ${ learnMoreLink }"
       ],
+      "Set up 2FA for more security": [
+        "Configuri 2FA per a més seguretat"
+      ],
       "These items remain at risk": [
         "Aquests elements continuen en risc"
       ],
@@ -797,6 +800,10 @@
       ],
       "${ PROTON_SENTINEL_NAME } successfully enabled": [
         "${ PROTON_SENTINEL_NAME } s'ha habilitat correctament"
+      ],
+      "${ row.breachCount } breach detected": [
+        "S'ha detectat ${ row.breachCount } infracció.",
+        "S'han detectat ${ row.breachCount } infraccions."
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Hi ha disponible una nova versió de ${ PASS_APP_NAME }. Actualitzeu-lo per gaudir de les últimes característiques i correccions d'errors."
@@ -1728,7 +1735,7 @@
         "Més informació"
       ],
       "stay safer online": [
-        "mantenir-se més segur en línia"
+        "mantenir-se amb major seguretat en línia"
       ]
     },
     "lobby: Info": {
@@ -1763,7 +1770,7 @@
         "${ reason } s'ha desactivat"
       ],
       "${ reason } has been enabled": [
-        "${ reason } s'ha habilitat"
+        "S'ha habilitat ${ reason } "
       ]
     },
     "Option": {
@@ -2075,6 +2082,9 @@
       "Set access level": [
         "Estableix el nivell d`accés"
       ],
+      "Set up 2FA for more security": [
+        "Configuri 2FA per a més seguretat"
+      ],
       "Settings": [
         "Preferències"
       ],
@@ -2174,6 +2184,9 @@
       ],
       "Empty note": [
         "Nota buida"
+      ],
+      "Failed to load breaches.": [
+        "No s'han pogut carregar les infraccions."
       ],
       "Invalid alias prefix": [
         "El prefix de l'àlies no és vàlid"

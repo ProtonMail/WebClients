@@ -368,9 +368,6 @@
       "Downgrade": [
         "Zmanjšaj"
       ],
-      "Downgrade account": [
-        "Zmanjšaj račun"
-      ],
       "Download": [
         "Prenesi"
       ],
@@ -524,6 +521,9 @@
       "Go to label": [
         "Pojdi na oznako"
       ],
+      "Go to settings": [
+        "Pojdi v nastavitve"
+      ],
       "Got it": [
         "Razumem"
       ],
@@ -592,6 +592,9 @@
       ],
       "label emails as": [
         "označi e-pošto kot"
+      ],
+      "Later": [
+        "Kasneje"
       ],
       "Leave": [
         "Zapusti"
@@ -3290,8 +3293,23 @@
       "Bugs or quality issue": [
         "Hrošči ali težave s kakovostjo"
       ],
+      "I found a cheaper VPN": [
+        "Našel sem cenejši VPN"
+      ],
+      "I found a VPN with better features": [
+        "Našel sem VPN z boljšimi funkcijami"
+      ],
+      "I have not managed to connect": [
+        "Ni mi uspelo vzpostaviti povezave"
+      ],
+      "I only needed a VPN short-term": [
+        "VPN sem potreboval le začasno"
+      ],
       "I use a different ${ BRAND_NAME } account": [
         "Uporabljam drug račun ${ BRAND_NAME }."
+      ],
+      "It doesn't do what I need": [
+        "Ne počne tistega, kar potrebujem"
       ],
       "Missing feature(s)": [
         "Manjkajoče funkcije"
@@ -3304,6 +3322,9 @@
       ],
       "Temporary need, may come back in the future": [
         "Začasna potreba, se lahko vrnem v prihodnosti."
+      ],
+      "The VPN is too slow": [
+        "VPN je prepočasen"
       ]
     },
     "Downgrade modal exit survey title": {
@@ -3330,6 +3351,11 @@
         "Varna shramba v oblaku in delitev datotek, ki varuje vaše podatke"
       ]
     },
+    "drivePlus2024: Action": {
+      "Special Offer": [
+        "Posebna ponudba"
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "Razširjena zgodovina različic"
@@ -3346,6 +3372,9 @@
     "drivePlus2024: Info": {
       "for the first month": [
         "za prvi mesec"
+      ],
+      "Limited-time offer": [
+        "Časovno omejena ponudba"
       ]
     },
     "drivePlus2024: Title": {
@@ -4288,6 +4317,9 @@
       ],
       "You have reached the contacts limit for your account": [
         "Dosegli ste mejo za število stikov v vašem računu."
+      ],
+      "You have reached the maximum number of calendars.": [
+        "Dosegli ste največje število koledarjev."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Uporabili ste vse naslove v svojem paketu. Prosimo nadgradite paket, da dodate nov naslov."
@@ -5971,17 +6003,6 @@
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "Del vsebine koledarja ni podprt in ne bo uvožen."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Zaznali smo dodatne podvojene ključe. Prosimo, da jih naložite posamično za več informacij."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Ključ ${ fingerprint } je že bil naložen."
-      ],
-      "Selected color:": [
-        "Izberi barvo:"
       ]
     },
     "Info": {
@@ -7788,9 +7809,6 @@
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "To bo preklicalo vašo trenutno plačano naročnino in izgubili boste vse prednosti, ki ste jih pridobili."
       ],
-      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
-        "To bo preklicalo vašo trenutno plačljivo naročnino in izgubili boste vse prednosti, ki ste jih pridobili. Preostanek stanja vaše naročnine bo vrnjen kot dobropis na računu."
-      ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
         "To bo izbrisalo vse prejšnje različice vaših datotek, starejše od ${ rententionLabel }."
       ],
@@ -8414,6 +8432,17 @@
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Vaš zahtevek za podporo je bil zaprt. Hvala, ker ste se obrnili na podporo ${ BRAND_NAME }."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Zaznali smo dodatne podvojene ključe. Prosimo, da jih naložite posamično za več informacij."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Ključ ${ fingerprint } je že bil naložen."
+      ],
+      "Selected color:": [
+        "Izberi barvo:"
       ]
     },
     "Info - folder colouring feature": {
@@ -10885,6 +10914,9 @@
       ],
       "Organize items with multiple vaults": [
         "Organizirajte predmete z več arhivi."
+      ],
+      "Passkeys supported": [
+        "Podprti identifikacijski ključi"
       ],
       "Password-protected Emails": [
         "E-pošta, zaščitena z geslom"
@@ -13865,6 +13897,17 @@
         "Neomejeno število map, oznak in filtrov"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB prostora za shranjevanje"
+      ],
+      "and 15 more premium features": [
+        "in še 15 vrhunskih funkcij"
+      ],
+      "No ads or tracking": [
+        "Brez oglasov ali sledenja"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Ali ste prepričani?"
@@ -14373,6 +14416,9 @@
       ],
       "Activate user": [
         "Aktivirajte uporabnika"
+      ],
+      "Add a custom logo": [
+        "Dodaj logotip po meri"
       ],
       "Add address": [
         "Dodajte naslov"

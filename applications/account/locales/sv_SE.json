@@ -371,9 +371,6 @@
       "Downgrade": [
         "Nedgradera"
       ],
-      "Downgrade account": [
-        "Nedgradera konto"
-      ],
       "Download": [
         "Ladda ner"
       ],
@@ -6014,17 +6011,6 @@
         "En del av ditt kalenderinnehåll stöds inte och kommer inte att importeras."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Ytterligare dubbletter av nycklar upptäcktes. Ladda upp individuellt för mer information."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Nyckel ${ fingerprint } har redan laddats upp"
-      ],
-      "Selected color:": [
-        "Vald färg:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } behöver din tillåtelse till ${ enableDesktopNotifications }."
@@ -7797,9 +7783,6 @@
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Detta kommer avbryta din nuvarande betalda prenumeration och du kommer att förlora alla lojalitetsförmåner du har samlat på dig."
       ],
-      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
-        "Detta kommer avbryta din nuvarande betalda prenumeration och du kommer att förlora alla lojalitetsförmåner du har samlat på dig. Det återstående saldot av din prenumeration kommer att returneras som kontokrediter."
-      ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
         "Detta kommer ta bort alla tidigare versioner av dina filer äldre än ${ rententionLabel }."
       ],
@@ -8424,6 +8407,17 @@
       ],
       "Zoom meeting": [
         "Zoom-möte"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Ytterligare dubbletter av nycklar upptäcktes. Ladda upp individuellt för mer information."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Nyckel ${ fingerprint } har redan laddats upp"
+      ],
+      "Selected color:": [
+        "Vald färg:"
       ]
     },
     "Info - folder colouring feature": {
@@ -10382,11 +10376,19 @@
       ]
     },
     "Monthly recurring event, frequency (times)": {
+      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
+        "Var ${ interval } månad ${ onDayString }, ${ timesString }",
+        "Var ${ interval }:e månad ${ onDayString }, ${ timesString }"
+      ],
       "Monthly ${ onDayString }, ${ timesString }": [
         "Månadsvis ${ onDayString }, ${ timesString }"
       ]
     },
     "Monthly recurring event, frequency (until)": {
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+        "Var ${ interval } månad ${ onDayString }, ${ untilString }",
+        "Var ${ interval }:e månad ${ onDayString }, ${ untilString }"
+      ],
       "Monthly ${ onDayString }, ${ untilString }": [
         "Månadsvis ${ onDayString }, ${ untilString }"
       ]
@@ -13835,36 +13837,60 @@
       ]
     },
     "Subscription reminder": {
-      "${ BRAND_NAME } was targeted by Russia in one of the most aggressive censorship campaigns in recent memory, and our team fought back.": [
-        "${ BRAND_NAME } var måltavla av Ryssland i en av de mest aggressiva censurkampanjerna på senare tid, och vårt team slog tillbaka."
+      "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
+        "Enda inkomstkälla som ${ BRAND_NAME } har är användarprenumerationer. Ditt stöd tillåter oss att förbli oberoende, främja vårt uppdrag att göra integritet till standard online och fortsätta att stödja aktivister och organisationer som kämpar för integritet och frihet."
+      ],
+      "${ CALENDAR_APP_NAME } including calendar sharing": [
+        "${ CALENDAR_APP_NAME } inkluderar kalenderdelning"
       ],
       "${ dayDiff } day left": [
         "${ dayDiff } dag kvar",
         "${ dayDiff } dagar kvar"
       ],
+      "${ DRIVE_APP_NAME } including version history": [
+        "${ DRIVE_APP_NAME } inkluderar versionshistorik"
+      ],
+      "${ MAIL_APP_NAME } and all premium productivity features": [
+        "${ MAIL_APP_NAME } och alla premium produktivitetsfunktioner"
+      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }-app för stationär dator"
+      ],
+      "${ PASS_APP_NAME } including unlimited hide-my-email aliases": [
+        "${ PASS_APP_NAME } inkluderar obegränsat antal hide-my-email-alias"
       ],
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } totalt lagringsutrymme"
       ],
+      "${ planName } gives you access to all apps and premium features. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
+        "${ planName } ger dig åtkomst till alla appar och premiumfunktioner. Integritet är inbyggt så att du kan fortsätta med det med vetskap om att din data och din identitet är säker."
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } ger dig alla appar, alla funktioner, förhandstillgång till nya utgåvor och allt du behöver för att ha kontroll över din data och dess säkerhet."
+      ],
+      "${ planName } helps you ensure that each of your family members — and their data — are protected whenever they’re online.": [
+        "${ planName } hjälper dig att se till att alla dina familjemedlemmar – och deras data – är skyddade när de är online."
+      ],
+      "${ planName } offers ${ planMaxSpace } storage for your emails, attachments, events, passwords, and files. You are also eligible for yearly storage bonuses.": [
+        "${ planName } erbjuder ${ planMaxSpace } lagringsutrymme för din e-post, bilagor, händelser, lösenord och filer. Du är också berättigad till årliga bonusar på lagringsutrymme."
+      ],
+      "${ planName } offers ${ planMaxSpace } storage for your files and photos. You are also eligible for yearly storage bonuses.": [
+        "${ planName } erbjuder ${ planMaxSpace } lagringsutrymme för dina filer och foton. Du är också berättigad till årliga bonusar på lagringsutrymme."
+      ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "${ PROTON_SENTINEL_NAME }-program"
+      ],
       "10 email addresses": [
         "10 e-postadresser"
       ],
-      "A direct contribution to our mission": [
-        "Ett direkt bidrag till vårt uppdrag"
+      "6 users": [
+        "6 användare"
       ],
-      "After ${ BRAND_NAME } got blocked in Iran during protests, our customer support team worked to get our VPN app directly into people's hands.": [
-        "Efter att ${ BRAND_NAME } blockerades i Iran under protester, arbetade vårt kundsupportteam för att få vår VPN-app direkt i människors händer."
+      "Add any new files": [
+        "Lägg till valfria nya filer"
       ],
-      "After privacy and free speech were threatened in Hong Kong, we directly supported local civil rights organizations.": [
-        "Efter att integritet och yttrandefrihet hotades i Hongkong stödde vi lokala medborgarrättsorganisationer direkt."
-      ],
-      "By downgrading your account, you will also lose storage space": [
-        "Genom att nedgradera ditt konto förlorar du också lagringsutrymme"
-      ],
-      "By downgrading your account, you will lose access to these important features": [
-        "Genom att nedgradera ditt konto kommer du att förlora åtkomst till dessa viktiga funktioner"
+      "Back up photos from your devices": [
+        "Säkerhetskopiera foton från dina enheter"
       ],
       "Calendar sharing": [
         "Kalenderdelning"
@@ -13878,11 +13904,32 @@
       "Close": [
         "Stäng"
       ],
+      "Comprehensive privacy and security": [
+        "Omfattande integritet och säkerhet"
+      ],
+      "Direct contribution to our mission": [
+        "Direkt bidrag till vårt uppdrag"
+      ],
+      "Early access to new apps and features": [
+        "Förhandstillgång till nya appar och funktioner"
+      ],
+      "Extra storage and bonuses": [
+        "Extra lagringsutrymme och bonusar"
+      ],
       "Have a question?": [
         "Har du en fråga?"
       ],
       "Helping activists in Hong Kong": [
         "Hjälper aktivister i Hongkong"
+      ],
+      "How our customer support team got our VPN app directly into people's hands. ": [
+        "Hur vårt kundsupportteam fick vår VPN-app direkt i människors händer. "
+      ],
+      "How we fought back when ${ BRAND_NAME } was targeted in an aggressive censorship campaign.": [
+        "Hur vi slog tillbaka när ${ BRAND_NAME } var måltavla för en aggressiv censurkampanj."
+      ],
+      "How we supported local activists when privacy and free speech were threatened in Hong Kong.": [
+        "Hur vi stöttade lokala aktivister när integritet och yttrandefrihet hotades i Hong Kong."
       ],
       "I still want to cancel": [
         "Jag vill fortfarande avsluta"
@@ -13893,11 +13940,20 @@
       "Learn more about our impact": [
         "Lär dig mer om vår påverkan"
       ],
-      "Let us remind you of everything ${ planName } can do": [
-        "Låt oss påminna dig om allt ${ planName } kan göra"
+      "Manage your calendar": [
+        "Hantera din kalender"
+      ],
+      "Online privacy, for your whole family": [
+        "Integritet online, för hela din familj"
       ],
       "Our fight against censorship in Russia": [
         "Vår kamp mot censur i Ryssland"
+      ],
+      "Please note that ${ planName } is no longer available for purchase. If you downgrade your account, you will lose all plan benefits and won't be able to resubscribe.": [
+        "Observera att ${ planName } är inte längre är tillgängligt för köp. Om du nedgraderar ditt konto kommer du att förlora alla paketförmåner och kommer inte att kunna prenumerera på nytt."
+      ],
+      "Premium productivity features": [
+        "Premium produktivitetsfunktioner"
       ],
       "Priority support": [
         "Prioriterad support"
@@ -13905,14 +13961,26 @@
       "Read the story": [
         "Läs berättelsen"
       ],
+      "Receive new emails": [
+        "Ta emot ny e-post"
+      ],
       "Resubscribe": [
         "Prenumerera igen"
       ],
       "Resubscribe to restore access to ${ planName } features.": [
         "Prenumerera igen för att återställa åtkomst till ${ planName }-funktioner."
       ],
+      "Send emails with attachments": [
+        "Skicka e-post med bilagor"
+      ],
       "Subscription canceled": [
         "Prenumeration avslutad"
+      ],
+      "Sync files on devices": [
+        "Synkronisera filer på enheter"
+      ],
+      "The best of ${ BRAND_NAME }": [
+        "Det bästa av ${ BRAND_NAME }"
       ],
       "Unblocking internet access in Iran": [
         "Avblockerar internetåtkomst i Iran"
@@ -13920,29 +13988,26 @@
       "Unlimited folders, labels and filters": [
         "Obegränsat antal mappar, etiketter och filter"
       ],
+      "Version history": [
+        "Versionshistorik"
+      ],
       "Watch the interview": [
         "Se intervjun"
       ],
-      "When you cancel, you will lose access to": [
-        "När du avbryter förlorar du åtkomst till"
+      "What you give up when you cancel ${ planName }": [
+        "Vad du förlorar när du avbryter ${ planName }"
+      ],
+      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
+        "När du avbryter ${ planName } kommer du att nedgraderas till ${ BRAND_NAME } Free som endast erbjuder lagringsutrymmen upp till 1 GB för Mail och upp till 5 GB för Drive. Du kommer också att förlora alla tidigare intjänade bonusar för lagringsutrymme."
+      ],
+      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
+        "När du avbryter ${ planName } kommer du att nedgraderas till ${ BRAND_NAME } Free som endast erbjuder lagringsutrymmen upp till 5 GB för Drive och upp till 1 GB för Mail. Du kommer också att förlora alla tidigare intjänade bonusar för lagringsutrymme."
       ],
       "Yearly free storage bonuses": [
         "Årliga bonusar med gratis lagringsutrymme"
       ],
-      "You **won't be able to add any new files**": [
-        "Du **kommer inte att kunna lägga till några nya filer**"
-      ],
-      "You **won't be able to backup photos** from your devices": [
-        "Du **kommer inte att kunna säkerhetskopiera foton** från dina enheter"
-      ],
-      "You **won't be able to send emails** with attachments": [
-        "Du **kommer inte att kunna skicka e-post** med bilagor"
-      ],
-      "Your **calendar will be frozen**": [
-        "Din **kalender kommer att blockeras**"
-      ],
-      "Your devices will **stop syncing**": [
-        "Dina enheter kommer att **sluta synkronisera**"
+      "Your ${ planName } has been canceled.": [
+        "Ditt ${ planName } har avbrutits."
       ],
       "Your own custom email domain": [
         "Din egen anpassade e-postdomän"
@@ -16237,6 +16302,30 @@
       ]
     },
     "Weekly recurring event, frequency (times)": {
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "Var ${ interval } vecka på ${ multipleDaysString }, ${ timesString }",
+        "Var ${ interval }:e vecka på ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Every ${ interval } week on all days, ${ timesString }": [
+        "Var ${ interval } vecka alla dagar, ${ timesString }",
+        "Var ${ interval }:e vecka alla dagar, ${ timesString }"
+      ],
+      "Every ${ interval } week on Friday, ${ timesString }": [
+        "Var ${ interval } vecka på fredag ${ timesString }",
+        "Var ${ interval }:e vecka på fredag ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ timesString }": [
+        "Var ${ interval } vecka på lördag, ${ timesString }",
+        "Var ${ interval }:e vecka på lördag, ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ timesString }": [
+        "Var ${ interval } vecka på torsdag, ${ timesString }",
+        "Var ${ interval }:e vecka på torsdag, ${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ timesString }": [
+        "Var ${ interval } vecka på onsdag, ${ timesString }",
+        "Var ${ interval }:e vecka på onsdag, ${ timesString }"
+      ],
       "Weekly on ${ multipleDaysString }, ${ timesString }": [
         "Varje vecka på ${ multipleDaysString }, ${ timesString }"
       ],
@@ -16266,13 +16355,41 @@
       ]
     },
     "Weekly recurring event, frequency (until)": {
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "Var ${ interval } vecka på ${ multipleDaysString }, ${ untilString }",
+        "Var ${ interval }:e vecka på ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "Var ${ interval } vecka alla dagar, ${ untilString }",
+        "Var ${ interval }:e vecka alla dagar, ${ untilString }"
+      ],
+      "Every ${ interval } week on Friday, ${ untilString }": [
+        "Var ${ interval } vecka på fredag, ${ untilString }",
+        "Var ${ interval }:e vecka på fredag, ${ untilString }"
+      ],
       "Every ${ interval } week on Monday, ${ untilString }": [
         "Varje ${ interval } vecka på måndag, ${ untilString }",
         "Var ${ interval }:e vecka på måndag, ${ untilString }"
       ],
+      "Every ${ interval } week on Saturday, ${ untilString }": [
+        "Var ${ interval } vecka på lördag, ${ untilString }",
+        "Var ${ interval }:e vecka på lördag, ${ untilString }"
+      ],
       "Every ${ interval } week on Sunday, ${ untilString }": [
         "Var ${ interval }:e vecka på söndag, ${ untilString }",
         "Var ${ interval }:e vecka på söndag, ${ untilString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ untilString }": [
+        "Var ${ interval } vecka på torsdag, ${ untilString }",
+        "Var ${ interval }:e vecka på torsdag, ${ untilString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
+        "Var ${ interval } vecka på tisdag, ${ untilString }",
+        "Var ${ interval }:e vecka på tisdag, ${ untilString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
+        "Var ${ interval } vecka på onsdag, ${ untilString }",
+        "Var ${ interval }:e vecka på onsdag, ${ untilString }"
       ],
       "Weekly on ${ multipleDaysString }, ${ untilString }": [
         "Varje vecka på ${ multipleDaysString }, ${ untilString }"
