@@ -371,9 +371,6 @@
       "Downgrade": [
         "Turunkan"
       ],
-      "Downgrade account": [
-        "Turunkan jenis akun"
-      ],
       "Download": [
         "Unduh"
       ],
@@ -5970,17 +5967,6 @@
         "Sebagian isi kalender Anda tidak didukung dan tidak akan diimpor."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Kami menemukan beberapa kunci duplikat. Mohon unggah satu per satu."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Kunci ${ fingerprint } sudah diunggah"
-      ],
-      "Selected color:": [
-        "Warna terpilih:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } memerlukan izin Anda untuk ${ enableDesktopNotifications }."
@@ -7725,9 +7711,6 @@
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Tindakan ini akan membatalkan langganan berbayar Anda saat ini dan Anda akan kehilangan manfaat loyalitas yang telah Anda kumpulkan."
       ],
-      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
-        "Tindakan ini akan membatalkan langganan berbayar yang Anda miliki saat ini beserta seluruh keuntungan loyalitas yang telah Anda kumpulkan. Saldo yang tersisa dari langganan Anda akan dikembalikan dalam bentuk kredit akun."
-      ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
         "Dengan ini, seluruh versi berkas Anda yang lebih lawas dari ${ rententionLabel } akan dihapus."
       ],
@@ -8351,6 +8334,17 @@
       ],
       "Zoom meeting": [
         "sesi meeting Zoom"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Kami menemukan beberapa kunci duplikat. Mohon unggah satu per satu."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Kunci ${ fingerprint } sudah diunggah"
+      ],
+      "Selected color:": [
+        "Warna terpilih:"
       ]
     },
     "Info - folder colouring feature": {
@@ -13702,9 +13696,6 @@
       ]
     },
     "Subscription reminder": {
-      "${ BRAND_NAME } was targeted by Russia in one of the most aggressive censorship campaigns in recent memory, and our team fought back.": [
-        "${ BRAND_NAME } ditargetkan oleh Rusia pada salah satu kampanye penyensoran yang paling agresif dalam sejarah modern, dan tim kami berjuang keras melawan hal ini."
-      ],
       "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
         "Satu-satunya sumber dana ${ BRAND_NAME } adalah biaya langganan pengguna. Dukungan Anda memungkinkan kami untuk tetap independen, mendorong misi kami untuk menjadikan privasi sebagai hal yang baku di internet, dan melanjutkan dukungan kami kepada rangkaian aktivis dan organisasi yang memperjuangkan privasi dan kebebasan."
       ],
@@ -13717,38 +13708,8 @@
       "${ planMaxSpace } total storage": [
         "Ruang penyimpanan total ${ planMaxSpace }"
       ],
-      "${ planName } doesn't just provide extra storage. It lets you manage your emails faster, customize your inbox and email addresses, and access the desktop app.": [
-        "${ planName } tidak hanya sekadar menyediakan ruang penyimpanan tambahan. Paket ini juga memungkinkan Anda untuk mengelola email secara lebih cepat, menyesuaikan kotak masuk dan alamat email Anda, serta mengakses aplikasi desktop kami."
-      ],
       "10 email addresses": [
         "10 alamat email"
-      ],
-      "A direct contribution to our mission": [
-        "Kontribusi langsung terhadap misi kami"
-      ],
-      "After ${ BRAND_NAME } got blocked in Iran during protests, our customer support team worked to get our VPN app directly into people's hands.": [
-        "Setelah ${ BRAND_NAME } diblokir di Iran selama masa protes, tim layanan dukungan kami bekerja untuk menyediakan aplikasi VPN kami secara langsung ke tangan masyarakat."
-      ],
-      "After privacy and free speech were threatened in Hong Kong, we directly supported local civil rights organizations.": [
-        "Setelah privasi dan kebebasan berbicara diancam di Hong Kong, kami bergerak untuk mendukung berbagai organisasi hak sipil lokal secara langsung."
-      ],
-      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **1 GB** for Mail, and **1 GB** for Drive. You will also lose any storage bonuses earned previously.": [
-        "Dengan membatalkan langganan ${ planName } Anda, ruang penyimpanan Anda akan berkurang dari **${ planMaxSpace }** menjadi **1 GB** untuk Mail dan **1 GB** untuk Drive. Anda juga akan kehilangan seluruh ruang penyimpanan bonus yang telah Anda peroleh sebelumnya."
-      ],
-      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **1 GB** for Mail, and **5 GB** for Drive. You will also lose any storage bonuses earned previously.": [
-        "Dengan membatalkan langganan ${ planName } Anda, ruang penyimpanan Anda akan berkurang dari **${ planMaxSpace }** menjadi **1 GB** untuk Mail dan **5 GB** untuk Drive. Anda juga akan kehilangan seluruh ruang penyimpanan bonus yang telah Anda peroleh sebelumnya."
-      ],
-      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **500 MB** for Mail, and **1 GB** for Drive. You will also lose any storage bonuses earned previously.": [
-        "Dengan membatalkan langganan ${ planName } Anda, ruang penyimpanan Anda akan berkurang dari **${ planMaxSpace }** menjadi **500 MB** untuk Mail dan **1 GB** untuk Drive. Anda juga akan kehilangan seluruh ruang penyimpanan bonus yang telah Anda peroleh sebelumnya."
-      ],
-      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **500 MB** for Mail, and **5 GB** for Drive. You will also lose any storage bonuses earned previously.": [
-        "Dengan membatalkan langganan ${ planName } Anda, ruang penyimpanan Anda akan berkurang dari **${ planMaxSpace }** menjadi **500 MB** untuk Mail dan **5 GB** untuk Drive. Anda juga akan kehilangan seluruh ruang penyimpanan bonus yang telah Anda peroleh sebelumnya."
-      ],
-      "By downgrading your account, you will also lose storage space": [
-        "Dengan menurunkan akun, Anda juga akan kehilangan ruang penyimpanan"
-      ],
-      "By downgrading your account, you will lose access to these important features": [
-        "Dengan menurunkan akun, Anda akan kehilangan akses menuju berbagai fitur penting berikut"
       ],
       "Calendar sharing": [
         "Pembagian kalender"
@@ -13774,20 +13735,11 @@
       "I still want to cancel": [
         "Saya masih ingin membatalkan"
       ],
-      "If you exceed your free Drive storage quota:": [
-        "Apabila Anda melebihi kuota ruang penyimpanan Drive gratis Anda:"
-      ],
-      "If you exceed your free Mail storage quota:": [
-        "Apabila Anda melebihi kuota ruang penyimpanan Mail gratis Anda:"
-      ],
       "Keep ${ planName }": [
         "Pertahankan paket ${ planName }"
       ],
       "Learn more about our impact": [
         "Pelajari lebih lanjut seputar dampak kami"
-      ],
-      "Let us remind you of everything ${ planName } can do": [
-        "Izinkan kami untuk mengingatkan Anda segala hal yang dapat dilakukan oleh ${ planName }"
       ],
       "Our fight against censorship in Russia": [
         "Perjuangan kami melawan sensor di Rusia"
@@ -13816,32 +13768,8 @@
       "Watch the interview": [
         "Simak wawancaranya"
       ],
-      "When you cancel, you will lose access to": [
-        "Pada saat Anda membatalkan langganan, Anda akan kehilangan akses menuju"
-      ],
       "Yearly free storage bonuses": [
         "Bonus ruang penyimpanan gratis tahunan"
-      ],
-      "You **won't be able to add any new files**": [
-        "Anda **tidak akan dapat menambahkan berkas baru mana pun**"
-      ],
-      "You **won't be able to backup photos** from your devices": [
-        "Anda **tidak akan dapat mencadangkan foto** dari perangkat Anda"
-      ],
-      "You **won't be able to send emails** with attachments": [
-        "Anda **tidak akan dapat mengirim email** yang memiliki lampiran"
-      ],
-      "You still have ${ expiryDate } on your ${ planName } plan. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling.": [
-        "Anda masih memiliki ${ expiryDate } dalam paket ${ planName } Anda. Kami akan menambahkan kredit untuk waktu yang tersisa ke Akun ${ BRAND_NAME } Anda. Pastikan Anda tidak melebihi batasan paket gratis sebelum membatalkan."
-      ],
-      "Your **calendar will be frozen**": [
-        "**Kalender Anda akan diblokir**"
-      ],
-      "Your devices will **stop syncing**": [
-        "Perangkat Anda akan **berhenti menyinkronkan diri**"
-      ],
-      "Your inbox will **stop receiving new emails**": [
-        "Kotak masuk Anda akan **berhenti menerima email baru**"
       ],
       "Your own custom email domain": [
         "Domain email khusus milik Anda"

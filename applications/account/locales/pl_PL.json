@@ -371,9 +371,6 @@
       "Downgrade": [
         "Obniż plan"
       ],
-      "Downgrade account": [
-        "Obniż plan"
-      ],
       "Download": [
         "Pobierz"
       ],
@@ -6075,17 +6072,6 @@
         "Część zawartości kalendarza nie jest obsługiwana i nie zostanie zaimportowana."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Wykryto dodatkowe zduplikowane klucze. Prześlij klucze pojedynczo, aby uzyskać więcej informacji."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Klucz ${ fingerprint } został już przesłany"
-      ],
-      "Selected color:": [
-        "Wybrany kolor:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikacja ${ appName } potrzebuje Twojej zgody, aby ${ enableDesktopNotifications }."
@@ -7938,9 +7924,6 @@
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Spowoduje to anulowanie obecnej płatnej subskrypcji i utratę wszystkich zgromadzonych bonusów lojalnościowych."
       ],
-      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
-        "Spowoduje to anulowanie obecnej płatnej subskrypcji i utratę wszystkich zgromadzonych bonusów lojalnościowych. Pozostałe środki subskrypcji zostaną zwrócone na Twoje konto w postaci środków."
-      ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
         "Spowoduje to usunięcie poprzednich wersji plików starszych niż ${ rententionLabel }."
       ],
@@ -8585,6 +8568,17 @@
       ],
       "Zoom meeting": [
         "spotkanie na Zoom"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Wykryto dodatkowe zduplikowane klucze. Prześlij klucze pojedynczo, aby uzyskać więcej informacji."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Klucz ${ fingerprint } został już przesłany"
+      ],
+      "Selected color:": [
+        "Wybrany kolor:"
       ]
     },
     "Info - folder colouring feature": {
@@ -14206,9 +14200,6 @@
       ]
     },
     "Subscription reminder": {
-      "${ BRAND_NAME } was targeted by Russia in one of the most aggressive censorship campaigns in recent memory, and our team fought back.": [
-        "${ BRAND_NAME } był celem jednej z najbardziej agresywnej cenzury w Rosji w ostatnim czasie, a nasz zespół dalej walczył."
-      ],
       "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
         "Jedynym źródłem przychodów ${ BRAND_NAME } są subskrypcje użytkowników. Twoje wsparcie pozwala nam zachować niezależność, rozwijać naszą misję zapewnieniu każdemu prywatności i nadal wspierać aktywistów oraz organizacje walczące o prywatność i wolność."
       ],
@@ -14224,38 +14215,11 @@
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } przestrzeni dyskowej"
       ],
-      "${ planName } doesn't just provide extra storage. It lets you manage your emails faster, customize your inbox and email addresses, and access the desktop app.": [
-        "Plan ${ planName } to nie tylko dodatkowa przestrzeń dyskowa. Pozwala szybciej zarządzać wiadomościami, dostosować skrzynkę odbiorczą i adresy e-mail oraz uzyskać dostęp do aplikacji desktopowej."
-      ],
       "10 email addresses": [
         "10 adresów e-mail"
       ],
-      "A direct contribution to our mission": [
-        "Bezpośredni wkład w naszą misję"
-      ],
-      "After ${ BRAND_NAME } got blocked in Iran during protests, our customer support team worked to get our VPN app directly into people's hands.": [
-        "Po zablokowaniu usług ${ BRAND_NAME } w Iranie podczas protestów nasz zespół wsparcia klienta pracował nad dostarczeniem aplikacji VPN użytkowników."
-      ],
-      "After privacy and free speech were threatened in Hong Kong, we directly supported local civil rights organizations.": [
-        "Wspieraliśmy lokalne organizacje zajmujące się prawami obywatelskimi po tym, jak prywatność i wolność słowa zostały zagrożone w Hongkongu."
-      ],
-      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **1 GB** for Mail, and **1 GB** for Drive. You will also lose any storage bonuses earned previously.": [
-        "Anulowanie subskrypcji ${ planName } spowoduje zmniejszenie przestrzeni dyskowej z **${ planMaxSpace }** do **1 GB** na pocztę i **1 GB** na dysk. Stracisz również bonusową przestrzeń dyskową."
-      ],
-      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **1 GB** for Mail, and **5 GB** for Drive. You will also lose any storage bonuses earned previously.": [
-        "Anulowanie subskrypcji ${ planName } spowoduje zmniejszenie przestrzeni dyskowej z **${ planMaxSpace }** do **1 GB** na pocztę i **5 GB** na dysk. Stracisz również bonusową przestrzeń dyskową."
-      ],
-      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **500 MB** for Mail, and **1 GB** for Drive. You will also lose any storage bonuses earned previously.": [
-        "Anulowanie subskrypcji ${ planName } spowoduje zmniejszenie przestrzeni dyskowej z **${ planMaxSpace }** do **500 MB** na pocztę i **1 GB** na dysk. Stracisz również bonusową przestrzeń dyskową."
-      ],
-      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **500 MB** for Mail, and **5 GB** for Drive. You will also lose any storage bonuses earned previously.": [
-        "Anulowanie subskrypcji ${ planName } spowoduje zmniejszenie przestrzeni dyskowej z **${ planMaxSpace }** do **500 MB** na pocztę i **5 GB** na dysk. Stracisz również bonusową przestrzeń dyskową."
-      ],
-      "By downgrading your account, you will also lose storage space": [
-        "Obniżając plan, utracisz przestrzeń dyskową"
-      ],
-      "By downgrading your account, you will lose access to these important features": [
-        "Obniżając plan, utracisz dostęp do ważnych funkcji"
+      "6 users": [
+        "6 użytkowników"
       ],
       "Calendar sharing": [
         "Udostępnianie kalendarza"
@@ -14272,6 +14236,9 @@
       "Custom schedule send and snooze times": [
         "Niestandardowe godziny wysyłania i odkładania wiadomości"
       ],
+      "Early access to new apps and features": [
+        "Wcześniejszy dostęp do nowych aplikacji i funkcji"
+      ],
       "Have a question?": [
         "Masz pytanie?"
       ],
@@ -14281,20 +14248,11 @@
       "I still want to cancel": [
         "Nadal chcę anulować"
       ],
-      "If you exceed your free Drive storage quota:": [
-        "Jeśli przekroczysz przestrzeń dyskową Proton Drive:"
-      ],
-      "If you exceed your free Mail storage quota:": [
-        "Jeśli przekroczysz przestrzeń dyskową Proton Mail:"
-      ],
       "Keep ${ planName }": [
         "Zachowaj plan ${ planName }"
       ],
       "Learn more about our impact": [
         "Dowiedz się więcej o naszym wpływie"
-      ],
-      "Let us remind you of everything ${ planName } can do": [
-        "Sprawdź możliwości planu ${ planName }"
       ],
       "Our fight against censorship in Russia": [
         "Nasza walka z cenzurą w Rosji"
@@ -14320,35 +14278,14 @@
       "Unlimited folders, labels and filters": [
         "Nieograniczona liczba folderów, etykiet i filtrów"
       ],
+      "Version history": [
+        "Historia wersji"
+      ],
       "Watch the interview": [
         "Zobacz wywiad"
       ],
-      "When you cancel, you will lose access to": [
-        "Anulowanie planu spowoduje utratę dostępu do"
-      ],
       "Yearly free storage bonuses": [
         "Bonusowa przestrzeń dyskowa"
-      ],
-      "You **won't be able to add any new files**": [
-        "**Nie będziesz mógł dodawać nowych plików**"
-      ],
-      "You **won't be able to backup photos** from your devices": [
-        "**Kopia zapasowa zdjęć nie będzie możliwa**"
-      ],
-      "You **won't be able to send emails** with attachments": [
-        "**Nie wyślesz wiadomości** z załącznikami"
-      ],
-      "You still have ${ expiryDate } on your ${ planName } plan. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling.": [
-        "Plan ${ planName } wygaśnie za ${ expiryDate }. Środki za pozostały czas zostaną dodane do konta ${ BRAND_NAME }. Sprawdź, czy nie przekroczysz limitów darmowego planu."
-      ],
-      "Your **calendar will be frozen**": [
-        "**Kalendarz zostanie zablokowany**"
-      ],
-      "Your devices will **stop syncing**": [
-        "**Synchronizacja urządzenia zostanie zatrzymana**"
-      ],
-      "Your inbox will **stop receiving new emails**": [
-        "**Nie otrzymasz nowych wiadomości** w skrzynce odbiorczej"
       ],
       "Your own custom email domain": [
         "Własna niestandardowa domena"

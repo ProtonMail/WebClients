@@ -4,7 +4,15 @@
     "language": "zh_CN"
   },
   "contexts": {
+    "A label for unlabeled shared calendar links": {
+      "Unlabeled": [
+        "未标记的"
+      ]
+    },
     "Access level": {
+      "Full view": [
+        "完整视图"
+      ],
       "Full view (see all event details)": [
         "允许查看所有日程详情"
       ],
@@ -341,9 +349,6 @@
       ],
       "Downgrade": [
         "降级"
-      ],
-      "Downgrade account": [
-        "降级账户"
       ],
       "Download": [
         "下载"
@@ -978,6 +983,9 @@
       "Upgrade your plan": [
         "升级您的计划"
       ],
+      "Upload": [
+        "已上传"
+      ],
       "Upload picture": [
         "上传图片"
       ],
@@ -1031,6 +1039,9 @@
       ],
       "Void all recovery files?": [
         "废除所有恢复文件？"
+      ],
+      "Welcome": [
+        "欢迎"
       ],
       "What do I get?": [
         "我可获得什么？"
@@ -3341,6 +3352,9 @@
       "Actions": [
         "操作"
       ],
+      "From": [
+        "从"
+      ],
       "Status": [
         "状态"
       ]
@@ -5289,17 +5303,6 @@
         "您的日程中有部分内容我们不支持，这些日程将不会被导入。"
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "检测到多余的重复密钥，请单独上传以获取更多信息。"
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "密钥 ${ fingerprint } 已上传"
-      ],
-      "Selected color:": [
-        "所选颜色"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } 需要您授权${ enableDesktopNotifications }。"
@@ -6510,6 +6513,9 @@
       "Plus or Visionary subscription required": [
         "需开通增强版或尊享版账户"
       ],
+      "Preview": [
+        "预览"
+      ],
       "Preview failed to be loaded": [
         "预览加载失败"
       ],
@@ -6863,9 +6869,6 @@
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "这将取消您当前的付费订阅，并且您将失去您积累的任何忠诚度福利。"
-      ],
-      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
-        "此操作将退订现有的付费服务，您将失去当前已累积的所有特权，付费账户的剩余时长将折算为余额返还。"
       ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
         "这将删除所有早于 ${ rententionLabel } 的旧版本文件。"
@@ -7432,6 +7435,17 @@
         "您的支持工单已关闭。感谢您联系 ${ BRAND_NAME } 支持。"
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "检测到多余的重复密钥，请单独上传以获取更多信息。"
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "密钥 ${ fingerprint } 已上传"
+      ],
+      "Selected color:": [
+        "所选颜色"
+      ]
+    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "令下层文件夹的颜色与上层文件夹一致"
@@ -7929,6 +7943,9 @@
       "Awarded": [
         "已奖励"
       ],
+      "Beta": [
+        "测试版"
+      ],
       "Billing address": [
         "账单地址"
       ],
@@ -8297,6 +8314,9 @@
       ],
       "Link label": [
         "链接标签"
+      ],
+      "Logo": [
+        "图标"
       ],
       "Mail Server (IMAP)": [
         "邮件服务器 (IMAP)"
@@ -10659,6 +10679,9 @@
       "Free forever": [
         "永久免费"
       ],
+      "Includes:": [
+        "包含:"
+      ],
       "per month": [
         "每月"
       ],
@@ -11064,6 +11087,9 @@
       ]
     },
     "Server-Info": {
+      "active": [
+        "启用"
+      ],
       "inactive": [
         "未激活"
       ],
@@ -11319,6 +11345,11 @@
     "session_recovery:sign_out:title": {
       "Sign out without password reset?": [
         "退出而不重置密码？"
+      ]
+    },
+    "session_recovery:status:info": {
+      "Pending": [
+        "等待"
       ]
     },
     "Settings description": {
@@ -11873,6 +11904,11 @@
       ],
       "Unlimited folders, labels and filters": [
         "文件夹、标签、筛选规则不限量"
+      ]
+    },
+    "subscription reminder": {
+      "Upgrade": [
+        "升级账户"
       ]
     },
     "Subscription renewal state": {
@@ -12885,6 +12921,9 @@
       "No recovery method": [
         "无法重置密码"
       ],
+      "Open": [
+        "打开"
+      ],
       "Open actions dropdown": [
         "展开操作菜单"
       ],
@@ -13645,6 +13684,14 @@
     "vpn_2step: billing": {
       "Billed monthly": [
         "每月付费"
+      ]
+    },
+    "vpn_2step: discount": {
+      "1-year": [
+        "1 年"
+      ],
+      "3-month": [
+        "3 个月"
       ]
     },
     "vpn_2step: info": {

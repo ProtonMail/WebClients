@@ -371,9 +371,6 @@
       "Downgrade": [
         "Passa a un pla inferior"
       ],
-      "Downgrade account": [
-        "Passa a un pla inferior"
-      ],
       "Download": [
         "Baixa"
       ],
@@ -528,7 +525,7 @@
         "Ves a l'etiqueta"
       ],
       "Go to settings": [
-        "Anar a preferències"
+        "Ves a les preferències"
       ],
       "Got it": [
         "D'acord"
@@ -3314,7 +3311,7 @@
     },
     "drivePlus2024: Action": {
       "Get the deal": [
-        "Aconsegueixi l'oferta"
+        "Aconseguiu l'oferta"
       ],
       "Special Offer": [
         "Oferta especial"
@@ -5882,17 +5879,6 @@
         "Part del contingut del vostre calendari no és compatible i no s'importarà."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "S'han detectat claus addicionals duplicades. Carregueu-les individualment per obtenir més informació."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "La clau ${ fingerprint } ja s'ha carregat"
-      ],
-      "Selected color:": [
-        "Color seleccionat:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necessita el vostre permís per ${ enableDesktopNotifications }."
@@ -5907,7 +5893,7 @@
         "${ BRAND_NAME } és privacitat en la qual podeu confiar, garantida per un xifratge fort, de codi obert, i lleis de privacitat suïsses. Creiem que ningú hauria de poder explotar les vostres dades i punt. La nostra tecnologia i el nostre negoci estan basats en aquesta definició fonamentalment més forta de la privacitat."
       ],
       "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
-        "${ BRAND_NAME } mai comparteix la seva informació amb tercers. Les dades provenen de les anàlisis pròpies de ${ BRAND_NAME } i de Constella Intelligence."
+        "${ BRAND_NAME } mai comparteix la vostra informació amb tercers. Les dades provenen de les anàlisis pròpies de ${ BRAND_NAME } i de Constella Intelligence."
       ],
       "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "${ BRAND_NAME } ha posat en pausa una importació perquè ha perdut la connexió amb el vostre altre proveïdor de correu electrònic. Torneu a connectar-vos."
@@ -6133,7 +6119,7 @@
         "Afegiu diversos usuaris alhora a la vostra organització."
       ],
       "Add your name and logo to create a more personalized experience for your organization.": [
-        "Afegeixi el seu nom i logotip per crear una experiència més personalitzada per a la seva organització."
+        "Afegiu el vostre nom i logo per a crear una experiència més personalitzada per a la vostra organització."
       ],
       "Additional options": [
         "Opcions addicionals"
@@ -6329,7 +6315,7 @@
         "Bloqueja que els remitents puguin veure si heu obert un missatge i quan ho heu fet."
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
-        "Potenciï la identitat de marca de la seva organització i creï una experiència en línia més coherent per als seus usuaris."
+        "Potencieu la identitat de marca de la vostra organització i creeu una experiència en línia més coherent per als usuaris."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Si baixeu a un pla gratuït, perdreu per sempre aquests avantatges, fins i tot si en tornareu a actualitzar."
@@ -6353,7 +6339,7 @@
         "Comprova l'estat de les importacions i els enviaments."
       ],
       "Choose an app to get started": [
-        "Triï una aplicació per començar"
+        "Trieu una aplicació per començar"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Feu clic a \"Sol·licitar un nou codi\" per rebre un codi de verificació nou a ${ strong }. Si aquest número de telèfon és incorrecte, feu clic a \"Editar\" per corregir-lo."
@@ -6423,7 +6409,7 @@
         "Personalitzat"
       ],
       "Custom branding": [
-        "Personalització de marca"
+        "Marca personalitzada"
       ],
       "Custom daily": [
         "Personalitzat diàriament"
@@ -6622,7 +6608,7 @@
         "No s'han pogut trobar els registres."
       ],
       "Fast and focused. Email and calendar, right on your desktop.": [
-        "Ràpid i concentrat. Correu electrònic i calendari, directament al teu escriptori."
+        "Ràpid i concentrat. Correu electrònic i calendari directament al teu escriptori."
       ],
       "Fill in user details": [
         "Empleneu els detalls de l'usuari"
@@ -6664,7 +6650,7 @@
         "Accedeix creant un compte ${ BRAND_NAME } i acceptant la invitació."
       ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
-        "Doneu al token un nom descriptiu, com ara el servei amb el qual voleu utilitzar-lo, i seleccioneu una de les adreces de domini personalitzades actives. Només aquesta adreça podrà enviar correus electrònics amb aquest token."
+        "Doneu al testimoni un nom descriptiu, com ara el servei amb el qual voleu utilitzar-lo, i seleccioneu una de les adreces de domini personalitzades actives. Només aquesta adreça podrà enviar correus electrònics amb aquest testimoni."
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Proporcioneu la vostra clau pública als vostres amics o publiqueu-la en línia perquè tothom us pugui enviar un missatge de correu electrònic xifrat d'extrem a extrem."
@@ -6736,10 +6722,10 @@
         "Si voleu combinar aquest compte amb un altre, NO l'elimineu."
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
-        "Si té problemes, estem aquí per ajudar-lo(-a). ${ boldPhoneCall } o ${ boldZoomMeeting } amb un dels nostres especialistes d'assistència, o obri un ${ boldLiveChat } per rebre assistència per xat."
+        "Si teniu problemes, estem aquí per ajudar-vos. ${ boldPhoneCall } o ${ boldZoomMeeting } amb un dels nostres especialistes en suport, o obriu un ${ boldLiveChat } per rebre assistència per xat."
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists.": [
-        "Si té problemes, estem aquí per ajudar-lo(-a). ${ boldPhoneCall } o ${ boldZoomMeeting } amb un dels nostres especialistes d'assistència."
+        "Si teniu problemes, estem aquí per ajudar-vos. ${ boldPhoneCall } o ${ boldZoomMeeting } amb un dels nostres especialistes en suport."
       ],
       "Image description": [
         "Descripció de la imatge"
@@ -7164,7 +7150,7 @@
         "Espereu fins que els canvis s'hagin sincronitzat amb el servidor."
       ],
       "Plus ${ numOfBreaches } more": [
-        "A més ${ numOfBreaches } més"
+        "I altres ${ numOfBreaches }"
       ],
       "Plus or Visionary subscription required": [
         "Es requereix una subscripció Plus o Visionary."
@@ -7350,7 +7336,7 @@
         "L'enviament per SMTP permet als serveis o dispositius de tercers enviar correus electrònics a través de ${ MAIL_APP_NAME } per a les adreces del vostre domini personalitzat. Per a sol·licitar accés, ${ createTicket } descrivint els casos d'ús, quins dominis personalitzats voleu utilitzar i els volums de correu electrònic esperats per hora i per dia."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To use this feature, start by generating a new token.": [
-        "Una tramesa SMTP permet als serveis de tercers o dispositius enviar correus electrònics a través de ${ MAIL_APP_NAME } per a les vostres adreces de domini personalitzades. Per a utilitzar aquesta característica, comenceu generant un token."
+        "Una tramesa SMTP permet als serveis de tercers o dispositius enviar correus electrònics a través de ${ MAIL_APP_NAME } per a les vostres adreces de domini personalitzades. Per a utilitzar aquesta característica, comenceu generant un testimoni."
       ],
       "Some keys successfully reactivated": [
         "S'han reactivat correctament algunes claus"
@@ -7402,7 +7388,7 @@
         "Suport per a 1 domini de correu personalitzat"
       ],
       "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
-        "Aviat estarà disponible l'assistència per a la supervisió de dominis personalitzats i d'adreces electròniques que no siguin ${ BRAND_NAME }."
+        "Aviat estarà disponible el suport per a la supervisió de dominis personalitzats i d'adreces electròniques que no siguin de ${ BRAND_NAME }."
       ],
       "support team": [
         "equip de suport"
@@ -7525,7 +7511,7 @@
         "L'enllaç de la promoció ha caducat."
       ],
       "This token won’t be available after you close this window, and you should not share it with anyone.": [
-        "Aquest token no estarà disponible després de tancar aquesta finestra i no l'heu de compartir amb ningú."
+        "Aquest testimoni no estarà disponible després de tancar aquesta finestra i no l'heu de compartir amb ningú."
       ],
       "This unsubscribe link has expired. Please open a more recent email from this mailing list.": [
         "Aquest enllaç d'anul·lació de la subscripció ha caducat. Obriu un correu electrònic més recent des d'aquesta llista de correu."
@@ -7535,9 +7521,6 @@
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Això cancel·larà la vostra subscripció de pagament actual i perdreu els beneficis de fidelitat que heu acumulat."
-      ],
-      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
-        "Es cancel·larà la vostra subscripció de pagament actual i perdreu qualsevol benefici de fidelitat que hagueu acumulat. El balanç restant de la vostra subscripció es retornarà com a crèdits del compte."
       ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
         "Això eliminarà totes les versions anteriors dels vostres fitxers prèvies a ${ rententionLabel }."
@@ -7708,7 +7691,7 @@
         "Pugeu el fitxer CSV completat per a crear comptes"
       ],
       "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
-        "Carregui el logotip de la seva organització per millorar la seva identitat de marca i crear una experiència personalitzada per als seus usuaris."
+        "Carregueu el logo de la vostra organització per millorar la identitat de marca i crear una experiència personalitzada per als usuaris."
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "El fitxer carregat no és una clau privada vàlida. Verifiqueu-la i torneu-ho a provar."
@@ -7726,7 +7709,7 @@
         "Utilitzeu les següents credencials quan us connecteu a servidors ${ VPN_APP_NAME } sense aplicació. Exemple d'utilització: Tunnelblick a macOS, OpenVPN a GNU/Linux."
       ],
       "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
-        "Utilitzeu l'adreça de correu electrònic seleccionada com a nom d'usuari SMTP al servei extern i el token generat com a contrasenya SMTP."
+        "Utilitzeu l'adreça de correu electrònic seleccionada com a nom d'usuari SMTP al servei extern i el testimoni generat com a contrasenya SMTP."
       ],
       "User activated": [
         "S'ha activat l'usuari."
@@ -7771,7 +7754,7 @@
         "Logo de Visa Secure"
       ],
       "Want to learn more?": [
-        "Voleu saber més?"
+        "Voleu saber-ne més?"
       ],
       "Warning:": [
         "Atenció:"
@@ -7792,7 +7775,7 @@
         "Us acabem d'enviar un enllaç nou."
       ],
       "We monitor the dark web for instances where your personal information (such as an email address or password used on a third-party site) is leaked or compromised.": [
-        "Supervisem la web fosca per detectar casos en què la seva informació personal (com ara una adreça de correu electrònic o una contrasenya utilitzada en un lloc de tercers) es filtra o es compromet."
+        "Supervisem la web fosca per detectar casos en què la vostra informació personal (com ara una adreça de correu electrònic o una contrasenya utilitzada en un lloc de tercers) es filtra o es compromet."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Hem d'autenticar el vostre mètode de pagament amb el banc."
@@ -7936,7 +7919,7 @@
         "Ara podeu accedir i gestionar el compte com a administrador."
       ],
       "You can now close this tab.": [
-        "Ara podeu tancar aquesta pestanya."
+        "Podeu tancar aquesta pestanya."
       ],
       "You can now close this window.": [
         "Ja podeu tancar aquesta finestra."
@@ -8118,7 +8101,18 @@
         "La vostra subscripció és gestionada per Mozilla. Contacteu amb el suport de Mozilla."
       ],
       "Zoom meeting": [
-        "reunió Zoom"
+        "reunió de Zoom"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "S'han detectat claus addicionals duplicades. Carregueu-les individualment per obtenir més informació."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "La clau ${ fingerprint } ja s'ha carregat"
+      ],
+      "Selected color:": [
+        "Color seleccionat:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9690,7 +9684,7 @@
         "Inicia la sessió"
       ],
       "stay safer online": [
-        "mantenir-se més segur en línia"
+        "mantenir-se amb major seguretat en línia"
       ],
       "switch account": [
         "canvieu de compte"
@@ -9759,10 +9753,10 @@
         "Milloreu per a restaurar l'accés complet"
       ],
       "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
-        "El seu ${ driveStorage } està ple. Per carregar o sincronitzar fitxers, alliberi espai o ${ cta }."
+        "El vostre ${ driveStorage } està ple. Per a carregar o sincronitzar fitxers, allibereu espai o ${ cta }."
       ],
       "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
-        "El seu ${ mailStorage } està ple. Per enviar o rebre correus electrònics, alliberi espai o ${ cta }."
+        "El vostre ${ mailStorage } està ple. Per a enviar o rebre correus electrònics, allibereu espai o ${ cta }."
       ],
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "El vostre compte corre el risc de ser suprimit. Per evitar la pèrdua de dades, demaneu al vostre administrador que us el millori. ${ cta }"
@@ -9771,7 +9765,7 @@
         "El vostre emmagatzematge està ple. Per enviar o rebre correus electrònics, allibereu espai o ${ cta }."
       ],
       "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
-        "El vostre emmagatzematge està ple. Per carregar o sincronitzar fitxers, allibereu espai o ${ cta }."
+        "El vostre emmagatzematge està ple. Per a carregar o sincronitzar fitxers, allibereu espai o ${ cta }."
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "La vostra subscripció ha finalitzat. ${ cta } i per evitar la pèrdua de dades."
@@ -9830,7 +9824,7 @@
         "10 adreces de correu electrònic"
       ],
       "Auto-delete Spam and Trash": [
-        "Netegeu automàticament el correu brossa i la paperera"
+        "Neteja automàtica del correu brossa i la paperera"
       ],
       "Custom schedule send and snooze times": [
         "Personalització de l'hora d'enviament i del temps de posposició"
@@ -10502,7 +10496,7 @@
         "Organitzeu els elements amb múltiples caixes fortes"
       ],
       "Passkeys supported": [
-        "Claus de pas suportades"
+        "S'admeten claus de pas"
       ],
       "Password-protected Emails": [
         "Correus protegits amb contrasenya"
@@ -11107,7 +11101,7 @@
         "${ reason } s'ha desactivat"
       ],
       "${ reason } has been enabled": [
-        "${ reason } s'ha habilitat"
+        "S'ha habilitat ${ reason } "
       ],
       "A disabled address cannot be default": [
         "Una adreça desactivada no pot ser una adreça per defecte."
@@ -13313,23 +13307,8 @@
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } d'emmagatzematge total"
       ],
-      "${ planName } doesn't just provide extra storage. It lets you manage your emails faster, customize your inbox and email addresses, and access the desktop app.": [
-        "${ planName } no només ofereix emmagatzematge addicional. Li permet gestionar els seus correus electrònics més ràpidament, personalitzar la seva safata d'entrada i les adreces de correu electrònic i accedir a l'aplicació d'escriptori."
-      ],
       "10 email addresses": [
         "10 adreces de correu electrònic"
-      ],
-      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **1 GB** for Mail, and **1 GB** for Drive. You will also lose any storage bonuses earned previously.": [
-        "Si cancel·la la seva subscripció a ${ planName }, el seu espai d'emmagatzematge disminuirà de **${ planMaxSpace }** a **1 GB** per a Mail i **1 GB** per a Drive. També perdrà les bonificacions d'emmagatzematge obtingudes anteriorment."
-      ],
-      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **1 GB** for Mail, and **5 GB** for Drive. You will also lose any storage bonuses earned previously.": [
-        "Si cancel·la la seva subscripció a ${ planName }, el seu espai d'emmagatzematge disminuirà de **${ planMaxSpace }** a **1 GB** per a Mail i **5 GB** per a Drive. També perdràs les bonificacions d'emmagatzematge obtingudes anteriorment."
-      ],
-      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **500 MB** for Mail, and **1 GB** for Drive. You will also lose any storage bonuses earned previously.": [
-        "Si cancel·la la seva subscripció a ${ planName }, el seu espai d'emmagatzematge disminuirà de **${ planMaxSpace }** a **500 MB** per a Mail i **1 GB** per a Drive. També perdrà les bonificacions d'emmagatzematge obtingudes anteriorment."
-      ],
-      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **500 MB** for Mail, and **5 GB** for Drive. You will also lose any storage bonuses earned previously.": [
-        "Si cancel·la la seva subscripció a ${ planName }, el seu espai d'emmagatzematge disminuirà de **${ planMaxSpace }** a **500 MB** per a Mail i **5 GB** per a Drive. També perdrà les bonificacions d'emmagatzematge obtingudes anteriorment."
       ],
       "Calendar sharing": [
         "Compartició de calendari"
@@ -13352,9 +13331,6 @@
       "Keep ${ planName }": [
         "Segueix amb ${ planName }"
       ],
-      "Let us remind you of everything ${ planName } can do": [
-        "Permeti'ns recordar-li tot el que pot fer ${ planName }"
-      ],
       "Priority support": [
         "Suport prioritari"
       ],
@@ -13375,14 +13351,11 @@
       ],
       "Watch the interview": [
         "Mireu la entrevista"
-      ],
-      "You still have ${ expiryDate } on your ${ planName } plan. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling.": [
-        "Encara té ${ expiryDate } al seu pla ${ planName }. Afegirem els crèdits del temps restant al seu compte de ${ BRAND_NAME }. Asseguri's que no supera els límits del pla gratuït abans de cancel·lar-lo."
       ]
     },
     "subscription reminder": {
       "15 GB storage": [
-        "15 GB d'emmagatzemament"
+        "15 GB d'emmagatzematge"
       ],
       "and 15 more premium features": [
         "i 15 característiques prèmium més"
@@ -13901,7 +13874,7 @@
         "Activa l'usuari"
       ],
       "Add a custom logo": [
-        "Afegeixi un logotip personalitzat"
+        "Afegiu un logotip personalitzat"
       ],
       "Add address": [
         "Afegeix una adreça"
@@ -14384,7 +14357,7 @@
         "Com funciona?"
       ],
       "How to choose a good logo": [
-        "Com triar un bon logotip"
+        "Com triar un bon logo"
       ],
       "How to refer a friend and get credits": [
         "Com recomanar un amic i obtenir crèdits"
@@ -14493,7 +14466,7 @@
         "No hi ha mètode de recuperació"
       ],
       "Open": [
-        "Obre"
+        "Pendent"
       ],
       "Open actions dropdown": [
         "Obrir el desplegable d'accions"
@@ -14835,7 +14808,7 @@
         "Configuració del WireGuard"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
-        "La seva prova gratuïta de ${ planName } acaba el ${ textDate }"
+        "La vostra prova gratuïta de ${ planName } acaba el ${ textDate }"
       ],
       "Your calendar link": [
         "Enllaç del vostre calendari"
@@ -15295,7 +15268,7 @@
         "La subscripció es renova automàticament cada tres mesos. La següent data de facturació és d'aquí a tres mesos."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
-        "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant el primer mes. Aleshores, es renovarà automàticament a ${ renewPrice } cada mes. Pot cancel·lar-ho en qualsevol moment."
+        "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant el primer mes. Aleshores, es renovarà automàticament a ${ renewPrice } cada mes. Podeu cancel·lar-ho en qualsevol moment."
       ]
     },
     "vpn_2step: billing": {
