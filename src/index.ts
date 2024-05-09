@@ -8,7 +8,7 @@ import { saveAppID } from "./store/idStore";
 import { getSettings } from "./store/settingsStore";
 import { performStoreMigrations } from "./store/storeMigrations";
 import { hasTrialEnded } from "./store/trialStore";
-import { checkForUpdates, updateDownloaded } from "./update";
+import { initializeUpdateChecks, updateDownloaded } from "./update";
 import { isLinux, isMac, isWindows } from "./utils/helpers";
 import { handleMailToUrls } from "./utils/urls/mailtoLinks";
 import { getTrialEndURL } from "./utils/urls/trial";
@@ -41,7 +41,7 @@ import { DESKTOP_FEATURES } from "./ipc/ipcConstants";
 (async function () {
     // Log initialization
     Logger.initialize({ preload: true });
-    Logger.info("App start is mac:", isMac, "is windows:", isWindows, "isLinux:", isLinux);
+    Logger.info("App start is mac:", isMac, "is windows:", isWindows, "isLinux:", isLinux, "version:", app.getVersion());
 
     Logger.info(
         "Desktop features:",
@@ -129,7 +129,7 @@ import { DESKTOP_FEATURES } from "./ipc/ipcConstants";
             }
 
             // Check updates
-            checkForUpdates();
+            initializeUpdateChecks();
 
             // Trigger blank notification to force presence in settings
             new Notification();
