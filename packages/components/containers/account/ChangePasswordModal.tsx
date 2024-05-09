@@ -7,6 +7,7 @@ import { Button } from '@proton/atoms';
 import { useDispatch } from '@proton/redux-shared-store';
 import { PASSWORD_WRONG_ERROR } from '@proton/shared/lib/api/auth';
 import { updatePrivateKeyRoute } from '@proton/shared/lib/api/keys';
+import { disable2FA as disable2FAConfig } from '@proton/shared/lib/api/settings';
 import { lockSensitiveSettings, unlockPasswordChanges } from '@proton/shared/lib/api/user';
 import innerMutatePassword from '@proton/shared/lib/authentication/mutate';
 import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
@@ -91,10 +92,22 @@ interface Props extends ModalProps {
     mode: MODES;
     onRecoveryClick?: () => void;
     onSuccess?: () => void;
-    authCheck?: boolean;
+    /**
+     * Assumes password scope has been obtained through a recovery method verification
+     * - Will skip showing the auth modal
+     * - Will disable 2FA for the user
+     */
+    signedInRecoveryFlow?: boolean;
 }
 
-const ChangePasswordModal = ({ mode, onRecoveryClick, onSuccess, onClose, authCheck = true, ...rest }: Props) => {
+const ChangePasswordModal = ({
+    mode,
+    onRecoveryClick,
+    onSuccess,
+    onClose,
+    signedInRecoveryFlow = false,
+    ...rest
+}: Props) => {
     const dispatch = useDispatch();
     const api = useApi();
     const { call, stop, start } = useEventManager();
@@ -105,6 +118,9 @@ const ChangePasswordModal = ({ mode, onRecoveryClick, onSuccess, onClose, authCh
     const getAddressKeys = useGetAddressKeys();
     const getAddresses = useGetAddresses();
     const { validator, onFormSubmit, reset } = useFormErrors();
+
+    const disable2FA = signedInRecoveryFlow;
+    const authCheck = !signedInRecoveryFlow;
 
     const lockAndClose = () => {
         void api(lockSensitiveSettings());
@@ -414,21 +430,31 @@ const ChangePasswordModal = ({ mode, onRecoveryClick, onSuccess, onClose, authCh
                     keySalt
                 );
 
-                const routeConfig = updatePrivateKeyRoute(updateKeysPayload);
+                const routeConfig = updatePrivateKeyRoute({ ...updateKeysPayload, PersistPasswordScope: disable2FA });
+                const credentials = {
+                    password: inputs.newPassword,
+                    totp: inputs.totp,
+                };
 
                 if (mode === MODES.CHANGE_TWO_PASSWORD_MAILBOX_MODE) {
                     await api(routeConfig);
                 } else {
                     await srpVerify({
                         api,
-                        credentials: {
-                            password: inputs.newPassword,
-                            totp: inputs.totp,
-                        },
+                        credentials,
                         config: routeConfig,
                     });
                 }
                 await mutatePassword({ keyPassword, clearKeyPassword: inputs.newPassword });
+
+                if (disable2FA) {
+                    await srpVerify({
+                        api,
+                        credentials,
+                        config: disable2FAConfig(),
+                    });
+                }
+
                 await call();
 
                 notifySuccess();
@@ -539,13 +565,21 @@ const ChangePasswordModal = ({ mode, onRecoveryClick, onSuccess, onClose, authCh
                     {c('Info')
                         .t`${BRAND_NAME}'s encryption technology means that nobody can access your password - not even us.`}
                 </div>
-                <div className="mb-4">
-                    {
-                        // translator: Make sure you add a recovery method so that you can get back into your account if you forget your password.
-                        c('Info')
-                            .jt`Make sure you ${addARecoveryMethod} so that you can get back into your account if you forget your password.`
-                    }
-                </div>
+
+                {signedInRecoveryFlow ? null : (
+                    <div className="mb-4">
+                        {
+                            // translator: Make sure you add a recovery method so that you can get back into your account if you forget your password.
+                            c('Info')
+                                .jt`Make sure you ${addARecoveryMethod} so that you can get back into your account if you forget your password.`
+                        }
+                    </div>
+                )}
+
+                {disable2FA ? (
+                    <div className="mb-4">{c('Info').t`This will remove any enabled 2FA methods.`}</div>
+                ) : null}
+
                 <InputFieldTwo
                     id="newPassword"
                     label={labels.newPassword}
