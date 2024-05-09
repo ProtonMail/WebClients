@@ -2696,6 +2696,12 @@
       "Process aborted": [
         "Proces přerušen"
       ],
+      "Removed duplicate invitee: ${ joinedInvitee }": [
+        "Odebrána duplicitní pozvánka: ${ joinedInvitee }",
+        "Odebrány duplicitní pozvánky: ${ joinedInvitee }",
+        "Odebrány duplicitní pozvánky: ${ joinedInvitee }",
+        "Odebrány duplicitní pozvánky: ${ joinedInvitee }"
+      ],
       "Report failed to be sent": [
         "Hlášení se nepodařilo odeslat"
       ],
@@ -7491,6 +7497,9 @@
       "Encrypted search activated": [
         "Vyhledávání v šifrovaných datech bylo zapnuto"
       ],
+      "Failed to accept share invitation": [
+        "Přijetí pozvánky ke sdílení selhalo"
+      ],
       "Failed to download files: ${ err }": [
         "Nepodařilo se stáhnout soubory: ${ err }"
       ],
@@ -7547,6 +7556,12 @@
       ],
       "Root folder failed to be loaded": [
         "Kořenovou složku se nepodařilo načíst"
+      ],
+      "Share invitation accepted successfully": [
+        "Pozvánka ke sdílení úspěšně přijata"
+      ],
+      "Share invitation ID was not found. Please check the link": [
+        "ID pozvánky ke sdílení nenalezeno. Zkontrolujte prosím odkaz"
       ],
       "Stopping to share this item has failed": [
         "Ukončení sdílení této položky selhalo"
@@ -7615,6 +7630,9 @@
     "Onboarding Info": {
       "Create a share link": [
         "Vytvořit odkaz pro sdílení"
+      ],
+      "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
+        "Začněte používat ${ DRIVE_APP_NAME } a my vám navýšíme úložiště na 5 GB!"
       ],
       "Set a recovery method": [
         "Nastavit metodu obnovení"

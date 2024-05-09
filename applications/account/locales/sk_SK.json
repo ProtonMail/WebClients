@@ -371,9 +371,6 @@
       "Downgrade": [
         "Znížiť"
       ],
-      "Downgrade account": [
-        "Znížiť účet"
-      ],
       "Download": [
         "Stiahnuť"
       ],
@@ -526,6 +523,9 @@
       ],
       "Go to label": [
         "Prejsť na štítok"
+      ],
+      "Go to settings": [
+        "Prejsť do nastavení"
       ],
       "Got it": [
         "Rozumiem"
@@ -3374,6 +3374,14 @@
         "Bezpečné cloudové úložisko a zdieľanie súborov, ktoré chráni vaše údaje"
       ]
     },
+    "drivePlus2024: Action": {
+      "Get the deal": [
+        "Využiť ponuku"
+      ],
+      "Special Offer": [
+        "Špeciálna ponuka"
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "Rozšírená história verzií"
@@ -3390,6 +3398,9 @@
     "drivePlus2024: Info": {
       "for the first month": [
         "za prvý mesiac"
+      ],
+      "Limited-time offer": [
+        "Časovo limitovaná ponuka"
       ]
     },
     "drivePlus2024: Title": {
@@ -6043,17 +6054,6 @@
         "Časť obsahu vášho kalendára nie je podporovaná a nebude importovaná."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Boli zistené ďalšie duplicitné kľúče. Pre viac informácií ich prosím nahrajte jednotlivo."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Kľúč ${ fingerprint } už bol nahraný"
-      ],
-      "Selected color:": [
-        "Vybraná farba:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikácia ${ appName } potrebuje Váš súhlas, aby mohla ${ enableDesktopNotifications }."
@@ -6564,6 +6564,9 @@
       ],
       "Blocks senders from seeing if and when you opened a message.": [
         "Blokuje odosielateľov, aby videli, či a kedy ste otvorili správu."
+      ],
+      "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
+        "Posilnite identitu značky vašej organizácie a vytvorte konzistentnejší online zážitok pre vašich používateľov."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ak prejdete na bezplatnú verziu, natrvalo stratíte súčasné výhody a to i v budúcnosti, ak opäť upgradujte svoj účet na platenú verziu."
@@ -7903,9 +7906,6 @@
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Týmto sa zruší vaše aktuálne platené predplatné a stratíte všetky nahromadené vernostné výhody."
       ],
-      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
-        "Týmto krokom zrušíte vaše aktuálne predplatné a stratíte všetky vernostné výhody, ktoré ste nazbierali. Zostávajúci preplatok z predplatného bude vrátený na účet ako kredit."
-      ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
         "Toto zmaže všetky predchádzajúce verzie vašich súborov, ktoré sú staršie ako ${ rententionLabel }."
       ],
@@ -8547,6 +8547,17 @@
       ],
       "Zoom meeting": [
         "Zoom míting"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Boli zistené ďalšie duplicitné kľúče. Pre viac informácií ich prosím nahrajte jednotlivo."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Kľúč ${ fingerprint } už bol nahraný"
+      ],
+      "Selected color:": [
+        "Vybraná farba:"
       ]
     },
     "Info - folder colouring feature": {
@@ -11048,6 +11059,9 @@
       ],
       "Organize items with multiple vaults": [
         "Usporiadanie položiek pomocou viacerých trezorov"
+      ],
+      "Passkeys supported": [
+        "Podpora prístupových kľúčov"
       ],
       "Password-protected Emails": [
         "Heslom chránené emaily"
@@ -14129,9 +14143,6 @@
       ]
     },
     "Subscription reminder": {
-      "${ BRAND_NAME } was targeted by Russia in one of the most aggressive censorship campaigns in recent memory, and our team fought back.": [
-        "${ BRAND_NAME } sa stal terčom jednej z najagresívnejších cenzúrnych kampaní v poslednom čase a náš tím sa bránil."
-      ],
       "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
         "Jediným zdrojom príjmov spoločnosti ${ BRAND_NAME } je predplatné používateľov. Vaša podpora nám umožňuje zostať nezávislými, rozvíjať naše poslanie, aby sa súkromie stalo štandardom na internete, a naďalej podporovať aktivistov a organizácie bojujúce za súkromie a slobodu."
       ],
@@ -14147,38 +14158,8 @@
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } úložného priestoru"
       ],
-      "${ planName } doesn't just provide extra storage. It lets you manage your emails faster, customize your inbox and email addresses, and access the desktop app.": [
-        "${ planName } neposkytuje len dodatočné úložisko. Umožňuje vám rýchlejšie spravovať emaily, prispôsobiť si doručenú poštu a emailové adresy a získať prístup k aplikácii pre počítače."
-      ],
       "10 email addresses": [
         "10 emailových adries"
-      ],
-      "A direct contribution to our mission": [
-        "Priamy príspevok k nášmu poslaniu"
-      ],
-      "After ${ BRAND_NAME } got blocked in Iran during protests, our customer support team worked to get our VPN app directly into people's hands.": [
-        "Po tom, čo počas protestov v Iráne zablokovali ${ BRAND_NAME }, náš tím zákazníckej podpory pracoval na tom, aby sa naša aplikácia VPN dostala priamo do rúk ľudí."
-      ],
-      "After privacy and free speech were threatened in Hong Kong, we directly supported local civil rights organizations.": [
-        "Po ohrození súkromia a slobody prejavu v Hongkongu sme priamo podporili miestne organizácie na ochranu občianskych práv."
-      ],
-      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **1 GB** for Mail, and **1 GB** for Drive. You will also lose any storage bonuses earned previously.": [
-        "Zrušením predplatného ${ planName } sa vaše úložisko zníži z **${ planMaxSpace }** na **1 GB** pre Mail a **1 GB** pre Drive. Stratíte aj všetky predtým získané bonusy za úložisko."
-      ],
-      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **1 GB** for Mail, and **5 GB** for Drive. You will also lose any storage bonuses earned previously.": [
-        "Zrušením predplatného ${ planName } sa vaše úložisko zníži z **${ planMaxSpace }** na **1 GB** pre Mail a **5 GB** pre Drive. Stratíte aj všetky predtým získané bonusy za úložisko."
-      ],
-      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **500 MB** for Mail, and **1 GB** for Drive. You will also lose any storage bonuses earned previously.": [
-        "Zrušením predplatného ${ planName } sa vaše úložisko zníži z **${ planMaxSpace }** na **500 MB** pre Mail a **1 GB** pre Drive. Stratíte aj všetky predtým získané bonusy za úložisko."
-      ],
-      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **500 MB** for Mail, and **5 GB** for Drive. You will also lose any storage bonuses earned previously.": [
-        "Zrušením predplatného ${ planName } sa vaše úložisko zníži z **${ planMaxSpace }** na **500 MB** pre Mail a **5 GB** pre Drive. Stratíte aj všetky predtým získané bonusy za úložisko."
-      ],
-      "By downgrading your account, you will also lose storage space": [
-        "Znížením úrovne svojho používateľského účtu stratíte aj úložný priestor."
-      ],
-      "By downgrading your account, you will lose access to these important features": [
-        "Znížením úrovne svojho konta stratíte prístup k týmto dôležitým funkciám"
       ],
       "Calendar sharing": [
         "Zdieľanie kalendára"
@@ -14204,20 +14185,11 @@
       "I still want to cancel": [
         "Stále chcem službu zrušiť"
       ],
-      "If you exceed your free Drive storage quota:": [
-        "Ak prekročíte kvótu voľného úložiska služby Drive:"
-      ],
-      "If you exceed your free Mail storage quota:": [
-        "Ak prekročíte kvótu voľného úložiska služby Mail:"
-      ],
       "Keep ${ planName }": [
         "Ponechať ${ planName }"
       ],
       "Learn more about our impact": [
         "Zistite viac o našom vplyve"
-      ],
-      "Let us remind you of everything ${ planName } can do": [
-        "Dovoľte nám pripomenúť, čo všetko ${ planName } dokáže"
       ],
       "Our fight against censorship in Russia": [
         "Náš boj proti cenzúre v Rusku"
@@ -14246,32 +14218,8 @@
       "Watch the interview": [
         "Pozrite si rozhovor"
       ],
-      "When you cancel, you will lose access to": [
-        "Keď zrušíte službu, stratíte prístup k"
-      ],
       "Yearly free storage bonuses": [
         "Každoročné bonusy na kapacitu úložiska"
-      ],
-      "You **won't be able to add any new files**": [
-        "**Nebudete môcť pridávať žiadne nové súbory**"
-      ],
-      "You **won't be able to backup photos** from your devices": [
-        "**Nebudete môcť zálohovať fotografie** zo svojich zariadení"
-      ],
-      "You **won't be able to send emails** with attachments": [
-        "**Nebudete môcť odosielať emaily** s prílohami"
-      ],
-      "You still have ${ expiryDate } on your ${ planName } plan. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling.": [
-        "Stále máte ${ expiryDate } vo svojom ${ planName } predplatnom. Pripočítame vám kredity za zostávajúci čas k vášmu ${ BRAND_NAME } predplatnému. Pred zrušením sa uistite, že ste neprekročili limity bezplatného balíka."
-      ],
-      "Your **calendar will be frozen**": [
-        "Váš **kalendár bude zmrazený**"
-      ],
-      "Your devices will **stop syncing**": [
-        "Vaše zariadenia sa **prestanú synchronizovať**"
-      ],
-      "Your inbox will **stop receiving new emails**": [
-        "Vaša schránka **prestane prijímať nové emaily**"
       ],
       "Your own custom email domain": [
         "Vaša vlastná emailová doména"
@@ -14284,11 +14232,41 @@
       "15 GB storage": [
         "15 GB úložného priestoru"
       ],
+      "and 15 more premium features": [
+        "a ďalších 15 prémiových funkcií"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatické presmerovanie emailu ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Upozornenia na úniky údajov ${ strongArgument }"
+      ],
       "Desktop app": [
         "Desktopová aplikácia"
       ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomôžte nám udržať bezpečný a súkromný pre všetkých. Prejdite na platený tarif."
+      ],
+      "No ads or tracking": [
+        "Žiadne reklamy alebo sledovanie"
+      ],
+      "Short @pm.me email address": [
+        "Skrátená emailová adresa @pm.me"
+      ],
+      "Support our mission": [
+        "Podporte naše poslanie"
+      ],
       "Upgrade": [
         "Prejsť na platený plán"
+      ],
+      "Upgrade your productivity": [
+        "Zlepšite svoju produktivitu"
+      ],
+      "We don't sell your data": [
+        "Nepredávame vaše údaje"
+      ],
+      "Your privacy is our mission": [
+        "Vaše súkromie je naším poslaním"
       ]
     },
     "Subscription renewal state": {
@@ -14802,6 +14780,9 @@
       ],
       "Activate user": [
         "Aktivovať používateľa"
+      ],
+      "Add a custom logo": [
+        "Pridajte vlastné logo"
       ],
       "Add address": [
         "Pridať adresu"

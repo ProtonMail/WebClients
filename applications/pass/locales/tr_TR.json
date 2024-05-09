@@ -401,6 +401,9 @@
       "Trash": [
         "Çöpe at"
       ],
+      "Try again.": [
+        "Yeniden deneyin."
+      ],
       "Unpin item": [
         "Ögenin sabitlemesini kaldır"
       ],
@@ -499,6 +502,9 @@
       ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Hesapları için daha yüksek düzeyde koruma isteyen kullanıcılar için tasarlanmış, yapay zeka destekli son teknoloji güvenlik çözümümüz. ${ learnMoreLink }"
+      ],
+      "Set up 2FA for more security": [
+        "Güvenliği artırmak için iki adımlı doğrulamayı açın"
       ],
       "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
         "E-posta adresiniz ve hide-my-email takma adlarınızla oluşturulan hesaplarla ilgili verilerin ele geçirilmesi olaylarını izlemeye başlayın."
@@ -907,6 +913,10 @@
       "${ PROTON_SENTINEL_NAME } successfully enabled": [
         "${ PROTON_SENTINEL_NAME } kullanıma alındı"
       ],
+      "${ row.breachCount } breach detected": [
+        "${ row.breachCount } verilerin ele geçirilmesi olayı bulundu",
+        "${ row.breachCount } verilerin ele geçirilmesi olayı bulundu"
+      ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 gün boyunca ücretli özellikleri ücretsiz olarak deneyin. Yalnızca ${ BRAND_NAME } ile ilk haftanızda."
       ],
@@ -1072,6 +1082,9 @@
       ],
       "High Priority": [
         "Yüksek öncelik"
+      ],
+      "How does monitoring work?": [
+        "İzleme nasıl çalışır?"
       ],
       "Import in progress:": [
         "İçe aktarılıyor:"
@@ -2152,9 +2165,6 @@
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "${ PASS_SHORT_APP_NAME } izleyici"
       ],
-      "${ PASS_SHORT_APP_NAME } monitor": [
-        "${ PASS_SHORT_APP_NAME } izleyici"
-      ],
       "Account protection": [
         "Hesap koruması"
       ],
@@ -2348,6 +2358,9 @@
       "Set access level": [
         "Erişim düzeyini ayarla"
       ],
+      "Set up 2FA for more security": [
+        "Güvenliği artırmak için iki adımlı doğrulamayı açın"
+      ],
       "Settings": [
         "Ayarlar"
       ],
@@ -2474,6 +2487,9 @@
       ],
       "Expiration Date is not in the format MM/YY": [
         "Geçerlilik süresi AA/YY biçiminde değil"
+      ],
+      "Failed to load breaches.": [
+        "Verilerin ele geçirilmesi olayları yüklenemedi."
       ],
       "Invalid alias prefix": [
         "Takma ad ön eki geçersiz"

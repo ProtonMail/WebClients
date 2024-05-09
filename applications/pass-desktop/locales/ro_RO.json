@@ -501,6 +501,9 @@
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Soluția noastră de securitate de ultimă oră, bazată pe inteligență artificială, concepută pentru utilizatorii care doresc o protecție sporită pentru conturile lor. ${ learnMoreLink }"
       ],
+      "Set up 2FA for more security": [
+        "Setați A2F pentru mai multă securitate"
+      ],
       "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
         "Pornire monitorizare divulgare date legate de conturile create cu adresa de e-mail și aliasurile hide-my-email proprii."
       ],
@@ -944,6 +947,11 @@
       "${ PROTON_SENTINEL_NAME } successfully enabled": [
         "${ PROTON_SENTINEL_NAME } s-a activat."
       ],
+      "${ row.breachCount } breach detected": [
+        "${ row.breachCount } divulgare detectată",
+        "${ row.breachCount } de divulgări detectate",
+        "${ row.breachCount } divulgări detectate"
+      ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "Aveți 7 zile de încercare gratuită a funcțiilor premium. Valabil doar pentru prima săptămână de utilizare a ${ BRAND_NAME }."
       ],
@@ -1107,6 +1115,9 @@
       ],
       "High Priority": [
         "Prioritate înaltă"
+      ],
+      "How does monitoring work?": [
+        "Cum funcționează monitorizarea?"
       ],
       "Import in progress:": [
         "Importare în derulare:"
@@ -2191,9 +2202,6 @@
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "Monitorizare ${ PASS_SHORT_APP_NAME }"
       ],
-      "${ PASS_SHORT_APP_NAME } monitor": [
-        "Monitorizare ${ PASS_SHORT_APP_NAME }"
-      ],
       "Account protection": [
         "Protecție cont"
       ],
@@ -2387,6 +2395,9 @@
       ],
       "Set access level": [
         "Setare nivel de acces"
+      ],
+      "Set up 2FA for more security": [
+        "Setați A2F pentru mai multă securitate"
       ],
       "Settings": [
         "Setări"

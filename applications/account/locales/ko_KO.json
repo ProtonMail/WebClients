@@ -371,9 +371,6 @@
       "Downgrade": [
         "다운그레이드"
       ],
-      "Downgrade account": [
-        "계정 다운그레이드"
-      ],
       "Download": [
         "다운로드"
       ],
@@ -3298,11 +3295,32 @@
       "Bugs or quality issue": [
         "버그 또는 품질 문제"
       ],
+      "I do not wish to share": [
+        "공유하고 싶지 않음"
+      ],
+      "I found a cheaper VPN": [
+        "더 저렴한 VPN을 찾아서"
+      ],
+      "I found a VPN with better features": [
+        "기능이 더 나은 VPN을 찾아서"
+      ],
+      "I have not managed to connect": [
+        "접속이 되지 않아서"
+      ],
+      "I only needed a VPN short-term": [
+        "VPN이 단기간만 필요해서"
+      ],
       "I use a different ${ BRAND_NAME } account": [
         "다른 ${ BRAND_NAME } 계정을 사용합니다"
       ],
+      "It doesn't do what I need": [
+        "필요한 기능이 없어서"
+      ],
       "Missing feature(s)": [
         "없는 기능"
+      ],
+      "Other reason (please comment)": [
+        "다른 이유 (코멘트 부탁드립니다)"
       ],
       "Subscription is too expensive": [
         "구독이 너무 비쌉니다"
@@ -3312,6 +3330,9 @@
       ],
       "Temporary need, may come back in the future": [
         "잠깐만 필요합니다, 나중에 다시 사용할 생각입니다."
+      ],
+      "The VPN is too slow": [
+        "VPN이 너무 느려서"
       ]
     },
     "Downgrade modal exit survey title": {
@@ -3338,6 +3359,14 @@
         "데이터를 보호하는 클라우드 스토리지와 파일 공유로 보호하세요."
       ]
     },
+    "drivePlus2024: Action": {
+      "Get the deal": [
+        "특가 받기"
+      ],
+      "Special Offer": [
+        "특가"
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "연장된 버전 기록"
@@ -3354,6 +3383,9 @@
     "drivePlus2024: Info": {
       "for the first month": [
         "첫 한달간"
+      ],
+      "Limited-time offer": [
+        "기간 한정 할인"
       ]
     },
     "drivePlus2024: Title": {
@@ -5935,17 +5967,6 @@
         "캘린더 콘텐츠 중 일부가 지원되지 않으며, 불러와지지 않습니다."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "추가적인 복제 키가 감지되었습니다. 자세한 정보를 위해 따로 업로드해주세요."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "${ fingerprint } 키가 업로드 되었습니다"
-      ],
-      "Selected color:": [
-        "선택한 색상:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }에서 ${ enableDesktopNotifications }하려면 권한이 필요합니다."
@@ -7693,9 +7714,6 @@
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "현재 유료 구독이 취소되며 누적된 로열티 혜택을 잃게 됩니다."
       ],
-      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
-        "현재 구독 내역이 취소되며, 지금까지 쌓아온 로열티 혜택을 잃게됩니다. 구독 내역의 잔고는 계정 크레딧으로 돌려드립니다."
-      ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
         "이 작업을 실행하면 ${ rententionLabel }보다 오래된 모든 이전 버전의 파일이 삭제됩니다."
       ],
@@ -8319,6 +8337,17 @@
       ],
       "Zoom meeting": [
         "Zoom 미팅"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "추가적인 복제 키가 감지되었습니다. 자세한 정보를 위해 따로 업로드해주세요."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "${ fingerprint } 키가 업로드 되었습니다"
+      ],
+      "Selected color:": [
+        "선택한 색상:"
       ]
     },
     "Info - folder colouring feature": {
@@ -13685,9 +13714,6 @@
       ]
     },
     "Subscription reminder": {
-      "${ BRAND_NAME } was targeted by Russia in one of the most aggressive censorship campaigns in recent memory, and our team fought back.": [
-        "${ BRAND_NAME }은 최근에 가장 공격적이었던 검열 캠페인에서 러시아의 표적이 되었고, 저희 팀은 그에 맞서 싸웠었습니다."
-      ],
       "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
         "${ BRAND_NAME }의 유일한 수익원은 사용자의 구독입니다. 당신의 지지로 저희는 독립적일 수 있고, 프라이버시가 기본인 온라인을 만들어나가는 사명을 위해 나아갈 수 있으며, 프라이버시와 자유를 위해 싸우는 활동가들과 조직을 지원해나갈 수 있습니다."
       ],
@@ -13700,38 +13726,14 @@
       "${ planMaxSpace } total storage": [
         "총 저장공간 ${ planMaxSpace }"
       ],
-      "${ planName } doesn't just provide extra storage. It lets you manage your emails faster, customize your inbox and email addresses, and access the desktop app.": [
-        "${ planName }은 추가 저장공간을 제공하는 것으로 끝나지 않습니다. 더욱 빠른 이메일 관리와 받은 편지함과 이메일 주소의 맞춤화, 그리고 데스크톱 앱에 접근할 수 있게 합니다."
-      ],
       "10 email addresses": [
         "이메일 주소 10개"
       ],
-      "A direct contribution to our mission": [
-        "저희의 사명에 직접적인 기여"
+      "Add any new files": [
+        "새로운 파일을 추가할 수 없게 됩니다"
       ],
-      "After ${ BRAND_NAME } got blocked in Iran during protests, our customer support team worked to get our VPN app directly into people's hands.": [
-        "항거 도중 ${ BRAND_NAME }이 이란에서 차단되자, 저희의 고객 지원 팀은 VPN 앱을 직접 전달하기 위해 움직였습니다."
-      ],
-      "After privacy and free speech were threatened in Hong Kong, we directly supported local civil rights organizations.": [
-        "홍콩에서 프라이버시와 표현의 자유가 위협받자, 저희는 현지의 시민권 단체를 직접 지원했었습니다."
-      ],
-      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **1 GB** for Mail, and **1 GB** for Drive. You will also lose any storage bonuses earned previously.": [
-        "${ planName } 구독을 취소하면, 사용자의 Mail 스토리지가 **${ planMaxSpace }**에서 **1 GB**로, Drive는 **1 GB**로 감소됩니다. 이전에 받은 모든 스토리지 보너스 또한 잃게 됩니다."
-      ],
-      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **1 GB** for Mail, and **5 GB** for Drive. You will also lose any storage bonuses earned previously.": [
-        "${ planName } 구독을 취소하면, 사용자의 Mail 스토리지가 **${ planMaxSpace }**에서 **1 GB**로, Drive는 **5 GB**로 감소됩니다. 이전에 받은 모든 스토리지 보너스 또한 잃게 됩니다."
-      ],
-      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **500 MB** for Mail, and **1 GB** for Drive. You will also lose any storage bonuses earned previously.": [
-        "${ planName } 구독을 취소하면, 사용자의 Mail 스토리지가 **${ planMaxSpace }**에서 **500 MB**로, Drive는 **1 GB**로 감소됩니다. 이전에 받은 모든 스토리지 보너스 또한 잃게 됩니다."
-      ],
-      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **500 MB** for Mail, and **5 GB** for Drive. You will also lose any storage bonuses earned previously.": [
-        "${ planName } 구독을 취소하면, 사용자의 Mail 스토리지가 **${ planMaxSpace }**에서 **500 MB**로, Drive는 **5 GB**로 감소됩니다. 이전에 받은 모든 스토리지 보너스 또한 잃게 됩니다."
-      ],
-      "By downgrading your account, you will also lose storage space": [
-        "계정을 다운그레이드하면, 스토리지 저장 공간 또한 잃게 됩니다."
-      ],
-      "By downgrading your account, you will lose access to these important features": [
-        "계정을 다운그레이드하면, 다음과 같은 중요한 기능을 이용할 수 없게 됩니다."
+      "Back up photos from your devices": [
+        "기기에서 사진을 백업할 수 없게 됩니다"
       ],
       "Calendar sharing": [
         "일정 공유"
@@ -13748,20 +13750,29 @@
       "Custom schedule send and snooze times": [
         "사용자 지정 스케줄과 방해금지 시간"
       ],
+      "Extra storage and bonuses": [
+        "추가 저장공간과 보너스"
+      ],
       "Have a question?": [
         "질문이 있나요?"
       ],
       "Helping activists in Hong Kong": [
         "홍콩의 활동가 지원"
       ],
+      "How our customer support team got our VPN app directly into people's hands. ": [
+        "저희의 고객지원 팀이 사람들에게 VPN 앱을 어떻게 직접 전달했는지. "
+      ],
+      "How we fought back when ${ BRAND_NAME } was targeted in an aggressive censorship campaign.": [
+        "${ BRAND_NAME }이 공격적인 검열 캠페인의 표적이 되었을 때 어떻게 맞섰는지."
+      ],
+      "How we supported local activists when privacy and free speech were threatened in Hong Kong.": [
+        "저희가 홍콩의 프라이버시와 표현의 자유가 위협받을 때 현지 활동가들을 어떻게 지원했는지."
+      ],
       "I still want to cancel": [
         "그래도 취소하겠습니다"
       ],
-      "If you exceed your free Drive storage quota:": [
-        "무료 드라이브 저장 공간 할당량을 초과하는 경우:"
-      ],
-      "If you exceed your free Mail storage quota:": [
-        "무료 메일 저장 공간 할당량을 초과하는 경우:"
+      "If you exceed the free plan limits when your ${ planName } subscription expires, you will not be able to:": [
+        "${ planName } 구독 만료 후 무료 요금제의 한도를 초과하게 된다면,"
       ],
       "Keep ${ planName }": [
         "${ planName } 유지하기"
@@ -13769,8 +13780,8 @@
       "Learn more about our impact": [
         "저희의 영향력에 대해 더 알아보기"
       ],
-      "Let us remind you of everything ${ planName } can do": [
-        "${ planName }이 할 수 있는 모든 것을 다시 짚어드리고자 합니다"
+      "Manage your calendar": [
+        "캘린더를 관리할 수 없게 됩니다"
       ],
       "Our fight against censorship in Russia": [
         "러시아의 검열에 맞선 저희의 싸움"
@@ -13781,14 +13792,23 @@
       "Read the story": [
         "이야기 읽어보기"
       ],
+      "Receive new emails": [
+        "새 이메일을 받을 수 없게 됩니다"
+      ],
       "Resubscribe": [
         "다시 구독하기"
       ],
       "Resubscribe to restore access to ${ planName } features.": [
         "${ planName } 기능 접근을 복구하려면 재구독"
       ],
+      "Send emails with attachments": [
+        "첨부 파일이 담긴 이메일을 보낼 수 없게 됩니다"
+      ],
       "Subscription canceled": [
         "구독이 취소되었습니다"
+      ],
+      "Sync files on devices": [
+        "기기간 파일 동기화를 할 수 없게 됩니다"
       ],
       "Unblocking internet access in Iran": [
         "이란의 인터넷 접속 차단 해제"
@@ -13799,32 +13819,11 @@
       "Watch the interview": [
         "인터뷰 보기"
       ],
-      "When you cancel, you will lose access to": [
-        "구독을 취소하시면, 다음에 접근할 수 없게 됩니다"
-      ],
       "Yearly free storage bonuses": [
         "연간 무료 저장공간 보너스"
       ],
-      "You **won't be able to add any new files**": [
-        "**새로운 파일을 추가할 수 없습니다.**"
-      ],
-      "You **won't be able to backup photos** from your devices": [
-        "사용자의 다른 기기에서 **사진을 백업할 수 없습니다.**"
-      ],
-      "You **won't be able to send emails** with attachments": [
-        "**이메일을 첨부 파일과 함께** 전송이 불가합니다."
-      ],
-      "You still have ${ expiryDate } on your ${ planName } plan. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling.": [
-        "${ planName } 플랜의 유효 기간이 ${ expiryDate }까지입니다. 사용자의 ${ BRAND_NAME } 계정에 남은 시간 동안 분의 크레딧이 추가됩니다. 취소하기 전에 무료 요금제 한도를 초과하지 않게 유의하십시오."
-      ],
-      "Your **calendar will be frozen**": [
-        "사용자의 **캘린더가 차단됩니다.**"
-      ],
-      "Your devices will **stop syncing**": [
-        "사용자의 기기의 **동기화가 정지됩니다.**"
-      ],
-      "Your inbox will **stop receiving new emails**": [
-        "사용자의 받은 편지함이 **새 이메일을 받을 수 없습니다.**"
+      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
+        "${ planName }의 구독이 아직 ${ expiryDate } 만큼 남아 있습니다. 이 시간만큼 ${ BRAND_NAME } 계정에 크레딧이 지급됩니다. 취소하기 전 무료 요금제의 한도를 넘지 않도록 하십시오. ${ learnMoreLink }"
       ],
       "Your own custom email domain": [
         "사용자의 커스텀 이메일 도메인"

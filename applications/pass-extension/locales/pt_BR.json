@@ -514,6 +514,10 @@
       ]
     },
     "Description": {
+      "${ total } other login uses the same password": [
+        "${ total } outro início de sessão usa a mesma senha",
+        "${ total } outros inícios de sessão usam a mesma senha"
+      ],
       "A checked box means the feature is disabled.": [
         "Uma caixa marcada significa que o recurso está desativado."
       ],
@@ -620,6 +624,9 @@
       "Failed resending invite.": [
         "Falha ao reenviar o convite."
       ],
+      "Failed to add email address": [
+        "Falha ao adicionar o email"
+      ],
       "Failed to delete selected items": [
         "Falha ao excluir itens selecionados"
       ],
@@ -655,6 +662,9 @@
       ],
       "Failed to unpin item": [
         "Falha ao desafixar item"
+      ],
+      "Failed to verify email address": [
+        "Falha ao verificar o email"
       ],
       "File could not be parsed": [
         "Não foi possível analisar o arquivo."
@@ -897,6 +907,12 @@
       ],
       "${ PASS_APP_NAME } will suggest saving passkeys.": [
         "${ PASS_APP_NAME } irá sugerir salvar chaves de acesso."
+      ],
+      "${ PROTON_SENTINEL_NAME } successfully disabled": [
+        "${ PROTON_SENTINEL_NAME } desativado"
+      ],
+      "${ PROTON_SENTINEL_NAME } successfully enabled": [
+        "${ PROTON_SENTINEL_NAME } ativado"
       ],
       "${ trialDaysLeft } day left": [
         "${ trialDaysLeft } dia restante",
@@ -1156,6 +1172,9 @@
       ],
       "me": [
         "eu"
+      ],
+      "Monitoring settings successfully updated": [
+        "Configurações de monitoramento atualizadas com sucesso"
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "Mais do que um gerenciador de senhas, o ${ PASS_APP_NAME } protege sua senha e seu endereço de e-mail pessoal através de aliases de email. Alimentado pela mesma tecnologia por trás do ${ MAIL_APP_NAME }, seus dados são criptografados de ponta a ponta e são acessíveis apenas por você."
@@ -1494,6 +1513,9 @@
         "${ config.options.wordCount } palavra",
         "${ config.options.wordCount } palavras"
       ],
+      "${ PASS_SHORT_APP_NAME } monitor": [
+        "${ PASS_SHORT_APP_NAME } monitor"
+      ],
       "1 hour": [
         "1 hora"
       ],
@@ -1807,7 +1829,7 @@
         "Lista de pausa"
       ],
       "PGP-encrypted JSON (recommended)": [
-        "JSON criptografado con PGP (recomendado)"
+        "JSON criptografado com PGP (recomendado)"
       ],
       "PIN": [
         "Código PIN"
@@ -2243,6 +2265,9 @@
       ],
       "Set access level": [
         "Definir nível de acesso"
+      ],
+      "Set up 2FA for more security": [
+        "Configure A2F para mais segurança"
       ],
       "Share with": [
         "Compartilhar com"

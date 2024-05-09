@@ -529,6 +529,9 @@
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "Αυτός ο λογαριασμός είναι ευάλωτος, επισκεφθείτε την υπηρεσία και αλλάξτε τον κωδικό πρόσβασής σας."
+      ],
+      "This service offers 2FA. Enable it for added account security.": [
+        "Αυτή η υπηρεσία προσφέρει 2FA. Ενεργοποιήστε το για πρόσθετη ασφάλεια λογαριασμού."
       ]
     },
     "Error": {
@@ -2173,9 +2176,6 @@
       "${ PASS_APP_NAME } Settings": [
         "Ρυθμίσεις ${ PASS_APP_NAME }"
       ],
-      "${ PASS_SHORT_APP_NAME } monitor": [
-        "${ PASS_SHORT_APP_NAME } παρακολούθηση"
-      ],
       "Auto-lock update": [
         "Ενημέρωση αυτόματου κλειδώματος"
       ],
@@ -2304,6 +2304,9 @@
       ],
       "Set access level": [
         "Ορισμός επιπέδου πρόσβασης"
+      ],
+      "Set up 2FA for more security": [
+        "Ρυθμίστε το 2FA για περισσότερη ασφάλεια"
       ],
       "Share with": [
         "Κοινοποίηση με"

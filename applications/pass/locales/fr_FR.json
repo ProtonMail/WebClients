@@ -1393,7 +1393,7 @@
         "Nous vous remercions. Le bug a été signalé."
       ],
       "The custom email will be sent to ${ href } for monitoring. No other data will be sent to HIBP.": [
-        "Cette adresse personnalisée sera envoyée à ${ href } pour être surveillé. Aucune autre information n'est partagée avec HIBP."
+        "Cette adresse personnalisée sera envoyée à ${ href } pour être surveillée. Aucune autre information n'est partagée avec HIBP."
       ],
       "The export will only contain vaults that you own.": [
         "L'exportation ne contiendra que les coffres-forts que vous possédez"
@@ -1402,7 +1402,7 @@
         "Le fichier exporté sera chiffré en utilisant PGP et nécessite une phrase de mot de passe forte."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
-        "Les informations exposées ont été divulguées par un service tiers. Les informations de votre compte ${ BRAND_NAME } restent en sécurité et chiffrées. ${ learnMoreLink }"
+        "Les informations exposées ont été divulguées par un service tiers. Les informations de votre compte ${ BRAND_NAME } restent sécurisées et chiffrées. ${ learnMoreLink }"
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "${ result.ignored.length } élément n'a pas pu être importé :",
@@ -2008,7 +2008,7 @@
         "En savoir plus"
       ],
       "stay safer online": [
-        "améliorer votre sécurité en ligne"
+        "Protégez-vous en ligne"
       ]
     },
     "lobby: Info": {
@@ -2178,9 +2178,6 @@
         "Adresses ${ BRAND_NAME }"
       ],
       "${ PASS_SHORT_APP_NAME } Monitor": [
-        "Surveillance de ${ PASS_SHORT_APP_NAME }"
-      ],
-      "${ PASS_SHORT_APP_NAME } monitor": [
         "Surveillance de ${ PASS_SHORT_APP_NAME }"
       ],
       "Account protection": [

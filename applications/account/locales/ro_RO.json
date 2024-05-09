@@ -371,9 +371,6 @@
       "Downgrade": [
         "Retrogradare"
       ],
-      "Downgrade account": [
-        "Retrogradare cont"
-      ],
       "Download": [
         "Descărcare"
       ],
@@ -527,6 +524,9 @@
       "Go to label": [
         "Accesare etichetă"
       ],
+      "Go to settings": [
+        "Accesare setări"
+      ],
       "Got it": [
         "Am înțeles"
       ],
@@ -598,6 +598,9 @@
       ],
       "label emails as": [
         "etichetare mesaje ca"
+      ],
+      "Later": [
+        "Mai târziu"
       ],
       "Leave": [
         "Lăsați"
@@ -3358,6 +3361,14 @@
         "Stocare securizată în cloud și partajare de fișiere care vă protejează datele"
       ]
     },
+    "drivePlus2024: Action": {
+      "Get the deal": [
+        "Obțineți oferta"
+      ],
+      "Special Offer": [
+        "Ofertă specială"
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "Istoric extins versiuni"
@@ -3374,6 +3385,9 @@
     "drivePlus2024: Info": {
       "for the first month": [
         "pentru prima lună"
+      ],
+      "Limited-time offer": [
+        "Ofertă limitată"
       ]
     },
     "drivePlus2024: Title": {
@@ -6003,17 +6017,6 @@
         "O parte din conținutul calendarului nu este suportat și nu va fi importat."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Au fost detectate chei duplicate suplimentare. Încărcați-le individual pentru mai multe informații."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Cheia ${ fingerprint } a fost deja încărcată."
-      ],
-      "Selected color:": [
-        "Culoare selectată:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necesită permisiunea pentru ${ enableDesktopNotifications }."
@@ -6500,6 +6503,9 @@
       ],
       "Blocks senders from seeing if and when you opened a message.": [
         "Împiedică expeditorii să vadă dacă și când ați deschis un mesaj."
+      ],
+      "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
+        "Îmbunătățiți-vă identitatea de brand a organizației proprii și creați o experiență online mai consistentă pentru utilizatorii acesteia."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Revenind la planul gratuit, veți pierde permanent aceste avantaje, chiar dacă ulterior veți trece la unul cu plată."
@@ -7829,9 +7835,6 @@
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Aceasta va anula abonamentul cu plată actual și veți pierde orice beneficii de loialitate pe care le-ați acumulat."
       ],
-      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
-        "Aceasta vă va anula abonamentul plătit și veți pierde orice beneficii de loialitate acumulate. Soldul rămas din abonament va fi returnat ca și credit în cont."
-      ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
         "Aceasta va șterge toate versiunile anterioare ale fișierelor mai vechi de ${ rententionLabel }."
       ],
@@ -8466,6 +8469,17 @@
       ],
       "Zoom meeting": [
         "o întâlnire pe Zoom"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Au fost detectate chei duplicate suplimentare. Încărcați-le individual pentru mai multe informații."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Cheia ${ fingerprint } a fost deja încărcată."
+      ],
+      "Selected color:": [
+        "Culoare selectată:"
       ]
     },
     "Info - folder colouring feature": {
@@ -10938,6 +10952,9 @@
       ],
       "Organize items with multiple vaults": [
         "Organizați articole cu seifuri multiple"
+      ],
+      "Passkeys supported": [
+        "Chei de acces suportate"
       ],
       "Password-protected Emails": [
         "Mesaje protejate prin parolă"
@@ -13989,9 +14006,6 @@
       ]
     },
     "Subscription reminder": {
-      "${ BRAND_NAME } was targeted by Russia in one of the most aggressive censorship campaigns in recent memory, and our team fought back.": [
-        "${ BRAND_NAME } a fost vizat de Rusia într-una dintre cele mai agresive campanii de cenzură din istoria recentă, iar echipa noastră a ripostat."
-      ],
       "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
         "Singura sursă de venit a ${ BRAND_NAME } sunt abonamentele utilizatorilor. Sprijinul dumneavoastră ne permite să rămânem independenți, să ne promovăm misiunea de a face confidențialitatea online implicită și să continuăm să sprijinim activiștii și organizațiile care luptă pentru confidențialitate și libertate."
       ],
@@ -14006,38 +14020,8 @@
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } spațiu total"
       ],
-      "${ planName } doesn't just provide extra storage. It lets you manage your emails faster, customize your inbox and email addresses, and access the desktop app.": [
-        "${ planName } nu oferă doar spațiu de stocare suplimentar. Vă permite să vă gestionați mai rapid e-mailurile, să vă personalizați interfața de lucru și adresele de e-mail și să accesați aplicația desktop."
-      ],
       "10 email addresses": [
         "10 adrese de e-mail"
-      ],
-      "A direct contribution to our mission": [
-        "O contribuție directă la misiunea noastră"
-      ],
-      "After ${ BRAND_NAME } got blocked in Iran during protests, our customer support team worked to get our VPN app directly into people's hands.": [
-        "După ce ${ BRAND_NAME } a fost blocat în Iran în timpul protestelor, echipa noastră de asistență pentru clienți a lucrat pentru a pune aplicația noastră VPN direct în mâinile oamenilor."
-      ],
-      "After privacy and free speech were threatened in Hong Kong, we directly supported local civil rights organizations.": [
-        "După ce confidențialitatea și libertatea de exprimare au fost amenințate în Hong Kong, am susținut direct organizațiile locale pentru drepturile civile."
-      ],
-      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **1 GB** for Mail, and **1 GB** for Drive. You will also lose any storage bonuses earned previously.": [
-        "Prin anularea abonamentului ${ planName }, spațiul de stocare va scădea de la **${ planMaxSpace }** la **1 GiB** pentru Mail și **1 GiB** pentru Drive. De asemenea, veți pierde orice bonusuri de stocare câștigate anterior."
-      ],
-      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **1 GB** for Mail, and **5 GB** for Drive. You will also lose any storage bonuses earned previously.": [
-        "Prin anularea abonamentului ${ planName }, spațiul de stocare va scădea de la **${ planMaxSpace }** la **1 GiB** pentru Mail și **5 GiB** pentru Drive. De asemenea, veți pierde orice bonusuri de stocare câștigate anterior."
-      ],
-      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **500 MB** for Mail, and **1 GB** for Drive. You will also lose any storage bonuses earned previously.": [
-        "Prin anularea abonamentului ${ planName }, spațiul de stocare va scădea de la **${ planMaxSpace }** la **500 MiB** pentru Mail și **1 GiB** pentru Drive. De asemenea, veți pierde orice bonusuri de stocare câștigate anterior."
-      ],
-      "By canceling your ${ planName } subscription, your storage will decrease from **${ planMaxSpace }** to **500 MB** for Mail, and **5 GB** for Drive. You will also lose any storage bonuses earned previously.": [
-        "Prin anularea abonamentului ${ planName }, spațiul de stocare va scădea de la **${ planMaxSpace }** la **500 MiB** pentru Mail și **5 GiB** pentru Drive. De asemenea, veți pierde orice bonusuri de stocare câștigate anterior."
-      ],
-      "By downgrading your account, you will also lose storage space": [
-        "Retrogradând-vă contul, veți pierde și spațiu de stocare."
-      ],
-      "By downgrading your account, you will lose access to these important features": [
-        "Dacă treceți la un plan inferior actualului cont, veți pierde accesul la aceste funcții importante."
       ],
       "Calendar sharing": [
         "Partajare calendar"
@@ -14063,20 +14047,11 @@
       "I still want to cancel": [
         "Doresc să anulez"
       ],
-      "If you exceed your free Drive storage quota:": [
-        "Dacă depășiți spațiul de stocare din Drive:"
-      ],
-      "If you exceed your free Mail storage quota:": [
-        "Dacă depășiți spațiul de stocare din Mail:"
-      ],
       "Keep ${ planName }": [
         "Păstrare ${ planName }"
       ],
       "Learn more about our impact": [
         "Aflați mai multe despre impactul nostru"
-      ],
-      "Let us remind you of everything ${ planName } can do": [
-        "Permiteți-ne să vă reamintim tot ce poate face ${ planName }"
       ],
       "Our fight against censorship in Russia": [
         "Lupta noastră împotriva cenzurii în Rusia"
@@ -14105,38 +14080,55 @@
       "Watch the interview": [
         "Priviți interviul"
       ],
-      "When you cancel, you will lose access to": [
-        "Dacă anulați, veți pierde accesul la"
-      ],
       "Yearly free storage bonuses": [
         "Bonusuri de stocare gratuită anuală"
-      ],
-      "You **won't be able to add any new files**": [
-        "**Nu veți mai putea adăuga fișiere**"
-      ],
-      "You **won't be able to backup photos** from your devices": [
-        "**Nu veți mai putea conserva imaginile** din dispozitive"
-      ],
-      "You **won't be able to send emails** with attachments": [
-        "**Nu veți putea trimite e-mailuri** cu atașamente"
-      ],
-      "You still have ${ expiryDate } on your ${ planName } plan. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling.": [
-        "Încă mai aveți ${ expiryDate } din planul ${ planName }. Vi se vor adăuga creditele pentru timpul rămas în contul ${ BRAND_NAME }. Asigurați-vă că nu depășiți limitele planului gratuit înainte de anulare."
-      ],
-      "Your **calendar will be frozen**": [
-        "**Calendarul va fi blocat**"
-      ],
-      "Your devices will **stop syncing**": [
-        "Dispozitivele **vor înceta sincronizarea**"
-      ],
-      "Your inbox will **stop receiving new emails**": [
-        "**Nu veți mai putea primi mesaje**"
       ],
       "Your own custom email domain": [
         "Domeniu personal de e-mail"
       ],
       "Your own short @pm.me email alias": [
         "Propriul alias de e-mail scurt @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GiB spațiu de stocare"
+      ],
+      "and 15 more premium features": [
+        "și încă alte 15 funcții premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Redirecționare automată mesaje ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alerte divulgări date ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicația pentru desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ajutați-ne să menținem internetul sigur și privat pentru toată lumea. Treceți la un plan cu plată."
+      ],
+      "No ads or tracking": [
+        "Fără reclame și fără urmărire"
+      ],
+      "Short @pm.me email address": [
+        "Adresă scurtă de e-mail @pm.me"
+      ],
+      "Support our mission": [
+        "Susțineți-ne misiunea"
+      ],
+      "Upgrade": [
+        "Modificare"
+      ],
+      "Upgrade your productivity": [
+        "Îmbunătățiți-vă productivitatea"
+      ],
+      "We don't sell your data": [
+        "Nu vă vindem datele"
+      ],
+      "Your privacy is our mission": [
+        "Confidențialitatea este misiunea noastră principală"
       ]
     },
     "Subscription renewal state": {
@@ -14644,6 +14636,9 @@
       ],
       "Activate user": [
         "Activare utilizator"
+      ],
+      "Add a custom logo": [
+        "Adăugare logo personal"
       ],
       "Add address": [
         "Adăugare adresă"

@@ -371,9 +371,6 @@
       "Downgrade": [
         "降級"
       ],
-      "Downgrade account": [
-        "降級帳號"
-      ],
       "Download": [
         "下載"
       ],
@@ -5842,17 +5839,6 @@
         "您的行事曆中有部分內容未受支援，因此不會匯入。"
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "偵測到其它重複的金鑰。請單獨上傳以取得更多資訊"
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "金鑰 ${ fingerprint } 已上傳"
-      ],
-      "Selected color:": [
-        "已選取的色彩:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } 需要您的授權以${ enableDesktopNotifications }。"
@@ -7534,9 +7520,6 @@
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "此會取消目前訂購授權，您會失去目前使用的福利"
       ],
-      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
-        "這將會取消您目前付費的訂購授權，您也會一併失去您累積的任何答謝長期支援的惠益。您的訂購授權餘數將會以帳號餘額退還。"
-      ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
         "這將會為您的檔案刪除${ rententionLabel }之前所有先前的版本。"
       ],
@@ -8148,6 +8131,17 @@
       ],
       "Zoom meeting": [
         "Zoom 會議"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "偵測到其它重複的金鑰。請單獨上傳以取得更多資訊"
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "金鑰 ${ fingerprint } 已上傳"
+      ],
+      "Selected color:": [
+        "已選取的色彩:"
       ]
     },
     "Info - folder colouring feature": {
