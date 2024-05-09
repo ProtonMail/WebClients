@@ -170,9 +170,6 @@
       "Downgrade": [
         "Zmanjšaj"
       ],
-      "Downgrade account": [
-        "Zmanjšaj račun"
-      ],
       "Download": [
         "Prenesi"
       ],
@@ -1914,8 +1911,23 @@
       "Bugs or quality issue": [
         "Hrošči ali težave s kakovostjo"
       ],
+      "I found a cheaper VPN": [
+        "Našel sem cenejši VPN"
+      ],
+      "I found a VPN with better features": [
+        "Našel sem VPN z boljšimi funkcijami"
+      ],
+      "I have not managed to connect": [
+        "Ni mi uspelo vzpostaviti povezave"
+      ],
+      "I only needed a VPN short-term": [
+        "VPN sem potreboval le začasno"
+      ],
       "I use a different ${ BRAND_NAME } account": [
         "Uporabljam drug račun ${ BRAND_NAME }."
+      ],
+      "It doesn't do what I need": [
+        "Ne počne tistega, kar potrebujem"
       ],
       "Missing feature(s)": [
         "Manjkajoče funkcije"
@@ -1928,11 +1940,19 @@
       ],
       "Temporary need, may come back in the future": [
         "Začasna potreba, se lahko vrnem v prihodnosti."
+      ],
+      "The VPN is too slow": [
+        "VPN je prepočasen"
       ]
     },
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Pomagajte nam izboljšati!"
+      ]
+    },
+    "drivePlus2024: Action": {
+      "Special Offer": [
+        "Posebna ponudba"
       ]
     },
     "driveplus2024: Deal details": {
@@ -1951,6 +1971,9 @@
     "drivePlus2024: Info": {
       "for the first month": [
         "za prvi mesec"
+      ],
+      "Limited-time offer": [
+        "Časovno omejena ponudba"
       ]
     },
     "drivePlus2024: Title": {
@@ -3781,9 +3804,6 @@
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "To bo preklicalo vašo trenutno plačano naročnino in izgubili boste vse prednosti, ki ste jih pridobili."
       ],
-      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
-        "To bo preklicalo vašo trenutno plačljivo naročnino in izgubili boste vse prednosti, ki ste jih pridobili. Preostanek stanja vaše naročnine bo vrnjen kot dobropis na računu."
-      ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "To bo omogočilo uporabo PayPal-a za plačilo naročnine na ${ BRAND_NAME }. Preusmerili vas bomo na PayPal v nov zavihek brskalnika. Če uporabljate prepoved za pojavna okna, jo prosimo onemogočite, da nadaljujete."
       ],
@@ -5341,6 +5361,9 @@
       ],
       "Organize items with multiple vaults": [
         "Organizirajte predmete z več arhivi."
+      ],
+      "Passkeys supported": [
+        "Podprti identifikacijski ključi"
       ],
       "Password-protected Emails": [
         "E-pošta, zaščitena z geslom"
@@ -7311,6 +7334,17 @@
     "Subscription price": {
       "For": [
         "Za"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB prostora za shranjevanje"
+      ],
+      "and 15 more premium features": [
+        "in še 15 vrhunskih funkcij"
+      ],
+      "No ads or tracking": [
+        "Brez oglasov ali sledenja"
       ]
     },
     "Subscription renewal state": {

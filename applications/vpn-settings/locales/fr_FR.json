@@ -173,9 +173,6 @@
       "Downgrade": [
         "Passer à un abonnement inférieur"
       ],
-      "Downgrade account": [
-        "Passer à un abonnement inférieur"
-      ],
       "Download": [
         "Télécharger"
       ],
@@ -1936,11 +1933,32 @@
       "Bugs or quality issue": [
         "Bugs ou problème de qualité"
       ],
+      "I do not wish to share": [
+        "Je ne souhaite pas partager la raison."
+      ],
+      "I found a cheaper VPN": [
+        "J'ai trouvé un VPN moins cher."
+      ],
+      "I found a VPN with better features": [
+        "J'ai trouvé un VPN avec plus de fonctionnalités."
+      ],
+      "I have not managed to connect": [
+        "Je n'ai pas réussi à me connecter."
+      ],
+      "I only needed a VPN short-term": [
+        "J'avais besoin d'un VPN uniquement pour une courte durée."
+      ],
       "I use a different ${ BRAND_NAME } account": [
         "J'utilise un autre compte ${ BRAND_NAME }."
       ],
+      "It doesn't do what I need": [
+        "Il ne répond pas à mes besoins."
+      ],
       "Missing feature(s)": [
         "Fonctionnalités manquantes"
+      ],
+      "Other reason (please comment)": [
+        "Autre raison (dites-nous comment nous pouvons nous améliorer)"
       ],
       "Subscription is too expensive": [
         "Abonnement trop cher"
@@ -1950,6 +1968,9 @@
       ],
       "Temporary need, may come back in the future": [
         "Besoin temporaire, qui pourrait revenir à l'avenir"
+      ],
+      "The VPN is too slow": [
+        "Le VPN est trop lent."
       ]
     },
     "Downgrade modal exit survey title": {
@@ -2033,7 +2054,7 @@
         "${ errorMessage }. Vous pouvez aussi vérifier notre ${ statusPageLink }."
       ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ user.Name } est votre nom d'utilisateur. Pour créer ${ emailAddress }, visitez les Paramètres > Messages et rédaction > Domaine court (pm.me)"
+        "${ user.Name } est votre nom d'utilisateur. Pour créer ${ emailAddress }, allez dans Paramètres > Messages et rédaction > Domaine court (pm.me)."
       ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Tout l'espace de stockage est alloué. Nous vous invitons à réduire l'espace de stockage alloué à d'autres utilisateurs."
@@ -2180,7 +2201,7 @@
         "Nous vous invitons à passer à un abonnement entreprise avec plus d'un utilisateur pour gérer plusieurs utilisateurs."
       ],
       "Please upload a square file": [
-        "Veuillez importer un fichier carré."
+        "Veuillez importer un fichier de format carré."
       ],
       "Please upload an xml file": [
         "Veuillez importer un fichier XML."
@@ -2210,10 +2231,10 @@
         "Les adresses e-mail ne correspondent pas."
       ],
       "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
-        "Ce fichier est trop grand. La taille maximum est de ${ MAX_FILE_DIMENSIONS } x ${ MAX_FILE_DIMENSIONS }."
+        "Ce fichier est trop grand. La dimension maximale est de ${ MAX_FILE_DIMENSIONS } x ${ MAX_FILE_DIMENSIONS }."
       ],
       "The file is too small, the minimum size is ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }": [
-        "Ce fichier est trop petit. La taille minimum est de ${ MIN_FILE_DIMENSIONS } x ${ MIN_FILE_DIMENSIONS }."
+        "Ce fichier est trop petit. La dimension minimale est de ${ MIN_FILE_DIMENSIONS } x ${ MIN_FILE_DIMENSIONS }."
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Le montant minimum du crédit qui peut être ajouté est de ${ price }."
@@ -3806,9 +3827,6 @@
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Cela annulera votre abonnement payant actuel et vous perdrez tous les avantages de fidélité dont vous bénéficiez."
       ],
-      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
-        "Ceci annulera votre abonnement payant actuel et vous perdrez tous les avantages de fidélité que vous avez accumulés. Le solde restant de votre abonnement sera restitué sous forme de crédits de compte."
-      ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Ceci vous permettra d'utiliser PayPal pour payer votre abonnement ${ BRAND_NAME }. Nous vous redirigerons vers PayPal dans un nouvel onglet du navigateur. Si vous utilisez des bloqueurs de pop-up, veuillez les désactiver pour continuer."
       ],
@@ -4902,7 +4920,7 @@
         "Votre ${ mailStorage } est plein. Pour envoyer ou recevoir des messages, libérez de l'espace ou ${ cta }."
       ],
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
-        "Votre compte risque d'être supprimé. Pour éviter de perdre des données, demandez à votre administrateur de changer d'abonnement. ${ cta }"
+        "Votre compte risque d'être supprimé. Pour éviter de perdre des données, demandez à votre administrateur de mettre à jour votre abonnement. ${ cta }"
       ],
       "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
         "Votre espace de stockage est plein. Pour envoyer ou recevoir des messages, libérez de l'espace ou ${ cta }."
