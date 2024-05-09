@@ -290,6 +290,9 @@
       "Pass Monitor": [
         "Pass Monitor"
       ],
+      "Pause monitoring": [
+        "Monitoren onderbreken"
+      ],
       "Pin item": [
         "Item vastpinnen"
       ],
@@ -320,6 +323,9 @@
       "Resend code": [
         "Verstuur code opnieuw"
       ],
+      "Resend code (in ${ remaining }s)": [
+        "Code opnieuw versturen (over ${ remaining }s)"
+      ],
       "Resend invitation": [
         "Uitnodiging opnieuw verzenden"
       ],
@@ -328,6 +334,9 @@
       ],
       "Restore item": [
         "Item herstellen"
+      ],
+      "Resume monitoring": [
+        "Monitoren hervatten"
       ],
       "Retry": [
         "Opnieuw proberen"
@@ -388,6 +397,9 @@
       ],
       "Trash": [
         "Prullenbak"
+      ],
+      "Try again.": [
+        "Probeer opnieuw."
       ],
       "Unpin item": [
         "Item losmaken"
@@ -463,6 +475,10 @@
       ]
     },
     "Description": {
+      "${ total } other login uses the same password": [
+        "${ total } andere login gebruikt hetzelfde wachtwoord",
+        "${ total } andere logins gebruiken hetzelfde wachtwoord"
+      ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Een e-mailadres alias werkt als een e-mailadres, maar vermindert spam en houdt uw werkelijke e-mailadres en identiteit verborgen."
       ],
@@ -871,6 +887,10 @@
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } heeft uw ${ BRAND_NAME }-wachtwoord nodig om offline toegang te krijgen tot gegevens."
       ],
+      "${ row.breachCount } breach detected": [
+        "${ row.breachCount } inbreuk gedetecteerd",
+        "${ row.breachCount } inbreuken gedetecteerd"
+      ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 dagens om premium functies gratis te proberen. Enkel tijdens uw eerste week van ${ BRAND_NAME }."
       ],
@@ -969,6 +989,9 @@
       ],
       "Deleting \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" verwijderen"
+      ],
+      "Didn't receive the code?": [
+        "Geen code ontvangen?"
       ],
       "Drop file here to upload": [
         "Sleep bestand hier om te uploaden"
@@ -1205,6 +1228,9 @@
       "Pinning item...": [
         "Item vastzetten..."
       ],
+      "Please check your spam folder or try resending the code.": [
+        "Controleer uw spam map of probeer de code opnieuw te versturen."
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Bevestig uw ${ BRAND_NAME } wachtwoord om offline modus in te schakelen"
       ],
@@ -1386,6 +1412,9 @@
       "Vault \"${ share.content.name }\" was removed": [
         "Kluis \"${ share.content.name }\" werd verwijderd"
       ],
+      "Verification code sent.": [
+        "Verificatiecode verzonden"
+      ],
       "Viewer": [
         "Bekijken"
       ],
@@ -1425,6 +1454,12 @@
       ],
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "U hebt de maximaal toegestane lengte van ${ maxLength } tekens bereikt."
+      ],
+      "You will be notified of data breaches for these email addresses.": [
+        "U wordt op de hoogte gebracht van datalekken voor deze e-mailadressen."
+      ],
+      "You will no longer be notified of data breaches for these email addresses.": [
+        "U wordt niet langer op de hoogte gehouden van datalekken voor deze e-mailadressen."
       ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "U gebruikt deze pincode om ${ PASS_APP_NAME } te ontgrendelen zodra deze automatisch wordt vergrendeld na een periode van inactiviteit."
@@ -1653,6 +1688,9 @@
       "Last month": [
         "Afgelopen maand"
       ],
+      "Last updated": [
+        "Voor het laatst bijgewerkt"
+      ],
       "Last week": [
         "Vorige week"
       ],
@@ -1878,6 +1916,9 @@
       "View logs": [
         "Logboeken bekijken"
       ],
+      "Vulnerable": [
+        "Kwetsbaar"
+      ],
       "Weak": [
         "Zwak"
       ],
@@ -1997,6 +2038,9 @@
       "Full Name": [
         "Volledige naam"
       ],
+      "me@example.com": [
+        "me@voorbeeld.com"
+      ],
       "MM/YY": [
         "MM/JJ"
       ],
@@ -2062,8 +2106,8 @@
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "${ PASS_SHORT_APP_NAME } Monitor"
       ],
-      "${ PASS_SHORT_APP_NAME } monitor": [
-        "${ PASS_SHORT_APP_NAME } monitor"
+      "Account protection": [
+        "Account beveiliging"
       ],
       "Auto-lock update": [
         "Automatische vergrendelingsupdate"
@@ -2095,8 +2139,14 @@
       "Current version": [
         "Huidige versie"
       ],
+      "Custom addresses": [
+        "Aangepaste adressen"
+      ],
       "Custom email monitoring": [
         "Gepersonaliseerde e-mail monitoring"
+      ],
+      "Custom emails": [
+        "Aangepaste e-mails"
       ],
       "Dark Web Monitoring": [
         "Dark Web Monitoring"
@@ -2146,6 +2196,9 @@
       "Import your data": [
         "Uw gegevens importeren"
       ],
+      "Inactive 2FA": [
+        "Inactieve 2FA"
+      ],
       "Install extension": [
         "Extensie installeren"
       ],
@@ -2182,8 +2235,17 @@
       "Move items?": [
         "Items verplaatsen?"
       ],
+      "No inactive 2FAs": [
+        "Geen inactieve 2FAs"
+      ],
+      "No insecure passwords": [
+        "Geen onveilige wachtwoorden"
+      ],
       "No items selected": [
         "Geen items geselecteerd"
+      ],
+      "No reused passwords": [
+        "Geen hergebruikte wachtwoorden"
       ],
       "Our welcome gift to you": [
         "Ons welkomstgeschenk voor u"
@@ -2197,6 +2259,9 @@
       "Password Health": [
         "Wachtwoord gezondheid"
       ],
+      "Pause monitoring?": [
+        "Monitoren onderbreken?"
+      ],
       "Pending access to the shared data": [
         "Toegang tot gedeelde data hangende"
       ],
@@ -2209,11 +2274,17 @@
       "Recommended actions": [
         "Aanbevolen acties"
       ],
+      "Remove email address?": [
+        "E-mailadres verwijderen?"
+      ],
       "Resolved breaches": [
         "Opgeloste inbreuken"
       ],
       "Restore this version?": [
         "Deze versie herstellen?"
+      ],
+      "Resume monitoring?": [
+        "Monitoren hervatten?"
       ],
       "Reused ${ count } time": [
         "${ count } keer hergebruikt",
@@ -2230,6 +2301,12 @@
       ],
       "Set access level": [
         "Stel toegangsniveau in"
+      ],
+      "Set up 2FA for better security": [
+        "2FA instellen voor betere beveiliging"
+      ],
+      "Set up 2FA for more security": [
+        "2FA instellen voor meer beveiliging"
       ],
       "Settings": [
         "Instellingen"
@@ -2266,6 +2343,9 @@
       ],
       "Want to learn more?": [
         "Wilt u meer weten?"
+      ],
+      "Weak password": [
+        "Zwak wachtwoord"
       ],
       "Weak passwords": [
         "Zwakke wachtwoorden"
@@ -2425,6 +2505,9 @@
       "The alias prefix cannot be longer than 40 characters": [
         "Het aliasvoorvoegsel mag niet langer zijn dan 40 tekens"
       ],
+      "This email address will no longer be monitored for data breaches.": [
+        "Dit e-mailadres zal niet langer worden gemonitord op datalekken."
+      ],
       "Title is required": [
         "Titel is vereist"
       ],
@@ -2442,6 +2525,9 @@
       ],
       "Vault name is required": [
         "Kluisnaam is vereist"
+      ],
+      "Verification code is required": [
+        "Verificatiecode is vereist"
       ],
       "You cannot create more vaults than your subscription allows.": [
         "U kunt niet meer kluizen maken dan uw abonnement toestaat."
