@@ -75,17 +75,22 @@ const AddressesSummary = ({
                         const recipientOrGroups = getRecipientsOrGroups(recipients);
                         return (
                             <Fragment key={type}>
+                                {type === 'ToList' && (
+                                    <span className="mr-2 color-hint" title={c('Title').t`To`}>
+                                        {c('Title').t`To`}
+                                    </span>
+                                )}
                                 {type === 'CCList' && (
-                                    <span className="mr-2 color-primary" title={c('Title').t`Carbon Copy`}>
-                                        {c('Title').t`CC`}:
+                                    <span className="mr-2 color-hint" title={c('Title').t`Carbon Copy`}>
+                                        {c('Title').t`CC`}
                                     </span>
                                 )}
                                 {type === 'BCCList' && (
                                     <span
-                                        className="mr-2 inline-flex color-primary"
+                                        className="mr-2 inline-flex color-hint"
                                         title={c('Title').t`Blind Carbon Copy`}
                                     >
-                                        {c('Title').t`BCC`}:
+                                        {c('Title').t`BCC`}
                                     </span>
                                 )}
                                 {recipientOrGroups.map((recipientOrGroup, i) => {
