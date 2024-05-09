@@ -40,6 +40,8 @@ import pkg from "../package.json";
     Logger.info("App start is mac:", isMac, "is windows:", isWindows, "isLinux:", isLinux);
 
     // Handle squirrel events at the very top of the application
+    // WARN: We need to wait for this promise because we do not want any code to be executed
+    // during the uninstall process (or any other procees that implies application restart).
     await handleSquirrelEvents();
 
     // Security addition

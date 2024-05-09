@@ -57,6 +57,9 @@ async function spawnUninstallProcess() {
     uninstallProcess.unref();
 
     // Now wait until the uninstall script kills the electron process
+    // WARN: We need to create an unresolved promise here so the execution is blocked
+    // until the uninstall script kills electron. We want to do this instead of manually
+    // exiting with `app.quit()` or `app.exit()` to avoid any side effect.
     log('Uninstall process started');
     await new Promise(() => { });
 }
@@ -87,6 +90,9 @@ export async function handleSquirrelEvents() {
                 break;
         }
 
+        // WARN: App quit gracefully stops all electron processes asynchronously,
+        // so unless we block the execution before this point (like we do during the
+        // uninstall process) the app startup will continue.
         app.quit();
     }
 }
