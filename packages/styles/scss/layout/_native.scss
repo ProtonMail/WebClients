@@ -69,6 +69,10 @@
 	&.is-electron-mac {
 		background: rgb(255 255 255 / 0.55);
 
+		@media (prefers-color-scheme: light) {
+			background: transparent;
+		}
+
 		.main {
 			box-shadow: 0 0 2px 0 #00000026;
 		}
@@ -86,6 +90,10 @@
 .is-electron-dark {
 	&.is-electron-mac {
 		background: rgb(5 0 13 / 0.45);
+
+		@media (prefers-color-scheme: dark) {
+			background: transparent;
+		}
 
 		.sidebar {
 			--text-norm: rgb(255 255 255 / 0.9);
