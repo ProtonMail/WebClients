@@ -7,9 +7,5 @@ RMDIR /S /Q %2
 ECHO Removing %3
 DEL /S /Q %3
 RMDIR /S /Q %3
-REM Removing log file
-REM DO NOT LOG ANYTHING FROM THIS POINT
-REM or it will be created again
-DEL /S /Q %4 >nul
-REM Removing uninstall script
-DEL /S /Q %5 >nul
+ECHO Removing uninstall script
+DEL /S /Q %4

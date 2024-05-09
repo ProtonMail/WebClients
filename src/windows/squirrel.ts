@@ -35,7 +35,6 @@ async function spawnUninstallProcess() {
         process.pid.toString(),
         `"${resolve(app.getPath('home'), "AppData", "Local", "proton_mail")}"`,
         `"${resolve(app.getPath('home'), "AppData", "Roaming", "Proton Mail")}"`,
-        `"${uninstallLogPath}"`,
         `"${uninstallScriptTempPath}"`,
     ];
 
