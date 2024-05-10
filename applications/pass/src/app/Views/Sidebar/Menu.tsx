@@ -1,13 +1,11 @@
-import { type FC, useCallback } from 'react';
+import { type FC } from 'react';
 import { useSelector } from 'react-redux';
 
-import { useClientRef } from 'proton-pass-web/app/Context/ClientProvider';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { Scroll } from '@proton/atoms/Scroll';
 import { Icon } from '@proton/components/components';
-import { useNotifications } from '@proton/components/hooks';
 import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { AdminPanelButton } from '@proton/pass/components/Menu/B2B/AdminPanelButton';
@@ -22,16 +20,9 @@ import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvi
 import { UpsellRef } from '@proton/pass/constants';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { useMenuItems } from '@proton/pass/hooks/useMenuItems';
-import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
-import { clientOffline } from '@proton/pass/lib/client';
+import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
-import {
-    selectHasRegisteredLock,
-    selectOfflineEnabled,
-    selectPassPlan,
-    selectPlanDisplayName,
-    selectUser,
-} from '@proton/pass/store/selectors';
+import { selectLockMode, selectPassPlan, selectPlanDisplayName, selectUser } from '@proton/pass/store/selectors';
 import { PassFeature } from '@proton/pass/types/api/features';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
@@ -41,13 +32,9 @@ import { useAuthService } from '../../Context/AuthServiceProvider';
 import { SettingsDropdown } from '../Settings/SettingsDropdown';
 
 export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
-    const { createNotification, clearNotifications } = useNotifications();
-    const enhance = useNotificationEnhancer();
-
     const authService = useAuthService();
     const onboarding = useOnboarding();
     const org = useOrganization();
-    const client = useClientRef();
     const monitorEnabled = useFeatureFlag(PassFeature.PassMonitor);
 
     const menu = useMenuItems({ onAction: onToggle });
@@ -59,16 +46,9 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
     const passPlan = useSelector(selectPassPlan);
     const planDisplayName = useSelector(selectPlanDisplayName);
     const user = useSelector(selectUser);
-    const canLock = useSelector(selectHasRegisteredLock);
-    const offlineEnabled = useSelector(selectOfflineEnabled);
 
-    const onLock = useCallback(async () => {
-        createNotification(enhance({ text: c('Info').t`Locking your session...`, type: 'info', loading: true }));
-        const offlineLock = offlineEnabled && clientOffline(client.current.state.status);
-        await authService.lock({ broadcast: true, offline: offlineLock, soft: false });
-
-        clearNotifications();
-    }, [offlineEnabled]);
+    const lockMode = useSelector(selectLockMode);
+    const canLock = lockMode !== LockMode.NONE;
 
     return (
         <div className="flex flex-column flex-nowrap justify-space-between flex-1 overflow-auto gap-2">
@@ -94,7 +74,7 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
             <div className="flex flex-column flex-nowrap pb-4">
                 {canLock && (
                     <DropdownMenuButton
-                        onClick={onLock}
+                        onClick={() => authService.lock(lockMode, { broadcast: true, soft: false })}
                         label={c('Action').t`Lock ${PASS_APP_NAME}`}
                         icon="lock"
                         parentClassName="mx-3"
