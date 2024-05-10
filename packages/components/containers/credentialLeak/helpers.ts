@@ -1,12 +1,15 @@
 import camelCase from 'lodash/camelCase';
 import { c } from 'ttag';
 
+import { DARK_WEB_MONITORING_NAME } from '@proton/shared/lib/constants';
 import breachIconAlertBig from '@proton/styles/assets/img/breach-alert/shield-bolt-danger-big.svg';
 import breachIconAlertSmall from '@proton/styles/assets/img/breach-alert/shield-bolt-danger-small.svg';
 import breachIconResolvedBig from '@proton/styles/assets/img/breach-alert/shield-bolt-resolved-big.svg';
 import breachIconResolvedSmall from '@proton/styles/assets/img/breach-alert/shield-bolt-resolved-small.svg';
 import breachIconWarningBig from '@proton/styles/assets/img/breach-alert/shield-bolt-warning-big.svg';
 import breachIconWarningSmall from '@proton/styles/assets/img/breach-alert/shield-bolt-warning-small.svg';
+
+import { SampleBreach } from '.';
 
 export const enum SEVERITY_LEVELS {
     HIGH = 0.67,
@@ -139,4 +142,70 @@ export const getEnabledString = (reason: string) => {
 
 export const getDisabledString = (reason: string) => {
     return c('Notification').t`${reason} has been disabled`;
+};
+
+export const getUpsellText = (
+    sample: SampleBreach | null,
+    total: number | null,
+    link: React.JSX.Element,
+    inAccountSettings?: boolean
+) => {
+    if (!sample || !total) {
+        return;
+    }
+    const isUnknownSource = !sample.source.domain && sample.source.isAggregated === false;
+    const isMultipleSources = !sample.source.domain && sample.source.isAggregated === true;
+
+    const { name } = sample;
+    const remainingCount = total - 1;
+
+    if (inAccountSettings) {
+        if (!name) {
+            //translator: full sentence is: Your information was found in at least one data leak. Turn on Dark Web Monitoring to view details and take action. <Learn more>
+            return c('Account Settings - Info')
+                .jt`Your information was found in at least one data leak. Turn on ${DARK_WEB_MONITORING_NAME} to view details and take action. ${link}`;
+        }
+        //translator: full sentence is: <Name> and 1 other potential leak detected. Turn on Dark Web Monitoring to view details and take action. <Learn more>
+        if (remainingCount === 1) {
+            return c('Account Settings - Info')
+                .jt`${name} and 1 other potential leak detected. Turn on ${DARK_WEB_MONITORING_NAME} to view details and take action. ${link}`;
+        }
+        //translator: full sentence is: <Name> and <count> other potential leaks detected. Turn on Dark Web Monitoring to view details and take action. <Learn more>
+        if (remainingCount > 1) {
+            return c('Account Settings - Info')
+                .jt`${name} and ${remainingCount} other potential leaks detected. Turn on ${DARK_WEB_MONITORING_NAME} to view details and take action. ${link}`;
+        }
+        //translator: full sentence is: A potential leak from <Name> was detected. Turn on Dark Web Monitoring to view details and take action. <Learn more>
+        if (isUnknownSource || isMultipleSources) {
+            return c('Account Settings - Info')
+                .jt`A potential leak from ${name} was detected. Turn on ${DARK_WEB_MONITORING_NAME} to view details and take action. ${link}`;
+        }
+        //translator: full sentence is: A potential <name> was detected. Turn on Dark Web Monitoring to view details and take action. <Learn more>
+        return c('Account Settings - Info')
+            .jt`A potential ${name} leak was detected. Turn on ${DARK_WEB_MONITORING_NAME} to view details and take action. ${link}`;
+    }
+
+    if (!name) {
+        //translator: full sentence is: Your information was found in at least one data leak. Turn on Dark Web Monitoring to view details. <Learn more>
+        return c('Security Center - Info')
+            .jt`Your information was found in at least one data leak. Turn on ${DARK_WEB_MONITORING_NAME} to view details. ${link}`;
+    }
+    if (remainingCount === 1) {
+        //translator: full sentence is: <Name> and 1 other potential leak detected. Turn on Dark Web Monitoring to view details. <Learn more>
+        return c('Security Center - Info')
+            .jt`${name} and 1 other potential leak detected. Turn on ${DARK_WEB_MONITORING_NAME} to view details. ${link}`;
+    }
+    if (remainingCount > 1) {
+        //translator: full sentence is: <Name> and <count> other potential leaks detected. Turn on Dark Web Monitoring to view details. <Learn more>
+        return c('Security Center - Info')
+            .jt`${name} and ${remainingCount} other potential leaks detected. Turn on ${DARK_WEB_MONITORING_NAME} to view details. ${link}`;
+    }
+    if (isUnknownSource || isMultipleSources) {
+        //translator: full sentence is: A potential leak from <Name> was detected. Turn on Dark Web Monitoring to view details and take action. <Learn more>
+        return c('Account Settings - Info')
+            .jt`A potential leak from ${name} was detected. Turn on ${DARK_WEB_MONITORING_NAME} to view details. ${link}`;
+    }
+    //translator: full sentence is: A potential <Name> leak was detected. Turn on Dark Web Monitoring to view details and take action. <Learn more>
+    return c('Security Center - Info')
+        .jt`A potential ${name} leak was detected. Turn on ${DARK_WEB_MONITORING_NAME} to view details. ${link}`;
 };
