@@ -225,6 +225,12 @@ export type APP_NAMES = (typeof APPS)[APP_KEYS];
 export type APP_CLIENT_IDS =
     | (typeof APPS_CONFIGURATION)[keyof typeof APPS_CONFIGURATION]['clientID']
     | 'android_tv-vpn';
+
+export const VPN_TV_CLIENT_IDS = {
+    APPLE: 'apple_tv-vpn',
+    ANDROID: 'android_tv-vpn',
+};
+
 export const SSO_PATHS = {
     EXTERNAL_SSO_LOGIN: '/sso/login',
     OAUTH_AUTHORIZE: '/oauth/authorize',
