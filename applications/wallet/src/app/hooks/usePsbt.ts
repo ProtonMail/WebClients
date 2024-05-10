@@ -6,7 +6,7 @@ import { useNotifications } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
 import { SECOND } from '@proton/shared/lib/constants';
 
-import { WasmChain, WasmPartiallySignedTransaction, WasmTxBuilder } from '../../pkg';
+import { WasmBlockchain, WasmPartiallySignedTransaction, WasmTxBuilder } from '../../pkg';
 import { WalletAndAccountSelectorValue } from '../atoms';
 import { useOnchainWalletContext } from '../contexts';
 import { tryHandleWasmError } from '../utils';
@@ -37,7 +37,7 @@ export const usePsbt = ({
                 }
             }
         }
-    }, [walletAndAccount, createNotification, txBuilder]);
+    }, [walletAndAccount, txBuilder, network, createNotification]);
 
     const signAndBroadcastPsbt = () => {
         void withLoadingBroadcast(async () => {
@@ -49,7 +49,7 @@ export const usePsbt = ({
             const signed = await finalPsbt.sign(account?.wasmAccount, network);
 
             try {
-                const txId = await new WasmChain().broadcastPsbt(signed);
+                const txId = await new WasmBlockchain().broadcastPsbt(signed);
                 setBroadcastedTxId(txId);
 
                 setTimeout(() => {

@@ -25,9 +25,11 @@ export const useBalanceEvolution = (currentBalance: number, lastTransactions: IW
             (acc, transaction) => {
                 const [lastAccTx] = acc;
 
+                const txValue = Number(transaction.received) - Number(transaction.sent);
+
                 return [
                     {
-                        balance: lastAccTx.balance - Number(transaction.value),
+                        balance: lastAccTx.balance - Number(txValue),
                         timestamp: transactionTime(transaction),
                     },
                     ...acc,
@@ -70,7 +72,11 @@ export const useBalanceEvolution = (currentBalance: number, lastTransactions: IW
                 const txs = txGroupedByDay[day];
                 const [lastAccDay] = acc;
 
-                const dayBalance = txs?.reduce((acc, tx) => acc + Number(tx.value), 0) ?? 0;
+                const dayBalance =
+                    txs?.reduce((acc, tx) => {
+                        const txValue = Number(tx.received) - Number(tx.sent);
+                        return acc + Number(txValue);
+                    }, 0) ?? 0;
                 return [{ balance: lastAccDay.balance - dayBalance, day }, ...acc];
             },
             [{ balance: currentBalance, day: mostRecentDay }]

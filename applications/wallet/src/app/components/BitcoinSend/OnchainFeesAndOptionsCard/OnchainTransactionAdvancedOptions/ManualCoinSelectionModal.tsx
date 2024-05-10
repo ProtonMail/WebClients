@@ -17,7 +17,6 @@ import clsx from '@proton/utils/clsx';
 import { WasmOutPoint } from '../../../../../pkg';
 import { BitcoinAmount } from '../../../../atoms';
 import { AccountWithBlockchainData } from '../../../../types';
-import { confirmationTimeToHumanReadable } from '../../../../utils';
 import { useManualCoinSelectionModal } from './useManualCoinSelectionModal';
 
 interface Props {
@@ -43,7 +42,6 @@ export const ManualCoinSelectionModal = ({ modalState, account, selectedUtxos, o
                         <Table className="text-sm">
                             <TableHeader>
                                 <TableRow>
-                                    <TableHeaderCell className="w-3/10">{c('Wallet Send').t`Date`}</TableHeaderCell>
                                     <TableHeaderCell className="w-4/10">{c('Wallet Send').t`Outpoint`}</TableHeaderCell>
                                     <TableHeaderCell className="w-3/10">{c('Wallet Send').t`Value`}</TableHeaderCell>
                                 </TableRow>
@@ -78,9 +76,6 @@ export const ManualCoinSelectionModal = ({ modalState, account, selectedUtxos, o
                                             )}
                                             style={{ background }}
                                         >
-                                            <TableCell>
-                                                {confirmationTimeToHumanReadable(utxo.confirmation_time)}
-                                            </TableCell>
                                             <TableCell>
                                                 {outpoint.slice(0, 10)}...
                                                 {outpoint.slice(-10)}

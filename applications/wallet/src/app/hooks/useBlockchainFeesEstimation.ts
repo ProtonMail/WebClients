@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { useCache } from '@proton/components/hooks';
 
-import { WasmChain } from '../../pkg';
+import { WasmBlockchain } from '../../pkg';
 
 const FEES_ESTIMATION_KEY = 'fees_estimation';
 
@@ -19,7 +19,7 @@ export const useBlockchainFeesEstimation = () => {
             return;
         } else {
             setLoading(true);
-            new WasmChain()
+            new WasmBlockchain()
                 .getFeesEstimation()
                 .then((est) => {
                     setFeesEstimation(est);

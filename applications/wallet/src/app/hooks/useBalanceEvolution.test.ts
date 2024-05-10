@@ -17,43 +17,48 @@ describe('useBalanceEvolution', () => {
         simpleTransactions = [
             {
                 txid: '1',
-                time: {
-                    confirmed: true,
-                    confirmation_time: BigInt(Math.floor(set(baseDate, { date: 22, hours: 13 }).getTime() / 1000)),
+                confirmation_time: {
+                    height: BigInt(0),
+                    timestamp: BigInt(Math.floor(set(baseDate, { date: 22, hours: 13 }).getTime() / 1000)),
                 },
-                value: BigInt(-0.24 * BITCOIN),
+                sent: BigInt(0.24 * BITCOIN),
+                received: BigInt(0),
             },
             {
                 txid: '2',
-                time: {
-                    confirmed: true,
-                    confirmation_time: BigInt(Math.floor(set(baseDate, { date: 22, hours: 6 }).getTime() / 1000)),
+                confirmation_time: {
+                    height: BigInt(1),
+                    timestamp: BigInt(Math.floor(set(baseDate, { date: 22, hours: 6 }).getTime() / 1000)),
                 },
-                value: BigInt(0.04 * BITCOIN),
+                received: BigInt(0.04 * BITCOIN),
+                sent: BigInt(0),
             },
             {
                 txid: '3',
-                time: {
-                    confirmed: true,
-                    confirmation_time: BigInt(Math.floor(set(baseDate, { date: 21, hours: 7 }).getTime() / 1000)),
+                confirmation_time: {
+                    height: BigInt(2),
+                    timestamp: BigInt(Math.floor(set(baseDate, { date: 21, hours: 7 }).getTime() / 1000)),
                 },
-                value: BigInt(0.8 * BITCOIN),
+                received: BigInt(0.8 * BITCOIN),
+                sent: BigInt(0),
             },
             {
                 txid: '4',
-                time: {
-                    confirmed: true,
-                    confirmation_time: BigInt(Math.floor(set(baseDate, { date: 21, hours: 8 }).getTime() / 1000)),
+                confirmation_time: {
+                    height: BigInt(3),
+                    timestamp: BigInt(Math.floor(set(baseDate, { date: 21, hours: 8 }).getTime() / 1000)),
                 },
-                value: BigInt(-0.05 * BITCOIN),
+                sent: BigInt(0.05 * BITCOIN),
+                received: BigInt(0),
             },
             {
                 txid: '5',
-                time: {
-                    confirmed: true,
-                    confirmation_time: BigInt(Math.floor(set(baseDate, { date: 21, hours: 9 }).getTime() / 1000)),
+                confirmation_time: {
+                    height: BigInt(4),
+                    timestamp: BigInt(Math.floor(set(baseDate, { date: 21, hours: 9 }).getTime() / 1000)),
                 },
-                value: BigInt(-0.05 * BITCOIN),
+                sent: BigInt(0.05 * BITCOIN),
+                received: BigInt(0),
             },
         ];
     });

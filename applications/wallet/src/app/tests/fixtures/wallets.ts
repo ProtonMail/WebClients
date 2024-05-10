@@ -1,10 +1,10 @@
 import {
     WasmAccount,
     WasmBalance,
-    WasmDetailledTransaction,
     WasmNetwork,
     WasmPaymentLink,
     WasmScriptType,
+    WasmTransactionDetails,
     WasmWallet,
 } from '../../../pkg';
 import { WalletWithAccountsWithBalanceAndTxs } from '../../types';
@@ -18,7 +18,7 @@ const getMockedWallet = (mocked?: Partial<WasmWallet>) => {
         getAccount: vi.fn(),
         getBalance: vi.fn(() => ({ confirmed: BigInt(0) }) as WasmBalance),
         getTransactions: vi.fn(() => []),
-        getTransaction: vi.fn(async () => ({}) as WasmDetailledTransaction),
+        getTransaction: vi.fn(async () => ({}) as WasmTransactionDetails),
         getFingerprint: vi.fn(() => ''),
         ...mocked,
     } as WasmWallet;
@@ -36,7 +36,7 @@ const getMockedWasmAccount = (mocked?: Partial<WasmAccount>) => {
         getDerivationPath: vi.fn(async () => "84'/1'/1'/0"),
         getUtxos: vi.fn(async () => []),
         getTransactions: vi.fn(async () => []),
-        getTransaction: vi.fn(async () => ({}) as WasmDetailledTransaction),
+        getTransaction: vi.fn(async () => ({}) as WasmTransactionDetails),
         ...mocked,
     } as WasmAccount;
 };
