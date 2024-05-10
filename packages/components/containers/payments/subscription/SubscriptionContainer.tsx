@@ -1161,19 +1161,18 @@ const SubscriptionContainer = ({
                                                         </Tooltip>
                                                     </div>
                                                 )}
-                                                {couponCode !== COUPON_CODES.VPN_INTRO_2024 &&
-                                                    !getHas2023OfferCoupon(couponCode) && (
-                                                        <PaymentGiftCode
-                                                            giftCodeRef={giftCodeRef}
-                                                            key={
-                                                                /* Reset the toggle state when a coupon code gets applied */
-                                                                couponCode
-                                                            }
-                                                            giftCode={model.gift}
-                                                            onApply={handleGift}
-                                                            loading={loadingGift}
-                                                        />
-                                                    )}
+                                                {!getHas2023OfferCoupon(couponCode) && (
+                                                    <PaymentGiftCode
+                                                        giftCodeRef={giftCodeRef}
+                                                        key={
+                                                            /* Reset the toggle state when a coupon code gets applied */
+                                                            couponCode
+                                                        }
+                                                        giftCode={model.gift}
+                                                        onApply={handleGift}
+                                                        loading={loadingGift}
+                                                    />
+                                                )}
                                             </>
                                         );
                                     })()}
