@@ -140,25 +140,28 @@ const EventForm = ({
             displayWeekNumbers={displayWeekNumbers}
             weekStartsOn={weekStartsOn}
         >
-            <FrequencyInput
-                className="w-full relative inline-flex flex-nowrap gap-1 text-right items-center interactive-pseudo rounded px-1"
-                id={FREQUENCY_INPUT_ID}
-                frequencyInputType="dropdown"
-                data-testid="event-modal/frequency:select"
-                value={frequencyModel.type}
-                onChange={(type) => {
-                    if (type === FREQUENCY.CUSTOM) {
-                        customModal.openModal(true);
-                        previousFrequencyRef.current = frequencyModel;
-                    }
-                    setModel({
-                        ...model,
-                        frequencyModel: { ...frequencyModel, type },
-                        hasTouchedRrule: true,
-                    });
-                }}
-                title={c('Title').t`Select event frequency`}
-            />
+            <div className="color-weak hover:color-norm">
+                <FrequencyInput
+                    className="w-full relative inline-flex flex-nowrap gap-1 text-left sm:text-right items-center rounded"
+                    id={FREQUENCY_INPUT_ID}
+                    frequencyInputType="dropdown"
+                    data-testid="event-modal/frequency:select"
+                    value={frequencyModel.type}
+                    onChange={(type) => {
+                        if (type === FREQUENCY.CUSTOM) {
+                            customModal.openModal(true);
+                            previousFrequencyRef.current = frequencyModel;
+                        }
+                        setModel({
+                            ...model,
+                            frequencyModel: { ...frequencyModel, type },
+                            hasTouchedRrule: true,
+                        });
+                    }}
+                    title={c('Title').t`Select event frequency`}
+                />
+            </div>
+
             {customModal.render && (
                 <CustomFrequencyModal
                     modalProps={{
@@ -245,8 +248,6 @@ const EventForm = ({
                 placeholder={c('Placeholder').t`Add location`}
                 maxLength={MAX_CHARS_API.LOCATION}
                 title={c('Title').t`Add event location`}
-                unstyled={isMinimal}
-                inputClassName={clsx(isMinimal && 'pl-0')}
                 {...createHandlers({ model, setModel, field: 'location' }).native}
             />
         </IconRow>
@@ -261,13 +262,12 @@ const EventForm = ({
         >
             <TextAreaTwo
                 id={DESCRIPTION_INPUT_ID}
-                minRows={isMinimal ? 1 : 2}
+                minRows={2}
                 autoGrow
                 placeholder={c('Placeholder').t`Add description`}
                 maxLength={MAX_CHARS_API.EVENT_DESCRIPTION}
-                className={clsx('max-h-custom', isMinimal && 'pb-0')}
+                className="max-h-custom"
                 title={c('Title').t`Add more information related to this event`}
-                unstyled={isMinimal}
                 {...createHandlers({ model, setModel, field: 'description' }).native}
             />
         </IconRow>
