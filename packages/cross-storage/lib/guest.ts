@@ -28,6 +28,7 @@ const createGuest = <MessagePayload>(urlTarget: string) => {
             promiseHandler.resolve = resolve;
             promiseHandler.reject = reject;
         });
+        promiseHandler.promise.catch(() => {});
     };
 
     const initListener = (origin: string) => {
@@ -124,6 +125,14 @@ const createGuest = <MessagePayload>(urlTarget: string) => {
     initChildCrossStorage();
 
     return {
+        supported: async () => {
+            try {
+                await promiseHandler.promise;
+                return true;
+            } catch (e) {
+                return false;
+            }
+        },
         getState,
         postAndGetMessage,
     };

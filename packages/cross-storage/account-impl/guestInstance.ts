@@ -18,7 +18,7 @@ type CrossStorageInstance = ReturnType<typeof createProtonInstance>;
 
 export let instance: ReturnType<typeof createHandlers>;
 
-const createHandlers = ({ postAndGetMessage }: CrossStorageInstance) => {
+const createHandlers = ({ postAndGetMessage, supported }: CrossStorageInstance) => {
     const getLocalStorage = (key: string) => {
         return postAndGetMessage<GetLocalStorageMessageResponse>({
             type: Action.getLocalStorage,
@@ -58,6 +58,7 @@ const createHandlers = ({ postAndGetMessage }: CrossStorageInstance) => {
         getLocalStorage,
         getLocalStorageKeys,
         removeLocalStorage,
+        supported,
     };
 };
 
