@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { Exporter } from '@proton/pass/components/Export/Exporter';
 import { SettingsPanel } from '@proton/pass/components/Settings/SettingsPanel';
 import { pageMessage, sendMessage } from '@proton/pass/lib/extension/message';
-import { SessionLockStatus, WorkerMessageType } from '@proton/pass/types';
+import { WorkerMessageType } from '@proton/pass/types';
 import { throwError } from '@proton/pass/utils/fp/throw';
 
 const checkLock = async () => {
@@ -16,7 +16,7 @@ const checkLock = async () => {
         })
     );
 
-    return result.type === 'success' && result.ok && result.status !== SessionLockStatus.LOCKED;
+    return result.type === 'success' && result.ok && !result.locked;
 };
 
 const confirmPassword = async (password: string) => {
