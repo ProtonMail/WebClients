@@ -6,6 +6,7 @@ import { Href } from '@proton/atoms';
 import { Icon, PrimaryButton, VpnLogo, useApi } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { pushForkSession } from '@proton/shared/lib/api/auth';
+import { VPN_TV_CLIENT_IDS } from '@proton/shared/lib/constants';
 
 import TVCodeInputs from './TVCodeInputs';
 
@@ -20,6 +21,12 @@ const TVContainer = () => {
     const api = useApi();
     const [loading, withLoading] = useLoading();
     const [error, setError] = useState('');
+    const searchParams = new URLSearchParams(location.search);
+    const childClientIdParam = searchParams.get('childClientId');
+    const childClientId =
+        childClientIdParam && [VPN_TV_CLIENT_IDS.ANDROID, VPN_TV_CLIENT_IDS.APPLE].includes(childClientIdParam)
+            ? childClientIdParam
+            : VPN_TV_CLIENT_IDS.ANDROID;
 
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
@@ -32,7 +39,7 @@ const TVContainer = () => {
             setError('');
             await api(
                 pushForkSession({
-                    ChildClientID: 'android_tv-vpn',
+                    ChildClientID: childClientId,
                     Independent: 1,
                     UserCode: code,
                 })
