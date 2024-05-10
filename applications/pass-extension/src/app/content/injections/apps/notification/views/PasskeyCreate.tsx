@@ -42,7 +42,7 @@ type PasskeyCreateFormValues = { name: string; step: PasskeyCreateStep; selected
 const formId = 'create-passkey';
 
 const PasskeyCreateView: FC<Props> = ({ domain, request, token }) => {
-    const { onTelemetry } = usePassCore();
+    const { onTelemetry, config } = usePassCore();
     const { close, postMessage, settings } = useIFrameContext();
     const { createNotification } = useNotifications();
 
@@ -81,7 +81,7 @@ const PasskeyCreateView: FC<Props> = ({ domain, request, token }) => {
                     }
 
                     const { response } = result;
-                    const passkey = sanitizePasskey(response);
+                    const passkey = sanitizePasskey(response, config);
                     const base = { type: AutosaveMode.UPDATE, name, username, password: '', domain, passkey };
 
                     await sendMessage.on(
