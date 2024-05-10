@@ -3,15 +3,9 @@ import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { getExtension } from '@proton/shared/lib/apps/helper';
-import { Extension } from '@proton/shared/lib/authentication/ForkInterface';
-import {
-    ExtensionAuthenticatedMessage,
-    ExtensionForkResult,
-    ExtensionForkResultPayload,
-} from '@proton/shared/lib/authentication/sessionForking';
-import { sendExtensionMessage } from '@proton/shared/lib/browser/extension';
-import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
+import type { ExtensionForkResult, ExtensionForkResultPayload } from '@proton/shared/lib/authentication/sessionForking';
+import { type ExtensionApp, sendExtensionMessage } from '@proton/shared/lib/browser/extension';
+import { APPS } from '@proton/shared/lib/constants';
 import errorImg from '@proton/styles/assets/img/errors/error-generic.svg';
 import successImg from '@proton/styles/assets/img/onboarding/proton-welcome.svg';
 import noop from '@proton/utils/noop';
@@ -21,27 +15,24 @@ import Layout from './Layout';
 import Main from './Main';
 import Text from './Text';
 
-export type AuthExtensionState = ExtensionForkResult & { extension: Extension | undefined };
+export type AuthExtensionState = ExtensionForkResult & { app: ExtensionApp | undefined };
 
 const assets = require.context(`@proton/styles/assets/img/extension`, true, /.svg$/);
 
-const getAssetsForExtension = (appName: APP_NAMES): { [key in AuthExtensionState['type']]: string } => ({
+const getAssetsForExtension = (appName: ExtensionApp): { [key in AuthExtensionState['type']]: string } => ({
     success: assets(`./${appName}/success.svg`),
     error: assets(`./${appName}/error.svg`),
 });
 
-const getExtensionAssets = (extension?: Extension): { [key in AuthExtensionState['type']]: string } => {
-    switch (extension) {
-        case getExtension(APPS.PROTONPASSBROWSEREXTENSION):
-        case getExtension(APPS.PROTONEXTENSION):
-            return getAssetsForExtension(APPS.PROTONEXTENSION);
-        case getExtension(APPS.PROTONVPNBROWSEREXTENSION):
+const getExtensionAssets = (app?: ExtensionApp): { [key in AuthExtensionState['type']]: string } => {
+    switch (app) {
+        case APPS.PROTONPASSBROWSEREXTENSION:
+        case APPS.PROTONEXTENSION:
+            return getAssetsForExtension(APPS.PROTONPASSBROWSEREXTENSION);
+        case APPS.PROTONVPNBROWSEREXTENSION:
             return getAssetsForExtension(APPS.PROTONVPNBROWSEREXTENSION);
         default:
-            return {
-                success: successImg,
-                error: errorImg,
-            };
+            return { success: successImg, error: errorImg };
     }
 };
 
@@ -59,27 +50,24 @@ const getDefaults = (): { [key in AuthExtensionState['type']]: ExtensionForkResu
 const getDefaultState = (defaults: ReturnType<typeof getDefaults>): AuthExtensionState => ({
     type: 'error',
     payload: defaults.error,
-    extension: undefined,
+    app: undefined,
 });
 
 const AuthExtension = () => {
     const location = useLocation<AuthExtensionState | undefined>();
     const defaults = getDefaults();
-    const { type, payload, extension } = location.state ?? getDefaultState(defaults);
+    const { type, payload, app } = location.state ?? getDefaultState(defaults);
     const errorDetail = location.state?.type === 'error' && location.state.error;
-    const logo = getExtensionAssets(extension)?.[type];
+    const logo = getExtensionAssets(app)?.[type];
 
     useEffect(() => {
         /* notify the extension that we have reached the `/auth-ext`
          * page - it may want to intercept this and redirect to an
          * extension specific page */
-        if (extension !== undefined && type === 'success') {
-            sendExtensionMessage<ExtensionAuthenticatedMessage>(
-                { type: 'auth-ext' },
-                { extensionId: extension.ID }
-            ).catch(noop);
+        if (app !== undefined && type === 'success') {
+            sendExtensionMessage({ type: 'auth-ext' }, { app }).catch(noop);
         }
-    }, [extension]);
+    }, [app]);
 
     const defaultData = defaults[type] || defaults.error;
 
@@ -92,7 +80,6 @@ const AuthExtension = () => {
                             <img className="m-auto w-custom" style={{ '--w-custom': '9.375rem' }} src={logo} alt="" />
                         </div>
                     )}
-
                     <h1 className="h3 text-bold mb-0 mt-2 md:mt-0">{payload?.title ?? defaultData.title}</h1>
                     <Text className="mt-4">
                         {payload?.message ?? defaultData.message}

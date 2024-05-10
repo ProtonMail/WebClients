@@ -31,7 +31,6 @@ import { getSilentApi, getUIDApi } from '@proton/shared/lib/api/helpers/customCo
 import { getFreePlan, queryPlans } from '@proton/shared/lib/api/payments';
 import { TelemetryAccountSignupEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { getUser } from '@proton/shared/lib/api/user';
-import { getExtension } from '@proton/shared/lib/apps/helper';
 import { ProductParam, normalizeProduct } from '@proton/shared/lib/apps/product';
 import {
     LocalSessionPersisted,
@@ -392,22 +391,17 @@ const SingleSignupContainerV2 = ({
     useEffect(() => {
         const run = async () => {
             // In the main container so that it's ready, but can potentially be moved to custom step
-            const extension = getExtension(APPS.PROTONPASSBROWSEREXTENSION);
-            if (!extension) {
-                return;
-            }
-            const result = await sendExtensionMessage<{ type: 'pass-installed' }>(
+            const app = APPS.PROTONPASSBROWSEREXTENSION;
+
+            const result = await sendExtensionMessage(
                 { type: 'pass-installed' },
-                { extensionId: extension.ID, maxTimeout: 1000 }
-            ).catch(noop);
-            setModelDiff({
-                extension: {
-                    ID: extension.ID,
-                    installed: result?.type === 'success',
-                },
-            });
+                { app: APPS.PROTONPASSBROWSEREXTENSION, maxTimeout: 1_000 }
+            );
+
+            setModelDiff({ extension: { app, installed: result?.type === 'success' } });
         };
-        run();
+
+        run().catch(noop);
     }, []);
 
     useLayoutEffect(() => {

@@ -1,55 +1,117 @@
 import getRandomString from '@proton/utils/getRandomString';
+import lastItem from '@proton/utils/lastItem';
 
+import { ExtensionForkPayload } from '../authentication/sessionForking';
+import { APPS, EXTENSIONS } from '../constants';
 import { isChromiumBased } from '../helpers/browser';
 
-export type ExtensionMessage<T = {}> = { type: string } & T;
+export type ExtensionForkMessage = { type: 'fork'; payload: ExtensionForkPayload };
+export type ExtensionAuthenticatedMessage = { type: 'auth-ext' };
+export type PassInstalledMessage = { type: 'pass-installed' };
+export type PassOnboardingMessage = { type: 'pass-onboarding' };
+
+export type ExtensionMessage =
+    | ExtensionForkMessage
+    | ExtensionAuthenticatedMessage
+    | PassInstalledMessage
+    | PassOnboardingMessage;
+
+export type ExtensionApp = keyof typeof EXTENSIONS;
 
 /* extension communicating with account should
  * conform to this message response type */
-export type ExtensionMessageResponse<P extends {}> =
+export type ExtensionMessageResponse<P = any> =
     | { type: 'success'; payload: P }
     | { type: 'error'; payload?: P; error?: string };
 
-/* message fallback should contain the initial message's
- * type as a property in order to ensure we're dealing
- * with the appropriate response message */
-export type ExtensionMessageFallbackResponse<P extends {}> = ExtensionMessageResponse<P> & {
+export type ExtensionMessageFallbackResponse<P = any> = ExtensionMessageResponse<P> & {
     token: string;
 };
 
 export const sendMessageSupported = () =>
     isChromiumBased() && (window as any).chrome?.runtime?.sendMessage !== undefined;
 
-/* Extension messaging must account for Chrome & Firefox specifics :
+const isValidExtensionResponse = <R = any>(response: any): response is ExtensionMessageResponse<R> =>
+    'type' in response && (response.type === 'success' || response.type === 'error');
+
+type SendMessageResult = { ok: boolean; response: ExtensionMessageResponse };
+
+const sendMessage = async (extensionId: string, message: any): Promise<SendMessageResult> => {
+    const self = window as any;
+    const browser = self?.browser ?? self.chrome;
+
+    try {
+        return await new Promise<SendMessageResult>((resolve) => {
+            browser.runtime.sendMessage(extensionId, message, (response: unknown) => {
+                if (browser.runtime.lastError) {
+                    return resolve({
+                        ok: false,
+                        response: {
+                            type: 'error',
+                            error: browser.runtime.lastError.message,
+                        },
+                    });
+                }
+
+                if (!isValidExtensionResponse(response)) {
+                    return resolve({
+                        ok: true,
+                        response: {
+                            type: 'error',
+                            error: 'Bad format',
+                        },
+                    });
+                }
+
+                resolve({ ok: true, response });
+            });
+        });
+    } catch (err) {
+        return {
+            ok: false,
+            response: {
+                type: 'error',
+                error: err instanceof Error ? err.message : '',
+            },
+        };
+    }
+};
+
+/** When dealing with extensions residing in multiple stores, it's essential to handle
+ * all possible extensionIds when dispatching a message. In this scenario, the first
+ * extension to respond takes precedence. The messages are dispatched sequentially
+ * to ensure accurate `lastError` checking. If no extensions respond, last runtime
+ * error will be returned. This broadcasting mechanism only works for extensions and
+ * browsers supporting the `externally_connectable` API. */
+const broadcastMessage = async (
+    extensionIds: readonly string[],
+    message: ExtensionMessage
+): Promise<ExtensionMessageResponse> => {
+    /* Iterate until we have a successful link with one of the extensionIds. If establishing
+     * connection with all of the extensionIds failed, returns the last failure response. */
+    const results = await Promise.all(extensionIds.map((extensionId) => sendMessage(extensionId, message)));
+
+    return results.find(({ ok }) => ok)?.response ?? lastItem(results)?.response ?? { type: 'error' };
+};
+
+/** Extension messaging must account for Chrome & Firefox specifics :
  * Chrome : we can leverage the `externally_connectable` permissions
  * Firefox : we have to result to fallback postMessaging via content
  * script injections */
-export const sendExtensionMessage = async <T extends ExtensionMessage, R extends {} = {}>(
-    message: T,
-    options: {
-        extensionId: string;
-        maxTimeout?: number;
-        onFallbackMessage?: (event: MessageEvent<any>) => ExtensionMessageResponse<R> | undefined;
-    }
+export const sendExtensionMessage = async <R = any>(
+    message: ExtensionMessage,
+    options: { app: ExtensionApp; maxTimeout?: number }
 ): Promise<ExtensionMessageResponse<R>> => {
     let timeout: NodeJS.Timeout;
+    const extension = EXTENSIONS[options.app];
     const token = getRandomString(16);
 
     return new Promise<ExtensionMessageResponse<R>>((resolve) => {
-        /* in order to support legacy message formats : allow
-         * intercepting event via `options.onFallbackMessage` */
-        const onFallbackMessage = (event: MessageEvent<ExtensionMessageFallbackResponse<R>>) => {
-            const externalMessage = (event.data as any).extension === undefined;
-
-            if (event.source === window && externalMessage) {
-                const intercepted = options?.onFallbackMessage?.(event);
-                const valid = intercepted !== undefined || event.data?.token === token;
-
-                if (valid) {
-                    clearTimeout(timeout);
-                    window.removeEventListener('message', onFallbackMessage);
-                    resolve(intercepted ?? event.data);
-                }
+        const onFallbackMessage = ({ data, source }: MessageEvent) => {
+            if (source === window && data?.from !== APPS.PROTONACCOUNT && data?.token === token) {
+                clearTimeout(timeout);
+                window.removeEventListener('message', onFallbackMessage);
+                resolve(isValidExtensionResponse(data) ? data : { type: 'error', error: 'Bad format' });
             }
         };
 
@@ -59,22 +121,26 @@ export const sendExtensionMessage = async <T extends ExtensionMessage, R extends
         }, options.maxTimeout ?? 15_000);
 
         if (sendMessageSupported()) {
-            const browser = (window as any).chrome;
-
-            return browser.runtime.sendMessage(options.extensionId, message, (result: any) => {
+            return broadcastMessage(extension.IDs, message).then((result) => {
                 clearTimeout(timeout);
-                resolve(
-                    browser.runtime.lastError
-                        ? {
-                              type: 'error',
-                              error: browser.runtime.lastError.message,
-                          }
-                        : result
-                );
+                resolve(result);
             });
         }
 
-        window.postMessage({ extension: options.extensionId, token, ...message }, '/');
+        /* Firefox extensions should prefer checking the `message.data.app` property.
+         * `message.data.extension` is kept for backward compatibility but will
+         * be deprecated in the future */
+        window.postMessage(
+            {
+                app: options.app,
+                extension: extension.IDs[0],
+                from: APPS.PROTONACCOUNT,
+                token,
+                ...message,
+            },
+            '/'
+        );
+
         window.addEventListener('message', onFallbackMessage);
     });
 };
