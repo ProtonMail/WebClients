@@ -54,15 +54,15 @@ const modelThunk = createAsyncModelThunk<Model, ExchangeRateState, WalletThunkAr
             const state = getState()[name].value;
 
             if (!options?.thunkArg?.[0] || !state) {
-                return { value: undefined, error: undefined };
+                return undefined;
             }
 
             const [fiat] = options?.thunkArg;
             if (state[fiat]) {
-                return { value: state, error: undefined };
+                return state;
             }
 
-            return { value: undefined, error: undefined };
+            return undefined;
         },
     }
 );
