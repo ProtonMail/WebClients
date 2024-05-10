@@ -6,6 +6,7 @@ import { ValueControl } from '@proton/pass/components/Form/Field/Control/ValueCo
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import type { SanitizedPasskey } from '@proton/pass/lib/passkeys/types';
 import { epochToDateTime } from '@proton/pass/utils/time/format';
+import { PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 type Props = { passkey: SanitizedPasskey };
 
@@ -17,8 +18,30 @@ export const PasskeyContent: FC<Props> = ({ passkey }) => (
         <ValueControl
             clickToCopy
             icon="calendar-today"
-            label={c('Label').t`Created`}
+            label={c('Label').t`Created at`}
             value={epochToDateTime(passkey.createTime)}
         />
+        {(() => {
+            const { creationData } = passkey;
+            if (!creationData) return null;
+
+            const { appVersion, osName, osVersion } = creationData;
+
+            return (
+                <>
+                    <ValueControl
+                        icon="info-circle"
+                        label={c('Label').t`Device`}
+                        ellipsis={false}
+                        value={`${osName} ${osVersion}`}
+                    />
+                    <ValueControl
+                        icon="brand-proton-pass"
+                        label={c('Label').t`${PASS_SHORT_APP_NAME} version`}
+                        value={appVersion}
+                    />
+                </>
+            );
+        })()}
     </FieldsetCluster>
 );
