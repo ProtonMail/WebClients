@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 
-import { WasmMnemonic, WasmWallet, WasmWalletConfig } from '../../../../pkg';
+import { WasmMnemonic, WasmWallet } from '../../../../pkg';
 import { useOnchainWalletContext } from '../../../contexts';
 import { CreditCard } from './CreditCard';
 
@@ -15,8 +15,7 @@ interface Props {
 export const SetupConfirmation = ({ onOpenWallet, mnemonic, passphrase }: Props) => {
     const { network } = useOnchainWalletContext();
 
-    const walletConfig = new WasmWalletConfig(network);
-    const wallet = mnemonic ? new WasmWallet(mnemonic.asString(), passphrase, walletConfig) : null;
+    const wallet = mnemonic ? new WasmWallet(network, mnemonic.asString(), passphrase) : null;
 
     return (
         <div className="p-6 flex flex-column">

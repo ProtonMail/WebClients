@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button';
 import { Card } from '@proton/atoms/Card';
 
-import { WasmMnemonic, WasmWallet, WasmWalletConfig } from '../../../../pkg';
+import { WasmMnemonic, WasmWallet } from '../../../../pkg';
 import { useOnchainWalletContext } from '../../../contexts';
 import { CreditCard } from './CreditCard';
 
@@ -19,8 +19,7 @@ export const MnemonicBackup = ({ mnemonic, onContinue }: Props) => {
 
     const [showMnemonic, setShowMnemonic] = useState(false);
 
-    const walletConfig = new WasmWalletConfig(network);
-    const wallet = mnemonic ? new WasmWallet(mnemonic.asString(), undefined, walletConfig) : null;
+    const wallet = mnemonic ? new WasmWallet(network, mnemonic.asString(), undefined) : null;
 
     return (
         <div className="p-6 flex flex-column">
@@ -33,7 +32,7 @@ export const MnemonicBackup = ({ mnemonic, onContinue }: Props) => {
 
                     {/* Mnemonic words */}
                     <Card rounded bordered={false} className="flex flex-row justify-center">
-                        {mnemonic?.toWords().map((word, index) => (
+                        {mnemonic?.asWords().map((word, index) => (
                             // TODO: use Pills component here
                             <span
                                 className="block m-2 p-1 px-2 rounded text-sm"

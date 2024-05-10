@@ -24,15 +24,16 @@ export const TransactionHistoryOverview = ({ walletId, transactions, max = 7 }: 
                 {sortTransactionsByTime(transactions)
                     .slice(0, max)
                     .map((transaction) => {
+                        const txValue = Number(transaction.received) - Number(transaction.sent);
                         return (
                             <li
                                 // same transaction can appear several time with different values or sign when user did a self-transfer or used several wallets/accounts to do the transaction
-                                key={`${transaction.txid}_${transaction.value}`}
+                                key={`${transaction.txid}_${txValue}`}
                                 className="flex flex-row justify-space-between items-end border-weak border-bottom py-2 px-0"
                             >
                                 <div className="flex flex-column">
                                     <span className="block color-weak text-sm">
-                                        {confirmationTimeToHumanReadable(transaction.time)}
+                                        {confirmationTimeToHumanReadable(transaction.confirmation_time)}
                                     </span>
                                     <Tooltip title={transaction.txid}>
                                         <span className="block text-sm">
@@ -44,10 +45,10 @@ export const TransactionHistoryOverview = ({ walletId, transactions, max = 7 }: 
                                     <BitcoinAmount
                                         className={clsx(
                                             'text-sm',
-                                            Number(transaction.value) < 0 ? 'color-danger' : 'color-success'
+                                            Number(txValue) < 0 ? 'color-danger' : 'color-success'
                                         )}
                                     >
-                                        {Number(transaction.value)}
+                                        {Number(txValue)}
                                     </BitcoinAmount>
                                 </div>
                             </li>

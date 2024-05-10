@@ -6,7 +6,7 @@ import { renderHook } from '@testing-library/react-hooks';
 import CacheProvider from '@proton/components/containers/cache/Provider';
 import createCache from '@proton/shared/lib/helpers/cache';
 
-import * as WasmChainModule from '../../pkg';
+import * as WasmBlockchainModule from '../../pkg';
 import { getFeesEstimationMap } from '../tests';
 import { useBlockchainFeesEstimation } from './useBlockchainFeesEstimation';
 
@@ -15,9 +15,9 @@ const feesEstimationMap = getFeesEstimationMap();
 describe('useBlockchainFeesEstimation', () => {
     const mockGetFeesEstimation = vi.fn().mockResolvedValue(feesEstimationMap);
 
-    vi.spyOn(WasmChainModule, 'WasmChain').mockReturnValue({
+    vi.spyOn(WasmBlockchainModule, 'WasmBlockchain').mockReturnValue({
         getFeesEstimation: mockGetFeesEstimation,
-    } as unknown as WasmChainModule.WasmChain);
+    } as unknown as WasmBlockchainModule.WasmBlockchain);
 
     it('should fetch fees estimation once at mount', async () => {
         const { result } = renderHook(() => useBlockchainFeesEstimation(), {
