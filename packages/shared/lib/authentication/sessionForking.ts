@@ -7,13 +7,13 @@ import { pullForkSession, pushForkSession, revoke, setCookies } from '../api/aut
 import { OAuthForkResponse, postOAuthFork } from '../api/oauth';
 import { getUser } from '../api/user';
 import { getAppHref, getClientID } from '../apps/helper';
-import { ExtensionMessageResponse, sendExtensionMessage } from '../browser/extension';
+import { type ExtensionApp, ExtensionMessageResponse, sendExtensionMessage } from '../browser/extension';
 import { APPS, APP_NAMES, SSO_PATHS } from '../constants';
 import { withAuthHeaders, withUIDHeaders } from '../fetch/headers';
 import { replaceUrl } from '../helpers/browser';
 import { encodeBase64URL, uint8ArrayToString } from '../helpers/encoding';
 import { Api, User, User as tsUser } from '../interfaces';
-import { Extension, FORK_TYPE } from './ForkInterface';
+import { FORK_TYPE } from './ForkInterface';
 import { getKey } from './cryptoHelper';
 import { InvalidForkConsumeError, InvalidPersistentSessionError } from './error';
 import { PullForkResponse, PushForkResponse } from './interface';
@@ -37,7 +37,7 @@ interface ExtensionForkPayloadArguments {
     forkParameters: ProduceForkParameters;
 }
 
-interface ExtensionForkPayload {
+export interface ExtensionForkPayload {
     selector: string;
     keyPassword: string | undefined;
     offlineKey: OfflineKey | undefined;
@@ -46,17 +46,11 @@ interface ExtensionForkPayload {
     state: string;
 }
 
-export type ExtensionForkResultPayload = {
-    title?: string;
-    message: string;
-};
-
+export type ExtensionForkResultPayload = { title?: string; message: string };
 export type ExtensionForkResult = ExtensionMessageResponse<ExtensionForkResultPayload>;
-export type ExtensionForkMessage = { type: 'fork'; payload: ExtensionForkPayload };
-export type ExtensionAuthenticatedMessage = { type: 'auth-ext' };
 
 export const produceExtensionFork = async (options: {
-    extension: Extension;
+    app: ExtensionApp;
     payload: ExtensionForkPayloadArguments;
 }): Promise<ExtensionForkResult> => {
     const payload: ExtensionForkPayload = {
@@ -67,19 +61,8 @@ export const produceExtensionFork = async (options: {
         trusted: options.payload.session.trusted,
         state: options.payload.forkParameters.state,
     };
-    return sendExtensionMessage<ExtensionForkMessage, ExtensionForkResultPayload>(
-        { type: 'fork', payload },
-        {
-            extensionId: options.extension.ID,
-            onFallbackMessage: (evt) =>
-                evt.data.fork === 'success' /* support legacy VPN fallback message */
-                    ? {
-                          type: 'success',
-                          payload: evt.data.payload,
-                      }
-                    : undefined,
-        }
-    );
+
+    return sendExtensionMessage<ExtensionForkResultPayload>({ type: 'fork', payload }, { app: options.app });
 };
 
 interface ForkState {
