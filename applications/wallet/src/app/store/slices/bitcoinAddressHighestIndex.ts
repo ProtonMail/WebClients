@@ -47,7 +47,7 @@ const modelThunk = createAsyncModelThunk<
         const state = getState()[name].value;
 
         if (!options?.thunkArg || !state) {
-            return { value: undefined, error: undefined };
+            return undefined;
         }
 
         const [, walletAccountId] = options?.thunkArg;
@@ -56,10 +56,10 @@ const modelThunk = createAsyncModelThunk<
 
         const validUntil = highestIndexValue && add(new Date(highestIndexValue.time), { minutes: 10 });
         if (validUntil && isBefore(new Date(), validUntil)) {
-            return { value: state, error: undefined };
+            return state;
         }
 
-        return { value: undefined, error: undefined };
+        return undefined;
     },
 });
 

@@ -4,7 +4,6 @@ import { AppVersion, AppsDropdown, MainLogo, Sidebar, SidebarList, SidebarNav } 
 import { APPS } from '@proton/shared/lib/constants';
 import { IWasmApiWalletData } from '@proton/wallet';
 
-import changelog from '../../../../../CHANGELOG.md';
 import { BitcoinMovementNavItems } from './BitcoinMovementNavItems';
 import { SecurityChecklist } from './SecurityChecklist';
 import { TransactionsNavItem } from './TransactionsNavItem';
@@ -24,7 +23,7 @@ const WalletSidebar = ({ expanded = false, apiWalletsData }: Props) => {
             expanded={expanded}
             appsDropdown={<AppsDropdown app={PROTONWALLET_APP} />}
             logo={<MainLogo to="/" data-testid="main-logo" />}
-            version={<AppVersion changelog={changelog} />}
+            version={<AppVersion />}
         >
             <SidebarNav className="flex mt-6">
                 <div className="outline-none flex flex-column justify-space-between grow">
