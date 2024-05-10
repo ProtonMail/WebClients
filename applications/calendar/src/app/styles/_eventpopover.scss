@@ -11,6 +11,7 @@
 	color: var(--text-norm);
 	animation: eventpopoverIn ease 0.15s;
 	animation-fill-mode: both;
+	border: 1px solid var(--border-weak);
 
 	@include media('<=small') {
 		inset: 0;
@@ -51,7 +52,7 @@
 			margin-inline: rem(-24);
 			cursor: grab;
 			background-color: var(--background-weak);
-			border-block-end: 1px solid var(--background-weak);
+			border-block-end: 1px solid var(--border-weak);
 
 			&:active {
 				cursor: grabbing;
@@ -122,6 +123,24 @@
 			// let it go
 			block-size: auto;
 			padding-block: 0;
+		}
+	}
+
+	// special fix for popover line with fullday checkbox + recurrency (DE) ------------------
+	&-fullday-recurrency {
+		@include media('>=#{em(350, 16)}') {
+			flex-flow: row nowrap;
+
+			.eventpopover-recurrency {
+				margin-block-start: 0;
+				margin-inline-start: auto;
+			}
+		}
+		@include media('<#{em(350, 16)}') {
+			button {
+				flex-direction: row-reverse;
+				justify-content: flex-end;
+			}
 		}
 	}
 
