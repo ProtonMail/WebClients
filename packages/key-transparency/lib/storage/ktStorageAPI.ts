@@ -3,25 +3,6 @@ import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
 import { KTLocalStorageAPI } from '@proton/shared/lib/interfaces';
 import { getDefaultKTLS } from '@proton/shared/lib/keyTransparency';
 
-const isCrossStorageAvailable = ((): (() => Promise<boolean>) => {
-    let crossStorageAvailable: Promise<boolean> | undefined;
-    return async () => {
-        if (crossStorageAvailable === undefined) {
-            crossStorageAvailable = (async () => {
-                try {
-                    const test = 'kttest';
-                    await instance.setLocalStorage(test, test);
-                    await instance.removeLocalStorage(test);
-                    return true;
-                } catch (error) {
-                    return false;
-                }
-            })();
-        }
-        return crossStorageAvailable;
-    };
-})();
-
 /**
  * Return the set of functions to use account's local storage
  */
@@ -31,7 +12,7 @@ export const getKTLocalStorage = async (APP_NAME: APP_NAMES): Promise<KTLocalSto
         return getDefaultKTLS();
     }
     // Check if cross storage is available
-    const crossStorageAvailable = await isCrossStorageAvailable();
+    const crossStorageAvailable = await instance.supported();
     if (!crossStorageAvailable) {
         return getDefaultKTLS();
     }
