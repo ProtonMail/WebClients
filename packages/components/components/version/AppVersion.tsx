@@ -1,8 +1,10 @@
+import { c } from 'ttag';
+
 import { APPS_CONFIGURATION } from '@proton/shared/lib/constants';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 
 import { getAppVersion } from '../../helpers';
-import { useConfig, useEarlyAccess } from '../../hooks';
+import { useConfig, useEarlyAccess, useNotifications } from '../../hooks';
 import { Tooltip } from '../tooltip';
 
 interface Props {
@@ -18,13 +20,13 @@ const envMap = {
 };
 
 const AppVersion = ({ appVersion: maybeAppVersion, appName: maybeAppName, fullVersion }: Props) => {
-    const { APP_NAME, APP_VERSION, DATE_VERSION } = useConfig();
+    const { APP_NAME, APP_VERSION } = useConfig();
     const { currentEnvironment } = useEarlyAccess();
+    const { createNotification } = useNotifications();
 
     const appName = maybeAppName || APPS_CONFIGURATION[APP_NAME]?.name;
     const appVersion = maybeAppVersion || getAppVersion(APP_VERSION);
     const className = 'app-infos-version text-xs m-0';
-    const title = DATE_VERSION;
 
     const currentEnvDisplay = currentEnvironment && envMap[currentEnvironment] ? envMap[currentEnvironment] : '';
     const children = (
@@ -38,8 +40,14 @@ const AppVersion = ({ appVersion: maybeAppVersion, appName: maybeAppName, fullVe
 
     if (fullVersion) {
         return (
-            <Tooltip title={`${fullVersion} ${currentEnvDisplay}`} className={className}>
-                <button onClick={() => textToClipboard(fullVersion)} title={title}>
+            <Tooltip title={`Copy “${fullVersion} ${currentEnvDisplay}” to clipboard`} className={className}>
+                <button
+                    type="button"
+                    onClick={() => {
+                        textToClipboard(fullVersion);
+                        createNotification({ text: c('Info').t`Version number successfully copied to clipboard` });
+                    }}
+                >
                     {children}
                 </button>
             </Tooltip>
@@ -47,9 +55,18 @@ const AppVersion = ({ appVersion: maybeAppVersion, appName: maybeAppName, fullVe
     }
 
     return (
-        <button onClick={() => textToClipboard(appVersion)} title={title} className={className}>
-            {children}
-        </button>
+        <Tooltip title={c('Action').t`Copy version number to clipboard`} className={className}>
+            <button
+                type="button"
+                onClick={() => {
+                    textToClipboard(appVersion);
+                    createNotification({ text: c('Info').t`Version number successfully copied to clipboard` });
+                }}
+                className={className}
+            >
+                {children}
+            </button>
+        </Tooltip>
     );
 };
 
