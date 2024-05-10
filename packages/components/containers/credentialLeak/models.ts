@@ -42,3 +42,25 @@ export interface FetchedBreaches {
     };
     resolvedState: number;
 }
+
+export interface SampleBreach {
+    id: string;
+    name: string;
+    email: string;
+    severity: string;
+    createdAt: string;
+    resolvedState: number;
+    source: {
+        isAggregated: boolean;
+        domain: string | null;
+        category: null | {
+            code: string;
+            name: string;
+        };
+        country: null | {
+            code: string;
+            name: string;
+            emoji: string;
+        };
+    };
+}
