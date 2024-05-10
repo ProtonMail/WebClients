@@ -1102,14 +1102,15 @@ export const FORKABLE_APPS = new Set(
     ].filter(Boolean)
 );
 
+const PROTONPASS_EXTENSION_IDS = [
+    'ghmbeldphafepmbegfdlkpapadhbakde' /* chromium production */,
+    'hlaiofkbmjenhgeinjlmkafaipackfjh' /* chromium beta channel */,
+] as const;
+
 export const EXTENSIONS = {
-    [APPS.PROTONEXTENSION]: { ID: 'ghmbeldphafepmbegfdlkpapadhbakde' },
-    [APPS.PROTONPASSBROWSEREXTENSION]: {
-        ID: 'ghmbeldphafepmbegfdlkpapadhbakde',
-    },
-    [APPS.PROTONVPNBROWSEREXTENSION]: {
-        ID: 'jplgfhpmjnbigmhklmmbgecoobifkmpa',
-    },
+    [APPS.PROTONEXTENSION]: { IDs: PROTONPASS_EXTENSION_IDS },
+    [APPS.PROTONPASSBROWSEREXTENSION]: { IDs: PROTONPASS_EXTENSION_IDS },
+    [APPS.PROTONVPNBROWSEREXTENSION]: { IDs: ['jplgfhpmjnbigmhklmmbgecoobifkmpa'] },
 } as const;
 
 export const AES256 = 'aes256';
