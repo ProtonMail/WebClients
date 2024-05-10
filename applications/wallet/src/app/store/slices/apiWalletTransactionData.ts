@@ -16,7 +16,8 @@ export interface ApiWalletTransactionDataState {
 type SliceState = ApiWalletTransactionDataState[typeof apiWalletTransactionDataSliceName];
 type Model = NonNullable<SliceState['value']>;
 
-export const selectApiWalletTransactionData = (state: ApiWalletTransactionDataState) => state[apiWalletTransactionDataSliceName];
+export const selectApiWalletTransactionData = (state: ApiWalletTransactionDataState) =>
+    state[apiWalletTransactionDataSliceName];
 
 const modelThunk = createAsyncModelThunk<
     Model,
@@ -44,16 +45,16 @@ const modelThunk = createAsyncModelThunk<
         const state = extra.getState()[apiWalletTransactionDataSliceName].value;
 
         if (!extra.options?.thunkArg) {
-            return { value: undefined, error: undefined };
+            return undefined;
         }
 
         const hashedTxIds = extra.options.thunkArg[2];
         const cachedTxIds = state?.filter((tx) => hashedTxIds?.includes(tx.Data.HashedTransactionID ?? ''));
         if (hashedTxIds?.length === cachedTxIds?.length) {
-            return { value: state, error: undefined };
+            return state;
         }
 
-        return { value: undefined, error: undefined };
+        return undefined;
     },
 });
 
