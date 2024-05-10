@@ -96,54 +96,58 @@ export const TransactionList = ({ wallet }: Props) => {
                                 </TableRow>
                             </TableHeader>
                             <TableBody>
-                                {transactions.map((transaction) => (
+                                {transactions.map((transaction) => {
+                                    const txValue = Number(transaction.received) - Number(transaction.sent);
+
                                     // TXid cannot be assumed unique because of itnra-wallet self-transfers
-                                    <TableRow
-                                        key={`${transaction.txid}-${transaction.value}`}
-                                        className="cursor-pointer"
-                                        onClick={() => handleClickRow(transaction)}
-                                    >
-                                        <TableCell>
-                                            <div className="flex flex-column">
-                                                <Tooltip title={transaction.txid}>
-                                                    <span className="inline-block max-w-full text-lg text-ellipsis">
-                                                        {transaction.txid}
+                                    return (
+                                        <TableRow
+                                            key={`${transaction.txid}-${txValue}`}
+                                            className="cursor-pointer"
+                                            onClick={() => handleClickRow(transaction)}
+                                        >
+                                            <TableCell>
+                                                <div className="flex flex-column">
+                                                    <Tooltip title={transaction.txid}>
+                                                        <span className="inline-block max-w-full text-lg text-ellipsis">
+                                                            {transaction.txid}
+                                                        </span>
+                                                    </Tooltip>
+                                                </div>
+                                            </TableCell>
+                                            <TableCell>
+                                                <div className="flex flex-column">
+                                                    <span className="text-lg">
+                                                        {confirmationTimeToHumanReadable(transaction.confirmation_time)}
                                                     </span>
-                                                </Tooltip>
-                                            </div>
-                                        </TableCell>
-                                        <TableCell>
-                                            <div className="flex flex-column">
-                                                <span className="text-lg">
-                                                    {confirmationTimeToHumanReadable(transaction.time)}
-                                                </span>
-                                                <span className="color-hint">
-                                                    {transaction.time.confirmed
-                                                        ? c('Wallet Transaction List').t`Processed`
-                                                        : c('Wallet Transaction List').t`Processing`}
-                                                </span>
-                                            </div>
-                                        </TableCell>
-                                        <TableCell>
-                                            <div className="flex flex-column">
-                                                <span className="text-lg">TODO</span>
-                                            </div>
-                                        </TableCell>
-                                        <TableCell>
-                                            <div className="flex flex-column text-right">
-                                                <BitcoinAmount
-                                                    className="text-lg"
-                                                    fiat="USD"
-                                                    fiatClassName="ml-auto"
-                                                    showColor
-                                                    showExplicitSign
-                                                >
-                                                    {Number(transaction.value)}
-                                                </BitcoinAmount>
-                                            </div>
-                                        </TableCell>
-                                    </TableRow>
-                                ))}
+                                                    <span className="color-hint">
+                                                        {!transaction.confirmation_time
+                                                            ? c('Wallet Transaction List').t`Processed`
+                                                            : c('Wallet Transaction List').t`Processing`}
+                                                    </span>
+                                                </div>
+                                            </TableCell>
+                                            <TableCell>
+                                                <div className="flex flex-column">
+                                                    <span className="text-lg">TODO</span>
+                                                </div>
+                                            </TableCell>
+                                            <TableCell>
+                                                <div className="flex flex-column text-right">
+                                                    <BitcoinAmount
+                                                        className="text-lg"
+                                                        fiat="USD"
+                                                        fiatClassName="ml-auto"
+                                                        showColor
+                                                        showExplicitSign
+                                                    >
+                                                        {Number(txValue)}
+                                                    </BitcoinAmount>
+                                                </div>
+                                            </TableCell>
+                                        </TableRow>
+                                    );
+                                })}
                             </TableBody>
                         </Table>
                     )}

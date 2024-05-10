@@ -91,7 +91,7 @@ describe('useOnchainTransactionAdvancedOptions', () => {
             const { result } = renderHook(() => useOnchainTransactionAdvancedOptions(updater));
 
             act(() => {
-                result.current.handleManualCoinSelection([
+                void result.current.handleManualCoinSelection([
                     WasmOutPoint.fromRawTs(outpointA),
                     WasmOutPoint.fromRawTs(outpointB),
                 ]);
@@ -99,7 +99,7 @@ describe('useOnchainTransactionAdvancedOptions', () => {
 
             await waitFor(() => {
                 const serialised = txBuilder.getUtxosToSpend().map((value) => value[0]);
-                expect(serialised).toStrictEqual([outpointB, outpointA]);
+                expect(serialised).toStrictEqual([outpointA, outpointB]);
             });
         });
     });

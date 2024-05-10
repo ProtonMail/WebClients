@@ -6,7 +6,7 @@ import { useNotifications } from '@proton/components/hooks';
 import { MINUTE, SECOND } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { WasmAccount, WasmChain, WasmNetwork, WasmPagination, WasmWallet, WasmWalletConfig } from '../../pkg';
+import { WasmAccount, WasmBlockchain, WasmNetwork, WasmPagination, WasmWallet } from '../../pkg';
 import {
     ApiWallet,
     BlockchainAccountRecord,
@@ -17,10 +17,7 @@ import { WalletAccount } from '../types/api';
 import { tryHandleWasmError } from '../utils/wasm/errors';
 
 const syncAccount = async (wasmAccount: WasmAccount) => {
-    const wasmChain = new WasmChain();
-    if (await wasmAccount.hasSyncData()) {
-        return wasmChain.partialSync(wasmAccount);
-    }
+    const wasmChain = new WasmBlockchain(undefined, 1);
 
     return wasmChain.fullSync(wasmAccount);
 };
@@ -124,9 +121,8 @@ export const useBlockchainSyncing = (network: WasmNetwork, wallets?: ApiWallet[]
             try {
                 const tmpAccounts: BlockchainAccountRecord = {};
 
-                const config = new WasmWalletConfig(network);
                 // TODO: handle passphrase wallets
-                const wasmWallet = new WasmWallet(wallet.Mnemonic, '', config);
+                const wasmWallet = new WasmWallet(network, wallet.Mnemonic, '');
 
                 for (const account of wallet.accounts) {
                     try {
@@ -134,7 +130,7 @@ export const useBlockchainSyncing = (network: WasmNetwork, wallets?: ApiWallet[]
                         const wasmAccount = wasmWallet.getAccount(accountKey);
 
                         if (!wasmAccount) {
-                            return;
+                            break;
                         }
 
                         tmpAccounts[account.WalletAccountID] = await getAccountData(account, wasmAccount);

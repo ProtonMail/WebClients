@@ -10,7 +10,7 @@ import Price from '@proton/components/components/price/Price';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import TextAreaTwo from '@proton/components/components/v2/input/TextArea';
 
-import { WasmAccount, WasmBitcoinUnit, WasmDetailledTransaction } from '../../../pkg';
+import { WasmAccount, WasmBitcoinUnit, WasmTransactionDetails } from '../../../pkg';
 import { BitcoinAmount } from '../../atoms';
 import { BLOCKCHAIN_EXPLORER_BASE_URL } from '../../constants';
 import { toFiat } from '../../utils';
@@ -18,7 +18,7 @@ import { toFiat } from '../../utils';
 export interface OnchainTransactionDetailsProps {
     from?: { walletName: string; accountName: string };
     account: WasmAccount;
-    tx: WasmDetailledTransaction;
+    tx: WasmTransactionDetails;
 }
 
 export const OnchainTransactionDetails = ({ from, tx }: OnchainTransactionDetailsProps) => {
@@ -26,16 +26,18 @@ export const OnchainTransactionDetails = ({ from, tx }: OnchainTransactionDetail
 
     const recipients = useMemo(() => {
         return tx.outputs.filter((output) => {
+            const txValue = tx.received - tx.sent;
+
             /**
              * when tx is a sending we want to display external recipient(s)
              * when tx is a receive, we want to display internal recipient(s)
              * displaying change address would be confusing
              */
-            return tx.value > 0 ? output.is_mine : !output.is_mine;
+            return txValue > 0 ? output.is_mine : !output.is_mine;
         });
     }, [tx]);
 
-    const txFees = Number(tx.fees ?? 0);
+    const txFees = Number(tx.fee ?? 0);
     const totalAmount = recipients.reduce((acc, cur) => acc + Number(cur.value), txFees);
 
     return (

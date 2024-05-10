@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import Card from '@proton/atoms/Card/Card';
 
-import { WasmAccount, WasmDetailledTransaction, WasmPartiallySignedTransaction } from '../../../../pkg';
+import { WasmAccount, WasmPartiallySignedTransaction, WasmTransactionDetails } from '../../../../pkg';
 import { OnchainTransactionDetails } from '../../OnchainTransactionDetails';
 
 interface Props {
@@ -17,10 +17,10 @@ interface Props {
 }
 
 export const OnchainTransactionReview = ({ from, account, psbt, onBack, onSignAndSend }: Props) => {
-    const [tx, setTx] = useState<WasmDetailledTransaction>();
+    const [tx, setTx] = useState<WasmTransactionDetails>();
 
     useEffect(() => {
-        void WasmDetailledTransaction.fromPsbt(psbt, account).then((tx) => setTx(tx));
+        void WasmTransactionDetails.fromPsbt(psbt, account).then((tx) => setTx(tx));
     }, [account, psbt]);
 
     return (
