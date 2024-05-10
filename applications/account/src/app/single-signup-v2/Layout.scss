@@ -77,7 +77,14 @@
 	}
 
 	&-offer-banner {
-		background: rgb(109 74 255 / 0.3);
+		background: linear-gradient(81.4deg, var(--promotion-background-start) 0%, var(--promotion-background-end) 100%),
+			var(--background-norm);
+		color: var(--primary);
+
+		@at-root .ui-prominent & {
+			background: rgb(109 74 255 / 0.3);
+			color: var(--text-norm);
+		}
 	}
 }
 

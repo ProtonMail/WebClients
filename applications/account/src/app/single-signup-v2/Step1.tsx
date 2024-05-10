@@ -462,12 +462,7 @@ const Step1 = ({
                 {(() => {
                     const wrap = (iconName: IconName, textLaunchOffer: ReactNode) => {
                         return (
-                            <div
-                                className={clsx(
-                                    'signup-v2-offer-banner py-2 px-4 rounded-lg md:text-lg inline-flex flex-nowrap mt-4',
-                                    !theme.dark && 'color-primary'
-                                )}
-                            >
+                            <div className="signup-v2-offer-banner py-2 px-4 rounded-lg md:text-lg inline-flex flex-nowrap mt-4">
                                 <Icon name={iconName} size={3.5} className="shrink-0 mt-1" />
                                 <span className="ml-2 flex-1">{textLaunchOffer}</span>
                             </div>
@@ -491,6 +486,22 @@ const Step1 = ({
                     if (options.plan?.Name === PLANS.NEW_VISIONARY) {
                         const textLaunchOffer = c('mail_signup_2023: Info').t`Limited time offer`;
                         return wrap('hourglass', textLaunchOffer);
+                    }
+
+                    if (
+                        options.plan?.Name === PLANS.DRIVE &&
+                        options.checkResult.Coupon?.Code === COUPON_CODES.TRYDRIVEPLUS2024
+                    ) {
+                        const title = options.plan.Title;
+                        const price = (
+                            <strong key="price">
+                                {getSimplePriceString(options.currency, checkout.withDiscountPerMonth, '')}
+                            </strong>
+                        );
+                        return wrap(
+                            'hourglass',
+                            c('pass_signup_2023: Info').jt`Limited time offer: ${title} for ${price} for the 1st month`
+                        );
                     }
 
                     if (!hasPlanSelector || model.upsell.mode === UpsellTypes.UPSELL) {
