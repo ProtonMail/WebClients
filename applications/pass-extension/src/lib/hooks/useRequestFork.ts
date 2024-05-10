@@ -15,7 +15,7 @@ import { usePermissionsGranted } from './usePermissionsGranted';
  * have access to the tabs API - Firefox content-scripts have
  * very limited support for the tabs API */
 export const useRequestFork = () => async (forkType?: FORK_TYPE, replace?: boolean) => {
-    const { url } = requestFork({ host: SSO_URL, forkType, app: APPS.PROTONEXTENSION });
+    const { url } = requestFork({ host: SSO_URL, forkType, app: APPS.PROTONPASSBROWSEREXTENSION });
 
     if (replace) return window.location.replace(url);
     return browser.tabs ? browser.tabs.create({ url }).catch(noop) : window.open(url, '_BLANK');
