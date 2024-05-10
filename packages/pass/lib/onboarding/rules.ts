@@ -2,11 +2,12 @@ import type { Store } from 'redux';
 
 import { ITEM_COUNT_RATING_PROMPT, PASS_BF_2023_DATES } from '@proton/pass/constants';
 import { api } from '@proton/pass/lib/api/api';
+import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import {
     selectCreatedItemsCount,
     selectFeatureFlag,
-    selectHasRegisteredLock,
+    selectLockMode,
     selectPassPlan,
     selectUserState,
 } from '@proton/pass/store/selectors';
@@ -98,10 +99,10 @@ export const createSecurityRule = (store: Store<State>) =>
              * message was not previously acknowledged AND user has
              * installed at least one day ago */
             const now = getEpoch();
-            const hasLock = selectHasRegisteredLock(store.getState());
+            const lockMode = selectLockMode(store.getState());
             const shouldPrompt = !previous && now - installedOn > UNIX_DAY;
 
-            return !hasLock && shouldPrompt;
+            return lockMode !== LockMode.SESSION && shouldPrompt;
         },
     });
 
