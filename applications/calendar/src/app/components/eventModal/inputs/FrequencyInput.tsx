@@ -49,7 +49,7 @@ const FrequencyInput = ({ value, frequencyInputType = 'select', onChange, ...res
                     onClick={handleClick}
                     {...rest}
                 >
-                    {selectedOption?.text} <Icon name="arrows-rotate" />
+                    <span>{selectedOption?.text}</span> <Icon name="arrows-rotate" />
                 </DropdownButton>
                 <Dropdown autoClose autoCloseOutside isOpen={isOpen} anchorRef={anchorRef} onClose={close}>
                     {frequencies.map(({ value, text }) => (
