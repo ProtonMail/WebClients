@@ -5,7 +5,6 @@ import * as bootstrap from '@proton/account/bootstrap';
 import {
     AuthenticationProvider,
     CacheProvider,
-    CompatibilityCheck,
     ConfigProvider,
     CreateNotificationOptions,
     ErrorBoundary,
@@ -123,47 +122,45 @@ const App = () => {
     return (
         <ProtonStoreProvider store={store}>
             <ConfigProvider config={config}>
-                <CompatibilityCheck>
-                    <Icons />
-                    <RightToLeftProvider>
-                        <Fragment key={UID}>
-                            <ThemeProvider appName={config.APP_NAME}>
-                                <BrowserRouter>
-                                    <PreventLeaveProvider>
-                                        <NotificationsProvider>
-                                            <NotificationsHijack
-                                                onCreate={
-                                                    redirect || action === SupportedActions.SubscribeAccountLink
-                                                        ? undefined
-                                                        : handleNotificationCreate
-                                                }
-                                            >
-                                                <ModalsProvider>
-                                                    <AuthenticationProvider store={authenticationValue}>
-                                                        <CacheProvider cache={cache}>
-                                                            <ErrorBoundary big component={<StandardErrorPage big />}>
-                                                                {isLogout ? null : (
-                                                                    <Setup api={api} UID={UID} onLogin={handleLogin}>
-                                                                        <MainContainer
-                                                                            action={action}
-                                                                            redirect={redirect}
-                                                                            app={app}
-                                                                            searchParams={searchParams}
-                                                                        />
-                                                                    </Setup>
-                                                                )}
-                                                            </ErrorBoundary>
-                                                        </CacheProvider>
-                                                    </AuthenticationProvider>
-                                                </ModalsProvider>
-                                            </NotificationsHijack>
-                                        </NotificationsProvider>
-                                    </PreventLeaveProvider>
-                                </BrowserRouter>
-                            </ThemeProvider>
-                        </Fragment>
-                    </RightToLeftProvider>
-                </CompatibilityCheck>
+                <Icons />
+                <RightToLeftProvider>
+                    <Fragment key={UID}>
+                        <ThemeProvider appName={config.APP_NAME}>
+                            <BrowserRouter>
+                                <PreventLeaveProvider>
+                                    <NotificationsProvider>
+                                        <NotificationsHijack
+                                            onCreate={
+                                                redirect || action === SupportedActions.SubscribeAccountLink
+                                                    ? undefined
+                                                    : handleNotificationCreate
+                                            }
+                                        >
+                                            <ModalsProvider>
+                                                <AuthenticationProvider store={authenticationValue}>
+                                                    <CacheProvider cache={cache}>
+                                                        <ErrorBoundary big component={<StandardErrorPage big />}>
+                                                            {isLogout ? null : (
+                                                                <Setup api={api} UID={UID} onLogin={handleLogin}>
+                                                                    <MainContainer
+                                                                        action={action}
+                                                                        redirect={redirect}
+                                                                        app={app}
+                                                                        searchParams={searchParams}
+                                                                    />
+                                                                </Setup>
+                                                            )}
+                                                        </ErrorBoundary>
+                                                    </CacheProvider>
+                                                </AuthenticationProvider>
+                                            </ModalsProvider>
+                                        </NotificationsHijack>
+                                    </NotificationsProvider>
+                                </PreventLeaveProvider>
+                            </BrowserRouter>
+                        </ThemeProvider>
+                    </Fragment>
+                </RightToLeftProvider>
             </ConfigProvider>
         </ProtonStoreProvider>
     );
