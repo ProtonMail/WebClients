@@ -12,7 +12,7 @@ import {
     getStyle,
     toCamelCase,
 } from '@proton/components/containers/credentialLeak/helpers';
-import { BREACH_STATE, FetchedBreaches } from '@proton/components/containers/credentialLeak/models';
+import { BREACH_STATE, FetchedBreaches, SampleBreach } from '@proton/components/containers/credentialLeak/models';
 import { useBreaches } from '@proton/components/containers/credentialLeak/useBreaches';
 import { useApi, useErrorHandler, useNotifications, useUser, useUserSettings } from '@proton/components/hooks';
 import { useLoading } from '@proton/hooks';
@@ -50,17 +50,28 @@ const BreachAlertsSecurityCenter = () => {
     const api = useApi();
     const [selectedBreachID, setSelectedBreachID] = useState<string | null>(null);
     const [hasAlertsEnabled, setHasAlertsEnabled] = useState<boolean>(userSettings.BreachAlerts.Value === 1);
+    const [sample, setSample] = useState<SampleBreach | null>(null);
+    // upsellCount is the Count returned from reponse that represents the number of breaches a free user has
+    const [upsellCount, setUpsellCount] = useState<number | null>(null);
     const breachAlertModal = useModalStateObject();
 
+    // can delete with update to API, double check
     const breaches = allBreaches.filter((b) => b.resolvedState !== BREACH_STATE.RESOLVED).slice(0, BREACHES_LIMIT);
     const count = breaches.length;
 
     useEffect(() => {
         const fetchLeakData = async () => {
             try {
-                const { Breaches } = await api(getBreaches(true));
-                const fetchedData = toCamelCase(Breaches);
-                actions.load(fetchedData);
+                const { Breaches, Samples, IsEligible, Count } = await api(getBreaches(true));
+
+                if (IsEligible) {
+                    const fetchedData = toCamelCase(Breaches);
+                    actions.load(fetchedData);
+                } else {
+                    const fetchedSample = toCamelCase(Samples);
+                    setSample(fetchedSample[0]);
+                    setUpsellCount(Count);
+                }
             } catch (e) {
                 const { message, code } = getApiError(e);
                 if (code === BREACH_API_ERROR.GENERIC) {
@@ -153,7 +164,9 @@ const BreachAlertsSecurityCenter = () => {
                         return (
                             <FreeUserBreachToggle
                                 onToggleBreaches={handleToggleOpenSubscriptionModal}
-                                hasBreach={count ? count > 0 : false}
+                                hasBreach={upsellCount ? upsellCount > 0 : false}
+                                sample={sample}
+                                count={upsellCount}
                             />
                         );
                     }

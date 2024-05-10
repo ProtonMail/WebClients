@@ -47,8 +47,8 @@ import BreachModal from './BreachModal';
 import BreachesList from './BreachesList';
 import EmptyBreachListCard from './EmptyBreachListCard';
 import NoBreachesView from './NoBreachesView';
-import { BREACH_API_ERROR, getEnableString, toCamelCase } from './helpers';
-import { BREACH_STATE, ListType } from './models';
+import { BREACH_API_ERROR, getEnableString, getUpsellText, toCamelCase } from './helpers';
+import { BREACH_STATE, ListType, SampleBreach } from './models';
 import { useBreaches } from './useBreaches';
 
 const LIST_STATES_MAP: Record<ListType, BREACH_STATE[]> = {
@@ -75,6 +75,8 @@ const CredentialLeakSection = () => {
     const [total, setTotal] = useState<number | null>(null);
     const [error, setError] = useState<{ message: string } | null>(null);
     const [openModal, setOpenModal] = useState<boolean>(false);
+    const [sample, setSample] = useState<SampleBreach | null>(null);
+
     // TODO: change nums to constants
     const [hasAlertsEnabled, setHasAlertsEnabled] = useState<boolean>(
         userSettings.BreachAlerts.Eligible === 1 && userSettings.BreachAlerts.Value === 1
@@ -95,7 +97,7 @@ const CredentialLeakSection = () => {
                     actions.load(breaches);
                 } else {
                     const fetchedSample = toCamelCase(Samples);
-                    actions.load(fetchedSample);
+                    setSample(fetchedSample[0]);
                 }
                 setTotal(Count);
             } catch (e) {
@@ -121,6 +123,7 @@ const CredentialLeakSection = () => {
         handleBreachModal();
     }, [loading, openModal, viewportWidth]);
 
+    // TODO: if BE api returns read and opened breaches, can remove filter
     const viewingBreachList = breachList.filter((breach) => LIST_STATES_MAP[listType].includes(breach.resolvedState));
     const viewingBreach = viewingBreachList.find((b) => b.id === selectedBreachID) ?? viewingBreachList[0];
 
@@ -271,11 +274,7 @@ const CredentialLeakSection = () => {
                                                     className="shrink-0 mt-0.5 mr-2"
                                                 />
                                                 <span className="flex-1">
-                                                    {
-                                                        // translator: full sentence is: Your information was found in at least one data breach. Turn on Dark Web Monitoring to view details and take action. <Learn more>
-                                                        c('Security Center - Info')
-                                                            .jt`Your information was found in at least one data breach. Turn on ${DARK_WEB_MONITORING_NAME} to view details and take action. ${learnMoreLinkBreach}`
-                                                    }
+                                                    {getUpsellText(sample, total, learnMoreLinkBreach, true)}
                                                 </span>
                                             </div>
                                         </SettingsParagraph>
