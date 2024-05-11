@@ -29,6 +29,8 @@ const result = (env: any): webpack.Configuration => {
             if (typeof chunkFilename === 'function') return chunkFilename(pathData, assetInfo);
             return chunkFilename ?? '[id].js';
         };
+
+        config.output.webassemblyModuleFilename = 'assets/[hash].wasm';
     }
 
     if (config.plugins) {
