@@ -30,11 +30,11 @@ export const BitcoinAmountInputWithBalanceAndCurrencySelect = ({
     onAmountChange,
     onSendAll,
 }: Props) => {
+    const price = <Price key={'available-amount'} satsAmount={remainingBalance} unit={unit} />;
     return (
         <div className="mt-12 mb-4">
             <div className="flex flex-row items-center">
-                <span className="block color-hint">{c('Wallet send')
-                    .jt`${(<Price key={'available-amount'} satsAmount={remainingBalance} unit={unit} />)} available`}</span>
+                <span className="block color-hint">{c('Wallet send').jt`${price} available`}</span>
 
                 {onSendAll && (
                     <CoreButton

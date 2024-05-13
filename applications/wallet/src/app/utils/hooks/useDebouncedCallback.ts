@@ -19,6 +19,7 @@ function useDebouncedCallback<T extends (...args: any[]) => any>(fn: T, wait = 5
         return () => {
             debounced.cancel();
         };
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return debounced;

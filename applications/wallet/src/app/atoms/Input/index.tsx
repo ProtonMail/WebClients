@@ -1,16 +1,12 @@
 import { ElementType } from 'react';
 import { CSSProperties } from 'react';
 
-import {
-    InputField as CoreInput,
-    InputFieldOwnProps,
-    InputFieldProps,
-} from '@proton/components/components/v2/field/InputField';
+import { InputField as CoreInput, InputFieldProps } from '@proton/components/components/v2/field/InputField';
 import clsx from '@proton/utils/clsx';
 
 import './Input.scss';
 
-export { CoreInput, InputFieldOwnProps };
+export { CoreInput };
 
 export type InputProps<E extends ElementType = typeof CoreInput> = Omit<
     InputFieldProps<E>,
