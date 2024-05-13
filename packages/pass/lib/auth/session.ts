@@ -59,7 +59,14 @@ export const SESSION_KEYS: (keyof AuthSession)[] = [
 ];
 
 export const isValidSession = (data: Partial<AuthSession>): data is AuthSession =>
-    Boolean(data.AccessToken && data.RefreshToken && data.UID && data.UserID && data.keyPassword);
+    Boolean(
+        data.AccessToken &&
+            data.RefreshToken &&
+            data.UID &&
+            data.UserID &&
+            data.keyPassword &&
+            (!data.offlineConfig || data.offlineKD)
+    );
 
 export const isValidPersistedSession = (data: any): data is EncryptedAuthSession =>
     isObject(data) &&

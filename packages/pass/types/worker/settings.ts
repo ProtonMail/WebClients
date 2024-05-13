@@ -9,6 +9,8 @@ export type CriteriaMask = number;
 export type CriteriaMasks = keyof typeof CRITERIA_MASKS;
 export type DomainCriterias = Record<string, CriteriaMask>;
 
+export type OfflineModeDTO = { loginPassword: string; enabled: boolean };
+
 export const CRITERIA_MASKS = {
     Autofill: 1 << 0,
     Autofill2FA: 1 << 1,

@@ -37,8 +37,8 @@ export const wakeupSuccess = createAction(
     withRequestSuccess((receiver: EndpointOptions) => withReceiver(receiver)({ payload: {} }))
 );
 
-export const bootIntent = createAction('boot::intent', () =>
-    withRequest({ id: bootRequest(), status: 'start' })({ payload: {} })
+export const bootIntent = createAction('boot::intent', (payload?: { offline: boolean }) =>
+    withRequest({ id: bootRequest(), status: 'start' })({ payload })
 );
 
 export const bootFailure = createAction('boot::failure', (error?: unknown) =>
