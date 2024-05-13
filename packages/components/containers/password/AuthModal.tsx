@@ -303,7 +303,7 @@ const AuthModal = ({
 
                         {onRecoveryClick && (
                             <Button shape="underline" color="norm" onClick={onRecoveryClick}>
-                                {c('Action').t`Don't know your password?`}
+                                {c('Action').t`Forgot password?`}
                             </Button>
                         )}
                     </>
