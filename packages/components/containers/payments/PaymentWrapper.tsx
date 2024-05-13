@@ -1,4 +1,4 @@
-import { usePaymentFacade } from '@proton/components/payments/client-extensions';
+import { ThemeCode, usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
 
 import { useAuthentication } from '../../hooks';
@@ -16,6 +16,7 @@ export type Props = ReturnType<typeof usePaymentFacade> & {
     isAuthenticated?: boolean;
     defaultMethod?: PAYMENT_METHOD_TYPES;
     hasSomeVpnPlan: boolean;
+    themeCode: ThemeCode;
 };
 
 const PaymentWrapper = ({
@@ -42,6 +43,7 @@ const PaymentWrapper = ({
     chargebeePaypal,
     hasSomeVpnPlan,
     paymentComponentLoaded,
+    themeCode,
 }: Props) => {
     const { UID } = useAuthentication();
     const isAuthenticated = !!UID || !!isAuthenticatedProp;
@@ -80,6 +82,7 @@ const PaymentWrapper = ({
             chargebeePaypal={chargebeePaypal}
             hasSomeVpnPlan={hasSomeVpnPlan}
             paymentComponentLoaded={paymentComponentLoaded}
+            themeCode={themeCode}
         />
     );
 };
