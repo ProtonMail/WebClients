@@ -24,6 +24,7 @@ import { useApi, useEventManager } from '../../hooks';
 interface Props extends ModalProps {
     organization: Organization;
 }
+
 const OrganizationNameModal = ({ onClose, organization, ...rest }: Props) => {
     const api = useApi();
     const { call } = useEventManager();
@@ -56,6 +57,7 @@ const OrganizationNameModal = ({ onClose, organization, ...rest }: Props) => {
                 void withLoading(handleSubmit());
             }}
             onClose={handleClose}
+            size="small"
             {...rest}
         >
             <ModalHeader title={header} />

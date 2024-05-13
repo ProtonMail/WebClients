@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { CryptoProxy, PrivateKeyReference, PublicKeyReference, SessionKey, VERIFICATION_STATUS } from '@proton/crypto';
 import { arrayToHexString } from '@proton/crypto/lib/utils';
+import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { getAndVerifyApiKeys } from '@proton/shared/lib/api/helpers/getAndVerifyApiKeys';
 import { decryptKeyPacket, encryptAndSignKeyPacket } from '@proton/shared/lib/keys/keypacket';
 import { computeKeyPassword, generateKeySalt } from '@proton/srp';
@@ -25,6 +26,7 @@ import { decryptMemberToken, encryptMemberToken, generateMemberToken } from './m
 
 export const SIGNATURE_CONTEXT = {
     SHARE_ORGANIZATION_KEY_TOKEN: 'account.key-token.organization',
+    ORG_KEY_FINGERPRINT_SIGNATURE_CONTEXT: 'account.organization-fingerprint',
 };
 
 export const getBackupKeyData = async ({
@@ -480,4 +482,96 @@ export const generatePublicMemberInvitation = async ({
         TokenKeyPacket: result.keyPacket,
         Signature: result.signature,
     };
+};
+
+export const generateOrganizationKeySignature = async ({
+    signingKeys,
+    organizationKey,
+}: {
+    signingKeys: PrivateKeyReference;
+    organizationKey: PrivateKeyReference;
+}) => {
+    const [fingerprint] = await CryptoProxy.getSHA256Fingerprints({ key: organizationKey });
+    const signature = await CryptoProxy.signMessage({
+        signingKeys,
+        detached: true,
+        textData: fingerprint,
+        context: { value: SIGNATURE_CONTEXT.ORG_KEY_FINGERPRINT_SIGNATURE_CONTEXT, critical: true },
+    });
+    return signature;
+};
+
+export const validateOrganizationKeySignature = async ({
+    armoredSignature,
+    verificationKeys,
+    organizationKey,
+}: {
+    armoredSignature: string;
+    verificationKeys: PublicKeyReference[];
+    organizationKey: PrivateKeyReference;
+}) => {
+    const [fingerprint] = await CryptoProxy.getSHA256Fingerprints({ key: organizationKey });
+    const result = await CryptoProxy.verifyMessage({
+        armoredSignature,
+        textData: fingerprint,
+        verificationKeys,
+        context: { value: SIGNATURE_CONTEXT.ORG_KEY_FINGERPRINT_SIGNATURE_CONTEXT, required: true },
+    });
+
+    if (result.verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
+        const error = new Error(c('Error').t`Signature verification failed`);
+        error.name = 'SignatureError';
+        throw error;
+    }
+};
+
+export enum OrganizationSignatureState {
+    publicKeys,
+    valid,
+    error,
+}
+
+export const validateOrganizationSignatureHelper = async ({
+    email,
+    privateKey,
+    armoredSignature,
+    verifyOutboundPublicKeys,
+    api,
+}: {
+    email: string;
+    privateKey: PrivateKeyReference;
+    armoredSignature: string;
+    verifyOutboundPublicKeys: VerifyOutboundPublicKeys;
+    api: Api;
+}) => {
+    const silentApi = getSilentApi(api);
+
+    const adminEmailPublicKeys = (
+        await getVerifiedPublicKeys({
+            api: silentApi,
+            email,
+            verifyOutboundPublicKeys,
+        })
+    ).map(({ publicKey }) => publicKey);
+
+    if (!adminEmailPublicKeys.length) {
+        return {
+            state: OrganizationSignatureState.publicKeys,
+        };
+    }
+
+    try {
+        await validateOrganizationKeySignature({
+            verificationKeys: adminEmailPublicKeys,
+            organizationKey: privateKey,
+            armoredSignature,
+        });
+        return {
+            state: OrganizationSignatureState.valid,
+        };
+    } catch (e) {
+        return {
+            state: OrganizationSignatureState.error,
+        };
+    }
 };
