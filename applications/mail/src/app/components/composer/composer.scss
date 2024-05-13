@@ -306,6 +306,12 @@
 		&.select--inline-caret > svg {
 			display: none;
 		}
+
+		@include media('<=small') {
+			.input-element {
+				padding-inline-start: 0;
+			}
+		}
 	}
 
 	// remove left padding on mobile to align properly everything
