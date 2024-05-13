@@ -197,6 +197,7 @@ export interface SignupCacheResult {
     trusted: boolean;
     clientType: CLIENT_TYPES;
     ignoreExplore: boolean;
+    humanVerificationInline?: boolean;
     humanVerificationData?: HumanVerificationData;
     humanVerificationResult?: {
         tokenType: HumanVerificationMethodType;
