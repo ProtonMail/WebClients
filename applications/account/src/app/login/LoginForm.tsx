@@ -499,7 +499,7 @@ const LoginForm = ({
                                                 className="dropdown-item-link w-full px-4 py-2 flex items-center text-no-decoration text-left"
                                             >
                                                 <Icon name="key" className="mr-2" />
-                                                {c('Link').t`Reset password`}
+                                                {c('Link').t`Forgot password?`}
                                             </Link>
                                             <Link
                                                 to={paths.forgotUsername}
