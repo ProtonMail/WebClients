@@ -60,6 +60,9 @@ const eventLoopEvent = createAction('server event', (payload: WalletEventLoop) =
 
 export const walletCreation = createAction('wallet creation', (payload: IWasmApiWalletData) => ({ payload }));
 export const walletDeletion = createAction('wallet deletion', (payload: { walletID: string }) => ({ payload }));
+export const walletNameUpdate = createAction('wallet name update', (payload: { walletID: string; name: string }) => ({
+    payload,
+}));
 // TODO: handle wallet update
 
 export const walletAccountCreation = createAction(
@@ -110,6 +113,17 @@ const slice = createSlice({
                     state.value = state.value.filter((data) => data.Wallet.ID !== action.payload.walletID);
                 }
             })
+            .addCase(walletNameUpdate, (state, action) => {
+                if (state.value) {
+                    state.value = state.value.map((data) => {
+                        if (data.Wallet.ID === action.payload.walletID) {
+                            return { ...data, Wallet: { ...data.Wallet, Name: action.payload.name } };
+                        }
+
+                        return data;
+                    });
+                }
+            })
             .addCase(walletAccountCreation, (state, action) => {
                 if (state.value) {
                     const walletIndex = state.value.findIndex((data) => data.Wallet.ID === action.payload.walletID);
@@ -130,16 +144,6 @@ const slice = createSlice({
                         (data) => data.ID === action.payload.account.ID
                     );
 
-                    console.log(
-                        replaceAt(state.value, walletIndex, {
-                            ...walletAtIndex,
-                            WalletAccounts: replaceAt(
-                                walletAtIndex.WalletAccounts,
-                                walletAccountIndex,
-                                action.payload.account
-                            ),
-                        })
-                    );
                     state.value = replaceAt(state.value, walletIndex, {
                         ...walletAtIndex,
                         WalletAccounts: replaceAt(

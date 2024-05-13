@@ -1,0 +1,54 @@
+:root,
+.ui-standard {
+    --primary: #767dff;
+    --primary-contrast: #191927;
+
+    --signal-danger: #ff6464;
+    --signal-warning: #ff7a00;
+    --signal-success: #6ac06b;
+    --signal-info: #767dff;
+
+    --text-norm: #191c32;
+    --text-weak: #535964;
+    --text-hint: #9395a4;
+    --text-disabled: #ced0de;
+    --text-invert: #ffffff;
+
+    --border-weak: #f3f5f6;
+    --border-norm: #e6e8ec;
+    --border-strong: #e2e2e2;
+
+    --background-norm: #f3f5f6;
+    --background-weak: #ffffff;
+    --background-strong: #e6e8ec;
+    --background-invert: #191927;
+
+    --interaction-norm-minor-1: #8b8df9;
+    --interaction-norm: #767dff;
+    --interaction-norm-contrast: #191927;
+
+    --interaction-weak-minor-1: #e6e8ec;
+    --interaction-weak: #ffffff;
+    --interaction-weak-contrast: #191927;
+
+    --interaction-norm-hover: var(--interaction-norm-major-1);
+    --interaction-norm-active: var(--interaction-norm-major-2);
+    --interaction-weak-hover: var(--interaction-weak-major-1);
+    --interaction-weak-active: var(--interaction-weak-major-2);
+    
+    --interaction-default: transparent;
+    --interaction-default-hover: rgb(191 181 233 / 0.2);
+    --interaction-default-active: rgb(191 181 233 / 0.35);
+
+    --shadow-norm-opacity: 0.32;
+    --shadow-raised-opacity: 0.35;
+    --shadow-lifted-opacity: 0.4;
+
+    --backdrop-norm: rgb(0 0 0 / 0.5);
+
+    --font-weight-weak: 400;
+    --font-weight-normal: 500;
+
+    --focus-outline: var(--interaction-norm-major-2);
+    --focus-ring: var(--interaction-norm-minor-1);
+}

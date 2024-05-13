@@ -1,0 +1,28 @@
+.sidebar-wallet-link-container:has([aria-current='page'].navigation-link) {
+	border-left: 4px solid var(--interaction-norm);
+
+	.navigation-link {
+		background: var(--background-weak);
+		color: var(--interaction-norm);
+	}
+}
+
+.wallet-icon {
+	color: var(--interaction-norm);
+}
+
+.wallet-account-list-item:has([aria-current='page'].navigation-link) {
+	.navigation-link {
+		background: var(--background-weak);
+		color: var(--interaction-norm);
+	}
+}
+
+.disabled-sidebar-link,
+.disabled-sidebar-link * {
+	background: var(--background-norm) !important;
+	border: 0 solid transparent !important;
+	color: var(--text-disabled) !important;
+	outline: none !important;
+	cursor: not-allowed !important;
+}

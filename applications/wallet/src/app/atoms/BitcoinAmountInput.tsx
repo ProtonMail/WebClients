@@ -1,37 +1,20 @@
-import { ChangeEvent, useEffect, useState } from 'react';
-
-import { uniq } from 'lodash';
-import { c } from 'ttag';
+import { ChangeEvent } from 'react';
 
 import { WasmApiExchangeRate, WasmBitcoinUnit } from '@proton/andromeda';
-import { Button } from '@proton/atoms/Button/Button';
-import { Input } from '@proton/atoms/Input/Input';
-import Option from '@proton/components/components/option/Option';
-import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
-import { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
-import isTruthy from '@proton/utils/isTruthy';
+import type { InputProps } from '@proton/atoms/Input/Input';
 
 import { BITCOIN, mBITCOIN } from '../constants';
 import { convertAmount } from '../utils';
+import { CoreInput, InputFieldOwnProps } from './Input';
 
-interface Props {
+interface Props extends InputFieldOwnProps, InputProps {
     /**
      * Bitcoin amount in satoshis (1 BTC = 100_000_000 SAT)
      */
     value: number;
-    onValueChange: (value: number) => void;
+    onValueChange?: (value: number) => void;
 
-    'data-testid'?: string;
-    placeholder?: string;
-    title?: string;
-    min?: number;
-    disabled?: boolean;
-    suffix?: string;
-
-    allowedUnits?: WasmBitcoinUnit[];
-    exchangeRates?: WasmApiExchangeRate[];
-
-    onMaxValue?: () => void;
+    unit: WasmBitcoinUnit | WasmApiExchangeRate;
 }
 
 const getStepByUnit = (unit: WasmBitcoinUnit | WasmApiExchangeRate) => {
@@ -52,83 +35,35 @@ const getStepByUnit = (unit: WasmBitcoinUnit | WasmApiExchangeRate) => {
 export const BitcoinAmountInput = ({
     value,
     onValueChange,
-    onMaxValue,
 
-    allowedUnits = ['BTC', 'MBTC', 'SATS'],
-    exchangeRates,
-
-    ['data-testid']: dataTestId = 'recipient-amount-input',
-    placeholder = c('Wallet').t`Amount`,
-    title = c('Wallet').t`Amount`,
+    unit,
     min = 0,
-    disabled,
+    dense = true,
+
+    inputClassName,
+    ...inputProps
 }: Props) => {
-    const [unit, setUnit] = useState<WasmBitcoinUnit | WasmApiExchangeRate>('SATS');
     const onChange = (event: ChangeEvent<HTMLInputElement>) => {
         const amount = parseFloat(event.target.value);
-        onValueChange(convertAmount(amount, unit, 'SATS'));
+        const safeAmount = Number.isFinite(amount) ? amount : 0;
+        onValueChange?.(convertAmount(safeAmount, unit, 'SATS'));
     };
 
-    useEffect(() => {
-        if (exchangeRates?.[0]) {
-            setUnit(exchangeRates[0]);
-        } else {
-            setUnit('SATS');
-        }
-    }, [exchangeRates]);
-
     const fValue = convertAmount(value, 'SATS', unit);
+    const constrainedMin = Math.max(0, Number(min));
 
     return (
-        <>
-            <div className="w-custom" style={{ '--w-custom': '8rem' }}>
-                <Input
-                    data-testid={dataTestId}
-                    placeholder={placeholder}
-                    title={title}
-                    type="number"
-                    value={fValue}
-                    min={min}
-                    step={getStepByUnit(unit)}
-                    disabled={disabled}
-                    onChange={onChange}
-                />
-            </div>
-
-            {
-                <div className="ml-3 w-custom" style={{ '--w-custom': '5rem' }}>
-                    <SelectTwo
-                        id="currencySelect"
-                        value={unit}
-                        onChange={(e: SelectChangeEvent<WasmBitcoinUnit | WasmApiExchangeRate>) => setUnit(e.value)}
-                        aria-describedby="currencySelect"
-                        data-testid="currency-select"
-                        disabled={disabled}
-                        className="text-sm"
-                    >
-                        {[...(exchangeRates ?? []), ...uniq(allowedUnits)].filter(isTruthy).map((unitB) => {
-                            const value = typeof unitB === 'object' ? unitB.FiatCurrency : unitB;
-
-                            return (
-                                <Option
-                                    key={value}
-                                    data-testid={`${value}-amount-input-unit-button`}
-                                    value={unitB}
-                                    title={value}
-                                    className="text-sm"
-                                >
-                                    {value}
-                                </Option>
-                            );
-                        })}
-                    </SelectTwo>
-                </div>
-            }
-
-            {onMaxValue && (
-                <Button className="ml-3" shape="underline" color="norm" onClick={() => onMaxValue()}>{c('Wallet Send')
-                    .t`Maximum amount`}</Button>
-            )}
-        </>
+        <CoreInput
+            dense={dense}
+            type="number"
+            value={fValue}
+            min={constrainedMin}
+            step={getStepByUnit(unit)}
+            onChange={onChange}
+            className="invisible-number-input-arrow"
+            inputClassName={inputClassName}
+            readOnly={!onValueChange}
+            {...inputProps}
+        />
     );
 };

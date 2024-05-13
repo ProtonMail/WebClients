@@ -66,7 +66,7 @@ export const walletChainDataByWalletId: WalletChainDataByWalletId = {
         accounts: {
             [apiWalletAccountOneA.ID]: {
                 account: getMockedWasmAccount({
-                    getBalance: vi.fn(() =>
+                    getBalance: vi.fn(async () =>
                         freeable({
                             confirmed: BigInt(100067),
                             immature: BigInt(0),
@@ -74,18 +74,17 @@ export const walletChainDataByWalletId: WalletChainDataByWalletId = {
                             untrusted_pending: BigInt(0),
                         })
                     ),
-                    getTransactions: vi.fn(() =>
+                    getTransactions: vi.fn(async () =>
                         freeable({ 0: simpleTransactions.slice(0, 4).map((d) => freeable({ Data: d })) })
                     ),
-                    getUtxos: vi.fn(() => freeable({ 0: [] })),
+                    getUtxos: vi.fn(async () => freeable({ 0: [] })),
                 }),
                 scriptType: 2,
-                syncId: '1',
                 derivationPath: "m/84'/1'/0'",
             },
             [apiWalletAccountOneB.ID]: {
                 account: getMockedWasmAccount({
-                    getBalance: vi.fn(() =>
+                    getBalance: vi.fn(async () =>
                         freeable({
                             confirmed: BigInt(11783999),
                             immature: BigInt(0),
@@ -93,13 +92,12 @@ export const walletChainDataByWalletId: WalletChainDataByWalletId = {
                             untrusted_pending: BigInt(0),
                         })
                     ),
-                    getTransactions: vi.fn(() =>
+                    getTransactions: vi.fn(async () =>
                         freeable({ 0: simpleTransactions.slice(4, 8).map((d) => freeable({ Data: d })) })
                     ),
-                    getUtxos: vi.fn(() => freeable({ 0: [] })),
+                    getUtxos: vi.fn(async () => freeable({ 0: [] })),
                 }),
                 scriptType: 2,
-                syncId: '1',
                 derivationPath: "m/84'/1'/0'",
             },
         },
@@ -109,7 +107,7 @@ export const walletChainDataByWalletId: WalletChainDataByWalletId = {
         accounts: {
             [apiWalletAccountTwoA.ID]: {
                 account: getMockedWasmAccount({
-                    getBalance: vi.fn(() =>
+                    getBalance: vi.fn(async () =>
                         freeable({
                             confirmed: BigInt(8287263),
                             immature: BigInt(0),
@@ -117,18 +115,17 @@ export const walletChainDataByWalletId: WalletChainDataByWalletId = {
                             untrusted_pending: BigInt(0),
                         })
                     ),
-                    getTransactions: vi.fn(() =>
+                    getTransactions: vi.fn(async () =>
                         freeable({ 0: simpleTransactions.slice(8, 12).map((d) => freeable({ Data: d })) })
                     ),
-                    getUtxos: vi.fn(() => freeable({ 0: [] })),
+                    getUtxos: vi.fn(async () => freeable({ 0: [] })),
                 }),
                 scriptType: 2,
-                syncId: '1',
                 derivationPath: "m/84'/1'/0'",
             },
             [apiWalletAccountTwoB.ID]: {
                 account: getMockedWasmAccount({
-                    getBalance: vi.fn(() =>
+                    getBalance: vi.fn(async () =>
                         freeable({
                             confirmed: BigInt(97536),
                             immature: BigInt(0),
@@ -136,13 +133,12 @@ export const walletChainDataByWalletId: WalletChainDataByWalletId = {
                             untrusted_pending: BigInt(0),
                         })
                     ),
-                    getTransactions: vi.fn(() =>
+                    getTransactions: vi.fn(async () =>
                         freeable({ 0: simpleTransactions.slice(12, 16).map((d) => freeable({ Data: d })) })
                     ),
-                    getUtxos: vi.fn(() => freeable({ 0: [] })),
+                    getUtxos: vi.fn(async () => freeable({ 0: [] })),
                 }),
                 scriptType: 2,
-                syncId: '1',
                 derivationPath: "m/84'/1'/0'",
             },
         },
@@ -152,7 +148,7 @@ export const walletChainDataByWalletId: WalletChainDataByWalletId = {
         accounts: {
             [apiWalletAccountThree.ID]: {
                 account: getMockedWasmAccount({
-                    getBalance: vi.fn(() =>
+                    getBalance: vi.fn(async () =>
                         freeable({
                             confirmed: BigInt(2612374),
                             immature: BigInt(0),
@@ -160,13 +156,12 @@ export const walletChainDataByWalletId: WalletChainDataByWalletId = {
                             untrusted_pending: BigInt(0),
                         })
                     ),
-                    getTransactions: vi.fn(() =>
+                    getTransactions: vi.fn(async () =>
                         freeable({ 0: simpleTransactions.slice(16, 20).map((d) => freeable({ Data: d })) })
                     ),
-                    getUtxos: vi.fn(() => freeable({ 0: [] })),
+                    getUtxos: vi.fn(async () => freeable({ 0: [] })),
                 }),
                 scriptType: 2,
-                syncId: '1',
                 derivationPath: "m/84'/1'/0'",
             },
         },
@@ -179,7 +174,7 @@ export const walletChainDataByWalletId: WalletChainDataByWalletId = {
 export const mockedWalletChainDataByWalletId: WalletChainDataByWalletId = {
     [apiWalletsData[0].Wallet.ID]: {
         wallet: getMockedWallet({
-            getBalance: vi.fn(() =>
+            getBalance: vi.fn(async () =>
                 freeable({
                     confirmed: BigInt(100067 + 11783999),
                     immature: BigInt(0),
@@ -187,14 +182,14 @@ export const mockedWalletChainDataByWalletId: WalletChainDataByWalletId = {
                     untrusted_pending: BigInt(0),
                 })
             ),
-            getTransactions: vi.fn(() =>
+            getTransactions: vi.fn(async () =>
                 freeable({ 0: simpleTransactions.slice(0, 8).map((d) => freeable({ Data: d })) })
             ),
         }),
         accounts: {
             [apiWalletAccountOneA.ID]: {
                 account: getMockedWasmAccount({
-                    getBalance: vi.fn(() =>
+                    getBalance: vi.fn(async () =>
                         freeable({
                             confirmed: BigInt(100067),
                             immature: BigInt(0),
@@ -202,18 +197,17 @@ export const mockedWalletChainDataByWalletId: WalletChainDataByWalletId = {
                             untrusted_pending: BigInt(0),
                         })
                     ),
-                    getTransactions: vi.fn(() =>
+                    getTransactions: vi.fn(async () =>
                         freeable({ 0: simpleTransactions.slice(0, 4).map((d) => freeable({ Data: d })) })
                     ),
-                    getUtxos: vi.fn(() => freeable({ 0: [] })),
+                    getUtxos: vi.fn(async () => freeable({ 0: [] })),
                 }),
                 scriptType: 2,
-                syncId: '1',
                 derivationPath: "m/84'/1'/0'",
             },
             [apiWalletAccountOneB.ID]: {
                 account: getMockedWasmAccount({
-                    getBalance: vi.fn(() =>
+                    getBalance: vi.fn(async () =>
                         freeable({
                             confirmed: BigInt(11783999),
                             immature: BigInt(0),
@@ -221,20 +215,19 @@ export const mockedWalletChainDataByWalletId: WalletChainDataByWalletId = {
                             untrusted_pending: BigInt(0),
                         })
                     ),
-                    getTransactions: vi.fn(() =>
+                    getTransactions: vi.fn(async () =>
                         freeable({ 0: simpleTransactions.slice(4, 8).map((d) => freeable({ Data: d })) })
                     ),
-                    getUtxos: vi.fn(() => freeable({ 0: [] })),
+                    getUtxos: vi.fn(async () => freeable({ 0: [] })),
                 }),
                 scriptType: 2,
-                syncId: '1',
                 derivationPath: "m/84'/1'/0'",
             },
         },
     },
     [apiWalletsData[1].Wallet.ID]: {
         wallet: getMockedWallet({
-            getBalance: vi.fn(() =>
+            getBalance: vi.fn(async () =>
                 freeable({
                     confirmed: BigInt(8287263 + 97536),
                     immature: BigInt(0),
@@ -242,14 +235,14 @@ export const mockedWalletChainDataByWalletId: WalletChainDataByWalletId = {
                     untrusted_pending: BigInt(0),
                 })
             ),
-            getTransactions: vi.fn(() =>
+            getTransactions: vi.fn(async () =>
                 freeable({ 0: simpleTransactions.slice(8, 16).map((d) => freeable({ Data: d })) })
             ),
         }),
         accounts: {
             [apiWalletAccountTwoA.ID]: {
                 account: getMockedWasmAccount({
-                    getBalance: vi.fn(() =>
+                    getBalance: vi.fn(async () =>
                         freeable({
                             confirmed: BigInt(8287263),
                             immature: BigInt(0),
@@ -257,18 +250,17 @@ export const mockedWalletChainDataByWalletId: WalletChainDataByWalletId = {
                             untrusted_pending: BigInt(0),
                         })
                     ),
-                    getTransactions: vi.fn(() =>
+                    getTransactions: vi.fn(async () =>
                         freeable({ 0: simpleTransactions.slice(8, 12).map((d) => freeable({ Data: d })) })
                     ),
-                    getUtxos: vi.fn(() => freeable({ 0: [] })),
+                    getUtxos: vi.fn(async () => freeable({ 0: [] })),
                 }),
                 scriptType: 2,
-                syncId: '1',
                 derivationPath: "m/84'/1'/0'",
             },
             [apiWalletAccountTwoB.ID]: {
                 account: getMockedWasmAccount({
-                    getBalance: vi.fn(() =>
+                    getBalance: vi.fn(async () =>
                         freeable({
                             confirmed: BigInt(97536),
                             immature: BigInt(0),
@@ -276,20 +268,19 @@ export const mockedWalletChainDataByWalletId: WalletChainDataByWalletId = {
                             untrusted_pending: BigInt(0),
                         })
                     ),
-                    getTransactions: vi.fn(() =>
+                    getTransactions: vi.fn(async () =>
                         freeable({ 0: simpleTransactions.slice(12, 16).map((d) => freeable({ Data: d })) })
                     ),
-                    getUtxos: vi.fn(() => freeable({ 0: [] })),
+                    getUtxos: vi.fn(async () => freeable({ 0: [] })),
                 }),
                 scriptType: 2,
-                syncId: '1',
                 derivationPath: "m/84'/1'/0'",
             },
         },
     },
     [apiWalletsData[2].Wallet.ID]: {
         wallet: getMockedWallet({
-            getBalance: vi.fn(() =>
+            getBalance: vi.fn(async () =>
                 freeable({
                     confirmed: BigInt(2612374),
                     immature: BigInt(0),
@@ -297,14 +288,14 @@ export const mockedWalletChainDataByWalletId: WalletChainDataByWalletId = {
                     untrusted_pending: BigInt(0),
                 })
             ),
-            getTransactions: vi.fn(() =>
+            getTransactions: vi.fn(async () =>
                 freeable({ 0: simpleTransactions.slice(16, 20).map((d) => freeable({ Data: d })) })
             ),
         }),
         accounts: {
             [apiWalletAccountThree.ID]: {
                 account: getMockedWasmAccount({
-                    getBalance: vi.fn(() =>
+                    getBalance: vi.fn(async () =>
                         freeable({
                             confirmed: BigInt(2612374),
                             immature: BigInt(0),
@@ -312,13 +303,12 @@ export const mockedWalletChainDataByWalletId: WalletChainDataByWalletId = {
                             untrusted_pending: BigInt(0),
                         })
                     ),
-                    getTransactions: vi.fn(() =>
+                    getTransactions: vi.fn(async () =>
                         freeable({ 0: simpleTransactions.slice(16, 20).map((d) => freeable({ Data: d })) })
                     ),
-                    getUtxos: vi.fn(() => freeable({ 0: [] })),
+                    getUtxos: vi.fn(async () => freeable({ 0: [] })),
                 }),
                 scriptType: 2,
-                syncId: '1',
                 derivationPath: "m/84'/1'/0'",
             },
         },

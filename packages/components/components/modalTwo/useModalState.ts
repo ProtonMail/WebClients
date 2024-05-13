@@ -1,4 +1,4 @@
-import { Key, useCallback, useMemo, useState } from 'react';
+import { Key, useCallback, useEffect, useMemo, useState } from 'react';
 
 import useControlled from '@proton/hooks/useControlled';
 
@@ -49,6 +49,12 @@ const useModalState = (options?: ModalStateOptions): ModalStateReturnTuple => {
         onExit?.();
     }, [onExit]);
 
+    useEffect(() => {
+        return () => {
+            console.log('useModalState unmounted');
+        };
+    }, []);
+
     const modalProps: ModalStateProps & { key: Key } = useMemo(
         () => ({
             key,
@@ -60,6 +66,34 @@ const useModalState = (options?: ModalStateOptions): ModalStateReturnTuple => {
     );
 
     return [modalProps, handleSetOpen, render] as const;
+};
+
+export type ModalPropsWithData<T extends unknown> = ModalStateProps & { data?: T };
+
+type ModalStateWithDataReturnTuple<T extends unknown> = [
+    modalProps: ModalPropsWithData<T>,
+    openModal: (data: T) => void,
+    renderModal: boolean,
+];
+
+export const useModalStateWithData = <T extends unknown>(
+    options?: ModalStateOptions
+): ModalStateWithDataReturnTuple<T> => {
+    const [modalData, setModalData] = useState<T>();
+
+    const [modalCoreProps, handleSetOpen, render] = useModalState(options);
+
+    const openModal = useCallback(
+        (data: T) => {
+            setModalData(data);
+            handleSetOpen(true);
+        },
+        [handleSetOpen]
+    );
+
+    const modalProps = useMemo(() => ({ ...modalCoreProps, data: modalData }), [modalData, modalCoreProps]);
+
+    return [modalProps, openModal, render] as const;
 };
 
 export const useModalStateObject = (options?: ModalStateOptions): ModalStateReturnObj => {

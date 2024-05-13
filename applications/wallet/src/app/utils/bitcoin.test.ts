@@ -1,6 +1,6 @@
-import { WasmApiExchangeRate } from '@proton/andromeda';
+import { WasmApiExchangeRate, WasmNetwork } from '@proton/andromeda';
 
-import { convertAmount } from '.';
+import { convertAmount, isValidBitcoinAddress } from '.';
 
 describe('bitcoin', () => {
     describe('convertAmount', () => {
@@ -79,6 +79,18 @@ describe('bitcoin', () => {
                 const btc = 0.000017;
                 expect(convertAmount(btc, 'BTC', 'SATS')).toEqual(1700);
             });
+        });
+    });
+
+    describe('isValidBitcoinAddress', () => {
+        it('should return true', () => {
+            expect(
+                isValidBitcoinAddress('tb1qft6ryf9qg5tsw7x4j34xt6aph0jmrp5ufda3dr', WasmNetwork.Testnet)
+            ).toBeTruthy();
+        });
+
+        it('should return false', () => {
+            expect(isValidBitcoinAddress('tb1.AHKBE', WasmNetwork.Testnet)).toBeFalsy();
         });
     });
 });

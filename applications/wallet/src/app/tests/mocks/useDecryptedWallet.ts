@@ -8,6 +8,7 @@ export const mockUseDecryptedWallets = (
     const spy = vi.spyOn(useDecryptedApiWalletsDataModule, 'useDecryptedApiWalletsData');
 
     spy.mockReturnValue({
+        walletMap: mockedValue?.walletMap ?? {},
         decryptedApiWalletsData: mockedValue?.decryptedApiWalletsData ?? apiWalletsData,
         loading: mockedValue?.loading ?? false,
         setPassphrase: mockedValue?.setPassphrase ?? vi.fn(),

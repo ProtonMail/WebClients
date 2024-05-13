@@ -2,203 +2,298 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { WasmSortOrder, WasmTransactionDetails } from '@proton/andromeda';
-import Table from '@proton/components/components/table/Table';
-import TableBody from '@proton/components/components/table/TableBody';
-import TableCell from '@proton/components/components/table/TableCell';
-import TableHeader from '@proton/components/components/table/TableHeader';
-import TableHeaderCell from '@proton/components/components/table/TableHeaderCell';
-import TableRow from '@proton/components/components/table/TableRow';
-import Tooltip from '@proton/components/components/tooltip/Tooltip';
-import { EmptyViewContainer } from '@proton/components/containers';
+import { WasmApiWalletAccount, WasmSortOrder, WasmTransactionDetails } from '@proton/andromeda';
+import { CircleLoader } from '@proton/atoms/CircleLoader';
+import { Icon, useModalStateWithData } from '@proton/components/components';
 import { useUserKeys } from '@proton/components/hooks';
-import noResultSearchSvg from '@proton/styles/assets/img/illustrations/empty-search.svg';
-import clsx from '@proton/utils/clsx';
-import { IWasmApiWalletData, useWalletSettings } from '@proton/wallet';
+import { IWasmApiWalletData } from '@proton/wallet';
 
-import { BitcoinAmount, SimplePaginator } from '../../atoms';
+import { Button, CoreButton, SimplePaginator } from '../../atoms';
 import { ITEMS_PER_PAGE } from '../../constants';
 import { useBitcoinBlockchainContext } from '../../contexts';
+import { useWalletDrawerContext } from '../../contexts/WalletDrawerContext';
 import { useLocalPagination } from '../../hooks/useLocalPagination';
 import { useUserExchangeRate } from '../../hooks/useUserExchangeRate';
 import { TransactionData, useWalletTransactions } from '../../hooks/useWalletTransactions';
-import { confirmationTimeToHumanReadable, getWalletTransactions } from '../../utils';
-import { OnchainTransactionDetailsProps } from '../OnchainTransactionDetails';
-import { OnchainTransactionDetailsModal } from '../OnchainTransactionDetailsModal';
+import { useBitcoinNetwork } from '../../store/hooks';
+import { getAccountTransactions, getWalletTransactions } from '../../utils';
+import { DataList } from '../DataList';
+import { TransactionNoteModal } from '../TransactionNoteModal';
+import arrowsExchange from './arrows-exchange.svg';
+import {
+    AmountDataListItem,
+    ConfirmationTimeDataListItem,
+    NoteDataListItem,
+    SenderOrRecipientDataListItem,
+} from './data-list-items';
 
 interface Props {
-    wallet?: IWasmApiWalletData;
+    apiWalletData: IWasmApiWalletData;
+    apiAccount?: WasmApiWalletAccount;
 }
 
-export const TransactionList = ({ wallet }: Props) => {
-    const [walletSettings, loadingSettings] = useWalletSettings();
+export const TransactionList = ({ apiWalletData, apiAccount }: Props) => {
     const [exchangeRate, loadingExchangeRate] = useUserExchangeRate();
-    const { walletsChainData } = useBitcoinBlockchainContext();
+    const { walletsChainData, syncSingleWallet, syncSingleWalletAccount, isSyncing } = useBitcoinBlockchainContext();
+    const { openDrawer } = useWalletDrawerContext();
+    const [sortOrder, setSortOrder] = useState<WasmSortOrder>(WasmSortOrder.Desc);
 
-    const [keys] = useUserKeys();
+    const isSyncingWalletData = isSyncing(apiWalletData.Wallet.ID, apiAccount?.ID);
+
+    const [network] = useBitcoinNetwork();
+
+    const [userKeys] = useUserKeys();
 
     const [transactions, setTransactions] = useState<WasmTransactionDetails[]>([]);
-    const [modalData, setModalData] = useState<Omit<OnchainTransactionDetailsProps, 'onUpdateLabel'>>();
+    const [noteModalState, setNoteModalState] = useModalStateWithData<{ transaction: TransactionData }>();
 
     const { currentPage, handleNext, handlePrev, handleGoFirst } = useLocalPagination();
     // page 0 should be displayed as 'Page 1'
     const displayedPageNumber = currentPage + 1;
 
-    const handleClickRow = useCallback(async (tx: TransactionData) => {
-        setModalData({ tx });
-    }, []);
+    const handleClickRow = useCallback(
+        async (transaction: TransactionData) => {
+            openDrawer({ transaction });
+        },
+        [openDrawer]
+    );
 
     useEffect(() => {
         handleGoFirst();
-    }, [wallet?.Wallet.ID, handleGoFirst]);
+    }, [apiWalletData?.Wallet.ID, apiAccount?.ID, handleGoFirst]);
 
     useEffect(() => {
-        if (wallet?.Wallet.ID) {
-            setTransactions(
-                getWalletTransactions(
+        if (apiWalletData?.Wallet.ID && !isSyncingWalletData) {
+            if (apiAccount?.ID) {
+                void getAccountTransactions(
                     walletsChainData,
-                    wallet?.Wallet.ID,
+                    apiWalletData.Wallet.ID,
+                    apiAccount.ID,
                     { skip: currentPage * ITEMS_PER_PAGE, take: ITEMS_PER_PAGE },
-                    WasmSortOrder.Desc
-                )
-            );
+                    sortOrder
+                ).then((txs) => setTransactions(txs));
+            } else {
+                void getWalletTransactions(
+                    walletsChainData,
+                    apiWalletData.Wallet.ID,
+                    { skip: currentPage * ITEMS_PER_PAGE, take: ITEMS_PER_PAGE },
+                    sortOrder
+                ).then((txs) => setTransactions(txs));
+            }
         } else {
             setTransactions([]);
         }
-    }, [currentPage, wallet?.Wallet.ID, walletsChainData]);
+    }, [currentPage, apiWalletData.Wallet.ID, walletsChainData, sortOrder, apiAccount?.ID, isSyncingWalletData]);
 
     const { transactionDetails, loadingRecordInit, loadingApiData, updateWalletTransaction } = useWalletTransactions({
         transactions,
-        keys,
-        wallet,
+        userKeys,
+        wallet: apiWalletData,
     });
 
-    const transactionsTable = useMemo(() => {
-        if (transactionDetails?.length) {
-            return (
-                <Table className="text-sm" borderWeak>
-                    <TableHeader>
-                        <TableRow>
-                            <TableHeaderCell className="w-2/10">{c('Wallet Transaction List').t`Id`}</TableHeaderCell>
-                            <TableHeaderCell className="w-2/10">{c('Wallet Transaction List').t`Date`}</TableHeaderCell>
-                            <TableHeaderCell className="w-4/10">{c('Wallet Transaction List')
-                                .t`Label`}</TableHeaderCell>
-                            <TableHeaderCell className="w-2/10 text-right">{c('Wallet Transaction List')
-                                .t`Amount`}</TableHeaderCell>
-                        </TableRow>
-                    </TableHeader>
-                    <TableBody>
-                        {transactionDetails.map((tx) => {
-                            const { networkData, apiData } = tx;
-                            const txValue = networkData.received - networkData.sent;
+    const handleClickSync = useCallback(() => {
+        if (apiAccount) {
+            return syncSingleWalletAccount(apiWalletData.Wallet.ID, apiAccount.ID);
+        } else {
+            return syncSingleWallet(apiWalletData.Wallet.ID);
+        }
+    }, [apiAccount, apiWalletData.Wallet.ID, syncSingleWallet, syncSingleWalletAccount]);
 
-                            // TXid cannot be assumed unique because of itnra-wallet self-transfers
-                            return (
-                                <TableRow
-                                    key={`${networkData.txid}-${txValue}`}
-                                    className={clsx(!!apiData && 'cursor-pointer')}
-                                    onClick={() => handleClickRow(tx)}
+    const transactionsTable = useMemo(() => {
+        if (transactionDetails?.length && network) {
+            return (
+                <>
+                    <div className="flex flex-column flex-nowrap mb-2 grow overflow-auto">
+                        <div className="relative flex flex-column mx-4 bg-weak rounded-xl">
+                            {/* Syncing overlay */}
+                            {isSyncingWalletData && (
+                                <div
+                                    className="absolute top-0 left-0 w-full h-full flex rounded-xl"
+                                    style={{ background: '#2a2a2a44' }}
                                 >
-                                    <TableCell>
-                                        <div className="flex flex-column">
-                                            <Tooltip title={networkData.txid}>
-                                                <span className="inline-block max-w-full text-lg text-ellipsis">
-                                                    {networkData.txid}
-                                                </span>
-                                            </Tooltip>
+                                    <div className="flex flex-row justify-center items-center m-auto">
+                                        <div className="flex mr-1">
+                                            <CircleLoader className="color-primary m-auto" />
                                         </div>
-                                    </TableCell>
-                                    <TableCell>
-                                        <div className="flex flex-column">
-                                            <span className="text-lg">
-                                                {confirmationTimeToHumanReadable(networkData.time)}
-                                            </span>
-                                            <span className="color-hint">
-                                                {networkData.time?.confirmed
-                                                    ? c('Wallet Transaction List').t`Processed`
-                                                    : c('Wallet Transaction List').t`Processing`}
-                                            </span>
-                                        </div>
-                                    </TableCell>
-                                    <TableCell>
-                                        <div className="flex flex-column">
-                                            <span
-                                                className={clsx(
-                                                    'text-lg',
-                                                    networkData.time.confirmed &&
-                                                        !apiData &&
-                                                        loadingApiData &&
-                                                        'skeleton-loader'
-                                                )}
-                                            >
-                                                {apiData?.Label ?? ''}
-                                            </span>
-                                        </div>
-                                    </TableCell>
-                                    <TableCell>
-                                        <div className="flex flex-column text-right">
-                                            <BitcoinAmount
-                                                bitcoin={Number(txValue)}
-                                                unit={{ value: walletSettings?.BitcoinUnit, loading: loadingSettings }}
-                                                exchangeRate={{ value: exchangeRate, loading: loadingExchangeRate }}
-                                                firstClassName="text-lg ml-auto"
-                                                secondClassName="ml-auto"
-                                                showColor
-                                                showExplicitSign
+                                        <div>{c('Wallet transactions').t`Syncing transactions`}</div>
+                                    </div>
+                                </div>
+                            )}
+
+                            <DataList
+                                onClickRow={(tx) => handleClickRow(tx)}
+                                canClickRow={(tx) => !!tx}
+                                rows={transactionDetails.map((tx) => ({
+                                    ...tx,
+                                    key: `${tx.networkData.txid}-${tx.networkData.received}-${tx.networkData.sent}`,
+                                }))}
+                                columns={[
+                                    {
+                                        id: 'confirmation',
+                                        className: 'w-custom no-shrink',
+                                        style: { '--w-custom': '15rem' },
+                                        data: (row) => (
+                                            <ConfirmationTimeDataListItem loading={loadingRecordInit} tx={row} />
+                                        ),
+                                    },
+                                    {
+                                        id: 'senderorrecipients',
+                                        className: 'grow',
+                                        data: (row) => (
+                                            <SenderOrRecipientDataListItem loading={loadingApiData} tx={row} />
+                                        ),
+                                    },
+                                    {
+                                        id: 'note',
+                                        className: 'w-custom no-shrink',
+                                        style: { '--w-custom': '10rem' },
+                                        data: (row) => (
+                                            <NoteDataListItem
+                                                loading={loadingApiData}
+                                                tx={row}
+                                                onClick={() => {
+                                                    setNoteModalState({ transaction: row });
+                                                }}
                                             />
-                                        </div>
-                                    </TableCell>
-                                </TableRow>
-                            );
-                        })}
-                    </TableBody>
-                </Table>
+                                        ),
+                                    },
+                                    {
+                                        id: 'amount',
+                                        className: 'w-custom no-shrink',
+                                        style: { '--w-custom': '8rem' },
+                                        data: (row) => (
+                                            <AmountDataListItem
+                                                loadingLabel={loadingExchangeRate}
+                                                loading={loadingRecordInit}
+                                                tx={row}
+                                                exchangeRate={exchangeRate}
+                                            />
+                                        ),
+                                    },
+                                ]}
+                            />
+                        </div>
+                    </div>
+
+                    <div className="flex flex-row mt-auto shrink-0 justify-end items-center pr-4">
+                        <span className="block mr-4">{c('Wallet Transaction List')
+                            .t`Page ${displayedPageNumber}`}</span>
+
+                        <SimplePaginator
+                            canGoPrev={currentPage > 0}
+                            onNext={handleNext}
+                            canGoNext={!!transactions && transactions.length >= ITEMS_PER_PAGE}
+                            onPrev={handlePrev}
+                        />
+                    </div>
+                </>
+            );
+        }
+
+        if (isSyncingWalletData) {
+            return (
+                <div className="flex flex-row items-center color-primary m-auto">
+                    <CircleLoader size="small" />
+                    <div className="ml-2">{c('Wallet transactions').t`Syncing transactions`}</div>
+                </div>
             );
         }
 
         return (
-            <EmptyViewContainer
-                imageProps={{
-                    src: noResultSearchSvg,
-                    alt: c('Wallet Transaction List').t`No transaction found`,
-                }}
-            >
-                {c('Wallet Transaction List').t`You don't have transaction yet on this wallet`}
-            </EmptyViewContainer>
+            <div className="flex flex-column mx-auto justify-center grow mb-10">
+                <img
+                    className="block mb-3"
+                    src={arrowsExchange}
+                    alt="Arrow going up and down, symbolising money transfer"
+                />
+                <div>
+                    <p className="h2 text-semibold text-center">{c('Wallet transaction').t`Start your journey`}</p>
+                    <p className="h2 text-semibold text-center">
+                        {c('Wallet transaction').t`Add bitcoins to your wallet`}
+                    </p>
+                </div>
+                <div className="flex flex-row justify-center mt-6 ui-standard">
+                    <Button
+                        pill
+                        shape="solid"
+                        color="weak"
+                        className="w-custom mx-1 shadow-lifted"
+                        style={{ '--w-custom': '7.5rem', boxShadow: '0 3px 10px rgb(0 0 0 / 0.2)' }}
+                    >
+                        {c('Wallet transaction').t`Receive`}
+                    </Button>
+                    <Button
+                        pill
+                        shape="solid"
+                        className="button-darker w-custom mx-1 shadow-lifted"
+                        style={{ '--w-custom': '7.5rem' }}
+                    >
+                        {c('Wallet transaction').t`Buy`}
+                    </Button>
+                </div>
+            </div>
         );
     }, [
-        exchangeRate,
-        handleClickRow,
-        loadingApiData,
-        loadingExchangeRate,
-        loadingRecordInit,
-        loadingSettings,
         transactionDetails,
-        walletSettings?.BitcoinUnit,
+        network,
+        displayedPageNumber,
+        currentPage,
+        handleNext,
+        transactions,
+        handlePrev,
+        handleClickRow,
+        loadingRecordInit,
+        loadingApiData,
+        setNoteModalState,
+        loadingExchangeRate,
+        exchangeRate,
+        isSyncingWalletData,
     ]);
 
     return (
         <>
-            <div className="flex flex-column mt-4 flex-nowrap grow">
-                <div className="flex flex-column flex-nowrap mb-2 grow overflow-auto">{transactionsTable}</div>
+            <div className="flex flex-row mx-4 mb-6 mt-10 items-center justify-space-between">
+                <h2 className="mr-4 text-semibold">{c('Wallet transactions').t`Transactions`}</h2>
 
-                <div className="flex flex-row mt-auto shrink-0 justify-end items-center pr-4">
-                    <span className="block mr-4">{c('Wallet Transaction List').t`Page ${displayedPageNumber}`}</span>
-
-                    <SimplePaginator
-                        canGoPrev={currentPage > 0}
-                        onNext={handleNext}
-                        canGoNext={!!transactions && transactions.length >= ITEMS_PER_PAGE}
-                        onPrev={handlePrev}
-                    />
+                <div className="flex flex-row">
+                    <CoreButton
+                        icon
+                        size="medium"
+                        shape="ghost"
+                        color="weak"
+                        className="ml-2 rounded-full bg-weak"
+                        disabled={!transactionDetails?.length || isSyncingWalletData}
+                        onClick={() => handleClickSync()}
+                    >
+                        <Icon name="arrows-rotate" size={5} />
+                    </CoreButton>
+                    <CoreButton
+                        icon
+                        size="medium"
+                        shape="ghost"
+                        color="weak"
+                        className="ml-2 rounded-full bg-weak"
+                        disabled={!transactionDetails?.length || isSyncingWalletData}
+                        onClick={() =>
+                            setSortOrder((prev) =>
+                                prev === WasmSortOrder.Asc ? WasmSortOrder.Desc : WasmSortOrder.Asc
+                            )
+                        }
+                    >
+                        <Icon name={sortOrder === WasmSortOrder.Asc ? 'list-arrow-down' : 'list-arrow-up'} size={5} />
+                    </CoreButton>
                 </div>
             </div>
 
-            <OnchainTransactionDetailsModal
-                onClose={() => setModalData(undefined)}
-                isOpen={!!modalData}
-                data={modalData}
-                onUpdateLabel={updateWalletTransaction}
+            <div className="flex flex-column flex-nowrap grow">{transactionsTable}</div>
+
+            <TransactionNoteModal
+                onUpdateLabel={(label, tx) => {
+                    void updateWalletTransaction(label, tx).then(() => {
+                        noteModalState.onClose?.();
+                    });
+                }}
+                {...noteModalState}
             />
         </>
     );

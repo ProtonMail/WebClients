@@ -1,4 +1,4 @@
-import { CryptoProxy } from '@proton/crypto/lib';
+import { CryptoProxy, PrivateKeyReference } from '@proton/crypto/lib';
 import { stringToUtf8Array } from '@proton/crypto/lib/utils';
 import {
     base64StringToUint8Array,
@@ -44,13 +44,11 @@ export type EncryptedWalletPart = Partial<
     { mnemonic: string; publicKey: undefined } | { mnemonic: undefined; publicKey: string }
 >;
 
-export const decryptPgp = async (data: string, keys: DecryptedKey[]) => {
+export const decryptPgpWalletKey = async (walletKey: string, keys: DecryptedKey[]) => {
     const privateUserKeys = keys.map((key) => key.privateKey);
 
-    const encryptedData = base64StringToUint8Array(data);
-
     const { data: decryptedData } = await CryptoProxy.decryptMessage({
-        binaryMessage: encryptedData,
+        binaryMessage: base64StringToUint8Array(walletKey),
         decryptionKeys: privateUserKeys,
         verificationKeys: privateUserKeys,
         format: 'binary',
@@ -71,12 +69,12 @@ export const encryptPgp = async (data: Uint8Array, key: DecryptedKey) => {
 };
 
 export const decryptWalletKey = async (walletKey: string, keys: DecryptedKey[]) => {
-    const decryptedEntropy = await decryptPgp(walletKey, keys);
+    const decryptedEntropy = await decryptPgpWalletKey(walletKey, keys);
     return getSymmetricKey(decryptedEntropy);
 };
 
 export const decryptWalletKeyForHmac = async (walletKey: string, keys: DecryptedKey[]) => {
-    const decryptedEntropy = await decryptPgp(walletKey, keys);
+    const decryptedEntropy = await decryptPgpWalletKey(walletKey, keys);
 
     // https://github.com/vercel/edge-runtime/issues/813
     const slicedKey = new Uint8Array(decryptedEntropy.slice(0, KEY_LENGTH));
@@ -95,16 +93,9 @@ export const hmac = async (hmacKey: CryptoKey, data: string) => {
  * @param key key to use to encrypt wallet data
  * @returns an array containing the data encrypted
  */
-export const encryptWalletDataWithWalletKey = async (
-    dataToEncrypt: (string | undefined)[],
-    key: CryptoKey
-): Promise<(string | undefined)[]> => {
+export const encryptWalletDataWithWalletKey = async (dataToEncrypt: string[], key: CryptoKey): Promise<string[]> => {
     const encryptedData = await Promise.all(
         dataToEncrypt.map(async (data) => {
-            if (!data) {
-                return undefined;
-            }
-
             const binaryMnemonic = stringToUint8Array(data);
 
             const encryptedMnemonic = await encryptData(key, binaryMnemonic);
@@ -123,9 +114,9 @@ export const encryptWalletDataWithWalletKey = async (
  * @returns a tupple containing encrypted data and a nested tupple with the encrypted wallet key and the id of the user key used to encrypt the wallet key
  */
 export const encryptWalletData = async (
-    dataToEncrypt: (string | undefined)[],
+    dataToEncrypt: string[],
     userKey: DecryptedKey
-): Promise<[(string | undefined)[], [string, string]]> => {
+): Promise<[string[], [string, string]]> => {
     const entropy = generateEntropy(KEY_LENGTH);
     const key = await getSymmetricKey(entropy);
 
@@ -152,7 +143,7 @@ export const decryptWalletData = async (dataToDecrypt: (string | null)[], wallet
     const decryptedData = await Promise.all(
         dataToDecrypt.map(async (data) => {
             if (!data) {
-                return undefined;
+                return null;
             }
 
             try {
@@ -167,6 +158,29 @@ export const decryptWalletData = async (dataToDecrypt: (string | null)[], wallet
     );
 
     return decryptedData;
+};
+
+export const decryptArmoredData = async (armoredData: string | null, keys: PrivateKeyReference[]) => {
+    const { data } = armoredData
+        ? await CryptoProxy.decryptMessage({
+              armoredMessage: armoredData,
+              decryptionKeys: keys,
+              verificationKeys: keys,
+          }).catch(() => ({ data: null }))
+        : { data: null };
+
+    return data;
+};
+
+export const encryptArmoredData = async (armoredData: string, keys: PrivateKeyReference[]) => {
+    const { message } = await CryptoProxy.encryptMessage({
+        textData: armoredData,
+        encryptionKeys: keys,
+        signingKeys: keys,
+        format: 'armored',
+    }).catch(() => ({ message: null }));
+
+    return message;
 };
 
 /**

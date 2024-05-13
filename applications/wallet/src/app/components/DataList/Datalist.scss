@@ -1,0 +1,7 @@
+.hoverable-row {
+	cursor: pointer;
+
+	&:hover {
+		background-color: var(--background-norm);
+	}
+}

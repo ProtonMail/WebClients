@@ -120,6 +120,7 @@ interface Props extends ComponentPropsWithoutRef<'div'> {
      * @default true
      */
     growContent?: boolean;
+    showStorage?: boolean;
 }
 
 const Sidebar = ({
@@ -135,6 +136,8 @@ const Sidebar = ({
     preFooter,
     postFooter,
     growContent = true,
+    showStorage = true,
+    className,
     ...rest
 }: Props) => {
     const rootRef = useRef<HTMLDivElement>(null);
@@ -152,7 +155,7 @@ const Sidebar = ({
         <>
             <div
                 ref={rootRef}
-                className="sidebar flex flex-nowrap flex-column no-print outline-none"
+                className={clsx('sidebar flex flex-nowrap flex-column no-print outline-none', className)}
                 data-expanded={expanded}
                 {...rest}
                 {...focusTrapProps}
@@ -210,7 +213,10 @@ const Sidebar = ({
                 >
                     {children}
                 </div>
-                {app !== APPS.PROTONVPN_SETTINGS && APP_NAME !== APPS.PROTONVPN_SETTINGS && appSpace.maxSpace > 0 ? (
+                {showStorage &&
+                app !== APPS.PROTONVPN_SETTINGS &&
+                APP_NAME !== APPS.PROTONVPN_SETTINGS &&
+                appSpace.maxSpace > 0 ? (
                     <div className="shrink-0 app-infos px-3 mt-2">
                         {preFooter}
                         <Storage

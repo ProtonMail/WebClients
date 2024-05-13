@@ -8,6 +8,7 @@ import { extraThunkArguments } from '../../store/thunk';
 
 const WalletExtendedApiContext = ({ children }: { children: ReactNode }) => {
     useEffect(() => {
+        
         const walletApi = new WasmProtonWalletApiClient(extraThunkArguments.authentication.UID, window.location.origin);
         extendStore({ walletApi });
     }, []);

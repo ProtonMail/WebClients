@@ -1,5 +1,5 @@
 import { Button } from '@proton/atoms';
-import { Icon } from '@proton/components';
+import { Icon, IconProps } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 interface Props {
@@ -8,9 +8,10 @@ interface Props {
     expanded: boolean;
     onClick: () => void;
     style?: React.CSSProperties;
+    size?: IconProps['size'];
 }
 
-export default function SidebarExpandButton({ className, title, expanded, onClick, style }: Props) {
+export default function SidebarExpandButton({ className, title, expanded, onClick, style, size }: Props) {
     const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.stopPropagation();
         e.preventDefault();
@@ -29,7 +30,7 @@ export default function SidebarExpandButton({ className, title, expanded, onClic
             style={style}
             data-testid={expanded ? 'sidebar-expanded-folder' : 'sidebar-expand-folder'}
         >
-            <Icon name={expanded ? 'chevron-down-filled' : 'chevron-right-filled'} alt={title} />
+            <Icon size={size} name={expanded ? 'chevron-down-filled' : 'chevron-right-filled'} alt={title} />
         </Button>
     );
 }

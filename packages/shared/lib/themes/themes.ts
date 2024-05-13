@@ -20,6 +20,8 @@ import passTheme from '@proton/colors/themes/dist/pass.theme.css';
 import snowTheme from '@proton/colors/themes/dist/snow.theme.css';
 // @ts-ignore
 import storefrontTheme from '@proton/colors/themes/dist/storefront.theme.css';
+// @ts-ignore
+import walletLightTheme from '@proton/colors/themes/dist/wallet.theme.css';
 import { decodeBase64URL, encodeBase64URL } from '@proton/shared/lib/helpers/encoding';
 
 import { canGetInboxDesktopInfo, getInboxDesktopInfo, hasInboxDesktopFeature } from '../desktop/ipcHelpers';
@@ -36,6 +38,7 @@ export enum ThemeTypes {
     ContrastDark = 7,
     Pass = 8,
     Storefront = 9,
+    WalletLight = 10,
 }
 
 export const PROTON_DEFAULT_THEME = ThemeTypes.Duotone;
@@ -150,6 +153,17 @@ export const PROTON_THEMES_MAP = {
             weak: '#6c6b70',
         },
         theme: storefrontTheme.toString(),
+    },
+    [ThemeTypes.WalletLight]: {
+        label: 'WalletLight',
+        identifier: ThemeTypes.WalletLight,
+        thumbColors: {
+            prominent: '#16141C',
+            standard: '#2A2833',
+            primary: '#6D4AFF',
+            weak: '#6c6b70',
+        },
+        theme: walletLightTheme.toString(),
     },
 } as const;
 
@@ -340,7 +354,7 @@ export const getDefaultThemeSetting = (themeType?: ThemeTypes): ThemeSetting => 
 };
 
 const getValidatedThemeType = (themeType: number): ThemeTypes | undefined => {
-    if (themeType >= ThemeTypes.Duotone && themeType <= ThemeTypes.Storefront) {
+    if (themeType >= ThemeTypes.Duotone && themeType <= ThemeTypes.WalletLight) {
         return themeType;
     }
 };

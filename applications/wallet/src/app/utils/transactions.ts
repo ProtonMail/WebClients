@@ -1,4 +1,6 @@
 import { format } from 'date-fns';
+import { intervalToDuration } from 'date-fns';
+import { compact } from 'lodash';
 
 import { WasmTransactionDetails, WasmTransactionTime } from '@proton/andromeda';
 import { SECOND } from '@proton/shared/lib/constants';
@@ -33,4 +35,31 @@ export const confirmationTimeToHumanReadable = (confirmation?: WasmTransactionTi
     }
 
     return '-';
+};
+
+export const getFormattedPeriodSinceConfirmation = (now: Date, confirmation: Date) => {
+    if (!confirmation) {
+        return;
+    }
+
+    const confirmationInterval: Interval | undefined = { start: confirmation, end: now };
+    const confirmedSince = intervalToDuration(confirmationInterval);
+
+    if (confirmedSince.days) {
+        return format(confirmation, 'MMM d, y, HH:mm');
+    }
+
+    const periods = compact([
+        confirmedSince.hours && `${confirmedSince.hours} hours`,
+        confirmedSince.minutes && `${confirmedSince.minutes} minutes`,
+        confirmedSince.seconds && `${confirmedSince.seconds} seconds`,
+    ]);
+
+    return periods.reduce((acc, cur, index) => {
+        if (!acc) {
+            return cur;
+        }
+
+        return index < periods.length ? `${acc}, ${cur}` : `${acc} and ${cur} ago`;
+    }, '');
 };
