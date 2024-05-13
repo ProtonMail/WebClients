@@ -17,6 +17,7 @@ import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 import clsx from '@proton/utils/clsx';
 
 import CountriesDropdown from '../../containers/payments/CountriesDropdown';
+import { ThemeCode } from '../client-extensions';
 import { CbIframeHandles, ChargebeeIframe } from './ChargebeeIframe';
 
 import './ChargebeeWrapper.scss';
@@ -47,6 +48,7 @@ export type PaymentIntentHookResult = (
 
 export interface ChargebeeCardWrapperProps extends ChargebeeWrapperProps {
     chargebeeCard: ChargebeeCardProcessorHook;
+    themeCode: ThemeCode;
 }
 
 const WarningIcon = ({ className }: { className?: string }) => {
