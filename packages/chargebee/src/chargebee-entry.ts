@@ -2,6 +2,7 @@ import {
     AuthorizedPaymentIntent,
     CbCardConfig,
     CbIframeConfig,
+    CssVariables,
     FormValidationErrors,
     MessageBusResponse,
     PaymentIntent,
@@ -15,6 +16,7 @@ import {
     OnChangeRenderModeHandler,
     OnGetBinHandler,
     OnSetPaypalPaymentIntentHandler,
+    OnUpdateFieldsHandler,
     OnValidateFormHandler,
     OnVerifySavedCardHandler,
     SetPaypalPaymentIntentEvent,
@@ -48,6 +50,16 @@ function getCssVariable(name: string): string {
     return value;
 }
 
+function setCssVariables(cssVariablesOverride?: CssVariables) {
+    const cssVariablesFromConfiguration = (getConfiguration() as CbCardConfig).cssVariables;
+    const cssVariables = cssVariablesOverride ?? cssVariablesFromConfiguration;
+
+    const root = document.documentElement;
+    for (const [key, value] of Object.entries(cssVariables)) {
+        root.style.setProperty(key, value);
+    }
+}
+
 function hideError(element: HTMLDivElement) {
     element.innerHTML = '';
 }
@@ -68,18 +80,32 @@ function setCardFormRenderMode() {
     cardInputElement.classList.add(`card-input--${renderMode}`);
 }
 
-function setCssVariables() {
-    const cssVariables = (getConfiguration() as CbCardConfig).cssVariables;
-
-    const root = document.documentElement;
-    for (const [key, value] of Object.entries(cssVariables)) {
-        root.style.setProperty(key, value);
-    }
-}
-
 function getTranslation(key: keyof CbCardConfig['translations']): string {
     const translations = (getConfiguration() as CbCardConfig).translations;
     return translations[key];
+}
+
+function getSharedOptions() {
+    return {
+        style: {
+            base: {
+                '::placeholder': {
+                    color: getCssVariable('--field-placeholder-color'),
+                },
+                '::selection': {
+                    color: getCssVariable('--selection-text-color'),
+                    background: getCssVariable('--selection-background-color'),
+                },
+                ':focus': {
+                    color: getCssVariable('--field-focus-text-color'),
+                },
+                color: getCssVariable('--field-text-color'),
+            },
+            invalid: {
+                color: 'inherit',
+            },
+        },
+    } as any;
 }
 
 async function renderCreditCardForm() {
@@ -119,23 +145,8 @@ async function renderCreditCardForm() {
         },
     });
 
-    const sharedOptions = {
-        style: {
-            base: {
-                '::placeholder': {
-                    color: getCssVariable('--field-placeholder-color'),
-                },
-                ':focus': {
-                    color: getCssVariable('--field-focus-text-color'),
-                },
-                fontFamily,
-                color: getCssVariable('--field-text-color'),
-            },
-            invalid: {
-                color: 'inherit',
-            },
-        },
-    };
+    const sharedOptions = getSharedOptions();
+    sharedOptions.style.base.fontFamily = fontFamily;
 
     const numberSelector = '#card-number';
     const number = cardComponent
@@ -388,6 +399,17 @@ async function renderCreditCardForm() {
         });
     };
     getMessageBus().onChangeRenderMode = onChangeRenderMode;
+
+    const onUpdateFields: OnUpdateFieldsHandler = async (event, sendResponseToParent) => {
+        const { cssVariables } = event;
+        setCssVariables(cssVariables);
+        cardComponent.update(getSharedOptions());
+        sendResponseToParent({
+            status: 'success',
+            data: {},
+        });
+    };
+    getMessageBus().onUpdateFields = onUpdateFields;
 }
 
 async function renderPaypal() {

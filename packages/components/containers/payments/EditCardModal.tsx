@@ -151,6 +151,7 @@ const EditCardModal = ({
                     onInitialized={() => setChargebeeFormInitialized(true)}
                     iframeHandles={paymentFacade.iframeHandles}
                     chargebeeCard={paymentFacade.chargebeeCard}
+                    themeCode={paymentFacade.themeCode}
                 />
             )}
             {enableRenewToggle && formFullyLoaded && (

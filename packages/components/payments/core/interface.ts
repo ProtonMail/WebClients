@@ -419,6 +419,7 @@ export type ChargebeeIframeHandles = {
     getBin: () => Promise<MessageBusResponse<BinData | null>>;
     validateCardForm: () => Promise<MessageBusResponse<FormValidationErrors>>;
     changeRenderMode: (renderMode: CardFormRenderMode) => Promise<any>;
+    updateFields: () => Promise<any>;
 };
 
 export type ChargebeeIframeEvents = {

@@ -23,6 +23,7 @@ import {
     ThreeDsFailedMessage,
     ThreeDsRequiredForSavedCardMessage,
     UnhandledErrorMessage,
+    UpdateFieldsPayload,
     paypalAuthorizedMessageType,
     paypalCancelledMessageType,
     paypalClickedMessageType,
@@ -157,6 +158,21 @@ export type OnChangeRenderModeHandler = (
     sendResponseToParent: SendResponseToParent<{}>
 ) => void;
 
+// UpdateFieldsEvent
+
+export const updateFieldsMessageType = 'update-fields';
+
+export type UpdateFieldsEvent = {
+    type: typeof updateFieldsMessageType;
+    correlationId: string;
+} & UpdateFieldsPayload;
+
+export function isUpdateFieldsEvent(event: any): event is UpdateFieldsEvent {
+    return event?.type === updateFieldsMessageType;
+}
+
+export type OnUpdateFieldsHandler = (event: UpdateFieldsEvent, sendResponseToParent: SendResponseToParent<{}>) => void;
+
 export interface ParentMessagesProps {
     onSetConfiguration?: (event: SetConfigurationEvent, sendResponseToParent: SendResponseToParent<{}>) => void;
     onSubmit?: OnSubmitHandler;
@@ -166,6 +182,7 @@ export interface ParentMessagesProps {
     onValidateForm?: OnValidateFormHandler;
     onVerifySavedCard?: OnVerifySavedCardHandler;
     onChangeRenderMode?: OnChangeRenderModeHandler;
+    onUpdateFields?: OnUpdateFieldsHandler;
 }
 
 // the event handler function must be async to make sure that we catch all errors, sync and async
@@ -252,6 +269,14 @@ const getEventListener = (messageBus: MessageBus) => async (e: MessageEvent) => 
                     ...result,
                 });
             });
+        } else if (isUpdateFieldsEvent(event)) {
+            await messageBus.onUpdateFields(event, (result) => {
+                messageBus.sendMessage({
+                    type: 'update-fields-response',
+                    correlationId: event.correlationId,
+                    ...result,
+                });
+            });
         } else if (isChargebeeEvent(event)) {
             // ignore chargebee event
         } else {
@@ -280,6 +305,8 @@ export class MessageBus {
 
     public onChangeRenderMode;
 
+    public onUpdateFields;
+
     private eventListener: ((e: MessageEvent) => void) | null = null;
 
     constructor({
@@ -291,6 +318,7 @@ export class MessageBus {
         onValidateForm,
         onVerifySavedCard,
         onChangeRenderMode,
+        onUpdateFields,
     }: ParentMessagesProps) {
         this.onSetConfiguration = onSetConfiguration ?? noop;
         this.onSubmit = onSubmit ?? noop;
@@ -300,6 +328,7 @@ export class MessageBus {
         this.onValidateForm = onValidateForm ?? noop;
         this.onVerifySavedCard = onVerifySavedCard ?? noop;
         this.onChangeRenderMode = onChangeRenderMode ?? noop;
+        this.onUpdateFields = onUpdateFields ?? noop;
     }
 
     initialize() {

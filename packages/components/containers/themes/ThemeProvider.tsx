@@ -33,7 +33,7 @@ import noop from '@proton/utils/noop';
 
 import { classNames, styles } from './properties';
 
-interface ThemeInformation {
+export interface ThemeInformation {
     theme: ThemeTypes;
     dark: boolean;
     prominentHeader: boolean;
