@@ -1,7 +1,7 @@
 import { useSettingsLink, useUpsellConfig } from '@proton/components/components';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments';
 import { useFlag } from '@proton/components/containers/unleash';
-import { APPS, APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
+import { APPS, APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 
 import { OfferLayoutProps } from '../../interface';
@@ -15,6 +15,7 @@ const Layout = (props: OfferLayoutProps) => {
 
     const upsellRef = getUpsellRef({
         app: APP_UPSELL_REF_PATH.MAIL_UPSELL_REF_PATH,
+        component: UPSELL_COMPONENT.BANNER,
         feature: ABTestInboxUpsellStepEnabled
             ? MAIL_UPSELL_PATHS.SUBSCRIPTION_REMINDER_PRIVACY
             : MAIL_UPSELL_PATHS.SUBSCRIPTION_REMINDER_PRODUCTIVITY,
