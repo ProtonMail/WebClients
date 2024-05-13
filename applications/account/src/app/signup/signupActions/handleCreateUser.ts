@@ -53,6 +53,7 @@ export const handleCreateUser = async ({
         accountData: { signupType, username, email, password, payload },
         subscriptionData,
         accountData,
+        humanVerificationInline,
         humanVerificationResult,
         inviteData,
         referralData,
@@ -135,7 +136,7 @@ export const handleCreateUser = async ({
                     mode,
                 });
             }
-            if (mode === 'cro') {
+            if (mode === 'cro' || !humanVerificationInline) {
                 throw error;
             }
             const humanVerificationData = hvHandler(error, HumanVerificationTrigger.UserCreation);
