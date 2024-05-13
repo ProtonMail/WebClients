@@ -19,7 +19,7 @@ const defaultSettings = {
     spellChecker: true,
     overrideError: false,
     releaseCategory: RELEASE_CATEGORIES.STABLE,
-    rolloutProportion: 1,
+    rolloutProportion: 1-Math.random(),
 } as const satisfies SettingsStore;
 
 export const saveSettings = (settings: SettingsStore) => {
