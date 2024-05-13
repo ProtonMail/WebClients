@@ -14,7 +14,7 @@ export const isMac = process.platform === "darwin";
 export const isWindows = process.platform === "win32";
 export const isLinux = process.platform === "linux";
 
-export const getPlatform = () : DESKTOP_PLATFORMS | undefined => {
+export const getPlatform = () : DESKTOP_PLATFORMS => {
     if (isMac) {
         return DESKTOP_PLATFORMS.MACOS;
     } else if (isWindows) {
@@ -23,7 +23,7 @@ export const getPlatform = () : DESKTOP_PLATFORMS | undefined => {
         return DESKTOP_PLATFORMS.LINUX;
     }
 
-    return undefined
+    throw new Error(`Platform "${process.platform}" not supported.`)
 };
 
 export const restartApp = (timeout = 300) => {

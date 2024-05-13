@@ -17,7 +17,9 @@
         "copyright": "Copyright (c) 2024, Proton AG <contact@protonmail.com>",
         "FIXME_githubUser": "ProtonMail",
         "githubUser": "cuthix",
-        "githubRepo": "inbox-desktop"
+        "githubRepo": "inbox-desktop",
+        "FIXME_updateInterval": 3.6e6,
+        "updateInterval": 30e3
     },
     "main": ".webpack/main",
     "scripts": {

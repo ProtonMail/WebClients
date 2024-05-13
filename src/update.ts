@@ -5,18 +5,22 @@ import pkg from "../package.json";
 import { getPlatform, DESKTOP_PLATFORMS, semver } from "./utils/helpers";
 import { RELEASE_CATEGORIES } from "./constants";
 import { getSettings } from "./store/settingsStore";
+import { z } from "zod";
 
-type ReleaseInfo = {
-    Version: string;
-    RolloutProportion: number;
-    CategoryName: RELEASE_CATEGORIES;
-};
+const releaseInfoSchema = z.object({
+    Version: z.string(),
+    RolloutProportion: z.number(),
+    CategoryName: z.nativeEnum(RELEASE_CATEGORIES)
+});
+const releaseListSchema = z.object({
+    Releases: z.array(releaseInfoSchema).nonempty(),
+});
+type ReleaseInfo = z.infer<typeof releaseInfoSchema>;
+type ReleaseList = z.infer<typeof releaseListSchema>;
 
-type ReleaseList = {
-    Releases: ReleaseInfo[]
-}
 
 export let updateDownloaded = false;
+
 autoUpdater.on("update-downloaded", () => {
     updateDownloaded = true;
 });
@@ -26,45 +30,42 @@ autoUpdater.on("before-quit-for-update", () => {
 });
 
 
-// Checks available version in background and if there is valid version to
-// update it will trigger update. Update interval is defined in function.
-export const initializeUpdateChecks = () => {
+/**
+ * Checks the available version immediately and repeat check every
+ * `updateInverval`. If there is a valid (channel, rollout) version to update
+ * it will trigger the update.
+ */
+export function initializeUpdateChecks() {
     Logger.info("Initialization of update checks.");
 
-    // FIXME const updateInterval = 60*60*1000 // 1 hour
-    const updateInterval = 30 * 1000; // 5 min
+    checkForValidUpdates();
+    setInterval(checkForValidUpdates, pkg.config.updateInterval);
+}
 
-    setInterval(checkForValidUpdates, updateInterval)
-};
-
-const checkForValidUpdates = async () => {
+async function checkForValidUpdates() {
     Logger.info("Checking for new valid version.")
 
     const platform = getPlatform();
-    if (!platform) {
-        Logger.error("Check update: failed to get platform.")
-        return
-    }
-
     const settings = getSettings();
     const local = {
         Version: app.getVersion(),
-        RolloutProportion: settings.rolloutProportion ? settings.rolloutProportion : 1,
-        CategoryName: settings.releaseCategory ? settings.releaseCategory : RELEASE_CATEGORIES.STABLE // TODO get from web
+        RolloutProportion: settings.rolloutProportion ?? 1,
+        CategoryName: settings.releaseCategory ?? RELEASE_CATEGORIES.STABLE // TODO get from web
     };
 
 
-    // get version file
     const availableVersions = await getAvailableVersions(platform);
     if (!availableVersions) {
-        Logger.warn("Check update: failed to get available versions.")
         return
     }
 
-    // find the latest version for given channel
     const latest = (() : ReleaseInfo | undefined => {
         if (local.CategoryName === RELEASE_CATEGORIES.EARLY_ACCESS) {
-            const latest_early = availableVersions.Releases.find((r: ReleaseInfo) => r.CategoryName === RELEASE_CATEGORIES.EARLY_ACCESS);
+            const latest_early = availableVersions.Releases.find(
+                (r: ReleaseInfo) =>
+                r.CategoryName === RELEASE_CATEGORIES.EARLY_ACCESS ||
+                r.CategoryName === RELEASE_CATEGORIES.STABLE
+            );
             if (latest_early) {
                 return latest_early;
             }
@@ -79,16 +80,16 @@ const checkForValidUpdates = async () => {
     }
 
     if (!isANewerThanB(latest.Version, local.Version)) {
-        Logger.info(`Skipping update: no newer version avaiable, local:"${local.Version}", latest:"${latest.Version}"`);
+        Logger.info("Skipping update: no newer version avaiable, local:", local, "latest:", latest);
         return
     }
 
     if (local.RolloutProportion > latest.RolloutProportion) {
-        Logger.info(`Skipping update: a newer version is available "${latest.Version}" but rollout is low, local:${local.RolloutProportion*100}%, latest:${latest.RolloutProportion*100}%`);
+        Logger.info("Skipping update: a newer version is available", latest, `but rollout is low, local:${local.RolloutProportion*100}%`);
         return
     }
 
-   Logger.info(`New valid update found: version:"${latest.Version}", rollout:${latest.RolloutProportion*100}%`)
+    Logger.info("New valid update found! Latest:", latest, "local:", local)
 
     updateElectronApp({
         updateSource: {
@@ -100,23 +101,30 @@ const checkForValidUpdates = async () => {
     });
 }
 
-const getVersionURL = (platform: string) => {
+function getVersionURL(platform: DESKTOP_PLATFORMS) {
     // FIXME return `https://proton.me/download/mail/${platform}/version.json`;
-    return `https://nexus.protontech.ch/repository/bridge-devel-builds/tmp/inda/${platform}/version.json`
+    return `https://nexus.protontech.ch/repository/bridge-devel-builds/tmp/inda/${platform}/version.json`;
 }
 
-const isANewerThanB = (a: string, b:string) => {
+function isANewerThanB (a: string, b:string) {
     return semver(a) > semver(b);
 }
 
-
-const getAvailableVersions = (platform: DESKTOP_PLATFORMS): Promise<ReleaseList | undefined> => {
+function getAvailableVersions (platform: DESKTOP_PLATFORMS): Promise<ReleaseList | undefined> {
     // FIXME create secure session for fetch (cert pinning)
     return fetch(getVersionURL(platform))
         .then((r) => r.json())
-        .then((r: ReleaseList) => r)
-        .catch((e)=>{
-            Logger.warn("Failed to get available versions:", e)
-            return undefined
+        .then((data) => releaseListSchema.parse(data))
+        .then((unsortedVersions) => {
+            return {
+                Releases: unsortedVersions.Releases.sort(
+                    (a: ReleaseInfo, b: ReleaseInfo) =>
+                    Math.sign(semver(b.Version) - semver(a.Version))
+                )
+            }
+        })
+        .catch((e) => {
+            Logger.warn("Check update: failed to get available versions:", e)
+            return undefined;
         });
-};
+}
