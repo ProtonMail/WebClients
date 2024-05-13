@@ -25,7 +25,6 @@ import {
     useFormErrors,
 } from '../../../components';
 import { useConfig } from '../../../hooks';
-import { useFlag } from '../../unleash';
 
 interface ReasonOption {
     title: string;
@@ -81,7 +80,6 @@ const FeedbackDowngradeModal = ({
     ...rest
 }: FeedbackDowngradeModalProps & PromiseHandlers) => {
     const { APP_NAME } = useConfig();
-    const showAdditionalVpnDowngradeReasons = useFlag('ShowAdditionalVpnDowngradeReasons');
 
     const { isPaid } = user;
 
@@ -140,13 +138,13 @@ const FeedbackDowngradeModal = ({
                     : c('Downgrade account reason').t`Temporary need, may come back in the future`,
                 value: TEMPORARY,
             },
-            isVpnApp && showAdditionalVpnDowngradeReasons
+            isVpnApp
                 ? {
                       title: c('Downgrade account reason').t`I have not managed to connect`,
                       value: VPN_CONNECTION_ISSUE,
                   }
                 : undefined,
-            isVpnApp && showAdditionalVpnDowngradeReasons
+            isVpnApp
                 ? {
                       title: c('Downgrade account reason').t`I do not wish to share`,
                       value: NOT_WILLING_TO_SHARE,
