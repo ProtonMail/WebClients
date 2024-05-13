@@ -7,8 +7,8 @@ import { getDefaultKTLS } from '@proton/shared/lib/keyTransparency';
  * Return the set of functions to use account's local storage
  */
 export const getKTLocalStorage = async (APP_NAME: APP_NAMES): Promise<KTLocalStorageAPI> => {
-    if (APP_NAME === APPS.PROTONACCOUNT || APP_NAME === APPS.PROTONVPN_SETTINGS) {
-        // If we are in account, we use its local storage directly
+    if (APP_NAME === APPS.PROTONACCOUNT || APP_NAME === APPS.PROTONVPN_SETTINGS || !instance) {
+        // If we are in account, or if the guest cross storage hasn't been setup, we use the app's local storage directly
         return getDefaultKTLS();
     }
     // Check if cross storage is available
