@@ -12,7 +12,7 @@ import { mockUseBitcoinNetwork } from '../../tests/mocks/useBitcoinNetwork';
 import { mockUseDebounceEffect } from '../../tests/mocks/useDebounceEffect';
 import { useWalletsChainData } from './useWalletsChainData';
 
-const firstIterAccounts = {
+const accounts = {
     '0': {
         wallet: expect.any(WasmWallet),
         accounts: {
@@ -20,13 +20,11 @@ const firstIterAccounts = {
                 account: expect.any(WasmAccount),
                 derivationPath: "m/84'/0'/0'",
                 scriptType: 2,
-                syncId: 'account-sync-1',
             },
             '9': {
                 account: expect.any(WasmAccount),
                 derivationPath: "m/86'/0'/0'",
                 scriptType: 3,
-                syncId: 'account-sync-2',
             },
         },
     },
@@ -37,13 +35,11 @@ const firstIterAccounts = {
                 account: expect.any(WasmAccount),
                 derivationPath: "m/49'/0'/0'",
                 scriptType: 1,
-                syncId: 'account-sync-3',
             },
             '11': {
                 account: expect.any(WasmAccount),
                 derivationPath: "m/84'/0'/0'",
                 scriptType: 2,
-                syncId: 'account-sync-4',
             },
         },
     },
@@ -54,55 +50,6 @@ const firstIterAccounts = {
                 account: expect.any(WasmAccount),
                 derivationPath: "m/84'/0'/0'",
                 scriptType: 2,
-                syncId: 'account-sync-5',
-            },
-        },
-    },
-};
-
-const secondIterAccounts = {
-    '0': {
-        wallet: expect.any(WasmWallet),
-        accounts: {
-            '8': {
-                account: expect.any(WasmAccount),
-                derivationPath: "m/84'/0'/0'",
-                scriptType: 2,
-                syncId: 'account-sync-6',
-            },
-            '9': {
-                account: expect.any(WasmAccount),
-                derivationPath: "m/86'/0'/0'",
-                scriptType: 3,
-                syncId: 'account-sync-7',
-            },
-        },
-    },
-    '1': {
-        wallet: expect.any(WasmWallet),
-        accounts: {
-            '10': {
-                account: expect.any(WasmAccount),
-                derivationPath: "m/49'/0'/0'",
-                scriptType: 1,
-                syncId: 'account-sync-8',
-            },
-            '11': {
-                account: expect.any(WasmAccount),
-                derivationPath: "m/84'/0'/0'",
-                scriptType: 2,
-                syncId: 'account-sync-9',
-            },
-        },
-    },
-    '2': {
-        wallet: expect.any(WasmWallet),
-        accounts: {
-            '12': {
-                account: expect.any(WasmAccount),
-                derivationPath: "m/84'/0'/0'",
-                scriptType: 2,
-                syncId: 'account-sync-10',
             },
         },
     },
@@ -136,7 +83,7 @@ describe('useWalletsChainData', () => {
         expect(mockedShouldSync).toHaveBeenLastCalledWith(expect.any(WasmAccount));
         expect(mockedFullSync).toHaveBeenCalledTimes(5);
         expect(mockedFullSync).toHaveBeenLastCalledWith(expect.any(WasmAccount));
-        expect(result.current.walletsChainData).toStrictEqual(firstIterAccounts);
+        expect(result.current.walletsChainData).toStrictEqual(accounts);
 
         // After 10 minutes, it should run a new sync loop
         vi.clearAllMocks();
@@ -146,17 +93,15 @@ describe('useWalletsChainData', () => {
         expect(mockedShouldSync).toHaveBeenLastCalledWith(expect.any(WasmAccount));
         expect(mockedFullSync).toHaveBeenCalledTimes(5);
         expect(mockedFullSync).toHaveBeenLastCalledWith(expect.any(WasmAccount));
-        expect(result.current.walletsChainData).toStrictEqual(secondIterAccounts);
         vi.clearAllMocks();
 
-        // Now it shouldn't run any sync anymore, and shouldn't update syncId neither
+        // Now it shouldn't run any sync anymore
         mockedShouldSync.mockResolvedValue(false);
         vitest.advanceTimersByTime(10 * MINUTE);
 
         await waitFor(() => expect(mockedShouldSync).toHaveBeenCalledTimes(5));
         expect(mockedShouldSync).toHaveBeenLastCalledWith(expect.any(WasmAccount));
         expect(mockedFullSync).toHaveBeenCalledTimes(0);
-        expect(result.current.walletsChainData).toStrictEqual(secondIterAccounts);
     });
 
     describe('manual triggers', () => {
@@ -175,9 +120,7 @@ describe('useWalletsChainData', () => {
             expect(mockedFullSync).toHaveBeenCalledTimes(1);
             expect(mockedFullSync).toHaveBeenLastCalledWith(expect.any(WasmAccount));
 
-            expect(result.current.walletsChainData['0']?.accounts['8']?.syncId).toBe('account-sync-11');
-
-            // Now it shouldn't run any sync anymore, and shouldn't update syncId neither
+            // Now it shouldn't run any sync anymore
             mockedShouldSync.mockResolvedValue(false);
             vi.clearAllMocks();
 
@@ -185,8 +128,6 @@ describe('useWalletsChainData', () => {
 
             await waitFor(() => expect(mockedShouldSync).toHaveBeenCalledTimes(1));
             expect(mockedFullSync).toHaveBeenCalledTimes(0);
-
-            expect(result.current.walletsChainData['0']?.accounts['8']?.syncId).toBe('account-sync-11');
         });
 
         it('should return helpers to trigger manually sync for single wallet, when needed', async () => {
@@ -199,10 +140,7 @@ describe('useWalletsChainData', () => {
             expect(mockedFullSync).toHaveBeenCalledTimes(2);
             expect(mockedFullSync).toHaveBeenLastCalledWith(expect.any(WasmAccount));
 
-            expect(result.current.walletsChainData['0']?.accounts['8']?.syncId).toBe('account-sync-12');
-            expect(result.current.walletsChainData['0']?.accounts['9']?.syncId).toBe('account-sync-13');
-
-            // Now it shouldn't run any sync anymore, and shouldn't update syncId neither
+            // Now it shouldn't run any sync anymore
             mockedShouldSync.mockResolvedValue(false);
             vi.clearAllMocks();
 
@@ -210,9 +148,6 @@ describe('useWalletsChainData', () => {
 
             await waitFor(() => expect(mockedShouldSync).toHaveBeenCalledTimes(2));
             expect(mockedFullSync).toHaveBeenCalledTimes(0);
-
-            expect(result.current.walletsChainData['0']?.accounts['8']?.syncId).toBe('account-sync-12');
-            expect(result.current.walletsChainData['0']?.accounts['9']?.syncId).toBe('account-sync-13');
         });
     });
 

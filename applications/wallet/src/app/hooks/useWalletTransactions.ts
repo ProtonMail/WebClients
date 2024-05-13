@@ -2,36 +2,95 @@ import { SetStateAction, useCallback, useEffect, useMemo, useRef, useState } fro
 
 import { c } from 'ttag';
 
-import { WasmApiWalletTransaction, WasmProtonWalletApiClient, WasmTransactionDetails } from '@proton/andromeda';
+import {
+    WasmApiWalletAccount,
+    WasmApiWalletTransaction,
+    WasmProtonWalletApiClient,
+    WasmTransactionDetails,
+} from '@proton/andromeda';
 import generateUID from '@proton/atoms/generateUID';
-import { useNotifications } from '@proton/components/hooks';
-import { CryptoProxy } from '@proton/crypto/lib';
+import { useGetAddressKeys, useNotifications } from '@proton/components/hooks';
+import { PrivateKeyReference } from '@proton/crypto/lib';
 import useLoading from '@proton/hooks/useLoading';
-import { uint8ArrayToBase64String, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
+import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import { DecryptedKey } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
-import { IWasmApiWalletData, useWalletApi } from '@proton/wallet';
+import {
+    IWasmApiWalletData,
+    WalletMap,
+    decryptArmoredData,
+    decryptWalletData,
+    decryptWalletKey,
+    decryptWalletKeyForHmac,
+    encryptArmoredData,
+    encryptWalletDataWithWalletKey,
+    hmac,
+    useWalletApi,
+} from '@proton/wallet';
 
 import { useBitcoinBlockchainContext } from '../contexts';
 import { useGetApiWalletTransactionData } from '../store/hooks';
 import { AccountIdByDerivationPathAndWalletId } from '../types';
-import {
-    decryptPgp,
-    decryptWalletData,
-    decryptWalletKeyForHmac,
-    encryptWalletDataWithWalletKey,
-    getSymmetricKey,
-    hmac,
-} from '../utils/crypto';
 
-type TransactionDataTuple = [WasmTransactionDetails, WasmApiWalletTransaction | null];
+type DecryptedTransactionData = Omit<WasmApiWalletTransaction, 'ToList' | 'TransactionID'> & {
+    ToList: Partial<Record<string, string>>;
+    TransactionID: string | null;
+};
+
+type TransactionDataTuple = [WasmTransactionDetails, DecryptedTransactionData | null];
 type TransactionDataByHashedTxId = Partial<Record<string, TransactionDataTuple>>;
 
 export interface TransactionData {
     networkData: WasmTransactionDetails;
-    apiData: WasmApiWalletTransaction | null;
+    apiData: DecryptedTransactionData | null;
 }
+
+const parsedRecipientList = (toList: string | null): Partial<Record<string, string>> => {
+    try {
+        const parsed = toList ? JSON.parse(toList) : {};
+
+        // TODO: check with API why some toList are arrays
+        return Array.isArray(parsed) ? parsed[0] : parsed;
+    } catch {
+        return {};
+    }
+};
+
+/**
+ * Decrypt transaction data. If addressKeys is not provided, we won't try to decrypt Body, Sender and ToList.
+ *
+ * Additionnally, TransactionID decryption might fail if Tx was created by a third party (using address keys)
+ */
+const decryptTransactionData = async (
+    apiTransaction: WasmApiWalletTransaction,
+    userKey: PrivateKeyReference,
+    addressKeys?: PrivateKeyReference[]
+): Promise<DecryptedTransactionData> => {
+    const TransactionID = await decryptArmoredData(apiTransaction.TransactionID, [userKey, ...(addressKeys ?? [])]);
+
+    if (!addressKeys) {
+        return {
+            ...apiTransaction,
+            TransactionID,
+            ToList: {},
+        };
+    }
+
+    const Body = await decryptArmoredData(apiTransaction.Body, addressKeys);
+    const Sender = await decryptArmoredData(apiTransaction.Sender, addressKeys);
+
+    const SerialisedToList = await decryptArmoredData(apiTransaction.ToList, addressKeys);
+    const ToList = parsedRecipientList(SerialisedToList);
+
+    return {
+        ...apiTransaction,
+        TransactionID,
+        Body,
+        Sender,
+        ToList,
+    };
+};
 
 const getWalletTransactionsToHash = async (api: WasmProtonWalletApiClient, walletId: string) => {
     try {
@@ -78,9 +137,11 @@ const keyTxNetworkDataByHashedTxId = async (transactions: WasmTransactionDetails
 const addMissingHashToWalletTransactions = async (
     api: WasmProtonWalletApiClient,
     walletId: string,
+    walletMap: WalletMap,
     transactionDataByHashedTxId: TransactionDataByHashedTxId,
-    keys: DecryptedKey[],
-    hmacKey: CryptoKey
+    userKey: DecryptedKey,
+    hmacKey: CryptoKey,
+    getWalletAccountPrimaryAddressKeys: (account: WasmApiWalletAccount) => Promise<PrivateKeyReference[]>
 ) => {
     const cloned: TransactionDataByHashedTxId = { ...transactionDataByHashedTxId };
 
@@ -88,24 +149,40 @@ const addMissingHashToWalletTransactions = async (
     const walletTransactionsToHash = await getWalletTransactionsToHash(api, walletId);
 
     for (const walletTransactionToHash of walletTransactionsToHash) {
+        const account =
+            walletTransactionToHash.Data.WalletAccountID &&
+            walletMap[walletId]?.accounts[walletTransactionToHash.Data.WalletAccountID];
+
+        if (!account) {
+            // TODO: do something to avoid creating automatically transaction here?
+            continue;
+        }
+
         try {
+            const accountPrimaryAddressKeys = await getWalletAccountPrimaryAddressKeys(account);
+
             // Decrypt txid
-            const decryptedTxId = await decryptPgp(walletTransactionToHash.Data.TransactionID, keys);
+            const decryptedTransactionData = await decryptTransactionData(
+                walletTransactionToHash.Data,
+                userKey.privateKey,
+                accountPrimaryAddressKeys
+            );
 
-            // Then hash it
-            const hashedTxIdBuffer = await hmac(hmacKey, uint8ArrayToString(decryptedTxId));
-            const hashedTransactionID = uint8ArrayToBase64String(new Uint8Array(hashedTxIdBuffer));
-
-            if (!walletTransactionToHash.Data.WalletAccountID) {
+            // TODO: this can only occur if decryption fails. We need to better handle that
+            if (!decryptedTransactionData.TransactionID) {
                 continue;
             }
+
+            // Then hash it
+            const hashedTxIdBuffer = await hmac(hmacKey, decryptedTransactionData.TransactionID);
+            const hashedTransactionID = uint8ArrayToBase64String(new Uint8Array(hashedTxIdBuffer));
 
             // TODO: maybe spawn an error message here?
             await api
                 .wallet()
                 .updateWalletTransactionHashedTxId(
                     walletId,
-                    walletTransactionToHash.Data.WalletAccountID,
+                    account.ID,
                     walletTransactionToHash.Data.ID,
                     hashedTransactionID
                 )
@@ -117,10 +194,16 @@ const addMissingHashToWalletTransactions = async (
             if (networkTx) {
                 cloned[hashedTransactionID] = [
                     networkTx,
-                    { ...walletTransactionToHash.Data, HashedTransactionID: hashedTransactionID },
+                    {
+                        ...decryptedTransactionData,
+                        HashedTransactionID: hashedTransactionID,
+                    },
                 ];
             }
-        } catch {}
+        } catch (e) {
+            // TODO: do something to avoid creating wallet transaction when error occurs here
+            console.error('An error occured during transactin decryption, we will create a new transaction');
+        }
     }
 
     return cloned;
@@ -146,14 +229,14 @@ const createMissingTxData = async (
                 continue;
             }
 
-            const { message: txid } = await CryptoProxy.encryptMessage({
-                textData: networkData.txid,
-                encryptionKeys: [userKey.privateKey],
-                signingKeys: [userKey.privateKey],
-                format: 'armored',
-            });
+            const txid = await encryptArmoredData(networkData.txid, [userKey.privateKey]);
 
-            const { Data: createdTx } = await api.wallet().createWalletTransaction(walletId, accountId, {
+            // TODO: this can only occur on encryption error: we need to better handle that
+            if (!txid) {
+                continue;
+            }
+
+            const { Data: createdTransaction } = await api.wallet().createWalletTransaction(walletId, accountId, {
                 txid,
                 hashed_txid: hashedTxId,
                 transaction_time: networkData.time?.confirmation_time
@@ -163,8 +246,12 @@ const createMissingTxData = async (
                 exchange_rate_id: null,
             });
 
-            createdTransactionDataByHashedTxId[hashedTxId] = [networkData, createdTx];
-            onCreatedTransaction({ [hashedTxId]: [networkData, createdTx] });
+            const decryptedTransactionData = await decryptTransactionData(createdTransaction, userKey.privateKey);
+
+            const tupple: TransactionDataTuple = [networkData, decryptedTransactionData];
+
+            createdTransactionDataByHashedTxId[hashedTxId] = tupple;
+            onCreatedTransaction({ [hashedTxId]: tupple });
         } catch {}
     }
 
@@ -181,11 +268,11 @@ const createMissingTxData = async (
  */
 export const useWalletTransactions = ({
     transactions,
-    keys,
+    userKeys,
     wallet,
 }: {
     transactions: WasmTransactionDetails[];
-    keys?: DecryptedKey[];
+    userKeys?: DecryptedKey[];
     wallet?: IWasmApiWalletData;
 }) => {
     const currentProcessUid = useRef(generateUID('use-wallet-transactions'));
@@ -194,16 +281,31 @@ export const useWalletTransactions = ({
     const getTransactionsApiData = useGetApiWalletTransactionData();
 
     const [transactionDataByHashedTxId, setTransactionDataByHashedTxId] = useState<TransactionDataByHashedTxId>({});
-    const { accountIDByDerivationPathByWalletID } = useBitcoinBlockchainContext();
+    const { accountIDByDerivationPathByWalletID, walletMap } = useBitcoinBlockchainContext();
     const { createNotification } = useNotifications();
 
     const [loadingRecordInit, withLoadingRecordInit] = useLoading();
     const [loadingApiData, withLoadingApiData] = useLoading();
 
+    const getAddressesKeys = useGetAddressKeys();
+
+    const getWalletAccountPrimaryAddressKeys = useCallback(
+        (account: WasmApiWalletAccount) => {
+            return Promise.all(
+                account.Addresses.map((address) =>
+                    getAddressesKeys(address.ID).then(([primaryAddressKey]) => primaryAddressKey.privateKey)
+                )
+            );
+        },
+        [getAddressesKeys]
+    );
+
     const fetchWalletTransactions = useCallback(async () => {
-        if (!wallet || !keys || !transactions.length) {
+        if (!wallet || !userKeys) {
             return;
         }
+
+        const [primaryUserKey] = userKeys;
 
         const {
             WalletKey,
@@ -223,7 +325,7 @@ export const useWalletTransactions = ({
         };
 
         const initResult = (await withLoadingRecordInit(async () => {
-            const hmacKey = await decryptWalletKeyForHmac(WalletKey.WalletKey, keys);
+            const hmacKey = await decryptWalletKeyForHmac(WalletKey.WalletKey, userKeys);
             const localTransactionDataByHashedTxId = await keyTxNetworkDataByHashedTxId(transactions, hmacKey);
 
             guardSetTransactionData(localTransactionDataByHashedTxId);
@@ -236,24 +338,40 @@ export const useWalletTransactions = ({
 
         const hashedTxids = Object.keys(localTransactionDataByHashedTxId);
 
-        const transactionsApiData = await getTransactionsApiData(walletId, undefined, hashedTxids);
+        const transactionsApiData = hashedTxids.length
+            ? await getTransactionsApiData(walletId, undefined, hashedTxids)
+            : [];
 
         // populate txData with api data
         for (const { Data: transactionApiData } of transactionsApiData) {
             const { HashedTransactionID } = transactionApiData;
-            if (HashedTransactionID) {
+
+            // TODO: later WalletAccountID won't be nullable anymore, typeguard can be removed then
+            const account =
+                transactionApiData.WalletAccountID &&
+                walletMap[transactionApiData.WalletID]?.accounts[transactionApiData.WalletAccountID];
+
+            if (HashedTransactionID && account) {
                 const txNetworkData = localTransactionDataByHashedTxId[HashedTransactionID]?.[0];
 
                 if (txNetworkData) {
                     const [decryptedLabel] = await decryptWalletData(
                         [transactionApiData.Label],
                         WalletKey.WalletKey,
-                        keys
+                        userKeys
                     ).catch(() => []);
+
+                    const accountKeys = await getWalletAccountPrimaryAddressKeys(account);
+
+                    const decryptedTransactionData = await decryptTransactionData(
+                        transactionApiData,
+                        primaryUserKey.privateKey,
+                        accountKeys
+                    );
 
                     localTransactionDataByHashedTxId[HashedTransactionID] = [
                         txNetworkData,
-                        { ...transactionApiData, Label: decryptedLabel ?? '' },
+                        { ...decryptedTransactionData, Label: decryptedLabel },
                     ];
                 }
             }
@@ -270,9 +388,11 @@ export const useWalletTransactions = ({
         const withMissingHashTransactions = await addMissingHashToWalletTransactions(
             api,
             walletId,
+            walletMap,
             localTransactionDataByHashedTxId,
-            keys,
-            hmacKey
+            primaryUserKey,
+            hmacKey,
+            getWalletAccountPrimaryAddressKeys
         );
 
         const transactionsWithoutApiData = filterTxWithoutApiData(withMissingHashTransactions);
@@ -281,8 +401,6 @@ export const useWalletTransactions = ({
         if (!transactionsWithoutApiData.length) {
             guardSetTransactionData((prev) => ({ ...prev, ...withMissingHashTransactions }));
         } else {
-            const [primaryUserKey] = keys;
-
             guardSetTransactionData((prev) => ({ ...prev, ...withMissingHashTransactions }));
 
             // Else we create missing tx in api
@@ -297,11 +415,13 @@ export const useWalletTransactions = ({
         }
     }, [
         wallet,
-        keys,
-        transactions,
+        userKeys,
         withLoadingRecordInit,
         getTransactionsApiData,
         api,
+        walletMap,
+        getWalletAccountPrimaryAddressKeys,
+        transactions,
         accountIDByDerivationPathByWalletID,
     ]);
 
@@ -309,27 +429,40 @@ export const useWalletTransactions = ({
         async (labelInput: string, txData: TransactionData) => {
             const { networkData, apiData } = txData;
 
-            if (!apiData) {
+            if (!apiData || !userKeys) {
                 return;
             }
 
+            const [primaryUserKey] = userKeys;
+
             const { WalletID, WalletAccountID, ID: TransactionID, Label } = apiData;
 
-            if (keys && WalletAccountID && wallet?.WalletKey?.WalletKey && Label !== labelInput) {
+            // TODO: later WalletAccountID won't be nullable anymore, typeguard can be removed then
+            const account = WalletAccountID && walletMap[WalletID]?.accounts[WalletAccountID];
+
+            if (account && WalletAccountID && wallet?.WalletKey?.WalletKey && Label !== labelInput) {
+                // TODO: later WalletAccountID won't be nullable anymore, typeguard can be removed then
+
                 try {
-                    const decryptedKey = await decryptPgp(wallet.WalletKey.WalletKey, keys);
-                    const key = await getSymmetricKey(decryptedKey);
-                    const [encryptedLabel] = await encryptWalletDataWithWalletKey([labelInput], key);
+                    const decryptedKey = await decryptWalletKey(wallet.WalletKey.WalletKey, userKeys);
+                    const [encryptedLabel] = await encryptWalletDataWithWalletKey([labelInput], decryptedKey);
 
                     const { Data: updatedTx } = await api
                         .wallet()
                         .updateWalletTransactionLabel(WalletID, WalletAccountID, TransactionID, encryptedLabel ?? '');
 
+                    const accountKeys = await getWalletAccountPrimaryAddressKeys(account);
+                    const decryptedTransactionData = await decryptTransactionData(
+                        updatedTx,
+                        primaryUserKey.privateKey,
+                        accountKeys
+                    );
+
                     const hashedTxId = updatedTx.HashedTransactionID;
                     if (hashedTxId) {
                         setTransactionDataByHashedTxId((prev) => ({
                             ...prev,
-                            [hashedTxId]: [networkData, { ...updatedTx, Label: labelInput }],
+                            [hashedTxId]: [networkData, { ...decryptedTransactionData, Label: labelInput }],
                         }));
                     }
 
@@ -342,7 +475,7 @@ export const useWalletTransactions = ({
                 }
             }
         },
-        [keys, wallet?.WalletKey?.WalletKey, api, createNotification]
+        [userKeys, walletMap, wallet?.WalletKey?.WalletKey, api, getWalletAccountPrimaryAddressKeys, createNotification]
     );
 
     useEffect(() => {

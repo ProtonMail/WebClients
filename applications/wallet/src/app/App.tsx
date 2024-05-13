@@ -41,6 +41,7 @@ import ExtendedApiProvider from '@proton/wallet/contexts/ExtendedApiContext/Exte
 
 import { bootstrapApp } from './bootstrap';
 import * as config from './config';
+import { WalletDrawerContextProvider } from './contexts/WalletDrawerContext/WalletDrawerContextProvider';
 import locales from './locales';
 import { WalletStore } from './store/store';
 import { extraThunkArguments } from './store/thunk';
@@ -105,25 +106,34 @@ const App = () => {
                 return (
                     <ProtonStoreProvider store={state.store}>
                         <AuthenticationProvider store={extraThunkArguments.authentication}>
-                            <ExtendedApiProvider api={extraThunkArguments.api} walletApi={extraThunkArguments.walletApi}>
-                                <DrawerProvider defaultShowDrawerSidear={state.showDrawerSidebar}>
-                                    <FlagProvider unleashClient={extraThunkArguments.unleashClient} startClient={false}>
-                                        <Router history={extraThunkArguments.history}>
-                                            <EventManagerProvider eventManager={extraThunkArguments.eventManager}>
-                                                <ErrorBoundary big component={<StandardErrorPage big />}>
-                                                    <StandardPrivateApp
-                                                        hasReadableMemberKeyActivation
-                                                        hasMemberKeyMigration
-                                                        hasPrivateMemberKeyGeneration
-                                                        loader={loader}
-                                                    >
-                                                        <state.MainContainer />
-                                                    </StandardPrivateApp>
-                                                </ErrorBoundary>
-                                            </EventManagerProvider>
-                                        </Router>
-                                    </FlagProvider>
-                                </DrawerProvider>
+                            <ExtendedApiProvider
+                                api={extraThunkArguments.api}
+                                walletApi={extraThunkArguments.walletApi}
+                            >
+                                <WalletDrawerContextProvider>
+                                    {/* TODO: remove drawer provider */}
+                                    <DrawerProvider defaultShowDrawerSidear={state.showDrawerSidebar}>
+                                        <FlagProvider
+                                            unleashClient={extraThunkArguments.unleashClient}
+                                            startClient={false}
+                                        >
+                                            <Router history={extraThunkArguments.history}>
+                                                <EventManagerProvider eventManager={extraThunkArguments.eventManager}>
+                                                    <ErrorBoundary big component={<StandardErrorPage big />}>
+                                                        <StandardPrivateApp
+                                                            hasReadableMemberKeyActivation
+                                                            hasMemberKeyMigration
+                                                            hasPrivateMemberKeyGeneration
+                                                            loader={loader}
+                                                        >
+                                                            <state.MainContainer />
+                                                        </StandardPrivateApp>
+                                                    </ErrorBoundary>
+                                                </EventManagerProvider>
+                                            </Router>
+                                        </FlagProvider>
+                                    </DrawerProvider>
+                                </WalletDrawerContextProvider>
                             </ExtendedApiProvider>
                         </AuthenticationProvider>
                     </ProtonStoreProvider>

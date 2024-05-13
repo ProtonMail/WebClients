@@ -1,4 +1,4 @@
-import { WasmScriptType } from '@proton/andromeda';
+import { WasmBitcoinUnit, WasmScriptType } from '@proton/andromeda';
 
 export const SATOSHI = 1;
 export const BITCOIN = 100000000 * SATOSHI;
@@ -8,7 +8,9 @@ export const CENTS_IN_ONE_DOLLAR = 100;
 
 export const DEFAULT_INDEX = 0;
 
-export const DEFAULT_ACCOUNT_LABEL = 'Standard';
+export const DEFAULT_BITCOIN_UNIT: WasmBitcoinUnit = 'SATS';
+
+export const DEFAULT_ACCOUNT_LABEL = 'Primary Account';
 export const DEFAULT_SCRIPT_TYPE = WasmScriptType.NativeSegwit;
 
 export const SCRIPT_TYPES = [
@@ -31,3 +33,5 @@ export const DEFAULT_TARGET_BLOCK = 5;
 export const MAX_BLOCK_TARGET = 25;
 
 export const AVERAGE_TIMEGAP_BETWEEN_BLOCKS = 10;
+
+export const BITCOIN_ADDRESS_INDEX_GAP_BEFORE_WARNING = 10;

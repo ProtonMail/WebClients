@@ -7,34 +7,23 @@ import {
     WasmApiWalletTransaction,
     WasmApiWalletTransactionData,
     WasmApiWalletTransactions,
+    WasmScriptType,
     WasmTransactionDetails,
     WasmWalletClient,
 } from '@proton/andromeda';
 import { CryptoProxy } from '@proton/crypto';
 import { Api as CryptoApi } from '@proton/crypto/lib/worker/api';
-import { DecryptedKey } from '@proton/shared/lib/interfaces';
-import { mockUseNotifications } from '@proton/testing/lib/vitest';
+import { Address, DecryptedAddressKey, DecryptedKey } from '@proton/shared/lib/interfaces';
+import { mockUseGetAddressKeys, mockUseNotifications } from '@proton/testing/lib/vitest';
+import { IWasmApiWalletData } from '@proton/wallet';
+import { buildMapFromWallets } from '@proton/wallet/utils/wallet';
 
 import { useGetApiWalletTransactionData } from '../store/hooks';
 import { mockUseBitcoinBlockchainContext, mockUseGetApiWalletTransactionData, mockUseWalletApi } from '../tests';
-import { pgpPrvKey } from '../tests/fixtures/keys';
+import { getAddressKey, getUserKeys } from '../tests/utils/keys';
 import { useWalletTransactions } from './useWalletTransactions';
 
-const getUserKeys = async () => {
-    const key1 = await CryptoProxy.importPrivateKey({ armoredKey: pgpPrvKey, passphrase: 'testtest' });
-
-    const userKeys: DecryptedKey[] = [
-        {
-            privateKey: key1,
-            publicKey: key1,
-            ID: 'WALLET_TEST',
-        },
-    ];
-
-    return userKeys;
-};
-
-const wallet = {
+const wallet: IWasmApiWalletData = {
     Wallet: {
         ID: '01',
         Name: 'Test wallet',
@@ -51,7 +40,18 @@ const wallet = {
         PublicKey: null,
         Passphrase: '',
     },
-    WalletAccounts: [],
+    WalletAccounts: [
+        {
+            ID: '001',
+            Label: 'Test account',
+            WalletID: '01',
+            DerivationPath: "m/84'/1'/0'",
+            ScriptType: WasmScriptType.NativeSegwit,
+            FiatCurrency: 'USD',
+            // match address defined in getAddressKey utils
+            Addresses: [{ Email: 'pro@prootn.test', ID: '0000001' }],
+        },
+    ],
     WalletKey: {
         WalletID: '01',
         UserKeyID: '',
@@ -120,34 +120,100 @@ const apiTransactions: WasmApiWalletTransaction[] = [
         WalletID: '01',
         WalletAccountID: '001',
         ID: '0001',
-        TransactionID:
-            'wcBMA5fAXxAlQaycAQf8CjDV7gy1vQcYgCJD32/GitZOh11BnMB/7VBtKzQ+kbxUoQeeJ4iuyAMRAIIkbZRVwW0ax97X3yVpP9ACxopkd2gEWi1jNI2Xdcp1+mJuqsQIPdFCkgEKYe1zJca7g04SnW+CWrTcz2GHwZm7aAaBfuq5bU+dop+rXfvqsSSVqjQAtP5UVGnptXqoBa+wfFjJah2dsqEhiu+Ia5hjm4kT6WapxbvHqT8LulrzcrEjlRBhyjSfVDRL0FsFatiBR2K/qWJSw5Rz3C30DvtH1GNY7Qw5JrPzdABMS5XR+84gWWOhwSCWouZGyefnluh/PmI2AdcuL4zuDtAAXCtDC0XQk9LA9gG3zj5zJu8oSVRFLCGPzI3U0nt2g5xr6jQXS4Y9qt3O6Laqzm8XdA+42ncTNdogMwT78hoxQI4zRBPRfE/NZtNWgwZlulzYxK3vOnUR6/z33JCW5BUQvZRhcqSJePjMv/CDU3nSnqoD0bmTVsJdzgMmUW5ox+8LmpGV/IXCji/eqD2jIyjX8VeKAznlN1AX+6Pb6SrW0hmH1pmV6FUGG/JjLJp7/FDyGfjLWa+e2TilcHp1iHUw8KTw2Oo/0tACkTN0m+wOjHaDPS++ILiMJxmDMrCbvPWATPClvLcHbNoB9NV9MacwnAaIOdIA7wqnXy/fwUMmQpMLylrEfvG/B98Fbr93OxB0b3WxaAoHBbN0N7w7fi1jQPCZ+hIJDwqWgPhKmipECLXTMDQm0djRxaB/TFvdtaLjKyiUej34CfJ5mXEhvbEEP0wv7T4ZLyy/PxV4pJr6qsfqGbuJFIbl9xMVca9pL47Vzf3fvBzgSETnOzW27D7oYzJYYrdbHAlZ7Z2/z2Tr4ABk32aYLa2FtEQE9t2hwZeo8FLEUOx22RKW0fzZErUtmrdfSzfSOBPiOsn9bGGWUw==',
+        TransactionID: `-----BEGIN PGP MESSAGE-----
+
+wcBMA5fAXxAlQaycAQf+LO834Vz+OEP8G8i0C95YmPXS+QhUxwQQtolDpRhc
+od20HaHkUM7DMifBncmAG0wV2kqpRLPN6RHE2VmQPfIaXA7f+BcOtvdMxMFD
+eP4ozgqebBkXVYPurxlSnlCbmVq38TpAnZfK/tdapFM4A2OHc8opKjO0HCFC
+dY2yj4HziGfLAJWYw2Nppwj8gTV+zbz6Hh7aV97zMmlY7G8QeC2IOpIx5Eja
+YiWDeqa2EUq3IppByB7sJniL9+L3GVlSGi92WvcE5Dj09ZirnPeyjCwUrJJ9
+Erncj7+xOux5dC6DAXos0dRUyrH3zHsMQR4jrsUEz7AV4wbTj5NL36CRMLQR
+GdLA9gF+JC4YjwNAA7852tnpY/G45NCbTWxHUtBKMsP6x3MorTl4h8YVo0Qc
+5PPvlXXHGRJNRIrLtQz4qydzRFYsd1wIiGqXHnqh43tv35odv84wHCGTIlO7
+34GDQm9rmDGw+y7sw7csUp4dCVlMbyWHTSeDVWbdnExCT91RPqU7a/Tc2Pi2
+QALY/sJB+x5tFAWFDbC0wMsiu1PH5O47FQmkXHL+L9TOd+tPuHK9vdK8jmEn
+j4ge+z2sdy7ZiSJ591bI/FkSeaJLRG+8mAnKLtEk2YpCtiik1UntGjsidR6w
+ehqQ2lf6qEeOzS7JPNVGAfey2BA6HaSi8FvwIZtHnv3BzKftmARh569tCK/F
+6LfqZps5QP1CLCrq6DttyMYvgWAkzqWaeYl2v2+/ngwWYPmak4yfnEO7Fhvt
+hs7dzDNraGMjSxxFUrkJBmaXTJWb+p0QhZqAsF7+0c1LEU3V+A3Riph9UFQP
+hKMuDXNCtFRZsU3pstl2+xuSXfrhy2HJcIvnlGvKwpxlDPnkeLerRNmtw7o3
+9B0mwc6Q+BXX547SVueQ8+9aaoD3wkuJvRMakDNwiAg6+f3IPQ==
+=BRNT
+-----END PGP MESSAGE-----`,
         TransactionTime: '',
         HashedTransactionID: 'UI9Ip7pEeHkdWPWZI+Pd8cYaaJmnumuDGUzdX+OZ6l0=',
-        Label: '',
+        Label: null,
         ExchangeRate: null,
+        Subject: null,
+        Body: null,
+        ToList: null,
+        Sender: null,
     },
     {
         WalletID: '01',
         WalletAccountID: '001',
         ID: '0002',
-        TransactionID:
-            'wcBMA5fAXxAlQaycAQf/WeKeGEht1b+3y9PN4HgJiGoQZ69ijGfRBsAqXoLz5i0WMHKOdNUClOcMpw8OdEy14ImUoxUCX0CFBxFM81qfGK5UOeVx+wsQjfuHarvw9Me9RdhD5KffonCO5W1qf4os+jCF02oRHVA8RdgP/+ZQGKK7zcUN9+QHenvYJEf7+bWb9t6opofD6Iqk0cYN8tWZ4E943LBPHdlyicRoPUZ6PSAueAlAKy3Gw9Xqk6gtgIA05uEboznERXzYDAXcwTCR7NNOJAjgAOv1xfB9Yq8wcLHowADDn6sTldA05uXgniTSSmwgEQArIMdyxVafukP8ByhKprp/8nOup9ychTBCkNLA9gHyP9zOyjFM2OjnOqS8scFIYwjbnQR96IGPuzfS10hbXp+zWTTq2N36eJosUILufiJcOEJNq6CjVBL8RxkzLlKReNzCHFg3+jX5fN1qsSwdcyn/F7XcVeMT1PrQcSA6gjUgb8CV2/M9vjNt4wD8vbqQzRMVoH1PDC3VdROvel7RaKb2XgNN1kzSUC8IzAp3YLj+r+QSvQZDtDq3oRxqnl+qy/mVhYs7PplOhNsI5lHSslGijQo5QRPUnmqlKMiuXvrNpZho5aE3mAJ2pCzM7n9Ts524xbp701hBxIgP766vf83Hek6AszEkfPZL7+VXrg1QvUqgVkooW/kNCgFrC9s0YDPF4d0994ZbwkDEUclqwOF3KkfFHjTbgT46T7iIgkHGopUiRLkCgcdNfVyLKtKCdkLxT1IoTJSKIXn02kEnIbJ1EU8MCHAmhuY0oCIdfHXJBveN8tTY1PESKYetuZqXMngr5sX810Shl2n+sQ6sho7BUiufcQduy/jd/2w/Gey61k+enYYC8X0xVRMrcah9rmWGZVtsiLZCUsZFn8uDCf1YkH/u14fHFH5Fa5P2bFQbldbt/w==',
+        TransactionID: `-----BEGIN PGP MESSAGE-----
+            
+wcBMA5fAXxAlQaycAQgAgr5lvL3k96n4gU01hTA7dnYnQd/gxIYzXkaIpaq5
+ffcl8fwPlpAuEYdlUtUZ79SdzgG5YcYSYblvX6dfmFyGbHeumWbvVZn3OJ0I
+sBRWvH0UzH3TFyboajhz17NxMpvW8TVZ23K4ZDjajk3E699l9pLfTe0G9lGM
+CVXs25Tz3S6r1M+ilVPy/C60p7Cs2BBQSCWNU3zbDrv54BaLWDf/yhaum9gQ
+Qaqd3XnotW5e8OVPXFp0QJwnsfLuY3mJ1TJzQU89geG+FjJta6wR58k3ASpB
+E4RtOc3Ox/22GCZlW+z2vec5O89ZTp3n6JDVic5woz95cDGQQLbrABZLc/EJ
+RtLA9gHxR1rd1j0GRHeLtJ9GpT0Hde30wh095bdd1jy45Qf/fjeJXxR359kX
+7vAt5GkcArRVU1nlTok+Ddy2UXDduv9U+jRSPCZJ6uwB4qijXnp/SKdmTX25
+jMo4r1g7fC/11SzMLOocAv/Ox6XB39wMSxyjb56S8LEccjHPLuBnCoyIrQI/
+X3DK9QOzNZV/RksLjbJ3r+W0vSEC8WVxXpBYzpnql9eNBhMCH8pyvQvr12/I
+sqRPDrsUdLmkHHMss73gFUqzdKvLrP3Y6mLppzq1HrMCuPQMWYcFJNEN6xMj
+sS81a0aGWLxA/RTH+FE9Lu8Www5lWCF4l795JkKknzOfMYiTVHHZun1OwDDT
+Fz5TmrZkKydBbZxinfyR+6zT3wwTVHYCOFZLgypu+644FMQ2001QB0KN/1PD
+jqr5Rnq3s+NkI9RceVCVJDHgqZh66/zj5/1979rJSx6lMmtc63UyCxqbsjHR
+znXoFKsL7ZgX2e8CxVO0j7zb/3BtyvCcxBaD0VBzotf4bS/4xY9JqzSiCL0K
+FbEaKeH1aHQSHNOHPK3UgFHx05sjsjnJpJ8lGvxJzRWfGmOJCQ==
+=v5Fj
+-----END PGP MESSAGE-----`,
         TransactionTime: '',
         HashedTransactionID: 'zaJHG6kJW4d47QqMPr4pE9ysbl8EwIpzSOxByubrQrc=',
-        Label: '',
+        Label: null,
         ExchangeRate: null,
+        Subject: null,
+        Body: null,
+        ToList: null,
+        Sender: null,
     },
     {
         WalletID: '01',
         WalletAccountID: '001',
         ID: '0003',
-        TransactionID:
-            'wcBMA5fAXxAlQaycAQf/WDCE22ixH5MUns6TEbyix00LVMDI7WlU8u7BaiZTzyqoABoHIkYPlBrnkfdvgYKRZoMXXmKIH4MmfyDtgo9Ykj3ogX47aySZAuapqqcePW/SawkG5mvgjL5FiJWqUc0+CMBMB9t7NRlNB37C5+oEdw2Vx71J+E25G5ktEUJXAozjqkDVjeD5P/B108DjFmnVVzILpu+lPSdz2KMjXJ0uOQRpaDRA1+c+Tv/ZyrR4IdET7N5cqpCy+lVAWxW16aiXDjz+ktVgqn6zYeeKoLkcq+c2qf8+KujhNj4M2euRDHfouOmMlssH0T0dqOpLeZJTx47DjGIuLugitjYJNcNjU9LA9gGxL7xO/7tAP/pNl8/JXxd3r/K7o5cYVflPdGwN1gkXlWBwaDgP3xczzfcBizcBvSlzp+p3S5zN07Ug1ZBaFhmWu4xzPtN8fIBNv5o9gK0WCPj2OXzoDbSrho2+3Jf9+bGWKl6e8M4q+EH2WaU+Lyyh7pDQiwuQx82i7xFEdAOuxjY4UazSP/g9abVcsSgES3mawrT8QsetTNKtANO8p87459oLr/Sq3hhjUbGExhGIUdwDfp/Oy951vLXVgHxQ6slkorIOrT0kmGVsRvV++dUpB3nsa7m7ydYVAhULFO/CfmfKseh3fxKIrvAx02itjjVnzQN0fs1gqeSlx15rmgbzxf9d9c4dLnZz0xmTagy8kz7OKhy4sUDdhdyNFmLOhDTCnWM0K6+hWkaOF0XD3GQoAEgHZaxWDS6WxaCz4EE+HkZOTzvXR+4fH5QiR4ebXbKmz6untiOoAfS4/l/K0BOYMfddCIEBHfwGq6b/IaNIIPNVR5rGlx7odFT4s620bsiTqSo9twrmoiu9Fo277cQbomkVfrBOs+Asc4eWoc6WPxcsTE17m743cj8/beBHGh+ILGxZHw==',
+        TransactionID: `-----BEGIN PGP MESSAGE-----
+        
+wcBMA5fAXxAlQaycAQf/URoX0CIQ/1LtfYXiVGXN35lfd46JNj8MSJW/8Tun
+i5EUAPfpatHrQVInfXPnuhPMo0CvG7ReSfJXp6vm0wGa1ym+e4Msh/Nmm9WI
+S4jc1jehG8l2X2AyOjMyDw7Fb8SJUu9IZUjZ9/aFXQy2EbU6JMyaJjDze4Rp
++MufV1IMLvzCYoPM126HBFqe+VWAiIfPwz9tstNGmwwLH5OIi5YuLYcH8gGT
+GlB3jEkoGX/s3292MMOVgG8Hy0lE4yBDaHNsWnv1hyRWdiflEPf2NIGcSzOS
+qec6txi9AvEMzBiaTTk/9+dAoOdr443/oiS1Y101yxfYDLHXNjeDFUjUb39J
+r9LA9gEJ2EkCXnC57CrHP2VyR7CGQJLxfSVRVCzYWx9RvHm5fcqA9TIJ32aM
+J3WIhdyGxXX2Z2zprme2LMGuzjLKmxmgP4+lDc3e5AurIM6fMNULiEElIiqn
+qu9BtaxmeGi+4hgTn+W2tg3GikE/cpD/l6XvKhVqZsxR+tgBsem3uS1Is/vg
+OzS4hJaVfLbFZfdyrCOT3q513VZd6FCoW7QFO8DRC/doyfSlmR0h673tlZmG
+65MZWgUeTaI20s5B5Ao1lEQCRVMoNUX42VuwitLekk0GBP6IKKAZfe58aAY2
+Hc3xFaipIDwV6GpehDHlb1WvTSXX8Rn9d4kqR02sqft6aQRovX2ekWTLgk3f
+VgS8sEb1jkJq4lF4qgulILbfIz9viwz7GCeitnHlSyMRH3ixQ9bGDzJr1tZI
+l8UwJoGe+tfYDo00RGjqhdf02CO3sDeOWHuelQIxmWsP7DCoDeJumlgOY0Hh
+8QK63vTtXuA8QV5z6D5NC+mFbljl9+6cSUliDpZ6TGVonzVPFu2qwMfWcHcO
+zTy3ydb5qp51qfSnrOxWqyY/VvnRk97PIeysGWSCERueUzfp8Q==
+=J2+C
+-----END PGP MESSAGE-----`,
         TransactionTime: '',
         HashedTransactionID: 'U6oey3/f1qlaZOpQJcQp7Jt7UhEbK+0Uk38XCJYevkc=',
-        Label: '',
+        Label: null,
         ExchangeRate: null,
+        Subject: null,
+        Body: null,
+        ToList: null,
+        Sender: null,
     },
 ];
 
@@ -155,12 +221,34 @@ const otherTx: WasmApiWalletTransaction = {
     WalletID: '01',
     WalletAccountID: '001',
     ID: '004',
-    TransactionID:
-        'wcBMA5fAXxAlQaycAQf+Os24E1z8uPmuiPDNdV3OFvS0/oydoVrCxT6TP/Mxs8/zyHFmXAUcm8uz/owGU/2CZHgUr7CbaMtKmv2YaQseOxs26yx/8becmkEX1QeSap8jDkahzpIUaY8z+1ufhK3Add4X3o4cjIXvrWpKUmYY4O5htYPlNvbBGrm6BHdUUMeVUih+O4KK8m1fLgdW/fVL0An+PyQRGViuC9eUUPJAEK0YrD8Yh6xsr3FYbx8KLIwtGmzTmIOfjiMWy6rVf3GY2ro/tCzv6ja7+Fq8nAvwPIdeNY4/jc2tKYSKpwSgTVXOV4PMpJI1RS98wsxFnCYX71hFWGFps4+1QVL+jMQQntLA9gG93+kGsGuEsvu/RnMmkGOPV4W0Eg0HfzVjXJNAoKQljq4TtgNm2ntEybcRMZED+sIk5NNvsvX1Y+/f+AkDQyxJ7kjmbwF8C5lKLgToGAbBtVey/ufEX5BvoavHsHtMqASsrDnVRf2r3F7d0N+d4hAcyYRLirY1gBMu40Kb4Dz3I86t+dIr3HwwPdvZwfzScdAPJFpzOHw/FahN7aN2I4SL9vey+NRSQorEQY7FmzMtVfvRt9F11oKQpYrGDAqpPi71c6yHYelcoX52ZM1k4YYHfVsycs09hRY1LD8YdbCiQODV6axkyrpmUKU6GUezHXaBC8lnJu4r8KrEj2nKABfMG8dFyi8kVdlAb7Srj4Gdo6FJtFC79X8g+P6OzXlfAv8gF7tNwEdFZ2HSJa3OvldtuPF0py4Yqm8uF5I/3nJN3UdE90Rd5+CJlkZk4sbZLpZtAGbvkuGedmoFzHpNNTYQJjXKifY3gCqwOCnUSki+93Pheq188G72BxpTjrUkgNaksCTtyJgV/k3EOyj+188jVnM9mPNI9CnS4AsSpDr3LW6EsD4nv/u4eCx7sBWnLXXQvpBZ2A==',
+    TransactionID: `-----BEGIN PGP MESSAGE-----
+
+wcBMA5fAXxAlQaycAQf+ImtnPQA9AIfehOuL6F35or9P1Wm4PRLAzfZHZW/W
+6aMm0xZ6BjHuNhBzY4JuXTVWlDw+Qp9067ZW/uBYozBgmLEgWE8/x6Cy7p0Z
+zo7F6LaZL9imB/gocSqYYm/KmMxzlrRvN1Y7vtFDdV94vV+Bvwy4iey9Irqq
+E0XPFLBO2gwtr7hpf8tPESPChzoKaPiQLIyxw0CbnMbPQ8B+Gi6Yb3DZuCtO
+1Cqsm0pXJSJNVvLoLyUga5XFs4PxPxJ0KHafC1vO8wX5nahyINH/qqu6jUFk
+dMj7qXxdGbCh7b+xkGs4TkOt07WjHjk/JhoOUGhGDnjFD7iI4OlsUh1c/zVw
+ANLA9gGT0NokKzunSYJQdNmFexXLqZ6KMNtk+nXPlRI2bp0Jg3YLiaFfZCtF
+ubUfXawrHgpUiLhCvvhyWkVp5ZwEfIrEzMkCkdcy7xOOTXODq/mMaliL9+6I
+y6ddgz3CIOrdD/4QQbAp7VH6IL8dw6eoBSZufZfMrDYSMXR5/jM4FJ5ZQ+cE
+w6k5eUKE4mcfR6A3/hU9lnny7xM9ZZOaxvjRIea2S+73mOKJ7KSJ0FyaHCGV
+ucX7NPaznv9Hk3wGHCtA2bMDmDJmHo/oO/xOY1osJ/EB2YmBA9b3WQJEh/XS
+xpmvNl6eFxSqIBATh+EtnKo/guh/6hOiyJPENllaxabNdC8TQgnG6D1vI/mj
+Aew6Luv124fCRQnSGGyA9cB3UaXY23PGk2apl2/QnygoOXlQuofSnuRAhl9k
+b6QJtDiwI80UEaGxQYRG0SrLjq1E1Nwb08RRIW8qd6HKDXzLPpeEZsGeSp11
+WMyF1EHHvm1XD4OtSXcC5JRAxApkkd7aaMXWFr0VbG0fTTQM+miGu/HMIg9k
+QBT5KXMc9NeCRz1aMA3fyrySG8jmDhYaRdivUiOrIGbRVsfLAw==
+=Uzuf
+-----END PGP MESSAGE-----`,
     TransactionTime: '',
-    HashedTransactionID: 'V8w6hfsV+gp/LT3LtFzmJD4mlWjAAfa0Iuco0XtzS2s=',
-    Label: '',
+    HashedTransactionID: '/uNZ/drJoEhlJNAxTi+Ll+NDGjPqmCubN3Xc8yuAj7c=',
+    Label: null,
     ExchangeRate: null,
+    Subject: null,
+    Body: null,
+    ToList: null,
+    Sender: null,
 };
 
 // TODO: move this to proper file
@@ -168,6 +256,7 @@ type MockedFunction<F extends (...args: any) => any> = Mock<Parameters<F>, Retur
 
 describe('useWalletTransactions', () => {
     let userKeys: DecryptedKey[] = [];
+    let addressKey: { address: Address; keys: DecryptedAddressKey[] };
 
     const mockedGetApiWalletTransactionData: MockedFunction<ReturnType<typeof useGetApiWalletTransactionData>> =
         vi.fn();
@@ -181,6 +270,8 @@ describe('useWalletTransactions', () => {
         await CryptoProxy.setEndpoint(new CryptoApi(), (endpoint) => endpoint.clearKeyStore());
 
         userKeys = await getUserKeys();
+        addressKey = await getAddressKey();
+        mockUseGetAddressKeys(vi.fn(async () => addressKey.keys));
     });
 
     afterAll(async () => {
@@ -190,6 +281,8 @@ describe('useWalletTransactions', () => {
     beforeEach(() => {
         mockUseNotifications();
         mockUseBitcoinBlockchainContext({
+            decryptedApiWalletsData: [wallet],
+            walletMap: buildMapFromWallets([wallet]),
             accountIDByDerivationPathByWalletID: { [wallet.Wallet.ID]: { ["m/84'/1'/0'"]: '001' } },
         });
 
@@ -207,6 +300,10 @@ describe('useWalletTransactions', () => {
                 HashedTransactionID: payload.hashed_txid,
                 Label: payload.label,
                 ExchangeRate: null,
+                Sender: null,
+                Subject: null,
+                Body: null,
+                ToList: null,
             },
             free: noop,
         }));
@@ -225,7 +322,7 @@ describe('useWalletTransactions', () => {
     describe('when transactions is empty', () => {
         it('should not fail', async () => {
             const transactions: WasmTransactionDetails[] = [];
-            const { result } = renderHook(() => useWalletTransactions({ transactions, wallet, keys: userKeys }));
+            const { result } = renderHook(() => useWalletTransactions({ transactions, wallet, userKeys }));
 
             expect(result.current.transactionDetails).toHaveLength(0);
         });
@@ -241,7 +338,7 @@ describe('useWalletTransactions', () => {
 
             it('should reconciliate network data with db data', async () => {
                 const { result } = renderHook(() =>
-                    useWalletTransactions({ transactions: networkTransactions, wallet, keys: userKeys })
+                    useWalletTransactions({ transactions: networkTransactions, wallet, userKeys })
                 );
 
                 await waitFor(() => expect(result.current.loadingApiData).toBeFalsy());
@@ -249,15 +346,27 @@ describe('useWalletTransactions', () => {
                 expect(result.current.transactionDetails).toStrictEqual([
                     {
                         networkData: networkTransactions[0],
-                        apiData: apiTransactions[0],
+                        apiData: {
+                            ...apiTransactions[0],
+                            ToList: {},
+                            TransactionID: 'f2a58482f18a7cf245d1c588bca29ee417ee535559edd18132f15470c8377981',
+                        },
                     },
                     {
                         networkData: networkTransactions[1],
-                        apiData: apiTransactions[1],
+                        apiData: {
+                            ...apiTransactions[1],
+                            ToList: {},
+                            TransactionID: '68fcbc9ea42f00aae70ca047dd87363f6c3b2026e4e286a16119cabd9363661b',
+                        },
                     },
                     {
                         networkData: networkTransactions[2],
-                        apiData: apiTransactions[2],
+                        apiData: {
+                            ...apiTransactions[2],
+                            ToList: {},
+                            TransactionID: '5df718baf0ff146cb572d9f347881226c0d85bfc590c90c4044b847db85a20db',
+                        },
                     },
                 ]);
 
@@ -274,7 +383,7 @@ describe('useWalletTransactions', () => {
 
             it('should not make any other call than get-transactions', async () => {
                 const { result } = renderHook(() =>
-                    useWalletTransactions({ transactions: networkTransactions, wallet, keys: userKeys })
+                    useWalletTransactions({ transactions: networkTransactions, wallet, userKeys })
                 );
 
                 await waitFor(() => expect(result.current.loadingApiData).toBeFalsy());
@@ -310,7 +419,7 @@ describe('useWalletTransactions', () => {
 
                 it('should fetch tx with missing hash and update them', async () => {
                     const { result } = renderHook(() =>
-                        useWalletTransactions({ transactions: networkTransactions, wallet, keys: userKeys })
+                        useWalletTransactions({ transactions: networkTransactions, wallet, userKeys })
                     );
 
                     await waitFor(() => expect(result.current.loadingApiData).toBeFalsy());
@@ -343,7 +452,7 @@ describe('useWalletTransactions', () => {
 
                 it('should set updated transactions in map', async () => {
                     const { result } = renderHook(() =>
-                        useWalletTransactions({ transactions: networkTransactions, wallet, keys: userKeys })
+                        useWalletTransactions({ transactions: networkTransactions, wallet, userKeys })
                     );
 
                     await waitFor(() => expect(result.current.loadingApiData).toBeFalsy());
@@ -351,15 +460,33 @@ describe('useWalletTransactions', () => {
                     expect(result.current.transactionDetails).toStrictEqual([
                         {
                             networkData: networkTransactions[0],
-                            apiData: apiTransactions[0],
+                            apiData: {
+                                ...apiTransactions[0],
+                                Body: null,
+                                Label: null,
+                                ToList: {},
+                                TransactionID: 'f2a58482f18a7cf245d1c588bca29ee417ee535559edd18132f15470c8377981',
+                            },
                         },
                         {
                             networkData: networkTransactions[1],
-                            apiData: apiTransactions[1],
+                            apiData: {
+                                ...apiTransactions[1],
+                                Body: null,
+                                Label: null,
+                                ToList: {},
+                                TransactionID: '68fcbc9ea42f00aae70ca047dd87363f6c3b2026e4e286a16119cabd9363661b',
+                            },
                         },
                         {
                             networkData: networkTransactions[2],
-                            apiData: apiTransactions[2],
+                            apiData: {
+                                ...apiTransactions[2],
+                                Body: null,
+                                Label: null,
+                                ToList: {},
+                                TransactionID: '5df718baf0ff146cb572d9f347881226c0d85bfc590c90c4044b847db85a20db',
+                            },
                         },
                     ]);
                 });
@@ -372,7 +499,7 @@ describe('useWalletTransactions', () => {
 
                     it('should still set updated transactions in map', async () => {
                         const { result } = renderHook(() =>
-                            useWalletTransactions({ transactions: networkTransactions, wallet, keys: userKeys })
+                            useWalletTransactions({ transactions: networkTransactions, wallet, userKeys })
                         );
 
                         await waitFor(() => expect(result.current.loadingApiData).toBeFalsy());
@@ -380,15 +507,27 @@ describe('useWalletTransactions', () => {
                         expect(result.current.transactionDetails).toStrictEqual([
                             {
                                 networkData: networkTransactions[0],
-                                apiData: apiTransactions[0],
+                                apiData: {
+                                    ...apiTransactions[0],
+                                    ToList: {},
+                                    TransactionID: 'f2a58482f18a7cf245d1c588bca29ee417ee535559edd18132f15470c8377981',
+                                },
                             },
                             {
                                 networkData: networkTransactions[1],
-                                apiData: apiTransactions[1],
+                                apiData: {
+                                    ...apiTransactions[1],
+                                    ToList: {},
+                                    TransactionID: '68fcbc9ea42f00aae70ca047dd87363f6c3b2026e4e286a16119cabd9363661b',
+                                },
                             },
                             {
                                 networkData: networkTransactions[2],
-                                apiData: apiTransactions[2],
+                                apiData: {
+                                    ...apiTransactions[2],
+                                    ToList: {},
+                                    TransactionID: '5df718baf0ff146cb572d9f347881226c0d85bfc590c90c4044b847db85a20db',
+                                },
                             },
                         ]);
                     });
@@ -408,9 +547,9 @@ describe('useWalletTransactions', () => {
                     } as unknown as WasmApiWalletTransactionData);
                 });
 
-                it('should fetch tx with missing hash and update them', async () => {
+                it('should create them', async () => {
                     const { result } = renderHook(() =>
-                        useWalletTransactions({ transactions: networkTransactions, wallet, keys: userKeys })
+                        useWalletTransactions({ transactions: networkTransactions, wallet, userKeys })
                     );
 
                     await waitFor(() => expect(result.current.loadingApiData).toBeFalsy());
@@ -448,9 +587,9 @@ describe('useWalletTransactions', () => {
                     );
                 });
 
-                it('should set updated transactions in map', async () => {
+                it('should set created transactions in map', async () => {
                     const { result } = renderHook(() =>
-                        useWalletTransactions({ transactions: networkTransactions, wallet, keys: userKeys })
+                        useWalletTransactions({ transactions: networkTransactions, wallet, userKeys })
                     );
 
                     await waitFor(() => expect(result.current.loadingApiData).toBeFalsy());
@@ -458,15 +597,27 @@ describe('useWalletTransactions', () => {
                     expect(result.current.transactionDetails).toStrictEqual([
                         {
                             networkData: networkTransactions[0],
-                            apiData: apiTransactions[0],
+                            apiData: {
+                                ...apiTransactions[0],
+                                ToList: {},
+                                TransactionID: 'f2a58482f18a7cf245d1c588bca29ee417ee535559edd18132f15470c8377981',
+                            },
                         },
                         {
                             networkData: networkTransactions[1],
-                            apiData: apiTransactions[1],
+                            apiData: {
+                                ...apiTransactions[1],
+                                ToList: {},
+                                TransactionID: '68fcbc9ea42f00aae70ca047dd87363f6c3b2026e4e286a16119cabd9363661b',
+                            },
                         },
                         {
                             networkData: networkTransactions[2],
-                            apiData: apiTransactions[2],
+                            apiData: {
+                                ...apiTransactions[2],
+                                ToList: {},
+                                TransactionID: '5df718baf0ff146cb572d9f347881226c0d85bfc590c90c4044b847db85a20db',
+                            },
                         },
                     ]);
                 });
@@ -479,7 +630,7 @@ describe('useWalletTransactions', () => {
 
                     it('should not set the transaction in map', async () => {
                         const { result } = renderHook(() =>
-                            useWalletTransactions({ transactions: networkTransactions, wallet, keys: userKeys })
+                            useWalletTransactions({ transactions: networkTransactions, wallet, userKeys })
                         );
 
                         await waitFor(() => expect(result.current.loadingApiData).toBeFalsy());
@@ -487,7 +638,11 @@ describe('useWalletTransactions', () => {
                         expect(result.current.transactionDetails).toStrictEqual([
                             {
                                 networkData: networkTransactions[0],
-                                apiData: apiTransactions[0],
+                                apiData: {
+                                    ...apiTransactions[0],
+                                    ToList: {},
+                                    TransactionID: 'f2a58482f18a7cf245d1c588bca29ee417ee535559edd18132f15470c8377981',
+                                },
                             },
                             {
                                 networkData: networkTransactions[1],
@@ -516,9 +671,9 @@ describe('useWalletTransactions', () => {
                 } as unknown as WasmApiWalletTransactionData);
             });
 
-            it('should fetch tx with missing hash and update them', async () => {
+            it('should update them', async () => {
                 const { result } = renderHook(() =>
-                    useWalletTransactions({ transactions: networkTransactions, wallet, keys: userKeys })
+                    useWalletTransactions({ transactions: networkTransactions, wallet, userKeys })
                 );
 
                 await waitFor(() => expect(result.current.loadingApiData).toBeFalsy());
@@ -535,13 +690,13 @@ describe('useWalletTransactions', () => {
                     '001',
                     // wallet transaction id
                     '004',
-                    'V8w6hfsV+gp/LT3LtFzmJD4mlWjAAfa0Iuco0XtzS2s='
+                    '/uNZ/drJoEhlJNAxTi+Ll+NDGjPqmCubN3Xc8yuAj7c='
                 );
             });
 
             it('should not add transaction to the map', async () => {
                 const { result } = renderHook(() =>
-                    useWalletTransactions({ transactions: networkTransactions, wallet, keys: userKeys })
+                    useWalletTransactions({ transactions: networkTransactions, wallet, userKeys })
                 );
 
                 // map init

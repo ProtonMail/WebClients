@@ -2,26 +2,29 @@ import { useCallback, useEffect } from 'react';
 
 import { createSelector } from '@reduxjs/toolkit';
 
-import { WasmApiExchangeRate, WasmFiatCurrency } from '@proton/andromeda';
+import { WasmApiExchangeRate, WasmFiatCurrencySymbol } from '@proton/andromeda';
 import { baseUseSelector } from '@proton/redux-shared-store';
 import { createHooks } from '@proton/redux-utilities';
 
 import { exchangeRateThunk, selectExchangeRate } from '../slices';
+import { getKeyAndTs } from '../slices/exchangeRate';
 
 const hooks = createHooks(exchangeRateThunk, selectExchangeRate);
 
 export const useGetExchangeRate = () => {
     const get = hooks.useGet();
     return useCallback(
-        async (fiat: WasmFiatCurrency, date?: Date) => {
+        async (fiat: WasmFiatCurrencySymbol, date?: Date) => {
             const results = await get({ thunkArg: [fiat, date] });
-            return results[fiat];
+            const [key] = getKeyAndTs(fiat, date);
+
+            return results[key];
         },
         [get]
     );
 };
 
-export const useExchangeRate = (fiat: WasmFiatCurrency) => {
+export const useExchangeRate = (fiat: WasmFiatCurrencySymbol) => {
     const getExchangeRate = useGetExchangeRate();
 
     const exchangeRateSimpleSelector = createSelector(

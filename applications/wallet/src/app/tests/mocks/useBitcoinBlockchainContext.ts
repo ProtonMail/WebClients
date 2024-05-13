@@ -1,4 +1,5 @@
 import { WasmNetwork } from '@proton/andromeda';
+import { buildMapFromWallets } from '@proton/wallet/utils/wallet';
 
 import { getFeesEstimationMap, mockedWalletChainDataByWalletId } from '..';
 import * as useBitcoinBlockchainContextModule from '../../contexts/BitcoinBlockchainContext';
@@ -20,8 +21,11 @@ export const mockUseBitcoinBlockchainContext = (
         syncManyWallets: vi.fn(),
 
         decryptedApiWalletsData: apiWalletsData,
+        walletMap: buildMapFromWallets(apiWalletsData),
         loadingApiWalletsData: false,
         setPassphrase: vi.fn(),
+
+        isSyncing: vi.fn(),
 
         feesEstimation: getFeesEstimationMap(),
         loadingFeesEstimation: false,

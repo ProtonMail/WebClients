@@ -10,3 +10,4 @@ export const useWalletSelector: TypedUseSelectorHook<WalletState> = baseUseSelec
 export { useBitcoinNetwork, useGetBitcoinNetwork } from './useBitcoinNetwork';
 export { useExchangeRate, useGetExchangeRate } from './useExchangeRate';
 export { useApiWalletTransactionData, useGetApiWalletTransactionData } from './useApiWalletTransactionData';
+export { useFiatCurrencies, useGetFiatCurrencies } from './useFiatCurrencies';

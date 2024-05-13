@@ -1,0 +1,10 @@
+.wallet-select {
+	&:focus-within {
+		z-index: 1;
+		outline: 2px solid var(--interaction-norm-major-2);
+	}
+
+	*:focus-visible {
+		outline: none;
+	}
+}
