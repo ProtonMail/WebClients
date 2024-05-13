@@ -103,7 +103,6 @@ export const AccountCreationModal = ({ apiWalletData, ...modalProps }: Props) =>
             enableCloseWhenClickOutside
             {...modalProps}
         >
-            <p className="text-sm color-hint text-justify mt-2 mb-6">{c('Wallet Account').t``}</p>
             <div className="flex flex-row">
                 <Input
                     label={c('Wallet Account').t`Account label`}

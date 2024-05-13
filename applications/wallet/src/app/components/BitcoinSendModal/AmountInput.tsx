@@ -156,6 +156,8 @@ export const AmountInput = ({ txBuilder, updateTxBuilder, btcAddressMap, onBack,
                         const recipients = compact(txBuilder.getRecipients().map((r) => btcAddressMap[r[1]]));
                         const [firstRecipient] = recipients;
 
+                        const price = <Price key={'sent-amount-total'} satsAmount={totalSentAmount} unit={unit} />;
+
                         return (
                             <>
                                 <RecipientListItem
@@ -175,8 +177,7 @@ export const AmountInput = ({ txBuilder, updateTxBuilder, btcAddressMap, onBack,
 
                                 {txBuilder.getRecipients().length > 1 && (
                                     <div className="bg-norm mx-auto flex flex-column my-4 w-full text-center py-2 rounded-lg">
-                                        <span>{c('Wallet send')
-                                            .jt`You are sending ${(<Price key={'sent-amount-total'} satsAmount={totalSentAmount} unit={unit} />)} in total`}</span>
+                                        <span>{c('Wallet send').jt`You are sending ${price} in total`}</span>
                                         {!useDetailledInput && (
                                             <CoreButton
                                                 size="small"
