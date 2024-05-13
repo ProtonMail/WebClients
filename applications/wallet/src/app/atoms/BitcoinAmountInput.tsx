@@ -2,10 +2,11 @@ import { ChangeEvent } from 'react';
 
 import { WasmApiExchangeRate, WasmBitcoinUnit } from '@proton/andromeda';
 import type { InputProps } from '@proton/atoms/Input/Input';
+import { InputFieldOwnProps } from '@proton/components/components/v2/field/InputField';
 
 import { BITCOIN, mBITCOIN } from '../constants';
 import { convertAmount } from '../utils';
-import { CoreInput, InputFieldOwnProps } from './Input';
+import { CoreInput } from './Input';
 
 interface Props extends InputFieldOwnProps, InputProps {
     /**

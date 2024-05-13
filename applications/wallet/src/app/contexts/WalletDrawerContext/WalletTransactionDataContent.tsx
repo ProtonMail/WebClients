@@ -100,7 +100,7 @@ export const WalletTransactionDataDrawer = ({ transaction }: Props) => {
             </div>
 
             <TransactionNoteModal
-                onUpdateLabel={(label, tx) => {
+                onUpdateLabel={() => {
                     // TODO: maybe create slice in store for wallet transactions
                     // void updateWalletTransaction(label, tx).then(() => {
                     //     noteModalState.onClose?.();
