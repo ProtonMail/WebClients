@@ -1,5 +1,8 @@
 import { createAction } from '@reduxjs/toolkit';
 
+import { type ActionCallback, withCallback } from '@proton/pass/store/actions/enhancers/callback';
+import { pipe } from '@proton/pass/utils/fp/pipe';
+
 import { withRequest, withRequestFailure, withRequestSuccess } from './enhancers';
 import type { RequestConfig } from './types';
 
@@ -77,12 +80,15 @@ export const requestActionsFactory =
         const failurePA = (options.failure?.prepare ?? toPayloadWithError) as FailurePA;
 
         return {
-            intent: createAction(`${namespace}::intent`, (payload: IntentDTO) =>
-                withRequest({
-                    status: 'start',
-                    id: options.requestId(payload),
-                    ...(options.intent?.config ?? { data: false as IntentData }),
-                })(intentPA(payload))
+            intent: createAction(`${namespace}::intent`, (payload: IntentDTO, callback?: ActionCallback) =>
+                pipe(
+                    withRequest({
+                        status: 'start',
+                        id: options.requestId(payload),
+                        ...(options.intent?.config ?? { data: false as IntentData }),
+                    }),
+                    withCallback(callback)
+                )(intentPA(payload))
             ),
             success: createAction(`${namespace}::success`, withRequestSuccess(successPA, options.success?.config)),
             failure: createAction(`${namespace}::failure`, withRequestFailure(failurePA, options.failure?.config)),
