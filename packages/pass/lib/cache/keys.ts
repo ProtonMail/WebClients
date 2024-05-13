@@ -19,9 +19,7 @@ export const getCacheKey = async (
     const sessionLockToken = authStore.getLockToken();
     const offlineKD = authStore.getOfflineKD();
 
-    if (offlineKD) {
-        if (!encryptedCacheKey) throw new Error('Missing offline encryption components');
-
+    if (offlineKD && encryptedCacheKey) {
         const offlineKey = await getSymmetricKey(stringToUint8Array(offlineKD));
         const rawCacheKey = await decryptData(
             offlineKey,

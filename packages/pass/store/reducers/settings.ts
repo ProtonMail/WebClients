@@ -7,8 +7,7 @@ import {
     itemCreationSuccess,
     lockCreateSuccess,
     lockSync,
-    offlineDisable,
-    offlineSetupSuccess,
+    offlineToggle,
     settingsEditSuccess,
     updatePauseListItem,
     userEvent,
@@ -101,11 +100,8 @@ const reducer: Reducer<SettingsState> = (state = INITIAL_STATE, action) => {
         });
     }
 
-    if (offlineSetupSuccess.match(action)) return partialMerge<SettingsState>(state, { offlineEnabled: true });
-
-    if (offlineDisable.match(action)) {
-        const hasSessionLock = state.lockMode === LockMode.SESSION;
-        return { ...state, offlineEnabled: false, lockMode: hasSessionLock ? state.lockMode : LockMode.NONE };
+    if (offlineToggle.success.match(action)) {
+        return partialMerge<SettingsState>(state, { offlineEnabled: action.payload });
     }
 
     return state;

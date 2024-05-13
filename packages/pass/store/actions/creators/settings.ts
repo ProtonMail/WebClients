@@ -4,11 +4,12 @@ import { c } from 'ttag';
 import { withCache } from '@proton/pass/store/actions/enhancers/cache';
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
 import { withSettings } from '@proton/pass/store/actions/enhancers/settings';
-import { offlineSetupRequest, settingsEditRequest } from '@proton/pass/store/actions/requests';
+import { offlineToggleRequest, settingsEditRequest } from '@proton/pass/store/actions/requests';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import { withRequest, withRequestFailure, withRequestSuccess } from '@proton/pass/store/request/enhancers';
+import { requestActionsFactory } from '@proton/pass/store/request/flow';
 import type { ClientEndpoint, RecursivePartial } from '@proton/pass/types';
-import { type CriteriaMasks } from '@proton/pass/types/worker/settings';
+import type { CriteriaMasks, OfflineModeDTO } from '@proton/pass/types/worker/settings';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { BRAND_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import identity from '@proton/utils/identity';
@@ -50,49 +51,38 @@ export const updatePauseListItem = createAction(
     (payload: { hostname: string; criteria: CriteriaMasks }) => pipe(withSettings, withCache)({ payload })
 );
 
-export const offlineSetupIntent = createAction('offline::setup::intent', (loginPassword: string) =>
-    pipe(
-        withRequest({ status: 'start', id: offlineSetupRequest }),
-        withNotification({
-            loading: true,
-            text: c('Info').t`Setting up offline mode...`,
-            type: 'info',
-        })
-    )({ payload: { loginPassword } })
-);
-
-export const offlineSetupFailure = createAction(
-    'offline::setup::failure',
-    withRequestFailure((error: unknown) =>
-        withNotification({
-            error,
-            text: c('Info').t`Offline mode could not be enabled at the moment`,
-            type: 'error',
-        })({ payload: {} })
-    )
-);
-
-export const offlineSetupSuccess = createAction(
-    'offline::setup::success',
-    withRequestSuccess(() =>
-        pipe(
-            withCache,
-            withSettings,
+export const offlineToggle = requestActionsFactory<OfflineModeDTO, boolean, boolean>('offline::toggle')({
+    requestId: offlineToggleRequest,
+    intent: {
+        prepare: (payload) =>
             withNotification({
-                text: c('Info').t`You can now use your ${BRAND_NAME} password to access ${PASS_SHORT_APP_NAME} offline`,
+                loading: true,
+                text: payload.enabled ? c('Info').t`Enabling offline mode...` : c('Info').t`Disabling offline mode...`,
                 type: 'info',
-            })
-        )({ payload: {} })
-    )
-);
-
-export const offlineDisable = createAction('offline::disable', () =>
-    pipe(
-        withCache,
-        withSettings,
-        withNotification({
-            text: c('Info').t`Offline support successfully disabled`,
-            type: 'info',
-        })
-    )({ payload: {} })
-);
+            })({ payload }),
+    },
+    success: {
+        prepare: (enabled) =>
+            pipe(
+                withCache,
+                withSettings,
+                withNotification({
+                    text: enabled
+                        ? c('Info')
+                              .t`You can now use your ${BRAND_NAME} password to access ${PASS_SHORT_APP_NAME} offline`
+                        : c('Info').t`Offline support successfully disabled`,
+                    type: 'info',
+                })
+            )({ payload: enabled }),
+    },
+    failure: {
+        prepare: (error, enabled) =>
+            withNotification({
+                text: enabled
+                    ? c('Info').t`Offline mode could not be enabled at the moment`
+                    : c('Info').t`Offline mode could not be disabled at the moment`,
+                type: 'error',
+                error,
+            })({ payload: null }),
+    },
+});

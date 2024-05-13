@@ -8,9 +8,8 @@ import unlock from '@proton/pass/store/sagas/auth/unlock.saga';
 import boot from '@proton/pass/store/sagas/client/boot.saga';
 import cache from '@proton/pass/store/sagas/client/cache.saga';
 import notification from '@proton/pass/store/sagas/client/notification.saga';
-import offlineDisable from '@proton/pass/store/sagas/client/offline-disable.saga';
-import offlineEnable from '@proton/pass/store/sagas/client/offline-enable.saga';
 import offlineResume from '@proton/pass/store/sagas/client/offline-resume.saga';
+import offlineToggle from '@proton/pass/store/sagas/client/offline-toggle.saga';
 import reportProblem from '@proton/pass/store/sagas/client/report-problem.saga';
 import settings from '@proton/pass/store/sagas/client/settings.saga';
 import sync from '@proton/pass/store/sagas/client/sync.saga';
@@ -115,9 +114,8 @@ export function* rootSaga(options: RootSagaOptions) {
             newUserInvitePromote,
             newUserInviteRemove,
             notification,
-            offlineDisable,
-            offlineEnable,
             offlineResume,
+            offlineToggle,
             organizationSettingsGet,
             reportProblem,
             sentinelToggle,

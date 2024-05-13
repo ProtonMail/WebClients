@@ -2,7 +2,6 @@ import type { Action } from 'redux';
 import { call, put, race, take, takeLeading } from 'redux-saga/effects';
 import { c } from 'ttag';
 
-import { api } from '@proton/pass/lib/api/api';
 import { isPassCryptoError } from '@proton/pass/lib/crypto/utils/errors';
 import {
     bootFailure,
@@ -20,6 +19,7 @@ import {
     stopEventPolling,
 } from '@proton/pass/store/actions';
 import { isCachingAction } from '@proton/pass/store/actions/enhancers/cache';
+import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import { withRevalidate } from '@proton/pass/store/request/enhancers';
 import { SyncType, synchronize } from '@proton/pass/store/sagas/client/sync';
 import type { RootSagaOptions, State } from '@proton/pass/store/types';
@@ -30,9 +30,12 @@ import { loadCryptoWorker } from '@proton/shared/lib/helpers/setupCryptoWorker';
 
 import { hydrate } from './hydrate.saga';
 
-function* bootWorker(options: RootSagaOptions) {
+function* bootWorker({ payload }: ReturnType<typeof bootIntent>, options: RootSagaOptions) {
     try {
-        const online = navigator.onLine && api.getState().online;
+        const settings: ProxiedSettings = yield options.getSettings();
+        if (payload?.offline && !settings.offlineEnabled) throw new Error('Unauthorized offline boot');
+
+        const online = !payload?.offline;
         const authStore = options.getAuthStore();
         const userID = authStore.getUserID();
 
@@ -66,7 +69,7 @@ function* bootWorker(options: RootSagaOptions) {
         }
 
         options.setAppStatus(online ? AppStatus.READY : AppStatus.OFFLINE);
-        options.onBoot?.({ ok: true, fromCache });
+        options.onBoot?.({ ok: true, fromCache, offline: payload?.offline });
     } catch (error: unknown) {
         logger.warn('[Saga::Boot]', error);
         yield put(bootFailure(error));
@@ -79,9 +82,9 @@ function* bootWorker(options: RootSagaOptions) {
  * or a caching request : cancel the booting task. This can happen
  * when stressing the app on multiple tabs */
 export default function* watcher(options: RootSagaOptions) {
-    yield takeLeading(bootIntent.match, function* () {
+    yield takeLeading(bootIntent.match, function* (action) {
         const { caching, destroyed } = (yield race({
-            booted: call(bootWorker, options),
+            booted: call(bootWorker, action, options),
             caching: take(isCachingAction),
             destroyed: take(stateDestroy.match),
         })) as { caching?: Action; destroyed?: Action };

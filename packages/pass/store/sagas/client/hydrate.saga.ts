@@ -63,6 +63,7 @@ export function* hydrate(config: HydrateCacheOptions, { getCache, getAuthStore, 
         settings.beta = BUILD_TARGET === 'web' && sanitizeBetaSetting(settings.beta);
         settings.lockTTL = authStore.getLockTTL();
         settings.lockMode = authStore.getLockMode();
+        settings.offlineEnabled = Boolean(settings.offlineEnabled && authStore.getOfflineConfig());
 
         const incoming = { user: userState, settings, organization };
         const currentState: State = yield select();

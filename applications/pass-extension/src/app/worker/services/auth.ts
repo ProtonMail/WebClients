@@ -256,7 +256,7 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
 
     /* only extend the session lock if a lock is registered and we've reached at least 50%
      * of the lock TTL since the last extension. Calling `AuthService::checkLock` will extend
-     * the lock via the `checkSessionLock` call */
+     * the lock via the `checkLock` call */
     const handleAuthCheck: MessageHandlerCallback<WorkerMessageType.AUTH_CHECK> = withContext(
         async (ctx, { payload: { immediate } }) => {
             try {
