@@ -10,7 +10,13 @@ const PREFIX_TO_TYPE: { [prefix: string]: LINK_TYPES | undefined } = {
     'https://': LINK_TYPES.WEB,
 };
 
-const EXTENSION_PROTOCOLS = ['chrome-extension:', 'moz-extension:'];
+const SUPPORTED_PROTOCOLS = [
+    /* extension protocols */
+    'chrome-extension:',
+    'moz-extension:',
+    /* bundled electron apps */
+    'file:',
+];
 
 const TYPE_TO_PREFIX = {
     [LINK_TYPES.PHONE]: { regex: /^tel:/, defaultPrefix: 'tel:' },
@@ -247,7 +253,7 @@ export const getStaticURL = (path: string, location = window.location) => {
     if (
         location.hostname === 'localhost' ||
         getIsDohDomain(location.origin) ||
-        EXTENSION_PROTOCOLS.includes(location.protocol)
+        SUPPORTED_PROTOCOLS.includes(location.protocol)
     ) {
         return `https://proton.me${path}`;
     }
