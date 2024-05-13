@@ -632,6 +632,7 @@ const SignupContainer = ({
                             trusted: false,
                             clientType,
                             ktActivation,
+                            humanVerificationInline: true,
                         };
 
                         const accountType = signupType === SignupType.Email ? 'external_account' : 'proton_account';
