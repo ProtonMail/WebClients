@@ -14,6 +14,7 @@ import {
     PaypalAuthorizedPayload,
     SetPaypalPaymentIntentPayload,
     ThreeDsChallengePayload,
+    UpdateFieldsPayload,
     chargebeeCssVariables,
     isPaypalCancelledMessage,
     isPaypalClickedMessage,
@@ -39,6 +40,7 @@ import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getApiSubdomainUrl } from '@proton/shared/lib/helpers/url';
 import { getSentryError } from '@proton/shared/lib/keys';
 
+import { ThemeCode } from '../client-extensions';
 import { useChargebeeContext } from '../client-extensions/useChargebeeContext';
 import { useChargebeeKillSwitch } from '../client-extensions/useChargebeeKillSwitch';
 import {
@@ -235,6 +237,7 @@ type ChargebeeIframeProps = React.IframeHTMLAttributes<HTMLIFrameElement> & {
     chargebeePaypal?: ChargebeePaypalProcessorHook;
     onInitialized?: () => void;
     isNarrow?: boolean;
+    themeCode?: ThemeCode;
 };
 
 interface ChargebeeConfiguration {
@@ -265,7 +268,7 @@ export function useChargebeeHandles(
     }, []);
 
     const getCssVariables = (): Record<ChargebeeCssVariable, string> => {
-        const style = getComputedStyle(document.documentElement);
+        const style = getComputedStyle(iframeRef.current ?? document.documentElement);
 
         return chargebeeCssVariables.reduce(
             (acc, prop) => {
@@ -392,6 +395,13 @@ export function useChargebeeHandles(
         validateCardForm: () => iframeAction('validate-form', {}, iframeRef, targetOrigin, signal),
         changeRenderMode: (renderMode: CardFormRenderMode) =>
             iframeAction('change-render-mode', { renderMode }, iframeRef, targetOrigin, signal),
+        updateFields: () => {
+            const payload: UpdateFieldsPayload = {
+                cssVariables: getCssVariables(),
+            };
+
+            return iframeAction('update-fields', payload, iframeRef, targetOrigin, signal);
+        },
     };
 }
 
@@ -595,6 +605,7 @@ export const ChargebeeIframe = ({
     chargebeePaypal,
     onInitialized,
     isNarrow,
+    themeCode,
     ...rest
 }: ChargebeeIframeProps) => {
     const [initialized, setInitialized] = useState(false);
@@ -663,6 +674,22 @@ export const ChargebeeIframe = ({
         onInitialized?.();
         setInitialized(true);
     };
+
+    useEffect(() => {
+        if (!themeCode) {
+            return;
+        }
+
+        const run = async () => {
+            if (!initialized || type !== 'card') {
+                return;
+            }
+
+            await iframeHandles.handles.updateFields();
+        };
+
+        void run();
+    }, [themeCode]);
 
     useEffect(
         () => () => {

@@ -23,32 +23,39 @@ export interface ChargebeeInstanceConfiguration {
 
 export type CardFormRenderMode = 'one-line' | 'two-line';
 
+export type CssVariables = {
+    '--signal-danger': string;
+    '--border-radius-md': string;
+    '--border-norm': string;
+    '--focus-outline': string;
+    '--focus-ring': string;
+    '--field-norm': string;
+    '--field-background-color': string;
+    '--field-focus-background-color': string;
+    '--field-focus-text-color': string;
+    '--field-placeholder-color': string;
+    '--field-text-color': string;
+    '--selection-text-color': string;
+    '--selection-background-color': string;
+};
+
+export type Translations = {
+    cardNumberPlaceholder: string;
+    cardExpiryPlaceholder: string;
+    cardCvcPlaceholder: string;
+    invalidCardNumberMessage: string;
+    invalidCardExpiryMessage: string;
+    invalidCardCvcMessage: string;
+};
+
 export type CbCardConfig = {
     paymentMethodType: 'card';
     renderMode: CardFormRenderMode;
-    cssVariables: {
-        '--signal-danger': string;
-        '--border-radius-md': string;
-        '--border-norm': string;
-        '--focus-outline': string;
-        '--focus-ring': string;
-        '--field-norm': string;
-        '--field-focus-background-color': string;
-        '--field-focus-text-color': string;
-        '--field-placeholder-color': string;
-        '--field-text-color': string;
-    };
-    translations: {
-        cardNumberPlaceholder: string;
-        cardExpiryPlaceholder: string;
-        cardCvcPlaceholder: string;
-        invalidCardNumberMessage: string;
-        invalidCardExpiryMessage: string;
-        invalidCardCvcMessage: string;
-    };
+    cssVariables: CssVariables;
+    translations: Translations;
 } & ChargebeeInstanceConfiguration;
 
-export type ChargebeeCssVariable = keyof CbCardConfig['cssVariables'];
+export type ChargebeeCssVariable = keyof CssVariables;
 export const chargebeeCssVariables: ChargebeeCssVariable[] = [
     '--signal-danger',
     '--border-radius-md',
@@ -56,10 +63,13 @@ export const chargebeeCssVariables: ChargebeeCssVariable[] = [
     '--focus-outline',
     '--focus-ring',
     '--field-norm',
+    '--field-background-color',
     '--field-focus-background-color',
     '--field-focus-text-color',
     '--field-placeholder-color',
     '--field-text-color',
+    '--selection-text-color',
+    '--selection-background-color',
 ];
 
 export type CbPaypalConfig = {
@@ -278,3 +288,7 @@ export function isUnhandledErrorMessage(obj: any): obj is UnhandledErrorMessage 
 export const chargebeeValidationErrorName = 'param_wrong_value';
 
 export const paymentAttemptRefusedChargebeeErrorName = 'PAYMENT_ATTEMPT_REFUSED';
+
+export type UpdateFieldsPayload = {
+    cssVariables: CssVariables;
+};
