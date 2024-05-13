@@ -55,6 +55,8 @@ const getDefaultLocalID = (): Maybe<number> => {
     if (defaultKey) return parseInt(defaultKey.replace(STORAGE_PREFIX, ''), 10);
 };
 
+const getOfflineEnabled = async (): Promise<boolean> => (await settings.resolve()).offlineEnabled ?? false;
+
 export const AuthServiceContext = createContext<Maybe<AuthService>>(undefined);
 
 export const useAuthService = (): AuthService => {
@@ -108,14 +110,16 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
                 authStore.setLockToken(undefined);
                 authStore.setOfflineKD(undefined);
 
-                const offline = OFFLINE_SUPPORTED && isOffline();
-                const cache = await getDBCache(authStore.getUserID()!);
+                const passwordUnlockable = canPasswordUnlock({
+                    cache: await getDBCache(authStore.getUserID()!),
+                    lockMode: authStore.getLockMode(),
+                    offline: isOffline(),
+                    offlineConfig: authStore.getOfflineConfig(),
+                    offlineEnabled: await getOfflineEnabled(),
+                });
 
-                const passwordUnlockable = canPasswordUnlock(cache, authStore);
-                const lockMode = authStore.getLockMode();
-                const passwordLocked = passwordUnlockable && (offline || lockMode === LockMode.PASSWORD);
-
-                if (passwordLocked) {
+                if (passwordUnlockable) {
+                    authStore.setPassword(undefined);
                     client.current.setStatus(AppStatus.PASSWORD_LOCKED);
                     return false;
                 }
@@ -257,7 +261,7 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
                 }
 
                 if (mode === LockMode.PASSWORD) {
-                    if (isOffline()) store.dispatch(bootIntent());
+                    if (isOffline() && (await getOfflineEnabled())) store.dispatch(bootIntent({ offline: true }));
                     else await authService.resumeSession(localID, { retryable: false });
                 }
             },
