@@ -194,6 +194,17 @@ export const updateView = (target: VIEW_TARGET) => {
     }
 };
 
+export const loadURL = async (viewID: ViewID, url: string) => {
+    const previousView = views[viewID];
+
+    if (previousView) {
+        await previousView.webContents.loadURL('about:blank');
+    }
+
+    updateView(viewID);
+    getCurrentView()!.webContents.loadURL(url);
+}
+
 export const refreshHiddenViews = () => {
     for (const [viewID, view] of Object.entries(views)) {
         if (viewID !== currentViewID && view) {

@@ -66,6 +66,18 @@ export const isAccoutLite = (host: string) => {
     }
 };
 
+export const isCalendarSettings = (host: string) => {
+    if (!isHostAccount(host)) return false;
+    const url = new URL(host);
+    return /^\/u\/\d\/calendar/.test(url.pathname);
+}
+
+export const isMailSettings = (host: string) => {
+    if (!isHostAccount(host)) return false;
+    const url = new URL(host);
+    return /^\/u\/\d\/mail/.test(url.pathname);
+}
+
 export const isUpgradeURL = (host: string) => {
     try {
         const hostURL = new URL(host);

@@ -15,18 +15,22 @@ import { getTrialEndURL } from "./utils/urls/trial";
 import {
     getSessionID,
     isAccoutLite,
+    isCalendarSettings,
     isHostAccount,
     isHostAllowed,
     isHostCalendar,
     isHostMail,
+    isMailSettings,
     isUpgradeURL,
     isUpsellURL,
 } from "./utils/urls/urlTests";
 import { urlOverrideError } from "./utils/view/dialogs";
 import {
     getCalendarView,
+    getCurrentView,
     getMailView,
     getMainWindow,
+    loadURL,
     reloadCalendarWithSession,
     updateView,
     viewCreationAppStartup,
@@ -34,7 +38,7 @@ import {
 import { handleSquirrelEvents } from "./windows/squirrel";
 import pkg from "../package.json";
 
-(async function() {
+(async function () {
     // Log initialization
     Logger.initialize({ preload: true });
     Logger.info("App start is mac:", isMac, "is windows:", isWindows, "isLinux:", isLinux);
@@ -205,6 +209,18 @@ import pkg from "../package.json";
                 return preventDefault(details);
             }
 
+            if (isCalendarSettings(details.url) && getCurrentView() !== getCalendarView()) {
+                Logger.info("switching to calendar settings");
+                loadURL("calendar", details.url);
+                return preventDefault(details);
+            }
+
+            if (isMailSettings(details.url) && getCurrentView() !== getMailView()) {
+                Logger.info("switching to mail settings");
+                loadURL("mail", details.url);
+                return preventDefault(details);
+            }
+
             return details;
         });
 
@@ -247,4 +263,4 @@ import pkg from "../package.json";
             return { action: "deny" };
         });
     });
-}());
+})();
