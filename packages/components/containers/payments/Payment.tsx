@@ -2,7 +2,7 @@ import { ReactNode, Ref, useEffect } from 'react';
 
 import { c } from 'ttag';
 
-import { ViewPaymentMethod } from '@proton/components/payments/client-extensions';
+import { ThemeCode, ViewPaymentMethod } from '@proton/components/payments/client-extensions';
 import {
     PAYMENT_METHOD_TYPES,
     PaymentMethodFlows,
@@ -80,6 +80,7 @@ export interface NoApiProps extends Props {
     amount: number;
     onPaypalCreditClick?: () => void;
     paymentComponentLoaded: () => void;
+    themeCode?: ThemeCode;
 }
 
 export const PaymentsNoApi = ({
@@ -118,6 +119,7 @@ export const PaymentsNoApi = ({
     chargebeePaypal,
     hasSomeVpnPlan,
     paymentComponentLoaded,
+    themeCode,
 }: NoApiProps) => {
     const { APP_NAME } = useConfig();
 
@@ -236,7 +238,7 @@ export const PaymentsNoApi = ({
                     )}
                     {method === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD && (
                         <>
-                            <ChargebeeCreditCardWrapper {...sharedCbProps} />
+                            <ChargebeeCreditCardWrapper {...sharedCbProps} themeCode={themeCode} />
                         </>
                     )}
                     {method === PAYMENT_METHOD_TYPES.CASH && <Cash />}

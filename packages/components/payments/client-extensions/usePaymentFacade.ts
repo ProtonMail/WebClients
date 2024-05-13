@@ -26,6 +26,7 @@ import {
     usePaymentFacade as useInnerPaymentFacade,
 } from '../react-extensions';
 import { PaymentProcessorType } from '../react-extensions/interface';
+import { ThemeCode, ThemeLike, getThemeCode } from './helpers';
 import { useChargebeeEnabledCache, useChargebeeUserStatusTracker } from './useChargebeeContext';
 import { useChargebeeKillSwitch } from './useChargebeeKillSwitch';
 import { wrapMethods } from './useMethods';
@@ -84,6 +85,7 @@ type PaymentFacadeProps = {
      */
     selectedPlanName?: PLANS | ADDON_NAMES;
     checkResult?: RequiredCheckResponse;
+    theme?: ThemeLike;
 };
 
 /**
@@ -107,10 +109,14 @@ export const usePaymentFacade = ({
     selectedPlanName,
     chargebeeEnabled: chargebeeEnabledOverride,
     checkResult,
+    theme,
 }: PaymentFacadeProps) => {
     const { APP_NAME } = useConfig();
     const defaultApi = useApi();
     const api = apiOverride ?? defaultApi;
+
+    const themeCode: ThemeCode = getThemeCode(theme);
+
     const { createModal } = useModals();
     const { UID } = useAuthentication();
     const isAuthenticated = !!UID;
@@ -308,5 +314,6 @@ export const usePaymentFacade = ({
         selectedPlanName,
         paymentComponentLoaded: reportPaymentLoad,
         telemetry,
+        themeCode,
     };
 };

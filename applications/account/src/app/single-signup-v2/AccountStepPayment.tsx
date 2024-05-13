@@ -41,6 +41,7 @@ import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
+import { usePublicTheme } from '../containers/PublicThemeProvider';
 import { getLocaleTermsURL } from '../content/helper';
 import Guarantee from './Guarantee';
 import RightPlanSummary from './RightPlanSummary';
@@ -94,6 +95,7 @@ const AccountStepPayment = ({
     withLoadingSignup,
     onBillingAddressChange,
 }: Props) => {
+    const publicTheme = usePublicTheme();
     const formRef = useRef<HTMLFormElement>(null);
 
     const measurePay = (
@@ -156,6 +158,7 @@ const AccountStepPayment = ({
         paymentMethodStatusExtended: model.paymentMethodStatusExtended,
         api: normalApi,
         chargebeeEnabled: model.session?.user.ChargebeeUser,
+        theme: publicTheme,
         onChargeable: (_, { chargeablePaymentParameters, paymentsVersion, paymentProcessorType }) => {
             return withLoadingSignup(async () => {
                 const isFreeSignup = chargeablePaymentParameters.Amount <= 0;
