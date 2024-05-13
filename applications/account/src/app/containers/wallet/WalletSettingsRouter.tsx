@@ -1,14 +1,10 @@
 import { ReactNode } from 'react';
 import { Route, Switch, useRouteMatch } from 'react-router-dom';
 
+import { PrivateMainSettingsArea } from '@proton/components/containers';
 import { getSectionPath } from '@proton/components/containers/layout/helper';
-import {
-    GeneralSettingsSection,
-    SecuritySettingsSection,
-    WalletSettingsSection,
-    WalletsSettingsSection,
-} from '@proton/components/containers/wallet';
 
+import { WalletDownloadsSettingsPage } from './WalletDownloadsSettingsPage';
 import type { getWalletAppRoutes } from './routes';
 
 const WalletSettingsRouter = ({
@@ -21,23 +17,17 @@ const WalletSettingsRouter = ({
     const { path } = useRouteMatch();
 
     const {
-        routes: { general, security, wallets, wallet },
+        routes: { downloads },
     } = walletAppRoutes;
 
     return (
         <Switch>
-            <Route path={getSectionPath(path, general)}>
-                <GeneralSettingsSection config={general} />
+            <Route path={getSectionPath(path, downloads)}>
+                <PrivateMainSettingsArea config={downloads}>
+                    <WalletDownloadsSettingsPage />
+                </PrivateMainSettingsArea>
             </Route>
-            <Route path={getSectionPath(path, security)} exact>
-                <SecuritySettingsSection config={security} />
-            </Route>
-            <Route path={getSectionPath(path, wallets)} exact>
-                <WalletsSettingsSection config={wallets} />
-            </Route>
-            <Route path={getSectionPath(path, wallet)} exact>
-                <WalletSettingsSection config={wallet} />
-            </Route>
+
             {redirect}
         </Switch>
     );

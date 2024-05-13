@@ -79,13 +79,6 @@ const PassSettingsRouter = lazy(
     () => import(/* webpackChunkName: "routers/PassSettingsRouter" */ '../containers/pass/PassSettingsRouter')
 );
 
-const WalletExtendedApiContext = lazy(
-    () =>
-        import(
-            /* webpackChunkName: "contexts/WalletExtendedApiContext" */ '../containers/wallet/WalletExtendedApiContext'
-        )
-);
-
 const WalletSettingsRouter = lazy(
     () => import(/* webpackChunkName: "routers/WalletSettingsRouter" */ '../containers/wallet/WalletSettingsRouter')
 );
@@ -304,7 +297,7 @@ const MainContainer = () => {
         }
     }
 
-    const accountPrivateContainer = (
+    return (
         <PrivateAppContainer top={top} header={header} sidebar={sidebar}>
             <AccountStartupModals />
             <Switch>
@@ -378,12 +371,6 @@ const MainContainer = () => {
             </Switch>
         </PrivateAppContainer>
     );
-
-    if (app === APPS.PROTONWALLET) {
-        return <WalletExtendedApiContext>{accountPrivateContainer}</WalletExtendedApiContext>;
-    }
-
-    return accountPrivateContainer;
 };
 
 export default MainContainer;
