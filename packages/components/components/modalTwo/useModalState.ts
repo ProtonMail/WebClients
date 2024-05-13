@@ -1,4 +1,4 @@
-import { Key, useCallback, useEffect, useMemo, useState } from 'react';
+import { Key, useCallback, useMemo, useState } from 'react';
 
 import useControlled from '@proton/hooks/useControlled';
 
@@ -48,12 +48,6 @@ const useModalState = (options?: ModalStateOptions): ModalStateReturnTuple => {
         setKey(generateUID());
         onExit?.();
     }, [onExit]);
-
-    useEffect(() => {
-        return () => {
-            console.log('useModalState unmounted');
-        };
-    }, []);
 
     const modalProps: ModalStateProps & { key: Key } = useMemo(
         () => ({

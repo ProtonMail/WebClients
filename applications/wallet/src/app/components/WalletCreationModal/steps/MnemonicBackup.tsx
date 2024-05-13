@@ -32,7 +32,7 @@ export const MnemonicBackup = ({ mnemonic, onContinue }: Props) => {
             </Card>
 
             <p className="block text-center color-weak">{c('Wallet setup')
-                .t`Save these ${mnemonicWords?.length} words securely and never share them with anyone.`}</p>
+                .t`Save these ${mnemonicWords.length} words securely and never share them with anyone.`}</p>
 
             <Button pill className="block w-4/5 mx-auto mb-2" shape="solid" color="norm" onClick={() => onContinue()}>
                 {c('Wallet setup').t`Continue`}
