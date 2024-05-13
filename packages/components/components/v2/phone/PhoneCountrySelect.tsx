@@ -113,13 +113,19 @@ const CountrySelect = ({ value, options, onChange, embedded, onClosed }: Props) 
                         case 'ArrowUp': {
                             e.preventDefault();
                             const newIndex = selectedIndex - 1;
-                            onChange(filteredOptions[Math.max(newIndex, 0)]);
+                            const newValue = filteredOptions[Math.max(newIndex, 0)];
+                            if (newValue) {
+                                onChange(newValue);
+                            }
                             break;
                         }
                         case 'ArrowDown': {
                             e.preventDefault();
                             const newIndex = selectedIndex + 1;
-                            onChange(filteredOptions[Math.min(newIndex, filteredOptions.length - 1)]);
+                            const newValue = filteredOptions[Math.min(newIndex, filteredOptions.length - 1)];
+                            if (newValue) {
+                                onChange(newValue);
+                            }
                             break;
                         }
                         default:
