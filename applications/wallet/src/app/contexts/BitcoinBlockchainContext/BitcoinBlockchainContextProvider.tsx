@@ -10,12 +10,18 @@ import { useBlockchainFeesEstimation } from './useBlockchainFeesEstimation';
 import { useWalletsChainData } from './useWalletsChainData';
 
 interface Props {
+    // children: (props: BitcoinBlockchainContextValue) => ReactNode;
     children: ReactNode;
 }
 
 export const BitcoinBlockchainContextProvider = ({ children }: Props) => {
     const [network] = useBitcoinNetwork();
-    const { decryptedApiWalletsData, loading: loadingApiWalletsData, setPassphrase } = useDecryptedApiWalletsData();
+    const {
+        decryptedApiWalletsData,
+        walletMap,
+        loading: loadingApiWalletsData,
+        setPassphrase,
+    } = useDecryptedApiWalletsData();
 
     const {
         walletsChainData,
@@ -24,6 +30,7 @@ export const BitcoinBlockchainContextProvider = ({ children }: Props) => {
         syncManyWallets,
         syncSingleWallet,
         syncSingleWalletAccount,
+        isSyncing,
     } = useWalletsChainData(decryptedApiWalletsData);
 
     const { feesEstimation, loading: loadingFeesEstimation } = useBlockchainFeesEstimation();
@@ -38,29 +45,28 @@ export const BitcoinBlockchainContextProvider = ({ children }: Props) => {
         3000
     );
 
-    return (
-        <BitcoinBlockchainContext.Provider
-            value={{
-                network,
+    const value = {
+        network,
 
-                decryptedApiWalletsData,
-                loadingApiWalletsData,
-                setPassphrase,
+        decryptedApiWalletsData,
+        walletMap,
+        loadingApiWalletsData,
+        setPassphrase,
 
-                walletsChainData,
-                accountIDByDerivationPathByWalletID,
-                syncingMetatadaByAccountId,
-                syncManyWallets,
-                syncSingleWallet,
-                syncSingleWalletAccount,
+        walletsChainData,
+        accountIDByDerivationPathByWalletID,
+        syncingMetatadaByAccountId,
+        syncManyWallets,
+        syncSingleWallet,
+        syncSingleWalletAccount,
 
-                feesEstimation,
-                loadingFeesEstimation,
-            }}
-        >
-            {children}
-        </BitcoinBlockchainContext.Provider>
-    );
+        isSyncing,
+
+        feesEstimation,
+        loadingFeesEstimation,
+    };
+
+    return <BitcoinBlockchainContext.Provider value={value}>{children}</BitcoinBlockchainContext.Provider>;
 };
 
 export const useBitcoinBlockchainContext = () => useContext(BitcoinBlockchainContext);

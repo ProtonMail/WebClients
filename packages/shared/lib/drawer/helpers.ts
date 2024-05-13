@@ -173,7 +173,5 @@ export const getDisplayDrawerApp = (currentApp: APP_NAMES, toOpenApp: DrawerApp)
         return getDisplaySettingsInDrawer(currentApp);
     } else if (toOpenApp === DRAWER_NATIVE_APPS.SECURITY_CENTER) {
         return getDisplaySecurityCenterInDrawer(currentApp);
-    } else if (toOpenApp === DRAWER_NATIVE_APPS.WALLET_QUICK_ACTIONS) {
-        return currentApp === APPS.PROTONWALLET;
     }
 };

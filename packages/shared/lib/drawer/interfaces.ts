@@ -12,7 +12,6 @@ export enum DRAWER_NATIVE_APPS {
     QUICK_SETTINGS = 'quick-settings',
     CONTACTS = 'contacts',
     SECURITY_CENTER = 'security-center',
-    WALLET_QUICK_ACTIONS = 'wallet-quick-actions',
 }
 export type DrawerApp = typeof APPS.PROTONCALENDAR | `${DRAWER_NATIVE_APPS}`;
 export type IframeSrcMap = Partial<Record<DrawerApp, string | undefined>>;

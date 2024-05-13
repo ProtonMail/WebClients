@@ -5,6 +5,7 @@ import { MockedFunction } from 'vitest';
 
 import { WasmApiExchangeRateData, WasmExchangeRateClient } from '@proton/andromeda';
 import { ProtonStoreProvider } from '@proton/redux-shared-store';
+import { SECOND } from '@proton/shared/lib/constants';
 
 import { getMockedApi } from '../../tests';
 import { extendStore, setupStore } from '../store';
@@ -13,7 +14,7 @@ import { useGetExchangeRate } from './useExchangeRate';
 describe('useExchangeRate', () => {
     let mockedGetExchangeRate: MockedFunction<WasmExchangeRateClient['getExchangeRate']>;
 
-    const exchangeRateEur: WasmApiExchangeRateData[0] = {
+    const exchangeRateEur: WasmApiExchangeRateData['Data'] = {
         ID: '00001',
         BitcoinUnit: 'BTC',
         FiatCurrency: 'EUR',
@@ -21,7 +22,7 @@ describe('useExchangeRate', () => {
         ExchangeRate: 64110,
         Cents: 100,
     };
-    const exchangeRateUsd: WasmApiExchangeRateData[0] = {
+    const exchangeRateUsd: WasmApiExchangeRateData['Data'] = {
         ID: '00002',
         BitcoinUnit: 'BTC',
         FiatCurrency: 'USD',
@@ -36,8 +37,8 @@ describe('useExchangeRate', () => {
 
             mockedGetExchangeRate = vi
                 .fn()
-                .mockResolvedValueOnce([exchangeRateEur])
-                .mockResolvedValueOnce([exchangeRateUsd]);
+                .mockResolvedValueOnce({ Data: exchangeRateEur })
+                .mockResolvedValueOnce({ Data: exchangeRateUsd });
 
             extendStore({
                 walletApi: getMockedApi({
@@ -65,11 +66,11 @@ describe('useExchangeRate', () => {
 
             expect(await result.current('EUR')).toStrictEqual(exchangeRateEur);
             expect(mockedGetExchangeRate).toHaveBeenCalledTimes(1);
-            expect(mockedGetExchangeRate).toHaveBeenCalledWith('EUR', BigInt(1713516247));
+            expect(mockedGetExchangeRate).toHaveBeenCalledWith('EUR', undefined);
 
             expect(await result.current('USD')).toStrictEqual(exchangeRateUsd);
             expect(mockedGetExchangeRate).toHaveBeenCalledTimes(2);
-            expect(mockedGetExchangeRate).toHaveBeenCalledWith('USD', BigInt(1713516247));
+            expect(mockedGetExchangeRate).toHaveBeenCalledWith('USD', undefined);
 
             // getExchangeRate should not be called after that
             mockedGetExchangeRate.mockClear();
@@ -78,6 +79,35 @@ describe('useExchangeRate', () => {
             expect(mockedGetExchangeRate).toHaveBeenCalledTimes(0);
 
             expect(await result.current('USD')).toStrictEqual(exchangeRateUsd);
+            expect(mockedGetExchangeRate).toHaveBeenCalledTimes(0);
+        });
+
+        it('should send request for specific time', async () => {
+            const store = setupStore();
+
+            function Wrapper({ children }: PropsWithChildren<{}>): JSX.Element {
+                return <ProtonStoreProvider store={store}>{children}</ProtonStoreProvider>;
+            }
+
+            const { result } = renderHook(useGetExchangeRate, {
+                wrapper: Wrapper,
+            });
+
+            expect(await result.current('EUR', new Date(1713516247 * SECOND))).toStrictEqual(exchangeRateEur);
+            expect(mockedGetExchangeRate).toHaveBeenCalledTimes(1);
+            expect(mockedGetExchangeRate).toHaveBeenCalledWith('EUR', BigInt(1713516247));
+
+            expect(await result.current('USD', new Date(1713516247 * SECOND))).toStrictEqual(exchangeRateUsd);
+            expect(mockedGetExchangeRate).toHaveBeenCalledTimes(2);
+            expect(mockedGetExchangeRate).toHaveBeenCalledWith('USD', BigInt(1713516247));
+
+            // getExchangeRate should not be called after that
+            mockedGetExchangeRate.mockClear();
+
+            expect(await result.current('EUR', new Date(1713516247 * SECOND))).toStrictEqual(exchangeRateEur);
+            expect(mockedGetExchangeRate).toHaveBeenCalledTimes(0);
+
+            expect(await result.current('USD', new Date(1713516247 * SECOND))).toStrictEqual(exchangeRateUsd);
             expect(mockedGetExchangeRate).toHaveBeenCalledTimes(0);
         });
     });

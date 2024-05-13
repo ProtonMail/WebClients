@@ -22,6 +22,7 @@ export const getMockedApi = (mockedValue?: PartiallyMockedWalletApiClient): Wasm
     exchange_rate: vi.fn(
         (): WasmExchangeRateClient => ({
             getExchangeRate: mockedValue?.exchange_rate?.getExchangeRate ?? vi.fn(),
+            getAllFiatCurrencies: mockedValue?.exchange_rate?.getAllFiatCurrencies ?? vi.fn(),
             free: vi.fn(),
         })
     ),
@@ -50,10 +51,12 @@ export const getMockedApi = (mockedValue?: PartiallyMockedWalletApiClient): Wasm
             free: vi.fn(),
             getWallets: mockedValue?.wallet?.getWallets ?? vi.fn(),
             createWallet: mockedValue?.wallet?.createWallet ?? vi.fn(),
+            updateWalletName: mockedValue?.wallet?.updateWalletName ?? vi.fn(),
             deleteWallet: mockedValue?.wallet?.deleteWallet ?? vi.fn(),
             getWalletAccounts: mockedValue?.wallet?.getWalletAccounts ?? vi.fn(),
             createWalletAccount: mockedValue?.wallet?.createWalletAccount ?? vi.fn(),
             updateWalletAccountLabel: mockedValue?.wallet?.updateWalletAccountLabel ?? vi.fn(),
+            updateWalletAccountFiatCurrency: mockedValue?.wallet?.updateWalletAccountFiatCurrency ?? vi.fn(),
             deleteWalletAccount: mockedValue?.wallet?.deleteWalletAccount ?? vi.fn(),
             getWalletTransactions: mockedValue?.wallet?.getWalletTransactions ?? vi.fn(),
             getWalletTransactionsToHash: mockedValue?.wallet?.getWalletTransactionsToHash ?? vi.fn(),

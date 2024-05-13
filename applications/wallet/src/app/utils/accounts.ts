@@ -6,8 +6,8 @@ import { IWasmApiWalletData } from '@proton/wallet';
 
 import { AccountWithChainData, WalletChainDataByWalletId, WalletWithChainData } from '../types';
 
-export const getAccountBalance = (account?: AccountWithChainData) => {
-    const balance = account?.account.getBalance();
+export const getAccountBalance = async (account?: AccountWithChainData) => {
+    const balance = await account?.account.getBalance();
 
     const confirmed = Number(balance?.confirmed ?? 0);
     const trustedPending = Number(balance?.trusted_pending ?? 0);
@@ -15,8 +15,8 @@ export const getAccountBalance = (account?: AccountWithChainData) => {
     return confirmed + trustedPending;
 };
 
-export const getAccountUntrustedBalance = (account?: AccountWithChainData) => {
-    const balance = account?.account.getBalance();
+export const getAccountUntrustedBalance = async (account?: AccountWithChainData) => {
+    const balance = await account?.account.getBalance();
 
     const untrusted = Number(balance?.untrusted_pending ?? 0);
     const immature = Number(balance?.immature ?? 0);
@@ -56,6 +56,20 @@ export const getAccountWithChainDataFromManyWallets = (
     return walletsChainData[walletId]?.accounts[accountId];
 };
 
+export const getAccountTransactions = async (
+    walletsChainData: WalletChainDataByWalletId,
+    walletId: string,
+    accountId: string,
+    pagination?: WasmPagination,
+    sort?: WasmSortOrder
+) => {
+    return (
+        (await walletsChainData[walletId]?.accounts?.[accountId]?.account.getTransactions(pagination, sort))?.[0].map(
+            ({ Data }) => Data
+        ) ?? []
+    );
+};
+
 export const getAccountsWithChainDataFromManyWallets = (
     walletsChainData: WalletChainDataByWalletId
 ): AccountWithChainData[] => {
@@ -71,8 +85,8 @@ export const getAccountsWithChainDataFromSingleWallet = (
     return getAccountsWithChainDataFromManyWallets(pick(walletsChainData, walletId));
 };
 
-export const getWalletBalance = (walletsChainData: WalletChainDataByWalletId, walletId: string) => {
-    const balance = walletsChainData[walletId]?.wallet.getBalance();
+export const getWalletBalance = async (walletsChainData: WalletChainDataByWalletId, walletId: string) => {
+    const balance = await walletsChainData[walletId]?.wallet.getBalance();
 
     const confirmed = Number(balance?.confirmed ?? 0);
     const trustedPending = Number(balance?.trusted_pending ?? 0);
@@ -80,8 +94,8 @@ export const getWalletBalance = (walletsChainData: WalletChainDataByWalletId, wa
     return confirmed + trustedPending;
 };
 
-export const getWalletUntrustedBalance = (walletsChainData: WalletChainDataByWalletId, walletId: string) => {
-    const balance = walletsChainData[walletId]?.wallet.getBalance();
+export const getWalletUntrustedBalance = async (walletsChainData: WalletChainDataByWalletId, walletId: string) => {
+    const balance = await walletsChainData[walletId]?.wallet.getBalance();
 
     const untrusted = Number(balance?.untrusted_pending ?? 0);
     const immature = Number(balance?.immature ?? 0);
@@ -89,11 +103,13 @@ export const getWalletUntrustedBalance = (walletsChainData: WalletChainDataByWal
     return untrusted + immature;
 };
 
-export const getWalletTransactions = (
+export const getWalletTransactions = async (
     walletsChainData: WalletChainDataByWalletId,
     walletId: string,
     pagination?: WasmPagination,
     sort?: WasmSortOrder
 ) => {
-    return walletsChainData[walletId]?.wallet.getTransactions(pagination, sort)[0].map(({ Data }) => Data) ?? [];
+    return (
+        (await walletsChainData[walletId]?.wallet.getTransactions(pagination, sort))?.[0].map(({ Data }) => Data) ?? []
+    );
 };

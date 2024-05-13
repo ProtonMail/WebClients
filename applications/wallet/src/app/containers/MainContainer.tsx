@@ -1,41 +1,40 @@
-import { Redirect, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 import { ErrorBoundary, StandardErrorPage } from '@proton/components';
 import ContactEmailsProvider from '@proton/components/containers/contacts/ContactEmailsProvider';
 import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/useQuickSettingsReminders';
 
-import { withLayout } from '../components';
+import { PrivateWalletLayout } from '../components';
 import { BitcoinBlockchainContextProvider } from '../contexts/BitcoinBlockchainContext/BitcoinBlockchainContextProvider';
-import { BitcoinOnRampContainer } from './BitcoinOnRampContainer';
-import { BitcoinTransferContainer } from './BitcoinTransferContainer';
-import { MultiWalletDashboardContainer } from './MultiWalletDashboardContainer';
-import { SingleWalletDashboardContainer } from './SingleWalletDashboardContainer';
-import { TransactionHistoryContainer } from './TransactionHistoryContainer';
+import { AccountContainer } from './AccountContainer';
+import { EmptyViewContainer } from './EmptyViewContainer';
+import { WalletContainer } from './WalletContainer';
 
 const MainContainer = () => {
     return (
         <ErrorBoundary component={<StandardErrorPage big />}>
             <QuickSettingsRemindersProvider>
-                <BitcoinBlockchainContextProvider>
-                    <Switch>
-                        <Route path={'/transfer'}>
-                            {withLayout(
-                                <ContactEmailsProvider>
-                                    <BitcoinTransferContainer />
-                                </ContactEmailsProvider>
-                            )}
-                        </Route>
-                        <Route path={'/buy'}>{withLayout(<BitcoinOnRampContainer />)}</Route>
-                        <Route path={'/transactions'} exact>
-                            {withLayout(<TransactionHistoryContainer />)}
-                        </Route>
-                        <Route path={'/wallets/:walletId'}>{withLayout(<SingleWalletDashboardContainer />)}</Route>
-                        <Route path={'/wallets'} exact>
-                            {withLayout(<MultiWalletDashboardContainer />)}
-                        </Route>
-                        <Redirect to="/wallets" />
-                    </Switch>
-                </BitcoinBlockchainContextProvider>
+                <ContactEmailsProvider>
+                    <BitcoinBlockchainContextProvider>
+                        <Switch>
+                            <Route exact path={'/wallets/:walletId/accounts/:accountId'}>
+                                <PrivateWalletLayout>
+                                    <AccountContainer />
+                                </PrivateWalletLayout>
+                            </Route>
+                            <Route exact path={'/wallets/:walletId'}>
+                                <PrivateWalletLayout>
+                                    <WalletContainer />
+                                </PrivateWalletLayout>
+                            </Route>
+                            <Route>
+                                <PrivateWalletLayout>
+                                    <EmptyViewContainer />
+                                </PrivateWalletLayout>
+                            </Route>
+                        </Switch>
+                    </BitcoinBlockchainContextProvider>
+                </ContactEmailsProvider>
             </QuickSettingsRemindersProvider>
         </ErrorBoundary>
     );

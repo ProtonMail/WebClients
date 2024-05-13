@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { WasmApiExchangeRate, WasmBitcoinUnit, WasmScriptType } from '@proton/andromeda';
+import { WasmAddress, WasmApiExchangeRate, WasmBitcoinUnit, WasmNetwork, WasmScriptType } from '@proton/andromeda';
 
 import { fiatToSats, satsToFiat } from '.';
 import { BITCOIN, SATOSHI, mBITCOIN } from '../constants';
@@ -89,5 +89,14 @@ export const convertAmount = (
                 case 'SATS':
                     return roundFloat(value, 0);
             }
+    }
+};
+
+export const isValidBitcoinAddress = (address: string, network: WasmNetwork) => {
+    try {
+        new WasmAddress(address, network);
+        return true;
+    } catch (e) {
+        return false;
     }
 };

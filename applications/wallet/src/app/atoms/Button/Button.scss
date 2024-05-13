@@ -1,0 +1,34 @@
+.wallet-button {
+	font-weight: var(--font-weight-semibold);
+}
+
+.wallet-button.button-ghost-weak {
+	font-weight: var(--font-weight-weak);
+	&:hover {
+		background: transparent !important;
+	}
+}
+
+.wallet-button.button-solid-norm {
+	// box-shadow: var(--shadow-lifted);
+
+	--button-default-text-color: var(--text-invert);
+	--button-hover-text-color: var(--text-invert);
+	--button-active-text-color: var(--text-invert);
+}
+
+.wallet-button.button-solid-weak {
+	--button-default-text-color: var(--interaction-norm);
+	--button-hover-text-color: var(--interaction-norm);
+	--button-active-text-color: var(--interaction-norm);
+}
+
+.button-darker {
+	--button-default-background-color: var(--interaction-norm-contrast);
+	--button-hover-background-color: var(--interaction-norm-contrast);
+	--button-active-background-color: var(--interaction-norm-contrast);
+
+	--button-default-text-color: var(--text-invert) !important;
+	--button-hover-text-color: var(--text-invert) !important;
+	--button-active-text-color: var(--text-invert) !important;
+}

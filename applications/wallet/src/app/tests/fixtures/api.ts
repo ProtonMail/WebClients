@@ -141,6 +141,7 @@ export const apiWalletAccountOneA: WasmApiWalletAccount = {
     ScriptType: WasmScriptType.NativeSegwit,
     DerivationPath: "m/84'/0'/0'",
     Addresses: [],
+    FiatCurrency: 'USD',
 };
 
 export const apiWalletAccountOneB: WasmApiWalletAccount = {
@@ -150,6 +151,7 @@ export const apiWalletAccountOneB: WasmApiWalletAccount = {
     ScriptType: WasmScriptType.Taproot,
     DerivationPath: "m/86'/0'/0'",
     Addresses: [],
+    FiatCurrency: 'USD',
 };
 
 export const apiWalletAccountTwoA: WasmApiWalletAccount = {
@@ -159,6 +161,7 @@ export const apiWalletAccountTwoA: WasmApiWalletAccount = {
     ScriptType: WasmScriptType.NestedSegwit,
     DerivationPath: "m/49'/0'/0'",
     Addresses: [],
+    FiatCurrency: 'USD',
 };
 
 export const apiWalletAccountTwoB: WasmApiWalletAccount = {
@@ -168,6 +171,7 @@ export const apiWalletAccountTwoB: WasmApiWalletAccount = {
     ScriptType: WasmScriptType.NativeSegwit,
     DerivationPath: "m/84'/0'/0'",
     Addresses: [],
+    FiatCurrency: 'USD',
 };
 
 export const apiWalletAccountThree: WasmApiWalletAccount = {
@@ -177,6 +181,7 @@ export const apiWalletAccountThree: WasmApiWalletAccount = {
     ScriptType: WasmScriptType.NativeSegwit,
     DerivationPath: "m/84'/0'/0'",
     Addresses: [],
+    FiatCurrency: 'USD',
 };
 
 export const apiWalletsData: IWasmApiWalletData[] = [

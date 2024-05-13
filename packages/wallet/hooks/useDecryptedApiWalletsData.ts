@@ -1,10 +1,16 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 
+import { WasmApiWalletAccount } from '@proton/andromeda';
 import { useUserKeys } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
 import { IWasmApiWalletData, useApiWalletsData } from '@proton/wallet';
 
 import { decryptWalletData } from '../utils/crypto';
+import { buildMapFromWallets } from '../utils/wallet';
+
+export type WalletMap = Partial<
+    Record<string, { wallet: IWasmApiWalletData; accounts: Partial<Record<string, WasmApiWalletAccount>> }>
+>;
 
 export const useDecryptedApiWalletsData = () => {
     const [apiWalletsData, loadingWalletFetch] = useApiWalletsData();
@@ -28,15 +34,16 @@ export const useDecryptedApiWalletsData = () => {
                             const encryptedLabels = WalletAccounts.map((account) => account.Label);
 
                             try {
-                                const [decryptedMnemonic, decryptedPublickey, ...decryptedLabels] =
+                                const [decryptedMnemonic, decryptedWalletName, decryptedPublickey, ...decryptedLabels] =
                                     await decryptWalletData(
-                                        [Wallet.Mnemonic, Wallet.PublicKey, ...encryptedLabels],
+                                        [Wallet.Mnemonic, Wallet.Name, Wallet.PublicKey, ...encryptedLabels],
                                         WalletKey.WalletKey,
                                         userKeys
                                     );
 
                                 const decryptedWallet = {
                                     ...Wallet,
+                                    ...(decryptedWalletName && { Name: decryptedWalletName }),
                                     ...(decryptedMnemonic && { Mnemonic: decryptedMnemonic }),
                                     ...(decryptedPublickey && { PublicKey: decryptedPublickey }),
                                 };
@@ -98,5 +105,14 @@ export const useDecryptedApiWalletsData = () => {
         });
     }, []);
 
-    return { decryptedApiWalletsData, loading: loadingWalletFetch || loadingWalletDecryption, setPassphrase };
+    const walletMap: WalletMap = useMemo(() => {
+        return buildMapFromWallets(decryptedApiWalletsData);
+    }, [decryptedApiWalletsData]);
+
+    return {
+        decryptedApiWalletsData,
+        walletMap,
+        loading: loadingWalletFetch || loadingWalletDecryption,
+        setPassphrase,
+    };
 };

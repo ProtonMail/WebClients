@@ -2,12 +2,10 @@ import { ReactNode, useMemo } from 'react';
 
 import { WasmApiExchangeRate, WasmBitcoinUnit } from '@proton/andromeda';
 import Info from '@proton/components/components/link/Info';
-import { Price } from '@proton/components/components/price';
+import Price from '@proton/components/components/price/Price';
 import clsx from '@proton/utils/clsx';
 
 import { getLabelByUnit, satsToBitcoin, satsToFiat, satsToMBitcoin } from '../utils';
-
-export const loadingIfUnset = <T,>(v: T) => !v;
 
 interface Props {
     /**
