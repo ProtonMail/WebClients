@@ -11,7 +11,7 @@ import { IS_PROTON_USER_COOKIE_NAME } from '@proton/components/hooks/useIsProton
 import usePrevious from '@proton/hooks/usePrevious';
 import { modalTwoRootClassName } from '@proton/shared/lib/busy';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
-import { DRIVE_PRICING_PAGE } from '@proton/shared/lib/drive/urls';
+import { DRIVE_SIGNUP } from '@proton/shared/lib/drive/urls';
 import { getCookie } from '@proton/shared/lib/helpers/cookies';
 import clsx from '@proton/utils/clsx';
 
@@ -46,13 +46,9 @@ const UpsellFloatingModalContent = ({ onClose }: Pick<ChildProps, 'onClose'>) =>
                             <p className="m-0 mt-1 flex-1 max-w-custom" style={{ '--max-w-custom': '12.5em' }}>
                                 {c('Info').t`With ${DRIVE_APP_NAME} your data is protected by end-to-end encryption.`}
                             </p>
-                            <ButtonLike
-                                as="a"
-                                href={DRIVE_PRICING_PAGE}
-                                target="_blank"
-                                color="norm"
-                                shape="outline"
-                            >{c('Action').t`Get Started`}</ButtonLike>
+                            <ButtonLike as="a" href={DRIVE_SIGNUP} target="_blank" color="norm" shape="outline">{c(
+                                'Action'
+                            ).t`Get Started`}</ButtonLike>
                         </div>
                     </div>
                 </div>
