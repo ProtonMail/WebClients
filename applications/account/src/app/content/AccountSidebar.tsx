@@ -1,4 +1,4 @@
-import { JSX, lazy } from 'react';
+import { JSX } from 'react';
 
 import { c } from 'ttag';
 
@@ -26,10 +26,6 @@ interface AccountSidebarProps {
     onToggleExpand: () => void;
     routes: Routes;
 }
-
-const WalletSettingsSidebar = lazy(
-    () => import(/* webpackChunkName: "sidebars/WalletSettingsSidebar" */ '../containers/wallet/WalletSettingsSidebar')
-);
 
 const AccountSidebar = ({ app, appSlug, logo, expanded, onToggleExpand, routes }: AccountSidebarProps) => {
     const backButtonCopy = {
