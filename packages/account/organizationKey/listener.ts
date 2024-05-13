@@ -2,13 +2,21 @@ import type { Action } from '@reduxjs/toolkit';
 
 import { CryptoProxy } from '@proton/crypto';
 import type { SharedStartListening } from '@proton/redux-shared-store/listenerInterface';
+import { getIsAddressEnabled } from '@proton/shared/lib/helpers/address';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
+import { captureMessage } from '@proton/shared/lib/helpers/sentry';
+import { getSentryError } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
+import { addressesThunk, selectAddresses } from '../addresses';
 import { serverEvent } from '../eventLoop';
 import { selectMembers } from '../members';
 import { selectOrganization } from '../organization';
-import { migrateOrganizationKeyPasswordless, migrateOrganizationKeyPasswordlessPrivateAdmin } from './actions';
+import {
+    changeOrganizationSignature,
+    migrateOrganizationKeyPasswordless,
+    migrateOrganizationKeyPasswordlessPrivateAdmin,
+} from './actions';
 import { type OrganizationKeyState, organizationKeyThunk, selectOrganizationKey } from './index';
 
 export const organizationKeysListener = (startListening: SharedStartListening<OrganizationKeyState>) => {
@@ -43,7 +51,9 @@ export const organizationKeysListener = (startListening: SharedStartListening<Or
             }
         },
     });
+};
 
+export const organizationKeysManagementListener = (startListening: SharedStartListening<OrganizationKeyState>) => {
     startListening({
         predicate: (action, currentState, nextState) => {
             return Boolean(
@@ -70,6 +80,45 @@ export const organizationKeysListener = (startListening: SharedStartListening<Or
                     await listenerApi.dispatch(migrateOrganizationKeyPasswordlessPrivateAdmin());
                 }
             } catch (e) {}
+        },
+    });
+
+    startListening({
+        predicate: (action, currentState, nextState) => {
+            const orgKey = selectOrganizationKey(nextState).value;
+            const addresses = selectAddresses(nextState).value;
+            return Boolean(orgKey?.privateKey && !orgKey.Key.FingerprintSignature && (addresses || [])?.length >= 1);
+        },
+        effect: async (action, listenerApi) => {
+            const state = listenerApi.getState();
+            const organizationKey = selectOrganizationKey(state).value;
+            if (!organizationKey?.privateKey) {
+                return;
+            }
+            if (!listenerApi.extra.unleashClient.isEnabled('OrganizationIdentity')) {
+                return;
+            }
+
+            listenerApi.unsubscribe();
+
+            const addresses = await listenerApi.dispatch(addressesThunk());
+            const activeAddresses = addresses.filter(getIsAddressEnabled);
+            const primaryActiveAddress = activeAddresses[0];
+            if (!primaryActiveAddress) {
+                return;
+            }
+
+            try {
+                await listenerApi.dispatch(changeOrganizationSignature({ address: primaryActiveAddress }));
+            } catch (e) {
+                const error = getSentryError(e);
+                if (error) {
+                    captureMessage('Organization identity: Error generating signature', {
+                        level: 'error',
+                        extra: { error },
+                    });
+                }
+            }
         },
     });
 };

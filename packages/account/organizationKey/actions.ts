@@ -11,6 +11,7 @@ import {
     updateOrganizationKeysLegacy,
     updateOrganizationKeysV2,
     updatePasswordlessOrganizationKeys as updatePasswordlessOrganizationKeysConfig,
+    uploadOrganizationKeySignature,
 } from '@proton/shared/lib/api/organization';
 import { KEYGEN_CONFIGS, KEYGEN_TYPES, MEMBER_PRIVATE, MEMBER_ROLE } from '@proton/shared/lib/constants';
 import { getIsAddressEnabled } from '@proton/shared/lib/helpers/address';
@@ -26,6 +27,7 @@ import {
 } from '@proton/shared/lib/interfaces';
 import {
     acceptInvitation,
+    generateOrganizationKeySignature,
     generateOrganizationKeyToken,
     generateOrganizationKeys,
     generatePasswordlessOrganizationKey,
@@ -983,5 +985,35 @@ export const migrateOrganizationKeyPasswordlessPrivateAdmin = (): ThunkAction<
                 captureMessage('Passwordless: Error accepting migration invite', { level: 'error', extra: { error } });
             }
         }
+    };
+};
+
+export const changeOrganizationSignature = ({
+    address,
+}: {
+    address: Address;
+}): ThunkAction<Promise<void>, OrganizationKeyState, ProtonThunkArguments, UnknownAction> => {
+    return async (dispatch, getState, extra) => {
+        const organizationKey = await dispatch(organizationKeyThunk());
+        const [primaryAddressKey] = await dispatch(addressKeysThunk({ addressID: address.ID }));
+        if (!primaryAddressKey?.privateKey) {
+            throw new Error('Missing primary address key');
+        }
+        if (!organizationKey?.privateKey) {
+            throw new Error('Missing organization key');
+        }
+
+        const signature = await generateOrganizationKeySignature({
+            signingKeys: primaryAddressKey.privateKey,
+            organizationKey: organizationKey.privateKey,
+        });
+        const silentApi = getSilentApi(extra.api);
+        await silentApi(
+            uploadOrganizationKeySignature({
+                AddressID: address.ID,
+                Signature: signature,
+            })
+        );
+        await extra.eventManager.call();
     };
 };
