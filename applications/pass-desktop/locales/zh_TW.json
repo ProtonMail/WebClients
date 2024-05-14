@@ -1178,6 +1178,9 @@
       "${ config.options.wordCount } word": [
         "${ config.options.wordCount }個字"
       ],
+      "${ PASS_SHORT_APP_NAME } version": [
+        "${ PASS_SHORT_APP_NAME }版本"
+      ],
       "1 hour": [
         "1 小時"
       ],
@@ -1277,8 +1280,14 @@
       "Created": [
         "已創建"
       ],
+      "Created at": [
+        "建立於"
+      ],
       "Date": [
         "日期"
+      ],
+      "Device": [
+        "裝置"
       ],
       "Display": [
         "顯示"

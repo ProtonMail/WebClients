@@ -1558,6 +1558,9 @@
       "${ PASS_SHORT_APP_NAME } monitor": [
         "${ PASS_SHORT_APP_NAME }-overvåking"
       ],
+      "${ PASS_SHORT_APP_NAME } version": [
+        "${ PASS_SHORT_APP_NAME }-versjon"
+      ],
       "1 hour": [
         "1 time"
       ],
@@ -1674,6 +1677,12 @@
       ],
       "Created": [
         "Opprettet"
+      ],
+      "Created at": [
+        "Opprettet den"
+      ],
+      "Device": [
+        "Enhet"
       ],
       "Disable data export for team members": [
         "Deaktiver dataeksport for teammedlemmer"

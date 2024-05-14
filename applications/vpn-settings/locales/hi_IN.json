@@ -155,9 +155,6 @@
       "Discard": [
         "रद्द करें"
       ],
-      "Don't know your password?": [
-        "क्या आप अपना पासवर्ड नहीं जानते?"
-      ],
       "Done": [
         "पूरा हुआ"
       ],
@@ -632,8 +629,14 @@
       ]
     },
     "bf2023: Action": {
+      "**Add our encrypted password manager** for only ${ price }": [
+        "**हमारे एन्क्रिप्टेड पासवर्ड प्रबंधक** को केवल ${ price } में जोड़ें"
+      ],
       "Add ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } जोड़ें"
+      ],
+      "Add ${ plan } for ${ price } per month": [
+        "प्रति माह ${ price } के लिए ${ plan } जोड़ें"
       ],
       "Cancel": [
         "रद्द करें"
@@ -641,11 +644,17 @@
       "Close": [
         "बंद करें"
       ],
+      "Get the deal": [
+        "डील लें"
+      ],
       "Remove": [
         "हटाएं"
       ],
       "Remove ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } को निकालें"
+      ],
+      "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
+        "15 महीने के लिए सदस्यता लें और **हमारे एन्क्रिप्टेड पासवर्ड प्रबंधक** को केवल प्रति महीने ${ priceNoSuffix } अतिरिक्त में प्राप्त करें!"
       ]
     },
     "bf2023: Deal details": {
@@ -679,7 +688,30 @@
         "आपकी सदस्यता आपके बिलिंग चक्र के अंत में मानक रियायती दर और अवधि पर स्वचालित रूप से नवीनीकृत हो जाएगी"
       ]
     },
+    "bf2023: header": {
+      "Save with Black Friday deals on a high-speed Swiss VPN": [
+        "उच्च गति वाले स्विस VPN पर ब्लैक फ्राइडे के डील्स के साथ बचत करें"
+      ],
+      "Save with Cyber Week deals on a high-speed Swiss VPN": [
+        "उच्च गति वाले स्विस VPN पर साइबर सप्ताह के डील्स के साथ बचत करें"
+      ],
+      "Save with End of Year deals on a high-speed Swiss VPN": [
+        "उच्च गति वाले स्विस VPN पर वर्ष के अंत के डील्स के साथ बचत करें"
+      ],
+      "Select your Black Friday offer": [
+        "अपना ब्लैक फ्राइडे ऑफर चुनें"
+      ],
+      "Select your Cyber Week offer": [
+        "अपना साइबर सप्ताह का ऑफ़र चुनें"
+      ],
+      "Select your End of Year offer": [
+        "अपना वर्ष के अंत का ऑफ़र चुनें"
+      ]
+    },
     "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "माफ़ कीजिए, यह ऑफ़र आपकी वर्तमान योजना के साथ उपलब्ध नहीं है।"
+      ],
       "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
         "क्षमा करें, यह ऑफ़र आपके वर्तमान प्लान के साथ उपलब्ध नहीं है। लेकिन जब आप **${ months }** के लिए सदस्यता लेते हैं तो आप **${ plan.Title } पर ${ discountPercentage }** की छूट पा सकते हैं।"
       ]
@@ -702,6 +734,11 @@
       ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "${ discountedPrice } की विशेष रियायती कीमत पहले महीने के लिए वैध है। फिर यह स्वचालित रूप से हर महीने ${ nextPrice } पर नवीनीकृत हो जाएगा। आप किसी भी समय निरस्त कर सकते हैं।"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "ऑफर अनुपलब्ध"
       ]
     },
     "bf2023: Tooltip": {
@@ -929,10 +966,10 @@
         "अब्खाज़िया"
       ],
       "Afghanistan": [
-        "अफगानिस्तान"
+        "अफ़ग़ानिस्तान"
       ],
       "Albania": [
-        "अल्बानिया"
+        "अल्बेनिया"
       ],
       "Algeria": [
         "अल्जीरिया"
@@ -959,7 +996,7 @@
         "अर्जेंटीना"
       ],
       "Armenia": [
-        "आर्मीनिया"
+        "अर्मेनिया"
       ],
       "Aruba": [
         "अरूबा"
@@ -974,13 +1011,13 @@
         "ऑस्ट्रिया"
       ],
       "Azerbaijan": [
-        "अज़रबैजान"
+        "आज़रबाइजान"
       ],
       "Bahamas": [
         "बहामास"
       ],
       "Bahrain": [
-        "बहरीन"
+        "बहरैन"
       ],
       "Bangladesh": [
         "बांग्लादेश"
@@ -1031,7 +1068,7 @@
         "ब्रुनेई दारुस्सलाम"
       ],
       "Bulgaria": [
-        "बल्गारिया"
+        "बुल्गारिया"
       ],
       "Burkina Faso": [
         "बुर्किना फासो"
@@ -1067,7 +1104,7 @@
         "चीन"
       ],
       "Christmas Island": [
-        "क्रिसमस द्वीप"
+        "क्रिसमस आइलैंड"
       ],
       "Cocos (Keeling) Islands": [
         "कोकोस (कीलिंग) द्वीप समूह"
@@ -1118,7 +1155,7 @@
         "डोमिनिका"
       ],
       "Dominican Republic": [
-        "डॉमिनिकन गणराज्य"
+        "डोमिनिकन रिपब्लिक"
       ],
       "Ecuador": [
         "इक्वाडोर"
@@ -1148,7 +1185,7 @@
         "फ़ॉकलैंड आइलैंड"
       ],
       "Faroe Islands": [
-        "फ़ेरो द्वीपसमूह"
+        "फ़ेरो आइलैंड्स"
       ],
       "Federated States of Micronesia": [
         "माइक्रोनेशिया के संघीय राज्य"
@@ -1364,7 +1401,7 @@
         "मेक्सिको"
       ],
       "Moldova": [
-        "माल्डोवा"
+        "मोल्डोवा"
       ],
       "Monaco": [
         "मोनाको"
@@ -1544,7 +1581,7 @@
         "स्लोवेनिया"
       ],
       "Solomon Islands": [
-        "सोलोमन द्वीप समूह"
+        "सोलोमन आइलैंड्स"
       ],
       "Somalia": [
         "सोमालिया"
@@ -1688,7 +1725,7 @@
         "ज़िम्बाब्वे"
       ],
       "Åland Islands": [
-        "एलैंड आइलैंड"
+        "ऑलैंड द्वीप"
       ]
     },
     "CountryInfo": {
@@ -2736,7 +2773,7 @@
         "दिए गए पासवर्ड को क्लिपबोर्ड पे कॉपी करें"
       ],
       "Country code": [
-        "देश कोड"
+        "देश का कोड"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "उप-खाते बनाएं और प्रबंधित करें और उन्हें अपने कस्टम डोमेन पर ईमेल पते असाइन करें।"
@@ -2952,7 +2989,7 @@
         "और जानें"
       ],
       "Link copied to clipboard": [
-        "लिंक को क्लिपबोर्ड पर कॉपी किया गया"
+        "लिंक क्लिपबोर्ड पर कॉपी किया गया"
       ],
       "Live chat": [
         "लाइव चैट"
@@ -4099,7 +4136,7 @@
         "${ BRAND_NAME } बीटा खबर"
       ],
       "${ BRAND_NAME } for Business newsletter": [
-        "${ BRAND_NAME } बिज़नेस खबरपत्र के लिए"
+        "${ BRAND_NAME } Business समाचार पत्रिका"
       ],
       "${ BRAND_NAME } newsletter": [
         "${ BRAND_NAME } खबरपत्र"
@@ -4159,7 +4196,7 @@
         "उपयोगकर्ता नाम भूल गए?"
       ],
       "Help translate": [
-        "हमें अनुवाद करने में मदद करें"
+        "अनुवाद में मदद करें"
       ],
       "How to pay with Bitcoin?": [
         "बिटकॉइन से भुगतान कैसे करें?"
@@ -4184,9 +4221,6 @@
       ],
       "Request an invite": [
         "निमंत्रण का अनुरोध"
-      ],
-      "Reset password": [
-        "पासवर्ड रीसेट करें"
       ],
       "Sign in": [
         "साइनइन करें"
@@ -6247,13 +6281,13 @@
     },
     "Tab subscription modal": {
       "For businesses": [
-        "बिज़नेस के लिए"
+        "व्यवसायों के लिए"
       ],
       "For families": [
         "परिवारों के लिए"
       ],
       "For individuals": [
-        "अकेले लोगों के लिए"
+        "व्यक्तिगत"
       ]
     },
     "TableHeader": {

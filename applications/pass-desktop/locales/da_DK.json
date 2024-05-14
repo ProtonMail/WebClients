@@ -4,6 +4,26 @@
     "language": "da_DK"
   },
   "contexts": {
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } og ${ remainingCount } andre potentielle lækager fundet. Tænd for ${ DARK_WEB_MONITORING_NAME } for at se detaljer og tage handling. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } og 1 anden potentiel lækage fundet. Tænd for ${ DARK_WEB_MONITORING_NAME } for at se detaljer og tage handling. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "En potentiel lækage på ${ name } blev fundet. Tænd for ${ DARK_WEB_MONITORING_NAME } for at se detaljer og tage handling. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "En potentiel lækage fra ${ name } blev fundet. Tænd for ${ DARK_WEB_MONITORING_NAME } for at se detaljer og tage handling. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "En potentiel lækage fra ${ name } blev fundet. Tænd for ${ DARK_WEB_MONITORING_NAME } for at se detaljer. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Dine oplysninger blev fundet i mindst én datalækage. Tænd for ${ DARK_WEB_MONITORING_NAME } for at se detaljer og tage handling. ${ link }"
+      ]
+    },
     "Action": {
       "Add": [
         "Tilføj"
@@ -906,7 +926,7 @@
     },
     "Info": {
       " Upgrade to a paid plan to create multiple vaults.": [
-        "Opgradér til et betalt abonnement for at oprette flere bokse."
+        " Opgrader til et betalt abonnement for at oprette flere bokse."
       ],
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "\"${ payload.item.data.metadata.name }\" element blev afvist"
@@ -1415,7 +1435,7 @@
         "Tak, problemet er blevet rapporteret"
       ],
       "The custom email will be sent to ${ href } for monitoring. No other data will be sent to HIBP.": [
-        "Den brugerdefinerede e-mail sendes til ${ href } til monitorering. Ingen andre data vil blive sendt til HIBP."
+        "Denne brugertilpassede e-mail sendes til ${ href } til overvågning. Ingen andre data vil blive sendt til HIBP."
       ],
       "The export will only contain vaults that you own.": [
         "Eksporten vil kun indeholde bokse, som du ejer."
@@ -1573,6 +1593,9 @@
         "${ config.options.wordCount } ord",
         "${ config.options.wordCount } ord"
       ],
+      "${ PASS_SHORT_APP_NAME } version": [
+        "${ PASS_SHORT_APP_NAME } version"
+      ],
       "${ usageCount } login": [
         "${ usageCount } login",
         "${ usageCount } logins"
@@ -1676,8 +1699,14 @@
       "Created": [
         "Oprettet"
       ],
+      "Created at": [
+        "Oprettet kl."
+      ],
       "Date": [
         "Dato"
+      ],
+      "Device": [
+        "Enhed"
       ],
       "Disable data export for team members": [
         "Deaktivér dataeksport for teammedlemmer"
@@ -2048,7 +2077,7 @@
     },
     "Log preference": {
       "Enable ${ reason }": [
-        "Aktivér ${ reason }"
+        "Aktiver ${ reason }"
       ]
     },
     "Message": {
@@ -2181,6 +2210,20 @@
       ],
       "Write your note": [
         "Skriv din note"
+      ]
+    },
+    "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } og ${ remainingCount } andre potentielle lækager fundet. Tænd for ${ DARK_WEB_MONITORING_NAME } for at se detaljer. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } og 1 anden potentiel lækage fundet. Tænd for ${ DARK_WEB_MONITORING_NAME } for at se detaljer. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Et potentielt ${ name } læk blev opdaget. Tænd for ${ DARK_WEB_MONITORING_NAME } for at se detaljer. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Dine oplysninger blev fundet i mindst én datalækage. Tænd for ${ DARK_WEB_MONITORING_NAME } for at se detaljer. ${ link }"
       ]
     },
     "Success": {

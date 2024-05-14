@@ -43,6 +43,26 @@
         "Detendrá el reenvío de correos."
       ]
     },
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } y ${ remainingCount } potenciales filtraciones fueron detectadas. Active ${ DARK_WEB_MONITORING_NAME } para ver los detalles y tomar acciones. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } y otra potencial filtración fueron detectadas. Active el ${ DARK_WEB_MONITORING_NAME } para ver los detalles y tomar acciones. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Una potencial filtración de ${ name } fue detectada. Active ${ DARK_WEB_MONITORING_NAME } para ver los detalles y tomar acciones. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Una potencial filtración de ${ name } fue detectada. Active ${ DARK_WEB_MONITORING_NAME } para ver los detalles y tomar acciones. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Se detectó una potencial filtración desde ${ name }. Active el ${ DARK_WEB_MONITORING_NAME } para ver los detalles. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Su información fue encontrada en al menos una filtración de datos. Active ${ DARK_WEB_MONITORING_NAME } para ver los detalles y tomar acciones. ${ link }"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "Tienda ${ BRAND_NAME }"
@@ -257,6 +277,9 @@
       "Copy link": [
         "Copiar enlace"
       ],
+      "Copy version number to clipboard": [
+        "Copiar el número de versión en el portapapeles"
+      ],
       "Create": [
         "Crear"
       ],
@@ -358,9 +381,6 @@
       ],
       "Discard": [
         "Descartar"
-      ],
-      "Don't know your password?": [
-        "¿Ha olvidado la contraseña?"
       ],
       "Don't show again": [
         "No volver a mostrar"
@@ -469,6 +489,9 @@
       ],
       "Font": [
         "Tipo de letra"
+      ],
+      "Forgot password?": [
+        "¿Contraseña olvidada?"
       ],
       "Generate": [
         "Generar"
@@ -6004,6 +6027,17 @@
         "Parte del contenido del calendario es incompatible y no será importado."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Se detectaron claves duplicadas adicionales. Cárguelas individualmente para obtener más información."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "La clave ${ fingerprint } ya ha sido cargada"
+      ],
+      "Selected color:": [
+        "Color seleccionado:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necesita permiso para ${ enableDesktopNotifications }."
@@ -7806,6 +7840,9 @@
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Esto eliminará permanentemente la cuenta y todos los datos. No podrá reactivar esta cuenta."
       ],
+      "This will remove any enabled 2FA methods.": [
+        "Esto borrará cualquier método 2FA activado."
+      ],
       "This will remove SSO for ${ boldDomainName }.": [
         "Esto eliminará el SSO de ${ boldDomainName }."
       ],
@@ -8028,6 +8065,9 @@
       "Version history": [
         "Historial de versiones"
       ],
+      "Version number successfully copied to clipboard": [
+        "El número de versión fue copiado en el portapapeles."
+      ],
       "View, download, and manage your invoices.": [
         "Vea, descargue y gestione sus facturas."
       ],
@@ -8134,7 +8174,7 @@
         "Cuando se suscriben a un plan, usted obtendrá créditos para usar en la suscripción."
       ],
       "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
-        "Cuado cancela su suscripción de pago actual, el saldo de su suscripción será devuelto como créditos de cuenta y se le degradará al plan ${ BRAND_NAME } ${ PLANS.FREE }"
+        "Cuado cancela su suscripción de pago actual, el saldo de su suscripción será devuelto como créditos de cuenta y se le bajará al plan ${ BRAND_NAME } ${ PLANS.FREE }"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Cuando configura la autenticación de dos factores, nosotros proporcionamos códigos de recuperación que podrá usar para iniciar sesión si llega a perder acceso a la aplicación de autenticación."
@@ -8418,17 +8458,6 @@
       ],
       "Zoom meeting": [
         "reunión de Zoom"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Se detectaron claves duplicadas adicionales. Cárguelas individualmente para obtener más información."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "La clave ${ fingerprint } ya ha sido cargada"
-      ],
-      "Selected color:": [
-        "Color seleccionado:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9986,6 +10015,9 @@
       "Encryption and keys": [
         "Cifrado y claves"
       ],
+      "Forgot password?": [
+        "¿Contraseña olvidada?"
+      ],
       "Forgot username?": [
         "¿Olvidó el nombre de usuario?"
       ],
@@ -10042,9 +10074,6 @@
       ],
       "Request an invite": [
         "Solicitar una invitación"
-      ],
-      "Reset password": [
-        "Restablecer contraseña"
       ],
       "Set email address": [
         "Establecer dirección de correo"
@@ -12218,6 +12247,9 @@
       "Launching ${ PASS_APP_NAME }": [
         "Iniciando ${ PASS_APP_NAME }"
       ],
+      "Limited time offer: ${ title } for ${ price } for the 1st month": [
+        "Oferta por tiempo limitado: ${ title } por ${ price } el primer mes"
+      ],
       "Limited time offer: Get ${ title } for ${ price } per user monthly!": [
         "¡Oferta de tiempo limitado: obtenga ${ title } por ${ price } por usuario mensualmente!"
       ],
@@ -12922,8 +12954,17 @@
       ]
     },
     "Security Center - Info": {
-      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLinkBreach }": [
-        "Sus datos fueron encontrados en al menos una vulneración. Active ${ DARK_WEB_MONITORING_NAME } para ver los detalles y tomar acciones. ${ learnMoreLinkBreach }"
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } y ${ remainingCount } potenciales filtraciones fueron detectadas. Active ${ DARK_WEB_MONITORING_NAME } para ver los detalles. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } y otra potencial filtración fueron detectadas. Active el ${ DARK_WEB_MONITORING_NAME } para ver los detalles. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Una potencial filtración de ${ name } fue detectada. Active ${ DARK_WEB_MONITORING_NAME } para ver más detalles. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Su información fue encontrada en al menos una filtración de datos. Active ${ DARK_WEB_MONITORING_NAME } para ver los detalles. ${ link }"
       ]
     },
     "Select file": {
@@ -13941,7 +13982,7 @@
         "Añadir archivos nuevos"
       ],
       "Back up photos from your devices": [
-        "Respaldar fotos desde sus dispositivos"
+        "Respaldar fotos desde dispositivos"
       ],
       "Calendar sharing": [
         "Calendarios compartidos"
@@ -13977,7 +14018,7 @@
         "Ayuda a activistas en Hong Kong"
       ],
       "How our customer support team got our VPN app directly into people's hands. ": [
-        "Cómo nuestro equipo de atención al cliente brindó nuestra aplicación VPN directamente a la mano de la gente. "
+        "Cómo nuestro equipo de atención al cliente llevó nuestra aplicación VPN directamente a la mano de la gente. "
       ],
       "How we fought back when ${ BRAND_NAME } was targeted in an aggressive censorship campaign.": [
         "Cómo contraatacamos cuando ${ BRAND_NAME } fue el blanco de una agresiva campaña de censura."
@@ -13998,16 +14039,16 @@
         "Más información acerca de nuestro impacto"
       ],
       "Manage your calendar": [
-        "Gestionar sus calendarios"
+        "Gestionar los calendarios"
       ],
       "Online privacy, for your whole family": [
-        "Privacidad en línea para toda su familia"
+        "Privacidad en línea para toda la familia"
       ],
       "Our fight against censorship in Russia": [
         "Nuestra lucha contra la censura en Rusia"
       ],
       "Please note that ${ planName } is no longer available for purchase. If you downgrade your account, you will lose all plan benefits and won't be able to resubscribe.": [
-        "Tome en cuenta que ${ planName } ya no está disponible para su compra. Si baja de plan, su cuenta perderá todos los beneficios del plan y no podrá volver a suscribirse."
+        "Tome en cuenta que ${ planName } ya no está disponible para su compra. Si baja de plan, su cuenta perderá todos los beneficios del plan y no podrá volver a suscribirse a este plan."
       ],
       "Premium productivity features": [
         "Funciones premium de productividad"
@@ -14064,7 +14105,7 @@
         "Bono de almacenamiento gratuito al año"
       ],
       "You still have ${ expiryDate } left on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink } ${ unavailablePlan }": [
-        "Aún tiene ${ expiryDate } restante en la suscripción de ${ planName }. Añadiremos los créditos por el tiempo restante a la cuenta de ${ BRAND_NAME }. Asegúrese de no exceder los límites del plan gratuito antes de cancelar. ${ learnMoreLink } ${ unavailablePlan }"
+        "Aún tiene ${ expiryDate } en la suscripción de ${ planName }. Añadiremos los créditos por el tiempo restante a la cuenta de ${ BRAND_NAME }. Asegúrese de no exceder los límites del plan gratuito antes de cancelar. ${ learnMoreLink } ${ unavailablePlan }"
       ],
       "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
         "Aún tiene ${ expiryDate } en la suscripción de ${ planName }. Añadiremos los créditos por el tiempo restante a la cuenta de ${ BRAND_NAME }. Asegúrese de no exceder los límites del plan gratuito antes de cancelar. ${ learnMoreLink }"

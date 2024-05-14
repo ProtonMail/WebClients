@@ -1597,6 +1597,9 @@
       "${ PASS_SHORT_APP_NAME } monitor": [
         "Monitoring ${ PASS_SHORT_APP_NAME }"
       ],
+      "${ PASS_SHORT_APP_NAME } version": [
+        "Wersja ${ PASS_SHORT_APP_NAME }"
+      ],
       "1 hour": [
         "1 godzina"
       ],
@@ -1713,6 +1716,12 @@
       ],
       "Created": [
         "Utworzono"
+      ],
+      "Created at": [
+        "Utworzono na stronie"
+      ],
+      "Device": [
+        "Urządzenie"
       ],
       "Disable data export for team members": [
         "Wyłącz eksportowanie danych dla użytkowników zespołu"

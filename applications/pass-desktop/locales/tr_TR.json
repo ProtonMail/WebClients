@@ -482,6 +482,9 @@
         "${ total } oturum açma kaydı aynı parolayı kullanıyor",
         "${ total } oturum açma kaydı aynı parolayı kullanıyor"
       ],
+      "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
+        "İki adımlı doğrulama, oturum açma işlemlerinize ek bir güvenlik katmanı ekler. ${ PASS_APP_NAME }, iki adımlı doğrulama kodlarınızı saklayarak ve otomatik olarak otomatik doldurarak iki adımlı doğrulamayı kullanmanızı kolaylaştırır."
+      ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "E-posta takma adı e-posta adresi gibi çalışır. Ancak istenmeyen e-postaları azaltır ve gerçek e-posta adresiniz ile kimliğinizi gizli tutar."
       ],
@@ -517,6 +520,9 @@
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "Bu hesapta güvenlik açığı var. Hizmeti ziyaret edin ve parolanızı değiştirin."
+      ],
+      "This service offers 2FA. Enable it for added account security.": [
+        "Bu hizmet iki adımlı doğrulama sağlıyor. Hesap güvenliğini artırmak için bunu kullanın."
       ],
       "With ${ PASS_SHORT_APP_NAME } Monitor, stay ahead of threats by getting instant alerts if your credentials are compromised. Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "${ PASS_SHORT_APP_NAME } izleyici ile kimlik bilgilerinizin ele geçirildiğinde anında uyarı alarak tehditlerin önünde kalın. Çevrim içi varlığınızı korumak için gelişmiş güvenlik özelliklerine ve ayrıntılı günlüklere erişin."
@@ -1408,6 +1414,9 @@
       "Thank you, the problem has been reported": [
         "Teşekkürler. Sorununuz bildirildi"
       ],
+      "The custom email will be sent to ${ href } for monitoring. No other data will be sent to HIBP.": [
+        "Özel e-posta, izlenmesi için ${ href } adresine gönderilecek. HIBP üzerine başka herhangi bir veri gönderilmeyecek."
+      ],
       "The export will only contain vaults that you own.": [
         "Yalnızca sahibi olduğunuz kasalar dışa aktarılacak."
       ],
@@ -1530,8 +1539,14 @@
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "İzin verilen en fazla ${ maxLength } karakter sayısına ulaştınız."
       ],
+      "You will be notified of data breaches for these email addresses.": [
+        "Bu e-posta adresleri için verilerin ele geçirilmesi olayları size bildirilmeyecek."
+      ],
       "You will be notified of data breaches for this email address.": [
         "Bu e-posta adresi için verilerin ele geçirilmesi olayları size bildirilmeyecek."
+      ],
+      "You will no longer be notified of data breaches for these email addresses.": [
+        "Bu e-posta adresleri için verilerin ele geçirilmesi olayları artık size bildirilmeyecek."
       ],
       "You will no longer be notified of data breaches for this email address.": [
         "Bu e-posta adresi için verilerin ele geçirilmesi olayları artık size bildirilmeyecek."
@@ -1557,6 +1572,9 @@
       "${ config.options.wordCount } word": [
         "${ config.options.wordCount } sözcük",
         "${ config.options.wordCount } sözcük"
+      ],
+      "${ PASS_SHORT_APP_NAME } version": [
+        "${ PASS_SHORT_APP_NAME } sürümü"
       ],
       "${ usageCount } login": [
         "${ usageCount } oturum açma kaydı",
@@ -1661,8 +1679,14 @@
       "Created": [
         "Oluşturulma"
       ],
+      "Created at": [
+        "Oluşturulma tarihi"
+      ],
       "Date": [
         "Tarih"
+      ],
+      "Device": [
+        "Aygıt"
       ],
       "Disable data export for team members": [
         "Ekip üyelerinin verileri dışa aktarmasını kapat"
@@ -2271,6 +2295,9 @@
       "Import your data": [
         "Verinizi içe aktarın"
       ],
+      "Inactive 2FA": [
+        "Kullanılmayan iki adımlı doğrulama"
+      ],
       "Install extension": [
         "Eklentiyi kur"
       ],
@@ -2282,6 +2309,9 @@
       ],
       "Leave vault ?": [
         "Kasa bırakılsın mı?"
+      ],
+      "Loading breaches...": [
+        "Verilerin ele geçirilmesi olayları yükleniyor..."
       ],
       "Low disk space": [
         "Boş disk alanı azaldı"
@@ -2309,6 +2339,9 @@
       ],
       "No excluded items": [
         "Katılmayan bir öge yok"
+      ],
+      "No inactive 2FAs": [
+        "Kullanılmayan iki adımlı doğrulama yok"
       ],
       "No insecure passwords": [
         "Güvenli olmayan bir parola yok"
@@ -2373,6 +2406,9 @@
       ],
       "Set access level": [
         "Erişim düzeyini ayarla"
+      ],
+      "Set up 2FA for better security": [
+        "Daha iyi güvenlik için iki adımlı doğrulamayı açın"
       ],
       "Set up 2FA for more security": [
         "Güvenliği artırmak için iki adımlı doğrulamayı açın"

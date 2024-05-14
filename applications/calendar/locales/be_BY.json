@@ -20,6 +20,26 @@
         "Перасылка пошты спынена"
       ]
     },
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Выяўлены ${ name } і ${ remainingCount } іншыя(х) патэнцыяльныя(х) ўцечкі(ак). Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці і прыняць адпаведныя дзеянні. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Выяўлены ${ name } і 1 іншая патэнцыяльная ўцечка. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці і прыняць адпаведныя дзеянні. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Выяўлена патэнцыяльная ўцечка ${ name }. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці і прыняць адпаведныя дзеянні. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Выяўлена патэнцыяльная ўцечка ад ${ name }. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці і прыняць адпаведныя дзеянні. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Выяўлена патэнцыяльная ўцечка ад ${ name }. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Вашы звесткі былі знойдзены прынамсі ў адной уцечкі даных. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці і прыняць адпаведныя дзеянні. ${ link }"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "Крама ${ BRAND_NAME }"
@@ -174,6 +194,9 @@
       "Copy link": [
         "Капіяваць спасылку"
       ],
+      "Copy version number to clipboard": [
+        "Скапіяваць нумар версіі ў буфер абмену"
+      ],
       "Create": [
         "Стварыць"
       ],
@@ -237,9 +260,6 @@
       "Dismiss": [
         "Закрыць"
       ],
-      "Don't know your password?": [
-        "Не ведаеце свой пароль?"
-      ],
       "Done": [
         "Гатова"
       ],
@@ -284,6 +304,9 @@
       ],
       "Export contacts": [
         "Экспартаваць кантакты"
+      ],
+      "Forgot password?": [
+        "Забылі пароль?"
       ],
       "Forward as attachment": [
         "Пераслаць як далучэнне"
@@ -459,10 +482,10 @@
       "Not now": [
         "Не зараз"
       ],
-      "Ok": [
+      "OK": [
         "Добра"
       ],
-      "OK": [
+      "Ok": [
         "Добра"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -2591,7 +2614,7 @@
     },
     "drivePlus2024: Title": {
       "Get ${ planName } for only ${ planPrice }": [
-        "Атрымаць тарыфны план ${ planName } усяго за ${ planPrice }"
+        "Атрымайце тарыфны план ${ planName } усяго за ${ planPrice }"
       ]
     },
     "Dropdown action icon tooltip": {
@@ -4304,7 +4327,7 @@
         "Уліковы запіс паспяхова абноўлены"
       ],
       "Added and removed participants will be notified about all the events in this series.": [
-        "Дададзеныя і выдаленыя ўдзельнікі атрымаюць апавяшчэнне пра ўсе падзеі ў гэтай серыі."
+        "Дададзеныя і выдаленыя ўдзельнікі атрымаюць апавяшчэнне аб усіх падзеях у гэтай серыі."
       ],
       "Added and removed participants will be notified.": [
         "Дададзеныя і выдаленыя ўдзельнікі атрымаюць апавяшчэнне."
@@ -5004,6 +5027,9 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Праверка адкрые новую ўкладку, адключыце блакіроўку ўсплывальных вокнаў. З вас не будуць спаганяцца грашовыя сродкі. Любая сума, якая выкарыстоўваецца для праверкі вашай карткі, будзе неадкладна вернута."
+      ],
+      "Version number successfully copied to clipboard": [
+        "Нумар версіі паспяхова скапіяваны ў буферу абмену"
       ],
       "Visa Secure logo": [
         "Лагатып Visa Secure"
@@ -6660,7 +6686,7 @@
         "Абагульванне файлаў і папак праз спасылкі"
       ],
       "Sign in as user": [
-        "Увайсці як карыстальнік"
+        "Уваход у якасці карыстальніка"
       ],
       "SMTP submission": [
         "Адпраўка па SMTP"
@@ -6857,7 +6883,7 @@
     },
     "new_plans: label": {
       "Tell us about your experience. (Optional)": [
-        "Падзяліцеся з намі вашымі ўражаннямі (неабавязкова)."
+        "Падзяліцеся з намі сваімі ўражаннямі (неабавязкова)."
       ]
     },
     "new_plans: placeholder": {
@@ -7850,6 +7876,15 @@
       ]
     },
     "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Выяўлены ${ name } і ${ remainingCount } іншыя(х) патэнцыяльныя(х) ўцечкі(ак). Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Выяўлены ${ name } і 1 іншая патэнцыяльная ўцечка. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Выяўлена патэнцыяльная ўцечка ${ name }. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці. ${ link }"
+      ],
       "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
         "Атрымаць апавяшчэнне, калі адбылася ўцечка вашага пароля або іншых даных са старонняга сэрвісу. ${ learnMoreLink }"
       ],
@@ -7859,8 +7894,8 @@
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel цяпер **актыўны** і ахоўвае ваш уліковы запіс."
       ],
-      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLink }": [
-        "Вашы звесткі былі знойдзены прынамсі ў адной уцечцы даных. Уключыце ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці і прыняць адпаведныя дзеянні. ${ learnMoreLink }"
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Вашы звесткі былі знойдзены прынамсі ў адной уцечцы даных. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці. ${ link }"
       ]
     },
     "Select files": {

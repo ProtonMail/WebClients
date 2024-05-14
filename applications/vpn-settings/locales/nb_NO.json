@@ -113,6 +113,9 @@
       "Copy key to the clipboard": [
         "Kopier nøkkel til utklippstavlen"
       ],
+      "Copy version number to clipboard": [
+        "Kopier versjonsnummeret til utklippstavlen"
+      ],
       "Create": [
         "Opprett"
       ],
@@ -163,9 +166,6 @@
       ],
       "Discard": [
         "Forkast"
-      ],
-      "Don't know your password?": [
-        "Vet ikke passordet ditt?"
       ],
       "Done": [
         "Ferdig"
@@ -3839,6 +3839,9 @@
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Dette vil permanent slette kontoen og alle tilhørende data. Du kan ikke aktivere denne kontoen på nytt senere."
       ],
+      "This will remove any enabled 2FA methods.": [
+        "Dette vil fjerne alle aktiverte 2FA-metoder."
+      ],
       "This will remove SSO for ${ boldDomainName }.": [
         "Dette vil fjerne SSO for ${ boldDomainName }."
       ],
@@ -3977,6 +3980,9 @@
       "Version ${ version }": [
         "Versjon ${ version }"
       ],
+      "Version number successfully copied to clipboard": [
+        "Versjonsnummeret ble kopiert til utklippstavlen"
+      ],
       "View, download, and manage your invoices.": [
         "Se, last ned og behandle fakturaene dine."
       ],
@@ -4045,6 +4051,9 @@
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Når du aktiverer SAML for ${ appName } i identitetsleverandøren, kan du bli bedt om å bruke URL-adressen for tilbakeringing (ACS) og utsteder-ID. Bare kopier og lim inn dataene nedenfor i identitetsleverandørfeltene dine."
+      ],
+      "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
+        "Når du avbryter det gjeldende betalte abonnementet, returneres saldoen på abonnementet som kontokreditt, og du blir nedgradert til ${ BRAND_NAME } ${ PLANS.FREE }-planen."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Når du konfigurerer totrinnsverifisering, oppgir vi gjenopprettingskoder som du kan bruke til å logge på hvis du mister tilgangen til autentiseringsappen."
@@ -4860,9 +4869,6 @@
       ],
       "Request an invite": [
         "Be om en invitasjon"
-      ],
-      "Reset password": [
-        "Tilbakestill passord"
       ],
       "Sign in": [
         "Logg på"

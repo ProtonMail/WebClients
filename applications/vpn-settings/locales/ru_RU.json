@@ -143,6 +143,9 @@
       "Delete Gateway": [
         "Удалить Шлюз"
       ],
+      "Delete logo": [
+        "Удалить логотип"
+      ],
       "Delete user": [
         "Удалить пользователя"
       ],
@@ -160,9 +163,6 @@
       ],
       "Discard": [
         "Сбросить"
-      ],
-      "Don't know your password?": [
-        "Не знаете свой пароль?"
       ],
       "Done": [
         "Готово"
@@ -280,6 +280,9 @@
       ],
       "Invite user": [
         "Пригласить пользователя"
+      ],
+      "Keep logo": [
+        "Оставить логотип"
       ],
       "Keep my Plus subscription": [
         "Сохраните мою подписку Plus"
@@ -482,6 +485,9 @@
       "Signing in": [
         "Выполняется вход"
       ],
+      "Start live chat": [
+        "Начать онлайн чат"
+      ],
       "Submit": [
         "Отправить"
       ],
@@ -523,6 +529,9 @@
       ],
       "Upload": [
         "Загрузить"
+      ],
+      "Upload logo": [
+        "Загрузить логотип"
       ],
       "Use ${ label } theme": [
         "Использовать тему ${ label }"
@@ -1923,6 +1932,14 @@
         "Помогите нам совершенствоваться!"
       ]
     },
+    "drivePlus2024: Action": {
+      "Get the deal": [
+        "Получить сделку"
+      ],
+      "Special Offer": [
+        "Специальное предложение"
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "Подробная история версий"
@@ -1939,6 +1956,9 @@
     "drivePlus2024: Info": {
       "for the first month": [
         "за первый месяц"
+      ],
+      "Limited-time offer": [
+        "Ограниченное по времени предложение"
       ]
     },
     "drivePlus2024: Title": {
@@ -2023,6 +2043,9 @@
       "Error connecting to the Bitcoin API.": [
         "Ошибка при подключении к API Биткоин."
       ],
+      "File too large. Your logo must be 30 KB or smaller.": [
+        "Файл слишком большой. Ваш логотип должен быть не менее 30 КБ."
+      ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Если время на вашем телевизоре истекло, нажмите \"Обновить\" на телевизоре и введите свой код еще раз."
       ],
@@ -2034,6 +2057,9 @@
       ],
       "Impossible to rename the gateway": [
         "Невозможно переименовать шлюз"
+      ],
+      "Incorrect file type. Upload a file in PNG or JPEG format.": [
+        "Неверный тип файла. Загрузите файл в формате PNG или JPEG."
       ],
       "Incorrect login credentials. Please try again.": [
         "Неверные учетные данные для входа. Пожалуйста, попробуйте снова."
@@ -3106,6 +3132,9 @@
       "Current plan": [
         "Текущий тариф"
       ],
+      "Custom branding": [
+        "Пользовательский брендинг"
+      ],
       "Custom email domains": [
         "Пользовательские домены электронной почты"
       ],
@@ -3847,6 +3876,9 @@
       "Upload your completed CSV file to create accounts": [
         "Загрузите завершенный файл CSV для создания учетных записей"
       ],
+      "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
+        "Загрузите логотип вашей организации, чтобы повысить узнаваемость вашего бренда и создать индивидуальный интерфейс для ваших пользователей."
+      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Использовать лучший сервер в соответствии с текущей нагрузкой и местоположением: ${ formattedBestServerName }"
       ],
@@ -4020,6 +4052,9 @@
       ],
       "You can now access and manage the account as an administrator.": [
         "Теперь вы можете получить доступ к аккаунту и управлять им как администратор."
+      ],
+      "You can now return to the application to continue": [
+        "Теперь вы можете вернуться в приложение, чтобы продолжить"
       ],
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "Одновременно может быть открыт только один чат. Пожалуйста, закройте предыдущие беседы, прежде чем начинать новую."
@@ -4744,9 +4779,6 @@
       "Request an invite": [
         "Запросить приглашение"
       ],
-      "Reset password": [
-        "Сбросить пароль"
-      ],
       "Sign in": [
         "Войти"
       ],
@@ -5242,6 +5274,9 @@
       ],
       "Organize items with multiple vaults": [
         "Организуйте элементы с помощью нескольких хранилищ"
+      ],
+      "Passkeys supported": [
+        "Поддерживаются пропускные ключи"
       ],
       "Password-protected Emails": [
         "Электронные письма, защищенные паролем"
@@ -6439,6 +6474,24 @@
       "You can reset your password until ${ boldDate }.": [
         "Вы можете сбросить свой пароль до ${ boldDate }."
       ],
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
+        "У вас ${ timeRemaining.inDays } день, чтобы сбросить свой пароль.",
+        "У вас ${ timeRemaining.inDays } дня, чтобы сбросить свой пароль.",
+        "У вас ${ timeRemaining.inDays } дней, чтобы сбросить свой пароль.",
+        "У вас ${ timeRemaining.inDays } дня, чтобы сбросить свой пароль."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "У вас ${ timeRemaining.inHours } час, чтобы сбросить свой пароль.",
+        " У вас ${ timeRemaining.inHours } часа, чтобы сбросить свой пароль.",
+        " У вас ${ timeRemaining.inHours } часов, чтобы сбросить свой пароль.",
+        " У вас ${ timeRemaining.inHours } часа, чтобы сбросить свой пароль."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "У вас ${ timeRemaining.inMinutes } минута, чтобы сбросить свой пароль.",
+        " У вас ${ timeRemaining.inMinutes } минуты, чтобы сбросить свой пароль.",
+        " У вас ${ timeRemaining.inMinutes } минут, чтобы сбросить свой пароль.",
+        " У вас ${ timeRemaining.inMinutes } минуты, чтобы сбросить свой пароль."
+      ],
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
         "У вас ${ timeRemaining.inSeconds } секунда, чтобы сбросить свой пароль.",
         " У вас ${ timeRemaining.inSeconds } секунды, чтобы сбросить свой пароль.",
@@ -6705,6 +6758,9 @@
       ],
       "Premium ${ appName1 } & ${ appName2 }": [
         "Платные версии ${ appName1 } и ${ appName2 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "Премиум ${ appName1 } и ${ appName2 } и ${ appName3 }"
       ],
       "Premium early access": [
         "Ранний доступ"
@@ -7056,8 +7112,14 @@
       ]
     },
     "subscription reminder": {
+      "No ads or tracking": [
+        "Нет рекламы или отслеживания"
+      ],
       "Upgrade": [
         "Сменить тариф"
+      ],
+      "We don't sell your data": [
+        "Мы не продаем ваши данные"
       ]
     },
     "Subscription renewal state": {
@@ -7858,6 +7920,9 @@
       ],
       "WireGuard configuration": [
         "Конфигурация WireGuard"
+      ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Ваша бесплатная пробная версия ${ planName } заканчивается ${ textDate }"
       ],
       "Your changes are not synced yet": [
         "Изменения ещё не сохранены"

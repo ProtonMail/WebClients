@@ -113,6 +113,9 @@
       "Copy key to the clipboard": [
         "Copia la chiave negli appunti"
       ],
+      "Copy version number to clipboard": [
+        "Copia il numero di versione negli appunti"
+      ],
       "Create": [
         "Crea"
       ],
@@ -163,9 +166,6 @@
       ],
       "Discard": [
         "Scarta"
-      ],
-      "Don't know your password?": [
-        "Non sai la password?"
       ],
       "Done": [
         "Fatto"
@@ -232,6 +232,9 @@
       ],
       "Fit to window": [
         "Adatta alla finestra"
+      ],
+      "Forgot password?": [
+        "Hai dimenticato la password?"
       ],
       "Get ${ vpnPlus }": [
         "Ottieni ${ vpnPlus }"
@@ -3839,6 +3842,9 @@
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Questo eliminerà definitivamente il tuo account e tutti i suoi dati. Non potrai riattivare questo account."
       ],
+      "This will remove any enabled 2FA methods.": [
+        "Questa azione rimuoverà tutti i metodi 2FA abilitati."
+      ],
       "This will remove SSO for ${ boldDomainName }.": [
         "Questo rimuoverà SSO per ${ boldDomainName }."
       ],
@@ -3976,6 +3982,9 @@
       ],
       "Version ${ version }": [
         "Versione ${ version }"
+      ],
+      "Version number successfully copied to clipboard": [
+        "Numero di versione copiato con successo negli appunti"
       ],
       "View, download, and manage your invoices.": [
         "Visualizza, scarica e gestisci le tue fatture."
@@ -4831,6 +4840,9 @@
       "Create account": [
         "Crea account"
       ],
+      "Forgot password?": [
+        "Hai dimenticato la password?"
+      ],
       "Forgot username?": [
         "Hai dimenticato il nome utente?"
       ],
@@ -4863,9 +4875,6 @@
       ],
       "Request an invite": [
         "Richiedi un invito"
-      ],
-      "Reset password": [
-        "Reimposta la password"
       ],
       "Sign in": [
         "Accedi"

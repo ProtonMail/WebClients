@@ -164,9 +164,6 @@
       "Discard": [
         "放棄"
       ],
-      "Don't know your password?": [
-        "不知您的密碼?"
-      ],
       "Done": [
         "完成"
       ],
@@ -1873,6 +1870,9 @@
       ]
     },
     "Delete address prompt": {
+      "Once deleted, this address can't be used again by anyone else.": [
+        "一旦刪除，這個地址將無法再讓任何人使用。"
+      ],
       "You can only delete 1 address per year.": [
         "每年只能刪除一個地址。"
       ]
@@ -1917,6 +1917,14 @@
         "協助我們改善！"
       ]
     },
+    "drivePlus2024: Action": {
+      "Get the deal": [
+        "取得優惠"
+      ],
+      "Special Offer": [
+        "特別優惠"
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "展開版本紀錄"
@@ -1933,6 +1941,9 @@
     "drivePlus2024: Info": {
       "for the first month": [
         "首月"
+      ],
+      "Limited-time offer": [
+        "限時優惠"
       ]
     },
     "drivePlus2024: Title": {
@@ -2019,6 +2030,9 @@
       ],
       "Failed to process the logo": [
         "無法處理此標誌檔案"
+      ],
+      "File too large. Your logo must be 30 KB or smaller.": [
+        "檔案太大了。您的標誌必須為 30 KB 或更小。"
       ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "您電視上的時間是否已到期？在您的電視上點擊重新整理並重試您的代碼。"
@@ -2151,6 +2165,12 @@
       ],
       "The email addresses do not match": [
         "電子郵件位址不相符"
+      ],
+      "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
+        "這個檔案太大了，最大為 ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }"
+      ],
+      "The file is too small, the minimum size is ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }": [
+        "這個檔案太小了，最小大小為 ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }"
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "每次儲值的最低金額為 ${ price }"
@@ -4702,9 +4722,6 @@
       "Request an invite": [
         "需求邀請"
       ],
-      "Reset password": [
-        "重設密碼"
-      ],
       "Sign in": [
         "登入"
       ],
@@ -5173,6 +5190,9 @@
       ],
       "Organize items with multiple vaults": [
         "組織項目與多重保管庫"
+      ],
+      "Passkeys supported": [
+        "支援密碼金鑰"
       ],
       "Password-protected Emails": [
         "密碼 - 安全防護的電子郵件"
@@ -5991,6 +6011,9 @@
       "MM/YY": [
         "MM/YY"
       ],
+      "Processing payment": [
+        "正在處理付款"
+      ],
       "Timeout exceeded": [
         "已經逾時"
       ]
@@ -6215,6 +6238,25 @@
       ],
       "User": [
         "使用者"
+      ]
+    },
+    "scim: Action": {
+      "Configure SCIM": [
+        "配置 SCIM"
+      ],
+      "Disable SCIM": [
+        "停用 SCIM"
+      ],
+      "Generate new token": [
+        "產生新代碼"
+      ],
+      "Generate token": [
+        "產生權杖"
+      ]
+    },
+    "scim: Label": {
+      "SCIM token": [
+        "SMTP 憑證"
       ]
     },
     "Select file": {
@@ -6915,6 +6957,41 @@
     "Subscription price": {
       "For": [
         "為"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB 儲存空間"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "自動郵件轉寄${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "資料外洩警告 ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "桌面應用程式"
+      ],
+      "No ads or tracking": [
+        "無廣告或追蹤"
+      ],
+      "Short @pm.me email address": [
+        "縮短電子郵件地址@pm.me"
+      ],
+      "Support our mission": [
+        "支援我們的計畫"
+      ],
+      "Upgrade": [
+        "升級"
+      ],
+      "Upgrade your productivity": [
+        "提升您的生產力"
+      ],
+      "We don't sell your data": [
+        "我們不銷售您的資料"
+      ],
+      "Your privacy is our mission": [
+        "您的隱私是我們責任"
       ]
     },
     "Subscription renewal state": {
