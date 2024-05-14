@@ -20,8 +20,10 @@ import {
     InvoicesSection,
     LanguageSection,
     MainLogo,
+    MultiUserCreationSection,
     OpenVPNConfigurationSection,
     OpenVPNCredentialsSection,
+    OrganizationPasswordSection,
     OrganizationSection,
     PasswordsSection,
     PaymentMethodsSection,
@@ -256,22 +258,33 @@ const MainContainer: FunctionComponent = () => {
                                     <WireGuardConfigurationSection />
                                 </PrivateMainSettingsArea>
                             </Route>
-                            {getIsSectionAvailable(routes.setup) ? (
+                            {getIsSectionAvailable(routes.setup) && (
                                 <Route path={routes.setup.to}>
+                                    <PrivateMainSettingsArea config={routes.setup}>
+                                        <OrganizationScheduleCallSection onOpenChat={openChat} />
+                                        <OrganizationSection organization={organization} app={app} />
+                                    </PrivateMainSettingsArea>
+                                </Route>
+                            )}
+                            {/* After the org is setup, and the setup route becomes unavailable, we redirect to the users route */}
+                            {!getIsSectionAvailable(routes.setup) && getIsSectionAvailable(routes.users) && (
+                                <Route path={routes.setup.to}>
+                                    <Redirect to={routes.users.to} />
+                                </Route>
+                            )}
+                            {getIsSectionAvailable(routes.orgKeys) && (
+                                <Route path={routes.orgKeys.to}>
                                     <SubscriptionModalProvider app={app}>
-                                        <PrivateMainSettingsArea config={routes.setup}>
+                                        <PrivateMainSettingsArea config={routes.orgKeys}>
                                             <OrganizationScheduleCallSection onOpenChat={openChat} />
-                                            <OrganizationSection organization={organization} app={app} />
+                                            <OrganizationSection app={app} organization={organization} />
+                                            <OrganizationPasswordSection
+                                                organization={organization}
+                                                onceRef={onceRef}
+                                            />
                                         </PrivateMainSettingsArea>
                                     </SubscriptionModalProvider>
                                 </Route>
-                            ) : (
-                                getIsSectionAvailable(routes.users) && (
-                                    /* After the org is setup, and the setup route becomes unavailable, we redirect to the users route */
-                                    <Route path={routes.setup.to}>
-                                        <Redirect to={routes.users.to} />
-                                    </Route>
-                                )
                             )}
                             {getIsSectionAvailable(routes.users) && (
                                 <Route path={routes.users.to}>
@@ -279,6 +292,7 @@ const MainContainer: FunctionComponent = () => {
                                         <PrivateMainSettingsArea config={routes.users}>
                                             <OrganizationScheduleCallSection onOpenChat={openChat} />
                                             <UsersAndAddressesSection app={app} onceRef={onceRef} />
+                                            <MultiUserCreationSection app={app} />
                                         </PrivateMainSettingsArea>
                                     </SubscriptionModalProvider>
                                 </Route>

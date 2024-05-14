@@ -8,10 +8,17 @@ import { type AccountThunkArguments, extraThunkArguments } from './thunk';
 
 export type AccountState = ReturnType<typeof rootReducer>;
 
-export const setupStore = () => {
+export const setupStore = ({
+    preloadedState,
+    mode,
+}: {
+    preloadedState?: Partial<AccountState>;
+    mode: 'public' | 'default';
+}) => {
     const listenerMiddleware = createListenerMiddleware({ extra: extraThunkArguments });
 
     const store = configureStore({
+        preloadedState,
         reducer: rootReducer,
         devTools: process.env.NODE_ENV !== 'production',
         middleware: (getDefaultMiddleware) =>
@@ -25,13 +32,13 @@ export const setupStore = () => {
     });
 
     const startListening = listenerMiddleware.startListening as AppStartListening;
-    start(startListening);
+    start({ startListening, mode });
 
     if (process.env.NODE_ENV !== 'production' && module.hot) {
         module.hot.accept('./rootReducer', () => store.replaceReducer(rootReducer));
         module.hot.accept('./listener', () => {
             listenerMiddleware.clearListeners();
-            start(startListening);
+            start({ startListening, mode });
         });
     }
 
@@ -50,4 +57,4 @@ export type AccountStore = ReturnType<typeof setupStore>;
 export type AccountDispatch = AccountStore['dispatch'];
 type ExtraArgument = typeof extraThunkArguments;
 
-type AppStartListening = TypedStartListening<AccountState, AccountDispatch, ExtraArgument>;
+export type AppStartListening = TypedStartListening<AccountState, AccountDispatch, ExtraArgument>;

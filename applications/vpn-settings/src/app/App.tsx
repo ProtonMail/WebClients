@@ -27,7 +27,7 @@ const bootstrapApp = () => {
     initLogicalProperties();
     initSafariFontFixClassnames();
     extendStore({ authentication, api, history, config });
-    return setupStore();
+    return setupStore({ mode: authentication.UID ? 'default' : 'public' });
 };
 
 const App = () => {
