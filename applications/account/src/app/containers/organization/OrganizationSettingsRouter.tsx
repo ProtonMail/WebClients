@@ -95,6 +95,7 @@ const OrganizationSettingsRouter = ({
                 <Route path={getSectionPath(path, users)}>
                     <SubscriptionModalProvider app={app}>
                         <PrivateMainSettingsArea config={users}>
+                            <OrganizationScheduleCallSection />
                             <UsersAndAddressesSection app={app} onceRef={onceRef} />
                             <MultiUserCreationSection app={app} />
                         </PrivateMainSettingsArea>

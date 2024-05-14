@@ -61,6 +61,10 @@ export const getOrganizationAppRoutes = ({ app, user, organization, subscription
                 available: hasMemberCapablePlan && (hasOrganizationKey || hasOrganization),
                 subsections: [
                     {
+                        id: 'schedule-call',
+                        available: app === APPS.PROTONVPN_SETTINGS && canSchedulePhoneCalls,
+                    },
+                    {
                         id: 'members',
                     },
                     {
@@ -138,7 +142,10 @@ export const getOrganizationAppRoutes = ({ app, user, organization, subscription
                 text: c('Title').t`Organization filters`,
                 to: '/organization-filters',
                 icon: 'filter',
-                available: !hasVpnOrPassB2BPlan && (hasActiveOrganizationKey || hasActiveOrganization),
+                available:
+                    app !== APPS.PROTONVPN_SETTINGS &&
+                    !hasVpnOrPassB2BPlan &&
+                    (hasActiveOrganizationKey || hasActiveOrganization),
                 subsections: [
                     {
                         text: c('Title').t`Spam, block, and allow lists`,

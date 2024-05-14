@@ -1,15 +1,9 @@
+import { getOrganizationAppRoutes } from 'proton-account/src/app/containers/organization/routes';
 import { c } from 'ttag';
 
-import { SectionConfig } from '@proton/components';
-import { VPN_APP_NAME } from '@proton/shared/lib/constants';
-import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
-import {
-    getHasVpnB2BPlan,
-    getIsVpnB2BPlan,
-    hasCancellablePlan,
-    hasVpnBusiness,
-} from '@proton/shared/lib/helpers/subscription';
-import { canScheduleOrganizationPhoneCalls } from '@proton/shared/lib/helpers/support';
+import type { SectionConfig } from '@proton/components';
+import { APPS, VPN_APP_NAME } from '@proton/shared/lib/constants';
+import { getHasVpnB2BPlan, hasCancellablePlan } from '@proton/shared/lib/helpers/subscription';
 import { Organization, Renew, Subscription, UserModel } from '@proton/shared/lib/interfaces';
 import { getIsSSOVPNOnlyAccount } from '@proton/shared/lib/keys';
 
@@ -21,20 +15,16 @@ interface Arguments {
 
 export const getRoutes = ({ user, subscription, organization }: Arguments) => {
     const hasVpnB2BPlan = getHasVpnB2BPlan(subscription);
-    const hasVpnBusinessPlan = hasVpnBusiness(subscription);
     const cancellablePlan = hasCancellablePlan(subscription);
-    const vpnB2BOrgMember = !!organization && getIsVpnB2BPlan(organization.PlanName);
 
-    const isAdmin = user.isAdmin && !user.isSubUser;
-    const canHaveOrganization = !!organization && isAdmin;
-
-    const hasOrganizationKey = hasOrganizationSetupWithKeys(organization);
-    const hasOrganization = hasOrganizationSetup(organization);
-
-    const multiUserTitle = c('Title').t`Multi-user support`;
     const isSSOUser = getIsSSOVPNOnlyAccount(user);
 
-    const canSchedulePhoneCalls = canScheduleOrganizationPhoneCalls({ organization, user });
+    const organizationRoutes = getOrganizationAppRoutes({
+        app: APPS.PROTONVPN_SETTINGS,
+        organization,
+        user,
+        subscription,
+    });
 
     return {
         dashboard: <SectionConfig>{
@@ -168,81 +158,6 @@ export const getRoutes = ({ user, subscription, organization }: Arguments) => {
                 },
             ],
         },
-        users: <SectionConfig>{
-            text: c('Title').t`Users`,
-            to: '/users-addresses',
-            icon: 'users',
-            available: canHaveOrganization && (hasOrganizationKey || hasOrganization),
-            subsections: [
-                {
-                    id: 'schedule-call',
-                    available: canSchedulePhoneCalls,
-                },
-                {
-                    id: 'members',
-                },
-                {
-                    text: c('Title').t`Create multiple user accounts`,
-                    id: 'multi-user-creation',
-                    available: organization && !!organization.RequiresKey,
-                },
-            ],
-        },
-        gateways: <SectionConfig>{
-            text: c('Title').t`Gateways`,
-            to: '/gateways',
-            icon: 'servers',
-            available: hasVpnB2BPlan || vpnB2BOrgMember,
-            subsections: [
-                {
-                    id: 'servers',
-                },
-            ],
-        },
-        setup: <SectionConfig>{
-            text: multiUserTitle,
-            to: '/multi-user-support',
-            icon: 'users',
-            available: canHaveOrganization && !hasOrganizationKey && hasVpnB2BPlan,
-            subsections: [
-                {
-                    id: 'schedule-call',
-                    available: canSchedulePhoneCalls,
-                },
-                {
-                    text: multiUserTitle,
-                    id: 'name',
-                },
-            ],
-        },
-        security: <SectionConfig>{
-            text: c('Title').t`Authentication security`,
-            to: '/authentication-security',
-            icon: 'shield',
-            available:
-                canHaveOrganization &&
-                hasVpnBusinessPlan &&
-                (hasOrganizationKey || hasOrganization) &&
-                organization.MaxMembers > 1,
-            subsections: [
-                {
-                    id: 'two-factor-authentication-users',
-                },
-                {
-                    text: c('Title').t`Two-factor authentication reminders`,
-                    id: 'two-factor-authentication-reminders',
-                },
-                {
-                    text: c('Title').t`Two-factor authentication enforcement`,
-                    id: 'two-factor-authentication-enforcement',
-                },
-            ],
-        },
-        sso: <SectionConfig>{
-            text: c('Title').t`Single sign-on`,
-            to: '/single-sign-on',
-            icon: 'key',
-            available: hasVpnB2BPlan && canHaveOrganization && (hasOrganizationKey || hasOrganization),
-        },
+        ...organizationRoutes.routes,
     };
 };
