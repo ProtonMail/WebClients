@@ -20,6 +20,26 @@
         "메일 전달 중단됨"
       ]
     },
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name }과 ${ remainingCount }개의 잠재적인 유출이 탐지되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하고 조치를 취하십시오. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name }과 하나의 잠재적인 유출이 탐지되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하고 조치를 취하십시오. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "잠재적인 ${ name } 유출이 탐지되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하고 조치를 취하십시오. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name }에서 잠재적인 유출이 탐지되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하고 조치를 취하십시오. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name }에서 잠재적인 유출이 탐지되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하십시오. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "당신의 정보가 적어도 하나의 데이터 유출에서 발견되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하고 조치를 취하십시오. ${ link }"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 상점"
@@ -171,6 +191,9 @@
       "Copy link": [
         "링크 복사"
       ],
+      "Copy version number to clipboard": [
+        "버전 넘버를 클립보드에 복사하기"
+      ],
       "Create": [
         "생성"
       ],
@@ -228,9 +251,6 @@
       "Dismiss": [
         "무시"
       ],
-      "Don't know your password?": [
-        "비밀번호를 잊으셨나요?"
-      ],
       "Done": [
         "완료"
       ],
@@ -275,6 +295,9 @@
       ],
       "Export contacts": [
         "연락처 가져오기"
+      ],
+      "Forgot password?": [
+        "비밀번호를 잊으셨나요?"
       ],
       "Forward as attachment": [
         "첨부 파일로 전달"
@@ -450,10 +473,10 @@
       "Not now": [
         "다음에"
       ],
-      "Ok": [
+      "OK": [
         "확인"
       ],
-      "OK": [
+      "Ok": [
         "확인"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -880,6 +903,11 @@
     "Attendee role": {
       "Optional": [
         "선택 사항"
+      ]
+    },
+    "Badge": {
+      "New!": [
+        "신규!"
       ]
     },
     "bf2023: Action": {
@@ -2469,7 +2497,7 @@
         "다른 ${ BRAND_NAME } 계정을 사용합니다"
       ],
       "It doesn't do what I need": [
-        "필요한 기능이 없어서"
+        "원하는대로 기능하지 않아서"
       ],
       "Missing feature(s)": [
         "없는 기능"
@@ -2500,7 +2528,7 @@
         "특가 받기"
       ],
       "Special Offer": [
-        "특가"
+        "특별 할인"
       ]
     },
     "driveplus2024: Deal details": {
@@ -3702,6 +3730,9 @@
       "Contacts": [
         "연락처"
       ],
+      "Custom recurrence": [
+        "커스텀 반복"
+      ],
       "Name": [
         "이름"
       ],
@@ -4777,6 +4808,9 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "인증은 새 탭에서 열리기 때문에 팝업 차단기를 비활성화해주세요. 요금은 청구되지 않습니다. 카드 확인에 사용한 금액은 즉시 환불됩니다."
+      ],
+      "Version number successfully copied to clipboard": [
+        "버전 넘버를 클립보드에 복사했습니다"
       ],
       "Visa Secure logo": [
         "Visa Secure 로고"
@@ -6291,6 +6325,9 @@
       "Organize items with multiple vaults": [
         "다중 금고와 항목 정리"
       ],
+      "Pass Monitor - premium features": [
+        "Pass Monitor - 프리미엄 기능"
+      ],
       "Passkeys supported": [
         "패스키를 지원함"
       ],
@@ -6365,6 +6402,9 @@
       ],
       "Unlimited devices": [
         "기기 개수 무제한"
+      ],
+      "Unlimited devices and aliases": [
+        "무제한 기기와 별칭"
       ],
       "Unlimited filters": [
         "무제한 필터"
@@ -7013,6 +7053,9 @@
       "Create new group": [
         "새 그룹 만들기"
       ],
+      "Custom": [
+        "커스텀"
+      ],
       "Day": [
         "일"
       ],
@@ -7074,6 +7117,17 @@
     "Participants expand button label": {
       "Expand participants list": [
         "참가자 리스트 펼치기"
+      ]
+    },
+    "pass_signup_2023: Info": {
+      "Secure sharing with ${ n } vault": [
+        "${ n } 금고를 통한 안전한 공유하기"
+      ],
+      "Secure sharing with multiple vaults": [
+        "여러 금고를 통한 안전한 공유하기"
+      ],
+      "Secure vault sharing": [
+        "안전한 금고 공유"
       ]
     },
     "passwordless": {
@@ -7405,6 +7459,15 @@
       ]
     },
     "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name }과 ${ remainingCount }개의 잠재적인 유출이 탐지되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하십시오. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name }과 하나의 잠재적인 유출이 탐지되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하십시오. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "잠재적인 ${ name } 유출이 탐지되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하십시오. ${ link }"
+      ],
       "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
         "사용자의 비밀번호 혹은 타 데이터가 서드 파티 서비스에서 유출되었는지에 대해 알림을 받아보세요. ${ learnMoreLink }"
       ],
@@ -7414,8 +7477,8 @@
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel이 **활성화** 상태이며 계정이 보호 중입니다."
       ],
-      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLink }": [
-        "하나 이상의 데이터 침해사례에서 당신의 정보가 발견되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하고 조치를 취하십시오. ${ learnMoreLink }"
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "당신의 정보가 적어도 하나의 데이터 유출에서 발견되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하십시오. ${ link }"
       ]
     },
     "Select files": {
@@ -7858,7 +7921,10 @@
     },
     "Spotlight": {
       "Color-code your calendar to better organize your day, track your time, and more.": [
-        "캘린더를 색 부호화해 더 나은 하루의 정리와 시간의 추적, 그 이상을."
+        "캘린더를 색 부호화하여 하루의 정리, 시간의 추적과 다른 것을 더 좋게."
+      ],
+      "Custom event colors": [
+        "커스텀 이벤트 색상"
       ],
       "Get up to ${ credits } in credits.": [
         "최대 ${ credits }의 크레딧 받기"
@@ -8250,7 +8316,7 @@
         "초대 전송됨 및 참가자들이 모든 이벤트에 추가됨"
       ],
       "Last modified aliases stored in your oldest vault": [
-        "마지막으로 편집한 별명은 가장 오래된 금고에 저장되었습니다"
+        "마지막으로 편집한 별칭이 가장 오래된 금고에 보관되었습니다"
       ],
       "Participants notified and all events updated": [
         "참가자에게 알람 전송됨 및 모든 이벤트 업로드됨"
