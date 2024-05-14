@@ -10,6 +10,7 @@ import { APPS } from '@proton/shared/lib/constants';
 import { setCookie } from '@proton/shared/lib/helpers/cookies';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { isProduction } from '@proton/shared/lib/helpers/sentry';
+import { getItem } from '@proton/shared/lib/helpers/storage';
 import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
 import { ChargebeeEnabled, User } from '@proton/shared/lib/interfaces';
 
@@ -22,7 +23,7 @@ const forceEnableChargebeeInDev = (): boolean => {
         return false;
     }
 
-    return localStorage.getItem('chargebeeEnabled') === 'true';
+    return getItem('chargebeeEnabled') === 'true';
 };
 
 const forceInHouseInDev = (): boolean => {
@@ -31,7 +32,7 @@ const forceInHouseInDev = (): boolean => {
         return false;
     }
 
-    return localStorage.getItem('inhouseForced') === 'true';
+    return getItem('inhouseForced') === 'true';
 };
 
 export async function isChargebeeEnabled(
