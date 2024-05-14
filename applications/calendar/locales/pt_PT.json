@@ -231,9 +231,6 @@
       "Dismiss": [
         "Descartar"
       ],
-      "Don't know your password?": [
-        "Não sabe a sua palavra-passe?"
-      ],
       "Done": [
         "Concluído"
       ],
@@ -357,6 +354,9 @@
       "Keep my Plus subscription": [
         "Manter a minha subscrição Plus"
       ],
+      "Later": [
+        "Mais tarde"
+      ],
       "Let's talk": [
         "Vamos conversar"
       ],
@@ -438,11 +438,11 @@
       "Not now": [
         "Agora não"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "Aceitar"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Abrir definições do ${ CALENDAR_APP_NAME }"
@@ -857,6 +857,11 @@
     "Attendee role": {
       "Optional": [
         "Opcional"
+      ]
+    },
+    "Badge": {
+      "New!": [
+        "Novo"
       ]
     },
     "bf2023: Action": {
@@ -2366,6 +2371,14 @@
         "Ajude-nos a melhorar"
       ]
     },
+    "drivePlus2024: Action": {
+      "Get the deal": [
+        "Aproveite a promoção"
+      ],
+      "Special Offer": [
+        "Oferta especial"
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "Histórico de versão estendido"
@@ -3520,6 +3533,9 @@
       "Contacts": [
         "Contatos"
       ],
+      "Custom recurrence": [
+        "Recorrência personalizada"
+      ],
       "Name": [
         "Nome"
       ],
@@ -4139,6 +4155,9 @@
       "Edit email address": [
         "Editar endereço de e-mail"
       ],
+      "email": [
+        "e-mail"
+      ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "O alojamento de e-mails para 10 nomes de domínio de e-mail personalizado está incluído gratuitamente. Pode adicionar domínios adicionais por ${ price }."
       ],
@@ -4185,11 +4204,17 @@
       "Expired": [
         "Expirado"
       ],
+      "finance": [
+        "finanças"
+      ],
       "Frequency modifications will be lost.": [
         "As modificações de frequência serão perdidas."
       ],
       "here": [
         "aqui"
+      ],
+      "High Priority": [
+        "Prioridade alta"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Se tiver problemas ao criar a conta, solicite um convite e responderemos dentro de um dia útil."
@@ -4284,6 +4309,9 @@
       ],
       "Loading events": [
         "A carregar os eventos"
+      ],
+      "Low Priority": [
+        "Prioridade baixa"
       ],
       "Manage your calendars": [
         "Gerir os seus calendários"
@@ -5489,6 +5517,9 @@
       ]
     },
     "locked_state_storage_banner: info": {
+      "Learn more": [
+        "Saiba mais"
+      ],
       "upgrade for more storage": [
         "atualize para obter mais armazenamento"
       ]
@@ -5948,10 +5979,10 @@
         "Tempo de adiamento personalizado"
       ],
       "Data breach monitoring": [
-        "Monitorização das violações de dados"
+        "Monitoramento das violações de dados"
       ],
       "Data breach monitoring (coming soon)": [
-        "Monitorização de violações de dados (em breve)"
+        "Monitoramento de violações de dados (em breve)"
       ],
       "DNS leak prevention": [
         "Proteção contra vazamento de DNS"
@@ -6190,7 +6221,7 @@
         "Proteja a privacidade da sua família com todos os serviços da ${ BRAND_NAME } combinados."
       ],
       "Safely access internet from anywhere with essential network monitoring": [
-        "Aceder à internet com segurança a partir de qualquer sítio com monitorização essencial de rede"
+        "Aceder à internet com segurança a partir de qualquer sítio com monitoramento essencial de rede"
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Armazenamento em nuvem seguro que permite armazenar, sincronizar e compartilhar ficheiros com facilidade e segurança."
@@ -6683,6 +6714,9 @@
       "Create new group": [
         "Criar novo grupo"
       ],
+      "Custom": [
+        "Personalizado"
+      ],
       "Day": [
         "Dia",
         "Dias"
@@ -6767,6 +6801,9 @@
       ],
       "CVC": [
         "CVC"
+      ],
+      "MM/YY": [
+        "MM/AA"
       ]
     },
     "Payments.Error": {
@@ -7588,6 +7625,14 @@
         "Por"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB de armazenamento"
+      ],
+      "Upgrade": [
+        "Alterar a subscrição"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Tem a certeza?"
@@ -7939,6 +7984,9 @@
       "Account security": [
         "Segurança da conta"
       ],
+      "Add a custom logo": [
+        "Adicionar um logo personalizado"
+      ],
       "Add another notification to remind you of this event": [
         "Adicionar outra notificação para lembrar este evento"
       ],
@@ -8089,6 +8137,9 @@
       "Deleting contacts": [
         "A eliminar contactos"
       ],
+      "Details": [
+        "Detalhes"
+      ],
       "Downgrade account": [
         "Mudar para uma conta com menos funcionalidades"
       ],
@@ -8112,6 +8163,9 @@
       ],
       "Edit image": [
         "Editar imagem"
+      ],
+      "Email address": [
+        "Endereço de e-mail"
       ],
       "Email addresses": [
         "Endereços de e-mail"
