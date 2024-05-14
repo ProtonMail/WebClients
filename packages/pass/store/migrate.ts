@@ -1,5 +1,6 @@
 import { isB2BAdmin } from '@proton/pass/lib/organization/helpers';
 import { type MaybeNull } from '@proton/pass/types';
+import { type XorObfuscation, obfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { objectFilter } from '@proton/pass/utils/object/filter';
 import { objectMap } from '@proton/pass/utils/object/map';
 import type { Organization } from '@proton/shared/lib/interfaces';
@@ -7,7 +8,7 @@ import type { Organization } from '@proton/shared/lib/interfaces';
 import { unwrapOptimisticState } from './optimistic/utils/transformers';
 import { INITIAL_ORGANIZATION_SETTINGS } from './reducers/organization';
 import { INITIAL_HIGHSECURITY_SETTINGS } from './reducers/user';
-import { selectPassPlan, selectUser } from './selectors';
+import { selectLoginItems, selectPassPlan, selectUser } from './selectors';
 import type { State } from './types';
 
 export const migrate = (state: State) => {
@@ -42,6 +43,16 @@ export const migrate = (state: State) => {
     if (state.user.userSettings && !state.user.userSettings.HighSecurity) {
         state.user.userSettings.HighSecurity = INITIAL_HIGHSECURITY_SETTINGS;
     }
+
+    const loginItems = selectLoginItems(state);
+
+    loginItems.forEach(({ data: { content: item } }) => {
+        if ('username' in item) {
+            item.itemEmail = item.username as XorObfuscation;
+            item.itemUsername = obfuscate('');
+            delete item.username;
+        }
+    });
 
     return state;
 };
