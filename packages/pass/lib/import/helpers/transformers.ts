@@ -24,6 +24,7 @@ export const getImportedVaultName = (vaultName?: string) => {
 export const importLoginItem = (options: {
     name?: MaybeNull<string>;
     note?: MaybeNull<string>;
+    email?: MaybeNull<string>;
     username?: MaybeNull<string>;
     password?: MaybeNull<string>;
     urls?: Maybe<string>[];
@@ -52,7 +53,8 @@ export const importLoginItem = (options: {
             type: 'login',
             metadata: { name, note: options.note || '', itemUuid: uniqueId() },
             content: {
-                username: options.username || '',
+                itemEmail: options.email || '',
+                itemUsername: options.username || '',
                 password: options.password || '',
                 urls: urls.filter((url) => url.origin !== 'null').map(prop('href')),
                 totpUri: getTOTPvalue(options.totp),

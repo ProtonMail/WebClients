@@ -86,7 +86,7 @@ export const createAutosaveService = () => {
              * This prevents data loss on multi-step forms while properly stashing
              * when navigating back and forth on such forms. */
             if (submissionTypeMatch) {
-                if (valid || !data.username) {
+                if (valid || !data.itemEmail) {
                     /** If the exact form is still present : flag it as not submitted */
                     if (form) form.tracker?.sync({ submit: false, partial: true, reset: true }).catch(noop);
                     else {

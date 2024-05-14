@@ -20,7 +20,7 @@ describe('AutosaveService [worker]', () => {
 
     describe('resolve', () => {
         const submission: FormEntry<FormEntryStatus.COMMITTED> = {
-            data: { username: 'test@proton.me', password: 'p4ssw0rd' },
+            data: { itemEmail: 'test@proton.me', password: 'p4ssw0rd' },
             domain: 'domain.com',
             formId: uniqueId(),
             status: FormEntryStatus.COMMITTED,
@@ -37,7 +37,7 @@ describe('AutosaveService [worker]', () => {
         });
 
         test('should not prompt if form credentials are invalid', () => {
-            const result = autosave.resolve({ ...submission, data: { username: '', password: '' } });
+            const result = autosave.resolve({ ...submission, data: { itemEmail: '', password: '' } });
             expect(result).toEqual({ shouldPrompt: false });
         });
 
@@ -45,7 +45,7 @@ describe('AutosaveService [worker]', () => {
             const item = itemBuilder('login');
             item.get('metadata').set('name', 'Domain.com');
             item.get('content')
-                .set('username', submission.data.username)
+                .set('itemEmail', submission.data.itemEmail)
                 .set('password', '') /* different password */
                 .set('urls', ['https://domain.com/']);
 
@@ -64,7 +64,7 @@ describe('AutosaveService [worker]', () => {
                             shareId: mockShareId,
                             name: 'Domain.com',
                             url: 'https://domain.com/',
-                            username: 'test@proton.me',
+                            itemEmail: 'test@proton.me',
                         },
                     ],
                 },
@@ -75,7 +75,7 @@ describe('AutosaveService [worker]', () => {
             const item = itemBuilder('login');
             item.get('metadata').set('name', 'Domain.com');
             item.get('content')
-                .set('username', submission.data.username)
+                .set('itemEmail', submission.data.itemEmail)
                 .set('password', submission.data.password) /* same password */
                 .set('urls', ['https://domain.com/']);
 
@@ -100,7 +100,7 @@ describe('AutosaveService [worker]', () => {
                     type: WorkerMessageType.AUTOSAVE_REQUEST,
                     payload: {
                         type: AutosaveMode.NEW,
-                        username: 'john@proton.me',
+                        itemEmail: 'john@proton.me',
                         password: '123',
                         domain: 'proton.me',
                         name: 'Test item',
@@ -114,7 +114,7 @@ describe('AutosaveService [worker]', () => {
             expect(itemCreationIntent.match(action)).toBe(true);
             expect(created.metadata.name).toEqual('Test item');
             expect(created.content.urls).toEqual(['https://proton.me/']);
-            expect(deobfuscate(created.content.username)).toEqual('john@proton.me');
+            expect(deobfuscate(created.content.itemEmail)).toEqual('john@proton.me');
             expect(deobfuscate(created.content.password)).toEqual('123');
 
             action.meta.callback?.(
@@ -136,7 +136,7 @@ describe('AutosaveService [worker]', () => {
                     type: WorkerMessageType.AUTOSAVE_REQUEST,
                     payload: {
                         type: AutosaveMode.NEW,
-                        username: passkey.userName,
+                        itemEmail: passkey.userName,
                         password: '',
                         domain: 'proton.me',
                         passkey,
@@ -151,7 +151,7 @@ describe('AutosaveService [worker]', () => {
             expect(itemCreationIntent.match(action)).toBe(true);
             expect(created.metadata.name).toEqual('Test passkey');
             expect(created.content.urls).toEqual(['https://proton.me/']);
-            expect(deobfuscate(created.content.username)).toEqual(passkey.userName);
+            expect(deobfuscate(created.content.itemEmail)).toEqual(passkey.userName);
             expect(deobfuscate(created.content.password)).toEqual('');
             expect(created.content.passkeys).toEqual([passkey]);
 
@@ -188,7 +188,7 @@ describe('AutosaveService [worker]', () => {
                         password: 'new-password',
                         shareId: mockShareId,
                         type: AutosaveMode.UPDATE,
-                        username: 'test@proton.me',
+                        itemEmail: 'test@proton.me',
                     },
                 })
             );
@@ -202,7 +202,7 @@ describe('AutosaveService [worker]', () => {
 
             item.get('metadata').set('name', 'Domain.com');
             item.get('content')
-                .set('username', 'test@proton.me')
+                .set('itemEmail', 'test@proton.me')
                 .set('passkeys', [passkey])
                 .set('urls', ['https://domain.com/']);
 
@@ -221,7 +221,7 @@ describe('AutosaveService [worker]', () => {
                         password: 'new-password',
                         shareId: mockShareId,
                         type: AutosaveMode.UPDATE,
-                        username: 'test@proton.me',
+                        itemEmail: 'test@proton.me',
                     },
                 })
             );
@@ -232,7 +232,7 @@ describe('AutosaveService [worker]', () => {
             expect(itemEditIntent.match(action)).toBe(true);
             expect(created.metadata.name).toEqual('Domain.com#Update');
             expect(created.content.urls).toEqual(['https://domain.com/', 'https://sub.domain.com/']);
-            expect(deobfuscate(created.content.username)).toEqual('test@proton.me');
+            expect(deobfuscate(created.content.itemEmail)).toEqual('test@proton.me');
             expect(deobfuscate(created.content.password)).toEqual('new-password');
             expect(created.content.passkeys).toEqual([passkey]);
 
@@ -254,7 +254,7 @@ describe('AutosaveService [worker]', () => {
 
             item.get('metadata').set('name', 'Domain.com');
             item.get('content')
-                .set('username', 'test@proton.me')
+                .set('itemEmail', 'test@proton.me')
                 .set('password', 'existing-password')
                 .set('passkeys', [passkey])
                 .set('urls', ['https://domain.com/']);
@@ -275,7 +275,7 @@ describe('AutosaveService [worker]', () => {
                         password: '',
                         shareId: mockShareId,
                         type: AutosaveMode.UPDATE,
-                        username: newPasskey.userName,
+                        itemEmail: newPasskey.userName,
                     },
                 })
             );
@@ -286,7 +286,7 @@ describe('AutosaveService [worker]', () => {
             expect(itemEditIntent.match(action)).toBe(true);
             expect(created.metadata.name).toEqual('Domain.com#Update');
             expect(created.content.urls).toEqual(['https://domain.com/']);
-            expect(deobfuscate(created.content.username)).toEqual('test@proton.me');
+            expect(deobfuscate(created.content.itemEmail)).toEqual('test@proton.me');
             expect(deobfuscate(created.content.password)).toEqual('existing-password');
             expect(created.content.passkeys).toEqual([passkey, newPasskey]);
 

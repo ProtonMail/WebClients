@@ -32,7 +32,7 @@ export const createPassExportCSV = (payload: ExportData): string => {
             username: (() => {
                 switch (data.type) {
                     case 'login':
-                        return data.content.username;
+                        return data.content.itemEmail;
                     case 'alias':
                         return aliasEmail ?? '';
                     default:

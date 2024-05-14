@@ -25,14 +25,15 @@ export const createAutoSaveService = () => {
         /* If credentials are not valid for the form type : exit early */
         if (!validateFormCredentials(data, { type, partial: false })) return { shouldPrompt: false };
 
-        const { username, password } = data;
+        const { itemEmail, password } = data;
         const state = store.getState();
         const shareIds = selectWritableVaults(store.getState()).map(prop('shareId'));
 
         if (type === 'register') {
-            const candidates = selectAutosaveCandidate({ domain, subdomain, username: '', shareIds })(state);
+            const candidates = selectAutosaveCandidate({ domain, subdomain, itemEmail: '', shareIds })(state);
             const pwMatch = candidates.filter((item) => deobfuscate(item.data.content.password) === password);
-            const fullMatch = username && pwMatch.some((item) => deobfuscate(item.data.content.username) === username);
+            const fullMatch =
+                itemEmail && pwMatch.some((item) => deobfuscate(item.data.content.itemEmail) === itemEmail);
 
             /* The credentials may have been saved during the password-autosuggest autosave
              * sequence - as such ensure we don't have an exact username/password match */
@@ -47,7 +48,7 @@ export const createAutoSaveService = () => {
 
         /* If no login items found for the current domain & the
          * current username - prompt for autosaving a new entry */
-        const candidates = selectAutosaveCandidate({ domain, subdomain, username, shareIds })(state);
+        const candidates = selectAutosaveCandidate({ domain, subdomain, itemEmail, shareIds })(state);
         if (candidates.length === 0) return { shouldPrompt: true, data: { type: AutosaveMode.NEW } };
 
         /* If we cannot find an entry which also matches the current submission's
@@ -75,7 +76,7 @@ export const createAutoSaveService = () => {
                 .set('note', c('Info').t`Autosaved on ${payload.domain}`);
 
             item.get('content')
-                .set('username', payload.username)
+                .set('itemEmail', payload.itemEmail)
                 .set('password', payload.password)
                 .set('urls', valid ? [url] : [])
                 .set('passkeys', payload.passkey ? [payload.passkey] : []);
@@ -108,7 +109,7 @@ export const createAutoSaveService = () => {
             item.get('metadata').set('name', payload.name);
 
             item.get('content')
-                .set('username', (username) => (passkey ? username : payload.username))
+                .set('itemEmail', (itemEmail) => (passkey ? itemEmail : payload.itemEmail))
                 .set('password', (password) => (passkey ? password : payload.password))
                 .set('urls', (urls) => Array.from(new Set(urls.concat(valid ? [url] : []))))
                 .set('passkeys', (passkeys) => (passkey ? [...passkeys, passkey] : passkeys));

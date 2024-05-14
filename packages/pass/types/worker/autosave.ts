@@ -8,7 +8,7 @@ export enum AutosaveMode {
     UPDATE = 'UPDATE',
 }
 
-export type AutosaveData = { domain: string; password: string; username: string };
+export type AutosaveData = { domain: string; password: string; itemEmail: string };
 export type AutosaveRequestData = AutosaveData & { name: string; passkey?: SanitizedPasskey };
 export type AutosaveType<UpdatePayload> = { type: AutosaveMode.NEW } | ({ type: AutosaveMode.UPDATE } & UpdatePayload);
 export type AutosaveRequest = AutosaveType<SelectedItem> & AutosaveRequestData;

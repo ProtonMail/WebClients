@@ -14,11 +14,11 @@ export const useAliasForLoginModal = <T extends LoginItemFormValues>(form: Formi
     const [aliasModalOpen, setAliasModalOpen] = useState(false);
 
     const { values } = form;
-    const { withAlias, username, aliasPrefix } = values;
+    const { withAlias, itemEmail, aliasPrefix } = values;
 
     const aliasOptions = useAliasOptions({ shareId: form.values.shareId, lazy: true });
 
-    const relatedAlias = useSelector(selectAliasByAliasEmail(username));
+    const relatedAlias = useSelector(selectAliasByAliasEmail(itemEmail));
     const canCreateAlias = !relatedAlias && !withAlias;
     const willCreateAlias = !relatedAlias && withAlias && !isEmptyString(aliasPrefix);
     const usernameIsAlias = relatedAlias || willCreateAlias;

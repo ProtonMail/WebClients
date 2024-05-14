@@ -78,7 +78,8 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url, onCancel
             totpUri: '',
             url: valid ? createNewUrl(url).url : '',
             urls: [],
-            username: searchParams.get('username') ?? '',
+            itemEmail: searchParams.get('email') ?? '',
+            itemUsername: '',
             withAlias: false,
         };
     }, []);
@@ -86,7 +87,19 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url, onCancel
     const form = useFormik<NewLoginItemFormValues>({
         initialValues,
         initialErrors: validateLoginForm(initialValues),
-        onSubmit: ({ name, note, username, password, shareId, totpUri, url, urls, extraFields, ...values }) => {
+        onSubmit: ({
+            name,
+            note,
+            itemEmail,
+            itemUsername,
+            password,
+            shareId,
+            totpUri,
+            url,
+            urls,
+            extraFields,
+            ...values
+        }) => {
             const createTime = getEpoch();
             const optimisticId = uniqueId();
 
@@ -114,7 +127,7 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url, onCancel
                               mailboxes: values.mailboxes,
                               prefix: values.aliasPrefix!,
                               signedSuffix: values.aliasSuffix!.signature,
-                              aliasEmail: username,
+                              aliasEmail: itemEmail,
                           },
                           extraFields: [],
                       },
@@ -122,7 +135,7 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url, onCancel
                 : { withAlias: false };
 
             const normalizedOtpUri = parseOTPValue(totpUri, {
-                label: username || undefined,
+                label: itemEmail || undefined,
                 issuer: name || undefined,
             });
 
@@ -137,7 +150,8 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url, onCancel
                     itemUuid: optimisticId,
                 },
                 content: {
-                    username: obfuscate(username),
+                    itemEmail: obfuscate(itemEmail),
+                    itemUsername: obfuscate(itemUsername),
                     password: obfuscate(password),
                     urls: Array.from(new Set(urls.map(({ url }) => url).concat(isEmptyString(url) ? [] : [url]))),
                     totpUri: obfuscate(normalizedOtpUri),
@@ -150,7 +164,7 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url, onCancel
                                   ...field,
                                   data: {
                                       totpUri: parseOTPValue(field.data.totpUri, {
-                                          label: username || undefined,
+                                          label: itemEmail || undefined,
                                           issuer: name || undefined,
                                       }),
                                   },
@@ -177,7 +191,7 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url, onCancel
 
     useEffect(
         () => () => {
-            searchParams.delete('username');
+            searchParams.delete('email');
             history.replace({ search: searchParams.toString() });
         },
         []
@@ -213,16 +227,16 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url, onCancel
 
                             <FieldsetCluster>
                                 <Field
-                                    name="username"
+                                    name="itemEmail"
                                     label={(() => {
-                                        if (aliasModal.willCreate) return c('Label').t`Username (new alias)`;
-                                        if (aliasModal.relatedAlias) return c('Label').t`Username (alias)`;
-                                        return c('Label').t`Username`;
+                                        if (aliasModal.willCreate) return c('Label').t`Email (new alias)`;
+                                        if (aliasModal.relatedAlias) return c('Label').t`Email (alias)`;
+                                        return c('Label').t`Email`;
                                     })()}
-                                    placeholder={c('Placeholder').t`Enter email or username`}
+                                    placeholder={c('Placeholder').t`Enter email`}
                                     component={TextField}
                                     itemType="login"
-                                    icon={aliasModal.usernameIsAlias ? 'alias' : 'user'}
+                                    icon={aliasModal.usernameIsAlias ? 'alias' : 'envelope'}
                                     actions={
                                         [
                                             aliasModal.willCreate && (
@@ -237,7 +251,7 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url, onCancel
                                                                     aliasPrefix: '',
                                                                     aliasSuffix: undefined,
                                                                     mailboxes: [],
-                                                                    username: initialValues.username,
+                                                                    itemEmail: initialValues.itemEmail,
                                                                 })
                                                             )
                                                         }
@@ -356,7 +370,7 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url, onCancel
                         .setValues((values) => {
                             const { aliasPrefix, aliasSuffix } = values;
                             return !isEmptyString(aliasPrefix) && aliasSuffix
-                                ? merge(values, { username: aliasPrefix! + aliasSuffix!.value })
+                                ? merge(values, { itemEmail: aliasPrefix! + aliasSuffix!.value })
                                 : values;
                         })
                         .then<any>(() => form.setFieldTouched('aliasPrefix', true))
