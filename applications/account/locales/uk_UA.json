@@ -359,9 +359,6 @@
       "Discard": [
         "Відхилити"
       ],
-      "Don't know your password?": [
-        "Не знаєте свій пароль?"
-      ],
       "Don't show again": [
         "Не показувати знову"
       ],
@@ -6024,6 +6021,17 @@
         "Частина вмісту вашого календаря не підтримується і не буде імпортована."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Виявлено додаткові дублікати ключів. Завантажте індивідуально для отримання додаткової інформації."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Ключ ${ fingerprint } вже вивантажено"
+      ],
+      "Selected color:": [
+        "Вибраний колір:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } потребує вашого дозволу, щоб ${ enableDesktopNotifications }."
@@ -8516,17 +8524,6 @@
         "зустріч у Zoom"
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Виявлено додаткові дублікати ключів. Завантажте індивідуально для отримання додаткової інформації."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Ключ ${ fingerprint } вже вивантажено"
-      ],
-      "Selected color:": [
-        "Вибраний колір:"
-      ]
-    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Якщо увімкнено, підтеки успадковують колір теки вищого рівня."
@@ -10147,9 +10144,6 @@
       ],
       "Request an invite": [
         "Запитати запрошення"
-      ],
-      "Reset password": [
-        "Скинути пароль"
       ],
       "Set email address": [
         "Установити адресу е-пошти"
@@ -13061,11 +13055,6 @@
       ],
       "URL of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
         "URL-адреса SCIM-конектора, на який ваш агент IdP Provisioning Agent пересилає SCIM-дані"
-      ]
-    },
-    "Security Center - Info": {
-      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLinkBreach }": [
-        "Ваша інформація була знайдена принаймні в одному витоку даних. Увімкніть ${ DARK_WEB_MONITORING_NAME }, щоб переглянути деталі та вжити заходів. ${ learnMoreLinkBreach }"
       ]
     },
     "Select file": {

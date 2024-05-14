@@ -257,6 +257,9 @@
       "Copy link": [
         "Link kopieren"
       ],
+      "Copy version number to clipboard": [
+        "Versionsnummer in die Zwischenablage kopieren"
+      ],
       "Create": [
         "Erstellen"
       ],
@@ -358,9 +361,6 @@
       ],
       "Discard": [
         "Verwerfen"
-      ],
-      "Don't know your password?": [
-        "Weißt du dein Passwort nicht?"
       ],
       "Don't show again": [
         "Nicht wieder anzeigen"
@@ -470,6 +470,9 @@
       "Font": [
         "Schriftart"
       ],
+      "Forgot password?": [
+        "Passwort vergessen?"
+      ],
       "Generate": [
         "Generieren"
       ],
@@ -523,6 +526,9 @@
       ],
       "Go to label": [
         "Zu Kategorie wechseln"
+      ],
+      "Go to settings": [
+        "Einstellungen öffnen"
       ],
       "Got it": [
         "Verstanden"
@@ -3130,6 +3136,9 @@
       ]
     },
     "Delete address prompt": {
+      "Once deleted, this address can't be used again by anyone else.": [
+        "Einmal gelöscht, kann diese Adresse von niemandem mehr verwendet werden."
+      ],
       "You can only delete 1 address per year.": [
         "Du kannst jährlich nur eine Adresse löschen."
       ]
@@ -3296,11 +3305,32 @@
       "Bugs or quality issue": [
         "Fehler oder Qualitätsprobleme"
       ],
+      "I do not wish to share": [
+        "Das möchte ich nicht sagen"
+      ],
+      "I found a cheaper VPN": [
+        "Ich habe ein günstigeres VPN gefunden"
+      ],
+      "I found a VPN with better features": [
+        "Ich habe ein VPN mit besseren Funktionen gefunden"
+      ],
+      "I have not managed to connect": [
+        "Ich habe es nicht geschafft, mich zu verbinden"
+      ],
+      "I only needed a VPN short-term": [
+        "Ich brauchte nur kurzzeitig ein VPN"
+      ],
       "I use a different ${ BRAND_NAME } account": [
         "Ich verwende ein anderes ${ BRAND_NAME }-Konto"
       ],
+      "It doesn't do what I need": [
+        "Es macht nicht das, was ich brauche"
+      ],
       "Missing feature(s)": [
         "Fehlende Funktion(en)"
+      ],
+      "Other reason (please comment)": [
+        "Anderer Grund (bitte angeben)"
       ],
       "Subscription is too expensive": [
         "Das Abonnement ist zu teuer"
@@ -3310,6 +3340,9 @@
       ],
       "Temporary need, may come back in the future": [
         "Nur vorübergehender Bedarf, könnte es aber in Zukunft erneut benötigen"
+      ],
+      "The VPN is too slow": [
+        "Das VPN ist zu langsam"
       ]
     },
     "Downgrade modal exit survey title": {
@@ -5968,6 +6001,17 @@
         "Ein Teil deines Kalenderinhalts wird nicht unterstützt und wird nicht importiert."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Doppelt vorhandene Schlüssel erkannt. Für weitere Informationen lade diese bitte einzeln hoch."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Schlüssel ${ fingerprint } wurde bereits hochgeladen"
+      ],
+      "Selected color:": [
+        "Ausgewählte Farbe:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } benötigt deine Erlaubnis, um ${ enableDesktopNotifications }."
@@ -6424,6 +6468,9 @@
       ],
       "Blocks senders from seeing if and when you opened a message.": [
         "Verhindert, dass Absender erfahren, ob und wann du eine Nachricht geöffnet hast."
+      ],
+      "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
+        "Stärke die Markenidentität deines Unternehmens und schaffe ein konsistentes Online-Erlebnis für deine Benutzer."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Durch den Wechsel auf das kostenlose Abonnement verlierst du diese Leistungen dauerhaft, auch wenn du in Zukunft wieder auf ein kostenpflichtiges Abonnement umsteigst."
@@ -7743,6 +7790,9 @@
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Dadurch wird dein Konto und alle zugehörigen Daten dauerhaft gelöscht. Dieses Konto kann dann nicht mehr reaktiviert werden."
       ],
+      "This will remove any enabled 2FA methods.": [
+        "Dadurch werden alle aktivierten 2FA-Methoden entfernt."
+      ],
       "This will remove SSO for ${ boldDomainName }.": [
         "Dadurch wird Single Sign-on für ${ boldDomainName } entfernt."
       ],
@@ -7961,6 +8011,9 @@
       ],
       "Version history": [
         "Versionsverlauf"
+      ],
+      "Version number successfully copied to clipboard": [
+        "Versionsnummer erfolgreich in die Zwischenablage kopiert"
       ],
       "View, download, and manage your invoices.": [
         "Rechnungen anzeigen, herunterladen und verwalten."
@@ -8343,17 +8396,6 @@
       ],
       "Zoom meeting": [
         "Zoom-Meeting"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Doppelt vorhandene Schlüssel erkannt. Für weitere Informationen lade diese bitte einzeln hoch."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Schlüssel ${ fingerprint } wurde bereits hochgeladen"
-      ],
-      "Selected color:": [
-        "Ausgewählte Farbe:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9695,6 +9737,9 @@
       ]
     },
     "label": {
+      "Device-based recovery": [
+        "Gerätebasierte Wiederherstellung"
+      ],
       "Recovery phone number": [
         "Telefonnummer für die Wiederherstellung"
       ],
@@ -9908,6 +9953,9 @@
       "Encryption and keys": [
         "Verschlüsselung und Schlüssel"
       ],
+      "Forgot password?": [
+        "Passwort vergessen?"
+      ],
       "Forgot username?": [
         "Benutzernamen vergessen?"
       ],
@@ -9964,9 +10012,6 @@
       ],
       "Request an invite": [
         "Einladung anfordern"
-      ],
-      "Reset password": [
-        "Passwort zurücksetzen"
       ],
       "Set email address": [
         "E-Mail-Adresse festlegen"
@@ -10792,6 +10837,12 @@
       "Organize items with multiple vaults": [
         "Strukturiere Einträge mit mehreren Tresoren"
       ],
+      "Pass Monitor - premium features": [
+        "Pass Monitor - Premiumfunktionen"
+      ],
+      "Passkeys supported": [
+        "Passkeys unterstützt"
+      ],
       "Password-protected Emails": [
         "Passwortgeschützte E-Mails"
       ],
@@ -10874,6 +10925,9 @@
       ],
       "Unlimited devices": [
         "Unbegrenzte Geräte"
+      ],
+      "Unlimited devices and aliases": [
+        "Unbegrenzte Geräte und Aliasse"
       ],
       "Unlimited filters": [
         "Unbegrenzte Anzahl von Filtern"
@@ -11853,6 +11907,9 @@
       ]
     },
     "Organization logo upload modal": {
+      "Drop image file here to upload or": [
+        "Bilddatei zum Hochladen hier ablegen oder"
+      ],
       "File in PNG or JPEG format": [
         "Datei im PNG- oder JPEG-Format"
       ],
@@ -12008,6 +12065,9 @@
       "Advanced protection that goes beyond industry standards": [
         "Fortschrittlicher Schutz, der über die Branchenstandards hinausgeht"
       ],
+      "Alerts for vulnerable passwords": [
+        "Warnmeldungen für gefährdete Passwörter"
+      ],
       "All premium ${ BRAND_NAME } services.": [
         "Alle Premium-Dienste von ${ BRAND_NAME }."
       ],
@@ -12119,6 +12179,9 @@
       "Launching ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } wird gestartet"
       ],
+      "Limited time offer: ${ title } for ${ price } for the 1st month": [
+        "Zeitlich begrenztes Angebot: ${ title } für ${ price } für den 1. Monat"
+      ],
       "Limited time offer: Get ${ title } for ${ price } per user monthly!": [
         "Zeitlich begrenztes Angebot: Erhalte ${ title } für ${ price } pro Benutzer monatlich!"
       ],
@@ -12130,6 +12193,9 @@
       ],
       "Open-source and audited": [
         "Quelloffen und unabhängig geprüft"
+      ],
+      "Passkeys supported on all devices": [
+        "Unterstützung für Passkeys auf allen Geräten"
       ],
       "per month": [
         "pro Monat"
@@ -12151,6 +12217,19 @@
       ],
       "Save your recovery kit to continue": [
         "Lade dein Wiederherstellungs-Kit herunter, um fortzufahren."
+      ],
+      "Secure sharing with ${ n } vault": [
+        "Sicheres Teilen mit ${ n } Tresor",
+        "Sicheres Teilen mit ${ n } Tresoren"
+      ],
+      "Secure sharing with multiple vaults": [
+        "Sicheres Teilen mit mehreren Tresoren"
+      ],
+      "Secure vault sharing": [
+        "Sicheres Teilen von Tresoren"
+      ],
+      "Secured by end-to-end encryption": [
+        "Gesichert mit Ende-zu-Ende-Verschlüsselung"
       ],
       "Setting up your organization": [
         "Deine Organisation wird eingerichtet"
@@ -12804,11 +12883,6 @@
       ],
       "URL of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
         "URL des SCIM-Connectors, an den dein IdP Provisioning Agent SCIM-Daten weiterleitet"
-      ]
-    },
-    "Security Center - Info": {
-      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLinkBreach }": [
-        "Deine Informationen wurden bei mindestens einem Datenleck gefunden. Schalte ${ DARK_WEB_MONITORING_NAME } ein, um Details anzuzeigen und Maßnahmen zu ergreifen. ${ learnMoreLinkBreach }"
       ]
     },
     "Select file": {
@@ -13780,8 +13854,26 @@
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } Speicherplatz insgesamt"
       ],
+      "${ planName } helps you ensure that each of your family members — and their data — are protected whenever they’re online.": [
+        "Mit ${ planName } kannst du sicherstellen, dass alle deine Familienmitglieder - und deren Daten - geschützt sind, wann immer sie online sind."
+      ],
+      "${ planName } offers ${ planMaxSpace } storage for your files and photos. You are also eligible for yearly storage bonuses.": [
+        "${ planName } bietet ${ planMaxSpace } Speicherplatz für deine Dateien und Fotos. Du hast auch Anspruch auf jährliche Speicherplatzboni."
+      ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "${ PROTON_SENTINEL_NAME }-Programm"
+      ],
       "10 email addresses": [
         "10 E-Mail-Adressen"
+      ],
+      "6 users": [
+        "6 Benutzer"
+      ],
+      "Add any new files": [
+        "Füge neue Dateien hinzu"
+      ],
+      "Back up photos from your devices": [
+        "Sichere Fotos von deinen Geräten"
       ],
       "Calendar sharing": [
         "Kalenderfreigabe"
@@ -13798,14 +13890,38 @@
       "Custom schedule send and snooze times": [
         "Benutzerdefinierter Plan für Sende- und Zurückstellungszeiten"
       ],
+      "Direct contribution to our mission": [
+        "Direkter Beitrag zu unserer Mission"
+      ],
+      "Early access to new apps and features": [
+        "Früher Zugang zu neuen Anwendungen und Funktionen"
+      ],
+      "Extra storage and bonuses": [
+        "Zusätzlicher Speicherplatz und Boni"
+      ],
       "Have a question?": [
         "Du hast eine Frage?"
+      ],
+      "How we fought back when ${ BRAND_NAME } was targeted in an aggressive censorship campaign.": [
+        "Wie wir uns gewehrt haben, als ${ BRAND_NAME } zur Zielscheibe einer aggressiven Zensurkampagne wurde."
+      ],
+      "How we supported local activists when privacy and free speech were threatened in Hong Kong.": [
+        "Wie wir lokale Aktivisten unterstützt haben, als die Privatsphäre und die Redefreiheit in Hongkong bedroht waren."
       ],
       "I still want to cancel": [
         "Ich möchte trotzdem kündigen"
       ],
       "Keep ${ planName }": [
         "${ planName } behalten"
+      ],
+      "Learn more about our impact": [
+        "Erfahre mehr über unsere Wirkung"
+      ],
+      "Manage your calendar": [
+        "Verwalte deinen Kalender"
+      ],
+      "Online privacy, for your whole family": [
+        "Online-Privatsphäre für deine ganze Familie"
       ],
       "Our fight against censorship in Russia": [
         "Unser Kampf gegen die Zensur in Russland"
@@ -13822,11 +13938,20 @@
       "Resubscribe to restore access to ${ planName } features.": [
         "Neu anmelden, um den Zugang zu den Funktionen von ${ planName } wiederherzustellen."
       ],
+      "Send emails with attachments": [
+        "Versende E-Mails mit Anhängen"
+      ],
       "Subscription canceled": [
         "Abonnement gekündigt"
       ],
+      "Sync files on devices": [
+        "Synchronisiere Dateien mit Geräten"
+      ],
       "Unlimited folders, labels and filters": [
         "Unbegrenzte Anzahl von Ordnern, Kategorien und Filtern"
+      ],
+      "Version history": [
+        "Versionsverlauf"
       ],
       "Watch the interview": [
         "Schau dir das Interview an"
@@ -13851,14 +13976,29 @@
       "Desktop app": [
         "Desktop-App"
       ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hilf uns, das Internet für alle sicher und privat zu halten. Upgrade auf ein kostenpflichtiges Abonnement."
+      ],
+      "No ads or tracking": [
+        "Keine Werbung oder Tracking"
+      ],
       "Short @pm.me email address": [
         "Kurze @pm.me-E-Mail-Adresse"
+      ],
+      "Support our mission": [
+        "Unterstütze unsere Mission"
       ],
       "Upgrade": [
         "Upgraden"
       ],
+      "Upgrade your productivity": [
+        "Steigere deine Produktivität"
+      ],
       "We don't sell your data": [
         "Wir verkaufen deine Daten nicht"
+      ],
+      "Your privacy is our mission": [
+        "Deine Privatsphäre ist unsere Mission"
       ]
     },
     "Subscription renewal state": {
@@ -14360,6 +14500,9 @@
       ],
       "Activate user": [
         "Benutzer aktivieren"
+      ],
+      "Add a custom logo": [
+        "Benutzerdefiniertes Logo hinzufügen"
       ],
       "Add address": [
         "E-Mail-Adr. hinzufügen"
@@ -15000,6 +15143,9 @@
       ],
       "Password reset settings": [
         "Einstellungen zum Zurücksetzen des Passworts"
+      ],
+      "Passwords made easy": [
+        "Passwörter leicht gemacht"
       ],
       "Pay invoice": [
         "Rechnung bezahlen"

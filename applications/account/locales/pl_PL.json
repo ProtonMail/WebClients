@@ -43,6 +43,11 @@
         "Zatrzymasz przekierowanie poczty."
       ]
     },
+    "Account Settings - Info": {
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Twoje informacje zostały znalezione w co najmniej 1 wycieku danych. Włącz ${ DARK_WEB_MONITORING_NAME }, aby zobaczyć szczegóły i zastosować odpowiednią akcję. ${ link }"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "Sklep ${ BRAND_NAME }"
@@ -358,9 +363,6 @@
       ],
       "Discard": [
         "Odrzuć"
-      ],
-      "Don't know your password?": [
-        "Nie pamiętasz hasła?"
       ],
       "Don't show again": [
         "Nie pokazuj ponownie"
@@ -3365,7 +3367,7 @@
         "Potrzebowałem konto tymczasowo"
       ],
       "The VPN is too slow": [
-        "VPN jest zbyt wolny"
+        "Usługa VPN jest zbyt wolna"
       ]
     },
     "Downgrade modal exit survey title": {
@@ -6072,6 +6074,17 @@
         "Część zawartości kalendarza nie jest obsługiwana i nie zostanie zaimportowana."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Wykryto dodatkowe zduplikowane klucze. Prześlij klucze pojedynczo, aby uzyskać więcej informacji."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Klucz ${ fingerprint } został już przesłany"
+      ],
+      "Selected color:": [
+        "Wybrany kolor:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikacja ${ appName } potrzebuje Twojej zgody, aby ${ enableDesktopNotifications }."
@@ -8570,17 +8583,6 @@
         "spotkanie na Zoom"
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Wykryto dodatkowe zduplikowane klucze. Prześlij klucze pojedynczo, aby uzyskać więcej informacji."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Klucz ${ fingerprint } został już przesłany"
-      ],
-      "Selected color:": [
-        "Wybrany kolor:"
-      ]
-    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Jeśli włączysz tę opcję, kolor folderu nadrzędnego zostanie zastosowany do podfolderów."
@@ -10204,9 +10206,6 @@
       ],
       "Request an invite": [
         "Poproś o zaproszenie"
-      ],
-      "Reset password": [
-        "Resetowanie hasła"
       ],
       "Set email address": [
         "Ustaw adres e-mail"
@@ -13172,8 +13171,8 @@
       ]
     },
     "Security Center - Info": {
-      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLinkBreach }": [
-        "Twoje informacje zostały znalezione w co najmniej 1 wycieku danych. Włącz ${ DARK_WEB_MONITORING_NAME }, aby zobaczyć szczegóły i zastosować odpowiednią akcję. ${ learnMoreLinkBreach }"
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Twoje informacje zostały znalezione w co najmniej 1 wycieku danych. Włącz ${ DARK_WEB_MONITORING_NAME }, aby zobaczyć szczegóły. ${ link }"
       ]
     },
     "Select file": {
@@ -14215,11 +14214,17 @@
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } przestrzeni dyskowej"
       ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "Program ${ PROTON_SENTINEL_NAME }"
+      ],
       "10 email addresses": [
         "10 adresów e-mail"
       ],
       "6 users": [
         "6 użytkowników"
+      ],
+      "Add any new files": [
+        "Dodaj nowe pliki"
       ],
       "Calendar sharing": [
         "Udostępnianie kalendarza"
@@ -14236,8 +14241,14 @@
       "Custom schedule send and snooze times": [
         "Niestandardowe godziny wysyłania i odkładania wiadomości"
       ],
+      "Direct contribution to our mission": [
+        "Bezpośredni wkład w naszą misję"
+      ],
       "Early access to new apps and features": [
         "Wcześniejszy dostęp do nowych aplikacji i funkcji"
+      ],
+      "Extra storage and bonuses": [
+        "Dodatkowa przestrzeń dyskowa i bonusy"
       ],
       "Have a question?": [
         "Masz pytanie?"
@@ -14271,6 +14282,9 @@
       ],
       "Subscription canceled": [
         "Subskrypcja została anulowana"
+      ],
+      "Sync files on devices": [
+        "Synchronizuj pliki na urządzeniach"
       ],
       "Unblocking internet access in Iran": [
         "Odblokowanie dostępu do Internetu w Iranie"
