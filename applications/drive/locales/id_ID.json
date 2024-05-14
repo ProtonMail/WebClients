@@ -12,6 +12,26 @@
         "Penerusan email diberhentikan"
       ]
     },
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } dan ${ remainingCount } kebocoran data potensial lainnya terdeteksi. Aktifkan ${ DARK_WEB_MONITORING_NAME } untuk melihat rincian kebocoran ini dan mengambil tindakan. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } dan 1 kebocoran data potensial lainnya terdeteksi. Aktifkan ${ DARK_WEB_MONITORING_NAME } untuk melihat rincian kebocoran ini dan mengambil tindakan. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Kebocoran potensial ${ name } terdeteksi. Aktifkan ${ DARK_WEB_MONITORING_NAME } untuk melihat rincian kebocoran ini dan mengambil tindakan. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Potensi kebocoran dari ${ name } terdeteksi. Aktifkan ${ DARK_WEB_MONITORING_NAME } untuk melihat rincian kebocoran ini dan mengambil tindakan. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Potensi kebocoran dari ${ name } terdeteksi. Aktifkan ${ DARK_WEB_MONITORING_NAME } untuk melihat rincian kebocoran ini. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Informasi Anda ditemukan pada setidaknya satu insiden kebocoran data. Aktifkan ${ DARK_WEB_MONITORING_NAME } untuk melihat rincian kebocoran ini dan mengambil tindakan. ${ link }"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "Toko ${ BRAND_NAME }"
@@ -187,6 +207,9 @@
       "Copy link": [
         "Salin tautan"
       ],
+      "Copy version number to clipboard": [
+        "Salin nomor versi ke papan klip"
+      ],
       "Create": [
         "Buat"
       ],
@@ -252,9 +275,6 @@
       ],
       "Dismiss": [
         "Abaikan"
-      ],
-      "Don't know your password?": [
-        "Tidak tahu kata sandi Anda?"
       ],
       "Done": [
         "Selesai"
@@ -330,6 +350,9 @@
       ],
       "Fit to window": [
         "Sesuaikan dengan jendela"
+      ],
+      "Forgot password?": [
+        "Lupa kata sandi?"
       ],
       "Forward as attachment": [
         "Teruskan sebagai lampiran"
@@ -3107,7 +3130,7 @@
     },
     "familyOffer_2023: Deal details": {
       "3 TB total storage": [
-        "Jumlah penyimpanan 3 TB"
+        "Total ruang penyimpanan 3 TB"
       ]
     },
     "familyOffer_2023: Tooltip": {
@@ -4959,6 +4982,9 @@
       "Version is restored": [
         "Versi dipulihkan"
       ],
+      "Version number successfully copied to clipboard": [
+        "Nomor versi berhasil disalin ke papan klip"
+      ],
       "Visa Secure logo": [
         "Logo Visa Secure"
       ],
@@ -5308,10 +5334,10 @@
         "Kata sandi aplikasi"
       ],
       "Apply to all duplicated files": [
-        "Terapkan ke seluruh berkas duplikat"
+        "Terapkan ke seluruh berkas yang terduplikat"
       ],
       "Apply to all duplicated folders": [
-        "Terapkan ke seluruh folder duplikat"
+        "Terapkan ke seluruh folder yang terduplikat"
       ],
       "Apply to all unverified items": [
         "Terapkan ke seluruh item yang tidak terverifikasi"
@@ -5665,7 +5691,7 @@
         "Foto"
       ],
       "Please provide full details to help us take appropriate action": [
-        "Harap sertakan rincian yang selengkap-lengkapnya untuk membantu kami dalam mengambil tindakan yang sesuai"
+        "Mohon sertakan rincian selengkapnya untuk membantu kami dalam mengambil tindakan yang sesuai"
       ],
       "Port": [
         "Port"
@@ -7749,6 +7775,15 @@
       ]
     },
     "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } dan ${ remainingCount } kebocoran data potensial lainnya terdeteksi. Aktifkan ${ DARK_WEB_MONITORING_NAME } untuk melihat rincian kebocoran ini. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } dan 1 kebocoran data potensial lainnya terdeteksi. Aktifkan ${ DARK_WEB_MONITORING_NAME } untuk melihat rincian kebocoran ini. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } kebocoran potensial terdeteksi. Aktifkan ${ DARK_WEB_MONITORING_NAME } untuk melihat rincian kebocoran ini. ${ link }"
+      ],
       "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
         "Dapatkan notifikasi apabila kata sandi atau data lainnya yang Anda miliki dibocorkan dari layanan pihak ketiga. ${ learnMoreLink }"
       ],
@@ -7758,8 +7793,8 @@
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel saat ini sedang **aktif** dan melindungi akun Anda."
       ],
-      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLink }": [
-        "Informasi seputar diri Anda ditemukan pada setidaknya satu insiden kebocoran data. Aktifkan ${ DARK_WEB_MONITORING_NAME } untuk melihat rincian kebocoran ini dan mengambil tindakan yang sesuai. ${ learnMoreLink }"
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Informasi Anda ditemukan pada setidaknya satu insiden kebocoran data. Aktifkan ${ DARK_WEB_MONITORING_NAME } untuk melihat rincian kebocoran ini. ${ link }"
       ]
     },
     "Select files": {
