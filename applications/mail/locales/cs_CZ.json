@@ -352,9 +352,6 @@
       "Dismiss": [
         "Skrýt"
       ],
-      "Don't know your password?": [
-        "Neznáte své heslo?"
-      ],
       "Done": [
         "Hotovo"
       ],
@@ -1140,6 +1137,12 @@
       ],
       "Trust": [
         "Důvěřovat"
+      ],
+      "Trust key": [
+        "Důvěřovat klíči",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům"
       ],
       "Trust public key": [
         "Důvěřovat veřejnému klíči"
@@ -3374,11 +3377,32 @@
       "Bugs or quality issue": [
         "Chyby nebo problém s kvalitou"
       ],
+      "I do not wish to share": [
+        "Nepřeji si sdílet"
+      ],
+      "I found a cheaper VPN": [
+        "Našel/la jsem levnější VPN"
+      ],
+      "I found a VPN with better features": [
+        "Našel/la jsem VPN s lepšími funkcemi"
+      ],
+      "I have not managed to connect": [
+        "Nepodařilo se mně připojit"
+      ],
+      "I only needed a VPN short-term": [
+        "Potřeboval/a jsem VPN na chvíli"
+      ],
       "I use a different ${ BRAND_NAME } account": [
         "Používám jiný účet ${ BRAND_NAME }"
       ],
+      "It doesn't do what I need": [
+        "Nedělá to, co chci"
+      ],
       "Missing feature(s)": [
         "Chybějící funkce"
+      ],
+      "Other reason (please comment)": [
+        "Jiný důvod (prosím popište)"
       ],
       "Subscription is too expensive": [
         "Předplatné je příliš drahé"
@@ -3388,6 +3412,9 @@
       ],
       "Temporary need, may come back in the future": [
         "Dočasná potřeba, mohu potřebovat opět v budoucnu"
+      ],
+      "The VPN is too slow": [
+        "VPN je příliš pomalá"
       ]
     },
     "Downgrade modal exit survey title": {
@@ -3398,6 +3425,14 @@
     "Download attachments": {
       "Download all": [
         "Stáhnout vše"
+      ]
+    },
+    "drivePlus2024: Action": {
+      "Get the deal": [
+        "Získejte nabídku"
+      ],
+      "Special Offer": [
+        "Speciální nabídka"
       ]
     },
     "driveplus2024: Deal details": {
@@ -3416,6 +3451,9 @@
     "drivePlus2024: Info": {
       "for the first month": [
         "za první měsíc"
+      ],
+      "Limited-time offer": [
+        "Časově omezená nabídka"
       ]
     },
     "drivePlus2024: Title": {
@@ -9061,6 +9099,9 @@
       "Organize items with multiple vaults": [
         "Uspořádání položek pomocí více trezorů"
       ],
+      "Pass Monitor - premium features": [
+        "Pass Monitor - prémiové funkce"
+      ],
       "Passkeys supported": [
         "Přístupové klíče podporovány"
       ],
@@ -9138,6 +9179,9 @@
       ],
       "Unlimited devices": [
         "Neomezený počet zařízení"
+      ],
+      "Unlimited devices and aliases": [
+        "Neomezený počet zařízení a aliasů"
       ],
       "Unlimited filters": [
         "Neomezeně filtrů"
@@ -9339,6 +9383,9 @@
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "${ VPN_APP_NAME }: Přístup k blokovanému obsahu a soukromé prohlížení. Obsahuje ${ serversAndCountries }, nejvyšší rychlosti VPN, přístup k celosvětovým streamovacím službám, blokování malware a reklam, rychlé stahování BitTorrentu a další funkce."
       ],
+      "Access ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME } from the convenience of your desktop": [
+        "Přistupujte k ${ MAIL_APP_NAME } a ${ CALENDAR_APP_NAME } pohodlně z vašeho počítače"
+      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Získejte přístup k obsahu na streamovacích službách, včetně Netflix, Disney+, Prime Video, odkudkoliv"
       ],
@@ -9407,6 +9454,9 @@
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Jmenovky jsou jednoduché štítky, které můžete přidat ke zprávám aby se vám lépe hledaly a používaly filtry"
+      ],
+      "Like a folder, a vault is a convenient way to organize your items": [
+        "Podobně jako složka je trezor praktickým nástrojem k organizaci vašich položek"
       ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
         "Oddělte své firemní zdroje od veřejného internetu a zpřístupněte je pouze přes své soukromé brány."
@@ -9767,6 +9817,28 @@
         "Vy"
       ]
     },
+    "pass_signup_2023: Info": {
+      "Secure sharing with multiple vaults": [
+        "Zabezpečené sdílení s více trezory"
+      ],
+      "Secure vault sharing": [
+        "Zabezpečené sdílení trezorů"
+      ]
+    },
+    "passwordless": {
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Nesoukromí uživatelé se mohou stát správci po tom, co si nastaví klíče"
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "Pro nastavení oprávnění správce musí být aktivován klíč organizace"
+      ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Soukromí uživatelé se mohou stát správci po tom, co se poprvé přihlásí"
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "Než vytvoříte nový klíč organizace, musíte privatizovat všechny uživatele"
+      ]
+    },
     "Payment method option": {
       "Credit/debit card": [
         "Kreditní/debetní karta"
@@ -9798,6 +9870,9 @@
       ],
       "Invalid expiration date": [
         "Neplatné datum vypršení platnosti"
+      ],
+      "Invalid security code": [
+        "Neplatný bezpečnostní kód"
       ],
       "Something went wrong. Please try again later.": [
         "Něco se pokazilo. Zkuste to prosím později."
@@ -10196,9 +10271,6 @@
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel je **aktivní** a chrání váš účet."
-      ],
-      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLink }": [
-        "Vaše údaje byly nalezeny při nejméně jednom úniku informací. Zapnutím ${ DARK_WEB_MONITORING_NAME } zobrazíte podrobnosti a provedete akci. ${ learnMoreLink }"
       ]
     },
     "Select files": {

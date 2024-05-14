@@ -12,6 +12,26 @@
         "Videresendelse stoppet"
       ]
     },
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } og ${ remainingCount } andre potentielle lækager fundet. Tænd for ${ DARK_WEB_MONITORING_NAME } for at se detaljer og tage handling. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } og 1 anden potentiel lækage fundet. Tænd for ${ DARK_WEB_MONITORING_NAME } for at se detaljer og tage handling. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "En potentiel lækage på ${ name } blev fundet. Tænd for ${ DARK_WEB_MONITORING_NAME } for at se detaljer og tage handling. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "En potentiel lækage fra ${ name } blev fundet. Tænd for ${ DARK_WEB_MONITORING_NAME } for at se detaljer og tage handling. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "En potentiel lækage fra ${ name } blev fundet. Tænd for ${ DARK_WEB_MONITORING_NAME } for at se detaljer. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Dine oplysninger blev fundet i mindst én datalækage. Tænd for ${ DARK_WEB_MONITORING_NAME } for at se detaljer og tage handling. ${ link }"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butik"
@@ -260,6 +280,9 @@
       "Copy password to clipboard": [
         "Kopiér adgangskode til udklipsholder"
       ],
+      "Copy version number to clipboard": [
+        "Kopier versionsnummer til udklipsholder"
+      ],
       "Create a new contact group": [
         "Opret en ny kontaktgruppe"
       ],
@@ -345,9 +368,6 @@
       ],
       "Dismiss": [
         "Afvis"
-      ],
-      "Don't know your password?": [
-        "Kan du ikke din adgangskode?"
       ],
       "Done": [
         "Udført"
@@ -451,6 +471,9 @@
       "Font": [
         "Skrifttype"
       ],
+      "Forgot password?": [
+        "Glemt adgangskode?"
+      ],
       "Forward as attachment": [
         "Videresend som vedhæftning"
       ],
@@ -509,7 +532,7 @@
         "Skjul beskeder"
       ],
       "hide-my-email aliases": [
-        "Hide-my-email-aliasser"
+        "hide-my-email-aliasser"
       ],
       "Image could not be loaded with tracker protection.": [
         "Billede kunne ikke indlæses med sporingsbeskyttelse."
@@ -1133,6 +1156,10 @@
       "Trust": [
         "Hav tillid til"
       ],
+      "Trust key": [
+        "Stol på nøgle",
+        "Stol på nøgler"
+      ],
       "Trust public key": [
         "Hav tillid til offentlig nøgle"
       ],
@@ -1522,7 +1549,7 @@
         "den første måned"
       ],
       "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
-        "Den særligt nedsatte pris på ${ discountedPrice } gælder i ${ discountedMonths }. Derefter vil den automatisk blive fornyet til den nedsatte pris på ${ nextPrice } for ${ nextMonths }. Du kan til enhver tid opsige."
+        "Den ekstraordinære rabatpris på ${ discountedPrice } gælder i ${ discountedMonths }. Derefter vil den automatisk blive fornyet til rabatprisen på ${ nextPrice } i ${ nextMonths }. Du kan til enhver tid annullere."
       ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Den særligt nedsatte pris på ${ discountedPrice } gælder den første måned. Derefter vil den automatisk blive fornyet for ${ nextPrice } hver måned. Du kan til enhver tid opsige."
@@ -2493,7 +2520,7 @@
         "Juleøen"
       ],
       "Cocos (Keeling) Islands": [
-        "Cocosøerne"
+        "Cocos (Keeling)-øerne"
       ],
       "Colombia": [
         "Colombia"
@@ -3069,10 +3096,10 @@
         "Storbritannien"
       ],
       "United States": [
-        "USA"
+        "Amerika"
       ],
       "United States Minor Outlying Islands": [
-        "USA's ydre småøer"
+        "Amerikas mindre fjerntliggende øer"
       ],
       "Uruguay": [
         "Uruguay"
@@ -3093,7 +3120,7 @@
         "Jomfruøerne, britiske"
       ],
       "Virgin Islands, U.S.": [
-        "Jomfruøerne, USA"
+        "Jomfruøerne, Amerika."
       ],
       "Wallis and Futuna": [
         "Wallis og Futuna"
@@ -3572,7 +3599,7 @@
         "6 brugere"
       ],
       "Early access to new apps and features": [
-        "Tidlig adgang til nye apps og funktioner"
+        "Forhåndsadgang til nye apps og funktioner"
       ],
       "Early access to the ${ MAIL_APP_NAME } desktop app": [
         "Tidlig adgang til ${ MAIL_APP_NAME } skrivebord-app"
@@ -6788,6 +6815,9 @@
       "Version ${ appVersion }": [
         "Version ${ appVersion }"
       ],
+      "Version number successfully copied to clipboard": [
+        "Versionsnummer er kopieret til udklipsholder"
+      ],
       "Visa Secure logo": [
         "Visa Secure logo"
       ],
@@ -7007,7 +7037,7 @@
         "Du skrev \"${ attachmentsFoundKeyword }\", men der er ikke tilføjet en vedhæftning. Vil du sende din besked alligevel?"
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
-        "Du har nået det maksimale antal adresser i kontaktgruppen/grupperne:"
+        "Du har nået det maksimale antal adresser i kontaktgruppen(erne):"
       ],
       "You've reached the maximum number of addresses in the contact group.": [
         "Du har nået det maksimale antal adresser i kontaktgruppen."
@@ -8222,7 +8252,7 @@
     },
     "Log preference": {
       "Enable ${ reason }": [
-        "Aktivér ${ reason }"
+        "Aktiver ${ reason }"
       ]
     },
     "Mail import summary": {
@@ -8972,7 +9002,7 @@
         "Omfattende privatlivsbeskyttelse og sikkerhed med alle ${ BRAND_NAME }-tjenester kombineret."
       ],
       "Early access to new apps and features": [
-        "Tidlig adgang til nye apps og funktioner"
+        "Forhåndsadgang til nye apps og funktioner"
       ],
       "Essential protection and secure collaboration for unlimited users.": [
         "Essentiel beskyttelse og sikkert samarbejde for ubegrænsede brugere."
@@ -9934,6 +9964,15 @@
       ]
     },
     "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } og ${ remainingCount } andre potentielle lækager fundet. Tænd for ${ DARK_WEB_MONITORING_NAME } for at se detaljer. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } og 1 anden potentiel lækage fundet. Tænd for ${ DARK_WEB_MONITORING_NAME } for at se detaljer. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Et potentielt ${ name } læk blev opdaget. Tænd for ${ DARK_WEB_MONITORING_NAME } for at se detaljer. ${ link }"
+      ],
       "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
         "Få besked, hvis din adgangskode eller andre data er blevet lækket fra en tredjepartstjeneste. ${ learnMoreLink }"
       ],
@@ -9943,8 +9982,8 @@
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel er **aktiv** og beskytter din konto."
       ],
-      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLink }": [
-        "Dine oplysninger blev fundet i mindst ét databrud. Slå ${ DARK_WEB_MONITORING_NAME } til for at se detaljer og tage affære. ${ learnMoreLink }"
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Dine oplysninger blev fundet i mindst én datalækage. Tænd for ${ DARK_WEB_MONITORING_NAME } for at se detaljer. ${ link }"
       ]
     },
     "Select files": {
