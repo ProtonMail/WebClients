@@ -41,7 +41,7 @@ export const DirectSharingAutocomplete = ({
     onCancel,
     isAdding,
 }: Props) => {
-    const [selectedPermissions, setPermissions] = useState<SHARE_MEMBER_PERMISSIONS>(MEMBER_PERMISSIONS.VIEWER);
+    const [selectedPermissions, setPermissions] = useState<SHARE_MEMBER_PERMISSIONS>(MEMBER_PERMISSIONS.EDITOR);
     const addressesInputText = c('Action').t`Add people or groups to share`;
 
     const [contactEmails] = useContactEmails();
