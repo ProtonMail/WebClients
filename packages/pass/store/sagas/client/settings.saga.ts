@@ -1,11 +1,13 @@
 import { put, select, takeEvery } from 'redux-saga/effects';
 
+import { api } from '@proton/pass/lib/api/api';
 import { settingsEditFailure, settingsEditIntent, settingsEditSuccess } from '@proton/pass/store/actions';
 import type { WithSenderAction } from '@proton/pass/store/actions/enhancers/endpoint';
 import { isSettingsAction } from '@proton/pass/store/actions/enhancers/settings';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import { selectProxiedSettings } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
+import { updateLocale } from '@proton/shared/lib/api/settings';
 
 function* settingsEditWorker(
     { onLocaleUpdated, onBetaUpdated }: RootSagaOptions,
@@ -15,7 +17,11 @@ function* settingsEditWorker(
         const settings: ProxiedSettings = yield select(selectProxiedSettings);
         /* `disallowedDomains` update should act as a setter */
         if ('disallowedDomains' in payload) settings.disallowedDomains = {};
-        if (payload.locale) onLocaleUpdated?.(payload.locale);
+
+        if (payload.locale) {
+            yield api(updateLocale(payload.locale));
+            onLocaleUpdated?.(payload.locale);
+        }
 
         yield put(settingsEditSuccess(meta.request.id, payload, meta.silent, meta.sender?.endpoint));
         if ('beta' in payload) yield onBetaUpdated?.(payload.beta ?? false);
