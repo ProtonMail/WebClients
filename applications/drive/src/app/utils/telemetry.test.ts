@@ -17,23 +17,27 @@ describe('measureExperimentalPerformance', () => {
         jest.useFakeTimers();
         window.performance.mark = jest.fn();
         window.performance.measure = jest.fn().mockImplementation(() => ({ duration: 100 }));
+        window.performance.clearMarks = jest.fn();
+        window.performance.clearMeasures = jest.fn();
     });
 
     afterEach(() => {
         jest.resetAllMocks();
     });
 
-    it('executes the control function when flag is false', () => {
+    it('executes the control function when flag is false', async () => {
         const feature = Features.optimisticFileUploads;
         const flag = false;
-        const controlFunction = jest.fn(() => 'control result');
-        const treatmentFunction = jest.fn(() => 'treatment result');
+        const controlFunction = jest.fn(() => Promise.resolve('control result'));
+        const treatmentFunction = jest.fn(() => Promise.resolve('treatment result'));
 
-        measureExperimentalPerformance(useApi(), feature, flag, controlFunction, treatmentFunction);
+        await measureExperimentalPerformance(useApi(), feature, flag, controlFunction, treatmentFunction);
 
         expect(controlFunction).toHaveBeenCalledTimes(1);
         expect(performance.mark).toHaveBeenCalledTimes(2);
         expect(performance.measure).toHaveBeenCalledTimes(1);
+        expect(performance.clearMarks).toHaveBeenCalledTimes(2);
+        expect(performance.clearMeasures).toHaveBeenCalledTimes(1);
         expect(sendTelemetryData).toHaveBeenCalledTimes(1);
         expect(sendTelemetryData).toHaveBeenCalledWith({
             MeasurementGroup: TelemetryMeasurementGroups.driveWebFeaturePerformance,
@@ -48,17 +52,19 @@ describe('measureExperimentalPerformance', () => {
         });
     });
 
-    it('executes the treatment function when flag is true', () => {
+    it('executes the treatment function when flag is true', async () => {
         const feature = Features.optimisticFileUploads;
         const flag = true;
-        const controlFunction = jest.fn(() => 'control result');
-        const treatmentFunction = jest.fn(() => 'treatment result');
+        const controlFunction = jest.fn(() => Promise.resolve('control result'));
+        const treatmentFunction = jest.fn(() => Promise.resolve('treatment result'));
 
-        measureExperimentalPerformance(useApi(), feature, flag, controlFunction, treatmentFunction);
+        await measureExperimentalPerformance(useApi(), feature, flag, controlFunction, treatmentFunction);
 
         expect(treatmentFunction).toHaveBeenCalledTimes(1);
         expect(performance.mark).toHaveBeenCalledTimes(2);
         expect(performance.measure).toHaveBeenCalledTimes(1);
+        expect(performance.clearMarks).toHaveBeenCalledTimes(2);
+        expect(performance.clearMeasures).toHaveBeenCalledTimes(1);
         expect(sendTelemetryData).toHaveBeenCalledTimes(1);
         expect(sendTelemetryData).toHaveBeenCalledWith({
             MeasurementGroup: TelemetryMeasurementGroups.driveWebFeaturePerformance,
