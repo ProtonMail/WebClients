@@ -131,7 +131,7 @@ export const createMember = ({
     api: Api;
 }): ThunkAction<Promise<void>, OrganizationKeyState, ProtonThunkArguments, UnknownAction> => {
     return async (dispatch) => {
-        const [userKeys, ownerAddresses, organizationKey, organization, members] = await Promise.all([
+        let [userKeys, ownerAddresses, organizationKey, organization, members] = await Promise.all([
             dispatch(userKeysThunk()),
             dispatch(addressesThunk()),
             dispatch(organizationKeyThunk()),
@@ -198,6 +198,7 @@ export const createMember = ({
         const memberAddresses = [memberAddress];
         let memberWithKeys: Member | undefined;
 
+        organizationKey = await dispatch(organizationKeyThunk()); // Ensure latest key
         if (!model.private && organizationKey?.privateKey) {
             const result = await setupMemberKeys({
                 api,
@@ -214,6 +215,7 @@ export const createMember = ({
         }
 
         if (model.role === MEMBER_ROLE.ORGANIZATION_ADMIN) {
+            organizationKey = await dispatch(organizationKeyThunk()); // Ensure latest key
             if (getIsPasswordless(organizationKey?.Key)) {
                 if (!model.private && memberWithKeys) {
                     const memberKeyPayload = await getMemberKeyPayload({

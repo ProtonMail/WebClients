@@ -204,27 +204,32 @@ const AddressKeysSection = () => {
         if (!Address || !addressKeys || !userKeys || !Addresses) {
             throw new Error('Missing address or address keys');
         }
-        const [newKey] = await addAddressKeysProcess({
-            api,
-            userKeys,
-            keyGenConfig,
-            addresses: Addresses,
-            address: Address,
-            addressKeys: addressKeys,
-            keyPassword: authentication.getPassword(),
-            keyTransparencyVerify,
-        });
-        await Promise.all([
-            resignSKLWithPrimaryKey({
-                address: Address,
-                newPrimaryKey: newKey.privateKey,
-                formerPrimaryKey: addressKeys[0].publicKey,
+        try {
+            stop();
+            const [newKey] = await addAddressKeysProcess({
+                api,
                 userKeys,
-            }),
-            keyTransparencyCommit(userKeys),
-        ]);
-        await call();
-        return newKey.fingerprint;
+                keyGenConfig,
+                addresses: Addresses,
+                address: Address,
+                addressKeys: addressKeys,
+                keyPassword: authentication.getPassword(),
+                keyTransparencyVerify,
+            });
+            await Promise.all([
+                resignSKLWithPrimaryKey({
+                    address: Address,
+                    newPrimaryKey: newKey.privateKey,
+                    formerPrimaryKey: addressKeys[0].publicKey,
+                    userKeys,
+                }),
+                keyTransparencyCommit(userKeys),
+            ]);
+            await call();
+            return newKey.fingerprint;
+        } finally {
+            start();
+        }
     };
 
     const handleImportKey = () => {
