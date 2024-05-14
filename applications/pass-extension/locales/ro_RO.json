@@ -530,6 +530,9 @@
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "Acest cont este vulnerabil, accesați serviciul și schimbați-vă parola."
+      ],
+      "This service offers 2FA. Enable it for added account security.": [
+        "Acest serviciu oferă A2A. Activați-l pentru o securitate suplimentară a contului."
       ]
     },
     "Error": {
@@ -1576,6 +1579,9 @@
       "${ PASS_SHORT_APP_NAME } monitor": [
         "Monitorizare ${ PASS_SHORT_APP_NAME }"
       ],
+      "${ PASS_SHORT_APP_NAME } version": [
+        "Versiune ${ PASS_SHORT_APP_NAME }"
+      ],
       "1 hour": [
         "o oră"
       ],
@@ -1692,6 +1698,12 @@
       ],
       "Created": [
         "Creat la"
+      ],
+      "Created at": [
+        "Creat la"
+      ],
+      "Device": [
+        "Dispozitiv"
       ],
       "Disable data export for team members": [
         "Dezactivare exportare date pentru membri echipei"

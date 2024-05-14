@@ -1558,6 +1558,9 @@
       "${ PASS_SHORT_APP_NAME } monitor": [
         "Surveillance de ${ PASS_SHORT_APP_NAME }"
       ],
+      "${ PASS_SHORT_APP_NAME } version": [
+        "Version de ${ PASS_SHORT_APP_NAME }"
+      ],
       "1 hour": [
         "1 heure"
       ],
@@ -1674,6 +1677,12 @@
       ],
       "Created": [
         "Créé"
+      ],
+      "Created at": [
+        "Créée le"
+      ],
+      "Device": [
+        "Appareil"
       ],
       "Disable data export for team members": [
         "Désactiver l'exportation des données pour les membres"

@@ -528,6 +528,9 @@
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "이 계정은 취약합니다. 서비스를 방문하여 비밀번호를 변경하십시오."
+      ],
+      "This service offers 2FA. Enable it for added account security.": [
+        "이 서비스는 이중 인증을 지원합니다. 향상된 계정 보안을 위해 활성화 하십시오."
       ]
     },
     "Error": {
@@ -1534,6 +1537,9 @@
       "${ PASS_SHORT_APP_NAME } monitor": [
         "${ PASS_SHORT_APP_NAME } 모니터링"
       ],
+      "${ PASS_SHORT_APP_NAME } version": [
+        "${ PASS_SHORT_APP_NAME } 버전"
+      ],
       "1 hour": [
         "1시간"
       ],
@@ -1650,6 +1656,12 @@
       ],
       "Created": [
         "제작"
+      ],
+      "Created at": [
+        "생성일:"
+      ],
+      "Device": [
+        "기기"
       ],
       "Disable data export for team members": [
         "팀 멤버들의 데이터 내보내기 비활성화"
@@ -2383,7 +2395,7 @@
         "적어도 하나의 이메일 주소가 필요합니다"
       ],
       "Cannot retrieve mailboxes for this alias right now": [
-        "지금은 이 별칭에서 메일함으로 불러올 수 없습니다."
+        "지금은 이 별칭의 편지함을 불러올 수 없습니다."
       ],
       "Could not create vault \"${ vaultName }\"": [
         "\"${ vaultName }\" 금고를 생성할 수 없음"

@@ -1600,6 +1600,9 @@
       "${ PASS_SHORT_APP_NAME } monitor": [
         "${ PASS_SHORT_APP_NAME } monitor"
       ],
+      "${ PASS_SHORT_APP_NAME } version": [
+        "Verzia ${ PASS_SHORT_APP_NAME }"
+      ],
       "1 hour": [
         "1 hodine"
       ],
@@ -1716,6 +1719,12 @@
       ],
       "Created": [
         "Vytvorené"
+      ],
+      "Created at": [
+        "Vytvorené"
+      ],
+      "Device": [
+        "Zariadenie"
       ],
       "Disable data export for team members": [
         "Zakázať export údajov členom tímu"

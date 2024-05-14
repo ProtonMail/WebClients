@@ -1537,6 +1537,9 @@
       "${ PASS_SHORT_APP_NAME } monitor": [
         "Pemantauan ${ PASS_SHORT_APP_NAME }"
       ],
+      "${ PASS_SHORT_APP_NAME } version": [
+        "Versi ${ PASS_SHORT_APP_NAME }"
+      ],
       "1 hour": [
         "1 jam"
       ],
@@ -1653,6 +1656,12 @@
       ],
       "Created": [
         "Waktu pembuatan"
+      ],
+      "Created at": [
+        "Dibuat pada"
+      ],
+      "Device": [
+        "Perangkat"
       ],
       "Disable data export for team members": [
         "Nonaktifkan ekspor data bagi anggota tim"

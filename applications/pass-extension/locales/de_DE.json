@@ -1497,6 +1497,9 @@
         "${ config.options.wordCount } Wort",
         "${ config.options.wordCount } Wörter"
       ],
+      "${ PASS_SHORT_APP_NAME } version": [
+        "${ PASS_SHORT_APP_NAME } Version"
+      ],
       "1 hour": [
         "1 Stunde"
       ],
@@ -1613,6 +1616,12 @@
       ],
       "Created": [
         "Erstellt"
+      ],
+      "Created at": [
+        "Erstellt am"
+      ],
+      "Device": [
+        "Gerät"
       ],
       "Disable data export for team members": [
         "Datenexport für Teammitglieder deaktivieren"
@@ -2285,6 +2294,9 @@
       ],
       "Vault shared with you": [
         "Mit dir geteilter Tresor"
+      ],
+      "Weak password": [
+        "Schwaches Passwort"
       ],
       "Welcome to your new password manager!": [
         "Willkommen bei deinem neuen Passwort-Manager!"

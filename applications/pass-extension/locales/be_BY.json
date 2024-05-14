@@ -524,7 +524,7 @@
         "Сцяжок азначае, што функцыя адключана."
       ],
       "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
-        "Назіранне за Dark Web даступна з платным тарыфным планам. Палепшыце сваю падпіску, каб неадкладна атрымаць доступ да гэтай функцыі."
+        "Функцыя Dark Web Monitoring даступны з платным тарыфным планам. Палепшыце сваю падпіску, каб неадкладна атрымаць доступ да гэтай функцыі."
       ],
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
         "Спіс даменаў, дзе некаторыя функцыі ў праграме ${ PASS_SHORT_APP_NAME } (аўтазапаўненне, аўтапрапанова, аўтазахаванне) могуць не працаваць.${ infoText }"
@@ -1600,6 +1600,9 @@
       "${ PASS_SHORT_APP_NAME } monitor": [
         "Назіранне ${ PASS_SHORT_APP_NAME }"
       ],
+      "${ PASS_SHORT_APP_NAME } version": [
+        "Версія ${ PASS_SHORT_APP_NAME }"
+      ],
       "1 hour": [
         "1 гадзіна"
       ],
@@ -1716,6 +1719,12 @@
       ],
       "Created": [
         "Створана"
+      ],
+      "Created at": [
+        "Створана"
+      ],
+      "Device": [
+        "Прылада"
       ],
       "Disable data export for team members": [
         "Адключыць экспартаванне даных для ўдзельнікаў каманды"
