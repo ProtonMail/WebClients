@@ -47,7 +47,7 @@ const Option = ({
                 <Icon name={option.icon} className="mr-2" />
                 {option.label}
             </span>
-            {isSelected ? <Icon name="checkmark" /> : null}
+            {isSelected ? <Icon name="checkmark" data-testid="selected-permission" /> : null}
         </DropdownMenuButton>
     );
 };
@@ -85,6 +85,7 @@ const MemberPermissionsSelect = ({ selectedPermissions, onChange, onRemove }: Pr
                 shape="ghost"
                 size="small"
                 loading={isLoading}
+                data-testid="address-input-permissions-dropdown"
             >
                 {permissionsOptions.find((permission) => permission.value === selectedPermissions)?.label}
             </DropdownButton>
