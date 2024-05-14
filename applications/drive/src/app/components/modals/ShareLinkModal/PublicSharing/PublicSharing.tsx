@@ -34,7 +34,7 @@ export const PublicSharing = ({ publicSharedLink, createSharedLink, deleteShared
     };
 
     return (
-        <div ref={contentRef}>
+        <div ref={contentRef} data-testid="share-modal-shareWithAnyoneSection">
             <div className="flex justify-space-between items-center mb-6">
                 <h2 className="text-lg text-semibold mr">{c('Info').t`Share with anyone`}</h2>
                 <Toggle checked={!!publicSharedLink} loading={isLoading} onChange={handleToggle} />
@@ -54,7 +54,7 @@ export const PublicSharing = ({ publicSharedLink, createSharedLink, deleteShared
                         readOnly
                         value={publicSharedLink}
                         className="overflow-hidden text-ellipsis bg-weak border-weak color-weak"
-                        data-testid="sharing-modal-url"
+                        data-testid="share-anyone-url"
                         disabled={!publicSharedLink}
                     />
                     <Button
@@ -65,6 +65,7 @@ export const PublicSharing = ({ publicSharedLink, createSharedLink, deleteShared
                         onClick={handleCopyURLClick}
                         className="ml-3"
                         disabled={!publicSharedLink}
+                        data-testid="share-anyone-copyUrlButton"
                     >
                         <Icon name="squares" />
                     </Button>
