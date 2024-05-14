@@ -41,7 +41,14 @@ export const BreachActions: FC<Props> = ({ resolved, disabled, ...address }) => 
     return (
         <div className="flex flex-nowrap gap-2">
             {!resolved && (
-                <Button pill shape="solid" color="weak" onClick={confirmResolve.prompt} loading={resolve.loading}>
+                <Button
+                    pill
+                    shape="solid"
+                    color="weak"
+                    onClick={confirmResolve.prompt}
+                    loading={resolve.loading}
+                    disabled={resolve.loading}
+                >
                     {c('Action').t`Mark as resolved`}
                 </Button>
             )}
