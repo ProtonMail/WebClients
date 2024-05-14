@@ -250,9 +250,6 @@
       "Dismiss": [
         "Descartar"
       ],
-      "Don't know your password?": [
-        "Não sabe a sua palavra-passe?"
-      ],
       "Done": [
         "Concluído"
       ],
@@ -273,6 +270,9 @@
       ],
       "Download apps": [
         "Descarregar as aplicações"
+      ],
+      "Download logs": [
+        "Transferir os registos"
       ],
       "Drive Locked": [
         "Unidade bloqueada"
@@ -403,6 +403,9 @@
       "Keep my Plus subscription": [
         "Manter a minha subscrição Plus"
       ],
+      "Later": [
+        "Mais tarde"
+      ],
       "Learn more": [
         "Saber mais"
       ],
@@ -414,6 +417,9 @@
       ],
       "Load image": [
         "Carregar a imagem"
+      ],
+      "Loading link": [
+        "Carregamento da ligação"
       ],
       "Loading verification": [
         "A carregar verificação"
@@ -2114,6 +2120,14 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Ajude-nos a melhorar"
+      ]
+    },
+    "drivePlus2024: Action": {
+      "Get the deal": [
+        "Aproveite a promoção"
+      ],
+      "Special Offer": [
+        "Oferta especial"
       ]
     },
     "driveplus2024: Deal details": {
@@ -3896,6 +3910,9 @@
       "Edit email address": [
         "Editar endereço de e-mail"
       ],
+      "email": [
+        "e-mail"
+      ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "O alojamento de e-mails para 10 nomes de domínio de e-mail personalizado está incluído gratuitamente. Pode adicionar domínios adicionais por ${ price }."
       ],
@@ -3904,6 +3921,9 @@
       ],
       "Emails are automatically signed": [
         "Os e-mails são assinados automaticamente"
+      ],
+      "Empty folder": [
+        "Esvaziar a pasta"
       ],
       "Enabling drive search": [
         "Ativação da pesquisa na unidade"
@@ -3975,6 +3995,9 @@
       "Finalizing": [
         "A finalizar"
       ],
+      "finance": [
+        "finanças"
+      ],
       "Folder \"${ link.name }\" was deleted during download": [
         "A pasta \"${ link.name }\" foi eliminada durante a transferência."
       ],
@@ -4007,6 +4030,9 @@
       ],
       "here": [
         "aqui"
+      ],
+      "High Priority": [
+        "Prioridade alta"
       ],
       "How does encrypted search work?": [
         "Como funciona a pesquisa encriptada?"
@@ -4128,6 +4154,9 @@
       ],
       "Loading...": [
         "A carregar..."
+      ],
+      "Low Priority": [
+        "Prioridade baixa"
       ],
       "Makes your account safer": [
         "Protege a sua conta"
@@ -4410,6 +4439,9 @@
       "Share files with links": [
         "Partilhe ficheiros com ligações"
       ],
+      "Share with": [
+        "Partilhar com"
+      ],
       "Share with anyone": [
         "Partilhar com o qualquer pessoa"
       ],
@@ -4430,6 +4462,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Sendo utilizador(a) leal, a sua conta dispõe de funcionalidades adicionais."
+      ],
+      "Skipped": [
+        "Ignorado"
       ],
       "Some files failed to download. Try downloading the files again.": [
         "Alguns ficheiros não foram descarregados. Tente descarregar os ficheiros novamente."
@@ -5121,6 +5156,9 @@
       "e.g., Amazon, eBay, Etsy": [
         "ex.: Amazon, eBay, Etsy"
       ],
+      "Editor": [
+        "Editor"
+      ],
       "Email": [
         "E-mail"
       ],
@@ -5343,6 +5381,9 @@
       "Region": [
         "Região"
       ],
+      "Remove access": [
+        "Remover o acesso"
+      ],
       "Replace existing file": [
         "Substituir o ficheiro existente"
       ],
@@ -5390,6 +5431,9 @@
       ],
       "Stolen data": [
         "Dados roubados"
+      ],
+      "Stop sharing": [
+        "Parar a partilha"
       ],
       "Street address": [
         "Endereço postal"
@@ -5441,6 +5485,9 @@
       ],
       "Verification code": [
         "Código de verificação"
+      ],
+      "Viewer": [
+        "Leitor"
       ],
       "What happened?": [
         "O que é que aconteceu?"
@@ -5582,6 +5629,9 @@
       ]
     },
     "locked_state_storage_banner: info": {
+      "Learn more": [
+        "Saiba mais"
+      ],
       "upgrade for more storage": [
         "atualize para obter mais armazenamento"
       ]
@@ -5655,6 +5705,21 @@
       "7-zip archive": [
         "Arquivo 7-Zip"
       ],
+      "AAC audio": [
+        "Áudio AAC"
+      ],
+      "AbiWord document": [
+        "Documento AbiWord"
+      ],
+      "Archive document": [
+        "Arquivo de documento"
+      ],
+      "Audio file": [
+        "Ficheiro de som"
+      ],
+      "AVI video": [
+        "Vídeo AVI"
+      ],
       "BZip archive": [
         "Arquivo BZIP"
       ],
@@ -5667,8 +5732,29 @@
       "iCalendar format": [
         "Formato iCalendar"
       ],
+      "Image": [
+        "Imagem"
+      ],
       "JPEG images": [
         "Imagens JPEG"
+      ],
+      "MP3 audio": [
+        "Áudio MP3"
+      ],
+      "MPEG Video": [
+        "Vídeo MPEG"
+      ],
+      "OGG audio": [
+        "Áudio OGG"
+      ],
+      "OGG video": [
+        "Vídeo OGG"
+      ],
+      "OpenType font": [
+        "Letra OpenType"
+      ],
+      "Opus audio": [
+        "Áudio Opus"
       ],
       "RAR archive": [
         "Arquivo RAR"
@@ -5676,8 +5762,23 @@
       "Text": [
         "Texto"
       ],
+      "TrueType Font": [
+        "Letra TrueType"
+      ],
       "Unknown file": [
         "Ficheiro desconhecido"
+      ],
+      "Video file": [
+        "Ficheiro de vídeo"
+      ],
+      "WEBM audio": [
+        "Áudio WEBM"
+      ],
+      "WEBM video": [
+        "Vídeo WebM"
+      ],
+      "WEBP image": [
+        "Imagem WEBP"
       ],
       "ZIP archive": [
         "Arquivo ZIP"
@@ -5883,10 +5984,10 @@
         "Tempo de adiamento personalizado"
       ],
       "Data breach monitoring": [
-        "Monitorização das violações de dados"
+        "Monitoramento das violações de dados"
       ],
       "Data breach monitoring (coming soon)": [
-        "Monitorização de violações de dados (em breve)"
+        "Monitoramento de violações de dados (em breve)"
       ],
       "DNS leak prevention": [
         "Proteção contra vazamento de DNS"
@@ -6125,7 +6226,7 @@
         "Proteja a privacidade da sua família com todos os serviços da ${ BRAND_NAME } combinados."
       ],
       "Safely access internet from anywhere with essential network monitoring": [
-        "Aceder à internet com segurança a partir de qualquer sítio com monitorização essencial de rede"
+        "Aceder à internet com segurança a partir de qualquer sítio com monitoramento essencial de rede"
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Armazenamento em nuvem seguro que permite armazenar, sincronizar e compartilhar ficheiros com facilidade e segurança."
@@ -6537,6 +6638,9 @@
       "File or folder is missing a name": [
         "Ficheiro ou pasta sem nome"
       ],
+      "File removed": [
+        "Ficheiro removido"
+      ],
       "Link copied to clipboard": [
         "Ligação copiada para a área de transferência"
       ],
@@ -6697,6 +6801,9 @@
       ],
       "CVC": [
         "CVC"
+      ],
+      "MM/YY": [
+        "MM/AA"
       ]
     },
     "Payments.Error": {
@@ -7451,6 +7558,14 @@
         "Por"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB de armazenamento"
+      ],
+      "Upgrade": [
+        "Alterar a subscrição"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Tem a certeza?"
@@ -7735,6 +7850,9 @@
       "Active": [
         "Ativo"
       ],
+      "Add a custom logo": [
+        "Adicionar um logo personalizado"
+      ],
       "Add contact group name": [
         "Adicionar nome do grupo de contactos"
       ],
@@ -7879,6 +7997,9 @@
       "Deleting contacts": [
         "A eliminar contactos"
       ],
+      "Details": [
+        "Detalhes"
+      ],
       "Discard": [
         "Descartar"
       ],
@@ -7923,6 +8044,9 @@
       ],
       "Edit image": [
         "Editar imagem"
+      ],
+      "Email address": [
+        "Endereço de e-mail"
       ],
       "Email addresses": [
         "Endereços de e-mail"
@@ -8195,6 +8319,9 @@
       ],
       "Stop sharing with everyone?": [
         "Parar de partilhar com todos?"
+      ],
+      "Stop sharing?": [
+        "Parar de partilhar?"
       ],
       "Stop transfers?": [
         "Parar as transferências?"

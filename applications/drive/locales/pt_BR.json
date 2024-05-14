@@ -188,6 +188,9 @@
       "Copy link": [
         "Copiar link"
       ],
+      "Copy version number to clipboard": [
+        "Copiar número da versão para a área de transferência"
+      ],
       "Create": [
         "Criar"
       ],
@@ -255,9 +258,6 @@
       ],
       "Dismiss": [
         "Descartar"
-      ],
-      "Don't know your password?": [
-        "Não sabe sua senha?"
       ],
       "Done": [
         "Concluído"
@@ -333,6 +333,9 @@
       ],
       "Fit to window": [
         "Ajustar na janela"
+      ],
+      "Forgot password?": [
+        "Esqueceu sua senha?"
       ],
       "Forward as attachment": [
         "Encaminhar como anexo"
@@ -2232,11 +2235,32 @@
       "Bugs or quality issue": [
         "Defeitos ou problema de qualidade"
       ],
+      "I do not wish to share": [
+        "Não quero responder"
+      ],
+      "I found a cheaper VPN": [
+        "Achei uma VPN mais barata"
+      ],
+      "I found a VPN with better features": [
+        "Achei uma VPN com recursos melhores"
+      ],
+      "I have not managed to connect": [
+        "Não consegui me conectar"
+      ],
+      "I only needed a VPN short-term": [
+        "Eu só precisei da VPN por um curto período"
+      ],
       "I use a different ${ BRAND_NAME } account": [
         "Eu uso uma conta ${ BRAND_NAME } diferente"
       ],
+      "It doesn't do what I need": [
+        "Não faz o que preciso"
+      ],
       "Missing feature(s)": [
         "Funções ausentes"
+      ],
+      "Other reason (please comment)": [
+        "Outro motivo (comente)"
       ],
       "Subscription is too expensive": [
         "A assinatura é muito cara"
@@ -2246,6 +2270,9 @@
       ],
       "Temporary need, may come back in the future": [
         "Necessidade temporária, posso voltar no futuro"
+      ],
+      "The VPN is too slow": [
+        "A VPN é muito lenta"
       ]
     },
     "Downgrade modal exit survey title": {
@@ -5016,6 +5043,9 @@
       "Version is restored": [
         "Versão foi restaurada"
       ],
+      "Version number successfully copied to clipboard": [
+        "Número da versão copiada com sucesso para a área de transferência"
+      ],
       "Visa Secure logo": [
         "Logotipo do Visa Secure"
       ],
@@ -6179,7 +6209,7 @@
         "Pacote de instalação da Apple"
       ],
       "Archive document": [
-        "Documento de arquivo"
+        "Arquivo de documento"
       ],
       "Audio file": [
         "Arquivo de áudio"
@@ -6631,6 +6661,9 @@
       "Organize items with multiple vaults": [
         "Organize itens com múltiplos cofres"
       ],
+      "Pass Monitor - premium features": [
+        "Pass Monitor - recursos premium"
+      ],
       "Passkeys supported": [
         "Chaves de acesso suportadas"
       ],
@@ -6706,6 +6739,9 @@
       ],
       "Unlimited devices": [
         "Dispositivos ilimitados"
+      ],
+      "Unlimited devices and aliases": [
+        "Aliases e dispositivos ilimitados"
       ],
       "Unlimited filters": [
         "Filtros ilimitados"
@@ -7466,6 +7502,18 @@
         "Você"
       ]
     },
+    "pass_signup_2023: Info": {
+      "Secure sharing with ${ n } vault": [
+        "Compartilhamento seguro com ${ n } cofre",
+        "Compartilhamento seguro com ${ n } cofres"
+      ],
+      "Secure sharing with multiple vaults": [
+        "Compartilhamento seguro de múltiplos cofres"
+      ],
+      "Secure vault sharing": [
+        "Compartilhamento seguro de cofres"
+      ]
+    },
     "passwordless": {
       "Non-private users can be promoted to admin when they have setup keys": [
         "Usuários não privados podem ser promovidos a administradores quando configurarem suas chaves"
@@ -7792,9 +7840,6 @@
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel está **ativo** e protegendo sua conta."
-      ],
-      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLink }": [
-        "Suas informações foram encontradas em pelo menos uma violação de dados. Ative o ${ DARK_WEB_MONITORING_NAME } para ver detalhes e tomar medidas. ${ learnMoreLink }"
       ]
     },
     "Select files": {
@@ -8413,6 +8458,9 @@
       "Desktop app": [
         "Aplicativo para computador"
       ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ajude-nos a manter a internet segura e privada para todos. Faça upgrade para um plano pago."
+      ],
       "No ads or tracking": [
         "Sem anúncios ou rastreamento"
       ],
@@ -8426,7 +8474,7 @@
         "Fazer upgrade"
       ],
       "Upgrade your productivity": [
-        "Atualize sua produtividade"
+        "Faça upgrade da sua produtividade"
       ],
       "We don't sell your data": [
         "Não vendemos seus dados"
@@ -9458,7 +9506,7 @@
         "A assinatura é renovada automaticamente a cada 3 meses. Sua próxima data de faturamento será em 3 meses."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
-        "O preço com desconto especial de ${ priceWithDiscount } é válido no primeiro mês. Em seguida, ele será renovado automaticamente pelo preço de ${ renewPrice } todo mês. Você pode cancelar a qualquer momento."
+        "O preço com desconto especial de ${ priceWithDiscount } é válido no primeiro mês. Em seguida, será renovado automaticamente pelo preço de ${ renewPrice } todo mês. Você pode cancelar a qualquer momento."
       ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Você será cobrado a cada 12 meses no valor de ${ renewPrice }."
