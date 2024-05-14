@@ -221,9 +221,6 @@
       "Dismiss": [
         "रद्द करें"
       ],
-      "Don't know your password?": [
-        "क्या आप अपना पासवर्ड नहीं जानते?"
-      ],
       "Done": [
         "पूरा हुआ"
       ],
@@ -425,10 +422,10 @@
       "Not now": [
         "अभी नहीं"
       ],
-      "Ok": [
+      "OK": [
         "ठीक है"
       ],
-      "OK": [
+      "Ok": [
         "ठीक है"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -698,7 +695,7 @@
     },
     "Action subline": {
       "Anyone with the link can view your calendar": [
-        "लिंक के साथ कोई भी व्यक्ति आपका कैलेंडर देख सकता है"
+        "जिसके पास लिंक है, वह आपका कैलेंडर देख सकता है"
       ],
       "They can view or edit your calendar": [
         "वो कैलेंडर देख या बदल सकते है"
@@ -745,7 +742,7 @@
     },
     "Alarm notification": {
       "${ title } started at ${ formattedHour }": [
-        "${ title } ${ formattedHour } से शुरू हुआ"
+        "${ title } ${ formattedHour } पे शुरू हुआ"
       ],
       "${ title } started on ${ formattedDate }": [
         "${ title } ${ formattedDate } को शुरू हुआ"
@@ -757,7 +754,7 @@
         "${ title } कल शुरू हुआ"
       ],
       "${ title } started yesterday at ${ formattedHour }": [
-        "${ title } कल ${ formattedHour } पर शुरू हुआ"
+        "${ title } कल ${ formattedHour } पे शुरू हुआ"
       ],
       "${ title } starts at ${ formattedHour }": [
         "${ title } ${ formattedHour } पे शुरू होगा"
@@ -772,7 +769,7 @@
         "${ title } ${ formattedDate } को ${ formattedHour } पे शुरू हुआ"
       ],
       "${ title } starts today": [
-        "${ title } आज से शुरू हो रहा है"
+        "${ title } आज शुरू होगा"
       ],
       "${ title } starts tomorrow": [
         "${ title } कल शुरू होगा"
@@ -823,11 +820,20 @@
       ]
     },
     "bf2023: Action": {
+      "**Add our encrypted password manager** for only ${ price }": [
+        "**हमारे एन्क्रिप्टेड पासवर्ड प्रबंधक** को केवल ${ price } में जोड़ें"
+      ],
       "Add ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } जोड़ें"
       ],
+      "Get the deal": [
+        "डील लें"
+      ],
       "Remove ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } को निकालें"
+      ],
+      "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
+        "15 महीने के लिए सदस्यता लें और **हमारे एन्क्रिप्टेड पासवर्ड प्रबंधक** को केवल प्रति महीने ${ priceNoSuffix } अतिरिक्त में प्राप्त करें!"
       ]
     },
     "bf2023: Deal details": {
@@ -1033,7 +1039,7 @@
         "आपने न्योता मान लिया"
       ],
       "You declined the invitation": [
-        "आपने न्योता ठुकरा दिया"
+        "आपने आमंत्रित को अस्वीकार कर दिया"
       ],
       "You haven't answered the invitation yet": [
         "आपने अभी तक न्योते का जवाब नहीं दिया"
@@ -1067,13 +1073,13 @@
         "लिंक संभाले"
       ],
       "Manage members": [
-        "मेंबर संभाले"
+        "सदस्यों को प्रबंधित करें"
       ],
       "Unable to create more calendar links": [
         "और कैलेंडर लिंक नहीं बना सकते"
       ],
       "Unable to share this calendar with more ${ BRAND_NAME } users": [
-        "इस कैलेंडर को और ${ BRAND_NAME } यूज़र के साथ शेयर करने में असफल"
+        "इस कैलेंडर को और ${ BRAND_NAME } उपयोगकर्ता के साथ साझा करने में असफल"
       ],
       "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member for this calendar.\nTo share this calendar with more ${ BRAND_NAME } accounts, remove some members.": [
         "आप इस कैलेंडर के ${ MAX_CALENDAR_MEMBERS } सदस्य की सीमा पे पहुंच गए है।\nइस कैलेंडर को और ${ BRAND_NAME } खातो के साथ शेयर करने के लिए, कुछ सदस्य हटाएं।",
@@ -1094,7 +1100,7 @@
     },
     "Calendar sharing error": {
       "Failed to retrieve contact information for ${ address }": [
-        "${ address } का संपर्क जानकारी लाने में असफल"
+        "${ address } के लिए संपर्क जानकारी प्राप्त करने में असफल"
       ]
     },
     "Calendar sidebar dropdown item": {
@@ -1107,10 +1113,10 @@
     },
     "Calendar status": {
       "Not synced": [
-        "सिंक किया नहीं"
+        "सिंक नहीं हुआ"
       ],
       "Syncing": [
-        "सिंक्रनाइज़ किए जा रहे है"
+        "सिंक हो रहा है"
       ]
     },
     "Calendar subscription not synced error": {
@@ -1118,7 +1124,7 @@
         "कैलेंडर को डिक्रिप्ट नहीं किया जा सका"
       ],
       "Calendar is syncing": [
-        "कैलेंडर समन्वयित हो रहा है"
+        "कैलेंडर सिंक हो रहा है"
       ],
       "Calendar is syncing: it may take several minutes for all of its events to show up.": [
         "कैलेंडर सिंक हो रहा: उसके सारे दिखने में कई मिनट लग सकते है।"
@@ -1127,13 +1133,13 @@
         "कैलेंडर बहुत बड़ा है"
       ],
       "Calendar link is not accessible": [
-        "कैलेंडर लिंक पहुंच योग्य नहीं है"
+        "कैलेंडर लिंक अनुपलब्ध है"
       ],
       "Calendar link is temporarily inaccessible": [
-        "कैलेंडर लिंक अस्थायी रूप से दुर्गम है"
+        "कैलेंडर लिंक अस्थायी रूप से अनुपलब्ध है"
       ],
       "Failed to sync calendar": [
-        "कैलेंडर समन्वयित करने में विफल"
+        "कैलेंडर को सिंक करने में विफल"
       ],
       "More than 12 hours passed since last update": [
         "पिछले अपडेट के बाद से 12 घंटे से अधिक समय बीत चुका है"
@@ -1367,10 +1373,10 @@
         "अब्खाज़िया"
       ],
       "Afghanistan": [
-        "अफगानिस्तान"
+        "अफ़ग़ानिस्तान"
       ],
       "Albania": [
-        "अल्बानिया"
+        "अल्बेनिया"
       ],
       "Algeria": [
         "अल्जीरिया"
@@ -1397,7 +1403,7 @@
         "अर्जेंटीना"
       ],
       "Armenia": [
-        "आर्मीनिया"
+        "अर्मेनिया"
       ],
       "Aruba": [
         "अरूबा"
@@ -1412,13 +1418,13 @@
         "ऑस्ट्रिया"
       ],
       "Azerbaijan": [
-        "अज़रबैजान"
+        "आज़रबाइजान"
       ],
       "Bahamas": [
         "बहामास"
       ],
       "Bahrain": [
-        "बहरीन"
+        "बहरैन"
       ],
       "Bangladesh": [
         "बांग्लादेश"
@@ -1469,7 +1475,7 @@
         "ब्रुनेई दारुस्सलाम"
       ],
       "Bulgaria": [
-        "बल्गारिया"
+        "बुल्गारिया"
       ],
       "Burkina Faso": [
         "बुर्किना फासो"
@@ -1505,7 +1511,7 @@
         "चीन"
       ],
       "Christmas Island": [
-        "क्रिसमस द्वीप"
+        "क्रिसमस आइलैंड"
       ],
       "Cocos (Keeling) Islands": [
         "कोकोस (कीलिंग) द्वीप समूह"
@@ -1556,7 +1562,7 @@
         "डोमिनिका"
       ],
       "Dominican Republic": [
-        "डॉमिनिकन गणराज्य"
+        "डोमिनिकन रिपब्लिक"
       ],
       "Ecuador": [
         "इक्वाडोर"
@@ -1586,7 +1592,7 @@
         "फ़ॉकलैंड आइलैंड"
       ],
       "Faroe Islands": [
-        "फ़ेरो द्वीपसमूह"
+        "फ़ेरो आइलैंड्स"
       ],
       "Federated States of Micronesia": [
         "माइक्रोनेशिया के संघीय राज्य"
@@ -1802,7 +1808,7 @@
         "मेक्सिको"
       ],
       "Moldova": [
-        "माल्डोवा"
+        "मोल्डोवा"
       ],
       "Monaco": [
         "मोनाको"
@@ -1982,7 +1988,7 @@
         "स्लोवेनिया"
       ],
       "Solomon Islands": [
-        "सोलोमन द्वीप समूह"
+        "सोलोमन आइलैंड्स"
       ],
       "Somalia": [
         "सोमालिया"
@@ -2126,7 +2132,7 @@
         "ज़िम्बाब्वे"
       ],
       "Åland Islands": [
-        "एलैंड आइलैंड"
+        "ऑलैंड द्वीप"
       ]
     },
     "Country select label": {
@@ -3724,7 +3730,7 @@
         "इवेंट प्रतिभागीयों को रद्द होने का एक ईमेल भेजा जाएगा। क्या आप इस सीरीज़ के सारे इवेंट को मिटाना चाहेंगे?"
       ],
       "A cancellation email will be sent to the event participants. Would you like to delete this event?": [
-        "कार्यक्रम में भाग लेने वालों को एक रद्दीकरण ईमेल भेजा जाएगा। क्या आप इस घटना को हटाना चाहेंगे?"
+        "कार्यक्रम में भाग लेने वालों को एक रद्दीकरण ईमेल भेजा जाएगा। क्या आप इस कार्यक्रम को हटाना चाहेंगे?"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "एक ${ BRAND_NAME } खाता सत्यापित करने के लिए सिर्फ एक फोन नंबर इस्तेमाल हो सकता है"
@@ -3745,7 +3751,7 @@
         "जोड़े गए और हटाए गए प्रतिभागियों को इस सीरीज़ के सारे इवेंट के बारे में सूचित किया जाएगा।"
       ],
       "Added and removed participants will be notified.": [
-        "जोड़े गए और हटाए गए प्रतिभागियों को सूचित किया जाएगा।"
+        "जोड़े और हटाए गए प्रतिभागियों को सूचित किया जाएगा।"
       ],
       "Additional options": [
         "अतिरिक्त विकल्प"
@@ -3780,7 +3786,7 @@
         "सभी प्रतिभागियों को निमंत्रण भेजा जाएगा। आप किस इवेंट को अपडेट करना चाहेंगे?"
       ],
       "An invitation will be sent to the event participants.": [
-        "कार्यक्रम में भाग लेने वालों को निमंत्रण भेजा जाएगा।"
+        "कार्यक्रम में भाग लेने वालों को आमंत्रण भेजा जाएगा।"
       ],
       "and": [
         "और"
@@ -3822,7 +3828,7 @@
         "कैलेंडर साइड पैनल"
       ],
       "Can't find the events you're looking for? Some events in hidden calendars match your query. To see those results, turn on visibility for ${ hiddenWithItemsCalendarList }.": [
-        "क्या वे इवेंट नहीं मिल रहे जिन्हें आप ढूंढ रहे हैं? छिपे हुए कैलेंडर में कुछ ईवेंट आपकी क्वेरी से मेल खाते हैं। उन परिणामों को देखने के लिए, ${ hiddenWithItemsCalendarList } के लिए दृश्यता चालू करें।"
+        "आप जिन कार्यक्रमों को ढूँढ़ रहे हैं, वे नहीं मिल रही हैं? छिपे हुए कैलेंडर में कुछ कार्यक्रम आपके प्रश्न से मेल खाते हैं। उन परिणामों को देखने के लिए, ${ hiddenWithItemsCalendarList } के लिए दृश्यता चालू करें।"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "आपका पासवर्ड याद नहीं है? हम इस कुंजी के साथ एन्क्रिप्ट किए गए सभी संपर्कों के एन्क्रिप्टेड डेटा को साफ़ करने में आपकी सहायता कर सकते हैं और प्रक्रिया में अलर्ट को खारिज कर सकते हैं।"
@@ -3840,7 +3846,7 @@
         "एन्क्रिप्ट किया खोज डाटा साफ करें"
       ],
       "Clearing browser data will clear the search index on this device. All calendar events would need to be re-indexed again to use the search functionality.": [
-        "ब्राउज़र डेटा साफ़ करने से इस डिवाइस पर खोज अनुक्रमणिका साफ़ हो जाएगी। खोज कार्यक्षमता का उपयोग करने के लिए सभी कैलेंडर ईवेंट को फिर से अनुक्रमित करने की आवश्यकता होगी।"
+        "ब्राउज़र डेटा को साफ़ करने से इस उपकरण पर खोज सूचकांक साफ हो जाएगा। \"खोज\" का उपयोग करने के लिए सभी कैलेंडर घटनाएँ पुनः सूचकांकित करने की आवश्यकता होगी।"
       ],
       "Clears browser data related to the encrypted search.": [
         "एन्क्रिप्टेड खोज से संबंधित ब्राउज़र डेटा साफ़ करता है।"
@@ -3852,7 +3858,7 @@
         "बाहर निकलने के लिए इस स्क्रीन को बंद करें।"
       ],
       "Country code": [
-        "देश कोड"
+        "देश का कोड"
       ],
       "Create ${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } नया कैलेंडर बनाएं",
@@ -3904,7 +3910,7 @@
         "विशेष सर्वर"
       ],
       "Discard changes?": [
-        "परिवर्तन निरस्त करे?"
+        "परिवर्तन रद्द करे?"
       ],
       "Discover ProtectBuy logo": [
         "ProtectBuy लोगो देखें"
@@ -4074,7 +4080,7 @@
         "और जानें"
       ],
       "Link copied to clipboard": [
-        "लिंक को क्लिपबोर्ड पर कॉपी किया गया"
+        "लिंक क्लिपबोर्ड पर कॉपी किया गया"
       ],
       "Link created": [
         "लिंक बनाया गया"
@@ -4092,13 +4098,13 @@
         "इवेंट लोड हो रहा है"
       ],
       "Loading events": [
-        "इवेंट लोड हो रहा है"
+        "कार्यक्रम लोड हो रहा है"
       ],
       "Low Priority": [
         "निम्न प्राथमिकता"
       ],
       "Manage your calendars": [
-        "अपने कैलेंडर प्रबंधित करें"
+        "अपने कैलेंडर को प्रबंधित करें"
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode लोगो"
@@ -4143,7 +4149,7 @@
         "कोई परिणाम नहीं मिला"
       ],
       "None of the participants can be notified about your changes:": [
-        "किसी भी भागीदार को आपके परिवर्तनों के बारे में सूचित नहीं किया जा सकता है:"
+        "आपके परिवर्तनों के बारे में किसी भी प्रतिभागी को सूचित नहीं किया जा सकता:"
       ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "अपलोड की गई चाबीयों में से कोई भी इन्क्रिप्शन के लिए मान्य नहीं है। इस पते पे संदेश भेजने के लिए, कृपया एक मान्य चाबी अपलोड करे या \"संदेश एन्क्रिप्ट करें\" को अक्षम करें।"
@@ -4155,7 +4161,7 @@
         "संगठन में विशेष सर्वरों की संख्या"
       ],
       "Occurrences previously updated by the organizer will be kept, but some of your answers will be lost.": [
-        "घटनाएं जो आयोजक ने पहले अपडेट की थी रखी जाएंगी, लेकिन आपके कुछ जवाब खो जाएंगे।"
+        "आयोजक द्वारा पहले से अपडेट की गई घटनाएँ बनी रहेंगी, लेकिन आपके कुछ उत्तर खो जाएंगे।"
       ],
       "Occurrences previously updated by the organizer will be kept.": [
         "घटनाएं जो आयोजक ने पहले अपडेट की थी रखी जाएंगी"
@@ -4200,7 +4206,7 @@
         "कृपया ग्रुप बनाने के लिए एक नाम और एक ईमेल पता दें।"
       ],
       "Please remove the duplicates and try again.": [
-        "कृपया डुप्लीकेट हटाएं और फिर से कोशिश करें."
+        "कृपया डुप्लीकेट हटाएं और फिर से कोशिश करें।"
       ],
       "Please select the folders you would like to import:": [
         "कृपया उन फ़ोल्डरों का चयन करें जिन्हें आप आयात करना चाहते हैं:"
@@ -4291,7 +4297,7 @@
         "उजागर की गई जानकारी किसी तिसरे-पक्ष से लीक हुई थी। आपकी ${ BRAND_NAME } खाता जानकारी सुरक्षित और एन्क्रिप्टेड बनी हुई है। ${ learnMoreLink }"
       ],
       "The following participants cannot be notified about your changes:": [
-        "निम्नलिखित प्रतिभागियों को आपके परिवर्तनों के बारे में सूचित नहीं किया जा सकता है:"
+        "निम्नलिखित प्रतिभागी आपके परिवर्तनों के बारे में सूचित नहीं किए जा सकते हैं:"
       ],
       "The organizer cannot be notified that you decline the invitation:": [
         "आयोजक को सूचित नहीं किया जा सकता है कि आपने आमंत्रण अस्वीकार कर दिया है:"
@@ -4306,10 +4312,10 @@
         "आयोजक ने इस सीरीज़ के कुछ इवेंट अपडेट किए है। इस तरह के बार-बार होने वाले इवेंट के लिए कैलेंडर बदलना अभी सपोर्ट नहीं किया जाता।"
       ],
       "The organizer of this event will be notified that you decline the invitation. Would you like to delete this event?": [
-        "इस कार्यक्रम के आयोजक को सूचित किया जाएगा कि आप आमंत्रण को अस्वीकार करते हैं। क्या आप इस घटना को हटाना चाहेंगे?"
+        "इस कार्यक्रम के आयोजक को सूचित किया जाएगा कि आप आमंत्रण को अस्वीकार करते हैं। क्या आप इस कार्यक्रम को हटाना चाहेंगे?"
       ],
       "The organizer of this event will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
-        "इस कार्यक्रम के आयोजक को सूचित नहीं किया जाएगा कि आप आमंत्रण को अस्वीकार करते हैं क्योंकि आप आमंत्रित पते से ईमेल नहीं भेज सकते हैं। क्या आप फिर भी इस ईवेंट को हटाना चाहेंगे?"
+        "इस कार्यक्रम के आयोजक को सूचित नहीं किया जाएगा कि आप आमंत्रण को अस्वीकार करते हैं क्योंकि आप आमंत्रित पते से ईमेल नहीं भेज सकते हैं। क्या आप फिर भी इस कार्यक्रम को हटाना चाहेंगे?"
       ],
       "The organizer of this series of events will be notified that you decline the invitation. Would you like to delete all the events in this series?": [
         "इस इवेंट के आयोजकों को सूचित किया जाएगा कि आप न्योते को अस्वीकार करते है। इस सीरीज़ के सभी इवेंट को मिटाएं?"
@@ -4327,7 +4333,7 @@
         "यह पता अक्षम है। इस पते पर भेजने में सक्षम होने के लिए, मालिक को पहले पते को सक्षम करना होगा।"
       ],
       "This event has been updated by the organizer. Would you like to change your answer only for this occurrence in this series?": [
-        "इस इवेंट को आयोजक ने अपडेट किया है। क्या आप सीरीज़ के सिर्फ इस घटना के लिए अपना जवाब बदलना चाहते हैं?"
+        "इस कार्यक्रम को आयोजक ने अपडेट किया है। क्या आप इस श्रृंखला में केवल इसी घटना के लिए अपना उत्तर बदलना चाहेंगे?"
       ],
       "This event has been updated by the organizer. Would you like to delete this event?": [
         "ये इवेंट आयोजक ने अपडेट किया है। क्या आप इस इवेंट को मिटाना चाहेंगे?"
@@ -4441,7 +4447,7 @@
         "इस सीरीज़ के सारे इवेंट को मिटाएं?"
       ],
       "Would you like to delete the event anyway?": [
-        "क्या आप फिर भी ईवेंट को हटाना चाहेंगे?"
+        "क्या आप फिर भी कार्यक्रम को हटाना चाहेंगे?"
       ],
       "Would you like to delete this event?": [
         "इवेंट मिटाएं?"
@@ -4527,22 +4533,22 @@
         "आप इस तिथि पर प्लस सर्वर और सुविधाओं तक पहुंच खो देंगे।"
       ],
       "You will lose all unsaved changes.": [
-        "आप सभी सहेजे गए परिवर्तनों को खो देंगे।"
+        "आप सभी असहेजित परिवर्तनों को खो देंगे।"
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "आपको अपने भुगतान को सत्यापित करने के लिए जल्द ही PayPal पर पुनर्निर्देशित किया जाएगा।"
       ],
       "You will update all the events in this series. Added and removed participants will be notified.": [
-        "आप इस सीरीज़ में सारे इवेंट अपडेट कर देंगे। जोड़े और हटाए गए प्रतिभागियों को सूचित किया जाएगा।"
+        "आप इस श्रृंखला के सभी कार्यक्रम को अपडेट करेंगे। जोड़े और हटाए गए प्रतिभागियों को सूचित किया जाएगा।"
       ],
       "You will update all the events in this series. An invitation will be sent to the event participants.": [
-        "आप इस सीरीज़ में सारे इवेंट अपडेट कर देंगे। इवेंट प्रतिभागियों को एक न्योता भेजा जाएगा।"
+        "आप इस श्रृंखला के सभी कार्यक्रम को अपडेट करेंगे। कार्यक्रम प्रतिभागियों को एक आमंत्रण भेजा जाएगा।"
       ],
       "You will update all the events in this series. Existent and added participants will be notified.": [
-        "आप इस सीरीज़ में सारे इवेंट अपडेट कर देंगे। मौजूदा और जोड़े गए प्रतिभागियों को सूचित किया जाएगा।"
+        "आप इस श्रृंखला के सभी कार्यक्रम को अपडेट करेंगे। मौजूदा और जोड़े गए प्रतिभागियों को सूचित किया जाएगा।"
       ],
       "You will update all the events in this series. Existent and removed participants will be notified.": [
-        "आप इस सीरीज़ में सारे इवेंट अपडेट कर देंगे। मौजूदा और हटाए गए प्रतिभागियों को सूचित किया जाएगा।"
+        "आप इस श्रृंखला के सभी कार्यक्रम को अपडेट करेंगे। मौजूदा और हटाए गए प्रतिभागियों को सूचित किया जाएगा।"
       ],
       "You will update all the events in this series. Existent, added and removed participants will be notified.": [
         "आप इस सीरीज़ में सारे इवेंट अपडेट कर देंगे। मौजूदा, जोड़े गए, और हटाए गए प्रतिभागियों को सूचित किया जाएगा।"
@@ -4578,7 +4584,7 @@
         "आपका पता अक्षम है। इवेंट रद्द होने का ईमेल इवेंट प्रतिभागीयों को नहीं भेजा जा सकता। फिर भी इस सीरीज़ के सारे इवेंट मिटाएं?"
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete this event anyway?": [
-        "आपका पता अक्षम कर दिया गया है। रद्दीकरण ईमेल ईवेंट प्रतिभागियों को नहीं भेजा जा सकता। क्या आप फिर भी इस ईवेंट को हटाना चाहेंगे?"
+        "आपका पता अक्षम कर दिया गया है। रद्दीकरण ईमेल कार्यक्रम प्रतिभागियों को नहीं भेजा जा सकता। क्या आप फिर भी इस कार्यक्रम को हटाना चाहेंगे?"
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "आपका डाटा ${ importedEmailAddressStrong } से आपके ${ BRAND_NAME } खाते पे आयात करने के लिए तैयार है।"
@@ -4654,7 +4660,7 @@
         "आपके कुछ कैलेंडर पहले बने इवेंट की जानकारी नहीं दिखाएगा।"
       ],
       "Your calendars will not show details of previously created events.": [
-        "आपका कैलेंडर पहले बने इवेंट का जानकारी नहीं दिखाएगा।"
+        "आपके कैलेंडर में पहले से बने कार्यक्रमों के विवरण दिखाए नहीं जाएंगे।"
       ]
     },
     "Info; reset calendar keys modal; part 2": {
@@ -4669,7 +4675,7 @@
     },
     "Info; reshare calendar modal; part 1": {
       "Calendar sharing was disabled following your recent password reset.": [
-        "आपके हाल के पासवर्ड बदलने की वजह से कैलेंडर शेयर करना बंद है।"
+        "हालही के पासवर्ड रीसेट के बाद कैलेंडर साझा करना अक्षम किया गया था।"
       ]
     },
     "Info; reshare calendar modal; part 2": {
@@ -6402,7 +6408,7 @@
         "अगला"
       ],
       "Start using ${ appName }": [
-        "${ appName } का उपयोग प्रारंभ करें"
+        "${ appName } का उपयोग शुरू करें"
       ]
     },
     "Onboarding Proton": {
@@ -7438,13 +7444,13 @@
     },
     "Tab subscription modal": {
       "For businesses": [
-        "बिज़नेस के लिए"
+        "व्यवसायों के लिए"
       ],
       "For families": [
         "परिवारों के लिए"
       ],
       "For individuals": [
-        "अकेले लोगों के लिए"
+        "व्यक्तिगत"
       ]
     },
     "Table header": {
@@ -7568,7 +7574,7 @@
         "इस इवेंट के बारे में और जानकारी जोड़े"
       ],
       "Add participants": [
-        "प्रतिभागियों को जोड़ें"
+        "प्रतिभागी जोड़ें"
       ],
       "Add some color to your day": [
         "अपने दिन में कुछ रंग भर दें"
@@ -7854,7 +7860,7 @@
         "डेटा पुनर्प्राप्त करें"
       ],
       "Remove participants": [
-        "प्रतिभागियों को हटा दें"
+        "प्रतिभागी हटाएं"
       ],
       "Report a problem": [
         "समस्या रिपोर्ट करें"
@@ -7869,7 +7875,7 @@
         "सहेजें"
       ],
       "Save changes": [
-        "परिवर्तनों को सुरक्षित करें"
+        "परिवर्तन सहेजें"
       ],
       "Select a day in the month": [
         "महीने में एक दिन चुनें"
@@ -7917,7 +7923,7 @@
         "इस सूचना को भेजने का तरीका चुनें"
       ],
       "Select when this event will stop happening": [
-        "चुनें कि यह ईवेंट कब होना बंद हो जाएगा"
+        "चुनें कि यह कार्यक्रम कब समाप्त होगा"
       ],
       "Select when you want this notification to be sent": [
         "चुनें कि आप यह सूचना कब भेजना चाहते हैं"
@@ -7929,7 +7935,7 @@
         "प्रतिक्रिया भेजें"
       ],
       "Send invitation": [
-        "निमंत्रण भेजना"
+        "आमंत्रण भेजें"
       ],
       "Settings": [
         "सेटिंग्स"
@@ -8096,7 +8102,7 @@
     },
     "Tooltip; share calendar modal ": {
       "Shared end-to-end encrypted": [
-        "शेयर किया शुरु-से-अंत तक एन्क्रिप्ट करके"
+        "एंड-टू-एंड एन्क्रिप्टेड साझा किया गया"
       ],
       "Shared end-to-end encrypted with verified contact": [
         "सत्यापित संपर्क के साथ शुरु-से-अंत तक एन्क्रिप्ट किये तरीके से शेयर किया"

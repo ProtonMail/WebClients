@@ -134,6 +134,9 @@
       "Dismiss": [
         "Skrýt"
       ],
+      "Download this CSV template": [
+        "Stáhnout tuto CSV šablonu"
+      ],
       "Edit": [
         "Upravit"
       ],
@@ -385,6 +388,9 @@
       ],
       "View item history": [
         "Zobrazit historii položky"
+      ],
+      "View older history": [
+        "Zobrazit starší historii"
       ],
       "Write us on Reddit": [
         "Napište nám na Reddit"
@@ -845,6 +851,12 @@
       "Admin": [
         "Správce"
       ],
+      "After inactivity, access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
+        "Po nečinnosti bude přístup k ${ PASS_APP_NAME } vyžadovat zadání PIN kódu pro odemknutí relace. Po třech neúspěšných pokusech budete odhlášeni."
+      ],
+      "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
+        "Po úspěšném importu vašich dat můžete z bezpečnostních důvodů smazat CSV soubor obsahující vaše hesla."
+      ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Alias \"${ item.aliasEmail }\" přesunut do koše - přestane přeposílat e-maily do vaší schránky"
       ],
@@ -866,6 +878,12 @@
       "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
         "Jste si jisti, že chcete přesunout všechny položky z \"${ fromVaultName }\" do \"${ toVaultName }\" ?"
       ],
+      "Are you sure you want to move items to \"${ name }\" ?": [
+        "Jste si jisti, že chcete přesunout položky do \"${ name }\" ?"
+      ],
+      "Are you sure you want to move the item to \"${ name }\" ?": [
+        "Jste si jisti, že chcete přesunou položku do \"${ name }\" ?"
+      ],
       "Auto-lock successfully disabled": [
         "Automatické zamykání bylo úspěšně deaktivováno"
       ],
@@ -874,6 +892,9 @@
       ],
       "Built in 2FA authenticator": [
         "Vestavěný autentizátor 2FA"
+      ],
+      "By default team members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
+        "Ve výchozím nastavení mohou členové týmu exportovat pouze ty trezory, jejichž jsou vlastníky. Pokud je tato možnost zapnutá, nebudou moci exportovat žádná data."
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "Může vytvářet, upravovat, mazat a exportovat položky v tomto trezoru."
@@ -911,6 +932,9 @@
       "Deleting \"${ payload.content.name }\"": [
         "Mazání \"${ payload.content.name }\""
       ],
+      "Didn't receive the code?": [
+        "Nedostali jste kód?"
+      ],
       "Drop file here to upload": [
         "Sem přetáhněte soubor pro nahrání"
       ],
@@ -929,8 +953,14 @@
       "Enter verification code. Digit ${ digit }.": [
         "Zadejte ověřovací kód. Číslice ${ digit }."
       ],
+      "Fill in the CSV with your data": [
+        "Vyplňte CSV vašimi daty"
+      ],
       "finance": [
         "finance"
+      ],
+      "Follow those steps to import your data with a generic CSV :": [
+        "Postupujte podle těchto kroků pro import vašich dat pomocí obecného CSV:"
       ],
       "For security reasons, your access needs to be confirmed": [
         "Z bezpečnostních důvodů musí být váš přístup potvrzen"
@@ -955,6 +985,9 @@
       ],
       "Import in progress:": [
         "Import probíhá:"
+      ],
+      "Import the CSV file below.": [
+        "CSV soubor importujte níže."
       ],
       "Imported ${ payload.total } item": [
         "Importována ${ payload.total } položka",
@@ -1070,8 +1103,14 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Přesouvání všech položek z \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its history": [
+        "Přesunutím položky do jiného trezoru se smaže její historie"
+      ],
       "Moving items": [
         "Přesouvání položek"
+      ],
+      "Moving items to another vault will erase their history": [
+        "Přesunutím položek do jiného trezoru se smaže jejich historie"
       ],
       "Moving items to trash": [
         "Přesouvání položek do koše"
@@ -1235,6 +1274,9 @@
       "The export will only contain vaults that you own.": [
         "Export bude obsahovat pouze vaše vlastní trezory."
       ],
+      "The exported file will be encrypted using PGP and requires a strong passphrase.": [
+        "Exportovaný soubor bude zašifrován pomocí PGP a vyžaduje silné heslo."
+      ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Odhalené informace unikly ze služby třetí strany. Informace vašeho účtu ${ BRAND_NAME } zůstaly v bezpečí a šifrované. ${ learnMoreLink }"
       ],
@@ -1253,8 +1295,14 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Tento export bude nešifrovaný a kdokoli s přístupem k exportovanému souboru bude moci zobrazit vaše hesla. Z bezpečnostních důvodů jej po ukončení používání odstraňte."
       ],
+      "This setting is disabled on the organization level": [
+        "Tato volba je na úrovni organizace deaktivována"
+      ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Tento trezor není v současné době s nikým sdílen. Pozvěte ostatní, se kterými chcete trezor sdílet."
+      ],
+      "This version will be added to the history as the newest version.": [
+        "Verze bude přidána do historie jako nejnovější verze."
       ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Chcete-li přenést data z jiného správce hesel, přejděte do správce hesel, exportujte data a poté je nahrajte do ${ PASS_APP_NAME }. Po importu dat exportovaný soubor smažte."
@@ -1304,11 +1352,17 @@
       "Vault \"${ share.content.name }\" was removed": [
         "Trezor \"${ share.content.name }\" byl odebrán"
       ],
+      "Verification code sent.": [
+        "Ověřovací kód byl odeslán."
+      ],
       "Viewer": [
         "Prohlížející"
       ],
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Máme potíže se synchronizací dat do místního úložiště. Ujistěte se prosím, že máte dostatek místa na disku, aby ${ PASS_SHORT_APP_NAME } mohl bez problémů fungovat."
+      ],
+      "We’ve sent a verification code to ${ email }. Please enter it below:": [
+        "Ověřovací kód jsme poslali na ${ email }. Zadejte jej prosím níže:"
       ],
       "You are about to create:": [
         "Chystáte se vytvořit:"
@@ -1471,6 +1525,9 @@
       "Date": [
         "Datum"
       ],
+      "Device": [
+        "Zařízení"
+      ],
       "Display": [
         "Zobrazení"
       ],
@@ -1560,6 +1617,9 @@
       ],
       "Last month": [
         "Minulý měsíc"
+      ],
+      "Last updated": [
+        "Naposledy aktualizováno"
       ],
       "Last week": [
         "Minulý týden"
@@ -1702,6 +1762,12 @@
       "Special characters (!&*)": [
         "Speciální znaky (!&*)"
       ],
+      "Status": [
+        "Stav"
+      ],
+      "Strong": [
+        "Silné"
+      ],
       "Suffix": [
         "Přípona"
       ],
@@ -1747,6 +1813,9 @@
       "Update": [
         "Aktualizovat"
       ],
+      "Used in": [
+        "Používá se v"
+      ],
       "Username": [
         "Uživatelské jméno"
       ],
@@ -1770,6 +1839,12 @@
       ],
       "View logs": [
         "Zobrazit logy"
+      ],
+      "Vulnerable": [
+        "Zranitelné"
+      ],
+      "Weak": [
+        "Slabé"
       ],
       "Websites": [
         "Webové stránky"
@@ -1950,11 +2025,29 @@
       "${ BRAND_NAME } addresses": [
         "${ BRAND_NAME } adresy"
       ],
+      "${ PASS_SHORT_APP_NAME } Monitor": [
+        "${ PASS_SHORT_APP_NAME } Monitor"
+      ],
+      "Account protection": [
+        "Ochrana účtu"
+      ],
       "Auto-lock update": [
         "Aktualizace automatického uzamčení"
       ],
+      "Breach detected": [
+        "Zjištěny úniky informací"
+      ],
+      "Breaches": [
+        "Úniky informací"
+      ],
+      "Breaches detected for": [
+        "Zjištěny úniky informací pro"
+      ],
       "Confirm PIN code": [
         "Potvrdit PIN kód"
+      ],
+      "Confirm your email": [
+        "Potvrďte svůj e-mail"
       ],
       "Create a vault": [
         "Vytvořit trezor"
@@ -1967,6 +2060,12 @@
       ],
       "Current version": [
         "Aktuální verze"
+      ],
+      "Custom email monitoring": [
+        "Sledování vlastního e-mailu"
+      ],
+      "Dark Web Monitoring": [
+        "Sledování Dark webu"
       ],
       "Delete vault \"${ vaultName }\" ?": [
         "Smazat trezor \"${ vaultName }\"?"
@@ -1989,6 +2088,9 @@
       "Enter your PIN": [
         "Zadejte svůj PIN"
       ],
+      "Excluded items": [
+        "Vyloučené položky"
+      ],
       "Get Started": [
         "Začínáme"
       ],
@@ -2009,6 +2111,9 @@
       ],
       "Import your data": [
         "Importovat vaše data"
+      ],
+      "Inactive 2FA": [
+        "Neaktivní 2FA"
       ],
       "Install extension": [
         "Nainstalovat rozšíření"
@@ -2046,6 +2151,12 @@
       "Move items?": [
         "Přesunout položky?"
       ],
+      "No excluded items": [
+        "Žádné vyloučené položky"
+      ],
+      "No inactive 2FAs": [
+        "Žádné neaktivní 2FA"
+      ],
       "No items selected": [
         "Žádné vybrané položky"
       ],
@@ -2057,6 +2168,12 @@
       ],
       "Password": [
         "Heslo"
+      ],
+      "Password Health": [
+        "Síla hesla"
+      ],
+      "Pause monitoring?": [
+        "Pozastavit sledování?"
       ],
       "Pending access to the shared data": [
         "Čekání na přístup ke sdíleným datům"
@@ -2070,8 +2187,20 @@
       "Recommended actions": [
         "Doporučené akce"
       ],
+      "Remove email address?": [
+        "Odebrat e-mailovou adresu?"
+      ],
+      "Resolved breaches": [
+        "Vyřešené úniky informací"
+      ],
       "Restore this version?": [
         "Obnovit tuto verzi?"
+      ],
+      "Resume monitoring?": [
+        "Obnovit sledování?"
+      ],
+      "Reused passwords": [
+        "Opakovaně použitá hesla"
       ],
       "Review and share": [
         "Zkontrolovat a sdílet"
@@ -2081,6 +2210,12 @@
       ],
       "Set access level": [
         "Nastavit úroveň přístupu"
+      ],
+      "Set up 2FA for better security": [
+        "Nastavte 2FA pro lepší zabezpečení"
+      ],
+      "Set up 2FA for more security": [
+        "Nastavte 2FA pro větší zabezpečení"
       ],
       "Settings": [
         "Nastavení"
@@ -2117,6 +2252,12 @@
       ],
       "Want to learn more?": [
         "Chcete se dozvědět více?"
+      ],
+      "Weak password": [
+        "Slabé heslo"
+      ],
+      "Weak passwords": [
+        "Slabá hesla"
       ],
       "What is an alias?": [
         "Co je alias?"
@@ -2191,6 +2332,9 @@
       "Duplicate email addresses.": [
         "Duplicitní e-mailové adresy."
       ],
+      "Email is required": [
+        "Je vyžadován e-mail"
+      ],
       "Empty note": [
         "Prázdná poznámka"
       ],
@@ -2200,8 +2344,17 @@
       "Expiration Date is not in the format MM/YY": [
         "Datum konce platnosti není ve formátu MM/RR"
       ],
+      "Failed to load breaches.": [
+        "Nelze načíst úniky informací."
+      ],
       "Invalid alias prefix": [
         "Nesprávná předpona aliasu"
+      ],
+      "Invalid code": [
+        "Neplatný kód"
+      ],
+      "Invalid email": [
+        "Neplatný e-mail"
       ],
       "Invalid email addresses.": [
         "Neplatné e-mailové adresy."
@@ -2266,6 +2419,9 @@
       "The alias prefix cannot be longer than 40 characters": [
         "Předpona aliasu nesmí být delší než 40 znaků"
       ],
+      "This email address will no longer be monitored for data breaches.": [
+        "Tato e-mailová adresa již nebude sledována v unicích informací."
+      ],
       "Title is required": [
         "Název je povinný"
       ],
@@ -2283,6 +2439,9 @@
       ],
       "Vault name is required": [
         "Název trezoru je povinný"
+      ],
+      "Verification code is required": [
+        "Je vyžadován ověřovací kód"
       ],
       "You cannot create more vaults than your subscription allows.": [
         "Nemůžete vytvořit více trezorů, než umožňuje vaše předplatné."

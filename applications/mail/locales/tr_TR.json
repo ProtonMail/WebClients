@@ -346,9 +346,6 @@
       "Dismiss": [
         "Yok say"
       ],
-      "Don't know your password?": [
-        "Parolanızı bilmiyor musunuz?"
-      ],
       "Done": [
         "Tamam"
       ],
@@ -362,7 +359,7 @@
         "${ attachmentName } dosyasını indir"
       ],
       "Download Desktop App": [
-        "Masaüstü Uygulamasını İndir"
+        "Masaüstü uygulamasını indir"
       ],
       "Download now": [
         "Şimdi indir"
@@ -1132,6 +1129,10 @@
       ],
       "Trust": [
         "Güven"
+      ],
+      "Trust key": [
+        "Anahtara güven",
+        "Anahtarlara güven"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -3366,10 +3367,10 @@
     },
     "drivePlus2024: Action": {
       "Get the deal": [
-        "Teklifi al"
+        "Tekliften yararlanın"
       ],
       "Special Offer": [
-        "Özel Teklif"
+        "Özel teklif"
       ]
     },
     "driveplus2024: Deal details": {
@@ -5626,7 +5627,7 @@
         "İçerik: "
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
-        "Kuruluşunuzun marka kimliğini güçlendirerek kullanıcılarınız için daha istikrarlı bir çevrimiçi deneyim oluşturun."
+        "Kuruluşunuzun marka kimliğini güçlendirerek kullanıcılarınız için daha kararlı bir çevrim içi deneyim sağlayın."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ücretsiz bir tarifeye geçtiğinizde, gelecekte yeniden ücretli tarifeye geçseniz bile bu ek faydaları kalıcı olarak kaybedersiniz."
@@ -8765,7 +8766,7 @@
         "Birden çok kasa ile ögeleri gruplayın"
       ],
       "Passkeys supported": [
-        "Geçiş anahtarları desteklenmektedir"
+        "Geçiş anahtarları destekleniyor"
       ],
       "Password-protected Emails": [
         "Parola korumalı e-postalar"
@@ -9900,9 +9901,6 @@
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel **kullanımda** ve hesabınızı koruyor."
-      ],
-      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLink }": [
-        "Bilgileriniz en az bir verilerin ele geçirilmesi olayında görüldü. Ayrıntıları görmek ve önlem almak için ${ DARK_WEB_MONITORING_NAME } özelliğini açın. ${ learnMoreLink }"
       ]
     },
     "Select files": {
@@ -10676,25 +10674,25 @@
         "ve 15 ücretli özellik daha"
       ],
       "Automatic email forwarding ${ strongText }": [
-        "Otomatik e-posta iletisi ${ strongText }"
+        "Otomatik e-posta iletme ${ strongText }"
       ],
       "Data breach alerts ${ strongArgument }": [
-        "Veri ihlali uyarısı ${ strongArgument }"
+        "Verilerin ele geçirilmesi uyarıları ${ strongArgument }"
       ],
       "Desktop app": [
         "Masaüstü uygulaması"
       ],
       "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ücretli bir tarifeye geçiş yaparak interneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
+        "Ücretli bir tarifeye geçerek İnterneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
       ],
       "No ads or tracking": [
-        "Reklamlar ve izleyiciler yok"
+        "Reklam veya izleme yok"
       ],
       "Short @pm.me email address": [
         "Kısa @pm.me e-posta adresi"
       ],
       "Support our mission": [
-        "Misyonumuzu destekleyin"
+        "Amacımızı destekleyin"
       ],
       "Upgrade": [
         "Yükselt"
@@ -10703,10 +10701,10 @@
         "Verimliliğinizi artırın"
       ],
       "We don't sell your data": [
-        "Verilerinizi satmıyoruz"
+        "Verilerinizi satmayız"
       ],
       "Your privacy is our mission": [
-        "Gizliliğiniz bizim misyonumuzdur"
+        "Amacımız gizliliğinizi sağlamaktır"
       ]
     },
     "Subscription renewal state": {
@@ -11793,7 +11791,7 @@
         "Oturum açın ve erişim izni verin"
       ],
       "Sign in with 2FA": [
-        "2 adımlı doğrulama ile oturum a"
+        "2 adımlı doğrulama ile oturum aç"
       ],
       "Sign out": [
         "Oturumu kapat"

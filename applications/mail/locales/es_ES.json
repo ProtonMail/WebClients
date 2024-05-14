@@ -12,6 +12,26 @@
         "Se ha detenido el reenvío de correo"
       ]
     },
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } y ${ remainingCount } potenciales filtraciones fueron detectadas. Activa ${ DARK_WEB_MONITORING_NAME } para ver los detalles y tomar acciones. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } y otra potencial filtración fueron detectadas. Activa ${ DARK_WEB_MONITORING_NAME } para ver los detalles y tomar acciones. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Una potencial filtración de ${ name } fue detectada. Activa ${ DARK_WEB_MONITORING_NAME } para ver los detalles y tomar acciones. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Una potencial filtración de ${ name } fue detectada. Activa ${ DARK_WEB_MONITORING_NAME } para ver los detalles y tomar acciones. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Una potencial filtración desde ${ name } fue detectada. Activa ${ DARK_WEB_MONITORING_NAME } para ver los detalles. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Tu información fue encontrada en al menos una filtración de datos. Activa ${ DARK_WEB_MONITORING_NAME } para ver los detalles y tomar acciones. ${ link }"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "Tienda ${ BRAND_NAME }"
@@ -260,6 +280,9 @@
       "Copy password to clipboard": [
         "Copiar contraseña al portapapeles"
       ],
+      "Copy version number to clipboard": [
+        "Copiar el número de versión en el portapapeles"
+      ],
       "Create a new contact group": [
         "Crear un grupo de contactos"
       ],
@@ -345,9 +368,6 @@
       ],
       "Dismiss": [
         "Descartar"
-      ],
-      "Don't know your password?": [
-        "¿Has olvidado tu contraseña?"
       ],
       "Done": [
         "Hecho"
@@ -450,6 +470,9 @@
       ],
       "Font": [
         "Fuente"
+      ],
+      "Forgot password?": [
+        "¿Contraseña olvidada?"
       ],
       "Forward as attachment": [
         "Reenviar como adjunto"
@@ -1132,6 +1155,10 @@
       ],
       "Trust": [
         "Confiar"
+      ],
+      "Trust key": [
+        "Confiar clave",
+        "Confiar claves"
       ],
       "Trust public key": [
         "Confiar en la clave pública"
@@ -6788,6 +6815,9 @@
       "Version ${ appVersion }": [
         "Versión ${ appVersion }"
       ],
+      "Version number successfully copied to clipboard": [
+        "El número de versión fue copiado en el portapapeles."
+      ],
       "Visa Secure logo": [
         "Logo de Visa Secure"
       ],
@@ -9937,6 +9967,15 @@
       ]
     },
     "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } y ${ remainingCount } potenciales filtraciones fueron detectadas. Active ${ DARK_WEB_MONITORING_NAME } para ver los detalles. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } y otra potencial filtración fueron detectadas. Activa ${ DARK_WEB_MONITORING_NAME } para ver los detalles. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Una potencial filtración de ${ name } fue detectada. Activa ${ DARK_WEB_MONITORING_NAME } para ver más detalles. ${ link }"
+      ],
       "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
         "Recibe notificaciones si tu contraseña u otro dato fue filtrado desde un servicio de terceros. ${ learnMoreLink }"
       ],
@@ -9946,8 +9985,8 @@
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel está **activo** y protegiendo tu cuenta."
       ],
-      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLink }": [
-        "Tus datos han sido encontrados en al menos una vulneración de datos. Activa la función ${ DARK_WEB_MONITORING_NAME } para ver los detalles y tomar acciones. ${ learnMoreLink }"
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Tu información fue encontrada en al menos una filtración de datos. Activa ${ DARK_WEB_MONITORING_NAME } para ver los detalles. ${ link }"
       ]
     },
     "Select files": {

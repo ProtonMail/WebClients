@@ -172,6 +172,9 @@
       "Copy link": [
         "Link kopieren"
       ],
+      "Copy version number to clipboard": [
+        "Versionsnummer in die Zwischenablage kopieren"
+      ],
       "Create": [
         "Erstellen"
       ],
@@ -231,9 +234,6 @@
       "Dismiss": [
         "Verwerfen"
       ],
-      "Don't know your password?": [
-        "Weißt du dein Passwort nicht?"
-      ],
       "Done": [
         "Fertig"
       ],
@@ -279,6 +279,9 @@
       "Export contacts": [
         "Kontakte exportieren"
       ],
+      "Forgot password?": [
+        "Passwort vergessen?"
+      ],
       "Forward as attachment": [
         "Als Anhang weiterleiten"
       ],
@@ -296,6 +299,9 @@
       ],
       "Go to panel ${ index }": [
         "Seitenleiste ${ index } öffnen"
+      ],
+      "Go to settings": [
+        "Einstellungen öffnen"
       ],
       "Got it": [
         "Verstanden"
@@ -450,11 +456,11 @@
       "Not now": [
         "Nicht jetzt"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME }-Einstellungen öffnen"
@@ -2371,6 +2377,9 @@
       "Availability unknown": [
         "Verfügbarkeit unbekannt"
       ],
+      "Better organize your day, track your time, and prioritize tasks. Color-code your calendar with custom event colors.": [
+        "Organisiere deinen Tag besser, verfolge deine Zeit und priorisiere Aufgaben. Passe deinen Kalender mit benutzerdefinierten Terminfarben an."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Kontakte werden entschlüsselt… Dies kann einige Minuten dauern. Wenn der Prozess abgeschlossen ist, kannst du die Datei mit allen deinen exportierten Kontakten herunterladen."
       ],
@@ -2469,11 +2478,32 @@
       "Bugs or quality issue": [
         "Fehler oder Qualitätsprobleme"
       ],
+      "I do not wish to share": [
+        "Das möchte ich nicht sagen"
+      ],
+      "I found a cheaper VPN": [
+        "Ich habe ein günstigeres VPN gefunden"
+      ],
+      "I found a VPN with better features": [
+        "Ich habe ein VPN mit besseren Funktionen gefunden"
+      ],
+      "I have not managed to connect": [
+        "Ich habe es nicht geschafft, mich zu verbinden"
+      ],
+      "I only needed a VPN short-term": [
+        "Ich brauchte nur kurzzeitig ein VPN"
+      ],
       "I use a different ${ BRAND_NAME } account": [
         "Ich verwende ein anderes ${ BRAND_NAME }-Konto"
       ],
+      "It doesn't do what I need": [
+        "Es macht nicht das, was ich brauche"
+      ],
       "Missing feature(s)": [
         "Fehlende Funktion(en)"
+      ],
+      "Other reason (please comment)": [
+        "Anderer Grund (bitte angeben)"
       ],
       "Subscription is too expensive": [
         "Das Abonnement ist zu teuer"
@@ -2483,6 +2513,9 @@
       ],
       "Temporary need, may come back in the future": [
         "Nur vorübergehender Bedarf, könnte es aber in Zukunft erneut benötigen"
+      ],
+      "The VPN is too slow": [
+        "Das VPN ist zu langsam"
       ]
     },
     "Downgrade modal exit survey title": {
@@ -3718,6 +3751,9 @@
       "Contacts": [
         "Kontakte"
       ],
+      "Custom recurrence": [
+        "Benutzerdefinierte Wiederholung"
+      ],
       "Name": [
         "Name"
       ],
@@ -4212,6 +4248,9 @@
       ],
       "Billing cycle: ${ text }": [
         "Abrechnungszeitraum: ${ text }"
+      ],
+      "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
+        "Stärke die Markenidentität deines Unternehmens und schaffe ein konsistentes Online-Erlebnis für deine Benutzer."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Durch den Wechsel auf das kostenlose Abonnement verlierst du diese Leistungen dauerhaft, auch wenn du in Zukunft wieder auf ein kostenpflichtiges Abonnement umsteigst."
@@ -4822,6 +4861,9 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Die Verifizierung öffnet einen neuen Tab — bitte deaktiviere daher alle Pop-up-Blocker. Dein Konto wird nicht belastet. Jeder Betrag, der zur Verifizierung der Karte verwendet wird, wird sofort zurückerstattet."
+      ],
+      "Version number successfully copied to clipboard": [
+        "Versionsnummer erfolgreich in die Zwischenablage kopiert"
       ],
       "Visa Secure logo": [
         "Visa Secure Logo"
@@ -6366,6 +6408,12 @@
       "Organize items with multiple vaults": [
         "Strukturiere Einträge mit mehreren Tresoren"
       ],
+      "Pass Monitor - premium features": [
+        "Pass Monitor - Premiumfunktionen"
+      ],
+      "Passkeys supported": [
+        "Passkeys unterstützt"
+      ],
       "Password-protected Emails": [
         "Passwortgeschützte E-Mails"
       ],
@@ -6438,6 +6486,9 @@
       ],
       "Unlimited devices": [
         "Unbegrenzte Geräte"
+      ],
+      "Unlimited devices and aliases": [
+        "Unbegrenzte Geräte und Aliasse"
       ],
       "Unlimited filters": [
         "Unbegrenzte Anzahl von Filtern"
@@ -7181,6 +7232,18 @@
         "Teilnehmerliste vollständig anzeigen"
       ]
     },
+    "pass_signup_2023: Info": {
+      "Secure sharing with ${ n } vault": [
+        "Sicheres Teilen mit ${ n } Tresor",
+        "Sicheres Teilen mit ${ n } Tresoren"
+      ],
+      "Secure sharing with multiple vaults": [
+        "Sicheres Teilen mit mehreren Tresoren"
+      ],
+      "Secure vault sharing": [
+        "Sicheres Teilen von Tresoren"
+      ]
+    },
     "passwordless": {
       "Non-private users can be promoted to admin when they have setup keys": [
         "Nicht-private Benutzer können zu Administratoren befördert werden, wenn sie Setup-Schlüssel haben"
@@ -7523,9 +7586,6 @@
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel ist **aktiv** und schützt dein Konto."
-      ],
-      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLink }": [
-        "Deine Informationen wurden bei mindestens einem Datenleck gefunden. Schalte ${ DARK_WEB_MONITORING_NAME } ein, um Details anzuzeigen und Maßnahmen zu ergreifen. ${ learnMoreLink }"
       ]
     },
     "Select files": {
@@ -7985,6 +8045,12 @@
       ]
     },
     "Spotlight": {
+      "Color-code your calendar to better organize your day, track your time, and more.": [
+        "Passe deinen Kalender mit Farben an, um deinen Tag besser zu organisieren, deine Zeit zu erfassen und vieles mehr."
+      ],
+      "Custom event colors": [
+        "Benutzerdefinierte Terminfarben"
+      ],
       "Get up to ${ credits } in credits.": [
         "Erhalte bis zu ${ credits } als Guthaben."
       ],
@@ -8192,14 +8258,29 @@
       "Desktop app": [
         "Desktop-App"
       ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hilf uns, das Internet für alle sicher und privat zu halten. Upgrade auf ein kostenpflichtiges Abonnement."
+      ],
+      "No ads or tracking": [
+        "Keine Werbung oder Tracking"
+      ],
       "Short @pm.me email address": [
         "Kurze @pm.me-E-Mail-Adresse"
+      ],
+      "Support our mission": [
+        "Unterstütze unsere Mission"
       ],
       "Upgrade": [
         "Upgraden"
       ],
+      "Upgrade your productivity": [
+        "Steigere deine Produktivität"
+      ],
       "We don't sell your data": [
         "Wir verkaufen deine Daten nicht"
+      ],
+      "Your privacy is our mission": [
+        "Deine Privatsphäre ist unsere Mission"
       ]
     },
     "Subscription renewal state": {
@@ -8555,6 +8636,9 @@
       ],
       "Account security": [
         "Kontosicherheit"
+      ],
+      "Add a custom logo": [
+        "Benutzerdefiniertes Logo hinzufügen"
       ],
       "Add another notification to remind you of this event": [
         "Weitere Benachrichtigung hinzufügen, um dich an diesen Termin zu erinnern"

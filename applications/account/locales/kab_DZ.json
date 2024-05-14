@@ -4557,6 +4557,11 @@
         "Aḥric seg ugbur n uwitay-ik·im ur yettusefrak ara rnu ur d-yettwaktar ara."
       ]
     },
+    "info": {
+      "Key ${ fingerprint } has already been uploaded": [
+        "Tasarut ${ fingerprint } tesiliḍ-tt yakan"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } t•yesra tasiregt-ik•im ɣer ${ enableDesktopNotifications }."
@@ -5920,11 +5925,6 @@
         "Amulteɣ-inek·m yettwasefrek s ɣur Mozilla. Ttxil-k·m nermes tallalt n Mozilla."
       ]
     },
-    "info": {
-      "Key ${ fingerprint } has already been uploaded": [
-        "Tasarut ${ fingerprint } tesiliḍ-tt yakan"
-      ]
-    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Mi yermed, ikaramen isnawanen ttawin ini n ukaram agejdan."
@@ -7281,9 +7281,6 @@
       ],
       "Request an invite": [
         "Suter tinubga"
-      ],
-      "Reset password": [
-        "Ales awennez n wawal uffir"
       ],
       "Set email address": [
         "Sbadu tansa n yimayl"

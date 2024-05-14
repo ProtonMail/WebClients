@@ -158,6 +158,9 @@
       "Edit vault": [
         "Kluis bewerken"
       ],
+      "Enable Dark Web Monitoring": [
+        "Dark Web Monitoring inschakelen"
+      ],
       "Exclude from monitoring": [
         "Uitsluiten van controle"
       ],
@@ -479,8 +482,14 @@
         "${ total } andere login gebruikt hetzelfde wachtwoord",
         "${ total } andere logins gebruiken hetzelfde wachtwoord"
       ],
+      "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
+        "2FA voegt een extra beveiligingslaag toe aan uw inloggegevens. ${ PASS_APP_NAME } maakt 2FA makkelijker door uw 2FA op te slaan en automatisch uw 2FA-codes in te vullen."
+      ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Een e-mailadres alias werkt als een e-mailadres, maar vermindert spam en houdt uw werkelijke e-mailadres en identiteit verborgen."
+      ],
+      "Change your passwords": [
+        "Uw wachtwoorden wijzigen"
       ],
       "Create unique passwords": [
         "Maak unieke wachtwoorden"
@@ -497,6 +506,12 @@
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Onze geavanceerde AI-gedreven beveiligingsoplossing ontworpen voor gebruikers die verhoogde bescherming zoeken voor hun accounts. ${ learnMoreLink }"
       ],
+      "Set up 2FA for more security": [
+        "2FA instellen voor meer beveiliging"
+      ],
+      "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
+        "Start monitoring voor datalekken gerelateerd aan accounts met uw e-mailadres en uw hide-my-email aliassen."
+      ],
       "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
         "Het dark web is een verborgen onderdeel van het internet waar gestolen persoonlijke informatie, zoals identiteiten, gekocht en verkocht kunnen worden."
       ],
@@ -506,8 +521,17 @@
       "This account is vulnerable, visit the service and change your password.": [
         "Dit account is kwetsbaar, bezoek de service en wijzig uw wachtwoord."
       ],
+      "This service offers 2FA. Enable it for added account security.": [
+        "Deze service biedt 2FA aan. Schakel het in voor extra accountveiligheid."
+      ],
+      "With ${ PASS_SHORT_APP_NAME } Monitor, stay ahead of threats by getting instant alerts if your credentials are compromised. Unlock advanced security features and detailed logs to safeguard your online presence.": [
+        "Met ${ PASS_SHORT_APP_NAME } Monitor, blijf bedreigingen voor door onmiddellijke waarschuwingen te krijgen als uw inloggegevens in gevaar komen. Ontgrendel geavanceerde beveiligingsfuncties en gedetailleerde logs om uw online aanwezigheid te beschermen."
+      ],
       "Your email addresses were leaked in at least 1 data breach.": [
         "Je e-mailadressen zijn gelekt in ten minste 1 datalek."
+      ],
+      "Your personal info was leaked in a data breach of a third-party service.": [
+        "Uw persoonlijke informatie is uitgelekt in een data-inbreuk van een service van derden."
       ]
     },
     "Error": {
@@ -597,6 +621,12 @@
       "Failed resending invite.": [
         "Het opnieuw versturen van de uitnodiging mislukte."
       ],
+      "Failed to add email address": [
+        "E-mailadres toevoegen mislukt"
+      ],
+      "Failed to delete email address from monitoring": [
+        "Verwijderen van e-mailadres van monitoring mislukt"
+      ],
       "Failed to delete selected items": [
         "Fout bij het verwijderen van geselecteerde items"
       ],
@@ -605,6 +635,12 @@
       ],
       "Failed to edit user's access.": [
         "Het is niet gelukt om de toegang van de gebruiker aan te passen."
+      ],
+      "Failed to load breaches for this address": [
+        "Fout bij het laden van inbreuken voor dit adres"
+      ],
+      "Failed to load breaches for this email alias": [
+        "Fout bij het laden van inbreuken voor deze e-mailalias"
       ],
       "Failed to load item history": [
         "Fout bij het laden van item geschiedenis"
@@ -624,6 +660,12 @@
       "Failed to remove user's access.": [
         "Het is niet gelukt om de toegang van de gebruiker te verwijderen."
       ],
+      "Failed to resend verification for custom email": [
+        "Verificatie voor aangepaste e-mail kon niet opnieuw worden verzonden"
+      ],
+      "Failed to resolve breaches for this address": [
+        "Inbreuken voor dit adres oplossen is mislukt"
+      ],
       "Failed to restore items from trash": [
         "Fout bij het herstellen van items uit de prullenbak"
       ],
@@ -636,8 +678,17 @@
       "Failed to update monitoring settings": [
         "Bijwerken van monitoring-instellingen mislukt"
       ],
+      "Failed to verify email address": [
+        "E-mailadres verifiëren mislukt"
+      ],
       "Failed updating ${ PROTON_SENTINEL_NAME } setting": [
         "Bijwerken van ${ PROTON_SENTINEL_NAME } instelling mislukt"
+      ],
+      "Failed updating monitor flag of the item": [
+        "Monitor vlag van het item bijwerken is mislukt"
+      ],
+      "Failed updating monitoring status for this email address": [
+        "Bijwerken van de monitoring status voor dit e-mail adres mislukt"
       ],
       "File could not be parsed": [
         "Bestand kon niet verwerkt worden"
@@ -887,6 +938,12 @@
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } heeft uw ${ BRAND_NAME }-wachtwoord nodig om offline toegang te krijgen tot gegevens."
       ],
+      "${ PROTON_SENTINEL_NAME } successfully disabled": [
+        "${ PROTON_SENTINEL_NAME } succesvol uitgeschakeld"
+      ],
+      "${ PROTON_SENTINEL_NAME } successfully enabled": [
+        "${ PROTON_SENTINEL_NAME } succesvol ingeschakeld"
+      ],
       "${ row.breachCount } breach detected": [
         "${ row.breachCount } inbreuk gedetecteerd",
         "${ row.breachCount } inbreuken gedetecteerd"
@@ -899,6 +956,9 @@
       ],
       "Access successfully confirmed": [
         "Toegang succesvol bevestigd"
+      ],
+      "Add your custom email address to monitor :": [
+        "Voeg uw aangepast e-mailadres toe om te monitoren:"
       ],
       "Admin": [
         "Beheerder"
@@ -914,6 +974,12 @@
       ],
       "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
         "Aliassen met aangepaste domeinen worden niet gecontroleerd, voeg ze toe als een aangepaste e-mail voor controle."
+      ],
+      "All breaches for this address were resolved": [
+        "Alle inbreuken op dit adres zijn opgelost"
+      ],
+      "All current breaches will be marked as resolved. In case of future data breaches, you'll be notified.": [
+        "Alle huidige inbreuken worden gemarkeerd als opgelost. In het geval van toekomstige datalekken, wordt u op de hoogte gebracht."
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Alle items uit \"${ payload.content.name }\" succesvol verplaatst"
@@ -1004,6 +1070,15 @@
       ],
       "email": [
         "e-mail"
+      ],
+      "Email address successfully deleted from monitoring": [
+        "E-mailadres succesvol verwijderd uit monitoring"
+      ],
+      "Email address successfully excluded from monitoring": [
+        "E-mailadres succesvol uitgesloten van monitoring"
+      ],
+      "Email address successfully included in monitoring": [
+        "E-mailadres succesvol opgenomen in monitoring"
       ],
       "Emptying trash...": [
         "Prullenbak leegmaken..."
@@ -1157,6 +1232,9 @@
       ],
       "Monitor accounts": [
         "Accounts monitoren"
+      ],
+      "Monitoring settings successfully updated": [
+        "Monitoring instellingen succesvol bijgewerkt"
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "${ PASS_APP_NAME } is meer dan een wachtwoordbeheerder en beschermt je wachtwoord en je persoonlijke e-mailadres via e-mailaliassen. Aangedreven door dezelfde technologie achter ${ MAIL_APP_NAME }, zijn je gegevens end-to-end versleuteld en alleen toegankelijk voor jou."
@@ -1321,6 +1399,9 @@
       "Successfully synced all vaults": [
         "Alle kluizen succesvol gesynchroniseerd"
       ],
+      "Suggested": [
+        "Voorgesteld"
+      ],
       "Switch to another vault or create an item in this vault": [
         "Wissel naar een andere kluis of maak een item aan in deze kluis"
       ],
@@ -1332,6 +1413,9 @@
       ],
       "Thank you, the problem has been reported": [
         "Bedankt, het probleem werd gemeld"
+      ],
+      "The custom email will be sent to ${ href } for monitoring. No other data will be sent to HIBP.": [
+        "De aangepaste e-mail zal worden verzonden naar ${ href } om te monitoren. Er worden geen andere gegevens naar HIBP verzonden."
       ],
       "The export will only contain vaults that you own.": [
         "De export zal alleen kluizen bevatten die u heeft."
@@ -1458,8 +1542,14 @@
       "You will be notified of data breaches for these email addresses.": [
         "U wordt op de hoogte gebracht van datalekken voor deze e-mailadressen."
       ],
+      "You will be notified of data breaches for this email address.": [
+        "U zal op de hoogte worden gebracht van datalekken voor dit e-mailadres."
+      ],
       "You will no longer be notified of data breaches for these email addresses.": [
         "U wordt niet langer op de hoogte gehouden van datalekken voor deze e-mailadressen."
+      ],
+      "You will no longer be notified of data breaches for this email address.": [
+        "U zal niet langer op de hoogte worden gehouden van datalekken voor dit e-mailadres."
       ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "U gebruikt deze pincode om ${ PASS_APP_NAME } te ontgrendelen zodra deze automatisch wordt vergrendeld na een periode van inactiviteit."
@@ -1482,6 +1572,9 @@
       "${ config.options.wordCount } word": [
         "${ config.options.wordCount } woord",
         "${ config.options.wordCount } woorden"
+      ],
+      "${ PASS_SHORT_APP_NAME } version": [
+        "${ PASS_SHORT_APP_NAME } versie"
       ],
       "${ usageCount } login": [
         "${ usageCount } login",
@@ -1586,8 +1679,14 @@
       "Created": [
         "Aangemaakt"
       ],
+      "Created at": [
+        "Aangemaakt op"
+      ],
       "Date": [
         "Datum"
+      ],
+      "Device": [
+        "Apparaat"
       ],
       "Disable data export for team members": [
         "Gegevensexport uitschakelen voor teamleden"
@@ -2211,6 +2310,9 @@
       "Leave vault ?": [
         "De kluis verlaten?"
       ],
+      "Loading breaches...": [
+        "Inbreuken laden..."
+      ],
       "Low disk space": [
         "Weinig schijfruimte"
       ],
@@ -2234,6 +2336,9 @@
       ],
       "Move items?": [
         "Items verplaatsen?"
+      ],
+      "No excluded items": [
+        "Geen uitgesloten onderdelen"
       ],
       "No inactive 2FAs": [
         "Geen inactieve 2FAs"
@@ -2434,6 +2539,9 @@
       ],
       "Expiration Date is not in the format MM/YY": [
         "Vervaldatum is niet in het formaat MM/JJ"
+      ],
+      "Failed to load breaches.": [
+        "Kon inbreuken niet laden."
       ],
       "Invalid alias prefix": [
         "Ongeldig aliasvoorvoegsel"
