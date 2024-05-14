@@ -105,7 +105,7 @@ export const DirectSharingListInvitation = ({
     };
 
     return (
-        <div className="flex my-4 justify-space-between items-center">
+        <div className="flex my-4 justify-space-between items-center" data-testid="share-members">
             <div className={'flex items-center'}>
                 <Avatar color="weak" className="mr-2">
                     {getInitials(contactName || contactEmail)}
