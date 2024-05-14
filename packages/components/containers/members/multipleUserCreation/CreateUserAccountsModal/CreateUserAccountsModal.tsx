@@ -300,7 +300,7 @@ const CreateUserAccountsModal = ({
                     user,
                     api: getSilentApiWithAbort(api, signal),
                     getAddresses,
-                    organizationKey: organizationKey?.privateKey,
+                    getOrganizationKey,
                     keyTransparencyVerify,
                 });
 
