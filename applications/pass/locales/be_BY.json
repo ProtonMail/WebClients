@@ -4,6 +4,26 @@
     "language": "be_BY"
   },
   "contexts": {
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Выяўлены ${ name } і ${ remainingCount } іншыя(х) патэнцыяльныя(х) ўцечкі(ак). Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці і прыняць адпаведныя дзеянні. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Выяўлены ${ name } і 1 іншая патэнцыяльная ўцечка. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці і прыняць адпаведныя дзеянні. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Выяўлена патэнцыяльная ўцечка ${ name }. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці і прыняць адпаведныя дзеянні. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Выяўлена патэнцыяльная ўцечка ад ${ name }. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці і прыняць адпаведныя дзеянні. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Выяўлена патэнцыяльная ўцечка ад ${ name }. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Вашы звесткі былі знойдзены прынамсі ў адной уцечкі даных. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці і прыняць адпаведныя дзеянні. ${ link }"
+      ]
+    },
     "Action": {
       "Add": [
         "Дадаць"
@@ -159,7 +179,7 @@
         "Рэдагаваць сховішча"
       ],
       "Enable Dark Web Monitoring": [
-        "Уключыць назіранне за Dark Web"
+        "Уключыць Dark Web Monitoring"
       ],
       "Exclude from monitoring": [
         "Выключыць з назірання"
@@ -497,7 +517,7 @@
         "Стварэнне ўнікальнага пароля"
       ],
       "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
-        "Назіранне за Dark Web даступна з платным тарыфным планам. Палепшыце сваю падпіску, каб неадкладна атрымаць доступ да гэтай функцыі."
+        "Функцыя Dark Web Monitoring даступны з платным тарыфным планам. Палепшыце сваю падпіску, каб неадкладна атрымаць доступ да гэтай функцыі."
       ],
       "Get notified if your email, password or other personal data was leaked.": [
         "Атрымліваць апавяшчэнне, калі адбываецца ўцечка вашай электроннай пошты, пароля або іншых асабістых даных."
@@ -833,7 +853,7 @@
     },
     "Feature": {
       "Dark Web Monitoring": [
-        "Назіранне за Dark Web"
+        "Dark Web Monitoring"
       ],
       "Integrated 2FA authenticator": [
         "Інтэграваны аўтэнтыфікатар 2ФА"
@@ -1596,6 +1616,9 @@
         "${ config.options.wordCount } слоў",
         "${ config.options.wordCount } слоў"
       ],
+      "${ PASS_SHORT_APP_NAME } version": [
+        "Версія ${ PASS_SHORT_APP_NAME }"
+      ],
       "${ usageCount } login": [
         "${ usageCount } запіс уваходу",
         "${ usageCount } запісы ўваходу",
@@ -1704,8 +1727,14 @@
       "Created": [
         "Створана"
       ],
+      "Created at": [
+        "Створана"
+      ],
       "Date": [
         "Дата"
+      ],
+      "Device": [
+        "Прылада"
       ],
       "Disable data export for team members": [
         "Адключыць экспартаванне даных для ўдзельнікаў каманды"
@@ -2213,6 +2242,20 @@
         "Напішыце сваю нататку"
       ]
     },
+    "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Выяўлены ${ name } і ${ remainingCount } іншыя(х) патэнцыяльныя(х) ўцечкі(ак). Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Выяўлены ${ name } і 1 іншая патэнцыяльная ўцечка. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Выяўлена патэнцыяльная ўцечка ${ name }. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Вашы звесткі былі знойдзены прынамсі ў адной уцечцы даных. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці. ${ link }"
+      ]
+    },
     "Success": {
       "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
         "Сховішчы не могуць змяшчаць больш за ${ vault.targetMaxMembers } карыстальніка.",
@@ -2271,7 +2314,7 @@
         "Карыстальніцкія адрасы электроннай пошты"
       ],
       "Dark Web Monitoring": [
-        "Назіранне за Dark Web"
+        "Dark Web Monitoring"
       ],
       "Delete vault \"${ vaultName }\" ?": [
         "Выдаліць сховішча \"${ vaultName }\"?"

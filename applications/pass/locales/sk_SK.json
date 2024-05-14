@@ -1596,6 +1596,9 @@
         "${ config.options.wordCount } slov",
         "${ config.options.wordCount } slov"
       ],
+      "${ PASS_SHORT_APP_NAME } version": [
+        "Verzia ${ PASS_SHORT_APP_NAME }"
+      ],
       "${ usageCount } login": [
         "${ usageCount } prihlásenie",
         "${ usageCount } prihlásenia",
@@ -1704,8 +1707,14 @@
       "Created": [
         "Vytvorené"
       ],
+      "Created at": [
+        "Vytvorené"
+      ],
       "Date": [
         "Dátum"
+      ],
+      "Device": [
+        "Zariadenie"
       ],
       "Disable data export for team members": [
         "Zakázať export údajov členom tímu"
