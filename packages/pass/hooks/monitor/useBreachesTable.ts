@@ -52,17 +52,30 @@ const getCustomSuggestions = (data: MonitorAddress[], items: LoginItem[]): Monit
         .sort(sortOn('usageCount', 'DESC'));
 };
 
+/** Order should be :
+ * ¹ breached monitored items sorted by `breachCount` (¹)
+ * ² non-breached monitored items
+ * ³ paused items
+ * ⁴ unverified items */
 const getRowPriority = (row: MonitorTableRow) => {
-    if ('verified' in row && !row.verified) return -1;
-    if (row.breached || row.monitored) return 1;
-    if (!row.monitored) return 0;
+    if ('verified' in row && !row.verified) return -1; /* (⁴) */
+    if (!row.monitored) return 0; /* (³) */
+    if (row.breached) return (row.breachCount ?? 1) + 1; /* (¹) */
+    if (row.monitored) return 1; /* (²) */
+
     return -1;
 };
 
+export const sortMonitorTableRows = <T extends AddressType>(rows: MonitorTableRow<T>[]): MonitorTableRow<T>[] =>
+    rows.sort((a, b) => getRowPriority(b) - getRowPriority(a));
+
 const mapToRow = <T extends AddressType>(data: MonitorAddress<T>[], items: LoginItem[]): MonitorTableRow<T>[] =>
-    data
-        .map((entry) => ({ ...entry, usageCount: filterItemsByUsername(entry.email)(items).length }))
-        .sort((a, b) => getRowPriority(b) - getRowPriority(a));
+    sortMonitorTableRows(
+        data.map((entry) => ({
+            ...entry,
+            usageCount: filterItemsByUsername(entry.email)(items).length,
+        }))
+    );
 
 export const useBreachesTable = (type: AddressType) => {
     const { breaches, didLoad } = useMonitor();
