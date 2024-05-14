@@ -131,6 +131,7 @@ const SharingSettingsModal = ({
                     <div
                         className="flex flex-column justify-space-between gap-2  md:items-center md:gap-0 md:flex-row md:h-custom md:items-center "
                         style={{ '--h-custom': '2.25rem' }}
+                        data-testid="sharing-modal-settings-expirationSection"
                     >
                         <Label
                             htmlFor="expirationDateInputId"
@@ -154,6 +155,7 @@ const SharingSettingsModal = ({
                                 expiration={expiration}
                                 handleExpirationChange={setExpiration}
                                 placeholder={c('Placeholder').t`Set date`}
+                                data-testid="expiration-data-input"
                             />
                             <Toggle
                                 disabled={!havePublicSharedLink}
@@ -166,6 +168,7 @@ const SharingSettingsModal = ({
                     <div
                         className="mt-5 flex  flex-column justify-space-between gap-2 md:flex-row md:gap-0 md:items-center md:h-custom w-auto md:flex-nowrap md:items-center"
                         style={{ '--h-custom': '2.25rem' }}
+                        data-testid="sharing-modal-settings-passwordSection"
                     >
                         <Label
                             className={clsx(
@@ -186,7 +189,7 @@ const SharingSettingsModal = ({
                                 rootStyle={{ '--w-custom': '12.5rem' }}
                                 id="sharing-modal-password"
                                 as={PasswordInputTwo}
-                                data-testid="sharing-modal-password"
+                                data-testid="password-input"
                                 label={false}
                                 autoComplete="new-password"
                                 value={password}
@@ -212,8 +215,11 @@ const SharingSettingsModal = ({
                         </div>
                     </div>
                     <hr className="my-5" />
-                    <div className="flex flex-nowrap justify-space-between items-center">
-                        <div className="flex flex-column flex-1 p-0">
+                    <div className="flex flex-nowrap justify-space-between items-center"
+                    data-testid="share-modal-settings-deleteShareSection">
+                        <div className="flex flex-column flex-1 p-0"
+                        data-testid="delete-share-text"
+                        >
                             <span className="text-semibold">{c('Label').t`Stop sharing`}</span>
                             <span className="color-weak">{c('Label')
                                 .t`Erase this link and remove everyone with access`}</span>
@@ -223,6 +229,7 @@ const SharingSettingsModal = ({
                             shape="ghost"
                             color="danger"
                             onClick={handleStopSharing}
+                            data-testid="delete-share-button"
                         >{c('Action').t`Stop sharing`}</Button>
                     </div>
                 </ModalTwoContent>

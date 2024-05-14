@@ -138,6 +138,7 @@ export function SharingModal({ shareId: rootShareId, linkId, onClose, ...modalPr
                                                   modificationDisabled: !hasGeneratedPasswordIncluded,
                                               })
                                           }
+                                          data-testid="share-modal-settings"
                                       >
                                           <Icon name="cog-wheel" />
                                       </Button>

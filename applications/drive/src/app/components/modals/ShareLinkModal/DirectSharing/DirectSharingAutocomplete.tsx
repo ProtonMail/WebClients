@@ -71,6 +71,7 @@ export const DirectSharingAutocomplete = ({
                 iconTooltipTitle={inputItemAttributes?.iconTooltip}
                 onClick={(event) => event.stopPropagation()}
                 onRemove={() => onRemove(invitee.email)}
+                data-testid="submitted-addresses"
             />
         );
     });
@@ -107,6 +108,7 @@ export const DirectSharingAutocomplete = ({
                                 !!count && !hideFormActions && 'p-0 rounded-none',
                             ])}
                             placeholder={recipients.length && count ? '' : addressesInputText}
+                            data-testid="address-input-field"
                         />
                     }
                     items={items}

@@ -44,6 +44,7 @@ const Toggle = (
         <label
             className={clsx([children ? 'flex items-center flex-nowrap gap-2' : '', 'toggle-label', className])}
             htmlFor={id}
+            data-testid="toggle-switch"
             title={title}
         >
             <div
