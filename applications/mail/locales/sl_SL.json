@@ -352,9 +352,6 @@
       "Dismiss": [
         "Opusti"
       ],
-      "Don't know your password?": [
-        "Ne veste gesla?"
-      ],
       "Done": [
         "Opravljeno"
       ],
@@ -1140,6 +1137,12 @@
       ],
       "Trust": [
         "Zaupaj"
+      ],
+      "Trust key": [
+        "Zaupaj ključu",
+        "Zaupaj ključema",
+        "Zaupaj ključem",
+        "Zaupaj ključem"
       ],
       "Trust public key": [
         "Zaupaj javnemu ključu"
@@ -4254,7 +4257,7 @@
         "Urejen dogodek ni podprt."
       ],
       "Element": [
-        "Element"
+        "Predmet"
       ],
       "Encryption failed": [
         "Šifriranje ni uspelo"
@@ -6742,7 +6745,7 @@
         "Pri podpisu, uporabljenem za preverjanje kontaktnih podatkov, je prišlo do napake, ki je lahko posledica ponastavitve gesla."
       ],
       "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
-        "Ne morejo vam pošiljati nezaželene pošte, če ne poznajo vašega e-poštnega naslova. Zaščitite svoj nabiralnik z uporabo hide-my-email."
+        "Ne morejo vam pošiljati neželene pošte, če ne poznajo vašega e-poštnega naslova. Zaščitite svoj nabiralnik z uporabo hide-my-email."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Ta naslov je onemogočen. Za pošiljanje na ta naslov ga mora lastnik najprej omogočiti."
@@ -7500,7 +7503,7 @@
         "Premakni v Prejeto"
       ],
       "Move to Spam": [
-        "Premakni v nezaželeno pošto"
+        "Premakni v neželeno pošto"
       ],
       "Move to Trash": [
         "Premakni v smetnjak"

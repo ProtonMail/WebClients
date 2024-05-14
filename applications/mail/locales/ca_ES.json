@@ -12,6 +12,26 @@
         "El reenviament de correu s'ha aturat."
       ]
     },
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "S'han detectat ${ name } i ${ remainingCount } altres fuites potencials. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls i prendre mesures. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "S'han detectat ${ name } i una altra fuita potencial. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls i prendre mesures. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "S'ha detectat una possible fuita de ${ name }. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls i prendre mesures. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "S'ha detectat una possible fuita de ${ name }. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls i prendre mesures. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "S'ha detectat una possible fuita de ${ name }. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "S'ha trobat la vostra informació en almenys una fuita de dades. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls i prendre mesures. ${ link }"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "Botiga de ${ BRAND_NAME }"
@@ -345,9 +365,6 @@
       ],
       "Dismiss": [
         "Descarta"
-      ],
-      "Don't know your password?": [
-        "No sabeu la vostra contrasenya?"
       ],
       "Done": [
         "Fet"
@@ -1132,6 +1149,10 @@
       ],
       "Trust": [
         "De confiança"
+      ],
+      "Trust key": [
+        "Clau de confiança",
+        "Claus de confiança"
       ],
       "Trust public key": [
         "Confia en la clau pública"
@@ -9847,6 +9868,15 @@
       ]
     },
     "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "S'han detectat ${ name } i ${ remainingCount } altres fuites potencials. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "S'han detectat ${ name } i una altra fuita potencial. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "S'ha detectat una possible fuita de ${ name }. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls. ${ link }"
+      ],
       "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
         "Rebeu una notificació si la vostra contrasenya o altres dades s'han filtrat d'un servei de tercers. ${ learnMoreLink }"
       ],
@@ -9855,6 +9885,9 @@
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel està **actiu** i salvaguardant el vostre compte."
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "S'ha trobat la vostra informació en almenys una fuita de dades. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls. ${ link }"
       ]
     },
     "Select files": {
@@ -10410,6 +10443,9 @@
       ],
       "Schedule send": [
         "Programa l'enviament"
+      ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME } to get notified if your data was leaked from a third-party service.": [
+        "Activeu ${ DARK_WEB_MONITORING_NAME } per a rebre una notificació si les vostres dades s'han filtrat d'un servei de tercers."
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Per defecte, ara es carreguen les imatges i es bloca el seguiment per part de l'emissor. Això es pot canviar a ${ settingsLink }."
