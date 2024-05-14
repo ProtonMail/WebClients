@@ -45,7 +45,8 @@ export const useAddressBreaches = <T extends AddressType>(dto: AddressBreachDTO<
     }, []);
 
     return useMemo<BreachDetails>(() => {
-        const [active, resolved] = partition(req.data ?? [], ({ resolvedState }) => resolvedState < 3);
+        const data = req.loading ? [] : req.data ?? [];
+        const [active, resolved] = partition(data, ({ resolvedState }) => resolvedState < 3);
         return { loading: req.loading, active, resolved, usages };
     }, [req, usages]);
 };
