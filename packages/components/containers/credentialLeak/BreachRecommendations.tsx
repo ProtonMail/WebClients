@@ -77,15 +77,19 @@ const Action = ({ code, action, link }: ActionProps) => {
     );
 };
 
-// translator: full sentence is: Learn how to <stay safer online>
-const staySaferOnlineLink = (
-    <Href href={getKnowledgeBaseUrl('/dark-web-monitoring')} key="link">{c('Link').t`stay safer online`}</Href>
-);
-
 const BreachRecommendations = ({ actions, inModal = false }: Props) => {
     if (!actions) {
         return null;
     }
+
+    const staySaferOnlineLink = (
+        <Href href={getKnowledgeBaseUrl('/dark-web-monitoring')} key="link">
+            {
+                // translator: full sentence is: Learn how to <stay safer online>
+                c('Link').t`stay safer online`
+            }
+        </Href>
+    );
 
     return (
         <>
