@@ -312,11 +312,14 @@ const OrganizationSection = ({ app, organization }: Props) => {
                         <div className="w-full flex flex-nowrap gap-2">
                             {organizationIdentity.signatureAddress && (
                                 <div className="flex flex-nowrap items-center">
-                                    <div className="text-ellipsis">{organizationIdentity.signatureAddress}</div>
+                                    <div className="text-ellipsis" data-testid="organization-identity:address">
+                                        {organizationIdentity.signatureAddress}
+                                    </div>
                                     <div className="ml-0.5 shrink-0">
                                         {organizationIdentity.state.result ? (
                                             <Tooltip openDelay={0} title={organizationIdentity.state.result.label}>
                                                 <Icon
+                                                    data-testid="organization-identity:icon"
                                                     name={organizationIdentity.state.result.icon}
                                                     className={organizationIdentity.state.result.className}
                                                 />
