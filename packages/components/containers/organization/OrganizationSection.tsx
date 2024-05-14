@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Button, ButtonLike, InlineLinkButton } from '@proton/atoms';
+import { Button, ButtonLike, CircleLoader, InlineLinkButton } from '@proton/atoms';
 import { createPreAuthKTVerifier } from '@proton/components/containers';
 import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
 import useLoading from '@proton/hooks/useLoading';
@@ -27,12 +27,12 @@ import {
     ButtonGroup,
     Icon,
     Info,
-    InputFieldTwo,
     Label,
     Loader,
     PrimaryButton,
     Row,
     SettingsLink,
+    Tooltip,
     useAppLink,
     useModalState,
 } from '../../components';
@@ -57,6 +57,7 @@ import {
     UpgradeBanner,
 } from '../account';
 import AuthModal from '../password/AuthModal';
+import EditOrganizationIdentityModal from './EditOrganizationIdentityModal';
 import OrganizationNameModal from './OrganizationNameModal';
 import SetupOrganizationModal from './SetupOrganizationModal';
 import OrganizationLogoModal from './logoUpload/OrganizationLogoModal';
@@ -64,6 +65,7 @@ import OrganizationLogoRemovalModal from './logoUpload/OrganizationLogoRemovalMo
 import OrganizationLogoTipsModal from './logoUpload/OrganizationLogoTipsModal';
 import { OrganizationLogoUploadUpsellBanner } from './logoUpload/OrganizationLogoUploadUpsellBanner';
 import { useOrganizationTheme } from './logoUpload/useOrganizationTheme';
+import useOrganizationIdentity from './useOrganizationIdentity';
 
 interface Props {
     app: APP_NAMES;
@@ -82,6 +84,9 @@ const OrganizationSection = ({ app, organization }: Props) => {
     const [loading, withLoading] = useLoading();
     const ktActivation = useKTActivation();
     const authentication = useAuthentication();
+    const [editOrganizationIdentityProps, setEditOrganizationIdentityModal, renderEditOrganizationIdentityModal] =
+        useModalState();
+    const [editOrganizationNameProps, setEditOrganizationNameModal, renderEditOrganizationNameModal] = useModalState();
 
     const { createNotification } = useNotifications();
     const isPartOfFamily = hasFamily(subscription);
@@ -92,7 +97,8 @@ const OrganizationSection = ({ app, organization }: Props) => {
         useModalState();
 
     const organizationTheme = useOrganizationTheme();
-    const canAccessLightLabelling = organizationTheme.access;
+    const canAccessLightLabelling = organizationTheme.access && APP_NAME === APPS.PROTONACCOUNT;
+    const organizationIdentity = useOrganizationIdentity();
 
     if (!organization || !user || !subscription || !customDomains) {
         return <Loader />;
@@ -241,6 +247,7 @@ const OrganizationSection = ({ app, organization }: Props) => {
 
     const organizationName = organization.Name;
     const inputLabel = isPartOfFamily ? c('familyOffer_2023:Label').t`Family name` : c('Label').t`Organization name`;
+    const showOrganizationIdentity = !isPartOfFamily && organizationIdentity.enabled;
 
     return (
         <SettingsSection>
@@ -257,31 +264,90 @@ const OrganizationSection = ({ app, organization }: Props) => {
                     c('Info').t`The name will be visible to your users while they are signed in.`
                 )}
             </SettingsParagraph>
+
+            {renderEditOrganizationNameModal && (
+                <OrganizationNameModal organization={organization} {...editOrganizationNameProps} />
+            )}
             <SettingsLayout>
                 <SettingsLayoutLeft>
                     <Label htmlFor="organization-name-edit-button" className="text-bold pt-0 mb-2 md:mb-0">
                         {inputLabel}
                     </Label>
                 </SettingsLayoutLeft>
-                <SettingsLayoutRight className="w-full">
-                    <div className="w-full flex flex-nowrap gap-2">
-                        <InputFieldTwo readOnly className="md:mb-0" value={organizationName} />
-                        <div className="shrink-0">
-                            <Button
-                                id="organization-name-edit-button"
-                                color="norm"
-                                onClick={() => createModal(<OrganizationNameModal organization={organization} />)}
-                            >{c('Action').t`Edit`}</Button>
-                        </div>
+                <SettingsLayoutRight className="pt-2">
+                    <div className="flex flex-nowrap gap-2">
+                        {organizationName && <div className="text-ellipsis">{organizationName}</div>}
+                        <InlineLinkButton
+                            id="organization-name-edit-button"
+                            onClick={() => {
+                                setEditOrganizationNameModal(true);
+                            }}
+                            aria-label={c('Action').t`Edit organization name`}
+                        >
+                            {c('Action').t`Edit`}
+                        </InlineLinkButton>
                     </div>
                 </SettingsLayoutRight>
             </SettingsLayout>
 
-            <OrganizationLogoUploadUpsellBanner
-                organization={organization}
-                canAccessLightLabelling={canAccessLightLabelling}
-                isPartOfFamily={isPartOfFamily}
-            />
+            {renderEditOrganizationIdentityModal && (
+                <EditOrganizationIdentityModal
+                    signatureAddress={organizationIdentity.signatureAddress}
+                    {...editOrganizationIdentityProps}
+                />
+            )}
+            {showOrganizationIdentity && (
+                <SettingsLayout>
+                    <SettingsLayoutLeft>
+                        <Label htmlFor="organization-identity-edit-button" className="text-bold pt-0 mb-2 md:mb-0">
+                            {c('Label').t`Organization identity`}{' '}
+                            <Info
+                                title={c('Tooltip')
+                                    .t`This email address will be shown to all organization members when performing account management operations.`}
+                                className="mb-1"
+                            />
+                        </Label>
+                    </SettingsLayoutLeft>
+                    <SettingsLayoutRight className="pt-2 w-full">
+                        <div className="w-full flex flex-nowrap gap-2">
+                            {organizationIdentity.signatureAddress && (
+                                <div className="flex flex-nowrap items-center">
+                                    <div className="text-ellipsis">{organizationIdentity.signatureAddress}</div>
+                                    <div className="ml-0.5 shrink-0">
+                                        {organizationIdentity.state.result ? (
+                                            <Tooltip openDelay={0} title={organizationIdentity.state.result.label}>
+                                                <Icon
+                                                    name={organizationIdentity.state.result.icon}
+                                                    className={organizationIdentity.state.result.className}
+                                                />
+                                            </Tooltip>
+                                        ) : (
+                                            <CircleLoader />
+                                        )}
+                                    </div>
+                                </div>
+                            )}
+                            <InlineLinkButton
+                                id="organization-identity-edit-button"
+                                onClick={() => {
+                                    setEditOrganizationIdentityModal(true);
+                                }}
+                                aria-label={c('Action').t`Edit organization identity`}
+                            >
+                                {c('Action').t`Edit`}
+                            </InlineLinkButton>
+                        </div>
+                    </SettingsLayoutRight>
+                </SettingsLayout>
+            )}
+
+            {app === APPS.PROTONACCOUNT && (
+                <OrganizationLogoUploadUpsellBanner
+                    organization={organization}
+                    canAccessLightLabelling={canAccessLightLabelling}
+                    isPartOfFamily={isPartOfFamily}
+                />
+            )}
 
             {canAccessLightLabelling && (
                 <SettingsLayout>
