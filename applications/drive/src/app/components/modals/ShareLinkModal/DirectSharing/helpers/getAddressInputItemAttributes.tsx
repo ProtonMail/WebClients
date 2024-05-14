@@ -18,7 +18,11 @@ export const getAddressInputItemAttributes = ({ isLoading, error, email }: Share
         return {
             icon: (
                 <div className="flex items-center shrink-0 ml-2">
-                    <Icon name="exclamation-circle-filled" className="color-danger" />
+                    <Icon
+                        name="exclamation-circle-filled"
+                        className="color-danger"
+                        data-testid="invite-address-error"
+                    />
                 </div>
             ),
             iconTooltip: error.message,
@@ -28,7 +32,7 @@ export const getAddressInputItemAttributes = ({ isLoading, error, email }: Share
     return {
         icon: (
             <span className="inline-flex pl-2 shrink-0 my-auto">
-                <Icon size={4} name="lock-filled" className={'color-info'} />
+                <Icon size={4} name="lock-filled" className={'color-info'} data-testid="invite-address-ok" />
             </span>
         ),
         iconTooltip: c('Tooltip').t`Shared end-to-end encrypted`,
