@@ -347,6 +347,9 @@
       "Trash": [
         "Корзина"
       ],
+      "Try again.": [
+        "Повторите попытку."
+      ],
       "Unpin item": [
         "Открепить элемент"
       ],
@@ -401,6 +404,11 @@
       ],
       "Expand": [
         "Развернуть"
+      ]
+    },
+    "Description": {
+      "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
+        "Двухфакторная идентификация добавляет еще один уровень безопасности к вашим именам пользователей. ${ PASS_APP_NAME } делает двухфакторную идентификацию проще, сохраняя и автоматически заполняя ваши коды двухфакторной идентификации."
       ]
     },
     "Error": {
@@ -502,6 +510,9 @@
       ],
       "Failed to remove user's access.": [
         "Не удалось удалить доступ пользователя."
+      ],
+      "Failed to resolve breaches for this address": [
+        "Не удалось устранить утечки по этому адресу"
       ],
       "Failed to restore items from trash": [
         "Не удалось восстановить элементы из Корзины"
@@ -766,6 +777,12 @@
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } потребует ваш пароль ${ BRAND_NAME } чтобы получить доступ к офлайновым данным"
       ],
+      "${ row.breachCount } breach detected": [
+        "Обнаружена ${ row.breachCount } утечка",
+        "Обнаружены ${ row.breachCount } утечки",
+        "Обнаружены ${ row.breachCount } утечек",
+        "Обнаружены ${ row.breachCount } утечек"
+      ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 дней, чтобы попробовать платные функции бесплатно. Только в течение первой недели использования ${ BRAND_NAME }."
       ],
@@ -778,11 +795,23 @@
       "Admin": [
         "Админ"
       ],
+      "After inactivity, access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
+        "При отсутствии активности, доступ к ${ PASS_APP_NAME } потребует PIN-код для разблокировки сессии. Вы выйдите из системы после 3 неудачных попыток."
+      ],
+      "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
+        "После успешного импорта данных вы можете удалить файл CSV, содержащий ваши пароли, для безопасности."
+      ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Псевдоним \"${ item.aliasEmail }\" перемещен в корзину - это остановит пересылку писем в ваш почтовый ящик"
       ],
+      "All breaches for this address were resolved": [
+        "Все утечки по этому адресу были устранены"
+      ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Все элементы из \"${ payload.content.name }\" успешно удалены"
+      ],
+      "All items successfully moved": [
+        "Все элементы успешно перемещены"
       ],
       "All trashed items permanently deleted": [
         "Все элементы из корзины удалены безвозвратно"
@@ -801,6 +830,9 @@
       ],
       "Built in 2FA authenticator": [
         "Встроенный двухфакторный аутентификатор"
+      ],
+      "By default team members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
+        "По умолчанию члены команды могут экспортировать только хранилища, владельцами которых они являются. Если эта опция включена, они не смогут экспортировать никакие данные."
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "Может создавать, редактировать, удалять и экспортировать элементы этого хранилища."
@@ -853,6 +885,12 @@
       "Enter verification code. Digit ${ digit }.": [
         "Введите код подтверждения. Цифра ${ digit }."
       ],
+      "Fill in the CSV with your data": [
+        "Заполните CSV данными"
+      ],
+      "Follow those steps to import your data with a generic CSV :": [
+        "Выполните эти шаги для импорта ваших данных из произвольного CSV:"
+      ],
       "For security reasons, your access needs to be confirmed": [
         "По причинам безопасности, ваш доступ должен быть подтверждён"
       ],
@@ -862,8 +900,14 @@
       "High Priority": [
         "Высокий приоритет"
       ],
+      "How does monitoring work?": [
+        "Как работает мониторинг?"
+      ],
       "Import in progress:": [
         "Выполняется импорт:"
+      ],
+      "Import the CSV file below.": [
+        "Импортируйте файл CSV ниже."
       ],
       "Imported ${ payload.total } item": [
         "Импортирован ${ payload.total } элемент",
@@ -967,6 +1011,9 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Перемещение всех элементов из \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its history": [
+        "Перемещение элемента в другое хранилище удалит его историю"
+      ],
       "Moving items": [
         "Перемещение элементов"
       ],
@@ -991,6 +1038,9 @@
       "Offline support successfully disabled": [
         "Поддержка офлайновой поддержки успешно отключена"
       ],
+      "Organization settings successfully updated": [
+        "Настройки организации успешно обновлены"
+      ],
       "Owner": [
         "Владелец"
       ],
@@ -1005,6 +1055,9 @@
       ],
       "Paused": [
         "Приостановлено"
+      ],
+      "Permanently deleting selected items": [
+        "Выбранные элементы удаляются безвозвратно"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "PIN-код успешно зарегистрирован. Используйте его для разблокировки ${ PASS_APP_NAME }"
@@ -1060,8 +1113,14 @@
       "Select where you want your imported vault(s) to be saved.": [
         "Выберите куда вы хотите сохранить импортированное(ые) хранилище(я)."
       ],
+      "Selected items permanently deleted": [
+        "Выбранные элементы удалены безвозвратно"
+      ],
       "Selected items successfully moved to trash": [
         "Выбранные элементы успешно перемещены в Корзину"
+      ],
+      "Selected items successfully restored from trash": [
+        "Выбранные элементы успешно восстановлены из корзины"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Серверы недоступны. Попробуйте снова через несколько минут"
@@ -1099,8 +1158,17 @@
       "Syncing your vaults…": [
         "Синхронизация ваших хранилищ..."
       ],
+      "Team members can only share vaults within organization": [
+        "Члены команды могут делиться хранилищами только внутри организации"
+      ],
       "Thank you, the problem has been reported": [
         "Спасибо, отчет о проблеме отправлен"
+      ],
+      "The custom email will be sent to ${ href } for monitoring. No other data will be sent to HIBP.": [
+        "Пользовательский адрес электронной почты будет отправлен ${ href } для мониторинга. Никакие другие данные не будут отправлены в HIBP."
+      ],
+      "The exported file will be encrypted using PGP and requires a strong passphrase.": [
+        "Экспортированный файл будет зашифрован с помощью PGP и требует надежной парольной фразы."
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Следующий ${ result.ignored.length } элемент не может быть импортирован:",
@@ -1116,6 +1184,9 @@
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Экспорт не будет зашифрован, и кто угодно, кто получит доступ к вашему экспортированному файлу, сможет увидеть ваши пароли. Для безопасности, пожалуйста, удалите его после использования."
+      ],
+      "This setting is disabled on the organization level": [
+        "Этот параметр отключен на уровне организации"
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Это хранилище в данный момент не является общим с кем-либо. Пригласите людей, чтобы поделиться им с другими."
@@ -1137,6 +1208,9 @@
       ],
       "Unverified": [
         "Не подтвержденный"
+      ],
+      "Updating organization settings": [
+        "Настройки организации обновляются"
       ],
       "Upgrade Now to Unlock Premium Features": [
         "Улучшите сейчас, чтобы получить платне функции"
@@ -1201,6 +1275,12 @@
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Вы достигли максимально разрешенной длины в ${ maxLength } символов."
       ],
+      "You will be notified of data breaches for these email addresses.": [
+        "Вы будете получать уведомления об утечках данных по этим адресам электронной почты."
+      ],
+      "You will no longer be notified of data breaches for these email addresses.": [
+        "Вы больше не будете получать уведомления об утечках данных для этих адресов электронной почты."
+      ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "Вы будете использовать этот ПИН-код, чтобы разблокировать ${ PASS_APP_NAME }, когда он автоматически заблокируется после бездействия."
       ],
@@ -1223,6 +1303,15 @@
         "${ config.options.wordCount } слова",
         "${ config.options.wordCount } слов",
         "${ config.options.wordCount } слов"
+      ],
+      "${ PASS_SHORT_APP_NAME } version": [
+        "Версия ${ PASS_SHORT_APP_NAME }"
+      ],
+      "${ usageCount } login": [
+        "${ usageCount } имя пользователя",
+        "${ usageCount } имени пользователей",
+        "${ usageCount } имен пользователей",
+        "${ usageCount } имен пользователей"
       ],
       "1 hour": [
         "1 час"
@@ -1323,8 +1412,14 @@
       "Created": [
         "Создано"
       ],
+      "Created at": [
+        "Создано"
+      ],
       "Date": [
         "Дата"
+      ],
+      "Device": [
+        "Устройство"
       ],
       "Display": [
         "Показать"
@@ -1536,6 +1631,12 @@
       "Special characters (!&*)": [
         "Специальные символы (!&*)"
       ],
+      "Status": [
+        "Состояние"
+      ],
+      "Strong": [
+        "Надежный"
+      ],
       "Suffix": [
         "Суффикс"
       ],
@@ -1604,6 +1705,12 @@
       ],
       "View logs": [
         "Просмотр журналов"
+      ],
+      "Vulnerable": [
+        "Уязвимый"
+      ],
+      "Weak": [
+        "Слабый"
       ],
       "Websites": [
         "Веб-сайты"
@@ -1886,6 +1993,12 @@
       "Restore this version?": [
         "Восстановить эту версию?"
       ],
+      "Reused ${ count } time": [
+        "Повторно использовано ${ count } раз",
+        "Повторно использовано ${ count } раза",
+        "Повторно использовано ${ count } раз",
+        "Повторно использовано ${ count } раз"
+      ],
       "Review and share": [
         "Review and share"
       ],
@@ -1894,6 +2007,9 @@
       ],
       "Set access level": [
         "Задать уровень доступа"
+      ],
+      "Set up 2FA for better security": [
+        "Настройте двухфакторную идентификацию для повышения безопасности"
       ],
       "Settings": [
         "Настройки"
@@ -1994,6 +2110,12 @@
       ],
       "Invalid alias prefix": [
         "Недопустимый префикс псевдонима"
+      ],
+      "Invalid code": [
+        "Недействительный код"
+      ],
+      "Inviting email addresses outside organization is not allowed.": [
+        "Приглашение адресов электронной почты из вне организации запрещено."
       ],
       "item was imported without custom fields": [
         "элемент был импортирован без настраиваемых полей"

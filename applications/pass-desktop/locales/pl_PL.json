@@ -4,6 +4,11 @@
     "language": "pl_PL"
   },
   "contexts": {
+    "Account Settings - Info": {
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Twoje informacje zostały znalezione w co najmniej 1 wycieku danych. Włącz ${ DARK_WEB_MONITORING_NAME }, aby zobaczyć szczegóły i zastosować odpowiednią akcję. ${ link }"
+      ]
+    },
     "Action": {
       "Add": [
         "Dodaj"
@@ -1612,6 +1617,9 @@
         "${ config.options.wordCount } słów",
         "${ config.options.wordCount } słów"
       ],
+      "${ PASS_SHORT_APP_NAME } version": [
+        "Wersja ${ PASS_SHORT_APP_NAME }"
+      ],
       "${ usageCount } login": [
         "${ usageCount } dane logowania",
         "${ usageCount } dane logowania",
@@ -1717,8 +1725,14 @@
       "Created": [
         "Utworzono"
       ],
+      "Created at": [
+        "Utworzono na stronie"
+      ],
       "Date": [
         "Data"
+      ],
+      "Device": [
+        "Urządzenie"
       ],
       "Disable data export for team members": [
         "Wyłącz eksportowanie danych dla użytkowników zespołu"
@@ -2221,6 +2235,11 @@
       ],
       "Write your note": [
         "Napisz notatkę"
+      ]
+    },
+    "Security Center - Info": {
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Twoje informacje zostały znalezione w co najmniej 1 wycieku danych. Włącz ${ DARK_WEB_MONITORING_NAME }, aby zobaczyć szczegóły. ${ link }"
       ]
     },
     "Success": {

@@ -4,6 +4,26 @@
     "language": "ca_ES"
   },
   "contexts": {
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "S'han detectat ${ name } i ${ remainingCount } altres fuites potencials. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls i prendre mesures. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "S'han detectat ${ name } i una altra fuita potencial. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls i prendre mesures. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "S'ha detectat una possible fuita de ${ name }. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls i prendre mesures. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "S'ha detectat una possible fuita de ${ name }. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls i prendre mesures. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "S'ha detectat una possible fuita de ${ name }. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "S'ha trobat la vostra informació en almenys una fuita de dades. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls i prendre mesures. ${ link }"
+      ]
+    },
     "Action": {
       "Add": [
         "Afegeix"
@@ -145,6 +165,9 @@
       ],
       "Edit vault": [
         "Edita la caixa forta"
+      ],
+      "Enable Dark Web Monitoring": [
+        "Habilita la supervisió del web fosc"
       ],
       "Exclude from monitoring": [
         "Exclou de la supervisió"
@@ -437,6 +460,12 @@
       ]
     },
     "Description": {
+      "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
+        "L'autenticació de doble factor (A2F) afegeix una altra capa de seguretat als vostres inicis de sessió. ${ PASS_APP_NAME } facilita l'A2F emmagatzemant i omplint automàticament els vostres codis d'A2F."
+      ],
+      "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
+        "Un àlies de correu electrònic funciona com una adreça de correu electrònic, però redueix el correu brossa i manté ocultes la vostra adreça de correu electrònic real i la vostra identitat."
+      ],
       "Change your passwords": [
         "Canviï les seves contrasenyes"
       ],
@@ -444,10 +473,13 @@
         "Creï contrasenyes úniques"
       ],
       "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
-        "La supervisió del Dark Web està disponible amb un pla de pagament. Milloreu el vostre pla per accedir-hi immediatament."
+        "La supervisió del web fosc està disponible amb un pla de pagament. Milloreu el vostre pla per accedir-hi immediatament."
       ],
       "Get notified if your email, password or other personal data was leaked.": [
         "Rebi una notificació si s'han filtrat el seu correu electrònic, contrasenya o altres dades personals."
+      ],
+      "Keep your info more secure and private with these guides and tips.": [
+        "Manteniu la vostra informació més segura i privada amb aquestes guies i consells."
       ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "La nostra solució de seguretat d'avantguarda, impulsada per IA, dissenyada per als usuaris que busquen una protecció més elevada per als seus comptes. ${ learnMoreLink }"
@@ -455,11 +487,20 @@
       "Set up 2FA for more security": [
         "Configuri 2FA per a més seguretat"
       ],
+      "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
+        "Comenceu a supervisar les filtracions de dades relacionades amb els comptes creats amb la vostra adreça de correu electrònic i amb els vostres àlies de hide-my-email."
+      ],
+      "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
+        "El web fosc és una part amagada d'Internet on es pot comprar i vendre informació personal robada, com ara les identitats."
+      ],
       "These items remain at risk": [
         "Aquests elements continuen en risc"
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "Aquest compte és vulnerable, visiti el servei i canviï la contrasenya."
+      ],
+      "With ${ PASS_SHORT_APP_NAME } Monitor, stay ahead of threats by getting instant alerts if your credentials are compromised. Unlock advanced security features and detailed logs to safeguard your online presence.": [
+        "Amb la supervisió de ${ PASS_SHORT_APP_NAME }, avanceu-vos a les amenaces amb alertes instantànies si les vostres credencials es veuen compromeses. Desbloquegeu les característiques de seguretat avançades i els registres detallats per a salvaguardar la vostra presència en línia."
       ],
       "Your email addresses were leaked in at least 1 data breach.": [
         "Les vostres adreces de correu electrònic s'han filtrat en almenys 1 infracció de dades."
@@ -715,7 +756,7 @@
     },
     "Feature": {
       "Dark Web Monitoring": [
-        "Supervisió del Dark Web"
+        "Supervisió del web fosc"
       ],
       "Integrated 2FA authenticator": [
         "Autenticador A2F integrat"
@@ -1409,6 +1450,9 @@
       "Date": [
         "Data"
       ],
+      "Device": [
+        "Dispositiu"
+      ],
       "Disable data export for team members": [
         "Desactivar l'exportació de dades per als membres de l'equip"
       ],
@@ -1901,6 +1945,20 @@
         "Escriviu la vostra nota"
       ]
     },
+    "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "S'han detectat ${ name } i ${ remainingCount } altres fuites potencials. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "S'han detectat ${ name } i una altra fuita potencial. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "S'ha detectat una possible fuita de ${ name }. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "S'ha trobat la vostra informació en almenys una fuita de dades. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls. ${ link }"
+      ]
+    },
     "Success": {
       "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
         "Les caixes fortes no poden contenir més d'${ vault.targetMaxMembers } usuari.",
@@ -1913,6 +1971,9 @@
       ],
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "Supervisar ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Account protection": [
+        "Protecció del compte"
       ],
       "Auto-lock update": [
         "Actualització del bloqueig automàtic"
@@ -1948,7 +2009,7 @@
         "Supervisió personalitzada del correu electrònic"
       ],
       "Dark Web Monitoring": [
-        "Supervisió del Dark Web"
+        "Supervisió del web fosc"
       ],
       "Delete vault \"${ vaultName }\" ?": [
         "Voleu eliminar la caixa forta \"${ vaultName }\"?"
@@ -2098,6 +2159,9 @@
       "Set access level": [
         "Estableix el nivell d`accés"
       ],
+      "Set up 2FA for better security": [
+        "Configureu 2FA per a major seguretat"
+      ],
       "Set up 2FA for more security": [
         "Configuri 2FA per a més seguretat"
       ],
@@ -2129,13 +2193,16 @@
         "Caixa forta compartida amb vosaltres"
       ],
       "Want to learn more?": [
-        "Voleu saber més?"
+        "Voleu saber-ne més?"
       ],
       "Weak password": [
         "Contrasenya feble"
       ],
       "What is an alias?": [
         "Què és un àlies?"
+      ],
+      "What is the dark web?": [
+        "Què és el web fosc?"
       ],
       "Why ${ PASS_APP_NAME }?": [
         "Per què ${ PASS_APP_NAME }?"

@@ -4,6 +4,26 @@
     "language": "nb_NO"
   },
   "contexts": {
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } og ${ remainingCount } andre potensielle lekkasjer oppdaget. Slå på ${ DARK_WEB_MONITORING_NAME } for å vise detaljer og iverksette tiltak. ${ link }."
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } og 1 annen potensiell lekkasje oppdaget. Slå på ${ DARK_WEB_MONITORING_NAME } for å vise detaljer og iverksette tiltak. ${ link }."
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "En potensiell ${ name }-lekkasje ble oppdaget. Slå på ${ DARK_WEB_MONITORING_NAME } for å vise detaljer og iverksette tiltak. ${ link }."
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "En potensiell lekkasje fra ${ name } ble oppdaget. Slå på ${ DARK_WEB_MONITORING_NAME } for å vise detaljer og iverksette tiltak. ${ link }."
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "En potensiell lekkasje fra ${ name } ble oppdaget. Slå på ${ DARK_WEB_MONITORING_NAME } for å vise detaljer. ${ link }."
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Informasjonen din ble funnet i minst én datalekkasje. Slå på ${ DARK_WEB_MONITORING_NAME } for å vise detaljer og iverksette tiltak. ${ link }."
+      ]
+    },
     "Action": {
       "Add": [
         "Legg til"
@@ -827,7 +847,7 @@
     },
     "Feature": {
       "Dark Web Monitoring": [
-        "Mørk webovervåking"
+        "Overvåking av mørkt nett"
       ],
       "Integrated 2FA authenticator": [
         "Integrert 2FA-autentisering"
@@ -1573,6 +1593,9 @@
         "${ config.options.wordCount } ord",
         "${ config.options.wordCount } ord"
       ],
+      "${ PASS_SHORT_APP_NAME } version": [
+        "${ PASS_SHORT_APP_NAME }-versjon"
+      ],
       "${ usageCount } login": [
         "${ usageCount } pålogging",
         "${ usageCount } pålogginger"
@@ -1676,8 +1699,14 @@
       "Created": [
         "Opprettet"
       ],
+      "Created at": [
+        "Opprettet den"
+      ],
       "Date": [
         "Dato"
+      ],
+      "Device": [
+        "Enhet"
       ],
       "Disable data export for team members": [
         "Deaktiver dataeksport for teammedlemmer"
@@ -2183,6 +2212,20 @@
         "Skriv notatet ditt"
       ]
     },
+    "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } og ${ remainingCount } andre potensielle lekkasjer oppdaget. Slå på ${ DARK_WEB_MONITORING_NAME } for å vise detaljer. ${ link }."
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } og 1 annen potensiell lekkasje oppdaget. Slå på ${ DARK_WEB_MONITORING_NAME } for å vise detaljer. ${ link }."
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "En potensiell ${ name }-lekkasje ble oppdaget. Slå på ${ DARK_WEB_MONITORING_NAME } for å vise detaljer. ${ link }."
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Informasjonen din ble funnet i minst én datalekkasje. Slå på ${ DARK_WEB_MONITORING_NAME } for å vise detaljer. ${ link }."
+      ]
+    },
     "Success": {
       "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
         "Hvelv kan ikke inneholde mer enn ${ vault.targetMaxMembers } bruker.",
@@ -2239,7 +2282,7 @@
         "Tilpassede e-poster"
       ],
       "Dark Web Monitoring": [
-        "Mørk webovervåking"
+        "Overvåking av mørkt nett"
       ],
       "Delete vault \"${ vaultName }\" ?": [
         "Slett hvelv \"${ vaultName }\" ?"
