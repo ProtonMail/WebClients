@@ -113,6 +113,9 @@
       "Copy key to the clipboard": [
         "Salin ke papan klip"
       ],
+      "Copy version number to clipboard": [
+        "Salin nomor versi ke papan klip"
+      ],
       "Create": [
         "Buat"
       ],
@@ -163,9 +166,6 @@
       ],
       "Discard": [
         "Buang"
-      ],
-      "Don't know your password?": [
-        "Tidak tahu kata sandi Anda?"
       ],
       "Done": [
         "Selesai"
@@ -232,6 +232,9 @@
       ],
       "Fit to window": [
         "Sesuaikan dengan jendela"
+      ],
+      "Forgot password?": [
+        "Lupa kata sandi?"
       ],
       "Get ${ vpnPlus }": [
         "Dapatkan ${ vpnPlus }"
@@ -2335,7 +2338,7 @@
     },
     "familyOffer_2023: Deal details": {
       "3 TB total storage": [
-        "Jumlah penyimpanan 3 TB"
+        "Total ruang penyimpanan 3 TB"
       ]
     },
     "familyOffer_2023: Tooltip": {
@@ -3799,6 +3802,9 @@
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Tindakan ini akan menghapus akun Anda beserta seluruh data yang terkandung di dalamnya secara permanen. Anda tidak akan dapat mengaktifkan kembali akun ini."
       ],
+      "This will remove any enabled 2FA methods.": [
+        "Tindakan ini akan menonaktifkan seluruh metode 2FA yang terpasang."
+      ],
       "This will remove SSO for ${ boldDomainName }.": [
         "Tindakan ini akan menghapus SSO untuk ${ boldDomainName }."
       ],
@@ -3937,6 +3943,9 @@
       "Version ${ version }": [
         "Versi ${ version }"
       ],
+      "Version number successfully copied to clipboard": [
+        "Nomor versi berhasil disalin ke papan klip"
+      ],
       "View, download, and manage your invoices.": [
         "Tampilkan, unduh, dan kelola faktur Anda."
       ],
@@ -4005,6 +4014,9 @@
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Pada saat mengaktifkan SAML untuk ${ appName } di layanan penyedia identitas Anda, Anda mungkin akan diminta untuk menggunakan URL Callback (ACS) dan Issuer ID. Cukup salin dan tempel data di bawah ini ke kolom yang disediakan oleh penyedia identitas Anda."
+      ],
+      "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
+        "Pada saat Anda membatalkan langganan berbayar Anda saat ini, biaya langganan Anda akan dikembalikan dalam bentuk saldo akun dan Anda akan diturunkan ke paket ${ BRAND_NAME }${ PLANS.FREE }."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Pada saat Anda menyiapkan autentikasi dua faktor, kami akan menyediakan beberapa kode pemulihan yang dapat Anda gunakan untuk masuk apabila Anda kehilangan akses ke aplikasi otentikator Anda."
@@ -4777,6 +4789,9 @@
       "Create account": [
         "Buat akun"
       ],
+      "Forgot password?": [
+        "Lupa kata sandi?"
+      ],
       "Forgot username?": [
         "Lupa nama pengguna?"
       ],
@@ -4809,9 +4824,6 @@
       ],
       "Request an invite": [
         "Minta undangan"
-      ],
-      "Reset password": [
-        "Atur ulang kata sandi"
       ],
       "Sign in": [
         "Masuk"

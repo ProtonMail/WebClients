@@ -113,6 +113,9 @@
       "Copy key to the clipboard": [
         "Schlüssel in die Zwischenablage kopieren"
       ],
+      "Copy version number to clipboard": [
+        "Versionsnummer in die Zwischenablage kopieren"
+      ],
       "Create": [
         "Erstellen"
       ],
@@ -163,9 +166,6 @@
       ],
       "Discard": [
         "Verwerfen"
-      ],
-      "Don't know your password?": [
-        "Weißt du dein Passwort nicht?"
       ],
       "Done": [
         "Fertig"
@@ -232,6 +232,9 @@
       ],
       "Fit to window": [
         "An das Fenster anpassen"
+      ],
+      "Forgot password?": [
+        "Passwort vergessen?"
       ],
       "Get ${ vpnPlus }": [
         "${ vpnPlus } holen"
@@ -1898,6 +1901,9 @@
       ]
     },
     "Delete address prompt": {
+      "Once deleted, this address can't be used again by anyone else.": [
+        "Einmal gelöscht, kann diese Adresse von niemandem mehr verwendet werden."
+      ],
       "You can only delete 1 address per year.": [
         "Du kannst jährlich nur eine Adresse löschen."
       ]
@@ -1924,11 +1930,32 @@
       "Bugs or quality issue": [
         "Fehler oder Qualitätsprobleme"
       ],
+      "I do not wish to share": [
+        "Das möchte ich nicht sagen"
+      ],
+      "I found a cheaper VPN": [
+        "Ich habe ein günstigeres VPN gefunden"
+      ],
+      "I found a VPN with better features": [
+        "Ich habe ein VPN mit besseren Funktionen gefunden"
+      ],
+      "I have not managed to connect": [
+        "Ich habe es nicht geschafft, mich zu verbinden"
+      ],
+      "I only needed a VPN short-term": [
+        "Ich brauchte nur kurzzeitig ein VPN"
+      ],
       "I use a different ${ BRAND_NAME } account": [
         "Ich verwende ein anderes ${ BRAND_NAME }-Konto"
       ],
+      "It doesn't do what I need": [
+        "Es macht nicht das, was ich brauche"
+      ],
       "Missing feature(s)": [
         "Fehlende Funktion(en)"
+      ],
+      "Other reason (please comment)": [
+        "Anderer Grund (bitte angeben)"
       ],
       "Subscription is too expensive": [
         "Das Abonnement ist zu teuer"
@@ -1938,6 +1965,9 @@
       ],
       "Temporary need, may come back in the future": [
         "Nur vorübergehender Bedarf, könnte es aber in Zukunft erneut benötigen"
+      ],
+      "The VPN is too slow": [
+        "Das VPN ist zu langsam"
       ]
     },
     "Downgrade modal exit survey title": {
@@ -3800,6 +3830,9 @@
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Dadurch wird dein Konto und alle zugehörigen Daten dauerhaft gelöscht. Dieses Konto kann dann nicht mehr reaktiviert werden."
       ],
+      "This will remove any enabled 2FA methods.": [
+        "Dadurch werden alle aktivierten 2FA-Methoden entfernt."
+      ],
       "This will remove SSO for ${ boldDomainName }.": [
         "Dadurch wird Single Sign-on für ${ boldDomainName } entfernt."
       ],
@@ -3937,6 +3970,9 @@
       ],
       "Version ${ version }": [
         "Version ${ version }"
+      ],
+      "Version number successfully copied to clipboard": [
+        "Versionsnummer erfolgreich in die Zwischenablage kopiert"
       ],
       "View, download, and manage your invoices.": [
         "Rechnungen anzeigen, herunterladen und verwalten."
@@ -4786,6 +4822,9 @@
       "Create account": [
         "Konto erstellen"
       ],
+      "Forgot password?": [
+        "Passwort vergessen?"
+      ],
       "Forgot username?": [
         "Benutzernamen vergessen?"
       ],
@@ -4818,9 +4857,6 @@
       ],
       "Request an invite": [
         "Einladung anfordern"
-      ],
-      "Reset password": [
-        "Passwort zurücksetzen"
       ],
       "Sign in": [
         "Anmelden"
@@ -5310,6 +5346,12 @@
       "Organize items with multiple vaults": [
         "Strukturiere Einträge mit mehreren Tresoren"
       ],
+      "Pass Monitor - premium features": [
+        "Pass Monitor - Premiumfunktionen"
+      ],
+      "Passkeys supported": [
+        "Passkeys unterstützt"
+      ],
       "Password-protected Emails": [
         "Passwortgeschützte E-Mails"
       ],
@@ -5392,6 +5434,9 @@
       ],
       "Unlimited devices": [
         "Unbegrenzte Geräte"
+      ],
+      "Unlimited devices and aliases": [
+        "Unbegrenzte Geräte und Aliasse"
       ],
       "Unlimited filters": [
         "Unbegrenzte Anzahl von Filtern"
@@ -6017,6 +6062,9 @@
       ]
     },
     "Organization logo upload modal": {
+      "Drop image file here to upload or": [
+        "Bilddatei zum Hochladen hier ablegen oder"
+      ],
       "File in PNG or JPEG format": [
         "Datei im PNG- oder JPEG-Format"
       ],
@@ -6117,6 +6165,16 @@
       ],
       "Preparing your Recovery Kit": [
         "Dein Wiederherstellungskit wird vorbereitet"
+      ],
+      "Secure sharing with ${ n } vault": [
+        "Sicheres Teilen mit ${ n } Tresor",
+        "Sicheres Teilen mit ${ n } Tresoren"
+      ],
+      "Secure sharing with multiple vaults": [
+        "Sicheres Teilen mit mehreren Tresoren"
+      ],
+      "Secure vault sharing": [
+        "Sicheres Teilen von Tresoren"
       ],
       "Updating your account": [
         "Dein Konto wird aktualisiert"
@@ -7334,14 +7392,29 @@
       "Desktop app": [
         "Desktop-App"
       ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hilf uns, das Internet für alle sicher und privat zu halten. Upgrade auf ein kostenpflichtiges Abonnement."
+      ],
+      "No ads or tracking": [
+        "Keine Werbung oder Tracking"
+      ],
       "Short @pm.me email address": [
         "Kurze @pm.me-E-Mail-Adresse"
+      ],
+      "Support our mission": [
+        "Unterstütze unsere Mission"
       ],
       "Upgrade": [
         "Upgraden"
       ],
+      "Upgrade your productivity": [
+        "Steigere deine Produktivität"
+      ],
       "We don't sell your data": [
         "Wir verkaufen deine Daten nicht"
+      ],
+      "Your privacy is our mission": [
+        "Deine Privatsphäre ist unsere Mission"
       ]
     },
     "Subscription renewal state": {

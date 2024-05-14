@@ -113,6 +113,9 @@
       "Copy key to the clipboard": [
         "Copier la clé dans le presse-papiers"
       ],
+      "Copy version number to clipboard": [
+        "Copier le numéro de version dans le presse-papiers"
+      ],
       "Create": [
         "Créer"
       ],
@@ -163,9 +166,6 @@
       ],
       "Discard": [
         "Abandonner"
-      ],
-      "Don't know your password?": [
-        "Vous ne connaissez pas votre mot de passe ?"
       ],
       "Done": [
         "Terminé"
@@ -3836,6 +3836,9 @@
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Ceci supprimera définitivement votre compte et toutes ses données. Vous ne pourrez pas réactiver ce compte."
       ],
+      "This will remove any enabled 2FA methods.": [
+        "Cette action retirera les méthodes d'authentification A2F activées."
+      ],
       "This will remove SSO for ${ boldDomainName }.": [
         "Ceci retirera l'authentification unique (SSO) pour ${ boldDomainName }."
       ],
@@ -3974,6 +3977,9 @@
       "Version ${ version }": [
         "Version ${ version }"
       ],
+      "Version number successfully copied to clipboard": [
+        "Le numéro de version a été copié dans le presse-papiers."
+      ],
       "View, download, and manage your invoices.": [
         "Consultez, téléchargez et gérez vos factures."
       ],
@@ -4042,6 +4048,9 @@
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Quand vous activez SAML pour ${ appName } dans votre fournisseur d'identité, vous pouvez être invité à utiliser l'URL de rappel (ACS) et l'ID de l'émetteur. Il vous suffit de copier-coller les données ci-dessous dans les champs de votre fournisseur d'identité."
+      ],
+      "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
+        "Lorsque vous annulez l'abonnement actuel que vous avez payé, le solde de votre abonnement sera restitué sous forme de crédits sur votre compte et vous passerez à 'abonnement ${ BRAND_NAME } ${ PLANS.FREE }."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Quand vous configurez l'authentification à deux facteurs, nous fournissons des codes de récupération que vous pouvez utiliser pour vous connecter si vous perdez l'accès à votre application d'authentification."
@@ -4854,9 +4863,6 @@
       ],
       "Request an invite": [
         "Demander une invitation"
-      ],
-      "Reset password": [
-        "Réinitialiser le mot de passe"
       ],
       "Sign in": [
         "Se connecter"

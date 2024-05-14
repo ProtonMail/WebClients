@@ -113,6 +113,9 @@
       "Copy key to the clipboard": [
         "Kopiér nøgle til udklipsholder"
       ],
+      "Copy version number to clipboard": [
+        "Kopier versionsnummer til udklipsholder"
+      ],
       "Create": [
         "Opret"
       ],
@@ -163,9 +166,6 @@
       ],
       "Discard": [
         "Kassér"
-      ],
-      "Don't know your password?": [
-        "Kan du ikke din adgangskode?"
       ],
       "Done": [
         "Udført"
@@ -232,6 +232,9 @@
       ],
       "Fit to window": [
         "Tilpas til vinduet"
+      ],
+      "Forgot password?": [
+        "Glemt adgangskode?"
       ],
       "Get ${ vpnPlus }": [
         "Få ${ vpnPlus }"
@@ -830,7 +833,7 @@
         "den første måned"
       ],
       "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
-        "Den særligt nedsatte pris på ${ discountedPrice } gælder i ${ discountedMonths }. Derefter vil den automatisk blive fornyet til den nedsatte pris på ${ nextPrice } for ${ nextMonths }. Du kan til enhver tid opsige."
+        "Den ekstraordinære rabatpris på ${ discountedPrice } gælder i ${ discountedMonths }. Derefter vil den automatisk blive fornyet til rabatprisen på ${ nextPrice } i ${ nextMonths }. Du kan til enhver tid annullere."
       ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Den særligt nedsatte pris på ${ discountedPrice } gælder den første måned. Derefter vil den automatisk blive fornyet for ${ nextPrice } hver måned. Du kan til enhver tid opsige."
@@ -1243,7 +1246,7 @@
         "Juleøen"
       ],
       "Cocos (Keeling) Islands": [
-        "Cocosøerne"
+        "Cocos (Keeling)-øerne"
       ],
       "Colombia": [
         "Colombia"
@@ -1819,10 +1822,10 @@
         "Storbritannien"
       ],
       "United States": [
-        "USA"
+        "Amerika"
       ],
       "United States Minor Outlying Islands": [
-        "USA's ydre småøer"
+        "Amerikas mindre fjerntliggende øer"
       ],
       "Uruguay": [
         "Uruguay"
@@ -1843,7 +1846,7 @@
         "Jomfruøerne, britiske"
       ],
       "Virgin Islands, U.S.": [
-        "Jomfruøerne, USA"
+        "Jomfruøerne, Amerika."
       ],
       "Wallis and Futuna": [
         "Wallis og Futuna"
@@ -2040,7 +2043,7 @@
         "6 brugere"
       ],
       "Early access to new apps and features": [
-        "Tidlig adgang til nye apps og funktioner"
+        "Forhåndsadgang til nye apps og funktioner"
       ],
       "Early access to the ${ MAIL_APP_NAME } desktop app": [
         "Tidlig adgang til ${ MAIL_APP_NAME } skrivebord-app"
@@ -2201,7 +2204,7 @@
         "Opgrader venligst til et erhversabonnement med mere end 1 bruger for at administrere flere brugere."
       ],
       "Please upload a square file": [
-        "Upload en kvadratisk fil"
+        "Overfør en kvadratisk fil"
       ],
       "Please upload an xml file": [
         "Upload en xml-fil"
@@ -3423,7 +3426,7 @@
         "Internetforbindelse genoprettet."
       ],
       "Keys created": [
-        "Nøgle(r) oprettet"
+        "Nøgler oprettet"
       ],
       "Lean more about gateways": [
         "Lær mere om gateways"
@@ -3552,16 +3555,16 @@
         "Betalinger er beskyttet af TLS-kryptering og schweizisk lovgivning om beskyttelse af privatlivets fred."
       ],
       "per month": [
-        "Pr. måned"
+        "pr. måned"
       ],
       "per month, billed at ${ price }": [
         "per måned, faktureret til ${ price }"
       ],
       "per month, billed every 12 months": [
-        "Pr. måned, faktureres hver 12. måned"
+        "pr. måned, faktureres hver 12. måned"
       ],
       "per month, billed every 24 months": [
-        "Pr. måned, faktureres hver 24. måned"
+        "pr. måned, faktureres hver 24. måned"
       ],
       "Please add a password for the user on row": [
         "Tilføj en adgangskode til brugeren på række",
@@ -3611,7 +3614,7 @@
         "Plus- eller Visionary abonnement påkrævet"
       ],
       "Preview": [
-        "Forhåndsvisning"
+        "Smugkig"
       ],
       "Preview failed to be loaded": [
         "Forhåndsvisning kunne ikke indlæses"
@@ -3836,6 +3839,9 @@
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Dette vil permanent slette din konto og alle data, der er knyttet til den. Du vil ikke kunne genaktivere denne konto."
       ],
+      "This will remove any enabled 2FA methods.": [
+        "Dette vil fjerne alle aktiverede 2FA-metoder."
+      ],
       "This will remove SSO for ${ boldDomainName }.": [
         "Dette fjerner SSO for ${ boldDomainName }."
       ],
@@ -3973,6 +3979,9 @@
       ],
       "Version ${ version }": [
         "Version ${ version }"
+      ],
+      "Version number successfully copied to clipboard": [
+        "Versionsnummer er kopieret til udklipsholder"
       ],
       "View, download, and manage your invoices.": [
         "Se, download og administrer dine fakturaer."
@@ -4825,6 +4834,9 @@
       "Create account": [
         "Opret konto"
       ],
+      "Forgot password?": [
+        "Glemt adgangskode?"
+      ],
       "Forgot username?": [
         "Glemt brugernavn?"
       ],
@@ -4857,9 +4869,6 @@
       ],
       "Request an invite": [
         "Anmod om invitation"
-      ],
-      "Reset password": [
-        "Nulstil adgangskode"
       ],
       "Sign in": [
         "Log ind"
@@ -5546,7 +5555,7 @@
         "Omfattende privatlivsbeskyttelse og sikkerhed med alle ${ BRAND_NAME }-tjenester kombineret."
       ],
       "Early access to new apps and features": [
-        "Tidlig adgang til nye apps og funktioner"
+        "Forhåndsadgang til nye apps og funktioner"
       ],
       "Essential protection and secure collaboration for unlimited users.": [
         "Essentiel beskyttelse og sikkert samarbejde for ubegrænsede brugere."

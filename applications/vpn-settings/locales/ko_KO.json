@@ -113,6 +113,9 @@
       "Copy key to the clipboard": [
         "클립보드에 키 복사"
       ],
+      "Copy version number to clipboard": [
+        "버전 넘버를 클립보드에 복사하기"
+      ],
       "Create": [
         "생성"
       ],
@@ -163,9 +166,6 @@
       ],
       "Discard": [
         "저장 안함"
-      ],
-      "Don't know your password?": [
-        "비밀번호를 잊으셨나요?"
       ],
       "Done": [
         "완료"
@@ -232,6 +232,9 @@
       ],
       "Fit to window": [
         "창에 맞게"
+      ],
+      "Forgot password?": [
+        "비밀번호를 잊으셨나요?"
       ],
       "Get ${ vpnPlus }": [
         "${ vpnPlus } 사용하기"
@@ -1944,7 +1947,7 @@
         "다른 ${ BRAND_NAME } 계정을 사용합니다"
       ],
       "It doesn't do what I need": [
-        "필요한 기능이 없어서"
+        "원하는대로 기능하지 않아서"
       ],
       "Missing feature(s)": [
         "없는 기능"
@@ -1975,7 +1978,7 @@
         "특가 받기"
       ],
       "Special Offer": [
-        "특가"
+        "특별 할인"
       ]
     },
     "driveplus2024: Deal details": {
@@ -3802,6 +3805,9 @@
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "사용자의 계정 및 계정에 연결된 모든 정보가 영구 삭제되며, 이 계정의 복구가 불가능합니다."
       ],
+      "This will remove any enabled 2FA methods.": [
+        "이것으로 모든 활성화된 2단계 인증 방법이 제거됩니다."
+      ],
       "This will remove SSO for ${ boldDomainName }.": [
         "이렇게 하면${ boldDomainName }의 SSO가 제거됩니다."
       ],
@@ -3940,6 +3946,9 @@
       "Version ${ version }": [
         "${ version } 버전"
       ],
+      "Version number successfully copied to clipboard": [
+        "버전 넘버를 클립보드에 복사했습니다"
+      ],
       "View, download, and manage your invoices.": [
         "청구서를 보고 다운로드 하고 관리하세요."
       ],
@@ -4008,6 +4017,9 @@
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "사용자의 제공자로 부터 ${ appName }을 위한 SAML 활성화 시,  콜백 URL (callback, ACS라고 함) 및 issuer ID를 사용하라는 안내창이 표시될 수 있습니다. 아래의 데이터를 제공자 입력란에 복사 후 붙여넣기를 하면 됩니다."
+      ],
+      "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
+        "지금의 유료 구독을 취소하신다면, 구독의 잔량이 계정 크레딧으로 반환되고 ${ BRAND_NAME } ${ PLANS.FREE } 요금제로 다운그레이드됩니다."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "이중 인증을 설정하면, 인증 앱에 접근할 수 없을 때 로그인 시 사용할 수 없는 복구 코드를 제공해드립니다."
@@ -4783,6 +4795,9 @@
       "Create account": [
         "계정 생성"
       ],
+      "Forgot password?": [
+        "비밀번호를 잊으셨나요?"
+      ],
       "Forgot username?": [
         "아이디를 잊으셨나요?"
       ],
@@ -4815,9 +4830,6 @@
       ],
       "Request an invite": [
         "가입 요청하기"
-      ],
-      "Reset password": [
-        "비밀번호 재설정"
       ],
       "Sign in": [
         "로그인"
@@ -5291,6 +5303,9 @@
       "Organize items with multiple vaults": [
         "다중 금고와 항목 정리"
       ],
+      "Pass Monitor - premium features": [
+        "Pass Monitor - 프리미엄 기능"
+      ],
       "Passkeys supported": [
         "패스키를 지원함"
       ],
@@ -5374,6 +5389,9 @@
       ],
       "Unlimited devices": [
         "기기 개수 무제한"
+      ],
+      "Unlimited devices and aliases": [
+        "무제한 기기와 별칭"
       ],
       "Unlimited filters": [
         "무제한 필터"
@@ -6116,6 +6134,15 @@
       ],
       "Preparing your Recovery Kit": [
         "복구 키트를 준비하는 중"
+      ],
+      "Secure sharing with ${ n } vault": [
+        "${ n } 금고를 통한 안전한 공유하기"
+      ],
+      "Secure sharing with multiple vaults": [
+        "여러 금고를 통한 안전한 공유하기"
+      ],
+      "Secure vault sharing": [
+        "안전한 금고 공유"
       ],
       "Updating your account": [
         "계정 업데이트 중"
