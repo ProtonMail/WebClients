@@ -70,13 +70,14 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, vault
         totpUri: getSecretOrUri(content.totpUri),
         url: '',
         urls: content.urls.map(createNewUrl),
-        username: content.username,
+        itemEmail: content.itemEmail,
+        itemUsername: content.itemUsername,
         withAlias: false,
     };
 
     const form = useFormik<EditLoginItemFormValues>({
         initialValues,
-        onSubmit: ({ name, username, password, totpUri, url, urls, note, extraFields, passkeys, ...values }) => {
+        onSubmit: ({ name, itemEmail, password, totpUri, url, urls, note, extraFields, passkeys, ...values }) => {
             const mutationTime = getEpoch();
 
             const withAlias =
@@ -87,7 +88,7 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, vault
                 values.mailboxes.length > 0;
 
             const normalizedOtpUri = parseOTPValue(totpUri, {
-                label: username || undefined,
+                label: itemEmail || undefined,
                 issuer: name || undefined,
             });
 
@@ -102,7 +103,7 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, vault
                             mailboxes: values.mailboxes,
                             prefix: values.aliasPrefix!,
                             signedSuffix: values.aliasSuffix!.signature,
-                            aliasEmail: username,
+                            aliasEmail: itemEmail,
                         },
                         extraFields: [],
                         metadata: { name: `Alias for ${name}`, note: obfuscate(''), itemUuid: aliasOptimisticId },
@@ -121,7 +122,9 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, vault
                     password: obfuscate(password),
                     totpUri: obfuscate(normalizedOtpUri),
                     urls: Array.from(new Set(urls.map(({ url }) => url).concat(isEmptyString(url) ? [] : [url]))),
-                    username: obfuscate(username),
+                    itemEmail: obfuscate(itemEmail),
+                    // TODO: add username field in the UI
+                    itemUsername: obfuscate(''),
                 },
                 extraFields: obfuscateExtraFields(
                     extraFields.map((field) =>
@@ -130,7 +133,7 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, vault
                                   ...field,
                                   data: {
                                       totpUri: parseOTPValue(field.data.totpUri, {
-                                          label: username || undefined,
+                                          label: itemEmail || undefined,
                                           issuer: name || undefined,
                                       }),
                                   },
@@ -216,16 +219,16 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, vault
 
                             <FieldsetCluster>
                                 <Field
-                                    name="username"
+                                    name="itemEmail"
                                     label={(() => {
-                                        if (aliasModal.willCreate) return c('Label').t`Username (new alias)`;
-                                        if (aliasModal.relatedAlias) return c('Label').t`Username (alias)`;
-                                        return c('Label').t`Username`;
+                                        if (aliasModal.willCreate) return c('Label').t`Email (new alias)`;
+                                        if (aliasModal.relatedAlias) return c('Label').t`Email (alias)`;
+                                        return c('Label').t`Email`;
                                     })()}
-                                    placeholder={c('Placeholder').t`Enter email or username`}
+                                    placeholder={c('Placeholder').t`Enter email`}
                                     component={TextField}
                                     itemType="login"
-                                    icon={aliasModal.usernameIsAlias ? 'alias' : 'user'}
+                                    icon={aliasModal.usernameIsAlias ? 'alias' : 'envelope'}
                                     actions={
                                         [
                                             aliasModal.willCreate && (
@@ -240,7 +243,7 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, vault
                                                                     aliasPrefix: '',
                                                                     aliasSuffix: undefined,
                                                                     mailboxes: [],
-                                                                    username: initialValues.username,
+                                                                    itemEmail: initialValues.itemEmail,
                                                                 })
                                                             )
                                                         }
@@ -383,7 +386,7 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, vault
                         .setValues((values) => {
                             const { aliasPrefix, aliasSuffix } = values;
                             return !isEmptyString(aliasPrefix) && aliasSuffix
-                                ? merge(values, { username: aliasPrefix! + aliasSuffix!.value })
+                                ? merge(values, { itemEmail: aliasPrefix! + aliasSuffix!.value })
                                 : values;
                         })
                         .then<any>(() => form.setFieldTouched('aliasPrefix', true))

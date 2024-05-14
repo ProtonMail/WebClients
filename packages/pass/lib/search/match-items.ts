@@ -13,14 +13,15 @@ export const matchesNoteItem: ItemMatchFunc<'note'> = ({
 export const matchesLoginItem: ItemMatchFunc<'login'> = ({
     data: {
         metadata: { name, note },
-        content: { username, urls },
+        content: { itemEmail, itemUsername, urls },
         extraFields,
     },
 }) =>
     matchAny([
         name,
         deobfuscate(note),
-        deobfuscate(username),
+        deobfuscate(itemEmail),
+        deobfuscate(itemUsername),
         ...urls,
         ...extraFields.reduce<string[]>((terms, { fieldName, type, data }) => {
             if (type === 'text') terms.push(fieldName, deobfuscate(data.content));

@@ -17,7 +17,7 @@ const itemListPresenter: ItemListPresenterMap = {
     }),
     login: ({ data }) => ({
         heading: data.metadata.name,
-        subheading: deobfuscate(data.content.username),
+        subheading: deobfuscate(data.content.itemUsername) || deobfuscate(data.content.itemEmail),
     }),
     alias: ({ data, aliasEmail }) => ({
         heading: data.metadata.name,

@@ -105,7 +105,7 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
         const passwordCurrent = lastItem(form.getFieldsFor(FieldType.PASSWORD_CURRENT, nonEmptyField));
 
         return {
-            username: (username ?? email ?? usernameHidden)?.value ?? '',
+            itemEmail: (username ?? email ?? usernameHidden)?.value ?? '',
             password: (passwordNew ?? passwordCurrent)?.value ?? '',
         };
     };

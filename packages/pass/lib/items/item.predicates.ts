@@ -39,8 +39,8 @@ export const isBreached = ({ flags }: ItemRevision) => flags << 1 === 1;
 export const isActiveMonitored = and(isActive, isMonitored);
 export const isExcluded = and(isActive, invert(isMonitored));
 
-export const hasUsername = (username: string) => (item: LoginItem) =>
-    Boolean(item.data.content.username.v && deobfuscate(item.data.content.username) === username);
+export const hasEmail = (email: string) => (item: LoginItem) =>
+    Boolean(item.data.content.itemEmail.v && deobfuscate(item.data.content.itemEmail) === email);
 
 export const hasDomain = (item: LoginItem) => item.data.content.urls.length > 0;
 

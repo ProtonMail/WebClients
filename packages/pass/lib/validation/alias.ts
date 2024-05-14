@@ -111,9 +111,9 @@ export const reconciliateAliasFromDraft = <V extends AliasFormValues>(
 };
 
 export const sanitizeLoginAliasSave = (formData: LoginItemFormValues): LoginItemFormValues => {
-    const { username, aliasPrefix, aliasSuffix } = formData;
+    const { itemEmail, aliasPrefix, aliasSuffix } = formData;
 
-    if (aliasSuffix !== undefined && username !== `${aliasPrefix}${aliasSuffix.value}`) {
+    if (aliasSuffix !== undefined && itemEmail !== `${aliasPrefix}${aliasSuffix.value}`) {
         return {
             ...formData,
             withAlias: false,
@@ -133,5 +133,5 @@ export const sanitizeLoginAliasHydration =
 
         const aliasValues = reconciliateAliasFromDraft(formData, aliasOptions);
         const withAlias = aliasValues.aliasSuffix !== undefined && aliasValues.mailboxes.length > 0;
-        return { ...formData, ...aliasValues, withAlias, username: withAlias ? formData.username : '' };
+        return { ...formData, ...aliasValues, withAlias, itemEmail: withAlias ? formData.itemEmail : '' };
     };
