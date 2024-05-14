@@ -480,7 +480,10 @@
     },
     "Description": {
       "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
-        "La supervisió del Dark Web està disponible amb un pla de pagament. Milloreu el vostre pla per accedir-hi immediatament."
+        "La supervisió del web fosc està disponible amb un pla de pagament. Milloreu el vostre pla per accedir-hi immediatament."
+      ],
+      "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
+        "Llista de dominis on certes funcions automàtiques de ${ PASS_SHORT_APP_NAME } (emplenament, suggeriment i desament automàtics) no s'han d'executar.${ infoText }"
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "Aquest compte és vulnerable, visiti el servei i canviï la contrasenya."
@@ -1452,6 +1455,9 @@
       ],
       "Created": [
         "Creat"
+      ],
+      "Device": [
+        "Dispositiu"
       ],
       "Disable data export for team members": [
         "Desactivar l'exportació de dades per als membres de l'equip"

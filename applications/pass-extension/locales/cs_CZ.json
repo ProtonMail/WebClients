@@ -110,6 +110,9 @@
       "Create login": [
         "Vytvořit přihlášení"
       ],
+      "Create new login": [
+        "Vytvořit nové přihlášení"
+      ],
       "Create note": [
         "Vytvořit poznámku"
       ],
@@ -160,6 +163,9 @@
       ],
       "Done": [
         "Hotovo"
+      ],
+      "Download this CSV template": [
+        "Stáhnout tuto CSV šablonu"
       ],
       "Edit": [
         "Upravit"
@@ -350,6 +356,9 @@
       "Saving": [
         "Ukládání"
       ],
+      "Saving passkey...": [
+        "Ukládání přístupového klíče..."
+      ],
       "See members": [
         "Zobrazit členy"
       ],
@@ -436,6 +445,9 @@
       ],
       "View item history": [
         "Zobrazit historii položky"
+      ],
+      "View older history": [
+        "Zobrazit starší historii"
       ],
       "Write us on Reddit": [
         "Napište nám na Reddit"
@@ -884,6 +896,9 @@
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Je dostupná nová verze aplikace ${ PASS_APP_NAME }. Aktualizací získáte nejnovější funkce a opravy chyb."
       ],
+      "A passkey for \"${ username }\" will be saved and available on devices where ${ PASS_APP_NAME } is installed.": [
+        "Přístupový klíč pro \"${ username }\" bude uložen a přístupný na zařízeních, kde je nainstalován ${ PASS_APP_NAME }."
+      ],
       "Access successfully confirmed": [
         "Přístup úspěšně potvrzen"
       ],
@@ -892,6 +907,12 @@
       ],
       "Admin": [
         "Správce"
+      ],
+      "After inactivity, access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
+        "Po nečinnosti bude přístup k ${ PASS_APP_NAME } vyžadovat zadání PIN kódu pro odemknutí relace. Po třech neúspěšných pokusech budete odhlášeni."
+      ],
+      "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
+        "Po úspěšném importu vašich dat můžete z bezpečnostních důvodů smazat CSV soubor obsahující vaše hesla."
       ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Alias \"${ item.aliasEmail }\" přesunut do koše - přestane přeposílat e-maily do vaší schránky"
@@ -914,6 +935,12 @@
       "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
         "Jste si jisti, že chcete přesunout všechny položky z \"${ fromVaultName }\" do \"${ toVaultName }\" ?"
       ],
+      "Are you sure you want to move items to \"${ name }\" ?": [
+        "Jste si jisti, že chcete přesunout položky do \"${ name }\" ?"
+      ],
+      "Are you sure you want to move the item to \"${ name }\" ?": [
+        "Jste si jisti, že chcete přesunou položku do \"${ name }\" ?"
+      ],
       "Auto-lock successfully disabled": [
         "Automatické zamykání bylo úspěšně deaktivováno"
       ],
@@ -922,6 +949,9 @@
       ],
       "Built in 2FA authenticator": [
         "Vestavěný autentizátor 2FA"
+      ],
+      "By default team members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
+        "Ve výchozím nastavení mohou členové týmu exportovat pouze ty trezory, jejichž jsou vlastníky. Pokud je tato možnost zapnutá, nebudou moci exportovat žádná data."
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "Může vytvářet, upravovat, mazat a exportovat položky v tomto trezoru."
@@ -989,6 +1019,12 @@
       "Enter your PIN code": [
         "Zadejte PIN kód"
       ],
+      "Fill in the CSV with your data": [
+        "Vyplňte CSV vašimi daty"
+      ],
+      "Follow those steps to import your data with a generic CSV :": [
+        "Postupujte podle těchto kroků pro import vašich dat pomocí obecného CSV:"
+      ],
       "For easy access to your passwords and more.": [
         "Pro snadný přístup k heslům a dalším údajům."
       ],
@@ -1015,6 +1051,9 @@
       ],
       "Import in progress:": [
         "Import probíhá:"
+      ],
+      "Import the CSV file below.": [
+        "CSV soubor importujte níže."
       ],
       "Imported ${ payload.total } item": [
         "Importována ${ payload.total } položka",
@@ -1103,8 +1142,14 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Přesouvání všech položek z \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its history": [
+        "Přesunutím položky do jiného trezoru se smaže její historie"
+      ],
       "Moving items": [
         "Přesouvání položek"
+      ],
+      "Moving items to another vault will erase their history": [
+        "Přesunutím položek do jiného trezoru se smaže jejich historie"
       ],
       "Moving items to trash": [
         "Přesouvání položek do koše"
@@ -1205,6 +1250,12 @@
       "Save passkey": [
         "Uložit přístupový klíč"
       ],
+      "Select an existing login item to update.": [
+        "Vyberte stávající položku přihlášení, která má být aktualizována."
+      ],
+      "Select an existing login or create a new one.": [
+        "Vyberte stávající přihlašovací jméno nebo vytvořte nové."
+      ],
       "Select destination vault": [
         "Vyberte cílový trezor"
       ],
@@ -1271,6 +1322,9 @@
       "The export will only contain vaults that you own.": [
         "Export bude obsahovat pouze vaše vlastní trezory."
       ],
+      "The exported file will be encrypted using PGP and requires a strong passphrase.": [
+        "Exportovaný soubor bude zašifrován pomocí PGP a vyžaduje silné heslo."
+      ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Následující ${ result.ignored.length } položku nelze importovat:",
         "Následující ${ result.ignored.length } položky nelze importovat:",
@@ -1286,8 +1340,14 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Tento export bude nešifrovaný a kdokoli s přístupem k exportovanému souboru bude moci zobrazit vaše hesla. Z bezpečnostních důvodů jej po ukončení používání odstraňte."
       ],
+      "This setting is disabled on the organization level": [
+        "Tato volba je na úrovni organizace deaktivována"
+      ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Tento trezor není v současné době s nikým sdílen. Pozvěte ostatní, se kterými chcete trezor sdílet."
+      ],
+      "This version will be added to the history as the newest version.": [
+        "Verze bude přidána do historie jako nejnovější verze."
       ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Chcete-li přenést data z jiného správce hesel, přejděte do správce hesel, exportujte data a poté je nahrajte do ${ PASS_APP_NAME }. Po importu dat exportovaný soubor smažte."
@@ -1300,6 +1360,9 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Neomezený počet aliasů Hide-my-email"
+      ],
+      "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
+        "Pro uložení tohoto přístupového klíče, odemkněte ${ PASS_APP_NAME } pomocí vašeho PIN kódu"
       ],
       "Unlock it with your PIN to access the settings": [
         "Odemkněte ji pomocí PIN kódu pro přístup k nastavením"
@@ -1527,6 +1590,9 @@
       ],
       "Created": [
         "Vytvořeno"
+      ],
+      "Device": [
+        "Zařízení"
       ],
       "Display": [
         "Zobrazení"
@@ -1768,6 +1834,9 @@
       "Special characters (!&*)": [
         "Speciální znaky (!&*)"
       ],
+      "Strong": [
+        "Silné"
+      ],
       "Suffix": [
         "Přípona"
       ],
@@ -1833,6 +1902,12 @@
       ],
       "View logs": [
         "Zobrazit logy"
+      ],
+      "Vulnerable": [
+        "Zranitelné"
+      ],
+      "Weak": [
+        "Slabé"
       ],
       "Website": [
         "Webová stránka"
@@ -2129,6 +2204,9 @@
       "Set access level": [
         "Nastavit úroveň přístupu"
       ],
+      "Set up 2FA for more security": [
+        "Nastavte 2FA pro větší zabezpečení"
+      ],
       "Share with": [
         "Sdílet s"
       ],
@@ -2170,6 +2248,9 @@
       ],
       "Vault shared with you": [
         "Trezor sdílený s vámi"
+      ],
+      "Weak password": [
+        "Slabé heslo"
       ],
       "Welcome to your new password manager!": [
         "Vítejte ve svém novém správci hesel!"
@@ -2279,6 +2360,9 @@
       ],
       "No items matching": [
         "Žadné položky se neshodují"
+      ],
+      "No passkeys found. Save your passkeys in ${ PASS_APP_NAME } to sign-in to ${ domain }.": [
+        "Nebyly nalezeny žádné přístupové klíče. Uložte své přístupové klíče k ${ domain } do ${ PASS_APP_NAME }."
       ],
       "No password manager selected": [
         "Není vybrán žádný správce hesel"

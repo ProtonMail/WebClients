@@ -529,6 +529,9 @@
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "Bu hesapta güvenlik açığı var. Hizmeti ziyaret edin ve parolanızı değiştirin."
+      ],
+      "This service offers 2FA. Enable it for added account security.": [
+        "Bu hizmet iki adımlı doğrulama sağlıyor. Hesap güvenliğini artırmak için bunu kullanın."
       ]
     },
     "Error": {
@@ -1555,6 +1558,9 @@
       "${ PASS_SHORT_APP_NAME } monitor": [
         "${ PASS_SHORT_APP_NAME } izleyici"
       ],
+      "${ PASS_SHORT_APP_NAME } version": [
+        "${ PASS_SHORT_APP_NAME } sürümü"
+      ],
       "1 hour": [
         "1 saat"
       ],
@@ -1671,6 +1677,12 @@
       ],
       "Created": [
         "Oluşturulma"
+      ],
+      "Created at": [
+        "Oluşturulma tarihi"
+      ],
+      "Device": [
+        "Aygıt"
       ],
       "Disable data export for team members": [
         "Ekip üyelerinin verileri dışa aktarmasını kapat"
