@@ -43,6 +43,26 @@
         "Aturareu el reenviament del correu."
       ]
     },
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "S'han detectat ${ name } i ${ remainingCount } altres fuites potencials. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls i prendre mesures. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "S'han detectat ${ name } i una altra fuita potencial. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls i prendre mesures. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "S'ha detectat una possible fuita de ${ name }. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls i prendre mesures. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "S'ha detectat una possible fuita de ${ name }. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls i prendre mesures. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "S'ha detectat una possible fuita de ${ name }. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "S'ha trobat la vostra informació en almenys una fuita de dades. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls i prendre mesures. ${ link }"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "Botiga de ${ BRAND_NAME }"
@@ -358,9 +378,6 @@
       ],
       "Discard": [
         "Descarta"
-      ],
-      "Don't know your password?": [
-        "No sabeu la vostra contrasenya?"
       ],
       "Don't show again": [
         "No mostrar de nou"
@@ -1198,7 +1215,7 @@
     },
     "Address action": {
       "Delete address": [
-        "Eliminar l'adreça"
+        "Elimina l'adreça"
       ],
       "Disable": [
         "Desactiva"
@@ -3110,15 +3127,15 @@
     },
     "Delete address prompt": {
       "You can only delete 1 address per year.": [
-        "Només pot eliminar una adreça per any."
+        "Només podeu eliminar una adreça per any."
       ]
     },
     "Delete address tooltip": {
       "You can only delete 1 address per year": [
-        "Només pot eliminar una adreça per any"
+        "Només podeu eliminar una adreça per any"
       ],
       "You've reached the limit of address deletions for this user.": [
-        "Ha assolit el límit de supressió d'adreces per a aquest usuari."
+        "Heu assolit el límit d'eliminació d'adreces per a aquest usuari."
       ]
     },
     "Delete calendar section description": {
@@ -3573,10 +3590,10 @@
     },
     "email_forwarding_2023: Error": {
       "Condition incomplete, please add a token": [
-        "La condició està incompleta. Afegiu un token."
+        "La condició està incompleta. Afegiu un testimoni."
       ],
       "Token already exists": [
-        "El token ja existeix."
+        "El testimoni ja existeix."
       ]
     },
     "email_forwarding_2023: Error message, recovery": {
@@ -4069,7 +4086,7 @@
         "Es requereix el port"
       ],
       "Primary address key is not decrypted": [
-        "La clau de la adreça primària no està desxifrada"
+        "La clau de l'adreça principal no està desxifrada"
       ],
       "Primary address key is not decrypted.": [
         "La clau de la adreça primària no està desxifrada."
@@ -4100,7 +4117,7 @@
         "Signatura no verificada"
       ],
       "Signature verification failed": [
-        "Verificació de la signatura fallida"
+        "No s'ha pogut verificar la signatura"
       ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Alguns dels vostres noms de carpeta no estan disponibles. Personalitzeu la importació per tal d'editar-ne els noms."
@@ -5287,7 +5304,7 @@
         "${ appName } a l'App Store"
       ],
       "${ appName } on Play Store": [
-        "${ appName } a Play Store"
+        "${ appName } a la Play Store"
       ],
       "${ MAIL_APP_NAME } app": [
         "Aplicació ${ MAIL_APP_NAME }"
@@ -5879,6 +5896,17 @@
         "Part del contingut del vostre calendari no és compatible i no s'importarà."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "S'han detectat claus addicionals duplicades. Carregueu-les individualment per obtenir més informació."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "La clau ${ fingerprint } ja s'ha carregat"
+      ],
+      "Selected color:": [
+        "Color seleccionat:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necessita el vostre permís per ${ enableDesktopNotifications }."
@@ -6181,6 +6209,9 @@
       ],
       "Amount due": [
         "Import pendent"
+      ],
+      "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
+        "Un àlies de correu electrònic funciona com una adreça de correu electrònic, però redueix el correu brossa i manté ocultes la vostra adreça de correu electrònic real i la vostra identitat."
       ],
       "An error occurred while communicating with the extension": [
         "S'ha produït un error en comunicar amb l'extensió"
@@ -6822,6 +6853,9 @@
       "Just send them your personal referral link.": [
         "Envieu-los el vostre enllaç de referència personal."
       ],
+      "Keep your info more secure and private with these guides and tips.": [
+        "Manteniu la vostra informació més segura i privada amb aquestes guies i consells."
+      ],
       "Key deletion is irreversible!": [
         "L'eliminació de claus és irreversible."
       ],
@@ -7422,6 +7456,9 @@
       ],
       "The calendar will be removed from your account.": [
         "El calendari s'esborrarà del vostre compte."
+      ],
+      "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
+        "El web fosc és una part amagada d'Internet on es pot comprar i vendre informació personal robada, com ara les identitats."
       ],
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "L'enllaç de verificació per correu electrònic ha caducat. Inicieu la sessió per a tornar a enviar un enllaç de verificació."
@@ -8102,17 +8139,6 @@
       ],
       "Zoom meeting": [
         "reunió de Zoom"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "S'han detectat claus addicionals duplicades. Carregueu-les individualment per obtenir més informació."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "La clau ${ fingerprint } ja s'ha carregat"
-      ],
-      "Selected color:": [
-        "Color seleccionat:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9624,7 +9650,7 @@
         "General"
       ],
       "Get ${ BRAND_NAME } Pass": [
-        "Aconsegueixi ${ BRAND_NAME } Pass"
+        "Obtén ${ BRAND_NAME } Pass"
       ],
       "Get ${ VPN_APP_NAME }": [
         "Obtén ${ VPN_APP_NAME }"
@@ -9673,9 +9699,6 @@
       ],
       "Request an invite": [
         "Demana una invitació"
-      ],
-      "Reset password": [
-        "Restableix la contrasenya"
       ],
       "Set email address": [
         "Configura l'adreça de correu electrònic"
@@ -11110,10 +11133,10 @@
         "Una adreça externa no pot ser una adreça per defecte."
       ],
       "Dark Web Monitoring has been disabled": [
-        "S'ha desactivat la supervisió del Dark Web."
+        "S'ha desactivat la supervisió del web fosc."
       ],
       "Dark Web Monitoring has been enabled": [
-        "S'ha activat la supervisió del Dark Web."
+        "S'ha habilitat la supervisió del web fosc"
       ],
       "Invalid code": [
         "El codi no és vàlid."
@@ -11519,13 +11542,13 @@
     },
     "Organization logo upload": {
       "Ensure your logo has padding space around it.": [
-        "Asseguri's que el seu logotip tingui espai de farciment al seu voltant."
+        "Assegureu-vos que el logo tingui espai de farciment al seu voltant."
       ],
       "Tips on choosing a good logo": [
-        "Consells per triar un bon logotip"
+        "Consells per a triar un bon logo"
       ],
       "Use a solid background color.": [
-        "Utilitzi un color de fons sòlid."
+        "Utilitzeu un color de fons sòlid."
       ]
     },
     "Organization logo upload modal": {
@@ -11888,7 +11911,7 @@
         "S'ha denegat el permís. S'han restringit els privilegis d'administrador."
       ],
       "Please ensure they have an enabled address and invite them separately later.": [
-        "Asseguri's que tinguin una adreça habilitada i convidi'ls més tard per separat."
+        "Assegureu-vos que tinguin una adreça habilitada i convideu-los més tard per separat."
       ],
       "Reset organization key": [
         "Restableix la clau de l'organització"
@@ -12344,7 +12367,7 @@
         "El subministrament automàtic de SCIM es desactivarà fins que introdueixi el nou token SCIM a la configuració del seu proveïdor d'identitat."
       ],
       "The SCIM base URL and token will be deleted.": [
-        "Se suprimiran l'URL base i el token SCIM."
+        "Se suprimiran l'URL base i el testimoni de SCIM."
       ],
       "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
         "Per tornar a activar la sincronització amb el seu proveïdor d'identitat, ha de tornar a completar la integració SCIM."
@@ -12363,13 +12386,13 @@
     },
     "scim: Title": {
       "Disable SCIM integration?": [
-        "Vol desactivar la integració SCIM?"
+        "Voleu desactivar la integració SCIM?"
       ],
       "Generate new SCIM token?": [
-        "Generar un nou token SCIM?"
+        "Voleu generar un nou testimoni SCIM?"
       ],
       "SCIM automatic provisioning": [
-        "Provisionament automàtic de SCIM"
+        "Aprovisionament automàtic de SCIM"
       ]
     },
     "scim: Tooltip": {
@@ -12378,6 +12401,20 @@
       ],
       "URL of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
         "URL del connector SCIM al qual el seu agent d'aprovisionament IdP reenvia les dades SCIM"
+      ]
+    },
+    "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "S'han detectat ${ name } i ${ remainingCount } altres fuites potencials. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "S'han detectat ${ name } i una altra fuita potencial. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "S'ha detectat una possible fuita de ${ name }. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "S'ha trobat la vostra informació en almenys una fuita de dades. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls. ${ link }"
       ]
     },
     "Select file": {
@@ -13770,7 +13807,7 @@
     },
     "TableRow": {
       "No SMTP tokens found": [
-        "No s'han trobat tokens SMTP."
+        "No s'han trobat testimonis SMTP."
       ]
     },
     "Time unit for duration; displayed in the time picker": {
@@ -14801,6 +14838,9 @@
       "What is an alias?": [
         "Què és un àlies?"
       ],
+      "What is the dark web?": [
+        "Què és el web fosc?"
+      ],
       "What would you like to import?": [
         "Què li agradaria importar?"
       ],
@@ -15381,7 +15421,7 @@
         "La configuració de data i hora del vostre dispositiu no estan sincronitzats. ${ learnMore }"
       ],
       "The device or service using this token will no longer be able to send email through ${ MAIL_APP_NAME }.": [
-        "El dispositiu o servei que utilitza aquest token ja no podrà enviar correus electrònics a través de ${ MAIL_APP_NAME }."
+        "El dispositiu o servei que utilitza aquest testimoni ja no podrà enviar correus electrònics a través de ${ MAIL_APP_NAME }."
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "Aquesta importació pot superar la capacitat d'emmagatzematge disponible actualment al vostre compte de ${ BRAND_NAME }. Considereu personalitzar la importació."

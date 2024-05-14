@@ -43,6 +43,26 @@
         "메일 포워딩을 중단하게 됩니다."
       ]
     },
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name }과 ${ remainingCount }개의 잠재적인 유출이 탐지되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하고 조치를 취하십시오. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name }과 하나의 잠재적인 유출이 탐지되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하고 조치를 취하십시오. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "잠재적인 ${ name } 유출이 탐지되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하고 조치를 취하십시오. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name }에서 잠재적인 유출이 탐지되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하고 조치를 취하십시오. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name }에서 잠재적인 유출이 탐지되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하십시오. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "당신의 정보가 적어도 하나의 데이터 유출에서 발견되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하고 조치를 취하십시오. ${ link }"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 상점"
@@ -257,6 +277,9 @@
       "Copy link": [
         "링크 복사"
       ],
+      "Copy version number to clipboard": [
+        "버전 넘버를 클립보드에 복사하기"
+      ],
       "Create": [
         "생성"
       ],
@@ -358,9 +381,6 @@
       ],
       "Discard": [
         "저장 안함"
-      ],
-      "Don't know your password?": [
-        "비밀번호를 잊으셨나요?"
       ],
       "Don't show again": [
         "다시 표시하지 않음"
@@ -469,6 +489,9 @@
       ],
       "Font": [
         "글꼴"
+      ],
+      "Forgot password?": [
+        "비밀번호를 잊으셨나요?"
       ],
       "Generate": [
         "생성"
@@ -3314,7 +3337,7 @@
         "다른 ${ BRAND_NAME } 계정을 사용합니다"
       ],
       "It doesn't do what I need": [
-        "필요한 기능이 없어서"
+        "원하는대로 기능하지 않아서"
       ],
       "Missing feature(s)": [
         "없는 기능"
@@ -3364,7 +3387,7 @@
         "특가 받기"
       ],
       "Special Offer": [
-        "특가"
+        "특별 할인"
       ]
     },
     "driveplus2024: Deal details": {
@@ -5967,6 +5990,17 @@
         "캘린더 콘텐츠 중 일부가 지원되지 않으며, 불러와지지 않습니다."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "추가적인 복제 키가 감지되었습니다. 자세한 정보를 위해 따로 업로드해주세요."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "${ fingerprint } 키가 업로드 되었습니다"
+      ],
+      "Selected color:": [
+        "선택한 색상:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }에서 ${ enableDesktopNotifications }하려면 권한이 필요합니다."
@@ -7735,6 +7769,9 @@
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "사용자의 계정 및 계정에 연결된 모든 정보가 영구 삭제되며, 이 계정의 복구가 불가능합니다."
       ],
+      "This will remove any enabled 2FA methods.": [
+        "이것으로 모든 활성화된 2단계 인증 방법이 제거됩니다."
+      ],
       "This will remove SSO for ${ boldDomainName }.": [
         "이렇게 하면${ boldDomainName }의 SSO가 제거됩니다."
       ],
@@ -7957,6 +7994,9 @@
       "Version history": [
         "버전 기록"
       ],
+      "Version number successfully copied to clipboard": [
+        "버전 넘버를 클립보드에 복사했습니다"
+      ],
       "View, download, and manage your invoices.": [
         "청구서를 보고 다운로드 하고 관리하세요."
       ],
@@ -8061,6 +8101,9 @@
       ],
       "When they subscribe to a plan, you'll get credits to use on your subscription.": [
         "초대를 받은 사람이 플랜을 구독하면, 내 구독에 사용할 수 있는 크레딧을 받을 수 있습니다."
+      ],
+      "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
+        "지금의 유료 구독을 취소하신다면, 구독의 잔량이 계정 크레딧으로 반환되고 ${ BRAND_NAME } ${ PLANS.FREE } 요금제로 다운그레이드됩니다."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "이중 인증을 설정하면, 인증 앱에 접근할 수 없을 때 로그인 시 사용할 수 없는 복구 코드를 제공해드립니다."
@@ -8337,17 +8380,6 @@
       ],
       "Zoom meeting": [
         "Zoom 미팅"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "추가적인 복제 키가 감지되었습니다. 자세한 정보를 위해 따로 업로드해주세요."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "${ fingerprint } 키가 업로드 되었습니다"
-      ],
-      "Selected color:": [
-        "선택한 색상:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9902,6 +9934,9 @@
       "Encryption and keys": [
         "암호화 및 키"
       ],
+      "Forgot password?": [
+        "비밀번호를 잊으셨나요?"
+      ],
       "Forgot username?": [
         "아이디를 잊으셨나요?"
       ],
@@ -9958,9 +9993,6 @@
       ],
       "Request an invite": [
         "가입 요청하기"
-      ],
-      "Reset password": [
-        "비밀번호 재설정"
       ],
       "Set email address": [
         "이메일 주소 설정"
@@ -10760,6 +10792,9 @@
       "Organize items with multiple vaults": [
         "다중 금고와 항목 정리"
       ],
+      "Pass Monitor - premium features": [
+        "Pass Monitor - 프리미엄 기능"
+      ],
       "Passkeys supported": [
         "패스키를 지원함"
       ],
@@ -10843,6 +10878,9 @@
       ],
       "Unlimited devices": [
         "기기 개수 무제한"
+      ],
+      "Unlimited devices and aliases": [
+        "무제한 기기와 별칭"
       ],
       "Unlimited filters": [
         "무제한 필터"
@@ -11989,6 +12027,15 @@
       "Advanced protection that goes beyond industry standards": [
         "업계 표준을 뛰어넘는 고급 보호"
       ],
+      "Alerts for compromised emails and vulnerable passwords": [
+        "노출된 이메일과 취약한 비밀번호에 대한 경고"
+      ],
+      "Alerts for vulnerable passwords": [
+        "취약한 비밀번호에 대한 경고"
+      ],
+      "Aliases for email protection from breaches": [
+        "데이터 침해로부터 이메일을 지키는 별칭"
+      ],
       "All premium ${ BRAND_NAME } services.": [
         "모든 ${ BRAND_NAME } 프리미엄 서비스"
       ],
@@ -12100,6 +12147,9 @@
       "Launching ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } 실행 중"
       ],
+      "Limited time offer: ${ title } for ${ price } for the 1st month": [
+        "기간 한정 할인: ${ title }를 첫 한달 간 ${ price }에"
+      ],
       "Limited time offer: Get ${ title } for ${ price } per user monthly!": [
         "기간 한정 세일: ${ title }을(를) 월간 사용자 당 ${ price }으로 누리세요!"
       ],
@@ -12135,6 +12185,18 @@
       ],
       "Save your recovery kit to continue": [
         "계속하려면 복구 키트를 저장해주세요"
+      ],
+      "Secure sharing with ${ n } vault": [
+        "${ n } 금고를 통한 안전한 공유하기"
+      ],
+      "Secure sharing with multiple vaults": [
+        "여러 금고를 통한 안전한 공유하기"
+      ],
+      "Secure vault sharing": [
+        "안전한 금고 공유"
+      ],
+      "Secured by end-to-end encryption": [
+        "종단간 암호화로 보호됨"
       ],
       "Setting up your organization": [
         "조직을 설정하세요"
@@ -12788,8 +12850,17 @@
       ]
     },
     "Security Center - Info": {
-      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLinkBreach }": [
-        "하나 이상의 데이터 침해사례에서 당신의 정보가 발견되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하고 조치를 취하십시오. ${ learnMoreLinkBreach }"
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name }과 ${ remainingCount }개의 잠재적인 유출이 탐지되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하십시오. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name }과 하나의 잠재적인 유출이 탐지되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하십시오. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "잠재적인 ${ name } 유출이 탐지되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하십시오. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "당신의 정보가 적어도 하나의 데이터 유출에서 발견되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하십시오. ${ link }"
       ]
     },
     "Select file": {
@@ -13717,17 +13788,56 @@
       "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
         "${ BRAND_NAME }의 유일한 수익원은 사용자의 구독입니다. 당신의 지지로 저희는 독립적일 수 있고, 프라이버시가 기본인 온라인을 만들어나가는 사명을 위해 나아갈 수 있으며, 프라이버시와 자유를 위해 싸우는 활동가들과 조직을 지원해나갈 수 있습니다."
       ],
+      "${ CALENDAR_APP_NAME } including calendar sharing": [
+        "${ CALENDAR_APP_NAME }과 캘린더 공유 기능"
+      ],
       "${ dayDiff } day left": [
         "${ dayDiff }일 남음"
+      ],
+      "${ DRIVE_APP_NAME } including version history": [
+        "${ DRIVE_APP_NAME }과 버전 히스토리 기능"
+      ],
+      "${ MAIL_APP_NAME } and all premium productivity features": [
+        "${ MAIL_APP_NAME }과 모든 프리미엄 생산성 기능"
       ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } 데스크톱 앱"
       ],
+      "${ PASS_APP_NAME } including unlimited hide-my-email aliases": [
+        "${ PASS_APP_NAME }과 제한 없는 Hide-my-email 별칭 기능"
+      ],
       "${ planMaxSpace } total storage": [
         "총 저장공간 ${ planMaxSpace }"
       ],
+      "${ planName } gives you access to all apps and premium features. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
+        "${ planName }로 모든 앱과 프리미엄 기능에 접근할 수 있습니다. 프라이버시는 기본이므로 당신의 데이터와 신원이 안전하다는 것을 인지하고 계속할 수 있습니다."
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName }는 모든 앱, 모든 기능, 새 릴리스의 얼리 액세스, 그리고 당신의 데이터와 그 보안을 제어하기 위해 필요한 모든 것을 제공합니다."
+      ],
+      "${ planName } goes beyond the basics to help you be more productive, organized, and in control of your inbox, email identity, and more.": [
+        "${ planName }는 귀하가 더욱 생산적이고, 체계적이며 받은 편지함과 이메일 신원을 관리하는 것에 기본을 뛰어넘는 도움을 줍니다."
+      ],
+      "${ planName } helps you ensure that each of your family members — and their data — are protected whenever they’re online.": [
+        "${ planName }는 귀하의 가족 구성원 모두와 그 데이터가 온라인에서 언제나 보호받을 수 있도록 돕습니다."
+      ],
+      "${ planName } offers ${ planMaxSpace } storage for your emails, attachments, events, passwords, and files. You are also eligible for yearly storage bonuses.": [
+        "${ planName }는 당신의 이메일과 첨부파일, 이벤트, 비밀번호 그리고 파일을 위한 저장공간 ${ planMaxSpace }를 제공합니다. 또한 연간 저장공간 보너스를 받으실 수 있습니다."
+      ],
+      "${ planName } offers ${ planMaxSpace } storage for your files and photos. You are also eligible for yearly storage bonuses.": [
+        "${ planName }는 당신의 파일과 사진을 위한 저장공간 ${ planMaxSpace }를 제공합니다. 또한 연간 저장공간 보너스를 받으실 수 있습니다."
+      ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "${ PROTON_SENTINEL_NAME } 프로그램"
+      ],
+      "${ VPN_APP_NAME } with access to all high-speed servers in ${ vpnCountries } countries": [
+        "${ VPN_APP_NAME }과 ${ vpnCountries }개 국가의 모든 고속 서버"
+      ],
       "10 email addresses": [
         "이메일 주소 10개"
+      ],
+      "6 users": [
+        "사용자 6명"
       ],
       "Add any new files": [
         "새로운 파일을 추가할 수 없게 됩니다"
@@ -13747,8 +13857,17 @@
       "Close": [
         "닫기"
       ],
+      "Comprehensive privacy and security": [
+        "종합적인 프라이버시와 보안"
+      ],
       "Custom schedule send and snooze times": [
         "사용자 지정 스케줄과 방해금지 시간"
+      ],
+      "Direct contribution to our mission": [
+        "저희의 사명에 직접적인 기여"
+      ],
+      "Early access to new apps and features": [
+        "새 앱과 기능에 얼리 액세스"
       ],
       "Extra storage and bonuses": [
         "추가 저장공간과 보너스"
@@ -13783,8 +13902,17 @@
       "Manage your calendar": [
         "캘린더를 관리할 수 없게 됩니다"
       ],
+      "Online privacy, for your whole family": [
+        "당신의 가족, 모두를 위한 온라인 프라이버시."
+      ],
       "Our fight against censorship in Russia": [
         "러시아의 검열에 맞선 저희의 싸움"
+      ],
+      "Please note that ${ planName } is no longer available for purchase. If you downgrade your account, you will lose all plan benefits and won't be able to resubscribe.": [
+        "${ planName }는 더 이상 구매가 불가능하다는 것에 유의해 주십시오. 계정을 다운그레이드 한다면, 요금제의 모든 혜택을 잃고 다시 구독할 수도 없게 됩니다."
+      ],
+      "Premium productivity features": [
+        "프리미엄 생산성 기능"
       ],
       "Priority support": [
         "우선 지원"
@@ -13810,20 +13938,41 @@
       "Sync files on devices": [
         "기기간 파일 동기화를 할 수 없게 됩니다"
       ],
+      "The best of ${ BRAND_NAME }": [
+        "최고의 ${ BRAND_NAME }"
+      ],
       "Unblocking internet access in Iran": [
         "이란의 인터넷 접속 차단 해제"
       ],
       "Unlimited folders, labels and filters": [
         "무제한 폴더, 라벨, 그리고 필터"
       ],
+      "Version history": [
+        "버전 기록"
+      ],
       "Watch the interview": [
         "인터뷰 보기"
+      ],
+      "What you give up when you cancel ${ planName }": [
+        "${ planName }를 취소하면 포기하게 되는 것"
+      ],
+      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
+        "${ planName }를 취소하시면 Mail 저장공간은 1GB, Drive 저장공간은 5GB까지만 제공하는 ${ BRAND_NAME } Free로 다운그레이드됩니다. 또 이전에 받은 모든 저장공간 보너스를 잃게 됩니다."
+      ],
+      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
+        "${ planName }를 취소하시면 Drive 저장공간은 5GB, Mail 저장공간은 1GB까지만 제공하는 ${ BRAND_NAME } Free로 다운그레이드됩니다. 또 이전에 받은 모든 저장공간 보너스를 잃게 됩니다."
       ],
       "Yearly free storage bonuses": [
         "연간 무료 저장공간 보너스"
       ],
+      "You still have ${ expiryDate } left on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink } ${ unavailablePlan }": [
+        "${ planName }의 구독이 아직 ${ expiryDate } 만큼 남아 있습니다. 이 시간만큼 ${ BRAND_NAME } 계정에 크레딧이 지급됩니다. 취소하기 전 무료 요금제의 한도를 넘지 않도록 하십시오. ${ learnMoreLink } ${ unavailablePlan }"
+      ],
       "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
         "${ planName }의 구독이 아직 ${ expiryDate } 만큼 남아 있습니다. 이 시간만큼 ${ BRAND_NAME } 계정에 크레딧이 지급됩니다. 취소하기 전 무료 요금제의 한도를 넘지 않도록 하십시오. ${ learnMoreLink }"
+      ],
+      "Your ${ planName } has been canceled.": [
+        "귀하의 ${ planName }가 취소되었습니다."
       ],
       "Your own custom email domain": [
         "사용자의 커스텀 이메일 도메인"
@@ -15022,7 +15171,7 @@
         "PayPal 인증 실패"
       ],
       "Personalise your e-mail footer": [
-        "사용자 지정 이메일 바닥글"
+        "당신의 이메일 바닥글을 개인화하세요"
       ],
       "Phone": [
         "전화"

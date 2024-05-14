@@ -359,9 +359,6 @@
       "Discard": [
         "放棄"
       ],
-      "Don't know your password?": [
-        "不知您的密碼?"
-      ],
       "Don't show again": [
         "日後免再顯示"
       ],
@@ -524,6 +521,9 @@
       "Go to label": [
         "跳至標籤"
       ],
+      "Go to settings": [
+        "前往設定"
+      ],
       "Got it": [
         "了解"
       ],
@@ -595,6 +595,9 @@
       ],
       "label emails as": [
         "將電郵加上標籤"
+      ],
+      "Later": [
+        "稍後"
       ],
       "Leave": [
         "離開"
@@ -1863,6 +1866,9 @@
       ]
     },
     "Call Scheduled Confirmation": {
+      "Request sent": [
+        "已送出需求"
+      ],
       "You can safely close this tab.": [
         "現在您可以安全地關閉此分頁。"
       ]
@@ -3085,6 +3091,9 @@
       ]
     },
     "Delete address prompt": {
+      "Once deleted, this address can't be used again by anyone else.": [
+        "一旦刪除，這個地址將無法再讓任何人使用。"
+      ],
       "You can only delete 1 address per year.": [
         "每年只能刪除一個地址。"
       ]
@@ -3288,6 +3297,14 @@
         "安全雲端儲存和檔案共享保護您的資料"
       ]
     },
+    "drivePlus2024: Action": {
+      "Get the deal": [
+        "取得優惠"
+      ],
+      "Special Offer": [
+        "特別優惠"
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "展開版本紀錄"
@@ -3304,6 +3321,9 @@
     "drivePlus2024: Info": {
       "for the first month": [
         "首月"
+      ],
+      "Limited-time offer": [
+        "限時優惠"
       ]
     },
     "drivePlus2024: Title": {
@@ -3859,6 +3879,9 @@
       "Failed to process the logo": [
         "無法處理此標誌檔案"
       ],
+      "File too large. Your logo must be 30 KB or smaller.": [
+        "檔案太大了。您的標誌必須為 30 KB 或更小。"
+      ],
       "Filter with this name already exists": [
         "已經有一個相同名稱的篩選器"
       ],
@@ -4104,6 +4127,12 @@
       ],
       "The email addresses do not match": [
         "電子郵件位址不相符"
+      ],
+      "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
+        "這個檔案太大了，最大為 ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }"
+      ],
+      "The file is too small, the minimum size is ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }": [
+        "這個檔案太小了，最小大小為 ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }"
       ],
       "The folder name is invalid. Please choose a different name.": [
         "此資料夾名稱無法使用。請換另一個名稱。"
@@ -5839,6 +5868,17 @@
         "您的行事曆中有部分內容未受支援，因此不會匯入。"
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "偵測到其它重複的金鑰。請單獨上傳以取得更多資訊"
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "金鑰 ${ fingerprint } 已上傳"
+      ],
+      "Selected color:": [
+        "已選取的色彩:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } 需要您的授權以${ enableDesktopNotifications }。"
@@ -6289,6 +6329,9 @@
       ],
       "Check the status of imports and forwarding.": [
         "查看匯入和轉寄的狀況。"
+      ],
+      "Choose an app to get started": [
+        "選擇應用程式已開始"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "按一下「重新傳送驗證碼」向 ${ strong } 傳送新的驗證碼。如此手機號碼不正確，請按一下「編輯」作出修正。"
@@ -8133,17 +8176,6 @@
         "Zoom 會議"
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "偵測到其它重複的金鑰。請單獨上傳以取得更多資訊"
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "金鑰 ${ fingerprint } 已上傳"
-      ],
-      "Selected color:": [
-        "已選取的色彩:"
-      ]
-    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "啟用時，子資料夾繼承上層資料夾的色彩。"
@@ -9679,6 +9711,9 @@
       "here": [
         "這裡"
       ],
+      "How does monitoring work?": [
+        "監控如何運作？"
+      ],
       "How to pay with Bitcoin?": [
         "如何以比特幣繳款？"
       ],
@@ -9714,9 +9749,6 @@
       ],
       "Request an invite": [
         "需求邀請"
-      ],
-      "Reset password": [
-        "重設密碼"
       ],
       "Set email address": [
         "設定電郵位址"
@@ -10513,6 +10545,9 @@
       "Organize items with multiple vaults": [
         "組織項目與多重保管庫"
       ],
+      "Passkeys supported": [
+        "支援密碼金鑰"
+      ],
       "Password-protected Emails": [
         "密碼 - 安全防護的電子郵件"
       ],
@@ -11108,6 +11143,12 @@
       ],
       "An external address cannot be default": [
         "外部的電郵位址不能成為預設"
+      ],
+      "Dark Web Monitoring has been disabled": [
+        "暗網監控已停用"
+      ],
+      "Dark Web Monitoring has been enabled": [
+        "暗網監控已啟用"
       ],
       "Invalid code": [
         "代碼無效"
@@ -11897,6 +11938,9 @@
       "MM/YY": [
         "MM/YY"
       ],
+      "Processing payment": [
+        "正在處理付款"
+      ],
       "Timeout exceeded": [
         "已經逾時"
       ]
@@ -12261,6 +12305,25 @@
       ],
       "User": [
         "使用者"
+      ]
+    },
+    "scim: Action": {
+      "Configure SCIM": [
+        "配置 SCIM"
+      ],
+      "Disable SCIM": [
+        "停用 SCIM"
+      ],
+      "Generate new token": [
+        "產生新代碼"
+      ],
+      "Generate token": [
+        "產生權杖"
+      ]
+    },
+    "scim: Label": {
+      "SCIM token": [
+        "SMTP 憑證"
       ]
     },
     "Select file": {
@@ -13191,14 +13254,61 @@
       "Custom schedule send and snooze times": [
         "自訂寄出時間與暫緩處理郵件"
       ],
+      "Have a question?": [
+        "有問題嗎？"
+      ],
+      "I still want to cancel": [
+        "我還想取消"
+      ],
       "Keep ${ planName }": [
         "保留 ${ planName }"
       ],
       "Priority support": [
         "優先支援"
       ],
+      "Read the story": [
+        "已讀的訊息"
+      ],
       "Unlimited folders, labels and filters": [
         "資料夾、標籤與篩選器無上限"
+      ],
+      "Watch the interview": [
+        "瀏覽訪談"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB 儲存空間"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "自動郵件轉寄${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "資料外洩警告 ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "桌面應用程式"
+      ],
+      "No ads or tracking": [
+        "無廣告或追蹤"
+      ],
+      "Short @pm.me email address": [
+        "縮短電子郵件地址@pm.me"
+      ],
+      "Support our mission": [
+        "支援我們的計畫"
+      ],
+      "Upgrade": [
+        "升級"
+      ],
+      "Upgrade your productivity": [
+        "提升您的生產力"
+      ],
+      "We don't sell your data": [
+        "我們不銷售您的資料"
+      ],
+      "Your privacy is our mission": [
+        "您的隱私是我們責任"
       ]
     },
     "Subscription renewal state": {
@@ -13694,6 +13804,9 @@
       ],
       "Activate user": [
         "啟用使用者"
+      ],
+      "Add a custom logo": [
+        "新增自訂標誌"
       ],
       "Add address": [
         "加入電郵位址"
@@ -14654,6 +14767,9 @@
       ],
       "WireGuard configuration": [
         "WireGuard 組態"
+      ],
+      "You have no resolved alerts": [
+        "您無以處理的警告"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "您的 ${ planName } 免費方案將於 ${ textDate } 結束"

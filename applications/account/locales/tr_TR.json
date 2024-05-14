@@ -359,9 +359,6 @@
       "Discard": [
         "Sil"
       ],
-      "Don't know your password?": [
-        "Parolanızı bilmiyor musunuz?"
-      ],
       "Don't show again": [
         "Bir daha görüntülenmesin"
       ],
@@ -3350,10 +3347,10 @@
     },
     "drivePlus2024: Action": {
       "Get the deal": [
-        "Teklifi al"
+        "Tekliften yararlanın"
       ],
       "Special Offer": [
-        "Özel Teklif"
+        "Özel teklif"
       ]
     },
     "driveplus2024: Deal details": {
@@ -5980,6 +5977,17 @@
         "Takvim içeriğinizin bir bölümü desteklenmiyor ve içe aktarılmayacak."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Ek çift anahtar algılandı. Ayrıntılı bilgi almak için lütfen tek tek yükleyin."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "${ fingerprint } anahtarı zaten yüklenmiş"
+      ],
+      "Selected color:": [
+        "Seçilmiş renk:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }, ${ enableDesktopNotifications } için izninizi istiyor."
@@ -6444,7 +6452,7 @@
         "Göndericilerin bir iletiyi açıp açmadığınızı ve ne zaman açtığınızı görmesini engeller."
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
-        "Kuruluşunuzun marka kimliğini güçlendirerek kullanıcılarınız için daha istikrarlı bir çevrimiçi deneyim oluşturun."
+        "Kuruluşunuzun marka kimliğini güçlendirerek kullanıcılarınız için daha kararlı bir çevrim içi deneyim sağlayın."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ücretsiz bir tarifeye geçtiğinizde, gelecekte yeniden ücretli tarifeye geçseniz bile bu ek faydaları kalıcı olarak kaybedersiniz."
@@ -8387,17 +8395,6 @@
         "Zoom toplantısı"
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Ek çift anahtar algılandı. Ayrıntılı bilgi almak için lütfen tek tek yükleyin."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "${ fingerprint } anahtarı zaten yüklenmiş"
-      ],
-      "Selected color:": [
-        "Seçilmiş renk:"
-      ]
-    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Açıldığında alt klasörler üst klasörün rengini alır."
@@ -10007,9 +10004,6 @@
       "Request an invite": [
         "Davet iste"
       ],
-      "Reset password": [
-        "Parolayı sıfırla"
-      ],
       "Set email address": [
         "E-posta adresini ayarla"
       ],
@@ -10835,7 +10829,7 @@
         "Birden çok kasa ile ögeleri gruplayın"
       ],
       "Passkeys supported": [
-        "Geçiş anahtarları desteklenmektedir"
+        "Geçiş anahtarları destekleniyor"
       ],
       "Password-protected Emails": [
         "Parola korumalı e-postalar"
@@ -12854,11 +12848,6 @@
         "IdP veri sağlama aracınızın SCIM verilerini ilettiği SCIM bağlantısının adresi"
       ]
     },
-    "Security Center - Info": {
-      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLinkBreach }": [
-        "Bilgileriniz en az bir verilerin ele geçirilmesi olayında görüldü. Ayrıntıları görmek ve önlem almak için ${ DARK_WEB_MONITORING_NAME } özelliğini açın. ${ learnMoreLinkBreach }"
-      ]
-    },
     "Select file": {
       "Upload CSV file": [
         "CSV dosyası yükle"
@@ -13831,6 +13820,9 @@
       "10 email addresses": [
         "10 e-posta adresi"
       ],
+      "6 users": [
+        "6 kullanıcı"
+      ],
       "Calendar sharing": [
         "Takvim paylaşımı"
       ],
@@ -13906,25 +13898,25 @@
         "ve 15 ücretli özellik daha"
       ],
       "Automatic email forwarding ${ strongText }": [
-        "Otomatik e-posta iletisi ${ strongText }"
+        "Otomatik e-posta iletme ${ strongText }"
       ],
       "Data breach alerts ${ strongArgument }": [
-        "Veri ihlali uyarısı ${ strongArgument }"
+        "Verilerin ele geçirilmesi uyarıları ${ strongArgument }"
       ],
       "Desktop app": [
         "Masaüstü uygulaması"
       ],
       "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ücretli bir tarifeye geçiş yaparak interneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
+        "Ücretli bir tarifeye geçerek İnterneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
       ],
       "No ads or tracking": [
-        "Reklamlar ve izleyiciler yok"
+        "Reklam veya izleme yok"
       ],
       "Short @pm.me email address": [
         "Kısa @pm.me e-posta adresi"
       ],
       "Support our mission": [
-        "Misyonumuzu destekleyin"
+        "Amacımızı destekleyin"
       ],
       "Upgrade": [
         "Yükselt"
@@ -13933,10 +13925,10 @@
         "Verimliliğinizi artırın"
       ],
       "We don't sell your data": [
-        "Verilerinizi satmıyoruz"
+        "Verilerinizi satmayız"
       ],
       "Your privacy is our mission": [
-        "Gizliliğiniz bizim misyonumuzdur"
+        "Amacımız gizliliğinizi sağlamaktır"
       ]
     },
     "Subscription renewal state": {
@@ -15263,7 +15255,7 @@
         "Kuruluşunuzda oturum açın"
       ],
       "Sign in with 2FA": [
-        "2 adımlı doğrulama ile oturum a"
+        "2 adımlı doğrulama ile oturum aç"
       ],
       "Sign out": [
         "Oturumu kapat"
