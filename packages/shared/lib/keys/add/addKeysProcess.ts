@@ -81,7 +81,6 @@ interface AddUserKeysProcessArguments {
     isDeviceRecoveryAvailable?: boolean;
     isDeviceRecoveryEnabled?: boolean;
     organizationKey?: CachedOrganizationKey;
-    call: () => Promise<void>;
 }
 
 export const addUserKeysProcess = async ({
@@ -94,7 +93,6 @@ export const addUserKeysProcess = async ({
     organizationKey,
     isDeviceRecoveryAvailable,
     isDeviceRecoveryEnabled,
-    call,
 }: AddUserKeysProcessArguments) => {
     const { privateKey, privateKeyArmored } = await generateUserKey({
         passphrase,
@@ -147,7 +145,6 @@ export const addUserKeysProcess = async ({
             userKeys: [{ ID: 'tmp-id', privateKey, publicKey }, ...userKeys],
         });
     }
-    await call();
 
     return privateKey;
 };
