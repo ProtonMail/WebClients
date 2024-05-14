@@ -11,6 +11,8 @@ export interface OrganizationKey {
     AccessToOrgKey?: MEMBER_ORG_KEY_STATE;
     EncryptionAddressID?: string;
     Passwordless?: boolean;
+    FingerprintSignature?: string | null;
+    FingerprintSignatureAddress?: string | null;
 }
 
 export type PasswordlessOrganizationKey = OrganizationKey &

@@ -171,6 +171,12 @@ export const activateOrganizationKey = (PrivateKey: string) => ({
     data: { PrivateKey },
 });
 
+export const uploadOrganizationKeySignature = (data: { AddressID: string; Signature: string }) => ({
+    url: 'core/v4/organizations/keys/signature',
+    method: 'put',
+    data,
+});
+
 export const leaveOrganisation = () => ({
     url: 'core/v4/organizations/membership',
     method: 'delete',
