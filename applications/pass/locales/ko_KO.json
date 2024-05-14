@@ -4,6 +4,26 @@
     "language": "ko_KO"
   },
   "contexts": {
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name }과 ${ remainingCount }개의 잠재적인 유출이 탐지되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하고 조치를 취하십시오. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name }과 하나의 잠재적인 유출이 탐지되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하고 조치를 취하십시오. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "잠재적인 ${ name } 유출이 탐지되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하고 조치를 취하십시오. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name }에서 잠재적인 유출이 탐지되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하고 조치를 취하십시오. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name }에서 잠재적인 유출이 탐지되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하십시오. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "당신의 정보가 적어도 하나의 데이터 유출에서 발견되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하고 조치를 취하십시오. ${ link }"
+      ]
+    },
     "Action": {
       "Add": [
         "추가"
@@ -401,6 +421,9 @@
       "Trash": [
         "휴지통"
       ],
+      "Try again.": [
+        "다시 시도하세요."
+      ],
       "Unpin item": [
         "항목 고정 해제"
       ],
@@ -478,6 +501,9 @@
       "${ total } other login uses the same password": [
         "${ total }개의 다른 로그인이 같은 비밀번호를 사용하고 있습니다"
       ],
+      "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
+        "이중 인증은 로그인에 또 하나의 보안 계층을 추가합니다. ${ PASS_APP_NAME }가 이중 인증 코드를 저장하고 자동으로 자동 완성하여 더 사용하기 쉽게 만들어드립니다."
+      ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "이메일 별칭은 이메일 주소와 같이 동작하지만 스팸을 줄여주고 당신의 실제 이메일 주소와 신원을 감추어 줍니다."
       ],
@@ -513,6 +539,9 @@
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "이 계정은 취약합니다. 서비스를 방문하여 비밀번호를 변경하십시오."
+      ],
+      "This service offers 2FA. Enable it for added account security.": [
+        "이 서비스는 이중 인증을 지원합니다. 향상된 계정 보안을 위해 활성화 하십시오."
       ],
       "With ${ PASS_SHORT_APP_NAME } Monitor, stay ahead of threats by getting instant alerts if your credentials are compromised. Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "${ PASS_SHORT_APP_NAME } 모니터를 사용하면 자격 증명이 손상된 경우 즉각적인 경고를 받아 위협보다 앞서 나갈 수 있습니다. 고급 보안 기능과 자세한 로그를 잠금 해제하여 온라인 신원을 보호하세요."
@@ -1366,6 +1395,9 @@
       "Thank you, the problem has been reported": [
         "감사합니다, 문제가 보고되었습니다."
       ],
+      "The custom email will be sent to ${ href } for monitoring. No other data will be sent to HIBP.": [
+        "커스텀 이메일이 모니터링을 위해 ${ href }으로 보내질 것입니다. 그 외 데이터는 보내지 않습니다."
+      ],
       "The export will only contain vaults that you own.": [
         "내보낼 시 개인이 소유한 금고만 포함됩니다."
       ],
@@ -1489,8 +1521,14 @@
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "${ maxLength } 문자의 최대 허용 길이에 도달했습니다."
       ],
+      "You will be notified of data breaches for these email addresses.": [
+        "이 이메일 주소에 대한 데이터 침해 알림을 받게 됩니다."
+      ],
       "You will be notified of data breaches for this email address.": [
         "이 이메일 주소에 대한 데이터 침해 알림을 받게 됩니다."
+      ],
+      "You will no longer be notified of data breaches for these email addresses.": [
+        "이 이메일 주소에 대한 데이터 침해 알림을 받지 않게 됩니다."
       ],
       "You will no longer be notified of data breaches for this email address.": [
         "이 이메일 주소에 대한 데이터 침해 알림을 받지 않게 됩니다."
@@ -1514,6 +1552,9 @@
       ],
       "${ config.options.wordCount } word": [
         "${ config.options.wordCount }단어"
+      ],
+      "${ PASS_SHORT_APP_NAME } version": [
+        "${ PASS_SHORT_APP_NAME } 버전"
       ],
       "${ usageCount } login": [
         "${ usageCount }개 로그인"
@@ -1620,8 +1661,14 @@
       "Created": [
         "제작"
       ],
+      "Created at": [
+        "생성일:"
+      ],
       "Date": [
         "날짜"
+      ],
+      "Device": [
+        "기기"
       ],
       "Disable data export for team members": [
         "팀 멤버들의 데이터 내보내기 비활성화"
@@ -2126,6 +2173,20 @@
         "메모를 작성하세요"
       ]
     },
+    "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name }과 ${ remainingCount }개의 잠재적인 유출이 탐지되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하십시오. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name }과 하나의 잠재적인 유출이 탐지되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하십시오. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "잠재적인 ${ name } 유출이 탐지되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하십시오. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "당신의 정보가 적어도 하나의 데이터 유출에서 발견되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하십시오. ${ link }"
+      ]
+    },
     "Success": {
       "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
         "금고에 ${ vault.targetMaxMembers }명 이상의 사용자를 포함할 수 없습니다."
@@ -2228,6 +2289,9 @@
       "Import your data": [
         "나의 데이터 불러오기"
       ],
+      "Inactive 2FA": [
+        "2단계 인증 꺼짐"
+      ],
       "Install extension": [
         "확장 프로그램 설치"
       ],
@@ -2239,6 +2303,9 @@
       ],
       "Leave vault ?": [
         "금고를 떠납니까?"
+      ],
+      "Loading breaches...": [
+        "유출 검색 중..."
       ],
       "Low disk space": [
         "디스크 저장공간 부족"
@@ -2266,6 +2333,9 @@
       ],
       "No excluded items": [
         "제외된 항목 없음"
+      ],
+      "No inactive 2FAs": [
+        "비활성화된 이중 인증 없음"
       ],
       "No insecure passwords": [
         "위험한 비밀번호 없음"
@@ -2329,6 +2399,9 @@
       ],
       "Set access level": [
         "접근 수준 설정"
+      ],
+      "Set up 2FA for better security": [
+        "더 나은 보안을 위해 2단계 인증 설정"
       ],
       "Set up 2FA for more security": [
         "더 나은 보안을 위해 2단계 인증 설정"
@@ -2437,7 +2510,7 @@
         "적어도 하나의 이메일 주소가 필요합니다"
       ],
       "Cannot retrieve mailboxes for this alias right now": [
-        "지금은 이 별칭에서 메일함으로 불러올 수 없습니다."
+        "지금은 이 별칭의 편지함을 불러올 수 없습니다."
       ],
       "Could not create vault \"${ vaultName }\"": [
         "\"${ vaultName }\" 금고를 생성할 수 없음"

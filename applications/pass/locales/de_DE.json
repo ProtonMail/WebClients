@@ -158,6 +158,9 @@
       "Edit vault": [
         "Tresor bearbeiten"
       ],
+      "Enable Dark Web Monitoring": [
+        "Dark Web-Überwachung aktivieren"
+      ],
       "Exclude from monitoring": [
         "Von der Überwachung ausschließen"
       ],
@@ -288,7 +291,10 @@
         "Pass für iOS"
       ],
       "Pass Monitor": [
-        "Pass-Monitor"
+        "Pass Monitor"
+      ],
+      "Pause monitoring": [
+        "Überwachung pausieren"
       ],
       "Pin item": [
         "Eintrag anheften"
@@ -320,6 +326,9 @@
       "Resend code": [
         "Code erneut senden"
       ],
+      "Resend code (in ${ remaining }s)": [
+        "Code erneut senden (in ${ remaining }s)"
+      ],
       "Resend invitation": [
         "Einladung erneut senden"
       ],
@@ -328,6 +337,9 @@
       ],
       "Restore item": [
         "Eintrag wiederherstellen"
+      ],
+      "Resume monitoring": [
+        "Überwachung fortsetzen"
       ],
       "Retry": [
         "Erneut versuchen"
@@ -937,6 +949,9 @@
       "Deleting \"${ payload.content.name }\"": [
         "„${ payload.content.name }“ wird gelöscht"
       ],
+      "Didn't receive the code?": [
+        "Code nicht erhalten?"
+      ],
       "Drop file here to upload": [
         "Ziehe Dateien hierher, um sie hochzuladen"
       ],
@@ -1415,6 +1430,9 @@
         "${ config.options.wordCount } Wort",
         "${ config.options.wordCount } Wörter"
       ],
+      "${ PASS_SHORT_APP_NAME } version": [
+        "${ PASS_SHORT_APP_NAME } Version"
+      ],
       "1 hour": [
         "1 Stunde"
       ],
@@ -1517,8 +1535,14 @@
       "Created": [
         "Erstellt"
       ],
+      "Created at": [
+        "Erstellt am"
+      ],
       "Date": [
         "Datum"
+      ],
+      "Device": [
+        "Gerät"
       ],
       "Disable data export for team members": [
         "Datenexport für Teammitglieder deaktivieren"
@@ -1618,6 +1642,9 @@
       ],
       "Last month": [
         "Letzter Monat"
+      ],
+      "Last updated": [
+        "Zuletzt aktualisiert"
       ],
       "Last week": [
         "Letzte Woche"
@@ -1966,6 +1993,9 @@
       "Full Name": [
         "Vollständiger Name"
       ],
+      "me@example.com": [
+        "ich@beispiel.de"
+      ],
       "MM/YY": [
         "MM/JJ"
       ],
@@ -2028,6 +2058,12 @@
       "${ BRAND_NAME } addresses": [
         "${ BRAND_NAME } Adressen"
       ],
+      "${ PASS_SHORT_APP_NAME } Monitor": [
+        "${ PASS_SHORT_APP_NAME } Monitor"
+      ],
+      "Account protection": [
+        "Kontoschutz"
+      ],
       "Auto-lock update": [
         "Aktualisieren der automatischen Sperre"
       ],
@@ -2084,6 +2120,9 @@
       ],
       "Enter your PIN": [
         "PIN eingeben"
+      ],
+      "Excluded items": [
+        "Ausgeschlossene Einträge"
       ],
       "Get Started": [
         "Erste Schritte"
@@ -2142,8 +2181,17 @@
       "Move items?": [
         "Einträge verschieben?"
       ],
+      "No inactive 2FAs": [
+        "Keine inaktiven 2FAs"
+      ],
+      "No insecure passwords": [
+        "Keine unsicheren Passwörter"
+      ],
       "No items selected": [
         "Keine Einträge ausgewählt"
+      ],
+      "No reused passwords": [
+        "Keine wiederverwendeten Passwörter"
       ],
       "Our welcome gift to you": [
         "Unser Willkommensgeschenk an dich"
@@ -2157,6 +2205,9 @@
       "Password Health": [
         "Passwort Sicherheit"
       ],
+      "Pause monitoring?": [
+        "Überwachung pausieren?"
+      ],
       "Pending access to the shared data": [
         "Zugriff auf die geteilten Daten ist ausstehend"
       ],
@@ -2169,11 +2220,17 @@
       "Recommended actions": [
         "Empfohlene Aktionen"
       ],
+      "Remove email address?": [
+        "E-Mail-Adresse entfernen?"
+      ],
       "Resolved breaches": [
         "Gelöste Datenlecks"
       ],
       "Restore this version?": [
         "Diese Version wiederherstellen?"
+      ],
+      "Resume monitoring?": [
+        "Überwachung fortsetzen?"
       ],
       "Reused ${ count } time": [
         "${ count } Mal wiederverwendet",
@@ -2226,6 +2283,12 @@
       ],
       "Want to learn more?": [
         "Möchtest du mehr erfahren?"
+      ],
+      "Weak password": [
+        "Schwaches Passwort"
+      ],
+      "Weak passwords": [
+        "Schwache Passwörter"
       ],
       "What is an alias?": [
         "Was ist ein Alias?"
@@ -2299,6 +2362,9 @@
       ],
       "Duplicate email addresses.": [
         "Doppelte E-Mail-Adressen"
+      ],
+      "Email is required": [
+        "E-Mail-Adresse erforderlich"
       ],
       "Empty note": [
         "Leere Notiz"
@@ -2396,6 +2462,9 @@
       ],
       "Vault name is required": [
         "Tresorname ist erforderlich"
+      ],
+      "Verification code is required": [
+        "Verifizierungscode ist erforderlich"
       ],
       "You cannot create more vaults than your subscription allows.": [
         "Du kannst nicht mehr Tresore erstellen, als dein Abonnement zulässt."

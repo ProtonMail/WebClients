@@ -158,6 +158,12 @@
       "Edit vault": [
         "Редагувати сховище"
       ],
+      "Enable Dark Web Monitoring": [
+        "Увімкнути моніторинг Темного Вебу"
+      ],
+      "Exclude from monitoring": [
+        "Виключити з моніторингу"
+      ],
       "Export": [
         "Експортувати"
       ],
@@ -182,6 +188,9 @@
       "Get mobile apps": [
         "Отримати програму для мобільного пристрою"
       ],
+      "Get Pass Plus": [
+        "Отримати Pass Plus"
+      ],
       "Get Started": [
         "Розпочнімо"
       ],
@@ -199,6 +208,9 @@
       ],
       "Importing": [
         "Імпортування"
+      ],
+      "Include in monitoring": [
+        "Включити в моніторинг"
       ],
       "Install extension": [
         "Встановити розширення"
@@ -275,6 +287,12 @@
       "Pass for iOS": [
         "Pass для iOS"
       ],
+      "Pass Monitor": [
+        "Pass Monitor"
+      ],
+      "Pause monitoring": [
+        "Призупинити моніторинг"
+      ],
       "Pin item": [
         "Закріпити елемент"
       ],
@@ -305,6 +323,9 @@
       "Resend code": [
         "Надіслати код повторно"
       ],
+      "Resend code (in ${ remaining }s)": [
+        "Повторно відправити код (в ${ remaining }сек)"
+      ],
       "Resend invitation": [
         "Повторно надіслати запрошення"
       ],
@@ -314,6 +335,9 @@
       "Restore item": [
         "Відновити елемент"
       ],
+      "Resume monitoring": [
+        "Відновити моніторинг"
+      ],
       "Retry": [
         "Повторити спробу"
       ],
@@ -322,6 +346,9 @@
       ],
       "Saving": [
         "Збереження"
+      ],
+      "See all": [
+        "Переглянути все"
       ],
       "See members": [
         "Переглянути учасників"
@@ -371,6 +398,9 @@
       "Trash": [
         "Смітник"
       ],
+      "Try again.": [
+        "Спробувати знову."
+      ],
       "Unpin item": [
         "Відкріпити елемент"
       ],
@@ -388,6 +418,9 @@
       ],
       "Verify": [
         "Перевірити"
+      ],
+      "View details": [
+        "Переглянути подробиці"
       ],
       "View history": [
         "Переглянути історію"
@@ -442,11 +475,23 @@
       ]
     },
     "Description": {
+      "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
+        "2ЕП додає ще один рівень безпеки до ваших входів. ${ PASS_APP_NAME } спрощує 2ЕП, зберігаючи та автоматично заповнюючи ваші 2ЕП-коди."
+      ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Псевдонім працює так само, як і адреса електронної пошти, але зменшує кількість спаму і зберігає вашу справжню адресу електронної пошти та особистість прихованою."
       ],
+      "Change your passwords": [
+        "Змінення ваша пароля"
+      ],
       "Create unique passwords": [
         "Створити унікальні паролі"
+      ],
+      "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
+        "Моніторинг Dark Web доступний за платним тарифом. Покращте його для отримання доступу до цієї функції."
+      ],
+      "Get notified if your email, password or other personal data was leaked.": [
+        "Отримуйте сповіщення, якщо ваша електронна пошта, пароль або інші персональні дані були виточені."
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "Тримайте вашу інформацію більш безпечно та приватно разом з даними посібниками та порадами."
@@ -454,8 +499,32 @@
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Наше передове рішення з безпеки на основі ШІ, призначене для користувачів, яким потрібен підвищений рівень захисту облікових записів. ${ learnMoreLink }"
       ],
+      "Set up 2FA for more security": [
+        "Налаштуйте 2ЕП для більшої безпеки"
+      ],
+      "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
+        "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases."
+      ],
       "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
         "Темна павутина - це прихована частина інтернету, де можна купувати та продавати викрадену особисту інформацію, наприклад, ідентифікаційні дані."
+      ],
+      "These items remain at risk": [
+        "Ці елементи залишаються в зоні ризику"
+      ],
+      "This account is vulnerable, visit the service and change your password.": [
+        "Цей обліковий запис вразливий, відвідайте сервіс і змініть пароль."
+      ],
+      "This service offers 2FA. Enable it for added account security.": [
+        "Цей сервіс пропонує 2ЕП. Увімкніть її для додаткової безпеки облікового запису."
+      ],
+      "With ${ PASS_SHORT_APP_NAME } Monitor, stay ahead of threats by getting instant alerts if your credentials are compromised. Unlock advanced security features and detailed logs to safeguard your online presence.": [
+        "З відстеження ${ PASS_SHORT_APP_NAME } випереджайте загрози, отримуючи миттєві сповіщення, якщо ваші облікові дані будуть скомпрометовані. Розблокуйте розширені функції безпеки та детальні журнали, щоб захистити свою присутність в мережі."
+      ],
+      "Your email addresses were leaked in at least 1 data breach.": [
+        "Ваші адреси пошти були виявлені щонайменше в 1 випадку витоку даних."
+      ],
+      "Your personal info was leaked in a data breach of a third-party service.": [
+        "Ваша особиста інформація була виточена в результаті витоку даних стороннього сервісу."
       ]
     },
     "Error": {
@@ -549,6 +618,12 @@
       "Failed resending invite.": [
         "Помилка повторного надсилання запрошення."
       ],
+      "Failed to add email address": [
+        "Помилка під час додавання адреси пошти"
+      ],
+      "Failed to delete email address from monitoring": [
+        "Помилка під час видалення адреси пошти з відстеження"
+      ],
       "Failed to delete selected items": [
         "Не вдалося видалити вибрані елементи"
       ],
@@ -557,6 +632,12 @@
       ],
       "Failed to edit user's access.": [
         "Не вдалося змінити доступ користувача."
+      ],
+      "Failed to load breaches for this address": [
+        "Помилка завантаження витоків для цієї адреси"
+      ],
+      "Failed to load breaches for this email alias": [
+        "Помилка завантаження витоків для цього псевдоніма пошти"
       ],
       "Failed to load item history": [
         "Не вдалося завантажити історії елементів"
@@ -576,6 +657,12 @@
       "Failed to remove user's access.": [
         "Не вдалося видалити доступ користувача."
       ],
+      "Failed to resend verification for custom email": [
+        "Не вдалося повторно надіслати підтвердження для власної адреси пошти"
+      ],
+      "Failed to resolve breaches for this address": [
+        "Не вдалося перевірити витоки для цієї адреси"
+      ],
       "Failed to restore items from trash": [
         "Не вдалося відновити елементи з смітника"
       ],
@@ -584,6 +671,21 @@
       ],
       "Failed to unpin item": [
         "Не вдалося відкріпити елемент"
+      ],
+      "Failed to update monitoring settings": [
+        "Помилка оновлення налаштувань відстеження"
+      ],
+      "Failed to verify email address": [
+        "Помилка під час перевірки адреси пошти"
+      ],
+      "Failed updating ${ PROTON_SENTINEL_NAME } setting": [
+        "Помилка оновлення налаштувань ${ PROTON_SENTINEL_NAME }"
+      ],
+      "Failed updating monitor flag of the item": [
+        "Не вдалося оновити позначку відстеження елемента"
+      ],
+      "Failed updating monitoring status for this email address": [
+        "Помилка під час оновлення стану відстеження для цієї адреси пошти"
       ],
       "File could not be parsed": [
         "Не вдалося проаналізувати файл"
@@ -721,6 +823,9 @@
       ]
     },
     "Feature": {
+      "Dark Web Monitoring": [
+        "Відстеження Dark Web"
+      ],
       "Integrated 2FA authenticator": [
         "Інтегрований двоетапний (2FA) автентифікатор"
       ],
@@ -817,6 +922,12 @@
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } вимагатиме вашого паролю ${ BRAND_NAME } для доступу до даних в автономному режимі."
       ],
+      "${ PROTON_SENTINEL_NAME } successfully disabled": [
+        "${ PROTON_SENTINEL_NAME } успішно вимкнено"
+      ],
+      "${ PROTON_SENTINEL_NAME } successfully enabled": [
+        "${ PROTON_SENTINEL_NAME } успішно ввімкнено"
+      ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 днів, щоб спробувати преміум функції задарма. Лише протягом вашого першого тижня ${ BRAND_NAME }."
       ],
@@ -825,6 +936,9 @@
       ],
       "Access successfully confirmed": [
         "Доступ успішно підтверджено"
+      ],
+      "Add your custom email address to monitor :": [
+        "Додайте власну адресу пошти для відстеження:"
       ],
       "Admin": [
         "Адміністратор"
@@ -837,6 +951,15 @@
       ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Псевдонім \"${ item.aliasEmail }\" переміщено у смітник - він перестане пересилати електронні листи на вашу поштову скриньку"
+      ],
+      "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
+        "Псевдоніми з власними доменами не відстежуються, будь ласка, додайте їх як власну пошту для відстеження."
+      ],
+      "All breaches for this address were resolved": [
+        "Всі витоки за цією адресою були усунені"
+      ],
+      "All current breaches will be marked as resolved. In case of future data breaches, you'll be notified.": [
+        "Всі поточні витоки будуть позначені як вирішені. У разі майбутніх витоків даних ви будете повідомлені."
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Усі елементи успішно переміщені з ${ payload.content.name }"
@@ -864,6 +987,9 @@
       ],
       "Auto-lock successfully disabled": [
         "Автоблокування успішно вимкнено"
+      ],
+      "Breaches detected": [
+        "Виявлено витоки"
       ],
       "Bring your existing passwords into ${ BRAND_NAME }.": [
         "Введіть ваші чинні паролі в ${ BRAND_NAME }."
@@ -910,6 +1036,9 @@
       "Deleting \"${ payload.content.name }\"": [
         "Видалення ${ payload.content.name }"
       ],
+      "Didn't receive the code?": [
+        "Не отримали код?"
+      ],
       "Drop file here to upload": [
         "Перетягніть файл сюди, щоб вивантажити"
       ],
@@ -922,8 +1051,20 @@
       "email": [
         "е-пошта"
       ],
+      "Email address successfully deleted from monitoring": [
+        "Адресу пошти успішно видалено з відстеження"
+      ],
+      "Email address successfully excluded from monitoring": [
+        "Адреса пошти успішно виключена з відстеження"
+      ],
+      "Email address successfully included in monitoring": [
+        "Адреса пошти успішно включена до відстеження"
+      ],
       "Emptying trash...": [
         "Спорожнення смітника..."
+      ],
+      "Enable ${ PASS_SHORT_APP_NAME } beta": [
+        "Ввімкнути бета-версію ${ PASS_SHORT_APP_NAME }"
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Введіть код підтвердження. Цифри ${ digit }."
@@ -1045,6 +1186,9 @@
       "Item successfully unpinned": [
         "Елемент успішно відкріплено"
       ],
+      "Latest breach on ${ formattedDate }": [
+        "Останній витік у ${ formattedDate }"
+      ],
       "Learn how to ${ staySaferOnlineLink }": [
         "Дізнайтеся, як ${ staySaferOnlineLink }"
       ],
@@ -1077,6 +1221,9 @@
       ],
       "Monitor accounts": [
         "Моніторинг облікових записів"
+      ],
+      "Monitoring settings successfully updated": [
+        "Налаштування відстеження успішно оновлено"
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "Більше, ніж менеджер паролів, ${ PASS_APP_NAME } захищає ваш пароль та вашу особисту адресу електронної пошти за допомогою псевдонімів електронної пошти. Працюючи за тією ж технологією, що й ${ MAIL_APP_NAME }, ваші дані наскрізно зашифровані та доступні лише вам."
@@ -1146,6 +1293,9 @@
       ],
       "Pinning item...": [
         "Закріпити елемент..."
+      ],
+      "Please check your spam folder or try resending the code.": [
+        "Будь ласка, перевірте теку спаму або спробуйте повторно надіслати код."
       ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Будь ласка, підтвердьте ваш пароль ${ BRAND_NAME } для того, щоб увімкнути автономний режим"
@@ -1234,6 +1384,9 @@
       "Successfully synced all vaults": [
         "Усі сховища успішно синхронізовано"
       ],
+      "Suggested": [
+        "Запропоновано"
+      ],
       "Switch to another vault or create an item in this vault": [
         "Перемкнутися на інше сховище або створити елемент в цьому сховищі"
       ],
@@ -1245,6 +1398,9 @@
       ],
       "Thank you, the problem has been reported": [
         "Дякуємо вам, що повідомили про проблему"
+      ],
+      "The custom email will be sent to ${ href } for monitoring. No other data will be sent to HIBP.": [
+        "Користувацька пошта буде надіслана на адресу ${ href } для відстеження. Жодні інші дані не надсилатимуться до HIBP."
       ],
       "The export will only contain vaults that you own.": [
         "Експорт міститиме лише ті сховища, якими ви володієте."
@@ -1324,11 +1480,17 @@
       "Vault \"${ share.content.name }\" was removed": [
         "Сховище \"${ share.content.name }\" видалено"
       ],
+      "Verification code sent.": [
+        "Код підтвердження відправлено."
+      ],
       "Viewer": [
         "Користувач"
       ],
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Виникли труднощі під час синхронізації даних з вашим локальним сховищем. Упевніться, що ви маєте достатньо дискового простору для безперебійної роботи ${ PASS_SHORT_APP_NAME }."
+      ],
+      "We’ve sent a verification code to ${ email }. Please enter it below:": [
+        "Ми надіслали код підтвердження на ${ email }. Будь ласка, введіть його нижче:"
       ],
       "You are about to create:": [
         "Ви збираєтеся створити:"
@@ -1363,6 +1525,18 @@
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Ви досягли максимальної дозволеної кількості символів ${ maxLength }."
       ],
+      "You will be notified of data breaches for these email addresses.": [
+        "Вас буде сповіщено про витоки даних цих поштових адрес"
+      ],
+      "You will be notified of data breaches for this email address.": [
+        "Вас буде сповіщено про витоки даних цієї пошти."
+      ],
+      "You will no longer be notified of data breaches for these email addresses.": [
+        "Вас більше не будете сповіщено про витоки даних цих адрес пошти."
+      ],
+      "You will no longer be notified of data breaches for this email address.": [
+        "Вас більше не буде сповіщено про витоки даних цієї пошти."
+      ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "Цей PIN-код потрібен для отримання доступу до ${ PASS_APP_NAME } після автоматичного блокування."
       ],
@@ -1388,6 +1562,9 @@
         "${ config.options.wordCount } слова",
         "${ config.options.wordCount } слів",
         "${ config.options.wordCount } слів"
+      ],
+      "${ PASS_SHORT_APP_NAME } version": [
+        "Версія ${ PASS_SHORT_APP_NAME }"
       ],
       "1 hour": [
         "1 година"
@@ -1491,8 +1668,14 @@
       "Created": [
         "Створено"
       ],
+      "Created at": [
+        "Створено"
+      ],
       "Date": [
         "Дата"
+      ],
+      "Device": [
+        "Пристрій"
       ],
       "Disable data export for team members": [
         "Вимкнути експорт даних для членів команди"
@@ -1593,6 +1776,9 @@
       "Last month": [
         "Минулого місяця"
       ],
+      "Last updated": [
+        "Востаннє оновлено"
+      ],
       "Last week": [
         "Минулого тижня"
       ],
@@ -1649,6 +1835,9 @@
       ],
       "No history": [
         "Немає історії"
+      ],
+      "None": [
+        "Нічого"
       ],
       "Note": [
         "Нотатка"
@@ -1737,6 +1926,12 @@
       "Special characters (!&*)": [
         "Спеціальні символи (!&*)"
       ],
+      "Status": [
+        "Статус"
+      ],
+      "Strong": [
+        "Надійний"
+      ],
       "Suffix": [
         "Суфікс"
       ],
@@ -1782,6 +1977,9 @@
       "Update": [
         "Оновити"
       ],
+      "Used in": [
+        "Використано в"
+      ],
       "Username": [
         "Ім'я користувача"
       ],
@@ -1805,6 +2003,12 @@
       ],
       "View logs": [
         "Переглянути журнали"
+      ],
+      "Vulnerable": [
+        "Вразливий"
+      ],
+      "Weak": [
+        "Слабкий"
       ],
       "Websites": [
         "Вебсайти"
@@ -1924,6 +2128,9 @@
       "Full Name": [
         "Повне ім'я"
       ],
+      "me@example.com": [
+        "me@example.com"
+      ],
       "MM/YY": [
         "ММ/РР"
       ],
@@ -1988,11 +2195,29 @@
       "${ BRAND_NAME } addresses": [
         "${ BRAND_NAME } адрес"
       ],
+      "${ PASS_SHORT_APP_NAME } Monitor": [
+        "${ PASS_SHORT_APP_NAME } Монітор"
+      ],
+      "Account protection": [
+        "Захист облікового запису"
+      ],
       "Auto-lock update": [
         "Оновлення автоблокування"
       ],
+      "Breach detected": [
+        "Виявлено витік даних"
+      ],
+      "Breaches": [
+        "Порушення"
+      ],
+      "Breaches detected for": [
+        "Порушення виявлено для"
+      ],
       "Confirm PIN code": [
         "Підтвердьте PIN-код"
+      ],
+      "Confirm your email": [
+        "Підтвердьте вашу електронну пошту"
       ],
       "Create a vault": [
         "Створити сховище"
@@ -2005,6 +2230,18 @@
       ],
       "Current version": [
         "Поточна версія"
+      ],
+      "Custom addresses": [
+        "Користувацькі адреси"
+      ],
+      "Custom email monitoring": [
+        "Користувацький моніторинг електронної пошти"
+      ],
+      "Custom emails": [
+        "Користувацькі електронні листи"
+      ],
+      "Dark Web Monitoring": [
+        "Моніторинг Темного Вебу"
       ],
       "Delete vault \"${ vaultName }\" ?": [
         "Видалити сховище \"${ vaultName }\" ?"
@@ -2027,6 +2264,9 @@
       "Enter your PIN": [
         "Введіть Ваш PIN"
       ],
+      "Excluded items": [
+        "Виключені елементи"
+      ],
       "Get Started": [
         "Розпочати"
       ],
@@ -2048,6 +2288,9 @@
       "Import your data": [
         "Імпортуйте ваші дані"
       ],
+      "Inactive 2FA": [
+        "Неактивна 2FA"
+      ],
       "Install extension": [
         "Встановити розширення"
       ],
@@ -2059,6 +2302,9 @@
       ],
       "Leave vault ?": [
         "Покинути сховище?"
+      ],
+      "Loading breaches...": [
+        "Завантаження порушень..."
       ],
       "Low disk space": [
         "Бракує місця на диску"
@@ -2084,8 +2330,20 @@
       "Move items?": [
         "Перемістити елементи?"
       ],
+      "No excluded items": [
+        "Немає виключених елементів"
+      ],
+      "No inactive 2FAs": [
+        "Немає неактивних 2FA"
+      ],
+      "No insecure passwords": [
+        "Немає ненадійних паролів"
+      ],
       "No items selected": [
         "Жоден елемент не вибрано"
+      ],
+      "No reused passwords": [
+        "Немає повторно використовуваних паролів"
       ],
       "Our welcome gift to you": [
         "Наш вітальний подарунок для вас"
@@ -2099,6 +2357,9 @@
       "Password Health": [
         "Якість пароля"
       ],
+      "Pause monitoring?": [
+        "Призупинити моніторинг?"
+      ],
       "Pending access to the shared data": [
         "Очікування доступу до спільних даних"
       ],
@@ -2111,8 +2372,23 @@
       "Recommended actions": [
         "Рекомендовані дії"
       ],
+      "Remove email address?": [
+        "Вилучити адресу електронної пошти"
+      ],
+      "Resolved breaches": [
+        "Вирішені порушення"
+      ],
       "Restore this version?": [
         "Відновити цю версію?"
+      ],
+      "Resume monitoring?": [
+        "Відновити моніторинг?"
+      ],
+      "Reused ${ count } time": [
+        "Повторювався ${ count } раз",
+        "Повторювався ${ count } рази",
+        "Повторювався ${ count } разів",
+        "Повторювався ${ count } разів"
       ],
       "Reused passwords": [
         "Повторювальні паролі"
@@ -2126,6 +2402,12 @@
       "Set access level": [
         "Задати рівень доступу"
       ],
+      "Set up 2FA for better security": [
+        "Налаштуйте 2FA для кращої безпеки"
+      ],
+      "Set up 2FA for more security": [
+        "Налаштуйте 2FA для більшої безпеки"
+      ],
       "Settings": [
         "Налаштування"
       ],
@@ -2134,6 +2416,9 @@
       ],
       "Share with": [
         "Поділитися"
+      ],
+      "Stay safer online": [
+        "Залишатися безпечніше онлайн"
       ],
       "Suggestions": [
         "Пропозиції"
@@ -2158,6 +2443,12 @@
       ],
       "Want to learn more?": [
         "Хочете дізнатися більше?"
+      ],
+      "Weak password": [
+        "Слабкий пароль"
+      ],
+      "Weak passwords": [
+        "Слабкі паролі"
       ],
       "What is an alias?": [
         "Що таке псевдонім?"
@@ -2232,6 +2523,9 @@
       "Duplicate email addresses.": [
         "Дублювати адресу електронної пошти."
       ],
+      "Email is required": [
+        "Потрібна поштова адреса"
+      ],
       "Empty note": [
         "Порожня нотатка"
       ],
@@ -2241,8 +2535,17 @@
       "Expiration Date is not in the format MM/YY": [
         "Дата закінчення терміну придатності не у форматі ММ/РР"
       ],
+      "Failed to load breaches.": [
+        "Не вдалося завантажити порушення."
+      ],
       "Invalid alias prefix": [
         "Недійсний префікс псевдоніма"
+      ],
+      "Invalid code": [
+        "Невірний код"
+      ],
+      "Invalid email": [
+        "Недійсна поштова адреса"
       ],
       "Invalid email addresses.": [
         "Недійсна адреса електронної пошти."
@@ -2298,6 +2601,9 @@
       "The alias prefix cannot be longer than 40 characters": [
         "Префікс псевдоніма не може бути довшим ніж 40 символів"
       ],
+      "This email address will no longer be monitored for data breaches.": [
+        "Ця електронна адреса більше не буде перевірятися на предмет витоку даних."
+      ],
       "Title is required": [
         "Необхідна назва"
       ],
@@ -2315,6 +2621,9 @@
       ],
       "Vault name is required": [
         "Потрібно вказати назву сховища"
+      ],
+      "Verification code is required": [
+        "Потрібно код підтвердження"
       ],
       "You cannot create more vaults than your subscription allows.": [
         "Не можна створити більше сховищ, ніж передбачено у вашому тарифному плані."
