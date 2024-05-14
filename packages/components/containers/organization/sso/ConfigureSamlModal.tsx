@@ -247,6 +247,7 @@ const ConfigureSamlModal = ({ domain, onClose, issuerID, callbackURL, ...rest }:
                 >
                     <input
                         id="file-input"
+                        data-testid="saml:metadata-file"
                         type="file"
                         accept=".xml"
                         className="sr-only"
@@ -319,6 +320,7 @@ const ConfigureSamlModal = ({ domain, onClose, issuerID, callbackURL, ...rest }:
                                     <InputFieldTwo
                                         autoFocus
                                         label={getUrlLabelString(VPN_APP_NAME)}
+                                        data-testid="saml:metadata-url"
                                         placeholder={c('Placeholder')
                                             .t`e.g. https://example.com/app/protonvpn/XXXXX/sso/metadata`}
                                         value={metadata[METADATA_METHOD.URL].value}
@@ -384,6 +386,7 @@ const ConfigureSamlModal = ({ domain, onClose, issuerID, callbackURL, ...rest }:
                                     <InputFieldTwo
                                         autoFocus
                                         label={c('Label').t`Single sign-on URL`}
+                                        data-testid="saml:endpoint-url"
                                         placeholder={c('Placeholder').t`e.g. https://idp.example.com/sso/saml`}
                                         value={metadata[METADATA_METHOD.TEXT].url}
                                         onValue={(value: string) =>
@@ -401,6 +404,7 @@ const ConfigureSamlModal = ({ domain, onClose, issuerID, callbackURL, ...rest }:
                                     />
                                     <InputFieldTwo
                                         label={c('Label').t`Single sign-on entity ID`}
+                                        data-testid="saml:entity-id"
                                         placeholder={c('Placeholder').t`e.g. https://idp.example.com/XXXXX`}
                                         value={metadata[METADATA_METHOD.TEXT].entityId}
                                         onValue={(value: string) =>
@@ -419,6 +423,7 @@ const ConfigureSamlModal = ({ domain, onClose, issuerID, callbackURL, ...rest }:
                                     <InputFieldTwo
                                         as={TextArea}
                                         label={c('Label').t`Public certificate (X.509)`}
+                                        data-testid="saml:certificate"
                                         value={metadata[METADATA_METHOD.TEXT].certificate}
                                         onValue={(value: string) =>
                                             setMetadata((metadata) => ({
