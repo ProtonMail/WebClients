@@ -10,9 +10,9 @@ import {
     itemEq,
 } from '@proton/pass/lib/items/item.predicates';
 import {
-    filterItemsByEmail,
     filterItemsByShareId,
     filterItemsByType,
+    filterItemsByUserIdentifier,
     flattenItemsByShareId,
     sortItems,
 } from '@proton/pass/lib/items/item.utils';
@@ -155,8 +155,8 @@ export const selectItemWithOptimistic = (shareId: string, itemId: string) =>
                 : undefined
     );
 
-export const selectLoginsByEmail = (itemEmail: string) =>
-    createSelector(selectLoginItems, filterItemsByEmail(itemEmail));
+export const selectLoginsByUserIdentifier = (itemEmail: string) =>
+    createSelector(selectLoginItems, filterItemsByUserIdentifier(itemEmail));
 
 export const selectLoginItemByEmail = (itemEmail?: MaybeNull<string>) =>
     createSelector(selectLoginItems, (items) => {
