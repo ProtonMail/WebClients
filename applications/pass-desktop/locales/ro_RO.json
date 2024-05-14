@@ -401,6 +401,9 @@
       "Trash": [
         "Gunoi"
       ],
+      "Try again.": [
+        "Reîncercați."
+      ],
       "Unpin item": [
         "Anulare fixare"
       ],
@@ -480,6 +483,9 @@
         "Alte autentificări care folosesc aceeași parolă: ${ total }",
         "Alte autentificări care folosesc aceeași parolă: ${ total }"
       ],
+      "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
+        "A2F adaugă un alt nivel de securitate autentificărilor proprii. ${ PASS_APP_NAME } facilitează accesul cu A2F prin stocarea și completarea automată a codurilor de A2F."
+      ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Un alias de e-mail funcționează ca o adresă de e-mail, dar reduce mesajele nedorite și vă păstrează adresa de e-mail și identitatea reală ascunse."
       ],
@@ -515,6 +521,9 @@
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "Acest cont este vulnerabil, accesați serviciul și schimbați-vă parola."
+      ],
+      "This service offers 2FA. Enable it for added account security.": [
+        "Acest serviciu oferă A2A. Activați-l pentru o securitate suplimentară a contului."
       ],
       "With ${ PASS_SHORT_APP_NAME } Monitor, stay ahead of threats by getting instant alerts if your credentials are compromised. Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Cu funcția de monitorizare ${ PASS_SHORT_APP_NAME }, preveniți amenințările primind alerte instantanee dacă datele de autentificare vă sunt compromise. Deblocați funcțiile de securitate avansate și jurnale detaliate pentru a vă proteja prezența online."
@@ -949,8 +958,8 @@
       ],
       "${ row.breachCount } breach detected": [
         "${ row.breachCount } divulgare detectată",
-        "${ row.breachCount } de divulgări detectate",
-        "${ row.breachCount } divulgări detectate"
+        "${ row.breachCount } divulgări detectate",
+        "${ row.breachCount } de divulgări detectate"
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "Aveți 7 zile de încercare gratuită a funcțiilor premium. Valabil doar pentru prima săptămână de utilizare a ${ BRAND_NAME }."
@@ -1422,6 +1431,9 @@
       "Thank you, the problem has been reported": [
         "Mulțumim, problema a fost raportată."
       ],
+      "The custom email will be sent to ${ href } for monitoring. No other data will be sent to HIBP.": [
+        "Adresa de e-mail personală va fi trimisă către ${ href } pentru monitorizare. Nu vor fi trimise alte date către HIBP."
+      ],
       "The export will only contain vaults that you own.": [
         "Exportarea va conține doar seifurile pe care le dețineți."
       ],
@@ -1546,8 +1558,14 @@
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Ați atins lungimea maximă permisă de ${ maxLength } de caractere."
       ],
+      "You will be notified of data breaches for these email addresses.": [
+        "Veți primi notificări despre compromiterea datelor pentru aceste adrese de e-mail."
+      ],
       "You will be notified of data breaches for this email address.": [
         "Veți primi notificări despre compromiterea datelor pentru această adresă de e-mail."
+      ],
+      "You will no longer be notified of data breaches for these email addresses.": [
+        "Nu veți mai primi notificări despre compromiterea datelor pentru aceste adrese de e-mail."
       ],
       "You will no longer be notified of data breaches for this email address.": [
         "Nu veți mai primi notificări despre compromiterea datelor pentru această adresă de e-mail."
@@ -1575,6 +1593,9 @@
         "${ config.options.wordCount } cuvânt",
         "${ config.options.wordCount } cuvinte",
         "${ config.options.wordCount } de cuvinte"
+      ],
+      "${ PASS_SHORT_APP_NAME } version": [
+        "Versiune ${ PASS_SHORT_APP_NAME }"
       ],
       "${ usageCount } login": [
         "${ usageCount } autentificare",
@@ -1680,8 +1701,14 @@
       "Created": [
         "Creat la"
       ],
+      "Created at": [
+        "Creat la"
+      ],
       "Date": [
         "Data"
+      ],
+      "Device": [
+        "Dispozitiv"
       ],
       "Disable data export for team members": [
         "Dezactivare exportare date pentru membri echipei"
@@ -2292,6 +2319,9 @@
       "Import your data": [
         "Importați-vă datele"
       ],
+      "Inactive 2FA": [
+        "A2F inactive"
+      ],
       "Install extension": [
         "Instalați extensia"
       ],
@@ -2303,6 +2333,9 @@
       ],
       "Leave vault ?": [
         "Părăsiți seiful ?"
+      ],
+      "Loading breaches...": [
+        "Se încarcă divulgările..."
       ],
       "Low disk space": [
         "Spațiu pe disc redus"
@@ -2330,6 +2363,9 @@
       ],
       "No excluded items": [
         "Nu sunt articole excluse"
+      ],
+      "No inactive 2FAs": [
+        "Nu există A2F inactive."
       ],
       "No insecure passwords": [
         "Nu sunt parole nesigure"
@@ -2395,6 +2431,9 @@
       ],
       "Set access level": [
         "Setare nivel de acces"
+      ],
+      "Set up 2FA for better security": [
+        "Setați A2F pentru securitate mai bună"
       ],
       "Set up 2FA for more security": [
         "Setați A2F pentru mai multă securitate"
@@ -2525,6 +2564,9 @@
       ],
       "Expiration Date is not in the format MM/YY": [
         "Data de expirare nu este în format LL/AA."
+      ],
+      "Failed to load breaches.": [
+        "Încărcarea divulgărilor a eșuat."
       ],
       "Invalid alias prefix": [
         "Prefix alias nevalid."

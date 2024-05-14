@@ -4,6 +4,26 @@
     "language": "fr_FR"
   },
   "contexts": {
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } et ${ remainingCount }autre fuite potentielle de données ont été détectées. Activez ${ DARK_WEB_MONITORING_NAME } pour afficher les informations et prendre les mesures nécessaires. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } et une autre fuite potentielle de données ont été détectées. Activez ${ DARK_WEB_MONITORING_NAME } pour afficher les informations et prendre les mesures nécessaires. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Une fuite potentielle de données pour ${ name } a été détectée. Activez ${ DARK_WEB_MONITORING_NAME } pour afficher les informations et prendre les mesures nécessaires. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Une fuite potentielle de données pour ${ name } a été détectée. Activez ${ DARK_WEB_MONITORING_NAME } pour afficher les informations et prendre les mesures nécessaires. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Une fuite potentielle de données depuis ${ name } a été détectée. Activez ${ DARK_WEB_MONITORING_NAME } pour afficher les informations. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Vos informations ont été retrouvées dans au moins une fuite de données. Activez l'option ${ DARK_WEB_MONITORING_NAME } pour consulter ces informations et prendre les mesures nécessaires. ${ link }"
+      ]
+    },
     "Action": {
       "Add": [
         "Ajouter"
@@ -1573,6 +1593,9 @@
         "${ config.options.wordCount } mot",
         "${ config.options.wordCount } mots"
       ],
+      "${ PASS_SHORT_APP_NAME } version": [
+        "Version de ${ PASS_SHORT_APP_NAME }"
+      ],
       "${ usageCount } login": [
         "${ usageCount } connexion",
         "${ usageCount } connexions"
@@ -1676,8 +1699,14 @@
       "Created": [
         "Créé"
       ],
+      "Created at": [
+        "Créée le"
+      ],
       "Date": [
         "Date"
+      ],
+      "Device": [
+        "Appareil"
       ],
       "Disable data export for team members": [
         "Désactiver l'exportation des données pour les membres"
@@ -2181,6 +2210,20 @@
       ],
       "Write your note": [
         "Rédigez votre note."
+      ]
+    },
+    "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } et ${ remainingCount }autre fuite potentielle de données ont été détectées. Activez ${ DARK_WEB_MONITORING_NAME } pour afficher les informations. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } et une autre fuite potentielle de données ont été détectées. Activez ${ DARK_WEB_MONITORING_NAME } pour afficher les informations. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Une fuite potentielle de données pour ${ name } a été détectée. Activez ${ DARK_WEB_MONITORING_NAME } pour afficher les informations. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Vos informations ont été retrouvées dans au moins une fuite de données. Activez l'option ${ DARK_WEB_MONITORING_NAME } pour consulter ces informations. ${ link }"
       ]
     },
     "Success": {
