@@ -42,6 +42,8 @@ export function initializeUpdateChecks() {
     setInterval(checkForValidUpdates, pkg.config.updateInterval);
 }
 
+const validUpdate = {} as ReleaseInfo
+
 async function checkForValidUpdates() {
     Logger.info("Checking for new valid version.")
 
@@ -53,6 +55,10 @@ async function checkForValidUpdates() {
         CategoryName: settings.releaseCategory ?? RELEASE_CATEGORIES.STABLE // TODO get from web
     };
 
+    if (validUpdate.Version) {
+        Logger.info("Electron update already initialized, valid update available:", validUpdate, "local:", local)
+        return
+    }
 
     const availableVersions = await getAvailableVersions(platform);
     if (!availableVersions) {
@@ -90,6 +96,10 @@ async function checkForValidUpdates() {
     }
 
     Logger.info("New valid update found! Latest:", latest, "local:", local)
+
+    validUpdate.Version = latest.Version
+    validUpdate.CategoryName = latest.CategoryName
+    validUpdate.RolloutProportion = latest.RolloutProportion
 
     updateElectronApp({
         updateSource: {
