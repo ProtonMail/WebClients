@@ -469,6 +469,9 @@
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "Аутентификация не удалась. Подтвердите ваш пароль ${ BRAND_NAME } для продолжения экспорта"
       ],
+      "Authentication failure: ${ message }": [
+        "Сбой аутентификации: ${ message }"
+      ],
       "Auto-lock could not be activated": [
         "Автоблокировка не может быть активирована"
       ],
@@ -559,6 +562,9 @@
       "Failed to remove user's access.": [
         "Не удалось удалить доступ пользователя."
       ],
+      "Failed to resolve breaches for this address": [
+        "Не удалось устранить утечки по этому адресу"
+      ],
       "Failed to restore items from trash": [
         "Не удалось восстановить элементы из Корзины"
       ],
@@ -604,6 +610,9 @@
       "LastPass will export a corrupted CSV file if any of your item fields contain unexpected commas, quotes or multiple lines": [
         "LastPass экспортирует поврежденный CSV-файл, если любое поле содержит неожиданные запятые, кавычки или несколько строк"
       ],
+      "Missing passkey": [
+        "PassKey отсутствует"
+      ],
       "Moving item failed": [
         "Ошибка при перемещении элемента"
       ],
@@ -618,6 +627,9 @@
       ],
       "Please pin the extension or select \"Continue without pinning\".": [
         "Пожалуйста, закрепите расширение или выберите \"Продолжить без закрепления\"."
+      ],
+      "Registration failure: ${ message }": [
+        "Сбой регистрации: ${ message }"
       ],
       "Request timed out": [
         "Время запроса истекло"
@@ -672,6 +684,12 @@
       ],
       "Unknown invite": [
         "Неизвестное приглашение"
+      ],
+      "Unknown item": [
+        "Неизвестный элемент"
+      ],
+      "Unknown passkey": [
+        "Неизвестный PassKey"
       ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "Неподдерживаемый формат файла ${ PASS_APP_NAME }"
@@ -825,11 +843,23 @@
       "Admin": [
         "Админ"
       ],
+      "After inactivity, access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
+        "При отсутствии активности, доступ к ${ PASS_APP_NAME } потребует PIN-код для разблокировки сессии. Вы выйдите из системы после 3 неудачных попыток."
+      ],
+      "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
+        "После успешного импорта данных вы можете удалить файл CSV, содержащий ваши пароли, для безопасности."
+      ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Псевдоним \"${ item.aliasEmail }\" перемещен в корзину - это остановит пересылку писем в ваш почтовый ящик"
       ],
+      "All breaches for this address were resolved": [
+        "Все утечки по этому адресу были устранены"
+      ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Все элементы из \"${ payload.content.name }\" успешно удалены"
+      ],
+      "All items successfully moved": [
+        "Все элементы успешно перемещены"
       ],
       "All trashed items permanently deleted": [
         "Все элементы из корзины удалены безвозвратно"
@@ -851,6 +881,9 @@
       ],
       "Built in 2FA authenticator": [
         "Встроенный двухфакторный аутентификатор"
+      ],
+      "By default team members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
+        "По умолчанию члены команды могут экспортировать только хранилища, владельцами которых они являются. Если эта опция включена, они не смогут экспортировать никакие данные."
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "Может создавать, редактировать, удалять и экспортировать элементы этого хранилища."
@@ -915,6 +948,12 @@
       "Enter your PIN code": [
         "Введите свой PIN-код"
       ],
+      "Fill in the CSV with your data": [
+        "Заполните CSV данными"
+      ],
+      "Follow those steps to import your data with a generic CSV :": [
+        "Выполните эти шаги для импорта ваших данных из произвольного CSV:"
+      ],
       "For easy access to your passwords and more.": [
         "Для легкого доступа к паролям и прочего."
       ],
@@ -935,6 +974,9 @@
       ],
       "Import in progress:": [
         "Выполняется импорт:"
+      ],
+      "Import the CSV file below.": [
+        "Импортируйте файл CSV ниже."
       ],
       "Imported ${ payload.total } item": [
         "Импортирован ${ payload.total } элемент",
@@ -1023,6 +1065,9 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Перемещение всех элементов из \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its history": [
+        "Перемещение элемента в другое хранилище удалит его историю"
+      ],
       "Moving items": [
         "Перемещение элементов"
       ],
@@ -1047,6 +1092,9 @@
       "Open the Extensions menu": [
         "Откройте меню Расширения"
       ],
+      "Organization settings successfully updated": [
+        "Настройки организации успешно обновлены"
+      ],
       "Owner": [
         "Владелец"
       ],
@@ -1061,6 +1109,9 @@
       ],
       "Pending access to the shared data": [
         "Pending access to the shared data"
+      ],
+      "Permanently deleting selected items": [
+        "Выбранные элементы удаляются безвозвратно"
       ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
         "Закрепить ${ PASS_APP_NAME } на панели инструментов."
@@ -1116,8 +1167,14 @@
       "Select where you want your imported vault(s) to be saved.": [
         "Выберите куда вы хотите сохранить импортированное(ые) хранилище(я)."
       ],
+      "Selected items permanently deleted": [
+        "Выбранные элементы удалены безвозвратно"
+      ],
       "Selected items successfully moved to trash": [
         "Выбранные элементы успешно перемещены в Корзину"
+      ],
+      "Selected items successfully restored from trash": [
+        "Выбранные элементы успешно восстановлены из корзины"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Серверы недоступны. Попробуйте снова через несколько минут"
@@ -1158,11 +1215,17 @@
       "Syncing your vaults…": [
         "Синхронизация ваших хранилищ..."
       ],
+      "Team members can only share vaults within organization": [
+        "Члены команды могут делиться хранилищами только внутри организации"
+      ],
       "Thank you, the problem has been reported": [
         "Спасибо, отчет о проблеме отправлен"
       ],
       "The autofill dropdown will automatically open when you click or focus on the field.": [
         "Выпадающий список автозаполнения будет автоматически открываться при нажатии или наведении курсора на поле."
+      ],
+      "The exported file will be encrypted using PGP and requires a strong passphrase.": [
+        "Экспортированный файл будет зашифрован с помощью PGP и требует надежной парольной фразы."
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Следующий ${ result.ignored.length } элемент не может быть импортирован:",
@@ -1178,6 +1241,9 @@
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Экспорт не будет зашифрован, и кто угодно, кто получит доступ к вашему экспортированному файлу, сможет увидеть ваши пароли. Для безопасности, пожалуйста, удалите его после использования."
+      ],
+      "This setting is disabled on the organization level": [
+        "Этот параметр отключен на уровне организации"
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Это хранилище в данный момент не является общим с кем-либо. Пригласите людей, чтобы поделиться им с другими."
@@ -1202,6 +1268,9 @@
       ],
       "Update login": [
         "Обновить логин"
+      ],
+      "Updating organization settings": [
+        "Настройки организации обновляются"
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Улучшить ${ PASS_APP_NAME }"
@@ -1300,6 +1369,12 @@
         "${ config.options.wordCount } слова",
         "${ config.options.wordCount } слов",
         "${ config.options.wordCount } слов"
+      ],
+      "${ PASS_SHORT_APP_NAME } monitor": [
+        "${ PASS_SHORT_APP_NAME } монитор"
+      ],
+      "${ PASS_SHORT_APP_NAME } version": [
+        "Версия ${ PASS_SHORT_APP_NAME }"
       ],
       "1 hour": [
         "1 час"
@@ -1414,6 +1489,12 @@
       ],
       "Created": [
         "Создано"
+      ],
+      "Created at": [
+        "Создано"
+      ],
+      "Device": [
+        "Устройство"
       ],
       "Display": [
         "Показать"
@@ -1634,6 +1715,9 @@
       "Special characters (!&*)": [
         "Специальные символы (!&*)"
       ],
+      "Strong": [
+        "Надежный"
+      ],
       "Suffix": [
         "Суффикс"
       ],
@@ -1699,6 +1783,12 @@
       ],
       "View logs": [
         "Просмотр журналов"
+      ],
+      "Vulnerable": [
+        "Уязвимый"
+      ],
+      "Weak": [
+        "Слабый"
       ],
       "Website": [
         "Веб-сайт"
@@ -2095,6 +2185,9 @@
       "Invalid alias prefix": [
         "Недопустимый префикс псевдонима"
       ],
+      "Inviting email addresses outside organization is not allowed.": [
+        "Приглашение адресов электронной почты из вне организации запрещено."
+      ],
       "item was imported without custom fields": [
         "элемент был импортирован без настраиваемых полей"
       ],
@@ -2118,6 +2211,9 @@
       ],
       "No items matching": [
         "Нет совпадающих элементов"
+      ],
+      "No passkeys found. Save your passkeys in ${ PASS_APP_NAME } to sign-in to ${ domain }.": [
+        "PassKey не найдены. Сохраните свои PassKey в ${ PASS_APP_NAME }, чтобы войти в ${ domain }."
       ],
       "No password manager selected": [
         "Не выбран менеджер паролей"

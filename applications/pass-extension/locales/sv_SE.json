@@ -38,9 +38,6 @@
       "Back": [
         "Tillbaka"
       ],
-      "Bulk delete items from trash": [
-        "Massradera objekt från papperskorg"
-      ],
       "Bulk move items to another vault": [
         "Massflytta objekt till annat valv"
       ],
@@ -1546,6 +1543,9 @@
       "${ PASS_SHORT_APP_NAME } monitor": [
         "${ PASS_SHORT_APP_NAME }-övervakning"
       ],
+      "${ PASS_SHORT_APP_NAME } version": [
+        "${ PASS_SHORT_APP_NAME }-version"
+      ],
       "1 hour": [
         "1 timme"
       ],
@@ -1662,6 +1662,9 @@
       ],
       "Created": [
         "Skapad"
+      ],
+      "Device": [
+        "Enhet"
       ],
       "Disable data export for team members": [
         "Inaktivera dataexport för teammedlemmar"
