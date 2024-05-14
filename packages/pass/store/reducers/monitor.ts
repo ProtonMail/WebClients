@@ -46,8 +46,10 @@ const monitorReducer: Reducer<MonitorState> = (state = null, action) => {
         }
 
         if (verifyCustomAddress.success.match(action)) {
+            const breached = (action.payload.breachCount ?? 0) > 0;
+
             return partialMerge(state, {
-                total: state.total + (action.payload.breachCount ?? 0),
+                total: state.total + Number(breached),
                 custom: state.custom.map((breach) => {
                     if (breach.addressId !== action.payload.addressId) return breach;
                     return action.payload;
@@ -64,9 +66,10 @@ const monitorReducer: Reducer<MonitorState> = (state = null, action) => {
 
         if (deleteCustomAddress.success.match(action)) {
             const breach = state.custom.find((breach) => breach.addressId === action.payload);
+            const breached = (breach?.breachCount ?? 0) > 0;
 
             return partialMerge(state, {
-                total: Math.max(0, state.total - (breach?.breachCount ?? 0)),
+                total: Math.max(0, state.total - Number(breached)),
                 custom: state.custom.filter((breach) => breach.addressId !== action.payload),
             });
         }
@@ -84,7 +87,7 @@ const monitorReducer: Reducer<MonitorState> = (state = null, action) => {
                     if (!address) return state;
 
                     return partialMerge(state, {
-                        total: Math.max(0, state.total - (address?.breachCount ?? 0)),
+                        total: Math.max(0, state.total - 1),
                         custom: state.custom.map((breach) => {
                             if (breach.addressId !== dto.addressId) return breach;
                             return { ...breach, breachCount: 0, breached: false };
@@ -97,7 +100,7 @@ const monitorReducer: Reducer<MonitorState> = (state = null, action) => {
                     if (!address) return state;
 
                     return partialMerge(state, {
-                        total: Math.max(0, state.total - (address?.breachCount ?? 0)),
+                        total: Math.max(0, state.total - 1),
                         proton: state.proton.map((breach) => {
                             if (breach.addressId !== dto.addressId) return breach;
                             return { ...breach, breachCount: 0, breached: false };
