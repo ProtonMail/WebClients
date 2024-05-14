@@ -37,26 +37,39 @@ export const sendTelemetryFeaturePerformance = (
  *
  * @param {Features} feature The type of feature to execute (e.g. 'A', 'B', etc.) defined in the `Features` enum
  * @param {boolean} applyTreatment Whether to execute the treatment or control function
- * @param {(()) => T} controlFunction A function that should be executed when `applyTreatment` is false
- * @param {(()) => T} treatmentFunction A function that should be executed when `applyTreatment` is true
- * @returns {T} The result of the executed function, both control and treatment should have same return type
+ * @param {(()) => Promise<T>} controlFunction A function returning a Promise that should be fulfilled when `applyTreatment` is false
+ * @param {(()) => Promise<T>} treatmentFunction A function returning a Promise that should be fulfilled when `applyTreatment` is true
+ * @returns {Promise<T>} The Promise of the executed function, returns T when fulfilled, both control and treatment should have same return type
  */
 export const measureExperimentalPerformance = <T>(
     api: Api,
     feature: Features,
     applyTreatment: boolean,
-    controlFunction: () => T,
-    treatmentFunction: () => T
-): T => {
-    performance.mark(`start-${feature}`);
+    controlFunction: () => Promise<T>,
+    treatmentFunction: () => Promise<T>
+): Promise<T> => {
+    const now = performance.now();
+    const startMark = `start-${feature}-${now}`;
+    const endMark = `end-${feature}-${now}`;
+    const measureName = `measure-${feature}-${now}`;
+
+    performance.mark(startMark);
     const result = applyTreatment ? treatmentFunction() : controlFunction();
-    performance.mark(`end-${feature}`);
-    const measure = performance.measure(`duration-${feature}`, `start-${feature}`, `end-${feature}`);
-    sendTelemetryFeaturePerformance(
-        api,
-        feature,
-        measure.duration,
-        applyTreatment ? ExperimentGroup.treatment : ExperimentGroup.control
-    );
+
+    result.finally(() => {
+        performance.mark(endMark);
+        const measure = performance.measure(measureName, startMark, endMark);
+        sendTelemetryFeaturePerformance(
+            api,
+            feature,
+            measure.duration,
+            applyTreatment ? ExperimentGroup.treatment : ExperimentGroup.control
+        );
+
+        performance.clearMarks(startMark);
+        performance.clearMarks(endMark);
+        performance.clearMeasures(measureName);
+    });
+
     return result;
 };
