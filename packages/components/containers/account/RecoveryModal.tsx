@@ -93,7 +93,7 @@ const RecoveryModal = ({
             setStep(STEP.NEW_PASSWORD);
         } else if (currentMethod === 'mnemonic') {
             const persistent = authentication.getPersistent();
-            const username = user.Name || user.Email;
+            const username = user.Email || user.Name;
             const randomBytes = await mnemonicToBase64RandomBytes(mnemonic);
             const info = await api<InfoResponse>(getMnemonicAuthInfo(username));
             await srpAuth({
