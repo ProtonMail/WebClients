@@ -228,9 +228,6 @@
       "Dismiss": [
         "忽略"
       ],
-      "Don't know your password?": [
-        "不知您的密碼?"
-      ],
       "Done": [
         "完成"
       ],
@@ -293,6 +290,9 @@
       ],
       "Go to panel ${ index }": [
         "前往面板 ${ index }"
+      ],
+      "Go to settings": [
+        "前往設定"
       ],
       "Got it": [
         "了解"
@@ -359,6 +359,9 @@
       ],
       "Keep my Plus subscription": [
         "保持進階版訂購授權"
+      ],
+      "Later": [
+        "稍後"
       ],
       "Let's talk": [
         "讓我們來聊聊！"
@@ -444,11 +447,11 @@
       "Not now": [
         "現在不要"
       ],
-      "Ok": [
-        "確定"
-      ],
       "OK": [
         "好"
+      ],
+      "Ok": [
+        "確定"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "開啟 ${ CALENDAR_APP_NAME } 設定"
@@ -2462,6 +2465,14 @@
         "協助我們改善！"
       ]
     },
+    "drivePlus2024: Action": {
+      "Get the deal": [
+        "取得優惠"
+      ],
+      "Special Offer": [
+        "特別優惠"
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "展開版本紀錄"
@@ -2478,6 +2489,9 @@
     "drivePlus2024: Info": {
       "for the first month": [
         "首月"
+      ],
+      "Limited-time offer": [
+        "限時優惠"
       ]
     },
     "drivePlus2024: Title": {
@@ -6241,6 +6255,9 @@
       "Organize items with multiple vaults": [
         "組織項目與多重保管庫"
       ],
+      "Passkeys supported": [
+        "支援密碼金鑰"
+      ],
       "Password-protected Emails": [
         "密碼 - 安全防護的電子郵件"
       ],
@@ -7321,9 +7338,6 @@
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel 現已 **啟動** 並正在保護你的帳號."
-      ],
-      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLink }": [
-        "您的資料在最少一次的資料外洩之中被發現。開啟 ${ DARK_WEB_MONITORING_NAME } 來瀏覽詳細資料及採取行動。 ${ learnMoreLink }"
       ]
     },
     "Select files": {
@@ -7944,6 +7958,41 @@
         "為"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB 儲存空間"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "自動郵件轉寄${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "資料外洩警告 ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "桌面應用程式"
+      ],
+      "No ads or tracking": [
+        "無廣告或追蹤"
+      ],
+      "Short @pm.me email address": [
+        "縮短電子郵件地址@pm.me"
+      ],
+      "Support our mission": [
+        "支援我們的計畫"
+      ],
+      "Upgrade": [
+        "升級"
+      ],
+      "Upgrade your productivity": [
+        "提升您的生產力"
+      ],
+      "We don't sell your data": [
+        "我們不銷售您的資料"
+      ],
+      "Your privacy is our mission": [
+        "您的隱私是我們責任"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "您確定嗎？"
@@ -8287,6 +8336,9 @@
       ],
       "Account security": [
         "帳號安全性"
+      ],
+      "Add a custom logo": [
+        "新增自訂標誌"
       ],
       "Add another notification to remind you of this event": [
         "加入另一個通知以提醒您此事件"
