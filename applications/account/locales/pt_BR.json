@@ -257,6 +257,9 @@
       "Copy link": [
         "Copiar link"
       ],
+      "Copy version number to clipboard": [
+        "Copiar número da versão para a área de transferência"
+      ],
       "Create": [
         "Criar"
       ],
@@ -358,9 +361,6 @@
       ],
       "Discard": [
         "Descartar"
-      ],
-      "Don't know your password?": [
-        "Não sabe sua senha?"
       ],
       "Don't show again": [
         "Não mostrar novamente"
@@ -469,6 +469,9 @@
       ],
       "Font": [
         "Fonte"
+      ],
+      "Forgot password?": [
+        "Esqueceu sua senha?"
       ],
       "Generate": [
         "Gerar"
@@ -3305,11 +3308,32 @@
       "Bugs or quality issue": [
         "Defeitos ou problema de qualidade"
       ],
+      "I do not wish to share": [
+        "Não quero responder"
+      ],
+      "I found a cheaper VPN": [
+        "Achei uma VPN mais barata"
+      ],
+      "I found a VPN with better features": [
+        "Achei uma VPN com recursos melhores"
+      ],
+      "I have not managed to connect": [
+        "Não consegui me conectar"
+      ],
+      "I only needed a VPN short-term": [
+        "Eu só precisei da VPN por um curto período"
+      ],
       "I use a different ${ BRAND_NAME } account": [
         "Eu uso uma conta ${ BRAND_NAME } diferente"
       ],
+      "It doesn't do what I need": [
+        "Não faz o que preciso"
+      ],
       "Missing feature(s)": [
         "Funções ausentes"
+      ],
+      "Other reason (please comment)": [
+        "Outro motivo (comente)"
       ],
       "Subscription is too expensive": [
         "A assinatura é muito cara"
@@ -3319,6 +3343,9 @@
       ],
       "Temporary need, may come back in the future": [
         "Necessidade temporária, posso voltar no futuro"
+      ],
+      "The VPN is too slow": [
+        "A VPN é muito lenta"
       ]
     },
     "Downgrade modal exit survey title": {
@@ -5986,6 +6013,17 @@
         "Parte do conteúdo de seu calendário não é suportado e por isso não será importado."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Chaves adicionais duplicadas detectadas. Envie individualmente para mais informações."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Chave ${ fingerprint } já foi enviada"
+      ],
+      "Selected color:": [
+        "Cor selecionada:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } precisa da sua permissão para ${ enableDesktopNotifications }."
@@ -7992,6 +8030,9 @@
       "Version history": [
         "Histórico de versões"
       ],
+      "Version number successfully copied to clipboard": [
+        "Número da versão copiada com sucesso para a área de transferência"
+      ],
       "View, download, and manage your invoices.": [
         "Ver, baixar e gerenciar suas notas ficais"
       ],
@@ -8378,17 +8419,6 @@
         "Reunião no Zoom"
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Chaves adicionais duplicadas detectadas. Envie individualmente para mais informações."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Chave ${ fingerprint } já foi enviada"
-      ],
-      "Selected color:": [
-        "Cor selecionada:"
-      ]
-    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Quando habilitado, as subpastas herdam a cor da pasta pai."
@@ -8521,6 +8551,9 @@
     "Key generation": {
       "Generate key": [
         "Gerar chave"
+      ],
+      "Key successfully generated.": [
+        "Chave gerada com sucesso."
       ]
     },
     "Key state badge": {
@@ -9977,9 +10010,6 @@
       "Request an invite": [
         "Solicitar um convite"
       ],
-      "Reset password": [
-        "Redefinir senha"
-      ],
       "Set email address": [
         "Definir endereço de e-mail"
       ],
@@ -10804,6 +10834,9 @@
       "Organize items with multiple vaults": [
         "Organize itens com múltiplos cofres"
       ],
+      "Pass Monitor - premium features": [
+        "Pass Monitor - recursos premium"
+      ],
       "Passkeys supported": [
         "Chaves de acesso suportadas"
       ],
@@ -10889,6 +10922,9 @@
       ],
       "Unlimited devices": [
         "Dispositivos ilimitados"
+      ],
+      "Unlimited devices and aliases": [
+        "Aliases e dispositivos ilimitados"
       ],
       "Unlimited filters": [
         "Filtros ilimitados"
@@ -12173,6 +12209,16 @@
       "Save your recovery kit to continue": [
         "Salve o seu kit de recuperação para continuar"
       ],
+      "Secure sharing with ${ n } vault": [
+        "Compartilhamento seguro com ${ n } cofre",
+        "Compartilhamento seguro com ${ n } cofres"
+      ],
+      "Secure sharing with multiple vaults": [
+        "Compartilhamento seguro de múltiplos cofres"
+      ],
+      "Secure vault sharing": [
+        "Compartilhamento seguro de cofres"
+      ],
       "Setting up your organization": [
         "Configurando a sua organização"
       ],
@@ -12781,11 +12827,6 @@
       ],
       "SCIM automatic provisioning": [
         "Provisionamento automático SCIM"
-      ]
-    },
-    "Security Center - Info": {
-      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLinkBreach }": [
-        "Suas informações foram encontradas em pelo menos uma violação de dados. Ative o ${ DARK_WEB_MONITORING_NAME } para ver detalhes e tomar medidas. ${ learnMoreLinkBreach }"
       ]
     },
     "Select file": {
@@ -13894,6 +13935,9 @@
       "Desktop app": [
         "Aplicativo para computador"
       ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ajude-nos a manter a internet segura e privada para todos. Faça upgrade para um plano pago."
+      ],
       "No ads or tracking": [
         "Sem anúncios ou rastreamento"
       ],
@@ -13907,7 +13951,7 @@
         "Fazer upgrade"
       ],
       "Upgrade your productivity": [
-        "Atualize sua produtividade"
+        "Faça upgrade da sua produtividade"
       ],
       "We don't sell your data": [
         "Não vendemos seus dados"
@@ -15882,7 +15926,7 @@
         "A assinatura é renovada automaticamente a cada 3 meses. Sua próxima data de faturamento será em 3 meses."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
-        "O preço com desconto especial de ${ priceWithDiscount } é válido no primeiro mês. Em seguida, ele será renovado automaticamente pelo preço de ${ renewPrice } todo mês. Você pode cancelar a qualquer momento."
+        "O preço com desconto especial de ${ priceWithDiscount } é válido no primeiro mês. Em seguida, será renovado automaticamente pelo preço de ${ renewPrice } todo mês. Você pode cancelar a qualquer momento."
       ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Você será cobrado a cada 12 meses no valor de ${ renewPrice }."

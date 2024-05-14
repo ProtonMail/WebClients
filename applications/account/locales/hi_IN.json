@@ -347,9 +347,6 @@
       "Discard": [
         "रद्द करें"
       ],
-      "Don't know your password?": [
-        "क्या आप अपना पासवर्ड नहीं जानते?"
-      ],
       "Don't show again": [
         "फिर से न दिखाएं"
       ],
@@ -1283,8 +1280,17 @@
       ]
     },
     "bf2023: Action": {
+      "**Add our encrypted password manager** for only ${ price }": [
+        "**हमारे एन्क्रिप्टेड पासवर्ड प्रबंधक** को केवल ${ price } में जोड़ें"
+      ],
       "Add ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } जोड़ें"
+      ],
+      "Add ${ plan } for ${ price } per month": [
+        "प्रति माह ${ price } के लिए ${ plan } जोड़ें"
+      ],
+      "Become a Visionary": [
+        "Visionary बनें"
       ],
       "Cancel": [
         "रद्द करें"
@@ -1292,11 +1298,17 @@
       "Close": [
         "बंद करें"
       ],
+      "Get the deal": [
+        "डील लें"
+      ],
       "Remove": [
         "हटाएं"
       ],
       "Remove ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } को निकालें"
+      ],
+      "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
+        "15 महीने के लिए सदस्यता लें और **हमारे एन्क्रिप्टेड पासवर्ड प्रबंधक** को केवल प्रति महीने ${ priceNoSuffix } अतिरिक्त में प्राप्त करें!"
       ]
     },
     "bf2023: Deal details": {
@@ -1330,14 +1342,55 @@
         "आपकी सदस्यता आपके बिलिंग चक्र के अंत में मानक रियायती दर और अवधि पर स्वचालित रूप से नवीनीकृत हो जाएगी"
       ]
     },
+    "bf2023: header": {
+      "Save with Black Friday deals on a high-speed Swiss VPN": [
+        "उच्च गति वाले स्विस VPN पर ब्लैक फ्राइडे के डील्स के साथ बचत करें"
+      ],
+      "Save with Cyber Week deals on a high-speed Swiss VPN": [
+        "उच्च गति वाले स्विस VPN पर साइबर सप्ताह के डील्स के साथ बचत करें"
+      ],
+      "Save with End of Year deals on a high-speed Swiss VPN": [
+        "उच्च गति वाले स्विस VPN पर वर्ष के अंत के डील्स के साथ बचत करें"
+      ],
+      "Select your Black Friday offer": [
+        "अपना ब्लैक फ्राइडे ऑफर चुनें"
+      ],
+      "Select your Cyber Week offer": [
+        "अपना साइबर सप्ताह का ऑफ़र चुनें"
+      ],
+      "Select your End of Year offer": [
+        "अपना वर्ष के अंत का ऑफ़र चुनें"
+      ]
+    },
     "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "माफ़ कीजिए, यह ऑफ़र आपकी वर्तमान योजना के साथ उपलब्ध नहीं है।"
+      ],
       "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
         "क्षमा करें, यह ऑफ़र आपके वर्तमान प्लान के साथ उपलब्ध नहीं है। लेकिन जब आप **${ months }** के लिए सदस्यता लेते हैं तो आप **${ plan.Title } पर ${ discountPercentage }** की छूट पा सकते हैं।"
       ]
     },
     "bf2023: Info": {
+      "6 TB storage (2x more than any other plan)": [
+        "6 टीबी स्टोरेज (किसी भी अन्य योजना की तुलना में 2 गुना ज़्यादा)"
+      ],
       "6 users": [
         "6 यूज़र"
+      ],
+      "Become a super-supporter. Get access to all current and future ${ BRAND_NAME } services.": [
+        "सुपर-समर्थक बनें। सभी वर्तमान और भविष्य ${ BRAND_NAME } सेवाओं तक पहुंच पाएं।"
+      ],
+      "Exclusive features and early access": [
+        "विशेष सुविधाएँ और अर्ली एक्सेस"
+      ],
+      "Help us fight for online privacy": [
+        "हमें ऑनलाइन गोपनीयता के लिए लड़ने में मदद करें"
+      ],
+      "Premium versions of all ${ BRAND_NAME } services": [
+        "${ BRAND_NAME } की सभी सेवाओं के प्रीमियम संस्करण"
+      ],
+      "The ${ plan } plan is back for a limited time only": [
+        "केवल सीमित समय के लिए ${ plan } योजना वापस आ गई है"
       ]
     },
     "bf2023: Offers": {
@@ -1358,6 +1411,11 @@
       ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "${ discountedPrice } की विशेष रियायती कीमत पहले महीने के लिए वैध है। फिर यह स्वचालित रूप से हर महीने ${ nextPrice } पर नवीनीकृत हो जाएगा। आप किसी भी समय निरस्त कर सकते हैं।"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "ऑफर अनुपलब्ध"
       ]
     },
     "bf2023: Tooltip": {
@@ -1611,7 +1669,7 @@
     },
     "Calendar sharing error": {
       "Failed to retrieve contact information for ${ address }": [
-        "${ address } का संपर्क जानकारी लाने में असफल"
+        "${ address } के लिए संपर्क जानकारी प्राप्त करने में असफल"
       ]
     },
     "Calendar sharing permission change notification": {
@@ -1630,10 +1688,10 @@
         "अक्षम किया"
       ],
       "Not synced": [
-        "सिंक किया नहीं"
+        "सिंक नहीं हुआ"
       ],
       "Syncing": [
-        "सिंक्रनाइज़ किए जा रहे है"
+        "सिंक हो रहा है"
       ]
     },
     "Calendar subscription not synced error": {
@@ -1641,7 +1699,7 @@
         "कैलेंडर को डिक्रिप्ट नहीं किया जा सका"
       ],
       "Calendar is syncing": [
-        "कैलेंडर समन्वयित हो रहा है"
+        "कैलेंडर सिंक हो रहा है"
       ],
       "Calendar is syncing: it may take several minutes for all of its events to show up.": [
         "कैलेंडर सिंक हो रहा: उसके सारे दिखने में कई मिनट लग सकते है।"
@@ -1650,13 +1708,13 @@
         "कैलेंडर बहुत बड़ा है"
       ],
       "Calendar link is not accessible": [
-        "कैलेंडर लिंक पहुंच योग्य नहीं है"
+        "कैलेंडर लिंक अनुपलब्ध है"
       ],
       "Calendar link is temporarily inaccessible": [
-        "कैलेंडर लिंक अस्थायी रूप से दुर्गम है"
+        "कैलेंडर लिंक अस्थायी रूप से अनुपलब्ध है"
       ],
       "Failed to sync calendar": [
-        "कैलेंडर समन्वयित करने में विफल"
+        "कैलेंडर को सिंक करने में विफल"
       ],
       "More than 12 hours passed since last update": [
         "पिछले अपडेट के बाद से 12 घंटे से अधिक समय बीत चुका है"
@@ -2044,10 +2102,10 @@
         "अब्खाज़िया"
       ],
       "Afghanistan": [
-        "अफगानिस्तान"
+        "अफ़ग़ानिस्तान"
       ],
       "Albania": [
-        "अल्बानिया"
+        "अल्बेनिया"
       ],
       "Algeria": [
         "अल्जीरिया"
@@ -2074,7 +2132,7 @@
         "अर्जेंटीना"
       ],
       "Armenia": [
-        "आर्मीनिया"
+        "अर्मेनिया"
       ],
       "Aruba": [
         "अरूबा"
@@ -2089,13 +2147,13 @@
         "ऑस्ट्रिया"
       ],
       "Azerbaijan": [
-        "अज़रबैजान"
+        "आज़रबाइजान"
       ],
       "Bahamas": [
         "बहामास"
       ],
       "Bahrain": [
-        "बहरीन"
+        "बहरैन"
       ],
       "Bangladesh": [
         "बांग्लादेश"
@@ -2146,7 +2204,7 @@
         "ब्रुनेई दारुस्सलाम"
       ],
       "Bulgaria": [
-        "बल्गारिया"
+        "बुल्गारिया"
       ],
       "Burkina Faso": [
         "बुर्किना फासो"
@@ -2182,7 +2240,7 @@
         "चीन"
       ],
       "Christmas Island": [
-        "क्रिसमस द्वीप"
+        "क्रिसमस आइलैंड"
       ],
       "Cocos (Keeling) Islands": [
         "कोकोस (कीलिंग) द्वीप समूह"
@@ -2233,7 +2291,7 @@
         "डोमिनिका"
       ],
       "Dominican Republic": [
-        "डॉमिनिकन गणराज्य"
+        "डोमिनिकन रिपब्लिक"
       ],
       "Ecuador": [
         "इक्वाडोर"
@@ -2263,7 +2321,7 @@
         "फ़ॉकलैंड आइलैंड"
       ],
       "Faroe Islands": [
-        "फ़ेरो द्वीपसमूह"
+        "फ़ेरो आइलैंड्स"
       ],
       "Federated States of Micronesia": [
         "माइक्रोनेशिया के संघीय राज्य"
@@ -2479,7 +2537,7 @@
         "मेक्सिको"
       ],
       "Moldova": [
-        "माल्डोवा"
+        "मोल्डोवा"
       ],
       "Monaco": [
         "मोनाको"
@@ -2659,7 +2717,7 @@
         "स्लोवेनिया"
       ],
       "Solomon Islands": [
-        "सोलोमन द्वीप समूह"
+        "सोलोमन आइलैंड्स"
       ],
       "Somalia": [
         "सोमालिया"
@@ -2803,7 +2861,7 @@
         "ज़िम्बाब्वे"
       ],
       "Åland Islands": [
-        "एलैंड आइलैंड"
+        "ऑलैंड द्वीप"
       ]
     },
     "Country select label": {
@@ -5347,6 +5405,14 @@
         "आपके कैलेंडर कंटेंट का कुछ हिस्सा सपोर्ट नहीं किया जाता है और आयात नहीं किया जाएगा।"
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "अतिरिक्त डुप्लिकेट कुंजियों का पता चला। अधिक जानकारी के लिए कृपया व्यक्तिगत रूप से अपलोड करें।"
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "कुंजी ${ fingerprint } पहले ही अपलोड की जा चुकी है"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } के लिए आपकी अनुमति की आवश्यकता है ${ enableDesktopNotifications }"
@@ -5815,7 +5881,7 @@
         "अपना रेफरल लिंक कॉपी करें"
       ],
       "Country code": [
-        "देश कोड"
+        "देश का कोड"
       ],
       "Create ${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } नया कैलेंडर बनाएं",
@@ -6281,7 +6347,7 @@
         "अपने संपर्कों को बताएं कि आप उनकी गोपनीयता की परवाह करते हैं।"
       ],
       "Link copied to clipboard": [
-        "लिंक को क्लिपबोर्ड पर कॉपी किया गया"
+        "लिंक क्लिपबोर्ड पर कॉपी किया गया"
       ],
       "Link created": [
         "लिंक बनाया गया"
@@ -7497,14 +7563,6 @@
       ],
       "Zoom meeting": [
         "ज़ूम मीटिंग"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "अतिरिक्त डुप्लिकेट कुंजियों का पता चला। अधिक जानकारी के लिए कृपया व्यक्तिगत रूप से अपलोड करें।"
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "कुंजी ${ fingerprint } पहले ही अपलोड की जा चुकी है"
       ]
     },
     "Info - folder colouring feature": {
@@ -8819,7 +8877,7 @@
         "${ BRAND_NAME } बीटा खबर"
       ],
       "${ BRAND_NAME } for Business newsletter": [
-        "${ BRAND_NAME } बिज़नेस खबरपत्र के लिए"
+        "${ BRAND_NAME } Business समाचार पत्रिका"
       ],
       "${ BRAND_NAME } newsletter": [
         "${ BRAND_NAME } खबरपत्र"
@@ -8981,7 +9039,7 @@
         "${ VPN_APP_NAME } लें"
       ],
       "Help translate": [
-        "हमें अनुवाद करने में मदद करें"
+        "अनुवाद में मदद करें"
       ],
       "here": [
         "यहाँ"
@@ -9021,9 +9079,6 @@
       ],
       "Request an invite": [
         "निमंत्रण का अनुरोध"
-      ],
-      "Reset password": [
-        "पासवर्ड रीसेट करें"
       ],
       "Set email address": [
         "ईमेल पता सेट करें"
@@ -12317,13 +12372,13 @@
     },
     "Tab subscription modal": {
       "For businesses": [
-        "बिज़नेस के लिए"
+        "व्यवसायों के लिए"
       ],
       "For families": [
         "परिवारों के लिए"
       ],
       "For individuals": [
-        "अकेले लोगों के लिए"
+        "व्यक्तिगत"
       ]
     },
     "Table header; invitations to share calendar": {
@@ -13672,7 +13727,7 @@
     },
     "Tooltip; share calendar modal ": {
       "Shared end-to-end encrypted": [
-        "शेयर किया शुरु-से-अंत तक एन्क्रिप्ट करके"
+        "एंड-टू-एंड एन्क्रिप्टेड साझा किया गया"
       ],
       "Shared end-to-end encrypted with verified contact": [
         "सत्यापित संपर्क के साथ शुरु-से-अंत तक एन्क्रिप्ट किये तरीके से शेयर किया"

@@ -323,6 +323,9 @@
       "Delete link": [
         "Удалить ссылку"
       ],
+      "Delete logo": [
+        "Удалить логотип"
+      ],
       "Delete permanently": [
         "Удалить безвозвратно"
       ],
@@ -355,9 +358,6 @@
       ],
       "Discard": [
         "Сбросить"
-      ],
-      "Don't know your password?": [
-        "Не знаете свой пароль?"
       ],
       "Don't show again": [
         "Больше не показывать"
@@ -521,6 +521,9 @@
       "Go to label": [
         "Перейти к ярлыку"
       ],
+      "Go to settings": [
+        "Перейти в настройки"
+      ],
       "Got it": [
         "Понятно"
       ],
@@ -584,11 +587,17 @@
       "Keep": [
         "Оставить"
       ],
+      "Keep logo": [
+        "Оставить логотип"
+      ],
       "Keep my Plus subscription": [
         "Сохраните мою подписку Plus"
       ],
       "label emails as": [
         "отметить ярлыком электронные письма как"
+      ],
+      "Later": [
+        "Позже"
       ],
       "Leave": [
         "Оставить"
@@ -616,6 +625,9 @@
       ],
       "Mark as default": [
         "Установить по умолчанию"
+      ],
+      "Mark as open": [
+        "Пометить как открытый"
       ],
       "mark emails as": [
         "отметить письма как"
@@ -956,6 +968,9 @@
       "Start import": [
         "Начать импорт"
       ],
+      "Start live chat": [
+        "Начать онлайн чат"
+      ],
       "Stay": [
         "Остаться"
       ],
@@ -1034,6 +1049,9 @@
       "Upload": [
         "Загрузить"
       ],
+      "Upload logo": [
+        "Загрузить логотип"
+      ],
       "Upload picture": [
         "Загрузить картинку"
       ],
@@ -1069,6 +1087,9 @@
       ],
       "View": [
         "Посмотреть"
+      ],
+      "View all reports": [
+        "Просмотреть все отчеты"
       ],
       "View invoice": [
         "Посмотреть счет"
@@ -3309,6 +3330,14 @@
         "Защищенное облачное хранилище и общий доступ к файлам, защищающие ваши данные"
       ]
     },
+    "drivePlus2024: Action": {
+      "Get the deal": [
+        "Получить сделку"
+      ],
+      "Special Offer": [
+        "Специальное предложение"
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "Подробная история версий"
@@ -3325,6 +3354,9 @@
     "drivePlus2024: Info": {
       "for the first month": [
         "за первый месяц"
+      ],
+      "Limited-time offer": [
+        "Ограниченное по времени предложение"
       ]
     },
     "drivePlus2024: Title": {
@@ -3842,6 +3874,9 @@
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Не удалось получить активные сеансы. Пожалуйста, ${ refresh } или повторите попытку позже."
       ],
+      "File too large. Your logo must be 30 KB or smaller.": [
+        "Файл слишком большой. Ваш логотип должен быть не менее 30 КБ."
+      ],
       "Filter with this name already exists": [
         "Фильтр с таким именем уже существует"
       ],
@@ -3859,6 +3894,9 @@
       ],
       "Impossible to rename the gateway": [
         "Невозможно переименовать шлюз"
+      ],
+      "Incorrect file type. Upload a file in PNG or JPEG format.": [
+        "Неверный тип файла. Загрузите файл в формате PNG или JPEG."
       ],
       "Incorrect login credentials. Please try again.": [
         "Неверные учетные данные для входа. Пожалуйста, попробуйте снова."
@@ -5858,6 +5896,14 @@
         "Часть содержимого вашего календаря не поддерживается и не будет импортирована."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Обнаружены дополнительные дубликаты ключей. Для получения дополнительной информации загрузите их по отдельности."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Ключ ${ fingerprint } уже был загружен"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } нужно ваше разрешение, чтобы ${ enableDesktopNotifications }."
@@ -5873,6 +5919,9 @@
       ],
       "${ BRAND_NAME } is privacy you can trust, ensured by strong encryption, open-source code, and Swiss privacy laws. We believe nobody should be able to exploit your data, period. Our technology and business are based upon this fundamentally stronger definition of privacy.": [
         "${ BRAND_NAME } - это приватность, которой можно доверять, обеспеченная надежным шифрованием, открытым исходным кодом и швейцарскими законами о защите частной жизни. Мы считаем, что никто не должен иметь возможности использовать ваши данные, и точка. Наши технологии и бизнес основаны на этом принципиально более строгом определении приватности."
+      ],
+      "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
+        "${ BRAND_NAME } никогда не передает вашу информацию третьим лицам. Данные получены в результате собственного анализа ${ BRAND_NAME } и разведки Constella Intelligence."
       ],
       "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "${ BRAND_NAME } приостановил импорт из-за потери соединения с вашим другим почтовым провайдером. Пожалуйста, восстановите соединение."
@@ -6354,6 +6403,9 @@
       "Blocks senders from seeing if and when you opened a message.": [
         "Запрещает отправителям видеть, открывали ли вы сообщение и когда."
       ],
+      "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
+        "Расширьте идентификацию бренда вашей организации и создайте более последовательный опыт работы в Интернете для ваших пользователей."
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Перейдя на бесплатный тарифный план, вы навсегда потеряете эти преимущества, даже если в будущем вы снова улучшите его."
       ],
@@ -6464,6 +6516,9 @@
       ],
       "Custom": [
         "Пользовательский"
+      ],
+      "Custom branding": [
+        "Пользовательский брендинг"
       ],
       "Custom daily": [
         "Настраиваемое ежедневное"
@@ -7485,6 +7540,9 @@
       "Support for 1 custom email domain": [
         "Поддержка 1 пользовательского домена электронной почты"
       ],
+      "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
+        "Поддержка контроля пользовательских доменов и адресов электронной почты, не относящихся к ${ BRAND_NAME }, появится в ближайшее время."
+      ],
       "support team": [
         "служба поддержки"
       ],
@@ -7812,6 +7870,9 @@
       "Upload your completed CSV file to create accounts": [
         "Загрузите завершенный файл CSV для создания учетных записей"
       ],
+      "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
+        "Загрузите логотип вашей организации, чтобы повысить узнаваемость вашего бренда и создать индивидуальный интерфейс для ваших пользователей."
+      ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "Загруженный файл не является действительным закрытым ключом. Пожалуйста, проверьте и повторите попытку."
       ],
@@ -7896,6 +7957,9 @@
       "We just sent you a new link.": [
         "Мы только что отправили вам новую ссылку."
       ],
+      "We monitor the dark web for instances where your personal information (such as an email address or password used on a third-party site) is leaked or compromised.": [
+        "Мы отслеживаем темную паутину на предмет случаев утечки или раскрытия вашей личной информации (например, адреса электронной почты или пароля, используемого на стороннем сайте)."
+      ],
       "We need to authenticate your payment method with your bank.": [
         "Нам нужно подтвердить ваш способ оплаты в вашем банке."
       ],
@@ -7922,6 +7986,9 @@
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Для завершения транзакции мы откроем новую вкладку браузера и перенаправим вас на сайт PayPal. Если вы используете блокировщики всплывающих окон, то отключите их перед тем, как продолжить."
+      ],
+      "We'll email you once import is complete.": [
+        "Мы отправим вам электронное письмо после завершения импорта."
       ],
       "We'll get back to you shortly.": [
         "Мы свяжемся с Вами в ближайшее время."
@@ -8028,6 +8095,9 @@
       "You can check the progress ${ importProgressLink }.": [
         "Вы можете проверить ход выполнения ${ importProgressLink }."
       ],
+      "You can close the tab or browser in the meantime.": [
+        "Тем временем можно закрыть вкладку или браузер."
+      ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Вы можете изменить это один раз, чтобы обеспечить правильную проверку адреса электронной почты."
       ],
@@ -8060,6 +8130,9 @@
       ],
       "You can now close this window.": [
         "Теперь это окно можно закрыть."
+      ],
+      "You can now return to the application to continue": [
+        "Теперь вы можете вернуться в приложение, чтобы продолжить"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Вы можете включить уведомления, чтобы получать оповещения при появлении новых сообщений электронной почты в этой папке."
@@ -8234,14 +8307,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Ваша подписка находится под управлением Mozilla. Пожалуйста, свяжитесь со службой поддержки Mozilla."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Обнаружены дополнительные дубликаты ключей. Для получения дополнительной информации загрузите их по отдельности."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Ключ ${ fingerprint } уже был загружен"
       ]
     },
     "Info - folder colouring feature": {
@@ -9806,9 +9871,6 @@
       "Request an invite": [
         "Запросить приглашение"
       ],
-      "Reset password": [
-        "Сбросить пароль"
-      ],
       "Set email address": [
         "Установить адрес электронной почты"
       ],
@@ -10651,6 +10713,9 @@
       ],
       "Organize items with multiple vaults": [
         "Организуйте элементы с помощью нескольких хранилищ"
+      ],
+      "Passkeys supported": [
+        "Поддерживаются пропускные ключи"
       ],
       "Password-protected Emails": [
         "Электронные письма, защищенные паролем"
@@ -12593,6 +12658,24 @@
       "You can reset your password until ${ boldDate }.": [
         "Вы можете сбросить свой пароль до ${ boldDate }."
       ],
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
+        "У вас ${ timeRemaining.inDays } день, чтобы сбросить свой пароль.",
+        "У вас ${ timeRemaining.inDays } дня, чтобы сбросить свой пароль.",
+        "У вас ${ timeRemaining.inDays } дней, чтобы сбросить свой пароль.",
+        "У вас ${ timeRemaining.inDays } дня, чтобы сбросить свой пароль."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "У вас ${ timeRemaining.inHours } час, чтобы сбросить свой пароль.",
+        " У вас ${ timeRemaining.inHours } часа, чтобы сбросить свой пароль.",
+        " У вас ${ timeRemaining.inHours } часов, чтобы сбросить свой пароль.",
+        " У вас ${ timeRemaining.inHours } часа, чтобы сбросить свой пароль."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "У вас ${ timeRemaining.inMinutes } минута, чтобы сбросить свой пароль.",
+        " У вас ${ timeRemaining.inMinutes } минуты, чтобы сбросить свой пароль.",
+        " У вас ${ timeRemaining.inMinutes } минут, чтобы сбросить свой пароль.",
+        " У вас ${ timeRemaining.inMinutes } минуты, чтобы сбросить свой пароль."
+      ],
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
         "У вас ${ timeRemaining.inSeconds } секунда, чтобы сбросить свой пароль.",
         " У вас ${ timeRemaining.inSeconds } секунды, чтобы сбросить свой пароль.",
@@ -13004,6 +13087,9 @@
       ],
       "Premium ${ appName1 } & ${ appName2 }": [
         "Платные версии ${ appName1 } и ${ appName2 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "Премиум ${ appName1 } и ${ appName2 } и ${ appName3 }"
       ],
       "Premium early access": [
         "Ранний доступ"
@@ -13452,8 +13538,14 @@
       ]
     },
     "subscription reminder": {
+      "No ads or tracking": [
+        "Нет рекламы или отслеживания"
+      ],
       "Upgrade": [
         "Сменить тариф"
+      ],
+      "We don't sell your data": [
+        "Мы не продаем ваши данные"
       ]
     },
     "Subscription renewal state": {
@@ -13932,6 +14024,12 @@
       "4. Select a server to connect to": [
         "4. Выберите сервер для подключения"
       ],
+      "A filter name is required": [
+        "Требуется имя фильтра"
+      ],
+      "A filter with this name already exists": [
+        "Фильтр с этим именем уже существует"
+      ],
       "Accessibility": [
         "Специальные возможности"
       ],
@@ -13958,6 +14056,9 @@
       ],
       "Activate user": [
         "Активировать пользователя"
+      ],
+      "Add a custom logo": [
+        "Добавить свой логотип"
       ],
       "Add address": [
         "Добавить адрес"
@@ -14390,6 +14491,9 @@
         "Не удалось создать ${ failedUsers.length } аккаунта.",
         "Не удалось создать ${ failedUsers.length } аккаунтов.",
         "Не удалось создать ${ failedUsers.length } аккаунтов."
+      ],
+      "Filter name cannot contain only spaces": [
+        "В имени фильтра не могут быть только пробелы"
       ],
       "Filters": [
         "Фильтры"
@@ -14832,6 +14936,9 @@
       "This field cannot be empty": [
         "Это поле не может быть пустым"
       ],
+      "This field cannot contain only spaces": [
+        "Это поле не может содержать только пробелы"
+      ],
       "Time zone": [
         "Часовой пояс"
       ],
@@ -14900,6 +15007,9 @@
       ],
       "WireGuard configuration": [
         "Конфигурация WireGuard"
+      ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Ваша бесплатная пробная версия ${ planName } заканчивается ${ textDate }"
       ],
       "Your calendar link": [
         "Ссылка на календарь"

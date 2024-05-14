@@ -356,9 +356,6 @@
       "Discard": [
         "Zavrzi"
       ],
-      "Don't know your password?": [
-        "Ne veste gesla?"
-      ],
       "Don't show again": [
         "Ne prikaži več"
       ],
@@ -4438,7 +4435,7 @@
         "Urejen dogodek ni podprt."
       ],
       "Element": [
-        "Element"
+        "Predmet"
       ],
       "Encryption failed": [
         "Šifriranje ni uspelo"
@@ -5550,7 +5547,7 @@
         "Izberite ponudbo"
       ],
       "Select your pricing plan": [
-        "Izberite svoj cenovni načrt:"
+        "Izberite svoj cenovni paket:"
       ],
       "Server": [
         "Strežnik"
@@ -6003,6 +6000,17 @@
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "Del vsebine koledarja ni podprt in ne bo uvožen."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Zaznali smo dodatne podvojene ključe. Prosimo, da jih naložite posamično za več informacij."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Ključ ${ fingerprint } je že bil naložen."
+      ],
+      "Selected color:": [
+        "Izberi barvo:"
       ]
     },
     "Info": {
@@ -8419,7 +8427,7 @@
         "Vaša telefonska številka bo uporabljena le za to enkratno preverjanje."
       ],
       "Your plan is limited to 10 versions for up to 7 days": [
-        "Vaš načrt je omejen na 10 različic do 7 dni"
+        "Vaš paket je omejen na 10 različic do 7 dni"
       ],
       "Your recovery phrase": [
         "Vaš stavek za obnovitev"
@@ -8432,17 +8440,6 @@
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Vaš zahtevek za podporo je bil zaprt. Hvala, ker ste se obrnili na podporo ${ BRAND_NAME }."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Zaznali smo dodatne podvojene ključe. Prosimo, da jih naložite posamično za več informacij."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Ključ ${ fingerprint } je že bil naložen."
-      ],
-      "Selected color:": [
-        "Izberi barvo:"
       ]
     },
     "Info - folder colouring feature": {
@@ -8707,7 +8704,7 @@
         "Premakni v Prejeto"
       ],
       "Move to Spam": [
-        "Premakni v nezaželeno pošto"
+        "Premakni v neželeno pošto"
       ],
       "Move to Trash": [
         "Premakni v smetnjak"
@@ -10035,9 +10032,6 @@
       ],
       "Request an invite": [
         "Zahtevaj povabilo"
-      ],
-      "Reset password": [
-        "Ponastavitev gesla"
       ],
       "Set email address": [
         "Nastavite e-poštni naslov."
