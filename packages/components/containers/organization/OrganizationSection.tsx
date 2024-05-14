@@ -97,7 +97,7 @@ const OrganizationSection = ({ app, organization }: Props) => {
         useModalState();
 
     const organizationTheme = useOrganizationTheme();
-    const canAccessLightLabelling = organizationTheme.access;
+    const canAccessLightLabelling = organizationTheme.access && APP_NAME === APPS.PROTONACCOUNT;
     const organizationIdentity = useOrganizationIdentity();
 
     if (!organization || !user || !subscription || !customDomains) {
@@ -341,11 +341,13 @@ const OrganizationSection = ({ app, organization }: Props) => {
                 </SettingsLayout>
             )}
 
-            <OrganizationLogoUploadUpsellBanner
-                organization={organization}
-                canAccessLightLabelling={canAccessLightLabelling}
-                isPartOfFamily={isPartOfFamily}
-            />
+            {app === APPS.PROTONACCOUNT && (
+                <OrganizationLogoUploadUpsellBanner
+                    organization={organization}
+                    canAccessLightLabelling={canAccessLightLabelling}
+                    isPartOfFamily={isPartOfFamily}
+                />
+            )}
 
             {canAccessLightLabelling && (
                 <SettingsLayout>
