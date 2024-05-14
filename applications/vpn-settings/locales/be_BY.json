@@ -113,6 +113,9 @@
       "Copy key to the clipboard": [
         "Скапіяваць ключ у буфер абмену"
       ],
+      "Copy version number to clipboard": [
+        "Скапіяваць нумар версіі ў буфер абмену"
+      ],
       "Create": [
         "Стварыць"
       ],
@@ -163,9 +166,6 @@
       ],
       "Discard": [
         "Адхіліць"
-      ],
-      "Don't know your password?": [
-        "Не ведаеце свой пароль?"
       ],
       "Done": [
         "Гатова"
@@ -232,6 +232,9 @@
       ],
       "Fit to window": [
         "Па памеры акна"
+      ],
+      "Forgot password?": [
+        "Забылі пароль?"
       ],
       "Get ${ vpnPlus }": [
         "Атрымаць ${ vpnPlus }"
@@ -2025,7 +2028,7 @@
     },
     "drivePlus2024: Title": {
       "Get ${ planName } for only ${ planPrice }": [
-        "Атрымаць тарыфны план ${ planName } усяго за ${ planPrice }"
+        "Атрымайце тарыфны план ${ planName } усяго за ${ planPrice }"
       ]
     },
     "Email verification": {
@@ -3488,10 +3491,10 @@
         "Ключы створаны"
       ],
       "Lean more about gateways": [
-        "Даведацца больш пра шлюзы"
+        "Даведацца больш аб шлюзах"
       ],
       "Lean more about single sign-on": [
-        "Даведацца больш пра адзіны ўваход"
+        "Даведацца больш аб адзіным уваходзе"
       ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Даведайцеся, як увайсці ў ${ VPN_APP_NAME } з дапамогай старонніх праграм VPN."
@@ -3608,7 +3611,7 @@
         "Пароль скапіяваны ў буфер абмену"
       ],
       "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
-        "Мінімальная даўжыня пароля складае наступнаю колькасць сімвалаў або больш: ${ MIN_PASSWORD_LENGTH }"
+        "Мінімальная даўжыня пароля складае наступную колькасць сімвалаў або больш: ${ MIN_PASSWORD_LENGTH }"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Плацяжы абаронены шыфраваннем TLS і швейцарскімі законамі аб прыватнасці."
@@ -3910,6 +3913,9 @@
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Гэта незваротна выдаліць ваш уліковы запіс і ўсе звязаныя з ім даныя. У вас не будзе магчымасці аднавіць яго пазней."
       ],
+      "This will remove any enabled 2FA methods.": [
+        "Гэта прывядзе да выдалення ўсіх уключаных спосабаў 2ФА."
+      ],
       "This will remove SSO for ${ boldDomainName }.": [
         "Гэта прывядзе да выдалення SSO для ${ boldDomainName }."
       ],
@@ -4048,6 +4054,9 @@
       "Version ${ version }": [
         "Версія ${ version }"
       ],
+      "Version number successfully copied to clipboard": [
+        "Нумар версіі паспяхова скапіяваны ў буферу абмену"
+      ],
       "View, download, and manage your invoices.": [
         "Прагляд, спампоўванне і кіраванне вашымі рахункамі."
       ],
@@ -4116,6 +4125,9 @@
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Пры ўключэнні SAML для ${ appName } у вашым пастаўшчыку пасведчанняў, вам магчыма будзе прапанавана скарыстацца зваротным выклікам URL (ACS) і ідэнтыфікатарам эмітэнта. Проста скапіюйце даныя знізу, а потым устаўце іх у палі вашага пастаўшчыка пасведчанняў."
+      ],
+      "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
+        "Рэшта балансу вашай падпіскі вернецца на ваш уліковы запіс у выглядзе крэдытаў і вы будзеце паніжаны да тарыфнага плана ${ BRAND_NAME } ${ PLANS.FREE }, калі вы скасуеце сваю бягучую платную падпіску."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Пры наладжванні двухфактарнай аўтэнтыфікацыі, мы забяспечваем вас кодамі аднаўлення, якія вы можаце выкарыстаць для ўваходу, калі страцілі доступ да праграмы аўтэнтыфікацыі."
@@ -4912,6 +4924,9 @@
       "Create account": [
         "Стварыць уліковы запіс"
       ],
+      "Forgot password?": [
+        "Забылі пароль?"
+      ],
       "Forgot username?": [
         "Забылі імя карыстальніка?"
       ],
@@ -4944,9 +4959,6 @@
       ],
       "Request an invite": [
         "Запытаць запрашэнне"
-      ],
-      "Reset password": [
-        "Скінуць пароль"
       ],
       "Sign in": [
         "Увайсці"
@@ -5526,7 +5538,7 @@
         "Абагульванне файлаў і папак праз спасылкі"
       ],
       "Sign in as user": [
-        "Увайсці як карыстальнік"
+        "Уваход у якасці карыстальніка"
       ],
       "SMTP submission": [
         "Адпраўка па SMTP"
