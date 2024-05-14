@@ -164,9 +164,6 @@
       "Discard": [
         "Zahodit"
       ],
-      "Don't know your password?": [
-        "Neznáte své heslo?"
-      ],
       "Done": [
         "Hotovo"
       ],
@@ -225,7 +222,7 @@
         "Zapnout podporu pro více uživatelů"
       ],
       "Explore other ${ BRAND_NAME } plans": [
-        "Objevte další ${ BRAND_NAME } tarify"
+        "Objevte další tarify ${ BRAND_NAME }"
       ],
       "Extend": [
         "Rozšířit"
@@ -706,6 +703,23 @@
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
         "Tím se odpojí všechny routery a klienti, kteří používají tento certifikát."
+      ]
+    },
+    "app-switcher": {
+      "Browse the web privately and block ads": [
+        "Procházejte web soukromě a blokujte reklamu"
+      ],
+      "Keep your schedule private": [
+        "Udržujte svůj rozvrh v soukromí"
+      ],
+      "Protect your passwords and identity": [
+        "Chraňte svá hesla a identitu"
+      ],
+      "Safeguard your files and photos": [
+        "Ochraňte své soubory a fotky"
+      ],
+      "Secure your communications": [
+        "Zabezpečte svou komunikaci"
       ]
     },
     "bf2023: Action": {
@@ -1932,11 +1946,32 @@
       "Bugs or quality issue": [
         "Chyby nebo problém s kvalitou"
       ],
+      "I do not wish to share": [
+        "Nepřeji si sdílet"
+      ],
+      "I found a cheaper VPN": [
+        "Našel/la jsem levnější VPN"
+      ],
+      "I found a VPN with better features": [
+        "Našel/la jsem VPN s lepšími funkcemi"
+      ],
+      "I have not managed to connect": [
+        "Nepodařilo se mně připojit"
+      ],
+      "I only needed a VPN short-term": [
+        "Potřeboval/a jsem VPN na chvíli"
+      ],
       "I use a different ${ BRAND_NAME } account": [
         "Používám jiný účet ${ BRAND_NAME }"
       ],
+      "It doesn't do what I need": [
+        "Nedělá to, co chci"
+      ],
       "Missing feature(s)": [
         "Chybějící funkce"
+      ],
+      "Other reason (please comment)": [
+        "Jiný důvod (prosím popište)"
       ],
       "Subscription is too expensive": [
         "Předplatné je příliš drahé"
@@ -1946,11 +1981,22 @@
       ],
       "Temporary need, may come back in the future": [
         "Dočasná potřeba, mohu potřebovat opět v budoucnu"
+      ],
+      "The VPN is too slow": [
+        "VPN je příliš pomalá"
       ]
     },
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Pomozte nám se zlepšit!"
+      ]
+    },
+    "drivePlus2024: Action": {
+      "Get the deal": [
+        "Získejte nabídku"
+      ],
+      "Special Offer": [
+        "Speciální nabídka"
       ]
     },
     "driveplus2024: Deal details": {
@@ -1969,6 +2015,9 @@
     "drivePlus2024: Info": {
       "for the first month": [
         "za první měsíc"
+      ],
+      "Limited-time offer": [
+        "Časově omezená nabídka"
       ]
     },
     "drivePlus2024: Title": {
@@ -4791,6 +4840,9 @@
       ]
     },
     "Label for news": {
+      "${ app } and ${ additionalApp } product updates": [
+        "aktualizace produktu ${ app } a ${ additionalApp }"
+      ],
       "${ app } product updates": [
         "Aktualizace produktu ${ app }"
       ],
@@ -4892,9 +4944,6 @@
       ],
       "Request an invite": [
         "Požádat o pozvánku"
-      ],
-      "Reset password": [
-        "Resetovat heslo"
       ],
       "Sign in": [
         "Přihlásit se"
@@ -5416,6 +5465,9 @@
       "Organize items with multiple vaults": [
         "Uspořádání položek pomocí více trezorů"
       ],
+      "Pass Monitor - premium features": [
+        "Pass Monitor - prémiové funkce"
+      ],
       "Passkeys supported": [
         "Přístupové klíče podporovány"
       ],
@@ -5505,6 +5557,9 @@
       ],
       "Unlimited devices": [
         "Neomezený počet zařízení"
+      ],
+      "Unlimited devices and aliases": [
+        "Neomezený počet zařízení a aliasů"
       ],
       "Unlimited filters": [
         "Neomezeně filtrů"
@@ -5736,6 +5791,9 @@
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "${ VPN_APP_NAME }: Přístup k blokovanému obsahu a soukromé prohlížení. Obsahuje ${ serversAndCountries }, nejvyšší rychlosti VPN, přístup k celosvětovým streamovacím službám, blokování malware a reklam, rychlé stahování BitTorrentu a další funkce."
       ],
+      "Access ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME } from the convenience of your desktop": [
+        "Přistupujte k ${ MAIL_APP_NAME } a ${ CALENDAR_APP_NAME } pohodlně z vašeho počítače"
+      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Získejte přístup k obsahu na streamovacích službách, včetně Netflix, Disney+, Prime Video, odkudkoliv"
       ],
@@ -5804,6 +5862,9 @@
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Jmenovky jsou jednoduché štítky, které můžete přidat ke zprávám aby se vám lépe hledaly a používaly filtry"
+      ],
+      "Like a folder, a vault is a convenient way to organize your items": [
+        "Podobně jako složka je trezor praktickým nástrojem k organizaci vašich položek"
       ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
         "Oddělte své firemní zdroje od veřejného internetu a zpřístupněte je pouze přes své soukromé brány."
@@ -6138,9 +6199,29 @@
         "Váš tarif zahrnuje maximálně ${ humanReadableAvailableSpace } dalšího úložného prostoru."
       ]
     },
+    "Organization logo upload": {
+      "Avoid overly compressed images.": [
+        "Vyhněte se přílišné kompresi obrázků."
+      ],
+      "Ensure your logo has padding space around it.": [
+        "Ujistěte se, že vaše logo má kolem sebe odsazení."
+      ],
+      "Opt for a PNG image that is a 128x128 pixels for clarity.": [
+        "Pro přehlednost zvolte obrázek PNG o velikosti 128x128 pixelů."
+      ],
+      "Tips on choosing a good logo": [
+        "Doporučení pro výběr vhodného loga"
+      ],
+      "Use a graphical icon or image rather than text.": [
+        "Použijte grafickou ikonu nebo obrázek, spíše než text."
+      ],
+      "Use a solid background color.": [
+        "Použijte na pozadí plnou barvu."
+      ]
+    },
     "Organization logo upload modal": {
       "Drop image file here to upload or": [
-        "Zde upusťte soubor obrázku pro nahrání, nebo"
+        "Zde přesuňte soubor obrázku pro nahrání, nebo"
       ],
       "File in PNG or JPEG format": [
         "Soubor ve formátu PNG nebo JPEG"
@@ -6243,6 +6324,12 @@
       "Preparing your Recovery Kit": [
         "Příprava sady pro obnovení"
       ],
+      "Secure sharing with multiple vaults": [
+        "Zabezpečené sdílení s více trezory"
+      ],
+      "Secure vault sharing": [
+        "Zabezpečené sdílení trezorů"
+      ],
       "Updating your account": [
         "Aktualizace vašeho účtu"
       ],
@@ -6255,6 +6342,17 @@
         "Všechny služby ${ BRAND_NAME } Plus.${ br }Jedno jednoduché předplatné."
       ]
     },
+    "password_reset: info": {
+      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **old password**.": [
+        "**Všechna vaše stávající data** (e-maily, události, kontakty, soubory, položky ${ PASS_APP_NAME } atd.) **budou uzamčena** a lze je odemknout pouze pomocí vašeho **starého hesla**."
+      ],
+      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **recovery phrase** or your **old password**.": [
+        "**Všechna vaše stávající data** (e-maily, události, kontakty, soubory, položky ${ PASS_APP_NAME } atd.) **budou uzamčena** a lze je odemknout pouze pomocí **obnovovací fráze** nebo **starého hesla**."
+      ],
+      "Any **two-factor authentication (2FA)** method on your account will be disabled.": [
+        "Jakákoli metoda **dvoufázového ověření (2FA)** bude na vašem účtu deaktivována."
+      ]
+    },
     "passwordless": {
       "All administrators will get access to the key.": [
         "Ke klíči získají přístup všichni správci."
@@ -6265,8 +6363,17 @@
       "Change organization key": [
         "Změnit klíč organizace"
       ],
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Nesoukromí uživatelé se mohou stát správci po tom, co si nastaví klíče"
+      ],
       "Organization key activated": [
         "Klíč organizace byl aktivován"
+      ],
+      "Organization key does not exist.": [
+        "Klíč organizace neexistuje."
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "Pro nastavení oprávnění správce musí být aktivován klíč organizace"
       ],
       "Organization key restored": [
         "Klíč organizace byl obnoven"
@@ -6277,11 +6384,53 @@
       "Permission denied, administrator privileges have been restricted.": [
         "Přístup odepřen, oprávnění správce byla omezena."
       ],
+      "Please ensure they have an enabled address and invite them separately later.": [
+        "Prosím ujistěte se, že mají zapnutou adresu a pozvěte je později odděleně."
+      ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Soukromí uživatelé se mohou stát správci po tom, co se poprvé přihlásí"
+      ],
       "Reset organization key": [
         "Resetovat klíč organizace"
       ],
+      "The following administrators could not be restored.": [
+        "Nepodařilo se obnovit následující správce."
+      ],
+      "The following administrators will get access to the organization key.": [
+        "Následující správci získají přístup ke klíči organizace."
+      ],
       "The organization key must be activated first.": [
         "Nejprve musí být aktivován klíč organizace."
+      ],
+      "This will send the latest organization key to the administrators that currently don't have access to it.": [
+        "Toto odešle nejnovější klíč organizace správcům, kteří k němu nyní nemají přístup."
+      ],
+      "To create non-private user accounts and access their accounts, you'll need to activate your organization key.": [
+        "Pro vytvoření nesoukromých uživatelských účtů a přistupování k nim, aktivujte váš klíč organizace."
+      ],
+      "To enable administrator rights on your account, activate the organization key.": [
+        "Pro zapnutí práv správce na tomto účtu nejprve aktivujte klíč organizace."
+      ],
+      "Use a data recovery method or reset the organization key to restore administrator privileges.": [
+        "Pro obnovení oprávnění správce použijte metodu obnovení dat a nebo resetujte klíč organizace."
+      ],
+      "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
+        "Pro obnovení oprávnění správce použijte metodu obnovení dat, kontaktujte jiného správce a nebo resetujte klíč organizace."
+      ],
+      "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
+        "Nepodařilo se nám ověřit bezpečnost klíče adresy tohoto odesílatele. Někdy dochází ke zpoždění při aktualizaci informací o odesílateli. Zkuste to později. Pokud nedůvěřujete platnosti této pozvánky nebo odesílatele, kontaktujte zákaznickou podporu ${ BRAND_NAME }."
+      ],
+      "We have verified the authenticity of this sender and invitation.": [
+        "Ověřili jsme pravost tohoto odesílatele a pozvánky."
+      ],
+      "You have been made administrator of the organization **${ organizationName }** by": [
+        "Roli správce organizace **${ organizationName }** jste získali od"
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "Než vytvoříte nový klíč organizace, musíte privatizovat všechny uživatele"
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "Pro provedení této operace potřebujete přístup ke klíči organizace."
       ]
     },
     "Payment method option": {
@@ -6305,6 +6454,9 @@
       "MM/YY": [
         "MM/RR"
       ],
+      "Processing payment": [
+        "Zpracovávání platby"
+      ],
       "Timeout exceeded": [
         "Byl překročen časový limit"
       ]
@@ -6315,6 +6467,9 @@
       ],
       "Invalid expiration date": [
         "Neplatné datum vypršení platnosti"
+      ],
+      "Invalid security code": [
+        "Neplatný bezpečnostní kód"
       ],
       "Something went wrong. Please try again later.": [
         "Něco se pokazilo. Zkuste to prosím později."
@@ -6543,6 +6698,97 @@
       ],
       "User": [
         "Uživatel"
+      ]
+    },
+    "scim: Action": {
+      "Configure SCIM": [
+        "Nastavit SCIM"
+      ],
+      "Disable SCIM": [
+        "Deaktivovat SCIM"
+      ],
+      "Disable SCIM integration": [
+        "Deaktivovat integraci SCIM"
+      ],
+      "Generate new token": [
+        "Vygenerovat nový token"
+      ],
+      "Generate token": [
+        "Vygenerovat token"
+      ]
+    },
+    "scim: Info": {
+      "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
+        "**Předpoklad:** ověření SAML musí být nastaveno pro povolení zprovoznění SCIM."
+      ],
+      "Enter token into your identity provider": [
+        "Zadejte token do vašeho poskytovatele identity"
+      ],
+      "Enter URL and token into your identity provider": [
+        "Zadejte URL a token do vašeho poskytovatele identity"
+      ],
+      "For security reasons, the SCIM token will be hidden after saving your changes and you won’t be able to see it again.": [
+        "Po tom, co uložíte vaše změny, bude z bezpečnostních důvodů SCIM token skryt a již ho znovu neuvidíte."
+      ],
+      "For security reasons, the token is hidden": [
+        "Z bezpečnostních důvodů je token skryt"
+      ],
+      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ VPN_APP_NAME }.": [
+        "Jděte k vašemu poskytovateli identity, zkopírujte a vložte níže uvedená data a dokončete nastavení SCIM pro ${ VPN_APP_NAME }."
+      ],
+      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ VPN_APP_NAME }.": [
+        "Jděte k vašemu poskytovateli identity, zkopírujte a vložte níže uvedený token a opět povolte SCIM pro ${ VPN_APP_NAME }."
+      ],
+      "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
+        "Pokud jste ztratili nebo zapomněli token SCIM, můžete vygenerovat nový, budete ale muset aktualizovat nastavení vašeho poskytovatele identity."
+      ],
+      "Make sure you copy the above SCIM token now.": [
+        "Ujistěte se, že nyní zkopírujete výše uvedený token SCIM."
+      ],
+      "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
+        "Po vypnutí SCIM pro vaši organizaci budou **všichni uživatelé SCIM, kteří byli automaticky poskytnuti vaším poskytovatelem identit, převedeni na uživatele SSO** a budete je moci spravovat přímo v nastavení ${ BRAND_NAME }."
+      ],
+      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ VPN_APP_NAME } organization.": [
+        "Zjednodušuje správu uživatelů v různých službách. Přidávejte, upravujte a odebírejte uživatele u svého poskytovatele identity a tyto změny se automaticky použijí na vaši organizaci ${ VPN_APP_NAME }."
+      ],
+      "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
+        "Automatické zprovoznění SCIM bude deaktivováno do doby, kdy zadáte nový token SCIM do nastavení vašeho poskytovatele identity."
+      ],
+      "The SCIM base URL and token will be deleted.": [
+        "Výchozí URL SCIM a token budou smazány."
+      ],
+      "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
+        "Pro opětovné povolení synchronizace s vaším poskytovatelem identity, je potřeba znovu dokončit integraci SCIM."
+      ]
+    },
+    "scim: Label": {
+      "SCIM base URL": [
+        "Výchozí URL SCIM"
+      ],
+      "SCIM base URL (or tenant URL)": [
+        "Výchozí URL SCIM (nebo nájemná URL)"
+      ],
+      "SCIM token": [
+        "SCIM token"
+      ]
+    },
+    "scim: Title": {
+      "Disable SCIM integration?": [
+        "Deaktivovat integraci SCIM?"
+      ],
+      "Generate new SCIM token?": [
+        "Vygenerovat nový token SCIM?"
+      ],
+      "SCIM automatic provisioning": [
+        "Automatické zprovoznění SCIM"
+      ]
+    },
+    "scim: Tooltip": {
+      "API key of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
+        "Klíč API konektoru SCIM, kterému váš IdP agent zprovoznění přeposílá data SCIM"
+      ],
+      "URL of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
+        "URL konektoru SCIM které váš IdP agent zprovoznění přeposílá data SCIM"
       ]
     },
     "Select file": {

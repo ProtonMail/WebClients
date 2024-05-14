@@ -113,6 +113,9 @@
       "Copy key to the clipboard": [
         "Copiado para a área de transferência"
       ],
+      "Copy version number to clipboard": [
+        "Copiar número da versão para a área de transferência"
+      ],
       "Create": [
         "Criar"
       ],
@@ -163,9 +166,6 @@
       ],
       "Discard": [
         "Descartar"
-      ],
-      "Don't know your password?": [
-        "Não sabe sua senha?"
       ],
       "Done": [
         "Concluído"
@@ -232,6 +232,9 @@
       ],
       "Fit to window": [
         "Ajustar na janela"
+      ],
+      "Forgot password?": [
+        "Esqueceu sua senha?"
       ],
       "Get ${ vpnPlus }": [
         "Obtenha o ${ vpnPlus }"
@@ -1930,11 +1933,32 @@
       "Bugs or quality issue": [
         "Defeitos ou problema de qualidade"
       ],
+      "I do not wish to share": [
+        "Não quero responder"
+      ],
+      "I found a cheaper VPN": [
+        "Achei uma VPN mais barata"
+      ],
+      "I found a VPN with better features": [
+        "Achei uma VPN com recursos melhores"
+      ],
+      "I have not managed to connect": [
+        "Não consegui me conectar"
+      ],
+      "I only needed a VPN short-term": [
+        "Eu só precisei da VPN por um curto período"
+      ],
       "I use a different ${ BRAND_NAME } account": [
         "Eu uso uma conta ${ BRAND_NAME } diferente"
       ],
+      "It doesn't do what I need": [
+        "Não faz o que preciso"
+      ],
       "Missing feature(s)": [
         "Funções ausentes"
+      ],
+      "Other reason (please comment)": [
+        "Outro motivo (comente)"
       ],
       "Subscription is too expensive": [
         "A assinatura é muito cara"
@@ -1944,6 +1968,9 @@
       ],
       "Temporary need, may come back in the future": [
         "Necessidade temporária, posso voltar no futuro"
+      ],
+      "The VPN is too slow": [
+        "A VPN é muito lenta"
       ]
     },
     "Downgrade modal exit survey title": {
@@ -3941,6 +3968,9 @@
       "Version ${ version }": [
         "Versão ${ version }"
       ],
+      "Version number successfully copied to clipboard": [
+        "Número da versão copiada com sucesso para a área de transferência"
+      ],
       "View, download, and manage your invoices.": [
         "Ver, baixar e gerenciar suas notas ficais"
       ],
@@ -4822,9 +4852,6 @@
       "Request an invite": [
         "Solicitar um convite"
       ],
-      "Reset password": [
-        "Redefinir senha"
-      ],
       "Sign in": [
         "Iniciar sessão"
       ],
@@ -5313,6 +5340,9 @@
       "Organize items with multiple vaults": [
         "Organize itens com múltiplos cofres"
       ],
+      "Pass Monitor - premium features": [
+        "Pass Monitor - recursos premium"
+      ],
       "Passkeys supported": [
         "Chaves de acesso suportadas"
       ],
@@ -5398,6 +5428,9 @@
       ],
       "Unlimited devices": [
         "Dispositivos ilimitados"
+      ],
+      "Unlimited devices and aliases": [
+        "Aliases e dispositivos ilimitados"
       ],
       "Unlimited filters": [
         "Filtros ilimitados"
@@ -6129,6 +6162,16 @@
       ],
       "Preparing your Recovery Kit": [
         "Preparando o kit de recuperação"
+      ],
+      "Secure sharing with ${ n } vault": [
+        "Compartilhamento seguro com ${ n } cofre",
+        "Compartilhamento seguro com ${ n } cofres"
+      ],
+      "Secure sharing with multiple vaults": [
+        "Compartilhamento seguro de múltiplos cofres"
+      ],
+      "Secure vault sharing": [
+        "Compartilhamento seguro de cofres"
       ],
       "Updating your account": [
         "Atualizando sua conta"
@@ -7305,6 +7348,9 @@
       "Desktop app": [
         "Aplicativo para computador"
       ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ajude-nos a manter a internet segura e privada para todos. Faça upgrade para um plano pago."
+      ],
       "No ads or tracking": [
         "Sem anúncios ou rastreamento"
       ],
@@ -7318,7 +7364,7 @@
         "Fazer upgrade"
       ],
       "Upgrade your productivity": [
-        "Atualize sua produtividade"
+        "Faça upgrade da sua produtividade"
       ],
       "We don't sell your data": [
         "Não vendemos seus dados"
@@ -8342,7 +8388,7 @@
         "A assinatura é renovada automaticamente a cada 3 meses. Sua próxima data de faturamento será em 3 meses."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
-        "O preço com desconto especial de ${ priceWithDiscount } é válido no primeiro mês. Em seguida, ele será renovado automaticamente pelo preço de ${ renewPrice } todo mês. Você pode cancelar a qualquer momento."
+        "O preço com desconto especial de ${ priceWithDiscount } é válido no primeiro mês. Em seguida, será renovado automaticamente pelo preço de ${ renewPrice } todo mês. Você pode cancelar a qualquer momento."
       ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Você será cobrado a cada 12 meses no valor de ${ renewPrice }."

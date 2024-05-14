@@ -113,6 +113,9 @@
       "Copy key to the clipboard": [
         "Copiar clave al portapapeles"
       ],
+      "Copy version number to clipboard": [
+        "Copiar el número de versión en el portapapeles"
+      ],
       "Create": [
         "Crear"
       ],
@@ -163,9 +166,6 @@
       ],
       "Discard": [
         "Descartar"
-      ],
-      "Don't know your password?": [
-        "¿Ha olvidado la contraseña?"
       ],
       "Done": [
         "Hecho"
@@ -232,6 +232,9 @@
       ],
       "Fit to window": [
         "Ajustar a la ventana"
+      ],
+      "Forgot password?": [
+        "¿Contraseña olvidada?"
       ],
       "Get ${ vpnPlus }": [
         "Obtener ${ vpnPlus }"
@@ -3836,6 +3839,9 @@
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Esto eliminará permanentemente la cuenta y todos los datos. No podrá reactivar esta cuenta."
       ],
+      "This will remove any enabled 2FA methods.": [
+        "Esto borrará cualquier método 2FA activado."
+      ],
       "This will remove SSO for ${ boldDomainName }.": [
         "Esto eliminará el SSO de ${ boldDomainName }."
       ],
@@ -3974,6 +3980,9 @@
       "Version ${ version }": [
         "Versión ${ version }"
       ],
+      "Version number successfully copied to clipboard": [
+        "El número de versión fue copiado en el portapapeles."
+      ],
       "View, download, and manage your invoices.": [
         "Vea, descargue y gestione sus facturas."
       ],
@@ -4044,7 +4053,7 @@
         "Al habilitar SAML para ${ appName } en el proveedor de identidad, es posible que se le solicite que use la URL de devolución de llamada (ACS) y el ID del emisor. Simplemente copie y pegue los datos a continuación en los campos del proveedor de identidad."
       ],
       "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
-        "Cuado cancela su suscripción de pago actual, el saldo de su suscripción será devuelto como créditos de cuenta y se le degradará al plan ${ BRAND_NAME } ${ PLANS.FREE }"
+        "Cuado cancela su suscripción de pago actual, el saldo de su suscripción será devuelto como créditos de cuenta y se le bajará al plan ${ BRAND_NAME } ${ PLANS.FREE }"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Cuando configura la autenticación de dos factores, nosotros proporcionamos códigos de recuperación que podrá usar para iniciar sesión si llega a perder acceso a la aplicación de autenticación."
@@ -4825,6 +4834,9 @@
       "Create account": [
         "Crear una cuenta"
       ],
+      "Forgot password?": [
+        "¿Contraseña olvidada?"
+      ],
       "Forgot username?": [
         "¿Olvidó el nombre de usuario?"
       ],
@@ -4857,9 +4869,6 @@
       ],
       "Request an invite": [
         "Solicitar una invitación"
-      ],
-      "Reset password": [
-        "Restablecer contraseña"
       ],
       "Sign in": [
         "Iniciar sesión"
