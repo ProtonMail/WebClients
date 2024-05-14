@@ -4,6 +4,26 @@
     "language": "es_ES"
   },
   "contexts": {
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } y ${ remainingCount } potenciales filtraciones fueron detectadas. Activa ${ DARK_WEB_MONITORING_NAME } para ver los detalles y tomar acciones. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } y otra potencial filtración fueron detectadas. Activa ${ DARK_WEB_MONITORING_NAME } para ver los detalles y tomar acciones. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Una potencial filtración de ${ name } fue detectada. Activa ${ DARK_WEB_MONITORING_NAME } para ver los detalles y tomar acciones. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Una potencial filtración de ${ name } fue detectada. Activa ${ DARK_WEB_MONITORING_NAME } para ver los detalles y tomar acciones. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Una potencial filtración desde ${ name } fue detectada. Activa ${ DARK_WEB_MONITORING_NAME } para ver los detalles. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Tu información fue encontrada en al menos una filtración de datos. Activa ${ DARK_WEB_MONITORING_NAME } para ver los detalles y tomar acciones. ${ link }"
+      ]
+    },
     "Action": {
       "Add": [
         "Añadir"
@@ -1554,6 +1574,9 @@
         "${ config.options.wordCount } palabra",
         "${ config.options.wordCount } palabras"
       ],
+      "${ PASS_SHORT_APP_NAME } version": [
+        "Versión de ${ PASS_SHORT_APP_NAME }"
+      ],
       "${ usageCount } login": [
         "${ usageCount } inicio de sesión",
         "${ usageCount } inicios de sesión"
@@ -1660,8 +1683,14 @@
       "Created": [
         "Creado"
       ],
+      "Created at": [
+        "Creada a la"
+      ],
       "Date": [
         "Fecha"
+      ],
+      "Device": [
+        "Dispositivo"
       ],
       "Disable data export for team members": [
         "Desactivar la exportación de datos para miembros del equipo"
@@ -2165,6 +2194,20 @@
       ],
       "Write your note": [
         "Escribe tu nota"
+      ]
+    },
+    "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } y ${ remainingCount } potenciales filtraciones fueron detectadas. Active ${ DARK_WEB_MONITORING_NAME } para ver los detalles. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } y otra potencial filtración fueron detectadas. Activa ${ DARK_WEB_MONITORING_NAME } para ver los detalles. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Una potencial filtración de ${ name } fue detectada. Activa ${ DARK_WEB_MONITORING_NAME } para ver más detalles. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Tu información fue encontrada en al menos una filtración de datos. Activa ${ DARK_WEB_MONITORING_NAME } para ver los detalles. ${ link }"
       ]
     },
     "Success": {

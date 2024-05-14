@@ -196,6 +196,9 @@
       "Create a new contact group": [
         "Создать новую группу контактов"
       ],
+      "Create and copy alias": [
+        "Создать и скопировать псевдоним"
+      ],
       "Create link": [
         "Создать ссылку"
       ],
@@ -258,9 +261,6 @@
       ],
       "Dismiss": [
         "Отклонить"
-      ],
-      "Don't know your password?": [
-        "Не знаете свой пароль?"
       ],
       "Done": [
         "Готово"
@@ -370,6 +370,9 @@
       "Go to parent": [
         "На уровень выше"
       ],
+      "Go to settings": [
+        "Перейти в настройки"
+      ],
       "Got it": [
         "Понятно"
       ],
@@ -417,6 +420,9 @@
       ],
       "Keep my Plus subscription": [
         "Сохраните мою подписку Plus"
+      ],
+      "Later": [
+        "Позже"
       ],
       "Learn more": [
         "Подробнее"
@@ -570,6 +576,9 @@
       ],
       "Remove gift code": [
         "Удалить подарочный код"
+      ],
+      "Remove me": [
+        "Уберите меня"
       ],
       "Rename": [
         "Переименовать"
@@ -831,6 +840,9 @@
       ],
       "View": [
         "Посмотреть"
+      ],
+      "View all reports": [
+        "Просмотреть все отчеты"
       ],
       "View invoice": [
         "Посмотреть счет"
@@ -2216,6 +2228,14 @@
         "Помогите нам совершенствоваться!"
       ]
     },
+    "drivePlus2024: Action": {
+      "Get the deal": [
+        "Получить сделку"
+      ],
+      "Special Offer": [
+        "Специальное предложение"
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "Подробная история версий"
@@ -2232,6 +2252,9 @@
     "drivePlus2024: Info": {
       "for the first month": [
         "за первый месяц"
+      ],
+      "Limited-time offer": [
+        "Ограниченное по времени предложение"
       ]
     },
     "drivePlus2024: Title": {
@@ -3903,6 +3926,9 @@
       "Billing cycle: ${ text }": [
         "Платежный цикл: ${ text }"
       ],
+      "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
+        "Расширьте идентификацию бренда вашей организации и создайте более последовательный опыт работы в Интернете для ваших пользователей."
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Перейдя на бесплатный тарифный план, вы навсегда потеряете эти преимущества, даже если в будущем вы снова улучшите его."
       ],
@@ -4476,6 +4502,9 @@
         "Разрешены только ${ MAX_CUSTOM_PASSWORD_LENGTH } символов",
         "Разрешены только ${ MAX_CUSTOM_PASSWORD_LENGTH } символов"
       ],
+      "Only the owner of the share will be able to invite you again.": [
+        "Только владелец общего ресурса сможет пригласить вас снова."
+      ],
       "Only the people with the link and the password can access this file.": [
         "Только люди со ссылкой и паролем могут получить доступ к этому файлу."
       ],
@@ -4520,6 +4549,9 @@
       ],
       "Please enter the password to decrypt and view content.": [
         "Для расшифровки и просмотра содержимого введите пароль."
+      ],
+      "Please note that addresses assigned to these groups will NOT be deleted.": [
+        "Пожалуйста, обратите внимание, что адреса, назначенные этим группам, НЕ будут удалены."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Пожалуйста, обратите внимание, что адреса, назначенные этой группе, НЕ будут удалены."
@@ -4779,6 +4811,9 @@
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Возможно, следующие элементы были взломаны: ${ items }. Открывайте их только в том случае, если вы им доверяете."
       ],
+      "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
+        "Владелец этого адреса отключил сквозное шифрование. Чтобы иметь возможность отправлять зашифрованные письма на этот адрес, владелец должен повторно включить сквозное шифрование."
+      ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Процесс проверки откроется в новой вкладке. Пожалуйста, отключите блокировку всплывающих окон."
       ],
@@ -5007,6 +5042,9 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Для завершения транзакции мы откроем новую вкладку браузера и перенаправим вас на сайт PayPal. Если вы используете блокировщики всплывающих окон, то отключите их перед тем, как продолжить."
       ],
+      "We'll email you once import is complete.": [
+        "Мы отправим вам электронное письмо после завершения импорта."
+      ],
       "We'll notify you when the import is done.": [
         "Мы уведомим вас, когда импорт будет завершен."
       ],
@@ -5064,6 +5102,9 @@
       "You can check the progress ${ importProgressLink }.": [
         "Вы можете проверить ход выполнения ${ importProgressLink }."
       ],
+      "You can close the tab or browser in the meantime.": [
+        "Тем временем можно закрыть вкладку или браузер."
+      ],
       "You can import one data type at a time.": [
         "Вы можете импортировать один тип данных за один раз."
       ],
@@ -5078,6 +5119,9 @@
         "Вы можете вести до ${ MAX_CALENDARS_FREE } календарей. Удалите ссылки на общие календари и всех пользователей ${ BRAND_NAME }, с которыми вы делились своими календарями, прежде чем отменить подписку.",
         "Вы можете вести до ${ MAX_CALENDARS_FREE } календарей. Удалите ссылки на общие календари и всех пользователей ${ BRAND_NAME }, с которыми вы делились своими календарями, прежде чем отменить подписку.",
         "Вы можете вести до ${ MAX_CALENDARS_FREE } календарей. Удалите ссылки на общие календари и всех пользователей ${ BRAND_NAME }, с которыми вы делились своими календарями, прежде чем отменить подписку."
+      ],
+      "You can now return to the application to continue": [
+        "Теперь вы можете вернуться в приложение, чтобы продолжить"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Вы можете включить уведомления, чтобы получать оповещения при появлении новых сообщений электронной почты в этой папке."
@@ -5108,6 +5152,9 @@
       ],
       "You will lose all unsaved changes.": [
         "Вы потеряете все несохраненные изменения."
+      ],
+      "You will not be able to join again after.": [
+        "Вы не сможете присоединиться снова после этого."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Скоро вы будете перенаправлены на сайт PayPal для подтверждения вашего платежа."
@@ -6507,6 +6554,9 @@
       "Organize items with multiple vaults": [
         "Организуйте элементы с помощью нескольких хранилищ"
       ],
+      "Passkeys supported": [
+        "Поддерживаются пропускные ключи"
+      ],
       "Password-protected Emails": [
         "Электронные письма, защищенные паролем"
       ],
@@ -7167,6 +7217,9 @@
       "Failed to move, please try again": [
         "Не удалось переместить, попробуйте еще раз"
       ],
+      "Failed to remove the file": [
+        "Не удалось удалить файл"
+      ],
       "Failed to upload files: ${ err }": [
         "Не удалось загрузить файлы: ${ err }"
       ],
@@ -7181,6 +7234,9 @@
       ],
       "File or folder is missing a name": [
         "У папки или файла отсутствует имя"
+      ],
+      "File removed": [
+        "Файл удален"
       ],
       "Link copied to clipboard": [
         "Ссылка скопирована в буфер обмена"
@@ -7208,6 +7264,9 @@
       ],
       "Root folder failed to be loaded": [
         "Не удалось загрузить корневую папку"
+      ],
+      "Stopping to share this item has failed": [
+        "Остановка совместного использования этого общего ресурса не удалась"
       ],
       "Subfolder failed to be loaded": [
         "Не удалось загрузить подпапку"
@@ -7661,6 +7720,24 @@
         "Это разрешение истекает в течение ${ timeRemaining.inHours } часов",
         "Это разрешение истекает в течение ${ timeRemaining.inHours } часов"
       ],
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
+        "У вас ${ timeRemaining.inDays } день, чтобы сбросить свой пароль.",
+        "У вас ${ timeRemaining.inDays } дня, чтобы сбросить свой пароль.",
+        "У вас ${ timeRemaining.inDays } дней, чтобы сбросить свой пароль.",
+        "У вас ${ timeRemaining.inDays } дня, чтобы сбросить свой пароль."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "У вас ${ timeRemaining.inHours } час, чтобы сбросить свой пароль.",
+        " У вас ${ timeRemaining.inHours } часа, чтобы сбросить свой пароль.",
+        " У вас ${ timeRemaining.inHours } часов, чтобы сбросить свой пароль.",
+        " У вас ${ timeRemaining.inHours } часа, чтобы сбросить свой пароль."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "У вас ${ timeRemaining.inMinutes } минута, чтобы сбросить свой пароль.",
+        " У вас ${ timeRemaining.inMinutes } минуты, чтобы сбросить свой пароль.",
+        " У вас ${ timeRemaining.inMinutes } минут, чтобы сбросить свой пароль.",
+        " У вас ${ timeRemaining.inMinutes } минуты, чтобы сбросить свой пароль."
+      ],
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
         "У вас ${ timeRemaining.inSeconds } секунда, чтобы сбросить свой пароль.",
         " У вас ${ timeRemaining.inSeconds } секунды, чтобы сбросить свой пароль.",
@@ -7847,6 +7924,9 @@
       ],
       "Premium ${ appName1 } & ${ appName2 }": [
         "Платные версии ${ appName1 } и ${ appName2 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "Премиум ${ appName1 } и ${ appName2 } и ${ appName3 }"
       ],
       "Premium early access": [
         "Ранний доступ"
@@ -8147,8 +8227,14 @@
       ]
     },
     "subscription reminder": {
+      "No ads or tracking": [
+        "Нет рекламы или отслеживания"
+      ],
       "Upgrade": [
         "Сменить тариф"
+      ],
+      "We don't sell your data": [
+        "Мы не продаем ваши данные"
       ]
     },
     "Subscription renewal state": {
@@ -8460,6 +8546,9 @@
       "Active": [
         "Активно"
       ],
+      "Add a custom logo": [
+        "Добавить свой логотип"
+      ],
       "Add contact group name": [
         "Добавление имени для группы контактов"
       ],
@@ -8492,6 +8581,9 @@
       ],
       "Are you sure you want to close the preview?": [
         "Вы уверены, что хотите закрыть предпросмотр?"
+      ],
+      "Are you sure you want to leave this share?": [
+        "Вы уверены, что хотите оставить этот общий ресурс?"
       ],
       "Billing cycle": [
         "Период оплаты"
@@ -8670,6 +8762,9 @@
       "Empty trash": [
         "Очистить корзину"
       ],
+      "Enable 2FA": [
+        "Включить 2ФА"
+      ],
       "Enable drive search": [
         "Включить поиск по хранилищу"
       ],
@@ -8702,6 +8797,9 @@
         "Найдено ${ searchView.numberOfResults } результата",
         "Найдено ${ searchView.numberOfResults } результатов",
         "Найдено ${ searchView.numberOfResults } результатов"
+      ],
+      "Get advanced protection": [
+        "Получить расширенную защиту"
       ],
       "Gift": [
         "Подарок"
@@ -8766,11 +8864,17 @@
       "Name": [
         "Имя"
       ],
+      "Need more aliases?": [
+        "Нужно больше псевдонимов?"
+      ],
       "Network error": [
         "Ошибка сети"
       ],
       "Night theme": [
         "Ночная тема"
+      ],
+      "No breaches detected": [
+        "Нарушения не обнаружены"
       ],
       "No results found": [
         "Результатов не найдено"
@@ -8867,6 +8971,9 @@
       ],
       "Searching…": [
         "Поиск…"
+      ],
+      "Security center": [
+        "Центр безопасности"
       ],
       "Select a plan": [
         "Выбор тарифа"
@@ -9006,8 +9113,14 @@
       "You have no folders yet": [
         "У вас пока что нет папок"
       ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Ваша бесплатная пробная версия ${ planName } заканчивается ${ textDate }"
+      ],
       "Your 3 GB bonus": [
         "Ваши бонусные 3 ГБ"
+      ],
+      "Your account is protected": [
+        "Ваш аккаунт защищён"
       ],
       "Your changes are not synced yet": [
         "Изменения ещё не сохранены"

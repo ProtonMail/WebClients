@@ -1516,6 +1516,9 @@
       "${ PASS_SHORT_APP_NAME } monitor": [
         "${ PASS_SHORT_APP_NAME } monitor"
       ],
+      "${ PASS_SHORT_APP_NAME } version": [
+        "Versão do ${ PASS_SHORT_APP_NAME }"
+      ],
       "1 hour": [
         "1 hora"
       ],
@@ -1632,6 +1635,12 @@
       ],
       "Created": [
         "Criado"
+      ],
+      "Created at": [
+        "Criado em"
+      ],
+      "Device": [
+        "Dispositivo"
       ],
       "Disable data export for team members": [
         "Desativar a exportação de dados para membros da equipe"

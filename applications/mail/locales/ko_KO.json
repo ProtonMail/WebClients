@@ -12,6 +12,26 @@
         "메일 전달 중단됨"
       ]
     },
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name }과 ${ remainingCount }개의 잠재적인 유출이 탐지되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하고 조치를 취하십시오. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name }과 하나의 잠재적인 유출이 탐지되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하고 조치를 취하십시오. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "잠재적인 ${ name } 유출이 탐지되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하고 조치를 취하십시오. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name }에서 잠재적인 유출이 탐지되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하고 조치를 취하십시오. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name }에서 잠재적인 유출이 탐지되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하십시오. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "당신의 정보가 적어도 하나의 데이터 유출에서 발견되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하고 조치를 취하십시오. ${ link }"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 상점"
@@ -259,6 +279,9 @@
       "Copy password to clipboard": [
         "클립보드에 비밀번호 복사"
       ],
+      "Copy version number to clipboard": [
+        "버전 넘버를 클립보드에 복사하기"
+      ],
       "Create a new contact group": [
         "새 연락처 그룹 만들기"
       ],
@@ -342,9 +365,6 @@
       ],
       "Dismiss": [
         "무시"
-      ],
-      "Don't know your password?": [
-        "비밀번호를 잊으셨나요?"
       ],
       "Done": [
         "완료"
@@ -447,6 +467,9 @@
       ],
       "Font": [
         "글꼴"
+      ],
+      "Forgot password?": [
+        "비밀번호를 잊으셨나요?"
       ],
       "Forward as attachment": [
         "첨부 파일로 전달"
@@ -1128,6 +1151,9 @@
       ],
       "Trust": [
         "신뢰"
+      ],
+      "Trust key": [
+        "키 신뢰하기"
       ],
       "Trust public key": [
         "공개 키 신뢰하기"
@@ -3339,7 +3365,7 @@
         "다른 ${ BRAND_NAME } 계정을 사용합니다"
       ],
       "It doesn't do what I need": [
-        "필요한 기능이 없어서"
+        "원하는대로 기능하지 않아서"
       ],
       "Missing feature(s)": [
         "없는 기능"
@@ -3375,7 +3401,7 @@
         "특가 받기"
       ],
       "Special Offer": [
-        "특가"
+        "특별 할인"
       ]
     },
     "driveplus2024: Deal details": {
@@ -6678,6 +6704,9 @@
       "Version ${ appVersion }": [
         "버전 ${ appVersion }"
       ],
+      "Version number successfully copied to clipboard": [
+        "버전 넘버를 클립보드에 복사했습니다"
+      ],
       "Visa Secure logo": [
         "Visa Secure 로고"
       ],
@@ -8634,6 +8663,9 @@
       "Organize items with multiple vaults": [
         "다중 금고와 항목 정리"
       ],
+      "Pass Monitor - premium features": [
+        "Pass Monitor - 프리미엄 기능"
+      ],
       "Passkeys supported": [
         "패스키를 지원함"
       ],
@@ -8708,6 +8740,9 @@
       ],
       "Unlimited devices": [
         "기기 개수 무제한"
+      ],
+      "Unlimited devices and aliases": [
+        "무제한 기기와 별칭"
       ],
       "Unlimited filters": [
         "무제한 필터"
@@ -9331,6 +9366,17 @@
         "당신"
       ]
     },
+    "pass_signup_2023: Info": {
+      "Secure sharing with ${ n } vault": [
+        "${ n } 금고를 통한 안전한 공유하기"
+      ],
+      "Secure sharing with multiple vaults": [
+        "여러 금고를 통한 안전한 공유하기"
+      ],
+      "Secure vault sharing": [
+        "안전한 금고 공유"
+      ]
+    },
     "passwordless": {
       "Non-private users can be promoted to admin when they have setup keys": [
         "비개인 사용자는 키 설정을 하면 관리자로 승격 가능합니다."
@@ -9751,6 +9797,15 @@
       ]
     },
     "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name }과 ${ remainingCount }개의 잠재적인 유출이 탐지되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하십시오. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name }과 하나의 잠재적인 유출이 탐지되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하십시오. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "잠재적인 ${ name } 유출이 탐지되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하십시오. ${ link }"
+      ],
       "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
         "사용자의 비밀번호 혹은 타 데이터가 서드 파티 서비스에서 유출되었는지에 대해 알림을 받아보세요. ${ learnMoreLink }"
       ],
@@ -9760,8 +9815,8 @@
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel이 **활성화** 상태이며 계정이 보호 중입니다."
       ],
-      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLink }": [
-        "하나 이상의 데이터 침해사례에서 당신의 정보가 발견되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하고 조치를 취하십시오. ${ learnMoreLink }"
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "당신의 정보가 적어도 하나의 데이터 유출에서 발견되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하십시오. ${ link }"
       ]
     },
     "Select files": {
@@ -10733,7 +10788,7 @@
         "라벨 적용됨"
       ],
       "Last modified aliases stored in your oldest vault": [
-        "마지막으로 편집한 별명은 가장 오래된 금고에 저장되었습니다"
+        "마지막으로 편집한 별칭이 가장 오래된 금고에 보관되었습니다"
       ],
       "Mail list unsubscribed": [
         "매일 리스트가 구독 취소되었습니다"

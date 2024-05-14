@@ -200,6 +200,9 @@
       "Close navigation": [
         "ナビゲーションを閉じる"
       ],
+      "Close tab": [
+        "タブを閉じる"
+      ],
       "Close this banner": [
         "このバナーを閉じる"
       ],
@@ -317,6 +320,9 @@
       "Delete link": [
         "リンクを削除"
       ],
+      "Delete logo": [
+        "ロゴを削除"
+      ],
       "Delete permanently": [
         "完全に削除"
       ],
@@ -349,9 +355,6 @@
       ],
       "Discard": [
         "破棄"
-      ],
-      "Don't know your password?": [
-        "パスワードを忘れましたか？"
       ],
       "Don't show again": [
         "次回から表示しない"
@@ -571,6 +574,9 @@
       ],
       "Keep": [
         "保持"
+      ],
+      "Keep logo": [
+        "ロゴを維持"
       ],
       "Keep my Plus subscription": [
         "Plus サブスクリプションを維持する"
@@ -839,6 +845,9 @@
       "Select country": [
         "国を選択"
       ],
+      "select file": [
+        "ファイルを選択"
+      ],
       "Select file": [
         "ファイルを選択"
       ],
@@ -1021,6 +1030,9 @@
       ],
       "Upload": [
         "アップロード"
+      ],
+      "Upload logo": [
+        "ロゴをアップロード"
       ],
       "Upload picture": [
         "写真をアップロード"
@@ -5055,6 +5067,9 @@
     "Free trial desktop": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } デスクトップアプリ"
+      ],
+      "Back to sign in": [
+        "サインインに戻る"
       ]
     },
     "Frequency of news": {
@@ -5659,6 +5674,17 @@
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "カレンダーの内容の一部がサポートされていないため、インポートされません。"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "追加の重複キーが検出されました。 詳細については個別にアップロードしてください。"
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "鍵 ${ fingerprint } は正常にアップロードされました"
+      ],
+      "Selected color:": [
+        "選択した色:"
       ]
     },
     "Info": {
@@ -6627,6 +6653,9 @@
       ],
       "Link type": [
         "リンクの種類"
+      ],
+      "Live chat": [
+        "ライブチャット"
       ],
       "Loaded content is being protected by our proxy when tracker protection is activated.": [
         "トラッカー保護が有効になっている場合、ロードされたコンテンツはプロキシによって保護されます。"
@@ -7827,17 +7856,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "あなたのサブスクリプションはMozillaによって管理されています。Mozillaのサポートへお問い合わせください。"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "追加の重複キーが検出されました。 詳細については個別にアップロードしてください。"
       ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "鍵 ${ fingerprint } は正常にアップロードされました"
-      ],
-      "Selected color:": [
-        "選択した色:"
+      "Zoom meeting": [
+        "Zoom ミーティング"
       ]
     },
     "Info - folder colouring feature": {
@@ -9382,9 +9403,6 @@
       ],
       "Request an invite": [
         "登録を申請"
-      ],
-      "Reset password": [
-        "パスワードをリセット"
       ],
       "Set email address": [
         "メールアドレスを設定"
@@ -12839,6 +12857,9 @@
       ]
     },
     "subscription reminder": {
+      "15 GB storage": [
+        "15 GB のストレージ"
+      ],
       "Desktop app": [
         "デスクトップアプリ"
       ],

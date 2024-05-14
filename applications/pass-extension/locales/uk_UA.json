@@ -188,6 +188,9 @@
       "Edit vault": [
         "Редагувати сховище"
       ],
+      "Exclude from monitoring": [
+        "Виключити з моніторингу"
+      ],
       "Export": [
         "Експортувати"
       ],
@@ -212,6 +215,9 @@
       "Get mobile apps": [
         "Отримати програму для мобільного пристрою"
       ],
+      "Get Pass Plus": [
+        "Отримати Pass Plus"
+      ],
       "Help us improve": [
         "Допоможіть нам вдосконалитися"
       ],
@@ -232,6 +238,9 @@
       ],
       "Importing": [
         "Імпортування"
+      ],
+      "Include in monitoring": [
+        "Включити в моніторинг"
       ],
       "Invite others": [
         "Запросити інших"
@@ -364,6 +373,9 @@
       ],
       "Saving passkey...": [
         "Збереження ключа доступу..."
+      ],
+      "See all": [
+        "Переглянути все"
       ],
       "See members": [
         "Переглянути учасників"
@@ -502,8 +514,17 @@
       "A checked box means the feature is disabled.": [
         "Відмічена галочка означає, що функція вимкнена."
       ],
+      "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
+        "Моніторинг Dark Web доступний за платним тарифом. Покращте його для отримання доступу до цієї функції."
+      ],
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
         "Список доменів, для яких не повинні виконуватися певні автоматичні функції ${ PASS_SHORT_APP_NAME }, як-от автозаповнення, пропозиції чи автозбереження. ${ infoText }"
+      ],
+      "This account is vulnerable, visit the service and change your password.": [
+        "Цей обліковий запис вразливий, відвідайте сервіс і змініть пароль."
+      ],
+      "This service offers 2FA. Enable it for added account security.": [
+        "Цей сервіс пропонує 2ЕП. Увімкніть її для додаткової безпеки облікового запису."
       ]
     },
     "Error": {
@@ -603,6 +624,12 @@
       "Failed resending invite.": [
         "Помилка повторного надсилання запрошення."
       ],
+      "Failed to add email address": [
+        "Помилка під час додавання адреси пошти"
+      ],
+      "Failed to delete email address from monitoring": [
+        "Помилка під час видалення адреси пошти з відстеження"
+      ],
       "Failed to delete selected items": [
         "Не вдалося видалити вибрані елементи"
       ],
@@ -611,6 +638,12 @@
       ],
       "Failed to edit user's access.": [
         "Не вдалося змінити доступ користувача."
+      ],
+      "Failed to load breaches for this address": [
+        "Помилка завантаження витоків для цієї адреси"
+      ],
+      "Failed to load breaches for this email alias": [
+        "Помилка завантаження витоків для цього псевдоніма пошти"
       ],
       "Failed to load item history": [
         "Не вдалося завантажити історії елементів"
@@ -630,6 +663,12 @@
       "Failed to remove user's access.": [
         "Не вдалося видалити доступ користувача."
       ],
+      "Failed to resend verification for custom email": [
+        "Не вдалося повторно надіслати підтвердження для власної адреси пошти"
+      ],
+      "Failed to resolve breaches for this address": [
+        "Не вдалося перевірити витоки для цієї адреси"
+      ],
       "Failed to restore items from trash": [
         "Не вдалося відновити елементи з смітника"
       ],
@@ -638,6 +677,21 @@
       ],
       "Failed to unpin item": [
         "Не вдалося відкріпити елемент"
+      ],
+      "Failed to update monitoring settings": [
+        "Помилка оновлення налаштувань відстеження"
+      ],
+      "Failed to verify email address": [
+        "Помилка під час перевірки адреси пошти"
+      ],
+      "Failed updating ${ PROTON_SENTINEL_NAME } setting": [
+        "Помилка оновлення налаштувань ${ PROTON_SENTINEL_NAME }"
+      ],
+      "Failed updating monitor flag of the item": [
+        "Не вдалося оновити позначку відстеження елемента"
+      ],
+      "Failed updating monitoring status for this email address": [
+        "Помилка під час оновлення стану відстеження для цієї адреси пошти"
       ],
       "File could not be parsed": [
         "Не вдалося проаналізувати файл"
@@ -893,6 +947,12 @@
       "${ PASS_APP_NAME } will suggest saving passkeys.": [
         "${ PASS_APP_NAME } запропонує збереження ключів доступу."
       ],
+      "${ PROTON_SENTINEL_NAME } successfully disabled": [
+        "${ PROTON_SENTINEL_NAME } успішно вимкнено"
+      ],
+      "${ PROTON_SENTINEL_NAME } successfully enabled": [
+        "${ PROTON_SENTINEL_NAME } успішно ввімкнено"
+      ],
       "${ trialDaysLeft } day left": [
         "Залишився ${ trialDaysLeft } день",
         "Залишилось ${ trialDaysLeft } дні",
@@ -925,6 +985,9 @@
       ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Псевдонім \"${ item.aliasEmail }\" переміщено у смітник - він перестане пересилати електронні листи на вашу поштову скриньку"
+      ],
+      "All breaches for this address were resolved": [
+        "Всі витоки за цією адресою були усунені"
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Усі елементи успішно переміщені з ${ payload.content.name }"
@@ -1024,6 +1087,15 @@
       ],
       "Editor": [
         "Редактор"
+      ],
+      "Email address successfully deleted from monitoring": [
+        "Адресу пошти успішно видалено з відстеження"
+      ],
+      "Email address successfully excluded from monitoring": [
+        "Адреса пошти успішно виключена з відстеження"
+      ],
+      "Email address successfully included in monitoring": [
+        "Адреса пошти успішно включена до відстеження"
       ],
       "Emptying trash...": [
         "Спорожнення смітника..."
@@ -1159,6 +1231,9 @@
       ],
       "me": [
         "я"
+      ],
+      "Monitoring settings successfully updated": [
+        "Налаштування відстеження успішно оновлено"
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "Більше, ніж менеджер паролів, ${ PASS_APP_NAME } захищає ваш пароль та вашу особисту адресу електронної пошти за допомогою псевдонімів електронної пошти. Працюючи за тією ж технологією, що й ${ MAIL_APP_NAME }, ваші дані наскрізно зашифровані та доступні лише вам."
@@ -1504,6 +1579,9 @@
       "${ PASS_SHORT_APP_NAME } monitor": [
         "${ PASS_SHORT_APP_NAME } монітор"
       ],
+      "${ PASS_SHORT_APP_NAME } version": [
+        "Версія ${ PASS_SHORT_APP_NAME }"
+      ],
       "1 hour": [
         "1 година"
       ],
@@ -1620,6 +1698,12 @@
       ],
       "Created": [
         "Створено"
+      ],
+      "Created at": [
+        "Створено"
+      ],
+      "Device": [
+        "Пристрій"
       ],
       "Disable data export for team members": [
         "Вимкнути експорт даних для членів команди"
@@ -1882,6 +1966,9 @@
       "Special characters (!&*)": [
         "Спеціальні символи (!&*)"
       ],
+      "Strong": [
+        "Надійний"
+      ],
       "Suffix": [
         "Суфікс"
       ],
@@ -1947,6 +2034,12 @@
       ],
       "View logs": [
         "Переглянути журнали"
+      ],
+      "Vulnerable": [
+        "Вразливий"
+      ],
+      "Weak": [
+        "Слабкий"
       ],
       "Website": [
         "Вебсайт"
@@ -2246,8 +2339,14 @@
       "Set access level": [
         "Задати рівень доступу"
       ],
+      "Set up 2FA for more security": [
+        "Налаштуйте 2FA для більшої безпеки"
+      ],
       "Share with": [
         "Поділитися"
+      ],
+      "Stay safer online": [
+        "Залишатися безпечніше онлайн"
       ],
       "Suggestions": [
         "Пропозиції"
@@ -2284,6 +2383,9 @@
       ],
       "Vault shared with you": [
         "Вам надано спільний доступ до сховища"
+      ],
+      "Weak password": [
+        "Слабкий пароль"
       ],
       "Welcome to your new password manager!": [
         "Ласкаво просимо до нового менеджера паролів!"

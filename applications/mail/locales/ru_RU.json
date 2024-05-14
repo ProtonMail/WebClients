@@ -271,6 +271,9 @@
       "Create a new label": [
         "Создать новый ярлык"
       ],
+      "Create and copy alias": [
+        "Создать и скопировать псевдоним"
+      ],
       "Create folder": [
         "Создать папку"
       ],
@@ -349,9 +352,6 @@
       "Dismiss": [
         "Отклонить"
       ],
-      "Don't know your password?": [
-        "Не знаете свой пароль?"
-      ],
       "Done": [
         "Готово"
       ],
@@ -363,6 +363,9 @@
       ],
       "Download ${ attachmentName }": [
         "Скачать ${ attachmentName }"
+      ],
+      "Download Desktop App": [
+        "Скачать приложение для компьютера"
       ],
       "Download now": [
         "Загрузить"
@@ -481,6 +484,9 @@
       "Go to previous page": [
         "Перейти на предыдущую страницу"
       ],
+      "Go to settings": [
+        "Перейти в настройки"
+      ],
       "Go to SimpleLogin": [
         "Перейти к SimpleLogin"
       ],
@@ -541,6 +547,9 @@
       "Import from Outlook": [
         "Импортировать из Outlook"
       ],
+      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
+        "Доступно важное обновление. Для продолжения использования приложения, пожалуйста, обновите его до последней версии. ${ downloadUpdate }"
+      ],
       "In the morning": [
         "Утром"
       ],
@@ -586,6 +595,9 @@
       "label emails as": [
         "отметить ярлыком электронные письма как"
       ],
+      "Later": [
+        "Позже"
+      ],
       "Later this week": [
         "Позже на этой неделе"
       ],
@@ -618,6 +630,9 @@
       ],
       "Manage labels": [
         "Управление ярлыками"
+      ],
+      "Manage Snooze": [
+        "Управлять отложенными"
       ],
       "Mark as read": [
         "Отметить как прочитанное"
@@ -964,6 +979,9 @@
       "Select country": [
         "Выберите страну"
       ],
+      "Select date and time": [
+        "Выберите дату и время"
+      ],
       "Self-destruct in 7 days": [
         "Самоуничтожение через 7 дней"
       ],
@@ -1102,6 +1120,9 @@
       "Toggle Contact app": [
         "Переключить на приложение Контакты"
       ],
+      "Toggle security center app": [
+        "Вкл/выкл приложение \"Центр безопасности\""
+      ],
       "Toggle settings": [
         "Включить/выключить настройки"
       ],
@@ -1110,6 +1131,12 @@
       ],
       "Trust": [
         "Доверять"
+      ],
+      "Trust key": [
+        "Доверять ключу",
+        "Доверять ключам",
+        "Доверять ключам",
+        "Доверять ключам"
       ],
       "Trust public key": [
         "Доверять открытым ключам"
@@ -1207,6 +1234,9 @@
       "View": [
         "Посмотреть"
       ],
+      "View all reports": [
+        "Просмотреть все отчеты"
+      ],
       "View contact details": [
         "Просмотреть контактную информацию"
       ],
@@ -1248,6 +1278,15 @@
         "Вы не можете отправлять файлы vCard, содержащие больше ${ maxAttachments } контактов",
         "Вы не можете отправлять файлы vCard, содержащие больше ${ maxAttachments } контактов",
         "Вы не можете отправлять файлы vCard, содержащие больше ${ maxAttachments } контактов"
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "Бесплатная пробная версия вашего приложения заканчивается через 2 дня. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "Бесплатная пробная версия вашего приложения заканчивается через 5 дней. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "Бесплатная пробная версия вашего приложения заканчивается на ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Zoom in": [
         "Увеличить масштаб"
@@ -3318,6 +3357,14 @@
         "Скачать все"
       ]
     },
+    "drivePlus2024: Action": {
+      "Get the deal": [
+        "Получить сделку"
+      ],
+      "Special Offer": [
+        "Специальное предложение"
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "Подробная история версий"
@@ -3334,6 +3381,9 @@
     "drivePlus2024: Info": {
       "for the first month": [
         "за первый месяц"
+      ],
+      "Limited-time offer": [
+        "Ограниченное по времени предложение"
       ]
     },
     "drivePlus2024: Title": {
@@ -5182,11 +5232,23 @@
         "${ elementsCount } цепочек писем будет помечены как:",
         "${ elementsCount } цепочек писем будет помечены как:"
       ],
+      "${ elementsCount } conversation will be marked as unread.": [
+        "${ elementsCount } цепочка писем будет помечена как прочитанная.",
+        "${ elementsCount } цепочки писем будут помечены как прочитанные.",
+        "${ elementsCount } цепочек писем будут помечены как прочитанные.",
+        "${ elementsCount } цепочки писем будут помечены как прочитанные."
+      ],
       "${ elementsCount } conversation will be moved": [
         "${ elementsCount } цепочка будет перемещена",
         "${ elementsCount } цепочки будет перемещены",
         "${ elementsCount } цепочек будет перемещены",
         "${ elementsCount } цепочек будет перемещены"
+      ],
+      "${ elementsCount } conversation will be unlabelled from:": [
+        "С ${ elementsCount } цепочки будет снята пометка:",
+        "С ${ elementsCount } цепочек будет снята пометка:",
+        "С ${ elementsCount } цепочек будет снята пометка:",
+        "С ${ elementsCount } цепочек будет снята пометка:"
       ],
       "${ elementsCount } message will be labelled as:": [
         "${ elementsCount } сообщение будет помечено как:",
@@ -5211,6 +5273,12 @@
         "${ elementsCount } сообщения будет перемещены",
         "${ elementsCount } сообщений будет перемещены",
         "${ elementsCount } сообщений будет перемещены"
+      ],
+      "${ elementsCount } message will be unlabelled from:": [
+        "С ${ elementsCount } сообщения будет снята пометка:",
+        "С ${ elementsCount } сообщений будет снята пометка:",
+        "С ${ elementsCount } сообщений будет снята пометка:",
+        "С ${ elementsCount } сообщений будет снята пометка:"
       ],
       "${ embeddedAttachmentsCount } embedded image": [
         "${ embeddedAttachmentsCount } встроенное изображение",
@@ -5500,6 +5568,12 @@
       "Are you sure you want to discard your import?": [
         "Вы уверены, что хотите сбросить импорт?"
       ],
+      "Are you sure you want to move all messages in this location to archive?": [
+        "Вы уверены, что хотите переместить все сообщения отсюда в Архив?"
+      ],
+      "Are you sure you want to move all messages in this location to trash?": [
+        "Вы уверены, что хотите переместить все сообщения отсюда в Корзину?"
+      ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
         "Вы уверены, что хотите безвозвратно удалить ${ count } цепочку писем?",
         "Вы уверены, что хотите безвозвратно удалить эти ${ count } цепочки писем?",
@@ -5556,6 +5630,9 @@
       ],
       "Body: ": [
         "Тело сообщения: "
+      ],
+      "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
+        "Расширьте идентификацию бренда вашей организации и создайте более последовательный опыт работы в Интернете для ваших пользователей."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Перейдя на бесплатный тарифный план, вы навсегда потеряете эти преимущества, даже если в будущем вы снова улучшите его."
@@ -6169,6 +6246,9 @@
       "Please fill out this field.": [
         "Заполните это поле."
       ],
+      "Please note that addresses assigned to these groups will NOT be deleted.": [
+        "Пожалуйста, обратите внимание, что адреса, назначенные этим группам, НЕ будут удалены."
+      ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Пожалуйста, обратите внимание, что адреса, назначенные этой группе, НЕ будут удалены."
       ],
@@ -6247,6 +6327,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Обновление страницы или ${ link } автоматически решит большую часть проблем."
       ],
+      "Removes all data associated with this app, including downloaded messages": [
+        "Удаляет все данные, связанные с этим приложением, включая загруженные сообщения"
+      ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Сообщение о попытке фишинга отправит сообщение нам, чтобы мы смогли проанализировать его и улучшить наши фильтры. Это означает, что мы будем способны увидеть содержимое сообщения полностью."
       ],
@@ -6261,6 +6344,9 @@
       ],
       "Right-click for options": [
         "Щёлкните правой кнопкой для настройки"
+      ],
+      "Sat, ${ formatTime }": [
+        "Сб, ${ formatTime }"
       ],
       "Saved at ${ dateString }": [
         "Сохранено ${ dateString }"
@@ -6294,6 +6380,12 @@
       ],
       "Select a service provider to start": [
         "Выберите поставщика услуг, чтобы начать"
+      ],
+      "Select all ${ elementsCount } in ${ location }": [
+        "Выбрать все ${ elementsCount } в ${ location }",
+        "Выбрать все ${ elementsCount } в ${ location }",
+        "Выбрать все ${ elementsCount } в ${ location }",
+        "Выбрать все ${ elementsCount } в ${ location }"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Выберите формат писем, который вы хотите использовать по умолчанию для отправки сообщений на этот адрес."
@@ -6345,6 +6437,18 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Так как вы наш постоянный пользователь, для вашего аккаунта появился дополнительный функционал."
+      ],
+      "Snoozed until  ${ dateString } at ${ formattedTime }": [
+        "Отложено до  ${ dateString } ${ formattedTime }"
+      ],
+      "Snoozed until today, ${ formattedTime }": [
+        "Отложено до сегодняшнего дня, ${ formattedTime }"
+      ],
+      "Snoozed until tomorrow, ${ formattedTime }": [
+        "Отложено до завтра, ${ formattedTime }"
+      ],
+      "Snoozing this conversation will be cancelled.": [
+        "Откладывание этой цепочки будет отменено."
       ],
       "Sorry, this message does not exist or has already expired.": [
         "К сожалению, это сообщение не существует, либо срок его действия уже истек."
@@ -6405,6 +6509,9 @@
       ],
       "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultEmail }.": [
         "Первоначальный отправитель этого сообщения больше не действителен. Ваше сообщение будет отправлено с адреса по умолчанию ${ defaultEmail }."
+      ],
+      "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
+        "Владелец этого адреса отключил сквозное шифрование. Чтобы иметь возможность отправлять зашифрованные письма на этот адрес, владелец должен повторно включить сквозное шифрование."
       ],
       "The sender has requested a read receipt.": [
         "Отправитель запросил уведомление о прочтении."
@@ -6484,6 +6591,9 @@
       "This message is signed by the key attached, that has not been trusted yet.": [
         "Это сообщение подписано при помощи приложенного ключа, который ещё не отмечен как доверенный."
       ],
+      "This message will be automatically deleted at ${ value }": [
+        "Это сообщение будет автоматически удалено ${ value }"
+      ],
       "This message will be automatically deleted on ${ value }": [
         "Дата автоматического удаления этого сообщения - ${ value }"
       ],
@@ -6525,6 +6635,9 @@
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Этот открытый ключ будет автоматически использован для шифрования электронной почты, отправленной на этот адрес."
+      ],
+      "This removes all data associated with this app, including downloaded messages. The app will restart and you will need to sign in again to use the app.": [
+        "Это приведёт к удалению всех связанных с этим приложением данных, включая загруженные сообщения. Приложение будет перезапущено и вам нужно будет войти снова, чтобы использовать приложение."
       ],
       "This sender's public key has not been trusted yet.": [
         "Публичный ключ отправителя пока не отмечен как доверенный."
@@ -6600,6 +6713,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Улучшить сейчас, чтобы получить платные функции, программное обеспечение и хранилище по специальной цене"
+      ],
+      "Upgrade to ${ MAIL_APP_NAME } Plus to unlock": [
+        "Улучшите до ${ MAIL_APP_NAME } Plus для разблокировки"
       ],
       "Upgrade to add more addresses to your account.": [
         "Улучшите аккаунт, чтобы добавить больше адресов."
@@ -6703,6 +6819,9 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Для завершения транзакции мы откроем новую вкладку браузера и перенаправим вас на сайт PayPal. Если вы используете блокировщики всплывающих окон, то отключите их перед тем, как продолжить."
       ],
+      "We'll email you once import is complete.": [
+        "Мы отправим вам электронное письмо после завершения импорта."
+      ],
       "We'll notify you when the import is done.": [
         "Мы уведомим вас, когда импорт будет завершен."
       ],
@@ -6763,6 +6882,9 @@
       "You can check the progress ${ importProgressLink }.": [
         "Вы можете проверить ход выполнения ${ importProgressLink }."
       ],
+      "You can close the tab or browser in the meantime.": [
+        "Тем временем можно закрыть вкладку или браузер."
+      ],
       "You can either update your search query or ${ button }": [
         "Вы можете изменить ваш поисковый запрос или ${ button }"
       ],
@@ -6783,6 +6905,9 @@
         "Вы можете вести до ${ MAX_CALENDARS_FREE } календарей. Удалите ссылки на общие календари и всех пользователей ${ BRAND_NAME }, с которыми вы делились своими календарями, прежде чем отменить подписку.",
         "Вы можете вести до ${ MAX_CALENDARS_FREE } календарей. Удалите ссылки на общие календари и всех пользователей ${ BRAND_NAME }, с которыми вы делились своими календарями, прежде чем отменить подписку.",
         "Вы можете вести до ${ MAX_CALENDARS_FREE } календарей. Удалите ссылки на общие календари и всех пользователей ${ BRAND_NAME }, с которыми вы делились своими календарями, прежде чем отменить подписку."
+      ],
+      "You can now return to the application to continue": [
+        "Теперь вы можете вернуться в приложение, чтобы продолжить"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Вы можете включить уведомления, чтобы получать оповещения при появлении новых сообщений электронной почты в этой папке."
@@ -8695,6 +8820,9 @@
       "Organize items with multiple vaults": [
         "Организуйте элементы с помощью нескольких хранилищ"
       ],
+      "Passkeys supported": [
+        "Поддерживаются пропускные ключи"
+      ],
       "Password-protected Emails": [
         "Электронные письма, защищенные паролем"
       ],
@@ -9900,6 +10028,24 @@
         "Это разрешение истекает в течение ${ timeRemaining.inHours } часов",
         "Это разрешение истекает в течение ${ timeRemaining.inHours } часов"
       ],
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
+        "У вас ${ timeRemaining.inDays } день, чтобы сбросить свой пароль.",
+        "У вас ${ timeRemaining.inDays } дня, чтобы сбросить свой пароль.",
+        "У вас ${ timeRemaining.inDays } дней, чтобы сбросить свой пароль.",
+        "У вас ${ timeRemaining.inDays } дня, чтобы сбросить свой пароль."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "У вас ${ timeRemaining.inHours } час, чтобы сбросить свой пароль.",
+        " У вас ${ timeRemaining.inHours } часа, чтобы сбросить свой пароль.",
+        " У вас ${ timeRemaining.inHours } часов, чтобы сбросить свой пароль.",
+        " У вас ${ timeRemaining.inHours } часа, чтобы сбросить свой пароль."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "У вас ${ timeRemaining.inMinutes } минута, чтобы сбросить свой пароль.",
+        " У вас ${ timeRemaining.inMinutes } минуты, чтобы сбросить свой пароль.",
+        " У вас ${ timeRemaining.inMinutes } минут, чтобы сбросить свой пароль.",
+        " У вас ${ timeRemaining.inMinutes } минуты, чтобы сбросить свой пароль."
+      ],
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
         "У вас ${ timeRemaining.inSeconds } секунда, чтобы сбросить свой пароль.",
         " У вас ${ timeRemaining.inSeconds } секунды, чтобы сбросить свой пароль.",
@@ -10120,6 +10266,9 @@
       ],
       "Premium ${ appName1 } & ${ appName2 }": [
         "Платные версии ${ appName1 } и ${ appName2 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "Премиум ${ appName1 } и ${ appName2 } и ${ appName3 }"
       ],
       "Premium early access": [
         "Ранний доступ"
@@ -10448,8 +10597,14 @@
       ]
     },
     "subscription reminder": {
+      "No ads or tracking": [
+        "Нет рекламы или отслеживания"
+      ],
       "Upgrade": [
         "Сменить тариф"
+      ],
+      "We don't sell your data": [
+        "Мы не продаем ваши данные"
       ]
     },
     "Subscription renewal state": {
@@ -10987,6 +11142,12 @@
       "(active)": [
         "(активна)"
       ],
+      "A filter name is required": [
+        "Требуется имя фильтра"
+      ],
+      "A filter with this name already exists": [
+        "Фильтр с этим именем уже существует"
+      ],
       "Account recovery": [
         "Восстановление аккаунта"
       ],
@@ -10998,6 +11159,9 @@
       ],
       "Action all messages": [
         "Действие со всеми сообщениями"
+      ],
+      "Add a custom logo": [
+        "Добавить свой логотип"
       ],
       "Add contact group name": [
         "Добавление имени для группы контактов"
@@ -11254,6 +11418,9 @@
       "Email settings": [
         "Настройки эл. почты"
       ],
+      "Enable 2FA": [
+        "Включить 2ФА"
+      ],
       "Enable message content search": [
         "Включить поиск содержимого сообщений"
       ],
@@ -11272,6 +11439,9 @@
       "Feedback": [
         "Отзыв"
       ],
+      "Filter name cannot contain only spaces": [
+        "В имени фильтра не могут быть только пробелы"
+      ],
       "Filter on...": [
         "Фильтр включен..."
       ],
@@ -11280,6 +11450,12 @@
       ],
       "Forward": [
         "Переслать"
+      ],
+      "Get advanced protection": [
+        "Получить расширенную защиту"
+      ],
+      "Get the ${ appName[APP_NAME] } apps": [
+        "Получить приложения ${ appName[APP_NAME] }"
       ],
       "Gift": [
         "Подарок"
@@ -11392,6 +11568,12 @@
       "Move all messages": [
         "Переместить все сообщения"
       ],
+      "Move all messages to archive": [
+        "Переместить все сообщения в Архив"
+      ],
+      "Move all messages to trash": [
+        "Переместить все сообщения в корзину"
+      ],
       "Move to": [
         "Переместить в"
       ],
@@ -11410,6 +11592,12 @@
       "Moving a scheduled message": [
         "Перемещение запланированного сообщения"
       ],
+      "Moving a snoozed message": [
+        "Перемещение отложенного сообщения"
+      ],
+      "Need more aliases?": [
+        "Нужно больше псевдонимов?"
+      ],
       "Network error": [
         "Ошибка сети"
       ],
@@ -11427,6 +11615,9 @@
       ],
       "No attachment found": [
         "Вложение не найдено"
+      ],
+      "No breaches detected": [
+        "Нарушения не обнаружены"
       ],
       "No trackers found": [
         "Трекеров не обнаружено"
@@ -11518,6 +11709,9 @@
       "Schedule send": [
         "Запланированная отправка"
       ],
+      "Security center": [
+        "Центр безопасности"
+      ],
       "Select a plan": [
         "Выбор тарифа"
       ],
@@ -11541,6 +11735,9 @@
       ],
       "Send with changed preferences?": [
         "Отправить с изменёнными настройками?"
+      ],
+      "Send with encryption disabled?": [
+        "Отправить с отключенным шифрованием?"
       ],
       "Send without expiration?": [
         "Отправить без истечения срока действия?"
@@ -11578,6 +11775,9 @@
       "Snooze": [
         "Приглушение"
       ],
+      "Snooze message": [
+        "Отложить сообщение"
+      ],
       "Sort conversations": [
         "Сортировка цепочек писем"
       ],
@@ -11601,6 +11801,9 @@
       ],
       "This field cannot be empty": [
         "Это поле не может быть пустым"
+      ],
+      "This field cannot contain only spaces": [
+        "Это поле не может содержать только пробелы"
       ],
       "To": [
         "Кому"
@@ -11664,6 +11867,12 @@
       ],
       "What would you like to import?": [
         "Что бы вы хотели импортировать?"
+      ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Ваша бесплатная пробная версия ${ planName } заканчивается ${ textDate }"
+      ],
+      "Your account is protected": [
+        "Ваш аккаунт защищён"
       ],
       "Your changes are not synced yet": [
         "Изменения ещё не сохранены"

@@ -20,6 +20,26 @@
         "Le transfert automatique de messages a été arrêté."
       ]
     },
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } et ${ remainingCount }autre fuite potentielle de données ont été détectées. Activez ${ DARK_WEB_MONITORING_NAME } pour afficher les informations et prendre les mesures nécessaires. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } et une autre fuite potentielle de données ont été détectées. Activez ${ DARK_WEB_MONITORING_NAME } pour afficher les informations et prendre les mesures nécessaires. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Une fuite potentielle de données pour ${ name } a été détectée. Activez ${ DARK_WEB_MONITORING_NAME } pour afficher les informations et prendre les mesures nécessaires. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Une fuite potentielle de données pour ${ name } a été détectée. Activez ${ DARK_WEB_MONITORING_NAME } pour afficher les informations et prendre les mesures nécessaires. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Une fuite potentielle de données depuis ${ name } a été détectée. Activez ${ DARK_WEB_MONITORING_NAME } pour afficher les informations. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Vos informations ont été retrouvées dans au moins une fuite de données. Activez l'option ${ DARK_WEB_MONITORING_NAME } pour consulter ces informations et prendre les mesures nécessaires. ${ link }"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "Boutique ${ BRAND_NAME }"
@@ -172,6 +192,9 @@
       "Copy link": [
         "Copier le lien"
       ],
+      "Copy version number to clipboard": [
+        "Copier le numéro de version dans le presse-papiers"
+      ],
       "Create": [
         "Créer"
       ],
@@ -230,9 +253,6 @@
       ],
       "Dismiss": [
         "Annuler"
-      ],
-      "Don't know your password?": [
-        "Vous ne connaissez pas votre mot de passe ?"
       ],
       "Done": [
         "Terminé"
@@ -453,10 +473,10 @@
       "Not now": [
         "Plus tard"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -4859,6 +4879,9 @@
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "La vérification ouvrira un nouvel onglet : veillez à désactiver les bloqueurs de pop-up. Vous ne serez pas facturé, le montant utilisé pour vérifier la carte vous sera immédiatement remboursé."
       ],
+      "Version number successfully copied to clipboard": [
+        "Le numéro de version a été copié dans le presse-papiers."
+      ],
       "Visa Secure logo": [
         "Logo Visa Secure"
       ],
@@ -7572,6 +7595,15 @@
       ]
     },
     "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } et ${ remainingCount }autre fuite potentielle de données ont été détectées. Activez ${ DARK_WEB_MONITORING_NAME } pour afficher les informations. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } et une autre fuite potentielle de données ont été détectées. Activez ${ DARK_WEB_MONITORING_NAME } pour afficher les informations. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Une fuite potentielle de données pour ${ name } a été détectée. Activez ${ DARK_WEB_MONITORING_NAME } pour afficher les informations. ${ link }"
+      ],
       "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
         "Recevez une notification lorsque votre mot de passe ou d'autres données ont été exposées par un service tiers. ${ learnMoreLink }"
       ],
@@ -7581,8 +7613,8 @@
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel est **actif** et protège votre compte."
       ],
-      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLink }": [
-        "Vos informations ont été retrouvées dans au moins une fuite de données. Activez l'option ${ DARK_WEB_MONITORING_NAME } pour consulter ces informations et prendre les mesures nécessaires. ${ learnMoreLink }"
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Vos informations ont été retrouvées dans au moins une fuite de données. Activez l'option ${ DARK_WEB_MONITORING_NAME } pour consulter ces informations. ${ link }"
       ]
     },
     "Select files": {

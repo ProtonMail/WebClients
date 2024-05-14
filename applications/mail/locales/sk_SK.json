@@ -352,9 +352,6 @@
       "Dismiss": [
         "Odmietnuť"
       ],
-      "Don't know your password?": [
-        "Neviete svoje heslo?"
-      ],
       "Done": [
         "Hotovo"
       ],
@@ -1140,6 +1137,12 @@
       ],
       "Trust": [
         "Dôverovať"
+      ],
+      "Trust key": [
+        "Dôveryhodný kľúč",
+        "Dôveryhodný kľúč",
+        "Dôverovať kľúčom",
+        "Dôverovať novým kľúčom"
       ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
@@ -10230,9 +10233,6 @@
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel je **aktívny** a chráni váš účet."
-      ],
-      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLink }": [
-        "Vaše údaje boli zistené najmenej v jednom prípade úniku ochrany osobných údajov. Ak chcete zobraziť podrobnosti a podniknúť kroky, zapnite funkciu ${ DARK_WEB_MONITORING_NAME }. ${ learnMoreLink }"
       ]
     },
     "Select files": {

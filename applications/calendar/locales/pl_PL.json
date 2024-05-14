@@ -20,6 +20,11 @@
         "Przekierowanie poczty zostało zatrzymane"
       ]
     },
+    "Account Settings - Info": {
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Twoje informacje zostały znalezione w co najmniej 1 wycieku danych. Włącz ${ DARK_WEB_MONITORING_NAME }, aby zobaczyć szczegóły i zastosować odpowiednią akcję. ${ link }"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "Sklep ${ BRAND_NAME }"
@@ -236,9 +241,6 @@
       ],
       "Dismiss": [
         "Odrzuć"
-      ],
-      "Don't know your password?": [
-        "Nie pamiętasz hasła?"
       ],
       "Done": [
         "Gotowe"
@@ -459,11 +461,11 @@
       "Not now": [
         "Nie teraz"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Otwórz ustawienia ${ CALENDAR_APP_NAME }"
@@ -2546,7 +2548,7 @@
         "Potrzebowałem konto tymczasowo"
       ],
       "The VPN is too slow": [
-        "VPN jest zbyt wolny"
+        "Usługa VPN jest zbyt wolna"
       ]
     },
     "Downgrade modal exit survey title": {
@@ -7853,8 +7855,8 @@
       "Sentinel is **active** and safeguarding your account.": [
         "Proton Sentinel jest **włączony** i chroni Twoje konto."
       ],
-      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLink }": [
-        "Twoje informacje zostały znalezione w co najmniej 1 wycieku danych. Włącz ${ DARK_WEB_MONITORING_NAME }, aby zobaczyć szczegóły i zastosować odpowiednią akcję. ${ learnMoreLink }"
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Twoje informacje zostały znalezione w co najmniej 1 wycieku danych. Włącz ${ DARK_WEB_MONITORING_NAME }, aby zobaczyć szczegóły. ${ link }"
       ]
     },
     "Select files": {

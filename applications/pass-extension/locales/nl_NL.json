@@ -529,6 +529,9 @@
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "Dit account is kwetsbaar, bezoek de service en wijzig uw wachtwoord."
+      ],
+      "This service offers 2FA. Enable it for added account security.": [
+        "Deze service biedt 2FA aan. Schakel het in voor extra accountveiligheid."
       ]
     },
     "Error": {
@@ -624,6 +627,12 @@
       "Failed resending invite.": [
         "Het opnieuw versturen van de uitnodiging mislukte."
       ],
+      "Failed to add email address": [
+        "E-mailadres toevoegen mislukt"
+      ],
+      "Failed to delete email address from monitoring": [
+        "Verwijderen van e-mailadres van monitoring mislukt"
+      ],
       "Failed to delete selected items": [
         "Fout bij het verwijderen van geselecteerde items"
       ],
@@ -632,6 +641,12 @@
       ],
       "Failed to edit user's access.": [
         "Het is niet gelukt om de toegang van de gebruiker aan te passen."
+      ],
+      "Failed to load breaches for this address": [
+        "Fout bij het laden van inbreuken voor dit adres"
+      ],
+      "Failed to load breaches for this email alias": [
+        "Fout bij het laden van inbreuken voor deze e-mailalias"
       ],
       "Failed to load item history": [
         "Fout bij het laden van item geschiedenis"
@@ -651,6 +666,12 @@
       "Failed to remove user's access.": [
         "Het is niet gelukt om de toegang van de gebruiker te verwijderen."
       ],
+      "Failed to resend verification for custom email": [
+        "Verificatie voor aangepaste e-mail kon niet opnieuw worden verzonden"
+      ],
+      "Failed to resolve breaches for this address": [
+        "Inbreuken voor dit adres oplossen is mislukt"
+      ],
       "Failed to restore items from trash": [
         "Fout bij het herstellen van items uit de prullenbak"
       ],
@@ -663,8 +684,17 @@
       "Failed to update monitoring settings": [
         "Bijwerken van monitoring-instellingen mislukt"
       ],
+      "Failed to verify email address": [
+        "E-mailadres verifiëren mislukt"
+      ],
       "Failed updating ${ PROTON_SENTINEL_NAME } setting": [
         "Bijwerken van ${ PROTON_SENTINEL_NAME } instelling mislukt"
+      ],
+      "Failed updating monitor flag of the item": [
+        "Monitor vlag van het item bijwerken is mislukt"
+      ],
+      "Failed updating monitoring status for this email address": [
+        "Bijwerken van de monitoring status voor dit e-mail adres mislukt"
       ],
       "File could not be parsed": [
         "Bestand kon niet verwerkt worden"
@@ -908,6 +938,12 @@
       "${ PASS_APP_NAME } will suggest saving passkeys.": [
         "${ PASS_APP_NAME } zal voorstellen om wachtwoorden te bewaren."
       ],
+      "${ PROTON_SENTINEL_NAME } successfully disabled": [
+        "${ PROTON_SENTINEL_NAME } succesvol uitgeschakeld"
+      ],
+      "${ PROTON_SENTINEL_NAME } successfully enabled": [
+        "${ PROTON_SENTINEL_NAME } succesvol ingeschakeld"
+      ],
       "${ trialDaysLeft } day left": [
         "${ trialDaysLeft } dag over",
         "${ trialDaysLeft } dagen over"
@@ -938,6 +974,9 @@
       ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Alias \"${ item.aliasEmail }\" verplaatst naar prullenbak - het zal stoppen met het doorsturen van e-mails naar uw mailbox"
+      ],
+      "All breaches for this address were resolved": [
+        "Alle inbreuken op dit adres zijn opgelost"
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Alle items uit \"${ payload.content.name }\" succesvol verplaatst"
@@ -1037,6 +1076,15 @@
       ],
       "Editor": [
         "Bewerker"
+      ],
+      "Email address successfully deleted from monitoring": [
+        "E-mailadres succesvol verwijderd uit monitoring"
+      ],
+      "Email address successfully excluded from monitoring": [
+        "E-mailadres succesvol uitgesloten van monitoring"
+      ],
+      "Email address successfully included in monitoring": [
+        "E-mailadres succesvol opgenomen in monitoring"
       ],
       "Emptying trash...": [
         "Prullenbak leegmaken..."
@@ -1166,6 +1214,9 @@
       ],
       "me": [
         "ik"
+      ],
+      "Monitoring settings successfully updated": [
+        "Monitoring instellingen succesvol bijgewerkt"
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "${ PASS_APP_NAME } is meer dan een wachtwoordbeheerder en beschermt je wachtwoord en je persoonlijke e-mailadres via e-mailaliassen. Aangedreven door dezelfde technologie achter ${ MAIL_APP_NAME }, zijn je gegevens end-to-end versleuteld en alleen toegankelijk voor jou."
@@ -1507,6 +1558,9 @@
       "${ PASS_SHORT_APP_NAME } monitor": [
         "${ PASS_SHORT_APP_NAME } monitor"
       ],
+      "${ PASS_SHORT_APP_NAME } version": [
+        "${ PASS_SHORT_APP_NAME } versie"
+      ],
       "1 hour": [
         "1 uur"
       ],
@@ -1623,6 +1677,12 @@
       ],
       "Created": [
         "Aangemaakt"
+      ],
+      "Created at": [
+        "Aangemaakt op"
+      ],
+      "Device": [
+        "Apparaat"
       ],
       "Disable data export for team members": [
         "Gegevensexport uitschakelen voor teamleden"
@@ -1954,6 +2014,9 @@
       "View logs": [
         "Logboeken bekijken"
       ],
+      "Vulnerable": [
+        "Kwetsbaar"
+      ],
       "Weak": [
         "Zwak"
       ],
@@ -2251,6 +2314,9 @@
       "Set access level": [
         "Stel toegangsniveau in"
       ],
+      "Set up 2FA for more security": [
+        "2FA instellen voor meer beveiliging"
+      ],
       "Share with": [
         "Deel met"
       ],
@@ -2292,6 +2358,9 @@
       ],
       "Vault shared with you": [
         "Kluis gedeeld met u"
+      ],
+      "Weak password": [
+        "Zwak wachtwoord"
       ],
       "Welcome to your new password manager!": [
         "Welkom bij uw nieuwe wachtwoordbeheerder!"

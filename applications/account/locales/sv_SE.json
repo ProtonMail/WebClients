@@ -43,6 +43,26 @@
         "Du kommer att stoppa vidarebefordran av e-post."
       ]
     },
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } och ${ remainingCount } andra potentiella läckor har upptäckts. Slå på ${ DARK_WEB_MONITORING_NAME } för att visa detaljer och vidta åtgärder. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } och 1 annan potentiell läcka upptäcktes. Slå på ${ DARK_WEB_MONITORING_NAME } för att visa detaljer och vidta åtgärd. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "En potentiell läcka på ${ name } upptäcktes. Slå på ${ DARK_WEB_MONITORING_NAME } för att visa detaljer och vidta åtgärd. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "En potentiell läcka från ${ name } upptäcktes. Slå på ${ DARK_WEB_MONITORING_NAME } för att visa detaljer och vita åtgärd. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "En potentiell läcka från ${ name } upptäcktes. Slå på ${ DARK_WEB_MONITORING_NAME } för att visa detaljer. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Din information hittades i minst en dataläcka. Slå på ${ DARK_WEB_MONITORING_NAME } för att visa detaljer och vidta åtgärder. ${ link }"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butik"
@@ -257,6 +277,9 @@
       "Copy link": [
         "Kopiera länk"
       ],
+      "Copy version number to clipboard": [
+        "Kopiera versionsnummer till urklipp"
+      ],
       "Create": [
         "Skapa"
       ],
@@ -358,9 +381,6 @@
       ],
       "Discard": [
         "Avfärda"
-      ],
-      "Don't know your password?": [
-        "Vet du inte ditt lösenord?"
       ],
       "Don't show again": [
         "Visa inte igen"
@@ -469,6 +489,9 @@
       ],
       "Font": [
         "Typsnitt"
+      ],
+      "Forgot password?": [
+        "Glömt lösenord?"
       ],
       "Generate": [
         "Generera"
@@ -6011,6 +6034,17 @@
         "En del av ditt kalenderinnehåll stöds inte och kommer inte att importeras."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Ytterligare dubbletter av nycklar upptäcktes. Ladda upp individuellt för mer information."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Nyckel ${ fingerprint } har redan laddats upp"
+      ],
+      "Selected color:": [
+        "Vald färg:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } behöver din tillåtelse till ${ enableDesktopNotifications }."
@@ -7804,6 +7838,9 @@
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Detta kommer att ta bort ditt konto och all dess data permanent. Du kommer inte att kunna återaktivera detta konto."
       ],
+      "This will remove any enabled 2FA methods.": [
+        "Detta kommer att ta bort alla aktiverade 2FA-metoder."
+      ],
       "This will remove SSO for ${ boldDomainName }.": [
         "Detta kommer ta bort SSO för ${ boldDomainName }."
       ],
@@ -8025,6 +8062,9 @@
       ],
       "Version history": [
         "Versionshistorik"
+      ],
+      "Version number successfully copied to clipboard": [
+        "Versionsnummer kopierat till urklipp"
       ],
       "View, download, and manage your invoices.": [
         "Visa, ladda ner och hantera dina fakturor."
@@ -8407,17 +8447,6 @@
       ],
       "Zoom meeting": [
         "Zoom-möte"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Ytterligare dubbletter av nycklar upptäcktes. Ladda upp individuellt för mer information."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Nyckel ${ fingerprint } har redan laddats upp"
-      ],
-      "Selected color:": [
-        "Vald färg:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9969,6 +9998,9 @@
       "Encryption and keys": [
         "Kryptering och nycklar"
       ],
+      "Forgot password?": [
+        "Glömt lösenord?"
+      ],
       "Forgot username?": [
         "Glömt användarnamn?"
       ],
@@ -10025,9 +10057,6 @@
       ],
       "Request an invite": [
         "Begär en inbjudan"
-      ],
-      "Reset password": [
-        "Återställ lösenord"
       ],
       "Set email address": [
         "Ställ in e-postadress"
@@ -12858,6 +12887,9 @@
       ],
       "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ VPN_APP_NAME } organization.": [
         "Förenklar användarhantering över olika tjänster. Lägg till, redigera och ta bort användare i din identitetsleverantör, så kommer dessa ändringar automatiskt att tillämpas på din ${ VPN_APP_NAME }-organisation."
+      ],
+      "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
+        "För att återaktivera synkronisering med din identitetsleverantör måste du slutföra SCIM-integreringen igen."
       ]
     },
     "scim: Label": {
@@ -12877,8 +12909,17 @@
       ]
     },
     "Security Center - Info": {
-      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLinkBreach }": [
-        "Din information hittades i minst ett dataintrång. Slå på ${ DARK_WEB_MONITORING_NAME } för att visa detaljer och vidta åtgärd. ${ learnMoreLinkBreach }"
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } och ${ remainingCount } andra potentiella läckor har upptäckts. Slå på ${ DARK_WEB_MONITORING_NAME } för att visa detaljer. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } och 1 annan potentiell läcka upptäcktes. Slå på ${ DARK_WEB_MONITORING_NAME } för att visa detaljer. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "En potentiell läcka på ${ name } upptäcktes. Slå på ${ DARK_WEB_MONITORING_NAME } för att visa detaljer. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Din information hittades i minst en dataläcka. Slå på ${ DARK_WEB_MONITORING_NAME } för att visa detaljer. ${ link }"
       ]
     },
     "Select file": {

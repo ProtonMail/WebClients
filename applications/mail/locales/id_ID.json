@@ -12,6 +12,26 @@
         "Penerusan email diberhentikan"
       ]
     },
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } dan ${ remainingCount } kebocoran data potensial lainnya terdeteksi. Aktifkan ${ DARK_WEB_MONITORING_NAME } untuk melihat rincian kebocoran ini dan mengambil tindakan. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } dan 1 kebocoran data potensial lainnya terdeteksi. Aktifkan ${ DARK_WEB_MONITORING_NAME } untuk melihat rincian kebocoran ini dan mengambil tindakan. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Kebocoran potensial ${ name } terdeteksi. Aktifkan ${ DARK_WEB_MONITORING_NAME } untuk melihat rincian kebocoran ini dan mengambil tindakan. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Potensi kebocoran dari ${ name } terdeteksi. Aktifkan ${ DARK_WEB_MONITORING_NAME } untuk melihat rincian kebocoran ini dan mengambil tindakan. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Potensi kebocoran dari ${ name } terdeteksi. Aktifkan ${ DARK_WEB_MONITORING_NAME } untuk melihat rincian kebocoran ini. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Informasi Anda ditemukan pada setidaknya satu insiden kebocoran data. Aktifkan ${ DARK_WEB_MONITORING_NAME } untuk melihat rincian kebocoran ini dan mengambil tindakan. ${ link }"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "Toko ${ BRAND_NAME }"
@@ -259,6 +279,9 @@
       "Copy password to clipboard": [
         "Salin kata sandi ke papan klip"
       ],
+      "Copy version number to clipboard": [
+        "Salin nomor versi ke papan klip"
+      ],
       "Create a new contact group": [
         "Buat grup kontak baru"
       ],
@@ -342,9 +365,6 @@
       ],
       "Dismiss": [
         "Abaikan"
-      ],
-      "Don't know your password?": [
-        "Tidak tahu kata sandi Anda?"
       ],
       "Done": [
         "Selesai"
@@ -447,6 +467,9 @@
       ],
       "Font": [
         "Fon"
+      ],
+      "Forgot password?": [
+        "Lupa kata sandi?"
       ],
       "Forward as attachment": [
         "Teruskan sebagai lampiran"
@@ -1128,6 +1151,9 @@
       ],
       "Trust": [
         "Percayai"
+      ],
+      "Trust key": [
+        "Percayai kunci"
       ],
       "Trust public key": [
         "Percayai kunci publik"
@@ -3263,10 +3289,10 @@
         "Buka pilih sendiri waktu penundaan setelah meningkatkan langganan"
       ],
       "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
-        "Dapatkan saringan tidak terbatas yang mengurutkan kotak masuk untuk Anda dan lebih banyak fitur premium ketika Anda tingkatkan."
+        "Dapatkan filter tanpa batas yang menyortir kotak masuk Anda dan berbagai fitur premium lainnya pada saat Anda meningkatkan akun."
       ],
       "Unlock unlimited folders, labels and more premium features when you upgrade.": [
-        "Dapatkan folder, label, dan lebih banyak fitur premium tidak terbatas ketika Anda tingkatkan."
+        "Dapatkan folder tak terbatas, label tak terbatas, dan berbagai fitur premium lainnya pada saat Anda meningkatkan akun."
       ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
         "Tingkatkan akun Anda untuk mengaktifkan ${ PROTON_SENTINEL_NAME }, solusi keamanan mutakhir berbasis AI kami dengan dukungan ahli yang tersedia 24/7."
@@ -3486,7 +3512,7 @@
     },
     "Email reminder decryption error": {
       "Event details are encrypted. Sign in again to restore Calendar and decrypt your data. ${ learnMoreLink }": [
-        "Rincian acara ini terenkripsi. Silakan masuk kembali untuk dapat memulihkan Kalender dan mendekripsi data-data yang ada di dalamnya. ${ learnMoreLink }"
+        "Rincian acara ini terenkripsi. Silakan masuk kembali untuk memulihkan Calendar dan mendekripsi data Anda. ${ learnMoreLink }"
       ],
       "Event details cannot be decrypted. ${ whyNotLink }": [
         "Rincian acara tidak dapat didekripsi. ${ whyNotLink }"
@@ -4351,7 +4377,7 @@
     },
     "familyOffer_2023: Deal details": {
       "3 TB total storage": [
-        "Jumlah penyimpanan 3 TB"
+        "Total ruang penyimpanan 3 TB"
       ]
     },
     "familyOffer_2023: Tooltip": {
@@ -5530,7 +5556,7 @@
         "Diperlukan perhatian"
       ],
       "Automatically delete messages that have been in trash and spam for more than 30 days.": [
-        "Hapus pesan yang telah terbuang ke sampah dan spam selama lebih dari 30 hari secara otomatis."
+        "Hapus pesan yang telah berada di sampah dan spam selama lebih dari 30 hari secara otomatis."
       ],
       "Awaiting transaction": [
         "Menunggu transaksi"
@@ -5761,7 +5787,7 @@
         "Email ditandatangani secara otomatis"
       ],
       "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
-        "Email yang berlabel ${ nameDeleted } tidak akan dihapus dan tetap akan dapat ditemukan pada foldernya masing-masing."
+        "Email yang ditandai dengan label ${ nameDeleted } tidak akan dihapus dan tetap akan dapat ditemukan pada foldernya masing-masing."
       ],
       "embedded image": [
         "gambar yang tersemat"
@@ -5812,7 +5838,7 @@
         "berkas terlampir"
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
-        "Filter dapat diterapkan pada seluruh pesan yang ada, termasuk pesan yang masuk dan terkirim. Setiap filter harus memuat minimal nama, kondisi, dan tindakan."
+        "Filter dapat diterapkan pada seluruh pesan yang ada, termasuk pesan yang masuk dan terkirim. Masing-masing filter harus mengandung setidaknya nama, kondisi, dan tindakan."
       ],
       "finance": [
         "keuangan"
@@ -6028,7 +6054,7 @@
         "Pesan akan terkirim besok pada pukul ${ formattedTime }"
       ],
       "Messages that have been in trash and spam more than 30 days will be automatically deleted.": [
-        "Pesan yang telah terbuang ke sampah dan spam selama lebih dari 30 hari akan dihapus secara otomatis."
+        "Pesan yang telah berada di sampah dan spam selama lebih dari 30 hari akan dihapus secara otomatis."
       ],
       "MM/YY": [
         "BB/TT"
@@ -6613,7 +6639,7 @@
         "Tingkatkan akun Anda untuk menambahkan lebih banyak alamat ke dalam akun Anda."
       ],
       "Upgrade to automatically delete messages that have been in trash and spam for more than 30 days.": [
-        "Tingkatkan untuk menghapus pesan yang telah terbuang ke sampah dan spam selama lebih dari 30 hari secara otomatis."
+        "Tingkatkan akun Anda untuk menghapus pesan yang telah berada di sampah dan spam selama lebih dari 30 hari secara otomatis."
       ],
       "Upgrade to create more folders, filters, and addresses.": [
         "Tingkatkan akun Anda untuk membuat lebih banyak folder, filter, dan alamat."
@@ -6677,6 +6703,9 @@
       ],
       "Version ${ appVersion }": [
         "Versi ${ appVersion }"
+      ],
+      "Version number successfully copied to clipboard": [
+        "Nomor versi berhasil disalin ke papan klip"
       ],
       "Visa Secure logo": [
         "Logo Visa Secure"
@@ -7176,7 +7205,7 @@
         "Kirim email"
       ],
       "Show all emails": [
-        "Tampilkan semua email"
+        "Tampilkan seluruh email"
       ],
       "Show original message": [
         "Tampilkan pesan asli"
@@ -9762,6 +9791,15 @@
       ]
     },
     "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } dan ${ remainingCount } kebocoran data potensial lainnya terdeteksi. Aktifkan ${ DARK_WEB_MONITORING_NAME } untuk melihat rincian kebocoran ini. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } dan 1 kebocoran data potensial lainnya terdeteksi. Aktifkan ${ DARK_WEB_MONITORING_NAME } untuk melihat rincian kebocoran ini. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } kebocoran potensial terdeteksi. Aktifkan ${ DARK_WEB_MONITORING_NAME } untuk melihat rincian kebocoran ini. ${ link }"
+      ],
       "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
         "Dapatkan notifikasi apabila kata sandi atau data lainnya yang Anda miliki dibocorkan dari layanan pihak ketiga. ${ learnMoreLink }"
       ],
@@ -9771,8 +9809,8 @@
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel saat ini sedang **aktif** dan melindungi akun Anda."
       ],
-      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLink }": [
-        "Informasi seputar diri Anda ditemukan pada setidaknya satu insiden kebocoran data. Aktifkan ${ DARK_WEB_MONITORING_NAME } untuk melihat rincian kebocoran ini dan mengambil tindakan yang sesuai. ${ learnMoreLink }"
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Informasi Anda ditemukan pada setidaknya satu insiden kebocoran data. Aktifkan ${ DARK_WEB_MONITORING_NAME } untuk melihat rincian kebocoran ini. ${ link }"
       ]
     },
     "Select files": {

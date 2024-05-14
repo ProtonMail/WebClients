@@ -359,9 +359,6 @@
       "Discard": [
         "Verwijderen"
       ],
-      "Don't know your password?": [
-        "Wachtwoord vergeten?"
-      ],
       "Don't show again": [
         "Niet meer weergeven"
       ],
@@ -5980,6 +5977,17 @@
         "Een deel van je agenda-inhoud wordt niet ondersteund en zal niet worden geïmporteerd."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Extra dubbele sleutels gedetecteerd. Gelieve afzonderlijk te uploaden voor meer informatie."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Sleutel ${ fingerprint } is al geüpload"
+      ],
+      "Selected color:": [
+        "Geselecteerde kleur:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } heeft uw toestemming tot ${ enableDesktopNotifications } nodig."
@@ -8387,17 +8395,6 @@
         "Zoom meeting"
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Extra dubbele sleutels gedetecteerd. Gelieve afzonderlijk te uploaden voor meer informatie."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Sleutel ${ fingerprint } is al geüpload"
-      ],
-      "Selected color:": [
-        "Geselecteerde kleur:"
-      ]
-    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Indien ingeschakeld, nemen submappen de kleur van de bovenliggende map over."
@@ -10006,9 +10003,6 @@
       ],
       "Request an invite": [
         "Uitnodiging aanvragen"
-      ],
-      "Reset password": [
-        "Wachtwoord resetten"
       ],
       "Set email address": [
         "E-mailadres instellen"
@@ -12852,11 +12846,6 @@
       ],
       "URL of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
         "URL van de SCIM connector waar uw IdP Provisioning Agent de SCIM-gegevens naar doorstuurt"
-      ]
-    },
-    "Security Center - Info": {
-      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLinkBreach }": [
-        "Uw informatie is in tenminste één gegevenslek gevonden. Schakel ${ DARK_WEB_MONITORING_NAME } in om de details te zien en actie te ondernemen. ${ learnMoreLinkBreach }"
       ]
     },
     "Select file": {

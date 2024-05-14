@@ -352,9 +352,6 @@
       "Dismiss": [
         "Відхилити"
       ],
-      "Don't know your password?": [
-        "Не знаєте свій пароль?"
-      ],
       "Done": [
         "Готово"
       ],
@@ -1140,6 +1137,12 @@
       ],
       "Trust": [
         "Довіряти"
+      ],
+      "Trust key": [
+        "Довіряти ключу",
+        "Довіряти ключам",
+        "Довіряти ключам",
+        "Довіряти ключам"
       ],
       "Trust public key": [
         "Довіряти відкритому ключу"
@@ -7159,7 +7162,7 @@
         "Ваші дані для імпорту з ${ importedEmailAddressStrong } до облікового запису ${ BRAND_NAME } готові."
       ],
       "Your email address and password were leaked:": [
-        "Ваші адреса е-пошти та пароль було викрито:"
+        "Відбувся витік вашої поштової адреси та пароля:"
       ],
       "Your email address was exposed:": [
         "Вашу адресу електронної пошти було викрито:"
@@ -10110,9 +10113,6 @@
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel **активний** і захищає ваш обліковий запис."
-      ],
-      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLink }": [
-        "Ваша інформація була знайдена принаймні в одному місці витоку даних. Увімкніть ${ DARK_WEB_MONITORING_NAME }, щоб переглянути деталі та вжити заходів. ${ learnMoreLink }"
       ]
     },
     "Select files": {

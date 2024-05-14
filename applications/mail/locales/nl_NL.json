@@ -346,9 +346,6 @@
       "Dismiss": [
         "Negeren"
       ],
-      "Don't know your password?": [
-        "Wachtwoord vergeten?"
-      ],
       "Done": [
         "Klaar"
       ],
@@ -1132,6 +1129,10 @@
       ],
       "Trust": [
         "Vertrouwen"
+      ],
+      "Trust key": [
+        "Sleutel vertrouwen",
+        "Vertrouwde sleutels"
       ],
       "Trust public key": [
         "Publieke sleutel vertrouwen"
@@ -9900,9 +9901,6 @@
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel is **actief** en beschermt uw account."
-      ],
-      "Your information was found in at least one data breach. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ learnMoreLink }": [
-        "Je informatie is gevonden in minstens één gegevenslek. Schakel ${ DARK_WEB_MONITORING_NAME } in om de details te bekijken en actie te ondernemen. ${ learnMoreLink }"
       ]
     },
     "Select files": {
