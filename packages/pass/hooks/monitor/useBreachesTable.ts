@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import { useMonitor } from '@proton/pass/components/Monitor/MonitorProvider';
 import { MAX_CUSTOM_ADDRESSES } from '@proton/pass/constants';
-import { filterItemsByUsername } from '@proton/pass/lib/items/item.utils';
+import { filterItemsByEmail } from '@proton/pass/lib/items/item.utils';
 import { AddressType, type MonitorAddress } from '@proton/pass/lib/monitor/types';
 import { selectLoginItems, selectNonAliasedLoginItems } from '@proton/pass/store/selectors';
 import type { LoginItem } from '@proton/pass/types';
@@ -29,10 +29,10 @@ const getCustomSuggestions = (data: MonitorAddress[], items: LoginItem[]): Monit
     const monitored = new Set<string>(data.map(prop('email')));
 
     const suggestions = items.reduce<Map<string, number>>((acc, item) => {
-        if (!item.data.content.username.v) return acc;
-        const username = deobfuscate(item.data.content.username);
-        if (monitored.has(username)) return acc;
-        if (validateEmailAddress(username)) acc.set(username, (acc.get(username) ?? 0) + 1);
+        if (!item.data.content.itemEmail.v) return acc;
+        const itemEmail = deobfuscate(item.data.content.itemEmail);
+        if (monitored.has(itemEmail)) return acc;
+        if (validateEmailAddress(itemEmail)) acc.set(itemEmail, (acc.get(itemEmail) ?? 0) + 1);
 
         return acc;
     }, new Map());
@@ -70,12 +70,9 @@ export const sortMonitorTableRows = <T extends AddressType>(rows: MonitorTableRo
     rows.sort((a, b) => getRowPriority(b) - getRowPriority(a));
 
 const mapToRow = <T extends AddressType>(data: MonitorAddress<T>[], items: LoginItem[]): MonitorTableRow<T>[] =>
-    sortMonitorTableRows(
-        data.map((entry) => ({
-            ...entry,
-            usageCount: filterItemsByUsername(entry.email)(items).length,
-        }))
-    );
+    data
+        .map((entry) => ({ ...entry, usageCount: filterItemsByEmail(entry.email)(items).length }))
+        .sort((a, b) => getRowPriority(b) - getRowPriority(a));
 
 export const useBreachesTable = (type: AddressType) => {
     const { breaches, didLoad } = useMonitor();

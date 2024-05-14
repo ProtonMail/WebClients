@@ -29,11 +29,11 @@ export const LoginContent: FC<ItemContentProps<'login'>> = ({ revision }) => {
 
     const {
         metadata: { note },
-        content: { username, password, urls, totpUri, passkeys },
+        content: { itemEmail, password, urls, totpUri, passkeys },
         extraFields,
     } = useDeobfuscatedItem(item);
 
-    const relatedAlias = useSelector(selectAliasByAliasEmail(username));
+    const relatedAlias = useSelector(selectAliasByAliasEmail(itemEmail));
     const totpAllowed = useSelector(selectTOTPLimits).totpAllowed(itemId);
     const passwordStrength = usePasswordStrength(password);
 
@@ -56,9 +56,9 @@ export const LoginContent: FC<ItemContentProps<'login'>> = ({ revision }) => {
             <FieldsetCluster mode="read" as="div">
                 <ValueControl
                     clickToCopy
-                    icon={relatedAlias ? 'alias' : 'user'}
-                    label={relatedAlias ? c('Label').t`Username (alias)` : c('Label').t`Username`}
-                    value={username}
+                    icon={relatedAlias ? 'alias' : 'envelope'}
+                    label={relatedAlias ? c('Label').t`Email (alias)` : c('Label').t`Email`}
+                    value={itemEmail}
                 />
 
                 <ValueControl

@@ -16,7 +16,8 @@ describe('searchItems', () => {
                     itemUuid: '1',
                 },
                 content: {
-                    username: obfuscate('user1'),
+                    itemEmail: obfuscate('user1@example.com'),
+                    itemUsername: obfuscate('user1'),
                     urls: ['https://example.com'],
                     password: obfuscate(''),
                     totpUri: obfuscate('otpauth://totp/label?secret=secret&issuer=issuer'),
@@ -106,7 +107,12 @@ describe('searchItems', () => {
         expect(result).toEqual([items[0], items[1], items[2], items[3]]);
     });
 
-    it('should return matching items based on username', () => {
+    it('should return matching items based on itemEmail', () => {
+        const result = searchItems(items, 'user1@example.com');
+        expect(result).toEqual([items[0]]);
+    });
+
+    it('should return matching items based on itemUsername', () => {
         const result = searchItems(items, 'user1');
         expect(result).toEqual([items[0]]);
     });

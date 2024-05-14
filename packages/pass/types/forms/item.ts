@@ -18,7 +18,8 @@ export type LoginItemFormValues = {
     password: string;
     shareId: string;
     totpUri: string;
-    username: string;
+    itemEmail: string;
+    itemUsername: string;
     withAlias: boolean;
 } & AliasFormValues &
     UrlGroupValues &
