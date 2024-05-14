@@ -1,8 +1,7 @@
-import { PrivateKeyReference } from '@proton/crypto';
 import { checkMemberAddressAvailability, createMember, createMemberAddress } from '@proton/shared/lib/api/members';
 import { KEYGEN_CONFIGS, KEYGEN_TYPES, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 import { getEmailParts, validateEmailAddress } from '@proton/shared/lib/helpers/email';
-import { Address, Api, KeyTransparencyVerify } from '@proton/shared/lib/interfaces';
+import { Address, Api, CachedOrganizationKey, KeyTransparencyVerify } from '@proton/shared/lib/interfaces';
 import { GetAddresses } from '@proton/shared/lib/interfaces/hooks/GetAddresses';
 import { setupMemberKeys } from '@proton/shared/lib/keys';
 import { srpVerify } from '@proton/shared/lib/srp';
@@ -15,13 +14,13 @@ export const createUser = async ({
     user,
     api,
     getAddresses,
-    organizationKey,
+    getOrganizationKey,
     keyTransparencyVerify,
 }: {
     user: UserTemplate;
     api: Api;
     getAddresses: GetAddresses;
-    organizationKey: PrivateKeyReference | undefined;
+    getOrganizationKey: () => Promise<CachedOrganizationKey | undefined>;
     keyTransparencyVerify: KeyTransparencyVerify;
 }) => {
     const { emailAddresses, password, displayName, totalStorage, vpnAccess, privateSubUser } = user;
@@ -130,10 +129,12 @@ export const createUser = async ({
     }
 
     if (!privateSubUser) {
+        const [ownerAddresses, cachedOrganizationKey] = await Promise.all([getAddresses(), getOrganizationKey()]);
+        // Ensure the organization key is up-to-date since it could get updated through the event manager
+        const organizationKey = cachedOrganizationKey?.privateKey;
         if (!organizationKey) {
             throw new Error('Organization key is not decrypted');
         }
-        const ownerAddresses = await getAddresses();
         await setupMemberKeys({
             api,
             ownerAddresses,
