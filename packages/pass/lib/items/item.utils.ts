@@ -20,7 +20,7 @@ import { UNIX_DAY, UNIX_MONTH, UNIX_WEEK } from '@proton/pass/utils/time/constan
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import chunk from '@proton/utils/chunk';
 
-import { hasEmail, isEditItemDraft } from './item.predicates';
+import { hasUserIdentifier, isEditItemDraft } from './item.predicates';
 
 export const getItemKeyRevision = ({ shareId, itemId, revision }: ItemRevision) => `${shareId}-${itemId}-${revision}`;
 export const getItemKey = ({ shareId, itemId }: ItemRevision) => `item-${shareId}-${itemId}`;
@@ -91,9 +91,9 @@ export const filterItemsByType =
         return items.filter((item) => !itemType || itemType === item.data.type);
     };
 
-export const filterItemsByEmail = (email: string) => (items: LoginItem[]) =>
+export const filterItemsByUserIdentifier = (email: string) => (items: LoginItem[]) =>
     items.reduce<LoginItem[]>((acc, item) => {
-        if (hasEmail(email)(item)) acc.push(item);
+        if (hasUserIdentifier(email)(item)) acc.push(item);
         return acc;
     }, []);
 
