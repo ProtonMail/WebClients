@@ -29,7 +29,7 @@ const UserKeysSections = () => {
     const { createModal } = useModals();
     const [User] = useUser();
     const api = useApi();
-    const { call } = useEventManager();
+    const { call, stop, start } = useEventManager();
     const authentication = useAuthentication();
     const [userKeys, loadingUserKeys] = useUserKeys();
     const getOrganizationKey = useGetOrganizationKey();
@@ -69,23 +69,26 @@ const UserKeysSections = () => {
         if (!userKeys) {
             throw new Error('Missing keys');
         }
-        const addresses = await getAddresses();
-        const organizationKey = await getOrganizationKey();
+        const [addresses, organizationKey] = await Promise.all([getAddresses(), getOrganizationKey()]);
 
-        const newKey = await addUserKeysProcess({
-            api,
-            user: User,
-            organizationKey,
-            isDeviceRecoveryAvailable,
-            isDeviceRecoveryEnabled,
-            call,
-            keyGenConfig,
-            userKeys,
-            addresses,
-            passphrase: authentication.getPassword(),
-        });
-
-        return newKey.getFingerprint();
+        try {
+            stop();
+            const newKey = await addUserKeysProcess({
+                api,
+                user: User,
+                organizationKey,
+                isDeviceRecoveryAvailable,
+                isDeviceRecoveryEnabled,
+                keyGenConfig,
+                userKeys,
+                addresses,
+                passphrase: authentication.getPassword(),
+            });
+            await call();
+            return newKey.getFingerprint();
+        } finally {
+            start();
+        }
     };
 
     const canGenerateUserKey = !User.isSubUser && User.isPrivate && userKeysDisplay.length < 20;
