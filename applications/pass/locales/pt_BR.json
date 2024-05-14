@@ -326,6 +326,9 @@
       "Resend code": [
         "Reenviar código"
       ],
+      "Resend code (in ${ remaining }s)": [
+        "Reenviar o código (em ${ remaining })"
+      ],
       "Resend invitation": [
         "Reenviar convite"
       ],
@@ -1476,6 +1479,9 @@
         "${ config.options.wordCount } palavra",
         "${ config.options.wordCount } palavras"
       ],
+      "${ PASS_SHORT_APP_NAME } version": [
+        "Versão do ${ PASS_SHORT_APP_NAME }"
+      ],
       "${ usageCount } login": [
         "${ usageCount } início de sessão",
         "${ usageCount } inícios de sessão"
@@ -1582,8 +1588,14 @@
       "Created": [
         "Criado"
       ],
+      "Created at": [
+        "Criado em"
+      ],
       "Date": [
         "Data"
+      ],
+      "Device": [
+        "Dispositivo"
       ],
       "Disable data export for team members": [
         "Desativar a exportação de dados para membros da equipe"
