@@ -8,7 +8,13 @@ import { logger } from '@proton/pass/utils/logger';
 import lastItem from '@proton/utils/lastItem';
 
 import { ImportProviderError } from '../helpers/error';
-import { getImportedVaultName, importCreditCardItem, importLoginItem, importNoteItem } from '../helpers/transformers';
+import {
+    getEmailOrUsername,
+    getImportedVaultName,
+    importCreditCardItem,
+    importLoginItem,
+    importNoteItem,
+} from '../helpers/transformers';
 import type { ImportPayload, ImportVault } from '../types';
 import type {
     OnePass1PuxData,
@@ -146,7 +152,7 @@ const processLoginItem = (
     return importLoginItem({
         name: item.overview.title,
         note: item.details.notesPlain,
-        username: extractLoginFieldFromLoginItem(item, OnePassLoginDesignation.USERNAME),
+        ...getEmailOrUsername(extractLoginFieldFromLoginItem(item, OnePassLoginDesignation.USERNAME)),
         password: extractLoginFieldFromLoginItem(item, OnePassLoginDesignation.PASSWORD),
         urls: extractURLs(item),
         totp: totp?.data.totpUri,

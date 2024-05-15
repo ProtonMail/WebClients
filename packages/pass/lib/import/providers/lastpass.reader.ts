@@ -11,7 +11,13 @@ import lastItem from '@proton/utils/lastItem';
 
 import { readCSV } from '../helpers/csv.reader';
 import { ImportProviderError } from '../helpers/error';
-import { getImportedVaultName, importCreditCardItem, importLoginItem, importNoteItem } from '../helpers/transformers';
+import {
+    getEmailOrUsername,
+    getImportedVaultName,
+    importCreditCardItem,
+    importLoginItem,
+    importNoteItem,
+} from '../helpers/transformers';
 import type { ImportPayload, ImportVault } from '../types';
 import { type LastPassItem, LastPassNoteType } from './lastpass.types';
 
@@ -36,7 +42,7 @@ const processLoginItem = (item: LastPassItem): ItemImportIntent<'login'> =>
     importLoginItem({
         name: item.name,
         note: item.extra,
-        username: item.username,
+        ...getEmailOrUsername(item.username),
         password: item.password,
         urls: [item.url],
         totp: item.totp,

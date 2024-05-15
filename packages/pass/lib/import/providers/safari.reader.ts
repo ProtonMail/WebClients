@@ -3,7 +3,7 @@ import { logger } from '@proton/pass/utils/logger';
 
 import { readCSV } from '../helpers/csv.reader';
 import { ImportProviderError } from '../helpers/error';
-import { getImportedVaultName, importLoginItem } from '../helpers/transformers';
+import { getEmailOrUsername, getImportedVaultName, importLoginItem } from '../helpers/transformers';
 import type { ImportPayload } from '../types';
 import type { SafariItem } from './safari.types';
 
@@ -33,7 +33,7 @@ export const readSafariData = async (data: string): Promise<ImportPayload> => {
                             importLoginItem({
                                 name: item.Title,
                                 note: item.Notes,
-                                username: item.Username,
+                                ...getEmailOrUsername(item.Username),
                                 password: item.Password,
                                 urls: [item.URL],
                                 totp: item.OTPAuth,

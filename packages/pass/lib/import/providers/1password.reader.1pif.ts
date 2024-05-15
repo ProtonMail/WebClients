@@ -87,7 +87,7 @@ const processLoginItem = (item: OnePassLegacyItem): ItemImportIntent<'login'> =>
     return importLoginItem({
         name: item.title,
         note: item.secureContents?.notesPlain,
-        username: fields?.find(({ designation }) => designation === OnePassLoginDesignation.USERNAME)?.value,
+        userIdentifier: fields?.find(({ designation }) => designation === OnePassLoginDesignation.USERNAME)?.value,
         password: fields?.find(({ designation }) => designation === OnePassLoginDesignation.PASSWORD)?.value,
         urls: extractURLs(item),
         extraFields: extractExtraFields(item),

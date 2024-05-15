@@ -34,7 +34,8 @@ describe('Import Dashlane ZIP', () => {
         expect(loginItem1.metadata.itemUuid).not.toBeUndefined();
         expect(loginItem1.metadata.note).toEqual('');
         expect(loginItem1.metadata.name).toEqual('login with 2fa scanned from qr code');
-        expect(loginItem1.content.username).toEqual('john');
+        expect(loginItem1.content.itemEmail).toEqual('');
+        expect(loginItem1.content.itemUsername).toEqual('john');
         expect(loginItem1.content.password).toEqual('pass');
         expect(loginItem1.content.urls.length).toEqual(0);
         expect(loginItem1.content.totpUri).toEqual(
@@ -57,7 +58,8 @@ describe('Import Dashlane ZIP', () => {
         expect(loginItem2.metadata.itemUuid).not.toBeUndefined();
         expect(loginItem2.metadata.name).toEqual('login with multiple lines');
         expect(loginItem2.metadata.note).toEqual('line 1\nline 2\nline 3');
-        expect(loginItem2.content.username).toEqual('my name');
+        expect(loginItem2.content.itemEmail).toEqual('');
+        expect(loginItem2.content.itemUsername).toEqual('my name');
         expect(loginItem2.content.password).toEqual('pass');
         expect(loginItem2.content.urls.length).toEqual(0);
         expect(loginItem2.content.totpUri).toEqual('');
@@ -70,7 +72,8 @@ describe('Import Dashlane ZIP', () => {
         expect(loginItem3.metadata.itemUuid).not.toBeUndefined();
         expect(loginItem3.metadata.note).toEqual('comma 1, comma 2,');
         expect(loginItem3.metadata.name).toEqual('login with commas ,');
-        expect(loginItem3.content.username).toEqual('');
+        expect(loginItem3.content.itemEmail).toEqual('');
+        expect(loginItem3.content.itemUsername).toEqual('');
         expect(loginItem3.content.password).toEqual('');
         expect(loginItem3.content.urls.length).toEqual(0);
         expect(loginItem3.content.totpUri).toEqual('');
@@ -83,7 +86,8 @@ describe('Import Dashlane ZIP', () => {
         expect(loginItem4.metadata.itemUuid).not.toBeUndefined();
         expect(loginItem4.metadata.note).toEqual('note with "quote"');
         expect(loginItem4.metadata.name).toEqual('login with quotes "');
-        expect(loginItem4.content.username).toEqual('');
+        expect(loginItem4.content.itemEmail).toEqual('');
+        expect(loginItem4.content.itemUsername).toEqual('');
         expect(loginItem4.content.password).toEqual('');
         expect(loginItem4.content.urls.length).toEqual(0);
         expect(loginItem4.content.totpUri).toEqual('');
@@ -96,7 +100,8 @@ describe('Import Dashlane ZIP', () => {
         expect(loginItem5.metadata.itemUuid).not.toBeUndefined();
         expect(loginItem5.metadata.note).toEqual('');
         expect(loginItem5.metadata.name).toEqual('login with all preferences checked');
-        expect(loginItem5.content.username).toEqual('');
+        expect(loginItem5.content.itemEmail).toEqual('');
+        expect(loginItem5.content.itemUsername).toEqual('');
         expect(loginItem5.content.password).toEqual('');
         expect(loginItem5.content.urls.length).toEqual(1);
         expect(loginItem5.content.urls[0]).toEqual('https://example.com/');
@@ -110,7 +115,8 @@ describe('Import Dashlane ZIP', () => {
         expect(loginItem6.metadata.itemUuid).not.toBeUndefined();
         expect(loginItem6.metadata.note).toEqual('');
         expect(loginItem6.metadata.name).toEqual('test');
-        expect(loginItem6.content.username).toEqual('test@example.com');
+        expect(loginItem6.content.itemEmail).toEqual('test@example.com');
+        expect(loginItem6.content.itemUsername).toEqual('');
         expect(loginItem6.content.password).toEqual('ndnndc');
         expect(loginItem6.content.urls.length).toEqual(1);
         expect(loginItem6.content.urls[0]).toEqual('https://test/');
@@ -124,7 +130,8 @@ describe('Import Dashlane ZIP', () => {
         expect(loginItem7.metadata.itemUuid).not.toBeUndefined();
         expect(loginItem7.metadata.note).toEqual('');
         expect(loginItem7.metadata.name).toEqual('password with comma , and quote "');
-        expect(loginItem7.content.username).toEqual('john');
+        expect(loginItem7.content.itemEmail).toEqual('');
+        expect(loginItem7.content.itemUsername).toEqual('john');
         expect(loginItem7.content.password).toEqual('password,"comma"');
         expect(loginItem7.content.urls.length).toEqual(1);
         expect(loginItem7.content.urls[0]).toEqual('https://example.com/comma,');
@@ -138,7 +145,8 @@ describe('Import Dashlane ZIP', () => {
         expect(loginItem8.metadata.itemUuid).not.toBeUndefined();
         expect(loginItem8.metadata.note).toEqual('');
         expect(loginItem8.metadata.name).toEqual('login with 2fa manually entered');
-        expect(loginItem8.content.username).toEqual('john');
+        expect(loginItem8.content.itemEmail).toEqual('');
+        expect(loginItem8.content.itemUsername).toEqual('john');
         expect(loginItem8.content.password).toEqual('pass');
         expect(loginItem8.content.urls.length).toEqual(0);
         expect(loginItem8.content.totpUri).toEqual(

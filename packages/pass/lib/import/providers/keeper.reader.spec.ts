@@ -49,7 +49,8 @@ describe('Import Keeper CSV', () => {
             totpUri:
                 'otpauth://totp/account.proton.me:2fa-manually-entered-string%40example.com?issuer=account.proton.me&secret=RL3FRZ5V3EBM7T4ZMGJWGO43MQSTTMIT&algorithm=SHA1&digits=6&period=30',
             urls: ['https://example.com/'],
-            username: '2fa@example.com',
+            itemEmail: '2fa@example.com',
+            itemUsername: '',
         });
         expect(loginItem2FA.trashed).toEqual(false);
         expect(loginItem2FA.extraFields).toEqual([]);
@@ -67,7 +68,8 @@ describe('Import Keeper CSV', () => {
             password: 'pass',
             totpUri: '',
             urls: [],
-            username: 'john',
+            itemEmail: '',
+            itemUsername: 'john',
         });
         expect(loginItemBrokenUrl.trashed).toEqual(false);
         expect(loginItemBrokenUrl.extraFields).toEqual([]);
@@ -85,7 +87,8 @@ describe('Import Keeper CSV', () => {
             password: 'password with comma, quotes "',
             totpUri: '',
             urls: ['https://example.com/'],
-            username: 'username with comma, quotes "',
+            itemEmail: '',
+            itemUsername: 'username with comma, quotes "',
         });
         expect(loginItemCommaQuotes.trashed).toEqual(false);
         expect(loginItemCommaQuotes.extraFields).toEqual([]);
@@ -103,7 +106,8 @@ describe('Import Keeper CSV', () => {
             password: 'pass',
             totpUri: '',
             urls: ['https://example.com/'],
-            username: 'john',
+            itemEmail: '',
+            itemUsername: 'john',
         });
         expect(loginItemCustomFields.trashed).toEqual(false);
         expect(loginItemCustomFields.extraFields).toEqual([
@@ -157,7 +161,8 @@ describe('Import Keeper CSV', () => {
             password: 'pass',
             totpUri: '',
             urls: ['https://example.com/'],
-            username: 'john',
+            itemEmail: '',
+            itemUsername: 'john',
         });
         expect(loginItemMultipleLines.trashed).toEqual(false);
         expect(loginItemMultipleLines.extraFields).toEqual([]);
@@ -175,7 +180,8 @@ describe('Import Keeper CSV', () => {
             password: '',
             totpUri: '',
             urls: ['https://example.com/'],
-            username: '',
+            itemEmail: '',
+            itemUsername: '',
         });
         expect(loginItemMultipleUrls.trashed).toEqual(false);
         expect(loginItemMultipleUrls.extraFields).toEqual([
@@ -208,7 +214,8 @@ describe('Import Keeper CSV', () => {
             password: 'b5pIs[ISaru7@)44rn,xT',
             totpUri: '',
             urls: ['https://example.com/'],
-            username: '',
+            itemEmail: '',
+            itemUsername: '',
         });
         expect(loginItemPaymentCard.trashed).toEqual(false);
         expect(loginItemPaymentCard.extraFields).toEqual([
@@ -253,7 +260,8 @@ describe('Import Keeper CSV', () => {
             password: 'pass',
             totpUri: '',
             urls: [],
-            username: 'john',
+            itemEmail: '',
+            itemUsername: 'john',
         });
         expect(loginItemSshKey.trashed).toEqual(false);
         expect(loginItemSshKey.extraFields).toEqual([
@@ -284,7 +292,8 @@ describe('Import Keeper CSV', () => {
             password: '',
             totpUri: '',
             urls: [],
-            username: 'john',
+            itemEmail: '',
+            itemUsername: 'john',
         });
         expect(loginItemSecondVault.trashed).toEqual(false);
         expect(loginItemSecondVault.extraFields).toEqual([]);
@@ -307,7 +316,8 @@ describe('Import Keeper CSV', () => {
             password: '',
             totpUri: '',
             urls: [],
-            username: 'john',
+            itemEmail: '',
+            itemUsername: 'john',
         });
         expect(loginItemSecondVault.trashed).toEqual(false);
         expect(loginItemSecondVault.extraFields).toEqual([]);

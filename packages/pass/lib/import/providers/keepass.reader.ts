@@ -8,6 +8,7 @@ import type { ImportPayload, ImportVault } from '@proton/pass/lib/import/types';
 import type { ItemImportIntent, Maybe, MaybeNull } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 
+import { getEmailOrUsername } from '../helpers/transformers';
 import type { KeePassEntry, KeePassEntryValue, KeePassFile, KeePassGroup, KeePassItem } from './keepass.types';
 
 const getKeePassEntryValue = (Value: KeePassEntryValue): string => (typeof Value === 'string' ? Value : Value.__text);
@@ -80,7 +81,7 @@ const entryToItem = (entry: KeePassEntry): ItemImportIntent<'login'> => {
     return importLoginItem({
         name: item.name,
         note: item.note,
-        username: item.username,
+        ...getEmailOrUsername(item.username),
         password: item.password,
         urls: [item.url],
         totp: formatOtpAuthUri(item),

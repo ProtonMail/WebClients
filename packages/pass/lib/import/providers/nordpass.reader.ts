@@ -38,6 +38,7 @@ const processLoginItem = (item: NordPassItem): ItemImportIntent<'login'> =>
     importLoginItem({
         name: item.name,
         note: item.note,
+        email: item.email,
         username: item.username,
         password: item.password,
         urls: [item.url],

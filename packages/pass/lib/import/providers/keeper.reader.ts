@@ -8,7 +8,7 @@ import lastItem from '@proton/utils/lastItem';
 
 import { readCSV } from '../helpers/csv.reader';
 import { ImportProviderError } from '../helpers/error';
-import { getImportedVaultName, importLoginItem, importNoteItem } from '../helpers/transformers';
+import { getEmailOrUsername, getImportedVaultName, importLoginItem, importNoteItem } from '../helpers/transformers';
 import type { ImportPayload, ImportVault } from '../types';
 import type { KeeperItem } from './keeper.types';
 
@@ -91,7 +91,7 @@ export const readKeeperData = async (data: string): Promise<ImportPayload> => {
                                 return importLoginItem({
                                     name: item[1],
                                     note: item[5],
-                                    username: item[2],
+                                    ...getEmailOrUsername(item[2]),
                                     password: item[3],
                                     urls: [item[4]],
                                     totp: extractTOTP(item),

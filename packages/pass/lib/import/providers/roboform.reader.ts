@@ -5,7 +5,7 @@ import lastItem from '@proton/utils/lastItem';
 
 import { readCSV } from '../helpers/csv.reader';
 import { ImportProviderError } from '../helpers/error';
-import { getImportedVaultName, importLoginItem, importNoteItem } from '../helpers/transformers';
+import { getEmailOrUsername, getImportedVaultName, importLoginItem, importNoteItem } from '../helpers/transformers';
 import type { ImportPayload, ImportVault } from '../types';
 import type { RoboformItem, RoboformVariadicItem } from './roboform.types';
 
@@ -77,7 +77,7 @@ export const readRoboformData = async (data: string): Promise<ImportPayload> => 
                     name: item.Name,
                     urls: [item.MatchUrl],
                     note: item.Note,
-                    username: item.Login,
+                    ...getEmailOrUsername(item.Login),
                     password: item.Pwd,
                     totp: formatOtpAuthUri(item),
                 });

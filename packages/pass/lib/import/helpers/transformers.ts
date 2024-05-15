@@ -11,6 +11,7 @@ import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { epochToDate } from '@proton/pass/utils/time/format';
 import { isValidURL } from '@proton/pass/utils/url/is-valid-url';
+import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 
 export const getImportedVaultName = (vaultName?: string) => {
     if (!vaultName) {
@@ -21,11 +22,18 @@ export const getImportedVaultName = (vaultName?: string) => {
     return vaultName;
 };
 
+export const getEmailOrUsername = (userIdentifier?: MaybeNull<string>): { email: string; username: string } => {
+    if (!userIdentifier) {
+        return { email: '', username: '' };
+    }
+    const email = validateEmailAddress(userIdentifier) ? userIdentifier : '';
+    const username = !validateEmailAddress(userIdentifier) ? userIdentifier : '';
+    return { username, email };
+};
+
 export const importLoginItem = (options: {
     name?: MaybeNull<string>;
     note?: MaybeNull<string>;
-    email?: MaybeNull<string>;
-    username?: MaybeNull<string>;
     password?: MaybeNull<string>;
     urls?: Maybe<string>[];
     totp?: MaybeNull<string>;
@@ -34,6 +42,8 @@ export const importLoginItem = (options: {
     createTime?: number;
     modifyTime?: number;
     appIds?: string[];
+    email?: MaybeNull<string>;
+    username?: MaybeNull<string>;
 }): ItemImportIntent<'login'> => {
     const urls = [...new Set((options.urls ?? []).filter(truthy))]
         .map((uri) => {
