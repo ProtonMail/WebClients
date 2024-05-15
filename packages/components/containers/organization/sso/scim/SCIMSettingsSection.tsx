@@ -12,7 +12,7 @@ import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 
 import { Icon, Info, useModalState } from '../../../../components';
 import getBoldFormattedText from '../../../../helpers/getBoldFormattedText';
-import { useApi } from '../../../../hooks';
+import { useApi, useNotifications } from '../../../../hooks';
 import {
     SettingsLayout,
     SettingsLayoutLeft,
@@ -37,6 +37,7 @@ const SCIMSettingsSection = ({ onConfigureSaml, hasSsoConfig, scimInfo }: Props)
     const api = useApi();
     const isScimEnabled = useFlag('ScimTenantCreation');
     const dispatch = baseUseDispatch<ThunkDispatch<SamlState, ProtonThunkArguments, Action>>();
+    const { createNotification } = useNotifications();
 
     const [setupSCIMModalProps, setSetupSCIMModalOpen, renderSetupSCIMModal] = useModalState();
     const [regenerateSCIMModalProps, setRegenerateSCIMModalOpen, renderRegenerateSCIMModal] = useModalState();
@@ -106,6 +107,7 @@ const SCIMSettingsSection = ({ onConfigureSaml, hasSsoConfig, scimInfo }: Props)
                                                     );
                                                     setLocalSCIMConfiguration({ ...result, type: 'setup' });
                                                     setSetupSCIMModalOpen(true);
+                                                    createNotification({ text: c('Info').t`SCIM token active` });
                                                 };
                                                 void withLoadingSCIM(run());
                                             }}
@@ -194,6 +196,7 @@ const SCIMSettingsSection = ({ onConfigureSaml, hasSsoConfig, scimInfo }: Props)
                         setLocalSCIMConfiguration({ ...result, type: 'generated' });
                         setSetupSCIMModalOpen(true);
                         regenerateSCIMModalProps.onClose();
+                        createNotification({ text: c('Info').t`SCIM token active` });
                     }}
                 />
             )}
@@ -208,6 +211,7 @@ const SCIMSettingsSection = ({ onConfigureSaml, hasSsoConfig, scimInfo }: Props)
                         );
                         setLocalSCIMConfiguration(undefined);
                         disableSCIMModalProps.onClose();
+                        createNotification({ text: c('Info').t`SCIM integration disabled` });
                     }}
                 />
             )}
