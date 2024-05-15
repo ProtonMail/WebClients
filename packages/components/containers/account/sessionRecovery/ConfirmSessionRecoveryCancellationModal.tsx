@@ -60,7 +60,7 @@ const ConfirmSessionRecoveryCancellationModal = ({ onBack, onClose, ...rest }: P
                 await call();
                 dismissSessionRecoveryCancelled();
                 createNotification({
-                    text: c('session_recovery:cancellation:notification').t`Password reset cancelled`,
+                    text: c('session_recovery:cancellation:notification').t`Password reset canceled`,
                     showCloseButton: false,
                 });
 
