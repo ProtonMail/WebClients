@@ -162,7 +162,7 @@ export function SharingModal({ shareId: rootShareId, linkId, onClose, ...modalPr
 
                         {!isInvitationWorkflow && (
                             <>
-                                <h2 className="text-lg text-semibold">{c('Info').t`Share with`}</h2>
+                                <h2 className="text-lg text-semibold">{c('Info').t`Shared with`}</h2>
                                 <DirectSharingListing
                                     volumeId={volumeId}
                                     linkId={linkId}
@@ -179,12 +179,15 @@ export function SharingModal({ shareId: rootShareId, linkId, onClose, ...modalPr
                     </ContactEmailsProvider>
 
                     {!isInvitationWorkflow ? (
-                        <PublicSharing
-                            createSharedLink={createSharedLink}
-                            isLoading={isShareWithAnyoneLoading}
-                            publicSharedLink={sharedLink}
-                            deleteSharedLink={deleteLink}
-                        />
+                        <>
+                            <hr className="mb-4" />
+                            <PublicSharing
+                                createSharedLink={createSharedLink}
+                                isLoading={isShareWithAnyoneLoading}
+                                publicSharedLink={sharedLink}
+                                deleteSharedLink={deleteLink}
+                            />
+                        </>
                     ) : null}
                 </ModalTwoContent>
             </div>
