@@ -8,6 +8,7 @@ import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelpe
 import { getKeySalts } from '@proton/shared/lib/api/keys';
 import { getSettings, upgradePassword } from '@proton/shared/lib/api/settings';
 import { getUser } from '@proton/shared/lib/api/user';
+import { ProductParam } from '@proton/shared/lib/apps/product';
 import { AuthResponse, AuthVersion, Fido2Data, InfoResponse } from '@proton/shared/lib/authentication/interface';
 import loginWithFallback from '@proton/shared/lib/authentication/loginWithFallback';
 import { maybeResumeSessionByUser, persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
@@ -376,6 +377,7 @@ export const handleSetupPassword = async ({ cache, newPassword }: { cache: AuthC
         addresses,
         domains,
         preAuthKTVerify: preAuthKTVerifier.preAuthKTVerify,
+        productParam: cache.productParam,
     });
 
     cache.data.user = undefined;
@@ -505,6 +507,7 @@ export const handleNextLogin = async ({
     toApp,
     setupVPN,
     ktActivation,
+    productParam,
 }: {
     authVersion: AuthVersion;
     authResponse: AuthResponse;
@@ -517,12 +520,14 @@ export const handleNextLogin = async ({
     toApp: APP_NAMES | undefined;
     setupVPN: boolean;
     ktActivation: KeyTransparencyActivation;
+    productParam: ProductParam;
 }): Promise<AuthActionResponse> => {
     const cache: AuthCacheResult = {
         authResponse,
         authVersion,
         appName,
         toApp,
+        productParam,
         data: {},
         api,
         authTypes: getAuthTypes(authResponse, appName),

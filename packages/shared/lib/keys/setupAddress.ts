@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { AddressGeneration } from '@proton/components/containers/login/interface';
 import { stringToUtf8Array } from '@proton/crypto/lib/utils';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
+import { ProductParam } from '@proton/shared/lib/apps/product';
 import { getRequiresAddress, getRequiresProtonAddress } from '@proton/shared/lib/authentication/apps';
 import { getClientKey } from '@proton/shared/lib/authentication/clientKey';
 import { getDecryptedBlob, getEncryptedBlob } from '@proton/shared/lib/authentication/sessionBlobCryptoHelper';
@@ -229,12 +230,14 @@ export const handleSetupAddressAndKey = async ({
     api,
     password,
     preAuthKTVerify,
+    productParam,
 }: {
     username: string;
     domain: string;
     api: Api;
     password: string;
     preAuthKTVerify: PreAuthKTVerify;
+    productParam: ProductParam;
 }) => {
     if (!password) {
         throw new Error('Password required to setup keys');
@@ -250,6 +253,7 @@ export const handleSetupAddressAndKey = async ({
         addresses: addressesToSetup,
         password,
         preAuthKTVerify,
+        product: productParam,
     });
 };
 

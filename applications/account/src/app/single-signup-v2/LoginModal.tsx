@@ -1,5 +1,6 @@
 import { ModalProps, ModalTwo, ModalTwoContent, ModalTwoHeader } from '@proton/components/components';
 import { OnLoginCallback } from '@proton/components/containers';
+import { ProductParam } from '@proton/shared/lib/apps/product';
 
 import { Paths } from '../content/helper';
 import LoginContainer from '../login/LoginContainer';
@@ -8,13 +9,15 @@ interface Props extends ModalProps {
     onLogin: OnLoginCallback;
     defaultUsername?: string;
     paths: Paths;
+    productParam: ProductParam;
 }
 
-const LoginModal = ({ paths, onLogin, defaultUsername, ...rest }: Props) => {
+const LoginModal = ({ productParam, paths, onLogin, defaultUsername, ...rest }: Props) => {
     return (
         <ModalTwo size="small" {...rest}>
             <LoginContainer
                 metaTags={null}
+                productParam={productParam}
                 defaultUsername={defaultUsername}
                 onLogin={onLogin}
                 setupVPN={true}
