@@ -39,14 +39,18 @@ export const PublicSharing = ({ publicSharedLink, createSharedLink, deleteShared
                 <h2 className="text-lg text-semibold mr">{c('Info').t`Share with anyone`}</h2>
                 <Toggle checked={!!publicSharedLink} loading={isLoading} onChange={handleToggle} />
             </div>
-            <div className={clsx('flex items-center mb-4', !publicSharedLink && 'opacity-30')}>
-                <Avatar color="weak" className="mr-2">
-                    <Icon name="globe" />
-                </Avatar>
-                <p className="flex flex-column p-0 m-0">
-                    <span className="text-semibold">{c('Label').t`Anyone with the link`}</span>
-                    <span className="color-weak">{c('Label').t`Anyone on the Internet with the link can view`}</span>
-                </p>
+            <div className={clsx('flex items-center justify-space-between mb-4', !publicSharedLink && 'opacity-30')}>
+                <div className="flex items-center">
+                    <Avatar color="weak" className="mr-2 shrink-0">
+                        <Icon name="globe" />
+                    </Avatar>
+                    <p className="flex-1 flex flex-column p-0 m-0">
+                        <span className="text-semibold">{c('Label').t`Anyone with the link`}</span>
+                        <span className="color-weak">{c('Label')
+                            .t`Anyone on the Internet with the link can view`}</span>
+                    </p>
+                </div>
+                <div className="shrink-0">{c('Label').t`Viewer`}</div>
             </div>
             {!!publicSharedLink ? (
                 <div className="w-full flex justify-space-between">
