@@ -13,9 +13,14 @@ export type WithSenderAction<A = Action> = WithMeta<SenderMeta, A>;
 export const withSender = (sender: EndpointOptions) => withMetaFactory<SenderMeta>({ sender });
 export const withReceiver = (receiver: EndpointOptions) => withMetaFactory<ReceiverMeta>({ receiver });
 
-const isActionWithReceiver = <T extends Action>(action?: T): action is WithReceiverAction<T> => {
+export const isActionWithReceiver = <T extends Action>(action?: T): action is WithReceiverAction<T> => {
     const { meta } = action as any;
     return meta?.receiver !== undefined || meta?.tabId !== undefined;
+};
+
+export const isActionWithSender = <T extends Action>(action?: T): action is WithSenderAction<T> => {
+    const { meta } = action as any;
+    return meta?.sender !== undefined;
 };
 
 export const acceptActionWithReceiver = (action: Action, endpoint: ClientEndpoint, tabId?: TabId) => {
