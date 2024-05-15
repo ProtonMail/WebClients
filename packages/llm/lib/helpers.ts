@@ -53,6 +53,13 @@ export const getAssistantStatus = ({
     return ASSISTANT_STATUS.NOT_LOADED;
 };
 
+export const checkHarmful = (inputText: string) => {
+    /* The LLM starts generation of a text with a "yes" or "no" token that answers the question
+     * "Harmful? (yes/no):". Therefore the LLM is telling us the prompt is harmful iff the text begins with "yes".
+     */
+    return /^\s*yes/i.test(inputText);
+};
+
 export const cleanAssistantEmailGeneration = (inputText: string) => {
     /* The LLM generates text that contains extraneous data, such as:
      *
@@ -169,3 +176,13 @@ export const buildMLCConfig = (models: AssistantModel[]) => {
         };
     }
 };
+
+export class PromptRejectedError extends Error {
+    constructor() {
+        super();
+        this.name = 'PromptRejectedError';
+        if (Error.captureStackTrace) {
+            Error.captureStackTrace(this, PromptRejectedError);
+        }
+    }
+}
