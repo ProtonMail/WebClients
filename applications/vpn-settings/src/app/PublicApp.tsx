@@ -79,6 +79,7 @@ const InnerPublicApp = ({ onLogin, loader, location }: InnerPublicAppProps) => {
                                                 loginUrl={paths.login}
                                                 setupVPN={false}
                                                 toApp={APPS.PROTONVPN_SETTINGS}
+                                                productParam={APPS.PROTONVPN_SETTINGS}
                                                 onLogin={async (...args) => {
                                                     onLogin(...args);
                                                     return completeResult;

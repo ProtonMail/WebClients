@@ -1,3 +1,4 @@
+import { ProductParam } from '@proton/shared/lib/apps/product';
 import { AuthResponse, AuthVersion } from '@proton/shared/lib/authentication/interface';
 import { OfflineKey } from '@proton/shared/lib/authentication/offlineKey';
 import { APP_NAMES } from '@proton/shared/lib/constants';
@@ -37,6 +38,7 @@ export interface AuthTypes {
 export interface AuthCacheResult {
     appName: APP_NAMES;
     toApp: APP_NAMES | undefined;
+    productParam: ProductParam;
     shouldSetup?: boolean;
     authVersion: AuthVersion;
     authResponse: AuthResponse;

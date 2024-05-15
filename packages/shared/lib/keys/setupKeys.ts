@@ -1,3 +1,5 @@
+import { ProductParam } from '@proton/shared/lib/apps/product';
+
 import { setupKeys } from '../api/keys';
 import { getUser } from '../api/user';
 import { Address, Api, PreAuthKTVerify, User } from '../interfaces';
@@ -11,9 +13,10 @@ interface Args {
     addresses: Address[];
     password: string;
     preAuthKTVerify: PreAuthKTVerify;
+    product: ProductParam;
 }
 
-export const handleSetupKeys = async ({ api, addresses, password, preAuthKTVerify }: Args) => {
+export const handleSetupKeys = async ({ api, addresses, password, preAuthKTVerify, product }: Args) => {
     if (!addresses.length) {
         throw new Error('An address is required to setup keys');
     }
@@ -41,11 +44,14 @@ export const handleSetupKeys = async ({ api, addresses, password, preAuthKTVerif
         await srpVerify({
             api,
             credentials: { password },
-            config: setupKeys({
-                KeySalt: salt,
-                PrimaryKey: userKeyPayload,
-                AddressKeys: addressKeysPayload,
-            }),
+            config: setupKeys(
+                {
+                    KeySalt: salt,
+                    PrimaryKey: userKeyPayload,
+                    AddressKeys: addressKeysPayload,
+                },
+                product
+            ),
         });
     } catch (setupError) {
         // We are observing some strange behavior where the setup call seems to be retried even though it has succeeded.

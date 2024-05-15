@@ -1,3 +1,5 @@
+import { ProductParam, getProductHeaders } from '@proton/shared/lib/apps/product';
+
 import { AddressKeyPayload, AddressKeyPayloadV2, SignedKeyList } from '../interfaces';
 
 interface GetPublicKeysForInboxParams {
@@ -44,9 +46,11 @@ interface AddressKeyToken {
     KeyPacket: string;
     Signature: string;
 }
+
 interface AddressTokensPayload {
     AddressKeyTokens: AddressKeyToken[];
 }
+
 export const replaceAddressTokens = (data: AddressTokensPayload) => ({
     url: 'core/v4/keys/tokens',
     method: 'put',
@@ -106,11 +110,15 @@ interface SetupKeysPayload {
     AddressKeys: (AddressKeyPayload | AddressKeyPayloadV2)[];
 }
 
-export const setupKeys = (data: SetupKeysPayload) => ({
+export const setupKeys = (data: SetupKeysPayload, product: ProductParam) => ({
     url: 'core/v4/keys/setup',
     method: 'post',
     timeout: 60_000,
     data,
+    headers: getProductHeaders(product, {
+        endpoint: 'core/v4/keys/setup',
+        product,
+    }),
 });
 
 interface ActivateKeyPayload {
@@ -321,6 +329,7 @@ export const getSignedKeyListRoute = (params: GetSignedKeyListParams) => ({
     method: 'get',
     params,
 });
+
 export interface UpdateSignedKeyListPayload {
     AddressID: string;
     SignedKeyList: SignedKeyList;

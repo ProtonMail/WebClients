@@ -224,6 +224,7 @@ const OrganizationSection = ({ app, organization }: Props) => {
                                     password: credentials.password,
                                     domains,
                                     preAuthKTVerify: preAuthKTVerifier.preAuthKTVerify,
+                                    productParam: app,
                                 });
                                 await innerMutatePassword({
                                     api,

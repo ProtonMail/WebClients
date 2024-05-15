@@ -23,6 +23,7 @@ import {
 } from '@proton/components/containers/login/loginActions';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { ProductParam } from '@proton/shared/lib/apps/product';
 import { getIsVPNApp } from '@proton/shared/lib/authentication/apps';
 import { APPS, APP_NAMES, BRAND_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
@@ -61,6 +62,7 @@ interface Props {
     hasRemember?: boolean;
     setupVPN: boolean;
     paths: Paths;
+    productParam: ProductParam;
     modal?: boolean;
     metaTags: MetaTags | null;
     render?: (renderProps: RenderProps) => ReactNode;
@@ -84,6 +86,7 @@ const LoginContainer = ({
     toAppName,
     toApp,
     showContinueTo,
+    productParam,
     setupVPN,
     hasRemember = true,
     paths,
@@ -242,6 +245,7 @@ const LoginContainer = ({
                                                 persistent: data.persistent,
                                                 authResponse: data.authResponse,
                                                 authVersion: data.authVersion,
+                                                productParam,
                                             });
                                             if (validateFlow()) {
                                                 return await handleResult(result);
