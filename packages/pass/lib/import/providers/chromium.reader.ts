@@ -3,7 +3,7 @@ import { logger } from '@proton/pass/utils/logger';
 
 import { readCSV } from '../helpers/csv.reader';
 import { ImportProviderError } from '../helpers/error';
-import { getImportedVaultName, importLoginItem } from '../helpers/transformers';
+import { getEmailOrUsername, getImportedVaultName, importLoginItem } from '../helpers/transformers';
 import type { ImportPayload } from '../types';
 import type { ChromiumItem } from './chromium.types';
 
@@ -30,7 +30,7 @@ export const readChromiumData = async (data: string): Promise<ImportPayload> => 
                             importLoginItem({
                                 name: item.name,
                                 note: item.note,
-                                username: item.username,
+                                ...getEmailOrUsername(item.username),
                                 password: item.password,
                                 urls: [item.url],
                             })

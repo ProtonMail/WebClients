@@ -77,7 +77,8 @@ const processLoginItem = (
                   ]
                 : []
         ),
-        username: extracted.username || extracted.email,
+        email: extracted.email,
+        username: extracted.username,
         password: extracted.password,
         totp: extracted.totp,
         urls: extracted.url ? [extracted.url] : [],

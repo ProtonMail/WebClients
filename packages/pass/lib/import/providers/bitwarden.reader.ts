@@ -8,7 +8,13 @@ import { logger } from '@proton/pass/utils/logger';
 import { BITWARDEN_ANDROID_APP_FLAG, isBitwardenLinkedAndroidAppUrl } from '@proton/pass/utils/url/android';
 
 import { ImportProviderError, ImportReaderError } from '../helpers/error';
-import { getImportedVaultName, importCreditCardItem, importLoginItem, importNoteItem } from '../helpers/transformers';
+import {
+    getEmailOrUsername,
+    getImportedVaultName,
+    importCreditCardItem,
+    importLoginItem,
+    importNoteItem,
+} from '../helpers/transformers';
 import type { ImportPayload, ImportVault } from '../types';
 import {
     type BitwardenCCItem,
@@ -108,7 +114,7 @@ export const readBitwardenData = (data: string): ImportPayload => {
                             return importLoginItem({
                                 name: item.name,
                                 note: item.notes,
-                                username: item.login.username,
+                                ...getEmailOrUsername(item.login.username),
                                 password: item.login.password,
                                 urls: urls.web,
                                 totp: item.login.totp,

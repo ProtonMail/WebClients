@@ -61,7 +61,8 @@ describe('Import 1password 1pux', () => {
         expect(loginItemMultiTOTP.modifyTime).toEqual(1688987066);
         expect(loginItemMultiTOTP.metadata.itemUuid).not.toBeUndefined();
         expect(deobfuscate(loginItemMultiTOTP.metadata.note)).toEqual('');
-        expect(deobfuscate(loginItemMultiTOTP.content.username)).toEqual('john@wick.com');
+        expect(deobfuscate(loginItemMultiTOTP.content.itemEmail)).toEqual('john@wick.com');
+        expect(deobfuscate(loginItemMultiTOTP.content.itemUsername)).toEqual('');
         expect(deobfuscate(loginItemMultiTOTP.content.password)).toEqual('password');
         expect(deobfuscate(loginItemMultiTOTP.content.totpUri)).toEqual(
             'otpauth://totp/Login%20item%20with%20two%20TOTP%20and%20one%20text%20extra%20fields?secret=BASE32SECRET3232&algorithm=SHA1&digits=6&period=30'
@@ -96,7 +97,8 @@ describe('Import 1password 1pux', () => {
         expect(emptyLoginItem.metadata.itemUuid).not.toBeUndefined();
         expect(emptyLoginItem.trashed).toEqual(false);
         expect(deobfuscate(emptyLoginItem.metadata.note)).toEqual('');
-        expect(deobfuscate(emptyLoginItem.content.username)).toEqual('');
+        expect(deobfuscate(emptyLoginItem.content.itemEmail)).toEqual('');
+        expect(deobfuscate(emptyLoginItem.content.itemUsername)).toEqual('');
         expect(deobfuscate(emptyLoginItem.content.password)).toEqual('');
         expect(deobfuscate(emptyLoginItem.content.totpUri)).toEqual('');
         expect(emptyLoginItem.extraFields).toEqual([]);
@@ -111,7 +113,8 @@ describe('Import 1password 1pux', () => {
         expect(loginItemSingleTOTP.modifyTime).toEqual(1688983719);
         expect(loginItemSingleTOTP.metadata.itemUuid).not.toBeUndefined();
         expect(deobfuscate(loginItemSingleTOTP.metadata.note)).toEqual('this is a login item note');
-        expect(deobfuscate(loginItemSingleTOTP.content.username)).toEqual('');
+        expect(deobfuscate(loginItemSingleTOTP.content.itemEmail)).toEqual('');
+        expect(deobfuscate(loginItemSingleTOTP.content.itemUsername)).toEqual('');
         expect(deobfuscate(loginItemSingleTOTP.content.password)).toEqual('');
         expect(deobfuscate(loginItemSingleTOTP.content.totpUri)).toEqual(
             'otpauth://totp/az?secret=QS&algorithm=SHA1&digits=6&period=30'
@@ -132,7 +135,8 @@ describe('Import 1password 1pux', () => {
         expect(specialCharItem.trashed).toEqual(false);
         expect(specialCharItem.extraFields).toEqual([]);
         expect(deobfuscate(specialCharItem.metadata.note)).toEqual('Item notes');
-        expect(deobfuscate(specialCharItem.content.username)).toEqual('somewhere');
+        expect(deobfuscate(specialCharItem.content.itemEmail)).toEqual('');
+        expect(deobfuscate(specialCharItem.content.itemUsername)).toEqual('somewhere');
         expect(deobfuscate(specialCharItem.content.password)).toEqual('somepassword with " in it');
         expect(deobfuscate(specialCharItem.content.totpUri)).toEqual('');
         expect(specialCharItem.content.urls).toEqual(['https://slashdot.org/']);
@@ -160,7 +164,8 @@ describe('Import 1password 1pux', () => {
         expect(passwordItem.modifyTime).toEqual(1688983483);
         expect(passwordItem.metadata.itemUuid).not.toBeUndefined();
         expect(deobfuscate(passwordItem.metadata.note)).toEqual('');
-        expect(deobfuscate(passwordItem.content.username)).toEqual('');
+        expect(deobfuscate(passwordItem.content.itemEmail)).toEqual('');
+        expect(deobfuscate(passwordItem.content.itemUsername)).toEqual('');
         expect(deobfuscate(passwordItem.content.password)).toEqual('f@LGRHG7BEcByVy--xTV8X4U');
         expect(deobfuscate(passwordItem.content.totpUri)).toEqual('');
         expect(passwordItem.content.urls).toEqual([]);
@@ -178,7 +183,8 @@ describe('Import 1password 1pux', () => {
         expect(autofillItem.modifyTime).toEqual(1688983572);
         expect(autofillItem.metadata.itemUuid).not.toBeUndefined();
         expect(deobfuscate(autofillItem.metadata.note)).toEqual('');
-        expect(deobfuscate(autofillItem.content.username)).toEqual('Username test');
+        expect(deobfuscate(autofillItem.content.itemEmail)).toEqual('');
+        expect(deobfuscate(autofillItem.content.itemUsername)).toEqual('Username test');
         expect(deobfuscate(autofillItem.content.password)).toEqual('password test');
         expect(deobfuscate(autofillItem.content.totpUri)).toEqual('');
         expect(autofillItem.content.urls).toEqual([]);
@@ -213,7 +219,8 @@ describe('Import 1password 1pux', () => {
         expect(archivedItem.modifyTime).toEqual(1688990961);
         expect(archivedItem.metadata.itemUuid).not.toBeUndefined();
         expect(deobfuscate(archivedItem.metadata.note)).toEqual('');
-        expect(deobfuscate(archivedItem.content.username)).toEqual('archived');
+        expect(deobfuscate(archivedItem.content.itemEmail)).toEqual('');
+        expect(deobfuscate(archivedItem.content.itemUsername)).toEqual('archived');
         expect(deobfuscate(archivedItem.content.password)).toEqual('password');
         expect(deobfuscate(archivedItem.content.totpUri)).toEqual('');
         expect(archivedItem.content.urls).toEqual([]);
@@ -229,7 +236,8 @@ describe('Import 1password 1pux', () => {
         expect(loginItem.modifyTime).toEqual(1675777506);
         expect(loginItem.metadata.itemUuid).not.toBeUndefined();
         expect(deobfuscate(loginItem.metadata.note)).toEqual('');
-        expect(deobfuscate(loginItem.content.username)).toEqual('username');
+        expect(deobfuscate(loginItem.content.itemEmail)).toEqual('');
+        expect(deobfuscate(loginItem.content.itemUsername)).toEqual('username');
         expect(deobfuscate(loginItem.content.password)).toEqual('password');
         expect(deobfuscate(loginItem.content.totpUri)).toEqual('');
         expect(loginItem.content.urls).toEqual([]);

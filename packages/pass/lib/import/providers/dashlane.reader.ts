@@ -6,7 +6,13 @@ import capitalize from '@proton/utils/capitalize';
 
 import { readCSV } from '../helpers/csv.reader';
 import { ImportProviderError } from '../helpers/error';
-import { getImportedVaultName, importCreditCardItem, importLoginItem, importNoteItem } from '../helpers/transformers';
+import {
+    getEmailOrUsername,
+    getImportedVaultName,
+    importCreditCardItem,
+    importLoginItem,
+    importNoteItem,
+} from '../helpers/transformers';
 import type { ImportPayload, ImportVault } from '../types';
 import type {
     DashlaneIdItem,
@@ -42,7 +48,7 @@ const processLoginItem = (item: DashlaneLoginItem): ItemImportIntent<'login'> =>
     importLoginItem({
         name: item.title,
         note: item.note,
-        username: item.username,
+        ...getEmailOrUsername(item.username),
         password: item.password,
         urls: [item.url],
         totp: item.otpSecret,
