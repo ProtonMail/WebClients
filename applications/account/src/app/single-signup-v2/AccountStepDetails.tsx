@@ -21,7 +21,6 @@ import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import { Challenge, ChallengeRef } from '@proton/components/containers';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import { BRAND_NAME, CALENDAR_APP_NAME, MAIL_APP_NAME, PLANS } from '@proton/shared/lib/constants';
-import { getEmailParts } from '@proton/shared/lib/helpers/email';
 import {
     confirmPasswordValidator,
     emailValidator,
@@ -41,6 +40,7 @@ import noop from '@proton/utils/noop';
 
 import { usePublicTheme } from '../containers/PublicThemeProvider';
 import { AccountData, SignupType } from '../signup/interfaces';
+import { getAccountDetailsFromEmail } from './accountDetails';
 import { runAfterScroll } from './helper';
 import type { BaseMeasure, SignupModelV2 } from './interface';
 import type { AvailableExternalEvents, InteractCreateEvents, InteractFields, UserCheckoutEvents } from './measure';
@@ -61,42 +61,6 @@ const first = <T,>(errors: T[]) => {
 
 const emailAsyncValidator = createAsyncValidator(validateEmailAvailability);
 const usernameAsyncValidator = createAsyncValidator(validateUsernameAvailability);
-
-const getAccountDetailsFromEmail = ({
-    email,
-    domains,
-    defaultDomain,
-}: {
-    email: string;
-    domains: string[];
-    defaultDomain: string | undefined;
-}) => {
-    const [local, domain] = getEmailParts(email);
-
-    const protonDomain = (() => {
-        if (!domain && defaultDomain) {
-            return defaultDomain;
-        }
-        if (domain) {
-            const lowerCaseDomain = domain.toLowerCase();
-            return domains.find((domain) => lowerCaseDomain === domain);
-        }
-    })();
-
-    if (protonDomain) {
-        return {
-            signupType: SignupType.Username,
-            local,
-            domain: protonDomain,
-        };
-    }
-
-    return {
-        signupType: SignupType.Email,
-        local,
-        domain,
-    };
-};
 
 interface InputState {
     interactive: boolean;
