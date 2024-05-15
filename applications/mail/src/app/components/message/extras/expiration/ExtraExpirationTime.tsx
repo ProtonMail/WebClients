@@ -44,7 +44,7 @@ const ExtraExpirationTime = ({ message }: Props) => {
                 expirationTime: null,
             })
         );
-        createNotification({ text: c('Success').t`Message expiration cancelled` });
+        createNotification({ text: c('Success').t`Message expiration canceled` });
     };
 
     return (

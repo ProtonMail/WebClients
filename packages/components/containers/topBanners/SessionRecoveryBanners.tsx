@@ -164,7 +164,7 @@ const SessionRecoveryCancelledBanner = () => {
                 {
                     // translator: Full sentence "Password reset request cancelled (user@email.com). If you didn’t make this request, change your password now."
                     c('session_recovery:cancelled:info')
-                        .jt`Password reset request cancelled (${user.Email}). If you didn’t make this request, ${changePasswordLink}.`
+                        .jt`Password reset request canceled (${user.Email}). If you didn’t make this request, ${changePasswordLink}.`
                 }
             </TopBanner>
         </>
