@@ -1,3 +1,5 @@
+import type { Environment } from '@proton/shared/lib/interfaces';
+
 import type { ThemeSetting } from '../themes/themes';
 
 export type CHANGE_VIEW_TARGET = 'mail' | 'calendar' | 'account';
@@ -10,7 +12,7 @@ export type ElectronNotification = {
 };
 
 // This type must be updated in the Electron application as well
-export type IPCInboxDesktopFeature = 'ThemeSelection' | 'InAppPayments';
+export type IPCInboxDesktopFeature = 'ThemeSelection' | 'InAppPayments' | 'EarlyAccess';
 export type IPCInboxGetInfoMessage = { type: 'theme'; result: ThemeSetting };
 export type IPCInboxClientUpdateMessage =
     | { type: 'updateNotification'; payload: number }
@@ -23,7 +25,8 @@ export type IPCInboxClientUpdateMessage =
     | { type: 'trialEnd'; payload: 'trialEnded' | 'resetTrialEnded' }
     | { type: 'showNotification'; payload: ElectronNotification }
     | { type: 'updateLocale'; payload: string }
-    | { type: 'setTheme'; payload: ThemeSetting };
+    | { type: 'setTheme'; payload: ThemeSetting }
+    | { type: 'earlyAccess'; payload: Environment | undefined };
 export type IPCInboxClientUpdateMessageType = IPCInboxClientUpdateMessage['type'];
 
 /**

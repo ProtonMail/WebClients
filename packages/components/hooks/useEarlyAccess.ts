@@ -1,6 +1,9 @@
+import { useEffect } from 'react';
+
 import { Feature, FeatureCode } from '@proton/features';
 import { useLoading } from '@proton/hooks';
 import { updateEarlyAccess } from '@proton/shared/lib/api/settings';
+import { hasInboxDesktopFeature, invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
 import { doesNotSupportEarlyAccessVersion } from '@proton/shared/lib/helpers/browser';
 import { deleteCookie, getCookie, setCookie } from '@proton/shared/lib/helpers/cookies';
 import type { Environment } from '@proton/shared/lib/interfaces';
@@ -111,6 +114,12 @@ const useEarlyAccess = () => {
     const currentEnvironmentMatchesTargetEnvironment = normalizedVersionCookieAtLoad === targetEnvironment;
     const environmentIsDesynchronized = hasLoaded && !currentEnvironmentMatchesTargetEnvironment;
     const loading = earlyAccessScope.loading || loadingUpdate;
+
+    useEffect(() => {
+        if (hasInboxDesktopFeature('EarlyAccess')) {
+            invokeInboxDesktopIPC({ type: 'earlyAccess', payload: targetEnvironment });
+        }
+    }, [targetEnvironment]);
 
     return {
         value: Boolean(userSettings.EarlyAccess),
