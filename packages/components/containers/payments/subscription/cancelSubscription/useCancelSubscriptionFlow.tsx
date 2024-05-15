@@ -194,7 +194,7 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
 
         const cancelNotificationId = createNotification({
             type: 'info',
-            text: c('State').t`Cancelling your subscription, please wait`,
+            text: c('State').t`Canceling your subscription, please wait`,
             expiration: 99999,
         });
 
@@ -206,7 +206,7 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
                 })
             );
             await eventManager.call();
-            createNotification({ text: c('Success').t`You have successfully cancelled your subscription.` });
+            createNotification({ text: c('Success').t`You have successfully canceled your subscription.` });
         } finally {
             hideNotification(cancelNotificationId);
         }

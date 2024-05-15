@@ -52,9 +52,9 @@ const UserRemoveModal = ({ member: initialMember, organization, ...rest }: Props
     };
 
     const description = isInvitationPending
-        ? // translator: Info message when a user has been invited to an organization. Looks like: 'The invitation will be cancelled and the user won't be able to join Bernie's Family.'
+        ? // translator: Info message when a user has been invited to an organization. Looks like: 'The invitation will be canceled and the user won't be able to join Bernie's Family.'
           c('familyOffer_2023:Info')
-              .t`The invitation will be cancelled and the user won't be able to join ${organizationName}.`
+              .t`The invitation will be canceled and the user won't be able to join ${organizationName}.`
         : c('familyOffer_2023:Info')
               .t`The user's account will be moved to a ${BRAND_NAME} Unlimited plan for a 30-day free trial*.`;
 

@@ -44,7 +44,7 @@ const SelectAllMoveModal = ({
     };
 
     const getModalText = () => {
-        const scheduleAndSnoozeWarning = c('Info').t`Any scheduled or snoozed messages will be cancelled.`;
+        const scheduleAndSnoozeWarning = c('Info').t`Any scheduled or snoozed messages will be canceled.`;
 
         let sentenceBeginning;
         const destinationName = getLabelName(destinationID, labels, folders);
