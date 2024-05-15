@@ -15,3 +15,7 @@ export enum RELEASE_CATEGORIES {
     EARLY_ACCESS = 'EarlyAccess',
 }
 
+// TOOD import type { Environment } from '@proton/shared/lib/interfaces';
+export type Environment = 'alpha' | 'beta';
+
+

@@ -1,5 +1,6 @@
 import { IpcMainEvent, ipcMain, shell } from "electron";
 import { saveTrialStatus } from "../store/trialStore";
+import { setReleaseCategory } from "../store/settingsStore";
 import { clearStorage } from "../utils/helpers";
 import { refreshHiddenViews, setTrialEnded, updateView } from "../utils/view/viewManagement";
 import { handleIPCBadge, resetBadge, showNotification } from "./notification";
@@ -77,6 +78,10 @@ export const handleIPCCalls = () => {
                     setTheme(payload);
                     refreshHiddenViews();
                 }
+                break;
+            }
+            case 'earlyAccess': {
+                setReleaseCategory(payload)
                 break;
             }
             default:

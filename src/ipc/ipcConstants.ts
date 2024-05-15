@@ -1,9 +1,11 @@
 import { ThemeSetting } from "../utils/themes";
+import { Environment } from "../constants";
 import { TrialStatus } from "../store/trialStore";
 
 export const DESKTOP_FEATURES = {
     InAppPayments: true,
     ThemeSelection: true,
+    EarlyAccess: true,
 } as const;
 
 export type VIEW_TARGET = "mail" | "calendar" | "account";
@@ -33,7 +35,8 @@ export type IPCClientUpdateMessage =
     | { type: "changeView"; payload: VIEW_TARGET }
     | { type: "showNotification"; payload: ElectronNotification }
     | { type: "updateLocale"; payload: string }
-    | { type: "setTheme"; payload: ThemeSetting };
+    | { type: "setTheme"; payload: ThemeSetting }
+    | { type: "earlyAccess"; payload: Environment | undefined };
 
 export type IPCClientUpdateMessageType = IPCClientUpdateMessage["type"];
 export type IPCClientUpdateMessagePayload<T extends IPCClientUpdateMessageType> = Extract<
