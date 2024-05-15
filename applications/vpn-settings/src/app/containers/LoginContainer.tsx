@@ -26,6 +26,7 @@ const LoginContainer = ({ metaTags, onLogin, paths }: Props) => {
             metaTags={metaTags}
             paths={paths}
             toApp={APPS.PROTONVPN_SETTINGS}
+            productParam={APPS.PROTONVPN_SETTINGS}
             setupVPN={false}
             hasRemember={false}
             onLogin={async (data) => {

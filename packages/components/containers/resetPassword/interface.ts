@@ -1,3 +1,4 @@
+import { ProductParam } from '@proton/shared/lib/apps/product';
 import { AuthResponse } from '@proton/shared/lib/authentication/interface';
 import { APP_NAMES } from '@proton/shared/lib/constants';
 import { Address, Api, DecryptedKey, KeyTransparencyActivation, ResetSelfAudit } from '@proton/shared/lib/interfaces';
@@ -34,6 +35,7 @@ export interface ResetCacheResult {
     appName: APP_NAMES;
     username: string;
     persistent: boolean;
+    productParam: ProductParam;
     Methods: RecoveryMethod[];
     type: AccountType;
     method?: RecoveryMethod;

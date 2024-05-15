@@ -342,6 +342,7 @@ const MinimalLoginContainer = ({ onLogin, hasChallenge = false, ignoreUnlock = f
                                 authVersion: loginResult.authResult.authVersion,
                                 appName: APP_NAME,
                                 toApp: APP_NAME,
+                                productParam: APP_NAME,
                                 username,
                                 password,
                                 api: silentApi,
