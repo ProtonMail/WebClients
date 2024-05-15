@@ -154,6 +154,7 @@ const useShareMemberView = (rootShareId: string, linkId: string) => {
                 await addNewMember(invitee, permissions).then((invitation) => newInvitations.push(invitation));
             }
             setInvitations((oldInvitations: ShareInvitation[]) => [...oldInvitations, ...newInvitations]);
+            createNotification({ type: 'info', text: c('Notification').t`Access updated and shared` });
         });
     };
 
