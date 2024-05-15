@@ -250,12 +250,16 @@ export const selectAutosaveCandidate = (options: SelectAutosaveCandidatesOptions
         [
             selectItemsByDomain(options.subdomain, { protocol: null, isPrivate: false, shareIds: options.shareIds }),
             selectItemsByDomain(options.domain, { protocol: null, isPrivate: false, shareIds: options.shareIds }),
-            () => options.itemEmail,
+            () => options.userIdentifier,
         ],
-        (subdomainItems, domainItems, itemEmail) => {
+        (subdomainItems, domainItems, userIdentifier) => {
             const candidates = deduplicate(subdomainItems.concat(domainItems), itemEq);
-            if (!itemEmail) return candidates;
-            return candidates.filter(({ data }) => deobfuscate(data.content.itemEmail) === itemEmail);
+            if (!userIdentifier) return candidates;
+            return candidates.filter(
+                ({ data }) =>
+                    deobfuscate(data.content.itemEmail) === userIdentifier ||
+                    deobfuscate(data.content.itemUsername) === userIdentifier
+            );
         }
     );
 

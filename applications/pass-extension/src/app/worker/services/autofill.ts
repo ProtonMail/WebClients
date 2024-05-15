@@ -35,7 +35,8 @@ export const createAutoFillService = () => {
         if (item !== undefined && item.data.type === 'login') {
             store.dispatch(itemAutofilled({ shareId, itemId }));
             return {
-                itemEmail: deobfuscate(item.data.content.itemEmail),
+                /** For autofill we use the username if not empty, otherwise the email */
+                userIdentifier: deobfuscate(item.data.content.itemUsername) || deobfuscate(item.data.content.itemEmail),
                 password: deobfuscate(item.data.content.password),
             };
         }

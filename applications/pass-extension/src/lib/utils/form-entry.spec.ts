@@ -5,8 +5,8 @@ import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
 import { isFormEntryCommitted, isFormEntryPromptable, setFormEntryStatus, validateFormCredentials } from './form-entry';
 
-const getMockCredentials = (itemEmail: string = '', password: string = ''): FormCredentials => ({
-    itemEmail,
+const getMockCredentials = (userIdentifier: string = '', password: string = ''): FormCredentials => ({
+    userIdentifier,
     password,
 });
 const getMockFormSubmission = (status: FormEntryStatus, type: FormType, data?: FormCredentials): FormEntry => ({
