@@ -1,16 +1,11 @@
-import { useMemo, useState } from 'react';
+import { ChangeEvent, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
 import { WasmWallet } from '@proton/andromeda';
-import { Button } from '@proton/atoms/Button/Button';
-import { Input } from '@proton/atoms/Input/Input';
-import { Alert, ModalTwo } from '@proton/components/components';
-import ModalContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
-import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { IWasmApiWalletData } from '@proton/wallet';
 
+import { Button, Input, Modal } from '../../atoms';
 import { useBitcoinBlockchainContext } from '../../contexts';
 
 interface Props {
@@ -34,49 +29,49 @@ export const PassphraseInputModal = ({ wallet, isOpen, onClose, onConfirmPassphr
         }
     }, [network, passphrase, wallet.Wallet.Mnemonic]);
 
+    const error = useMemo(() => {
+        if (passphrase && fingerPrint !== wallet.Wallet.Fingerprint) {
+            return c('Wallet passphrase').t`Fingerprint doesn't match stored one`;
+        }
+
+        return null;
+    }, [passphrase, fingerPrint, wallet.Wallet.Fingerprint]);
+
     return (
-        <ModalTwo className="p-0" open={isOpen} onClose={onClose}>
-            <ModalTwoHeader title={wallet.Wallet.Name} />
-            <ModalContent>
-                <p className="color-hint text-justify mt-2 mb-6">
-                    {c('Wallet passphrase').t`To access this wallet, you need to input the passphrase`}
-                </p>
-
+        <Modal
+            className="p-0"
+            open={isOpen}
+            onClose={onClose}
+            title={wallet.Wallet.Name}
+            subline={c('Wallet passphrase').t`To access this wallet, you need to input the passphrase`}
+        >
+            <div className="flex flex-column">
                 <div className="flex flex-row mb-5">
-                    <label className="w-1/4 mr-2 text-semibold block mt-2" htmlFor="passphrase-input">
-                        <span>{c('Wallet passphrase').t`Passphrase`}</span>
-                    </label>
-
-                    <div className="w-2/4">
-                        <Input
-                            id="passphrase-input"
-                            placeholder={c('Wallet passphrase').t`Wallet passphrase`}
-                            value={passphrase}
-                            onChange={(event) => {
-                                setPassphrase(event.target.value);
-                            }}
-                        />
-                    </div>
+                    <Input
+                        id="passphrase-input"
+                        label={c('Wallet passphrase').t`Wallet passphrase`}
+                        placeholder={c('Wallet passphrase').t`My wallet passphrase`}
+                        value={passphrase}
+                        error={error}
+                        onChange={(event: ChangeEvent<HTMLInputElement>): void => {
+                            setPassphrase(event.target.value);
+                        }}
+                    />
                 </div>
 
-                <div className="flex flex-row">
-                    {fingerPrint !== wallet.Wallet.Fingerprint ? (
-                        <Alert type="warning">{c('Wallet passphrase').t`Fingerprint doesn't match stored one`}</Alert>
-                    ) : (
-                        <Alert type="success">{c('Wallet passphrase').t`Fingerprint matches stored one`}</Alert>
-                    )}
-                </div>
-            </ModalContent>
-
-            <ModalTwoFooter>
-                <Button onClick={() => onClose()} className="ml-auto">{c('Wallet passphrase').t`Cancel`}</Button>
                 <Button
-                    className="ml-3"
+                    pill
+                    disabled={!passphrase || Boolean(error)}
+                    className="block w-4/5 mx-auto mt-4 mb-2"
+                    shape="solid"
                     color="norm"
-                    // disabled={fingerPrint !== wallet.Wallet.Fingerprint}
-                    onClick={() => onConfirmPassphrase(passphrase)}
-                >{c('Wallet passphrase').t`Confirm`}</Button>
-            </ModalTwoFooter>
-        </ModalTwo>
+                    onClick={() => {
+                        onConfirmPassphrase(passphrase);
+                    }}
+                >
+                    {c('Wallet setup').t`Confirm`}
+                </Button>
+            </div>
+        </Modal>
     );
 };
