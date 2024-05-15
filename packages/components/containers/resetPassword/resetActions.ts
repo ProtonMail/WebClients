@@ -7,6 +7,7 @@ import { requestLoginResetToken } from '@proton/shared/lib/api/reset';
 import { getSettings } from '@proton/shared/lib/api/settings';
 import { GetMnemonicResetData, getMnemonicReset, mnemonicReset } from '@proton/shared/lib/api/settingsMnemonic';
 import { getRecoveryMethods, getUser } from '@proton/shared/lib/api/user';
+import { ProductParam } from '@proton/shared/lib/apps/product';
 import { AuthResponse, InfoResponse } from '@proton/shared/lib/authentication/interface';
 import { persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { APP_NAMES } from '@proton/shared/lib/constants';
@@ -109,6 +110,7 @@ export const handleNewPassword = async ({
                 addresses,
                 domains,
                 preAuthKTVerify,
+                productParam: cache.appName,
             });
             // Refetch the user to update the keys that got generated
             user = await api<{ User: tsUser }>(getUser()).then(({ User }) => User);
@@ -383,12 +385,14 @@ export const handleRequestRecoveryMethods = async ({
     setupVPN,
     appName,
     username,
+    productParam,
     persistent,
     api,
     ktActivation,
     resetSelfAudit,
 }: {
     setupVPN: boolean;
+    productParam: ProductParam;
     appName: APP_NAMES;
     username: string;
     persistent: boolean;
@@ -404,6 +408,7 @@ export const handleRequestRecoveryMethods = async ({
             await api(requestLoginResetToken({ Username: username, Email: username }));
             return {
                 cache: {
+                    productParam,
                     setupVPN,
                     appName,
                     username,
@@ -428,6 +433,7 @@ export const handleRequestRecoveryMethods = async ({
 
         return {
             cache: {
+                productParam,
                 setupVPN,
                 appName,
                 username,
