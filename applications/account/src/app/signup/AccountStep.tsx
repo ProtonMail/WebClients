@@ -40,6 +40,7 @@ import { getLocaleTermsURL } from '../content/helper';
 import Content from '../public/Content';
 import Header from '../public/Header';
 import Main from '../public/Main';
+import { getAccountDetailsFromEmail } from '../single-signup-v2/accountDetails';
 import Loader from './Loader';
 import { getSignupApplication } from './helper';
 import { SignupType } from './interfaces';
@@ -76,7 +77,6 @@ const AccountStep = ({
     onBack,
     title,
     subTitle,
-    defaultUsername,
     defaultEmail,
     signupTypes,
     signupType,
@@ -94,8 +94,8 @@ const AccountStep = ({
     const [, setRerender] = useState<any>();
     const [challengeLoading, setChallengeLoading] = useState(hasChallenge);
     const [challengeError, setChallengeError] = useState(false);
-    const [username, setUsername] = useState(defaultUsername || '');
-    const [email, setEmail] = useState(defaultEmail || '');
+    const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [maybeDomain, setDomain] = useState(domains?.[0] || ''); // This is set while domains are loading
@@ -130,6 +130,25 @@ const AccountStep = ({
         }
         withLoading(run()).catch(noop);
     };
+
+    useEffect(() => {
+        if (!domains.length || !defaultEmail) {
+            return;
+        }
+        const accountDetails = getAccountDetailsFromEmail({
+            email: defaultEmail,
+            domains,
+            defaultDomain: domain,
+        });
+        if (accountDetails.signupType === SignupType.Username) {
+            onChangeSignupType(accountDetails.signupType);
+            setUsername(accountDetails.local);
+            setDomain(accountDetails.domain);
+        } else if (signupTypes.includes(SignupType.Email)) {
+            onChangeSignupType(SignupType.Email);
+            setEmail(defaultEmail);
+        }
+    }, [defaultEmail, domains]);
 
     useEffect(() => {
         if (isLoadingView) {

@@ -592,8 +592,7 @@ const SignupContainer = ({
                         }
                         return c('Info').t`One account. All ${BRAND_NAME} services.`;
                     })()}
-                    defaultEmail={accountData?.email}
-                    defaultUsername={accountData?.username}
+                    defaultEmail={accountData?.username || accountData?.email || signupParameters.email}
                     signupTypes={signupTypes}
                     signupType={signupType.type}
                     onChangeSignupType={(type) => {
