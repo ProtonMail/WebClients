@@ -89,7 +89,7 @@ const ComposerAssistant = ({
     };
 
     const handleGenerateResult = (fulltext: string) => {
-        const cleanedText = onCleanGeneration?.(fulltext) || fulltext;
+        const cleanedText = onCleanGeneration ? onCleanGeneration(fulltext) : fulltext;
         setResult(cleanedText);
     };
 
