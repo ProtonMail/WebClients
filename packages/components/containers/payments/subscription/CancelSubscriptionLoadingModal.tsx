@@ -11,7 +11,7 @@ const CancelSubscriptionLoadingModal = (props: ModalProps) => {
                 style={{ '--h-custom': '18rem' }}
             >
                 <CircleLoader size="large" />
-                <p>{c('State').t`Cancelling your subscription, please wait`}</p>
+                <p>{c('State').t`Canceling your subscription, please wait`}</p>
             </ModalTwoContent>
         </ModalTwo>
     );

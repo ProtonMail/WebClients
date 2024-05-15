@@ -26,7 +26,7 @@ const MoveSnoozedModal = ({ isMessage, onResolve, onReject, onCloseCustomAction,
             ]}
             {...rest}
         >
-            {c('Info').t`Snoozing this conversation will be cancelled.`}
+            {c('Info').t`Snoozing this conversation will be canceled.`}
         </Prompt>
     );
 };
