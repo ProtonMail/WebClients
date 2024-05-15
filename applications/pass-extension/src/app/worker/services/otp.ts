@@ -51,7 +51,11 @@ export const createOTPService = () => {
         const otpItems = candidates.filter((item) => Boolean(item.data.content.totpUri.v));
 
         const match = submission
-            ? otpItems.find((item) => deobfuscate(item.data.content.itemEmail) === submission.data.itemEmail)
+            ? otpItems.find(
+                  (item) =>
+                      deobfuscate(item.data.content.itemEmail) === submission.data.userIdentifier ||
+                      deobfuscate(item.data.content.itemUsername) === submission.data.userIdentifier
+              )
             : otpItems[0];
 
         return match ? { shouldPrompt: true, shareId: match.shareId, itemId: match.itemId } : { shouldPrompt: false };

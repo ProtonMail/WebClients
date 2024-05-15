@@ -28,7 +28,7 @@ export type FormSubmission = {
 
 export type FormSubmitPayload = FormSubmission & { reason: string };
 export type FormIdentifier = `${TabId}:${string}`;
-export type FormCredentials = { itemEmail: string; password: string };
+export type FormCredentials = { userIdentifier: string; password: string };
 export type FormEntryBase = FormSubmission & { domain: string; scheme?: string; subdomain: MaybeNull<string> };
 
 export type FormEntry<T extends FormEntryStatus = FormEntryStatus> = FormEntryBase & {

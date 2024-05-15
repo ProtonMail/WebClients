@@ -32,7 +32,7 @@ export const validateFormCredentials = (
     credentials: FormCredentials,
     options: { type: `${FormType}`; partial: boolean }
 ): boolean => {
-    const itemEmail = credentials.itemEmail.trim();
+    const userIdentifier = credentials.userIdentifier.trim();
     const password = credentials.password.trim();
 
     switch (options.type) {
@@ -42,7 +42,7 @@ export const validateFormCredentials = (
              * in a situation where we missed the username field detection, as
              * such, when validating these forms as non-partial: consider the
              * presence of `password` as sufficient to validate. */
-            return Boolean(options.partial ? itemEmail || password : password);
+            return Boolean(options.partial ? userIdentifier || password : password);
 
         case 'password-change':
         case 'noop':

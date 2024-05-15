@@ -44,11 +44,11 @@ export const AutofillLogin: FC<Props> = ({ hostname, items, needsUpgrade }) => {
                         autogrow
                     />
                 ),
-                ...items.map(({ shareId, itemId, itemEmail, name, url }) => (
+                ...items.map(({ shareId, itemId, userIdentifier, name, url }) => (
                     <ListItem
                         key={itemId}
                         title={name}
-                        subTitle={itemEmail}
+                        subTitle={userIdentifier}
                         url={settings.loadDomainImages ? url : undefined}
                         icon="user"
                         onClick={() =>
@@ -57,10 +57,10 @@ export const AutofillLogin: FC<Props> = ({ hostname, items, needsUpgrade }) => {
                                     type: WorkerMessageType.AUTOFILL_SELECT,
                                     payload: { shareId, itemId },
                                 }),
-                                ({ itemEmail, password }) => {
+                                ({ userIdentifier, password }) => {
                                     forwardMessage({
                                         type: IFrameMessageType.DROPDOWN_AUTOFILL_LOGIN,
-                                        payload: { itemEmail, password },
+                                        payload: { userIdentifier, password },
                                     });
                                     close({ refocus: false });
                                 }
