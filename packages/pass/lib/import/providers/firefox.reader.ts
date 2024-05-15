@@ -4,7 +4,7 @@ import { msToEpoch } from '@proton/pass/utils/time/epoch';
 
 import { readCSV } from '../helpers/csv.reader';
 import { ImportProviderError } from '../helpers/error';
-import { getImportedVaultName, importLoginItem } from '../helpers/transformers';
+import { getEmailOrUsername, getImportedVaultName, importLoginItem } from '../helpers/transformers';
 import type { ImportPayload } from '../types';
 import type { FirefoxItem } from './firefox.types';
 
@@ -37,7 +37,7 @@ export const readFirefoxData = async (data: string): Promise<ImportPayload> => {
                         .map(
                             (item): ItemImportIntent<'login'> =>
                                 importLoginItem({
-                                    username: item.username,
+                                    ...getEmailOrUsername(item.username),
                                     password: item.password,
                                     urls: [item.url],
                                     createTime: item.timeCreated ? msToEpoch(Number(item.timeCreated)) : undefined,

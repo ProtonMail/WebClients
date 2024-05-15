@@ -44,7 +44,8 @@ describe('Import KeePass xml', () => {
         expect(loginItem.metadata.name).toEqual('Login item with note');
         expect(loginItem.metadata.note).toEqual('Login item');
         expect(loginItem.metadata.itemUuid).not.toBeUndefined();
-        expect(loginItem.content.username).toEqual('nobodyA@proton.me');
+        expect(loginItem.content.itemEmail).toEqual('nobodyA@proton.me');
+        expect(loginItem.content.itemUsername).toEqual('');
         expect(loginItem.content.password).toEqual('proton123');
         expect(loginItem.content.urls).toEqual(['https://account.proton.me/']);
         expect(loginItem.content.totpUri).toEqual(
@@ -86,7 +87,8 @@ describe('Import KeePass xml', () => {
         expect(loginItem.metadata.name).toEqual('Broken URL');
         expect(loginItem.metadata.note).toEqual('');
         expect(loginItem.metadata.itemUuid).not.toBeUndefined();
-        expect(loginItem.content.username).toEqual('');
+        expect(loginItem.content.itemEmail).toEqual('');
+        expect(loginItem.content.itemUsername).toEqual('');
         expect(loginItem.content.password).toEqual('');
         expect(loginItem.content.urls).toEqual([]);
         expect(loginItem.content.totpUri).toEqual('');
@@ -104,7 +106,8 @@ describe('Import KeePass xml', () => {
         expect(loginItem.metadata.name).toEqual('Login item');
         expect(loginItem.metadata.note).toEqual('');
         expect(loginItem.metadata.itemUuid).not.toBeUndefined();
-        expect(loginItem.content.username).toEqual('nobody@proton.me');
+        expect(loginItem.content.itemEmail).toEqual('nobody@proton.me');
+        expect(loginItem.content.itemUsername).toEqual('');
         expect(loginItem.content.password).toEqual('a bbbb c ');
         expect(loginItem.content.urls).toEqual([]);
         expect(loginItem.content.totpUri).toEqual('');
@@ -122,7 +125,8 @@ describe('Import KeePass xml', () => {
         expect(loginItem1.metadata.name).toEqual('Login item');
         expect(loginItem1.metadata.note).toEqual('some note');
         expect(loginItem1.metadata.itemUuid).not.toBeUndefined();
-        expect(loginItem1.content.username).toEqual('nobody@proton.me');
+        expect(loginItem1.content.itemEmail).toEqual('nobody@proton.me');
+        expect(loginItem1.content.itemUsername).toEqual('');
         expect(loginItem1.content.password).toEqual('proton123');
         expect(loginItem1.content.urls).toEqual(['https://account.proton.me/']);
         expect(loginItem1.content.totpUri).toEqual('');
@@ -135,7 +139,8 @@ describe('Import KeePass xml', () => {
         expect(loginItem2.metadata.name).toEqual('Broken URL');
         expect(loginItem2.metadata.note).toEqual('');
         expect(loginItem2.metadata.itemUuid).not.toBeUndefined();
-        expect(loginItem2.content.username).toEqual('nobody@proton.me');
+        expect(loginItem2.content.itemEmail).toEqual('nobody@proton.me');
+        expect(loginItem2.content.itemUsername).toEqual('');
         expect(loginItem2.content.password).toEqual('proton123');
         expect(loginItem2.content.urls).toEqual([]);
         expect(loginItem2.content.totpUri).toEqual('');

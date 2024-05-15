@@ -35,7 +35,8 @@ describe('Import 1password 1pif', () => {
         expect(loginItem1.type).toEqual('login');
 
         expect(deobfuscate(loginItem1.metadata.note)).toEqual('Item notes');
-        expect(deobfuscate(loginItem1.content.username)).toEqual('somewhere');
+        expect(deobfuscate(loginItem1.content.itemEmail)).toEqual('');
+        expect(deobfuscate(loginItem1.content.itemUsername)).toEqual('somewhere');
         expect(deobfuscate(loginItem1.content.password)).toEqual('somepassword with " in it');
         expect(loginItem1.content.urls[0]).toEqual('https://slashdot.org/');
         expect(loginItem1.content.urls.length).toEqual(1);
@@ -63,7 +64,8 @@ describe('Import 1password 1pif', () => {
         expect(passwordItem.metadata.itemUuid).not.toBeUndefined();
         expect(passwordItem.metadata.name).toEqual('Password');
         expect(deobfuscate(passwordItem.metadata.note)).toEqual('');
-        expect(deobfuscate(passwordItem.content.username)).toEqual('');
+        expect(deobfuscate(passwordItem.content.itemEmail)).toEqual('');
+        expect(deobfuscate(passwordItem.content.itemUsername)).toEqual('');
         expect(deobfuscate(passwordItem.content.password)).toEqual('f@LGRHG7BEcByVy--xTV8X4U');
         expect(deobfuscate(passwordItem.content.totpUri)).toEqual('');
         expect(passwordItem.content.urls).toEqual([]);
@@ -97,7 +99,8 @@ describe('Import 1password 1pif', () => {
         expect(loginItemMultiTOTP.metadata.name).toEqual('Login with TOTP');
         expect(loginItemMultiTOTP.metadata.itemUuid).not.toBeUndefined();
         expect(deobfuscate(loginItemMultiTOTP.metadata.note)).toEqual('');
-        expect(deobfuscate(loginItemMultiTOTP.content.username)).toEqual('john@wick.com');
+        expect(deobfuscate(loginItemMultiTOTP.content.itemEmail)).toEqual('john@wick.com');
+        expect(deobfuscate(loginItemMultiTOTP.content.itemUsername)).toEqual('');
         expect(deobfuscate(loginItemMultiTOTP.content.password)).toEqual('password');
         expect(deobfuscate(loginItemMultiTOTP.content.totpUri)).toEqual('');
         expect(loginItemMultiTOTP.content.urls).toEqual(['http://localhost:7777/dashboard/']);
@@ -128,7 +131,8 @@ describe('Import 1password 1pif', () => {
         expect(specialCharItem.metadata.itemUuid).not.toBeUndefined();
         expect(specialCharItem.metadata.name).toEqual('Credential with " in the name');
         expect(deobfuscate(specialCharItem.metadata.note)).toEqual('Item notes');
-        expect(deobfuscate(specialCharItem.content.username)).toEqual('somewhere');
+        expect(deobfuscate(specialCharItem.content.itemEmail)).toEqual('');
+        expect(deobfuscate(specialCharItem.content.itemUsername)).toEqual('somewhere');
         expect(deobfuscate(specialCharItem.content.password)).toEqual('somepassword with " in it');
         expect(deobfuscate(specialCharItem.content.totpUri)).toEqual('');
         expect(specialCharItem.content.urls).toEqual(['https://slashdot.org/']);
@@ -151,7 +155,8 @@ describe('Import 1password 1pif', () => {
         expect(autofillItem.metadata.itemUuid).not.toBeUndefined();
         expect(autofillItem.metadata.name).toEqual('Autofill Sample');
         expect(deobfuscate(autofillItem.metadata.note)).toEqual('');
-        expect(deobfuscate(autofillItem.content.username)).toEqual('username test');
+        expect(deobfuscate(autofillItem.content.itemEmail)).toEqual('');
+        expect(deobfuscate(autofillItem.content.itemUsername)).toEqual('username test');
         expect(deobfuscate(autofillItem.content.password)).toEqual('password test');
         expect(deobfuscate(autofillItem.content.totpUri)).toEqual('');
         expect(autofillItem.content.urls).toEqual([]);
