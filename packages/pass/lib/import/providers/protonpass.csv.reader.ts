@@ -41,6 +41,8 @@ export const readProtonPassCSV = async (data: string): Promise<ImportPayload> =>
             onError: (error) => warnings.push(error),
         });
 
+        const hasNoEmailColumn = result.items[0]?.email === undefined;
+
         const groupByVaults = groupByKey(result.items, 'vault');
 
         return {
@@ -57,7 +59,9 @@ export const readProtonPassCSV = async (data: string): Promise<ImportPayload> =>
                                 return importLoginItem({
                                     name: item.name,
                                     note: item.note,
-                                    username: item.username,
+                                    // If the email column is missing then it's an old CSV format where the username column is actually the email
+                                    email: hasNoEmailColumn ? item.username : item.email,
+                                    username: hasNoEmailColumn ? undefined : item.username,
                                     password: item.password,
                                     urls: item.url?.split(', '),
                                     totp: item.totp,
