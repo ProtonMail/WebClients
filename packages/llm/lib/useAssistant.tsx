@@ -12,6 +12,7 @@ import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 import { ASSISTANT_FEATURE_NAME, ASSISTANT_STATUS, UNLOAD_ASSISTANT_TIMEOUT } from './constants';
 import { GpuLlmManager } from './gpu';
 import {
+    PromptRejectedError,
     buildMLCConfig,
     getAssistantHasCompatibleBrowser,
     getAssistantHasCompatibleHardware,
@@ -632,9 +633,25 @@ export const AssistantProvider = ({
                 // If the promise is resolved, we cancelled it after a user interaction.
                 // We don't want to generate a result anymore.
                 if (llmModel.current && !isResolved) {
+                    let promptRejectedOnce = false;
                     const generationCallback = (fulltext: string) => {
+                        if (promptRejectedOnce) {
+                            return;
+                        }
                         generatedTokensNumber.current++;
-                        callback(fulltext);
+                        try {
+                            callback(fulltext);
+                        } catch (e) {
+                            if (e instanceof PromptRejectedError) {
+                                cancelAssistantRunningAction(assistantID);
+                                // todo: take UI action instead of console.log
+                                // eslint-disable-next-line no-console
+                                console.log('--- Prompt Rejected ---');
+                                promptRejectedOnce = true;
+                            } else {
+                                throw e;
+                            }
+                        }
                     };
 
                     const generationStart = performance.now();
