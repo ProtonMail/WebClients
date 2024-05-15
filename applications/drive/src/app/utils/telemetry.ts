@@ -59,13 +59,15 @@ export const measureExperimentalPerformance = <T>(
     result.finally(() => {
         performance.mark(endMark);
         const measure = performance.measure(measureName, startMark, endMark);
-        sendTelemetryFeaturePerformance(
-            api,
-            feature,
-            measure.duration,
-            applyTreatment ? ExperimentGroup.treatment : ExperimentGroup.control
-        );
-
+        // it can be undefined on browsers below Safari below 14.1 and Firefox 103
+        if (measure) {
+            sendTelemetryFeaturePerformance(
+                api,
+                feature,
+                measure.duration,
+                applyTreatment ? ExperimentGroup.treatment : ExperimentGroup.control
+            );
+        }
         performance.clearMarks(startMark);
         performance.clearMarks(endMark);
         performance.clearMeasures(measureName);
