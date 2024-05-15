@@ -4,36 +4,24 @@
 */
 export function setPanicHook(): void;
 /**
-* @param {string} word_start
-* @returns {(string)[]}
-*/
-export function getWordsAutocomplete(word_start: string): (string)[];
-/**
 * @param {WasmPsbt} psbt
 * @param {WasmAccount} account
 * @returns {Promise<WasmTransactionDetailsData>}
 */
 export function createTransactionFromPsbt(psbt: WasmPsbt, account: WasmAccount): Promise<WasmTransactionDetailsData>;
 /**
+* @param {string} word_start
+* @returns {(string)[]}
 */
-export enum WasmLanguage {
-  English = 0,
-  SimplifiedChinese = 1,
-  TraditionalChinese = 2,
-  Czech = 3,
-  French = 4,
-  Italian = 5,
-  Japanese = 6,
-  Korean = 7,
-  Spanish = 8,
-}
+export function getWordsAutocomplete(word_start: string): (string)[];
 /**
 */
-export enum WasmCoinSelection {
-  BranchAndBound = 0,
-  LargestFirst = 1,
-  OldestFirst = 2,
-  Manual = 3,
+export enum WasmWordCount {
+  Words12 = 0,
+  Words15 = 1,
+  Words18 = 2,
+  Words21 = 3,
+  Words24 = 4,
 }
 /**
 */
@@ -43,32 +31,11 @@ export enum WasmSortOrder {
 }
 /**
 */
-export enum WasmScriptType {
-  Legacy = 0,
-  NestedSegwit = 1,
-  NativeSegwit = 2,
-  Taproot = 3,
-}
-/**
-*/
-export enum WasmKeychainKind {
-/**
-* External keychain, used for deriving recipient addresses.
-*/
-  External = 0,
-/**
-* Internal keychain, used for deriving change addresses.
-*/
-  Internal = 1,
-}
-/**
-*/
-export enum WasmWordCount {
-  Words12 = 0,
-  Words15 = 1,
-  Words18 = 2,
-  Words21 = 3,
-  Words24 = 4,
+export enum WasmCoinSelection {
+  BranchAndBound = 0,
+  LargestFirst = 1,
+  OldestFirst = 2,
+  Manual = 3,
 }
 /**
 */
@@ -84,6 +51,19 @@ export enum WasmPaymentLinkKind {
   BitcoinURI = 1,
   LightningURI = 2,
   UnifiedURI = 3,
+}
+/**
+*/
+export enum WasmLanguage {
+  English = 0,
+  SimplifiedChinese = 1,
+  TraditionalChinese = 2,
+  Czech = 3,
+  French = 4,
+  Italian = 5,
+  Japanese = 6,
+  Korean = 7,
+  Spanish = 8,
 }
 /**
 */
@@ -104,6 +84,26 @@ export enum WasmNetwork {
 * Bitcoin's regtest network.
 */
   Regtest = 3,
+}
+/**
+*/
+export enum WasmKeychainKind {
+/**
+* External keychain, used for deriving recipient addresses.
+*/
+  External = 0,
+/**
+* Internal keychain, used for deriving change addresses.
+*/
+  Internal = 1,
+}
+/**
+*/
+export enum WasmScriptType {
+  Legacy = 0,
+  NestedSegwit = 1,
+  NativeSegwit = 2,
+  Taproot = 3,
 }
 export interface WasmApiWalletBitcoinAddressLookup {
     BitcoinAddress: string | null;
@@ -192,24 +192,6 @@ export interface WasmCreateWalletTransactionPayload {
     transaction_time: string | null;
 }
 
-export type WasmExchangeRateOrTransactionTimeEnum = "ExchangeRate" | "TransactionTime";
-
-export interface WasmExchangeRateOrTransactionTime {
-    key: WasmExchangeRateOrTransactionTimeEnum;
-    value: string;
-}
-
-export interface WasmTransactionData {
-    label: string | null;
-    exchange_rate_or_transaction_time: WasmExchangeRateOrTransactionTime;
-}
-
-export interface WasmEmailIntegrationData {
-    address_id: string | null;
-    subject: string | null;
-    body: string | null;
-}
-
 export interface WasmApiWalletBitcoinAddressLookup {
     BitcoinAddress: string | null;
     BitcoinAddressSignature: string | null;
@@ -242,15 +224,28 @@ export interface WasmUserSettings {
     TwoFactorAmountThreshold: number | null;
 }
 
+export type WasmExchangeRateOrTransactionTimeEnum = "ExchangeRate" | "TransactionTime";
+
+export interface WasmExchangeRateOrTransactionTime {
+    key: WasmExchangeRateOrTransactionTimeEnum;
+    value: string;
+}
+
+export interface WasmTransactionData {
+    label: string | null;
+    exchange_rate_or_transaction_time: WasmExchangeRateOrTransactionTime;
+}
+
+export interface WasmEmailIntegrationData {
+    address_id: string | null;
+    subject: string | null;
+    body: string | null;
+}
+
 export interface WasmAddressInfo {
     index: number;
     address: string;
     keychain: WasmKeychainKind;
-}
-
-export interface WasmPagination {
-    skip: number;
-    take: number;
 }
 
 export interface WasmTxOut {
@@ -275,6 +270,11 @@ export interface WasmTransactionTime {
     confirmed: boolean;
     confirmation_time: number | null;
     last_seen: number | null;
+}
+
+export interface WasmPagination {
+    skip: number;
+    take: number;
 }
 
 export type WasmBitcoinUnit = "BTC" | "MBTC" | "SATS";
@@ -316,9 +316,9 @@ export class WasmAccount {
 */
   getBalance(): Promise<WasmBalance>;
 /**
-* @returns {string}
+* @returns {Promise<string>}
 */
-  getDerivationPath(): string;
+  getDerivationPath(): Promise<string>;
 /**
 * @returns {Promise<WasmUtxoArray>}
 */
@@ -402,6 +402,29 @@ export class WasmApiBitcoinAddressesCreationPayload {
 /**
 */
   0: (WasmApiBitcoinAddressCreationPayloadData)[];
+}
+/**
+*/
+export class WasmApiClients {
+  free(): void;
+/**
+*/
+  bitcoin_address: WasmBitcoinAddressClient;
+/**
+*/
+  email_integration: WasmEmailIntegrationClient;
+/**
+*/
+  exchange_rate: WasmExchangeRateClient;
+/**
+*/
+  network: WasmNetworkClient;
+/**
+*/
+  settings: WasmSettingsClient;
+/**
+*/
+  wallet: WasmWalletClient;
 }
 /**
 */
@@ -806,38 +829,13 @@ export class WasmProtonWalletApiClient {
 /**
 * @param {string | undefined} [uid_str]
 * @param {string | undefined} [origin]
+* @param {string | undefined} [url_prefix]
 */
-  constructor(uid_str?: string, origin?: string);
+  constructor(uid_str?: string, origin?: string, url_prefix?: string);
 /**
-* Returns a client to use exchange rate API
-* @returns {WasmExchangeRateClient}
+* @returns {WasmApiClients}
 */
-  exchange_rate(): WasmExchangeRateClient;
-/**
-* Returns a client to use email integration API
-* @returns {WasmEmailIntegrationClient}
-*/
-  email_integration(): WasmEmailIntegrationClient;
-/**
-* Returns a client to use bitcoin address API
-* @returns {WasmBitcoinAddressClient}
-*/
-  bitcoin_address(): WasmBitcoinAddressClient;
-/**
-* Returns a client to use settings API
-* @returns {WasmSettingsClient}
-*/
-  settings(): WasmSettingsClient;
-/**
-* Returns a client to use network API
-* @returns {WasmNetworkClient}
-*/
-  network(): WasmNetworkClient;
-/**
-* Returns a client to use wallet API
-* @returns {WasmWalletClient}
-*/
-  wallet(): WasmWalletClient;
+  clients(): WasmApiClients;
 }
 /**
 */
@@ -952,9 +950,8 @@ export class WasmTransactionDetailsData {
 export class WasmTxBuilder {
   free(): void;
 /**
-* @param {WasmAccount} account
 */
-  constructor(account: WasmAccount);
+  constructor();
 /**
 * @param {WasmAccount} account
 * @returns {Promise<WasmTxBuilder>}

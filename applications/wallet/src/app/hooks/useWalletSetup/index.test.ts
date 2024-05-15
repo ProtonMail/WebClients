@@ -4,7 +4,7 @@ import { vi } from 'vitest';
 import { mockUseNotifications, mockUseUser, mockUseUserKey } from '@proton/testing/lib/vitest';
 
 import { useWalletSetup } from '.';
-import { mockUseBitcoinBlockchainContext, mockUseWalletApi, mockUseWalletDispatch } from '../../tests/mocks';
+import { mockUseBitcoinBlockchainContext, mockUseWalletApiClients, mockUseWalletDispatch } from '../../tests/mocks';
 import { mockUseDecryptedWallets } from '../../tests/mocks/useDecryptedWallet';
 import { WalletSetupScheme, WalletSetupStep } from './type';
 
@@ -16,7 +16,7 @@ describe('useWalletSetupModal', () => {
         mockUseWalletDispatch();
         mockUseDecryptedWallets();
         mockUseBitcoinBlockchainContext();
-        mockUseWalletApi();
+        mockUseWalletApiClients();
     });
 
     describe('onSetupSchemeChange', () => {

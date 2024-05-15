@@ -24,16 +24,16 @@ const modelThunk = createAsyncModelThunk<Model, ApiWalletsDataState, WalletThunk
     {
         miss: ({ extraArgument }) => {
             return extraArgument.walletApi
-                .wallet()
-                .getWallets()
+                .clients()
+                .wallet.getWallets()
                 .then(async (payload) => {
                     const wallets = payload[0];
 
                     return Promise.all(
                         wallets.map(async ({ Wallet, WalletKey, WalletSettings }) => {
                             const accounts: WasmApiWalletAccount[] = await extraArgument.walletApi
-                                .wallet()
-                                .getWalletAccounts(Wallet.ID)
+                                .clients()
+                                .wallet.getWalletAccounts(Wallet.ID)
                                 .then((accounts) => accounts[0].map((accountPayload) => accountPayload.Data))
                                 .catch(() => []);
 

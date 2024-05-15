@@ -4,18 +4,7 @@ import { act } from 'react-dom/test-utils';
 import { waitFor } from '@testing-library/react';
 import { renderHook } from '@testing-library/react-hooks';
 
-import {
-    WasmAccount,
-    WasmChangeSpendPolicy,
-    WasmCoinSelection,
-    WasmDerivationPath,
-    WasmLockTime,
-    WasmNetwork,
-    WasmOutPoint,
-    WasmScriptType,
-    WasmTxBuilder,
-    WasmWallet,
-} from '@proton/andromeda';
+import { WasmChangeSpendPolicy, WasmCoinSelection, WasmLockTime, WasmOutPoint, WasmTxBuilder } from '@proton/andromeda';
 
 import { useOnchainTransactionAdvancedOptions } from './useOnchainTransactionAdvancedOptions';
 
@@ -23,13 +12,7 @@ const outpointA = '89e48f05368f62c554f5e945d5a337550dbd2387fb74f7437302074feac04
 const outpointB = '405f80381da6a3b4408c62fbe49af3d3f8db2eb828021c0d2b6de3831f2ed1b1:1';
 
 describe('useOnchainTransactionAdvancedOptions', () => {
-    const wallet = new WasmWallet(
-        WasmNetwork.Testnet,
-        'category law logic swear involve banner pink room diesel fragile sunset remove whale lounge captain code hobby lesson material current moment funny vast fade'
-    );
-    const account = new WasmAccount(wallet, WasmScriptType.Taproot, WasmDerivationPath.fromString("m/86'/1'/0'"));
-
-    let txBuilder: WasmTxBuilder = new WasmTxBuilder(account);
+    let txBuilder: WasmTxBuilder = new WasmTxBuilder();
     const updater = vi.fn(async (update: (txBuilder: WasmTxBuilder) => WasmTxBuilder | Promise<WasmTxBuilder>) => {
         txBuilder = await update(txBuilder);
         return txBuilder;

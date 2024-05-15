@@ -13,7 +13,7 @@ import {
     IWasmApiWalletData,
     decryptWalletKey,
     encryptWalletDataWithWalletKey,
-    useWalletApi,
+    useWalletApiClients,
     walletAccountUpdate,
 } from '@proton/wallet';
 
@@ -32,7 +32,7 @@ export const useAccountPreferences = (
     const { createNotification } = useNotifications();
     const [userKeys] = useUserKeys();
 
-    const api = useWalletApi();
+    const api = useWalletApiClients();
     const dispatch = useDispatch();
 
     const [addresses] = useAddresses();
@@ -51,9 +51,11 @@ export const useAccountPreferences = (
             const [encryptedWalletName] = await encryptWalletDataWithWalletKey([label], decryptedKey);
 
             try {
-                const { Data: updatedAccount } = await api
-                    .wallet()
-                    .updateWalletAccountLabel(wallet.Wallet.ID, walletAccount.ID, encryptedWalletName);
+                const { Data: updatedAccount } = await api.wallet.updateWalletAccountLabel(
+                    wallet.Wallet.ID,
+                    walletAccount.ID,
+                    encryptedWalletName
+                );
 
                 createNotification({ text: c('Wallet Settings').t`Account name changed` });
                 dispatch(walletAccountUpdate({ walletID: updatedAccount.WalletID, account: updatedAccount }));
@@ -87,9 +89,11 @@ export const useAccountPreferences = (
     const onChangeFiatCurrency = async (fiatCurrency: WasmFiatCurrencySymbol) => {
         const promise = async () => {
             try {
-                const { Data: updatedAccount } = await api
-                    .wallet()
-                    .updateWalletAccountFiatCurrency(wallet.Wallet.ID, walletAccount.ID, fiatCurrency);
+                const { Data: updatedAccount } = await api.wallet.updateWalletAccountFiatCurrency(
+                    wallet.Wallet.ID,
+                    walletAccount.ID,
+                    fiatCurrency
+                );
 
                 createNotification({ text: c('Wallet Settings').t`New fiat currency applied` });
                 dispatch(walletAccountUpdate({ walletID: updatedAccount.WalletID, account: updatedAccount }));
@@ -109,9 +113,11 @@ export const useAccountPreferences = (
             let updatedAccount = walletAccount;
             for (const emailAddressId of emailAddressIds) {
                 try {
-                    const { Data } = await api
-                        .wallet()
-                        .addEmailAddress(wallet.Wallet.ID, walletAccount.ID, emailAddressId);
+                    const { Data } = await api.wallet.addEmailAddress(
+                        wallet.Wallet.ID,
+                        walletAccount.ID,
+                        emailAddressId
+                    );
                     updatedAccount = Data;
                 } catch {
                     createNotification({ type: 'error', text: c('Wallet Settings').t`Could not add email address` });
@@ -128,9 +134,11 @@ export const useAccountPreferences = (
     const onRemoveEmailAddress = async (emailAddressId: string) => {
         const promise = async () => {
             try {
-                const { Data: updatedAccount } = await api
-                    .wallet()
-                    .removeEmailAddress(wallet.Wallet.ID, walletAccount.ID, emailAddressId);
+                const { Data: updatedAccount } = await api.wallet.removeEmailAddress(
+                    wallet.Wallet.ID,
+                    walletAccount.ID,
+                    emailAddressId
+                );
 
                 createNotification({ text: c('Wallet Settings').t`Email address has been removed` });
                 dispatch(walletAccountUpdate({ walletID: updatedAccount.WalletID, account: updatedAccount }));
