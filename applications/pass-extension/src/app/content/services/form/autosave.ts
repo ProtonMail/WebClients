@@ -82,11 +82,11 @@ export const createAutosaveService = () => {
             /* Stash the form submission if it meets the following conditions:
              * - The form type is still detected on the current page.
              * - The form is not currently submitting
-             * - The submission is not "partial" or does not have a username value.
+             * - The submission is not "partial" or does not have a username/email value.
              * This prevents data loss on multi-step forms while properly stashing
              * when navigating back and forth on such forms. */
             if (submissionTypeMatch) {
-                if (valid || !data.itemEmail) {
+                if (valid || !data.userIdentifier) {
                     /** If the exact form is still present : flag it as not submitted */
                     if (form) form.tracker?.sync({ submit: false, partial: true, reset: true }).catch(noop);
                     else {

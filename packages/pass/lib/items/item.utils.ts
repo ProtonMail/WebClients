@@ -152,7 +152,8 @@ export const intoRevisionID = (item: ItemRevision): ItemRevisionID => ({
 
 export const intoSafeLoginItem = (item: ItemRevision<'login'>): SafeLoginItem => ({
     name: item.data.metadata.name,
-    itemEmail: deobfuscate(item.data.content.itemEmail),
+    /** For autofill we use the username if not empty, otherwise the email */
+    userIdentifier: deobfuscate(item.data.content.itemUsername) || deobfuscate(item.data.content.itemEmail),
     itemId: item.itemId,
     shareId: item.shareId,
     url: item.data.content.urls?.[0],

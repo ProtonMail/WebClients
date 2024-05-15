@@ -20,7 +20,7 @@ describe('AutosaveService [worker]', () => {
 
     describe('resolve', () => {
         const submission: FormEntry<FormEntryStatus.COMMITTED> = {
-            data: { itemEmail: 'test@proton.me', password: 'p4ssw0rd' },
+            data: { userIdentifier: 'test@proton.me', password: 'p4ssw0rd' },
             domain: 'domain.com',
             formId: uniqueId(),
             status: FormEntryStatus.COMMITTED,
@@ -37,15 +37,16 @@ describe('AutosaveService [worker]', () => {
         });
 
         test('should not prompt if form credentials are invalid', () => {
-            const result = autosave.resolve({ ...submission, data: { itemEmail: '', password: '' } });
+            const result = autosave.resolve({ ...submission, data: { userIdentifier: '', password: '' } });
             expect(result).toEqual({ shouldPrompt: false });
         });
 
-        test('should prompt for item update if match and password change', () => {
+        test('should prompt for item update if matching email and password change', () => {
             const item = itemBuilder('login');
             item.get('metadata').set('name', 'Domain.com');
             item.get('content')
-                .set('itemEmail', submission.data.itemEmail)
+                .set('itemEmail', submission.data.userIdentifier)
+                .set('itemUsername', '')
                 .set('password', '') /* different password */
                 .set('urls', ['https://domain.com/']);
 
@@ -64,18 +65,65 @@ describe('AutosaveService [worker]', () => {
                             shareId: mockShareId,
                             name: 'Domain.com',
                             url: 'https://domain.com/',
-                            itemEmail: 'test@proton.me',
+                            userIdentifier: 'test@proton.me',
                         },
                     ],
                 },
             });
         });
 
-        test('should not prompt for item update if match and no password change', () => {
+        test('should prompt for item update if matching username and password change', () => {
             const item = itemBuilder('login');
             item.get('metadata').set('name', 'Domain.com');
             item.get('content')
-                .set('itemEmail', submission.data.itemEmail)
+                .set('itemEmail', '')
+                .set('itemUsername', submission.data.userIdentifier)
+                .set('password', '') /* different password */
+                .set('urls', ['https://domain.com/']);
+
+            const revision = getMockItem(item.data);
+            const state = getMockState();
+            state.items.byShareId[mockShareId][revision.itemId] = revision;
+            store.getState.mockReturnValueOnce(state);
+
+            expect(autosave.resolve(submission)).toEqual({
+                shouldPrompt: true,
+                data: {
+                    type: AutosaveMode.UPDATE,
+                    candidates: [
+                        {
+                            itemId: revision.itemId,
+                            shareId: mockShareId,
+                            name: 'Domain.com',
+                            url: 'https://domain.com/',
+                            userIdentifier: 'test@proton.me',
+                        },
+                    ],
+                },
+            });
+        });
+
+        test('should not prompt for item update if matching email and no password change', () => {
+            const item = itemBuilder('login');
+            item.get('metadata').set('name', 'Domain.com');
+            item.get('content')
+                .set('itemEmail', submission.data.userIdentifier)
+                .set('password', submission.data.password) /* same password */
+                .set('urls', ['https://domain.com/']);
+
+            const revision = getMockItem(item.data);
+            const state = getMockState();
+            state.items.byShareId[mockShareId][revision.itemId] = revision;
+            store.getState.mockReturnValueOnce(state);
+
+            expect(autosave.resolve(submission)).toEqual({ shouldPrompt: false });
+        });
+
+        test('should not prompt for item update if matching username and no password change', () => {
+            const item = itemBuilder('login');
+            item.get('metadata').set('name', 'Domain.com');
+            item.get('content')
+                .set('itemUsername', submission.data.userIdentifier)
                 .set('password', submission.data.password) /* same password */
                 .set('urls', ['https://domain.com/']);
 
@@ -94,13 +142,13 @@ describe('AutosaveService [worker]', () => {
             expect(type).toEqual(WorkerMessageType.AUTOSAVE_REQUEST);
         });
 
-        test('should handle new item', async () => {
+        test('should handle new item with email', async () => {
             const response = sendMessage(
                 contentScriptMessage({
                     type: WorkerMessageType.AUTOSAVE_REQUEST,
                     payload: {
                         type: AutosaveMode.NEW,
-                        itemEmail: 'john@proton.me',
+                        userIdentifier: 'john@proton.me',
                         password: '123',
                         domain: 'proton.me',
                         name: 'Test item',
@@ -128,6 +176,40 @@ describe('AutosaveService [worker]', () => {
             await expect(response).resolves.toBe(true);
         });
 
+        test('should handle new item with username', async () => {
+            const response = sendMessage(
+                contentScriptMessage({
+                    type: WorkerMessageType.AUTOSAVE_REQUEST,
+                    payload: {
+                        type: AutosaveMode.NEW,
+                        userIdentifier: 'john',
+                        password: '123',
+                        domain: 'proton.me',
+                        name: 'Test item',
+                    },
+                })
+            );
+
+            const action = store.dispatch.mock.lastCall[0] as ReturnType<typeof itemCreationIntent>;
+            const created = action.payload as ItemCreateIntent<'login'>;
+
+            expect(itemCreationIntent.match(action)).toBe(true);
+            expect(created.metadata.name).toEqual('Test item');
+            expect(created.content.urls).toEqual(['https://proton.me/']);
+            expect(deobfuscate(created.content.itemUsername)).toEqual('john');
+            expect(deobfuscate(created.content.password)).toEqual('123');
+
+            action.meta.callback?.(
+                itemCreationSuccess({
+                    optimisticId: 'test-optimstic-id',
+                    shareId: mockShareId,
+                    item: getMockItem(action.payload),
+                })
+            );
+
+            await expect(response).resolves.toBe(true);
+        });
+
         test('should handle new item with passkey', async () => {
             const passkey = getMockPasskey();
 
@@ -136,7 +218,7 @@ describe('AutosaveService [worker]', () => {
                     type: WorkerMessageType.AUTOSAVE_REQUEST,
                     payload: {
                         type: AutosaveMode.NEW,
-                        itemEmail: passkey.userName,
+                        userIdentifier: passkey.userName,
                         password: '',
                         domain: 'proton.me',
                         passkey,
@@ -188,7 +270,7 @@ describe('AutosaveService [worker]', () => {
                         password: 'new-password',
                         shareId: mockShareId,
                         type: AutosaveMode.UPDATE,
-                        itemEmail: 'test@proton.me',
+                        userIdentifier: 'test@proton.me',
                     },
                 })
             );
@@ -221,7 +303,7 @@ describe('AutosaveService [worker]', () => {
                         password: 'new-password',
                         shareId: mockShareId,
                         type: AutosaveMode.UPDATE,
-                        itemEmail: 'test@proton.me',
+                        userIdentifier: 'test@proton.me',
                     },
                 })
             );
@@ -275,7 +357,7 @@ describe('AutosaveService [worker]', () => {
                         password: '',
                         shareId: mockShareId,
                         type: AutosaveMode.UPDATE,
-                        itemEmail: newPasskey.userName,
+                        userIdentifier: newPasskey.userName,
                     },
                 })
             );
