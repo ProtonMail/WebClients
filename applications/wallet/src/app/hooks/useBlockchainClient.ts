@@ -3,5 +3,5 @@ import { useWalletApi } from '@proton/wallet';
 
 export const useBlockchainClient = () => {
     const api = useWalletApi();
-    return new WasmBlockchainClient(api)
+    return new WasmBlockchainClient(api);
 };

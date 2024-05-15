@@ -9,7 +9,7 @@ import {
     IWasmApiWalletData,
     decryptWalletKey,
     encryptWalletDataWithWalletKey,
-    useWalletApi,
+    useWalletApiClients,
     walletDeletion,
     walletNameUpdate,
 } from '@proton/wallet';
@@ -22,7 +22,7 @@ export const useWalletPreferences = (wallet: IWasmApiWalletData) => {
     const [showDeletionConfirmation, setShowDeletionConfirmation] = useState(false);
     const [walletDeletionInputValue, setWalletDeletionInputValue] = useState('');
     const [loadingDeletion, withLoadingDeletion] = useLoading();
-    const api = useWalletApi();
+    const api = useWalletApiClients();
     const { createNotification } = useNotifications();
     const dispatch = useWalletDispatch();
     const [userKeys] = useUserKeys();
@@ -30,7 +30,7 @@ export const useWalletPreferences = (wallet: IWasmApiWalletData) => {
     const handleWalletDeletion = () => {
         const promise = async () => {
             try {
-                await api.wallet().deleteWallet(wallet.Wallet.ID);
+                await api.wallet.deleteWallet(wallet.Wallet.ID);
 
                 createNotification({ text: c('Wallet Settings').t`Wallet was deleted` });
                 dispatch(
@@ -56,7 +56,7 @@ export const useWalletPreferences = (wallet: IWasmApiWalletData) => {
             const [encryptedWalletName] = await encryptWalletDataWithWalletKey([walletName], decryptedKey);
 
             try {
-                await api.wallet().updateWalletName(wallet.Wallet.ID, encryptedWalletName);
+                await api.wallet.updateWalletName(wallet.Wallet.ID, encryptedWalletName);
 
                 createNotification({ text: c('Wallet Settings').t`Wallet name changed` });
                 dispatch(

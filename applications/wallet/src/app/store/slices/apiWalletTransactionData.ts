@@ -33,8 +33,8 @@ const modelThunk = createAsyncModelThunk<
         const [walletId, walletAccountId, hashedTxIds] = options.thunkArg;
 
         const data = await extraArgument.walletApi
-            .wallet()
-            .getWalletTransactions(walletId, walletAccountId, hashedTxIds)
+            .clients()
+            .wallet.getWalletTransactions(walletId, walletAccountId, hashedTxIds)
             .then((data) => data[0]);
 
         const state = getState()[apiWalletTransactionDataSliceName].value;

@@ -24,8 +24,8 @@ export const selectSortedFiatCurrencies = (state: FiatCurrenciesState) => {
 const modelThunk = createAsyncModelThunk<Model, FiatCurrenciesState, WalletThunkArguments>(`${name}/fetch`, {
     miss: ({ extraArgument }) => {
         return extraArgument.walletApi
-            .exchange_rate()
-            .getAllFiatCurrencies()
+            .clients()
+            .exchange_rate.getAllFiatCurrencies()
             .then((currencies) => currencies[0].map((c) => c.Data));
     },
     previous: previousSelector(selectSortedFiatCurrencies),

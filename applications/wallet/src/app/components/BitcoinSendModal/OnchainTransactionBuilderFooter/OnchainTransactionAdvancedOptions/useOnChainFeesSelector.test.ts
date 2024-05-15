@@ -2,14 +2,7 @@ import { waitFor } from '@testing-library/react';
 import { renderHook } from '@testing-library/react-hooks';
 import { Mock } from 'vitest';
 
-import {
-    WasmAccount,
-    WasmDerivationPath,
-    WasmNetwork,
-    WasmScriptType,
-    WasmTxBuilder,
-    WasmWallet
-} from '@proton/andromeda';
+import { WasmTxBuilder } from '@proton/andromeda';
 
 import { getFeesEstimationMap, mockUseBitcoinBlockchainContext } from '../../../../tests';
 import { useOnChainFeesSelector } from './useOnChainFeesSelector';
@@ -18,19 +11,13 @@ describe('useOnChainFeesSelector', () => {
     let updateTxBuilder: Mock;
     let txBuilder: WasmTxBuilder;
 
-    const wallet = new WasmWallet(
-        WasmNetwork.Testnet,
-        'category law logic swear involve banner pink room diesel fragile sunset remove whale lounge captain code hobby lesson material current moment funny vast fade'
-    );
-    const account = new WasmAccount(wallet, WasmScriptType.Taproot, WasmDerivationPath.fromString("m/86'/1'/0'"));
-
     beforeEach(() => {
         updateTxBuilder = vi.fn().mockImplementation(async (updater) => {
             txBuilder = await updater(txBuilder);
             return txBuilder;
         });
 
-        txBuilder = new WasmTxBuilder(account);
+        txBuilder = new WasmTxBuilder();
 
         mockUseBitcoinBlockchainContext({ feesEstimation: getFeesEstimationMap() });
     });

@@ -10,7 +10,7 @@ import useLoading from '@proton/hooks/useLoading';
 import { getAndVerifyApiKeys } from '@proton/shared/lib/api/helpers/getAndVerifyApiKeys';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import { Recipient } from '@proton/shared/lib/interfaces';
-import { useWalletApi } from '@proton/wallet';
+import { useWalletApiClients } from '@proton/wallet';
 
 import { Button } from '../../atoms';
 import { MAX_RECIPIENTS_PER_TRANSACTIONS } from '../../constants/email-integration';
@@ -34,7 +34,7 @@ export const RecipientsSelection = ({ recipientHelpers, txBuilder, onRecipientsC
     const { contactEmails, contactEmailsMap } = useContactEmailsCache();
     const [loadingBitcoinAddressLookup, withLoadingBitcoinAddressLookup] = useLoading();
     const [network] = useBitcoinNetwork();
-    const walletApi = useWalletApi();
+    const walletApi = useWalletApiClients();
     const api = useApi();
 
     const safeAddRecipient = (
@@ -58,9 +58,9 @@ export const RecipientsSelection = ({ recipientHelpers, txBuilder, onRecipientsC
         for (const recipientOrBitcoinAddress of recipientOrBitcoinAddresses.slice(0, remainingSlot)) {
             if (validateEmailAddress(recipientOrBitcoinAddress?.Address)) {
                 try {
-                    const bitcoinAddress = await walletApi
-                        .email_integration()
-                        .lookupBitcoinAddress(recipientOrBitcoinAddress.Address);
+                    const bitcoinAddress = await walletApi.email_integration.lookupBitcoinAddress(
+                        recipientOrBitcoinAddress.Address
+                    );
 
                     const btcAddress = bitcoinAddress.Data.BitcoinAddress;
                     const btcAddressSignature = bitcoinAddress.Data.BitcoinAddressSignature;

@@ -33,8 +33,8 @@ const modelThunk = createAsyncModelThunk<
         const [walletId, walletAccountId] = options?.thunkArg;
 
         const index = await extraArgument.walletApi
-            .bitcoin_address()
-            .getBitcoinAddressHighestIndex(walletId, walletAccountId)
+            .clients()
+            .bitcoin_address.getBitcoinAddressHighestIndex(walletId, walletAccountId)
             .then((data) => Number(data))
             .catch(() => 0);
 

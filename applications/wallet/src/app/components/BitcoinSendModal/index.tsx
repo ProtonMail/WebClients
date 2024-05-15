@@ -9,7 +9,6 @@ import { IWasmApiWalletData } from '@proton/wallet';
 import { FullscreenModal } from '../../atoms/FullscreenModal';
 import { useBitcoinBlockchainContext } from '../../contexts';
 import { useTxBuilder } from '../../hooks/useTxBuilder';
-import { AccountWithChainData } from '../../types';
 import { getAccountWithChainDataFromManyWallets } from '../../utils';
 import { useEmailAndBtcAddressesMaps } from '../EmailOrBitcoinAddressInput/useEmailAndBtcAddressesMaps';
 import { AmountInput } from './AmountInput';
@@ -48,7 +47,7 @@ export const BitcoinSendModal = ({ wallet, account, ...modalProps }: Props) => {
 
     const wasmAccount = getAccountWithChainDataFromManyWallets(walletsChainData, wallet?.Wallet.ID, account?.ID);
 
-    const { txBuilder, updateTxBuilder } = useTxBuilder(wasmAccount as AccountWithChainData);
+    const { txBuilder, updateTxBuilder } = useTxBuilder();
 
     // TODO: use this later with fee selector, for now it only set default fees for 5th next block
     useOnChainFeesSelector(txBuilder, updateTxBuilder);

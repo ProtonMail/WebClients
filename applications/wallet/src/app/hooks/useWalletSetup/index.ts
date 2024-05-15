@@ -7,7 +7,7 @@ import { c } from 'ttag';
 import { WasmDerivationPath, WasmMnemonic, WasmWallet, WasmWordCount } from '@proton/andromeda';
 import { useNotifications, useUserKeys } from '@proton/components/hooks';
 import { encryptWalletData } from '@proton/wallet';
-import { WalletType, useWalletApi, walletCreation } from '@proton/wallet';
+import { WalletType, useWalletApiClients, walletCreation } from '@proton/wallet';
 
 import { DEFAULT_ACCOUNT_LABEL, DEFAULT_SCRIPT_TYPE, purposeByScriptType } from '../../constants';
 import { useBitcoinBlockchainContext } from '../../contexts';
@@ -53,7 +53,7 @@ export const useWalletSetup = ({ schemeAndData: initSchemeAndData, onSetupFinish
 
     const [userKeys] = useUserKeys();
 
-    const api = useWalletApi();
+    const api = useWalletApiClients();
     const dispatch = useWalletDispatch();
 
     const steps = getSetupStepsFromScheme(schemeAndData?.scheme);
@@ -109,8 +109,7 @@ export const useWalletSetup = ({ schemeAndData: initSchemeAndData, onSetupFinish
             return;
         }
 
-        await api
-            .wallet()
+        await api.wallet
             .createWallet(
                 encryptedName,
                 isImported,
@@ -131,8 +130,7 @@ export const useWalletSetup = ({ schemeAndData: initSchemeAndData, onSetupFinish
 
                 // Typeguard
                 const account = encryptedFirstAccountLabel
-                    ? await api
-                          .wallet()
+                    ? await api.wallet
                           .createWalletAccount(
                               Wallet.ID,
                               derivationPath,
@@ -141,6 +139,8 @@ export const useWalletSetup = ({ schemeAndData: initSchemeAndData, onSetupFinish
                           )
                           .catch(noop)
                     : undefined;
+
+                // TODO: add email integration here?
 
                 dispatch(
                     walletCreation({

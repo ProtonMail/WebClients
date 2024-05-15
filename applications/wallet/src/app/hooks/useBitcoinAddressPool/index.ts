@@ -5,7 +5,7 @@ import { compact } from 'lodash';
 import { WasmApiBitcoinAddressesCreationPayload } from '@proton/andromeda';
 import { useAddressesKeys } from '@proton/components/hooks';
 import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto/lib';
-import { IWasmApiWalletData, useWalletApi } from '@proton/wallet';
+import { IWasmApiWalletData, useWalletApiClients } from '@proton/wallet';
 
 import { POOL_FILLING_THRESHOLD } from '../../constants/email-integration';
 import { useGetBitcoinAddressHighestIndex } from '../../store/hooks/useBitcoinAddressHighestIndex';
@@ -18,7 +18,7 @@ export const useBitcoinAddressPool = ({
     decryptedApiWalletsData?: IWasmApiWalletData[];
     walletsChainData: Partial<Record<string, WalletWithChainData>>;
 }) => {
-    const api = useWalletApi();
+    const api = useWalletApiClients();
 
     const getBitcoinAddressHighestIndex = useGetBitcoinAddressHighestIndex();
     const [addresses] = useAddressesKeys();
@@ -57,8 +57,7 @@ export const useBitcoinAddressPool = ({
 
                 let highestIndex = Math.max(highestApiIndex, highestNetworkIndexValue);
 
-                const unusedBitcoinAddress = await api
-                    .bitcoin_address()
+                const unusedBitcoinAddress = await api.bitcoin_address
                     .getBitcoinAddresses(walletId, walletAccountId)
                     .then((data) => data[0]);
 
@@ -96,7 +95,7 @@ export const useBitcoinAddressPool = ({
                     }
 
                     try {
-                        await api.bitcoin_address().addBitcoinAddress(walletId, walletAccountId, payload);
+                        await api.bitcoin_address.addBitcoinAddress(walletId, walletAccountId, payload);
                     } catch (e) {
                         console.error('Could not add new bitcoin addresses', e);
                     }
@@ -128,9 +127,12 @@ export const useBitcoinAddressPool = ({
                         const addressData = await computeAddressDataFromIndex(localHighestIndex);
                         highestIndex = localHighestIndex;
 
-                        await api
-                            .bitcoin_address()
-                            .updateBitcoinAddress(walletId, walletAccountId, addressToUpdate.Data.ID, addressData);
+                        await api.bitcoin_address.updateBitcoinAddress(
+                            walletId,
+                            walletAccountId,
+                            addressToUpdate.Data.ID,
+                            addressData
+                        );
                     } catch (e) {
                         console.error('Could not update bitcoin address', e);
                     }

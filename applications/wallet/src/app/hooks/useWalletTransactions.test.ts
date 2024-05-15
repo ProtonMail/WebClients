@@ -19,7 +19,7 @@ import { IWasmApiWalletData } from '@proton/wallet';
 import { buildMapFromWallets } from '@proton/wallet/utils/wallet';
 
 import { useGetApiWalletTransactionData } from '../store/hooks';
-import { mockUseBitcoinBlockchainContext, mockUseGetApiWalletTransactionData, mockUseWalletApi } from '../tests';
+import { mockUseBitcoinBlockchainContext, mockUseGetApiWalletTransactionData, mockUseWalletApiClients } from '../tests';
 import { getAddressKey, getUserKeys } from '../tests/utils/keys';
 import { useWalletTransactions } from './useWalletTransactions';
 
@@ -310,7 +310,7 @@ describe('useWalletTransactions', () => {
 
         mockedUpdateWalletTransactionHashedTxId.mockReset();
 
-        mockUseWalletApi({
+        mockUseWalletApiClients({
             wallet: {
                 getWalletTransactionsToHash: mockedGetWalletTransactionsToHash,
                 createWalletTransaction: mockedCreateWalletTransaction,

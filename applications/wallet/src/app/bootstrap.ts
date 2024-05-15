@@ -55,7 +55,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
                   })
                 : undefined) || (await bootstrap.loadSession({ authentication, api, pathname }));
 
-        const walletApi = new WasmProtonWalletApiClient(authentication.UID, window.location.origin);
+        const walletApi = new WasmProtonWalletApiClient(authentication.UID, window.location.origin, config.API_URL);
 
         const history = bootstrap.createHistory({ basename: session.payload.basename, path: session.payload.path });
         const unleashClient = bootstrap.createUnleash({ api: silentApi });

@@ -19,7 +19,7 @@ import { mockUseAddressKeys, mockUseNotifications } from '@proton/testing/lib/vi
 
 import { useBitcoinAddressPool } from '.';
 import { useGetBitcoinAddressHighestIndex } from '../../store/hooks/useBitcoinAddressHighestIndex';
-import { mockUseWalletApi } from '../../tests';
+import { mockUseWalletApiClients } from '../../tests';
 import { mockUseGetBitcoinAddressHighestIndex } from '../../tests/mocks/useBitcoinAddressHighestIndex';
 import { getAddressKey } from '../../tests/utils/keys';
 
@@ -200,7 +200,7 @@ describe('useBitcoinAddressPool', () => {
             },
         };
 
-        mockUseWalletApi({
+        mockUseWalletApiClients({
             bitcoin_address: {
                 getBitcoinAddresses: mockedGetBitcoinAddresses,
                 addBitcoinAddress: mockedAddBitcoinAddresses,
