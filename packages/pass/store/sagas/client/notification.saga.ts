@@ -2,6 +2,7 @@ import type { Action } from 'redux';
 import { takeEvery } from 'redux-saga/effects';
 
 import { clientOffline } from '@proton/pass/lib/client';
+import { isActionWithSender } from '@proton/pass/store/actions/enhancers/endpoint';
 import type { WithNotification } from '@proton/pass/store/actions/enhancers/notification';
 import { isActionWithNotification } from '@proton/pass/store/actions/enhancers/notification';
 import { isActionWithRequest } from '@proton/pass/store/request/utils';
@@ -12,6 +13,8 @@ function* notificationWorker({ onNotification, getAppState }: RootSagaOptions, a
 
     /* discard notifications that should not be shown when offline */
     if (clientOffline(getAppState().status) && notification.offline === false) return;
+
+    if (isActionWithSender(action)) notification.endpoint = action.meta.sender?.endpoint;
 
     /* if the action has request metadata - use the
      * request id as the notification key in order to
