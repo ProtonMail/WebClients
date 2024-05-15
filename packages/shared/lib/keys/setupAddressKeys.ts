@@ -1,3 +1,5 @@
+import { ProductParam } from '@proton/shared/lib/apps/product';
+
 import { setupAddress as setupAddressRoute } from '../api/addresses';
 import { Api, PreAuthKTVerify, Address as tsAddress } from '../interfaces';
 import { handleSetupKeys } from './setupKeys';
@@ -29,6 +31,7 @@ interface SetupAddressKeysArgs {
     addresses: tsAddress[];
     domains: string[];
     preAuthKTVerify: PreAuthKTVerify;
+    productParam: ProductParam;
 }
 
 export const handleSetupAddressKeys = async ({
@@ -38,9 +41,10 @@ export const handleSetupAddressKeys = async ({
     addresses,
     domains,
     preAuthKTVerify,
+    productParam,
 }: SetupAddressKeysArgs) => {
     const addressesToUse =
         addresses?.length > 0 ? addresses : await handleSetupAddress({ api, domain: domains[0], username });
 
-    return handleSetupKeys({ api, addresses: addressesToUse, password, preAuthKTVerify });
+    return handleSetupKeys({ api, addresses: addressesToUse, password, preAuthKTVerify, product: productParam });
 };

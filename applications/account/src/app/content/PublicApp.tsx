@@ -840,6 +840,7 @@ const BasePublicApp = ({ onLogin }: Props) => {
                                                             onLogin={handleLogin}
                                                             setupVPN={setupVPN}
                                                             loginUrl={paths.login}
+                                                            productParam={productParam}
                                                         />
                                                     </UnAuthenticated>
                                                 </Route>
@@ -867,6 +868,7 @@ const BasePublicApp = ({ onLogin }: Props) => {
                                                             metaTags={getLoginMeta(maybePreAppIntent)}
                                                             toAppName={toAppName}
                                                             toApp={maybePreAppIntent}
+                                                            productParam={productParam}
                                                             showContinueTo={!!toOAuthName}
                                                             onLogin={handleLogin}
                                                             onBack={

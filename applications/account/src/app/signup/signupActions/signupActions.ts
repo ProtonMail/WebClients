@@ -462,10 +462,12 @@ const setupKeys = async ({
     api,
     ktActivation,
     password,
+    productParam,
 }: {
     password: string;
     api: Api;
     ktActivation: KeyTransparencyActivation;
+    productParam: ProductParam;
 }) => {
     // NOTE: For VPN signup, the API doesn't automatically create an address, so this will simply return an empty
     // array, and keys won't be setup.
@@ -483,6 +485,7 @@ const setupKeys = async ({
             addresses,
             password,
             preAuthKTVerify,
+            product: productParam,
         });
         keySetupData = {
             keyPassword,
@@ -517,6 +520,7 @@ export const handleSetupUser = async ({
         persistent,
         clientType,
         ktActivation,
+        productParam,
     } = cache;
 
     const userEmail = (() => {
@@ -543,14 +547,14 @@ export const handleSetupUser = async ({
         api,
         subscriptionData,
         referralData,
-        cache.productParam,
+        productParam,
         reportPaymentSuccess,
         reportPaymentFailure
     );
 
     api(updateLocale(localeCode)).catch(noop);
 
-    const { keySetupData, user, addresses } = await setupKeys({ api, ktActivation, password });
+    const { keySetupData, user, addresses } = await setupKeys({ api, ktActivation, password, productParam });
 
     const trusted = false;
     const { clientKey, offlineKey } = await persistSession({

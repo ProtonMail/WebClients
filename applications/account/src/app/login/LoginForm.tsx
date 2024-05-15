@@ -43,7 +43,7 @@ import Loader from '../signup/Loader';
 import SignupButton from './SignupButton';
 
 export interface LoginFormRef {
-    getIsLoading: () => void;
+    getIsLoading: () => boolean;
 }
 
 interface Props {
@@ -111,7 +111,7 @@ const LoginForm = ({
 
     useImperativeHandle(loginFormRef, () => ({
         getIsLoading: () => {
-            return loading || submitting || externalSSOState;
+            return Boolean(loading || submitting || externalSSOState);
         },
     }));
 

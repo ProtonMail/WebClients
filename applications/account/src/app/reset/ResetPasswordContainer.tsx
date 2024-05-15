@@ -32,6 +32,7 @@ import {
     handleValidateResetToken,
 } from '@proton/components/containers/resetPassword/resetActions';
 import { validateResetToken } from '@proton/shared/lib/api/reset';
+import { ProductParam } from '@proton/shared/lib/apps/product';
 import { APP_NAMES, BRAND_NAME } from '@proton/shared/lib/constants';
 import { decodeAutomaticResetParams } from '@proton/shared/lib/helpers/encoding';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
@@ -57,9 +58,10 @@ interface Props {
     setupVPN: boolean;
     loginUrl: string;
     metaTags: MetaTags;
+    productParam: ProductParam;
 }
 
-const ResetPasswordContainer = ({ metaTags, onLogin, setupVPN, loginUrl }: Props) => {
+const ResetPasswordContainer = ({ metaTags, onLogin, setupVPN, loginUrl, productParam }: Props) => {
     const { APP_NAME } = useConfig();
 
     useMetaTags(metaTags);
@@ -93,6 +95,7 @@ const ResetPasswordContainer = ({ metaTags, onLogin, setupVPN, loginUrl }: Props
         cacheRef.current = {
             setupVPN,
             appName: APP_NAME,
+            productParam,
             persistent: persistent ?? true,
             username: username ?? '',
             type: 'internal',
@@ -175,6 +178,7 @@ const ResetPasswordContainer = ({ metaTags, onLogin, setupVPN, loginUrl }: Props
                 cacheRef.current = {
                     setupVPN,
                     appName: APP_NAME,
+                    productParam,
                     persistent: persistent ?? true,
                     username: username ?? '',
                     Methods: [],
@@ -223,6 +227,7 @@ const ResetPasswordContainer = ({ metaTags, onLogin, setupVPN, loginUrl }: Props
                     const result = await handleValidateResetToken({
                         resetResponse,
                         cache: {
+                            productParam,
                             setupVPN,
                             appName: APP_NAME,
                             username,
@@ -302,6 +307,7 @@ const ResetPasswordContainer = ({ metaTags, onLogin, setupVPN, loginUrl }: Props
                                     const result = await handleRequestRecoveryMethods({
                                         setupVPN,
                                         appName: APP_NAME,
+                                        productParam,
                                         ktActivation,
                                         username,
                                         persistent,

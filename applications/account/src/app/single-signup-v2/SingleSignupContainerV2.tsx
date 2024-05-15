@@ -1077,6 +1077,7 @@ const SingleSignupContainerV2 = ({
             {preload}
             {renderLoginModal && (
                 <LoginModal
+                    productParam={productParam}
                     paths={paths}
                     {...loginModalProps}
                     defaultUsername={tmpLoginEmail}

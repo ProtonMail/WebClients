@@ -54,8 +54,8 @@ interface To {
     path: string;
 }
 
-const defaultToResult = { type: 'app', app: APPS.PROTONMAIL, path: '/' } as const;
-const defaultFromResult = { type: 'switch', app: APPS.PROTONACCOUNT, path: '/dashboard' } as const;
+const defaultToResult: To = { type: 'app', app: APPS.PROTONMAIL, path: '/' };
+const defaultFromResult: From = { type: 'switch', app: APPS.PROTONACCOUNT, path: '/dashboard' };
 
 const getApp = (app: string) => {
     if (app === APPS.PROTONVPN_SETTINGS) {
@@ -127,8 +127,8 @@ const SetupAddressContainer = () => {
     const normalApi = useApi();
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
     const errorHandler = useErrorHandler();
-    const toRef = useRef<To>(defaultToResult);
-    const fromRef = useRef<From>(defaultFromResult);
+    const toRef = useRef(defaultToResult);
+    const fromRef = useRef(defaultFromResult);
     const authentication = useAuthentication();
     const getUser = useGetUser();
     const { setThemeSetting } = useTheme();
@@ -242,8 +242,9 @@ const SetupAddressContainer = () => {
         return <AccountLoaderPage />;
     }
 
-    const to = toRef.current!;
-    const toAppName = getToAppName(to.app);
+    const to = toRef.current;
+    const toApp = to.app;
+    const toAppName = getToAppName(toApp);
 
     const generateAddress = generateAddressRef.current;
 
@@ -277,6 +278,7 @@ const SetupAddressContainer = () => {
                                     api: silentApi,
                                     password: payload.setup.loginPassword,
                                     preAuthKTVerify,
+                                    productParam: toApp,
                                 });
 
                                 await mutatePassword({
