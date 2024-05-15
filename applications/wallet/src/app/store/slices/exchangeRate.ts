@@ -48,8 +48,8 @@ const modelThunk = createAsyncModelThunk<
 
         try {
             const exchangeRate = await extraArgument.walletApi
-                .exchange_rate()
-                .getExchangeRate(fiat, ts)
+                .clients()
+                .exchange_rate.getExchangeRate(fiat, ts)
                 .then((data) => {
                     return data.Data;
                 });

@@ -3,10 +3,10 @@ import { SetStateAction, useCallback, useEffect, useMemo, useRef, useState } fro
 import { c } from 'ttag';
 
 import {
+    WasmApiClients,
     WasmApiWalletAccount,
     WasmApiWalletTransaction,
-    WasmProtonWalletApiClient,
-    WasmTransactionDetails,
+    WasmTransactionDetails
 } from '@proton/andromeda';
 import generateUID from '@proton/atoms/generateUID';
 import { useGetAddressKeys, useNotifications } from '@proton/components/hooks';
@@ -26,7 +26,7 @@ import {
     encryptArmoredData,
     encryptWalletDataWithWalletKey,
     hmac,
-    useWalletApi,
+    useWalletApiClients,
 } from '@proton/wallet';
 
 import { useBitcoinBlockchainContext } from '../contexts';
@@ -92,9 +92,9 @@ const decryptTransactionData = async (
     };
 };
 
-const getWalletTransactionsToHash = async (api: WasmProtonWalletApiClient, walletId: string) => {
+const getWalletTransactionsToHash = async (api: WasmApiClients, walletId: string) => {
     try {
-        const walletTransactionsToHash = await api.wallet().getWalletTransactionsToHash(walletId);
+        const walletTransactionsToHash = await api.wallet.getWalletTransactionsToHash(walletId);
         return walletTransactionsToHash[0];
     } catch {
         return [];
@@ -135,7 +135,7 @@ const keyTxNetworkDataByHashedTxId = async (transactions: WasmTransactionDetails
 };
 
 const addMissingHashToWalletTransactions = async (
-    api: WasmProtonWalletApiClient,
+    api: WasmApiClients,
     walletId: string,
     walletMap: WalletMap,
     transactionDataByHashedTxId: TransactionDataByHashedTxId,
@@ -178,8 +178,7 @@ const addMissingHashToWalletTransactions = async (
             const hashedTransactionID = uint8ArrayToBase64String(new Uint8Array(hashedTxIdBuffer));
 
             // TODO: maybe spawn an error message here?
-            await api
-                .wallet()
+            await api.wallet
                 .updateWalletTransactionHashedTxId(
                     walletId,
                     account.ID,
@@ -210,7 +209,7 @@ const addMissingHashToWalletTransactions = async (
 };
 
 const createMissingTxData = async (
-    api: WasmProtonWalletApiClient,
+    api: WasmApiClients,
     userKey: DecryptedKey,
     walletId: string,
     accountIdByDerivationPathAndWalletId: AccountIdByDerivationPathAndWalletId,
@@ -236,7 +235,7 @@ const createMissingTxData = async (
                 continue;
             }
 
-            const { Data: createdTransaction } = await api.wallet().createWalletTransaction(walletId, accountId, {
+            const { Data: createdTransaction } = await api.wallet.createWalletTransaction(walletId, accountId, {
                 txid,
                 hashed_txid: hashedTxId,
                 transaction_time: networkData.time?.confirmation_time
@@ -276,7 +275,7 @@ export const useWalletTransactions = ({
     wallet?: IWasmApiWalletData;
 }) => {
     const currentProcessUid = useRef(generateUID('use-wallet-transactions'));
-    const api = useWalletApi();
+    const api = useWalletApiClients();
 
     const getTransactionsApiData = useGetApiWalletTransactionData();
 
@@ -447,9 +446,12 @@ export const useWalletTransactions = ({
                     const decryptedKey = await decryptWalletKey(wallet.WalletKey.WalletKey, userKeys);
                     const [encryptedLabel] = await encryptWalletDataWithWalletKey([labelInput], decryptedKey);
 
-                    const { Data: updatedTx } = await api
-                        .wallet()
-                        .updateWalletTransactionLabel(WalletID, WalletAccountID, TransactionID, encryptedLabel ?? '');
+                    const { Data: updatedTx } = await api.wallet.updateWalletTransactionLabel(
+                        WalletID,
+                        WalletAccountID,
+                        TransactionID,
+                        encryptedLabel ?? ''
+                    );
 
                     const accountKeys = await getWalletAccountPrimaryAddressKeys(account);
                     const decryptedTransactionData = await decryptTransactionData(

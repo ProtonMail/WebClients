@@ -11,7 +11,7 @@ import {
     IWasmApiWalletData,
     decryptWalletKey,
     encryptWalletDataWithWalletKey,
-    useWalletApi,
+    useWalletApiClients,
     walletAccountCreation,
 } from '@proton/wallet';
 
@@ -53,7 +53,7 @@ export const AccountCreationModal = ({ apiWalletData, ...modalProps }: Props) =>
     const [userKeys] = useUserKeys();
     const dispatch = useWalletDispatch();
 
-    const api = useWalletApi();
+    const api = useWalletApiClients();
 
     const [selectedScriptType, setSelectedScriptType] = useState(WasmScriptType.NativeSegwit);
 
@@ -84,7 +84,7 @@ export const AccountCreationModal = ({ apiWalletData, ...modalProps }: Props) =>
             return;
         }
 
-        api.wallet()
+        api.wallet
             .createWalletAccount(Wallet.ID, derivationPath, encryptedLabel, selectedScriptType)
             .then(async (createdAccount) => {
                 createNotification({ text: c('Wallet Account').t`Your account was successfully created` });

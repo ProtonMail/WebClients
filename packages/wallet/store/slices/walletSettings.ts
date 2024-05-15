@@ -20,8 +20,8 @@ export const selectWalletSettings = (state: State) => state[name];
 const modelThunk = createAsyncModelThunk<Model, State, WalletThunkArguments>(`${name}/fetch`, {
     miss: ({ extraArgument }) => {
         return extraArgument.walletApi
-            .settings()
-            .getUserSettings()
+            .clients()
+            .settings.getUserSettings()
             .then((settingsData) => {
                 return settingsData[0];
             });

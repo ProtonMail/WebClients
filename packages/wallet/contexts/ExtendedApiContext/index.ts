@@ -7,7 +7,13 @@ export const ExtendedApiContext = createContext<{ walletApi: WasmProtonWalletApi
 export const useWalletApi = () => {
     const extendedApiContext = useContext(ExtendedApiContext);
 
-    if (!extendedApiContext) throw new Error('extended wallet API can only be used in ExtendedApiContext');
+    if (!extendedApiContext) {
+        throw new Error('extended wallet API can only be used in ExtendedApiContext');
+    }
 
     return extendedApiContext.walletApi;
+};
+
+export const useWalletApiClients = () => {
+    return useWalletApi().clients();
 };

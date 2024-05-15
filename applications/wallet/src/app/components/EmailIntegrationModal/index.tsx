@@ -13,13 +13,13 @@ import {
     TableBody,
     TableCell,
     TableHeader,
-    TableRow
+    TableRow,
 } from '@proton/components/components';
 import { useNotifications } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store';
 import { Address } from '@proton/shared/lib/interfaces';
-import { useWalletApi, walletAccountUpdate } from '@proton/wallet';
+import { useWalletApiClients, walletAccountUpdate } from '@proton/wallet';
 
 import { Modal } from '../../atoms';
 
@@ -34,14 +34,16 @@ export const EmailIntegrationModal = ({ addresses, account, ...modalProps }: Pro
     const { createNotification } = useNotifications();
 
     const options = addresses.map((addr) => ({ label: addr.Email, value: addr.ID }));
-    const api = useWalletApi();
+    const api = useWalletApiClients();
     const dispatch = useDispatch();
 
     const onAdd = async (emailAddressId: string) => {
         try {
-            const { Data: updatedAccount } = await api
-                .wallet()
-                .addEmailAddress(account.WalletID, account.ID, emailAddressId);
+            const { Data: updatedAccount } = await api.wallet.addEmailAddress(
+                account.WalletID,
+                account.ID,
+                emailAddressId
+            );
 
             createNotification({ text: c('Wallet Settings').t`Email address has been added` });
             dispatch(walletAccountUpdate({ walletID: updatedAccount.WalletID, account: updatedAccount }));
@@ -52,9 +54,11 @@ export const EmailIntegrationModal = ({ addresses, account, ...modalProps }: Pro
 
     const onRemove = async (emailAddressId: string) => {
         try {
-            const { Data: updatedAccount } = await api
-                .wallet()
-                .removeEmailAddress(account.WalletID, account.ID, emailAddressId);
+            const { Data: updatedAccount } = await api.wallet.removeEmailAddress(
+                account.WalletID,
+                account.ID,
+                emailAddressId
+            );
 
             createNotification({ text: c('Wallet Settings').t`Email address has been removed` });
             dispatch(walletAccountUpdate({ walletID: updatedAccount.WalletID, account: updatedAccount }));
