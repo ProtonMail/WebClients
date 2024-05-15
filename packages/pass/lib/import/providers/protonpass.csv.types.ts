@@ -10,6 +10,7 @@ export type ProtonPassCSVItem = {
     totp?: string;
     type?: ItemType;
     url?: string;
+    email?: string; // Added in ContentFormatVersion 5
     username?: string;
     vault?: string;
 };

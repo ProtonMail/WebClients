@@ -23,6 +23,7 @@ export type ExportCSVItem = {
     totp: string;
     type: ItemType;
     url: string;
+    email: string;
     username: string;
     vault: string;
 };
