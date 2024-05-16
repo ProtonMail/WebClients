@@ -285,7 +285,6 @@ export const eventManager = async ({
 export const loadCrypto = ({ appName, unleashClient }: { unleashClient: UnleashClient; appName: APP_NAMES }) => {
     return loadCryptoWorker(
         getCryptoWorkerOptions(appName, {
-            checkEdDSAFaultySignatures: unleashClient.isEnabled('EdDSAFaultySignatureCheck'),
             v6Canary: unleashClient.isEnabled('CryptoCanaryOpenPGPjsV6'),
         })
     );

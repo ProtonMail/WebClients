@@ -51,7 +51,7 @@ export async function setupCryptoProxyForTesting() {
     const { Api: CryptoApi } = useV6Canary
         ? await import('@proton/crypto/lib/worker/api_v6_canary')
         : await import('@proton/crypto/lib/worker/api');
-    CryptoApi.init({});
+    CryptoApi.init();
     CryptoProxy.setEndpoint(
         // @ts-ignore the v6 canary is effectively compatible
         new CryptoApi(),
