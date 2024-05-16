@@ -187,7 +187,11 @@ export const updateView = (target: VIEW_TARGET) => {
         return;
     }
 
-    Logger.info("unsupported view", target);
+    if (target === currentViewID) {
+        Logger.warn(target, "view is already current view");
+    } else {
+        Logger.warn("unsupported view", target);
+    }
 };
 
 export const refreshHiddenViews = () => {
