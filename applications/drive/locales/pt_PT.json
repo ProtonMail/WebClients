@@ -12,6 +12,11 @@
         "Reencaminhamento de correio interrompido"
       ]
     },
+    "Account Settings - Info": {
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "As suas informações foram encontradas em pelo menos uma fuga de dados. Ative ${ DARK_WEB_MONITORING_NAME } para ver os detalhes e tomar meididas. ${ link }"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "Loja ${ BRAND_NAME }"
@@ -269,7 +274,7 @@
         "Transferir assim mesmo"
       ],
       "Download apps": [
-        "Descarregar as aplicações"
+        "Transferir as aplicações"
       ],
       "Download logs": [
         "Transferir os registos"
@@ -325,6 +330,9 @@
       "Fit to window": [
         "Ajustar na janela"
       ],
+      "Forgot password?": [
+        "Esqueci-me da palavra-passe?"
+      ],
       "Forward as attachment": [
         "Encaminhar como anexo"
       ],
@@ -338,6 +346,9 @@
         "Obter ligação"
       ],
       "Get started": [
+        "Começar"
+      ],
+      "Get Started": [
         "Começar"
       ],
       "Get verification code": [
@@ -354,6 +365,9 @@
       ],
       "Go to parent": [
         "Ir para a pasta principal"
+      ],
+      "Go to settings": [
+        "Ir para as definições"
       ],
       "Got it": [
         "Entendido"
@@ -433,8 +447,14 @@
       "Manage link": [
         "Gerir a ligação"
       ],
+      "Mark as resolved": [
+        "Marcar como resolvida"
+      ],
       "Mark for deletion": [
         "Marcar para eliminação"
+      ],
+      "Maximize": [
+        "Maximizar"
       ],
       "Maximize transfers": [
         "Maximizar transferências"
@@ -444,6 +464,9 @@
       ],
       "Merge contacts": [
         "Unir contactos"
+      ],
+      "Minimize": [
+        "Minimizar"
       ],
       "Minimize transfers": [
         "Minimizar transferências"
@@ -564,6 +587,9 @@
       ],
       "Report an issue": [
         "Reportar um problema"
+      ],
+      "Request a call": [
+        "Solicitar uma chamada"
       ],
       "Request a feature": [
         "Pedir uma funcionalidade"
@@ -955,6 +981,9 @@
       "${ n } month": [
         "${ n } mês",
         "os primeiros ${ n } meses"
+      ],
+      "the first month": [
+        "o primeiro mês"
       ]
     },
     "bf2023: Tooltip": {
@@ -1071,6 +1100,9 @@
       ],
       "Continue using ${ planTitle }": [
         "Continuar a utilizar ${ planTitle }"
+      ],
+      "Continue your subscription": [
+        "Continue a sua subscrição"
       ]
     },
     "Checkout row": {
@@ -2104,6 +2136,9 @@
       "I use a different ${ BRAND_NAME } account": [
         "Utilizo outra conta da ${ BRAND_NAME }."
       ],
+      "It doesn't do what I need": [
+        "Não faz o que eu preciso."
+      ],
       "Missing feature(s)": [
         "Funções ausentes"
       ],
@@ -2115,6 +2150,9 @@
       ],
       "Temporary need, may come back in the future": [
         "Trata-se de um requisito pontual de que poderei vir a necessitar no futuro."
+      ],
+      "The VPN is too slow": [
+        "A VPN está demasiada lenta."
       ]
     },
     "Downgrade modal exit survey title": {
@@ -2141,6 +2179,9 @@
     "drivePlus2024: Info": {
       "for the first month": [
         "pelo primeiro mês"
+      ],
+      "Limited-time offer": [
+        "Oferta por tempo limitado"
       ]
     },
     "Email body for description (description part)": {
@@ -2332,7 +2373,7 @@
         "O ficheiro \"${ item.name }\" não pode ser carregado devido ao erro \"${ error }\"."
       ],
       "File \"${ name }\" is already downloading": [
-        "O ficheiro \"${ name }\" já está a ser descarregado."
+        "O ficheiro \"${ name }\" já está a ser transferido."
       ],
       "File cannot be merged with folder": [
         "O ficheiro não pode ser unido à pasta."
@@ -2344,7 +2385,7 @@
         "O primeiro nome é demasiado longo"
       ],
       "Folder \"${ name }\" is already downloading": [
-        "A pasta \"${ name }\" já está a ser descarregada."
+        "A pasta \"${ name }\" já está a ser transferida."
       ],
       "Folder name cannot be empty.": [
         "O nome da pasta não pode estar vazio."
@@ -3770,6 +3811,9 @@
       "Close this screen to exit.": [
         "Feche este ecrã para sair."
       ],
+      "Coming soon": [
+        "Em breve"
+      ],
       "Conflict": [
         "Conflito"
       ],
@@ -3856,8 +3900,14 @@
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Não está a ver nada? Lembre-se de desativar os bloqueadores de pop-ups."
       ],
+      "Downgrade": [
+        "Optar por um plano inferior"
+      ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "A regressão terminará todas as ligações a servidores pagos do ${ VPN_APP_NAME }."
+      ],
+      "Download": [
+        "Transferir"
       ],
       "Download ${ name } app": [
         "Transfira a app ${ name }"
@@ -4128,6 +4178,9 @@
       "Last week": [
         "A semana passada"
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Aprenda como ${ staySaferOnlineLink }"
+      ],
       "Learn more": [
         "Saiba mais"
       ],
@@ -4164,11 +4217,17 @@
       "Mastercard SecureCode logo": [
         "Logotipo do MasterCard SecureCode"
       ],
+      "Medium Priority": [
+        "Prioridade média"
+      ],
       "Merged": [
         "Unido"
       ],
       "MM/YY": [
         "MM/AA"
+      ],
+      "Monitor accounts": [
+        "Monitor de contas"
       ],
       "More": [
         "Mais"
@@ -4257,6 +4316,9 @@
       ],
       "Owner": [
         "Proprietário"
+      ],
+      "password": [
+        "palavra-passe"
       ],
       "Paused": [
         "Em pausa"
@@ -4382,6 +4444,9 @@
       "Report has been sent": [
         "A denúncia foi enviada."
       ],
+      "Report link": [
+        "Reportar o link"
+      ],
       "Restore": [
         "Restaurar"
       ],
@@ -4396,6 +4461,9 @@
       ],
       "Restoring Photos... Please keep the tab open": [
         "A recuperar fotos... Por favor, mantenha o separador do seu navegador aberto"
+      ],
+      "Retry now": [
+        "Tente novamente agora"
       ],
       "Search cannot be enabled in this browser": [
         "A pesquisa não pode ser ativada neste navegador."
@@ -4439,8 +4507,8 @@
       "Share files with links": [
         "Partilhe ficheiros com ligações"
       ],
-      "Share with": [
-        "Partilhar com"
+      "Share via link settings": [
+        "Partilhar através das definições do link"
       ],
       "Share with anyone": [
         "Partilhar com o qualquer pessoa"
@@ -4450,6 +4518,9 @@
       ],
       "Shared link not found": [
         "A ligação partilhada não foi encontrada."
+      ],
+      "Shared with me": [
+        "Partilhado comigo"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "A assinatura não pode ser validada devido a um erro de rede. Tente novamente mais tarde."
@@ -4467,7 +4538,7 @@
         "Ignorado"
       ],
       "Some files failed to download. Try downloading the files again.": [
-        "Alguns ficheiros não foram descarregados. Tente descarregar os ficheiros novamente."
+        "Alguns ficheiros não foram transferidos. Tente descarregar os ficheiros novamente."
       ],
       "Some files failed to upload. Try uploading the files again.": [
         "Alguns ficheiros não puderam ser carregados. Tente carregar os ficheiros novamente."
@@ -4629,6 +4700,9 @@
       "Trash": [
         "Lixo"
       ],
+      "Trash is empty": [
+        "A pasta de lixo está vazia."
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Experimente novas funcionalidades, atualizações e produtos ${ BRAND_NAME } antes do lançamento público. Isto irá recarregar a aplicação"
       ],
@@ -4671,6 +4745,9 @@
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Utilize este formulário para nos notificar de ficheiros partilhados inadequados, ilegais,\nou ficheiros partilhados maliciosos. Está prestes a denunciar:"
       ],
+      "username": [
+        "nome de utilizador"
+      ],
       "Users": [
         "Utilizadores"
       ],
@@ -4688,6 +4765,9 @@
       ],
       "Visa Secure logo": [
         "Logo Visa Secure"
+      ],
+      "Want to sync files faster?": [
+        "Quer sincronizar ficheiros mais rapidamente?"
       ],
       "Warning": [
         "Aviso"
@@ -4861,6 +4941,9 @@
       ],
       "Your files will be encrypted and then saved.": [
         "Os seus ficheiros serão encriptados e guardados."
+      ],
+      "Your information was found on ${ displayedDate }": [
+        "As suas informações foram encontradas em ${ displayedDate }"
       ],
       "Your login information will not be saved after the import is completed.": [
         "A informação de início de sessão não será guardada após concluir a importação."
@@ -5408,6 +5491,9 @@
       "Set recovery method": [
         "Definir um método de recuperação"
       ],
+      "Shared on": [
+        "Partilhado em"
+      ],
       "Show indexing progress of Encrypted Search": [
         "Mostrar o progresso da indexação da pesquisa encriptada"
       ],
@@ -5597,6 +5683,12 @@
       "Shared": [
         "Partilhado"
       ],
+      "Shared with me": [
+        "Partilhado comigo"
+      ],
+      "stay safer online": [
+        "mantenha-se mais seguro conectado"
+      ],
       "Trash": [
         "Lixo"
       ],
@@ -5668,6 +5760,9 @@
       ]
     },
     "mailtrial2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Aplicativo para desktop ${ MAIL_APP_NAME }"
+      ],
       "10 email addresses": [
         "10 endereços de e-mail"
       ],
@@ -5720,11 +5815,17 @@
       "AVI video": [
         "Vídeo AVI"
       ],
+      "Binary data": [
+        "Dados binários"
+      ],
       "BZip archive": [
         "Arquivo BZIP"
       ],
       "BZip2 archive": [
         "Arquivo BZip2"
+      ],
+      "C-Shell script": [
+        "Script C-Shell"
       ],
       "Flash Video": [
         "Flash Video"
@@ -5732,8 +5833,14 @@
       "iCalendar format": [
         "Formato iCalendar"
       ],
+      "Icon format": [
+        "Formato de ícone"
+      ],
       "Image": [
         "Imagem"
+      ],
+      "Java Archive (JAR)": [
+        "Arquivo Java (JAR)"
       ],
       "JPEG images": [
         "Imagens JPEG"
@@ -5920,6 +6027,9 @@
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } com aliases hide-my-email Ilimitados"
       ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "Programa ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ size } attachment size": [
         "Anexos de ${ size }"
       ],
@@ -5940,6 +6050,9 @@
       ],
       "Admin console": [
         "Consola de administração"
+      ],
+      "Administration Panel": [
+        "Painel de administração"
       ],
       "Advanced sharing security": [
         "Segurança avançada de partilha"
@@ -5988,6 +6101,9 @@
       ],
       "Data breach monitoring (coming soon)": [
         "Monitoramento de violações de dados (em breve)"
+      ],
+      "Desktop app": [
+        "Aplicativo de desktop"
       ],
       "DNS leak prevention": [
         "Proteção contra vazamento de DNS"
@@ -6058,6 +6174,12 @@
       ],
       "Organize items with multiple vaults": [
         "Organize os itens com vários cofres"
+      ],
+      "Pass Monitor - premium features": [
+        "Pass Monitor - funcionalidades premium"
+      ],
+      "Passkeys supported": [
+        "Chaves de acesso suportadas"
       ],
       "Password-protected Emails": [
         "E-mails protegidos por palavra-passe"
@@ -6141,8 +6263,15 @@
       "Unlimited messages per day": [
         "Mensagens ilimitadas por dia"
       ],
+      "Unlimited vaults": [
+        "Cofres ilimitados"
+      ],
       "Unlimited volume/bandwidth": [
         "Largura de banda e volume ilimitados"
+      ],
+      "Up to ${ n } user": [
+        "Até ${ n } utilizador",
+        "Até ${ n } utilizadores"
       ],
       "Up to ${ totalStorageSize } storage": [
         "Até ${ totalStorageSize } de armazenamento"
@@ -6784,6 +6913,11 @@
         "Você"
       ]
     },
+    "pass_signup_2023: Info": {
+      "Secure vault sharing": [
+        "Partilha segura de cofre"
+      ]
+    },
     "Payment method option": {
       "Credit/debit card": [
         "Cartão de crédito/débito"
@@ -6804,6 +6938,9 @@
       ],
       "MM/YY": [
         "MM/AA"
+      ],
+      "Timeout exceeded": [
+        "O tempo limite foi excedido."
       ]
     },
     "Payments.Error": {
@@ -6812,6 +6949,9 @@
       ],
       "Invalid expiration date": [
         "A data de expiração é inválida."
+      ],
+      "Invalid security code": [
+        "O código de segurança não é válido."
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "O seu cartão foi recusado. Por favor, tente com outro cartão ou contacte o seu banco para autorizar esta compra."
@@ -6910,6 +7050,9 @@
       ],
       "Select state": [
         "Selecionar estado"
+      ],
+      "Set date": [
+        "Definir una data"
       ],
       "Start typing an email address": [
         "Comece a escrever um endereço de e-mail"
@@ -7037,6 +7180,11 @@
         "Usado na Amazon para compras, etc."
       ]
     },
+    "Security Center (link to Pass App)": {
+      "(will open ${ PASS_APP_NAME })": [
+        "(abrirá ${ PASS_APP_NAME })"
+      ]
+    },
     "Security Center - Action": {
       "View logs": [
         "Ver os registos"
@@ -7125,19 +7273,9 @@
         "Introduza a sua palavra-passe atual para cancelar o processo de reposição de palavra-passe. Nenhuma outra mudança terá efeito."
       ]
     },
-    "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
-        "Reposição de palavra-passe cancelada"
-      ]
-    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Cancelar a reposição da palavra-passe?"
-      ]
-    },
-    "session_recovery:cancelled:info": {
-      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
-        "Pedido de reposição de palavra-passe cancelado (${ user.Email }). Se não fez este pedido, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -7318,11 +7456,6 @@
         "Apoiar a privacidade online"
       ]
     },
-    "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "Esta subscrição será renovada automaticamente a cada 2 anos ao mesmo preço até ser cancelada."
-      ]
-    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Ir para os planos de subscrição"
@@ -7448,11 +7581,6 @@
         "Agora pode pesquisar facilmente ficheiros na unidade, mantendo os seus dados seguros."
       ]
     },
-    "State": {
-      "Cancelling your subscription, please wait": [
-        "A cancelar a sua subscrição, por favor aguarde"
-      ]
-    },
     "Storage": {
       "Get more storage": [
         "Obter mais espaço de armazenamento"
@@ -7504,6 +7632,18 @@
     "Subscription": {
       "Billed every 2 years": [
         "Faturado a cada 2 anos"
+      ],
+      "Billed for 15 months": [
+        "Faturação para 15 meses"
+      ],
+      "Billed for 18 months": [
+        "Faturação para 18 meses"
+      ],
+      "Billed for 3 months": [
+        "Faturação para 3 meses"
+      ],
+      "Billed for 30 months": [
+        "Faturação para 30 meses"
       ],
       "Billed monthly": [
         "Faturado mensalmente"
@@ -7562,8 +7702,23 @@
       "15 GB storage": [
         "15 GB de armazenamento"
       ],
+      "and 15 more premium features": [
+        "e mais 15 funcionalidades premium"
+      ],
+      "Desktop app": [
+        "Aplicativo de desktop"
+      ],
+      "No ads or tracking": [
+        "Sem anúncios ou rastreamento"
+      ],
+      "Support our mission": [
+        "Apoie a nossa missão"
+      ],
       "Upgrade": [
         "Alterar a subscrição"
+      ],
+      "Upgrade your productivity": [
+        "Melhore a sua produtividade"
       ]
     },
     "Subscription renewal state": {
@@ -7684,9 +7839,6 @@
       ],
       "Verification successful": [
         "A verificação é terminada."
-      ],
-      "You have successfully cancelled your subscription.": [
-        "Cancelou a sua subscrição."
       ],
       "You have successfully unsubscribed": [
         "A sua subscrição foi cancelada."
@@ -8016,10 +8168,10 @@
         "Transferir ${ date }"
       ],
       "Download unverified file?": [
-        "Descarregar um ficheiro não verificado?"
+        "Transferir um ficheiro não verificado?"
       ],
       "Download unverified folder?": [
-        "Descarregar uma pasta não verificada?"
+        "Transferir uma pasta não verificada?"
       ],
       "Drop to upload": [
         "Solte para enviar"
@@ -8125,6 +8277,9 @@
       "Item details": [
         "Detalhes do item"
       ],
+      "Last edited by": [
+        "Última edição por"
+      ],
       "Link confirmation": [
         "Confirmação de hiperligação"
       ],
@@ -8227,6 +8382,9 @@
       "Recommended": [
         "Recomendado"
       ],
+      "Recommended actions": [
+        "Ações recomendadas"
+      ],
       "Reconnect your account": [
         "Religue a sua conta"
       ],
@@ -8289,6 +8447,9 @@
       ],
       "Shared": [
         "Partilhado"
+      ],
+      "Shared with me": [
+        "Partilhado comigo"
       ],
       "Show actions": [
         "Mostrar ações"
@@ -8403,6 +8564,9 @@
       ],
       "Your changes are not synced yet": [
         "As suas alterações ainda não foram sincronizadas"
+      ],
+      "Your exposed information": [
+        "As suas informações expostas"
       ],
       "Your welcome actions": [
         "As suas ações de boas-vindas"
