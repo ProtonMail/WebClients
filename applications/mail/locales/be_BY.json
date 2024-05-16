@@ -5777,7 +5777,7 @@
       "and": [
         "і"
       ],
-      "Any scheduled or snoozed messages will be cancelled.": [
+      "Any scheduled or snoozed messages will be canceled.": [
         "Любыя запланаваныя або адкладзеныя паведамленні будуць скасаваны."
       ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
@@ -6695,7 +6695,7 @@
       "Snoozed until tomorrow, ${ formattedTime }": [
         "Адкладзена да заўтрашняга дня, ${ formattedTime }"
       ],
-      "Snoozing this conversation will be cancelled.": [
+      "Snoozing this conversation will be canceled.": [
         "Адкладанне гэтай размовы будзе скасавана."
       ],
       "Sorry, this message does not exist or has already expired.": [
@@ -9860,20 +9860,6 @@
         "Бяспечнае абагульванне сховішча"
       ]
     },
-    "passwordless": {
-      "Non-private users can be promoted to admin when they have setup keys": [
-        "Прыватныя карыстальнікі могуць атрымаць правы адміністратара пры наладжванні ключоў"
-      ],
-      "Organization key must be activated to give admin privileges": [
-        "Ключ арганізацыі павінен быць актываваны, каб даць прывілеі адміністратара"
-      ],
-      "Private users can be promoted to admin when they've signed in for the first time": [
-        "Прыватныя карыстальнікі могуць атрымаць правы адміністратара пры першым уваходзе ў сістэму"
-      ],
-      "You must privatize all users before generating a new organization key": [
-        "Вы павінны прыватызаваць усіх карыстальнікаў перад генерацыяй новага ключа арганізацыі"
-      ]
-    },
     "Payment method option": {
       "Credit/debit card": [
         "Банкаўская картка"
@@ -10539,7 +10525,7 @@
       ]
     },
     "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
+      "Password reset canceled": [
         "Скіданне пароля скасавана."
       ]
     },
@@ -10549,7 +10535,7 @@
       ]
     },
     "session_recovery:cancelled:info": {
-      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
         "Запыт скідання пароля скасаваны (${ user.Email }). Калі вы не рабілі дадзены запыт, ${ changePasswordLink }."
       ]
     },
@@ -10790,7 +10776,7 @@
       ]
     },
     "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
         "Падпіска будзе аўтаматычна падаўжацца кожныя 2 гады з той жа цаной, пакуль вы яе не скасуеце."
       ]
     },
@@ -10931,7 +10917,7 @@
       ]
     },
     "State": {
-      "Cancelling your subscription, please wait": [
+      "Canceling your subscription, please wait": [
         "Скасаванне вашай падпіскі. Пачакайце..."
       ]
     },
@@ -11462,7 +11448,7 @@
       "Message deleted": [
         "Паведамленне выдалена"
       ],
-      "Message expiration cancelled": [
+      "Message expiration canceled": [
         "Тэрмін дзеяння для паведамлення скасаваны"
       ],
       "Message marked as legitimate": [
@@ -11546,7 +11532,7 @@
       "Verification successful": [
         "Паспяхова праверана"
       ],
-      "You have successfully cancelled your subscription.": [
+      "You have successfully canceled your subscription.": [
         "Вы паспяхова скасавалі сваю падпіску."
       ],
       "You have successfully unsubscribed": [

@@ -5589,7 +5589,7 @@
       "and": [
         "y"
       ],
-      "Any scheduled or snoozed messages will be cancelled.": [
+      "Any scheduled or snoozed messages will be canceled.": [
         "Se cancelará cualquier programación o mensajes pausados."
       ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
@@ -6479,7 +6479,7 @@
       "Snoozed until tomorrow, ${ formattedTime }": [
         "En pausa hasta mañana a las ${ formattedTime }"
       ],
-      "Snoozing this conversation will be cancelled.": [
+      "Snoozing this conversation will be canceled.": [
         "Se cancelará la pausa de esta conversación."
       ],
       "Sorry, this message does not exist or has already expired.": [
@@ -9541,20 +9541,6 @@
         "Uso compartido seguro de bóvedas"
       ]
     },
-    "passwordless": {
-      "Non-private users can be promoted to admin when they have setup keys": [
-        "Los usuarios no privados podrán ser promovidos a administradores cuando hayan configurado las claves"
-      ],
-      "Organization key must be activated to give admin privileges": [
-        "La clave de seguridad de la organización debe activarse para otorgar privilegios de administración"
-      ],
-      "Private users can be promoted to admin when they've signed in for the first time": [
-        "Los usuarios privados podrán ser administradores una vez que ingresen a la cuenta por primera vez"
-      ],
-      "You must privatize all users before generating a new organization key": [
-        "Debe privatizar todos los usuarios antes de generar una clave nueva de la organización"
-      ]
-    },
     "Payment method option": {
       "Credit/debit card": [
         "Tarjeta de crédito/débito"
@@ -10180,8 +10166,8 @@
       ]
     },
     "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
-        "El restablecimiento de contraseña fue cancelado."
+      "Password reset canceled": [
+        "Restablecimiento de contraseña cancelado"
       ]
     },
     "session_recovery:cancellation:title": {
@@ -10190,7 +10176,7 @@
       ]
     },
     "session_recovery:cancelled:info": {
-      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
         "Solicitud de restablecimiento de contraseña cancelada (${ user.Email }). Si no realizó esta solicitud, ${ changePasswordLink }."
       ]
     },
@@ -10415,7 +10401,7 @@
       ]
     },
     "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
         "Esta suscripción se renovará automáticamente cada 2 años con la misma tarifa hasta que sea cancelada."
       ]
     },
@@ -10554,7 +10540,7 @@
       ]
     },
     "State": {
-      "Cancelling your subscription, please wait": [
+      "Canceling your subscription, please wait": [
         "Estamos cancelando la suscripción. Espere."
       ]
     },
@@ -11025,7 +11011,7 @@
       "Message deleted": [
         "Mensaje eliminado"
       ],
-      "Message expiration cancelled": [
+      "Message expiration canceled": [
         "Expiración del mensaje cancelada"
       ],
       "Message marked as legitimate": [
@@ -11105,7 +11091,7 @@
       "Verification successful": [
         "Verificación completada"
       ],
-      "You have successfully cancelled your subscription.": [
+      "You have successfully canceled your subscription.": [
         "La suscripción ha sido cancelada."
       ],
       "You have successfully unsubscribed": [

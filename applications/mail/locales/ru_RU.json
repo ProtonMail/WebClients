@@ -454,6 +454,9 @@
       "Font": [
         "Шрифт"
       ],
+      "Forgot password?": [
+        "Забыли пароль?"
+      ],
       "Forward as attachment": [
         "Переслать как вложение"
       ],
@@ -5538,9 +5541,6 @@
       "and": [
         "и"
       ],
-      "Any scheduled or snoozed messages will be cancelled.": [
-        "Все запланированные или отложенные сообщения будут отменены."
-      ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Все вложенные папки также будут удалены. Однако письма, хранящиеся в этой папке ${ nameDeleted }, не будут удалены и могут быть найдены в папке \"Вся почта\"."
       ],
@@ -6446,9 +6446,6 @@
       ],
       "Snoozed until tomorrow, ${ formattedTime }": [
         "Отложено до завтра, ${ formattedTime }"
-      ],
-      "Snoozing this conversation will be cancelled.": [
-        "Откладывание этой цепочки будет отменено."
       ],
       "Sorry, this message does not exist or has already expired.": [
         "К сожалению, это сообщение не существует, либо срок его действия уже истек."
@@ -9497,11 +9494,6 @@
         "Вы"
       ]
     },
-    "passwordless": {
-      "Private users can be promoted to admin when they've signed in for the first time": [
-        "Рядовые пользователи могут быть повышены до администратора при первом входе в систему"
-      ]
-    },
     "Payment method option": {
       "Credit/debit card": [
         "Кредитная/дебетовая карта"
@@ -10073,11 +10065,6 @@
         "Отменить сброс пароля"
       ]
     },
-    "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
-        "Сброс пароля отменен"
-      ]
-    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Отменить сброс пароля?"
@@ -10283,11 +10270,6 @@
         "Обеспечьте свою конфиденциальность в Интернете"
       ]
     },
-    "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "Подписка будет автоматически продлеваться каждые 2 года по той же цене до тех пор, пока вы ее не отмените."
-      ]
-    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Перейти к тарифам"
@@ -10419,11 +10401,6 @@
       ],
       "You can now schedule your messages to be sent later": [
         "Теперь вы можете запланировать отправку сообщений на более позднее время"
-      ]
-    },
-    "State": {
-      "Cancelling your subscription, please wait": [
-        "Отмена подписки, подождите"
       ]
     },
     "Status": {
@@ -10597,14 +10574,44 @@
       ]
     },
     "subscription reminder": {
+      "15 GB storage": [
+        "15 ГБ хранилища"
+      ],
+      "and 15 more premium features": [
+        "и еще 15 платных функций"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Автоматическая переадресация электронной почты ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Оповещения об утечках данных ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Приложение для настольных компьютеров"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Помогите нам сохранить Интернет безопасным и приватным для всех. Улучшите до платного плана."
+      ],
       "No ads or tracking": [
         "Нет рекламы или отслеживания"
+      ],
+      "Short @pm.me email address": [
+        "Короткий адрес электронной почты @pm.me"
+      ],
+      "Support our mission": [
+        "Поддержите нашу миссию"
       ],
       "Upgrade": [
         "Сменить тариф"
       ],
+      "Upgrade your productivity": [
+        "Повысьте свою производительность"
+      ],
       "We don't sell your data": [
         "Мы не продаем ваши данные"
+      ],
+      "Your privacy is our mission": [
+        "Ваша приватность является нашей задачей"
       ]
     },
     "Subscription renewal state": {
@@ -10881,9 +10888,6 @@
       "Message deleted": [
         "Сообщение удалено"
       ],
-      "Message expiration cancelled": [
-        "Срок действия сообщения отменён"
-      ],
       "Message marked as legitimate": [
         "Сообщение помечено как допустимое"
       ],
@@ -10964,9 +10968,6 @@
       ],
       "Verification successful": [
         "Проверка прошла успешно"
-      ],
-      "You have successfully cancelled your subscription.": [
-        "Вы успешно отменили свою подписку."
       ],
       "You have successfully unsubscribed": [
         "Подписка отменена"

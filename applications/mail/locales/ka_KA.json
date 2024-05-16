@@ -445,6 +445,9 @@
       "Font": [
         "ფონტი"
       ],
+      "Forgot password?": [
+        "დაგავიწყდათ პაროლი?"
+      ],
       "Forward as attachment": [
         "გადაგზავნა მიმაგრებული ფაილის სახით"
       ],
@@ -5519,9 +5522,6 @@
       "and": [
         "და"
       ],
-      "Any scheduled or snoozed messages will be cancelled.": [
-        "ყველა დაგეგმილი ან დადუმებული შეტყობინება გაუქმდება."
-      ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "წაშლება ასევე ყველა ქვესაქაღალდეც. მაგრამ ელფოსტა, რომელიც დამახსოვრებულია საქაღალდეში ${ nameDeleted }, არ წაიშლება და შეგიძლიათ, ყველა ელფოსტის საქაღალდეში იპოვოთ."
       ],
@@ -6402,9 +6402,6 @@
       ],
       "Snoozed until tomorrow, ${ formattedTime }": [
         "დროებით დადუმებულია ხვალამდე, ${ formattedTime }"
-      ],
-      "Snoozing this conversation will be cancelled.": [
-        "ამ საუბრის დროებით დადუმება გაუქმდება"
       ],
       "Sorry, this message does not exist or has already expired.": [
         "ეს შეტყობინება არ არსებობს, ან ვადა გაუვიდა."
@@ -9429,20 +9426,6 @@
         "თქვენ"
       ]
     },
-    "passwordless": {
-      "Non-private users can be promoted to admin when they have setup keys": [
-        "არა-კონფიდენციალური მომხმარებლები შეიძლება, ადმინისტრატორამდე ასწიოთ, თუ მათ გასაღებები მორგებული აქვთ"
-      ],
-      "Organization key must be activated to give admin privileges": [
-        "ადმინისტრატორის უფლებების მისაცემად, ორგანიზაციის გასაღები აუცილებლად გააქტივებული უნდა იყოს"
-      ],
-      "Private users can be promoted to admin when they've signed in for the first time": [
-        "კონფიდენციალურ მომხმარებლებს შეგიძლიათ, ადმინისტრატორის უფლებები მიანიჭოთ, როცა სისტემაში პირველად შევლენ"
-      ],
-      "You must privatize all users before generating a new organization key": [
-        "ორგანიზაციის ახალი გასაღების გენერაციამდე საჭიროა ყველა მომხმარებლის პრივატიაზაცია"
-      ]
-    },
     "Payment method option": {
       "Credit/debit card": [
         "საკრედიტო/სადებეტო ბარათი"
@@ -10052,19 +10035,9 @@
         "პაროლის შეცვლის პროცესის გასაუქმებლად, შეიყვანეთ მიმდინარე თქვენი პაროლი. სხვა ცვლილებები ძალაში არ შევა."
       ]
     },
-    "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
-        "პაროლის შეცვლა გაუქმდა"
-      ]
-    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "გავაუქმო პაროლის შეცვლა?"
-      ]
-    },
-    "session_recovery:cancelled:info": {
-      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
-        "პაროლის შეცვლის მოთხოვვნა გაუქმდა (${ user.Email }). თუ ეს მოთხოვნა თქვენ არ გეკუთვნით, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -10287,11 +10260,6 @@
         "თქვენი ონლაინ კონფიდენციალობა"
       ]
     },
-    "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "ეს გამოწერა მანამდე გაუქმდება ყოველ 2 წელიწადში ერთხელ იმავე სიხშირით, სანამ გააუქმებთ."
-      ]
-    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "ტარიფებზე გადასვლა"
@@ -10421,11 +10389,6 @@
       ],
       "You can now schedule your messages to be sent later": [
         "ახლა შეგიძლიათ, შექმნათ შეტყობინებების განრიგი, რომელიც დანიშნულ დროს აგზავნის ელფოსტას"
-      ]
-    },
-    "State": {
-      "Cancelling your subscription, please wait": [
-        "მიმდინარეობს თქვენი გამოწერის გაუქმება. მოითმინეთ"
       ]
     },
     "Status": {
@@ -10854,9 +10817,6 @@
       "Message deleted": [
         "შეტყობინება წაშლილია"
       ],
-      "Message expiration cancelled": [
-        "შეტყობინების ვადა გაუქმებულია"
-      ],
       "Message marked as legitimate": [
         "შეტყობინება მოინიშნა, როგორც სანდო"
       ],
@@ -10933,9 +10893,6 @@
       ],
       "Verification successful": [
         "გადამოწმება წარმატებულია"
-      ],
-      "You have successfully cancelled your subscription.": [
-        "თქვენი ტარიფი წარმატებით გააუქმეთ."
       ],
       "You have successfully unsubscribed": [
         "გამოწერა წარმატებით გაუქმდა"
