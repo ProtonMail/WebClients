@@ -5,7 +5,7 @@ import { TrashItem } from '@proton/pass/components/Menu/Vault/TrashItem';
 import { VaultItem } from '@proton/pass/components/Menu/Vault/VaultItem';
 import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { isShareManageable } from '@proton/pass/lib/shares/share.predicates';
-import { isOwnVault } from '@proton/pass/lib/vaults/vault.predicates';
+import { isOwnVault, isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
 import { selectShare, selectVaultsWithItemsCount } from '@proton/pass/store/selectors';
 import type { MaybeNull, ShareType } from '@proton/pass/types';
 import { withTap } from '@proton/pass/utils/fp/pipe';
@@ -54,7 +54,7 @@ export const VaultMenu: FC<Props> = ({
 
                 {vaults.map((vault) => {
                     const canEdit = isShareManageable(vault);
-                    const canMove = canEdit && vault.count > 0;
+                    const canMove = isWritableVault(vault) && vault.count > 0;
                     const canDelete = vault.owner && ownedVaultCount > 1;
 
                     return (
