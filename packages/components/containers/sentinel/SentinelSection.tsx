@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href';
 import { PromotionButton } from '@proton/components/components/button/PromotionButton';
+import { SUBSCRIPTION_STEPS, useSubscriptionModal } from '@proton/components/containers';
 import { useBundleProPlan } from '@proton/components/hooks/useHasPlan';
 import { useLoading } from '@proton/hooks';
 import { disableHighSecurity, enableHighSecurity } from '@proton/shared/lib/api/settings';
@@ -15,21 +16,19 @@ import {
     SHARED_UPSELL_PATHS,
     UPSELL_COMPONENT,
 } from '@proton/shared/lib/constants';
-import { addUpsellPath, getUpgradePath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
+import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { isProtonSentinelEligible } from '@proton/shared/lib/helpers/userSettings';
 import { SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
-import { Toggle, useSettingsLink } from '../../components';
+import { Toggle } from '../../components';
 import {
     useApi,
     useConfig,
     useEventManager,
     useNotifications,
     useSearchParamsEffect,
-    useSubscription,
-    useUser,
     useUserSettings,
 } from '../../hooks';
 import { SettingsParagraph, SettingsSectionWide } from '../account';
@@ -44,10 +43,8 @@ interface Props {
 
 const SentinelSection = ({ app }: Props) => {
     const { APP_NAME } = useConfig();
-    const goToSettings = useSettingsLink();
     const [userSettings] = useUserSettings();
-    const [user] = useUser();
-    const [subscription] = useSubscription();
+    const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
     const api = useApi();
     const [loadingSentinel, withLoadingSentinel] = useLoading();
     const { call } = useEventManager();
@@ -100,7 +97,14 @@ const SentinelSection = ({ app }: Props) => {
             component: UPSELL_COMPONENT.BUTTON,
             fromApp: app,
         });
-        goToSettings(addUpsellPath(getUpgradePath({ user, subscription, app: APP_NAME }), upsellRef), undefined, false);
+        openSubscriptionModal({
+            step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
+            metrics: {
+                source: 'upsells',
+            },
+            mode: 'upsell-modal',
+            upsellRef,
+        });
     };
 
     const getUpgradeMessage = () => {
@@ -153,7 +157,12 @@ const SentinelSection = ({ app }: Props) => {
                 </>
             ) : (
                 <SettingsParagraph>
-                    <PromotionButton iconName="upgrade" iconGradient={true} onClick={handleUpgrade}>
+                    <PromotionButton
+                        iconName="upgrade"
+                        iconGradient={true}
+                        onClick={handleUpgrade}
+                        disabled={loadingSubscriptionModal}
+                    >
                         {/* translator: full sentence: "Upgrade to enable Proton Sentinel." */}
                         {c('Action').t`Upgrade to enable ${PROTON_SENTINEL_NAME}`}
                     </PromotionButton>
