@@ -6,3 +6,4 @@ export { default as RenameButton } from './RenameButton';
 export { default as ShareFileButton } from './ShareFileButton';
 export { default as ShareLinkButton } from './ShareLinkButton';
 export { default as RevisionsButton } from './RevisionsButton';
+export { default as OpenInDocsButton } from './OpenInDocsButton';

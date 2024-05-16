@@ -15,8 +15,9 @@ import clsx from '@proton/utils/clsx';
 
 import useActiveShare from '../../../../hooks/drive/useActiveShare';
 import { useFileUploadInput, useFolderUploadInput } from '../../../../store';
+import { useDocumentActions, useDriveDocsFeatureFlag } from '../../../../store/_documents';
 import { useCreateFolderModal } from '../../../modals/CreateFolderModal';
-import { CreateNewFolderButton, UploadFileButton, UploadFolderButton } from './ActionMenuButtons';
+import { CreateDocumentButton, CreateNewFolderButton, UploadFileButton, UploadFolderButton } from './ActionMenuButtons';
 
 interface Props {
     disabled?: boolean;
@@ -41,6 +42,8 @@ export const ActionMenuButton = ({ disabled, className }: PropsWithChildren<Prop
         handleChange: folderChange,
     } = useFolderUploadInput(activeFolder.shareId, activeFolder.linkId);
     const [createFolderModal, showCreateFolderModal] = useCreateFolderModal();
+    const { createDocument } = useDocumentActions();
+    const isDocsEnabled = useDriveDocsFeatureFlag();
 
     return (
         <>
@@ -70,6 +73,16 @@ export const ActionMenuButton = ({ disabled, className }: PropsWithChildren<Prop
                     {isDesktop && <UploadFolderButton onClick={folderClick} />}
                     <hr className="my-2" />
                     <CreateNewFolderButton onClick={() => showCreateFolderModal({})} />
+                    {isDocsEnabled && (
+                        <CreateDocumentButton
+                            onClick={() => {
+                                createDocument({
+                                    shareId: activeFolder.shareId,
+                                    parentLinkId: activeFolder.linkId,
+                                });
+                            }}
+                        />
+                    )}
                 </DropdownMenu>
             </Dropdown>
         </>

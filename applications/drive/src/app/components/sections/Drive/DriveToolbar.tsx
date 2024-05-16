@@ -12,6 +12,7 @@ import {
     DetailsButton,
     DownloadButton,
     LayoutButton,
+    OpenInDocsButton,
     PreviewButton,
     RenameButton,
     ShareButton,
@@ -82,6 +83,7 @@ const DriveToolbar = ({ shareId, items, showOptionsForNoSelection = true, isLink
         return (
             <>
                 <PreviewButton selectedLinks={selectedItems} />
+                <OpenInDocsButton shareId={shareId} selectedLinks={selectedItems} />
                 <DownloadButton selectedLinks={selectedItems} />
                 {viewportWidth['<=small'] ? (
                     <ActionsDropdown shareId={shareId} selectedLinks={selectedItems} permissions={permissions} />

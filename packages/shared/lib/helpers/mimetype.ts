@@ -126,3 +126,14 @@ export const isSupportedText = (mimeType: string) =>
 export const isVideo = (mimeType: string) => mimeType.startsWith('video/');
 export const isAudio = (mimeType: string) => mimeType.startsWith('audio/');
 export const isPDF = (mimeType: string) => mimeType === 'application/pdf' || mimeType === 'x-pdf';
+
+/**
+ * A helper function to determine if a mimetype can be converted by Proton Docs.
+ */
+export const isProtonDocsConvertible = (mimeType: string) =>
+    mimeType === SupportedMimeTypes.docx ||
+    mimeType === 'text/plain' ||
+    mimeType === 'text/markdown' ||
+    mimeType === 'text/html';
+
+export const isProtonDocument = (mimeType: string) => mimeType === 'application/vnd.proton.doc';

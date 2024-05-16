@@ -1,12 +1,20 @@
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
 import { DecryptedLink, useActions, useDriveSharingFeatureFlag } from '../../../store';
+import { useOpenInDocs } from '../../../store/_documents';
 import { ContextMenuProps } from '../../FileBrowser';
 import { useDetailsModal } from '../../modals/DetailsModal';
 import { useFilesDetailsModal } from '../../modals/FilesDetailsModal';
 import { useRenameModal } from '../../modals/RenameModal';
 import { useLinkSharingModal } from '../../modals/ShareLinkModal/ShareLinkModal';
-import { DetailsButton, DownloadButton, PreviewButton, RenameButton, ShareLinkButton } from '../ContextMenu';
+import {
+    DetailsButton,
+    DownloadButton,
+    OpenInDocsButton,
+    PreviewButton,
+    RenameButton,
+    ShareLinkButton,
+} from '../ContextMenu';
 import { ItemContextMenu } from '../ContextMenu/ItemContextMenu';
 import ShareLinkButtonLEGACY from '../ContextMenu/buttons/_legacy/ShareLinkButtonLEGACY';
 import { StopSharingButton, StopSharingButtonLEGACY } from './ContextMenuButtons';
@@ -21,8 +29,9 @@ export function SharedLinksItemContextMenu({
 }: ContextMenuProps & {
     selectedLinks: DecryptedLink[];
 }) {
-    const selectedLink = selectedLinks[0];
-    const isOnlyOneItem = selectedLinks.length === 1;
+    const selectedLink = selectedLinks.length > 0 ? selectedLinks[0] : undefined;
+    const isOnlyOneItem = selectedLinks.length === 1 && !!selectedLink;
+    const isOnlyOneFileItem = isOnlyOneItem && selectedLink.isFile;
     const hasPreviewAvailable =
         isOnlyOneItem &&
         selectedLink.isFile &&
@@ -36,6 +45,7 @@ export function SharedLinksItemContextMenu({
     const [filesDetailsModal, showFilesDetailsModal] = useFilesDetailsModal();
     const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
     const driveSharing = useDriveSharingFeatureFlag();
+    const { showOpenInDocs } = useOpenInDocs(selectedLink?.mimeType);
 
     const ShareLinkButtonComponent = driveSharing ? ShareLinkButton : ShareLinkButtonLEGACY;
     return (
@@ -43,6 +53,9 @@ export function SharedLinksItemContextMenu({
             <ItemContextMenu isOpen={isOpen} open={open} close={close} position={position} anchorRef={anchorRef}>
                 {hasPreviewAvailable && (
                     <PreviewButton shareId={selectedLink.rootShareId} linkId={selectedLink.linkId} close={close} />
+                )}
+                {isOnlyOneFileItem && showOpenInDocs && (
+                    <OpenInDocsButton shareId={selectedLink.rootShareId} link={selectedLink} close={close} />
                 )}
                 {<DownloadButton selectedLinks={selectedLinks} close={close} />}
                 {isOnlyOneItem && <RenameButton showRenameModal={showRenameModal} link={selectedLink} close={close} />}

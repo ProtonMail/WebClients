@@ -5,7 +5,7 @@ import { Toolbar } from '@proton/components';
 
 import { DecryptedLink } from '../../../store';
 import { useSelection } from '../../FileBrowser';
-import { DetailsButton, DownloadButton, LayoutButton, PreviewButton } from '../ToolbarButtons';
+import { DetailsButton, DownloadButton, LayoutButton, OpenInDocsButton, PreviewButton } from '../ToolbarButtons';
 import { getSelectedItems } from '../helpers';
 
 interface Props {
@@ -13,7 +13,7 @@ interface Props {
     items: DecryptedLink[];
 }
 
-const SharedWithMeToolbar = ({ items }: Props) => {
+const SharedWithMeToolbar = ({ shareId, items }: Props) => {
     const selectionControls = useSelection()!;
 
     const selectedItems = useMemo(
@@ -25,6 +25,7 @@ const SharedWithMeToolbar = ({ items }: Props) => {
         return (
             <>
                 <PreviewButton selectedLinks={selectedItems} />
+                <OpenInDocsButton shareId={shareId} selectedLinks={selectedItems} />
                 <DownloadButton selectedLinks={selectedItems} />
                 {selectedItems.length ? <Vr /> : null}
                 <DetailsButton selectedLinks={selectedItems} />
