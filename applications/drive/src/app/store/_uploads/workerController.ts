@@ -236,7 +236,7 @@ export class UploadWorker {
 
                         const { Api: CryptoApi } = module;
 
-                        CryptoApi.init({});
+                        CryptoApi.init();
                         CryptoProxy.setEndpoint(new CryptoApi(), (endpoint) => endpoint.clearKeyStore());
 
                         // align serverTime in worker with the main thread (received from API)
