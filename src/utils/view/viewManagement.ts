@@ -205,13 +205,6 @@ export const loadURL = async (viewID: ViewID, url: string) => {
         return;
     }
 
-    const previousView = browserViewMap[viewID];
-
-    if (previousView) {
-        Logger.info(`clearing ${viewID}`);
-        await previousView.webContents.loadURL("about:blank");
-    }
-
     updateView(viewID);
     getCurrentView()!.webContents.loadURL(url);
 };
