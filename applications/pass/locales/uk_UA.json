@@ -2183,6 +2183,20 @@
         "Напишіть свою нотатку"
       ]
     },
+    "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Виявлено ${ name } та ${ remainingCount } інших потенційних витоків. Увімкніть ${ DARK_WEB_MONITORING_NAME }, щоби переглянути деталі. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Виявлено ${ name } та ще 1 потенційний витік. Увімкніть ${ DARK_WEB_MONITORING_NAME }, щоби переглянути деталі. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Виявлено потенційний витік ${ name }. Увімкніть ${ DARK_WEB_MONITORING_NAME }, щоби переглянути деталі. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Ваша інформація була знайдена принаймні в одному витоку даних. Увімкніть ${ DARK_WEB_MONITORING_NAME }, щоби переглянути деталі. ${ link }"
+      ]
+    },
     "Success": {
       "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
         "Сховища не можуть містити більше ніж ${ vault.targetMaxMembers } користувача.",
@@ -2196,7 +2210,7 @@
         "${ BRAND_NAME } адрес"
       ],
       "${ PASS_SHORT_APP_NAME } Monitor": [
-        "${ PASS_SHORT_APP_NAME } Монітор"
+        "${ PASS_SHORT_APP_NAME } Monitor"
       ],
       "Account protection": [
         "Захист облікового запису"
