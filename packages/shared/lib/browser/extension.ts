@@ -3,7 +3,7 @@ import lastItem from '@proton/utils/lastItem';
 
 import { ExtensionForkPayload } from '../authentication/sessionForking';
 import { APPS, EXTENSIONS } from '../constants';
-import { isChromiumBased } from '../helpers/browser';
+import { browserAPI, isChromiumBased, isSafari } from '../helpers/browser';
 
 export type ExtensionForkMessage = { type: 'fork'; payload: ExtensionForkPayload };
 export type ExtensionAuthenticatedMessage = { type: 'auth-ext' };
@@ -29,52 +29,47 @@ export type ExtensionMessageFallbackResponse<P = any> = ExtensionMessageResponse
 };
 
 export const sendMessageSupported = () =>
-    isChromiumBased() && (window as any).chrome?.runtime?.sendMessage !== undefined;
+    (isChromiumBased() || isSafari()) && browserAPI?.runtime?.sendMessage !== undefined;
 
 const isValidExtensionResponse = <R = any>(response: any): response is ExtensionMessageResponse<R> =>
-    'type' in response && (response.type === 'success' || response.type === 'error');
+    response?.type === 'success' || response?.type === 'error';
 
 type SendMessageResult = { ok: boolean; response: ExtensionMessageResponse };
 
 const sendMessage = async (extensionId: string, message: any): Promise<SendMessageResult> => {
-    const self = window as any;
-    const browser = self?.browser ?? self.chrome;
+    const onError = (err?: any): SendMessageResult => ({
+        ok: false,
+        response: {
+            type: 'error',
+            error: err?.message ?? err ?? '',
+        },
+    });
 
-    try {
-        return await new Promise<SendMessageResult>((resolve) => {
-            browser.runtime.sendMessage(extensionId, message, (response: unknown) => {
-                if (browser.runtime.lastError) {
-                    return resolve({
-                        ok: false,
-                        response: {
-                            type: 'error',
-                            error: browser.runtime.lastError.message,
-                        },
-                    });
-                }
+    const onResponse = (response: unknown): SendMessageResult => {
+        if (browserAPI.runtime.lastError) {
+            return onError(browserAPI.runtime.lastError);
+        }
 
-                if (!isValidExtensionResponse(response)) {
-                    return resolve({
-                        ok: true,
-                        response: {
-                            type: 'error',
-                            error: 'Bad format',
-                        },
-                    });
-                }
+        if (response === undefined) {
+            return onError();
+        }
 
-                resolve({ ok: true, response });
-            });
-        });
-    } catch (err) {
-        return {
-            ok: false,
-            response: {
-                type: 'error',
-                error: err instanceof Error ? err.message : '',
-            },
-        };
-    }
+        if (!isValidExtensionResponse(response)) {
+            return {
+                ok: true,
+                response: {
+                    type: 'error',
+                    error: 'Bad format',
+                },
+            };
+        }
+
+        return { ok: true, response };
+    };
+
+    return new Promise<unknown>((resolve) => browserAPI.runtime.sendMessage(extensionId, message, resolve))
+        .then(onResponse)
+        .catch(onError);
 };
 
 /** When dealing with extensions residing in multiple stores, it's essential to handle
