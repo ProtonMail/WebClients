@@ -1,16 +1,27 @@
 import { c } from 'ttag';
 
-import { BugModal, DropdownMenuButton, DropdownMenuLink, Icon, useModalState } from '@proton/components';
+import { Href } from '@proton/atoms/Href';
+import { BugModal, DropdownMenuButton, DropdownMenuLink, Icon, useFlag, useModalState } from '@proton/components';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import SupportDropdown from '../public/SupportDropdown';
 
 const LoginSupportDropdown = () => {
+    const disableLoginPageBugReport = useFlag('DisableLoginPageBugReport');
+
     const [bugReportModal, setBugReportModal, render] = useModalState();
 
     const handleBugReportClick = () => {
         setBugReportModal(true);
     };
+
+    if (disableLoginPageBugReport) {
+        return (
+            <Href className="signup-link link-focus" href={getKnowledgeBaseUrl('/common-login-problems')}>
+                {c('Link').t`Help`}
+            </Href>
+        );
+    }
 
     return (
         <>
