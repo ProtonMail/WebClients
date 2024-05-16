@@ -27,28 +27,30 @@ export const disableBrowserProxyTrap = () => (context.allowProxy = false);
 export default (() => {
     const polyfill = browser;
 
-    setTimeout(
-        () =>
-            context.allowProxy &&
-            Object.entries(context.globals)
-                .filter(([, value]) => value)
-                .forEach(([key, value]) => {
-                    self[key] = new Proxy(value, {
-                        get(target, prop, receiver) {
-                            if (process.env.NODE_ENV !== 'development') {
-                                return logger.error(`[Extension::Error] extension API is protected`);
-                            }
+    if (BUILD_TARGET !== 'safari') {
+        setTimeout(
+            () =>
+                context.allowProxy &&
+                Object.entries(context.globals)
+                    .filter(([, value]) => value)
+                    .forEach(([key, value]) => {
+                        self[key] = new Proxy(value, {
+                            get(target, prop, receiver) {
+                                if (process.env.NODE_ENV !== 'development') {
+                                    return logger.error(`[Extension::Error] extension API is protected`);
+                                }
 
-                            return Reflect.get(target, prop, receiver);
-                        },
-                        set() {
-                            logger.error(`[Extension::Error] extension API is read-only`);
-                            return false;
-                        },
-                    });
-                }),
-        0
-    );
+                                return Reflect.get(target, prop, receiver);
+                            },
+                            set() {
+                                logger.error(`[Extension::Error] extension API is read-only`);
+                                return false;
+                            },
+                        });
+                    }),
+            0
+        );
+    }
 
     return polyfill;
 })();

@@ -33,7 +33,7 @@ if (BUILD_TARGET === 'chrome' || BUILD_TARGET === 'safari') {
 
 WorkerMessageBroker.registerMessage(WorkerMessageType.RESOLVE_EXTENSION_KEY, () => ({ key: EXTENSION_KEY }));
 
-if (ENV === 'development') {
+if (BUILD_TARGET !== 'safari' && ENV === 'development') {
     createDevReloader(async () => {
         const tabs = await browser.tabs.query({});
         const csUnloads = tabs
