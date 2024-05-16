@@ -2,10 +2,11 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Alert, PasswordInputTwo } from '@proton/components/components';
+import { PasswordInputTwo } from '@proton/components/components';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 import { Button, Input } from '../../../atoms';
+import { ImportantNotice } from './ImportantNotice';
 
 interface Props {
     onContinue: (passphrase: string) => void;
@@ -16,9 +17,6 @@ export const PassphraseInput = ({ onContinue }: Props) => {
 
     return (
         <div className="flex flex-column">
-            <Alert type="warning" className="mb-6">{c('Wallet setup')
-                .t`Store your passphrase at a safe location. Without the passphrase, even ${BRAND_NAME} cannot recover your funds`}</Alert>
-
             <div className="mb-3">
                 <Input
                     autoFocus
@@ -27,9 +25,13 @@ export const PassphraseInput = ({ onContinue }: Props) => {
                     value={passphrase}
                     onValue={setPassphrase}
                     label={c('Wallet setup').t`Passphrase`}
-                    assistiveText={c('Placeholder').t`Leave empty if you don't want to add passphrase`}
+                    placeholder={c('Placeholder').t`Leave empty if you don't want to add passphrase`}
                 />
             </div>
+
+            <ImportantNotice
+                text={`Store your passphrase securely; without it, ${BRAND_NAME} cannot recover your funds.`}
+            />
 
             <Button
                 pill

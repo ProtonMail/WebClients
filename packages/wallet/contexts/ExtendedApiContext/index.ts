@@ -1,4 +1,4 @@
-import { createContext, useContext } from 'react';
+import { createContext, useContext, useMemo } from 'react';
 
 import { WasmProtonWalletApiClient } from '@proton/andromeda';
 
@@ -15,5 +15,6 @@ export const useWalletApi = () => {
 };
 
 export const useWalletApiClients = () => {
-    return useWalletApi().clients();
+    const walletApi = useWalletApi();
+    return useMemo(() => walletApi.clients(), [walletApi]);
 };

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { noop } from 'lodash';
@@ -6,6 +6,8 @@ import { c } from 'ttag';
 
 import { WasmDerivationPath, WasmMnemonic, WasmWallet, WasmWordCount } from '@proton/andromeda';
 import { useNotifications, useUserKeys } from '@proton/components/hooks';
+import usePrevious from '@proton/hooks/usePrevious';
+import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { encryptWalletData } from '@proton/wallet';
 import { WalletType, useWalletApiClients, walletCreation } from '@proton/wallet';
 
@@ -40,9 +42,17 @@ interface Props {
 }
 
 export const useWalletSetup = ({ schemeAndData: initSchemeAndData, onSetupFinish }: Props) => {
-    const [schemeAndData, setSchemeAndData] = useState<SchemeAndData | undefined>(initSchemeAndData);
+    const [schemeAndData, setSchemeAndData] = useState<SchemeAndData>();
     const [currentStepIndex, setCurrentStepIndex] = useState(0);
     const history = useHistory();
+
+    const prevSchemeAndData = usePrevious(schemeAndData);
+
+    useEffect(() => {
+        if (initSchemeAndData && !isDeepEqual(prevSchemeAndData, initSchemeAndData)) {
+            setSchemeAndData(initSchemeAndData);
+        }
+    }, [initSchemeAndData, prevSchemeAndData]);
 
     const { createNotification } = useNotifications();
 
@@ -64,6 +74,7 @@ export const useWalletSetup = ({ schemeAndData: initSchemeAndData, onSetupFinish
         }
 
         const isLastStep = steps && currentStepIndex === steps.length - 1;
+
         if (isLastStep) {
             return onSetupFinish();
         }
@@ -151,17 +162,13 @@ export const useWalletSetup = ({ schemeAndData: initSchemeAndData, onSetupFinish
                     })
                 );
 
-                // workaround because dispatch is not sync but doesn't return Promise neither
-                // await wait(2000);
                 history.push(`/wallets/${Wallet.ID}`);
-
                 onSetupFinish();
+                onNextStep();
             })
             .catch(() => {
                 createNotification({ text: c('Wallet setup').t`Could not create wallet`, type: 'error' });
             });
-
-        onNextStep();
     };
 
     return {

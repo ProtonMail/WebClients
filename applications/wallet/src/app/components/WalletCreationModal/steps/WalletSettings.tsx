@@ -4,21 +4,24 @@ import { c } from 'ttag';
 
 import { WasmFiatCurrencySymbol } from '@proton/andromeda';
 import useLoading from '@proton/hooks/useLoading';
+import { DEFAULT_CURRENCY } from '@proton/shared/lib/constants';
 
 import { Button, Input, Select } from '../../../atoms';
+import { MIN_WALLET_NAME_LENGTH } from '../../../constants/wallet';
+import { useBitcoinBlockchainContext } from '../../../contexts';
 import { useFiatCurrencies } from '../../../store/hooks';
-
-const DEFAULT_CURRENCY: WasmFiatCurrencySymbol = 'USD';
-const MIN_WALLET_NAME_LENGTH = 3;
+import { getDefaultWalletName } from '../../../utils/wallet';
 
 interface Props {
+    isImported: boolean;
     onContinue: (name: string, fiatCurrency: string) => Promise<void>;
 }
 
-export const WalletSettings = ({ onContinue }: Props) => {
+export const WalletSettings = ({ isImported, onContinue }: Props) => {
     const [loading, withLoading] = useLoading();
+    const { decryptedApiWalletsData } = useBitcoinBlockchainContext();
 
-    const [name, setName] = useState<string>('');
+    const [name, setName] = useState<string>(getDefaultWalletName(isImported, decryptedApiWalletsData ?? []));
 
     const [currencies, loadingFiatCurrencies] = useFiatCurrencies();
     const [selectedCurrency, setSelectedCurrency] = useState<WasmFiatCurrencySymbol>(DEFAULT_CURRENCY);
