@@ -1,12 +1,17 @@
 import { ReactNode, useMemo } from 'react';
 import { useParams } from 'react-router-dom';
 
-import { isEmpty } from 'lodash';
-
 import { CircleLoader } from '@proton/atoms/CircleLoader';
-import { PrivateAppContainer, PrivateMainArea, useModalState, useToggle } from '@proton/components';
+import {
+    PrivateAppContainer,
+    PrivateMainArea,
+    useModalState,
+    useModalStateWithData,
+    useToggle,
+} from '@proton/components';
 
 import { useBitcoinBlockchainContext } from '../../contexts';
+import { SchemeAndData, WalletSetupScheme } from '../../hooks/useWalletSetup/type';
 import { AccountCreationModal } from '../AccountCreationModal';
 import { WalletAutoCreationNoticeModal } from '../WalletAutoCreationNoticeModal';
 import { WalletCreationModal } from '../WalletCreationModal';
@@ -20,8 +25,8 @@ interface Props {
 export const PrivateWalletLayout = ({ children }: Props) => {
     const { walletId } = useParams<{ walletId?: string }>();
 
-    const { decryptedApiWalletsData, walletsChainData, loadingApiWalletsData } = useBitcoinBlockchainContext();
-    const [walletSetupModal, setWalletSetupModal] = useModalState();
+    const { decryptedApiWalletsData, loadingApiWalletsData } = useBitcoinBlockchainContext();
+    const [walletSetupModal, setWalletSetupModal] = useModalStateWithData<{ schemeAndData?: SchemeAndData }>();
     const [walletAccountSetupModal, setWalletAccountSetupModal] = useModalState();
 
     const { state: expanded, toggle: toggleExpanded } = useToggle();
@@ -41,13 +46,13 @@ export const PrivateWalletLayout = ({ children }: Props) => {
                     expanded={expanded}
                     apiWalletsData={decryptedApiWalletsData}
                     onToggleExpand={toggleExpanded}
-                    onAddWallet={() => setWalletSetupModal(true)}
+                    onAddWallet={() => setWalletSetupModal({})}
                     onAddWalletAccount={() => setWalletAccountSetupModal(true)}
                 />
             }
         >
             <PrivateMainArea data-testid="wallet-view:events-area" drawerSidebar>
-                {!decryptedApiWalletsData || isEmpty(walletsChainData) || loadingApiWalletsData ? (
+                {!decryptedApiWalletsData || loadingApiWalletsData ? (
                     <div className="m-auto">
                         <CircleLoader size="large" className="color-primary" />
                     </div>
@@ -60,9 +65,14 @@ export const PrivateWalletLayout = ({ children }: Props) => {
                 )}
             </PrivateMainArea>
 
-            <WalletAutoCreationNoticeModal open={hasNoWalletSetupYet} />
+            <WalletAutoCreationNoticeModal
+                open={hasNoWalletSetupYet && !walletAccountSetupModal.open}
+                handleClickImport={() => {
+                    setWalletSetupModal({ schemeAndData: { scheme: WalletSetupScheme.WalletImport } });
+                }}
+            />
 
-            <WalletCreationModal {...walletSetupModal} />
+            <WalletCreationModal schemeAndData={walletSetupModal.data?.schemeAndData} {...walletSetupModal} />
 
             {wallet && <AccountCreationModal apiWalletData={wallet} {...walletAccountSetupModal} />}
         </PrivateAppContainer>

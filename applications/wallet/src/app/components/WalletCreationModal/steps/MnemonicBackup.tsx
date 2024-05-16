@@ -1,9 +1,13 @@
 import { c } from 'ttag';
 
 import { WasmMnemonic } from '@proton/andromeda';
-import { Card } from '@proton/atoms/Card';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
+import clsx from '@proton/utils/clsx';
 
 import { Button } from '../../../atoms';
+import { ImportantNotice } from './ImportantNotice';
+
+import './MnemonicBackup.scss';
 
 interface Props {
     mnemonic: WasmMnemonic;
@@ -15,26 +19,30 @@ export const MnemonicBackup = ({ mnemonic, onContinue }: Props) => {
 
     return (
         <div className="flex flex-column">
-            <Card rounded bordered={false} className="flex flex-row justify-center">
-                {mnemonicWords?.map((word, index) => (
-                    // TODO: use Pills component here
-                    <span
-                        className="block m-2 p-1 px-2 rounded text-sm"
-                        key={`${index}_${word}`}
-                        style={{
-                            background: 'var(--signal-info-minor-1)',
-                            color: 'var(--signal-info-major-3)',
-                        }}
-                    >
-                        {index + 1}. {word}
-                    </span>
-                ))}
-            </Card>
+            <div className="mnemonic-grid px-8">
+                {mnemonicWords?.map((word, index) => {
+                    const middle = Math.ceil(mnemonicWords.length / 2);
+                    const gridColumn = index < middle ? 1 : 2;
+                    const gridRow = index < middle ? index + 1 : index + 1 - middle;
 
-            <p className="block text-center color-weak">{c('Wallet setup')
-                .t`Save these ${mnemonicWords.length} words securely and never share them with anyone.`}</p>
+                    return (
+                        <div
+                            className={clsx('flex flex-row text-lg items-center', gridRow > 1 && 'border-top')}
+                            key={`${index}_${word}`}
+                            style={{ gridRow, gridColumn }}
+                        >
+                            <div className="color-hint">{index + 1}</div>
+                            <div className="ml-6">{word}</div>
+                        </div>
+                    );
+                })}
+            </div>
 
-            <Button pill className="block w-4/5 mx-auto mb-2" shape="solid" color="norm" onClick={() => onContinue()}>
+            <ImportantNotice
+                text={`Store your seed phrase securely; without it, ${BRAND_NAME} cannot recover your funds.`}
+            />
+
+            <Button pill className="block w-4/5 mx-auto mt-6" shape="solid" color="norm" onClick={() => onContinue()}>
                 {c('Wallet setup').t`Continue`}
             </Button>
         </div>

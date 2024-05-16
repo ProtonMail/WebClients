@@ -8,6 +8,7 @@ import { PrivateWalletLayout } from '../components';
 import { BitcoinBlockchainContextProvider } from '../contexts/BitcoinBlockchainContext/BitcoinBlockchainContextProvider';
 import { AccountContainer } from './AccountContainer';
 import { EmptyViewContainer } from './EmptyViewContainer';
+import { LockedWalletContainer } from './LockedWalletContainer';
 import { WalletContainer } from './WalletContainer';
 
 const MainContainer = () => {
@@ -22,11 +23,19 @@ const MainContainer = () => {
                                     <AccountContainer />
                                 </PrivateWalletLayout>
                             </Route>
+
+                            <Route exact path={'/wallets/:walletId/locked'}>
+                                <PrivateWalletLayout>
+                                    <LockedWalletContainer />
+                                </PrivateWalletLayout>
+                            </Route>
+
                             <Route exact path={'/wallets/:walletId'}>
                                 <PrivateWalletLayout>
                                     <WalletContainer />
                                 </PrivateWalletLayout>
                             </Route>
+
                             <Route>
                                 <PrivateWalletLayout>
                                     <EmptyViewContainer />

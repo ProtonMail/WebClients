@@ -44,40 +44,47 @@ export type EncryptedWalletPart = Partial<
     { mnemonic: string; publicKey: undefined } | { mnemonic: undefined; publicKey: string }
 >;
 
-export const decryptPgpWalletKey = async (walletKey: string, keys: DecryptedKey[]) => {
-    const privateUserKeys = keys.map((key) => key.privateKey);
-
-    const { data: decryptedData } = await CryptoProxy.decryptMessage({
-        binaryMessage: base64StringToUint8Array(walletKey),
-        decryptionKeys: privateUserKeys,
-        verificationKeys: privateUserKeys,
-        format: 'binary',
+export const decryptArmoredData = async (armoredMessage: string, keys: PrivateKeyReference[]) => {
+    const { data } = await CryptoProxy.decryptMessage({
+        armoredMessage,
+        decryptionKeys: keys,
+        verificationKeys: keys,
     });
 
-    return decryptedData;
+    return data;
 };
 
-export const encryptPgp = async (data: Uint8Array, key: DecryptedKey) => {
-    const { message: encryptedData } = await CryptoProxy.encryptMessage({
-        binaryData: data,
-        encryptionKeys: [key.privateKey],
-        signingKeys: [key.privateKey],
-        format: 'binary',
+export const encryptArmoredData = async (armoredData: string, keys: PrivateKeyReference[]) => {
+    const { message } = await CryptoProxy.encryptMessage({
+        textData: armoredData,
+        encryptionKeys: keys,
+        signingKeys: keys,
+        format: 'armored',
     });
 
-    return encryptedData;
+    return message;
 };
 
 export const decryptWalletKey = async (walletKey: string, keys: DecryptedKey[]) => {
-    const decryptedEntropy = await decryptPgpWalletKey(walletKey, keys);
-    return getSymmetricKey(decryptedEntropy);
+    const decryptedEntropy = await decryptArmoredData(
+        walletKey,
+        keys.map((k) => k.privateKey)
+    );
+
+    const binaryEntropy = stringToUint8Array(decryptedEntropy);
+    return getSymmetricKey(binaryEntropy);
 };
 
 export const decryptWalletKeyForHmac = async (walletKey: string, keys: DecryptedKey[]) => {
-    const decryptedEntropy = await decryptPgpWalletKey(walletKey, keys);
+    const decryptedEntropy = await decryptArmoredData(
+        walletKey,
+        keys.map((k) => k.privateKey)
+    );
+
+    const binaryEntropy = stringToUint8Array(decryptedEntropy);
 
     // https://github.com/vercel/edge-runtime/issues/813
-    const slicedKey = new Uint8Array(decryptedEntropy.slice(0, KEY_LENGTH));
+    const slicedKey = new Uint8Array(binaryEntropy.slice(0, KEY_LENGTH));
 
     return crypto.subtle.importKey('raw', slicedKey, { name: 'HMAC', hash: 'SHA-256' }, false, ['sign', 'verify']);
 };
@@ -122,11 +129,10 @@ export const encryptWalletData = async (
 
     const encryptedData = await encryptWalletDataWithWalletKey(dataToEncrypt, key);
 
-    const encryptedEntropy = await encryptPgp(entropy, userKey);
+    const strEntropy = uint8ArrayToString(entropy);
+    const encryptedEntropy = await encryptArmoredData(strEntropy, [userKey.privateKey]);
 
-    const encodedEncryptedEntropy = uint8ArrayToBase64String(encryptedEntropy);
-
-    return [encryptedData, [encodedEncryptedEntropy, userKey.ID]];
+    return [encryptedData, [encryptedEntropy, userKey.ID]];
 };
 
 /**
@@ -158,29 +164,6 @@ export const decryptWalletData = async (dataToDecrypt: (string | null)[], wallet
     );
 
     return decryptedData;
-};
-
-export const decryptArmoredData = async (armoredData: string | null, keys: PrivateKeyReference[]) => {
-    const { data } = armoredData
-        ? await CryptoProxy.decryptMessage({
-              armoredMessage: armoredData,
-              decryptionKeys: keys,
-              verificationKeys: keys,
-          }).catch(() => ({ data: null }))
-        : { data: null };
-
-    return data;
-};
-
-export const encryptArmoredData = async (armoredData: string, keys: PrivateKeyReference[]) => {
-    const { message } = await CryptoProxy.encryptMessage({
-        textData: armoredData,
-        encryptionKeys: keys,
-        signingKeys: keys,
-        format: 'armored',
-    }).catch(() => ({ message: null }));
-
-    return message;
 };
 
 /**

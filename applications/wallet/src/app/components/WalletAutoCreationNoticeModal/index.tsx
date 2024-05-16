@@ -18,9 +18,11 @@ interface Props {
      * If wallet has already been created on Mail, we only display the modal to change currency settings, no wallet to create
      */
     dryRun?: boolean;
+
+    handleClickImport: () => void;
 }
 
-export const WalletAutoCreationNoticeModal = ({ open, dryRun }: Props) => {
+export const WalletAutoCreationNoticeModal = ({ open, dryRun, handleClickImport }: Props) => {
     const [loadingWalletCreation, withLoading] = useLoading();
     const [currencies, loading] = useFiatCurrencies();
     const [selectedCurrency, setSelectedCurrency] = useState<WasmFiatCurrencySymbol>(DEFAULT_CURRENCY);
@@ -81,6 +83,9 @@ export const WalletAutoCreationNoticeModal = ({ open, dryRun }: Props) => {
                     shape="ghost"
                     color="weak"
                     style={{ background: 'transparent' }}
+                    onClick={() => {
+                        handleClickImport();
+                    }}
                 >{c('Wallet autocreation').t`Import wallet`}</Button>
             </div>
         </Modal>
