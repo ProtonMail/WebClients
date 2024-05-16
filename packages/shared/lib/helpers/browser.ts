@@ -153,3 +153,5 @@ export const getHasWebAuthnSupport = () => {
         return false;
     }
 };
+
+export const browserAPI = (globalThis as any)?.browser ?? (globalThis as any)?.chrome;
