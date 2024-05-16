@@ -173,6 +173,9 @@
       "Download": [
         "გადმოწერა"
       ],
+      "Download CSV sample": [
+        "CSV მაგალითის გადმოწერა"
+      ],
       "Download our CSV template": [
         "გადმოწერეთ ჩვენი CSV ნიმუში"
       ],
@@ -229,6 +232,9 @@
       ],
       "Fit to window": [
         "ფანჯარაში ჩატევა"
+      ],
+      "Forgot password?": [
+        "დაგავიწყდათ პაროლი?"
       ],
       "Get ${ vpnPlus }": [
         "${ vpnPlus }-ის მიღება"
@@ -2407,6 +2413,9 @@
       "You have successfully joined the Family plan": [
         "საოჯახო ტარიფს წარმატებით შეუერთდით"
       ],
+      "You need to configure a custom domain before adding multiple users.": [
+        "ერთზე მეტი მომხმარებლის დამატებმდე თქვენი დომენის მორგება აუცილებელია."
+      ],
       "You need to configure a custom domain before creating a new user.": [
         "ახალი მომხმარებლის დამატებამდე თქვენი დომენის მორგება აუცილებელია."
       ],
@@ -2435,9 +2444,6 @@
       ],
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "თუ მომხმარებელს ${ MAIL_APP_NAME }-ის მისამართი უკვე გააჩნია, შეიყვანეთ ის აქ. წინააღმდეგ შემთხვევაში, მათ ჯერ ანგარიშის შექმნა დასჭირდებათ."
-      ],
-      "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
-        "მოსაწვევი გაუქმდება და მომხმარებელს ${ organizationName }-სთან მიერთება აღარ შეეძლება."
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "მომხმარებლის ანგარიშს 30 დღით ექნება საცდელი წვდომა ${ BRAND_NAME }-ის შეუზღუდავ ტარიფთან*."
@@ -2476,6 +2482,11 @@
         "ეს ოჯახის ყველა წევრს ${ BRAND_NAME }-ის ყველა ფასიან ფუნქციას გაუუქმებს."
       ]
     },
+    "familyOffer_2023:Settings section title": {
+      "Family": [
+        "ოჯახი"
+      ]
+    },
     "familyOffer_2023:Success": {
       "${ member.Name } has been removed from ${ organizationName }": [
         "წაშლილია ${ member.Name } ${ organizationName }-დან"
@@ -2508,6 +2519,9 @@
       ],
       "Invite a user": [
         "მომხმარებლის მოწვევა"
+      ],
+      "Manage family group": [
+        "ოჯახის ჯგუფის მართვა"
       ],
       "Set family name": [
         "ოჯახის სახელის დაყენება"
@@ -2775,11 +2789,17 @@
       "IP address": [
         "IP მისამართი"
       ],
+      "Key type": [
+        "გასაღების ტიპი"
+      ],
       "Members": [
         "წევრები"
       ],
       "Name": [
         "სახელი"
+      ],
+      "Organization key fingerprint": [
+        "ორგანიზაციის გასაღების ანაბეჭდი"
       ],
       "Save big with the best deals on ${ VPN_APP_NAME }": [
         "დაზოგეთ თანხა ${ VPN_APP_NAME }-ზე"
@@ -2948,6 +2968,9 @@
       ],
       "Add domain": [
         "დომენის დამატება"
+      ],
+      "Add multiple users to your organization at once.": [
+        "ორგანიზაციაში ბევრი მომხმარებლის ერთდროული დამატება."
       ],
       "Add server (${ availableAddedCount } available)": [
         "სერვერის დამატება (ხელმისაწვდომია ${ availableAddedCount })",
@@ -3167,6 +3190,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "გეგმის ჩამოწევა შეწყვეტს შეერთებას ფასიან ${ VPN_APP_NAME } სერვერებთან."
+      ],
+      "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
+        "მითითებული მომხმარებლების შესაქმნელად გადმოწერეთ ჩვენი CSV შაბლონი, შეავსეთ მომხმარებლის დეტალები და ატვირთეთ შევსებული CSV ფაილი."
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "გადმოწერეთ თქვენი რჩეული აპლიკაცია დღეს და გქონდეთ თქვენი კონფიდენციალობა თან, სადაც უნდა წახვიდეთ."
@@ -3398,6 +3424,9 @@
       ],
       "MM/YY": [
         "თთ/წწ"
+      ],
+      "Multi-user support not enabled.": [
+        "მრავალმომხმარებლიანობის მხარდაჭერა ჩართული არაა."
       ],
       "Must be between 3 and 20 characters long.": [
         "სიგრძე 3-სა და 20 სიმბოლოს შორის უნდა მერყეობდეს."
@@ -4117,6 +4146,9 @@
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "თქვენი ორგანიზაცია შესვლის ერთწერტილიან სისტემას (SSO) იყენებს. შედით, რომ თქვენს SSO-ის მომწოდებელზე გადახვიდეთ."
+      ],
+      "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
+        "თქვენი ორგანიზაციის ელფოსტა გამჭოლადაა დაშიფრული ორგანიზაციის გასაღების გამოყენებით. ეს ანაბეჭდი ასევე შეიძლება გამოიყენოთ, რათა დარწმუნდეთ, რომ თქვენი ანგარიშის ყველა ადმინისტრატორი იგივე გასაღებს იყენებს."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "გადახდის თქვენი მეთოდები TLS დაშიფვრითა და კონფიდენციალობის შვეიცარიული კანონებითაა დაცული."
@@ -6574,19 +6606,9 @@
         "პაროლის შეცვლის პროცესის გასაუქმებლად, შეიყვანეთ მიმდინარე თქვენი პაროლი. სხვა ცვლილებები ძალაში არ შევა."
       ]
     },
-    "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
-        "პაროლის შეცვლა გაუქმდა"
-      ]
-    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "გავაუქმო პაროლის შეცვლა?"
-      ]
-    },
-    "session_recovery:cancelled:info": {
-      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
-        "პაროლის შეცვლის მოთხოვვნა გაუქმდა (${ user.Email }). თუ ეს მოთხოვნა თქვენ არ გეკუთვნით, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -6743,6 +6765,11 @@
         "პაროლის შეცვლის მოთხოვნა"
       ]
     },
+    "Settings section title": {
+      "Organization": [
+        "ორგანიზაცია"
+      ]
+    },
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "გაზიარებულია ${ ownerName }-ის მიერ"
@@ -6844,11 +6871,6 @@
       ],
       "Support online privacy": [
         "თქვენი ონლაინ კონფიდენციალობა"
-      ]
-    },
-    "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "ეს გამოწერა მანამდე გაუქმდება ყოველ 2 წელიწადში ერთხელ იმავე სიხშირით, სანამ გააუქმებთ."
       ]
     },
     "specialoffer: Link": {
@@ -6968,11 +6990,6 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "მოიწვიეთ მეგობრები ${ BRAND_NAME }-ში"
-      ]
-    },
-    "State": {
-      "Cancelling your subscription, please wait": [
-        "მიმდინარეობს თქვენი გამოწერის გაუქმება. მოითმინეთ"
       ]
     },
     "Storage": {
@@ -7318,9 +7335,6 @@
       "Verification successful": [
         "გადამოწმება წარმატებულია"
       ],
-      "You have successfully cancelled your subscription.": [
-        "თქვენი ტარიფი წარმატებით გააუქმეთ."
-      ],
       "You have successfully unsubscribed": [
         "გამოწერა წარმატებით გაუქმდა"
       ]
@@ -7546,6 +7560,9 @@
       "Card verification": [
         "ბარათის გადამოწმება"
       ],
+      "Catch-all address": [
+        "დომენის ყველა ელფოსტის მიმღები მისამართი"
+      ],
       "Change login password": [
         "შესვლის პაროლის შეცვლა"
       ],
@@ -7622,6 +7639,9 @@
       "Custom selection of users": [
         "ხელით მითითებული მომხმარებლები"
       ],
+      "Customization": [
+        "მორგება"
+      ],
       "Customize the number of IP addresses in your plan": [
         "თქვენს ტარიფში IP მისამართების რაოდენობის ხელით მითითება"
       ],
@@ -7664,6 +7684,9 @@
       ],
       "Disable two-factor authentication": [
         "2FA-ის გამორთვა"
+      ],
+      "Domain names": [
+        "დომენის სახელი"
       ],
       "Downgrade account": [
         "ანგარიშის ტარიფის ჩამოწევა"
@@ -7798,6 +7821,12 @@
       "OpenVPN configuration files": [
         "OpenVPN-ის კონფიგურაციის ფაილები"
       ],
+      "Organization filters": [
+        "ორგანიზაციის ფილტრები"
+      ],
+      "Organization key": [
+        "ორგანიზაციის გასაღები"
+      ],
       "Organization name": [
         "ორგანიზაციის სახელი"
       ],
@@ -7924,6 +7953,9 @@
       "Single sign-on": [
         "SSO"
       ],
+      "Spam, block, and allow lists": [
+        "სპამი, დაბლოკვა და დაშვებული სიები"
+      ],
       "Status": [
         "სტატუსი"
       ],
@@ -7969,6 +8001,9 @@
       ],
       "Users": [
         "მომხმარებლები"
+      ],
+      "Users and addresses": [
+        "მომხმარებლები და მისამართები"
       ],
       "Verification failed": [
         "გადამოწმების შეცდომა"

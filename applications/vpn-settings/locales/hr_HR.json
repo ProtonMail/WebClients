@@ -182,6 +182,9 @@
       "Fit to window": [
         "Prilagodi prozoru"
       ],
+      "Forgot password?": [
+        "Zaboravili ste lozinku?"
+      ],
       "Get ${ vpnPlus }": [
         "Nabavite ${ vpnPlus }"
       ],
@@ -1702,6 +1705,11 @@
         "Prezime"
       ]
     },
+    "familyOffer_2023:Settings section title": {
+      "Family": [
+        "Obitelj"
+      ]
+    },
     "familyOffer_2023:Success": {
       "Member updated": [
         "Ažuriran član"
@@ -1713,6 +1721,9 @@
       ],
       "Invite a user": [
         "Pozovite korisnika"
+      ],
+      "Manage family group": [
+        "Upravljanje obiteljskom grupom"
       ]
     },
     "Feature": {
@@ -1883,11 +1894,17 @@
       "IP address": [
         "IP adresa"
       ],
+      "Key type": [
+        "Vrsta ključa"
+      ],
       "Members": [
         "Članovi"
       ],
       "Name": [
         "Naziv"
+      ],
+      "Organization key fingerprint": [
+        "Jedinstveni ključ organizacije"
       ],
       "Server": [
         "Poslužitelj"
@@ -2138,6 +2155,9 @@
       "MM/YY": [
         "MM/GG"
       ],
+      "Multi-user support not enabled.": [
+        "Višekorisnička podrška nije omogućena."
+      ],
       "No addresses exist": [
         "Ne postoji ni jedna adresa e-pošte"
       ],
@@ -2364,6 +2384,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Vaše datoteke će biti šifrirane i spremljene"
+      ],
+      "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
+        "Adrese e-pošte vaše organizacije zaštićene su end-to-end šifriranjem pomoću ključa organizacije. Ovaj jedinstveni ključ može se upotrijebiti za provjeru imaju li svi administratori na vašem računu isti ključ."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Vaši podaci o plaćanju zaštićeni su TLS enkripcijom i švicarskim zakonima o privatnosti."
@@ -3292,11 +3315,6 @@
         "Poništi ponovno postavljanje lozinke"
       ]
     },
-    "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
-        "Ponovno postavljanje lozinke otkazano"
-      ]
-    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Poništiti ponovno postavljanje lozinke?"
@@ -3349,6 +3367,11 @@
       ],
       "Pending": [
         "Na čekanju"
+      ]
+    },
+    "Settings section title": {
+      "Organization": [
+        "Organizacija"
       ]
     },
     "Signup label": {
@@ -3419,11 +3442,6 @@
       ],
       "Secure streaming": [
         "Siguran streaming"
-      ]
-    },
-    "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "Ovaj se pretplatnički odnos automatski obnavlja svake dvije godine po istoj cijeni dok se ne otkaže."
       ]
     },
     "specialoffer: Link": {
@@ -3805,6 +3823,9 @@
       "Card verification": [
         "Potvrda kartice"
       ],
+      "Catch-all address": [
+        "Dohvati-sve adrese e-pošte"
+      ],
       "Change login password": [
         "Promijeni lozinku za prijavu"
       ],
@@ -3870,6 +3891,9 @@
       ],
       "Disable two-factor authentication": [
         "Onemogući dvofaktorsku autentikaciju"
+      ],
+      "Domain names": [
+        "Nazivi domena"
       ],
       "Downgrade account": [
         "Smanjite svoj plan"
@@ -4048,6 +4072,9 @@
       "Sign out": [
         "Odjava"
       ],
+      "Spam, block, and allow lists": [
+        "Popis neželjene pošte, blokiranih i dopuštenih"
+      ],
       "Status": [
         "Status"
       ],
@@ -4077,6 +4104,9 @@
       ],
       "Users": [
         "Korisnici"
+      ],
+      "Users and addresses": [
+        "Korisnici i adrese"
       ],
       "Verification failed": [
         "Neuspješna provjera"

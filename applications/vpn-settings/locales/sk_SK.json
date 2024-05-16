@@ -113,6 +113,9 @@
       "Copy key to the clipboard": [
         "Skopírovať kľúč do schránky"
       ],
+      "Copy version number to clipboard": [
+        "Skopírovať číslo verzie do schránky"
+      ],
       "Create": [
         "Vytvoriť"
       ],
@@ -173,6 +176,9 @@
       "Download": [
         "Stiahnuť"
       ],
+      "Download CSV sample": [
+        "Stiahnuť ukážku CSV"
+      ],
       "Download our CSV template": [
         "Stiahnuť šablónu CSV"
       ],
@@ -229,6 +235,9 @@
       ],
       "Fit to window": [
         "Prispôsobiť oknu"
+      ],
+      "Forgot password?": [
+        "Zabudnuté heslo?"
       ],
       "Get ${ vpnPlus }": [
         "Získať ${ vpnPlus }"
@@ -1946,11 +1955,32 @@
       "Bugs or quality issue": [
         "Chyby alebo problém s kvalitou"
       ],
+      "I do not wish to share": [
+        "Nechcem sa podeliť"
+      ],
+      "I found a cheaper VPN": [
+        "Mám nájdenú lacnejšiu VPN"
+      ],
+      "I found a VPN with better features": [
+        "Mám nájdenú VPN s lepšími funkciami"
+      ],
+      "I have not managed to connect": [
+        "Nepodarilo sa mi pripojiť"
+      ],
+      "I only needed a VPN short-term": [
+        "Potreba VPN bola len krátkodobá"
+      ],
       "I use a different ${ BRAND_NAME } account": [
         "Používam iný účet ${ BRAND_NAME }"
       ],
+      "It doesn't do what I need": [
+        "Nerobí to, čo potrebujem"
+      ],
       "Missing feature(s)": [
         "Chýbajúce funkcie"
+      ],
+      "Other reason (please comment)": [
+        "Iný dôvod (uveďte, prosím)"
       ],
       "Subscription is too expensive": [
         "Predplatné je príliš drahé"
@@ -1960,6 +1990,9 @@
       ],
       "Temporary need, may come back in the future": [
         "Dočasná potreba, môže sa v budúcnosti vrátiť"
+      ],
+      "The VPN is too slow": [
+        "VPN je príliš pomalá"
       ]
     },
     "Downgrade modal exit survey title": {
@@ -2458,6 +2491,9 @@
       "You have successfully joined the Family plan": [
         "Úspešne ste sa pripojili k rodinnému plánu."
       ],
+      "You need to configure a custom domain before adding multiple users.": [
+        "Pred pridaním viacerých používateľov, musíte nakonfigurovať vlastnú doménu."
+      ],
       "You need to configure a custom domain before creating a new user.": [
         "Pred vytvorením nového používateľa, musíte nakonfigurovať vlastnú doménu."
       ],
@@ -2486,9 +2522,6 @@
       ],
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Ak používateľ už má adresu ${ MAIL_APP_NAME }, zadajte ju sem. V opačnom prípade si musí najprv vytvoriť účet."
-      ],
-      "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
-        "Pozvánka bude zrušená a používateľ sa nebude môcť pripojiť k ${ organizationName }."
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "Účet používateľa bude presunutý do plánu ${ BRAND_NAME } Unlimited na 30-dňovú bezplatnú skúšobnú verziu*."
@@ -2527,6 +2560,11 @@
         "Týmto odstránite pre každého člena rodiny všetky prémiové funkcie ${ BRAND_NAME }."
       ]
     },
+    "familyOffer_2023:Settings section title": {
+      "Family": [
+        "Rodina"
+      ]
+    },
     "familyOffer_2023:Success": {
       "${ member.Name } has been removed from ${ organizationName }": [
         "${ member.Name } bol odstránený z ${ organizationName }"
@@ -2559,6 +2597,9 @@
       ],
       "Invite a user": [
         "Pozvať používateľa"
+      ],
+      "Manage family group": [
+        "Spravovať rodinnú skupinu"
       ],
       "Set family name": [
         "Nastaviť meno rodiny"
@@ -2844,11 +2885,17 @@
       "IP address": [
         "IP adresa"
       ],
+      "Key type": [
+        "Typ kľúča"
+      ],
       "Members": [
         "Členovia"
       ],
       "Name": [
         "Meno"
+      ],
+      "Organization key fingerprint": [
+        "Odtlačok kľúča organizácie"
       ],
       "Save big with the best deals on ${ VPN_APP_NAME }": [
         "Ušetrite viac s najlepšími ponukami na ${ VPN_APP_NAME }"
@@ -3033,6 +3080,9 @@
       ],
       "Add domain": [
         "Pridať doménu"
+      ],
+      "Add multiple users to your organization at once.": [
+        "Pridajte do svojej organizácie naraz viacerých používateľov."
       ],
       "Add server (${ availableAddedCount } available)": [
         "Pridať server (${ availableAddedCount } dostupný)",
@@ -3267,6 +3317,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Prechod na nižšiu verziu ukončí všetky pripojenia k plateným serverom ${ VPN_APP_NAME }."
+      ],
+      "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
+        "Stiahnite si našu CSV šablónu, vyplňte podrobnosti o používateľoch a potom nahrajte vyplnený CSV súbor, aby sa pre týchto používateľov vytvorili účty."
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Stiahnite si svoju obľúbenú aplikáciu ešte dnes a vezmite súkromie do svojich rúk, nech ste kdekoľvek."
@@ -3507,6 +3560,9 @@
       ],
       "MM/YY": [
         "MM/RR"
+      ],
+      "Multi-user support not enabled.": [
+        "Podpora viacerých používateľov nie je povolená."
       ],
       "Must be between 3 and 20 characters long.": [
         "Musí mať dĺžku 3 až 20 znakov."
@@ -4018,6 +4074,9 @@
       "Version ${ version }": [
         "Verzia ${ version }"
       ],
+      "Version number successfully copied to clipboard": [
+        "Číslo verzie bolo úspešne skopírované do schránky"
+      ],
       "View, download, and manage your invoices.": [
         "Prehliadanie, sťahovanie a správa faktúr."
       ],
@@ -4257,6 +4316,9 @@
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Vaša organizácia používa jednotné prihlásenie (SSO). Stlačte tlačidlo Prihlásiť sa a pokračujte prostredníctvom vášho poskytovateľa SSO."
+      ],
+      "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
+        "Emaily vašej organizácie sú chránené end-to-end šifrovaním pomocou kľúča organizácie. Tento odtlačok možno použiť na overenie, či všetci správcovia vo vašom účte majú rovnaký kľúč."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Vaše platobné údaje sú chránené TLS šifrovaním a švajčiarskymi zákonmi o ochrane súkromia."
@@ -6884,19 +6946,9 @@
         "Zadaním aktuálneho hesla zrušíte proces obnovenia hesla. Žiadne ďalšie zmeny sa neuskutočnia."
       ]
     },
-    "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
-        "Obnovenie hesla zrušené"
-      ]
-    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Zrušiť obnovenie hesla?"
-      ]
-    },
-    "session_recovery:cancelled:info": {
-      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
-        "Žiadosť o obnovenie hesla zrušená (${ user.Email }). Ak ste túto žiadosť nepodali, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -7063,6 +7115,11 @@
         "Žiadosť o obnovenie hesla"
       ]
     },
+    "Settings section title": {
+      "Organization": [
+        "Organizácia"
+      ]
+    },
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "Zdieľané vlastníkom ${ ownerName }"
@@ -7174,11 +7231,6 @@
       ],
       "Support online privacy": [
         "Podporte online súkromie"
-      ]
-    },
-    "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "Toto predplatné sa bude automaticky obnovovať každé 2 roky za rovnakú cenu, kým sa nezruší."
       ]
     },
     "specialoffer: Link": {
@@ -7300,11 +7352,6 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Pozvite priateľov do ${ BRAND_NAME }"
-      ]
-    },
-    "State": {
-      "Cancelling your subscription, please wait": [
-        "Rušenie vášho predplatného, počkajte prosím"
       ]
     },
     "Storage": {
@@ -7719,9 +7766,6 @@
       "Verification successful": [
         "Overenie prebehlo úspešne"
       ],
-      "You have successfully cancelled your subscription.": [
-        "Úspešne ste zrušili svoje predplatné."
-      ],
       "You have successfully unsubscribed": [
         "Predplatné bolo úspešne zrušené"
       ]
@@ -7947,6 +7991,9 @@
       "Card verification": [
         "Overenie karty"
       ],
+      "Catch-all address": [
+        "Adresa doménového koša"
+      ],
       "Change login password": [
         "Zmeniť prihlasovacie heslo"
       ],
@@ -8025,6 +8072,9 @@
       "Custom selection of users": [
         "Vlastný výber používateľov"
       ],
+      "Customization": [
+        "Prispôsobenia"
+      ],
       "Customize the number of IP addresses in your plan": [
         "Prispôsobenie počtu IP adries v pláne"
       ],
@@ -8069,6 +8119,9 @@
       ],
       "Disable two-factor authentication": [
         "Vypnúť dvojstupňové overenie"
+      ],
+      "Domain names": [
+        "Názvy domén"
       ],
       "Downgrade account": [
         "Znížiť úroveň účtu"
@@ -8205,6 +8258,12 @@
       "OpenVPN configuration files": [
         "Konfiguračné súbory OpenVPN"
       ],
+      "Organization filters": [
+        "Filtre organizácie"
+      ],
+      "Organization key": [
+        "Kľúč organizácie"
+      ],
       "Organization name": [
         "Názov organizácie"
       ],
@@ -8331,6 +8390,9 @@
       "Single sign-on": [
         "Jednotné prihlásenie"
       ],
+      "Spam, block, and allow lists": [
+        "Spam, blokované a povolené"
+      ],
       "Status": [
         "Stav"
       ],
@@ -8381,6 +8443,9 @@
       ],
       "Users": [
         "Používatelia"
+      ],
+      "Users and addresses": [
+        "Uživatelia a adresy"
       ],
       "Verification failed": [
         "Overovanie zlyhalo"

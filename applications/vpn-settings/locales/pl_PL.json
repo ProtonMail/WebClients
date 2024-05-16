@@ -173,6 +173,9 @@
       "Download": [
         "Pobierz"
       ],
+      "Download CSV sample": [
+        "Pobierz przykładowy plik CSV"
+      ],
       "Download our CSV template": [
         "Pobierz szablon pliku CSV"
       ],
@@ -229,6 +232,9 @@
       ],
       "Fit to window": [
         "Dopasuj do okna"
+      ],
+      "Forgot password?": [
+        "Przypomnij hasło?"
       ],
       "Get ${ vpnPlus }": [
         "Wybierz plan ${ vpnPlus }"
@@ -2476,6 +2482,9 @@
       "You have successfully joined the Family plan": [
         "Dołączono do planu rodzinnego"
       ],
+      "You need to configure a custom domain before adding multiple users.": [
+        "Musisz skonfigurować niestandardową domenę przed dodaniem użytkowników."
+      ],
       "You need to configure a custom domain before creating a new user.": [
         "Musisz skonfigurować niestandardową domenę przed utworzeniem nowego użytkownika."
       ],
@@ -2504,9 +2513,6 @@
       ],
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Jeśli użytkownik już ma adres ${ MAIL_APP_NAME }, wpisz go tutaj. W przeciwnym razie utwórz konto."
-      ],
-      "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
-        "Zaproszenie zostanie anulowane i użytkownik nie będzie mógł dołączyć do organizacji ${ organizationName }."
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "Konto użytkownika zostanie przeniesione do planu Unlimited ${ BRAND_NAME } na 30-dniową darmową wersję próbną*."
@@ -2545,6 +2551,11 @@
         "To spowoduje usunięcie wszystkich funkcji premium każdego użytkownika rodziny ${ BRAND_NAME }."
       ]
     },
+    "familyOffer_2023:Settings section title": {
+      "Family": [
+        "Rodzina"
+      ]
+    },
     "familyOffer_2023:Success": {
       "${ member.Name } has been removed from ${ organizationName }": [
         "Użytkownik ${ member.Name } został usunięty z organizacji ${ organizationName }"
@@ -2577,6 +2588,9 @@
       ],
       "Invite a user": [
         "Zaproś użytkownika"
+      ],
+      "Manage family group": [
+        "Zarządzaj grupą rodzinną"
       ],
       "Set family name": [
         "Ustaw nazwę rodziny"
@@ -2862,11 +2876,17 @@
       "IP address": [
         "Adres IP"
       ],
+      "Key type": [
+        "Typ klucza"
+      ],
       "Members": [
         "Użytkownicy"
       ],
       "Name": [
         "Nazwa"
+      ],
+      "Organization key fingerprint": [
+        "Odcisk klucza organizacji"
       ],
       "Save big with the best deals on ${ VPN_APP_NAME }": [
         "Zaoszczędź dzięki najlepszym ofertom ${ VPN_APP_NAME }"
@@ -3051,6 +3071,9 @@
       ],
       "Add domain": [
         "Dodaj domenę"
+      ],
+      "Add multiple users to your organization at once.": [
+        "Dodaj wielu użytkowników organizacji jednocześnie."
       ],
       "Add server (${ availableAddedCount } available)": [
         "Dodaj serwer (${ availableAddedCount } dostępny)",
@@ -3285,6 +3308,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Obniżenie planu spowoduje zakończenie wszystkich połączeń z płatnymi serwerami ${ VPN_APP_NAME }."
+      ],
+      "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
+        "Pobierz szablon CSV, wpisz szczegóły użytkownika i prześlij plik CSV, aby utworzyć konta użytkowników."
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Pobierz swoją ulubioną aplikację i ciesz się prywatnością, gdziekolwiek jesteś."
@@ -3525,6 +3551,9 @@
       ],
       "MM/YY": [
         "MM/RR"
+      ],
+      "Multi-user support not enabled.": [
+        "Obsługa wielu użytkowników jest wyłączona."
       ],
       "Must be between 3 and 20 characters long.": [
         "Nazwa musi zawierać od 3 do 20 znaków."
@@ -4275,6 +4304,9 @@
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Organizacja używa logowania SSO. Kliknij \"Zaloguj się\", aby skorzystać z dostawcy tożsamości SSO."
+      ],
+      "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
+        "Wiadomości organizacji są chronione szyfrowaniem end-to-end przy użyciu klucza organizacji. Użyj tego odcisku klucza do sprawdzenia, czy wszyscy administratorzy na Twoim koncie posiadają ten sam klucz."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Szczegóły Twoich płatności są chronione szyfrowaniem TLS i szwajcarskim prawem ochrony danych."
@@ -5452,9 +5484,6 @@
       ],
       "Organize items with multiple vaults": [
         "Organizuj elementy w wielu sejfach"
-      ],
-      "Pass Monitor - premium features": [
-        "Monitoring Proton Pass — funkcje premium"
       ],
       "Passkeys supported": [
         "Klucze dostępu są obsługiwane"
@@ -6920,19 +6949,9 @@
         "Wpisz obecne hasło, aby anulować proces resetowania hasła."
       ]
     },
-    "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
-        "Resetowanie hasła zostało anulowane"
-      ]
-    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Anulować resetowanie hasła?"
-      ]
-    },
-    "session_recovery:cancelled:info": {
-      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
-        "Żądanie zresetowania hasła konta ${ user.Email } zostało anulowane. Jeśli żądanie nie zostało wysłane przez Ciebie, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -7099,6 +7118,11 @@
         "Żądanie zresetowania hasła"
       ]
     },
+    "Settings section title": {
+      "Organization": [
+        "Organizacja"
+      ]
+    },
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "Udostępniony przez ${ ownerName }"
@@ -7210,11 +7234,6 @@
       ],
       "Support online privacy": [
         "Wspieraj prywatność w Internecie"
-      ]
-    },
-    "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "Subskrypcja będzie odnawiana automatycznie co 2 lata za tę samą cenę aż do momentu anulowania jej."
       ]
     },
     "specialoffer: Link": {
@@ -7336,11 +7355,6 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Zaproś znajomych do usługi ${ BRAND_NAME }"
-      ]
-    },
-    "State": {
-      "Cancelling your subscription, please wait": [
-        "Anulowanie subskrypcji. Poczekaj chwilę"
       ]
     },
     "Storage": {
@@ -7755,9 +7769,6 @@
       "Verification successful": [
         "Weryfikacja powiodła się"
       ],
-      "You have successfully cancelled your subscription.": [
-        "Subskrypcja została anulowana."
-      ],
       "You have successfully unsubscribed": [
         "Subskrypcja została anulowana"
       ]
@@ -7983,6 +7994,9 @@
       "Card verification": [
         "Weryfikacja karty płatniczej"
       ],
+      "Catch-all address": [
+        "Adres catch-all"
+      ],
       "Change login password": [
         "Zmień hasło logowania"
       ],
@@ -8061,6 +8075,9 @@
       "Custom selection of users": [
         "Wybrani użytkownicy"
       ],
+      "Customization": [
+        "Personalizacja"
+      ],
       "Customize the number of IP addresses in your plan": [
         "Dostosuj liczbę adresów IP w planie"
       ],
@@ -8105,6 +8122,9 @@
       ],
       "Disable two-factor authentication": [
         "Wyłącz uwierzytelnianie dwustopniowe"
+      ],
+      "Domain names": [
+        "Nazwy domen"
       ],
       "Downgrade account": [
         "Obniż plan"
@@ -8241,6 +8261,12 @@
       "OpenVPN configuration files": [
         "Pliki konfiguracyjne OpenVPN"
       ],
+      "Organization filters": [
+        "Filtry organizacji"
+      ],
+      "Organization key": [
+        "Klucz organizacji"
+      ],
       "Organization name": [
         "Nazwa organizacji"
       ],
@@ -8367,6 +8393,9 @@
       "Single sign-on": [
         "Logowanie SSO"
       ],
+      "Spam, block, and allow lists": [
+        "Lista spamu, zablokowanych i dozwolonych"
+      ],
       "Status": [
         "Status"
       ],
@@ -8417,6 +8446,9 @@
       ],
       "Users": [
         "Użytkownicy"
+      ],
+      "Users and addresses": [
+        "Użytkownicy i adresy"
       ],
       "Verification failed": [
         "Weryfikacja nie powiodła się"

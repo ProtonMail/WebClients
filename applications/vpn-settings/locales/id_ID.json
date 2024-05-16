@@ -176,6 +176,9 @@
       "Download": [
         "Unduh"
       ],
+      "Download CSV sample": [
+        "Unduh sampel CSV"
+      ],
       "Download our CSV template": [
         "Unduh template CSV kami"
       ],
@@ -2464,6 +2467,9 @@
       "You have successfully joined the Family plan": [
         "Anda berhasil bergabung ke paket Keluarga"
       ],
+      "You need to configure a custom domain before adding multiple users.": [
+        "Anda harus mengatur domain khusus sebelum menambahkan lebih dari satu pengguna."
+      ],
       "You need to configure a custom domain before creating a new user.": [
         "Anda harus mengatur domain kustom sebelum membuat pengguna baru."
       ],
@@ -2492,9 +2498,6 @@
       ],
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Jika pengguna sudah memiliki alamat ${ MAIL_APP_NAME }, masukkan di sini. Jika belum, mereka harus membuat sebuah akun terlebih dahulu."
-      ],
-      "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
-        "Undangan akan dibatalkan dan pengguna tidak dapat bergabung ke ${ organizationName }."
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "Akun pengguna akan dipindahkan ke paket ${ BRAND_NAME } Unlimited selama uji coba gratis 30 hari."
@@ -2533,6 +2536,11 @@
         "Ini akan menghapus semua fitur ${ BRAND_NAME } premium untuk setiap anggota keluarga."
       ]
     },
+    "familyOffer_2023:Settings section title": {
+      "Family": [
+        "Keluarga"
+      ]
+    },
     "familyOffer_2023:Success": {
       "${ member.Name } has been removed from ${ organizationName }": [
         "${ member.Name } telah dikeluarkan dari ${ organizationName }"
@@ -2565,6 +2573,9 @@
       ],
       "Invite a user": [
         "Undang pengguna"
+      ],
+      "Manage family group": [
+        "Kelola grup keluarga"
       ],
       "Set family name": [
         "Tetapkan nama keluarga"
@@ -2823,11 +2834,17 @@
       "IP address": [
         "Alamat IP"
       ],
+      "Key type": [
+        "Tipe kunci"
+      ],
       "Members": [
         "Anggota"
       ],
       "Name": [
         "Nama"
+      ],
+      "Organization key fingerprint": [
+        "Sidik jari kunci organisasi"
       ],
       "Save big with the best deals on ${ VPN_APP_NAME }": [
         "Hemat besar-besaran dengan penawaran ${ VPN_APP_NAME } terbaik"
@@ -2988,6 +3005,9 @@
       ],
       "Add domain": [
         "Tambah domain"
+      ],
+      "Add multiple users to your organization at once.": [
+        "Tambahkan banyak pengguna ke dalam organisasi Anda secara bersamaan."
       ],
       "Add server (${ availableAddedCount } available)": [
         "Tambah server (${ availableAddedCount } tersedia)"
@@ -3204,6 +3224,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Proses penurunan akun akan memutus seluruh sambungan ke server ${ VPN_APP_NAME } berbayar."
+      ],
+      "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
+        "Unduh template CSV kami, lengkapi rincian pengguna yang terkait, lalu unggah berkas CSV yang telah diisi untuk membuat akun bagi para pengguna ini."
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Unduh aplikasi favorit Anda sekarang juga dan bawa privasi ke mana pun Anda pergi."
@@ -3444,6 +3467,9 @@
       ],
       "MM/YY": [
         "BB/TT"
+      ],
+      "Multi-user support not enabled.": [
+        "Dukungan multi-pengguna tidak diaktifkan."
       ],
       "Must be between 3 and 20 characters long.": [
         "Nama gateway harus memiliki panjang antara 3 dan 20 karakter."
@@ -4173,6 +4199,9 @@
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Organisasi Anda menggunakan single sign-on (SSO). Tekan Masuk untuk melanjutkan dengan penyedia SSO Anda."
+      ],
+      "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
+        "Email organisasi Anda terlindungi dengan enkripsi end-to-end melalui kunci organisasi. Sidik jari ini dapat digunakan untuk memverifikasi apakah seluruh administrator pada akun Anda memiliki kunci yang sama."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Detail pembayaran Anda dilindungi dengan enkripsi TLS dan hukum privasi Swiss."
@@ -5297,9 +5326,6 @@
       "Organize items with multiple vaults": [
         "Kelola item dengan berbagai brankas"
       ],
-      "Pass Monitor - premium features": [
-        "Pemantauan Pass - fitur premium"
-      ],
       "Passkeys supported": [
         "Passkey didukung"
       ],
@@ -6198,8 +6224,14 @@
       "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
         "Gunakan metode pemulihan data, hubungi administrator lain, atau atur ulang kunci organisasi untuk memulihkan hak administrator."
       ],
+      "We couldn't verify authenticity of this identity.": [
+        "Kami tidak dapat memverifikasi keaslian identitas ini."
+      ],
       "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
         "Kami tidak dapat memastikan keamanan kunci alamat pengirim ini. Terkadang, hal ini disebabkan oleh terdapatnya jeda dalam memperbarui informasi pengirim. Silakan coba lagi nanti. Apabila Anda tidak memercayai keabsahan undangan atau pengirim ini, silakan hubungi Layanan Dukungan ${ BRAND_NAME }."
+      ],
+      "We have verified the authenticity of this identity.": [
+        "Kami telah memverifikasi keaslian identitas ini."
       ],
       "We have verified the authenticity of this sender and invitation.": [
         "Kami telah memastikan keasilan pengirim dan undangan ini."
@@ -6695,19 +6727,9 @@
         "Masukkan kata sandi Anda saat ini untuk membatalkan proses pengaturan ulang kata sandi. Tidak ada perubahan lain yang akan diterapkan."
       ]
     },
-    "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
-        "Pengaturan ulang kata sandi dibatalkan"
-      ]
-    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Batalkan pengaturan ulang kata sandi?"
-      ]
-    },
-    "session_recovery:cancelled:info": {
-      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
-        "Permintaan pengaturan ulang kata sandi dibatalkan (${ user.Email }). Apabila Anda tidak membuat permintaan ini, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -6859,6 +6881,11 @@
         "Permintaan pengaturan ulang kata sandi"
       ]
     },
+    "Settings section title": {
+      "Organization": [
+        "Organisasi"
+      ]
+    },
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "Dibagikan oleh ${ ownerName }"
@@ -6955,11 +6982,6 @@
       ],
       "Support online privacy": [
         "Dukung privasi online"
-      ]
-    },
-    "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "Langganan ini akan otomatis diperbarui setiap 2 tahun dengan tarif yang sama hingga dibatalkan."
       ]
     },
     "specialoffer: Link": {
@@ -7078,11 +7100,6 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Undang teman ke ${ BRAND_NAME }"
-      ]
-    },
-    "State": {
-      "Cancelling your subscription, please wait": [
-        "Membatalkan langganan Anda, silakan tunggu"
       ]
     },
     "Storage": {
@@ -7455,9 +7472,6 @@
       "Verification successful": [
         "Verifikasi berhasil"
       ],
-      "You have successfully cancelled your subscription.": [
-        "Anda telah berhasil membatalkan langganan Anda."
-      ],
       "You have successfully unsubscribed": [
         "Anda berhasil berhenti berlangganan"
       ]
@@ -7648,7 +7662,7 @@
         "Tambah pengguna"
       ],
       "Allocate storage": [
-        "Alokasi ruang penyimpanan"
+        "Alokasikan ruang penyimpanan"
       ],
       "Amount": [
         "Jumlah"
@@ -7682,6 +7696,9 @@
       ],
       "Card verification": [
         "Verifikasi kartu"
+      ],
+      "Catch-all address": [
+        "Alamat catch-all"
       ],
       "Change login password": [
         "Ubah kata sandi masuk"
@@ -7758,6 +7775,9 @@
       "Custom selection of users": [
         "Pengguna yang dipilih secara tertentu"
       ],
+      "Customization": [
+        "Kustomisasi"
+      ],
       "Customize the number of IP addresses in your plan": [
         "Sesuaikan jumlah alamat IP dalam paket Anda"
       ],
@@ -7799,6 +7819,9 @@
       ],
       "Disable two-factor authentication": [
         "Nonaktifkan autentikasi dua faktor"
+      ],
+      "Domain names": [
+        "Nama domain"
       ],
       "Downgrade account": [
         "Turunkan jenis akun"
@@ -7876,7 +7899,7 @@
         "Gateway"
       ],
       "Generate missing keys": [
-        "Buat kunci yang hilang"
+        "Hasilkan kunci yang hilang"
       ],
       "Get ${ vpnPlus } to access all servers": [
         "Dapatkan ${ vpnPlus } untuk mengakses seluruh server"
@@ -7931,6 +7954,12 @@
       ],
       "OpenVPN configuration files": [
         "Berkas konfigurasi OpenVPN"
+      ],
+      "Organization filters": [
+        "Filter organisasi"
+      ],
+      "Organization key": [
+        "Kunci organisasi"
       ],
       "Organization name": [
         "Nama organisasi"
@@ -8023,7 +8052,7 @@
         "Atur kata sandi baru"
       ],
       "Set organization name": [
-        "Atur nama organisasi"
+        "Tentukan nama organisasi"
       ],
       "Set up two-factor authentication": [
         "Atur autentikasi dua faktor"
@@ -8057,6 +8086,9 @@
       ],
       "Single sign-on": [
         "Single sign-on"
+      ],
+      "Spam, block, and allow lists": [
+        "Daftar spam, blokir, dan izin"
       ],
       "Status": [
         "Status"
@@ -8105,6 +8137,9 @@
       ],
       "Users": [
         "Pengguna"
+      ],
+      "Users and addresses": [
+        "Pengguna dan alamat"
       ],
       "Verification failed": [
         "Verifikasi gagal"
@@ -8220,6 +8255,9 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Tema yang dipilih akan aktif pada saat sistem Anda diatur ke \"mode terang\""
+      ],
+      "This email address will be shown to all organization members when performing account management operations.": [
+        "Alamat email ini akan ditampilkan kepada seluruh anggota organisasi pada saat melangsungkan tindakan manajemen akun."
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "Para pengguna Anda akan melihat logo ini alih-alih ikon ${ BRAND_NAME } pada saat mereka terhubung masuk ke aplikasi web kami."
