@@ -2176,6 +2176,20 @@
         "Schrijf uw notitie"
       ]
     },
+    "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } en ${ remainingCount } ander potentieel lek gedetecteerd. Schakel ${ DARK_WEB_MONITORING_NAME } in om details te bekijken. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } en 1 ander potentieel lek gedetecteerd. Schakel ${ DARK_WEB_MONITORING_NAME } in om details te bekijken. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Een potentieel ${ name } lek werd gedetecteerd. Schakel ${ DARK_WEB_MONITORING_NAME } in om details te bekijken. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Uw informatie is in ten minste één datalek gevonden. Shakel ${ DARK_WEB_MONITORING_NAME } in om details te bekijken. ${ link }"
+      ]
+    },
     "Success": {
       "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
         "Kluizen kunnen niet meer dan ${ vault.targetMaxMembers } gebruiker bevatten.",

@@ -337,6 +337,9 @@
       "Fit to window": [
         "Вписать в окно"
       ],
+      "Forgot password?": [
+        "Забыли пароль?"
+      ],
       "Forward as attachment": [
         "Переслать как вложение"
       ],
@@ -4730,9 +4733,6 @@
       "Share via link settings": [
         "Поделиться через настройки ссылки"
       ],
-      "Share with": [
-        "Поделиться с"
-      ],
       "Share with anyone": [
         "Делитесь с кем угодно"
       ],
@@ -7393,11 +7393,6 @@
         "Вы"
       ]
     },
-    "passwordless": {
-      "Private users can be promoted to admin when they've signed in for the first time": [
-        "Рядовые пользователи могут быть повышены до администратора при первом входе в систему"
-      ]
-    },
     "Payment method option": {
       "Credit/debit card": [
         "Кредитная/дебетовая карта"
@@ -7765,11 +7760,6 @@
         "Отменить сброс пароля"
       ]
     },
-    "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
-        "Сброс пароля отменен"
-      ]
-    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Отменить сброс пароля?"
@@ -7941,11 +7931,6 @@
         "Обеспечьте свою конфиденциальность в Интернете"
       ]
     },
-    "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "Подписка будет автоматически продлеваться каждые 2 года по той же цене до тех пор, пока вы ее не отмените."
-      ]
-    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Перейти к тарифам"
@@ -8071,11 +8056,6 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Теперь вы легко можете искать файлы в Хранилище, сохраняя защищенность своих данных."
-      ]
-    },
-    "State": {
-      "Cancelling your subscription, please wait": [
-        "Отмена подписки, подождите"
       ]
     },
     "Storage": {
@@ -8227,14 +8207,44 @@
       ]
     },
     "subscription reminder": {
+      "15 GB storage": [
+        "15 ГБ хранилища"
+      ],
+      "and 15 more premium features": [
+        "и еще 15 платных функций"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Автоматическая переадресация электронной почты ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Оповещения об утечках данных ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Приложение для настольных компьютеров"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Помогите нам сохранить Интернет безопасным и приватным для всех. Улучшите до платного плана."
+      ],
       "No ads or tracking": [
         "Нет рекламы или отслеживания"
+      ],
+      "Short @pm.me email address": [
+        "Короткий адрес электронной почты @pm.me"
+      ],
+      "Support our mission": [
+        "Поддержите нашу миссию"
       ],
       "Upgrade": [
         "Сменить тариф"
       ],
+      "Upgrade your productivity": [
+        "Повысьте свою производительность"
+      ],
       "We don't sell your data": [
         "Мы не продаем ваши данные"
+      ],
+      "Your privacy is our mission": [
+        "Ваша приватность является нашей задачей"
       ]
     },
     "Subscription renewal state": {
@@ -8360,9 +8370,6 @@
       ],
       "Verification successful": [
         "Проверка прошла успешно"
-      ],
-      "You have successfully cancelled your subscription.": [
-        "Вы успешно отменили свою подписку."
       ],
       "You have successfully unsubscribed": [
         "Подписка отменена"

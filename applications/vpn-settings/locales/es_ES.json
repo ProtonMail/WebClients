@@ -176,6 +176,9 @@
       "Download": [
         "Descargar"
       ],
+      "Download CSV sample": [
+        "Descargar modelo CSV"
+      ],
       "Download our CSV template": [
         "Descargar nuestra plantilla CSV"
       ],
@@ -199,6 +202,12 @@
       ],
       "Edit name": [
         "Editar nombre"
+      ],
+      "Edit organization identity": [
+        "Editar la identidad de la organización"
+      ],
+      "Edit organization name": [
+        "Editar el nombre de la organización"
       ],
       "Edit password": [
         "Editar la contraseña"
@@ -2472,6 +2481,9 @@
       "You have successfully joined the Family plan": [
         "Te has unido correctamente al plan familiar"
       ],
+      "You need to configure a custom domain before adding multiple users.": [
+        "Debes configurar un dominio personalizado antes de crear múltiples usuarios."
+      ],
       "You need to configure a custom domain before creating a new user.": [
         "Debes configurar un dominio personalizado antes de crear un nuevo usuario."
       ],
@@ -2500,9 +2512,6 @@
       ],
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Si el usuario ya dispone de una dirección de ${ MAIL_APP_NAME }, introdúcela aquí. De lo contrario, tendrá que crearse primero una cuenta."
-      ],
-      "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
-        "Se cancelará la invitación y, por tanto, el usuario no podrá unirse a ${ organizationName }."
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "Se moverá la cuenta del usuario a un plan Unlimited de ${ BRAND_NAME } que podrá disfrutar a modo de prueba gratuita durante 30 días*."
@@ -2541,6 +2550,11 @@
         "Los miembros de la familia perderán el acceso a las funciones premium de ${ BRAND_NAME }."
       ]
     },
+    "familyOffer_2023:Settings section title": {
+      "Family": [
+        "Familia"
+      ]
+    },
     "familyOffer_2023:Success": {
       "${ member.Name } has been removed from ${ organizationName }": [
         "Se ha eliminado a ${ member.Name } de ${ organizationName }."
@@ -2573,6 +2587,9 @@
       ],
       "Invite a user": [
         "Invitar a un usuario"
+      ],
+      "Manage family group": [
+        "Gestionar grupo familiar"
       ],
       "Set family name": [
         "Establecer nombre de la familia"
@@ -2840,11 +2857,17 @@
       "IP address": [
         "Dirección IP"
       ],
+      "Key type": [
+        "Tipo de clave"
+      ],
       "Members": [
         "Miembros"
       ],
       "Name": [
         "Nombre"
+      ],
+      "Organization key fingerprint": [
+        "Huella digital de la clave de la organización"
       ],
       "Save big with the best deals on ${ VPN_APP_NAME }": [
         "Ahorra mucho con las mejores ofertas en ${ VPN_APP_NAME }"
@@ -3013,6 +3036,9 @@
       ],
       "Add domain": [
         "Añadir un dominio"
+      ],
+      "Add multiple users to your organization at once.": [
+        "Añade múltiples usuarios a tu organización de una vez."
       ],
       "Add server (${ availableAddedCount } available)": [
         "Añadir servidor (${ availableAddedCount } disponible)",
@@ -3235,6 +3261,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Al cambiar por un plan con menos funciones se terminarán las conexiones a los servidores de pago de ${ VPN_APP_NAME }."
+      ],
+      "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
+        "Descarga nuestra plantilla CSV, rellena los detalles de los usuarios, y luego carga tu archivo CSV completo para crear cuentas para estos usuarios."
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Descarga hoy tu aplicación favorita y lleva la privacidad contigo donde quieras que vayas."
@@ -3476,6 +3505,9 @@
       "MM/YY": [
         "MM/AA"
       ],
+      "Multi-user support not enabled.": [
+        "Soporte multiusuario no activado."
+      ],
       "Must be between 3 and 20 characters long.": [
         "Debe tener entre 3 y 20 caracteres."
       ],
@@ -3678,6 +3710,12 @@
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Escanea este código con tu dispositivo de autenticación de doble factor para configurar tu cuenta. ${ switchButton }."
+      ],
+      "SCIM integration disabled": [
+        "Integración SCIM desactivada"
+      ],
+      "SCIM token active": [
+        "Token SCIM activo"
       ],
       "Secure your ${ BRAND_NAME } Account": [
         "Asegura tu cuenta de ${ BRAND_NAME }"
@@ -4216,6 +4254,9 @@
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Tu organización utiliza el inicio de sesión único (SSO). Presiona iniciar sesión para continuar con tu proveedor de SSO."
       ],
+      "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
+        "Los correos electrónicos de tu organización están protegidos con cifrado de extremo a extremo utilizando la clave de la organización. Se puede utilizar esta huella digital para verificar que todos los administradores en tu cuenta tienen la misma clave."
+      ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Los detalles de pago están protegidos con cifrado TLS y por las leyes de privacidad suizas."
       ],
@@ -4471,6 +4512,9 @@
       "Current email": [
         "Correo electrónico actual"
       ],
+      "Current organization identity": [
+        "Identidad actual de la organización"
+      ],
       "Default language": [
         "Idioma por defecto"
       ],
@@ -4582,6 +4626,9 @@
       "New mailbox password": [
         "Nueva contraseña del buzón"
       ],
+      "New organization identity": [
+        "Nueva identidad de la organización"
+      ],
       "New organization password": [
         "Nueva contraseña de la organización"
       ],
@@ -4611,6 +4658,9 @@
       ],
       "Optional": [
         "Opcional"
+      ],
+      "Organization identity": [
+        "Identidad de la organización"
       ],
       "Organization name": [
         "Nombre de la organización"
@@ -6275,8 +6325,14 @@
       "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
         "Usa un método de recuperación de datos, contacta con otro administrador o restablece la clave de seguridad de la organización para restaurar los privilegios de administrador."
       ],
+      "We couldn't verify authenticity of this identity.": [
+        "No hemos podido verificar la autenticidad de esta identidad."
+      ],
       "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
         "No hemos podido verificar la seguridad de la clave de la dirección de este remitente. A veces hay un retraso en actualizar la información del remitente. Intenta de nuevo más tarde. Si no confías en la validación de esta invitación o en el remitente, contacta con el soporte al cliente de ${ BRAND_NAME }."
+      ],
+      "We have verified the authenticity of this identity.": [
+        "Hemos verificado la autenticidad de esta identidad."
       ],
       "We have verified the authenticity of this sender and invitation.": [
         "Hemos verificado la autenticidad de este remitente y la invitación."
@@ -6783,19 +6839,9 @@
         "Introduce tu contraseña actual para cancelar el proceso de restablecimiento. No se aplicará ningún otro cambio."
       ]
     },
-    "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
-        "El restablecimiento de contraseña ha sido cancelado."
-      ]
-    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "¿Cancelar el restablecimiento de contraseña?"
-      ]
-    },
-    "session_recovery:cancelled:info": {
-      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
-        "La solicitud de restablecimiento de contraseña ha sido cancelada (${ user.Email }). Si no ha hecho esta solicitud, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -6952,6 +6998,11 @@
         "Solicitud de restablecimiento de contraseña"
       ]
     },
+    "Settings section title": {
+      "Organization": [
+        "Organización"
+      ]
+    },
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "Compartido por ${ ownerName }"
@@ -7053,11 +7104,6 @@
       ],
       "Support online privacy": [
         "Apoya la privacidad en línea"
-      ]
-    },
-    "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "Esta suscripción se renovará automáticamente cada 2 años al mismo precio hasta su cancelación."
       ]
     },
     "specialoffer: Link": {
@@ -7177,11 +7223,6 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Invita amigos a ${ BRAND_NAME }"
-      ]
-    },
-    "State": {
-      "Cancelling your subscription, please wait": [
-        "Estamos cancelando tu suscripción. Espera."
       ]
     },
     "Storage": {
@@ -7568,9 +7609,6 @@
       "Verification successful": [
         "Verificación completada"
       ],
-      "You have successfully cancelled your subscription.": [
-        "Has cancelado tu suscripción."
-      ],
       "You have successfully unsubscribed": [
         "Has cancelado la suscripción."
       ]
@@ -7796,6 +7834,9 @@
       "Card verification": [
         "Verificación de la tarjeta"
       ],
+      "Catch-all address": [
+        "Dirección catch-all"
+      ],
       "Change login password": [
         "Cambiar contraseña de inicio de sesión"
       ],
@@ -7872,6 +7913,9 @@
       "Custom selection of users": [
         "Selección personalizada de usuarios"
       ],
+      "Customization": [
+        "Personalización"
+      ],
       "Customize the number of IP addresses in your plan": [
         "Personaliza el número de direcciones IP en tu plan."
       ],
@@ -7915,6 +7959,9 @@
       "Disable two-factor authentication": [
         "Desactivar la autenticación de doble factor"
       ],
+      "Domain names": [
+        "Nombres de dominio"
+      ],
       "Downgrade account": [
         "Pasar a un plan inferior"
       ],
@@ -7941,6 +7988,9 @@
       ],
       "Edit invoice details": [
         "Editar los datos de la factura"
+      ],
+      "Edit organization identity": [
+        "Editar la identidad de la organización"
       ],
       "Edit servers": [
         "Editar servidores"
@@ -8047,6 +8097,12 @@
       ],
       "OpenVPN configuration files": [
         "Archivos de configuración de OpenVPN"
+      ],
+      "Organization filters": [
+        "Filtros de la organización"
+      ],
+      "Organization key": [
+        "Clave de la organización"
       ],
       "Organization name": [
         "Nombre de la organización"
@@ -8174,6 +8230,9 @@
       "Single sign-on": [
         "Inicio de sesión único"
       ],
+      "Spam, block, and allow lists": [
+        "Listas de direcciones permitidas, bloqueadas y spam"
+      ],
       "Status": [
         "Estado"
       ],
@@ -8222,6 +8281,9 @@
       ],
       "Users": [
         "Usuarios"
+      ],
+      "Users and addresses": [
+        "Usuarios y direcciones"
       ],
       "Verification failed": [
         "Error de verificación"
@@ -8337,6 +8399,9 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "El tema seleccionado estará activo cuando tu sistema esté en \"modo claro\"."
+      ],
+      "This email address will be shown to all organization members when performing account management operations.": [
+        "Esta dirección de correo se mostrará a todos los miembros de la organización cuando se ejecute operaciones de gestión de cuentas."
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "Los usuarios verán tu logo en lugar del ícono de ${ BRAND_NAME } cuando inicien sesión en las aplicaciones web."

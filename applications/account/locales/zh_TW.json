@@ -467,6 +467,9 @@
       "Font": [
         "字型"
       ],
+      "Forgot password?": [
+        "忘記密碼?"
+      ],
       "Generate": [
         "產生"
       ],
@@ -4824,9 +4827,6 @@
       ],
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "若使用者已有 ${ MAIL_APP_NAME } 電子郵件位址，請在此輸入。否則需先創建帳號。"
-      ],
-      "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
-        "邀請將會取消，此使用者亦不會能夠加入 ${ organizationName }。"
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "此使用者的帳號將轉為 30 天滿意體驗* ${ BRAND_NAME } Unlimited 方案。"
@@ -12466,19 +12466,9 @@
         "輸入您目前的密碼以取消密碼重設流程。其他變更將不會生效。"
       ]
     },
-    "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
-        "已取消密碼重設"
-      ]
-    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "取消密碼重設？"
-      ]
-    },
-    "session_recovery:cancelled:info": {
-      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
-        "密碼重設需求已取消 (${ user.Email })。若您並未做出此需求，${ changePasswordLink }。"
       ]
     },
     "session_recovery:cancelled:link": {
@@ -12870,11 +12860,6 @@
         "支援線上隱私"
       ]
     },
-    "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "此訂購授權將每 2 年自動以相同的費用續訂，直到被取消為止。"
-      ]
-    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "查看訂購授權"
@@ -12991,11 +12976,6 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "揪親朋好友一起用 ${ BRAND_NAME }"
-      ]
-    },
-    "State": {
-      "Cancelling your subscription, please wait": [
-        "請稍後，正在取消您的訂閱"
       ]
     },
     "Step in filter modal": {
@@ -13530,9 +13510,6 @@
       ],
       "Verification successful": [
         "驗證成功"
-      ],
-      "You have successfully cancelled your subscription.": [
-        "你取消了訂購授權"
       ],
       "You have successfully unsubscribed": [
         "您已成功取消訂購"

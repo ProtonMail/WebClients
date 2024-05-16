@@ -113,6 +113,9 @@
       "Copy key to the clipboard": [
         "Скопіювати ключ до буфера обміну"
       ],
+      "Copy version number to clipboard": [
+        "Копіювати номер версії в буфер обміну"
+      ],
       "Create": [
         "Створити"
       ],
@@ -173,6 +176,9 @@
       "Download": [
         "Завантажити"
       ],
+      "Download CSV sample": [
+        "Завантажити зразок CSV"
+      ],
       "Download our CSV template": [
         "Завантажте наш CSV-шаблон"
       ],
@@ -229,6 +235,9 @@
       ],
       "Fit to window": [
         "Припасувати до вікна"
+      ],
+      "Forgot password?": [
+        "Забули пароль?"
       ],
       "Get ${ vpnPlus }": [
         "Отримати ${ vpnPlus }"
@@ -1934,11 +1943,32 @@
       "Bugs or quality issue": [
         "Помилки чи проблеми з якістю"
       ],
+      "I do not wish to share": [
+        "Не хочу говорити"
+      ],
+      "I found a cheaper VPN": [
+        "Я знайшов дешевший VPN"
+      ],
+      "I found a VPN with better features": [
+        "Я знайшов VPN з кращими функціями"
+      ],
+      "I have not managed to connect": [
+        "Мені не вдалося під'єднатися"
+      ],
+      "I only needed a VPN short-term": [
+        "Мені був потрібен VPN лише на короткий термін"
+      ],
       "I use a different ${ BRAND_NAME } account": [
         "Я користуюсь іншим обліковим записом ${ BRAND_NAME }"
       ],
+      "It doesn't do what I need": [
+        "Не задовільняє мої потреби"
+      ],
       "Missing feature(s)": [
         "Відсутні функції"
+      ],
+      "Other reason (please comment)": [
+        "Інша причина (напишіть про неї)"
       ],
       "Subscription is too expensive": [
         "Надто висока вартість передплати"
@@ -1948,6 +1978,9 @@
       ],
       "Temporary need, may come back in the future": [
         "Тимчасова необхідність. Можливо, повернуся в майбутньому"
+      ],
+      "The VPN is too slow": [
+        "VPN занадто повільний"
       ]
     },
     "Downgrade modal exit survey title": {
@@ -2446,6 +2479,9 @@
       "You have successfully joined the Family plan": [
         "Ви успішно приєдналися до Сімейного плану"
       ],
+      "You need to configure a custom domain before adding multiple users.": [
+        "Перш ніж додати кількох користувачів, потрібно налаштувати власний домен."
+      ],
       "You need to configure a custom domain before creating a new user.": [
         "Перш ніж створити нового користувача, потрібно налаштувати власний домен."
       ],
@@ -2474,9 +2510,6 @@
       ],
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Якщо користувач вже має адресу ${ MAIL_APP_NAME }, введіть її тут. В іншому випадку потрібно спочатку створити обліковий запис."
-      ],
-      "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
-        "Запрошення буде скасовано, і користувач не зможе приєднатися до ${ organizationName }."
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "Обліковий запис користувача буде переведено на тарифний план ${ BRAND_NAME } Unlimited на 30-денну безплатну пробну версію*."
@@ -2515,6 +2548,11 @@
         "Це вилучить усі преміумфункції ${ BRAND_NAME } для всіх учасників родини."
       ]
     },
+    "familyOffer_2023:Settings section title": {
+      "Family": [
+        "Родина"
+      ]
+    },
     "familyOffer_2023:Success": {
       "${ member.Name } has been removed from ${ organizationName }": [
         "${ member.Name } вилучено з ${ organizationName }"
@@ -2547,6 +2585,9 @@
       ],
       "Invite a user": [
         "Запросити користувача"
+      ],
+      "Manage family group": [
+        "Керувати родинною групою"
       ],
       "Set family name": [
         "Налаштувати назву родини"
@@ -2826,11 +2867,17 @@
       "IP address": [
         "IP-адреса"
       ],
+      "Key type": [
+        "Тип ключа"
+      ],
       "Members": [
         "Учасники"
       ],
       "Name": [
         "Назва"
+      ],
+      "Organization key fingerprint": [
+        "Відбиток ключа організації"
       ],
       "Save big with the best deals on ${ VPN_APP_NAME }": [
         "Заощаджуйте більше завдяки найкращим пропозиціям на ${ VPN_APP_NAME }"
@@ -3015,6 +3062,9 @@
       ],
       "Add domain": [
         "Додати домен"
+      ],
+      "Add multiple users to your organization at once.": [
+        "Додавайте багатьох користувачів до своєї організації за один раз."
       ],
       "Add server (${ availableAddedCount } available)": [
         "Додати сервер (${ availableAddedCount } доступний)",
@@ -3249,6 +3299,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Перехід на тарифний план нижчого рівня розірве всі з'єднання з платними серверами ${ VPN_APP_NAME }."
+      ],
+      "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
+        "Завантажте наш шаблон CSV, заповніть дані про користувача, а потім завантажте заповнений файл CSV, щоб створити облікові записи для цих користувачів."
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Завантажте свою улюблену програму й отримайте приватність з собою всюди."
@@ -3489,6 +3542,9 @@
       ],
       "MM/YY": [
         "ММ/РР"
+      ],
+      "Multi-user support not enabled.": [
+        "Підтримка декількох користувачів не увімкнена."
       ],
       "Must be between 3 and 20 characters long.": [
         "Повинно бути від 3 до 20 символів."
@@ -4000,6 +4056,9 @@
       "Version ${ version }": [
         "Версія ${ version }"
       ],
+      "Version number successfully copied to clipboard": [
+        "Номер версії успішно скопійовано до буфера обміну"
+      ],
       "View, download, and manage your invoices.": [
         "Перегляд, завантаження та керування рахунками-фактурами."
       ],
@@ -4239,6 +4298,9 @@
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Ваша організація користується єдиним входом (SSO). Натисніть Увійти, щоб продовжити роботу з постачальником SSO."
+      ],
+      "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
+        "Електронні листи вашої організації захищаються наскрізним шифруванням з використанням ключа організації. Цей відбиток можна використати для перевірки того, що всі адміністратори у вашому обліковому записі мають однаковий ключ."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Подробиці вашого платежу захищені TLS-шифруванням та швейцарським законодавством."
@@ -6842,19 +6904,9 @@
         "Введіть поточний пароль, щоб скасувати скидання пароля. Жодні інші зміни не набудуть чинності."
       ]
     },
-    "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
-        "Скидання пароля скасовано"
-      ]
-    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Скасувати скидання пароля?"
-      ]
-    },
-    "session_recovery:cancelled:info": {
-      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
-        "Запит на скидання пароля скасовано (${ user.Email }). Якщо ви не робили цей запит, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -7009,6 +7061,11 @@
         "Запит на скидання пароля"
       ]
     },
+    "Settings section title": {
+      "Organization": [
+        "Організація"
+      ]
+    },
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "Надано спільний доступ від ${ ownerName }"
@@ -7120,11 +7177,6 @@
       ],
       "Support online privacy": [
         "Підтримка онлайн-приватності"
-      ]
-    },
-    "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "Ця передплата автоматично продовжуватиметься раз на 2 роки за такою ж ціною, поки її не буде скасовано."
       ]
     },
     "specialoffer: Link": {
@@ -7246,11 +7298,6 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Запросіть друзів до ${ BRAND_NAME }"
-      ]
-    },
-    "State": {
-      "Cancelling your subscription, please wait": [
-        "Зачекайте поки триває скасування вашої передплати..."
       ]
     },
     "Storage": {
@@ -7665,9 +7712,6 @@
       "Verification successful": [
         "Перевірка пройшла успішно"
       ],
-      "You have successfully cancelled your subscription.": [
-        "Ви успішно скасували передплату."
-      ],
       "You have successfully unsubscribed": [
         "Ви успішно скасували передплату"
       ]
@@ -7893,6 +7937,9 @@
       "Card verification": [
         "Перевірка картки"
       ],
+      "Catch-all address": [
+        "Catch-all адреси"
+      ],
       "Change login password": [
         "Змінити пароль входу"
       ],
@@ -7971,6 +8018,9 @@
       "Custom selection of users": [
         "Власний вибір користувачів"
       ],
+      "Customization": [
+        "Персоналізація"
+      ],
       "Customize the number of IP addresses in your plan": [
         "Налаштуйте кількість IP-адрес у вашому тарифному плані"
       ],
@@ -8015,6 +8065,9 @@
       ],
       "Disable two-factor authentication": [
         "Вимкнути двоетапну перевірку"
+      ],
+      "Domain names": [
+        "Імена доменів"
       ],
       "Downgrade account": [
         "Понизити тарифний план"
@@ -8151,6 +8204,12 @@
       "OpenVPN configuration files": [
         "Файли конфігурації OpenVPN"
       ],
+      "Organization filters": [
+        "Фільтри організації"
+      ],
+      "Organization key": [
+        "Ключ організації"
+      ],
       "Organization name": [
         "Назва організації"
       ],
@@ -8277,6 +8336,9 @@
       "Single sign-on": [
         "Єдиний вхід"
       ],
+      "Spam, block, and allow lists": [
+        "Спам, блокування та списки дозволених"
+      ],
       "Status": [
         "Стан"
       ],
@@ -8327,6 +8389,9 @@
       ],
       "Users": [
         "Користувачі"
+      ],
+      "Users and addresses": [
+        "Користувачі та адреси"
       ],
       "Verification failed": [
         "Не вдалося виконати перевірку"

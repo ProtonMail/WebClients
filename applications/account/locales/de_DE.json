@@ -4932,9 +4932,6 @@
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Wenn der Benutzer bereits eine ${ MAIL_APP_NAME }-Adresse hat, gib sie hier ein. Andernfalls muss der Benutzer zuerst ein Konto erstellen."
       ],
-      "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
-        "Die Einladung wird widerrufen und der Benutzer kann ${ organizationName } nicht beitreten."
-      ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "Das Konto des Nutzers wird für eine 30-tägige kostenlose Testversion* auf ein ${ BRAND_NAME } Unlimited-Abonnement umgestellt."
       ],
@@ -12885,6 +12882,14 @@
         "URL des SCIM-Connectors, an den dein IdP Provisioning Agent SCIM-Daten weiterleitet"
       ]
     },
+    "Security Center - Info": {
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } und noch 1 weiteres potenzielles Leck entdeckt. Schalte ${ DARK_WEB_MONITORING_NAME } ein, um Details anzuzeigen. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Deine Informationen wurden bei mindestens einem Datenleck gefunden. Schalte ${ DARK_WEB_MONITORING_NAME } ein, um Details anzuzeigen. ${ link }"
+      ]
+    },
     "Select file": {
       "Upload CSV file": [
         "CSV-Datei hochladen"
@@ -13039,19 +13044,9 @@
         "Gib dein aktuelles Passwort ein, um den Prozess zur Passwortzurücksetzung abzubrechen. Andere Änderungen werden nicht wirksam."
       ]
     },
-    "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
-        "Passwortzurücksetzung abgebrochen"
-      ]
-    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Passwortzurücksetzung abbrechen?"
-      ]
-    },
-    "session_recovery:cancelled:info": {
-      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
-        "Passwortzurücksetzung abgebrochen (${ user.Email }). Wenn du diese Anfrage nicht gemacht hast, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -13454,11 +13449,6 @@
         "Unterstütze Online-Privatsphäre"
       ]
     },
-    "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "Dieses Abonnement verlängert sich alle zwei Jahre automatisch, bis es gekündigt wird."
-      ]
-    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Zu Abonnements wechseln"
@@ -13576,11 +13566,6 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Lade Freunde zu ${ BRAND_NAME } ein"
-      ]
-    },
-    "State": {
-      "Cancelling your subscription, please wait": [
-        "Die Kündigung deines Abonnements wird bearbeitet. Bitte warten."
       ]
     },
     "Step in filter modal": {
@@ -14220,9 +14205,6 @@
       ],
       "Verification successful": [
         "Verifizierung erfolgreich"
-      ],
-      "You have successfully cancelled your subscription.": [
-        "Du hast dein Abonnement erfolgreich gekündigt."
       ],
       "You have successfully unsubscribed": [
         "Du hast das Abonnement erfolgreich gekündigt."

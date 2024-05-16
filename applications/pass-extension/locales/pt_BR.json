@@ -529,6 +529,9 @@
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "Esta conta está vulnerável, visite o serviço e altere sua senha."
+      ],
+      "This service offers 2FA. Enable it for added account security.": [
+        "Este serviço oferece autenticação de dois fatores (2FA). Ative-a para aumentar a segurança da sua conta."
       ]
     },
     "Error": {
@@ -627,6 +630,9 @@
       "Failed to add email address": [
         "Falha ao adicionar o email"
       ],
+      "Failed to delete email address from monitoring": [
+        "Falha ao excluir o endereço de e-mail do monitoramento"
+      ],
       "Failed to delete selected items": [
         "Falha ao excluir itens selecionados"
       ],
@@ -635,6 +641,12 @@
       ],
       "Failed to edit user's access.": [
         "Falha ao editar o acesso do usuário."
+      ],
+      "Failed to load breaches for this address": [
+        "Falha ao carregar violações para este endereço"
+      ],
+      "Failed to load breaches for this email alias": [
+        "Falha ao carregar violações para este e-mail alias"
       ],
       "Failed to load item history": [
         "Falha ao carregar o histórico do item"
@@ -654,6 +666,12 @@
       "Failed to remove user's access.": [
         "Falha ao remover o acesso do usuário."
       ],
+      "Failed to resend verification for custom email": [
+        "Falha ao reenviar a verificação para o e-mail personalizado"
+      ],
+      "Failed to resolve breaches for this address": [
+        "Falha ao resolver violações para este endereço"
+      ],
       "Failed to restore items from trash": [
         "Falha ao restaurar itens da lixeira"
       ],
@@ -663,8 +681,20 @@
       "Failed to unpin item": [
         "Falha ao desafixar item"
       ],
+      "Failed to update monitoring settings": [
+        "Falha ao atualizar as configurações de monitoramento"
+      ],
       "Failed to verify email address": [
         "Falha ao verificar o email"
+      ],
+      "Failed updating ${ PROTON_SENTINEL_NAME } setting": [
+        "Falha ao atualizar a configuração de ${ PROTON_SENTINEL_NAME }"
+      ],
+      "Failed updating monitor flag of the item": [
+        "Falha ao atualizar a bandeira de monitoramento do item"
+      ],
+      "Failed updating monitoring status for this email address": [
+        "Falha ao atualizar o status de monitoramento para este endereço de e-mail"
       ],
       "File could not be parsed": [
         "Não foi possível analisar o arquivo."
@@ -945,6 +975,9 @@
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "O alias \"${ item.aliasEmail }\" foi movido para a lixeira - ele deixará de encaminhar e-mails para a sua caixa de correio."
       ],
+      "All breaches for this address were resolved": [
+        "Todas as violações para este endereço foram resolvidas"
+      ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Todos os itens de \"${ payload.content.name }\" movidos com sucesso"
       ],
@@ -1043,6 +1076,15 @@
       ],
       "Editor": [
         "Editor"
+      ],
+      "Email address successfully deleted from monitoring": [
+        "Endereço de e-mail excluído com sucesso do monitoramento"
+      ],
+      "Email address successfully excluded from monitoring": [
+        "Endereço de e-mail excluído com sucesso do monitoramento"
+      ],
+      "Email address successfully included in monitoring": [
+        "Endereço de e-mail incluído com sucesso no monitoramento"
       ],
       "Emptying trash...": [
         "Esvaziando lixeira..."

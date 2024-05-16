@@ -433,6 +433,12 @@
       "Edit name": [
         "Rediger navn"
       ],
+      "Edit organization identity": [
+        "Rediger organisationsidentitet"
+      ],
+      "Edit organization name": [
+        "Rediger organisationsnavn"
+      ],
       "Edit password": [
         "Redigér adgangskode"
       ],
@@ -4958,8 +4964,8 @@
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Hvis brugeren allerede har en ${ MAIL_APP_NAME } adresse, skal du indtaste den her. Ellers skal de først oprette en konto."
       ],
-      "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
-        "Invitationen annulleres, og brugeren kan ikke tilmelde sig ${ organizationName }."
+      "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
+        "Invitationen vil blive annulleret, og brugeren kan ikke blive medlem af ${ organizationName }."
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "Brugerens konto vil blive flyttet til et ${ BRAND_NAME } Unlimited-abonnement i en 30-dages gratis prøveperiode*."
@@ -7426,7 +7432,7 @@
         "Plus- eller Visionary abonnement påkrævet"
       ],
       "Preview": [
-        "Smugkig"
+        "Forhåndsvisning"
       ],
       "Preview failed to be loaded": [
         "Forhåndsvisning kunne ikke indlæses"
@@ -7541,6 +7547,12 @@
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Skan denne kode med din to-faktor-godkendelsesenhed for at oprette din konto. ${ switchButton }."
+      ],
+      "SCIM integration disabled": [
+        "SCIM-integration slået fra"
+      ],
+      "SCIM token active": [
+        "SCIM-token aktiv"
       ],
       "Secure your ${ BRAND_NAME } Account": [
         "Beskyt din ${ BRAND_NAME }-konto"
@@ -9167,6 +9179,9 @@
       "Current email": [
         "Nuværende e-mailadresse"
       ],
+      "Current organization identity": [
+        "Nuværende organisationsidentitet"
+      ],
       "Daily email notifications": [
         "Daglige e-mailnotifikationer"
       ],
@@ -9467,6 +9482,9 @@
       "New mailbox password": [
         "Ny postkasseadgangskode"
       ],
+      "New organization identity": [
+        "Ny organisationsidentitet"
+      ],
       "New organization password": [
         "Ny organisationsadgangskode"
       ],
@@ -9514,6 +9532,9 @@
       ],
       "Or": [
         "Eller"
+      ],
+      "Organization identity": [
+        "Organisationsidentitet"
       ],
       "Organization name": [
         "Organisationsnavn"
@@ -12445,8 +12466,14 @@
       "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
         "Brug en datagendannelsesmetode, kontakt en anden administrator, eller nulstil organisationsnøglen for at gendanne administratorrettigheder."
       ],
+      "We couldn't verify authenticity of this identity.": [
+        "Vi kunne ikke bekræfte ægtheden af denne identitet."
+      ],
       "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
         "Vi kunne ikke bekræfte sikkerheden af denne afsenderes adressenøgle. Nogle gange er der en forsinkelse i opdateringen af afsenderens oplysninger. Prøv igen senere. Hvis du ikke har tillid til gyldigheden af denne invitation eller afsender, skal du kontakte ${ BRAND_NAME } kundesupport."
+      ],
+      "We have verified the authenticity of this identity.": [
+        "Vi har bekræftet ægtheden af denne identitet."
       ],
       "We have verified the authenticity of this sender and invitation.": [
         "Vi har bekræftet ægtheden af afsender og invitation."
@@ -13122,8 +13149,8 @@
       ]
     },
     "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
-        "Nulstilling af adgangskode annulleret"
+      "Password reset canceled": [
+        "Nulstilling af adgangskode aflyst"
       ]
     },
     "session_recovery:cancellation:title": {
@@ -13132,8 +13159,8 @@
       ]
     },
     "session_recovery:cancelled:info": {
-      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
-        "Anmodning om nulstilling af adgangskode annulleret (${ user.Email }). Hvis du ikke har lavet denne anmodning, ${ changePasswordLink }."
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "Anmodning om nulstilling af adgangskode aflyst (${ user.Email }). Foretog du ikke denne anmodning, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -13537,8 +13564,8 @@
       ]
     },
     "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "Dette abonnement bliver automatisk fornyet hvert 2. år til samme pris, indtil det annulleres."
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "Dette abonnement vil automatisk blive fornyet hvert 2. år til samme pris, indtil det opsiges."
       ]
     },
     "specialoffer: Link": {
@@ -13661,8 +13688,8 @@
       ]
     },
     "State": {
-      "Cancelling your subscription, please wait": [
-        "Annullerer dit abonnement, vent venligst"
+      "Canceling your subscription, please wait": [
+        "Opsiger dit abonnement, vent venligst"
       ]
     },
     "Step in filter modal": {
@@ -14381,8 +14408,8 @@
       "Verification successful": [
         "Bekræftelse gennemført"
       ],
-      "You have successfully cancelled your subscription.": [
-        "Du har opsagt dit abonnement."
+      "You have successfully canceled your subscription.": [
+        "Du har opsagt dit abonnement med succes."
       ],
       "You have successfully unsubscribed": [
         "Du har afmeldt dig"
@@ -15022,6 +15049,9 @@
       ],
       "Edit invoice details": [
         "Rediger fakturadetaljer"
+      ],
+      "Edit organization identity": [
+        "Rediger organisationsidentitet"
       ],
       "Edit servers": [
         "Redigér servere"
@@ -15898,6 +15928,9 @@
       ],
       "This address has been disabled": [
         "Denne adresse er deaktiveret"
+      ],
+      "This email address will be shown to all organization members when performing account management operations.": [
+        "Denne e-mailadresse vises til alle organisationsmedlemmer, når de udfører administrative kontohandlinger."
       ],
       "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
         "Denne funktion forsinker afsendelse af dine e-mails. Du kan fortryde afsendelse inden for den valgte tidsramme."

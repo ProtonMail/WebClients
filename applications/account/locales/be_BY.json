@@ -433,6 +433,12 @@
       "Edit name": [
         "Рэдагаваць назву"
       ],
+      "Edit organization identity": [
+        "Рэдагаваць ідэнтычнасць арганізацыі"
+      ],
+      "Edit organization name": [
+        "Рэдагаваць назву арганізацыі"
+      ],
       "Edit password": [
         "Рэдагаваць пароль"
       ],
@@ -4998,7 +5004,7 @@
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Калі ў карыстальніка ўжо ёсць адрас ${ MAIL_APP_NAME }, увядзіце яго тут. У адваротным выпадку спачатку неабходна стварыць уліковы запіс."
       ],
-      "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
+      "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
         "Запрашэнне будзе скасавана і карыстальнік не зможа далучыцца да ${ organizationName }."
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
@@ -7682,6 +7688,12 @@
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Адсканіруйце гэты код сваёй прыладай з двухфактарнай аўтэнтыфікацыяй, каб наладзіць свой уліковы запіс. ${ switchButton }."
       ],
+      "SCIM integration disabled": [
+        "Інтэграцыя SCIM адключана"
+      ],
+      "SCIM token active": [
+        "Токен SCIM актыўны"
+      ],
       "Secure your ${ BRAND_NAME } Account": [
         "Абараніце свой уліковы запіс ${ BRAND_NAME }"
       ],
@@ -9341,6 +9353,9 @@
       "Current email": [
         "Бягучая электронная пошта"
       ],
+      "Current organization identity": [
+        "Бягучая ідэнтычнасць арганізацыі"
+      ],
       "Daily email notifications": [
         "Штодзённыя апавяшчэнні па электроннай пошце"
       ],
@@ -9641,6 +9656,9 @@
       "New mailbox password": [
         "Новы пароль паштовай скрыні"
       ],
+      "New organization identity": [
+        "Новая ідэнтычнасць арганізацыі"
+      ],
       "New organization password": [
         "Новы пароль арганізацыі"
       ],
@@ -9688,6 +9706,9 @@
       ],
       "Or": [
         "Або"
+      ],
+      "Organization identity": [
+        "Ідэнтычнасць арганізацыі"
       ],
       "Organization name": [
         "Назва арганізацыі"
@@ -12701,8 +12722,14 @@
       "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
         "Скарыстайце спосабам аднаўлення даных, звяжыцеся з іншым адміністратарам або скіньце ключ арганізацыі, каб аднавіць прывілеі адміністратара."
       ],
+      "We couldn't verify authenticity of this identity.": [
+        "Мы не можам праверыць аўтэнтыфікацыю гэтай ідэнтычнасці."
+      ],
       "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
         "Мы не можам праверыць, ці з'яўляецца бяспечным адрасны ключ гэтага адпраўніка. Здараецца так, што ўзнікае затрымка пры абнаўленні звестак адпраўніка. Паспрабуйце яшчэ раз пазней. Калі вы сумняваецеся ў сапраўднасці гэтага запрашэння або адпраўніка, звярніцеся ў службу падтрымкі кліентаў ${ BRAND_NAME }."
+      ],
+      "We have verified the authenticity of this identity.": [
+        "Мы праверылі аўтэнтыфікацыю гэтай ідэнтычнасці."
       ],
       "We have verified the authenticity of this sender and invitation.": [
         "Мы праверылі аўтэнтыфікацыю гэтага адпраўніка і запрашэнне."
@@ -13400,7 +13427,7 @@
       ]
     },
     "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
+      "Password reset canceled": [
         "Скіданне пароля скасавана."
       ]
     },
@@ -13410,7 +13437,7 @@
       ]
     },
     "session_recovery:cancelled:info": {
-      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
         "Запыт скідання пароля скасаваны (${ user.Email }). Калі вы не рабілі дадзены запыт, ${ changePasswordLink }."
       ]
     },
@@ -13837,7 +13864,7 @@
       ]
     },
     "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
         "Падпіска будзе аўтаматычна падаўжацца кожныя 2 гады з той жа цаной, пакуль вы яе не скасуеце."
       ]
     },
@@ -13963,7 +13990,7 @@
       ]
     },
     "State": {
-      "Cancelling your subscription, please wait": [
+      "Canceling your subscription, please wait": [
         "Скасаванне вашай падпіскі. Пачакайце..."
       ]
     },
@@ -14713,7 +14740,7 @@
       "Verification successful": [
         "Паспяхова праверана"
       ],
-      "You have successfully cancelled your subscription.": [
+      "You have successfully canceled your subscription.": [
         "Вы паспяхова скасавалі сваю падпіску."
       ],
       "You have successfully unsubscribed": [
@@ -15370,6 +15397,9 @@
       ],
       "Edit invoice details": [
         "Рэдагаваць падрабязнасці рахунка"
+      ],
+      "Edit organization identity": [
+        "Рэдагаваць ідэнтычнасць арганізацыі"
       ],
       "Edit servers": [
         "Рэдагаваць серверы"
@@ -16252,6 +16282,9 @@
       ],
       "This address has been disabled": [
         "Гэты адрас быў адключаны"
+      ],
+      "This email address will be shown to all organization members when performing account management operations.": [
+        "Гэты адрас электроннай пошты будзе паказаны ўсім удзельнікам арганізацыі пры выкананні аперацый па кіраванні ўліковым запісам."
       ],
       "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
         "Гэта функцыя затрымлівае адпраўку вашых паведамленняў, што дае вам магчымасць адрабіць адпраўку на працягу выбранага перыяду часу."

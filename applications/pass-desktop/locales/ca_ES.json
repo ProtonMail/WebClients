@@ -295,6 +295,9 @@
       "Pass for iOS": [
         "Pass per a iOS"
       ],
+      "Pause monitoring": [
+        "Posar en pausa la supervisió"
+      ],
       "Pin item": [
         "Ancora l'element"
       ],
@@ -333,6 +336,9 @@
       ],
       "Restore item": [
         "Restaura l'element"
+      ],
+      "Resume monitoring": [
+        "Reprendre la supervisió"
       ],
       "Retry": [
         "Reintenta"
@@ -395,7 +401,7 @@
         "Paperera"
       ],
       "Try again.": [
-        "Proveu de nou."
+        "Torni-ho a intentar."
       ],
       "Unpin item": [
         "Desancora l'element"
@@ -498,6 +504,9 @@
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "Aquest compte és vulnerable, visiti el servei i canviï la contrasenya."
+      ],
+      "This service offers 2FA. Enable it for added account security.": [
+        "Aquest servei ofereix 2FA. Habiliti'l per augmentar la seguretat del compte."
       ],
       "With ${ PASS_SHORT_APP_NAME } Monitor, stay ahead of threats by getting instant alerts if your credentials are compromised. Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Amb la supervisió de ${ PASS_SHORT_APP_NAME }, avanceu-vos a les amenaces amb alertes instantànies si les vostres credencials es veuen compromeses. Desbloquegeu les característiques de seguretat avançades i els registres detallats per a salvaguardar la vostra presència en línia."
@@ -1209,6 +1218,9 @@
       "Thank you, the problem has been reported": [
         "Gràcies, s'ha informat del problema"
       ],
+      "The custom email will be sent to ${ href } for monitoring. No other data will be sent to HIBP.": [
+        "El correu electrònic personalitzat s'enviarà a ${ href } per al seguiment. No s'enviarà cap altra dada a HIBP."
+      ],
       "The export will only contain vaults that you own.": [
         "L'exportació només contindrà les caixes fortes de la seva propietat."
       ],
@@ -1316,8 +1328,14 @@
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Heu assolit la longitud màxima permesa de ${ maxLength } caràcters."
       ],
+      "You will be notified of data breaches for these email addresses.": [
+        "Rebrà notificacions sobre les infraccions de dades d'aquestes adreces de correu electrònic."
+      ],
       "You will be notified of data breaches for this email address.": [
         "Se li notificaran les infraccions de dades d'aquesta adreça de correu electrònic."
+      ],
+      "You will no longer be notified of data breaches for these email addresses.": [
+        "Ja no li notificaran les infraccions de dades d'aquestes adreces de correu electrònic."
       ],
       "You will no longer be notified of data breaches for this email address.": [
         "Aquesta adreça de correu electrònic deixarà de rebre notificacions sobre infraccions de dades."
@@ -1970,7 +1988,7 @@
         "Adreces de ${ BRAND_NAME }"
       ],
       "${ PASS_SHORT_APP_NAME } Monitor": [
-        "Supervisar ${ PASS_SHORT_APP_NAME }"
+        "${ PASS_SHORT_APP_NAME } Monitor"
       ],
       "Account protection": [
         "Protecció del compte"
@@ -2068,6 +2086,9 @@
       "Leave vault ?": [
         "Deixa la caixa forta?"
       ],
+      "Loading breaches...": [
+        "S'estan carregant les infraccions..."
+      ],
       "Low disk space": [
         "Poc espai al disc"
       ],
@@ -2094,6 +2115,9 @@
       ],
       "No excluded items": [
         "No hi ha elements exclosos"
+      ],
+      "No inactive 2FAs": [
+        "No hi ha 2FA inactives"
       ],
       "No insecure passwords": [
         "Sense contrasenyes insegures"
@@ -2160,7 +2184,7 @@
         "Estableix el nivell d`accés"
       ],
       "Set up 2FA for better security": [
-        "Configureu 2FA per a major seguretat"
+        "Configuri 2FA per a major seguretat"
       ],
       "Set up 2FA for more security": [
         "Configuri 2FA per a més seguretat"

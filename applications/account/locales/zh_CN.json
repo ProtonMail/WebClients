@@ -437,6 +437,9 @@
       "Font": [
         "字体"
       ],
+      "Forgot password?": [
+        "忘记密码?"
+      ],
       "Generate": [
         "生成"
       ],
@@ -5313,7 +5316,7 @@
     },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
-        "${ appName } 需要您授权${ enableDesktopNotifications }。"
+        "${ appName } 需要您授权方可${ enableDesktopNotifications }。"
       ],
       "${ boldName } will be set as default calendar.": [
         "${ boldName } 将设置为默认日历。"
@@ -11182,19 +11185,9 @@
         "输入您当前的密码以取消密码重置进程。 其他更改将不会生效。"
       ]
     },
-    "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
-        "密码重置已取消"
-      ]
-    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "取消密码重置？"
-      ]
-    },
-    "session_recovery:cancelled:info": {
-      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
-        "密码重置请求已取消 (${ user.Email })。 如果您没有提出此请求，则${ changePasswordLink }。"
       ]
     },
     "session_recovery:cancelled:link": {
@@ -11542,11 +11535,6 @@
       ],
       "Support online privacy": [
         "支持网络隐私保护"
-      ]
-    },
-    "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "每两年账户将以相同费率自动续费，直至手动退订。"
       ]
     },
     "specialoffer: Link": {
@@ -12106,9 +12094,6 @@
       ],
       "Verification successful": [
         "验证成功"
-      ],
-      "You have successfully cancelled your subscription.": [
-        "您已成功取消订阅。"
       ],
       "You have successfully unsubscribed": [
         "您已退订成功"

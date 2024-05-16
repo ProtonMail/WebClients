@@ -260,6 +260,9 @@
       "Copy password to clipboard": [
         "Αντιγραφή κωδικού πρόσβασης στο πρόχειρο"
       ],
+      "Copy version number to clipboard": [
+        "Αντιγραφή αριθμού έκδοσης στο πρόχειρο"
+      ],
       "Create a new contact group": [
         "Δημιουργία νέας ομάδας επαφών"
       ],
@@ -447,6 +450,9 @@
       ],
       "Font": [
         "Γραμματοσειρά"
+      ],
+      "Forgot password?": [
+        "Ξέχασα τον κωδικό πρόσβασης?"
       ],
       "Forward as attachment": [
         "Προώθηση ως συνημμένο"
@@ -3339,11 +3345,32 @@
       "Bugs or quality issue": [
         "Σφάλματα ή ζητήματα ποιότητας"
       ],
+      "I do not wish to share": [
+        "Δεν επιθυμώ να μοιραστώ"
+      ],
+      "I found a cheaper VPN": [
+        "Βρήκα ένα φθηνότερο VPN"
+      ],
+      "I found a VPN with better features": [
+        "Βρήκα ένα VPN με καλύτερα χαρακτηριστικά"
+      ],
+      "I have not managed to connect": [
+        "Δεν κατάφερα να συνδεθώ"
+      ],
+      "I only needed a VPN short-term": [
+        "Χρειαζόμουν μόνο ένα VPN βραχυπρόθεσμα"
+      ],
       "I use a different ${ BRAND_NAME } account": [
         "Χρησιμοποιώ διαφορετικό ${ BRAND_NAME } λογαριασμό"
       ],
+      "It doesn't do what I need": [
+        "Δεν κάνει αυτό που χρειάζομαι"
+      ],
       "Missing feature(s)": [
         "Έλλειψη χαρακτηριστικών"
+      ],
+      "Other reason (please comment)": [
+        "Άλλος λόγος (παρακαλούμε σχολιάστε)"
       ],
       "Subscription is too expensive": [
         "Υπερβολικά ακριβή συνδρομή"
@@ -3353,6 +3380,9 @@
       ],
       "Temporary need, may come back in the future": [
         "Προσωρινή ανάγκη, ενδεχόμενη επιστροφή στο μέλλον"
+      ],
+      "The VPN is too slow": [
+        "Το PIN είναι πολύ αργό"
       ]
     },
     "Downgrade modal exit survey title": {
@@ -5539,9 +5569,6 @@
       "and": [
         "και"
       ],
-      "Any scheduled or snoozed messages will be cancelled.": [
-        "Τυχόν προγραμματισμένα μηνύματα ή μηνύματα που έχουν αναβληθεί θα ακυρωθούν."
-      ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Τυχόν υποφάκελοι θα διαγραφούν επίσης. Ωστόσο, τα μηνύματα ηλεκτρονικού ταχυδρομείου που είναι αποθηκευμένα σε αυτόν τον φάκελο ${ nameDeleted } δε θα διαγραφούν και μπορούν να βρεθούν στο φάκελο Όλα τα Mηνύματα."
       ],
@@ -6429,9 +6456,6 @@
       "Snoozed until tomorrow, ${ formattedTime }": [
         "Αναβολή έως αύριο, ${ formattedTime }"
       ],
-      "Snoozing this conversation will be cancelled.": [
-        "Η αναβολή αυτής της συνομιλίας θα ακυρωθεί."
-      ],
       "Sorry, this message does not exist or has already expired.": [
         "Λυπούμαστε, αυτό το μήνυμα δεν υπάρχει ή έχει ήδη λήξει."
       ],
@@ -6764,6 +6788,9 @@
       ],
       "Version ${ appVersion }": [
         "'Εκδοση ${ appVersion }"
+      ],
+      "Version number successfully copied to clipboard": [
+        "Ο αριθμός έκδοσης αντιγράφηκε με επιτυχία στο πρόχειρο"
       ],
       "Visa Secure logo": [
         "λογότυπο Visa Secure"
@@ -9467,20 +9494,6 @@
         "Εσείς"
       ]
     },
-    "passwordless": {
-      "Non-private users can be promoted to admin when they have setup keys": [
-        "Οι μη ιδιωτικοί χρήστες μπορούν να προβιβαστούν σε διαχειριστή όταν έχουν κλειδιά εγκατάστασης"
-      ],
-      "Organization key must be activated to give admin privileges": [
-        "Το κλειδί οργανισμού πρέπει να ενεργοποιηθεί για να εκχωρήσει δικαιώματα διαχειριστή"
-      ],
-      "Private users can be promoted to admin when they've signed in for the first time": [
-        "Οι ιδιώτες χρήστες μπορούν να προβιβαστούν σε διαχειριστή όταν συνδεθούν για πρώτη φορά"
-      ],
-      "You must privatize all users before generating a new organization key": [
-        "Πρέπει να ιδιωτικοποιήσετε όλους τους χρήστες πριν δημιουργήσετε ένα νέο κλειδί οργανισμού"
-      ]
-    },
     "Payment method option": {
       "Credit/debit card": [
         "Πιστωτική/χρεωστική κάρτα"
@@ -9893,6 +9906,15 @@
       ]
     },
     "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } και ${ remainingCount } εντοπίστηκαν άλλες πιθανές διαρροές. Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να δείτε λεπτομέρειες. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } και εντοπίστηκε 1 άλλη πιθανή διαρροή. Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να δείτε λεπτομέρειες. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Εντοπίστηκε πιθανή διαρροή ${ name }. Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να δείτε λεπτομέρειες. ${ link }"
+      ],
       "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
         "Λάβετε ειδοποίηση εάν ο κωδικός πρόσβασής σας ή άλλα δεδομένα διέρρευσαν από υπηρεσία τρίτου μέρους. ${ learnMoreLink }"
       ],
@@ -9901,6 +9923,9 @@
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Το Sentinel είναι **ενεργό** και προστατεύει τον λογαριασμό σας."
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Οι πληροφορίες σας εντοπίστηκαν σε τουλάχιστον μία διαρροή δεδομένων. Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να δείτε λεπτομέρειες. ${ link }"
       ]
     },
     "Select files": {
@@ -10093,19 +10118,9 @@
         "Εισαγάγετε τον τρέχοντα κωδικό πρόσβασής σας για να ακυρώσετε τη διαδικασία επαναφοράς κωδικού πρόσβασης. Καμία άλλη αλλαγή δε θα τεθεί σε ισχύ."
       ]
     },
-    "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
-        "Η επαναφορά κωδικού πρόσβασης ακυρώθηκε"
-      ]
-    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Ακύρωση επαναφοράς κωδικού πρόσβασης;"
-      ]
-    },
-    "session_recovery:cancelled:info": {
-      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
-        "Το αίτημα επαναφοράς κωδικού πρόσβασης ακυρώθηκε (${ user.Email }). Εάν δεν υποβάλατε αυτό το αίτημα, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -10328,11 +10343,6 @@
         "Υποστήριξη ηλεκτρονικού απορρήτου"
       ]
     },
-    "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "Αυτή η συνδρομή θα ανανεώνεται αυτόματα κάθε 2 χρόνια με την ίδια τιμή μέχρι να ακυρωθεί."
-      ]
-    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Μεταβείτε στα προγράμματα συνδρομής"
@@ -10465,11 +10475,6 @@
       ],
       "You can now schedule your messages to be sent later": [
         "Τώρα μπορείτε να χρονοδιαγραφήσετε την αποστολή των μηνυμάτων σας αργότερα"
-      ]
-    },
-    "State": {
-      "Cancelling your subscription, please wait": [
-        "Η συνδρομή σας ακυρώνεται, παρακαλούμε περιμένετε"
       ]
     },
     "Status": {
@@ -10939,9 +10944,6 @@
       "Message deleted": [
         "Το μήνυμα διαγράφηκε"
       ],
-      "Message expiration cancelled": [
-        "Η λήξη του μηνύματος ακυρώθηκε"
-      ],
       "Message marked as legitimate": [
         "Το μήνυμα σημάνθηκε ως αποδεκτό"
       ],
@@ -11018,9 +11020,6 @@
       ],
       "Verification successful": [
         "Επιτυχία επαλήθευσης"
-      ],
-      "You have successfully cancelled your subscription.": [
-        "Ακυρώσατε με επιτυχία τη συνδρομή σας."
       ],
       "You have successfully unsubscribed": [
         "Διαγραφήκατε με επιτυχία"

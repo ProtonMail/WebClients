@@ -173,6 +173,9 @@
       "Copy link": [
         "Copiere legătură"
       ],
+      "Copy version number to clipboard": [
+        "Copiere număr versiune în memorie"
+      ],
       "Create": [
         "Creare"
       ],
@@ -278,6 +281,9 @@
       ],
       "Export contacts": [
         "Exportare contacte"
+      ],
+      "Forgot password?": [
+        "Ați uitat parola?"
       ],
       "Forward as attachment": [
         "Redirecționare ca atașament"
@@ -2484,11 +2490,32 @@
       "Bugs or quality issue": [
         "Erori sau probleme de calitate."
       ],
+      "I do not wish to share": [
+        "Nu vreau să spun"
+      ],
+      "I found a cheaper VPN": [
+        "Am găsit un VPN mai ieftin"
+      ],
+      "I found a VPN with better features": [
+        "Am găsit un VPN cu funcții mai bune"
+      ],
+      "I have not managed to connect": [
+        "Nu am reușit să mă conectez"
+      ],
+      "I only needed a VPN short-term": [
+        "Am avut nevoie de VPN doar temporar"
+      ],
       "I use a different ${ BRAND_NAME } account": [
         "Folosesc un cont ${ BRAND_NAME } diferit"
       ],
+      "It doesn't do what I need": [
+        "Nu face ceea ce am nevoie"
+      ],
       "Missing feature(s)": [
         "Funcție (funcții) lipsă."
+      ],
+      "Other reason (please comment)": [
+        "Alt motiv (comentați motivul)"
       ],
       "Subscription is too expensive": [
         "Abonamentul este prea scump."
@@ -2498,6 +2525,9 @@
       ],
       "Temporary need, may come back in the future": [
         "Nevoie temporară, poate voi mai reveni."
+      ],
+      "The VPN is too slow": [
+        "Viteza pe VPN e prea mică"
       ]
     },
     "Downgrade modal exit survey title": {
@@ -4893,6 +4923,9 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Verificarea va deschide o filă nouă. Dezactivați programele care blochează ferestrele flotante. Nu veți fi taxat. Orice sumă retrasă pentru verificarea cardului vă va fi rambursată imediat."
+      ],
+      "Version number successfully copied to clipboard": [
+        "Numărul versiunii a fost copiat în memorie."
       ],
       "Visa Secure logo": [
         "Logo Visa Secure"
@@ -7312,20 +7345,6 @@
         "Extindere listă participanți"
       ]
     },
-    "passwordless": {
-      "Non-private users can be promoted to admin when they have setup keys": [
-        "Utilizatorii neprivați pot fi promovați la funcția de administrator atunci când au chei de configurare."
-      ],
-      "Organization key must be activated to give admin privileges": [
-        "Cheia organizației trebuie activată pentru a acorda drepturi administrative."
-      ],
-      "Private users can be promoted to admin when they've signed in for the first time": [
-        "Utilizatorii privați pot fi promovați la funcția de administrator atunci când s-au conectat pentru prima dată."
-      ],
-      "You must privatize all users before generating a new organization key": [
-        "Trebuie să faceți privați toți utilizatorii înainte de a genera o cheie nouă pentru organizație."
-      ]
-    },
     "Payment method option": {
       "Credit/debit card": [
         "Card de credit/debit"
@@ -7651,6 +7670,15 @@
       ]
     },
     "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } şi încă ${ remainingCount } potențiale divulgări au fost detectate. Activați ${ DARK_WEB_MONITORING_NAME } pentru a vedea detaliile. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } şi încă o potențială divulgare a fost detectată. Activați ${ DARK_WEB_MONITORING_NAME } pentru a vedea detaliile. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "A fost detectată o potențială divulgare pentru ${ name }. Activați ${ DARK_WEB_MONITORING_NAME } pentru a vedea detaliile. ${ link }"
+      ],
       "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
         "Primiți notificări dacă parola sau alte date v-au fost divulgate de la un serviciu terță parte. ${ learnMoreLink }"
       ],
@@ -7659,6 +7687,9 @@
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel este **activ** și vă protejează contul."
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Informațiile v-au fost găsite în cel puțin o compromitere a datelor. Activați opțiunea ${ DARK_WEB_MONITORING_NAME } pentru a vedea detalii și a acționa. ${ link }"
       ]
     },
     "Select files": {
@@ -7772,19 +7803,9 @@
         "Introduceți parola curentă pentru a anula procesul de resetare a parolei. Nu vor fi efectuate alte modificări."
       ]
     },
-    "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
-        "Resetarea parolei a fost anulată."
-      ]
-    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Anulați resetarea parolei?"
-      ]
-    },
-    "session_recovery:cancelled:info": {
-      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
-        "Solicitare de resetare parolă anulată (${ user.Email }). Dacă nu ați solicitat această anulare, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -8018,11 +8039,6 @@
         "Susțineți confidențialitatea online"
       ]
     },
-    "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "Abonamentul se va reînnoi în mod automat peste 2 ani, la același preț, până când este anulat."
-      ]
-    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Accesare planuri abonamente"
@@ -8147,11 +8163,6 @@
       ],
       "Now you can see when participants are free to attend your meeting.": [
         "Acum puteți vedea când participanții sunt liberi pentru a participa la întâlniri."
-      ]
-    },
-    "State": {
-      "Cancelling your subscription, please wait": [
-        "Vi se anulează abonamentul, așteptați."
       ]
     },
     "Storage": {
@@ -8581,9 +8592,6 @@
       ],
       "Verification successful": [
         "Verificare reușită"
-      ],
-      "You have successfully cancelled your subscription.": [
-        "Ați anulat abonamentul."
       ],
       "You have successfully unsubscribed": [
         "V-ați dezabonat cu succes"

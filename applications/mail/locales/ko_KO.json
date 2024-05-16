@@ -3579,7 +3579,7 @@
         "6명의 사용자"
       ],
       "Early access to new apps and features": [
-        "새 앱 및 기능을 위해 얼리 엑세스 시작"
+        "새 앱과 기능에 얼리 액세스"
       ],
       "Early access to the ${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } 데스크탑 앱 얼리 엑세스"
@@ -3614,7 +3614,7 @@
         "별칭이 필요합니다."
       ],
       "Alias options could not be resolved": [
-        "별명 옵션을 해결할 수 없습니다."
+        "별칭 옵션을 확인할 수 없습니다."
       ],
       "Aliases could not be loaded": [
         "별칭을 불러올 수 없습니다."
@@ -5495,9 +5495,6 @@
       "and": [
         "그리고"
       ],
-      "Any scheduled or snoozed messages will be cancelled.": [
-        "예약하거나 방해 금지된 메시지가 취소됩니다."
-      ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "모든 하위폴더 역시 삭제됩니다. 하지만, 이 폴더 ${ nameDeleted } 에 보관된 이메일들은 삭제되지 않으며 모든 메일함에서 찾을 수 있습니다."
       ],
@@ -6370,9 +6367,6 @@
       ],
       "Snoozed until tomorrow, ${ formattedTime }": [
         "내일, ${ formattedTime }까지 방해금지됨"
-      ],
-      "Snoozing this conversation will be cancelled.": [
-        "이 대화의 방해 금지 상태가 취소됩니다."
       ],
       "Sorry, this message does not exist or has already expired.": [
         "죄송합니다. 이 메시지가 존재하지 않거나 이미 만료되었습니다."
@@ -8571,7 +8565,7 @@
         "연락처 그룹 관리"
       ],
       "Custom domains for email aliases": [
-        "이메일 별명을 위한 지정 도메인"
+        "이메일 별칭을 위한 커스텀 도메인"
       ],
       "Custom email domains": [
         "사용자 지정 이메일 도메인"
@@ -8844,7 +8838,7 @@
         "모든 ${ BRAND_NAME } 서비스를 결합한 포괄적인 개인 정보 보호 및 보안."
       ],
       "Early access to new apps and features": [
-        "새 앱 및 기능을 위해 얼리 엑세스 시작"
+        "새로운 앱과 기능에 얼리 액세스"
       ],
       "Essential protection and secure collaboration for unlimited users.": [
         "사용자 제한 없이 필수적인 보호와 안전한 협업을."
@@ -9377,20 +9371,6 @@
         "안전한 금고 공유"
       ]
     },
-    "passwordless": {
-      "Non-private users can be promoted to admin when they have setup keys": [
-        "비개인 사용자는 키 설정을 하면 관리자로 승격 가능합니다."
-      ],
-      "Organization key must be activated to give admin privileges": [
-        "관리자 권한을 부여하기 위해 조직 키는 활성화되어야 합니다."
-      ],
-      "Private users can be promoted to admin when they've signed in for the first time": [
-        "개인 사용자는 처음 로그인하면 관리자로 승격할 수 있습니다."
-      ],
-      "You must privatize all users before generating a new organization key": [
-        "새 조직 키를 생성하기 전에 모든 계정을 민영화해야합니다"
-      ]
-    },
     "Payment method option": {
       "Credit/debit card": [
         "신용/체크카드"
@@ -9816,7 +9796,7 @@
         "Sentinel이 **활성화** 상태이며 계정이 보호 중입니다."
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "당신의 정보가 적어도 하나의 데이터 유출에서 발견되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하십시오. ${ link }"
+        "회원님의 정보가 적어도 하나의 데이터 유출에서 발견되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하십시오. ${ link }"
       ]
     },
     "Select files": {
@@ -9995,19 +9975,9 @@
         "비밀번호 재설정 절차를 취소하기 위해 현재 비밀번호를 입력하세요. 이 작업으로 인해 어떠한 영향도 발생되지 않습니다."
       ]
     },
-    "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
-        "비밀번호 재설정이 취소되었습니다"
-      ]
-    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "비밀번호 재설정을 취소합니까?"
-      ]
-    },
-    "session_recovery:cancelled:info": {
-      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
-        "비밀번호 재설정 요청 취소됨 (${ user.Email }). 이 요청을 하지 않았다면, ${ changePasswordLink }"
       ]
     },
     "session_recovery:cancelled:link": {
@@ -10222,11 +10192,6 @@
         "온라인 개인정보 보호 지원"
       ]
     },
-    "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "이 구독이 자동으로 매 2년마다 취소될때 까지 같은 주기로 갱신됩니다."
-      ]
-    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "구독 요금제 보러가기"
@@ -10360,11 +10325,6 @@
         "이제 메시지를 예약하여 나중에 전송할 수 있습니다"
       ]
     },
-    "State": {
-      "Cancelling your subscription, please wait": [
-        "구독을 취소하고 있습니다, 잠시만 기다려주세요"
-      ]
-    },
     "Status": {
       "This message is from a mailing list.": [
         "이 메시지는 메일링 리스트에서 온 것입니다."
@@ -10476,7 +10436,7 @@
         "우선 지원과 ${ gb } 스토리지를 잃게 됩니다."
       ],
       "You’ll lose access to additional storage, email addresses, aliases, calendars, as well as priority support.": [
-        "우선 지원과 추가 저장 공간, 이메일 주소, 별명, 캘린더를 잃게 됩니다."
+        "추가 저장 공간, 이메일 주소, 별칭, 캘린더, 그리고 우선 지원까지 잃게 됩니다."
       ],
       "You’ll lose access to the highest VPN speed, protection for 10 devices, high-speed streaming, ad-blocker and malware protection, as well as priority support.": [
         "우선 지원과 고속 VPN 속도, 10개 디바이스 보호, 고속 스트리밍, 멀웨어 보호 및 광고 차단를 잃게 됩니다."
@@ -10802,9 +10762,6 @@
       "Message deleted": [
         "메시지 삭제됨"
       ],
-      "Message expiration cancelled": [
-        "메시지 유효기간 취소됨"
-      ],
       "Message marked as legitimate": [
         "메시지를 스팸이 아님으로 표시함"
       ],
@@ -10879,9 +10836,6 @@
       ],
       "Verification successful": [
         "인증 성공"
-      ],
-      "You have successfully cancelled your subscription.": [
-        "구독을 성공적으로 취소했습니다."
       ],
       "You have successfully unsubscribed": [
         "성공적으로 구독 취소했습니다."
@@ -11846,7 +11800,7 @@
     },
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: 무제한 별명, 공유, 통합된 2단계 인증기 등을 포함하는 비밀번호 관리자로 모든 기기에서 로그인을 보호하세요."
+        "${ PASS_APP_NAME }: 모든 기기의 로그인을 보호하세요. 무제한 별칭, 공유, 통합형 2FA와 더 많은 기능을 갖추고 있습니다."
       ]
     },
     "Tor out of date": {
@@ -11957,13 +11911,13 @@
         "비밀번호가 기억나지 않으시다면, 키를 재활성화 하는것이 불가능 합니다. 당사에서 경고 배너를 무시할 수 있도록 도와드릴 수 있으나, 처리 중 해당 키의 암호화된 모든 데이터를 잃게 됩니다."
       ],
       "Invalid alias prefix": [
-        "잘못된 별명 접두어 입니다."
+        "유효하지 않은 별칭 접두사"
       ],
       "Missing alias prefix": [
-        "별명 접두사가 없습니다."
+        "별명 접두사가 빠져있습니다"
       ],
       "Missing alias suffix": [
-        "별명 접미어가 없습니다."
+        "별칭 접미사가 빠져있습니다"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "영숫자, 점, 하이픈 및 밑줄만 허용됩니다."
@@ -11981,7 +11935,7 @@
         "병합될 연락처 중 일부는 오류를 표시합니다. 이 연락처들을 개별적으로 검토해 주세요."
       ],
       "The alias prefix cannot be longer than 40 characters": [
-        "이 별명은 40글자 이상을 사용할 수 없습니다."
+        "별칭 접두사는 40자를 초과할 수 없습니다"
       ],
       "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
         "첨부 파일의 서명을 인증하는 데 실패했습니다.\n첨부 파일을 다운로드할 수는 있지만, 파일이 위조되었을 수 있습니다."

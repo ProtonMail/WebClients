@@ -2222,6 +2222,20 @@
         "Napíšte si poznámku"
       ]
     },
+    "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } a ${ remainingCount } ďalšie zistené potenciálne úniky. Ak chcete zobraziť podrobnosti, zapnite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } a 1 ďalší zistený potenciálny únik. Ak chcete zobraziť podrobnosti, zapnite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Bol zistený potenciálny únik ${ name }. Ak chcete zobraziť podrobnosti, zapnite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Vaše informácie sa našli v najmenej jednom úniku údajov. Ak chcete zobraziť podrobnosti, zapnite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
+      ]
+    },
     "Success": {
       "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
         "Trezory nemôžu obsahovať viac než ${ vault.targetMaxMembers } používateľa.",

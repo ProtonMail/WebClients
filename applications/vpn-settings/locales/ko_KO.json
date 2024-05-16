@@ -176,6 +176,9 @@
       "Download": [
         "다운로드"
       ],
+      "Download CSV sample": [
+        "CSV 샘플 다운로드받기"
+      ],
       "Download our CSV template": [
         "CSV 양식 다운로드"
       ],
@@ -408,7 +411,7 @@
         "재시도"
       ],
       "Return to sign in": [
-        "계속 로그인하기"
+        "로그인으로 돌아가기"
       ],
       "Revoke": [
         "취소"
@@ -2035,7 +2038,7 @@
         "6명의 사용자"
       ],
       "Early access to new apps and features": [
-        "새 앱 및 기능을 위해 얼리 엑세스 시작"
+        "새 앱과 기능에 얼리 액세스"
       ],
       "Early access to the ${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } 데스크탑 앱 얼리 엑세스"
@@ -2464,6 +2467,9 @@
       "You have successfully joined the Family plan": [
         "가족 요금제에 성공적으로 가입했습니다"
       ],
+      "You need to configure a custom domain before adding multiple users.": [
+        "여러 사용자를 추가하기 전에 지정 도메인을 설정해야 합니다."
+      ],
       "You need to configure a custom domain before creating a new user.": [
         "새 사용자를 생성하기 전 지정 도메인 구성이 필요합니다."
       ],
@@ -2492,9 +2498,6 @@
       ],
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "만일 사용자가 이미 ${ MAIL_APP_NAME } 주소를 소유한다면, 입력하십시오. 그렇지 않다면 먼저 계정 생성이 필요합니다."
-      ],
-      "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
-        "초대가 취소되며 사용자가 ${ organizationName } 에 합류하지 않게 됩니다."
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "사용자의 계정에서 ${ BRAND_NAME } Unlimited 요금제의 30일 무료 체험이 삭제됩니다*"
@@ -2533,6 +2536,11 @@
         "모든 가족 구성원이 ${ BRAND_NAME } 프리미엄 기능들을 사용할 수 없습니다."
       ]
     },
+    "familyOffer_2023:Settings section title": {
+      "Family": [
+        "가족"
+      ]
+    },
     "familyOffer_2023:Success": {
       "${ member.Name } has been removed from ${ organizationName }": [
         "${ member.Name }님이 ${ organizationName }에서 삭제되었습니다."
@@ -2565,6 +2573,9 @@
       ],
       "Invite a user": [
         "사용자 초대"
+      ],
+      "Manage family group": [
+        "가족 그룹 관리"
       ],
       "Set family name": [
         "가족 이름을 설정하세요"
@@ -2823,11 +2834,17 @@
       "IP address": [
         "IP 주소"
       ],
+      "Key type": [
+        "키 유형"
+      ],
       "Members": [
         "구성원"
       ],
       "Name": [
         "이름"
+      ],
+      "Organization key fingerprint": [
+        "조직 키 지문"
       ],
       "Save big with the best deals on ${ VPN_APP_NAME }": [
         "최고의 특가로 ${ VPN_APP_NAME }을 저렴하게"
@@ -2988,6 +3005,9 @@
       ],
       "Add domain": [
         "도메인 추가"
+      ],
+      "Add multiple users to your organization at once.": [
+        "한 번에 여러 사용자를 조직에 추가하세요."
       ],
       "Add server (${ availableAddedCount } available)": [
         "서버 추가 (${ availableAddedCount }개 가능)"
@@ -3204,6 +3224,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "다운그레이드하면 유료 ${ VPN_APP_NAME } 서버에 대한 모든 연결이 종료됩니다."
+      ],
+      "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
+        "CSV 예제를 다운로드하려면, 사용자 세부 정보를 입력한 다음, 완성된 CSV 파일을 업로드하여 사용자를 위한 계정을 만드세요."
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "당신이 가장 좋아하는 앱을 다운받고 어디서나 보안을 유지하세요."
@@ -3444,6 +3467,9 @@
       ],
       "MM/YY": [
         "MM/YY"
+      ],
+      "Multi-user support not enabled.": [
+        "멀티 유저 지원이 활성화되지 않았습니다."
       ],
       "Must be between 3 and 20 characters long.": [
         "3~20글자 사이여야 합니다."
@@ -3914,7 +3940,7 @@
         "현재 로드 및 위치에 따라 최상의 서버 사용: ${ formattedBestServerName }"
       ],
       "Use the different types of email addresses and aliases offered by ${ BRAND_NAME }.": [
-        "${ BRAND_NAME }에서 제공하는 다양한 유형의 이메일 주소와 별명을 사용하세요."
+        "${ BRAND_NAME }이 제공하는 다양한 유형의 이메일 주소와 별칭을 사용하세요."
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "애플리케이션 없이 ${ VPN_APP_NAME } 서버에 연결할 때 다음 자격 증명을 사용하세요. macOS의 Tunnelblick, GNU/Linux의 OpenVPN도 사용하고 있어요."
@@ -4176,6 +4202,9 @@
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "사용자의 조직이 싱글 사인 온 (SSO)를 사용합니다. SSO 제공자로 로그인을 탭하세요."
+      ],
+      "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
+        "조직의 이메일은 조직 키를 사용한 종단 간 암호화로 보호됩니다. 이 지문은 계정의 모든 관리자가 같은 키를 가지고 있는지 확인할 수 있습니다."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "결제 정보는 TLS 암호화와 스위스의 보안 법에 의해 보호되고 있습니다."
@@ -5202,7 +5231,7 @@
         "연락처 그룹 관리"
       ],
       "Custom domains for email aliases": [
-        "이메일 별명을 위한 지정 도메인"
+        "이메일 별칭을 위한 커스텀 도메인"
       ],
       "Custom email domains": [
         "사용자 지정 이메일 도메인"
@@ -5496,7 +5525,7 @@
         "모든 ${ BRAND_NAME } 서비스를 결합한 포괄적인 개인 정보 보호 및 보안."
       ],
       "Early access to new apps and features": [
-        "새 앱 및 기능을 위해 얼리 엑세스 시작"
+        "새로운 앱과 기능에 얼리 액세스"
       ],
       "Essential protection and secure collaboration for unlimited users.": [
         "사용자 제한 없이 필수적인 보호와 안전한 협업을."
@@ -6049,7 +6078,7 @@
     },
     "Pass B2B onboarding spotlight": {
       "Go to your vault to manage your passwords, aliases, and more.": [
-        "비밀번호, 별명 등을 관리하려면 금고로 이동하세요."
+        "비빌번호와 별칭 등을 관리하려면 금고로 이동하십시오."
       ],
       "Set up your organization": [
         "조직 설정"
@@ -6728,19 +6757,9 @@
         "비밀번호 재설정 절차를 취소하기 위해 현재 비밀번호를 입력하세요. 이 작업으로 인해 어떠한 영향도 발생되지 않습니다."
       ]
     },
-    "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
-        "비밀번호 재설정이 취소되었습니다"
-      ]
-    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "비밀번호 재설정을 취소합니까?"
-      ]
-    },
-    "session_recovery:cancelled:info": {
-      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
-        "비밀번호 재설정 요청 취소됨 (${ user.Email }). 이 요청을 하지 않았다면, ${ changePasswordLink }"
       ]
     },
     "session_recovery:cancelled:link": {
@@ -6892,6 +6911,11 @@
         "비밀번호 재설정 요청"
       ]
     },
+    "Settings section title": {
+      "Organization": [
+        "조직"
+      ]
+    },
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "${ ownerName }님이 공유함"
@@ -6988,11 +7012,6 @@
       ],
       "Support online privacy": [
         "온라인 개인정보 보호 지원"
-      ]
-    },
-    "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "이 구독이 자동으로 매 2년마다 취소될때 까지 같은 주기로 갱신됩니다."
       ]
     },
     "specialoffer: Link": {
@@ -7113,11 +7132,6 @@
         "친구를 ${ BRAND_NAME }에 초대하세요."
       ]
     },
-    "State": {
-      "Cancelling your subscription, please wait": [
-        "구독을 취소하고 있습니다, 잠시만 기다려주세요"
-      ]
-    },
     "Storage": {
       "Upgrade storage": [
         "스토리지 업그레이드"
@@ -7198,7 +7212,7 @@
         "우선 지원과 ${ gb } 스토리지를 잃게 됩니다."
       ],
       "You’ll lose access to additional storage, email addresses, aliases, calendars, as well as priority support.": [
-        "우선 지원과 추가 저장 공간, 이메일 주소, 별명, 캘린더를 잃게 됩니다."
+        "추가 저장 공간, 이메일 주소, 별칭, 캘린더, 그리고 우선 지원까지 잃게 됩니다."
       ],
       "You’ll lose access to the highest VPN speed, protection for 10 devices, high-speed streaming, ad-blocker and malware protection, as well as priority support.": [
         "우선 지원과 고속 VPN 속도, 10개 디바이스 보호, 고속 스트리밍, 멀웨어 보호 및 광고 차단를 잃게 됩니다."
@@ -7488,9 +7502,6 @@
       "Verification successful": [
         "인증 성공"
       ],
-      "You have successfully cancelled your subscription.": [
-        "구독을 성공적으로 취소했습니다."
-      ],
       "You have successfully unsubscribed": [
         "성공적으로 구독 취소했습니다."
       ]
@@ -7713,6 +7724,9 @@
       "Card verification": [
         "카드 확인"
       ],
+      "Catch-all address": [
+        "Catch-all 주소"
+      ],
       "Change login password": [
         "로그인 비밀번호 변경"
       ],
@@ -7788,6 +7802,9 @@
       "Custom selection of users": [
         "사용자 지정 선택"
       ],
+      "Customization": [
+        "커스터마이징"
+      ],
       "Customize the number of IP addresses in your plan": [
         "요금제의 IP 주소 숫자를 사용자화하세요."
       ],
@@ -7829,6 +7846,9 @@
       ],
       "Disable two-factor authentication": [
         "이중 인증 비활성화"
+      ],
+      "Domain names": [
+        "도메인 이름"
       ],
       "Downgrade account": [
         "계정 다운그레이드"
@@ -7962,6 +7982,12 @@
       "OpenVPN configuration files": [
         "OpenVPN 설정 파일"
       ],
+      "Organization filters": [
+        "조직 필터"
+      ],
+      "Organization key": [
+        "조직 키"
+      ],
       "Organization name": [
         "조직명"
       ],
@@ -8088,6 +8114,9 @@
       "Single sign-on": [
         "싱글 사인온 (SSO)"
       ],
+      "Spam, block, and allow lists": [
+        "스팸, 차단 및 허용 리스트"
+      ],
       "Status": [
         "상태"
       ],
@@ -8135,6 +8164,9 @@
       ],
       "Users": [
         "사용자"
+      ],
+      "Users and addresses": [
+        "사용자 및 주소"
       ],
       "Verification failed": [
         "인증 실패"
@@ -8263,7 +8295,7 @@
     },
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: 무제한 별명, 공유, 통합된 2단계 인증기 등을 포함하는 비밀번호 관리자로 모든 기기에서 로그인을 보호하세요."
+        "${ PASS_APP_NAME }: 모든 기기의 로그인을 보호하세요. 무제한 별칭, 공유, 통합형 2FA와 더 많은 기능을 갖추고 있습니다."
       ]
     },
     "Tooltip for news": {
