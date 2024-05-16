@@ -267,7 +267,7 @@ export const requestAllItemsForShareId = async (
 
         return Items?.LastToken
             ? Items.RevisionsData.concat(await pageIterator(nextCount, Items.LastToken))
-            : Items!.RevisionsData;
+            : Items?.RevisionsData ?? [];
     };
 
     return pageIterator(0);
