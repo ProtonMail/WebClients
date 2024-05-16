@@ -173,6 +173,9 @@
       "Download": [
         "Скачать"
       ],
+      "Download CSV sample": [
+        "Скачать образец файла CSV"
+      ],
       "Download our CSV template": [
         "Скачайте наш шаблон CSV"
       ],
@@ -229,6 +232,9 @@
       ],
       "Fit to window": [
         "Вписать в окно"
+      ],
+      "Forgot password?": [
+        "Забыли пароль?"
       ],
       "Get ${ vpnPlus }": [
         "Получить ${ vpnPlus }"
@@ -2399,6 +2405,9 @@
       "You have successfully joined the Family plan": [
         "Вы успешно присоединились к тарифу Family"
       ],
+      "You need to configure a custom domain before adding multiple users.": [
+        "Перед добавлением нескольких пользователей необходимо настроить пользовательский домен."
+      ],
       "You need to configure a custom domain before creating a new user.": [
         "Перед регистрацией нового пользователя необходимо настроить пользовательский домен."
       ],
@@ -2427,9 +2436,6 @@
       ],
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Если у пользователя уже есть адрес ${ MAIL_APP_NAME }, введите его. В противном случае сначала необходимо создать аккаунт."
-      ],
-      "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
-        "Приглашение будет отменено и пользователь не сможет присоединиться к группе «${ organizationName }»."
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "Аккаунт пользователя получит доступ к 30-дневному бесплатному тарифу ${ BRAND_NAME } Unlimited*."
@@ -2468,6 +2474,11 @@
         "Все члены семьи лишатся доступа к платным функциям ${ BRAND_NAME }. Продолжить?"
       ]
     },
+    "familyOffer_2023:Settings section title": {
+      "Family": [
+        "Семья"
+      ]
+    },
     "familyOffer_2023:Success": {
       "${ member.Name } has been removed from ${ organizationName }": [
         "Пользователь ${ member.Name } удален из группы «${ organizationName }»"
@@ -2500,6 +2511,9 @@
       ],
       "Invite a user": [
         "Пригласить пользователя"
+      ],
+      "Manage family group": [
+        "Управление семейной группой"
       ],
       "Set family name": [
         "Установить название семьи"
@@ -2785,11 +2799,17 @@
       "IP address": [
         "IP-адрес"
       ],
+      "Key type": [
+        "Тип ключа"
+      ],
       "Members": [
         "Участники"
       ],
       "Name": [
         "Название"
+      ],
+      "Organization key fingerprint": [
+        "Отпечаток ключа организации"
       ],
       "Select your pricing plan": [
         "Выберите себе ценовой план"
@@ -2963,6 +2983,9 @@
       ],
       "Add domain": [
         "Добавить домен"
+      ],
+      "Add multiple users to your organization at once.": [
+        "Добавить в вашу организацию нескольких пользователей разом."
       ],
       "Add server (${ availableAddedCount } available)": [
         "Добавить сервер (доступен ${ availableAddedCount })",
@@ -3189,6 +3212,9 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "При переходе на более дешевую версию все подключения к платными серверам ${ VPN_APP_NAME } будут прерваны."
       ],
+      "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
+        "Скачайте наш шаблон CSV, заполните информацию о пользователях, а затем загрузите заполненный файл CSV, чтобы создать аккаунты для этих пользователей."
+      ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Скачайте ваше любимое приложение сегодня и конфиденциальность будет с вами, куда бы вы ни пошли."
       ],
@@ -3413,6 +3439,9 @@
       ],
       "MM/YY": [
         "ММ/ГГ"
+      ],
+      "Multi-user support not enabled.": [
+        "Многопользовательский режим не включён."
       ],
       "Must be between 3 and 20 characters long.": [
         "Должно быть длиной от 3 до 20 символов."
@@ -4145,6 +4174,9 @@
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Ваша организация использует единый вход (SSO). Нажмите нв Войти, чтобы продолжить работу с поставщиком услуг SSO."
+      ],
+      "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
+        "Письма вашей организации защищены сквозным шифрованием с применением ключа организации. Этот отпечаток можно использовать для проверки того, что у всех администраторов в вашей учётной записи есть один и тот же ключ."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Ваши платежные данные защищены шифрованием TLS и законами о Швейцарии о частной жизни."
@@ -6519,11 +6551,6 @@
         "Отменить сброс пароля"
       ]
     },
-    "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
-        "Сброс пароля отменен"
-      ]
-    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Отменить сброс пароля?"
@@ -6662,6 +6689,11 @@
         "Изменение пароля запрошено"
       ]
     },
+    "Settings section title": {
+      "Organization": [
+        "Организация"
+      ]
+    },
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "Доступ предоставил ${ ownerName }"
@@ -6773,11 +6805,6 @@
       ],
       "Support online privacy": [
         "Обеспечьте свою конфиденциальность в Интернете"
-      ]
-    },
-    "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "Подписка будет автоматически продлеваться каждые 2 года по той же цене до тех пор, пока вы ее не отмените."
       ]
     },
     "specialoffer: Link": {
@@ -6899,11 +6926,6 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Пригласите друзей в ${ BRAND_NAME }"
-      ]
-    },
-    "State": {
-      "Cancelling your subscription, please wait": [
-        "Отмена подписки, подождите"
       ]
     },
     "Storage": {
@@ -7112,14 +7134,44 @@
       ]
     },
     "subscription reminder": {
+      "15 GB storage": [
+        "15 ГБ хранилища"
+      ],
+      "and 15 more premium features": [
+        "и еще 15 платных функций"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Автоматическая переадресация электронной почты ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Оповещения об утечках данных ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Приложение для настольных компьютеров"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Помогите нам сохранить Интернет безопасным и приватным для всех. Улучшите до платного плана."
+      ],
       "No ads or tracking": [
         "Нет рекламы или отслеживания"
+      ],
+      "Short @pm.me email address": [
+        "Короткий адрес электронной почты @pm.me"
+      ],
+      "Support our mission": [
+        "Поддержите нашу миссию"
       ],
       "Upgrade": [
         "Сменить тариф"
       ],
+      "Upgrade your productivity": [
+        "Повысьте свою производительность"
+      ],
       "We don't sell your data": [
         "Мы не продаем ваши данные"
+      ],
+      "Your privacy is our mission": [
+        "Ваша приватность является нашей задачей"
       ]
     },
     "Subscription renewal state": {
@@ -7257,9 +7309,6 @@
       ],
       "Verification successful": [
         "Проверка прошла успешно"
-      ],
-      "You have successfully cancelled your subscription.": [
-        "Вы успешно отменили свою подписку."
       ],
       "You have successfully unsubscribed": [
         "Подписка отменена"
@@ -7483,6 +7532,9 @@
       "Card verification": [
         "Проверка карты"
       ],
+      "Catch-all address": [
+        "Адрес для приема всей почты домена"
+      ],
       "Change login password": [
         "Изменить пароль для входа"
       ],
@@ -7602,6 +7654,9 @@
       ],
       "Disable two-factor authentication": [
         "Отключение двухфакторной аутентификации"
+      ],
+      "Domain names": [
+        "Доменные имена"
       ],
       "Downgrade account": [
         "Перейти на более дешевую версию аккаунта"
@@ -7732,6 +7787,12 @@
       "OpenVPN configuration files": [
         "Файлы конфигурации OpenVPN"
       ],
+      "Organization filters": [
+        "Название организации"
+      ],
+      "Organization key": [
+        "Ключ организации"
+      ],
       "Organization name": [
         "Название организации"
       ],
@@ -7858,6 +7919,9 @@
       "Single sign-on": [
         "SSO"
       ],
+      "Spam, block, and allow lists": [
+        "Списки спама, блокировки и белый"
+      ],
       "Status": [
         "Состояние"
       ],
@@ -7905,6 +7969,9 @@
       ],
       "Users": [
         "Пользователи"
+      ],
+      "Users and addresses": [
+        "Пользователи и адреса"
       ],
       "Verification failed": [
         "Проверка не удалась"

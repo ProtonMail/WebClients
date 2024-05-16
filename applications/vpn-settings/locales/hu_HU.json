@@ -149,6 +149,9 @@
       "Download": [
         "Letöltés"
       ],
+      "Download CSV sample": [
+        "CSV minta letöltése"
+      ],
       "Download our CSV template": [
         "CSV sablon letöltése"
       ],
@@ -187,6 +190,9 @@
       ],
       "Fit to window": [
         "Ablakhoz illesztés"
+      ],
+      "Forgot password?": [
+        "Elfelejtette a jelszavát?"
       ],
       "Get ${ vpnPlus }": [
         "${ vpnPlus } választása"
@@ -2086,6 +2092,11 @@
         "Ez véglegesen törli a szervezetéhez tartozó összes al-felhasználót, fiókot és adatot."
       ]
     },
+    "familyOffer_2023:Settings section title": {
+      "Family": [
+        "Család"
+      ]
+    },
     "familyOffer_2023:Title": {
       "Delete organization?": [
         "Szervezet törlése?"
@@ -2328,11 +2339,17 @@
       "IP address": [
         "IP-cím"
       ],
+      "Key type": [
+        "Kulcs típusa"
+      ],
       "Members": [
         "Tagok"
       ],
       "Name": [
         "Név"
+      ],
+      "Organization key fingerprint": [
+        "Szervezeti kulcs ujjlenyomata"
       ],
       "Server": [
         "Szerver"
@@ -2473,6 +2490,9 @@
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
         "Adjon a fiókjához egy további biztonsági réteget. Így kétlépcsős hitelesítéssel is azonosítania kell magát, minden egyes belépéskor."
       ],
+      "Add multiple users to your organization at once.": [
+        "Vegyen fel a szervezethez egyszerre több felhasználót."
+      ],
       "Additional options": [
         "További lehetőségek"
       ],
@@ -2592,6 +2612,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "A lemondás megszünteti a fizetett ${ VPN_APP_NAME } szerverekkel való összes kapcsolatot."
+      ],
+      "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
+        "Töltse le a CSV sablonunkat, töltse ki a felhasználói adatokat, majd töltse fel a kész CSV fájlt a felhasználók fiókjának létrehozásához."
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Töltse le a kedvenc alkalmazását, így a biztonságot bárhova magával viheti."
@@ -2784,6 +2807,9 @@
       ],
       "MM/YY": [
         "HH/ÉÉ"
+      ],
+      "Multi-user support not enabled.": [
+        "Többfelhasználós mód nem engedélyezett."
       ],
       "No addresses exist": [
         "Nincsenek címek"
@@ -3303,6 +3329,9 @@
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Adatai velünk biztonságban vannak. Csak akkor lépünk önnel kapcsolatba, ha ez a szolgáltatásunk biztosításához szükséges."
+      ],
+      "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
+        "Szervezete e-mailjei végpontok közti titkosítása a szervezeti kulccsal történik. Ezzel az ujjlenyomattal ellenőrizhető, hogy a fiókhoz tartozó összes adminisztrátor birtokolja ugyanazt a kulcsot."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Fizetés adatait TLS titkosítással védjük. Svájci adatvédelmi törvények vonatkoznak rá."
@@ -4977,19 +5006,9 @@
         "Adja meg a jelenlegi jelszavát a jelszóvisszaállítási folyamat megszakításához. Más változás nem lép életbe."
       ]
     },
-    "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
-        "Jelszó visszaállítás megszakítva"
-      ]
-    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Jelszó visszaállítás megszakítása?"
-      ]
-    },
-    "session_recovery:cancelled:info": {
-      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
-        "A jelszóvisszaállítási kérés megszakadt (${ user.Email }). Ha nem ön kezdeményezte ezt a kérést, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -5110,6 +5129,11 @@
         "Jelszó visszaállítási kérés"
       ]
     },
+    "Settings section title": {
+      "Organization": [
+        "Szervezet"
+      ]
+    },
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "${ ownerName } által megosztva"
@@ -5208,11 +5232,6 @@
       ],
       "Support online privacy": [
         "Támogatja az online adatvédelmet"
-      ]
-    },
-    "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "Ez az előfizetés minden 2 évben automatikusan megújul, ugyanazon az áron, amíg felmondásra nem kerül"
       ]
     },
     "specialoffer: Link": {
@@ -5547,9 +5566,6 @@
       "Verification successful": [
         "Sikeres ellenőrzés"
       ],
-      "You have successfully cancelled your subscription.": [
-        "Sikeresen törölte feliratkozását."
-      ],
       "You have successfully unsubscribed": [
         "Sikeresen leiratkozott"
       ]
@@ -5760,6 +5776,9 @@
       "Card verification": [
         "Bankkártya ellenőrzése"
       ],
+      "Catch-all address": [
+        "Gyűjtő e-mail cím"
+      ],
       "Change login password": [
         "Bejelentkezési jelszó megváltoztatása"
       ],
@@ -5851,6 +5870,9 @@
       ],
       "Disable two-factor authentication": [
         "Kétlépcsős hitelesítés kikapcsolása"
+      ],
+      "Domain names": [
+        "Domain nevek"
       ],
       "Downgrade account": [
         "Váltás kisebb csomagra"
@@ -5954,6 +5976,9 @@
       ],
       "OpenVPN configuration files": [
         "OpenVPN konfigurációs fájlok"
+      ],
+      "Organization filters": [
+        "Szervezeti szűrők"
       ],
       "Organization name": [
         "Szervezet neve"
@@ -6060,6 +6085,9 @@
       "Signed in to member account": [
         "Bejelentkezve egy tagsági fiókba"
       ],
+      "Spam, block, and allow lists": [
+        "Levélszemét, tiltó- és engedélyező listák"
+      ],
       "Status": [
         "Állapot"
       ],
@@ -6098,6 +6126,9 @@
       ],
       "Users": [
         "Felhasználók"
+      ],
+      "Users and addresses": [
+        "Felhasználók és címek"
       ],
       "Verification failed": [
         "Az ellenőrzés sikertelen"
