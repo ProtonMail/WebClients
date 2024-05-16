@@ -209,14 +209,17 @@ import pkg from "../package.json";
                 return preventDefault(details);
             }
 
-            if (isCalendarSettings(details.url) && getCurrentView() !== getCalendarView()) {
-                Logger.info("switching to calendar settings");
+            if (
+                (isCalendarSettings(details.url) || isCalendar(details.url)) &&
+                getCurrentView() !== getCalendarView()
+            ) {
+                Logger.info("switching to calendar view");
                 loadURL("calendar", details.url);
                 return preventDefault(details);
             }
 
-            if (isMailSettings(details.url) && getCurrentView() !== getMailView()) {
-                Logger.info("switching to mail settings");
+            if ((isMailSettings(details.url) || isMail(details.url)) && getCurrentView() !== getMailView()) {
+                Logger.info("switching to mail view");
                 loadURL("mail", details.url);
                 return preventDefault(details);
             }
