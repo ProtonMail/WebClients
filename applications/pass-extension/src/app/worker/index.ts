@@ -1,7 +1,9 @@
 import * as config from 'proton-pass-extension/app/config';
 import { createDevReloader } from 'proton-pass-extension/lib/utils/dev-reload';
+import 'proton-pass-extension/lib/utils/polyfills';
 
 import { backgroundMessage } from '@proton/pass/lib/extension/message';
+
 import browser from '@proton/pass/lib/globals/browser';
 import { WorkerMessageType } from '@proton/pass/types';
 import sentry from '@proton/shared/lib/helpers/sentry';
@@ -67,8 +69,9 @@ browser.runtime.onMessageExternal.addListener(WorkerMessageBroker.onMessage);
 browser.runtime.onMessage.addListener(WorkerMessageBroker.onMessage);
 browser.runtime.onStartup.addListener(context.service.activation.onStartup);
 browser.runtime.onInstalled.addListener(context.service.activation.onInstall);
-if (BUILD_TARGET !== 'safari')
-    {browser.runtime.onUpdateAvailable.addListener(context.service.activation.onUpdateAvailable);}
+if (BUILD_TARGET !== 'safari') {
+    browser.runtime.onUpdateAvailable.addListener(context.service.activation.onUpdateAvailable);
+}
 
 if (BUILD_TARGET === 'firefox' && ENV === 'production') {
     /* Block direct access to certain `web_accessible_resources`
