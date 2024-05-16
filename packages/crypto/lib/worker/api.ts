@@ -42,14 +42,13 @@ import {
     verifyMessage,
 } from 'pmcrypto';
 import type { AlgorithmInfo as AlgorithmInfoV5, Argon2Options, Data, Key, PrivateKey, PublicKey } from 'pmcrypto';
-import { SubkeyOptions, UserID, config, enums } from 'pmcrypto/lib/openpgp';
+import { SubkeyOptions, UserID, enums } from 'pmcrypto/lib/openpgp';
 
 import { ARGON2_PARAMS } from '../constants';
 import { arrayToHexString } from '../utils';
 import {
     AlgorithmInfo,
     ComputeHashStreamOptions,
-    InitOptions,
     KeyInfo,
     KeyReference,
     MaybeArray,
@@ -495,9 +494,8 @@ export class Api extends KeyManagementApi {
     /**
      * Init pmcrypto and set the underlying global OpenPGP config.
      */
-    static init({ checkEdDSAFaultySignatures = false }: InitOptions) {
+    static init() {
         initPmcrypto();
-        config.checkEdDSAFaultySignatures = checkEdDSAFaultySignatures;
     }
 
     /**
