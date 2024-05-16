@@ -11,7 +11,7 @@ import WorkerMessageBroker from './channel';
 import { EXTENSION_KEY } from './constants';
 import { createWorkerContext } from './context';
 
-if (BUILD_TARGET === 'chrome') {
+if (BUILD_TARGET === 'chrome' || BUILD_TARGET === 'safari') {
     /* FIXME: create a custom webpack plugin to automatically register
      * chunks loaded through `importScripts` for the chromium build
      * https://bugs.chromium.org/p/chromium/issues/detail?id=1198822#c10*/
@@ -67,7 +67,8 @@ browser.runtime.onMessageExternal.addListener(WorkerMessageBroker.onMessage);
 browser.runtime.onMessage.addListener(WorkerMessageBroker.onMessage);
 browser.runtime.onStartup.addListener(context.service.activation.onStartup);
 browser.runtime.onInstalled.addListener(context.service.activation.onInstall);
-browser.runtime.onUpdateAvailable.addListener(context.service.activation.onUpdateAvailable);
+if (BUILD_TARGET !== 'safari')
+    {browser.runtime.onUpdateAvailable.addListener(context.service.activation.onUpdateAvailable);}
 
 if (BUILD_TARGET === 'firefox' && ENV === 'production') {
     /* Block direct access to certain `web_accessible_resources`
