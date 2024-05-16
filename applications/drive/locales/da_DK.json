@@ -4780,9 +4780,6 @@
       "Share via link settings": [
         "Del via link-indstillinger"
       ],
-      "Share with": [
-        "Del med"
-      ],
       "Share with anyone": [
         "Del med enhver"
       ],
@@ -4791,6 +4788,9 @@
       ],
       "Shared link not found": [
         "Delt link ikke fundet"
+      ],
+      "Shared with": [
+        "Delt med"
       ],
       "Shared with me": [
         "Delt med mig"
@@ -7540,20 +7540,6 @@
         "Sikker deling af boks"
       ]
     },
-    "passwordless": {
-      "Non-private users can be promoted to admin when they have setup keys": [
-        "Ikke-private brugere kan forfremmes til admin, når de har opsætningsnøgler"
-      ],
-      "Organization key must be activated to give admin privileges": [
-        "Organisationsnøgle skal aktiveres for at give administratorrettigheder"
-      ],
-      "Private users can be promoted to admin when they've signed in for the first time": [
-        "Private brugere kan blive forfremmet til administrator, når de har logget ind for første gang"
-      ],
-      "You must privatize all users before generating a new organization key": [
-        "Du skal privatisere alle brugere, før du genererer en ny organisationsnøgle"
-      ]
-    },
     "Payment method option": {
       "Credit/debit card": [
         "Kredit/debetkort"
@@ -7981,8 +7967,8 @@
       ]
     },
     "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
-        "Nulstilling af adgangskode annulleret"
+      "Password reset canceled": [
+        "Nulstilling af adgangskode aflyst"
       ]
     },
     "session_recovery:cancellation:title": {
@@ -7991,8 +7977,8 @@
       ]
     },
     "session_recovery:cancelled:info": {
-      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
-        "Anmodning om nulstilling af adgangskode annulleret (${ user.Email }). Hvis du ikke har lavet denne anmodning, ${ changePasswordLink }."
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "Anmodning om nulstilling af adgangskode aflyst (${ user.Email }). Foretog du ikke denne anmodning, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -8174,8 +8160,8 @@
       ]
     },
     "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "Dette abonnement bliver automatisk fornyet hvert 2. år til samme pris, indtil det annulleres."
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "Dette abonnement vil automatisk blive fornyet hvert 2. år til samme pris, indtil det opsiges."
       ]
     },
     "specialoffer: Link": {
@@ -8304,8 +8290,8 @@
       ]
     },
     "State": {
-      "Cancelling your subscription, please wait": [
-        "Annullerer dit abonnement, vent venligst"
+      "Canceling your subscription, please wait": [
+        "Opsiger dit abonnement, vent venligst"
       ]
     },
     "Storage": {
@@ -8643,8 +8629,8 @@
       "Verification successful": [
         "Bekræftelse gennemført"
       ],
-      "You have successfully cancelled your subscription.": [
-        "Du har opsagt dit abonnement."
+      "You have successfully canceled your subscription.": [
+        "Du har opsagt dit abonnement med succes."
       ],
       "You have successfully unsubscribed": [
         "Du har afmeldt dig"

@@ -188,6 +188,9 @@
       "Copy link": [
         "Bağlantıyı kopyala"
       ],
+      "Copy version number to clipboard": [
+        "Sürüm numarasını kopyala"
+      ],
       "Create": [
         "Ekle"
       ],
@@ -330,6 +333,9 @@
       ],
       "Fit to window": [
         "Pencereye sığdır"
+      ],
+      "Forgot password?": [
+        "Parolanızı mı unuttunuz?"
       ],
       "Forward as attachment": [
         "Ek dosya olarak ilet"
@@ -2226,11 +2232,32 @@
       "Bugs or quality issue": [
         "Hatalar veya kalite sorunları"
       ],
+      "I do not wish to share": [
+        "Paylaşmak istemiyorum"
+      ],
+      "I found a cheaper VPN": [
+        "Daha ucuz bir VPN buldum"
+      ],
+      "I found a VPN with better features": [
+        "Daha iyi özellikleri olan bir VPN buldum"
+      ],
+      "I have not managed to connect": [
+        "Bağlantı kuramadım"
+      ],
+      "I only needed a VPN short-term": [
+        "Yalnızca kısa bir süre için VPN gerekliydi"
+      ],
       "I use a different ${ BRAND_NAME } account": [
         "Farklı bir ${ BRAND_NAME } hesabı kullanıyorum"
       ],
+      "It doesn't do what I need": [
+        "Gerek duyduğum şeyi yapmıyor"
+      ],
       "Missing feature(s)": [
         "Eksik özellikler"
+      ],
+      "Other reason (please comment)": [
+        "Diğer nedenler (lütfen yazın)"
       ],
       "Subscription is too expensive": [
         "Abonelik çok pahalı"
@@ -2240,6 +2267,9 @@
       ],
       "Temporary need, may come back in the future": [
         "Geçici olarak ayrılıyorum. İleride yeniden kullanabilirim"
+      ],
+      "The VPN is too slow": [
+        "VPN çok yavaş çalışıyor"
       ]
     },
     "Downgrade modal exit survey title": {
@@ -4727,9 +4757,6 @@
       "Share via link settings": [
         "Bağlantı ayarları ile paylaş"
       ],
-      "Share with": [
-        "Şununla paylaş"
-      ],
       "Share with anyone": [
         "Herkes ile paylaş"
       ],
@@ -5003,6 +5030,9 @@
       ],
       "Version is restored": [
         "Sürüm geri yüklendi"
+      ],
+      "Version number successfully copied to clipboard": [
+        "Sürüm numarası kopyalandı"
       ],
       "Visa Secure logo": [
         "Visa Secure logosu"
@@ -7454,20 +7484,6 @@
         "Siz"
       ]
     },
-    "passwordless": {
-      "Non-private users can be promoted to admin when they have setup keys": [
-        "Korunmayan kullanıcılar, kurulum anahtarlarına sahip olduklarında yöneticiliğe yükseltilebilir"
-      ],
-      "Organization key must be activated to give admin privileges": [
-        "Yönetici yetkileri vermek için kuruluş anahtarı kullanıma alınmalıdır"
-      ],
-      "Private users can be promoted to admin when they've signed in for the first time": [
-        "Korunan kullanıcılar ilk kez oturum açtıklarında yöneticiliğe yükseltilebilir"
-      ],
-      "You must privatize all users before generating a new organization key": [
-        "Yeni bir kuruluş anahtarı oluşturmadan önce tüm kullanıcıları korunan olarak güncellemeniz gerekir"
-      ]
-    },
     "Payment method option": {
       "Credit/debit card": [
         "Kredi ya da banka kartı"
@@ -7772,6 +7788,15 @@
       ]
     },
     "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } ve ${ remainingCount } diğer olası veri sızıntısı bulundu. Ayrıntıları görüntülemek için ${ DARK_WEB_MONITORING_NAME } özelliğini açın. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } ve 1 diğer olası veri sızıntısı bulundu. Ayrıntıları görüntülemek için ${ DARK_WEB_MONITORING_NAME } özelliğini açın. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Olası ${ name } veri sızıntısı bulundu. Ayrıntıları görüntülemek için ${ DARK_WEB_MONITORING_NAME } özelliğini açın. ${ link }"
+      ],
       "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
         "Parolanız veya diğer verileriniz üçüncü taraf bir hizmetten açığa çıkarsa bildirim alın. ${ learnMoreLink }"
       ],
@@ -7780,6 +7805,9 @@
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel **kullanımda** ve hesabınızı koruyor."
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Bilgileriniz en az bir veri sızıntısı olayında görüldü. Ayrıntıları görmek için ${ DARK_WEB_MONITORING_NAME } özelliğini açın. ${ link }"
       ]
     },
     "Select files": {
@@ -7882,19 +7910,9 @@
         "Parola sıfırlama işlemini iptal etmek için geçerli parolanızı yazın. Başka bir değişiklik yapılmayacak."
       ]
     },
-    "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
-        "Parola sıfırlama işlemi iptal edildi"
-      ]
-    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Parola sıfırlama işlemi iptal edilsin mi?"
-      ]
-    },
-    "session_recovery:cancelled:info": {
-      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
-        "Parola sıfırlama isteği iptal edildi (${ user.Email }). Bu isteği siz yapmadıysanız, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -8075,11 +8093,6 @@
         "Çevrim içi gizliliği destekleyin"
       ]
     },
-    "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "Bu abonelik, iptal edilene kadar 2 yılda bir aynı tutarla otomatik olarak yenilenir."
-      ]
-    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Abonelik tarifelerini görüntüle"
@@ -8203,11 +8216,6 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Artık verilerinizi güvende tutmayı sürdürürken Drive dosyalarınızı kolayca arayabilirsiniz."
-      ]
-    },
-    "State": {
-      "Cancelling your subscription, please wait": [
-        "Lütfen aboneliğiniz iptal edilirken bekleyin"
       ]
     },
     "Storage": {
@@ -8544,9 +8552,6 @@
       ],
       "Verification successful": [
         "Doğrulandı"
-      ],
-      "You have successfully cancelled your subscription.": [
-        "Aboneliğinizi iptal ettiniz."
       ],
       "You have successfully unsubscribed": [
         "Abonelikten ayrıldınız"
