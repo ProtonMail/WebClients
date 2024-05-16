@@ -92,7 +92,7 @@ export const selectSelectedItems = (selection: SelectedItem[]) =>
 
 export const selectItemsByShareId = (shareId?: string) =>
     createSelector(selectItems, (items): ItemRevision[] =>
-        flattenItemsByShareId(shareId && items[shareId] ? { shareId: items[shareId] } : items).filter(isActive)
+        flattenItemsByShareId(shareId && items[shareId] ? { [shareId]: items[shareId] } : items).filter(isActive)
     );
 
 export const selectItem = <T extends ItemType = ItemType>(shareId: string, itemId: string) =>
@@ -191,7 +191,7 @@ export const selectItemsByDomain = (domain: MaybeNull<string>, options: SelectIt
                                   if (!(validShareIds && validItem && validUrls)) return matches;
 
                                   /* `getItemPriorityForUrl` will apply strict domain matching */
-                                  const { data } = item as ItemRevisionWithOptimistic<'login'>;
+                                  const { data } = item;
                                   const priority = getItemPriorityForUrl(data)(domain, {
                                       protocolFilter: [protocol].filter(truthy),
                                       isPrivate,
@@ -222,7 +222,7 @@ export const selectItemsByDomain = (domain: MaybeNull<string>, options: SelectIt
                                   return bTime - aTime;
                           }
                       })
-                      .map(prop('item')) as ItemRevisionWithOptimistic<'login'>[]
+                      .map(prop('item'))
           );
 
 /** Autofill candidates resolution strategy : If we have a match on the subdomain :
