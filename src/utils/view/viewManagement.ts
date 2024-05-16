@@ -16,7 +16,7 @@ import { macOSExitEvent, windowsExitEvent } from "./windowClose";
 const config = getConfig();
 const settings = getSettings();
 
-type ViewID = "mail" | "calendar" | "account";
+type ViewID = keyof (typeof config)["url"];
 
 let currentViewID: ViewID = "mail";
 
