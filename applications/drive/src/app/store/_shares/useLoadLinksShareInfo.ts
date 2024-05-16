@@ -27,6 +27,18 @@ export const useLoadLinksShareInfo = ({ shareId, links, sharedByMeListing = fals
 
     const loadLinksShareInfo = useCallback(
         async (signal: AbortSignal) => {
+            if (links.length < linksWithShareInfo.size) {
+                const mapKeys = Array.from(linksWithShareInfo.keys());
+                const newLinksIds = links.map((link) => link.linkId);
+                const removedKeys = mapKeys.filter((key) => !newLinksIds.includes(key));
+                setLinksWithShareInfo((prevMap) => {
+                    const newMap = new Map(prevMap);
+                    removedKeys.forEach((key) => {
+                        newMap.delete(key);
+                    });
+                    return newMap;
+                });
+            }
             return Promise.all(
                 links.map(async (link) => {
                     const shareId = link.sharingDetails?.shareId;
