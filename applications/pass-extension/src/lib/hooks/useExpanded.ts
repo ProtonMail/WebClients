@@ -7,10 +7,13 @@ export const useExpanded = () => {
     const [expanded, setExpanded] = useState(false);
 
     useEffect(() => {
-        browser.tabs
-            .getCurrent()
-            .then((tab) => setExpanded(tab !== undefined))
-            .catch(noop);
+        (async () => {
+            const currentTab = await browser.tabs.getCurrent();
+            const isExtensionPopupTab = Boolean(
+                currentTab.url?.toLowerCase().startsWith(`${window.location.origin}/popup.html`)
+            );
+            setExpanded(isExtensionPopupTab);
+        })().catch(noop);
     }, []);
 
     useEffect(() => {
