@@ -167,6 +167,9 @@
       "Edit vault": [
         "Редактировать хранилище"
       ],
+      "Exclude from monitoring": [
+        "Исключить из мониторинга"
+      ],
       "Export": [
         "Экспорт"
       ],
@@ -188,6 +191,9 @@
       "Get mobile apps": [
         "Получить мобильные приложения"
       ],
+      "Get Pass Plus": [
+        "Получить Pass Plus"
+      ],
       "Help us improve": [
         "Помогите нам совершенствоваться"
       ],
@@ -205,6 +211,9 @@
       ],
       "Importing": [
         "Идёт импорт"
+      ],
+      "Include in monitoring": [
+        "Включить в мониторинг"
       ],
       "Invite others": [
         "Пригласить других"
@@ -335,6 +344,9 @@
       "Saving": [
         "Сохранение"
       ],
+      "See all": [
+        "Посмотреть все"
+      ],
       "See members": [
         "Просмотреть участников"
       ],
@@ -452,8 +464,17 @@
       "A checked box means the feature is disabled.": [
         "Установленный флажок означает, что функция отключена."
       ],
+      "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
+        "Доступен платный тариф мониторинга Черной паутины. Улучшите приложение для немедленного доступа."
+      ],
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
         "Список доменов, в которых определенные автоматические функции в ${ PASS_SHORT_APP_NAME } (автозаполнение, автопредложение, автосохранение) не должны запускаться.${ infoText }"
+      ],
+      "This account is vulnerable, visit the service and change your password.": [
+        "Этот аккаунт уязвим, посетите службу и смените пароль."
+      ],
+      "This service offers 2FA. Enable it for added account security.": [
+        "Эта служба предлагает двухфакторную аутентификацию. Включите ее, чтобы обеспечить дополнительную безопасность аккаунта."
       ]
     },
     "Error": {
@@ -541,11 +562,23 @@
       "Failed resending invite.": [
         "Не удалось повторно отправить приглашение."
       ],
+      "Failed to add email address": [
+        "Не удалось добавить адрес электронной почты"
+      ],
+      "Failed to delete email address from monitoring": [
+        "Не удалось исключить адрес электронной почты из мониторинга"
+      ],
       "Failed to delete selected items": [
         "Не удалось удалить выбранные элементы"
       ],
       "Failed to edit user's access.": [
         "Не удалось изменить доступ пользователя."
+      ],
+      "Failed to load breaches for this address": [
+        "Не удалось загрузить утечки для этого адреса"
+      ],
+      "Failed to load breaches for this email alias": [
+        "Не удалось загрузить утечки для этого псевдонима электронной почты"
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Сбой при перемещении всех элементов из \"${ payload.content.name }\""
@@ -562,6 +595,9 @@
       "Failed to remove user's access.": [
         "Не удалось удалить доступ пользователя."
       ],
+      "Failed to resend verification for custom email": [
+        "Не удалось повторно отправить проверку для пользовательской электронной почты"
+      ],
       "Failed to resolve breaches for this address": [
         "Не удалось устранить утечки по этому адресу"
       ],
@@ -573,6 +609,21 @@
       ],
       "Failed to unpin item": [
         "Сбой при откреплении элемента"
+      ],
+      "Failed to update monitoring settings": [
+        "Не удалось обновить настройки мониторинга"
+      ],
+      "Failed to verify email address": [
+        "Не удалось проверить адрес электронной почты"
+      ],
+      "Failed updating ${ PROTON_SENTINEL_NAME } setting": [
+        "Не удалось обновить настройки ${ PROTON_SENTINEL_NAME }"
+      ],
+      "Failed updating monitor flag of the item": [
+        "Не удалось обновить флаг монитора элемента"
+      ],
+      "Failed updating monitoring status for this email address": [
+        "Не удалось обновить состояние мониторинга для этого адреса электронной почты"
       ],
       "File could not be parsed": [
         "Файл не может быть обработан"
@@ -822,6 +873,12 @@
       "${ PASS_APP_NAME } will suggest creating strong passwords on sign-up forms.": [
         "${ PASS_APP_NAME } будет предлагать создавать надежные пароли в формах регистрации."
       ],
+      "${ PROTON_SENTINEL_NAME } successfully disabled": [
+        "${ PROTON_SENTINEL_NAME } успешно отключен"
+      ],
+      "${ PROTON_SENTINEL_NAME } successfully enabled": [
+        "${ PROTON_SENTINEL_NAME } успешно включен"
+      ],
       "${ trialDaysLeft } day left": [
         "Остался ${ trialDaysLeft } день",
         "Осталось ${ trialDaysLeft } дня",
@@ -936,6 +993,15 @@
       "Editor": [
         "Редактор"
       ],
+      "Email address successfully deleted from monitoring": [
+        "Адрес электронной почты успешно удален из мониторинга"
+      ],
+      "Email address successfully excluded from monitoring": [
+        "Адрес электронной почты успешно исключен из мониторинга"
+      ],
+      "Email address successfully included in monitoring": [
+        "Адрес электронной почты успешно включен в мониторинг"
+      ],
       "Emptying trash...": [
         "Очистка корзины..."
       ],
@@ -1032,6 +1098,12 @@
       "Item restored": [
         "Элемент восстановлен"
       ],
+      "Item successfully excluded from monitoring": [
+        "Элемент успешно удален из мониторинга"
+      ],
+      "Item successfully included in monitoring": [
+        "Элемент успешно включен в мониторинг"
+      ],
       "Item successfully moved": [
         "Элемент успешно перемещен"
       ],
@@ -1058,6 +1130,9 @@
       ],
       "me": [
         "я"
+      ],
+      "Monitoring settings successfully updated": [
+        "Настройки мониторинга успешно обновлены"
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "Более чем просто менеджер паролей, ${ PASS_APP_NAME } защищает ваш пароль и ваш личный адрес электронной почты с помощью псевдонимов электронной почты. Работая на технологии, лежащей в основе ${ MAIL_APP_NAME }, ваши данные защищены конечным шифрованием и доступны только вам."
@@ -2076,8 +2151,14 @@
       "Set access level": [
         "Задать уровень доступа"
       ],
+      "Set up 2FA for more security": [
+        "Настройте двухфакторную идентификацию для повышения безопасности"
+      ],
       "Share with": [
         "Поделиться с"
+      ],
+      "Stay safer online": [
+        "Будьте в безопасности в Интернете"
       ],
       "Suggestions": [
         "Рекомендации"
@@ -2114,6 +2195,9 @@
       ],
       "Vault shared with you": [
         "Хранилище, предоставленное вам"
+      ],
+      "Weak password": [
+        "Слабый Пароль"
       ],
       "Welcome to your new password manager!": [
         "Добро пожаловать в ваш новый менеджер паролей!"
