@@ -176,6 +176,9 @@
       "Download": [
         "Ladda ner"
       ],
+      "Download CSV sample": [
+        "Ladda ner CSV-exempel"
+      ],
       "Download our CSV template": [
         "Ladda ner vår CSV-mall"
       ],
@@ -199,6 +202,12 @@
       ],
       "Edit name": [
         "Redigera namn"
+      ],
+      "Edit organization identity": [
+        "Redigera organisationsidentitet"
+      ],
+      "Edit organization name": [
+        "Redigera organisationsnamn"
       ],
       "Edit password": [
         "Redigera lösenord"
@@ -2469,6 +2478,9 @@
       "You have successfully joined the Family plan": [
         "Du har gått med i familjepaketet"
       ],
+      "You need to configure a custom domain before adding multiple users.": [
+        "Du måste konfigurera en anpassad domän innan du lägger till flera användare."
+      ],
       "You need to configure a custom domain before creating a new user.": [
         "Du måste konfigurera en anpassad domän innan du skapar en ny användare."
       ],
@@ -2497,9 +2509,6 @@
       ],
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Om användaren redan har en ${ MAIL_APP_NAME }-adress anger du den här. Annars måste de skapa ett konto först."
-      ],
-      "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
-        "Inbjudan kommer att avbrytas och användaren kommer inte att kunna gå med i ${ organizationName }."
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "Användarens konto kommer att flyttas till ett ${ BRAND_NAME } Unlimited-paket för en 30-dagars gratis provperiod*."
@@ -2538,6 +2547,11 @@
         "Detta kommer ta bort alla ${ BRAND_NAME } premiumfunktioner för varje familjemedlem."
       ]
     },
+    "familyOffer_2023:Settings section title": {
+      "Family": [
+        "Familj"
+      ]
+    },
     "familyOffer_2023:Success": {
       "${ member.Name } has been removed from ${ organizationName }": [
         "${ member.Name } har tagits bort från ${ organizationName }"
@@ -2570,6 +2584,9 @@
       ],
       "Invite a user": [
         "Bjud in en användare"
+      ],
+      "Manage family group": [
+        "Hantera familjegrupp"
       ],
       "Set family name": [
         "Ställ in familjenamn"
@@ -2842,11 +2859,17 @@
       "IP address": [
         "IP-adress"
       ],
+      "Key type": [
+        "Nyckeltyp"
+      ],
       "Members": [
         "Medlemmar"
       ],
       "Name": [
         "Namn"
+      ],
+      "Organization key fingerprint": [
+        "Organisations nyckelfingeravtryck"
       ],
       "Save big with the best deals on ${ VPN_APP_NAME }": [
         "Spara stort med bästa erbjudande på ${ VPN_APP_NAME }"
@@ -3016,6 +3039,9 @@
       ],
       "Add domain": [
         "Lägg till domän"
+      ],
+      "Add multiple users to your organization at once.": [
+        "Lägg till flera användare till din organisation på en gång."
       ],
       "Add server (${ availableAddedCount } available)": [
         "Lägg till server (${ availableAddedCount } tillgänglig)",
@@ -3235,6 +3261,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Nedgradering kommer att avsluta alla anslutningar till betalda ${ VPN_APP_NAME }-servrar."
+      ],
+      "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
+        "Ladda ner vår CSV-mall, fyll i användaruppgifterna och ladda sedan upp din färdiga CSV-fil för att skapa konton för dessa användare."
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Ladda ner din favoritapp idag och ta integritet med dig var du än går."
@@ -3472,6 +3501,9 @@
       ],
       "MM/YY": [
         "MM/ÅÅ"
+      ],
+      "Multi-user support not enabled.": [
+        "Stöd för flera användare är inte aktiverat."
       ],
       "Must be between 3 and 20 characters long.": [
         "Måste vara mellan 3 och 20 tecken långt."
@@ -4210,6 +4242,9 @@
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Din organisation använder enkel inloggning (SSO). Tryck på “Logga in“ för att fortsätta med din SSO-leverantör."
       ],
+      "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
+        "Din organisations e-post skyddas med end-to-end-kryptering genom organisationsnyckeln. Detta fingeravtryck kan användas för att verifiera att alla administratörer på ditt konto har samma nyckel."
+      ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Dina betalningsdetaljer skyddas med TLS-kryptering och Schweiziska integritetslagar."
       ],
@@ -4462,6 +4497,9 @@
       "Current email": [
         "Nuvarande e-post"
       ],
+      "Current organization identity": [
+        "Nuvarande organisationsidentitet"
+      ],
       "Default language": [
         "Standardspråk"
       ],
@@ -4570,6 +4608,9 @@
       "New mailbox password": [
         "Nytt lösenord för brevlådan"
       ],
+      "New organization identity": [
+        "Ny organisationsidentitet"
+      ],
       "New organization password": [
         "Nytt organisationslösenord"
       ],
@@ -4599,6 +4640,9 @@
       ],
       "Optional": [
         "Valfritt"
+      ],
+      "Organization identity": [
+        "Organisationsidentitet"
       ],
       "Organization name": [
         "Organisationsnamn"
@@ -6272,6 +6316,9 @@
       "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
         "Använd en dataåterställningsmetod, kontakta en annan administratör eller återställ organisationsnyckeln för att återställa administratörsrättigheter."
       ],
+      "We couldn't verify authenticity of this identity.": [
+        "Vi kunde inte verifiera äktheten av denna identitet."
+      ],
       "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
         "Vi kunde inte verifiera säkerheten för denna avsändares adressnyckel. Ibland uppstår en fördröjning i uppdateringen av avsändarens information. Försök igen senare. Om du inte litar på giltigheten av denna inbjudan eller avsändare, kontakta ${ BRAND_NAME } kundsupport."
       ],
@@ -6754,19 +6801,9 @@
         "Ange ditt nuvarande lösenord för att avbryta återställningsprocessen. Inga andra ändringar kommer att träda i kraft."
       ]
     },
-    "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
-        "Lösenordsåterställning avbruten"
-      ]
-    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Avbryt lösenordsåterställning?"
-      ]
-    },
-    "session_recovery:cancelled:info": {
-      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
-        "Begäran om lösenordsåterställning avbröts (${ user.Email }). Om du inte gjorde denna begäran, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -6923,6 +6960,11 @@
         "Begäran om lösenordsåterställning"
       ]
     },
+    "Settings section title": {
+      "Organization": [
+        "Organisation"
+      ]
+    },
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "Delad av ${ ownerName }"
@@ -7024,11 +7066,6 @@
       ],
       "Support online privacy": [
         "Stöder integritet online"
-      ]
-    },
-    "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "Denna prenumeration kommer automatiskt att förnyas vartannat år med samma taxa tills den avbryts."
       ]
     },
     "specialoffer: Link": {
@@ -7148,11 +7185,6 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Bjud in vänner till ${ BRAND_NAME }"
-      ]
-    },
-    "State": {
-      "Cancelling your subscription, please wait": [
-        "Avbryter din prenumeration, vänta"
       ]
     },
     "Storage": {
@@ -7536,7 +7568,7 @@
       "Verification successful": [
         "Verifiering lyckades"
       ],
-      "You have successfully cancelled your subscription.": [
+      "You have successfully canceled your subscription.": [
         "Du har avbrutit din prenumeration."
       ],
       "You have successfully unsubscribed": [
@@ -7764,6 +7796,9 @@
       "Card verification": [
         "Kortverifiering"
       ],
+      "Catch-all address": [
+        "Catch all-adress"
+      ],
       "Change login password": [
         "Ändra lösenord för inloggning"
       ],
@@ -7840,6 +7875,9 @@
       "Custom selection of users": [
         "Anpassat val av användare"
       ],
+      "Customization": [
+        "Anpassning"
+      ],
       "Customize the number of IP addresses in your plan": [
         "Anpassa antalet IP-adresser i ditt paket"
       ],
@@ -7883,6 +7921,9 @@
       "Disable two-factor authentication": [
         "Inaktivera tvåfaktorsautentisering"
       ],
+      "Domain names": [
+        "Domännamn"
+      ],
       "Downgrade account": [
         "Nedgradera konto"
       ],
@@ -7909,6 +7950,9 @@
       ],
       "Edit invoice details": [
         "Redigera fakturadetaljer"
+      ],
+      "Edit organization identity": [
+        "Redigera organisationsidentitet"
       ],
       "Edit servers": [
         "Redigera servrar"
@@ -8015,6 +8059,12 @@
       ],
       "OpenVPN configuration files": [
         "OpenVPN-konfigurationsfiler"
+      ],
+      "Organization filters": [
+        "Organisationsfilter"
+      ],
+      "Organization key": [
+        "Organisationsnyckel"
       ],
       "Organization name": [
         "Organisationsnamn"
@@ -8142,6 +8192,9 @@
       "Single sign-on": [
         "Enkel inloggning"
       ],
+      "Spam, block, and allow lists": [
+        "Listor för skräppost, blockera och tillåt"
+      ],
       "Status": [
         "Status"
       ],
@@ -8190,6 +8243,9 @@
       ],
       "Users": [
         "Användare"
+      ],
+      "Users and addresses": [
+        "Användare och adresser"
       ],
       "Verification failed": [
         "Verifiering misslyckades"
@@ -8299,6 +8355,9 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Det valda temat kommer bli aktivt när ditt system är inställt på “ljust läge“"
+      ],
+      "This email address will be shown to all organization members when performing account management operations.": [
+        "Denna e-postadress kommer att visas för alla organisationsmedlemmar när de utför kontohanteringsåtgärder."
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "Användare kommer att se din logga istället för ${ BRAND_NAME }-ikonen när de är inloggade på våra webbappar."

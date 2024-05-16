@@ -170,6 +170,9 @@
       "Download": [
         "ダウンロード"
       ],
+      "Download CSV sample": [
+        "CSV サンプルをダウンロード"
+      ],
       "Download our CSV template": [
         "CSVテンプレートのダウンロード"
       ],
@@ -223,6 +226,9 @@
       ],
       "Fit to window": [
         "ウィンドウに合わせる"
+      ],
+      "Forgot password?": [
+        "パスワードを忘れた?"
       ],
       "Get ${ vpnPlus }": [
         "${ vpnPlus } を入手"
@@ -2302,6 +2308,9 @@
       "You have successfully joined the Family plan": [
         "ファミリープランに参加しました"
       ],
+      "You need to configure a custom domain before adding multiple users.": [
+        "複数のユーザーを追加する前にカスタムドメインを設定する必要があります。"
+      ],
       "You need to configure a custom domain before creating a new user.": [
         "新規ユーザーを作成する前にカスタムドメインを設定する必要があります。"
       ],
@@ -2330,9 +2339,6 @@
       ],
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "ユーザーがすでに ${ MAIL_APP_NAME } アドレスを持っている場合は、ここにアドレスを入力します。 それ以外の場合は、最初にアカウントを作成する必要があります。"
-      ],
-      "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
-        "招待はキャンセルされ、ユーザーは ${ organizationName } に参加できなくなります。"
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "ユーザーのアカウントは、30 日間の無料トライアル*の ${ BRAND_NAME } Unlimited プランに移行されます。"
@@ -2371,6 +2377,11 @@
         "これにより、家族全員の${ BRAND_NAME }プレミアム機能がすべて削除されます。"
       ]
     },
+    "familyOffer_2023:Settings section title": {
+      "Family": [
+        "家族"
+      ]
+    },
     "familyOffer_2023:Success": {
       "${ member.Name } has been removed from ${ organizationName }": [
         "${ member.Name } が ${ organizationName } から削除されました"
@@ -2403,6 +2414,9 @@
       ],
       "Invite a user": [
         "ユーザーを招待する"
+      ],
+      "Manage family group": [
+        "家族グループを管理"
       ],
       "Set family name": [
         "家族名の設定"
@@ -2661,11 +2675,17 @@
       "IP address": [
         "IPアドレス"
       ],
+      "Key type": [
+        "鍵の種類"
+      ],
       "Members": [
         "メンバー"
       ],
       "Name": [
         "名前"
+      ],
+      "Organization key fingerprint": [
+        "組織用の鍵のフィンガープリント"
       ],
       "Select your pricing plan": [
         "料金プランを選択してください"
@@ -2812,6 +2832,9 @@
       ],
       "Add domain": [
         "ドメインを追加"
+      ],
+      "Add multiple users to your organization at once.": [
+        "複数のユーザーを一度に組織に追加します。"
       ],
       "Add server (${ availableAddedCount } available)": [
         "サーバーを追加 (${ availableAddedCount } が利用可能)"
@@ -3001,6 +3024,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "ダウングレードすると、有料の ${ VPN_APP_NAME } サーバーとの接続が終了します。"
+      ],
+      "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
+        "CSVテンプレートをダウンロードし、ユーザー情報を入力し、完成したCSVファイルをアップロードすると、そのユーザーのアカウントが作成されます。"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "お気に入りのアプリをダウンロードし、どこにいてもプライバシーを保ってください。"
@@ -3211,6 +3237,9 @@
       ],
       "MM/YY": [
         "MM/YY"
+      ],
+      "Multi-user support not enabled.": [
+        "複数ユーザー対応が有効になっていません。"
       ],
       "Must be between 3 and 20 characters long.": [
         "3文字以上20文字以内。"
@@ -3871,6 +3900,9 @@
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "あなたの組織ではシングル サインオン (SSO) を使用しています。 SSO プロバイダーを続行するには、「サインイン」を押します。"
+      ],
+      "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
+        "組織の電子メールは、組織キーを使用したエンドツーエンドの暗号化で保護されています。 このフィンガープリントを使用して、アカウントのすべての管理者が同じキーを持っていることを確認できます。"
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "支払いの詳細は TLS で暗号化され、スイスのプライバシー法によっても保護されています。"
@@ -6085,19 +6117,9 @@
         "パスワードリセットのプロセスをキャンセルするには、現在のパスワードを入力してください。他に変更は適用されません。"
       ]
     },
-    "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
-        "パスワードリセットが取り消されました"
-      ]
-    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "パスワードリセットを取り消しますか？"
-      ]
-    },
-    "session_recovery:cancelled:info": {
-      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
-        "パスワードリセットのリクエストがキャンセルされました(${ user.Email })。もしリクエストを行っていない場合、${ changePasswordLink }。"
       ]
     },
     "session_recovery:cancelled:link": {
@@ -6249,6 +6271,11 @@
         "パスワードリセット要求"
       ]
     },
+    "Settings section title": {
+      "Organization": [
+        "組織"
+      ]
+    },
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "${ ownerName } による共有"
@@ -6342,11 +6369,6 @@
       ],
       "Support online privacy": [
         "オンラインプライバシーをサポート"
-      ]
-    },
-    "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "サブスクリプションはキャンセルされるまで2年ごとに同じ割引率で自動更新されます。"
       ]
     },
     "specialoffer: Link": {
@@ -6465,11 +6487,6 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "友達を ${ BRAND_NAME } に招待"
-      ]
-    },
-    "State": {
-      "Cancelling your subscription, please wait": [
-        "サブスクリプションをキャンセルします。"
       ]
     },
     "Storage": {
@@ -6782,9 +6799,6 @@
       "Verification successful": [
         "検証に成功しました"
       ],
-      "You have successfully cancelled your subscription.": [
-        "サブスクリプションのキャンセルが正常に完了しました"
-      ],
       "You have successfully unsubscribed": [
         "サブスクリプションをキャンセルしました"
       ]
@@ -7007,6 +7021,9 @@
       "Card verification": [
         "カードの検証"
       ],
+      "Catch-all address": [
+        "Catch-All アドレス"
+      ],
       "Change login password": [
         "ログインパスワードを変更"
       ],
@@ -7114,6 +7131,9 @@
       ],
       "Disable two-factor authentication": [
         "2 段階認証を無効化"
+      ],
+      "Domain names": [
+        "ドメイン名"
       ],
       "Downgrade account": [
         "アカウントのダウングレード"
@@ -7238,6 +7258,12 @@
       "OpenVPN configuration files": [
         "OpenVPN 設定ファイル"
       ],
+      "Organization filters": [
+        "組織名"
+      ],
+      "Organization key": [
+        "組織の鍵"
+      ],
       "Organization name": [
         "組織名"
       ],
@@ -7355,6 +7381,9 @@
       "Single sign-on": [
         "シングルサインオン"
       ],
+      "Spam, block, and allow lists": [
+        "迷惑メール・ブロックアドレス・許可アドレスリスト"
+      ],
       "Status": [
         "状態"
       ],
@@ -7399,6 +7428,9 @@
       ],
       "Users": [
         "ユーザー"
+      ],
+      "Users and addresses": [
+        "ユーザーとアドレス"
       ],
       "Verification failed": [
         "検証に失敗しました"
