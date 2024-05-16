@@ -257,6 +257,9 @@
       "Copy link": [
         "Link kopiëren"
       ],
+      "Copy version number to clipboard": [
+        "Kopieer versienummer naar klembord"
+      ],
       "Create": [
         "Aanmaken"
       ],
@@ -466,6 +469,9 @@
       ],
       "Font": [
         "Lettertype"
+      ],
+      "Forgot password?": [
+        "Wachtwoord vergeten?"
       ],
       "Generate": [
         "Genereren"
@@ -3305,11 +3311,32 @@
       "Bugs or quality issue": [
         "Bugs of kwaliteitsproblemen"
       ],
+      "I do not wish to share": [
+        "Ik wens dit niet te delen"
+      ],
+      "I found a cheaper VPN": [
+        "Ik vond een goedkopere VPN"
+      ],
+      "I found a VPN with better features": [
+        "Ik heb een VPN gevonden met betere functies"
+      ],
+      "I have not managed to connect": [
+        "Ik kon niet verbinden"
+      ],
+      "I only needed a VPN short-term": [
+        "Ik had enkel een VPN nodig voor korte termijn"
+      ],
       "I use a different ${ BRAND_NAME } account": [
         "Ik gebruik een ander ${ BRAND_NAME }-account"
       ],
+      "It doesn't do what I need": [
+        "Het doet niet wat ik nodig heb"
+      ],
       "Missing feature(s)": [
         "Ontbrekend(e) kenmerk(en)"
+      ],
+      "Other reason (please comment)": [
+        "Andere reden (graag verduidelijken)"
       ],
       "Subscription is too expensive": [
         "Abonnement is te duur"
@@ -3319,6 +3346,9 @@
       ],
       "Temporary need, may come back in the future": [
         "Tijdelijke behoefte, kan in de toekomst terugkomen"
+      ],
+      "The VPN is too slow": [
+        "De VPN is te traag"
       ]
     },
     "Downgrade modal exit survey title": {
@@ -4907,9 +4937,6 @@
       ],
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Als de gebruiker al een ${ MAIL_APP_NAME }-adres heeft, voert u het hier in. Anders moet de gebruiker eerst een account aanmaken."
-      ],
-      "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
-        "De uitnodiging wordt ingetrokken en de gebruiker kan zich niet aansluiten bij ${ organizationName }."
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "Het account van de gebruiker wordt omgezet naar een ${ BRAND_NAME } Unlimited-abonnement voor een gratis proefperiode van 30 dagen*."
@@ -8008,6 +8035,9 @@
       ],
       "Version history": [
         "Versiegeschiedenis"
+      ],
+      "Version number successfully copied to clipboard": [
+        "Versienummer succesvol gekopieerd naar klembord"
       ],
       "View, download, and manage your invoices.": [
         "Bekijk, download, en beheer uw facturen."
@@ -12848,6 +12878,20 @@
         "URL van de SCIM connector waar uw IdP Provisioning Agent de SCIM-gegevens naar doorstuurt"
       ]
     },
+    "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } en ${ remainingCount } ander potentieel lek gedetecteerd. Schakel ${ DARK_WEB_MONITORING_NAME } in om details te bekijken. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } en 1 ander potentieel lek gedetecteerd. Schakel ${ DARK_WEB_MONITORING_NAME } in om details te bekijken. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Een potentieel ${ name } lek werd gedetecteerd. Schakel ${ DARK_WEB_MONITORING_NAME } in om details te bekijken. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Uw informatie is in ten minste één datalek gevonden. Shakel ${ DARK_WEB_MONITORING_NAME } in om details te bekijken. ${ link }"
+      ]
+    },
     "Select file": {
       "Upload CSV file": [
         "Upload CSV-bestand"
@@ -13002,19 +13046,9 @@
         "Vul uw huidig wachtwoord in om uw het resetten van uw wachtwoord te annuleren. Er zullen geen veranderingen plaatsvinden."
       ]
     },
-    "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
-        "Wachtwoord reset geannuleerd"
-      ]
-    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Wachtwoord reset annuleren?"
-      ]
-    },
-    "session_recovery:cancelled:info": {
-      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
-        "Aanvraag wijziging wachtwoord (${ user.Email }) geannuleerd. Als u deze aanvraag niet hebt gemaakt, ${ changePasswordLink }"
       ]
     },
     "session_recovery:cancelled:link": {
@@ -13417,11 +13451,6 @@
         "Ondersteun online privacy"
       ]
     },
-    "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "Dit abonnement wordt na 2 jaar automatisch verlengd tegen dezelfde prijs totdat het wordt opgezegd."
-      ]
-    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Naar abonnementen"
@@ -13539,11 +13568,6 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Nodig vrienden uit voor ${ BRAND_NAME }"
-      ]
-    },
-    "State": {
-      "Cancelling your subscription, please wait": [
-        "Uw abonnement wordt geannuleerd, even geduld"
       ]
     },
     "Step in filter modal": {
@@ -14147,9 +14171,6 @@
       ],
       "Verification successful": [
         "Verificatie gelukt"
-      ],
-      "You have successfully cancelled your subscription.": [
-        "U hebt met succes uw abonnement opgezegd."
       ],
       "You have successfully unsubscribed": [
         "U bent succesvol afgemeld"
