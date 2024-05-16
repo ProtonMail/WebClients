@@ -143,6 +143,9 @@
       "Edit vault": [
         "Upravit trezor"
       ],
+      "Enable Dark Web Monitoring": [
+        "Povolit sledování Dark webu"
+      ],
       "Exclude from monitoring": [
         "Vyloučit ze sledování"
       ],
@@ -169,6 +172,9 @@
       ],
       "Get mobile apps": [
         "Získat mobilní aplikace"
+      ],
+      "Get Pass Plus": [
+        "Získejte Pass Plus"
       ],
       "Get Started": [
         "Začínáme"
@@ -269,6 +275,12 @@
       "Pass for iOS": [
         "Proton Pass pro iOS"
       ],
+      "Pass Monitor": [
+        "Pass Monitor"
+      ],
+      "Pause monitoring": [
+        "Pozastavit sledování"
+      ],
       "Pin item": [
         "Připnout položku"
       ],
@@ -307,6 +319,9 @@
       ],
       "Restore item": [
         "Obnovit položku"
+      ],
+      "Resume monitoring": [
+        "Obnovit sledování"
       ],
       "Retry": [
         "Opakovat"
@@ -365,6 +380,9 @@
       "Trash": [
         "Koš"
       ],
+      "Try again.": [
+        "Zkusit znovu."
+      ],
       "Unpin item": [
         "Odepnout položku"
       ],
@@ -382,6 +400,9 @@
       ],
       "Verify": [
         "Ověřit"
+      ],
+      "View details": [
+        "Zobrazit podrobnosti"
       ],
       "View history": [
         "Zobrazit historii"
@@ -436,8 +457,23 @@
       ]
     },
     "Description": {
+      "${ total } other login uses the same password": [
+        "${ total } jiné přihlášení používá stejné heslo",
+        "${ total } jiná přihlášení používají stejné heslo",
+        "${ total } jiných přihlášení používá stejné heslo",
+        "${ total } jiných přihlášení používá stejné heslo"
+      ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "E-mailový alias funguje stejně jako e-mailová adresa, ale omezuje šíření spamu a udržuje vaši skutečnou e-mailovou adresu a identitu skrytou."
+      ],
+      "Change your passwords": [
+        "Změňte svá hesla"
+      ],
+      "Create unique passwords": [
+        "Vytvářejte jedinečná hesla"
+      ],
+      "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
+        "Sledování Dark webu je k dispozici s placeným tarifem. Navyšte tarif pro okamžitý přístup."
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "Udržujte své informace v bezpečí a soukromí pomocí těchto návodů a tipů."
@@ -445,8 +481,14 @@
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Naše špičkové řešení s pomocí umělé inteligence zaměřené na uživatele, kteří vyžadují zvýšenou ochranu svých účtů. ${ learnMoreLink }"
       ],
+      "Set up 2FA for more security": [
+        "Nastavte 2FA pro větší zabezpečení"
+      ],
       "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
         "Dark web je skrytá část internetu, kde lze koupit a prodat ukradené osobní údaje, například identitu."
+      ],
+      "These items remain at risk": [
+        "Tyto položky jsou nadále rizikové"
       ]
     },
     "Error": {
@@ -540,6 +582,12 @@
       "Failed resending invite.": [
         "Opětovné zaslání pozvánky selhalo."
       ],
+      "Failed to add email address": [
+        "Přidání e-mailové adresy selhalo"
+      ],
+      "Failed to delete email address from monitoring": [
+        "Smazání e-mailové adresy ze sledování selhalo"
+      ],
       "Failed to delete selected items": [
         "Smazání vybraných položek selhalo."
       ],
@@ -548,6 +596,12 @@
       ],
       "Failed to edit user's access.": [
         "Úprava uživatelského přístupu selhala."
+      ],
+      "Failed to load breaches for this address": [
+        "Načtení úniků informací pro tuto adresu selhalo"
+      ],
+      "Failed to load breaches for this email alias": [
+        "Načtení úniků informací pro tento alias selhalo"
       ],
       "Failed to load item history": [
         "Načítání historie položky selhalo."
@@ -567,6 +621,12 @@
       "Failed to remove user's access.": [
         "Odstranění uživatelského přístupu selhalo."
       ],
+      "Failed to resend verification for custom email": [
+        "Opětovné odeslání ověření pro vlastní e-mail selhalo"
+      ],
+      "Failed to resolve breaches for this address": [
+        "Vyřešení úniků informací pro tuto adresu selhalo"
+      ],
       "Failed to restore items from trash": [
         "Selhalo obnovení položek z koše"
       ],
@@ -575,6 +635,21 @@
       ],
       "Failed to unpin item": [
         "Odepnutí položky selhalo"
+      ],
+      "Failed to update monitoring settings": [
+        "Aktualizace nastavení sledování selhala"
+      ],
+      "Failed to verify email address": [
+        "Ověření e-mailové adresy selhalo"
+      ],
+      "Failed updating ${ PROTON_SENTINEL_NAME } setting": [
+        "Aktualizace nastavení ${ PROTON_SENTINEL_NAME } selhala"
+      ],
+      "Failed updating monitor flag of the item": [
+        "Aktualizace příznaku sledování položky selhala"
+      ],
+      "Failed updating monitoring status for this email address": [
+        "Aktualizace stavu sledování této e-mailové adresy selhala"
       ],
       "File could not be parsed": [
         "Soubor nelze analyzovat"
@@ -712,6 +787,9 @@
       ]
     },
     "Feature": {
+      "Dark Web Monitoring": [
+        "Sledování Dark webu"
+      ],
       "Integrated 2FA authenticator": [
         "Integrované ověřování 2FA"
       ],
@@ -839,6 +917,18 @@
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } bude vyžadovat vaše heslo ${ BRAND_NAME } pro přístup k datům offline."
       ],
+      "${ PROTON_SENTINEL_NAME } successfully disabled": [
+        "${ PROTON_SENTINEL_NAME } úspěšně deaktivován"
+      ],
+      "${ PROTON_SENTINEL_NAME } successfully enabled": [
+        "${ PROTON_SENTINEL_NAME } úspěšně povolen"
+      ],
+      "${ row.breachCount } breach detected": [
+        "Zjištěn ${ row.breachCount } únik informací",
+        "Zjištěny ${ row.breachCount } úniky informací",
+        "Zjištěno ${ row.breachCount } úniků informací",
+        "Zjištěno ${ row.breachCount } úniků informací"
+      ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 dnů na vyzkoušení prémiových funkcí zdarma. Pouze během prvního týdne používání ${ BRAND_NAME }."
       ],
@@ -859,6 +949,12 @@
       ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Alias \"${ item.aliasEmail }\" přesunut do koše - přestane přeposílat e-maily do vaší schránky"
+      ],
+      "All breaches for this address were resolved": [
+        "Všechny úniky informací pro tuto adresu byly vyřešeny"
+      ],
+      "All current breaches will be marked as resolved. In case of future data breaches, you'll be notified.": [
+        "Všechny stávající úniky informací budou označeny jako vyřešené. V případě budoucích úniků informací budete informováni."
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Všechny položky z \"${ payload.content.name }\" úspěšně přesunuty"
@@ -946,6 +1042,15 @@
       ],
       "email": [
         "e-mail"
+      ],
+      "Email address successfully deleted from monitoring": [
+        "E-mailová adresa úspěšně smazána ze sledování"
+      ],
+      "Email address successfully excluded from monitoring": [
+        "E-mailová adresa úspěšně vyloučena ze sledování"
+      ],
+      "Email address successfully included in monitoring": [
+        "E-mailová adresa úspěšně zahrnuta do sledování"
       ],
       "Emptying trash...": [
         "Vysypávání koše..."
@@ -1055,6 +1160,12 @@
       "Item restored": [
         "Položka obnovena"
       ],
+      "Item successfully excluded from monitoring": [
+        "Položka úspěšně vyloučena ze sledování"
+      ],
+      "Item successfully included in monitoring": [
+        "Položka úspěšně zahrnuta do sledování"
+      ],
       "Item successfully moved": [
         "Položka úspěšně přesunuta"
       ],
@@ -1096,6 +1207,9 @@
       ],
       "Monitor accounts": [
         "Sledování účtů"
+      ],
+      "Monitoring settings successfully updated": [
+        "Nastavení sledování úspěšně aktualizováno"
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "${ PASS_APP_NAME } není obyčejný správce hesel. Chrání vaše heslo a osobní e-mailovou adresu pomocí e-mailových aliasů. Funguje na stejné technologii jako ${ MAIL_APP_NAME }, vaše data jsou koncově šifrována a dostupná jen vám."
@@ -1422,6 +1536,12 @@
         "${ config.options.wordCount } slova",
         "${ config.options.wordCount } slov",
         "${ config.options.wordCount } slov"
+      ],
+      "${ usageCount } login": [
+        "${ usageCount } přihlášení",
+        "${ usageCount } přihlášení",
+        "${ usageCount } přihlášení",
+        "${ usageCount } přihlášení"
       ],
       "1 hour": [
         "1 hodina"
@@ -2013,6 +2133,11 @@
         "Napište svoji poznámku"
       ]
     },
+    "Security Center - Info": {
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Vaše údaje byly nalezeny při nejméně jednom úniku informací. Zapnutím ${ DARK_WEB_MONITORING_NAME } zobrazíte podrobnosti. ${ link }"
+      ]
+    },
     "Success": {
       "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
         "Trezory nemohou obsahovat více než ${ vault.targetMaxMembers } uživatele.",
@@ -2198,6 +2323,12 @@
       ],
       "Resume monitoring?": [
         "Obnovit sledování?"
+      ],
+      "Reused ${ count } time": [
+        "Opakovaně použito ${ count } krát",
+        "Opakovaně použito ${ count } krát",
+        "Opakovaně použito ${ count } krát",
+        "Opakovaně použito ${ count } krát"
       ],
       "Reused passwords": [
         "Opakovaně použitá hesla"
@@ -2420,7 +2551,7 @@
         "Předpona aliasu nesmí být delší než 40 znaků"
       ],
       "This email address will no longer be monitored for data breaches.": [
-        "Tato e-mailová adresa již nebude sledována v unicích informací."
+        "Tato e-mailová adresa již nebude sledována v únicích informací."
       ],
       "Title is required": [
         "Název je povinný"
