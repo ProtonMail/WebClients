@@ -1,11 +1,13 @@
 import { useCallback, useEffect, useMemo, useRef } from 'react';
 
 import { useActiveBreakpoint } from '@proton/components';
+import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
 
 import { DriveFolder } from '../../../hooks/drive/useActiveShare';
 import useDriveDragMove from '../../../hooks/drive/useDriveDragMove';
 import useNavigate from '../../../hooks/drive/useNavigate';
 import { EncryptedLink, LinkShareUrl, useFolderView, useThumbnailsDownload } from '../../../store';
+import { useDocumentActions, useDriveDocsFeatureFlag } from '../../../store/_documents';
 import { SortField } from '../../../store/_views/utils/useSorting';
 import FileBrowser, {
     Cells,
@@ -83,6 +85,8 @@ function Drive({ activeFolder, folderView }: Props) {
     const { navigateToLink } = useNavigate();
     const selectionControls = useSelection();
     const { viewportWidth } = useActiveBreakpoint();
+    const { openDocument } = useDocumentActions();
+    const isDocsEnabled = useDriveDocsFeatureFlag();
 
     const { permissions, layout, folderName, items, sortParams, setSorting, isLoading } = folderView;
 
@@ -130,6 +134,15 @@ function Drive({ activeFolder, folderView }: Props) {
                 return;
             }
             document.getSelection()?.removeAllRanges();
+
+            if (isDocsEnabled && isProtonDocument(item.mimeType)) {
+                openDocument({
+                    linkId: id,
+                    shareId,
+                });
+                return;
+            }
+
             if (item.isFile) {
                 openPreview(shareId, id);
                 return;

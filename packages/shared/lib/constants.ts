@@ -47,6 +47,8 @@ export const PASS_SHORT_APP_NAME = 'Pass';
 export const PASS_APP_NAME = `${BRAND_NAME} ${PASS_SHORT_APP_NAME}`;
 export const VPN_SHORT_APP_NAME = 'VPN';
 export const VPN_APP_NAME = `${BRAND_NAME} ${VPN_SHORT_APP_NAME}`;
+export const DOCS_SHORT_APP_NAME = 'Docs';
+export const DOCS_APP_NAME = `${BRAND_NAME} ${DOCS_SHORT_APP_NAME}`;
 export const VERIFY_APP_NAME = 'Proton Verify';
 export const REFERRER_CODE_MAIL_TRIAL = 'MAILPLUSTRIAL';
 export const PROTON_SENTINEL_NAME = 'Proton Sentinel';
@@ -66,6 +68,7 @@ export const APPS = {
     PROTONVERIFICATION: 'proton-verify',
     PROTONEXTENSION: 'proton-extension',
     PROTONPASSBROWSEREXTENSION: 'proton-pass-extension',
+    PROTONDOCS: 'proton-docs',
 } as const;
 
 interface AppConfiguration {
@@ -210,6 +213,15 @@ export const APPS_CONFIGURATION: { [key in APP_NAMES]: AppConfiguration } = {
         clientID: 'web-verify',
         icon: 'brand-proton',
         settingsSlug: '',
+    },
+    [APPS.PROTONDOCS]: {
+        publicPath: '',
+        subdomain: 'docs',
+        name: DOCS_APP_NAME,
+        bareName: DOCS_SHORT_APP_NAME,
+        clientID: 'web-docs',
+        icon: 'brand-proton', // TODO: brand icon for Docs
+        settingsSlug: 'docs',
     },
 };
 
