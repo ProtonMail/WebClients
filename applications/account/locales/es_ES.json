@@ -433,6 +433,12 @@
       "Edit name": [
         "Editar nombre"
       ],
+      "Edit organization identity": [
+        "Editar la identidad de la organización"
+      ],
+      "Edit organization name": [
+        "Editar el nombre de la organización"
+      ],
       "Edit password": [
         "Editar la contraseña"
       ],
@@ -4958,9 +4964,6 @@
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Si el usuario ya dispone de una dirección de ${ MAIL_APP_NAME }, introdúcela aquí. De lo contrario, tendrá que crearse primero una cuenta."
       ],
-      "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
-        "Se cancelará la invitación y, por tanto, el usuario no podrá unirse a ${ organizationName }."
-      ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "Se moverá la cuenta del usuario a un plan Unlimited de ${ BRAND_NAME } que podrá disfrutar a modo de prueba gratuita durante 30 días*."
       ],
@@ -6941,7 +6944,7 @@
         "Si pierdes tu contraseña y necesitas restablecer tu cuenta, ${ boldImperative } que tengas un ${ boldAccountRecovery } configurado."
       ],
       "If you lose your password and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
-        "Si pierdes tu contraseña y necesitas restablecer tu cuenta, ${ boldImperative } que tengas un ${ boldAccountAndRecovery } configurado. De lo contrario, es posible que no puedas acceder a ninguno de tus correos electrónicos, contactos o archivos."
+        "Si pierdes tu contraseña y necesitas restablecer tu cuenta, es ${ boldImperative } que tengas una ${ boldAccountAndRecovery } configurada, de lo contrario es posible que no puedas acceder a ninguno de tus correos electrónicos, contactos o archivos."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Si pierdes tu dispositivo activado para dos factores, estos códigos pueden utilizarse en lugar del código de autenticación de doble factor de 6 dígitos para iniciar sesión en tu cuenta. Cada código solo se puede utilizar una vez."
@@ -7541,6 +7544,12 @@
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Escanea este código con tu dispositivo de autenticación de doble factor para configurar tu cuenta. ${ switchButton }."
+      ],
+      "SCIM integration disabled": [
+        "Integración SCIM desactivada"
+      ],
+      "SCIM token active": [
+        "Token SCIM activo"
       ],
       "Secure your ${ BRAND_NAME } Account": [
         "Asegura tu cuenta de ${ BRAND_NAME }"
@@ -9167,6 +9176,9 @@
       "Current email": [
         "Correo electrónico actual"
       ],
+      "Current organization identity": [
+        "Identidad actual de la organización"
+      ],
       "Daily email notifications": [
         "Notificaciones diarias por correo electrónico"
       ],
@@ -9467,6 +9479,9 @@
       "New mailbox password": [
         "Nueva contraseña del buzón"
       ],
+      "New organization identity": [
+        "Nueva identidad de la organización"
+      ],
       "New organization password": [
         "Nueva contraseña de la organización"
       ],
@@ -9514,6 +9529,9 @@
       ],
       "Or": [
         "O"
+      ],
+      "Organization identity": [
+        "Identidad de la organización"
       ],
       "Organization name": [
         "Nombre de la organización"
@@ -12445,8 +12463,14 @@
       "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
         "Usa un método de recuperación de datos, contacta con otro administrador o restablece la clave de seguridad de la organización para restaurar los privilegios de administrador."
       ],
+      "We couldn't verify authenticity of this identity.": [
+        "No hemos podido verificar la autenticidad de esta identidad."
+      ],
       "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
         "No hemos podido verificar la seguridad de la clave de la dirección de este remitente. A veces hay un retraso en actualizar la información del remitente. Intenta de nuevo más tarde. Si no confías en la validación de esta invitación o en el remitente, contacta con el soporte al cliente de ${ BRAND_NAME }."
+      ],
+      "We have verified the authenticity of this identity.": [
+        "Hemos verificado la autenticidad de esta identidad."
       ],
       "We have verified the authenticity of this sender and invitation.": [
         "Hemos verificado la autenticidad de este remitente y la invitación."
@@ -13121,19 +13145,9 @@
         "Introduce tu contraseña actual para cancelar el proceso de restablecimiento. No se aplicará ningún otro cambio."
       ]
     },
-    "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
-        "El restablecimiento de contraseña ha sido cancelado."
-      ]
-    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "¿Cancelar el restablecimiento de contraseña?"
-      ]
-    },
-    "session_recovery:cancelled:info": {
-      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
-        "La solicitud de restablecimiento de contraseña ha sido cancelada (${ user.Email }). Si no ha hecho esta solicitud, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -13536,11 +13550,6 @@
         "Apoya la privacidad en línea"
       ]
     },
-    "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "Esta suscripción se renovará automáticamente cada 2 años al mismo precio hasta su cancelación."
-      ]
-    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Ir a los planes de suscripción"
@@ -13658,11 +13667,6 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Invita amigos a ${ BRAND_NAME }"
-      ]
-    },
-    "State": {
-      "Cancelling your subscription, please wait": [
-        "Estamos cancelando tu suscripción. Espera."
       ]
     },
     "Step in filter modal": {
@@ -14381,9 +14385,6 @@
       "Verification successful": [
         "Verificación completada"
       ],
-      "You have successfully cancelled your subscription.": [
-        "Has cancelado tu suscripción."
-      ],
       "You have successfully unsubscribed": [
         "Has cancelado la suscripción."
       ]
@@ -15022,6 +15023,9 @@
       ],
       "Edit invoice details": [
         "Editar los datos de la factura"
+      ],
+      "Edit organization identity": [
+        "Editar la identidad de la organización"
       ],
       "Edit servers": [
         "Editar servidores"
@@ -15898,6 +15902,9 @@
       ],
       "This address has been disabled": [
         "Esta dirección ha sido desactivada."
+      ],
+      "This email address will be shown to all organization members when performing account management operations.": [
+        "Esta dirección de correo se mostrará a todos los miembros de la organización cuando se ejecute operaciones de gestión de cuentas."
       ],
       "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
         "Esta función retrasa el envío de tus correos electrónicos, dándote la oportunidad de deshacer el envío durante el período de tiempo seleccionado."

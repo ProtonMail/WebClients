@@ -4938,9 +4938,6 @@
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Jika pengguna sudah memiliki alamat ${ MAIL_APP_NAME }, masukkan di sini. Jika belum, mereka harus membuat sebuah akun terlebih dahulu."
       ],
-      "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
-        "Undangan akan dibatalkan dan pengguna tidak dapat bergabung ke ${ organizationName }."
-      ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "Akun pengguna akan dipindahkan ke paket ${ BRAND_NAME } Unlimited selama uji coba gratis 30 hari."
       ],
@@ -10786,9 +10783,6 @@
       "Organize items with multiple vaults": [
         "Kelola item dengan berbagai brankas"
       ],
-      "Pass Monitor - premium features": [
-        "Pemantauan Pass - fitur premium"
-      ],
       "Passkeys supported": [
         "Passkey didukung"
       ],
@@ -12311,8 +12305,14 @@
       "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
         "Gunakan metode pemulihan data, hubungi administrator lain, atau atur ulang kunci organisasi untuk memulihkan hak administrator."
       ],
+      "We couldn't verify authenticity of this identity.": [
+        "Kami tidak dapat memverifikasi keaslian identitas ini."
+      ],
       "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
         "Kami tidak dapat memastikan keamanan kunci alamat pengirim ini. Terkadang, hal ini disebabkan oleh terdapatnya jeda dalam memperbarui informasi pengirim. Silakan coba lagi nanti. Apabila Anda tidak memercayai keabsahan undangan atau pengirim ini, silakan hubungi Layanan Dukungan ${ BRAND_NAME }."
+      ],
+      "We have verified the authenticity of this identity.": [
+        "Kami telah memverifikasi keaslian identitas ini."
       ],
       "We have verified the authenticity of this sender and invitation.": [
         "Kami telah memastikan keasilan pengirim dan undangan ini."
@@ -12428,7 +12428,7 @@
         "Konfirmasi"
       ],
       "domain.com": [
-        "domain.co.id"
+        "domain.com"
       ],
       "e.g. https://example.com/app/protonvpn/XXXXX/sso/metadata": [
         "mis. https://contoh.com/app/protonvpn/XXXXX/sso/metadata"
@@ -12976,19 +12976,9 @@
         "Masukkan kata sandi Anda saat ini untuk membatalkan proses pengaturan ulang kata sandi. Tidak ada perubahan lain yang akan diterapkan."
       ]
     },
-    "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
-        "Pengaturan ulang kata sandi dibatalkan"
-      ]
-    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Batalkan pengaturan ulang kata sandi?"
-      ]
-    },
-    "session_recovery:cancelled:info": {
-      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
-        "Permintaan pengaturan ulang kata sandi dibatalkan (${ user.Email }). Apabila Anda tidak membuat permintaan ini, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -13380,11 +13370,6 @@
         "Dukung privasi online"
       ]
     },
-    "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "Langganan ini akan otomatis diperbarui setiap 2 tahun dengan tarif yang sama hingga dibatalkan."
-      ]
-    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Tuju daftar paket langganan"
@@ -13501,11 +13486,6 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Undang teman ke ${ BRAND_NAME }"
-      ]
-    },
-    "State": {
-      "Cancelling your subscription, please wait": [
-        "Membatalkan langganan Anda, silakan tunggu"
       ]
     },
     "Step in filter modal": {
@@ -14191,9 +14171,6 @@
       "Verification successful": [
         "Verifikasi berhasil"
       ],
-      "You have successfully cancelled your subscription.": [
-        "Anda telah berhasil membatalkan langganan Anda."
-      ],
       "You have successfully unsubscribed": [
         "Anda berhasil berhenti berlangganan"
       ]
@@ -14520,7 +14497,7 @@
         "Verifikasi alamat dan kunci"
       ],
       "Allocate storage": [
-        "Alokasi ruang penyimpanan"
+        "Alokasikan ruang penyimpanan"
       ],
       "Amount": [
         "Jumlah"
@@ -14937,7 +14914,7 @@
         "Umum"
       ],
       "Generate missing keys": [
-        "Buat kunci yang hilang"
+        "Hasilkan kunci yang hilang"
       ],
       "Generate new recovery phrase?": [
         "Buat frasa pemulihan baru?"
@@ -14961,7 +14938,7 @@
         "Riwayat"
       ],
       "How does it work?": [
-        "Bagaimana caranya ini bekerja?"
+        "Bagaimana cara hal ini bekerja?"
       ],
       "How to choose a good logo": [
         "Cara memilih logo yang baik"
@@ -15249,7 +15226,7 @@
         "Atur kata sandi baru"
       ],
       "Set organization name": [
-        "Atur nama organisasi"
+        "Tentukan nama organisasi"
       ],
       "Set up a recovery method": [
         "Siapkan metode pemulihan"
@@ -15697,6 +15674,9 @@
       ],
       "This address has been disabled": [
         "Alamat ini telah dinonaktifkan"
+      ],
+      "This email address will be shown to all organization members when performing account management operations.": [
+        "Alamat email ini akan ditampilkan kepada seluruh anggota organisasi pada saat melangsungkan tindakan manajemen akun."
       ],
       "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
         "Fitur ini menunda pengiriman email, memberi Anda kesempatan untuk menarik pesan dalam kurun waktu tersebut."

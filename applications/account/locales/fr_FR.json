@@ -45,19 +45,19 @@
     },
     "Account Settings - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "${ name } et ${ remainingCount }autre fuite potentielle de données ont été détectées. Activez ${ DARK_WEB_MONITORING_NAME } pour afficher les informations et prendre les mesures nécessaires. ${ link }"
+        "${ name } et ${ remainingCount } autre fuite potentielle de données ont été détectées. Activez la ${ DARK_WEB_MONITORING_NAME } pour afficher les informations et prendre les mesures nécessaires. ${ link }"
       ],
       "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "${ name } et une autre fuite potentielle de données ont été détectées. Activez ${ DARK_WEB_MONITORING_NAME } pour afficher les informations et prendre les mesures nécessaires. ${ link }"
+        "${ name } et une autre fuite potentielle de données ont été détectées. Activez la ${ DARK_WEB_MONITORING_NAME } pour afficher les informations et prendre les mesures nécessaires. ${ link }"
       ],
       "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "Une fuite potentielle de données pour ${ name } a été détectée. Activez ${ DARK_WEB_MONITORING_NAME } pour afficher les informations et prendre les mesures nécessaires. ${ link }"
+        "Une fuite potentielle de données pour ${ name } a été détectée. Activez la ${ DARK_WEB_MONITORING_NAME } pour afficher les informations et prendre les mesures nécessaires. ${ link }"
       ],
       "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "Une fuite potentielle de données pour ${ name } a été détectée. Activez ${ DARK_WEB_MONITORING_NAME } pour afficher les informations et prendre les mesures nécessaires. ${ link }"
+        "Une fuite potentielle de données pour ${ name } a été détectée. Activez la ${ DARK_WEB_MONITORING_NAME } pour afficher les informations et prendre les mesures nécessaires. ${ link }"
       ],
       "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "Une fuite potentielle de données depuis ${ name } a été détectée. Activez ${ DARK_WEB_MONITORING_NAME } pour afficher les informations. ${ link }"
+        "Une fuite potentielle de données depuis ${ name } a été détectée. Activez la ${ DARK_WEB_MONITORING_NAME } pour afficher les informations. ${ link }"
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
         "Vos informations ont été retrouvées dans au moins une fuite de données. Activez l'option ${ DARK_WEB_MONITORING_NAME } pour consulter ces informations et prendre les mesures nécessaires. ${ link }"
@@ -433,6 +433,12 @@
       "Edit name": [
         "Modifier le nom"
       ],
+      "Edit organization identity": [
+        "Modifier l'identité de l’organisation"
+      ],
+      "Edit organization name": [
+        "Modifier le nom de l'organisation"
+      ],
       "Edit password": [
         "Modifier le mot de passe"
       ],
@@ -489,6 +495,9 @@
       ],
       "Font": [
         "Police"
+      ],
+      "Forgot password?": [
+        "Mot de passe oublié ?"
       ],
       "Generate": [
         "Générer"
@@ -4955,9 +4964,6 @@
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Si l'utilisateur a déjà une adresse ${ MAIL_APP_NAME }, saisissez-la ici. Sinon, il doit d'abord créer un compte."
       ],
-      "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
-        "L'invitation sera annulée et l'utilisateur ne pourra pas rejoindre ${ organizationName }."
-      ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "Le compte de l'utilisateur sera transféré vers l'abonnement ${ BRAND_NAME } Unlimited pour un essai gratuit de 30 jours*."
       ],
@@ -7539,6 +7545,12 @@
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Scannez ce code en utilisant votre application d'authentification à deux facteurs pour configurer votre compte. ${ switchButton }."
       ],
+      "SCIM integration disabled": [
+        "Intégration SCIM désactivée"
+      ],
+      "SCIM token active": [
+        "Jeton SCIM actif"
+      ],
       "Secure your ${ BRAND_NAME } Account": [
         "Sécurisez votre compte ${ BRAND_NAME }"
       ],
@@ -9164,6 +9176,9 @@
       "Current email": [
         "Adresse e-mail actuelle"
       ],
+      "Current organization identity": [
+        "Identité de l’organisation actuelle"
+      ],
       "Daily email notifications": [
         "Notifications quotidiennes par e-mail"
       ],
@@ -9464,6 +9479,9 @@
       "New mailbox password": [
         "Nouveau mot de passe de messagerie"
       ],
+      "New organization identity": [
+        "Nouvelle identité de l'organisation"
+      ],
       "New organization password": [
         "Nouveau mot de passe de l'organisation"
       ],
@@ -9511,6 +9529,9 @@
       ],
       "Or": [
         "Ou"
+      ],
+      "Organization identity": [
+        "Identité de l'organisation"
       ],
       "Organization name": [
         "Nom de l'organisation"
@@ -10011,6 +10032,9 @@
       ],
       "Encryption and keys": [
         "Chiffrement et clés"
+      ],
+      "Forgot password?": [
+        "Mot de passe oublié ?"
       ],
       "Forgot username?": [
         "Nom d'utilisateur oublié ?"
@@ -12439,8 +12463,14 @@
       "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
         "Utilisez une méthode de récupération de données, contactez un autre administrateur ou réinitialisez la clé de l’organisation pour restaurer les droits administrateur."
       ],
+      "We couldn't verify authenticity of this identity.": [
+        "Nous n'avons pas pu vérifier l'authenticité de cette identité."
+      ],
       "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
         "Nous n'avons pas pu vérifier la sécurité de la clé d'adresse de cet expéditeur. Parfois, la mise à jour des informations de l'expéditeur peut prendre plus de temps. Réessayez plus tard. Si vous ne faites pas confiance à la validité de cette invitation ou de l'expéditeur, contactez le service client ${ BRAND_NAME }."
+      ],
+      "We have verified the authenticity of this identity.": [
+        "Nous avons vérifié l'authenticité de cette identité."
       ],
       "We have verified the authenticity of this sender and invitation.": [
         "Nous avons vérifié l'authenticité de cet expéditeur et cette invitation."
@@ -12949,13 +12979,13 @@
     },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "${ name } et ${ remainingCount }autre fuite potentielle de données ont été détectées. Activez ${ DARK_WEB_MONITORING_NAME } pour afficher les informations. ${ link }"
+        "${ name } et ${ remainingCount } autre fuite potentielle de données ont été détectées. Activez la ${ DARK_WEB_MONITORING_NAME } pour afficher les informations. ${ link }"
       ],
       "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "${ name } et une autre fuite potentielle de données ont été détectées. Activez ${ DARK_WEB_MONITORING_NAME } pour afficher les informations. ${ link }"
+        "${ name } et une autre fuite potentielle de données ont été détectées. Activez la ${ DARK_WEB_MONITORING_NAME } pour afficher les informations. ${ link }"
       ],
       "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "Une fuite potentielle de données pour ${ name } a été détectée. Activez ${ DARK_WEB_MONITORING_NAME } pour afficher les informations. ${ link }"
+        "Une fuite potentielle de données pour ${ name } a été détectée. Activez la ${ DARK_WEB_MONITORING_NAME } pour afficher les informations. ${ link }"
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "Vos informations ont été retrouvées dans au moins une fuite de données. Activez l'option ${ DARK_WEB_MONITORING_NAME } pour consulter ces informations. ${ link }"
@@ -13115,19 +13145,9 @@
         "Saisissez votre mot de passe actuel pour annuler la procédure de réinitialisation du mot de passe. Aucune autre modification ne sera prise en compte."
       ]
     },
-    "session_recovery:cancellation:notification": {
-      "Password reset cancelled": [
-        "La réinitialisation du mot de passe a été annulée."
-      ]
-    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Annuler la réinitialisation du mot de passe ?"
-      ]
-    },
-    "session_recovery:cancelled:info": {
-      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
-        "La demande de réinitialisation du mot de passe a été annulée (${ user.Email }). Si vous n'êtes pas à l'origine de cette demande, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -13530,11 +13550,6 @@
         "Soutenez la protection de la vie privée en ligne"
       ]
     },
-    "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "Cet abonnement se renouvellera automatiquement tous les 2 ans au même prix jusqu'à ce qu'il soit annulé."
-      ]
-    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Voir les abonnements"
@@ -13652,11 +13667,6 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Inviter des amis à rejoindre ${ BRAND_NAME }"
-      ]
-    },
-    "State": {
-      "Cancelling your subscription, please wait": [
-        "L'annulation de votre abonnement est en cours, veuillez patienter."
       ]
     },
     "Step in filter modal": {
@@ -14375,9 +14385,6 @@
       "Verification successful": [
         "La vérification a abouti."
       ],
-      "You have successfully cancelled your subscription.": [
-        "Vous avez résilié votre abonnement."
-      ],
       "You have successfully unsubscribed": [
         "La désinscription a été effectuée."
       ]
@@ -15016,6 +15023,9 @@
       ],
       "Edit invoice details": [
         "Modifier les informations de la facture"
+      ],
+      "Edit organization identity": [
+        "Modifier l'identité de l’organisation"
       ],
       "Edit servers": [
         "Modifier les serveurs"
@@ -15892,6 +15902,9 @@
       ],
       "This address has been disabled": [
         "Cette adresse a été désactivée."
+      ],
+      "This email address will be shown to all organization members when performing account management operations.": [
+        "Tous les membres de l'organisation pourront voir cette adresse e-mail lors d'opérations de gestion de compte."
       ],
       "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
         "Cette fonctionnalité retarde l'envoi de vos messages, vous donnant la possibilité d'annuler l'envoi pendant un délai choisi."
